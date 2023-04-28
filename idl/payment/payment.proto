@@ -1,0 +1,62 @@
+syntax = "proto3";
+package glory_api;
+
+import "api.proto";
+import "base.proto";
+
+message Payment {
+  int64 payment_id = 1;
+  int64 order_id = 2;
+  string payment_method = 3;
+  string payment_status = 4;
+  float total_amount = 5;
+  int64 supplier_payment_id = 6;
+  string supplier_payment_url = 7;
+
+}
+
+message PaymentWithAuthor {
+  Payment payment =1;
+  base.AuthorInfo author_info = 2;
+}
+
+message CreatePaymentRequest {
+  base.BaseRequest base_request = 1;
+  Payment payment =2;
+  string created_by = 3;
+}
+message CreatePaymentResponse {
+  base.BaseResponse base_resp = 1;
+  int64 payment_id = 2;
+//  PaymentWithAuthor payment_detail =2;
+}
+
+message GetPaymentRequest {
+  base.BaseRequest base_request = 1;
+  int64 payment_id = 2;
+
+}
+message GetPaymentResponse {
+  base.BaseResponse base_resp = 1;
+  PaymentWithAuthor payment_detail =2;
+}
+
+message UpdatePaymentRequest {
+  base.BaseRequest base_request = 1;
+  Payment payment = 2;
+}
+message UpdatePaymentResponse {
+  base.BaseResponse base_resp = 1;
+  int64 payment_id=2;
+}
+
+
+message DeletePaymentRequest {
+  base.BaseRequest base_request=1;
+  int64 payment_id =2;
+}
+message DeletePaymentResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+

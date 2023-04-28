@@ -1,0 +1,71 @@
+syntax = "proto3";
+package glory_api;
+
+import "api.proto";
+import "base.proto";
+
+message Category {
+  int64 category_id = 1;
+  string category_root = 2;
+  string category_child = 3;
+  string category_grandchild = 4;
+}
+
+message CategoryWithAuthor {
+  Category category =1;
+  base.AuthorInfo author_info = 2;
+}
+
+message CreateCategoryRequest {
+  base.BaseRequest base_request = 1;
+  Category category =2;
+}
+message CreateCategoryResponse {
+  base.BaseResponse base_resp = 1;
+  int64 category_id = 2;
+//  ShopWithAuthor shop_detail =2;
+}
+
+message GetCategoryRequest {
+  base.BaseRequest base_request = 1;
+  int64 category_id = 2;
+
+}
+message GetCategoryResponse {
+  base.BaseResponse base_resp = 1;
+  CategoryWithAuthor category_detail =2;
+}
+
+message UpdateCategoryRequest {
+  base.BaseRequest base_request = 1;
+  Category category = 2;
+}
+message UpdateCategoryResponse {
+  base.BaseResponse base_resp = 1;
+  int64 category_id=2;
+}
+
+
+message ListCategoryRequest {
+  base.BaseRequest base_request = 1;
+  int64 category_id = 2;
+  string category_root = 3;
+  string category_child = 4;
+  string category_grandchild = 5;
+  base.PaginationRequest pagination = 100;
+}
+message ListCategoryResponse {
+  base.BaseResponse base_resp = 1;
+  repeated CategoryWithAuthor category_detail = 2;
+  base.PaginationResponse pagination = 100;
+}
+
+message DeleteCategoryRequest {
+  base.BaseRequest base_request=1;
+  int64 category_id =2;
+}
+message DeleteCategoryResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+

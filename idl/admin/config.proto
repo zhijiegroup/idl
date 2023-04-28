@@ -1,0 +1,64 @@
+syntax = "proto3";
+package glory_api;
+
+import "api.proto";
+import "base.proto";
+
+
+message Config {
+  int64 id = 2;
+  string config_name = 3;
+  string config_value = 4;
+  string description = 6;
+  int64 created_by = 7;
+  int64 updated_by = 8;
+  string created_at = 9;
+  string updated_at = 10;
+}
+
+message AddConfig {
+  string config_name = 2;
+  string config_value = 3;
+  string description = 5;
+}
+
+message CreateConfigRequest {
+  base.BaseRequest base_request=1;
+  AddConfig config = 2;
+}
+message CreateConfigResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+message UpdateConfig {
+  int64 config_id = 2 ;
+  string config_value = 4;
+  string description = 5;
+}
+
+message UpdateConfigRequest {
+  base.BaseRequest base_request=1;
+  UpdateConfig config = 2;
+}
+message UpdateConfigResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+message DeleteConfigRequest {
+  base.BaseRequest base_request=1;
+  int64 config_id =2;
+}
+message DeleteConfigResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+
+message GetConfigRequest {
+  base.BaseRequest base_request=1;
+  repeated string config_names =2;
+}
+
+message GetConfigResponse {
+  base.BaseResponse base_resp = 1;
+  repeated Config configs = 2;
+}

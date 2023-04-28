@@ -1,0 +1,99 @@
+syntax = "proto3";
+package glory_api;
+
+import "api.proto";
+import "base.proto";
+import "shop/sku.proto";
+import "shop/attribute.proto";
+
+message Product {
+  int64 product_id = 1;
+  int64 shop_id = 2;
+  string product_name = 3;
+  int64 category_id = 4;
+  repeated Sku sku = 5;
+  repeated Attribute attribute = 6;
+}
+
+message ProductWithAuthor {
+  Product product =1;
+  repeated ProductAttributeWithOneValue attribute_value = 2;
+  base.AuthorInfo author_info = 3;
+}
+
+message ProductAttributeWithOneValue {
+  int64 attribute_id = 1;
+  string attribute_name =2;
+  string attribute_value =3;
+  string attribute_type = 4;
+  int64 product_attribute_id =6;
+  int64 attribute_value_id = 7;
+}
+
+message ProductWithValueAuthor {
+  Product product =1;
+  repeated ProductAttributeWithOneValue attribute_value = 2;
+  base.AuthorInfo author_info = 3;
+}
+
+message ProductAttribute {
+  int64 product_attribute_id = 1;
+  int64 product_id = 2;
+  int64 attribute_id =3;
+  Attribute attribute = 5;
+}
+
+message CreateProductRequest {
+  base.BaseRequest base_request = 1;
+  Product product =2;
+  repeated ProductAttribute product_attribute = 3;
+  string created_by = 4;
+}
+message CreateProductResponse {
+  base.BaseResponse base_resp = 1;
+  int64 product_id = 2;
+//  ProductWithAuthor product_detail =2;
+}
+
+message GetProductRequest {
+  base.BaseRequest base_request = 1;
+  int64 product_id = 2;
+
+}
+message GetProductResponse {
+  base.BaseResponse base_resp = 1;
+  ProductWithValueAuthor product_detail =2;
+}
+
+message UpdateProductRequest {
+  base.BaseRequest base_request = 1;
+  Product product = 2;
+}
+message UpdateProductResponse {
+  base.BaseResponse base_resp = 1;
+  int64 product_id=2;
+}
+
+
+message ListProductRequest {
+  base.BaseRequest base_request = 1;
+  string product_name = 2;
+  int64 shop_id = 3;
+  int64 category_id = 4;
+  base.PaginationRequest pagination = 100;
+}
+message ListProductResponse {
+  base.BaseResponse base_resp = 1;
+  repeated ProductWithValueAuthor product_detail = 2;
+  base.PaginationResponse pagination = 100;
+}
+
+message DeleteProductRequest {
+  base.BaseRequest base_request=1;
+  int64 product_id =2;
+}
+message DeleteProductResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+

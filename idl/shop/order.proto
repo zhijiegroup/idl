@@ -1,0 +1,85 @@
+syntax = "proto3";
+package glory_api;
+
+import "api.proto";
+import "base.proto";
+
+message Order {
+  int64 order_id = 1;
+  int64 user_id = 2;
+  int64 shop_id = 3;
+  int64 seller_id = 4;
+  int64 tenant_id = 5;
+  string order_status = 6;
+  double total_amount = 7;
+  double original_amount = 8;
+  double tax = 9;
+  double deliver_fee = 10;
+  string currency = 11;
+  string deliver_address = 12;
+  int32 deliver_post = 13;
+  string contact_name = 14;
+  string contact_phone = 15;
+
+}
+
+message OrderWithAuthor {
+  Order order =1;
+  base.AuthorInfo author_info = 2;
+}
+
+message CreateOrderRequest {
+  base.BaseRequest base_request = 1;
+  Order order =2;
+  string created_by = 3;
+}
+message CreateOrderResponse {
+  base.BaseResponse base_resp = 1;
+  int64 order_id = 2;
+//  OrderWithAuthor order_detail =2;
+}
+
+message GetOrderRequest {
+  base.BaseRequest base_request = 1;
+  int64 order_id = 2;
+
+}
+message GetOrderResponse {
+  base.BaseResponse base_resp = 1;
+  OrderWithAuthor order_detail =2;
+}
+
+message UpdateOrderRequest {
+  base.BaseRequest base_request = 1;
+  Order order = 2;
+}
+message UpdateOrderResponse {
+  base.BaseResponse base_resp = 1;
+  int64 order_id=2;
+}
+
+
+message ListOrderRequest {
+  base.BaseRequest base_request = 1;
+  int64 user_id = 2;
+  int64 seller_id = 3;
+  int64 tenant_id = 4;
+  int64 shop_id = 5;
+  string order_status = 6;
+  base.PaginationRequest pagination = 100;
+}
+message ListOrderResponse {
+  base.BaseResponse base_resp = 1;
+  repeated OrderWithAuthor order_detail = 2;
+  base.PaginationResponse pagination = 100;
+}
+
+message DeleteOrderRequest {
+  base.BaseRequest base_request=1;
+  int64 order_id =2;
+}
+message DeleteOrderResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+

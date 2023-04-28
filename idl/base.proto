@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package base;
+import "api.proto";
+
+option go_package = "base";
+
+// All response will contain BaseResponse
+message BaseResponse {
+  sint32 status_code = 1;
+  string status_message = 2;
+}
+
+// GeneralResponse is used for return early with only the BaseResponse
+message GeneralResponse {
+  BaseResponse base_resp = 1;
+}
+
+message PaginationRequest{
+  int32 size=1; // number of elements requested
+  int32 page=2; // offset to start from
+  string sort_key=3;
+  bool sort_descending=4;
+}
+
+message PaginationResponse{
+  int32 size=1; // number of elements found
+  int32 page=2; // offset+count
+  int64 total_count=3; // total number of elements
+  string sort_key=4;
+  bool sort_descending=5;
+}
+
+
+message AuthorInfo{
+  int64 created_by=101;
+  string created_at=102;
+  int64 updated_by=103;
+  string updated_at=104;
+
+}
+
+message BaseRequest {
+  string auth_token = 1 [(api.header) = 'X-Custom-Token'];
+}

@@ -1,0 +1,95 @@
+syntax = "proto3";
+package glory_api;
+
+import "api.proto";
+import "base.proto";
+
+message Shop {
+  int64 shop_id = 1;
+  int64 seller_id = 2;
+  string shop_name = 3;
+  string shop_type = 4;
+  string company_name = 5;
+  string company_id  = 6;
+  string company_category  = 7;
+  string owner_id  = 8;
+  string owner_name  = 9;
+  string owner_id_front_url = 11;
+  string owner_id_back_url = 12;
+  string owner_id_start_date = 13;
+  string owner_id_expiry_date = 14;
+  string shop_logo_url = 15;
+  string province = 16;
+  string city = 17;
+  string district = 18;
+  string address = 19;
+  string business_license_url = 20;
+  bool certified = 21;
+}
+
+message ShopWithAuthor {
+  Shop shop =1;
+  base.AuthorInfo author_info = 2;
+}
+
+message CreateShopRequest {
+  base.BaseRequest base_request = 1;
+  Shop shop =2;
+  string created_by = 3;
+}
+message CreateShopResponse {
+  base.BaseResponse base_resp = 1;
+  int64 shop_id = 2;
+//  ShopWithAuthor shop_detail =2;
+}
+
+message GetShopRequest {
+  base.BaseRequest base_request = 1;
+  int64 shop_id = 2;
+
+}
+message GetShopResponse {
+  base.BaseResponse base_resp = 1;
+  ShopWithAuthor shop_detail =2;
+}
+
+message UpdateShopRequest {
+  base.BaseRequest base_request = 1;
+  Shop shop = 2;
+}
+message UpdateShopResponse {
+  base.BaseResponse base_resp = 1;
+  int64 shop_id=2;
+}
+
+
+message ListShopRequest {
+  base.BaseRequest base_request = 1;
+  int64 shop_id = 2;
+  int64 seller_id = 4;
+  string shop_name = 5;
+  string shop_type = 6;
+  string province = 7;
+  string city  = 8;
+  string district  = 9;
+  string address  = 10;
+  string post  = 11;
+  string company_name  = 12;
+  string owner_name  = 13;
+  base.PaginationRequest pagination = 100;
+}
+message ListShopResponse {
+  base.BaseResponse base_resp = 1;
+  repeated ShopWithAuthor shop_detail = 2;
+  base.PaginationResponse pagination = 100;
+}
+
+message DeleteShopRequest {
+  base.BaseRequest base_request=1;
+  int64 shop_id =2;
+}
+message DeleteShopResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+

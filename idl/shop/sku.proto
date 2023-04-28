@@ -1,0 +1,101 @@
+syntax = "proto3";
+package glory_api;
+
+import "api.proto";
+import "base.proto";
+import "shop/attribute.proto";
+
+message Sku {
+  int64 sku_id = 1;
+  string sku_name =2;
+  int64 product_id = 3;
+  double unit_price = 5;
+  string currency = 6;
+  int32 remaining_quantity = 7;
+  int32 total_sold = 8;
+}
+message SkuAttributeWithOneValue {
+  int64 attribute_id = 1;
+  string attribute_name =2;
+  string attribute_value =3;
+  string attribute_type = 4;
+  string sku_attribute_type = 5;
+  int64 sku_attribute_id =6;
+  int64 attribute_value_id = 7;
+}
+
+message SkuWithAuthor {
+  Sku sku =1;
+  repeated SkuAttributeWithOneValue attribute_value = 2;
+  base.AuthorInfo author_info = 3;
+}
+
+message SkuWithValueAuthor {
+  Sku sku =1;
+  repeated SkuAttributeWithOneValue attribute_value = 2;
+  base.AuthorInfo author_info = 3;
+}
+
+message SkuAttribute {
+  int64 sku_attribute_id = 1;
+  int64 sku_id = 2;
+  int64 attribute_id =3;
+  string sku_attribute_type = 4;
+  Attribute attribute = 5;
+}
+
+message CreateSkuRequest {
+  base.BaseRequest base_request = 1;
+  Sku sku =2;
+  repeated SkuAttribute sku_attribute = 3;
+  string created_by = 4;
+}
+message CreateSkuResponse {
+  base.BaseResponse base_resp = 1;
+  int64 sku_id = 2;
+//  SkuWithAuthor sku_detail =2;
+}
+
+message GetSkuRequest {
+  base.BaseRequest base_request = 1;
+  int64 sku_id = 2;
+
+}
+
+message GetSkuResponse {
+  base.BaseResponse base_resp = 1;
+  SkuWithValueAuthor sku_detail =2;
+
+}
+
+message UpdateSkuRequest {
+  base.BaseRequest base_request = 1;
+  Sku sku = 2;
+}
+message UpdateSkuResponse {
+  base.BaseResponse base_resp = 1;
+  int64 sku_id=2;
+}
+
+
+message ListSkuRequest {
+  base.BaseRequest base_request = 1;
+  string sku_name = 2;
+  int64 product_id = 3;
+  base.PaginationRequest pagination = 100;
+}
+message ListSkuResponse {
+  base.BaseResponse base_resp = 1;
+  repeated SkuWithValueAuthor sku_detail = 2;
+  base.PaginationResponse pagination = 100;
+}
+
+message DeleteSkuRequest {
+  base.BaseRequest base_request=1;
+  int64 sku_id =2;
+}
+message DeleteSkuResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+

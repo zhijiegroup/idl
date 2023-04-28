@@ -1,0 +1,85 @@
+syntax = "proto3";
+package glory_api;
+
+import "api.proto";
+import "base.proto";
+
+
+message AttributeValue{
+  int64 attribute_value_id = 1;
+  int64 attribute_id = 2;
+  string attribute_value = 3;
+}
+
+message Attribute {
+  int64 attribute_id = 1;
+  string attribute_name =2;
+  repeated AttributeValue attribute_value =3;
+  string attribute_type = 4;
+}
+
+message AttributeWithAuthor {
+  Attribute attribute =1;
+  base.AuthorInfo author_info = 2;
+}
+
+message CreateAttributeRequest {
+  base.BaseRequest base_request = 1;
+  Attribute attribute =2;
+  string created_by = 3;
+}
+message CreateAttributeResponse {
+  base.BaseResponse base_resp = 1;
+  int64 attribute_id = 2;
+//  AttributeWithAuthor attribute_detail =2;
+}
+
+message GetAttributeRequest {
+  base.BaseRequest base_request = 1;
+  int64 attribute_id = 2;
+
+}
+message GetAttributeResponse {
+  base.BaseResponse base_resp = 1;
+  AttributeWithAuthor attribute_detail =2;
+}
+
+
+message ListAttributeRequest {
+  base.BaseRequest base_request = 1;
+  string attribute_name = 2;
+  string attribute_type = 3;
+  base.PaginationRequest pagination = 100;
+}
+message ListAttributeResponse {
+  base.BaseResponse base_resp = 1;
+  repeated AttributeWithAuthor attribute_detail = 2;
+  base.PaginationResponse pagination = 100;
+}
+
+message DeleteAttributeRequest {
+  base.BaseRequest base_request=1;
+  int64 attribute_id =2;
+}
+message DeleteAttributeResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+message AddAttributeValueRequest {
+  base.BaseRequest base_request=1;
+  int64 attribute_id =2;
+  string attribute_value = 3;
+}
+message AddAttributeValueResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+message DeleteAttributeValueRequest {
+  base.BaseRequest base_request=1;
+  int64 attribute_value_id =2;
+}
+message DeleteAttributeValueResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+

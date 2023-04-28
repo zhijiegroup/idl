@@ -1,0 +1,136 @@
+syntax = "proto3";
+package glory_api;
+
+import "api.proto";
+import "base.proto";
+
+message WXPayInfo {
+  //必传
+  string description = 1;//商品描述
+  string out_trade_no = 2;//商户系统内部订单号，只能是数字、大小写字母_-*且在同一个商户号下唯一
+  Amount amount = 3;
+  string appid = 10;// 信开放平台审核通过的移动应用appid
+
+  //非必传
+  string attach = 4;//附加数据
+  string goods_tag = 5;//订单优惠标记
+  bool support_fapiao = 6;//电子发票入口开放标识 传入true时，支付成功消息和支付详情页将出现开票入口。需要在微信支付商户平台或微信公众平台开通电子发票功能，传此字段才可生效
+  Detail detail = 7;//优惠功能
+  SceneInfo scene_info = 8;//支付场景描述
+  SettleInfo settle_info = 9;// 结算信息
+}
+
+message Amount {
+  int64 total = 1;//订单总金额，单位为分。
+  string currency = 2;//CNY：人民币，境内商户号仅支持人民币
+}
+
+message Detail {
+  int64 cost_price = 1;//订单原价
+  string invoice_id = 2;//商品小票ID
+  repeated GoodsDetail goods_detail =3;//单品列表
+}
+
+message GoodsDetail {
+   string merchant_goods_id = 1;//商户侧商品编码
+   string wechatpay_goods_id = 2;//微信支付商品编码
+   string goods_name = 3;//商品名称
+   int64 quantity = 4;//商品数量
+   int64 unit_price = 5;//商品单价
+
+}
+
+message SceneInfo {
+  string payer_client_ip = 1;//用户终端IP
+  string device_id = 2;//商户端设备号
+  StoreInfo store_info = 3;//商户门店信息
+}
+
+message StoreInfo {
+  string id = 1;//门店编号
+  string name = 2;//门店名称
+  string area_code = 3;//地区编码
+  string address = 4;//详细地址
+}
+
+message SettleInfo {
+  bool profit_sharing = 1;//是否指定分账
+}
+
+message PayerAmount {
+  string currency = 1;//CNY：人民币，境内商户号仅支持人民币
+  int64 payer_total = 2;
+  int64 total = 3;
+}
+
+message Payer {
+  string openid = 1;
+}
+
+message WxOderInfo {
+  string appid = 1;
+  string attach = 2;
+  string bank_type = 3;
+  string mchid = 4;
+  string out_trade_no = 5;
+  string success_time = 6;
+  string trade_state = 7;
+  string trade_state_desc = 8;
+  string trade_type = 9;
+  string transaction_id = 10;
+  PayerAmount amount = 11;
+  Payer payer = 12;
+}
+
+message PrepayRequest {
+  base.BaseRequest base_request = 1;
+  WXPayInfo pay_info = 2;
+}
+
+message PrepayResponse {
+  base.BaseResponse base_resp = 1;
+  string prepay_id = 2;//预支付交易会话标识
+  string partnerid = 3;//商户号 商户号mchid对应的值
+  string package = 4;//订单详情扩展字符串 暂填写固定值Sign=WXPay
+  string noncestr = 5;//随机字符串
+  string timestamp = 6;//时间戳
+  string sign = 7;//签名
+  string appid = 8;//应用ID
+}
+
+message CloseOrderRequest {
+  base.BaseRequest base_request = 1;
+  string out_trade_no = 2;//商户订单号
+}
+
+message CloseOrderResponse {
+  base.BaseResponse base_resp = 1;
+  int64 status_code = 2;
+}
+
+message QueryOrderByIdRequest {
+  base.BaseRequest base_request = 1;
+  string transaction_id = 2;//微信支付订单号
+}
+
+message QueryOrderByIdResponse {
+  base.BaseResponse base_resp = 1;
+  WxOderInfo orderInfo = 2;
+}
+
+message QueryOrderByOutTradeNoRequest {
+  base.BaseRequest base_request = 1;
+  string out_trade_no = 2;//商户订单号
+}
+
+message QueryOrderByOutTradeNoResponse {
+  base.BaseResponse base_resp = 1;
+  WxOderInfo orderInfo = 2;
+}
+
+
+
+
+
+
+

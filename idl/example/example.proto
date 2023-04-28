@@ -1,0 +1,68 @@
+syntax = "proto3";
+package glory_api;
+
+import "api.proto";
+import "base.proto";
+
+message Example {
+  int64 example_id = 1;
+  string example_name = 2;
+}
+
+message ExampleWithAuthor {
+  Example example =1;
+  base.AuthorInfo author_info = 2;
+}
+
+message CreateExampleRequest {
+  base.BaseRequest base_request = 1;
+  Example example =2;
+  string created_by = 3;
+}
+message CreateExampleResponse {
+  base.BaseResponse base_resp = 1;
+  int64 example_id = 2;
+//  ExampleWithAuthor example_detail =2;
+}
+
+message GetExampleRequest {
+  base.BaseRequest base_request = 1;
+  int64 example_id = 2;
+
+}
+message GetExampleResponse {
+  base.BaseResponse base_resp = 1;
+  ExampleWithAuthor example_detail =2;
+}
+
+message UpdateExampleRequest {
+  base.BaseRequest base_request = 1;
+  Example example = 2;
+}
+message UpdateExampleResponse {
+  base.BaseResponse base_resp = 1;
+  int64 example_id=2;
+}
+
+
+message ListExampleRequest {
+  base.BaseRequest base_request = 1;
+  string example_name = 2;
+  base.PaginationRequest pagination = 100;
+
+}
+message ListExampleResponse {
+  base.BaseResponse base_resp = 1;
+  repeated ExampleWithAuthor example_detail = 2;
+  base.PaginationResponse pagination = 100;
+}
+
+message DeleteExampleRequest {
+  base.BaseRequest base_request=1;
+  int64 example_id =2;
+}
+message DeleteExampleResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+

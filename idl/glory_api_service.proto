@@ -1,0 +1,221 @@
+syntax = "proto3";
+package glory_api;
+
+import "user/user.proto";
+import "api.proto";
+
+import "shop/shop.proto";
+import "shop/category.proto";
+import "shop/product.proto";
+import "shop/sku.proto";
+import "shop/attribute.proto";
+import "shop/order.proto";
+import "shop/cart.proto";
+import "seller/attachment.proto";
+import "payment/payment.proto";
+import "example/example.proto";
+import "admin/config.proto";
+import "wxpay/wxpay.proto";
+
+service glory_api {
+
+  // example
+  rpc CreateExample(CreateExampleRequest) returns (CreateExampleResponse) {
+    option (api.post) = '/api/example/create_example';
+  }
+  rpc GetExample(GetExampleRequest) returns (GetExampleResponse) {
+    option (api.get) = '/api/example/get_example';
+  }
+  rpc UpdateExample(UpdateExampleRequest) returns (UpdateExampleResponse) {
+    option (api.post) = '/api/example/update_example';
+  }
+  rpc ListExample(ListExampleRequest) returns (ListExampleResponse) {
+    option (api.post) = '/api/example/list_example';
+  }
+  rpc DeleteExample(DeleteExampleRequest) returns (DeleteExampleResponse) {
+    option (api.post) = '/api/example/delete_example';
+  }
+
+
+  rpc Login(LoginRequest) returns (LoginResponse) {
+    option (api.post) = '/api/user/login';
+  }
+
+  rpc GetVerifyCode(GetVerifyCodeRequest) returns (GetVerifyCodeResponse) {
+    option (api.post) = '/api/user/get_verify_code';
+  }
+
+
+  // shop
+  rpc CreateShop(CreateShopRequest) returns (CreateShopResponse) {
+    option (api.post) = '/api/shop/create_shop';
+  }
+  rpc GetShop(GetShopRequest) returns (GetShopResponse) {
+    option (api.get) = '/api/shop/get_shop';
+  }
+  rpc UpdateShop(UpdateShopRequest) returns (UpdateShopResponse) {
+    option (api.post) = '/api/shop/update_shop';
+  }
+  rpc ListShop(ListShopRequest) returns (ListShopResponse) {
+    option (api.post) = '/api/shop/list_shop';
+  }
+  rpc DeleteShop(DeleteShopRequest) returns (DeleteShopResponse) {
+    option (api.post) = '/api/shop/delete_shop';
+  }
+
+  // product category
+  rpc CreateCategory(CreateCategoryRequest) returns (CreateCategoryResponse) {
+    option (api.post) = '/api/shop/create_category';
+  }
+  rpc GetCategory(GetCategoryRequest) returns (GetCategoryResponse) {
+    option (api.get) = '/api/shop/get_category';
+  }
+  rpc UpdateCategory(UpdateCategoryRequest) returns (UpdateCategoryResponse) {
+    option (api.post) = '/api/shop/update_category';
+  }
+  rpc ListCategory(ListCategoryRequest) returns (ListCategoryResponse) {
+    option (api.post) = '/api/shop/list_category';
+  }
+  rpc DeleteCategory(DeleteCategoryRequest) returns (DeleteCategoryResponse) {
+    option (api.post) = '/api/shop/delete_category';
+  }
+
+  // product product
+  rpc CreateProduct(CreateProductRequest) returns (CreateProductResponse) {
+    option (api.post) = '/api/shop/create_product';
+  }
+  rpc GetProduct(GetProductRequest) returns (GetProductResponse) {
+    option (api.get) = '/api/shop/get_product';
+  }
+  rpc UpdateProduct(UpdateProductRequest) returns (UpdateProductResponse) {
+    option (api.post) = '/api/shop/update_product';
+  }
+  rpc ListProduct(ListProductRequest) returns (ListProductResponse) {
+    option (api.post) = '/api/shop/list_product';
+  }
+  rpc DeleteProduct(DeleteProductRequest) returns (DeleteProductResponse) {
+    option (api.post) = '/api/shop/delete_product';
+  }
+
+  // sku sku
+  rpc CreateSku(CreateSkuRequest) returns (CreateSkuResponse) {
+    option (api.post) = '/api/shop/create_sku';
+  }
+  rpc GetSku(GetSkuRequest) returns (GetSkuResponse) {
+    option (api.get) = '/api/shop/get_sku';
+  }
+  rpc UpdateSku(UpdateSkuRequest) returns (UpdateSkuResponse) {
+    option (api.post) = '/api/shop/update_sku';
+  }
+  rpc ListSku(ListSkuRequest) returns (ListSkuResponse) {
+    option (api.post) = '/api/shop/list_sku';
+  }
+  rpc DeleteSku(DeleteSkuRequest) returns (DeleteSkuResponse) {
+    option (api.post) = '/api/shop/delete_sku';
+  }
+
+
+  // attribute
+  rpc CreateAttribute(CreateAttributeRequest) returns (CreateAttributeResponse) {
+    option (api.post) = '/api/shop/create_attribute';
+  }
+  rpc GetAttribute(GetAttributeRequest) returns (GetAttributeResponse) {
+    option (api.get) = '/api/shop/get_attribute';
+  }
+  rpc ListAttribute(ListAttributeRequest) returns (ListAttributeResponse) {
+    option (api.post) = '/api/shop/list_attribute';
+  }
+  rpc DeleteAttribute(DeleteAttributeRequest) returns (DeleteAttributeResponse) {
+    option (api.post) = '/api/shop/delete_attribute';
+  }
+  rpc AddAttributeValue(AddAttributeValueRequest) returns (AddAttributeValueResponse) {
+    option (api.post) = '/api/shop/add_attribute_value';
+  }
+  rpc DeleteAttributeValue(DeleteAttributeValueRequest) returns (DeleteAttributeValueResponse) {
+    option (api.post) = '/api/shop/delete_attribute_value';
+  }
+
+  // order
+  rpc CreateOrder(CreateOrderRequest) returns (CreateOrderResponse) {
+    option (api.post) = '/api/shop/create_order';
+  }
+  rpc GetOrder(GetOrderRequest) returns (GetOrderResponse) {
+    option (api.get) = '/api/shop/get_order';
+  }
+  rpc UpdateOrder(UpdateOrderRequest) returns (UpdateOrderResponse) {
+    option (api.post) = '/api/shop/update_order';
+  }
+  rpc ListOrder(ListOrderRequest) returns (ListOrderResponse) {
+    option (api.post) = '/api/shop/list_order';
+  }
+  rpc DeleteOrder(DeleteOrderRequest) returns (DeleteOrderResponse) {
+    option (api.post) = '/api/shop/delete_order';
+  }
+
+  // cart
+  rpc CreateCart(CreateCartRequest) returns (CreateCartResponse) {
+    option (api.post) = '/api/shop/create_cart';
+  }
+  rpc GetCart(GetCartRequest) returns (GetCartResponse) {
+    option (api.get) = '/api/shop/get_cart';
+  }
+  rpc UpdateCart(UpdateCartRequest) returns (UpdateCartResponse) {
+    option (api.post) = '/api/shop/update_cart';
+  }
+
+  rpc DeleteCart(DeleteCartRequest) returns (DeleteCartResponse) {
+    option (api.post) = '/api/shop/delete_cart';
+  }
+
+  // seller
+  rpc UploadAttachment(UploadAttachmentRequest) returns (UploadAttachmentResponse) {
+    option (api.post) = '/api/seller/upload_attachment';
+  }
+  rpc ListAttachment(ListAttachmentRequest) returns (ListAttachmentResponse) {
+    option (api.post) = '/api/seller/list_attachment';
+  }
+  rpc DeleteAttachment(DeleteAttachmentRequest) returns (DeleteAttachmentResponse) {
+    option (api.post) = '/api/seller/delete_attachment';
+  }
+
+  // payment
+  rpc CreatePayment(CreatePaymentRequest) returns (CreatePaymentResponse) {
+    option (api.post) = '/api/payment/create_payment';
+  }
+  rpc GetPayment(GetPaymentRequest) returns (GetPaymentResponse) {
+    option (api.get) = '/api/payment/get_payment';
+  }
+  rpc UpdatePayment(UpdatePaymentRequest) returns (UpdatePaymentResponse) {
+    option (api.post) = '/api/payment/update_payment';
+  }
+  rpc DeletePayment(DeletePaymentRequest) returns (DeletePaymentResponse) {
+    option (api.post) = '/api/payment/delete_payment';
+  }
+
+  rpc CreateConfig(CreateConfigRequest) returns (CreateConfigResponse) {
+    option (api.post) = '/api/admin/add_config';
+  }
+  rpc UpdateConfig(UpdateConfigRequest) returns (UpdateConfigResponse) {
+    option (api.post) = '/api/admin/update_config';
+  }
+  rpc DeleteConfig(DeleteConfigRequest) returns (DeleteConfigResponse) {
+    option (api.post) = '/api/admin/delete_config';
+  }
+  rpc GetConfig(GetConfigRequest) returns (GetConfigResponse) {
+    option (api.post) = '/api/admin/get_config';
+  }
+
+  // wxpay
+  rpc WxPrepay(PrepayRequest) returns (PrepayResponse) {
+    option (api.post) = '/api/wxpay/prepay';
+  }
+  rpc CloseOrder(CloseOrderRequest) returns (CloseOrderResponse) {
+    option (api.post) = '/api/wxpay/close_order';
+  }
+  rpc QueryOrderById(QueryOrderByIdRequest) returns (QueryOrderByIdResponse) {
+    option (api.get) = '/api/wxpay/query_by_id';
+  }
+  rpc QueryOrderByOutTrade(QueryOrderByOutTradeNoRequest) returns (QueryOrderByOutTradeNoResponse) {
+    option (api.get) = '/api/wxpay/query_by_no';
+  }
+}
