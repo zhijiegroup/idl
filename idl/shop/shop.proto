@@ -24,7 +24,9 @@ message Shop {
   string district = 18;
   string address = 19;
   string business_license_url = 20;
-  bool certified = 21;
+  string business_license_start_date = 21;
+  string business_license_end_date  = 22;
+  bool certified = 23;
 }
 
 message ShopWithAuthor {
