@@ -1,0 +1,24 @@
+# This workflow will build a golang project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-go
+
+name: Go
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+    if: ${{ github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+
+    - name: deploy to dev env
+      run: curl -XPOST "http://47.104.198.79:8080/job/idl_web_client_code_gen/build?token=${{ secrets.JENKINS_DEPLOYMENT_TOKEN }}" --user fan:${{ secrets.JENKINS_USER_TOKEN }}
+
+
