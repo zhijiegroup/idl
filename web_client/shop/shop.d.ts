@@ -26,6 +26,8 @@ export interface Shop {
   district?: string;
   address?: string;
   business_license_url?: string;
+  business_license_start_date?: string;
+  business_license_end_date?: string;
   certified?: boolean;
 }
 
