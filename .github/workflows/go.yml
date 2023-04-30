@@ -9,6 +9,11 @@ on:
   pull_request:
     branches: [ "main" ]
 
+
+env:
+  JENKINS_USER_TOKEN: ${{ secrets.JENKINS_USER_TOKEN }}
+  JENKINS_DEPLOYMENT_TOKEN: ${{ secrets.JENKINS_DEPLOYMENT_TOKEN }}
+
 jobs:
 
   build:
@@ -17,8 +22,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-
-    - name: deploy to dev env
-      run: set +e && git status |grep "idl/" && curl -XPOST "http://47.104.198.79:8080/job/idl_web_client_code_gen/build?token=${{ secrets.JENKINS_DEPLOYMENT_TOKEN }}" --user fan:${{ secrets.JENKINS_USER_TOKEN }}
+    - name: run the script
+      run: update_web_client.sh
 
 
