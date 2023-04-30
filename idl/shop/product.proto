@@ -91,6 +91,7 @@ message ListProductResponse {
 message DeleteProductRequest {
   base.BaseRequest base_request=1;
   int64 product_id =2;
+  int64 shop_id = 3;
 }
 message DeleteProductResponse {
   base.BaseResponse base_resp = 1;
