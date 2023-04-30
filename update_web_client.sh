@@ -1,7 +1,7 @@
 set +e
 
 git status |grep "idl/"
-if [ $? -eq 0 ];then
+if [ $? -ne 0 ];then
   exit
   fi
 
