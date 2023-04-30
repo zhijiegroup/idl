@@ -32,3 +32,23 @@ message GetVerifyCodeRequest {
 message GetVerifyCodeResponse {
   base.BaseResponse base_resp = 1;
 }
+
+
+message LoginWithPasswordRequest {
+  base.BaseRequest base_request=1;
+  string phone = 2;
+  string password = 3;
+}
+message LoginWithPasswordResponse {
+  base.BaseResponse base_resp = 1;
+  User data =2;
+}
+
+message UpdatePasswordRequest {
+  base.BaseRequest base_request=1;
+  string phone = 2;
+  string password = 3;
+}
+message UpdatePasswordResponse {
+  base.BaseResponse base_resp = 1;
+}
