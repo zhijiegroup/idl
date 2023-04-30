@@ -23,6 +23,6 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: run the script
-      run: update_web_client.sh
+      run: sh update_web_client.sh
 
 
