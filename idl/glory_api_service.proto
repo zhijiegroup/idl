@@ -45,6 +45,10 @@ service glory_api {
     option (api.post) = '/api/user/get_verify_code';
   }
 
+  rpc GetUser(GetUserRequest) returns (GetUserResponse) {
+    option (api.get) = '/api/user/get_user';  // get user data with token and phone
+  }
+
   rpc LoginWithPassword(LoginWithPasswordRequest) returns (LoginWithPasswordResponse) {
     option (api.post) = '/api/user/login_with_password';
   }
@@ -68,6 +72,13 @@ service glory_api {
   }
   rpc DeleteShop(DeleteShopRequest) returns (DeleteShopResponse) {
     option (api.post) = '/api/shop/delete_shop';
+  }
+
+  rpc AddShopAccess(AddShopAccessRequest) returns (AddShopAccessResponse) {
+    option (api.post) = '/api/shop/add_shop_access';
+  }
+  rpc RemoveShopAccess(RemoveShopAccessRequest) returns (RemoveShopAccessResponse) {
+    option (api.post) = '/api/shop/remove_shop_access';
   }
 
   // product category

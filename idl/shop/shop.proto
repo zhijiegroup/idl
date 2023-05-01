@@ -95,3 +95,25 @@ message DeleteShopResponse {
 }
 
 
+message AddShopAccessRequest {
+  base.BaseRequest base_request = 1;
+  int64 shop_id =2;
+  string access_type = 3; // 支持 admin, reseller
+}
+
+message AddShopAccessResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+message RemoveShopAccessRequest {
+  base.BaseRequest base_request = 1;
+  int64 shop_access_id = 2;
+}
+
+message RemoveShopAccessResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+
+
+

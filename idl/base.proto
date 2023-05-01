@@ -41,5 +41,5 @@ message AuthorInfo{
 }
 
 message BaseRequest {
-  string auth_token = 1 [(api.header) = 'X-Custom-Token'];
+  string auth_token = 1 [(api.header) = 'X-Custom-Token'];  // API authentication token
 }

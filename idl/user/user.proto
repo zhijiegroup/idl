@@ -52,3 +52,14 @@ message UpdatePasswordRequest {
 message UpdatePasswordResponse {
   base.BaseResponse base_resp = 1;
 }
+
+// Get User
+message GetUserRequest {
+  base.BaseRequest base_request=1;
+  string phone = 2;
+}
+
+message GetUserResponse {
+  base.BaseResponse base_resp = 1;
+  User data =2; // user data
+}
