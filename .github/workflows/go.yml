@@ -15,16 +15,36 @@ env:
   JENKINS_DEPLOYMENT_TOKEN: ${{ secrets.JENKINS_DEPLOYMENT_TOKEN }}
 
 jobs:
-
-  changes:
-    if: ${{ github.ref == 'refs/heads/main' }}
-    runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest  # windows-latest | macos-latest
+    name: Test changed-files
     steps:
-      - id: file_changes
-        uses: trilom/file-changes-action@v1.2.3
-      - name: test
-        run: cat $HOME/files_*.json |grep "idl/" && curl -XPOST "http://47.104.198.79:8080/job/idl_web_client_code_gen/build?token=${{ secrets.JENKINS_DEPLOYMENT_TOKEN }}" --user fan:${{ secrets.JENKINS_USER_TOKEN }}
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # OR "2" -> To retrieve the preceding commit.
 
+      # Example 1
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v35
 
+        # To compare changes between the current commit and the last pushed remote commit set `since_last_remote_commit: true`. e.g
+        # with:
+        #   since_last_remote_commit: true
 
+      - name: List all changed files
+        run: |
+          idlChange="no"
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            echo $file |grep "idl/"
+            if [ $? -eq 0 ];then
+              idlChange="yes"
+            fi
+            echo "$file was changed"
+          done
+          if [ $idlChange == "yes" ];then
+            curl -XPOST "http://47.104.198.79:8080/job/idl_web_client_code_gen/build?token=${{ secrets.JENKINS_DEPLOYMENT_TOKEN }}" --user fan:${{ secrets.JENKINS_USER_TOKEN }}
+          fi  
+  
+  
 
