@@ -16,13 +16,15 @@ env:
 
 jobs:
 
-  build:
+  changes:
     if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+      - id: file_changes
+        uses: trilom/file-changes-action@v1.2.3
+      - name: test
+        run: cat $HOME/files_*.json |grep "idl/" && curl -XPOST "http://47.104.198.79:8080/job/idl_web_client_code_gen/build?token=${{ secrets.JENKINS_DEPLOYMENT_TOKEN }}" --user fan:${{ secrets.JENKINS_USER_TOKEN }}
 
-    - name: run the script
-      run: sh -x update_web_client.sh
+
 
 
