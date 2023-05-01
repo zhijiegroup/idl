@@ -63,6 +63,14 @@ export class glory_api {
     request: user.GetVerifyCodeRequest
   ): Promise<user.GetVerifyCodeResponse>;
 
+  LoginWithPassword(
+    request: user.LoginWithPasswordRequest
+  ): Promise<user.LoginWithPasswordResponse>;
+
+  UpdatePassword(
+    request: user.UpdatePasswordRequest
+  ): Promise<user.UpdatePasswordResponse>;
+
   /** shop */
   CreateShop(request: shop.CreateShopRequest): Promise<shop.CreateShopResponse>;
 

@@ -35,3 +35,24 @@ export interface GetVerifyCodeRequest {
 export interface GetVerifyCodeResponse {
   base_resp?: base.BaseResponse;
 }
+
+export interface LoginWithPasswordRequest {
+  base_request?: base.BaseRequest;
+  phone?: string;
+  password?: string;
+}
+
+export interface LoginWithPasswordResponse {
+  base_resp?: base.BaseResponse;
+  data?: User;
+}
+
+export interface UpdatePasswordRequest {
+  base_request?: base.BaseRequest;
+  phone?: string;
+  password?: string;
+}
+
+export interface UpdatePasswordResponse {
+  base_resp?: base.BaseResponse;
+}

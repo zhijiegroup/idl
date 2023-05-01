@@ -101,6 +101,22 @@ export class glory_api {
     );
   }
 
+  LoginWithPassword(request) {
+    const uri = `${this.uriPrefix}/api/user/login_with_password`;
+    const body = JSON.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  UpdatePassword(request) {
+    const uri = `${this.uriPrefix}/api/user/update_password`;
+    const body = JSON.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   CreateShop(request) {
     const uri = `${this.uriPrefix}/api/shop/create_shop`;
     const body = JSON.stringify(request);
