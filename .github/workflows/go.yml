@@ -35,7 +35,7 @@ jobs:
 
       - name: List all changed files
         run: |
-          set -e
+          set +e
           idlChange="no"
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             echo $file |grep "idl/"
