@@ -44,5 +44,6 @@ export interface AuthorInfo {
 }
 
 export interface BaseRequest {
+  /** API authentication token */
   "X-Custom-Token"?: string;
 }

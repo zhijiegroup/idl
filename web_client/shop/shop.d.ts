@@ -97,3 +97,23 @@ export interface DeleteShopRequest {
 export interface DeleteShopResponse {
   base_resp?: base.BaseResponse;
 }
+
+export interface AddShopAccessRequest {
+  base_request?: base.BaseRequest;
+  shop_id?: string;
+  /** 支持 admin, reseller */
+  access_type?: string;
+}
+
+export interface AddShopAccessResponse {
+  base_resp?: base.BaseResponse;
+}
+
+export interface RemoveShopAccessRequest {
+  base_request?: base.BaseRequest;
+  shop_access_id?: string;
+}
+
+export interface RemoveShopAccessResponse {
+  base_resp?: base.BaseResponse;
+}

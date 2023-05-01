@@ -56,3 +56,15 @@ export interface UpdatePasswordRequest {
 export interface UpdatePasswordResponse {
   base_resp?: base.BaseResponse;
 }
+
+/** Get User */
+export interface GetUserRequest {
+  base_request?: base.BaseRequest;
+  phone?: string;
+}
+
+export interface GetUserResponse {
+  base_resp?: base.BaseResponse;
+  /** user data */
+  data?: User;
+}

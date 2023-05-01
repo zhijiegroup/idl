@@ -101,6 +101,12 @@ export class glory_api {
     );
   }
 
+  GetUser(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/user/get_user${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
   LoginWithPassword(request) {
     const uri = `${this.uriPrefix}/api/user/login_with_password`;
     const body = JSON.stringify(request);
@@ -149,6 +155,22 @@ export class glory_api {
 
   DeleteShop(request) {
     const uri = `${this.uriPrefix}/api/shop/delete_shop`;
+    const body = JSON.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  AddShopAccess(request) {
+    const uri = `${this.uriPrefix}/api/shop/add_shop_access`;
+    const body = JSON.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  RemoveShopAccess(request) {
+    const uri = `${this.uriPrefix}/api/shop/remove_shop_access`;
     const body = JSON.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse

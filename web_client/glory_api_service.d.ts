@@ -63,6 +63,8 @@ export class glory_api {
     request: user.GetVerifyCodeRequest
   ): Promise<user.GetVerifyCodeResponse>;
 
+  GetUser(request: user.GetUserRequest): Promise<user.GetUserResponse>;
+
   LoginWithPassword(
     request: user.LoginWithPasswordRequest
   ): Promise<user.LoginWithPasswordResponse>;
@@ -81,6 +83,14 @@ export class glory_api {
   ListShop(request: shop.ListShopRequest): Promise<shop.ListShopResponse>;
 
   DeleteShop(request: shop.DeleteShopRequest): Promise<shop.DeleteShopResponse>;
+
+  AddShopAccess(
+    request: shop.AddShopAccessRequest
+  ): Promise<shop.AddShopAccessResponse>;
+
+  RemoveShopAccess(
+    request: shop.RemoveShopAccessRequest
+  ): Promise<shop.RemoveShopAccessResponse>;
 
   /** product category */
   CreateCategory(
