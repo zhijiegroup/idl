@@ -29,6 +29,7 @@ export interface Shop {
   business_license_start_date?: string;
   business_license_end_date?: string;
   certified?: boolean;
+  owner_location?: string;
 }
 
 export interface ShopWithAuthor {

@@ -60,7 +60,6 @@ export interface UpdatePasswordResponse {
 /** Get User */
 export interface GetUserRequest {
   base_request?: base.BaseRequest;
-  phone?: string;
 }
 
 export interface GetUserResponse {

@@ -6,10 +6,16 @@ import * as api from "../api";
 import * as base from "../base";
 export { api, base };
 
+export enum AttachmentType {
+  unSpecified = 0,
+  image = 1,
+  pdf = 2,
+}
+
 export interface Attachment {
   attachment_id?: string;
   attachment_name?: string;
-  attachment_type?: string;
+  attachment_type?: number;
   attachment_url?: string;
 }
 
@@ -20,7 +26,7 @@ export interface AttachmentWithAuthor {
 
 export interface UploadAttachmentRequest {
   base_request?: base.BaseRequest;
-  attachment_type?: string;
+  attachment_type?: AttachmentType;
   seller_id?: string;
   description?: string;
 }
@@ -28,6 +34,7 @@ export interface UploadAttachmentRequest {
 export interface UploadAttachmentResponse {
   base_resp?: base.BaseResponse;
   attachment_id?: string;
+  attachment_url?: string;
 }
 
 export interface ListAttachmentRequest {
