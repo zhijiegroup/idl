@@ -5,10 +5,16 @@ import "api.proto";
 import "base.proto";
 
 
+enum AttachmentType {
+  unSpecified=0;
+  image = 1;
+  pdf = 2;
+}
+
 message Attachment{
   int64 attachment_id = 1;
   string attachment_name = 2;
-  string attachment_type = 3;
+  int32 attachment_type = 3;
   string attachment_url = 4;
 }
 
@@ -19,13 +25,14 @@ message AttachmentWithAuthor {
 
 message UploadAttachmentRequest {
   base.BaseRequest base_request = 1;
-  string attachment_type = 2;
+  AttachmentType attachment_type = 2;
   int64 seller_id = 3;
   string description = 4;
 }
 message UploadAttachmentResponse {
   base.BaseResponse base_resp = 1;
   int64 attachment_id = 2;
+  string attachment_url = 3;
 }
 
 message ListAttachmentRequest {
