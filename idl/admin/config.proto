@@ -9,6 +9,7 @@ message Config {
   int64 id = 2;
   string config_name = 3;
   string config_value = 4;
+  string config_type = 5;
   string description = 6;
   int64 created_by = 7;
   int64 updated_by = 8;
@@ -19,6 +20,7 @@ message Config {
 message AddConfig {
   string config_name = 2;
   string config_value = 3;
+  string config_type = 4;
   string description = 5;
 }
 
@@ -32,6 +34,7 @@ message CreateConfigResponse {
 
 message UpdateConfig {
   int64 config_id = 2 ;
+  string config_type =3;
   string config_value = 4;
   string description = 5;
 }
@@ -55,7 +58,8 @@ message DeleteConfigResponse {
 
 message GetConfigRequest {
   base.BaseRequest base_request=1;
-  repeated string config_names =2;
+  string config_name =2;
+  string config_type =3;
 }
 
 message GetConfigResponse {
