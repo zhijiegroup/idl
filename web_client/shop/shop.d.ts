@@ -28,8 +28,11 @@ export interface Shop {
   business_license_url?: string;
   business_license_start_date?: string;
   business_license_end_date?: string;
-  certified?: boolean;
   owner_location?: string;
+  company_bank_account?: string;
+  company_bank_phone?: string;
+  company_bank_validated?: boolean;
+  certify_status?: number;
 }
 
 export interface ShopWithAuthor {
