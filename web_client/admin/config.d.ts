@@ -10,6 +10,7 @@ export interface Config {
   id?: string;
   config_name?: string;
   config_value?: string;
+  config_type?: string;
   description?: string;
   created_by?: string;
   updated_by?: string;
@@ -20,6 +21,7 @@ export interface Config {
 export interface AddConfig {
   config_name?: string;
   config_value?: string;
+  config_type?: string;
   description?: string;
 }
 
@@ -34,6 +36,7 @@ export interface CreateConfigResponse {
 
 export interface UpdateConfig {
   config_id?: string;
+  config_type?: string;
   config_value?: string;
   description?: string;
 }
@@ -58,7 +61,8 @@ export interface DeleteConfigResponse {
 
 export interface GetConfigRequest {
   base_request?: base.BaseRequest;
-  config_names?: Array<string>;
+  config_name?: string;
+  config_type?: string;
 }
 
 export interface GetConfigResponse {

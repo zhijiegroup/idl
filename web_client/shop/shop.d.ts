@@ -32,6 +32,7 @@ export interface Shop {
   company_bank_account?: string;
   company_bank_phone?: string;
   company_bank_validated?: boolean;
+  /** 1: inProgress, 2: Approved, 3: Rejected */
   certify_status?: number;
 }
 
