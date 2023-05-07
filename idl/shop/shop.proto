@@ -31,7 +31,7 @@ message Shop {
   string company_bank_account = 25;
   string company_bank_phone = 26;
   bool company_bank_validated = 27;
-  int32 certify_status = 28;
+  int32 certify_status = 28;  // 1: inProgress, 2: Approved, 3: Rejected
 }
 
 message ShopWithAuthor {
