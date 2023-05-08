@@ -80,6 +80,9 @@ service glory_api {
   rpc RemoveShopAccess(RemoveShopAccessRequest) returns (RemoveShopAccessResponse) {
     option (api.post) = '/api/shop/remove_shop_access';
   }
+  rpc VerifyField(VerifyFieldRequest) returns (VerifyFieldResponse) {
+    option (api.post) = '/api/shop/verify_field';
+  }
 
   // product category
   rpc CreateCategory(CreateCategoryRequest) returns (CreateCategoryResponse) {

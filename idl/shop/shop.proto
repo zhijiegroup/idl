@@ -119,6 +119,16 @@ message RemoveShopAccessResponse {
   base.BaseResponse base_resp = 1;
 }
 
+message VerifyFieldRequest {
+  base.BaseRequest base_request = 1;
+  string shop_name = 2;
+}
+
+message VerifyFieldResponse {
+  base.BaseResponse base_resp = 1;
+  bool shop_name_valid = 2;
+}
+
 
 
 
