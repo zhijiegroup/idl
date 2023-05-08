@@ -92,6 +92,10 @@ export class glory_api {
     request: shop.RemoveShopAccessRequest
   ): Promise<shop.RemoveShopAccessResponse>;
 
+  VerifyField(
+    request: shop.VerifyFieldRequest
+  ): Promise<shop.VerifyFieldResponse>;
+
   /** product category */
   CreateCategory(
     request: category.CreateCategoryRequest

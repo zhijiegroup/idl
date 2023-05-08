@@ -122,3 +122,13 @@ export interface RemoveShopAccessRequest {
 export interface RemoveShopAccessResponse {
   base_resp?: base.BaseResponse;
 }
+
+export interface VerifyFieldRequest {
+  base_request?: base.BaseRequest;
+  shop_name?: string;
+}
+
+export interface VerifyFieldResponse {
+  base_resp?: base.BaseResponse;
+  shop_name_valid?: boolean;
+}

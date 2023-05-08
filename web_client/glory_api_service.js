@@ -177,6 +177,14 @@ export class glory_api {
     );
   }
 
+  VerifyField(request) {
+    const uri = `${this.uriPrefix}/api/shop/verify_field`;
+    const body = JSON.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   CreateCategory(request) {
     const uri = `${this.uriPrefix}/api/shop/create_category`;
     const body = JSON.stringify(request);
