@@ -17,6 +17,7 @@ import * as payment from "./payment/payment";
 import * as example from "./example/example";
 import * as config from "./admin/config";
 import * as wxpay from "./wxpay/wxpay";
+import * as virtual_currency from "./currency/virtual_currency";
 export {
   user,
   api,
@@ -32,6 +33,7 @@ export {
   example,
   config,
   wxpay,
+  virtual_currency,
 };
 
 import {
@@ -179,6 +181,14 @@ export class glory_api {
 
   VerifyField(request) {
     const uri = `${this.uriPrefix}/api/shop/verify_field`;
+    const body = JSON.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListShopAccess(request) {
+    const uri = `${this.uriPrefix}/api/shop/list_shop_access`;
     const body = JSON.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
@@ -524,6 +534,42 @@ export class glory_api {
   QueryOrderByOutTrade(request) {
     const query = queryStringify(request);
     const uri = `${this.uriPrefix}/api/wxpay/query_by_no${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  AddVCurrency(request) {
+    const uri = `${this.uriPrefix}/api/currency/add`;
+    const body = JSON.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteVCurrency(request) {
+    const uri = `${this.uriPrefix}/api/currency/clear`;
+    const body = JSON.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  UpdateVCurrency(request) {
+    const uri = `${this.uriPrefix}/api/currency/update`;
+    const body = JSON.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  GetVCurrency(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/currency/get_by_uid${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  ListVCurrency(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/currency/list${query}`;
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
 }

@@ -16,6 +16,7 @@ import * as payment from "./payment/payment";
 import * as example from "./example/example";
 import * as config from "./admin/config";
 import * as wxpay from "./wxpay/wxpay";
+import * as virtual_currency from "./currency/virtual_currency";
 export {
   user,
   api,
@@ -31,6 +32,7 @@ export {
   example,
   config,
   wxpay,
+  virtual_currency,
 };
 
 export class glory_api {
@@ -95,6 +97,10 @@ export class glory_api {
   VerifyField(
     request: shop.VerifyFieldRequest
   ): Promise<shop.VerifyFieldResponse>;
+
+  ListShopAccess(
+    request: shop.ListShopAccessRequest
+  ): Promise<shop.ListShopAccessResponse>;
 
   /** product category */
   CreateCategory(
@@ -260,6 +266,27 @@ export class glory_api {
   QueryOrderByOutTrade(
     request: wxpay.QueryOrderByOutTradeNoRequest
   ): Promise<wxpay.QueryOrderByOutTradeNoResponse>;
+
+  /** virtual currency  虚拟币（成长币） */
+  AddVCurrency(
+    request: virtual_currency.AddVirtualCurrencyRequest
+  ): Promise<virtual_currency.AddVirtualCurrencyResponse>;
+
+  DeleteVCurrency(
+    request: virtual_currency.DeleteVirtualCurrencyRequest
+  ): Promise<virtual_currency.DeleteVirtualCurrencyResponse>;
+
+  UpdateVCurrency(
+    request: virtual_currency.UpdateVirtualCurrencyRequest
+  ): Promise<virtual_currency.UpdateVirtualCurrencyResponse>;
+
+  GetVCurrency(
+    request: virtual_currency.GetVirtualCurrencyRequest
+  ): Promise<virtual_currency.GetVirtualCurrencyResponse>;
+
+  ListVCurrency(
+    request: virtual_currency.ListVirtualCurrencyRequest
+  ): Promise<virtual_currency.ListVirtualCurrencyResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

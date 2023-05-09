@@ -108,6 +108,7 @@ export interface AddShopAccessRequest {
   shop_id?: string;
   /** 支持 admin, reseller */
   access_type?: string;
+  user_id?: string;
 }
 
 export interface AddShopAccessResponse {
@@ -131,4 +132,24 @@ export interface VerifyFieldRequest {
 export interface VerifyFieldResponse {
   base_resp?: base.BaseResponse;
   shop_name_valid?: boolean;
+}
+
+export interface ShopAccess {
+  shop_access_id?: string;
+  shop_id?: string;
+  user_id?: string;
+  /** admin or reseller */
+  access_type?: string;
+}
+
+export interface ListShopAccessRequest {
+  base_request?: base.BaseRequest;
+  shop_id?: string;
+  /** 支持 admin, reseller */
+  access_type?: string;
+}
+
+export interface ListShopAccessResponse {
+  base_resp?: base.BaseResponse;
+  shop_access?: Array<ShopAccess>;
 }
