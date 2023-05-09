@@ -104,6 +104,7 @@ message AddShopAccessRequest {
   base.BaseRequest base_request = 1;
   int64 shop_id =2;
   string access_type = 3; // 支持 admin, reseller
+  int64 user_id =4;
 }
 
 message AddShopAccessResponse {
@@ -127,6 +128,25 @@ message VerifyFieldRequest {
 message VerifyFieldResponse {
   base.BaseResponse base_resp = 1;
   bool shop_name_valid = 2;
+}
+
+message ShopAccess {
+  int64 shop_access_id =1;
+  int64 shop_id = 2;
+  int64 user_id =3;
+  string access_type =4; // admin or reseller
+}
+
+message ListShopAccessRequest {
+  base.BaseRequest base_request = 1;
+  int64 shop_id =2;
+  string access_type = 3; // 支持 admin, reseller
+}
+
+
+message ListShopAccessResponse {
+  base.BaseResponse base_resp = 1;
+  repeated ShopAccess shop_access = 2 ;
 }
 
 

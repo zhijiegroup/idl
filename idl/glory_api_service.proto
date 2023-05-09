@@ -17,6 +17,8 @@ import "example/example.proto";
 import "admin/config.proto";
 import "wxpay/wxpay.proto";
 
+import "currency/virtual_currency.proto";
+
 service glory_api {
 
   // example
@@ -82,6 +84,9 @@ service glory_api {
   }
   rpc VerifyField(VerifyFieldRequest) returns (VerifyFieldResponse) {
     option (api.post) = '/api/shop/verify_field';
+  }
+  rpc ListShopAccess(ListShopAccessRequest) returns (ListShopAccessResponse) {
+    option (api.post) = '/api/shop/list_shop_access';
   }
 
   // product category
