@@ -140,6 +140,9 @@ export interface ShopAccess {
   user_id?: string;
   /** admin or reseller */
   access_type?: string;
+  phone?: string;
+  name?: string;
+  binding_method?: string;
 }
 
 export interface ListShopAccessRequest {
