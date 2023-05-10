@@ -135,6 +135,9 @@ message ShopAccess {
   int64 shop_id = 2;
   int64 user_id =3;
   string access_type =4; // admin or reseller
+  string phone = 5;
+  string name =6;
+  string binding_method = 7;
 }
 
 message ListShopAccessRequest {
