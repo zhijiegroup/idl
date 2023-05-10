@@ -1,7 +1,13 @@
 /* eslint-disable */
 // @ts-nocheck
+import { USER_LOGIN_TOKEN } from '@/lib/constant';
 
-export const headers = { "Content-Type": "application/json" };
+const _headers = {
+  "Content-Type": "application/json",
+};
+_headers[USER_LOGIN_TOKEN] = localStorage.getItem(USER_LOGIN_TOKEN)  || '';
+export const headers = _headers
+
 export const method = "GET";
 export const credentials = "same-origin";
 
