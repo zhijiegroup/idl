@@ -12,6 +12,7 @@ export interface User {
   token?: string;
   token_expiry?: string;
   created_at?: string;
+  name?: string;
 }
 
 /** login */
