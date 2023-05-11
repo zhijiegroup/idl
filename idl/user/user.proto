@@ -10,6 +10,7 @@ message User {
   string token = 3;
   string token_expiry = 4;
   string created_at = 5;
+  string name =6;
 }
 
 // login
