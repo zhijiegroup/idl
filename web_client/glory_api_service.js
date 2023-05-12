@@ -44,7 +44,6 @@ import {
   queryStringify,
 } from "./_util";
 
-import { USER_LOGIN_TOKEN } from '@/lib/constant';
 
 export class glory_api {
   constructor(uriPrefix) {
@@ -108,9 +107,6 @@ export class glory_api {
   GetUser(request) {
     const query = queryStringify(request);
     const uri = `${this.uriPrefix}/api/user/get_user${query}`;
-    if(!headers[USER_LOGIN_TOKEN]){
-      headers[USER_LOGIN_TOKEN] = localStorage.getItem(USER_LOGIN_TOKEN)
-    }
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
 
