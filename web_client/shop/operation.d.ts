@@ -7,6 +7,7 @@ import * as base from "../base";
 export { api, base };
 
 export interface ListOperationMetricsRequest {
+  shop_id?: string;
   days?: number;
 }
 
