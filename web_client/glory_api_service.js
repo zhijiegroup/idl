@@ -12,6 +12,7 @@ import * as sku from "./shop/sku";
 import * as attribute from "./shop/attribute";
 import * as order from "./shop/order";
 import * as cart from "./shop/cart";
+import * as operation from "./shop/operation";
 import * as attachment from "./seller/attachment";
 import * as payment from "./payment/payment";
 import * as example from "./example/example";
@@ -28,6 +29,7 @@ export {
   attribute,
   order,
   cart,
+  operation,
   attachment,
   payment,
   example,
@@ -157,6 +159,14 @@ export class glory_api {
 
   DeleteShop(request) {
     const uri = `${this.uriPrefix}/api/shop/delete_shop`;
+    const body = JSON.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListOperationMetrics(request) {
+    const uri = `${this.uriPrefix}/api/shop/list_operation_metrics`;
     const body = JSON.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse

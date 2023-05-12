@@ -11,6 +11,7 @@ import * as sku from "./shop/sku";
 import * as attribute from "./shop/attribute";
 import * as order from "./shop/order";
 import * as cart from "./shop/cart";
+import * as operation from "./shop/operation";
 import * as attachment from "./seller/attachment";
 import * as payment from "./payment/payment";
 import * as example from "./example/example";
@@ -27,6 +28,7 @@ export {
   attribute,
   order,
   cart,
+  operation,
   attachment,
   payment,
   example,
@@ -85,6 +87,10 @@ export class glory_api {
   ListShop(request: shop.ListShopRequest): Promise<shop.ListShopResponse>;
 
   DeleteShop(request: shop.DeleteShopRequest): Promise<shop.DeleteShopResponse>;
+
+  ListOperationMetrics(
+    request: operation.ListOperationMetricsRequest
+  ): Promise<operation.ListOperationMetricsResponse>;
 
   AddShopAccess(
     request: shop.AddShopAccessRequest
