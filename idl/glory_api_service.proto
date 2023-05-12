@@ -11,6 +11,7 @@ import "shop/sku.proto";
 import "shop/attribute.proto";
 import "shop/order.proto";
 import "shop/cart.proto";
+import "shop/operation.proto";
 import "seller/attachment.proto";
 import "payment/payment.proto";
 import "example/example.proto";
@@ -74,6 +75,9 @@ service glory_api {
   }
   rpc DeleteShop(DeleteShopRequest) returns (DeleteShopResponse) {
     option (api.post) = '/api/shop/delete_shop';
+  }
+  rpc ListOperationMetrics(ListOperationMetricsRequest) returns (ListOperationMetricsResponse) {
+    option (api.post) = '/api/shop/list_operation_metrics';
   }
 
   rpc AddShopAccess(AddShopAccessRequest) returns (AddShopAccessResponse) {
