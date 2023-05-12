@@ -5,7 +5,8 @@ import "api.proto";
 import "base.proto";
 
 message ListOperationMetricsRequest {
-	int32 days = 1;
+	int64 shop_id=1;
+	int32 days = 2;
 }
 
 message DailyOperationMetrics {
