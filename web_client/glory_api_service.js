@@ -44,7 +44,6 @@ import {
   queryStringify,
 } from "./_util";
 
-
 export class glory_api {
   constructor(uriPrefix) {
     this.uriPrefix = typeof uriPrefix !== "undefined" ? uriPrefix : "";
