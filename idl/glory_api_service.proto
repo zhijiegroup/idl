@@ -20,6 +20,8 @@ import "wxpay/wxpay.proto";
 
 import "currency/virtual_currency.proto";
 
+import "google/protobuf/empty.proto";
+
 service glory_api {
 
   // example
@@ -78,6 +80,9 @@ service glory_api {
   }
   rpc ListOperationMetrics(ListOperationMetricsRequest) returns (ListOperationMetricsResponse) {
     option (api.post) = '/api/shop/list_operation_metrics';
+  }
+  rpc GetShopQrcode(GetShopQrcodeRequest) returns (google.protobuf.Empty) {
+    option (api.get) = '/api/shop/get_shop_qrcode';
   }
 
   rpc AddShopAccess(AddShopAccessRequest) returns (AddShopAccessResponse) {
