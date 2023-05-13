@@ -12,12 +12,14 @@ message ListOperationMetricsRequest {
 message DailyOperationMetrics {
 	double daily_order_amount = 1;
 	uint32 daily_order_count =2;
-	string metrics_date = 3;
+	uint32 daily_distinct_user_count = 3;
+	string metrics_date = 4;
 }
 
 message ListOperationMetricsResponse {
 	base.BaseResponse base_resp = 1;
 	double order_amount = 2;
 	uint32 order_count = 3;
-	repeated DailyOperationMetrics daily_metrics = 4;
+	uint32 distinct_user_count = 4;
+	repeated DailyOperationMetrics daily_metrics = 5;
 }
