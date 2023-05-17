@@ -3,6 +3,7 @@ package glory_api;
 
 import "api.proto";
 import "base.proto";
+import "shop/category.proto";
 
 
 message Shop {
@@ -158,6 +159,46 @@ message GetShopQrcodeRequest {
 //message GetShopQrcodeResponse {
 //  bytes qrcode = 2;
 //}
+
+
+message AddShopCategoryRequest {
+  base.BaseRequest base_request = 1;
+  int64 shop_id =2; // shop id
+  repeated int64 category_id =3; // category id
+}
+
+message AddShopCategoryResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+
+message RemoveShopCategoryRequest {
+  base.BaseRequest base_request = 1;
+  int64 shop_id =2;
+  repeated int64 shop_category_id =3; // category id
+}
+
+message RemoveShopCategoryResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+message GetShopCategoryRequest {
+  base.BaseRequest base_request = 1;
+  int64 shop_id =2; // shop id
+}
+
+message ShopCategory {
+  int64 shop_category_id =1;
+  repeated Category category =3;
+}
+
+message GetShopCategoryResponse {
+  base.BaseResponse base_resp = 1;
+  int64 shop_id = 2;
+  repeated ShopCategory shop_category =3;
+
+}
+
 
 
 

@@ -98,6 +98,16 @@ service glory_api {
     option (api.post) = '/api/shop/list_shop_access';
   }
 
+  rpc AddShopCategory(AddShopCategoryRequest) returns (AddShopCategoryResponse) {
+    option (api.post) = '/api/shop/add_shop_category';
+  }
+  rpc GetShopCategory(GetShopCategoryRequest) returns (GetShopCategoryResponse) {
+    option (api.get) = '/api/shop/get_shop_category';
+  }
+  rpc RemoveShopCategory(RemoveShopCategoryRequest) returns (RemoveShopCategoryResponse) {
+    option (api.post) = '/api/shop/remove_shop_category';
+  }
+
   // product category
   rpc CreateCategory(CreateCategoryRequest) returns (CreateCategoryResponse) {
     option (api.post) = '/api/shop/create_category';
