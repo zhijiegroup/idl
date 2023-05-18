@@ -142,6 +142,10 @@ service glory_api {
     option (api.post) = '/api/shop/delete_product';
   }
 
+  rpc UploadMultiImage(UploadMultiImageRequest) returns (UploadMultiImageResponse) {
+    option (api.post) = '/api/shop/upload_multi_image';
+  }
+
   // sku sku
   rpc CreateSku(CreateSkuRequest) returns (CreateSkuResponse) {
     option (api.post) = '/api/shop/create_sku';

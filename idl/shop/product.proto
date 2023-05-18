@@ -13,6 +13,17 @@ message Product {
   int64 category_id = 4;
   repeated Sku sku = 5;
   repeated Attribute attribute = 6;
+  State state = 7;
+}
+
+enum State {
+  created = 0;//创建
+  on_shelf = 1;//上架
+  off_shelf = 2;//下架
+  out_of_stock =3;//缺货
+  deleted =4;//删除 到 回收站
+  deleted_forever = 5;//永久删除
+  sold_out = 6;//售罄
 }
 
 message ProductWithAuthor {
@@ -96,4 +107,13 @@ message DeleteProductResponse {
   base.BaseResponse base_resp = 1;
 }
 
+message UploadMultiImageRequest {
+  base.BaseRequest base_request = 1;
+  int64 product_id = 2;
+  int64 product_image_type = 3;
+}
 
+message UploadMultiImageResponse {
+  base.BaseResponse base_resp = 1;
+  repeated string product_url = 2;
+}
