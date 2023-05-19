@@ -17,6 +17,9 @@ import "payment/payment.proto";
 import "example/example.proto";
 import "admin/config.proto";
 import "wxpay/wxpay.proto";
+import "live/live_room.proto";
+import "live/live_token.proto";
+import "live/live_user.proto";
 
 import "currency/virtual_currency.proto";
 
@@ -288,4 +291,35 @@ service glory_api {
   rpc ListVCurrency(ListVirtualCurrencyRequest) returns (ListVirtualCurrencyResponse) {
     option (api.get) = '/api/currency/list';
   }
+
+  // live
+  rpc CreateRoom(CreateRoomRequest) returns (CreateRoomResponse) {
+    option (api.post) = '/api/live/create_room';
+  }
+  rpc GetRoom(GetRoomRequest) returns (GetRoomResponse) {
+    option (api.get) = '/api/live/get_room';
+  }
+  rpc UpdateRoom(UpdateRoomRequest) returns (UpdateRoomResponse) {
+    option (api.post) = '/api/live/update_room';
+  }
+  rpc ListRoom(ListRoomRequest) returns (ListRoomResponse) {
+    option (api.post) = '/api/live/list_room';
+  }
+  rpc DeleteRoom(DeleteRoomRequest) returns (DeleteRoomResponse) {
+    option (api.post) = '/api/live/delete_room';
+  }
+
+  rpc CreateLiveUserToken(CreateLiveUserTokenRequest) returns (CreateLiveUserTokenResponse) {
+    option (api.post) = '/api/live/create_live_user_token';
+  }
+
+  rpc UserEnterRoom(UserEnterRoomRequest) returns (UserEnterRoomResponse) {
+    option (api.post) = '/api/live/user_enter_room';
+  }
+  rpc UserExitRoom(UserExitRoomRequest) returns (UserExitRoomResponse) {
+    option (api.post) = '/api/live/user_exit_room';
+  }
+
+
+
 }
