@@ -22,7 +22,9 @@ message CreateLiveUserTokenRequest {
 }
 message CreateLiveUserTokenResponse {
   base.BaseResponse base_resp = 1;
-  LiveUserToken room = 2;
+  int64 user_token_id = 2;
+  string token = 3;
+  string expiry_time = 4;
 }
 
 

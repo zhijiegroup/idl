@@ -15,8 +15,8 @@ message Room {
   string up_url =6;
   string play_url =7;
   string start_time =8;
-  int32 like_count =9;
-  string status =10;
+  int64 like_count =9;
+  string end_time =10;
 }
 
 message CreateRoomRequest {
@@ -25,7 +25,8 @@ message CreateRoomRequest {
 }
 message CreateRoomResponse {
   base.BaseResponse base_resp = 1;
-  Room room = 2;
+  int64 room_id = 2;
+  string up_url = 3;
 }
 
 message GetRoomRequest {

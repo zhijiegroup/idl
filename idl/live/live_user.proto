@@ -16,11 +16,12 @@ message RoomUser {
 
 message UserEnterRoomRequest {
   base.BaseRequest base_request = 1;
-  string group_id = 2;
+  int64 room_id = 2;
+  string device_id =3;
 }
 message UserEnterRoomResponse {
   base.BaseResponse base_resp = 1;
-  RoomUser roomUser = 2;
+  int64 room_user_id = 2;
 }
 
 
