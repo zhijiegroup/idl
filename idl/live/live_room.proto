@@ -17,6 +17,7 @@ message Room {
   string start_time =8;
   int64 like_count =9;
   string end_time =10;
+  string status = 11; // if end_time not null, means closed, if null, means still active
 }
 
 message CreateRoomRequest {
@@ -40,7 +41,8 @@ message GetRoomResponse {
 
 message UpdateRoomRequest {
   base.BaseRequest base_request = 1;
-  Room room = 2;
+  bool close_room = 2;
+  Room room = 3;
 }
 message UpdateRoomResponse {
   base.BaseResponse base_resp = 1;
@@ -52,6 +54,7 @@ message ListRoomRequest {
   int64 room_id = 2;
   int64 user_id = 4;
   string app_name = 5;
+  bool include_closed_room = 6;
   base.PaginationRequest pagination = 100;
 }
 message ListRoomResponse {

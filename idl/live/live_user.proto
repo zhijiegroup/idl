@@ -9,7 +9,7 @@ import "base.proto";
 message RoomUser {
   int64 room_user_id = 1;
   int64 user_id =2;
-  string room_id =3;
+  int64 room_id =3;
   string enter_time =4;
   string exit_time =5;
 }
@@ -27,7 +27,7 @@ message UserEnterRoomResponse {
 
 message UserExitRoomRequest {
   base.BaseRequest base_request = 1;
-  repeated int64 room_user_id =2;
+  int64 room_user_id =2;
 }
 message UserExitRoomResponse {
   base.BaseResponse base_resp = 1;
@@ -36,13 +36,13 @@ message UserExitRoomResponse {
 
 message ListActiveRoomUserRequest {
   base.BaseRequest base_request = 1;
-  int64 roomUser_id = 2;
+  int64 room_user_id = 2;
   int64 room_id = 4;
   base.PaginationRequest pagination = 100;
 }
 message ListActiveRoomUserResponse {
   base.BaseResponse base_resp = 1;
-  repeated RoomUser roomUser = 2;
+  repeated RoomUser room_user = 2;
   base.PaginationResponse pagination = 100;
 }
 

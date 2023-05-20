@@ -319,6 +319,9 @@ service glory_api {
   rpc UserExitRoom(UserExitRoomRequest) returns (UserExitRoomResponse) {
     option (api.post) = '/api/live/user_exit_room';
   }
+  rpc ListActiveRoomUser(ListActiveRoomUserRequest) returns (ListAttachmentResponse) {
+    option (api.post) = '/api/live/list_active_room_user';
+  }
 
 
 
