@@ -149,6 +149,18 @@ service glory_api {
     option (api.post) = '/api/shop/upload_multi_image';
   }
 
+  rpc BindAttribute(BindAttributeRequest) returns (BindAttributeResponse) {
+    option (api.post) = '/api/shop/bind_product_attribute';
+  }
+
+  rpc ChangeProductState(UpdateProductRequest) returns (UpdateProductResponse) {
+    option (api.post) = '/api/shop/change_product_state';
+  }
+
+  rpc PublishProduct(UpdateProductRequest) returns (UpdateProductResponse) {
+    option (api.post) = '/api/shop/publish_product';
+  }
+
   // sku sku
   rpc CreateSku(CreateSkuRequest) returns (CreateSkuResponse) {
     option (api.post) = '/api/shop/create_sku';
