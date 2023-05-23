@@ -20,8 +20,8 @@ enum State {
   created = 0;//创建
   on_shelf = 1;//上架
   off_shelf = 2;//下架
-  out_of_stock =3;//缺货
-  deleted =4;//删除 到 回收站
+  out_of_stock = 3;//缺货
+  deleted = 4;//删除 到 回收站
   deleted_forever = 5;//永久删除
   sold_out = 6;//售罄
 }
@@ -63,7 +63,18 @@ message CreateProductRequest {
 message CreateProductResponse {
   base.BaseResponse base_resp = 1;
   int64 product_id = 2;
-//  ProductWithAuthor product_detail =2;
+  //  ProductWithAuthor product_detail =2;
+}
+
+message BindAttributeRequest {
+  base.BaseRequest base_request = 1;
+  int64 product_id = 2;
+  string product_name = 3;
+  repeated ProductAttribute product_attribute = 4;
+}
+
+message BindAttributeResponse {
+  base.BaseResponse base_resp = 1;
 }
 
 message GetProductRequest {
@@ -84,6 +95,18 @@ message UpdateProductResponse {
   base.BaseResponse base_resp = 1;
   int64 product_id=2;
 }
+
+message PublishProductRequest {
+  base.BaseRequest base_request = 1;
+  int64 product_id = 2;
+  repeated SkuWithAuthor sku_detail= 3;
+  State state = 4;
+}
+message PublishProductResponse {
+  base.BaseResponse base_resp = 1;
+  int64 product_id=2;
+}
+
 
 
 message ListProductRequest {
