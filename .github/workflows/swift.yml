@@ -48,8 +48,10 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
+          repository: zhijiegroup/idl
           github_token: ${{ secrets.CI_GITHUB_USER_TOKE }}
           force: true
+          branch: main
 
       - name: trigger the web client generation based on the changed files
         run: |
