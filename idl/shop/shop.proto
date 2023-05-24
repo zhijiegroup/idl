@@ -157,9 +157,9 @@ message ListShopAccessResponse {
 message GetShopQrcodeRequest {
   int64 shop_id =1;
 }
-//message GetShopQrcodeResponse {
+message GetShopQrcodeResponse {
 //  bytes qrcode = 2;
-//}
+}
 
 
 message AddShopCategoryRequest {

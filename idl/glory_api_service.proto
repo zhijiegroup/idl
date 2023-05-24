@@ -23,7 +23,6 @@ import "live/live_user.proto";
 
 import "currency/virtual_currency.proto";
 
-import "google/protobuf/empty.proto";
 
 service glory_api {
 
@@ -84,7 +83,7 @@ service glory_api {
   rpc ListOperationMetrics(ListOperationMetricsRequest) returns (ListOperationMetricsResponse) {
     option (api.post) = '/api/shop/list_operation_metrics';
   }
-  rpc GetShopQrcode(GetShopQrcodeRequest) returns (google.protobuf.Empty) {
+  rpc GetShopQrcode(GetShopQrcodeRequest) returns (GetShopQrcodeResponse) {
     option (api.get) = '/api/shop/get_shop_qrcode';
   }
 
