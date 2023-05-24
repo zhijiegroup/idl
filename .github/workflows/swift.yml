@@ -5,13 +5,19 @@ name: Swift
 
 on:
   push:
-    branches: [ "main", "fan/ios" ]
+    branches: [ "main"]
   pull_request:
-    branches: [ "main", "fan/ios" ]
+    branches: [ "main"]
+
+
+env:
+  JENKINS_USER_TOKEN: ${{ secrets.JENKINS_USER_TOKEN }}
+  JENKINS_DEPLOYMENT_TOKEN: ${{ secrets.JENKINS_DEPLOYMENT_TOKEN }}
+
 
 jobs:
   build:
-
+    if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: macos-latest
 
     steps:
@@ -58,8 +64,4 @@ jobs:
           
           
           
-          
-  
-
-#      - name: Run tests
-#        run: swift test -v
+    
