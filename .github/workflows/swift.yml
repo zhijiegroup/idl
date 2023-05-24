@@ -41,6 +41,7 @@ jobs:
           set -e
           git config --local user.email "fan20230101-ci@gmail.com"
           git config --local user.name "fan20230101-ci"
+          git add .
           git commit -a -m "generate the code"
           
 
