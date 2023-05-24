@@ -23,35 +23,29 @@ jobs:
           ls -l
           
 
-      - name: Check out my other private repo
-        uses: actions/checkout@main
-        with:
-          repository: zhijiegroup/idl_ios_client
-          token: ${{ secrets.CI_GITHUB_USER_TOKE }}
-
       - name: generate the code
         run: |    
-          mkdir -p idl_ios_client/swift_client ||true
+          mkdir -p swift_client ||true
           ls -l
           for f in $(find ./idl -name *.proto)
           do
-            protoc -I idl --swift_out=./idl_ios_client/swift_client $f -I idl/
+            protoc -I idl --swift_out=./swift_client $f -I idl/
           done
-          ls -l idl_ios_client/swift_client
+          ls -l swift_client
 
       - name: Commit files
-        working-directory: idl_ios_client
         run: |
+          set -e
           git config --local user.email "fan20230101-ci@gmail.com"
           git config --local user.name "fan20230101-ci"
           git commit -a -m "generate the code"
+          
 
       - name: Push changes
-        uses: actions/checkout@main
+        uses: ad-m/github-push-action@main
         with:
-          working-directory: ./idl_ios_client
-          repository: zhijiegroup/idl_ios_client
           token: ${{ secrets.CI_GITHUB_USER_TOKE }}
+          force: true
           
           
           
