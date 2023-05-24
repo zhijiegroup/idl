@@ -17,7 +17,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Build
-        run: protoc --swift_out=. idl/idl/api.proto && ls
+        run: |
+          brew install protobuf
+          brew install swift-protobuf
+          protoc --swift_out=. idl/idl/api.proto && ls
 
 #      - name: Run tests
 #        run: swift test -v
