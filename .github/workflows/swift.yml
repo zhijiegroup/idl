@@ -34,24 +34,12 @@ jobs:
           do
             protoc -I idl --swift_out=./swift_client $f -I idl/
           done
-          ls -l swift_client
+          tar -czvf swift_client.tar.gz
 
-      - name: Commit files
-        run: |
-          set -e
-          git config --local user.email "fan20230101-ci@gmail.com"
-          git config --local user.name "fan20230101-ci"
-          git add .
-          git commit -a -m "generate the code"
-          
-
-      - name: Push changes
-        uses: ad-m/github-push-action@master
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.1.2
         with:
-          repository: zhijiegroup/idl
-          github_token: ${{ secrets.CI_GITHUB_USER_TOKE }}
-          force: true
-          branch: main
+            path: ./swift_client.tar.gz
 
       - name: trigger the web client generation based on the changed files
         run: |
@@ -65,7 +53,7 @@ jobs:
             echo "$file was changed"
           done
           if [ $idlChange == "yes" ];then
-            curl -XPOST "http://47.104.198.79:8080/job/idl_web_client_code_gen/build?token=${{ secrets.JENKINS_DEPLOYMENT_TOKEN }}" --user fan:${{ secrets.JENKINS_USER_TOKEN }}
+            curl -XPOST "http://47.104.198.79:8080/job/idl_web_client_code_gen/buildWithParameters?token=${{ secrets.JENKINS_DEPLOYMENT_TOKEN }}&runID=${{ github.run_id }}" --user fan:${{ secrets.JENKINS_USER_TOKEN }}
           fi  
           
           
