@@ -20,7 +20,12 @@ jobs:
         run: |
           brew install protobuf
           brew install swift-protobuf
-          protoc --swift_out=. idl/idl/api.proto && ls
+          mkdir swift_client ||true
+          for f in $(find ./idl -name *.proto)
+          do
+            protoc -I idl --swift_out=./swift_client $f -I idl/
+          done
+  
 
 #      - name: Run tests
 #        run: swift test -v
