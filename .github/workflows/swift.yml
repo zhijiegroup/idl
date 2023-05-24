@@ -16,15 +16,43 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Build
+      - name: install the package
         run: |
           brew install protobuf
           brew install swift-protobuf
-          mkdir swift_client ||true
+          
+
+      - name: Check out my other private repo
+        uses: actions/checkout@main
+        with:
+          repository: zhijiegroup/idl_ios_client
+          token: ${{ secrets.CI_GITHUB_USER_TOKE }}
+
+      - name: generate the code
+        run: |    
+          mkdir idl_ios_client/swift_client ||true
           for f in $(find ./idl -name *.proto)
           do
-            protoc -I idl --swift_out=./swift_client $f -I idl/
+            protoc -I idl --swift_out=./idl_ios_client/swift_client $f -I idl/
           done
+
+      - name: Commit files
+        working-directory: ./idl_ios_client
+        run: |
+          git config --local user.email "fan20230101-ci@gmail.com"
+          git config --local user.name "fan20230101-ci"
+          git commit -a -m "generate the code"
+
+      - name: Push changes
+        uses: actions/checkout@main
+        with:
+          working-directory: ./idl_ios_client
+          repository: zhijiegroup/idl_ios_client
+          token: ${{ secrets.CI_GITHUB_USER_TOKE }}
+          
+          
+          
+          
   
 
 #      - name: Run tests
