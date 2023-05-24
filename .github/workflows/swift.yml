@@ -34,7 +34,7 @@ jobs:
           do
             protoc -I idl --swift_out=./swift_client $f -I idl/
           done
-          tar -czvf swift_client.tar.gz
+          tar -czvf swift_client.tar.gz swift_client
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.2
