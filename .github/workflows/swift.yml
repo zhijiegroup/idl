@@ -30,14 +30,15 @@ jobs:
 
       - name: generate the code
         run: |    
-          mkdir idl_ios_client/swift_client ||true
+          mkdir -p idl_ios_client/swift_client ||true
           for f in $(find ./idl -name *.proto)
           do
             protoc -I idl --swift_out=./idl_ios_client/swift_client $f -I idl/
           done
+          ls -l idl_ios_client/swift_client
 
       - name: Commit files
-        working-directory: ./idl_ios_client
+        working-directory: idl_ios_client
         run: |
           git config --local user.email "fan20230101-ci@gmail.com"
           git config --local user.name "fan20230101-ci"
