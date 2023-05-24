@@ -4,7 +4,8 @@
 
 import * as api from "../api";
 import * as base from "../base";
-export { api, base };
+import * as category from "./category";
+export { api, base, category };
 
 export interface Shop {
   shop_id?: string;
@@ -108,7 +109,7 @@ export interface AddShopAccessRequest {
   shop_id?: string;
   /** 支持 admin, reseller */
   access_type?: string;
-  user_id?: string;
+  phone?: string;
 }
 
 export interface AddShopAccessResponse {
@@ -143,6 +144,7 @@ export interface ShopAccess {
   phone?: string;
   name?: string;
   binding_method?: string;
+  created_at?: string;
 }
 
 export interface ListShopAccessRequest {
@@ -155,4 +157,50 @@ export interface ListShopAccessRequest {
 export interface ListShopAccessResponse {
   base_resp?: base.BaseResponse;
   shop_access?: Array<ShopAccess>;
+}
+
+export interface GetShopQrcodeRequest {
+  shop_id?: string;
+}
+
+export interface GetShopQrcodeResponse {}
+
+export interface AddShopCategoryRequest {
+  base_request?: base.BaseRequest;
+  /** shop id */
+  shop_id?: string;
+  /** category id */
+  category_id?: Array<string>;
+}
+
+export interface AddShopCategoryResponse {
+  base_resp?: base.BaseResponse;
+}
+
+export interface RemoveShopCategoryRequest {
+  base_request?: base.BaseRequest;
+  shop_id?: string;
+  /** category id */
+  shop_category_id?: Array<string>;
+}
+
+export interface RemoveShopCategoryResponse {
+  base_resp?: base.BaseResponse;
+}
+
+export interface GetShopCategoryRequest {
+  base_request?: base.BaseRequest;
+  /** shop id */
+  shop_id?: string;
+}
+
+export interface ShopCategory {
+  shop_category_id?: string;
+  category?: Array<category.Category>;
+}
+
+export interface GetShopCategoryResponse {
+  base_resp?: base.BaseResponse;
+  shop_id?: string;
+  shop_category?: Array<ShopCategory>;
 }

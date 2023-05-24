@@ -17,6 +17,9 @@ import * as payment from "./payment/payment";
 import * as example from "./example/example";
 import * as config from "./admin/config";
 import * as wxpay from "./wxpay/wxpay";
+import * as live_room from "./live/live_room";
+import * as live_token from "./live/live_token";
+import * as live_user from "./live/live_user";
 import * as virtual_currency from "./currency/virtual_currency";
 export {
   user,
@@ -34,6 +37,9 @@ export {
   example,
   config,
   wxpay,
+  live_room,
+  live_token,
+  live_user,
   virtual_currency,
 };
 
@@ -92,6 +98,10 @@ export class glory_api {
     request: operation.ListOperationMetricsRequest
   ): Promise<operation.ListOperationMetricsResponse>;
 
+  GetShopQrcode(
+    request: shop.GetShopQrcodeRequest
+  ): Promise<shop.GetShopQrcodeResponse>;
+
   AddShopAccess(
     request: shop.AddShopAccessRequest
   ): Promise<shop.AddShopAccessResponse>;
@@ -107,6 +117,18 @@ export class glory_api {
   ListShopAccess(
     request: shop.ListShopAccessRequest
   ): Promise<shop.ListShopAccessResponse>;
+
+  AddShopCategory(
+    request: shop.AddShopCategoryRequest
+  ): Promise<shop.AddShopCategoryResponse>;
+
+  GetShopCategory(
+    request: shop.GetShopCategoryRequest
+  ): Promise<shop.GetShopCategoryResponse>;
+
+  RemoveShopCategory(
+    request: shop.RemoveShopCategoryRequest
+  ): Promise<shop.RemoveShopCategoryResponse>;
 
   /** product category */
   CreateCategory(
@@ -149,6 +171,18 @@ export class glory_api {
   DeleteProduct(
     request: product.DeleteProductRequest
   ): Promise<product.DeleteProductResponse>;
+
+  UploadMultiImage(
+    request: product.UploadMultiImageRequest
+  ): Promise<product.UploadMultiImageResponse>;
+
+  BindAttribute(
+    request: product.BindAttributeRequest
+  ): Promise<product.BindAttributeResponse>;
+
+  PublishProduct(
+    request: product.UpdateProductRequest
+  ): Promise<product.UpdateProductResponse>;
 
   /** sku sku */
   CreateSku(request: sku.CreateSkuRequest): Promise<sku.CreateSkuResponse>;
@@ -293,6 +327,43 @@ export class glory_api {
   ListVCurrency(
     request: virtual_currency.ListVirtualCurrencyRequest
   ): Promise<virtual_currency.ListVirtualCurrencyResponse>;
+
+  /** live */
+  CreateRoom(
+    request: live_room.CreateRoomRequest
+  ): Promise<live_room.CreateRoomResponse>;
+
+  GetRoom(
+    request: live_room.GetRoomRequest
+  ): Promise<live_room.GetRoomResponse>;
+
+  UpdateRoom(
+    request: live_room.UpdateRoomRequest
+  ): Promise<live_room.UpdateRoomResponse>;
+
+  ListRoom(
+    request: live_room.ListRoomRequest
+  ): Promise<live_room.ListRoomResponse>;
+
+  DeleteRoom(
+    request: live_room.DeleteRoomRequest
+  ): Promise<live_room.DeleteRoomResponse>;
+
+  CreateLiveUserToken(
+    request: live_token.CreateLiveUserTokenRequest
+  ): Promise<live_token.CreateLiveUserTokenResponse>;
+
+  UserEnterRoom(
+    request: live_user.UserEnterRoomRequest
+  ): Promise<live_user.UserEnterRoomResponse>;
+
+  UserExitRoom(
+    request: live_user.UserExitRoomRequest
+  ): Promise<live_user.UserExitRoomResponse>;
+
+  ListActiveRoomUser(
+    request: live_user.ListActiveRoomUserRequest
+  ): Promise<attachment.ListAttachmentResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

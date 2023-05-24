@@ -8,6 +8,16 @@ import * as sku from "./sku";
 import * as attribute from "./attribute";
 export { api, base, sku, attribute };
 
+export enum State {
+  created = 0,
+  on_shelf = 1,
+  off_shelf = 2,
+  out_of_stock = 3,
+  deleted = 4,
+  deleted_forever = 5,
+  sold_out = 6,
+}
+
 export interface Product {
   product_id?: string;
   shop_id?: string;
@@ -15,6 +25,7 @@ export interface Product {
   category_id?: string;
   sku?: Array<sku.Sku>;
   attribute?: Array<attribute.Attribute>;
+  state?: State;
 }
 
 export interface ProductWithAuthor {
@@ -57,6 +68,17 @@ export interface CreateProductResponse {
   product_id?: string;
 }
 
+export interface BindAttributeRequest {
+  base_request?: base.BaseRequest;
+  product_id?: string;
+  product_name?: string;
+  product_attribute?: Array<ProductAttribute>;
+}
+
+export interface BindAttributeResponse {
+  base_resp?: base.BaseResponse;
+}
+
 export interface GetProductRequest {
   base_request?: base.BaseRequest;
   product_id?: string;
@@ -73,6 +95,18 @@ export interface UpdateProductRequest {
 }
 
 export interface UpdateProductResponse {
+  base_resp?: base.BaseResponse;
+  product_id?: string;
+}
+
+export interface PublishProductRequest {
+  base_request?: base.BaseRequest;
+  product_id?: string;
+  sku_detail?: Array<sku.SkuWithAuthor>;
+  state?: State;
+}
+
+export interface PublishProductResponse {
   base_resp?: base.BaseResponse;
   product_id?: string;
 }
@@ -98,4 +132,15 @@ export interface DeleteProductRequest {
 
 export interface DeleteProductResponse {
   base_resp?: base.BaseResponse;
+}
+
+export interface UploadMultiImageRequest {
+  base_request?: base.BaseRequest;
+  product_id?: string;
+  product_image_type?: string;
+}
+
+export interface UploadMultiImageResponse {
+  base_resp?: base.BaseResponse;
+  product_url?: Array<string>;
 }

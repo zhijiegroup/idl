@@ -18,6 +18,9 @@ import * as payment from "./payment/payment";
 import * as example from "./example/example";
 import * as config from "./admin/config";
 import * as wxpay from "./wxpay/wxpay";
+import * as live_room from "./live/live_room";
+import * as live_token from "./live/live_token";
+import * as live_user from "./live/live_user";
 import * as virtual_currency from "./currency/virtual_currency";
 export {
   user,
@@ -35,6 +38,9 @@ export {
   example,
   config,
   wxpay,
+  live_room,
+  live_token,
+  live_user,
   virtual_currency,
 };
 
@@ -173,6 +179,12 @@ export class glory_api {
     );
   }
 
+  GetShopQrcode(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/shop/get_shop_qrcode${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
   AddShopAccess(request) {
     const uri = `${this.uriPrefix}/api/shop/add_shop_access`;
     const body = JSON.stringify(request);
@@ -199,6 +211,28 @@ export class glory_api {
 
   ListShopAccess(request) {
     const uri = `${this.uriPrefix}/api/shop/list_shop_access`;
+    const body = JSON.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  AddShopCategory(request) {
+    const uri = `${this.uriPrefix}/api/shop/add_shop_category`;
+    const body = JSON.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  GetShopCategory(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/shop/get_shop_category${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  RemoveShopCategory(request) {
+    const uri = `${this.uriPrefix}/api/shop/remove_shop_category`;
     const body = JSON.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
@@ -275,6 +309,30 @@ export class glory_api {
 
   DeleteProduct(request) {
     const uri = `${this.uriPrefix}/api/shop/delete_product`;
+    const body = JSON.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  UploadMultiImage(request) {
+    const uri = `${this.uriPrefix}/api/shop/upload_multi_image`;
+    const body = JSON.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  BindAttribute(request) {
+    const uri = `${this.uriPrefix}/api/shop/bind_product_attribute`;
+    const body = JSON.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  PublishProduct(request) {
+    const uri = `${this.uriPrefix}/api/shop/publish_product`;
     const body = JSON.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
@@ -581,6 +639,76 @@ export class glory_api {
     const query = queryStringify(request);
     const uri = `${this.uriPrefix}/api/currency/list${query}`;
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  CreateRoom(request) {
+    const uri = `${this.uriPrefix}/api/live/create_room`;
+    const body = JSON.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  GetRoom(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/live/get_room${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  UpdateRoom(request) {
+    const uri = `${this.uriPrefix}/api/live/update_room`;
+    const body = JSON.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListRoom(request) {
+    const uri = `${this.uriPrefix}/api/live/list_room`;
+    const body = JSON.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteRoom(request) {
+    const uri = `${this.uriPrefix}/api/live/delete_room`;
+    const body = JSON.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreateLiveUserToken(request) {
+    const uri = `${this.uriPrefix}/api/live/create_live_user_token`;
+    const body = JSON.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  UserEnterRoom(request) {
+    const uri = `${this.uriPrefix}/api/live/user_enter_room`;
+    const body = JSON.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  UserExitRoom(request) {
+    const uri = `${this.uriPrefix}/api/live/user_exit_room`;
+    const body = JSON.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListActiveRoomUser(request) {
+    const uri = `${this.uriPrefix}/api/live/list_active_room_user`;
+    const body = JSON.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
   }
 }
 

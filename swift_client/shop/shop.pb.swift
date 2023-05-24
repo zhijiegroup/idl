@@ -716,6 +716,17 @@ struct GloryApi_GetShopQrcodeRequest {
   init() {}
 }
 
+///  bytes qrcode = 2;
+struct GloryApi_GetShopQrcodeResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
 struct GloryApi_AddShopCategoryRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -897,6 +908,7 @@ extension GloryApi_ShopAccess: @unchecked Sendable {}
 extension GloryApi_ListShopAccessRequest: @unchecked Sendable {}
 extension GloryApi_ListShopAccessResponse: @unchecked Sendable {}
 extension GloryApi_GetShopQrcodeRequest: @unchecked Sendable {}
+extension GloryApi_GetShopQrcodeResponse: @unchecked Sendable {}
 extension GloryApi_AddShopCategoryRequest: @unchecked Sendable {}
 extension GloryApi_AddShopCategoryResponse: @unchecked Sendable {}
 extension GloryApi_RemoveShopCategoryRequest: @unchecked Sendable {}
@@ -2151,6 +2163,25 @@ extension GloryApi_GetShopQrcodeRequest: SwiftProtobuf.Message, SwiftProtobuf._M
 
   static func ==(lhs: GloryApi_GetShopQrcodeRequest, rhs: GloryApi_GetShopQrcodeRequest) -> Bool {
     if lhs.shopID != rhs.shopID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetShopQrcodeResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetShopQrcodeResponse"
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let _ = try decoder.nextFieldNumber() {
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetShopQrcodeResponse, rhs: GloryApi_GetShopQrcodeResponse) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
