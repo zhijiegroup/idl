@@ -12,6 +12,7 @@ import * as attribute from "./shop/attribute";
 import * as order from "./shop/order";
 import * as cart from "./shop/cart";
 import * as operation from "./shop/operation";
+import * as freight_template from "./shop/freight_template";
 import * as attachment from "./seller/attachment";
 import * as payment from "./payment/payment";
 import * as example from "./example/example";
@@ -32,6 +33,7 @@ export {
   order,
   cart,
   operation,
+  freight_template,
   attachment,
   payment,
   example,
@@ -129,6 +131,26 @@ export class glory_api {
   RemoveShopCategory(
     request: shop.RemoveShopCategoryRequest
   ): Promise<shop.RemoveShopCategoryResponse>;
+
+  AddFreightTemplate(
+    request: freight_template.CreateTemplateRequest
+  ): Promise<freight_template.CreateTemplateResponse>;
+
+  GetFreightTemplate(
+    request: freight_template.GetTemplateRequest
+  ): Promise<freight_template.GetTemplateResponse>;
+
+  UpdateFreightTemplate(
+    request: freight_template.UpdateTemplateRequest
+  ): Promise<freight_template.UpdateTemplateResponse>;
+
+  DeleteFreightTemplate(
+    request: freight_template.DeleteTemplateRequest
+  ): Promise<freight_template.DeleteTemplateResponse>;
+
+  ListFreightTemplate(
+    request: freight_template.ListTemplateRequest
+  ): Promise<freight_template.ListTemplateResponse>;
 
   /** product category */
   CreateCategory(

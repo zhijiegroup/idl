@@ -464,9 +464,15 @@ struct GloryApi_PublishProductRequest {
 
   var productID: Int64 = 0
 
-  var skuDetail: [GloryApi_SkuWithAuthor] = []
+  var attribute: [GloryApi_Attribute] = []
+
+  var sku: [GloryApi_Sku] = []
 
   var state: GloryApi_State = .created
+
+  var shipmentAttribute: [GloryApi_Attribute] = []
+
+  var freightTemplateID: Int64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1340,8 +1346,11 @@ extension GloryApi_PublishProductRequest: SwiftProtobuf.Message, SwiftProtobuf._
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
     2: .standard(proto: "product_id"),
-    3: .standard(proto: "sku_detail"),
-    4: .same(proto: "state"),
+    3: .same(proto: "attribute"),
+    4: .same(proto: "sku"),
+    5: .same(proto: "state"),
+    6: .standard(proto: "shipment_attribute"),
+    7: .standard(proto: "freight_template_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1352,8 +1361,11 @@ extension GloryApi_PublishProductRequest: SwiftProtobuf.Message, SwiftProtobuf._
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.productID) }()
-      case 3: try { try decoder.decodeRepeatedMessageField(value: &self.skuDetail) }()
-      case 4: try { try decoder.decodeSingularEnumField(value: &self.state) }()
+      case 3: try { try decoder.decodeRepeatedMessageField(value: &self.attribute) }()
+      case 4: try { try decoder.decodeRepeatedMessageField(value: &self.sku) }()
+      case 5: try { try decoder.decodeSingularEnumField(value: &self.state) }()
+      case 6: try { try decoder.decodeRepeatedMessageField(value: &self.shipmentAttribute) }()
+      case 7: try { try decoder.decodeSingularInt64Field(value: &self.freightTemplateID) }()
       default: break
       }
     }
@@ -1370,11 +1382,20 @@ extension GloryApi_PublishProductRequest: SwiftProtobuf.Message, SwiftProtobuf._
     if self.productID != 0 {
       try visitor.visitSingularInt64Field(value: self.productID, fieldNumber: 2)
     }
-    if !self.skuDetail.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.skuDetail, fieldNumber: 3)
+    if !self.attribute.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.attribute, fieldNumber: 3)
+    }
+    if !self.sku.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.sku, fieldNumber: 4)
     }
     if self.state != .created {
-      try visitor.visitSingularEnumField(value: self.state, fieldNumber: 4)
+      try visitor.visitSingularEnumField(value: self.state, fieldNumber: 5)
+    }
+    if !self.shipmentAttribute.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.shipmentAttribute, fieldNumber: 6)
+    }
+    if self.freightTemplateID != 0 {
+      try visitor.visitSingularInt64Field(value: self.freightTemplateID, fieldNumber: 7)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1382,8 +1403,11 @@ extension GloryApi_PublishProductRequest: SwiftProtobuf.Message, SwiftProtobuf._
   static func ==(lhs: GloryApi_PublishProductRequest, rhs: GloryApi_PublishProductRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.productID != rhs.productID {return false}
-    if lhs.skuDetail != rhs.skuDetail {return false}
+    if lhs.attribute != rhs.attribute {return false}
+    if lhs.sku != rhs.sku {return false}
     if lhs.state != rhs.state {return false}
+    if lhs.shipmentAttribute != rhs.shipmentAttribute {return false}
+    if lhs.freightTemplateID != rhs.freightTemplateID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -13,6 +13,7 @@ import * as attribute from "./shop/attribute";
 import * as order from "./shop/order";
 import * as cart from "./shop/cart";
 import * as operation from "./shop/operation";
+import * as freight_template from "./shop/freight_template";
 import * as attachment from "./seller/attachment";
 import * as payment from "./payment/payment";
 import * as example from "./example/example";
@@ -33,6 +34,7 @@ export {
   order,
   cart,
   operation,
+  freight_template,
   attachment,
   payment,
   example,
@@ -233,6 +235,44 @@ export class glory_api {
 
   RemoveShopCategory(request) {
     const uri = `${this.uriPrefix}/api/shop/remove_shop_category`;
+    const body = JSON.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  AddFreightTemplate(request) {
+    const uri = `${this.uriPrefix}/api/shop/add_template`;
+    const body = JSON.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  GetFreightTemplate(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/shop/get_template${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  UpdateFreightTemplate(request) {
+    const uri = `${this.uriPrefix}/api/shop/update_template`;
+    const body = JSON.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteFreightTemplate(request) {
+    const uri = `${this.uriPrefix}/api/shop/delete_template`;
+    const body = JSON.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListFreightTemplate(request) {
+    const uri = `${this.uriPrefix}/api/shop/list_template`;
     const body = JSON.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse

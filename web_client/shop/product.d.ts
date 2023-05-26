@@ -102,8 +102,11 @@ export interface UpdateProductResponse {
 export interface PublishProductRequest {
   base_request?: base.BaseRequest;
   product_id?: string;
-  sku_detail?: Array<sku.SkuWithAuthor>;
+  attribute?: Array<attribute.Attribute>;
+  sku?: Array<sku.Sku>;
   state?: State;
+  shipment_attribute?: Array<attribute.Attribute>;
+  freight_template_id?: string;
 }
 
 export interface PublishProductResponse {

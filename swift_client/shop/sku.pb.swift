@@ -39,6 +39,8 @@ struct GloryApi_Sku {
 
   var totalSold: Int32 = 0
 
+  var attribute: [GloryApi_Attribute] = []
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -474,6 +476,7 @@ extension GloryApi_Sku: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementat
     6: .same(proto: "currency"),
     7: .standard(proto: "remaining_quantity"),
     8: .standard(proto: "total_sold"),
+    9: .same(proto: "attribute"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -489,6 +492,7 @@ extension GloryApi_Sku: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementat
       case 6: try { try decoder.decodeSingularStringField(value: &self.currency) }()
       case 7: try { try decoder.decodeSingularInt32Field(value: &self.remainingQuantity) }()
       case 8: try { try decoder.decodeSingularInt32Field(value: &self.totalSold) }()
+      case 9: try { try decoder.decodeRepeatedMessageField(value: &self.attribute) }()
       default: break
       }
     }
@@ -516,6 +520,9 @@ extension GloryApi_Sku: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementat
     if self.totalSold != 0 {
       try visitor.visitSingularInt32Field(value: self.totalSold, fieldNumber: 8)
     }
+    if !self.attribute.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.attribute, fieldNumber: 9)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -527,6 +534,7 @@ extension GloryApi_Sku: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementat
     if lhs.currency != rhs.currency {return false}
     if lhs.remainingQuantity != rhs.remainingQuantity {return false}
     if lhs.totalSold != rhs.totalSold {return false}
+    if lhs.attribute != rhs.attribute {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
