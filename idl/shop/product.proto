@@ -99,9 +99,13 @@ message UpdateProductResponse {
 message PublishProductRequest {
   base.BaseRequest base_request = 1;
   int64 product_id = 2;
-  repeated SkuWithAuthor sku_detail= 3;
-  State state = 4;
+  repeated Attribute attribute= 3;
+  repeated Sku sku = 4;
+  State state = 5;
+  repeated Attribute shipment_attribute = 6;
+  int64 freight_template_id = 7;
 }
+
 message PublishProductResponse {
   base.BaseResponse base_resp = 1;
   int64 product_id=2;

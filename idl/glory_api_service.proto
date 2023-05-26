@@ -12,6 +12,7 @@ import "shop/attribute.proto";
 import "shop/order.proto";
 import "shop/cart.proto";
 import "shop/operation.proto";
+import "shop/freight_template.proto";
 import "seller/attachment.proto";
 import "payment/payment.proto";
 import "example/example.proto";
@@ -108,6 +109,26 @@ service glory_api {
   }
   rpc RemoveShopCategory(RemoveShopCategoryRequest) returns (RemoveShopCategoryResponse) {
     option (api.post) = '/api/shop/remove_shop_category';
+  }
+
+  rpc AddFreightTemplate(CreateTemplateRequest) returns (CreateTemplateResponse) {
+    option (api.post) = '/api/shop/add_template';
+  }
+
+  rpc GetFreightTemplate(GetTemplateRequest) returns (GetTemplateResponse) {
+    option (api.get) = '/api/shop/get_template';
+  }
+
+  rpc UpdateFreightTemplate(UpdateTemplateRequest) returns (UpdateTemplateResponse) {
+    option (api.post) = '/api/shop/update_template';
+  }
+
+  rpc DeleteFreightTemplate(DeleteTemplateRequest) returns (DeleteTemplateResponse) {
+    option (api.post) = '/api/shop/delete_template';
+  }
+
+  rpc ListFreightTemplate(ListTemplateRequest) returns (ListTemplateResponse) {
+    option (api.post) = '/api/shop/list_template';
   }
 
   // product category

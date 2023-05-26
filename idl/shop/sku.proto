@@ -13,6 +13,7 @@ message Sku {
   string currency = 6;
   int32 remaining_quantity = 7;
   int32 total_sold = 8;
+  repeated Attribute attribute = 9;
 }
 message SkuAttributeWithOneValue {
   int64 attribute_id = 1;

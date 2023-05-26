@@ -1,0 +1,67 @@
+syntax = "proto3";
+package glory_api;
+
+import "api.proto";
+import "base.proto";
+
+message Template{
+  int64 freight_template_id = 1;
+  int64 config_id = 2;
+  int64 shop_id = 3;
+  int32 freight_setting = 4;
+  string template_name = 5;
+}
+
+message TemplateWithAuthorInfo {
+  Template template = 1;
+  base.AuthorInfo author_info = 2;
+}
+
+message CreateTemplateRequest {
+  base.BaseRequest base_request = 1;
+  Template template = 2;
+}
+
+message CreateTemplateResponse {
+  base.BaseResponse base_resp = 1;
+  int64 freight_template_id = 2;
+}
+
+message GetTemplateRequest {
+  base.BaseRequest base_request = 1;
+  string template_name = 5;
+}
+
+message GetTemplateResponse {
+  base.BaseResponse base_resp = 1;
+  TemplateWithAuthorInfo template = 2;
+}
+
+message DeleteTemplateRequest {
+  base.BaseRequest base_request = 1;
+  int64 freight_template_id = 2;
+}
+
+message DeleteTemplateResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+message UpdateTemplateRequest {
+  base.BaseRequest base_request = 1;
+  Template template = 2;
+}
+
+message UpdateTemplateResponse {
+  base.BaseResponse base_resp = 1;
+  int64 freight_template_id = 2;
+}
+
+message ListTemplateRequest {
+  base.BaseRequest base_request = 1;
+  int64 freight_template_id = 2;
+}
+
+message ListTemplateResponse {
+  base.BaseResponse base_resp = 1;
+  repeated Template templates = 2;
+}
