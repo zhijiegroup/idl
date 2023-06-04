@@ -379,6 +379,22 @@ export class glory_api {
     );
   }
 
+  OffShelfProductInBatches(request) {
+    const uri = `${this.uriPrefix}/api/shop/off_shelf_products`;
+    const body = JSON.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteProductInBatches(request) {
+    const uri = `${this.uriPrefix}/api/shop/delete_products`;
+    const body = JSON.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   CreateSku(request) {
     const uri = `${this.uriPrefix}/api/shop/create_sku`;
     const body = JSON.stringify(request);

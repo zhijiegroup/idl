@@ -203,8 +203,16 @@ export class glory_api {
   ): Promise<product.BindAttributeResponse>;
 
   PublishProduct(
-    request: product.UpdateProductRequest
-  ): Promise<product.UpdateProductResponse>;
+    request: product.PublishProductRequest
+  ): Promise<product.PublishProductResponse>;
+
+  OffShelfProductInBatches(
+    request: product.OffSelfProductsRequest
+  ): Promise<product.OffSelfProductsResponse>;
+
+  DeleteProductInBatches(
+    request: product.DeleteProductsRequest
+  ): Promise<product.DeleteProductsResponse>;
 
   /** sku sku */
   CreateSku(request: sku.CreateSkuRequest): Promise<sku.CreateSkuResponse>;
