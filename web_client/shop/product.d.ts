@@ -114,6 +114,24 @@ export interface PublishProductResponse {
   product_id?: string;
 }
 
+export interface OffSelfProductsRequest {
+  base_request?: base.BaseRequest;
+  product_id?: Array<string>;
+}
+
+export interface OffSelfProductsResponse {
+  base_resp?: base.BaseResponse;
+}
+
+export interface DeleteProductsRequest {
+  base_request?: base.BaseRequest;
+  product_id?: Array<string>;
+}
+
+export interface DeleteProductsResponse {
+  base_resp?: base.BaseResponse;
+}
+
 export interface ListProductRequest {
   base_request?: base.BaseRequest;
   product_name?: string;
