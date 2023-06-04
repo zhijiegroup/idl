@@ -59,7 +59,7 @@ message UpdateTemplateResponse {
 
 message ListTemplateRequest {
   base.BaseRequest base_request = 1;
-  int64 freight_template_id = 2;
+  int64 shop_id = 2;
 }
 
 message ListTemplateResponse {
