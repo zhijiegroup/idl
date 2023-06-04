@@ -10,6 +10,7 @@ message Template{
   int64 shop_id = 3;
   int32 freight_setting = 4;
   string template_name = 5;
+  bool is_default = 6;
 }
 
 message TemplateWithAuthorInfo {

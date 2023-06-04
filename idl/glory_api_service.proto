@@ -173,9 +173,18 @@ service glory_api {
     option (api.post) = '/api/shop/bind_product_attribute';
   }
 
-  rpc PublishProduct(UpdateProductRequest) returns (UpdateProductResponse) {
+  rpc PublishProduct(PublishProductRequest) returns (PublishProductResponse) {
     option (api.post) = '/api/shop/publish_product';
   }
+
+  rpc OffShelfProductInBatches(OffSelfProductsRequest) returns (OffSelfProductsResponse) {
+    option (api.post) = '/api/shop/off_shelf_products';
+  }
+
+  rpc DeleteProductInBatches(DeleteProductsRequest) returns (DeleteProductsResponse) {
+    option (api.post) = '/api/shop/delete_products';
+  }
+
 
 
   // sku sku
