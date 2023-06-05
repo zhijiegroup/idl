@@ -267,6 +267,16 @@ export class glory_api {
     request: order.DeleteOrderRequest
   ): Promise<order.DeleteOrderResponse>;
 
+  ShipGoods(request: order.ShipGoodsRequest): Promise<order.ShipGoodsResponse>;
+
+  ShipGoodsInBatches(
+    request: order.ShipGoodsInBatchesRequest
+  ): Promise<order.ShipGoodsInBatchesResponse>;
+
+  FreeShippingInBatches(
+    request: order.FreeShippingInBatchesRequest
+  ): Promise<order.FreeShippingInBatchesResponse>;
+
   /** cart */
   CreateCart(request: cart.CreateCartRequest): Promise<cart.CreateCartResponse>;
 

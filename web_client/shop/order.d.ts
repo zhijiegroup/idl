@@ -84,3 +84,30 @@ export interface DeleteOrderRequest {
 export interface DeleteOrderResponse {
   base_resp?: base.BaseResponse;
 }
+
+export interface ShipGoodsRequest {
+  base_request?: base.BaseRequest;
+  order_id?: string;
+}
+
+export interface ShipGoodsResponse {
+  base_resp?: base.BaseResponse;
+}
+
+export interface ShipGoodsInBatchesRequest {
+  base_request?: base.BaseRequest;
+  order_id?: Array<string>;
+}
+
+export interface ShipGoodsInBatchesResponse {
+  base_resp?: base.BaseResponse;
+}
+
+export interface FreeShippingInBatchesRequest {
+  base_request?: base.BaseRequest;
+  order_id?: Array<string>;
+}
+
+export interface FreeShippingInBatchesResponse {
+  base_resp?: base.BaseResponse;
+}

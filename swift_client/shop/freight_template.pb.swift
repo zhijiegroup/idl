@@ -293,7 +293,7 @@ struct GloryApi_ListTemplateRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
-  var freightTemplateID: Int64 = 0
+  var shopID: Int64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -782,7 +782,7 @@ extension GloryApi_ListTemplateRequest: SwiftProtobuf.Message, SwiftProtobuf._Me
   static let protoMessageName: String = _protobuf_package + ".ListTemplateRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
-    2: .standard(proto: "freight_template_id"),
+    2: .standard(proto: "shop_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -792,7 +792,7 @@ extension GloryApi_ListTemplateRequest: SwiftProtobuf.Message, SwiftProtobuf._Me
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.freightTemplateID) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
       default: break
       }
     }
@@ -806,15 +806,15 @@ extension GloryApi_ListTemplateRequest: SwiftProtobuf.Message, SwiftProtobuf._Me
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    if self.freightTemplateID != 0 {
-      try visitor.visitSingularInt64Field(value: self.freightTemplateID, fieldNumber: 2)
+    if self.shopID != 0 {
+      try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 2)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_ListTemplateRequest, rhs: GloryApi_ListTemplateRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
-    if lhs.freightTemplateID != rhs.freightTemplateID {return false}
+    if lhs.shopID != rhs.shopID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

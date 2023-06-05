@@ -517,6 +517,30 @@ export class glory_api {
     );
   }
 
+  ShipGoods(request) {
+    const uri = `${this.uriPrefix}/api/shop/ship_goods`;
+    const body = JSON.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ShipGoodsInBatches(request) {
+    const uri = `${this.uriPrefix}/api/shop/ship_goods_batch`;
+    const body = JSON.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  FreeShippingInBatches(request) {
+    const uri = `${this.uriPrefix}/api/shop/free_ship_batch`;
+    const body = JSON.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   CreateCart(request) {
     const uri = `${this.uriPrefix}/api/shop/create_cart`;
     const body = JSON.stringify(request);

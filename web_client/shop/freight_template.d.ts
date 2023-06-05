@@ -61,7 +61,7 @@ export interface UpdateTemplateResponse {
 
 export interface ListTemplateRequest {
   base_request?: base.BaseRequest;
-  freight_template_id?: string;
+  shop_id?: string;
 }
 
 export interface ListTemplateResponse {
