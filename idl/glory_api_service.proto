@@ -241,6 +241,17 @@ service glory_api {
   rpc DeleteOrder(DeleteOrderRequest) returns (DeleteOrderResponse) {
     option (api.post) = '/api/shop/delete_order';
   }
+  rpc ShipGoods(ShipGoodsRequest) returns (ShipGoodsResponse) {
+    option (api.post) = '/api/shop/ship_goods';
+  }
+
+  rpc ShipGoodsInBatches(ShipGoodsInBatchesRequest) returns (ShipGoodsInBatchesResponse) {
+    option (api.post) = '/api/shop/ship_goods_batch';
+  }
+
+  rpc FreeShippingInBatches(FreeShippingInBatchesRequest) returns (FreeShippingInBatchesResponse) {
+    option (api.post) = '/api/shop/free_ship_batch';
+  }
 
   // cart
   rpc CreateCart(CreateCartRequest) returns (CreateCartResponse) {
