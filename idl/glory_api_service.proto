@@ -2,6 +2,7 @@ syntax = "proto3";
 package glory_api;
 
 import "user/user.proto";
+import "user/address.proto";
 import "api.proto";
 
 import "shop/shop.proto";
@@ -62,6 +63,27 @@ service glory_api {
   }
   rpc UpdatePassword(UpdatePasswordRequest) returns (UpdatePasswordResponse) {
     option (api.post) = '/api/user/update_password';
+  }
+
+  // address
+  rpc AddAddress(AddAddressRequest) returns (AddAddressResponse) {
+    option (api.post) = '/api/user/add_address';
+  }
+
+  rpc DeleteAddress(DeleteAddressRequest) returns (DeleteAddressResponse) {
+    option (api.post) = '/api/user/delete_address';
+  }
+
+  rpc UpdateAddress(UpdateAddressRequest) returns (UpdateAddressResponse) {
+    option (api.post) = '/api/user/update_address';
+  }
+
+  rpc GetAddress(GetAddressRequest) returns (GetAddressResponse) {
+    option (api.get) = '/api/user/get_address';
+  }
+
+  rpc ListAddress(ListAddressRequest) returns (ListAddressResponse) {
+    option (api.get) = '/api/user/list_address';
   }
 
 

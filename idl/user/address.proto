@@ -1,0 +1,64 @@
+syntax = "proto3";
+package glory_api;
+
+import "api.proto";
+import "base.proto";
+
+message Address {
+  int64 address_id = 1;
+  int64 user_id = 2;
+  string name = 3;
+  string phone = 4;
+  string region = 5;
+  string address_detail = 6;
+  bool is_default = 7;
+}
+
+
+message AddAddressRequest {
+  base.BaseRequest base_request=1;
+  Address address = 2;
+}
+
+message AddAddressResponse {
+  base.BaseResponse base_resp = 1;
+  int64 address_id = 2;
+}
+
+message DeleteAddressRequest {
+  base.BaseRequest base_request=1;
+  int64 address_id = 2;
+}
+
+message DeleteAddressResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+message UpdateAddressRequest {
+  base.BaseRequest base_request=1;
+  Address address = 2;
+}
+
+message UpdateAddressResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+message GetAddressRequest {
+  base.BaseRequest base_request=1;
+  int64 address_id = 2;
+}
+
+message GetAddressResponse {
+  base.BaseResponse base_resp = 1;
+  Address address = 2;
+}
+
+message ListAddressRequest {
+  base.BaseRequest base_request=1;
+  int64 user_id = 2;
+}
+
+message ListAddressResponse {
+  base.BaseResponse base_resp = 1;
+  repeated Address address = 2;
+}
