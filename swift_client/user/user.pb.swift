@@ -37,6 +37,8 @@ struct GloryApi_User {
 
   var name: String = String()
 
+  var avatarURL: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -327,6 +329,7 @@ extension GloryApi_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     4: .standard(proto: "token_expiry"),
     5: .standard(proto: "created_at"),
     6: .same(proto: "name"),
+    7: .standard(proto: "avatar_url"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -341,6 +344,7 @@ extension GloryApi_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       case 4: try { try decoder.decodeSingularStringField(value: &self.tokenExpiry) }()
       case 5: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
       case 6: try { try decoder.decodeSingularStringField(value: &self.name) }()
+      case 7: try { try decoder.decodeSingularStringField(value: &self.avatarURL) }()
       default: break
       }
     }
@@ -365,6 +369,9 @@ extension GloryApi_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     if !self.name.isEmpty {
       try visitor.visitSingularStringField(value: self.name, fieldNumber: 6)
     }
+    if !self.avatarURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.avatarURL, fieldNumber: 7)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -375,6 +382,7 @@ extension GloryApi_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     if lhs.tokenExpiry != rhs.tokenExpiry {return false}
     if lhs.createdAt != rhs.createdAt {return false}
     if lhs.name != rhs.name {return false}
+    if lhs.avatarURL != rhs.avatarURL {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

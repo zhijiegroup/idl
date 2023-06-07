@@ -13,6 +13,7 @@ export interface User {
   token_expiry?: string;
   created_at?: string;
   name?: string;
+  avatar_url?: string;
 }
 
 /** login */
