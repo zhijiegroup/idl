@@ -4,6 +4,7 @@
 import "whatwg-fetch";
 
 import * as user from "./user/user";
+import * as address from "./user/address";
 import * as api from "./api";
 import * as shop from "./shop/shop";
 import * as category from "./shop/category";
@@ -25,6 +26,7 @@ import * as live_user from "./live/live_user";
 import * as virtual_currency from "./currency/virtual_currency";
 export {
   user,
+  address,
   api,
   shop,
   category,
@@ -133,6 +135,42 @@ export class glory_api {
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
+  }
+
+  AddAddress(request) {
+    const uri = `${this.uriPrefix}/api/user/add_address`;
+    const body = JSON.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteAddress(request) {
+    const uri = `${this.uriPrefix}/api/user/delete_address`;
+    const body = JSON.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  UpdateAddress(request) {
+    const uri = `${this.uriPrefix}/api/user/update_address`;
+    const body = JSON.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  GetAddress(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/user/get_address${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  ListAddress(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/user/list_address${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
 
   CreateShop(request) {

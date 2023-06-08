@@ -118,6 +118,16 @@ struct GloryApi_CreateOrderRequest {
     set {_uniqueStorage()._createdBy = newValue}
   }
 
+  var skuID: Int64 {
+    get {return _storage._skuID}
+    set {_uniqueStorage()._skuID = newValue}
+  }
+
+  var productID: Int64 {
+    get {return _storage._productID}
+    set {_uniqueStorage()._productID = newValue}
+  }
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -730,12 +740,16 @@ extension GloryApi_CreateOrderRequest: SwiftProtobuf.Message, SwiftProtobuf._Mes
     1: .standard(proto: "base_request"),
     2: .same(proto: "order"),
     3: .standard(proto: "created_by"),
+    4: .standard(proto: "sku_id"),
+    5: .standard(proto: "product_id"),
   ]
 
   fileprivate class _StorageClass {
     var _baseRequest: Base_BaseRequest? = nil
     var _order: GloryApi_Order? = nil
     var _createdBy: String = String()
+    var _skuID: Int64 = 0
+    var _productID: Int64 = 0
 
     static let defaultInstance = _StorageClass()
 
@@ -745,6 +759,8 @@ extension GloryApi_CreateOrderRequest: SwiftProtobuf.Message, SwiftProtobuf._Mes
       _baseRequest = source._baseRequest
       _order = source._order
       _createdBy = source._createdBy
+      _skuID = source._skuID
+      _productID = source._productID
     }
   }
 
@@ -766,6 +782,8 @@ extension GloryApi_CreateOrderRequest: SwiftProtobuf.Message, SwiftProtobuf._Mes
         case 1: try { try decoder.decodeSingularMessageField(value: &_storage._baseRequest) }()
         case 2: try { try decoder.decodeSingularMessageField(value: &_storage._order) }()
         case 3: try { try decoder.decodeSingularStringField(value: &_storage._createdBy) }()
+        case 4: try { try decoder.decodeSingularInt64Field(value: &_storage._skuID) }()
+        case 5: try { try decoder.decodeSingularInt64Field(value: &_storage._productID) }()
         default: break
         }
       }
@@ -787,6 +805,12 @@ extension GloryApi_CreateOrderRequest: SwiftProtobuf.Message, SwiftProtobuf._Mes
       if !_storage._createdBy.isEmpty {
         try visitor.visitSingularStringField(value: _storage._createdBy, fieldNumber: 3)
       }
+      if _storage._skuID != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._skuID, fieldNumber: 4)
+      }
+      if _storage._productID != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._productID, fieldNumber: 5)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -799,6 +823,8 @@ extension GloryApi_CreateOrderRequest: SwiftProtobuf.Message, SwiftProtobuf._Mes
         if _storage._baseRequest != rhs_storage._baseRequest {return false}
         if _storage._order != rhs_storage._order {return false}
         if _storage._createdBy != rhs_storage._createdBy {return false}
+        if _storage._skuID != rhs_storage._skuID {return false}
+        if _storage._productID != rhs_storage._productID {return false}
         return true
       }
       if !storagesAreEqual {return false}

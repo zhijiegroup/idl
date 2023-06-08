@@ -3,6 +3,7 @@
 // @ts-nocheck
 
 import * as user from "./user/user";
+import * as address from "./user/address";
 import * as api from "./api";
 import * as shop from "./shop/shop";
 import * as category from "./shop/category";
@@ -24,6 +25,7 @@ import * as live_user from "./live/live_user";
 import * as virtual_currency from "./currency/virtual_currency";
 export {
   user,
+  address,
   api,
   shop,
   category,
@@ -84,6 +86,27 @@ export class glory_api {
   UpdatePassword(
     request: user.UpdatePasswordRequest
   ): Promise<user.UpdatePasswordResponse>;
+
+  /** address */
+  AddAddress(
+    request: address.AddAddressRequest
+  ): Promise<address.AddAddressResponse>;
+
+  DeleteAddress(
+    request: address.DeleteAddressRequest
+  ): Promise<address.DeleteAddressResponse>;
+
+  UpdateAddress(
+    request: address.UpdateAddressRequest
+  ): Promise<address.UpdateAddressResponse>;
+
+  GetAddress(
+    request: address.GetAddressRequest
+  ): Promise<address.GetAddressResponse>;
+
+  ListAddress(
+    request: address.ListAddressRequest
+  ): Promise<address.ListAddressResponse>;
 
   /** shop */
   CreateShop(request: shop.CreateShopRequest): Promise<shop.CreateShopResponse>;

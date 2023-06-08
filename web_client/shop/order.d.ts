@@ -33,6 +33,8 @@ export interface CreateOrderRequest {
   base_request?: base.BaseRequest;
   order?: Order;
   created_by?: string;
+  sku_id?: string;
+  product_id?: string;
 }
 
 export interface CreateOrderResponse {
