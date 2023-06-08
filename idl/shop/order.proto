@@ -32,6 +32,8 @@ message CreateOrderRequest {
   base.BaseRequest base_request = 1;
   Order order =2;
   string created_by = 3;
+  int64 sku_id = 4;
+  int64 product_id = 5;
 }
 message CreateOrderResponse {
   base.BaseResponse base_resp = 1;
