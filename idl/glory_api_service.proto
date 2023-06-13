@@ -15,6 +15,7 @@ import "shop/cart.proto";
 import "shop/operation.proto";
 import "shop/freight_template.proto";
 import "seller/attachment.proto";
+import "seller/seller.proto";
 import "payment/payment.proto";
 import "example/example.proto";
 import "admin/config.proto";
@@ -299,6 +300,9 @@ service glory_api {
   }
   rpc DeleteAttachment(DeleteAttachmentRequest) returns (DeleteAttachmentResponse) {
     option (api.post) = '/api/seller/delete_attachment';
+  }
+  rpc CreateSeller(CreateSellerRequest) returns (CreateSellerResponse) {
+    option (api.post) = '/api/seller/create_seller';
   }
 
   // payment
