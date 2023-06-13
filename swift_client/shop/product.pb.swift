@@ -113,6 +113,24 @@ struct GloryApi_Product {
 
   var state: GloryApi_State = .created
 
+  var images: [GloryApi_ProductImage] = []
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct GloryApi_ProductImage {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var productImageID: Int64 = 0
+
+  var imageType: String = String()
+
+  var imageURL: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -757,6 +775,7 @@ struct GloryApi_UploadMultiImageResponse {
 #if swift(>=5.5) && canImport(_Concurrency)
 extension GloryApi_State: @unchecked Sendable {}
 extension GloryApi_Product: @unchecked Sendable {}
+extension GloryApi_ProductImage: @unchecked Sendable {}
 extension GloryApi_ProductWithAuthor: @unchecked Sendable {}
 extension GloryApi_ProductAttributeWithOneValue: @unchecked Sendable {}
 extension GloryApi_ProductWithValueAuthor: @unchecked Sendable {}
@@ -809,6 +828,7 @@ extension GloryApi_Product: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
     5: .same(proto: "sku"),
     6: .same(proto: "attribute"),
     7: .same(proto: "state"),
+    8: .same(proto: "images"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -824,6 +844,7 @@ extension GloryApi_Product: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
       case 5: try { try decoder.decodeRepeatedMessageField(value: &self.sku) }()
       case 6: try { try decoder.decodeRepeatedMessageField(value: &self.attribute) }()
       case 7: try { try decoder.decodeSingularEnumField(value: &self.state) }()
+      case 8: try { try decoder.decodeRepeatedMessageField(value: &self.images) }()
       default: break
       }
     }
@@ -851,6 +872,9 @@ extension GloryApi_Product: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
     if self.state != .created {
       try visitor.visitSingularEnumField(value: self.state, fieldNumber: 7)
     }
+    if !self.images.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.images, fieldNumber: 8)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -862,6 +886,51 @@ extension GloryApi_Product: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
     if lhs.sku != rhs.sku {return false}
     if lhs.attribute != rhs.attribute {return false}
     if lhs.state != rhs.state {return false}
+    if lhs.images != rhs.images {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_ProductImage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ProductImage"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "product_image_id"),
+    2: .standard(proto: "image_type"),
+    3: .standard(proto: "image_url"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.productImageID) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.imageType) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.imageURL) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.productImageID != 0 {
+      try visitor.visitSingularInt64Field(value: self.productImageID, fieldNumber: 1)
+    }
+    if !self.imageType.isEmpty {
+      try visitor.visitSingularStringField(value: self.imageType, fieldNumber: 2)
+    }
+    if !self.imageURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.imageURL, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ProductImage, rhs: GloryApi_ProductImage) -> Bool {
+    if lhs.productImageID != rhs.productImageID {return false}
+    if lhs.imageType != rhs.imageType {return false}
+    if lhs.imageURL != rhs.imageURL {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
