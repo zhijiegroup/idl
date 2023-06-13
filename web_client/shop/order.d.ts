@@ -24,6 +24,77 @@ export interface Order {
   contact_phone?: string;
 }
 
+export interface OrderSku {
+  order_sku_id?: string;
+  order_id?: string;
+  sku_id?: string;
+  seller_id?: string;
+  shop_id?: string;
+  quantity?: number;
+  freight_template_id?: string;
+}
+
+/** 订单信息 */
+export interface OrderInfo {
+  /** 订单id */
+  order_id?: string;
+  /** 订单状态 */
+  order_status?: string;
+  /** 下单时间 */
+  created_at?: string;
+  /** 订单类型 */
+  orderType?: string;
+  /** 支付方式 */
+  payType?: string;
+  /** 付款时间 */
+  payTime?: string;
+  /** 商品总价 = 原价+运费 */
+  total_amount?: number;
+  /** 原价 */
+  original_amount?: number;
+  /** 运费 */
+  deliver_fee?: number;
+  /** 优惠金额 */
+  discount_amount?: number;
+  /** 实付金额 */
+  payment_amount?: number;
+  /** 应付金额 */
+  payable_amount?: number;
+}
+
+/** 收获与配送信息 */
+export interface DeliverInfo {
+  /** 收获地址 */
+  deliver_address?: string;
+  /** 邮编 */
+  deliver_post?: number;
+  /** 收获人 */
+  contact_name?: string;
+  /** 收货人手机 */
+  contact_phone?: string;
+  /** 买家名字 或昵称 */
+  buyer_name?: string;
+  /** 买家留言 */
+  buyer_comment?: string;
+  /** 配送方式 */
+  delivery_method?: string;
+}
+
+/** 商品信息 */
+export interface ProductInfo {
+  product_id?: string;
+  product_name?: string;
+  sku_name?: string;
+  /** 售后信息 */
+  service_info?: string;
+  /** 单价 */
+  unit_price?: number;
+  /** 数量 */
+  quantity?: number;
+  /** 优惠信息 */
+  discount_info?: string;
+}
+
 export interface OrderWithAuthor {
   order?: Order;
   author_info?: base.AuthorInfo;
@@ -49,7 +120,11 @@ export interface GetOrderRequest {
 
 export interface GetOrderResponse {
   base_resp?: base.BaseResponse;
-  order_detail?: OrderWithAuthor;
+  /** OrderWithAuthor order_detail =2;
+OrderSku order_sku = 3; */
+  orderInfo?: OrderInfo;
+  productInfo?: Array<ProductInfo>;
+  deliverInfo?: DeliverInfo;
 }
 
 export interface UpdateOrderRequest {
