@@ -14,6 +14,13 @@ message Product {
   repeated Sku sku = 5;
   repeated Attribute attribute = 6;
   State state = 7;
+  repeated ProductImage images = 8;
+}
+
+message ProductImage {
+  int64 product_image_id = 1;
+  string image_type = 2;
+  string image_url = 3;
 }
 
 enum State {
