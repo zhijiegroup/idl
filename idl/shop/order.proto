@@ -23,6 +23,56 @@ message Order {
 
 }
 
+message OrderSku {
+  int64 order_sku_id = 1;
+  int64 order_id = 2;
+  int64 sku_id = 3;
+  int64 seller_id = 4;
+  int64 shop_id = 5;
+  int32 quantity = 6;
+  int64 freight_template_id = 7;
+}
+
+//订单信息
+message OrderInfo {
+  int64 order_id = 1;//订单id
+  string order_status = 2;//订单状态
+  string created_at = 3;//下单时间
+  string orderType = 4;//订单类型
+  string payType = 5;  //支付方式
+  string payTime = 6;  //付款时间
+  double total_amount = 7;//商品总价 = 原价+运费
+  double original_amount = 8;//原价
+  double deliver_fee = 9;//运费
+  double discount_amount =10;//优惠金额
+  double payment_amount = 11;//实付金额
+  double payable_amount = 12;//应付金额
+}
+
+//收获与配送信息
+message DeliverInfo {
+  string deliver_address = 1;//收获地址
+  int32 deliver_post = 2;//邮编
+  string contact_name = 3;//收获人
+  string contact_phone = 4;//收货人手机
+  string buyer_name = 5;//买家名字 或昵称
+  string buyer_comment = 6;//买家留言
+  string delivery_method = 7;//配送方式
+
+}
+
+//商品信息
+message ProductInfo {
+  int64  product_id = 1;
+  string product_name = 2;
+  string sku_name = 3;
+  string service_info = 4;//售后信息
+  double unit_price = 5;//单价
+  int32 quantity = 6; //数量
+  string discount_info = 7;//优惠信息
+}
+
+
 message OrderWithAuthor {
   Order order =1;
   base.AuthorInfo author_info = 2;
@@ -31,7 +81,7 @@ message OrderWithAuthor {
 message CreateOrderRequest {
   base.BaseRequest base_request = 1;
   Order order =2;
-  string created_by = 3;
+  int64 created_by = 3;
   int64 sku_id = 4;
   int64 product_id = 5;
 }
@@ -48,7 +98,11 @@ message GetOrderRequest {
 }
 message GetOrderResponse {
   base.BaseResponse base_resp = 1;
-  OrderWithAuthor order_detail =2;
+  //OrderWithAuthor order_detail =2;
+  //OrderSku order_sku = 3;
+  OrderInfo orderInfo = 2;
+  repeated ProductInfo productInfo = 3;
+  DeliverInfo deliverInfo = 4;
 }
 
 message UpdateOrderRequest {
