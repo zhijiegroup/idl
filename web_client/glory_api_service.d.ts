@@ -15,6 +15,7 @@ import * as cart from "./shop/cart";
 import * as operation from "./shop/operation";
 import * as freight_template from "./shop/freight_template";
 import * as attachment from "./seller/attachment";
+import * as seller from "./seller/seller";
 import * as payment from "./payment/payment";
 import * as example from "./example/example";
 import * as config from "./admin/config";
@@ -22,6 +23,7 @@ import * as wxpay from "./wxpay/wxpay";
 import * as live_room from "./live/live_room";
 import * as live_token from "./live/live_token";
 import * as live_user from "./live/live_user";
+import * as account_operation from "./account/account_operation";
 import * as virtual_currency from "./currency/virtual_currency";
 export {
   user,
@@ -37,6 +39,7 @@ export {
   operation,
   freight_template,
   attachment,
+  seller,
   payment,
   example,
   config,
@@ -44,6 +47,7 @@ export {
   live_room,
   live_token,
   live_user,
+  account_operation,
   virtual_currency,
 };
 
@@ -322,6 +326,10 @@ export class glory_api {
     request: attachment.DeleteAttachmentRequest
   ): Promise<attachment.DeleteAttachmentResponse>;
 
+  CreateSeller(
+    request: seller.CreateSellerRequest
+  ): Promise<seller.CreateSellerResponse>;
+
   /** payment */
   CreatePayment(
     request: payment.CreatePaymentRequest
@@ -390,6 +398,19 @@ export class glory_api {
   ListVCurrency(
     request: virtual_currency.ListVirtualCurrencyRequest
   ): Promise<virtual_currency.ListVirtualCurrencyResponse>;
+
+  /** account */
+  AddAccountOperation(
+    request: account_operation.AddAccountOperationRequest
+  ): Promise<account_operation.AddAccountOperationResponse>;
+
+  GetAccountOperation(
+    request: account_operation.GetAccountOperationRequest
+  ): Promise<account_operation.GetAccountOperationResponse>;
+
+  ListAccountOperation(
+    request: account_operation.ListAccountOperationRequest
+  ): Promise<account_operation.ListAccountOperationResponse>;
 
   /** live */
   CreateRoom(
