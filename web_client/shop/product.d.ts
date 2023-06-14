@@ -26,6 +26,13 @@ export interface Product {
   sku?: Array<sku.Sku>;
   attribute?: Array<attribute.Attribute>;
   state?: State;
+  images?: Array<ProductImage>;
+}
+
+export interface ProductImage {
+  product_image_id?: string;
+  image_type?: string;
+  image_url?: string;
 }
 
 export interface ProductWithAuthor {

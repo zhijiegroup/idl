@@ -4,6 +4,7 @@
 import "whatwg-fetch";
 
 import * as user from "./user/user";
+import * as address from "./user/address";
 import * as api from "./api";
 import * as shop from "./shop/shop";
 import * as category from "./shop/category";
@@ -15,6 +16,7 @@ import * as cart from "./shop/cart";
 import * as operation from "./shop/operation";
 import * as freight_template from "./shop/freight_template";
 import * as attachment from "./seller/attachment";
+import * as seller from "./seller/seller";
 import * as payment from "./payment/payment";
 import * as example from "./example/example";
 import * as config from "./admin/config";
@@ -22,9 +24,11 @@ import * as wxpay from "./wxpay/wxpay";
 import * as live_room from "./live/live_room";
 import * as live_token from "./live/live_token";
 import * as live_user from "./live/live_user";
+import * as account_operation from "./account/account_operation";
 import * as virtual_currency from "./currency/virtual_currency";
 export {
   user,
+  address,
   api,
   shop,
   category,
@@ -36,6 +40,7 @@ export {
   operation,
   freight_template,
   attachment,
+  seller,
   payment,
   example,
   config,
@@ -43,6 +48,7 @@ export {
   live_room,
   live_token,
   live_user,
+  account_operation,
   virtual_currency,
 };
 
@@ -133,6 +139,42 @@ export class glory_api {
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
+  }
+
+  AddAddress(request) {
+    const uri = `${this.uriPrefix}/api/user/add_address`;
+    const body = JSON.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteAddress(request) {
+    const uri = `${this.uriPrefix}/api/user/delete_address`;
+    const body = JSON.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  UpdateAddress(request) {
+    const uri = `${this.uriPrefix}/api/user/update_address`;
+    const body = JSON.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  GetAddress(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/user/get_address${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  ListAddress(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/user/list_address${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
 
   CreateShop(request) {
@@ -595,6 +637,14 @@ export class glory_api {
     );
   }
 
+  CreateSeller(request) {
+    const uri = `${this.uriPrefix}/api/seller/create_seller`;
+    const body = JSON.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   CreatePayment(request) {
     const uri = `${this.uriPrefix}/api/payment/create_payment`;
     const body = JSON.stringify(request);
@@ -718,6 +768,26 @@ export class glory_api {
   ListVCurrency(request) {
     const query = queryStringify(request);
     const uri = `${this.uriPrefix}/api/currency/list${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  AddAccountOperation(request) {
+    const uri = `${this.uriPrefix}/api/account/add_operation`;
+    const body = JSON.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  GetAccountOperation(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/account/get_operation${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  ListAccountOperation(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/account/list_operation${query}`;
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
 

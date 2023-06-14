@@ -301,6 +301,9 @@ service glory_api {
   rpc DeleteAttachment(DeleteAttachmentRequest) returns (DeleteAttachmentResponse) {
     option (api.post) = '/api/seller/delete_attachment';
   }
+  rpc CreateSeller(CreateSellerRequest) returns (CreateSellerResponse) {
+    option (api.post) = '/api/seller/create_seller';
+  }
 
   rpc CreateSeller(CreateSellerRequest) returns (CreateSellerResponse) {
     option (api.post) = '/api/seller/create_seller';
