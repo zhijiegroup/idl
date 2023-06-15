@@ -305,10 +305,6 @@ service glory_api {
     option (api.post) = '/api/seller/create_seller';
   }
 
-  rpc CreateSeller(CreateSellerRequest) returns (CreateSellerResponse) {
-    option (api.post) = '/api/seller/create_seller';
-  }
-
   // payment
   rpc CreatePayment(CreatePaymentRequest) returns (CreatePaymentResponse) {
     option (api.post) = '/api/payment/create_payment';

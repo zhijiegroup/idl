@@ -20,7 +20,31 @@ message Order {
   int32 deliver_post = 13;
   string contact_name = 14;
   string contact_phone = 15;
+}
 
+message CreateOrderInfo {
+  int64 order_id = 1;
+  int64 user_id = 2;
+  int64 shop_id = 3;
+  int64 seller_id = 4;
+  int64 tenant_id = 5;
+  double total_amount = 7;
+  double original_amount = 8;
+  double tax = 9;
+  double deliver_fee = 10;
+  string currency = 11;
+  string deliver_address = 12;
+  int32 deliver_post = 13;
+  string contact_name = 14;
+  string contact_phone = 15;
+  repeated SkuInfo sku_info = 16;
+  string message = 17;
+  string buyer_name = 18;
+}
+
+message SkuInfo {
+  int64 sku_id = 1;
+  int32 number = 2;
 }
 
 message OrderSku {
@@ -47,6 +71,7 @@ message OrderInfo {
   double discount_amount =10;//优惠金额
   double payment_amount = 11;//实付金额
   double payable_amount = 12;//应付金额
+  repeated ProductInfo productInfo = 13;//商品信息
 }
 
 //收获与配送信息
@@ -74,21 +99,17 @@ message ProductInfo {
 
 
 message OrderWithAuthor {
-  Order order =1;
   base.AuthorInfo author_info = 2;
+  OrderInfo order_info = 3;
 }
 
 message CreateOrderRequest {
   base.BaseRequest base_request = 1;
-  Order order =2;
-  int64 created_by = 3;
-  int64 sku_id = 4;
-  int64 product_id = 5;
+  repeated CreateOrderInfo order_info = 2;
 }
 message CreateOrderResponse {
   base.BaseResponse base_resp = 1;
   int64 order_id = 2;
-  //  OrderWithAuthor order_detail =2;
 }
 
 message GetOrderRequest {
@@ -98,10 +119,8 @@ message GetOrderRequest {
 }
 message GetOrderResponse {
   base.BaseResponse base_resp = 1;
-  //OrderWithAuthor order_detail =2;
-  //OrderSku order_sku = 3;
   OrderInfo orderInfo = 2;
-  repeated ProductInfo productInfo = 3;
+  //repeated ProductInfo productInfo = 3;
   DeliverInfo deliverInfo = 4;
 }
 
