@@ -4,7 +4,7 @@ package glory_api;
 import "user/user.proto";
 import "user/address.proto";
 import "api.proto";
-
+import "mall/mall_index.proto";
 import "shop/shop.proto";
 import "shop/category.proto";
 import "shop/product.proto";
@@ -152,6 +152,11 @@ service glory_api {
 
   rpc ListFreightTemplate(ListTemplateRequest) returns (ListTemplateResponse) {
     option (api.post) = '/api/shop/list_template';
+  }
+
+  //mall
+  rpc GetMallIndex(MallIndexRequest) returns (MallIndexResponse) {
+    option (api.post) = '/api/mall/index';
   }
 
   // product category

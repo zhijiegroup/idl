@@ -1,0 +1,55 @@
+syntax = "proto3";
+package glory_api;
+
+import "api.proto";
+import "base.proto";
+import "live/live_room.proto";
+
+message Image {
+  int64 product_image_id = 1;
+  string image_type = 2;
+  string image_url = 3;
+}
+
+message ProductIndexInfo {
+  int64 product_id = 1;
+  int64 shop_id = 2;
+  string product_name = 3;
+  int64 category_id = 4;
+  repeated Image images = 5;
+}
+
+
+message LiveRoomIndexInfo {
+  int64 room_id = 1;
+  int64 user_id =2;
+  string group_id =3;
+  string app_name =4;
+  string stream_name =5;
+  string up_url =6;
+  string play_url =7;
+  string start_time =8;
+  int64 like_count =9;
+  string end_time =10;
+  string status = 11;
+}
+
+message MallIndexRequest {
+  base.BaseRequest base_request = 1;
+  base.PaginationRequest pagination = 2;
+}
+message MallIndexResponse {
+  base.BaseResponse base_resp = 1;
+  repeated LiveRoomIndexInfo live_room_info = 2;
+  repeated ProductIndexInfo products_info = 3;
+}
+
+
+
+
+
+
+
+
+
+
