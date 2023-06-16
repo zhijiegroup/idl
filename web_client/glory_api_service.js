@@ -6,6 +6,7 @@ import "whatwg-fetch";
 import * as user from "./user/user";
 import * as address from "./user/address";
 import * as api from "./api";
+import * as mall_index from "./mall/mall_index";
 import * as shop from "./shop/shop";
 import * as category from "./shop/category";
 import * as product from "./shop/product";
@@ -30,6 +31,7 @@ export {
   user,
   address,
   api,
+  mall_index,
   shop,
   category,
   product,
@@ -315,6 +317,14 @@ export class glory_api {
 
   ListFreightTemplate(request) {
     const uri = `${this.uriPrefix}/api/shop/list_template`;
+    const body = JSON.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  GetMallIndex(request) {
+    const uri = `${this.uriPrefix}/api/mall/index`;
     const body = JSON.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse

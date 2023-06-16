@@ -5,6 +5,7 @@
 import * as user from "./user/user";
 import * as address from "./user/address";
 import * as api from "./api";
+import * as mall_index from "./mall/mall_index";
 import * as shop from "./shop/shop";
 import * as category from "./shop/category";
 import * as product from "./shop/product";
@@ -29,6 +30,7 @@ export {
   user,
   address,
   api,
+  mall_index,
   shop,
   category,
   product,
@@ -178,6 +180,11 @@ export class glory_api {
   ListFreightTemplate(
     request: freight_template.ListTemplateRequest
   ): Promise<freight_template.ListTemplateResponse>;
+
+  /** mall */
+  GetMallIndex(
+    request: mall_index.MallIndexRequest
+  ): Promise<mall_index.MallIndexResponse>;
 
   /** product category */
   CreateCategory(
