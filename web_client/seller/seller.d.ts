@@ -4,12 +4,14 @@
 
 import * as api from "../api";
 import * as base from "../base";
-export { api, base };
+import * as shop from "../shop/shop";
+export { api, base, shop };
 
 export interface Seller {
   seller_id?: string;
   tenant_id?: string;
   user_id?: string;
+  shop?: Array<shop.Shop>;
 }
 
 export interface CreateSellerRequest {

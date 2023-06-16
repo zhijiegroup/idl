@@ -3,4 +3,6 @@
 
 import * as api from "../api";
 import * as base from "../base";
-export { api, base };
+import * as seller from "../seller/seller";
+import * as shop from "../shop/shop";
+export { api, base, seller, shop };
