@@ -37,9 +37,7 @@ export function queryStringify(params, inBody) {
 
 export function handleResponse(response) {
   if (response && response.status >= 200 && response.status < 300) {
-    //解决后端返回超过js可接收number最大值导致的id溢出问题
-    return response.text();
-    // return response.json ? response.json() : response.text();
+    return response.json ? response.json() : response.text();
   } else {
     const error = new Error(response.statusText);
     error.response = response;
