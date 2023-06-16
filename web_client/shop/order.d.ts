@@ -24,6 +24,31 @@ export interface Order {
   contact_phone?: string;
 }
 
+export interface CreateOrderInfo {
+  order_id?: string;
+  user_id?: string;
+  shop_id?: string;
+  seller_id?: string;
+  tenant_id?: string;
+  total_amount?: number;
+  original_amount?: number;
+  tax?: number;
+  deliver_fee?: number;
+  currency?: string;
+  deliver_address?: string;
+  deliver_post?: number;
+  contact_name?: string;
+  contact_phone?: string;
+  sku_info?: Array<SkuInfo>;
+  message?: string;
+  buyer_name?: string;
+}
+
+export interface SkuInfo {
+  sku_id?: string;
+  number?: number;
+}
+
 export interface OrderSku {
   order_sku_id?: string;
   order_id?: string;
@@ -60,6 +85,8 @@ export interface OrderInfo {
   payment_amount?: number;
   /** 应付金额 */
   payable_amount?: number;
+  /** 商品信息 */
+  productInfo?: Array<ProductInfo>;
 }
 
 /** 收获与配送信息 */
@@ -96,16 +123,13 @@ export interface ProductInfo {
 }
 
 export interface OrderWithAuthor {
-  order?: Order;
   author_info?: base.AuthorInfo;
+  order_info?: OrderInfo;
 }
 
 export interface CreateOrderRequest {
   base_request?: base.BaseRequest;
-  order?: Order;
-  created_by?: string;
-  sku_id?: string;
-  product_id?: string;
+  order_info?: Array<CreateOrderInfo>;
 }
 
 export interface CreateOrderResponse {
@@ -120,10 +144,8 @@ export interface GetOrderRequest {
 
 export interface GetOrderResponse {
   base_resp?: base.BaseResponse;
-  /** OrderWithAuthor order_detail =2;
-OrderSku order_sku = 3; */
   orderInfo?: OrderInfo;
-  productInfo?: Array<ProductInfo>;
+  /** repeated ProductInfo productInfo = 3; */
   deliverInfo?: DeliverInfo;
 }
 

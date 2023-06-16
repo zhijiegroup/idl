@@ -10,6 +10,8 @@ export interface VirtualCurrency {
   user_id?: string;
   /** 余额 */
   balance?: string;
+  /** 充值金额 */
+  recharge_amount?: string;
   /** 虚拟币单位 */
   unit?: string;
   /** 充值渠道 */

@@ -30,6 +30,9 @@ struct GloryApi_VirtualCurrency {
   ///余额
   var balance: Int64 = 0
 
+  ///充值金额
+  var rechargeAmount: Int64 = 0
+
   ///虚拟币单位
   var unit: String = String()
 
@@ -365,6 +368,7 @@ extension GloryApi_VirtualCurrency: SwiftProtobuf.Message, SwiftProtobuf._Messag
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "user_id"),
     2: .same(proto: "balance"),
+    7: .standard(proto: "recharge_amount"),
     3: .same(proto: "unit"),
     4: .same(proto: "channel"),
     5: .same(proto: "explain"),
@@ -383,6 +387,7 @@ extension GloryApi_VirtualCurrency: SwiftProtobuf.Message, SwiftProtobuf._Messag
       case 4: try { try decoder.decodeSingularStringField(value: &self.channel) }()
       case 5: try { try decoder.decodeSingularStringField(value: &self.explain) }()
       case 6: try { try decoder.decodeSingularStringField(value: &self.name) }()
+      case 7: try { try decoder.decodeSingularInt64Field(value: &self.rechargeAmount) }()
       default: break
       }
     }
@@ -407,12 +412,16 @@ extension GloryApi_VirtualCurrency: SwiftProtobuf.Message, SwiftProtobuf._Messag
     if !self.name.isEmpty {
       try visitor.visitSingularStringField(value: self.name, fieldNumber: 6)
     }
+    if self.rechargeAmount != 0 {
+      try visitor.visitSingularInt64Field(value: self.rechargeAmount, fieldNumber: 7)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_VirtualCurrency, rhs: GloryApi_VirtualCurrency) -> Bool {
     if lhs.userID != rhs.userID {return false}
     if lhs.balance != rhs.balance {return false}
+    if lhs.rechargeAmount != rhs.rechargeAmount {return false}
     if lhs.unit != rhs.unit {return false}
     if lhs.channel != rhs.channel {return false}
     if lhs.explain != rhs.explain {return false}

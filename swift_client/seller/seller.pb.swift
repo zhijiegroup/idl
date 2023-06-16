@@ -31,6 +31,8 @@ struct GloryApi_Seller {
 
   var userID: Int64 = 0
 
+  var shop: [GloryApi_Shop] = []
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -106,6 +108,7 @@ extension GloryApi_Seller: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
     1: .standard(proto: "seller_id"),
     2: .standard(proto: "tenant_id"),
     3: .standard(proto: "user_id"),
+    4: .same(proto: "shop"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -117,6 +120,7 @@ extension GloryApi_Seller: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
       case 1: try { try decoder.decodeSingularInt64Field(value: &self.sellerID) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
       case 3: try { try decoder.decodeSingularInt64Field(value: &self.userID) }()
+      case 4: try { try decoder.decodeRepeatedMessageField(value: &self.shop) }()
       default: break
       }
     }
@@ -132,6 +136,9 @@ extension GloryApi_Seller: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
     if self.userID != 0 {
       try visitor.visitSingularInt64Field(value: self.userID, fieldNumber: 3)
     }
+    if !self.shop.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.shop, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -139,6 +146,7 @@ extension GloryApi_Seller: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
     if lhs.sellerID != rhs.sellerID {return false}
     if lhs.tenantID != rhs.tenantID {return false}
     if lhs.userID != rhs.userID {return false}
+    if lhs.shop != rhs.shop {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
