@@ -47,6 +47,7 @@ service glory_api {
   }
 
 
+  //user
   rpc Login(LoginRequest) returns (LoginResponse) {
     option (api.post) = '/api/user/login';
   }
