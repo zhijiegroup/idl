@@ -4,6 +4,7 @@ package glory_api;
 import "api.proto";
 import "base.proto";
 
+
 message Order {
   int64 order_id = 1;
   int64 user_id = 2;
@@ -20,6 +21,12 @@ message Order {
   int32 deliver_post = 13;
   string contact_name = 14;
   string contact_phone = 15;
+}
+
+message Images {
+  int64 product_image_id = 1;
+  string image_type = 2;
+  string image_url = 3;
 }
 
 message CreateOrderInfo {
@@ -95,6 +102,7 @@ message ProductInfo {
   double unit_price = 5;//单价
   int32 quantity = 6; //数量
   string discount_info = 7;//优惠信息
+  repeated Images images = 8;//商品图片
 }
 
 
