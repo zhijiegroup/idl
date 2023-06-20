@@ -79,6 +79,7 @@ message OrderInfo {
   double payment_amount = 11;//实付金额
   double payable_amount = 12;//应付金额
   repeated ProductInfo productInfo = 13;//商品信息
+  string shop_name = 14;//商店名字
 }
 
 //收获与配送信息
