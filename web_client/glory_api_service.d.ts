@@ -77,6 +77,7 @@ export class glory_api {
     request: example.DeleteExampleRequest
   ): Promise<example.DeleteExampleResponse>;
 
+  /** user */
   Login(request: user.LoginRequest): Promise<user.LoginResponse>;
 
   GetVerifyCode(
