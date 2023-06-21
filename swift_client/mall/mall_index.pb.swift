@@ -137,11 +137,21 @@ struct GloryApi_MallIndexResponse {
 
   var productsInfo: [GloryApi_ProductIndexInfo] = []
 
+  var pagination: Base_PaginationResponse {
+    get {return _pagination ?? Base_PaginationResponse()}
+    set {_pagination = newValue}
+  }
+  /// Returns true if `pagination` has been explicitly set.
+  var hasPagination: Bool {return self._pagination != nil}
+  /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
+  mutating func clearPagination() {self._pagination = nil}
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
 #if swift(>=5.5) && canImport(_Concurrency)
@@ -396,6 +406,7 @@ extension GloryApi_MallIndexResponse: SwiftProtobuf.Message, SwiftProtobuf._Mess
     1: .standard(proto: "base_resp"),
     2: .standard(proto: "live_room_info"),
     3: .standard(proto: "products_info"),
+    100: .same(proto: "pagination"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -407,6 +418,7 @@ extension GloryApi_MallIndexResponse: SwiftProtobuf.Message, SwiftProtobuf._Mess
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
       case 2: try { try decoder.decodeRepeatedMessageField(value: &self.liveRoomInfo) }()
       case 3: try { try decoder.decodeRepeatedMessageField(value: &self.productsInfo) }()
+      case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
     }
@@ -426,6 +438,9 @@ extension GloryApi_MallIndexResponse: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if !self.productsInfo.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.productsInfo, fieldNumber: 3)
     }
+    try { if let v = self._pagination {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -433,6 +448,7 @@ extension GloryApi_MallIndexResponse: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.liveRoomInfo != rhs.liveRoomInfo {return false}
     if lhs.productsInfo != rhs.productsInfo {return false}
+    if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

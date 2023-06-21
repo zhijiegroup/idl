@@ -44,4 +44,5 @@ export interface MallIndexResponse {
   base_resp?: base.BaseResponse;
   live_room_info?: Array<LiveRoomIndexInfo>;
   products_info?: Array<ProductIndexInfo>;
+  pagination?: base.PaginationResponse;
 }
