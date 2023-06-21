@@ -42,6 +42,7 @@ message MallIndexResponse {
   base.BaseResponse base_resp = 1;
   repeated LiveRoomIndexInfo live_room_info = 2;
   repeated ProductIndexInfo products_info = 3;
+  base.PaginationResponse pagination = 100;
 }
 
 
