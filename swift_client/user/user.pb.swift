@@ -72,8 +72,10 @@ struct GloryApi_LoginRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
+  /// required
   var phone: String = String()
 
+  /// required
   var code: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()

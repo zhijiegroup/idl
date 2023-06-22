@@ -2,6 +2,7 @@
 // @ts-nocheck
 
 import "whatwg-fetch";
+import JSONbigint from "json-bigint"; 
 
 import * as user from "./user/user";
 import * as address from "./user/address";
@@ -69,7 +70,7 @@ export class glory_api {
 
   CreateExample(request) {
     const uri = `${this.uriPrefix}/api/example/create_example`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -83,7 +84,7 @@ export class glory_api {
 
   UpdateExample(request) {
     const uri = `${this.uriPrefix}/api/example/update_example`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -91,7 +92,7 @@ export class glory_api {
 
   ListExample(request) {
     const uri = `${this.uriPrefix}/api/example/list_example`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -99,7 +100,7 @@ export class glory_api {
 
   DeleteExample(request) {
     const uri = `${this.uriPrefix}/api/example/delete_example`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -107,7 +108,7 @@ export class glory_api {
 
   Login(request) {
     const uri = `${this.uriPrefix}/api/user/login`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -115,7 +116,7 @@ export class glory_api {
 
   GetVerifyCode(request) {
     const uri = `${this.uriPrefix}/api/user/get_verify_code`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -129,7 +130,7 @@ export class glory_api {
 
   LoginWithPassword(request) {
     const uri = `${this.uriPrefix}/api/user/login_with_password`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -137,7 +138,7 @@ export class glory_api {
 
   UpdatePassword(request) {
     const uri = `${this.uriPrefix}/api/user/update_password`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -145,7 +146,7 @@ export class glory_api {
 
   AddAddress(request) {
     const uri = `${this.uriPrefix}/api/user/add_address`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -153,7 +154,7 @@ export class glory_api {
 
   DeleteAddress(request) {
     const uri = `${this.uriPrefix}/api/user/delete_address`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -161,7 +162,7 @@ export class glory_api {
 
   UpdateAddress(request) {
     const uri = `${this.uriPrefix}/api/user/update_address`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -181,7 +182,7 @@ export class glory_api {
 
   CreateShop(request) {
     const uri = `${this.uriPrefix}/api/shop/create_shop`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -195,7 +196,7 @@ export class glory_api {
 
   UpdateShop(request) {
     const uri = `${this.uriPrefix}/api/shop/update_shop`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -203,7 +204,7 @@ export class glory_api {
 
   ListShop(request) {
     const uri = `${this.uriPrefix}/api/shop/list_shop`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -211,7 +212,7 @@ export class glory_api {
 
   DeleteShop(request) {
     const uri = `${this.uriPrefix}/api/shop/delete_shop`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -219,7 +220,7 @@ export class glory_api {
 
   ListOperationMetrics(request) {
     const uri = `${this.uriPrefix}/api/shop/list_operation_metrics`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -233,7 +234,7 @@ export class glory_api {
 
   AddShopAccess(request) {
     const uri = `${this.uriPrefix}/api/shop/add_shop_access`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -241,7 +242,7 @@ export class glory_api {
 
   RemoveShopAccess(request) {
     const uri = `${this.uriPrefix}/api/shop/remove_shop_access`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -249,7 +250,7 @@ export class glory_api {
 
   VerifyField(request) {
     const uri = `${this.uriPrefix}/api/shop/verify_field`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -257,7 +258,7 @@ export class glory_api {
 
   ListShopAccess(request) {
     const uri = `${this.uriPrefix}/api/shop/list_shop_access`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -265,7 +266,7 @@ export class glory_api {
 
   AddShopCategory(request) {
     const uri = `${this.uriPrefix}/api/shop/add_shop_category`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -279,7 +280,7 @@ export class glory_api {
 
   RemoveShopCategory(request) {
     const uri = `${this.uriPrefix}/api/shop/remove_shop_category`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -287,7 +288,7 @@ export class glory_api {
 
   AddFreightTemplate(request) {
     const uri = `${this.uriPrefix}/api/shop/add_template`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -301,7 +302,7 @@ export class glory_api {
 
   UpdateFreightTemplate(request) {
     const uri = `${this.uriPrefix}/api/shop/update_template`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -309,7 +310,7 @@ export class glory_api {
 
   DeleteFreightTemplate(request) {
     const uri = `${this.uriPrefix}/api/shop/delete_template`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -317,7 +318,7 @@ export class glory_api {
 
   ListFreightTemplate(request) {
     const uri = `${this.uriPrefix}/api/shop/list_template`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -325,7 +326,7 @@ export class glory_api {
 
   GetMallIndex(request) {
     const uri = `${this.uriPrefix}/api/mall/list_live_product`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -333,7 +334,7 @@ export class glory_api {
 
   CreateCategory(request) {
     const uri = `${this.uriPrefix}/api/shop/create_category`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -347,7 +348,7 @@ export class glory_api {
 
   UpdateCategory(request) {
     const uri = `${this.uriPrefix}/api/shop/update_category`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -355,7 +356,7 @@ export class glory_api {
 
   ListCategory(request) {
     const uri = `${this.uriPrefix}/api/shop/list_category`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -363,7 +364,7 @@ export class glory_api {
 
   DeleteCategory(request) {
     const uri = `${this.uriPrefix}/api/shop/delete_category`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -371,7 +372,7 @@ export class glory_api {
 
   CreateProduct(request) {
     const uri = `${this.uriPrefix}/api/shop/create_product`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -385,7 +386,7 @@ export class glory_api {
 
   UpdateProduct(request) {
     const uri = `${this.uriPrefix}/api/shop/update_product`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -393,7 +394,7 @@ export class glory_api {
 
   ListProduct(request) {
     const uri = `${this.uriPrefix}/api/shop/list_product`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -401,7 +402,7 @@ export class glory_api {
 
   DeleteProduct(request) {
     const uri = `${this.uriPrefix}/api/shop/delete_product`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -409,7 +410,7 @@ export class glory_api {
 
   UploadMultiImage(request) {
     const uri = `${this.uriPrefix}/api/shop/upload_multi_image`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -417,7 +418,7 @@ export class glory_api {
 
   BindAttribute(request) {
     const uri = `${this.uriPrefix}/api/shop/bind_product_attribute`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -425,7 +426,7 @@ export class glory_api {
 
   PublishProduct(request) {
     const uri = `${this.uriPrefix}/api/shop/publish_product`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -433,7 +434,7 @@ export class glory_api {
 
   OffShelfProductInBatches(request) {
     const uri = `${this.uriPrefix}/api/shop/off_shelf_products`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -441,7 +442,7 @@ export class glory_api {
 
   DeleteProductInBatches(request) {
     const uri = `${this.uriPrefix}/api/shop/delete_products`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -449,7 +450,7 @@ export class glory_api {
 
   CreateSku(request) {
     const uri = `${this.uriPrefix}/api/shop/create_sku`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -463,7 +464,7 @@ export class glory_api {
 
   UpdateSku(request) {
     const uri = `${this.uriPrefix}/api/shop/update_sku`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -471,7 +472,7 @@ export class glory_api {
 
   ListSku(request) {
     const uri = `${this.uriPrefix}/api/shop/list_sku`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -479,7 +480,7 @@ export class glory_api {
 
   DeleteSku(request) {
     const uri = `${this.uriPrefix}/api/shop/delete_sku`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -487,7 +488,7 @@ export class glory_api {
 
   CreateAttribute(request) {
     const uri = `${this.uriPrefix}/api/shop/create_attribute`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -501,7 +502,7 @@ export class glory_api {
 
   ListAttribute(request) {
     const uri = `${this.uriPrefix}/api/shop/list_attribute`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -509,7 +510,7 @@ export class glory_api {
 
   DeleteAttribute(request) {
     const uri = `${this.uriPrefix}/api/shop/delete_attribute`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -517,7 +518,7 @@ export class glory_api {
 
   AddAttributeValue(request) {
     const uri = `${this.uriPrefix}/api/shop/add_attribute_value`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -525,7 +526,7 @@ export class glory_api {
 
   DeleteAttributeValue(request) {
     const uri = `${this.uriPrefix}/api/shop/delete_attribute_value`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -533,7 +534,7 @@ export class glory_api {
 
   CreateOrder(request) {
     const uri = `${this.uriPrefix}/api/shop/create_order`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -547,7 +548,7 @@ export class glory_api {
 
   UpdateOrder(request) {
     const uri = `${this.uriPrefix}/api/shop/update_order`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -555,7 +556,7 @@ export class glory_api {
 
   ListOrder(request) {
     const uri = `${this.uriPrefix}/api/shop/list_order`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -563,7 +564,7 @@ export class glory_api {
 
   DeleteOrder(request) {
     const uri = `${this.uriPrefix}/api/shop/delete_order`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -571,7 +572,7 @@ export class glory_api {
 
   ShipGoods(request) {
     const uri = `${this.uriPrefix}/api/shop/ship_goods`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -579,7 +580,7 @@ export class glory_api {
 
   ShipGoodsInBatches(request) {
     const uri = `${this.uriPrefix}/api/shop/ship_goods_batch`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -587,7 +588,7 @@ export class glory_api {
 
   FreeShippingInBatches(request) {
     const uri = `${this.uriPrefix}/api/shop/free_ship_batch`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -595,7 +596,7 @@ export class glory_api {
 
   CreateCart(request) {
     const uri = `${this.uriPrefix}/api/shop/create_cart`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -609,7 +610,7 @@ export class glory_api {
 
   UpdateCart(request) {
     const uri = `${this.uriPrefix}/api/shop/update_cart`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -617,7 +618,7 @@ export class glory_api {
 
   DeleteCart(request) {
     const uri = `${this.uriPrefix}/api/shop/delete_cart`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -625,7 +626,7 @@ export class glory_api {
 
   UploadAttachment(request) {
     const uri = `${this.uriPrefix}/api/seller/upload_attachment`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -633,7 +634,7 @@ export class glory_api {
 
   ListAttachment(request) {
     const uri = `${this.uriPrefix}/api/seller/list_attachment`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -641,7 +642,7 @@ export class glory_api {
 
   DeleteAttachment(request) {
     const uri = `${this.uriPrefix}/api/seller/delete_attachment`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -649,7 +650,7 @@ export class glory_api {
 
   CreateSeller(request) {
     const uri = `${this.uriPrefix}/api/seller/create_seller`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -657,7 +658,7 @@ export class glory_api {
 
   CreatePayment(request) {
     const uri = `${this.uriPrefix}/api/payment/create_payment`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -671,7 +672,7 @@ export class glory_api {
 
   UpdatePayment(request) {
     const uri = `${this.uriPrefix}/api/payment/update_payment`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -679,7 +680,7 @@ export class glory_api {
 
   DeletePayment(request) {
     const uri = `${this.uriPrefix}/api/payment/delete_payment`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -687,7 +688,7 @@ export class glory_api {
 
   CreateConfig(request) {
     const uri = `${this.uriPrefix}/api/admin/add_config`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -695,7 +696,7 @@ export class glory_api {
 
   UpdateConfig(request) {
     const uri = `${this.uriPrefix}/api/admin/update_config`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -703,7 +704,7 @@ export class glory_api {
 
   DeleteConfig(request) {
     const uri = `${this.uriPrefix}/api/admin/delete_config`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -711,7 +712,7 @@ export class glory_api {
 
   GetConfig(request) {
     const uri = `${this.uriPrefix}/api/admin/get_config`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -719,7 +720,7 @@ export class glory_api {
 
   WxPrepay(request) {
     const uri = `${this.uriPrefix}/api/wxpay/prepay`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -727,7 +728,7 @@ export class glory_api {
 
   CloseOrder(request) {
     const uri = `${this.uriPrefix}/api/wxpay/close_order`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -747,7 +748,7 @@ export class glory_api {
 
   AddVCurrency(request) {
     const uri = `${this.uriPrefix}/api/currency/add`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -755,7 +756,7 @@ export class glory_api {
 
   DeleteVCurrency(request) {
     const uri = `${this.uriPrefix}/api/currency/clear`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -763,7 +764,7 @@ export class glory_api {
 
   UpdateVCurrency(request) {
     const uri = `${this.uriPrefix}/api/currency/update`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -783,7 +784,7 @@ export class glory_api {
 
   AddAccountOperation(request) {
     const uri = `${this.uriPrefix}/api/account/add_operation`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -803,7 +804,7 @@ export class glory_api {
 
   CreateRoom(request) {
     const uri = `${this.uriPrefix}/api/live/create_room`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -817,7 +818,7 @@ export class glory_api {
 
   UpdateRoom(request) {
     const uri = `${this.uriPrefix}/api/live/update_room`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -825,7 +826,7 @@ export class glory_api {
 
   ListRoom(request) {
     const uri = `${this.uriPrefix}/api/live/list_room`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -833,7 +834,7 @@ export class glory_api {
 
   DeleteRoom(request) {
     const uri = `${this.uriPrefix}/api/live/delete_room`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -841,7 +842,7 @@ export class glory_api {
 
   CreateLiveUserToken(request) {
     const uri = `${this.uriPrefix}/api/live/create_live_user_token`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -849,7 +850,7 @@ export class glory_api {
 
   UserEnterRoom(request) {
     const uri = `${this.uriPrefix}/api/live/user_enter_room`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -857,7 +858,7 @@ export class glory_api {
 
   UserExitRoom(request) {
     const uri = `${this.uriPrefix}/api/live/user_exit_room`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
@@ -865,7 +866,7 @@ export class glory_api {
 
   ListActiveRoomUser(request) {
     const uri = `${this.uriPrefix}/api/live/list_active_room_user`;
-    const body = JSON.stringify(request);
+    const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );

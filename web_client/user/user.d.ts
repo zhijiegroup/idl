@@ -23,7 +23,9 @@ export interface User {
 /** login */
 export interface LoginRequest {
   base_request?: base.BaseRequest;
+  /** required */
   phone?: string;
+  /** required */
   code?: string;
 }
 
