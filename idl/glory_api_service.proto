@@ -29,19 +29,23 @@ import "currency/virtual_currency.proto";
 
 service glory_api {
 
-  // example
+  // endpoint /api/example/create_example, create example
   rpc CreateExample(CreateExampleRequest) returns (CreateExampleResponse) {
     option (api.post) = '/api/example/create_example';
   }
+  // endpoint /api/example/get_example, get_example
   rpc GetExample(GetExampleRequest) returns (GetExampleResponse) {
     option (api.get) = '/api/example/get_example';
   }
+  // endpoint /api/example/update_example, update_example
   rpc UpdateExample(UpdateExampleRequest) returns (UpdateExampleResponse) {
     option (api.post) = '/api/example/update_example';
   }
+  // endpoint /api/example/list_example, list example
   rpc ListExample(ListExampleRequest) returns (ListExampleResponse) {
     option (api.post) = '/api/example/list_example';
   }
+  // endpoint /api/example/delete_example, delete example
   rpc DeleteExample(DeleteExampleRequest) returns (DeleteExampleResponse) {
     option (api.post) = '/api/example/delete_example';
   }
