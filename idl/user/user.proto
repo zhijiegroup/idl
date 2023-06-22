@@ -21,8 +21,8 @@ message User {
 // login
 message LoginRequest {
   base.BaseRequest base_request=1;
-  string phone = 2;
-  string code = 3;
+  string phone = 2; // required
+  string code = 3;  // required
 }
 message LoginResponse {
   base.BaseResponse base_resp = 1;
