@@ -1,0 +1,107 @@
+syntax = "proto3";
+package glory_api;
+
+import "base.proto";
+
+message LivePlan {
+  int64 live_plan_id = 1;
+  string live_plan_name =2; // 创建必传
+  string description =3;
+  int64 shop_id =4; // 创建必传
+  repeated LivePlanProduct live_plan_product = 5;
+}
+
+message CreateLivePlanRequest {
+  base.BaseRequest base_request = 1;
+  LivePlan live_plan =2;
+}
+message CreateLivePlanResponse {
+  base.BaseResponse base_resp = 1;
+  int64 live_plan_id = 2;
+}
+
+
+message UpdateLivePlanRequest {
+  base.BaseRequest base_request = 1;
+  int64 live_plan_id = 2; // 必传
+  string live_plan_name =3;
+  string description =4;  
+}
+message UpdateLivePlanResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+message ListLivePlanRequest {
+  base.BaseRequest base_request = 1;
+  int64 shop_id = 2;
+  base.PaginationRequest pagination = 100;
+}
+message ListLivePlanResponse {
+  base.BaseResponse base_resp = 1;
+  repeated LivePlan live_plan = 2;
+  base.PaginationResponse pagination = 100;
+}
+
+message DeleteLivePlanRequest {
+  base.BaseRequest base_request=1;
+  int64 live_plan_id =2;
+}
+message DeleteLivePlanResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+message LivePlanProduct {
+  int64 live_plan_product_id = 1;
+  int64 live_plan_id =2;  // 创建必传
+  int64 product_id =3;  // 创建必传
+  string product_selling_point =4;  // 卖点
+  string product_description =5;  // 题词
+}
+
+
+message CreateLivePlanProductRequest {
+  base.BaseRequest base_request = 1;
+  LivePlanProduct live_plan_product =2;
+}
+
+message CreateLivePlanProductResponse {
+  base.BaseResponse base_resp = 1;
+  int64 live_plan_product_id = 2;
+}
+
+
+message UpdateLivePlanProductRequest {
+  base.BaseRequest base_request = 1;
+  int64 live_plan_product_id = 2; // 必传
+  string product_selling_point =3;
+  string product_description =4;
+}
+message UpdateLivePlanProductResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+message ListLivePlanProductRequest {
+  base.BaseRequest base_request = 1;
+  int64 live_plan_id = 2;
+  base.PaginationRequest pagination = 100;
+}
+message ListLivePlanProductResponse {
+  base.BaseResponse base_resp = 1;
+  repeated LivePlanProduct live_plan_product = 2;
+  base.PaginationResponse pagination = 100;
+}
+
+message DeleteLivePlanProductRequest {
+  base.BaseRequest base_request=1;
+  int64 live_plan_product_id =2;
+}
+message DeleteLivePlanProductResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+
+
+
+
+
+
