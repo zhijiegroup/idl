@@ -18,6 +18,7 @@ message Room {
   int64 like_count =9;
   string end_time =10;
   string status = 11; // if end_time not null, means closed, if null, means still active
+  int64 live_plan_id = 12;  // 设置直播商品计划id
 }
 
 message CreateRoomRequest {
