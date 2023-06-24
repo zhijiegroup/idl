@@ -24,6 +24,7 @@ import * as wxpay from "./wxpay/wxpay";
 import * as live_room from "./live/live_room";
 import * as live_token from "./live/live_token";
 import * as live_user from "./live/live_user";
+import * as live_plan from "./live/live_plan";
 import * as account_operation from "./account/account_operation";
 import * as virtual_currency from "./currency/virtual_currency";
 export {
@@ -49,6 +50,7 @@ export {
   live_room,
   live_token,
   live_user,
+  live_plan,
   account_operation,
   virtual_currency,
 };
@@ -56,23 +58,27 @@ export {
 export class glory_api {
   constructor(uriPrefix?: string);
 
-  /** example */
+  /** endpoint /api/example/create_example, create example */
   CreateExample(
     request: example.CreateExampleRequest
   ): Promise<example.CreateExampleResponse>;
 
+  /** endpoint /api/example/get_example, get_example */
   GetExample(
     request: example.GetExampleRequest
   ): Promise<example.GetExampleResponse>;
 
+  /** endpoint /api/example/update_example, update_example */
   UpdateExample(
     request: example.UpdateExampleRequest
   ): Promise<example.UpdateExampleResponse>;
 
+  /** endpoint /api/example/list_example, list example */
   ListExample(
     request: example.ListExampleRequest
   ): Promise<example.ListExampleResponse>;
 
+  /** endpoint /api/example/delete_example, delete example */
   DeleteExample(
     request: example.DeleteExampleRequest
   ): Promise<example.DeleteExampleResponse>;
@@ -456,6 +462,41 @@ export class glory_api {
   ListActiveRoomUser(
     request: live_user.ListActiveRoomUserRequest
   ): Promise<attachment.ListAttachmentResponse>;
+
+  /** live plan
+live plan crud */
+  CreateLivePlan(
+    request: live_plan.CreateLivePlanRequest
+  ): Promise<live_plan.CreateLivePlanResponse>;
+
+  UpdateLivePlan(
+    request: live_plan.UpdateLivePlanRequest
+  ): Promise<live_plan.UpdateLivePlanResponse>;
+
+  ListLivePlan(
+    request: live_plan.ListLivePlanRequest
+  ): Promise<live_plan.ListLivePlanResponse>;
+
+  DeleteLivePlan(
+    request: live_plan.DeleteLivePlanRequest
+  ): Promise<live_plan.DeleteLivePlanResponse>;
+
+  /** live plan prod crud */
+  CreateLivePlanProduct(
+    request: live_plan.CreateLivePlanProductRequest
+  ): Promise<live_plan.CreateLivePlanProductResponse>;
+
+  UpdateLivePlanProduct(
+    request: live_plan.UpdateLivePlanProductRequest
+  ): Promise<live_plan.UpdateLivePlanProductResponse>;
+
+  ListLivePlanProduct(
+    request: live_plan.ListLivePlanProductRequest
+  ): Promise<live_plan.ListLivePlanProductResponse>;
+
+  DeleteLivePlanProduct(
+    request: live_plan.DeleteLivePlanProductRequest
+  ): Promise<live_plan.DeleteLivePlanProductResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

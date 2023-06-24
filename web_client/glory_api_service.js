@@ -26,6 +26,7 @@ import * as wxpay from "./wxpay/wxpay";
 import * as live_room from "./live/live_room";
 import * as live_token from "./live/live_token";
 import * as live_user from "./live/live_user";
+import * as live_plan from "./live/live_plan";
 import * as account_operation from "./account/account_operation";
 import * as virtual_currency from "./currency/virtual_currency";
 export {
@@ -51,6 +52,7 @@ export {
   live_room,
   live_token,
   live_user,
+  live_plan,
   account_operation,
   virtual_currency,
 };
@@ -866,6 +868,70 @@ export class glory_api {
 
   ListActiveRoomUser(request) {
     const uri = `${this.uriPrefix}/api/live/list_active_room_user`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreateLivePlan(request) {
+    const uri = `${this.uriPrefix}/api/live/create_live_plan`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  UpdateLivePlan(request) {
+    const uri = `${this.uriPrefix}/api/live/update_live_plan`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListLivePlan(request) {
+    const uri = `${this.uriPrefix}/api/live/list_live_plan`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteLivePlan(request) {
+    const uri = `${this.uriPrefix}/api/live/delete_live_plan`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreateLivePlanProduct(request) {
+    const uri = `${this.uriPrefix}/api/live/create_live_plan_product`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  UpdateLivePlanProduct(request) {
+    const uri = `${this.uriPrefix}/api/live/update_live_plan_product`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListLivePlanProduct(request) {
+    const uri = `${this.uriPrefix}/api/live/list_live_plan_product`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteLivePlanProduct(request) {
+    const uri = `${this.uriPrefix}/api/live/delete_live_plan_product`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
