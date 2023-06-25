@@ -18,6 +18,8 @@ export interface Room {
   end_time?: string;
   /** if end_time not null, means closed, if null, means still active */
   status?: string;
+  /** 设置直播商品计划id */
+  live_plan_id?: string;
 }
 
 export interface CreateRoomRequest {

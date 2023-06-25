@@ -48,6 +48,9 @@ struct GloryApi_Room {
   /// if end_time not null, means closed, if null, means still active
   var status: String = String()
 
+  /// 设置直播商品计划id
+  var livePlanID: Int64 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -357,6 +360,7 @@ extension GloryApi_Room: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     9: .standard(proto: "like_count"),
     10: .standard(proto: "end_time"),
     11: .same(proto: "status"),
+    12: .standard(proto: "live_plan_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -376,6 +380,7 @@ extension GloryApi_Room: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       case 9: try { try decoder.decodeSingularInt64Field(value: &self.likeCount) }()
       case 10: try { try decoder.decodeSingularStringField(value: &self.endTime) }()
       case 11: try { try decoder.decodeSingularStringField(value: &self.status) }()
+      case 12: try { try decoder.decodeSingularInt64Field(value: &self.livePlanID) }()
       default: break
       }
     }
@@ -415,6 +420,9 @@ extension GloryApi_Room: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     if !self.status.isEmpty {
       try visitor.visitSingularStringField(value: self.status, fieldNumber: 11)
     }
+    if self.livePlanID != 0 {
+      try visitor.visitSingularInt64Field(value: self.livePlanID, fieldNumber: 12)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -430,6 +438,7 @@ extension GloryApi_Room: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     if lhs.likeCount != rhs.likeCount {return false}
     if lhs.endTime != rhs.endTime {return false}
     if lhs.status != rhs.status {return false}
+    if lhs.livePlanID != rhs.livePlanID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
