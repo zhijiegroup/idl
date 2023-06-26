@@ -33,6 +33,10 @@ message Shop {
   string company_bank_phone = 26;
   bool company_bank_validated = 27;
   int32 certify_status = 28;  // 1: inProgress, 2: Approved, 3: Rejected
+  int64 owner_id_front_attachment_id = 29;  // 上传附件的接口返回的 attachment id
+  int64 owner_id_back_attachment_id = 30;  // 上传附件的接口返回的 attachment id
+  int64 shop_logo_attachment_id = 31;  // 上传附件的接口返回的 attachment id
+  int64 business_license_attachment_id = 32; // 上传附件的接口返回的 attachment id
 }
 
 message ShopWithAuthor {
