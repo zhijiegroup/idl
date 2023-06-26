@@ -20,6 +20,8 @@ message CreateSellerRequest {
 message CreateSellerResponse {
   base.BaseResponse base_resp = 1;
   int64 seller_id = 2;
+
 }
+
 
 
