@@ -20,6 +20,10 @@ export interface Room {
   status?: string;
   /** 设置直播商品计划id */
   live_plan_id?: string;
+  /** 直播的标题 */
+  room_title?: string;
+  /** 直播的封面 */
+  room_image_url?: string;
 }
 
 export interface CreateRoomRequest {

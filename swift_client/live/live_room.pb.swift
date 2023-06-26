@@ -51,6 +51,12 @@ struct GloryApi_Room {
   /// 设置直播商品计划id
   var livePlanID: Int64 = 0
 
+  ///直播的标题
+  var roomTitle: String = String()
+
+  ///直播的封面
+  var roomImageURL: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -361,6 +367,8 @@ extension GloryApi_Room: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     10: .standard(proto: "end_time"),
     11: .same(proto: "status"),
     12: .standard(proto: "live_plan_id"),
+    13: .standard(proto: "room_title"),
+    14: .standard(proto: "room_image_url"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -381,6 +389,8 @@ extension GloryApi_Room: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       case 10: try { try decoder.decodeSingularStringField(value: &self.endTime) }()
       case 11: try { try decoder.decodeSingularStringField(value: &self.status) }()
       case 12: try { try decoder.decodeSingularInt64Field(value: &self.livePlanID) }()
+      case 13: try { try decoder.decodeSingularStringField(value: &self.roomTitle) }()
+      case 14: try { try decoder.decodeSingularStringField(value: &self.roomImageURL) }()
       default: break
       }
     }
@@ -423,6 +433,12 @@ extension GloryApi_Room: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     if self.livePlanID != 0 {
       try visitor.visitSingularInt64Field(value: self.livePlanID, fieldNumber: 12)
     }
+    if !self.roomTitle.isEmpty {
+      try visitor.visitSingularStringField(value: self.roomTitle, fieldNumber: 13)
+    }
+    if !self.roomImageURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.roomImageURL, fieldNumber: 14)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -439,6 +455,8 @@ extension GloryApi_Room: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     if lhs.endTime != rhs.endTime {return false}
     if lhs.status != rhs.status {return false}
     if lhs.livePlanID != rhs.livePlanID {return false}
+    if lhs.roomTitle != rhs.roomTitle {return false}
+    if lhs.roomImageURL != rhs.roomImageURL {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
