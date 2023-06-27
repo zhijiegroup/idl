@@ -17,6 +17,8 @@ message ProductIndexInfo {
   string product_name = 3;
   int64 category_id = 4;
   repeated Image images = 5;
+  float sale_price = 6;//售卖价格
+  float reference_price = 7;//参考价格
 }
 
 
