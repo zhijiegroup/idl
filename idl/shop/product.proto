@@ -24,13 +24,14 @@ message ProductImage {
 }
 
 enum State {
-  created = 0;//创建
-  on_shelf = 1;//上架
-  off_shelf = 2;//下架
-  out_of_stock = 3;//缺货
-  deleted = 4;//删除 到 回收站
-  deleted_forever = 5;//永久删除
-  sold_out = 6;//售罄
+  default = 0;
+  created = 1;//创建
+  on_shelf = 2;//上架
+  off_shelf = 3;//下架
+  out_of_stock = 4;//缺货
+  deleted = 5;//删除 到 回收站
+  deleted_forever = 6;//永久删除
+  sold_out = 7;//售罄
 }
 
 message ProductWithAuthor {
@@ -146,6 +147,7 @@ message ListProductRequest {
   string product_name = 2;
   int64 shop_id = 3;
   int64 category_id = 4;
+  State state = 5;
   base.PaginationRequest pagination = 100;
 }
 message ListProductResponse {

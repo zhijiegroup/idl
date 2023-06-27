@@ -19,6 +19,7 @@ message ProductIndexInfo {
   repeated Image images = 5;
   float sale_price = 6;//售卖价格
   float reference_price = 7;//参考价格
+  bool is_real = 8;//是否是真实店铺商品: true 真实店铺,false 虚拟店铺
 }
 
 
