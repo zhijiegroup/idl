@@ -3,7 +3,7 @@ package glory_api;
 
 
 import "base.proto";
-
+import "shop/sku.proto";
 
 message Order {
   int64 order_id = 1;
@@ -80,6 +80,7 @@ message OrderInfo {
   double payable_amount = 12;//应付金额
   repeated ProductInfo productInfo = 13;//商品信息
   string shop_name = 14;//商店名字
+  string currency = 15;//货币单位
 }
 
 //收获与配送信息
@@ -98,7 +99,7 @@ message DeliverInfo {
 message ProductInfo {
   int64  product_id = 1;
   string product_name = 2;
-  string sku_name = 3;
+  Sku sku = 3;
   string service_info = 4;//售后信息
   double unit_price = 5;//单价
   int32 quantity = 6; //数量

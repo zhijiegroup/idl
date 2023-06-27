@@ -112,6 +112,8 @@ message PublishProductRequest {
   State state = 5;
   repeated Attribute shipment_attribute = 6;
   int64 freight_template_id = 7;
+  float sale_price = 8;//售卖价格
+  float reference_price = 9;//参考价格
 }
 
 message PublishProductResponse {
