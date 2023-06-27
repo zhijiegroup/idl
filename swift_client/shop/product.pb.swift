@@ -492,6 +492,12 @@ struct GloryApi_PublishProductRequest {
 
   var freightTemplateID: Int64 = 0
 
+  ///售卖价格
+  var salePrice: Float = 0
+
+  ///参考价格
+  var referencePrice: Float = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1512,6 +1518,8 @@ extension GloryApi_PublishProductRequest: SwiftProtobuf.Message, SwiftProtobuf._
     5: .same(proto: "state"),
     6: .standard(proto: "shipment_attribute"),
     7: .standard(proto: "freight_template_id"),
+    8: .standard(proto: "sale_price"),
+    9: .standard(proto: "reference_price"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1527,6 +1535,8 @@ extension GloryApi_PublishProductRequest: SwiftProtobuf.Message, SwiftProtobuf._
       case 5: try { try decoder.decodeSingularEnumField(value: &self.state) }()
       case 6: try { try decoder.decodeRepeatedMessageField(value: &self.shipmentAttribute) }()
       case 7: try { try decoder.decodeSingularInt64Field(value: &self.freightTemplateID) }()
+      case 8: try { try decoder.decodeSingularFloatField(value: &self.salePrice) }()
+      case 9: try { try decoder.decodeSingularFloatField(value: &self.referencePrice) }()
       default: break
       }
     }
@@ -1558,6 +1568,12 @@ extension GloryApi_PublishProductRequest: SwiftProtobuf.Message, SwiftProtobuf._
     if self.freightTemplateID != 0 {
       try visitor.visitSingularInt64Field(value: self.freightTemplateID, fieldNumber: 7)
     }
+    if self.salePrice != 0 {
+      try visitor.visitSingularFloatField(value: self.salePrice, fieldNumber: 8)
+    }
+    if self.referencePrice != 0 {
+      try visitor.visitSingularFloatField(value: self.referencePrice, fieldNumber: 9)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1569,6 +1585,8 @@ extension GloryApi_PublishProductRequest: SwiftProtobuf.Message, SwiftProtobuf._
     if lhs.state != rhs.state {return false}
     if lhs.shipmentAttribute != rhs.shipmentAttribute {return false}
     if lhs.freightTemplateID != rhs.freightTemplateID {return false}
+    if lhs.salePrice != rhs.salePrice {return false}
+    if lhs.referencePrice != rhs.referencePrice {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -3,7 +3,8 @@
 // @ts-nocheck
 
 import * as base from "../base";
-export { base };
+import * as sku from "./sku";
+export { base, sku };
 
 export interface Order {
   order_id?: string;
@@ -94,6 +95,8 @@ export interface OrderInfo {
   productInfo?: Array<ProductInfo>;
   /** 商店名字 */
   shop_name?: string;
+  /** 货币单位 */
+  currency?: string;
 }
 
 /** 收获与配送信息 */
@@ -118,7 +121,7 @@ export interface DeliverInfo {
 export interface ProductInfo {
   product_id?: string;
   product_name?: string;
-  sku_name?: string;
+  sku?: sku.Sku;
   /** 售后信息 */
   service_info?: string;
   /** 单价 */

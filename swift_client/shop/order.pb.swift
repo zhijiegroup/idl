@@ -259,6 +259,9 @@ struct GloryApi_OrderInfo {
   ///商店名字
   var shopName: String = String()
 
+  ///货币单位
+  var currency: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -306,7 +309,14 @@ struct GloryApi_ProductInfo {
 
   var productName: String = String()
 
-  var skuName: String = String()
+  var sku: GloryApi_Sku {
+    get {return _sku ?? GloryApi_Sku()}
+    set {_sku = newValue}
+  }
+  /// Returns true if `sku` has been explicitly set.
+  var hasSku: Bool {return self._sku != nil}
+  /// Clears the value of `sku`. Subsequent reads from it will return its default value.
+  mutating func clearSku() {self._sku = nil}
 
   ///售后信息
   var serviceInfo: String = String()
@@ -326,6 +336,8 @@ struct GloryApi_ProductInfo {
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
+
+  fileprivate var _sku: GloryApi_Sku? = nil
 }
 
 struct GloryApi_OrderWithAuthor {
@@ -1278,6 +1290,7 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     12: .standard(proto: "payable_amount"),
     13: .same(proto: "productInfo"),
     14: .standard(proto: "shop_name"),
+    15: .same(proto: "currency"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1300,6 +1313,7 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
       case 12: try { try decoder.decodeSingularDoubleField(value: &self.payableAmount) }()
       case 13: try { try decoder.decodeRepeatedMessageField(value: &self.productInfo) }()
       case 14: try { try decoder.decodeSingularStringField(value: &self.shopName) }()
+      case 15: try { try decoder.decodeSingularStringField(value: &self.currency) }()
       default: break
       }
     }
@@ -1348,6 +1362,9 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     if !self.shopName.isEmpty {
       try visitor.visitSingularStringField(value: self.shopName, fieldNumber: 14)
     }
+    if !self.currency.isEmpty {
+      try visitor.visitSingularStringField(value: self.currency, fieldNumber: 15)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1366,6 +1383,7 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     if lhs.payableAmount != rhs.payableAmount {return false}
     if lhs.productInfo != rhs.productInfo {return false}
     if lhs.shopName != rhs.shopName {return false}
+    if lhs.currency != rhs.currency {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -1444,7 +1462,7 @@ extension GloryApi_ProductInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "product_id"),
     2: .standard(proto: "product_name"),
-    3: .standard(proto: "sku_name"),
+    3: .same(proto: "sku"),
     4: .standard(proto: "service_info"),
     5: .standard(proto: "unit_price"),
     6: .same(proto: "quantity"),
@@ -1460,7 +1478,7 @@ extension GloryApi_ProductInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularInt64Field(value: &self.productID) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.productName) }()
-      case 3: try { try decoder.decodeSingularStringField(value: &self.skuName) }()
+      case 3: try { try decoder.decodeSingularMessageField(value: &self._sku) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.serviceInfo) }()
       case 5: try { try decoder.decodeSingularDoubleField(value: &self.unitPrice) }()
       case 6: try { try decoder.decodeSingularInt32Field(value: &self.quantity) }()
@@ -1472,15 +1490,19 @@ extension GloryApi_ProductInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.productID != 0 {
       try visitor.visitSingularInt64Field(value: self.productID, fieldNumber: 1)
     }
     if !self.productName.isEmpty {
       try visitor.visitSingularStringField(value: self.productName, fieldNumber: 2)
     }
-    if !self.skuName.isEmpty {
-      try visitor.visitSingularStringField(value: self.skuName, fieldNumber: 3)
-    }
+    try { if let v = self._sku {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
+    } }()
     if !self.serviceInfo.isEmpty {
       try visitor.visitSingularStringField(value: self.serviceInfo, fieldNumber: 4)
     }
@@ -1502,7 +1524,7 @@ extension GloryApi_ProductInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   static func ==(lhs: GloryApi_ProductInfo, rhs: GloryApi_ProductInfo) -> Bool {
     if lhs.productID != rhs.productID {return false}
     if lhs.productName != rhs.productName {return false}
-    if lhs.skuName != rhs.skuName {return false}
+    if lhs._sku != rhs._sku {return false}
     if lhs.serviceInfo != rhs.serviceInfo {return false}
     if lhs.unitPrice != rhs.unitPrice {return false}
     if lhs.quantity != rhs.quantity {return false}

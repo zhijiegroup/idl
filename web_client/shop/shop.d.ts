@@ -7,32 +7,59 @@ import * as category from "./category";
 export { base, category };
 
 export interface Shop {
+  /** 店铺id,创建时 不传 */
   shop_id?: string;
+  /** 提前调用 create_seller 生成 seller_id */
   seller_id?: string;
+  /** 店铺名称 必须 */
   shop_name?: string;
+  /** 经营类目 id 必须 */
+  category_id?: string;
+  /** 虚拟交易店铺  真实交易店铺 */
   shop_type?: string;
+  /** 公司名称 */
   company_name?: string;
+  /** 统一社会信用代码 */
   company_id?: string;
+  /** 企业、个体工商户、个人 */
   company_category?: string;
+  /** 法人身份证 */
   owner_id?: string;
+  /** 法人名字 */
   owner_name?: string;
+  /** 法人身份证 正面 */
   owner_id_front_url?: string;
+  /** 法人身份证 反面 */
   owner_id_back_url?: string;
+  /** 法人身份证 开始日期 */
   owner_id_start_date?: string;
+  /** 法人身份证 结束日期 */
   owner_id_expiry_date?: string;
+  /** logo */
   shop_logo_url?: string;
+  /** 经营地址 省 */
   province?: string;
+  /** 经营地址 市 */
   city?: string;
+  /** 经营地址 区 */
   district?: string;
+  /** 经营地址 详细地址 */
   address?: string;
+  /** 营业执照 */
   business_license_url?: string;
+  /** 营业执照 开始日期 */
   business_license_start_date?: string;
+  /** 营业执照 结束日期,没有写 长期 */
   business_license_end_date?: string;
+  /** 法人归属地,中国大陆、香港、澳门、台湾、海外 */
   owner_location?: string;
+  /** 公司开户行账号 */
   company_bank_account?: string;
+  /** 预留手机号 */
   company_bank_phone?: string;
+  /** 输入银行卡号,验证结果 */
   company_bank_validated?: boolean;
-  /** 1: inProgress, 2: Approved, 3: Rejected */
+  /** 店铺状态 1: inProgress, 2: Approved, 3: Rejected */
   certify_status?: number;
   /** 上传附件的接口返回的 attachment id */
   owner_id_front_attachment_id?: string;
