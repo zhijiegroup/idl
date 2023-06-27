@@ -1,7 +1,7 @@
 syntax = "proto3";
 package glory_api;
 
-import "api.proto";
+
 import "base.proto";
 
 
@@ -18,6 +18,9 @@ message Room {
   int64 like_count =9;
   string end_time =10;
   string status = 11; // if end_time not null, means closed, if null, means still active
+  int64 live_plan_id = 12;  // 设置直播商品计划id
+  string room_title = 13; //直播的标题
+  string room_image_url = 14; //直播的封面
 }
 
 message CreateRoomRequest {

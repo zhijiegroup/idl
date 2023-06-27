@@ -1,7 +1,7 @@
 syntax = "proto3";
 package glory_api;
 
-import "api.proto";
+
 import "base.proto";
 
 

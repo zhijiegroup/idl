@@ -156,6 +156,30 @@ struct GloryApi_Shop {
     set {_uniqueStorage()._certifyStatus = newValue}
   }
 
+  /// 上传附件的接口返回的 attachment id
+  var ownerIDFrontAttachmentID: Int64 {
+    get {return _storage._ownerIDFrontAttachmentID}
+    set {_uniqueStorage()._ownerIDFrontAttachmentID = newValue}
+  }
+
+  /// 上传附件的接口返回的 attachment id
+  var ownerIDBackAttachmentID: Int64 {
+    get {return _storage._ownerIDBackAttachmentID}
+    set {_uniqueStorage()._ownerIDBackAttachmentID = newValue}
+  }
+
+  /// 上传附件的接口返回的 attachment id
+  var shopLogoAttachmentID: Int64 {
+    get {return _storage._shopLogoAttachmentID}
+    set {_uniqueStorage()._shopLogoAttachmentID = newValue}
+  }
+
+  /// 上传附件的接口返回的 attachment id
+  var businessLicenseAttachmentID: Int64 {
+    get {return _storage._businessLicenseAttachmentID}
+    set {_uniqueStorage()._businessLicenseAttachmentID = newValue}
+  }
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -951,6 +975,10 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     26: .standard(proto: "company_bank_phone"),
     27: .standard(proto: "company_bank_validated"),
     28: .standard(proto: "certify_status"),
+    29: .standard(proto: "owner_id_front_attachment_id"),
+    30: .standard(proto: "owner_id_back_attachment_id"),
+    31: .standard(proto: "shop_logo_attachment_id"),
+    32: .standard(proto: "business_license_attachment_id"),
   ]
 
   fileprivate class _StorageClass {
@@ -980,6 +1008,10 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     var _companyBankPhone: String = String()
     var _companyBankValidated: Bool = false
     var _certifyStatus: Int32 = 0
+    var _ownerIDFrontAttachmentID: Int64 = 0
+    var _ownerIDBackAttachmentID: Int64 = 0
+    var _shopLogoAttachmentID: Int64 = 0
+    var _businessLicenseAttachmentID: Int64 = 0
 
     static let defaultInstance = _StorageClass()
 
@@ -1012,6 +1044,10 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       _companyBankPhone = source._companyBankPhone
       _companyBankValidated = source._companyBankValidated
       _certifyStatus = source._certifyStatus
+      _ownerIDFrontAttachmentID = source._ownerIDFrontAttachmentID
+      _ownerIDBackAttachmentID = source._ownerIDBackAttachmentID
+      _shopLogoAttachmentID = source._shopLogoAttachmentID
+      _businessLicenseAttachmentID = source._businessLicenseAttachmentID
     }
   }
 
@@ -1056,6 +1092,10 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
         case 26: try { try decoder.decodeSingularStringField(value: &_storage._companyBankPhone) }()
         case 27: try { try decoder.decodeSingularBoolField(value: &_storage._companyBankValidated) }()
         case 28: try { try decoder.decodeSingularInt32Field(value: &_storage._certifyStatus) }()
+        case 29: try { try decoder.decodeSingularInt64Field(value: &_storage._ownerIDFrontAttachmentID) }()
+        case 30: try { try decoder.decodeSingularInt64Field(value: &_storage._ownerIDBackAttachmentID) }()
+        case 31: try { try decoder.decodeSingularInt64Field(value: &_storage._shopLogoAttachmentID) }()
+        case 32: try { try decoder.decodeSingularInt64Field(value: &_storage._businessLicenseAttachmentID) }()
         default: break
         }
       }
@@ -1142,6 +1182,18 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       if _storage._certifyStatus != 0 {
         try visitor.visitSingularInt32Field(value: _storage._certifyStatus, fieldNumber: 28)
       }
+      if _storage._ownerIDFrontAttachmentID != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._ownerIDFrontAttachmentID, fieldNumber: 29)
+      }
+      if _storage._ownerIDBackAttachmentID != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._ownerIDBackAttachmentID, fieldNumber: 30)
+      }
+      if _storage._shopLogoAttachmentID != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._shopLogoAttachmentID, fieldNumber: 31)
+      }
+      if _storage._businessLicenseAttachmentID != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._businessLicenseAttachmentID, fieldNumber: 32)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1177,6 +1229,10 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
         if _storage._companyBankPhone != rhs_storage._companyBankPhone {return false}
         if _storage._companyBankValidated != rhs_storage._companyBankValidated {return false}
         if _storage._certifyStatus != rhs_storage._certifyStatus {return false}
+        if _storage._ownerIDFrontAttachmentID != rhs_storage._ownerIDFrontAttachmentID {return false}
+        if _storage._ownerIDBackAttachmentID != rhs_storage._ownerIDBackAttachmentID {return false}
+        if _storage._shopLogoAttachmentID != rhs_storage._shopLogoAttachmentID {return false}
+        if _storage._businessLicenseAttachmentID != rhs_storage._businessLicenseAttachmentID {return false}
         return true
       }
       if !storagesAreEqual {return false}

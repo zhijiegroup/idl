@@ -2,10 +2,9 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import * as api from "../api";
 import * as base from "../base";
 import * as category from "./category";
-export { api, base, category };
+export { base, category };
 
 export interface Shop {
   shop_id?: string;
@@ -35,6 +34,14 @@ export interface Shop {
   company_bank_validated?: boolean;
   /** 1: inProgress, 2: Approved, 3: Rejected */
   certify_status?: number;
+  /** 上传附件的接口返回的 attachment id */
+  owner_id_front_attachment_id?: string;
+  /** 上传附件的接口返回的 attachment id */
+  owner_id_back_attachment_id?: string;
+  /** 上传附件的接口返回的 attachment id */
+  shop_logo_attachment_id?: string;
+  /** 上传附件的接口返回的 attachment id */
+  business_license_attachment_id?: string;
 }
 
 export interface ShopWithAuthor {

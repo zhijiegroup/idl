@@ -60,6 +60,22 @@ struct GloryApi_Order {
   init() {}
 }
 
+struct GloryApi_Images {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var productImageID: Int64 = 0
+
+  var imageType: String = String()
+
+  var imageURL: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
 struct GloryApi_CreateOrderInfo {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -240,6 +256,9 @@ struct GloryApi_OrderInfo {
   ///商品信息
   var productInfo: [GloryApi_ProductInfo] = []
 
+  ///商店名字
+  var shopName: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -300,6 +319,9 @@ struct GloryApi_ProductInfo {
 
   ///优惠信息
   var discountInfo: String = String()
+
+  ///商品图片
+  var images: [GloryApi_Images] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -751,6 +773,7 @@ struct GloryApi_FreeShippingInBatchesResponse {
 
 #if swift(>=5.5) && canImport(_Concurrency)
 extension GloryApi_Order: @unchecked Sendable {}
+extension GloryApi_Images: @unchecked Sendable {}
 extension GloryApi_CreateOrderInfo: @unchecked Sendable {}
 extension GloryApi_SkuInfo: @unchecked Sendable {}
 extension GloryApi_OrderSku: @unchecked Sendable {}
@@ -891,6 +914,50 @@ extension GloryApi_Order: SwiftProtobuf.Message, SwiftProtobuf._MessageImplement
     if lhs.deliverPost != rhs.deliverPost {return false}
     if lhs.contactName != rhs.contactName {return false}
     if lhs.contactPhone != rhs.contactPhone {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_Images: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".Images"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "product_image_id"),
+    2: .standard(proto: "image_type"),
+    3: .standard(proto: "image_url"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.productImageID) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.imageType) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.imageURL) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.productImageID != 0 {
+      try visitor.visitSingularInt64Field(value: self.productImageID, fieldNumber: 1)
+    }
+    if !self.imageType.isEmpty {
+      try visitor.visitSingularStringField(value: self.imageType, fieldNumber: 2)
+    }
+    if !self.imageURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.imageURL, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_Images, rhs: GloryApi_Images) -> Bool {
+    if lhs.productImageID != rhs.productImageID {return false}
+    if lhs.imageType != rhs.imageType {return false}
+    if lhs.imageURL != rhs.imageURL {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -1210,6 +1277,7 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     11: .standard(proto: "payment_amount"),
     12: .standard(proto: "payable_amount"),
     13: .same(proto: "productInfo"),
+    14: .standard(proto: "shop_name"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1231,6 +1299,7 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
       case 11: try { try decoder.decodeSingularDoubleField(value: &self.paymentAmount) }()
       case 12: try { try decoder.decodeSingularDoubleField(value: &self.payableAmount) }()
       case 13: try { try decoder.decodeRepeatedMessageField(value: &self.productInfo) }()
+      case 14: try { try decoder.decodeSingularStringField(value: &self.shopName) }()
       default: break
       }
     }
@@ -1276,6 +1345,9 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     if !self.productInfo.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.productInfo, fieldNumber: 13)
     }
+    if !self.shopName.isEmpty {
+      try visitor.visitSingularStringField(value: self.shopName, fieldNumber: 14)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1293,6 +1365,7 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     if lhs.paymentAmount != rhs.paymentAmount {return false}
     if lhs.payableAmount != rhs.payableAmount {return false}
     if lhs.productInfo != rhs.productInfo {return false}
+    if lhs.shopName != rhs.shopName {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -1376,6 +1449,7 @@ extension GloryApi_ProductInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     5: .standard(proto: "unit_price"),
     6: .same(proto: "quantity"),
     7: .standard(proto: "discount_info"),
+    8: .same(proto: "images"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1391,6 +1465,7 @@ extension GloryApi_ProductInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       case 5: try { try decoder.decodeSingularDoubleField(value: &self.unitPrice) }()
       case 6: try { try decoder.decodeSingularInt32Field(value: &self.quantity) }()
       case 7: try { try decoder.decodeSingularStringField(value: &self.discountInfo) }()
+      case 8: try { try decoder.decodeRepeatedMessageField(value: &self.images) }()
       default: break
       }
     }
@@ -1418,6 +1493,9 @@ extension GloryApi_ProductInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     if !self.discountInfo.isEmpty {
       try visitor.visitSingularStringField(value: self.discountInfo, fieldNumber: 7)
     }
+    if !self.images.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.images, fieldNumber: 8)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1429,6 +1507,7 @@ extension GloryApi_ProductInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     if lhs.unitPrice != rhs.unitPrice {return false}
     if lhs.quantity != rhs.quantity {return false}
     if lhs.discountInfo != rhs.discountInfo {return false}
+    if lhs.images != rhs.images {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

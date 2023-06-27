@@ -2,9 +2,8 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import * as api from "../api";
 import * as base from "../base";
-export { api, base };
+export { base };
 
 export interface Order {
   order_id?: string;
@@ -22,6 +21,12 @@ export interface Order {
   deliver_post?: number;
   contact_name?: string;
   contact_phone?: string;
+}
+
+export interface Images {
+  product_image_id?: string;
+  image_type?: string;
+  image_url?: string;
 }
 
 export interface CreateOrderInfo {
@@ -87,6 +92,8 @@ export interface OrderInfo {
   payable_amount?: number;
   /** 商品信息 */
   productInfo?: Array<ProductInfo>;
+  /** 商店名字 */
+  shop_name?: string;
 }
 
 /** 收获与配送信息 */
@@ -120,6 +127,8 @@ export interface ProductInfo {
   quantity?: number;
   /** 优惠信息 */
   discount_info?: string;
+  /** 商品图片 */
+  images?: Array<Images>;
 }
 
 export interface OrderWithAuthor {

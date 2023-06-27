@@ -39,9 +39,22 @@ struct GloryApi_User {
 
   var avatarURL: String = String()
 
+  var seller: GloryApi_Seller {
+    get {return _seller ?? GloryApi_Seller()}
+    set {_seller = newValue}
+  }
+  /// Returns true if `seller` has been explicitly set.
+  var hasSeller: Bool {return self._seller != nil}
+  /// Clears the value of `seller`. Subsequent reads from it will return its default value.
+  mutating func clearSeller() {self._seller = nil}
+
+  var shopAccess: [GloryApi_ShopAccess] = []
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
+
+  fileprivate var _seller: GloryApi_Seller? = nil
 }
 
 /// login
@@ -59,8 +72,10 @@ struct GloryApi_LoginRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
+  /// required
   var phone: String = String()
 
+  /// required
   var code: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -330,6 +345,8 @@ extension GloryApi_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     5: .standard(proto: "created_at"),
     6: .same(proto: "name"),
     7: .standard(proto: "avatar_url"),
+    8: .same(proto: "seller"),
+    9: .standard(proto: "shop_access"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -345,12 +362,18 @@ extension GloryApi_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       case 5: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
       case 6: try { try decoder.decodeSingularStringField(value: &self.name) }()
       case 7: try { try decoder.decodeSingularStringField(value: &self.avatarURL) }()
+      case 8: try { try decoder.decodeSingularMessageField(value: &self._seller) }()
+      case 9: try { try decoder.decodeRepeatedMessageField(value: &self.shopAccess) }()
       default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.id != 0 {
       try visitor.visitSingularInt64Field(value: self.id, fieldNumber: 1)
     }
@@ -372,6 +395,12 @@ extension GloryApi_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     if !self.avatarURL.isEmpty {
       try visitor.visitSingularStringField(value: self.avatarURL, fieldNumber: 7)
     }
+    try { if let v = self._seller {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
+    } }()
+    if !self.shopAccess.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.shopAccess, fieldNumber: 9)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -383,6 +412,8 @@ extension GloryApi_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     if lhs.createdAt != rhs.createdAt {return false}
     if lhs.name != rhs.name {return false}
     if lhs.avatarURL != rhs.avatarURL {return false}
+    if lhs._seller != rhs._seller {return false}
+    if lhs.shopAccess != rhs.shopAccess {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

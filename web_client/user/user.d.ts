@@ -2,9 +2,10 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import * as api from "../api";
 import * as base from "../base";
-export { api, base };
+import * as seller from "../seller/seller";
+import * as shop from "../shop/shop";
+export { base, seller, shop };
 
 export interface User {
   id?: string;
@@ -14,12 +15,16 @@ export interface User {
   created_at?: string;
   name?: string;
   avatar_url?: string;
+  seller?: seller.Seller;
+  shop_access?: Array<shop.ShopAccess>;
 }
 
 /** login */
 export interface LoginRequest {
   base_request?: base.BaseRequest;
+  /** required */
   phone?: string;
+  /** required */
   code?: string;
 }
 

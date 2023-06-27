@@ -2,9 +2,8 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import * as api from "../api";
 import * as base from "../base";
-export { api, base };
+export { base };
 
 export interface Room {
   room_id?: string;
@@ -19,6 +18,12 @@ export interface Room {
   end_time?: string;
   /** if end_time not null, means closed, if null, means still active */
   status?: string;
+  /** 设置直播商品计划id */
+  live_plan_id?: string;
+  /** 直播的标题 */
+  room_title?: string;
+  /** 直播的封面 */
+  room_image_url?: string;
 }
 
 export interface CreateRoomRequest {
