@@ -25,132 +25,163 @@ struct GloryApi_Shop {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  ///店铺id,创建时 不传
   var shopID: Int64 {
     get {return _storage._shopID}
     set {_uniqueStorage()._shopID = newValue}
   }
 
+  ///提前调用 create_seller 生成 seller_id
   var sellerID: Int64 {
     get {return _storage._sellerID}
     set {_uniqueStorage()._sellerID = newValue}
   }
 
+  ///店铺名称 必须
   var shopName: String {
     get {return _storage._shopName}
     set {_uniqueStorage()._shopName = newValue}
   }
 
+  ///经营类目 id 必须
+  var categoryID: Int64 {
+    get {return _storage._categoryID}
+    set {_uniqueStorage()._categoryID = newValue}
+  }
+
+  ///虚拟交易店铺  真实交易店铺
   var shopType: String {
     get {return _storage._shopType}
     set {_uniqueStorage()._shopType = newValue}
   }
 
+  ///公司名称
   var companyName: String {
     get {return _storage._companyName}
     set {_uniqueStorage()._companyName = newValue}
   }
 
+  ///统一社会信用代码
   var companyID: String {
     get {return _storage._companyID}
     set {_uniqueStorage()._companyID = newValue}
   }
 
+  ///企业、个体工商户、个人
   var companyCategory: String {
     get {return _storage._companyCategory}
     set {_uniqueStorage()._companyCategory = newValue}
   }
 
+  ///法人身份证
   var ownerID: String {
     get {return _storage._ownerID}
     set {_uniqueStorage()._ownerID = newValue}
   }
 
+  ///法人名字
   var ownerName: String {
     get {return _storage._ownerName}
     set {_uniqueStorage()._ownerName = newValue}
   }
 
+  ///法人身份证 正面
   var ownerIDFrontURL: String {
     get {return _storage._ownerIDFrontURL}
     set {_uniqueStorage()._ownerIDFrontURL = newValue}
   }
 
+  ///法人身份证 反面
   var ownerIDBackURL: String {
     get {return _storage._ownerIDBackURL}
     set {_uniqueStorage()._ownerIDBackURL = newValue}
   }
 
+  ///法人身份证 开始日期
   var ownerIDStartDate: String {
     get {return _storage._ownerIDStartDate}
     set {_uniqueStorage()._ownerIDStartDate = newValue}
   }
 
+  ///法人身份证 结束日期
   var ownerIDExpiryDate: String {
     get {return _storage._ownerIDExpiryDate}
     set {_uniqueStorage()._ownerIDExpiryDate = newValue}
   }
 
+  ///logo
   var shopLogoURL: String {
     get {return _storage._shopLogoURL}
     set {_uniqueStorage()._shopLogoURL = newValue}
   }
 
+  ///经营地址 省
   var province: String {
     get {return _storage._province}
     set {_uniqueStorage()._province = newValue}
   }
 
+  ///经营地址 市
   var city: String {
     get {return _storage._city}
     set {_uniqueStorage()._city = newValue}
   }
 
+  ///经营地址 区
   var district: String {
     get {return _storage._district}
     set {_uniqueStorage()._district = newValue}
   }
 
+  ///经营地址 详细地址
   var address: String {
     get {return _storage._address}
     set {_uniqueStorage()._address = newValue}
   }
 
+  ///营业执照
   var businessLicenseURL: String {
     get {return _storage._businessLicenseURL}
     set {_uniqueStorage()._businessLicenseURL = newValue}
   }
 
+  ///营业执照 开始日期
   var businessLicenseStartDate: String {
     get {return _storage._businessLicenseStartDate}
     set {_uniqueStorage()._businessLicenseStartDate = newValue}
   }
 
+  ///营业执照 结束日期,没有写 长期
   var businessLicenseEndDate: String {
     get {return _storage._businessLicenseEndDate}
     set {_uniqueStorage()._businessLicenseEndDate = newValue}
   }
 
+  ///法人归属地,中国大陆、香港、澳门、台湾、海外
   var ownerLocation: String {
     get {return _storage._ownerLocation}
     set {_uniqueStorage()._ownerLocation = newValue}
   }
 
+  ///公司开户行账号
   var companyBankAccount: String {
     get {return _storage._companyBankAccount}
     set {_uniqueStorage()._companyBankAccount = newValue}
   }
 
+  ///预留手机号
   var companyBankPhone: String {
     get {return _storage._companyBankPhone}
     set {_uniqueStorage()._companyBankPhone = newValue}
   }
 
+  ///输入银行卡号,验证结果
   var companyBankValidated: Bool {
     get {return _storage._companyBankValidated}
     set {_uniqueStorage()._companyBankValidated = newValue}
   }
 
-  /// 1: inProgress, 2: Approved, 3: Rejected
+  ///店铺状态 1: inProgress, 2: Approved, 3: Rejected
   var certifyStatus: Int32 {
     get {return _storage._certifyStatus}
     set {_uniqueStorage()._certifyStatus = newValue}
@@ -952,6 +983,7 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     1: .standard(proto: "shop_id"),
     2: .standard(proto: "seller_id"),
     3: .standard(proto: "shop_name"),
+    33: .standard(proto: "category_id"),
     4: .standard(proto: "shop_type"),
     5: .standard(proto: "company_name"),
     6: .standard(proto: "company_id"),
@@ -985,6 +1017,7 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     var _shopID: Int64 = 0
     var _sellerID: Int64 = 0
     var _shopName: String = String()
+    var _categoryID: Int64 = 0
     var _shopType: String = String()
     var _companyName: String = String()
     var _companyID: String = String()
@@ -1021,6 +1054,7 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       _shopID = source._shopID
       _sellerID = source._sellerID
       _shopName = source._shopName
+      _categoryID = source._categoryID
       _shopType = source._shopType
       _companyName = source._companyName
       _companyID = source._companyID
@@ -1096,6 +1130,7 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
         case 30: try { try decoder.decodeSingularInt64Field(value: &_storage._ownerIDBackAttachmentID) }()
         case 31: try { try decoder.decodeSingularInt64Field(value: &_storage._shopLogoAttachmentID) }()
         case 32: try { try decoder.decodeSingularInt64Field(value: &_storage._businessLicenseAttachmentID) }()
+        case 33: try { try decoder.decodeSingularInt64Field(value: &_storage._categoryID) }()
         default: break
         }
       }
@@ -1194,6 +1229,9 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       if _storage._businessLicenseAttachmentID != 0 {
         try visitor.visitSingularInt64Field(value: _storage._businessLicenseAttachmentID, fieldNumber: 32)
       }
+      if _storage._categoryID != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._categoryID, fieldNumber: 33)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1206,6 +1244,7 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
         if _storage._shopID != rhs_storage._shopID {return false}
         if _storage._sellerID != rhs_storage._sellerID {return false}
         if _storage._shopName != rhs_storage._shopName {return false}
+        if _storage._categoryID != rhs_storage._categoryID {return false}
         if _storage._shopType != rhs_storage._shopType {return false}
         if _storage._companyName != rhs_storage._companyName {return false}
         if _storage._companyID != rhs_storage._companyID {return false}

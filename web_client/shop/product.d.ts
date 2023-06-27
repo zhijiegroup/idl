@@ -113,6 +113,10 @@ export interface PublishProductRequest {
   state?: State;
   shipment_attribute?: Array<attribute.Attribute>;
   freight_template_id?: string;
+  /** 售卖价格 */
+  sale_price?: number;
+  /** 参考价格 */
+  reference_price?: number;
 }
 
 export interface PublishProductResponse {
