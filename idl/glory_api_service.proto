@@ -51,7 +51,6 @@ service glory_api {
     option (api.post) = '/api/example/delete_example';
   }
 
-
   //user
   rpc Login(LoginRequest) returns (LoginResponse) {
     option (api.post) = '/api/user/login';
@@ -92,7 +91,7 @@ service glory_api {
   rpc ListAddress(ListAddressRequest) returns (ListAddressResponse) {
     option (api.get) = '/api/user/list_address';
   }
-  
+
   // shop
   rpc CreateShop(CreateShopRequest) returns (CreateShopResponse) {
     option (api.post) = '/api/shop/create_shop';
