@@ -49,7 +49,7 @@ struct GloryApi_Shop {
     set {_uniqueStorage()._categoryID = newValue}
   }
 
-  ///虚拟交易店铺  真实交易店铺
+  ///虚拟交易店铺 virtual, 真实交易店铺 real
   var shopType: String {
     get {return _storage._shopType}
     set {_uniqueStorage()._shopType = newValue}
@@ -67,7 +67,7 @@ struct GloryApi_Shop {
     set {_uniqueStorage()._companyID = newValue}
   }
 
-  ///企业、个体工商户、个人
+  ///企业 enterprise、个体工商户 individual、个人 personal
   var companyCategory: String {
     get {return _storage._companyCategory}
     set {_uniqueStorage()._companyCategory = newValue}

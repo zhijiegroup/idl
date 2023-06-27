@@ -18,6 +18,12 @@ export interface ProductIndexInfo {
   product_name?: string;
   category_id?: string;
   images?: Array<Image>;
+  /** 售卖价格 */
+  sale_price?: number;
+  /** 参考价格 */
+  reference_price?: number;
+  /** 是否是真实店铺商品: true 真实店铺,false 虚拟店铺 */
+  is_real?: boolean;
 }
 
 export interface LiveRoomIndexInfo {

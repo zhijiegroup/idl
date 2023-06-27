@@ -15,13 +15,13 @@ export interface Shop {
   shop_name?: string;
   /** 经营类目 id 必须 */
   category_id?: string;
-  /** 虚拟交易店铺  真实交易店铺 */
+  /** 虚拟交易店铺 virtual, 真实交易店铺 real */
   shop_type?: string;
   /** 公司名称 */
   company_name?: string;
   /** 统一社会信用代码 */
   company_id?: string;
-  /** 企业、个体工商户、个人 */
+  /** 企业 enterprise、个体工商户 individual、个人 personal */
   company_category?: string;
   /** 法人身份证 */
   owner_id?: string;
