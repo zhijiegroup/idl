@@ -92,8 +92,7 @@ service glory_api {
   rpc ListAddress(ListAddressRequest) returns (ListAddressResponse) {
     option (api.get) = '/api/user/list_address';
   }
-
-
+  
   // shop
   rpc CreateShop(CreateShopRequest) returns (CreateShopResponse) {
     option (api.post) = '/api/shop/create_shop';
