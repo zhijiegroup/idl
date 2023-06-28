@@ -25,8 +25,15 @@ export interface Product {
   category_id?: string;
   sku?: Array<sku.Sku>;
   attribute?: Array<attribute.Attribute>;
+  /** 商品状态 */
   state?: State;
   images?: Array<ProductImage>;
+  /** 价格,取所有sku 中最低的一个 */
+  product_price?: number;
+  /** 总库存 */
+  product_quantity?: number;
+  /** 总销量 */
+  product_sold?: number;
 }
 
 export interface ProductImage {

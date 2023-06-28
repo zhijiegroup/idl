@@ -115,9 +115,19 @@ struct GloryApi_Product {
 
   var attribute: [GloryApi_Attribute] = []
 
+  ///商品状态
   var state: GloryApi_State = .default
 
   var images: [GloryApi_ProductImage] = []
+
+  ///价格,取所有sku 中最低的一个
+  var productPrice: Float = 0
+
+  ///总库存
+  var productQuantity: Int32 = 0
+
+  ///总销量
+  var productSold: Int32 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -391,29 +401,28 @@ struct GloryApi_GetProductResponse {
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
-    set {_baseResp = newValue}
+    get {return _storage._baseResp ?? Base_BaseResponse()}
+    set {_uniqueStorage()._baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {return _storage._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
-  mutating func clearBaseResp() {self._baseResp = nil}
+  mutating func clearBaseResp() {_uniqueStorage()._baseResp = nil}
 
   var productDetail: GloryApi_ProductWithValueAuthor {
-    get {return _productDetail ?? GloryApi_ProductWithValueAuthor()}
-    set {_productDetail = newValue}
+    get {return _storage._productDetail ?? GloryApi_ProductWithValueAuthor()}
+    set {_uniqueStorage()._productDetail = newValue}
   }
   /// Returns true if `productDetail` has been explicitly set.
-  var hasProductDetail: Bool {return self._productDetail != nil}
+  var hasProductDetail: Bool {return _storage._productDetail != nil}
   /// Clears the value of `productDetail`. Subsequent reads from it will return its default value.
-  mutating func clearProductDetail() {self._productDetail = nil}
+  mutating func clearProductDetail() {_uniqueStorage()._productDetail = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  fileprivate var _baseResp: Base_BaseResponse? = nil
-  fileprivate var _productDetail: GloryApi_ProductWithValueAuthor? = nil
+  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 struct GloryApi_UpdateProductRequest {
@@ -842,6 +851,9 @@ extension GloryApi_Product: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
     6: .same(proto: "attribute"),
     7: .same(proto: "state"),
     8: .same(proto: "images"),
+    9: .standard(proto: "product_price"),
+    10: .standard(proto: "product_quantity"),
+    11: .standard(proto: "product_sold"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -858,6 +870,9 @@ extension GloryApi_Product: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
       case 6: try { try decoder.decodeRepeatedMessageField(value: &self.attribute) }()
       case 7: try { try decoder.decodeSingularEnumField(value: &self.state) }()
       case 8: try { try decoder.decodeRepeatedMessageField(value: &self.images) }()
+      case 9: try { try decoder.decodeSingularFloatField(value: &self.productPrice) }()
+      case 10: try { try decoder.decodeSingularInt32Field(value: &self.productQuantity) }()
+      case 11: try { try decoder.decodeSingularInt32Field(value: &self.productSold) }()
       default: break
       }
     }
@@ -888,6 +903,15 @@ extension GloryApi_Product: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
     if !self.images.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.images, fieldNumber: 8)
     }
+    if self.productPrice != 0 {
+      try visitor.visitSingularFloatField(value: self.productPrice, fieldNumber: 9)
+    }
+    if self.productQuantity != 0 {
+      try visitor.visitSingularInt32Field(value: self.productQuantity, fieldNumber: 10)
+    }
+    if self.productSold != 0 {
+      try visitor.visitSingularInt32Field(value: self.productSold, fieldNumber: 11)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -900,6 +924,9 @@ extension GloryApi_Product: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
     if lhs.attribute != rhs.attribute {return false}
     if lhs.state != rhs.state {return false}
     if lhs.images != rhs.images {return false}
+    if lhs.productPrice != rhs.productPrice {return false}
+    if lhs.productQuantity != rhs.productQuantity {return false}
+    if lhs.productSold != rhs.productSold {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -1396,36 +1423,70 @@ extension GloryApi_GetProductResponse: SwiftProtobuf.Message, SwiftProtobuf._Mes
     2: .standard(proto: "product_detail"),
   ]
 
+  fileprivate class _StorageClass {
+    var _baseResp: Base_BaseResponse? = nil
+    var _productDetail: GloryApi_ProductWithValueAuthor? = nil
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _baseResp = source._baseResp
+      _productDetail = source._productDetail
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
-      case 2: try { try decoder.decodeSingularMessageField(value: &self._productDetail) }()
-      default: break
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        // The use of inline closures is to circumvent an issue where the compiler
+        // allocates stack space for every case branch when no optimizations are
+        // enabled. https://github.com/apple/swift-protobuf/issues/1034
+        switch fieldNumber {
+        case 1: try { try decoder.decodeSingularMessageField(value: &_storage._baseResp) }()
+        case 2: try { try decoder.decodeSingularMessageField(value: &_storage._productDetail) }()
+        default: break
+        }
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._baseResp {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    try { if let v = self._productDetail {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
+      try { if let v = _storage._baseResp {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+      } }()
+      try { if let v = _storage._productDetail {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+      } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_GetProductResponse, rhs: GloryApi_GetProductResponse) -> Bool {
-    if lhs._baseResp != rhs._baseResp {return false}
-    if lhs._productDetail != rhs._productDetail {return false}
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._baseResp != rhs_storage._baseResp {return false}
+        if _storage._productDetail != rhs_storage._productDetail {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
