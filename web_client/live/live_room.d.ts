@@ -22,13 +22,19 @@ export interface Room {
   live_plan_id?: string;
   /** 直播的标题 */
   room_title?: string;
-  /** 直播的封面 */
+  /** 直播的封面的url */
   room_image_url?: string;
+  /** 直播间的封面的image 的id */
+  room_image_attachment_id?: string;
 }
 
 export interface CreateRoomRequest {
   base_request?: base.BaseRequest;
   group_id?: string;
+  /** 直播房间的标题 */
+  room_title?: string;
+  /** 直播房间的图片的id */
+  room_image_attachment_id?: string;
 }
 
 export interface CreateRoomResponse {

@@ -129,9 +129,16 @@ struct GloryApi_UploadAttachmentRequest {
 
   var attachmentType: GloryApi_AttachmentType = .unSpecified
 
+  /// 如果传了seller_id, grouping_id跟grouping_key会不起作用
   var sellerID: Int64 = 0
 
   var description_p: String = String()
+
+  /// 保存到oss的时候，这个id会成为地址的一部分，增加这个来支持更多的upload场景
+  var groupingID: Int64 = 0
+
+  /// 保存到oss的时候这个key会作为地址的一部分，增加这个来支持更多的upload场景
+  var groupingKey: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -378,6 +385,8 @@ extension GloryApi_UploadAttachmentRequest: SwiftProtobuf.Message, SwiftProtobuf
     2: .standard(proto: "attachment_type"),
     3: .standard(proto: "seller_id"),
     4: .same(proto: "description"),
+    5: .standard(proto: "grouping_id"),
+    6: .standard(proto: "grouping_key"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -390,6 +399,8 @@ extension GloryApi_UploadAttachmentRequest: SwiftProtobuf.Message, SwiftProtobuf
       case 2: try { try decoder.decodeSingularEnumField(value: &self.attachmentType) }()
       case 3: try { try decoder.decodeSingularInt64Field(value: &self.sellerID) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.description_p) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.groupingID) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.groupingKey) }()
       default: break
       }
     }
@@ -412,6 +423,12 @@ extension GloryApi_UploadAttachmentRequest: SwiftProtobuf.Message, SwiftProtobuf
     if !self.description_p.isEmpty {
       try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 4)
     }
+    if self.groupingID != 0 {
+      try visitor.visitSingularInt64Field(value: self.groupingID, fieldNumber: 5)
+    }
+    if !self.groupingKey.isEmpty {
+      try visitor.visitSingularStringField(value: self.groupingKey, fieldNumber: 6)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -420,6 +437,8 @@ extension GloryApi_UploadAttachmentRequest: SwiftProtobuf.Message, SwiftProtobuf
     if lhs.attachmentType != rhs.attachmentType {return false}
     if lhs.sellerID != rhs.sellerID {return false}
     if lhs.description_p != rhs.description_p {return false}
+    if lhs.groupingID != rhs.groupingID {return false}
+    if lhs.groupingKey != rhs.groupingKey {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
