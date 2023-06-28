@@ -26,8 +26,13 @@ export interface AttachmentWithAuthor {
 export interface UploadAttachmentRequest {
   base_request?: base.BaseRequest;
   attachment_type?: AttachmentType;
+  /** 如果传了seller_id, grouping_id跟grouping_key会不起作用 */
   seller_id?: string;
   description?: string;
+  /** 保存到oss的时候，这个id会成为地址的一部分，增加这个来支持更多的upload场景 */
+  grouping_id?: string;
+  /** 保存到oss的时候这个key会作为地址的一部分，增加这个来支持更多的upload场景 */
+  grouping_key?: string;
 }
 
 export interface UploadAttachmentResponse {
