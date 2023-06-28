@@ -184,6 +184,7 @@ service glory_api {
   rpc CreateProduct(CreateProductRequest) returns (CreateProductResponse) {
     option (api.post) = '/api/shop/create_product';
   }
+
   rpc GetProduct(GetProductRequest) returns (GetProductResponse) {
     option (api.get) = '/api/shop/get_product';
   }
