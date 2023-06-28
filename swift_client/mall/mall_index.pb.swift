@@ -51,6 +51,15 @@ struct GloryApi_ProductIndexInfo {
 
   var images: [GloryApi_Image] = []
 
+  ///售卖价格
+  var salePrice: Float = 0
+
+  ///参考价格
+  var referencePrice: Float = 0
+
+  ///是否是真实店铺商品: true 真实店铺,false 虚拟店铺
+  var isReal: Bool = false
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -218,6 +227,9 @@ extension GloryApi_ProductIndexInfo: SwiftProtobuf.Message, SwiftProtobuf._Messa
     3: .standard(proto: "product_name"),
     4: .standard(proto: "category_id"),
     5: .same(proto: "images"),
+    6: .standard(proto: "sale_price"),
+    7: .standard(proto: "reference_price"),
+    8: .standard(proto: "is_real"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -231,6 +243,9 @@ extension GloryApi_ProductIndexInfo: SwiftProtobuf.Message, SwiftProtobuf._Messa
       case 3: try { try decoder.decodeSingularStringField(value: &self.productName) }()
       case 4: try { try decoder.decodeSingularInt64Field(value: &self.categoryID) }()
       case 5: try { try decoder.decodeRepeatedMessageField(value: &self.images) }()
+      case 6: try { try decoder.decodeSingularFloatField(value: &self.salePrice) }()
+      case 7: try { try decoder.decodeSingularFloatField(value: &self.referencePrice) }()
+      case 8: try { try decoder.decodeSingularBoolField(value: &self.isReal) }()
       default: break
       }
     }
@@ -252,6 +267,15 @@ extension GloryApi_ProductIndexInfo: SwiftProtobuf.Message, SwiftProtobuf._Messa
     if !self.images.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.images, fieldNumber: 5)
     }
+    if self.salePrice != 0 {
+      try visitor.visitSingularFloatField(value: self.salePrice, fieldNumber: 6)
+    }
+    if self.referencePrice != 0 {
+      try visitor.visitSingularFloatField(value: self.referencePrice, fieldNumber: 7)
+    }
+    if self.isReal != false {
+      try visitor.visitSingularBoolField(value: self.isReal, fieldNumber: 8)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -261,6 +285,9 @@ extension GloryApi_ProductIndexInfo: SwiftProtobuf.Message, SwiftProtobuf._Messa
     if lhs.productName != rhs.productName {return false}
     if lhs.categoryID != rhs.categoryID {return false}
     if lhs.images != rhs.images {return false}
+    if lhs.salePrice != rhs.salePrice {return false}
+    if lhs.referencePrice != rhs.referencePrice {return false}
+    if lhs.isReal != rhs.isReal {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

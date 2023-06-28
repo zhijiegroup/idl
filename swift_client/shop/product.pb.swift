@@ -22,55 +22,58 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 
 enum GloryApi_State: SwiftProtobuf.Enum {
   typealias RawValue = Int
+  case `default` // = 0
 
   ///创建
-  case created // = 0
+  case created // = 1
 
   ///上架
-  case onShelf // = 1
+  case onShelf // = 2
 
   ///下架
-  case offShelf // = 2
+  case offShelf // = 3
 
   ///缺货
-  case outOfStock // = 3
+  case outOfStock // = 4
 
   ///删除 到 回收站
-  case deleted // = 4
+  case deleted // = 5
 
   ///永久删除
-  case deletedForever // = 5
+  case deletedForever // = 6
 
   ///售罄
-  case soldOut // = 6
+  case soldOut // = 7
   case UNRECOGNIZED(Int)
 
   init() {
-    self = .created
+    self = .default
   }
 
   init?(rawValue: Int) {
     switch rawValue {
-    case 0: self = .created
-    case 1: self = .onShelf
-    case 2: self = .offShelf
-    case 3: self = .outOfStock
-    case 4: self = .deleted
-    case 5: self = .deletedForever
-    case 6: self = .soldOut
+    case 0: self = .default
+    case 1: self = .created
+    case 2: self = .onShelf
+    case 3: self = .offShelf
+    case 4: self = .outOfStock
+    case 5: self = .deleted
+    case 6: self = .deletedForever
+    case 7: self = .soldOut
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
 
   var rawValue: Int {
     switch self {
-    case .created: return 0
-    case .onShelf: return 1
-    case .offShelf: return 2
-    case .outOfStock: return 3
-    case .deleted: return 4
-    case .deletedForever: return 5
-    case .soldOut: return 6
+    case .default: return 0
+    case .created: return 1
+    case .onShelf: return 2
+    case .offShelf: return 3
+    case .outOfStock: return 4
+    case .deleted: return 5
+    case .deletedForever: return 6
+    case .soldOut: return 7
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -82,6 +85,7 @@ enum GloryApi_State: SwiftProtobuf.Enum {
 extension GloryApi_State: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
   static var allCases: [GloryApi_State] = [
+    .default,
     .created,
     .onShelf,
     .offShelf,
@@ -111,7 +115,7 @@ struct GloryApi_Product {
 
   var attribute: [GloryApi_Attribute] = []
 
-  var state: GloryApi_State = .created
+  var state: GloryApi_State = .default
 
   var images: [GloryApi_ProductImage] = []
 
@@ -486,7 +490,7 @@ struct GloryApi_PublishProductRequest {
 
   var sku: [GloryApi_Sku] = []
 
-  var state: GloryApi_State = .created
+  var state: GloryApi_State = .default
 
   var shipmentAttribute: [GloryApi_Attribute] = []
 
@@ -635,6 +639,8 @@ struct GloryApi_ListProductRequest {
   var shopID: Int64 = 0
 
   var categoryID: Int64 = 0
+
+  var state: GloryApi_State = .default
 
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
@@ -814,13 +820,14 @@ fileprivate let _protobuf_package = "glory_api"
 
 extension GloryApi_State: SwiftProtobuf._ProtoNameProviding {
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "created"),
-    1: .same(proto: "on_shelf"),
-    2: .same(proto: "off_shelf"),
-    3: .same(proto: "out_of_stock"),
-    4: .same(proto: "deleted"),
-    5: .same(proto: "deleted_forever"),
-    6: .same(proto: "sold_out"),
+    0: .same(proto: "default"),
+    1: .same(proto: "created"),
+    2: .same(proto: "on_shelf"),
+    3: .same(proto: "off_shelf"),
+    4: .same(proto: "out_of_stock"),
+    5: .same(proto: "deleted"),
+    6: .same(proto: "deleted_forever"),
+    7: .same(proto: "sold_out"),
   ]
 }
 
@@ -875,7 +882,7 @@ extension GloryApi_Product: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
     if !self.attribute.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.attribute, fieldNumber: 6)
     }
-    if self.state != .created {
+    if self.state != .default {
       try visitor.visitSingularEnumField(value: self.state, fieldNumber: 7)
     }
     if !self.images.isEmpty {
@@ -1559,7 +1566,7 @@ extension GloryApi_PublishProductRequest: SwiftProtobuf.Message, SwiftProtobuf._
     if !self.sku.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.sku, fieldNumber: 4)
     }
-    if self.state != .created {
+    if self.state != .default {
       try visitor.visitSingularEnumField(value: self.state, fieldNumber: 5)
     }
     if !self.shipmentAttribute.isEmpty {
@@ -1797,6 +1804,7 @@ extension GloryApi_ListProductRequest: SwiftProtobuf.Message, SwiftProtobuf._Mes
     2: .standard(proto: "product_name"),
     3: .standard(proto: "shop_id"),
     4: .standard(proto: "category_id"),
+    5: .same(proto: "state"),
     100: .same(proto: "pagination"),
   ]
 
@@ -1810,6 +1818,7 @@ extension GloryApi_ListProductRequest: SwiftProtobuf.Message, SwiftProtobuf._Mes
       case 2: try { try decoder.decodeSingularStringField(value: &self.productName) }()
       case 3: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
       case 4: try { try decoder.decodeSingularInt64Field(value: &self.categoryID) }()
+      case 5: try { try decoder.decodeSingularEnumField(value: &self.state) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -1833,6 +1842,9 @@ extension GloryApi_ListProductRequest: SwiftProtobuf.Message, SwiftProtobuf._Mes
     if self.categoryID != 0 {
       try visitor.visitSingularInt64Field(value: self.categoryID, fieldNumber: 4)
     }
+    if self.state != .default {
+      try visitor.visitSingularEnumField(value: self.state, fieldNumber: 5)
+    }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
     } }()
@@ -1844,6 +1856,7 @@ extension GloryApi_ListProductRequest: SwiftProtobuf.Message, SwiftProtobuf._Mes
     if lhs.productName != rhs.productName {return false}
     if lhs.shopID != rhs.shopID {return false}
     if lhs.categoryID != rhs.categoryID {return false}
+    if lhs.state != rhs.state {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

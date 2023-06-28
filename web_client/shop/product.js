@@ -7,11 +7,12 @@ import * as attribute from "./attribute";
 export { base, sku, attribute };
 
 export const State = {
-  created: 0,
-  on_shelf: 1,
-  off_shelf: 2,
-  out_of_stock: 3,
-  deleted: 4,
-  deleted_forever: 5,
-  sold_out: 6,
+  default: 0,
+  created: 1,
+  on_shelf: 2,
+  off_shelf: 3,
+  out_of_stock: 4,
+  deleted: 5,
+  deleted_forever: 6,
+  sold_out: 7,
 };
