@@ -13,8 +13,11 @@ message Product {
   int64 category_id = 4;
   repeated Sku sku = 5;
   repeated Attribute attribute = 6;
-  State state = 7;
+  State state = 7;//商品状态
   repeated ProductImage images = 8;
+  float product_price = 9;//价格,取所有sku 中最低的一个
+  int32 product_quantity =10;//总库存
+  int32 product_sold = 11;//总销量
 }
 
 message ProductImage {
