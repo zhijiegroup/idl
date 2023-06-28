@@ -112,6 +112,10 @@ struct GloryApi_CreateRoomResponse {
 
   var upURL: String = String()
 
+  var roomTitle: String = String()
+
+  var roomImageURL: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -538,6 +542,8 @@ extension GloryApi_CreateRoomResponse: SwiftProtobuf.Message, SwiftProtobuf._Mes
     1: .standard(proto: "base_resp"),
     2: .standard(proto: "room_id"),
     3: .standard(proto: "up_url"),
+    4: .standard(proto: "room_title"),
+    5: .standard(proto: "room_image_url"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -549,6 +555,8 @@ extension GloryApi_CreateRoomResponse: SwiftProtobuf.Message, SwiftProtobuf._Mes
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.roomID) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.upURL) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.roomTitle) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.roomImageURL) }()
       default: break
       }
     }
@@ -568,6 +576,12 @@ extension GloryApi_CreateRoomResponse: SwiftProtobuf.Message, SwiftProtobuf._Mes
     if !self.upURL.isEmpty {
       try visitor.visitSingularStringField(value: self.upURL, fieldNumber: 3)
     }
+    if !self.roomTitle.isEmpty {
+      try visitor.visitSingularStringField(value: self.roomTitle, fieldNumber: 4)
+    }
+    if !self.roomImageURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.roomImageURL, fieldNumber: 5)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -575,6 +589,8 @@ extension GloryApi_CreateRoomResponse: SwiftProtobuf.Message, SwiftProtobuf._Mes
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.roomID != rhs.roomID {return false}
     if lhs.upURL != rhs.upURL {return false}
+    if lhs.roomTitle != rhs.roomTitle {return false}
+    if lhs.roomImageURL != rhs.roomImageURL {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

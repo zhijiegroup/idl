@@ -41,6 +41,8 @@ export interface CreateRoomResponse {
   base_resp?: base.BaseResponse;
   room_id?: string;
   up_url?: string;
+  room_title?: string;
+  room_image_url?: string;
 }
 
 export interface GetRoomRequest {

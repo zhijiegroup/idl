@@ -150,6 +150,17 @@ export interface DeleteProductsResponse {
   base_resp?: base.BaseResponse;
 }
 
+export interface ChangeProductStateRequest {
+  base_request?: base.BaseRequest;
+  product_id?: string;
+  /** 商品状态 */
+  state?: State;
+}
+
+export interface ChangeProductStateResponse {
+  base_resp?: base.BaseResponse;
+}
+
 export interface ListProductRequest {
   base_request?: base.BaseRequest;
   product_name?: string;

@@ -255,6 +255,10 @@ export class glory_api {
     request: product.DeleteProductsRequest
   ): Promise<product.DeleteProductsResponse>;
 
+  ChangeProductState(
+    request: product.ChangeProductStateRequest
+  ): Promise<product.ChangeProductStateResponse>;
+
   /** sku sku */
   CreateSku(request: sku.CreateSkuRequest): Promise<sku.CreateSkuResponse>;
 

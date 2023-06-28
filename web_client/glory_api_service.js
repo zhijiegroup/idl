@@ -450,6 +450,14 @@ export class glory_api {
     );
   }
 
+  ChangeProductState(request) {
+    const uri = `${this.uriPrefix}/api/shop/change_product_state`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   CreateSku(request) {
     const uri = `${this.uriPrefix}/api/shop/create_sku`;
     const body = JSONbigint.stringify(request);
