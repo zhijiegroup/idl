@@ -20,17 +20,22 @@ message Room {
   string status = 11; // if end_time not null, means closed, if null, means still active
   int64 live_plan_id = 12;  // 设置直播商品计划id
   string room_title = 13; //直播的标题
-  string room_image_url = 14; //直播的封面
+  string room_image_url = 14; //直播的封面的url
+  int64 room_image_attachment_id = 15; // 直播间的封面的image 的id
 }
 
 message CreateRoomRequest {
   base.BaseRequest base_request = 1;
   string group_id = 2;
+  string room_title = 3;  // 直播房间的标题
+  int64 room_image_attachment_id = 4; // 直播房间的图片的id
 }
 message CreateRoomResponse {
   base.BaseResponse base_resp = 1;
   int64 room_id = 2;
   string up_url = 3;
+  string room_title = 4;
+  string room_image_url =5;
 }
 
 message GetRoomRequest {

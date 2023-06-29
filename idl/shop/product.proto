@@ -153,6 +153,16 @@ message ChangeProductStateResponse {
   base.BaseResponse base_resp = 1;
 }
 
+message ChangeProductsStateRequest {
+  base.BaseRequest base_request = 1;
+  repeated int64 product_id = 2;
+  State state = 3;//商品状态
+}
+
+message ChangeProductsStateResponse {
+  base.BaseResponse base_resp = 1;
+}
+
 
 message ListProductRequest {
   base.BaseRequest base_request = 1;
