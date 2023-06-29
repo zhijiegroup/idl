@@ -259,6 +259,10 @@ export class glory_api {
     request: product.ChangeProductStateRequest
   ): Promise<product.ChangeProductStateResponse>;
 
+  ChangeProductsState(
+    request: product.ChangeProductStateRequest
+  ): Promise<product.ChangeProductStateResponse>;
+
   /** sku sku */
   CreateSku(request: sku.CreateSkuRequest): Promise<sku.CreateSkuResponse>;
 
