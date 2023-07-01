@@ -112,3 +112,26 @@ export interface DeleteLivePlanProductRequest {
 export interface DeleteLivePlanProductResponse {
   base_resp?: base.BaseResponse;
 }
+
+export interface LoadLivePlanProductRequest {
+  base_request?: base.BaseRequest;
+  /** shop id */
+  shop_id?: string;
+  /** live plan id */
+  live_plan_id?: string;
+}
+
+export interface LoadLivePlanProductResponse {
+  base_resp?: base.BaseResponse;
+}
+
+export interface UpdateLiveProductStatusRequest {
+  base_request?: base.BaseRequest;
+  live_product_status_id?: Array<string>;
+  /** status: to_play（待播）, playing (直播中） */
+  status?: string;
+}
+
+export interface UpdateLiveProductStatusResponse {
+  base_resp?: base.BaseResponse;
+}

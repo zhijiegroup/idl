@@ -953,6 +953,22 @@ export class glory_api {
       handleResponse
     );
   }
+
+  LoadLivePlanProduct(request) {
+    const uri = `${this.uriPrefix}/api/live/load_live_plan_product`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  UpdateLiveProductStatus(request) {
+    const uri = `${this.uriPrefix}/api/live/update_live_product_status`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
 }
 
 export const glory_apiClient = new glory_api();

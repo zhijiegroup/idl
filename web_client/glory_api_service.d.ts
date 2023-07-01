@@ -505,6 +505,14 @@ live plan crud */
   DeleteLivePlanProduct(
     request: live_plan.DeleteLivePlanProductRequest
   ): Promise<live_plan.DeleteLivePlanProductResponse>;
+
+  LoadLivePlanProduct(
+    request: live_plan.LoadLivePlanProductRequest
+  ): Promise<live_plan.LoadLivePlanProductResponse>;
+
+  UpdateLiveProductStatus(
+    request: live_plan.UpdateLiveProductStatusRequest
+  ): Promise<live_plan.UpdateLiveProductStatusResponse>;
 }
 
 export declare const glory_apiClient: glory_api;
