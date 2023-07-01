@@ -135,3 +135,23 @@ export interface UpdateLiveProductStatusRequest {
 export interface UpdateLiveProductStatusResponse {
   base_resp?: base.BaseResponse;
 }
+
+export interface LiveProductStatus {
+  live_product_status_id?: string;
+  product_id?: string;
+  status?: string;
+  shop_id?: string;
+}
+
+export interface ListLiveProductStatusRequest {
+  base_request?: base.BaseRequest;
+  shop_id?: string;
+  status?: string;
+  pagination?: base.PaginationRequest;
+}
+
+export interface ListLiveProductStatusResponse {
+  base_resp?: base.BaseResponse;
+  live_product_status?: Array<LiveProductStatus>;
+  pagination?: base.PaginationResponse;
+}
