@@ -222,9 +222,9 @@ service glory_api {
     option (api.post) = '/api/shop/change_product_state';
   }
 
-//  rpc ChangeProductsState(ChangeProductStateRequest) returns (ChangeProductStateResponse) {
-//    option (api.post) = '/api/shop/change_products_state';
-//  }
+  rpc ChangeProductsState(ChangeProductStateRequest) returns (ChangeProductStateResponse) {
+    option (api.post) = '/api/shop/change_products_state';
+  }
 
   // sku sku
   rpc CreateSku(CreateSkuRequest) returns (CreateSkuResponse) {
