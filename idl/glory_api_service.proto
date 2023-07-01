@@ -461,6 +461,9 @@ service glory_api {
   rpc UpdateLiveProductStatus(UpdateLiveProductStatusRequest) returns (UpdateLiveProductStatusResponse) {
     option (api.post) = '/api/live/update_live_product_status';
   }
+  rpc ListLiveProductStatus(ListLiveProductStatusRequest) returns (ListLiveProductStatusResponse) {
+    option (api.post) = '/api/live/list_live_product_status';
+  }
 
 
 

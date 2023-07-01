@@ -121,6 +121,28 @@ message UpdateLiveProductStatusResponse {
 }
 
 
+message LiveProductStatus {
+  int64 live_product_status_id = 1;
+  int64 product_id = 2;
+  string status = 3;
+  int64 shop_id =4;
+}
+
+message ListLiveProductStatusRequest {
+  base.BaseRequest base_request = 1;
+  int64 shop_id = 2;
+  string status =3 ;
+  base.PaginationRequest pagination = 100;
+}
+
+
+message ListLiveProductStatusResponse {
+  base.BaseResponse base_resp = 1;
+  repeated LiveProductStatus live_product_status = 2;
+  base.PaginationResponse pagination = 100;
+}
+
+
 
 
 
