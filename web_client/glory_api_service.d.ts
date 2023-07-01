@@ -513,6 +513,10 @@ live plan crud */
   UpdateLiveProductStatus(
     request: live_plan.UpdateLiveProductStatusRequest
   ): Promise<live_plan.UpdateLiveProductStatusResponse>;
+
+  ListLiveProductStatus(
+    request: live_plan.ListLiveProductStatusRequest
+  ): Promise<live_plan.ListLiveProductStatusResponse>;
 }
 
 export declare const glory_apiClient: glory_api;
