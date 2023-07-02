@@ -143,6 +143,15 @@ message ListLiveProductStatusResponse {
 }
 
 
+message DeleteLiveProductStatusRequest {
+  base.BaseRequest base_request=1;
+  int64 live_product_status_id =2;
+}
+message DeleteLiveProductStatusResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+
 
 
 
