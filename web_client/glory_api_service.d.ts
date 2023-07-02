@@ -517,6 +517,10 @@ live plan crud */
   ListLiveProductStatus(
     request: live_plan.ListLiveProductStatusRequest
   ): Promise<live_plan.ListLiveProductStatusResponse>;
+
+  DeleteLiveProductStatus(
+    request: live_plan.DeleteLiveProductStatusRequest
+  ): Promise<live_plan.DeleteLiveProductStatusResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

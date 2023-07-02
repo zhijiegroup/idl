@@ -155,3 +155,12 @@ export interface ListLiveProductStatusResponse {
   live_product_status?: Array<LiveProductStatus>;
   pagination?: base.PaginationResponse;
 }
+
+export interface DeleteLiveProductStatusRequest {
+  base_request?: base.BaseRequest;
+  live_product_status_id?: string;
+}
+
+export interface DeleteLiveProductStatusResponse {
+  base_resp?: base.BaseResponse;
+}
