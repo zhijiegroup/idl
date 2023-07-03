@@ -18,6 +18,8 @@ message Product {
   float product_price = 9;//价格,取所有sku 中最低的一个
   int32 product_quantity =10;//总库存
   int32 product_sold = 11;//总销量
+  string shop_name =12;
+  string shop_logo_url =13;
 }
 
 message ProductImage {
