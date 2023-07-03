@@ -34,6 +34,8 @@ export interface Product {
   product_quantity?: number;
   /** 总销量 */
   product_sold?: number;
+  shop_name?: string;
+  shop_logo_url?: string;
 }
 
 export interface ProductImage {
