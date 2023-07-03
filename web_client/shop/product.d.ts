@@ -161,6 +161,17 @@ export interface ChangeProductStateResponse {
   base_resp?: base.BaseResponse;
 }
 
+export interface ChangeProductsStateRequest {
+  base_request?: base.BaseRequest;
+  product_id?: Array<string>;
+  /** 商品状态 */
+  state?: State;
+}
+
+export interface ChangeProductsStateResponse {
+  base_resp?: base.BaseResponse;
+}
+
 export interface ListProductRequest {
   base_request?: base.BaseRequest;
   product_name?: string;

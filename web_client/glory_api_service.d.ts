@@ -259,6 +259,10 @@ export class glory_api {
     request: product.ChangeProductStateRequest
   ): Promise<product.ChangeProductStateResponse>;
 
+  ChangeProductsState(
+    request: product.ChangeProductStateRequest
+  ): Promise<product.ChangeProductStateResponse>;
+
   /** sku sku */
   CreateSku(request: sku.CreateSkuRequest): Promise<sku.CreateSkuResponse>;
 
@@ -501,6 +505,22 @@ live plan crud */
   DeleteLivePlanProduct(
     request: live_plan.DeleteLivePlanProductRequest
   ): Promise<live_plan.DeleteLivePlanProductResponse>;
+
+  LoadLivePlanProduct(
+    request: live_plan.LoadLivePlanProductRequest
+  ): Promise<live_plan.LoadLivePlanProductResponse>;
+
+  UpdateLiveProductStatus(
+    request: live_plan.UpdateLiveProductStatusRequest
+  ): Promise<live_plan.UpdateLiveProductStatusResponse>;
+
+  ListLiveProductStatus(
+    request: live_plan.ListLiveProductStatusRequest
+  ): Promise<live_plan.ListLiveProductStatusResponse>;
+
+  DeleteLiveProductStatus(
+    request: live_plan.DeleteLiveProductStatusRequest
+  ): Promise<live_plan.DeleteLiveProductStatusResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

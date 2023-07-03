@@ -455,6 +455,18 @@ service glory_api {
   rpc DeleteLivePlanProduct(DeleteLivePlanProductRequest) returns (DeleteLivePlanProductResponse) {
     option (api.post) = '/api/live/delete_live_plan_product';
   }
+  rpc LoadLivePlanProduct(LoadLivePlanProductRequest) returns (LoadLivePlanProductResponse) {
+    option (api.post) = '/api/live/load_live_plan_product';
+  }
+  rpc UpdateLiveProductStatus(UpdateLiveProductStatusRequest) returns (UpdateLiveProductStatusResponse) {
+    option (api.post) = '/api/live/update_live_product_status';
+  }
+  rpc ListLiveProductStatus(ListLiveProductStatusRequest) returns (ListLiveProductStatusResponse) {
+    option (api.post) = '/api/live/list_live_product_status';
+  }
+  rpc DeleteLiveProductStatus(DeleteLiveProductStatusRequest) returns (DeleteLiveProductStatusResponse) {
+    option (api.post) = '/api/live/delete_live_product_status';
+  }
 
 
 
