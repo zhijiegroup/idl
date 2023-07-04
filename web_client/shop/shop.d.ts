@@ -14,7 +14,7 @@ export interface Shop {
   /** 店铺名称 必须 */
   shop_name?: string;
   /** 经营类目 id 必须 */
-  category_id?: string;
+  category_id?: Array<string>;
   /** 虚拟交易店铺 virtual, 真实交易店铺 real */
   shop_type?: string;
   /** 公司名称 */

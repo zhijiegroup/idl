@@ -15,6 +15,8 @@ export interface Sku {
   remaining_quantity?: number;
   total_sold?: number;
   attribute?: Array<attribute.Attribute>;
+  attachment_id?: string;
+  sku_url?: string;
 }
 
 export interface SkuAttributeWithOneValue {

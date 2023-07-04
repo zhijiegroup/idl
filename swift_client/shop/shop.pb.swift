@@ -44,7 +44,7 @@ struct GloryApi_Shop {
   }
 
   ///经营类目 id 必须
-  var categoryID: Int64 {
+  var categoryID: [Int64] {
     get {return _storage._categoryID}
     set {_uniqueStorage()._categoryID = newValue}
   }
@@ -1017,7 +1017,7 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     var _shopID: Int64 = 0
     var _sellerID: Int64 = 0
     var _shopName: String = String()
-    var _categoryID: Int64 = 0
+    var _categoryID: [Int64] = []
     var _shopType: String = String()
     var _companyName: String = String()
     var _companyID: String = String()
@@ -1130,7 +1130,7 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
         case 30: try { try decoder.decodeSingularInt64Field(value: &_storage._ownerIDBackAttachmentID) }()
         case 31: try { try decoder.decodeSingularInt64Field(value: &_storage._shopLogoAttachmentID) }()
         case 32: try { try decoder.decodeSingularInt64Field(value: &_storage._businessLicenseAttachmentID) }()
-        case 33: try { try decoder.decodeSingularInt64Field(value: &_storage._categoryID) }()
+        case 33: try { try decoder.decodeRepeatedInt64Field(value: &_storage._categoryID) }()
         default: break
         }
       }
@@ -1229,8 +1229,8 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       if _storage._businessLicenseAttachmentID != 0 {
         try visitor.visitSingularInt64Field(value: _storage._businessLicenseAttachmentID, fieldNumber: 32)
       }
-      if _storage._categoryID != 0 {
-        try visitor.visitSingularInt64Field(value: _storage._categoryID, fieldNumber: 33)
+      if !_storage._categoryID.isEmpty {
+        try visitor.visitPackedInt64Field(value: _storage._categoryID, fieldNumber: 33)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
