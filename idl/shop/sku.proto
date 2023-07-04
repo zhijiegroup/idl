@@ -14,6 +14,8 @@ message Sku {
   int32 remaining_quantity = 7;
   int32 total_sold = 8;
   repeated Attribute attribute = 9;
+  int64 attachment_id = 10;
+  string sku_url = 11;
 }
 message SkuAttributeWithOneValue {
   int64 attribute_id = 1;

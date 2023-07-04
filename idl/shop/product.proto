@@ -6,6 +6,7 @@ import "base.proto";
 import "shop/sku.proto";
 import "shop/shop.proto";
 import "shop/attribute.proto";
+import "shop/freight_template.proto";
 
 message Product {
   int64 product_id = 1;
@@ -21,6 +22,7 @@ message Product {
   int32 product_sold = 11;//总销量
   string shop_name =12;
   string shop_logo_url =13;
+  Template freight_template = 14; //运费信息
 }
 
 message ProductImage {
@@ -198,4 +200,14 @@ message UploadMultiImageRequest {
 message UploadMultiImageResponse {
   base.BaseResponse base_resp = 1;
   repeated string product_url = 2;
+}
+
+message UploadSkuImageRequest {
+  base.BaseRequest base_request = 1;
+  int64 sku_id = 2;
+}
+
+message UploadSkuImageResponse {
+  base.BaseResponse base_resp = 1;
+  string image_url = 2;
 }

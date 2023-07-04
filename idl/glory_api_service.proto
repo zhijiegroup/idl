@@ -203,6 +203,7 @@ service glory_api {
     option (api.post) = '/api/shop/upload_multi_image';
   }
 
+
   rpc BindAttribute(BindAttributeRequest) returns (BindAttributeResponse) {
     option (api.post) = '/api/shop/bind_product_attribute';
   }
@@ -456,7 +457,5 @@ service glory_api {
   rpc DeleteLivePlanProduct(DeleteLivePlanProductRequest) returns (DeleteLivePlanProductResponse) {
     option (api.post) = '/api/live/delete_live_plan_product';
   }
-
-
 
 }
