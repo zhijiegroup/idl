@@ -131,6 +131,7 @@ export interface UpdateProductResponse {
 export interface PublishProductRequest {
   base_request?: base.BaseRequest;
   product_id?: string;
+  product_name?: string;
   attribute?: Array<attribute.Attribute>;
   sku?: Array<sku.Sku>;
   state?: State;

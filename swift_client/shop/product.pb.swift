@@ -577,6 +577,8 @@ struct GloryApi_PublishProductRequest {
 
   var productID: Int64 = 0
 
+  var productName: String = String()
+
   var attribute: [GloryApi_Attribute] = []
 
   var sku: [GloryApi_Sku] = []
@@ -1872,6 +1874,7 @@ extension GloryApi_PublishProductRequest: SwiftProtobuf.Message, SwiftProtobuf._
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
     2: .standard(proto: "product_id"),
+    21: .standard(proto: "product_name"),
     3: .same(proto: "attribute"),
     4: .same(proto: "sku"),
     5: .same(proto: "state"),
@@ -1896,6 +1899,7 @@ extension GloryApi_PublishProductRequest: SwiftProtobuf.Message, SwiftProtobuf._
       case 7: try { try decoder.decodeSingularInt64Field(value: &self.freightTemplateID) }()
       case 8: try { try decoder.decodeSingularFloatField(value: &self.salePrice) }()
       case 9: try { try decoder.decodeSingularFloatField(value: &self.referencePrice) }()
+      case 21: try { try decoder.decodeSingularStringField(value: &self.productName) }()
       default: break
       }
     }
@@ -1933,12 +1937,16 @@ extension GloryApi_PublishProductRequest: SwiftProtobuf.Message, SwiftProtobuf._
     if self.referencePrice != 0 {
       try visitor.visitSingularFloatField(value: self.referencePrice, fieldNumber: 9)
     }
+    if !self.productName.isEmpty {
+      try visitor.visitSingularStringField(value: self.productName, fieldNumber: 21)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_PublishProductRequest, rhs: GloryApi_PublishProductRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.productID != rhs.productID {return false}
+    if lhs.productName != rhs.productName {return false}
     if lhs.attribute != rhs.attribute {return false}
     if lhs.sku != rhs.sku {return false}
     if lhs.state != rhs.state {return false}
