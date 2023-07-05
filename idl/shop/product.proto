@@ -22,12 +22,21 @@ message Product {
   string shop_name =12;
   string shop_logo_url =13;
   Template freight_template = 14; //运费信息
+  repeated ShipmentAttribute shipment_attribute = 15; //售后信息
 }
 
 message ProductImage {
   int64 product_image_id = 1;
   string image_type = 2;
   string image_url = 3;
+}
+
+message ShipmentAttribute {
+  int64 shipment_attribute_id =1;
+  int64 attribute_id = 2;
+  string  attribute_name = 3;
+  int64 attribute_value_id = 4;
+  string attribute_value =5;
 }
 
 enum State {
