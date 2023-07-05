@@ -12,6 +12,7 @@ export interface Template {
   freight_setting?: number;
   template_name?: string;
   is_default?: boolean;
+  freight_amount?: number;
 }
 
 export interface TemplateWithAuthorInfo {

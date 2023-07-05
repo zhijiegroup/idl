@@ -37,6 +37,8 @@ struct GloryApi_Template {
 
   var isDefault: Bool = false
 
+  var freightAmount: Float = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -353,6 +355,7 @@ extension GloryApi_Template: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     4: .standard(proto: "freight_setting"),
     5: .standard(proto: "template_name"),
     6: .standard(proto: "is_default"),
+    7: .standard(proto: "freight_amount"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -367,6 +370,7 @@ extension GloryApi_Template: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
       case 4: try { try decoder.decodeSingularInt32Field(value: &self.freightSetting) }()
       case 5: try { try decoder.decodeSingularStringField(value: &self.templateName) }()
       case 6: try { try decoder.decodeSingularBoolField(value: &self.isDefault) }()
+      case 7: try { try decoder.decodeSingularFloatField(value: &self.freightAmount) }()
       default: break
       }
     }
@@ -391,6 +395,9 @@ extension GloryApi_Template: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     if self.isDefault != false {
       try visitor.visitSingularBoolField(value: self.isDefault, fieldNumber: 6)
     }
+    if self.freightAmount != 0 {
+      try visitor.visitSingularFloatField(value: self.freightAmount, fieldNumber: 7)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -401,6 +408,7 @@ extension GloryApi_Template: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     if lhs.freightSetting != rhs.freightSetting {return false}
     if lhs.templateName != rhs.templateName {return false}
     if lhs.isDefault != rhs.isDefault {return false}
+    if lhs.freightAmount != rhs.freightAmount {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
