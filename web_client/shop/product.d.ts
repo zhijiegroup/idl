@@ -5,7 +5,8 @@
 import * as base from "../base";
 import * as sku from "./sku";
 import * as attribute from "./attribute";
-export { base, sku, attribute };
+import * as freight_template from "./freight_template";
+export { base, sku, attribute, freight_template };
 
 export enum State {
   default = 0,
@@ -36,6 +37,8 @@ export interface Product {
   product_sold?: number;
   shop_name?: string;
   shop_logo_url?: string;
+  /** 运费信息 */
+  freight_template?: freight_template.Template;
 }
 
 export interface ProductImage {

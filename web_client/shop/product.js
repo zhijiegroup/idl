@@ -4,7 +4,8 @@
 import * as base from "../base";
 import * as sku from "./sku";
 import * as attribute from "./attribute";
-export { base, sku, attribute };
+import * as freight_template from "./freight_template";
+export { base, sku, attribute, freight_template };
 
 export const State = {
   default: 0,
