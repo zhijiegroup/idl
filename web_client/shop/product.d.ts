@@ -39,12 +39,22 @@ export interface Product {
   shop_logo_url?: string;
   /** 运费信息 */
   freight_template?: freight_template.Template;
+  /** 售后信息 */
+  shipment_attribute?: Array<ShipmentAttribute>;
 }
 
 export interface ProductImage {
   product_image_id?: string;
   image_type?: string;
   image_url?: string;
+}
+
+export interface ShipmentAttribute {
+  shipment_attribute_id?: string;
+  attribute_id?: string;
+  attribute_name?: string;
+  attribute_value_id?: string;
+  attribute_value?: string;
 }
 
 export interface ProductWithAuthor {

@@ -182,6 +182,12 @@ struct GloryApi_Product {
   /// Clears the value of `freightTemplate`. Subsequent reads from it will return its default value.
   mutating func clearFreightTemplate() {_uniqueStorage()._freightTemplate = nil}
 
+  ///售后信息
+  var shipmentAttribute: [GloryApi_ShipmentAttribute] {
+    get {return _storage._shipmentAttribute}
+    set {_uniqueStorage()._shipmentAttribute = newValue}
+  }
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -199,6 +205,26 @@ struct GloryApi_ProductImage {
   var imageType: String = String()
 
   var imageURL: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct GloryApi_ShipmentAttribute {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var shipmentAttributeID: Int64 = 0
+
+  var attributeID: Int64 = 0
+
+  var attributeName: String = String()
+
+  var attributeValueID: Int64 = 0
+
+  var attributeValue: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -947,6 +973,7 @@ struct GloryApi_UploadMultiImageResponse {
 extension GloryApi_State: @unchecked Sendable {}
 extension GloryApi_Product: @unchecked Sendable {}
 extension GloryApi_ProductImage: @unchecked Sendable {}
+extension GloryApi_ShipmentAttribute: @unchecked Sendable {}
 extension GloryApi_ProductWithAuthor: @unchecked Sendable {}
 extension GloryApi_ProductAttributeWithOneValue: @unchecked Sendable {}
 extension GloryApi_ProductWithValueAuthor: @unchecked Sendable {}
@@ -1011,6 +1038,7 @@ extension GloryApi_Product: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
     12: .standard(proto: "shop_name"),
     13: .standard(proto: "shop_logo_url"),
     14: .standard(proto: "freight_template"),
+    15: .standard(proto: "shipment_attribute"),
   ]
 
   fileprivate class _StorageClass {
@@ -1028,6 +1056,7 @@ extension GloryApi_Product: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
     var _shopName: String = String()
     var _shopLogoURL: String = String()
     var _freightTemplate: GloryApi_Template? = nil
+    var _shipmentAttribute: [GloryApi_ShipmentAttribute] = []
 
     static let defaultInstance = _StorageClass()
 
@@ -1048,6 +1077,7 @@ extension GloryApi_Product: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
       _shopName = source._shopName
       _shopLogoURL = source._shopLogoURL
       _freightTemplate = source._freightTemplate
+      _shipmentAttribute = source._shipmentAttribute
     }
   }
 
@@ -1080,6 +1110,7 @@ extension GloryApi_Product: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
         case 12: try { try decoder.decodeSingularStringField(value: &_storage._shopName) }()
         case 13: try { try decoder.decodeSingularStringField(value: &_storage._shopLogoURL) }()
         case 14: try { try decoder.decodeSingularMessageField(value: &_storage._freightTemplate) }()
+        case 15: try { try decoder.decodeRepeatedMessageField(value: &_storage._shipmentAttribute) }()
         default: break
         }
       }
@@ -1134,6 +1165,9 @@ extension GloryApi_Product: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
       try { if let v = _storage._freightTemplate {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 14)
       } }()
+      if !_storage._shipmentAttribute.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._shipmentAttribute, fieldNumber: 15)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1157,6 +1191,7 @@ extension GloryApi_Product: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
         if _storage._shopName != rhs_storage._shopName {return false}
         if _storage._shopLogoURL != rhs_storage._shopLogoURL {return false}
         if _storage._freightTemplate != rhs_storage._freightTemplate {return false}
+        if _storage._shipmentAttribute != rhs_storage._shipmentAttribute {return false}
         return true
       }
       if !storagesAreEqual {return false}
@@ -1205,6 +1240,62 @@ extension GloryApi_ProductImage: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     if lhs.productImageID != rhs.productImageID {return false}
     if lhs.imageType != rhs.imageType {return false}
     if lhs.imageURL != rhs.imageURL {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_ShipmentAttribute: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ShipmentAttribute"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "shipment_attribute_id"),
+    2: .standard(proto: "attribute_id"),
+    3: .standard(proto: "attribute_name"),
+    4: .standard(proto: "attribute_value_id"),
+    5: .standard(proto: "attribute_value"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.shipmentAttributeID) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.attributeID) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.attributeName) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.attributeValueID) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.attributeValue) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.shipmentAttributeID != 0 {
+      try visitor.visitSingularInt64Field(value: self.shipmentAttributeID, fieldNumber: 1)
+    }
+    if self.attributeID != 0 {
+      try visitor.visitSingularInt64Field(value: self.attributeID, fieldNumber: 2)
+    }
+    if !self.attributeName.isEmpty {
+      try visitor.visitSingularStringField(value: self.attributeName, fieldNumber: 3)
+    }
+    if self.attributeValueID != 0 {
+      try visitor.visitSingularInt64Field(value: self.attributeValueID, fieldNumber: 4)
+    }
+    if !self.attributeValue.isEmpty {
+      try visitor.visitSingularStringField(value: self.attributeValue, fieldNumber: 5)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ShipmentAttribute, rhs: GloryApi_ShipmentAttribute) -> Bool {
+    if lhs.shipmentAttributeID != rhs.shipmentAttributeID {return false}
+    if lhs.attributeID != rhs.attributeID {return false}
+    if lhs.attributeName != rhs.attributeName {return false}
+    if lhs.attributeValueID != rhs.attributeValueID {return false}
+    if lhs.attributeValue != rhs.attributeValue {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
