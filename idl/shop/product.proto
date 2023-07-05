@@ -124,6 +124,7 @@ message UpdateProductResponse {
 message PublishProductRequest {
   base.BaseRequest base_request = 1;
   int64 product_id = 2;
+  string product_name = 21;
   repeated Attribute attribute= 3;
   repeated Sku sku = 4;
   State state = 5;
