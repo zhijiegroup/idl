@@ -11,6 +11,7 @@ message Template{
   int32 freight_setting = 4;
   string template_name = 5;
   bool is_default = 6;
+  float freight_amount = 7;
 }
 
 message TemplateWithAuthorInfo {
