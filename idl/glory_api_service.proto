@@ -7,6 +7,7 @@ import "api.proto";
 import "mall/mall_index.proto";
 import "shop/shop.proto";
 import "shop/category.proto";
+import "shop/category_qualification.proto";
 import "shop/product.proto";
 import "shop/sku.proto";
 import "shop/attribute.proto";
@@ -180,6 +181,12 @@ service glory_api {
     option (api.post) = '/api/shop/delete_category';
   }
 
+  //category qualification
+  rpc ListCategoryQualification(ListCategoryQualificationRequest) returns (ListCategoryQualificationResponse) {
+    option (api.post) = '/api/shop/list_category_qualification';
+  }
+
+
   // product product
   rpc CreateProduct(CreateProductRequest) returns (CreateProductResponse) {
     option (api.post) = '/api/shop/create_product';
@@ -216,10 +223,6 @@ service glory_api {
 
   rpc DeleteProductInBatches(DeleteProductsRequest) returns (DeleteProductsResponse) {
     option (api.post) = '/api/shop/delete_products';
-  }
-
-  rpc ChangeProductState(ChangeProductStateRequest) returns (ChangeProductStateResponse) {
-    option (api.post) = '/api/shop/change_product_state';
   }
 
   rpc ChangeProductsState(ChangeProductStateRequest) returns (ChangeProductStateResponse) {

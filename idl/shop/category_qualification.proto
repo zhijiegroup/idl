@@ -1,0 +1,24 @@
+syntax = "proto3";
+package glory_api;
+
+
+import "base.proto";
+
+message CategoryQualification {
+  int64 category_qualification_id = 1;
+  string category_root = 2;
+  string qualification_name = 3;
+}
+
+
+message ListCategoryQualificationRequest {
+  base.BaseRequest base_request = 1;
+}
+
+message ListCategoryQualificationResponse {
+  base.BaseResponse base_resp = 1;
+  repeated CategoryQualification categoryQualification = 2;
+}
+
+
+
