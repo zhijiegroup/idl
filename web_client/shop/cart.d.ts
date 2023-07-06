@@ -8,7 +8,6 @@ export { base };
 export interface Cart {
   cart_id?: string;
   user_id?: string;
-  shop_id?: string;
   seller_id?: string;
   tenant_id?: string;
   quantity?: number;

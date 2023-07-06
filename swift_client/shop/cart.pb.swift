@@ -29,8 +29,6 @@ struct GloryApi_Cart {
 
   var userID: Int64 = 0
 
-  var shopID: Int64 = 0
-
   var sellerID: Int64 = 0
 
   var tenantID: Int64 = 0
@@ -304,10 +302,9 @@ extension GloryApi_Cart: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "cart_id"),
     2: .standard(proto: "user_id"),
-    3: .standard(proto: "shop_id"),
-    4: .standard(proto: "seller_id"),
-    5: .standard(proto: "tenant_id"),
-    6: .same(proto: "quantity"),
+    3: .standard(proto: "seller_id"),
+    4: .standard(proto: "tenant_id"),
+    5: .same(proto: "quantity"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -318,10 +315,9 @@ extension GloryApi_Cart: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularInt64Field(value: &self.cartID) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.userID) }()
-      case 3: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
-      case 4: try { try decoder.decodeSingularInt64Field(value: &self.sellerID) }()
-      case 5: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
-      case 6: try { try decoder.decodeSingularInt32Field(value: &self.quantity) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.sellerID) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
+      case 5: try { try decoder.decodeSingularInt32Field(value: &self.quantity) }()
       default: break
       }
     }
@@ -334,17 +330,14 @@ extension GloryApi_Cart: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     if self.userID != 0 {
       try visitor.visitSingularInt64Field(value: self.userID, fieldNumber: 2)
     }
-    if self.shopID != 0 {
-      try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 3)
-    }
     if self.sellerID != 0 {
-      try visitor.visitSingularInt64Field(value: self.sellerID, fieldNumber: 4)
+      try visitor.visitSingularInt64Field(value: self.sellerID, fieldNumber: 3)
     }
     if self.tenantID != 0 {
-      try visitor.visitSingularInt64Field(value: self.tenantID, fieldNumber: 5)
+      try visitor.visitSingularInt64Field(value: self.tenantID, fieldNumber: 4)
     }
     if self.quantity != 0 {
-      try visitor.visitSingularInt32Field(value: self.quantity, fieldNumber: 6)
+      try visitor.visitSingularInt32Field(value: self.quantity, fieldNumber: 5)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -352,7 +345,6 @@ extension GloryApi_Cart: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
   static func ==(lhs: GloryApi_Cart, rhs: GloryApi_Cart) -> Bool {
     if lhs.cartID != rhs.cartID {return false}
     if lhs.userID != rhs.userID {return false}
-    if lhs.shopID != rhs.shopID {return false}
     if lhs.sellerID != rhs.sellerID {return false}
     if lhs.tenantID != rhs.tenantID {return false}
     if lhs.quantity != rhs.quantity {return false}
