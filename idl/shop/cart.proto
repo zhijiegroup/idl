@@ -9,7 +9,14 @@ message Cart {
   int64 user_id = 2;
   int64 seller_id = 3;
   int64 tenant_id = 4;
-  int32 quantity = 5;
+  repeated CartSku cart_sku = 5;
+}
+
+message CartSku {
+  int64 cart_sku_id = 1;
+  int64 sku_id = 2;
+  int32 quantity = 3;
+  int64 shop_id = 4;
 }
 
 message CartWithAuthor {
@@ -25,7 +32,6 @@ message CreateCartRequest {
 message CreateCartResponse {
   base.BaseResponse base_resp = 1;
   int64 cart_id = 2;
-//  CartWithAuthor cart_detail =2;
 }
 
 message GetCartRequest {
