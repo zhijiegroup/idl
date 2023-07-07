@@ -25,6 +25,7 @@ import "live/live_room.proto";
 import "live/live_token.proto";
 import "live/live_user.proto";
 import "live/live_plan.proto";
+import "live/live_text.proto";
 import "account/account_operation.proto";
 import "currency/virtual_currency.proto";
 
@@ -471,6 +472,21 @@ service glory_api {
     option (api.post) = '/api/live/delete_live_product_status';
   }
 
-
+    // live text crud
+  rpc CreateLiveText(CreateLiveTextRequest) returns (CreateLiveTextResponse) {
+    option (api.post) = '/api/live/create_live_text';
+  }
+  rpc UpdateLiveText(UpdateLiveTextRequest) returns (UpdateLiveTextResponse) {
+    option (api.post) = '/api/live/update_live_text';
+  }
+  rpc ListLiveText(ListLiveTextRequest) returns (ListLiveTextResponse) {
+    option (api.post) = '/api/live/list_live_text';
+  }
+  rpc GetLiveText(GetLiveTextRequest) returns (GetLiveTextResponse) {
+    option (api.get) = '/api/live/get_live_text';
+  }
+  rpc DeleteLiveTexts(DeleteLiveTextsRequest) returns (DeleteLiveTextsResponse) {
+    option (api.post) = '/api/live/delete_live_texts';
+  }
 
 }
