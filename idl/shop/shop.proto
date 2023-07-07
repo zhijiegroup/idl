@@ -11,13 +11,13 @@ message Shop {
   int64 seller_id = 2;//提前调用 create_seller 生成 seller_id
   string shop_name = 3;//店铺名称 必须
   repeated int64 category_id = 33; //经营类目 id 必须
-  repeated ShopQualification  shop_qualification  = 333; //经营类目 资质
+  repeated ShopQualification  shop_qualification = 333; //经营类目 资质
   string shop_type = 4;//虚拟交易店铺 virtual, 真实交易店铺 real
   string company_name = 5;//公司名称
-  string company_id  = 6;//统一社会信用代码
-  string company_category  = 7;//企业 enterprise、个体工商户 individual、个人 personal
-  string owner_id  = 8;//法人身份证
-  string owner_name  = 9;//法人名字
+  string company_id = 6;//统一社会信用代码
+  string company_category = 7;//企业 enterprise、个体工商户 individual、个人 personal
+  string owner_id = 8;//法人身份证
+  string owner_name = 9;//法人名字
   string owner_id_front_url = 11;//法人身份证 正面
   string owner_id_back_url = 12;//法人身份证 反面
   string owner_id_start_date = 13;//法人身份证 开始日期
@@ -29,7 +29,7 @@ message Shop {
   string address = 19;//经营地址 详细地址
   string business_license_url = 20;//营业执照
   string business_license_start_date = 21;//营业执照 开始日期
-  string business_license_end_date  = 22;//营业执照 结束日期,没有写 长期
+  string business_license_end_date = 22;//营业执照 结束日期,没有写 长期
   string owner_location = 24;//法人归属地,中国大陆、香港、澳门、台湾、海外
   string company_bank_account = 25;//公司开户行账号
   string company_bank_phone = 26;//预留手机号
@@ -42,28 +42,28 @@ message Shop {
 }
 
 message ShopQualification {
-  int64 shop_qualification_id = 1;
-  string shop_qualification_url = 2;
-  string category_root = 3;
-  string qualification_name = 4;
+  int64 shop_qualification_id = 1;//不传
+  string shop_qualification_url = 2;//图片url
+  string category_root = 3;//类目一级
+  string qualification_name = 4;//资质名称
   int64 attachment_id = 5;
-  string validity_period = 6;
+  string validity_period = 6;//有效期
 }
 
 message ShopWithAuthor {
-  Shop shop =1;
+  Shop shop = 1;
   base.AuthorInfo author_info = 2;
 }
 
 message CreateShopRequest {
   base.BaseRequest base_request = 1;
-  Shop shop =2;
+  Shop shop = 2;
   string created_by = 3;
 }
 message CreateShopResponse {
   base.BaseResponse base_resp = 1;
   int64 shop_id = 2;
-//  ShopWithAuthor shop_detail =2;
+  //  ShopWithAuthor shop_detail =2;
 }
 
 message GetShopRequest {
@@ -73,7 +73,7 @@ message GetShopRequest {
 }
 message GetShopResponse {
   base.BaseResponse base_resp = 1;
-  ShopWithAuthor shop_detail =2;
+  ShopWithAuthor shop_detail = 2;
 }
 
 message UpdateShopRequest {
@@ -82,7 +82,7 @@ message UpdateShopRequest {
 }
 message UpdateShopResponse {
   base.BaseResponse base_resp = 1;
-  int64 shop_id=2;
+  int64 shop_id = 2;
 }
 
 
@@ -93,12 +93,12 @@ message ListShopRequest {
   string shop_name = 5;
   string shop_type = 6;
   string province = 7;
-  string city  = 8;
-  string district  = 9;
-  string address  = 10;
-  string post  = 11;
-  string company_name  = 12;
-  string owner_name  = 13;
+  string city = 8;
+  string district = 9;
+  string address = 10;
+  string post = 11;
+  string company_name = 12;
+  string owner_name = 13;
   base.PaginationRequest pagination = 100;
 }
 message ListShopResponse {
@@ -108,8 +108,8 @@ message ListShopResponse {
 }
 
 message DeleteShopRequest {
-  base.BaseRequest base_request=1;
-  int64 shop_id =2;
+  base.BaseRequest base_request = 1;
+  int64 shop_id = 2;
 }
 message DeleteShopResponse {
   base.BaseResponse base_resp = 1;
@@ -118,7 +118,7 @@ message DeleteShopResponse {
 
 message AddShopAccessRequest {
   base.BaseRequest base_request = 1;
-  int64 shop_id =2;
+  int64 shop_id = 2;
   string access_type = 3; // 支持 admin, reseller
   string phone = 4;
 }
@@ -147,19 +147,19 @@ message VerifyFieldResponse {
 }
 
 message ShopAccess {
-  int64 shop_access_id =1;
+  int64 shop_access_id = 1;
   int64 shop_id = 2;
-  int64 user_id =3;
-  string access_type =4; // admin or reseller
+  int64 user_id = 3;
+  string access_type = 4; // admin or reseller
   string phone = 5;
-  string name =6;
+  string name = 6;
   string binding_method = 7;
   string created_at = 8;
 }
 
 message ListShopAccessRequest {
   base.BaseRequest base_request = 1;
-  int64 shop_id =2;
+  int64 shop_id = 2;
   string access_type = 3; // 支持 admin, reseller
 }
 
@@ -170,17 +170,17 @@ message ListShopAccessResponse {
 }
 
 message GetShopQrcodeRequest {
-  int64 shop_id =1;
+  int64 shop_id = 1;
 }
 message GetShopQrcodeResponse {
-//  bytes qrcode = 2;
+  //  bytes qrcode = 2;
 }
 
 
 message AddShopCategoryRequest {
   base.BaseRequest base_request = 1;
-  int64 shop_id =2; // shop id
-  repeated int64 category_id =3; // category id
+  int64 shop_id = 2; // shop id
+  repeated int64 category_id = 3; // category id
 }
 
 message AddShopCategoryResponse {
@@ -190,8 +190,8 @@ message AddShopCategoryResponse {
 
 message RemoveShopCategoryRequest {
   base.BaseRequest base_request = 1;
-  int64 shop_id =2;
-  repeated int64 shop_category_id =3; // category id
+  int64 shop_id = 2;
+  repeated int64 shop_category_id = 3; // category id
 }
 
 message RemoveShopCategoryResponse {
@@ -200,21 +200,29 @@ message RemoveShopCategoryResponse {
 
 message GetShopCategoryRequest {
   base.BaseRequest base_request = 1;
-  int64 shop_id =2; // shop id
+  int64 shop_id = 2; // shop id
 }
 
 message ShopCategory {
-  int64 shop_category_id =1;
-  repeated Category category =3;
+  int64 shop_category_id = 1;
+  repeated Category category = 3;
 }
 
 message GetShopCategoryResponse {
   base.BaseResponse base_resp = 1;
   int64 shop_id = 2;
-  repeated ShopCategory shop_category =3;
+  repeated ShopCategory shop_category = 3;
 
 }
+message ListShopQualificationRequest {
+  base.BaseRequest base_request = 1;
+  int64 shop_id = 2;
+}
 
+message ListShopQualificationResponse{
+  base.BaseResponse base_resp = 1;
+  repeated ShopQualification  shop_qualification = 2; //经营类目 资质
+}
 
 
 

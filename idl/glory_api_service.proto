@@ -161,6 +161,10 @@ service glory_api {
     option (api.post) = '/api/shop/list_template';
   }
 
+  rpc ListQualification(ListShopQualificationRequest) returns (ListShopQualificationResponse) {
+    option (api.post) = '/api/shop/list_shop_qualification';
+  }
+
   //mall
   rpc GetMallIndex(MallIndexRequest) returns (MallIndexResponse) {
     option (api.post) = '/api/mall/list_live_product';

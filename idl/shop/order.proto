@@ -120,7 +120,13 @@ message CreateOrderRequest {
 }
 message CreateOrderResponse {
   base.BaseResponse base_resp = 1;
-  int64 order_id = 2;
+  repeated OrderResponseInfo order_res= 2;
+}
+
+message OrderResponseInfo {
+  int64 order_id = 1;
+  string currency = 2;//货币类型  CNY :人民币 , COIN:虚拟币
+  double total = 3;//订单总金额，单位为分 微信支付使用
 }
 
 message GetOrderRequest {
