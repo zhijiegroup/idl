@@ -141,6 +141,8 @@ export interface PublishProductRequest {
   sale_price?: number;
   /** 参考价格 */
   reference_price?: number;
+  /** 商品品牌 */
+  product_brand?: string;
 }
 
 export interface PublishProductResponse {

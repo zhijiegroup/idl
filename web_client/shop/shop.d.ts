@@ -15,6 +15,8 @@ export interface Shop {
   shop_name?: string;
   /** 经营类目 id 必须 */
   category_id?: Array<string>;
+  /** 经营类目 资质 */
+  shop_qualification?: Array<ShopQualification>;
   /** 虚拟交易店铺 virtual, 真实交易店铺 real */
   shop_type?: string;
   /** 公司名称 */
@@ -69,6 +71,15 @@ export interface Shop {
   shop_logo_attachment_id?: string;
   /** 上传附件的接口返回的 attachment id */
   business_license_attachment_id?: string;
+}
+
+export interface ShopQualification {
+  shop_qualification_id?: string;
+  shop_qualification_url?: string;
+  category_root?: string;
+  qualification_name?: string;
+  attachment_id?: string;
+  validity_period?: string;
 }
 
 export interface ShopWithAuthor {

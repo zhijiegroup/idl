@@ -10,7 +10,14 @@ export interface Cart {
   user_id?: string;
   seller_id?: string;
   tenant_id?: string;
+  cart_sku?: Array<CartSku>;
+}
+
+export interface CartSku {
+  cart_sku_id?: string;
+  sku_id?: string;
   quantity?: number;
+  shop_id?: string;
 }
 
 export interface CartWithAuthor {
