@@ -146,7 +146,15 @@ export interface CreateOrderRequest {
 
 export interface CreateOrderResponse {
   base_resp?: base.BaseResponse;
+  order_res?: Array<OrderResponseInfo>;
+}
+
+export interface OrderResponseInfo {
   order_id?: string;
+  /** 货币类型  CNY :人民币 , COIN:虚拟币 */
+  currency?: string;
+  /** 订单总金额，单位为分 微信支付使用 */
+  total?: number;
 }
 
 export interface GetOrderRequest {

@@ -330,6 +330,14 @@ export class glory_api {
     );
   }
 
+  ListQualification(request) {
+    const uri = `${this.uriPrefix}/api/shop/list_shop_qualification`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   GetMallIndex(request) {
     const uri = `${this.uriPrefix}/api/mall/list_live_product`;
     const body = JSONbigint.stringify(request);

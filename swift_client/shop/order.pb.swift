@@ -428,13 +428,31 @@ struct GloryApi_CreateOrderResponse {
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
-  var orderID: Int64 = 0
+  var orderRes: [GloryApi_OrderResponseInfo] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
+}
+
+struct GloryApi_OrderResponseInfo {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var orderID: Int64 = 0
+
+  ///货币类型  CNY :人民币 , COIN:虚拟币
+  var currency: String = String()
+
+  ///订单总金额，单位为分 微信支付使用
+  var total: Double = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
 }
 
 struct GloryApi_GetOrderRequest {
@@ -816,6 +834,7 @@ extension GloryApi_ProductInfo: @unchecked Sendable {}
 extension GloryApi_OrderWithAuthor: @unchecked Sendable {}
 extension GloryApi_CreateOrderRequest: @unchecked Sendable {}
 extension GloryApi_CreateOrderResponse: @unchecked Sendable {}
+extension GloryApi_OrderResponseInfo: @unchecked Sendable {}
 extension GloryApi_GetOrderRequest: @unchecked Sendable {}
 extension GloryApi_GetOrderResponse: @unchecked Sendable {}
 extension GloryApi_UpdateOrderRequest: @unchecked Sendable {}
@@ -1724,7 +1743,7 @@ extension GloryApi_CreateOrderResponse: SwiftProtobuf.Message, SwiftProtobuf._Me
   static let protoMessageName: String = _protobuf_package + ".CreateOrderResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
-    2: .standard(proto: "order_id"),
+    2: .standard(proto: "order_res"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1734,7 +1753,7 @@ extension GloryApi_CreateOrderResponse: SwiftProtobuf.Message, SwiftProtobuf._Me
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.orderID) }()
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.orderRes) }()
       default: break
       }
     }
@@ -1748,15 +1767,59 @@ extension GloryApi_CreateOrderResponse: SwiftProtobuf.Message, SwiftProtobuf._Me
     try { if let v = self._baseResp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    if self.orderID != 0 {
-      try visitor.visitSingularInt64Field(value: self.orderID, fieldNumber: 2)
+    if !self.orderRes.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.orderRes, fieldNumber: 2)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_CreateOrderResponse, rhs: GloryApi_CreateOrderResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.orderRes != rhs.orderRes {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_OrderResponseInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".OrderResponseInfo"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "order_id"),
+    2: .same(proto: "currency"),
+    3: .same(proto: "total"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.orderID) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.currency) }()
+      case 3: try { try decoder.decodeSingularDoubleField(value: &self.total) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.orderID != 0 {
+      try visitor.visitSingularInt64Field(value: self.orderID, fieldNumber: 1)
+    }
+    if !self.currency.isEmpty {
+      try visitor.visitSingularStringField(value: self.currency, fieldNumber: 2)
+    }
+    if self.total != 0 {
+      try visitor.visitSingularDoubleField(value: self.total, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_OrderResponseInfo, rhs: GloryApi_OrderResponseInfo) -> Bool {
     if lhs.orderID != rhs.orderID {return false}
+    if lhs.currency != rhs.currency {return false}
+    if lhs.total != rhs.total {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
