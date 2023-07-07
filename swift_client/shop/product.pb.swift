@@ -595,6 +595,9 @@ struct GloryApi_PublishProductRequest {
   ///参考价格
   var referencePrice: Float = 0
 
+  ///商品品牌
+  var productBrand: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1882,6 +1885,7 @@ extension GloryApi_PublishProductRequest: SwiftProtobuf.Message, SwiftProtobuf._
     7: .standard(proto: "freight_template_id"),
     8: .standard(proto: "sale_price"),
     9: .standard(proto: "reference_price"),
+    10: .standard(proto: "product_brand"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1899,6 +1903,7 @@ extension GloryApi_PublishProductRequest: SwiftProtobuf.Message, SwiftProtobuf._
       case 7: try { try decoder.decodeSingularInt64Field(value: &self.freightTemplateID) }()
       case 8: try { try decoder.decodeSingularFloatField(value: &self.salePrice) }()
       case 9: try { try decoder.decodeSingularFloatField(value: &self.referencePrice) }()
+      case 10: try { try decoder.decodeSingularStringField(value: &self.productBrand) }()
       case 21: try { try decoder.decodeSingularStringField(value: &self.productName) }()
       default: break
       }
@@ -1937,6 +1942,9 @@ extension GloryApi_PublishProductRequest: SwiftProtobuf.Message, SwiftProtobuf._
     if self.referencePrice != 0 {
       try visitor.visitSingularFloatField(value: self.referencePrice, fieldNumber: 9)
     }
+    if !self.productBrand.isEmpty {
+      try visitor.visitSingularStringField(value: self.productBrand, fieldNumber: 10)
+    }
     if !self.productName.isEmpty {
       try visitor.visitSingularStringField(value: self.productName, fieldNumber: 21)
     }
@@ -1954,6 +1962,7 @@ extension GloryApi_PublishProductRequest: SwiftProtobuf.Message, SwiftProtobuf._
     if lhs.freightTemplateID != rhs.freightTemplateID {return false}
     if lhs.salePrice != rhs.salePrice {return false}
     if lhs.referencePrice != rhs.referencePrice {return false}
+    if lhs.productBrand != rhs.productBrand {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

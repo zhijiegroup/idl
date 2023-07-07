@@ -1,0 +1,63 @@
+syntax = "proto3";
+package glory_api;
+
+import "base.proto";
+
+message LiveText {
+    int64 text_id = 1;
+    string title =2; 
+    string content =3;
+    string user =4; 
+    string updated_at =5; 
+}
+  
+message CreateLiveTextRequest {
+    base.BaseRequest base_request = 1;
+    string title =2;
+    string content =3;
+    int64 shop_id =4;
+  }
+message CreateLiveTextResponse {
+    base.BaseResponse base_resp = 1;
+    int64 text_id = 2;
+}
+  
+message UpdateLiveTextRequest {
+    base.BaseRequest base_request = 1;
+    int64 text_id = 2; 
+    string title =3;
+    string content =4;  
+}
+message UpdateLiveTextResponse {
+    base.BaseResponse base_resp = 1;
+}
+  
+message ListLiveTextRequest {
+    base.BaseRequest base_request = 1;
+    int64 shop_id = 2;
+    base.PaginationRequest pagination = 100;
+}
+message ListLiveTextResponse {
+    base.BaseResponse base_resp = 1;
+    repeated LiveText text_list = 2;
+    base.PaginationResponse pagination = 100;
+}
+  
+message GetLiveTextRequest {
+      base.BaseRequest base_request=1;
+      int64 text_id =2;
+}
+message GetLiveTextResponse {
+      base.BaseResponse base_resp = 1;
+      LiveText live_text = 2;
+    }
+  
+message DeleteLiveTextsRequest {
+    base.BaseRequest base_request=1;
+    repeated int64 text_ids =2;
+}
+message DeleteLiveTextsResponse {
+    base.BaseResponse base_resp = 1;
+}
+  
+  

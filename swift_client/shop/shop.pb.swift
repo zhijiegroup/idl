@@ -49,6 +49,12 @@ struct GloryApi_Shop {
     set {_uniqueStorage()._categoryID = newValue}
   }
 
+  ///经营类目 资质
+  var shopQualification: [GloryApi_ShopQualification] {
+    get {return _storage._shopQualification}
+    set {_uniqueStorage()._shopQualification = newValue}
+  }
+
   ///虚拟交易店铺 virtual, 真实交易店铺 real
   var shopType: String {
     get {return _storage._shopType}
@@ -216,6 +222,28 @@ struct GloryApi_Shop {
   init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
+}
+
+struct GloryApi_ShopQualification {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var shopQualificationID: Int64 = 0
+
+  var shopQualificationURL: String = String()
+
+  var categoryRoot: String = String()
+
+  var qualificationName: String = String()
+
+  var attachmentID: Int64 = 0
+
+  var validityPeriod: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
 }
 
 struct GloryApi_ShopWithAuthor {
@@ -942,6 +970,7 @@ struct GloryApi_GetShopCategoryResponse {
 
 #if swift(>=5.5) && canImport(_Concurrency)
 extension GloryApi_Shop: @unchecked Sendable {}
+extension GloryApi_ShopQualification: @unchecked Sendable {}
 extension GloryApi_ShopWithAuthor: @unchecked Sendable {}
 extension GloryApi_CreateShopRequest: @unchecked Sendable {}
 extension GloryApi_CreateShopResponse: @unchecked Sendable {}
@@ -984,6 +1013,7 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     2: .standard(proto: "seller_id"),
     3: .standard(proto: "shop_name"),
     33: .standard(proto: "category_id"),
+    333: .standard(proto: "shop_qualification"),
     4: .standard(proto: "shop_type"),
     5: .standard(proto: "company_name"),
     6: .standard(proto: "company_id"),
@@ -1018,6 +1048,7 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     var _sellerID: Int64 = 0
     var _shopName: String = String()
     var _categoryID: [Int64] = []
+    var _shopQualification: [GloryApi_ShopQualification] = []
     var _shopType: String = String()
     var _companyName: String = String()
     var _companyID: String = String()
@@ -1055,6 +1086,7 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       _sellerID = source._sellerID
       _shopName = source._shopName
       _categoryID = source._categoryID
+      _shopQualification = source._shopQualification
       _shopType = source._shopType
       _companyName = source._companyName
       _companyID = source._companyID
@@ -1131,6 +1163,7 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
         case 31: try { try decoder.decodeSingularInt64Field(value: &_storage._shopLogoAttachmentID) }()
         case 32: try { try decoder.decodeSingularInt64Field(value: &_storage._businessLicenseAttachmentID) }()
         case 33: try { try decoder.decodeRepeatedInt64Field(value: &_storage._categoryID) }()
+        case 333: try { try decoder.decodeRepeatedMessageField(value: &_storage._shopQualification) }()
         default: break
         }
       }
@@ -1232,6 +1265,9 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       if !_storage._categoryID.isEmpty {
         try visitor.visitPackedInt64Field(value: _storage._categoryID, fieldNumber: 33)
       }
+      if !_storage._shopQualification.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._shopQualification, fieldNumber: 333)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1245,6 +1281,7 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
         if _storage._sellerID != rhs_storage._sellerID {return false}
         if _storage._shopName != rhs_storage._shopName {return false}
         if _storage._categoryID != rhs_storage._categoryID {return false}
+        if _storage._shopQualification != rhs_storage._shopQualification {return false}
         if _storage._shopType != rhs_storage._shopType {return false}
         if _storage._companyName != rhs_storage._companyName {return false}
         if _storage._companyID != rhs_storage._companyID {return false}
@@ -1276,6 +1313,68 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       }
       if !storagesAreEqual {return false}
     }
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_ShopQualification: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ShopQualification"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "shop_qualification_id"),
+    2: .standard(proto: "shop_qualification_url"),
+    3: .standard(proto: "category_root"),
+    4: .standard(proto: "qualification_name"),
+    5: .standard(proto: "attachment_id"),
+    6: .standard(proto: "validity_period"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.shopQualificationID) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.shopQualificationURL) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.categoryRoot) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.qualificationName) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.attachmentID) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.validityPeriod) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.shopQualificationID != 0 {
+      try visitor.visitSingularInt64Field(value: self.shopQualificationID, fieldNumber: 1)
+    }
+    if !self.shopQualificationURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.shopQualificationURL, fieldNumber: 2)
+    }
+    if !self.categoryRoot.isEmpty {
+      try visitor.visitSingularStringField(value: self.categoryRoot, fieldNumber: 3)
+    }
+    if !self.qualificationName.isEmpty {
+      try visitor.visitSingularStringField(value: self.qualificationName, fieldNumber: 4)
+    }
+    if self.attachmentID != 0 {
+      try visitor.visitSingularInt64Field(value: self.attachmentID, fieldNumber: 5)
+    }
+    if !self.validityPeriod.isEmpty {
+      try visitor.visitSingularStringField(value: self.validityPeriod, fieldNumber: 6)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ShopQualification, rhs: GloryApi_ShopQualification) -> Bool {
+    if lhs.shopQualificationID != rhs.shopQualificationID {return false}
+    if lhs.shopQualificationURL != rhs.shopQualificationURL {return false}
+    if lhs.categoryRoot != rhs.categoryRoot {return false}
+    if lhs.qualificationName != rhs.qualificationName {return false}
+    if lhs.attachmentID != rhs.attachmentID {return false}
+    if lhs.validityPeriod != rhs.validityPeriod {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -8,6 +8,7 @@ import * as api from "./api";
 import * as mall_index from "./mall/mall_index";
 import * as shop from "./shop/shop";
 import * as category from "./shop/category";
+import * as category_qualification from "./shop/category_qualification";
 import * as product from "./shop/product";
 import * as sku from "./shop/sku";
 import * as attribute from "./shop/attribute";
@@ -25,6 +26,7 @@ import * as live_room from "./live/live_room";
 import * as live_token from "./live/live_token";
 import * as live_user from "./live/live_user";
 import * as live_plan from "./live/live_plan";
+import * as live_text from "./live/live_text";
 import * as account_operation from "./account/account_operation";
 import * as virtual_currency from "./currency/virtual_currency";
 export {
@@ -34,6 +36,7 @@ export {
   mall_index,
   shop,
   category,
+  category_qualification,
   product,
   sku,
   attribute,
@@ -51,6 +54,7 @@ export {
   live_token,
   live_user,
   live_plan,
+  live_text,
   account_operation,
   virtual_currency,
 };
@@ -214,6 +218,11 @@ export class glory_api {
     request: category.DeleteCategoryRequest
   ): Promise<category.DeleteCategoryResponse>;
 
+  /** category qualification */
+  ListCategoryQualification(
+    request: category_qualification.ListCategoryQualificationRequest
+  ): Promise<category_qualification.ListCategoryQualificationResponse>;
+
   /** product product */
   CreateProduct(
     request: product.CreateProductRequest
@@ -254,10 +263,6 @@ export class glory_api {
   DeleteProductInBatches(
     request: product.DeleteProductsRequest
   ): Promise<product.DeleteProductsResponse>;
-
-  ChangeProductState(
-    request: product.ChangeProductStateRequest
-  ): Promise<product.ChangeProductStateResponse>;
 
   ChangeProductsState(
     request: product.ChangeProductStateRequest
@@ -521,6 +526,27 @@ live plan crud */
   DeleteLiveProductStatus(
     request: live_plan.DeleteLiveProductStatusRequest
   ): Promise<live_plan.DeleteLiveProductStatusResponse>;
+
+  /** live text crud */
+  CreateLiveText(
+    request: live_text.CreateLiveTextRequest
+  ): Promise<live_text.CreateLiveTextResponse>;
+
+  UpdateLiveText(
+    request: live_text.UpdateLiveTextRequest
+  ): Promise<live_text.UpdateLiveTextResponse>;
+
+  ListLiveText(
+    request: live_text.ListLiveTextRequest
+  ): Promise<live_text.ListLiveTextResponse>;
+
+  GetLiveText(
+    request: live_text.GetLiveTextRequest
+  ): Promise<live_text.GetLiveTextResponse>;
+
+  DeleteLiveTexts(
+    request: live_text.DeleteLiveTextsRequest
+  ): Promise<live_text.DeleteLiveTextsResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

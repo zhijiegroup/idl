@@ -10,6 +10,7 @@ import * as api from "./api";
 import * as mall_index from "./mall/mall_index";
 import * as shop from "./shop/shop";
 import * as category from "./shop/category";
+import * as category_qualification from "./shop/category_qualification";
 import * as product from "./shop/product";
 import * as sku from "./shop/sku";
 import * as attribute from "./shop/attribute";
@@ -27,6 +28,7 @@ import * as live_room from "./live/live_room";
 import * as live_token from "./live/live_token";
 import * as live_user from "./live/live_user";
 import * as live_plan from "./live/live_plan";
+import * as live_text from "./live/live_text";
 import * as account_operation from "./account/account_operation";
 import * as virtual_currency from "./currency/virtual_currency";
 export {
@@ -36,6 +38,7 @@ export {
   mall_index,
   shop,
   category,
+  category_qualification,
   product,
   sku,
   attribute,
@@ -53,6 +56,7 @@ export {
   live_token,
   live_user,
   live_plan,
+  live_text,
   account_operation,
   virtual_currency,
 };
@@ -372,6 +376,14 @@ export class glory_api {
     );
   }
 
+  ListCategoryQualification(request) {
+    const uri = `${this.uriPrefix}/api/shop/list_category_qualification`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   CreateProduct(request) {
     const uri = `${this.uriPrefix}/api/shop/create_product`;
     const body = JSONbigint.stringify(request);
@@ -444,14 +456,6 @@ export class glory_api {
 
   DeleteProductInBatches(request) {
     const uri = `${this.uriPrefix}/api/shop/delete_products`;
-    const body = JSONbigint.stringify(request);
-    return fetch(uri, { method: "POST", headers, body, credentials }).then(
-      handleResponse
-    );
-  }
-
-  ChangeProductState(request) {
-    const uri = `${this.uriPrefix}/api/shop/change_product_state`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
@@ -980,6 +984,44 @@ export class glory_api {
 
   DeleteLiveProductStatus(request) {
     const uri = `${this.uriPrefix}/api/live/delete_live_product_status`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreateLiveText(request) {
+    const uri = `${this.uriPrefix}/api/live/create_live_text`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  UpdateLiveText(request) {
+    const uri = `${this.uriPrefix}/api/live/update_live_text`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListLiveText(request) {
+    const uri = `${this.uriPrefix}/api/live/list_live_text`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  GetLiveText(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/live/get_live_text${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  DeleteLiveTexts(request) {
+    const uri = `${this.uriPrefix}/api/live/delete_live_texts`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
