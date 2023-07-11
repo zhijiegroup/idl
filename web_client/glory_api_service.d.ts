@@ -192,6 +192,10 @@ export class glory_api {
     request: freight_template.ListTemplateRequest
   ): Promise<freight_template.ListTemplateResponse>;
 
+  ListQualification(
+    request: shop.ListShopQualificationRequest
+  ): Promise<shop.ListShopQualificationResponse>;
+
   /** mall */
   GetMallIndex(
     request: mall_index.MallIndexRequest

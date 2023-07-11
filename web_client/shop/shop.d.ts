@@ -74,11 +74,16 @@ export interface Shop {
 }
 
 export interface ShopQualification {
+  /** 不传 */
   shop_qualification_id?: string;
+  /** 图片url */
   shop_qualification_url?: string;
+  /** 类目一级 */
   category_root?: string;
+  /** 资质名称 */
   qualification_name?: string;
   attachment_id?: string;
+  /** 有效期 */
   validity_period?: string;
 }
 
@@ -248,4 +253,15 @@ export interface GetShopCategoryResponse {
   base_resp?: base.BaseResponse;
   shop_id?: string;
   shop_category?: Array<ShopCategory>;
+}
+
+export interface ListShopQualificationRequest {
+  base_request?: base.BaseRequest;
+  shop_id?: string;
+}
+
+export interface ListShopQualificationResponse {
+  base_resp?: base.BaseResponse;
+  /** 经营类目 资质 */
+  shop_qualification?: Array<ShopQualification>;
 }
