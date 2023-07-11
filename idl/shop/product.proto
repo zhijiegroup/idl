@@ -210,7 +210,21 @@ message UploadMultiImageRequest {
 
 message UploadMultiImageResponse {
   base.BaseResponse base_resp = 1;
-  repeated string product_url = 2;
+  repeated ImageInfo imageInfo = 2;
+}
+
+message ImageInfo{
+  string product_url = 1;
+  int64 product_image_id = 2;
+}
+
+message DeleteImageRequest {
+  base.BaseRequest base_request = 1;
+  int64 product_image_id = 2;
+}
+
+message DeleteImageResponse {
+  base.BaseResponse base_resp = 1;
 }
 
 message UploadSkuImageRequest {
