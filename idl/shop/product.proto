@@ -4,6 +4,7 @@ package glory_api;
 
 import "base.proto";
 import "shop/sku.proto";
+import "shop/shop.proto";
 import "shop/attribute.proto";
 import "shop/freight_template.proto";
 
@@ -209,5 +210,29 @@ message UploadMultiImageRequest {
 
 message UploadMultiImageResponse {
   base.BaseResponse base_resp = 1;
-  repeated string product_url = 2;
+  repeated ImageInfo imageInfo = 2;
+}
+
+message ImageInfo{
+  string product_url = 1;
+  int64 product_image_id = 2;
+}
+
+message DeleteImageRequest {
+  base.BaseRequest base_request = 1;
+  int64 product_image_id = 2;
+}
+
+message DeleteImageResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+message UploadSkuImageRequest {
+  base.BaseRequest base_request = 1;
+  int64 sku_id = 2;
+}
+
+message UploadSkuImageResponse {
+  base.BaseResponse base_resp = 1;
+  string image_url = 2;
 }
