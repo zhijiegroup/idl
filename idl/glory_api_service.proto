@@ -28,6 +28,7 @@ import "live/live_plan.proto";
 import "live/live_text.proto";
 import "account/account_operation.proto";
 import "currency/virtual_currency.proto";
+import "tenant/tenant.proto";
 
 
 service glory_api {
@@ -497,5 +498,23 @@ service glory_api {
   rpc DeleteLiveTexts(DeleteLiveTextsRequest) returns (DeleteLiveTextsResponse) {
     option (api.post) = '/api/live/delete_live_texts';
   }
+
+  //tenant
+  rpc CreateTenant(CreateTenantRequest) returns (CreateTenantResponse) {
+    option (api.post) = '/api/tenant/create_tenant';
+  }
+  rpc GetTenant(GetTenantRequest) returns (GetTenantResponse) {
+    option (api.get) = '/api/tenant/get_tenant';
+  }
+  rpc UpdateTenant(UpdateTenantRequest) returns (UpdateTenantResponse) {
+    option (api.post) = '/api/tenant/update_tenant';
+  }
+  rpc DeleteTenant(DeleteTenantRequest) returns (DeleteTenantResponse) {
+    option (api.post) = '/api/tenant/delete_tenant';
+  }
+  rpc ListTenant(ListTenantRequest) returns (ListTenantResponse) {
+    option (api.post) = '/api/tenant/list_tenant';
+  }
+
 
 }
