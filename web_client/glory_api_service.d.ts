@@ -252,6 +252,10 @@ export class glory_api {
     request: product.UploadMultiImageRequest
   ): Promise<product.UploadMultiImageResponse>;
 
+  DeleteImageById(
+    request: product.DeleteImageRequest
+  ): Promise<product.DeleteImageResponse>;
+
   BindAttribute(
     request: product.BindAttributeRequest
   ): Promise<product.BindAttributeResponse>;
