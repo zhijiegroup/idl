@@ -3,9 +3,10 @@
 
 import * as base from "../base";
 import * as sku from "./sku";
+import * as shop from "./shop";
 import * as attribute from "./attribute";
 import * as freight_template from "./freight_template";
-export { base, sku, attribute, freight_template };
+export { base, sku, shop, attribute, freight_template };
 
 export const State = {
   default: 0,

@@ -438,6 +438,14 @@ export class glory_api {
     );
   }
 
+  DeleteImageById(request) {
+    const uri = `${this.uriPrefix}/api/shop/delete_image`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   BindAttribute(request) {
     const uri = `${this.uriPrefix}/api/shop/bind_product_attribute`;
     const body = JSONbigint.stringify(request);

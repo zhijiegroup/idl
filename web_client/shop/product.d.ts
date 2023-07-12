@@ -4,9 +4,10 @@
 
 import * as base from "../base";
 import * as sku from "./sku";
+import * as shop from "./shop";
 import * as attribute from "./attribute";
 import * as freight_template from "./freight_template";
-export { base, sku, attribute, freight_template };
+export { base, sku, shop, attribute, freight_template };
 
 export enum State {
   default = 0,
@@ -41,6 +42,10 @@ export interface Product {
   freight_template?: freight_template.Template;
   /** 售后信息 */
   shipment_attribute?: Array<ShipmentAttribute>;
+  /** 售卖价 */
+  sale_price?: number;
+  /** 参考价 */
+  reference_price?: number;
 }
 
 export interface ProductImage {
@@ -222,5 +227,29 @@ export interface UploadMultiImageRequest {
 
 export interface UploadMultiImageResponse {
   base_resp?: base.BaseResponse;
-  product_url?: Array<string>;
+  imageInfo?: Array<ImageInfo>;
+}
+
+export interface ImageInfo {
+  product_url?: string;
+  product_image_id?: string;
+}
+
+export interface DeleteImageRequest {
+  base_request?: base.BaseRequest;
+  product_image_id?: string;
+}
+
+export interface DeleteImageResponse {
+  base_resp?: base.BaseResponse;
+}
+
+export interface UploadSkuImageRequest {
+  base_request?: base.BaseRequest;
+  sku_id?: string;
+}
+
+export interface UploadSkuImageResponse {
+  base_resp?: base.BaseResponse;
+  image_url?: string;
 }
