@@ -29,6 +29,7 @@ import * as live_plan from "./live/live_plan";
 import * as live_text from "./live/live_text";
 import * as account_operation from "./account/account_operation";
 import * as virtual_currency from "./currency/virtual_currency";
+import * as tenant from "./tenant/tenant";
 export {
   user,
   address,
@@ -57,6 +58,7 @@ export {
   live_text,
   account_operation,
   virtual_currency,
+  tenant,
 };
 
 export class glory_api {
@@ -555,6 +557,27 @@ live plan crud */
   DeleteLiveTexts(
     request: live_text.DeleteLiveTextsRequest
   ): Promise<live_text.DeleteLiveTextsResponse>;
+
+  /** tenant */
+  CreateTenant(
+    request: tenant.CreateTenantRequest
+  ): Promise<tenant.CreateTenantResponse>;
+
+  GetTenant(
+    request: tenant.GetTenantRequest
+  ): Promise<tenant.GetTenantResponse>;
+
+  UpdateTenant(
+    request: tenant.UpdateTenantRequest
+  ): Promise<tenant.UpdateTenantResponse>;
+
+  DeleteTenant(
+    request: tenant.DeleteTenantRequest
+  ): Promise<tenant.DeleteTenantResponse>;
+
+  ListTenant(
+    request: tenant.ListTenantRequest
+  ): Promise<tenant.ListTenantResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

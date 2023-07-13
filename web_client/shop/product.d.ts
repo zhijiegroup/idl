@@ -46,6 +46,8 @@ export interface Product {
   sale_price?: number;
   /** 参考价 */
   reference_price?: number;
+  /** 商品品牌 */
+  product_brand?: string;
 }
 
 export interface ProductImage {
