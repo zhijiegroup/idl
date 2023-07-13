@@ -110,6 +110,19 @@ message LoadLivePlanProductResponse {
   base.BaseResponse base_resp = 1;
 }
 
+message CreateLiveProductStatusRequest {
+  base.BaseRequest base_request=1;
+  int64 shop_id = 2;
+  int64 product_id = 3; 
+  string product_selling_point = 4; 
+  string product_description = 5; 
+}
+
+message CreateLiveProductStatusResponse {
+  base.BaseResponse base_resp=1;
+  int64 live_product_status_id = 2;
+}
+
 message UpdateLiveProductStatusRequest {
   base.BaseRequest base_request=1;
   repeated int64 live_product_status_id = 2;
@@ -148,6 +161,16 @@ message DeleteLiveProductStatusRequest {
   int64 live_product_status_id =2;
 }
 message DeleteLiveProductStatusResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+message LiveRecordRequest {
+  base.BaseRequest base_request=1;
+  string action =2;
+  string app_name =3;
+  string stream_name =4;
+}
+message LiveRecordResponse {
   base.BaseResponse base_resp = 1;
 }
 
