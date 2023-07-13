@@ -880,6 +880,14 @@ export class glory_api {
     );
   }
 
+  Record(request) {
+    const uri = `${this.uriPrefix}/api/live/record`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   CreateLiveUserToken(request) {
     const uri = `${this.uriPrefix}/api/live/create_live_user_token`;
     const body = JSONbigint.stringify(request);
@@ -1002,6 +1010,14 @@ export class glory_api {
 
   DeleteLiveProductStatus(request) {
     const uri = `${this.uriPrefix}/api/live/delete_live_product_status`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreateLiveProductStatus(request) {
+    const uri = `${this.uriPrefix}/api/live/create_live_product_status`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse

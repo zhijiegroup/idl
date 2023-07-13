@@ -470,6 +470,10 @@ export class glory_api {
     request: live_room.DeleteRoomRequest
   ): Promise<live_room.DeleteRoomResponse>;
 
+  Record(
+    request: live_plan.LiveRecordRequest
+  ): Promise<live_plan.LiveRecordResponse>;
+
   CreateLiveUserToken(
     request: live_token.CreateLiveUserTokenRequest
   ): Promise<live_token.CreateLiveUserTokenResponse>;
@@ -536,6 +540,10 @@ live plan crud */
   DeleteLiveProductStatus(
     request: live_plan.DeleteLiveProductStatusRequest
   ): Promise<live_plan.DeleteLiveProductStatusResponse>;
+
+  CreateLiveProductStatus(
+    request: live_plan.CreateLiveProductStatusRequest
+  ): Promise<live_plan.CreateLiveProductStatusResponse>;
 
   /** live text crud */
   CreateLiveText(
