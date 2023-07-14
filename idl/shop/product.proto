@@ -18,10 +18,10 @@ message Product {
   State state = 7;//商品状态
   repeated ProductImage images = 8;
   float product_price = 9;//价格,取所有sku 中最低的一个
-  int32 product_quantity =10;//总库存
+  int32 product_quantity = 10;//总库存
   int32 product_sold = 11;//总销量
-  string shop_name =12;
-  string shop_logo_url =13;
+  string shop_name = 12;
+  string shop_logo_url = 13;
   Template freight_template = 14; //运费信息
   repeated ShipmentAttribute shipment_attribute = 15; //售后信息
   float sale_price = 16;//售卖价
@@ -36,11 +36,11 @@ message ProductImage {
 }
 
 message ShipmentAttribute {
-  int64 shipment_attribute_id =1;
+  int64 shipment_attribute_id = 1;
   int64 attribute_id = 2;
   string  attribute_name = 3;
   int64 attribute_value_id = 4;
-  string attribute_value =5;
+  string attribute_value = 5;
 }
 
 enum State {
@@ -55,22 +55,22 @@ enum State {
 }
 
 message ProductWithAuthor {
-  Product product =1;
+  Product product = 1;
   repeated ProductAttributeWithOneValue attribute_value = 2;
   base.AuthorInfo author_info = 3;
 }
 
 message ProductAttributeWithOneValue {
   int64 attribute_id = 1;
-  string attribute_name =2;
-  string attribute_value =3;
+  string attribute_name = 2;
+  string attribute_value = 3;
   string attribute_type = 4;
-  int64 product_attribute_id =6;
+  int64 product_attribute_id = 6;
   int64 attribute_value_id = 7;
 }
 
 message ProductWithValueAuthor {
-  Product product =1;
+  Product product = 1;
   repeated ProductAttributeWithOneValue attribute_value = 2;
   base.AuthorInfo author_info = 3;
 }
@@ -78,13 +78,13 @@ message ProductWithValueAuthor {
 message ProductAttribute {
   int64 product_attribute_id = 1;
   int64 product_id = 2;
-  int64 attribute_id =3;
+  int64 attribute_id = 3;
   Attribute attribute = 5;
 }
 
 message CreateProductRequest {
   base.BaseRequest base_request = 1;
-  Product product =2;
+  Product product = 2;
   repeated ProductAttribute product_attribute = 3;
   string created_by = 4;
 }
@@ -112,16 +112,25 @@ message GetProductRequest {
 }
 message GetProductResponse {
   base.BaseResponse base_resp = 1;
-  ProductWithValueAuthor product_detail =2;
+  ProductWithValueAuthor product_detail = 2;
 }
 
 message UpdateProductRequest {
   base.BaseRequest base_request = 1;
-  Product product = 2;
+  int64 product_id = 2;
+  string product_name = 21;
+  repeated Attribute attribute = 3;
+  repeated Sku sku = 4;
+  State state = 5;
+  repeated Attribute shipment_attribute = 6;
+  int64 freight_template_id = 7;
+  float sale_price = 8;//售卖价格
+  float reference_price = 9;//参考价格
+  string product_brand = 10;//商品品牌
 }
 message UpdateProductResponse {
   base.BaseResponse base_resp = 1;
-  int64 product_id=2;
+  int64 product_id = 2;
 }
 
 
@@ -129,7 +138,7 @@ message PublishProductRequest {
   base.BaseRequest base_request = 1;
   int64 product_id = 2;
   string product_name = 21;
-  repeated Attribute attribute= 3;
+  repeated Attribute attribute = 3;
   repeated Sku sku = 4;
   State state = 5;
   repeated Attribute shipment_attribute = 6;
@@ -141,7 +150,7 @@ message PublishProductRequest {
 
 message PublishProductResponse {
   base.BaseResponse base_resp = 1;
-  int64 product_id=2;
+  int64 product_id = 2;
 }
 
 message OffSelfProductsRequest {
@@ -198,8 +207,8 @@ message ListProductResponse {
 }
 
 message DeleteProductRequest {
-  base.BaseRequest base_request=1;
-  int64 product_id =2;
+  base.BaseRequest base_request = 1;
+  int64 product_id = 2;
 }
 message DeleteProductResponse {
   base.BaseResponse base_resp = 1;
