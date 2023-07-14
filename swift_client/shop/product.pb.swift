@@ -539,21 +539,34 @@ struct GloryApi_UpdateProductRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
-  var product: GloryApi_Product {
-    get {return _product ?? GloryApi_Product()}
-    set {_product = newValue}
-  }
-  /// Returns true if `product` has been explicitly set.
-  var hasProduct: Bool {return self._product != nil}
-  /// Clears the value of `product`. Subsequent reads from it will return its default value.
-  mutating func clearProduct() {self._product = nil}
+  var productID: Int64 = 0
+
+  var productName: String = String()
+
+  var attribute: [GloryApi_Attribute] = []
+
+  var sku: [GloryApi_Sku] = []
+
+  var state: GloryApi_State = .default
+
+  var shipmentAttribute: [GloryApi_Attribute] = []
+
+  var freightTemplateID: Int64 = 0
+
+  ///售卖价格
+  var salePrice: Float = 0
+
+  ///参考价格
+  var referencePrice: Float = 0
+
+  ///商品品牌
+  var productBrand: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
   fileprivate var _baseRequest: Base_BaseRequest? = nil
-  fileprivate var _product: GloryApi_Product? = nil
 }
 
 struct GloryApi_UpdateProductResponse {
@@ -1943,7 +1956,16 @@ extension GloryApi_UpdateProductRequest: SwiftProtobuf.Message, SwiftProtobuf._M
   static let protoMessageName: String = _protobuf_package + ".UpdateProductRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
-    2: .same(proto: "product"),
+    2: .standard(proto: "product_id"),
+    21: .standard(proto: "product_name"),
+    3: .same(proto: "attribute"),
+    4: .same(proto: "sku"),
+    5: .same(proto: "state"),
+    6: .standard(proto: "shipment_attribute"),
+    7: .standard(proto: "freight_template_id"),
+    8: .standard(proto: "sale_price"),
+    9: .standard(proto: "reference_price"),
+    10: .standard(proto: "product_brand"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1953,7 +1975,16 @@ extension GloryApi_UpdateProductRequest: SwiftProtobuf.Message, SwiftProtobuf._M
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularMessageField(value: &self._product) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.productID) }()
+      case 3: try { try decoder.decodeRepeatedMessageField(value: &self.attribute) }()
+      case 4: try { try decoder.decodeRepeatedMessageField(value: &self.sku) }()
+      case 5: try { try decoder.decodeSingularEnumField(value: &self.state) }()
+      case 6: try { try decoder.decodeRepeatedMessageField(value: &self.shipmentAttribute) }()
+      case 7: try { try decoder.decodeSingularInt64Field(value: &self.freightTemplateID) }()
+      case 8: try { try decoder.decodeSingularFloatField(value: &self.salePrice) }()
+      case 9: try { try decoder.decodeSingularFloatField(value: &self.referencePrice) }()
+      case 10: try { try decoder.decodeSingularStringField(value: &self.productBrand) }()
+      case 21: try { try decoder.decodeSingularStringField(value: &self.productName) }()
       default: break
       }
     }
@@ -1967,15 +1998,51 @@ extension GloryApi_UpdateProductRequest: SwiftProtobuf.Message, SwiftProtobuf._M
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    try { if let v = self._product {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    if self.productID != 0 {
+      try visitor.visitSingularInt64Field(value: self.productID, fieldNumber: 2)
+    }
+    if !self.attribute.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.attribute, fieldNumber: 3)
+    }
+    if !self.sku.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.sku, fieldNumber: 4)
+    }
+    if self.state != .default {
+      try visitor.visitSingularEnumField(value: self.state, fieldNumber: 5)
+    }
+    if !self.shipmentAttribute.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.shipmentAttribute, fieldNumber: 6)
+    }
+    if self.freightTemplateID != 0 {
+      try visitor.visitSingularInt64Field(value: self.freightTemplateID, fieldNumber: 7)
+    }
+    if self.salePrice != 0 {
+      try visitor.visitSingularFloatField(value: self.salePrice, fieldNumber: 8)
+    }
+    if self.referencePrice != 0 {
+      try visitor.visitSingularFloatField(value: self.referencePrice, fieldNumber: 9)
+    }
+    if !self.productBrand.isEmpty {
+      try visitor.visitSingularStringField(value: self.productBrand, fieldNumber: 10)
+    }
+    if !self.productName.isEmpty {
+      try visitor.visitSingularStringField(value: self.productName, fieldNumber: 21)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_UpdateProductRequest, rhs: GloryApi_UpdateProductRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
-    if lhs._product != rhs._product {return false}
+    if lhs.productID != rhs.productID {return false}
+    if lhs.productName != rhs.productName {return false}
+    if lhs.attribute != rhs.attribute {return false}
+    if lhs.sku != rhs.sku {return false}
+    if lhs.state != rhs.state {return false}
+    if lhs.shipmentAttribute != rhs.shipmentAttribute {return false}
+    if lhs.freightTemplateID != rhs.freightTemplateID {return false}
+    if lhs.salePrice != rhs.salePrice {return false}
+    if lhs.referencePrice != rhs.referencePrice {return false}
+    if lhs.productBrand != rhs.productBrand {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
