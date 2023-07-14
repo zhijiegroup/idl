@@ -1,0 +1,76 @@
+syntax = "proto3";
+package glory_api;
+
+
+import "base.proto";
+
+message Tenant {
+  int64 tenant_id = 1; //创建不传
+  string tenant_name  = 2; //名称 必传
+  string tenant_logo = 3; //logo 必传
+  string tenant_overview = 4; //校训 必传
+  string admin_name = 5; //管理员名称 必传
+  string admin_phone = 6; //管理员手机号 必传
+
+}
+
+message CreateTenantRequest {
+  base.BaseRequest base_request = 1; //token
+  Tenant tenant = 2;
+
+}
+
+message CreateTenantResponse {
+  base.BaseResponse base_resp = 1;
+  int64 tenant_id = 2;
+}
+
+message GetTenantRequest {
+  base.BaseRequest base_request = 1;
+  int64 tenant_id = 2;
+
+}
+
+message GetTenantResponse {
+  base.BaseResponse base_resp = 1;
+  Tenant tenant = 2;
+  base.AuthorInfo author_info = 3;
+}
+
+message UpdateTenantRequest {
+  base.BaseRequest base_request = 1;
+  Tenant Tenant = 3;
+
+}
+
+message UpdateTenantResponse {
+  base.BaseResponse base_resp = 1;
+  int64 tenant_id = 2;
+}
+
+message DeleteTenantRequest {
+  base.BaseRequest base_request = 1;
+  int64 tenant_id = 2;
+
+}
+
+message DeleteTenantResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+message ListTenantRequest {
+  base.BaseRequest base_request = 1;
+  string search_name = 2;
+  base.PaginationRequest pagination = 100;
+}
+
+message TenantWithAuthor {
+  Tenant tenant = 1;
+  base.AuthorInfo author_info = 2;
+}
+
+message ListTenantResponse {
+  base.BaseResponse base_resp = 1;
+  repeated TenantWithAuthor Tenants = 2;
+  base.PaginationResponse pagination = 100;
+}

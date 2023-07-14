@@ -31,6 +31,7 @@ import * as live_plan from "./live/live_plan";
 import * as live_text from "./live/live_text";
 import * as account_operation from "./account/account_operation";
 import * as virtual_currency from "./currency/virtual_currency";
+import * as tenant from "./tenant/tenant";
 export {
   user,
   address,
@@ -59,6 +60,7 @@ export {
   live_text,
   account_operation,
   virtual_currency,
+  tenant,
 };
 
 import {
@@ -878,6 +880,14 @@ export class glory_api {
     );
   }
 
+  Record(request) {
+    const uri = `${this.uriPrefix}/api/live/record`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   CreateLiveUserToken(request) {
     const uri = `${this.uriPrefix}/api/live/create_live_user_token`;
     const body = JSONbigint.stringify(request);
@@ -1006,6 +1016,14 @@ export class glory_api {
     );
   }
 
+  CreateLiveProductStatus(request) {
+    const uri = `${this.uriPrefix}/api/live/create_live_product_status`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   CreateLiveText(request) {
     const uri = `${this.uriPrefix}/api/live/create_live_text`;
     const body = JSONbigint.stringify(request);
@@ -1038,6 +1056,44 @@ export class glory_api {
 
   DeleteLiveTexts(request) {
     const uri = `${this.uriPrefix}/api/live/delete_live_texts`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreateTenant(request) {
+    const uri = `${this.uriPrefix}/api/tenant/create_tenant`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  GetTenant(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/tenant/get_tenant${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  UpdateTenant(request) {
+    const uri = `${this.uriPrefix}/api/tenant/update_tenant`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteTenant(request) {
+    const uri = `${this.uriPrefix}/api/tenant/delete_tenant`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListTenant(request) {
+    const uri = `${this.uriPrefix}/api/tenant/list_tenant`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse

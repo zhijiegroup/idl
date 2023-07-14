@@ -200,6 +200,12 @@ struct GloryApi_Product {
     set {_uniqueStorage()._referencePrice = newValue}
   }
 
+  ///商品品牌
+  var productBrand: String {
+    get {return _storage._productBrand}
+    set {_uniqueStorage()._productBrand = newValue}
+  }
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1167,6 +1173,7 @@ extension GloryApi_Product: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
     15: .standard(proto: "shipment_attribute"),
     16: .standard(proto: "sale_price"),
     17: .standard(proto: "reference_price"),
+    18: .standard(proto: "product_brand"),
   ]
 
   fileprivate class _StorageClass {
@@ -1187,6 +1194,7 @@ extension GloryApi_Product: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
     var _shipmentAttribute: [GloryApi_ShipmentAttribute] = []
     var _salePrice: Float = 0
     var _referencePrice: Float = 0
+    var _productBrand: String = String()
 
     static let defaultInstance = _StorageClass()
 
@@ -1210,6 +1218,7 @@ extension GloryApi_Product: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
       _shipmentAttribute = source._shipmentAttribute
       _salePrice = source._salePrice
       _referencePrice = source._referencePrice
+      _productBrand = source._productBrand
     }
   }
 
@@ -1245,6 +1254,7 @@ extension GloryApi_Product: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
         case 15: try { try decoder.decodeRepeatedMessageField(value: &_storage._shipmentAttribute) }()
         case 16: try { try decoder.decodeSingularFloatField(value: &_storage._salePrice) }()
         case 17: try { try decoder.decodeSingularFloatField(value: &_storage._referencePrice) }()
+        case 18: try { try decoder.decodeSingularStringField(value: &_storage._productBrand) }()
         default: break
         }
       }
@@ -1308,6 +1318,9 @@ extension GloryApi_Product: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
       if _storage._referencePrice != 0 {
         try visitor.visitSingularFloatField(value: _storage._referencePrice, fieldNumber: 17)
       }
+      if !_storage._productBrand.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._productBrand, fieldNumber: 18)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1334,6 +1347,7 @@ extension GloryApi_Product: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
         if _storage._shipmentAttribute != rhs_storage._shipmentAttribute {return false}
         if _storage._salePrice != rhs_storage._salePrice {return false}
         if _storage._referencePrice != rhs_storage._referencePrice {return false}
+        if _storage._productBrand != rhs_storage._productBrand {return false}
         return true
       }
       if !storagesAreEqual {return false}

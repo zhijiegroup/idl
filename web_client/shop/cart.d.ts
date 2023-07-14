@@ -20,6 +20,36 @@ export interface CartSku {
   shop_id?: string;
 }
 
+export interface ProductShow {
+  product_id?: string;
+  sku_id?: string;
+  product_name?: string;
+  /** 数量 */
+  quantity?: number;
+  /** 价格 */
+  unit_price?: number;
+  product_url?: string;
+  sku_info?: string;
+}
+
+export interface ShopShow {
+  cart_sku_id?: string;
+  sku_id?: string;
+  quantity?: number;
+  shop_id?: string;
+  shop_name?: string;
+  product?: Array<ProductShow>;
+}
+
+export interface CartShow {
+  cart_id?: string;
+  user_id?: string;
+  seller_id?: string;
+  tenant_id?: string;
+  shop?: Array<ShopShow>;
+  total_quantity?: number;
+}
+
 export interface CartWithAuthor {
   cart?: Cart;
   author_info?: base.AuthorInfo;
@@ -43,7 +73,8 @@ export interface GetCartRequest {
 
 export interface GetCartResponse {
   base_resp?: base.BaseResponse;
-  cart_detail?: CartWithAuthor;
+  /** CartWithAuthor cart_detail =2; */
+  cart_info?: CartShow;
 }
 
 export interface UpdateCartRequest {

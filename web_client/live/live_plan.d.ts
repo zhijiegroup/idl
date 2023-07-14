@@ -125,6 +125,19 @@ export interface LoadLivePlanProductResponse {
   base_resp?: base.BaseResponse;
 }
 
+export interface CreateLiveProductStatusRequest {
+  base_request?: base.BaseRequest;
+  shop_id?: string;
+  product_id?: string;
+  product_selling_point?: string;
+  product_description?: string;
+}
+
+export interface CreateLiveProductStatusResponse {
+  base_resp?: base.BaseResponse;
+  live_product_status_id?: string;
+}
+
 export interface UpdateLiveProductStatusRequest {
   base_request?: base.BaseRequest;
   live_product_status_id?: Array<string>;
@@ -162,5 +175,16 @@ export interface DeleteLiveProductStatusRequest {
 }
 
 export interface DeleteLiveProductStatusResponse {
+  base_resp?: base.BaseResponse;
+}
+
+export interface LiveRecordRequest {
+  base_request?: base.BaseRequest;
+  action?: string;
+  app_name?: string;
+  stream_name?: string;
+}
+
+export interface LiveRecordResponse {
   base_resp?: base.BaseResponse;
 }

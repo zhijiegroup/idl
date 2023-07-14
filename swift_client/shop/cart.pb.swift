@@ -58,6 +58,76 @@ struct GloryApi_CartSku {
   init() {}
 }
 
+struct GloryApi_ProductShow {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var productID: Int64 = 0
+
+  var skuID: Int64 = 0
+
+  var productName: String = String()
+
+  ///数量
+  var quantity: Int32 = 0
+
+  ///价格
+  var unitPrice: Double = 0
+
+  var productURL: String = String()
+
+  var skuInfo: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct GloryApi_ShopShow {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var cartSkuID: Int64 = 0
+
+  var skuID: Int64 = 0
+
+  var quantity: Int32 = 0
+
+  var shopID: Int64 = 0
+
+  var shopName: String = String()
+
+  var product: [GloryApi_ProductShow] = []
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct GloryApi_CartShow {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var cartID: Int64 = 0
+
+  var userID: Int64 = 0
+
+  var sellerID: Int64 = 0
+
+  var tenantID: Int64 = 0
+
+  var shop: [GloryApi_ShopShow] = []
+
+  var totalQuantity: Int32 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
 struct GloryApi_CartWithAuthor {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -182,21 +252,22 @@ struct GloryApi_GetCartResponse {
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
-  var cartDetail: GloryApi_CartWithAuthor {
-    get {return _cartDetail ?? GloryApi_CartWithAuthor()}
-    set {_cartDetail = newValue}
+  ///CartWithAuthor cart_detail =2;
+  var cartInfo: GloryApi_CartShow {
+    get {return _cartInfo ?? GloryApi_CartShow()}
+    set {_cartInfo = newValue}
   }
-  /// Returns true if `cartDetail` has been explicitly set.
-  var hasCartDetail: Bool {return self._cartDetail != nil}
-  /// Clears the value of `cartDetail`. Subsequent reads from it will return its default value.
-  mutating func clearCartDetail() {self._cartDetail = nil}
+  /// Returns true if `cartInfo` has been explicitly set.
+  var hasCartInfo: Bool {return self._cartInfo != nil}
+  /// Clears the value of `cartInfo`. Subsequent reads from it will return its default value.
+  mutating func clearCartInfo() {self._cartInfo = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
-  fileprivate var _cartDetail: GloryApi_CartWithAuthor? = nil
+  fileprivate var _cartInfo: GloryApi_CartShow? = nil
 }
 
 struct GloryApi_UpdateCartRequest {
@@ -300,6 +371,9 @@ struct GloryApi_DeleteCartResponse {
 #if swift(>=5.5) && canImport(_Concurrency)
 extension GloryApi_Cart: @unchecked Sendable {}
 extension GloryApi_CartSku: @unchecked Sendable {}
+extension GloryApi_ProductShow: @unchecked Sendable {}
+extension GloryApi_ShopShow: @unchecked Sendable {}
+extension GloryApi_CartShow: @unchecked Sendable {}
 extension GloryApi_CartWithAuthor: @unchecked Sendable {}
 extension GloryApi_CreateCartRequest: @unchecked Sendable {}
 extension GloryApi_CreateCartResponse: @unchecked Sendable {}
@@ -416,6 +490,198 @@ extension GloryApi_CartSku: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
     if lhs.skuID != rhs.skuID {return false}
     if lhs.quantity != rhs.quantity {return false}
     if lhs.shopID != rhs.shopID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_ProductShow: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ProductShow"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "product_id"),
+    2: .standard(proto: "sku_id"),
+    3: .standard(proto: "product_name"),
+    4: .same(proto: "quantity"),
+    5: .standard(proto: "unit_price"),
+    6: .standard(proto: "product_url"),
+    7: .standard(proto: "sku_info"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.productID) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.skuID) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.productName) }()
+      case 4: try { try decoder.decodeSingularInt32Field(value: &self.quantity) }()
+      case 5: try { try decoder.decodeSingularDoubleField(value: &self.unitPrice) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.productURL) }()
+      case 7: try { try decoder.decodeSingularStringField(value: &self.skuInfo) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.productID != 0 {
+      try visitor.visitSingularInt64Field(value: self.productID, fieldNumber: 1)
+    }
+    if self.skuID != 0 {
+      try visitor.visitSingularInt64Field(value: self.skuID, fieldNumber: 2)
+    }
+    if !self.productName.isEmpty {
+      try visitor.visitSingularStringField(value: self.productName, fieldNumber: 3)
+    }
+    if self.quantity != 0 {
+      try visitor.visitSingularInt32Field(value: self.quantity, fieldNumber: 4)
+    }
+    if self.unitPrice != 0 {
+      try visitor.visitSingularDoubleField(value: self.unitPrice, fieldNumber: 5)
+    }
+    if !self.productURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.productURL, fieldNumber: 6)
+    }
+    if !self.skuInfo.isEmpty {
+      try visitor.visitSingularStringField(value: self.skuInfo, fieldNumber: 7)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ProductShow, rhs: GloryApi_ProductShow) -> Bool {
+    if lhs.productID != rhs.productID {return false}
+    if lhs.skuID != rhs.skuID {return false}
+    if lhs.productName != rhs.productName {return false}
+    if lhs.quantity != rhs.quantity {return false}
+    if lhs.unitPrice != rhs.unitPrice {return false}
+    if lhs.productURL != rhs.productURL {return false}
+    if lhs.skuInfo != rhs.skuInfo {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_ShopShow: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ShopShow"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "cart_sku_id"),
+    2: .standard(proto: "sku_id"),
+    3: .same(proto: "quantity"),
+    4: .standard(proto: "shop_id"),
+    5: .standard(proto: "shop_name"),
+    6: .same(proto: "product"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.cartSkuID) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.skuID) }()
+      case 3: try { try decoder.decodeSingularInt32Field(value: &self.quantity) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.shopName) }()
+      case 6: try { try decoder.decodeRepeatedMessageField(value: &self.product) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.cartSkuID != 0 {
+      try visitor.visitSingularInt64Field(value: self.cartSkuID, fieldNumber: 1)
+    }
+    if self.skuID != 0 {
+      try visitor.visitSingularInt64Field(value: self.skuID, fieldNumber: 2)
+    }
+    if self.quantity != 0 {
+      try visitor.visitSingularInt32Field(value: self.quantity, fieldNumber: 3)
+    }
+    if self.shopID != 0 {
+      try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 4)
+    }
+    if !self.shopName.isEmpty {
+      try visitor.visitSingularStringField(value: self.shopName, fieldNumber: 5)
+    }
+    if !self.product.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.product, fieldNumber: 6)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ShopShow, rhs: GloryApi_ShopShow) -> Bool {
+    if lhs.cartSkuID != rhs.cartSkuID {return false}
+    if lhs.skuID != rhs.skuID {return false}
+    if lhs.quantity != rhs.quantity {return false}
+    if lhs.shopID != rhs.shopID {return false}
+    if lhs.shopName != rhs.shopName {return false}
+    if lhs.product != rhs.product {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_CartShow: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".CartShow"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "cart_id"),
+    2: .standard(proto: "user_id"),
+    3: .standard(proto: "seller_id"),
+    4: .standard(proto: "tenant_id"),
+    5: .same(proto: "shop"),
+    6: .standard(proto: "total_quantity"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.cartID) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.userID) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.sellerID) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
+      case 5: try { try decoder.decodeRepeatedMessageField(value: &self.shop) }()
+      case 6: try { try decoder.decodeSingularInt32Field(value: &self.totalQuantity) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.cartID != 0 {
+      try visitor.visitSingularInt64Field(value: self.cartID, fieldNumber: 1)
+    }
+    if self.userID != 0 {
+      try visitor.visitSingularInt64Field(value: self.userID, fieldNumber: 2)
+    }
+    if self.sellerID != 0 {
+      try visitor.visitSingularInt64Field(value: self.sellerID, fieldNumber: 3)
+    }
+    if self.tenantID != 0 {
+      try visitor.visitSingularInt64Field(value: self.tenantID, fieldNumber: 4)
+    }
+    if !self.shop.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.shop, fieldNumber: 5)
+    }
+    if self.totalQuantity != 0 {
+      try visitor.visitSingularInt32Field(value: self.totalQuantity, fieldNumber: 6)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_CartShow, rhs: GloryApi_CartShow) -> Bool {
+    if lhs.cartID != rhs.cartID {return false}
+    if lhs.userID != rhs.userID {return false}
+    if lhs.sellerID != rhs.sellerID {return false}
+    if lhs.tenantID != rhs.tenantID {return false}
+    if lhs.shop != rhs.shop {return false}
+    if lhs.totalQuantity != rhs.totalQuantity {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -599,7 +865,7 @@ extension GloryApi_GetCartResponse: SwiftProtobuf.Message, SwiftProtobuf._Messag
   static let protoMessageName: String = _protobuf_package + ".GetCartResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
-    2: .standard(proto: "cart_detail"),
+    3: .standard(proto: "cart_info"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -609,7 +875,7 @@ extension GloryApi_GetCartResponse: SwiftProtobuf.Message, SwiftProtobuf._Messag
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
-      case 2: try { try decoder.decodeSingularMessageField(value: &self._cartDetail) }()
+      case 3: try { try decoder.decodeSingularMessageField(value: &self._cartInfo) }()
       default: break
       }
     }
@@ -623,15 +889,15 @@ extension GloryApi_GetCartResponse: SwiftProtobuf.Message, SwiftProtobuf._Messag
     try { if let v = self._baseResp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    try { if let v = self._cartDetail {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    try { if let v = self._cartInfo {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
     } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_GetCartResponse, rhs: GloryApi_GetCartResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
-    if lhs._cartDetail != rhs._cartDetail {return false}
+    if lhs._cartInfo != rhs._cartInfo {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
