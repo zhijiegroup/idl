@@ -127,7 +127,19 @@ export interface GetProductResponse {
 
 export interface UpdateProductRequest {
   base_request?: base.BaseRequest;
-  product?: Product;
+  product_id?: string;
+  product_name?: string;
+  attribute?: Array<attribute.Attribute>;
+  sku?: Array<sku.Sku>;
+  state?: State;
+  shipment_attribute?: Array<attribute.Attribute>;
+  freight_template_id?: string;
+  /** 售卖价格 */
+  sale_price?: number;
+  /** 参考价格 */
+  reference_price?: number;
+  /** 商品品牌 */
+  product_brand?: string;
 }
 
 export interface UpdateProductResponse {
