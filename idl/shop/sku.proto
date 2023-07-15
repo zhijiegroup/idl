@@ -16,6 +16,7 @@ message Sku {
   repeated Attribute attribute = 9;
   int64 attachment_id = 10;
   string sku_url = 11;
+  string serial_number = 12;
 }
 message SkuAttributeWithOneValue {
   int64 attribute_id = 1;
