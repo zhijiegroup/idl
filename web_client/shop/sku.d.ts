@@ -17,6 +17,7 @@ export interface Sku {
   attribute?: Array<attribute.Attribute>;
   attachment_id?: string;
   sku_url?: string;
+  serial_number?: string;
 }
 
 export interface SkuAttributeWithOneValue {

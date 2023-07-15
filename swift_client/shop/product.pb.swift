@@ -629,6 +629,9 @@ struct GloryApi_PublishProductRequest {
   ///商品品牌
   var productBrand: String = String()
 
+  ///商品类目
+  var categoryID: Int64 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -2104,6 +2107,7 @@ extension GloryApi_PublishProductRequest: SwiftProtobuf.Message, SwiftProtobuf._
     8: .standard(proto: "sale_price"),
     9: .standard(proto: "reference_price"),
     10: .standard(proto: "product_brand"),
+    11: .standard(proto: "category_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2122,6 +2126,7 @@ extension GloryApi_PublishProductRequest: SwiftProtobuf.Message, SwiftProtobuf._
       case 8: try { try decoder.decodeSingularFloatField(value: &self.salePrice) }()
       case 9: try { try decoder.decodeSingularFloatField(value: &self.referencePrice) }()
       case 10: try { try decoder.decodeSingularStringField(value: &self.productBrand) }()
+      case 11: try { try decoder.decodeSingularInt64Field(value: &self.categoryID) }()
       case 21: try { try decoder.decodeSingularStringField(value: &self.productName) }()
       default: break
       }
@@ -2163,6 +2168,9 @@ extension GloryApi_PublishProductRequest: SwiftProtobuf.Message, SwiftProtobuf._
     if !self.productBrand.isEmpty {
       try visitor.visitSingularStringField(value: self.productBrand, fieldNumber: 10)
     }
+    if self.categoryID != 0 {
+      try visitor.visitSingularInt64Field(value: self.categoryID, fieldNumber: 11)
+    }
     if !self.productName.isEmpty {
       try visitor.visitSingularStringField(value: self.productName, fieldNumber: 21)
     }
@@ -2181,6 +2189,7 @@ extension GloryApi_PublishProductRequest: SwiftProtobuf.Message, SwiftProtobuf._
     if lhs.salePrice != rhs.salePrice {return false}
     if lhs.referencePrice != rhs.referencePrice {return false}
     if lhs.productBrand != rhs.productBrand {return false}
+    if lhs.categoryID != rhs.categoryID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

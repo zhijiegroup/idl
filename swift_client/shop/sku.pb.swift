@@ -45,6 +45,8 @@ struct GloryApi_Sku {
 
   var skuURL: String = String()
 
+  var serialNumber: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -482,6 +484,7 @@ extension GloryApi_Sku: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementat
     9: .same(proto: "attribute"),
     10: .standard(proto: "attachment_id"),
     11: .standard(proto: "sku_url"),
+    12: .standard(proto: "serial_number"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -500,6 +503,7 @@ extension GloryApi_Sku: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementat
       case 9: try { try decoder.decodeRepeatedMessageField(value: &self.attribute) }()
       case 10: try { try decoder.decodeSingularInt64Field(value: &self.attachmentID) }()
       case 11: try { try decoder.decodeSingularStringField(value: &self.skuURL) }()
+      case 12: try { try decoder.decodeSingularStringField(value: &self.serialNumber) }()
       default: break
       }
     }
@@ -536,6 +540,9 @@ extension GloryApi_Sku: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementat
     if !self.skuURL.isEmpty {
       try visitor.visitSingularStringField(value: self.skuURL, fieldNumber: 11)
     }
+    if !self.serialNumber.isEmpty {
+      try visitor.visitSingularStringField(value: self.serialNumber, fieldNumber: 12)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -550,6 +557,7 @@ extension GloryApi_Sku: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementat
     if lhs.attribute != rhs.attribute {return false}
     if lhs.attachmentID != rhs.attachmentID {return false}
     if lhs.skuURL != rhs.skuURL {return false}
+    if lhs.serialNumber != rhs.serialNumber {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
