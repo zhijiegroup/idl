@@ -461,6 +461,7 @@ service glory_api {
   }
 
   // live plan prod crud
+  // CreateLivePlanProduct create live plan product
   rpc CreateLivePlanProduct(CreateLivePlanProductRequest) returns (CreateLivePlanProductResponse) {
     option (api.post) = '/api/live/create_live_plan_product';
   }
