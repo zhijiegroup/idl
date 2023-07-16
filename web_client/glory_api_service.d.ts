@@ -508,7 +508,8 @@ live plan crud */
     request: live_plan.DeleteLivePlanRequest
   ): Promise<live_plan.DeleteLivePlanResponse>;
 
-  /** live plan prod crud */
+  /** live plan prod crud
+CreateLivePlanProduct create live plan product */
   CreateLivePlanProduct(
     request: live_plan.CreateLivePlanProductRequest
   ): Promise<live_plan.CreateLivePlanProductResponse>;
