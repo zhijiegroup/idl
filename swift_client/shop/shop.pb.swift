@@ -953,11 +953,20 @@ struct GloryApi_ShopCategory {
 
   var shopCategoryID: Int64 = 0
 
-  var category: [GloryApi_Category] = []
+  var category: GloryApi_Category {
+    get {return _category ?? GloryApi_Category()}
+    set {_category = newValue}
+  }
+  /// Returns true if `category` has been explicitly set.
+  var hasCategory: Bool {return self._category != nil}
+  /// Clears the value of `category`. Subsequent reads from it will return its default value.
+  mutating func clearCategory() {self._category = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
+
+  fileprivate var _category: GloryApi_Category? = nil
 }
 
 struct GloryApi_GetShopCategoryResponse {
@@ -976,7 +985,7 @@ struct GloryApi_GetShopCategoryResponse {
 
   var shopID: Int64 = 0
 
-  var shopCategory: [GloryApi_ShopCategory] = []
+  var categoryDetail: [GloryApi_ShopCategory] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -2806,25 +2815,29 @@ extension GloryApi_ShopCategory: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularInt64Field(value: &self.shopCategoryID) }()
-      case 3: try { try decoder.decodeRepeatedMessageField(value: &self.category) }()
+      case 3: try { try decoder.decodeSingularMessageField(value: &self._category) }()
       default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.shopCategoryID != 0 {
       try visitor.visitSingularInt64Field(value: self.shopCategoryID, fieldNumber: 1)
     }
-    if !self.category.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.category, fieldNumber: 3)
-    }
+    try { if let v = self._category {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_ShopCategory, rhs: GloryApi_ShopCategory) -> Bool {
     if lhs.shopCategoryID != rhs.shopCategoryID {return false}
-    if lhs.category != rhs.category {return false}
+    if lhs._category != rhs._category {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -2835,7 +2848,7 @@ extension GloryApi_GetShopCategoryResponse: SwiftProtobuf.Message, SwiftProtobuf
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
     2: .standard(proto: "shop_id"),
-    3: .standard(proto: "shop_category"),
+    3: .standard(proto: "category_detail"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2846,7 +2859,7 @@ extension GloryApi_GetShopCategoryResponse: SwiftProtobuf.Message, SwiftProtobuf
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
-      case 3: try { try decoder.decodeRepeatedMessageField(value: &self.shopCategory) }()
+      case 3: try { try decoder.decodeRepeatedMessageField(value: &self.categoryDetail) }()
       default: break
       }
     }
@@ -2863,8 +2876,8 @@ extension GloryApi_GetShopCategoryResponse: SwiftProtobuf.Message, SwiftProtobuf
     if self.shopID != 0 {
       try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 2)
     }
-    if !self.shopCategory.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.shopCategory, fieldNumber: 3)
+    if !self.categoryDetail.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.categoryDetail, fieldNumber: 3)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -2872,7 +2885,7 @@ extension GloryApi_GetShopCategoryResponse: SwiftProtobuf.Message, SwiftProtobuf
   static func ==(lhs: GloryApi_GetShopCategoryResponse, rhs: GloryApi_GetShopCategoryResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.shopID != rhs.shopID {return false}
-    if lhs.shopCategory != rhs.shopCategory {return false}
+    if lhs.categoryDetail != rhs.categoryDetail {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

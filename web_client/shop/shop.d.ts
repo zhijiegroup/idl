@@ -250,13 +250,13 @@ export interface GetShopCategoryRequest {
 
 export interface ShopCategory {
   shop_category_id?: string;
-  category?: Array<category.Category>;
+  category?: category.Category;
 }
 
 export interface GetShopCategoryResponse {
   base_resp?: base.BaseResponse;
   shop_id?: string;
-  shop_category?: Array<ShopCategory>;
+  category_detail?: Array<ShopCategory>;
 }
 
 export interface ListShopQualificationRequest {

@@ -30548,28 +30548,19 @@ public final class ShopOuterClass {
     long getShopCategoryId();
 
     /**
-     * <code>repeated .glory_api.Category category = 3;</code>
+     * <code>.glory_api.Category category = 3;</code>
+     * @return Whether the category field is set.
      */
-    java.util.List<glory_api.CategoryOuterClass.Category> 
-        getCategoryList();
+    boolean hasCategory();
     /**
-     * <code>repeated .glory_api.Category category = 3;</code>
+     * <code>.glory_api.Category category = 3;</code>
+     * @return The category.
      */
-    glory_api.CategoryOuterClass.Category getCategory(int index);
+    glory_api.CategoryOuterClass.Category getCategory();
     /**
-     * <code>repeated .glory_api.Category category = 3;</code>
+     * <code>.glory_api.Category category = 3;</code>
      */
-    int getCategoryCount();
-    /**
-     * <code>repeated .glory_api.Category category = 3;</code>
-     */
-    java.util.List<? extends glory_api.CategoryOuterClass.CategoryOrBuilder> 
-        getCategoryOrBuilderList();
-    /**
-     * <code>repeated .glory_api.Category category = 3;</code>
-     */
-    glory_api.CategoryOuterClass.CategoryOrBuilder getCategoryOrBuilder(
-        int index);
+    glory_api.CategoryOuterClass.CategoryOrBuilder getCategoryOrBuilder();
   }
   /**
    * Protobuf type {@code glory_api.ShopCategory}
@@ -30584,7 +30575,6 @@ public final class ShopOuterClass {
       super(builder);
     }
     private ShopCategory() {
-      category_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -30607,7 +30597,6 @@ public final class ShopOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -30624,12 +30613,16 @@ public final class ShopOuterClass {
               break;
             }
             case 26: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                category_ = new java.util.ArrayList<glory_api.CategoryOuterClass.Category>();
-                mutable_bitField0_ |= 0x00000001;
+              glory_api.CategoryOuterClass.Category.Builder subBuilder = null;
+              if (category_ != null) {
+                subBuilder = category_.toBuilder();
               }
-              category_.add(
-                  input.readMessage(glory_api.CategoryOuterClass.Category.parser(), extensionRegistry));
+              category_ = input.readMessage(glory_api.CategoryOuterClass.Category.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(category_);
+                category_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -30647,9 +30640,6 @@ public final class ShopOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          category_ = java.util.Collections.unmodifiableList(category_);
-        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -30679,43 +30669,29 @@ public final class ShopOuterClass {
     }
 
     public static final int CATEGORY_FIELD_NUMBER = 3;
-    private java.util.List<glory_api.CategoryOuterClass.Category> category_;
+    private glory_api.CategoryOuterClass.Category category_;
     /**
-     * <code>repeated .glory_api.Category category = 3;</code>
+     * <code>.glory_api.Category category = 3;</code>
+     * @return Whether the category field is set.
      */
     @java.lang.Override
-    public java.util.List<glory_api.CategoryOuterClass.Category> getCategoryList() {
-      return category_;
+    public boolean hasCategory() {
+      return category_ != null;
     }
     /**
-     * <code>repeated .glory_api.Category category = 3;</code>
+     * <code>.glory_api.Category category = 3;</code>
+     * @return The category.
      */
     @java.lang.Override
-    public java.util.List<? extends glory_api.CategoryOuterClass.CategoryOrBuilder> 
-        getCategoryOrBuilderList() {
-      return category_;
+    public glory_api.CategoryOuterClass.Category getCategory() {
+      return category_ == null ? glory_api.CategoryOuterClass.Category.getDefaultInstance() : category_;
     }
     /**
-     * <code>repeated .glory_api.Category category = 3;</code>
+     * <code>.glory_api.Category category = 3;</code>
      */
     @java.lang.Override
-    public int getCategoryCount() {
-      return category_.size();
-    }
-    /**
-     * <code>repeated .glory_api.Category category = 3;</code>
-     */
-    @java.lang.Override
-    public glory_api.CategoryOuterClass.Category getCategory(int index) {
-      return category_.get(index);
-    }
-    /**
-     * <code>repeated .glory_api.Category category = 3;</code>
-     */
-    @java.lang.Override
-    public glory_api.CategoryOuterClass.CategoryOrBuilder getCategoryOrBuilder(
-        int index) {
-      return category_.get(index);
+    public glory_api.CategoryOuterClass.CategoryOrBuilder getCategoryOrBuilder() {
+      return getCategory();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -30735,8 +30711,8 @@ public final class ShopOuterClass {
       if (shopCategoryId_ != 0L) {
         output.writeInt64(1, shopCategoryId_);
       }
-      for (int i = 0; i < category_.size(); i++) {
-        output.writeMessage(3, category_.get(i));
+      if (category_ != null) {
+        output.writeMessage(3, getCategory());
       }
       unknownFields.writeTo(output);
     }
@@ -30751,9 +30727,9 @@ public final class ShopOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(1, shopCategoryId_);
       }
-      for (int i = 0; i < category_.size(); i++) {
+      if (category_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, category_.get(i));
+          .computeMessageSize(3, getCategory());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -30772,8 +30748,11 @@ public final class ShopOuterClass {
 
       if (getShopCategoryId()
           != other.getShopCategoryId()) return false;
-      if (!getCategoryList()
-          .equals(other.getCategoryList())) return false;
+      if (hasCategory() != other.hasCategory()) return false;
+      if (hasCategory()) {
+        if (!getCategory()
+            .equals(other.getCategory())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -30788,9 +30767,9 @@ public final class ShopOuterClass {
       hash = (37 * hash) + SHOP_CATEGORY_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getShopCategoryId());
-      if (getCategoryCount() > 0) {
+      if (hasCategory()) {
         hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
-        hash = (53 * hash) + getCategoryList().hashCode();
+        hash = (53 * hash) + getCategory().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -30920,7 +30899,6 @@ public final class ShopOuterClass {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getCategoryFieldBuilder();
         }
       }
       @java.lang.Override
@@ -30929,10 +30907,10 @@ public final class ShopOuterClass {
         shopCategoryId_ = 0L;
 
         if (categoryBuilder_ == null) {
-          category_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          category_ = null;
         } else {
-          categoryBuilder_.clear();
+          category_ = null;
+          categoryBuilder_ = null;
         }
         return this;
       }
@@ -30960,13 +30938,8 @@ public final class ShopOuterClass {
       @java.lang.Override
       public glory_api.ShopOuterClass.ShopCategory buildPartial() {
         glory_api.ShopOuterClass.ShopCategory result = new glory_api.ShopOuterClass.ShopCategory(this);
-        int from_bitField0_ = bitField0_;
         result.shopCategoryId_ = shopCategoryId_;
         if (categoryBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            category_ = java.util.Collections.unmodifiableList(category_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
           result.category_ = category_;
         } else {
           result.category_ = categoryBuilder_.build();
@@ -31022,31 +30995,8 @@ public final class ShopOuterClass {
         if (other.getShopCategoryId() != 0L) {
           setShopCategoryId(other.getShopCategoryId());
         }
-        if (categoryBuilder_ == null) {
-          if (!other.category_.isEmpty()) {
-            if (category_.isEmpty()) {
-              category_ = other.category_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureCategoryIsMutable();
-              category_.addAll(other.category_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.category_.isEmpty()) {
-            if (categoryBuilder_.isEmpty()) {
-              categoryBuilder_.dispose();
-              categoryBuilder_ = null;
-              category_ = other.category_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              categoryBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getCategoryFieldBuilder() : null;
-            } else {
-              categoryBuilder_.addAllMessages(other.category_);
-            }
-          }
+        if (other.hasCategory()) {
+          mergeCategory(other.getCategory());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -31076,7 +31026,6 @@ public final class ShopOuterClass {
         }
         return this;
       }
-      private int bitField0_;
 
       private long shopCategoryId_ ;
       /**
@@ -31109,239 +31058,118 @@ public final class ShopOuterClass {
         return this;
       }
 
-      private java.util.List<glory_api.CategoryOuterClass.Category> category_ =
-        java.util.Collections.emptyList();
-      private void ensureCategoryIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          category_ = new java.util.ArrayList<glory_api.CategoryOuterClass.Category>(category_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
+      private glory_api.CategoryOuterClass.Category category_;
+      private com.google.protobuf.SingleFieldBuilderV3<
           glory_api.CategoryOuterClass.Category, glory_api.CategoryOuterClass.Category.Builder, glory_api.CategoryOuterClass.CategoryOrBuilder> categoryBuilder_;
+      /**
+       * <code>.glory_api.Category category = 3;</code>
+       * @return Whether the category field is set.
+       */
+      public boolean hasCategory() {
+        return categoryBuilder_ != null || category_ != null;
+      }
+      /**
+       * <code>.glory_api.Category category = 3;</code>
+       * @return The category.
+       */
+      public glory_api.CategoryOuterClass.Category getCategory() {
+        if (categoryBuilder_ == null) {
+          return category_ == null ? glory_api.CategoryOuterClass.Category.getDefaultInstance() : category_;
+        } else {
+          return categoryBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.glory_api.Category category = 3;</code>
+       */
+      public Builder setCategory(glory_api.CategoryOuterClass.Category value) {
+        if (categoryBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          category_ = value;
+          onChanged();
+        } else {
+          categoryBuilder_.setMessage(value);
+        }
 
-      /**
-       * <code>repeated .glory_api.Category category = 3;</code>
-       */
-      public java.util.List<glory_api.CategoryOuterClass.Category> getCategoryList() {
-        if (categoryBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(category_);
-        } else {
-          return categoryBuilder_.getMessageList();
-        }
+        return this;
       }
       /**
-       * <code>repeated .glory_api.Category category = 3;</code>
-       */
-      public int getCategoryCount() {
-        if (categoryBuilder_ == null) {
-          return category_.size();
-        } else {
-          return categoryBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .glory_api.Category category = 3;</code>
-       */
-      public glory_api.CategoryOuterClass.Category getCategory(int index) {
-        if (categoryBuilder_ == null) {
-          return category_.get(index);
-        } else {
-          return categoryBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .glory_api.Category category = 3;</code>
+       * <code>.glory_api.Category category = 3;</code>
        */
       public Builder setCategory(
-          int index, glory_api.CategoryOuterClass.Category value) {
-        if (categoryBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureCategoryIsMutable();
-          category_.set(index, value);
-          onChanged();
-        } else {
-          categoryBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .glory_api.Category category = 3;</code>
-       */
-      public Builder setCategory(
-          int index, glory_api.CategoryOuterClass.Category.Builder builderForValue) {
-        if (categoryBuilder_ == null) {
-          ensureCategoryIsMutable();
-          category_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          categoryBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .glory_api.Category category = 3;</code>
-       */
-      public Builder addCategory(glory_api.CategoryOuterClass.Category value) {
-        if (categoryBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureCategoryIsMutable();
-          category_.add(value);
-          onChanged();
-        } else {
-          categoryBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .glory_api.Category category = 3;</code>
-       */
-      public Builder addCategory(
-          int index, glory_api.CategoryOuterClass.Category value) {
-        if (categoryBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureCategoryIsMutable();
-          category_.add(index, value);
-          onChanged();
-        } else {
-          categoryBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .glory_api.Category category = 3;</code>
-       */
-      public Builder addCategory(
           glory_api.CategoryOuterClass.Category.Builder builderForValue) {
         if (categoryBuilder_ == null) {
-          ensureCategoryIsMutable();
-          category_.add(builderForValue.build());
+          category_ = builderForValue.build();
           onChanged();
         } else {
-          categoryBuilder_.addMessage(builderForValue.build());
+          categoryBuilder_.setMessage(builderForValue.build());
         }
+
         return this;
       }
       /**
-       * <code>repeated .glory_api.Category category = 3;</code>
+       * <code>.glory_api.Category category = 3;</code>
        */
-      public Builder addCategory(
-          int index, glory_api.CategoryOuterClass.Category.Builder builderForValue) {
+      public Builder mergeCategory(glory_api.CategoryOuterClass.Category value) {
         if (categoryBuilder_ == null) {
-          ensureCategoryIsMutable();
-          category_.add(index, builderForValue.build());
+          if (category_ != null) {
+            category_ =
+              glory_api.CategoryOuterClass.Category.newBuilder(category_).mergeFrom(value).buildPartial();
+          } else {
+            category_ = value;
+          }
           onChanged();
         } else {
-          categoryBuilder_.addMessage(index, builderForValue.build());
+          categoryBuilder_.mergeFrom(value);
         }
+
         return this;
       }
       /**
-       * <code>repeated .glory_api.Category category = 3;</code>
-       */
-      public Builder addAllCategory(
-          java.lang.Iterable<? extends glory_api.CategoryOuterClass.Category> values) {
-        if (categoryBuilder_ == null) {
-          ensureCategoryIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, category_);
-          onChanged();
-        } else {
-          categoryBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .glory_api.Category category = 3;</code>
+       * <code>.glory_api.Category category = 3;</code>
        */
       public Builder clearCategory() {
         if (categoryBuilder_ == null) {
-          category_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          category_ = null;
           onChanged();
         } else {
-          categoryBuilder_.clear();
+          category_ = null;
+          categoryBuilder_ = null;
         }
+
         return this;
       }
       /**
-       * <code>repeated .glory_api.Category category = 3;</code>
+       * <code>.glory_api.Category category = 3;</code>
        */
-      public Builder removeCategory(int index) {
-        if (categoryBuilder_ == null) {
-          ensureCategoryIsMutable();
-          category_.remove(index);
-          onChanged();
-        } else {
-          categoryBuilder_.remove(index);
-        }
-        return this;
+      public glory_api.CategoryOuterClass.Category.Builder getCategoryBuilder() {
+        
+        onChanged();
+        return getCategoryFieldBuilder().getBuilder();
       }
       /**
-       * <code>repeated .glory_api.Category category = 3;</code>
+       * <code>.glory_api.Category category = 3;</code>
        */
-      public glory_api.CategoryOuterClass.Category.Builder getCategoryBuilder(
-          int index) {
-        return getCategoryFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .glory_api.Category category = 3;</code>
-       */
-      public glory_api.CategoryOuterClass.CategoryOrBuilder getCategoryOrBuilder(
-          int index) {
-        if (categoryBuilder_ == null) {
-          return category_.get(index);  } else {
-          return categoryBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .glory_api.Category category = 3;</code>
-       */
-      public java.util.List<? extends glory_api.CategoryOuterClass.CategoryOrBuilder> 
-           getCategoryOrBuilderList() {
+      public glory_api.CategoryOuterClass.CategoryOrBuilder getCategoryOrBuilder() {
         if (categoryBuilder_ != null) {
-          return categoryBuilder_.getMessageOrBuilderList();
+          return categoryBuilder_.getMessageOrBuilder();
         } else {
-          return java.util.Collections.unmodifiableList(category_);
+          return category_ == null ?
+              glory_api.CategoryOuterClass.Category.getDefaultInstance() : category_;
         }
       }
       /**
-       * <code>repeated .glory_api.Category category = 3;</code>
+       * <code>.glory_api.Category category = 3;</code>
        */
-      public glory_api.CategoryOuterClass.Category.Builder addCategoryBuilder() {
-        return getCategoryFieldBuilder().addBuilder(
-            glory_api.CategoryOuterClass.Category.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .glory_api.Category category = 3;</code>
-       */
-      public glory_api.CategoryOuterClass.Category.Builder addCategoryBuilder(
-          int index) {
-        return getCategoryFieldBuilder().addBuilder(
-            index, glory_api.CategoryOuterClass.Category.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .glory_api.Category category = 3;</code>
-       */
-      public java.util.List<glory_api.CategoryOuterClass.Category.Builder> 
-           getCategoryBuilderList() {
-        return getCategoryFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
+      private com.google.protobuf.SingleFieldBuilderV3<
           glory_api.CategoryOuterClass.Category, glory_api.CategoryOuterClass.Category.Builder, glory_api.CategoryOuterClass.CategoryOrBuilder> 
           getCategoryFieldBuilder() {
         if (categoryBuilder_ == null) {
-          categoryBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          categoryBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               glory_api.CategoryOuterClass.Category, glory_api.CategoryOuterClass.Category.Builder, glory_api.CategoryOuterClass.CategoryOrBuilder>(
-                  category_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  getCategory(),
                   getParentForChildren(),
                   isClean());
           category_ = null;
@@ -31427,27 +31255,27 @@ public final class ShopOuterClass {
     long getShopId();
 
     /**
-     * <code>repeated .glory_api.ShopCategory shop_category = 3;</code>
+     * <code>repeated .glory_api.ShopCategory category_detail = 3;</code>
      */
     java.util.List<glory_api.ShopOuterClass.ShopCategory> 
-        getShopCategoryList();
+        getCategoryDetailList();
     /**
-     * <code>repeated .glory_api.ShopCategory shop_category = 3;</code>
+     * <code>repeated .glory_api.ShopCategory category_detail = 3;</code>
      */
-    glory_api.ShopOuterClass.ShopCategory getShopCategory(int index);
+    glory_api.ShopOuterClass.ShopCategory getCategoryDetail(int index);
     /**
-     * <code>repeated .glory_api.ShopCategory shop_category = 3;</code>
+     * <code>repeated .glory_api.ShopCategory category_detail = 3;</code>
      */
-    int getShopCategoryCount();
+    int getCategoryDetailCount();
     /**
-     * <code>repeated .glory_api.ShopCategory shop_category = 3;</code>
+     * <code>repeated .glory_api.ShopCategory category_detail = 3;</code>
      */
     java.util.List<? extends glory_api.ShopOuterClass.ShopCategoryOrBuilder> 
-        getShopCategoryOrBuilderList();
+        getCategoryDetailOrBuilderList();
     /**
-     * <code>repeated .glory_api.ShopCategory shop_category = 3;</code>
+     * <code>repeated .glory_api.ShopCategory category_detail = 3;</code>
      */
-    glory_api.ShopOuterClass.ShopCategoryOrBuilder getShopCategoryOrBuilder(
+    glory_api.ShopOuterClass.ShopCategoryOrBuilder getCategoryDetailOrBuilder(
         int index);
   }
   /**
@@ -31463,7 +31291,7 @@ public final class ShopOuterClass {
       super(builder);
     }
     private GetShopCategoryResponse() {
-      shopCategory_ = java.util.Collections.emptyList();
+      categoryDetail_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -31517,10 +31345,10 @@ public final class ShopOuterClass {
             }
             case 26: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                shopCategory_ = new java.util.ArrayList<glory_api.ShopOuterClass.ShopCategory>();
+                categoryDetail_ = new java.util.ArrayList<glory_api.ShopOuterClass.ShopCategory>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              shopCategory_.add(
+              categoryDetail_.add(
                   input.readMessage(glory_api.ShopOuterClass.ShopCategory.parser(), extensionRegistry));
               break;
             }
@@ -31540,7 +31368,7 @@ public final class ShopOuterClass {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          shopCategory_ = java.util.Collections.unmodifiableList(shopCategory_);
+          categoryDetail_ = java.util.Collections.unmodifiableList(categoryDetail_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -31596,44 +31424,44 @@ public final class ShopOuterClass {
       return shopId_;
     }
 
-    public static final int SHOP_CATEGORY_FIELD_NUMBER = 3;
-    private java.util.List<glory_api.ShopOuterClass.ShopCategory> shopCategory_;
+    public static final int CATEGORY_DETAIL_FIELD_NUMBER = 3;
+    private java.util.List<glory_api.ShopOuterClass.ShopCategory> categoryDetail_;
     /**
-     * <code>repeated .glory_api.ShopCategory shop_category = 3;</code>
+     * <code>repeated .glory_api.ShopCategory category_detail = 3;</code>
      */
     @java.lang.Override
-    public java.util.List<glory_api.ShopOuterClass.ShopCategory> getShopCategoryList() {
-      return shopCategory_;
+    public java.util.List<glory_api.ShopOuterClass.ShopCategory> getCategoryDetailList() {
+      return categoryDetail_;
     }
     /**
-     * <code>repeated .glory_api.ShopCategory shop_category = 3;</code>
+     * <code>repeated .glory_api.ShopCategory category_detail = 3;</code>
      */
     @java.lang.Override
     public java.util.List<? extends glory_api.ShopOuterClass.ShopCategoryOrBuilder> 
-        getShopCategoryOrBuilderList() {
-      return shopCategory_;
+        getCategoryDetailOrBuilderList() {
+      return categoryDetail_;
     }
     /**
-     * <code>repeated .glory_api.ShopCategory shop_category = 3;</code>
+     * <code>repeated .glory_api.ShopCategory category_detail = 3;</code>
      */
     @java.lang.Override
-    public int getShopCategoryCount() {
-      return shopCategory_.size();
+    public int getCategoryDetailCount() {
+      return categoryDetail_.size();
     }
     /**
-     * <code>repeated .glory_api.ShopCategory shop_category = 3;</code>
+     * <code>repeated .glory_api.ShopCategory category_detail = 3;</code>
      */
     @java.lang.Override
-    public glory_api.ShopOuterClass.ShopCategory getShopCategory(int index) {
-      return shopCategory_.get(index);
+    public glory_api.ShopOuterClass.ShopCategory getCategoryDetail(int index) {
+      return categoryDetail_.get(index);
     }
     /**
-     * <code>repeated .glory_api.ShopCategory shop_category = 3;</code>
+     * <code>repeated .glory_api.ShopCategory category_detail = 3;</code>
      */
     @java.lang.Override
-    public glory_api.ShopOuterClass.ShopCategoryOrBuilder getShopCategoryOrBuilder(
+    public glory_api.ShopOuterClass.ShopCategoryOrBuilder getCategoryDetailOrBuilder(
         int index) {
-      return shopCategory_.get(index);
+      return categoryDetail_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -31656,8 +31484,8 @@ public final class ShopOuterClass {
       if (shopId_ != 0L) {
         output.writeInt64(2, shopId_);
       }
-      for (int i = 0; i < shopCategory_.size(); i++) {
-        output.writeMessage(3, shopCategory_.get(i));
+      for (int i = 0; i < categoryDetail_.size(); i++) {
+        output.writeMessage(3, categoryDetail_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -31676,9 +31504,9 @@ public final class ShopOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(2, shopId_);
       }
-      for (int i = 0; i < shopCategory_.size(); i++) {
+      for (int i = 0; i < categoryDetail_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, shopCategory_.get(i));
+          .computeMessageSize(3, categoryDetail_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -31702,8 +31530,8 @@ public final class ShopOuterClass {
       }
       if (getShopId()
           != other.getShopId()) return false;
-      if (!getShopCategoryList()
-          .equals(other.getShopCategoryList())) return false;
+      if (!getCategoryDetailList()
+          .equals(other.getCategoryDetailList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -31722,9 +31550,9 @@ public final class ShopOuterClass {
       hash = (37 * hash) + SHOP_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getShopId());
-      if (getShopCategoryCount() > 0) {
-        hash = (37 * hash) + SHOP_CATEGORY_FIELD_NUMBER;
-        hash = (53 * hash) + getShopCategoryList().hashCode();
+      if (getCategoryDetailCount() > 0) {
+        hash = (37 * hash) + CATEGORY_DETAIL_FIELD_NUMBER;
+        hash = (53 * hash) + getCategoryDetailList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -31854,7 +31682,7 @@ public final class ShopOuterClass {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getShopCategoryFieldBuilder();
+          getCategoryDetailFieldBuilder();
         }
       }
       @java.lang.Override
@@ -31868,11 +31696,11 @@ public final class ShopOuterClass {
         }
         shopId_ = 0L;
 
-        if (shopCategoryBuilder_ == null) {
-          shopCategory_ = java.util.Collections.emptyList();
+        if (categoryDetailBuilder_ == null) {
+          categoryDetail_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          shopCategoryBuilder_.clear();
+          categoryDetailBuilder_.clear();
         }
         return this;
       }
@@ -31907,14 +31735,14 @@ public final class ShopOuterClass {
           result.baseResp_ = baseRespBuilder_.build();
         }
         result.shopId_ = shopId_;
-        if (shopCategoryBuilder_ == null) {
+        if (categoryDetailBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
-            shopCategory_ = java.util.Collections.unmodifiableList(shopCategory_);
+            categoryDetail_ = java.util.Collections.unmodifiableList(categoryDetail_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
-          result.shopCategory_ = shopCategory_;
+          result.categoryDetail_ = categoryDetail_;
         } else {
-          result.shopCategory_ = shopCategoryBuilder_.build();
+          result.categoryDetail_ = categoryDetailBuilder_.build();
         }
         onBuilt();
         return result;
@@ -31970,29 +31798,29 @@ public final class ShopOuterClass {
         if (other.getShopId() != 0L) {
           setShopId(other.getShopId());
         }
-        if (shopCategoryBuilder_ == null) {
-          if (!other.shopCategory_.isEmpty()) {
-            if (shopCategory_.isEmpty()) {
-              shopCategory_ = other.shopCategory_;
+        if (categoryDetailBuilder_ == null) {
+          if (!other.categoryDetail_.isEmpty()) {
+            if (categoryDetail_.isEmpty()) {
+              categoryDetail_ = other.categoryDetail_;
               bitField0_ = (bitField0_ & ~0x00000001);
             } else {
-              ensureShopCategoryIsMutable();
-              shopCategory_.addAll(other.shopCategory_);
+              ensureCategoryDetailIsMutable();
+              categoryDetail_.addAll(other.categoryDetail_);
             }
             onChanged();
           }
         } else {
-          if (!other.shopCategory_.isEmpty()) {
-            if (shopCategoryBuilder_.isEmpty()) {
-              shopCategoryBuilder_.dispose();
-              shopCategoryBuilder_ = null;
-              shopCategory_ = other.shopCategory_;
+          if (!other.categoryDetail_.isEmpty()) {
+            if (categoryDetailBuilder_.isEmpty()) {
+              categoryDetailBuilder_.dispose();
+              categoryDetailBuilder_ = null;
+              categoryDetail_ = other.categoryDetail_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              shopCategoryBuilder_ = 
+              categoryDetailBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getShopCategoryFieldBuilder() : null;
+                   getCategoryDetailFieldBuilder() : null;
             } else {
-              shopCategoryBuilder_.addAllMessages(other.shopCategory_);
+              categoryDetailBuilder_.addAllMessages(other.categoryDetail_);
             }
           }
         }
@@ -32176,244 +32004,244 @@ public final class ShopOuterClass {
         return this;
       }
 
-      private java.util.List<glory_api.ShopOuterClass.ShopCategory> shopCategory_ =
+      private java.util.List<glory_api.ShopOuterClass.ShopCategory> categoryDetail_ =
         java.util.Collections.emptyList();
-      private void ensureShopCategoryIsMutable() {
+      private void ensureCategoryDetailIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          shopCategory_ = new java.util.ArrayList<glory_api.ShopOuterClass.ShopCategory>(shopCategory_);
+          categoryDetail_ = new java.util.ArrayList<glory_api.ShopOuterClass.ShopCategory>(categoryDetail_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          glory_api.ShopOuterClass.ShopCategory, glory_api.ShopOuterClass.ShopCategory.Builder, glory_api.ShopOuterClass.ShopCategoryOrBuilder> shopCategoryBuilder_;
+          glory_api.ShopOuterClass.ShopCategory, glory_api.ShopOuterClass.ShopCategory.Builder, glory_api.ShopOuterClass.ShopCategoryOrBuilder> categoryDetailBuilder_;
 
       /**
-       * <code>repeated .glory_api.ShopCategory shop_category = 3;</code>
+       * <code>repeated .glory_api.ShopCategory category_detail = 3;</code>
        */
-      public java.util.List<glory_api.ShopOuterClass.ShopCategory> getShopCategoryList() {
-        if (shopCategoryBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(shopCategory_);
+      public java.util.List<glory_api.ShopOuterClass.ShopCategory> getCategoryDetailList() {
+        if (categoryDetailBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(categoryDetail_);
         } else {
-          return shopCategoryBuilder_.getMessageList();
+          return categoryDetailBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .glory_api.ShopCategory shop_category = 3;</code>
+       * <code>repeated .glory_api.ShopCategory category_detail = 3;</code>
        */
-      public int getShopCategoryCount() {
-        if (shopCategoryBuilder_ == null) {
-          return shopCategory_.size();
+      public int getCategoryDetailCount() {
+        if (categoryDetailBuilder_ == null) {
+          return categoryDetail_.size();
         } else {
-          return shopCategoryBuilder_.getCount();
+          return categoryDetailBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .glory_api.ShopCategory shop_category = 3;</code>
+       * <code>repeated .glory_api.ShopCategory category_detail = 3;</code>
        */
-      public glory_api.ShopOuterClass.ShopCategory getShopCategory(int index) {
-        if (shopCategoryBuilder_ == null) {
-          return shopCategory_.get(index);
+      public glory_api.ShopOuterClass.ShopCategory getCategoryDetail(int index) {
+        if (categoryDetailBuilder_ == null) {
+          return categoryDetail_.get(index);
         } else {
-          return shopCategoryBuilder_.getMessage(index);
+          return categoryDetailBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .glory_api.ShopCategory shop_category = 3;</code>
+       * <code>repeated .glory_api.ShopCategory category_detail = 3;</code>
        */
-      public Builder setShopCategory(
+      public Builder setCategoryDetail(
           int index, glory_api.ShopOuterClass.ShopCategory value) {
-        if (shopCategoryBuilder_ == null) {
+        if (categoryDetailBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureShopCategoryIsMutable();
-          shopCategory_.set(index, value);
+          ensureCategoryDetailIsMutable();
+          categoryDetail_.set(index, value);
           onChanged();
         } else {
-          shopCategoryBuilder_.setMessage(index, value);
+          categoryDetailBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .glory_api.ShopCategory shop_category = 3;</code>
+       * <code>repeated .glory_api.ShopCategory category_detail = 3;</code>
        */
-      public Builder setShopCategory(
+      public Builder setCategoryDetail(
           int index, glory_api.ShopOuterClass.ShopCategory.Builder builderForValue) {
-        if (shopCategoryBuilder_ == null) {
-          ensureShopCategoryIsMutable();
-          shopCategory_.set(index, builderForValue.build());
+        if (categoryDetailBuilder_ == null) {
+          ensureCategoryDetailIsMutable();
+          categoryDetail_.set(index, builderForValue.build());
           onChanged();
         } else {
-          shopCategoryBuilder_.setMessage(index, builderForValue.build());
+          categoryDetailBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .glory_api.ShopCategory shop_category = 3;</code>
+       * <code>repeated .glory_api.ShopCategory category_detail = 3;</code>
        */
-      public Builder addShopCategory(glory_api.ShopOuterClass.ShopCategory value) {
-        if (shopCategoryBuilder_ == null) {
+      public Builder addCategoryDetail(glory_api.ShopOuterClass.ShopCategory value) {
+        if (categoryDetailBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureShopCategoryIsMutable();
-          shopCategory_.add(value);
+          ensureCategoryDetailIsMutable();
+          categoryDetail_.add(value);
           onChanged();
         } else {
-          shopCategoryBuilder_.addMessage(value);
+          categoryDetailBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .glory_api.ShopCategory shop_category = 3;</code>
+       * <code>repeated .glory_api.ShopCategory category_detail = 3;</code>
        */
-      public Builder addShopCategory(
+      public Builder addCategoryDetail(
           int index, glory_api.ShopOuterClass.ShopCategory value) {
-        if (shopCategoryBuilder_ == null) {
+        if (categoryDetailBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureShopCategoryIsMutable();
-          shopCategory_.add(index, value);
+          ensureCategoryDetailIsMutable();
+          categoryDetail_.add(index, value);
           onChanged();
         } else {
-          shopCategoryBuilder_.addMessage(index, value);
+          categoryDetailBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .glory_api.ShopCategory shop_category = 3;</code>
+       * <code>repeated .glory_api.ShopCategory category_detail = 3;</code>
        */
-      public Builder addShopCategory(
+      public Builder addCategoryDetail(
           glory_api.ShopOuterClass.ShopCategory.Builder builderForValue) {
-        if (shopCategoryBuilder_ == null) {
-          ensureShopCategoryIsMutable();
-          shopCategory_.add(builderForValue.build());
+        if (categoryDetailBuilder_ == null) {
+          ensureCategoryDetailIsMutable();
+          categoryDetail_.add(builderForValue.build());
           onChanged();
         } else {
-          shopCategoryBuilder_.addMessage(builderForValue.build());
+          categoryDetailBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .glory_api.ShopCategory shop_category = 3;</code>
+       * <code>repeated .glory_api.ShopCategory category_detail = 3;</code>
        */
-      public Builder addShopCategory(
+      public Builder addCategoryDetail(
           int index, glory_api.ShopOuterClass.ShopCategory.Builder builderForValue) {
-        if (shopCategoryBuilder_ == null) {
-          ensureShopCategoryIsMutable();
-          shopCategory_.add(index, builderForValue.build());
+        if (categoryDetailBuilder_ == null) {
+          ensureCategoryDetailIsMutable();
+          categoryDetail_.add(index, builderForValue.build());
           onChanged();
         } else {
-          shopCategoryBuilder_.addMessage(index, builderForValue.build());
+          categoryDetailBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .glory_api.ShopCategory shop_category = 3;</code>
+       * <code>repeated .glory_api.ShopCategory category_detail = 3;</code>
        */
-      public Builder addAllShopCategory(
+      public Builder addAllCategoryDetail(
           java.lang.Iterable<? extends glory_api.ShopOuterClass.ShopCategory> values) {
-        if (shopCategoryBuilder_ == null) {
-          ensureShopCategoryIsMutable();
+        if (categoryDetailBuilder_ == null) {
+          ensureCategoryDetailIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, shopCategory_);
+              values, categoryDetail_);
           onChanged();
         } else {
-          shopCategoryBuilder_.addAllMessages(values);
+          categoryDetailBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .glory_api.ShopCategory shop_category = 3;</code>
+       * <code>repeated .glory_api.ShopCategory category_detail = 3;</code>
        */
-      public Builder clearShopCategory() {
-        if (shopCategoryBuilder_ == null) {
-          shopCategory_ = java.util.Collections.emptyList();
+      public Builder clearCategoryDetail() {
+        if (categoryDetailBuilder_ == null) {
+          categoryDetail_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
-          shopCategoryBuilder_.clear();
+          categoryDetailBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .glory_api.ShopCategory shop_category = 3;</code>
+       * <code>repeated .glory_api.ShopCategory category_detail = 3;</code>
        */
-      public Builder removeShopCategory(int index) {
-        if (shopCategoryBuilder_ == null) {
-          ensureShopCategoryIsMutable();
-          shopCategory_.remove(index);
+      public Builder removeCategoryDetail(int index) {
+        if (categoryDetailBuilder_ == null) {
+          ensureCategoryDetailIsMutable();
+          categoryDetail_.remove(index);
           onChanged();
         } else {
-          shopCategoryBuilder_.remove(index);
+          categoryDetailBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .glory_api.ShopCategory shop_category = 3;</code>
+       * <code>repeated .glory_api.ShopCategory category_detail = 3;</code>
        */
-      public glory_api.ShopOuterClass.ShopCategory.Builder getShopCategoryBuilder(
+      public glory_api.ShopOuterClass.ShopCategory.Builder getCategoryDetailBuilder(
           int index) {
-        return getShopCategoryFieldBuilder().getBuilder(index);
+        return getCategoryDetailFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .glory_api.ShopCategory shop_category = 3;</code>
+       * <code>repeated .glory_api.ShopCategory category_detail = 3;</code>
        */
-      public glory_api.ShopOuterClass.ShopCategoryOrBuilder getShopCategoryOrBuilder(
+      public glory_api.ShopOuterClass.ShopCategoryOrBuilder getCategoryDetailOrBuilder(
           int index) {
-        if (shopCategoryBuilder_ == null) {
-          return shopCategory_.get(index);  } else {
-          return shopCategoryBuilder_.getMessageOrBuilder(index);
+        if (categoryDetailBuilder_ == null) {
+          return categoryDetail_.get(index);  } else {
+          return categoryDetailBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .glory_api.ShopCategory shop_category = 3;</code>
+       * <code>repeated .glory_api.ShopCategory category_detail = 3;</code>
        */
       public java.util.List<? extends glory_api.ShopOuterClass.ShopCategoryOrBuilder> 
-           getShopCategoryOrBuilderList() {
-        if (shopCategoryBuilder_ != null) {
-          return shopCategoryBuilder_.getMessageOrBuilderList();
+           getCategoryDetailOrBuilderList() {
+        if (categoryDetailBuilder_ != null) {
+          return categoryDetailBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(shopCategory_);
+          return java.util.Collections.unmodifiableList(categoryDetail_);
         }
       }
       /**
-       * <code>repeated .glory_api.ShopCategory shop_category = 3;</code>
+       * <code>repeated .glory_api.ShopCategory category_detail = 3;</code>
        */
-      public glory_api.ShopOuterClass.ShopCategory.Builder addShopCategoryBuilder() {
-        return getShopCategoryFieldBuilder().addBuilder(
+      public glory_api.ShopOuterClass.ShopCategory.Builder addCategoryDetailBuilder() {
+        return getCategoryDetailFieldBuilder().addBuilder(
             glory_api.ShopOuterClass.ShopCategory.getDefaultInstance());
       }
       /**
-       * <code>repeated .glory_api.ShopCategory shop_category = 3;</code>
+       * <code>repeated .glory_api.ShopCategory category_detail = 3;</code>
        */
-      public glory_api.ShopOuterClass.ShopCategory.Builder addShopCategoryBuilder(
+      public glory_api.ShopOuterClass.ShopCategory.Builder addCategoryDetailBuilder(
           int index) {
-        return getShopCategoryFieldBuilder().addBuilder(
+        return getCategoryDetailFieldBuilder().addBuilder(
             index, glory_api.ShopOuterClass.ShopCategory.getDefaultInstance());
       }
       /**
-       * <code>repeated .glory_api.ShopCategory shop_category = 3;</code>
+       * <code>repeated .glory_api.ShopCategory category_detail = 3;</code>
        */
       public java.util.List<glory_api.ShopOuterClass.ShopCategory.Builder> 
-           getShopCategoryBuilderList() {
-        return getShopCategoryFieldBuilder().getBuilderList();
+           getCategoryDetailBuilderList() {
+        return getCategoryDetailFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
           glory_api.ShopOuterClass.ShopCategory, glory_api.ShopOuterClass.ShopCategory.Builder, glory_api.ShopOuterClass.ShopCategoryOrBuilder> 
-          getShopCategoryFieldBuilder() {
-        if (shopCategoryBuilder_ == null) {
-          shopCategoryBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          getCategoryDetailFieldBuilder() {
+        if (categoryDetailBuilder_ == null) {
+          categoryDetailBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               glory_api.ShopOuterClass.ShopCategory, glory_api.ShopOuterClass.ShopCategory.Builder, glory_api.ShopOuterClass.ShopCategoryOrBuilder>(
-                  shopCategory_,
+                  categoryDetail_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
-          shopCategory_ = null;
+          categoryDetail_ = null;
         }
-        return shopCategoryBuilder_;
+        return categoryDetailBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -38716,30 +38544,30 @@ public final class ShopOuterClass {
       "onse\"R\n\026GetShopCategoryRequest\022\'\n\014base_r" +
       "equest\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007shop_" +
       "id\030\002 \001(\003\"O\n\014ShopCategory\022\030\n\020shop_categor" +
-      "y_id\030\001 \001(\003\022%\n\010category\030\003 \003(\0132\023.glory_api" +
-      ".Category\"\201\001\n\027GetShopCategoryResponse\022%\n" +
+      "y_id\030\001 \001(\003\022%\n\010category\030\003 \001(\0132\023.glory_api" +
+      ".Category\"\203\001\n\027GetShopCategoryResponse\022%\n" +
       "\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022\017\n\007" +
-      "shop_id\030\002 \001(\003\022.\n\rshop_category\030\003 \003(\0132\027.g" +
-      "lory_api.ShopCategory\"X\n\034ListShopQualifi" +
-      "cationRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
-      "se.BaseRequest\022\017\n\007shop_id\030\002 \001(\003\"\200\001\n\035List" +
-      "ShopQualificationResponse\022%\n\tbase_resp\030\001" +
-      " \001(\0132\022.base.BaseResponse\0228\n\022shop_qualifi" +
-      "cation\030\002 \003(\0132\034.glory_api.ShopQualificati" +
-      "on\"|\n\030UpdateShopManagerRequest\022\'\n\014base_r" +
-      "equest\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007shop_" +
-      "id\030\002 \001(\003\022\017\n\007manager\030\003 \001(\t\022\025\n\rmanager_pho" +
-      "ne\030\004 \001(\t\"B\n\031UpdateShopManagerResponse\022%\n" +
-      "\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"f\n\032" +
-      "GetShopBusinessDataRequest\022\'\n\014base_reque" +
-      "st\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007shop_id\030\002" +
-      " \001(\003\022\016\n\006period\030\003 \001(\003\"k\n\020ShopBusinessData" +
-      "\022\014\n\004date\030\001 \001(\t\022\023\n\013deal_amount\030\002 \001(\001\022\031\n\021s" +
-      "hop_buyer_amount\030\003 \001(\003\022\031\n\021shop_order_amo" +
-      "unt\030\004 \001(\003\"|\n\033GetShopBusinessDataResponse" +
-      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022" +
-      "6\n\021shop_businessdata\030\002 \003(\0132\033.glory_api.S" +
-      "hopBusinessDatab\006proto3"
+      "shop_id\030\002 \001(\003\0220\n\017category_detail\030\003 \003(\0132\027" +
+      ".glory_api.ShopCategory\"X\n\034ListShopQuali" +
+      "ficationRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
+      "base.BaseRequest\022\017\n\007shop_id\030\002 \001(\003\"\200\001\n\035Li" +
+      "stShopQualificationResponse\022%\n\tbase_resp" +
+      "\030\001 \001(\0132\022.base.BaseResponse\0228\n\022shop_quali" +
+      "fication\030\002 \003(\0132\034.glory_api.ShopQualifica" +
+      "tion\"|\n\030UpdateShopManagerRequest\022\'\n\014base" +
+      "_request\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007sho" +
+      "p_id\030\002 \001(\003\022\017\n\007manager\030\003 \001(\t\022\025\n\rmanager_p" +
+      "hone\030\004 \001(\t\"B\n\031UpdateShopManagerResponse\022" +
+      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"f" +
+      "\n\032GetShopBusinessDataRequest\022\'\n\014base_req" +
+      "uest\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007shop_id" +
+      "\030\002 \001(\003\022\016\n\006period\030\003 \001(\003\"k\n\020ShopBusinessDa" +
+      "ta\022\014\n\004date\030\001 \001(\t\022\023\n\013deal_amount\030\002 \001(\001\022\031\n" +
+      "\021shop_buyer_amount\030\003 \001(\003\022\031\n\021shop_order_a" +
+      "mount\030\004 \001(\003\"|\n\033GetShopBusinessDataRespon" +
+      "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
+      "e\0226\n\021shop_businessdata\030\002 \003(\0132\033.glory_api" +
+      ".ShopBusinessDatab\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -38932,7 +38760,7 @@ public final class ShopOuterClass {
     internal_static_glory_api_GetShopCategoryResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetShopCategoryResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "ShopId", "ShopCategory", });
+        new java.lang.String[] { "BaseResp", "ShopId", "CategoryDetail", });
     internal_static_glory_api_ListShopQualificationRequest_descriptor =
       getDescriptor().getMessageTypes().get(31);
     internal_static_glory_api_ListShopQualificationRequest_fieldAccessorTable = new
