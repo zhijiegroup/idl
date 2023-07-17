@@ -426,6 +426,9 @@ service glory_api {
   rpc DeleteRoom(DeleteRoomRequest) returns (DeleteRoomResponse) {
     option (api.post) = '/api/live/delete_room';
   }
+  rpc ListFinishedRoom(ListFinishedRoomRequest) returns (ListFinishedRoomResponse) {
+    option (api.post) = '/api/live/list_finished_room';
+  }
 
   rpc Record(LiveRecordRequest) returns (LiveRecordResponse) {
     option (api.post) = '/api/live/record';
@@ -488,6 +491,9 @@ service glory_api {
   }
   rpc CreateLiveProductStatus(CreateLiveProductStatusRequest) returns (CreateLiveProductStatusResponse) {
     option (api.post) = '/api/live/create_live_product_status';
+  }
+  rpc GetLivingProductStatus(GetLivingProductStatusRequest) returns (GetLivingProductStatusResponse) {
+    option (api.get) = '/api/live/get_living_product_status';
   }
 
     // live text crud

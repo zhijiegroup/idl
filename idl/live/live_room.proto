@@ -79,6 +79,35 @@ message DeleteRoomResponse {
   base.BaseResponse base_resp = 1;
 }
 
+message DealAmount {
+  string curreny = 1;
+  double amount = 2;
+}
+
+message FinishedRoom {
+  int64 room_id = 1;
+  string user_name =2;
+  int64 seller_id =3;
+  string start_time =4;
+  double average_online_user =5;
+  int64 room_product_amount =6;
+  repeated DealAmount room_deal_amount =7;
+  int64 room_order_amount =8;
+  string room_image_url =9;
+  string room_title = 10; //直播的标题
+  int64 room_image_attachment_id = 11; // 直播间的封面的image 的id
+}
+
+message ListFinishedRoomRequest {
+  base.BaseRequest base_request = 1;
+  int64 shop_id = 2;
+  base.PaginationRequest pagination = 100;
+}
+message ListFinishedRoomResponse {
+  base.BaseResponse base_resp = 1;
+  repeated FinishedRoom room = 2;
+  base.PaginationResponse pagination = 100;
+}
 
 
 
