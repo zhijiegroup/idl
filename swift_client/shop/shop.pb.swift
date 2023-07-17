@@ -217,6 +217,18 @@ struct GloryApi_Shop {
     set {_uniqueStorage()._businessLicenseAttachmentID = newValue}
   }
 
+  /// 店铺管理者
+  var manager: String {
+    get {return _storage._manager}
+    set {_uniqueStorage()._manager = newValue}
+  }
+
+  /// 店铺管理者手机号
+  var managerPhone: String {
+    get {return _storage._managerPhone}
+    set {_uniqueStorage()._managerPhone = newValue}
+  }
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1020,6 +1032,120 @@ struct GloryApi_ListShopQualificationResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
+struct GloryApi_UpdateShopManagerRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var shopID: Int64 = 0
+
+  var manager: String = String()
+
+  var managerPhone: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+struct GloryApi_UpdateShopManagerResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+}
+
+struct GloryApi_GetShopBusinessDataRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var shopID: Int64 = 0
+
+  var period: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+struct GloryApi_ShopBusinessData {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var date: String = String()
+
+  var dealAmount: Double = 0
+
+  var shopBuyerAmount: Int64 = 0
+
+  var shopOrderAmount: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct GloryApi_GetShopBusinessDataResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var shopBusinessdata: [GloryApi_ShopBusinessData] = []
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+}
+
 #if swift(>=5.5) && canImport(_Concurrency)
 extension GloryApi_Shop: @unchecked Sendable {}
 extension GloryApi_ShopQualification: @unchecked Sendable {}
@@ -1054,6 +1180,11 @@ extension GloryApi_ShopCategory: @unchecked Sendable {}
 extension GloryApi_GetShopCategoryResponse: @unchecked Sendable {}
 extension GloryApi_ListShopQualificationRequest: @unchecked Sendable {}
 extension GloryApi_ListShopQualificationResponse: @unchecked Sendable {}
+extension GloryApi_UpdateShopManagerRequest: @unchecked Sendable {}
+extension GloryApi_UpdateShopManagerResponse: @unchecked Sendable {}
+extension GloryApi_GetShopBusinessDataRequest: @unchecked Sendable {}
+extension GloryApi_ShopBusinessData: @unchecked Sendable {}
+extension GloryApi_GetShopBusinessDataResponse: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -1066,7 +1197,7 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     1: .standard(proto: "shop_id"),
     2: .standard(proto: "seller_id"),
     3: .standard(proto: "shop_name"),
-    33: .standard(proto: "category_id"),
+    35: .standard(proto: "category_id"),
     333: .standard(proto: "shop_qualification"),
     4: .standard(proto: "shop_type"),
     5: .standard(proto: "company_name"),
@@ -1095,6 +1226,8 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     30: .standard(proto: "owner_id_back_attachment_id"),
     31: .standard(proto: "shop_logo_attachment_id"),
     32: .standard(proto: "business_license_attachment_id"),
+    33: .same(proto: "manager"),
+    34: .standard(proto: "manager_phone"),
   ]
 
   fileprivate class _StorageClass {
@@ -1130,6 +1263,8 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     var _ownerIDBackAttachmentID: Int64 = 0
     var _shopLogoAttachmentID: Int64 = 0
     var _businessLicenseAttachmentID: Int64 = 0
+    var _manager: String = String()
+    var _managerPhone: String = String()
 
     static let defaultInstance = _StorageClass()
 
@@ -1168,6 +1303,8 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       _ownerIDBackAttachmentID = source._ownerIDBackAttachmentID
       _shopLogoAttachmentID = source._shopLogoAttachmentID
       _businessLicenseAttachmentID = source._businessLicenseAttachmentID
+      _manager = source._manager
+      _managerPhone = source._managerPhone
     }
   }
 
@@ -1216,7 +1353,9 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
         case 30: try { try decoder.decodeSingularInt64Field(value: &_storage._ownerIDBackAttachmentID) }()
         case 31: try { try decoder.decodeSingularInt64Field(value: &_storage._shopLogoAttachmentID) }()
         case 32: try { try decoder.decodeSingularInt64Field(value: &_storage._businessLicenseAttachmentID) }()
-        case 33: try { try decoder.decodeRepeatedInt64Field(value: &_storage._categoryID) }()
+        case 33: try { try decoder.decodeSingularStringField(value: &_storage._manager) }()
+        case 34: try { try decoder.decodeSingularStringField(value: &_storage._managerPhone) }()
+        case 35: try { try decoder.decodeRepeatedInt64Field(value: &_storage._categoryID) }()
         case 333: try { try decoder.decodeRepeatedMessageField(value: &_storage._shopQualification) }()
         default: break
         }
@@ -1316,8 +1455,14 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       if _storage._businessLicenseAttachmentID != 0 {
         try visitor.visitSingularInt64Field(value: _storage._businessLicenseAttachmentID, fieldNumber: 32)
       }
+      if !_storage._manager.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._manager, fieldNumber: 33)
+      }
+      if !_storage._managerPhone.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._managerPhone, fieldNumber: 34)
+      }
       if !_storage._categoryID.isEmpty {
-        try visitor.visitPackedInt64Field(value: _storage._categoryID, fieldNumber: 33)
+        try visitor.visitPackedInt64Field(value: _storage._categoryID, fieldNumber: 35)
       }
       if !_storage._shopQualification.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._shopQualification, fieldNumber: 333)
@@ -1363,6 +1508,8 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
         if _storage._ownerIDBackAttachmentID != rhs_storage._ownerIDBackAttachmentID {return false}
         if _storage._shopLogoAttachmentID != rhs_storage._shopLogoAttachmentID {return false}
         if _storage._businessLicenseAttachmentID != rhs_storage._businessLicenseAttachmentID {return false}
+        if _storage._manager != rhs_storage._manager {return false}
+        if _storage._managerPhone != rhs_storage._managerPhone {return false}
         return true
       }
       if !storagesAreEqual {return false}
@@ -2810,6 +2957,236 @@ extension GloryApi_ListShopQualificationResponse: SwiftProtobuf.Message, SwiftPr
   static func ==(lhs: GloryApi_ListShopQualificationResponse, rhs: GloryApi_ListShopQualificationResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.shopQualification != rhs.shopQualification {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_UpdateShopManagerRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".UpdateShopManagerRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    2: .standard(proto: "shop_id"),
+    3: .same(proto: "manager"),
+    4: .standard(proto: "manager_phone"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.manager) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.managerPhone) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if self.shopID != 0 {
+      try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 2)
+    }
+    if !self.manager.isEmpty {
+      try visitor.visitSingularStringField(value: self.manager, fieldNumber: 3)
+    }
+    if !self.managerPhone.isEmpty {
+      try visitor.visitSingularStringField(value: self.managerPhone, fieldNumber: 4)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_UpdateShopManagerRequest, rhs: GloryApi_UpdateShopManagerRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.shopID != rhs.shopID {return false}
+    if lhs.manager != rhs.manager {return false}
+    if lhs.managerPhone != rhs.managerPhone {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_UpdateShopManagerResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".UpdateShopManagerResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_UpdateShopManagerResponse, rhs: GloryApi_UpdateShopManagerResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetShopBusinessDataRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetShopBusinessDataRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    2: .standard(proto: "shop_id"),
+    3: .same(proto: "period"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.period) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if self.shopID != 0 {
+      try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 2)
+    }
+    if self.period != 0 {
+      try visitor.visitSingularInt64Field(value: self.period, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetShopBusinessDataRequest, rhs: GloryApi_GetShopBusinessDataRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.shopID != rhs.shopID {return false}
+    if lhs.period != rhs.period {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_ShopBusinessData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ShopBusinessData"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "date"),
+    2: .standard(proto: "deal_amount"),
+    3: .standard(proto: "shop_buyer_amount"),
+    4: .standard(proto: "shop_order_amount"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.date) }()
+      case 2: try { try decoder.decodeSingularDoubleField(value: &self.dealAmount) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.shopBuyerAmount) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.shopOrderAmount) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.date.isEmpty {
+      try visitor.visitSingularStringField(value: self.date, fieldNumber: 1)
+    }
+    if self.dealAmount != 0 {
+      try visitor.visitSingularDoubleField(value: self.dealAmount, fieldNumber: 2)
+    }
+    if self.shopBuyerAmount != 0 {
+      try visitor.visitSingularInt64Field(value: self.shopBuyerAmount, fieldNumber: 3)
+    }
+    if self.shopOrderAmount != 0 {
+      try visitor.visitSingularInt64Field(value: self.shopOrderAmount, fieldNumber: 4)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ShopBusinessData, rhs: GloryApi_ShopBusinessData) -> Bool {
+    if lhs.date != rhs.date {return false}
+    if lhs.dealAmount != rhs.dealAmount {return false}
+    if lhs.shopBuyerAmount != rhs.shopBuyerAmount {return false}
+    if lhs.shopOrderAmount != rhs.shopOrderAmount {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetShopBusinessDataResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetShopBusinessDataResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .standard(proto: "shop_businessdata"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.shopBusinessdata) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if !self.shopBusinessdata.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.shopBusinessdata, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetShopBusinessDataResponse, rhs: GloryApi_GetShopBusinessDataResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.shopBusinessdata != rhs.shopBusinessdata {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

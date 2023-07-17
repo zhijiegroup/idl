@@ -146,6 +146,14 @@ export class glory_api {
     request: shop.GetShopQrcodeRequest
   ): Promise<shop.GetShopQrcodeResponse>;
 
+  UpdateShopManager(
+    request: shop.UpdateShopManagerRequest
+  ): Promise<shop.UpdateShopManagerResponse>;
+
+  GetShopBusinessData(
+    request: shop.GetShopBusinessDataRequest
+  ): Promise<shop.GetShopBusinessDataResponse>;
+
   AddShopAccess(
     request: shop.AddShopAccessRequest
   ): Promise<shop.AddShopAccessResponse>;

@@ -240,6 +240,20 @@ export class glory_api {
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
 
+  UpdateShopManager(request) {
+    const uri = `${this.uriPrefix}/api/shop/update_shop_manager`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  GetShopBusinessData(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/shop/get_shop_business_data${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
   AddShopAccess(request) {
     const uri = `${this.uriPrefix}/api/shop/add_shop_access`;
     const body = JSONbigint.stringify(request);

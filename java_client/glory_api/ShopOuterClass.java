@@ -63,7 +63,7 @@ public final class ShopOuterClass {
      *经营类目 id 必须
      * </pre>
      *
-     * <code>repeated int64 category_id = 33;</code>
+     * <code>repeated int64 category_id = 35;</code>
      * @return A list containing the categoryId.
      */
     java.util.List<java.lang.Long> getCategoryIdList();
@@ -72,7 +72,7 @@ public final class ShopOuterClass {
      *经营类目 id 必须
      * </pre>
      *
-     * <code>repeated int64 category_id = 33;</code>
+     * <code>repeated int64 category_id = 35;</code>
      * @return The count of categoryId.
      */
     int getCategoryIdCount();
@@ -81,7 +81,7 @@ public final class ShopOuterClass {
      *经营类目 id 必须
      * </pre>
      *
-     * <code>repeated int64 category_id = 33;</code>
+     * <code>repeated int64 category_id = 35;</code>
      * @param index The index of the element to return.
      * @return The categoryId at the given index.
      */
@@ -610,6 +610,46 @@ public final class ShopOuterClass {
      * @return The businessLicenseAttachmentId.
      */
     long getBusinessLicenseAttachmentId();
+
+    /**
+     * <pre>
+     * 店铺管理者
+     * </pre>
+     *
+     * <code>string manager = 33;</code>
+     * @return The manager.
+     */
+    java.lang.String getManager();
+    /**
+     * <pre>
+     * 店铺管理者
+     * </pre>
+     *
+     * <code>string manager = 33;</code>
+     * @return The bytes for manager.
+     */
+    com.google.protobuf.ByteString
+        getManagerBytes();
+
+    /**
+     * <pre>
+     * 店铺管理者手机号
+     * </pre>
+     *
+     * <code>string manager_phone = 34;</code>
+     * @return The managerPhone.
+     */
+    java.lang.String getManagerPhone();
+    /**
+     * <pre>
+     * 店铺管理者手机号
+     * </pre>
+     *
+     * <code>string manager_phone = 34;</code>
+     * @return The bytes for managerPhone.
+     */
+    com.google.protobuf.ByteString
+        getManagerPhoneBytes();
   }
   /**
    * Protobuf type {@code glory_api.Shop}
@@ -648,6 +688,8 @@ public final class ShopOuterClass {
       ownerLocation_ = "";
       companyBankAccount_ = "";
       companyBankPhone_ = "";
+      manager_ = "";
+      managerPhone_ = "";
     }
 
     @java.lang.Override
@@ -853,7 +895,19 @@ public final class ShopOuterClass {
               businessLicenseAttachmentId_ = input.readInt64();
               break;
             }
-            case 264: {
+            case 266: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              manager_ = s;
+              break;
+            }
+            case 274: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              managerPhone_ = s;
+              break;
+            }
+            case 280: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 categoryId_ = newLongList();
                 mutable_bitField0_ |= 0x00000001;
@@ -861,7 +915,7 @@ public final class ShopOuterClass {
               categoryId_.addLong(input.readInt64());
               break;
             }
-            case 266: {
+            case 282: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -997,14 +1051,14 @@ public final class ShopOuterClass {
       }
     }
 
-    public static final int CATEGORY_ID_FIELD_NUMBER = 33;
+    public static final int CATEGORY_ID_FIELD_NUMBER = 35;
     private com.google.protobuf.Internal.LongList categoryId_;
     /**
      * <pre>
      *经营类目 id 必须
      * </pre>
      *
-     * <code>repeated int64 category_id = 33;</code>
+     * <code>repeated int64 category_id = 35;</code>
      * @return A list containing the categoryId.
      */
     @java.lang.Override
@@ -1017,7 +1071,7 @@ public final class ShopOuterClass {
      *经营类目 id 必须
      * </pre>
      *
-     * <code>repeated int64 category_id = 33;</code>
+     * <code>repeated int64 category_id = 35;</code>
      * @return The count of categoryId.
      */
     public int getCategoryIdCount() {
@@ -1028,7 +1082,7 @@ public final class ShopOuterClass {
      *经营类目 id 必须
      * </pre>
      *
-     * <code>repeated int64 category_id = 33;</code>
+     * <code>repeated int64 category_id = 35;</code>
      * @param index The index of the element to return.
      * @return The categoryId at the given index.
      */
@@ -2153,6 +2207,98 @@ public final class ShopOuterClass {
       return businessLicenseAttachmentId_;
     }
 
+    public static final int MANAGER_FIELD_NUMBER = 33;
+    private volatile java.lang.Object manager_;
+    /**
+     * <pre>
+     * 店铺管理者
+     * </pre>
+     *
+     * <code>string manager = 33;</code>
+     * @return The manager.
+     */
+    @java.lang.Override
+    public java.lang.String getManager() {
+      java.lang.Object ref = manager_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        manager_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 店铺管理者
+     * </pre>
+     *
+     * <code>string manager = 33;</code>
+     * @return The bytes for manager.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getManagerBytes() {
+      java.lang.Object ref = manager_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        manager_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MANAGER_PHONE_FIELD_NUMBER = 34;
+    private volatile java.lang.Object managerPhone_;
+    /**
+     * <pre>
+     * 店铺管理者手机号
+     * </pre>
+     *
+     * <code>string manager_phone = 34;</code>
+     * @return The managerPhone.
+     */
+    @java.lang.Override
+    public java.lang.String getManagerPhone() {
+      java.lang.Object ref = managerPhone_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        managerPhone_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 店铺管理者手机号
+     * </pre>
+     *
+     * <code>string manager_phone = 34;</code>
+     * @return The bytes for managerPhone.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getManagerPhoneBytes() {
+      java.lang.Object ref = managerPhone_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        managerPhone_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2258,8 +2404,14 @@ public final class ShopOuterClass {
       if (businessLicenseAttachmentId_ != 0L) {
         output.writeInt64(32, businessLicenseAttachmentId_);
       }
+      if (!getManagerBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 33, manager_);
+      }
+      if (!getManagerPhoneBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 34, managerPhone_);
+      }
       if (getCategoryIdList().size() > 0) {
-        output.writeUInt32NoTag(266);
+        output.writeUInt32NoTag(282);
         output.writeUInt32NoTag(categoryIdMemoizedSerializedSize);
       }
       for (int i = 0; i < categoryId_.size(); i++) {
@@ -2375,6 +2527,12 @@ public final class ShopOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(32, businessLicenseAttachmentId_);
       }
+      if (!getManagerBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(33, manager_);
+      }
+      if (!getManagerPhoneBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(34, managerPhone_);
+      }
       {
         int dataSize = 0;
         for (int i = 0; i < categoryId_.size(); i++) {
@@ -2472,6 +2630,10 @@ public final class ShopOuterClass {
           != other.getShopLogoAttachmentId()) return false;
       if (getBusinessLicenseAttachmentId()
           != other.getBusinessLicenseAttachmentId()) return false;
+      if (!getManager()
+          .equals(other.getManager())) return false;
+      if (!getManagerPhone()
+          .equals(other.getManagerPhone())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2558,6 +2720,10 @@ public final class ShopOuterClass {
       hash = (37 * hash) + BUSINESS_LICENSE_ATTACHMENT_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getBusinessLicenseAttachmentId());
+      hash = (37 * hash) + MANAGER_FIELD_NUMBER;
+      hash = (53 * hash) + getManager().hashCode();
+      hash = (37 * hash) + MANAGER_PHONE_FIELD_NUMBER;
+      hash = (53 * hash) + getManagerPhone().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2760,6 +2926,10 @@ public final class ShopOuterClass {
 
         businessLicenseAttachmentId_ = 0L;
 
+        manager_ = "";
+
+        managerPhone_ = "";
+
         return this;
       }
 
@@ -2831,6 +3001,8 @@ public final class ShopOuterClass {
         result.ownerIdBackAttachmentId_ = ownerIdBackAttachmentId_;
         result.shopLogoAttachmentId_ = shopLogoAttachmentId_;
         result.businessLicenseAttachmentId_ = businessLicenseAttachmentId_;
+        result.manager_ = manager_;
+        result.managerPhone_ = managerPhone_;
         onBuilt();
         return result;
       }
@@ -3026,6 +3198,14 @@ public final class ShopOuterClass {
         }
         if (other.getBusinessLicenseAttachmentId() != 0L) {
           setBusinessLicenseAttachmentId(other.getBusinessLicenseAttachmentId());
+        }
+        if (!other.getManager().isEmpty()) {
+          manager_ = other.manager_;
+          onChanged();
+        }
+        if (!other.getManagerPhone().isEmpty()) {
+          managerPhone_ = other.managerPhone_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3251,7 +3431,7 @@ public final class ShopOuterClass {
        *经营类目 id 必须
        * </pre>
        *
-       * <code>repeated int64 category_id = 33;</code>
+       * <code>repeated int64 category_id = 35;</code>
        * @return A list containing the categoryId.
        */
       public java.util.List<java.lang.Long>
@@ -3264,7 +3444,7 @@ public final class ShopOuterClass {
        *经营类目 id 必须
        * </pre>
        *
-       * <code>repeated int64 category_id = 33;</code>
+       * <code>repeated int64 category_id = 35;</code>
        * @return The count of categoryId.
        */
       public int getCategoryIdCount() {
@@ -3275,7 +3455,7 @@ public final class ShopOuterClass {
        *经营类目 id 必须
        * </pre>
        *
-       * <code>repeated int64 category_id = 33;</code>
+       * <code>repeated int64 category_id = 35;</code>
        * @param index The index of the element to return.
        * @return The categoryId at the given index.
        */
@@ -3287,7 +3467,7 @@ public final class ShopOuterClass {
        *经营类目 id 必须
        * </pre>
        *
-       * <code>repeated int64 category_id = 33;</code>
+       * <code>repeated int64 category_id = 35;</code>
        * @param index The index to set the value at.
        * @param value The categoryId to set.
        * @return This builder for chaining.
@@ -3304,7 +3484,7 @@ public final class ShopOuterClass {
        *经营类目 id 必须
        * </pre>
        *
-       * <code>repeated int64 category_id = 33;</code>
+       * <code>repeated int64 category_id = 35;</code>
        * @param value The categoryId to add.
        * @return This builder for chaining.
        */
@@ -3319,7 +3499,7 @@ public final class ShopOuterClass {
        *经营类目 id 必须
        * </pre>
        *
-       * <code>repeated int64 category_id = 33;</code>
+       * <code>repeated int64 category_id = 35;</code>
        * @param values The categoryId to add.
        * @return This builder for chaining.
        */
@@ -3336,7 +3516,7 @@ public final class ShopOuterClass {
        *经营类目 id 必须
        * </pre>
        *
-       * <code>repeated int64 category_id = 33;</code>
+       * <code>repeated int64 category_id = 35;</code>
        * @return This builder for chaining.
        */
       public Builder clearCategoryId() {
@@ -5928,6 +6108,198 @@ public final class ShopOuterClass {
       public Builder clearBusinessLicenseAttachmentId() {
         
         businessLicenseAttachmentId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object manager_ = "";
+      /**
+       * <pre>
+       * 店铺管理者
+       * </pre>
+       *
+       * <code>string manager = 33;</code>
+       * @return The manager.
+       */
+      public java.lang.String getManager() {
+        java.lang.Object ref = manager_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          manager_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 店铺管理者
+       * </pre>
+       *
+       * <code>string manager = 33;</code>
+       * @return The bytes for manager.
+       */
+      public com.google.protobuf.ByteString
+          getManagerBytes() {
+        java.lang.Object ref = manager_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          manager_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 店铺管理者
+       * </pre>
+       *
+       * <code>string manager = 33;</code>
+       * @param value The manager to set.
+       * @return This builder for chaining.
+       */
+      public Builder setManager(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        manager_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 店铺管理者
+       * </pre>
+       *
+       * <code>string manager = 33;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearManager() {
+        
+        manager_ = getDefaultInstance().getManager();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 店铺管理者
+       * </pre>
+       *
+       * <code>string manager = 33;</code>
+       * @param value The bytes for manager to set.
+       * @return This builder for chaining.
+       */
+      public Builder setManagerBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        manager_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object managerPhone_ = "";
+      /**
+       * <pre>
+       * 店铺管理者手机号
+       * </pre>
+       *
+       * <code>string manager_phone = 34;</code>
+       * @return The managerPhone.
+       */
+      public java.lang.String getManagerPhone() {
+        java.lang.Object ref = managerPhone_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          managerPhone_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 店铺管理者手机号
+       * </pre>
+       *
+       * <code>string manager_phone = 34;</code>
+       * @return The bytes for managerPhone.
+       */
+      public com.google.protobuf.ByteString
+          getManagerPhoneBytes() {
+        java.lang.Object ref = managerPhone_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          managerPhone_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 店铺管理者手机号
+       * </pre>
+       *
+       * <code>string manager_phone = 34;</code>
+       * @param value The managerPhone to set.
+       * @return This builder for chaining.
+       */
+      public Builder setManagerPhone(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        managerPhone_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 店铺管理者手机号
+       * </pre>
+       *
+       * <code>string manager_phone = 34;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearManagerPhone() {
+        
+        managerPhone_ = getDefaultInstance().getManagerPhone();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 店铺管理者手机号
+       * </pre>
+       *
+       * <code>string manager_phone = 34;</code>
+       * @param value The bytes for managerPhone to set.
+       * @return This builder for chaining.
+       */
+      public Builder setManagerPhoneBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        managerPhone_ = value;
         onChanged();
         return this;
       }
@@ -33896,6 +34268,4160 @@ public final class ShopOuterClass {
 
   }
 
+  public interface UpdateShopManagerRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:glory_api.UpdateShopManagerRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     * @return Whether the baseRequest field is set.
+     */
+    boolean hasBaseRequest();
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     * @return The baseRequest.
+     */
+    base.Base.BaseRequest getBaseRequest();
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     */
+    base.Base.BaseRequestOrBuilder getBaseRequestOrBuilder();
+
+    /**
+     * <code>int64 shop_id = 2;</code>
+     * @return The shopId.
+     */
+    long getShopId();
+
+    /**
+     * <code>string manager = 3;</code>
+     * @return The manager.
+     */
+    java.lang.String getManager();
+    /**
+     * <code>string manager = 3;</code>
+     * @return The bytes for manager.
+     */
+    com.google.protobuf.ByteString
+        getManagerBytes();
+
+    /**
+     * <code>string manager_phone = 4;</code>
+     * @return The managerPhone.
+     */
+    java.lang.String getManagerPhone();
+    /**
+     * <code>string manager_phone = 4;</code>
+     * @return The bytes for managerPhone.
+     */
+    com.google.protobuf.ByteString
+        getManagerPhoneBytes();
+  }
+  /**
+   * Protobuf type {@code glory_api.UpdateShopManagerRequest}
+   */
+  public static final class UpdateShopManagerRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:glory_api.UpdateShopManagerRequest)
+      UpdateShopManagerRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use UpdateShopManagerRequest.newBuilder() to construct.
+    private UpdateShopManagerRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private UpdateShopManagerRequest() {
+      manager_ = "";
+      managerPhone_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new UpdateShopManagerRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private UpdateShopManagerRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              base.Base.BaseRequest.Builder subBuilder = null;
+              if (baseRequest_ != null) {
+                subBuilder = baseRequest_.toBuilder();
+              }
+              baseRequest_ = input.readMessage(base.Base.BaseRequest.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(baseRequest_);
+                baseRequest_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 16: {
+
+              shopId_ = input.readInt64();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              manager_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              managerPhone_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return glory_api.ShopOuterClass.internal_static_glory_api_UpdateShopManagerRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return glory_api.ShopOuterClass.internal_static_glory_api_UpdateShopManagerRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              glory_api.ShopOuterClass.UpdateShopManagerRequest.class, glory_api.ShopOuterClass.UpdateShopManagerRequest.Builder.class);
+    }
+
+    public static final int BASE_REQUEST_FIELD_NUMBER = 1;
+    private base.Base.BaseRequest baseRequest_;
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     * @return Whether the baseRequest field is set.
+     */
+    @java.lang.Override
+    public boolean hasBaseRequest() {
+      return baseRequest_ != null;
+    }
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     * @return The baseRequest.
+     */
+    @java.lang.Override
+    public base.Base.BaseRequest getBaseRequest() {
+      return baseRequest_ == null ? base.Base.BaseRequest.getDefaultInstance() : baseRequest_;
+    }
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     */
+    @java.lang.Override
+    public base.Base.BaseRequestOrBuilder getBaseRequestOrBuilder() {
+      return getBaseRequest();
+    }
+
+    public static final int SHOP_ID_FIELD_NUMBER = 2;
+    private long shopId_;
+    /**
+     * <code>int64 shop_id = 2;</code>
+     * @return The shopId.
+     */
+    @java.lang.Override
+    public long getShopId() {
+      return shopId_;
+    }
+
+    public static final int MANAGER_FIELD_NUMBER = 3;
+    private volatile java.lang.Object manager_;
+    /**
+     * <code>string manager = 3;</code>
+     * @return The manager.
+     */
+    @java.lang.Override
+    public java.lang.String getManager() {
+      java.lang.Object ref = manager_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        manager_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string manager = 3;</code>
+     * @return The bytes for manager.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getManagerBytes() {
+      java.lang.Object ref = manager_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        manager_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MANAGER_PHONE_FIELD_NUMBER = 4;
+    private volatile java.lang.Object managerPhone_;
+    /**
+     * <code>string manager_phone = 4;</code>
+     * @return The managerPhone.
+     */
+    @java.lang.Override
+    public java.lang.String getManagerPhone() {
+      java.lang.Object ref = managerPhone_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        managerPhone_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string manager_phone = 4;</code>
+     * @return The bytes for managerPhone.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getManagerPhoneBytes() {
+      java.lang.Object ref = managerPhone_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        managerPhone_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (baseRequest_ != null) {
+        output.writeMessage(1, getBaseRequest());
+      }
+      if (shopId_ != 0L) {
+        output.writeInt64(2, shopId_);
+      }
+      if (!getManagerBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, manager_);
+      }
+      if (!getManagerPhoneBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, managerPhone_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (baseRequest_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getBaseRequest());
+      }
+      if (shopId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, shopId_);
+      }
+      if (!getManagerBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, manager_);
+      }
+      if (!getManagerPhoneBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, managerPhone_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof glory_api.ShopOuterClass.UpdateShopManagerRequest)) {
+        return super.equals(obj);
+      }
+      glory_api.ShopOuterClass.UpdateShopManagerRequest other = (glory_api.ShopOuterClass.UpdateShopManagerRequest) obj;
+
+      if (hasBaseRequest() != other.hasBaseRequest()) return false;
+      if (hasBaseRequest()) {
+        if (!getBaseRequest()
+            .equals(other.getBaseRequest())) return false;
+      }
+      if (getShopId()
+          != other.getShopId()) return false;
+      if (!getManager()
+          .equals(other.getManager())) return false;
+      if (!getManagerPhone()
+          .equals(other.getManagerPhone())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasBaseRequest()) {
+        hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getBaseRequest().hashCode();
+      }
+      hash = (37 * hash) + SHOP_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getShopId());
+      hash = (37 * hash) + MANAGER_FIELD_NUMBER;
+      hash = (53 * hash) + getManager().hashCode();
+      hash = (37 * hash) + MANAGER_PHONE_FIELD_NUMBER;
+      hash = (53 * hash) + getManagerPhone().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static glory_api.ShopOuterClass.UpdateShopManagerRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.ShopOuterClass.UpdateShopManagerRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.ShopOuterClass.UpdateShopManagerRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.ShopOuterClass.UpdateShopManagerRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.ShopOuterClass.UpdateShopManagerRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.ShopOuterClass.UpdateShopManagerRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.ShopOuterClass.UpdateShopManagerRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.ShopOuterClass.UpdateShopManagerRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.ShopOuterClass.UpdateShopManagerRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static glory_api.ShopOuterClass.UpdateShopManagerRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.ShopOuterClass.UpdateShopManagerRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.ShopOuterClass.UpdateShopManagerRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(glory_api.ShopOuterClass.UpdateShopManagerRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code glory_api.UpdateShopManagerRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:glory_api.UpdateShopManagerRequest)
+        glory_api.ShopOuterClass.UpdateShopManagerRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return glory_api.ShopOuterClass.internal_static_glory_api_UpdateShopManagerRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return glory_api.ShopOuterClass.internal_static_glory_api_UpdateShopManagerRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                glory_api.ShopOuterClass.UpdateShopManagerRequest.class, glory_api.ShopOuterClass.UpdateShopManagerRequest.Builder.class);
+      }
+
+      // Construct using glory_api.ShopOuterClass.UpdateShopManagerRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (baseRequestBuilder_ == null) {
+          baseRequest_ = null;
+        } else {
+          baseRequest_ = null;
+          baseRequestBuilder_ = null;
+        }
+        shopId_ = 0L;
+
+        manager_ = "";
+
+        managerPhone_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return glory_api.ShopOuterClass.internal_static_glory_api_UpdateShopManagerRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public glory_api.ShopOuterClass.UpdateShopManagerRequest getDefaultInstanceForType() {
+        return glory_api.ShopOuterClass.UpdateShopManagerRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public glory_api.ShopOuterClass.UpdateShopManagerRequest build() {
+        glory_api.ShopOuterClass.UpdateShopManagerRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public glory_api.ShopOuterClass.UpdateShopManagerRequest buildPartial() {
+        glory_api.ShopOuterClass.UpdateShopManagerRequest result = new glory_api.ShopOuterClass.UpdateShopManagerRequest(this);
+        if (baseRequestBuilder_ == null) {
+          result.baseRequest_ = baseRequest_;
+        } else {
+          result.baseRequest_ = baseRequestBuilder_.build();
+        }
+        result.shopId_ = shopId_;
+        result.manager_ = manager_;
+        result.managerPhone_ = managerPhone_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof glory_api.ShopOuterClass.UpdateShopManagerRequest) {
+          return mergeFrom((glory_api.ShopOuterClass.UpdateShopManagerRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(glory_api.ShopOuterClass.UpdateShopManagerRequest other) {
+        if (other == glory_api.ShopOuterClass.UpdateShopManagerRequest.getDefaultInstance()) return this;
+        if (other.hasBaseRequest()) {
+          mergeBaseRequest(other.getBaseRequest());
+        }
+        if (other.getShopId() != 0L) {
+          setShopId(other.getShopId());
+        }
+        if (!other.getManager().isEmpty()) {
+          manager_ = other.manager_;
+          onChanged();
+        }
+        if (!other.getManagerPhone().isEmpty()) {
+          managerPhone_ = other.managerPhone_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        glory_api.ShopOuterClass.UpdateShopManagerRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (glory_api.ShopOuterClass.UpdateShopManagerRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private base.Base.BaseRequest baseRequest_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          base.Base.BaseRequest, base.Base.BaseRequest.Builder, base.Base.BaseRequestOrBuilder> baseRequestBuilder_;
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       * @return Whether the baseRequest field is set.
+       */
+      public boolean hasBaseRequest() {
+        return baseRequestBuilder_ != null || baseRequest_ != null;
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       * @return The baseRequest.
+       */
+      public base.Base.BaseRequest getBaseRequest() {
+        if (baseRequestBuilder_ == null) {
+          return baseRequest_ == null ? base.Base.BaseRequest.getDefaultInstance() : baseRequest_;
+        } else {
+          return baseRequestBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public Builder setBaseRequest(base.Base.BaseRequest value) {
+        if (baseRequestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          baseRequest_ = value;
+          onChanged();
+        } else {
+          baseRequestBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public Builder setBaseRequest(
+          base.Base.BaseRequest.Builder builderForValue) {
+        if (baseRequestBuilder_ == null) {
+          baseRequest_ = builderForValue.build();
+          onChanged();
+        } else {
+          baseRequestBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public Builder mergeBaseRequest(base.Base.BaseRequest value) {
+        if (baseRequestBuilder_ == null) {
+          if (baseRequest_ != null) {
+            baseRequest_ =
+              base.Base.BaseRequest.newBuilder(baseRequest_).mergeFrom(value).buildPartial();
+          } else {
+            baseRequest_ = value;
+          }
+          onChanged();
+        } else {
+          baseRequestBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public Builder clearBaseRequest() {
+        if (baseRequestBuilder_ == null) {
+          baseRequest_ = null;
+          onChanged();
+        } else {
+          baseRequest_ = null;
+          baseRequestBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public base.Base.BaseRequest.Builder getBaseRequestBuilder() {
+        
+        onChanged();
+        return getBaseRequestFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public base.Base.BaseRequestOrBuilder getBaseRequestOrBuilder() {
+        if (baseRequestBuilder_ != null) {
+          return baseRequestBuilder_.getMessageOrBuilder();
+        } else {
+          return baseRequest_ == null ?
+              base.Base.BaseRequest.getDefaultInstance() : baseRequest_;
+        }
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          base.Base.BaseRequest, base.Base.BaseRequest.Builder, base.Base.BaseRequestOrBuilder> 
+          getBaseRequestFieldBuilder() {
+        if (baseRequestBuilder_ == null) {
+          baseRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              base.Base.BaseRequest, base.Base.BaseRequest.Builder, base.Base.BaseRequestOrBuilder>(
+                  getBaseRequest(),
+                  getParentForChildren(),
+                  isClean());
+          baseRequest_ = null;
+        }
+        return baseRequestBuilder_;
+      }
+
+      private long shopId_ ;
+      /**
+       * <code>int64 shop_id = 2;</code>
+       * @return The shopId.
+       */
+      @java.lang.Override
+      public long getShopId() {
+        return shopId_;
+      }
+      /**
+       * <code>int64 shop_id = 2;</code>
+       * @param value The shopId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setShopId(long value) {
+        
+        shopId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 shop_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearShopId() {
+        
+        shopId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object manager_ = "";
+      /**
+       * <code>string manager = 3;</code>
+       * @return The manager.
+       */
+      public java.lang.String getManager() {
+        java.lang.Object ref = manager_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          manager_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string manager = 3;</code>
+       * @return The bytes for manager.
+       */
+      public com.google.protobuf.ByteString
+          getManagerBytes() {
+        java.lang.Object ref = manager_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          manager_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string manager = 3;</code>
+       * @param value The manager to set.
+       * @return This builder for chaining.
+       */
+      public Builder setManager(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        manager_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string manager = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearManager() {
+        
+        manager_ = getDefaultInstance().getManager();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string manager = 3;</code>
+       * @param value The bytes for manager to set.
+       * @return This builder for chaining.
+       */
+      public Builder setManagerBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        manager_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object managerPhone_ = "";
+      /**
+       * <code>string manager_phone = 4;</code>
+       * @return The managerPhone.
+       */
+      public java.lang.String getManagerPhone() {
+        java.lang.Object ref = managerPhone_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          managerPhone_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string manager_phone = 4;</code>
+       * @return The bytes for managerPhone.
+       */
+      public com.google.protobuf.ByteString
+          getManagerPhoneBytes() {
+        java.lang.Object ref = managerPhone_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          managerPhone_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string manager_phone = 4;</code>
+       * @param value The managerPhone to set.
+       * @return This builder for chaining.
+       */
+      public Builder setManagerPhone(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        managerPhone_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string manager_phone = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearManagerPhone() {
+        
+        managerPhone_ = getDefaultInstance().getManagerPhone();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string manager_phone = 4;</code>
+       * @param value The bytes for managerPhone to set.
+       * @return This builder for chaining.
+       */
+      public Builder setManagerPhoneBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        managerPhone_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:glory_api.UpdateShopManagerRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:glory_api.UpdateShopManagerRequest)
+    private static final glory_api.ShopOuterClass.UpdateShopManagerRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new glory_api.ShopOuterClass.UpdateShopManagerRequest();
+    }
+
+    public static glory_api.ShopOuterClass.UpdateShopManagerRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UpdateShopManagerRequest>
+        PARSER = new com.google.protobuf.AbstractParser<UpdateShopManagerRequest>() {
+      @java.lang.Override
+      public UpdateShopManagerRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new UpdateShopManagerRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<UpdateShopManagerRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UpdateShopManagerRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public glory_api.ShopOuterClass.UpdateShopManagerRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface UpdateShopManagerResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:glory_api.UpdateShopManagerResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     * @return Whether the baseResp field is set.
+     */
+    boolean hasBaseResp();
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     * @return The baseResp.
+     */
+    base.Base.BaseResponse getBaseResp();
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     */
+    base.Base.BaseResponseOrBuilder getBaseRespOrBuilder();
+  }
+  /**
+   * Protobuf type {@code glory_api.UpdateShopManagerResponse}
+   */
+  public static final class UpdateShopManagerResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:glory_api.UpdateShopManagerResponse)
+      UpdateShopManagerResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use UpdateShopManagerResponse.newBuilder() to construct.
+    private UpdateShopManagerResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private UpdateShopManagerResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new UpdateShopManagerResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private UpdateShopManagerResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              base.Base.BaseResponse.Builder subBuilder = null;
+              if (baseResp_ != null) {
+                subBuilder = baseResp_.toBuilder();
+              }
+              baseResp_ = input.readMessage(base.Base.BaseResponse.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(baseResp_);
+                baseResp_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return glory_api.ShopOuterClass.internal_static_glory_api_UpdateShopManagerResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return glory_api.ShopOuterClass.internal_static_glory_api_UpdateShopManagerResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              glory_api.ShopOuterClass.UpdateShopManagerResponse.class, glory_api.ShopOuterClass.UpdateShopManagerResponse.Builder.class);
+    }
+
+    public static final int BASE_RESP_FIELD_NUMBER = 1;
+    private base.Base.BaseResponse baseResp_;
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     * @return Whether the baseResp field is set.
+     */
+    @java.lang.Override
+    public boolean hasBaseResp() {
+      return baseResp_ != null;
+    }
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     * @return The baseResp.
+     */
+    @java.lang.Override
+    public base.Base.BaseResponse getBaseResp() {
+      return baseResp_ == null ? base.Base.BaseResponse.getDefaultInstance() : baseResp_;
+    }
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     */
+    @java.lang.Override
+    public base.Base.BaseResponseOrBuilder getBaseRespOrBuilder() {
+      return getBaseResp();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (baseResp_ != null) {
+        output.writeMessage(1, getBaseResp());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (baseResp_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getBaseResp());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof glory_api.ShopOuterClass.UpdateShopManagerResponse)) {
+        return super.equals(obj);
+      }
+      glory_api.ShopOuterClass.UpdateShopManagerResponse other = (glory_api.ShopOuterClass.UpdateShopManagerResponse) obj;
+
+      if (hasBaseResp() != other.hasBaseResp()) return false;
+      if (hasBaseResp()) {
+        if (!getBaseResp()
+            .equals(other.getBaseResp())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasBaseResp()) {
+        hash = (37 * hash) + BASE_RESP_FIELD_NUMBER;
+        hash = (53 * hash) + getBaseResp().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static glory_api.ShopOuterClass.UpdateShopManagerResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.ShopOuterClass.UpdateShopManagerResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.ShopOuterClass.UpdateShopManagerResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.ShopOuterClass.UpdateShopManagerResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.ShopOuterClass.UpdateShopManagerResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.ShopOuterClass.UpdateShopManagerResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.ShopOuterClass.UpdateShopManagerResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.ShopOuterClass.UpdateShopManagerResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.ShopOuterClass.UpdateShopManagerResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static glory_api.ShopOuterClass.UpdateShopManagerResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.ShopOuterClass.UpdateShopManagerResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.ShopOuterClass.UpdateShopManagerResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(glory_api.ShopOuterClass.UpdateShopManagerResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code glory_api.UpdateShopManagerResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:glory_api.UpdateShopManagerResponse)
+        glory_api.ShopOuterClass.UpdateShopManagerResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return glory_api.ShopOuterClass.internal_static_glory_api_UpdateShopManagerResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return glory_api.ShopOuterClass.internal_static_glory_api_UpdateShopManagerResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                glory_api.ShopOuterClass.UpdateShopManagerResponse.class, glory_api.ShopOuterClass.UpdateShopManagerResponse.Builder.class);
+      }
+
+      // Construct using glory_api.ShopOuterClass.UpdateShopManagerResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (baseRespBuilder_ == null) {
+          baseResp_ = null;
+        } else {
+          baseResp_ = null;
+          baseRespBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return glory_api.ShopOuterClass.internal_static_glory_api_UpdateShopManagerResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public glory_api.ShopOuterClass.UpdateShopManagerResponse getDefaultInstanceForType() {
+        return glory_api.ShopOuterClass.UpdateShopManagerResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public glory_api.ShopOuterClass.UpdateShopManagerResponse build() {
+        glory_api.ShopOuterClass.UpdateShopManagerResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public glory_api.ShopOuterClass.UpdateShopManagerResponse buildPartial() {
+        glory_api.ShopOuterClass.UpdateShopManagerResponse result = new glory_api.ShopOuterClass.UpdateShopManagerResponse(this);
+        if (baseRespBuilder_ == null) {
+          result.baseResp_ = baseResp_;
+        } else {
+          result.baseResp_ = baseRespBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof glory_api.ShopOuterClass.UpdateShopManagerResponse) {
+          return mergeFrom((glory_api.ShopOuterClass.UpdateShopManagerResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(glory_api.ShopOuterClass.UpdateShopManagerResponse other) {
+        if (other == glory_api.ShopOuterClass.UpdateShopManagerResponse.getDefaultInstance()) return this;
+        if (other.hasBaseResp()) {
+          mergeBaseResp(other.getBaseResp());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        glory_api.ShopOuterClass.UpdateShopManagerResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (glory_api.ShopOuterClass.UpdateShopManagerResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private base.Base.BaseResponse baseResp_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          base.Base.BaseResponse, base.Base.BaseResponse.Builder, base.Base.BaseResponseOrBuilder> baseRespBuilder_;
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       * @return Whether the baseResp field is set.
+       */
+      public boolean hasBaseResp() {
+        return baseRespBuilder_ != null || baseResp_ != null;
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       * @return The baseResp.
+       */
+      public base.Base.BaseResponse getBaseResp() {
+        if (baseRespBuilder_ == null) {
+          return baseResp_ == null ? base.Base.BaseResponse.getDefaultInstance() : baseResp_;
+        } else {
+          return baseRespBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public Builder setBaseResp(base.Base.BaseResponse value) {
+        if (baseRespBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          baseResp_ = value;
+          onChanged();
+        } else {
+          baseRespBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public Builder setBaseResp(
+          base.Base.BaseResponse.Builder builderForValue) {
+        if (baseRespBuilder_ == null) {
+          baseResp_ = builderForValue.build();
+          onChanged();
+        } else {
+          baseRespBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public Builder mergeBaseResp(base.Base.BaseResponse value) {
+        if (baseRespBuilder_ == null) {
+          if (baseResp_ != null) {
+            baseResp_ =
+              base.Base.BaseResponse.newBuilder(baseResp_).mergeFrom(value).buildPartial();
+          } else {
+            baseResp_ = value;
+          }
+          onChanged();
+        } else {
+          baseRespBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public Builder clearBaseResp() {
+        if (baseRespBuilder_ == null) {
+          baseResp_ = null;
+          onChanged();
+        } else {
+          baseResp_ = null;
+          baseRespBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public base.Base.BaseResponse.Builder getBaseRespBuilder() {
+        
+        onChanged();
+        return getBaseRespFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public base.Base.BaseResponseOrBuilder getBaseRespOrBuilder() {
+        if (baseRespBuilder_ != null) {
+          return baseRespBuilder_.getMessageOrBuilder();
+        } else {
+          return baseResp_ == null ?
+              base.Base.BaseResponse.getDefaultInstance() : baseResp_;
+        }
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          base.Base.BaseResponse, base.Base.BaseResponse.Builder, base.Base.BaseResponseOrBuilder> 
+          getBaseRespFieldBuilder() {
+        if (baseRespBuilder_ == null) {
+          baseRespBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              base.Base.BaseResponse, base.Base.BaseResponse.Builder, base.Base.BaseResponseOrBuilder>(
+                  getBaseResp(),
+                  getParentForChildren(),
+                  isClean());
+          baseResp_ = null;
+        }
+        return baseRespBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:glory_api.UpdateShopManagerResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:glory_api.UpdateShopManagerResponse)
+    private static final glory_api.ShopOuterClass.UpdateShopManagerResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new glory_api.ShopOuterClass.UpdateShopManagerResponse();
+    }
+
+    public static glory_api.ShopOuterClass.UpdateShopManagerResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UpdateShopManagerResponse>
+        PARSER = new com.google.protobuf.AbstractParser<UpdateShopManagerResponse>() {
+      @java.lang.Override
+      public UpdateShopManagerResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new UpdateShopManagerResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<UpdateShopManagerResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UpdateShopManagerResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public glory_api.ShopOuterClass.UpdateShopManagerResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GetShopBusinessDataRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:glory_api.GetShopBusinessDataRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     * @return Whether the baseRequest field is set.
+     */
+    boolean hasBaseRequest();
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     * @return The baseRequest.
+     */
+    base.Base.BaseRequest getBaseRequest();
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     */
+    base.Base.BaseRequestOrBuilder getBaseRequestOrBuilder();
+
+    /**
+     * <code>int64 shop_id = 2;</code>
+     * @return The shopId.
+     */
+    long getShopId();
+
+    /**
+     * <code>int64 period = 3;</code>
+     * @return The period.
+     */
+    long getPeriod();
+  }
+  /**
+   * Protobuf type {@code glory_api.GetShopBusinessDataRequest}
+   */
+  public static final class GetShopBusinessDataRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:glory_api.GetShopBusinessDataRequest)
+      GetShopBusinessDataRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetShopBusinessDataRequest.newBuilder() to construct.
+    private GetShopBusinessDataRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetShopBusinessDataRequest() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetShopBusinessDataRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetShopBusinessDataRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              base.Base.BaseRequest.Builder subBuilder = null;
+              if (baseRequest_ != null) {
+                subBuilder = baseRequest_.toBuilder();
+              }
+              baseRequest_ = input.readMessage(base.Base.BaseRequest.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(baseRequest_);
+                baseRequest_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 16: {
+
+              shopId_ = input.readInt64();
+              break;
+            }
+            case 24: {
+
+              period_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return glory_api.ShopOuterClass.internal_static_glory_api_GetShopBusinessDataRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return glory_api.ShopOuterClass.internal_static_glory_api_GetShopBusinessDataRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              glory_api.ShopOuterClass.GetShopBusinessDataRequest.class, glory_api.ShopOuterClass.GetShopBusinessDataRequest.Builder.class);
+    }
+
+    public static final int BASE_REQUEST_FIELD_NUMBER = 1;
+    private base.Base.BaseRequest baseRequest_;
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     * @return Whether the baseRequest field is set.
+     */
+    @java.lang.Override
+    public boolean hasBaseRequest() {
+      return baseRequest_ != null;
+    }
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     * @return The baseRequest.
+     */
+    @java.lang.Override
+    public base.Base.BaseRequest getBaseRequest() {
+      return baseRequest_ == null ? base.Base.BaseRequest.getDefaultInstance() : baseRequest_;
+    }
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     */
+    @java.lang.Override
+    public base.Base.BaseRequestOrBuilder getBaseRequestOrBuilder() {
+      return getBaseRequest();
+    }
+
+    public static final int SHOP_ID_FIELD_NUMBER = 2;
+    private long shopId_;
+    /**
+     * <code>int64 shop_id = 2;</code>
+     * @return The shopId.
+     */
+    @java.lang.Override
+    public long getShopId() {
+      return shopId_;
+    }
+
+    public static final int PERIOD_FIELD_NUMBER = 3;
+    private long period_;
+    /**
+     * <code>int64 period = 3;</code>
+     * @return The period.
+     */
+    @java.lang.Override
+    public long getPeriod() {
+      return period_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (baseRequest_ != null) {
+        output.writeMessage(1, getBaseRequest());
+      }
+      if (shopId_ != 0L) {
+        output.writeInt64(2, shopId_);
+      }
+      if (period_ != 0L) {
+        output.writeInt64(3, period_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (baseRequest_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getBaseRequest());
+      }
+      if (shopId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, shopId_);
+      }
+      if (period_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, period_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof glory_api.ShopOuterClass.GetShopBusinessDataRequest)) {
+        return super.equals(obj);
+      }
+      glory_api.ShopOuterClass.GetShopBusinessDataRequest other = (glory_api.ShopOuterClass.GetShopBusinessDataRequest) obj;
+
+      if (hasBaseRequest() != other.hasBaseRequest()) return false;
+      if (hasBaseRequest()) {
+        if (!getBaseRequest()
+            .equals(other.getBaseRequest())) return false;
+      }
+      if (getShopId()
+          != other.getShopId()) return false;
+      if (getPeriod()
+          != other.getPeriod()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasBaseRequest()) {
+        hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getBaseRequest().hashCode();
+      }
+      hash = (37 * hash) + SHOP_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getShopId());
+      hash = (37 * hash) + PERIOD_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getPeriod());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static glory_api.ShopOuterClass.GetShopBusinessDataRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.ShopOuterClass.GetShopBusinessDataRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.ShopOuterClass.GetShopBusinessDataRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.ShopOuterClass.GetShopBusinessDataRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.ShopOuterClass.GetShopBusinessDataRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.ShopOuterClass.GetShopBusinessDataRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.ShopOuterClass.GetShopBusinessDataRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.ShopOuterClass.GetShopBusinessDataRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.ShopOuterClass.GetShopBusinessDataRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static glory_api.ShopOuterClass.GetShopBusinessDataRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.ShopOuterClass.GetShopBusinessDataRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.ShopOuterClass.GetShopBusinessDataRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(glory_api.ShopOuterClass.GetShopBusinessDataRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code glory_api.GetShopBusinessDataRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:glory_api.GetShopBusinessDataRequest)
+        glory_api.ShopOuterClass.GetShopBusinessDataRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return glory_api.ShopOuterClass.internal_static_glory_api_GetShopBusinessDataRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return glory_api.ShopOuterClass.internal_static_glory_api_GetShopBusinessDataRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                glory_api.ShopOuterClass.GetShopBusinessDataRequest.class, glory_api.ShopOuterClass.GetShopBusinessDataRequest.Builder.class);
+      }
+
+      // Construct using glory_api.ShopOuterClass.GetShopBusinessDataRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (baseRequestBuilder_ == null) {
+          baseRequest_ = null;
+        } else {
+          baseRequest_ = null;
+          baseRequestBuilder_ = null;
+        }
+        shopId_ = 0L;
+
+        period_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return glory_api.ShopOuterClass.internal_static_glory_api_GetShopBusinessDataRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public glory_api.ShopOuterClass.GetShopBusinessDataRequest getDefaultInstanceForType() {
+        return glory_api.ShopOuterClass.GetShopBusinessDataRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public glory_api.ShopOuterClass.GetShopBusinessDataRequest build() {
+        glory_api.ShopOuterClass.GetShopBusinessDataRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public glory_api.ShopOuterClass.GetShopBusinessDataRequest buildPartial() {
+        glory_api.ShopOuterClass.GetShopBusinessDataRequest result = new glory_api.ShopOuterClass.GetShopBusinessDataRequest(this);
+        if (baseRequestBuilder_ == null) {
+          result.baseRequest_ = baseRequest_;
+        } else {
+          result.baseRequest_ = baseRequestBuilder_.build();
+        }
+        result.shopId_ = shopId_;
+        result.period_ = period_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof glory_api.ShopOuterClass.GetShopBusinessDataRequest) {
+          return mergeFrom((glory_api.ShopOuterClass.GetShopBusinessDataRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(glory_api.ShopOuterClass.GetShopBusinessDataRequest other) {
+        if (other == glory_api.ShopOuterClass.GetShopBusinessDataRequest.getDefaultInstance()) return this;
+        if (other.hasBaseRequest()) {
+          mergeBaseRequest(other.getBaseRequest());
+        }
+        if (other.getShopId() != 0L) {
+          setShopId(other.getShopId());
+        }
+        if (other.getPeriod() != 0L) {
+          setPeriod(other.getPeriod());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        glory_api.ShopOuterClass.GetShopBusinessDataRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (glory_api.ShopOuterClass.GetShopBusinessDataRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private base.Base.BaseRequest baseRequest_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          base.Base.BaseRequest, base.Base.BaseRequest.Builder, base.Base.BaseRequestOrBuilder> baseRequestBuilder_;
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       * @return Whether the baseRequest field is set.
+       */
+      public boolean hasBaseRequest() {
+        return baseRequestBuilder_ != null || baseRequest_ != null;
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       * @return The baseRequest.
+       */
+      public base.Base.BaseRequest getBaseRequest() {
+        if (baseRequestBuilder_ == null) {
+          return baseRequest_ == null ? base.Base.BaseRequest.getDefaultInstance() : baseRequest_;
+        } else {
+          return baseRequestBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public Builder setBaseRequest(base.Base.BaseRequest value) {
+        if (baseRequestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          baseRequest_ = value;
+          onChanged();
+        } else {
+          baseRequestBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public Builder setBaseRequest(
+          base.Base.BaseRequest.Builder builderForValue) {
+        if (baseRequestBuilder_ == null) {
+          baseRequest_ = builderForValue.build();
+          onChanged();
+        } else {
+          baseRequestBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public Builder mergeBaseRequest(base.Base.BaseRequest value) {
+        if (baseRequestBuilder_ == null) {
+          if (baseRequest_ != null) {
+            baseRequest_ =
+              base.Base.BaseRequest.newBuilder(baseRequest_).mergeFrom(value).buildPartial();
+          } else {
+            baseRequest_ = value;
+          }
+          onChanged();
+        } else {
+          baseRequestBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public Builder clearBaseRequest() {
+        if (baseRequestBuilder_ == null) {
+          baseRequest_ = null;
+          onChanged();
+        } else {
+          baseRequest_ = null;
+          baseRequestBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public base.Base.BaseRequest.Builder getBaseRequestBuilder() {
+        
+        onChanged();
+        return getBaseRequestFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public base.Base.BaseRequestOrBuilder getBaseRequestOrBuilder() {
+        if (baseRequestBuilder_ != null) {
+          return baseRequestBuilder_.getMessageOrBuilder();
+        } else {
+          return baseRequest_ == null ?
+              base.Base.BaseRequest.getDefaultInstance() : baseRequest_;
+        }
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          base.Base.BaseRequest, base.Base.BaseRequest.Builder, base.Base.BaseRequestOrBuilder> 
+          getBaseRequestFieldBuilder() {
+        if (baseRequestBuilder_ == null) {
+          baseRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              base.Base.BaseRequest, base.Base.BaseRequest.Builder, base.Base.BaseRequestOrBuilder>(
+                  getBaseRequest(),
+                  getParentForChildren(),
+                  isClean());
+          baseRequest_ = null;
+        }
+        return baseRequestBuilder_;
+      }
+
+      private long shopId_ ;
+      /**
+       * <code>int64 shop_id = 2;</code>
+       * @return The shopId.
+       */
+      @java.lang.Override
+      public long getShopId() {
+        return shopId_;
+      }
+      /**
+       * <code>int64 shop_id = 2;</code>
+       * @param value The shopId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setShopId(long value) {
+        
+        shopId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 shop_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearShopId() {
+        
+        shopId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long period_ ;
+      /**
+       * <code>int64 period = 3;</code>
+       * @return The period.
+       */
+      @java.lang.Override
+      public long getPeriod() {
+        return period_;
+      }
+      /**
+       * <code>int64 period = 3;</code>
+       * @param value The period to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPeriod(long value) {
+        
+        period_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 period = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPeriod() {
+        
+        period_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:glory_api.GetShopBusinessDataRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:glory_api.GetShopBusinessDataRequest)
+    private static final glory_api.ShopOuterClass.GetShopBusinessDataRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new glory_api.ShopOuterClass.GetShopBusinessDataRequest();
+    }
+
+    public static glory_api.ShopOuterClass.GetShopBusinessDataRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetShopBusinessDataRequest>
+        PARSER = new com.google.protobuf.AbstractParser<GetShopBusinessDataRequest>() {
+      @java.lang.Override
+      public GetShopBusinessDataRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetShopBusinessDataRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetShopBusinessDataRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetShopBusinessDataRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public glory_api.ShopOuterClass.GetShopBusinessDataRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ShopBusinessDataOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:glory_api.ShopBusinessData)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string date = 1;</code>
+     * @return The date.
+     */
+    java.lang.String getDate();
+    /**
+     * <code>string date = 1;</code>
+     * @return The bytes for date.
+     */
+    com.google.protobuf.ByteString
+        getDateBytes();
+
+    /**
+     * <code>double deal_amount = 2;</code>
+     * @return The dealAmount.
+     */
+    double getDealAmount();
+
+    /**
+     * <code>int64 shop_buyer_amount = 3;</code>
+     * @return The shopBuyerAmount.
+     */
+    long getShopBuyerAmount();
+
+    /**
+     * <code>int64 shop_order_amount = 4;</code>
+     * @return The shopOrderAmount.
+     */
+    long getShopOrderAmount();
+  }
+  /**
+   * Protobuf type {@code glory_api.ShopBusinessData}
+   */
+  public static final class ShopBusinessData extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:glory_api.ShopBusinessData)
+      ShopBusinessDataOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ShopBusinessData.newBuilder() to construct.
+    private ShopBusinessData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ShopBusinessData() {
+      date_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ShopBusinessData();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ShopBusinessData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              date_ = s;
+              break;
+            }
+            case 17: {
+
+              dealAmount_ = input.readDouble();
+              break;
+            }
+            case 24: {
+
+              shopBuyerAmount_ = input.readInt64();
+              break;
+            }
+            case 32: {
+
+              shopOrderAmount_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return glory_api.ShopOuterClass.internal_static_glory_api_ShopBusinessData_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return glory_api.ShopOuterClass.internal_static_glory_api_ShopBusinessData_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              glory_api.ShopOuterClass.ShopBusinessData.class, glory_api.ShopOuterClass.ShopBusinessData.Builder.class);
+    }
+
+    public static final int DATE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object date_;
+    /**
+     * <code>string date = 1;</code>
+     * @return The date.
+     */
+    @java.lang.Override
+    public java.lang.String getDate() {
+      java.lang.Object ref = date_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        date_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string date = 1;</code>
+     * @return The bytes for date.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDateBytes() {
+      java.lang.Object ref = date_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        date_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DEAL_AMOUNT_FIELD_NUMBER = 2;
+    private double dealAmount_;
+    /**
+     * <code>double deal_amount = 2;</code>
+     * @return The dealAmount.
+     */
+    @java.lang.Override
+    public double getDealAmount() {
+      return dealAmount_;
+    }
+
+    public static final int SHOP_BUYER_AMOUNT_FIELD_NUMBER = 3;
+    private long shopBuyerAmount_;
+    /**
+     * <code>int64 shop_buyer_amount = 3;</code>
+     * @return The shopBuyerAmount.
+     */
+    @java.lang.Override
+    public long getShopBuyerAmount() {
+      return shopBuyerAmount_;
+    }
+
+    public static final int SHOP_ORDER_AMOUNT_FIELD_NUMBER = 4;
+    private long shopOrderAmount_;
+    /**
+     * <code>int64 shop_order_amount = 4;</code>
+     * @return The shopOrderAmount.
+     */
+    @java.lang.Override
+    public long getShopOrderAmount() {
+      return shopOrderAmount_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getDateBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, date_);
+      }
+      if (dealAmount_ != 0D) {
+        output.writeDouble(2, dealAmount_);
+      }
+      if (shopBuyerAmount_ != 0L) {
+        output.writeInt64(3, shopBuyerAmount_);
+      }
+      if (shopOrderAmount_ != 0L) {
+        output.writeInt64(4, shopOrderAmount_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getDateBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, date_);
+      }
+      if (dealAmount_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(2, dealAmount_);
+      }
+      if (shopBuyerAmount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, shopBuyerAmount_);
+      }
+      if (shopOrderAmount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(4, shopOrderAmount_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof glory_api.ShopOuterClass.ShopBusinessData)) {
+        return super.equals(obj);
+      }
+      glory_api.ShopOuterClass.ShopBusinessData other = (glory_api.ShopOuterClass.ShopBusinessData) obj;
+
+      if (!getDate()
+          .equals(other.getDate())) return false;
+      if (java.lang.Double.doubleToLongBits(getDealAmount())
+          != java.lang.Double.doubleToLongBits(
+              other.getDealAmount())) return false;
+      if (getShopBuyerAmount()
+          != other.getShopBuyerAmount()) return false;
+      if (getShopOrderAmount()
+          != other.getShopOrderAmount()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DATE_FIELD_NUMBER;
+      hash = (53 * hash) + getDate().hashCode();
+      hash = (37 * hash) + DEAL_AMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getDealAmount()));
+      hash = (37 * hash) + SHOP_BUYER_AMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getShopBuyerAmount());
+      hash = (37 * hash) + SHOP_ORDER_AMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getShopOrderAmount());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static glory_api.ShopOuterClass.ShopBusinessData parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.ShopOuterClass.ShopBusinessData parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.ShopOuterClass.ShopBusinessData parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.ShopOuterClass.ShopBusinessData parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.ShopOuterClass.ShopBusinessData parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.ShopOuterClass.ShopBusinessData parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.ShopOuterClass.ShopBusinessData parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.ShopOuterClass.ShopBusinessData parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.ShopOuterClass.ShopBusinessData parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static glory_api.ShopOuterClass.ShopBusinessData parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.ShopOuterClass.ShopBusinessData parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.ShopOuterClass.ShopBusinessData parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(glory_api.ShopOuterClass.ShopBusinessData prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code glory_api.ShopBusinessData}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:glory_api.ShopBusinessData)
+        glory_api.ShopOuterClass.ShopBusinessDataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return glory_api.ShopOuterClass.internal_static_glory_api_ShopBusinessData_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return glory_api.ShopOuterClass.internal_static_glory_api_ShopBusinessData_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                glory_api.ShopOuterClass.ShopBusinessData.class, glory_api.ShopOuterClass.ShopBusinessData.Builder.class);
+      }
+
+      // Construct using glory_api.ShopOuterClass.ShopBusinessData.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        date_ = "";
+
+        dealAmount_ = 0D;
+
+        shopBuyerAmount_ = 0L;
+
+        shopOrderAmount_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return glory_api.ShopOuterClass.internal_static_glory_api_ShopBusinessData_descriptor;
+      }
+
+      @java.lang.Override
+      public glory_api.ShopOuterClass.ShopBusinessData getDefaultInstanceForType() {
+        return glory_api.ShopOuterClass.ShopBusinessData.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public glory_api.ShopOuterClass.ShopBusinessData build() {
+        glory_api.ShopOuterClass.ShopBusinessData result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public glory_api.ShopOuterClass.ShopBusinessData buildPartial() {
+        glory_api.ShopOuterClass.ShopBusinessData result = new glory_api.ShopOuterClass.ShopBusinessData(this);
+        result.date_ = date_;
+        result.dealAmount_ = dealAmount_;
+        result.shopBuyerAmount_ = shopBuyerAmount_;
+        result.shopOrderAmount_ = shopOrderAmount_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof glory_api.ShopOuterClass.ShopBusinessData) {
+          return mergeFrom((glory_api.ShopOuterClass.ShopBusinessData)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(glory_api.ShopOuterClass.ShopBusinessData other) {
+        if (other == glory_api.ShopOuterClass.ShopBusinessData.getDefaultInstance()) return this;
+        if (!other.getDate().isEmpty()) {
+          date_ = other.date_;
+          onChanged();
+        }
+        if (other.getDealAmount() != 0D) {
+          setDealAmount(other.getDealAmount());
+        }
+        if (other.getShopBuyerAmount() != 0L) {
+          setShopBuyerAmount(other.getShopBuyerAmount());
+        }
+        if (other.getShopOrderAmount() != 0L) {
+          setShopOrderAmount(other.getShopOrderAmount());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        glory_api.ShopOuterClass.ShopBusinessData parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (glory_api.ShopOuterClass.ShopBusinessData) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object date_ = "";
+      /**
+       * <code>string date = 1;</code>
+       * @return The date.
+       */
+      public java.lang.String getDate() {
+        java.lang.Object ref = date_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          date_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string date = 1;</code>
+       * @return The bytes for date.
+       */
+      public com.google.protobuf.ByteString
+          getDateBytes() {
+        java.lang.Object ref = date_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          date_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string date = 1;</code>
+       * @param value The date to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDate(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        date_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string date = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDate() {
+        
+        date_ = getDefaultInstance().getDate();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string date = 1;</code>
+       * @param value The bytes for date to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDateBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        date_ = value;
+        onChanged();
+        return this;
+      }
+
+      private double dealAmount_ ;
+      /**
+       * <code>double deal_amount = 2;</code>
+       * @return The dealAmount.
+       */
+      @java.lang.Override
+      public double getDealAmount() {
+        return dealAmount_;
+      }
+      /**
+       * <code>double deal_amount = 2;</code>
+       * @param value The dealAmount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDealAmount(double value) {
+        
+        dealAmount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double deal_amount = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDealAmount() {
+        
+        dealAmount_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private long shopBuyerAmount_ ;
+      /**
+       * <code>int64 shop_buyer_amount = 3;</code>
+       * @return The shopBuyerAmount.
+       */
+      @java.lang.Override
+      public long getShopBuyerAmount() {
+        return shopBuyerAmount_;
+      }
+      /**
+       * <code>int64 shop_buyer_amount = 3;</code>
+       * @param value The shopBuyerAmount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setShopBuyerAmount(long value) {
+        
+        shopBuyerAmount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 shop_buyer_amount = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearShopBuyerAmount() {
+        
+        shopBuyerAmount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long shopOrderAmount_ ;
+      /**
+       * <code>int64 shop_order_amount = 4;</code>
+       * @return The shopOrderAmount.
+       */
+      @java.lang.Override
+      public long getShopOrderAmount() {
+        return shopOrderAmount_;
+      }
+      /**
+       * <code>int64 shop_order_amount = 4;</code>
+       * @param value The shopOrderAmount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setShopOrderAmount(long value) {
+        
+        shopOrderAmount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 shop_order_amount = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearShopOrderAmount() {
+        
+        shopOrderAmount_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:glory_api.ShopBusinessData)
+    }
+
+    // @@protoc_insertion_point(class_scope:glory_api.ShopBusinessData)
+    private static final glory_api.ShopOuterClass.ShopBusinessData DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new glory_api.ShopOuterClass.ShopBusinessData();
+    }
+
+    public static glory_api.ShopOuterClass.ShopBusinessData getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ShopBusinessData>
+        PARSER = new com.google.protobuf.AbstractParser<ShopBusinessData>() {
+      @java.lang.Override
+      public ShopBusinessData parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ShopBusinessData(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ShopBusinessData> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ShopBusinessData> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public glory_api.ShopOuterClass.ShopBusinessData getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GetShopBusinessDataResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:glory_api.GetShopBusinessDataResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     * @return Whether the baseResp field is set.
+     */
+    boolean hasBaseResp();
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     * @return The baseResp.
+     */
+    base.Base.BaseResponse getBaseResp();
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     */
+    base.Base.BaseResponseOrBuilder getBaseRespOrBuilder();
+
+    /**
+     * <code>repeated .glory_api.ShopBusinessData shop_businessdata = 2;</code>
+     */
+    java.util.List<glory_api.ShopOuterClass.ShopBusinessData> 
+        getShopBusinessdataList();
+    /**
+     * <code>repeated .glory_api.ShopBusinessData shop_businessdata = 2;</code>
+     */
+    glory_api.ShopOuterClass.ShopBusinessData getShopBusinessdata(int index);
+    /**
+     * <code>repeated .glory_api.ShopBusinessData shop_businessdata = 2;</code>
+     */
+    int getShopBusinessdataCount();
+    /**
+     * <code>repeated .glory_api.ShopBusinessData shop_businessdata = 2;</code>
+     */
+    java.util.List<? extends glory_api.ShopOuterClass.ShopBusinessDataOrBuilder> 
+        getShopBusinessdataOrBuilderList();
+    /**
+     * <code>repeated .glory_api.ShopBusinessData shop_businessdata = 2;</code>
+     */
+    glory_api.ShopOuterClass.ShopBusinessDataOrBuilder getShopBusinessdataOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code glory_api.GetShopBusinessDataResponse}
+   */
+  public static final class GetShopBusinessDataResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:glory_api.GetShopBusinessDataResponse)
+      GetShopBusinessDataResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetShopBusinessDataResponse.newBuilder() to construct.
+    private GetShopBusinessDataResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetShopBusinessDataResponse() {
+      shopBusinessdata_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetShopBusinessDataResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetShopBusinessDataResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              base.Base.BaseResponse.Builder subBuilder = null;
+              if (baseResp_ != null) {
+                subBuilder = baseResp_.toBuilder();
+              }
+              baseResp_ = input.readMessage(base.Base.BaseResponse.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(baseResp_);
+                baseResp_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                shopBusinessdata_ = new java.util.ArrayList<glory_api.ShopOuterClass.ShopBusinessData>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              shopBusinessdata_.add(
+                  input.readMessage(glory_api.ShopOuterClass.ShopBusinessData.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          shopBusinessdata_ = java.util.Collections.unmodifiableList(shopBusinessdata_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return glory_api.ShopOuterClass.internal_static_glory_api_GetShopBusinessDataResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return glory_api.ShopOuterClass.internal_static_glory_api_GetShopBusinessDataResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              glory_api.ShopOuterClass.GetShopBusinessDataResponse.class, glory_api.ShopOuterClass.GetShopBusinessDataResponse.Builder.class);
+    }
+
+    public static final int BASE_RESP_FIELD_NUMBER = 1;
+    private base.Base.BaseResponse baseResp_;
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     * @return Whether the baseResp field is set.
+     */
+    @java.lang.Override
+    public boolean hasBaseResp() {
+      return baseResp_ != null;
+    }
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     * @return The baseResp.
+     */
+    @java.lang.Override
+    public base.Base.BaseResponse getBaseResp() {
+      return baseResp_ == null ? base.Base.BaseResponse.getDefaultInstance() : baseResp_;
+    }
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     */
+    @java.lang.Override
+    public base.Base.BaseResponseOrBuilder getBaseRespOrBuilder() {
+      return getBaseResp();
+    }
+
+    public static final int SHOP_BUSINESSDATA_FIELD_NUMBER = 2;
+    private java.util.List<glory_api.ShopOuterClass.ShopBusinessData> shopBusinessdata_;
+    /**
+     * <code>repeated .glory_api.ShopBusinessData shop_businessdata = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<glory_api.ShopOuterClass.ShopBusinessData> getShopBusinessdataList() {
+      return shopBusinessdata_;
+    }
+    /**
+     * <code>repeated .glory_api.ShopBusinessData shop_businessdata = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends glory_api.ShopOuterClass.ShopBusinessDataOrBuilder> 
+        getShopBusinessdataOrBuilderList() {
+      return shopBusinessdata_;
+    }
+    /**
+     * <code>repeated .glory_api.ShopBusinessData shop_businessdata = 2;</code>
+     */
+    @java.lang.Override
+    public int getShopBusinessdataCount() {
+      return shopBusinessdata_.size();
+    }
+    /**
+     * <code>repeated .glory_api.ShopBusinessData shop_businessdata = 2;</code>
+     */
+    @java.lang.Override
+    public glory_api.ShopOuterClass.ShopBusinessData getShopBusinessdata(int index) {
+      return shopBusinessdata_.get(index);
+    }
+    /**
+     * <code>repeated .glory_api.ShopBusinessData shop_businessdata = 2;</code>
+     */
+    @java.lang.Override
+    public glory_api.ShopOuterClass.ShopBusinessDataOrBuilder getShopBusinessdataOrBuilder(
+        int index) {
+      return shopBusinessdata_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (baseResp_ != null) {
+        output.writeMessage(1, getBaseResp());
+      }
+      for (int i = 0; i < shopBusinessdata_.size(); i++) {
+        output.writeMessage(2, shopBusinessdata_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (baseResp_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getBaseResp());
+      }
+      for (int i = 0; i < shopBusinessdata_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, shopBusinessdata_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof glory_api.ShopOuterClass.GetShopBusinessDataResponse)) {
+        return super.equals(obj);
+      }
+      glory_api.ShopOuterClass.GetShopBusinessDataResponse other = (glory_api.ShopOuterClass.GetShopBusinessDataResponse) obj;
+
+      if (hasBaseResp() != other.hasBaseResp()) return false;
+      if (hasBaseResp()) {
+        if (!getBaseResp()
+            .equals(other.getBaseResp())) return false;
+      }
+      if (!getShopBusinessdataList()
+          .equals(other.getShopBusinessdataList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasBaseResp()) {
+        hash = (37 * hash) + BASE_RESP_FIELD_NUMBER;
+        hash = (53 * hash) + getBaseResp().hashCode();
+      }
+      if (getShopBusinessdataCount() > 0) {
+        hash = (37 * hash) + SHOP_BUSINESSDATA_FIELD_NUMBER;
+        hash = (53 * hash) + getShopBusinessdataList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static glory_api.ShopOuterClass.GetShopBusinessDataResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.ShopOuterClass.GetShopBusinessDataResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.ShopOuterClass.GetShopBusinessDataResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.ShopOuterClass.GetShopBusinessDataResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.ShopOuterClass.GetShopBusinessDataResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.ShopOuterClass.GetShopBusinessDataResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.ShopOuterClass.GetShopBusinessDataResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.ShopOuterClass.GetShopBusinessDataResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.ShopOuterClass.GetShopBusinessDataResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static glory_api.ShopOuterClass.GetShopBusinessDataResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.ShopOuterClass.GetShopBusinessDataResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.ShopOuterClass.GetShopBusinessDataResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(glory_api.ShopOuterClass.GetShopBusinessDataResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code glory_api.GetShopBusinessDataResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:glory_api.GetShopBusinessDataResponse)
+        glory_api.ShopOuterClass.GetShopBusinessDataResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return glory_api.ShopOuterClass.internal_static_glory_api_GetShopBusinessDataResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return glory_api.ShopOuterClass.internal_static_glory_api_GetShopBusinessDataResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                glory_api.ShopOuterClass.GetShopBusinessDataResponse.class, glory_api.ShopOuterClass.GetShopBusinessDataResponse.Builder.class);
+      }
+
+      // Construct using glory_api.ShopOuterClass.GetShopBusinessDataResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getShopBusinessdataFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (baseRespBuilder_ == null) {
+          baseResp_ = null;
+        } else {
+          baseResp_ = null;
+          baseRespBuilder_ = null;
+        }
+        if (shopBusinessdataBuilder_ == null) {
+          shopBusinessdata_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          shopBusinessdataBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return glory_api.ShopOuterClass.internal_static_glory_api_GetShopBusinessDataResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public glory_api.ShopOuterClass.GetShopBusinessDataResponse getDefaultInstanceForType() {
+        return glory_api.ShopOuterClass.GetShopBusinessDataResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public glory_api.ShopOuterClass.GetShopBusinessDataResponse build() {
+        glory_api.ShopOuterClass.GetShopBusinessDataResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public glory_api.ShopOuterClass.GetShopBusinessDataResponse buildPartial() {
+        glory_api.ShopOuterClass.GetShopBusinessDataResponse result = new glory_api.ShopOuterClass.GetShopBusinessDataResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (baseRespBuilder_ == null) {
+          result.baseResp_ = baseResp_;
+        } else {
+          result.baseResp_ = baseRespBuilder_.build();
+        }
+        if (shopBusinessdataBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            shopBusinessdata_ = java.util.Collections.unmodifiableList(shopBusinessdata_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.shopBusinessdata_ = shopBusinessdata_;
+        } else {
+          result.shopBusinessdata_ = shopBusinessdataBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof glory_api.ShopOuterClass.GetShopBusinessDataResponse) {
+          return mergeFrom((glory_api.ShopOuterClass.GetShopBusinessDataResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(glory_api.ShopOuterClass.GetShopBusinessDataResponse other) {
+        if (other == glory_api.ShopOuterClass.GetShopBusinessDataResponse.getDefaultInstance()) return this;
+        if (other.hasBaseResp()) {
+          mergeBaseResp(other.getBaseResp());
+        }
+        if (shopBusinessdataBuilder_ == null) {
+          if (!other.shopBusinessdata_.isEmpty()) {
+            if (shopBusinessdata_.isEmpty()) {
+              shopBusinessdata_ = other.shopBusinessdata_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureShopBusinessdataIsMutable();
+              shopBusinessdata_.addAll(other.shopBusinessdata_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.shopBusinessdata_.isEmpty()) {
+            if (shopBusinessdataBuilder_.isEmpty()) {
+              shopBusinessdataBuilder_.dispose();
+              shopBusinessdataBuilder_ = null;
+              shopBusinessdata_ = other.shopBusinessdata_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              shopBusinessdataBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getShopBusinessdataFieldBuilder() : null;
+            } else {
+              shopBusinessdataBuilder_.addAllMessages(other.shopBusinessdata_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        glory_api.ShopOuterClass.GetShopBusinessDataResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (glory_api.ShopOuterClass.GetShopBusinessDataResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private base.Base.BaseResponse baseResp_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          base.Base.BaseResponse, base.Base.BaseResponse.Builder, base.Base.BaseResponseOrBuilder> baseRespBuilder_;
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       * @return Whether the baseResp field is set.
+       */
+      public boolean hasBaseResp() {
+        return baseRespBuilder_ != null || baseResp_ != null;
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       * @return The baseResp.
+       */
+      public base.Base.BaseResponse getBaseResp() {
+        if (baseRespBuilder_ == null) {
+          return baseResp_ == null ? base.Base.BaseResponse.getDefaultInstance() : baseResp_;
+        } else {
+          return baseRespBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public Builder setBaseResp(base.Base.BaseResponse value) {
+        if (baseRespBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          baseResp_ = value;
+          onChanged();
+        } else {
+          baseRespBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public Builder setBaseResp(
+          base.Base.BaseResponse.Builder builderForValue) {
+        if (baseRespBuilder_ == null) {
+          baseResp_ = builderForValue.build();
+          onChanged();
+        } else {
+          baseRespBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public Builder mergeBaseResp(base.Base.BaseResponse value) {
+        if (baseRespBuilder_ == null) {
+          if (baseResp_ != null) {
+            baseResp_ =
+              base.Base.BaseResponse.newBuilder(baseResp_).mergeFrom(value).buildPartial();
+          } else {
+            baseResp_ = value;
+          }
+          onChanged();
+        } else {
+          baseRespBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public Builder clearBaseResp() {
+        if (baseRespBuilder_ == null) {
+          baseResp_ = null;
+          onChanged();
+        } else {
+          baseResp_ = null;
+          baseRespBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public base.Base.BaseResponse.Builder getBaseRespBuilder() {
+        
+        onChanged();
+        return getBaseRespFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public base.Base.BaseResponseOrBuilder getBaseRespOrBuilder() {
+        if (baseRespBuilder_ != null) {
+          return baseRespBuilder_.getMessageOrBuilder();
+        } else {
+          return baseResp_ == null ?
+              base.Base.BaseResponse.getDefaultInstance() : baseResp_;
+        }
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          base.Base.BaseResponse, base.Base.BaseResponse.Builder, base.Base.BaseResponseOrBuilder> 
+          getBaseRespFieldBuilder() {
+        if (baseRespBuilder_ == null) {
+          baseRespBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              base.Base.BaseResponse, base.Base.BaseResponse.Builder, base.Base.BaseResponseOrBuilder>(
+                  getBaseResp(),
+                  getParentForChildren(),
+                  isClean());
+          baseResp_ = null;
+        }
+        return baseRespBuilder_;
+      }
+
+      private java.util.List<glory_api.ShopOuterClass.ShopBusinessData> shopBusinessdata_ =
+        java.util.Collections.emptyList();
+      private void ensureShopBusinessdataIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          shopBusinessdata_ = new java.util.ArrayList<glory_api.ShopOuterClass.ShopBusinessData>(shopBusinessdata_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          glory_api.ShopOuterClass.ShopBusinessData, glory_api.ShopOuterClass.ShopBusinessData.Builder, glory_api.ShopOuterClass.ShopBusinessDataOrBuilder> shopBusinessdataBuilder_;
+
+      /**
+       * <code>repeated .glory_api.ShopBusinessData shop_businessdata = 2;</code>
+       */
+      public java.util.List<glory_api.ShopOuterClass.ShopBusinessData> getShopBusinessdataList() {
+        if (shopBusinessdataBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(shopBusinessdata_);
+        } else {
+          return shopBusinessdataBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .glory_api.ShopBusinessData shop_businessdata = 2;</code>
+       */
+      public int getShopBusinessdataCount() {
+        if (shopBusinessdataBuilder_ == null) {
+          return shopBusinessdata_.size();
+        } else {
+          return shopBusinessdataBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .glory_api.ShopBusinessData shop_businessdata = 2;</code>
+       */
+      public glory_api.ShopOuterClass.ShopBusinessData getShopBusinessdata(int index) {
+        if (shopBusinessdataBuilder_ == null) {
+          return shopBusinessdata_.get(index);
+        } else {
+          return shopBusinessdataBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .glory_api.ShopBusinessData shop_businessdata = 2;</code>
+       */
+      public Builder setShopBusinessdata(
+          int index, glory_api.ShopOuterClass.ShopBusinessData value) {
+        if (shopBusinessdataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureShopBusinessdataIsMutable();
+          shopBusinessdata_.set(index, value);
+          onChanged();
+        } else {
+          shopBusinessdataBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .glory_api.ShopBusinessData shop_businessdata = 2;</code>
+       */
+      public Builder setShopBusinessdata(
+          int index, glory_api.ShopOuterClass.ShopBusinessData.Builder builderForValue) {
+        if (shopBusinessdataBuilder_ == null) {
+          ensureShopBusinessdataIsMutable();
+          shopBusinessdata_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          shopBusinessdataBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .glory_api.ShopBusinessData shop_businessdata = 2;</code>
+       */
+      public Builder addShopBusinessdata(glory_api.ShopOuterClass.ShopBusinessData value) {
+        if (shopBusinessdataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureShopBusinessdataIsMutable();
+          shopBusinessdata_.add(value);
+          onChanged();
+        } else {
+          shopBusinessdataBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .glory_api.ShopBusinessData shop_businessdata = 2;</code>
+       */
+      public Builder addShopBusinessdata(
+          int index, glory_api.ShopOuterClass.ShopBusinessData value) {
+        if (shopBusinessdataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureShopBusinessdataIsMutable();
+          shopBusinessdata_.add(index, value);
+          onChanged();
+        } else {
+          shopBusinessdataBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .glory_api.ShopBusinessData shop_businessdata = 2;</code>
+       */
+      public Builder addShopBusinessdata(
+          glory_api.ShopOuterClass.ShopBusinessData.Builder builderForValue) {
+        if (shopBusinessdataBuilder_ == null) {
+          ensureShopBusinessdataIsMutable();
+          shopBusinessdata_.add(builderForValue.build());
+          onChanged();
+        } else {
+          shopBusinessdataBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .glory_api.ShopBusinessData shop_businessdata = 2;</code>
+       */
+      public Builder addShopBusinessdata(
+          int index, glory_api.ShopOuterClass.ShopBusinessData.Builder builderForValue) {
+        if (shopBusinessdataBuilder_ == null) {
+          ensureShopBusinessdataIsMutable();
+          shopBusinessdata_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          shopBusinessdataBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .glory_api.ShopBusinessData shop_businessdata = 2;</code>
+       */
+      public Builder addAllShopBusinessdata(
+          java.lang.Iterable<? extends glory_api.ShopOuterClass.ShopBusinessData> values) {
+        if (shopBusinessdataBuilder_ == null) {
+          ensureShopBusinessdataIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, shopBusinessdata_);
+          onChanged();
+        } else {
+          shopBusinessdataBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .glory_api.ShopBusinessData shop_businessdata = 2;</code>
+       */
+      public Builder clearShopBusinessdata() {
+        if (shopBusinessdataBuilder_ == null) {
+          shopBusinessdata_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          shopBusinessdataBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .glory_api.ShopBusinessData shop_businessdata = 2;</code>
+       */
+      public Builder removeShopBusinessdata(int index) {
+        if (shopBusinessdataBuilder_ == null) {
+          ensureShopBusinessdataIsMutable();
+          shopBusinessdata_.remove(index);
+          onChanged();
+        } else {
+          shopBusinessdataBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .glory_api.ShopBusinessData shop_businessdata = 2;</code>
+       */
+      public glory_api.ShopOuterClass.ShopBusinessData.Builder getShopBusinessdataBuilder(
+          int index) {
+        return getShopBusinessdataFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .glory_api.ShopBusinessData shop_businessdata = 2;</code>
+       */
+      public glory_api.ShopOuterClass.ShopBusinessDataOrBuilder getShopBusinessdataOrBuilder(
+          int index) {
+        if (shopBusinessdataBuilder_ == null) {
+          return shopBusinessdata_.get(index);  } else {
+          return shopBusinessdataBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .glory_api.ShopBusinessData shop_businessdata = 2;</code>
+       */
+      public java.util.List<? extends glory_api.ShopOuterClass.ShopBusinessDataOrBuilder> 
+           getShopBusinessdataOrBuilderList() {
+        if (shopBusinessdataBuilder_ != null) {
+          return shopBusinessdataBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(shopBusinessdata_);
+        }
+      }
+      /**
+       * <code>repeated .glory_api.ShopBusinessData shop_businessdata = 2;</code>
+       */
+      public glory_api.ShopOuterClass.ShopBusinessData.Builder addShopBusinessdataBuilder() {
+        return getShopBusinessdataFieldBuilder().addBuilder(
+            glory_api.ShopOuterClass.ShopBusinessData.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .glory_api.ShopBusinessData shop_businessdata = 2;</code>
+       */
+      public glory_api.ShopOuterClass.ShopBusinessData.Builder addShopBusinessdataBuilder(
+          int index) {
+        return getShopBusinessdataFieldBuilder().addBuilder(
+            index, glory_api.ShopOuterClass.ShopBusinessData.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .glory_api.ShopBusinessData shop_businessdata = 2;</code>
+       */
+      public java.util.List<glory_api.ShopOuterClass.ShopBusinessData.Builder> 
+           getShopBusinessdataBuilderList() {
+        return getShopBusinessdataFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          glory_api.ShopOuterClass.ShopBusinessData, glory_api.ShopOuterClass.ShopBusinessData.Builder, glory_api.ShopOuterClass.ShopBusinessDataOrBuilder> 
+          getShopBusinessdataFieldBuilder() {
+        if (shopBusinessdataBuilder_ == null) {
+          shopBusinessdataBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              glory_api.ShopOuterClass.ShopBusinessData, glory_api.ShopOuterClass.ShopBusinessData.Builder, glory_api.ShopOuterClass.ShopBusinessDataOrBuilder>(
+                  shopBusinessdata_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          shopBusinessdata_ = null;
+        }
+        return shopBusinessdataBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:glory_api.GetShopBusinessDataResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:glory_api.GetShopBusinessDataResponse)
+    private static final glory_api.ShopOuterClass.GetShopBusinessDataResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new glory_api.ShopOuterClass.GetShopBusinessDataResponse();
+    }
+
+    public static glory_api.ShopOuterClass.GetShopBusinessDataResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetShopBusinessDataResponse>
+        PARSER = new com.google.protobuf.AbstractParser<GetShopBusinessDataResponse>() {
+      @java.lang.Override
+      public GetShopBusinessDataResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetShopBusinessDataResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetShopBusinessDataResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetShopBusinessDataResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public glory_api.ShopOuterClass.GetShopBusinessDataResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_glory_api_Shop_descriptor;
   private static final 
@@ -34061,6 +38587,31 @@ public final class ShopOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_ListShopQualificationResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_UpdateShopManagerRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_UpdateShopManagerRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_UpdateShopManagerResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_UpdateShopManagerResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetShopBusinessDataRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetShopBusinessDataRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ShopBusinessData_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ShopBusinessData_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetShopBusinessDataResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetShopBusinessDataResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -34071,9 +38622,9 @@ public final class ShopOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\017shop/shop.proto\022\tglory_api\032\nbase.proto" +
-      "\032\023shop/category.proto\"\332\006\n\004Shop\022\017\n\007shop_i" +
+      "\032\023shop/category.proto\"\202\007\n\004Shop\022\017\n\007shop_i" +
       "d\030\001 \001(\003\022\021\n\tseller_id\030\002 \001(\003\022\021\n\tshop_name\030" +
-      "\003 \001(\t\022\023\n\013category_id\030! \003(\003\0229\n\022shop_quali" +
+      "\003 \001(\t\022\023\n\013category_id\030# \003(\003\0229\n\022shop_quali" +
       "fication\030\315\002 \003(\0132\034.glory_api.ShopQualific" +
       "ation\022\021\n\tshop_type\030\004 \001(\t\022\024\n\014company_name" +
       "\030\005 \001(\t\022\022\n\ncompany_id\030\006 \001(\t\022\030\n\020company_ca" +
@@ -34093,7 +38644,8 @@ public final class ShopOuterClass {
       "ent_id\030\035 \001(\003\022#\n\033owner_id_back_attachment" +
       "_id\030\036 \001(\003\022\037\n\027shop_logo_attachment_id\030\037 \001" +
       "(\003\022&\n\036business_license_attachment_id\030  \001" +
-      "(\003\"\265\001\n\021ShopQualification\022\035\n\025shop_qualifi" +
+      "(\003\022\017\n\007manager\030! \001(\t\022\025\n\rmanager_phone\030\" \001" +
+      "(\t\"\265\001\n\021ShopQualification\022\035\n\025shop_qualifi" +
       "cation_id\030\001 \001(\003\022\036\n\026shop_qualification_ur" +
       "l\030\002 \001(\t\022\025\n\rcategory_root\030\003 \001(\t\022\032\n\022qualif" +
       "ication_name\030\004 \001(\t\022\025\n\rattachment_id\030\005 \001(" +
@@ -34174,7 +38726,20 @@ public final class ShopOuterClass {
       "ShopQualificationResponse\022%\n\tbase_resp\030\001" +
       " \001(\0132\022.base.BaseResponse\0228\n\022shop_qualifi" +
       "cation\030\002 \003(\0132\034.glory_api.ShopQualificati" +
-      "onb\006proto3"
+      "on\"|\n\030UpdateShopManagerRequest\022\'\n\014base_r" +
+      "equest\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007shop_" +
+      "id\030\002 \001(\003\022\017\n\007manager\030\003 \001(\t\022\025\n\rmanager_pho" +
+      "ne\030\004 \001(\t\"B\n\031UpdateShopManagerResponse\022%\n" +
+      "\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"f\n\032" +
+      "GetShopBusinessDataRequest\022\'\n\014base_reque" +
+      "st\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007shop_id\030\002" +
+      " \001(\003\022\016\n\006period\030\003 \001(\003\"k\n\020ShopBusinessData" +
+      "\022\014\n\004date\030\001 \001(\t\022\023\n\013deal_amount\030\002 \001(\001\022\031\n\021s" +
+      "hop_buyer_amount\030\003 \001(\003\022\031\n\021shop_order_amo" +
+      "unt\030\004 \001(\003\"|\n\033GetShopBusinessDataResponse" +
+      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022" +
+      "6\n\021shop_businessdata\030\002 \003(\0132\033.glory_api.S" +
+      "hopBusinessDatab\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -34187,7 +38752,7 @@ public final class ShopOuterClass {
     internal_static_glory_api_Shop_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_Shop_descriptor,
-        new java.lang.String[] { "ShopId", "SellerId", "ShopName", "CategoryId", "ShopQualification", "ShopType", "CompanyName", "CompanyId", "CompanyCategory", "OwnerId", "OwnerName", "OwnerIdFrontUrl", "OwnerIdBackUrl", "OwnerIdStartDate", "OwnerIdExpiryDate", "ShopLogoUrl", "Province", "City", "District", "Address", "BusinessLicenseUrl", "BusinessLicenseStartDate", "BusinessLicenseEndDate", "OwnerLocation", "CompanyBankAccount", "CompanyBankPhone", "CompanyBankValidated", "CertifyStatus", "OwnerIdFrontAttachmentId", "OwnerIdBackAttachmentId", "ShopLogoAttachmentId", "BusinessLicenseAttachmentId", });
+        new java.lang.String[] { "ShopId", "SellerId", "ShopName", "CategoryId", "ShopQualification", "ShopType", "CompanyName", "CompanyId", "CompanyCategory", "OwnerId", "OwnerName", "OwnerIdFrontUrl", "OwnerIdBackUrl", "OwnerIdStartDate", "OwnerIdExpiryDate", "ShopLogoUrl", "Province", "City", "District", "Address", "BusinessLicenseUrl", "BusinessLicenseStartDate", "BusinessLicenseEndDate", "OwnerLocation", "CompanyBankAccount", "CompanyBankPhone", "CompanyBankValidated", "CertifyStatus", "OwnerIdFrontAttachmentId", "OwnerIdBackAttachmentId", "ShopLogoAttachmentId", "BusinessLicenseAttachmentId", "Manager", "ManagerPhone", });
     internal_static_glory_api_ShopQualification_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_glory_api_ShopQualification_fieldAccessorTable = new
@@ -34380,6 +38945,36 @@ public final class ShopOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListShopQualificationResponse_descriptor,
         new java.lang.String[] { "BaseResp", "ShopQualification", });
+    internal_static_glory_api_UpdateShopManagerRequest_descriptor =
+      getDescriptor().getMessageTypes().get(33);
+    internal_static_glory_api_UpdateShopManagerRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_UpdateShopManagerRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "ShopId", "Manager", "ManagerPhone", });
+    internal_static_glory_api_UpdateShopManagerResponse_descriptor =
+      getDescriptor().getMessageTypes().get(34);
+    internal_static_glory_api_UpdateShopManagerResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_UpdateShopManagerResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
+    internal_static_glory_api_GetShopBusinessDataRequest_descriptor =
+      getDescriptor().getMessageTypes().get(35);
+    internal_static_glory_api_GetShopBusinessDataRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetShopBusinessDataRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "ShopId", "Period", });
+    internal_static_glory_api_ShopBusinessData_descriptor =
+      getDescriptor().getMessageTypes().get(36);
+    internal_static_glory_api_ShopBusinessData_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ShopBusinessData_descriptor,
+        new java.lang.String[] { "Date", "DealAmount", "ShopBuyerAmount", "ShopOrderAmount", });
+    internal_static_glory_api_GetShopBusinessDataResponse_descriptor =
+      getDescriptor().getMessageTypes().get(37);
+    internal_static_glory_api_GetShopBusinessDataResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetShopBusinessDataResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "ShopBusinessdata", });
     base.Base.getDescriptor();
     glory_api.CategoryOuterClass.getDescriptor();
   }
