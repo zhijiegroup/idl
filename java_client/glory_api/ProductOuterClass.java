@@ -15577,6 +15577,16 @@ public final class ProductOuterClass {
      */
     com.google.protobuf.ByteString
         getProductBrandBytes();
+
+    /**
+     * <pre>
+     *商品类目
+     * </pre>
+     *
+     * <code>int64 category_id = 11;</code>
+     * @return The categoryId.
+     */
+    long getCategoryId();
   }
   /**
    * Protobuf type {@code glory_api.UpdateProductRequest}
@@ -15700,6 +15710,11 @@ public final class ProductOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               productBrand_ = s;
+              break;
+            }
+            case 88: {
+
+              categoryId_ = input.readInt64();
               break;
             }
             case 170: {
@@ -16050,6 +16065,21 @@ public final class ProductOuterClass {
       }
     }
 
+    public static final int CATEGORY_ID_FIELD_NUMBER = 11;
+    private long categoryId_;
+    /**
+     * <pre>
+     *商品类目
+     * </pre>
+     *
+     * <code>int64 category_id = 11;</code>
+     * @return The categoryId.
+     */
+    @java.lang.Override
+    public long getCategoryId() {
+      return categoryId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -16093,6 +16123,9 @@ public final class ProductOuterClass {
       }
       if (!getProductBrandBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, productBrand_);
+      }
+      if (categoryId_ != 0L) {
+        output.writeInt64(11, categoryId_);
       }
       if (!getProductNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 21, productName_);
@@ -16145,6 +16178,10 @@ public final class ProductOuterClass {
       if (!getProductBrandBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, productBrand_);
       }
+      if (categoryId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(11, categoryId_);
+      }
       if (!getProductNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, productName_);
       }
@@ -16189,6 +16226,8 @@ public final class ProductOuterClass {
               other.getReferencePrice())) return false;
       if (!getProductBrand()
           .equals(other.getProductBrand())) return false;
+      if (getCategoryId()
+          != other.getCategoryId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -16234,6 +16273,9 @@ public final class ProductOuterClass {
           getReferencePrice());
       hash = (37 * hash) + PRODUCT_BRAND_FIELD_NUMBER;
       hash = (53 * hash) + getProductBrand().hashCode();
+      hash = (37 * hash) + CATEGORY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getCategoryId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -16408,6 +16450,8 @@ public final class ProductOuterClass {
 
         productBrand_ = "";
 
+        categoryId_ = 0L;
+
         return this;
       }
 
@@ -16474,6 +16518,7 @@ public final class ProductOuterClass {
         result.salePrice_ = salePrice_;
         result.referencePrice_ = referencePrice_;
         result.productBrand_ = productBrand_;
+        result.categoryId_ = categoryId_;
         onBuilt();
         return result;
       }
@@ -16625,6 +16670,9 @@ public final class ProductOuterClass {
         if (!other.getProductBrand().isEmpty()) {
           productBrand_ = other.productBrand_;
           onChanged();
+        }
+        if (other.getCategoryId() != 0L) {
+          setCategoryId(other.getCategoryId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -17865,6 +17913,49 @@ public final class ProductOuterClass {
   checkByteStringIsUtf8(value);
         
         productBrand_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long categoryId_ ;
+      /**
+       * <pre>
+       *商品类目
+       * </pre>
+       *
+       * <code>int64 category_id = 11;</code>
+       * @return The categoryId.
+       */
+      @java.lang.Override
+      public long getCategoryId() {
+        return categoryId_;
+      }
+      /**
+       * <pre>
+       *商品类目
+       * </pre>
+       *
+       * <code>int64 category_id = 11;</code>
+       * @param value The categoryId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCategoryId(long value) {
+        
+        categoryId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *商品类目
+       * </pre>
+       *
+       * <code>int64 category_id = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCategoryId() {
+        
+        categoryId_ = 0L;
         onChanged();
         return this;
       }
@@ -36974,7 +37065,7 @@ public final class ProductOuterClass {
       "eRequest\022\022\n\nproduct_id\030\002 \001(\003\"v\n\022GetProdu" +
       "ctResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
       "eResponse\0229\n\016product_detail\030\002 \001(\0132!.glor" +
-      "y_api.ProductWithValueAuthor\"\343\002\n\024UpdateP" +
+      "y_api.ProductWithValueAuthor\"\370\002\n\024UpdateP" +
       "roductRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
       "se.BaseRequest\022\022\n\nproduct_id\030\002 \001(\003\022\024\n\014pr" +
       "oduct_name\030\025 \001(\t\022\'\n\tattribute\030\003 \003(\0132\024.gl" +
@@ -36983,70 +37074,70 @@ public final class ProductOuterClass {
       "0\n\022shipment_attribute\030\006 \003(\0132\024.glory_api." +
       "Attribute\022\033\n\023freight_template_id\030\007 \001(\003\022\022" +
       "\n\nsale_price\030\010 \001(\002\022\027\n\017reference_price\030\t " +
-      "\001(\002\022\025\n\rproduct_brand\030\n \001(\t\"R\n\025UpdateProd" +
-      "uctResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
-      "seResponse\022\022\n\nproduct_id\030\002 \001(\003\"\371\002\n\025Publi" +
-      "shProductRequest\022\'\n\014base_request\030\001 \001(\0132\021" +
-      ".base.BaseRequest\022\022\n\nproduct_id\030\002 \001(\003\022\024\n" +
-      "\014product_name\030\025 \001(\t\022\'\n\tattribute\030\003 \003(\0132\024" +
-      ".glory_api.Attribute\022\033\n\003sku\030\004 \003(\0132\016.glor" +
-      "y_api.Sku\022\037\n\005state\030\005 \001(\0162\020.glory_api.Sta" +
-      "te\0220\n\022shipment_attribute\030\006 \003(\0132\024.glory_a" +
-      "pi.Attribute\022\033\n\023freight_template_id\030\007 \001(" +
-      "\003\022\022\n\nsale_price\030\010 \001(\002\022\027\n\017reference_price" +
-      "\030\t \001(\002\022\025\n\rproduct_brand\030\n \001(\t\022\023\n\013categor" +
-      "y_id\030\013 \001(\003\"S\n\026PublishProductResponse\022%\n\t" +
-      "base_resp\030\001 \001(\0132\022.base.BaseResponse\022\022\n\np" +
-      "roduct_id\030\002 \001(\003\"U\n\026OffSelfProductsReques" +
-      "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
-      "st\022\022\n\nproduct_id\030\002 \003(\003\"@\n\027OffSelfProduct" +
-      "sResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Base" +
-      "Response\"T\n\025DeleteProductsRequest\022\'\n\014bas" +
-      "e_request\030\001 \001(\0132\021.base.BaseRequest\022\022\n\npr" +
-      "oduct_id\030\002 \003(\003\"?\n\026DeleteProductsResponse" +
-      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"" +
-      "y\n\031ChangeProductStateRequest\022\'\n\014base_req" +
-      "uest\030\001 \001(\0132\021.base.BaseRequest\022\022\n\nproduct" +
-      "_id\030\002 \001(\003\022\037\n\005state\030\003 \001(\0162\020.glory_api.Sta" +
-      "te\"C\n\032ChangeProductStateResponse\022%\n\tbase" +
-      "_resp\030\001 \001(\0132\022.base.BaseResponse\"z\n\032Chang" +
-      "eProductsStateRequest\022\'\n\014base_request\030\001 " +
-      "\001(\0132\021.base.BaseRequest\022\022\n\nproduct_id\030\002 \003" +
-      "(\003\022\037\n\005state\030\003 \001(\0162\020.glory_api.State\"D\n\033C" +
-      "hangeProductsStateResponse\022%\n\tbase_resp\030" +
-      "\001 \001(\0132\022.base.BaseResponse\"\307\001\n\022ListProduc" +
-      "tRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
-      "seRequest\022\024\n\014product_name\030\002 \001(\t\022\017\n\007shop_" +
-      "id\030\003 \001(\003\022\023\n\013category_id\030\004 \001(\003\022\037\n\005state\030\005" +
-      " \001(\0162\020.glory_api.State\022+\n\npagination\030d \001" +
-      "(\0132\027.base.PaginationRequest\"\245\001\n\023ListProd" +
-      "uctResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
-      "seResponse\0229\n\016product_detail\030\002 \003(\0132!.glo" +
-      "ry_api.ProductWithValueAuthor\022,\n\npaginat" +
-      "ion\030d \001(\0132\030.base.PaginationResponse\"S\n\024D" +
-      "eleteProductRequest\022\'\n\014base_request\030\001 \001(" +
-      "\0132\021.base.BaseRequest\022\022\n\nproduct_id\030\002 \001(\003" +
-      "\">\n\025DeleteProductResponse\022%\n\tbase_resp\030\001" +
-      " \001(\0132\022.base.BaseResponse\"r\n\027UploadMultiI" +
-      "mageRequest\022\'\n\014base_request\030\001 \001(\0132\021.base" +
-      ".BaseRequest\022\022\n\nproduct_id\030\002 \001(\003\022\032\n\022prod" +
-      "uct_image_type\030\003 \001(\003\"j\n\030UploadMultiImage" +
-      "Response\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseR" +
-      "esponse\022\'\n\timageInfo\030\002 \003(\0132\024.glory_api.I" +
-      "mageInfo\":\n\tImageInfo\022\023\n\013product_url\030\001 \001" +
-      "(\t\022\030\n\020product_image_id\030\002 \001(\003\"W\n\022DeleteIm" +
-      "ageRequest\022\'\n\014base_request\030\001 \001(\0132\021.base." +
-      "BaseRequest\022\030\n\020product_image_id\030\002 \001(\003\"<\n" +
-      "\023DeleteImageResponse\022%\n\tbase_resp\030\001 \001(\0132" +
-      "\022.base.BaseResponse\"P\n\025UploadSkuImageReq" +
-      "uest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRe" +
-      "quest\022\016\n\006sku_id\030\002 \001(\003\"R\n\026UploadSkuImageR" +
+      "\001(\002\022\025\n\rproduct_brand\030\n \001(\t\022\023\n\013category_i" +
+      "d\030\013 \001(\003\"R\n\025UpdateProductResponse\022%\n\tbase" +
+      "_resp\030\001 \001(\0132\022.base.BaseResponse\022\022\n\nprodu" +
+      "ct_id\030\002 \001(\003\"\371\002\n\025PublishProductRequest\022\'\n" +
+      "\014base_request\030\001 \001(\0132\021.base.BaseRequest\022\022" +
+      "\n\nproduct_id\030\002 \001(\003\022\024\n\014product_name\030\025 \001(\t" +
+      "\022\'\n\tattribute\030\003 \003(\0132\024.glory_api.Attribut" +
+      "e\022\033\n\003sku\030\004 \003(\0132\016.glory_api.Sku\022\037\n\005state\030" +
+      "\005 \001(\0162\020.glory_api.State\0220\n\022shipment_attr" +
+      "ibute\030\006 \003(\0132\024.glory_api.Attribute\022\033\n\023fre" +
+      "ight_template_id\030\007 \001(\003\022\022\n\nsale_price\030\010 \001" +
+      "(\002\022\027\n\017reference_price\030\t \001(\002\022\025\n\rproduct_b" +
+      "rand\030\n \001(\t\022\023\n\013category_id\030\013 \001(\003\"S\n\026Publi" +
+      "shProductResponse\022%\n\tbase_resp\030\001 \001(\0132\022.b" +
+      "ase.BaseResponse\022\022\n\nproduct_id\030\002 \001(\003\"U\n\026" +
+      "OffSelfProductsRequest\022\'\n\014base_request\030\001" +
+      " \001(\0132\021.base.BaseRequest\022\022\n\nproduct_id\030\002 " +
+      "\003(\003\"@\n\027OffSelfProductsResponse\022%\n\tbase_r" +
+      "esp\030\001 \001(\0132\022.base.BaseResponse\"T\n\025DeleteP" +
+      "roductsRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
+      "ase.BaseRequest\022\022\n\nproduct_id\030\002 \003(\003\"?\n\026D" +
+      "eleteProductsResponse\022%\n\tbase_resp\030\001 \001(\013" +
+      "2\022.base.BaseResponse\"y\n\031ChangeProductSta" +
+      "teRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.B" +
+      "aseRequest\022\022\n\nproduct_id\030\002 \001(\003\022\037\n\005state\030" +
+      "\003 \001(\0162\020.glory_api.State\"C\n\032ChangeProduct" +
+      "StateResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
+      "BaseResponse\"z\n\032ChangeProductsStateReque" +
+      "st\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequ" +
+      "est\022\022\n\nproduct_id\030\002 \003(\003\022\037\n\005state\030\003 \001(\0162\020" +
+      ".glory_api.State\"D\n\033ChangeProductsStateR" +
       "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
-      "sponse\022\021\n\timage_url\030\002 \001(\t*\200\001\n\005State\022\013\n\007d" +
-      "efault\020\000\022\013\n\007created\020\001\022\014\n\010on_shelf\020\002\022\r\n\to" +
-      "ff_shelf\020\003\022\020\n\014out_of_stock\020\004\022\013\n\007deleted\020" +
-      "\005\022\023\n\017deleted_forever\020\006\022\014\n\010sold_out\020\007b\006pr" +
-      "oto3"
+      "sponse\"\307\001\n\022ListProductRequest\022\'\n\014base_re" +
+      "quest\030\001 \001(\0132\021.base.BaseRequest\022\024\n\014produc" +
+      "t_name\030\002 \001(\t\022\017\n\007shop_id\030\003 \001(\003\022\023\n\013categor" +
+      "y_id\030\004 \001(\003\022\037\n\005state\030\005 \001(\0162\020.glory_api.St" +
+      "ate\022+\n\npagination\030d \001(\0132\027.base.Paginatio" +
+      "nRequest\"\245\001\n\023ListProductResponse\022%\n\tbase" +
+      "_resp\030\001 \001(\0132\022.base.BaseResponse\0229\n\016produ" +
+      "ct_detail\030\002 \003(\0132!.glory_api.ProductWithV" +
+      "alueAuthor\022,\n\npagination\030d \001(\0132\030.base.Pa" +
+      "ginationResponse\"S\n\024DeleteProductRequest" +
+      "\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReques" +
+      "t\022\022\n\nproduct_id\030\002 \001(\003\">\n\025DeleteProductRe" +
+      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
+      "ponse\"r\n\027UploadMultiImageRequest\022\'\n\014base" +
+      "_request\030\001 \001(\0132\021.base.BaseRequest\022\022\n\npro" +
+      "duct_id\030\002 \001(\003\022\032\n\022product_image_type\030\003 \001(" +
+      "\003\"j\n\030UploadMultiImageResponse\022%\n\tbase_re" +
+      "sp\030\001 \001(\0132\022.base.BaseResponse\022\'\n\timageInf" +
+      "o\030\002 \003(\0132\024.glory_api.ImageInfo\":\n\tImageIn" +
+      "fo\022\023\n\013product_url\030\001 \001(\t\022\030\n\020product_image" +
+      "_id\030\002 \001(\003\"W\n\022DeleteImageRequest\022\'\n\014base_" +
+      "request\030\001 \001(\0132\021.base.BaseRequest\022\030\n\020prod" +
+      "uct_image_id\030\002 \001(\003\"<\n\023DeleteImageRespons" +
+      "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
+      "\"P\n\025UploadSkuImageRequest\022\'\n\014base_reques" +
+      "t\030\001 \001(\0132\021.base.BaseRequest\022\016\n\006sku_id\030\002 \001" +
+      "(\003\"R\n\026UploadSkuImageResponse\022%\n\tbase_res" +
+      "p\030\001 \001(\0132\022.base.BaseResponse\022\021\n\timage_url" +
+      "\030\002 \001(\t*\200\001\n\005State\022\013\n\007default\020\000\022\013\n\007created" +
+      "\020\001\022\014\n\010on_shelf\020\002\022\r\n\toff_shelf\020\003\022\020\n\014out_o" +
+      "f_stock\020\004\022\013\n\007deleted\020\005\022\023\n\017deleted_foreve" +
+      "r\020\006\022\014\n\010sold_out\020\007b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -37140,7 +37231,7 @@ public final class ProductOuterClass {
     internal_static_glory_api_UpdateProductRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateProductRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "ProductId", "ProductName", "Attribute", "Sku", "State", "ShipmentAttribute", "FreightTemplateId", "SalePrice", "ReferencePrice", "ProductBrand", });
+        new java.lang.String[] { "BaseRequest", "ProductId", "ProductName", "Attribute", "Sku", "State", "ShipmentAttribute", "FreightTemplateId", "SalePrice", "ReferencePrice", "ProductBrand", "CategoryId", });
     internal_static_glory_api_UpdateProductResponse_descriptor =
       getDescriptor().getMessageTypes().get(14);
     internal_static_glory_api_UpdateProductResponse_fieldAccessorTable = new

@@ -118,6 +118,14 @@ service glory_api {
     option (api.get) = '/api/shop/get_shop_qrcode';
   }
 
+  rpc UpdateShopManager(UpdateShopManagerRequest) returns (UpdateShopManagerResponse) {
+    option (api.post) = '/api/shop/update_shop_manager';
+  }
+
+  rpc GetShopBusinessData(GetShopBusinessDataRequest) returns (GetShopBusinessDataResponse) {
+    option (api.get) = '/api/shop/get_shop_business_data';
+  }
+
   rpc AddShopAccess(AddShopAccessRequest) returns (AddShopAccessResponse) {
     option (api.post) = '/api/shop/add_shop_access';
   }

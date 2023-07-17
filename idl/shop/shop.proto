@@ -10,7 +10,7 @@ message Shop {
   int64 shop_id = 1;//店铺id,创建时 不传
   int64 seller_id = 2;//提前调用 create_seller 生成 seller_id
   string shop_name = 3;//店铺名称 必须
-  repeated int64 category_id = 33; //经营类目 id 必须
+  repeated int64 category_id = 35; //经营类目 id 必须
   repeated ShopQualification  shop_qualification = 333; //经营类目 资质
   string shop_type = 4;//虚拟交易店铺 virtual, 真实交易店铺 real
   string company_name = 5;//公司名称
@@ -39,6 +39,8 @@ message Shop {
   int64 owner_id_back_attachment_id = 30;  // 上传附件的接口返回的 attachment id
   int64 shop_logo_attachment_id = 31;  // 上传附件的接口返回的 attachment id
   int64 business_license_attachment_id = 32; // 上传附件的接口返回的 attachment id
+  string manager = 33; // 店铺管理者
+  string manager_phone = 34; // 店铺管理者手机号
 }
 
 message ShopQualification {
@@ -222,6 +224,35 @@ message ListShopQualificationRequest {
 message ListShopQualificationResponse{
   base.BaseResponse base_resp = 1;
   repeated ShopQualification  shop_qualification = 2; //经营类目 资质
+}
+
+message UpdateShopManagerRequest {
+  base.BaseRequest base_request = 1;
+  int64 shop_id = 2;
+  string manager = 3;
+  string manager_phone = 4;
+}
+
+message UpdateShopManagerResponse{
+  base.BaseResponse base_resp = 1;
+}
+
+message GetShopBusinessDataRequest {
+  base.BaseRequest base_request = 1;
+  int64 shop_id = 2;
+  int64 period = 3;
+}
+
+message ShopBusinessData {
+  string date = 1;
+  double deal_amount =2;
+  int64 shop_buyer_amount =3;
+  int64 shop_order_amount =4;
+}
+
+message GetShopBusinessDataResponse{
+  base.BaseResponse base_resp = 1;
+  repeated ShopBusinessData shop_businessdata =2;
 }
 
 

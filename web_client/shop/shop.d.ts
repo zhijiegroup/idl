@@ -71,6 +71,10 @@ export interface Shop {
   shop_logo_attachment_id?: string;
   /** 上传附件的接口返回的 attachment id */
   business_license_attachment_id?: string;
+  /** 店铺管理者 */
+  manager?: string;
+  /** 店铺管理者手机号 */
+  manager_phone?: string;
 }
 
 export interface ShopQualification {
@@ -264,4 +268,33 @@ export interface ListShopQualificationResponse {
   base_resp?: base.BaseResponse;
   /** 经营类目 资质 */
   shop_qualification?: Array<ShopQualification>;
+}
+
+export interface UpdateShopManagerRequest {
+  base_request?: base.BaseRequest;
+  shop_id?: string;
+  manager?: string;
+  manager_phone?: string;
+}
+
+export interface UpdateShopManagerResponse {
+  base_resp?: base.BaseResponse;
+}
+
+export interface GetShopBusinessDataRequest {
+  base_request?: base.BaseRequest;
+  shop_id?: string;
+  period?: string;
+}
+
+export interface ShopBusinessData {
+  date?: string;
+  deal_amount?: number;
+  shop_buyer_amount?: string;
+  shop_order_amount?: string;
+}
+
+export interface GetShopBusinessDataResponse {
+  base_resp?: base.BaseResponse;
+  shop_businessdata?: Array<ShopBusinessData>;
 }
