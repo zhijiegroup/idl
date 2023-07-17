@@ -7,28 +7,30 @@ import "base.proto";
 
 
 message Room {
-  int64 room_id = 1;
-  int64 user_id =2;
-  string group_id =3;
-  string app_name =4;
-  string stream_name =5;
-  string up_url =6;
-  string play_url =7;
-  string start_time =8;
-  int64 like_count =9;
-  string end_time =10;
-  string status = 11; // if end_time not null, means closed, if null, means still active
-  int64 live_plan_id = 12;  // 设置直播商品计划id
-  string room_title = 13; //直播的标题
-  string room_image_url = 14; //直播的封面的url
-  int64 room_image_attachment_id = 15; // 直播间的封面的image 的id
+  int64 shop_id = 1;
+  int64 room_id = 2;
+  int64 user_id =3;
+  string group_id =4;
+  string app_name =5;
+  string stream_name =6;
+  string up_url =7;
+  string play_url =8;
+  string start_time =9;
+  int64 like_count =10;
+  string end_time =11;
+  string status = 12; // if end_time not null, means closed, if null, means still active
+  int64 live_plan_id = 13;  // 设置直播商品计划id
+  string room_title = 14; //直播的标题
+  string room_image_url = 15; //直播的封面的url
+  int64 room_image_attachment_id = 16; // 直播间的封面的image 的id
 }
 
 message CreateRoomRequest {
   base.BaseRequest base_request = 1;
-  string group_id = 2;
-  string room_title = 3;  // 直播房间的标题
-  int64 room_image_attachment_id = 4; // 直播房间的图片的id
+  int64 shop_id = 2;
+  string group_id = 3;
+  string room_title = 4;  // 直播房间的标题
+  int64 room_image_attachment_id = 5; // 直播房间的图片的id
 }
 message CreateRoomResponse {
   base.BaseResponse base_resp = 1;
