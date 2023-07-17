@@ -205,13 +205,13 @@ message GetShopCategoryRequest {
 
 message ShopCategory {
   int64 shop_category_id = 1;
-  repeated Category category = 3;
+  Category category = 3;
 }
 
 message GetShopCategoryResponse {
   base.BaseResponse base_resp = 1;
   int64 shop_id = 2;
-  repeated ShopCategory shop_category = 3;
+  repeated ShopCategory category_detail = 3;
 
 }
 message ListShopQualificationRequest {

@@ -127,6 +127,7 @@ message UpdateProductRequest {
   float sale_price = 8;//售卖价格
   float reference_price = 9;//参考价格
   string product_brand = 10;//商品品牌
+  int64 category_id = 11;//商品类目
 }
 message UpdateProductResponse {
   base.BaseResponse base_resp = 1;
