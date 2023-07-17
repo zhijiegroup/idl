@@ -140,6 +140,8 @@ export interface UpdateProductRequest {
   reference_price?: number;
   /** 商品品牌 */
   product_brand?: string;
+  /** 商品类目 */
+  category_id?: string;
 }
 
 export interface UpdateProductResponse {
