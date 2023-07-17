@@ -470,6 +470,10 @@ export class glory_api {
     request: live_room.DeleteRoomRequest
   ): Promise<live_room.DeleteRoomResponse>;
 
+  ListFinishedRoom(
+    request: live_room.ListFinishedRoomRequest
+  ): Promise<live_room.ListFinishedRoomResponse>;
+
   Record(
     request: live_plan.LiveRecordRequest
   ): Promise<live_plan.LiveRecordResponse>;
@@ -545,6 +549,10 @@ CreateLivePlanProduct create live plan product */
   CreateLiveProductStatus(
     request: live_plan.CreateLiveProductStatusRequest
   ): Promise<live_plan.CreateLiveProductStatusResponse>;
+
+  GetLivingProductStatus(
+    request: live_plan.GetLivingProductStatusRequest
+  ): Promise<live_plan.GetLivingProductStatusResponse>;
 
   /** live text crud */
   CreateLiveText(

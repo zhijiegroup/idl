@@ -880,6 +880,14 @@ export class glory_api {
     );
   }
 
+  ListFinishedRoom(request) {
+    const uri = `${this.uriPrefix}/api/live/list_finished_room`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   Record(request) {
     const uri = `${this.uriPrefix}/api/live/record`;
     const body = JSONbigint.stringify(request);
@@ -1022,6 +1030,12 @@ export class glory_api {
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
+  }
+
+  GetLivingProductStatus(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/live/get_living_product_status${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
 
   CreateLiveText(request) {

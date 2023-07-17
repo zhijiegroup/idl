@@ -178,6 +178,21 @@ export interface DeleteLiveProductStatusResponse {
   base_resp?: base.BaseResponse;
 }
 
+export interface GetLivingProductStatusRequest {
+  base_request?: base.BaseRequest;
+  room_id?: string;
+}
+
+export interface GetLivingProductStatusResponse {
+  base_resp?: base.BaseResponse;
+  product_id?: string;
+  product_name?: string;
+  product_price?: number;
+  product_count?: number;
+  live_room_order?: number;
+  played_at?: string;
+}
+
 export interface LiveRecordRequest {
   base_request?: base.BaseRequest;
   action?: string;

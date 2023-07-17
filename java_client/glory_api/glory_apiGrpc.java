@@ -3301,6 +3301,37 @@ public final class glory_apiGrpc {
     return getDeleteRoomMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<glory_api.LiveRoom.ListFinishedRoomRequest,
+      glory_api.LiveRoom.ListFinishedRoomResponse> getListFinishedRoomMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListFinishedRoom",
+      requestType = glory_api.LiveRoom.ListFinishedRoomRequest.class,
+      responseType = glory_api.LiveRoom.ListFinishedRoomResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<glory_api.LiveRoom.ListFinishedRoomRequest,
+      glory_api.LiveRoom.ListFinishedRoomResponse> getListFinishedRoomMethod() {
+    io.grpc.MethodDescriptor<glory_api.LiveRoom.ListFinishedRoomRequest, glory_api.LiveRoom.ListFinishedRoomResponse> getListFinishedRoomMethod;
+    if ((getListFinishedRoomMethod = glory_apiGrpc.getListFinishedRoomMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListFinishedRoomMethod = glory_apiGrpc.getListFinishedRoomMethod) == null) {
+          glory_apiGrpc.getListFinishedRoomMethod = getListFinishedRoomMethod =
+              io.grpc.MethodDescriptor.<glory_api.LiveRoom.ListFinishedRoomRequest, glory_api.LiveRoom.ListFinishedRoomResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListFinishedRoom"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.LiveRoom.ListFinishedRoomRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.LiveRoom.ListFinishedRoomResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListFinishedRoom"))
+              .build();
+        }
+      }
+    }
+    return getListFinishedRoomMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<glory_api.LivePlanOuterClass.LiveRecordRequest,
       glory_api.LivePlanOuterClass.LiveRecordResponse> getRecordMethod;
 
@@ -3857,6 +3888,37 @@ public final class glory_apiGrpc {
       }
     }
     return getCreateLiveProductStatusMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<glory_api.LivePlanOuterClass.GetLivingProductStatusRequest,
+      glory_api.LivePlanOuterClass.GetLivingProductStatusResponse> getGetLivingProductStatusMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetLivingProductStatus",
+      requestType = glory_api.LivePlanOuterClass.GetLivingProductStatusRequest.class,
+      responseType = glory_api.LivePlanOuterClass.GetLivingProductStatusResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<glory_api.LivePlanOuterClass.GetLivingProductStatusRequest,
+      glory_api.LivePlanOuterClass.GetLivingProductStatusResponse> getGetLivingProductStatusMethod() {
+    io.grpc.MethodDescriptor<glory_api.LivePlanOuterClass.GetLivingProductStatusRequest, glory_api.LivePlanOuterClass.GetLivingProductStatusResponse> getGetLivingProductStatusMethod;
+    if ((getGetLivingProductStatusMethod = glory_apiGrpc.getGetLivingProductStatusMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGetLivingProductStatusMethod = glory_apiGrpc.getGetLivingProductStatusMethod) == null) {
+          glory_apiGrpc.getGetLivingProductStatusMethod = getGetLivingProductStatusMethod =
+              io.grpc.MethodDescriptor.<glory_api.LivePlanOuterClass.GetLivingProductStatusRequest, glory_api.LivePlanOuterClass.GetLivingProductStatusResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetLivingProductStatus"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.LivePlanOuterClass.GetLivingProductStatusRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.LivePlanOuterClass.GetLivingProductStatusResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetLivingProductStatus"))
+              .build();
+        }
+      }
+    }
+    return getGetLivingProductStatusMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<glory_api.LiveTextOuterClass.CreateLiveTextRequest,
@@ -5027,6 +5089,13 @@ public final class glory_apiGrpc {
 
     /**
      */
+    default void listFinishedRoom(glory_api.LiveRoom.ListFinishedRoomRequest request,
+        io.grpc.stub.StreamObserver<glory_api.LiveRoom.ListFinishedRoomResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListFinishedRoomMethod(), responseObserver);
+    }
+
+    /**
+     */
     default void record(glory_api.LivePlanOuterClass.LiveRecordRequest request,
         io.grpc.stub.StreamObserver<glory_api.LivePlanOuterClass.LiveRecordResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRecordMethod(), responseObserver);
@@ -5157,6 +5226,13 @@ public final class glory_apiGrpc {
     default void createLiveProductStatus(glory_api.LivePlanOuterClass.CreateLiveProductStatusRequest request,
         io.grpc.stub.StreamObserver<glory_api.LivePlanOuterClass.CreateLiveProductStatusResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateLiveProductStatusMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void getLivingProductStatus(glory_api.LivePlanOuterClass.GetLivingProductStatusRequest request,
+        io.grpc.stub.StreamObserver<glory_api.LivePlanOuterClass.GetLivingProductStatusResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetLivingProductStatusMethod(), responseObserver);
     }
 
     /**
@@ -6179,6 +6255,14 @@ public final class glory_apiGrpc {
 
     /**
      */
+    public void listFinishedRoom(glory_api.LiveRoom.ListFinishedRoomRequest request,
+        io.grpc.stub.StreamObserver<glory_api.LiveRoom.ListFinishedRoomResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListFinishedRoomMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
     public void record(glory_api.LivePlanOuterClass.LiveRecordRequest request,
         io.grpc.stub.StreamObserver<glory_api.LivePlanOuterClass.LiveRecordResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -6327,6 +6411,14 @@ public final class glory_apiGrpc {
         io.grpc.stub.StreamObserver<glory_api.LivePlanOuterClass.CreateLiveProductStatusResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateLiveProductStatusMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getLivingProductStatus(glory_api.LivePlanOuterClass.GetLivingProductStatusRequest request,
+        io.grpc.stub.StreamObserver<glory_api.LivePlanOuterClass.GetLivingProductStatusResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetLivingProductStatusMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -7242,6 +7334,13 @@ public final class glory_apiGrpc {
 
     /**
      */
+    public glory_api.LiveRoom.ListFinishedRoomResponse listFinishedRoom(glory_api.LiveRoom.ListFinishedRoomRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListFinishedRoomMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
     public glory_api.LivePlanOuterClass.LiveRecordResponse record(glory_api.LivePlanOuterClass.LiveRecordRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRecordMethod(), getCallOptions(), request);
@@ -7372,6 +7471,13 @@ public final class glory_apiGrpc {
     public glory_api.LivePlanOuterClass.CreateLiveProductStatusResponse createLiveProductStatus(glory_api.LivePlanOuterClass.CreateLiveProductStatusRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateLiveProductStatusMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public glory_api.LivePlanOuterClass.GetLivingProductStatusResponse getLivingProductStatus(glory_api.LivePlanOuterClass.GetLivingProductStatusRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetLivingProductStatusMethod(), getCallOptions(), request);
     }
 
     /**
@@ -8383,6 +8489,14 @@ public final class glory_apiGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<glory_api.LiveRoom.ListFinishedRoomResponse> listFinishedRoom(
+        glory_api.LiveRoom.ListFinishedRoomRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListFinishedRoomMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<glory_api.LivePlanOuterClass.LiveRecordResponse> record(
         glory_api.LivePlanOuterClass.LiveRecordRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -8531,6 +8645,14 @@ public final class glory_apiGrpc {
         glory_api.LivePlanOuterClass.CreateLiveProductStatusRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateLiveProductStatusMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<glory_api.LivePlanOuterClass.GetLivingProductStatusResponse> getLivingProductStatus(
+        glory_api.LivePlanOuterClass.GetLivingProductStatusRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetLivingProductStatusMethod(), getCallOptions()), request);
     }
 
     /**
@@ -8726,34 +8848,36 @@ public final class glory_apiGrpc {
   private static final int METHODID_UPDATE_ROOM = 103;
   private static final int METHODID_LIST_ROOM = 104;
   private static final int METHODID_DELETE_ROOM = 105;
-  private static final int METHODID_RECORD = 106;
-  private static final int METHODID_CREATE_LIVE_USER_TOKEN = 107;
-  private static final int METHODID_USER_ENTER_ROOM = 108;
-  private static final int METHODID_USER_EXIT_ROOM = 109;
-  private static final int METHODID_LIST_ACTIVE_ROOM_USER = 110;
-  private static final int METHODID_CREATE_LIVE_PLAN = 111;
-  private static final int METHODID_UPDATE_LIVE_PLAN = 112;
-  private static final int METHODID_LIST_LIVE_PLAN = 113;
-  private static final int METHODID_DELETE_LIVE_PLAN = 114;
-  private static final int METHODID_CREATE_LIVE_PLAN_PRODUCT = 115;
-  private static final int METHODID_UPDATE_LIVE_PLAN_PRODUCT = 116;
-  private static final int METHODID_LIST_LIVE_PLAN_PRODUCT = 117;
-  private static final int METHODID_DELETE_LIVE_PLAN_PRODUCT = 118;
-  private static final int METHODID_LOAD_LIVE_PLAN_PRODUCT = 119;
-  private static final int METHODID_UPDATE_LIVE_PRODUCT_STATUS = 120;
-  private static final int METHODID_LIST_LIVE_PRODUCT_STATUS = 121;
-  private static final int METHODID_DELETE_LIVE_PRODUCT_STATUS = 122;
-  private static final int METHODID_CREATE_LIVE_PRODUCT_STATUS = 123;
-  private static final int METHODID_CREATE_LIVE_TEXT = 124;
-  private static final int METHODID_UPDATE_LIVE_TEXT = 125;
-  private static final int METHODID_LIST_LIVE_TEXT = 126;
-  private static final int METHODID_GET_LIVE_TEXT = 127;
-  private static final int METHODID_DELETE_LIVE_TEXTS = 128;
-  private static final int METHODID_CREATE_TENANT = 129;
-  private static final int METHODID_GET_TENANT = 130;
-  private static final int METHODID_UPDATE_TENANT = 131;
-  private static final int METHODID_DELETE_TENANT = 132;
-  private static final int METHODID_LIST_TENANT = 133;
+  private static final int METHODID_LIST_FINISHED_ROOM = 106;
+  private static final int METHODID_RECORD = 107;
+  private static final int METHODID_CREATE_LIVE_USER_TOKEN = 108;
+  private static final int METHODID_USER_ENTER_ROOM = 109;
+  private static final int METHODID_USER_EXIT_ROOM = 110;
+  private static final int METHODID_LIST_ACTIVE_ROOM_USER = 111;
+  private static final int METHODID_CREATE_LIVE_PLAN = 112;
+  private static final int METHODID_UPDATE_LIVE_PLAN = 113;
+  private static final int METHODID_LIST_LIVE_PLAN = 114;
+  private static final int METHODID_DELETE_LIVE_PLAN = 115;
+  private static final int METHODID_CREATE_LIVE_PLAN_PRODUCT = 116;
+  private static final int METHODID_UPDATE_LIVE_PLAN_PRODUCT = 117;
+  private static final int METHODID_LIST_LIVE_PLAN_PRODUCT = 118;
+  private static final int METHODID_DELETE_LIVE_PLAN_PRODUCT = 119;
+  private static final int METHODID_LOAD_LIVE_PLAN_PRODUCT = 120;
+  private static final int METHODID_UPDATE_LIVE_PRODUCT_STATUS = 121;
+  private static final int METHODID_LIST_LIVE_PRODUCT_STATUS = 122;
+  private static final int METHODID_DELETE_LIVE_PRODUCT_STATUS = 123;
+  private static final int METHODID_CREATE_LIVE_PRODUCT_STATUS = 124;
+  private static final int METHODID_GET_LIVING_PRODUCT_STATUS = 125;
+  private static final int METHODID_CREATE_LIVE_TEXT = 126;
+  private static final int METHODID_UPDATE_LIVE_TEXT = 127;
+  private static final int METHODID_LIST_LIVE_TEXT = 128;
+  private static final int METHODID_GET_LIVE_TEXT = 129;
+  private static final int METHODID_DELETE_LIVE_TEXTS = 130;
+  private static final int METHODID_CREATE_TENANT = 131;
+  private static final int METHODID_GET_TENANT = 132;
+  private static final int METHODID_UPDATE_TENANT = 133;
+  private static final int METHODID_DELETE_TENANT = 134;
+  private static final int METHODID_LIST_TENANT = 135;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -9196,6 +9320,10 @@ public final class glory_apiGrpc {
           serviceImpl.deleteRoom((glory_api.LiveRoom.DeleteRoomRequest) request,
               (io.grpc.stub.StreamObserver<glory_api.LiveRoom.DeleteRoomResponse>) responseObserver);
           break;
+        case METHODID_LIST_FINISHED_ROOM:
+          serviceImpl.listFinishedRoom((glory_api.LiveRoom.ListFinishedRoomRequest) request,
+              (io.grpc.stub.StreamObserver<glory_api.LiveRoom.ListFinishedRoomResponse>) responseObserver);
+          break;
         case METHODID_RECORD:
           serviceImpl.record((glory_api.LivePlanOuterClass.LiveRecordRequest) request,
               (io.grpc.stub.StreamObserver<glory_api.LivePlanOuterClass.LiveRecordResponse>) responseObserver);
@@ -9267,6 +9395,10 @@ public final class glory_apiGrpc {
         case METHODID_CREATE_LIVE_PRODUCT_STATUS:
           serviceImpl.createLiveProductStatus((glory_api.LivePlanOuterClass.CreateLiveProductStatusRequest) request,
               (io.grpc.stub.StreamObserver<glory_api.LivePlanOuterClass.CreateLiveProductStatusResponse>) responseObserver);
+          break;
+        case METHODID_GET_LIVING_PRODUCT_STATUS:
+          serviceImpl.getLivingProductStatus((glory_api.LivePlanOuterClass.GetLivingProductStatusRequest) request,
+              (io.grpc.stub.StreamObserver<glory_api.LivePlanOuterClass.GetLivingProductStatusResponse>) responseObserver);
           break;
         case METHODID_CREATE_LIVE_TEXT:
           serviceImpl.createLiveText((glory_api.LiveTextOuterClass.CreateLiveTextRequest) request,
@@ -10069,6 +10201,13 @@ public final class glory_apiGrpc {
               glory_api.LiveRoom.DeleteRoomResponse>(
                 service, METHODID_DELETE_ROOM)))
         .addMethod(
+          getListFinishedRoomMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              glory_api.LiveRoom.ListFinishedRoomRequest,
+              glory_api.LiveRoom.ListFinishedRoomResponse>(
+                service, METHODID_LIST_FINISHED_ROOM)))
+        .addMethod(
           getRecordMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -10194,6 +10333,13 @@ public final class glory_apiGrpc {
               glory_api.LivePlanOuterClass.CreateLiveProductStatusRequest,
               glory_api.LivePlanOuterClass.CreateLiveProductStatusResponse>(
                 service, METHODID_CREATE_LIVE_PRODUCT_STATUS)))
+        .addMethod(
+          getGetLivingProductStatusMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              glory_api.LivePlanOuterClass.GetLivingProductStatusRequest,
+              glory_api.LivePlanOuterClass.GetLivingProductStatusResponse>(
+                service, METHODID_GET_LIVING_PRODUCT_STATUS)))
         .addMethod(
           getCreateLiveTextMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -10418,6 +10564,7 @@ public final class glory_apiGrpc {
               .addMethod(getUpdateRoomMethod())
               .addMethod(getListRoomMethod())
               .addMethod(getDeleteRoomMethod())
+              .addMethod(getListFinishedRoomMethod())
               .addMethod(getRecordMethod())
               .addMethod(getCreateLiveUserTokenMethod())
               .addMethod(getUserEnterRoomMethod())
@@ -10436,6 +10583,7 @@ public final class glory_apiGrpc {
               .addMethod(getListLiveProductStatusMethod())
               .addMethod(getDeleteLiveProductStatusMethod())
               .addMethod(getCreateLiveProductStatusMethod())
+              .addMethod(getGetLivingProductStatusMethod())
               .addMethod(getCreateLiveTextMethod())
               .addMethod(getUpdateLiveTextMethod())
               .addMethod(getListLiveTextMethod())

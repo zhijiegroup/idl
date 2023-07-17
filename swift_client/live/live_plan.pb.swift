@@ -769,6 +769,62 @@ struct GloryApi_DeleteLiveProductStatusResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
+struct GloryApi_GetLivingProductStatusRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var roomID: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+struct GloryApi_GetLivingProductStatusResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var productID: Int64 = 0
+
+  var productName: String = String()
+
+  var productPrice: Double = 0
+
+  var productCount: Int32 = 0
+
+  var liveRoomOrder: Int32 = 0
+
+  var playedAt: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+}
+
 struct GloryApi_LiveRecordRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -847,6 +903,8 @@ extension GloryApi_ListLiveProductStatusRequest: @unchecked Sendable {}
 extension GloryApi_ListLiveProductStatusResponse: @unchecked Sendable {}
 extension GloryApi_DeleteLiveProductStatusRequest: @unchecked Sendable {}
 extension GloryApi_DeleteLiveProductStatusResponse: @unchecked Sendable {}
+extension GloryApi_GetLivingProductStatusRequest: @unchecked Sendable {}
+extension GloryApi_GetLivingProductStatusResponse: @unchecked Sendable {}
 extension GloryApi_LiveRecordRequest: @unchecked Sendable {}
 extension GloryApi_LiveRecordResponse: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
@@ -2158,6 +2216,120 @@ extension GloryApi_DeleteLiveProductStatusResponse: SwiftProtobuf.Message, Swift
 
   static func ==(lhs: GloryApi_DeleteLiveProductStatusResponse, rhs: GloryApi_DeleteLiveProductStatusResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetLivingProductStatusRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetLivingProductStatusRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    2: .standard(proto: "room_id"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.roomID) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if self.roomID != 0 {
+      try visitor.visitSingularInt64Field(value: self.roomID, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetLivingProductStatusRequest, rhs: GloryApi_GetLivingProductStatusRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.roomID != rhs.roomID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetLivingProductStatusResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetLivingProductStatusResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .standard(proto: "product_id"),
+    3: .standard(proto: "product_name"),
+    4: .standard(proto: "product_price"),
+    5: .standard(proto: "product_count"),
+    6: .standard(proto: "live_room_order"),
+    7: .standard(proto: "played_at"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.productID) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.productName) }()
+      case 4: try { try decoder.decodeSingularDoubleField(value: &self.productPrice) }()
+      case 5: try { try decoder.decodeSingularInt32Field(value: &self.productCount) }()
+      case 6: try { try decoder.decodeSingularInt32Field(value: &self.liveRoomOrder) }()
+      case 7: try { try decoder.decodeSingularStringField(value: &self.playedAt) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if self.productID != 0 {
+      try visitor.visitSingularInt64Field(value: self.productID, fieldNumber: 2)
+    }
+    if !self.productName.isEmpty {
+      try visitor.visitSingularStringField(value: self.productName, fieldNumber: 3)
+    }
+    if self.productPrice != 0 {
+      try visitor.visitSingularDoubleField(value: self.productPrice, fieldNumber: 4)
+    }
+    if self.productCount != 0 {
+      try visitor.visitSingularInt32Field(value: self.productCount, fieldNumber: 5)
+    }
+    if self.liveRoomOrder != 0 {
+      try visitor.visitSingularInt32Field(value: self.liveRoomOrder, fieldNumber: 6)
+    }
+    if !self.playedAt.isEmpty {
+      try visitor.visitSingularStringField(value: self.playedAt, fieldNumber: 7)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetLivingProductStatusResponse, rhs: GloryApi_GetLivingProductStatusResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.productID != rhs.productID {return false}
+    if lhs.productName != rhs.productName {return false}
+    if lhs.productPrice != rhs.productPrice {return false}
+    if lhs.productCount != rhs.productCount {return false}
+    if lhs.liveRoomOrder != rhs.liveRoomOrder {return false}
+    if lhs.playedAt != rhs.playedAt {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

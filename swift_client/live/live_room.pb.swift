@@ -348,6 +348,120 @@ struct GloryApi_DeleteRoomResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
+struct GloryApi_DealAmount {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var curreny: String = String()
+
+  var amount: Double = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct GloryApi_FinishedRoom {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var roomID: Int64 = 0
+
+  var userName: String = String()
+
+  var sellerID: Int64 = 0
+
+  var startTime: String = String()
+
+  var averageOnlineUser: Double = 0
+
+  var roomProductAmount: Int64 = 0
+
+  var roomDealAmount: [GloryApi_DealAmount] = []
+
+  var roomOrderAmount: Int64 = 0
+
+  var roomImageURL: String = String()
+
+  ///直播的标题
+  var roomTitle: String = String()
+
+  /// 直播间的封面的image 的id
+  var roomImageAttachmentID: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct GloryApi_ListFinishedRoomRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var shopID: Int64 = 0
+
+  var pagination: Base_PaginationRequest {
+    get {return _pagination ?? Base_PaginationRequest()}
+    set {_pagination = newValue}
+  }
+  /// Returns true if `pagination` has been explicitly set.
+  var hasPagination: Bool {return self._pagination != nil}
+  /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
+  mutating func clearPagination() {self._pagination = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+  fileprivate var _pagination: Base_PaginationRequest? = nil
+}
+
+struct GloryApi_ListFinishedRoomResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var room: [GloryApi_FinishedRoom] = []
+
+  var pagination: Base_PaginationResponse {
+    get {return _pagination ?? Base_PaginationResponse()}
+    set {_pagination = newValue}
+  }
+  /// Returns true if `pagination` has been explicitly set.
+  var hasPagination: Bool {return self._pagination != nil}
+  /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
+  mutating func clearPagination() {self._pagination = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _pagination: Base_PaginationResponse? = nil
+}
+
 #if swift(>=5.5) && canImport(_Concurrency)
 extension GloryApi_Room: @unchecked Sendable {}
 extension GloryApi_CreateRoomRequest: @unchecked Sendable {}
@@ -360,6 +474,10 @@ extension GloryApi_ListRoomRequest: @unchecked Sendable {}
 extension GloryApi_ListRoomResponse: @unchecked Sendable {}
 extension GloryApi_DeleteRoomRequest: @unchecked Sendable {}
 extension GloryApi_DeleteRoomResponse: @unchecked Sendable {}
+extension GloryApi_DealAmount: @unchecked Sendable {}
+extension GloryApi_FinishedRoom: @unchecked Sendable {}
+extension GloryApi_ListFinishedRoomRequest: @unchecked Sendable {}
+extension GloryApi_ListFinishedRoomResponse: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -1021,6 +1139,232 @@ extension GloryApi_DeleteRoomResponse: SwiftProtobuf.Message, SwiftProtobuf._Mes
 
   static func ==(lhs: GloryApi_DeleteRoomResponse, rhs: GloryApi_DeleteRoomResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_DealAmount: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".DealAmount"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "curreny"),
+    2: .same(proto: "amount"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.curreny) }()
+      case 2: try { try decoder.decodeSingularDoubleField(value: &self.amount) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.curreny.isEmpty {
+      try visitor.visitSingularStringField(value: self.curreny, fieldNumber: 1)
+    }
+    if self.amount != 0 {
+      try visitor.visitSingularDoubleField(value: self.amount, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_DealAmount, rhs: GloryApi_DealAmount) -> Bool {
+    if lhs.curreny != rhs.curreny {return false}
+    if lhs.amount != rhs.amount {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_FinishedRoom: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".FinishedRoom"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "room_id"),
+    2: .standard(proto: "user_name"),
+    3: .standard(proto: "seller_id"),
+    4: .standard(proto: "start_time"),
+    5: .standard(proto: "average_online_user"),
+    6: .standard(proto: "room_product_amount"),
+    7: .standard(proto: "room_deal_amount"),
+    8: .standard(proto: "room_order_amount"),
+    9: .standard(proto: "room_image_url"),
+    10: .standard(proto: "room_title"),
+    11: .standard(proto: "room_image_attachment_id"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.roomID) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.userName) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.sellerID) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.startTime) }()
+      case 5: try { try decoder.decodeSingularDoubleField(value: &self.averageOnlineUser) }()
+      case 6: try { try decoder.decodeSingularInt64Field(value: &self.roomProductAmount) }()
+      case 7: try { try decoder.decodeRepeatedMessageField(value: &self.roomDealAmount) }()
+      case 8: try { try decoder.decodeSingularInt64Field(value: &self.roomOrderAmount) }()
+      case 9: try { try decoder.decodeSingularStringField(value: &self.roomImageURL) }()
+      case 10: try { try decoder.decodeSingularStringField(value: &self.roomTitle) }()
+      case 11: try { try decoder.decodeSingularInt64Field(value: &self.roomImageAttachmentID) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.roomID != 0 {
+      try visitor.visitSingularInt64Field(value: self.roomID, fieldNumber: 1)
+    }
+    if !self.userName.isEmpty {
+      try visitor.visitSingularStringField(value: self.userName, fieldNumber: 2)
+    }
+    if self.sellerID != 0 {
+      try visitor.visitSingularInt64Field(value: self.sellerID, fieldNumber: 3)
+    }
+    if !self.startTime.isEmpty {
+      try visitor.visitSingularStringField(value: self.startTime, fieldNumber: 4)
+    }
+    if self.averageOnlineUser != 0 {
+      try visitor.visitSingularDoubleField(value: self.averageOnlineUser, fieldNumber: 5)
+    }
+    if self.roomProductAmount != 0 {
+      try visitor.visitSingularInt64Field(value: self.roomProductAmount, fieldNumber: 6)
+    }
+    if !self.roomDealAmount.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.roomDealAmount, fieldNumber: 7)
+    }
+    if self.roomOrderAmount != 0 {
+      try visitor.visitSingularInt64Field(value: self.roomOrderAmount, fieldNumber: 8)
+    }
+    if !self.roomImageURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.roomImageURL, fieldNumber: 9)
+    }
+    if !self.roomTitle.isEmpty {
+      try visitor.visitSingularStringField(value: self.roomTitle, fieldNumber: 10)
+    }
+    if self.roomImageAttachmentID != 0 {
+      try visitor.visitSingularInt64Field(value: self.roomImageAttachmentID, fieldNumber: 11)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_FinishedRoom, rhs: GloryApi_FinishedRoom) -> Bool {
+    if lhs.roomID != rhs.roomID {return false}
+    if lhs.userName != rhs.userName {return false}
+    if lhs.sellerID != rhs.sellerID {return false}
+    if lhs.startTime != rhs.startTime {return false}
+    if lhs.averageOnlineUser != rhs.averageOnlineUser {return false}
+    if lhs.roomProductAmount != rhs.roomProductAmount {return false}
+    if lhs.roomDealAmount != rhs.roomDealAmount {return false}
+    if lhs.roomOrderAmount != rhs.roomOrderAmount {return false}
+    if lhs.roomImageURL != rhs.roomImageURL {return false}
+    if lhs.roomTitle != rhs.roomTitle {return false}
+    if lhs.roomImageAttachmentID != rhs.roomImageAttachmentID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_ListFinishedRoomRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ListFinishedRoomRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    2: .standard(proto: "shop_id"),
+    100: .same(proto: "pagination"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
+      case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if self.shopID != 0 {
+      try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 2)
+    }
+    try { if let v = self._pagination {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ListFinishedRoomRequest, rhs: GloryApi_ListFinishedRoomRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.shopID != rhs.shopID {return false}
+    if lhs._pagination != rhs._pagination {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_ListFinishedRoomResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ListFinishedRoomResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .same(proto: "room"),
+    100: .same(proto: "pagination"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.room) }()
+      case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if !self.room.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.room, fieldNumber: 2)
+    }
+    try { if let v = self._pagination {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ListFinishedRoomResponse, rhs: GloryApi_ListFinishedRoomResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.room != rhs.room {return false}
+    if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -88,3 +88,36 @@ export interface DeleteRoomRequest {
 export interface DeleteRoomResponse {
   base_resp?: base.BaseResponse;
 }
+
+export interface DealAmount {
+  curreny?: string;
+  amount?: number;
+}
+
+export interface FinishedRoom {
+  room_id?: string;
+  user_name?: string;
+  seller_id?: string;
+  start_time?: string;
+  average_online_user?: number;
+  room_product_amount?: string;
+  room_deal_amount?: Array<DealAmount>;
+  room_order_amount?: string;
+  room_image_url?: string;
+  /** 直播的标题 */
+  room_title?: string;
+  /** 直播间的封面的image 的id */
+  room_image_attachment_id?: string;
+}
+
+export interface ListFinishedRoomRequest {
+  base_request?: base.BaseRequest;
+  shop_id?: string;
+  pagination?: base.PaginationRequest;
+}
+
+export interface ListFinishedRoomResponse {
+  base_resp?: base.BaseResponse;
+  room?: Array<FinishedRoom>;
+  pagination?: base.PaginationResponse;
+}
