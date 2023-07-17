@@ -19,102 +19,108 @@ public final class LiveRoom {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int64 room_id = 1;</code>
+     * <code>int64 shop_id = 1;</code>
+     * @return The shopId.
+     */
+    long getShopId();
+
+    /**
+     * <code>int64 room_id = 2;</code>
      * @return The roomId.
      */
     long getRoomId();
 
     /**
-     * <code>int64 user_id = 2;</code>
+     * <code>int64 user_id = 3;</code>
      * @return The userId.
      */
     long getUserId();
 
     /**
-     * <code>string group_id = 3;</code>
+     * <code>string group_id = 4;</code>
      * @return The groupId.
      */
     java.lang.String getGroupId();
     /**
-     * <code>string group_id = 3;</code>
+     * <code>string group_id = 4;</code>
      * @return The bytes for groupId.
      */
     com.google.protobuf.ByteString
         getGroupIdBytes();
 
     /**
-     * <code>string app_name = 4;</code>
+     * <code>string app_name = 5;</code>
      * @return The appName.
      */
     java.lang.String getAppName();
     /**
-     * <code>string app_name = 4;</code>
+     * <code>string app_name = 5;</code>
      * @return The bytes for appName.
      */
     com.google.protobuf.ByteString
         getAppNameBytes();
 
     /**
-     * <code>string stream_name = 5;</code>
+     * <code>string stream_name = 6;</code>
      * @return The streamName.
      */
     java.lang.String getStreamName();
     /**
-     * <code>string stream_name = 5;</code>
+     * <code>string stream_name = 6;</code>
      * @return The bytes for streamName.
      */
     com.google.protobuf.ByteString
         getStreamNameBytes();
 
     /**
-     * <code>string up_url = 6;</code>
+     * <code>string up_url = 7;</code>
      * @return The upUrl.
      */
     java.lang.String getUpUrl();
     /**
-     * <code>string up_url = 6;</code>
+     * <code>string up_url = 7;</code>
      * @return The bytes for upUrl.
      */
     com.google.protobuf.ByteString
         getUpUrlBytes();
 
     /**
-     * <code>string play_url = 7;</code>
+     * <code>string play_url = 8;</code>
      * @return The playUrl.
      */
     java.lang.String getPlayUrl();
     /**
-     * <code>string play_url = 7;</code>
+     * <code>string play_url = 8;</code>
      * @return The bytes for playUrl.
      */
     com.google.protobuf.ByteString
         getPlayUrlBytes();
 
     /**
-     * <code>string start_time = 8;</code>
+     * <code>string start_time = 9;</code>
      * @return The startTime.
      */
     java.lang.String getStartTime();
     /**
-     * <code>string start_time = 8;</code>
+     * <code>string start_time = 9;</code>
      * @return The bytes for startTime.
      */
     com.google.protobuf.ByteString
         getStartTimeBytes();
 
     /**
-     * <code>int64 like_count = 9;</code>
+     * <code>int64 like_count = 10;</code>
      * @return The likeCount.
      */
     long getLikeCount();
 
     /**
-     * <code>string end_time = 10;</code>
+     * <code>string end_time = 11;</code>
      * @return The endTime.
      */
     java.lang.String getEndTime();
     /**
-     * <code>string end_time = 10;</code>
+     * <code>string end_time = 11;</code>
      * @return The bytes for endTime.
      */
     com.google.protobuf.ByteString
@@ -125,7 +131,7 @@ public final class LiveRoom {
      * if end_time not null, means closed, if null, means still active
      * </pre>
      *
-     * <code>string status = 11;</code>
+     * <code>string status = 12;</code>
      * @return The status.
      */
     java.lang.String getStatus();
@@ -134,7 +140,7 @@ public final class LiveRoom {
      * if end_time not null, means closed, if null, means still active
      * </pre>
      *
-     * <code>string status = 11;</code>
+     * <code>string status = 12;</code>
      * @return The bytes for status.
      */
     com.google.protobuf.ByteString
@@ -145,7 +151,7 @@ public final class LiveRoom {
      * 设置直播商品计划id
      * </pre>
      *
-     * <code>int64 live_plan_id = 12;</code>
+     * <code>int64 live_plan_id = 13;</code>
      * @return The livePlanId.
      */
     long getLivePlanId();
@@ -155,7 +161,7 @@ public final class LiveRoom {
      *直播的标题
      * </pre>
      *
-     * <code>string room_title = 13;</code>
+     * <code>string room_title = 14;</code>
      * @return The roomTitle.
      */
     java.lang.String getRoomTitle();
@@ -164,7 +170,7 @@ public final class LiveRoom {
      *直播的标题
      * </pre>
      *
-     * <code>string room_title = 13;</code>
+     * <code>string room_title = 14;</code>
      * @return The bytes for roomTitle.
      */
     com.google.protobuf.ByteString
@@ -175,7 +181,7 @@ public final class LiveRoom {
      *直播的封面的url
      * </pre>
      *
-     * <code>string room_image_url = 14;</code>
+     * <code>string room_image_url = 15;</code>
      * @return The roomImageUrl.
      */
     java.lang.String getRoomImageUrl();
@@ -184,7 +190,7 @@ public final class LiveRoom {
      *直播的封面的url
      * </pre>
      *
-     * <code>string room_image_url = 14;</code>
+     * <code>string room_image_url = 15;</code>
      * @return The bytes for roomImageUrl.
      */
     com.google.protobuf.ByteString
@@ -195,7 +201,7 @@ public final class LiveRoom {
      * 直播间的封面的image 的id
      * </pre>
      *
-     * <code>int64 room_image_attachment_id = 15;</code>
+     * <code>int64 room_image_attachment_id = 16;</code>
      * @return The roomImageAttachmentId.
      */
     long getRoomImageAttachmentId();
@@ -257,85 +263,90 @@ public final class LiveRoom {
               break;
             case 8: {
 
-              roomId_ = input.readInt64();
+              shopId_ = input.readInt64();
               break;
             }
             case 16: {
 
-              userId_ = input.readInt64();
+              roomId_ = input.readInt64();
               break;
             }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 24: {
 
-              groupId_ = s;
+              userId_ = input.readInt64();
               break;
             }
             case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              appName_ = s;
+              groupId_ = s;
               break;
             }
             case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              streamName_ = s;
+              appName_ = s;
               break;
             }
             case 50: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              upUrl_ = s;
+              streamName_ = s;
               break;
             }
             case 58: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              playUrl_ = s;
+              upUrl_ = s;
               break;
             }
             case 66: {
               java.lang.String s = input.readStringRequireUtf8();
 
+              playUrl_ = s;
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
               startTime_ = s;
               break;
             }
-            case 72: {
+            case 80: {
 
               likeCount_ = input.readInt64();
-              break;
-            }
-            case 82: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              endTime_ = s;
               break;
             }
             case 90: {
               java.lang.String s = input.readStringRequireUtf8();
 
+              endTime_ = s;
+              break;
+            }
+            case 98: {
+              java.lang.String s = input.readStringRequireUtf8();
+
               status_ = s;
               break;
             }
-            case 96: {
+            case 104: {
 
               livePlanId_ = input.readInt64();
-              break;
-            }
-            case 106: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              roomTitle_ = s;
               break;
             }
             case 114: {
               java.lang.String s = input.readStringRequireUtf8();
 
+              roomTitle_ = s;
+              break;
+            }
+            case 122: {
+              java.lang.String s = input.readStringRequireUtf8();
+
               roomImageUrl_ = s;
               break;
             }
-            case 120: {
+            case 128: {
 
               roomImageAttachmentId_ = input.readInt64();
               break;
@@ -372,10 +383,21 @@ public final class LiveRoom {
               glory_api.LiveRoom.Room.class, glory_api.LiveRoom.Room.Builder.class);
     }
 
-    public static final int ROOM_ID_FIELD_NUMBER = 1;
+    public static final int SHOP_ID_FIELD_NUMBER = 1;
+    private long shopId_;
+    /**
+     * <code>int64 shop_id = 1;</code>
+     * @return The shopId.
+     */
+    @java.lang.Override
+    public long getShopId() {
+      return shopId_;
+    }
+
+    public static final int ROOM_ID_FIELD_NUMBER = 2;
     private long roomId_;
     /**
-     * <code>int64 room_id = 1;</code>
+     * <code>int64 room_id = 2;</code>
      * @return The roomId.
      */
     @java.lang.Override
@@ -383,10 +405,10 @@ public final class LiveRoom {
       return roomId_;
     }
 
-    public static final int USER_ID_FIELD_NUMBER = 2;
+    public static final int USER_ID_FIELD_NUMBER = 3;
     private long userId_;
     /**
-     * <code>int64 user_id = 2;</code>
+     * <code>int64 user_id = 3;</code>
      * @return The userId.
      */
     @java.lang.Override
@@ -394,10 +416,10 @@ public final class LiveRoom {
       return userId_;
     }
 
-    public static final int GROUP_ID_FIELD_NUMBER = 3;
+    public static final int GROUP_ID_FIELD_NUMBER = 4;
     private volatile java.lang.Object groupId_;
     /**
-     * <code>string group_id = 3;</code>
+     * <code>string group_id = 4;</code>
      * @return The groupId.
      */
     @java.lang.Override
@@ -414,7 +436,7 @@ public final class LiveRoom {
       }
     }
     /**
-     * <code>string group_id = 3;</code>
+     * <code>string group_id = 4;</code>
      * @return The bytes for groupId.
      */
     @java.lang.Override
@@ -432,10 +454,10 @@ public final class LiveRoom {
       }
     }
 
-    public static final int APP_NAME_FIELD_NUMBER = 4;
+    public static final int APP_NAME_FIELD_NUMBER = 5;
     private volatile java.lang.Object appName_;
     /**
-     * <code>string app_name = 4;</code>
+     * <code>string app_name = 5;</code>
      * @return The appName.
      */
     @java.lang.Override
@@ -452,7 +474,7 @@ public final class LiveRoom {
       }
     }
     /**
-     * <code>string app_name = 4;</code>
+     * <code>string app_name = 5;</code>
      * @return The bytes for appName.
      */
     @java.lang.Override
@@ -470,10 +492,10 @@ public final class LiveRoom {
       }
     }
 
-    public static final int STREAM_NAME_FIELD_NUMBER = 5;
+    public static final int STREAM_NAME_FIELD_NUMBER = 6;
     private volatile java.lang.Object streamName_;
     /**
-     * <code>string stream_name = 5;</code>
+     * <code>string stream_name = 6;</code>
      * @return The streamName.
      */
     @java.lang.Override
@@ -490,7 +512,7 @@ public final class LiveRoom {
       }
     }
     /**
-     * <code>string stream_name = 5;</code>
+     * <code>string stream_name = 6;</code>
      * @return The bytes for streamName.
      */
     @java.lang.Override
@@ -508,10 +530,10 @@ public final class LiveRoom {
       }
     }
 
-    public static final int UP_URL_FIELD_NUMBER = 6;
+    public static final int UP_URL_FIELD_NUMBER = 7;
     private volatile java.lang.Object upUrl_;
     /**
-     * <code>string up_url = 6;</code>
+     * <code>string up_url = 7;</code>
      * @return The upUrl.
      */
     @java.lang.Override
@@ -528,7 +550,7 @@ public final class LiveRoom {
       }
     }
     /**
-     * <code>string up_url = 6;</code>
+     * <code>string up_url = 7;</code>
      * @return The bytes for upUrl.
      */
     @java.lang.Override
@@ -546,10 +568,10 @@ public final class LiveRoom {
       }
     }
 
-    public static final int PLAY_URL_FIELD_NUMBER = 7;
+    public static final int PLAY_URL_FIELD_NUMBER = 8;
     private volatile java.lang.Object playUrl_;
     /**
-     * <code>string play_url = 7;</code>
+     * <code>string play_url = 8;</code>
      * @return The playUrl.
      */
     @java.lang.Override
@@ -566,7 +588,7 @@ public final class LiveRoom {
       }
     }
     /**
-     * <code>string play_url = 7;</code>
+     * <code>string play_url = 8;</code>
      * @return The bytes for playUrl.
      */
     @java.lang.Override
@@ -584,10 +606,10 @@ public final class LiveRoom {
       }
     }
 
-    public static final int START_TIME_FIELD_NUMBER = 8;
+    public static final int START_TIME_FIELD_NUMBER = 9;
     private volatile java.lang.Object startTime_;
     /**
-     * <code>string start_time = 8;</code>
+     * <code>string start_time = 9;</code>
      * @return The startTime.
      */
     @java.lang.Override
@@ -604,7 +626,7 @@ public final class LiveRoom {
       }
     }
     /**
-     * <code>string start_time = 8;</code>
+     * <code>string start_time = 9;</code>
      * @return The bytes for startTime.
      */
     @java.lang.Override
@@ -622,10 +644,10 @@ public final class LiveRoom {
       }
     }
 
-    public static final int LIKE_COUNT_FIELD_NUMBER = 9;
+    public static final int LIKE_COUNT_FIELD_NUMBER = 10;
     private long likeCount_;
     /**
-     * <code>int64 like_count = 9;</code>
+     * <code>int64 like_count = 10;</code>
      * @return The likeCount.
      */
     @java.lang.Override
@@ -633,10 +655,10 @@ public final class LiveRoom {
       return likeCount_;
     }
 
-    public static final int END_TIME_FIELD_NUMBER = 10;
+    public static final int END_TIME_FIELD_NUMBER = 11;
     private volatile java.lang.Object endTime_;
     /**
-     * <code>string end_time = 10;</code>
+     * <code>string end_time = 11;</code>
      * @return The endTime.
      */
     @java.lang.Override
@@ -653,7 +675,7 @@ public final class LiveRoom {
       }
     }
     /**
-     * <code>string end_time = 10;</code>
+     * <code>string end_time = 11;</code>
      * @return The bytes for endTime.
      */
     @java.lang.Override
@@ -671,14 +693,14 @@ public final class LiveRoom {
       }
     }
 
-    public static final int STATUS_FIELD_NUMBER = 11;
+    public static final int STATUS_FIELD_NUMBER = 12;
     private volatile java.lang.Object status_;
     /**
      * <pre>
      * if end_time not null, means closed, if null, means still active
      * </pre>
      *
-     * <code>string status = 11;</code>
+     * <code>string status = 12;</code>
      * @return The status.
      */
     @java.lang.Override
@@ -699,7 +721,7 @@ public final class LiveRoom {
      * if end_time not null, means closed, if null, means still active
      * </pre>
      *
-     * <code>string status = 11;</code>
+     * <code>string status = 12;</code>
      * @return The bytes for status.
      */
     @java.lang.Override
@@ -717,14 +739,14 @@ public final class LiveRoom {
       }
     }
 
-    public static final int LIVE_PLAN_ID_FIELD_NUMBER = 12;
+    public static final int LIVE_PLAN_ID_FIELD_NUMBER = 13;
     private long livePlanId_;
     /**
      * <pre>
      * 设置直播商品计划id
      * </pre>
      *
-     * <code>int64 live_plan_id = 12;</code>
+     * <code>int64 live_plan_id = 13;</code>
      * @return The livePlanId.
      */
     @java.lang.Override
@@ -732,14 +754,14 @@ public final class LiveRoom {
       return livePlanId_;
     }
 
-    public static final int ROOM_TITLE_FIELD_NUMBER = 13;
+    public static final int ROOM_TITLE_FIELD_NUMBER = 14;
     private volatile java.lang.Object roomTitle_;
     /**
      * <pre>
      *直播的标题
      * </pre>
      *
-     * <code>string room_title = 13;</code>
+     * <code>string room_title = 14;</code>
      * @return The roomTitle.
      */
     @java.lang.Override
@@ -760,7 +782,7 @@ public final class LiveRoom {
      *直播的标题
      * </pre>
      *
-     * <code>string room_title = 13;</code>
+     * <code>string room_title = 14;</code>
      * @return The bytes for roomTitle.
      */
     @java.lang.Override
@@ -778,14 +800,14 @@ public final class LiveRoom {
       }
     }
 
-    public static final int ROOM_IMAGE_URL_FIELD_NUMBER = 14;
+    public static final int ROOM_IMAGE_URL_FIELD_NUMBER = 15;
     private volatile java.lang.Object roomImageUrl_;
     /**
      * <pre>
      *直播的封面的url
      * </pre>
      *
-     * <code>string room_image_url = 14;</code>
+     * <code>string room_image_url = 15;</code>
      * @return The roomImageUrl.
      */
     @java.lang.Override
@@ -806,7 +828,7 @@ public final class LiveRoom {
      *直播的封面的url
      * </pre>
      *
-     * <code>string room_image_url = 14;</code>
+     * <code>string room_image_url = 15;</code>
      * @return The bytes for roomImageUrl.
      */
     @java.lang.Override
@@ -824,14 +846,14 @@ public final class LiveRoom {
       }
     }
 
-    public static final int ROOM_IMAGE_ATTACHMENT_ID_FIELD_NUMBER = 15;
+    public static final int ROOM_IMAGE_ATTACHMENT_ID_FIELD_NUMBER = 16;
     private long roomImageAttachmentId_;
     /**
      * <pre>
      * 直播间的封面的image 的id
      * </pre>
      *
-     * <code>int64 room_image_attachment_id = 15;</code>
+     * <code>int64 room_image_attachment_id = 16;</code>
      * @return The roomImageAttachmentId.
      */
     @java.lang.Override
@@ -853,50 +875,53 @@ public final class LiveRoom {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (shopId_ != 0L) {
+        output.writeInt64(1, shopId_);
+      }
       if (roomId_ != 0L) {
-        output.writeInt64(1, roomId_);
+        output.writeInt64(2, roomId_);
       }
       if (userId_ != 0L) {
-        output.writeInt64(2, userId_);
+        output.writeInt64(3, userId_);
       }
       if (!getGroupIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, groupId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, groupId_);
       }
       if (!getAppNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, appName_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, appName_);
       }
       if (!getStreamNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, streamName_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, streamName_);
       }
       if (!getUpUrlBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, upUrl_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, upUrl_);
       }
       if (!getPlayUrlBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, playUrl_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, playUrl_);
       }
       if (!getStartTimeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, startTime_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, startTime_);
       }
       if (likeCount_ != 0L) {
-        output.writeInt64(9, likeCount_);
+        output.writeInt64(10, likeCount_);
       }
       if (!getEndTimeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, endTime_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, endTime_);
       }
       if (!getStatusBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, status_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, status_);
       }
       if (livePlanId_ != 0L) {
-        output.writeInt64(12, livePlanId_);
+        output.writeInt64(13, livePlanId_);
       }
       if (!getRoomTitleBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, roomTitle_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, roomTitle_);
       }
       if (!getRoomImageUrlBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, roomImageUrl_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, roomImageUrl_);
       }
       if (roomImageAttachmentId_ != 0L) {
-        output.writeInt64(15, roomImageAttachmentId_);
+        output.writeInt64(16, roomImageAttachmentId_);
       }
       unknownFields.writeTo(output);
     }
@@ -907,55 +932,59 @@ public final class LiveRoom {
       if (size != -1) return size;
 
       size = 0;
+      if (shopId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, shopId_);
+      }
       if (roomId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, roomId_);
+          .computeInt64Size(2, roomId_);
       }
       if (userId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, userId_);
+          .computeInt64Size(3, userId_);
       }
       if (!getGroupIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, groupId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, groupId_);
       }
       if (!getAppNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, appName_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, appName_);
       }
       if (!getStreamNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, streamName_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, streamName_);
       }
       if (!getUpUrlBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, upUrl_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, upUrl_);
       }
       if (!getPlayUrlBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, playUrl_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, playUrl_);
       }
       if (!getStartTimeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, startTime_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, startTime_);
       }
       if (likeCount_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(9, likeCount_);
+          .computeInt64Size(10, likeCount_);
       }
       if (!getEndTimeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, endTime_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, endTime_);
       }
       if (!getStatusBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, status_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, status_);
       }
       if (livePlanId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(12, livePlanId_);
+          .computeInt64Size(13, livePlanId_);
       }
       if (!getRoomTitleBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, roomTitle_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, roomTitle_);
       }
       if (!getRoomImageUrlBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, roomImageUrl_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, roomImageUrl_);
       }
       if (roomImageAttachmentId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(15, roomImageAttachmentId_);
+          .computeInt64Size(16, roomImageAttachmentId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -972,6 +1001,8 @@ public final class LiveRoom {
       }
       glory_api.LiveRoom.Room other = (glory_api.LiveRoom.Room) obj;
 
+      if (getShopId()
+          != other.getShopId()) return false;
       if (getRoomId()
           != other.getRoomId()) return false;
       if (getUserId()
@@ -1013,6 +1044,9 @@ public final class LiveRoom {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SHOP_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getShopId());
       hash = (37 * hash) + ROOM_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getRoomId());
@@ -1181,6 +1215,8 @@ public final class LiveRoom {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        shopId_ = 0L;
+
         roomId_ = 0L;
 
         userId_ = 0L;
@@ -1237,6 +1273,7 @@ public final class LiveRoom {
       @java.lang.Override
       public glory_api.LiveRoom.Room buildPartial() {
         glory_api.LiveRoom.Room result = new glory_api.LiveRoom.Room(this);
+        result.shopId_ = shopId_;
         result.roomId_ = roomId_;
         result.userId_ = userId_;
         result.groupId_ = groupId_;
@@ -1300,6 +1337,9 @@ public final class LiveRoom {
 
       public Builder mergeFrom(glory_api.LiveRoom.Room other) {
         if (other == glory_api.LiveRoom.Room.getDefaultInstance()) return this;
+        if (other.getShopId() != 0L) {
+          setShopId(other.getShopId());
+        }
         if (other.getRoomId() != 0L) {
           setRoomId(other.getRoomId());
         }
@@ -1384,9 +1424,40 @@ public final class LiveRoom {
         return this;
       }
 
+      private long shopId_ ;
+      /**
+       * <code>int64 shop_id = 1;</code>
+       * @return The shopId.
+       */
+      @java.lang.Override
+      public long getShopId() {
+        return shopId_;
+      }
+      /**
+       * <code>int64 shop_id = 1;</code>
+       * @param value The shopId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setShopId(long value) {
+        
+        shopId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 shop_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearShopId() {
+        
+        shopId_ = 0L;
+        onChanged();
+        return this;
+      }
+
       private long roomId_ ;
       /**
-       * <code>int64 room_id = 1;</code>
+       * <code>int64 room_id = 2;</code>
        * @return The roomId.
        */
       @java.lang.Override
@@ -1394,7 +1465,7 @@ public final class LiveRoom {
         return roomId_;
       }
       /**
-       * <code>int64 room_id = 1;</code>
+       * <code>int64 room_id = 2;</code>
        * @param value The roomId to set.
        * @return This builder for chaining.
        */
@@ -1405,7 +1476,7 @@ public final class LiveRoom {
         return this;
       }
       /**
-       * <code>int64 room_id = 1;</code>
+       * <code>int64 room_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearRoomId() {
@@ -1417,7 +1488,7 @@ public final class LiveRoom {
 
       private long userId_ ;
       /**
-       * <code>int64 user_id = 2;</code>
+       * <code>int64 user_id = 3;</code>
        * @return The userId.
        */
       @java.lang.Override
@@ -1425,7 +1496,7 @@ public final class LiveRoom {
         return userId_;
       }
       /**
-       * <code>int64 user_id = 2;</code>
+       * <code>int64 user_id = 3;</code>
        * @param value The userId to set.
        * @return This builder for chaining.
        */
@@ -1436,7 +1507,7 @@ public final class LiveRoom {
         return this;
       }
       /**
-       * <code>int64 user_id = 2;</code>
+       * <code>int64 user_id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearUserId() {
@@ -1448,7 +1519,7 @@ public final class LiveRoom {
 
       private java.lang.Object groupId_ = "";
       /**
-       * <code>string group_id = 3;</code>
+       * <code>string group_id = 4;</code>
        * @return The groupId.
        */
       public java.lang.String getGroupId() {
@@ -1464,7 +1535,7 @@ public final class LiveRoom {
         }
       }
       /**
-       * <code>string group_id = 3;</code>
+       * <code>string group_id = 4;</code>
        * @return The bytes for groupId.
        */
       public com.google.protobuf.ByteString
@@ -1481,7 +1552,7 @@ public final class LiveRoom {
         }
       }
       /**
-       * <code>string group_id = 3;</code>
+       * <code>string group_id = 4;</code>
        * @param value The groupId to set.
        * @return This builder for chaining.
        */
@@ -1496,7 +1567,7 @@ public final class LiveRoom {
         return this;
       }
       /**
-       * <code>string group_id = 3;</code>
+       * <code>string group_id = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearGroupId() {
@@ -1506,7 +1577,7 @@ public final class LiveRoom {
         return this;
       }
       /**
-       * <code>string group_id = 3;</code>
+       * <code>string group_id = 4;</code>
        * @param value The bytes for groupId to set.
        * @return This builder for chaining.
        */
@@ -1524,7 +1595,7 @@ public final class LiveRoom {
 
       private java.lang.Object appName_ = "";
       /**
-       * <code>string app_name = 4;</code>
+       * <code>string app_name = 5;</code>
        * @return The appName.
        */
       public java.lang.String getAppName() {
@@ -1540,7 +1611,7 @@ public final class LiveRoom {
         }
       }
       /**
-       * <code>string app_name = 4;</code>
+       * <code>string app_name = 5;</code>
        * @return The bytes for appName.
        */
       public com.google.protobuf.ByteString
@@ -1557,7 +1628,7 @@ public final class LiveRoom {
         }
       }
       /**
-       * <code>string app_name = 4;</code>
+       * <code>string app_name = 5;</code>
        * @param value The appName to set.
        * @return This builder for chaining.
        */
@@ -1572,7 +1643,7 @@ public final class LiveRoom {
         return this;
       }
       /**
-       * <code>string app_name = 4;</code>
+       * <code>string app_name = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearAppName() {
@@ -1582,7 +1653,7 @@ public final class LiveRoom {
         return this;
       }
       /**
-       * <code>string app_name = 4;</code>
+       * <code>string app_name = 5;</code>
        * @param value The bytes for appName to set.
        * @return This builder for chaining.
        */
@@ -1600,7 +1671,7 @@ public final class LiveRoom {
 
       private java.lang.Object streamName_ = "";
       /**
-       * <code>string stream_name = 5;</code>
+       * <code>string stream_name = 6;</code>
        * @return The streamName.
        */
       public java.lang.String getStreamName() {
@@ -1616,7 +1687,7 @@ public final class LiveRoom {
         }
       }
       /**
-       * <code>string stream_name = 5;</code>
+       * <code>string stream_name = 6;</code>
        * @return The bytes for streamName.
        */
       public com.google.protobuf.ByteString
@@ -1633,7 +1704,7 @@ public final class LiveRoom {
         }
       }
       /**
-       * <code>string stream_name = 5;</code>
+       * <code>string stream_name = 6;</code>
        * @param value The streamName to set.
        * @return This builder for chaining.
        */
@@ -1648,7 +1719,7 @@ public final class LiveRoom {
         return this;
       }
       /**
-       * <code>string stream_name = 5;</code>
+       * <code>string stream_name = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearStreamName() {
@@ -1658,7 +1729,7 @@ public final class LiveRoom {
         return this;
       }
       /**
-       * <code>string stream_name = 5;</code>
+       * <code>string stream_name = 6;</code>
        * @param value The bytes for streamName to set.
        * @return This builder for chaining.
        */
@@ -1676,7 +1747,7 @@ public final class LiveRoom {
 
       private java.lang.Object upUrl_ = "";
       /**
-       * <code>string up_url = 6;</code>
+       * <code>string up_url = 7;</code>
        * @return The upUrl.
        */
       public java.lang.String getUpUrl() {
@@ -1692,7 +1763,7 @@ public final class LiveRoom {
         }
       }
       /**
-       * <code>string up_url = 6;</code>
+       * <code>string up_url = 7;</code>
        * @return The bytes for upUrl.
        */
       public com.google.protobuf.ByteString
@@ -1709,7 +1780,7 @@ public final class LiveRoom {
         }
       }
       /**
-       * <code>string up_url = 6;</code>
+       * <code>string up_url = 7;</code>
        * @param value The upUrl to set.
        * @return This builder for chaining.
        */
@@ -1724,7 +1795,7 @@ public final class LiveRoom {
         return this;
       }
       /**
-       * <code>string up_url = 6;</code>
+       * <code>string up_url = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearUpUrl() {
@@ -1734,7 +1805,7 @@ public final class LiveRoom {
         return this;
       }
       /**
-       * <code>string up_url = 6;</code>
+       * <code>string up_url = 7;</code>
        * @param value The bytes for upUrl to set.
        * @return This builder for chaining.
        */
@@ -1752,7 +1823,7 @@ public final class LiveRoom {
 
       private java.lang.Object playUrl_ = "";
       /**
-       * <code>string play_url = 7;</code>
+       * <code>string play_url = 8;</code>
        * @return The playUrl.
        */
       public java.lang.String getPlayUrl() {
@@ -1768,7 +1839,7 @@ public final class LiveRoom {
         }
       }
       /**
-       * <code>string play_url = 7;</code>
+       * <code>string play_url = 8;</code>
        * @return The bytes for playUrl.
        */
       public com.google.protobuf.ByteString
@@ -1785,7 +1856,7 @@ public final class LiveRoom {
         }
       }
       /**
-       * <code>string play_url = 7;</code>
+       * <code>string play_url = 8;</code>
        * @param value The playUrl to set.
        * @return This builder for chaining.
        */
@@ -1800,7 +1871,7 @@ public final class LiveRoom {
         return this;
       }
       /**
-       * <code>string play_url = 7;</code>
+       * <code>string play_url = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearPlayUrl() {
@@ -1810,7 +1881,7 @@ public final class LiveRoom {
         return this;
       }
       /**
-       * <code>string play_url = 7;</code>
+       * <code>string play_url = 8;</code>
        * @param value The bytes for playUrl to set.
        * @return This builder for chaining.
        */
@@ -1828,7 +1899,7 @@ public final class LiveRoom {
 
       private java.lang.Object startTime_ = "";
       /**
-       * <code>string start_time = 8;</code>
+       * <code>string start_time = 9;</code>
        * @return The startTime.
        */
       public java.lang.String getStartTime() {
@@ -1844,7 +1915,7 @@ public final class LiveRoom {
         }
       }
       /**
-       * <code>string start_time = 8;</code>
+       * <code>string start_time = 9;</code>
        * @return The bytes for startTime.
        */
       public com.google.protobuf.ByteString
@@ -1861,7 +1932,7 @@ public final class LiveRoom {
         }
       }
       /**
-       * <code>string start_time = 8;</code>
+       * <code>string start_time = 9;</code>
        * @param value The startTime to set.
        * @return This builder for chaining.
        */
@@ -1876,7 +1947,7 @@ public final class LiveRoom {
         return this;
       }
       /**
-       * <code>string start_time = 8;</code>
+       * <code>string start_time = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearStartTime() {
@@ -1886,7 +1957,7 @@ public final class LiveRoom {
         return this;
       }
       /**
-       * <code>string start_time = 8;</code>
+       * <code>string start_time = 9;</code>
        * @param value The bytes for startTime to set.
        * @return This builder for chaining.
        */
@@ -1904,7 +1975,7 @@ public final class LiveRoom {
 
       private long likeCount_ ;
       /**
-       * <code>int64 like_count = 9;</code>
+       * <code>int64 like_count = 10;</code>
        * @return The likeCount.
        */
       @java.lang.Override
@@ -1912,7 +1983,7 @@ public final class LiveRoom {
         return likeCount_;
       }
       /**
-       * <code>int64 like_count = 9;</code>
+       * <code>int64 like_count = 10;</code>
        * @param value The likeCount to set.
        * @return This builder for chaining.
        */
@@ -1923,7 +1994,7 @@ public final class LiveRoom {
         return this;
       }
       /**
-       * <code>int64 like_count = 9;</code>
+       * <code>int64 like_count = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearLikeCount() {
@@ -1935,7 +2006,7 @@ public final class LiveRoom {
 
       private java.lang.Object endTime_ = "";
       /**
-       * <code>string end_time = 10;</code>
+       * <code>string end_time = 11;</code>
        * @return The endTime.
        */
       public java.lang.String getEndTime() {
@@ -1951,7 +2022,7 @@ public final class LiveRoom {
         }
       }
       /**
-       * <code>string end_time = 10;</code>
+       * <code>string end_time = 11;</code>
        * @return The bytes for endTime.
        */
       public com.google.protobuf.ByteString
@@ -1968,7 +2039,7 @@ public final class LiveRoom {
         }
       }
       /**
-       * <code>string end_time = 10;</code>
+       * <code>string end_time = 11;</code>
        * @param value The endTime to set.
        * @return This builder for chaining.
        */
@@ -1983,7 +2054,7 @@ public final class LiveRoom {
         return this;
       }
       /**
-       * <code>string end_time = 10;</code>
+       * <code>string end_time = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearEndTime() {
@@ -1993,7 +2064,7 @@ public final class LiveRoom {
         return this;
       }
       /**
-       * <code>string end_time = 10;</code>
+       * <code>string end_time = 11;</code>
        * @param value The bytes for endTime to set.
        * @return This builder for chaining.
        */
@@ -2015,7 +2086,7 @@ public final class LiveRoom {
        * if end_time not null, means closed, if null, means still active
        * </pre>
        *
-       * <code>string status = 11;</code>
+       * <code>string status = 12;</code>
        * @return The status.
        */
       public java.lang.String getStatus() {
@@ -2035,7 +2106,7 @@ public final class LiveRoom {
        * if end_time not null, means closed, if null, means still active
        * </pre>
        *
-       * <code>string status = 11;</code>
+       * <code>string status = 12;</code>
        * @return The bytes for status.
        */
       public com.google.protobuf.ByteString
@@ -2056,7 +2127,7 @@ public final class LiveRoom {
        * if end_time not null, means closed, if null, means still active
        * </pre>
        *
-       * <code>string status = 11;</code>
+       * <code>string status = 12;</code>
        * @param value The status to set.
        * @return This builder for chaining.
        */
@@ -2075,7 +2146,7 @@ public final class LiveRoom {
        * if end_time not null, means closed, if null, means still active
        * </pre>
        *
-       * <code>string status = 11;</code>
+       * <code>string status = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearStatus() {
@@ -2089,7 +2160,7 @@ public final class LiveRoom {
        * if end_time not null, means closed, if null, means still active
        * </pre>
        *
-       * <code>string status = 11;</code>
+       * <code>string status = 12;</code>
        * @param value The bytes for status to set.
        * @return This builder for chaining.
        */
@@ -2111,7 +2182,7 @@ public final class LiveRoom {
        * 设置直播商品计划id
        * </pre>
        *
-       * <code>int64 live_plan_id = 12;</code>
+       * <code>int64 live_plan_id = 13;</code>
        * @return The livePlanId.
        */
       @java.lang.Override
@@ -2123,7 +2194,7 @@ public final class LiveRoom {
        * 设置直播商品计划id
        * </pre>
        *
-       * <code>int64 live_plan_id = 12;</code>
+       * <code>int64 live_plan_id = 13;</code>
        * @param value The livePlanId to set.
        * @return This builder for chaining.
        */
@@ -2138,7 +2209,7 @@ public final class LiveRoom {
        * 设置直播商品计划id
        * </pre>
        *
-       * <code>int64 live_plan_id = 12;</code>
+       * <code>int64 live_plan_id = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearLivePlanId() {
@@ -2154,7 +2225,7 @@ public final class LiveRoom {
        *直播的标题
        * </pre>
        *
-       * <code>string room_title = 13;</code>
+       * <code>string room_title = 14;</code>
        * @return The roomTitle.
        */
       public java.lang.String getRoomTitle() {
@@ -2174,7 +2245,7 @@ public final class LiveRoom {
        *直播的标题
        * </pre>
        *
-       * <code>string room_title = 13;</code>
+       * <code>string room_title = 14;</code>
        * @return The bytes for roomTitle.
        */
       public com.google.protobuf.ByteString
@@ -2195,7 +2266,7 @@ public final class LiveRoom {
        *直播的标题
        * </pre>
        *
-       * <code>string room_title = 13;</code>
+       * <code>string room_title = 14;</code>
        * @param value The roomTitle to set.
        * @return This builder for chaining.
        */
@@ -2214,7 +2285,7 @@ public final class LiveRoom {
        *直播的标题
        * </pre>
        *
-       * <code>string room_title = 13;</code>
+       * <code>string room_title = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearRoomTitle() {
@@ -2228,7 +2299,7 @@ public final class LiveRoom {
        *直播的标题
        * </pre>
        *
-       * <code>string room_title = 13;</code>
+       * <code>string room_title = 14;</code>
        * @param value The bytes for roomTitle to set.
        * @return This builder for chaining.
        */
@@ -2250,7 +2321,7 @@ public final class LiveRoom {
        *直播的封面的url
        * </pre>
        *
-       * <code>string room_image_url = 14;</code>
+       * <code>string room_image_url = 15;</code>
        * @return The roomImageUrl.
        */
       public java.lang.String getRoomImageUrl() {
@@ -2270,7 +2341,7 @@ public final class LiveRoom {
        *直播的封面的url
        * </pre>
        *
-       * <code>string room_image_url = 14;</code>
+       * <code>string room_image_url = 15;</code>
        * @return The bytes for roomImageUrl.
        */
       public com.google.protobuf.ByteString
@@ -2291,7 +2362,7 @@ public final class LiveRoom {
        *直播的封面的url
        * </pre>
        *
-       * <code>string room_image_url = 14;</code>
+       * <code>string room_image_url = 15;</code>
        * @param value The roomImageUrl to set.
        * @return This builder for chaining.
        */
@@ -2310,7 +2381,7 @@ public final class LiveRoom {
        *直播的封面的url
        * </pre>
        *
-       * <code>string room_image_url = 14;</code>
+       * <code>string room_image_url = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearRoomImageUrl() {
@@ -2324,7 +2395,7 @@ public final class LiveRoom {
        *直播的封面的url
        * </pre>
        *
-       * <code>string room_image_url = 14;</code>
+       * <code>string room_image_url = 15;</code>
        * @param value The bytes for roomImageUrl to set.
        * @return This builder for chaining.
        */
@@ -2346,7 +2417,7 @@ public final class LiveRoom {
        * 直播间的封面的image 的id
        * </pre>
        *
-       * <code>int64 room_image_attachment_id = 15;</code>
+       * <code>int64 room_image_attachment_id = 16;</code>
        * @return The roomImageAttachmentId.
        */
       @java.lang.Override
@@ -2358,7 +2429,7 @@ public final class LiveRoom {
        * 直播间的封面的image 的id
        * </pre>
        *
-       * <code>int64 room_image_attachment_id = 15;</code>
+       * <code>int64 room_image_attachment_id = 16;</code>
        * @param value The roomImageAttachmentId to set.
        * @return This builder for chaining.
        */
@@ -2373,7 +2444,7 @@ public final class LiveRoom {
        * 直播间的封面的image 的id
        * </pre>
        *
-       * <code>int64 room_image_attachment_id = 15;</code>
+       * <code>int64 room_image_attachment_id = 16;</code>
        * @return This builder for chaining.
        */
       public Builder clearRoomImageAttachmentId() {
@@ -2455,12 +2526,18 @@ public final class LiveRoom {
     base.Base.BaseRequestOrBuilder getBaseRequestOrBuilder();
 
     /**
-     * <code>string group_id = 2;</code>
+     * <code>int64 shop_id = 2;</code>
+     * @return The shopId.
+     */
+    long getShopId();
+
+    /**
+     * <code>string group_id = 3;</code>
      * @return The groupId.
      */
     java.lang.String getGroupId();
     /**
-     * <code>string group_id = 2;</code>
+     * <code>string group_id = 3;</code>
      * @return The bytes for groupId.
      */
     com.google.protobuf.ByteString
@@ -2471,7 +2548,7 @@ public final class LiveRoom {
      * 直播房间的标题
      * </pre>
      *
-     * <code>string room_title = 3;</code>
+     * <code>string room_title = 4;</code>
      * @return The roomTitle.
      */
     java.lang.String getRoomTitle();
@@ -2480,7 +2557,7 @@ public final class LiveRoom {
      * 直播房间的标题
      * </pre>
      *
-     * <code>string room_title = 3;</code>
+     * <code>string room_title = 4;</code>
      * @return The bytes for roomTitle.
      */
     com.google.protobuf.ByteString
@@ -2491,7 +2568,7 @@ public final class LiveRoom {
      * 直播房间的图片的id
      * </pre>
      *
-     * <code>int64 room_image_attachment_id = 4;</code>
+     * <code>int64 room_image_attachment_id = 5;</code>
      * @return The roomImageAttachmentId.
      */
     long getRoomImageAttachmentId();
@@ -2556,19 +2633,24 @@ public final class LiveRoom {
 
               break;
             }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 16: {
 
-              groupId_ = s;
+              shopId_ = input.readInt64();
               break;
             }
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
+              groupId_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
               roomTitle_ = s;
               break;
             }
-            case 32: {
+            case 40: {
 
               roomImageAttachmentId_ = input.readInt64();
               break;
@@ -2631,10 +2713,21 @@ public final class LiveRoom {
       return getBaseRequest();
     }
 
-    public static final int GROUP_ID_FIELD_NUMBER = 2;
+    public static final int SHOP_ID_FIELD_NUMBER = 2;
+    private long shopId_;
+    /**
+     * <code>int64 shop_id = 2;</code>
+     * @return The shopId.
+     */
+    @java.lang.Override
+    public long getShopId() {
+      return shopId_;
+    }
+
+    public static final int GROUP_ID_FIELD_NUMBER = 3;
     private volatile java.lang.Object groupId_;
     /**
-     * <code>string group_id = 2;</code>
+     * <code>string group_id = 3;</code>
      * @return The groupId.
      */
     @java.lang.Override
@@ -2651,7 +2744,7 @@ public final class LiveRoom {
       }
     }
     /**
-     * <code>string group_id = 2;</code>
+     * <code>string group_id = 3;</code>
      * @return The bytes for groupId.
      */
     @java.lang.Override
@@ -2669,14 +2762,14 @@ public final class LiveRoom {
       }
     }
 
-    public static final int ROOM_TITLE_FIELD_NUMBER = 3;
+    public static final int ROOM_TITLE_FIELD_NUMBER = 4;
     private volatile java.lang.Object roomTitle_;
     /**
      * <pre>
      * 直播房间的标题
      * </pre>
      *
-     * <code>string room_title = 3;</code>
+     * <code>string room_title = 4;</code>
      * @return The roomTitle.
      */
     @java.lang.Override
@@ -2697,7 +2790,7 @@ public final class LiveRoom {
      * 直播房间的标题
      * </pre>
      *
-     * <code>string room_title = 3;</code>
+     * <code>string room_title = 4;</code>
      * @return The bytes for roomTitle.
      */
     @java.lang.Override
@@ -2715,14 +2808,14 @@ public final class LiveRoom {
       }
     }
 
-    public static final int ROOM_IMAGE_ATTACHMENT_ID_FIELD_NUMBER = 4;
+    public static final int ROOM_IMAGE_ATTACHMENT_ID_FIELD_NUMBER = 5;
     private long roomImageAttachmentId_;
     /**
      * <pre>
      * 直播房间的图片的id
      * </pre>
      *
-     * <code>int64 room_image_attachment_id = 4;</code>
+     * <code>int64 room_image_attachment_id = 5;</code>
      * @return The roomImageAttachmentId.
      */
     @java.lang.Override
@@ -2747,14 +2840,17 @@ public final class LiveRoom {
       if (baseRequest_ != null) {
         output.writeMessage(1, getBaseRequest());
       }
+      if (shopId_ != 0L) {
+        output.writeInt64(2, shopId_);
+      }
       if (!getGroupIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, groupId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, groupId_);
       }
       if (!getRoomTitleBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, roomTitle_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, roomTitle_);
       }
       if (roomImageAttachmentId_ != 0L) {
-        output.writeInt64(4, roomImageAttachmentId_);
+        output.writeInt64(5, roomImageAttachmentId_);
       }
       unknownFields.writeTo(output);
     }
@@ -2769,15 +2865,19 @@ public final class LiveRoom {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getBaseRequest());
       }
+      if (shopId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, shopId_);
+      }
       if (!getGroupIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, groupId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, groupId_);
       }
       if (!getRoomTitleBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, roomTitle_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, roomTitle_);
       }
       if (roomImageAttachmentId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(4, roomImageAttachmentId_);
+          .computeInt64Size(5, roomImageAttachmentId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2799,6 +2899,8 @@ public final class LiveRoom {
         if (!getBaseRequest()
             .equals(other.getBaseRequest())) return false;
       }
+      if (getShopId()
+          != other.getShopId()) return false;
       if (!getGroupId()
           .equals(other.getGroupId())) return false;
       if (!getRoomTitle()
@@ -2820,6 +2922,9 @@ public final class LiveRoom {
         hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
         hash = (53 * hash) + getBaseRequest().hashCode();
       }
+      hash = (37 * hash) + SHOP_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getShopId());
       hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
       hash = (53 * hash) + getGroupId().hashCode();
       hash = (37 * hash) + ROOM_TITLE_FIELD_NUMBER;
@@ -2966,6 +3071,8 @@ public final class LiveRoom {
           baseRequest_ = null;
           baseRequestBuilder_ = null;
         }
+        shopId_ = 0L;
+
         groupId_ = "";
 
         roomTitle_ = "";
@@ -3003,6 +3110,7 @@ public final class LiveRoom {
         } else {
           result.baseRequest_ = baseRequestBuilder_.build();
         }
+        result.shopId_ = shopId_;
         result.groupId_ = groupId_;
         result.roomTitle_ = roomTitle_;
         result.roomImageAttachmentId_ = roomImageAttachmentId_;
@@ -3056,6 +3164,9 @@ public final class LiveRoom {
         if (other == glory_api.LiveRoom.CreateRoomRequest.getDefaultInstance()) return this;
         if (other.hasBaseRequest()) {
           mergeBaseRequest(other.getBaseRequest());
+        }
+        if (other.getShopId() != 0L) {
+          setShopId(other.getShopId());
         }
         if (!other.getGroupId().isEmpty()) {
           groupId_ = other.groupId_;
@@ -3216,9 +3327,40 @@ public final class LiveRoom {
         return baseRequestBuilder_;
       }
 
+      private long shopId_ ;
+      /**
+       * <code>int64 shop_id = 2;</code>
+       * @return The shopId.
+       */
+      @java.lang.Override
+      public long getShopId() {
+        return shopId_;
+      }
+      /**
+       * <code>int64 shop_id = 2;</code>
+       * @param value The shopId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setShopId(long value) {
+        
+        shopId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 shop_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearShopId() {
+        
+        shopId_ = 0L;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object groupId_ = "";
       /**
-       * <code>string group_id = 2;</code>
+       * <code>string group_id = 3;</code>
        * @return The groupId.
        */
       public java.lang.String getGroupId() {
@@ -3234,7 +3376,7 @@ public final class LiveRoom {
         }
       }
       /**
-       * <code>string group_id = 2;</code>
+       * <code>string group_id = 3;</code>
        * @return The bytes for groupId.
        */
       public com.google.protobuf.ByteString
@@ -3251,7 +3393,7 @@ public final class LiveRoom {
         }
       }
       /**
-       * <code>string group_id = 2;</code>
+       * <code>string group_id = 3;</code>
        * @param value The groupId to set.
        * @return This builder for chaining.
        */
@@ -3266,7 +3408,7 @@ public final class LiveRoom {
         return this;
       }
       /**
-       * <code>string group_id = 2;</code>
+       * <code>string group_id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearGroupId() {
@@ -3276,7 +3418,7 @@ public final class LiveRoom {
         return this;
       }
       /**
-       * <code>string group_id = 2;</code>
+       * <code>string group_id = 3;</code>
        * @param value The bytes for groupId to set.
        * @return This builder for chaining.
        */
@@ -3298,7 +3440,7 @@ public final class LiveRoom {
        * 直播房间的标题
        * </pre>
        *
-       * <code>string room_title = 3;</code>
+       * <code>string room_title = 4;</code>
        * @return The roomTitle.
        */
       public java.lang.String getRoomTitle() {
@@ -3318,7 +3460,7 @@ public final class LiveRoom {
        * 直播房间的标题
        * </pre>
        *
-       * <code>string room_title = 3;</code>
+       * <code>string room_title = 4;</code>
        * @return The bytes for roomTitle.
        */
       public com.google.protobuf.ByteString
@@ -3339,7 +3481,7 @@ public final class LiveRoom {
        * 直播房间的标题
        * </pre>
        *
-       * <code>string room_title = 3;</code>
+       * <code>string room_title = 4;</code>
        * @param value The roomTitle to set.
        * @return This builder for chaining.
        */
@@ -3358,7 +3500,7 @@ public final class LiveRoom {
        * 直播房间的标题
        * </pre>
        *
-       * <code>string room_title = 3;</code>
+       * <code>string room_title = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearRoomTitle() {
@@ -3372,7 +3514,7 @@ public final class LiveRoom {
        * 直播房间的标题
        * </pre>
        *
-       * <code>string room_title = 3;</code>
+       * <code>string room_title = 4;</code>
        * @param value The bytes for roomTitle to set.
        * @return This builder for chaining.
        */
@@ -3394,7 +3536,7 @@ public final class LiveRoom {
        * 直播房间的图片的id
        * </pre>
        *
-       * <code>int64 room_image_attachment_id = 4;</code>
+       * <code>int64 room_image_attachment_id = 5;</code>
        * @return The roomImageAttachmentId.
        */
       @java.lang.Override
@@ -3406,7 +3548,7 @@ public final class LiveRoom {
        * 直播房间的图片的id
        * </pre>
        *
-       * <code>int64 room_image_attachment_id = 4;</code>
+       * <code>int64 room_image_attachment_id = 5;</code>
        * @param value The roomImageAttachmentId to set.
        * @return This builder for chaining.
        */
@@ -3421,7 +3563,7 @@ public final class LiveRoom {
        * 直播房间的图片的id
        * </pre>
        *
-       * <code>int64 room_image_attachment_id = 4;</code>
+       * <code>int64 room_image_attachment_id = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearRoomImageAttachmentId() {
@@ -16051,57 +16193,58 @@ public final class LiveRoom {
   static {
     java.lang.String[] descriptorData = {
       "\n\024live/live_room.proto\022\tglory_api\032\nbase." +
-      "proto\"\261\002\n\004Room\022\017\n\007room_id\030\001 \001(\003\022\017\n\007user_" +
-      "id\030\002 \001(\003\022\020\n\010group_id\030\003 \001(\t\022\020\n\010app_name\030\004" +
-      " \001(\t\022\023\n\013stream_name\030\005 \001(\t\022\016\n\006up_url\030\006 \001(" +
-      "\t\022\020\n\010play_url\030\007 \001(\t\022\022\n\nstart_time\030\010 \001(\t\022" +
-      "\022\n\nlike_count\030\t \001(\003\022\020\n\010end_time\030\n \001(\t\022\016\n" +
-      "\006status\030\013 \001(\t\022\024\n\014live_plan_id\030\014 \001(\003\022\022\n\nr" +
-      "oom_title\030\r \001(\t\022\026\n\016room_image_url\030\016 \001(\t\022" +
-      " \n\030room_image_attachment_id\030\017 \001(\003\"\204\001\n\021Cr" +
-      "eateRoomRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
-      "base.BaseRequest\022\020\n\010group_id\030\002 \001(\t\022\022\n\nro" +
-      "om_title\030\003 \001(\t\022 \n\030room_image_attachment_" +
-      "id\030\004 \001(\003\"\210\001\n\022CreateRoomResponse\022%\n\tbase_" +
-      "resp\030\001 \001(\0132\022.base.BaseResponse\022\017\n\007room_i" +
-      "d\030\002 \001(\003\022\016\n\006up_url\030\003 \001(\t\022\022\n\nroom_title\030\004 " +
-      "\001(\t\022\026\n\016room_image_url\030\005 \001(\t\"J\n\016GetRoomRe" +
-      "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
-      "equest\022\017\n\007room_id\030\002 \001(\003\"W\n\017GetRoomRespon" +
-      "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
-      "e\022\035\n\004room\030\002 \001(\0132\017.glory_api.Room\"o\n\021Upda" +
-      "teRoomRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
-      "se.BaseRequest\022\022\n\nclose_room\030\002 \001(\010\022\035\n\004ro" +
-      "om\030\003 \001(\0132\017.glory_api.Room\";\n\022UpdateRoomR" +
-      "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
-      "sponse\"\270\001\n\017ListRoomRequest\022\'\n\014base_reque" +
-      "st\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007room_id\030\002" +
-      " \001(\003\022\017\n\007user_id\030\004 \001(\003\022\020\n\010app_name\030\005 \001(\t\022" +
-      "\033\n\023include_closed_room\030\006 \001(\010\022+\n\npaginati" +
-      "on\030d \001(\0132\027.base.PaginationRequest\"\206\001\n\020Li" +
-      "stRoomResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
-      ".BaseResponse\022\035\n\004room\030\002 \003(\0132\017.glory_api." +
-      "Room\022,\n\npagination\030d \001(\0132\030.base.Paginati" +
-      "onResponse\"M\n\021DeleteRoomRequest\022\'\n\014base_" +
-      "request\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007room" +
-      "_id\030\002 \001(\003\";\n\022DeleteRoomResponse\022%\n\tbase_" +
-      "resp\030\001 \001(\0132\022.base.BaseResponse\"-\n\nDealAm" +
-      "ount\022\017\n\007curreny\030\001 \001(\t\022\016\n\006amount\030\002 \001(\001\"\255\002" +
-      "\n\014FinishedRoom\022\017\n\007room_id\030\001 \001(\003\022\021\n\tuser_" +
-      "name\030\002 \001(\t\022\021\n\tseller_id\030\003 \001(\003\022\022\n\nstart_t" +
-      "ime\030\004 \001(\t\022\033\n\023average_online_user\030\005 \001(\001\022\033" +
-      "\n\023room_product_amount\030\006 \001(\003\022/\n\020room_deal" +
-      "_amount\030\007 \003(\0132\025.glory_api.DealAmount\022\031\n\021" +
-      "room_order_amount\030\010 \001(\003\022\026\n\016room_image_ur" +
-      "l\030\t \001(\t\022\022\n\nroom_title\030\n \001(\t\022 \n\030room_imag" +
-      "e_attachment_id\030\013 \001(\003\"\200\001\n\027ListFinishedRo" +
-      "omRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.B" +
-      "aseRequest\022\017\n\007shop_id\030\002 \001(\003\022+\n\npaginatio" +
-      "n\030d \001(\0132\027.base.PaginationRequest\"\226\001\n\030Lis" +
-      "tFinishedRoomResponse\022%\n\tbase_resp\030\001 \001(\013" +
-      "2\022.base.BaseResponse\022%\n\004room\030\002 \003(\0132\027.glo" +
-      "ry_api.FinishedRoom\022,\n\npagination\030d \001(\0132" +
-      "\030.base.PaginationResponseb\006proto3"
+      "proto\"\302\002\n\004Room\022\017\n\007shop_id\030\001 \001(\003\022\017\n\007room_" +
+      "id\030\002 \001(\003\022\017\n\007user_id\030\003 \001(\003\022\020\n\010group_id\030\004 " +
+      "\001(\t\022\020\n\010app_name\030\005 \001(\t\022\023\n\013stream_name\030\006 \001" +
+      "(\t\022\016\n\006up_url\030\007 \001(\t\022\020\n\010play_url\030\010 \001(\t\022\022\n\n" +
+      "start_time\030\t \001(\t\022\022\n\nlike_count\030\n \001(\003\022\020\n\010" +
+      "end_time\030\013 \001(\t\022\016\n\006status\030\014 \001(\t\022\024\n\014live_p" +
+      "lan_id\030\r \001(\003\022\022\n\nroom_title\030\016 \001(\t\022\026\n\016room" +
+      "_image_url\030\017 \001(\t\022 \n\030room_image_attachmen" +
+      "t_id\030\020 \001(\003\"\225\001\n\021CreateRoomRequest\022\'\n\014base" +
+      "_request\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007sho" +
+      "p_id\030\002 \001(\003\022\020\n\010group_id\030\003 \001(\t\022\022\n\nroom_tit" +
+      "le\030\004 \001(\t\022 \n\030room_image_attachment_id\030\005 \001" +
+      "(\003\"\210\001\n\022CreateRoomResponse\022%\n\tbase_resp\030\001" +
+      " \001(\0132\022.base.BaseResponse\022\017\n\007room_id\030\002 \001(" +
+      "\003\022\016\n\006up_url\030\003 \001(\t\022\022\n\nroom_title\030\004 \001(\t\022\026\n" +
+      "\016room_image_url\030\005 \001(\t\"J\n\016GetRoomRequest\022" +
+      "\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequest" +
+      "\022\017\n\007room_id\030\002 \001(\003\"W\n\017GetRoomResponse\022%\n\t" +
+      "base_resp\030\001 \001(\0132\022.base.BaseResponse\022\035\n\004r" +
+      "oom\030\002 \001(\0132\017.glory_api.Room\"o\n\021UpdateRoom" +
+      "Request\022\'\n\014base_request\030\001 \001(\0132\021.base.Bas" +
+      "eRequest\022\022\n\nclose_room\030\002 \001(\010\022\035\n\004room\030\003 \001" +
+      "(\0132\017.glory_api.Room\";\n\022UpdateRoomRespons" +
+      "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
+      "\"\270\001\n\017ListRoomRequest\022\'\n\014base_request\030\001 \001" +
+      "(\0132\021.base.BaseRequest\022\017\n\007room_id\030\002 \001(\003\022\017" +
+      "\n\007user_id\030\004 \001(\003\022\020\n\010app_name\030\005 \001(\t\022\033\n\023inc" +
+      "lude_closed_room\030\006 \001(\010\022+\n\npagination\030d \001" +
+      "(\0132\027.base.PaginationRequest\"\206\001\n\020ListRoom" +
+      "Response\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseR" +
+      "esponse\022\035\n\004room\030\002 \003(\0132\017.glory_api.Room\022," +
+      "\n\npagination\030d \001(\0132\030.base.PaginationResp" +
+      "onse\"M\n\021DeleteRoomRequest\022\'\n\014base_reques" +
+      "t\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007room_id\030\002 " +
+      "\001(\003\";\n\022DeleteRoomResponse\022%\n\tbase_resp\030\001" +
+      " \001(\0132\022.base.BaseResponse\"-\n\nDealAmount\022\017" +
+      "\n\007curreny\030\001 \001(\t\022\016\n\006amount\030\002 \001(\001\"\255\002\n\014Fini" +
+      "shedRoom\022\017\n\007room_id\030\001 \001(\003\022\021\n\tuser_name\030\002" +
+      " \001(\t\022\021\n\tseller_id\030\003 \001(\003\022\022\n\nstart_time\030\004 " +
+      "\001(\t\022\033\n\023average_online_user\030\005 \001(\001\022\033\n\023room" +
+      "_product_amount\030\006 \001(\003\022/\n\020room_deal_amoun" +
+      "t\030\007 \003(\0132\025.glory_api.DealAmount\022\031\n\021room_o" +
+      "rder_amount\030\010 \001(\003\022\026\n\016room_image_url\030\t \001(" +
+      "\t\022\022\n\nroom_title\030\n \001(\t\022 \n\030room_image_atta" +
+      "chment_id\030\013 \001(\003\"\200\001\n\027ListFinishedRoomRequ" +
+      "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
+      "uest\022\017\n\007shop_id\030\002 \001(\003\022+\n\npagination\030d \001(" +
+      "\0132\027.base.PaginationRequest\"\226\001\n\030ListFinis" +
+      "hedRoomResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
+      "e.BaseResponse\022%\n\004room\030\002 \003(\0132\027.glory_api" +
+      ".FinishedRoom\022,\n\npagination\030d \001(\0132\030.base" +
+      ".PaginationResponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -16113,13 +16256,13 @@ public final class LiveRoom {
     internal_static_glory_api_Room_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_Room_descriptor,
-        new java.lang.String[] { "RoomId", "UserId", "GroupId", "AppName", "StreamName", "UpUrl", "PlayUrl", "StartTime", "LikeCount", "EndTime", "Status", "LivePlanId", "RoomTitle", "RoomImageUrl", "RoomImageAttachmentId", });
+        new java.lang.String[] { "ShopId", "RoomId", "UserId", "GroupId", "AppName", "StreamName", "UpUrl", "PlayUrl", "StartTime", "LikeCount", "EndTime", "Status", "LivePlanId", "RoomTitle", "RoomImageUrl", "RoomImageAttachmentId", });
     internal_static_glory_api_CreateRoomRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_glory_api_CreateRoomRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CreateRoomRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "GroupId", "RoomTitle", "RoomImageAttachmentId", });
+        new java.lang.String[] { "BaseRequest", "ShopId", "GroupId", "RoomTitle", "RoomImageAttachmentId", });
     internal_static_glory_api_CreateRoomResponse_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_glory_api_CreateRoomResponse_fieldAccessorTable = new

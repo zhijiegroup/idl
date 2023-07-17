@@ -6,6 +6,7 @@ import * as base from "../base";
 export { base };
 
 export interface Room {
+  shop_id?: string;
   room_id?: string;
   user_id?: string;
   group_id?: string;
@@ -30,6 +31,7 @@ export interface Room {
 
 export interface CreateRoomRequest {
   base_request?: base.BaseRequest;
+  shop_id?: string;
   group_id?: string;
   /** 直播房间的标题 */
   room_title?: string;

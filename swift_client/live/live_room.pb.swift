@@ -25,6 +25,8 @@ struct GloryApi_Room {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  var shopID: Int64 = 0
+
   var roomID: Int64 = 0
 
   var userID: Int64 = 0
@@ -78,6 +80,8 @@ struct GloryApi_CreateRoomRequest {
   var hasBaseRequest: Bool {return self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var shopID: Int64 = 0
 
   var groupID: String = String()
 
@@ -487,21 +491,22 @@ fileprivate let _protobuf_package = "glory_api"
 extension GloryApi_Room: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".Room"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "room_id"),
-    2: .standard(proto: "user_id"),
-    3: .standard(proto: "group_id"),
-    4: .standard(proto: "app_name"),
-    5: .standard(proto: "stream_name"),
-    6: .standard(proto: "up_url"),
-    7: .standard(proto: "play_url"),
-    8: .standard(proto: "start_time"),
-    9: .standard(proto: "like_count"),
-    10: .standard(proto: "end_time"),
-    11: .same(proto: "status"),
-    12: .standard(proto: "live_plan_id"),
-    13: .standard(proto: "room_title"),
-    14: .standard(proto: "room_image_url"),
-    15: .standard(proto: "room_image_attachment_id"),
+    1: .standard(proto: "shop_id"),
+    2: .standard(proto: "room_id"),
+    3: .standard(proto: "user_id"),
+    4: .standard(proto: "group_id"),
+    5: .standard(proto: "app_name"),
+    6: .standard(proto: "stream_name"),
+    7: .standard(proto: "up_url"),
+    8: .standard(proto: "play_url"),
+    9: .standard(proto: "start_time"),
+    10: .standard(proto: "like_count"),
+    11: .standard(proto: "end_time"),
+    12: .same(proto: "status"),
+    13: .standard(proto: "live_plan_id"),
+    14: .standard(proto: "room_title"),
+    15: .standard(proto: "room_image_url"),
+    16: .standard(proto: "room_image_attachment_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -510,76 +515,81 @@ extension GloryApi_Room: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       // allocates stack space for every case branch when no optimizations are
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try { try decoder.decodeSingularInt64Field(value: &self.roomID) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.userID) }()
-      case 3: try { try decoder.decodeSingularStringField(value: &self.groupID) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.appName) }()
-      case 5: try { try decoder.decodeSingularStringField(value: &self.streamName) }()
-      case 6: try { try decoder.decodeSingularStringField(value: &self.upURL) }()
-      case 7: try { try decoder.decodeSingularStringField(value: &self.playURL) }()
-      case 8: try { try decoder.decodeSingularStringField(value: &self.startTime) }()
-      case 9: try { try decoder.decodeSingularInt64Field(value: &self.likeCount) }()
-      case 10: try { try decoder.decodeSingularStringField(value: &self.endTime) }()
-      case 11: try { try decoder.decodeSingularStringField(value: &self.status) }()
-      case 12: try { try decoder.decodeSingularInt64Field(value: &self.livePlanID) }()
-      case 13: try { try decoder.decodeSingularStringField(value: &self.roomTitle) }()
-      case 14: try { try decoder.decodeSingularStringField(value: &self.roomImageURL) }()
-      case 15: try { try decoder.decodeSingularInt64Field(value: &self.roomImageAttachmentID) }()
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.roomID) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.userID) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.groupID) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.appName) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.streamName) }()
+      case 7: try { try decoder.decodeSingularStringField(value: &self.upURL) }()
+      case 8: try { try decoder.decodeSingularStringField(value: &self.playURL) }()
+      case 9: try { try decoder.decodeSingularStringField(value: &self.startTime) }()
+      case 10: try { try decoder.decodeSingularInt64Field(value: &self.likeCount) }()
+      case 11: try { try decoder.decodeSingularStringField(value: &self.endTime) }()
+      case 12: try { try decoder.decodeSingularStringField(value: &self.status) }()
+      case 13: try { try decoder.decodeSingularInt64Field(value: &self.livePlanID) }()
+      case 14: try { try decoder.decodeSingularStringField(value: &self.roomTitle) }()
+      case 15: try { try decoder.decodeSingularStringField(value: &self.roomImageURL) }()
+      case 16: try { try decoder.decodeSingularInt64Field(value: &self.roomImageAttachmentID) }()
       default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.shopID != 0 {
+      try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 1)
+    }
     if self.roomID != 0 {
-      try visitor.visitSingularInt64Field(value: self.roomID, fieldNumber: 1)
+      try visitor.visitSingularInt64Field(value: self.roomID, fieldNumber: 2)
     }
     if self.userID != 0 {
-      try visitor.visitSingularInt64Field(value: self.userID, fieldNumber: 2)
+      try visitor.visitSingularInt64Field(value: self.userID, fieldNumber: 3)
     }
     if !self.groupID.isEmpty {
-      try visitor.visitSingularStringField(value: self.groupID, fieldNumber: 3)
+      try visitor.visitSingularStringField(value: self.groupID, fieldNumber: 4)
     }
     if !self.appName.isEmpty {
-      try visitor.visitSingularStringField(value: self.appName, fieldNumber: 4)
+      try visitor.visitSingularStringField(value: self.appName, fieldNumber: 5)
     }
     if !self.streamName.isEmpty {
-      try visitor.visitSingularStringField(value: self.streamName, fieldNumber: 5)
+      try visitor.visitSingularStringField(value: self.streamName, fieldNumber: 6)
     }
     if !self.upURL.isEmpty {
-      try visitor.visitSingularStringField(value: self.upURL, fieldNumber: 6)
+      try visitor.visitSingularStringField(value: self.upURL, fieldNumber: 7)
     }
     if !self.playURL.isEmpty {
-      try visitor.visitSingularStringField(value: self.playURL, fieldNumber: 7)
+      try visitor.visitSingularStringField(value: self.playURL, fieldNumber: 8)
     }
     if !self.startTime.isEmpty {
-      try visitor.visitSingularStringField(value: self.startTime, fieldNumber: 8)
+      try visitor.visitSingularStringField(value: self.startTime, fieldNumber: 9)
     }
     if self.likeCount != 0 {
-      try visitor.visitSingularInt64Field(value: self.likeCount, fieldNumber: 9)
+      try visitor.visitSingularInt64Field(value: self.likeCount, fieldNumber: 10)
     }
     if !self.endTime.isEmpty {
-      try visitor.visitSingularStringField(value: self.endTime, fieldNumber: 10)
+      try visitor.visitSingularStringField(value: self.endTime, fieldNumber: 11)
     }
     if !self.status.isEmpty {
-      try visitor.visitSingularStringField(value: self.status, fieldNumber: 11)
+      try visitor.visitSingularStringField(value: self.status, fieldNumber: 12)
     }
     if self.livePlanID != 0 {
-      try visitor.visitSingularInt64Field(value: self.livePlanID, fieldNumber: 12)
+      try visitor.visitSingularInt64Field(value: self.livePlanID, fieldNumber: 13)
     }
     if !self.roomTitle.isEmpty {
-      try visitor.visitSingularStringField(value: self.roomTitle, fieldNumber: 13)
+      try visitor.visitSingularStringField(value: self.roomTitle, fieldNumber: 14)
     }
     if !self.roomImageURL.isEmpty {
-      try visitor.visitSingularStringField(value: self.roomImageURL, fieldNumber: 14)
+      try visitor.visitSingularStringField(value: self.roomImageURL, fieldNumber: 15)
     }
     if self.roomImageAttachmentID != 0 {
-      try visitor.visitSingularInt64Field(value: self.roomImageAttachmentID, fieldNumber: 15)
+      try visitor.visitSingularInt64Field(value: self.roomImageAttachmentID, fieldNumber: 16)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_Room, rhs: GloryApi_Room) -> Bool {
+    if lhs.shopID != rhs.shopID {return false}
     if lhs.roomID != rhs.roomID {return false}
     if lhs.userID != rhs.userID {return false}
     if lhs.groupID != rhs.groupID {return false}
@@ -604,9 +614,10 @@ extension GloryApi_CreateRoomRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
   static let protoMessageName: String = _protobuf_package + ".CreateRoomRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
-    2: .standard(proto: "group_id"),
-    3: .standard(proto: "room_title"),
-    4: .standard(proto: "room_image_attachment_id"),
+    2: .standard(proto: "shop_id"),
+    3: .standard(proto: "group_id"),
+    4: .standard(proto: "room_title"),
+    5: .standard(proto: "room_image_attachment_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -616,9 +627,10 @@ extension GloryApi_CreateRoomRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.groupID) }()
-      case 3: try { try decoder.decodeSingularStringField(value: &self.roomTitle) }()
-      case 4: try { try decoder.decodeSingularInt64Field(value: &self.roomImageAttachmentID) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.groupID) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.roomTitle) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.roomImageAttachmentID) }()
       default: break
       }
     }
@@ -632,20 +644,24 @@ extension GloryApi_CreateRoomRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
+    if self.shopID != 0 {
+      try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 2)
+    }
     if !self.groupID.isEmpty {
-      try visitor.visitSingularStringField(value: self.groupID, fieldNumber: 2)
+      try visitor.visitSingularStringField(value: self.groupID, fieldNumber: 3)
     }
     if !self.roomTitle.isEmpty {
-      try visitor.visitSingularStringField(value: self.roomTitle, fieldNumber: 3)
+      try visitor.visitSingularStringField(value: self.roomTitle, fieldNumber: 4)
     }
     if self.roomImageAttachmentID != 0 {
-      try visitor.visitSingularInt64Field(value: self.roomImageAttachmentID, fieldNumber: 4)
+      try visitor.visitSingularInt64Field(value: self.roomImageAttachmentID, fieldNumber: 5)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_CreateRoomRequest, rhs: GloryApi_CreateRoomRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.shopID != rhs.shopID {return false}
     if lhs.groupID != rhs.groupID {return false}
     if lhs.roomTitle != rhs.roomTitle {return false}
     if lhs.roomImageAttachmentID != rhs.roomImageAttachmentID {return false}
