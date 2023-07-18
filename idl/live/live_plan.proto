@@ -104,6 +104,7 @@ message LoadLivePlanProductRequest {
   base.BaseRequest base_request=1;
   int64 shop_id = 2; // shop id
   int64 live_plan_id = 3; // live plan id
+  bool is_playing = 4; // is load to playing product
 }
 
 message LoadLivePlanProductResponse {
@@ -139,12 +140,17 @@ message LiveProductStatus {
   int64 product_id = 2;
   string status = 3;
   int64 shop_id =4;
+  int64 room_id =5;
+  string product_selling_point =6;
+  string product_description =7;
+  bool is_introduct =8;
 }
 
 message ListLiveProductStatusRequest {
   base.BaseRequest base_request = 1;
   int64 shop_id = 2;
-  string status =3 ;
+  int64 room_id = 3;
+  string status =4 ;
   base.PaginationRequest pagination = 100;
 }
 
@@ -185,6 +191,16 @@ message LiveRecordRequest {
   string stream_name =4;
 }
 message LiveRecordResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+message UpdateLiveProductIntroductStatusRequest {
+  base.BaseRequest base_request=1;
+  int64 room_id =2;
+  int64 live_product_status_id =3;
+  string action =4; // start or stop
+}
+message UpdateLiveProductIntroductStatusResponse {
   base.BaseResponse base_resp = 1;
 }
 
