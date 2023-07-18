@@ -3983,6 +3983,37 @@ public final class glory_apiGrpc {
     return getGetLivingProductStatusMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<glory_api.LivePlanOuterClass.UpdateLiveProductIntroductStatusRequest,
+      glory_api.LivePlanOuterClass.UpdateLiveProductIntroductStatusResponse> getUpdateLiveProductIntroductStatusMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateLiveProductIntroductStatus",
+      requestType = glory_api.LivePlanOuterClass.UpdateLiveProductIntroductStatusRequest.class,
+      responseType = glory_api.LivePlanOuterClass.UpdateLiveProductIntroductStatusResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<glory_api.LivePlanOuterClass.UpdateLiveProductIntroductStatusRequest,
+      glory_api.LivePlanOuterClass.UpdateLiveProductIntroductStatusResponse> getUpdateLiveProductIntroductStatusMethod() {
+    io.grpc.MethodDescriptor<glory_api.LivePlanOuterClass.UpdateLiveProductIntroductStatusRequest, glory_api.LivePlanOuterClass.UpdateLiveProductIntroductStatusResponse> getUpdateLiveProductIntroductStatusMethod;
+    if ((getUpdateLiveProductIntroductStatusMethod = glory_apiGrpc.getUpdateLiveProductIntroductStatusMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getUpdateLiveProductIntroductStatusMethod = glory_apiGrpc.getUpdateLiveProductIntroductStatusMethod) == null) {
+          glory_apiGrpc.getUpdateLiveProductIntroductStatusMethod = getUpdateLiveProductIntroductStatusMethod =
+              io.grpc.MethodDescriptor.<glory_api.LivePlanOuterClass.UpdateLiveProductIntroductStatusRequest, glory_api.LivePlanOuterClass.UpdateLiveProductIntroductStatusResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateLiveProductIntroductStatus"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.LivePlanOuterClass.UpdateLiveProductIntroductStatusRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.LivePlanOuterClass.UpdateLiveProductIntroductStatusResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("UpdateLiveProductIntroductStatus"))
+              .build();
+        }
+      }
+    }
+    return getUpdateLiveProductIntroductStatusMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<glory_api.LiveTextOuterClass.CreateLiveTextRequest,
       glory_api.LiveTextOuterClass.CreateLiveTextResponse> getCreateLiveTextMethod;
 
@@ -5312,6 +5343,13 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    default void updateLiveProductIntroductStatus(glory_api.LivePlanOuterClass.UpdateLiveProductIntroductStatusRequest request,
+        io.grpc.stub.StreamObserver<glory_api.LivePlanOuterClass.UpdateLiveProductIntroductStatusResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateLiveProductIntroductStatusMethod(), responseObserver);
+    }
+
+    /**
      * <pre>
      * live text crud
      * </pre>
@@ -6514,6 +6552,14 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public void updateLiveProductIntroductStatus(glory_api.LivePlanOuterClass.UpdateLiveProductIntroductStatusRequest request,
+        io.grpc.stub.StreamObserver<glory_api.LivePlanOuterClass.UpdateLiveProductIntroductStatusResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateLiveProductIntroductStatusMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
      * <pre>
      * live text crud
      * </pre>
@@ -7584,6 +7630,13 @@ public final class glory_apiGrpc {
     public glory_api.LivePlanOuterClass.GetLivingProductStatusResponse getLivingProductStatus(glory_api.LivePlanOuterClass.GetLivingProductStatusRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetLivingProductStatusMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public glory_api.LivePlanOuterClass.UpdateLiveProductIntroductStatusResponse updateLiveProductIntroductStatus(glory_api.LivePlanOuterClass.UpdateLiveProductIntroductStatusRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateLiveProductIntroductStatusMethod(), getCallOptions(), request);
     }
 
     /**
@@ -8778,6 +8831,14 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<glory_api.LivePlanOuterClass.UpdateLiveProductIntroductStatusResponse> updateLiveProductIntroductStatus(
+        glory_api.LivePlanOuterClass.UpdateLiveProductIntroductStatusRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateLiveProductIntroductStatusMethod(), getCallOptions()), request);
+    }
+
+    /**
      * <pre>
      * live text crud
      * </pre>
@@ -8992,16 +9053,17 @@ public final class glory_apiGrpc {
   private static final int METHODID_DELETE_LIVE_PRODUCT_STATUS = 125;
   private static final int METHODID_CREATE_LIVE_PRODUCT_STATUS = 126;
   private static final int METHODID_GET_LIVING_PRODUCT_STATUS = 127;
-  private static final int METHODID_CREATE_LIVE_TEXT = 128;
-  private static final int METHODID_UPDATE_LIVE_TEXT = 129;
-  private static final int METHODID_LIST_LIVE_TEXT = 130;
-  private static final int METHODID_GET_LIVE_TEXT = 131;
-  private static final int METHODID_DELETE_LIVE_TEXTS = 132;
-  private static final int METHODID_CREATE_TENANT = 133;
-  private static final int METHODID_GET_TENANT = 134;
-  private static final int METHODID_UPDATE_TENANT = 135;
-  private static final int METHODID_DELETE_TENANT = 136;
-  private static final int METHODID_LIST_TENANT = 137;
+  private static final int METHODID_UPDATE_LIVE_PRODUCT_INTRODUCT_STATUS = 128;
+  private static final int METHODID_CREATE_LIVE_TEXT = 129;
+  private static final int METHODID_UPDATE_LIVE_TEXT = 130;
+  private static final int METHODID_LIST_LIVE_TEXT = 131;
+  private static final int METHODID_GET_LIVE_TEXT = 132;
+  private static final int METHODID_DELETE_LIVE_TEXTS = 133;
+  private static final int METHODID_CREATE_TENANT = 134;
+  private static final int METHODID_GET_TENANT = 135;
+  private static final int METHODID_UPDATE_TENANT = 136;
+  private static final int METHODID_DELETE_TENANT = 137;
+  private static final int METHODID_LIST_TENANT = 138;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -9531,6 +9593,10 @@ public final class glory_apiGrpc {
         case METHODID_GET_LIVING_PRODUCT_STATUS:
           serviceImpl.getLivingProductStatus((glory_api.LivePlanOuterClass.GetLivingProductStatusRequest) request,
               (io.grpc.stub.StreamObserver<glory_api.LivePlanOuterClass.GetLivingProductStatusResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_LIVE_PRODUCT_INTRODUCT_STATUS:
+          serviceImpl.updateLiveProductIntroductStatus((glory_api.LivePlanOuterClass.UpdateLiveProductIntroductStatusRequest) request,
+              (io.grpc.stub.StreamObserver<glory_api.LivePlanOuterClass.UpdateLiveProductIntroductStatusResponse>) responseObserver);
           break;
         case METHODID_CREATE_LIVE_TEXT:
           serviceImpl.createLiveText((glory_api.LiveTextOuterClass.CreateLiveTextRequest) request,
@@ -10487,6 +10553,13 @@ public final class glory_apiGrpc {
               glory_api.LivePlanOuterClass.GetLivingProductStatusResponse>(
                 service, METHODID_GET_LIVING_PRODUCT_STATUS)))
         .addMethod(
+          getUpdateLiveProductIntroductStatusMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              glory_api.LivePlanOuterClass.UpdateLiveProductIntroductStatusRequest,
+              glory_api.LivePlanOuterClass.UpdateLiveProductIntroductStatusResponse>(
+                service, METHODID_UPDATE_LIVE_PRODUCT_INTRODUCT_STATUS)))
+        .addMethod(
           getCreateLiveTextMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -10732,6 +10805,7 @@ public final class glory_apiGrpc {
               .addMethod(getDeleteLiveProductStatusMethod())
               .addMethod(getCreateLiveProductStatusMethod())
               .addMethod(getGetLivingProductStatusMethod())
+              .addMethod(getUpdateLiveProductIntroductStatusMethod())
               .addMethod(getCreateLiveTextMethod())
               .addMethod(getUpdateLiveTextMethod())
               .addMethod(getListLiveTextMethod())

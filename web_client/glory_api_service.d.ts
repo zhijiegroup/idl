@@ -562,6 +562,10 @@ CreateLivePlanProduct create live plan product */
     request: live_plan.GetLivingProductStatusRequest
   ): Promise<live_plan.GetLivingProductStatusResponse>;
 
+  UpdateLiveProductIntroductStatus(
+    request: live_plan.UpdateLiveProductIntroductStatusRequest
+  ): Promise<live_plan.UpdateLiveProductIntroductStatusResponse>;
+
   /** live text crud */
   CreateLiveText(
     request: live_text.CreateLiveTextRequest

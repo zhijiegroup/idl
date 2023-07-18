@@ -1052,6 +1052,14 @@ export class glory_api {
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
 
+  UpdateLiveProductIntroductStatus(request) {
+    const uri = `${this.uriPrefix}/api/live/update_live_product_introduct_status`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   CreateLiveText(request) {
     const uri = `${this.uriPrefix}/api/live/create_live_text`;
     const body = JSONbigint.stringify(request);
