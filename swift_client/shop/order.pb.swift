@@ -126,6 +126,7 @@ struct GloryApi_CreateOrderInfo {
     set {_uniqueStorage()._deliverFee = newValue}
   }
 
+  ///货币类型  CNY :人民币 , COIN:虚拟币
   var currency: String {
     get {return _storage._currency}
     set {_uniqueStorage()._currency = newValue}
@@ -164,6 +165,24 @@ struct GloryApi_CreateOrderInfo {
   var buyerName: String {
     get {return _storage._buyerName}
     set {_uniqueStorage()._buyerName = newValue}
+  }
+
+  ///直播房间id
+  var roomID: Int64 {
+    get {return _storage._roomID}
+    set {_uniqueStorage()._roomID = newValue}
+  }
+
+  ///live:直播间订单,normal:非直播间订单
+  var channel: String {
+    get {return _storage._channel}
+    set {_uniqueStorage()._channel = newValue}
+  }
+
+  ///流水id,下单时候 货币订单、虚拟币订单,分别进行合并,合并后称之为 trans_id(流水id)
+  var transID: Int64 {
+    get {return _storage._transID}
+    set {_uniqueStorage()._transID = newValue}
   }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -428,7 +447,13 @@ struct GloryApi_CreateOrderResponse {
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
-  var orderRes: [GloryApi_OrderResponseInfo] = []
+  var transRes: [GloryApi_TransResponseInfo] = []
+
+  ///人民币总金额，单位为分 微信支付使用
+  var cnyTotal: Double = 0
+
+  ///虚拟币总金额
+  var coinTotal: Double = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -437,7 +462,24 @@ struct GloryApi_CreateOrderResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_OrderResponseInfo {
+struct GloryApi_TransResponseInfo {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var transID: Int64 = 0
+
+  var order: [GloryApi_OrderResponse] = []
+
+  ///货币类型  CNY :人民币 , COIN:虚拟币
+  var currency: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct GloryApi_OrderResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -446,9 +488,6 @@ struct GloryApi_OrderResponseInfo {
 
   ///货币类型  CNY :人民币 , COIN:虚拟币
   var currency: String = String()
-
-  ///订单总金额，单位为分 微信支付使用
-  var total: Double = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -834,7 +873,8 @@ extension GloryApi_ProductInfo: @unchecked Sendable {}
 extension GloryApi_OrderWithAuthor: @unchecked Sendable {}
 extension GloryApi_CreateOrderRequest: @unchecked Sendable {}
 extension GloryApi_CreateOrderResponse: @unchecked Sendable {}
-extension GloryApi_OrderResponseInfo: @unchecked Sendable {}
+extension GloryApi_TransResponseInfo: @unchecked Sendable {}
+extension GloryApi_OrderResponse: @unchecked Sendable {}
 extension GloryApi_GetOrderRequest: @unchecked Sendable {}
 extension GloryApi_GetOrderResponse: @unchecked Sendable {}
 extension GloryApi_UpdateOrderRequest: @unchecked Sendable {}
@@ -1035,6 +1075,9 @@ extension GloryApi_CreateOrderInfo: SwiftProtobuf.Message, SwiftProtobuf._Messag
     16: .standard(proto: "sku_info"),
     17: .same(proto: "message"),
     18: .standard(proto: "buyer_name"),
+    19: .standard(proto: "room_id"),
+    20: .same(proto: "channel"),
+    21: .standard(proto: "trans_id"),
   ]
 
   fileprivate class _StorageClass {
@@ -1055,6 +1098,9 @@ extension GloryApi_CreateOrderInfo: SwiftProtobuf.Message, SwiftProtobuf._Messag
     var _skuInfo: [GloryApi_SkuInfo] = []
     var _message: String = String()
     var _buyerName: String = String()
+    var _roomID: Int64 = 0
+    var _channel: String = String()
+    var _transID: Int64 = 0
 
     static let defaultInstance = _StorageClass()
 
@@ -1078,6 +1124,9 @@ extension GloryApi_CreateOrderInfo: SwiftProtobuf.Message, SwiftProtobuf._Messag
       _skuInfo = source._skuInfo
       _message = source._message
       _buyerName = source._buyerName
+      _roomID = source._roomID
+      _channel = source._channel
+      _transID = source._transID
     }
   }
 
@@ -1113,6 +1162,9 @@ extension GloryApi_CreateOrderInfo: SwiftProtobuf.Message, SwiftProtobuf._Messag
         case 16: try { try decoder.decodeRepeatedMessageField(value: &_storage._skuInfo) }()
         case 17: try { try decoder.decodeSingularStringField(value: &_storage._message) }()
         case 18: try { try decoder.decodeSingularStringField(value: &_storage._buyerName) }()
+        case 19: try { try decoder.decodeSingularInt64Field(value: &_storage._roomID) }()
+        case 20: try { try decoder.decodeSingularStringField(value: &_storage._channel) }()
+        case 21: try { try decoder.decodeSingularInt64Field(value: &_storage._transID) }()
         default: break
         }
       }
@@ -1172,6 +1224,15 @@ extension GloryApi_CreateOrderInfo: SwiftProtobuf.Message, SwiftProtobuf._Messag
       if !_storage._buyerName.isEmpty {
         try visitor.visitSingularStringField(value: _storage._buyerName, fieldNumber: 18)
       }
+      if _storage._roomID != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._roomID, fieldNumber: 19)
+      }
+      if !_storage._channel.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._channel, fieldNumber: 20)
+      }
+      if _storage._transID != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._transID, fieldNumber: 21)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1198,6 +1259,9 @@ extension GloryApi_CreateOrderInfo: SwiftProtobuf.Message, SwiftProtobuf._Messag
         if _storage._skuInfo != rhs_storage._skuInfo {return false}
         if _storage._message != rhs_storage._message {return false}
         if _storage._buyerName != rhs_storage._buyerName {return false}
+        if _storage._roomID != rhs_storage._roomID {return false}
+        if _storage._channel != rhs_storage._channel {return false}
+        if _storage._transID != rhs_storage._transID {return false}
         return true
       }
       if !storagesAreEqual {return false}
@@ -1743,7 +1807,9 @@ extension GloryApi_CreateOrderResponse: SwiftProtobuf.Message, SwiftProtobuf._Me
   static let protoMessageName: String = _protobuf_package + ".CreateOrderResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
-    2: .standard(proto: "order_res"),
+    2: .standard(proto: "trans_res"),
+    3: .standard(proto: "CNY_total"),
+    4: .standard(proto: "COIN_total"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1753,7 +1819,9 @@ extension GloryApi_CreateOrderResponse: SwiftProtobuf.Message, SwiftProtobuf._Me
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
-      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.orderRes) }()
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.transRes) }()
+      case 3: try { try decoder.decodeSingularDoubleField(value: &self.cnyTotal) }()
+      case 4: try { try decoder.decodeSingularDoubleField(value: &self.coinTotal) }()
       default: break
       }
     }
@@ -1767,26 +1835,77 @@ extension GloryApi_CreateOrderResponse: SwiftProtobuf.Message, SwiftProtobuf._Me
     try { if let v = self._baseResp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    if !self.orderRes.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.orderRes, fieldNumber: 2)
+    if !self.transRes.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.transRes, fieldNumber: 2)
+    }
+    if self.cnyTotal != 0 {
+      try visitor.visitSingularDoubleField(value: self.cnyTotal, fieldNumber: 3)
+    }
+    if self.coinTotal != 0 {
+      try visitor.visitSingularDoubleField(value: self.coinTotal, fieldNumber: 4)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_CreateOrderResponse, rhs: GloryApi_CreateOrderResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
-    if lhs.orderRes != rhs.orderRes {return false}
+    if lhs.transRes != rhs.transRes {return false}
+    if lhs.cnyTotal != rhs.cnyTotal {return false}
+    if lhs.coinTotal != rhs.coinTotal {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension GloryApi_OrderResponseInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".OrderResponseInfo"
+extension GloryApi_TransResponseInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".TransResponseInfo"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "trans_id"),
+    2: .same(proto: "order"),
+    3: .same(proto: "currency"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.transID) }()
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.order) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.currency) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.transID != 0 {
+      try visitor.visitSingularInt64Field(value: self.transID, fieldNumber: 1)
+    }
+    if !self.order.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.order, fieldNumber: 2)
+    }
+    if !self.currency.isEmpty {
+      try visitor.visitSingularStringField(value: self.currency, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_TransResponseInfo, rhs: GloryApi_TransResponseInfo) -> Bool {
+    if lhs.transID != rhs.transID {return false}
+    if lhs.order != rhs.order {return false}
+    if lhs.currency != rhs.currency {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_OrderResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".OrderResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "order_id"),
     2: .same(proto: "currency"),
-    3: .same(proto: "total"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1797,7 +1916,6 @@ extension GloryApi_OrderResponseInfo: SwiftProtobuf.Message, SwiftProtobuf._Mess
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularInt64Field(value: &self.orderID) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.currency) }()
-      case 3: try { try decoder.decodeSingularDoubleField(value: &self.total) }()
       default: break
       }
     }
@@ -1810,16 +1928,12 @@ extension GloryApi_OrderResponseInfo: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if !self.currency.isEmpty {
       try visitor.visitSingularStringField(value: self.currency, fieldNumber: 2)
     }
-    if self.total != 0 {
-      try visitor.visitSingularDoubleField(value: self.total, fieldNumber: 3)
-    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: GloryApi_OrderResponseInfo, rhs: GloryApi_OrderResponseInfo) -> Bool {
+  static func ==(lhs: GloryApi_OrderResponse, rhs: GloryApi_OrderResponse) -> Bool {
     if lhs.orderID != rhs.orderID {return false}
     if lhs.currency != rhs.currency {return false}
-    if lhs.total != rhs.total {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

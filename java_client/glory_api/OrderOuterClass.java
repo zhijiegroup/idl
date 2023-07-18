@@ -2743,11 +2743,19 @@ public final class OrderOuterClass {
     double getDeliverFee();
 
     /**
+     * <pre>
+     *货币类型  CNY :人民币 , COIN:虚拟币
+     * </pre>
+     *
      * <code>string currency = 11;</code>
      * @return The currency.
      */
     java.lang.String getCurrency();
     /**
+     * <pre>
+     *货币类型  CNY :人民币 , COIN:虚拟币
+     * </pre>
+     *
      * <code>string currency = 11;</code>
      * @return The bytes for currency.
      */
@@ -2843,6 +2851,46 @@ public final class OrderOuterClass {
      */
     com.google.protobuf.ByteString
         getBuyerNameBytes();
+
+    /**
+     * <pre>
+     *直播房间id
+     * </pre>
+     *
+     * <code>int64 room_id = 19;</code>
+     * @return The roomId.
+     */
+    long getRoomId();
+
+    /**
+     * <pre>
+     *live:直播间订单,normal:非直播间订单
+     * </pre>
+     *
+     * <code>string channel = 20;</code>
+     * @return The channel.
+     */
+    java.lang.String getChannel();
+    /**
+     * <pre>
+     *live:直播间订单,normal:非直播间订单
+     * </pre>
+     *
+     * <code>string channel = 20;</code>
+     * @return The bytes for channel.
+     */
+    com.google.protobuf.ByteString
+        getChannelBytes();
+
+    /**
+     * <pre>
+     *流水id,下单时候 货币订单、虚拟币订单,分别进行合并,合并后称之为 trans_id(流水id)
+     * </pre>
+     *
+     * <code>int64 trans_id = 21;</code>
+     * @return The transId.
+     */
+    long getTransId();
   }
   /**
    * Protobuf type {@code glory_api.CreateOrderInfo}
@@ -2864,6 +2912,7 @@ public final class OrderOuterClass {
       skuInfo_ = java.util.Collections.emptyList();
       message_ = "";
       buyerName_ = "";
+      channel_ = "";
     }
 
     @java.lang.Override
@@ -2990,6 +3039,22 @@ public final class OrderOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               buyerName_ = s;
+              break;
+            }
+            case 152: {
+
+              roomId_ = input.readInt64();
+              break;
+            }
+            case 162: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              channel_ = s;
+              break;
+            }
+            case 168: {
+
+              transId_ = input.readInt64();
               break;
             }
             default: {
@@ -3129,6 +3194,10 @@ public final class OrderOuterClass {
     public static final int CURRENCY_FIELD_NUMBER = 11;
     private volatile java.lang.Object currency_;
     /**
+     * <pre>
+     *货币类型  CNY :人民币 , COIN:虚拟币
+     * </pre>
+     *
      * <code>string currency = 11;</code>
      * @return The currency.
      */
@@ -3146,6 +3215,10 @@ public final class OrderOuterClass {
       }
     }
     /**
+     * <pre>
+     *货币类型  CNY :人民币 , COIN:虚拟币
+     * </pre>
+     *
      * <code>string currency = 11;</code>
      * @return The bytes for currency.
      */
@@ -3405,6 +3478,82 @@ public final class OrderOuterClass {
       }
     }
 
+    public static final int ROOM_ID_FIELD_NUMBER = 19;
+    private long roomId_;
+    /**
+     * <pre>
+     *直播房间id
+     * </pre>
+     *
+     * <code>int64 room_id = 19;</code>
+     * @return The roomId.
+     */
+    @java.lang.Override
+    public long getRoomId() {
+      return roomId_;
+    }
+
+    public static final int CHANNEL_FIELD_NUMBER = 20;
+    private volatile java.lang.Object channel_;
+    /**
+     * <pre>
+     *live:直播间订单,normal:非直播间订单
+     * </pre>
+     *
+     * <code>string channel = 20;</code>
+     * @return The channel.
+     */
+    @java.lang.Override
+    public java.lang.String getChannel() {
+      java.lang.Object ref = channel_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        channel_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *live:直播间订单,normal:非直播间订单
+     * </pre>
+     *
+     * <code>string channel = 20;</code>
+     * @return The bytes for channel.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getChannelBytes() {
+      java.lang.Object ref = channel_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        channel_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TRANS_ID_FIELD_NUMBER = 21;
+    private long transId_;
+    /**
+     * <pre>
+     *流水id,下单时候 货币订单、虚拟币订单,分别进行合并,合并后称之为 trans_id(流水id)
+     * </pre>
+     *
+     * <code>int64 trans_id = 21;</code>
+     * @return The transId.
+     */
+    @java.lang.Override
+    public long getTransId() {
+      return transId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3469,6 +3618,15 @@ public final class OrderOuterClass {
       }
       if (!getBuyerNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 18, buyerName_);
+      }
+      if (roomId_ != 0L) {
+        output.writeInt64(19, roomId_);
+      }
+      if (!getChannelBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 20, channel_);
+      }
+      if (transId_ != 0L) {
+        output.writeInt64(21, transId_);
       }
       unknownFields.writeTo(output);
     }
@@ -3541,6 +3699,17 @@ public final class OrderOuterClass {
       if (!getBuyerNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, buyerName_);
       }
+      if (roomId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(19, roomId_);
+      }
+      if (!getChannelBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, channel_);
+      }
+      if (transId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(21, transId_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -3594,6 +3763,12 @@ public final class OrderOuterClass {
           .equals(other.getMessage())) return false;
       if (!getBuyerName()
           .equals(other.getBuyerName())) return false;
+      if (getRoomId()
+          != other.getRoomId()) return false;
+      if (!getChannel()
+          .equals(other.getChannel())) return false;
+      if (getTransId()
+          != other.getTransId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3650,6 +3825,14 @@ public final class OrderOuterClass {
       hash = (53 * hash) + getMessage().hashCode();
       hash = (37 * hash) + BUYER_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getBuyerName().hashCode();
+      hash = (37 * hash) + ROOM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getRoomId());
+      hash = (37 * hash) + CHANNEL_FIELD_NUMBER;
+      hash = (53 * hash) + getChannel().hashCode();
+      hash = (37 * hash) + TRANS_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTransId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3822,6 +4005,12 @@ public final class OrderOuterClass {
 
         buyerName_ = "";
 
+        roomId_ = 0L;
+
+        channel_ = "";
+
+        transId_ = 0L;
+
         return this;
       }
 
@@ -3874,6 +4063,9 @@ public final class OrderOuterClass {
         }
         result.message_ = message_;
         result.buyerName_ = buyerName_;
+        result.roomId_ = roomId_;
+        result.channel_ = channel_;
+        result.transId_ = transId_;
         onBuilt();
         return result;
       }
@@ -4001,6 +4193,16 @@ public final class OrderOuterClass {
         if (!other.getBuyerName().isEmpty()) {
           buyerName_ = other.buyerName_;
           onChanged();
+        }
+        if (other.getRoomId() != 0L) {
+          setRoomId(other.getRoomId());
+        }
+        if (!other.getChannel().isEmpty()) {
+          channel_ = other.channel_;
+          onChanged();
+        }
+        if (other.getTransId() != 0L) {
+          setTransId(other.getTransId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4313,6 +4515,10 @@ public final class OrderOuterClass {
 
       private java.lang.Object currency_ = "";
       /**
+       * <pre>
+       *货币类型  CNY :人民币 , COIN:虚拟币
+       * </pre>
+       *
        * <code>string currency = 11;</code>
        * @return The currency.
        */
@@ -4329,6 +4535,10 @@ public final class OrderOuterClass {
         }
       }
       /**
+       * <pre>
+       *货币类型  CNY :人民币 , COIN:虚拟币
+       * </pre>
+       *
        * <code>string currency = 11;</code>
        * @return The bytes for currency.
        */
@@ -4346,6 +4556,10 @@ public final class OrderOuterClass {
         }
       }
       /**
+       * <pre>
+       *货币类型  CNY :人民币 , COIN:虚拟币
+       * </pre>
+       *
        * <code>string currency = 11;</code>
        * @param value The currency to set.
        * @return This builder for chaining.
@@ -4361,6 +4575,10 @@ public final class OrderOuterClass {
         return this;
       }
       /**
+       * <pre>
+       *货币类型  CNY :人民币 , COIN:虚拟币
+       * </pre>
+       *
        * <code>string currency = 11;</code>
        * @return This builder for chaining.
        */
@@ -4371,6 +4589,10 @@ public final class OrderOuterClass {
         return this;
       }
       /**
+       * <pre>
+       *货币类型  CNY :人民币 , COIN:虚拟币
+       * </pre>
+       *
        * <code>string currency = 11;</code>
        * @param value The bytes for currency to set.
        * @return This builder for chaining.
@@ -5034,6 +5256,188 @@ public final class OrderOuterClass {
   checkByteStringIsUtf8(value);
         
         buyerName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long roomId_ ;
+      /**
+       * <pre>
+       *直播房间id
+       * </pre>
+       *
+       * <code>int64 room_id = 19;</code>
+       * @return The roomId.
+       */
+      @java.lang.Override
+      public long getRoomId() {
+        return roomId_;
+      }
+      /**
+       * <pre>
+       *直播房间id
+       * </pre>
+       *
+       * <code>int64 room_id = 19;</code>
+       * @param value The roomId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRoomId(long value) {
+        
+        roomId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *直播房间id
+       * </pre>
+       *
+       * <code>int64 room_id = 19;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRoomId() {
+        
+        roomId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object channel_ = "";
+      /**
+       * <pre>
+       *live:直播间订单,normal:非直播间订单
+       * </pre>
+       *
+       * <code>string channel = 20;</code>
+       * @return The channel.
+       */
+      public java.lang.String getChannel() {
+        java.lang.Object ref = channel_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          channel_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       *live:直播间订单,normal:非直播间订单
+       * </pre>
+       *
+       * <code>string channel = 20;</code>
+       * @return The bytes for channel.
+       */
+      public com.google.protobuf.ByteString
+          getChannelBytes() {
+        java.lang.Object ref = channel_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          channel_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *live:直播间订单,normal:非直播间订单
+       * </pre>
+       *
+       * <code>string channel = 20;</code>
+       * @param value The channel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChannel(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        channel_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *live:直播间订单,normal:非直播间订单
+       * </pre>
+       *
+       * <code>string channel = 20;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearChannel() {
+        
+        channel_ = getDefaultInstance().getChannel();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *live:直播间订单,normal:非直播间订单
+       * </pre>
+       *
+       * <code>string channel = 20;</code>
+       * @param value The bytes for channel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChannelBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        channel_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long transId_ ;
+      /**
+       * <pre>
+       *流水id,下单时候 货币订单、虚拟币订单,分别进行合并,合并后称之为 trans_id(流水id)
+       * </pre>
+       *
+       * <code>int64 trans_id = 21;</code>
+       * @return The transId.
+       */
+      @java.lang.Override
+      public long getTransId() {
+        return transId_;
+      }
+      /**
+       * <pre>
+       *流水id,下单时候 货币订单、虚拟币订单,分别进行合并,合并后称之为 trans_id(流水id)
+       * </pre>
+       *
+       * <code>int64 trans_id = 21;</code>
+       * @param value The transId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTransId(long value) {
+        
+        transId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *流水id,下单时候 货币订单、虚拟币订单,分别进行合并,合并后称之为 trans_id(流水id)
+       * </pre>
+       *
+       * <code>int64 trans_id = 21;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTransId() {
+        
+        transId_ = 0L;
         onChanged();
         return this;
       }
@@ -14784,28 +15188,48 @@ public final class OrderOuterClass {
     base.Base.BaseResponseOrBuilder getBaseRespOrBuilder();
 
     /**
-     * <code>repeated .glory_api.OrderResponseInfo order_res = 2;</code>
+     * <code>repeated .glory_api.TransResponseInfo trans_res = 2;</code>
      */
-    java.util.List<glory_api.OrderOuterClass.OrderResponseInfo> 
-        getOrderResList();
+    java.util.List<glory_api.OrderOuterClass.TransResponseInfo> 
+        getTransResList();
     /**
-     * <code>repeated .glory_api.OrderResponseInfo order_res = 2;</code>
+     * <code>repeated .glory_api.TransResponseInfo trans_res = 2;</code>
      */
-    glory_api.OrderOuterClass.OrderResponseInfo getOrderRes(int index);
+    glory_api.OrderOuterClass.TransResponseInfo getTransRes(int index);
     /**
-     * <code>repeated .glory_api.OrderResponseInfo order_res = 2;</code>
+     * <code>repeated .glory_api.TransResponseInfo trans_res = 2;</code>
      */
-    int getOrderResCount();
+    int getTransResCount();
     /**
-     * <code>repeated .glory_api.OrderResponseInfo order_res = 2;</code>
+     * <code>repeated .glory_api.TransResponseInfo trans_res = 2;</code>
      */
-    java.util.List<? extends glory_api.OrderOuterClass.OrderResponseInfoOrBuilder> 
-        getOrderResOrBuilderList();
+    java.util.List<? extends glory_api.OrderOuterClass.TransResponseInfoOrBuilder> 
+        getTransResOrBuilderList();
     /**
-     * <code>repeated .glory_api.OrderResponseInfo order_res = 2;</code>
+     * <code>repeated .glory_api.TransResponseInfo trans_res = 2;</code>
      */
-    glory_api.OrderOuterClass.OrderResponseInfoOrBuilder getOrderResOrBuilder(
+    glory_api.OrderOuterClass.TransResponseInfoOrBuilder getTransResOrBuilder(
         int index);
+
+    /**
+     * <pre>
+     *人民币总金额，单位为分 微信支付使用
+     * </pre>
+     *
+     * <code>double CNY_total = 3;</code>
+     * @return The cNYTotal.
+     */
+    double getCNYTotal();
+
+    /**
+     * <pre>
+     *虚拟币总金额
+     * </pre>
+     *
+     * <code>double COIN_total = 4;</code>
+     * @return The cOINTotal.
+     */
+    double getCOINTotal();
   }
   /**
    * Protobuf type {@code glory_api.CreateOrderResponse}
@@ -14820,7 +15244,7 @@ public final class OrderOuterClass {
       super(builder);
     }
     private CreateOrderResponse() {
-      orderRes_ = java.util.Collections.emptyList();
+      transRes_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -14869,11 +15293,21 @@ public final class OrderOuterClass {
             }
             case 18: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                orderRes_ = new java.util.ArrayList<glory_api.OrderOuterClass.OrderResponseInfo>();
+                transRes_ = new java.util.ArrayList<glory_api.OrderOuterClass.TransResponseInfo>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              orderRes_.add(
-                  input.readMessage(glory_api.OrderOuterClass.OrderResponseInfo.parser(), extensionRegistry));
+              transRes_.add(
+                  input.readMessage(glory_api.OrderOuterClass.TransResponseInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 25: {
+
+              cNYTotal_ = input.readDouble();
+              break;
+            }
+            case 33: {
+
+              cOINTotal_ = input.readDouble();
               break;
             }
             default: {
@@ -14892,7 +15326,7 @@ public final class OrderOuterClass {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          orderRes_ = java.util.Collections.unmodifiableList(orderRes_);
+          transRes_ = java.util.Collections.unmodifiableList(transRes_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -14937,44 +15371,74 @@ public final class OrderOuterClass {
       return getBaseResp();
     }
 
-    public static final int ORDER_RES_FIELD_NUMBER = 2;
-    private java.util.List<glory_api.OrderOuterClass.OrderResponseInfo> orderRes_;
+    public static final int TRANS_RES_FIELD_NUMBER = 2;
+    private java.util.List<glory_api.OrderOuterClass.TransResponseInfo> transRes_;
     /**
-     * <code>repeated .glory_api.OrderResponseInfo order_res = 2;</code>
+     * <code>repeated .glory_api.TransResponseInfo trans_res = 2;</code>
      */
     @java.lang.Override
-    public java.util.List<glory_api.OrderOuterClass.OrderResponseInfo> getOrderResList() {
-      return orderRes_;
+    public java.util.List<glory_api.OrderOuterClass.TransResponseInfo> getTransResList() {
+      return transRes_;
     }
     /**
-     * <code>repeated .glory_api.OrderResponseInfo order_res = 2;</code>
+     * <code>repeated .glory_api.TransResponseInfo trans_res = 2;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends glory_api.OrderOuterClass.OrderResponseInfoOrBuilder> 
-        getOrderResOrBuilderList() {
-      return orderRes_;
+    public java.util.List<? extends glory_api.OrderOuterClass.TransResponseInfoOrBuilder> 
+        getTransResOrBuilderList() {
+      return transRes_;
     }
     /**
-     * <code>repeated .glory_api.OrderResponseInfo order_res = 2;</code>
+     * <code>repeated .glory_api.TransResponseInfo trans_res = 2;</code>
      */
     @java.lang.Override
-    public int getOrderResCount() {
-      return orderRes_.size();
+    public int getTransResCount() {
+      return transRes_.size();
     }
     /**
-     * <code>repeated .glory_api.OrderResponseInfo order_res = 2;</code>
+     * <code>repeated .glory_api.TransResponseInfo trans_res = 2;</code>
      */
     @java.lang.Override
-    public glory_api.OrderOuterClass.OrderResponseInfo getOrderRes(int index) {
-      return orderRes_.get(index);
+    public glory_api.OrderOuterClass.TransResponseInfo getTransRes(int index) {
+      return transRes_.get(index);
     }
     /**
-     * <code>repeated .glory_api.OrderResponseInfo order_res = 2;</code>
+     * <code>repeated .glory_api.TransResponseInfo trans_res = 2;</code>
      */
     @java.lang.Override
-    public glory_api.OrderOuterClass.OrderResponseInfoOrBuilder getOrderResOrBuilder(
+    public glory_api.OrderOuterClass.TransResponseInfoOrBuilder getTransResOrBuilder(
         int index) {
-      return orderRes_.get(index);
+      return transRes_.get(index);
+    }
+
+    public static final int CNY_TOTAL_FIELD_NUMBER = 3;
+    private double cNYTotal_;
+    /**
+     * <pre>
+     *人民币总金额，单位为分 微信支付使用
+     * </pre>
+     *
+     * <code>double CNY_total = 3;</code>
+     * @return The cNYTotal.
+     */
+    @java.lang.Override
+    public double getCNYTotal() {
+      return cNYTotal_;
+    }
+
+    public static final int COIN_TOTAL_FIELD_NUMBER = 4;
+    private double cOINTotal_;
+    /**
+     * <pre>
+     *虚拟币总金额
+     * </pre>
+     *
+     * <code>double COIN_total = 4;</code>
+     * @return The cOINTotal.
+     */
+    @java.lang.Override
+    public double getCOINTotal() {
+      return cOINTotal_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -14994,8 +15458,14 @@ public final class OrderOuterClass {
       if (baseResp_ != null) {
         output.writeMessage(1, getBaseResp());
       }
-      for (int i = 0; i < orderRes_.size(); i++) {
-        output.writeMessage(2, orderRes_.get(i));
+      for (int i = 0; i < transRes_.size(); i++) {
+        output.writeMessage(2, transRes_.get(i));
+      }
+      if (cNYTotal_ != 0D) {
+        output.writeDouble(3, cNYTotal_);
+      }
+      if (cOINTotal_ != 0D) {
+        output.writeDouble(4, cOINTotal_);
       }
       unknownFields.writeTo(output);
     }
@@ -15010,9 +15480,17 @@ public final class OrderOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getBaseResp());
       }
-      for (int i = 0; i < orderRes_.size(); i++) {
+      for (int i = 0; i < transRes_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, orderRes_.get(i));
+          .computeMessageSize(2, transRes_.get(i));
+      }
+      if (cNYTotal_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(3, cNYTotal_);
+      }
+      if (cOINTotal_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(4, cOINTotal_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -15034,8 +15512,14 @@ public final class OrderOuterClass {
         if (!getBaseResp()
             .equals(other.getBaseResp())) return false;
       }
-      if (!getOrderResList()
-          .equals(other.getOrderResList())) return false;
+      if (!getTransResList()
+          .equals(other.getTransResList())) return false;
+      if (java.lang.Double.doubleToLongBits(getCNYTotal())
+          != java.lang.Double.doubleToLongBits(
+              other.getCNYTotal())) return false;
+      if (java.lang.Double.doubleToLongBits(getCOINTotal())
+          != java.lang.Double.doubleToLongBits(
+              other.getCOINTotal())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -15051,10 +15535,16 @@ public final class OrderOuterClass {
         hash = (37 * hash) + BASE_RESP_FIELD_NUMBER;
         hash = (53 * hash) + getBaseResp().hashCode();
       }
-      if (getOrderResCount() > 0) {
-        hash = (37 * hash) + ORDER_RES_FIELD_NUMBER;
-        hash = (53 * hash) + getOrderResList().hashCode();
+      if (getTransResCount() > 0) {
+        hash = (37 * hash) + TRANS_RES_FIELD_NUMBER;
+        hash = (53 * hash) + getTransResList().hashCode();
       }
+      hash = (37 * hash) + CNY_TOTAL_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getCNYTotal()));
+      hash = (37 * hash) + COIN_TOTAL_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getCOINTotal()));
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -15183,7 +15673,7 @@ public final class OrderOuterClass {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getOrderResFieldBuilder();
+          getTransResFieldBuilder();
         }
       }
       @java.lang.Override
@@ -15195,12 +15685,16 @@ public final class OrderOuterClass {
           baseResp_ = null;
           baseRespBuilder_ = null;
         }
-        if (orderResBuilder_ == null) {
-          orderRes_ = java.util.Collections.emptyList();
+        if (transResBuilder_ == null) {
+          transRes_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          orderResBuilder_.clear();
+          transResBuilder_.clear();
         }
+        cNYTotal_ = 0D;
+
+        cOINTotal_ = 0D;
+
         return this;
       }
 
@@ -15233,15 +15727,17 @@ public final class OrderOuterClass {
         } else {
           result.baseResp_ = baseRespBuilder_.build();
         }
-        if (orderResBuilder_ == null) {
+        if (transResBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
-            orderRes_ = java.util.Collections.unmodifiableList(orderRes_);
+            transRes_ = java.util.Collections.unmodifiableList(transRes_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
-          result.orderRes_ = orderRes_;
+          result.transRes_ = transRes_;
         } else {
-          result.orderRes_ = orderResBuilder_.build();
+          result.transRes_ = transResBuilder_.build();
         }
+        result.cNYTotal_ = cNYTotal_;
+        result.cOINTotal_ = cOINTotal_;
         onBuilt();
         return result;
       }
@@ -15293,31 +15789,37 @@ public final class OrderOuterClass {
         if (other.hasBaseResp()) {
           mergeBaseResp(other.getBaseResp());
         }
-        if (orderResBuilder_ == null) {
-          if (!other.orderRes_.isEmpty()) {
-            if (orderRes_.isEmpty()) {
-              orderRes_ = other.orderRes_;
+        if (transResBuilder_ == null) {
+          if (!other.transRes_.isEmpty()) {
+            if (transRes_.isEmpty()) {
+              transRes_ = other.transRes_;
               bitField0_ = (bitField0_ & ~0x00000001);
             } else {
-              ensureOrderResIsMutable();
-              orderRes_.addAll(other.orderRes_);
+              ensureTransResIsMutable();
+              transRes_.addAll(other.transRes_);
             }
             onChanged();
           }
         } else {
-          if (!other.orderRes_.isEmpty()) {
-            if (orderResBuilder_.isEmpty()) {
-              orderResBuilder_.dispose();
-              orderResBuilder_ = null;
-              orderRes_ = other.orderRes_;
+          if (!other.transRes_.isEmpty()) {
+            if (transResBuilder_.isEmpty()) {
+              transResBuilder_.dispose();
+              transResBuilder_ = null;
+              transRes_ = other.transRes_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              orderResBuilder_ = 
+              transResBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getOrderResFieldBuilder() : null;
+                   getTransResFieldBuilder() : null;
             } else {
-              orderResBuilder_.addAllMessages(other.orderRes_);
+              transResBuilder_.addAllMessages(other.transRes_);
             }
           }
+        }
+        if (other.getCNYTotal() != 0D) {
+          setCNYTotal(other.getCNYTotal());
+        }
+        if (other.getCOINTotal() != 0D) {
+          setCOINTotal(other.getCOINTotal());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -15468,244 +15970,330 @@ public final class OrderOuterClass {
         return baseRespBuilder_;
       }
 
-      private java.util.List<glory_api.OrderOuterClass.OrderResponseInfo> orderRes_ =
+      private java.util.List<glory_api.OrderOuterClass.TransResponseInfo> transRes_ =
         java.util.Collections.emptyList();
-      private void ensureOrderResIsMutable() {
+      private void ensureTransResIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          orderRes_ = new java.util.ArrayList<glory_api.OrderOuterClass.OrderResponseInfo>(orderRes_);
+          transRes_ = new java.util.ArrayList<glory_api.OrderOuterClass.TransResponseInfo>(transRes_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          glory_api.OrderOuterClass.OrderResponseInfo, glory_api.OrderOuterClass.OrderResponseInfo.Builder, glory_api.OrderOuterClass.OrderResponseInfoOrBuilder> orderResBuilder_;
+          glory_api.OrderOuterClass.TransResponseInfo, glory_api.OrderOuterClass.TransResponseInfo.Builder, glory_api.OrderOuterClass.TransResponseInfoOrBuilder> transResBuilder_;
 
       /**
-       * <code>repeated .glory_api.OrderResponseInfo order_res = 2;</code>
+       * <code>repeated .glory_api.TransResponseInfo trans_res = 2;</code>
        */
-      public java.util.List<glory_api.OrderOuterClass.OrderResponseInfo> getOrderResList() {
-        if (orderResBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(orderRes_);
+      public java.util.List<glory_api.OrderOuterClass.TransResponseInfo> getTransResList() {
+        if (transResBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(transRes_);
         } else {
-          return orderResBuilder_.getMessageList();
+          return transResBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .glory_api.OrderResponseInfo order_res = 2;</code>
+       * <code>repeated .glory_api.TransResponseInfo trans_res = 2;</code>
        */
-      public int getOrderResCount() {
-        if (orderResBuilder_ == null) {
-          return orderRes_.size();
+      public int getTransResCount() {
+        if (transResBuilder_ == null) {
+          return transRes_.size();
         } else {
-          return orderResBuilder_.getCount();
+          return transResBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .glory_api.OrderResponseInfo order_res = 2;</code>
+       * <code>repeated .glory_api.TransResponseInfo trans_res = 2;</code>
        */
-      public glory_api.OrderOuterClass.OrderResponseInfo getOrderRes(int index) {
-        if (orderResBuilder_ == null) {
-          return orderRes_.get(index);
+      public glory_api.OrderOuterClass.TransResponseInfo getTransRes(int index) {
+        if (transResBuilder_ == null) {
+          return transRes_.get(index);
         } else {
-          return orderResBuilder_.getMessage(index);
+          return transResBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .glory_api.OrderResponseInfo order_res = 2;</code>
+       * <code>repeated .glory_api.TransResponseInfo trans_res = 2;</code>
        */
-      public Builder setOrderRes(
-          int index, glory_api.OrderOuterClass.OrderResponseInfo value) {
-        if (orderResBuilder_ == null) {
+      public Builder setTransRes(
+          int index, glory_api.OrderOuterClass.TransResponseInfo value) {
+        if (transResBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureOrderResIsMutable();
-          orderRes_.set(index, value);
+          ensureTransResIsMutable();
+          transRes_.set(index, value);
           onChanged();
         } else {
-          orderResBuilder_.setMessage(index, value);
+          transResBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .glory_api.OrderResponseInfo order_res = 2;</code>
+       * <code>repeated .glory_api.TransResponseInfo trans_res = 2;</code>
        */
-      public Builder setOrderRes(
-          int index, glory_api.OrderOuterClass.OrderResponseInfo.Builder builderForValue) {
-        if (orderResBuilder_ == null) {
-          ensureOrderResIsMutable();
-          orderRes_.set(index, builderForValue.build());
+      public Builder setTransRes(
+          int index, glory_api.OrderOuterClass.TransResponseInfo.Builder builderForValue) {
+        if (transResBuilder_ == null) {
+          ensureTransResIsMutable();
+          transRes_.set(index, builderForValue.build());
           onChanged();
         } else {
-          orderResBuilder_.setMessage(index, builderForValue.build());
+          transResBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .glory_api.OrderResponseInfo order_res = 2;</code>
+       * <code>repeated .glory_api.TransResponseInfo trans_res = 2;</code>
        */
-      public Builder addOrderRes(glory_api.OrderOuterClass.OrderResponseInfo value) {
-        if (orderResBuilder_ == null) {
+      public Builder addTransRes(glory_api.OrderOuterClass.TransResponseInfo value) {
+        if (transResBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureOrderResIsMutable();
-          orderRes_.add(value);
+          ensureTransResIsMutable();
+          transRes_.add(value);
           onChanged();
         } else {
-          orderResBuilder_.addMessage(value);
+          transResBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .glory_api.OrderResponseInfo order_res = 2;</code>
+       * <code>repeated .glory_api.TransResponseInfo trans_res = 2;</code>
        */
-      public Builder addOrderRes(
-          int index, glory_api.OrderOuterClass.OrderResponseInfo value) {
-        if (orderResBuilder_ == null) {
+      public Builder addTransRes(
+          int index, glory_api.OrderOuterClass.TransResponseInfo value) {
+        if (transResBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureOrderResIsMutable();
-          orderRes_.add(index, value);
+          ensureTransResIsMutable();
+          transRes_.add(index, value);
           onChanged();
         } else {
-          orderResBuilder_.addMessage(index, value);
+          transResBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .glory_api.OrderResponseInfo order_res = 2;</code>
+       * <code>repeated .glory_api.TransResponseInfo trans_res = 2;</code>
        */
-      public Builder addOrderRes(
-          glory_api.OrderOuterClass.OrderResponseInfo.Builder builderForValue) {
-        if (orderResBuilder_ == null) {
-          ensureOrderResIsMutable();
-          orderRes_.add(builderForValue.build());
+      public Builder addTransRes(
+          glory_api.OrderOuterClass.TransResponseInfo.Builder builderForValue) {
+        if (transResBuilder_ == null) {
+          ensureTransResIsMutable();
+          transRes_.add(builderForValue.build());
           onChanged();
         } else {
-          orderResBuilder_.addMessage(builderForValue.build());
+          transResBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .glory_api.OrderResponseInfo order_res = 2;</code>
+       * <code>repeated .glory_api.TransResponseInfo trans_res = 2;</code>
        */
-      public Builder addOrderRes(
-          int index, glory_api.OrderOuterClass.OrderResponseInfo.Builder builderForValue) {
-        if (orderResBuilder_ == null) {
-          ensureOrderResIsMutable();
-          orderRes_.add(index, builderForValue.build());
+      public Builder addTransRes(
+          int index, glory_api.OrderOuterClass.TransResponseInfo.Builder builderForValue) {
+        if (transResBuilder_ == null) {
+          ensureTransResIsMutable();
+          transRes_.add(index, builderForValue.build());
           onChanged();
         } else {
-          orderResBuilder_.addMessage(index, builderForValue.build());
+          transResBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .glory_api.OrderResponseInfo order_res = 2;</code>
+       * <code>repeated .glory_api.TransResponseInfo trans_res = 2;</code>
        */
-      public Builder addAllOrderRes(
-          java.lang.Iterable<? extends glory_api.OrderOuterClass.OrderResponseInfo> values) {
-        if (orderResBuilder_ == null) {
-          ensureOrderResIsMutable();
+      public Builder addAllTransRes(
+          java.lang.Iterable<? extends glory_api.OrderOuterClass.TransResponseInfo> values) {
+        if (transResBuilder_ == null) {
+          ensureTransResIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, orderRes_);
+              values, transRes_);
           onChanged();
         } else {
-          orderResBuilder_.addAllMessages(values);
+          transResBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .glory_api.OrderResponseInfo order_res = 2;</code>
+       * <code>repeated .glory_api.TransResponseInfo trans_res = 2;</code>
        */
-      public Builder clearOrderRes() {
-        if (orderResBuilder_ == null) {
-          orderRes_ = java.util.Collections.emptyList();
+      public Builder clearTransRes() {
+        if (transResBuilder_ == null) {
+          transRes_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
-          orderResBuilder_.clear();
+          transResBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .glory_api.OrderResponseInfo order_res = 2;</code>
+       * <code>repeated .glory_api.TransResponseInfo trans_res = 2;</code>
        */
-      public Builder removeOrderRes(int index) {
-        if (orderResBuilder_ == null) {
-          ensureOrderResIsMutable();
-          orderRes_.remove(index);
+      public Builder removeTransRes(int index) {
+        if (transResBuilder_ == null) {
+          ensureTransResIsMutable();
+          transRes_.remove(index);
           onChanged();
         } else {
-          orderResBuilder_.remove(index);
+          transResBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .glory_api.OrderResponseInfo order_res = 2;</code>
+       * <code>repeated .glory_api.TransResponseInfo trans_res = 2;</code>
        */
-      public glory_api.OrderOuterClass.OrderResponseInfo.Builder getOrderResBuilder(
+      public glory_api.OrderOuterClass.TransResponseInfo.Builder getTransResBuilder(
           int index) {
-        return getOrderResFieldBuilder().getBuilder(index);
+        return getTransResFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .glory_api.OrderResponseInfo order_res = 2;</code>
+       * <code>repeated .glory_api.TransResponseInfo trans_res = 2;</code>
        */
-      public glory_api.OrderOuterClass.OrderResponseInfoOrBuilder getOrderResOrBuilder(
+      public glory_api.OrderOuterClass.TransResponseInfoOrBuilder getTransResOrBuilder(
           int index) {
-        if (orderResBuilder_ == null) {
-          return orderRes_.get(index);  } else {
-          return orderResBuilder_.getMessageOrBuilder(index);
+        if (transResBuilder_ == null) {
+          return transRes_.get(index);  } else {
+          return transResBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .glory_api.OrderResponseInfo order_res = 2;</code>
+       * <code>repeated .glory_api.TransResponseInfo trans_res = 2;</code>
        */
-      public java.util.List<? extends glory_api.OrderOuterClass.OrderResponseInfoOrBuilder> 
-           getOrderResOrBuilderList() {
-        if (orderResBuilder_ != null) {
-          return orderResBuilder_.getMessageOrBuilderList();
+      public java.util.List<? extends glory_api.OrderOuterClass.TransResponseInfoOrBuilder> 
+           getTransResOrBuilderList() {
+        if (transResBuilder_ != null) {
+          return transResBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(orderRes_);
+          return java.util.Collections.unmodifiableList(transRes_);
         }
       }
       /**
-       * <code>repeated .glory_api.OrderResponseInfo order_res = 2;</code>
+       * <code>repeated .glory_api.TransResponseInfo trans_res = 2;</code>
        */
-      public glory_api.OrderOuterClass.OrderResponseInfo.Builder addOrderResBuilder() {
-        return getOrderResFieldBuilder().addBuilder(
-            glory_api.OrderOuterClass.OrderResponseInfo.getDefaultInstance());
+      public glory_api.OrderOuterClass.TransResponseInfo.Builder addTransResBuilder() {
+        return getTransResFieldBuilder().addBuilder(
+            glory_api.OrderOuterClass.TransResponseInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .glory_api.OrderResponseInfo order_res = 2;</code>
+       * <code>repeated .glory_api.TransResponseInfo trans_res = 2;</code>
        */
-      public glory_api.OrderOuterClass.OrderResponseInfo.Builder addOrderResBuilder(
+      public glory_api.OrderOuterClass.TransResponseInfo.Builder addTransResBuilder(
           int index) {
-        return getOrderResFieldBuilder().addBuilder(
-            index, glory_api.OrderOuterClass.OrderResponseInfo.getDefaultInstance());
+        return getTransResFieldBuilder().addBuilder(
+            index, glory_api.OrderOuterClass.TransResponseInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .glory_api.OrderResponseInfo order_res = 2;</code>
+       * <code>repeated .glory_api.TransResponseInfo trans_res = 2;</code>
        */
-      public java.util.List<glory_api.OrderOuterClass.OrderResponseInfo.Builder> 
-           getOrderResBuilderList() {
-        return getOrderResFieldBuilder().getBuilderList();
+      public java.util.List<glory_api.OrderOuterClass.TransResponseInfo.Builder> 
+           getTransResBuilderList() {
+        return getTransResFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          glory_api.OrderOuterClass.OrderResponseInfo, glory_api.OrderOuterClass.OrderResponseInfo.Builder, glory_api.OrderOuterClass.OrderResponseInfoOrBuilder> 
-          getOrderResFieldBuilder() {
-        if (orderResBuilder_ == null) {
-          orderResBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              glory_api.OrderOuterClass.OrderResponseInfo, glory_api.OrderOuterClass.OrderResponseInfo.Builder, glory_api.OrderOuterClass.OrderResponseInfoOrBuilder>(
-                  orderRes_,
+          glory_api.OrderOuterClass.TransResponseInfo, glory_api.OrderOuterClass.TransResponseInfo.Builder, glory_api.OrderOuterClass.TransResponseInfoOrBuilder> 
+          getTransResFieldBuilder() {
+        if (transResBuilder_ == null) {
+          transResBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              glory_api.OrderOuterClass.TransResponseInfo, glory_api.OrderOuterClass.TransResponseInfo.Builder, glory_api.OrderOuterClass.TransResponseInfoOrBuilder>(
+                  transRes_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
-          orderRes_ = null;
+          transRes_ = null;
         }
-        return orderResBuilder_;
+        return transResBuilder_;
+      }
+
+      private double cNYTotal_ ;
+      /**
+       * <pre>
+       *人民币总金额，单位为分 微信支付使用
+       * </pre>
+       *
+       * <code>double CNY_total = 3;</code>
+       * @return The cNYTotal.
+       */
+      @java.lang.Override
+      public double getCNYTotal() {
+        return cNYTotal_;
+      }
+      /**
+       * <pre>
+       *人民币总金额，单位为分 微信支付使用
+       * </pre>
+       *
+       * <code>double CNY_total = 3;</code>
+       * @param value The cNYTotal to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCNYTotal(double value) {
+        
+        cNYTotal_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *人民币总金额，单位为分 微信支付使用
+       * </pre>
+       *
+       * <code>double CNY_total = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCNYTotal() {
+        
+        cNYTotal_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double cOINTotal_ ;
+      /**
+       * <pre>
+       *虚拟币总金额
+       * </pre>
+       *
+       * <code>double COIN_total = 4;</code>
+       * @return The cOINTotal.
+       */
+      @java.lang.Override
+      public double getCOINTotal() {
+        return cOINTotal_;
+      }
+      /**
+       * <pre>
+       *虚拟币总金额
+       * </pre>
+       *
+       * <code>double COIN_total = 4;</code>
+       * @param value The cOINTotal to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCOINTotal(double value) {
+        
+        cOINTotal_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *虚拟币总金额
+       * </pre>
+       *
+       * <code>double COIN_total = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCOINTotal() {
+        
+        cOINTotal_ = 0D;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -15760,8 +16348,1058 @@ public final class OrderOuterClass {
 
   }
 
-  public interface OrderResponseInfoOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:glory_api.OrderResponseInfo)
+  public interface TransResponseInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:glory_api.TransResponseInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int64 trans_id = 1;</code>
+     * @return The transId.
+     */
+    long getTransId();
+
+    /**
+     * <code>repeated .glory_api.OrderResponse order = 2;</code>
+     */
+    java.util.List<glory_api.OrderOuterClass.OrderResponse> 
+        getOrderList();
+    /**
+     * <code>repeated .glory_api.OrderResponse order = 2;</code>
+     */
+    glory_api.OrderOuterClass.OrderResponse getOrder(int index);
+    /**
+     * <code>repeated .glory_api.OrderResponse order = 2;</code>
+     */
+    int getOrderCount();
+    /**
+     * <code>repeated .glory_api.OrderResponse order = 2;</code>
+     */
+    java.util.List<? extends glory_api.OrderOuterClass.OrderResponseOrBuilder> 
+        getOrderOrBuilderList();
+    /**
+     * <code>repeated .glory_api.OrderResponse order = 2;</code>
+     */
+    glory_api.OrderOuterClass.OrderResponseOrBuilder getOrderOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     *货币类型  CNY :人民币 , COIN:虚拟币
+     * </pre>
+     *
+     * <code>string currency = 3;</code>
+     * @return The currency.
+     */
+    java.lang.String getCurrency();
+    /**
+     * <pre>
+     *货币类型  CNY :人民币 , COIN:虚拟币
+     * </pre>
+     *
+     * <code>string currency = 3;</code>
+     * @return The bytes for currency.
+     */
+    com.google.protobuf.ByteString
+        getCurrencyBytes();
+  }
+  /**
+   * Protobuf type {@code glory_api.TransResponseInfo}
+   */
+  public static final class TransResponseInfo extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:glory_api.TransResponseInfo)
+      TransResponseInfoOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use TransResponseInfo.newBuilder() to construct.
+    private TransResponseInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private TransResponseInfo() {
+      order_ = java.util.Collections.emptyList();
+      currency_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new TransResponseInfo();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private TransResponseInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              transId_ = input.readInt64();
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                order_ = new java.util.ArrayList<glory_api.OrderOuterClass.OrderResponse>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              order_.add(
+                  input.readMessage(glory_api.OrderOuterClass.OrderResponse.parser(), extensionRegistry));
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              currency_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          order_ = java.util.Collections.unmodifiableList(order_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return glory_api.OrderOuterClass.internal_static_glory_api_TransResponseInfo_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return glory_api.OrderOuterClass.internal_static_glory_api_TransResponseInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              glory_api.OrderOuterClass.TransResponseInfo.class, glory_api.OrderOuterClass.TransResponseInfo.Builder.class);
+    }
+
+    public static final int TRANS_ID_FIELD_NUMBER = 1;
+    private long transId_;
+    /**
+     * <code>int64 trans_id = 1;</code>
+     * @return The transId.
+     */
+    @java.lang.Override
+    public long getTransId() {
+      return transId_;
+    }
+
+    public static final int ORDER_FIELD_NUMBER = 2;
+    private java.util.List<glory_api.OrderOuterClass.OrderResponse> order_;
+    /**
+     * <code>repeated .glory_api.OrderResponse order = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<glory_api.OrderOuterClass.OrderResponse> getOrderList() {
+      return order_;
+    }
+    /**
+     * <code>repeated .glory_api.OrderResponse order = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends glory_api.OrderOuterClass.OrderResponseOrBuilder> 
+        getOrderOrBuilderList() {
+      return order_;
+    }
+    /**
+     * <code>repeated .glory_api.OrderResponse order = 2;</code>
+     */
+    @java.lang.Override
+    public int getOrderCount() {
+      return order_.size();
+    }
+    /**
+     * <code>repeated .glory_api.OrderResponse order = 2;</code>
+     */
+    @java.lang.Override
+    public glory_api.OrderOuterClass.OrderResponse getOrder(int index) {
+      return order_.get(index);
+    }
+    /**
+     * <code>repeated .glory_api.OrderResponse order = 2;</code>
+     */
+    @java.lang.Override
+    public glory_api.OrderOuterClass.OrderResponseOrBuilder getOrderOrBuilder(
+        int index) {
+      return order_.get(index);
+    }
+
+    public static final int CURRENCY_FIELD_NUMBER = 3;
+    private volatile java.lang.Object currency_;
+    /**
+     * <pre>
+     *货币类型  CNY :人民币 , COIN:虚拟币
+     * </pre>
+     *
+     * <code>string currency = 3;</code>
+     * @return The currency.
+     */
+    @java.lang.Override
+    public java.lang.String getCurrency() {
+      java.lang.Object ref = currency_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        currency_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *货币类型  CNY :人民币 , COIN:虚拟币
+     * </pre>
+     *
+     * <code>string currency = 3;</code>
+     * @return The bytes for currency.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCurrencyBytes() {
+      java.lang.Object ref = currency_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        currency_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (transId_ != 0L) {
+        output.writeInt64(1, transId_);
+      }
+      for (int i = 0; i < order_.size(); i++) {
+        output.writeMessage(2, order_.get(i));
+      }
+      if (!getCurrencyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, currency_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (transId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, transId_);
+      }
+      for (int i = 0; i < order_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, order_.get(i));
+      }
+      if (!getCurrencyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, currency_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof glory_api.OrderOuterClass.TransResponseInfo)) {
+        return super.equals(obj);
+      }
+      glory_api.OrderOuterClass.TransResponseInfo other = (glory_api.OrderOuterClass.TransResponseInfo) obj;
+
+      if (getTransId()
+          != other.getTransId()) return false;
+      if (!getOrderList()
+          .equals(other.getOrderList())) return false;
+      if (!getCurrency()
+          .equals(other.getCurrency())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TRANS_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTransId());
+      if (getOrderCount() > 0) {
+        hash = (37 * hash) + ORDER_FIELD_NUMBER;
+        hash = (53 * hash) + getOrderList().hashCode();
+      }
+      hash = (37 * hash) + CURRENCY_FIELD_NUMBER;
+      hash = (53 * hash) + getCurrency().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static glory_api.OrderOuterClass.TransResponseInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.OrderOuterClass.TransResponseInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.OrderOuterClass.TransResponseInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.OrderOuterClass.TransResponseInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.OrderOuterClass.TransResponseInfo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.OrderOuterClass.TransResponseInfo parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.OrderOuterClass.TransResponseInfo parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.OrderOuterClass.TransResponseInfo parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.OrderOuterClass.TransResponseInfo parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static glory_api.OrderOuterClass.TransResponseInfo parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.OrderOuterClass.TransResponseInfo parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.OrderOuterClass.TransResponseInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(glory_api.OrderOuterClass.TransResponseInfo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code glory_api.TransResponseInfo}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:glory_api.TransResponseInfo)
+        glory_api.OrderOuterClass.TransResponseInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return glory_api.OrderOuterClass.internal_static_glory_api_TransResponseInfo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return glory_api.OrderOuterClass.internal_static_glory_api_TransResponseInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                glory_api.OrderOuterClass.TransResponseInfo.class, glory_api.OrderOuterClass.TransResponseInfo.Builder.class);
+      }
+
+      // Construct using glory_api.OrderOuterClass.TransResponseInfo.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getOrderFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        transId_ = 0L;
+
+        if (orderBuilder_ == null) {
+          order_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          orderBuilder_.clear();
+        }
+        currency_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return glory_api.OrderOuterClass.internal_static_glory_api_TransResponseInfo_descriptor;
+      }
+
+      @java.lang.Override
+      public glory_api.OrderOuterClass.TransResponseInfo getDefaultInstanceForType() {
+        return glory_api.OrderOuterClass.TransResponseInfo.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public glory_api.OrderOuterClass.TransResponseInfo build() {
+        glory_api.OrderOuterClass.TransResponseInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public glory_api.OrderOuterClass.TransResponseInfo buildPartial() {
+        glory_api.OrderOuterClass.TransResponseInfo result = new glory_api.OrderOuterClass.TransResponseInfo(this);
+        int from_bitField0_ = bitField0_;
+        result.transId_ = transId_;
+        if (orderBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            order_ = java.util.Collections.unmodifiableList(order_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.order_ = order_;
+        } else {
+          result.order_ = orderBuilder_.build();
+        }
+        result.currency_ = currency_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof glory_api.OrderOuterClass.TransResponseInfo) {
+          return mergeFrom((glory_api.OrderOuterClass.TransResponseInfo)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(glory_api.OrderOuterClass.TransResponseInfo other) {
+        if (other == glory_api.OrderOuterClass.TransResponseInfo.getDefaultInstance()) return this;
+        if (other.getTransId() != 0L) {
+          setTransId(other.getTransId());
+        }
+        if (orderBuilder_ == null) {
+          if (!other.order_.isEmpty()) {
+            if (order_.isEmpty()) {
+              order_ = other.order_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureOrderIsMutable();
+              order_.addAll(other.order_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.order_.isEmpty()) {
+            if (orderBuilder_.isEmpty()) {
+              orderBuilder_.dispose();
+              orderBuilder_ = null;
+              order_ = other.order_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              orderBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getOrderFieldBuilder() : null;
+            } else {
+              orderBuilder_.addAllMessages(other.order_);
+            }
+          }
+        }
+        if (!other.getCurrency().isEmpty()) {
+          currency_ = other.currency_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        glory_api.OrderOuterClass.TransResponseInfo parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (glory_api.OrderOuterClass.TransResponseInfo) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private long transId_ ;
+      /**
+       * <code>int64 trans_id = 1;</code>
+       * @return The transId.
+       */
+      @java.lang.Override
+      public long getTransId() {
+        return transId_;
+      }
+      /**
+       * <code>int64 trans_id = 1;</code>
+       * @param value The transId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTransId(long value) {
+        
+        transId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 trans_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTransId() {
+        
+        transId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<glory_api.OrderOuterClass.OrderResponse> order_ =
+        java.util.Collections.emptyList();
+      private void ensureOrderIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          order_ = new java.util.ArrayList<glory_api.OrderOuterClass.OrderResponse>(order_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          glory_api.OrderOuterClass.OrderResponse, glory_api.OrderOuterClass.OrderResponse.Builder, glory_api.OrderOuterClass.OrderResponseOrBuilder> orderBuilder_;
+
+      /**
+       * <code>repeated .glory_api.OrderResponse order = 2;</code>
+       */
+      public java.util.List<glory_api.OrderOuterClass.OrderResponse> getOrderList() {
+        if (orderBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(order_);
+        } else {
+          return orderBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .glory_api.OrderResponse order = 2;</code>
+       */
+      public int getOrderCount() {
+        if (orderBuilder_ == null) {
+          return order_.size();
+        } else {
+          return orderBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .glory_api.OrderResponse order = 2;</code>
+       */
+      public glory_api.OrderOuterClass.OrderResponse getOrder(int index) {
+        if (orderBuilder_ == null) {
+          return order_.get(index);
+        } else {
+          return orderBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .glory_api.OrderResponse order = 2;</code>
+       */
+      public Builder setOrder(
+          int index, glory_api.OrderOuterClass.OrderResponse value) {
+        if (orderBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureOrderIsMutable();
+          order_.set(index, value);
+          onChanged();
+        } else {
+          orderBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .glory_api.OrderResponse order = 2;</code>
+       */
+      public Builder setOrder(
+          int index, glory_api.OrderOuterClass.OrderResponse.Builder builderForValue) {
+        if (orderBuilder_ == null) {
+          ensureOrderIsMutable();
+          order_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          orderBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .glory_api.OrderResponse order = 2;</code>
+       */
+      public Builder addOrder(glory_api.OrderOuterClass.OrderResponse value) {
+        if (orderBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureOrderIsMutable();
+          order_.add(value);
+          onChanged();
+        } else {
+          orderBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .glory_api.OrderResponse order = 2;</code>
+       */
+      public Builder addOrder(
+          int index, glory_api.OrderOuterClass.OrderResponse value) {
+        if (orderBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureOrderIsMutable();
+          order_.add(index, value);
+          onChanged();
+        } else {
+          orderBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .glory_api.OrderResponse order = 2;</code>
+       */
+      public Builder addOrder(
+          glory_api.OrderOuterClass.OrderResponse.Builder builderForValue) {
+        if (orderBuilder_ == null) {
+          ensureOrderIsMutable();
+          order_.add(builderForValue.build());
+          onChanged();
+        } else {
+          orderBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .glory_api.OrderResponse order = 2;</code>
+       */
+      public Builder addOrder(
+          int index, glory_api.OrderOuterClass.OrderResponse.Builder builderForValue) {
+        if (orderBuilder_ == null) {
+          ensureOrderIsMutable();
+          order_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          orderBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .glory_api.OrderResponse order = 2;</code>
+       */
+      public Builder addAllOrder(
+          java.lang.Iterable<? extends glory_api.OrderOuterClass.OrderResponse> values) {
+        if (orderBuilder_ == null) {
+          ensureOrderIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, order_);
+          onChanged();
+        } else {
+          orderBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .glory_api.OrderResponse order = 2;</code>
+       */
+      public Builder clearOrder() {
+        if (orderBuilder_ == null) {
+          order_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          orderBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .glory_api.OrderResponse order = 2;</code>
+       */
+      public Builder removeOrder(int index) {
+        if (orderBuilder_ == null) {
+          ensureOrderIsMutable();
+          order_.remove(index);
+          onChanged();
+        } else {
+          orderBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .glory_api.OrderResponse order = 2;</code>
+       */
+      public glory_api.OrderOuterClass.OrderResponse.Builder getOrderBuilder(
+          int index) {
+        return getOrderFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .glory_api.OrderResponse order = 2;</code>
+       */
+      public glory_api.OrderOuterClass.OrderResponseOrBuilder getOrderOrBuilder(
+          int index) {
+        if (orderBuilder_ == null) {
+          return order_.get(index);  } else {
+          return orderBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .glory_api.OrderResponse order = 2;</code>
+       */
+      public java.util.List<? extends glory_api.OrderOuterClass.OrderResponseOrBuilder> 
+           getOrderOrBuilderList() {
+        if (orderBuilder_ != null) {
+          return orderBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(order_);
+        }
+      }
+      /**
+       * <code>repeated .glory_api.OrderResponse order = 2;</code>
+       */
+      public glory_api.OrderOuterClass.OrderResponse.Builder addOrderBuilder() {
+        return getOrderFieldBuilder().addBuilder(
+            glory_api.OrderOuterClass.OrderResponse.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .glory_api.OrderResponse order = 2;</code>
+       */
+      public glory_api.OrderOuterClass.OrderResponse.Builder addOrderBuilder(
+          int index) {
+        return getOrderFieldBuilder().addBuilder(
+            index, glory_api.OrderOuterClass.OrderResponse.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .glory_api.OrderResponse order = 2;</code>
+       */
+      public java.util.List<glory_api.OrderOuterClass.OrderResponse.Builder> 
+           getOrderBuilderList() {
+        return getOrderFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          glory_api.OrderOuterClass.OrderResponse, glory_api.OrderOuterClass.OrderResponse.Builder, glory_api.OrderOuterClass.OrderResponseOrBuilder> 
+          getOrderFieldBuilder() {
+        if (orderBuilder_ == null) {
+          orderBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              glory_api.OrderOuterClass.OrderResponse, glory_api.OrderOuterClass.OrderResponse.Builder, glory_api.OrderOuterClass.OrderResponseOrBuilder>(
+                  order_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          order_ = null;
+        }
+        return orderBuilder_;
+      }
+
+      private java.lang.Object currency_ = "";
+      /**
+       * <pre>
+       *货币类型  CNY :人民币 , COIN:虚拟币
+       * </pre>
+       *
+       * <code>string currency = 3;</code>
+       * @return The currency.
+       */
+      public java.lang.String getCurrency() {
+        java.lang.Object ref = currency_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          currency_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       *货币类型  CNY :人民币 , COIN:虚拟币
+       * </pre>
+       *
+       * <code>string currency = 3;</code>
+       * @return The bytes for currency.
+       */
+      public com.google.protobuf.ByteString
+          getCurrencyBytes() {
+        java.lang.Object ref = currency_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          currency_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *货币类型  CNY :人民币 , COIN:虚拟币
+       * </pre>
+       *
+       * <code>string currency = 3;</code>
+       * @param value The currency to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCurrency(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        currency_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *货币类型  CNY :人民币 , COIN:虚拟币
+       * </pre>
+       *
+       * <code>string currency = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCurrency() {
+        
+        currency_ = getDefaultInstance().getCurrency();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *货币类型  CNY :人民币 , COIN:虚拟币
+       * </pre>
+       *
+       * <code>string currency = 3;</code>
+       * @param value The bytes for currency to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCurrencyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        currency_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:glory_api.TransResponseInfo)
+    }
+
+    // @@protoc_insertion_point(class_scope:glory_api.TransResponseInfo)
+    private static final glory_api.OrderOuterClass.TransResponseInfo DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new glory_api.OrderOuterClass.TransResponseInfo();
+    }
+
+    public static glory_api.OrderOuterClass.TransResponseInfo getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TransResponseInfo>
+        PARSER = new com.google.protobuf.AbstractParser<TransResponseInfo>() {
+      @java.lang.Override
+      public TransResponseInfo parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new TransResponseInfo(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<TransResponseInfo> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TransResponseInfo> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public glory_api.OrderOuterClass.TransResponseInfo getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface OrderResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:glory_api.OrderResponse)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -15789,30 +17427,20 @@ public final class OrderOuterClass {
      */
     com.google.protobuf.ByteString
         getCurrencyBytes();
-
-    /**
-     * <pre>
-     *订单总金额，单位为分 微信支付使用
-     * </pre>
-     *
-     * <code>double total = 3;</code>
-     * @return The total.
-     */
-    double getTotal();
   }
   /**
-   * Protobuf type {@code glory_api.OrderResponseInfo}
+   * Protobuf type {@code glory_api.OrderResponse}
    */
-  public static final class OrderResponseInfo extends
+  public static final class OrderResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:glory_api.OrderResponseInfo)
-      OrderResponseInfoOrBuilder {
+      // @@protoc_insertion_point(message_implements:glory_api.OrderResponse)
+      OrderResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use OrderResponseInfo.newBuilder() to construct.
-    private OrderResponseInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use OrderResponse.newBuilder() to construct.
+    private OrderResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private OrderResponseInfo() {
+    private OrderResponse() {
       currency_ = "";
     }
 
@@ -15820,7 +17448,7 @@ public final class OrderOuterClass {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new OrderResponseInfo();
+      return new OrderResponse();
     }
 
     @java.lang.Override
@@ -15828,7 +17456,7 @@ public final class OrderOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private OrderResponseInfo(
+    private OrderResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -15857,11 +17485,6 @@ public final class OrderOuterClass {
               currency_ = s;
               break;
             }
-            case 25: {
-
-              total_ = input.readDouble();
-              break;
-            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -15883,15 +17506,15 @@ public final class OrderOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return glory_api.OrderOuterClass.internal_static_glory_api_OrderResponseInfo_descriptor;
+      return glory_api.OrderOuterClass.internal_static_glory_api_OrderResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return glory_api.OrderOuterClass.internal_static_glory_api_OrderResponseInfo_fieldAccessorTable
+      return glory_api.OrderOuterClass.internal_static_glory_api_OrderResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              glory_api.OrderOuterClass.OrderResponseInfo.class, glory_api.OrderOuterClass.OrderResponseInfo.Builder.class);
+              glory_api.OrderOuterClass.OrderResponse.class, glory_api.OrderOuterClass.OrderResponse.Builder.class);
     }
 
     public static final int ORDER_ID_FIELD_NUMBER = 1;
@@ -15951,21 +17574,6 @@ public final class OrderOuterClass {
       }
     }
 
-    public static final int TOTAL_FIELD_NUMBER = 3;
-    private double total_;
-    /**
-     * <pre>
-     *订单总金额，单位为分 微信支付使用
-     * </pre>
-     *
-     * <code>double total = 3;</code>
-     * @return The total.
-     */
-    @java.lang.Override
-    public double getTotal() {
-      return total_;
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -15986,9 +17594,6 @@ public final class OrderOuterClass {
       if (!getCurrencyBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, currency_);
       }
-      if (total_ != 0D) {
-        output.writeDouble(3, total_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -16005,10 +17610,6 @@ public final class OrderOuterClass {
       if (!getCurrencyBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, currency_);
       }
-      if (total_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(3, total_);
-      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -16019,18 +17620,15 @@ public final class OrderOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof glory_api.OrderOuterClass.OrderResponseInfo)) {
+      if (!(obj instanceof glory_api.OrderOuterClass.OrderResponse)) {
         return super.equals(obj);
       }
-      glory_api.OrderOuterClass.OrderResponseInfo other = (glory_api.OrderOuterClass.OrderResponseInfo) obj;
+      glory_api.OrderOuterClass.OrderResponse other = (glory_api.OrderOuterClass.OrderResponse) obj;
 
       if (getOrderId()
           != other.getOrderId()) return false;
       if (!getCurrency()
           .equals(other.getCurrency())) return false;
-      if (java.lang.Double.doubleToLongBits(getTotal())
-          != java.lang.Double.doubleToLongBits(
-              other.getTotal())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -16047,77 +17645,74 @@ public final class OrderOuterClass {
           getOrderId());
       hash = (37 * hash) + CURRENCY_FIELD_NUMBER;
       hash = (53 * hash) + getCurrency().hashCode();
-      hash = (37 * hash) + TOTAL_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getTotal()));
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static glory_api.OrderOuterClass.OrderResponseInfo parseFrom(
+    public static glory_api.OrderOuterClass.OrderResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static glory_api.OrderOuterClass.OrderResponseInfo parseFrom(
+    public static glory_api.OrderOuterClass.OrderResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static glory_api.OrderOuterClass.OrderResponseInfo parseFrom(
+    public static glory_api.OrderOuterClass.OrderResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static glory_api.OrderOuterClass.OrderResponseInfo parseFrom(
+    public static glory_api.OrderOuterClass.OrderResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static glory_api.OrderOuterClass.OrderResponseInfo parseFrom(byte[] data)
+    public static glory_api.OrderOuterClass.OrderResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static glory_api.OrderOuterClass.OrderResponseInfo parseFrom(
+    public static glory_api.OrderOuterClass.OrderResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static glory_api.OrderOuterClass.OrderResponseInfo parseFrom(java.io.InputStream input)
+    public static glory_api.OrderOuterClass.OrderResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static glory_api.OrderOuterClass.OrderResponseInfo parseFrom(
+    public static glory_api.OrderOuterClass.OrderResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static glory_api.OrderOuterClass.OrderResponseInfo parseDelimitedFrom(java.io.InputStream input)
+    public static glory_api.OrderOuterClass.OrderResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static glory_api.OrderOuterClass.OrderResponseInfo parseDelimitedFrom(
+    public static glory_api.OrderOuterClass.OrderResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static glory_api.OrderOuterClass.OrderResponseInfo parseFrom(
+    public static glory_api.OrderOuterClass.OrderResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static glory_api.OrderOuterClass.OrderResponseInfo parseFrom(
+    public static glory_api.OrderOuterClass.OrderResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -16130,7 +17725,7 @@ public final class OrderOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(glory_api.OrderOuterClass.OrderResponseInfo prototype) {
+    public static Builder newBuilder(glory_api.OrderOuterClass.OrderResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -16146,26 +17741,26 @@ public final class OrderOuterClass {
       return builder;
     }
     /**
-     * Protobuf type {@code glory_api.OrderResponseInfo}
+     * Protobuf type {@code glory_api.OrderResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:glory_api.OrderResponseInfo)
-        glory_api.OrderOuterClass.OrderResponseInfoOrBuilder {
+        // @@protoc_insertion_point(builder_implements:glory_api.OrderResponse)
+        glory_api.OrderOuterClass.OrderResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return glory_api.OrderOuterClass.internal_static_glory_api_OrderResponseInfo_descriptor;
+        return glory_api.OrderOuterClass.internal_static_glory_api_OrderResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return glory_api.OrderOuterClass.internal_static_glory_api_OrderResponseInfo_fieldAccessorTable
+        return glory_api.OrderOuterClass.internal_static_glory_api_OrderResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                glory_api.OrderOuterClass.OrderResponseInfo.class, glory_api.OrderOuterClass.OrderResponseInfo.Builder.class);
+                glory_api.OrderOuterClass.OrderResponse.class, glory_api.OrderOuterClass.OrderResponse.Builder.class);
       }
 
-      // Construct using glory_api.OrderOuterClass.OrderResponseInfo.newBuilder()
+      // Construct using glory_api.OrderOuterClass.OrderResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -16187,25 +17782,23 @@ public final class OrderOuterClass {
 
         currency_ = "";
 
-        total_ = 0D;
-
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return glory_api.OrderOuterClass.internal_static_glory_api_OrderResponseInfo_descriptor;
+        return glory_api.OrderOuterClass.internal_static_glory_api_OrderResponse_descriptor;
       }
 
       @java.lang.Override
-      public glory_api.OrderOuterClass.OrderResponseInfo getDefaultInstanceForType() {
-        return glory_api.OrderOuterClass.OrderResponseInfo.getDefaultInstance();
+      public glory_api.OrderOuterClass.OrderResponse getDefaultInstanceForType() {
+        return glory_api.OrderOuterClass.OrderResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public glory_api.OrderOuterClass.OrderResponseInfo build() {
-        glory_api.OrderOuterClass.OrderResponseInfo result = buildPartial();
+      public glory_api.OrderOuterClass.OrderResponse build() {
+        glory_api.OrderOuterClass.OrderResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -16213,11 +17806,10 @@ public final class OrderOuterClass {
       }
 
       @java.lang.Override
-      public glory_api.OrderOuterClass.OrderResponseInfo buildPartial() {
-        glory_api.OrderOuterClass.OrderResponseInfo result = new glory_api.OrderOuterClass.OrderResponseInfo(this);
+      public glory_api.OrderOuterClass.OrderResponse buildPartial() {
+        glory_api.OrderOuterClass.OrderResponse result = new glory_api.OrderOuterClass.OrderResponse(this);
         result.orderId_ = orderId_;
         result.currency_ = currency_;
-        result.total_ = total_;
         onBuilt();
         return result;
       }
@@ -16256,25 +17848,22 @@ public final class OrderOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof glory_api.OrderOuterClass.OrderResponseInfo) {
-          return mergeFrom((glory_api.OrderOuterClass.OrderResponseInfo)other);
+        if (other instanceof glory_api.OrderOuterClass.OrderResponse) {
+          return mergeFrom((glory_api.OrderOuterClass.OrderResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(glory_api.OrderOuterClass.OrderResponseInfo other) {
-        if (other == glory_api.OrderOuterClass.OrderResponseInfo.getDefaultInstance()) return this;
+      public Builder mergeFrom(glory_api.OrderOuterClass.OrderResponse other) {
+        if (other == glory_api.OrderOuterClass.OrderResponse.getDefaultInstance()) return this;
         if (other.getOrderId() != 0L) {
           setOrderId(other.getOrderId());
         }
         if (!other.getCurrency().isEmpty()) {
           currency_ = other.currency_;
           onChanged();
-        }
-        if (other.getTotal() != 0D) {
-          setTotal(other.getTotal());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -16291,11 +17880,11 @@ public final class OrderOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        glory_api.OrderOuterClass.OrderResponseInfo parsedMessage = null;
+        glory_api.OrderOuterClass.OrderResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (glory_api.OrderOuterClass.OrderResponseInfo) e.getUnfinishedMessage();
+          parsedMessage = (glory_api.OrderOuterClass.OrderResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -16431,49 +18020,6 @@ public final class OrderOuterClass {
         onChanged();
         return this;
       }
-
-      private double total_ ;
-      /**
-       * <pre>
-       *订单总金额，单位为分 微信支付使用
-       * </pre>
-       *
-       * <code>double total = 3;</code>
-       * @return The total.
-       */
-      @java.lang.Override
-      public double getTotal() {
-        return total_;
-      }
-      /**
-       * <pre>
-       *订单总金额，单位为分 微信支付使用
-       * </pre>
-       *
-       * <code>double total = 3;</code>
-       * @param value The total to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTotal(double value) {
-        
-        total_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *订单总金额，单位为分 微信支付使用
-       * </pre>
-       *
-       * <code>double total = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTotal() {
-        
-        total_ = 0D;
-        onChanged();
-        return this;
-      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -16487,41 +18033,41 @@ public final class OrderOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:glory_api.OrderResponseInfo)
+      // @@protoc_insertion_point(builder_scope:glory_api.OrderResponse)
     }
 
-    // @@protoc_insertion_point(class_scope:glory_api.OrderResponseInfo)
-    private static final glory_api.OrderOuterClass.OrderResponseInfo DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:glory_api.OrderResponse)
+    private static final glory_api.OrderOuterClass.OrderResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new glory_api.OrderOuterClass.OrderResponseInfo();
+      DEFAULT_INSTANCE = new glory_api.OrderOuterClass.OrderResponse();
     }
 
-    public static glory_api.OrderOuterClass.OrderResponseInfo getDefaultInstance() {
+    public static glory_api.OrderOuterClass.OrderResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<OrderResponseInfo>
-        PARSER = new com.google.protobuf.AbstractParser<OrderResponseInfo>() {
+    private static final com.google.protobuf.Parser<OrderResponse>
+        PARSER = new com.google.protobuf.AbstractParser<OrderResponse>() {
       @java.lang.Override
-      public OrderResponseInfo parsePartialFrom(
+      public OrderResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new OrderResponseInfo(input, extensionRegistry);
+        return new OrderResponse(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<OrderResponseInfo> parser() {
+    public static com.google.protobuf.Parser<OrderResponse> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<OrderResponseInfo> getParserForType() {
+    public com.google.protobuf.Parser<OrderResponse> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public glory_api.OrderOuterClass.OrderResponseInfo getDefaultInstanceForType() {
+    public glory_api.OrderOuterClass.OrderResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -27839,10 +29385,15 @@ public final class OrderOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_CreateOrderResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_OrderResponseInfo_descriptor;
+    internal_static_glory_api_TransResponseInfo_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_OrderResponseInfo_fieldAccessorTable;
+      internal_static_glory_api_TransResponseInfo_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_OrderResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_OrderResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_glory_api_GetOrderRequest_descriptor;
   private static final 
@@ -27933,7 +29484,7 @@ public final class OrderOuterClass {
       "\r \001(\005\022\024\n\014contact_name\030\016 \001(\t\022\025\n\rcontact_p" +
       "hone\030\017 \001(\t\"I\n\006Images\022\030\n\020product_image_id" +
       "\030\001 \001(\003\022\022\n\nimage_type\030\002 \001(\t\022\021\n\timage_url\030" +
-      "\003 \001(\t\"\365\002\n\017CreateOrderInfo\022\020\n\010order_id\030\001 " +
+      "\003 \001(\t\"\251\003\n\017CreateOrderInfo\022\020\n\010order_id\030\001 " +
       "\001(\003\022\017\n\007user_id\030\002 \001(\003\022\017\n\007shop_id\030\003 \001(\003\022\021\n" +
       "\tseller_id\030\004 \001(\003\022\021\n\ttenant_id\030\005 \001(\003\022\024\n\014t" +
       "otal_amount\030\007 \001(\001\022\027\n\017original_amount\030\010 \001" +
@@ -27942,74 +29493,78 @@ public final class OrderOuterClass {
       "\024\n\014deliver_post\030\r \001(\005\022\024\n\014contact_name\030\016 " +
       "\001(\t\022\025\n\rcontact_phone\030\017 \001(\t\022$\n\010sku_info\030\020" +
       " \003(\0132\022.glory_api.SkuInfo\022\017\n\007message\030\021 \001(" +
-      "\t\022\022\n\nbuyer_name\030\022 \001(\t\")\n\007SkuInfo\022\016\n\006sku_" +
-      "id\030\001 \001(\003\022\016\n\006number\030\002 \001(\005\"\225\001\n\010OrderSku\022\024\n" +
-      "\014order_sku_id\030\001 \001(\003\022\020\n\010order_id\030\002 \001(\003\022\016\n" +
-      "\006sku_id\030\003 \001(\003\022\021\n\tseller_id\030\004 \001(\003\022\017\n\007shop" +
-      "_id\030\005 \001(\003\022\020\n\010quantity\030\006 \001(\005\022\033\n\023freight_t" +
-      "emplate_id\030\007 \001(\003\"\333\002\n\tOrderInfo\022\020\n\010order_" +
-      "id\030\001 \001(\003\022\024\n\014order_status\030\002 \001(\t\022\022\n\ncreate" +
-      "d_at\030\003 \001(\t\022\021\n\torderType\030\004 \001(\t\022\017\n\007payType" +
-      "\030\005 \001(\t\022\017\n\007payTime\030\006 \001(\t\022\024\n\014total_amount\030" +
-      "\007 \001(\001\022\027\n\017original_amount\030\010 \001(\001\022\023\n\013delive" +
-      "r_fee\030\t \001(\001\022\027\n\017discount_amount\030\n \001(\001\022\026\n\016" +
-      "payment_amount\030\013 \001(\001\022\026\n\016payable_amount\030\014" +
-      " \001(\001\022+\n\013productInfo\030\r \003(\0132\026.glory_api.Pr" +
-      "oductInfo\022\021\n\tshop_name\030\016 \001(\t\022\020\n\010currency" +
-      "\030\017 \001(\t\"\255\001\n\013DeliverInfo\022\027\n\017deliver_addres" +
-      "s\030\001 \001(\t\022\024\n\014deliver_post\030\002 \001(\005\022\024\n\014contact" +
-      "_name\030\003 \001(\t\022\025\n\rcontact_phone\030\004 \001(\t\022\022\n\nbu" +
-      "yer_name\030\005 \001(\t\022\025\n\rbuyer_comment\030\006 \001(\t\022\027\n" +
-      "\017delivery_method\030\007 \001(\t\"\312\001\n\013ProductInfo\022\022" +
-      "\n\nproduct_id\030\001 \001(\003\022\024\n\014product_name\030\002 \001(\t" +
-      "\022\033\n\003sku\030\003 \001(\0132\016.glory_api.Sku\022\024\n\014service" +
-      "_info\030\004 \001(\t\022\022\n\nunit_price\030\005 \001(\001\022\020\n\010quant" +
-      "ity\030\006 \001(\005\022\025\n\rdiscount_info\030\007 \001(\t\022!\n\006imag" +
-      "es\030\010 \003(\0132\021.glory_api.Images\"b\n\017OrderWith" +
-      "Author\022%\n\013author_info\030\002 \001(\0132\020.base.Autho" +
-      "rInfo\022(\n\norder_info\030\003 \001(\0132\024.glory_api.Or" +
-      "derInfo\"m\n\022CreateOrderRequest\022\'\n\014base_re" +
-      "quest\030\001 \001(\0132\021.base.BaseRequest\022.\n\norder_" +
-      "info\030\002 \003(\0132\032.glory_api.CreateOrderInfo\"m" +
-      "\n\023CreateOrderResponse\022%\n\tbase_resp\030\001 \001(\013" +
-      "2\022.base.BaseResponse\022/\n\torder_res\030\002 \003(\0132" +
-      "\034.glory_api.OrderResponseInfo\"F\n\021OrderRe" +
-      "sponseInfo\022\020\n\010order_id\030\001 \001(\003\022\020\n\010currency" +
-      "\030\002 \001(\t\022\r\n\005total\030\003 \001(\001\"L\n\017GetOrderRequest" +
-      "\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReques" +
-      "t\022\020\n\010order_id\030\002 \001(\003\"\217\001\n\020GetOrderResponse" +
-      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022" +
-      "\'\n\torderInfo\030\002 \001(\0132\024.glory_api.OrderInfo" +
-      "\022+\n\013deliverInfo\030\004 \001(\0132\026.glory_api.Delive" +
-      "rInfo\"^\n\022UpdateOrderRequest\022\'\n\014base_requ" +
-      "est\030\001 \001(\0132\021.base.BaseRequest\022\037\n\005order\030\002 " +
-      "\001(\0132\020.glory_api.Order\"N\n\023UpdateOrderResp" +
-      "onse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespo" +
-      "nse\022\020\n\010order_id\030\002 \001(\003\"\306\001\n\020ListOrderReque" +
-      "st\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequ" +
-      "est\022\017\n\007user_id\030\002 \001(\003\022\021\n\tseller_id\030\003 \001(\003\022" +
-      "\021\n\ttenant_id\030\004 \001(\003\022\017\n\007shop_id\030\005 \001(\003\022\024\n\014o" +
-      "rder_status\030\006 \001(\t\022+\n\npagination\030d \001(\0132\027." +
-      "base.PaginationRequest\"\232\001\n\021ListOrderResp" +
-      "onse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespo" +
-      "nse\0220\n\014order_detail\030\002 \003(\0132\032.glory_api.Or" +
-      "derWithAuthor\022,\n\npagination\030d \001(\0132\030.base" +
-      ".PaginationResponse\"O\n\022DeleteOrderReques" +
+      "\t\022\022\n\nbuyer_name\030\022 \001(\t\022\017\n\007room_id\030\023 \001(\003\022\017" +
+      "\n\007channel\030\024 \001(\t\022\020\n\010trans_id\030\025 \001(\003\")\n\007Sku" +
+      "Info\022\016\n\006sku_id\030\001 \001(\003\022\016\n\006number\030\002 \001(\005\"\225\001\n" +
+      "\010OrderSku\022\024\n\014order_sku_id\030\001 \001(\003\022\020\n\010order" +
+      "_id\030\002 \001(\003\022\016\n\006sku_id\030\003 \001(\003\022\021\n\tseller_id\030\004" +
+      " \001(\003\022\017\n\007shop_id\030\005 \001(\003\022\020\n\010quantity\030\006 \001(\005\022" +
+      "\033\n\023freight_template_id\030\007 \001(\003\"\333\002\n\tOrderIn" +
+      "fo\022\020\n\010order_id\030\001 \001(\003\022\024\n\014order_status\030\002 \001" +
+      "(\t\022\022\n\ncreated_at\030\003 \001(\t\022\021\n\torderType\030\004 \001(" +
+      "\t\022\017\n\007payType\030\005 \001(\t\022\017\n\007payTime\030\006 \001(\t\022\024\n\014t" +
+      "otal_amount\030\007 \001(\001\022\027\n\017original_amount\030\010 \001" +
+      "(\001\022\023\n\013deliver_fee\030\t \001(\001\022\027\n\017discount_amou" +
+      "nt\030\n \001(\001\022\026\n\016payment_amount\030\013 \001(\001\022\026\n\016paya" +
+      "ble_amount\030\014 \001(\001\022+\n\013productInfo\030\r \003(\0132\026." +
+      "glory_api.ProductInfo\022\021\n\tshop_name\030\016 \001(\t" +
+      "\022\020\n\010currency\030\017 \001(\t\"\255\001\n\013DeliverInfo\022\027\n\017de" +
+      "liver_address\030\001 \001(\t\022\024\n\014deliver_post\030\002 \001(" +
+      "\005\022\024\n\014contact_name\030\003 \001(\t\022\025\n\rcontact_phone" +
+      "\030\004 \001(\t\022\022\n\nbuyer_name\030\005 \001(\t\022\025\n\rbuyer_comm" +
+      "ent\030\006 \001(\t\022\027\n\017delivery_method\030\007 \001(\t\"\312\001\n\013P" +
+      "roductInfo\022\022\n\nproduct_id\030\001 \001(\003\022\024\n\014produc" +
+      "t_name\030\002 \001(\t\022\033\n\003sku\030\003 \001(\0132\016.glory_api.Sk" +
+      "u\022\024\n\014service_info\030\004 \001(\t\022\022\n\nunit_price\030\005 " +
+      "\001(\001\022\020\n\010quantity\030\006 \001(\005\022\025\n\rdiscount_info\030\007" +
+      " \001(\t\022!\n\006images\030\010 \003(\0132\021.glory_api.Images\"" +
+      "b\n\017OrderWithAuthor\022%\n\013author_info\030\002 \001(\0132" +
+      "\020.base.AuthorInfo\022(\n\norder_info\030\003 \001(\0132\024." +
+      "glory_api.OrderInfo\"m\n\022CreateOrderReques" +
       "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
-      "st\022\020\n\010order_id\030\002 \001(\003\"<\n\023DeleteOrderRespo" +
-      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
-      "se\"M\n\020ShipGoodsRequest\022\'\n\014base_request\030\001" +
-      " \001(\0132\021.base.BaseRequest\022\020\n\010order_id\030\002 \001(" +
-      "\003\":\n\021ShipGoodsResponse\022%\n\tbase_resp\030\001 \001(" +
-      "\0132\022.base.BaseResponse\"V\n\031ShipGoodsInBatc" +
-      "hesRequest\022\'\n\014base_request\030\001 \001(\0132\021.base." +
-      "BaseRequest\022\020\n\010order_id\030\002 \003(\003\"C\n\032ShipGoo" +
-      "dsInBatchesResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
-      ".base.BaseResponse\"Y\n\034FreeShippingInBatc" +
-      "hesRequest\022\'\n\014base_request\030\001 \001(\0132\021.base." +
-      "BaseRequest\022\020\n\010order_id\030\002 \003(\003\"F\n\035FreeShi" +
-      "ppingInBatchesResponse\022%\n\tbase_resp\030\001 \001(" +
-      "\0132\022.base.BaseResponseb\006proto3"
+      "st\022.\n\norder_info\030\002 \003(\0132\032.glory_api.Creat" +
+      "eOrderInfo\"\224\001\n\023CreateOrderResponse\022%\n\tba" +
+      "se_resp\030\001 \001(\0132\022.base.BaseResponse\022/\n\ttra" +
+      "ns_res\030\002 \003(\0132\034.glory_api.TransResponseIn" +
+      "fo\022\021\n\tCNY_total\030\003 \001(\001\022\022\n\nCOIN_total\030\004 \001(" +
+      "\001\"`\n\021TransResponseInfo\022\020\n\010trans_id\030\001 \001(\003" +
+      "\022\'\n\005order\030\002 \003(\0132\030.glory_api.OrderRespons" +
+      "e\022\020\n\010currency\030\003 \001(\t\"3\n\rOrderResponse\022\020\n\010" +
+      "order_id\030\001 \001(\003\022\020\n\010currency\030\002 \001(\t\"L\n\017GetO" +
+      "rderRequest\022\'\n\014base_request\030\001 \001(\0132\021.base" +
+      ".BaseRequest\022\020\n\010order_id\030\002 \001(\003\"\217\001\n\020GetOr" +
+      "derResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
+      "seResponse\022\'\n\torderInfo\030\002 \001(\0132\024.glory_ap" +
+      "i.OrderInfo\022+\n\013deliverInfo\030\004 \001(\0132\026.glory" +
+      "_api.DeliverInfo\"^\n\022UpdateOrderRequest\022\'" +
+      "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\022" +
+      "\037\n\005order\030\002 \001(\0132\020.glory_api.Order\"N\n\023Upda" +
+      "teOrderResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
+      "e.BaseResponse\022\020\n\010order_id\030\002 \001(\003\"\306\001\n\020Lis" +
+      "tOrderRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
+      "se.BaseRequest\022\017\n\007user_id\030\002 \001(\003\022\021\n\tselle" +
+      "r_id\030\003 \001(\003\022\021\n\ttenant_id\030\004 \001(\003\022\017\n\007shop_id" +
+      "\030\005 \001(\003\022\024\n\014order_status\030\006 \001(\t\022+\n\npaginati" +
+      "on\030d \001(\0132\027.base.PaginationRequest\"\232\001\n\021Li" +
+      "stOrderResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
+      "e.BaseResponse\0220\n\014order_detail\030\002 \003(\0132\032.g" +
+      "lory_api.OrderWithAuthor\022,\n\npagination\030d" +
+      " \001(\0132\030.base.PaginationResponse\"O\n\022Delete" +
+      "OrderRequest\022\'\n\014base_request\030\001 \001(\0132\021.bas" +
+      "e.BaseRequest\022\020\n\010order_id\030\002 \001(\003\"<\n\023Delet" +
+      "eOrderResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
+      ".BaseResponse\"M\n\020ShipGoodsRequest\022\'\n\014bas" +
+      "e_request\030\001 \001(\0132\021.base.BaseRequest\022\020\n\010or" +
+      "der_id\030\002 \001(\003\":\n\021ShipGoodsResponse\022%\n\tbas" +
+      "e_resp\030\001 \001(\0132\022.base.BaseResponse\"V\n\031Ship" +
+      "GoodsInBatchesRequest\022\'\n\014base_request\030\001 " +
+      "\001(\0132\021.base.BaseRequest\022\020\n\010order_id\030\002 \003(\003" +
+      "\"C\n\032ShipGoodsInBatchesResponse\022%\n\tbase_r" +
+      "esp\030\001 \001(\0132\022.base.BaseResponse\"Y\n\034FreeShi" +
+      "ppingInBatchesRequest\022\'\n\014base_request\030\001 " +
+      "\001(\0132\021.base.BaseRequest\022\020\n\010order_id\030\002 \003(\003" +
+      "\"F\n\035FreeShippingInBatchesResponse\022%\n\tbas" +
+      "e_resp\030\001 \001(\0132\022.base.BaseResponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -28034,7 +29589,7 @@ public final class OrderOuterClass {
     internal_static_glory_api_CreateOrderInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CreateOrderInfo_descriptor,
-        new java.lang.String[] { "OrderId", "UserId", "ShopId", "SellerId", "TenantId", "TotalAmount", "OriginalAmount", "Tax", "DeliverFee", "Currency", "DeliverAddress", "DeliverPost", "ContactName", "ContactPhone", "SkuInfo", "Message", "BuyerName", });
+        new java.lang.String[] { "OrderId", "UserId", "ShopId", "SellerId", "TenantId", "TotalAmount", "OriginalAmount", "Tax", "DeliverFee", "Currency", "DeliverAddress", "DeliverPost", "ContactName", "ContactPhone", "SkuInfo", "Message", "BuyerName", "RoomId", "Channel", "TransId", });
     internal_static_glory_api_SkuInfo_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_glory_api_SkuInfo_fieldAccessorTable = new
@@ -28082,93 +29637,99 @@ public final class OrderOuterClass {
     internal_static_glory_api_CreateOrderResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CreateOrderResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "OrderRes", });
-    internal_static_glory_api_OrderResponseInfo_descriptor =
+        new java.lang.String[] { "BaseResp", "TransRes", "CNYTotal", "COINTotal", });
+    internal_static_glory_api_TransResponseInfo_descriptor =
       getDescriptor().getMessageTypes().get(11);
-    internal_static_glory_api_OrderResponseInfo_fieldAccessorTable = new
+    internal_static_glory_api_TransResponseInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_OrderResponseInfo_descriptor,
-        new java.lang.String[] { "OrderId", "Currency", "Total", });
-    internal_static_glory_api_GetOrderRequest_descriptor =
+        internal_static_glory_api_TransResponseInfo_descriptor,
+        new java.lang.String[] { "TransId", "Order", "Currency", });
+    internal_static_glory_api_OrderResponse_descriptor =
       getDescriptor().getMessageTypes().get(12);
+    internal_static_glory_api_OrderResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_OrderResponse_descriptor,
+        new java.lang.String[] { "OrderId", "Currency", });
+    internal_static_glory_api_GetOrderRequest_descriptor =
+      getDescriptor().getMessageTypes().get(13);
     internal_static_glory_api_GetOrderRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetOrderRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "OrderId", });
     internal_static_glory_api_GetOrderResponse_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_glory_api_GetOrderResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetOrderResponse_descriptor,
         new java.lang.String[] { "BaseResp", "OrderInfo", "DeliverInfo", });
     internal_static_glory_api_UpdateOrderRequest_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_glory_api_UpdateOrderRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateOrderRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "Order", });
     internal_static_glory_api_UpdateOrderResponse_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_glory_api_UpdateOrderResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateOrderResponse_descriptor,
         new java.lang.String[] { "BaseResp", "OrderId", });
     internal_static_glory_api_ListOrderRequest_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_glory_api_ListOrderRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListOrderRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "UserId", "SellerId", "TenantId", "ShopId", "OrderStatus", "Pagination", });
     internal_static_glory_api_ListOrderResponse_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_glory_api_ListOrderResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListOrderResponse_descriptor,
         new java.lang.String[] { "BaseResp", "OrderDetail", "Pagination", });
     internal_static_glory_api_DeleteOrderRequest_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_glory_api_DeleteOrderRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteOrderRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "OrderId", });
     internal_static_glory_api_DeleteOrderResponse_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_glory_api_DeleteOrderResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteOrderResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_ShipGoodsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_glory_api_ShipGoodsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ShipGoodsRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "OrderId", });
     internal_static_glory_api_ShipGoodsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_glory_api_ShipGoodsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ShipGoodsResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_ShipGoodsInBatchesRequest_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_glory_api_ShipGoodsInBatchesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ShipGoodsInBatchesRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "OrderId", });
     internal_static_glory_api_ShipGoodsInBatchesResponse_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_glory_api_ShipGoodsInBatchesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ShipGoodsInBatchesResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_FreeShippingInBatchesRequest_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_glory_api_FreeShippingInBatchesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_FreeShippingInBatchesRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "OrderId", });
     internal_static_glory_api_FreeShippingInBatchesResponse_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_glory_api_FreeShippingInBatchesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_FreeShippingInBatchesResponse_descriptor,

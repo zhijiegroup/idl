@@ -40,6 +40,7 @@ export interface CreateOrderInfo {
   original_amount?: number;
   tax?: number;
   deliver_fee?: number;
+  /** 货币类型  CNY :人民币 , COIN:虚拟币 */
   currency?: string;
   deliver_address?: string;
   deliver_post?: number;
@@ -48,6 +49,12 @@ export interface CreateOrderInfo {
   sku_info?: Array<SkuInfo>;
   message?: string;
   buyer_name?: string;
+  /** 直播房间id */
+  room_id?: string;
+  /** live:直播间订单,normal:非直播间订单 */
+  channel?: string;
+  /** 流水id,下单时候 货币订单、虚拟币订单,分别进行合并,合并后称之为 trans_id(流水id) */
+  trans_id?: string;
 }
 
 export interface SkuInfo {
@@ -146,15 +153,24 @@ export interface CreateOrderRequest {
 
 export interface CreateOrderResponse {
   base_resp?: base.BaseResponse;
-  order_res?: Array<OrderResponseInfo>;
+  trans_res?: Array<TransResponseInfo>;
+  /** 人民币总金额，单位为分 微信支付使用 */
+  CNY_total?: number;
+  /** 虚拟币总金额 */
+  COIN_total?: number;
 }
 
-export interface OrderResponseInfo {
+export interface TransResponseInfo {
+  trans_id?: string;
+  order?: Array<OrderResponse>;
+  /** 货币类型  CNY :人民币 , COIN:虚拟币 */
+  currency?: string;
+}
+
+export interface OrderResponse {
   order_id?: string;
   /** 货币类型  CNY :人民币 , COIN:虚拟币 */
   currency?: string;
-  /** 订单总金额，单位为分 微信支付使用 */
-  total?: number;
 }
 
 export interface GetOrderRequest {
