@@ -237,6 +237,12 @@ message UpdateShopManagerResponse{
   base.BaseResponse base_resp = 1;
 }
 
+message GetShopBusinessDataRequest {
+  base.BaseRequest base_request = 1;
+  int64 shop_id = 2;
+  int64 period = 3;
+}
+
 message ShopChartData {
   string date = 1;
   double deal_amount =2;
