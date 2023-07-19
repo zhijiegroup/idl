@@ -524,6 +524,11 @@ service glory_api {
     option (api.post) = '/api/live/delete_live_texts';
   }
 
+   // live chart
+   rpc GetLiveChartData(GetLiveChartDataRequest) returns (GetLiveChartDataResponse) {
+    option (api.get) = '/api/live/get_live_chart_data';
+  }
+
   //tenant
   rpc CreateTenant(CreateTenantRequest) returns (CreateTenantResponse) {
     option (api.post) = '/api/tenant/create_tenant';

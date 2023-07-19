@@ -111,6 +111,32 @@ message ListFinishedRoomResponse {
   base.PaginationResponse pagination = 100;
 }
 
+message GetLiveChartDataRequest {
+  base.BaseRequest base_request = 1;
+  int64 room_id = 2;
+  int64 start = 3;
+  int64 end = 4;
+}
+
+message LiveChartData {
+  string date = 1;
+  double deal_amount =2;
+  int64 room_buyer_amount =3;
+  int64 room_order_amount =4;
+}
+
+message LiveData {
+  repeated LiveChartData live_chart_data = 1;
+  double total_deal_amount = 2;
+  int64 total_visitor_amount = 3;
+  int64 total_order_amount  = 4;
+}
+
+message GetLiveChartDataResponse{
+  base.BaseResponse base_resp = 1;
+  LiveData live_data =2;
+}
+
 
 
 
