@@ -16108,6 +16108,3453 @@ public final class LiveRoom {
 
   }
 
+  public interface GetLiveChartDataRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:glory_api.GetLiveChartDataRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     * @return Whether the baseRequest field is set.
+     */
+    boolean hasBaseRequest();
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     * @return The baseRequest.
+     */
+    base.Base.BaseRequest getBaseRequest();
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     */
+    base.Base.BaseRequestOrBuilder getBaseRequestOrBuilder();
+
+    /**
+     * <code>int64 room_id = 2;</code>
+     * @return The roomId.
+     */
+    long getRoomId();
+
+    /**
+     * <code>int64 start = 3;</code>
+     * @return The start.
+     */
+    long getStart();
+
+    /**
+     * <code>int64 end = 4;</code>
+     * @return The end.
+     */
+    long getEnd();
+  }
+  /**
+   * Protobuf type {@code glory_api.GetLiveChartDataRequest}
+   */
+  public static final class GetLiveChartDataRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:glory_api.GetLiveChartDataRequest)
+      GetLiveChartDataRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetLiveChartDataRequest.newBuilder() to construct.
+    private GetLiveChartDataRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetLiveChartDataRequest() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetLiveChartDataRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetLiveChartDataRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              base.Base.BaseRequest.Builder subBuilder = null;
+              if (baseRequest_ != null) {
+                subBuilder = baseRequest_.toBuilder();
+              }
+              baseRequest_ = input.readMessage(base.Base.BaseRequest.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(baseRequest_);
+                baseRequest_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 16: {
+
+              roomId_ = input.readInt64();
+              break;
+            }
+            case 24: {
+
+              start_ = input.readInt64();
+              break;
+            }
+            case 32: {
+
+              end_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return glory_api.LiveRoom.internal_static_glory_api_GetLiveChartDataRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return glory_api.LiveRoom.internal_static_glory_api_GetLiveChartDataRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              glory_api.LiveRoom.GetLiveChartDataRequest.class, glory_api.LiveRoom.GetLiveChartDataRequest.Builder.class);
+    }
+
+    public static final int BASE_REQUEST_FIELD_NUMBER = 1;
+    private base.Base.BaseRequest baseRequest_;
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     * @return Whether the baseRequest field is set.
+     */
+    @java.lang.Override
+    public boolean hasBaseRequest() {
+      return baseRequest_ != null;
+    }
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     * @return The baseRequest.
+     */
+    @java.lang.Override
+    public base.Base.BaseRequest getBaseRequest() {
+      return baseRequest_ == null ? base.Base.BaseRequest.getDefaultInstance() : baseRequest_;
+    }
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     */
+    @java.lang.Override
+    public base.Base.BaseRequestOrBuilder getBaseRequestOrBuilder() {
+      return getBaseRequest();
+    }
+
+    public static final int ROOM_ID_FIELD_NUMBER = 2;
+    private long roomId_;
+    /**
+     * <code>int64 room_id = 2;</code>
+     * @return The roomId.
+     */
+    @java.lang.Override
+    public long getRoomId() {
+      return roomId_;
+    }
+
+    public static final int START_FIELD_NUMBER = 3;
+    private long start_;
+    /**
+     * <code>int64 start = 3;</code>
+     * @return The start.
+     */
+    @java.lang.Override
+    public long getStart() {
+      return start_;
+    }
+
+    public static final int END_FIELD_NUMBER = 4;
+    private long end_;
+    /**
+     * <code>int64 end = 4;</code>
+     * @return The end.
+     */
+    @java.lang.Override
+    public long getEnd() {
+      return end_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (baseRequest_ != null) {
+        output.writeMessage(1, getBaseRequest());
+      }
+      if (roomId_ != 0L) {
+        output.writeInt64(2, roomId_);
+      }
+      if (start_ != 0L) {
+        output.writeInt64(3, start_);
+      }
+      if (end_ != 0L) {
+        output.writeInt64(4, end_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (baseRequest_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getBaseRequest());
+      }
+      if (roomId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, roomId_);
+      }
+      if (start_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, start_);
+      }
+      if (end_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(4, end_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof glory_api.LiveRoom.GetLiveChartDataRequest)) {
+        return super.equals(obj);
+      }
+      glory_api.LiveRoom.GetLiveChartDataRequest other = (glory_api.LiveRoom.GetLiveChartDataRequest) obj;
+
+      if (hasBaseRequest() != other.hasBaseRequest()) return false;
+      if (hasBaseRequest()) {
+        if (!getBaseRequest()
+            .equals(other.getBaseRequest())) return false;
+      }
+      if (getRoomId()
+          != other.getRoomId()) return false;
+      if (getStart()
+          != other.getStart()) return false;
+      if (getEnd()
+          != other.getEnd()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasBaseRequest()) {
+        hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getBaseRequest().hashCode();
+      }
+      hash = (37 * hash) + ROOM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getRoomId());
+      hash = (37 * hash) + START_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getStart());
+      hash = (37 * hash) + END_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getEnd());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static glory_api.LiveRoom.GetLiveChartDataRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.LiveRoom.GetLiveChartDataRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.LiveRoom.GetLiveChartDataRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.LiveRoom.GetLiveChartDataRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.LiveRoom.GetLiveChartDataRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.LiveRoom.GetLiveChartDataRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.LiveRoom.GetLiveChartDataRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.LiveRoom.GetLiveChartDataRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.LiveRoom.GetLiveChartDataRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static glory_api.LiveRoom.GetLiveChartDataRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.LiveRoom.GetLiveChartDataRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.LiveRoom.GetLiveChartDataRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(glory_api.LiveRoom.GetLiveChartDataRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code glory_api.GetLiveChartDataRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:glory_api.GetLiveChartDataRequest)
+        glory_api.LiveRoom.GetLiveChartDataRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return glory_api.LiveRoom.internal_static_glory_api_GetLiveChartDataRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return glory_api.LiveRoom.internal_static_glory_api_GetLiveChartDataRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                glory_api.LiveRoom.GetLiveChartDataRequest.class, glory_api.LiveRoom.GetLiveChartDataRequest.Builder.class);
+      }
+
+      // Construct using glory_api.LiveRoom.GetLiveChartDataRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (baseRequestBuilder_ == null) {
+          baseRequest_ = null;
+        } else {
+          baseRequest_ = null;
+          baseRequestBuilder_ = null;
+        }
+        roomId_ = 0L;
+
+        start_ = 0L;
+
+        end_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return glory_api.LiveRoom.internal_static_glory_api_GetLiveChartDataRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public glory_api.LiveRoom.GetLiveChartDataRequest getDefaultInstanceForType() {
+        return glory_api.LiveRoom.GetLiveChartDataRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public glory_api.LiveRoom.GetLiveChartDataRequest build() {
+        glory_api.LiveRoom.GetLiveChartDataRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public glory_api.LiveRoom.GetLiveChartDataRequest buildPartial() {
+        glory_api.LiveRoom.GetLiveChartDataRequest result = new glory_api.LiveRoom.GetLiveChartDataRequest(this);
+        if (baseRequestBuilder_ == null) {
+          result.baseRequest_ = baseRequest_;
+        } else {
+          result.baseRequest_ = baseRequestBuilder_.build();
+        }
+        result.roomId_ = roomId_;
+        result.start_ = start_;
+        result.end_ = end_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof glory_api.LiveRoom.GetLiveChartDataRequest) {
+          return mergeFrom((glory_api.LiveRoom.GetLiveChartDataRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(glory_api.LiveRoom.GetLiveChartDataRequest other) {
+        if (other == glory_api.LiveRoom.GetLiveChartDataRequest.getDefaultInstance()) return this;
+        if (other.hasBaseRequest()) {
+          mergeBaseRequest(other.getBaseRequest());
+        }
+        if (other.getRoomId() != 0L) {
+          setRoomId(other.getRoomId());
+        }
+        if (other.getStart() != 0L) {
+          setStart(other.getStart());
+        }
+        if (other.getEnd() != 0L) {
+          setEnd(other.getEnd());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        glory_api.LiveRoom.GetLiveChartDataRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (glory_api.LiveRoom.GetLiveChartDataRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private base.Base.BaseRequest baseRequest_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          base.Base.BaseRequest, base.Base.BaseRequest.Builder, base.Base.BaseRequestOrBuilder> baseRequestBuilder_;
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       * @return Whether the baseRequest field is set.
+       */
+      public boolean hasBaseRequest() {
+        return baseRequestBuilder_ != null || baseRequest_ != null;
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       * @return The baseRequest.
+       */
+      public base.Base.BaseRequest getBaseRequest() {
+        if (baseRequestBuilder_ == null) {
+          return baseRequest_ == null ? base.Base.BaseRequest.getDefaultInstance() : baseRequest_;
+        } else {
+          return baseRequestBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public Builder setBaseRequest(base.Base.BaseRequest value) {
+        if (baseRequestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          baseRequest_ = value;
+          onChanged();
+        } else {
+          baseRequestBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public Builder setBaseRequest(
+          base.Base.BaseRequest.Builder builderForValue) {
+        if (baseRequestBuilder_ == null) {
+          baseRequest_ = builderForValue.build();
+          onChanged();
+        } else {
+          baseRequestBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public Builder mergeBaseRequest(base.Base.BaseRequest value) {
+        if (baseRequestBuilder_ == null) {
+          if (baseRequest_ != null) {
+            baseRequest_ =
+              base.Base.BaseRequest.newBuilder(baseRequest_).mergeFrom(value).buildPartial();
+          } else {
+            baseRequest_ = value;
+          }
+          onChanged();
+        } else {
+          baseRequestBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public Builder clearBaseRequest() {
+        if (baseRequestBuilder_ == null) {
+          baseRequest_ = null;
+          onChanged();
+        } else {
+          baseRequest_ = null;
+          baseRequestBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public base.Base.BaseRequest.Builder getBaseRequestBuilder() {
+        
+        onChanged();
+        return getBaseRequestFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public base.Base.BaseRequestOrBuilder getBaseRequestOrBuilder() {
+        if (baseRequestBuilder_ != null) {
+          return baseRequestBuilder_.getMessageOrBuilder();
+        } else {
+          return baseRequest_ == null ?
+              base.Base.BaseRequest.getDefaultInstance() : baseRequest_;
+        }
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          base.Base.BaseRequest, base.Base.BaseRequest.Builder, base.Base.BaseRequestOrBuilder> 
+          getBaseRequestFieldBuilder() {
+        if (baseRequestBuilder_ == null) {
+          baseRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              base.Base.BaseRequest, base.Base.BaseRequest.Builder, base.Base.BaseRequestOrBuilder>(
+                  getBaseRequest(),
+                  getParentForChildren(),
+                  isClean());
+          baseRequest_ = null;
+        }
+        return baseRequestBuilder_;
+      }
+
+      private long roomId_ ;
+      /**
+       * <code>int64 room_id = 2;</code>
+       * @return The roomId.
+       */
+      @java.lang.Override
+      public long getRoomId() {
+        return roomId_;
+      }
+      /**
+       * <code>int64 room_id = 2;</code>
+       * @param value The roomId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRoomId(long value) {
+        
+        roomId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 room_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRoomId() {
+        
+        roomId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long start_ ;
+      /**
+       * <code>int64 start = 3;</code>
+       * @return The start.
+       */
+      @java.lang.Override
+      public long getStart() {
+        return start_;
+      }
+      /**
+       * <code>int64 start = 3;</code>
+       * @param value The start to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStart(long value) {
+        
+        start_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 start = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStart() {
+        
+        start_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long end_ ;
+      /**
+       * <code>int64 end = 4;</code>
+       * @return The end.
+       */
+      @java.lang.Override
+      public long getEnd() {
+        return end_;
+      }
+      /**
+       * <code>int64 end = 4;</code>
+       * @param value The end to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnd(long value) {
+        
+        end_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 end = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEnd() {
+        
+        end_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:glory_api.GetLiveChartDataRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:glory_api.GetLiveChartDataRequest)
+    private static final glory_api.LiveRoom.GetLiveChartDataRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new glory_api.LiveRoom.GetLiveChartDataRequest();
+    }
+
+    public static glory_api.LiveRoom.GetLiveChartDataRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetLiveChartDataRequest>
+        PARSER = new com.google.protobuf.AbstractParser<GetLiveChartDataRequest>() {
+      @java.lang.Override
+      public GetLiveChartDataRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetLiveChartDataRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetLiveChartDataRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetLiveChartDataRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public glory_api.LiveRoom.GetLiveChartDataRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface LiveChartDataOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:glory_api.LiveChartData)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string date = 1;</code>
+     * @return The date.
+     */
+    java.lang.String getDate();
+    /**
+     * <code>string date = 1;</code>
+     * @return The bytes for date.
+     */
+    com.google.protobuf.ByteString
+        getDateBytes();
+
+    /**
+     * <code>double deal_amount = 2;</code>
+     * @return The dealAmount.
+     */
+    double getDealAmount();
+
+    /**
+     * <code>int64 room_buyer_amount = 3;</code>
+     * @return The roomBuyerAmount.
+     */
+    long getRoomBuyerAmount();
+
+    /**
+     * <code>int64 room_order_amount = 4;</code>
+     * @return The roomOrderAmount.
+     */
+    long getRoomOrderAmount();
+  }
+  /**
+   * Protobuf type {@code glory_api.LiveChartData}
+   */
+  public static final class LiveChartData extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:glory_api.LiveChartData)
+      LiveChartDataOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use LiveChartData.newBuilder() to construct.
+    private LiveChartData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private LiveChartData() {
+      date_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new LiveChartData();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private LiveChartData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              date_ = s;
+              break;
+            }
+            case 17: {
+
+              dealAmount_ = input.readDouble();
+              break;
+            }
+            case 24: {
+
+              roomBuyerAmount_ = input.readInt64();
+              break;
+            }
+            case 32: {
+
+              roomOrderAmount_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return glory_api.LiveRoom.internal_static_glory_api_LiveChartData_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return glory_api.LiveRoom.internal_static_glory_api_LiveChartData_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              glory_api.LiveRoom.LiveChartData.class, glory_api.LiveRoom.LiveChartData.Builder.class);
+    }
+
+    public static final int DATE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object date_;
+    /**
+     * <code>string date = 1;</code>
+     * @return The date.
+     */
+    @java.lang.Override
+    public java.lang.String getDate() {
+      java.lang.Object ref = date_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        date_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string date = 1;</code>
+     * @return The bytes for date.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDateBytes() {
+      java.lang.Object ref = date_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        date_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DEAL_AMOUNT_FIELD_NUMBER = 2;
+    private double dealAmount_;
+    /**
+     * <code>double deal_amount = 2;</code>
+     * @return The dealAmount.
+     */
+    @java.lang.Override
+    public double getDealAmount() {
+      return dealAmount_;
+    }
+
+    public static final int ROOM_BUYER_AMOUNT_FIELD_NUMBER = 3;
+    private long roomBuyerAmount_;
+    /**
+     * <code>int64 room_buyer_amount = 3;</code>
+     * @return The roomBuyerAmount.
+     */
+    @java.lang.Override
+    public long getRoomBuyerAmount() {
+      return roomBuyerAmount_;
+    }
+
+    public static final int ROOM_ORDER_AMOUNT_FIELD_NUMBER = 4;
+    private long roomOrderAmount_;
+    /**
+     * <code>int64 room_order_amount = 4;</code>
+     * @return The roomOrderAmount.
+     */
+    @java.lang.Override
+    public long getRoomOrderAmount() {
+      return roomOrderAmount_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getDateBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, date_);
+      }
+      if (dealAmount_ != 0D) {
+        output.writeDouble(2, dealAmount_);
+      }
+      if (roomBuyerAmount_ != 0L) {
+        output.writeInt64(3, roomBuyerAmount_);
+      }
+      if (roomOrderAmount_ != 0L) {
+        output.writeInt64(4, roomOrderAmount_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getDateBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, date_);
+      }
+      if (dealAmount_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(2, dealAmount_);
+      }
+      if (roomBuyerAmount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, roomBuyerAmount_);
+      }
+      if (roomOrderAmount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(4, roomOrderAmount_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof glory_api.LiveRoom.LiveChartData)) {
+        return super.equals(obj);
+      }
+      glory_api.LiveRoom.LiveChartData other = (glory_api.LiveRoom.LiveChartData) obj;
+
+      if (!getDate()
+          .equals(other.getDate())) return false;
+      if (java.lang.Double.doubleToLongBits(getDealAmount())
+          != java.lang.Double.doubleToLongBits(
+              other.getDealAmount())) return false;
+      if (getRoomBuyerAmount()
+          != other.getRoomBuyerAmount()) return false;
+      if (getRoomOrderAmount()
+          != other.getRoomOrderAmount()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DATE_FIELD_NUMBER;
+      hash = (53 * hash) + getDate().hashCode();
+      hash = (37 * hash) + DEAL_AMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getDealAmount()));
+      hash = (37 * hash) + ROOM_BUYER_AMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getRoomBuyerAmount());
+      hash = (37 * hash) + ROOM_ORDER_AMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getRoomOrderAmount());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static glory_api.LiveRoom.LiveChartData parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.LiveRoom.LiveChartData parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.LiveRoom.LiveChartData parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.LiveRoom.LiveChartData parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.LiveRoom.LiveChartData parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.LiveRoom.LiveChartData parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.LiveRoom.LiveChartData parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.LiveRoom.LiveChartData parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.LiveRoom.LiveChartData parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static glory_api.LiveRoom.LiveChartData parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.LiveRoom.LiveChartData parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.LiveRoom.LiveChartData parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(glory_api.LiveRoom.LiveChartData prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code glory_api.LiveChartData}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:glory_api.LiveChartData)
+        glory_api.LiveRoom.LiveChartDataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return glory_api.LiveRoom.internal_static_glory_api_LiveChartData_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return glory_api.LiveRoom.internal_static_glory_api_LiveChartData_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                glory_api.LiveRoom.LiveChartData.class, glory_api.LiveRoom.LiveChartData.Builder.class);
+      }
+
+      // Construct using glory_api.LiveRoom.LiveChartData.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        date_ = "";
+
+        dealAmount_ = 0D;
+
+        roomBuyerAmount_ = 0L;
+
+        roomOrderAmount_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return glory_api.LiveRoom.internal_static_glory_api_LiveChartData_descriptor;
+      }
+
+      @java.lang.Override
+      public glory_api.LiveRoom.LiveChartData getDefaultInstanceForType() {
+        return glory_api.LiveRoom.LiveChartData.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public glory_api.LiveRoom.LiveChartData build() {
+        glory_api.LiveRoom.LiveChartData result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public glory_api.LiveRoom.LiveChartData buildPartial() {
+        glory_api.LiveRoom.LiveChartData result = new glory_api.LiveRoom.LiveChartData(this);
+        result.date_ = date_;
+        result.dealAmount_ = dealAmount_;
+        result.roomBuyerAmount_ = roomBuyerAmount_;
+        result.roomOrderAmount_ = roomOrderAmount_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof glory_api.LiveRoom.LiveChartData) {
+          return mergeFrom((glory_api.LiveRoom.LiveChartData)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(glory_api.LiveRoom.LiveChartData other) {
+        if (other == glory_api.LiveRoom.LiveChartData.getDefaultInstance()) return this;
+        if (!other.getDate().isEmpty()) {
+          date_ = other.date_;
+          onChanged();
+        }
+        if (other.getDealAmount() != 0D) {
+          setDealAmount(other.getDealAmount());
+        }
+        if (other.getRoomBuyerAmount() != 0L) {
+          setRoomBuyerAmount(other.getRoomBuyerAmount());
+        }
+        if (other.getRoomOrderAmount() != 0L) {
+          setRoomOrderAmount(other.getRoomOrderAmount());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        glory_api.LiveRoom.LiveChartData parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (glory_api.LiveRoom.LiveChartData) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object date_ = "";
+      /**
+       * <code>string date = 1;</code>
+       * @return The date.
+       */
+      public java.lang.String getDate() {
+        java.lang.Object ref = date_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          date_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string date = 1;</code>
+       * @return The bytes for date.
+       */
+      public com.google.protobuf.ByteString
+          getDateBytes() {
+        java.lang.Object ref = date_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          date_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string date = 1;</code>
+       * @param value The date to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDate(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        date_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string date = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDate() {
+        
+        date_ = getDefaultInstance().getDate();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string date = 1;</code>
+       * @param value The bytes for date to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDateBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        date_ = value;
+        onChanged();
+        return this;
+      }
+
+      private double dealAmount_ ;
+      /**
+       * <code>double deal_amount = 2;</code>
+       * @return The dealAmount.
+       */
+      @java.lang.Override
+      public double getDealAmount() {
+        return dealAmount_;
+      }
+      /**
+       * <code>double deal_amount = 2;</code>
+       * @param value The dealAmount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDealAmount(double value) {
+        
+        dealAmount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double deal_amount = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDealAmount() {
+        
+        dealAmount_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private long roomBuyerAmount_ ;
+      /**
+       * <code>int64 room_buyer_amount = 3;</code>
+       * @return The roomBuyerAmount.
+       */
+      @java.lang.Override
+      public long getRoomBuyerAmount() {
+        return roomBuyerAmount_;
+      }
+      /**
+       * <code>int64 room_buyer_amount = 3;</code>
+       * @param value The roomBuyerAmount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRoomBuyerAmount(long value) {
+        
+        roomBuyerAmount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 room_buyer_amount = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRoomBuyerAmount() {
+        
+        roomBuyerAmount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long roomOrderAmount_ ;
+      /**
+       * <code>int64 room_order_amount = 4;</code>
+       * @return The roomOrderAmount.
+       */
+      @java.lang.Override
+      public long getRoomOrderAmount() {
+        return roomOrderAmount_;
+      }
+      /**
+       * <code>int64 room_order_amount = 4;</code>
+       * @param value The roomOrderAmount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRoomOrderAmount(long value) {
+        
+        roomOrderAmount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 room_order_amount = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRoomOrderAmount() {
+        
+        roomOrderAmount_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:glory_api.LiveChartData)
+    }
+
+    // @@protoc_insertion_point(class_scope:glory_api.LiveChartData)
+    private static final glory_api.LiveRoom.LiveChartData DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new glory_api.LiveRoom.LiveChartData();
+    }
+
+    public static glory_api.LiveRoom.LiveChartData getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<LiveChartData>
+        PARSER = new com.google.protobuf.AbstractParser<LiveChartData>() {
+      @java.lang.Override
+      public LiveChartData parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new LiveChartData(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<LiveChartData> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<LiveChartData> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public glory_api.LiveRoom.LiveChartData getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface LiveDataOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:glory_api.LiveData)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .glory_api.LiveChartData live_chart_data = 1;</code>
+     */
+    java.util.List<glory_api.LiveRoom.LiveChartData> 
+        getLiveChartDataList();
+    /**
+     * <code>repeated .glory_api.LiveChartData live_chart_data = 1;</code>
+     */
+    glory_api.LiveRoom.LiveChartData getLiveChartData(int index);
+    /**
+     * <code>repeated .glory_api.LiveChartData live_chart_data = 1;</code>
+     */
+    int getLiveChartDataCount();
+    /**
+     * <code>repeated .glory_api.LiveChartData live_chart_data = 1;</code>
+     */
+    java.util.List<? extends glory_api.LiveRoom.LiveChartDataOrBuilder> 
+        getLiveChartDataOrBuilderList();
+    /**
+     * <code>repeated .glory_api.LiveChartData live_chart_data = 1;</code>
+     */
+    glory_api.LiveRoom.LiveChartDataOrBuilder getLiveChartDataOrBuilder(
+        int index);
+
+    /**
+     * <code>double total_deal_amount = 2;</code>
+     * @return The totalDealAmount.
+     */
+    double getTotalDealAmount();
+
+    /**
+     * <code>int64 total_visitor_amount = 3;</code>
+     * @return The totalVisitorAmount.
+     */
+    long getTotalVisitorAmount();
+
+    /**
+     * <code>int64 total_order_amount = 4;</code>
+     * @return The totalOrderAmount.
+     */
+    long getTotalOrderAmount();
+  }
+  /**
+   * Protobuf type {@code glory_api.LiveData}
+   */
+  public static final class LiveData extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:glory_api.LiveData)
+      LiveDataOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use LiveData.newBuilder() to construct.
+    private LiveData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private LiveData() {
+      liveChartData_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new LiveData();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private LiveData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                liveChartData_ = new java.util.ArrayList<glory_api.LiveRoom.LiveChartData>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              liveChartData_.add(
+                  input.readMessage(glory_api.LiveRoom.LiveChartData.parser(), extensionRegistry));
+              break;
+            }
+            case 17: {
+
+              totalDealAmount_ = input.readDouble();
+              break;
+            }
+            case 24: {
+
+              totalVisitorAmount_ = input.readInt64();
+              break;
+            }
+            case 32: {
+
+              totalOrderAmount_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          liveChartData_ = java.util.Collections.unmodifiableList(liveChartData_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return glory_api.LiveRoom.internal_static_glory_api_LiveData_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return glory_api.LiveRoom.internal_static_glory_api_LiveData_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              glory_api.LiveRoom.LiveData.class, glory_api.LiveRoom.LiveData.Builder.class);
+    }
+
+    public static final int LIVE_CHART_DATA_FIELD_NUMBER = 1;
+    private java.util.List<glory_api.LiveRoom.LiveChartData> liveChartData_;
+    /**
+     * <code>repeated .glory_api.LiveChartData live_chart_data = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<glory_api.LiveRoom.LiveChartData> getLiveChartDataList() {
+      return liveChartData_;
+    }
+    /**
+     * <code>repeated .glory_api.LiveChartData live_chart_data = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends glory_api.LiveRoom.LiveChartDataOrBuilder> 
+        getLiveChartDataOrBuilderList() {
+      return liveChartData_;
+    }
+    /**
+     * <code>repeated .glory_api.LiveChartData live_chart_data = 1;</code>
+     */
+    @java.lang.Override
+    public int getLiveChartDataCount() {
+      return liveChartData_.size();
+    }
+    /**
+     * <code>repeated .glory_api.LiveChartData live_chart_data = 1;</code>
+     */
+    @java.lang.Override
+    public glory_api.LiveRoom.LiveChartData getLiveChartData(int index) {
+      return liveChartData_.get(index);
+    }
+    /**
+     * <code>repeated .glory_api.LiveChartData live_chart_data = 1;</code>
+     */
+    @java.lang.Override
+    public glory_api.LiveRoom.LiveChartDataOrBuilder getLiveChartDataOrBuilder(
+        int index) {
+      return liveChartData_.get(index);
+    }
+
+    public static final int TOTAL_DEAL_AMOUNT_FIELD_NUMBER = 2;
+    private double totalDealAmount_;
+    /**
+     * <code>double total_deal_amount = 2;</code>
+     * @return The totalDealAmount.
+     */
+    @java.lang.Override
+    public double getTotalDealAmount() {
+      return totalDealAmount_;
+    }
+
+    public static final int TOTAL_VISITOR_AMOUNT_FIELD_NUMBER = 3;
+    private long totalVisitorAmount_;
+    /**
+     * <code>int64 total_visitor_amount = 3;</code>
+     * @return The totalVisitorAmount.
+     */
+    @java.lang.Override
+    public long getTotalVisitorAmount() {
+      return totalVisitorAmount_;
+    }
+
+    public static final int TOTAL_ORDER_AMOUNT_FIELD_NUMBER = 4;
+    private long totalOrderAmount_;
+    /**
+     * <code>int64 total_order_amount = 4;</code>
+     * @return The totalOrderAmount.
+     */
+    @java.lang.Override
+    public long getTotalOrderAmount() {
+      return totalOrderAmount_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < liveChartData_.size(); i++) {
+        output.writeMessage(1, liveChartData_.get(i));
+      }
+      if (totalDealAmount_ != 0D) {
+        output.writeDouble(2, totalDealAmount_);
+      }
+      if (totalVisitorAmount_ != 0L) {
+        output.writeInt64(3, totalVisitorAmount_);
+      }
+      if (totalOrderAmount_ != 0L) {
+        output.writeInt64(4, totalOrderAmount_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < liveChartData_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, liveChartData_.get(i));
+      }
+      if (totalDealAmount_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(2, totalDealAmount_);
+      }
+      if (totalVisitorAmount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, totalVisitorAmount_);
+      }
+      if (totalOrderAmount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(4, totalOrderAmount_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof glory_api.LiveRoom.LiveData)) {
+        return super.equals(obj);
+      }
+      glory_api.LiveRoom.LiveData other = (glory_api.LiveRoom.LiveData) obj;
+
+      if (!getLiveChartDataList()
+          .equals(other.getLiveChartDataList())) return false;
+      if (java.lang.Double.doubleToLongBits(getTotalDealAmount())
+          != java.lang.Double.doubleToLongBits(
+              other.getTotalDealAmount())) return false;
+      if (getTotalVisitorAmount()
+          != other.getTotalVisitorAmount()) return false;
+      if (getTotalOrderAmount()
+          != other.getTotalOrderAmount()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getLiveChartDataCount() > 0) {
+        hash = (37 * hash) + LIVE_CHART_DATA_FIELD_NUMBER;
+        hash = (53 * hash) + getLiveChartDataList().hashCode();
+      }
+      hash = (37 * hash) + TOTAL_DEAL_AMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getTotalDealAmount()));
+      hash = (37 * hash) + TOTAL_VISITOR_AMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTotalVisitorAmount());
+      hash = (37 * hash) + TOTAL_ORDER_AMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTotalOrderAmount());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static glory_api.LiveRoom.LiveData parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.LiveRoom.LiveData parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.LiveRoom.LiveData parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.LiveRoom.LiveData parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.LiveRoom.LiveData parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.LiveRoom.LiveData parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.LiveRoom.LiveData parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.LiveRoom.LiveData parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.LiveRoom.LiveData parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static glory_api.LiveRoom.LiveData parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.LiveRoom.LiveData parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.LiveRoom.LiveData parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(glory_api.LiveRoom.LiveData prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code glory_api.LiveData}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:glory_api.LiveData)
+        glory_api.LiveRoom.LiveDataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return glory_api.LiveRoom.internal_static_glory_api_LiveData_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return glory_api.LiveRoom.internal_static_glory_api_LiveData_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                glory_api.LiveRoom.LiveData.class, glory_api.LiveRoom.LiveData.Builder.class);
+      }
+
+      // Construct using glory_api.LiveRoom.LiveData.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getLiveChartDataFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (liveChartDataBuilder_ == null) {
+          liveChartData_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          liveChartDataBuilder_.clear();
+        }
+        totalDealAmount_ = 0D;
+
+        totalVisitorAmount_ = 0L;
+
+        totalOrderAmount_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return glory_api.LiveRoom.internal_static_glory_api_LiveData_descriptor;
+      }
+
+      @java.lang.Override
+      public glory_api.LiveRoom.LiveData getDefaultInstanceForType() {
+        return glory_api.LiveRoom.LiveData.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public glory_api.LiveRoom.LiveData build() {
+        glory_api.LiveRoom.LiveData result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public glory_api.LiveRoom.LiveData buildPartial() {
+        glory_api.LiveRoom.LiveData result = new glory_api.LiveRoom.LiveData(this);
+        int from_bitField0_ = bitField0_;
+        if (liveChartDataBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            liveChartData_ = java.util.Collections.unmodifiableList(liveChartData_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.liveChartData_ = liveChartData_;
+        } else {
+          result.liveChartData_ = liveChartDataBuilder_.build();
+        }
+        result.totalDealAmount_ = totalDealAmount_;
+        result.totalVisitorAmount_ = totalVisitorAmount_;
+        result.totalOrderAmount_ = totalOrderAmount_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof glory_api.LiveRoom.LiveData) {
+          return mergeFrom((glory_api.LiveRoom.LiveData)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(glory_api.LiveRoom.LiveData other) {
+        if (other == glory_api.LiveRoom.LiveData.getDefaultInstance()) return this;
+        if (liveChartDataBuilder_ == null) {
+          if (!other.liveChartData_.isEmpty()) {
+            if (liveChartData_.isEmpty()) {
+              liveChartData_ = other.liveChartData_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureLiveChartDataIsMutable();
+              liveChartData_.addAll(other.liveChartData_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.liveChartData_.isEmpty()) {
+            if (liveChartDataBuilder_.isEmpty()) {
+              liveChartDataBuilder_.dispose();
+              liveChartDataBuilder_ = null;
+              liveChartData_ = other.liveChartData_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              liveChartDataBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getLiveChartDataFieldBuilder() : null;
+            } else {
+              liveChartDataBuilder_.addAllMessages(other.liveChartData_);
+            }
+          }
+        }
+        if (other.getTotalDealAmount() != 0D) {
+          setTotalDealAmount(other.getTotalDealAmount());
+        }
+        if (other.getTotalVisitorAmount() != 0L) {
+          setTotalVisitorAmount(other.getTotalVisitorAmount());
+        }
+        if (other.getTotalOrderAmount() != 0L) {
+          setTotalOrderAmount(other.getTotalOrderAmount());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        glory_api.LiveRoom.LiveData parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (glory_api.LiveRoom.LiveData) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<glory_api.LiveRoom.LiveChartData> liveChartData_ =
+        java.util.Collections.emptyList();
+      private void ensureLiveChartDataIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          liveChartData_ = new java.util.ArrayList<glory_api.LiveRoom.LiveChartData>(liveChartData_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          glory_api.LiveRoom.LiveChartData, glory_api.LiveRoom.LiveChartData.Builder, glory_api.LiveRoom.LiveChartDataOrBuilder> liveChartDataBuilder_;
+
+      /**
+       * <code>repeated .glory_api.LiveChartData live_chart_data = 1;</code>
+       */
+      public java.util.List<glory_api.LiveRoom.LiveChartData> getLiveChartDataList() {
+        if (liveChartDataBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(liveChartData_);
+        } else {
+          return liveChartDataBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .glory_api.LiveChartData live_chart_data = 1;</code>
+       */
+      public int getLiveChartDataCount() {
+        if (liveChartDataBuilder_ == null) {
+          return liveChartData_.size();
+        } else {
+          return liveChartDataBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .glory_api.LiveChartData live_chart_data = 1;</code>
+       */
+      public glory_api.LiveRoom.LiveChartData getLiveChartData(int index) {
+        if (liveChartDataBuilder_ == null) {
+          return liveChartData_.get(index);
+        } else {
+          return liveChartDataBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .glory_api.LiveChartData live_chart_data = 1;</code>
+       */
+      public Builder setLiveChartData(
+          int index, glory_api.LiveRoom.LiveChartData value) {
+        if (liveChartDataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLiveChartDataIsMutable();
+          liveChartData_.set(index, value);
+          onChanged();
+        } else {
+          liveChartDataBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .glory_api.LiveChartData live_chart_data = 1;</code>
+       */
+      public Builder setLiveChartData(
+          int index, glory_api.LiveRoom.LiveChartData.Builder builderForValue) {
+        if (liveChartDataBuilder_ == null) {
+          ensureLiveChartDataIsMutable();
+          liveChartData_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          liveChartDataBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .glory_api.LiveChartData live_chart_data = 1;</code>
+       */
+      public Builder addLiveChartData(glory_api.LiveRoom.LiveChartData value) {
+        if (liveChartDataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLiveChartDataIsMutable();
+          liveChartData_.add(value);
+          onChanged();
+        } else {
+          liveChartDataBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .glory_api.LiveChartData live_chart_data = 1;</code>
+       */
+      public Builder addLiveChartData(
+          int index, glory_api.LiveRoom.LiveChartData value) {
+        if (liveChartDataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLiveChartDataIsMutable();
+          liveChartData_.add(index, value);
+          onChanged();
+        } else {
+          liveChartDataBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .glory_api.LiveChartData live_chart_data = 1;</code>
+       */
+      public Builder addLiveChartData(
+          glory_api.LiveRoom.LiveChartData.Builder builderForValue) {
+        if (liveChartDataBuilder_ == null) {
+          ensureLiveChartDataIsMutable();
+          liveChartData_.add(builderForValue.build());
+          onChanged();
+        } else {
+          liveChartDataBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .glory_api.LiveChartData live_chart_data = 1;</code>
+       */
+      public Builder addLiveChartData(
+          int index, glory_api.LiveRoom.LiveChartData.Builder builderForValue) {
+        if (liveChartDataBuilder_ == null) {
+          ensureLiveChartDataIsMutable();
+          liveChartData_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          liveChartDataBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .glory_api.LiveChartData live_chart_data = 1;</code>
+       */
+      public Builder addAllLiveChartData(
+          java.lang.Iterable<? extends glory_api.LiveRoom.LiveChartData> values) {
+        if (liveChartDataBuilder_ == null) {
+          ensureLiveChartDataIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, liveChartData_);
+          onChanged();
+        } else {
+          liveChartDataBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .glory_api.LiveChartData live_chart_data = 1;</code>
+       */
+      public Builder clearLiveChartData() {
+        if (liveChartDataBuilder_ == null) {
+          liveChartData_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          liveChartDataBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .glory_api.LiveChartData live_chart_data = 1;</code>
+       */
+      public Builder removeLiveChartData(int index) {
+        if (liveChartDataBuilder_ == null) {
+          ensureLiveChartDataIsMutable();
+          liveChartData_.remove(index);
+          onChanged();
+        } else {
+          liveChartDataBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .glory_api.LiveChartData live_chart_data = 1;</code>
+       */
+      public glory_api.LiveRoom.LiveChartData.Builder getLiveChartDataBuilder(
+          int index) {
+        return getLiveChartDataFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .glory_api.LiveChartData live_chart_data = 1;</code>
+       */
+      public glory_api.LiveRoom.LiveChartDataOrBuilder getLiveChartDataOrBuilder(
+          int index) {
+        if (liveChartDataBuilder_ == null) {
+          return liveChartData_.get(index);  } else {
+          return liveChartDataBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .glory_api.LiveChartData live_chart_data = 1;</code>
+       */
+      public java.util.List<? extends glory_api.LiveRoom.LiveChartDataOrBuilder> 
+           getLiveChartDataOrBuilderList() {
+        if (liveChartDataBuilder_ != null) {
+          return liveChartDataBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(liveChartData_);
+        }
+      }
+      /**
+       * <code>repeated .glory_api.LiveChartData live_chart_data = 1;</code>
+       */
+      public glory_api.LiveRoom.LiveChartData.Builder addLiveChartDataBuilder() {
+        return getLiveChartDataFieldBuilder().addBuilder(
+            glory_api.LiveRoom.LiveChartData.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .glory_api.LiveChartData live_chart_data = 1;</code>
+       */
+      public glory_api.LiveRoom.LiveChartData.Builder addLiveChartDataBuilder(
+          int index) {
+        return getLiveChartDataFieldBuilder().addBuilder(
+            index, glory_api.LiveRoom.LiveChartData.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .glory_api.LiveChartData live_chart_data = 1;</code>
+       */
+      public java.util.List<glory_api.LiveRoom.LiveChartData.Builder> 
+           getLiveChartDataBuilderList() {
+        return getLiveChartDataFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          glory_api.LiveRoom.LiveChartData, glory_api.LiveRoom.LiveChartData.Builder, glory_api.LiveRoom.LiveChartDataOrBuilder> 
+          getLiveChartDataFieldBuilder() {
+        if (liveChartDataBuilder_ == null) {
+          liveChartDataBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              glory_api.LiveRoom.LiveChartData, glory_api.LiveRoom.LiveChartData.Builder, glory_api.LiveRoom.LiveChartDataOrBuilder>(
+                  liveChartData_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          liveChartData_ = null;
+        }
+        return liveChartDataBuilder_;
+      }
+
+      private double totalDealAmount_ ;
+      /**
+       * <code>double total_deal_amount = 2;</code>
+       * @return The totalDealAmount.
+       */
+      @java.lang.Override
+      public double getTotalDealAmount() {
+        return totalDealAmount_;
+      }
+      /**
+       * <code>double total_deal_amount = 2;</code>
+       * @param value The totalDealAmount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotalDealAmount(double value) {
+        
+        totalDealAmount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double total_deal_amount = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTotalDealAmount() {
+        
+        totalDealAmount_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private long totalVisitorAmount_ ;
+      /**
+       * <code>int64 total_visitor_amount = 3;</code>
+       * @return The totalVisitorAmount.
+       */
+      @java.lang.Override
+      public long getTotalVisitorAmount() {
+        return totalVisitorAmount_;
+      }
+      /**
+       * <code>int64 total_visitor_amount = 3;</code>
+       * @param value The totalVisitorAmount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotalVisitorAmount(long value) {
+        
+        totalVisitorAmount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 total_visitor_amount = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTotalVisitorAmount() {
+        
+        totalVisitorAmount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long totalOrderAmount_ ;
+      /**
+       * <code>int64 total_order_amount = 4;</code>
+       * @return The totalOrderAmount.
+       */
+      @java.lang.Override
+      public long getTotalOrderAmount() {
+        return totalOrderAmount_;
+      }
+      /**
+       * <code>int64 total_order_amount = 4;</code>
+       * @param value The totalOrderAmount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotalOrderAmount(long value) {
+        
+        totalOrderAmount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 total_order_amount = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTotalOrderAmount() {
+        
+        totalOrderAmount_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:glory_api.LiveData)
+    }
+
+    // @@protoc_insertion_point(class_scope:glory_api.LiveData)
+    private static final glory_api.LiveRoom.LiveData DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new glory_api.LiveRoom.LiveData();
+    }
+
+    public static glory_api.LiveRoom.LiveData getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<LiveData>
+        PARSER = new com.google.protobuf.AbstractParser<LiveData>() {
+      @java.lang.Override
+      public LiveData parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new LiveData(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<LiveData> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<LiveData> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public glory_api.LiveRoom.LiveData getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GetLiveChartDataResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:glory_api.GetLiveChartDataResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     * @return Whether the baseResp field is set.
+     */
+    boolean hasBaseResp();
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     * @return The baseResp.
+     */
+    base.Base.BaseResponse getBaseResp();
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     */
+    base.Base.BaseResponseOrBuilder getBaseRespOrBuilder();
+
+    /**
+     * <code>.glory_api.LiveData live_data = 2;</code>
+     * @return Whether the liveData field is set.
+     */
+    boolean hasLiveData();
+    /**
+     * <code>.glory_api.LiveData live_data = 2;</code>
+     * @return The liveData.
+     */
+    glory_api.LiveRoom.LiveData getLiveData();
+    /**
+     * <code>.glory_api.LiveData live_data = 2;</code>
+     */
+    glory_api.LiveRoom.LiveDataOrBuilder getLiveDataOrBuilder();
+  }
+  /**
+   * Protobuf type {@code glory_api.GetLiveChartDataResponse}
+   */
+  public static final class GetLiveChartDataResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:glory_api.GetLiveChartDataResponse)
+      GetLiveChartDataResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetLiveChartDataResponse.newBuilder() to construct.
+    private GetLiveChartDataResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetLiveChartDataResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetLiveChartDataResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetLiveChartDataResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              base.Base.BaseResponse.Builder subBuilder = null;
+              if (baseResp_ != null) {
+                subBuilder = baseResp_.toBuilder();
+              }
+              baseResp_ = input.readMessage(base.Base.BaseResponse.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(baseResp_);
+                baseResp_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              glory_api.LiveRoom.LiveData.Builder subBuilder = null;
+              if (liveData_ != null) {
+                subBuilder = liveData_.toBuilder();
+              }
+              liveData_ = input.readMessage(glory_api.LiveRoom.LiveData.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(liveData_);
+                liveData_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return glory_api.LiveRoom.internal_static_glory_api_GetLiveChartDataResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return glory_api.LiveRoom.internal_static_glory_api_GetLiveChartDataResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              glory_api.LiveRoom.GetLiveChartDataResponse.class, glory_api.LiveRoom.GetLiveChartDataResponse.Builder.class);
+    }
+
+    public static final int BASE_RESP_FIELD_NUMBER = 1;
+    private base.Base.BaseResponse baseResp_;
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     * @return Whether the baseResp field is set.
+     */
+    @java.lang.Override
+    public boolean hasBaseResp() {
+      return baseResp_ != null;
+    }
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     * @return The baseResp.
+     */
+    @java.lang.Override
+    public base.Base.BaseResponse getBaseResp() {
+      return baseResp_ == null ? base.Base.BaseResponse.getDefaultInstance() : baseResp_;
+    }
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     */
+    @java.lang.Override
+    public base.Base.BaseResponseOrBuilder getBaseRespOrBuilder() {
+      return getBaseResp();
+    }
+
+    public static final int LIVE_DATA_FIELD_NUMBER = 2;
+    private glory_api.LiveRoom.LiveData liveData_;
+    /**
+     * <code>.glory_api.LiveData live_data = 2;</code>
+     * @return Whether the liveData field is set.
+     */
+    @java.lang.Override
+    public boolean hasLiveData() {
+      return liveData_ != null;
+    }
+    /**
+     * <code>.glory_api.LiveData live_data = 2;</code>
+     * @return The liveData.
+     */
+    @java.lang.Override
+    public glory_api.LiveRoom.LiveData getLiveData() {
+      return liveData_ == null ? glory_api.LiveRoom.LiveData.getDefaultInstance() : liveData_;
+    }
+    /**
+     * <code>.glory_api.LiveData live_data = 2;</code>
+     */
+    @java.lang.Override
+    public glory_api.LiveRoom.LiveDataOrBuilder getLiveDataOrBuilder() {
+      return getLiveData();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (baseResp_ != null) {
+        output.writeMessage(1, getBaseResp());
+      }
+      if (liveData_ != null) {
+        output.writeMessage(2, getLiveData());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (baseResp_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getBaseResp());
+      }
+      if (liveData_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getLiveData());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof glory_api.LiveRoom.GetLiveChartDataResponse)) {
+        return super.equals(obj);
+      }
+      glory_api.LiveRoom.GetLiveChartDataResponse other = (glory_api.LiveRoom.GetLiveChartDataResponse) obj;
+
+      if (hasBaseResp() != other.hasBaseResp()) return false;
+      if (hasBaseResp()) {
+        if (!getBaseResp()
+            .equals(other.getBaseResp())) return false;
+      }
+      if (hasLiveData() != other.hasLiveData()) return false;
+      if (hasLiveData()) {
+        if (!getLiveData()
+            .equals(other.getLiveData())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasBaseResp()) {
+        hash = (37 * hash) + BASE_RESP_FIELD_NUMBER;
+        hash = (53 * hash) + getBaseResp().hashCode();
+      }
+      if (hasLiveData()) {
+        hash = (37 * hash) + LIVE_DATA_FIELD_NUMBER;
+        hash = (53 * hash) + getLiveData().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static glory_api.LiveRoom.GetLiveChartDataResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.LiveRoom.GetLiveChartDataResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.LiveRoom.GetLiveChartDataResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.LiveRoom.GetLiveChartDataResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.LiveRoom.GetLiveChartDataResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.LiveRoom.GetLiveChartDataResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.LiveRoom.GetLiveChartDataResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.LiveRoom.GetLiveChartDataResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.LiveRoom.GetLiveChartDataResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static glory_api.LiveRoom.GetLiveChartDataResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.LiveRoom.GetLiveChartDataResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.LiveRoom.GetLiveChartDataResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(glory_api.LiveRoom.GetLiveChartDataResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code glory_api.GetLiveChartDataResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:glory_api.GetLiveChartDataResponse)
+        glory_api.LiveRoom.GetLiveChartDataResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return glory_api.LiveRoom.internal_static_glory_api_GetLiveChartDataResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return glory_api.LiveRoom.internal_static_glory_api_GetLiveChartDataResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                glory_api.LiveRoom.GetLiveChartDataResponse.class, glory_api.LiveRoom.GetLiveChartDataResponse.Builder.class);
+      }
+
+      // Construct using glory_api.LiveRoom.GetLiveChartDataResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (baseRespBuilder_ == null) {
+          baseResp_ = null;
+        } else {
+          baseResp_ = null;
+          baseRespBuilder_ = null;
+        }
+        if (liveDataBuilder_ == null) {
+          liveData_ = null;
+        } else {
+          liveData_ = null;
+          liveDataBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return glory_api.LiveRoom.internal_static_glory_api_GetLiveChartDataResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public glory_api.LiveRoom.GetLiveChartDataResponse getDefaultInstanceForType() {
+        return glory_api.LiveRoom.GetLiveChartDataResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public glory_api.LiveRoom.GetLiveChartDataResponse build() {
+        glory_api.LiveRoom.GetLiveChartDataResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public glory_api.LiveRoom.GetLiveChartDataResponse buildPartial() {
+        glory_api.LiveRoom.GetLiveChartDataResponse result = new glory_api.LiveRoom.GetLiveChartDataResponse(this);
+        if (baseRespBuilder_ == null) {
+          result.baseResp_ = baseResp_;
+        } else {
+          result.baseResp_ = baseRespBuilder_.build();
+        }
+        if (liveDataBuilder_ == null) {
+          result.liveData_ = liveData_;
+        } else {
+          result.liveData_ = liveDataBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof glory_api.LiveRoom.GetLiveChartDataResponse) {
+          return mergeFrom((glory_api.LiveRoom.GetLiveChartDataResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(glory_api.LiveRoom.GetLiveChartDataResponse other) {
+        if (other == glory_api.LiveRoom.GetLiveChartDataResponse.getDefaultInstance()) return this;
+        if (other.hasBaseResp()) {
+          mergeBaseResp(other.getBaseResp());
+        }
+        if (other.hasLiveData()) {
+          mergeLiveData(other.getLiveData());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        glory_api.LiveRoom.GetLiveChartDataResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (glory_api.LiveRoom.GetLiveChartDataResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private base.Base.BaseResponse baseResp_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          base.Base.BaseResponse, base.Base.BaseResponse.Builder, base.Base.BaseResponseOrBuilder> baseRespBuilder_;
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       * @return Whether the baseResp field is set.
+       */
+      public boolean hasBaseResp() {
+        return baseRespBuilder_ != null || baseResp_ != null;
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       * @return The baseResp.
+       */
+      public base.Base.BaseResponse getBaseResp() {
+        if (baseRespBuilder_ == null) {
+          return baseResp_ == null ? base.Base.BaseResponse.getDefaultInstance() : baseResp_;
+        } else {
+          return baseRespBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public Builder setBaseResp(base.Base.BaseResponse value) {
+        if (baseRespBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          baseResp_ = value;
+          onChanged();
+        } else {
+          baseRespBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public Builder setBaseResp(
+          base.Base.BaseResponse.Builder builderForValue) {
+        if (baseRespBuilder_ == null) {
+          baseResp_ = builderForValue.build();
+          onChanged();
+        } else {
+          baseRespBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public Builder mergeBaseResp(base.Base.BaseResponse value) {
+        if (baseRespBuilder_ == null) {
+          if (baseResp_ != null) {
+            baseResp_ =
+              base.Base.BaseResponse.newBuilder(baseResp_).mergeFrom(value).buildPartial();
+          } else {
+            baseResp_ = value;
+          }
+          onChanged();
+        } else {
+          baseRespBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public Builder clearBaseResp() {
+        if (baseRespBuilder_ == null) {
+          baseResp_ = null;
+          onChanged();
+        } else {
+          baseResp_ = null;
+          baseRespBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public base.Base.BaseResponse.Builder getBaseRespBuilder() {
+        
+        onChanged();
+        return getBaseRespFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public base.Base.BaseResponseOrBuilder getBaseRespOrBuilder() {
+        if (baseRespBuilder_ != null) {
+          return baseRespBuilder_.getMessageOrBuilder();
+        } else {
+          return baseResp_ == null ?
+              base.Base.BaseResponse.getDefaultInstance() : baseResp_;
+        }
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          base.Base.BaseResponse, base.Base.BaseResponse.Builder, base.Base.BaseResponseOrBuilder> 
+          getBaseRespFieldBuilder() {
+        if (baseRespBuilder_ == null) {
+          baseRespBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              base.Base.BaseResponse, base.Base.BaseResponse.Builder, base.Base.BaseResponseOrBuilder>(
+                  getBaseResp(),
+                  getParentForChildren(),
+                  isClean());
+          baseResp_ = null;
+        }
+        return baseRespBuilder_;
+      }
+
+      private glory_api.LiveRoom.LiveData liveData_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          glory_api.LiveRoom.LiveData, glory_api.LiveRoom.LiveData.Builder, glory_api.LiveRoom.LiveDataOrBuilder> liveDataBuilder_;
+      /**
+       * <code>.glory_api.LiveData live_data = 2;</code>
+       * @return Whether the liveData field is set.
+       */
+      public boolean hasLiveData() {
+        return liveDataBuilder_ != null || liveData_ != null;
+      }
+      /**
+       * <code>.glory_api.LiveData live_data = 2;</code>
+       * @return The liveData.
+       */
+      public glory_api.LiveRoom.LiveData getLiveData() {
+        if (liveDataBuilder_ == null) {
+          return liveData_ == null ? glory_api.LiveRoom.LiveData.getDefaultInstance() : liveData_;
+        } else {
+          return liveDataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.glory_api.LiveData live_data = 2;</code>
+       */
+      public Builder setLiveData(glory_api.LiveRoom.LiveData value) {
+        if (liveDataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          liveData_ = value;
+          onChanged();
+        } else {
+          liveDataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.glory_api.LiveData live_data = 2;</code>
+       */
+      public Builder setLiveData(
+          glory_api.LiveRoom.LiveData.Builder builderForValue) {
+        if (liveDataBuilder_ == null) {
+          liveData_ = builderForValue.build();
+          onChanged();
+        } else {
+          liveDataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.glory_api.LiveData live_data = 2;</code>
+       */
+      public Builder mergeLiveData(glory_api.LiveRoom.LiveData value) {
+        if (liveDataBuilder_ == null) {
+          if (liveData_ != null) {
+            liveData_ =
+              glory_api.LiveRoom.LiveData.newBuilder(liveData_).mergeFrom(value).buildPartial();
+          } else {
+            liveData_ = value;
+          }
+          onChanged();
+        } else {
+          liveDataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.glory_api.LiveData live_data = 2;</code>
+       */
+      public Builder clearLiveData() {
+        if (liveDataBuilder_ == null) {
+          liveData_ = null;
+          onChanged();
+        } else {
+          liveData_ = null;
+          liveDataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.glory_api.LiveData live_data = 2;</code>
+       */
+      public glory_api.LiveRoom.LiveData.Builder getLiveDataBuilder() {
+        
+        onChanged();
+        return getLiveDataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.glory_api.LiveData live_data = 2;</code>
+       */
+      public glory_api.LiveRoom.LiveDataOrBuilder getLiveDataOrBuilder() {
+        if (liveDataBuilder_ != null) {
+          return liveDataBuilder_.getMessageOrBuilder();
+        } else {
+          return liveData_ == null ?
+              glory_api.LiveRoom.LiveData.getDefaultInstance() : liveData_;
+        }
+      }
+      /**
+       * <code>.glory_api.LiveData live_data = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          glory_api.LiveRoom.LiveData, glory_api.LiveRoom.LiveData.Builder, glory_api.LiveRoom.LiveDataOrBuilder> 
+          getLiveDataFieldBuilder() {
+        if (liveDataBuilder_ == null) {
+          liveDataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              glory_api.LiveRoom.LiveData, glory_api.LiveRoom.LiveData.Builder, glory_api.LiveRoom.LiveDataOrBuilder>(
+                  getLiveData(),
+                  getParentForChildren(),
+                  isClean());
+          liveData_ = null;
+        }
+        return liveDataBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:glory_api.GetLiveChartDataResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:glory_api.GetLiveChartDataResponse)
+    private static final glory_api.LiveRoom.GetLiveChartDataResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new glory_api.LiveRoom.GetLiveChartDataResponse();
+    }
+
+    public static glory_api.LiveRoom.GetLiveChartDataResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetLiveChartDataResponse>
+        PARSER = new com.google.protobuf.AbstractParser<GetLiveChartDataResponse>() {
+      @java.lang.Override
+      public GetLiveChartDataResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetLiveChartDataResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetLiveChartDataResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetLiveChartDataResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public glory_api.LiveRoom.GetLiveChartDataResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_glory_api_Room_descriptor;
   private static final 
@@ -16183,6 +19630,26 @@ public final class LiveRoom {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_ListFinishedRoomResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetLiveChartDataRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetLiveChartDataRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_LiveChartData_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_LiveChartData_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_LiveData_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_LiveData_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetLiveChartDataResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetLiveChartDataResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -16244,7 +19711,19 @@ public final class LiveRoom {
       "hedRoomResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
       "e.BaseResponse\022%\n\004room\030\002 \003(\0132\027.glory_api" +
       ".FinishedRoom\022,\n\npagination\030d \001(\0132\030.base" +
-      ".PaginationResponseb\006proto3"
+      ".PaginationResponse\"o\n\027GetLiveChartDataR" +
+      "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
+      "Request\022\017\n\007room_id\030\002 \001(\003\022\r\n\005start\030\003 \001(\003\022" +
+      "\013\n\003end\030\004 \001(\003\"h\n\rLiveChartData\022\014\n\004date\030\001 " +
+      "\001(\t\022\023\n\013deal_amount\030\002 \001(\001\022\031\n\021room_buyer_a" +
+      "mount\030\003 \001(\003\022\031\n\021room_order_amount\030\004 \001(\003\"\222" +
+      "\001\n\010LiveData\0221\n\017live_chart_data\030\001 \003(\0132\030.g" +
+      "lory_api.LiveChartData\022\031\n\021total_deal_amo" +
+      "unt\030\002 \001(\001\022\034\n\024total_visitor_amount\030\003 \001(\003\022" +
+      "\032\n\022total_order_amount\030\004 \001(\003\"i\n\030GetLiveCh" +
+      "artDataResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
+      "e.BaseResponse\022&\n\tlive_data\030\002 \001(\0132\023.glor" +
+      "y_api.LiveDatab\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -16341,6 +19820,30 @@ public final class LiveRoom {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListFinishedRoomResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Room", "Pagination", });
+    internal_static_glory_api_GetLiveChartDataRequest_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_glory_api_GetLiveChartDataRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetLiveChartDataRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "RoomId", "Start", "End", });
+    internal_static_glory_api_LiveChartData_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_glory_api_LiveChartData_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_LiveChartData_descriptor,
+        new java.lang.String[] { "Date", "DealAmount", "RoomBuyerAmount", "RoomOrderAmount", });
+    internal_static_glory_api_LiveData_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_glory_api_LiveData_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_LiveData_descriptor,
+        new java.lang.String[] { "LiveChartData", "TotalDealAmount", "TotalVisitorAmount", "TotalOrderAmount", });
+    internal_static_glory_api_GetLiveChartDataResponse_descriptor =
+      getDescriptor().getMessageTypes().get(18);
+    internal_static_glory_api_GetLiveChartDataResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetLiveChartDataResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "LiveData", });
     base.Base.getDescriptor();
   }
 

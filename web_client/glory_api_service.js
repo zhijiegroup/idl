@@ -1098,6 +1098,12 @@ export class glory_api {
     );
   }
 
+  GetLiveChartData(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/live/get_live_chart_data${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
   CreateTenant(request) {
     const uri = `${this.uriPrefix}/api/tenant/create_tenant`;
     const body = JSONbigint.stringify(request);

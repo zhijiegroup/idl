@@ -4169,6 +4169,37 @@ public final class glory_apiGrpc {
     return getDeleteLiveTextsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<glory_api.LiveRoom.GetLiveChartDataRequest,
+      glory_api.LiveRoom.GetLiveChartDataResponse> getGetLiveChartDataMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetLiveChartData",
+      requestType = glory_api.LiveRoom.GetLiveChartDataRequest.class,
+      responseType = glory_api.LiveRoom.GetLiveChartDataResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<glory_api.LiveRoom.GetLiveChartDataRequest,
+      glory_api.LiveRoom.GetLiveChartDataResponse> getGetLiveChartDataMethod() {
+    io.grpc.MethodDescriptor<glory_api.LiveRoom.GetLiveChartDataRequest, glory_api.LiveRoom.GetLiveChartDataResponse> getGetLiveChartDataMethod;
+    if ((getGetLiveChartDataMethod = glory_apiGrpc.getGetLiveChartDataMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGetLiveChartDataMethod = glory_apiGrpc.getGetLiveChartDataMethod) == null) {
+          glory_apiGrpc.getGetLiveChartDataMethod = getGetLiveChartDataMethod =
+              io.grpc.MethodDescriptor.<glory_api.LiveRoom.GetLiveChartDataRequest, glory_api.LiveRoom.GetLiveChartDataResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetLiveChartData"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.LiveRoom.GetLiveChartDataRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.LiveRoom.GetLiveChartDataResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetLiveChartData"))
+              .build();
+        }
+      }
+    }
+    return getGetLiveChartDataMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<glory_api.TenantOuterClass.CreateTenantRequest,
       glory_api.TenantOuterClass.CreateTenantResponse> getCreateTenantMethod;
 
@@ -5389,6 +5420,16 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * live chart
+     * </pre>
+     */
+    default void getLiveChartData(glory_api.LiveRoom.GetLiveChartDataRequest request,
+        io.grpc.stub.StreamObserver<glory_api.LiveRoom.GetLiveChartDataResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetLiveChartDataMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      *tenant
      * </pre>
      */
@@ -6604,6 +6645,17 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * live chart
+     * </pre>
+     */
+    public void getLiveChartData(glory_api.LiveRoom.GetLiveChartDataRequest request,
+        io.grpc.stub.StreamObserver<glory_api.LiveRoom.GetLiveChartDataResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetLiveChartDataMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      *tenant
      * </pre>
      */
@@ -7675,6 +7727,16 @@ public final class glory_apiGrpc {
     public glory_api.LiveTextOuterClass.DeleteLiveTextsResponse deleteLiveTexts(glory_api.LiveTextOuterClass.DeleteLiveTextsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteLiveTextsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * live chart
+     * </pre>
+     */
+    public glory_api.LiveRoom.GetLiveChartDataResponse getLiveChartData(glory_api.LiveRoom.GetLiveChartDataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetLiveChartDataMethod(), getCallOptions(), request);
     }
 
     /**
@@ -8883,6 +8945,17 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * live chart
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<glory_api.LiveRoom.GetLiveChartDataResponse> getLiveChartData(
+        glory_api.LiveRoom.GetLiveChartDataRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetLiveChartDataMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      *tenant
      * </pre>
      */
@@ -9059,11 +9132,12 @@ public final class glory_apiGrpc {
   private static final int METHODID_LIST_LIVE_TEXT = 131;
   private static final int METHODID_GET_LIVE_TEXT = 132;
   private static final int METHODID_DELETE_LIVE_TEXTS = 133;
-  private static final int METHODID_CREATE_TENANT = 134;
-  private static final int METHODID_GET_TENANT = 135;
-  private static final int METHODID_UPDATE_TENANT = 136;
-  private static final int METHODID_DELETE_TENANT = 137;
-  private static final int METHODID_LIST_TENANT = 138;
+  private static final int METHODID_GET_LIVE_CHART_DATA = 134;
+  private static final int METHODID_CREATE_TENANT = 135;
+  private static final int METHODID_GET_TENANT = 136;
+  private static final int METHODID_UPDATE_TENANT = 137;
+  private static final int METHODID_DELETE_TENANT = 138;
+  private static final int METHODID_LIST_TENANT = 139;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -9617,6 +9691,10 @@ public final class glory_apiGrpc {
         case METHODID_DELETE_LIVE_TEXTS:
           serviceImpl.deleteLiveTexts((glory_api.LiveTextOuterClass.DeleteLiveTextsRequest) request,
               (io.grpc.stub.StreamObserver<glory_api.LiveTextOuterClass.DeleteLiveTextsResponse>) responseObserver);
+          break;
+        case METHODID_GET_LIVE_CHART_DATA:
+          serviceImpl.getLiveChartData((glory_api.LiveRoom.GetLiveChartDataRequest) request,
+              (io.grpc.stub.StreamObserver<glory_api.LiveRoom.GetLiveChartDataResponse>) responseObserver);
           break;
         case METHODID_CREATE_TENANT:
           serviceImpl.createTenant((glory_api.TenantOuterClass.CreateTenantRequest) request,
@@ -10595,6 +10673,13 @@ public final class glory_apiGrpc {
               glory_api.LiveTextOuterClass.DeleteLiveTextsResponse>(
                 service, METHODID_DELETE_LIVE_TEXTS)))
         .addMethod(
+          getGetLiveChartDataMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              glory_api.LiveRoom.GetLiveChartDataRequest,
+              glory_api.LiveRoom.GetLiveChartDataResponse>(
+                service, METHODID_GET_LIVE_CHART_DATA)))
+        .addMethod(
           getCreateTenantMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -10811,6 +10896,7 @@ public final class glory_apiGrpc {
               .addMethod(getListLiveTextMethod())
               .addMethod(getGetLiveTextMethod())
               .addMethod(getDeleteLiveTextsMethod())
+              .addMethod(getGetLiveChartDataMethod())
               .addMethod(getCreateTenantMethod())
               .addMethod(getGetTenantMethod())
               .addMethod(getUpdateTenantMethod())

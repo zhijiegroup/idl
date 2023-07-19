@@ -123,3 +123,29 @@ export interface ListFinishedRoomResponse {
   room?: Array<FinishedRoom>;
   pagination?: base.PaginationResponse;
 }
+
+export interface GetLiveChartDataRequest {
+  base_request?: base.BaseRequest;
+  room_id?: string;
+  start?: string;
+  end?: string;
+}
+
+export interface LiveChartData {
+  date?: string;
+  deal_amount?: number;
+  room_buyer_amount?: string;
+  room_order_amount?: string;
+}
+
+export interface LiveData {
+  live_chart_data?: Array<LiveChartData>;
+  total_deal_amount?: number;
+  total_visitor_amount?: string;
+  total_order_amount?: string;
+}
+
+export interface GetLiveChartDataResponse {
+  base_resp?: base.BaseResponse;
+  live_data?: LiveData;
+}

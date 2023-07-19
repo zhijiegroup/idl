@@ -39,416 +39,419 @@ public final class GloryApiService {
       "to\032\024live/live_plan.proto\032\024live/live_text" +
       ".proto\032\037account/account_operation.proto\032" +
       "\037currency/virtual_currency.proto\032\023tenant" +
-      "/tenant.proto2\342\177\n\tglory_api\022s\n\rCreateExa" +
-      "mple\022\037.glory_api.CreateExampleRequest\032 ." +
-      "glory_api.CreateExampleResponse\"\037\322\301\030\033/ap" +
-      "i/example/create_example\022g\n\nGetExample\022\034" +
-      ".glory_api.GetExampleRequest\032\035.glory_api" +
-      ".GetExampleResponse\"\034\312\301\030\030/api/example/ge" +
-      "t_example\022s\n\rUpdateExample\022\037.glory_api.U" +
-      "pdateExampleRequest\032 .glory_api.UpdateEx" +
-      "ampleResponse\"\037\322\301\030\033/api/example/update_e" +
-      "xample\022k\n\013ListExample\022\035.glory_api.ListEx" +
-      "ampleRequest\032\036.glory_api.ListExampleResp" +
-      "onse\"\035\322\301\030\031/api/example/list_example\022s\n\rD" +
-      "eleteExample\022\037.glory_api.DeleteExampleRe" +
-      "quest\032 .glory_api.DeleteExampleResponse\"" +
-      "\037\322\301\030\033/api/example/delete_example\022O\n\005Logi" +
-      "n\022\027.glory_api.LoginRequest\032\030.glory_api.L" +
-      "oginResponse\"\023\322\301\030\017/api/user/login\022q\n\rGet" +
-      "VerifyCode\022\037.glory_api.GetVerifyCodeRequ" +
-      "est\032 .glory_api.GetVerifyCodeResponse\"\035\322" +
-      "\301\030\031/api/user/get_verify_code\022X\n\007GetUser\022" +
-      "\031.glory_api.GetUserRequest\032\032.glory_api.G" +
-      "etUserResponse\"\026\312\301\030\022/api/user/get_user\022\201" +
-      "\001\n\021LoginWithPassword\022#.glory_api.LoginWi" +
-      "thPasswordRequest\032$.glory_api.LoginWithP" +
-      "asswordResponse\"!\322\301\030\035/api/user/login_wit" +
-      "h_password\022t\n\016UpdatePassword\022 .glory_api" +
-      ".UpdatePasswordRequest\032!.glory_api.Updat" +
-      "ePasswordResponse\"\035\322\301\030\031/api/user/update_" +
-      "password\022d\n\nAddAddress\022\034.glory_api.AddAd" +
-      "dressRequest\032\035.glory_api.AddAddressRespo" +
-      "nse\"\031\322\301\030\025/api/user/add_address\022p\n\rDelete" +
-      "Address\022\037.glory_api.DeleteAddressRequest" +
-      "\032 .glory_api.DeleteAddressResponse\"\034\322\301\030\030" +
-      "/api/user/delete_address\022p\n\rUpdateAddres" +
-      "s\022\037.glory_api.UpdateAddressRequest\032 .glo" +
-      "ry_api.UpdateAddressResponse\"\034\322\301\030\030/api/u" +
-      "ser/update_address\022d\n\nGetAddress\022\034.glory" +
-      "_api.GetAddressRequest\032\035.glory_api.GetAd" +
-      "dressResponse\"\031\312\301\030\025/api/user/get_address" +
-      "\022h\n\013ListAddress\022\035.glory_api.ListAddressR" +
-      "equest\032\036.glory_api.ListAddressResponse\"\032" +
-      "\312\301\030\026/api/user/list_address\022d\n\nCreateShop" +
-      "\022\034.glory_api.CreateShopRequest\032\035.glory_a" +
-      "pi.CreateShopResponse\"\031\322\301\030\025/api/shop/cre" +
-      "ate_shop\022X\n\007GetShop\022\031.glory_api.GetShopR" +
-      "equest\032\032.glory_api.GetShopResponse\"\026\312\301\030\022" +
-      "/api/shop/get_shop\022d\n\nUpdateShop\022\034.glory" +
-      "_api.UpdateShopRequest\032\035.glory_api.Updat" +
-      "eShopResponse\"\031\322\301\030\025/api/shop/update_shop" +
-      "\022\\\n\010ListShop\022\032.glory_api.ListShopRequest" +
-      "\032\033.glory_api.ListShopResponse\"\027\322\301\030\023/api/" +
-      "shop/list_shop\022d\n\nDeleteShop\022\034.glory_api" +
-      ".DeleteShopRequest\032\035.glory_api.DeleteSho" +
-      "pResponse\"\031\322\301\030\025/api/shop/delete_shop\022\215\001\n" +
-      "\024ListOperationMetrics\022&.glory_api.ListOp" +
-      "erationMetricsRequest\032\'.glory_api.ListOp" +
-      "erationMetricsResponse\"$\322\301\030 /api/shop/li" +
-      "st_operation_metrics\022q\n\rGetShopQrcode\022\037." +
-      "glory_api.GetShopQrcodeRequest\032 .glory_a" +
-      "pi.GetShopQrcodeResponse\"\035\312\301\030\031/api/shop/" +
-      "get_shop_qrcode\022\201\001\n\021UpdateShopManager\022#." +
-      "glory_api.UpdateShopManagerRequest\032$.glo" +
-      "ry_api.UpdateShopManagerResponse\"!\322\301\030\035/a" +
-      "pi/shop/update_shop_manager\022\212\001\n\023GetShopB" +
-      "usinessData\022%.glory_api.GetShopBusinessD" +
-      "ataRequest\032&.glory_api.GetShopBusinessDa" +
-      "taResponse\"$\312\301\030 /api/shop/get_shop_busin" +
-      "ess_data\022q\n\rAddShopAccess\022\037.glory_api.Ad" +
-      "dShopAccessRequest\032 .glory_api.AddShopAc" +
-      "cessResponse\"\035\322\301\030\031/api/shop/add_shop_acc" +
-      "ess\022}\n\020RemoveShopAccess\022\".glory_api.Remo" +
-      "veShopAccessRequest\032#.glory_api.RemoveSh" +
-      "opAccessResponse\" \322\301\030\034/api/shop/remove_s" +
-      "hop_access\022h\n\013VerifyField\022\035.glory_api.Ve" +
-      "rifyFieldRequest\032\036.glory_api.VerifyField" +
-      "Response\"\032\322\301\030\026/api/shop/verify_field\022u\n\016" +
-      "ListShopAccess\022 .glory_api.ListShopAcces" +
-      "sRequest\032!.glory_api.ListShopAccessRespo" +
-      "nse\"\036\322\301\030\032/api/shop/list_shop_access\022y\n\017A" +
-      "ddShopCategory\022!.glory_api.AddShopCatego" +
-      "ryRequest\032\".glory_api.AddShopCategoryRes" +
-      "ponse\"\037\322\301\030\033/api/shop/add_shop_category\022y" +
-      "\n\017GetShopCategory\022!.glory_api.GetShopCat" +
-      "egoryRequest\032\".glory_api.GetShopCategory" +
-      "Response\"\037\312\301\030\033/api/shop/get_shop_categor" +
-      "y\022\205\001\n\022RemoveShopCategory\022$.glory_api.Rem" +
-      "oveShopCategoryRequest\032%.glory_api.Remov" +
-      "eShopCategoryResponse\"\"\322\301\030\036/api/shop/rem" +
-      "ove_shop_category\022u\n\022AddFreightTemplate\022" +
-      " .glory_api.CreateTemplateRequest\032!.glor" +
-      "y_api.CreateTemplateResponse\"\032\322\301\030\026/api/s" +
-      "hop/add_template\022o\n\022GetFreightTemplate\022\035" +
-      ".glory_api.GetTemplateRequest\032\036.glory_ap" +
-      "i.GetTemplateResponse\"\032\312\301\030\026/api/shop/get" +
-      "_template\022{\n\025UpdateFreightTemplate\022 .glo" +
-      "ry_api.UpdateTemplateRequest\032!.glory_api" +
-      ".UpdateTemplateResponse\"\035\322\301\030\031/api/shop/u" +
-      "pdate_template\022{\n\025DeleteFreightTemplate\022" +
-      " .glory_api.DeleteTemplateRequest\032!.glor" +
-      "y_api.DeleteTemplateResponse\"\035\322\301\030\031/api/s" +
-      "hop/delete_template\022s\n\023ListFreightTempla" +
-      "te\022\036.glory_api.ListTemplateRequest\032\037.glo" +
-      "ry_api.ListTemplateResponse\"\033\322\301\030\027/api/sh" +
-      "op/list_template\022\215\001\n\021ListQualification\022\'" +
-      ".glory_api.ListShopQualificationRequest\032" +
-      "(.glory_api.ListShopQualificationRespons" +
-      "e\"%\322\301\030!/api/shop/list_shop_qualification" +
-      "\022j\n\014GetMallIndex\022\033.glory_api.MallIndexRe" +
-      "quest\032\034.glory_api.MallIndexResponse\"\037\322\301\030" +
-      "\033/api/mall/list_live_product\022t\n\016CreateCa" +
-      "tegory\022 .glory_api.CreateCategoryRequest" +
-      "\032!.glory_api.CreateCategoryResponse\"\035\322\301\030" +
-      "\031/api/shop/create_category\022h\n\013GetCategor" +
-      "y\022\035.glory_api.GetCategoryRequest\032\036.glory" +
-      "_api.GetCategoryResponse\"\032\312\301\030\026/api/shop/" +
-      "get_category\022t\n\016UpdateCategory\022 .glory_a" +
-      "pi.UpdateCategoryRequest\032!.glory_api.Upd" +
-      "ateCategoryResponse\"\035\322\301\030\031/api/shop/updat" +
-      "e_category\022l\n\014ListCategory\022\036.glory_api.L" +
-      "istCategoryRequest\032\037.glory_api.ListCateg" +
-      "oryResponse\"\033\322\301\030\027/api/shop/list_category" +
-      "\022t\n\016DeleteCategory\022 .glory_api.DeleteCat" +
-      "egoryRequest\032!.glory_api.DeleteCategoryR" +
-      "esponse\"\035\322\301\030\031/api/shop/delete_category\022\241" +
-      "\001\n\031ListCategoryQualification\022+.glory_api" +
-      ".ListCategoryQualificationRequest\032,.glor" +
-      "y_api.ListCategoryQualificationResponse\"" +
-      ")\322\301\030%/api/shop/list_category_qualificati" +
-      "on\022p\n\rCreateProduct\022\037.glory_api.CreatePr" +
-      "oductRequest\032 .glory_api.CreateProductRe" +
-      "sponse\"\034\322\301\030\030/api/shop/create_product\022d\n\n" +
-      "GetProduct\022\034.glory_api.GetProductRequest" +
-      "\032\035.glory_api.GetProductResponse\"\031\312\301\030\025/ap" +
-      "i/shop/get_product\022p\n\rUpdateProduct\022\037.gl" +
-      "ory_api.UpdateProductRequest\032 .glory_api" +
-      ".UpdateProductResponse\"\034\322\301\030\030/api/shop/up" +
-      "date_product\022h\n\013ListProduct\022\035.glory_api." +
-      "ListProductRequest\032\036.glory_api.ListProdu" +
-      "ctResponse\"\032\322\301\030\026/api/shop/list_product\022p" +
-      "\n\rDeleteProduct\022\037.glory_api.DeleteProduc" +
-      "tRequest\032 .glory_api.DeleteProductRespon" +
-      "se\"\034\322\301\030\030/api/shop/delete_product\022}\n\020Uplo" +
-      "adMultiImage\022\".glory_api.UploadMultiImag" +
-      "eRequest\032#.glory_api.UploadMultiImageRes" +
-      "ponse\" \322\301\030\034/api/shop/upload_multi_image\022" +
-      "l\n\017DeleteImageById\022\035.glory_api.DeleteIma" +
-      "geRequest\032\036.glory_api.DeleteImageRespons" +
-      "e\"\032\322\301\030\026/api/shop/delete_image\022x\n\rBindAtt" +
-      "ribute\022\037.glory_api.BindAttributeRequest\032" +
-      " .glory_api.BindAttributeResponse\"$\322\301\030 /" +
-      "api/shop/bind_product_attribute\022t\n\016Publi" +
-      "shProduct\022 .glory_api.PublishProductRequ" +
-      "est\032!.glory_api.PublishProductResponse\"\035" +
-      "\322\301\030\031/api/shop/publish_product\022\203\001\n\030OffShe" +
-      "lfProductInBatches\022!.glory_api.OffSelfPr" +
-      "oductsRequest\032\".glory_api.OffSelfProduct" +
-      "sResponse\" \322\301\030\034/api/shop/off_shelf_produ" +
-      "cts\022|\n\026DeleteProductInBatches\022 .glory_ap" +
-      "i.DeleteProductsRequest\032!.glory_api.Dele" +
-      "teProductsResponse\"\035\322\301\030\031/api/shop/delete" +
-      "_products\022\207\001\n\023ChangeProductsState\022$.glor" +
-      "y_api.ChangeProductStateRequest\032%.glory_" +
-      "api.ChangeProductStateResponse\"#\322\301\030\037/api" +
-      "/shop/change_products_state\022`\n\tCreateSku" +
-      "\022\033.glory_api.CreateSkuRequest\032\034.glory_ap" +
-      "i.CreateSkuResponse\"\030\322\301\030\024/api/shop/creat" +
-      "e_sku\022T\n\006GetSku\022\030.glory_api.GetSkuReques" +
-      "t\032\031.glory_api.GetSkuResponse\"\025\312\301\030\021/api/s" +
-      "hop/get_sku\022`\n\tUpdateSku\022\033.glory_api.Upd" +
-      "ateSkuRequest\032\034.glory_api.UpdateSkuRespo" +
-      "nse\"\030\322\301\030\024/api/shop/update_sku\022X\n\007ListSku" +
-      "\022\031.glory_api.ListSkuRequest\032\032.glory_api." +
-      "ListSkuResponse\"\026\322\301\030\022/api/shop/list_sku\022" +
-      "`\n\tDeleteSku\022\033.glory_api.DeleteSkuReques" +
-      "t\032\034.glory_api.DeleteSkuResponse\"\030\322\301\030\024/ap" +
-      "i/shop/delete_sku\022x\n\017CreateAttribute\022!.g" +
-      "lory_api.CreateAttributeRequest\032\".glory_" +
-      "api.CreateAttributeResponse\"\036\322\301\030\032/api/sh" +
-      "op/create_attribute\022l\n\014GetAttribute\022\036.gl" +
-      "ory_api.GetAttributeRequest\032\037.glory_api." +
-      "GetAttributeResponse\"\033\312\301\030\027/api/shop/get_" +
-      "attribute\022p\n\rListAttribute\022\037.glory_api.L" +
-      "istAttributeRequest\032 .glory_api.ListAttr" +
-      "ibuteResponse\"\034\322\301\030\030/api/shop/list_attrib" +
-      "ute\022x\n\017DeleteAttribute\022!.glory_api.Delet" +
-      "eAttributeRequest\032\".glory_api.DeleteAttr" +
-      "ibuteResponse\"\036\322\301\030\032/api/shop/delete_attr" +
-      "ibute\022\201\001\n\021AddAttributeValue\022#.glory_api." +
-      "AddAttributeValueRequest\032$.glory_api.Add" +
-      "AttributeValueResponse\"!\322\301\030\035/api/shop/ad" +
-      "d_attribute_value\022\215\001\n\024DeleteAttributeVal" +
-      "ue\022&.glory_api.DeleteAttributeValueReque" +
-      "st\032\'.glory_api.DeleteAttributeValueRespo" +
-      "nse\"$\322\301\030 /api/shop/delete_attribute_valu" +
-      "e\022h\n\013CreateOrder\022\035.glory_api.CreateOrder" +
-      "Request\032\036.glory_api.CreateOrderResponse\"" +
-      "\032\322\301\030\026/api/shop/create_order\022\\\n\010GetOrder\022" +
-      "\032.glory_api.GetOrderRequest\032\033.glory_api." +
-      "GetOrderResponse\"\027\312\301\030\023/api/shop/get_orde" +
-      "r\022h\n\013UpdateOrder\022\035.glory_api.UpdateOrder" +
-      "Request\032\036.glory_api.UpdateOrderResponse\"" +
-      "\032\322\301\030\026/api/shop/update_order\022`\n\tListOrder" +
-      "\022\033.glory_api.ListOrderRequest\032\034.glory_ap" +
-      "i.ListOrderResponse\"\030\322\301\030\024/api/shop/list_" +
-      "order\022h\n\013DeleteOrder\022\035.glory_api.DeleteO" +
-      "rderRequest\032\036.glory_api.DeleteOrderRespo" +
-      "nse\"\032\322\301\030\026/api/shop/delete_order\022`\n\tShipG" +
-      "oods\022\033.glory_api.ShipGoodsRequest\032\034.glor" +
-      "y_api.ShipGoodsResponse\"\030\322\301\030\024/api/shop/s" +
-      "hip_goods\022\201\001\n\022ShipGoodsInBatches\022$.glory" +
-      "_api.ShipGoodsInBatchesRequest\032%.glory_a" +
-      "pi.ShipGoodsInBatchesResponse\"\036\322\301\030\032/api/" +
-      "shop/ship_goods_batch\022\211\001\n\025FreeShippingIn" +
-      "Batches\022\'.glory_api.FreeShippingInBatche" +
-      "sRequest\032(.glory_api.FreeShippingInBatch" +
-      "esResponse\"\035\322\301\030\031/api/shop/free_ship_batc" +
-      "h\022d\n\nCreateCart\022\034.glory_api.CreateCartRe" +
-      "quest\032\035.glory_api.CreateCartResponse\"\031\322\301" +
-      "\030\025/api/shop/create_cart\022X\n\007GetCart\022\031.glo" +
-      "ry_api.GetCartRequest\032\032.glory_api.GetCar" +
-      "tResponse\"\026\312\301\030\022/api/shop/get_cart\022d\n\nUpd" +
-      "ateCart\022\034.glory_api.UpdateCartRequest\032\035." +
-      "glory_api.UpdateCartResponse\"\031\322\301\030\025/api/s" +
-      "hop/update_cart\022d\n\nDeleteCart\022\034.glory_ap" +
-      "i.DeleteCartRequest\032\035.glory_api.DeleteCa" +
-      "rtResponse\"\031\322\301\030\025/api/shop/delete_cart\022~\n" +
-      "\020UploadAttachment\022\".glory_api.UploadAtta" +
-      "chmentRequest\032#.glory_api.UploadAttachme" +
-      "ntResponse\"!\322\301\030\035/api/seller/upload_attac" +
-      "hment\022v\n\016ListAttachment\022 .glory_api.List" +
-      "AttachmentRequest\032!.glory_api.ListAttach" +
-      "mentResponse\"\037\322\301\030\033/api/seller/list_attac" +
-      "hment\022~\n\020DeleteAttachment\022\".glory_api.De" +
-      "leteAttachmentRequest\032#.glory_api.Delete" +
-      "AttachmentResponse\"!\322\301\030\035/api/seller/dele" +
-      "te_attachment\022n\n\014CreateSeller\022\036.glory_ap" +
-      "i.CreateSellerRequest\032\037.glory_api.Create" +
-      "SellerResponse\"\035\322\301\030\031/api/seller/create_s" +
-      "eller\022s\n\rCreatePayment\022\037.glory_api.Creat" +
-      "ePaymentRequest\032 .glory_api.CreatePaymen" +
-      "tResponse\"\037\322\301\030\033/api/payment/create_payme" +
-      "nt\022g\n\nGetPayment\022\034.glory_api.GetPaymentR" +
-      "equest\032\035.glory_api.GetPaymentResponse\"\034\312" +
-      "\301\030\030/api/payment/get_payment\022s\n\rUpdatePay" +
-      "ment\022\037.glory_api.UpdatePaymentRequest\032 ." +
-      "glory_api.UpdatePaymentResponse\"\037\322\301\030\033/ap" +
-      "i/payment/update_payment\022s\n\rDeletePaymen" +
-      "t\022\037.glory_api.DeletePaymentRequest\032 .glo" +
-      "ry_api.DeletePaymentResponse\"\037\322\301\030\033/api/p" +
-      "ayment/delete_payment\022j\n\014CreateConfig\022\036." +
-      "glory_api.CreateConfigRequest\032\037.glory_ap" +
-      "i.CreateConfigResponse\"\031\322\301\030\025/api/admin/a" +
-      "dd_config\022m\n\014UpdateConfig\022\036.glory_api.Up" +
-      "dateConfigRequest\032\037.glory_api.UpdateConf" +
-      "igResponse\"\034\322\301\030\030/api/admin/update_config" +
-      "\022m\n\014DeleteConfig\022\036.glory_api.DeleteConfi" +
-      "gRequest\032\037.glory_api.DeleteConfigRespons" +
-      "e\"\034\322\301\030\030/api/admin/delete_config\022a\n\tGetCo" +
-      "nfig\022\033.glory_api.GetConfigRequest\032\034.glor" +
-      "y_api.GetConfigResponse\"\031\322\301\030\025/api/admin/" +
-      "get_config\022V\n\010WxPrepay\022\030.glory_api.Prepa" +
-      "yRequest\032\031.glory_api.PrepayResponse\"\025\322\301\030" +
-      "\021/api/wxpay/prepay\022e\n\nCloseOrder\022\034.glory" +
-      "_api.CloseOrderRequest\032\035.glory_api.Close" +
-      "OrderResponse\"\032\322\301\030\026/api/wxpay/close_orde" +
-      "r\022q\n\016QueryOrderById\022 .glory_api.QueryOrd" +
-      "erByIdRequest\032!.glory_api.QueryOrderById" +
-      "Response\"\032\312\301\030\026/api/wxpay/query_by_id\022\207\001\n" +
-      "\024QueryOrderByOutTrade\022(.glory_api.QueryO" +
-      "rderByOutTradeNoRequest\032).glory_api.Quer" +
-      "yOrderByOutTradeNoResponse\"\032\312\301\030\026/api/wxp" +
-      "ay/query_by_no\022r\n\014AddVCurrency\022$.glory_a" +
-      "pi.AddVirtualCurrencyRequest\032%.glory_api" +
-      ".AddVirtualCurrencyResponse\"\025\322\301\030\021/api/cu" +
-      "rrency/add\022}\n\017DeleteVCurrency\022\'.glory_ap" +
-      "i.DeleteVirtualCurrencyRequest\032(.glory_a" +
-      "pi.DeleteVirtualCurrencyResponse\"\027\322\301\030\023/a" +
-      "pi/currency/clear\022~\n\017UpdateVCurrency\022\'.g" +
-      "lory_api.UpdateVirtualCurrencyRequest\032(." +
-      "glory_api.UpdateVirtualCurrencyResponse\"" +
-      "\030\322\301\030\024/api/currency/update\022y\n\014GetVCurrenc" +
-      "y\022$.glory_api.GetVirtualCurrencyRequest\032" +
-      "%.glory_api.GetVirtualCurrencyResponse\"\034" +
-      "\312\301\030\030/api/currency/get_by_uid\022v\n\rListVCur" +
-      "rency\022%.glory_api.ListVirtualCurrencyReq" +
-      "uest\032&.glory_api.ListVirtualCurrencyResp" +
-      "onse\"\026\312\301\030\022/api/currency/list\022\204\001\n\023AddAcco" +
-      "untOperation\022%.glory_api.AddAccountOpera" +
-      "tionRequest\032&.glory_api.AddAccountOperat" +
-      "ionResponse\"\036\322\301\030\032/api/account/add_operat" +
-      "ion\022\204\001\n\023GetAccountOperation\022%.glory_api." +
-      "GetAccountOperationRequest\032&.glory_api.G" +
-      "etAccountOperationResponse\"\036\312\301\030\032/api/acc" +
-      "ount/get_operation\022\210\001\n\024ListAccountOperat" +
-      "ion\022&.glory_api.ListAccountOperationRequ" +
-      "est\032\'.glory_api.ListAccountOperationResp" +
-      "onse\"\037\312\301\030\033/api/account/list_operation\022d\n" +
-      "\nCreateRoom\022\034.glory_api.CreateRoomReques" +
-      "t\032\035.glory_api.CreateRoomResponse\"\031\322\301\030\025/a" +
-      "pi/live/create_room\022X\n\007GetRoom\022\031.glory_a" +
-      "pi.GetRoomRequest\032\032.glory_api.GetRoomRes" +
-      "ponse\"\026\312\301\030\022/api/live/get_room\022d\n\nUpdateR" +
-      "oom\022\034.glory_api.UpdateRoomRequest\032\035.glor" +
-      "y_api.UpdateRoomResponse\"\031\322\301\030\025/api/live/" +
-      "update_room\022\\\n\010ListRoom\022\032.glory_api.List" +
-      "RoomRequest\032\033.glory_api.ListRoomResponse" +
-      "\"\027\322\301\030\023/api/live/list_room\022d\n\nDeleteRoom\022" +
-      "\034.glory_api.DeleteRoomRequest\032\035.glory_ap" +
-      "i.DeleteRoomResponse\"\031\322\301\030\025/api/live/dele" +
-      "te_room\022}\n\020ListFinishedRoom\022\".glory_api." +
-      "ListFinishedRoomRequest\032#.glory_api.List" +
-      "FinishedRoomResponse\" \322\301\030\034/api/live/list" +
-      "_finished_room\022[\n\006Record\022\034.glory_api.Liv" +
-      "eRecordRequest\032\035.glory_api.LiveRecordRes" +
-      "ponse\"\024\322\301\030\020/api/live/record\022\212\001\n\023CreateLi" +
-      "veUserToken\022%.glory_api.CreateLiveUserTo" +
-      "kenRequest\032&.glory_api.CreateLiveUserTok" +
-      "enResponse\"$\322\301\030 /api/live/create_live_us" +
-      "er_token\022q\n\rUserEnterRoom\022\037.glory_api.Us" +
-      "erEnterRoomRequest\032 .glory_api.UserEnter" +
-      "RoomResponse\"\035\322\301\030\031/api/live/user_enter_r" +
-      "oom\022m\n\014UserExitRoom\022\036.glory_api.UserExit" +
-      "RoomRequest\032\037.glory_api.UserExitRoomResp" +
-      "onse\"\034\322\301\030\030/api/live/user_exit_room\022\202\001\n\022L" +
-      "istActiveRoomUser\022$.glory_api.ListActive" +
-      "RoomUserRequest\032!.glory_api.ListAttachme" +
-      "ntResponse\"#\322\301\030\037/api/live/list_active_ro" +
-      "om_user\022u\n\016CreateLivePlan\022 .glory_api.Cr" +
-      "eateLivePlanRequest\032!.glory_api.CreateLi" +
-      "vePlanResponse\"\036\322\301\030\032/api/live/create_liv" +
-      "e_plan\022u\n\016UpdateLivePlan\022 .glory_api.Upd" +
-      "ateLivePlanRequest\032!.glory_api.UpdateLiv" +
-      "ePlanResponse\"\036\322\301\030\032/api/live/update_live" +
-      "_plan\022m\n\014ListLivePlan\022\036.glory_api.ListLi" +
-      "vePlanRequest\032\037.glory_api.ListLivePlanRe" +
-      "sponse\"\034\322\301\030\030/api/live/list_live_plan\022u\n\016" +
-      "DeleteLivePlan\022 .glory_api.DeleteLivePla" +
-      "nRequest\032!.glory_api.DeleteLivePlanRespo" +
-      "nse\"\036\322\301\030\032/api/live/delete_live_plan\022\222\001\n\025" +
-      "CreateLivePlanProduct\022\'.glory_api.Create" +
-      "LivePlanProductRequest\032(.glory_api.Creat" +
+      "/tenant.proto2\342\200\001\n\tglory_api\022s\n\rCreateEx" +
+      "ample\022\037.glory_api.CreateExampleRequest\032 " +
+      ".glory_api.CreateExampleResponse\"\037\322\301\030\033/a" +
+      "pi/example/create_example\022g\n\nGetExample\022" +
+      "\034.glory_api.GetExampleRequest\032\035.glory_ap" +
+      "i.GetExampleResponse\"\034\312\301\030\030/api/example/g" +
+      "et_example\022s\n\rUpdateExample\022\037.glory_api." +
+      "UpdateExampleRequest\032 .glory_api.UpdateE" +
+      "xampleResponse\"\037\322\301\030\033/api/example/update_" +
+      "example\022k\n\013ListExample\022\035.glory_api.ListE" +
+      "xampleRequest\032\036.glory_api.ListExampleRes" +
+      "ponse\"\035\322\301\030\031/api/example/list_example\022s\n\r" +
+      "DeleteExample\022\037.glory_api.DeleteExampleR" +
+      "equest\032 .glory_api.DeleteExampleResponse" +
+      "\"\037\322\301\030\033/api/example/delete_example\022O\n\005Log" +
+      "in\022\027.glory_api.LoginRequest\032\030.glory_api." +
+      "LoginResponse\"\023\322\301\030\017/api/user/login\022q\n\rGe" +
+      "tVerifyCode\022\037.glory_api.GetVerifyCodeReq" +
+      "uest\032 .glory_api.GetVerifyCodeResponse\"\035" +
+      "\322\301\030\031/api/user/get_verify_code\022X\n\007GetUser" +
+      "\022\031.glory_api.GetUserRequest\032\032.glory_api." +
+      "GetUserResponse\"\026\312\301\030\022/api/user/get_user\022" +
+      "\201\001\n\021LoginWithPassword\022#.glory_api.LoginW" +
+      "ithPasswordRequest\032$.glory_api.LoginWith" +
+      "PasswordResponse\"!\322\301\030\035/api/user/login_wi" +
+      "th_password\022t\n\016UpdatePassword\022 .glory_ap" +
+      "i.UpdatePasswordRequest\032!.glory_api.Upda" +
+      "tePasswordResponse\"\035\322\301\030\031/api/user/update" +
+      "_password\022d\n\nAddAddress\022\034.glory_api.AddA" +
+      "ddressRequest\032\035.glory_api.AddAddressResp" +
+      "onse\"\031\322\301\030\025/api/user/add_address\022p\n\rDelet" +
+      "eAddress\022\037.glory_api.DeleteAddressReques" +
+      "t\032 .glory_api.DeleteAddressResponse\"\034\322\301\030" +
+      "\030/api/user/delete_address\022p\n\rUpdateAddre" +
+      "ss\022\037.glory_api.UpdateAddressRequest\032 .gl" +
+      "ory_api.UpdateAddressResponse\"\034\322\301\030\030/api/" +
+      "user/update_address\022d\n\nGetAddress\022\034.glor" +
+      "y_api.GetAddressRequest\032\035.glory_api.GetA" +
+      "ddressResponse\"\031\312\301\030\025/api/user/get_addres" +
+      "s\022h\n\013ListAddress\022\035.glory_api.ListAddress" +
+      "Request\032\036.glory_api.ListAddressResponse\"" +
+      "\032\312\301\030\026/api/user/list_address\022d\n\nCreateSho" +
+      "p\022\034.glory_api.CreateShopRequest\032\035.glory_" +
+      "api.CreateShopResponse\"\031\322\301\030\025/api/shop/cr" +
+      "eate_shop\022X\n\007GetShop\022\031.glory_api.GetShop" +
+      "Request\032\032.glory_api.GetShopResponse\"\026\312\301\030" +
+      "\022/api/shop/get_shop\022d\n\nUpdateShop\022\034.glor" +
+      "y_api.UpdateShopRequest\032\035.glory_api.Upda" +
+      "teShopResponse\"\031\322\301\030\025/api/shop/update_sho" +
+      "p\022\\\n\010ListShop\022\032.glory_api.ListShopReques" +
+      "t\032\033.glory_api.ListShopResponse\"\027\322\301\030\023/api" +
+      "/shop/list_shop\022d\n\nDeleteShop\022\034.glory_ap" +
+      "i.DeleteShopRequest\032\035.glory_api.DeleteSh" +
+      "opResponse\"\031\322\301\030\025/api/shop/delete_shop\022\215\001" +
+      "\n\024ListOperationMetrics\022&.glory_api.ListO" +
+      "perationMetricsRequest\032\'.glory_api.ListO" +
+      "perationMetricsResponse\"$\322\301\030 /api/shop/l" +
+      "ist_operation_metrics\022q\n\rGetShopQrcode\022\037" +
+      ".glory_api.GetShopQrcodeRequest\032 .glory_" +
+      "api.GetShopQrcodeResponse\"\035\312\301\030\031/api/shop" +
+      "/get_shop_qrcode\022\201\001\n\021UpdateShopManager\022#" +
+      ".glory_api.UpdateShopManagerRequest\032$.gl" +
+      "ory_api.UpdateShopManagerResponse\"!\322\301\030\035/" +
+      "api/shop/update_shop_manager\022\212\001\n\023GetShop" +
+      "BusinessData\022%.glory_api.GetShopBusiness" +
+      "DataRequest\032&.glory_api.GetShopBusinessD" +
+      "ataResponse\"$\312\301\030 /api/shop/get_shop_busi" +
+      "ness_data\022q\n\rAddShopAccess\022\037.glory_api.A" +
+      "ddShopAccessRequest\032 .glory_api.AddShopA" +
+      "ccessResponse\"\035\322\301\030\031/api/shop/add_shop_ac" +
+      "cess\022}\n\020RemoveShopAccess\022\".glory_api.Rem" +
+      "oveShopAccessRequest\032#.glory_api.RemoveS" +
+      "hopAccessResponse\" \322\301\030\034/api/shop/remove_" +
+      "shop_access\022h\n\013VerifyField\022\035.glory_api.V" +
+      "erifyFieldRequest\032\036.glory_api.VerifyFiel" +
+      "dResponse\"\032\322\301\030\026/api/shop/verify_field\022u\n" +
+      "\016ListShopAccess\022 .glory_api.ListShopAcce" +
+      "ssRequest\032!.glory_api.ListShopAccessResp" +
+      "onse\"\036\322\301\030\032/api/shop/list_shop_access\022y\n\017" +
+      "AddShopCategory\022!.glory_api.AddShopCateg" +
+      "oryRequest\032\".glory_api.AddShopCategoryRe" +
+      "sponse\"\037\322\301\030\033/api/shop/add_shop_category\022" +
+      "y\n\017GetShopCategory\022!.glory_api.GetShopCa" +
+      "tegoryRequest\032\".glory_api.GetShopCategor" +
+      "yResponse\"\037\312\301\030\033/api/shop/get_shop_catego" +
+      "ry\022\205\001\n\022RemoveShopCategory\022$.glory_api.Re" +
+      "moveShopCategoryRequest\032%.glory_api.Remo" +
+      "veShopCategoryResponse\"\"\322\301\030\036/api/shop/re" +
+      "move_shop_category\022u\n\022AddFreightTemplate" +
+      "\022 .glory_api.CreateTemplateRequest\032!.glo" +
+      "ry_api.CreateTemplateResponse\"\032\322\301\030\026/api/" +
+      "shop/add_template\022o\n\022GetFreightTemplate\022" +
+      "\035.glory_api.GetTemplateRequest\032\036.glory_a" +
+      "pi.GetTemplateResponse\"\032\312\301\030\026/api/shop/ge" +
+      "t_template\022{\n\025UpdateFreightTemplate\022 .gl" +
+      "ory_api.UpdateTemplateRequest\032!.glory_ap" +
+      "i.UpdateTemplateResponse\"\035\322\301\030\031/api/shop/" +
+      "update_template\022{\n\025DeleteFreightTemplate" +
+      "\022 .glory_api.DeleteTemplateRequest\032!.glo" +
+      "ry_api.DeleteTemplateResponse\"\035\322\301\030\031/api/" +
+      "shop/delete_template\022s\n\023ListFreightTempl" +
+      "ate\022\036.glory_api.ListTemplateRequest\032\037.gl" +
+      "ory_api.ListTemplateResponse\"\033\322\301\030\027/api/s" +
+      "hop/list_template\022\215\001\n\021ListQualification\022" +
+      "\'.glory_api.ListShopQualificationRequest" +
+      "\032(.glory_api.ListShopQualificationRespon" +
+      "se\"%\322\301\030!/api/shop/list_shop_qualificatio" +
+      "n\022j\n\014GetMallIndex\022\033.glory_api.MallIndexR" +
+      "equest\032\034.glory_api.MallIndexResponse\"\037\322\301" +
+      "\030\033/api/mall/list_live_product\022t\n\016CreateC" +
+      "ategory\022 .glory_api.CreateCategoryReques" +
+      "t\032!.glory_api.CreateCategoryResponse\"\035\322\301" +
+      "\030\031/api/shop/create_category\022h\n\013GetCatego" +
+      "ry\022\035.glory_api.GetCategoryRequest\032\036.glor" +
+      "y_api.GetCategoryResponse\"\032\312\301\030\026/api/shop" +
+      "/get_category\022t\n\016UpdateCategory\022 .glory_" +
+      "api.UpdateCategoryRequest\032!.glory_api.Up" +
+      "dateCategoryResponse\"\035\322\301\030\031/api/shop/upda" +
+      "te_category\022l\n\014ListCategory\022\036.glory_api." +
+      "ListCategoryRequest\032\037.glory_api.ListCate" +
+      "goryResponse\"\033\322\301\030\027/api/shop/list_categor" +
+      "y\022t\n\016DeleteCategory\022 .glory_api.DeleteCa" +
+      "tegoryRequest\032!.glory_api.DeleteCategory" +
+      "Response\"\035\322\301\030\031/api/shop/delete_category\022" +
+      "\241\001\n\031ListCategoryQualification\022+.glory_ap" +
+      "i.ListCategoryQualificationRequest\032,.glo" +
+      "ry_api.ListCategoryQualificationResponse" +
+      "\")\322\301\030%/api/shop/list_category_qualificat" +
+      "ion\022p\n\rCreateProduct\022\037.glory_api.CreateP" +
+      "roductRequest\032 .glory_api.CreateProductR" +
+      "esponse\"\034\322\301\030\030/api/shop/create_product\022d\n" +
+      "\nGetProduct\022\034.glory_api.GetProductReques" +
+      "t\032\035.glory_api.GetProductResponse\"\031\312\301\030\025/a" +
+      "pi/shop/get_product\022p\n\rUpdateProduct\022\037.g" +
+      "lory_api.UpdateProductRequest\032 .glory_ap" +
+      "i.UpdateProductResponse\"\034\322\301\030\030/api/shop/u" +
+      "pdate_product\022h\n\013ListProduct\022\035.glory_api" +
+      ".ListProductRequest\032\036.glory_api.ListProd" +
+      "uctResponse\"\032\322\301\030\026/api/shop/list_product\022" +
+      "p\n\rDeleteProduct\022\037.glory_api.DeleteProdu" +
+      "ctRequest\032 .glory_api.DeleteProductRespo" +
+      "nse\"\034\322\301\030\030/api/shop/delete_product\022}\n\020Upl" +
+      "oadMultiImage\022\".glory_api.UploadMultiIma" +
+      "geRequest\032#.glory_api.UploadMultiImageRe" +
+      "sponse\" \322\301\030\034/api/shop/upload_multi_image" +
+      "\022l\n\017DeleteImageById\022\035.glory_api.DeleteIm" +
+      "ageRequest\032\036.glory_api.DeleteImageRespon" +
+      "se\"\032\322\301\030\026/api/shop/delete_image\022x\n\rBindAt" +
+      "tribute\022\037.glory_api.BindAttributeRequest" +
+      "\032 .glory_api.BindAttributeResponse\"$\322\301\030 " +
+      "/api/shop/bind_product_attribute\022t\n\016Publ" +
+      "ishProduct\022 .glory_api.PublishProductReq" +
+      "uest\032!.glory_api.PublishProductResponse\"" +
+      "\035\322\301\030\031/api/shop/publish_product\022\203\001\n\030OffSh" +
+      "elfProductInBatches\022!.glory_api.OffSelfP" +
+      "roductsRequest\032\".glory_api.OffSelfProduc" +
+      "tsResponse\" \322\301\030\034/api/shop/off_shelf_prod" +
+      "ucts\022|\n\026DeleteProductInBatches\022 .glory_a" +
+      "pi.DeleteProductsRequest\032!.glory_api.Del" +
+      "eteProductsResponse\"\035\322\301\030\031/api/shop/delet" +
+      "e_products\022\207\001\n\023ChangeProductsState\022$.glo" +
+      "ry_api.ChangeProductStateRequest\032%.glory" +
+      "_api.ChangeProductStateResponse\"#\322\301\030\037/ap" +
+      "i/shop/change_products_state\022`\n\tCreateSk" +
+      "u\022\033.glory_api.CreateSkuRequest\032\034.glory_a" +
+      "pi.CreateSkuResponse\"\030\322\301\030\024/api/shop/crea" +
+      "te_sku\022T\n\006GetSku\022\030.glory_api.GetSkuReque" +
+      "st\032\031.glory_api.GetSkuResponse\"\025\312\301\030\021/api/" +
+      "shop/get_sku\022`\n\tUpdateSku\022\033.glory_api.Up" +
+      "dateSkuRequest\032\034.glory_api.UpdateSkuResp" +
+      "onse\"\030\322\301\030\024/api/shop/update_sku\022X\n\007ListSk" +
+      "u\022\031.glory_api.ListSkuRequest\032\032.glory_api" +
+      ".ListSkuResponse\"\026\322\301\030\022/api/shop/list_sku" +
+      "\022`\n\tDeleteSku\022\033.glory_api.DeleteSkuReque" +
+      "st\032\034.glory_api.DeleteSkuResponse\"\030\322\301\030\024/a" +
+      "pi/shop/delete_sku\022x\n\017CreateAttribute\022!." +
+      "glory_api.CreateAttributeRequest\032\".glory" +
+      "_api.CreateAttributeResponse\"\036\322\301\030\032/api/s" +
+      "hop/create_attribute\022l\n\014GetAttribute\022\036.g" +
+      "lory_api.GetAttributeRequest\032\037.glory_api" +
+      ".GetAttributeResponse\"\033\312\301\030\027/api/shop/get" +
+      "_attribute\022p\n\rListAttribute\022\037.glory_api." +
+      "ListAttributeRequest\032 .glory_api.ListAtt" +
+      "ributeResponse\"\034\322\301\030\030/api/shop/list_attri" +
+      "bute\022x\n\017DeleteAttribute\022!.glory_api.Dele" +
+      "teAttributeRequest\032\".glory_api.DeleteAtt" +
+      "ributeResponse\"\036\322\301\030\032/api/shop/delete_att" +
+      "ribute\022\201\001\n\021AddAttributeValue\022#.glory_api" +
+      ".AddAttributeValueRequest\032$.glory_api.Ad" +
+      "dAttributeValueResponse\"!\322\301\030\035/api/shop/a" +
+      "dd_attribute_value\022\215\001\n\024DeleteAttributeVa" +
+      "lue\022&.glory_api.DeleteAttributeValueRequ" +
+      "est\032\'.glory_api.DeleteAttributeValueResp" +
+      "onse\"$\322\301\030 /api/shop/delete_attribute_val" +
+      "ue\022h\n\013CreateOrder\022\035.glory_api.CreateOrde" +
+      "rRequest\032\036.glory_api.CreateOrderResponse" +
+      "\"\032\322\301\030\026/api/shop/create_order\022\\\n\010GetOrder" +
+      "\022\032.glory_api.GetOrderRequest\032\033.glory_api" +
+      ".GetOrderResponse\"\027\312\301\030\023/api/shop/get_ord" +
+      "er\022h\n\013UpdateOrder\022\035.glory_api.UpdateOrde" +
+      "rRequest\032\036.glory_api.UpdateOrderResponse" +
+      "\"\032\322\301\030\026/api/shop/update_order\022`\n\tListOrde" +
+      "r\022\033.glory_api.ListOrderRequest\032\034.glory_a" +
+      "pi.ListOrderResponse\"\030\322\301\030\024/api/shop/list" +
+      "_order\022h\n\013DeleteOrder\022\035.glory_api.Delete" +
+      "OrderRequest\032\036.glory_api.DeleteOrderResp" +
+      "onse\"\032\322\301\030\026/api/shop/delete_order\022`\n\tShip" +
+      "Goods\022\033.glory_api.ShipGoodsRequest\032\034.glo" +
+      "ry_api.ShipGoodsResponse\"\030\322\301\030\024/api/shop/" +
+      "ship_goods\022\201\001\n\022ShipGoodsInBatches\022$.glor" +
+      "y_api.ShipGoodsInBatchesRequest\032%.glory_" +
+      "api.ShipGoodsInBatchesResponse\"\036\322\301\030\032/api" +
+      "/shop/ship_goods_batch\022\211\001\n\025FreeShippingI" +
+      "nBatches\022\'.glory_api.FreeShippingInBatch" +
+      "esRequest\032(.glory_api.FreeShippingInBatc" +
+      "hesResponse\"\035\322\301\030\031/api/shop/free_ship_bat" +
+      "ch\022d\n\nCreateCart\022\034.glory_api.CreateCartR" +
+      "equest\032\035.glory_api.CreateCartResponse\"\031\322" +
+      "\301\030\025/api/shop/create_cart\022X\n\007GetCart\022\031.gl" +
+      "ory_api.GetCartRequest\032\032.glory_api.GetCa" +
+      "rtResponse\"\026\312\301\030\022/api/shop/get_cart\022d\n\nUp" +
+      "dateCart\022\034.glory_api.UpdateCartRequest\032\035" +
+      ".glory_api.UpdateCartResponse\"\031\322\301\030\025/api/" +
+      "shop/update_cart\022d\n\nDeleteCart\022\034.glory_a" +
+      "pi.DeleteCartRequest\032\035.glory_api.DeleteC" +
+      "artResponse\"\031\322\301\030\025/api/shop/delete_cart\022~" +
+      "\n\020UploadAttachment\022\".glory_api.UploadAtt" +
+      "achmentRequest\032#.glory_api.UploadAttachm" +
+      "entResponse\"!\322\301\030\035/api/seller/upload_atta" +
+      "chment\022v\n\016ListAttachment\022 .glory_api.Lis" +
+      "tAttachmentRequest\032!.glory_api.ListAttac" +
+      "hmentResponse\"\037\322\301\030\033/api/seller/list_atta" +
+      "chment\022~\n\020DeleteAttachment\022\".glory_api.D" +
+      "eleteAttachmentRequest\032#.glory_api.Delet" +
+      "eAttachmentResponse\"!\322\301\030\035/api/seller/del" +
+      "ete_attachment\022n\n\014CreateSeller\022\036.glory_a" +
+      "pi.CreateSellerRequest\032\037.glory_api.Creat" +
+      "eSellerResponse\"\035\322\301\030\031/api/seller/create_" +
+      "seller\022s\n\rCreatePayment\022\037.glory_api.Crea" +
+      "tePaymentRequest\032 .glory_api.CreatePayme" +
+      "ntResponse\"\037\322\301\030\033/api/payment/create_paym" +
+      "ent\022g\n\nGetPayment\022\034.glory_api.GetPayment" +
+      "Request\032\035.glory_api.GetPaymentResponse\"\034" +
+      "\312\301\030\030/api/payment/get_payment\022s\n\rUpdatePa" +
+      "yment\022\037.glory_api.UpdatePaymentRequest\032 " +
+      ".glory_api.UpdatePaymentResponse\"\037\322\301\030\033/a" +
+      "pi/payment/update_payment\022s\n\rDeletePayme" +
+      "nt\022\037.glory_api.DeletePaymentRequest\032 .gl" +
+      "ory_api.DeletePaymentResponse\"\037\322\301\030\033/api/" +
+      "payment/delete_payment\022j\n\014CreateConfig\022\036" +
+      ".glory_api.CreateConfigRequest\032\037.glory_a" +
+      "pi.CreateConfigResponse\"\031\322\301\030\025/api/admin/" +
+      "add_config\022m\n\014UpdateConfig\022\036.glory_api.U" +
+      "pdateConfigRequest\032\037.glory_api.UpdateCon" +
+      "figResponse\"\034\322\301\030\030/api/admin/update_confi" +
+      "g\022m\n\014DeleteConfig\022\036.glory_api.DeleteConf" +
+      "igRequest\032\037.glory_api.DeleteConfigRespon" +
+      "se\"\034\322\301\030\030/api/admin/delete_config\022a\n\tGetC" +
+      "onfig\022\033.glory_api.GetConfigRequest\032\034.glo" +
+      "ry_api.GetConfigResponse\"\031\322\301\030\025/api/admin" +
+      "/get_config\022V\n\010WxPrepay\022\030.glory_api.Prep" +
+      "ayRequest\032\031.glory_api.PrepayResponse\"\025\322\301" +
+      "\030\021/api/wxpay/prepay\022e\n\nCloseOrder\022\034.glor" +
+      "y_api.CloseOrderRequest\032\035.glory_api.Clos" +
+      "eOrderResponse\"\032\322\301\030\026/api/wxpay/close_ord" +
+      "er\022q\n\016QueryOrderById\022 .glory_api.QueryOr" +
+      "derByIdRequest\032!.glory_api.QueryOrderByI" +
+      "dResponse\"\032\312\301\030\026/api/wxpay/query_by_id\022\207\001" +
+      "\n\024QueryOrderByOutTrade\022(.glory_api.Query" +
+      "OrderByOutTradeNoRequest\032).glory_api.Que" +
+      "ryOrderByOutTradeNoResponse\"\032\312\301\030\026/api/wx" +
+      "pay/query_by_no\022r\n\014AddVCurrency\022$.glory_" +
+      "api.AddVirtualCurrencyRequest\032%.glory_ap" +
+      "i.AddVirtualCurrencyResponse\"\025\322\301\030\021/api/c" +
+      "urrency/add\022}\n\017DeleteVCurrency\022\'.glory_a" +
+      "pi.DeleteVirtualCurrencyRequest\032(.glory_" +
+      "api.DeleteVirtualCurrencyResponse\"\027\322\301\030\023/" +
+      "api/currency/clear\022~\n\017UpdateVCurrency\022\'." +
+      "glory_api.UpdateVirtualCurrencyRequest\032(" +
+      ".glory_api.UpdateVirtualCurrencyResponse" +
+      "\"\030\322\301\030\024/api/currency/update\022y\n\014GetVCurren" +
+      "cy\022$.glory_api.GetVirtualCurrencyRequest" +
+      "\032%.glory_api.GetVirtualCurrencyResponse\"" +
+      "\034\312\301\030\030/api/currency/get_by_uid\022v\n\rListVCu" +
+      "rrency\022%.glory_api.ListVirtualCurrencyRe" +
+      "quest\032&.glory_api.ListVirtualCurrencyRes" +
+      "ponse\"\026\312\301\030\022/api/currency/list\022\204\001\n\023AddAcc" +
+      "ountOperation\022%.glory_api.AddAccountOper" +
+      "ationRequest\032&.glory_api.AddAccountOpera" +
+      "tionResponse\"\036\322\301\030\032/api/account/add_opera" +
+      "tion\022\204\001\n\023GetAccountOperation\022%.glory_api" +
+      ".GetAccountOperationRequest\032&.glory_api." +
+      "GetAccountOperationResponse\"\036\312\301\030\032/api/ac" +
+      "count/get_operation\022\210\001\n\024ListAccountOpera" +
+      "tion\022&.glory_api.ListAccountOperationReq" +
+      "uest\032\'.glory_api.ListAccountOperationRes" +
+      "ponse\"\037\312\301\030\033/api/account/list_operation\022d" +
+      "\n\nCreateRoom\022\034.glory_api.CreateRoomReque" +
+      "st\032\035.glory_api.CreateRoomResponse\"\031\322\301\030\025/" +
+      "api/live/create_room\022X\n\007GetRoom\022\031.glory_" +
+      "api.GetRoomRequest\032\032.glory_api.GetRoomRe" +
+      "sponse\"\026\312\301\030\022/api/live/get_room\022d\n\nUpdate" +
+      "Room\022\034.glory_api.UpdateRoomRequest\032\035.glo" +
+      "ry_api.UpdateRoomResponse\"\031\322\301\030\025/api/live" +
+      "/update_room\022\\\n\010ListRoom\022\032.glory_api.Lis" +
+      "tRoomRequest\032\033.glory_api.ListRoomRespons" +
+      "e\"\027\322\301\030\023/api/live/list_room\022d\n\nDeleteRoom" +
+      "\022\034.glory_api.DeleteRoomRequest\032\035.glory_a" +
+      "pi.DeleteRoomResponse\"\031\322\301\030\025/api/live/del" +
+      "ete_room\022}\n\020ListFinishedRoom\022\".glory_api" +
+      ".ListFinishedRoomRequest\032#.glory_api.Lis" +
+      "tFinishedRoomResponse\" \322\301\030\034/api/live/lis" +
+      "t_finished_room\022[\n\006Record\022\034.glory_api.Li" +
+      "veRecordRequest\032\035.glory_api.LiveRecordRe" +
+      "sponse\"\024\322\301\030\020/api/live/record\022\212\001\n\023CreateL" +
+      "iveUserToken\022%.glory_api.CreateLiveUserT" +
+      "okenRequest\032&.glory_api.CreateLiveUserTo" +
+      "kenResponse\"$\322\301\030 /api/live/create_live_u" +
+      "ser_token\022q\n\rUserEnterRoom\022\037.glory_api.U" +
+      "serEnterRoomRequest\032 .glory_api.UserEnte" +
+      "rRoomResponse\"\035\322\301\030\031/api/live/user_enter_" +
+      "room\022m\n\014UserExitRoom\022\036.glory_api.UserExi" +
+      "tRoomRequest\032\037.glory_api.UserExitRoomRes" +
+      "ponse\"\034\322\301\030\030/api/live/user_exit_room\022\202\001\n\022" +
+      "ListActiveRoomUser\022$.glory_api.ListActiv" +
+      "eRoomUserRequest\032!.glory_api.ListAttachm" +
+      "entResponse\"#\322\301\030\037/api/live/list_active_r" +
+      "oom_user\022u\n\016CreateLivePlan\022 .glory_api.C" +
+      "reateLivePlanRequest\032!.glory_api.CreateL" +
+      "ivePlanResponse\"\036\322\301\030\032/api/live/create_li" +
+      "ve_plan\022u\n\016UpdateLivePlan\022 .glory_api.Up" +
+      "dateLivePlanRequest\032!.glory_api.UpdateLi" +
+      "vePlanResponse\"\036\322\301\030\032/api/live/update_liv" +
+      "e_plan\022m\n\014ListLivePlan\022\036.glory_api.ListL" +
+      "ivePlanRequest\032\037.glory_api.ListLivePlanR" +
+      "esponse\"\034\322\301\030\030/api/live/list_live_plan\022u\n" +
+      "\016DeleteLivePlan\022 .glory_api.DeleteLivePl" +
+      "anRequest\032!.glory_api.DeleteLivePlanResp" +
+      "onse\"\036\322\301\030\032/api/live/delete_live_plan\022\222\001\n" +
+      "\025CreateLivePlanProduct\022\'.glory_api.Creat" +
+      "eLivePlanProductRequest\032(.glory_api.Crea" +
+      "teLivePlanProductResponse\"&\322\301\030\"/api/live" +
+      "/create_live_plan_product\022\222\001\n\025UpdateLive" +
+      "PlanProduct\022\'.glory_api.UpdateLivePlanPr" +
+      "oductRequest\032(.glory_api.UpdateLivePlanP" +
+      "roductResponse\"&\322\301\030\"/api/live/update_liv" +
+      "e_plan_product\022\212\001\n\023ListLivePlanProduct\022%" +
+      ".glory_api.ListLivePlanProductRequest\032&." +
+      "glory_api.ListLivePlanProductResponse\"$\322" +
+      "\301\030 /api/live/list_live_plan_product\022\222\001\n\025" +
+      "DeleteLivePlanProduct\022\'.glory_api.Delete" +
+      "LivePlanProductRequest\032(.glory_api.Delet" +
       "eLivePlanProductResponse\"&\322\301\030\"/api/live/" +
-      "create_live_plan_product\022\222\001\n\025UpdateLiveP" +
-      "lanProduct\022\'.glory_api.UpdateLivePlanPro" +
-      "ductRequest\032(.glory_api.UpdateLivePlanPr" +
-      "oductResponse\"&\322\301\030\"/api/live/update_live" +
-      "_plan_product\022\212\001\n\023ListLivePlanProduct\022%." +
-      "glory_api.ListLivePlanProductRequest\032&.g" +
-      "lory_api.ListLivePlanProductResponse\"$\322\301" +
-      "\030 /api/live/list_live_plan_product\022\222\001\n\025D" +
-      "eleteLivePlanProduct\022\'.glory_api.DeleteL" +
-      "ivePlanProductRequest\032(.glory_api.Delete" +
-      "LivePlanProductResponse\"&\322\301\030\"/api/live/d" +
-      "elete_live_plan_product\022\212\001\n\023LoadLivePlan" +
-      "Product\022%.glory_api.LoadLivePlanProductR" +
-      "equest\032&.glory_api.LoadLivePlanProductRe" +
-      "sponse\"$\322\301\030 /api/live/load_live_plan_pro" +
-      "duct\022\232\001\n\027UpdateLiveProductStatus\022).glory" +
-      "_api.UpdateLiveProductStatusRequest\032*.gl" +
-      "ory_api.UpdateLiveProductStatusResponse\"" +
-      "(\322\301\030$/api/live/update_live_product_statu" +
-      "s\022\222\001\n\025ListLiveProductStatus\022\'.glory_api." +
-      "ListLiveProductStatusRequest\032(.glory_api" +
-      ".ListLiveProductStatusResponse\"&\322\301\030\"/api" +
-      "/live/list_live_product_status\022\232\001\n\027Delet" +
-      "eLiveProductStatus\022).glory_api.DeleteLiv" +
-      "eProductStatusRequest\032*.glory_api.Delete" +
-      "LiveProductStatusResponse\"(\322\301\030$/api/live" +
-      "/delete_live_product_status\022\232\001\n\027CreateLi" +
-      "veProductStatus\022).glory_api.CreateLivePr" +
-      "oductStatusRequest\032*.glory_api.CreateLiv" +
-      "eProductStatusResponse\"(\322\301\030$/api/live/cr" +
-      "eate_live_product_status\022\226\001\n\026GetLivingPr" +
-      "oductStatus\022(.glory_api.GetLivingProduct" +
-      "StatusRequest\032).glory_api.GetLivingProdu" +
-      "ctStatusResponse\"\'\312\301\030#/api/live/get_livi" +
-      "ng_product_status\022\277\001\n UpdateLiveProductI" +
-      "ntroductStatus\0222.glory_api.UpdateLivePro" +
-      "ductIntroductStatusRequest\0323.glory_api.U" +
-      "pdateLiveProductIntroductStatusResponse\"" +
-      "2\322\301\030./api/live/update_live_product_intro" +
-      "duct_status\022u\n\016CreateLiveText\022 .glory_ap" +
-      "i.CreateLiveTextRequest\032!.glory_api.Crea" +
-      "teLiveTextResponse\"\036\322\301\030\032/api/live/create",
-      "_live_text\022u\n\016UpdateLiveText\022 .glory_api" +
-      ".UpdateLiveTextRequest\032!.glory_api.Updat" +
-      "eLiveTextResponse\"\036\322\301\030\032/api/live/update_" +
-      "live_text\022m\n\014ListLiveText\022\036.glory_api.Li" +
-      "stLiveTextRequest\032\037.glory_api.ListLiveTe" +
-      "xtResponse\"\034\322\301\030\030/api/live/list_live_text" +
-      "\022i\n\013GetLiveText\022\035.glory_api.GetLiveTextR" +
-      "equest\032\036.glory_api.GetLiveTextResponse\"\033" +
-      "\312\301\030\027/api/live/get_live_text\022y\n\017DeleteLiv" +
-      "eTexts\022!.glory_api.DeleteLiveTextsReques" +
-      "t\032\".glory_api.DeleteLiveTextsResponse\"\037\322" +
-      "\301\030\033/api/live/delete_live_texts\022n\n\014Create" +
-      "Tenant\022\036.glory_api.CreateTenantRequest\032\037" +
-      ".glory_api.CreateTenantResponse\"\035\322\301\030\031/ap" +
-      "i/tenant/create_tenant\022b\n\tGetTenant\022\033.gl" +
-      "ory_api.GetTenantRequest\032\034.glory_api.Get" +
-      "TenantResponse\"\032\312\301\030\026/api/tenant/get_tena" +
-      "nt\022n\n\014UpdateTenant\022\036.glory_api.UpdateTen" +
-      "antRequest\032\037.glory_api.UpdateTenantRespo" +
-      "nse\"\035\322\301\030\031/api/tenant/update_tenant\022n\n\014De" +
-      "leteTenant\022\036.glory_api.DeleteTenantReque" +
-      "st\032\037.glory_api.DeleteTenantResponse\"\035\322\301\030" +
-      "\031/api/tenant/delete_tenant\022f\n\nListTenant" +
-      "\022\034.glory_api.ListTenantRequest\032\035.glory_a" +
-      "pi.ListTenantResponse\"\033\322\301\030\027/api/tenant/l" +
-      "ist_tenantb\006proto3"
+      "delete_live_plan_product\022\212\001\n\023LoadLivePla" +
+      "nProduct\022%.glory_api.LoadLivePlanProduct" +
+      "Request\032&.glory_api.LoadLivePlanProductR" +
+      "esponse\"$\322\301\030 /api/live/load_live_plan_pr" +
+      "oduct\022\232\001\n\027UpdateLiveProductStatus\022).glor" +
+      "y_api.UpdateLiveProductStatusRequest\032*.g" +
+      "lory_api.UpdateLiveProductStatusResponse" +
+      "\"(\322\301\030$/api/live/update_live_product_stat" +
+      "us\022\222\001\n\025ListLiveProductStatus\022\'.glory_api" +
+      ".ListLiveProductStatusRequest\032(.glory_ap" +
+      "i.ListLiveProductStatusResponse\"&\322\301\030\"/ap" +
+      "i/live/list_live_product_status\022\232\001\n\027Dele" +
+      "teLiveProductStatus\022).glory_api.DeleteLi" +
+      "veProductStatusRequest\032*.glory_api.Delet" +
+      "eLiveProductStatusResponse\"(\322\301\030$/api/liv" +
+      "e/delete_live_product_status\022\232\001\n\027CreateL" +
+      "iveProductStatus\022).glory_api.CreateLiveP" +
+      "roductStatusRequest\032*.glory_api.CreateLi" +
+      "veProductStatusResponse\"(\322\301\030$/api/live/c" +
+      "reate_live_product_status\022\226\001\n\026GetLivingP" +
+      "roductStatus\022(.glory_api.GetLivingProduc" +
+      "tStatusRequest\032).glory_api.GetLivingProd" +
+      "uctStatusResponse\"\'\312\301\030#/api/live/get_liv" +
+      "ing_product_status\022\277\001\n UpdateLiveProduct" +
+      "IntroductStatus\0222.glory_api.UpdateLivePr" +
+      "oductIntroductStatusRequest\0323.glory_api." +
+      "UpdateLiveProductIntroductStatusResponse" +
+      "\"2\322\301\030./api/live/update_live_product_intr" +
+      "oduct_status\022u\n\016CreateLiveText\022 .glory_a" +
+      "pi.CreateLiveTextRequest\032!.glory_api.Cre" +
+      "ateLiveTextResponse\"\036\322\301\030\032/api/live/creat",
+      "e_live_text\022u\n\016UpdateLiveText\022 .glory_ap" +
+      "i.UpdateLiveTextRequest\032!.glory_api.Upda" +
+      "teLiveTextResponse\"\036\322\301\030\032/api/live/update" +
+      "_live_text\022m\n\014ListLiveText\022\036.glory_api.L" +
+      "istLiveTextRequest\032\037.glory_api.ListLiveT" +
+      "extResponse\"\034\322\301\030\030/api/live/list_live_tex" +
+      "t\022i\n\013GetLiveText\022\035.glory_api.GetLiveText" +
+      "Request\032\036.glory_api.GetLiveTextResponse\"" +
+      "\033\312\301\030\027/api/live/get_live_text\022y\n\017DeleteLi" +
+      "veTexts\022!.glory_api.DeleteLiveTextsReque" +
+      "st\032\".glory_api.DeleteLiveTextsResponse\"\037" +
+      "\322\301\030\033/api/live/delete_live_texts\022~\n\020GetLi" +
+      "veChartData\022\".glory_api.GetLiveChartData" +
+      "Request\032#.glory_api.GetLiveChartDataResp" +
+      "onse\"!\312\301\030\035/api/live/get_live_chart_data\022" +
+      "n\n\014CreateTenant\022\036.glory_api.CreateTenant" +
+      "Request\032\037.glory_api.CreateTenantResponse" +
+      "\"\035\322\301\030\031/api/tenant/create_tenant\022b\n\tGetTe" +
+      "nant\022\033.glory_api.GetTenantRequest\032\034.glor" +
+      "y_api.GetTenantResponse\"\032\312\301\030\026/api/tenant" +
+      "/get_tenant\022n\n\014UpdateTenant\022\036.glory_api." +
+      "UpdateTenantRequest\032\037.glory_api.UpdateTe" +
+      "nantResponse\"\035\322\301\030\031/api/tenant/update_ten" +
+      "ant\022n\n\014DeleteTenant\022\036.glory_api.DeleteTe" +
+      "nantRequest\032\037.glory_api.DeleteTenantResp" +
+      "onse\"\035\322\301\030\031/api/tenant/delete_tenant\022f\n\nL" +
+      "istTenant\022\034.glory_api.ListTenantRequest\032" +
+      "\035.glory_api.ListTenantResponse\"\033\322\301\030\027/api" +
+      "/tenant/list_tenantb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

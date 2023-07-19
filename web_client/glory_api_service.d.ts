@@ -587,6 +587,11 @@ CreateLivePlanProduct create live plan product */
     request: live_text.DeleteLiveTextsRequest
   ): Promise<live_text.DeleteLiveTextsResponse>;
 
+  /** live chart */
+  GetLiveChartData(
+    request: live_room.GetLiveChartDataRequest
+  ): Promise<live_room.GetLiveChartDataResponse>;
+
   /** tenant */
   CreateTenant(
     request: tenant.CreateTenantRequest
