@@ -123,6 +123,7 @@ message LiveChartData {
   double deal_amount =2;
   int64 room_buyer_amount =3;
   int64 room_order_amount =4;
+  int64 timestamp =5;
 }
 
 message LiveData {
