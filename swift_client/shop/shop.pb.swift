@@ -1114,7 +1114,7 @@ struct GloryApi_GetShopBusinessDataRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_ShopBusinessData {
+struct GloryApi_ShopChartData {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1126,6 +1126,24 @@ struct GloryApi_ShopBusinessData {
   var shopBuyerAmount: Int64 = 0
 
   var shopOrderAmount: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct GloryApi_ShopBusinessData {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var shopChartData: [GloryApi_ShopChartData] = []
+
+  var totalDealAmount: Double = 0
+
+  var totalVisitorAmount: Int64 = 0
+
+  var totalOrderAmount: Int64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1146,13 +1164,21 @@ struct GloryApi_GetShopBusinessDataResponse {
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
-  var shopBusinessdata: [GloryApi_ShopBusinessData] = []
+  var shopBusinessData: GloryApi_ShopBusinessData {
+    get {return _shopBusinessData ?? GloryApi_ShopBusinessData()}
+    set {_shopBusinessData = newValue}
+  }
+  /// Returns true if `shopBusinessData` has been explicitly set.
+  var hasShopBusinessData: Bool {return self._shopBusinessData != nil}
+  /// Clears the value of `shopBusinessData`. Subsequent reads from it will return its default value.
+  mutating func clearShopBusinessData() {self._shopBusinessData = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _shopBusinessData: GloryApi_ShopBusinessData? = nil
 }
 
 #if swift(>=5.5) && canImport(_Concurrency)
@@ -1192,6 +1218,7 @@ extension GloryApi_ListShopQualificationResponse: @unchecked Sendable {}
 extension GloryApi_UpdateShopManagerRequest: @unchecked Sendable {}
 extension GloryApi_UpdateShopManagerResponse: @unchecked Sendable {}
 extension GloryApi_GetShopBusinessDataRequest: @unchecked Sendable {}
+extension GloryApi_ShopChartData: @unchecked Sendable {}
 extension GloryApi_ShopBusinessData: @unchecked Sendable {}
 extension GloryApi_GetShopBusinessDataResponse: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
@@ -3113,8 +3140,8 @@ extension GloryApi_GetShopBusinessDataRequest: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension GloryApi_ShopBusinessData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ShopBusinessData"
+extension GloryApi_ShopChartData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ShopChartData"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "date"),
     2: .standard(proto: "deal_amount"),
@@ -3153,7 +3180,7 @@ extension GloryApi_ShopBusinessData: SwiftProtobuf.Message, SwiftProtobuf._Messa
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: GloryApi_ShopBusinessData, rhs: GloryApi_ShopBusinessData) -> Bool {
+  static func ==(lhs: GloryApi_ShopChartData, rhs: GloryApi_ShopChartData) -> Bool {
     if lhs.date != rhs.date {return false}
     if lhs.dealAmount != rhs.dealAmount {return false}
     if lhs.shopBuyerAmount != rhs.shopBuyerAmount {return false}
@@ -3163,11 +3190,61 @@ extension GloryApi_ShopBusinessData: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 }
 
+extension GloryApi_ShopBusinessData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ShopBusinessData"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "shop_chart_data"),
+    2: .standard(proto: "total_deal_amount"),
+    3: .standard(proto: "total_visitor_amount"),
+    4: .standard(proto: "total_order_amount"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeRepeatedMessageField(value: &self.shopChartData) }()
+      case 2: try { try decoder.decodeSingularDoubleField(value: &self.totalDealAmount) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.totalVisitorAmount) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.totalOrderAmount) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.shopChartData.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.shopChartData, fieldNumber: 1)
+    }
+    if self.totalDealAmount != 0 {
+      try visitor.visitSingularDoubleField(value: self.totalDealAmount, fieldNumber: 2)
+    }
+    if self.totalVisitorAmount != 0 {
+      try visitor.visitSingularInt64Field(value: self.totalVisitorAmount, fieldNumber: 3)
+    }
+    if self.totalOrderAmount != 0 {
+      try visitor.visitSingularInt64Field(value: self.totalOrderAmount, fieldNumber: 4)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ShopBusinessData, rhs: GloryApi_ShopBusinessData) -> Bool {
+    if lhs.shopChartData != rhs.shopChartData {return false}
+    if lhs.totalDealAmount != rhs.totalDealAmount {return false}
+    if lhs.totalVisitorAmount != rhs.totalVisitorAmount {return false}
+    if lhs.totalOrderAmount != rhs.totalOrderAmount {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
 extension GloryApi_GetShopBusinessDataResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetShopBusinessDataResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
-    2: .standard(proto: "shop_businessdata"),
+    2: .standard(proto: "shop_business_data"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -3177,7 +3254,7 @@ extension GloryApi_GetShopBusinessDataResponse: SwiftProtobuf.Message, SwiftProt
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
-      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.shopBusinessdata) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._shopBusinessData) }()
       default: break
       }
     }
@@ -3191,15 +3268,15 @@ extension GloryApi_GetShopBusinessDataResponse: SwiftProtobuf.Message, SwiftProt
     try { if let v = self._baseResp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    if !self.shopBusinessdata.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.shopBusinessdata, fieldNumber: 2)
-    }
+    try { if let v = self._shopBusinessData {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_GetShopBusinessDataResponse, rhs: GloryApi_GetShopBusinessDataResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
-    if lhs.shopBusinessdata != rhs.shopBusinessdata {return false}
+    if lhs._shopBusinessData != rhs._shopBusinessData {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

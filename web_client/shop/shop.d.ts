@@ -287,14 +287,21 @@ export interface GetShopBusinessDataRequest {
   period?: string;
 }
 
-export interface ShopBusinessData {
+export interface ShopChartData {
   date?: string;
   deal_amount?: number;
   shop_buyer_amount?: string;
   shop_order_amount?: string;
 }
 
+export interface ShopBusinessData {
+  shop_chart_data?: Array<ShopChartData>;
+  total_deal_amount?: number;
+  total_visitor_amount?: string;
+  total_order_amount?: string;
+}
+
 export interface GetShopBusinessDataResponse {
   base_resp?: base.BaseResponse;
-  shop_businessdata?: Array<ShopBusinessData>;
+  shop_business_data?: ShopBusinessData;
 }
