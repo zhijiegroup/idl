@@ -248,6 +248,7 @@ message ShopChartData {
   double deal_amount =2;
   int64 shop_buyer_amount =3;
   int64 shop_order_amount =4;
+  int64 timestamp =5;
 }
 
 message ShopBusinessData {
