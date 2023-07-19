@@ -247,8 +247,8 @@ message ShopChartData {
 message ShopBusinessData {
   repeated ShopChartData shop_chart_data = 1;
   double total_deal_amount = 2;
-  int64 shop_visitor_amount = 3;
-  int64 shop_order_amount  = 4;
+  int64 total_visitor_amount = 3;
+  int64 total_order_amount  = 4;
 }
 
 message GetShopBusinessDataResponse{
