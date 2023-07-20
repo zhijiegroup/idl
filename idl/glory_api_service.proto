@@ -461,6 +461,9 @@ service glory_api {
   rpc CreateLivePlan(CreateLivePlanRequest) returns (CreateLivePlanResponse) {
     option (api.post) = '/api/live/create_live_plan';
   }
+  rpc GetLivePlan(GetLivePlanRequest) returns (GetLivePlanResponse) {
+    option (api.get) = '/api/live/get_live_plan';
+  }
   rpc UpdateLivePlan(UpdateLivePlanRequest) returns (UpdateLivePlanResponse) {
     option (api.post) = '/api/live/update_live_plan';
   }
