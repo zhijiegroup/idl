@@ -16975,6 +16975,12 @@ public final class LiveRoom {
      * @return The roomOrderAmount.
      */
     long getRoomOrderAmount();
+
+    /**
+     * <code>int64 timestamp = 5;</code>
+     * @return The timestamp.
+     */
+    long getTimestamp();
   }
   /**
    * Protobuf type {@code glory_api.LiveChartData}
@@ -17041,6 +17047,11 @@ public final class LiveRoom {
             case 32: {
 
               roomOrderAmount_ = input.readInt64();
+              break;
+            }
+            case 40: {
+
+              timestamp_ = input.readInt64();
               break;
             }
             default: {
@@ -17146,6 +17157,17 @@ public final class LiveRoom {
       return roomOrderAmount_;
     }
 
+    public static final int TIMESTAMP_FIELD_NUMBER = 5;
+    private long timestamp_;
+    /**
+     * <code>int64 timestamp = 5;</code>
+     * @return The timestamp.
+     */
+    @java.lang.Override
+    public long getTimestamp() {
+      return timestamp_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -17172,6 +17194,9 @@ public final class LiveRoom {
       if (roomOrderAmount_ != 0L) {
         output.writeInt64(4, roomOrderAmount_);
       }
+      if (timestamp_ != 0L) {
+        output.writeInt64(5, timestamp_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -17195,6 +17220,10 @@ public final class LiveRoom {
       if (roomOrderAmount_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, roomOrderAmount_);
+      }
+      if (timestamp_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, timestamp_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -17220,6 +17249,8 @@ public final class LiveRoom {
           != other.getRoomBuyerAmount()) return false;
       if (getRoomOrderAmount()
           != other.getRoomOrderAmount()) return false;
+      if (getTimestamp()
+          != other.getTimestamp()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -17242,6 +17273,9 @@ public final class LiveRoom {
       hash = (37 * hash) + ROOM_ORDER_AMOUNT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getRoomOrderAmount());
+      hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTimestamp());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -17383,6 +17417,8 @@ public final class LiveRoom {
 
         roomOrderAmount_ = 0L;
 
+        timestamp_ = 0L;
+
         return this;
       }
 
@@ -17413,6 +17449,7 @@ public final class LiveRoom {
         result.dealAmount_ = dealAmount_;
         result.roomBuyerAmount_ = roomBuyerAmount_;
         result.roomOrderAmount_ = roomOrderAmount_;
+        result.timestamp_ = timestamp_;
         onBuilt();
         return result;
       }
@@ -17473,6 +17510,9 @@ public final class LiveRoom {
         }
         if (other.getRoomOrderAmount() != 0L) {
           setRoomOrderAmount(other.getRoomOrderAmount());
+        }
+        if (other.getTimestamp() != 0L) {
+          setTimestamp(other.getTimestamp());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -17668,6 +17708,37 @@ public final class LiveRoom {
       public Builder clearRoomOrderAmount() {
         
         roomOrderAmount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long timestamp_ ;
+      /**
+       * <code>int64 timestamp = 5;</code>
+       * @return The timestamp.
+       */
+      @java.lang.Override
+      public long getTimestamp() {
+        return timestamp_;
+      }
+      /**
+       * <code>int64 timestamp = 5;</code>
+       * @param value The timestamp to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTimestamp(long value) {
+        
+        timestamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 timestamp = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTimestamp() {
+        
+        timestamp_ = 0L;
         onChanged();
         return this;
       }
@@ -19714,16 +19785,17 @@ public final class LiveRoom {
       ".PaginationResponse\"o\n\027GetLiveChartDataR" +
       "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
       "Request\022\017\n\007room_id\030\002 \001(\003\022\r\n\005start\030\003 \001(\003\022" +
-      "\013\n\003end\030\004 \001(\003\"h\n\rLiveChartData\022\014\n\004date\030\001 " +
+      "\013\n\003end\030\004 \001(\003\"{\n\rLiveChartData\022\014\n\004date\030\001 " +
       "\001(\t\022\023\n\013deal_amount\030\002 \001(\001\022\031\n\021room_buyer_a" +
-      "mount\030\003 \001(\003\022\031\n\021room_order_amount\030\004 \001(\003\"\222" +
-      "\001\n\010LiveData\0221\n\017live_chart_data\030\001 \003(\0132\030.g" +
-      "lory_api.LiveChartData\022\031\n\021total_deal_amo" +
-      "unt\030\002 \001(\001\022\034\n\024total_visitor_amount\030\003 \001(\003\022" +
-      "\032\n\022total_order_amount\030\004 \001(\003\"i\n\030GetLiveCh" +
-      "artDataResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
-      "e.BaseResponse\022&\n\tlive_data\030\002 \001(\0132\023.glor" +
-      "y_api.LiveDatab\006proto3"
+      "mount\030\003 \001(\003\022\031\n\021room_order_amount\030\004 \001(\003\022\021" +
+      "\n\ttimestamp\030\005 \001(\003\"\222\001\n\010LiveData\0221\n\017live_c" +
+      "hart_data\030\001 \003(\0132\030.glory_api.LiveChartDat" +
+      "a\022\031\n\021total_deal_amount\030\002 \001(\001\022\034\n\024total_vi" +
+      "sitor_amount\030\003 \001(\003\022\032\n\022total_order_amount" +
+      "\030\004 \001(\003\"i\n\030GetLiveChartDataResponse\022%\n\tba" +
+      "se_resp\030\001 \001(\0132\022.base.BaseResponse\022&\n\tliv" +
+      "e_data\030\002 \001(\0132\023.glory_api.LiveDatab\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -19831,7 +19903,7 @@ public final class LiveRoom {
     internal_static_glory_api_LiveChartData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_LiveChartData_descriptor,
-        new java.lang.String[] { "Date", "DealAmount", "RoomBuyerAmount", "RoomOrderAmount", });
+        new java.lang.String[] { "Date", "DealAmount", "RoomBuyerAmount", "RoomOrderAmount", "Timestamp", });
     internal_static_glory_api_LiveData_descriptor =
       getDescriptor().getMessageTypes().get(17);
     internal_static_glory_api_LiveData_fieldAccessorTable = new

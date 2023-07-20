@@ -506,6 +506,8 @@ struct GloryApi_LiveChartData {
 
   var roomOrderAmount: Int64 = 0
 
+  var timestamp: Int64 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1545,6 +1547,7 @@ extension GloryApi_LiveChartData: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     2: .standard(proto: "deal_amount"),
     3: .standard(proto: "room_buyer_amount"),
     4: .standard(proto: "room_order_amount"),
+    5: .same(proto: "timestamp"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1557,6 +1560,7 @@ extension GloryApi_LiveChartData: SwiftProtobuf.Message, SwiftProtobuf._MessageI
       case 2: try { try decoder.decodeSingularDoubleField(value: &self.dealAmount) }()
       case 3: try { try decoder.decodeSingularInt64Field(value: &self.roomBuyerAmount) }()
       case 4: try { try decoder.decodeSingularInt64Field(value: &self.roomOrderAmount) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.timestamp) }()
       default: break
       }
     }
@@ -1575,6 +1579,9 @@ extension GloryApi_LiveChartData: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     if self.roomOrderAmount != 0 {
       try visitor.visitSingularInt64Field(value: self.roomOrderAmount, fieldNumber: 4)
     }
+    if self.timestamp != 0 {
+      try visitor.visitSingularInt64Field(value: self.timestamp, fieldNumber: 5)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1583,6 +1590,7 @@ extension GloryApi_LiveChartData: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     if lhs.dealAmount != rhs.dealAmount {return false}
     if lhs.roomBuyerAmount != rhs.roomBuyerAmount {return false}
     if lhs.roomOrderAmount != rhs.roomOrderAmount {return false}
+    if lhs.timestamp != rhs.timestamp {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

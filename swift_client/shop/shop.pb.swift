@@ -1127,6 +1127,8 @@ struct GloryApi_ShopChartData {
 
   var shopOrderAmount: Int64 = 0
 
+  var timestamp: Int64 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -3147,6 +3149,7 @@ extension GloryApi_ShopChartData: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     2: .standard(proto: "deal_amount"),
     3: .standard(proto: "shop_buyer_amount"),
     4: .standard(proto: "shop_order_amount"),
+    5: .same(proto: "timestamp"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -3159,6 +3162,7 @@ extension GloryApi_ShopChartData: SwiftProtobuf.Message, SwiftProtobuf._MessageI
       case 2: try { try decoder.decodeSingularDoubleField(value: &self.dealAmount) }()
       case 3: try { try decoder.decodeSingularInt64Field(value: &self.shopBuyerAmount) }()
       case 4: try { try decoder.decodeSingularInt64Field(value: &self.shopOrderAmount) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.timestamp) }()
       default: break
       }
     }
@@ -3177,6 +3181,9 @@ extension GloryApi_ShopChartData: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     if self.shopOrderAmount != 0 {
       try visitor.visitSingularInt64Field(value: self.shopOrderAmount, fieldNumber: 4)
     }
+    if self.timestamp != 0 {
+      try visitor.visitSingularInt64Field(value: self.timestamp, fieldNumber: 5)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -3185,6 +3192,7 @@ extension GloryApi_ShopChartData: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     if lhs.dealAmount != rhs.dealAmount {return false}
     if lhs.shopBuyerAmount != rhs.shopBuyerAmount {return false}
     if lhs.shopOrderAmount != rhs.shopOrderAmount {return false}
+    if lhs.timestamp != rhs.timestamp {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

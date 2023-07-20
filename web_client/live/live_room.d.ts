@@ -136,6 +136,7 @@ export interface LiveChartData {
   deal_amount?: number;
   room_buyer_amount?: string;
   room_order_amount?: string;
+  timestamp?: string;
 }
 
 export interface LiveData {

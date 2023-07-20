@@ -36505,6 +36505,12 @@ public final class ShopOuterClass {
      * @return The shopOrderAmount.
      */
     long getShopOrderAmount();
+
+    /**
+     * <code>int64 timestamp = 5;</code>
+     * @return The timestamp.
+     */
+    long getTimestamp();
   }
   /**
    * Protobuf type {@code glory_api.ShopChartData}
@@ -36571,6 +36577,11 @@ public final class ShopOuterClass {
             case 32: {
 
               shopOrderAmount_ = input.readInt64();
+              break;
+            }
+            case 40: {
+
+              timestamp_ = input.readInt64();
               break;
             }
             default: {
@@ -36676,6 +36687,17 @@ public final class ShopOuterClass {
       return shopOrderAmount_;
     }
 
+    public static final int TIMESTAMP_FIELD_NUMBER = 5;
+    private long timestamp_;
+    /**
+     * <code>int64 timestamp = 5;</code>
+     * @return The timestamp.
+     */
+    @java.lang.Override
+    public long getTimestamp() {
+      return timestamp_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -36702,6 +36724,9 @@ public final class ShopOuterClass {
       if (shopOrderAmount_ != 0L) {
         output.writeInt64(4, shopOrderAmount_);
       }
+      if (timestamp_ != 0L) {
+        output.writeInt64(5, timestamp_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -36725,6 +36750,10 @@ public final class ShopOuterClass {
       if (shopOrderAmount_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, shopOrderAmount_);
+      }
+      if (timestamp_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, timestamp_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -36750,6 +36779,8 @@ public final class ShopOuterClass {
           != other.getShopBuyerAmount()) return false;
       if (getShopOrderAmount()
           != other.getShopOrderAmount()) return false;
+      if (getTimestamp()
+          != other.getTimestamp()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -36772,6 +36803,9 @@ public final class ShopOuterClass {
       hash = (37 * hash) + SHOP_ORDER_AMOUNT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getShopOrderAmount());
+      hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTimestamp());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -36913,6 +36947,8 @@ public final class ShopOuterClass {
 
         shopOrderAmount_ = 0L;
 
+        timestamp_ = 0L;
+
         return this;
       }
 
@@ -36943,6 +36979,7 @@ public final class ShopOuterClass {
         result.dealAmount_ = dealAmount_;
         result.shopBuyerAmount_ = shopBuyerAmount_;
         result.shopOrderAmount_ = shopOrderAmount_;
+        result.timestamp_ = timestamp_;
         onBuilt();
         return result;
       }
@@ -37003,6 +37040,9 @@ public final class ShopOuterClass {
         }
         if (other.getShopOrderAmount() != 0L) {
           setShopOrderAmount(other.getShopOrderAmount());
+        }
+        if (other.getTimestamp() != 0L) {
+          setTimestamp(other.getTimestamp());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -37198,6 +37238,37 @@ public final class ShopOuterClass {
       public Builder clearShopOrderAmount() {
         
         shopOrderAmount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long timestamp_ ;
+      /**
+       * <code>int64 timestamp = 5;</code>
+       * @return The timestamp.
+       */
+      @java.lang.Override
+      public long getTimestamp() {
+        return timestamp_;
+      }
+      /**
+       * <code>int64 timestamp = 5;</code>
+       * @param value The timestamp to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTimestamp(long value) {
+        
+        timestamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 timestamp = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTimestamp() {
+        
+        timestamp_ = 0L;
         onChanged();
         return this;
       }
@@ -39401,17 +39472,17 @@ public final class ShopOuterClass {
       "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"f" +
       "\n\032GetShopBusinessDataRequest\022\'\n\014base_req" +
       "uest\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007shop_id" +
-      "\030\002 \001(\003\022\016\n\006period\030\003 \001(\003\"h\n\rShopChartData\022" +
+      "\030\002 \001(\003\022\016\n\006period\030\003 \001(\003\"{\n\rShopChartData\022" +
       "\014\n\004date\030\001 \001(\t\022\023\n\013deal_amount\030\002 \001(\001\022\031\n\021sh" +
       "op_buyer_amount\030\003 \001(\003\022\031\n\021shop_order_amou" +
-      "nt\030\004 \001(\003\"\232\001\n\020ShopBusinessData\0221\n\017shop_ch" +
-      "art_data\030\001 \003(\0132\030.glory_api.ShopChartData" +
-      "\022\031\n\021total_deal_amount\030\002 \001(\001\022\034\n\024total_vis" +
-      "itor_amount\030\003 \001(\003\022\032\n\022total_order_amount\030" +
-      "\004 \001(\003\"}\n\033GetShopBusinessDataResponse\022%\n\t" +
-      "base_resp\030\001 \001(\0132\022.base.BaseResponse\0227\n\022s" +
-      "hop_business_data\030\002 \001(\0132\033.glory_api.Shop" +
-      "BusinessDatab\006proto3"
+      "nt\030\004 \001(\003\022\021\n\ttimestamp\030\005 \001(\003\"\232\001\n\020ShopBusi" +
+      "nessData\0221\n\017shop_chart_data\030\001 \003(\0132\030.glor" +
+      "y_api.ShopChartData\022\031\n\021total_deal_amount" +
+      "\030\002 \001(\001\022\034\n\024total_visitor_amount\030\003 \001(\003\022\032\n\022" +
+      "total_order_amount\030\004 \001(\003\"}\n\033GetShopBusin" +
+      "essDataResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
+      "e.BaseResponse\0227\n\022shop_business_data\030\002 \001" +
+      "(\0132\033.glory_api.ShopBusinessDatab\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -39640,7 +39711,7 @@ public final class ShopOuterClass {
     internal_static_glory_api_ShopChartData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ShopChartData_descriptor,
-        new java.lang.String[] { "Date", "DealAmount", "ShopBuyerAmount", "ShopOrderAmount", });
+        new java.lang.String[] { "Date", "DealAmount", "ShopBuyerAmount", "ShopOrderAmount", "Timestamp", });
     internal_static_glory_api_ShopBusinessData_descriptor =
       getDescriptor().getMessageTypes().get(37);
     internal_static_glory_api_ShopBusinessData_fieldAccessorTable = new

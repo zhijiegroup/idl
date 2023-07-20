@@ -18,11 +18,22 @@ export interface LivePlan {
 export interface CreateLivePlanRequest {
   base_request?: base.BaseRequest;
   live_plan?: LivePlan;
+  product_id?: Array<string>;
 }
 
 export interface CreateLivePlanResponse {
   base_resp?: base.BaseResponse;
   live_plan_id?: string;
+}
+
+export interface GetLivePlanRequest {
+  base_request?: base.BaseRequest;
+  live_plan_id?: string;
+}
+
+export interface GetLivePlanResponse {
+  base_resp?: base.BaseResponse;
+  live_plan?: LivePlan;
 }
 
 export interface UpdateLivePlanRequest {
@@ -159,7 +170,10 @@ export interface LiveProductStatus {
   room_id?: string;
   product_selling_point?: string;
   product_description?: string;
+  /** 是否讲解中 */
   is_introduct?: boolean;
+  /** 上架 下架状态 */
+  state?: string;
 }
 
 export interface ListLiveProductStatusRequest {

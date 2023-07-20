@@ -292,6 +292,7 @@ export interface ShopChartData {
   deal_amount?: number;
   shop_buyer_amount?: string;
   shop_order_amount?: string;
+  timestamp?: string;
 }
 
 export interface ShopBusinessData {

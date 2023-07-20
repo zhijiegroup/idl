@@ -65,6 +65,8 @@ struct GloryApi_CreateLivePlanRequest {
   /// Clears the value of `livePlan`. Subsequent reads from it will return its default value.
   mutating func clearLivePlan() {self._livePlan = nil}
 
+  var productID: [Int64] = []
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -94,6 +96,60 @@ struct GloryApi_CreateLivePlanResponse {
   init() {}
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
+}
+
+struct GloryApi_GetLivePlanRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var livePlanID: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+struct GloryApi_GetLivePlanResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var livePlan: GloryApi_LivePlan {
+    get {return _livePlan ?? GloryApi_LivePlan()}
+    set {_livePlan = newValue}
+  }
+  /// Returns true if `livePlan` has been explicitly set.
+  var hasLivePlan: Bool {return self._livePlan != nil}
+  /// Clears the value of `livePlan`. Subsequent reads from it will return its default value.
+  mutating func clearLivePlan() {self._livePlan = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _livePlan: GloryApi_LivePlan? = nil
 }
 
 struct GloryApi_UpdateLivePlanRequest {
@@ -661,7 +717,11 @@ struct GloryApi_LiveProductStatus {
 
   var productDescription: String = String()
 
+  /// 是否讲解中
   var isIntroduct: Bool = false
+
+  /// 上架 下架状态
+  var state: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -939,6 +999,8 @@ struct GloryApi_UpdateLiveProductIntroductStatusResponse {
 extension GloryApi_LivePlan: @unchecked Sendable {}
 extension GloryApi_CreateLivePlanRequest: @unchecked Sendable {}
 extension GloryApi_CreateLivePlanResponse: @unchecked Sendable {}
+extension GloryApi_GetLivePlanRequest: @unchecked Sendable {}
+extension GloryApi_GetLivePlanResponse: @unchecked Sendable {}
 extension GloryApi_UpdateLivePlanRequest: @unchecked Sendable {}
 extension GloryApi_UpdateLivePlanResponse: @unchecked Sendable {}
 extension GloryApi_ListLivePlanRequest: @unchecked Sendable {}
@@ -1038,6 +1100,7 @@ extension GloryApi_CreateLivePlanRequest: SwiftProtobuf.Message, SwiftProtobuf._
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
     2: .standard(proto: "live_plan"),
+    100: .standard(proto: "product_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1048,6 +1111,7 @@ extension GloryApi_CreateLivePlanRequest: SwiftProtobuf.Message, SwiftProtobuf._
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularMessageField(value: &self._livePlan) }()
+      case 100: try { try decoder.decodeRepeatedInt64Field(value: &self.productID) }()
       default: break
       }
     }
@@ -1064,12 +1128,16 @@ extension GloryApi_CreateLivePlanRequest: SwiftProtobuf.Message, SwiftProtobuf._
     try { if let v = self._livePlan {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
     } }()
+    if !self.productID.isEmpty {
+      try visitor.visitPackedInt64Field(value: self.productID, fieldNumber: 100)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_CreateLivePlanRequest, rhs: GloryApi_CreateLivePlanRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs._livePlan != rhs._livePlan {return false}
+    if lhs.productID != rhs.productID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -1112,6 +1180,90 @@ extension GloryApi_CreateLivePlanResponse: SwiftProtobuf.Message, SwiftProtobuf.
   static func ==(lhs: GloryApi_CreateLivePlanResponse, rhs: GloryApi_CreateLivePlanResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.livePlanID != rhs.livePlanID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetLivePlanRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetLivePlanRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    2: .standard(proto: "live_plan_id"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.livePlanID) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if self.livePlanID != 0 {
+      try visitor.visitSingularInt64Field(value: self.livePlanID, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetLivePlanRequest, rhs: GloryApi_GetLivePlanRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.livePlanID != rhs.livePlanID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetLivePlanResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetLivePlanResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .standard(proto: "live_plan"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._livePlan) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try { if let v = self._livePlan {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetLivePlanResponse, rhs: GloryApi_GetLivePlanResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs._livePlan != rhs._livePlan {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -2072,6 +2224,7 @@ extension GloryApi_LiveProductStatus: SwiftProtobuf.Message, SwiftProtobuf._Mess
     6: .standard(proto: "product_selling_point"),
     7: .standard(proto: "product_description"),
     8: .standard(proto: "is_introduct"),
+    9: .same(proto: "state"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2088,6 +2241,7 @@ extension GloryApi_LiveProductStatus: SwiftProtobuf.Message, SwiftProtobuf._Mess
       case 6: try { try decoder.decodeSingularStringField(value: &self.productSellingPoint) }()
       case 7: try { try decoder.decodeSingularStringField(value: &self.productDescription) }()
       case 8: try { try decoder.decodeSingularBoolField(value: &self.isIntroduct) }()
+      case 9: try { try decoder.decodeSingularStringField(value: &self.state) }()
       default: break
       }
     }
@@ -2118,6 +2272,9 @@ extension GloryApi_LiveProductStatus: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if self.isIntroduct != false {
       try visitor.visitSingularBoolField(value: self.isIntroduct, fieldNumber: 8)
     }
+    if !self.state.isEmpty {
+      try visitor.visitSingularStringField(value: self.state, fieldNumber: 9)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2130,6 +2287,7 @@ extension GloryApi_LiveProductStatus: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if lhs.productSellingPoint != rhs.productSellingPoint {return false}
     if lhs.productDescription != rhs.productDescription {return false}
     if lhs.isIntroduct != rhs.isIntroduct {return false}
+    if lhs.state != rhs.state {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
