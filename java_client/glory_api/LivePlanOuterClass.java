@@ -4741,25 +4741,61 @@ public final class LivePlanOuterClass {
     base.Base.BaseResponseOrBuilder getBaseRespOrBuilder();
 
     /**
-     * <code>repeated .glory_api.PlanProduct live_plan_product = 2;</code>
+     * <code>int64 live_plan_id = 2;</code>
+     * @return The livePlanId.
+     */
+    long getLivePlanId();
+
+    /**
+     * <code>string live_plan_name = 3;</code>
+     * @return The livePlanName.
+     */
+    java.lang.String getLivePlanName();
+    /**
+     * <code>string live_plan_name = 3;</code>
+     * @return The bytes for livePlanName.
+     */
+    com.google.protobuf.ByteString
+        getLivePlanNameBytes();
+
+    /**
+     * <code>string description = 4;</code>
+     * @return The description.
+     */
+    java.lang.String getDescription();
+    /**
+     * <code>string description = 4;</code>
+     * @return The bytes for description.
+     */
+    com.google.protobuf.ByteString
+        getDescriptionBytes();
+
+    /**
+     * <code>int64 shop_id = 5;</code>
+     * @return The shopId.
+     */
+    long getShopId();
+
+    /**
+     * <code>repeated .glory_api.PlanProduct live_plan_product = 6;</code>
      */
     java.util.List<glory_api.LivePlanOuterClass.PlanProduct> 
         getLivePlanProductList();
     /**
-     * <code>repeated .glory_api.PlanProduct live_plan_product = 2;</code>
+     * <code>repeated .glory_api.PlanProduct live_plan_product = 6;</code>
      */
     glory_api.LivePlanOuterClass.PlanProduct getLivePlanProduct(int index);
     /**
-     * <code>repeated .glory_api.PlanProduct live_plan_product = 2;</code>
+     * <code>repeated .glory_api.PlanProduct live_plan_product = 6;</code>
      */
     int getLivePlanProductCount();
     /**
-     * <code>repeated .glory_api.PlanProduct live_plan_product = 2;</code>
+     * <code>repeated .glory_api.PlanProduct live_plan_product = 6;</code>
      */
     java.util.List<? extends glory_api.LivePlanOuterClass.PlanProductOrBuilder> 
         getLivePlanProductOrBuilderList();
     /**
-     * <code>repeated .glory_api.PlanProduct live_plan_product = 2;</code>
+     * <code>repeated .glory_api.PlanProduct live_plan_product = 6;</code>
      */
     glory_api.LivePlanOuterClass.PlanProductOrBuilder getLivePlanProductOrBuilder(
         int index);
@@ -4777,6 +4813,8 @@ public final class LivePlanOuterClass {
       super(builder);
     }
     private GetLivePlanResponse() {
+      livePlanName_ = "";
+      description_ = "";
       livePlanProduct_ = java.util.Collections.emptyList();
     }
 
@@ -4824,7 +4862,29 @@ public final class LivePlanOuterClass {
 
               break;
             }
-            case 18: {
+            case 16: {
+
+              livePlanId_ = input.readInt64();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              livePlanName_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
+            case 40: {
+
+              shopId_ = input.readInt64();
+              break;
+            }
+            case 50: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 livePlanProduct_ = new java.util.ArrayList<glory_api.LivePlanOuterClass.PlanProduct>();
                 mutable_bitField0_ |= 0x00000001;
@@ -4894,17 +4954,115 @@ public final class LivePlanOuterClass {
       return getBaseResp();
     }
 
-    public static final int LIVE_PLAN_PRODUCT_FIELD_NUMBER = 2;
+    public static final int LIVE_PLAN_ID_FIELD_NUMBER = 2;
+    private long livePlanId_;
+    /**
+     * <code>int64 live_plan_id = 2;</code>
+     * @return The livePlanId.
+     */
+    @java.lang.Override
+    public long getLivePlanId() {
+      return livePlanId_;
+    }
+
+    public static final int LIVE_PLAN_NAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object livePlanName_;
+    /**
+     * <code>string live_plan_name = 3;</code>
+     * @return The livePlanName.
+     */
+    @java.lang.Override
+    public java.lang.String getLivePlanName() {
+      java.lang.Object ref = livePlanName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        livePlanName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string live_plan_name = 3;</code>
+     * @return The bytes for livePlanName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getLivePlanNameBytes() {
+      java.lang.Object ref = livePlanName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        livePlanName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DESCRIPTION_FIELD_NUMBER = 4;
+    private volatile java.lang.Object description_;
+    /**
+     * <code>string description = 4;</code>
+     * @return The description.
+     */
+    @java.lang.Override
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string description = 4;</code>
+     * @return The bytes for description.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SHOP_ID_FIELD_NUMBER = 5;
+    private long shopId_;
+    /**
+     * <code>int64 shop_id = 5;</code>
+     * @return The shopId.
+     */
+    @java.lang.Override
+    public long getShopId() {
+      return shopId_;
+    }
+
+    public static final int LIVE_PLAN_PRODUCT_FIELD_NUMBER = 6;
     private java.util.List<glory_api.LivePlanOuterClass.PlanProduct> livePlanProduct_;
     /**
-     * <code>repeated .glory_api.PlanProduct live_plan_product = 2;</code>
+     * <code>repeated .glory_api.PlanProduct live_plan_product = 6;</code>
      */
     @java.lang.Override
     public java.util.List<glory_api.LivePlanOuterClass.PlanProduct> getLivePlanProductList() {
       return livePlanProduct_;
     }
     /**
-     * <code>repeated .glory_api.PlanProduct live_plan_product = 2;</code>
+     * <code>repeated .glory_api.PlanProduct live_plan_product = 6;</code>
      */
     @java.lang.Override
     public java.util.List<? extends glory_api.LivePlanOuterClass.PlanProductOrBuilder> 
@@ -4912,21 +5070,21 @@ public final class LivePlanOuterClass {
       return livePlanProduct_;
     }
     /**
-     * <code>repeated .glory_api.PlanProduct live_plan_product = 2;</code>
+     * <code>repeated .glory_api.PlanProduct live_plan_product = 6;</code>
      */
     @java.lang.Override
     public int getLivePlanProductCount() {
       return livePlanProduct_.size();
     }
     /**
-     * <code>repeated .glory_api.PlanProduct live_plan_product = 2;</code>
+     * <code>repeated .glory_api.PlanProduct live_plan_product = 6;</code>
      */
     @java.lang.Override
     public glory_api.LivePlanOuterClass.PlanProduct getLivePlanProduct(int index) {
       return livePlanProduct_.get(index);
     }
     /**
-     * <code>repeated .glory_api.PlanProduct live_plan_product = 2;</code>
+     * <code>repeated .glory_api.PlanProduct live_plan_product = 6;</code>
      */
     @java.lang.Override
     public glory_api.LivePlanOuterClass.PlanProductOrBuilder getLivePlanProductOrBuilder(
@@ -4951,8 +5109,20 @@ public final class LivePlanOuterClass {
       if (baseResp_ != null) {
         output.writeMessage(1, getBaseResp());
       }
+      if (livePlanId_ != 0L) {
+        output.writeInt64(2, livePlanId_);
+      }
+      if (!getLivePlanNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, livePlanName_);
+      }
+      if (!getDescriptionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, description_);
+      }
+      if (shopId_ != 0L) {
+        output.writeInt64(5, shopId_);
+      }
       for (int i = 0; i < livePlanProduct_.size(); i++) {
-        output.writeMessage(2, livePlanProduct_.get(i));
+        output.writeMessage(6, livePlanProduct_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -4967,9 +5137,23 @@ public final class LivePlanOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getBaseResp());
       }
+      if (livePlanId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, livePlanId_);
+      }
+      if (!getLivePlanNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, livePlanName_);
+      }
+      if (!getDescriptionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, description_);
+      }
+      if (shopId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, shopId_);
+      }
       for (int i = 0; i < livePlanProduct_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, livePlanProduct_.get(i));
+          .computeMessageSize(6, livePlanProduct_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4991,6 +5175,14 @@ public final class LivePlanOuterClass {
         if (!getBaseResp()
             .equals(other.getBaseResp())) return false;
       }
+      if (getLivePlanId()
+          != other.getLivePlanId()) return false;
+      if (!getLivePlanName()
+          .equals(other.getLivePlanName())) return false;
+      if (!getDescription()
+          .equals(other.getDescription())) return false;
+      if (getShopId()
+          != other.getShopId()) return false;
       if (!getLivePlanProductList()
           .equals(other.getLivePlanProductList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -5008,6 +5200,16 @@ public final class LivePlanOuterClass {
         hash = (37 * hash) + BASE_RESP_FIELD_NUMBER;
         hash = (53 * hash) + getBaseResp().hashCode();
       }
+      hash = (37 * hash) + LIVE_PLAN_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getLivePlanId());
+      hash = (37 * hash) + LIVE_PLAN_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getLivePlanName().hashCode();
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+      hash = (37 * hash) + SHOP_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getShopId());
       if (getLivePlanProductCount() > 0) {
         hash = (37 * hash) + LIVE_PLAN_PRODUCT_FIELD_NUMBER;
         hash = (53 * hash) + getLivePlanProductList().hashCode();
@@ -5152,6 +5354,14 @@ public final class LivePlanOuterClass {
           baseResp_ = null;
           baseRespBuilder_ = null;
         }
+        livePlanId_ = 0L;
+
+        livePlanName_ = "";
+
+        description_ = "";
+
+        shopId_ = 0L;
+
         if (livePlanProductBuilder_ == null) {
           livePlanProduct_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -5190,6 +5400,10 @@ public final class LivePlanOuterClass {
         } else {
           result.baseResp_ = baseRespBuilder_.build();
         }
+        result.livePlanId_ = livePlanId_;
+        result.livePlanName_ = livePlanName_;
+        result.description_ = description_;
+        result.shopId_ = shopId_;
         if (livePlanProductBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             livePlanProduct_ = java.util.Collections.unmodifiableList(livePlanProduct_);
@@ -5249,6 +5463,20 @@ public final class LivePlanOuterClass {
         if (other == glory_api.LivePlanOuterClass.GetLivePlanResponse.getDefaultInstance()) return this;
         if (other.hasBaseResp()) {
           mergeBaseResp(other.getBaseResp());
+        }
+        if (other.getLivePlanId() != 0L) {
+          setLivePlanId(other.getLivePlanId());
+        }
+        if (!other.getLivePlanName().isEmpty()) {
+          livePlanName_ = other.livePlanName_;
+          onChanged();
+        }
+        if (!other.getDescription().isEmpty()) {
+          description_ = other.description_;
+          onChanged();
+        }
+        if (other.getShopId() != 0L) {
+          setShopId(other.getShopId());
         }
         if (livePlanProductBuilder_ == null) {
           if (!other.livePlanProduct_.isEmpty()) {
@@ -5425,6 +5653,220 @@ public final class LivePlanOuterClass {
         return baseRespBuilder_;
       }
 
+      private long livePlanId_ ;
+      /**
+       * <code>int64 live_plan_id = 2;</code>
+       * @return The livePlanId.
+       */
+      @java.lang.Override
+      public long getLivePlanId() {
+        return livePlanId_;
+      }
+      /**
+       * <code>int64 live_plan_id = 2;</code>
+       * @param value The livePlanId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLivePlanId(long value) {
+        
+        livePlanId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 live_plan_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLivePlanId() {
+        
+        livePlanId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object livePlanName_ = "";
+      /**
+       * <code>string live_plan_name = 3;</code>
+       * @return The livePlanName.
+       */
+      public java.lang.String getLivePlanName() {
+        java.lang.Object ref = livePlanName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          livePlanName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string live_plan_name = 3;</code>
+       * @return The bytes for livePlanName.
+       */
+      public com.google.protobuf.ByteString
+          getLivePlanNameBytes() {
+        java.lang.Object ref = livePlanName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          livePlanName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string live_plan_name = 3;</code>
+       * @param value The livePlanName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLivePlanName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        livePlanName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string live_plan_name = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLivePlanName() {
+        
+        livePlanName_ = getDefaultInstance().getLivePlanName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string live_plan_name = 3;</code>
+       * @param value The bytes for livePlanName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLivePlanNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        livePlanName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object description_ = "";
+      /**
+       * <code>string description = 4;</code>
+       * @return The description.
+       */
+      public java.lang.String getDescription() {
+        java.lang.Object ref = description_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          description_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string description = 4;</code>
+       * @return The bytes for description.
+       */
+      public com.google.protobuf.ByteString
+          getDescriptionBytes() {
+        java.lang.Object ref = description_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          description_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string description = 4;</code>
+       * @param value The description to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescription(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        description_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string description = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDescription() {
+        
+        description_ = getDefaultInstance().getDescription();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string description = 4;</code>
+       * @param value The bytes for description to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescriptionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        description_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long shopId_ ;
+      /**
+       * <code>int64 shop_id = 5;</code>
+       * @return The shopId.
+       */
+      @java.lang.Override
+      public long getShopId() {
+        return shopId_;
+      }
+      /**
+       * <code>int64 shop_id = 5;</code>
+       * @param value The shopId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setShopId(long value) {
+        
+        shopId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 shop_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearShopId() {
+        
+        shopId_ = 0L;
+        onChanged();
+        return this;
+      }
+
       private java.util.List<glory_api.LivePlanOuterClass.PlanProduct> livePlanProduct_ =
         java.util.Collections.emptyList();
       private void ensureLivePlanProductIsMutable() {
@@ -5438,7 +5880,7 @@ public final class LivePlanOuterClass {
           glory_api.LivePlanOuterClass.PlanProduct, glory_api.LivePlanOuterClass.PlanProduct.Builder, glory_api.LivePlanOuterClass.PlanProductOrBuilder> livePlanProductBuilder_;
 
       /**
-       * <code>repeated .glory_api.PlanProduct live_plan_product = 2;</code>
+       * <code>repeated .glory_api.PlanProduct live_plan_product = 6;</code>
        */
       public java.util.List<glory_api.LivePlanOuterClass.PlanProduct> getLivePlanProductList() {
         if (livePlanProductBuilder_ == null) {
@@ -5448,7 +5890,7 @@ public final class LivePlanOuterClass {
         }
       }
       /**
-       * <code>repeated .glory_api.PlanProduct live_plan_product = 2;</code>
+       * <code>repeated .glory_api.PlanProduct live_plan_product = 6;</code>
        */
       public int getLivePlanProductCount() {
         if (livePlanProductBuilder_ == null) {
@@ -5458,7 +5900,7 @@ public final class LivePlanOuterClass {
         }
       }
       /**
-       * <code>repeated .glory_api.PlanProduct live_plan_product = 2;</code>
+       * <code>repeated .glory_api.PlanProduct live_plan_product = 6;</code>
        */
       public glory_api.LivePlanOuterClass.PlanProduct getLivePlanProduct(int index) {
         if (livePlanProductBuilder_ == null) {
@@ -5468,7 +5910,7 @@ public final class LivePlanOuterClass {
         }
       }
       /**
-       * <code>repeated .glory_api.PlanProduct live_plan_product = 2;</code>
+       * <code>repeated .glory_api.PlanProduct live_plan_product = 6;</code>
        */
       public Builder setLivePlanProduct(
           int index, glory_api.LivePlanOuterClass.PlanProduct value) {
@@ -5485,7 +5927,7 @@ public final class LivePlanOuterClass {
         return this;
       }
       /**
-       * <code>repeated .glory_api.PlanProduct live_plan_product = 2;</code>
+       * <code>repeated .glory_api.PlanProduct live_plan_product = 6;</code>
        */
       public Builder setLivePlanProduct(
           int index, glory_api.LivePlanOuterClass.PlanProduct.Builder builderForValue) {
@@ -5499,7 +5941,7 @@ public final class LivePlanOuterClass {
         return this;
       }
       /**
-       * <code>repeated .glory_api.PlanProduct live_plan_product = 2;</code>
+       * <code>repeated .glory_api.PlanProduct live_plan_product = 6;</code>
        */
       public Builder addLivePlanProduct(glory_api.LivePlanOuterClass.PlanProduct value) {
         if (livePlanProductBuilder_ == null) {
@@ -5515,7 +5957,7 @@ public final class LivePlanOuterClass {
         return this;
       }
       /**
-       * <code>repeated .glory_api.PlanProduct live_plan_product = 2;</code>
+       * <code>repeated .glory_api.PlanProduct live_plan_product = 6;</code>
        */
       public Builder addLivePlanProduct(
           int index, glory_api.LivePlanOuterClass.PlanProduct value) {
@@ -5532,7 +5974,7 @@ public final class LivePlanOuterClass {
         return this;
       }
       /**
-       * <code>repeated .glory_api.PlanProduct live_plan_product = 2;</code>
+       * <code>repeated .glory_api.PlanProduct live_plan_product = 6;</code>
        */
       public Builder addLivePlanProduct(
           glory_api.LivePlanOuterClass.PlanProduct.Builder builderForValue) {
@@ -5546,7 +5988,7 @@ public final class LivePlanOuterClass {
         return this;
       }
       /**
-       * <code>repeated .glory_api.PlanProduct live_plan_product = 2;</code>
+       * <code>repeated .glory_api.PlanProduct live_plan_product = 6;</code>
        */
       public Builder addLivePlanProduct(
           int index, glory_api.LivePlanOuterClass.PlanProduct.Builder builderForValue) {
@@ -5560,7 +6002,7 @@ public final class LivePlanOuterClass {
         return this;
       }
       /**
-       * <code>repeated .glory_api.PlanProduct live_plan_product = 2;</code>
+       * <code>repeated .glory_api.PlanProduct live_plan_product = 6;</code>
        */
       public Builder addAllLivePlanProduct(
           java.lang.Iterable<? extends glory_api.LivePlanOuterClass.PlanProduct> values) {
@@ -5575,7 +6017,7 @@ public final class LivePlanOuterClass {
         return this;
       }
       /**
-       * <code>repeated .glory_api.PlanProduct live_plan_product = 2;</code>
+       * <code>repeated .glory_api.PlanProduct live_plan_product = 6;</code>
        */
       public Builder clearLivePlanProduct() {
         if (livePlanProductBuilder_ == null) {
@@ -5588,7 +6030,7 @@ public final class LivePlanOuterClass {
         return this;
       }
       /**
-       * <code>repeated .glory_api.PlanProduct live_plan_product = 2;</code>
+       * <code>repeated .glory_api.PlanProduct live_plan_product = 6;</code>
        */
       public Builder removeLivePlanProduct(int index) {
         if (livePlanProductBuilder_ == null) {
@@ -5601,14 +6043,14 @@ public final class LivePlanOuterClass {
         return this;
       }
       /**
-       * <code>repeated .glory_api.PlanProduct live_plan_product = 2;</code>
+       * <code>repeated .glory_api.PlanProduct live_plan_product = 6;</code>
        */
       public glory_api.LivePlanOuterClass.PlanProduct.Builder getLivePlanProductBuilder(
           int index) {
         return getLivePlanProductFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .glory_api.PlanProduct live_plan_product = 2;</code>
+       * <code>repeated .glory_api.PlanProduct live_plan_product = 6;</code>
        */
       public glory_api.LivePlanOuterClass.PlanProductOrBuilder getLivePlanProductOrBuilder(
           int index) {
@@ -5618,7 +6060,7 @@ public final class LivePlanOuterClass {
         }
       }
       /**
-       * <code>repeated .glory_api.PlanProduct live_plan_product = 2;</code>
+       * <code>repeated .glory_api.PlanProduct live_plan_product = 6;</code>
        */
       public java.util.List<? extends glory_api.LivePlanOuterClass.PlanProductOrBuilder> 
            getLivePlanProductOrBuilderList() {
@@ -5629,14 +6071,14 @@ public final class LivePlanOuterClass {
         }
       }
       /**
-       * <code>repeated .glory_api.PlanProduct live_plan_product = 2;</code>
+       * <code>repeated .glory_api.PlanProduct live_plan_product = 6;</code>
        */
       public glory_api.LivePlanOuterClass.PlanProduct.Builder addLivePlanProductBuilder() {
         return getLivePlanProductFieldBuilder().addBuilder(
             glory_api.LivePlanOuterClass.PlanProduct.getDefaultInstance());
       }
       /**
-       * <code>repeated .glory_api.PlanProduct live_plan_product = 2;</code>
+       * <code>repeated .glory_api.PlanProduct live_plan_product = 6;</code>
        */
       public glory_api.LivePlanOuterClass.PlanProduct.Builder addLivePlanProductBuilder(
           int index) {
@@ -5644,7 +6086,7 @@ public final class LivePlanOuterClass {
             index, glory_api.LivePlanOuterClass.PlanProduct.getDefaultInstance());
       }
       /**
-       * <code>repeated .glory_api.PlanProduct live_plan_product = 2;</code>
+       * <code>repeated .glory_api.PlanProduct live_plan_product = 6;</code>
        */
       public java.util.List<glory_api.LivePlanOuterClass.PlanProduct.Builder> 
            getLivePlanProductBuilderList() {
@@ -33680,107 +34122,109 @@ public final class LivePlanOuterClass {
       "\030\003 \001(\t\022\025\n\rproduct_price\030\004 \001(\001\022\031\n\021product" +
       "_remaining\030\005 \001(\003\"S\n\022GetLivePlanRequest\022\'" +
       "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\022" +
-      "\024\n\014live_plan_id\030\002 \001(\003\"o\n\023GetLivePlanResp" +
-      "onse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespo" +
-      "nse\0221\n\021live_plan_product\030\002 \003(\0132\026.glory_a" +
-      "pi.PlanProduct\"\203\001\n\025UpdateLivePlanRequest" +
-      "\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReques" +
-      "t\022\024\n\014live_plan_id\030\002 \001(\003\022\026\n\016live_plan_nam" +
-      "e\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\"?\n\026UpdateLi" +
-      "vePlanResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
-      ".BaseResponse\"|\n\023ListLivePlanRequest\022\'\n\014" +
-      "base_request\030\001 \001(\0132\021.base.BaseRequest\022\017\n" +
-      "\007shop_id\030\002 \001(\003\022+\n\npagination\030d \001(\0132\027.bas" +
-      "e.PaginationRequest\"\223\001\n\024ListLivePlanResp" +
-      "onse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespo" +
-      "nse\022&\n\tlive_plan\030\002 \003(\0132\023.glory_api.LiveP" +
-      "lan\022,\n\npagination\030d \001(\0132\030.base.Paginatio" +
-      "nResponse\"V\n\025DeleteLivePlanRequest\022\'\n\014ba" +
-      "se_request\030\001 \001(\0132\021.base.BaseRequest\022\024\n\014l" +
-      "ive_plan_id\030\002 \001(\003\"?\n\026DeleteLivePlanRespo" +
-      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
-      "se\"\225\001\n\017LivePlanProduct\022\034\n\024live_plan_prod" +
-      "uct_id\030\001 \001(\003\022\024\n\014live_plan_id\030\002 \001(\003\022\022\n\npr" +
-      "oduct_id\030\003 \001(\003\022\035\n\025product_selling_point\030" +
-      "\004 \001(\t\022\033\n\023product_description\030\005 \001(\t\"~\n\034Cr" +
-      "eateLivePlanProductRequest\022\'\n\014base_reque" +
-      "st\030\001 \001(\0132\021.base.BaseRequest\0225\n\021live_plan" +
-      "_product\030\002 \001(\0132\032.glory_api.LivePlanProdu" +
-      "ct\"d\n\035CreateLivePlanProductResponse\022%\n\tb" +
-      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\022\034\n\024li" +
-      "ve_plan_product_id\030\002 \001(\003\"\241\001\n\034UpdateLiveP" +
-      "lanProductRequest\022\'\n\014base_request\030\001 \001(\0132" +
-      "\021.base.BaseRequest\022\034\n\024live_plan_product_" +
-      "id\030\002 \001(\003\022\035\n\025product_selling_point\030\003 \001(\t\022" +
-      "\033\n\023product_description\030\004 \001(\t\"F\n\035UpdateLi" +
-      "vePlanProductResponse\022%\n\tbase_resp\030\001 \001(\013" +
-      "2\022.base.BaseResponse\"\210\001\n\032ListLivePlanPro" +
-      "ductRequest\022\'\n\014base_request\030\001 \001(\0132\021.base" +
-      ".BaseRequest\022\024\n\014live_plan_id\030\002 \001(\003\022+\n\npa" +
-      "gination\030d \001(\0132\027.base.PaginationRequest\"" +
-      "\251\001\n\033ListLivePlanProductResponse\022%\n\tbase_" +
-      "resp\030\001 \001(\0132\022.base.BaseResponse\0225\n\021live_p" +
-      "lan_product\030\002 \003(\0132\032.glory_api.LivePlanPr" +
-      "oduct\022,\n\npagination\030d \001(\0132\030.base.Paginat" +
-      "ionResponse\"e\n\034DeleteLivePlanProductRequ" +
-      "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
-      "uest\022\034\n\024live_plan_product_id\030\002 \001(\003\"F\n\035De" +
-      "leteLivePlanProductResponse\022%\n\tbase_resp" +
-      "\030\001 \001(\0132\022.base.BaseResponse\"\200\001\n\032LoadLiveP" +
-      "lanProductRequest\022\'\n\014base_request\030\001 \001(\0132" +
-      "\021.base.BaseRequest\022\017\n\007shop_id\030\002 \001(\003\022\024\n\014l" +
-      "ive_plan_id\030\003 \001(\003\022\022\n\nis_playing\030\004 \001(\010\"D\n" +
-      "\033LoadLivePlanProductResponse\022%\n\tbase_res" +
-      "p\030\001 \001(\0132\022.base.BaseResponse\"\252\001\n\036CreateLi" +
-      "veProductStatusRequest\022\'\n\014base_request\030\001" +
+      "\024\n\014live_plan_id\030\002 \001(\003\"\303\001\n\023GetLivePlanRes" +
+      "ponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResp" +
+      "onse\022\024\n\014live_plan_id\030\002 \001(\003\022\026\n\016live_plan_" +
+      "name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007shop_" +
+      "id\030\005 \001(\003\0221\n\021live_plan_product\030\006 \003(\0132\026.gl" +
+      "ory_api.PlanProduct\"\203\001\n\025UpdateLivePlanRe" +
+      "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
+      "equest\022\024\n\014live_plan_id\030\002 \001(\003\022\026\n\016live_pla" +
+      "n_name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\"?\n\026Upd" +
+      "ateLivePlanResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
+      ".base.BaseResponse\"|\n\023ListLivePlanReques" +
+      "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
+      "st\022\017\n\007shop_id\030\002 \001(\003\022+\n\npagination\030d \001(\0132" +
+      "\027.base.PaginationRequest\"\223\001\n\024ListLivePla" +
+      "nResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Base" +
+      "Response\022&\n\tlive_plan\030\002 \003(\0132\023.glory_api." +
+      "LivePlan\022,\n\npagination\030d \001(\0132\030.base.Pagi" +
+      "nationResponse\"V\n\025DeleteLivePlanRequest\022" +
+      "\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequest" +
+      "\022\024\n\014live_plan_id\030\002 \001(\003\"?\n\026DeleteLivePlan" +
+      "Response\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseR" +
+      "esponse\"\225\001\n\017LivePlanProduct\022\034\n\024live_plan" +
+      "_product_id\030\001 \001(\003\022\024\n\014live_plan_id\030\002 \001(\003\022" +
+      "\022\n\nproduct_id\030\003 \001(\003\022\035\n\025product_selling_p" +
+      "oint\030\004 \001(\t\022\033\n\023product_description\030\005 \001(\t\"" +
+      "~\n\034CreateLivePlanProductRequest\022\'\n\014base_" +
+      "request\030\001 \001(\0132\021.base.BaseRequest\0225\n\021live" +
+      "_plan_product\030\002 \001(\0132\032.glory_api.LivePlan" +
+      "Product\"d\n\035CreateLivePlanProductResponse" +
+      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022" +
+      "\034\n\024live_plan_product_id\030\002 \001(\003\"\241\001\n\034Update" +
+      "LivePlanProductRequest\022\'\n\014base_request\030\001" +
+      " \001(\0132\021.base.BaseRequest\022\034\n\024live_plan_pro" +
+      "duct_id\030\002 \001(\003\022\035\n\025product_selling_point\030\003" +
+      " \001(\t\022\033\n\023product_description\030\004 \001(\t\"F\n\035Upd" +
+      "ateLivePlanProductResponse\022%\n\tbase_resp\030" +
+      "\001 \001(\0132\022.base.BaseResponse\"\210\001\n\032ListLivePl" +
+      "anProductRequest\022\'\n\014base_request\030\001 \001(\0132\021" +
+      ".base.BaseRequest\022\024\n\014live_plan_id\030\002 \001(\003\022" +
+      "+\n\npagination\030d \001(\0132\027.base.PaginationReq" +
+      "uest\"\251\001\n\033ListLivePlanProductResponse\022%\n\t" +
+      "base_resp\030\001 \001(\0132\022.base.BaseResponse\0225\n\021l" +
+      "ive_plan_product\030\002 \003(\0132\032.glory_api.LiveP" +
+      "lanProduct\022,\n\npagination\030d \001(\0132\030.base.Pa" +
+      "ginationResponse\"e\n\034DeleteLivePlanProduc" +
+      "tRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
+      "seRequest\022\034\n\024live_plan_product_id\030\002 \001(\003\"" +
+      "F\n\035DeleteLivePlanProductResponse\022%\n\tbase" +
+      "_resp\030\001 \001(\0132\022.base.BaseResponse\"\200\001\n\032Load" +
+      "LivePlanProductRequest\022\'\n\014base_request\030\001" +
       " \001(\0132\021.base.BaseRequest\022\017\n\007shop_id\030\002 \001(\003" +
-      "\022\022\n\nproduct_id\030\003 \001(\003\022\035\n\025product_selling_" +
-      "point\030\004 \001(\t\022\033\n\023product_description\030\005 \001(\t" +
-      "\"h\n\037CreateLiveProductStatusResponse\022%\n\tb" +
-      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\022\036\n\026li" +
-      "ve_product_status_id\030\002 \001(\003\"y\n\036UpdateLive" +
-      "ProductStatusRequest\022\'\n\014base_request\030\001 \001" +
-      "(\0132\021.base.BaseRequest\022\036\n\026live_product_st" +
-      "atus_id\030\002 \003(\003\022\016\n\006status\030\003 \001(\t\"H\n\037UpdateL" +
-      "iveProductStatusResponse\022%\n\tbase_resp\030\001 " +
-      "\001(\0132\022.base.BaseResponse\"\332\001\n\021LiveProductS" +
-      "tatus\022\036\n\026live_product_status_id\030\001 \001(\003\022\022\n" +
-      "\nproduct_id\030\002 \001(\003\022\016\n\006status\030\003 \001(\t\022\017\n\007sho" +
-      "p_id\030\004 \001(\003\022\017\n\007room_id\030\005 \001(\003\022\035\n\025product_s" +
-      "elling_point\030\006 \001(\t\022\033\n\023product_descriptio" +
-      "n\030\007 \001(\t\022\024\n\014is_introduct\030\010 \001(\010\022\r\n\005state\030\t" +
-      " \001(\t\"\246\001\n\034ListLiveProductStatusRequest\022\'\n" +
-      "\014base_request\030\001 \001(\0132\021.base.BaseRequest\022\017" +
-      "\n\007shop_id\030\002 \001(\003\022\017\n\007room_id\030\003 \001(\003\022\016\n\006stat" +
-      "us\030\004 \001(\t\022+\n\npagination\030d \001(\0132\027.base.Pagi" +
-      "nationRequest\"\257\001\n\035ListLiveProductStatusR" +
-      "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
-      "sponse\0229\n\023live_product_status\030\002 \003(\0132\034.gl" +
-      "ory_api.LiveProductStatus\022,\n\npagination\030" +
-      "d \001(\0132\030.base.PaginationResponse\"i\n\036Delet" +
+      "\022\024\n\014live_plan_id\030\003 \001(\003\022\022\n\nis_playing\030\004 \001" +
+      "(\010\"D\n\033LoadLivePlanProductResponse\022%\n\tbas" +
+      "e_resp\030\001 \001(\0132\022.base.BaseResponse\"\252\001\n\036Cre" +
+      "ateLiveProductStatusRequest\022\'\n\014base_requ" +
+      "est\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007shop_id\030" +
+      "\002 \001(\003\022\022\n\nproduct_id\030\003 \001(\003\022\035\n\025product_sel" +
+      "ling_point\030\004 \001(\t\022\033\n\023product_description\030" +
+      "\005 \001(\t\"h\n\037CreateLiveProductStatusResponse" +
+      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022" +
+      "\036\n\026live_product_status_id\030\002 \001(\003\"y\n\036Updat" +
       "eLiveProductStatusRequest\022\'\n\014base_reques" +
       "t\030\001 \001(\0132\021.base.BaseRequest\022\036\n\026live_produ" +
-      "ct_status_id\030\002 \001(\003\"H\n\037DeleteLiveProductS" +
-      "tatusResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
-      "BaseResponse\"Y\n\035GetLivingProductStatusRe" +
-      "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
-      "equest\022\017\n\007room_id\030\002 \001(\003\"\313\001\n\036GetLivingPro" +
+      "ct_status_id\030\002 \003(\003\022\016\n\006status\030\003 \001(\t\"H\n\037Up" +
+      "dateLiveProductStatusResponse\022%\n\tbase_re" +
+      "sp\030\001 \001(\0132\022.base.BaseResponse\"\332\001\n\021LivePro" +
+      "ductStatus\022\036\n\026live_product_status_id\030\001 \001" +
+      "(\003\022\022\n\nproduct_id\030\002 \001(\003\022\016\n\006status\030\003 \001(\t\022\017" +
+      "\n\007shop_id\030\004 \001(\003\022\017\n\007room_id\030\005 \001(\003\022\035\n\025prod" +
+      "uct_selling_point\030\006 \001(\t\022\033\n\023product_descr" +
+      "iption\030\007 \001(\t\022\024\n\014is_introduct\030\010 \001(\010\022\r\n\005st" +
+      "ate\030\t \001(\t\"\246\001\n\034ListLiveProductStatusReque" +
+      "st\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequ" +
+      "est\022\017\n\007shop_id\030\002 \001(\003\022\017\n\007room_id\030\003 \001(\003\022\016\n" +
+      "\006status\030\004 \001(\t\022+\n\npagination\030d \001(\0132\027.base" +
+      ".PaginationRequest\"\257\001\n\035ListLiveProductSt" +
+      "atusResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.B" +
+      "aseResponse\0229\n\023live_product_status\030\002 \003(\013" +
+      "2\034.glory_api.LiveProductStatus\022,\n\npagina" +
+      "tion\030d \001(\0132\030.base.PaginationResponse\"i\n\036" +
+      "DeleteLiveProductStatusRequest\022\'\n\014base_r" +
+      "equest\030\001 \001(\0132\021.base.BaseRequest\022\036\n\026live_" +
+      "product_status_id\030\002 \001(\003\"H\n\037DeleteLivePro" +
       "ductStatusResponse\022%\n\tbase_resp\030\001 \001(\0132\022." +
-      "base.BaseResponse\022\022\n\nproduct_id\030\002 \001(\003\022\024\n" +
-      "\014product_name\030\003 \001(\t\022\025\n\rproduct_price\030\004 \001" +
-      "(\001\022\025\n\rproduct_count\030\005 \001(\005\022\027\n\017live_room_o" +
-      "rder\030\006 \001(\005\022\021\n\tplayed_at\030\007 \001(\t\"s\n\021LiveRec" +
-      "ordRequest\022\'\n\014base_request\030\001 \001(\0132\021.base." +
-      "BaseRequest\022\016\n\006action\030\002 \001(\t\022\020\n\010app_name\030" +
-      "\003 \001(\t\022\023\n\013stream_name\030\004 \001(\t\";\n\022LiveRecord" +
-      "Response\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseR" +
-      "esponse\"\223\001\n\'UpdateLiveProductIntroductSt" +
-      "atusRequest\022\'\n\014base_request\030\001 \001(\0132\021.base" +
-      ".BaseRequest\022\017\n\007room_id\030\002 \001(\003\022\036\n\026live_pr" +
-      "oduct_status_id\030\003 \001(\003\022\016\n\006action\030\004 \001(\t\"Q\n" +
-      "(UpdateLiveProductIntroductStatusRespons" +
-      "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
-      "b\006proto3"
+      "base.BaseResponse\"Y\n\035GetLivingProductSta" +
+      "tusRequest\022\'\n\014base_request\030\001 \001(\0132\021.base." +
+      "BaseRequest\022\017\n\007room_id\030\002 \001(\003\"\313\001\n\036GetLivi" +
+      "ngProductStatusResponse\022%\n\tbase_resp\030\001 \001" +
+      "(\0132\022.base.BaseResponse\022\022\n\nproduct_id\030\002 \001" +
+      "(\003\022\024\n\014product_name\030\003 \001(\t\022\025\n\rproduct_pric" +
+      "e\030\004 \001(\001\022\025\n\rproduct_count\030\005 \001(\005\022\027\n\017live_r" +
+      "oom_order\030\006 \001(\005\022\021\n\tplayed_at\030\007 \001(\t\"s\n\021Li" +
+      "veRecordRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
+      "base.BaseRequest\022\016\n\006action\030\002 \001(\t\022\020\n\010app_" +
+      "name\030\003 \001(\t\022\023\n\013stream_name\030\004 \001(\t\";\n\022LiveR" +
+      "ecordResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
+      "BaseResponse\"\223\001\n\'UpdateLiveProductIntrod" +
+      "uctStatusRequest\022\'\n\014base_request\030\001 \001(\0132\021" +
+      ".base.BaseRequest\022\017\n\007room_id\030\002 \001(\003\022\036\n\026li" +
+      "ve_product_status_id\030\003 \001(\003\022\016\n\006action\030\004 \001" +
+      "(\t\"Q\n(UpdateLiveProductIntroductStatusRe" +
+      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
+      "ponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -33822,7 +34266,7 @@ public final class LivePlanOuterClass {
     internal_static_glory_api_GetLivePlanResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetLivePlanResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "LivePlanProduct", });
+        new java.lang.String[] { "BaseResp", "LivePlanId", "LivePlanName", "Description", "ShopId", "LivePlanProduct", });
     internal_static_glory_api_UpdateLivePlanRequest_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_glory_api_UpdateLivePlanRequest_fieldAccessorTable = new

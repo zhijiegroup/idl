@@ -41,6 +41,10 @@ export interface GetLivePlanRequest {
 
 export interface GetLivePlanResponse {
   base_resp?: base.BaseResponse;
+  live_plan_id?: string;
+  live_plan_name?: string;
+  description?: string;
+  shop_id?: string;
   live_plan_product?: Array<PlanProduct>;
 }
 

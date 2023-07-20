@@ -155,6 +155,14 @@ struct GloryApi_GetLivePlanResponse {
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
+  var livePlanID: Int64 = 0
+
+  var livePlanName: String = String()
+
+  var description_p: String = String()
+
+  var shopID: Int64 = 0
+
   var livePlanProduct: [GloryApi_PlanProduct] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -1300,7 +1308,11 @@ extension GloryApi_GetLivePlanResponse: SwiftProtobuf.Message, SwiftProtobuf._Me
   static let protoMessageName: String = _protobuf_package + ".GetLivePlanResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
-    2: .standard(proto: "live_plan_product"),
+    2: .standard(proto: "live_plan_id"),
+    3: .standard(proto: "live_plan_name"),
+    4: .same(proto: "description"),
+    5: .standard(proto: "shop_id"),
+    6: .standard(proto: "live_plan_product"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1310,7 +1322,11 @@ extension GloryApi_GetLivePlanResponse: SwiftProtobuf.Message, SwiftProtobuf._Me
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
-      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.livePlanProduct) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.livePlanID) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.livePlanName) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.description_p) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
+      case 6: try { try decoder.decodeRepeatedMessageField(value: &self.livePlanProduct) }()
       default: break
       }
     }
@@ -1324,14 +1340,30 @@ extension GloryApi_GetLivePlanResponse: SwiftProtobuf.Message, SwiftProtobuf._Me
     try { if let v = self._baseResp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
+    if self.livePlanID != 0 {
+      try visitor.visitSingularInt64Field(value: self.livePlanID, fieldNumber: 2)
+    }
+    if !self.livePlanName.isEmpty {
+      try visitor.visitSingularStringField(value: self.livePlanName, fieldNumber: 3)
+    }
+    if !self.description_p.isEmpty {
+      try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 4)
+    }
+    if self.shopID != 0 {
+      try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 5)
+    }
     if !self.livePlanProduct.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.livePlanProduct, fieldNumber: 2)
+      try visitor.visitRepeatedMessageField(value: self.livePlanProduct, fieldNumber: 6)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_GetLivePlanResponse, rhs: GloryApi_GetLivePlanResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.livePlanID != rhs.livePlanID {return false}
+    if lhs.livePlanName != rhs.livePlanName {return false}
+    if lhs.description_p != rhs.description_p {return false}
+    if lhs.shopID != rhs.shopID {return false}
     if lhs.livePlanProduct != rhs.livePlanProduct {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
