@@ -950,6 +950,12 @@ export class glory_api {
     );
   }
 
+  GetLivePlan(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/live/get_live_plan${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
   UpdateLivePlan(request) {
     const uri = `${this.uriPrefix}/api/live/update_live_plan`;
     const body = JSONbigint.stringify(request);

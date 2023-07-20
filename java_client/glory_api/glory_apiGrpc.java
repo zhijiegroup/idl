@@ -3580,6 +3580,37 @@ public final class glory_apiGrpc {
     return getCreateLivePlanMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<glory_api.LivePlanOuterClass.GetLivePlanRequest,
+      glory_api.LivePlanOuterClass.GetLivePlanResponse> getGetLivePlanMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetLivePlan",
+      requestType = glory_api.LivePlanOuterClass.GetLivePlanRequest.class,
+      responseType = glory_api.LivePlanOuterClass.GetLivePlanResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<glory_api.LivePlanOuterClass.GetLivePlanRequest,
+      glory_api.LivePlanOuterClass.GetLivePlanResponse> getGetLivePlanMethod() {
+    io.grpc.MethodDescriptor<glory_api.LivePlanOuterClass.GetLivePlanRequest, glory_api.LivePlanOuterClass.GetLivePlanResponse> getGetLivePlanMethod;
+    if ((getGetLivePlanMethod = glory_apiGrpc.getGetLivePlanMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGetLivePlanMethod = glory_apiGrpc.getGetLivePlanMethod) == null) {
+          glory_apiGrpc.getGetLivePlanMethod = getGetLivePlanMethod =
+              io.grpc.MethodDescriptor.<glory_api.LivePlanOuterClass.GetLivePlanRequest, glory_api.LivePlanOuterClass.GetLivePlanResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetLivePlan"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.LivePlanOuterClass.GetLivePlanRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.LivePlanOuterClass.GetLivePlanResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetLivePlan"))
+              .build();
+        }
+      }
+    }
+    return getGetLivePlanMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<glory_api.LivePlanOuterClass.UpdateLivePlanRequest,
       glory_api.LivePlanOuterClass.UpdateLivePlanResponse> getUpdateLivePlanMethod;
 
@@ -5280,6 +5311,13 @@ public final class glory_apiGrpc {
 
     /**
      */
+    default void getLivePlan(glory_api.LivePlanOuterClass.GetLivePlanRequest request,
+        io.grpc.stub.StreamObserver<glory_api.LivePlanOuterClass.GetLivePlanResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetLivePlanMethod(), responseObserver);
+    }
+
+    /**
+     */
     default void updateLivePlan(glory_api.LivePlanOuterClass.UpdateLivePlanRequest request,
         io.grpc.stub.StreamObserver<glory_api.LivePlanOuterClass.UpdateLivePlanResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateLivePlanMethod(), responseObserver);
@@ -6486,6 +6524,14 @@ public final class glory_apiGrpc {
 
     /**
      */
+    public void getLivePlan(glory_api.LivePlanOuterClass.GetLivePlanRequest request,
+        io.grpc.stub.StreamObserver<glory_api.LivePlanOuterClass.GetLivePlanResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetLivePlanMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
     public void updateLivePlan(glory_api.LivePlanOuterClass.UpdateLivePlanRequest request,
         io.grpc.stub.StreamObserver<glory_api.LivePlanOuterClass.UpdateLivePlanResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -7587,6 +7633,13 @@ public final class glory_apiGrpc {
     public glory_api.LivePlanOuterClass.CreateLivePlanResponse createLivePlan(glory_api.LivePlanOuterClass.CreateLivePlanRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateLivePlanMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public glory_api.LivePlanOuterClass.GetLivePlanResponse getLivePlan(glory_api.LivePlanOuterClass.GetLivePlanRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetLivePlanMethod(), getCallOptions(), request);
     }
 
     /**
@@ -8786,6 +8839,14 @@ public final class glory_apiGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<glory_api.LivePlanOuterClass.GetLivePlanResponse> getLivePlan(
+        glory_api.LivePlanOuterClass.GetLivePlanRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetLivePlanMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<glory_api.LivePlanOuterClass.UpdateLivePlanResponse> updateLivePlan(
         glory_api.LivePlanOuterClass.UpdateLivePlanRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -9113,31 +9174,32 @@ public final class glory_apiGrpc {
   private static final int METHODID_USER_EXIT_ROOM = 112;
   private static final int METHODID_LIST_ACTIVE_ROOM_USER = 113;
   private static final int METHODID_CREATE_LIVE_PLAN = 114;
-  private static final int METHODID_UPDATE_LIVE_PLAN = 115;
-  private static final int METHODID_LIST_LIVE_PLAN = 116;
-  private static final int METHODID_DELETE_LIVE_PLAN = 117;
-  private static final int METHODID_CREATE_LIVE_PLAN_PRODUCT = 118;
-  private static final int METHODID_UPDATE_LIVE_PLAN_PRODUCT = 119;
-  private static final int METHODID_LIST_LIVE_PLAN_PRODUCT = 120;
-  private static final int METHODID_DELETE_LIVE_PLAN_PRODUCT = 121;
-  private static final int METHODID_LOAD_LIVE_PLAN_PRODUCT = 122;
-  private static final int METHODID_UPDATE_LIVE_PRODUCT_STATUS = 123;
-  private static final int METHODID_LIST_LIVE_PRODUCT_STATUS = 124;
-  private static final int METHODID_DELETE_LIVE_PRODUCT_STATUS = 125;
-  private static final int METHODID_CREATE_LIVE_PRODUCT_STATUS = 126;
-  private static final int METHODID_GET_LIVING_PRODUCT_STATUS = 127;
-  private static final int METHODID_UPDATE_LIVE_PRODUCT_INTRODUCT_STATUS = 128;
-  private static final int METHODID_CREATE_LIVE_TEXT = 129;
-  private static final int METHODID_UPDATE_LIVE_TEXT = 130;
-  private static final int METHODID_LIST_LIVE_TEXT = 131;
-  private static final int METHODID_GET_LIVE_TEXT = 132;
-  private static final int METHODID_DELETE_LIVE_TEXTS = 133;
-  private static final int METHODID_GET_LIVE_CHART_DATA = 134;
-  private static final int METHODID_CREATE_TENANT = 135;
-  private static final int METHODID_GET_TENANT = 136;
-  private static final int METHODID_UPDATE_TENANT = 137;
-  private static final int METHODID_DELETE_TENANT = 138;
-  private static final int METHODID_LIST_TENANT = 139;
+  private static final int METHODID_GET_LIVE_PLAN = 115;
+  private static final int METHODID_UPDATE_LIVE_PLAN = 116;
+  private static final int METHODID_LIST_LIVE_PLAN = 117;
+  private static final int METHODID_DELETE_LIVE_PLAN = 118;
+  private static final int METHODID_CREATE_LIVE_PLAN_PRODUCT = 119;
+  private static final int METHODID_UPDATE_LIVE_PLAN_PRODUCT = 120;
+  private static final int METHODID_LIST_LIVE_PLAN_PRODUCT = 121;
+  private static final int METHODID_DELETE_LIVE_PLAN_PRODUCT = 122;
+  private static final int METHODID_LOAD_LIVE_PLAN_PRODUCT = 123;
+  private static final int METHODID_UPDATE_LIVE_PRODUCT_STATUS = 124;
+  private static final int METHODID_LIST_LIVE_PRODUCT_STATUS = 125;
+  private static final int METHODID_DELETE_LIVE_PRODUCT_STATUS = 126;
+  private static final int METHODID_CREATE_LIVE_PRODUCT_STATUS = 127;
+  private static final int METHODID_GET_LIVING_PRODUCT_STATUS = 128;
+  private static final int METHODID_UPDATE_LIVE_PRODUCT_INTRODUCT_STATUS = 129;
+  private static final int METHODID_CREATE_LIVE_TEXT = 130;
+  private static final int METHODID_UPDATE_LIVE_TEXT = 131;
+  private static final int METHODID_LIST_LIVE_TEXT = 132;
+  private static final int METHODID_GET_LIVE_TEXT = 133;
+  private static final int METHODID_DELETE_LIVE_TEXTS = 134;
+  private static final int METHODID_GET_LIVE_CHART_DATA = 135;
+  private static final int METHODID_CREATE_TENANT = 136;
+  private static final int METHODID_GET_TENANT = 137;
+  private static final int METHODID_UPDATE_TENANT = 138;
+  private static final int METHODID_DELETE_TENANT = 139;
+  private static final int METHODID_LIST_TENANT = 140;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -9615,6 +9677,10 @@ public final class glory_apiGrpc {
         case METHODID_CREATE_LIVE_PLAN:
           serviceImpl.createLivePlan((glory_api.LivePlanOuterClass.CreateLivePlanRequest) request,
               (io.grpc.stub.StreamObserver<glory_api.LivePlanOuterClass.CreateLivePlanResponse>) responseObserver);
+          break;
+        case METHODID_GET_LIVE_PLAN:
+          serviceImpl.getLivePlan((glory_api.LivePlanOuterClass.GetLivePlanRequest) request,
+              (io.grpc.stub.StreamObserver<glory_api.LivePlanOuterClass.GetLivePlanResponse>) responseObserver);
           break;
         case METHODID_UPDATE_LIVE_PLAN:
           serviceImpl.updateLivePlan((glory_api.LivePlanOuterClass.UpdateLivePlanRequest) request,
@@ -10540,6 +10606,13 @@ public final class glory_apiGrpc {
               glory_api.LivePlanOuterClass.CreateLivePlanResponse>(
                 service, METHODID_CREATE_LIVE_PLAN)))
         .addMethod(
+          getGetLivePlanMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              glory_api.LivePlanOuterClass.GetLivePlanRequest,
+              glory_api.LivePlanOuterClass.GetLivePlanResponse>(
+                service, METHODID_GET_LIVE_PLAN)))
+        .addMethod(
           getUpdateLivePlanMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -10877,6 +10950,7 @@ public final class glory_apiGrpc {
               .addMethod(getUserExitRoomMethod())
               .addMethod(getListActiveRoomUserMethod())
               .addMethod(getCreateLivePlanMethod())
+              .addMethod(getGetLivePlanMethod())
               .addMethod(getUpdateLivePlanMethod())
               .addMethod(getListLivePlanMethod())
               .addMethod(getDeleteLivePlanMethod())

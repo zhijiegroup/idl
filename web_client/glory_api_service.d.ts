@@ -508,6 +508,10 @@ live plan crud */
     request: live_plan.CreateLivePlanRequest
   ): Promise<live_plan.CreateLivePlanResponse>;
 
+  GetLivePlan(
+    request: live_plan.GetLivePlanRequest
+  ): Promise<live_plan.GetLivePlanResponse>;
+
   UpdateLivePlan(
     request: live_plan.UpdateLivePlanRequest
   ): Promise<live_plan.UpdateLivePlanResponse>;
