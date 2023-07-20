@@ -14,10 +14,20 @@ message LivePlan {
 message CreateLivePlanRequest {
   base.BaseRequest base_request = 1;
   LivePlan live_plan =2;
+  repeated int64 product_id =100;
 }
 message CreateLivePlanResponse {
   base.BaseResponse base_resp = 1;
   int64 live_plan_id = 2;
+}
+
+message GetLivePlanRequest {
+  base.BaseRequest base_request = 1;
+  int64 live_plan_id =2;
+}
+message GetLivePlanResponse {
+  base.BaseResponse base_resp = 1;
+  LivePlan live_plan = 2;
 }
 
 
@@ -143,7 +153,8 @@ message LiveProductStatus {
   int64 room_id =5;
   string product_selling_point =6;
   string product_description =7;
-  bool is_introduct =8;
+  bool is_introduct =8; // 是否讲解中
+  string state =9; // 上架 下架状态
 }
 
 message ListLiveProductStatusRequest {
