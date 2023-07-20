@@ -21,13 +21,21 @@ message CreateLivePlanResponse {
   int64 live_plan_id = 2;
 }
 
+message PlanProduct {
+  string product_url =1;
+  string product_name = 2;
+  string currency = 3;
+  double product_price = 4;
+  int64 product_remaining = 5;
+}
+
 message GetLivePlanRequest {
   base.BaseRequest base_request = 1;
   int64 live_plan_id =2;
 }
 message GetLivePlanResponse {
   base.BaseResponse base_resp = 1;
-  LivePlan live_plan = 2;
+  repeated PlanProduct live_plan_product = 2;
 }
 
 
