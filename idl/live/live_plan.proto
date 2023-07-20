@@ -35,7 +35,11 @@ message GetLivePlanRequest {
 }
 message GetLivePlanResponse {
   base.BaseResponse base_resp = 1;
-  repeated PlanProduct live_plan_product = 2;
+  int64 live_plan_id = 2;
+  string live_plan_name =3; 
+  string description =4;
+  int64 shop_id =5; 
+  repeated PlanProduct live_plan_product = 6;
 }
 
 
