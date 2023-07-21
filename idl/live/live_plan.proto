@@ -27,6 +27,7 @@ message PlanProduct {
   string currency = 3;
   double sale_price = 4;
   int64 product_remaining = 5;
+  int64 product_id = 6;
 }
 
 message GetLivePlanRequest {
@@ -35,11 +36,8 @@ message GetLivePlanRequest {
 }
 message GetLivePlanResponse {
   base.BaseResponse base_resp = 1;
-  int64 live_plan_id = 2;
-  string live_plan_name =3; 
-  string description =4;
-  int64 shop_id =5; 
-  repeated PlanProduct live_plan_product = 6;
+  LivePlan live_plan = 2;
+  repeated PlanProduct live_plan_product = 3;
 }
 
 
@@ -48,6 +46,7 @@ message UpdateLivePlanRequest {
   int64 live_plan_id = 2; // 必传
   string live_plan_name =3;
   string description =4;  
+  repeated int64 product_id =5;
 }
 message UpdateLivePlanResponse {
   base.BaseResponse base_resp = 1;
