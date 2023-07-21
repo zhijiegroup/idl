@@ -32,6 +32,7 @@ export interface PlanProduct {
   currency?: string;
   sale_price?: number;
   product_remaining?: string;
+  product_id?: string;
 }
 
 export interface GetLivePlanRequest {
@@ -41,10 +42,7 @@ export interface GetLivePlanRequest {
 
 export interface GetLivePlanResponse {
   base_resp?: base.BaseResponse;
-  live_plan_id?: string;
-  live_plan_name?: string;
-  description?: string;
-  shop_id?: string;
+  live_plan?: LivePlan;
   live_plan_product?: Array<PlanProduct>;
 }
 
@@ -54,6 +52,7 @@ export interface UpdateLivePlanRequest {
   live_plan_id?: string;
   live_plan_name?: string;
   description?: string;
+  product_id?: Array<string>;
 }
 
 export interface UpdateLivePlanResponse {
