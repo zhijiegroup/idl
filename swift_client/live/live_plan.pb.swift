@@ -65,7 +65,7 @@ struct GloryApi_CreateLivePlanRequest {
   /// Clears the value of `livePlan`. Subsequent reads from it will return its default value.
   mutating func clearLivePlan() {self._livePlan = nil}
 
-  var productID: [Int64] = []
+  var livePlanProduct: [GloryApi_LivePlanProduct] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -197,7 +197,7 @@ struct GloryApi_UpdateLivePlanRequest {
 
   var description_p: String = String()
 
-  var productID: [Int64] = []
+  var livePlanProduct: [GloryApi_LivePlanProduct] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1127,7 +1127,7 @@ extension GloryApi_CreateLivePlanRequest: SwiftProtobuf.Message, SwiftProtobuf._
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
     2: .standard(proto: "live_plan"),
-    100: .standard(proto: "product_id"),
+    3: .standard(proto: "live_plan_product"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1138,7 +1138,7 @@ extension GloryApi_CreateLivePlanRequest: SwiftProtobuf.Message, SwiftProtobuf._
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularMessageField(value: &self._livePlan) }()
-      case 100: try { try decoder.decodeRepeatedInt64Field(value: &self.productID) }()
+      case 3: try { try decoder.decodeRepeatedMessageField(value: &self.livePlanProduct) }()
       default: break
       }
     }
@@ -1155,8 +1155,8 @@ extension GloryApi_CreateLivePlanRequest: SwiftProtobuf.Message, SwiftProtobuf._
     try { if let v = self._livePlan {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
     } }()
-    if !self.productID.isEmpty {
-      try visitor.visitPackedInt64Field(value: self.productID, fieldNumber: 100)
+    if !self.livePlanProduct.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.livePlanProduct, fieldNumber: 3)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1164,7 +1164,7 @@ extension GloryApi_CreateLivePlanRequest: SwiftProtobuf.Message, SwiftProtobuf._
   static func ==(lhs: GloryApi_CreateLivePlanRequest, rhs: GloryApi_CreateLivePlanRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs._livePlan != rhs._livePlan {return false}
-    if lhs.productID != rhs.productID {return false}
+    if lhs.livePlanProduct != rhs.livePlanProduct {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -1371,7 +1371,7 @@ extension GloryApi_UpdateLivePlanRequest: SwiftProtobuf.Message, SwiftProtobuf._
     2: .standard(proto: "live_plan_id"),
     3: .standard(proto: "live_plan_name"),
     4: .same(proto: "description"),
-    5: .standard(proto: "product_id"),
+    5: .standard(proto: "live_plan_product"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1384,7 +1384,7 @@ extension GloryApi_UpdateLivePlanRequest: SwiftProtobuf.Message, SwiftProtobuf._
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.livePlanID) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.livePlanName) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.description_p) }()
-      case 5: try { try decoder.decodeRepeatedInt64Field(value: &self.productID) }()
+      case 5: try { try decoder.decodeRepeatedMessageField(value: &self.livePlanProduct) }()
       default: break
       }
     }
@@ -1407,8 +1407,8 @@ extension GloryApi_UpdateLivePlanRequest: SwiftProtobuf.Message, SwiftProtobuf._
     if !self.description_p.isEmpty {
       try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 4)
     }
-    if !self.productID.isEmpty {
-      try visitor.visitPackedInt64Field(value: self.productID, fieldNumber: 5)
+    if !self.livePlanProduct.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.livePlanProduct, fieldNumber: 5)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1418,7 +1418,7 @@ extension GloryApi_UpdateLivePlanRequest: SwiftProtobuf.Message, SwiftProtobuf._
     if lhs.livePlanID != rhs.livePlanID {return false}
     if lhs.livePlanName != rhs.livePlanName {return false}
     if lhs.description_p != rhs.description_p {return false}
-    if lhs.productID != rhs.productID {return false}
+    if lhs.livePlanProduct != rhs.livePlanProduct {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
