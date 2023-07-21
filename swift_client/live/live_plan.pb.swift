@@ -109,7 +109,7 @@ struct GloryApi_PlanProduct {
 
   var currency: String = String()
 
-  var productPrice: Double = 0
+  var salePrice: Double = 0
 
   var productRemaining: Int64 = 0
 
@@ -1212,7 +1212,7 @@ extension GloryApi_PlanProduct: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     1: .standard(proto: "product_url"),
     2: .standard(proto: "product_name"),
     3: .same(proto: "currency"),
-    4: .standard(proto: "product_price"),
+    4: .standard(proto: "sale_price"),
     5: .standard(proto: "product_remaining"),
   ]
 
@@ -1225,7 +1225,7 @@ extension GloryApi_PlanProduct: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       case 1: try { try decoder.decodeSingularStringField(value: &self.productURL) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.productName) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.currency) }()
-      case 4: try { try decoder.decodeSingularDoubleField(value: &self.productPrice) }()
+      case 4: try { try decoder.decodeSingularDoubleField(value: &self.salePrice) }()
       case 5: try { try decoder.decodeSingularInt64Field(value: &self.productRemaining) }()
       default: break
       }
@@ -1242,8 +1242,8 @@ extension GloryApi_PlanProduct: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     if !self.currency.isEmpty {
       try visitor.visitSingularStringField(value: self.currency, fieldNumber: 3)
     }
-    if self.productPrice != 0 {
-      try visitor.visitSingularDoubleField(value: self.productPrice, fieldNumber: 4)
+    if self.salePrice != 0 {
+      try visitor.visitSingularDoubleField(value: self.salePrice, fieldNumber: 4)
     }
     if self.productRemaining != 0 {
       try visitor.visitSingularInt64Field(value: self.productRemaining, fieldNumber: 5)
@@ -1255,7 +1255,7 @@ extension GloryApi_PlanProduct: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     if lhs.productURL != rhs.productURL {return false}
     if lhs.productName != rhs.productName {return false}
     if lhs.currency != rhs.currency {return false}
-    if lhs.productPrice != rhs.productPrice {return false}
+    if lhs.salePrice != rhs.salePrice {return false}
     if lhs.productRemaining != rhs.productRemaining {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

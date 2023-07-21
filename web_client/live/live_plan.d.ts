@@ -30,7 +30,7 @@ export interface PlanProduct {
   product_url?: string;
   product_name?: string;
   currency?: string;
-  product_price?: number;
+  sale_price?: number;
   product_remaining?: string;
 }
 
