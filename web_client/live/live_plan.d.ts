@@ -18,7 +18,6 @@ export interface LivePlan {
 export interface CreateLivePlanRequest {
   base_request?: base.BaseRequest;
   live_plan?: LivePlan;
-  live_plan_product?: Array<LivePlanProduct>;
 }
 
 export interface CreateLivePlanResponse {
@@ -48,11 +47,7 @@ export interface GetLivePlanResponse {
 
 export interface UpdateLivePlanRequest {
   base_request?: base.BaseRequest;
-  /** 必传 */
-  live_plan_id?: string;
-  live_plan_name?: string;
-  description?: string;
-  live_plan_product?: Array<LivePlanProduct>;
+  live_plan?: LivePlan;
 }
 
 export interface UpdateLivePlanResponse {
