@@ -113,6 +113,12 @@ struct GloryApi_PlanProduct {
 
   var productID: Int64 = 0
 
+  /// 卖点
+  var productSellingPoint: String = String()
+
+  /// 题词
+  var productDescription: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1214,6 +1220,8 @@ extension GloryApi_PlanProduct: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     4: .standard(proto: "sale_price"),
     5: .standard(proto: "product_remaining"),
     6: .standard(proto: "product_id"),
+    7: .standard(proto: "product_selling_point"),
+    8: .standard(proto: "product_description"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1228,6 +1236,8 @@ extension GloryApi_PlanProduct: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       case 4: try { try decoder.decodeSingularDoubleField(value: &self.salePrice) }()
       case 5: try { try decoder.decodeSingularInt64Field(value: &self.productRemaining) }()
       case 6: try { try decoder.decodeSingularInt64Field(value: &self.productID) }()
+      case 7: try { try decoder.decodeSingularStringField(value: &self.productSellingPoint) }()
+      case 8: try { try decoder.decodeSingularStringField(value: &self.productDescription) }()
       default: break
       }
     }
@@ -1252,6 +1262,12 @@ extension GloryApi_PlanProduct: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     if self.productID != 0 {
       try visitor.visitSingularInt64Field(value: self.productID, fieldNumber: 6)
     }
+    if !self.productSellingPoint.isEmpty {
+      try visitor.visitSingularStringField(value: self.productSellingPoint, fieldNumber: 7)
+    }
+    if !self.productDescription.isEmpty {
+      try visitor.visitSingularStringField(value: self.productDescription, fieldNumber: 8)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1262,6 +1278,8 @@ extension GloryApi_PlanProduct: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     if lhs.salePrice != rhs.salePrice {return false}
     if lhs.productRemaining != rhs.productRemaining {return false}
     if lhs.productID != rhs.productID {return false}
+    if lhs.productSellingPoint != rhs.productSellingPoint {return false}
+    if lhs.productDescription != rhs.productDescription {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

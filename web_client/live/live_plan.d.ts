@@ -32,6 +32,10 @@ export interface PlanProduct {
   sale_price?: number;
   product_remaining?: string;
   product_id?: string;
+  /** 卖点 */
+  product_selling_point?: string;
+  /** 题词 */
+  product_description?: string;
 }
 
 export interface GetLivePlanRequest {
