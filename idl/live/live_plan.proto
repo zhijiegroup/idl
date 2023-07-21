@@ -25,7 +25,7 @@ message PlanProduct {
   string product_url =1;
   string product_name = 2;
   string currency = 3;
-  double product_price = 4;
+  double sale_price = 4;
   int64 product_remaining = 5;
 }
 
