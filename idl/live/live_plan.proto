@@ -27,6 +27,8 @@ message PlanProduct {
   double sale_price = 4;
   int64 product_remaining = 5;
   int64 product_id = 6;
+  string product_selling_point =7;  // 卖点
+  string product_description =8;  // 题词
 }
 
 message GetLivePlanRequest {
