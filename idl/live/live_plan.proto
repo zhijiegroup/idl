@@ -14,7 +14,7 @@ message LivePlan {
 message CreateLivePlanRequest {
   base.BaseRequest base_request = 1;
   LivePlan live_plan =2;
-  repeated int64 product_id =100;
+  repeated LivePlanProduct live_plan_product =3; 
 }
 message CreateLivePlanResponse {
   base.BaseResponse base_resp = 1;
@@ -46,7 +46,7 @@ message UpdateLivePlanRequest {
   int64 live_plan_id = 2; // 必传
   string live_plan_name =3;
   string description =4;  
-  repeated int64 product_id =5;
+  repeated LivePlanProduct live_plan_product =5; 
 }
 message UpdateLivePlanResponse {
   base.BaseResponse base_resp = 1;
