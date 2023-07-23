@@ -32,16 +32,12 @@ struct GloryApi_Tenant {
   var tenantName: String = String()
 
   ///logo 必传
-  var tenantLogo: String = String()
+  var tenantLogoURL: String = String()
 
   ///校训 必传
   var tenantOverview: String = String()
 
-  ///管理员名称 必传
-  var adminName: String = String()
-
-  ///管理员手机号 必传
-  var adminPhone: String = String()
+  var logoAttachmentID: Int64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -386,10 +382,9 @@ extension GloryApi_Tenant: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "tenant_id"),
     2: .standard(proto: "tenant_name"),
-    3: .standard(proto: "tenant_logo"),
+    3: .standard(proto: "tenant_logo_url"),
     4: .standard(proto: "tenant_overview"),
-    5: .standard(proto: "admin_name"),
-    6: .standard(proto: "admin_phone"),
+    7: .standard(proto: "logo_attachment_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -400,10 +395,9 @@ extension GloryApi_Tenant: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.tenantName) }()
-      case 3: try { try decoder.decodeSingularStringField(value: &self.tenantLogo) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.tenantLogoURL) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.tenantOverview) }()
-      case 5: try { try decoder.decodeSingularStringField(value: &self.adminName) }()
-      case 6: try { try decoder.decodeSingularStringField(value: &self.adminPhone) }()
+      case 7: try { try decoder.decodeSingularInt64Field(value: &self.logoAttachmentID) }()
       default: break
       }
     }
@@ -416,17 +410,14 @@ extension GloryApi_Tenant: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
     if !self.tenantName.isEmpty {
       try visitor.visitSingularStringField(value: self.tenantName, fieldNumber: 2)
     }
-    if !self.tenantLogo.isEmpty {
-      try visitor.visitSingularStringField(value: self.tenantLogo, fieldNumber: 3)
+    if !self.tenantLogoURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.tenantLogoURL, fieldNumber: 3)
     }
     if !self.tenantOverview.isEmpty {
       try visitor.visitSingularStringField(value: self.tenantOverview, fieldNumber: 4)
     }
-    if !self.adminName.isEmpty {
-      try visitor.visitSingularStringField(value: self.adminName, fieldNumber: 5)
-    }
-    if !self.adminPhone.isEmpty {
-      try visitor.visitSingularStringField(value: self.adminPhone, fieldNumber: 6)
+    if self.logoAttachmentID != 0 {
+      try visitor.visitSingularInt64Field(value: self.logoAttachmentID, fieldNumber: 7)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -434,10 +425,9 @@ extension GloryApi_Tenant: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
   static func ==(lhs: GloryApi_Tenant, rhs: GloryApi_Tenant) -> Bool {
     if lhs.tenantID != rhs.tenantID {return false}
     if lhs.tenantName != rhs.tenantName {return false}
-    if lhs.tenantLogo != rhs.tenantLogo {return false}
+    if lhs.tenantLogoURL != rhs.tenantLogoURL {return false}
     if lhs.tenantOverview != rhs.tenantOverview {return false}
-    if lhs.adminName != rhs.adminName {return false}
-    if lhs.adminPhone != rhs.adminPhone {return false}
+    if lhs.logoAttachmentID != rhs.logoAttachmentID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

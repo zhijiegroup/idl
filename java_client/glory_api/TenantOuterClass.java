@@ -53,20 +53,20 @@ public final class TenantOuterClass {
      *logo 必传
      * </pre>
      *
-     * <code>string tenant_logo = 3;</code>
-     * @return The tenantLogo.
+     * <code>string tenant_logo_url = 3;</code>
+     * @return The tenantLogoUrl.
      */
-    java.lang.String getTenantLogo();
+    java.lang.String getTenantLogoUrl();
     /**
      * <pre>
      *logo 必传
      * </pre>
      *
-     * <code>string tenant_logo = 3;</code>
-     * @return The bytes for tenantLogo.
+     * <code>string tenant_logo_url = 3;</code>
+     * @return The bytes for tenantLogoUrl.
      */
     com.google.protobuf.ByteString
-        getTenantLogoBytes();
+        getTenantLogoUrlBytes();
 
     /**
      * <pre>
@@ -89,44 +89,10 @@ public final class TenantOuterClass {
         getTenantOverviewBytes();
 
     /**
-     * <pre>
-     *管理员名称 必传
-     * </pre>
-     *
-     * <code>string admin_name = 5;</code>
-     * @return The adminName.
+     * <code>int64 logo_attachment_id = 7;</code>
+     * @return The logoAttachmentId.
      */
-    java.lang.String getAdminName();
-    /**
-     * <pre>
-     *管理员名称 必传
-     * </pre>
-     *
-     * <code>string admin_name = 5;</code>
-     * @return The bytes for adminName.
-     */
-    com.google.protobuf.ByteString
-        getAdminNameBytes();
-
-    /**
-     * <pre>
-     *管理员手机号 必传
-     * </pre>
-     *
-     * <code>string admin_phone = 6;</code>
-     * @return The adminPhone.
-     */
-    java.lang.String getAdminPhone();
-    /**
-     * <pre>
-     *管理员手机号 必传
-     * </pre>
-     *
-     * <code>string admin_phone = 6;</code>
-     * @return The bytes for adminPhone.
-     */
-    com.google.protobuf.ByteString
-        getAdminPhoneBytes();
+    long getLogoAttachmentId();
   }
   /**
    * Protobuf type {@code glory_api.Tenant}
@@ -142,10 +108,8 @@ public final class TenantOuterClass {
     }
     private Tenant() {
       tenantName_ = "";
-      tenantLogo_ = "";
+      tenantLogoUrl_ = "";
       tenantOverview_ = "";
-      adminName_ = "";
-      adminPhone_ = "";
     }
 
     @java.lang.Override
@@ -192,7 +156,7 @@ public final class TenantOuterClass {
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              tenantLogo_ = s;
+              tenantLogoUrl_ = s;
               break;
             }
             case 34: {
@@ -201,16 +165,9 @@ public final class TenantOuterClass {
               tenantOverview_ = s;
               break;
             }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 56: {
 
-              adminName_ = s;
-              break;
-            }
-            case 50: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              adminPhone_ = s;
+              logoAttachmentId_ = input.readInt64();
               break;
             }
             default: {
@@ -306,26 +263,26 @@ public final class TenantOuterClass {
       }
     }
 
-    public static final int TENANT_LOGO_FIELD_NUMBER = 3;
-    private volatile java.lang.Object tenantLogo_;
+    public static final int TENANT_LOGO_URL_FIELD_NUMBER = 3;
+    private volatile java.lang.Object tenantLogoUrl_;
     /**
      * <pre>
      *logo 必传
      * </pre>
      *
-     * <code>string tenant_logo = 3;</code>
-     * @return The tenantLogo.
+     * <code>string tenant_logo_url = 3;</code>
+     * @return The tenantLogoUrl.
      */
     @java.lang.Override
-    public java.lang.String getTenantLogo() {
-      java.lang.Object ref = tenantLogo_;
+    public java.lang.String getTenantLogoUrl() {
+      java.lang.Object ref = tenantLogoUrl_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        tenantLogo_ = s;
+        tenantLogoUrl_ = s;
         return s;
       }
     }
@@ -334,18 +291,18 @@ public final class TenantOuterClass {
      *logo 必传
      * </pre>
      *
-     * <code>string tenant_logo = 3;</code>
-     * @return The bytes for tenantLogo.
+     * <code>string tenant_logo_url = 3;</code>
+     * @return The bytes for tenantLogoUrl.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getTenantLogoBytes() {
-      java.lang.Object ref = tenantLogo_;
+        getTenantLogoUrlBytes() {
+      java.lang.Object ref = tenantLogoUrl_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        tenantLogo_ = b;
+        tenantLogoUrl_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -398,96 +355,15 @@ public final class TenantOuterClass {
       }
     }
 
-    public static final int ADMIN_NAME_FIELD_NUMBER = 5;
-    private volatile java.lang.Object adminName_;
+    public static final int LOGO_ATTACHMENT_ID_FIELD_NUMBER = 7;
+    private long logoAttachmentId_;
     /**
-     * <pre>
-     *管理员名称 必传
-     * </pre>
-     *
-     * <code>string admin_name = 5;</code>
-     * @return The adminName.
+     * <code>int64 logo_attachment_id = 7;</code>
+     * @return The logoAttachmentId.
      */
     @java.lang.Override
-    public java.lang.String getAdminName() {
-      java.lang.Object ref = adminName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        adminName_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     *管理员名称 必传
-     * </pre>
-     *
-     * <code>string admin_name = 5;</code>
-     * @return The bytes for adminName.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getAdminNameBytes() {
-      java.lang.Object ref = adminName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        adminName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ADMIN_PHONE_FIELD_NUMBER = 6;
-    private volatile java.lang.Object adminPhone_;
-    /**
-     * <pre>
-     *管理员手机号 必传
-     * </pre>
-     *
-     * <code>string admin_phone = 6;</code>
-     * @return The adminPhone.
-     */
-    @java.lang.Override
-    public java.lang.String getAdminPhone() {
-      java.lang.Object ref = adminPhone_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        adminPhone_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     *管理员手机号 必传
-     * </pre>
-     *
-     * <code>string admin_phone = 6;</code>
-     * @return The bytes for adminPhone.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getAdminPhoneBytes() {
-      java.lang.Object ref = adminPhone_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        adminPhone_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getLogoAttachmentId() {
+      return logoAttachmentId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -510,17 +386,14 @@ public final class TenantOuterClass {
       if (!getTenantNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tenantName_);
       }
-      if (!getTenantLogoBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, tenantLogo_);
+      if (!getTenantLogoUrlBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, tenantLogoUrl_);
       }
       if (!getTenantOverviewBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, tenantOverview_);
       }
-      if (!getAdminNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, adminName_);
-      }
-      if (!getAdminPhoneBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, adminPhone_);
+      if (logoAttachmentId_ != 0L) {
+        output.writeInt64(7, logoAttachmentId_);
       }
       unknownFields.writeTo(output);
     }
@@ -538,17 +411,15 @@ public final class TenantOuterClass {
       if (!getTenantNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tenantName_);
       }
-      if (!getTenantLogoBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, tenantLogo_);
+      if (!getTenantLogoUrlBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, tenantLogoUrl_);
       }
       if (!getTenantOverviewBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, tenantOverview_);
       }
-      if (!getAdminNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, adminName_);
-      }
-      if (!getAdminPhoneBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, adminPhone_);
+      if (logoAttachmentId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(7, logoAttachmentId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -569,14 +440,12 @@ public final class TenantOuterClass {
           != other.getTenantId()) return false;
       if (!getTenantName()
           .equals(other.getTenantName())) return false;
-      if (!getTenantLogo()
-          .equals(other.getTenantLogo())) return false;
+      if (!getTenantLogoUrl()
+          .equals(other.getTenantLogoUrl())) return false;
       if (!getTenantOverview()
           .equals(other.getTenantOverview())) return false;
-      if (!getAdminName()
-          .equals(other.getAdminName())) return false;
-      if (!getAdminPhone()
-          .equals(other.getAdminPhone())) return false;
+      if (getLogoAttachmentId()
+          != other.getLogoAttachmentId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -593,14 +462,13 @@ public final class TenantOuterClass {
           getTenantId());
       hash = (37 * hash) + TENANT_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getTenantName().hashCode();
-      hash = (37 * hash) + TENANT_LOGO_FIELD_NUMBER;
-      hash = (53 * hash) + getTenantLogo().hashCode();
+      hash = (37 * hash) + TENANT_LOGO_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getTenantLogoUrl().hashCode();
       hash = (37 * hash) + TENANT_OVERVIEW_FIELD_NUMBER;
       hash = (53 * hash) + getTenantOverview().hashCode();
-      hash = (37 * hash) + ADMIN_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getAdminName().hashCode();
-      hash = (37 * hash) + ADMIN_PHONE_FIELD_NUMBER;
-      hash = (53 * hash) + getAdminPhone().hashCode();
+      hash = (37 * hash) + LOGO_ATTACHMENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getLogoAttachmentId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -738,13 +606,11 @@ public final class TenantOuterClass {
 
         tenantName_ = "";
 
-        tenantLogo_ = "";
+        tenantLogoUrl_ = "";
 
         tenantOverview_ = "";
 
-        adminName_ = "";
-
-        adminPhone_ = "";
+        logoAttachmentId_ = 0L;
 
         return this;
       }
@@ -774,10 +640,9 @@ public final class TenantOuterClass {
         glory_api.TenantOuterClass.Tenant result = new glory_api.TenantOuterClass.Tenant(this);
         result.tenantId_ = tenantId_;
         result.tenantName_ = tenantName_;
-        result.tenantLogo_ = tenantLogo_;
+        result.tenantLogoUrl_ = tenantLogoUrl_;
         result.tenantOverview_ = tenantOverview_;
-        result.adminName_ = adminName_;
-        result.adminPhone_ = adminPhone_;
+        result.logoAttachmentId_ = logoAttachmentId_;
         onBuilt();
         return result;
       }
@@ -833,21 +698,16 @@ public final class TenantOuterClass {
           tenantName_ = other.tenantName_;
           onChanged();
         }
-        if (!other.getTenantLogo().isEmpty()) {
-          tenantLogo_ = other.tenantLogo_;
+        if (!other.getTenantLogoUrl().isEmpty()) {
+          tenantLogoUrl_ = other.tenantLogoUrl_;
           onChanged();
         }
         if (!other.getTenantOverview().isEmpty()) {
           tenantOverview_ = other.tenantOverview_;
           onChanged();
         }
-        if (!other.getAdminName().isEmpty()) {
-          adminName_ = other.adminName_;
-          onChanged();
-        }
-        if (!other.getAdminPhone().isEmpty()) {
-          adminPhone_ = other.adminPhone_;
-          onChanged();
+        if (other.getLogoAttachmentId() != 0L) {
+          setLogoAttachmentId(other.getLogoAttachmentId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1017,22 +877,22 @@ public final class TenantOuterClass {
         return this;
       }
 
-      private java.lang.Object tenantLogo_ = "";
+      private java.lang.Object tenantLogoUrl_ = "";
       /**
        * <pre>
        *logo 必传
        * </pre>
        *
-       * <code>string tenant_logo = 3;</code>
-       * @return The tenantLogo.
+       * <code>string tenant_logo_url = 3;</code>
+       * @return The tenantLogoUrl.
        */
-      public java.lang.String getTenantLogo() {
-        java.lang.Object ref = tenantLogo_;
+      public java.lang.String getTenantLogoUrl() {
+        java.lang.Object ref = tenantLogoUrl_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          tenantLogo_ = s;
+          tenantLogoUrl_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -1043,17 +903,17 @@ public final class TenantOuterClass {
        *logo 必传
        * </pre>
        *
-       * <code>string tenant_logo = 3;</code>
-       * @return The bytes for tenantLogo.
+       * <code>string tenant_logo_url = 3;</code>
+       * @return The bytes for tenantLogoUrl.
        */
       public com.google.protobuf.ByteString
-          getTenantLogoBytes() {
-        java.lang.Object ref = tenantLogo_;
+          getTenantLogoUrlBytes() {
+        java.lang.Object ref = tenantLogoUrl_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          tenantLogo_ = b;
+          tenantLogoUrl_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -1064,17 +924,17 @@ public final class TenantOuterClass {
        *logo 必传
        * </pre>
        *
-       * <code>string tenant_logo = 3;</code>
-       * @param value The tenantLogo to set.
+       * <code>string tenant_logo_url = 3;</code>
+       * @param value The tenantLogoUrl to set.
        * @return This builder for chaining.
        */
-      public Builder setTenantLogo(
+      public Builder setTenantLogoUrl(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        tenantLogo_ = value;
+        tenantLogoUrl_ = value;
         onChanged();
         return this;
       }
@@ -1083,12 +943,12 @@ public final class TenantOuterClass {
        *logo 必传
        * </pre>
        *
-       * <code>string tenant_logo = 3;</code>
+       * <code>string tenant_logo_url = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearTenantLogo() {
+      public Builder clearTenantLogoUrl() {
         
-        tenantLogo_ = getDefaultInstance().getTenantLogo();
+        tenantLogoUrl_ = getDefaultInstance().getTenantLogoUrl();
         onChanged();
         return this;
       }
@@ -1097,18 +957,18 @@ public final class TenantOuterClass {
        *logo 必传
        * </pre>
        *
-       * <code>string tenant_logo = 3;</code>
-       * @param value The bytes for tenantLogo to set.
+       * <code>string tenant_logo_url = 3;</code>
+       * @param value The bytes for tenantLogoUrl to set.
        * @return This builder for chaining.
        */
-      public Builder setTenantLogoBytes(
+      public Builder setTenantLogoUrlBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        tenantLogo_ = value;
+        tenantLogoUrl_ = value;
         onChanged();
         return this;
       }
@@ -1209,194 +1069,33 @@ public final class TenantOuterClass {
         return this;
       }
 
-      private java.lang.Object adminName_ = "";
+      private long logoAttachmentId_ ;
       /**
-       * <pre>
-       *管理员名称 必传
-       * </pre>
-       *
-       * <code>string admin_name = 5;</code>
-       * @return The adminName.
+       * <code>int64 logo_attachment_id = 7;</code>
+       * @return The logoAttachmentId.
        */
-      public java.lang.String getAdminName() {
-        java.lang.Object ref = adminName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          adminName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public long getLogoAttachmentId() {
+        return logoAttachmentId_;
       }
       /**
-       * <pre>
-       *管理员名称 必传
-       * </pre>
-       *
-       * <code>string admin_name = 5;</code>
-       * @return The bytes for adminName.
-       */
-      public com.google.protobuf.ByteString
-          getAdminNameBytes() {
-        java.lang.Object ref = adminName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          adminName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       *管理员名称 必传
-       * </pre>
-       *
-       * <code>string admin_name = 5;</code>
-       * @param value The adminName to set.
+       * <code>int64 logo_attachment_id = 7;</code>
+       * @param value The logoAttachmentId to set.
        * @return This builder for chaining.
        */
-      public Builder setAdminName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        adminName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *管理员名称 必传
-       * </pre>
-       *
-       * <code>string admin_name = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAdminName() {
+      public Builder setLogoAttachmentId(long value) {
         
-        adminName_ = getDefaultInstance().getAdminName();
+        logoAttachmentId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <pre>
-       *管理员名称 必传
-       * </pre>
-       *
-       * <code>string admin_name = 5;</code>
-       * @param value The bytes for adminName to set.
+       * <code>int64 logo_attachment_id = 7;</code>
        * @return This builder for chaining.
        */
-      public Builder setAdminNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+      public Builder clearLogoAttachmentId() {
         
-        adminName_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object adminPhone_ = "";
-      /**
-       * <pre>
-       *管理员手机号 必传
-       * </pre>
-       *
-       * <code>string admin_phone = 6;</code>
-       * @return The adminPhone.
-       */
-      public java.lang.String getAdminPhone() {
-        java.lang.Object ref = adminPhone_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          adminPhone_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       *管理员手机号 必传
-       * </pre>
-       *
-       * <code>string admin_phone = 6;</code>
-       * @return The bytes for adminPhone.
-       */
-      public com.google.protobuf.ByteString
-          getAdminPhoneBytes() {
-        java.lang.Object ref = adminPhone_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          adminPhone_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       *管理员手机号 必传
-       * </pre>
-       *
-       * <code>string admin_phone = 6;</code>
-       * @param value The adminPhone to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAdminPhone(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        adminPhone_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *管理员手机号 必传
-       * </pre>
-       *
-       * <code>string admin_phone = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAdminPhone() {
-        
-        adminPhone_ = getDefaultInstance().getAdminPhone();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *管理员手机号 必传
-       * </pre>
-       *
-       * <code>string admin_phone = 6;</code>
-       * @param value The bytes for adminPhone to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAdminPhoneBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        adminPhone_ = value;
+        logoAttachmentId_ = 0L;
         onChanged();
         return this;
       }
@@ -10644,38 +10343,37 @@ public final class TenantOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\023tenant/tenant.proto\022\tglory_api\032\nbase.p" +
-      "roto\"\207\001\n\006Tenant\022\021\n\ttenant_id\030\001 \001(\003\022\023\n\013te" +
-      "nant_name\030\002 \001(\t\022\023\n\013tenant_logo\030\003 \001(\t\022\027\n\017" +
-      "tenant_overview\030\004 \001(\t\022\022\n\nadmin_name\030\005 \001(" +
-      "\t\022\023\n\013admin_phone\030\006 \001(\t\"a\n\023CreateTenantRe" +
-      "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
-      "equest\022!\n\006tenant\030\002 \001(\0132\021.glory_api.Tenan" +
-      "t\"P\n\024CreateTenantResponse\022%\n\tbase_resp\030\001" +
-      " \001(\0132\022.base.BaseResponse\022\021\n\ttenant_id\030\002 " +
-      "\001(\003\"N\n\020GetTenantRequest\022\'\n\014base_request\030" +
-      "\001 \001(\0132\021.base.BaseRequest\022\021\n\ttenant_id\030\002 " +
-      "\001(\003\"\204\001\n\021GetTenantResponse\022%\n\tbase_resp\030\001" +
-      " \001(\0132\022.base.BaseResponse\022!\n\006tenant\030\002 \001(\013" +
-      "2\021.glory_api.Tenant\022%\n\013author_info\030\003 \001(\013" +
-      "2\020.base.AuthorInfo\"a\n\023UpdateTenantReques" +
-      "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
-      "st\022!\n\006Tenant\030\003 \001(\0132\021.glory_api.Tenant\"P\n" +
-      "\024UpdateTenantResponse\022%\n\tbase_resp\030\001 \001(\013" +
-      "2\022.base.BaseResponse\022\021\n\ttenant_id\030\002 \001(\003\"" +
-      "Q\n\023DeleteTenantRequest\022\'\n\014base_request\030\001" +
-      " \001(\0132\021.base.BaseRequest\022\021\n\ttenant_id\030\002 \001" +
-      "(\003\"=\n\024DeleteTenantResponse\022%\n\tbase_resp\030" +
-      "\001 \001(\0132\022.base.BaseResponse\"~\n\021ListTenantR" +
-      "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
-      "Request\022\023\n\013search_name\030\002 \001(\t\022+\n\npaginati" +
-      "on\030d \001(\0132\027.base.PaginationRequest\"\\\n\020Ten" +
-      "antWithAuthor\022!\n\006tenant\030\001 \001(\0132\021.glory_ap" +
-      "i.Tenant\022%\n\013author_info\030\002 \001(\0132\020.base.Aut" +
-      "horInfo\"\227\001\n\022ListTenantResponse\022%\n\tbase_r" +
-      "esp\030\001 \001(\0132\022.base.BaseResponse\022,\n\007Tenants" +
-      "\030\002 \003(\0132\033.glory_api.TenantWithAuthor\022,\n\np" +
-      "agination\030d \001(\0132\030.base.PaginationRespons" +
-      "eb\006proto3"
+      "roto\"~\n\006Tenant\022\021\n\ttenant_id\030\001 \001(\003\022\023\n\013ten" +
+      "ant_name\030\002 \001(\t\022\027\n\017tenant_logo_url\030\003 \001(\t\022" +
+      "\027\n\017tenant_overview\030\004 \001(\t\022\032\n\022logo_attachm" +
+      "ent_id\030\007 \001(\003\"a\n\023CreateTenantRequest\022\'\n\014b" +
+      "ase_request\030\001 \001(\0132\021.base.BaseRequest\022!\n\006" +
+      "tenant\030\002 \001(\0132\021.glory_api.Tenant\"P\n\024Creat" +
+      "eTenantResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
+      "e.BaseResponse\022\021\n\ttenant_id\030\002 \001(\003\"N\n\020Get" +
+      "TenantRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
+      "se.BaseRequest\022\021\n\ttenant_id\030\002 \001(\003\"\204\001\n\021Ge" +
+      "tTenantResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
+      "e.BaseResponse\022!\n\006tenant\030\002 \001(\0132\021.glory_a" +
+      "pi.Tenant\022%\n\013author_info\030\003 \001(\0132\020.base.Au" +
+      "thorInfo\"a\n\023UpdateTenantRequest\022\'\n\014base_" +
+      "request\030\001 \001(\0132\021.base.BaseRequest\022!\n\006Tena" +
+      "nt\030\003 \001(\0132\021.glory_api.Tenant\"P\n\024UpdateTen" +
+      "antResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
+      "seResponse\022\021\n\ttenant_id\030\002 \001(\003\"Q\n\023DeleteT" +
+      "enantRequest\022\'\n\014base_request\030\001 \001(\0132\021.bas" +
+      "e.BaseRequest\022\021\n\ttenant_id\030\002 \001(\003\"=\n\024Dele" +
+      "teTenantResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
+      "se.BaseResponse\"~\n\021ListTenantRequest\022\'\n\014" +
+      "base_request\030\001 \001(\0132\021.base.BaseRequest\022\023\n" +
+      "\013search_name\030\002 \001(\t\022+\n\npagination\030d \001(\0132\027" +
+      ".base.PaginationRequest\"\\\n\020TenantWithAut" +
+      "hor\022!\n\006tenant\030\001 \001(\0132\021.glory_api.Tenant\022%" +
+      "\n\013author_info\030\002 \001(\0132\020.base.AuthorInfo\"\227\001" +
+      "\n\022ListTenantResponse\022%\n\tbase_resp\030\001 \001(\0132" +
+      "\022.base.BaseResponse\022,\n\007Tenants\030\002 \003(\0132\033.g" +
+      "lory_api.TenantWithAuthor\022,\n\npagination\030" +
+      "d \001(\0132\030.base.PaginationResponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -10687,7 +10385,7 @@ public final class TenantOuterClass {
     internal_static_glory_api_Tenant_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_Tenant_descriptor,
-        new java.lang.String[] { "TenantId", "TenantName", "TenantLogo", "TenantOverview", "AdminName", "AdminPhone", });
+        new java.lang.String[] { "TenantId", "TenantName", "TenantLogoUrl", "TenantOverview", "LogoAttachmentId", });
     internal_static_glory_api_CreateTenantRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_glory_api_CreateTenantRequest_fieldAccessorTable = new
