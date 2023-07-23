@@ -566,5 +566,21 @@ service glory_api {
     option (api.post) = '/api/tenant/list_major';
   }
 
+  // class
+  rpc CreateClass(CreateClassRequest) returns (CreateClassResponse) {
+    option (api.post) = '/api/tenant/create_class';
+  }
+  rpc GetClass(GetClassRequest) returns (GetClassResponse) {
+    option (api.get) = '/api/tenant/get_class';
+  }
+  rpc UpdateClass(UpdateClassRequest) returns (UpdateClassResponse) {
+    option (api.post) = '/api/tenant/update_class';
+  }
+  rpc DeleteClass(DeleteClassRequest) returns (DeleteClassResponse) {
+    option (api.post) = '/api/tenant/delete_class';
+  }
+  rpc ListClass(ListClassRequest) returns (ListClassResponse) {
+    option (api.post) = '/api/tenant/list_class';
+  }
 
 }

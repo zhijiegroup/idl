@@ -141,3 +141,73 @@ message ListMajorResponse {
   repeated MajorWithAuthor majors = 2;
   base.PaginationResponse pagination = 100;
 }
+
+message Class {
+  int64 class_id = 1; // 创建不传
+  string class_name  = 2; //名称 必传
+  int64 major_id = 4; // 专业id, 创建必传
+  int64 tenant_id = 5; // 学校id，创建必传
+  int32 grade = 6; // 年级, 创建必传
+  string start_date = 7; // 开学日期, 创建必传
+
+}
+
+message CreateClassRequest {
+  base.BaseRequest base_request = 1; // token
+  Class class = 2;
+
+}
+
+message CreateClassResponse {
+  base.BaseResponse base_resp = 1;
+  int64 class_id = 2;
+}
+
+message GetClassRequest {
+  base.BaseRequest base_request = 1;
+  int64 class_id = 2;
+
+}
+
+message GetClassResponse {
+  base.BaseResponse base_resp = 1;
+  Class class = 2;
+  base.AuthorInfo author_info = 3;
+}
+
+message UpdateClassRequest {
+  base.BaseRequest base_request = 1;
+  Class Class = 3;
+}
+
+message UpdateClassResponse {
+  base.BaseResponse base_resp = 1;
+  int64 class_id = 2;
+}
+
+message DeleteClassRequest {
+  base.BaseRequest base_request = 1;
+  int64 class_id = 2;
+
+}
+
+message DeleteClassResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+message ListClassRequest {
+  base.BaseRequest base_request = 1;
+  string search_name = 2;
+  base.PaginationRequest pagination = 100;
+}
+
+message ClassWithAuthor {
+  Class class = 1;
+  base.AuthorInfo author_info = 2;
+}
+
+message ListClassResponse {
+  base.BaseResponse base_resp = 1;
+  repeated ClassWithAuthor class = 2;
+  base.PaginationResponse pagination = 100;
+}
