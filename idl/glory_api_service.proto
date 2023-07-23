@@ -549,5 +549,22 @@ service glory_api {
     option (api.post) = '/api/tenant/list_tenant';
   }
 
+  //major
+  rpc CreateMajor(CreateMajorRequest) returns (CreateMajorResponse) {
+    option (api.post) = '/api/tenant/create_major';
+  }
+  rpc GetMajor(GetMajorRequest) returns (GetMajorResponse) {
+    option (api.get) = '/api/tenant/get_major';
+  }
+  rpc UpdateMajor(UpdateMajorRequest) returns (UpdateMajorResponse) {
+    option (api.post) = '/api/tenant/update_major';
+  }
+  rpc DeleteMajor(DeleteMajorRequest) returns (DeleteMajorResponse) {
+    option (api.post) = '/api/tenant/delete_major';
+  }
+  rpc ListMajor(ListMajorRequest) returns (ListMajorResponse) {
+    option (api.post) = '/api/tenant/list_major';
+  }
+
 
 }
