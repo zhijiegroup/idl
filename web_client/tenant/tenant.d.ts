@@ -11,13 +11,10 @@ export interface Tenant {
   /** 名称 必传 */
   tenant_name?: string;
   /** logo 必传 */
-  tenant_logo?: string;
+  tenant_logo_url?: string;
   /** 校训 必传 */
   tenant_overview?: string;
-  /** 管理员名称 必传 */
-  admin_name?: string;
-  /** 管理员手机号 必传 */
-  admin_phone?: string;
+  logo_attachment_id?: string;
 }
 
 export interface CreateTenantRequest {
