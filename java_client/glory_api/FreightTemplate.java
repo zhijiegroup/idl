@@ -718,25 +718,25 @@ public final class FreightTemplate {
         getAddressBytes();
 
     /**
-     * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+     * <code>repeated .glory_api.ProductName product_info = 9;</code>
      */
     java.util.List<glory_api.FreightTemplate.ProductName> 
         getProductInfoList();
     /**
-     * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+     * <code>repeated .glory_api.ProductName product_info = 9;</code>
      */
     glory_api.FreightTemplate.ProductName getProductInfo(int index);
     /**
-     * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+     * <code>repeated .glory_api.ProductName product_info = 9;</code>
      */
     int getProductInfoCount();
     /**
-     * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+     * <code>repeated .glory_api.ProductName product_info = 9;</code>
      */
     java.util.List<? extends glory_api.FreightTemplate.ProductNameOrBuilder> 
         getProductInfoOrBuilderList();
     /**
-     * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+     * <code>repeated .glory_api.ProductName product_info = 9;</code>
      */
     glory_api.FreightTemplate.ProductNameOrBuilder getProductInfoOrBuilder(
         int index);
@@ -1018,17 +1018,17 @@ public final class FreightTemplate {
       }
     }
 
-    public static final int PRODUCTINFO_FIELD_NUMBER = 9;
+    public static final int PRODUCT_INFO_FIELD_NUMBER = 9;
     private java.util.List<glory_api.FreightTemplate.ProductName> productInfo_;
     /**
-     * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+     * <code>repeated .glory_api.ProductName product_info = 9;</code>
      */
     @java.lang.Override
     public java.util.List<glory_api.FreightTemplate.ProductName> getProductInfoList() {
       return productInfo_;
     }
     /**
-     * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+     * <code>repeated .glory_api.ProductName product_info = 9;</code>
      */
     @java.lang.Override
     public java.util.List<? extends glory_api.FreightTemplate.ProductNameOrBuilder> 
@@ -1036,21 +1036,21 @@ public final class FreightTemplate {
       return productInfo_;
     }
     /**
-     * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+     * <code>repeated .glory_api.ProductName product_info = 9;</code>
      */
     @java.lang.Override
     public int getProductInfoCount() {
       return productInfo_.size();
     }
     /**
-     * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+     * <code>repeated .glory_api.ProductName product_info = 9;</code>
      */
     @java.lang.Override
     public glory_api.FreightTemplate.ProductName getProductInfo(int index) {
       return productInfo_.get(index);
     }
     /**
-     * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+     * <code>repeated .glory_api.ProductName product_info = 9;</code>
      */
     @java.lang.Override
     public glory_api.FreightTemplate.ProductNameOrBuilder getProductInfoOrBuilder(
@@ -1209,7 +1209,7 @@ public final class FreightTemplate {
       hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getAddress().hashCode();
       if (getProductInfoCount() > 0) {
-        hash = (37 * hash) + PRODUCTINFO_FIELD_NUMBER;
+        hash = (37 * hash) + PRODUCT_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getProductInfoList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -1893,7 +1893,7 @@ public final class FreightTemplate {
           glory_api.FreightTemplate.ProductName, glory_api.FreightTemplate.ProductName.Builder, glory_api.FreightTemplate.ProductNameOrBuilder> productInfoBuilder_;
 
       /**
-       * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+       * <code>repeated .glory_api.ProductName product_info = 9;</code>
        */
       public java.util.List<glory_api.FreightTemplate.ProductName> getProductInfoList() {
         if (productInfoBuilder_ == null) {
@@ -1903,7 +1903,7 @@ public final class FreightTemplate {
         }
       }
       /**
-       * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+       * <code>repeated .glory_api.ProductName product_info = 9;</code>
        */
       public int getProductInfoCount() {
         if (productInfoBuilder_ == null) {
@@ -1913,7 +1913,7 @@ public final class FreightTemplate {
         }
       }
       /**
-       * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+       * <code>repeated .glory_api.ProductName product_info = 9;</code>
        */
       public glory_api.FreightTemplate.ProductName getProductInfo(int index) {
         if (productInfoBuilder_ == null) {
@@ -1923,7 +1923,7 @@ public final class FreightTemplate {
         }
       }
       /**
-       * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+       * <code>repeated .glory_api.ProductName product_info = 9;</code>
        */
       public Builder setProductInfo(
           int index, glory_api.FreightTemplate.ProductName value) {
@@ -1940,7 +1940,7 @@ public final class FreightTemplate {
         return this;
       }
       /**
-       * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+       * <code>repeated .glory_api.ProductName product_info = 9;</code>
        */
       public Builder setProductInfo(
           int index, glory_api.FreightTemplate.ProductName.Builder builderForValue) {
@@ -1954,7 +1954,7 @@ public final class FreightTemplate {
         return this;
       }
       /**
-       * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+       * <code>repeated .glory_api.ProductName product_info = 9;</code>
        */
       public Builder addProductInfo(glory_api.FreightTemplate.ProductName value) {
         if (productInfoBuilder_ == null) {
@@ -1970,7 +1970,7 @@ public final class FreightTemplate {
         return this;
       }
       /**
-       * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+       * <code>repeated .glory_api.ProductName product_info = 9;</code>
        */
       public Builder addProductInfo(
           int index, glory_api.FreightTemplate.ProductName value) {
@@ -1987,7 +1987,7 @@ public final class FreightTemplate {
         return this;
       }
       /**
-       * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+       * <code>repeated .glory_api.ProductName product_info = 9;</code>
        */
       public Builder addProductInfo(
           glory_api.FreightTemplate.ProductName.Builder builderForValue) {
@@ -2001,7 +2001,7 @@ public final class FreightTemplate {
         return this;
       }
       /**
-       * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+       * <code>repeated .glory_api.ProductName product_info = 9;</code>
        */
       public Builder addProductInfo(
           int index, glory_api.FreightTemplate.ProductName.Builder builderForValue) {
@@ -2015,7 +2015,7 @@ public final class FreightTemplate {
         return this;
       }
       /**
-       * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+       * <code>repeated .glory_api.ProductName product_info = 9;</code>
        */
       public Builder addAllProductInfo(
           java.lang.Iterable<? extends glory_api.FreightTemplate.ProductName> values) {
@@ -2030,7 +2030,7 @@ public final class FreightTemplate {
         return this;
       }
       /**
-       * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+       * <code>repeated .glory_api.ProductName product_info = 9;</code>
        */
       public Builder clearProductInfo() {
         if (productInfoBuilder_ == null) {
@@ -2043,7 +2043,7 @@ public final class FreightTemplate {
         return this;
       }
       /**
-       * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+       * <code>repeated .glory_api.ProductName product_info = 9;</code>
        */
       public Builder removeProductInfo(int index) {
         if (productInfoBuilder_ == null) {
@@ -2056,14 +2056,14 @@ public final class FreightTemplate {
         return this;
       }
       /**
-       * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+       * <code>repeated .glory_api.ProductName product_info = 9;</code>
        */
       public glory_api.FreightTemplate.ProductName.Builder getProductInfoBuilder(
           int index) {
         return getProductInfoFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+       * <code>repeated .glory_api.ProductName product_info = 9;</code>
        */
       public glory_api.FreightTemplate.ProductNameOrBuilder getProductInfoOrBuilder(
           int index) {
@@ -2073,7 +2073,7 @@ public final class FreightTemplate {
         }
       }
       /**
-       * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+       * <code>repeated .glory_api.ProductName product_info = 9;</code>
        */
       public java.util.List<? extends glory_api.FreightTemplate.ProductNameOrBuilder> 
            getProductInfoOrBuilderList() {
@@ -2084,14 +2084,14 @@ public final class FreightTemplate {
         }
       }
       /**
-       * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+       * <code>repeated .glory_api.ProductName product_info = 9;</code>
        */
       public glory_api.FreightTemplate.ProductName.Builder addProductInfoBuilder() {
         return getProductInfoFieldBuilder().addBuilder(
             glory_api.FreightTemplate.ProductName.getDefaultInstance());
       }
       /**
-       * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+       * <code>repeated .glory_api.ProductName product_info = 9;</code>
        */
       public glory_api.FreightTemplate.ProductName.Builder addProductInfoBuilder(
           int index) {
@@ -2099,7 +2099,7 @@ public final class FreightTemplate {
             index, glory_api.FreightTemplate.ProductName.getDefaultInstance());
       }
       /**
-       * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+       * <code>repeated .glory_api.ProductName product_info = 9;</code>
        */
       public java.util.List<glory_api.FreightTemplate.ProductName.Builder> 
            getProductInfoBuilderList() {
@@ -10700,39 +10700,39 @@ public final class FreightTemplate {
     java.lang.String[] descriptorData = {
       "\n\033shop/freight_template.proto\022\tglory_api" +
       "\032\nbase.proto\"7\n\013ProductName\022\022\n\nproduct_i" +
-      "d\030\001 \001(\003\022\024\n\014product_name\030\002 \001(\t\"\345\001\n\010Templa" +
+      "d\030\001 \001(\003\022\024\n\014product_name\030\002 \001(\t\"\346\001\n\010Templa" +
       "te\022\033\n\023freight_template_id\030\001 \001(\003\022\021\n\tconfi" +
       "g_id\030\002 \001(\003\022\017\n\007shop_id\030\003 \001(\003\022\027\n\017freight_s" +
       "etting\030\004 \001(\005\022\025\n\rtemplate_name\030\005 \001(\t\022\022\n\ni" +
       "s_default\030\006 \001(\010\022\026\n\016freight_amount\030\007 \001(\002\022" +
-      "\017\n\007address\030\010 \001(\t\022+\n\013productInfo\030\t \003(\0132\026." +
-      "glory_api.ProductName\"f\n\026TemplateWithAut" +
-      "horInfo\022%\n\010template\030\001 \001(\0132\023.glory_api.Te" +
-      "mplate\022%\n\013author_info\030\002 \001(\0132\020.base.Autho" +
-      "rInfo\"g\n\025CreateTemplateRequest\022\'\n\014base_r" +
-      "equest\030\001 \001(\0132\021.base.BaseRequest\022%\n\010templ" +
-      "ate\030\002 \001(\0132\023.glory_api.Template\"\\\n\026Create" +
-      "TemplateResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
-      "se.BaseResponse\022\033\n\023freight_template_id\030\002" +
-      " \001(\003\"T\n\022GetTemplateRequest\022\'\n\014base_reque" +
-      "st\030\001 \001(\0132\021.base.BaseRequest\022\025\n\rtemplate_" +
-      "name\030\005 \001(\t\"q\n\023GetTemplateResponse\022%\n\tbas" +
-      "e_resp\030\001 \001(\0132\022.base.BaseResponse\0223\n\010temp" +
-      "late\030\002 \001(\0132!.glory_api.TemplateWithAutho" +
-      "rInfo\"]\n\025DeleteTemplateRequest\022\'\n\014base_r" +
-      "equest\030\001 \001(\0132\021.base.BaseRequest\022\033\n\023freig" +
-      "ht_template_id\030\002 \001(\003\"?\n\026DeleteTemplateRe" +
-      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
-      "ponse\"g\n\025UpdateTemplateRequest\022\'\n\014base_r" +
-      "equest\030\001 \001(\0132\021.base.BaseRequest\022%\n\010templ" +
-      "ate\030\002 \001(\0132\023.glory_api.Template\"\\\n\026Update" +
-      "TemplateResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
-      "se.BaseResponse\022\033\n\023freight_template_id\030\002" +
-      " \001(\003\"O\n\023ListTemplateRequest\022\'\n\014base_requ" +
-      "est\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007shop_id\030" +
-      "\002 \001(\003\"e\n\024ListTemplateResponse\022%\n\tbase_re" +
-      "sp\030\001 \001(\0132\022.base.BaseResponse\022&\n\ttemplate" +
-      "s\030\002 \003(\0132\023.glory_api.Templateb\006proto3"
+      "\017\n\007address\030\010 \001(\t\022,\n\014product_info\030\t \003(\0132\026" +
+      ".glory_api.ProductName\"f\n\026TemplateWithAu" +
+      "thorInfo\022%\n\010template\030\001 \001(\0132\023.glory_api.T" +
+      "emplate\022%\n\013author_info\030\002 \001(\0132\020.base.Auth" +
+      "orInfo\"g\n\025CreateTemplateRequest\022\'\n\014base_" +
+      "request\030\001 \001(\0132\021.base.BaseRequest\022%\n\010temp" +
+      "late\030\002 \001(\0132\023.glory_api.Template\"\\\n\026Creat" +
+      "eTemplateResponse\022%\n\tbase_resp\030\001 \001(\0132\022.b" +
+      "ase.BaseResponse\022\033\n\023freight_template_id\030" +
+      "\002 \001(\003\"T\n\022GetTemplateRequest\022\'\n\014base_requ" +
+      "est\030\001 \001(\0132\021.base.BaseRequest\022\025\n\rtemplate" +
+      "_name\030\005 \001(\t\"q\n\023GetTemplateResponse\022%\n\tba" +
+      "se_resp\030\001 \001(\0132\022.base.BaseResponse\0223\n\010tem" +
+      "plate\030\002 \001(\0132!.glory_api.TemplateWithAuth" +
+      "orInfo\"]\n\025DeleteTemplateRequest\022\'\n\014base_" +
+      "request\030\001 \001(\0132\021.base.BaseRequest\022\033\n\023frei" +
+      "ght_template_id\030\002 \001(\003\"?\n\026DeleteTemplateR" +
+      "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
+      "sponse\"g\n\025UpdateTemplateRequest\022\'\n\014base_" +
+      "request\030\001 \001(\0132\021.base.BaseRequest\022%\n\010temp" +
+      "late\030\002 \001(\0132\023.glory_api.Template\"\\\n\026Updat" +
+      "eTemplateResponse\022%\n\tbase_resp\030\001 \001(\0132\022.b" +
+      "ase.BaseResponse\022\033\n\023freight_template_id\030" +
+      "\002 \001(\003\"O\n\023ListTemplateRequest\022\'\n\014base_req" +
+      "uest\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007shop_id" +
+      "\030\002 \001(\003\"e\n\024ListTemplateResponse\022%\n\tbase_r" +
+      "esp\030\001 \001(\0132\022.base.BaseResponse\022&\n\ttemplat" +
+      "es\030\002 \003(\0132\023.glory_api.Templateb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

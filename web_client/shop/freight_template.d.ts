@@ -19,7 +19,7 @@ export interface Template {
   is_default?: boolean;
   freight_amount?: number;
   address?: string;
-  productInfo?: Array<ProductName>;
+  product_info?: Array<ProductName>;
 }
 
 export interface TemplateWithAuthorInfo {

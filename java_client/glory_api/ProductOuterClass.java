@@ -20,9 +20,9 @@ public final class ProductOuterClass {
   public enum State
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>default = 0;</code>
+     * <code>DEFAULT = 0;</code>
      */
-    default(0),
+    DEFAULT(0),
     /**
      * <pre>
      *创建
@@ -83,9 +83,9 @@ public final class ProductOuterClass {
     ;
 
     /**
-     * <code>default = 0;</code>
+     * <code>DEFAULT = 0;</code>
      */
-    public static final int default_VALUE = 0;
+    public static final int DEFAULT_VALUE = 0;
     /**
      * <pre>
      *创建
@@ -168,7 +168,7 @@ public final class ProductOuterClass {
      */
     public static State forNumber(int value) {
       switch (value) {
-        case 0: return default;
+        case 0: return DEFAULT;
         case 1: return created;
         case 2: return on_shelf;
         case 3: return off_shelf;
@@ -1285,7 +1285,7 @@ public final class ProductOuterClass {
       for (int i = 0; i < attribute_.size(); i++) {
         output.writeMessage(6, attribute_.get(i));
       }
-      if (state_ != glory_api.ProductOuterClass.State.default.getNumber()) {
+      if (state_ != glory_api.ProductOuterClass.State.DEFAULT.getNumber()) {
         output.writeEnum(7, state_);
       }
       for (int i = 0; i < images_.size(); i++) {
@@ -1353,7 +1353,7 @@ public final class ProductOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, attribute_.get(i));
       }
-      if (state_ != glory_api.ProductOuterClass.State.default.getNumber()) {
+      if (state_ != glory_api.ProductOuterClass.State.DEFAULT.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(7, state_);
       }
@@ -16106,7 +16106,7 @@ public final class ProductOuterClass {
       for (int i = 0; i < sku_.size(); i++) {
         output.writeMessage(4, sku_.get(i));
       }
-      if (state_ != glory_api.ProductOuterClass.State.default.getNumber()) {
+      if (state_ != glory_api.ProductOuterClass.State.DEFAULT.getNumber()) {
         output.writeEnum(5, state_);
       }
       for (int i = 0; i < shipmentAttribute_.size(); i++) {
@@ -16155,7 +16155,7 @@ public final class ProductOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, sku_.get(i));
       }
-      if (state_ != glory_api.ProductOuterClass.State.default.getNumber()) {
+      if (state_ != glory_api.ProductOuterClass.State.DEFAULT.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(5, state_);
       }
@@ -19398,7 +19398,7 @@ public final class ProductOuterClass {
       for (int i = 0; i < sku_.size(); i++) {
         output.writeMessage(4, sku_.get(i));
       }
-      if (state_ != glory_api.ProductOuterClass.State.default.getNumber()) {
+      if (state_ != glory_api.ProductOuterClass.State.DEFAULT.getNumber()) {
         output.writeEnum(5, state_);
       }
       for (int i = 0; i < shipmentAttribute_.size(); i++) {
@@ -19447,7 +19447,7 @@ public final class ProductOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, sku_.get(i));
       }
-      if (state_ != glory_api.ProductOuterClass.State.default.getNumber()) {
+      if (state_ != glory_api.ProductOuterClass.State.DEFAULT.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(5, state_);
       }
@@ -25104,7 +25104,7 @@ public final class ProductOuterClass {
       if (productId_ != 0L) {
         output.writeInt64(2, productId_);
       }
-      if (state_ != glory_api.ProductOuterClass.State.default.getNumber()) {
+      if (state_ != glory_api.ProductOuterClass.State.DEFAULT.getNumber()) {
         output.writeEnum(3, state_);
       }
       unknownFields.writeTo(output);
@@ -25124,7 +25124,7 @@ public final class ProductOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(2, productId_);
       }
-      if (state_ != glory_api.ProductOuterClass.State.default.getNumber()) {
+      if (state_ != glory_api.ProductOuterClass.State.DEFAULT.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(3, state_);
       }
@@ -26614,7 +26614,7 @@ public final class ProductOuterClass {
       for (int i = 0; i < productId_.size(); i++) {
         output.writeInt64NoTag(productId_.getLong(i));
       }
-      if (state_ != glory_api.ProductOuterClass.State.default.getNumber()) {
+      if (state_ != glory_api.ProductOuterClass.State.DEFAULT.getNumber()) {
         output.writeEnum(3, state_);
       }
       unknownFields.writeTo(output);
@@ -26644,7 +26644,7 @@ public final class ProductOuterClass {
         }
         productIdMemoizedSerializedSize = dataSize;
       }
-      if (state_ != glory_api.ProductOuterClass.State.default.getNumber()) {
+      if (state_ != glory_api.ProductOuterClass.State.DEFAULT.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(3, state_);
       }
@@ -28265,7 +28265,7 @@ public final class ProductOuterClass {
       if (categoryId_ != 0L) {
         output.writeInt64(4, categoryId_);
       }
-      if (state_ != glory_api.ProductOuterClass.State.default.getNumber()) {
+      if (state_ != glory_api.ProductOuterClass.State.DEFAULT.getNumber()) {
         output.writeEnum(5, state_);
       }
       if (pagination_ != null) {
@@ -28295,7 +28295,7 @@ public final class ProductOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, categoryId_);
       }
-      if (state_ != glory_api.ProductOuterClass.State.default.getNumber()) {
+      if (state_ != glory_api.ProductOuterClass.State.DEFAULT.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(5, state_);
       }
@@ -37134,7 +37134,7 @@ public final class ProductOuterClass {
       "t\030\001 \001(\0132\021.base.BaseRequest\022\016\n\006sku_id\030\002 \001" +
       "(\003\"R\n\026UploadSkuImageResponse\022%\n\tbase_res" +
       "p\030\001 \001(\0132\022.base.BaseResponse\022\021\n\timage_url" +
-      "\030\002 \001(\t*\200\001\n\005State\022\013\n\007default\020\000\022\013\n\007created" +
+      "\030\002 \001(\t*\200\001\n\005State\022\013\n\007DEFAULT\020\000\022\013\n\007created" +
       "\020\001\022\014\n\010on_shelf\020\002\022\r\n\toff_shelf\020\003\022\020\n\014out_o" +
       "f_stock\020\004\022\013\n\007deleted\020\005\022\023\n\017deleted_foreve" +
       "r\020\006\022\014\n\010sold_out\020\007b\006proto3"
