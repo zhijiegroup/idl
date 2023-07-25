@@ -20,6 +20,20 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
+struct GloryApi_ProductName {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var productID: Int64 = 0
+
+  var productName: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
 struct GloryApi_Template {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -40,6 +54,8 @@ struct GloryApi_Template {
   var freightAmount: Float = 0
 
   var address: String = String()
+
+  var productInfo: [GloryApi_ProductName] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -330,6 +346,7 @@ struct GloryApi_ListTemplateResponse {
 }
 
 #if swift(>=5.5) && canImport(_Concurrency)
+extension GloryApi_ProductName: @unchecked Sendable {}
 extension GloryApi_Template: @unchecked Sendable {}
 extension GloryApi_TemplateWithAuthorInfo: @unchecked Sendable {}
 extension GloryApi_CreateTemplateRequest: @unchecked Sendable {}
@@ -348,6 +365,44 @@ extension GloryApi_ListTemplateResponse: @unchecked Sendable {}
 
 fileprivate let _protobuf_package = "glory_api"
 
+extension GloryApi_ProductName: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ProductName"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "product_id"),
+    2: .standard(proto: "product_name"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.productID) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.productName) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.productID != 0 {
+      try visitor.visitSingularInt64Field(value: self.productID, fieldNumber: 1)
+    }
+    if !self.productName.isEmpty {
+      try visitor.visitSingularStringField(value: self.productName, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ProductName, rhs: GloryApi_ProductName) -> Bool {
+    if lhs.productID != rhs.productID {return false}
+    if lhs.productName != rhs.productName {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
 extension GloryApi_Template: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".Template"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
@@ -359,6 +414,7 @@ extension GloryApi_Template: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     6: .standard(proto: "is_default"),
     7: .standard(proto: "freight_amount"),
     8: .same(proto: "address"),
+    9: .same(proto: "productInfo"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -375,6 +431,7 @@ extension GloryApi_Template: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
       case 6: try { try decoder.decodeSingularBoolField(value: &self.isDefault) }()
       case 7: try { try decoder.decodeSingularFloatField(value: &self.freightAmount) }()
       case 8: try { try decoder.decodeSingularStringField(value: &self.address) }()
+      case 9: try { try decoder.decodeRepeatedMessageField(value: &self.productInfo) }()
       default: break
       }
     }
@@ -405,6 +462,9 @@ extension GloryApi_Template: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     if !self.address.isEmpty {
       try visitor.visitSingularStringField(value: self.address, fieldNumber: 8)
     }
+    if !self.productInfo.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.productInfo, fieldNumber: 9)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -417,6 +477,7 @@ extension GloryApi_Template: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     if lhs.isDefault != rhs.isDefault {return false}
     if lhs.freightAmount != rhs.freightAmount {return false}
     if lhs.address != rhs.address {return false}
+    if lhs.productInfo != rhs.productInfo {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
