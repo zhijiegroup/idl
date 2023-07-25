@@ -19,7 +19,7 @@ message Template{
   bool is_default = 6;
   float freight_amount = 7;
   string address = 8;
-  repeated ProductName productInfo = 9;
+  repeated ProductName product_info = 9;
 }
 
 message TemplateWithAuthorInfo {
