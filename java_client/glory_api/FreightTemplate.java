@@ -14,6 +14,645 @@ public final class FreightTemplate {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  public interface ProductNameOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:glory_api.ProductName)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int64 product_id = 1;</code>
+     * @return The productId.
+     */
+    long getProductId();
+
+    /**
+     * <code>string product_name = 2;</code>
+     * @return The productName.
+     */
+    java.lang.String getProductName();
+    /**
+     * <code>string product_name = 2;</code>
+     * @return The bytes for productName.
+     */
+    com.google.protobuf.ByteString
+        getProductNameBytes();
+  }
+  /**
+   * Protobuf type {@code glory_api.ProductName}
+   */
+  public static final class ProductName extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:glory_api.ProductName)
+      ProductNameOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ProductName.newBuilder() to construct.
+    private ProductName(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ProductName() {
+      productName_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ProductName();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ProductName(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              productId_ = input.readInt64();
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              productName_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return glory_api.FreightTemplate.internal_static_glory_api_ProductName_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return glory_api.FreightTemplate.internal_static_glory_api_ProductName_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              glory_api.FreightTemplate.ProductName.class, glory_api.FreightTemplate.ProductName.Builder.class);
+    }
+
+    public static final int PRODUCT_ID_FIELD_NUMBER = 1;
+    private long productId_;
+    /**
+     * <code>int64 product_id = 1;</code>
+     * @return The productId.
+     */
+    @java.lang.Override
+    public long getProductId() {
+      return productId_;
+    }
+
+    public static final int PRODUCT_NAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object productName_;
+    /**
+     * <code>string product_name = 2;</code>
+     * @return The productName.
+     */
+    @java.lang.Override
+    public java.lang.String getProductName() {
+      java.lang.Object ref = productName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        productName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string product_name = 2;</code>
+     * @return The bytes for productName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getProductNameBytes() {
+      java.lang.Object ref = productName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        productName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (productId_ != 0L) {
+        output.writeInt64(1, productId_);
+      }
+      if (!getProductNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, productName_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (productId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, productId_);
+      }
+      if (!getProductNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, productName_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof glory_api.FreightTemplate.ProductName)) {
+        return super.equals(obj);
+      }
+      glory_api.FreightTemplate.ProductName other = (glory_api.FreightTemplate.ProductName) obj;
+
+      if (getProductId()
+          != other.getProductId()) return false;
+      if (!getProductName()
+          .equals(other.getProductName())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PRODUCT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getProductId());
+      hash = (37 * hash) + PRODUCT_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getProductName().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static glory_api.FreightTemplate.ProductName parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.FreightTemplate.ProductName parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.FreightTemplate.ProductName parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.FreightTemplate.ProductName parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.FreightTemplate.ProductName parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.FreightTemplate.ProductName parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.FreightTemplate.ProductName parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.FreightTemplate.ProductName parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.FreightTemplate.ProductName parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static glory_api.FreightTemplate.ProductName parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.FreightTemplate.ProductName parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.FreightTemplate.ProductName parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(glory_api.FreightTemplate.ProductName prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code glory_api.ProductName}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:glory_api.ProductName)
+        glory_api.FreightTemplate.ProductNameOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return glory_api.FreightTemplate.internal_static_glory_api_ProductName_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return glory_api.FreightTemplate.internal_static_glory_api_ProductName_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                glory_api.FreightTemplate.ProductName.class, glory_api.FreightTemplate.ProductName.Builder.class);
+      }
+
+      // Construct using glory_api.FreightTemplate.ProductName.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        productId_ = 0L;
+
+        productName_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return glory_api.FreightTemplate.internal_static_glory_api_ProductName_descriptor;
+      }
+
+      @java.lang.Override
+      public glory_api.FreightTemplate.ProductName getDefaultInstanceForType() {
+        return glory_api.FreightTemplate.ProductName.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public glory_api.FreightTemplate.ProductName build() {
+        glory_api.FreightTemplate.ProductName result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public glory_api.FreightTemplate.ProductName buildPartial() {
+        glory_api.FreightTemplate.ProductName result = new glory_api.FreightTemplate.ProductName(this);
+        result.productId_ = productId_;
+        result.productName_ = productName_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof glory_api.FreightTemplate.ProductName) {
+          return mergeFrom((glory_api.FreightTemplate.ProductName)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(glory_api.FreightTemplate.ProductName other) {
+        if (other == glory_api.FreightTemplate.ProductName.getDefaultInstance()) return this;
+        if (other.getProductId() != 0L) {
+          setProductId(other.getProductId());
+        }
+        if (!other.getProductName().isEmpty()) {
+          productName_ = other.productName_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        glory_api.FreightTemplate.ProductName parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (glory_api.FreightTemplate.ProductName) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long productId_ ;
+      /**
+       * <code>int64 product_id = 1;</code>
+       * @return The productId.
+       */
+      @java.lang.Override
+      public long getProductId() {
+        return productId_;
+      }
+      /**
+       * <code>int64 product_id = 1;</code>
+       * @param value The productId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProductId(long value) {
+        
+        productId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 product_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProductId() {
+        
+        productId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object productName_ = "";
+      /**
+       * <code>string product_name = 2;</code>
+       * @return The productName.
+       */
+      public java.lang.String getProductName() {
+        java.lang.Object ref = productName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          productName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string product_name = 2;</code>
+       * @return The bytes for productName.
+       */
+      public com.google.protobuf.ByteString
+          getProductNameBytes() {
+        java.lang.Object ref = productName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          productName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string product_name = 2;</code>
+       * @param value The productName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProductName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        productName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string product_name = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProductName() {
+        
+        productName_ = getDefaultInstance().getProductName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string product_name = 2;</code>
+       * @param value The bytes for productName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProductNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        productName_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:glory_api.ProductName)
+    }
+
+    // @@protoc_insertion_point(class_scope:glory_api.ProductName)
+    private static final glory_api.FreightTemplate.ProductName DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new glory_api.FreightTemplate.ProductName();
+    }
+
+    public static glory_api.FreightTemplate.ProductName getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ProductName>
+        PARSER = new com.google.protobuf.AbstractParser<ProductName>() {
+      @java.lang.Override
+      public ProductName parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ProductName(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ProductName> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ProductName> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public glory_api.FreightTemplate.ProductName getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface TemplateOrBuilder extends
       // @@protoc_insertion_point(interface_extends:glory_api.Template)
       com.google.protobuf.MessageOrBuilder {
@@ -77,6 +716,30 @@ public final class FreightTemplate {
      */
     com.google.protobuf.ByteString
         getAddressBytes();
+
+    /**
+     * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+     */
+    java.util.List<glory_api.FreightTemplate.ProductName> 
+        getProductInfoList();
+    /**
+     * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+     */
+    glory_api.FreightTemplate.ProductName getProductInfo(int index);
+    /**
+     * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+     */
+    int getProductInfoCount();
+    /**
+     * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+     */
+    java.util.List<? extends glory_api.FreightTemplate.ProductNameOrBuilder> 
+        getProductInfoOrBuilderList();
+    /**
+     * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+     */
+    glory_api.FreightTemplate.ProductNameOrBuilder getProductInfoOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code glory_api.Template}
@@ -93,6 +756,7 @@ public final class FreightTemplate {
     private Template() {
       templateName_ = "";
       address_ = "";
+      productInfo_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -115,6 +779,7 @@ public final class FreightTemplate {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -167,6 +832,15 @@ public final class FreightTemplate {
               address_ = s;
               break;
             }
+            case 74: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                productInfo_ = new java.util.ArrayList<glory_api.FreightTemplate.ProductName>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              productInfo_.add(
+                  input.readMessage(glory_api.FreightTemplate.ProductName.parser(), extensionRegistry));
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -182,6 +856,9 @@ public final class FreightTemplate {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          productInfo_ = java.util.Collections.unmodifiableList(productInfo_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -341,6 +1018,46 @@ public final class FreightTemplate {
       }
     }
 
+    public static final int PRODUCTINFO_FIELD_NUMBER = 9;
+    private java.util.List<glory_api.FreightTemplate.ProductName> productInfo_;
+    /**
+     * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+     */
+    @java.lang.Override
+    public java.util.List<glory_api.FreightTemplate.ProductName> getProductInfoList() {
+      return productInfo_;
+    }
+    /**
+     * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends glory_api.FreightTemplate.ProductNameOrBuilder> 
+        getProductInfoOrBuilderList() {
+      return productInfo_;
+    }
+    /**
+     * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+     */
+    @java.lang.Override
+    public int getProductInfoCount() {
+      return productInfo_.size();
+    }
+    /**
+     * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+     */
+    @java.lang.Override
+    public glory_api.FreightTemplate.ProductName getProductInfo(int index) {
+      return productInfo_.get(index);
+    }
+    /**
+     * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+     */
+    @java.lang.Override
+    public glory_api.FreightTemplate.ProductNameOrBuilder getProductInfoOrBuilder(
+        int index) {
+      return productInfo_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -378,6 +1095,9 @@ public final class FreightTemplate {
       }
       if (!getAddressBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, address_);
+      }
+      for (int i = 0; i < productInfo_.size(); i++) {
+        output.writeMessage(9, productInfo_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -418,6 +1138,10 @@ public final class FreightTemplate {
       if (!getAddressBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, address_);
       }
+      for (int i = 0; i < productInfo_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, productInfo_.get(i));
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -450,6 +1174,8 @@ public final class FreightTemplate {
               other.getFreightAmount())) return false;
       if (!getAddress()
           .equals(other.getAddress())) return false;
+      if (!getProductInfoList()
+          .equals(other.getProductInfoList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -482,6 +1208,10 @@ public final class FreightTemplate {
           getFreightAmount());
       hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getAddress().hashCode();
+      if (getProductInfoCount() > 0) {
+        hash = (37 * hash) + PRODUCTINFO_FIELD_NUMBER;
+        hash = (53 * hash) + getProductInfoList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -610,6 +1340,7 @@ public final class FreightTemplate {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getProductInfoFieldBuilder();
         }
       }
       @java.lang.Override
@@ -631,6 +1362,12 @@ public final class FreightTemplate {
 
         address_ = "";
 
+        if (productInfoBuilder_ == null) {
+          productInfo_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          productInfoBuilder_.clear();
+        }
         return this;
       }
 
@@ -657,6 +1394,7 @@ public final class FreightTemplate {
       @java.lang.Override
       public glory_api.FreightTemplate.Template buildPartial() {
         glory_api.FreightTemplate.Template result = new glory_api.FreightTemplate.Template(this);
+        int from_bitField0_ = bitField0_;
         result.freightTemplateId_ = freightTemplateId_;
         result.configId_ = configId_;
         result.shopId_ = shopId_;
@@ -665,6 +1403,15 @@ public final class FreightTemplate {
         result.isDefault_ = isDefault_;
         result.freightAmount_ = freightAmount_;
         result.address_ = address_;
+        if (productInfoBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            productInfo_ = java.util.Collections.unmodifiableList(productInfo_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.productInfo_ = productInfo_;
+        } else {
+          result.productInfo_ = productInfoBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -739,6 +1486,32 @@ public final class FreightTemplate {
           address_ = other.address_;
           onChanged();
         }
+        if (productInfoBuilder_ == null) {
+          if (!other.productInfo_.isEmpty()) {
+            if (productInfo_.isEmpty()) {
+              productInfo_ = other.productInfo_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureProductInfoIsMutable();
+              productInfo_.addAll(other.productInfo_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.productInfo_.isEmpty()) {
+            if (productInfoBuilder_.isEmpty()) {
+              productInfoBuilder_.dispose();
+              productInfoBuilder_ = null;
+              productInfo_ = other.productInfo_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              productInfoBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getProductInfoFieldBuilder() : null;
+            } else {
+              productInfoBuilder_.addAllMessages(other.productInfo_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -767,6 +1540,7 @@ public final class FreightTemplate {
         }
         return this;
       }
+      private int bitField0_;
 
       private long freightTemplateId_ ;
       /**
@@ -1104,6 +1878,246 @@ public final class FreightTemplate {
         address_ = value;
         onChanged();
         return this;
+      }
+
+      private java.util.List<glory_api.FreightTemplate.ProductName> productInfo_ =
+        java.util.Collections.emptyList();
+      private void ensureProductInfoIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          productInfo_ = new java.util.ArrayList<glory_api.FreightTemplate.ProductName>(productInfo_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          glory_api.FreightTemplate.ProductName, glory_api.FreightTemplate.ProductName.Builder, glory_api.FreightTemplate.ProductNameOrBuilder> productInfoBuilder_;
+
+      /**
+       * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+       */
+      public java.util.List<glory_api.FreightTemplate.ProductName> getProductInfoList() {
+        if (productInfoBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(productInfo_);
+        } else {
+          return productInfoBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+       */
+      public int getProductInfoCount() {
+        if (productInfoBuilder_ == null) {
+          return productInfo_.size();
+        } else {
+          return productInfoBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+       */
+      public glory_api.FreightTemplate.ProductName getProductInfo(int index) {
+        if (productInfoBuilder_ == null) {
+          return productInfo_.get(index);
+        } else {
+          return productInfoBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+       */
+      public Builder setProductInfo(
+          int index, glory_api.FreightTemplate.ProductName value) {
+        if (productInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProductInfoIsMutable();
+          productInfo_.set(index, value);
+          onChanged();
+        } else {
+          productInfoBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+       */
+      public Builder setProductInfo(
+          int index, glory_api.FreightTemplate.ProductName.Builder builderForValue) {
+        if (productInfoBuilder_ == null) {
+          ensureProductInfoIsMutable();
+          productInfo_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          productInfoBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+       */
+      public Builder addProductInfo(glory_api.FreightTemplate.ProductName value) {
+        if (productInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProductInfoIsMutable();
+          productInfo_.add(value);
+          onChanged();
+        } else {
+          productInfoBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+       */
+      public Builder addProductInfo(
+          int index, glory_api.FreightTemplate.ProductName value) {
+        if (productInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProductInfoIsMutable();
+          productInfo_.add(index, value);
+          onChanged();
+        } else {
+          productInfoBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+       */
+      public Builder addProductInfo(
+          glory_api.FreightTemplate.ProductName.Builder builderForValue) {
+        if (productInfoBuilder_ == null) {
+          ensureProductInfoIsMutable();
+          productInfo_.add(builderForValue.build());
+          onChanged();
+        } else {
+          productInfoBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+       */
+      public Builder addProductInfo(
+          int index, glory_api.FreightTemplate.ProductName.Builder builderForValue) {
+        if (productInfoBuilder_ == null) {
+          ensureProductInfoIsMutable();
+          productInfo_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          productInfoBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+       */
+      public Builder addAllProductInfo(
+          java.lang.Iterable<? extends glory_api.FreightTemplate.ProductName> values) {
+        if (productInfoBuilder_ == null) {
+          ensureProductInfoIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, productInfo_);
+          onChanged();
+        } else {
+          productInfoBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+       */
+      public Builder clearProductInfo() {
+        if (productInfoBuilder_ == null) {
+          productInfo_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          productInfoBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+       */
+      public Builder removeProductInfo(int index) {
+        if (productInfoBuilder_ == null) {
+          ensureProductInfoIsMutable();
+          productInfo_.remove(index);
+          onChanged();
+        } else {
+          productInfoBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+       */
+      public glory_api.FreightTemplate.ProductName.Builder getProductInfoBuilder(
+          int index) {
+        return getProductInfoFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+       */
+      public glory_api.FreightTemplate.ProductNameOrBuilder getProductInfoOrBuilder(
+          int index) {
+        if (productInfoBuilder_ == null) {
+          return productInfo_.get(index);  } else {
+          return productInfoBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+       */
+      public java.util.List<? extends glory_api.FreightTemplate.ProductNameOrBuilder> 
+           getProductInfoOrBuilderList() {
+        if (productInfoBuilder_ != null) {
+          return productInfoBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(productInfo_);
+        }
+      }
+      /**
+       * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+       */
+      public glory_api.FreightTemplate.ProductName.Builder addProductInfoBuilder() {
+        return getProductInfoFieldBuilder().addBuilder(
+            glory_api.FreightTemplate.ProductName.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+       */
+      public glory_api.FreightTemplate.ProductName.Builder addProductInfoBuilder(
+          int index) {
+        return getProductInfoFieldBuilder().addBuilder(
+            index, glory_api.FreightTemplate.ProductName.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .glory_api.ProductName productInfo = 9;</code>
+       */
+      public java.util.List<glory_api.FreightTemplate.ProductName.Builder> 
+           getProductInfoBuilderList() {
+        return getProductInfoFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          glory_api.FreightTemplate.ProductName, glory_api.FreightTemplate.ProductName.Builder, glory_api.FreightTemplate.ProductNameOrBuilder> 
+          getProductInfoFieldBuilder() {
+        if (productInfoBuilder_ == null) {
+          productInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              glory_api.FreightTemplate.ProductName, glory_api.FreightTemplate.ProductName.Builder, glory_api.FreightTemplate.ProductNameOrBuilder>(
+                  productInfo_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          productInfo_ = null;
+        }
+        return productInfoBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -9611,6 +10625,11 @@ public final class FreightTemplate {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ProductName_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ProductName_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_glory_api_Template_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -9680,112 +10699,120 @@ public final class FreightTemplate {
   static {
     java.lang.String[] descriptorData = {
       "\n\033shop/freight_template.proto\022\tglory_api" +
-      "\032\nbase.proto\"\270\001\n\010Template\022\033\n\023freight_tem" +
-      "plate_id\030\001 \001(\003\022\021\n\tconfig_id\030\002 \001(\003\022\017\n\007sho" +
-      "p_id\030\003 \001(\003\022\027\n\017freight_setting\030\004 \001(\005\022\025\n\rt" +
-      "emplate_name\030\005 \001(\t\022\022\n\nis_default\030\006 \001(\010\022\026" +
-      "\n\016freight_amount\030\007 \001(\002\022\017\n\007address\030\010 \001(\t\"" +
-      "f\n\026TemplateWithAuthorInfo\022%\n\010template\030\001 " +
-      "\001(\0132\023.glory_api.Template\022%\n\013author_info\030" +
-      "\002 \001(\0132\020.base.AuthorInfo\"g\n\025CreateTemplat" +
-      "eRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
-      "seRequest\022%\n\010template\030\002 \001(\0132\023.glory_api." +
-      "Template\"\\\n\026CreateTemplateResponse\022%\n\tba" +
-      "se_resp\030\001 \001(\0132\022.base.BaseResponse\022\033\n\023fre" +
-      "ight_template_id\030\002 \001(\003\"T\n\022GetTemplateReq" +
-      "uest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRe" +
-      "quest\022\025\n\rtemplate_name\030\005 \001(\t\"q\n\023GetTempl" +
-      "ateResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
-      "seResponse\0223\n\010template\030\002 \001(\0132!.glory_api" +
-      ".TemplateWithAuthorInfo\"]\n\025DeleteTemplat" +
-      "eRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
-      "seRequest\022\033\n\023freight_template_id\030\002 \001(\003\"?" +
-      "\n\026DeleteTemplateResponse\022%\n\tbase_resp\030\001 " +
-      "\001(\0132\022.base.BaseResponse\"g\n\025UpdateTemplat" +
-      "eRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
-      "seRequest\022%\n\010template\030\002 \001(\0132\023.glory_api." +
-      "Template\"\\\n\026UpdateTemplateResponse\022%\n\tba" +
-      "se_resp\030\001 \001(\0132\022.base.BaseResponse\022\033\n\023fre" +
-      "ight_template_id\030\002 \001(\003\"O\n\023ListTemplateRe" +
-      "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
-      "equest\022\017\n\007shop_id\030\002 \001(\003\"e\n\024ListTemplateR" +
-      "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
-      "sponse\022&\n\ttemplates\030\002 \003(\0132\023.glory_api.Te" +
-      "mplateb\006proto3"
+      "\032\nbase.proto\"7\n\013ProductName\022\022\n\nproduct_i" +
+      "d\030\001 \001(\003\022\024\n\014product_name\030\002 \001(\t\"\345\001\n\010Templa" +
+      "te\022\033\n\023freight_template_id\030\001 \001(\003\022\021\n\tconfi" +
+      "g_id\030\002 \001(\003\022\017\n\007shop_id\030\003 \001(\003\022\027\n\017freight_s" +
+      "etting\030\004 \001(\005\022\025\n\rtemplate_name\030\005 \001(\t\022\022\n\ni" +
+      "s_default\030\006 \001(\010\022\026\n\016freight_amount\030\007 \001(\002\022" +
+      "\017\n\007address\030\010 \001(\t\022+\n\013productInfo\030\t \003(\0132\026." +
+      "glory_api.ProductName\"f\n\026TemplateWithAut" +
+      "horInfo\022%\n\010template\030\001 \001(\0132\023.glory_api.Te" +
+      "mplate\022%\n\013author_info\030\002 \001(\0132\020.base.Autho" +
+      "rInfo\"g\n\025CreateTemplateRequest\022\'\n\014base_r" +
+      "equest\030\001 \001(\0132\021.base.BaseRequest\022%\n\010templ" +
+      "ate\030\002 \001(\0132\023.glory_api.Template\"\\\n\026Create" +
+      "TemplateResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
+      "se.BaseResponse\022\033\n\023freight_template_id\030\002" +
+      " \001(\003\"T\n\022GetTemplateRequest\022\'\n\014base_reque" +
+      "st\030\001 \001(\0132\021.base.BaseRequest\022\025\n\rtemplate_" +
+      "name\030\005 \001(\t\"q\n\023GetTemplateResponse\022%\n\tbas" +
+      "e_resp\030\001 \001(\0132\022.base.BaseResponse\0223\n\010temp" +
+      "late\030\002 \001(\0132!.glory_api.TemplateWithAutho" +
+      "rInfo\"]\n\025DeleteTemplateRequest\022\'\n\014base_r" +
+      "equest\030\001 \001(\0132\021.base.BaseRequest\022\033\n\023freig" +
+      "ht_template_id\030\002 \001(\003\"?\n\026DeleteTemplateRe" +
+      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
+      "ponse\"g\n\025UpdateTemplateRequest\022\'\n\014base_r" +
+      "equest\030\001 \001(\0132\021.base.BaseRequest\022%\n\010templ" +
+      "ate\030\002 \001(\0132\023.glory_api.Template\"\\\n\026Update" +
+      "TemplateResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
+      "se.BaseResponse\022\033\n\023freight_template_id\030\002" +
+      " \001(\003\"O\n\023ListTemplateRequest\022\'\n\014base_requ" +
+      "est\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007shop_id\030" +
+      "\002 \001(\003\"e\n\024ListTemplateResponse\022%\n\tbase_re" +
+      "sp\030\001 \001(\0132\022.base.BaseResponse\022&\n\ttemplate" +
+      "s\030\002 \003(\0132\023.glory_api.Templateb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           base.Base.getDescriptor(),
         });
-    internal_static_glory_api_Template_descriptor =
+    internal_static_glory_api_ProductName_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_glory_api_ProductName_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ProductName_descriptor,
+        new java.lang.String[] { "ProductId", "ProductName", });
+    internal_static_glory_api_Template_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_glory_api_Template_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_Template_descriptor,
-        new java.lang.String[] { "FreightTemplateId", "ConfigId", "ShopId", "FreightSetting", "TemplateName", "IsDefault", "FreightAmount", "Address", });
+        new java.lang.String[] { "FreightTemplateId", "ConfigId", "ShopId", "FreightSetting", "TemplateName", "IsDefault", "FreightAmount", "Address", "ProductInfo", });
     internal_static_glory_api_TemplateWithAuthorInfo_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_glory_api_TemplateWithAuthorInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_TemplateWithAuthorInfo_descriptor,
         new java.lang.String[] { "Template", "AuthorInfo", });
     internal_static_glory_api_CreateTemplateRequest_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_glory_api_CreateTemplateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CreateTemplateRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "Template", });
     internal_static_glory_api_CreateTemplateResponse_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_glory_api_CreateTemplateResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CreateTemplateResponse_descriptor,
         new java.lang.String[] { "BaseResp", "FreightTemplateId", });
     internal_static_glory_api_GetTemplateRequest_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_glory_api_GetTemplateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetTemplateRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "TemplateName", });
     internal_static_glory_api_GetTemplateResponse_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_glory_api_GetTemplateResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetTemplateResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Template", });
     internal_static_glory_api_DeleteTemplateRequest_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_glory_api_DeleteTemplateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteTemplateRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "FreightTemplateId", });
     internal_static_glory_api_DeleteTemplateResponse_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_glory_api_DeleteTemplateResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteTemplateResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_UpdateTemplateRequest_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_glory_api_UpdateTemplateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateTemplateRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "Template", });
     internal_static_glory_api_UpdateTemplateResponse_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_glory_api_UpdateTemplateResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateTemplateResponse_descriptor,
         new java.lang.String[] { "BaseResp", "FreightTemplateId", });
     internal_static_glory_api_ListTemplateRequest_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_glory_api_ListTemplateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListTemplateRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "ShopId", });
     internal_static_glory_api_ListTemplateResponse_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_glory_api_ListTemplateResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListTemplateResponse_descriptor,

@@ -5,6 +5,11 @@
 import * as base from "../base";
 export { base };
 
+export interface ProductName {
+  product_id?: string;
+  product_name?: string;
+}
+
 export interface Template {
   freight_template_id?: string;
   config_id?: string;
@@ -14,6 +19,7 @@ export interface Template {
   is_default?: boolean;
   freight_amount?: number;
   address?: string;
+  productInfo?: Array<ProductName>;
 }
 
 export interface TemplateWithAuthorInfo {
