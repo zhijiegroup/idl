@@ -13,6 +13,7 @@ export interface Template {
   template_name?: string;
   is_default?: boolean;
   freight_amount?: number;
+  address?: string;
 }
 
 export interface TemplateWithAuthorInfo {

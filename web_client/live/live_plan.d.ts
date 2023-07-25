@@ -142,6 +142,8 @@ export interface LoadLivePlanProductRequest {
   live_plan_id?: string;
   /** is load to playing product */
   is_playing?: boolean;
+  /** live room id */
+  room_id?: string;
 }
 
 export interface LoadLivePlanProductResponse {

@@ -4386,6 +4386,316 @@ public final class glory_apiGrpc {
     return getListTenantMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<glory_api.TenantOuterClass.CreateMajorRequest,
+      glory_api.TenantOuterClass.CreateMajorResponse> getCreateMajorMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateMajor",
+      requestType = glory_api.TenantOuterClass.CreateMajorRequest.class,
+      responseType = glory_api.TenantOuterClass.CreateMajorResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<glory_api.TenantOuterClass.CreateMajorRequest,
+      glory_api.TenantOuterClass.CreateMajorResponse> getCreateMajorMethod() {
+    io.grpc.MethodDescriptor<glory_api.TenantOuterClass.CreateMajorRequest, glory_api.TenantOuterClass.CreateMajorResponse> getCreateMajorMethod;
+    if ((getCreateMajorMethod = glory_apiGrpc.getCreateMajorMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCreateMajorMethod = glory_apiGrpc.getCreateMajorMethod) == null) {
+          glory_apiGrpc.getCreateMajorMethod = getCreateMajorMethod =
+              io.grpc.MethodDescriptor.<glory_api.TenantOuterClass.CreateMajorRequest, glory_api.TenantOuterClass.CreateMajorResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateMajor"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.TenantOuterClass.CreateMajorRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.TenantOuterClass.CreateMajorResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CreateMajor"))
+              .build();
+        }
+      }
+    }
+    return getCreateMajorMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<glory_api.TenantOuterClass.GetMajorRequest,
+      glory_api.TenantOuterClass.GetMajorResponse> getGetMajorMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetMajor",
+      requestType = glory_api.TenantOuterClass.GetMajorRequest.class,
+      responseType = glory_api.TenantOuterClass.GetMajorResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<glory_api.TenantOuterClass.GetMajorRequest,
+      glory_api.TenantOuterClass.GetMajorResponse> getGetMajorMethod() {
+    io.grpc.MethodDescriptor<glory_api.TenantOuterClass.GetMajorRequest, glory_api.TenantOuterClass.GetMajorResponse> getGetMajorMethod;
+    if ((getGetMajorMethod = glory_apiGrpc.getGetMajorMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGetMajorMethod = glory_apiGrpc.getGetMajorMethod) == null) {
+          glory_apiGrpc.getGetMajorMethod = getGetMajorMethod =
+              io.grpc.MethodDescriptor.<glory_api.TenantOuterClass.GetMajorRequest, glory_api.TenantOuterClass.GetMajorResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetMajor"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.TenantOuterClass.GetMajorRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.TenantOuterClass.GetMajorResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetMajor"))
+              .build();
+        }
+      }
+    }
+    return getGetMajorMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<glory_api.TenantOuterClass.UpdateMajorRequest,
+      glory_api.TenantOuterClass.UpdateMajorResponse> getUpdateMajorMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateMajor",
+      requestType = glory_api.TenantOuterClass.UpdateMajorRequest.class,
+      responseType = glory_api.TenantOuterClass.UpdateMajorResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<glory_api.TenantOuterClass.UpdateMajorRequest,
+      glory_api.TenantOuterClass.UpdateMajorResponse> getUpdateMajorMethod() {
+    io.grpc.MethodDescriptor<glory_api.TenantOuterClass.UpdateMajorRequest, glory_api.TenantOuterClass.UpdateMajorResponse> getUpdateMajorMethod;
+    if ((getUpdateMajorMethod = glory_apiGrpc.getUpdateMajorMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getUpdateMajorMethod = glory_apiGrpc.getUpdateMajorMethod) == null) {
+          glory_apiGrpc.getUpdateMajorMethod = getUpdateMajorMethod =
+              io.grpc.MethodDescriptor.<glory_api.TenantOuterClass.UpdateMajorRequest, glory_api.TenantOuterClass.UpdateMajorResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateMajor"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.TenantOuterClass.UpdateMajorRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.TenantOuterClass.UpdateMajorResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("UpdateMajor"))
+              .build();
+        }
+      }
+    }
+    return getUpdateMajorMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<glory_api.TenantOuterClass.DeleteMajorRequest,
+      glory_api.TenantOuterClass.DeleteMajorResponse> getDeleteMajorMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteMajor",
+      requestType = glory_api.TenantOuterClass.DeleteMajorRequest.class,
+      responseType = glory_api.TenantOuterClass.DeleteMajorResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<glory_api.TenantOuterClass.DeleteMajorRequest,
+      glory_api.TenantOuterClass.DeleteMajorResponse> getDeleteMajorMethod() {
+    io.grpc.MethodDescriptor<glory_api.TenantOuterClass.DeleteMajorRequest, glory_api.TenantOuterClass.DeleteMajorResponse> getDeleteMajorMethod;
+    if ((getDeleteMajorMethod = glory_apiGrpc.getDeleteMajorMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getDeleteMajorMethod = glory_apiGrpc.getDeleteMajorMethod) == null) {
+          glory_apiGrpc.getDeleteMajorMethod = getDeleteMajorMethod =
+              io.grpc.MethodDescriptor.<glory_api.TenantOuterClass.DeleteMajorRequest, glory_api.TenantOuterClass.DeleteMajorResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteMajor"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.TenantOuterClass.DeleteMajorRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.TenantOuterClass.DeleteMajorResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("DeleteMajor"))
+              .build();
+        }
+      }
+    }
+    return getDeleteMajorMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<glory_api.TenantOuterClass.ListMajorRequest,
+      glory_api.TenantOuterClass.ListMajorResponse> getListMajorMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListMajor",
+      requestType = glory_api.TenantOuterClass.ListMajorRequest.class,
+      responseType = glory_api.TenantOuterClass.ListMajorResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<glory_api.TenantOuterClass.ListMajorRequest,
+      glory_api.TenantOuterClass.ListMajorResponse> getListMajorMethod() {
+    io.grpc.MethodDescriptor<glory_api.TenantOuterClass.ListMajorRequest, glory_api.TenantOuterClass.ListMajorResponse> getListMajorMethod;
+    if ((getListMajorMethod = glory_apiGrpc.getListMajorMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListMajorMethod = glory_apiGrpc.getListMajorMethod) == null) {
+          glory_apiGrpc.getListMajorMethod = getListMajorMethod =
+              io.grpc.MethodDescriptor.<glory_api.TenantOuterClass.ListMajorRequest, glory_api.TenantOuterClass.ListMajorResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListMajor"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.TenantOuterClass.ListMajorRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.TenantOuterClass.ListMajorResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListMajor"))
+              .build();
+        }
+      }
+    }
+    return getListMajorMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<glory_api.TenantOuterClass.CreateClassRequest,
+      glory_api.TenantOuterClass.CreateClassResponse> getCreateClassMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateClass",
+      requestType = glory_api.TenantOuterClass.CreateClassRequest.class,
+      responseType = glory_api.TenantOuterClass.CreateClassResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<glory_api.TenantOuterClass.CreateClassRequest,
+      glory_api.TenantOuterClass.CreateClassResponse> getCreateClassMethod() {
+    io.grpc.MethodDescriptor<glory_api.TenantOuterClass.CreateClassRequest, glory_api.TenantOuterClass.CreateClassResponse> getCreateClassMethod;
+    if ((getCreateClassMethod = glory_apiGrpc.getCreateClassMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCreateClassMethod = glory_apiGrpc.getCreateClassMethod) == null) {
+          glory_apiGrpc.getCreateClassMethod = getCreateClassMethod =
+              io.grpc.MethodDescriptor.<glory_api.TenantOuterClass.CreateClassRequest, glory_api.TenantOuterClass.CreateClassResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateClass"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.TenantOuterClass.CreateClassRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.TenantOuterClass.CreateClassResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CreateClass"))
+              .build();
+        }
+      }
+    }
+    return getCreateClassMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<glory_api.TenantOuterClass.GetClassRequest,
+      glory_api.TenantOuterClass.GetClassResponse> getGetClassMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetClass",
+      requestType = glory_api.TenantOuterClass.GetClassRequest.class,
+      responseType = glory_api.TenantOuterClass.GetClassResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<glory_api.TenantOuterClass.GetClassRequest,
+      glory_api.TenantOuterClass.GetClassResponse> getGetClassMethod() {
+    io.grpc.MethodDescriptor<glory_api.TenantOuterClass.GetClassRequest, glory_api.TenantOuterClass.GetClassResponse> getGetClassMethod;
+    if ((getGetClassMethod = glory_apiGrpc.getGetClassMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGetClassMethod = glory_apiGrpc.getGetClassMethod) == null) {
+          glory_apiGrpc.getGetClassMethod = getGetClassMethod =
+              io.grpc.MethodDescriptor.<glory_api.TenantOuterClass.GetClassRequest, glory_api.TenantOuterClass.GetClassResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetClass"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.TenantOuterClass.GetClassRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.TenantOuterClass.GetClassResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetClass"))
+              .build();
+        }
+      }
+    }
+    return getGetClassMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<glory_api.TenantOuterClass.UpdateClassRequest,
+      glory_api.TenantOuterClass.UpdateClassResponse> getUpdateClassMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateClass",
+      requestType = glory_api.TenantOuterClass.UpdateClassRequest.class,
+      responseType = glory_api.TenantOuterClass.UpdateClassResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<glory_api.TenantOuterClass.UpdateClassRequest,
+      glory_api.TenantOuterClass.UpdateClassResponse> getUpdateClassMethod() {
+    io.grpc.MethodDescriptor<glory_api.TenantOuterClass.UpdateClassRequest, glory_api.TenantOuterClass.UpdateClassResponse> getUpdateClassMethod;
+    if ((getUpdateClassMethod = glory_apiGrpc.getUpdateClassMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getUpdateClassMethod = glory_apiGrpc.getUpdateClassMethod) == null) {
+          glory_apiGrpc.getUpdateClassMethod = getUpdateClassMethod =
+              io.grpc.MethodDescriptor.<glory_api.TenantOuterClass.UpdateClassRequest, glory_api.TenantOuterClass.UpdateClassResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateClass"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.TenantOuterClass.UpdateClassRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.TenantOuterClass.UpdateClassResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("UpdateClass"))
+              .build();
+        }
+      }
+    }
+    return getUpdateClassMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<glory_api.TenantOuterClass.DeleteClassRequest,
+      glory_api.TenantOuterClass.DeleteClassResponse> getDeleteClassMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteClass",
+      requestType = glory_api.TenantOuterClass.DeleteClassRequest.class,
+      responseType = glory_api.TenantOuterClass.DeleteClassResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<glory_api.TenantOuterClass.DeleteClassRequest,
+      glory_api.TenantOuterClass.DeleteClassResponse> getDeleteClassMethod() {
+    io.grpc.MethodDescriptor<glory_api.TenantOuterClass.DeleteClassRequest, glory_api.TenantOuterClass.DeleteClassResponse> getDeleteClassMethod;
+    if ((getDeleteClassMethod = glory_apiGrpc.getDeleteClassMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getDeleteClassMethod = glory_apiGrpc.getDeleteClassMethod) == null) {
+          glory_apiGrpc.getDeleteClassMethod = getDeleteClassMethod =
+              io.grpc.MethodDescriptor.<glory_api.TenantOuterClass.DeleteClassRequest, glory_api.TenantOuterClass.DeleteClassResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteClass"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.TenantOuterClass.DeleteClassRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.TenantOuterClass.DeleteClassResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("DeleteClass"))
+              .build();
+        }
+      }
+    }
+    return getDeleteClassMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<glory_api.TenantOuterClass.ListClassRequest,
+      glory_api.TenantOuterClass.ListClassResponse> getListClassMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListClass",
+      requestType = glory_api.TenantOuterClass.ListClassRequest.class,
+      responseType = glory_api.TenantOuterClass.ListClassResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<glory_api.TenantOuterClass.ListClassRequest,
+      glory_api.TenantOuterClass.ListClassResponse> getListClassMethod() {
+    io.grpc.MethodDescriptor<glory_api.TenantOuterClass.ListClassRequest, glory_api.TenantOuterClass.ListClassResponse> getListClassMethod;
+    if ((getListClassMethod = glory_apiGrpc.getListClassMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListClassMethod = glory_apiGrpc.getListClassMethod) == null) {
+          glory_apiGrpc.getListClassMethod = getListClassMethod =
+              io.grpc.MethodDescriptor.<glory_api.TenantOuterClass.ListClassRequest, glory_api.TenantOuterClass.ListClassResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListClass"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.TenantOuterClass.ListClassRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.TenantOuterClass.ListClassResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListClass"))
+              .build();
+        }
+      }
+    }
+    return getListClassMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -5502,6 +5812,82 @@ public final class glory_apiGrpc {
     default void listTenant(glory_api.TenantOuterClass.ListTenantRequest request,
         io.grpc.stub.StreamObserver<glory_api.TenantOuterClass.ListTenantResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListTenantMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     *major
+     * </pre>
+     */
+    default void createMajor(glory_api.TenantOuterClass.CreateMajorRequest request,
+        io.grpc.stub.StreamObserver<glory_api.TenantOuterClass.CreateMajorResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateMajorMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void getMajor(glory_api.TenantOuterClass.GetMajorRequest request,
+        io.grpc.stub.StreamObserver<glory_api.TenantOuterClass.GetMajorResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetMajorMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updateMajor(glory_api.TenantOuterClass.UpdateMajorRequest request,
+        io.grpc.stub.StreamObserver<glory_api.TenantOuterClass.UpdateMajorResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateMajorMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void deleteMajor(glory_api.TenantOuterClass.DeleteMajorRequest request,
+        io.grpc.stub.StreamObserver<glory_api.TenantOuterClass.DeleteMajorResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteMajorMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void listMajor(glory_api.TenantOuterClass.ListMajorRequest request,
+        io.grpc.stub.StreamObserver<glory_api.TenantOuterClass.ListMajorResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListMajorMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * class
+     * </pre>
+     */
+    default void createClass(glory_api.TenantOuterClass.CreateClassRequest request,
+        io.grpc.stub.StreamObserver<glory_api.TenantOuterClass.CreateClassResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateClassMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void getClass(glory_api.TenantOuterClass.GetClassRequest request,
+        io.grpc.stub.StreamObserver<glory_api.TenantOuterClass.GetClassResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetClassMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updateClass(glory_api.TenantOuterClass.UpdateClassRequest request,
+        io.grpc.stub.StreamObserver<glory_api.TenantOuterClass.UpdateClassResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateClassMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void deleteClass(glory_api.TenantOuterClass.DeleteClassRequest request,
+        io.grpc.stub.StreamObserver<glory_api.TenantOuterClass.DeleteClassResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteClassMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void listClass(glory_api.TenantOuterClass.ListClassRequest request,
+        io.grpc.stub.StreamObserver<glory_api.TenantOuterClass.ListClassResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListClassMethod(), responseObserver);
     }
   }
 
@@ -6742,6 +7128,92 @@ public final class glory_apiGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListTenantMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     *major
+     * </pre>
+     */
+    public void createMajor(glory_api.TenantOuterClass.CreateMajorRequest request,
+        io.grpc.stub.StreamObserver<glory_api.TenantOuterClass.CreateMajorResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateMajorMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getMajor(glory_api.TenantOuterClass.GetMajorRequest request,
+        io.grpc.stub.StreamObserver<glory_api.TenantOuterClass.GetMajorResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetMajorMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateMajor(glory_api.TenantOuterClass.UpdateMajorRequest request,
+        io.grpc.stub.StreamObserver<glory_api.TenantOuterClass.UpdateMajorResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateMajorMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deleteMajor(glory_api.TenantOuterClass.DeleteMajorRequest request,
+        io.grpc.stub.StreamObserver<glory_api.TenantOuterClass.DeleteMajorResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteMajorMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void listMajor(glory_api.TenantOuterClass.ListMajorRequest request,
+        io.grpc.stub.StreamObserver<glory_api.TenantOuterClass.ListMajorResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListMajorMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * class
+     * </pre>
+     */
+    public void createClass(glory_api.TenantOuterClass.CreateClassRequest request,
+        io.grpc.stub.StreamObserver<glory_api.TenantOuterClass.CreateClassResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateClassMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getClass(glory_api.TenantOuterClass.GetClassRequest request,
+        io.grpc.stub.StreamObserver<glory_api.TenantOuterClass.GetClassResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetClassMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateClass(glory_api.TenantOuterClass.UpdateClassRequest request,
+        io.grpc.stub.StreamObserver<glory_api.TenantOuterClass.UpdateClassResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateClassMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deleteClass(glory_api.TenantOuterClass.DeleteClassRequest request,
+        io.grpc.stub.StreamObserver<glory_api.TenantOuterClass.DeleteClassResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteClassMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void listClass(glory_api.TenantOuterClass.ListClassRequest request,
+        io.grpc.stub.StreamObserver<glory_api.TenantOuterClass.ListClassResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListClassMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -7828,6 +8300,82 @@ public final class glory_apiGrpc {
     public glory_api.TenantOuterClass.ListTenantResponse listTenant(glory_api.TenantOuterClass.ListTenantRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListTenantMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     *major
+     * </pre>
+     */
+    public glory_api.TenantOuterClass.CreateMajorResponse createMajor(glory_api.TenantOuterClass.CreateMajorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateMajorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public glory_api.TenantOuterClass.GetMajorResponse getMajor(glory_api.TenantOuterClass.GetMajorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetMajorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public glory_api.TenantOuterClass.UpdateMajorResponse updateMajor(glory_api.TenantOuterClass.UpdateMajorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateMajorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public glory_api.TenantOuterClass.DeleteMajorResponse deleteMajor(glory_api.TenantOuterClass.DeleteMajorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteMajorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public glory_api.TenantOuterClass.ListMajorResponse listMajor(glory_api.TenantOuterClass.ListMajorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMajorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * class
+     * </pre>
+     */
+    public glory_api.TenantOuterClass.CreateClassResponse createClass(glory_api.TenantOuterClass.CreateClassRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateClassMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public glory_api.TenantOuterClass.GetClassResponse getClass(glory_api.TenantOuterClass.GetClassRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetClassMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public glory_api.TenantOuterClass.UpdateClassResponse updateClass(glory_api.TenantOuterClass.UpdateClassRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateClassMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public glory_api.TenantOuterClass.DeleteClassResponse deleteClass(glory_api.TenantOuterClass.DeleteClassRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteClassMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public glory_api.TenantOuterClass.ListClassResponse listClass(glory_api.TenantOuterClass.ListClassRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListClassMethod(), getCallOptions(), request);
     }
   }
 
@@ -9057,6 +9605,92 @@ public final class glory_apiGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListTenantMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     *major
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<glory_api.TenantOuterClass.CreateMajorResponse> createMajor(
+        glory_api.TenantOuterClass.CreateMajorRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateMajorMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<glory_api.TenantOuterClass.GetMajorResponse> getMajor(
+        glory_api.TenantOuterClass.GetMajorRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetMajorMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<glory_api.TenantOuterClass.UpdateMajorResponse> updateMajor(
+        glory_api.TenantOuterClass.UpdateMajorRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateMajorMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<glory_api.TenantOuterClass.DeleteMajorResponse> deleteMajor(
+        glory_api.TenantOuterClass.DeleteMajorRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteMajorMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<glory_api.TenantOuterClass.ListMajorResponse> listMajor(
+        glory_api.TenantOuterClass.ListMajorRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListMajorMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * class
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<glory_api.TenantOuterClass.CreateClassResponse> createClass(
+        glory_api.TenantOuterClass.CreateClassRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateClassMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<glory_api.TenantOuterClass.GetClassResponse> getClass(
+        glory_api.TenantOuterClass.GetClassRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetClassMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<glory_api.TenantOuterClass.UpdateClassResponse> updateClass(
+        glory_api.TenantOuterClass.UpdateClassRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateClassMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<glory_api.TenantOuterClass.DeleteClassResponse> deleteClass(
+        glory_api.TenantOuterClass.DeleteClassRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteClassMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<glory_api.TenantOuterClass.ListClassResponse> listClass(
+        glory_api.TenantOuterClass.ListClassRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListClassMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_EXAMPLE = 0;
@@ -9200,6 +9834,16 @@ public final class glory_apiGrpc {
   private static final int METHODID_UPDATE_TENANT = 138;
   private static final int METHODID_DELETE_TENANT = 139;
   private static final int METHODID_LIST_TENANT = 140;
+  private static final int METHODID_CREATE_MAJOR = 141;
+  private static final int METHODID_GET_MAJOR = 142;
+  private static final int METHODID_UPDATE_MAJOR = 143;
+  private static final int METHODID_DELETE_MAJOR = 144;
+  private static final int METHODID_LIST_MAJOR = 145;
+  private static final int METHODID_CREATE_CLASS = 146;
+  private static final int METHODID_GET_CLASS = 147;
+  private static final int METHODID_UPDATE_CLASS = 148;
+  private static final int METHODID_DELETE_CLASS = 149;
+  private static final int METHODID_LIST_CLASS = 150;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -9781,6 +10425,46 @@ public final class glory_apiGrpc {
         case METHODID_LIST_TENANT:
           serviceImpl.listTenant((glory_api.TenantOuterClass.ListTenantRequest) request,
               (io.grpc.stub.StreamObserver<glory_api.TenantOuterClass.ListTenantResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_MAJOR:
+          serviceImpl.createMajor((glory_api.TenantOuterClass.CreateMajorRequest) request,
+              (io.grpc.stub.StreamObserver<glory_api.TenantOuterClass.CreateMajorResponse>) responseObserver);
+          break;
+        case METHODID_GET_MAJOR:
+          serviceImpl.getMajor((glory_api.TenantOuterClass.GetMajorRequest) request,
+              (io.grpc.stub.StreamObserver<glory_api.TenantOuterClass.GetMajorResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_MAJOR:
+          serviceImpl.updateMajor((glory_api.TenantOuterClass.UpdateMajorRequest) request,
+              (io.grpc.stub.StreamObserver<glory_api.TenantOuterClass.UpdateMajorResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_MAJOR:
+          serviceImpl.deleteMajor((glory_api.TenantOuterClass.DeleteMajorRequest) request,
+              (io.grpc.stub.StreamObserver<glory_api.TenantOuterClass.DeleteMajorResponse>) responseObserver);
+          break;
+        case METHODID_LIST_MAJOR:
+          serviceImpl.listMajor((glory_api.TenantOuterClass.ListMajorRequest) request,
+              (io.grpc.stub.StreamObserver<glory_api.TenantOuterClass.ListMajorResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_CLASS:
+          serviceImpl.createClass((glory_api.TenantOuterClass.CreateClassRequest) request,
+              (io.grpc.stub.StreamObserver<glory_api.TenantOuterClass.CreateClassResponse>) responseObserver);
+          break;
+        case METHODID_GET_CLASS:
+          serviceImpl.getClass((glory_api.TenantOuterClass.GetClassRequest) request,
+              (io.grpc.stub.StreamObserver<glory_api.TenantOuterClass.GetClassResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_CLASS:
+          serviceImpl.updateClass((glory_api.TenantOuterClass.UpdateClassRequest) request,
+              (io.grpc.stub.StreamObserver<glory_api.TenantOuterClass.UpdateClassResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_CLASS:
+          serviceImpl.deleteClass((glory_api.TenantOuterClass.DeleteClassRequest) request,
+              (io.grpc.stub.StreamObserver<glory_api.TenantOuterClass.DeleteClassResponse>) responseObserver);
+          break;
+        case METHODID_LIST_CLASS:
+          serviceImpl.listClass((glory_api.TenantOuterClass.ListClassRequest) request,
+              (io.grpc.stub.StreamObserver<glory_api.TenantOuterClass.ListClassResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -10787,6 +11471,76 @@ public final class glory_apiGrpc {
               glory_api.TenantOuterClass.ListTenantRequest,
               glory_api.TenantOuterClass.ListTenantResponse>(
                 service, METHODID_LIST_TENANT)))
+        .addMethod(
+          getCreateMajorMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              glory_api.TenantOuterClass.CreateMajorRequest,
+              glory_api.TenantOuterClass.CreateMajorResponse>(
+                service, METHODID_CREATE_MAJOR)))
+        .addMethod(
+          getGetMajorMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              glory_api.TenantOuterClass.GetMajorRequest,
+              glory_api.TenantOuterClass.GetMajorResponse>(
+                service, METHODID_GET_MAJOR)))
+        .addMethod(
+          getUpdateMajorMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              glory_api.TenantOuterClass.UpdateMajorRequest,
+              glory_api.TenantOuterClass.UpdateMajorResponse>(
+                service, METHODID_UPDATE_MAJOR)))
+        .addMethod(
+          getDeleteMajorMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              glory_api.TenantOuterClass.DeleteMajorRequest,
+              glory_api.TenantOuterClass.DeleteMajorResponse>(
+                service, METHODID_DELETE_MAJOR)))
+        .addMethod(
+          getListMajorMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              glory_api.TenantOuterClass.ListMajorRequest,
+              glory_api.TenantOuterClass.ListMajorResponse>(
+                service, METHODID_LIST_MAJOR)))
+        .addMethod(
+          getCreateClassMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              glory_api.TenantOuterClass.CreateClassRequest,
+              glory_api.TenantOuterClass.CreateClassResponse>(
+                service, METHODID_CREATE_CLASS)))
+        .addMethod(
+          getGetClassMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              glory_api.TenantOuterClass.GetClassRequest,
+              glory_api.TenantOuterClass.GetClassResponse>(
+                service, METHODID_GET_CLASS)))
+        .addMethod(
+          getUpdateClassMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              glory_api.TenantOuterClass.UpdateClassRequest,
+              glory_api.TenantOuterClass.UpdateClassResponse>(
+                service, METHODID_UPDATE_CLASS)))
+        .addMethod(
+          getDeleteClassMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              glory_api.TenantOuterClass.DeleteClassRequest,
+              glory_api.TenantOuterClass.DeleteClassResponse>(
+                service, METHODID_DELETE_CLASS)))
+        .addMethod(
+          getListClassMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              glory_api.TenantOuterClass.ListClassRequest,
+              glory_api.TenantOuterClass.ListClassResponse>(
+                service, METHODID_LIST_CLASS)))
         .build();
   }
 
@@ -10976,6 +11730,16 @@ public final class glory_apiGrpc {
               .addMethod(getUpdateTenantMethod())
               .addMethod(getDeleteTenantMethod())
               .addMethod(getListTenantMethod())
+              .addMethod(getCreateMajorMethod())
+              .addMethod(getGetMajorMethod())
+              .addMethod(getUpdateMajorMethod())
+              .addMethod(getDeleteMajorMethod())
+              .addMethod(getListMajorMethod())
+              .addMethod(getCreateClassMethod())
+              .addMethod(getGetClassMethod())
+              .addMethod(getUpdateClassMethod())
+              .addMethod(getDeleteClassMethod())
+              .addMethod(getListClassMethod())
               .build();
         }
       }

@@ -1147,6 +1147,82 @@ export class glory_api {
       handleResponse
     );
   }
+
+  CreateMajor(request) {
+    const uri = `${this.uriPrefix}/api/tenant/create_major`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  GetMajor(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/tenant/get_major${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  UpdateMajor(request) {
+    const uri = `${this.uriPrefix}/api/tenant/update_major`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteMajor(request) {
+    const uri = `${this.uriPrefix}/api/tenant/delete_major`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListMajor(request) {
+    const uri = `${this.uriPrefix}/api/tenant/list_major`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreateClass(request) {
+    const uri = `${this.uriPrefix}/api/tenant/create_class`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  GetClass(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/tenant/get_class${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  UpdateClass(request) {
+    const uri = `${this.uriPrefix}/api/tenant/update_class`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteClass(request) {
+    const uri = `${this.uriPrefix}/api/tenant/delete_class`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListClass(request) {
+    const uri = `${this.uriPrefix}/api/tenant/list_class`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
 }
 
 export const glory_apiClient = new glory_api();

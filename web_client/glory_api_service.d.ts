@@ -616,6 +616,44 @@ CreateLivePlanProduct create live plan product */
   ListTenant(
     request: tenant.ListTenantRequest
   ): Promise<tenant.ListTenantResponse>;
+
+  /** major */
+  CreateMajor(
+    request: tenant.CreateMajorRequest
+  ): Promise<tenant.CreateMajorResponse>;
+
+  GetMajor(request: tenant.GetMajorRequest): Promise<tenant.GetMajorResponse>;
+
+  UpdateMajor(
+    request: tenant.UpdateMajorRequest
+  ): Promise<tenant.UpdateMajorResponse>;
+
+  DeleteMajor(
+    request: tenant.DeleteMajorRequest
+  ): Promise<tenant.DeleteMajorResponse>;
+
+  ListMajor(
+    request: tenant.ListMajorRequest
+  ): Promise<tenant.ListMajorResponse>;
+
+  /** class */
+  CreateClass(
+    request: tenant.CreateClassRequest
+  ): Promise<tenant.CreateClassResponse>;
+
+  GetClass(request: tenant.GetClassRequest): Promise<tenant.GetClassResponse>;
+
+  UpdateClass(
+    request: tenant.UpdateClassRequest
+  ): Promise<tenant.UpdateClassResponse>;
+
+  DeleteClass(
+    request: tenant.DeleteClassRequest
+  ): Promise<tenant.DeleteClassResponse>;
+
+  ListClass(
+    request: tenant.ListClassRequest
+  ): Promise<tenant.ListClassResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

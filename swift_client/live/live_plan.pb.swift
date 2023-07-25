@@ -602,6 +602,9 @@ struct GloryApi_LoadLivePlanProductRequest {
   /// is load to playing product
   var isPlaying: Bool = false
 
+  /// live room id
+  var roomID: Int64 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -2038,6 +2041,7 @@ extension GloryApi_LoadLivePlanProductRequest: SwiftProtobuf.Message, SwiftProto
     2: .standard(proto: "shop_id"),
     3: .standard(proto: "live_plan_id"),
     4: .standard(proto: "is_playing"),
+    5: .standard(proto: "room_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2050,6 +2054,7 @@ extension GloryApi_LoadLivePlanProductRequest: SwiftProtobuf.Message, SwiftProto
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
       case 3: try { try decoder.decodeSingularInt64Field(value: &self.livePlanID) }()
       case 4: try { try decoder.decodeSingularBoolField(value: &self.isPlaying) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.roomID) }()
       default: break
       }
     }
@@ -2072,6 +2077,9 @@ extension GloryApi_LoadLivePlanProductRequest: SwiftProtobuf.Message, SwiftProto
     if self.isPlaying != false {
       try visitor.visitSingularBoolField(value: self.isPlaying, fieldNumber: 4)
     }
+    if self.roomID != 0 {
+      try visitor.visitSingularInt64Field(value: self.roomID, fieldNumber: 5)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2080,6 +2088,7 @@ extension GloryApi_LoadLivePlanProductRequest: SwiftProtobuf.Message, SwiftProto
     if lhs.shopID != rhs.shopID {return false}
     if lhs.livePlanID != rhs.livePlanID {return false}
     if lhs.isPlaying != rhs.isPlaying {return false}
+    if lhs.roomID != rhs.roomID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
