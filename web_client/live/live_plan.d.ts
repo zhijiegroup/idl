@@ -190,6 +190,8 @@ export interface LiveProductStatus {
   is_introduct?: boolean;
   /** 上架 下架状态 */
   state?: string;
+  /** 商品 url */
+  product_url?: string;
 }
 
 export interface ListLiveProductStatusRequest {

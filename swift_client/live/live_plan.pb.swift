@@ -769,6 +769,9 @@ struct GloryApi_LiveProductStatus {
   /// 上架 下架状态
   var state: String = String()
 
+  /// 商品 url
+  var productURL: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -2373,6 +2376,7 @@ extension GloryApi_LiveProductStatus: SwiftProtobuf.Message, SwiftProtobuf._Mess
     7: .standard(proto: "product_description"),
     8: .standard(proto: "is_introduct"),
     9: .same(proto: "state"),
+    10: .standard(proto: "product_url"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2390,6 +2394,7 @@ extension GloryApi_LiveProductStatus: SwiftProtobuf.Message, SwiftProtobuf._Mess
       case 7: try { try decoder.decodeSingularStringField(value: &self.productDescription) }()
       case 8: try { try decoder.decodeSingularBoolField(value: &self.isIntroduct) }()
       case 9: try { try decoder.decodeSingularStringField(value: &self.state) }()
+      case 10: try { try decoder.decodeSingularStringField(value: &self.productURL) }()
       default: break
       }
     }
@@ -2423,6 +2428,9 @@ extension GloryApi_LiveProductStatus: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if !self.state.isEmpty {
       try visitor.visitSingularStringField(value: self.state, fieldNumber: 9)
     }
+    if !self.productURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.productURL, fieldNumber: 10)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2436,6 +2444,7 @@ extension GloryApi_LiveProductStatus: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if lhs.productDescription != rhs.productDescription {return false}
     if lhs.isIntroduct != rhs.isIntroduct {return false}
     if lhs.state != rhs.state {return false}
+    if lhs.productURL != rhs.productURL {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
