@@ -124,6 +124,7 @@ message LoadLivePlanProductRequest {
   int64 shop_id = 2; // shop id
   int64 live_plan_id = 3; // live plan id
   bool is_playing = 4; // is load to playing product
+  int64 room_id = 5; // live room id
 }
 
 message LoadLivePlanProductResponse {
