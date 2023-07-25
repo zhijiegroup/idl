@@ -44,7 +44,7 @@ message ShipmentAttribute {
 }
 
 enum State {
-  default = 0;
+  DEFAULT = 0;
   created = 1;//创建
   on_shelf = 2;//上架
   off_shelf = 3;//下架
