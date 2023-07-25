@@ -24509,6 +24509,66 @@ public final class LivePlanOuterClass {
      */
     com.google.protobuf.ByteString
         getProductUrlBytes();
+
+    /**
+     * <pre>
+     * 商品名称
+     * </pre>
+     *
+     * <code>string product_name = 11;</code>
+     * @return The productName.
+     */
+    java.lang.String getProductName();
+    /**
+     * <pre>
+     * 商品名称
+     * </pre>
+     *
+     * <code>string product_name = 11;</code>
+     * @return The bytes for productName.
+     */
+    com.google.protobuf.ByteString
+        getProductNameBytes();
+
+    /**
+     * <pre>
+     * 商品价格
+     * </pre>
+     *
+     * <code>double product_price = 12;</code>
+     * @return The productPrice.
+     */
+    double getProductPrice();
+
+    /**
+     * <pre>
+     * 商品库存数量
+     * </pre>
+     *
+     * <code>int64 product_remaining_amount = 13;</code>
+     * @return The productRemainingAmount.
+     */
+    long getProductRemainingAmount();
+
+    /**
+     * <pre>
+     * 商品售出数量
+     * </pre>
+     *
+     * <code>int64 product_sold_amount = 14;</code>
+     * @return The productSoldAmount.
+     */
+    long getProductSoldAmount();
+
+    /**
+     * <pre>
+     * 商品成交金额
+     * </pre>
+     *
+     * <code>double product_deal_amount = 15;</code>
+     * @return The productDealAmount.
+     */
+    double getProductDealAmount();
   }
   /**
    * Protobuf type {@code glory_api.LiveProductStatus}
@@ -24528,6 +24588,7 @@ public final class LivePlanOuterClass {
       productDescription_ = "";
       state_ = "";
       productUrl_ = "";
+      productName_ = "";
     }
 
     @java.lang.Override
@@ -24613,6 +24674,32 @@ public final class LivePlanOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               productUrl_ = s;
+              break;
+            }
+            case 90: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              productName_ = s;
+              break;
+            }
+            case 97: {
+
+              productPrice_ = input.readDouble();
+              break;
+            }
+            case 104: {
+
+              productRemainingAmount_ = input.readInt64();
+              break;
+            }
+            case 112: {
+
+              productSoldAmount_ = input.readInt64();
+              break;
+            }
+            case 121: {
+
+              productDealAmount_ = input.readDouble();
               break;
             }
             default: {
@@ -24912,6 +24999,112 @@ public final class LivePlanOuterClass {
       }
     }
 
+    public static final int PRODUCT_NAME_FIELD_NUMBER = 11;
+    private volatile java.lang.Object productName_;
+    /**
+     * <pre>
+     * 商品名称
+     * </pre>
+     *
+     * <code>string product_name = 11;</code>
+     * @return The productName.
+     */
+    @java.lang.Override
+    public java.lang.String getProductName() {
+      java.lang.Object ref = productName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        productName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 商品名称
+     * </pre>
+     *
+     * <code>string product_name = 11;</code>
+     * @return The bytes for productName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getProductNameBytes() {
+      java.lang.Object ref = productName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        productName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PRODUCT_PRICE_FIELD_NUMBER = 12;
+    private double productPrice_;
+    /**
+     * <pre>
+     * 商品价格
+     * </pre>
+     *
+     * <code>double product_price = 12;</code>
+     * @return The productPrice.
+     */
+    @java.lang.Override
+    public double getProductPrice() {
+      return productPrice_;
+    }
+
+    public static final int PRODUCT_REMAINING_AMOUNT_FIELD_NUMBER = 13;
+    private long productRemainingAmount_;
+    /**
+     * <pre>
+     * 商品库存数量
+     * </pre>
+     *
+     * <code>int64 product_remaining_amount = 13;</code>
+     * @return The productRemainingAmount.
+     */
+    @java.lang.Override
+    public long getProductRemainingAmount() {
+      return productRemainingAmount_;
+    }
+
+    public static final int PRODUCT_SOLD_AMOUNT_FIELD_NUMBER = 14;
+    private long productSoldAmount_;
+    /**
+     * <pre>
+     * 商品售出数量
+     * </pre>
+     *
+     * <code>int64 product_sold_amount = 14;</code>
+     * @return The productSoldAmount.
+     */
+    @java.lang.Override
+    public long getProductSoldAmount() {
+      return productSoldAmount_;
+    }
+
+    public static final int PRODUCT_DEAL_AMOUNT_FIELD_NUMBER = 15;
+    private double productDealAmount_;
+    /**
+     * <pre>
+     * 商品成交金额
+     * </pre>
+     *
+     * <code>double product_deal_amount = 15;</code>
+     * @return The productDealAmount.
+     */
+    @java.lang.Override
+    public double getProductDealAmount() {
+      return productDealAmount_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -24955,6 +25148,21 @@ public final class LivePlanOuterClass {
       }
       if (!getProductUrlBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, productUrl_);
+      }
+      if (!getProductNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, productName_);
+      }
+      if (productPrice_ != 0D) {
+        output.writeDouble(12, productPrice_);
+      }
+      if (productRemainingAmount_ != 0L) {
+        output.writeInt64(13, productRemainingAmount_);
+      }
+      if (productSoldAmount_ != 0L) {
+        output.writeInt64(14, productSoldAmount_);
+      }
+      if (productDealAmount_ != 0D) {
+        output.writeDouble(15, productDealAmount_);
       }
       unknownFields.writeTo(output);
     }
@@ -25000,6 +25208,25 @@ public final class LivePlanOuterClass {
       if (!getProductUrlBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, productUrl_);
       }
+      if (!getProductNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, productName_);
+      }
+      if (productPrice_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(12, productPrice_);
+      }
+      if (productRemainingAmount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(13, productRemainingAmount_);
+      }
+      if (productSoldAmount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(14, productSoldAmount_);
+      }
+      if (productDealAmount_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(15, productDealAmount_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -25035,6 +25262,18 @@ public final class LivePlanOuterClass {
           .equals(other.getState())) return false;
       if (!getProductUrl()
           .equals(other.getProductUrl())) return false;
+      if (!getProductName()
+          .equals(other.getProductName())) return false;
+      if (java.lang.Double.doubleToLongBits(getProductPrice())
+          != java.lang.Double.doubleToLongBits(
+              other.getProductPrice())) return false;
+      if (getProductRemainingAmount()
+          != other.getProductRemainingAmount()) return false;
+      if (getProductSoldAmount()
+          != other.getProductSoldAmount()) return false;
+      if (java.lang.Double.doubleToLongBits(getProductDealAmount())
+          != java.lang.Double.doubleToLongBits(
+              other.getProductDealAmount())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -25071,6 +25310,20 @@ public final class LivePlanOuterClass {
       hash = (53 * hash) + getState().hashCode();
       hash = (37 * hash) + PRODUCT_URL_FIELD_NUMBER;
       hash = (53 * hash) + getProductUrl().hashCode();
+      hash = (37 * hash) + PRODUCT_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getProductName().hashCode();
+      hash = (37 * hash) + PRODUCT_PRICE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getProductPrice()));
+      hash = (37 * hash) + PRODUCT_REMAINING_AMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getProductRemainingAmount());
+      hash = (37 * hash) + PRODUCT_SOLD_AMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getProductSoldAmount());
+      hash = (37 * hash) + PRODUCT_DEAL_AMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getProductDealAmount()));
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -25224,6 +25477,16 @@ public final class LivePlanOuterClass {
 
         productUrl_ = "";
 
+        productName_ = "";
+
+        productPrice_ = 0D;
+
+        productRemainingAmount_ = 0L;
+
+        productSoldAmount_ = 0L;
+
+        productDealAmount_ = 0D;
+
         return this;
       }
 
@@ -25260,6 +25523,11 @@ public final class LivePlanOuterClass {
         result.isIntroduct_ = isIntroduct_;
         result.state_ = state_;
         result.productUrl_ = productUrl_;
+        result.productName_ = productName_;
+        result.productPrice_ = productPrice_;
+        result.productRemainingAmount_ = productRemainingAmount_;
+        result.productSoldAmount_ = productSoldAmount_;
+        result.productDealAmount_ = productDealAmount_;
         onBuilt();
         return result;
       }
@@ -25342,6 +25610,22 @@ public final class LivePlanOuterClass {
         if (!other.getProductUrl().isEmpty()) {
           productUrl_ = other.productUrl_;
           onChanged();
+        }
+        if (!other.getProductName().isEmpty()) {
+          productName_ = other.productName_;
+          onChanged();
+        }
+        if (other.getProductPrice() != 0D) {
+          setProductPrice(other.getProductPrice());
+        }
+        if (other.getProductRemainingAmount() != 0L) {
+          setProductRemainingAmount(other.getProductRemainingAmount());
+        }
+        if (other.getProductSoldAmount() != 0L) {
+          setProductSoldAmount(other.getProductSoldAmount());
+        }
+        if (other.getProductDealAmount() != 0D) {
+          setProductDealAmount(other.getProductDealAmount());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -25955,6 +26239,274 @@ public final class LivePlanOuterClass {
   checkByteStringIsUtf8(value);
         
         productUrl_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object productName_ = "";
+      /**
+       * <pre>
+       * 商品名称
+       * </pre>
+       *
+       * <code>string product_name = 11;</code>
+       * @return The productName.
+       */
+      public java.lang.String getProductName() {
+        java.lang.Object ref = productName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          productName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 商品名称
+       * </pre>
+       *
+       * <code>string product_name = 11;</code>
+       * @return The bytes for productName.
+       */
+      public com.google.protobuf.ByteString
+          getProductNameBytes() {
+        java.lang.Object ref = productName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          productName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 商品名称
+       * </pre>
+       *
+       * <code>string product_name = 11;</code>
+       * @param value The productName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProductName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        productName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 商品名称
+       * </pre>
+       *
+       * <code>string product_name = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProductName() {
+        
+        productName_ = getDefaultInstance().getProductName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 商品名称
+       * </pre>
+       *
+       * <code>string product_name = 11;</code>
+       * @param value The bytes for productName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProductNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        productName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private double productPrice_ ;
+      /**
+       * <pre>
+       * 商品价格
+       * </pre>
+       *
+       * <code>double product_price = 12;</code>
+       * @return The productPrice.
+       */
+      @java.lang.Override
+      public double getProductPrice() {
+        return productPrice_;
+      }
+      /**
+       * <pre>
+       * 商品价格
+       * </pre>
+       *
+       * <code>double product_price = 12;</code>
+       * @param value The productPrice to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProductPrice(double value) {
+        
+        productPrice_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 商品价格
+       * </pre>
+       *
+       * <code>double product_price = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProductPrice() {
+        
+        productPrice_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private long productRemainingAmount_ ;
+      /**
+       * <pre>
+       * 商品库存数量
+       * </pre>
+       *
+       * <code>int64 product_remaining_amount = 13;</code>
+       * @return The productRemainingAmount.
+       */
+      @java.lang.Override
+      public long getProductRemainingAmount() {
+        return productRemainingAmount_;
+      }
+      /**
+       * <pre>
+       * 商品库存数量
+       * </pre>
+       *
+       * <code>int64 product_remaining_amount = 13;</code>
+       * @param value The productRemainingAmount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProductRemainingAmount(long value) {
+        
+        productRemainingAmount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 商品库存数量
+       * </pre>
+       *
+       * <code>int64 product_remaining_amount = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProductRemainingAmount() {
+        
+        productRemainingAmount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long productSoldAmount_ ;
+      /**
+       * <pre>
+       * 商品售出数量
+       * </pre>
+       *
+       * <code>int64 product_sold_amount = 14;</code>
+       * @return The productSoldAmount.
+       */
+      @java.lang.Override
+      public long getProductSoldAmount() {
+        return productSoldAmount_;
+      }
+      /**
+       * <pre>
+       * 商品售出数量
+       * </pre>
+       *
+       * <code>int64 product_sold_amount = 14;</code>
+       * @param value The productSoldAmount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProductSoldAmount(long value) {
+        
+        productSoldAmount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 商品售出数量
+       * </pre>
+       *
+       * <code>int64 product_sold_amount = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProductSoldAmount() {
+        
+        productSoldAmount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private double productDealAmount_ ;
+      /**
+       * <pre>
+       * 商品成交金额
+       * </pre>
+       *
+       * <code>double product_deal_amount = 15;</code>
+       * @return The productDealAmount.
+       */
+      @java.lang.Override
+      public double getProductDealAmount() {
+        return productDealAmount_;
+      }
+      /**
+       * <pre>
+       * 商品成交金额
+       * </pre>
+       *
+       * <code>double product_deal_amount = 15;</code>
+       * @param value The productDealAmount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProductDealAmount(double value) {
+        
+        productDealAmount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 商品成交金额
+       * </pre>
+       *
+       * <code>double product_deal_amount = 15;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProductDealAmount() {
+        
+        productDealAmount_ = 0D;
         onChanged();
         return this;
       }
@@ -35083,44 +35635,48 @@ public final class LivePlanOuterClass {
       "t\030\001 \001(\0132\021.base.BaseRequest\022\036\n\026live_produ" +
       "ct_status_id\030\002 \003(\003\022\016\n\006status\030\003 \001(\t\"H\n\037Up" +
       "dateLiveProductStatusResponse\022%\n\tbase_re" +
-      "sp\030\001 \001(\0132\022.base.BaseResponse\"\357\001\n\021LivePro" +
+      "sp\030\001 \001(\0132\022.base.BaseResponse\"\370\002\n\021LivePro" +
       "ductStatus\022\036\n\026live_product_status_id\030\001 \001" +
       "(\003\022\022\n\nproduct_id\030\002 \001(\003\022\016\n\006status\030\003 \001(\t\022\017" +
       "\n\007shop_id\030\004 \001(\003\022\017\n\007room_id\030\005 \001(\003\022\035\n\025prod" +
       "uct_selling_point\030\006 \001(\t\022\033\n\023product_descr" +
       "iption\030\007 \001(\t\022\024\n\014is_introduct\030\010 \001(\010\022\r\n\005st" +
-      "ate\030\t \001(\t\022\023\n\013product_url\030\n \001(\t\"\246\001\n\034ListL" +
-      "iveProductStatusRequest\022\'\n\014base_request\030" +
-      "\001 \001(\0132\021.base.BaseRequest\022\017\n\007shop_id\030\002 \001(" +
-      "\003\022\017\n\007room_id\030\003 \001(\003\022\016\n\006status\030\004 \001(\t\022+\n\npa" +
-      "gination\030d \001(\0132\027.base.PaginationRequest\"" +
-      "\257\001\n\035ListLiveProductStatusResponse\022%\n\tbas" +
-      "e_resp\030\001 \001(\0132\022.base.BaseResponse\0229\n\023live" +
-      "_product_status\030\002 \003(\0132\034.glory_api.LivePr" +
-      "oductStatus\022,\n\npagination\030d \001(\0132\030.base.P" +
-      "aginationResponse\"i\n\036DeleteLiveProductSt" +
-      "atusRequest\022\'\n\014base_request\030\001 \001(\0132\021.base" +
-      ".BaseRequest\022\036\n\026live_product_status_id\030\002" +
-      " \001(\003\"H\n\037DeleteLiveProductStatusResponse\022" +
-      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"Y" +
-      "\n\035GetLivingProductStatusRequest\022\'\n\014base_" +
-      "request\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007room" +
-      "_id\030\002 \001(\003\"\313\001\n\036GetLivingProductStatusResp" +
+      "ate\030\t \001(\t\022\023\n\013product_url\030\n \001(\t\022\024\n\014produc" +
+      "t_name\030\013 \001(\t\022\025\n\rproduct_price\030\014 \001(\001\022 \n\030p" +
+      "roduct_remaining_amount\030\r \001(\003\022\033\n\023product" +
+      "_sold_amount\030\016 \001(\003\022\033\n\023product_deal_amoun" +
+      "t\030\017 \001(\001\"\246\001\n\034ListLiveProductStatusRequest" +
+      "\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReques" +
+      "t\022\017\n\007shop_id\030\002 \001(\003\022\017\n\007room_id\030\003 \001(\003\022\016\n\006s" +
+      "tatus\030\004 \001(\t\022+\n\npagination\030d \001(\0132\027.base.P" +
+      "aginationRequest\"\257\001\n\035ListLiveProductStat" +
+      "usResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
+      "eResponse\0229\n\023live_product_status\030\002 \003(\0132\034" +
+      ".glory_api.LiveProductStatus\022,\n\npaginati" +
+      "on\030d \001(\0132\030.base.PaginationResponse\"i\n\036De" +
+      "leteLiveProductStatusRequest\022\'\n\014base_req" +
+      "uest\030\001 \001(\0132\021.base.BaseRequest\022\036\n\026live_pr" +
+      "oduct_status_id\030\002 \001(\003\"H\n\037DeleteLiveProdu" +
+      "ctStatusResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
+      "se.BaseResponse\"Y\n\035GetLivingProductStatu" +
+      "sRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
+      "seRequest\022\017\n\007room_id\030\002 \001(\003\"\313\001\n\036GetLiving" +
+      "ProductStatusResponse\022%\n\tbase_resp\030\001 \001(\013" +
+      "2\022.base.BaseResponse\022\022\n\nproduct_id\030\002 \001(\003" +
+      "\022\024\n\014product_name\030\003 \001(\t\022\025\n\rproduct_price\030" +
+      "\004 \001(\001\022\025\n\rproduct_count\030\005 \001(\005\022\027\n\017live_roo" +
+      "m_order\030\006 \001(\005\022\021\n\tplayed_at\030\007 \001(\t\"s\n\021Live" +
+      "RecordRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
+      "se.BaseRequest\022\016\n\006action\030\002 \001(\t\022\020\n\010app_na" +
+      "me\030\003 \001(\t\022\023\n\013stream_name\030\004 \001(\t\";\n\022LiveRec" +
+      "ordResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
+      "seResponse\"\223\001\n\'UpdateLiveProductIntroduc" +
+      "tStatusRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
+      "ase.BaseRequest\022\017\n\007room_id\030\002 \001(\003\022\036\n\026live" +
+      "_product_status_id\030\003 \001(\003\022\016\n\006action\030\004 \001(\t" +
+      "\"Q\n(UpdateLiveProductIntroductStatusResp" +
       "onse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespo" +
-      "nse\022\022\n\nproduct_id\030\002 \001(\003\022\024\n\014product_name\030" +
-      "\003 \001(\t\022\025\n\rproduct_price\030\004 \001(\001\022\025\n\rproduct_" +
-      "count\030\005 \001(\005\022\027\n\017live_room_order\030\006 \001(\005\022\021\n\t" +
-      "played_at\030\007 \001(\t\"s\n\021LiveRecordRequest\022\'\n\014" +
-      "base_request\030\001 \001(\0132\021.base.BaseRequest\022\016\n" +
-      "\006action\030\002 \001(\t\022\020\n\010app_name\030\003 \001(\t\022\023\n\013strea" +
-      "m_name\030\004 \001(\t\";\n\022LiveRecordResponse\022%\n\tba" +
-      "se_resp\030\001 \001(\0132\022.base.BaseResponse\"\223\001\n\'Up" +
-      "dateLiveProductIntroductStatusRequest\022\'\n" +
-      "\014base_request\030\001 \001(\0132\021.base.BaseRequest\022\017" +
-      "\n\007room_id\030\002 \001(\003\022\036\n\026live_product_status_i" +
-      "d\030\003 \001(\003\022\016\n\006action\030\004 \001(\t\"Q\n(UpdateLivePro" +
-      "ductIntroductStatusResponse\022%\n\tbase_resp" +
-      "\030\001 \001(\0132\022.base.BaseResponseb\006proto3"
+      "nseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -35300,7 +35856,7 @@ public final class LivePlanOuterClass {
     internal_static_glory_api_LiveProductStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_LiveProductStatus_descriptor,
-        new java.lang.String[] { "LiveProductStatusId", "ProductId", "Status", "ShopId", "RoomId", "ProductSellingPoint", "ProductDescription", "IsIntroduct", "State", "ProductUrl", });
+        new java.lang.String[] { "LiveProductStatusId", "ProductId", "Status", "ShopId", "RoomId", "ProductSellingPoint", "ProductDescription", "IsIntroduct", "State", "ProductUrl", "ProductName", "ProductPrice", "ProductRemainingAmount", "ProductSoldAmount", "ProductDealAmount", });
     internal_static_glory_api_ListLiveProductStatusRequest_descriptor =
       getDescriptor().getMessageTypes().get(29);
     internal_static_glory_api_ListLiveProductStatusRequest_fieldAccessorTable = new

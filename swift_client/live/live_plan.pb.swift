@@ -772,6 +772,21 @@ struct GloryApi_LiveProductStatus {
   /// 商品 url
   var productURL: String = String()
 
+  /// 商品名称
+  var productName: String = String()
+
+  /// 商品价格
+  var productPrice: Double = 0
+
+  /// 商品库存数量
+  var productRemainingAmount: Int64 = 0
+
+  /// 商品售出数量
+  var productSoldAmount: Int64 = 0
+
+  /// 商品成交金额
+  var productDealAmount: Double = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -2377,6 +2392,11 @@ extension GloryApi_LiveProductStatus: SwiftProtobuf.Message, SwiftProtobuf._Mess
     8: .standard(proto: "is_introduct"),
     9: .same(proto: "state"),
     10: .standard(proto: "product_url"),
+    11: .standard(proto: "product_name"),
+    12: .standard(proto: "product_price"),
+    13: .standard(proto: "product_remaining_amount"),
+    14: .standard(proto: "product_sold_amount"),
+    15: .standard(proto: "product_deal_amount"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2395,6 +2415,11 @@ extension GloryApi_LiveProductStatus: SwiftProtobuf.Message, SwiftProtobuf._Mess
       case 8: try { try decoder.decodeSingularBoolField(value: &self.isIntroduct) }()
       case 9: try { try decoder.decodeSingularStringField(value: &self.state) }()
       case 10: try { try decoder.decodeSingularStringField(value: &self.productURL) }()
+      case 11: try { try decoder.decodeSingularStringField(value: &self.productName) }()
+      case 12: try { try decoder.decodeSingularDoubleField(value: &self.productPrice) }()
+      case 13: try { try decoder.decodeSingularInt64Field(value: &self.productRemainingAmount) }()
+      case 14: try { try decoder.decodeSingularInt64Field(value: &self.productSoldAmount) }()
+      case 15: try { try decoder.decodeSingularDoubleField(value: &self.productDealAmount) }()
       default: break
       }
     }
@@ -2431,6 +2456,21 @@ extension GloryApi_LiveProductStatus: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if !self.productURL.isEmpty {
       try visitor.visitSingularStringField(value: self.productURL, fieldNumber: 10)
     }
+    if !self.productName.isEmpty {
+      try visitor.visitSingularStringField(value: self.productName, fieldNumber: 11)
+    }
+    if self.productPrice != 0 {
+      try visitor.visitSingularDoubleField(value: self.productPrice, fieldNumber: 12)
+    }
+    if self.productRemainingAmount != 0 {
+      try visitor.visitSingularInt64Field(value: self.productRemainingAmount, fieldNumber: 13)
+    }
+    if self.productSoldAmount != 0 {
+      try visitor.visitSingularInt64Field(value: self.productSoldAmount, fieldNumber: 14)
+    }
+    if self.productDealAmount != 0 {
+      try visitor.visitSingularDoubleField(value: self.productDealAmount, fieldNumber: 15)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2445,6 +2485,11 @@ extension GloryApi_LiveProductStatus: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if lhs.isIntroduct != rhs.isIntroduct {return false}
     if lhs.state != rhs.state {return false}
     if lhs.productURL != rhs.productURL {return false}
+    if lhs.productName != rhs.productName {return false}
+    if lhs.productPrice != rhs.productPrice {return false}
+    if lhs.productRemainingAmount != rhs.productRemainingAmount {return false}
+    if lhs.productSoldAmount != rhs.productSoldAmount {return false}
+    if lhs.productDealAmount != rhs.productDealAmount {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

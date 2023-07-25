@@ -192,6 +192,16 @@ export interface LiveProductStatus {
   state?: string;
   /** 商品 url */
   product_url?: string;
+  /** 商品名称 */
+  product_name?: string;
+  /** 商品价格 */
+  product_price?: number;
+  /** 商品库存数量 */
+  product_remaining_amount?: string;
+  /** 商品售出数量 */
+  product_sold_amount?: string;
+  /** 商品成交金额 */
+  product_deal_amount?: number;
 }
 
 export interface ListLiveProductStatusRequest {
