@@ -10,10 +10,11 @@ export interface Tenant {
   tenant_id?: string;
   /** 名称 必传 */
   tenant_name?: string;
-  /** logo 必传 */
+  /** logo 创建不需要传 */
   tenant_logo_url?: string;
   /** 校训 必传 */
   tenant_overview?: string;
+  /** 调用upload_attachment后返回的的attachment_id */
   logo_attachment_id?: string;
 }
 
@@ -71,6 +72,148 @@ export interface TenantWithAuthor {
 
 export interface ListTenantResponse {
   base_resp?: base.BaseResponse;
-  Tenants?: Array<TenantWithAuthor>;
+  tenants?: Array<TenantWithAuthor>;
+  pagination?: base.PaginationResponse;
+}
+
+export interface Major {
+  /** 创建不传 */
+  major_id?: string;
+  /** 名称 必传 */
+  major_name?: string;
+  /** 专业类型, 创建必传, e.g. live */
+  major_type?: string;
+  /** 学校id，创建必传 */
+  tenant_id?: string;
+}
+
+export interface CreateMajorRequest {
+  /** token */
+  base_request?: base.BaseRequest;
+  major?: Major;
+}
+
+export interface CreateMajorResponse {
+  base_resp?: base.BaseResponse;
+  major_id?: string;
+}
+
+export interface GetMajorRequest {
+  base_request?: base.BaseRequest;
+  major_id?: string;
+}
+
+export interface GetMajorResponse {
+  base_resp?: base.BaseResponse;
+  major?: Major;
+  author_info?: base.AuthorInfo;
+}
+
+export interface UpdateMajorRequest {
+  base_request?: base.BaseRequest;
+  Major?: Major;
+}
+
+export interface UpdateMajorResponse {
+  base_resp?: base.BaseResponse;
+  major_id?: string;
+}
+
+export interface DeleteMajorRequest {
+  base_request?: base.BaseRequest;
+  major_id?: string;
+}
+
+export interface DeleteMajorResponse {
+  base_resp?: base.BaseResponse;
+}
+
+export interface ListMajorRequest {
+  base_request?: base.BaseRequest;
+  search_name?: string;
+  pagination?: base.PaginationRequest;
+}
+
+export interface MajorWithAuthor {
+  major?: Major;
+  author_info?: base.AuthorInfo;
+}
+
+export interface ListMajorResponse {
+  base_resp?: base.BaseResponse;
+  majors?: Array<MajorWithAuthor>;
+  pagination?: base.PaginationResponse;
+}
+
+export interface Class {
+  /** 创建不传 */
+  class_id?: string;
+  /** 名称 必传 */
+  class_name?: string;
+  /** 专业id, 创建必传 */
+  major_id?: string;
+  /** 学校id，创建必传 */
+  tenant_id?: string;
+  /** 年级, 创建必传 */
+  grade?: number;
+  /** 开学日期, 创建必传 */
+  start_date?: string;
+}
+
+export interface CreateClassRequest {
+  /** token */
+  base_request?: base.BaseRequest;
+  class?: Class;
+}
+
+export interface CreateClassResponse {
+  base_resp?: base.BaseResponse;
+  class_id?: string;
+}
+
+export interface GetClassRequest {
+  base_request?: base.BaseRequest;
+  class_id?: string;
+}
+
+export interface GetClassResponse {
+  base_resp?: base.BaseResponse;
+  class?: Class;
+  author_info?: base.AuthorInfo;
+}
+
+export interface UpdateClassRequest {
+  base_request?: base.BaseRequest;
+  Class?: Class;
+}
+
+export interface UpdateClassResponse {
+  base_resp?: base.BaseResponse;
+  class_id?: string;
+}
+
+export interface DeleteClassRequest {
+  base_request?: base.BaseRequest;
+  class_id?: string;
+}
+
+export interface DeleteClassResponse {
+  base_resp?: base.BaseResponse;
+}
+
+export interface ListClassRequest {
+  base_request?: base.BaseRequest;
+  search_name?: string;
+  pagination?: base.PaginationRequest;
+}
+
+export interface ClassWithAuthor {
+  class?: Class;
+  author_info?: base.AuthorInfo;
+}
+
+export interface ListClassResponse {
+  base_resp?: base.BaseResponse;
+  class?: Array<ClassWithAuthor>;
   pagination?: base.PaginationResponse;
 }

@@ -65,6 +65,18 @@ public final class FreightTemplate {
      * @return The freightAmount.
      */
     float getFreightAmount();
+
+    /**
+     * <code>string address = 8;</code>
+     * @return The address.
+     */
+    java.lang.String getAddress();
+    /**
+     * <code>string address = 8;</code>
+     * @return The bytes for address.
+     */
+    com.google.protobuf.ByteString
+        getAddressBytes();
   }
   /**
    * Protobuf type {@code glory_api.Template}
@@ -80,6 +92,7 @@ public final class FreightTemplate {
     }
     private Template() {
       templateName_ = "";
+      address_ = "";
     }
 
     @java.lang.Override
@@ -146,6 +159,12 @@ public final class FreightTemplate {
             case 61: {
 
               freightAmount_ = input.readFloat();
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              address_ = s;
               break;
             }
             default: {
@@ -284,6 +303,44 @@ public final class FreightTemplate {
       return freightAmount_;
     }
 
+    public static final int ADDRESS_FIELD_NUMBER = 8;
+    private volatile java.lang.Object address_;
+    /**
+     * <code>string address = 8;</code>
+     * @return The address.
+     */
+    @java.lang.Override
+    public java.lang.String getAddress() {
+      java.lang.Object ref = address_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        address_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string address = 8;</code>
+     * @return The bytes for address.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAddressBytes() {
+      java.lang.Object ref = address_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        address_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -318,6 +375,9 @@ public final class FreightTemplate {
       }
       if (freightAmount_ != 0F) {
         output.writeFloat(7, freightAmount_);
+      }
+      if (!getAddressBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, address_);
       }
       unknownFields.writeTo(output);
     }
@@ -355,6 +415,9 @@ public final class FreightTemplate {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(7, freightAmount_);
       }
+      if (!getAddressBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, address_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -385,6 +448,8 @@ public final class FreightTemplate {
       if (java.lang.Float.floatToIntBits(getFreightAmount())
           != java.lang.Float.floatToIntBits(
               other.getFreightAmount())) return false;
+      if (!getAddress()
+          .equals(other.getAddress())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -415,6 +480,8 @@ public final class FreightTemplate {
       hash = (37 * hash) + FREIGHT_AMOUNT_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getFreightAmount());
+      hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getAddress().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -562,6 +629,8 @@ public final class FreightTemplate {
 
         freightAmount_ = 0F;
 
+        address_ = "";
+
         return this;
       }
 
@@ -595,6 +664,7 @@ public final class FreightTemplate {
         result.templateName_ = templateName_;
         result.isDefault_ = isDefault_;
         result.freightAmount_ = freightAmount_;
+        result.address_ = address_;
         onBuilt();
         return result;
       }
@@ -664,6 +734,10 @@ public final class FreightTemplate {
         }
         if (other.getFreightAmount() != 0F) {
           setFreightAmount(other.getFreightAmount());
+        }
+        if (!other.getAddress().isEmpty()) {
+          address_ = other.address_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -952,6 +1026,82 @@ public final class FreightTemplate {
       public Builder clearFreightAmount() {
         
         freightAmount_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object address_ = "";
+      /**
+       * <code>string address = 8;</code>
+       * @return The address.
+       */
+      public java.lang.String getAddress() {
+        java.lang.Object ref = address_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          address_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string address = 8;</code>
+       * @return The bytes for address.
+       */
+      public com.google.protobuf.ByteString
+          getAddressBytes() {
+        java.lang.Object ref = address_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          address_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string address = 8;</code>
+       * @param value The address to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAddress(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        address_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string address = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAddress() {
+        
+        address_ = getDefaultInstance().getAddress();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string address = 8;</code>
+       * @param value The bytes for address to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAddressBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        address_ = value;
         onChanged();
         return this;
       }
@@ -9530,37 +9680,38 @@ public final class FreightTemplate {
   static {
     java.lang.String[] descriptorData = {
       "\n\033shop/freight_template.proto\022\tglory_api" +
-      "\032\nbase.proto\"\247\001\n\010Template\022\033\n\023freight_tem" +
+      "\032\nbase.proto\"\270\001\n\010Template\022\033\n\023freight_tem" +
       "plate_id\030\001 \001(\003\022\021\n\tconfig_id\030\002 \001(\003\022\017\n\007sho" +
       "p_id\030\003 \001(\003\022\027\n\017freight_setting\030\004 \001(\005\022\025\n\rt" +
       "emplate_name\030\005 \001(\t\022\022\n\nis_default\030\006 \001(\010\022\026" +
-      "\n\016freight_amount\030\007 \001(\002\"f\n\026TemplateWithAu" +
-      "thorInfo\022%\n\010template\030\001 \001(\0132\023.glory_api.T" +
-      "emplate\022%\n\013author_info\030\002 \001(\0132\020.base.Auth" +
-      "orInfo\"g\n\025CreateTemplateRequest\022\'\n\014base_" +
-      "request\030\001 \001(\0132\021.base.BaseRequest\022%\n\010temp" +
-      "late\030\002 \001(\0132\023.glory_api.Template\"\\\n\026Creat" +
-      "eTemplateResponse\022%\n\tbase_resp\030\001 \001(\0132\022.b" +
-      "ase.BaseResponse\022\033\n\023freight_template_id\030" +
-      "\002 \001(\003\"T\n\022GetTemplateRequest\022\'\n\014base_requ" +
-      "est\030\001 \001(\0132\021.base.BaseRequest\022\025\n\rtemplate" +
-      "_name\030\005 \001(\t\"q\n\023GetTemplateResponse\022%\n\tba" +
-      "se_resp\030\001 \001(\0132\022.base.BaseResponse\0223\n\010tem" +
-      "plate\030\002 \001(\0132!.glory_api.TemplateWithAuth" +
-      "orInfo\"]\n\025DeleteTemplateRequest\022\'\n\014base_" +
-      "request\030\001 \001(\0132\021.base.BaseRequest\022\033\n\023frei" +
-      "ght_template_id\030\002 \001(\003\"?\n\026DeleteTemplateR" +
+      "\n\016freight_amount\030\007 \001(\002\022\017\n\007address\030\010 \001(\t\"" +
+      "f\n\026TemplateWithAuthorInfo\022%\n\010template\030\001 " +
+      "\001(\0132\023.glory_api.Template\022%\n\013author_info\030" +
+      "\002 \001(\0132\020.base.AuthorInfo\"g\n\025CreateTemplat" +
+      "eRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
+      "seRequest\022%\n\010template\030\002 \001(\0132\023.glory_api." +
+      "Template\"\\\n\026CreateTemplateResponse\022%\n\tba" +
+      "se_resp\030\001 \001(\0132\022.base.BaseResponse\022\033\n\023fre" +
+      "ight_template_id\030\002 \001(\003\"T\n\022GetTemplateReq" +
+      "uest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRe" +
+      "quest\022\025\n\rtemplate_name\030\005 \001(\t\"q\n\023GetTempl" +
+      "ateResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
+      "seResponse\0223\n\010template\030\002 \001(\0132!.glory_api" +
+      ".TemplateWithAuthorInfo\"]\n\025DeleteTemplat" +
+      "eRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
+      "seRequest\022\033\n\023freight_template_id\030\002 \001(\003\"?" +
+      "\n\026DeleteTemplateResponse\022%\n\tbase_resp\030\001 " +
+      "\001(\0132\022.base.BaseResponse\"g\n\025UpdateTemplat" +
+      "eRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
+      "seRequest\022%\n\010template\030\002 \001(\0132\023.glory_api." +
+      "Template\"\\\n\026UpdateTemplateResponse\022%\n\tba" +
+      "se_resp\030\001 \001(\0132\022.base.BaseResponse\022\033\n\023fre" +
+      "ight_template_id\030\002 \001(\003\"O\n\023ListTemplateRe" +
+      "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
+      "equest\022\017\n\007shop_id\030\002 \001(\003\"e\n\024ListTemplateR" +
       "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
-      "sponse\"g\n\025UpdateTemplateRequest\022\'\n\014base_" +
-      "request\030\001 \001(\0132\021.base.BaseRequest\022%\n\010temp" +
-      "late\030\002 \001(\0132\023.glory_api.Template\"\\\n\026Updat" +
-      "eTemplateResponse\022%\n\tbase_resp\030\001 \001(\0132\022.b" +
-      "ase.BaseResponse\022\033\n\023freight_template_id\030" +
-      "\002 \001(\003\"O\n\023ListTemplateRequest\022\'\n\014base_req" +
-      "uest\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007shop_id" +
-      "\030\002 \001(\003\"e\n\024ListTemplateResponse\022%\n\tbase_r" +
-      "esp\030\001 \001(\0132\022.base.BaseResponse\022&\n\ttemplat" +
-      "es\030\002 \003(\0132\023.glory_api.Templateb\006proto3"
+      "sponse\022&\n\ttemplates\030\002 \003(\0132\023.glory_api.Te" +
+      "mplateb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -9572,7 +9723,7 @@ public final class FreightTemplate {
     internal_static_glory_api_Template_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_Template_descriptor,
-        new java.lang.String[] { "FreightTemplateId", "ConfigId", "ShopId", "FreightSetting", "TemplateName", "IsDefault", "FreightAmount", });
+        new java.lang.String[] { "FreightTemplateId", "ConfigId", "ShopId", "FreightSetting", "TemplateName", "IsDefault", "FreightAmount", "Address", });
     internal_static_glory_api_TemplateWithAuthorInfo_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_glory_api_TemplateWithAuthorInfo_fieldAccessorTable = new

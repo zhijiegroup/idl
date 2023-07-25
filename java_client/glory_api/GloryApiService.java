@@ -39,7 +39,7 @@ public final class GloryApiService {
       "to\032\024live/live_plan.proto\032\024live/live_text" +
       ".proto\032\037account/account_operation.proto\032" +
       "\037currency/virtual_currency.proto\032\023tenant" +
-      "/tenant.proto2\315\201\001\n\tglory_api\022s\n\rCreateEx" +
+      "/tenant.proto2\335\211\001\n\tglory_api\022s\n\rCreateEx" +
       "ample\022\037.glory_api.CreateExampleRequest\032 " +
       ".glory_api.CreateExampleResponse\"\037\322\301\030\033/a" +
       "pi/example/create_example\022g\n\nGetExample\022" +
@@ -454,7 +454,33 @@ public final class GloryApiService {
       "i/tenant/delete_tenant\022f\n\nListTenant\022\034.g" +
       "lory_api.ListTenantRequest\032\035.glory_api.L" +
       "istTenantResponse\"\033\322\301\030\027/api/tenant/list_" +
-      "tenantb\006proto3"
+      "tenant\022j\n\013CreateMajor\022\035.glory_api.Create" +
+      "MajorRequest\032\036.glory_api.CreateMajorResp" +
+      "onse\"\034\322\301\030\030/api/tenant/create_major\022^\n\010Ge" +
+      "tMajor\022\032.glory_api.GetMajorRequest\032\033.glo" +
+      "ry_api.GetMajorResponse\"\031\312\301\030\025/api/tenant" +
+      "/get_major\022j\n\013UpdateMajor\022\035.glory_api.Up" +
+      "dateMajorRequest\032\036.glory_api.UpdateMajor" +
+      "Response\"\034\322\301\030\030/api/tenant/update_major\022j" +
+      "\n\013DeleteMajor\022\035.glory_api.DeleteMajorReq" +
+      "uest\032\036.glory_api.DeleteMajorResponse\"\034\322\301" +
+      "\030\030/api/tenant/delete_major\022b\n\tListMajor\022" +
+      "\033.glory_api.ListMajorRequest\032\034.glory_api" +
+      ".ListMajorResponse\"\032\322\301\030\026/api/tenant/list" +
+      "_major\022j\n\013CreateClass\022\035.glory_api.Create" +
+      "ClassRequest\032\036.glory_api.CreateClassResp" +
+      "onse\"\034\322\301\030\030/api/tenant/create_class\022^\n\010Ge" +
+      "tClass\022\032.glory_api.GetClassRequest\032\033.glo" +
+      "ry_api.GetClassResponse\"\031\312\301\030\025/api/tenant" +
+      "/get_class\022j\n\013UpdateClass\022\035.glory_api.Up" +
+      "dateClassRequest\032\036.glory_api.UpdateClass" +
+      "Response\"\034\322\301\030\030/api/tenant/update_class\022j" +
+      "\n\013DeleteClass\022\035.glory_api.DeleteClassReq" +
+      "uest\032\036.glory_api.DeleteClassResponse\"\034\322\301" +
+      "\030\030/api/tenant/delete_class\022b\n\tListClass\022" +
+      "\033.glory_api.ListClassRequest\032\034.glory_api" +
+      ".ListClassResponse\"\032\322\301\030\026/api/tenant/list" +
+      "_classb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
