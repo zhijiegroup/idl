@@ -150,17 +150,21 @@ export interface LoadLivePlanProductResponse {
   base_resp?: base.BaseResponse;
 }
 
-export interface CreateLiveProductStatusRequest {
-  base_request?: base.BaseRequest;
-  shop_id?: string;
+export interface CreateLiveProductStatus {
   product_id?: string;
   product_selling_point?: string;
   product_description?: string;
 }
 
+export interface CreateLiveProductStatusRequest {
+  base_request?: base.BaseRequest;
+  shop_id?: string;
+  room_id?: string;
+  live_product_status?: Array<CreateLiveProductStatus>;
+}
+
 export interface CreateLiveProductStatusResponse {
   base_resp?: base.BaseResponse;
-  live_product_status_id?: string;
 }
 
 export interface UpdateLiveProductStatusRequest {

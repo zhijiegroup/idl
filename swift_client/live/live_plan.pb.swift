@@ -633,6 +633,22 @@ struct GloryApi_LoadLivePlanProductResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
+struct GloryApi_CreateLiveProductStatus {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var productID: Int64 = 0
+
+  var productSellingPoint: String = String()
+
+  var productDescription: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
 struct GloryApi_CreateLiveProductStatusRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -649,11 +665,9 @@ struct GloryApi_CreateLiveProductStatusRequest {
 
   var shopID: Int64 = 0
 
-  var productID: Int64 = 0
+  var roomID: Int64 = 0
 
-  var productSellingPoint: String = String()
-
-  var productDescription: String = String()
+  var liveProductStatus: [GloryApi_CreateLiveProductStatus] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -675,8 +689,6 @@ struct GloryApi_CreateLiveProductStatusResponse {
   var hasBaseResp: Bool {return self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
-
-  var liveProductStatusID: Int64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1053,6 +1065,7 @@ extension GloryApi_DeleteLivePlanProductRequest: @unchecked Sendable {}
 extension GloryApi_DeleteLivePlanProductResponse: @unchecked Sendable {}
 extension GloryApi_LoadLivePlanProductRequest: @unchecked Sendable {}
 extension GloryApi_LoadLivePlanProductResponse: @unchecked Sendable {}
+extension GloryApi_CreateLiveProductStatus: @unchecked Sendable {}
 extension GloryApi_CreateLiveProductStatusRequest: @unchecked Sendable {}
 extension GloryApi_CreateLiveProductStatusResponse: @unchecked Sendable {}
 extension GloryApi_UpdateLiveProductStatusRequest: @unchecked Sendable {}
@@ -2130,14 +2143,57 @@ extension GloryApi_LoadLivePlanProductResponse: SwiftProtobuf.Message, SwiftProt
   }
 }
 
+extension GloryApi_CreateLiveProductStatus: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".CreateLiveProductStatus"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "product_id"),
+    2: .standard(proto: "product_selling_point"),
+    3: .standard(proto: "product_description"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.productID) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.productSellingPoint) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.productDescription) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.productID != 0 {
+      try visitor.visitSingularInt64Field(value: self.productID, fieldNumber: 1)
+    }
+    if !self.productSellingPoint.isEmpty {
+      try visitor.visitSingularStringField(value: self.productSellingPoint, fieldNumber: 2)
+    }
+    if !self.productDescription.isEmpty {
+      try visitor.visitSingularStringField(value: self.productDescription, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_CreateLiveProductStatus, rhs: GloryApi_CreateLiveProductStatus) -> Bool {
+    if lhs.productID != rhs.productID {return false}
+    if lhs.productSellingPoint != rhs.productSellingPoint {return false}
+    if lhs.productDescription != rhs.productDescription {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
 extension GloryApi_CreateLiveProductStatusRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CreateLiveProductStatusRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
     2: .standard(proto: "shop_id"),
-    3: .standard(proto: "product_id"),
-    4: .standard(proto: "product_selling_point"),
-    5: .standard(proto: "product_description"),
+    3: .standard(proto: "room_id"),
+    4: .standard(proto: "live_product_status"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2148,9 +2204,8 @@ extension GloryApi_CreateLiveProductStatusRequest: SwiftProtobuf.Message, SwiftP
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
-      case 3: try { try decoder.decodeSingularInt64Field(value: &self.productID) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.productSellingPoint) }()
-      case 5: try { try decoder.decodeSingularStringField(value: &self.productDescription) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.roomID) }()
+      case 4: try { try decoder.decodeRepeatedMessageField(value: &self.liveProductStatus) }()
       default: break
       }
     }
@@ -2167,14 +2222,11 @@ extension GloryApi_CreateLiveProductStatusRequest: SwiftProtobuf.Message, SwiftP
     if self.shopID != 0 {
       try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 2)
     }
-    if self.productID != 0 {
-      try visitor.visitSingularInt64Field(value: self.productID, fieldNumber: 3)
+    if self.roomID != 0 {
+      try visitor.visitSingularInt64Field(value: self.roomID, fieldNumber: 3)
     }
-    if !self.productSellingPoint.isEmpty {
-      try visitor.visitSingularStringField(value: self.productSellingPoint, fieldNumber: 4)
-    }
-    if !self.productDescription.isEmpty {
-      try visitor.visitSingularStringField(value: self.productDescription, fieldNumber: 5)
+    if !self.liveProductStatus.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.liveProductStatus, fieldNumber: 4)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -2182,9 +2234,8 @@ extension GloryApi_CreateLiveProductStatusRequest: SwiftProtobuf.Message, SwiftP
   static func ==(lhs: GloryApi_CreateLiveProductStatusRequest, rhs: GloryApi_CreateLiveProductStatusRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.shopID != rhs.shopID {return false}
-    if lhs.productID != rhs.productID {return false}
-    if lhs.productSellingPoint != rhs.productSellingPoint {return false}
-    if lhs.productDescription != rhs.productDescription {return false}
+    if lhs.roomID != rhs.roomID {return false}
+    if lhs.liveProductStatus != rhs.liveProductStatus {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -2194,7 +2245,6 @@ extension GloryApi_CreateLiveProductStatusResponse: SwiftProtobuf.Message, Swift
   static let protoMessageName: String = _protobuf_package + ".CreateLiveProductStatusResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
-    2: .standard(proto: "live_product_status_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2204,7 +2254,6 @@ extension GloryApi_CreateLiveProductStatusResponse: SwiftProtobuf.Message, Swift
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.liveProductStatusID) }()
       default: break
       }
     }
@@ -2218,15 +2267,11 @@ extension GloryApi_CreateLiveProductStatusResponse: SwiftProtobuf.Message, Swift
     try { if let v = self._baseResp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    if self.liveProductStatusID != 0 {
-      try visitor.visitSingularInt64Field(value: self.liveProductStatusID, fieldNumber: 2)
-    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_CreateLiveProductStatusResponse, rhs: GloryApi_CreateLiveProductStatusResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
-    if lhs.liveProductStatusID != rhs.liveProductStatusID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
