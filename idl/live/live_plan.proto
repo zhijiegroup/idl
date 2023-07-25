@@ -170,6 +170,11 @@ message LiveProductStatus {
   bool is_introduct =8; // 是否讲解中
   string state =9; // 上架 下架状态
   string product_url =10; // 商品 url
+  string product_name =11; // 商品名称
+  double product_price =12; // 商品价格
+  int64 product_remaining_amount =13; // 商品库存数量
+  int64 product_sold_amount =14; // 商品售出数量
+  double product_deal_amount =15; // 商品成交金额
 }
 
 message ListLiveProductStatusRequest {
