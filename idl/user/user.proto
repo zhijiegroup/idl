@@ -67,3 +67,17 @@ message GetUserResponse {
   base.BaseResponse base_resp = 1;
   User data =2; // user data
 }
+
+message PagePermission {
+  string page = 1;
+  bool has_permission = 2;
+}
+
+message GetUserPagePermissionRequest {
+  base.BaseRequest base_request=1;
+}
+
+message GetUserPagePermissionResponse {
+  base.BaseResponse base_resp = 1;
+  repeated PagePermission page_permission =2; // page permission of the user
+}
