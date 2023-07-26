@@ -106,6 +106,10 @@ export class glory_api {
     request: user.UpdatePasswordRequest
   ): Promise<user.UpdatePasswordResponse>;
 
+  GetUserPagePermission(
+    request: user.GetUserPagePermissionRequest
+  ): Promise<user.GetUserPagePermissionResponse>;
+
   /** address */
   AddAddress(
     request: address.AddAddressRequest

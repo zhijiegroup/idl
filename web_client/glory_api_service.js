@@ -152,6 +152,12 @@ export class glory_api {
     );
   }
 
+  GetUserPagePermission(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/user/get_user_page_permission${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
   AddAddress(request) {
     const uri = `${this.uriPrefix}/api/user/add_address`;
     const body = JSONbigint.stringify(request);

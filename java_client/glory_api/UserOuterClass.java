@@ -10006,6 +10006,2374 @@ public final class UserOuterClass {
 
   }
 
+  public interface PagePermissionOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:glory_api.PagePermission)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string page = 1;</code>
+     * @return The page.
+     */
+    java.lang.String getPage();
+    /**
+     * <code>string page = 1;</code>
+     * @return The bytes for page.
+     */
+    com.google.protobuf.ByteString
+        getPageBytes();
+
+    /**
+     * <code>bool has_permission = 2;</code>
+     * @return The hasPermission.
+     */
+    boolean getHasPermission();
+  }
+  /**
+   * Protobuf type {@code glory_api.PagePermission}
+   */
+  public static final class PagePermission extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:glory_api.PagePermission)
+      PagePermissionOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use PagePermission.newBuilder() to construct.
+    private PagePermission(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private PagePermission() {
+      page_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new PagePermission();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PagePermission(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              page_ = s;
+              break;
+            }
+            case 16: {
+
+              hasPermission_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return glory_api.UserOuterClass.internal_static_glory_api_PagePermission_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return glory_api.UserOuterClass.internal_static_glory_api_PagePermission_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              glory_api.UserOuterClass.PagePermission.class, glory_api.UserOuterClass.PagePermission.Builder.class);
+    }
+
+    public static final int PAGE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object page_;
+    /**
+     * <code>string page = 1;</code>
+     * @return The page.
+     */
+    @java.lang.Override
+    public java.lang.String getPage() {
+      java.lang.Object ref = page_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        page_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string page = 1;</code>
+     * @return The bytes for page.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPageBytes() {
+      java.lang.Object ref = page_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        page_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int HAS_PERMISSION_FIELD_NUMBER = 2;
+    private boolean hasPermission_;
+    /**
+     * <code>bool has_permission = 2;</code>
+     * @return The hasPermission.
+     */
+    @java.lang.Override
+    public boolean getHasPermission() {
+      return hasPermission_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getPageBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, page_);
+      }
+      if (hasPermission_ != false) {
+        output.writeBool(2, hasPermission_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getPageBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, page_);
+      }
+      if (hasPermission_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(2, hasPermission_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof glory_api.UserOuterClass.PagePermission)) {
+        return super.equals(obj);
+      }
+      glory_api.UserOuterClass.PagePermission other = (glory_api.UserOuterClass.PagePermission) obj;
+
+      if (!getPage()
+          .equals(other.getPage())) return false;
+      if (getHasPermission()
+          != other.getHasPermission()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getPage().hashCode();
+      hash = (37 * hash) + HAS_PERMISSION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getHasPermission());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static glory_api.UserOuterClass.PagePermission parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.UserOuterClass.PagePermission parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.PagePermission parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.UserOuterClass.PagePermission parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.PagePermission parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.UserOuterClass.PagePermission parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.PagePermission parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.UserOuterClass.PagePermission parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.PagePermission parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static glory_api.UserOuterClass.PagePermission parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.PagePermission parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.UserOuterClass.PagePermission parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(glory_api.UserOuterClass.PagePermission prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code glory_api.PagePermission}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:glory_api.PagePermission)
+        glory_api.UserOuterClass.PagePermissionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return glory_api.UserOuterClass.internal_static_glory_api_PagePermission_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return glory_api.UserOuterClass.internal_static_glory_api_PagePermission_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                glory_api.UserOuterClass.PagePermission.class, glory_api.UserOuterClass.PagePermission.Builder.class);
+      }
+
+      // Construct using glory_api.UserOuterClass.PagePermission.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        page_ = "";
+
+        hasPermission_ = false;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return glory_api.UserOuterClass.internal_static_glory_api_PagePermission_descriptor;
+      }
+
+      @java.lang.Override
+      public glory_api.UserOuterClass.PagePermission getDefaultInstanceForType() {
+        return glory_api.UserOuterClass.PagePermission.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public glory_api.UserOuterClass.PagePermission build() {
+        glory_api.UserOuterClass.PagePermission result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public glory_api.UserOuterClass.PagePermission buildPartial() {
+        glory_api.UserOuterClass.PagePermission result = new glory_api.UserOuterClass.PagePermission(this);
+        result.page_ = page_;
+        result.hasPermission_ = hasPermission_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof glory_api.UserOuterClass.PagePermission) {
+          return mergeFrom((glory_api.UserOuterClass.PagePermission)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(glory_api.UserOuterClass.PagePermission other) {
+        if (other == glory_api.UserOuterClass.PagePermission.getDefaultInstance()) return this;
+        if (!other.getPage().isEmpty()) {
+          page_ = other.page_;
+          onChanged();
+        }
+        if (other.getHasPermission() != false) {
+          setHasPermission(other.getHasPermission());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        glory_api.UserOuterClass.PagePermission parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (glory_api.UserOuterClass.PagePermission) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object page_ = "";
+      /**
+       * <code>string page = 1;</code>
+       * @return The page.
+       */
+      public java.lang.String getPage() {
+        java.lang.Object ref = page_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          page_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string page = 1;</code>
+       * @return The bytes for page.
+       */
+      public com.google.protobuf.ByteString
+          getPageBytes() {
+        java.lang.Object ref = page_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          page_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string page = 1;</code>
+       * @param value The page to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPage(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        page_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string page = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPage() {
+        
+        page_ = getDefaultInstance().getPage();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string page = 1;</code>
+       * @param value The bytes for page to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        page_ = value;
+        onChanged();
+        return this;
+      }
+
+      private boolean hasPermission_ ;
+      /**
+       * <code>bool has_permission = 2;</code>
+       * @return The hasPermission.
+       */
+      @java.lang.Override
+      public boolean getHasPermission() {
+        return hasPermission_;
+      }
+      /**
+       * <code>bool has_permission = 2;</code>
+       * @param value The hasPermission to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHasPermission(boolean value) {
+        
+        hasPermission_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool has_permission = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHasPermission() {
+        
+        hasPermission_ = false;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:glory_api.PagePermission)
+    }
+
+    // @@protoc_insertion_point(class_scope:glory_api.PagePermission)
+    private static final glory_api.UserOuterClass.PagePermission DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new glory_api.UserOuterClass.PagePermission();
+    }
+
+    public static glory_api.UserOuterClass.PagePermission getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PagePermission>
+        PARSER = new com.google.protobuf.AbstractParser<PagePermission>() {
+      @java.lang.Override
+      public PagePermission parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PagePermission(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<PagePermission> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PagePermission> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public glory_api.UserOuterClass.PagePermission getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GetUserPagePermissionRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:glory_api.GetUserPagePermissionRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     * @return Whether the baseRequest field is set.
+     */
+    boolean hasBaseRequest();
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     * @return The baseRequest.
+     */
+    base.Base.BaseRequest getBaseRequest();
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     */
+    base.Base.BaseRequestOrBuilder getBaseRequestOrBuilder();
+  }
+  /**
+   * Protobuf type {@code glory_api.GetUserPagePermissionRequest}
+   */
+  public static final class GetUserPagePermissionRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:glory_api.GetUserPagePermissionRequest)
+      GetUserPagePermissionRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetUserPagePermissionRequest.newBuilder() to construct.
+    private GetUserPagePermissionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetUserPagePermissionRequest() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetUserPagePermissionRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetUserPagePermissionRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              base.Base.BaseRequest.Builder subBuilder = null;
+              if (baseRequest_ != null) {
+                subBuilder = baseRequest_.toBuilder();
+              }
+              baseRequest_ = input.readMessage(base.Base.BaseRequest.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(baseRequest_);
+                baseRequest_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return glory_api.UserOuterClass.internal_static_glory_api_GetUserPagePermissionRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return glory_api.UserOuterClass.internal_static_glory_api_GetUserPagePermissionRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              glory_api.UserOuterClass.GetUserPagePermissionRequest.class, glory_api.UserOuterClass.GetUserPagePermissionRequest.Builder.class);
+    }
+
+    public static final int BASE_REQUEST_FIELD_NUMBER = 1;
+    private base.Base.BaseRequest baseRequest_;
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     * @return Whether the baseRequest field is set.
+     */
+    @java.lang.Override
+    public boolean hasBaseRequest() {
+      return baseRequest_ != null;
+    }
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     * @return The baseRequest.
+     */
+    @java.lang.Override
+    public base.Base.BaseRequest getBaseRequest() {
+      return baseRequest_ == null ? base.Base.BaseRequest.getDefaultInstance() : baseRequest_;
+    }
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     */
+    @java.lang.Override
+    public base.Base.BaseRequestOrBuilder getBaseRequestOrBuilder() {
+      return getBaseRequest();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (baseRequest_ != null) {
+        output.writeMessage(1, getBaseRequest());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (baseRequest_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getBaseRequest());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof glory_api.UserOuterClass.GetUserPagePermissionRequest)) {
+        return super.equals(obj);
+      }
+      glory_api.UserOuterClass.GetUserPagePermissionRequest other = (glory_api.UserOuterClass.GetUserPagePermissionRequest) obj;
+
+      if (hasBaseRequest() != other.hasBaseRequest()) return false;
+      if (hasBaseRequest()) {
+        if (!getBaseRequest()
+            .equals(other.getBaseRequest())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasBaseRequest()) {
+        hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getBaseRequest().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static glory_api.UserOuterClass.GetUserPagePermissionRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.UserOuterClass.GetUserPagePermissionRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.GetUserPagePermissionRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.UserOuterClass.GetUserPagePermissionRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.GetUserPagePermissionRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.UserOuterClass.GetUserPagePermissionRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.GetUserPagePermissionRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.UserOuterClass.GetUserPagePermissionRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.GetUserPagePermissionRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static glory_api.UserOuterClass.GetUserPagePermissionRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.GetUserPagePermissionRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.UserOuterClass.GetUserPagePermissionRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(glory_api.UserOuterClass.GetUserPagePermissionRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code glory_api.GetUserPagePermissionRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:glory_api.GetUserPagePermissionRequest)
+        glory_api.UserOuterClass.GetUserPagePermissionRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return glory_api.UserOuterClass.internal_static_glory_api_GetUserPagePermissionRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return glory_api.UserOuterClass.internal_static_glory_api_GetUserPagePermissionRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                glory_api.UserOuterClass.GetUserPagePermissionRequest.class, glory_api.UserOuterClass.GetUserPagePermissionRequest.Builder.class);
+      }
+
+      // Construct using glory_api.UserOuterClass.GetUserPagePermissionRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (baseRequestBuilder_ == null) {
+          baseRequest_ = null;
+        } else {
+          baseRequest_ = null;
+          baseRequestBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return glory_api.UserOuterClass.internal_static_glory_api_GetUserPagePermissionRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public glory_api.UserOuterClass.GetUserPagePermissionRequest getDefaultInstanceForType() {
+        return glory_api.UserOuterClass.GetUserPagePermissionRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public glory_api.UserOuterClass.GetUserPagePermissionRequest build() {
+        glory_api.UserOuterClass.GetUserPagePermissionRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public glory_api.UserOuterClass.GetUserPagePermissionRequest buildPartial() {
+        glory_api.UserOuterClass.GetUserPagePermissionRequest result = new glory_api.UserOuterClass.GetUserPagePermissionRequest(this);
+        if (baseRequestBuilder_ == null) {
+          result.baseRequest_ = baseRequest_;
+        } else {
+          result.baseRequest_ = baseRequestBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof glory_api.UserOuterClass.GetUserPagePermissionRequest) {
+          return mergeFrom((glory_api.UserOuterClass.GetUserPagePermissionRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(glory_api.UserOuterClass.GetUserPagePermissionRequest other) {
+        if (other == glory_api.UserOuterClass.GetUserPagePermissionRequest.getDefaultInstance()) return this;
+        if (other.hasBaseRequest()) {
+          mergeBaseRequest(other.getBaseRequest());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        glory_api.UserOuterClass.GetUserPagePermissionRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (glory_api.UserOuterClass.GetUserPagePermissionRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private base.Base.BaseRequest baseRequest_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          base.Base.BaseRequest, base.Base.BaseRequest.Builder, base.Base.BaseRequestOrBuilder> baseRequestBuilder_;
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       * @return Whether the baseRequest field is set.
+       */
+      public boolean hasBaseRequest() {
+        return baseRequestBuilder_ != null || baseRequest_ != null;
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       * @return The baseRequest.
+       */
+      public base.Base.BaseRequest getBaseRequest() {
+        if (baseRequestBuilder_ == null) {
+          return baseRequest_ == null ? base.Base.BaseRequest.getDefaultInstance() : baseRequest_;
+        } else {
+          return baseRequestBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public Builder setBaseRequest(base.Base.BaseRequest value) {
+        if (baseRequestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          baseRequest_ = value;
+          onChanged();
+        } else {
+          baseRequestBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public Builder setBaseRequest(
+          base.Base.BaseRequest.Builder builderForValue) {
+        if (baseRequestBuilder_ == null) {
+          baseRequest_ = builderForValue.build();
+          onChanged();
+        } else {
+          baseRequestBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public Builder mergeBaseRequest(base.Base.BaseRequest value) {
+        if (baseRequestBuilder_ == null) {
+          if (baseRequest_ != null) {
+            baseRequest_ =
+              base.Base.BaseRequest.newBuilder(baseRequest_).mergeFrom(value).buildPartial();
+          } else {
+            baseRequest_ = value;
+          }
+          onChanged();
+        } else {
+          baseRequestBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public Builder clearBaseRequest() {
+        if (baseRequestBuilder_ == null) {
+          baseRequest_ = null;
+          onChanged();
+        } else {
+          baseRequest_ = null;
+          baseRequestBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public base.Base.BaseRequest.Builder getBaseRequestBuilder() {
+        
+        onChanged();
+        return getBaseRequestFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public base.Base.BaseRequestOrBuilder getBaseRequestOrBuilder() {
+        if (baseRequestBuilder_ != null) {
+          return baseRequestBuilder_.getMessageOrBuilder();
+        } else {
+          return baseRequest_ == null ?
+              base.Base.BaseRequest.getDefaultInstance() : baseRequest_;
+        }
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          base.Base.BaseRequest, base.Base.BaseRequest.Builder, base.Base.BaseRequestOrBuilder> 
+          getBaseRequestFieldBuilder() {
+        if (baseRequestBuilder_ == null) {
+          baseRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              base.Base.BaseRequest, base.Base.BaseRequest.Builder, base.Base.BaseRequestOrBuilder>(
+                  getBaseRequest(),
+                  getParentForChildren(),
+                  isClean());
+          baseRequest_ = null;
+        }
+        return baseRequestBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:glory_api.GetUserPagePermissionRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:glory_api.GetUserPagePermissionRequest)
+    private static final glory_api.UserOuterClass.GetUserPagePermissionRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new glory_api.UserOuterClass.GetUserPagePermissionRequest();
+    }
+
+    public static glory_api.UserOuterClass.GetUserPagePermissionRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetUserPagePermissionRequest>
+        PARSER = new com.google.protobuf.AbstractParser<GetUserPagePermissionRequest>() {
+      @java.lang.Override
+      public GetUserPagePermissionRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetUserPagePermissionRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetUserPagePermissionRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetUserPagePermissionRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public glory_api.UserOuterClass.GetUserPagePermissionRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GetUserPagePermissionResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:glory_api.GetUserPagePermissionResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     * @return Whether the baseResp field is set.
+     */
+    boolean hasBaseResp();
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     * @return The baseResp.
+     */
+    base.Base.BaseResponse getBaseResp();
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     */
+    base.Base.BaseResponseOrBuilder getBaseRespOrBuilder();
+
+    /**
+     * <pre>
+     * page permission of the user
+     * </pre>
+     *
+     * <code>repeated .glory_api.PagePermission page_permission = 2;</code>
+     */
+    java.util.List<glory_api.UserOuterClass.PagePermission> 
+        getPagePermissionList();
+    /**
+     * <pre>
+     * page permission of the user
+     * </pre>
+     *
+     * <code>repeated .glory_api.PagePermission page_permission = 2;</code>
+     */
+    glory_api.UserOuterClass.PagePermission getPagePermission(int index);
+    /**
+     * <pre>
+     * page permission of the user
+     * </pre>
+     *
+     * <code>repeated .glory_api.PagePermission page_permission = 2;</code>
+     */
+    int getPagePermissionCount();
+    /**
+     * <pre>
+     * page permission of the user
+     * </pre>
+     *
+     * <code>repeated .glory_api.PagePermission page_permission = 2;</code>
+     */
+    java.util.List<? extends glory_api.UserOuterClass.PagePermissionOrBuilder> 
+        getPagePermissionOrBuilderList();
+    /**
+     * <pre>
+     * page permission of the user
+     * </pre>
+     *
+     * <code>repeated .glory_api.PagePermission page_permission = 2;</code>
+     */
+    glory_api.UserOuterClass.PagePermissionOrBuilder getPagePermissionOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code glory_api.GetUserPagePermissionResponse}
+   */
+  public static final class GetUserPagePermissionResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:glory_api.GetUserPagePermissionResponse)
+      GetUserPagePermissionResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetUserPagePermissionResponse.newBuilder() to construct.
+    private GetUserPagePermissionResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetUserPagePermissionResponse() {
+      pagePermission_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetUserPagePermissionResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetUserPagePermissionResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              base.Base.BaseResponse.Builder subBuilder = null;
+              if (baseResp_ != null) {
+                subBuilder = baseResp_.toBuilder();
+              }
+              baseResp_ = input.readMessage(base.Base.BaseResponse.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(baseResp_);
+                baseResp_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                pagePermission_ = new java.util.ArrayList<glory_api.UserOuterClass.PagePermission>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              pagePermission_.add(
+                  input.readMessage(glory_api.UserOuterClass.PagePermission.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          pagePermission_ = java.util.Collections.unmodifiableList(pagePermission_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return glory_api.UserOuterClass.internal_static_glory_api_GetUserPagePermissionResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return glory_api.UserOuterClass.internal_static_glory_api_GetUserPagePermissionResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              glory_api.UserOuterClass.GetUserPagePermissionResponse.class, glory_api.UserOuterClass.GetUserPagePermissionResponse.Builder.class);
+    }
+
+    public static final int BASE_RESP_FIELD_NUMBER = 1;
+    private base.Base.BaseResponse baseResp_;
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     * @return Whether the baseResp field is set.
+     */
+    @java.lang.Override
+    public boolean hasBaseResp() {
+      return baseResp_ != null;
+    }
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     * @return The baseResp.
+     */
+    @java.lang.Override
+    public base.Base.BaseResponse getBaseResp() {
+      return baseResp_ == null ? base.Base.BaseResponse.getDefaultInstance() : baseResp_;
+    }
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     */
+    @java.lang.Override
+    public base.Base.BaseResponseOrBuilder getBaseRespOrBuilder() {
+      return getBaseResp();
+    }
+
+    public static final int PAGE_PERMISSION_FIELD_NUMBER = 2;
+    private java.util.List<glory_api.UserOuterClass.PagePermission> pagePermission_;
+    /**
+     * <pre>
+     * page permission of the user
+     * </pre>
+     *
+     * <code>repeated .glory_api.PagePermission page_permission = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<glory_api.UserOuterClass.PagePermission> getPagePermissionList() {
+      return pagePermission_;
+    }
+    /**
+     * <pre>
+     * page permission of the user
+     * </pre>
+     *
+     * <code>repeated .glory_api.PagePermission page_permission = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends glory_api.UserOuterClass.PagePermissionOrBuilder> 
+        getPagePermissionOrBuilderList() {
+      return pagePermission_;
+    }
+    /**
+     * <pre>
+     * page permission of the user
+     * </pre>
+     *
+     * <code>repeated .glory_api.PagePermission page_permission = 2;</code>
+     */
+    @java.lang.Override
+    public int getPagePermissionCount() {
+      return pagePermission_.size();
+    }
+    /**
+     * <pre>
+     * page permission of the user
+     * </pre>
+     *
+     * <code>repeated .glory_api.PagePermission page_permission = 2;</code>
+     */
+    @java.lang.Override
+    public glory_api.UserOuterClass.PagePermission getPagePermission(int index) {
+      return pagePermission_.get(index);
+    }
+    /**
+     * <pre>
+     * page permission of the user
+     * </pre>
+     *
+     * <code>repeated .glory_api.PagePermission page_permission = 2;</code>
+     */
+    @java.lang.Override
+    public glory_api.UserOuterClass.PagePermissionOrBuilder getPagePermissionOrBuilder(
+        int index) {
+      return pagePermission_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (baseResp_ != null) {
+        output.writeMessage(1, getBaseResp());
+      }
+      for (int i = 0; i < pagePermission_.size(); i++) {
+        output.writeMessage(2, pagePermission_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (baseResp_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getBaseResp());
+      }
+      for (int i = 0; i < pagePermission_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, pagePermission_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof glory_api.UserOuterClass.GetUserPagePermissionResponse)) {
+        return super.equals(obj);
+      }
+      glory_api.UserOuterClass.GetUserPagePermissionResponse other = (glory_api.UserOuterClass.GetUserPagePermissionResponse) obj;
+
+      if (hasBaseResp() != other.hasBaseResp()) return false;
+      if (hasBaseResp()) {
+        if (!getBaseResp()
+            .equals(other.getBaseResp())) return false;
+      }
+      if (!getPagePermissionList()
+          .equals(other.getPagePermissionList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasBaseResp()) {
+        hash = (37 * hash) + BASE_RESP_FIELD_NUMBER;
+        hash = (53 * hash) + getBaseResp().hashCode();
+      }
+      if (getPagePermissionCount() > 0) {
+        hash = (37 * hash) + PAGE_PERMISSION_FIELD_NUMBER;
+        hash = (53 * hash) + getPagePermissionList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static glory_api.UserOuterClass.GetUserPagePermissionResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.UserOuterClass.GetUserPagePermissionResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.GetUserPagePermissionResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.UserOuterClass.GetUserPagePermissionResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.GetUserPagePermissionResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.UserOuterClass.GetUserPagePermissionResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.GetUserPagePermissionResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.UserOuterClass.GetUserPagePermissionResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.GetUserPagePermissionResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static glory_api.UserOuterClass.GetUserPagePermissionResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.GetUserPagePermissionResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.UserOuterClass.GetUserPagePermissionResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(glory_api.UserOuterClass.GetUserPagePermissionResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code glory_api.GetUserPagePermissionResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:glory_api.GetUserPagePermissionResponse)
+        glory_api.UserOuterClass.GetUserPagePermissionResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return glory_api.UserOuterClass.internal_static_glory_api_GetUserPagePermissionResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return glory_api.UserOuterClass.internal_static_glory_api_GetUserPagePermissionResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                glory_api.UserOuterClass.GetUserPagePermissionResponse.class, glory_api.UserOuterClass.GetUserPagePermissionResponse.Builder.class);
+      }
+
+      // Construct using glory_api.UserOuterClass.GetUserPagePermissionResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getPagePermissionFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (baseRespBuilder_ == null) {
+          baseResp_ = null;
+        } else {
+          baseResp_ = null;
+          baseRespBuilder_ = null;
+        }
+        if (pagePermissionBuilder_ == null) {
+          pagePermission_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          pagePermissionBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return glory_api.UserOuterClass.internal_static_glory_api_GetUserPagePermissionResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public glory_api.UserOuterClass.GetUserPagePermissionResponse getDefaultInstanceForType() {
+        return glory_api.UserOuterClass.GetUserPagePermissionResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public glory_api.UserOuterClass.GetUserPagePermissionResponse build() {
+        glory_api.UserOuterClass.GetUserPagePermissionResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public glory_api.UserOuterClass.GetUserPagePermissionResponse buildPartial() {
+        glory_api.UserOuterClass.GetUserPagePermissionResponse result = new glory_api.UserOuterClass.GetUserPagePermissionResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (baseRespBuilder_ == null) {
+          result.baseResp_ = baseResp_;
+        } else {
+          result.baseResp_ = baseRespBuilder_.build();
+        }
+        if (pagePermissionBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            pagePermission_ = java.util.Collections.unmodifiableList(pagePermission_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.pagePermission_ = pagePermission_;
+        } else {
+          result.pagePermission_ = pagePermissionBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof glory_api.UserOuterClass.GetUserPagePermissionResponse) {
+          return mergeFrom((glory_api.UserOuterClass.GetUserPagePermissionResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(glory_api.UserOuterClass.GetUserPagePermissionResponse other) {
+        if (other == glory_api.UserOuterClass.GetUserPagePermissionResponse.getDefaultInstance()) return this;
+        if (other.hasBaseResp()) {
+          mergeBaseResp(other.getBaseResp());
+        }
+        if (pagePermissionBuilder_ == null) {
+          if (!other.pagePermission_.isEmpty()) {
+            if (pagePermission_.isEmpty()) {
+              pagePermission_ = other.pagePermission_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensurePagePermissionIsMutable();
+              pagePermission_.addAll(other.pagePermission_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.pagePermission_.isEmpty()) {
+            if (pagePermissionBuilder_.isEmpty()) {
+              pagePermissionBuilder_.dispose();
+              pagePermissionBuilder_ = null;
+              pagePermission_ = other.pagePermission_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              pagePermissionBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getPagePermissionFieldBuilder() : null;
+            } else {
+              pagePermissionBuilder_.addAllMessages(other.pagePermission_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        glory_api.UserOuterClass.GetUserPagePermissionResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (glory_api.UserOuterClass.GetUserPagePermissionResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private base.Base.BaseResponse baseResp_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          base.Base.BaseResponse, base.Base.BaseResponse.Builder, base.Base.BaseResponseOrBuilder> baseRespBuilder_;
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       * @return Whether the baseResp field is set.
+       */
+      public boolean hasBaseResp() {
+        return baseRespBuilder_ != null || baseResp_ != null;
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       * @return The baseResp.
+       */
+      public base.Base.BaseResponse getBaseResp() {
+        if (baseRespBuilder_ == null) {
+          return baseResp_ == null ? base.Base.BaseResponse.getDefaultInstance() : baseResp_;
+        } else {
+          return baseRespBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public Builder setBaseResp(base.Base.BaseResponse value) {
+        if (baseRespBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          baseResp_ = value;
+          onChanged();
+        } else {
+          baseRespBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public Builder setBaseResp(
+          base.Base.BaseResponse.Builder builderForValue) {
+        if (baseRespBuilder_ == null) {
+          baseResp_ = builderForValue.build();
+          onChanged();
+        } else {
+          baseRespBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public Builder mergeBaseResp(base.Base.BaseResponse value) {
+        if (baseRespBuilder_ == null) {
+          if (baseResp_ != null) {
+            baseResp_ =
+              base.Base.BaseResponse.newBuilder(baseResp_).mergeFrom(value).buildPartial();
+          } else {
+            baseResp_ = value;
+          }
+          onChanged();
+        } else {
+          baseRespBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public Builder clearBaseResp() {
+        if (baseRespBuilder_ == null) {
+          baseResp_ = null;
+          onChanged();
+        } else {
+          baseResp_ = null;
+          baseRespBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public base.Base.BaseResponse.Builder getBaseRespBuilder() {
+        
+        onChanged();
+        return getBaseRespFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public base.Base.BaseResponseOrBuilder getBaseRespOrBuilder() {
+        if (baseRespBuilder_ != null) {
+          return baseRespBuilder_.getMessageOrBuilder();
+        } else {
+          return baseResp_ == null ?
+              base.Base.BaseResponse.getDefaultInstance() : baseResp_;
+        }
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          base.Base.BaseResponse, base.Base.BaseResponse.Builder, base.Base.BaseResponseOrBuilder> 
+          getBaseRespFieldBuilder() {
+        if (baseRespBuilder_ == null) {
+          baseRespBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              base.Base.BaseResponse, base.Base.BaseResponse.Builder, base.Base.BaseResponseOrBuilder>(
+                  getBaseResp(),
+                  getParentForChildren(),
+                  isClean());
+          baseResp_ = null;
+        }
+        return baseRespBuilder_;
+      }
+
+      private java.util.List<glory_api.UserOuterClass.PagePermission> pagePermission_ =
+        java.util.Collections.emptyList();
+      private void ensurePagePermissionIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          pagePermission_ = new java.util.ArrayList<glory_api.UserOuterClass.PagePermission>(pagePermission_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          glory_api.UserOuterClass.PagePermission, glory_api.UserOuterClass.PagePermission.Builder, glory_api.UserOuterClass.PagePermissionOrBuilder> pagePermissionBuilder_;
+
+      /**
+       * <pre>
+       * page permission of the user
+       * </pre>
+       *
+       * <code>repeated .glory_api.PagePermission page_permission = 2;</code>
+       */
+      public java.util.List<glory_api.UserOuterClass.PagePermission> getPagePermissionList() {
+        if (pagePermissionBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(pagePermission_);
+        } else {
+          return pagePermissionBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * page permission of the user
+       * </pre>
+       *
+       * <code>repeated .glory_api.PagePermission page_permission = 2;</code>
+       */
+      public int getPagePermissionCount() {
+        if (pagePermissionBuilder_ == null) {
+          return pagePermission_.size();
+        } else {
+          return pagePermissionBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * page permission of the user
+       * </pre>
+       *
+       * <code>repeated .glory_api.PagePermission page_permission = 2;</code>
+       */
+      public glory_api.UserOuterClass.PagePermission getPagePermission(int index) {
+        if (pagePermissionBuilder_ == null) {
+          return pagePermission_.get(index);
+        } else {
+          return pagePermissionBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * page permission of the user
+       * </pre>
+       *
+       * <code>repeated .glory_api.PagePermission page_permission = 2;</code>
+       */
+      public Builder setPagePermission(
+          int index, glory_api.UserOuterClass.PagePermission value) {
+        if (pagePermissionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePagePermissionIsMutable();
+          pagePermission_.set(index, value);
+          onChanged();
+        } else {
+          pagePermissionBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * page permission of the user
+       * </pre>
+       *
+       * <code>repeated .glory_api.PagePermission page_permission = 2;</code>
+       */
+      public Builder setPagePermission(
+          int index, glory_api.UserOuterClass.PagePermission.Builder builderForValue) {
+        if (pagePermissionBuilder_ == null) {
+          ensurePagePermissionIsMutable();
+          pagePermission_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          pagePermissionBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * page permission of the user
+       * </pre>
+       *
+       * <code>repeated .glory_api.PagePermission page_permission = 2;</code>
+       */
+      public Builder addPagePermission(glory_api.UserOuterClass.PagePermission value) {
+        if (pagePermissionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePagePermissionIsMutable();
+          pagePermission_.add(value);
+          onChanged();
+        } else {
+          pagePermissionBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * page permission of the user
+       * </pre>
+       *
+       * <code>repeated .glory_api.PagePermission page_permission = 2;</code>
+       */
+      public Builder addPagePermission(
+          int index, glory_api.UserOuterClass.PagePermission value) {
+        if (pagePermissionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePagePermissionIsMutable();
+          pagePermission_.add(index, value);
+          onChanged();
+        } else {
+          pagePermissionBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * page permission of the user
+       * </pre>
+       *
+       * <code>repeated .glory_api.PagePermission page_permission = 2;</code>
+       */
+      public Builder addPagePermission(
+          glory_api.UserOuterClass.PagePermission.Builder builderForValue) {
+        if (pagePermissionBuilder_ == null) {
+          ensurePagePermissionIsMutable();
+          pagePermission_.add(builderForValue.build());
+          onChanged();
+        } else {
+          pagePermissionBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * page permission of the user
+       * </pre>
+       *
+       * <code>repeated .glory_api.PagePermission page_permission = 2;</code>
+       */
+      public Builder addPagePermission(
+          int index, glory_api.UserOuterClass.PagePermission.Builder builderForValue) {
+        if (pagePermissionBuilder_ == null) {
+          ensurePagePermissionIsMutable();
+          pagePermission_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          pagePermissionBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * page permission of the user
+       * </pre>
+       *
+       * <code>repeated .glory_api.PagePermission page_permission = 2;</code>
+       */
+      public Builder addAllPagePermission(
+          java.lang.Iterable<? extends glory_api.UserOuterClass.PagePermission> values) {
+        if (pagePermissionBuilder_ == null) {
+          ensurePagePermissionIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, pagePermission_);
+          onChanged();
+        } else {
+          pagePermissionBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * page permission of the user
+       * </pre>
+       *
+       * <code>repeated .glory_api.PagePermission page_permission = 2;</code>
+       */
+      public Builder clearPagePermission() {
+        if (pagePermissionBuilder_ == null) {
+          pagePermission_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          pagePermissionBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * page permission of the user
+       * </pre>
+       *
+       * <code>repeated .glory_api.PagePermission page_permission = 2;</code>
+       */
+      public Builder removePagePermission(int index) {
+        if (pagePermissionBuilder_ == null) {
+          ensurePagePermissionIsMutable();
+          pagePermission_.remove(index);
+          onChanged();
+        } else {
+          pagePermissionBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * page permission of the user
+       * </pre>
+       *
+       * <code>repeated .glory_api.PagePermission page_permission = 2;</code>
+       */
+      public glory_api.UserOuterClass.PagePermission.Builder getPagePermissionBuilder(
+          int index) {
+        return getPagePermissionFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * page permission of the user
+       * </pre>
+       *
+       * <code>repeated .glory_api.PagePermission page_permission = 2;</code>
+       */
+      public glory_api.UserOuterClass.PagePermissionOrBuilder getPagePermissionOrBuilder(
+          int index) {
+        if (pagePermissionBuilder_ == null) {
+          return pagePermission_.get(index);  } else {
+          return pagePermissionBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * page permission of the user
+       * </pre>
+       *
+       * <code>repeated .glory_api.PagePermission page_permission = 2;</code>
+       */
+      public java.util.List<? extends glory_api.UserOuterClass.PagePermissionOrBuilder> 
+           getPagePermissionOrBuilderList() {
+        if (pagePermissionBuilder_ != null) {
+          return pagePermissionBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(pagePermission_);
+        }
+      }
+      /**
+       * <pre>
+       * page permission of the user
+       * </pre>
+       *
+       * <code>repeated .glory_api.PagePermission page_permission = 2;</code>
+       */
+      public glory_api.UserOuterClass.PagePermission.Builder addPagePermissionBuilder() {
+        return getPagePermissionFieldBuilder().addBuilder(
+            glory_api.UserOuterClass.PagePermission.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * page permission of the user
+       * </pre>
+       *
+       * <code>repeated .glory_api.PagePermission page_permission = 2;</code>
+       */
+      public glory_api.UserOuterClass.PagePermission.Builder addPagePermissionBuilder(
+          int index) {
+        return getPagePermissionFieldBuilder().addBuilder(
+            index, glory_api.UserOuterClass.PagePermission.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * page permission of the user
+       * </pre>
+       *
+       * <code>repeated .glory_api.PagePermission page_permission = 2;</code>
+       */
+      public java.util.List<glory_api.UserOuterClass.PagePermission.Builder> 
+           getPagePermissionBuilderList() {
+        return getPagePermissionFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          glory_api.UserOuterClass.PagePermission, glory_api.UserOuterClass.PagePermission.Builder, glory_api.UserOuterClass.PagePermissionOrBuilder> 
+          getPagePermissionFieldBuilder() {
+        if (pagePermissionBuilder_ == null) {
+          pagePermissionBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              glory_api.UserOuterClass.PagePermission, glory_api.UserOuterClass.PagePermission.Builder, glory_api.UserOuterClass.PagePermissionOrBuilder>(
+                  pagePermission_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          pagePermission_ = null;
+        }
+        return pagePermissionBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:glory_api.GetUserPagePermissionResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:glory_api.GetUserPagePermissionResponse)
+    private static final glory_api.UserOuterClass.GetUserPagePermissionResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new glory_api.UserOuterClass.GetUserPagePermissionResponse();
+    }
+
+    public static glory_api.UserOuterClass.GetUserPagePermissionResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetUserPagePermissionResponse>
+        PARSER = new com.google.protobuf.AbstractParser<GetUserPagePermissionResponse>() {
+      @java.lang.Override
+      public GetUserPagePermissionResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetUserPagePermissionResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetUserPagePermissionResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetUserPagePermissionResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public glory_api.UserOuterClass.GetUserPagePermissionResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_glory_api_User_descriptor;
   private static final 
@@ -10061,6 +12429,21 @@ public final class UserOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_GetUserResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_PagePermission_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_PagePermission_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetUserPagePermissionRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetUserPagePermissionRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetUserPagePermissionResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetUserPagePermissionResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -10097,8 +12480,14 @@ public final class UserOuterClass {
       "sponse\"9\n\016GetUserRequest\022\'\n\014base_request" +
       "\030\001 \001(\0132\021.base.BaseRequest\"W\n\017GetUserResp" +
       "onse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespo" +
-      "nse\022\035\n\004data\030\002 \001(\0132\017.glory_api.Userb\006prot" +
-      "o3"
+      "nse\022\035\n\004data\030\002 \001(\0132\017.glory_api.User\"6\n\016Pa" +
+      "gePermission\022\014\n\004page\030\001 \001(\t\022\026\n\016has_permis" +
+      "sion\030\002 \001(\010\"G\n\034GetUserPagePermissionReque" +
+      "st\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequ" +
+      "est\"z\n\035GetUserPagePermissionResponse\022%\n\t" +
+      "base_resp\030\001 \001(\0132\022.base.BaseResponse\0222\n\017p" +
+      "age_permission\030\002 \003(\0132\031.glory_api.PagePer" +
+      "missionb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -10173,6 +12562,24 @@ public final class UserOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetUserResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Data", });
+    internal_static_glory_api_PagePermission_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_glory_api_PagePermission_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_PagePermission_descriptor,
+        new java.lang.String[] { "Page", "HasPermission", });
+    internal_static_glory_api_GetUserPagePermissionRequest_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_glory_api_GetUserPagePermissionRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetUserPagePermissionRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", });
+    internal_static_glory_api_GetUserPagePermissionResponse_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_glory_api_GetUserPagePermissionResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetUserPagePermissionResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "PagePermission", });
     base.Base.getDescriptor();
     glory_api.SellerOuterClass.getDescriptor();
     glory_api.ShopOuterClass.getDescriptor();
