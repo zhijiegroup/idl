@@ -483,11 +483,7 @@ struct GloryApi_ListLivePlanProductRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
-  var shopID: Int64 = 0
-
-  var roomID: Int64 = 0
-
-  var status: String = String()
+  var livePlanID: Int64 = 0
 
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
@@ -1899,9 +1895,7 @@ extension GloryApi_ListLivePlanProductRequest: SwiftProtobuf.Message, SwiftProto
   static let protoMessageName: String = _protobuf_package + ".ListLivePlanProductRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
-    2: .standard(proto: "shop_id"),
-    3: .standard(proto: "room_id"),
-    4: .same(proto: "status"),
+    2: .standard(proto: "live_plan_id"),
     100: .same(proto: "pagination"),
   ]
 
@@ -1912,9 +1906,7 @@ extension GloryApi_ListLivePlanProductRequest: SwiftProtobuf.Message, SwiftProto
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
-      case 3: try { try decoder.decodeSingularInt64Field(value: &self.roomID) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.status) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.livePlanID) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -1929,14 +1921,8 @@ extension GloryApi_ListLivePlanProductRequest: SwiftProtobuf.Message, SwiftProto
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    if self.shopID != 0 {
-      try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 2)
-    }
-    if self.roomID != 0 {
-      try visitor.visitSingularInt64Field(value: self.roomID, fieldNumber: 3)
-    }
-    if !self.status.isEmpty {
-      try visitor.visitSingularStringField(value: self.status, fieldNumber: 4)
+    if self.livePlanID != 0 {
+      try visitor.visitSingularInt64Field(value: self.livePlanID, fieldNumber: 2)
     }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
@@ -1946,9 +1932,7 @@ extension GloryApi_ListLivePlanProductRequest: SwiftProtobuf.Message, SwiftProto
 
   static func ==(lhs: GloryApi_ListLivePlanProductRequest, rhs: GloryApi_ListLivePlanProductRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
-    if lhs.shopID != rhs.shopID {return false}
-    if lhs.roomID != rhs.roomID {return false}
-    if lhs.status != rhs.status {return false}
+    if lhs.livePlanID != rhs.livePlanID {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

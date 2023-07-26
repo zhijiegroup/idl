@@ -115,9 +115,7 @@ export interface UpdateLivePlanProductResponse {
 
 export interface ListLivePlanProductRequest {
   base_request?: base.BaseRequest;
-  shop_id?: string;
-  room_id?: string;
-  status?: string;
+  live_plan_id?: string;
   pagination?: base.PaginationRequest;
 }
 
