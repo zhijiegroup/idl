@@ -172,6 +172,8 @@ export interface UpdateLiveProductStatusRequest {
   live_product_status_id?: Array<string>;
   /** status: to_play（待播）, playing (直播中） */
   status?: string;
+  product_selling_point?: string;
+  product_description?: string;
 }
 
 export interface UpdateLiveProductStatusResponse {

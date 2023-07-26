@@ -716,6 +716,10 @@ struct GloryApi_UpdateLiveProductStatusRequest {
   /// status: to_play（待播）, playing (直播中）
   var status: String = String()
 
+  var productSellingPoint: String = String()
+
+  var productDescription: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -2301,6 +2305,8 @@ extension GloryApi_UpdateLiveProductStatusRequest: SwiftProtobuf.Message, SwiftP
     1: .standard(proto: "base_request"),
     2: .standard(proto: "live_product_status_id"),
     3: .same(proto: "status"),
+    4: .standard(proto: "product_selling_point"),
+    5: .standard(proto: "product_description"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2312,6 +2318,8 @@ extension GloryApi_UpdateLiveProductStatusRequest: SwiftProtobuf.Message, SwiftP
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeRepeatedInt64Field(value: &self.liveProductStatusID) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.status) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.productSellingPoint) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.productDescription) }()
       default: break
       }
     }
@@ -2331,6 +2339,12 @@ extension GloryApi_UpdateLiveProductStatusRequest: SwiftProtobuf.Message, SwiftP
     if !self.status.isEmpty {
       try visitor.visitSingularStringField(value: self.status, fieldNumber: 3)
     }
+    if !self.productSellingPoint.isEmpty {
+      try visitor.visitSingularStringField(value: self.productSellingPoint, fieldNumber: 4)
+    }
+    if !self.productDescription.isEmpty {
+      try visitor.visitSingularStringField(value: self.productDescription, fieldNumber: 5)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2338,6 +2352,8 @@ extension GloryApi_UpdateLiveProductStatusRequest: SwiftProtobuf.Message, SwiftP
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.liveProductStatusID != rhs.liveProductStatusID {return false}
     if lhs.status != rhs.status {return false}
+    if lhs.productSellingPoint != rhs.productSellingPoint {return false}
+    if lhs.productDescription != rhs.productDescription {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
