@@ -152,6 +152,8 @@ message UpdateLiveProductStatusRequest {
   base.BaseRequest base_request=1;
   repeated int64 live_product_status_id = 2;
   string status = 3; // status: to_play（待播）, playing (直播中）
+  string product_selling_point = 4; 
+  string product_description = 5; 
 }
 
 message UpdateLiveProductStatusResponse {
