@@ -74,6 +74,10 @@ service glory_api {
     option (api.post) = '/api/user/update_password';
   }
 
+  rpc GetUserPagePermission(GetUserPagePermissionRequest) returns (GetUserPagePermissionResponse) {
+    option (api.get) = '/api/user/get_user_page_permission';  // get user page permission with token
+  }
+
   // address
   rpc AddAddress(AddAddressRequest) returns (AddAddressResponse) {
     option (api.post) = '/api/user/add_address';

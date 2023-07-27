@@ -74,3 +74,18 @@ export interface GetUserResponse {
   /** user data */
   data?: User;
 }
+
+export interface PagePermission {
+  page?: string;
+  has_permission?: boolean;
+}
+
+export interface GetUserPagePermissionRequest {
+  base_request?: base.BaseRequest;
+}
+
+export interface GetUserPagePermissionResponse {
+  base_resp?: base.BaseResponse;
+  /** page permission of the user */
+  page_permission?: Array<PagePermission>;
+}

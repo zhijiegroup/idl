@@ -131,23 +131,29 @@ message LoadLivePlanProductResponse {
   base.BaseResponse base_resp = 1;
 }
 
+message CreateLiveProductStatus {
+  int64 product_id = 1; 
+  string product_selling_point = 2; 
+  string product_description = 3; 
+}
+
 message CreateLiveProductStatusRequest {
   base.BaseRequest base_request=1;
   int64 shop_id = 2;
-  int64 product_id = 3; 
-  string product_selling_point = 4; 
-  string product_description = 5; 
+  int64 room_id = 3;
+  repeated CreateLiveProductStatus live_product_status = 4;
 }
 
 message CreateLiveProductStatusResponse {
   base.BaseResponse base_resp=1;
-  int64 live_product_status_id = 2;
 }
 
 message UpdateLiveProductStatusRequest {
   base.BaseRequest base_request=1;
   repeated int64 live_product_status_id = 2;
   string status = 3; // status: to_play（待播）, playing (直播中）
+  string product_selling_point = 4; 
+  string product_description = 5; 
 }
 
 message UpdateLiveProductStatusResponse {
@@ -165,6 +171,12 @@ message LiveProductStatus {
   string product_description =7;
   bool is_introduct =8; // 是否讲解中
   string state =9; // 上架 下架状态
+  string product_url =10; // 商品 url
+  string product_name =11; // 商品名称
+  double product_price =12; // 商品价格
+  int64 product_remaining_amount =13; // 商品库存数量
+  int64 product_sold_amount =14; // 商品售出数量
+  double product_deal_amount =15; // 商品成交金额
 }
 
 message ListLiveProductStatusRequest {

@@ -414,7 +414,7 @@ extension GloryApi_Template: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     6: .standard(proto: "is_default"),
     7: .standard(proto: "freight_amount"),
     8: .same(proto: "address"),
-    9: .same(proto: "productInfo"),
+    9: .standard(proto: "product_info"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {

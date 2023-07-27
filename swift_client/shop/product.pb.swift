@@ -1161,7 +1161,7 @@ fileprivate let _protobuf_package = "glory_api"
 
 extension GloryApi_State: SwiftProtobuf._ProtoNameProviding {
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "default"),
+    0: .same(proto: "DEFAULT"),
     1: .same(proto: "created"),
     2: .same(proto: "on_shelf"),
     3: .same(proto: "off_shelf"),

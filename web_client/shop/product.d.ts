@@ -10,7 +10,7 @@ import * as freight_template from "./freight_template";
 export { base, sku, shop, attribute, freight_template };
 
 export enum State {
-  default = 0,
+  DEFAULT = 0,
   created = 1,
   on_shelf = 2,
   off_shelf = 3,

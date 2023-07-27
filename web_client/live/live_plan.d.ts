@@ -150,17 +150,21 @@ export interface LoadLivePlanProductResponse {
   base_resp?: base.BaseResponse;
 }
 
-export interface CreateLiveProductStatusRequest {
-  base_request?: base.BaseRequest;
-  shop_id?: string;
+export interface CreateLiveProductStatus {
   product_id?: string;
   product_selling_point?: string;
   product_description?: string;
 }
 
+export interface CreateLiveProductStatusRequest {
+  base_request?: base.BaseRequest;
+  shop_id?: string;
+  room_id?: string;
+  live_product_status?: Array<CreateLiveProductStatus>;
+}
+
 export interface CreateLiveProductStatusResponse {
   base_resp?: base.BaseResponse;
-  live_product_status_id?: string;
 }
 
 export interface UpdateLiveProductStatusRequest {
@@ -168,6 +172,8 @@ export interface UpdateLiveProductStatusRequest {
   live_product_status_id?: Array<string>;
   /** status: to_play（待播）, playing (直播中） */
   status?: string;
+  product_selling_point?: string;
+  product_description?: string;
 }
 
 export interface UpdateLiveProductStatusResponse {
@@ -186,6 +192,18 @@ export interface LiveProductStatus {
   is_introduct?: boolean;
   /** 上架 下架状态 */
   state?: string;
+  /** 商品 url */
+  product_url?: string;
+  /** 商品名称 */
+  product_name?: string;
+  /** 商品价格 */
+  product_price?: number;
+  /** 商品库存数量 */
+  product_remaining_amount?: string;
+  /** 商品售出数量 */
+  product_sold_amount?: string;
+  /** 商品成交金额 */
+  product_deal_amount?: number;
 }
 
 export interface ListLiveProductStatusRequest {
