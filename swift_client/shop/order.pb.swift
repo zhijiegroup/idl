@@ -245,10 +245,10 @@ struct GloryApi_OrderInfo {
   ///下单时间
   var createdAt: String = String()
 
-  ///订单类型
+  ///订单类型 created 待支付   paid 待发货   shipped 已发货   after_sales 售后中    completed 已完成  closed 已关闭
   var orderType: String = String()
 
-  ///支付方式
+  ///支付方式  coin 虚拟币支付  weixin 微信支付
   var payType: String = String()
 
   ///付款时间
