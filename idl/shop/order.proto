@@ -87,6 +87,7 @@ message OrderInfo {
   string currency = 15;//货币单位
   string contact_name = 16;//收货人
   string buyer_name = 17;//购买人
+  string deliver_address = 18;//收获地址
 }
 
 //收获与配送信息
