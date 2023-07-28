@@ -7023,7 +7023,7 @@ public final class OrderOuterClass {
 
     /**
      * <pre>
-     *订单类型
+     *订单类型 created 待支付   paid 待发货   shipped 已发货   after_sales 售后中    completed 已完成  closed 已关闭
      * </pre>
      *
      * <code>string orderType = 4;</code>
@@ -7032,7 +7032,7 @@ public final class OrderOuterClass {
     java.lang.String getOrderType();
     /**
      * <pre>
-     *订单类型
+     *订单类型 created 待支付   paid 待发货   shipped 已发货   after_sales 售后中    completed 已完成  closed 已关闭
      * </pre>
      *
      * <code>string orderType = 4;</code>
@@ -7043,7 +7043,7 @@ public final class OrderOuterClass {
 
     /**
      * <pre>
-     *支付方式
+     *支付方式  coin 虚拟币支付  weixin 微信支付
      * </pre>
      *
      * <code>string payType = 5;</code>
@@ -7052,7 +7052,7 @@ public final class OrderOuterClass {
     java.lang.String getPayType();
     /**
      * <pre>
-     *支付方式
+     *支付方式  coin 虚拟币支付  weixin 微信支付
      * </pre>
      *
      * <code>string payType = 5;</code>
@@ -7515,7 +7515,7 @@ public final class OrderOuterClass {
     private volatile java.lang.Object orderType_;
     /**
      * <pre>
-     *订单类型
+     *订单类型 created 待支付   paid 待发货   shipped 已发货   after_sales 售后中    completed 已完成  closed 已关闭
      * </pre>
      *
      * <code>string orderType = 4;</code>
@@ -7536,7 +7536,7 @@ public final class OrderOuterClass {
     }
     /**
      * <pre>
-     *订单类型
+     *订单类型 created 待支付   paid 待发货   shipped 已发货   after_sales 售后中    completed 已完成  closed 已关闭
      * </pre>
      *
      * <code>string orderType = 4;</code>
@@ -7561,7 +7561,7 @@ public final class OrderOuterClass {
     private volatile java.lang.Object payType_;
     /**
      * <pre>
-     *支付方式
+     *支付方式  coin 虚拟币支付  weixin 微信支付
      * </pre>
      *
      * <code>string payType = 5;</code>
@@ -7582,7 +7582,7 @@ public final class OrderOuterClass {
     }
     /**
      * <pre>
-     *支付方式
+     *支付方式  coin 虚拟币支付  weixin 微信支付
      * </pre>
      *
      * <code>string payType = 5;</code>
@@ -8726,7 +8726,7 @@ public final class OrderOuterClass {
       private java.lang.Object orderType_ = "";
       /**
        * <pre>
-       *订单类型
+       *订单类型 created 待支付   paid 待发货   shipped 已发货   after_sales 售后中    completed 已完成  closed 已关闭
        * </pre>
        *
        * <code>string orderType = 4;</code>
@@ -8746,7 +8746,7 @@ public final class OrderOuterClass {
       }
       /**
        * <pre>
-       *订单类型
+       *订单类型 created 待支付   paid 待发货   shipped 已发货   after_sales 售后中    completed 已完成  closed 已关闭
        * </pre>
        *
        * <code>string orderType = 4;</code>
@@ -8767,7 +8767,7 @@ public final class OrderOuterClass {
       }
       /**
        * <pre>
-       *订单类型
+       *订单类型 created 待支付   paid 待发货   shipped 已发货   after_sales 售后中    completed 已完成  closed 已关闭
        * </pre>
        *
        * <code>string orderType = 4;</code>
@@ -8786,7 +8786,7 @@ public final class OrderOuterClass {
       }
       /**
        * <pre>
-       *订单类型
+       *订单类型 created 待支付   paid 待发货   shipped 已发货   after_sales 售后中    completed 已完成  closed 已关闭
        * </pre>
        *
        * <code>string orderType = 4;</code>
@@ -8800,7 +8800,7 @@ public final class OrderOuterClass {
       }
       /**
        * <pre>
-       *订单类型
+       *订单类型 created 待支付   paid 待发货   shipped 已发货   after_sales 售后中    completed 已完成  closed 已关闭
        * </pre>
        *
        * <code>string orderType = 4;</code>
@@ -8822,7 +8822,7 @@ public final class OrderOuterClass {
       private java.lang.Object payType_ = "";
       /**
        * <pre>
-       *支付方式
+       *支付方式  coin 虚拟币支付  weixin 微信支付
        * </pre>
        *
        * <code>string payType = 5;</code>
@@ -8842,7 +8842,7 @@ public final class OrderOuterClass {
       }
       /**
        * <pre>
-       *支付方式
+       *支付方式  coin 虚拟币支付  weixin 微信支付
        * </pre>
        *
        * <code>string payType = 5;</code>
@@ -8863,7 +8863,7 @@ public final class OrderOuterClass {
       }
       /**
        * <pre>
-       *支付方式
+       *支付方式  coin 虚拟币支付  weixin 微信支付
        * </pre>
        *
        * <code>string payType = 5;</code>
@@ -8882,7 +8882,7 @@ public final class OrderOuterClass {
       }
       /**
        * <pre>
-       *支付方式
+       *支付方式  coin 虚拟币支付  weixin 微信支付
        * </pre>
        *
        * <code>string payType = 5;</code>
@@ -8896,7 +8896,7 @@ public final class OrderOuterClass {
       }
       /**
        * <pre>
-       *支付方式
+       *支付方式  coin 虚拟币支付  weixin 微信支付
        * </pre>
        *
        * <code>string payType = 5;</code>

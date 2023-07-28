@@ -80,9 +80,9 @@ export interface OrderInfo {
   order_status?: string;
   /** 下单时间 */
   created_at?: string;
-  /** 订单类型 */
+  /** 订单类型 created 待支付   paid 待发货   shipped 已发货   after_sales 售后中    completed 已完成  closed 已关闭 */
   orderType?: string;
-  /** 支付方式 */
+  /** 支付方式  coin 虚拟币支付  weixin 微信支付 */
   payType?: string;
   /** 付款时间 */
   payTime?: string;
