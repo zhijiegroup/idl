@@ -602,9 +602,6 @@ struct GloryApi_LoadLivePlanProductRequest {
   /// is load to playing product
   var isPlaying: Bool = false
 
-  /// live room id
-  var roomID: Int64 = 0
-
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -664,8 +661,6 @@ struct GloryApi_CreateLiveProductStatusRequest {
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
   var shopID: Int64 = 0
-
-  var roomID: Int64 = 0
 
   var liveProductStatus: [GloryApi_CreateLiveProductStatus] = []
 
@@ -812,8 +807,6 @@ struct GloryApi_ListLiveProductStatusRequest {
 
   var shopID: Int64 = 0
 
-  var roomID: Int64 = 0
-
   var status: String = String()
 
   var pagination: Base_PaginationRequest {
@@ -924,7 +917,7 @@ struct GloryApi_GetLivingProductStatusRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
-  var roomID: Int64 = 0
+  var shopID: Int64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1028,7 +1021,7 @@ struct GloryApi_UpdateLiveProductIntroductStatusRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
-  var roomID: Int64 = 0
+  var shopID: Int64 = 0
 
   var liveProductStatusID: Int64 = 0
 
@@ -2076,7 +2069,6 @@ extension GloryApi_LoadLivePlanProductRequest: SwiftProtobuf.Message, SwiftProto
     2: .standard(proto: "shop_id"),
     3: .standard(proto: "live_plan_id"),
     4: .standard(proto: "is_playing"),
-    5: .standard(proto: "room_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2089,7 +2081,6 @@ extension GloryApi_LoadLivePlanProductRequest: SwiftProtobuf.Message, SwiftProto
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
       case 3: try { try decoder.decodeSingularInt64Field(value: &self.livePlanID) }()
       case 4: try { try decoder.decodeSingularBoolField(value: &self.isPlaying) }()
-      case 5: try { try decoder.decodeSingularInt64Field(value: &self.roomID) }()
       default: break
       }
     }
@@ -2112,9 +2103,6 @@ extension GloryApi_LoadLivePlanProductRequest: SwiftProtobuf.Message, SwiftProto
     if self.isPlaying != false {
       try visitor.visitSingularBoolField(value: self.isPlaying, fieldNumber: 4)
     }
-    if self.roomID != 0 {
-      try visitor.visitSingularInt64Field(value: self.roomID, fieldNumber: 5)
-    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2123,7 +2111,6 @@ extension GloryApi_LoadLivePlanProductRequest: SwiftProtobuf.Message, SwiftProto
     if lhs.shopID != rhs.shopID {return false}
     if lhs.livePlanID != rhs.livePlanID {return false}
     if lhs.isPlaying != rhs.isPlaying {return false}
-    if lhs.roomID != rhs.roomID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -2214,8 +2201,7 @@ extension GloryApi_CreateLiveProductStatusRequest: SwiftProtobuf.Message, SwiftP
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
     2: .standard(proto: "shop_id"),
-    3: .standard(proto: "room_id"),
-    4: .standard(proto: "live_product_status"),
+    3: .standard(proto: "live_product_status"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2226,8 +2212,7 @@ extension GloryApi_CreateLiveProductStatusRequest: SwiftProtobuf.Message, SwiftP
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
-      case 3: try { try decoder.decodeSingularInt64Field(value: &self.roomID) }()
-      case 4: try { try decoder.decodeRepeatedMessageField(value: &self.liveProductStatus) }()
+      case 3: try { try decoder.decodeRepeatedMessageField(value: &self.liveProductStatus) }()
       default: break
       }
     }
@@ -2244,11 +2229,8 @@ extension GloryApi_CreateLiveProductStatusRequest: SwiftProtobuf.Message, SwiftP
     if self.shopID != 0 {
       try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 2)
     }
-    if self.roomID != 0 {
-      try visitor.visitSingularInt64Field(value: self.roomID, fieldNumber: 3)
-    }
     if !self.liveProductStatus.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.liveProductStatus, fieldNumber: 4)
+      try visitor.visitRepeatedMessageField(value: self.liveProductStatus, fieldNumber: 3)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -2256,7 +2238,6 @@ extension GloryApi_CreateLiveProductStatusRequest: SwiftProtobuf.Message, SwiftP
   static func ==(lhs: GloryApi_CreateLiveProductStatusRequest, rhs: GloryApi_CreateLiveProductStatusRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.shopID != rhs.shopID {return false}
-    if lhs.roomID != rhs.roomID {return false}
     if lhs.liveProductStatus != rhs.liveProductStatus {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -2516,8 +2497,7 @@ extension GloryApi_ListLiveProductStatusRequest: SwiftProtobuf.Message, SwiftPro
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
     2: .standard(proto: "shop_id"),
-    3: .standard(proto: "room_id"),
-    4: .same(proto: "status"),
+    3: .same(proto: "status"),
     100: .same(proto: "pagination"),
   ]
 
@@ -2529,8 +2509,7 @@ extension GloryApi_ListLiveProductStatusRequest: SwiftProtobuf.Message, SwiftPro
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
-      case 3: try { try decoder.decodeSingularInt64Field(value: &self.roomID) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.status) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.status) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -2548,11 +2527,8 @@ extension GloryApi_ListLiveProductStatusRequest: SwiftProtobuf.Message, SwiftPro
     if self.shopID != 0 {
       try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 2)
     }
-    if self.roomID != 0 {
-      try visitor.visitSingularInt64Field(value: self.roomID, fieldNumber: 3)
-    }
     if !self.status.isEmpty {
-      try visitor.visitSingularStringField(value: self.status, fieldNumber: 4)
+      try visitor.visitSingularStringField(value: self.status, fieldNumber: 3)
     }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
@@ -2563,7 +2539,6 @@ extension GloryApi_ListLiveProductStatusRequest: SwiftProtobuf.Message, SwiftPro
   static func ==(lhs: GloryApi_ListLiveProductStatusRequest, rhs: GloryApi_ListLiveProductStatusRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.shopID != rhs.shopID {return false}
-    if lhs.roomID != rhs.roomID {return false}
     if lhs.status != rhs.status {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -2701,7 +2676,7 @@ extension GloryApi_GetLivingProductStatusRequest: SwiftProtobuf.Message, SwiftPr
   static let protoMessageName: String = _protobuf_package + ".GetLivingProductStatusRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
-    2: .standard(proto: "room_id"),
+    2: .standard(proto: "shop_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2711,7 +2686,7 @@ extension GloryApi_GetLivingProductStatusRequest: SwiftProtobuf.Message, SwiftPr
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.roomID) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
       default: break
       }
     }
@@ -2725,15 +2700,15 @@ extension GloryApi_GetLivingProductStatusRequest: SwiftProtobuf.Message, SwiftPr
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    if self.roomID != 0 {
-      try visitor.visitSingularInt64Field(value: self.roomID, fieldNumber: 2)
+    if self.shopID != 0 {
+      try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 2)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_GetLivingProductStatusRequest, rhs: GloryApi_GetLivingProductStatusRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
-    if lhs.roomID != rhs.roomID {return false}
+    if lhs.shopID != rhs.shopID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -2905,7 +2880,7 @@ extension GloryApi_UpdateLiveProductIntroductStatusRequest: SwiftProtobuf.Messag
   static let protoMessageName: String = _protobuf_package + ".UpdateLiveProductIntroductStatusRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
-    2: .standard(proto: "room_id"),
+    2: .standard(proto: "shop_id"),
     3: .standard(proto: "live_product_status_id"),
     4: .same(proto: "action"),
   ]
@@ -2917,7 +2892,7 @@ extension GloryApi_UpdateLiveProductIntroductStatusRequest: SwiftProtobuf.Messag
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.roomID) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
       case 3: try { try decoder.decodeSingularInt64Field(value: &self.liveProductStatusID) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.action) }()
       default: break
@@ -2933,8 +2908,8 @@ extension GloryApi_UpdateLiveProductIntroductStatusRequest: SwiftProtobuf.Messag
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    if self.roomID != 0 {
-      try visitor.visitSingularInt64Field(value: self.roomID, fieldNumber: 2)
+    if self.shopID != 0 {
+      try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 2)
     }
     if self.liveProductStatusID != 0 {
       try visitor.visitSingularInt64Field(value: self.liveProductStatusID, fieldNumber: 3)
@@ -2947,7 +2922,7 @@ extension GloryApi_UpdateLiveProductIntroductStatusRequest: SwiftProtobuf.Messag
 
   static func ==(lhs: GloryApi_UpdateLiveProductIntroductStatusRequest, rhs: GloryApi_UpdateLiveProductIntroductStatusRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
-    if lhs.roomID != rhs.roomID {return false}
+    if lhs.shopID != rhs.shopID {return false}
     if lhs.liveProductStatusID != rhs.liveProductStatusID {return false}
     if lhs.action != rhs.action {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

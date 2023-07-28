@@ -18665,16 +18665,6 @@ public final class LivePlanOuterClass {
      * @return The isPlaying.
      */
     boolean getIsPlaying();
-
-    /**
-     * <pre>
-     * live room id
-     * </pre>
-     *
-     * <code>int64 room_id = 5;</code>
-     * @return The roomId.
-     */
-    long getRoomId();
   }
   /**
    * Protobuf type {@code glory_api.LoadLivePlanProductRequest}
@@ -18747,11 +18737,6 @@ public final class LivePlanOuterClass {
             case 32: {
 
               isPlaying_ = input.readBool();
-              break;
-            }
-            case 40: {
-
-              roomId_ = input.readInt64();
               break;
             }
             default: {
@@ -18857,21 +18842,6 @@ public final class LivePlanOuterClass {
       return isPlaying_;
     }
 
-    public static final int ROOM_ID_FIELD_NUMBER = 5;
-    private long roomId_;
-    /**
-     * <pre>
-     * live room id
-     * </pre>
-     *
-     * <code>int64 room_id = 5;</code>
-     * @return The roomId.
-     */
-    @java.lang.Override
-    public long getRoomId() {
-      return roomId_;
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -18898,9 +18868,6 @@ public final class LivePlanOuterClass {
       if (isPlaying_ != false) {
         output.writeBool(4, isPlaying_);
       }
-      if (roomId_ != 0L) {
-        output.writeInt64(5, roomId_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -18925,10 +18892,6 @@ public final class LivePlanOuterClass {
       if (isPlaying_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(4, isPlaying_);
-      }
-      if (roomId_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(5, roomId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -18956,8 +18919,6 @@ public final class LivePlanOuterClass {
           != other.getLivePlanId()) return false;
       if (getIsPlaying()
           != other.getIsPlaying()) return false;
-      if (getRoomId()
-          != other.getRoomId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -18982,9 +18943,6 @@ public final class LivePlanOuterClass {
       hash = (37 * hash) + IS_PLAYING_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsPlaying());
-      hash = (37 * hash) + ROOM_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getRoomId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -19130,8 +19088,6 @@ public final class LivePlanOuterClass {
 
         isPlaying_ = false;
 
-        roomId_ = 0L;
-
         return this;
       }
 
@@ -19166,7 +19122,6 @@ public final class LivePlanOuterClass {
         result.shopId_ = shopId_;
         result.livePlanId_ = livePlanId_;
         result.isPlaying_ = isPlaying_;
-        result.roomId_ = roomId_;
         onBuilt();
         return result;
       }
@@ -19226,9 +19181,6 @@ public final class LivePlanOuterClass {
         }
         if (other.getIsPlaying() != false) {
           setIsPlaying(other.getIsPlaying());
-        }
-        if (other.getRoomId() != 0L) {
-          setRoomId(other.getRoomId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -19503,49 +19455,6 @@ public final class LivePlanOuterClass {
       public Builder clearIsPlaying() {
         
         isPlaying_ = false;
-        onChanged();
-        return this;
-      }
-
-      private long roomId_ ;
-      /**
-       * <pre>
-       * live room id
-       * </pre>
-       *
-       * <code>int64 room_id = 5;</code>
-       * @return The roomId.
-       */
-      @java.lang.Override
-      public long getRoomId() {
-        return roomId_;
-      }
-      /**
-       * <pre>
-       * live room id
-       * </pre>
-       *
-       * <code>int64 room_id = 5;</code>
-       * @param value The roomId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRoomId(long value) {
-        
-        roomId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * live room id
-       * </pre>
-       *
-       * <code>int64 room_id = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRoomId() {
-        
-        roomId_ = 0L;
         onChanged();
         return this;
       }
@@ -21038,31 +20947,25 @@ public final class LivePlanOuterClass {
     long getShopId();
 
     /**
-     * <code>int64 room_id = 3;</code>
-     * @return The roomId.
-     */
-    long getRoomId();
-
-    /**
-     * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 4;</code>
+     * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 3;</code>
      */
     java.util.List<glory_api.LivePlanOuterClass.CreateLiveProductStatus> 
         getLiveProductStatusList();
     /**
-     * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 4;</code>
+     * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 3;</code>
      */
     glory_api.LivePlanOuterClass.CreateLiveProductStatus getLiveProductStatus(int index);
     /**
-     * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 4;</code>
+     * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 3;</code>
      */
     int getLiveProductStatusCount();
     /**
-     * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 4;</code>
+     * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 3;</code>
      */
     java.util.List<? extends glory_api.LivePlanOuterClass.CreateLiveProductStatusOrBuilder> 
         getLiveProductStatusOrBuilderList();
     /**
-     * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 4;</code>
+     * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 3;</code>
      */
     glory_api.LivePlanOuterClass.CreateLiveProductStatusOrBuilder getLiveProductStatusOrBuilder(
         int index);
@@ -21132,12 +21035,7 @@ public final class LivePlanOuterClass {
               shopId_ = input.readInt64();
               break;
             }
-            case 24: {
-
-              roomId_ = input.readInt64();
-              break;
-            }
-            case 34: {
+            case 26: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 liveProductStatus_ = new java.util.ArrayList<glory_api.LivePlanOuterClass.CreateLiveProductStatus>();
                 mutable_bitField0_ |= 0x00000001;
@@ -21218,28 +21116,17 @@ public final class LivePlanOuterClass {
       return shopId_;
     }
 
-    public static final int ROOM_ID_FIELD_NUMBER = 3;
-    private long roomId_;
-    /**
-     * <code>int64 room_id = 3;</code>
-     * @return The roomId.
-     */
-    @java.lang.Override
-    public long getRoomId() {
-      return roomId_;
-    }
-
-    public static final int LIVE_PRODUCT_STATUS_FIELD_NUMBER = 4;
+    public static final int LIVE_PRODUCT_STATUS_FIELD_NUMBER = 3;
     private java.util.List<glory_api.LivePlanOuterClass.CreateLiveProductStatus> liveProductStatus_;
     /**
-     * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 4;</code>
+     * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 3;</code>
      */
     @java.lang.Override
     public java.util.List<glory_api.LivePlanOuterClass.CreateLiveProductStatus> getLiveProductStatusList() {
       return liveProductStatus_;
     }
     /**
-     * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 4;</code>
+     * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 3;</code>
      */
     @java.lang.Override
     public java.util.List<? extends glory_api.LivePlanOuterClass.CreateLiveProductStatusOrBuilder> 
@@ -21247,21 +21134,21 @@ public final class LivePlanOuterClass {
       return liveProductStatus_;
     }
     /**
-     * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 4;</code>
+     * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 3;</code>
      */
     @java.lang.Override
     public int getLiveProductStatusCount() {
       return liveProductStatus_.size();
     }
     /**
-     * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 4;</code>
+     * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 3;</code>
      */
     @java.lang.Override
     public glory_api.LivePlanOuterClass.CreateLiveProductStatus getLiveProductStatus(int index) {
       return liveProductStatus_.get(index);
     }
     /**
-     * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 4;</code>
+     * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 3;</code>
      */
     @java.lang.Override
     public glory_api.LivePlanOuterClass.CreateLiveProductStatusOrBuilder getLiveProductStatusOrBuilder(
@@ -21289,11 +21176,8 @@ public final class LivePlanOuterClass {
       if (shopId_ != 0L) {
         output.writeInt64(2, shopId_);
       }
-      if (roomId_ != 0L) {
-        output.writeInt64(3, roomId_);
-      }
       for (int i = 0; i < liveProductStatus_.size(); i++) {
-        output.writeMessage(4, liveProductStatus_.get(i));
+        output.writeMessage(3, liveProductStatus_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -21312,13 +21196,9 @@ public final class LivePlanOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(2, shopId_);
       }
-      if (roomId_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, roomId_);
-      }
       for (int i = 0; i < liveProductStatus_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, liveProductStatus_.get(i));
+          .computeMessageSize(3, liveProductStatus_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -21342,8 +21222,6 @@ public final class LivePlanOuterClass {
       }
       if (getShopId()
           != other.getShopId()) return false;
-      if (getRoomId()
-          != other.getRoomId()) return false;
       if (!getLiveProductStatusList()
           .equals(other.getLiveProductStatusList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -21364,9 +21242,6 @@ public final class LivePlanOuterClass {
       hash = (37 * hash) + SHOP_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getShopId());
-      hash = (37 * hash) + ROOM_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getRoomId());
       if (getLiveProductStatusCount() > 0) {
         hash = (37 * hash) + LIVE_PRODUCT_STATUS_FIELD_NUMBER;
         hash = (53 * hash) + getLiveProductStatusList().hashCode();
@@ -21513,8 +21388,6 @@ public final class LivePlanOuterClass {
         }
         shopId_ = 0L;
 
-        roomId_ = 0L;
-
         if (liveProductStatusBuilder_ == null) {
           liveProductStatus_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -21554,7 +21427,6 @@ public final class LivePlanOuterClass {
           result.baseRequest_ = baseRequestBuilder_.build();
         }
         result.shopId_ = shopId_;
-        result.roomId_ = roomId_;
         if (liveProductStatusBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             liveProductStatus_ = java.util.Collections.unmodifiableList(liveProductStatus_);
@@ -21617,9 +21489,6 @@ public final class LivePlanOuterClass {
         }
         if (other.getShopId() != 0L) {
           setShopId(other.getShopId());
-        }
-        if (other.getRoomId() != 0L) {
-          setRoomId(other.getRoomId());
         }
         if (liveProductStatusBuilder_ == null) {
           if (!other.liveProductStatus_.isEmpty()) {
@@ -21827,37 +21696,6 @@ public final class LivePlanOuterClass {
         return this;
       }
 
-      private long roomId_ ;
-      /**
-       * <code>int64 room_id = 3;</code>
-       * @return The roomId.
-       */
-      @java.lang.Override
-      public long getRoomId() {
-        return roomId_;
-      }
-      /**
-       * <code>int64 room_id = 3;</code>
-       * @param value The roomId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRoomId(long value) {
-        
-        roomId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int64 room_id = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRoomId() {
-        
-        roomId_ = 0L;
-        onChanged();
-        return this;
-      }
-
       private java.util.List<glory_api.LivePlanOuterClass.CreateLiveProductStatus> liveProductStatus_ =
         java.util.Collections.emptyList();
       private void ensureLiveProductStatusIsMutable() {
@@ -21871,7 +21709,7 @@ public final class LivePlanOuterClass {
           glory_api.LivePlanOuterClass.CreateLiveProductStatus, glory_api.LivePlanOuterClass.CreateLiveProductStatus.Builder, glory_api.LivePlanOuterClass.CreateLiveProductStatusOrBuilder> liveProductStatusBuilder_;
 
       /**
-       * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 4;</code>
+       * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 3;</code>
        */
       public java.util.List<glory_api.LivePlanOuterClass.CreateLiveProductStatus> getLiveProductStatusList() {
         if (liveProductStatusBuilder_ == null) {
@@ -21881,7 +21719,7 @@ public final class LivePlanOuterClass {
         }
       }
       /**
-       * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 4;</code>
+       * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 3;</code>
        */
       public int getLiveProductStatusCount() {
         if (liveProductStatusBuilder_ == null) {
@@ -21891,7 +21729,7 @@ public final class LivePlanOuterClass {
         }
       }
       /**
-       * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 4;</code>
+       * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 3;</code>
        */
       public glory_api.LivePlanOuterClass.CreateLiveProductStatus getLiveProductStatus(int index) {
         if (liveProductStatusBuilder_ == null) {
@@ -21901,7 +21739,7 @@ public final class LivePlanOuterClass {
         }
       }
       /**
-       * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 4;</code>
+       * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 3;</code>
        */
       public Builder setLiveProductStatus(
           int index, glory_api.LivePlanOuterClass.CreateLiveProductStatus value) {
@@ -21918,7 +21756,7 @@ public final class LivePlanOuterClass {
         return this;
       }
       /**
-       * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 4;</code>
+       * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 3;</code>
        */
       public Builder setLiveProductStatus(
           int index, glory_api.LivePlanOuterClass.CreateLiveProductStatus.Builder builderForValue) {
@@ -21932,7 +21770,7 @@ public final class LivePlanOuterClass {
         return this;
       }
       /**
-       * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 4;</code>
+       * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 3;</code>
        */
       public Builder addLiveProductStatus(glory_api.LivePlanOuterClass.CreateLiveProductStatus value) {
         if (liveProductStatusBuilder_ == null) {
@@ -21948,7 +21786,7 @@ public final class LivePlanOuterClass {
         return this;
       }
       /**
-       * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 4;</code>
+       * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 3;</code>
        */
       public Builder addLiveProductStatus(
           int index, glory_api.LivePlanOuterClass.CreateLiveProductStatus value) {
@@ -21965,7 +21803,7 @@ public final class LivePlanOuterClass {
         return this;
       }
       /**
-       * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 4;</code>
+       * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 3;</code>
        */
       public Builder addLiveProductStatus(
           glory_api.LivePlanOuterClass.CreateLiveProductStatus.Builder builderForValue) {
@@ -21979,7 +21817,7 @@ public final class LivePlanOuterClass {
         return this;
       }
       /**
-       * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 4;</code>
+       * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 3;</code>
        */
       public Builder addLiveProductStatus(
           int index, glory_api.LivePlanOuterClass.CreateLiveProductStatus.Builder builderForValue) {
@@ -21993,7 +21831,7 @@ public final class LivePlanOuterClass {
         return this;
       }
       /**
-       * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 4;</code>
+       * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 3;</code>
        */
       public Builder addAllLiveProductStatus(
           java.lang.Iterable<? extends glory_api.LivePlanOuterClass.CreateLiveProductStatus> values) {
@@ -22008,7 +21846,7 @@ public final class LivePlanOuterClass {
         return this;
       }
       /**
-       * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 4;</code>
+       * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 3;</code>
        */
       public Builder clearLiveProductStatus() {
         if (liveProductStatusBuilder_ == null) {
@@ -22021,7 +21859,7 @@ public final class LivePlanOuterClass {
         return this;
       }
       /**
-       * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 4;</code>
+       * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 3;</code>
        */
       public Builder removeLiveProductStatus(int index) {
         if (liveProductStatusBuilder_ == null) {
@@ -22034,14 +21872,14 @@ public final class LivePlanOuterClass {
         return this;
       }
       /**
-       * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 4;</code>
+       * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 3;</code>
        */
       public glory_api.LivePlanOuterClass.CreateLiveProductStatus.Builder getLiveProductStatusBuilder(
           int index) {
         return getLiveProductStatusFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 4;</code>
+       * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 3;</code>
        */
       public glory_api.LivePlanOuterClass.CreateLiveProductStatusOrBuilder getLiveProductStatusOrBuilder(
           int index) {
@@ -22051,7 +21889,7 @@ public final class LivePlanOuterClass {
         }
       }
       /**
-       * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 4;</code>
+       * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 3;</code>
        */
       public java.util.List<? extends glory_api.LivePlanOuterClass.CreateLiveProductStatusOrBuilder> 
            getLiveProductStatusOrBuilderList() {
@@ -22062,14 +21900,14 @@ public final class LivePlanOuterClass {
         }
       }
       /**
-       * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 4;</code>
+       * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 3;</code>
        */
       public glory_api.LivePlanOuterClass.CreateLiveProductStatus.Builder addLiveProductStatusBuilder() {
         return getLiveProductStatusFieldBuilder().addBuilder(
             glory_api.LivePlanOuterClass.CreateLiveProductStatus.getDefaultInstance());
       }
       /**
-       * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 4;</code>
+       * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 3;</code>
        */
       public glory_api.LivePlanOuterClass.CreateLiveProductStatus.Builder addLiveProductStatusBuilder(
           int index) {
@@ -22077,7 +21915,7 @@ public final class LivePlanOuterClass {
             index, glory_api.LivePlanOuterClass.CreateLiveProductStatus.getDefaultInstance());
       }
       /**
-       * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 4;</code>
+       * <code>repeated .glory_api.CreateLiveProductStatus live_product_status = 3;</code>
        */
       public java.util.List<glory_api.LivePlanOuterClass.CreateLiveProductStatus.Builder> 
            getLiveProductStatusBuilderList() {
@@ -26889,18 +26727,12 @@ public final class LivePlanOuterClass {
     long getShopId();
 
     /**
-     * <code>int64 room_id = 3;</code>
-     * @return The roomId.
-     */
-    long getRoomId();
-
-    /**
-     * <code>string status = 4;</code>
+     * <code>string status = 3;</code>
      * @return The status.
      */
     java.lang.String getStatus();
     /**
-     * <code>string status = 4;</code>
+     * <code>string status = 3;</code>
      * @return The bytes for status.
      */
     com.google.protobuf.ByteString
@@ -26985,12 +26817,7 @@ public final class LivePlanOuterClass {
               shopId_ = input.readInt64();
               break;
             }
-            case 24: {
-
-              roomId_ = input.readInt64();
-              break;
-            }
-            case 34: {
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
               status_ = s;
@@ -27078,21 +26905,10 @@ public final class LivePlanOuterClass {
       return shopId_;
     }
 
-    public static final int ROOM_ID_FIELD_NUMBER = 3;
-    private long roomId_;
-    /**
-     * <code>int64 room_id = 3;</code>
-     * @return The roomId.
-     */
-    @java.lang.Override
-    public long getRoomId() {
-      return roomId_;
-    }
-
-    public static final int STATUS_FIELD_NUMBER = 4;
+    public static final int STATUS_FIELD_NUMBER = 3;
     private volatile java.lang.Object status_;
     /**
-     * <code>string status = 4;</code>
+     * <code>string status = 3;</code>
      * @return The status.
      */
     @java.lang.Override
@@ -27109,7 +26925,7 @@ public final class LivePlanOuterClass {
       }
     }
     /**
-     * <code>string status = 4;</code>
+     * <code>string status = 3;</code>
      * @return The bytes for status.
      */
     @java.lang.Override
@@ -27173,11 +26989,8 @@ public final class LivePlanOuterClass {
       if (shopId_ != 0L) {
         output.writeInt64(2, shopId_);
       }
-      if (roomId_ != 0L) {
-        output.writeInt64(3, roomId_);
-      }
       if (!getStatusBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, status_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, status_);
       }
       if (pagination_ != null) {
         output.writeMessage(100, getPagination());
@@ -27199,12 +27012,8 @@ public final class LivePlanOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(2, shopId_);
       }
-      if (roomId_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, roomId_);
-      }
       if (!getStatusBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, status_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, status_);
       }
       if (pagination_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -27232,8 +27041,6 @@ public final class LivePlanOuterClass {
       }
       if (getShopId()
           != other.getShopId()) return false;
-      if (getRoomId()
-          != other.getRoomId()) return false;
       if (!getStatus()
           .equals(other.getStatus())) return false;
       if (hasPagination() != other.hasPagination()) return false;
@@ -27259,9 +27066,6 @@ public final class LivePlanOuterClass {
       hash = (37 * hash) + SHOP_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getShopId());
-      hash = (37 * hash) + ROOM_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getRoomId());
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getStatus().hashCode();
       if (hasPagination()) {
@@ -27409,8 +27213,6 @@ public final class LivePlanOuterClass {
         }
         shopId_ = 0L;
 
-        roomId_ = 0L;
-
         status_ = "";
 
         if (paginationBuilder_ == null) {
@@ -27451,7 +27253,6 @@ public final class LivePlanOuterClass {
           result.baseRequest_ = baseRequestBuilder_.build();
         }
         result.shopId_ = shopId_;
-        result.roomId_ = roomId_;
         result.status_ = status_;
         if (paginationBuilder_ == null) {
           result.pagination_ = pagination_;
@@ -27511,9 +27312,6 @@ public final class LivePlanOuterClass {
         }
         if (other.getShopId() != 0L) {
           setShopId(other.getShopId());
-        }
-        if (other.getRoomId() != 0L) {
-          setRoomId(other.getRoomId());
         }
         if (!other.getStatus().isEmpty()) {
           status_ = other.status_;
@@ -27701,40 +27499,9 @@ public final class LivePlanOuterClass {
         return this;
       }
 
-      private long roomId_ ;
-      /**
-       * <code>int64 room_id = 3;</code>
-       * @return The roomId.
-       */
-      @java.lang.Override
-      public long getRoomId() {
-        return roomId_;
-      }
-      /**
-       * <code>int64 room_id = 3;</code>
-       * @param value The roomId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRoomId(long value) {
-        
-        roomId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int64 room_id = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRoomId() {
-        
-        roomId_ = 0L;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object status_ = "";
       /**
-       * <code>string status = 4;</code>
+       * <code>string status = 3;</code>
        * @return The status.
        */
       public java.lang.String getStatus() {
@@ -27750,7 +27517,7 @@ public final class LivePlanOuterClass {
         }
       }
       /**
-       * <code>string status = 4;</code>
+       * <code>string status = 3;</code>
        * @return The bytes for status.
        */
       public com.google.protobuf.ByteString
@@ -27767,7 +27534,7 @@ public final class LivePlanOuterClass {
         }
       }
       /**
-       * <code>string status = 4;</code>
+       * <code>string status = 3;</code>
        * @param value The status to set.
        * @return This builder for chaining.
        */
@@ -27782,7 +27549,7 @@ public final class LivePlanOuterClass {
         return this;
       }
       /**
-       * <code>string status = 4;</code>
+       * <code>string status = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearStatus() {
@@ -27792,7 +27559,7 @@ public final class LivePlanOuterClass {
         return this;
       }
       /**
-       * <code>string status = 4;</code>
+       * <code>string status = 3;</code>
        * @param value The bytes for status to set.
        * @return This builder for chaining.
        */
@@ -30511,10 +30278,10 @@ public final class LivePlanOuterClass {
     base.Base.BaseRequestOrBuilder getBaseRequestOrBuilder();
 
     /**
-     * <code>int64 room_id = 2;</code>
-     * @return The roomId.
+     * <code>int64 shop_id = 2;</code>
+     * @return The shopId.
      */
-    long getRoomId();
+    long getShopId();
   }
   /**
    * Protobuf type {@code glory_api.GetLivingProductStatusRequest}
@@ -30576,7 +30343,7 @@ public final class LivePlanOuterClass {
             }
             case 16: {
 
-              roomId_ = input.readInt64();
+              shopId_ = input.readInt64();
               break;
             }
             default: {
@@ -30637,15 +30404,15 @@ public final class LivePlanOuterClass {
       return getBaseRequest();
     }
 
-    public static final int ROOM_ID_FIELD_NUMBER = 2;
-    private long roomId_;
+    public static final int SHOP_ID_FIELD_NUMBER = 2;
+    private long shopId_;
     /**
-     * <code>int64 room_id = 2;</code>
-     * @return The roomId.
+     * <code>int64 shop_id = 2;</code>
+     * @return The shopId.
      */
     @java.lang.Override
-    public long getRoomId() {
-      return roomId_;
+    public long getShopId() {
+      return shopId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -30665,8 +30432,8 @@ public final class LivePlanOuterClass {
       if (baseRequest_ != null) {
         output.writeMessage(1, getBaseRequest());
       }
-      if (roomId_ != 0L) {
-        output.writeInt64(2, roomId_);
+      if (shopId_ != 0L) {
+        output.writeInt64(2, shopId_);
       }
       unknownFields.writeTo(output);
     }
@@ -30681,9 +30448,9 @@ public final class LivePlanOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getBaseRequest());
       }
-      if (roomId_ != 0L) {
+      if (shopId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, roomId_);
+          .computeInt64Size(2, shopId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -30705,8 +30472,8 @@ public final class LivePlanOuterClass {
         if (!getBaseRequest()
             .equals(other.getBaseRequest())) return false;
       }
-      if (getRoomId()
-          != other.getRoomId()) return false;
+      if (getShopId()
+          != other.getShopId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -30722,9 +30489,9 @@ public final class LivePlanOuterClass {
         hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
         hash = (53 * hash) + getBaseRequest().hashCode();
       }
-      hash = (37 * hash) + ROOM_ID_FIELD_NUMBER;
+      hash = (37 * hash) + SHOP_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getRoomId());
+          getShopId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -30864,7 +30631,7 @@ public final class LivePlanOuterClass {
           baseRequest_ = null;
           baseRequestBuilder_ = null;
         }
-        roomId_ = 0L;
+        shopId_ = 0L;
 
         return this;
       }
@@ -30897,7 +30664,7 @@ public final class LivePlanOuterClass {
         } else {
           result.baseRequest_ = baseRequestBuilder_.build();
         }
-        result.roomId_ = roomId_;
+        result.shopId_ = shopId_;
         onBuilt();
         return result;
       }
@@ -30949,8 +30716,8 @@ public final class LivePlanOuterClass {
         if (other.hasBaseRequest()) {
           mergeBaseRequest(other.getBaseRequest());
         }
-        if (other.getRoomId() != 0L) {
-          setRoomId(other.getRoomId());
+        if (other.getShopId() != 0L) {
+          setShopId(other.getShopId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -31100,33 +30867,33 @@ public final class LivePlanOuterClass {
         return baseRequestBuilder_;
       }
 
-      private long roomId_ ;
+      private long shopId_ ;
       /**
-       * <code>int64 room_id = 2;</code>
-       * @return The roomId.
+       * <code>int64 shop_id = 2;</code>
+       * @return The shopId.
        */
       @java.lang.Override
-      public long getRoomId() {
-        return roomId_;
+      public long getShopId() {
+        return shopId_;
       }
       /**
-       * <code>int64 room_id = 2;</code>
-       * @param value The roomId to set.
+       * <code>int64 shop_id = 2;</code>
+       * @param value The shopId to set.
        * @return This builder for chaining.
        */
-      public Builder setRoomId(long value) {
+      public Builder setShopId(long value) {
         
-        roomId_ = value;
+        shopId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int64 room_id = 2;</code>
+       * <code>int64 shop_id = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearRoomId() {
+      public Builder clearShopId() {
         
-        roomId_ = 0L;
+        shopId_ = 0L;
         onChanged();
         return this;
       }
@@ -34099,10 +33866,10 @@ public final class LivePlanOuterClass {
     base.Base.BaseRequestOrBuilder getBaseRequestOrBuilder();
 
     /**
-     * <code>int64 room_id = 2;</code>
-     * @return The roomId.
+     * <code>int64 shop_id = 2;</code>
+     * @return The shopId.
      */
-    long getRoomId();
+    long getShopId();
 
     /**
      * <code>int64 live_product_status_id = 3;</code>
@@ -34191,7 +33958,7 @@ public final class LivePlanOuterClass {
             }
             case 16: {
 
-              roomId_ = input.readInt64();
+              shopId_ = input.readInt64();
               break;
             }
             case 24: {
@@ -34263,15 +34030,15 @@ public final class LivePlanOuterClass {
       return getBaseRequest();
     }
 
-    public static final int ROOM_ID_FIELD_NUMBER = 2;
-    private long roomId_;
+    public static final int SHOP_ID_FIELD_NUMBER = 2;
+    private long shopId_;
     /**
-     * <code>int64 room_id = 2;</code>
-     * @return The roomId.
+     * <code>int64 shop_id = 2;</code>
+     * @return The shopId.
      */
     @java.lang.Override
-    public long getRoomId() {
-      return roomId_;
+    public long getShopId() {
+      return shopId_;
     }
 
     public static final int LIVE_PRODUCT_STATUS_ID_FIELD_NUMBER = 3;
@@ -34348,8 +34115,8 @@ public final class LivePlanOuterClass {
       if (baseRequest_ != null) {
         output.writeMessage(1, getBaseRequest());
       }
-      if (roomId_ != 0L) {
-        output.writeInt64(2, roomId_);
+      if (shopId_ != 0L) {
+        output.writeInt64(2, shopId_);
       }
       if (liveProductStatusId_ != 0L) {
         output.writeInt64(3, liveProductStatusId_);
@@ -34370,9 +34137,9 @@ public final class LivePlanOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getBaseRequest());
       }
-      if (roomId_ != 0L) {
+      if (shopId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, roomId_);
+          .computeInt64Size(2, shopId_);
       }
       if (liveProductStatusId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -34401,8 +34168,8 @@ public final class LivePlanOuterClass {
         if (!getBaseRequest()
             .equals(other.getBaseRequest())) return false;
       }
-      if (getRoomId()
-          != other.getRoomId()) return false;
+      if (getShopId()
+          != other.getShopId()) return false;
       if (getLiveProductStatusId()
           != other.getLiveProductStatusId()) return false;
       if (!getAction()
@@ -34422,9 +34189,9 @@ public final class LivePlanOuterClass {
         hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
         hash = (53 * hash) + getBaseRequest().hashCode();
       }
-      hash = (37 * hash) + ROOM_ID_FIELD_NUMBER;
+      hash = (37 * hash) + SHOP_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getRoomId());
+          getShopId());
       hash = (37 * hash) + LIVE_PRODUCT_STATUS_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getLiveProductStatusId());
@@ -34569,7 +34336,7 @@ public final class LivePlanOuterClass {
           baseRequest_ = null;
           baseRequestBuilder_ = null;
         }
-        roomId_ = 0L;
+        shopId_ = 0L;
 
         liveProductStatusId_ = 0L;
 
@@ -34606,7 +34373,7 @@ public final class LivePlanOuterClass {
         } else {
           result.baseRequest_ = baseRequestBuilder_.build();
         }
-        result.roomId_ = roomId_;
+        result.shopId_ = shopId_;
         result.liveProductStatusId_ = liveProductStatusId_;
         result.action_ = action_;
         onBuilt();
@@ -34660,8 +34427,8 @@ public final class LivePlanOuterClass {
         if (other.hasBaseRequest()) {
           mergeBaseRequest(other.getBaseRequest());
         }
-        if (other.getRoomId() != 0L) {
-          setRoomId(other.getRoomId());
+        if (other.getShopId() != 0L) {
+          setShopId(other.getShopId());
         }
         if (other.getLiveProductStatusId() != 0L) {
           setLiveProductStatusId(other.getLiveProductStatusId());
@@ -34818,33 +34585,33 @@ public final class LivePlanOuterClass {
         return baseRequestBuilder_;
       }
 
-      private long roomId_ ;
+      private long shopId_ ;
       /**
-       * <code>int64 room_id = 2;</code>
-       * @return The roomId.
+       * <code>int64 shop_id = 2;</code>
+       * @return The shopId.
        */
       @java.lang.Override
-      public long getRoomId() {
-        return roomId_;
+      public long getShopId() {
+        return shopId_;
       }
       /**
-       * <code>int64 room_id = 2;</code>
-       * @param value The roomId to set.
+       * <code>int64 shop_id = 2;</code>
+       * @param value The shopId to set.
        * @return This builder for chaining.
        */
-      public Builder setRoomId(long value) {
+      public Builder setShopId(long value) {
         
-        roomId_ = value;
+        shopId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int64 room_id = 2;</code>
+       * <code>int64 shop_id = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearRoomId() {
+      public Builder clearShopId() {
         
-        roomId_ = 0L;
+        shopId_ = 0L;
         onChanged();
         return this;
       }
@@ -35916,68 +35683,67 @@ public final class LivePlanOuterClass {
       "se_request\030\001 \001(\0132\021.base.BaseRequest\022\034\n\024l" +
       "ive_plan_product_id\030\002 \001(\003\"F\n\035DeleteLiveP" +
       "lanProductResponse\022%\n\tbase_resp\030\001 \001(\0132\022." +
-      "base.BaseResponse\"\221\001\n\032LoadLivePlanProduc" +
+      "base.BaseResponse\"\200\001\n\032LoadLivePlanProduc" +
       "tRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
       "seRequest\022\017\n\007shop_id\030\002 \001(\003\022\024\n\014live_plan_" +
-      "id\030\003 \001(\003\022\022\n\nis_playing\030\004 \001(\010\022\017\n\007room_id\030" +
-      "\005 \001(\003\"D\n\033LoadLivePlanProductResponse\022%\n\t" +
-      "base_resp\030\001 \001(\0132\022.base.BaseResponse\"i\n\027C" +
-      "reateLiveProductStatus\022\022\n\nproduct_id\030\001 \001" +
-      "(\003\022\035\n\025product_selling_point\030\002 \001(\t\022\033\n\023pro" +
-      "duct_description\030\003 \001(\t\"\254\001\n\036CreateLivePro" +
-      "ductStatusRequest\022\'\n\014base_request\030\001 \001(\0132" +
-      "\021.base.BaseRequest\022\017\n\007shop_id\030\002 \001(\003\022\017\n\007r" +
-      "oom_id\030\003 \001(\003\022?\n\023live_product_status\030\004 \003(" +
-      "\0132\".glory_api.CreateLiveProductStatus\"H\n" +
-      "\037CreateLiveProductStatusResponse\022%\n\tbase" +
-      "_resp\030\001 \001(\0132\022.base.BaseResponse\"\265\001\n\036Upda" +
-      "teLiveProductStatusRequest\022\'\n\014base_reque" +
-      "st\030\001 \001(\0132\021.base.BaseRequest\022\036\n\026live_prod" +
-      "uct_status_id\030\002 \003(\003\022\016\n\006status\030\003 \001(\t\022\035\n\025p" +
-      "roduct_selling_point\030\004 \001(\t\022\033\n\023product_de" +
-      "scription\030\005 \001(\t\"H\n\037UpdateLiveProductStat" +
-      "usResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
-      "eResponse\"\370\002\n\021LiveProductStatus\022\036\n\026live_" +
-      "product_status_id\030\001 \001(\003\022\022\n\nproduct_id\030\002 " +
-      "\001(\003\022\016\n\006status\030\003 \001(\t\022\017\n\007shop_id\030\004 \001(\003\022\017\n\007" +
-      "room_id\030\005 \001(\003\022\035\n\025product_selling_point\030\006" +
-      " \001(\t\022\033\n\023product_description\030\007 \001(\t\022\024\n\014is_" +
-      "introduct\030\010 \001(\010\022\r\n\005state\030\t \001(\t\022\023\n\013produc" +
-      "t_url\030\n \001(\t\022\024\n\014product_name\030\013 \001(\t\022\025\n\rpro" +
-      "duct_price\030\014 \001(\001\022 \n\030product_remaining_am" +
-      "ount\030\r \001(\003\022\033\n\023product_sold_amount\030\016 \001(\003\022" +
-      "\033\n\023product_deal_amount\030\017 \001(\001\"\246\001\n\034ListLiv" +
-      "eProductStatusRequest\022\'\n\014base_request\030\001 " +
-      "\001(\0132\021.base.BaseRequest\022\017\n\007shop_id\030\002 \001(\003\022" +
-      "\017\n\007room_id\030\003 \001(\003\022\016\n\006status\030\004 \001(\t\022+\n\npagi" +
-      "nation\030d \001(\0132\027.base.PaginationRequest\"\257\001" +
-      "\n\035ListLiveProductStatusResponse\022%\n\tbase_" +
-      "resp\030\001 \001(\0132\022.base.BaseResponse\0229\n\023live_p" +
-      "roduct_status\030\002 \003(\0132\034.glory_api.LiveProd" +
-      "uctStatus\022,\n\npagination\030d \001(\0132\030.base.Pag" +
-      "inationResponse\"i\n\036DeleteLiveProductStat" +
-      "usRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.B" +
-      "aseRequest\022\036\n\026live_product_status_id\030\002 \001" +
-      "(\003\"H\n\037DeleteLiveProductStatusResponse\022%\n" +
-      "\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"Y\n\035" +
-      "GetLivingProductStatusRequest\022\'\n\014base_re" +
-      "quest\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007room_i" +
-      "d\030\002 \001(\003\"\313\001\n\036GetLivingProductStatusRespon" +
-      "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
-      "e\022\022\n\nproduct_id\030\002 \001(\003\022\024\n\014product_name\030\003 " +
-      "\001(\t\022\025\n\rproduct_price\030\004 \001(\001\022\025\n\rproduct_co" +
-      "unt\030\005 \001(\005\022\027\n\017live_room_order\030\006 \001(\005\022\021\n\tpl" +
-      "ayed_at\030\007 \001(\t\"s\n\021LiveRecordRequest\022\'\n\014ba" +
-      "se_request\030\001 \001(\0132\021.base.BaseRequest\022\016\n\006a" +
-      "ction\030\002 \001(\t\022\020\n\010app_name\030\003 \001(\t\022\023\n\013stream_" +
-      "name\030\004 \001(\t\";\n\022LiveRecordResponse\022%\n\tbase" +
-      "_resp\030\001 \001(\0132\022.base.BaseResponse\"\223\001\n\'Upda" +
-      "teLiveProductIntroductStatusRequest\022\'\n\014b" +
-      "ase_request\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007" +
-      "room_id\030\002 \001(\003\022\036\n\026live_product_status_id\030" +
-      "\003 \001(\003\022\016\n\006action\030\004 \001(\t\"Q\n(UpdateLiveProdu" +
-      "ctIntroductStatusResponse\022%\n\tbase_resp\030\001" +
-      " \001(\0132\022.base.BaseResponseb\006proto3"
+      "id\030\003 \001(\003\022\022\n\nis_playing\030\004 \001(\010\"D\n\033LoadLive" +
+      "PlanProductResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
+      ".base.BaseResponse\"i\n\027CreateLiveProductS" +
+      "tatus\022\022\n\nproduct_id\030\001 \001(\003\022\035\n\025product_sel" +
+      "ling_point\030\002 \001(\t\022\033\n\023product_description\030" +
+      "\003 \001(\t\"\233\001\n\036CreateLiveProductStatusRequest" +
+      "\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReques" +
+      "t\022\017\n\007shop_id\030\002 \001(\003\022?\n\023live_product_statu" +
+      "s\030\003 \003(\0132\".glory_api.CreateLiveProductSta" +
+      "tus\"H\n\037CreateLiveProductStatusResponse\022%" +
+      "\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"\265\001" +
+      "\n\036UpdateLiveProductStatusRequest\022\'\n\014base" +
+      "_request\030\001 \001(\0132\021.base.BaseRequest\022\036\n\026liv" +
+      "e_product_status_id\030\002 \003(\003\022\016\n\006status\030\003 \001(" +
+      "\t\022\035\n\025product_selling_point\030\004 \001(\t\022\033\n\023prod" +
+      "uct_description\030\005 \001(\t\"H\n\037UpdateLiveProdu" +
+      "ctStatusResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
+      "se.BaseResponse\"\370\002\n\021LiveProductStatus\022\036\n" +
+      "\026live_product_status_id\030\001 \001(\003\022\022\n\nproduct" +
+      "_id\030\002 \001(\003\022\016\n\006status\030\003 \001(\t\022\017\n\007shop_id\030\004 \001" +
+      "(\003\022\017\n\007room_id\030\005 \001(\003\022\035\n\025product_selling_p" +
+      "oint\030\006 \001(\t\022\033\n\023product_description\030\007 \001(\t\022" +
+      "\024\n\014is_introduct\030\010 \001(\010\022\r\n\005state\030\t \001(\t\022\023\n\013" +
+      "product_url\030\n \001(\t\022\024\n\014product_name\030\013 \001(\t\022" +
+      "\025\n\rproduct_price\030\014 \001(\001\022 \n\030product_remain" +
+      "ing_amount\030\r \001(\003\022\033\n\023product_sold_amount\030" +
+      "\016 \001(\003\022\033\n\023product_deal_amount\030\017 \001(\001\"\225\001\n\034L" +
+      "istLiveProductStatusRequest\022\'\n\014base_requ" +
+      "est\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007shop_id\030" +
+      "\002 \001(\003\022\016\n\006status\030\003 \001(\t\022+\n\npagination\030d \001(" +
+      "\0132\027.base.PaginationRequest\"\257\001\n\035ListLiveP" +
+      "roductStatusResponse\022%\n\tbase_resp\030\001 \001(\0132" +
+      "\022.base.BaseResponse\0229\n\023live_product_stat" +
+      "us\030\002 \003(\0132\034.glory_api.LiveProductStatus\022," +
+      "\n\npagination\030d \001(\0132\030.base.PaginationResp" +
+      "onse\"i\n\036DeleteLiveProductStatusRequest\022\'" +
+      "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\022" +
+      "\036\n\026live_product_status_id\030\002 \001(\003\"H\n\037Delet" +
+      "eLiveProductStatusResponse\022%\n\tbase_resp\030" +
+      "\001 \001(\0132\022.base.BaseResponse\"Y\n\035GetLivingPr" +
+      "oductStatusRequest\022\'\n\014base_request\030\001 \001(\013" +
+      "2\021.base.BaseRequest\022\017\n\007shop_id\030\002 \001(\003\"\313\001\n" +
+      "\036GetLivingProductStatusResponse\022%\n\tbase_" +
+      "resp\030\001 \001(\0132\022.base.BaseResponse\022\022\n\nproduc" +
+      "t_id\030\002 \001(\003\022\024\n\014product_name\030\003 \001(\t\022\025\n\rprod" +
+      "uct_price\030\004 \001(\001\022\025\n\rproduct_count\030\005 \001(\005\022\027" +
+      "\n\017live_room_order\030\006 \001(\005\022\021\n\tplayed_at\030\007 \001" +
+      "(\t\"s\n\021LiveRecordRequest\022\'\n\014base_request\030" +
+      "\001 \001(\0132\021.base.BaseRequest\022\016\n\006action\030\002 \001(\t" +
+      "\022\020\n\010app_name\030\003 \001(\t\022\023\n\013stream_name\030\004 \001(\t\"" +
+      ";\n\022LiveRecordResponse\022%\n\tbase_resp\030\001 \001(\013" +
+      "2\022.base.BaseResponse\"\223\001\n\'UpdateLiveProdu" +
+      "ctIntroductStatusRequest\022\'\n\014base_request" +
+      "\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007shop_id\030\002 \001" +
+      "(\003\022\036\n\026live_product_status_id\030\003 \001(\003\022\016\n\006ac" +
+      "tion\030\004 \001(\t\"Q\n(UpdateLiveProductIntroduct" +
+      "StatusResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
+      ".BaseResponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -36115,7 +35881,7 @@ public final class LivePlanOuterClass {
     internal_static_glory_api_LoadLivePlanProductRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_LoadLivePlanProductRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "ShopId", "LivePlanId", "IsPlaying", "RoomId", });
+        new java.lang.String[] { "BaseRequest", "ShopId", "LivePlanId", "IsPlaying", });
     internal_static_glory_api_LoadLivePlanProductResponse_descriptor =
       getDescriptor().getMessageTypes().get(22);
     internal_static_glory_api_LoadLivePlanProductResponse_fieldAccessorTable = new
@@ -36133,7 +35899,7 @@ public final class LivePlanOuterClass {
     internal_static_glory_api_CreateLiveProductStatusRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CreateLiveProductStatusRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "ShopId", "RoomId", "LiveProductStatus", });
+        new java.lang.String[] { "BaseRequest", "ShopId", "LiveProductStatus", });
     internal_static_glory_api_CreateLiveProductStatusResponse_descriptor =
       getDescriptor().getMessageTypes().get(25);
     internal_static_glory_api_CreateLiveProductStatusResponse_fieldAccessorTable = new
@@ -36163,7 +35929,7 @@ public final class LivePlanOuterClass {
     internal_static_glory_api_ListLiveProductStatusRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListLiveProductStatusRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "ShopId", "RoomId", "Status", "Pagination", });
+        new java.lang.String[] { "BaseRequest", "ShopId", "Status", "Pagination", });
     internal_static_glory_api_ListLiveProductStatusResponse_descriptor =
       getDescriptor().getMessageTypes().get(30);
     internal_static_glory_api_ListLiveProductStatusResponse_fieldAccessorTable = new
@@ -36187,7 +35953,7 @@ public final class LivePlanOuterClass {
     internal_static_glory_api_GetLivingProductStatusRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetLivingProductStatusRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "RoomId", });
+        new java.lang.String[] { "BaseRequest", "ShopId", });
     internal_static_glory_api_GetLivingProductStatusResponse_descriptor =
       getDescriptor().getMessageTypes().get(34);
     internal_static_glory_api_GetLivingProductStatusResponse_fieldAccessorTable = new
@@ -36211,7 +35977,7 @@ public final class LivePlanOuterClass {
     internal_static_glory_api_UpdateLiveProductIntroductStatusRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateLiveProductIntroductStatusRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "RoomId", "LiveProductStatusId", "Action", });
+        new java.lang.String[] { "BaseRequest", "ShopId", "LiveProductStatusId", "Action", });
     internal_static_glory_api_UpdateLiveProductIntroductStatusResponse_descriptor =
       getDescriptor().getMessageTypes().get(38);
     internal_static_glory_api_UpdateLiveProductIntroductStatusResponse_fieldAccessorTable = new
