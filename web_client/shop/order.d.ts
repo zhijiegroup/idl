@@ -104,6 +104,12 @@ export interface OrderInfo {
   shop_name?: string;
   /** 货币单位 */
   currency?: string;
+  /** 收货人 */
+  contact_name?: string;
+  /** 购买人 */
+  buyer_name?: string;
+  /** 收获地址 */
+  deliver_address?: string;
 }
 
 /** 收获与配送信息 */

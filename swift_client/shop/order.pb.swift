@@ -237,53 +237,118 @@ struct GloryApi_OrderInfo {
   // methods supported on all messages.
 
   ///订单id
-  var orderID: Int64 = 0
+  var orderID: Int64 {
+    get {return _storage._orderID}
+    set {_uniqueStorage()._orderID = newValue}
+  }
 
   ///订单状态
-  var orderStatus: String = String()
+  var orderStatus: String {
+    get {return _storage._orderStatus}
+    set {_uniqueStorage()._orderStatus = newValue}
+  }
 
   ///下单时间
-  var createdAt: String = String()
+  var createdAt: String {
+    get {return _storage._createdAt}
+    set {_uniqueStorage()._createdAt = newValue}
+  }
 
   ///订单类型 created 待支付   paid 待发货   shipped 已发货   after_sales 售后中    completed 已完成  closed 已关闭
-  var orderType: String = String()
+  var orderType: String {
+    get {return _storage._orderType}
+    set {_uniqueStorage()._orderType = newValue}
+  }
 
   ///支付方式  coin 虚拟币支付  weixin 微信支付
-  var payType: String = String()
+  var payType: String {
+    get {return _storage._payType}
+    set {_uniqueStorage()._payType = newValue}
+  }
 
   ///付款时间
-  var payTime: String = String()
+  var payTime: String {
+    get {return _storage._payTime}
+    set {_uniqueStorage()._payTime = newValue}
+  }
 
   ///商品总价 = 原价+运费
-  var totalAmount: Double = 0
+  var totalAmount: Double {
+    get {return _storage._totalAmount}
+    set {_uniqueStorage()._totalAmount = newValue}
+  }
 
   ///原价
-  var originalAmount: Double = 0
+  var originalAmount: Double {
+    get {return _storage._originalAmount}
+    set {_uniqueStorage()._originalAmount = newValue}
+  }
 
   ///运费
-  var deliverFee: Double = 0
+  var deliverFee: Double {
+    get {return _storage._deliverFee}
+    set {_uniqueStorage()._deliverFee = newValue}
+  }
 
   ///优惠金额
-  var discountAmount: Double = 0
+  var discountAmount: Double {
+    get {return _storage._discountAmount}
+    set {_uniqueStorage()._discountAmount = newValue}
+  }
 
   ///实付金额
-  var paymentAmount: Double = 0
+  var paymentAmount: Double {
+    get {return _storage._paymentAmount}
+    set {_uniqueStorage()._paymentAmount = newValue}
+  }
 
   ///应付金额
-  var payableAmount: Double = 0
+  var payableAmount: Double {
+    get {return _storage._payableAmount}
+    set {_uniqueStorage()._payableAmount = newValue}
+  }
 
   ///商品信息
-  var productInfo: [GloryApi_ProductInfo] = []
+  var productInfo: [GloryApi_ProductInfo] {
+    get {return _storage._productInfo}
+    set {_uniqueStorage()._productInfo = newValue}
+  }
 
   ///商店名字
-  var shopName: String = String()
+  var shopName: String {
+    get {return _storage._shopName}
+    set {_uniqueStorage()._shopName = newValue}
+  }
 
   ///货币单位
-  var currency: String = String()
+  var currency: String {
+    get {return _storage._currency}
+    set {_uniqueStorage()._currency = newValue}
+  }
+
+  ///收货人
+  var contactName: String {
+    get {return _storage._contactName}
+    set {_uniqueStorage()._contactName = newValue}
+  }
+
+  ///购买人
+  var buyerName: String {
+    get {return _storage._buyerName}
+    set {_uniqueStorage()._buyerName = newValue}
+  }
+
+  ///收获地址
+  var deliverAddress: String {
+    get {return _storage._deliverAddress}
+    set {_uniqueStorage()._deliverAddress = newValue}
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
+
+  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 ///收获与配送信息
@@ -386,28 +451,29 @@ struct GloryApi_OrderWithAuthor {
   // methods supported on all messages.
 
   var authorInfo: Base_AuthorInfo {
-    get {return _storage._authorInfo ?? Base_AuthorInfo()}
-    set {_uniqueStorage()._authorInfo = newValue}
+    get {return _authorInfo ?? Base_AuthorInfo()}
+    set {_authorInfo = newValue}
   }
   /// Returns true if `authorInfo` has been explicitly set.
-  var hasAuthorInfo: Bool {return _storage._authorInfo != nil}
+  var hasAuthorInfo: Bool {return self._authorInfo != nil}
   /// Clears the value of `authorInfo`. Subsequent reads from it will return its default value.
-  mutating func clearAuthorInfo() {_uniqueStorage()._authorInfo = nil}
+  mutating func clearAuthorInfo() {self._authorInfo = nil}
 
   var orderInfo: GloryApi_OrderInfo {
-    get {return _storage._orderInfo ?? GloryApi_OrderInfo()}
-    set {_uniqueStorage()._orderInfo = newValue}
+    get {return _orderInfo ?? GloryApi_OrderInfo()}
+    set {_orderInfo = newValue}
   }
   /// Returns true if `orderInfo` has been explicitly set.
-  var hasOrderInfo: Bool {return _storage._orderInfo != nil}
+  var hasOrderInfo: Bool {return self._orderInfo != nil}
   /// Clears the value of `orderInfo`. Subsequent reads from it will return its default value.
-  mutating func clearOrderInfo() {_uniqueStorage()._orderInfo = nil}
+  mutating func clearOrderInfo() {self._orderInfo = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  fileprivate var _storage = _StorageClass.defaultInstance
+  fileprivate var _authorInfo: Base_AuthorInfo? = nil
+  fileprivate var _orderInfo: GloryApi_OrderInfo? = nil
 }
 
 struct GloryApi_CreateOrderRequest {
@@ -523,38 +589,40 @@ struct GloryApi_GetOrderResponse {
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _storage._baseResp ?? Base_BaseResponse()}
-    set {_uniqueStorage()._baseResp = newValue}
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return _storage._baseResp != nil}
+  var hasBaseResp: Bool {return self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
-  mutating func clearBaseResp() {_uniqueStorage()._baseResp = nil}
+  mutating func clearBaseResp() {self._baseResp = nil}
 
   var orderInfo: GloryApi_OrderInfo {
-    get {return _storage._orderInfo ?? GloryApi_OrderInfo()}
-    set {_uniqueStorage()._orderInfo = newValue}
+    get {return _orderInfo ?? GloryApi_OrderInfo()}
+    set {_orderInfo = newValue}
   }
   /// Returns true if `orderInfo` has been explicitly set.
-  var hasOrderInfo: Bool {return _storage._orderInfo != nil}
+  var hasOrderInfo: Bool {return self._orderInfo != nil}
   /// Clears the value of `orderInfo`. Subsequent reads from it will return its default value.
-  mutating func clearOrderInfo() {_uniqueStorage()._orderInfo = nil}
+  mutating func clearOrderInfo() {self._orderInfo = nil}
 
   ///repeated ProductInfo productInfo = 3;
   var deliverInfo: GloryApi_DeliverInfo {
-    get {return _storage._deliverInfo ?? GloryApi_DeliverInfo()}
-    set {_uniqueStorage()._deliverInfo = newValue}
+    get {return _deliverInfo ?? GloryApi_DeliverInfo()}
+    set {_deliverInfo = newValue}
   }
   /// Returns true if `deliverInfo` has been explicitly set.
-  var hasDeliverInfo: Bool {return _storage._deliverInfo != nil}
+  var hasDeliverInfo: Bool {return self._deliverInfo != nil}
   /// Clears the value of `deliverInfo`. Subsequent reads from it will return its default value.
-  mutating func clearDeliverInfo() {_uniqueStorage()._deliverInfo = nil}
+  mutating func clearDeliverInfo() {self._deliverInfo = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  fileprivate var _storage = _StorageClass.defaultInstance
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _orderInfo: GloryApi_OrderInfo? = nil
+  fileprivate var _deliverInfo: GloryApi_DeliverInfo? = nil
 }
 
 struct GloryApi_UpdateOrderRequest {
@@ -1395,99 +1463,183 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     13: .same(proto: "productInfo"),
     14: .standard(proto: "shop_name"),
     15: .same(proto: "currency"),
+    16: .standard(proto: "contact_name"),
+    17: .standard(proto: "buyer_name"),
+    18: .standard(proto: "deliver_address"),
   ]
 
+  fileprivate class _StorageClass {
+    var _orderID: Int64 = 0
+    var _orderStatus: String = String()
+    var _createdAt: String = String()
+    var _orderType: String = String()
+    var _payType: String = String()
+    var _payTime: String = String()
+    var _totalAmount: Double = 0
+    var _originalAmount: Double = 0
+    var _deliverFee: Double = 0
+    var _discountAmount: Double = 0
+    var _paymentAmount: Double = 0
+    var _payableAmount: Double = 0
+    var _productInfo: [GloryApi_ProductInfo] = []
+    var _shopName: String = String()
+    var _currency: String = String()
+    var _contactName: String = String()
+    var _buyerName: String = String()
+    var _deliverAddress: String = String()
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _orderID = source._orderID
+      _orderStatus = source._orderStatus
+      _createdAt = source._createdAt
+      _orderType = source._orderType
+      _payType = source._payType
+      _payTime = source._payTime
+      _totalAmount = source._totalAmount
+      _originalAmount = source._originalAmount
+      _deliverFee = source._deliverFee
+      _discountAmount = source._discountAmount
+      _paymentAmount = source._paymentAmount
+      _payableAmount = source._payableAmount
+      _productInfo = source._productInfo
+      _shopName = source._shopName
+      _currency = source._currency
+      _contactName = source._contactName
+      _buyerName = source._buyerName
+      _deliverAddress = source._deliverAddress
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularInt64Field(value: &self.orderID) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.orderStatus) }()
-      case 3: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.orderType) }()
-      case 5: try { try decoder.decodeSingularStringField(value: &self.payType) }()
-      case 6: try { try decoder.decodeSingularStringField(value: &self.payTime) }()
-      case 7: try { try decoder.decodeSingularDoubleField(value: &self.totalAmount) }()
-      case 8: try { try decoder.decodeSingularDoubleField(value: &self.originalAmount) }()
-      case 9: try { try decoder.decodeSingularDoubleField(value: &self.deliverFee) }()
-      case 10: try { try decoder.decodeSingularDoubleField(value: &self.discountAmount) }()
-      case 11: try { try decoder.decodeSingularDoubleField(value: &self.paymentAmount) }()
-      case 12: try { try decoder.decodeSingularDoubleField(value: &self.payableAmount) }()
-      case 13: try { try decoder.decodeRepeatedMessageField(value: &self.productInfo) }()
-      case 14: try { try decoder.decodeSingularStringField(value: &self.shopName) }()
-      case 15: try { try decoder.decodeSingularStringField(value: &self.currency) }()
-      default: break
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        // The use of inline closures is to circumvent an issue where the compiler
+        // allocates stack space for every case branch when no optimizations are
+        // enabled. https://github.com/apple/swift-protobuf/issues/1034
+        switch fieldNumber {
+        case 1: try { try decoder.decodeSingularInt64Field(value: &_storage._orderID) }()
+        case 2: try { try decoder.decodeSingularStringField(value: &_storage._orderStatus) }()
+        case 3: try { try decoder.decodeSingularStringField(value: &_storage._createdAt) }()
+        case 4: try { try decoder.decodeSingularStringField(value: &_storage._orderType) }()
+        case 5: try { try decoder.decodeSingularStringField(value: &_storage._payType) }()
+        case 6: try { try decoder.decodeSingularStringField(value: &_storage._payTime) }()
+        case 7: try { try decoder.decodeSingularDoubleField(value: &_storage._totalAmount) }()
+        case 8: try { try decoder.decodeSingularDoubleField(value: &_storage._originalAmount) }()
+        case 9: try { try decoder.decodeSingularDoubleField(value: &_storage._deliverFee) }()
+        case 10: try { try decoder.decodeSingularDoubleField(value: &_storage._discountAmount) }()
+        case 11: try { try decoder.decodeSingularDoubleField(value: &_storage._paymentAmount) }()
+        case 12: try { try decoder.decodeSingularDoubleField(value: &_storage._payableAmount) }()
+        case 13: try { try decoder.decodeRepeatedMessageField(value: &_storage._productInfo) }()
+        case 14: try { try decoder.decodeSingularStringField(value: &_storage._shopName) }()
+        case 15: try { try decoder.decodeSingularStringField(value: &_storage._currency) }()
+        case 16: try { try decoder.decodeSingularStringField(value: &_storage._contactName) }()
+        case 17: try { try decoder.decodeSingularStringField(value: &_storage._buyerName) }()
+        case 18: try { try decoder.decodeSingularStringField(value: &_storage._deliverAddress) }()
+        default: break
+        }
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.orderID != 0 {
-      try visitor.visitSingularInt64Field(value: self.orderID, fieldNumber: 1)
-    }
-    if !self.orderStatus.isEmpty {
-      try visitor.visitSingularStringField(value: self.orderStatus, fieldNumber: 2)
-    }
-    if !self.createdAt.isEmpty {
-      try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 3)
-    }
-    if !self.orderType.isEmpty {
-      try visitor.visitSingularStringField(value: self.orderType, fieldNumber: 4)
-    }
-    if !self.payType.isEmpty {
-      try visitor.visitSingularStringField(value: self.payType, fieldNumber: 5)
-    }
-    if !self.payTime.isEmpty {
-      try visitor.visitSingularStringField(value: self.payTime, fieldNumber: 6)
-    }
-    if self.totalAmount != 0 {
-      try visitor.visitSingularDoubleField(value: self.totalAmount, fieldNumber: 7)
-    }
-    if self.originalAmount != 0 {
-      try visitor.visitSingularDoubleField(value: self.originalAmount, fieldNumber: 8)
-    }
-    if self.deliverFee != 0 {
-      try visitor.visitSingularDoubleField(value: self.deliverFee, fieldNumber: 9)
-    }
-    if self.discountAmount != 0 {
-      try visitor.visitSingularDoubleField(value: self.discountAmount, fieldNumber: 10)
-    }
-    if self.paymentAmount != 0 {
-      try visitor.visitSingularDoubleField(value: self.paymentAmount, fieldNumber: 11)
-    }
-    if self.payableAmount != 0 {
-      try visitor.visitSingularDoubleField(value: self.payableAmount, fieldNumber: 12)
-    }
-    if !self.productInfo.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.productInfo, fieldNumber: 13)
-    }
-    if !self.shopName.isEmpty {
-      try visitor.visitSingularStringField(value: self.shopName, fieldNumber: 14)
-    }
-    if !self.currency.isEmpty {
-      try visitor.visitSingularStringField(value: self.currency, fieldNumber: 15)
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if _storage._orderID != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._orderID, fieldNumber: 1)
+      }
+      if !_storage._orderStatus.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._orderStatus, fieldNumber: 2)
+      }
+      if !_storage._createdAt.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._createdAt, fieldNumber: 3)
+      }
+      if !_storage._orderType.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._orderType, fieldNumber: 4)
+      }
+      if !_storage._payType.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._payType, fieldNumber: 5)
+      }
+      if !_storage._payTime.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._payTime, fieldNumber: 6)
+      }
+      if _storage._totalAmount != 0 {
+        try visitor.visitSingularDoubleField(value: _storage._totalAmount, fieldNumber: 7)
+      }
+      if _storage._originalAmount != 0 {
+        try visitor.visitSingularDoubleField(value: _storage._originalAmount, fieldNumber: 8)
+      }
+      if _storage._deliverFee != 0 {
+        try visitor.visitSingularDoubleField(value: _storage._deliverFee, fieldNumber: 9)
+      }
+      if _storage._discountAmount != 0 {
+        try visitor.visitSingularDoubleField(value: _storage._discountAmount, fieldNumber: 10)
+      }
+      if _storage._paymentAmount != 0 {
+        try visitor.visitSingularDoubleField(value: _storage._paymentAmount, fieldNumber: 11)
+      }
+      if _storage._payableAmount != 0 {
+        try visitor.visitSingularDoubleField(value: _storage._payableAmount, fieldNumber: 12)
+      }
+      if !_storage._productInfo.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._productInfo, fieldNumber: 13)
+      }
+      if !_storage._shopName.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._shopName, fieldNumber: 14)
+      }
+      if !_storage._currency.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._currency, fieldNumber: 15)
+      }
+      if !_storage._contactName.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._contactName, fieldNumber: 16)
+      }
+      if !_storage._buyerName.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._buyerName, fieldNumber: 17)
+      }
+      if !_storage._deliverAddress.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._deliverAddress, fieldNumber: 18)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_OrderInfo, rhs: GloryApi_OrderInfo) -> Bool {
-    if lhs.orderID != rhs.orderID {return false}
-    if lhs.orderStatus != rhs.orderStatus {return false}
-    if lhs.createdAt != rhs.createdAt {return false}
-    if lhs.orderType != rhs.orderType {return false}
-    if lhs.payType != rhs.payType {return false}
-    if lhs.payTime != rhs.payTime {return false}
-    if lhs.totalAmount != rhs.totalAmount {return false}
-    if lhs.originalAmount != rhs.originalAmount {return false}
-    if lhs.deliverFee != rhs.deliverFee {return false}
-    if lhs.discountAmount != rhs.discountAmount {return false}
-    if lhs.paymentAmount != rhs.paymentAmount {return false}
-    if lhs.payableAmount != rhs.payableAmount {return false}
-    if lhs.productInfo != rhs.productInfo {return false}
-    if lhs.shopName != rhs.shopName {return false}
-    if lhs.currency != rhs.currency {return false}
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._orderID != rhs_storage._orderID {return false}
+        if _storage._orderStatus != rhs_storage._orderStatus {return false}
+        if _storage._createdAt != rhs_storage._createdAt {return false}
+        if _storage._orderType != rhs_storage._orderType {return false}
+        if _storage._payType != rhs_storage._payType {return false}
+        if _storage._payTime != rhs_storage._payTime {return false}
+        if _storage._totalAmount != rhs_storage._totalAmount {return false}
+        if _storage._originalAmount != rhs_storage._originalAmount {return false}
+        if _storage._deliverFee != rhs_storage._deliverFee {return false}
+        if _storage._discountAmount != rhs_storage._discountAmount {return false}
+        if _storage._paymentAmount != rhs_storage._paymentAmount {return false}
+        if _storage._payableAmount != rhs_storage._payableAmount {return false}
+        if _storage._productInfo != rhs_storage._productInfo {return false}
+        if _storage._shopName != rhs_storage._shopName {return false}
+        if _storage._currency != rhs_storage._currency {return false}
+        if _storage._contactName != rhs_storage._contactName {return false}
+        if _storage._buyerName != rhs_storage._buyerName {return false}
+        if _storage._deliverAddress != rhs_storage._deliverAddress {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -1692,70 +1844,36 @@ extension GloryApi_OrderWithAuthor: SwiftProtobuf.Message, SwiftProtobuf._Messag
     3: .standard(proto: "order_info"),
   ]
 
-  fileprivate class _StorageClass {
-    var _authorInfo: Base_AuthorInfo? = nil
-    var _orderInfo: GloryApi_OrderInfo? = nil
-
-    static let defaultInstance = _StorageClass()
-
-    private init() {}
-
-    init(copying source: _StorageClass) {
-      _authorInfo = source._authorInfo
-      _orderInfo = source._orderInfo
-    }
-  }
-
-  fileprivate mutating func _uniqueStorage() -> _StorageClass {
-    if !isKnownUniquelyReferenced(&_storage) {
-      _storage = _StorageClass(copying: _storage)
-    }
-    return _storage
-  }
-
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    _ = _uniqueStorage()
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        // The use of inline closures is to circumvent an issue where the compiler
-        // allocates stack space for every case branch when no optimizations are
-        // enabled. https://github.com/apple/swift-protobuf/issues/1034
-        switch fieldNumber {
-        case 2: try { try decoder.decodeSingularMessageField(value: &_storage._authorInfo) }()
-        case 3: try { try decoder.decodeSingularMessageField(value: &_storage._orderInfo) }()
-        default: break
-        }
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._authorInfo) }()
+      case 3: try { try decoder.decodeSingularMessageField(value: &self._orderInfo) }()
+      default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every if/case branch local when no optimizations
-      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-      // https://github.com/apple/swift-protobuf/issues/1182
-      try { if let v = _storage._authorInfo {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      } }()
-      try { if let v = _storage._orderInfo {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-      } }()
-    }
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._authorInfo {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    } }()
+    try { if let v = self._orderInfo {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_OrderWithAuthor, rhs: GloryApi_OrderWithAuthor) -> Bool {
-    if lhs._storage !== rhs._storage {
-      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
-        let _storage = _args.0
-        let rhs_storage = _args.1
-        if _storage._authorInfo != rhs_storage._authorInfo {return false}
-        if _storage._orderInfo != rhs_storage._orderInfo {return false}
-        return true
-      }
-      if !storagesAreEqual {return false}
-    }
+    if lhs._authorInfo != rhs._authorInfo {return false}
+    if lhs._orderInfo != rhs._orderInfo {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -1989,77 +2107,41 @@ extension GloryApi_GetOrderResponse: SwiftProtobuf.Message, SwiftProtobuf._Messa
     4: .same(proto: "deliverInfo"),
   ]
 
-  fileprivate class _StorageClass {
-    var _baseResp: Base_BaseResponse? = nil
-    var _orderInfo: GloryApi_OrderInfo? = nil
-    var _deliverInfo: GloryApi_DeliverInfo? = nil
-
-    static let defaultInstance = _StorageClass()
-
-    private init() {}
-
-    init(copying source: _StorageClass) {
-      _baseResp = source._baseResp
-      _orderInfo = source._orderInfo
-      _deliverInfo = source._deliverInfo
-    }
-  }
-
-  fileprivate mutating func _uniqueStorage() -> _StorageClass {
-    if !isKnownUniquelyReferenced(&_storage) {
-      _storage = _StorageClass(copying: _storage)
-    }
-    return _storage
-  }
-
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    _ = _uniqueStorage()
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        // The use of inline closures is to circumvent an issue where the compiler
-        // allocates stack space for every case branch when no optimizations are
-        // enabled. https://github.com/apple/swift-protobuf/issues/1034
-        switch fieldNumber {
-        case 1: try { try decoder.decodeSingularMessageField(value: &_storage._baseResp) }()
-        case 2: try { try decoder.decodeSingularMessageField(value: &_storage._orderInfo) }()
-        case 4: try { try decoder.decodeSingularMessageField(value: &_storage._deliverInfo) }()
-        default: break
-        }
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._orderInfo) }()
+      case 4: try { try decoder.decodeSingularMessageField(value: &self._deliverInfo) }()
+      default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every if/case branch local when no optimizations
-      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-      // https://github.com/apple/swift-protobuf/issues/1182
-      try { if let v = _storage._baseResp {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-      } }()
-      try { if let v = _storage._orderInfo {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      } }()
-      try { if let v = _storage._deliverInfo {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-      } }()
-    }
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try { if let v = self._orderInfo {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    } }()
+    try { if let v = self._deliverInfo {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_GetOrderResponse, rhs: GloryApi_GetOrderResponse) -> Bool {
-    if lhs._storage !== rhs._storage {
-      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
-        let _storage = _args.0
-        let rhs_storage = _args.1
-        if _storage._baseResp != rhs_storage._baseResp {return false}
-        if _storage._orderInfo != rhs_storage._orderInfo {return false}
-        if _storage._deliverInfo != rhs_storage._deliverInfo {return false}
-        return true
-      }
-      if !storagesAreEqual {return false}
-    }
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs._orderInfo != rhs._orderInfo {return false}
+    if lhs._deliverInfo != rhs._deliverInfo {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

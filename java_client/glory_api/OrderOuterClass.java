@@ -7224,6 +7224,66 @@ public final class OrderOuterClass {
      */
     com.google.protobuf.ByteString
         getCurrencyBytes();
+
+    /**
+     * <pre>
+     *收货人
+     * </pre>
+     *
+     * <code>string contact_name = 16;</code>
+     * @return The contactName.
+     */
+    java.lang.String getContactName();
+    /**
+     * <pre>
+     *收货人
+     * </pre>
+     *
+     * <code>string contact_name = 16;</code>
+     * @return The bytes for contactName.
+     */
+    com.google.protobuf.ByteString
+        getContactNameBytes();
+
+    /**
+     * <pre>
+     *购买人
+     * </pre>
+     *
+     * <code>string buyer_name = 17;</code>
+     * @return The buyerName.
+     */
+    java.lang.String getBuyerName();
+    /**
+     * <pre>
+     *购买人
+     * </pre>
+     *
+     * <code>string buyer_name = 17;</code>
+     * @return The bytes for buyerName.
+     */
+    com.google.protobuf.ByteString
+        getBuyerNameBytes();
+
+    /**
+     * <pre>
+     *收获地址
+     * </pre>
+     *
+     * <code>string deliver_address = 18;</code>
+     * @return The deliverAddress.
+     */
+    java.lang.String getDeliverAddress();
+    /**
+     * <pre>
+     *收获地址
+     * </pre>
+     *
+     * <code>string deliver_address = 18;</code>
+     * @return The bytes for deliverAddress.
+     */
+    com.google.protobuf.ByteString
+        getDeliverAddressBytes();
   }
   /**
    * <pre>
@@ -7250,6 +7310,9 @@ public final class OrderOuterClass {
       productInfo_ = java.util.Collections.emptyList();
       shopName_ = "";
       currency_ = "";
+      contactName_ = "";
+      buyerName_ = "";
+      deliverAddress_ = "";
     }
 
     @java.lang.Override
@@ -7367,6 +7430,24 @@ public final class OrderOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               currency_ = s;
+              break;
+            }
+            case 130: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              contactName_ = s;
+              break;
+            }
+            case 138: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              buyerName_ = s;
+              break;
+            }
+            case 146: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              deliverAddress_ = s;
               break;
             }
             default: {
@@ -7891,6 +7972,144 @@ public final class OrderOuterClass {
       }
     }
 
+    public static final int CONTACT_NAME_FIELD_NUMBER = 16;
+    private volatile java.lang.Object contactName_;
+    /**
+     * <pre>
+     *收货人
+     * </pre>
+     *
+     * <code>string contact_name = 16;</code>
+     * @return The contactName.
+     */
+    @java.lang.Override
+    public java.lang.String getContactName() {
+      java.lang.Object ref = contactName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        contactName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *收货人
+     * </pre>
+     *
+     * <code>string contact_name = 16;</code>
+     * @return The bytes for contactName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getContactNameBytes() {
+      java.lang.Object ref = contactName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        contactName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int BUYER_NAME_FIELD_NUMBER = 17;
+    private volatile java.lang.Object buyerName_;
+    /**
+     * <pre>
+     *购买人
+     * </pre>
+     *
+     * <code>string buyer_name = 17;</code>
+     * @return The buyerName.
+     */
+    @java.lang.Override
+    public java.lang.String getBuyerName() {
+      java.lang.Object ref = buyerName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        buyerName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *购买人
+     * </pre>
+     *
+     * <code>string buyer_name = 17;</code>
+     * @return The bytes for buyerName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getBuyerNameBytes() {
+      java.lang.Object ref = buyerName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        buyerName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DELIVER_ADDRESS_FIELD_NUMBER = 18;
+    private volatile java.lang.Object deliverAddress_;
+    /**
+     * <pre>
+     *收获地址
+     * </pre>
+     *
+     * <code>string deliver_address = 18;</code>
+     * @return The deliverAddress.
+     */
+    @java.lang.Override
+    public java.lang.String getDeliverAddress() {
+      java.lang.Object ref = deliverAddress_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        deliverAddress_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *收获地址
+     * </pre>
+     *
+     * <code>string deliver_address = 18;</code>
+     * @return The bytes for deliverAddress.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDeliverAddressBytes() {
+      java.lang.Object ref = deliverAddress_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        deliverAddress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -7949,6 +8168,15 @@ public final class OrderOuterClass {
       }
       if (!getCurrencyBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 15, currency_);
+      }
+      if (!getContactNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 16, contactName_);
+      }
+      if (!getBuyerNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 17, buyerName_);
+      }
+      if (!getDeliverAddressBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 18, deliverAddress_);
       }
       unknownFields.writeTo(output);
     }
@@ -8012,6 +8240,15 @@ public final class OrderOuterClass {
       if (!getCurrencyBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, currency_);
       }
+      if (!getContactNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, contactName_);
+      }
+      if (!getBuyerNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, buyerName_);
+      }
+      if (!getDeliverAddressBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, deliverAddress_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -8063,6 +8300,12 @@ public final class OrderOuterClass {
           .equals(other.getShopName())) return false;
       if (!getCurrency()
           .equals(other.getCurrency())) return false;
+      if (!getContactName()
+          .equals(other.getContactName())) return false;
+      if (!getBuyerName()
+          .equals(other.getBuyerName())) return false;
+      if (!getDeliverAddress()
+          .equals(other.getDeliverAddress())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -8113,6 +8356,12 @@ public final class OrderOuterClass {
       hash = (53 * hash) + getShopName().hashCode();
       hash = (37 * hash) + CURRENCY_FIELD_NUMBER;
       hash = (53 * hash) + getCurrency().hashCode();
+      hash = (37 * hash) + CONTACT_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getContactName().hashCode();
+      hash = (37 * hash) + BUYER_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getBuyerName().hashCode();
+      hash = (37 * hash) + DELIVER_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getDeliverAddress().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -8285,6 +8534,12 @@ public final class OrderOuterClass {
 
         currency_ = "";
 
+        contactName_ = "";
+
+        buyerName_ = "";
+
+        deliverAddress_ = "";
+
         return this;
       }
 
@@ -8335,6 +8590,9 @@ public final class OrderOuterClass {
         }
         result.shopName_ = shopName_;
         result.currency_ = currency_;
+        result.contactName_ = contactName_;
+        result.buyerName_ = buyerName_;
+        result.deliverAddress_ = deliverAddress_;
         onBuilt();
         return result;
       }
@@ -8456,6 +8714,18 @@ public final class OrderOuterClass {
         }
         if (!other.getCurrency().isEmpty()) {
           currency_ = other.currency_;
+          onChanged();
+        }
+        if (!other.getContactName().isEmpty()) {
+          contactName_ = other.contactName_;
+          onChanged();
+        }
+        if (!other.getBuyerName().isEmpty()) {
+          buyerName_ = other.buyerName_;
+          onChanged();
+        }
+        if (!other.getDeliverAddress().isEmpty()) {
+          deliverAddress_ = other.deliverAddress_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -9769,6 +10039,294 @@ public final class OrderOuterClass {
   checkByteStringIsUtf8(value);
         
         currency_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object contactName_ = "";
+      /**
+       * <pre>
+       *收货人
+       * </pre>
+       *
+       * <code>string contact_name = 16;</code>
+       * @return The contactName.
+       */
+      public java.lang.String getContactName() {
+        java.lang.Object ref = contactName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          contactName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       *收货人
+       * </pre>
+       *
+       * <code>string contact_name = 16;</code>
+       * @return The bytes for contactName.
+       */
+      public com.google.protobuf.ByteString
+          getContactNameBytes() {
+        java.lang.Object ref = contactName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          contactName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *收货人
+       * </pre>
+       *
+       * <code>string contact_name = 16;</code>
+       * @param value The contactName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContactName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        contactName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *收货人
+       * </pre>
+       *
+       * <code>string contact_name = 16;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearContactName() {
+        
+        contactName_ = getDefaultInstance().getContactName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *收货人
+       * </pre>
+       *
+       * <code>string contact_name = 16;</code>
+       * @param value The bytes for contactName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContactNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        contactName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object buyerName_ = "";
+      /**
+       * <pre>
+       *购买人
+       * </pre>
+       *
+       * <code>string buyer_name = 17;</code>
+       * @return The buyerName.
+       */
+      public java.lang.String getBuyerName() {
+        java.lang.Object ref = buyerName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          buyerName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       *购买人
+       * </pre>
+       *
+       * <code>string buyer_name = 17;</code>
+       * @return The bytes for buyerName.
+       */
+      public com.google.protobuf.ByteString
+          getBuyerNameBytes() {
+        java.lang.Object ref = buyerName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          buyerName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *购买人
+       * </pre>
+       *
+       * <code>string buyer_name = 17;</code>
+       * @param value The buyerName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBuyerName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        buyerName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *购买人
+       * </pre>
+       *
+       * <code>string buyer_name = 17;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBuyerName() {
+        
+        buyerName_ = getDefaultInstance().getBuyerName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *购买人
+       * </pre>
+       *
+       * <code>string buyer_name = 17;</code>
+       * @param value The bytes for buyerName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBuyerNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        buyerName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object deliverAddress_ = "";
+      /**
+       * <pre>
+       *收获地址
+       * </pre>
+       *
+       * <code>string deliver_address = 18;</code>
+       * @return The deliverAddress.
+       */
+      public java.lang.String getDeliverAddress() {
+        java.lang.Object ref = deliverAddress_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          deliverAddress_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       *收获地址
+       * </pre>
+       *
+       * <code>string deliver_address = 18;</code>
+       * @return The bytes for deliverAddress.
+       */
+      public com.google.protobuf.ByteString
+          getDeliverAddressBytes() {
+        java.lang.Object ref = deliverAddress_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          deliverAddress_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *收获地址
+       * </pre>
+       *
+       * <code>string deliver_address = 18;</code>
+       * @param value The deliverAddress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDeliverAddress(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        deliverAddress_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *收获地址
+       * </pre>
+       *
+       * <code>string deliver_address = 18;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDeliverAddress() {
+        
+        deliverAddress_ = getDefaultInstance().getDeliverAddress();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *收获地址
+       * </pre>
+       *
+       * <code>string deliver_address = 18;</code>
+       * @param value The bytes for deliverAddress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDeliverAddressBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        deliverAddress_ = value;
         onChanged();
         return this;
       }
@@ -29499,7 +30057,7 @@ public final class OrderOuterClass {
       "\010OrderSku\022\024\n\014order_sku_id\030\001 \001(\003\022\020\n\010order" +
       "_id\030\002 \001(\003\022\016\n\006sku_id\030\003 \001(\003\022\021\n\tseller_id\030\004" +
       " \001(\003\022\017\n\007shop_id\030\005 \001(\003\022\020\n\010quantity\030\006 \001(\005\022" +
-      "\033\n\023freight_template_id\030\007 \001(\003\"\333\002\n\tOrderIn" +
+      "\033\n\023freight_template_id\030\007 \001(\003\"\236\003\n\tOrderIn" +
       "fo\022\020\n\010order_id\030\001 \001(\003\022\024\n\014order_status\030\002 \001" +
       "(\t\022\022\n\ncreated_at\030\003 \001(\t\022\021\n\torderType\030\004 \001(" +
       "\t\022\017\n\007payType\030\005 \001(\t\022\017\n\007payTime\030\006 \001(\t\022\024\n\014t" +
@@ -29508,63 +30066,65 @@ public final class OrderOuterClass {
       "nt\030\n \001(\001\022\026\n\016payment_amount\030\013 \001(\001\022\026\n\016paya" +
       "ble_amount\030\014 \001(\001\022+\n\013productInfo\030\r \003(\0132\026." +
       "glory_api.ProductInfo\022\021\n\tshop_name\030\016 \001(\t" +
-      "\022\020\n\010currency\030\017 \001(\t\"\255\001\n\013DeliverInfo\022\027\n\017de" +
-      "liver_address\030\001 \001(\t\022\024\n\014deliver_post\030\002 \001(" +
-      "\005\022\024\n\014contact_name\030\003 \001(\t\022\025\n\rcontact_phone" +
-      "\030\004 \001(\t\022\022\n\nbuyer_name\030\005 \001(\t\022\025\n\rbuyer_comm" +
-      "ent\030\006 \001(\t\022\027\n\017delivery_method\030\007 \001(\t\"\312\001\n\013P" +
-      "roductInfo\022\022\n\nproduct_id\030\001 \001(\003\022\024\n\014produc" +
-      "t_name\030\002 \001(\t\022\033\n\003sku\030\003 \001(\0132\016.glory_api.Sk" +
-      "u\022\024\n\014service_info\030\004 \001(\t\022\022\n\nunit_price\030\005 " +
-      "\001(\001\022\020\n\010quantity\030\006 \001(\005\022\025\n\rdiscount_info\030\007" +
-      " \001(\t\022!\n\006images\030\010 \003(\0132\021.glory_api.Images\"" +
-      "b\n\017OrderWithAuthor\022%\n\013author_info\030\002 \001(\0132" +
-      "\020.base.AuthorInfo\022(\n\norder_info\030\003 \001(\0132\024." +
-      "glory_api.OrderInfo\"m\n\022CreateOrderReques" +
-      "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
-      "st\022.\n\norder_info\030\002 \003(\0132\032.glory_api.Creat" +
-      "eOrderInfo\"\224\001\n\023CreateOrderResponse\022%\n\tba" +
-      "se_resp\030\001 \001(\0132\022.base.BaseResponse\022/\n\ttra" +
-      "ns_res\030\002 \003(\0132\034.glory_api.TransResponseIn" +
-      "fo\022\021\n\tCNY_total\030\003 \001(\001\022\022\n\nCOIN_total\030\004 \001(" +
-      "\001\"`\n\021TransResponseInfo\022\020\n\010trans_id\030\001 \001(\003" +
-      "\022\'\n\005order\030\002 \003(\0132\030.glory_api.OrderRespons" +
-      "e\022\020\n\010currency\030\003 \001(\t\"3\n\rOrderResponse\022\020\n\010" +
-      "order_id\030\001 \001(\003\022\020\n\010currency\030\002 \001(\t\"L\n\017GetO" +
-      "rderRequest\022\'\n\014base_request\030\001 \001(\0132\021.base" +
-      ".BaseRequest\022\020\n\010order_id\030\002 \001(\003\"\217\001\n\020GetOr" +
-      "derResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
-      "seResponse\022\'\n\torderInfo\030\002 \001(\0132\024.glory_ap" +
-      "i.OrderInfo\022+\n\013deliverInfo\030\004 \001(\0132\026.glory" +
-      "_api.DeliverInfo\"^\n\022UpdateOrderRequest\022\'" +
+      "\022\020\n\010currency\030\017 \001(\t\022\024\n\014contact_name\030\020 \001(\t" +
+      "\022\022\n\nbuyer_name\030\021 \001(\t\022\027\n\017deliver_address\030" +
+      "\022 \001(\t\"\255\001\n\013DeliverInfo\022\027\n\017deliver_address" +
+      "\030\001 \001(\t\022\024\n\014deliver_post\030\002 \001(\005\022\024\n\014contact_" +
+      "name\030\003 \001(\t\022\025\n\rcontact_phone\030\004 \001(\t\022\022\n\nbuy" +
+      "er_name\030\005 \001(\t\022\025\n\rbuyer_comment\030\006 \001(\t\022\027\n\017" +
+      "delivery_method\030\007 \001(\t\"\312\001\n\013ProductInfo\022\022\n" +
+      "\nproduct_id\030\001 \001(\003\022\024\n\014product_name\030\002 \001(\t\022" +
+      "\033\n\003sku\030\003 \001(\0132\016.glory_api.Sku\022\024\n\014service_" +
+      "info\030\004 \001(\t\022\022\n\nunit_price\030\005 \001(\001\022\020\n\010quanti" +
+      "ty\030\006 \001(\005\022\025\n\rdiscount_info\030\007 \001(\t\022!\n\006image" +
+      "s\030\010 \003(\0132\021.glory_api.Images\"b\n\017OrderWithA" +
+      "uthor\022%\n\013author_info\030\002 \001(\0132\020.base.Author" +
+      "Info\022(\n\norder_info\030\003 \001(\0132\024.glory_api.Ord" +
+      "erInfo\"m\n\022CreateOrderRequest\022\'\n\014base_req" +
+      "uest\030\001 \001(\0132\021.base.BaseRequest\022.\n\norder_i" +
+      "nfo\030\002 \003(\0132\032.glory_api.CreateOrderInfo\"\224\001" +
+      "\n\023CreateOrderResponse\022%\n\tbase_resp\030\001 \001(\013" +
+      "2\022.base.BaseResponse\022/\n\ttrans_res\030\002 \003(\0132" +
+      "\034.glory_api.TransResponseInfo\022\021\n\tCNY_tot" +
+      "al\030\003 \001(\001\022\022\n\nCOIN_total\030\004 \001(\001\"`\n\021TransRes" +
+      "ponseInfo\022\020\n\010trans_id\030\001 \001(\003\022\'\n\005order\030\002 \003" +
+      "(\0132\030.glory_api.OrderResponse\022\020\n\010currency" +
+      "\030\003 \001(\t\"3\n\rOrderResponse\022\020\n\010order_id\030\001 \001(" +
+      "\003\022\020\n\010currency\030\002 \001(\t\"L\n\017GetOrderRequest\022\'" +
       "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\022" +
-      "\037\n\005order\030\002 \001(\0132\020.glory_api.Order\"N\n\023Upda" +
-      "teOrderResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
-      "e.BaseResponse\022\020\n\010order_id\030\002 \001(\003\"\306\001\n\020Lis" +
-      "tOrderRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
-      "se.BaseRequest\022\017\n\007user_id\030\002 \001(\003\022\021\n\tselle" +
-      "r_id\030\003 \001(\003\022\021\n\ttenant_id\030\004 \001(\003\022\017\n\007shop_id" +
-      "\030\005 \001(\003\022\024\n\014order_status\030\006 \001(\t\022+\n\npaginati" +
-      "on\030d \001(\0132\027.base.PaginationRequest\"\232\001\n\021Li" +
-      "stOrderResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
-      "e.BaseResponse\0220\n\014order_detail\030\002 \003(\0132\032.g" +
-      "lory_api.OrderWithAuthor\022,\n\npagination\030d" +
-      " \001(\0132\030.base.PaginationResponse\"O\n\022Delete" +
-      "OrderRequest\022\'\n\014base_request\030\001 \001(\0132\021.bas" +
-      "e.BaseRequest\022\020\n\010order_id\030\002 \001(\003\"<\n\023Delet" +
-      "eOrderResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
-      ".BaseResponse\"M\n\020ShipGoodsRequest\022\'\n\014bas" +
-      "e_request\030\001 \001(\0132\021.base.BaseRequest\022\020\n\010or" +
-      "der_id\030\002 \001(\003\":\n\021ShipGoodsResponse\022%\n\tbas" +
-      "e_resp\030\001 \001(\0132\022.base.BaseResponse\"V\n\031Ship" +
-      "GoodsInBatchesRequest\022\'\n\014base_request\030\001 " +
-      "\001(\0132\021.base.BaseRequest\022\020\n\010order_id\030\002 \003(\003" +
-      "\"C\n\032ShipGoodsInBatchesResponse\022%\n\tbase_r" +
-      "esp\030\001 \001(\0132\022.base.BaseResponse\"Y\n\034FreeShi" +
-      "ppingInBatchesRequest\022\'\n\014base_request\030\001 " +
-      "\001(\0132\021.base.BaseRequest\022\020\n\010order_id\030\002 \003(\003" +
-      "\"F\n\035FreeShippingInBatchesResponse\022%\n\tbas" +
-      "e_resp\030\001 \001(\0132\022.base.BaseResponseb\006proto3"
+      "\020\n\010order_id\030\002 \001(\003\"\217\001\n\020GetOrderResponse\022%" +
+      "\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022\'\n" +
+      "\torderInfo\030\002 \001(\0132\024.glory_api.OrderInfo\022+" +
+      "\n\013deliverInfo\030\004 \001(\0132\026.glory_api.DeliverI" +
+      "nfo\"^\n\022UpdateOrderRequest\022\'\n\014base_reques" +
+      "t\030\001 \001(\0132\021.base.BaseRequest\022\037\n\005order\030\002 \001(" +
+      "\0132\020.glory_api.Order\"N\n\023UpdateOrderRespon" +
+      "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
+      "e\022\020\n\010order_id\030\002 \001(\003\"\306\001\n\020ListOrderRequest" +
+      "\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReques" +
+      "t\022\017\n\007user_id\030\002 \001(\003\022\021\n\tseller_id\030\003 \001(\003\022\021\n" +
+      "\ttenant_id\030\004 \001(\003\022\017\n\007shop_id\030\005 \001(\003\022\024\n\014ord" +
+      "er_status\030\006 \001(\t\022+\n\npagination\030d \001(\0132\027.ba" +
+      "se.PaginationRequest\"\232\001\n\021ListOrderRespon" +
+      "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
+      "e\0220\n\014order_detail\030\002 \003(\0132\032.glory_api.Orde" +
+      "rWithAuthor\022,\n\npagination\030d \001(\0132\030.base.P" +
+      "aginationResponse\"O\n\022DeleteOrderRequest\022" +
+      "\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequest" +
+      "\022\020\n\010order_id\030\002 \001(\003\"<\n\023DeleteOrderRespons" +
+      "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
+      "\"M\n\020ShipGoodsRequest\022\'\n\014base_request\030\001 \001" +
+      "(\0132\021.base.BaseRequest\022\020\n\010order_id\030\002 \001(\003\"" +
+      ":\n\021ShipGoodsResponse\022%\n\tbase_resp\030\001 \001(\0132" +
+      "\022.base.BaseResponse\"V\n\031ShipGoodsInBatche" +
+      "sRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
+      "seRequest\022\020\n\010order_id\030\002 \003(\003\"C\n\032ShipGoods" +
+      "InBatchesResponse\022%\n\tbase_resp\030\001 \001(\0132\022.b" +
+      "ase.BaseResponse\"Y\n\034FreeShippingInBatche" +
+      "sRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
+      "seRequest\022\020\n\010order_id\030\002 \003(\003\"F\n\035FreeShipp" +
+      "ingInBatchesResponse\022%\n\tbase_resp\030\001 \001(\0132" +
+      "\022.base.BaseResponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -29607,7 +30167,7 @@ public final class OrderOuterClass {
     internal_static_glory_api_OrderInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_OrderInfo_descriptor,
-        new java.lang.String[] { "OrderId", "OrderStatus", "CreatedAt", "OrderType", "PayType", "PayTime", "TotalAmount", "OriginalAmount", "DeliverFee", "DiscountAmount", "PaymentAmount", "PayableAmount", "ProductInfo", "ShopName", "Currency", });
+        new java.lang.String[] { "OrderId", "OrderStatus", "CreatedAt", "OrderType", "PayType", "PayTime", "TotalAmount", "OriginalAmount", "DeliverFee", "DiscountAmount", "PaymentAmount", "PayableAmount", "ProductInfo", "ShopName", "Currency", "ContactName", "BuyerName", "DeliverAddress", });
     internal_static_glory_api_DeliverInfo_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_glory_api_DeliverInfo_fieldAccessorTable = new
