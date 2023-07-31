@@ -43,6 +43,7 @@ message CreateRoomResponse {
 message GetRoomRequest {
   base.BaseRequest base_request = 1;
   int64 room_id = 2;
+  int64 shop_id = 3;
 }
 message GetRoomResponse {
   base.BaseResponse base_resp = 1;
