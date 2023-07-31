@@ -50,6 +50,7 @@ export interface CreateRoomResponse {
 export interface GetRoomRequest {
   base_request?: base.BaseRequest;
   room_id?: string;
+  shop_id?: string;
 }
 
 export interface GetRoomResponse {

@@ -4791,6 +4791,12 @@ public final class LiveRoom {
      * @return The roomId.
      */
     long getRoomId();
+
+    /**
+     * <code>int64 shop_id = 3;</code>
+     * @return The shopId.
+     */
+    long getShopId();
   }
   /**
    * Protobuf type {@code glory_api.GetRoomRequest}
@@ -4853,6 +4859,11 @@ public final class LiveRoom {
             case 16: {
 
               roomId_ = input.readInt64();
+              break;
+            }
+            case 24: {
+
+              shopId_ = input.readInt64();
               break;
             }
             default: {
@@ -4924,6 +4935,17 @@ public final class LiveRoom {
       return roomId_;
     }
 
+    public static final int SHOP_ID_FIELD_NUMBER = 3;
+    private long shopId_;
+    /**
+     * <code>int64 shop_id = 3;</code>
+     * @return The shopId.
+     */
+    @java.lang.Override
+    public long getShopId() {
+      return shopId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -4944,6 +4966,9 @@ public final class LiveRoom {
       if (roomId_ != 0L) {
         output.writeInt64(2, roomId_);
       }
+      if (shopId_ != 0L) {
+        output.writeInt64(3, shopId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -4960,6 +4985,10 @@ public final class LiveRoom {
       if (roomId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(2, roomId_);
+      }
+      if (shopId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, shopId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4983,6 +5012,8 @@ public final class LiveRoom {
       }
       if (getRoomId()
           != other.getRoomId()) return false;
+      if (getShopId()
+          != other.getShopId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5001,6 +5032,9 @@ public final class LiveRoom {
       hash = (37 * hash) + ROOM_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getRoomId());
+      hash = (37 * hash) + SHOP_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getShopId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5142,6 +5176,8 @@ public final class LiveRoom {
         }
         roomId_ = 0L;
 
+        shopId_ = 0L;
+
         return this;
       }
 
@@ -5174,6 +5210,7 @@ public final class LiveRoom {
           result.baseRequest_ = baseRequestBuilder_.build();
         }
         result.roomId_ = roomId_;
+        result.shopId_ = shopId_;
         onBuilt();
         return result;
       }
@@ -5227,6 +5264,9 @@ public final class LiveRoom {
         }
         if (other.getRoomId() != 0L) {
           setRoomId(other.getRoomId());
+        }
+        if (other.getShopId() != 0L) {
+          setShopId(other.getShopId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5403,6 +5443,37 @@ public final class LiveRoom {
       public Builder clearRoomId() {
         
         roomId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long shopId_ ;
+      /**
+       * <code>int64 shop_id = 3;</code>
+       * @return The shopId.
+       */
+      @java.lang.Override
+      public long getShopId() {
+        return shopId_;
+      }
+      /**
+       * <code>int64 shop_id = 3;</code>
+       * @param value The shopId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setShopId(long value) {
+        
+        shopId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 shop_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearShopId() {
+        
+        shopId_ = 0L;
         onChanged();
         return this;
       }
@@ -19746,56 +19817,56 @@ public final class LiveRoom {
       "(\003\"\210\001\n\022CreateRoomResponse\022%\n\tbase_resp\030\001" +
       " \001(\0132\022.base.BaseResponse\022\017\n\007room_id\030\002 \001(" +
       "\003\022\016\n\006up_url\030\003 \001(\t\022\022\n\nroom_title\030\004 \001(\t\022\026\n" +
-      "\016room_image_url\030\005 \001(\t\"J\n\016GetRoomRequest\022" +
+      "\016room_image_url\030\005 \001(\t\"[\n\016GetRoomRequest\022" +
       "\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequest" +
-      "\022\017\n\007room_id\030\002 \001(\003\"W\n\017GetRoomResponse\022%\n\t" +
-      "base_resp\030\001 \001(\0132\022.base.BaseResponse\022\035\n\004r" +
-      "oom\030\002 \001(\0132\017.glory_api.Room\"o\n\021UpdateRoom" +
-      "Request\022\'\n\014base_request\030\001 \001(\0132\021.base.Bas" +
-      "eRequest\022\022\n\nclose_room\030\002 \001(\010\022\035\n\004room\030\003 \001" +
-      "(\0132\017.glory_api.Room\";\n\022UpdateRoomRespons" +
-      "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
-      "\"\270\001\n\017ListRoomRequest\022\'\n\014base_request\030\001 \001" +
-      "(\0132\021.base.BaseRequest\022\017\n\007room_id\030\002 \001(\003\022\017" +
-      "\n\007user_id\030\004 \001(\003\022\020\n\010app_name\030\005 \001(\t\022\033\n\023inc" +
-      "lude_closed_room\030\006 \001(\010\022+\n\npagination\030d \001" +
-      "(\0132\027.base.PaginationRequest\"\206\001\n\020ListRoom" +
-      "Response\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseR" +
-      "esponse\022\035\n\004room\030\002 \003(\0132\017.glory_api.Room\022," +
-      "\n\npagination\030d \001(\0132\030.base.PaginationResp" +
-      "onse\"M\n\021DeleteRoomRequest\022\'\n\014base_reques" +
-      "t\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007room_id\030\002 " +
-      "\001(\003\";\n\022DeleteRoomResponse\022%\n\tbase_resp\030\001" +
-      " \001(\0132\022.base.BaseResponse\"-\n\nDealAmount\022\017" +
-      "\n\007curreny\030\001 \001(\t\022\016\n\006amount\030\002 \001(\001\"\255\002\n\014Fini" +
-      "shedRoom\022\017\n\007room_id\030\001 \001(\003\022\021\n\tuser_name\030\002" +
-      " \001(\t\022\021\n\tseller_id\030\003 \001(\003\022\022\n\nstart_time\030\004 " +
-      "\001(\t\022\033\n\023average_online_user\030\005 \001(\001\022\033\n\023room" +
-      "_product_amount\030\006 \001(\003\022/\n\020room_deal_amoun" +
-      "t\030\007 \003(\0132\025.glory_api.DealAmount\022\031\n\021room_o" +
-      "rder_amount\030\010 \001(\003\022\026\n\016room_image_url\030\t \001(" +
-      "\t\022\022\n\nroom_title\030\n \001(\t\022 \n\030room_image_atta" +
-      "chment_id\030\013 \001(\003\"\200\001\n\027ListFinishedRoomRequ" +
-      "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
-      "uest\022\017\n\007shop_id\030\002 \001(\003\022+\n\npagination\030d \001(" +
-      "\0132\027.base.PaginationRequest\"\226\001\n\030ListFinis" +
-      "hedRoomResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
-      "e.BaseResponse\022%\n\004room\030\002 \003(\0132\027.glory_api" +
-      ".FinishedRoom\022,\n\npagination\030d \001(\0132\030.base" +
-      ".PaginationResponse\"o\n\027GetLiveChartDataR" +
-      "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
-      "Request\022\017\n\007shop_id\030\002 \001(\003\022\r\n\005start\030\003 \001(\003\022" +
-      "\013\n\003end\030\004 \001(\003\"{\n\rLiveChartData\022\014\n\004date\030\001 " +
-      "\001(\t\022\023\n\013deal_amount\030\002 \001(\001\022\031\n\021room_buyer_a" +
-      "mount\030\003 \001(\003\022\031\n\021room_order_amount\030\004 \001(\003\022\021" +
-      "\n\ttimestamp\030\005 \001(\003\"\222\001\n\010LiveData\0221\n\017live_c" +
-      "hart_data\030\001 \003(\0132\030.glory_api.LiveChartDat" +
-      "a\022\031\n\021total_deal_amount\030\002 \001(\001\022\034\n\024total_vi" +
-      "sitor_amount\030\003 \001(\003\022\032\n\022total_order_amount" +
-      "\030\004 \001(\003\"i\n\030GetLiveChartDataResponse\022%\n\tba" +
-      "se_resp\030\001 \001(\0132\022.base.BaseResponse\022&\n\tliv" +
-      "e_data\030\002 \001(\0132\023.glory_api.LiveDatab\006proto" +
-      "3"
+      "\022\017\n\007room_id\030\002 \001(\003\022\017\n\007shop_id\030\003 \001(\003\"W\n\017Ge" +
+      "tRoomResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
+      "BaseResponse\022\035\n\004room\030\002 \001(\0132\017.glory_api.R" +
+      "oom\"o\n\021UpdateRoomRequest\022\'\n\014base_request" +
+      "\030\001 \001(\0132\021.base.BaseRequest\022\022\n\nclose_room\030" +
+      "\002 \001(\010\022\035\n\004room\030\003 \001(\0132\017.glory_api.Room\";\n\022" +
+      "UpdateRoomResponse\022%\n\tbase_resp\030\001 \001(\0132\022." +
+      "base.BaseResponse\"\270\001\n\017ListRoomRequest\022\'\n" +
+      "\014base_request\030\001 \001(\0132\021.base.BaseRequest\022\017" +
+      "\n\007room_id\030\002 \001(\003\022\017\n\007user_id\030\004 \001(\003\022\020\n\010app_" +
+      "name\030\005 \001(\t\022\033\n\023include_closed_room\030\006 \001(\010\022" +
+      "+\n\npagination\030d \001(\0132\027.base.PaginationReq" +
+      "uest\"\206\001\n\020ListRoomResponse\022%\n\tbase_resp\030\001" +
+      " \001(\0132\022.base.BaseResponse\022\035\n\004room\030\002 \003(\0132\017" +
+      ".glory_api.Room\022,\n\npagination\030d \001(\0132\030.ba" +
+      "se.PaginationResponse\"M\n\021DeleteRoomReque" +
+      "st\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequ" +
+      "est\022\017\n\007room_id\030\002 \001(\003\";\n\022DeleteRoomRespon" +
+      "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
+      "e\"-\n\nDealAmount\022\017\n\007curreny\030\001 \001(\t\022\016\n\006amou" +
+      "nt\030\002 \001(\001\"\255\002\n\014FinishedRoom\022\017\n\007room_id\030\001 \001" +
+      "(\003\022\021\n\tuser_name\030\002 \001(\t\022\021\n\tseller_id\030\003 \001(\003" +
+      "\022\022\n\nstart_time\030\004 \001(\t\022\033\n\023average_online_u" +
+      "ser\030\005 \001(\001\022\033\n\023room_product_amount\030\006 \001(\003\022/" +
+      "\n\020room_deal_amount\030\007 \003(\0132\025.glory_api.Dea" +
+      "lAmount\022\031\n\021room_order_amount\030\010 \001(\003\022\026\n\016ro" +
+      "om_image_url\030\t \001(\t\022\022\n\nroom_title\030\n \001(\t\022 " +
+      "\n\030room_image_attachment_id\030\013 \001(\003\"\200\001\n\027Lis" +
+      "tFinishedRoomRequest\022\'\n\014base_request\030\001 \001" +
+      "(\0132\021.base.BaseRequest\022\017\n\007shop_id\030\002 \001(\003\022+" +
+      "\n\npagination\030d \001(\0132\027.base.PaginationRequ" +
+      "est\"\226\001\n\030ListFinishedRoomResponse\022%\n\tbase" +
+      "_resp\030\001 \001(\0132\022.base.BaseResponse\022%\n\004room\030" +
+      "\002 \003(\0132\027.glory_api.FinishedRoom\022,\n\npagina" +
+      "tion\030d \001(\0132\030.base.PaginationResponse\"o\n\027" +
+      "GetLiveChartDataRequest\022\'\n\014base_request\030" +
+      "\001 \001(\0132\021.base.BaseRequest\022\017\n\007shop_id\030\002 \001(" +
+      "\003\022\r\n\005start\030\003 \001(\003\022\013\n\003end\030\004 \001(\003\"{\n\rLiveCha" +
+      "rtData\022\014\n\004date\030\001 \001(\t\022\023\n\013deal_amount\030\002 \001(" +
+      "\001\022\031\n\021room_buyer_amount\030\003 \001(\003\022\031\n\021room_ord" +
+      "er_amount\030\004 \001(\003\022\021\n\ttimestamp\030\005 \001(\003\"\222\001\n\010L" +
+      "iveData\0221\n\017live_chart_data\030\001 \003(\0132\030.glory" +
+      "_api.LiveChartData\022\031\n\021total_deal_amount\030" +
+      "\002 \001(\001\022\034\n\024total_visitor_amount\030\003 \001(\003\022\032\n\022t" +
+      "otal_order_amount\030\004 \001(\003\"i\n\030GetLiveChartD" +
+      "ataResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
+      "seResponse\022&\n\tlive_data\030\002 \001(\0132\023.glory_ap" +
+      "i.LiveDatab\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -19825,7 +19896,7 @@ public final class LiveRoom {
     internal_static_glory_api_GetRoomRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetRoomRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "RoomId", });
+        new java.lang.String[] { "BaseRequest", "RoomId", "ShopId", });
     internal_static_glory_api_GetRoomResponse_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_glory_api_GetRoomResponse_fieldAccessorTable = new
