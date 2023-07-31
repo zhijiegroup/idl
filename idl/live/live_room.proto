@@ -113,7 +113,7 @@ message ListFinishedRoomResponse {
 
 message GetLiveChartDataRequest {
   base.BaseRequest base_request = 1;
-  int64 room_id = 2;
+  int64 shop_id = 2;
   int64 start = 3;
   int64 end = 4;
 }
