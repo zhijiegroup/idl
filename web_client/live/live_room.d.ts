@@ -126,7 +126,7 @@ export interface ListFinishedRoomResponse {
 
 export interface GetLiveChartDataRequest {
   base_request?: base.BaseRequest;
-  room_id?: string;
+  shop_id?: string;
   start?: string;
   end?: string;
 }

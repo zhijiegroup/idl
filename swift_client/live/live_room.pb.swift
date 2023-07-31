@@ -480,7 +480,7 @@ struct GloryApi_GetLiveChartDataRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
-  var roomID: Int64 = 0
+  var shopID: Int64 = 0
 
   var start: Int64 = 0
 
@@ -1490,7 +1490,7 @@ extension GloryApi_GetLiveChartDataRequest: SwiftProtobuf.Message, SwiftProtobuf
   static let protoMessageName: String = _protobuf_package + ".GetLiveChartDataRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
-    2: .standard(proto: "room_id"),
+    2: .standard(proto: "shop_id"),
     3: .same(proto: "start"),
     4: .same(proto: "end"),
   ]
@@ -1502,7 +1502,7 @@ extension GloryApi_GetLiveChartDataRequest: SwiftProtobuf.Message, SwiftProtobuf
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.roomID) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
       case 3: try { try decoder.decodeSingularInt64Field(value: &self.start) }()
       case 4: try { try decoder.decodeSingularInt64Field(value: &self.end) }()
       default: break
@@ -1518,8 +1518,8 @@ extension GloryApi_GetLiveChartDataRequest: SwiftProtobuf.Message, SwiftProtobuf
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    if self.roomID != 0 {
-      try visitor.visitSingularInt64Field(value: self.roomID, fieldNumber: 2)
+    if self.shopID != 0 {
+      try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 2)
     }
     if self.start != 0 {
       try visitor.visitSingularInt64Field(value: self.start, fieldNumber: 3)
@@ -1532,7 +1532,7 @@ extension GloryApi_GetLiveChartDataRequest: SwiftProtobuf.Message, SwiftProtobuf
 
   static func ==(lhs: GloryApi_GetLiveChartDataRequest, rhs: GloryApi_GetLiveChartDataRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
-    if lhs.roomID != rhs.roomID {return false}
+    if lhs.shopID != rhs.shopID {return false}
     if lhs.start != rhs.start {return false}
     if lhs.end != rhs.end {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

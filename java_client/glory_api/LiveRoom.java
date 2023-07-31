@@ -16128,10 +16128,10 @@ public final class LiveRoom {
     base.Base.BaseRequestOrBuilder getBaseRequestOrBuilder();
 
     /**
-     * <code>int64 room_id = 2;</code>
-     * @return The roomId.
+     * <code>int64 shop_id = 2;</code>
+     * @return The shopId.
      */
-    long getRoomId();
+    long getShopId();
 
     /**
      * <code>int64 start = 3;</code>
@@ -16205,7 +16205,7 @@ public final class LiveRoom {
             }
             case 16: {
 
-              roomId_ = input.readInt64();
+              shopId_ = input.readInt64();
               break;
             }
             case 24: {
@@ -16276,15 +16276,15 @@ public final class LiveRoom {
       return getBaseRequest();
     }
 
-    public static final int ROOM_ID_FIELD_NUMBER = 2;
-    private long roomId_;
+    public static final int SHOP_ID_FIELD_NUMBER = 2;
+    private long shopId_;
     /**
-     * <code>int64 room_id = 2;</code>
-     * @return The roomId.
+     * <code>int64 shop_id = 2;</code>
+     * @return The shopId.
      */
     @java.lang.Override
-    public long getRoomId() {
-      return roomId_;
+    public long getShopId() {
+      return shopId_;
     }
 
     public static final int START_FIELD_NUMBER = 3;
@@ -16326,8 +16326,8 @@ public final class LiveRoom {
       if (baseRequest_ != null) {
         output.writeMessage(1, getBaseRequest());
       }
-      if (roomId_ != 0L) {
-        output.writeInt64(2, roomId_);
+      if (shopId_ != 0L) {
+        output.writeInt64(2, shopId_);
       }
       if (start_ != 0L) {
         output.writeInt64(3, start_);
@@ -16348,9 +16348,9 @@ public final class LiveRoom {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getBaseRequest());
       }
-      if (roomId_ != 0L) {
+      if (shopId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, roomId_);
+          .computeInt64Size(2, shopId_);
       }
       if (start_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -16380,8 +16380,8 @@ public final class LiveRoom {
         if (!getBaseRequest()
             .equals(other.getBaseRequest())) return false;
       }
-      if (getRoomId()
-          != other.getRoomId()) return false;
+      if (getShopId()
+          != other.getShopId()) return false;
       if (getStart()
           != other.getStart()) return false;
       if (getEnd()
@@ -16401,9 +16401,9 @@ public final class LiveRoom {
         hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
         hash = (53 * hash) + getBaseRequest().hashCode();
       }
-      hash = (37 * hash) + ROOM_ID_FIELD_NUMBER;
+      hash = (37 * hash) + SHOP_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getRoomId());
+          getShopId());
       hash = (37 * hash) + START_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getStart());
@@ -16549,7 +16549,7 @@ public final class LiveRoom {
           baseRequest_ = null;
           baseRequestBuilder_ = null;
         }
-        roomId_ = 0L;
+        shopId_ = 0L;
 
         start_ = 0L;
 
@@ -16586,7 +16586,7 @@ public final class LiveRoom {
         } else {
           result.baseRequest_ = baseRequestBuilder_.build();
         }
-        result.roomId_ = roomId_;
+        result.shopId_ = shopId_;
         result.start_ = start_;
         result.end_ = end_;
         onBuilt();
@@ -16640,8 +16640,8 @@ public final class LiveRoom {
         if (other.hasBaseRequest()) {
           mergeBaseRequest(other.getBaseRequest());
         }
-        if (other.getRoomId() != 0L) {
-          setRoomId(other.getRoomId());
+        if (other.getShopId() != 0L) {
+          setShopId(other.getShopId());
         }
         if (other.getStart() != 0L) {
           setStart(other.getStart());
@@ -16797,33 +16797,33 @@ public final class LiveRoom {
         return baseRequestBuilder_;
       }
 
-      private long roomId_ ;
+      private long shopId_ ;
       /**
-       * <code>int64 room_id = 2;</code>
-       * @return The roomId.
+       * <code>int64 shop_id = 2;</code>
+       * @return The shopId.
        */
       @java.lang.Override
-      public long getRoomId() {
-        return roomId_;
+      public long getShopId() {
+        return shopId_;
       }
       /**
-       * <code>int64 room_id = 2;</code>
-       * @param value The roomId to set.
+       * <code>int64 shop_id = 2;</code>
+       * @param value The shopId to set.
        * @return This builder for chaining.
        */
-      public Builder setRoomId(long value) {
+      public Builder setShopId(long value) {
         
-        roomId_ = value;
+        shopId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int64 room_id = 2;</code>
+       * <code>int64 shop_id = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearRoomId() {
+      public Builder clearShopId() {
         
-        roomId_ = 0L;
+        shopId_ = 0L;
         onChanged();
         return this;
       }
@@ -19784,7 +19784,7 @@ public final class LiveRoom {
       ".FinishedRoom\022,\n\npagination\030d \001(\0132\030.base" +
       ".PaginationResponse\"o\n\027GetLiveChartDataR" +
       "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
-      "Request\022\017\n\007room_id\030\002 \001(\003\022\r\n\005start\030\003 \001(\003\022" +
+      "Request\022\017\n\007shop_id\030\002 \001(\003\022\r\n\005start\030\003 \001(\003\022" +
       "\013\n\003end\030\004 \001(\003\"{\n\rLiveChartData\022\014\n\004date\030\001 " +
       "\001(\t\022\023\n\013deal_amount\030\002 \001(\001\022\031\n\021room_buyer_a" +
       "mount\030\003 \001(\003\022\031\n\021room_order_amount\030\004 \001(\003\022\021" +
@@ -19897,7 +19897,7 @@ public final class LiveRoom {
     internal_static_glory_api_GetLiveChartDataRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetLiveChartDataRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "RoomId", "Start", "End", });
+        new java.lang.String[] { "BaseRequest", "ShopId", "Start", "End", });
     internal_static_glory_api_LiveChartData_descriptor =
       getDescriptor().getMessageTypes().get(16);
     internal_static_glory_api_LiveChartData_fieldAccessorTable = new
