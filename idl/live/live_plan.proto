@@ -213,6 +213,7 @@ message LiveingProductStatus {
   int32 live_room_order =6;
   string played_at =7;
   string product_description =8;
+  string product_url =9;
 }
 message GetLivingProductStatusResponse {
   base.BaseResponse base_resp = 1;
