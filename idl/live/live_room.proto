@@ -90,15 +90,16 @@ message DealAmount {
 message FinishedRoom {
   int64 room_id = 1;
   string user_name =2;
-  int64 seller_id =3;
-  string start_time =4;
-  double average_online_user =5;
-  int64 room_product_amount =6;
-  repeated DealAmount room_deal_amount =7;
+  string user_avatar_url = 3;
+  int64 seller_id =4;
+  string start_time =5;
+  double average_online_user =6;
+  int64 room_product_amount =7;
   int64 room_order_amount =8;
   string room_image_url =9;
   string room_title = 10; //直播的标题
   int64 room_image_attachment_id = 11; // 直播间的封面的image 的id
+  repeated DealAmount room_deal_amount =12;
 }
 
 message ListFinishedRoomRequest {
