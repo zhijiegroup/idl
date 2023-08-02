@@ -26,9 +26,9 @@ export interface Product {
   product_name?: string;
   category_id?: string;
   sku?: Array<sku.Sku>;
-  attribute?: Array<attribute.Attribute>;
-  /** 商品状态 */
+  /** repeated Attribute attribute = 6; */
   state?: State;
+  /** 商品状态 */
   images?: Array<ProductImage>;
   /** 价格,取所有sku 中最低的一个 */
   product_price?: number;

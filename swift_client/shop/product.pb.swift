@@ -128,12 +128,7 @@ struct GloryApi_Product {
     set {_uniqueStorage()._sku = newValue}
   }
 
-  var attribute: [GloryApi_Attribute] {
-    get {return _storage._attribute}
-    set {_uniqueStorage()._attribute = newValue}
-  }
-
-  ///商品状态
+  ///repeated Attribute attribute = 6;
   var state: GloryApi_State {
     get {return _storage._state}
     set {_uniqueStorage()._state = newValue}
@@ -1180,7 +1175,6 @@ extension GloryApi_Product: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
     3: .standard(proto: "product_name"),
     4: .standard(proto: "category_id"),
     5: .same(proto: "sku"),
-    6: .same(proto: "attribute"),
     7: .same(proto: "state"),
     8: .same(proto: "images"),
     9: .standard(proto: "product_price"),
@@ -1201,7 +1195,6 @@ extension GloryApi_Product: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
     var _productName: String = String()
     var _categoryID: Int64 = 0
     var _sku: [GloryApi_Sku] = []
-    var _attribute: [GloryApi_Attribute] = []
     var _state: GloryApi_State = .default
     var _images: [GloryApi_ProductImage] = []
     var _productPrice: Float = 0
@@ -1225,7 +1218,6 @@ extension GloryApi_Product: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
       _productName = source._productName
       _categoryID = source._categoryID
       _sku = source._sku
-      _attribute = source._attribute
       _state = source._state
       _images = source._images
       _productPrice = source._productPrice
@@ -1261,7 +1253,6 @@ extension GloryApi_Product: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
         case 3: try { try decoder.decodeSingularStringField(value: &_storage._productName) }()
         case 4: try { try decoder.decodeSingularInt64Field(value: &_storage._categoryID) }()
         case 5: try { try decoder.decodeRepeatedMessageField(value: &_storage._sku) }()
-        case 6: try { try decoder.decodeRepeatedMessageField(value: &_storage._attribute) }()
         case 7: try { try decoder.decodeSingularEnumField(value: &_storage._state) }()
         case 8: try { try decoder.decodeRepeatedMessageField(value: &_storage._images) }()
         case 9: try { try decoder.decodeSingularFloatField(value: &_storage._productPrice) }()
@@ -1300,9 +1291,6 @@ extension GloryApi_Product: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
       }
       if !_storage._sku.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._sku, fieldNumber: 5)
-      }
-      if !_storage._attribute.isEmpty {
-        try visitor.visitRepeatedMessageField(value: _storage._attribute, fieldNumber: 6)
       }
       if _storage._state != .default {
         try visitor.visitSingularEnumField(value: _storage._state, fieldNumber: 7)
@@ -1354,7 +1342,6 @@ extension GloryApi_Product: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
         if _storage._productName != rhs_storage._productName {return false}
         if _storage._categoryID != rhs_storage._categoryID {return false}
         if _storage._sku != rhs_storage._sku {return false}
-        if _storage._attribute != rhs_storage._attribute {return false}
         if _storage._state != rhs_storage._state {return false}
         if _storage._images != rhs_storage._images {return false}
         if _storage._productPrice != rhs_storage._productPrice {return false}

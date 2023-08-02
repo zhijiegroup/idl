@@ -291,32 +291,8 @@ public final class ProductOuterClass {
         int index);
 
     /**
-     * <code>repeated .glory_api.Attribute attribute = 6;</code>
-     */
-    java.util.List<glory_api.AttributeOuterClass.Attribute> 
-        getAttributeList();
-    /**
-     * <code>repeated .glory_api.Attribute attribute = 6;</code>
-     */
-    glory_api.AttributeOuterClass.Attribute getAttribute(int index);
-    /**
-     * <code>repeated .glory_api.Attribute attribute = 6;</code>
-     */
-    int getAttributeCount();
-    /**
-     * <code>repeated .glory_api.Attribute attribute = 6;</code>
-     */
-    java.util.List<? extends glory_api.AttributeOuterClass.AttributeOrBuilder> 
-        getAttributeOrBuilderList();
-    /**
-     * <code>repeated .glory_api.Attribute attribute = 6;</code>
-     */
-    glory_api.AttributeOuterClass.AttributeOrBuilder getAttributeOrBuilder(
-        int index);
-
-    /**
      * <pre>
-     *商品状态
+     *repeated Attribute attribute = 6;
      * </pre>
      *
      * <code>.glory_api.State state = 7;</code>
@@ -325,7 +301,7 @@ public final class ProductOuterClass {
     int getStateValue();
     /**
      * <pre>
-     *商品状态
+     *repeated Attribute attribute = 6;
      * </pre>
      *
      * <code>.glory_api.State state = 7;</code>
@@ -537,7 +513,6 @@ public final class ProductOuterClass {
     private Product() {
       productName_ = "";
       sku_ = java.util.Collections.emptyList();
-      attribute_ = java.util.Collections.emptyList();
       state_ = 0;
       images_ = java.util.Collections.emptyList();
       shopName_ = "";
@@ -607,15 +582,6 @@ public final class ProductOuterClass {
                   input.readMessage(glory_api.SkuOuterClass.Sku.parser(), extensionRegistry));
               break;
             }
-            case 50: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                attribute_ = new java.util.ArrayList<glory_api.AttributeOuterClass.Attribute>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              attribute_.add(
-                  input.readMessage(glory_api.AttributeOuterClass.Attribute.parser(), extensionRegistry));
-              break;
-            }
             case 56: {
               int rawValue = input.readEnum();
 
@@ -623,9 +589,9 @@ public final class ProductOuterClass {
               break;
             }
             case 66: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 images_ = new java.util.ArrayList<glory_api.ProductOuterClass.ProductImage>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000002;
               }
               images_.add(
                   input.readMessage(glory_api.ProductOuterClass.ProductImage.parser(), extensionRegistry));
@@ -672,9 +638,9 @@ public final class ProductOuterClass {
               break;
             }
             case 122: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 shipmentAttribute_ = new java.util.ArrayList<glory_api.ProductOuterClass.ShipmentAttribute>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000004;
               }
               shipmentAttribute_.add(
                   input.readMessage(glory_api.ProductOuterClass.ShipmentAttribute.parser(), extensionRegistry));
@@ -715,12 +681,9 @@ public final class ProductOuterClass {
           sku_ = java.util.Collections.unmodifiableList(sku_);
         }
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          attribute_ = java.util.Collections.unmodifiableList(attribute_);
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
           images_ = java.util.Collections.unmodifiableList(images_);
         }
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
           shipmentAttribute_ = java.util.Collections.unmodifiableList(shipmentAttribute_);
         }
         this.unknownFields = unknownFields.build();
@@ -851,51 +814,11 @@ public final class ProductOuterClass {
       return sku_.get(index);
     }
 
-    public static final int ATTRIBUTE_FIELD_NUMBER = 6;
-    private java.util.List<glory_api.AttributeOuterClass.Attribute> attribute_;
-    /**
-     * <code>repeated .glory_api.Attribute attribute = 6;</code>
-     */
-    @java.lang.Override
-    public java.util.List<glory_api.AttributeOuterClass.Attribute> getAttributeList() {
-      return attribute_;
-    }
-    /**
-     * <code>repeated .glory_api.Attribute attribute = 6;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends glory_api.AttributeOuterClass.AttributeOrBuilder> 
-        getAttributeOrBuilderList() {
-      return attribute_;
-    }
-    /**
-     * <code>repeated .glory_api.Attribute attribute = 6;</code>
-     */
-    @java.lang.Override
-    public int getAttributeCount() {
-      return attribute_.size();
-    }
-    /**
-     * <code>repeated .glory_api.Attribute attribute = 6;</code>
-     */
-    @java.lang.Override
-    public glory_api.AttributeOuterClass.Attribute getAttribute(int index) {
-      return attribute_.get(index);
-    }
-    /**
-     * <code>repeated .glory_api.Attribute attribute = 6;</code>
-     */
-    @java.lang.Override
-    public glory_api.AttributeOuterClass.AttributeOrBuilder getAttributeOrBuilder(
-        int index) {
-      return attribute_.get(index);
-    }
-
     public static final int STATE_FIELD_NUMBER = 7;
     private int state_;
     /**
      * <pre>
-     *商品状态
+     *repeated Attribute attribute = 6;
      * </pre>
      *
      * <code>.glory_api.State state = 7;</code>
@@ -906,7 +829,7 @@ public final class ProductOuterClass {
     }
     /**
      * <pre>
-     *商品状态
+     *repeated Attribute attribute = 6;
      * </pre>
      *
      * <code>.glory_api.State state = 7;</code>
@@ -1282,9 +1205,6 @@ public final class ProductOuterClass {
       for (int i = 0; i < sku_.size(); i++) {
         output.writeMessage(5, sku_.get(i));
       }
-      for (int i = 0; i < attribute_.size(); i++) {
-        output.writeMessage(6, attribute_.get(i));
-      }
       if (state_ != glory_api.ProductOuterClass.State.DEFAULT.getNumber()) {
         output.writeEnum(7, state_);
       }
@@ -1348,10 +1268,6 @@ public final class ProductOuterClass {
       for (int i = 0; i < sku_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, sku_.get(i));
-      }
-      for (int i = 0; i < attribute_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, attribute_.get(i));
       }
       if (state_ != glory_api.ProductOuterClass.State.DEFAULT.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
@@ -1423,8 +1339,6 @@ public final class ProductOuterClass {
           != other.getCategoryId()) return false;
       if (!getSkuList()
           .equals(other.getSkuList())) return false;
-      if (!getAttributeList()
-          .equals(other.getAttributeList())) return false;
       if (state_ != other.state_) return false;
       if (!getImagesList()
           .equals(other.getImagesList())) return false;
@@ -1479,10 +1393,6 @@ public final class ProductOuterClass {
       if (getSkuCount() > 0) {
         hash = (37 * hash) + SKU_FIELD_NUMBER;
         hash = (53 * hash) + getSkuList().hashCode();
-      }
-      if (getAttributeCount() > 0) {
-        hash = (37 * hash) + ATTRIBUTE_FIELD_NUMBER;
-        hash = (53 * hash) + getAttributeList().hashCode();
       }
       hash = (37 * hash) + STATE_FIELD_NUMBER;
       hash = (53 * hash) + state_;
@@ -1646,7 +1556,6 @@ public final class ProductOuterClass {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
           getSkuFieldBuilder();
-          getAttributeFieldBuilder();
           getImagesFieldBuilder();
           getShipmentAttributeFieldBuilder();
         }
@@ -1668,17 +1577,11 @@ public final class ProductOuterClass {
         } else {
           skuBuilder_.clear();
         }
-        if (attributeBuilder_ == null) {
-          attribute_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        } else {
-          attributeBuilder_.clear();
-        }
         state_ = 0;
 
         if (imagesBuilder_ == null) {
           images_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           imagesBuilder_.clear();
         }
@@ -1700,7 +1603,7 @@ public final class ProductOuterClass {
         }
         if (shipmentAttributeBuilder_ == null) {
           shipmentAttribute_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           shipmentAttributeBuilder_.clear();
         }
@@ -1750,20 +1653,11 @@ public final class ProductOuterClass {
         } else {
           result.sku_ = skuBuilder_.build();
         }
-        if (attributeBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
-            attribute_ = java.util.Collections.unmodifiableList(attribute_);
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.attribute_ = attribute_;
-        } else {
-          result.attribute_ = attributeBuilder_.build();
-        }
         result.state_ = state_;
         if (imagesBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             images_ = java.util.Collections.unmodifiableList(images_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.images_ = images_;
         } else {
@@ -1780,9 +1674,9 @@ public final class ProductOuterClass {
           result.freightTemplate_ = freightTemplateBuilder_.build();
         }
         if (shipmentAttributeBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             shipmentAttribute_ = java.util.Collections.unmodifiableList(shipmentAttribute_);
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.shipmentAttribute_ = shipmentAttribute_;
         } else {
@@ -1878,32 +1772,6 @@ public final class ProductOuterClass {
             }
           }
         }
-        if (attributeBuilder_ == null) {
-          if (!other.attribute_.isEmpty()) {
-            if (attribute_.isEmpty()) {
-              attribute_ = other.attribute_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-            } else {
-              ensureAttributeIsMutable();
-              attribute_.addAll(other.attribute_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.attribute_.isEmpty()) {
-            if (attributeBuilder_.isEmpty()) {
-              attributeBuilder_.dispose();
-              attributeBuilder_ = null;
-              attribute_ = other.attribute_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-              attributeBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getAttributeFieldBuilder() : null;
-            } else {
-              attributeBuilder_.addAllMessages(other.attribute_);
-            }
-          }
-        }
         if (other.state_ != 0) {
           setStateValue(other.getStateValue());
         }
@@ -1911,7 +1779,7 @@ public final class ProductOuterClass {
           if (!other.images_.isEmpty()) {
             if (images_.isEmpty()) {
               images_ = other.images_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureImagesIsMutable();
               images_.addAll(other.images_);
@@ -1924,7 +1792,7 @@ public final class ProductOuterClass {
               imagesBuilder_.dispose();
               imagesBuilder_ = null;
               images_ = other.images_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000002);
               imagesBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getImagesFieldBuilder() : null;
@@ -1957,7 +1825,7 @@ public final class ProductOuterClass {
           if (!other.shipmentAttribute_.isEmpty()) {
             if (shipmentAttribute_.isEmpty()) {
               shipmentAttribute_ = other.shipmentAttribute_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureShipmentAttributeIsMutable();
               shipmentAttribute_.addAll(other.shipmentAttribute_);
@@ -1970,7 +1838,7 @@ public final class ProductOuterClass {
               shipmentAttributeBuilder_.dispose();
               shipmentAttributeBuilder_ = null;
               shipmentAttribute_ = other.shipmentAttribute_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000004);
               shipmentAttributeBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getShipmentAttributeFieldBuilder() : null;
@@ -2428,250 +2296,10 @@ public final class ProductOuterClass {
         return skuBuilder_;
       }
 
-      private java.util.List<glory_api.AttributeOuterClass.Attribute> attribute_ =
-        java.util.Collections.emptyList();
-      private void ensureAttributeIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          attribute_ = new java.util.ArrayList<glory_api.AttributeOuterClass.Attribute>(attribute_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          glory_api.AttributeOuterClass.Attribute, glory_api.AttributeOuterClass.Attribute.Builder, glory_api.AttributeOuterClass.AttributeOrBuilder> attributeBuilder_;
-
-      /**
-       * <code>repeated .glory_api.Attribute attribute = 6;</code>
-       */
-      public java.util.List<glory_api.AttributeOuterClass.Attribute> getAttributeList() {
-        if (attributeBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(attribute_);
-        } else {
-          return attributeBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .glory_api.Attribute attribute = 6;</code>
-       */
-      public int getAttributeCount() {
-        if (attributeBuilder_ == null) {
-          return attribute_.size();
-        } else {
-          return attributeBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .glory_api.Attribute attribute = 6;</code>
-       */
-      public glory_api.AttributeOuterClass.Attribute getAttribute(int index) {
-        if (attributeBuilder_ == null) {
-          return attribute_.get(index);
-        } else {
-          return attributeBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .glory_api.Attribute attribute = 6;</code>
-       */
-      public Builder setAttribute(
-          int index, glory_api.AttributeOuterClass.Attribute value) {
-        if (attributeBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureAttributeIsMutable();
-          attribute_.set(index, value);
-          onChanged();
-        } else {
-          attributeBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .glory_api.Attribute attribute = 6;</code>
-       */
-      public Builder setAttribute(
-          int index, glory_api.AttributeOuterClass.Attribute.Builder builderForValue) {
-        if (attributeBuilder_ == null) {
-          ensureAttributeIsMutable();
-          attribute_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          attributeBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .glory_api.Attribute attribute = 6;</code>
-       */
-      public Builder addAttribute(glory_api.AttributeOuterClass.Attribute value) {
-        if (attributeBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureAttributeIsMutable();
-          attribute_.add(value);
-          onChanged();
-        } else {
-          attributeBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .glory_api.Attribute attribute = 6;</code>
-       */
-      public Builder addAttribute(
-          int index, glory_api.AttributeOuterClass.Attribute value) {
-        if (attributeBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureAttributeIsMutable();
-          attribute_.add(index, value);
-          onChanged();
-        } else {
-          attributeBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .glory_api.Attribute attribute = 6;</code>
-       */
-      public Builder addAttribute(
-          glory_api.AttributeOuterClass.Attribute.Builder builderForValue) {
-        if (attributeBuilder_ == null) {
-          ensureAttributeIsMutable();
-          attribute_.add(builderForValue.build());
-          onChanged();
-        } else {
-          attributeBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .glory_api.Attribute attribute = 6;</code>
-       */
-      public Builder addAttribute(
-          int index, glory_api.AttributeOuterClass.Attribute.Builder builderForValue) {
-        if (attributeBuilder_ == null) {
-          ensureAttributeIsMutable();
-          attribute_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          attributeBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .glory_api.Attribute attribute = 6;</code>
-       */
-      public Builder addAllAttribute(
-          java.lang.Iterable<? extends glory_api.AttributeOuterClass.Attribute> values) {
-        if (attributeBuilder_ == null) {
-          ensureAttributeIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, attribute_);
-          onChanged();
-        } else {
-          attributeBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .glory_api.Attribute attribute = 6;</code>
-       */
-      public Builder clearAttribute() {
-        if (attributeBuilder_ == null) {
-          attribute_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-          onChanged();
-        } else {
-          attributeBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .glory_api.Attribute attribute = 6;</code>
-       */
-      public Builder removeAttribute(int index) {
-        if (attributeBuilder_ == null) {
-          ensureAttributeIsMutable();
-          attribute_.remove(index);
-          onChanged();
-        } else {
-          attributeBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .glory_api.Attribute attribute = 6;</code>
-       */
-      public glory_api.AttributeOuterClass.Attribute.Builder getAttributeBuilder(
-          int index) {
-        return getAttributeFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .glory_api.Attribute attribute = 6;</code>
-       */
-      public glory_api.AttributeOuterClass.AttributeOrBuilder getAttributeOrBuilder(
-          int index) {
-        if (attributeBuilder_ == null) {
-          return attribute_.get(index);  } else {
-          return attributeBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .glory_api.Attribute attribute = 6;</code>
-       */
-      public java.util.List<? extends glory_api.AttributeOuterClass.AttributeOrBuilder> 
-           getAttributeOrBuilderList() {
-        if (attributeBuilder_ != null) {
-          return attributeBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(attribute_);
-        }
-      }
-      /**
-       * <code>repeated .glory_api.Attribute attribute = 6;</code>
-       */
-      public glory_api.AttributeOuterClass.Attribute.Builder addAttributeBuilder() {
-        return getAttributeFieldBuilder().addBuilder(
-            glory_api.AttributeOuterClass.Attribute.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .glory_api.Attribute attribute = 6;</code>
-       */
-      public glory_api.AttributeOuterClass.Attribute.Builder addAttributeBuilder(
-          int index) {
-        return getAttributeFieldBuilder().addBuilder(
-            index, glory_api.AttributeOuterClass.Attribute.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .glory_api.Attribute attribute = 6;</code>
-       */
-      public java.util.List<glory_api.AttributeOuterClass.Attribute.Builder> 
-           getAttributeBuilderList() {
-        return getAttributeFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          glory_api.AttributeOuterClass.Attribute, glory_api.AttributeOuterClass.Attribute.Builder, glory_api.AttributeOuterClass.AttributeOrBuilder> 
-          getAttributeFieldBuilder() {
-        if (attributeBuilder_ == null) {
-          attributeBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              glory_api.AttributeOuterClass.Attribute, glory_api.AttributeOuterClass.Attribute.Builder, glory_api.AttributeOuterClass.AttributeOrBuilder>(
-                  attribute_,
-                  ((bitField0_ & 0x00000002) != 0),
-                  getParentForChildren(),
-                  isClean());
-          attribute_ = null;
-        }
-        return attributeBuilder_;
-      }
-
       private int state_ = 0;
       /**
        * <pre>
-       *商品状态
+       *repeated Attribute attribute = 6;
        * </pre>
        *
        * <code>.glory_api.State state = 7;</code>
@@ -2682,7 +2310,7 @@ public final class ProductOuterClass {
       }
       /**
        * <pre>
-       *商品状态
+       *repeated Attribute attribute = 6;
        * </pre>
        *
        * <code>.glory_api.State state = 7;</code>
@@ -2697,7 +2325,7 @@ public final class ProductOuterClass {
       }
       /**
        * <pre>
-       *商品状态
+       *repeated Attribute attribute = 6;
        * </pre>
        *
        * <code>.glory_api.State state = 7;</code>
@@ -2711,7 +2339,7 @@ public final class ProductOuterClass {
       }
       /**
        * <pre>
-       *商品状态
+       *repeated Attribute attribute = 6;
        * </pre>
        *
        * <code>.glory_api.State state = 7;</code>
@@ -2729,7 +2357,7 @@ public final class ProductOuterClass {
       }
       /**
        * <pre>
-       *商品状态
+       *repeated Attribute attribute = 6;
        * </pre>
        *
        * <code>.glory_api.State state = 7;</code>
@@ -2745,9 +2373,9 @@ public final class ProductOuterClass {
       private java.util.List<glory_api.ProductOuterClass.ProductImage> images_ =
         java.util.Collections.emptyList();
       private void ensureImagesIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           images_ = new java.util.ArrayList<glory_api.ProductOuterClass.ProductImage>(images_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -2897,7 +2525,7 @@ public final class ProductOuterClass {
       public Builder clearImages() {
         if (imagesBuilder_ == null) {
           images_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           imagesBuilder_.clear();
@@ -2974,7 +2602,7 @@ public final class ProductOuterClass {
           imagesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               glory_api.ProductOuterClass.ProductImage, glory_api.ProductOuterClass.ProductImage.Builder, glory_api.ProductOuterClass.ProductImageOrBuilder>(
                   images_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           images_ = null;
@@ -3421,9 +3049,9 @@ public final class ProductOuterClass {
       private java.util.List<glory_api.ProductOuterClass.ShipmentAttribute> shipmentAttribute_ =
         java.util.Collections.emptyList();
       private void ensureShipmentAttributeIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           shipmentAttribute_ = new java.util.ArrayList<glory_api.ProductOuterClass.ShipmentAttribute>(shipmentAttribute_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -3617,7 +3245,7 @@ public final class ProductOuterClass {
       public Builder clearShipmentAttribute() {
         if (shipmentAttributeBuilder_ == null) {
           shipmentAttribute_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           shipmentAttributeBuilder_.clear();
@@ -3722,7 +3350,7 @@ public final class ProductOuterClass {
           shipmentAttributeBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               glory_api.ProductOuterClass.ShipmentAttribute, glory_api.ProductOuterClass.ShipmentAttribute.Builder, glory_api.ProductOuterClass.ShipmentAttributeOrBuilder>(
                   shipmentAttribute_,
-                  ((bitField0_ & 0x00000008) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           shipmentAttribute_ = null;
@@ -37013,131 +36641,130 @@ public final class ProductOuterClass {
       "\n\022shop/product.proto\022\tglory_api\032\nbase.pr" +
       "oto\032\016shop/sku.proto\032\017shop/shop.proto\032\024sh" +
       "op/attribute.proto\032\033shop/freight_templat" +
-      "e.proto\"\207\004\n\007Product\022\022\n\nproduct_id\030\001 \001(\003\022" +
+      "e.proto\"\336\003\n\007Product\022\022\n\nproduct_id\030\001 \001(\003\022" +
       "\017\n\007shop_id\030\002 \001(\003\022\024\n\014product_name\030\003 \001(\t\022\023" +
       "\n\013category_id\030\004 \001(\003\022\033\n\003sku\030\005 \003(\0132\016.glory" +
-      "_api.Sku\022\'\n\tattribute\030\006 \003(\0132\024.glory_api." +
-      "Attribute\022\037\n\005state\030\007 \001(\0162\020.glory_api.Sta" +
-      "te\022\'\n\006images\030\010 \003(\0132\027.glory_api.ProductIm" +
-      "age\022\025\n\rproduct_price\030\t \001(\002\022\030\n\020product_qu" +
-      "antity\030\n \001(\005\022\024\n\014product_sold\030\013 \001(\005\022\021\n\tsh" +
-      "op_name\030\014 \001(\t\022\025\n\rshop_logo_url\030\r \001(\t\022-\n\020" +
-      "freight_template\030\016 \001(\0132\023.glory_api.Templ" +
-      "ate\0228\n\022shipment_attribute\030\017 \003(\0132\034.glory_" +
-      "api.ShipmentAttribute\022\022\n\nsale_price\030\020 \001(" +
-      "\002\022\027\n\017reference_price\030\021 \001(\002\022\025\n\rproduct_br" +
-      "and\030\022 \001(\t\"O\n\014ProductImage\022\030\n\020product_ima" +
-      "ge_id\030\001 \001(\003\022\022\n\nimage_type\030\002 \001(\t\022\021\n\timage" +
-      "_url\030\003 \001(\t\"\225\001\n\021ShipmentAttribute\022\035\n\025ship" +
-      "ment_attribute_id\030\001 \001(\003\022\024\n\014attribute_id\030" +
-      "\002 \001(\003\022\026\n\016attribute_name\030\003 \001(\t\022\032\n\022attribu" +
-      "te_value_id\030\004 \001(\003\022\027\n\017attribute_value\030\005 \001" +
-      "(\t\"\241\001\n\021ProductWithAuthor\022#\n\007product\030\001 \001(" +
-      "\0132\022.glory_api.Product\022@\n\017attribute_value" +
-      "\030\002 \003(\0132\'.glory_api.ProductAttributeWithO" +
-      "neValue\022%\n\013author_info\030\003 \001(\0132\020.base.Auth" +
-      "orInfo\"\267\001\n\034ProductAttributeWithOneValue\022" +
-      "\024\n\014attribute_id\030\001 \001(\003\022\026\n\016attribute_name\030" +
-      "\002 \001(\t\022\027\n\017attribute_value\030\003 \001(\t\022\026\n\016attrib" +
-      "ute_type\030\004 \001(\t\022\034\n\024product_attribute_id\030\006" +
-      " \001(\003\022\032\n\022attribute_value_id\030\007 \001(\003\"\246\001\n\026Pro" +
-      "ductWithValueAuthor\022#\n\007product\030\001 \001(\0132\022.g" +
-      "lory_api.Product\022@\n\017attribute_value\030\002 \003(" +
-      "\0132\'.glory_api.ProductAttributeWithOneVal" +
-      "ue\022%\n\013author_info\030\003 \001(\0132\020.base.AuthorInf" +
-      "o\"\203\001\n\020ProductAttribute\022\034\n\024product_attrib" +
-      "ute_id\030\001 \001(\003\022\022\n\nproduct_id\030\002 \001(\003\022\024\n\014attr" +
-      "ibute_id\030\003 \001(\003\022\'\n\tattribute\030\005 \001(\0132\024.glor" +
-      "y_api.Attribute\"\260\001\n\024CreateProductRequest" +
-      "\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReques" +
-      "t\022#\n\007product\030\002 \001(\0132\022.glory_api.Product\0226" +
-      "\n\021product_attribute\030\003 \003(\0132\033.glory_api.Pr" +
-      "oductAttribute\022\022\n\ncreated_by\030\004 \001(\t\"R\n\025Cr" +
-      "eateProductResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
-      ".base.BaseResponse\022\022\n\nproduct_id\030\002 \001(\003\"\241" +
-      "\001\n\024BindAttributeRequest\022\'\n\014base_request\030" +
-      "\001 \001(\0132\021.base.BaseRequest\022\022\n\nproduct_id\030\002" +
-      " \001(\003\022\024\n\014product_name\030\003 \001(\t\0226\n\021product_at" +
-      "tribute\030\004 \003(\0132\033.glory_api.ProductAttribu" +
-      "te\">\n\025BindAttributeResponse\022%\n\tbase_resp" +
-      "\030\001 \001(\0132\022.base.BaseResponse\"P\n\021GetProduct" +
-      "Request\022\'\n\014base_request\030\001 \001(\0132\021.base.Bas" +
-      "eRequest\022\022\n\nproduct_id\030\002 \001(\003\"v\n\022GetProdu" +
-      "ctResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
-      "eResponse\0229\n\016product_detail\030\002 \001(\0132!.glor" +
-      "y_api.ProductWithValueAuthor\"\370\002\n\024UpdateP" +
-      "roductRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
-      "se.BaseRequest\022\022\n\nproduct_id\030\002 \001(\003\022\024\n\014pr" +
-      "oduct_name\030\025 \001(\t\022\'\n\tattribute\030\003 \003(\0132\024.gl" +
-      "ory_api.Attribute\022\033\n\003sku\030\004 \003(\0132\016.glory_a" +
-      "pi.Sku\022\037\n\005state\030\005 \001(\0162\020.glory_api.State\022" +
-      "0\n\022shipment_attribute\030\006 \003(\0132\024.glory_api." +
-      "Attribute\022\033\n\023freight_template_id\030\007 \001(\003\022\022" +
-      "\n\nsale_price\030\010 \001(\002\022\027\n\017reference_price\030\t " +
-      "\001(\002\022\025\n\rproduct_brand\030\n \001(\t\022\023\n\013category_i" +
-      "d\030\013 \001(\003\"R\n\025UpdateProductResponse\022%\n\tbase" +
-      "_resp\030\001 \001(\0132\022.base.BaseResponse\022\022\n\nprodu" +
-      "ct_id\030\002 \001(\003\"\371\002\n\025PublishProductRequest\022\'\n" +
-      "\014base_request\030\001 \001(\0132\021.base.BaseRequest\022\022" +
-      "\n\nproduct_id\030\002 \001(\003\022\024\n\014product_name\030\025 \001(\t" +
-      "\022\'\n\tattribute\030\003 \003(\0132\024.glory_api.Attribut" +
-      "e\022\033\n\003sku\030\004 \003(\0132\016.glory_api.Sku\022\037\n\005state\030" +
-      "\005 \001(\0162\020.glory_api.State\0220\n\022shipment_attr" +
-      "ibute\030\006 \003(\0132\024.glory_api.Attribute\022\033\n\023fre" +
-      "ight_template_id\030\007 \001(\003\022\022\n\nsale_price\030\010 \001" +
-      "(\002\022\027\n\017reference_price\030\t \001(\002\022\025\n\rproduct_b" +
-      "rand\030\n \001(\t\022\023\n\013category_id\030\013 \001(\003\"S\n\026Publi" +
-      "shProductResponse\022%\n\tbase_resp\030\001 \001(\0132\022.b" +
-      "ase.BaseResponse\022\022\n\nproduct_id\030\002 \001(\003\"U\n\026" +
-      "OffSelfProductsRequest\022\'\n\014base_request\030\001" +
+      "_api.Sku\022\037\n\005state\030\007 \001(\0162\020.glory_api.Stat" +
+      "e\022\'\n\006images\030\010 \003(\0132\027.glory_api.ProductIma" +
+      "ge\022\025\n\rproduct_price\030\t \001(\002\022\030\n\020product_qua" +
+      "ntity\030\n \001(\005\022\024\n\014product_sold\030\013 \001(\005\022\021\n\tsho" +
+      "p_name\030\014 \001(\t\022\025\n\rshop_logo_url\030\r \001(\t\022-\n\020f" +
+      "reight_template\030\016 \001(\0132\023.glory_api.Templa" +
+      "te\0228\n\022shipment_attribute\030\017 \003(\0132\034.glory_a" +
+      "pi.ShipmentAttribute\022\022\n\nsale_price\030\020 \001(\002" +
+      "\022\027\n\017reference_price\030\021 \001(\002\022\025\n\rproduct_bra" +
+      "nd\030\022 \001(\t\"O\n\014ProductImage\022\030\n\020product_imag" +
+      "e_id\030\001 \001(\003\022\022\n\nimage_type\030\002 \001(\t\022\021\n\timage_" +
+      "url\030\003 \001(\t\"\225\001\n\021ShipmentAttribute\022\035\n\025shipm" +
+      "ent_attribute_id\030\001 \001(\003\022\024\n\014attribute_id\030\002" +
+      " \001(\003\022\026\n\016attribute_name\030\003 \001(\t\022\032\n\022attribut" +
+      "e_value_id\030\004 \001(\003\022\027\n\017attribute_value\030\005 \001(" +
+      "\t\"\241\001\n\021ProductWithAuthor\022#\n\007product\030\001 \001(\013" +
+      "2\022.glory_api.Product\022@\n\017attribute_value\030" +
+      "\002 \003(\0132\'.glory_api.ProductAttributeWithOn" +
+      "eValue\022%\n\013author_info\030\003 \001(\0132\020.base.Autho" +
+      "rInfo\"\267\001\n\034ProductAttributeWithOneValue\022\024" +
+      "\n\014attribute_id\030\001 \001(\003\022\026\n\016attribute_name\030\002" +
+      " \001(\t\022\027\n\017attribute_value\030\003 \001(\t\022\026\n\016attribu" +
+      "te_type\030\004 \001(\t\022\034\n\024product_attribute_id\030\006 " +
+      "\001(\003\022\032\n\022attribute_value_id\030\007 \001(\003\"\246\001\n\026Prod" +
+      "uctWithValueAuthor\022#\n\007product\030\001 \001(\0132\022.gl" +
+      "ory_api.Product\022@\n\017attribute_value\030\002 \003(\013" +
+      "2\'.glory_api.ProductAttributeWithOneValu" +
+      "e\022%\n\013author_info\030\003 \001(\0132\020.base.AuthorInfo" +
+      "\"\203\001\n\020ProductAttribute\022\034\n\024product_attribu" +
+      "te_id\030\001 \001(\003\022\022\n\nproduct_id\030\002 \001(\003\022\024\n\014attri" +
+      "bute_id\030\003 \001(\003\022\'\n\tattribute\030\005 \001(\0132\024.glory" +
+      "_api.Attribute\"\260\001\n\024CreateProductRequest\022" +
+      "\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequest" +
+      "\022#\n\007product\030\002 \001(\0132\022.glory_api.Product\0226\n" +
+      "\021product_attribute\030\003 \003(\0132\033.glory_api.Pro" +
+      "ductAttribute\022\022\n\ncreated_by\030\004 \001(\t\"R\n\025Cre" +
+      "ateProductResponse\022%\n\tbase_resp\030\001 \001(\0132\022." +
+      "base.BaseResponse\022\022\n\nproduct_id\030\002 \001(\003\"\241\001" +
+      "\n\024BindAttributeRequest\022\'\n\014base_request\030\001" +
       " \001(\0132\021.base.BaseRequest\022\022\n\nproduct_id\030\002 " +
-      "\003(\003\"@\n\027OffSelfProductsResponse\022%\n\tbase_r" +
-      "esp\030\001 \001(\0132\022.base.BaseResponse\"T\n\025DeleteP" +
-      "roductsRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
-      "ase.BaseRequest\022\022\n\nproduct_id\030\002 \003(\003\"?\n\026D" +
-      "eleteProductsResponse\022%\n\tbase_resp\030\001 \001(\013" +
-      "2\022.base.BaseResponse\"y\n\031ChangeProductSta" +
-      "teRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.B" +
-      "aseRequest\022\022\n\nproduct_id\030\002 \001(\003\022\037\n\005state\030" +
-      "\003 \001(\0162\020.glory_api.State\"C\n\032ChangeProduct" +
-      "StateResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
-      "BaseResponse\"z\n\032ChangeProductsStateReque" +
-      "st\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequ" +
-      "est\022\022\n\nproduct_id\030\002 \003(\003\022\037\n\005state\030\003 \001(\0162\020" +
-      ".glory_api.State\"D\n\033ChangeProductsStateR" +
-      "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
-      "sponse\"\307\001\n\022ListProductRequest\022\'\n\014base_re" +
-      "quest\030\001 \001(\0132\021.base.BaseRequest\022\024\n\014produc" +
-      "t_name\030\002 \001(\t\022\017\n\007shop_id\030\003 \001(\003\022\023\n\013categor" +
-      "y_id\030\004 \001(\003\022\037\n\005state\030\005 \001(\0162\020.glory_api.St" +
-      "ate\022+\n\npagination\030d \001(\0132\027.base.Paginatio" +
-      "nRequest\"\245\001\n\023ListProductResponse\022%\n\tbase" +
-      "_resp\030\001 \001(\0132\022.base.BaseResponse\0229\n\016produ" +
-      "ct_detail\030\002 \003(\0132!.glory_api.ProductWithV" +
-      "alueAuthor\022,\n\npagination\030d \001(\0132\030.base.Pa" +
-      "ginationResponse\"S\n\024DeleteProductRequest" +
-      "\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReques" +
-      "t\022\022\n\nproduct_id\030\002 \001(\003\">\n\025DeleteProductRe" +
+      "\001(\003\022\024\n\014product_name\030\003 \001(\t\0226\n\021product_att" +
+      "ribute\030\004 \003(\0132\033.glory_api.ProductAttribut" +
+      "e\">\n\025BindAttributeResponse\022%\n\tbase_resp\030" +
+      "\001 \001(\0132\022.base.BaseResponse\"P\n\021GetProductR" +
+      "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
+      "Request\022\022\n\nproduct_id\030\002 \001(\003\"v\n\022GetProduc" +
+      "tResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Base" +
+      "Response\0229\n\016product_detail\030\002 \001(\0132!.glory" +
+      "_api.ProductWithValueAuthor\"\370\002\n\024UpdatePr" +
+      "oductRequest\022\'\n\014base_request\030\001 \001(\0132\021.bas" +
+      "e.BaseRequest\022\022\n\nproduct_id\030\002 \001(\003\022\024\n\014pro" +
+      "duct_name\030\025 \001(\t\022\'\n\tattribute\030\003 \003(\0132\024.glo" +
+      "ry_api.Attribute\022\033\n\003sku\030\004 \003(\0132\016.glory_ap" +
+      "i.Sku\022\037\n\005state\030\005 \001(\0162\020.glory_api.State\0220" +
+      "\n\022shipment_attribute\030\006 \003(\0132\024.glory_api.A" +
+      "ttribute\022\033\n\023freight_template_id\030\007 \001(\003\022\022\n" +
+      "\nsale_price\030\010 \001(\002\022\027\n\017reference_price\030\t \001" +
+      "(\002\022\025\n\rproduct_brand\030\n \001(\t\022\023\n\013category_id" +
+      "\030\013 \001(\003\"R\n\025UpdateProductResponse\022%\n\tbase_" +
+      "resp\030\001 \001(\0132\022.base.BaseResponse\022\022\n\nproduc" +
+      "t_id\030\002 \001(\003\"\371\002\n\025PublishProductRequest\022\'\n\014" +
+      "base_request\030\001 \001(\0132\021.base.BaseRequest\022\022\n" +
+      "\nproduct_id\030\002 \001(\003\022\024\n\014product_name\030\025 \001(\t\022" +
+      "\'\n\tattribute\030\003 \003(\0132\024.glory_api.Attribute" +
+      "\022\033\n\003sku\030\004 \003(\0132\016.glory_api.Sku\022\037\n\005state\030\005" +
+      " \001(\0162\020.glory_api.State\0220\n\022shipment_attri" +
+      "bute\030\006 \003(\0132\024.glory_api.Attribute\022\033\n\023frei" +
+      "ght_template_id\030\007 \001(\003\022\022\n\nsale_price\030\010 \001(" +
+      "\002\022\027\n\017reference_price\030\t \001(\002\022\025\n\rproduct_br" +
+      "and\030\n \001(\t\022\023\n\013category_id\030\013 \001(\003\"S\n\026Publis" +
+      "hProductResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
+      "se.BaseResponse\022\022\n\nproduct_id\030\002 \001(\003\"U\n\026O" +
+      "ffSelfProductsRequest\022\'\n\014base_request\030\001 " +
+      "\001(\0132\021.base.BaseRequest\022\022\n\nproduct_id\030\002 \003" +
+      "(\003\"@\n\027OffSelfProductsResponse\022%\n\tbase_re" +
+      "sp\030\001 \001(\0132\022.base.BaseResponse\"T\n\025DeletePr" +
+      "oductsRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
+      "se.BaseRequest\022\022\n\nproduct_id\030\002 \003(\003\"?\n\026De" +
+      "leteProductsResponse\022%\n\tbase_resp\030\001 \001(\0132" +
+      "\022.base.BaseResponse\"y\n\031ChangeProductStat" +
+      "eRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
+      "seRequest\022\022\n\nproduct_id\030\002 \001(\003\022\037\n\005state\030\003" +
+      " \001(\0162\020.glory_api.State\"C\n\032ChangeProductS" +
+      "tateResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.B" +
+      "aseResponse\"z\n\032ChangeProductsStateReques" +
+      "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
+      "st\022\022\n\nproduct_id\030\002 \003(\003\022\037\n\005state\030\003 \001(\0162\020." +
+      "glory_api.State\"D\n\033ChangeProductsStateRe" +
       "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
-      "ponse\"r\n\027UploadMultiImageRequest\022\'\n\014base" +
-      "_request\030\001 \001(\0132\021.base.BaseRequest\022\022\n\npro" +
-      "duct_id\030\002 \001(\003\022\032\n\022product_image_type\030\003 \001(" +
-      "\003\"j\n\030UploadMultiImageResponse\022%\n\tbase_re" +
-      "sp\030\001 \001(\0132\022.base.BaseResponse\022\'\n\timageInf" +
-      "o\030\002 \003(\0132\024.glory_api.ImageInfo\":\n\tImageIn" +
-      "fo\022\023\n\013product_url\030\001 \001(\t\022\030\n\020product_image" +
-      "_id\030\002 \001(\003\"W\n\022DeleteImageRequest\022\'\n\014base_" +
-      "request\030\001 \001(\0132\021.base.BaseRequest\022\030\n\020prod" +
-      "uct_image_id\030\002 \001(\003\"<\n\023DeleteImageRespons" +
-      "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
-      "\"P\n\025UploadSkuImageRequest\022\'\n\014base_reques" +
-      "t\030\001 \001(\0132\021.base.BaseRequest\022\016\n\006sku_id\030\002 \001" +
-      "(\003\"R\n\026UploadSkuImageResponse\022%\n\tbase_res" +
-      "p\030\001 \001(\0132\022.base.BaseResponse\022\021\n\timage_url" +
-      "\030\002 \001(\t*\200\001\n\005State\022\013\n\007DEFAULT\020\000\022\013\n\007created" +
-      "\020\001\022\014\n\010on_shelf\020\002\022\r\n\toff_shelf\020\003\022\020\n\014out_o" +
-      "f_stock\020\004\022\013\n\007deleted\020\005\022\023\n\017deleted_foreve" +
-      "r\020\006\022\014\n\010sold_out\020\007b\006proto3"
+      "ponse\"\307\001\n\022ListProductRequest\022\'\n\014base_req" +
+      "uest\030\001 \001(\0132\021.base.BaseRequest\022\024\n\014product" +
+      "_name\030\002 \001(\t\022\017\n\007shop_id\030\003 \001(\003\022\023\n\013category" +
+      "_id\030\004 \001(\003\022\037\n\005state\030\005 \001(\0162\020.glory_api.Sta" +
+      "te\022+\n\npagination\030d \001(\0132\027.base.Pagination" +
+      "Request\"\245\001\n\023ListProductResponse\022%\n\tbase_" +
+      "resp\030\001 \001(\0132\022.base.BaseResponse\0229\n\016produc" +
+      "t_detail\030\002 \003(\0132!.glory_api.ProductWithVa" +
+      "lueAuthor\022,\n\npagination\030d \001(\0132\030.base.Pag" +
+      "inationResponse\"S\n\024DeleteProductRequest\022" +
+      "\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequest" +
+      "\022\022\n\nproduct_id\030\002 \001(\003\">\n\025DeleteProductRes" +
+      "ponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResp" +
+      "onse\"r\n\027UploadMultiImageRequest\022\'\n\014base_" +
+      "request\030\001 \001(\0132\021.base.BaseRequest\022\022\n\nprod" +
+      "uct_id\030\002 \001(\003\022\032\n\022product_image_type\030\003 \001(\003" +
+      "\"j\n\030UploadMultiImageResponse\022%\n\tbase_res" +
+      "p\030\001 \001(\0132\022.base.BaseResponse\022\'\n\timageInfo" +
+      "\030\002 \003(\0132\024.glory_api.ImageInfo\":\n\tImageInf" +
+      "o\022\023\n\013product_url\030\001 \001(\t\022\030\n\020product_image_" +
+      "id\030\002 \001(\003\"W\n\022DeleteImageRequest\022\'\n\014base_r" +
+      "equest\030\001 \001(\0132\021.base.BaseRequest\022\030\n\020produ" +
+      "ct_image_id\030\002 \001(\003\"<\n\023DeleteImageResponse" +
+      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"" +
+      "P\n\025UploadSkuImageRequest\022\'\n\014base_request" +
+      "\030\001 \001(\0132\021.base.BaseRequest\022\016\n\006sku_id\030\002 \001(" +
+      "\003\"R\n\026UploadSkuImageResponse\022%\n\tbase_resp" +
+      "\030\001 \001(\0132\022.base.BaseResponse\022\021\n\timage_url\030" +
+      "\002 \001(\t*\200\001\n\005State\022\013\n\007DEFAULT\020\000\022\013\n\007created\020" +
+      "\001\022\014\n\010on_shelf\020\002\022\r\n\toff_shelf\020\003\022\020\n\014out_of" +
+      "_stock\020\004\022\013\n\007deleted\020\005\022\023\n\017deleted_forever" +
+      "\020\006\022\014\n\010sold_out\020\007b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -37153,7 +36780,7 @@ public final class ProductOuterClass {
     internal_static_glory_api_Product_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_Product_descriptor,
-        new java.lang.String[] { "ProductId", "ShopId", "ProductName", "CategoryId", "Sku", "Attribute", "State", "Images", "ProductPrice", "ProductQuantity", "ProductSold", "ShopName", "ShopLogoUrl", "FreightTemplate", "ShipmentAttribute", "SalePrice", "ReferencePrice", "ProductBrand", });
+        new java.lang.String[] { "ProductId", "ShopId", "ProductName", "CategoryId", "Sku", "State", "Images", "ProductPrice", "ProductQuantity", "ProductSold", "ShopName", "ShopLogoUrl", "FreightTemplate", "ShipmentAttribute", "SalePrice", "ReferencePrice", "ProductBrand", });
     internal_static_glory_api_ProductImage_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_glory_api_ProductImage_fieldAccessorTable = new
