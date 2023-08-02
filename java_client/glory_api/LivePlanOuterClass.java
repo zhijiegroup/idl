@@ -31016,6 +31016,18 @@ public final class LivePlanOuterClass {
      */
     com.google.protobuf.ByteString
         getPlayedAtBytes();
+
+    /**
+     * <code>string product_description = 8;</code>
+     * @return The productDescription.
+     */
+    java.lang.String getProductDescription();
+    /**
+     * <code>string product_description = 8;</code>
+     * @return The bytes for productDescription.
+     */
+    com.google.protobuf.ByteString
+        getProductDescriptionBytes();
   }
   /**
    * Protobuf type {@code glory_api.GetLivingProductStatusResponse}
@@ -31032,6 +31044,7 @@ public final class LivePlanOuterClass {
     private GetLivingProductStatusResponse() {
       productName_ = "";
       playedAt_ = "";
+      productDescription_ = "";
     }
 
     @java.lang.Override
@@ -31107,6 +31120,12 @@ public final class LivePlanOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               playedAt_ = s;
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              productDescription_ = s;
               break;
             }
             default: {
@@ -31287,6 +31306,44 @@ public final class LivePlanOuterClass {
       }
     }
 
+    public static final int PRODUCT_DESCRIPTION_FIELD_NUMBER = 8;
+    private volatile java.lang.Object productDescription_;
+    /**
+     * <code>string product_description = 8;</code>
+     * @return The productDescription.
+     */
+    @java.lang.Override
+    public java.lang.String getProductDescription() {
+      java.lang.Object ref = productDescription_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        productDescription_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string product_description = 8;</code>
+     * @return The bytes for productDescription.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getProductDescriptionBytes() {
+      java.lang.Object ref = productDescription_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        productDescription_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -31321,6 +31378,9 @@ public final class LivePlanOuterClass {
       }
       if (!getPlayedAtBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, playedAt_);
+      }
+      if (!getProductDescriptionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, productDescription_);
       }
       unknownFields.writeTo(output);
     }
@@ -31357,6 +31417,9 @@ public final class LivePlanOuterClass {
       if (!getPlayedAtBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, playedAt_);
       }
+      if (!getProductDescriptionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, productDescription_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -31390,6 +31453,8 @@ public final class LivePlanOuterClass {
           != other.getLiveRoomOrder()) return false;
       if (!getPlayedAt()
           .equals(other.getPlayedAt())) return false;
+      if (!getProductDescription()
+          .equals(other.getProductDescription())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -31419,6 +31484,8 @@ public final class LivePlanOuterClass {
       hash = (53 * hash) + getLiveRoomOrder();
       hash = (37 * hash) + PLAYED_AT_FIELD_NUMBER;
       hash = (53 * hash) + getPlayedAt().hashCode();
+      hash = (37 * hash) + PRODUCT_DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getProductDescription().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -31570,6 +31637,8 @@ public final class LivePlanOuterClass {
 
         playedAt_ = "";
 
+        productDescription_ = "";
+
         return this;
       }
 
@@ -31607,6 +31676,7 @@ public final class LivePlanOuterClass {
         result.productCount_ = productCount_;
         result.liveRoomOrder_ = liveRoomOrder_;
         result.playedAt_ = playedAt_;
+        result.productDescription_ = productDescription_;
         onBuilt();
         return result;
       }
@@ -31676,6 +31746,10 @@ public final class LivePlanOuterClass {
         }
         if (!other.getPlayedAt().isEmpty()) {
           playedAt_ = other.playedAt_;
+          onChanged();
+        }
+        if (!other.getProductDescription().isEmpty()) {
+          productDescription_ = other.productDescription_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -32098,6 +32172,82 @@ public final class LivePlanOuterClass {
   checkByteStringIsUtf8(value);
         
         playedAt_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object productDescription_ = "";
+      /**
+       * <code>string product_description = 8;</code>
+       * @return The productDescription.
+       */
+      public java.lang.String getProductDescription() {
+        java.lang.Object ref = productDescription_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          productDescription_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string product_description = 8;</code>
+       * @return The bytes for productDescription.
+       */
+      public com.google.protobuf.ByteString
+          getProductDescriptionBytes() {
+        java.lang.Object ref = productDescription_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          productDescription_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string product_description = 8;</code>
+       * @param value The productDescription to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProductDescription(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        productDescription_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string product_description = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProductDescription() {
+        
+        productDescription_ = getDefaultInstance().getProductDescription();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string product_description = 8;</code>
+       * @param value The bytes for productDescription to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProductDescriptionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        productDescription_ = value;
         onChanged();
         return this;
       }
@@ -35727,23 +35877,24 @@ public final class LivePlanOuterClass {
       "eLiveProductStatusResponse\022%\n\tbase_resp\030" +
       "\001 \001(\0132\022.base.BaseResponse\"Y\n\035GetLivingPr" +
       "oductStatusRequest\022\'\n\014base_request\030\001 \001(\013" +
-      "2\021.base.BaseRequest\022\017\n\007shop_id\030\002 \001(\003\"\313\001\n" +
+      "2\021.base.BaseRequest\022\017\n\007shop_id\030\002 \001(\003\"\350\001\n" +
       "\036GetLivingProductStatusResponse\022%\n\tbase_" +
       "resp\030\001 \001(\0132\022.base.BaseResponse\022\022\n\nproduc" +
       "t_id\030\002 \001(\003\022\024\n\014product_name\030\003 \001(\t\022\025\n\rprod" +
       "uct_price\030\004 \001(\001\022\025\n\rproduct_count\030\005 \001(\005\022\027" +
       "\n\017live_room_order\030\006 \001(\005\022\021\n\tplayed_at\030\007 \001" +
-      "(\t\"s\n\021LiveRecordRequest\022\'\n\014base_request\030" +
-      "\001 \001(\0132\021.base.BaseRequest\022\016\n\006action\030\002 \001(\t" +
-      "\022\020\n\010app_name\030\003 \001(\t\022\023\n\013stream_name\030\004 \001(\t\"" +
-      ";\n\022LiveRecordResponse\022%\n\tbase_resp\030\001 \001(\013" +
-      "2\022.base.BaseResponse\"\223\001\n\'UpdateLiveProdu" +
-      "ctIntroductStatusRequest\022\'\n\014base_request" +
-      "\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007shop_id\030\002 \001" +
-      "(\003\022\036\n\026live_product_status_id\030\003 \001(\003\022\016\n\006ac" +
-      "tion\030\004 \001(\t\"Q\n(UpdateLiveProductIntroduct" +
-      "StatusResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
-      ".BaseResponseb\006proto3"
+      "(\t\022\033\n\023product_description\030\010 \001(\t\"s\n\021LiveR" +
+      "ecordRequest\022\'\n\014base_request\030\001 \001(\0132\021.bas" +
+      "e.BaseRequest\022\016\n\006action\030\002 \001(\t\022\020\n\010app_nam" +
+      "e\030\003 \001(\t\022\023\n\013stream_name\030\004 \001(\t\";\n\022LiveReco" +
+      "rdResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
+      "eResponse\"\223\001\n\'UpdateLiveProductIntroduct" +
+      "StatusRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
+      "se.BaseRequest\022\017\n\007shop_id\030\002 \001(\003\022\036\n\026live_" +
+      "product_status_id\030\003 \001(\003\022\016\n\006action\030\004 \001(\t\"" +
+      "Q\n(UpdateLiveProductIntroductStatusRespo" +
+      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
+      "seb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -35959,7 +36110,7 @@ public final class LivePlanOuterClass {
     internal_static_glory_api_GetLivingProductStatusResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetLivingProductStatusResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "ProductId", "ProductName", "ProductPrice", "ProductCount", "LiveRoomOrder", "PlayedAt", });
+        new java.lang.String[] { "BaseResp", "ProductId", "ProductName", "ProductPrice", "ProductCount", "LiveRoomOrder", "PlayedAt", "ProductDescription", });
     internal_static_glory_api_LiveRecordRequest_descriptor =
       getDescriptor().getMessageTypes().get(35);
     internal_static_glory_api_LiveRecordRequest_fieldAccessorTable = new
