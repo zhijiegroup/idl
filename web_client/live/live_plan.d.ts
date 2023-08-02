@@ -238,6 +238,7 @@ export interface LiveingProductStatus {
   live_room_order?: number;
   played_at?: string;
   product_description?: string;
+  product_url?: string;
 }
 
 export interface GetLivingProductStatusResponse {

@@ -945,6 +945,8 @@ struct GloryApi_LiveingProductStatus {
 
   var productDescription: String = String()
 
+  var productURL: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -2747,6 +2749,7 @@ extension GloryApi_LiveingProductStatus: SwiftProtobuf.Message, SwiftProtobuf._M
     6: .standard(proto: "live_room_order"),
     7: .standard(proto: "played_at"),
     8: .standard(proto: "product_description"),
+    9: .standard(proto: "product_url"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2762,6 +2765,7 @@ extension GloryApi_LiveingProductStatus: SwiftProtobuf.Message, SwiftProtobuf._M
       case 6: try { try decoder.decodeSingularInt32Field(value: &self.liveRoomOrder) }()
       case 7: try { try decoder.decodeSingularStringField(value: &self.playedAt) }()
       case 8: try { try decoder.decodeSingularStringField(value: &self.productDescription) }()
+      case 9: try { try decoder.decodeSingularStringField(value: &self.productURL) }()
       default: break
       }
     }
@@ -2789,6 +2793,9 @@ extension GloryApi_LiveingProductStatus: SwiftProtobuf.Message, SwiftProtobuf._M
     if !self.productDescription.isEmpty {
       try visitor.visitSingularStringField(value: self.productDescription, fieldNumber: 8)
     }
+    if !self.productURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.productURL, fieldNumber: 9)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2800,6 +2807,7 @@ extension GloryApi_LiveingProductStatus: SwiftProtobuf.Message, SwiftProtobuf._M
     if lhs.liveRoomOrder != rhs.liveRoomOrder {return false}
     if lhs.playedAt != rhs.playedAt {return false}
     if lhs.productDescription != rhs.productDescription {return false}
+    if lhs.productURL != rhs.productURL {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
