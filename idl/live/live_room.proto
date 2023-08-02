@@ -99,7 +99,7 @@ message FinishedRoom {
   string room_image_url =9;
   string room_title = 10; //直播的标题
   int64 room_image_attachment_id = 11; // 直播间的封面的image 的id
-  repeated DealAmount room_deal_amount =12;
+  double room_deal_amount =12;
 }
 
 message ListFinishedRoomRequest {
