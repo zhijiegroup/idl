@@ -50,6 +50,7 @@ export interface CreateRoomResponse {
 export interface GetRoomRequest {
   base_request?: base.BaseRequest;
   room_id?: string;
+  shop_id?: string;
 }
 
 export interface GetRoomResponse {
@@ -99,17 +100,18 @@ export interface DealAmount {
 export interface FinishedRoom {
   room_id?: string;
   user_name?: string;
+  user_avatar_url?: string;
   seller_id?: string;
   start_time?: string;
   average_online_user?: number;
   room_product_amount?: string;
-  room_deal_amount?: Array<DealAmount>;
   room_order_amount?: string;
   room_image_url?: string;
   /** 直播的标题 */
   room_title?: string;
   /** 直播间的封面的image 的id */
   room_image_attachment_id?: string;
+  room_deal_amount?: number;
 }
 
 export interface ListFinishedRoomRequest {
@@ -126,7 +128,7 @@ export interface ListFinishedRoomResponse {
 
 export interface GetLiveChartDataRequest {
   base_request?: base.BaseRequest;
-  room_id?: string;
+  shop_id?: string;
   start?: string;
   end?: string;
 }

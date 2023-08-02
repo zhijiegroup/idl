@@ -61,12 +61,24 @@ public final class LiveTextOuterClass {
         getUserBytes();
 
     /**
-     * <code>string updated_at = 5;</code>
+     * <code>string created_at = 5;</code>
+     * @return The createdAt.
+     */
+    java.lang.String getCreatedAt();
+    /**
+     * <code>string created_at = 5;</code>
+     * @return The bytes for createdAt.
+     */
+    com.google.protobuf.ByteString
+        getCreatedAtBytes();
+
+    /**
+     * <code>string updated_at = 6;</code>
      * @return The updatedAt.
      */
     java.lang.String getUpdatedAt();
     /**
-     * <code>string updated_at = 5;</code>
+     * <code>string updated_at = 6;</code>
      * @return The bytes for updatedAt.
      */
     com.google.protobuf.ByteString
@@ -88,6 +100,7 @@ public final class LiveTextOuterClass {
       title_ = "";
       content_ = "";
       user_ = "";
+      createdAt_ = "";
       updatedAt_ = "";
     }
 
@@ -145,6 +158,12 @@ public final class LiveTextOuterClass {
               break;
             }
             case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              createdAt_ = s;
+              break;
+            }
+            case 50: {
               java.lang.String s = input.readStringRequireUtf8();
 
               updatedAt_ = s;
@@ -307,10 +326,48 @@ public final class LiveTextOuterClass {
       }
     }
 
-    public static final int UPDATED_AT_FIELD_NUMBER = 5;
+    public static final int CREATED_AT_FIELD_NUMBER = 5;
+    private volatile java.lang.Object createdAt_;
+    /**
+     * <code>string created_at = 5;</code>
+     * @return The createdAt.
+     */
+    @java.lang.Override
+    public java.lang.String getCreatedAt() {
+      java.lang.Object ref = createdAt_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        createdAt_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string created_at = 5;</code>
+     * @return The bytes for createdAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCreatedAtBytes() {
+      java.lang.Object ref = createdAt_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        createdAt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int UPDATED_AT_FIELD_NUMBER = 6;
     private volatile java.lang.Object updatedAt_;
     /**
-     * <code>string updated_at = 5;</code>
+     * <code>string updated_at = 6;</code>
      * @return The updatedAt.
      */
     @java.lang.Override
@@ -327,7 +384,7 @@ public final class LiveTextOuterClass {
       }
     }
     /**
-     * <code>string updated_at = 5;</code>
+     * <code>string updated_at = 6;</code>
      * @return The bytes for updatedAt.
      */
     @java.lang.Override
@@ -371,8 +428,11 @@ public final class LiveTextOuterClass {
       if (!getUserBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, user_);
       }
+      if (!getCreatedAtBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, createdAt_);
+      }
       if (!getUpdatedAtBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, updatedAt_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, updatedAt_);
       }
       unknownFields.writeTo(output);
     }
@@ -396,8 +456,11 @@ public final class LiveTextOuterClass {
       if (!getUserBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, user_);
       }
+      if (!getCreatedAtBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, createdAt_);
+      }
       if (!getUpdatedAtBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, updatedAt_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, updatedAt_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -422,6 +485,8 @@ public final class LiveTextOuterClass {
           .equals(other.getContent())) return false;
       if (!getUser()
           .equals(other.getUser())) return false;
+      if (!getCreatedAt()
+          .equals(other.getCreatedAt())) return false;
       if (!getUpdatedAt()
           .equals(other.getUpdatedAt())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -444,6 +509,8 @@ public final class LiveTextOuterClass {
       hash = (53 * hash) + getContent().hashCode();
       hash = (37 * hash) + USER_FIELD_NUMBER;
       hash = (53 * hash) + getUser().hashCode();
+      hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getCreatedAt().hashCode();
       hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
       hash = (53 * hash) + getUpdatedAt().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -587,6 +654,8 @@ public final class LiveTextOuterClass {
 
         user_ = "";
 
+        createdAt_ = "";
+
         updatedAt_ = "";
 
         return this;
@@ -619,6 +688,7 @@ public final class LiveTextOuterClass {
         result.title_ = title_;
         result.content_ = content_;
         result.user_ = user_;
+        result.createdAt_ = createdAt_;
         result.updatedAt_ = updatedAt_;
         onBuilt();
         return result;
@@ -681,6 +751,10 @@ public final class LiveTextOuterClass {
         }
         if (!other.getUser().isEmpty()) {
           user_ = other.user_;
+          onChanged();
+        }
+        if (!other.getCreatedAt().isEmpty()) {
+          createdAt_ = other.createdAt_;
           onChanged();
         }
         if (!other.getUpdatedAt().isEmpty()) {
@@ -975,9 +1049,85 @@ public final class LiveTextOuterClass {
         return this;
       }
 
+      private java.lang.Object createdAt_ = "";
+      /**
+       * <code>string created_at = 5;</code>
+       * @return The createdAt.
+       */
+      public java.lang.String getCreatedAt() {
+        java.lang.Object ref = createdAt_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          createdAt_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string created_at = 5;</code>
+       * @return The bytes for createdAt.
+       */
+      public com.google.protobuf.ByteString
+          getCreatedAtBytes() {
+        java.lang.Object ref = createdAt_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          createdAt_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string created_at = 5;</code>
+       * @param value The createdAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedAt(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        createdAt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string created_at = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCreatedAt() {
+        
+        createdAt_ = getDefaultInstance().getCreatedAt();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string created_at = 5;</code>
+       * @param value The bytes for createdAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedAtBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        createdAt_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object updatedAt_ = "";
       /**
-       * <code>string updated_at = 5;</code>
+       * <code>string updated_at = 6;</code>
        * @return The updatedAt.
        */
       public java.lang.String getUpdatedAt() {
@@ -993,7 +1143,7 @@ public final class LiveTextOuterClass {
         }
       }
       /**
-       * <code>string updated_at = 5;</code>
+       * <code>string updated_at = 6;</code>
        * @return The bytes for updatedAt.
        */
       public com.google.protobuf.ByteString
@@ -1010,7 +1160,7 @@ public final class LiveTextOuterClass {
         }
       }
       /**
-       * <code>string updated_at = 5;</code>
+       * <code>string updated_at = 6;</code>
        * @param value The updatedAt to set.
        * @return This builder for chaining.
        */
@@ -1025,7 +1175,7 @@ public final class LiveTextOuterClass {
         return this;
       }
       /**
-       * <code>string updated_at = 5;</code>
+       * <code>string updated_at = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearUpdatedAt() {
@@ -1035,7 +1185,7 @@ public final class LiveTextOuterClass {
         return this;
       }
       /**
-       * <code>string updated_at = 5;</code>
+       * <code>string updated_at = 6;</code>
        * @param value The bytes for updatedAt to set.
        * @return This builder for chaining.
        */
@@ -9514,34 +9664,34 @@ public final class LiveTextOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\024live/live_text.proto\022\tglory_api\032\nbase." +
-      "proto\"]\n\010LiveText\022\017\n\007text_id\030\001 \001(\003\022\r\n\005ti" +
+      "proto\"q\n\010LiveText\022\017\n\007text_id\030\001 \001(\003\022\r\n\005ti" +
       "tle\030\002 \001(\t\022\017\n\007content\030\003 \001(\t\022\014\n\004user\030\004 \001(\t" +
-      "\022\022\n\nupdated_at\030\005 \001(\t\"q\n\025CreateLiveTextRe" +
-      "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
-      "equest\022\r\n\005title\030\002 \001(\t\022\017\n\007content\030\003 \001(\t\022\017" +
-      "\n\007shop_id\030\004 \001(\003\"P\n\026CreateLiveTextRespons" +
-      "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
-      "\022\017\n\007text_id\030\002 \001(\003\"q\n\025UpdateLiveTextReque" +
-      "st\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequ" +
-      "est\022\017\n\007text_id\030\002 \001(\003\022\r\n\005title\030\003 \001(\t\022\017\n\007c" +
-      "ontent\030\004 \001(\t\"?\n\026UpdateLiveTextResponse\022%" +
-      "\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"|\n" +
-      "\023ListLiveTextRequest\022\'\n\014base_request\030\001 \001" +
-      "(\0132\021.base.BaseRequest\022\017\n\007shop_id\030\002 \001(\003\022+" +
-      "\n\npagination\030d \001(\0132\027.base.PaginationRequ" +
-      "est\"\223\001\n\024ListLiveTextResponse\022%\n\tbase_res" +
-      "p\030\001 \001(\0132\022.base.BaseResponse\022&\n\ttext_list" +
-      "\030\002 \003(\0132\023.glory_api.LiveText\022,\n\npaginatio" +
-      "n\030d \001(\0132\030.base.PaginationResponse\"N\n\022Get" +
-      "LiveTextRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
-      "base.BaseRequest\022\017\n\007text_id\030\002 \001(\003\"d\n\023Get" +
-      "LiveTextResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
-      "se.BaseResponse\022&\n\tlive_text\030\002 \001(\0132\023.glo" +
-      "ry_api.LiveText\"S\n\026DeleteLiveTextsReques" +
-      "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
-      "st\022\020\n\010text_ids\030\002 \003(\003\"@\n\027DeleteLiveTextsR" +
-      "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
-      "sponseb\006proto3"
+      "\022\022\n\ncreated_at\030\005 \001(\t\022\022\n\nupdated_at\030\006 \001(\t" +
+      "\"q\n\025CreateLiveTextRequest\022\'\n\014base_reques" +
+      "t\030\001 \001(\0132\021.base.BaseRequest\022\r\n\005title\030\002 \001(" +
+      "\t\022\017\n\007content\030\003 \001(\t\022\017\n\007shop_id\030\004 \001(\003\"P\n\026C" +
+      "reateLiveTextResponse\022%\n\tbase_resp\030\001 \001(\013" +
+      "2\022.base.BaseResponse\022\017\n\007text_id\030\002 \001(\003\"q\n" +
+      "\025UpdateLiveTextRequest\022\'\n\014base_request\030\001" +
+      " \001(\0132\021.base.BaseRequest\022\017\n\007text_id\030\002 \001(\003" +
+      "\022\r\n\005title\030\003 \001(\t\022\017\n\007content\030\004 \001(\t\"?\n\026Upda" +
+      "teLiveTextResponse\022%\n\tbase_resp\030\001 \001(\0132\022." +
+      "base.BaseResponse\"|\n\023ListLiveTextRequest" +
+      "\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReques" +
+      "t\022\017\n\007shop_id\030\002 \001(\003\022+\n\npagination\030d \001(\0132\027" +
+      ".base.PaginationRequest\"\223\001\n\024ListLiveText" +
+      "Response\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseR" +
+      "esponse\022&\n\ttext_list\030\002 \003(\0132\023.glory_api.L" +
+      "iveText\022,\n\npagination\030d \001(\0132\030.base.Pagin" +
+      "ationResponse\"N\n\022GetLiveTextRequest\022\'\n\014b" +
+      "ase_request\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007" +
+      "text_id\030\002 \001(\003\"d\n\023GetLiveTextResponse\022%\n\t" +
+      "base_resp\030\001 \001(\0132\022.base.BaseResponse\022&\n\tl" +
+      "ive_text\030\002 \001(\0132\023.glory_api.LiveText\"S\n\026D" +
+      "eleteLiveTextsRequest\022\'\n\014base_request\030\001 " +
+      "\001(\0132\021.base.BaseRequest\022\020\n\010text_ids\030\002 \003(\003" +
+      "\"@\n\027DeleteLiveTextsResponse\022%\n\tbase_resp" +
+      "\030\001 \001(\0132\022.base.BaseResponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -9553,7 +9703,7 @@ public final class LiveTextOuterClass {
     internal_static_glory_api_LiveText_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_LiveText_descriptor,
-        new java.lang.String[] { "TextId", "Title", "Content", "User", "UpdatedAt", });
+        new java.lang.String[] { "TextId", "Title", "Content", "User", "CreatedAt", "UpdatedAt", });
     internal_static_glory_api_CreateLiveTextRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_glory_api_CreateLiveTextRequest_fieldAccessorTable = new

@@ -33,6 +33,8 @@ struct GloryApi_LiveText {
 
   var user: String = String()
 
+  var createdAt: String = String()
+
   var updatedAt: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -327,7 +329,8 @@ extension GloryApi_LiveText: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     2: .same(proto: "title"),
     3: .same(proto: "content"),
     4: .same(proto: "user"),
-    5: .standard(proto: "updated_at"),
+    5: .standard(proto: "created_at"),
+    6: .standard(proto: "updated_at"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -340,7 +343,8 @@ extension GloryApi_LiveText: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
       case 2: try { try decoder.decodeSingularStringField(value: &self.title) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.content) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.user) }()
-      case 5: try { try decoder.decodeSingularStringField(value: &self.updatedAt) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.updatedAt) }()
       default: break
       }
     }
@@ -359,8 +363,11 @@ extension GloryApi_LiveText: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     if !self.user.isEmpty {
       try visitor.visitSingularStringField(value: self.user, fieldNumber: 4)
     }
+    if !self.createdAt.isEmpty {
+      try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 5)
+    }
     if !self.updatedAt.isEmpty {
-      try visitor.visitSingularStringField(value: self.updatedAt, fieldNumber: 5)
+      try visitor.visitSingularStringField(value: self.updatedAt, fieldNumber: 6)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -370,6 +377,7 @@ extension GloryApi_LiveText: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     if lhs.title != rhs.title {return false}
     if lhs.content != rhs.content {return false}
     if lhs.user != rhs.user {return false}
+    if lhs.createdAt != rhs.createdAt {return false}
     if lhs.updatedAt != rhs.updatedAt {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

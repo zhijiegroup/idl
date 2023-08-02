@@ -142,8 +142,6 @@ export interface LoadLivePlanProductRequest {
   live_plan_id?: string;
   /** is load to playing product */
   is_playing?: boolean;
-  /** live room id */
-  room_id?: string;
 }
 
 export interface LoadLivePlanProductResponse {
@@ -159,7 +157,6 @@ export interface CreateLiveProductStatus {
 export interface CreateLiveProductStatusRequest {
   base_request?: base.BaseRequest;
   shop_id?: string;
-  room_id?: string;
   live_product_status?: Array<CreateLiveProductStatus>;
 }
 
@@ -209,7 +206,6 @@ export interface LiveProductStatus {
 export interface ListLiveProductStatusRequest {
   base_request?: base.BaseRequest;
   shop_id?: string;
-  room_id?: string;
   status?: string;
   pagination?: base.PaginationRequest;
 }
@@ -231,7 +227,7 @@ export interface DeleteLiveProductStatusResponse {
 
 export interface GetLivingProductStatusRequest {
   base_request?: base.BaseRequest;
-  room_id?: string;
+  shop_id?: string;
 }
 
 export interface GetLivingProductStatusResponse {
@@ -257,7 +253,7 @@ export interface LiveRecordResponse {
 
 export interface UpdateLiveProductIntroductStatusRequest {
   base_request?: base.BaseRequest;
-  room_id?: string;
+  shop_id?: string;
   live_product_status_id?: string;
   /** start or stop */
   action?: string;

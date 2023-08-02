@@ -10,6 +10,7 @@ export interface LiveText {
   title?: string;
   content?: string;
   user?: string;
+  created_at?: string;
   updated_at?: string;
 }
 
