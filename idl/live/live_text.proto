@@ -8,7 +8,8 @@ message LiveText {
     string title =2; 
     string content =3;
     string user =4; 
-    string updated_at =5; 
+    string created_at =5; 
+    string updated_at =6; 
 }
   
 message CreateLiveTextRequest {
