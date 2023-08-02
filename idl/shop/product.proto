@@ -14,7 +14,7 @@ message Product {
   string product_name = 3;
   int64 category_id = 4;
   repeated Sku sku = 5;
-  repeated Attribute attribute = 6;
+  //repeated Attribute attribute = 6;
   State state = 7;//商品状态
   repeated ProductImage images = 8;
   float product_price = 9;//价格,取所有sku 中最低的一个
