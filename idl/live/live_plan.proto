@@ -204,8 +204,8 @@ message GetLivingProductStatusRequest {
   base.BaseRequest base_request=1;
   int64 shop_id =2;
 }
-message GetLivingProductStatusResponse {
-  base.BaseResponse base_resp = 1;
+
+message LiveingProductStatus {
   int64 product_id =2;
   string product_name =3;
   double product_price =4;
@@ -213,6 +213,10 @@ message GetLivingProductStatusResponse {
   int32 live_room_order =6;
   string played_at =7;
   string product_description =8;
+}
+message GetLivingProductStatusResponse {
+  base.BaseResponse base_resp = 1;
+  LiveingProductStatus liveing_product_status = 2;
 }
 
 message LiveRecordRequest {
