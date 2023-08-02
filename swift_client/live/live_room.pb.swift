@@ -377,6 +377,8 @@ struct GloryApi_FinishedRoom {
 
   var userName: String = String()
 
+  var userAvatarURL: String = String()
+
   var sellerID: Int64 = 0
 
   var startTime: String = String()
@@ -384,8 +386,6 @@ struct GloryApi_FinishedRoom {
   var averageOnlineUser: Double = 0
 
   var roomProductAmount: Int64 = 0
-
-  var roomDealAmount: [GloryApi_DealAmount] = []
 
   var roomOrderAmount: Int64 = 0
 
@@ -396,6 +396,8 @@ struct GloryApi_FinishedRoom {
 
   /// 直播间的封面的image 的id
   var roomImageAttachmentID: Int64 = 0
+
+  var roomDealAmount: Double = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1311,15 +1313,16 @@ extension GloryApi_FinishedRoom: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "room_id"),
     2: .standard(proto: "user_name"),
-    3: .standard(proto: "seller_id"),
-    4: .standard(proto: "start_time"),
-    5: .standard(proto: "average_online_user"),
-    6: .standard(proto: "room_product_amount"),
-    7: .standard(proto: "room_deal_amount"),
+    3: .standard(proto: "user_avatar_url"),
+    4: .standard(proto: "seller_id"),
+    5: .standard(proto: "start_time"),
+    6: .standard(proto: "average_online_user"),
+    7: .standard(proto: "room_product_amount"),
     8: .standard(proto: "room_order_amount"),
     9: .standard(proto: "room_image_url"),
     10: .standard(proto: "room_title"),
     11: .standard(proto: "room_image_attachment_id"),
+    12: .standard(proto: "room_deal_amount"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1330,15 +1333,16 @@ extension GloryApi_FinishedRoom: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularInt64Field(value: &self.roomID) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.userName) }()
-      case 3: try { try decoder.decodeSingularInt64Field(value: &self.sellerID) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.startTime) }()
-      case 5: try { try decoder.decodeSingularDoubleField(value: &self.averageOnlineUser) }()
-      case 6: try { try decoder.decodeSingularInt64Field(value: &self.roomProductAmount) }()
-      case 7: try { try decoder.decodeRepeatedMessageField(value: &self.roomDealAmount) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.userAvatarURL) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.sellerID) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.startTime) }()
+      case 6: try { try decoder.decodeSingularDoubleField(value: &self.averageOnlineUser) }()
+      case 7: try { try decoder.decodeSingularInt64Field(value: &self.roomProductAmount) }()
       case 8: try { try decoder.decodeSingularInt64Field(value: &self.roomOrderAmount) }()
       case 9: try { try decoder.decodeSingularStringField(value: &self.roomImageURL) }()
       case 10: try { try decoder.decodeSingularStringField(value: &self.roomTitle) }()
       case 11: try { try decoder.decodeSingularInt64Field(value: &self.roomImageAttachmentID) }()
+      case 12: try { try decoder.decodeSingularDoubleField(value: &self.roomDealAmount) }()
       default: break
       }
     }
@@ -1351,20 +1355,20 @@ extension GloryApi_FinishedRoom: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     if !self.userName.isEmpty {
       try visitor.visitSingularStringField(value: self.userName, fieldNumber: 2)
     }
+    if !self.userAvatarURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.userAvatarURL, fieldNumber: 3)
+    }
     if self.sellerID != 0 {
-      try visitor.visitSingularInt64Field(value: self.sellerID, fieldNumber: 3)
+      try visitor.visitSingularInt64Field(value: self.sellerID, fieldNumber: 4)
     }
     if !self.startTime.isEmpty {
-      try visitor.visitSingularStringField(value: self.startTime, fieldNumber: 4)
+      try visitor.visitSingularStringField(value: self.startTime, fieldNumber: 5)
     }
     if self.averageOnlineUser != 0 {
-      try visitor.visitSingularDoubleField(value: self.averageOnlineUser, fieldNumber: 5)
+      try visitor.visitSingularDoubleField(value: self.averageOnlineUser, fieldNumber: 6)
     }
     if self.roomProductAmount != 0 {
-      try visitor.visitSingularInt64Field(value: self.roomProductAmount, fieldNumber: 6)
-    }
-    if !self.roomDealAmount.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.roomDealAmount, fieldNumber: 7)
+      try visitor.visitSingularInt64Field(value: self.roomProductAmount, fieldNumber: 7)
     }
     if self.roomOrderAmount != 0 {
       try visitor.visitSingularInt64Field(value: self.roomOrderAmount, fieldNumber: 8)
@@ -1378,21 +1382,25 @@ extension GloryApi_FinishedRoom: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     if self.roomImageAttachmentID != 0 {
       try visitor.visitSingularInt64Field(value: self.roomImageAttachmentID, fieldNumber: 11)
     }
+    if self.roomDealAmount != 0 {
+      try visitor.visitSingularDoubleField(value: self.roomDealAmount, fieldNumber: 12)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_FinishedRoom, rhs: GloryApi_FinishedRoom) -> Bool {
     if lhs.roomID != rhs.roomID {return false}
     if lhs.userName != rhs.userName {return false}
+    if lhs.userAvatarURL != rhs.userAvatarURL {return false}
     if lhs.sellerID != rhs.sellerID {return false}
     if lhs.startTime != rhs.startTime {return false}
     if lhs.averageOnlineUser != rhs.averageOnlineUser {return false}
     if lhs.roomProductAmount != rhs.roomProductAmount {return false}
-    if lhs.roomDealAmount != rhs.roomDealAmount {return false}
     if lhs.roomOrderAmount != rhs.roomOrderAmount {return false}
     if lhs.roomImageURL != rhs.roomImageURL {return false}
     if lhs.roomTitle != rhs.roomTitle {return false}
     if lhs.roomImageAttachmentID != rhs.roomImageAttachmentID {return false}
+    if lhs.roomDealAmount != rhs.roomDealAmount {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

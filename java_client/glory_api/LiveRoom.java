@@ -12232,58 +12232,46 @@ public final class LiveRoom {
         getUserNameBytes();
 
     /**
-     * <code>int64 seller_id = 3;</code>
+     * <code>string user_avatar_url = 3;</code>
+     * @return The userAvatarUrl.
+     */
+    java.lang.String getUserAvatarUrl();
+    /**
+     * <code>string user_avatar_url = 3;</code>
+     * @return The bytes for userAvatarUrl.
+     */
+    com.google.protobuf.ByteString
+        getUserAvatarUrlBytes();
+
+    /**
+     * <code>int64 seller_id = 4;</code>
      * @return The sellerId.
      */
     long getSellerId();
 
     /**
-     * <code>string start_time = 4;</code>
+     * <code>string start_time = 5;</code>
      * @return The startTime.
      */
     java.lang.String getStartTime();
     /**
-     * <code>string start_time = 4;</code>
+     * <code>string start_time = 5;</code>
      * @return The bytes for startTime.
      */
     com.google.protobuf.ByteString
         getStartTimeBytes();
 
     /**
-     * <code>double average_online_user = 5;</code>
+     * <code>double average_online_user = 6;</code>
      * @return The averageOnlineUser.
      */
     double getAverageOnlineUser();
 
     /**
-     * <code>int64 room_product_amount = 6;</code>
+     * <code>int64 room_product_amount = 7;</code>
      * @return The roomProductAmount.
      */
     long getRoomProductAmount();
-
-    /**
-     * <code>repeated .glory_api.DealAmount room_deal_amount = 7;</code>
-     */
-    java.util.List<glory_api.LiveRoom.DealAmount> 
-        getRoomDealAmountList();
-    /**
-     * <code>repeated .glory_api.DealAmount room_deal_amount = 7;</code>
-     */
-    glory_api.LiveRoom.DealAmount getRoomDealAmount(int index);
-    /**
-     * <code>repeated .glory_api.DealAmount room_deal_amount = 7;</code>
-     */
-    int getRoomDealAmountCount();
-    /**
-     * <code>repeated .glory_api.DealAmount room_deal_amount = 7;</code>
-     */
-    java.util.List<? extends glory_api.LiveRoom.DealAmountOrBuilder> 
-        getRoomDealAmountOrBuilderList();
-    /**
-     * <code>repeated .glory_api.DealAmount room_deal_amount = 7;</code>
-     */
-    glory_api.LiveRoom.DealAmountOrBuilder getRoomDealAmountOrBuilder(
-        int index);
 
     /**
      * <code>int64 room_order_amount = 8;</code>
@@ -12332,6 +12320,12 @@ public final class LiveRoom {
      * @return The roomImageAttachmentId.
      */
     long getRoomImageAttachmentId();
+
+    /**
+     * <code>double room_deal_amount = 12;</code>
+     * @return The roomDealAmount.
+     */
+    double getRoomDealAmount();
   }
   /**
    * Protobuf type {@code glory_api.FinishedRoom}
@@ -12347,8 +12341,8 @@ public final class LiveRoom {
     }
     private FinishedRoom() {
       userName_ = "";
+      userAvatarUrl_ = "";
       startTime_ = "";
-      roomDealAmount_ = java.util.Collections.emptyList();
       roomImageUrl_ = "";
       roomTitle_ = "";
     }
@@ -12373,7 +12367,6 @@ public final class LiveRoom {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -12395,34 +12388,31 @@ public final class LiveRoom {
               userName_ = s;
               break;
             }
-            case 24: {
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              userAvatarUrl_ = s;
+              break;
+            }
+            case 32: {
 
               sellerId_ = input.readInt64();
               break;
             }
-            case 34: {
+            case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
               startTime_ = s;
               break;
             }
-            case 41: {
+            case 49: {
 
               averageOnlineUser_ = input.readDouble();
               break;
             }
-            case 48: {
+            case 56: {
 
               roomProductAmount_ = input.readInt64();
-              break;
-            }
-            case 58: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                roomDealAmount_ = new java.util.ArrayList<glory_api.LiveRoom.DealAmount>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              roomDealAmount_.add(
-                  input.readMessage(glory_api.LiveRoom.DealAmount.parser(), extensionRegistry));
               break;
             }
             case 64: {
@@ -12447,6 +12437,11 @@ public final class LiveRoom {
               roomImageAttachmentId_ = input.readInt64();
               break;
             }
+            case 97: {
+
+              roomDealAmount_ = input.readDouble();
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -12462,9 +12457,6 @@ public final class LiveRoom {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          roomDealAmount_ = java.util.Collections.unmodifiableList(roomDealAmount_);
-        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -12531,10 +12523,48 @@ public final class LiveRoom {
       }
     }
 
-    public static final int SELLER_ID_FIELD_NUMBER = 3;
+    public static final int USER_AVATAR_URL_FIELD_NUMBER = 3;
+    private volatile java.lang.Object userAvatarUrl_;
+    /**
+     * <code>string user_avatar_url = 3;</code>
+     * @return The userAvatarUrl.
+     */
+    @java.lang.Override
+    public java.lang.String getUserAvatarUrl() {
+      java.lang.Object ref = userAvatarUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userAvatarUrl_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string user_avatar_url = 3;</code>
+     * @return The bytes for userAvatarUrl.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserAvatarUrlBytes() {
+      java.lang.Object ref = userAvatarUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userAvatarUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SELLER_ID_FIELD_NUMBER = 4;
     private long sellerId_;
     /**
-     * <code>int64 seller_id = 3;</code>
+     * <code>int64 seller_id = 4;</code>
      * @return The sellerId.
      */
     @java.lang.Override
@@ -12542,10 +12572,10 @@ public final class LiveRoom {
       return sellerId_;
     }
 
-    public static final int START_TIME_FIELD_NUMBER = 4;
+    public static final int START_TIME_FIELD_NUMBER = 5;
     private volatile java.lang.Object startTime_;
     /**
-     * <code>string start_time = 4;</code>
+     * <code>string start_time = 5;</code>
      * @return The startTime.
      */
     @java.lang.Override
@@ -12562,7 +12592,7 @@ public final class LiveRoom {
       }
     }
     /**
-     * <code>string start_time = 4;</code>
+     * <code>string start_time = 5;</code>
      * @return The bytes for startTime.
      */
     @java.lang.Override
@@ -12580,10 +12610,10 @@ public final class LiveRoom {
       }
     }
 
-    public static final int AVERAGE_ONLINE_USER_FIELD_NUMBER = 5;
+    public static final int AVERAGE_ONLINE_USER_FIELD_NUMBER = 6;
     private double averageOnlineUser_;
     /**
-     * <code>double average_online_user = 5;</code>
+     * <code>double average_online_user = 6;</code>
      * @return The averageOnlineUser.
      */
     @java.lang.Override
@@ -12591,55 +12621,15 @@ public final class LiveRoom {
       return averageOnlineUser_;
     }
 
-    public static final int ROOM_PRODUCT_AMOUNT_FIELD_NUMBER = 6;
+    public static final int ROOM_PRODUCT_AMOUNT_FIELD_NUMBER = 7;
     private long roomProductAmount_;
     /**
-     * <code>int64 room_product_amount = 6;</code>
+     * <code>int64 room_product_amount = 7;</code>
      * @return The roomProductAmount.
      */
     @java.lang.Override
     public long getRoomProductAmount() {
       return roomProductAmount_;
-    }
-
-    public static final int ROOM_DEAL_AMOUNT_FIELD_NUMBER = 7;
-    private java.util.List<glory_api.LiveRoom.DealAmount> roomDealAmount_;
-    /**
-     * <code>repeated .glory_api.DealAmount room_deal_amount = 7;</code>
-     */
-    @java.lang.Override
-    public java.util.List<glory_api.LiveRoom.DealAmount> getRoomDealAmountList() {
-      return roomDealAmount_;
-    }
-    /**
-     * <code>repeated .glory_api.DealAmount room_deal_amount = 7;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends glory_api.LiveRoom.DealAmountOrBuilder> 
-        getRoomDealAmountOrBuilderList() {
-      return roomDealAmount_;
-    }
-    /**
-     * <code>repeated .glory_api.DealAmount room_deal_amount = 7;</code>
-     */
-    @java.lang.Override
-    public int getRoomDealAmountCount() {
-      return roomDealAmount_.size();
-    }
-    /**
-     * <code>repeated .glory_api.DealAmount room_deal_amount = 7;</code>
-     */
-    @java.lang.Override
-    public glory_api.LiveRoom.DealAmount getRoomDealAmount(int index) {
-      return roomDealAmount_.get(index);
-    }
-    /**
-     * <code>repeated .glory_api.DealAmount room_deal_amount = 7;</code>
-     */
-    @java.lang.Override
-    public glory_api.LiveRoom.DealAmountOrBuilder getRoomDealAmountOrBuilder(
-        int index) {
-      return roomDealAmount_.get(index);
     }
 
     public static final int ROOM_ORDER_AMOUNT_FIELD_NUMBER = 8;
@@ -12752,6 +12742,17 @@ public final class LiveRoom {
       return roomImageAttachmentId_;
     }
 
+    public static final int ROOM_DEAL_AMOUNT_FIELD_NUMBER = 12;
+    private double roomDealAmount_;
+    /**
+     * <code>double room_deal_amount = 12;</code>
+     * @return The roomDealAmount.
+     */
+    @java.lang.Override
+    public double getRoomDealAmount() {
+      return roomDealAmount_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -12772,20 +12773,20 @@ public final class LiveRoom {
       if (!getUserNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, userName_);
       }
+      if (!getUserAvatarUrlBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, userAvatarUrl_);
+      }
       if (sellerId_ != 0L) {
-        output.writeInt64(3, sellerId_);
+        output.writeInt64(4, sellerId_);
       }
       if (!getStartTimeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, startTime_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, startTime_);
       }
       if (averageOnlineUser_ != 0D) {
-        output.writeDouble(5, averageOnlineUser_);
+        output.writeDouble(6, averageOnlineUser_);
       }
       if (roomProductAmount_ != 0L) {
-        output.writeInt64(6, roomProductAmount_);
-      }
-      for (int i = 0; i < roomDealAmount_.size(); i++) {
-        output.writeMessage(7, roomDealAmount_.get(i));
+        output.writeInt64(7, roomProductAmount_);
       }
       if (roomOrderAmount_ != 0L) {
         output.writeInt64(8, roomOrderAmount_);
@@ -12798,6 +12799,9 @@ public final class LiveRoom {
       }
       if (roomImageAttachmentId_ != 0L) {
         output.writeInt64(11, roomImageAttachmentId_);
+      }
+      if (roomDealAmount_ != 0D) {
+        output.writeDouble(12, roomDealAmount_);
       }
       unknownFields.writeTo(output);
     }
@@ -12815,24 +12819,23 @@ public final class LiveRoom {
       if (!getUserNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, userName_);
       }
+      if (!getUserAvatarUrlBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, userAvatarUrl_);
+      }
       if (sellerId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, sellerId_);
+          .computeInt64Size(4, sellerId_);
       }
       if (!getStartTimeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, startTime_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, startTime_);
       }
       if (averageOnlineUser_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(5, averageOnlineUser_);
+          .computeDoubleSize(6, averageOnlineUser_);
       }
       if (roomProductAmount_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(6, roomProductAmount_);
-      }
-      for (int i = 0; i < roomDealAmount_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, roomDealAmount_.get(i));
+          .computeInt64Size(7, roomProductAmount_);
       }
       if (roomOrderAmount_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -12847,6 +12850,10 @@ public final class LiveRoom {
       if (roomImageAttachmentId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(11, roomImageAttachmentId_);
+      }
+      if (roomDealAmount_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(12, roomDealAmount_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -12867,6 +12874,8 @@ public final class LiveRoom {
           != other.getRoomId()) return false;
       if (!getUserName()
           .equals(other.getUserName())) return false;
+      if (!getUserAvatarUrl()
+          .equals(other.getUserAvatarUrl())) return false;
       if (getSellerId()
           != other.getSellerId()) return false;
       if (!getStartTime()
@@ -12876,8 +12885,6 @@ public final class LiveRoom {
               other.getAverageOnlineUser())) return false;
       if (getRoomProductAmount()
           != other.getRoomProductAmount()) return false;
-      if (!getRoomDealAmountList()
-          .equals(other.getRoomDealAmountList())) return false;
       if (getRoomOrderAmount()
           != other.getRoomOrderAmount()) return false;
       if (!getRoomImageUrl()
@@ -12886,6 +12893,9 @@ public final class LiveRoom {
           .equals(other.getRoomTitle())) return false;
       if (getRoomImageAttachmentId()
           != other.getRoomImageAttachmentId()) return false;
+      if (java.lang.Double.doubleToLongBits(getRoomDealAmount())
+          != java.lang.Double.doubleToLongBits(
+              other.getRoomDealAmount())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -12902,6 +12912,8 @@ public final class LiveRoom {
           getRoomId());
       hash = (37 * hash) + USER_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getUserName().hashCode();
+      hash = (37 * hash) + USER_AVATAR_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getUserAvatarUrl().hashCode();
       hash = (37 * hash) + SELLER_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getSellerId());
@@ -12913,10 +12925,6 @@ public final class LiveRoom {
       hash = (37 * hash) + ROOM_PRODUCT_AMOUNT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getRoomProductAmount());
-      if (getRoomDealAmountCount() > 0) {
-        hash = (37 * hash) + ROOM_DEAL_AMOUNT_FIELD_NUMBER;
-        hash = (53 * hash) + getRoomDealAmountList().hashCode();
-      }
       hash = (37 * hash) + ROOM_ORDER_AMOUNT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getRoomOrderAmount());
@@ -12927,6 +12935,9 @@ public final class LiveRoom {
       hash = (37 * hash) + ROOM_IMAGE_ATTACHMENT_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getRoomImageAttachmentId());
+      hash = (37 * hash) + ROOM_DEAL_AMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getRoomDealAmount()));
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -13055,7 +13066,6 @@ public final class LiveRoom {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getRoomDealAmountFieldBuilder();
         }
       }
       @java.lang.Override
@@ -13065,6 +13075,8 @@ public final class LiveRoom {
 
         userName_ = "";
 
+        userAvatarUrl_ = "";
+
         sellerId_ = 0L;
 
         startTime_ = "";
@@ -13073,12 +13085,6 @@ public final class LiveRoom {
 
         roomProductAmount_ = 0L;
 
-        if (roomDealAmountBuilder_ == null) {
-          roomDealAmount_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          roomDealAmountBuilder_.clear();
-        }
         roomOrderAmount_ = 0L;
 
         roomImageUrl_ = "";
@@ -13086,6 +13092,8 @@ public final class LiveRoom {
         roomTitle_ = "";
 
         roomImageAttachmentId_ = 0L;
+
+        roomDealAmount_ = 0D;
 
         return this;
       }
@@ -13113,26 +13121,18 @@ public final class LiveRoom {
       @java.lang.Override
       public glory_api.LiveRoom.FinishedRoom buildPartial() {
         glory_api.LiveRoom.FinishedRoom result = new glory_api.LiveRoom.FinishedRoom(this);
-        int from_bitField0_ = bitField0_;
         result.roomId_ = roomId_;
         result.userName_ = userName_;
+        result.userAvatarUrl_ = userAvatarUrl_;
         result.sellerId_ = sellerId_;
         result.startTime_ = startTime_;
         result.averageOnlineUser_ = averageOnlineUser_;
         result.roomProductAmount_ = roomProductAmount_;
-        if (roomDealAmountBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            roomDealAmount_ = java.util.Collections.unmodifiableList(roomDealAmount_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.roomDealAmount_ = roomDealAmount_;
-        } else {
-          result.roomDealAmount_ = roomDealAmountBuilder_.build();
-        }
         result.roomOrderAmount_ = roomOrderAmount_;
         result.roomImageUrl_ = roomImageUrl_;
         result.roomTitle_ = roomTitle_;
         result.roomImageAttachmentId_ = roomImageAttachmentId_;
+        result.roomDealAmount_ = roomDealAmount_;
         onBuilt();
         return result;
       }
@@ -13188,6 +13188,10 @@ public final class LiveRoom {
           userName_ = other.userName_;
           onChanged();
         }
+        if (!other.getUserAvatarUrl().isEmpty()) {
+          userAvatarUrl_ = other.userAvatarUrl_;
+          onChanged();
+        }
         if (other.getSellerId() != 0L) {
           setSellerId(other.getSellerId());
         }
@@ -13200,32 +13204,6 @@ public final class LiveRoom {
         }
         if (other.getRoomProductAmount() != 0L) {
           setRoomProductAmount(other.getRoomProductAmount());
-        }
-        if (roomDealAmountBuilder_ == null) {
-          if (!other.roomDealAmount_.isEmpty()) {
-            if (roomDealAmount_.isEmpty()) {
-              roomDealAmount_ = other.roomDealAmount_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureRoomDealAmountIsMutable();
-              roomDealAmount_.addAll(other.roomDealAmount_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.roomDealAmount_.isEmpty()) {
-            if (roomDealAmountBuilder_.isEmpty()) {
-              roomDealAmountBuilder_.dispose();
-              roomDealAmountBuilder_ = null;
-              roomDealAmount_ = other.roomDealAmount_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              roomDealAmountBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getRoomDealAmountFieldBuilder() : null;
-            } else {
-              roomDealAmountBuilder_.addAllMessages(other.roomDealAmount_);
-            }
-          }
         }
         if (other.getRoomOrderAmount() != 0L) {
           setRoomOrderAmount(other.getRoomOrderAmount());
@@ -13240,6 +13218,9 @@ public final class LiveRoom {
         }
         if (other.getRoomImageAttachmentId() != 0L) {
           setRoomImageAttachmentId(other.getRoomImageAttachmentId());
+        }
+        if (other.getRoomDealAmount() != 0D) {
+          setRoomDealAmount(other.getRoomDealAmount());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -13269,7 +13250,6 @@ public final class LiveRoom {
         }
         return this;
       }
-      private int bitField0_;
 
       private long roomId_ ;
       /**
@@ -13378,9 +13358,85 @@ public final class LiveRoom {
         return this;
       }
 
+      private java.lang.Object userAvatarUrl_ = "";
+      /**
+       * <code>string user_avatar_url = 3;</code>
+       * @return The userAvatarUrl.
+       */
+      public java.lang.String getUserAvatarUrl() {
+        java.lang.Object ref = userAvatarUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userAvatarUrl_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string user_avatar_url = 3;</code>
+       * @return The bytes for userAvatarUrl.
+       */
+      public com.google.protobuf.ByteString
+          getUserAvatarUrlBytes() {
+        java.lang.Object ref = userAvatarUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userAvatarUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string user_avatar_url = 3;</code>
+       * @param value The userAvatarUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserAvatarUrl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        userAvatarUrl_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_avatar_url = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserAvatarUrl() {
+        
+        userAvatarUrl_ = getDefaultInstance().getUserAvatarUrl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_avatar_url = 3;</code>
+       * @param value The bytes for userAvatarUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserAvatarUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        userAvatarUrl_ = value;
+        onChanged();
+        return this;
+      }
+
       private long sellerId_ ;
       /**
-       * <code>int64 seller_id = 3;</code>
+       * <code>int64 seller_id = 4;</code>
        * @return The sellerId.
        */
       @java.lang.Override
@@ -13388,7 +13444,7 @@ public final class LiveRoom {
         return sellerId_;
       }
       /**
-       * <code>int64 seller_id = 3;</code>
+       * <code>int64 seller_id = 4;</code>
        * @param value The sellerId to set.
        * @return This builder for chaining.
        */
@@ -13399,7 +13455,7 @@ public final class LiveRoom {
         return this;
       }
       /**
-       * <code>int64 seller_id = 3;</code>
+       * <code>int64 seller_id = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearSellerId() {
@@ -13411,7 +13467,7 @@ public final class LiveRoom {
 
       private java.lang.Object startTime_ = "";
       /**
-       * <code>string start_time = 4;</code>
+       * <code>string start_time = 5;</code>
        * @return The startTime.
        */
       public java.lang.String getStartTime() {
@@ -13427,7 +13483,7 @@ public final class LiveRoom {
         }
       }
       /**
-       * <code>string start_time = 4;</code>
+       * <code>string start_time = 5;</code>
        * @return The bytes for startTime.
        */
       public com.google.protobuf.ByteString
@@ -13444,7 +13500,7 @@ public final class LiveRoom {
         }
       }
       /**
-       * <code>string start_time = 4;</code>
+       * <code>string start_time = 5;</code>
        * @param value The startTime to set.
        * @return This builder for chaining.
        */
@@ -13459,7 +13515,7 @@ public final class LiveRoom {
         return this;
       }
       /**
-       * <code>string start_time = 4;</code>
+       * <code>string start_time = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearStartTime() {
@@ -13469,7 +13525,7 @@ public final class LiveRoom {
         return this;
       }
       /**
-       * <code>string start_time = 4;</code>
+       * <code>string start_time = 5;</code>
        * @param value The bytes for startTime to set.
        * @return This builder for chaining.
        */
@@ -13487,7 +13543,7 @@ public final class LiveRoom {
 
       private double averageOnlineUser_ ;
       /**
-       * <code>double average_online_user = 5;</code>
+       * <code>double average_online_user = 6;</code>
        * @return The averageOnlineUser.
        */
       @java.lang.Override
@@ -13495,7 +13551,7 @@ public final class LiveRoom {
         return averageOnlineUser_;
       }
       /**
-       * <code>double average_online_user = 5;</code>
+       * <code>double average_online_user = 6;</code>
        * @param value The averageOnlineUser to set.
        * @return This builder for chaining.
        */
@@ -13506,7 +13562,7 @@ public final class LiveRoom {
         return this;
       }
       /**
-       * <code>double average_online_user = 5;</code>
+       * <code>double average_online_user = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearAverageOnlineUser() {
@@ -13518,7 +13574,7 @@ public final class LiveRoom {
 
       private long roomProductAmount_ ;
       /**
-       * <code>int64 room_product_amount = 6;</code>
+       * <code>int64 room_product_amount = 7;</code>
        * @return The roomProductAmount.
        */
       @java.lang.Override
@@ -13526,7 +13582,7 @@ public final class LiveRoom {
         return roomProductAmount_;
       }
       /**
-       * <code>int64 room_product_amount = 6;</code>
+       * <code>int64 room_product_amount = 7;</code>
        * @param value The roomProductAmount to set.
        * @return This builder for chaining.
        */
@@ -13537,7 +13593,7 @@ public final class LiveRoom {
         return this;
       }
       /**
-       * <code>int64 room_product_amount = 6;</code>
+       * <code>int64 room_product_amount = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearRoomProductAmount() {
@@ -13545,246 +13601,6 @@ public final class LiveRoom {
         roomProductAmount_ = 0L;
         onChanged();
         return this;
-      }
-
-      private java.util.List<glory_api.LiveRoom.DealAmount> roomDealAmount_ =
-        java.util.Collections.emptyList();
-      private void ensureRoomDealAmountIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          roomDealAmount_ = new java.util.ArrayList<glory_api.LiveRoom.DealAmount>(roomDealAmount_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          glory_api.LiveRoom.DealAmount, glory_api.LiveRoom.DealAmount.Builder, glory_api.LiveRoom.DealAmountOrBuilder> roomDealAmountBuilder_;
-
-      /**
-       * <code>repeated .glory_api.DealAmount room_deal_amount = 7;</code>
-       */
-      public java.util.List<glory_api.LiveRoom.DealAmount> getRoomDealAmountList() {
-        if (roomDealAmountBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(roomDealAmount_);
-        } else {
-          return roomDealAmountBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .glory_api.DealAmount room_deal_amount = 7;</code>
-       */
-      public int getRoomDealAmountCount() {
-        if (roomDealAmountBuilder_ == null) {
-          return roomDealAmount_.size();
-        } else {
-          return roomDealAmountBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .glory_api.DealAmount room_deal_amount = 7;</code>
-       */
-      public glory_api.LiveRoom.DealAmount getRoomDealAmount(int index) {
-        if (roomDealAmountBuilder_ == null) {
-          return roomDealAmount_.get(index);
-        } else {
-          return roomDealAmountBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .glory_api.DealAmount room_deal_amount = 7;</code>
-       */
-      public Builder setRoomDealAmount(
-          int index, glory_api.LiveRoom.DealAmount value) {
-        if (roomDealAmountBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureRoomDealAmountIsMutable();
-          roomDealAmount_.set(index, value);
-          onChanged();
-        } else {
-          roomDealAmountBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .glory_api.DealAmount room_deal_amount = 7;</code>
-       */
-      public Builder setRoomDealAmount(
-          int index, glory_api.LiveRoom.DealAmount.Builder builderForValue) {
-        if (roomDealAmountBuilder_ == null) {
-          ensureRoomDealAmountIsMutable();
-          roomDealAmount_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          roomDealAmountBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .glory_api.DealAmount room_deal_amount = 7;</code>
-       */
-      public Builder addRoomDealAmount(glory_api.LiveRoom.DealAmount value) {
-        if (roomDealAmountBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureRoomDealAmountIsMutable();
-          roomDealAmount_.add(value);
-          onChanged();
-        } else {
-          roomDealAmountBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .glory_api.DealAmount room_deal_amount = 7;</code>
-       */
-      public Builder addRoomDealAmount(
-          int index, glory_api.LiveRoom.DealAmount value) {
-        if (roomDealAmountBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureRoomDealAmountIsMutable();
-          roomDealAmount_.add(index, value);
-          onChanged();
-        } else {
-          roomDealAmountBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .glory_api.DealAmount room_deal_amount = 7;</code>
-       */
-      public Builder addRoomDealAmount(
-          glory_api.LiveRoom.DealAmount.Builder builderForValue) {
-        if (roomDealAmountBuilder_ == null) {
-          ensureRoomDealAmountIsMutable();
-          roomDealAmount_.add(builderForValue.build());
-          onChanged();
-        } else {
-          roomDealAmountBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .glory_api.DealAmount room_deal_amount = 7;</code>
-       */
-      public Builder addRoomDealAmount(
-          int index, glory_api.LiveRoom.DealAmount.Builder builderForValue) {
-        if (roomDealAmountBuilder_ == null) {
-          ensureRoomDealAmountIsMutable();
-          roomDealAmount_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          roomDealAmountBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .glory_api.DealAmount room_deal_amount = 7;</code>
-       */
-      public Builder addAllRoomDealAmount(
-          java.lang.Iterable<? extends glory_api.LiveRoom.DealAmount> values) {
-        if (roomDealAmountBuilder_ == null) {
-          ensureRoomDealAmountIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, roomDealAmount_);
-          onChanged();
-        } else {
-          roomDealAmountBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .glory_api.DealAmount room_deal_amount = 7;</code>
-       */
-      public Builder clearRoomDealAmount() {
-        if (roomDealAmountBuilder_ == null) {
-          roomDealAmount_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          roomDealAmountBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .glory_api.DealAmount room_deal_amount = 7;</code>
-       */
-      public Builder removeRoomDealAmount(int index) {
-        if (roomDealAmountBuilder_ == null) {
-          ensureRoomDealAmountIsMutable();
-          roomDealAmount_.remove(index);
-          onChanged();
-        } else {
-          roomDealAmountBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .glory_api.DealAmount room_deal_amount = 7;</code>
-       */
-      public glory_api.LiveRoom.DealAmount.Builder getRoomDealAmountBuilder(
-          int index) {
-        return getRoomDealAmountFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .glory_api.DealAmount room_deal_amount = 7;</code>
-       */
-      public glory_api.LiveRoom.DealAmountOrBuilder getRoomDealAmountOrBuilder(
-          int index) {
-        if (roomDealAmountBuilder_ == null) {
-          return roomDealAmount_.get(index);  } else {
-          return roomDealAmountBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .glory_api.DealAmount room_deal_amount = 7;</code>
-       */
-      public java.util.List<? extends glory_api.LiveRoom.DealAmountOrBuilder> 
-           getRoomDealAmountOrBuilderList() {
-        if (roomDealAmountBuilder_ != null) {
-          return roomDealAmountBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(roomDealAmount_);
-        }
-      }
-      /**
-       * <code>repeated .glory_api.DealAmount room_deal_amount = 7;</code>
-       */
-      public glory_api.LiveRoom.DealAmount.Builder addRoomDealAmountBuilder() {
-        return getRoomDealAmountFieldBuilder().addBuilder(
-            glory_api.LiveRoom.DealAmount.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .glory_api.DealAmount room_deal_amount = 7;</code>
-       */
-      public glory_api.LiveRoom.DealAmount.Builder addRoomDealAmountBuilder(
-          int index) {
-        return getRoomDealAmountFieldBuilder().addBuilder(
-            index, glory_api.LiveRoom.DealAmount.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .glory_api.DealAmount room_deal_amount = 7;</code>
-       */
-      public java.util.List<glory_api.LiveRoom.DealAmount.Builder> 
-           getRoomDealAmountBuilderList() {
-        return getRoomDealAmountFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          glory_api.LiveRoom.DealAmount, glory_api.LiveRoom.DealAmount.Builder, glory_api.LiveRoom.DealAmountOrBuilder> 
-          getRoomDealAmountFieldBuilder() {
-        if (roomDealAmountBuilder_ == null) {
-          roomDealAmountBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              glory_api.LiveRoom.DealAmount, glory_api.LiveRoom.DealAmount.Builder, glory_api.LiveRoom.DealAmountOrBuilder>(
-                  roomDealAmount_,
-                  ((bitField0_ & 0x00000001) != 0),
-                  getParentForChildren(),
-                  isClean());
-          roomDealAmount_ = null;
-        }
-        return roomDealAmountBuilder_;
       }
 
       private long roomOrderAmount_ ;
@@ -14029,6 +13845,37 @@ public final class LiveRoom {
       public Builder clearRoomImageAttachmentId() {
         
         roomImageAttachmentId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private double roomDealAmount_ ;
+      /**
+       * <code>double room_deal_amount = 12;</code>
+       * @return The roomDealAmount.
+       */
+      @java.lang.Override
+      public double getRoomDealAmount() {
+        return roomDealAmount_;
+      }
+      /**
+       * <code>double room_deal_amount = 12;</code>
+       * @param value The roomDealAmount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRoomDealAmount(double value) {
+        
+        roomDealAmount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double room_deal_amount = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRoomDealAmount() {
+        
+        roomDealAmount_ = 0D;
         onChanged();
         return this;
       }
@@ -19839,34 +19686,34 @@ public final class LiveRoom {
       "est\022\017\n\007room_id\030\002 \001(\003\";\n\022DeleteRoomRespon" +
       "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
       "e\"-\n\nDealAmount\022\017\n\007curreny\030\001 \001(\t\022\016\n\006amou" +
-      "nt\030\002 \001(\001\"\255\002\n\014FinishedRoom\022\017\n\007room_id\030\001 \001" +
-      "(\003\022\021\n\tuser_name\030\002 \001(\t\022\021\n\tseller_id\030\003 \001(\003" +
-      "\022\022\n\nstart_time\030\004 \001(\t\022\033\n\023average_online_u" +
-      "ser\030\005 \001(\001\022\033\n\023room_product_amount\030\006 \001(\003\022/" +
-      "\n\020room_deal_amount\030\007 \003(\0132\025.glory_api.Dea" +
-      "lAmount\022\031\n\021room_order_amount\030\010 \001(\003\022\026\n\016ro" +
-      "om_image_url\030\t \001(\t\022\022\n\nroom_title\030\n \001(\t\022 " +
-      "\n\030room_image_attachment_id\030\013 \001(\003\"\200\001\n\027Lis" +
-      "tFinishedRoomRequest\022\'\n\014base_request\030\001 \001" +
-      "(\0132\021.base.BaseRequest\022\017\n\007shop_id\030\002 \001(\003\022+" +
-      "\n\npagination\030d \001(\0132\027.base.PaginationRequ" +
-      "est\"\226\001\n\030ListFinishedRoomResponse\022%\n\tbase" +
-      "_resp\030\001 \001(\0132\022.base.BaseResponse\022%\n\004room\030" +
-      "\002 \003(\0132\027.glory_api.FinishedRoom\022,\n\npagina" +
-      "tion\030d \001(\0132\030.base.PaginationResponse\"o\n\027" +
-      "GetLiveChartDataRequest\022\'\n\014base_request\030" +
-      "\001 \001(\0132\021.base.BaseRequest\022\017\n\007shop_id\030\002 \001(" +
-      "\003\022\r\n\005start\030\003 \001(\003\022\013\n\003end\030\004 \001(\003\"{\n\rLiveCha" +
-      "rtData\022\014\n\004date\030\001 \001(\t\022\023\n\013deal_amount\030\002 \001(" +
-      "\001\022\031\n\021room_buyer_amount\030\003 \001(\003\022\031\n\021room_ord" +
-      "er_amount\030\004 \001(\003\022\021\n\ttimestamp\030\005 \001(\003\"\222\001\n\010L" +
-      "iveData\0221\n\017live_chart_data\030\001 \003(\0132\030.glory" +
-      "_api.LiveChartData\022\031\n\021total_deal_amount\030" +
-      "\002 \001(\001\022\034\n\024total_visitor_amount\030\003 \001(\003\022\032\n\022t" +
-      "otal_order_amount\030\004 \001(\003\"i\n\030GetLiveChartD" +
-      "ataResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
-      "seResponse\022&\n\tlive_data\030\002 \001(\0132\023.glory_ap" +
-      "i.LiveDatab\006proto3"
+      "nt\030\002 \001(\001\"\257\002\n\014FinishedRoom\022\017\n\007room_id\030\001 \001" +
+      "(\003\022\021\n\tuser_name\030\002 \001(\t\022\027\n\017user_avatar_url" +
+      "\030\003 \001(\t\022\021\n\tseller_id\030\004 \001(\003\022\022\n\nstart_time\030" +
+      "\005 \001(\t\022\033\n\023average_online_user\030\006 \001(\001\022\033\n\023ro" +
+      "om_product_amount\030\007 \001(\003\022\031\n\021room_order_am" +
+      "ount\030\010 \001(\003\022\026\n\016room_image_url\030\t \001(\t\022\022\n\nro" +
+      "om_title\030\n \001(\t\022 \n\030room_image_attachment_" +
+      "id\030\013 \001(\003\022\030\n\020room_deal_amount\030\014 \001(\001\"\200\001\n\027L" +
+      "istFinishedRoomRequest\022\'\n\014base_request\030\001" +
+      " \001(\0132\021.base.BaseRequest\022\017\n\007shop_id\030\002 \001(\003" +
+      "\022+\n\npagination\030d \001(\0132\027.base.PaginationRe" +
+      "quest\"\226\001\n\030ListFinishedRoomResponse\022%\n\tba" +
+      "se_resp\030\001 \001(\0132\022.base.BaseResponse\022%\n\004roo" +
+      "m\030\002 \003(\0132\027.glory_api.FinishedRoom\022,\n\npagi" +
+      "nation\030d \001(\0132\030.base.PaginationResponse\"o" +
+      "\n\027GetLiveChartDataRequest\022\'\n\014base_reques" +
+      "t\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007shop_id\030\002 " +
+      "\001(\003\022\r\n\005start\030\003 \001(\003\022\013\n\003end\030\004 \001(\003\"{\n\rLiveC" +
+      "hartData\022\014\n\004date\030\001 \001(\t\022\023\n\013deal_amount\030\002 " +
+      "\001(\001\022\031\n\021room_buyer_amount\030\003 \001(\003\022\031\n\021room_o" +
+      "rder_amount\030\004 \001(\003\022\021\n\ttimestamp\030\005 \001(\003\"\222\001\n" +
+      "\010LiveData\0221\n\017live_chart_data\030\001 \003(\0132\030.glo" +
+      "ry_api.LiveChartData\022\031\n\021total_deal_amoun" +
+      "t\030\002 \001(\001\022\034\n\024total_visitor_amount\030\003 \001(\003\022\032\n" +
+      "\022total_order_amount\030\004 \001(\003\"i\n\030GetLiveChar" +
+      "tDataResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
+      "BaseResponse\022&\n\tlive_data\030\002 \001(\0132\023.glory_" +
+      "api.LiveDatab\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -19950,7 +19797,7 @@ public final class LiveRoom {
     internal_static_glory_api_FinishedRoom_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_FinishedRoom_descriptor,
-        new java.lang.String[] { "RoomId", "UserName", "SellerId", "StartTime", "AverageOnlineUser", "RoomProductAmount", "RoomDealAmount", "RoomOrderAmount", "RoomImageUrl", "RoomTitle", "RoomImageAttachmentId", });
+        new java.lang.String[] { "RoomId", "UserName", "UserAvatarUrl", "SellerId", "StartTime", "AverageOnlineUser", "RoomProductAmount", "RoomOrderAmount", "RoomImageUrl", "RoomTitle", "RoomImageAttachmentId", "RoomDealAmount", });
     internal_static_glory_api_ListFinishedRoomRequest_descriptor =
       getDescriptor().getMessageTypes().get(13);
     internal_static_glory_api_ListFinishedRoomRequest_fieldAccessorTable = new
