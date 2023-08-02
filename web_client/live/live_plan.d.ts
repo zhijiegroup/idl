@@ -230,8 +230,7 @@ export interface GetLivingProductStatusRequest {
   shop_id?: string;
 }
 
-export interface GetLivingProductStatusResponse {
-  base_resp?: base.BaseResponse;
+export interface LiveingProductStatus {
   product_id?: string;
   product_name?: string;
   product_price?: number;
@@ -239,6 +238,11 @@ export interface GetLivingProductStatusResponse {
   live_room_order?: number;
   played_at?: string;
   product_description?: string;
+}
+
+export interface GetLivingProductStatusResponse {
+  base_resp?: base.BaseResponse;
+  liveing_product_status?: LiveingProductStatus;
 }
 
 export interface LiveRecordRequest {

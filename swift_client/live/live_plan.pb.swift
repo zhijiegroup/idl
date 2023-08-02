@@ -926,19 +926,10 @@ struct GloryApi_GetLivingProductStatusRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetLivingProductStatusResponse {
+struct GloryApi_LiveingProductStatus {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
-
-  var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
-    set {_baseResp = newValue}
-  }
-  /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
-  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
-  mutating func clearBaseResp() {self._baseResp = nil}
 
   var productID: Int64 = 0
 
@@ -957,8 +948,37 @@ struct GloryApi_GetLivingProductStatusResponse {
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
+}
+
+struct GloryApi_GetLivingProductStatusResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var liveingProductStatus: GloryApi_LiveingProductStatus {
+    get {return _liveingProductStatus ?? GloryApi_LiveingProductStatus()}
+    set {_liveingProductStatus = newValue}
+  }
+  /// Returns true if `liveingProductStatus` has been explicitly set.
+  var hasLiveingProductStatus: Bool {return self._liveingProductStatus != nil}
+  /// Clears the value of `liveingProductStatus`. Subsequent reads from it will return its default value.
+  mutating func clearLiveingProductStatus() {self._liveingProductStatus = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _liveingProductStatus: GloryApi_LiveingProductStatus? = nil
 }
 
 struct GloryApi_LiveRecordRequest {
@@ -1093,6 +1113,7 @@ extension GloryApi_ListLiveProductStatusResponse: @unchecked Sendable {}
 extension GloryApi_DeleteLiveProductStatusRequest: @unchecked Sendable {}
 extension GloryApi_DeleteLiveProductStatusResponse: @unchecked Sendable {}
 extension GloryApi_GetLivingProductStatusRequest: @unchecked Sendable {}
+extension GloryApi_LiveingProductStatus: @unchecked Sendable {}
 extension GloryApi_GetLivingProductStatusResponse: @unchecked Sendable {}
 extension GloryApi_LiveRecordRequest: @unchecked Sendable {}
 extension GloryApi_LiveRecordResponse: @unchecked Sendable {}
@@ -2716,10 +2737,9 @@ extension GloryApi_GetLivingProductStatusRequest: SwiftProtobuf.Message, SwiftPr
   }
 }
 
-extension GloryApi_GetLivingProductStatusResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GetLivingProductStatusResponse"
+extension GloryApi_LiveingProductStatus: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".LiveingProductStatus"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "base_resp"),
     2: .standard(proto: "product_id"),
     3: .standard(proto: "product_name"),
     4: .standard(proto: "product_price"),
@@ -2735,7 +2755,6 @@ extension GloryApi_GetLivingProductStatusResponse: SwiftProtobuf.Message, SwiftP
       // allocates stack space for every case branch when no optimizations are
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.productID) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.productName) }()
       case 4: try { try decoder.decodeSingularDoubleField(value: &self.productPrice) }()
@@ -2749,13 +2768,6 @@ extension GloryApi_GetLivingProductStatusResponse: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._baseResp {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
     if self.productID != 0 {
       try visitor.visitSingularInt64Field(value: self.productID, fieldNumber: 2)
     }
@@ -2780,8 +2792,7 @@ extension GloryApi_GetLivingProductStatusResponse: SwiftProtobuf.Message, SwiftP
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: GloryApi_GetLivingProductStatusResponse, rhs: GloryApi_GetLivingProductStatusResponse) -> Bool {
-    if lhs._baseResp != rhs._baseResp {return false}
+  static func ==(lhs: GloryApi_LiveingProductStatus, rhs: GloryApi_LiveingProductStatus) -> Bool {
     if lhs.productID != rhs.productID {return false}
     if lhs.productName != rhs.productName {return false}
     if lhs.productPrice != rhs.productPrice {return false}
@@ -2789,6 +2800,48 @@ extension GloryApi_GetLivingProductStatusResponse: SwiftProtobuf.Message, SwiftP
     if lhs.liveRoomOrder != rhs.liveRoomOrder {return false}
     if lhs.playedAt != rhs.playedAt {return false}
     if lhs.productDescription != rhs.productDescription {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetLivingProductStatusResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetLivingProductStatusResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .standard(proto: "liveing_product_status"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._liveingProductStatus) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try { if let v = self._liveingProductStatus {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetLivingProductStatusResponse, rhs: GloryApi_GetLivingProductStatusResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs._liveingProductStatus != rhs._liveingProductStatus {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
