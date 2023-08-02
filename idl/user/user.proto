@@ -81,3 +81,77 @@ message GetUserPagePermissionResponse {
   base.BaseResponse base_resp = 1;
   repeated PagePermission page_permission =2; // page permission of the user
 }
+
+message Permission {
+  int64 permission_id =1;
+  string permission_name =2;
+  int64 resource_id = 3;  // 权限对应的resource
+  string permission =4; // 支持 C R U D
+  string description =5;
+}
+
+message ListPermissionRequest {
+  base.BaseRequest base_request=1;
+  int64 permission_id =2;
+  string permission_name =3;
+  int64 resource_id = 4;
+  string permission =5;
+}
+
+message ListPermissionResponse {
+  base.BaseResponse base_resp = 1;
+  repeated Permission permission =2; // permission列表
+}
+
+message Role {
+  int64 role_id =1;
+  string role_name =2;
+  string source = 3;  // 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
+  int64 source_id =4; // 对应的资源来源id
+  string description =5;
+  repeated Permission permission=6;  // 创建的时候optional
+}
+
+message CreateRoleRequest {
+  base.BaseRequest base_request=1;
+  Role role = 2;
+}
+
+message CreateRoleResponse {
+  base.BaseResponse base_resp = 1;
+  int64 role_id =2; // role id
+}
+
+
+
+message GiveRolePermissionRequest {
+  base.BaseRequest base_request=1;
+  int64 role_id = 2;
+  repeated int64 permission_id =3;
+}
+
+message GiveRolePermissionResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+
+message RemoveRolePermissionRequest {
+  base.BaseRequest base_request=1;
+  int64 role_id = 2;
+  repeated int64 permission_id =3;
+}
+
+message RemoveRolePermissionResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+message DeleteRoleRequest {
+  base.BaseRequest base_request=1;
+  repeated int64 role_id =2; // role id list
+}
+
+message DeleteRoleResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+
