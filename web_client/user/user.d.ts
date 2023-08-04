@@ -89,3 +89,105 @@ export interface GetUserPagePermissionResponse {
   /** page permission of the user */
   page_permission?: Array<PagePermission>;
 }
+
+export interface Permission {
+  permission_id?: string;
+  permission_name?: string;
+  /** 权限对应的resource */
+  resource_id?: string;
+  /** 支持 C R U D */
+  permission?: string;
+  description?: string;
+}
+
+export interface ListPermissionRequest {
+  base_request?: base.BaseRequest;
+  permission_id?: string;
+  permission_name?: string;
+  resource_id?: string;
+  permission?: string;
+  pagination?: base.PaginationRequest;
+}
+
+export interface ListPermissionResponse {
+  base_resp?: base.BaseResponse;
+  /** permission列表 */
+  permission?: Array<Permission>;
+  pagination?: base.PaginationResponse;
+}
+
+export interface Role {
+  role_id?: string;
+  role_name?: string;
+  /** 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major */
+  source?: string;
+  /** 对应的资源来源id */
+  source_id?: string;
+  description?: string;
+  role_permission?: Array<RolePermission>;
+}
+
+export interface RolePermission {
+  role_permission_id?: string;
+  role_id?: string;
+  permission_id?: string;
+  permission?: Array<Permission>;
+}
+
+export interface ListRoleRequest {
+  base_request?: base.BaseRequest;
+  Role_id?: string;
+  Role_name?: string;
+  Role_type?: string;
+  source?: string;
+  source_id?: string;
+  pagination?: base.PaginationRequest;
+}
+
+export interface ListRoleResponse {
+  base_resp?: base.BaseResponse;
+  /** Role列表 */
+  role?: Array<Role>;
+  pagination?: base.PaginationResponse;
+}
+
+export interface CreateRoleRequest {
+  base_request?: base.BaseRequest;
+  role?: Role;
+}
+
+export interface CreateRoleResponse {
+  base_resp?: base.BaseResponse;
+  /** role id */
+  role_id?: string;
+}
+
+export interface GiveRolePermissionRequest {
+  base_request?: base.BaseRequest;
+  role_id?: string;
+  permission_id?: Array<string>;
+}
+
+export interface GiveRolePermissionResponse {
+  base_resp?: base.BaseResponse;
+}
+
+export interface RemoveRolePermissionRequest {
+  base_request?: base.BaseRequest;
+  role_id?: string;
+  permission_id?: Array<string>;
+}
+
+export interface RemoveRolePermissionResponse {
+  base_resp?: base.BaseResponse;
+}
+
+export interface DeleteRoleRequest {
+  base_request?: base.BaseRequest;
+  /** role id list */
+  role_id?: Array<string>;
+}
+
+export interface DeleteRoleResponse {
+  base_resp?: base.BaseResponse;
+}

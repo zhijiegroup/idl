@@ -194,6 +194,54 @@ export class glory_api {
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
 
+  ListPermission(request) {
+    const uri = `${this.uriPrefix}/api/auth/list_permission`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListRole(request) {
+    const uri = `${this.uriPrefix}/api/auth/list_role`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  GiveRolePermission(request) {
+    const uri = `${this.uriPrefix}/api/auth/give_role_permission`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  RemoveRolePermission(request) {
+    const uri = `${this.uriPrefix}/api/auth/remove_role_permission`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreateRole(request) {
+    const uri = `${this.uriPrefix}/api/auth/create_role`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteRole(request) {
+    const uri = `${this.uriPrefix}/api/auth/delete_role`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   CreateShop(request) {
     const uri = `${this.uriPrefix}/api/shop/create_shop`;
     const body = JSONbigint.stringify(request);

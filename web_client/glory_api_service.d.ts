@@ -131,6 +131,26 @@ export class glory_api {
     request: address.ListAddressRequest
   ): Promise<address.ListAddressResponse>;
 
+  /** user permission
+list the permissions that supported */
+  ListPermission(
+    request: user.ListPermissionRequest
+  ): Promise<user.ListPermissionResponse>;
+
+  ListRole(request: user.ListRoleRequest): Promise<user.ListRoleResponse>;
+
+  GiveRolePermission(
+    request: user.GiveRolePermissionRequest
+  ): Promise<user.GiveRolePermissionResponse>;
+
+  RemoveRolePermission(
+    request: user.RemoveRolePermissionRequest
+  ): Promise<user.RemoveRolePermissionResponse>;
+
+  CreateRole(request: user.CreateRoleRequest): Promise<user.CreateRoleResponse>;
+
+  DeleteRole(request: user.DeleteRoleRequest): Promise<user.DeleteRoleResponse>;
+
   /** shop */
   CreateShop(request: shop.CreateShopRequest): Promise<shop.CreateShopResponse>;
 

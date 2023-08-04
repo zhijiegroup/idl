@@ -511,6 +511,192 @@ public final class glory_apiGrpc {
     return getListAddressMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<glory_api.UserOuterClass.ListPermissionRequest,
+      glory_api.UserOuterClass.ListPermissionResponse> getListPermissionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListPermission",
+      requestType = glory_api.UserOuterClass.ListPermissionRequest.class,
+      responseType = glory_api.UserOuterClass.ListPermissionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<glory_api.UserOuterClass.ListPermissionRequest,
+      glory_api.UserOuterClass.ListPermissionResponse> getListPermissionMethod() {
+    io.grpc.MethodDescriptor<glory_api.UserOuterClass.ListPermissionRequest, glory_api.UserOuterClass.ListPermissionResponse> getListPermissionMethod;
+    if ((getListPermissionMethod = glory_apiGrpc.getListPermissionMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListPermissionMethod = glory_apiGrpc.getListPermissionMethod) == null) {
+          glory_apiGrpc.getListPermissionMethod = getListPermissionMethod =
+              io.grpc.MethodDescriptor.<glory_api.UserOuterClass.ListPermissionRequest, glory_api.UserOuterClass.ListPermissionResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListPermission"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.UserOuterClass.ListPermissionRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.UserOuterClass.ListPermissionResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListPermission"))
+              .build();
+        }
+      }
+    }
+    return getListPermissionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<glory_api.UserOuterClass.ListRoleRequest,
+      glory_api.UserOuterClass.ListRoleResponse> getListRoleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListRole",
+      requestType = glory_api.UserOuterClass.ListRoleRequest.class,
+      responseType = glory_api.UserOuterClass.ListRoleResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<glory_api.UserOuterClass.ListRoleRequest,
+      glory_api.UserOuterClass.ListRoleResponse> getListRoleMethod() {
+    io.grpc.MethodDescriptor<glory_api.UserOuterClass.ListRoleRequest, glory_api.UserOuterClass.ListRoleResponse> getListRoleMethod;
+    if ((getListRoleMethod = glory_apiGrpc.getListRoleMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListRoleMethod = glory_apiGrpc.getListRoleMethod) == null) {
+          glory_apiGrpc.getListRoleMethod = getListRoleMethod =
+              io.grpc.MethodDescriptor.<glory_api.UserOuterClass.ListRoleRequest, glory_api.UserOuterClass.ListRoleResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListRole"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.UserOuterClass.ListRoleRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.UserOuterClass.ListRoleResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListRole"))
+              .build();
+        }
+      }
+    }
+    return getListRoleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<glory_api.UserOuterClass.GiveRolePermissionRequest,
+      glory_api.UserOuterClass.GiveRolePermissionResponse> getGiveRolePermissionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GiveRolePermission",
+      requestType = glory_api.UserOuterClass.GiveRolePermissionRequest.class,
+      responseType = glory_api.UserOuterClass.GiveRolePermissionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<glory_api.UserOuterClass.GiveRolePermissionRequest,
+      glory_api.UserOuterClass.GiveRolePermissionResponse> getGiveRolePermissionMethod() {
+    io.grpc.MethodDescriptor<glory_api.UserOuterClass.GiveRolePermissionRequest, glory_api.UserOuterClass.GiveRolePermissionResponse> getGiveRolePermissionMethod;
+    if ((getGiveRolePermissionMethod = glory_apiGrpc.getGiveRolePermissionMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGiveRolePermissionMethod = glory_apiGrpc.getGiveRolePermissionMethod) == null) {
+          glory_apiGrpc.getGiveRolePermissionMethod = getGiveRolePermissionMethod =
+              io.grpc.MethodDescriptor.<glory_api.UserOuterClass.GiveRolePermissionRequest, glory_api.UserOuterClass.GiveRolePermissionResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GiveRolePermission"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.UserOuterClass.GiveRolePermissionRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.UserOuterClass.GiveRolePermissionResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GiveRolePermission"))
+              .build();
+        }
+      }
+    }
+    return getGiveRolePermissionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<glory_api.UserOuterClass.RemoveRolePermissionRequest,
+      glory_api.UserOuterClass.RemoveRolePermissionResponse> getRemoveRolePermissionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RemoveRolePermission",
+      requestType = glory_api.UserOuterClass.RemoveRolePermissionRequest.class,
+      responseType = glory_api.UserOuterClass.RemoveRolePermissionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<glory_api.UserOuterClass.RemoveRolePermissionRequest,
+      glory_api.UserOuterClass.RemoveRolePermissionResponse> getRemoveRolePermissionMethod() {
+    io.grpc.MethodDescriptor<glory_api.UserOuterClass.RemoveRolePermissionRequest, glory_api.UserOuterClass.RemoveRolePermissionResponse> getRemoveRolePermissionMethod;
+    if ((getRemoveRolePermissionMethod = glory_apiGrpc.getRemoveRolePermissionMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getRemoveRolePermissionMethod = glory_apiGrpc.getRemoveRolePermissionMethod) == null) {
+          glory_apiGrpc.getRemoveRolePermissionMethod = getRemoveRolePermissionMethod =
+              io.grpc.MethodDescriptor.<glory_api.UserOuterClass.RemoveRolePermissionRequest, glory_api.UserOuterClass.RemoveRolePermissionResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RemoveRolePermission"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.UserOuterClass.RemoveRolePermissionRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.UserOuterClass.RemoveRolePermissionResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("RemoveRolePermission"))
+              .build();
+        }
+      }
+    }
+    return getRemoveRolePermissionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<glory_api.UserOuterClass.CreateRoleRequest,
+      glory_api.UserOuterClass.CreateRoleResponse> getCreateRoleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateRole",
+      requestType = glory_api.UserOuterClass.CreateRoleRequest.class,
+      responseType = glory_api.UserOuterClass.CreateRoleResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<glory_api.UserOuterClass.CreateRoleRequest,
+      glory_api.UserOuterClass.CreateRoleResponse> getCreateRoleMethod() {
+    io.grpc.MethodDescriptor<glory_api.UserOuterClass.CreateRoleRequest, glory_api.UserOuterClass.CreateRoleResponse> getCreateRoleMethod;
+    if ((getCreateRoleMethod = glory_apiGrpc.getCreateRoleMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCreateRoleMethod = glory_apiGrpc.getCreateRoleMethod) == null) {
+          glory_apiGrpc.getCreateRoleMethod = getCreateRoleMethod =
+              io.grpc.MethodDescriptor.<glory_api.UserOuterClass.CreateRoleRequest, glory_api.UserOuterClass.CreateRoleResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateRole"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.UserOuterClass.CreateRoleRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.UserOuterClass.CreateRoleResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CreateRole"))
+              .build();
+        }
+      }
+    }
+    return getCreateRoleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<glory_api.UserOuterClass.DeleteRoleRequest,
+      glory_api.UserOuterClass.DeleteRoleResponse> getDeleteRoleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteRole",
+      requestType = glory_api.UserOuterClass.DeleteRoleRequest.class,
+      responseType = glory_api.UserOuterClass.DeleteRoleResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<glory_api.UserOuterClass.DeleteRoleRequest,
+      glory_api.UserOuterClass.DeleteRoleResponse> getDeleteRoleMethod() {
+    io.grpc.MethodDescriptor<glory_api.UserOuterClass.DeleteRoleRequest, glory_api.UserOuterClass.DeleteRoleResponse> getDeleteRoleMethod;
+    if ((getDeleteRoleMethod = glory_apiGrpc.getDeleteRoleMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getDeleteRoleMethod = glory_apiGrpc.getDeleteRoleMethod) == null) {
+          glory_apiGrpc.getDeleteRoleMethod = getDeleteRoleMethod =
+              io.grpc.MethodDescriptor.<glory_api.UserOuterClass.DeleteRoleRequest, glory_api.UserOuterClass.DeleteRoleResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteRole"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.UserOuterClass.DeleteRoleRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.UserOuterClass.DeleteRoleResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("DeleteRole"))
+              .build();
+        }
+      }
+    }
+    return getDeleteRoleMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<glory_api.ShopOuterClass.CreateShopRequest,
       glory_api.ShopOuterClass.CreateShopResponse> getCreateShopMethod;
 
@@ -4910,6 +5096,52 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * user permission
+     *list the permissions that supported
+     * </pre>
+     */
+    default void listPermission(glory_api.UserOuterClass.ListPermissionRequest request,
+        io.grpc.stub.StreamObserver<glory_api.UserOuterClass.ListPermissionResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListPermissionMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void listRole(glory_api.UserOuterClass.ListRoleRequest request,
+        io.grpc.stub.StreamObserver<glory_api.UserOuterClass.ListRoleResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListRoleMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void giveRolePermission(glory_api.UserOuterClass.GiveRolePermissionRequest request,
+        io.grpc.stub.StreamObserver<glory_api.UserOuterClass.GiveRolePermissionResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGiveRolePermissionMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void removeRolePermission(glory_api.UserOuterClass.RemoveRolePermissionRequest request,
+        io.grpc.stub.StreamObserver<glory_api.UserOuterClass.RemoveRolePermissionResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRemoveRolePermissionMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void createRole(glory_api.UserOuterClass.CreateRoleRequest request,
+        io.grpc.stub.StreamObserver<glory_api.UserOuterClass.CreateRoleResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateRoleMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void deleteRole(glory_api.UserOuterClass.DeleteRoleRequest request,
+        io.grpc.stub.StreamObserver<glory_api.UserOuterClass.DeleteRoleResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteRoleMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * shop
      * </pre>
      */
@@ -6103,6 +6335,58 @@ public final class glory_apiGrpc {
         io.grpc.stub.StreamObserver<glory_api.AddressOuterClass.ListAddressResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListAddressMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * user permission
+     *list the permissions that supported
+     * </pre>
+     */
+    public void listPermission(glory_api.UserOuterClass.ListPermissionRequest request,
+        io.grpc.stub.StreamObserver<glory_api.UserOuterClass.ListPermissionResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListPermissionMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void listRole(glory_api.UserOuterClass.ListRoleRequest request,
+        io.grpc.stub.StreamObserver<glory_api.UserOuterClass.ListRoleResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListRoleMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void giveRolePermission(glory_api.UserOuterClass.GiveRolePermissionRequest request,
+        io.grpc.stub.StreamObserver<glory_api.UserOuterClass.GiveRolePermissionResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGiveRolePermissionMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void removeRolePermission(glory_api.UserOuterClass.RemoveRolePermissionRequest request,
+        io.grpc.stub.StreamObserver<glory_api.UserOuterClass.RemoveRolePermissionResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRemoveRolePermissionMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void createRole(glory_api.UserOuterClass.CreateRoleRequest request,
+        io.grpc.stub.StreamObserver<glory_api.UserOuterClass.CreateRoleResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateRoleMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deleteRole(glory_api.UserOuterClass.DeleteRoleRequest request,
+        io.grpc.stub.StreamObserver<glory_api.UserOuterClass.DeleteRoleResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteRoleMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -7413,6 +7697,52 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * user permission
+     *list the permissions that supported
+     * </pre>
+     */
+    public glory_api.UserOuterClass.ListPermissionResponse listPermission(glory_api.UserOuterClass.ListPermissionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPermissionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public glory_api.UserOuterClass.ListRoleResponse listRole(glory_api.UserOuterClass.ListRoleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRoleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public glory_api.UserOuterClass.GiveRolePermissionResponse giveRolePermission(glory_api.UserOuterClass.GiveRolePermissionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGiveRolePermissionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public glory_api.UserOuterClass.RemoveRolePermissionResponse removeRolePermission(glory_api.UserOuterClass.RemoveRolePermissionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRemoveRolePermissionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public glory_api.UserOuterClass.CreateRoleResponse createRole(glory_api.UserOuterClass.CreateRoleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateRoleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public glory_api.UserOuterClass.DeleteRoleResponse deleteRole(glory_api.UserOuterClass.DeleteRoleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteRoleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * shop
      * </pre>
      */
@@ -8599,6 +8929,58 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * user permission
+     *list the permissions that supported
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<glory_api.UserOuterClass.ListPermissionResponse> listPermission(
+        glory_api.UserOuterClass.ListPermissionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListPermissionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<glory_api.UserOuterClass.ListRoleResponse> listRole(
+        glory_api.UserOuterClass.ListRoleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListRoleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<glory_api.UserOuterClass.GiveRolePermissionResponse> giveRolePermission(
+        glory_api.UserOuterClass.GiveRolePermissionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGiveRolePermissionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<glory_api.UserOuterClass.RemoveRolePermissionResponse> removeRolePermission(
+        glory_api.UserOuterClass.RemoveRolePermissionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRemoveRolePermissionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<glory_api.UserOuterClass.CreateRoleResponse> createRole(
+        glory_api.UserOuterClass.CreateRoleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateRoleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<glory_api.UserOuterClass.DeleteRoleResponse> deleteRole(
+        glory_api.UserOuterClass.DeleteRoleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteRoleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * shop
      * </pre>
      */
@@ -9770,142 +10152,148 @@ public final class glory_apiGrpc {
   private static final int METHODID_UPDATE_ADDRESS = 13;
   private static final int METHODID_GET_ADDRESS = 14;
   private static final int METHODID_LIST_ADDRESS = 15;
-  private static final int METHODID_CREATE_SHOP = 16;
-  private static final int METHODID_GET_SHOP = 17;
-  private static final int METHODID_UPDATE_SHOP = 18;
-  private static final int METHODID_LIST_SHOP = 19;
-  private static final int METHODID_DELETE_SHOP = 20;
-  private static final int METHODID_LIST_OPERATION_METRICS = 21;
-  private static final int METHODID_GET_SHOP_QRCODE = 22;
-  private static final int METHODID_UPDATE_SHOP_MANAGER = 23;
-  private static final int METHODID_GET_SHOP_BUSINESS_DATA = 24;
-  private static final int METHODID_ADD_SHOP_ACCESS = 25;
-  private static final int METHODID_REMOVE_SHOP_ACCESS = 26;
-  private static final int METHODID_VERIFY_FIELD = 27;
-  private static final int METHODID_LIST_SHOP_ACCESS = 28;
-  private static final int METHODID_ADD_SHOP_CATEGORY = 29;
-  private static final int METHODID_GET_SHOP_CATEGORY = 30;
-  private static final int METHODID_REMOVE_SHOP_CATEGORY = 31;
-  private static final int METHODID_ADD_FREIGHT_TEMPLATE = 32;
-  private static final int METHODID_GET_FREIGHT_TEMPLATE = 33;
-  private static final int METHODID_UPDATE_FREIGHT_TEMPLATE = 34;
-  private static final int METHODID_DELETE_FREIGHT_TEMPLATE = 35;
-  private static final int METHODID_LIST_FREIGHT_TEMPLATE = 36;
-  private static final int METHODID_LIST_QUALIFICATION = 37;
-  private static final int METHODID_GET_MALL_INDEX = 38;
-  private static final int METHODID_CREATE_CATEGORY = 39;
-  private static final int METHODID_GET_CATEGORY = 40;
-  private static final int METHODID_UPDATE_CATEGORY = 41;
-  private static final int METHODID_LIST_CATEGORY = 42;
-  private static final int METHODID_DELETE_CATEGORY = 43;
-  private static final int METHODID_LIST_CATEGORY_QUALIFICATION = 44;
-  private static final int METHODID_CREATE_PRODUCT = 45;
-  private static final int METHODID_GET_PRODUCT = 46;
-  private static final int METHODID_UPDATE_PRODUCT = 47;
-  private static final int METHODID_LIST_PRODUCT = 48;
-  private static final int METHODID_DELETE_PRODUCT = 49;
-  private static final int METHODID_UPLOAD_MULTI_IMAGE = 50;
-  private static final int METHODID_DELETE_IMAGE_BY_ID = 51;
-  private static final int METHODID_BIND_ATTRIBUTE = 52;
-  private static final int METHODID_PUBLISH_PRODUCT = 53;
-  private static final int METHODID_OFF_SHELF_PRODUCT_IN_BATCHES = 54;
-  private static final int METHODID_DELETE_PRODUCT_IN_BATCHES = 55;
-  private static final int METHODID_CHANGE_PRODUCTS_STATE = 56;
-  private static final int METHODID_CREATE_SKU = 57;
-  private static final int METHODID_GET_SKU = 58;
-  private static final int METHODID_UPDATE_SKU = 59;
-  private static final int METHODID_LIST_SKU = 60;
-  private static final int METHODID_DELETE_SKU = 61;
-  private static final int METHODID_CREATE_ATTRIBUTE = 62;
-  private static final int METHODID_GET_ATTRIBUTE = 63;
-  private static final int METHODID_LIST_ATTRIBUTE = 64;
-  private static final int METHODID_DELETE_ATTRIBUTE = 65;
-  private static final int METHODID_ADD_ATTRIBUTE_VALUE = 66;
-  private static final int METHODID_DELETE_ATTRIBUTE_VALUE = 67;
-  private static final int METHODID_CREATE_ORDER = 68;
-  private static final int METHODID_GET_ORDER = 69;
-  private static final int METHODID_UPDATE_ORDER = 70;
-  private static final int METHODID_LIST_ORDER = 71;
-  private static final int METHODID_DELETE_ORDER = 72;
-  private static final int METHODID_SHIP_GOODS = 73;
-  private static final int METHODID_SHIP_GOODS_IN_BATCHES = 74;
-  private static final int METHODID_FREE_SHIPPING_IN_BATCHES = 75;
-  private static final int METHODID_CREATE_CART = 76;
-  private static final int METHODID_GET_CART = 77;
-  private static final int METHODID_UPDATE_CART = 78;
-  private static final int METHODID_DELETE_CART = 79;
-  private static final int METHODID_UPLOAD_ATTACHMENT = 80;
-  private static final int METHODID_LIST_ATTACHMENT = 81;
-  private static final int METHODID_DELETE_ATTACHMENT = 82;
-  private static final int METHODID_CREATE_SELLER = 83;
-  private static final int METHODID_CREATE_PAYMENT = 84;
-  private static final int METHODID_GET_PAYMENT = 85;
-  private static final int METHODID_UPDATE_PAYMENT = 86;
-  private static final int METHODID_DELETE_PAYMENT = 87;
-  private static final int METHODID_CREATE_CONFIG = 88;
-  private static final int METHODID_UPDATE_CONFIG = 89;
-  private static final int METHODID_DELETE_CONFIG = 90;
-  private static final int METHODID_GET_CONFIG = 91;
-  private static final int METHODID_WX_PREPAY = 92;
-  private static final int METHODID_CLOSE_ORDER = 93;
-  private static final int METHODID_QUERY_ORDER_BY_ID = 94;
-  private static final int METHODID_QUERY_ORDER_BY_OUT_TRADE = 95;
-  private static final int METHODID_ADD_VCURRENCY = 96;
-  private static final int METHODID_DELETE_VCURRENCY = 97;
-  private static final int METHODID_UPDATE_VCURRENCY = 98;
-  private static final int METHODID_GET_VCURRENCY = 99;
-  private static final int METHODID_LIST_VCURRENCY = 100;
-  private static final int METHODID_ADD_ACCOUNT_OPERATION = 101;
-  private static final int METHODID_GET_ACCOUNT_OPERATION = 102;
-  private static final int METHODID_LIST_ACCOUNT_OPERATION = 103;
-  private static final int METHODID_CREATE_ROOM = 104;
-  private static final int METHODID_GET_ROOM = 105;
-  private static final int METHODID_UPDATE_ROOM = 106;
-  private static final int METHODID_LIST_ROOM = 107;
-  private static final int METHODID_DELETE_ROOM = 108;
-  private static final int METHODID_LIST_FINISHED_ROOM = 109;
-  private static final int METHODID_RECORD = 110;
-  private static final int METHODID_CREATE_LIVE_USER_TOKEN = 111;
-  private static final int METHODID_USER_ENTER_ROOM = 112;
-  private static final int METHODID_USER_EXIT_ROOM = 113;
-  private static final int METHODID_LIST_ACTIVE_ROOM_USER = 114;
-  private static final int METHODID_CREATE_LIVE_PLAN = 115;
-  private static final int METHODID_GET_LIVE_PLAN = 116;
-  private static final int METHODID_UPDATE_LIVE_PLAN = 117;
-  private static final int METHODID_LIST_LIVE_PLAN = 118;
-  private static final int METHODID_DELETE_LIVE_PLAN = 119;
-  private static final int METHODID_CREATE_LIVE_PLAN_PRODUCT = 120;
-  private static final int METHODID_UPDATE_LIVE_PLAN_PRODUCT = 121;
-  private static final int METHODID_LIST_LIVE_PLAN_PRODUCT = 122;
-  private static final int METHODID_DELETE_LIVE_PLAN_PRODUCT = 123;
-  private static final int METHODID_LOAD_LIVE_PLAN_PRODUCT = 124;
-  private static final int METHODID_UPDATE_LIVE_PRODUCT_STATUS = 125;
-  private static final int METHODID_LIST_LIVE_PRODUCT_STATUS = 126;
-  private static final int METHODID_DELETE_LIVE_PRODUCT_STATUS = 127;
-  private static final int METHODID_CREATE_LIVE_PRODUCT_STATUS = 128;
-  private static final int METHODID_GET_LIVING_PRODUCT_STATUS = 129;
-  private static final int METHODID_UPDATE_LIVE_PRODUCT_INTRODUCT_STATUS = 130;
-  private static final int METHODID_CREATE_LIVE_TEXT = 131;
-  private static final int METHODID_UPDATE_LIVE_TEXT = 132;
-  private static final int METHODID_LIST_LIVE_TEXT = 133;
-  private static final int METHODID_GET_LIVE_TEXT = 134;
-  private static final int METHODID_DELETE_LIVE_TEXTS = 135;
-  private static final int METHODID_GET_LIVE_CHART_DATA = 136;
-  private static final int METHODID_CREATE_TENANT = 137;
-  private static final int METHODID_GET_TENANT = 138;
-  private static final int METHODID_UPDATE_TENANT = 139;
-  private static final int METHODID_DELETE_TENANT = 140;
-  private static final int METHODID_LIST_TENANT = 141;
-  private static final int METHODID_CREATE_MAJOR = 142;
-  private static final int METHODID_GET_MAJOR = 143;
-  private static final int METHODID_UPDATE_MAJOR = 144;
-  private static final int METHODID_DELETE_MAJOR = 145;
-  private static final int METHODID_LIST_MAJOR = 146;
-  private static final int METHODID_CREATE_CLASS = 147;
-  private static final int METHODID_GET_CLASS = 148;
-  private static final int METHODID_UPDATE_CLASS = 149;
-  private static final int METHODID_DELETE_CLASS = 150;
-  private static final int METHODID_LIST_CLASS = 151;
+  private static final int METHODID_LIST_PERMISSION = 16;
+  private static final int METHODID_LIST_ROLE = 17;
+  private static final int METHODID_GIVE_ROLE_PERMISSION = 18;
+  private static final int METHODID_REMOVE_ROLE_PERMISSION = 19;
+  private static final int METHODID_CREATE_ROLE = 20;
+  private static final int METHODID_DELETE_ROLE = 21;
+  private static final int METHODID_CREATE_SHOP = 22;
+  private static final int METHODID_GET_SHOP = 23;
+  private static final int METHODID_UPDATE_SHOP = 24;
+  private static final int METHODID_LIST_SHOP = 25;
+  private static final int METHODID_DELETE_SHOP = 26;
+  private static final int METHODID_LIST_OPERATION_METRICS = 27;
+  private static final int METHODID_GET_SHOP_QRCODE = 28;
+  private static final int METHODID_UPDATE_SHOP_MANAGER = 29;
+  private static final int METHODID_GET_SHOP_BUSINESS_DATA = 30;
+  private static final int METHODID_ADD_SHOP_ACCESS = 31;
+  private static final int METHODID_REMOVE_SHOP_ACCESS = 32;
+  private static final int METHODID_VERIFY_FIELD = 33;
+  private static final int METHODID_LIST_SHOP_ACCESS = 34;
+  private static final int METHODID_ADD_SHOP_CATEGORY = 35;
+  private static final int METHODID_GET_SHOP_CATEGORY = 36;
+  private static final int METHODID_REMOVE_SHOP_CATEGORY = 37;
+  private static final int METHODID_ADD_FREIGHT_TEMPLATE = 38;
+  private static final int METHODID_GET_FREIGHT_TEMPLATE = 39;
+  private static final int METHODID_UPDATE_FREIGHT_TEMPLATE = 40;
+  private static final int METHODID_DELETE_FREIGHT_TEMPLATE = 41;
+  private static final int METHODID_LIST_FREIGHT_TEMPLATE = 42;
+  private static final int METHODID_LIST_QUALIFICATION = 43;
+  private static final int METHODID_GET_MALL_INDEX = 44;
+  private static final int METHODID_CREATE_CATEGORY = 45;
+  private static final int METHODID_GET_CATEGORY = 46;
+  private static final int METHODID_UPDATE_CATEGORY = 47;
+  private static final int METHODID_LIST_CATEGORY = 48;
+  private static final int METHODID_DELETE_CATEGORY = 49;
+  private static final int METHODID_LIST_CATEGORY_QUALIFICATION = 50;
+  private static final int METHODID_CREATE_PRODUCT = 51;
+  private static final int METHODID_GET_PRODUCT = 52;
+  private static final int METHODID_UPDATE_PRODUCT = 53;
+  private static final int METHODID_LIST_PRODUCT = 54;
+  private static final int METHODID_DELETE_PRODUCT = 55;
+  private static final int METHODID_UPLOAD_MULTI_IMAGE = 56;
+  private static final int METHODID_DELETE_IMAGE_BY_ID = 57;
+  private static final int METHODID_BIND_ATTRIBUTE = 58;
+  private static final int METHODID_PUBLISH_PRODUCT = 59;
+  private static final int METHODID_OFF_SHELF_PRODUCT_IN_BATCHES = 60;
+  private static final int METHODID_DELETE_PRODUCT_IN_BATCHES = 61;
+  private static final int METHODID_CHANGE_PRODUCTS_STATE = 62;
+  private static final int METHODID_CREATE_SKU = 63;
+  private static final int METHODID_GET_SKU = 64;
+  private static final int METHODID_UPDATE_SKU = 65;
+  private static final int METHODID_LIST_SKU = 66;
+  private static final int METHODID_DELETE_SKU = 67;
+  private static final int METHODID_CREATE_ATTRIBUTE = 68;
+  private static final int METHODID_GET_ATTRIBUTE = 69;
+  private static final int METHODID_LIST_ATTRIBUTE = 70;
+  private static final int METHODID_DELETE_ATTRIBUTE = 71;
+  private static final int METHODID_ADD_ATTRIBUTE_VALUE = 72;
+  private static final int METHODID_DELETE_ATTRIBUTE_VALUE = 73;
+  private static final int METHODID_CREATE_ORDER = 74;
+  private static final int METHODID_GET_ORDER = 75;
+  private static final int METHODID_UPDATE_ORDER = 76;
+  private static final int METHODID_LIST_ORDER = 77;
+  private static final int METHODID_DELETE_ORDER = 78;
+  private static final int METHODID_SHIP_GOODS = 79;
+  private static final int METHODID_SHIP_GOODS_IN_BATCHES = 80;
+  private static final int METHODID_FREE_SHIPPING_IN_BATCHES = 81;
+  private static final int METHODID_CREATE_CART = 82;
+  private static final int METHODID_GET_CART = 83;
+  private static final int METHODID_UPDATE_CART = 84;
+  private static final int METHODID_DELETE_CART = 85;
+  private static final int METHODID_UPLOAD_ATTACHMENT = 86;
+  private static final int METHODID_LIST_ATTACHMENT = 87;
+  private static final int METHODID_DELETE_ATTACHMENT = 88;
+  private static final int METHODID_CREATE_SELLER = 89;
+  private static final int METHODID_CREATE_PAYMENT = 90;
+  private static final int METHODID_GET_PAYMENT = 91;
+  private static final int METHODID_UPDATE_PAYMENT = 92;
+  private static final int METHODID_DELETE_PAYMENT = 93;
+  private static final int METHODID_CREATE_CONFIG = 94;
+  private static final int METHODID_UPDATE_CONFIG = 95;
+  private static final int METHODID_DELETE_CONFIG = 96;
+  private static final int METHODID_GET_CONFIG = 97;
+  private static final int METHODID_WX_PREPAY = 98;
+  private static final int METHODID_CLOSE_ORDER = 99;
+  private static final int METHODID_QUERY_ORDER_BY_ID = 100;
+  private static final int METHODID_QUERY_ORDER_BY_OUT_TRADE = 101;
+  private static final int METHODID_ADD_VCURRENCY = 102;
+  private static final int METHODID_DELETE_VCURRENCY = 103;
+  private static final int METHODID_UPDATE_VCURRENCY = 104;
+  private static final int METHODID_GET_VCURRENCY = 105;
+  private static final int METHODID_LIST_VCURRENCY = 106;
+  private static final int METHODID_ADD_ACCOUNT_OPERATION = 107;
+  private static final int METHODID_GET_ACCOUNT_OPERATION = 108;
+  private static final int METHODID_LIST_ACCOUNT_OPERATION = 109;
+  private static final int METHODID_CREATE_ROOM = 110;
+  private static final int METHODID_GET_ROOM = 111;
+  private static final int METHODID_UPDATE_ROOM = 112;
+  private static final int METHODID_LIST_ROOM = 113;
+  private static final int METHODID_DELETE_ROOM = 114;
+  private static final int METHODID_LIST_FINISHED_ROOM = 115;
+  private static final int METHODID_RECORD = 116;
+  private static final int METHODID_CREATE_LIVE_USER_TOKEN = 117;
+  private static final int METHODID_USER_ENTER_ROOM = 118;
+  private static final int METHODID_USER_EXIT_ROOM = 119;
+  private static final int METHODID_LIST_ACTIVE_ROOM_USER = 120;
+  private static final int METHODID_CREATE_LIVE_PLAN = 121;
+  private static final int METHODID_GET_LIVE_PLAN = 122;
+  private static final int METHODID_UPDATE_LIVE_PLAN = 123;
+  private static final int METHODID_LIST_LIVE_PLAN = 124;
+  private static final int METHODID_DELETE_LIVE_PLAN = 125;
+  private static final int METHODID_CREATE_LIVE_PLAN_PRODUCT = 126;
+  private static final int METHODID_UPDATE_LIVE_PLAN_PRODUCT = 127;
+  private static final int METHODID_LIST_LIVE_PLAN_PRODUCT = 128;
+  private static final int METHODID_DELETE_LIVE_PLAN_PRODUCT = 129;
+  private static final int METHODID_LOAD_LIVE_PLAN_PRODUCT = 130;
+  private static final int METHODID_UPDATE_LIVE_PRODUCT_STATUS = 131;
+  private static final int METHODID_LIST_LIVE_PRODUCT_STATUS = 132;
+  private static final int METHODID_DELETE_LIVE_PRODUCT_STATUS = 133;
+  private static final int METHODID_CREATE_LIVE_PRODUCT_STATUS = 134;
+  private static final int METHODID_GET_LIVING_PRODUCT_STATUS = 135;
+  private static final int METHODID_UPDATE_LIVE_PRODUCT_INTRODUCT_STATUS = 136;
+  private static final int METHODID_CREATE_LIVE_TEXT = 137;
+  private static final int METHODID_UPDATE_LIVE_TEXT = 138;
+  private static final int METHODID_LIST_LIVE_TEXT = 139;
+  private static final int METHODID_GET_LIVE_TEXT = 140;
+  private static final int METHODID_DELETE_LIVE_TEXTS = 141;
+  private static final int METHODID_GET_LIVE_CHART_DATA = 142;
+  private static final int METHODID_CREATE_TENANT = 143;
+  private static final int METHODID_GET_TENANT = 144;
+  private static final int METHODID_UPDATE_TENANT = 145;
+  private static final int METHODID_DELETE_TENANT = 146;
+  private static final int METHODID_LIST_TENANT = 147;
+  private static final int METHODID_CREATE_MAJOR = 148;
+  private static final int METHODID_GET_MAJOR = 149;
+  private static final int METHODID_UPDATE_MAJOR = 150;
+  private static final int METHODID_DELETE_MAJOR = 151;
+  private static final int METHODID_LIST_MAJOR = 152;
+  private static final int METHODID_CREATE_CLASS = 153;
+  private static final int METHODID_GET_CLASS = 154;
+  private static final int METHODID_UPDATE_CLASS = 155;
+  private static final int METHODID_DELETE_CLASS = 156;
+  private static final int METHODID_LIST_CLASS = 157;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -9987,6 +10375,30 @@ public final class glory_apiGrpc {
         case METHODID_LIST_ADDRESS:
           serviceImpl.listAddress((glory_api.AddressOuterClass.ListAddressRequest) request,
               (io.grpc.stub.StreamObserver<glory_api.AddressOuterClass.ListAddressResponse>) responseObserver);
+          break;
+        case METHODID_LIST_PERMISSION:
+          serviceImpl.listPermission((glory_api.UserOuterClass.ListPermissionRequest) request,
+              (io.grpc.stub.StreamObserver<glory_api.UserOuterClass.ListPermissionResponse>) responseObserver);
+          break;
+        case METHODID_LIST_ROLE:
+          serviceImpl.listRole((glory_api.UserOuterClass.ListRoleRequest) request,
+              (io.grpc.stub.StreamObserver<glory_api.UserOuterClass.ListRoleResponse>) responseObserver);
+          break;
+        case METHODID_GIVE_ROLE_PERMISSION:
+          serviceImpl.giveRolePermission((glory_api.UserOuterClass.GiveRolePermissionRequest) request,
+              (io.grpc.stub.StreamObserver<glory_api.UserOuterClass.GiveRolePermissionResponse>) responseObserver);
+          break;
+        case METHODID_REMOVE_ROLE_PERMISSION:
+          serviceImpl.removeRolePermission((glory_api.UserOuterClass.RemoveRolePermissionRequest) request,
+              (io.grpc.stub.StreamObserver<glory_api.UserOuterClass.RemoveRolePermissionResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_ROLE:
+          serviceImpl.createRole((glory_api.UserOuterClass.CreateRoleRequest) request,
+              (io.grpc.stub.StreamObserver<glory_api.UserOuterClass.CreateRoleResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_ROLE:
+          serviceImpl.deleteRole((glory_api.UserOuterClass.DeleteRoleRequest) request,
+              (io.grpc.stub.StreamObserver<glory_api.UserOuterClass.DeleteRoleResponse>) responseObserver);
           break;
         case METHODID_CREATE_SHOP:
           serviceImpl.createShop((glory_api.ShopOuterClass.CreateShopRequest) request,
@@ -10662,6 +11074,48 @@ public final class glory_apiGrpc {
               glory_api.AddressOuterClass.ListAddressRequest,
               glory_api.AddressOuterClass.ListAddressResponse>(
                 service, METHODID_LIST_ADDRESS)))
+        .addMethod(
+          getListPermissionMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              glory_api.UserOuterClass.ListPermissionRequest,
+              glory_api.UserOuterClass.ListPermissionResponse>(
+                service, METHODID_LIST_PERMISSION)))
+        .addMethod(
+          getListRoleMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              glory_api.UserOuterClass.ListRoleRequest,
+              glory_api.UserOuterClass.ListRoleResponse>(
+                service, METHODID_LIST_ROLE)))
+        .addMethod(
+          getGiveRolePermissionMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              glory_api.UserOuterClass.GiveRolePermissionRequest,
+              glory_api.UserOuterClass.GiveRolePermissionResponse>(
+                service, METHODID_GIVE_ROLE_PERMISSION)))
+        .addMethod(
+          getRemoveRolePermissionMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              glory_api.UserOuterClass.RemoveRolePermissionRequest,
+              glory_api.UserOuterClass.RemoveRolePermissionResponse>(
+                service, METHODID_REMOVE_ROLE_PERMISSION)))
+        .addMethod(
+          getCreateRoleMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              glory_api.UserOuterClass.CreateRoleRequest,
+              glory_api.UserOuterClass.CreateRoleResponse>(
+                service, METHODID_CREATE_ROLE)))
+        .addMethod(
+          getDeleteRoleMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              glory_api.UserOuterClass.DeleteRoleRequest,
+              glory_api.UserOuterClass.DeleteRoleResponse>(
+                service, METHODID_DELETE_ROLE)))
         .addMethod(
           getCreateShopMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -11678,6 +12132,12 @@ public final class glory_apiGrpc {
               .addMethod(getUpdateAddressMethod())
               .addMethod(getGetAddressMethod())
               .addMethod(getListAddressMethod())
+              .addMethod(getListPermissionMethod())
+              .addMethod(getListRoleMethod())
+              .addMethod(getGiveRolePermissionMethod())
+              .addMethod(getRemoveRolePermissionMethod())
+              .addMethod(getCreateRoleMethod())
+              .addMethod(getDeleteRoleMethod())
               .addMethod(getCreateShopMethod())
               .addMethod(getGetShopMethod())
               .addMethod(getUpdateShopMethod())
