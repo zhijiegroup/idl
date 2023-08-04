@@ -99,6 +99,27 @@ service glory_api {
     option (api.get) = '/api/user/list_address';
   }
 
+  // user permission
+  //list the permissions that supported
+  rpc ListPermission(ListPermissionRequest) returns (ListPermissionResponse) {
+    option (api.post) = '/api/auth/list_permission';
+  }
+  rpc ListRole(ListRoleRequest) returns (ListRoleResponse) {
+    option (api.post) = '/api/auth/list_role';
+  }
+  rpc GiveRolePermission(GiveRolePermissionRequest) returns (GiveRolePermissionResponse) {
+    option (api.post) = '/api/auth/give_role_permission';
+  }
+  rpc RemoveRolePermission(RemoveRolePermissionRequest) returns (RemoveRolePermissionResponse) {
+    option (api.post) = '/api/auth/remove_role_permission';
+  }
+  rpc CreateRole(CreateRoleRequest) returns (CreateRoleResponse) {
+    option (api.post) = '/api/auth/create_role';
+  }
+  rpc DeleteRole(DeleteRoleRequest) returns (DeleteRoleResponse) {
+    option (api.post) = '/api/auth/delete_role';
+  }
+
   // shop
   rpc CreateShop(CreateShopRequest) returns (CreateShopResponse) {
     option (api.post) = '/api/shop/create_shop';
