@@ -7316,16 +7316,16 @@ public final class TenantOuterClass {
     base.Base.BaseRequestOrBuilder getBaseRequestOrBuilder();
 
     /**
-     * <code>string search_name = 2;</code>
-     * @return The searchName.
+     * <code>string tenant_name = 2;</code>
+     * @return The tenantName.
      */
-    java.lang.String getSearchName();
+    java.lang.String getTenantName();
     /**
-     * <code>string search_name = 2;</code>
-     * @return The bytes for searchName.
+     * <code>string tenant_name = 2;</code>
+     * @return The bytes for tenantName.
      */
     com.google.protobuf.ByteString
-        getSearchNameBytes();
+        getTenantNameBytes();
 
     /**
      * <code>.base.PaginationRequest pagination = 100;</code>
@@ -7355,7 +7355,7 @@ public final class TenantOuterClass {
       super(builder);
     }
     private ListTenantRequest() {
-      searchName_ = "";
+      tenantName_ = "";
     }
 
     @java.lang.Override
@@ -7404,7 +7404,7 @@ public final class TenantOuterClass {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              searchName_ = s;
+              tenantName_ = s;
               break;
             }
             case 802: {
@@ -7478,38 +7478,38 @@ public final class TenantOuterClass {
       return getBaseRequest();
     }
 
-    public static final int SEARCH_NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object searchName_;
+    public static final int TENANT_NAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object tenantName_;
     /**
-     * <code>string search_name = 2;</code>
-     * @return The searchName.
+     * <code>string tenant_name = 2;</code>
+     * @return The tenantName.
      */
     @java.lang.Override
-    public java.lang.String getSearchName() {
-      java.lang.Object ref = searchName_;
+    public java.lang.String getTenantName() {
+      java.lang.Object ref = tenantName_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        searchName_ = s;
+        tenantName_ = s;
         return s;
       }
     }
     /**
-     * <code>string search_name = 2;</code>
-     * @return The bytes for searchName.
+     * <code>string tenant_name = 2;</code>
+     * @return The bytes for tenantName.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getSearchNameBytes() {
-      java.lang.Object ref = searchName_;
+        getTenantNameBytes() {
+      java.lang.Object ref = tenantName_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        searchName_ = b;
+        tenantName_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -7559,8 +7559,8 @@ public final class TenantOuterClass {
       if (baseRequest_ != null) {
         output.writeMessage(1, getBaseRequest());
       }
-      if (!getSearchNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, searchName_);
+      if (!getTenantNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tenantName_);
       }
       if (pagination_ != null) {
         output.writeMessage(100, getPagination());
@@ -7578,8 +7578,8 @@ public final class TenantOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getBaseRequest());
       }
-      if (!getSearchNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, searchName_);
+      if (!getTenantNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tenantName_);
       }
       if (pagination_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -7605,8 +7605,8 @@ public final class TenantOuterClass {
         if (!getBaseRequest()
             .equals(other.getBaseRequest())) return false;
       }
-      if (!getSearchName()
-          .equals(other.getSearchName())) return false;
+      if (!getTenantName()
+          .equals(other.getTenantName())) return false;
       if (hasPagination() != other.hasPagination()) return false;
       if (hasPagination()) {
         if (!getPagination()
@@ -7627,8 +7627,8 @@ public final class TenantOuterClass {
         hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
         hash = (53 * hash) + getBaseRequest().hashCode();
       }
-      hash = (37 * hash) + SEARCH_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getSearchName().hashCode();
+      hash = (37 * hash) + TENANT_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getTenantName().hashCode();
       if (hasPagination()) {
         hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
         hash = (53 * hash) + getPagination().hashCode();
@@ -7772,7 +7772,7 @@ public final class TenantOuterClass {
           baseRequest_ = null;
           baseRequestBuilder_ = null;
         }
-        searchName_ = "";
+        tenantName_ = "";
 
         if (paginationBuilder_ == null) {
           pagination_ = null;
@@ -7811,7 +7811,7 @@ public final class TenantOuterClass {
         } else {
           result.baseRequest_ = baseRequestBuilder_.build();
         }
-        result.searchName_ = searchName_;
+        result.tenantName_ = tenantName_;
         if (paginationBuilder_ == null) {
           result.pagination_ = pagination_;
         } else {
@@ -7868,8 +7868,8 @@ public final class TenantOuterClass {
         if (other.hasBaseRequest()) {
           mergeBaseRequest(other.getBaseRequest());
         }
-        if (!other.getSearchName().isEmpty()) {
-          searchName_ = other.searchName_;
+        if (!other.getTenantName().isEmpty()) {
+          tenantName_ = other.tenantName_;
           onChanged();
         }
         if (other.hasPagination()) {
@@ -8023,78 +8023,78 @@ public final class TenantOuterClass {
         return baseRequestBuilder_;
       }
 
-      private java.lang.Object searchName_ = "";
+      private java.lang.Object tenantName_ = "";
       /**
-       * <code>string search_name = 2;</code>
-       * @return The searchName.
+       * <code>string tenant_name = 2;</code>
+       * @return The tenantName.
        */
-      public java.lang.String getSearchName() {
-        java.lang.Object ref = searchName_;
+      public java.lang.String getTenantName() {
+        java.lang.Object ref = tenantName_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          searchName_ = s;
+          tenantName_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string search_name = 2;</code>
-       * @return The bytes for searchName.
+       * <code>string tenant_name = 2;</code>
+       * @return The bytes for tenantName.
        */
       public com.google.protobuf.ByteString
-          getSearchNameBytes() {
-        java.lang.Object ref = searchName_;
+          getTenantNameBytes() {
+        java.lang.Object ref = tenantName_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          searchName_ = b;
+          tenantName_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string search_name = 2;</code>
-       * @param value The searchName to set.
+       * <code>string tenant_name = 2;</code>
+       * @param value The tenantName to set.
        * @return This builder for chaining.
        */
-      public Builder setSearchName(
+      public Builder setTenantName(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        searchName_ = value;
+        tenantName_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string search_name = 2;</code>
+       * <code>string tenant_name = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearSearchName() {
+      public Builder clearTenantName() {
         
-        searchName_ = getDefaultInstance().getSearchName();
+        tenantName_ = getDefaultInstance().getTenantName();
         onChanged();
         return this;
       }
       /**
-       * <code>string search_name = 2;</code>
-       * @param value The bytes for searchName to set.
+       * <code>string tenant_name = 2;</code>
+       * @param value The bytes for tenantName to set.
        * @return This builder for chaining.
        */
-      public Builder setSearchNameBytes(
+      public Builder setTenantNameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        searchName_ = value;
+        tenantName_ = value;
         onChanged();
         return this;
       }
@@ -17409,16 +17409,34 @@ public final class TenantOuterClass {
     base.Base.BaseRequestOrBuilder getBaseRequestOrBuilder();
 
     /**
-     * <code>string search_name = 2;</code>
-     * @return The searchName.
+     * <code>string major_name = 2;</code>
+     * @return The majorName.
      */
-    java.lang.String getSearchName();
+    java.lang.String getMajorName();
     /**
-     * <code>string search_name = 2;</code>
-     * @return The bytes for searchName.
+     * <code>string major_name = 2;</code>
+     * @return The bytes for majorName.
      */
     com.google.protobuf.ByteString
-        getSearchNameBytes();
+        getMajorNameBytes();
+
+    /**
+     * <code>string major_type = 3;</code>
+     * @return The majorType.
+     */
+    java.lang.String getMajorType();
+    /**
+     * <code>string major_type = 3;</code>
+     * @return The bytes for majorType.
+     */
+    com.google.protobuf.ByteString
+        getMajorTypeBytes();
+
+    /**
+     * <code>int64 tenant_id = 4;</code>
+     * @return The tenantId.
+     */
+    long getTenantId();
 
     /**
      * <code>.base.PaginationRequest pagination = 100;</code>
@@ -17448,7 +17466,8 @@ public final class TenantOuterClass {
       super(builder);
     }
     private ListMajorRequest() {
-      searchName_ = "";
+      majorName_ = "";
+      majorType_ = "";
     }
 
     @java.lang.Override
@@ -17497,7 +17516,18 @@ public final class TenantOuterClass {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              searchName_ = s;
+              majorName_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              majorType_ = s;
+              break;
+            }
+            case 32: {
+
+              tenantId_ = input.readInt64();
               break;
             }
             case 802: {
@@ -17571,42 +17601,91 @@ public final class TenantOuterClass {
       return getBaseRequest();
     }
 
-    public static final int SEARCH_NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object searchName_;
+    public static final int MAJOR_NAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object majorName_;
     /**
-     * <code>string search_name = 2;</code>
-     * @return The searchName.
+     * <code>string major_name = 2;</code>
+     * @return The majorName.
      */
     @java.lang.Override
-    public java.lang.String getSearchName() {
-      java.lang.Object ref = searchName_;
+    public java.lang.String getMajorName() {
+      java.lang.Object ref = majorName_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        searchName_ = s;
+        majorName_ = s;
         return s;
       }
     }
     /**
-     * <code>string search_name = 2;</code>
-     * @return The bytes for searchName.
+     * <code>string major_name = 2;</code>
+     * @return The bytes for majorName.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getSearchNameBytes() {
-      java.lang.Object ref = searchName_;
+        getMajorNameBytes() {
+      java.lang.Object ref = majorName_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        searchName_ = b;
+        majorName_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
+    }
+
+    public static final int MAJOR_TYPE_FIELD_NUMBER = 3;
+    private volatile java.lang.Object majorType_;
+    /**
+     * <code>string major_type = 3;</code>
+     * @return The majorType.
+     */
+    @java.lang.Override
+    public java.lang.String getMajorType() {
+      java.lang.Object ref = majorType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        majorType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string major_type = 3;</code>
+     * @return The bytes for majorType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMajorTypeBytes() {
+      java.lang.Object ref = majorType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        majorType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TENANT_ID_FIELD_NUMBER = 4;
+    private long tenantId_;
+    /**
+     * <code>int64 tenant_id = 4;</code>
+     * @return The tenantId.
+     */
+    @java.lang.Override
+    public long getTenantId() {
+      return tenantId_;
     }
 
     public static final int PAGINATION_FIELD_NUMBER = 100;
@@ -17652,8 +17731,14 @@ public final class TenantOuterClass {
       if (baseRequest_ != null) {
         output.writeMessage(1, getBaseRequest());
       }
-      if (!getSearchNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, searchName_);
+      if (!getMajorNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, majorName_);
+      }
+      if (!getMajorTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, majorType_);
+      }
+      if (tenantId_ != 0L) {
+        output.writeInt64(4, tenantId_);
       }
       if (pagination_ != null) {
         output.writeMessage(100, getPagination());
@@ -17671,8 +17756,15 @@ public final class TenantOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getBaseRequest());
       }
-      if (!getSearchNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, searchName_);
+      if (!getMajorNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, majorName_);
+      }
+      if (!getMajorTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, majorType_);
+      }
+      if (tenantId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(4, tenantId_);
       }
       if (pagination_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -17698,8 +17790,12 @@ public final class TenantOuterClass {
         if (!getBaseRequest()
             .equals(other.getBaseRequest())) return false;
       }
-      if (!getSearchName()
-          .equals(other.getSearchName())) return false;
+      if (!getMajorName()
+          .equals(other.getMajorName())) return false;
+      if (!getMajorType()
+          .equals(other.getMajorType())) return false;
+      if (getTenantId()
+          != other.getTenantId()) return false;
       if (hasPagination() != other.hasPagination()) return false;
       if (hasPagination()) {
         if (!getPagination()
@@ -17720,8 +17816,13 @@ public final class TenantOuterClass {
         hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
         hash = (53 * hash) + getBaseRequest().hashCode();
       }
-      hash = (37 * hash) + SEARCH_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getSearchName().hashCode();
+      hash = (37 * hash) + MAJOR_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getMajorName().hashCode();
+      hash = (37 * hash) + MAJOR_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getMajorType().hashCode();
+      hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTenantId());
       if (hasPagination()) {
         hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
         hash = (53 * hash) + getPagination().hashCode();
@@ -17865,7 +17966,11 @@ public final class TenantOuterClass {
           baseRequest_ = null;
           baseRequestBuilder_ = null;
         }
-        searchName_ = "";
+        majorName_ = "";
+
+        majorType_ = "";
+
+        tenantId_ = 0L;
 
         if (paginationBuilder_ == null) {
           pagination_ = null;
@@ -17904,7 +18009,9 @@ public final class TenantOuterClass {
         } else {
           result.baseRequest_ = baseRequestBuilder_.build();
         }
-        result.searchName_ = searchName_;
+        result.majorName_ = majorName_;
+        result.majorType_ = majorType_;
+        result.tenantId_ = tenantId_;
         if (paginationBuilder_ == null) {
           result.pagination_ = pagination_;
         } else {
@@ -17961,9 +18068,16 @@ public final class TenantOuterClass {
         if (other.hasBaseRequest()) {
           mergeBaseRequest(other.getBaseRequest());
         }
-        if (!other.getSearchName().isEmpty()) {
-          searchName_ = other.searchName_;
+        if (!other.getMajorName().isEmpty()) {
+          majorName_ = other.majorName_;
           onChanged();
+        }
+        if (!other.getMajorType().isEmpty()) {
+          majorType_ = other.majorType_;
+          onChanged();
+        }
+        if (other.getTenantId() != 0L) {
+          setTenantId(other.getTenantId());
         }
         if (other.hasPagination()) {
           mergePagination(other.getPagination());
@@ -18116,78 +18230,185 @@ public final class TenantOuterClass {
         return baseRequestBuilder_;
       }
 
-      private java.lang.Object searchName_ = "";
+      private java.lang.Object majorName_ = "";
       /**
-       * <code>string search_name = 2;</code>
-       * @return The searchName.
+       * <code>string major_name = 2;</code>
+       * @return The majorName.
        */
-      public java.lang.String getSearchName() {
-        java.lang.Object ref = searchName_;
+      public java.lang.String getMajorName() {
+        java.lang.Object ref = majorName_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          searchName_ = s;
+          majorName_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string search_name = 2;</code>
-       * @return The bytes for searchName.
+       * <code>string major_name = 2;</code>
+       * @return The bytes for majorName.
        */
       public com.google.protobuf.ByteString
-          getSearchNameBytes() {
-        java.lang.Object ref = searchName_;
+          getMajorNameBytes() {
+        java.lang.Object ref = majorName_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          searchName_ = b;
+          majorName_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string search_name = 2;</code>
-       * @param value The searchName to set.
+       * <code>string major_name = 2;</code>
+       * @param value The majorName to set.
        * @return This builder for chaining.
        */
-      public Builder setSearchName(
+      public Builder setMajorName(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        searchName_ = value;
+        majorName_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string search_name = 2;</code>
+       * <code>string major_name = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearSearchName() {
+      public Builder clearMajorName() {
         
-        searchName_ = getDefaultInstance().getSearchName();
+        majorName_ = getDefaultInstance().getMajorName();
         onChanged();
         return this;
       }
       /**
-       * <code>string search_name = 2;</code>
-       * @param value The bytes for searchName to set.
+       * <code>string major_name = 2;</code>
+       * @param value The bytes for majorName to set.
        * @return This builder for chaining.
        */
-      public Builder setSearchNameBytes(
+      public Builder setMajorNameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        searchName_ = value;
+        majorName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object majorType_ = "";
+      /**
+       * <code>string major_type = 3;</code>
+       * @return The majorType.
+       */
+      public java.lang.String getMajorType() {
+        java.lang.Object ref = majorType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          majorType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string major_type = 3;</code>
+       * @return The bytes for majorType.
+       */
+      public com.google.protobuf.ByteString
+          getMajorTypeBytes() {
+        java.lang.Object ref = majorType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          majorType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string major_type = 3;</code>
+       * @param value The majorType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMajorType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        majorType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string major_type = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMajorType() {
+        
+        majorType_ = getDefaultInstance().getMajorType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string major_type = 3;</code>
+       * @param value The bytes for majorType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMajorTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        majorType_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long tenantId_ ;
+      /**
+       * <code>int64 tenant_id = 4;</code>
+       * @return The tenantId.
+       */
+      @java.lang.Override
+      public long getTenantId() {
+        return tenantId_;
+      }
+      /**
+       * <code>int64 tenant_id = 4;</code>
+       * @param value The tenantId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTenantId(long value) {
+        
+        tenantId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 tenant_id = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTenantId() {
+        
+        tenantId_ = 0L;
         onChanged();
         return this;
       }
@@ -27683,16 +27904,40 @@ public final class TenantOuterClass {
     base.Base.BaseRequestOrBuilder getBaseRequestOrBuilder();
 
     /**
-     * <code>string search_name = 2;</code>
-     * @return The searchName.
+     * <code>string class_name = 2;</code>
+     * @return The className.
      */
-    java.lang.String getSearchName();
+    java.lang.String getClassName();
     /**
-     * <code>string search_name = 2;</code>
-     * @return The bytes for searchName.
+     * <code>string class_name = 2;</code>
+     * @return The bytes for className.
      */
     com.google.protobuf.ByteString
-        getSearchNameBytes();
+        getClassNameBytes();
+
+    /**
+     * <code>int64 class_id = 3;</code>
+     * @return The classId.
+     */
+    long getClassId();
+
+    /**
+     * <code>int64 major_id = 4;</code>
+     * @return The majorId.
+     */
+    long getMajorId();
+
+    /**
+     * <code>int64 tenant_id = 5;</code>
+     * @return The tenantId.
+     */
+    long getTenantId();
+
+    /**
+     * <code>int32 grade = 6;</code>
+     * @return The grade.
+     */
+    int getGrade();
 
     /**
      * <code>.base.PaginationRequest pagination = 100;</code>
@@ -27722,7 +27967,7 @@ public final class TenantOuterClass {
       super(builder);
     }
     private ListClassRequest() {
-      searchName_ = "";
+      className_ = "";
     }
 
     @java.lang.Override
@@ -27771,7 +28016,27 @@ public final class TenantOuterClass {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              searchName_ = s;
+              className_ = s;
+              break;
+            }
+            case 24: {
+
+              classId_ = input.readInt64();
+              break;
+            }
+            case 32: {
+
+              majorId_ = input.readInt64();
+              break;
+            }
+            case 40: {
+
+              tenantId_ = input.readInt64();
+              break;
+            }
+            case 48: {
+
+              grade_ = input.readInt32();
               break;
             }
             case 802: {
@@ -27845,42 +28110,86 @@ public final class TenantOuterClass {
       return getBaseRequest();
     }
 
-    public static final int SEARCH_NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object searchName_;
+    public static final int CLASS_NAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object className_;
     /**
-     * <code>string search_name = 2;</code>
-     * @return The searchName.
+     * <code>string class_name = 2;</code>
+     * @return The className.
      */
     @java.lang.Override
-    public java.lang.String getSearchName() {
-      java.lang.Object ref = searchName_;
+    public java.lang.String getClassName() {
+      java.lang.Object ref = className_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        searchName_ = s;
+        className_ = s;
         return s;
       }
     }
     /**
-     * <code>string search_name = 2;</code>
-     * @return The bytes for searchName.
+     * <code>string class_name = 2;</code>
+     * @return The bytes for className.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getSearchNameBytes() {
-      java.lang.Object ref = searchName_;
+        getClassNameBytes() {
+      java.lang.Object ref = className_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        searchName_ = b;
+        className_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
+    }
+
+    public static final int CLASS_ID_FIELD_NUMBER = 3;
+    private long classId_;
+    /**
+     * <code>int64 class_id = 3;</code>
+     * @return The classId.
+     */
+    @java.lang.Override
+    public long getClassId() {
+      return classId_;
+    }
+
+    public static final int MAJOR_ID_FIELD_NUMBER = 4;
+    private long majorId_;
+    /**
+     * <code>int64 major_id = 4;</code>
+     * @return The majorId.
+     */
+    @java.lang.Override
+    public long getMajorId() {
+      return majorId_;
+    }
+
+    public static final int TENANT_ID_FIELD_NUMBER = 5;
+    private long tenantId_;
+    /**
+     * <code>int64 tenant_id = 5;</code>
+     * @return The tenantId.
+     */
+    @java.lang.Override
+    public long getTenantId() {
+      return tenantId_;
+    }
+
+    public static final int GRADE_FIELD_NUMBER = 6;
+    private int grade_;
+    /**
+     * <code>int32 grade = 6;</code>
+     * @return The grade.
+     */
+    @java.lang.Override
+    public int getGrade() {
+      return grade_;
     }
 
     public static final int PAGINATION_FIELD_NUMBER = 100;
@@ -27926,8 +28235,20 @@ public final class TenantOuterClass {
       if (baseRequest_ != null) {
         output.writeMessage(1, getBaseRequest());
       }
-      if (!getSearchNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, searchName_);
+      if (!getClassNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, className_);
+      }
+      if (classId_ != 0L) {
+        output.writeInt64(3, classId_);
+      }
+      if (majorId_ != 0L) {
+        output.writeInt64(4, majorId_);
+      }
+      if (tenantId_ != 0L) {
+        output.writeInt64(5, tenantId_);
+      }
+      if (grade_ != 0) {
+        output.writeInt32(6, grade_);
       }
       if (pagination_ != null) {
         output.writeMessage(100, getPagination());
@@ -27945,8 +28266,24 @@ public final class TenantOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getBaseRequest());
       }
-      if (!getSearchNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, searchName_);
+      if (!getClassNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, className_);
+      }
+      if (classId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, classId_);
+      }
+      if (majorId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(4, majorId_);
+      }
+      if (tenantId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, tenantId_);
+      }
+      if (grade_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(6, grade_);
       }
       if (pagination_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -27972,8 +28309,16 @@ public final class TenantOuterClass {
         if (!getBaseRequest()
             .equals(other.getBaseRequest())) return false;
       }
-      if (!getSearchName()
-          .equals(other.getSearchName())) return false;
+      if (!getClassName()
+          .equals(other.getClassName())) return false;
+      if (getClassId()
+          != other.getClassId()) return false;
+      if (getMajorId()
+          != other.getMajorId()) return false;
+      if (getTenantId()
+          != other.getTenantId()) return false;
+      if (getGrade()
+          != other.getGrade()) return false;
       if (hasPagination() != other.hasPagination()) return false;
       if (hasPagination()) {
         if (!getPagination()
@@ -27994,8 +28339,19 @@ public final class TenantOuterClass {
         hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
         hash = (53 * hash) + getBaseRequest().hashCode();
       }
-      hash = (37 * hash) + SEARCH_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getSearchName().hashCode();
+      hash = (37 * hash) + CLASS_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getClassName().hashCode();
+      hash = (37 * hash) + CLASS_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getClassId());
+      hash = (37 * hash) + MAJOR_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getMajorId());
+      hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTenantId());
+      hash = (37 * hash) + GRADE_FIELD_NUMBER;
+      hash = (53 * hash) + getGrade();
       if (hasPagination()) {
         hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
         hash = (53 * hash) + getPagination().hashCode();
@@ -28139,7 +28495,15 @@ public final class TenantOuterClass {
           baseRequest_ = null;
           baseRequestBuilder_ = null;
         }
-        searchName_ = "";
+        className_ = "";
+
+        classId_ = 0L;
+
+        majorId_ = 0L;
+
+        tenantId_ = 0L;
+
+        grade_ = 0;
 
         if (paginationBuilder_ == null) {
           pagination_ = null;
@@ -28178,7 +28542,11 @@ public final class TenantOuterClass {
         } else {
           result.baseRequest_ = baseRequestBuilder_.build();
         }
-        result.searchName_ = searchName_;
+        result.className_ = className_;
+        result.classId_ = classId_;
+        result.majorId_ = majorId_;
+        result.tenantId_ = tenantId_;
+        result.grade_ = grade_;
         if (paginationBuilder_ == null) {
           result.pagination_ = pagination_;
         } else {
@@ -28235,9 +28603,21 @@ public final class TenantOuterClass {
         if (other.hasBaseRequest()) {
           mergeBaseRequest(other.getBaseRequest());
         }
-        if (!other.getSearchName().isEmpty()) {
-          searchName_ = other.searchName_;
+        if (!other.getClassName().isEmpty()) {
+          className_ = other.className_;
           onChanged();
+        }
+        if (other.getClassId() != 0L) {
+          setClassId(other.getClassId());
+        }
+        if (other.getMajorId() != 0L) {
+          setMajorId(other.getMajorId());
+        }
+        if (other.getTenantId() != 0L) {
+          setTenantId(other.getTenantId());
+        }
+        if (other.getGrade() != 0) {
+          setGrade(other.getGrade());
         }
         if (other.hasPagination()) {
           mergePagination(other.getPagination());
@@ -28390,78 +28770,202 @@ public final class TenantOuterClass {
         return baseRequestBuilder_;
       }
 
-      private java.lang.Object searchName_ = "";
+      private java.lang.Object className_ = "";
       /**
-       * <code>string search_name = 2;</code>
-       * @return The searchName.
+       * <code>string class_name = 2;</code>
+       * @return The className.
        */
-      public java.lang.String getSearchName() {
-        java.lang.Object ref = searchName_;
+      public java.lang.String getClassName() {
+        java.lang.Object ref = className_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          searchName_ = s;
+          className_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string search_name = 2;</code>
-       * @return The bytes for searchName.
+       * <code>string class_name = 2;</code>
+       * @return The bytes for className.
        */
       public com.google.protobuf.ByteString
-          getSearchNameBytes() {
-        java.lang.Object ref = searchName_;
+          getClassNameBytes() {
+        java.lang.Object ref = className_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          searchName_ = b;
+          className_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string search_name = 2;</code>
-       * @param value The searchName to set.
+       * <code>string class_name = 2;</code>
+       * @param value The className to set.
        * @return This builder for chaining.
        */
-      public Builder setSearchName(
+      public Builder setClassName(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        searchName_ = value;
+        className_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string search_name = 2;</code>
+       * <code>string class_name = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearSearchName() {
+      public Builder clearClassName() {
         
-        searchName_ = getDefaultInstance().getSearchName();
+        className_ = getDefaultInstance().getClassName();
         onChanged();
         return this;
       }
       /**
-       * <code>string search_name = 2;</code>
-       * @param value The bytes for searchName to set.
+       * <code>string class_name = 2;</code>
+       * @param value The bytes for className to set.
        * @return This builder for chaining.
        */
-      public Builder setSearchNameBytes(
+      public Builder setClassNameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        searchName_ = value;
+        className_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long classId_ ;
+      /**
+       * <code>int64 class_id = 3;</code>
+       * @return The classId.
+       */
+      @java.lang.Override
+      public long getClassId() {
+        return classId_;
+      }
+      /**
+       * <code>int64 class_id = 3;</code>
+       * @param value The classId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClassId(long value) {
+        
+        classId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 class_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearClassId() {
+        
+        classId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long majorId_ ;
+      /**
+       * <code>int64 major_id = 4;</code>
+       * @return The majorId.
+       */
+      @java.lang.Override
+      public long getMajorId() {
+        return majorId_;
+      }
+      /**
+       * <code>int64 major_id = 4;</code>
+       * @param value The majorId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMajorId(long value) {
+        
+        majorId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 major_id = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMajorId() {
+        
+        majorId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long tenantId_ ;
+      /**
+       * <code>int64 tenant_id = 5;</code>
+       * @return The tenantId.
+       */
+      @java.lang.Override
+      public long getTenantId() {
+        return tenantId_;
+      }
+      /**
+       * <code>int64 tenant_id = 5;</code>
+       * @param value The tenantId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTenantId(long value) {
+        
+        tenantId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 tenant_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTenantId() {
+        
+        tenantId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int grade_ ;
+      /**
+       * <code>int32 grade = 6;</code>
+       * @return The grade.
+       */
+      @java.lang.Override
+      public int getGrade() {
+        return grade_;
+      }
+      /**
+       * <code>int32 grade = 6;</code>
+       * @param value The grade to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGrade(int value) {
+        
+        grade_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 grade = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGrade() {
+        
+        grade_ = 0;
         onChanged();
         return this;
       }
@@ -30873,7 +31377,7 @@ public final class TenantOuterClass {
       "teTenantResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
       "se.BaseResponse\"~\n\021ListTenantRequest\022\'\n\014" +
       "base_request\030\001 \001(\0132\021.base.BaseRequest\022\023\n" +
-      "\013search_name\030\002 \001(\t\022+\n\npagination\030d \001(\0132\027" +
+      "\013tenant_name\030\002 \001(\t\022+\n\npagination\030d \001(\0132\027" +
       ".base.PaginationRequest\"\\\n\020TenantWithAut" +
       "hor\022!\n\006tenant\030\001 \001(\0132\021.glory_api.Tenant\022%" +
       "\n\013author_info\030\002 \001(\0132\020.base.AuthorInfo\"\227\001" +
@@ -30900,46 +31404,49 @@ public final class TenantOuterClass {
       "O\n\022DeleteMajorRequest\022\'\n\014base_request\030\001 " +
       "\001(\0132\021.base.BaseRequest\022\020\n\010major_id\030\002 \001(\003" +
       "\"<\n\023DeleteMajorResponse\022%\n\tbase_resp\030\001 \001" +
-      "(\0132\022.base.BaseResponse\"}\n\020ListMajorReque" +
-      "st\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequ" +
-      "est\022\023\n\013search_name\030\002 \001(\t\022+\n\npagination\030d" +
-      " \001(\0132\027.base.PaginationRequest\"Y\n\017MajorWi" +
-      "thAuthor\022\037\n\005major\030\001 \001(\0132\020.glory_api.Majo" +
-      "r\022%\n\013author_info\030\002 \001(\0132\020.base.AuthorInfo" +
-      "\"\224\001\n\021ListMajorResponse\022%\n\tbase_resp\030\001 \001(" +
-      "\0132\022.base.BaseResponse\022*\n\006majors\030\002 \003(\0132\032." +
-      "glory_api.MajorWithAuthor\022,\n\npagination\030" +
-      "d \001(\0132\030.base.PaginationResponse\"u\n\005Class" +
-      "\022\020\n\010class_id\030\001 \001(\003\022\022\n\nclass_name\030\002 \001(\t\022\020" +
-      "\n\010major_id\030\004 \001(\003\022\021\n\ttenant_id\030\005 \001(\003\022\r\n\005g" +
-      "rade\030\006 \001(\005\022\022\n\nstart_date\030\007 \001(\t\"^\n\022Create" +
-      "ClassRequest\022\'\n\014base_request\030\001 \001(\0132\021.bas" +
-      "e.BaseRequest\022\037\n\005class\030\002 \001(\0132\020.glory_api" +
-      ".Class\"N\n\023CreateClassResponse\022%\n\tbase_re" +
-      "sp\030\001 \001(\0132\022.base.BaseResponse\022\020\n\010class_id" +
-      "\030\002 \001(\003\"L\n\017GetClassRequest\022\'\n\014base_reques" +
-      "t\030\001 \001(\0132\021.base.BaseRequest\022\020\n\010class_id\030\002" +
-      " \001(\003\"\201\001\n\020GetClassResponse\022%\n\tbase_resp\030\001" +
-      " \001(\0132\022.base.BaseResponse\022\037\n\005class\030\002 \001(\0132" +
-      "\020.glory_api.Class\022%\n\013author_info\030\003 \001(\0132\020" +
-      ".base.AuthorInfo\"^\n\022UpdateClassRequest\022\'" +
-      "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\022" +
-      "\037\n\005Class\030\003 \001(\0132\020.glory_api.Class\"N\n\023Upda" +
+      "(\0132\022.base.BaseResponse\"\243\001\n\020ListMajorRequ" +
+      "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
+      "uest\022\022\n\nmajor_name\030\002 \001(\t\022\022\n\nmajor_type\030\003" +
+      " \001(\t\022\021\n\ttenant_id\030\004 \001(\003\022+\n\npagination\030d " +
+      "\001(\0132\027.base.PaginationRequest\"Y\n\017MajorWit" +
+      "hAuthor\022\037\n\005major\030\001 \001(\0132\020.glory_api.Major" +
+      "\022%\n\013author_info\030\002 \001(\0132\020.base.AuthorInfo\"" +
+      "\224\001\n\021ListMajorResponse\022%\n\tbase_resp\030\001 \001(\013" +
+      "2\022.base.BaseResponse\022*\n\006majors\030\002 \003(\0132\032.g" +
+      "lory_api.MajorWithAuthor\022,\n\npagination\030d" +
+      " \001(\0132\030.base.PaginationResponse\"u\n\005Class\022" +
+      "\020\n\010class_id\030\001 \001(\003\022\022\n\nclass_name\030\002 \001(\t\022\020\n" +
+      "\010major_id\030\004 \001(\003\022\021\n\ttenant_id\030\005 \001(\003\022\r\n\005gr" +
+      "ade\030\006 \001(\005\022\022\n\nstart_date\030\007 \001(\t\"^\n\022CreateC" +
+      "lassRequest\022\'\n\014base_request\030\001 \001(\0132\021.base" +
+      ".BaseRequest\022\037\n\005class\030\002 \001(\0132\020.glory_api." +
+      "Class\"N\n\023CreateClassResponse\022%\n\tbase_res" +
+      "p\030\001 \001(\0132\022.base.BaseResponse\022\020\n\010class_id\030" +
+      "\002 \001(\003\"L\n\017GetClassRequest\022\'\n\014base_request" +
+      "\030\001 \001(\0132\021.base.BaseRequest\022\020\n\010class_id\030\002 " +
+      "\001(\003\"\201\001\n\020GetClassResponse\022%\n\tbase_resp\030\001 " +
+      "\001(\0132\022.base.BaseResponse\022\037\n\005class\030\002 \001(\0132\020" +
+      ".glory_api.Class\022%\n\013author_info\030\003 \001(\0132\020." +
+      "base.AuthorInfo\"^\n\022UpdateClassRequest\022\'\n" +
+      "\014base_request\030\001 \001(\0132\021.base.BaseRequest\022\037" +
+      "\n\005Class\030\003 \001(\0132\020.glory_api.Class\"N\n\023Updat" +
+      "eClassResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
+      ".BaseResponse\022\020\n\010class_id\030\002 \001(\003\"O\n\022Delet" +
+      "eClassRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
+      "se.BaseRequest\022\020\n\010class_id\030\002 \001(\003\"<\n\023Dele" +
       "teClassResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
-      "e.BaseResponse\022\020\n\010class_id\030\002 \001(\003\"O\n\022Dele" +
-      "teClassRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
-      "ase.BaseRequest\022\020\n\010class_id\030\002 \001(\003\"<\n\023Del" +
-      "eteClassResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
-      "se.BaseResponse\"}\n\020ListClassRequest\022\'\n\014b" +
-      "ase_request\030\001 \001(\0132\021.base.BaseRequest\022\023\n\013" +
-      "search_name\030\002 \001(\t\022+\n\npagination\030d \001(\0132\027." +
-      "base.PaginationRequest\"Y\n\017ClassWithAutho" +
-      "r\022\037\n\005class\030\001 \001(\0132\020.glory_api.Class\022%\n\013au" +
-      "thor_info\030\002 \001(\0132\020.base.AuthorInfo\"\223\001\n\021Li" +
-      "stClassResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
-      "e.BaseResponse\022)\n\005class\030\002 \003(\0132\032.glory_ap" +
-      "i.ClassWithAuthor\022,\n\npagination\030d \001(\0132\030." +
-      "base.PaginationResponseb\006proto3"
+      "e.BaseResponse\"\302\001\n\020ListClassRequest\022\'\n\014b" +
+      "ase_request\030\001 \001(\0132\021.base.BaseRequest\022\022\n\n" +
+      "class_name\030\002 \001(\t\022\020\n\010class_id\030\003 \001(\003\022\020\n\010ma" +
+      "jor_id\030\004 \001(\003\022\021\n\ttenant_id\030\005 \001(\003\022\r\n\005grade" +
+      "\030\006 \001(\005\022+\n\npagination\030d \001(\0132\027.base.Pagina" +
+      "tionRequest\"Y\n\017ClassWithAuthor\022\037\n\005class\030" +
+      "\001 \001(\0132\020.glory_api.Class\022%\n\013author_info\030\002" +
+      " \001(\0132\020.base.AuthorInfo\"\223\001\n\021ListClassResp" +
+      "onse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespo" +
+      "nse\022)\n\005class\030\002 \003(\0132\032.glory_api.ClassWith" +
+      "Author\022,\n\npagination\030d \001(\0132\030.base.Pagina" +
+      "tionResponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -31005,7 +31512,7 @@ public final class TenantOuterClass {
     internal_static_glory_api_ListTenantRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListTenantRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "SearchName", "Pagination", });
+        new java.lang.String[] { "BaseRequest", "TenantName", "Pagination", });
     internal_static_glory_api_TenantWithAuthor_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_glory_api_TenantWithAuthor_fieldAccessorTable = new
@@ -31077,7 +31584,7 @@ public final class TenantOuterClass {
     internal_static_glory_api_ListMajorRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListMajorRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "SearchName", "Pagination", });
+        new java.lang.String[] { "BaseRequest", "MajorName", "MajorType", "TenantId", "Pagination", });
     internal_static_glory_api_MajorWithAuthor_descriptor =
       getDescriptor().getMessageTypes().get(22);
     internal_static_glory_api_MajorWithAuthor_fieldAccessorTable = new
@@ -31149,7 +31656,7 @@ public final class TenantOuterClass {
     internal_static_glory_api_ListClassRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListClassRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "SearchName", "Pagination", });
+        new java.lang.String[] { "BaseRequest", "ClassName", "ClassId", "MajorId", "TenantId", "Grade", "Pagination", });
     internal_static_glory_api_ClassWithAuthor_descriptor =
       getDescriptor().getMessageTypes().get(34);
     internal_static_glory_api_ClassWithAuthor_fieldAccessorTable = new
