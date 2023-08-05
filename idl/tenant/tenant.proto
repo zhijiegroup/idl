@@ -58,7 +58,7 @@ message DeleteTenantResponse {
 
 message ListTenantRequest {
   base.BaseRequest base_request = 1;
-  string search_name = 2;
+  string tenant_name = 2;
   base.PaginationRequest pagination = 100;
 }
 
@@ -127,7 +127,9 @@ message DeleteMajorResponse {
 
 message ListMajorRequest {
   base.BaseRequest base_request = 1;
-  string search_name = 2;
+  string major_name = 2;
+  string major_type = 3;
+  int64 tenant_id =4;
   base.PaginationRequest pagination = 100;
 }
 
@@ -197,7 +199,11 @@ message DeleteClassResponse {
 
 message ListClassRequest {
   base.BaseRequest base_request = 1;
-  string search_name = 2;
+  string class_name = 2;
+  int64 class_id =3;
+  int64 major_id =4;
+  int64 tenant_id =5;
+  int32 grade = 6;
   base.PaginationRequest pagination = 100;
 }
 
