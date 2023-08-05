@@ -61,7 +61,7 @@ export interface DeleteTenantResponse {
 
 export interface ListTenantRequest {
   base_request?: base.BaseRequest;
-  search_name?: string;
+  tenant_name?: string;
   pagination?: base.PaginationRequest;
 }
 
@@ -130,7 +130,9 @@ export interface DeleteMajorResponse {
 
 export interface ListMajorRequest {
   base_request?: base.BaseRequest;
-  search_name?: string;
+  major_name?: string;
+  major_type?: string;
+  tenant_id?: string;
   pagination?: base.PaginationRequest;
 }
 
@@ -203,7 +205,11 @@ export interface DeleteClassResponse {
 
 export interface ListClassRequest {
   base_request?: base.BaseRequest;
-  search_name?: string;
+  class_name?: string;
+  class_id?: string;
+  major_id?: string;
+  tenant_id?: string;
+  grade?: number;
   pagination?: base.PaginationRequest;
 }
 

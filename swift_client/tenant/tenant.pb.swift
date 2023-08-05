@@ -276,7 +276,7 @@ struct GloryApi_ListTenantRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
-  var searchName: String = String()
+  var tenantName: String = String()
 
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
@@ -612,7 +612,11 @@ struct GloryApi_ListMajorRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
-  var searchName: String = String()
+  var majorName: String = String()
+
+  var majorType: String = String()
+
+  var tenantID: Int64 = 0
 
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
@@ -954,7 +958,15 @@ struct GloryApi_ListClassRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
-  var searchName: String = String()
+  var className: String = String()
+
+  var classID: Int64 = 0
+
+  var majorID: Int64 = 0
+
+  var tenantID: Int64 = 0
+
+  var grade: Int32 = 0
 
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
@@ -1476,7 +1488,7 @@ extension GloryApi_ListTenantRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
   static let protoMessageName: String = _protobuf_package + ".ListTenantRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
-    2: .standard(proto: "search_name"),
+    2: .standard(proto: "tenant_name"),
     100: .same(proto: "pagination"),
   ]
 
@@ -1487,7 +1499,7 @@ extension GloryApi_ListTenantRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.searchName) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.tenantName) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -1502,8 +1514,8 @@ extension GloryApi_ListTenantRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    if !self.searchName.isEmpty {
-      try visitor.visitSingularStringField(value: self.searchName, fieldNumber: 2)
+    if !self.tenantName.isEmpty {
+      try visitor.visitSingularStringField(value: self.tenantName, fieldNumber: 2)
     }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
@@ -1513,7 +1525,7 @@ extension GloryApi_ListTenantRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
 
   static func ==(lhs: GloryApi_ListTenantRequest, rhs: GloryApi_ListTenantRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
-    if lhs.searchName != rhs.searchName {return false}
+    if lhs.tenantName != rhs.tenantName {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -2000,7 +2012,9 @@ extension GloryApi_ListMajorRequest: SwiftProtobuf.Message, SwiftProtobuf._Messa
   static let protoMessageName: String = _protobuf_package + ".ListMajorRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
-    2: .standard(proto: "search_name"),
+    2: .standard(proto: "major_name"),
+    3: .standard(proto: "major_type"),
+    4: .standard(proto: "tenant_id"),
     100: .same(proto: "pagination"),
   ]
 
@@ -2011,7 +2025,9 @@ extension GloryApi_ListMajorRequest: SwiftProtobuf.Message, SwiftProtobuf._Messa
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.searchName) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.majorName) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.majorType) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -2026,8 +2042,14 @@ extension GloryApi_ListMajorRequest: SwiftProtobuf.Message, SwiftProtobuf._Messa
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    if !self.searchName.isEmpty {
-      try visitor.visitSingularStringField(value: self.searchName, fieldNumber: 2)
+    if !self.majorName.isEmpty {
+      try visitor.visitSingularStringField(value: self.majorName, fieldNumber: 2)
+    }
+    if !self.majorType.isEmpty {
+      try visitor.visitSingularStringField(value: self.majorType, fieldNumber: 3)
+    }
+    if self.tenantID != 0 {
+      try visitor.visitSingularInt64Field(value: self.tenantID, fieldNumber: 4)
     }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
@@ -2037,7 +2059,9 @@ extension GloryApi_ListMajorRequest: SwiftProtobuf.Message, SwiftProtobuf._Messa
 
   static func ==(lhs: GloryApi_ListMajorRequest, rhs: GloryApi_ListMajorRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
-    if lhs.searchName != rhs.searchName {return false}
+    if lhs.majorName != rhs.majorName {return false}
+    if lhs.majorType != rhs.majorType {return false}
+    if lhs.tenantID != rhs.tenantID {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -2536,7 +2560,11 @@ extension GloryApi_ListClassRequest: SwiftProtobuf.Message, SwiftProtobuf._Messa
   static let protoMessageName: String = _protobuf_package + ".ListClassRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
-    2: .standard(proto: "search_name"),
+    2: .standard(proto: "class_name"),
+    3: .standard(proto: "class_id"),
+    4: .standard(proto: "major_id"),
+    5: .standard(proto: "tenant_id"),
+    6: .same(proto: "grade"),
     100: .same(proto: "pagination"),
   ]
 
@@ -2547,7 +2575,11 @@ extension GloryApi_ListClassRequest: SwiftProtobuf.Message, SwiftProtobuf._Messa
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.searchName) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.className) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.classID) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.majorID) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
+      case 6: try { try decoder.decodeSingularInt32Field(value: &self.grade) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -2562,8 +2594,20 @@ extension GloryApi_ListClassRequest: SwiftProtobuf.Message, SwiftProtobuf._Messa
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    if !self.searchName.isEmpty {
-      try visitor.visitSingularStringField(value: self.searchName, fieldNumber: 2)
+    if !self.className.isEmpty {
+      try visitor.visitSingularStringField(value: self.className, fieldNumber: 2)
+    }
+    if self.classID != 0 {
+      try visitor.visitSingularInt64Field(value: self.classID, fieldNumber: 3)
+    }
+    if self.majorID != 0 {
+      try visitor.visitSingularInt64Field(value: self.majorID, fieldNumber: 4)
+    }
+    if self.tenantID != 0 {
+      try visitor.visitSingularInt64Field(value: self.tenantID, fieldNumber: 5)
+    }
+    if self.grade != 0 {
+      try visitor.visitSingularInt32Field(value: self.grade, fieldNumber: 6)
     }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
@@ -2573,7 +2617,11 @@ extension GloryApi_ListClassRequest: SwiftProtobuf.Message, SwiftProtobuf._Messa
 
   static func ==(lhs: GloryApi_ListClassRequest, rhs: GloryApi_ListClassRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
-    if lhs.searchName != rhs.searchName {return false}
+    if lhs.className != rhs.className {return false}
+    if lhs.classID != rhs.classID {return false}
+    if lhs.majorID != rhs.majorID {return false}
+    if lhs.tenantID != rhs.tenantID {return false}
+    if lhs.grade != rhs.grade {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
