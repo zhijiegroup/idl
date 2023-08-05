@@ -163,8 +163,7 @@ message GiveRolePermissionResponse {
 
 message RemoveRolePermissionRequest {
   base.BaseRequest base_request=1;
-  int64 role_id = 2;
-  repeated int64 permission_id =3;
+  repeated int64 role_permission_id =3;
 }
 
 message RemoveRolePermissionResponse {
