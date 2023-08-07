@@ -174,8 +174,7 @@ export interface GiveRolePermissionResponse {
 
 export interface RemoveRolePermissionRequest {
   base_request?: base.BaseRequest;
-  role_id?: string;
-  permission_id?: Array<string>;
+  role_permission_id?: Array<string>;
 }
 
 export interface RemoveRolePermissionResponse {

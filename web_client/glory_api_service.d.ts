@@ -365,6 +365,10 @@ list the permissions that supported */
 
   ShipGoods(request: order.ShipGoodsRequest): Promise<order.ShipGoodsResponse>;
 
+  CancelOrder(
+    request: order.CancelOrderRequest
+  ): Promise<order.CancelOrderResponse>;
+
   ShipGoodsInBatches(
     request: order.ShipGoodsInBatchesRequest
   ): Promise<order.ShipGoodsInBatchesResponse>;

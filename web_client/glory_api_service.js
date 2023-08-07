@@ -686,6 +686,14 @@ export class glory_api {
     );
   }
 
+  CancelOrder(request) {
+    const uri = `${this.uriPrefix}/api/shop/cancel_order`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   ShipGoodsInBatches(request) {
     const uri = `${this.uriPrefix}/api/shop/ship_goods_batch`;
     const body = JSONbigint.stringify(request);

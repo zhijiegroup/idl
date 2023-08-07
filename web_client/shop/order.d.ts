@@ -235,6 +235,15 @@ export interface ShipGoodsResponse {
   base_resp?: base.BaseResponse;
 }
 
+export interface CancelOrderRequest {
+  base_request?: base.BaseRequest;
+  order_id?: string;
+}
+
+export interface CancelOrderResponse {
+  base_resp?: base.BaseResponse;
+}
+
 export interface ShipGoodsInBatchesRequest {
   base_request?: base.BaseRequest;
   order_id?: Array<string>;

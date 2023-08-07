@@ -703,9 +703,7 @@ struct GloryApi_RemoveRolePermissionRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
-  var roleID: Int64 = 0
-
-  var permissionID: [Int64] = []
+  var rolePermissionID: [Int64] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -2010,8 +2008,7 @@ extension GloryApi_RemoveRolePermissionRequest: SwiftProtobuf.Message, SwiftProt
   static let protoMessageName: String = _protobuf_package + ".RemoveRolePermissionRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
-    2: .standard(proto: "role_id"),
-    3: .standard(proto: "permission_id"),
+    3: .standard(proto: "role_permission_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2021,8 +2018,7 @@ extension GloryApi_RemoveRolePermissionRequest: SwiftProtobuf.Message, SwiftProt
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.roleID) }()
-      case 3: try { try decoder.decodeRepeatedInt64Field(value: &self.permissionID) }()
+      case 3: try { try decoder.decodeRepeatedInt64Field(value: &self.rolePermissionID) }()
       default: break
       }
     }
@@ -2036,19 +2032,15 @@ extension GloryApi_RemoveRolePermissionRequest: SwiftProtobuf.Message, SwiftProt
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    if self.roleID != 0 {
-      try visitor.visitSingularInt64Field(value: self.roleID, fieldNumber: 2)
-    }
-    if !self.permissionID.isEmpty {
-      try visitor.visitPackedInt64Field(value: self.permissionID, fieldNumber: 3)
+    if !self.rolePermissionID.isEmpty {
+      try visitor.visitPackedInt64Field(value: self.rolePermissionID, fieldNumber: 3)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_RemoveRolePermissionRequest, rhs: GloryApi_RemoveRolePermissionRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
-    if lhs.roleID != rhs.roleID {return false}
-    if lhs.permissionID != rhs.permissionID {return false}
+    if lhs.rolePermissionID != rhs.rolePermissionID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

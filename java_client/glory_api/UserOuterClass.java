@@ -24257,27 +24257,21 @@ public final class UserOuterClass {
     base.Base.BaseRequestOrBuilder getBaseRequestOrBuilder();
 
     /**
-     * <code>int64 role_id = 2;</code>
-     * @return The roleId.
+     * <code>repeated int64 role_permission_id = 3;</code>
+     * @return A list containing the rolePermissionId.
      */
-    long getRoleId();
-
+    java.util.List<java.lang.Long> getRolePermissionIdList();
     /**
-     * <code>repeated int64 permission_id = 3;</code>
-     * @return A list containing the permissionId.
+     * <code>repeated int64 role_permission_id = 3;</code>
+     * @return The count of rolePermissionId.
      */
-    java.util.List<java.lang.Long> getPermissionIdList();
+    int getRolePermissionIdCount();
     /**
-     * <code>repeated int64 permission_id = 3;</code>
-     * @return The count of permissionId.
-     */
-    int getPermissionIdCount();
-    /**
-     * <code>repeated int64 permission_id = 3;</code>
+     * <code>repeated int64 role_permission_id = 3;</code>
      * @param index The index of the element to return.
-     * @return The permissionId at the given index.
+     * @return The rolePermissionId at the given index.
      */
-    long getPermissionId(int index);
+    long getRolePermissionId(int index);
   }
   /**
    * Protobuf type {@code glory_api.RemoveRolePermissionRequest}
@@ -24292,7 +24286,7 @@ public final class UserOuterClass {
       super(builder);
     }
     private RemoveRolePermissionRequest() {
-      permissionId_ = emptyLongList();
+      rolePermissionId_ = emptyLongList();
     }
 
     @java.lang.Override
@@ -24339,28 +24333,23 @@ public final class UserOuterClass {
 
               break;
             }
-            case 16: {
-
-              roleId_ = input.readInt64();
-              break;
-            }
             case 24: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                permissionId_ = newLongList();
+                rolePermissionId_ = newLongList();
                 mutable_bitField0_ |= 0x00000001;
               }
-              permissionId_.addLong(input.readInt64());
+              rolePermissionId_.addLong(input.readInt64());
               break;
             }
             case 26: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                permissionId_ = newLongList();
+                rolePermissionId_ = newLongList();
                 mutable_bitField0_ |= 0x00000001;
               }
               while (input.getBytesUntilLimit() > 0) {
-                permissionId_.addLong(input.readInt64());
+                rolePermissionId_.addLong(input.readInt64());
               }
               input.popLimit(limit);
               break;
@@ -24381,7 +24370,7 @@ public final class UserOuterClass {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          permissionId_.makeImmutable(); // C
+          rolePermissionId_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -24426,44 +24415,33 @@ public final class UserOuterClass {
       return getBaseRequest();
     }
 
-    public static final int ROLE_ID_FIELD_NUMBER = 2;
-    private long roleId_;
+    public static final int ROLE_PERMISSION_ID_FIELD_NUMBER = 3;
+    private com.google.protobuf.Internal.LongList rolePermissionId_;
     /**
-     * <code>int64 role_id = 2;</code>
-     * @return The roleId.
-     */
-    @java.lang.Override
-    public long getRoleId() {
-      return roleId_;
-    }
-
-    public static final int PERMISSION_ID_FIELD_NUMBER = 3;
-    private com.google.protobuf.Internal.LongList permissionId_;
-    /**
-     * <code>repeated int64 permission_id = 3;</code>
-     * @return A list containing the permissionId.
+     * <code>repeated int64 role_permission_id = 3;</code>
+     * @return A list containing the rolePermissionId.
      */
     @java.lang.Override
     public java.util.List<java.lang.Long>
-        getPermissionIdList() {
-      return permissionId_;
+        getRolePermissionIdList() {
+      return rolePermissionId_;
     }
     /**
-     * <code>repeated int64 permission_id = 3;</code>
-     * @return The count of permissionId.
+     * <code>repeated int64 role_permission_id = 3;</code>
+     * @return The count of rolePermissionId.
      */
-    public int getPermissionIdCount() {
-      return permissionId_.size();
+    public int getRolePermissionIdCount() {
+      return rolePermissionId_.size();
     }
     /**
-     * <code>repeated int64 permission_id = 3;</code>
+     * <code>repeated int64 role_permission_id = 3;</code>
      * @param index The index of the element to return.
-     * @return The permissionId at the given index.
+     * @return The rolePermissionId at the given index.
      */
-    public long getPermissionId(int index) {
-      return permissionId_.getLong(index);
+    public long getRolePermissionId(int index) {
+      return rolePermissionId_.getLong(index);
     }
-    private int permissionIdMemoizedSerializedSize = -1;
+    private int rolePermissionIdMemoizedSerializedSize = -1;
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -24483,15 +24461,12 @@ public final class UserOuterClass {
       if (baseRequest_ != null) {
         output.writeMessage(1, getBaseRequest());
       }
-      if (roleId_ != 0L) {
-        output.writeInt64(2, roleId_);
-      }
-      if (getPermissionIdList().size() > 0) {
+      if (getRolePermissionIdList().size() > 0) {
         output.writeUInt32NoTag(26);
-        output.writeUInt32NoTag(permissionIdMemoizedSerializedSize);
+        output.writeUInt32NoTag(rolePermissionIdMemoizedSerializedSize);
       }
-      for (int i = 0; i < permissionId_.size(); i++) {
-        output.writeInt64NoTag(permissionId_.getLong(i));
+      for (int i = 0; i < rolePermissionId_.size(); i++) {
+        output.writeInt64NoTag(rolePermissionId_.getLong(i));
       }
       unknownFields.writeTo(output);
     }
@@ -24506,23 +24481,19 @@ public final class UserOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getBaseRequest());
       }
-      if (roleId_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, roleId_);
-      }
       {
         int dataSize = 0;
-        for (int i = 0; i < permissionId_.size(); i++) {
+        for (int i = 0; i < rolePermissionId_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeInt64SizeNoTag(permissionId_.getLong(i));
+            .computeInt64SizeNoTag(rolePermissionId_.getLong(i));
         }
         size += dataSize;
-        if (!getPermissionIdList().isEmpty()) {
+        if (!getRolePermissionIdList().isEmpty()) {
           size += 1;
           size += com.google.protobuf.CodedOutputStream
               .computeInt32SizeNoTag(dataSize);
         }
-        permissionIdMemoizedSerializedSize = dataSize;
+        rolePermissionIdMemoizedSerializedSize = dataSize;
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -24544,10 +24515,8 @@ public final class UserOuterClass {
         if (!getBaseRequest()
             .equals(other.getBaseRequest())) return false;
       }
-      if (getRoleId()
-          != other.getRoleId()) return false;
-      if (!getPermissionIdList()
-          .equals(other.getPermissionIdList())) return false;
+      if (!getRolePermissionIdList()
+          .equals(other.getRolePermissionIdList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -24563,12 +24532,9 @@ public final class UserOuterClass {
         hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
         hash = (53 * hash) + getBaseRequest().hashCode();
       }
-      hash = (37 * hash) + ROLE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getRoleId());
-      if (getPermissionIdCount() > 0) {
-        hash = (37 * hash) + PERMISSION_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getPermissionIdList().hashCode();
+      if (getRolePermissionIdCount() > 0) {
+        hash = (37 * hash) + ROLE_PERMISSION_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getRolePermissionIdList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -24709,9 +24675,7 @@ public final class UserOuterClass {
           baseRequest_ = null;
           baseRequestBuilder_ = null;
         }
-        roleId_ = 0L;
-
-        permissionId_ = emptyLongList();
+        rolePermissionId_ = emptyLongList();
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
@@ -24745,12 +24709,11 @@ public final class UserOuterClass {
         } else {
           result.baseRequest_ = baseRequestBuilder_.build();
         }
-        result.roleId_ = roleId_;
         if (((bitField0_ & 0x00000001) != 0)) {
-          permissionId_.makeImmutable();
+          rolePermissionId_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.permissionId_ = permissionId_;
+        result.rolePermissionId_ = rolePermissionId_;
         onBuilt();
         return result;
       }
@@ -24802,16 +24765,13 @@ public final class UserOuterClass {
         if (other.hasBaseRequest()) {
           mergeBaseRequest(other.getBaseRequest());
         }
-        if (other.getRoleId() != 0L) {
-          setRoleId(other.getRoleId());
-        }
-        if (!other.permissionId_.isEmpty()) {
-          if (permissionId_.isEmpty()) {
-            permissionId_ = other.permissionId_;
+        if (!other.rolePermissionId_.isEmpty()) {
+          if (rolePermissionId_.isEmpty()) {
+            rolePermissionId_ = other.rolePermissionId_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensurePermissionIdIsMutable();
-            permissionId_.addAll(other.permissionId_);
+            ensureRolePermissionIdIsMutable();
+            rolePermissionId_.addAll(other.rolePermissionId_);
           }
           onChanged();
         }
@@ -24964,111 +24924,80 @@ public final class UserOuterClass {
         return baseRequestBuilder_;
       }
 
-      private long roleId_ ;
-      /**
-       * <code>int64 role_id = 2;</code>
-       * @return The roleId.
-       */
-      @java.lang.Override
-      public long getRoleId() {
-        return roleId_;
-      }
-      /**
-       * <code>int64 role_id = 2;</code>
-       * @param value The roleId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRoleId(long value) {
-        
-        roleId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int64 role_id = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRoleId() {
-        
-        roleId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Internal.LongList permissionId_ = emptyLongList();
-      private void ensurePermissionIdIsMutable() {
+      private com.google.protobuf.Internal.LongList rolePermissionId_ = emptyLongList();
+      private void ensureRolePermissionIdIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          permissionId_ = mutableCopy(permissionId_);
+          rolePermissionId_ = mutableCopy(rolePermissionId_);
           bitField0_ |= 0x00000001;
          }
       }
       /**
-       * <code>repeated int64 permission_id = 3;</code>
-       * @return A list containing the permissionId.
+       * <code>repeated int64 role_permission_id = 3;</code>
+       * @return A list containing the rolePermissionId.
        */
       public java.util.List<java.lang.Long>
-          getPermissionIdList() {
+          getRolePermissionIdList() {
         return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(permissionId_) : permissionId_;
+                 java.util.Collections.unmodifiableList(rolePermissionId_) : rolePermissionId_;
       }
       /**
-       * <code>repeated int64 permission_id = 3;</code>
-       * @return The count of permissionId.
+       * <code>repeated int64 role_permission_id = 3;</code>
+       * @return The count of rolePermissionId.
        */
-      public int getPermissionIdCount() {
-        return permissionId_.size();
+      public int getRolePermissionIdCount() {
+        return rolePermissionId_.size();
       }
       /**
-       * <code>repeated int64 permission_id = 3;</code>
+       * <code>repeated int64 role_permission_id = 3;</code>
        * @param index The index of the element to return.
-       * @return The permissionId at the given index.
+       * @return The rolePermissionId at the given index.
        */
-      public long getPermissionId(int index) {
-        return permissionId_.getLong(index);
+      public long getRolePermissionId(int index) {
+        return rolePermissionId_.getLong(index);
       }
       /**
-       * <code>repeated int64 permission_id = 3;</code>
+       * <code>repeated int64 role_permission_id = 3;</code>
        * @param index The index to set the value at.
-       * @param value The permissionId to set.
+       * @param value The rolePermissionId to set.
        * @return This builder for chaining.
        */
-      public Builder setPermissionId(
+      public Builder setRolePermissionId(
           int index, long value) {
-        ensurePermissionIdIsMutable();
-        permissionId_.setLong(index, value);
+        ensureRolePermissionIdIsMutable();
+        rolePermissionId_.setLong(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated int64 permission_id = 3;</code>
-       * @param value The permissionId to add.
+       * <code>repeated int64 role_permission_id = 3;</code>
+       * @param value The rolePermissionId to add.
        * @return This builder for chaining.
        */
-      public Builder addPermissionId(long value) {
-        ensurePermissionIdIsMutable();
-        permissionId_.addLong(value);
+      public Builder addRolePermissionId(long value) {
+        ensureRolePermissionIdIsMutable();
+        rolePermissionId_.addLong(value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated int64 permission_id = 3;</code>
-       * @param values The permissionId to add.
+       * <code>repeated int64 role_permission_id = 3;</code>
+       * @param values The rolePermissionId to add.
        * @return This builder for chaining.
        */
-      public Builder addAllPermissionId(
+      public Builder addAllRolePermissionId(
           java.lang.Iterable<? extends java.lang.Long> values) {
-        ensurePermissionIdIsMutable();
+        ensureRolePermissionIdIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, permissionId_);
+            values, rolePermissionId_);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated int64 permission_id = 3;</code>
+       * <code>repeated int64 role_permission_id = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearPermissionId() {
-        permissionId_ = emptyLongList();
+      public Builder clearRolePermissionId() {
+        rolePermissionId_ = emptyLongList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
@@ -27462,15 +27391,15 @@ public final class UserOuterClass {
       " \001(\0132\021.base.BaseRequest\022\017\n\007role_id\030\002 \001(\003" +
       "\022\025\n\rpermission_id\030\003 \003(\003\"C\n\032GiveRolePermi" +
       "ssionResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
-      "BaseResponse\"n\n\033RemoveRolePermissionRequ" +
+      "BaseResponse\"b\n\033RemoveRolePermissionRequ" +
       "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
-      "uest\022\017\n\007role_id\030\002 \001(\003\022\025\n\rpermission_id\030\003" +
-      " \003(\003\"E\n\034RemoveRolePermissionResponse\022%\n\t" +
-      "base_resp\030\001 \001(\0132\022.base.BaseResponse\"M\n\021D" +
-      "eleteRoleRequest\022\'\n\014base_request\030\001 \001(\0132\021" +
-      ".base.BaseRequest\022\017\n\007role_id\030\002 \003(\003\";\n\022De" +
-      "leteRoleResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
-      "se.BaseResponseb\006proto3"
+      "uest\022\032\n\022role_permission_id\030\003 \003(\003\"E\n\034Remo" +
+      "veRolePermissionResponse\022%\n\tbase_resp\030\001 " +
+      "\001(\0132\022.base.BaseResponse\"M\n\021DeleteRoleReq" +
+      "uest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRe" +
+      "quest\022\017\n\007role_id\030\002 \003(\003\";\n\022DeleteRoleResp" +
+      "onse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespo" +
+      "nseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -27634,7 +27563,7 @@ public final class UserOuterClass {
     internal_static_glory_api_RemoveRolePermissionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_RemoveRolePermissionRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "RoleId", "PermissionId", });
+        new java.lang.String[] { "BaseRequest", "RolePermissionId", });
     internal_static_glory_api_RemoveRolePermissionResponse_descriptor =
       getDescriptor().getMessageTypes().get(26);
     internal_static_glory_api_RemoveRolePermissionResponse_fieldAccessorTable = new
