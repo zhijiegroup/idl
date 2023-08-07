@@ -330,6 +330,9 @@ service glory_api {
   rpc ShipGoods(ShipGoodsRequest) returns (ShipGoodsResponse) {
     option (api.post) = '/api/shop/ship_goods';
   }
+  rpc CancelOrder(CancelOrderRequest) returns (CancelOrderResponse) {
+    option (api.post) = '/api/shop/cancel_order';
+  }
 
   rpc ShipGoodsInBatches(ShipGoodsInBatchesRequest) returns (ShipGoodsInBatchesResponse) {
     option (api.post) = '/api/shop/ship_goods_batch';

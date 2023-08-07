@@ -195,6 +195,14 @@ message ShipGoodsResponse {
   base.BaseResponse base_resp = 1;
 }
 
+message CancelOrderRequest {
+  base.BaseRequest base_request=1;
+  int64 order_id =2;
+}
+message CancelOrderResponse {
+  base.BaseResponse base_resp = 1;
+}
+
 message ShipGoodsInBatchesRequest {
   base.BaseRequest base_request=1;
   repeated int64 order_id =2;
