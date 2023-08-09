@@ -124,9 +124,9 @@ message RolePermission {
 
 message ListRoleRequest {
   base.BaseRequest base_request=1;
-  int64 Role_id =2;
-  string Role_name =3;
-  string Role_type =4;
+  int64 role_id =2;
+  string role_name =3;
+  string role_type =4;
   string source = 5;
   int64 source_id =6;
   base.PaginationRequest pagination = 100;
@@ -178,5 +178,27 @@ message DeleteRoleRequest {
 message DeleteRoleResponse {
   base.BaseResponse base_resp = 1;
 }
+
+message Resource {
+  int64 resource_id =2;
+  string resource_name =3;
+  string resource_type =4;  // 支持 school, major_live, business_system, page_permission， 后面可能会增加
+  string source = 5;  // 源表，有config, school, major, class，后面会增加
+  int64 source_id =6; // 源表记录的id
+  int64 tenant_id =7; // 学校的id
+}
+message ListResourceRequest {
+  base.BaseRequest base_request=1;
+  Resource resource = 2;
+  base.PaginationRequest pagination = 100;
+}
+
+message ListResourceResponse {
+  base.BaseResponse base_resp = 1;
+  repeated Resource resource =2; // resource 列表
+  base.PaginationResponse pagination = 100;
+}
+
+
 
 

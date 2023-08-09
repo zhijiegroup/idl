@@ -119,6 +119,9 @@ service glory_api {
   rpc DeleteRole(DeleteRoleRequest) returns (DeleteRoleResponse) {
     option (api.post) = '/api/auth/delete_role';
   }
+  rpc ListResource(ListResourceRequest) returns (ListResourceResponse) {
+    option (api.post) = '/api/auth/list_resource';
+  }
 
   // shop
   rpc CreateShop(CreateShopRequest) returns (CreateShopResponse) {
