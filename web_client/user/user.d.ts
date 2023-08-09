@@ -119,10 +119,8 @@ export interface ListPermissionResponse {
 export interface Role {
   role_id?: string;
   role_name?: string;
-  /** 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major */
-  source?: string;
-  /** 对应的资源来源id */
-  source_id?: string;
+  /** string source = 3;  // 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
+int64 source_id =4; // 对应的资源来源id */
   description?: string;
   role_permission?: Array<RolePermission>;
 }
@@ -136,9 +134,9 @@ export interface RolePermission {
 
 export interface ListRoleRequest {
   base_request?: base.BaseRequest;
-  Role_id?: string;
-  Role_name?: string;
-  Role_type?: string;
+  role_id?: string;
+  role_name?: string;
+  role_type?: string;
   source?: string;
   source_id?: string;
   pagination?: base.PaginationRequest;
@@ -189,4 +187,30 @@ export interface DeleteRoleRequest {
 
 export interface DeleteRoleResponse {
   base_resp?: base.BaseResponse;
+}
+
+export interface Resource {
+  resource_id?: string;
+  resource_name?: string;
+  /** 支持 school, major_live, business_system, page_permission， 后面可能会增加 */
+  resource_type?: string;
+  /** 源表，有config, school, major, class，后面会增加 */
+  source?: string;
+  /** 源表记录的id */
+  source_id?: string;
+  /** 学校的id */
+  tenant_id?: string;
+}
+
+export interface ListResourceRequest {
+  base_request?: base.BaseRequest;
+  resource?: Resource;
+  pagination?: base.PaginationRequest;
+}
+
+export interface ListResourceResponse {
+  base_resp?: base.BaseResponse;
+  /** resource 列表 */
+  resource?: Array<Resource>;
+  pagination?: base.PaginationResponse;
 }

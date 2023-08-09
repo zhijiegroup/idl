@@ -151,6 +151,10 @@ list the permissions that supported */
 
   DeleteRole(request: user.DeleteRoleRequest): Promise<user.DeleteRoleResponse>;
 
+  ListResource(
+    request: user.ListResourceRequest
+  ): Promise<user.ListResourceResponse>;
+
   /** shop */
   CreateShop(request: shop.CreateShopRequest): Promise<shop.CreateShopResponse>;
 

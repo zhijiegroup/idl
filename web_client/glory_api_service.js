@@ -242,6 +242,14 @@ export class glory_api {
     );
   }
 
+  ListResource(request) {
+    const uri = `${this.uriPrefix}/api/auth/list_resource`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   CreateShop(request) {
     const uri = `${this.uriPrefix}/api/shop/create_shop`;
     const body = JSONbigint.stringify(request);

@@ -480,12 +480,8 @@ struct GloryApi_Role {
 
   var roleName: String = String()
 
-  /// 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
-  var source: String = String()
-
-  /// 对应的资源来源id
-  var sourceID: Int64 = 0
-
+  ///  string source = 3;  // 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
+  ///  int64 source_id =4; // 对应的资源来源id
   var description_p: String = String()
 
   var rolePermission: [GloryApi_RolePermission] = []
@@ -778,6 +774,107 @@ struct GloryApi_DeleteRoleResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
+struct GloryApi_Resource {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var resourceID: Int64 = 0
+
+  var resourceName: String = String()
+
+  /// 支持 school, major_live, business_system, page_permission， 后面可能会增加
+  var resourceType: String = String()
+
+  /// 源表，有config, school, major, class，后面会增加
+  var source: String = String()
+
+  /// 源表记录的id
+  var sourceID: Int64 = 0
+
+  /// 学校的id
+  var tenantID: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct GloryApi_ListResourceRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var resource: GloryApi_Resource {
+    get {return _resource ?? GloryApi_Resource()}
+    set {_resource = newValue}
+  }
+  /// Returns true if `resource` has been explicitly set.
+  var hasResource: Bool {return self._resource != nil}
+  /// Clears the value of `resource`. Subsequent reads from it will return its default value.
+  mutating func clearResource() {self._resource = nil}
+
+  var pagination: Base_PaginationRequest {
+    get {return _pagination ?? Base_PaginationRequest()}
+    set {_pagination = newValue}
+  }
+  /// Returns true if `pagination` has been explicitly set.
+  var hasPagination: Bool {return self._pagination != nil}
+  /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
+  mutating func clearPagination() {self._pagination = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+  fileprivate var _resource: GloryApi_Resource? = nil
+  fileprivate var _pagination: Base_PaginationRequest? = nil
+}
+
+struct GloryApi_ListResourceResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  /// resource 列表
+  var resource: [GloryApi_Resource] = []
+
+  var pagination: Base_PaginationResponse {
+    get {return _pagination ?? Base_PaginationResponse()}
+    set {_pagination = newValue}
+  }
+  /// Returns true if `pagination` has been explicitly set.
+  var hasPagination: Bool {return self._pagination != nil}
+  /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
+  mutating func clearPagination() {self._pagination = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _pagination: Base_PaginationResponse? = nil
+}
+
 #if swift(>=5.5) && canImport(_Concurrency)
 extension GloryApi_User: @unchecked Sendable {}
 extension GloryApi_LoginRequest: @unchecked Sendable {}
@@ -808,6 +905,9 @@ extension GloryApi_RemoveRolePermissionRequest: @unchecked Sendable {}
 extension GloryApi_RemoveRolePermissionResponse: @unchecked Sendable {}
 extension GloryApi_DeleteRoleRequest: @unchecked Sendable {}
 extension GloryApi_DeleteRoleResponse: @unchecked Sendable {}
+extension GloryApi_Resource: @unchecked Sendable {}
+extension GloryApi_ListResourceRequest: @unchecked Sendable {}
+extension GloryApi_ListResourceResponse: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -1609,8 +1709,6 @@ extension GloryApi_Role: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "role_id"),
     2: .standard(proto: "role_name"),
-    3: .same(proto: "source"),
-    4: .standard(proto: "source_id"),
     5: .same(proto: "description"),
     6: .standard(proto: "role_permission"),
   ]
@@ -1623,8 +1721,6 @@ extension GloryApi_Role: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularInt64Field(value: &self.roleID) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.roleName) }()
-      case 3: try { try decoder.decodeSingularStringField(value: &self.source) }()
-      case 4: try { try decoder.decodeSingularInt64Field(value: &self.sourceID) }()
       case 5: try { try decoder.decodeSingularStringField(value: &self.description_p) }()
       case 6: try { try decoder.decodeRepeatedMessageField(value: &self.rolePermission) }()
       default: break
@@ -1639,12 +1735,6 @@ extension GloryApi_Role: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     if !self.roleName.isEmpty {
       try visitor.visitSingularStringField(value: self.roleName, fieldNumber: 2)
     }
-    if !self.source.isEmpty {
-      try visitor.visitSingularStringField(value: self.source, fieldNumber: 3)
-    }
-    if self.sourceID != 0 {
-      try visitor.visitSingularInt64Field(value: self.sourceID, fieldNumber: 4)
-    }
     if !self.description_p.isEmpty {
       try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 5)
     }
@@ -1657,8 +1747,6 @@ extension GloryApi_Role: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
   static func ==(lhs: GloryApi_Role, rhs: GloryApi_Role) -> Bool {
     if lhs.roleID != rhs.roleID {return false}
     if lhs.roleName != rhs.roleName {return false}
-    if lhs.source != rhs.source {return false}
-    if lhs.sourceID != rhs.sourceID {return false}
     if lhs.description_p != rhs.description_p {return false}
     if lhs.rolePermission != rhs.rolePermission {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -1720,9 +1808,9 @@ extension GloryApi_ListRoleRequest: SwiftProtobuf.Message, SwiftProtobuf._Messag
   static let protoMessageName: String = _protobuf_package + ".ListRoleRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
-    2: .standard(proto: "Role_id"),
-    3: .standard(proto: "Role_name"),
-    4: .standard(proto: "Role_type"),
+    2: .standard(proto: "role_id"),
+    3: .standard(proto: "role_name"),
+    4: .standard(proto: "role_type"),
     5: .same(proto: "source"),
     6: .standard(proto: "source_id"),
     100: .same(proto: "pagination"),
@@ -2155,6 +2243,164 @@ extension GloryApi_DeleteRoleResponse: SwiftProtobuf.Message, SwiftProtobuf._Mes
 
   static func ==(lhs: GloryApi_DeleteRoleResponse, rhs: GloryApi_DeleteRoleResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_Resource: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".Resource"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    2: .standard(proto: "resource_id"),
+    3: .standard(proto: "resource_name"),
+    4: .standard(proto: "resource_type"),
+    5: .same(proto: "source"),
+    6: .standard(proto: "source_id"),
+    7: .standard(proto: "tenant_id"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.resourceID) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.resourceName) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.resourceType) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.source) }()
+      case 6: try { try decoder.decodeSingularInt64Field(value: &self.sourceID) }()
+      case 7: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.resourceID != 0 {
+      try visitor.visitSingularInt64Field(value: self.resourceID, fieldNumber: 2)
+    }
+    if !self.resourceName.isEmpty {
+      try visitor.visitSingularStringField(value: self.resourceName, fieldNumber: 3)
+    }
+    if !self.resourceType.isEmpty {
+      try visitor.visitSingularStringField(value: self.resourceType, fieldNumber: 4)
+    }
+    if !self.source.isEmpty {
+      try visitor.visitSingularStringField(value: self.source, fieldNumber: 5)
+    }
+    if self.sourceID != 0 {
+      try visitor.visitSingularInt64Field(value: self.sourceID, fieldNumber: 6)
+    }
+    if self.tenantID != 0 {
+      try visitor.visitSingularInt64Field(value: self.tenantID, fieldNumber: 7)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_Resource, rhs: GloryApi_Resource) -> Bool {
+    if lhs.resourceID != rhs.resourceID {return false}
+    if lhs.resourceName != rhs.resourceName {return false}
+    if lhs.resourceType != rhs.resourceType {return false}
+    if lhs.source != rhs.source {return false}
+    if lhs.sourceID != rhs.sourceID {return false}
+    if lhs.tenantID != rhs.tenantID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_ListResourceRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ListResourceRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    2: .same(proto: "resource"),
+    100: .same(proto: "pagination"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._resource) }()
+      case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try { if let v = self._resource {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    } }()
+    try { if let v = self._pagination {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ListResourceRequest, rhs: GloryApi_ListResourceRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs._resource != rhs._resource {return false}
+    if lhs._pagination != rhs._pagination {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_ListResourceResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ListResourceResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .same(proto: "resource"),
+    100: .same(proto: "pagination"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.resource) }()
+      case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if !self.resource.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.resource, fieldNumber: 2)
+    }
+    try { if let v = self._pagination {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ListResourceResponse, rhs: GloryApi_ListResourceResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.resource != rhs.resource {return false}
+    if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
