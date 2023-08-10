@@ -88,6 +88,7 @@ message Permission {
   int64 resource_id = 3;  // 权限对应的resource
   string permission =4; // 支持 C R U D
   string description =5;
+  int64 tenant_id = 6;
 }
 
 message ListPermissionRequest {
