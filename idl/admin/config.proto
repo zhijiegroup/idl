@@ -15,6 +15,7 @@ message Config {
   int64 updated_by = 8;
   string created_at = 9;
   string updated_at = 10;
+  string business_system = 11;
 }
 
 message AddConfig {
@@ -22,6 +23,7 @@ message AddConfig {
   string config_value = 3;
   string config_type = 4;
   string description = 5;
+  string business_system=6; // 默认是global，可以指定为对应的业务系统，如: live, short, shop
 }
 
 message CreateConfigRequest {
@@ -60,6 +62,7 @@ message GetConfigRequest {
   base.BaseRequest base_request=1;
   string config_name =2;
   string config_type =3;
+  string business_system = 4;
 }
 
 message GetConfigResponse {

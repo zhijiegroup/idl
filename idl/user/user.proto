@@ -69,8 +69,9 @@ message GetUserResponse {
 }
 
 message PagePermission {
-  string page = 1;
-  bool has_permission = 2;
+  string business_system = 1;
+  string page = 2;
+  bool has_permission = 3;
 }
 
 message GetUserPagePermissionRequest {
