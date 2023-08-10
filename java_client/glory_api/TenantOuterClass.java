@@ -97,6 +97,71 @@ public final class TenantOuterClass {
      * @return The logoAttachmentId.
      */
     long getLogoAttachmentId();
+
+    /**
+     * <pre>
+     * 自动创建的管理员的名字，若是手机已经是注册用户，则不会自动添加，而是用已经有的
+     * </pre>
+     *
+     * <code>string admin_name = 8;</code>
+     * @return The adminName.
+     */
+    java.lang.String getAdminName();
+    /**
+     * <pre>
+     * 自动创建的管理员的名字，若是手机已经是注册用户，则不会自动添加，而是用已经有的
+     * </pre>
+     *
+     * <code>string admin_name = 8;</code>
+     * @return The bytes for adminName.
+     */
+    com.google.protobuf.ByteString
+        getAdminNameBytes();
+
+    /**
+     * <pre>
+     * 自动创建的管理员的手机号
+     * </pre>
+     *
+     * <code>string admin_phone = 9;</code>
+     * @return The adminPhone.
+     */
+    java.lang.String getAdminPhone();
+    /**
+     * <pre>
+     * 自动创建的管理员的手机号
+     * </pre>
+     *
+     * <code>string admin_phone = 9;</code>
+     * @return The bytes for adminPhone.
+     */
+    com.google.protobuf.ByteString
+        getAdminPhoneBytes();
+
+    /**
+     * <code>repeated string business_system = 10;</code>
+     * @return A list containing the businessSystem.
+     */
+    java.util.List<java.lang.String>
+        getBusinessSystemList();
+    /**
+     * <code>repeated string business_system = 10;</code>
+     * @return The count of businessSystem.
+     */
+    int getBusinessSystemCount();
+    /**
+     * <code>repeated string business_system = 10;</code>
+     * @param index The index of the element to return.
+     * @return The businessSystem at the given index.
+     */
+    java.lang.String getBusinessSystem(int index);
+    /**
+     * <code>repeated string business_system = 10;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the businessSystem at the given index.
+     */
+    com.google.protobuf.ByteString
+        getBusinessSystemBytes(int index);
   }
   /**
    * Protobuf type {@code glory_api.Tenant}
@@ -114,6 +179,9 @@ public final class TenantOuterClass {
       tenantName_ = "";
       tenantLogoUrl_ = "";
       tenantOverview_ = "";
+      adminName_ = "";
+      adminPhone_ = "";
+      businessSystem_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -136,6 +204,7 @@ public final class TenantOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -174,6 +243,27 @@ public final class TenantOuterClass {
               logoAttachmentId_ = input.readInt64();
               break;
             }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              adminName_ = s;
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              adminPhone_ = s;
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                businessSystem_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              businessSystem_.add(s);
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -189,6 +279,9 @@ public final class TenantOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          businessSystem_ = businessSystem_.getUnmodifiableView();
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -374,6 +467,133 @@ public final class TenantOuterClass {
       return logoAttachmentId_;
     }
 
+    public static final int ADMIN_NAME_FIELD_NUMBER = 8;
+    private volatile java.lang.Object adminName_;
+    /**
+     * <pre>
+     * 自动创建的管理员的名字，若是手机已经是注册用户，则不会自动添加，而是用已经有的
+     * </pre>
+     *
+     * <code>string admin_name = 8;</code>
+     * @return The adminName.
+     */
+    @java.lang.Override
+    public java.lang.String getAdminName() {
+      java.lang.Object ref = adminName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        adminName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 自动创建的管理员的名字，若是手机已经是注册用户，则不会自动添加，而是用已经有的
+     * </pre>
+     *
+     * <code>string admin_name = 8;</code>
+     * @return The bytes for adminName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAdminNameBytes() {
+      java.lang.Object ref = adminName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        adminName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ADMIN_PHONE_FIELD_NUMBER = 9;
+    private volatile java.lang.Object adminPhone_;
+    /**
+     * <pre>
+     * 自动创建的管理员的手机号
+     * </pre>
+     *
+     * <code>string admin_phone = 9;</code>
+     * @return The adminPhone.
+     */
+    @java.lang.Override
+    public java.lang.String getAdminPhone() {
+      java.lang.Object ref = adminPhone_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        adminPhone_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 自动创建的管理员的手机号
+     * </pre>
+     *
+     * <code>string admin_phone = 9;</code>
+     * @return The bytes for adminPhone.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAdminPhoneBytes() {
+      java.lang.Object ref = adminPhone_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        adminPhone_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int BUSINESS_SYSTEM_FIELD_NUMBER = 10;
+    private com.google.protobuf.LazyStringList businessSystem_;
+    /**
+     * <code>repeated string business_system = 10;</code>
+     * @return A list containing the businessSystem.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getBusinessSystemList() {
+      return businessSystem_;
+    }
+    /**
+     * <code>repeated string business_system = 10;</code>
+     * @return The count of businessSystem.
+     */
+    public int getBusinessSystemCount() {
+      return businessSystem_.size();
+    }
+    /**
+     * <code>repeated string business_system = 10;</code>
+     * @param index The index of the element to return.
+     * @return The businessSystem at the given index.
+     */
+    public java.lang.String getBusinessSystem(int index) {
+      return businessSystem_.get(index);
+    }
+    /**
+     * <code>repeated string business_system = 10;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the businessSystem at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getBusinessSystemBytes(int index) {
+      return businessSystem_.getByteString(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -403,6 +623,15 @@ public final class TenantOuterClass {
       if (logoAttachmentId_ != 0L) {
         output.writeInt64(7, logoAttachmentId_);
       }
+      if (!getAdminNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, adminName_);
+      }
+      if (!getAdminPhoneBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, adminPhone_);
+      }
+      for (int i = 0; i < businessSystem_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, businessSystem_.getRaw(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -429,6 +658,20 @@ public final class TenantOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(7, logoAttachmentId_);
       }
+      if (!getAdminNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, adminName_);
+      }
+      if (!getAdminPhoneBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, adminPhone_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < businessSystem_.size(); i++) {
+          dataSize += computeStringSizeNoTag(businessSystem_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getBusinessSystemList().size();
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -454,6 +697,12 @@ public final class TenantOuterClass {
           .equals(other.getTenantOverview())) return false;
       if (getLogoAttachmentId()
           != other.getLogoAttachmentId()) return false;
+      if (!getAdminName()
+          .equals(other.getAdminName())) return false;
+      if (!getAdminPhone()
+          .equals(other.getAdminPhone())) return false;
+      if (!getBusinessSystemList()
+          .equals(other.getBusinessSystemList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -477,6 +726,14 @@ public final class TenantOuterClass {
       hash = (37 * hash) + LOGO_ATTACHMENT_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getLogoAttachmentId());
+      hash = (37 * hash) + ADMIN_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getAdminName().hashCode();
+      hash = (37 * hash) + ADMIN_PHONE_FIELD_NUMBER;
+      hash = (53 * hash) + getAdminPhone().hashCode();
+      if (getBusinessSystemCount() > 0) {
+        hash = (37 * hash) + BUSINESS_SYSTEM_FIELD_NUMBER;
+        hash = (53 * hash) + getBusinessSystemList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -620,6 +877,12 @@ public final class TenantOuterClass {
 
         logoAttachmentId_ = 0L;
 
+        adminName_ = "";
+
+        adminPhone_ = "";
+
+        businessSystem_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -646,11 +909,19 @@ public final class TenantOuterClass {
       @java.lang.Override
       public glory_api.TenantOuterClass.Tenant buildPartial() {
         glory_api.TenantOuterClass.Tenant result = new glory_api.TenantOuterClass.Tenant(this);
+        int from_bitField0_ = bitField0_;
         result.tenantId_ = tenantId_;
         result.tenantName_ = tenantName_;
         result.tenantLogoUrl_ = tenantLogoUrl_;
         result.tenantOverview_ = tenantOverview_;
         result.logoAttachmentId_ = logoAttachmentId_;
+        result.adminName_ = adminName_;
+        result.adminPhone_ = adminPhone_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          businessSystem_ = businessSystem_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.businessSystem_ = businessSystem_;
         onBuilt();
         return result;
       }
@@ -717,6 +988,24 @@ public final class TenantOuterClass {
         if (other.getLogoAttachmentId() != 0L) {
           setLogoAttachmentId(other.getLogoAttachmentId());
         }
+        if (!other.getAdminName().isEmpty()) {
+          adminName_ = other.adminName_;
+          onChanged();
+        }
+        if (!other.getAdminPhone().isEmpty()) {
+          adminPhone_ = other.adminPhone_;
+          onChanged();
+        }
+        if (!other.businessSystem_.isEmpty()) {
+          if (businessSystem_.isEmpty()) {
+            businessSystem_ = other.businessSystem_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureBusinessSystemIsMutable();
+            businessSystem_.addAll(other.businessSystem_);
+          }
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -745,6 +1034,7 @@ public final class TenantOuterClass {
         }
         return this;
       }
+      private int bitField0_;
 
       private long tenantId_ ;
       /**
@@ -1116,6 +1406,308 @@ public final class TenantOuterClass {
       public Builder clearLogoAttachmentId() {
         
         logoAttachmentId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object adminName_ = "";
+      /**
+       * <pre>
+       * 自动创建的管理员的名字，若是手机已经是注册用户，则不会自动添加，而是用已经有的
+       * </pre>
+       *
+       * <code>string admin_name = 8;</code>
+       * @return The adminName.
+       */
+      public java.lang.String getAdminName() {
+        java.lang.Object ref = adminName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          adminName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 自动创建的管理员的名字，若是手机已经是注册用户，则不会自动添加，而是用已经有的
+       * </pre>
+       *
+       * <code>string admin_name = 8;</code>
+       * @return The bytes for adminName.
+       */
+      public com.google.protobuf.ByteString
+          getAdminNameBytes() {
+        java.lang.Object ref = adminName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          adminName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 自动创建的管理员的名字，若是手机已经是注册用户，则不会自动添加，而是用已经有的
+       * </pre>
+       *
+       * <code>string admin_name = 8;</code>
+       * @param value The adminName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAdminName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        adminName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 自动创建的管理员的名字，若是手机已经是注册用户，则不会自动添加，而是用已经有的
+       * </pre>
+       *
+       * <code>string admin_name = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAdminName() {
+        
+        adminName_ = getDefaultInstance().getAdminName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 自动创建的管理员的名字，若是手机已经是注册用户，则不会自动添加，而是用已经有的
+       * </pre>
+       *
+       * <code>string admin_name = 8;</code>
+       * @param value The bytes for adminName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAdminNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        adminName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object adminPhone_ = "";
+      /**
+       * <pre>
+       * 自动创建的管理员的手机号
+       * </pre>
+       *
+       * <code>string admin_phone = 9;</code>
+       * @return The adminPhone.
+       */
+      public java.lang.String getAdminPhone() {
+        java.lang.Object ref = adminPhone_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          adminPhone_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 自动创建的管理员的手机号
+       * </pre>
+       *
+       * <code>string admin_phone = 9;</code>
+       * @return The bytes for adminPhone.
+       */
+      public com.google.protobuf.ByteString
+          getAdminPhoneBytes() {
+        java.lang.Object ref = adminPhone_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          adminPhone_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 自动创建的管理员的手机号
+       * </pre>
+       *
+       * <code>string admin_phone = 9;</code>
+       * @param value The adminPhone to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAdminPhone(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        adminPhone_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 自动创建的管理员的手机号
+       * </pre>
+       *
+       * <code>string admin_phone = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAdminPhone() {
+        
+        adminPhone_ = getDefaultInstance().getAdminPhone();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 自动创建的管理员的手机号
+       * </pre>
+       *
+       * <code>string admin_phone = 9;</code>
+       * @param value The bytes for adminPhone to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAdminPhoneBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        adminPhone_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList businessSystem_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureBusinessSystemIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          businessSystem_ = new com.google.protobuf.LazyStringArrayList(businessSystem_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated string business_system = 10;</code>
+       * @return A list containing the businessSystem.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getBusinessSystemList() {
+        return businessSystem_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string business_system = 10;</code>
+       * @return The count of businessSystem.
+       */
+      public int getBusinessSystemCount() {
+        return businessSystem_.size();
+      }
+      /**
+       * <code>repeated string business_system = 10;</code>
+       * @param index The index of the element to return.
+       * @return The businessSystem at the given index.
+       */
+      public java.lang.String getBusinessSystem(int index) {
+        return businessSystem_.get(index);
+      }
+      /**
+       * <code>repeated string business_system = 10;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the businessSystem at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getBusinessSystemBytes(int index) {
+        return businessSystem_.getByteString(index);
+      }
+      /**
+       * <code>repeated string business_system = 10;</code>
+       * @param index The index to set the value at.
+       * @param value The businessSystem to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBusinessSystem(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureBusinessSystemIsMutable();
+        businessSystem_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string business_system = 10;</code>
+       * @param value The businessSystem to add.
+       * @return This builder for chaining.
+       */
+      public Builder addBusinessSystem(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureBusinessSystemIsMutable();
+        businessSystem_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string business_system = 10;</code>
+       * @param values The businessSystem to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllBusinessSystem(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureBusinessSystemIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, businessSystem_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string business_system = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBusinessSystem() {
+        businessSystem_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string business_system = 10;</code>
+       * @param value The bytes of the businessSystem to add.
+       * @return This builder for chaining.
+       */
+      public Builder addBusinessSystemBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureBusinessSystemIsMutable();
+        businessSystem_.add(value);
         onChanged();
         return this;
       }
@@ -31354,99 +31946,101 @@ public final class TenantOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\023tenant/tenant.proto\022\tglory_api\032\nbase.p" +
-      "roto\"~\n\006Tenant\022\021\n\ttenant_id\030\001 \001(\003\022\023\n\013ten" +
-      "ant_name\030\002 \001(\t\022\027\n\017tenant_logo_url\030\003 \001(\t\022" +
-      "\027\n\017tenant_overview\030\004 \001(\t\022\032\n\022logo_attachm" +
-      "ent_id\030\007 \001(\003\"a\n\023CreateTenantRequest\022\'\n\014b" +
-      "ase_request\030\001 \001(\0132\021.base.BaseRequest\022!\n\006" +
-      "tenant\030\002 \001(\0132\021.glory_api.Tenant\"P\n\024Creat" +
-      "eTenantResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
-      "e.BaseResponse\022\021\n\ttenant_id\030\002 \001(\003\"N\n\020Get" +
-      "TenantRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
-      "se.BaseRequest\022\021\n\ttenant_id\030\002 \001(\003\"\204\001\n\021Ge" +
-      "tTenantResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
-      "e.BaseResponse\022!\n\006tenant\030\002 \001(\0132\021.glory_a" +
-      "pi.Tenant\022%\n\013author_info\030\003 \001(\0132\020.base.Au" +
-      "thorInfo\"a\n\023UpdateTenantRequest\022\'\n\014base_" +
-      "request\030\001 \001(\0132\021.base.BaseRequest\022!\n\006Tena" +
-      "nt\030\003 \001(\0132\021.glory_api.Tenant\"P\n\024UpdateTen" +
-      "antResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
-      "seResponse\022\021\n\ttenant_id\030\002 \001(\003\"Q\n\023DeleteT" +
-      "enantRequest\022\'\n\014base_request\030\001 \001(\0132\021.bas" +
-      "e.BaseRequest\022\021\n\ttenant_id\030\002 \001(\003\"=\n\024Dele" +
-      "teTenantResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
-      "se.BaseResponse\"~\n\021ListTenantRequest\022\'\n\014" +
-      "base_request\030\001 \001(\0132\021.base.BaseRequest\022\023\n" +
-      "\013tenant_name\030\002 \001(\t\022+\n\npagination\030d \001(\0132\027" +
-      ".base.PaginationRequest\"\\\n\020TenantWithAut" +
-      "hor\022!\n\006tenant\030\001 \001(\0132\021.glory_api.Tenant\022%" +
-      "\n\013author_info\030\002 \001(\0132\020.base.AuthorInfo\"\227\001" +
-      "\n\022ListTenantResponse\022%\n\tbase_resp\030\001 \001(\0132" +
-      "\022.base.BaseResponse\022,\n\007tenants\030\002 \003(\0132\033.g" +
-      "lory_api.TenantWithAuthor\022,\n\npagination\030" +
-      "d \001(\0132\030.base.PaginationResponse\"T\n\005Major" +
-      "\022\020\n\010major_id\030\001 \001(\003\022\022\n\nmajor_name\030\002 \001(\t\022\022" +
-      "\n\nmajor_type\030\004 \001(\t\022\021\n\ttenant_id\030\007 \001(\003\"^\n" +
-      "\022CreateMajorRequest\022\'\n\014base_request\030\001 \001(" +
-      "\0132\021.base.BaseRequest\022\037\n\005major\030\002 \001(\0132\020.gl" +
-      "ory_api.Major\"N\n\023CreateMajorResponse\022%\n\t" +
-      "base_resp\030\001 \001(\0132\022.base.BaseResponse\022\020\n\010m" +
-      "ajor_id\030\002 \001(\003\"L\n\017GetMajorRequest\022\'\n\014base" +
-      "_request\030\001 \001(\0132\021.base.BaseRequest\022\020\n\010maj" +
-      "or_id\030\002 \001(\003\"\201\001\n\020GetMajorResponse\022%\n\tbase" +
-      "_resp\030\001 \001(\0132\022.base.BaseResponse\022\037\n\005major" +
-      "\030\002 \001(\0132\020.glory_api.Major\022%\n\013author_info\030" +
-      "\003 \001(\0132\020.base.AuthorInfo\"^\n\022UpdateMajorRe" +
-      "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
-      "equest\022\037\n\005Major\030\003 \001(\0132\020.glory_api.Major\"" +
-      "N\n\023UpdateMajorResponse\022%\n\tbase_resp\030\001 \001(" +
-      "\0132\022.base.BaseResponse\022\020\n\010major_id\030\002 \001(\003\"" +
-      "O\n\022DeleteMajorRequest\022\'\n\014base_request\030\001 " +
-      "\001(\0132\021.base.BaseRequest\022\020\n\010major_id\030\002 \001(\003" +
-      "\"<\n\023DeleteMajorResponse\022%\n\tbase_resp\030\001 \001" +
-      "(\0132\022.base.BaseResponse\"\243\001\n\020ListMajorRequ" +
-      "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
-      "uest\022\022\n\nmajor_name\030\002 \001(\t\022\022\n\nmajor_type\030\003" +
-      " \001(\t\022\021\n\ttenant_id\030\004 \001(\003\022+\n\npagination\030d " +
-      "\001(\0132\027.base.PaginationRequest\"Y\n\017MajorWit" +
-      "hAuthor\022\037\n\005major\030\001 \001(\0132\020.glory_api.Major" +
-      "\022%\n\013author_info\030\002 \001(\0132\020.base.AuthorInfo\"" +
-      "\224\001\n\021ListMajorResponse\022%\n\tbase_resp\030\001 \001(\013" +
-      "2\022.base.BaseResponse\022*\n\006majors\030\002 \003(\0132\032.g" +
-      "lory_api.MajorWithAuthor\022,\n\npagination\030d" +
-      " \001(\0132\030.base.PaginationResponse\"u\n\005Class\022" +
-      "\020\n\010class_id\030\001 \001(\003\022\022\n\nclass_name\030\002 \001(\t\022\020\n" +
-      "\010major_id\030\004 \001(\003\022\021\n\ttenant_id\030\005 \001(\003\022\r\n\005gr" +
-      "ade\030\006 \001(\005\022\022\n\nstart_date\030\007 \001(\t\"^\n\022CreateC" +
-      "lassRequest\022\'\n\014base_request\030\001 \001(\0132\021.base" +
-      ".BaseRequest\022\037\n\005class\030\002 \001(\0132\020.glory_api." +
-      "Class\"N\n\023CreateClassResponse\022%\n\tbase_res" +
-      "p\030\001 \001(\0132\022.base.BaseResponse\022\020\n\010class_id\030" +
-      "\002 \001(\003\"L\n\017GetClassRequest\022\'\n\014base_request" +
-      "\030\001 \001(\0132\021.base.BaseRequest\022\020\n\010class_id\030\002 " +
-      "\001(\003\"\201\001\n\020GetClassResponse\022%\n\tbase_resp\030\001 " +
-      "\001(\0132\022.base.BaseResponse\022\037\n\005class\030\002 \001(\0132\020" +
-      ".glory_api.Class\022%\n\013author_info\030\003 \001(\0132\020." +
-      "base.AuthorInfo\"^\n\022UpdateClassRequest\022\'\n" +
-      "\014base_request\030\001 \001(\0132\021.base.BaseRequest\022\037" +
-      "\n\005Class\030\003 \001(\0132\020.glory_api.Class\"N\n\023Updat" +
-      "eClassResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
-      ".BaseResponse\022\020\n\010class_id\030\002 \001(\003\"O\n\022Delet" +
-      "eClassRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
-      "se.BaseRequest\022\020\n\010class_id\030\002 \001(\003\"<\n\023Dele" +
+      "roto\"\300\001\n\006Tenant\022\021\n\ttenant_id\030\001 \001(\003\022\023\n\013te" +
+      "nant_name\030\002 \001(\t\022\027\n\017tenant_logo_url\030\003 \001(\t" +
+      "\022\027\n\017tenant_overview\030\004 \001(\t\022\032\n\022logo_attach" +
+      "ment_id\030\007 \001(\003\022\022\n\nadmin_name\030\010 \001(\t\022\023\n\013adm" +
+      "in_phone\030\t \001(\t\022\027\n\017business_system\030\n \003(\t\"" +
+      "a\n\023CreateTenantRequest\022\'\n\014base_request\030\001" +
+      " \001(\0132\021.base.BaseRequest\022!\n\006tenant\030\002 \001(\0132" +
+      "\021.glory_api.Tenant\"P\n\024CreateTenantRespon" +
+      "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
+      "e\022\021\n\ttenant_id\030\002 \001(\003\"N\n\020GetTenantRequest" +
+      "\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReques" +
+      "t\022\021\n\ttenant_id\030\002 \001(\003\"\204\001\n\021GetTenantRespon" +
+      "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
+      "e\022!\n\006tenant\030\002 \001(\0132\021.glory_api.Tenant\022%\n\013" +
+      "author_info\030\003 \001(\0132\020.base.AuthorInfo\"a\n\023U" +
+      "pdateTenantRequest\022\'\n\014base_request\030\001 \001(\013" +
+      "2\021.base.BaseRequest\022!\n\006Tenant\030\003 \001(\0132\021.gl" +
+      "ory_api.Tenant\"P\n\024UpdateTenantResponse\022%" +
+      "\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022\021\n" +
+      "\ttenant_id\030\002 \001(\003\"Q\n\023DeleteTenantRequest\022" +
+      "\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequest" +
+      "\022\021\n\ttenant_id\030\002 \001(\003\"=\n\024DeleteTenantRespo" +
+      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
+      "se\"~\n\021ListTenantRequest\022\'\n\014base_request\030" +
+      "\001 \001(\0132\021.base.BaseRequest\022\023\n\013tenant_name\030" +
+      "\002 \001(\t\022+\n\npagination\030d \001(\0132\027.base.Paginat" +
+      "ionRequest\"\\\n\020TenantWithAuthor\022!\n\006tenant" +
+      "\030\001 \001(\0132\021.glory_api.Tenant\022%\n\013author_info" +
+      "\030\002 \001(\0132\020.base.AuthorInfo\"\227\001\n\022ListTenantR" +
+      "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
+      "sponse\022,\n\007tenants\030\002 \003(\0132\033.glory_api.Tena" +
+      "ntWithAuthor\022,\n\npagination\030d \001(\0132\030.base." +
+      "PaginationResponse\"T\n\005Major\022\020\n\010major_id\030" +
+      "\001 \001(\003\022\022\n\nmajor_name\030\002 \001(\t\022\022\n\nmajor_type\030" +
+      "\004 \001(\t\022\021\n\ttenant_id\030\007 \001(\003\"^\n\022CreateMajorR" +
+      "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
+      "Request\022\037\n\005major\030\002 \001(\0132\020.glory_api.Major" +
+      "\"N\n\023CreateMajorResponse\022%\n\tbase_resp\030\001 \001" +
+      "(\0132\022.base.BaseResponse\022\020\n\010major_id\030\002 \001(\003" +
+      "\"L\n\017GetMajorRequest\022\'\n\014base_request\030\001 \001(" +
+      "\0132\021.base.BaseRequest\022\020\n\010major_id\030\002 \001(\003\"\201" +
+      "\001\n\020GetMajorResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
+      ".base.BaseResponse\022\037\n\005major\030\002 \001(\0132\020.glor" +
+      "y_api.Major\022%\n\013author_info\030\003 \001(\0132\020.base." +
+      "AuthorInfo\"^\n\022UpdateMajorRequest\022\'\n\014base" +
+      "_request\030\001 \001(\0132\021.base.BaseRequest\022\037\n\005Maj" +
+      "or\030\003 \001(\0132\020.glory_api.Major\"N\n\023UpdateMajo" +
+      "rResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Base" +
+      "Response\022\020\n\010major_id\030\002 \001(\003\"O\n\022DeleteMajo" +
+      "rRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
+      "seRequest\022\020\n\010major_id\030\002 \001(\003\"<\n\023DeleteMaj" +
+      "orResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
+      "eResponse\"\243\001\n\020ListMajorRequest\022\'\n\014base_r" +
+      "equest\030\001 \001(\0132\021.base.BaseRequest\022\022\n\nmajor" +
+      "_name\030\002 \001(\t\022\022\n\nmajor_type\030\003 \001(\t\022\021\n\ttenan" +
+      "t_id\030\004 \001(\003\022+\n\npagination\030d \001(\0132\027.base.Pa" +
+      "ginationRequest\"Y\n\017MajorWithAuthor\022\037\n\005ma" +
+      "jor\030\001 \001(\0132\020.glory_api.Major\022%\n\013author_in" +
+      "fo\030\002 \001(\0132\020.base.AuthorInfo\"\224\001\n\021ListMajor" +
+      "Response\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseR" +
+      "esponse\022*\n\006majors\030\002 \003(\0132\032.glory_api.Majo" +
+      "rWithAuthor\022,\n\npagination\030d \001(\0132\030.base.P" +
+      "aginationResponse\"u\n\005Class\022\020\n\010class_id\030\001" +
+      " \001(\003\022\022\n\nclass_name\030\002 \001(\t\022\020\n\010major_id\030\004 \001" +
+      "(\003\022\021\n\ttenant_id\030\005 \001(\003\022\r\n\005grade\030\006 \001(\005\022\022\n\n" +
+      "start_date\030\007 \001(\t\"^\n\022CreateClassRequest\022\'" +
+      "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\022" +
+      "\037\n\005class\030\002 \001(\0132\020.glory_api.Class\"N\n\023Crea" +
       "teClassResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
-      "e.BaseResponse\"\302\001\n\020ListClassRequest\022\'\n\014b" +
-      "ase_request\030\001 \001(\0132\021.base.BaseRequest\022\022\n\n" +
-      "class_name\030\002 \001(\t\022\020\n\010class_id\030\003 \001(\003\022\020\n\010ma" +
-      "jor_id\030\004 \001(\003\022\021\n\ttenant_id\030\005 \001(\003\022\r\n\005grade" +
-      "\030\006 \001(\005\022+\n\npagination\030d \001(\0132\027.base.Pagina" +
-      "tionRequest\"Y\n\017ClassWithAuthor\022\037\n\005class\030" +
-      "\001 \001(\0132\020.glory_api.Class\022%\n\013author_info\030\002" +
-      " \001(\0132\020.base.AuthorInfo\"\223\001\n\021ListClassResp" +
-      "onse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespo" +
-      "nse\022)\n\005class\030\002 \003(\0132\032.glory_api.ClassWith" +
-      "Author\022,\n\npagination\030d \001(\0132\030.base.Pagina" +
-      "tionResponseb\006proto3"
+      "e.BaseResponse\022\020\n\010class_id\030\002 \001(\003\"L\n\017GetC" +
+      "lassRequest\022\'\n\014base_request\030\001 \001(\0132\021.base" +
+      ".BaseRequest\022\020\n\010class_id\030\002 \001(\003\"\201\001\n\020GetCl" +
+      "assResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
+      "seResponse\022\037\n\005class\030\002 \001(\0132\020.glory_api.Cl" +
+      "ass\022%\n\013author_info\030\003 \001(\0132\020.base.AuthorIn" +
+      "fo\"^\n\022UpdateClassRequest\022\'\n\014base_request" +
+      "\030\001 \001(\0132\021.base.BaseRequest\022\037\n\005Class\030\003 \001(\013" +
+      "2\020.glory_api.Class\"N\n\023UpdateClassRespons" +
+      "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
+      "\022\020\n\010class_id\030\002 \001(\003\"O\n\022DeleteClassRequest" +
+      "\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReques" +
+      "t\022\020\n\010class_id\030\002 \001(\003\"<\n\023DeleteClassRespon" +
+      "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
+      "e\"\302\001\n\020ListClassRequest\022\'\n\014base_request\030\001" +
+      " \001(\0132\021.base.BaseRequest\022\022\n\nclass_name\030\002 " +
+      "\001(\t\022\020\n\010class_id\030\003 \001(\003\022\020\n\010major_id\030\004 \001(\003\022" +
+      "\021\n\ttenant_id\030\005 \001(\003\022\r\n\005grade\030\006 \001(\005\022+\n\npag" +
+      "ination\030d \001(\0132\027.base.PaginationRequest\"Y" +
+      "\n\017ClassWithAuthor\022\037\n\005class\030\001 \001(\0132\020.glory" +
+      "_api.Class\022%\n\013author_info\030\002 \001(\0132\020.base.A" +
+      "uthorInfo\"\223\001\n\021ListClassResponse\022%\n\tbase_" +
+      "resp\030\001 \001(\0132\022.base.BaseResponse\022)\n\005class\030" +
+      "\002 \003(\0132\032.glory_api.ClassWithAuthor\022,\n\npag" +
+      "ination\030d \001(\0132\030.base.PaginationResponseb" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -31458,7 +32052,7 @@ public final class TenantOuterClass {
     internal_static_glory_api_Tenant_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_Tenant_descriptor,
-        new java.lang.String[] { "TenantId", "TenantName", "TenantLogoUrl", "TenantOverview", "LogoAttachmentId", });
+        new java.lang.String[] { "TenantId", "TenantName", "TenantLogoUrl", "TenantOverview", "LogoAttachmentId", "AdminName", "AdminPhone", "BusinessSystem", });
     internal_static_glory_api_CreateTenantRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_glory_api_CreateTenantRequest_fieldAccessorTable = new

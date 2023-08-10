@@ -40,6 +40,14 @@ struct GloryApi_Tenant {
   /// 调用upload_attachment后返回的的attachment_id
   var logoAttachmentID: Int64 = 0
 
+  /// 自动创建的管理员的名字，若是手机已经是注册用户，则不会自动添加，而是用已经有的
+  var adminName: String = String()
+
+  /// 自动创建的管理员的手机号
+  var adminPhone: String = String()
+
+  var businessSystem: [String] = []
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1100,6 +1108,9 @@ extension GloryApi_Tenant: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
     3: .standard(proto: "tenant_logo_url"),
     4: .standard(proto: "tenant_overview"),
     7: .standard(proto: "logo_attachment_id"),
+    8: .standard(proto: "admin_name"),
+    9: .standard(proto: "admin_phone"),
+    10: .standard(proto: "business_system"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1113,6 +1124,9 @@ extension GloryApi_Tenant: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
       case 3: try { try decoder.decodeSingularStringField(value: &self.tenantLogoURL) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.tenantOverview) }()
       case 7: try { try decoder.decodeSingularInt64Field(value: &self.logoAttachmentID) }()
+      case 8: try { try decoder.decodeSingularStringField(value: &self.adminName) }()
+      case 9: try { try decoder.decodeSingularStringField(value: &self.adminPhone) }()
+      case 10: try { try decoder.decodeRepeatedStringField(value: &self.businessSystem) }()
       default: break
       }
     }
@@ -1134,6 +1148,15 @@ extension GloryApi_Tenant: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
     if self.logoAttachmentID != 0 {
       try visitor.visitSingularInt64Field(value: self.logoAttachmentID, fieldNumber: 7)
     }
+    if !self.adminName.isEmpty {
+      try visitor.visitSingularStringField(value: self.adminName, fieldNumber: 8)
+    }
+    if !self.adminPhone.isEmpty {
+      try visitor.visitSingularStringField(value: self.adminPhone, fieldNumber: 9)
+    }
+    if !self.businessSystem.isEmpty {
+      try visitor.visitRepeatedStringField(value: self.businessSystem, fieldNumber: 10)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1143,6 +1166,9 @@ extension GloryApi_Tenant: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
     if lhs.tenantLogoURL != rhs.tenantLogoURL {return false}
     if lhs.tenantOverview != rhs.tenantOverview {return false}
     if lhs.logoAttachmentID != rhs.logoAttachmentID {return false}
+    if lhs.adminName != rhs.adminName {return false}
+    if lhs.adminPhone != rhs.adminPhone {return false}
+    if lhs.businessSystem != rhs.businessSystem {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
