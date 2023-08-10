@@ -98,6 +98,7 @@ export interface Permission {
   /** 支持 C R U D */
   permission?: string;
   description?: string;
+  tenant_id?: string;
 }
 
 export interface ListPermissionRequest {

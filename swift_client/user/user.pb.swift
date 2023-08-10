@@ -393,6 +393,8 @@ struct GloryApi_Permission {
 
   var description_p: String = String()
 
+  var tenantID: Int64 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1542,6 +1544,7 @@ extension GloryApi_Permission: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     3: .standard(proto: "resource_id"),
     4: .same(proto: "permission"),
     5: .same(proto: "description"),
+    6: .standard(proto: "tenant_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1555,6 +1558,7 @@ extension GloryApi_Permission: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
       case 3: try { try decoder.decodeSingularInt64Field(value: &self.resourceID) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.permission) }()
       case 5: try { try decoder.decodeSingularStringField(value: &self.description_p) }()
+      case 6: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
       default: break
       }
     }
@@ -1576,6 +1580,9 @@ extension GloryApi_Permission: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     if !self.description_p.isEmpty {
       try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 5)
     }
+    if self.tenantID != 0 {
+      try visitor.visitSingularInt64Field(value: self.tenantID, fieldNumber: 6)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1585,6 +1592,7 @@ extension GloryApi_Permission: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     if lhs.resourceID != rhs.resourceID {return false}
     if lhs.permission != rhs.permission {return false}
     if lhs.description_p != rhs.description_p {return false}
+    if lhs.tenantID != rhs.tenantID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
