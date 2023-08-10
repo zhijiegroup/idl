@@ -98,6 +98,9 @@ service glory_api {
   rpc ListAddress(ListAddressRequest) returns (ListAddressResponse) {
     option (api.get) = '/api/user/list_address';
   }
+  rpc ListUserByRole(ListUserByRoleRequest) returns (ListUserByRoleResponse) {
+    option (api.post) = '/api/user/list_user_by_role';
+  }
 
   // user permission
   //list the permissions that supported
@@ -122,6 +125,7 @@ service glory_api {
   rpc ListResource(ListResourceRequest) returns (ListResourceResponse) {
     option (api.post) = '/api/auth/list_resource';
   }
+
 
   // shop
   rpc CreateShop(CreateShopRequest) returns (CreateShopResponse) {
