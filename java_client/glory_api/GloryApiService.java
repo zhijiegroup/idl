@@ -39,7 +39,7 @@ public final class GloryApiService {
       "to\032\024live/live_plan.proto\032\024live/live_text" +
       ".proto\032\037account/account_operation.proto\032" +
       "\037currency/virtual_currency.proto\032\023tenant" +
-      "/tenant.proto2\202\222\001\n\tglory_api\022s\n\rCreateEx" +
+      "/tenant.proto2\372\222\001\n\tglory_api\022s\n\rCreateEx" +
       "ample\022\037.glory_api.CreateExampleRequest\032 " +
       ".glory_api.CreateExampleResponse\"\037\322\301\030\033/a" +
       "pi/example/create_example\022g\n\nGetExample\022" +
@@ -84,7 +84,10 @@ public final class GloryApiService {
       "nse\"\031\312\301\030\025/api/user/get_address\022h\n\013ListAd" +
       "dress\022\035.glory_api.ListAddressRequest\032\036.g" +
       "lory_api.ListAddressResponse\"\032\312\301\030\026/api/u" +
-      "ser/list_address\022t\n\016ListPermission\022 .glo" +
+      "ser/list_address\022v\n\016ListUserByRole\022 .glo" +
+      "ry_api.ListUserByRoleRequest\032!.glory_api" +
+      ".ListUserByRoleResponse\"\037\322\301\030\033/api/user/l" +
+      "ist_user_by_role\022t\n\016ListPermission\022 .glo" +
       "ry_api.ListPermissionRequest\032!.glory_api" +
       ".ListPermissionResponse\"\035\322\301\030\031/api/auth/l" +
       "ist_permission\022\\\n\010ListRole\022\032.glory_api.L" +
@@ -419,10 +422,10 @@ public final class GloryApiService {
       "quest\032&.glory_api.ListLivePlanProductRes" +
       "ponse\"$\322\301\030 /api/live/list_live_plan_prod" +
       "uct\022\222\001\n\025DeleteLivePlanProduct\022\'.glory_ap" +
-      "i.DeleteLivePlanProductRequest\032(.glory_a" +
+      "i.DeleteLivePlanProductRequest\032(.glory_a",
       "pi.DeleteLivePlanProductResponse\"&\322\301\030\"/a" +
       "pi/live/delete_live_plan_product\022\212\001\n\023Loa" +
-      "dLivePlanProduct\022%.glory_api.LoadLivePla",
+      "dLivePlanProduct\022%.glory_api.LoadLivePla" +
       "nProductRequest\032&.glory_api.LoadLivePlan" +
       "ProductResponse\"$\322\301\030 /api/live/load_live" +
       "_plan_product\022\232\001\n\027UpdateLiveProductStatu" +

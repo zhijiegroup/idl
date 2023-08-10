@@ -194,6 +194,14 @@ export class glory_api {
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
 
+  ListUserByRole(request) {
+    const uri = `${this.uriPrefix}/api/user/list_user_by_role`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   ListPermission(request) {
     const uri = `${this.uriPrefix}/api/auth/list_permission`;
     const body = JSONbigint.stringify(request);

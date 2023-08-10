@@ -131,6 +131,10 @@ export class glory_api {
     request: address.ListAddressRequest
   ): Promise<address.ListAddressResponse>;
 
+  ListUserByRole(
+    request: user.ListUserByRoleRequest
+  ): Promise<user.ListUserByRoleResponse>;
+
   /** user permission
 list the permissions that supported */
   ListPermission(

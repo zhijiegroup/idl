@@ -76,6 +76,7 @@ export interface GetUserResponse {
 }
 
 export interface PagePermission {
+  business_system?: string;
   page?: string;
   has_permission?: boolean;
 }
@@ -104,9 +105,14 @@ export interface Permission {
 export interface ListPermissionRequest {
   base_request?: base.BaseRequest;
   permission_id?: string;
+  /** 权限的名字，模糊查找 */
   permission_name?: string;
+  /** 权限对应的resource id */
   resource_id?: string;
+  /** 权限, 支持 C, R, U D */
   permission?: string;
+  /** 学校的id */
+  tenant_id?: string;
   pagination?: base.PaginationRequest;
 }
 
@@ -136,10 +142,14 @@ export interface RolePermission {
 export interface ListRoleRequest {
   base_request?: base.BaseRequest;
   role_id?: string;
+  /** 角色名称，模糊查找 */
   role_name?: string;
+  /** 角色类型， 支持build-in，跟 user-defined
+string source = 5;  // 对应的角色来源
+int64 source_id =6; */
   role_type?: string;
-  source?: string;
-  source_id?: string;
+  /** 学校id */
+  tenant_id?: string;
   pagination?: base.PaginationRequest;
 }
 
@@ -173,6 +183,7 @@ export interface GiveRolePermissionResponse {
 
 export interface RemoveRolePermissionRequest {
   base_request?: base.BaseRequest;
+  /** 这个role_permission_id在list_role里头有返回，是role跟permission 映射起来的唯一id */
   role_permission_id?: Array<string>;
 }
 
@@ -213,5 +224,26 @@ export interface ListResourceResponse {
   base_resp?: base.BaseResponse;
   /** resource 列表 */
   resource?: Array<Resource>;
+  pagination?: base.PaginationResponse;
+}
+
+export interface ListUserByRole {
+  user_id?: string;
+  user_name?: string;
+  tenant_id?: string;
+  role?: string;
+  created_at?: string;
+}
+
+export interface ListUserByRoleRequest {
+  base_request?: base.BaseRequest;
+  role_name?: string;
+  pagination?: base.PaginationRequest;
+}
+
+export interface ListUserByRoleResponse {
+  base_resp?: base.BaseResponse;
+  /** user 列表 */
+  user?: Array<ListUserByRole>;
   pagination?: base.PaginationResponse;
 }
