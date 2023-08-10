@@ -12437,6 +12437,12 @@ public final class UserOuterClass {
      */
     com.google.protobuf.ByteString
         getDescriptionBytes();
+
+    /**
+     * <code>int64 tenant_id = 6;</code>
+     * @return The tenantId.
+     */
+    long getTenantId();
   }
   /**
    * Protobuf type {@code glory_api.Permission}
@@ -12512,6 +12518,11 @@ public final class UserOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               description_ = s;
+              break;
+            }
+            case 48: {
+
+              tenantId_ = input.readInt64();
               break;
             }
             default: {
@@ -12694,6 +12705,17 @@ public final class UserOuterClass {
       }
     }
 
+    public static final int TENANT_ID_FIELD_NUMBER = 6;
+    private long tenantId_;
+    /**
+     * <code>int64 tenant_id = 6;</code>
+     * @return The tenantId.
+     */
+    @java.lang.Override
+    public long getTenantId() {
+      return tenantId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -12723,6 +12745,9 @@ public final class UserOuterClass {
       if (!getDescriptionBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, description_);
       }
+      if (tenantId_ != 0L) {
+        output.writeInt64(6, tenantId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -12749,6 +12774,10 @@ public final class UserOuterClass {
       if (!getDescriptionBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, description_);
       }
+      if (tenantId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(6, tenantId_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -12774,6 +12803,8 @@ public final class UserOuterClass {
           .equals(other.getPermission())) return false;
       if (!getDescription()
           .equals(other.getDescription())) return false;
+      if (getTenantId()
+          != other.getTenantId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -12797,6 +12828,9 @@ public final class UserOuterClass {
       hash = (53 * hash) + getPermission().hashCode();
       hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDescription().hashCode();
+      hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTenantId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -12940,6 +12974,8 @@ public final class UserOuterClass {
 
         description_ = "";
 
+        tenantId_ = 0L;
+
         return this;
       }
 
@@ -12971,6 +13007,7 @@ public final class UserOuterClass {
         result.resourceId_ = resourceId_;
         result.permission_ = permission_;
         result.description_ = description_;
+        result.tenantId_ = tenantId_;
         onBuilt();
         return result;
       }
@@ -13036,6 +13073,9 @@ public final class UserOuterClass {
         if (!other.getDescription().isEmpty()) {
           description_ = other.description_;
           onChanged();
+        }
+        if (other.getTenantId() != 0L) {
+          setTenantId(other.getTenantId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -13384,6 +13424,37 @@ public final class UserOuterClass {
   checkByteStringIsUtf8(value);
         
         description_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long tenantId_ ;
+      /**
+       * <code>int64 tenant_id = 6;</code>
+       * @return The tenantId.
+       */
+      @java.lang.Override
+      public long getTenantId() {
+        return tenantId_;
+      }
+      /**
+       * <code>int64 tenant_id = 6;</code>
+       * @param value The tenantId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTenantId(long value) {
+        
+        tenantId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 tenant_id = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTenantId() {
+        
+        tenantId_ = 0L;
         onChanged();
         return this;
       }
@@ -30669,61 +30740,61 @@ public final class UserOuterClass {
       "est\"z\n\035GetUserPagePermissionResponse\022%\n\t" +
       "base_resp\030\001 \001(\0132\022.base.BaseResponse\0222\n\017p" +
       "age_permission\030\002 \003(\0132\031.glory_api.PagePer" +
-      "mission\"z\n\nPermission\022\025\n\rpermission_id\030\001" +
-      " \001(\003\022\027\n\017permission_name\030\002 \001(\t\022\023\n\013resourc" +
-      "e_id\030\003 \001(\003\022\022\n\npermission\030\004 \001(\t\022\023\n\013descri" +
-      "ption\030\005 \001(\t\"\306\001\n\025ListPermissionRequest\022\'\n" +
-      "\014base_request\030\001 \001(\0132\021.base.BaseRequest\022\025" +
-      "\n\rpermission_id\030\002 \001(\003\022\027\n\017permission_name" +
-      "\030\003 \001(\t\022\023\n\013resource_id\030\004 \001(\003\022\022\n\npermissio" +
-      "n\030\005 \001(\t\022+\n\npagination\030d \001(\0132\027.base.Pagin" +
-      "ationRequest\"\230\001\n\026ListPermissionResponse\022" +
-      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022)" +
-      "\n\npermission\030\002 \003(\0132\025.glory_api.Permissio" +
-      "n\022,\n\npagination\030d \001(\0132\030.base.PaginationR" +
-      "esponse\"s\n\004Role\022\017\n\007role_id\030\001 \001(\003\022\021\n\trole" +
-      "_name\030\002 \001(\t\022\023\n\013description\030\005 \001(\t\0222\n\017role" +
-      "_permission\030\006 \003(\0132\031.glory_api.RolePermis" +
-      "sion\"\177\n\016RolePermission\022\032\n\022role_permissio" +
-      "n_id\030\001 \001(\003\022\017\n\007role_id\030\002 \001(\003\022\025\n\rpermissio" +
-      "n_id\030\003 \001(\003\022)\n\npermission\030\004 \003(\0132\025.glory_a" +
-      "pi.Permission\"\301\001\n\017ListRoleRequest\022\'\n\014bas" +
-      "e_request\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007ro" +
-      "le_id\030\002 \001(\003\022\021\n\trole_name\030\003 \001(\t\022\021\n\trole_t" +
-      "ype\030\004 \001(\t\022\016\n\006source\030\005 \001(\t\022\021\n\tsource_id\030\006" +
-      " \001(\003\022+\n\npagination\030d \001(\0132\027.base.Paginati" +
-      "onRequest\"\206\001\n\020ListRoleResponse\022%\n\tbase_r" +
-      "esp\030\001 \001(\0132\022.base.BaseResponse\022\035\n\004role\030\002 " +
-      "\003(\0132\017.glory_api.Role\022,\n\npagination\030d \001(\013" +
-      "2\030.base.PaginationResponse\"[\n\021CreateRole" +
-      "Request\022\'\n\014base_request\030\001 \001(\0132\021.base.Bas" +
-      "eRequest\022\035\n\004role\030\002 \001(\0132\017.glory_api.Role\"" +
-      "L\n\022CreateRoleResponse\022%\n\tbase_resp\030\001 \001(\013" +
-      "2\022.base.BaseResponse\022\017\n\007role_id\030\002 \001(\003\"l\n" +
-      "\031GiveRolePermissionRequest\022\'\n\014base_reque" +
-      "st\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007role_id\030\002" +
-      " \001(\003\022\025\n\rpermission_id\030\003 \003(\003\"C\n\032GiveRoleP" +
-      "ermissionResponse\022%\n\tbase_resp\030\001 \001(\0132\022.b" +
-      "ase.BaseResponse\"b\n\033RemoveRolePermission" +
-      "Request\022\'\n\014base_request\030\001 \001(\0132\021.base.Bas" +
-      "eRequest\022\032\n\022role_permission_id\030\003 \003(\003\"E\n\034" +
-      "RemoveRolePermissionResponse\022%\n\tbase_res" +
-      "p\030\001 \001(\0132\022.base.BaseResponse\"M\n\021DeleteRol" +
-      "eRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
-      "seRequest\022\017\n\007role_id\030\002 \003(\003\";\n\022DeleteRole" +
+      "mission\"\215\001\n\nPermission\022\025\n\rpermission_id\030" +
+      "\001 \001(\003\022\027\n\017permission_name\030\002 \001(\t\022\023\n\013resour" +
+      "ce_id\030\003 \001(\003\022\022\n\npermission\030\004 \001(\t\022\023\n\013descr" +
+      "iption\030\005 \001(\t\022\021\n\ttenant_id\030\006 \001(\003\"\306\001\n\025List" +
+      "PermissionRequest\022\'\n\014base_request\030\001 \001(\0132" +
+      "\021.base.BaseRequest\022\025\n\rpermission_id\030\002 \001(" +
+      "\003\022\027\n\017permission_name\030\003 \001(\t\022\023\n\013resource_i" +
+      "d\030\004 \001(\003\022\022\n\npermission\030\005 \001(\t\022+\n\npaginatio" +
+      "n\030d \001(\0132\027.base.PaginationRequest\"\230\001\n\026Lis" +
+      "tPermissionResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
+      ".base.BaseResponse\022)\n\npermission\030\002 \003(\0132\025" +
+      ".glory_api.Permission\022,\n\npagination\030d \001(" +
+      "\0132\030.base.PaginationResponse\"s\n\004Role\022\017\n\007r" +
+      "ole_id\030\001 \001(\003\022\021\n\trole_name\030\002 \001(\t\022\023\n\013descr" +
+      "iption\030\005 \001(\t\0222\n\017role_permission\030\006 \003(\0132\031." +
+      "glory_api.RolePermission\"\177\n\016RolePermissi" +
+      "on\022\032\n\022role_permission_id\030\001 \001(\003\022\017\n\007role_i" +
+      "d\030\002 \001(\003\022\025\n\rpermission_id\030\003 \001(\003\022)\n\npermis" +
+      "sion\030\004 \003(\0132\025.glory_api.Permission\"\301\001\n\017Li" +
+      "stRoleRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
+      "se.BaseRequest\022\017\n\007role_id\030\002 \001(\003\022\021\n\trole_" +
+      "name\030\003 \001(\t\022\021\n\trole_type\030\004 \001(\t\022\016\n\006source\030" +
+      "\005 \001(\t\022\021\n\tsource_id\030\006 \001(\003\022+\n\npagination\030d" +
+      " \001(\0132\027.base.PaginationRequest\"\206\001\n\020ListRo" +
+      "leResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
+      "eResponse\022\035\n\004role\030\002 \003(\0132\017.glory_api.Role" +
+      "\022,\n\npagination\030d \001(\0132\030.base.PaginationRe" +
+      "sponse\"[\n\021CreateRoleRequest\022\'\n\014base_requ" +
+      "est\030\001 \001(\0132\021.base.BaseRequest\022\035\n\004role\030\002 \001" +
+      "(\0132\017.glory_api.Role\"L\n\022CreateRoleRespons" +
+      "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
+      "\022\017\n\007role_id\030\002 \001(\003\"l\n\031GiveRolePermissionR" +
+      "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
+      "Request\022\017\n\007role_id\030\002 \001(\003\022\025\n\rpermission_i" +
+      "d\030\003 \003(\003\"C\n\032GiveRolePermissionResponse\022%\n" +
+      "\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"b\n\033" +
+      "RemoveRolePermissionRequest\022\'\n\014base_requ" +
+      "est\030\001 \001(\0132\021.base.BaseRequest\022\032\n\022role_per" +
+      "mission_id\030\003 \003(\003\"E\n\034RemoveRolePermission" +
       "Response\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseR" +
-      "esponse\"\203\001\n\010Resource\022\023\n\013resource_id\030\002 \001(" +
-      "\003\022\025\n\rresource_name\030\003 \001(\t\022\025\n\rresource_typ" +
-      "e\030\004 \001(\t\022\016\n\006source\030\005 \001(\t\022\021\n\tsource_id\030\006 \001" +
-      "(\003\022\021\n\ttenant_id\030\007 \001(\003\"\222\001\n\023ListResourceRe" +
-      "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
-      "equest\022%\n\010resource\030\002 \001(\0132\023.glory_api.Res" +
-      "ource\022+\n\npagination\030d \001(\0132\027.base.Paginat" +
-      "ionRequest\"\222\001\n\024ListResourceResponse\022%\n\tb" +
-      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\022%\n\010re" +
-      "source\030\002 \003(\0132\023.glory_api.Resource\022,\n\npag" +
-      "ination\030d \001(\0132\030.base.PaginationResponseb" +
-      "\006proto3"
+      "esponse\"M\n\021DeleteRoleRequest\022\'\n\014base_req" +
+      "uest\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007role_id" +
+      "\030\002 \003(\003\";\n\022DeleteRoleResponse\022%\n\tbase_res" +
+      "p\030\001 \001(\0132\022.base.BaseResponse\"\203\001\n\010Resource" +
+      "\022\023\n\013resource_id\030\002 \001(\003\022\025\n\rresource_name\030\003" +
+      " \001(\t\022\025\n\rresource_type\030\004 \001(\t\022\016\n\006source\030\005 " +
+      "\001(\t\022\021\n\tsource_id\030\006 \001(\003\022\021\n\ttenant_id\030\007 \001(" +
+      "\003\"\222\001\n\023ListResourceRequest\022\'\n\014base_reques" +
+      "t\030\001 \001(\0132\021.base.BaseRequest\022%\n\010resource\030\002" +
+      " \001(\0132\023.glory_api.Resource\022+\n\npagination\030" +
+      "d \001(\0132\027.base.PaginationRequest\"\222\001\n\024ListR" +
+      "esourceResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
+      "e.BaseResponse\022%\n\010resource\030\002 \003(\0132\023.glory" +
+      "_api.Resource\022,\n\npagination\030d \001(\0132\030.base" +
+      ".PaginationResponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -30821,7 +30892,7 @@ public final class UserOuterClass {
     internal_static_glory_api_Permission_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_Permission_descriptor,
-        new java.lang.String[] { "PermissionId", "PermissionName", "ResourceId", "Permission", "Description", });
+        new java.lang.String[] { "PermissionId", "PermissionName", "ResourceId", "Permission", "Description", "TenantId", });
     internal_static_glory_api_ListPermissionRequest_descriptor =
       getDescriptor().getMessageTypes().get(15);
     internal_static_glory_api_ListPermissionRequest_fieldAccessorTable = new
