@@ -388,7 +388,7 @@ list the permissions that supported */
   ): Promise<order.FreeShippingInBatchesResponse>;
 
   /** cart */
-  CreateCart(request: cart.CreateCartRequest): Promise<cart.CreateCartResponse>;
+  CreateCart(request: cart.AddCartRequest): Promise<cart.AddCartResponse>;
 
   GetCart(request: cart.GetCartRequest): Promise<cart.GetCartResponse>;
 
