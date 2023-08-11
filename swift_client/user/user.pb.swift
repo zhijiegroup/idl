@@ -922,7 +922,11 @@ struct GloryApi_ListUserByRoleRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
+  /// 平台管理员是admin, 学校管理员是school_admin_role
   var roleName: String = String()
+
+  /// 学校的id，若是角色名称是admin，则会忽略这个
+  var tenantID: Int64 = 0
 
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
@@ -2582,6 +2586,7 @@ extension GloryApi_ListUserByRoleRequest: SwiftProtobuf.Message, SwiftProtobuf._
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
     2: .standard(proto: "role_name"),
+    3: .standard(proto: "tenant_id"),
     100: .same(proto: "pagination"),
   ]
 
@@ -2593,6 +2598,7 @@ extension GloryApi_ListUserByRoleRequest: SwiftProtobuf.Message, SwiftProtobuf._
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.roleName) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -2610,6 +2616,9 @@ extension GloryApi_ListUserByRoleRequest: SwiftProtobuf.Message, SwiftProtobuf._
     if !self.roleName.isEmpty {
       try visitor.visitSingularStringField(value: self.roleName, fieldNumber: 2)
     }
+    if self.tenantID != 0 {
+      try visitor.visitSingularInt64Field(value: self.tenantID, fieldNumber: 3)
+    }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
     } }()
@@ -2619,6 +2628,7 @@ extension GloryApi_ListUserByRoleRequest: SwiftProtobuf.Message, SwiftProtobuf._
   static func ==(lhs: GloryApi_ListUserByRoleRequest, rhs: GloryApi_ListUserByRoleRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.roleName != rhs.roleName {return false}
+    if lhs.tenantID != rhs.tenantID {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

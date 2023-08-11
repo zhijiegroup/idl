@@ -237,7 +237,10 @@ export interface ListUserByRole {
 
 export interface ListUserByRoleRequest {
   base_request?: base.BaseRequest;
+  /** 平台管理员是admin, 学校管理员是school_admin_role */
   role_name?: string;
+  /** 学校的id，若是角色名称是admin，则会忽略这个 */
+  tenant_id?: string;
   pagination?: base.PaginationRequest;
 }
 

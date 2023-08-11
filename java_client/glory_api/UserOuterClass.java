@@ -31899,16 +31899,34 @@ public final class UserOuterClass {
     base.Base.BaseRequestOrBuilder getBaseRequestOrBuilder();
 
     /**
+     * <pre>
+     * 平台管理员是admin, 学校管理员是school_admin_role
+     * </pre>
+     *
      * <code>string role_name = 2;</code>
      * @return The roleName.
      */
     java.lang.String getRoleName();
     /**
+     * <pre>
+     * 平台管理员是admin, 学校管理员是school_admin_role
+     * </pre>
+     *
      * <code>string role_name = 2;</code>
      * @return The bytes for roleName.
      */
     com.google.protobuf.ByteString
         getRoleNameBytes();
+
+    /**
+     * <pre>
+     * 学校的id，若是角色名称是admin，则会忽略这个
+     * </pre>
+     *
+     * <code>int64 tenant_id = 3;</code>
+     * @return The tenantId.
+     */
+    long getTenantId();
 
     /**
      * <code>.base.PaginationRequest pagination = 100;</code>
@@ -31990,6 +32008,11 @@ public final class UserOuterClass {
               roleName_ = s;
               break;
             }
+            case 24: {
+
+              tenantId_ = input.readInt64();
+              break;
+            }
             case 802: {
               base.Base.PaginationRequest.Builder subBuilder = null;
               if (pagination_ != null) {
@@ -32064,6 +32087,10 @@ public final class UserOuterClass {
     public static final int ROLE_NAME_FIELD_NUMBER = 2;
     private volatile java.lang.Object roleName_;
     /**
+     * <pre>
+     * 平台管理员是admin, 学校管理员是school_admin_role
+     * </pre>
+     *
      * <code>string role_name = 2;</code>
      * @return The roleName.
      */
@@ -32081,6 +32108,10 @@ public final class UserOuterClass {
       }
     }
     /**
+     * <pre>
+     * 平台管理员是admin, 学校管理员是school_admin_role
+     * </pre>
+     *
      * <code>string role_name = 2;</code>
      * @return The bytes for roleName.
      */
@@ -32097,6 +32128,21 @@ public final class UserOuterClass {
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
+    }
+
+    public static final int TENANT_ID_FIELD_NUMBER = 3;
+    private long tenantId_;
+    /**
+     * <pre>
+     * 学校的id，若是角色名称是admin，则会忽略这个
+     * </pre>
+     *
+     * <code>int64 tenant_id = 3;</code>
+     * @return The tenantId.
+     */
+    @java.lang.Override
+    public long getTenantId() {
+      return tenantId_;
     }
 
     public static final int PAGINATION_FIELD_NUMBER = 100;
@@ -32145,6 +32191,9 @@ public final class UserOuterClass {
       if (!getRoleNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, roleName_);
       }
+      if (tenantId_ != 0L) {
+        output.writeInt64(3, tenantId_);
+      }
       if (pagination_ != null) {
         output.writeMessage(100, getPagination());
       }
@@ -32163,6 +32212,10 @@ public final class UserOuterClass {
       }
       if (!getRoleNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, roleName_);
+      }
+      if (tenantId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, tenantId_);
       }
       if (pagination_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -32190,6 +32243,8 @@ public final class UserOuterClass {
       }
       if (!getRoleName()
           .equals(other.getRoleName())) return false;
+      if (getTenantId()
+          != other.getTenantId()) return false;
       if (hasPagination() != other.hasPagination()) return false;
       if (hasPagination()) {
         if (!getPagination()
@@ -32212,6 +32267,9 @@ public final class UserOuterClass {
       }
       hash = (37 * hash) + ROLE_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getRoleName().hashCode();
+      hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTenantId());
       if (hasPagination()) {
         hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
         hash = (53 * hash) + getPagination().hashCode();
@@ -32357,6 +32415,8 @@ public final class UserOuterClass {
         }
         roleName_ = "";
 
+        tenantId_ = 0L;
+
         if (paginationBuilder_ == null) {
           pagination_ = null;
         } else {
@@ -32395,6 +32455,7 @@ public final class UserOuterClass {
           result.baseRequest_ = baseRequestBuilder_.build();
         }
         result.roleName_ = roleName_;
+        result.tenantId_ = tenantId_;
         if (paginationBuilder_ == null) {
           result.pagination_ = pagination_;
         } else {
@@ -32454,6 +32515,9 @@ public final class UserOuterClass {
         if (!other.getRoleName().isEmpty()) {
           roleName_ = other.roleName_;
           onChanged();
+        }
+        if (other.getTenantId() != 0L) {
+          setTenantId(other.getTenantId());
         }
         if (other.hasPagination()) {
           mergePagination(other.getPagination());
@@ -32608,6 +32672,10 @@ public final class UserOuterClass {
 
       private java.lang.Object roleName_ = "";
       /**
+       * <pre>
+       * 平台管理员是admin, 学校管理员是school_admin_role
+       * </pre>
+       *
        * <code>string role_name = 2;</code>
        * @return The roleName.
        */
@@ -32624,6 +32692,10 @@ public final class UserOuterClass {
         }
       }
       /**
+       * <pre>
+       * 平台管理员是admin, 学校管理员是school_admin_role
+       * </pre>
+       *
        * <code>string role_name = 2;</code>
        * @return The bytes for roleName.
        */
@@ -32641,6 +32713,10 @@ public final class UserOuterClass {
         }
       }
       /**
+       * <pre>
+       * 平台管理员是admin, 学校管理员是school_admin_role
+       * </pre>
+       *
        * <code>string role_name = 2;</code>
        * @param value The roleName to set.
        * @return This builder for chaining.
@@ -32656,6 +32732,10 @@ public final class UserOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * 平台管理员是admin, 学校管理员是school_admin_role
+       * </pre>
+       *
        * <code>string role_name = 2;</code>
        * @return This builder for chaining.
        */
@@ -32666,6 +32746,10 @@ public final class UserOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * 平台管理员是admin, 学校管理员是school_admin_role
+       * </pre>
+       *
        * <code>string role_name = 2;</code>
        * @param value The bytes for roleName to set.
        * @return This builder for chaining.
@@ -32678,6 +32762,49 @@ public final class UserOuterClass {
   checkByteStringIsUtf8(value);
         
         roleName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long tenantId_ ;
+      /**
+       * <pre>
+       * 学校的id，若是角色名称是admin，则会忽略这个
+       * </pre>
+       *
+       * <code>int64 tenant_id = 3;</code>
+       * @return The tenantId.
+       */
+      @java.lang.Override
+      public long getTenantId() {
+        return tenantId_;
+      }
+      /**
+       * <pre>
+       * 学校的id，若是角色名称是admin，则会忽略这个
+       * </pre>
+       *
+       * <code>int64 tenant_id = 3;</code>
+       * @param value The tenantId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTenantId(long value) {
+        
+        tenantId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 学校的id，若是角色名称是admin，则会忽略这个
+       * </pre>
+       *
+       * <code>int64 tenant_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTenantId() {
+        
+        tenantId_ = 0L;
         onChanged();
         return this;
       }
@@ -34439,15 +34566,15 @@ public final class UserOuterClass {
       "e\022,\n\npagination\030d \001(\0132\030.base.PaginationR" +
       "esponse\"i\n\016ListUserByRole\022\017\n\007user_id\030\001 \001" +
       "(\003\022\021\n\tuser_name\030\002 \001(\t\022\021\n\ttenant_id\030\003 \001(\003" +
-      "\022\014\n\004role\030\004 \001(\t\022\022\n\ncreated_at\030\005 \001(\t\"\200\001\n\025L" +
+      "\022\014\n\004role\030\004 \001(\t\022\022\n\ncreated_at\030\005 \001(\t\"\223\001\n\025L" +
       "istUserByRoleRequest\022\'\n\014base_request\030\001 \001" +
       "(\0132\021.base.BaseRequest\022\021\n\trole_name\030\002 \001(\t" +
-      "\022+\n\npagination\030d \001(\0132\027.base.PaginationRe" +
-      "quest\"\226\001\n\026ListUserByRoleResponse\022%\n\tbase" +
-      "_resp\030\001 \001(\0132\022.base.BaseResponse\022\'\n\004user\030" +
-      "\002 \003(\0132\031.glory_api.ListUserByRole\022,\n\npagi" +
-      "nation\030d \001(\0132\030.base.PaginationResponseb\006" +
-      "proto3"
+      "\022\021\n\ttenant_id\030\003 \001(\003\022+\n\npagination\030d \001(\0132" +
+      "\027.base.PaginationRequest\"\226\001\n\026ListUserByR" +
+      "oleResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
+      "seResponse\022\'\n\004user\030\002 \003(\0132\031.glory_api.Lis" +
+      "tUserByRole\022,\n\npagination\030d \001(\0132\030.base.P" +
+      "aginationResponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -34659,7 +34786,7 @@ public final class UserOuterClass {
     internal_static_glory_api_ListUserByRoleRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListUserByRoleRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "RoleName", "Pagination", });
+        new java.lang.String[] { "BaseRequest", "RoleName", "TenantId", "Pagination", });
     internal_static_glory_api_ListUserByRoleResponse_descriptor =
       getDescriptor().getMessageTypes().get(34);
     internal_static_glory_api_ListUserByRoleResponse_fieldAccessorTable = new
