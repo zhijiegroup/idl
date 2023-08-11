@@ -43,6 +43,8 @@ struct GloryApi_Config {
 
   var updatedAt: String = String()
 
+  var businessSystem: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -53,13 +55,20 @@ struct GloryApi_AddConfig {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  /// 配置的名字
   var configName: String = String()
 
+  /// 配置的值
   var configValue: String = String()
 
+  /// 配置的类型，支持page_permission, system_permission, public_config, system_owner_location
   var configType: String = String()
 
+  /// 描述
   var description_p: String = String()
+
+  /// 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, short, shop
+  var businessSystem: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -246,9 +255,14 @@ struct GloryApi_GetConfigRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
+  /// config的名字
   var configName: String = String()
 
+  /// config的类型，支持page_permission, system_permission, public_config, system_owner_location
   var configType: String = String()
+
+  /// 业务系统，添加的时候默认是global(不属于任何业务系统）, 现在支持 shop, live, short
+  var businessSystem: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -310,6 +324,7 @@ extension GloryApi_Config: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
     8: .standard(proto: "updated_by"),
     9: .standard(proto: "created_at"),
     10: .standard(proto: "updated_at"),
+    11: .standard(proto: "business_system"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -327,6 +342,7 @@ extension GloryApi_Config: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
       case 8: try { try decoder.decodeSingularInt64Field(value: &self.updatedBy) }()
       case 9: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
       case 10: try { try decoder.decodeSingularStringField(value: &self.updatedAt) }()
+      case 11: try { try decoder.decodeSingularStringField(value: &self.businessSystem) }()
       default: break
       }
     }
@@ -360,6 +376,9 @@ extension GloryApi_Config: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
     if !self.updatedAt.isEmpty {
       try visitor.visitSingularStringField(value: self.updatedAt, fieldNumber: 10)
     }
+    if !self.businessSystem.isEmpty {
+      try visitor.visitSingularStringField(value: self.businessSystem, fieldNumber: 11)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -373,6 +392,7 @@ extension GloryApi_Config: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
     if lhs.updatedBy != rhs.updatedBy {return false}
     if lhs.createdAt != rhs.createdAt {return false}
     if lhs.updatedAt != rhs.updatedAt {return false}
+    if lhs.businessSystem != rhs.businessSystem {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -385,6 +405,7 @@ extension GloryApi_AddConfig: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     3: .standard(proto: "config_value"),
     4: .standard(proto: "config_type"),
     5: .same(proto: "description"),
+    6: .standard(proto: "business_system"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -397,6 +418,7 @@ extension GloryApi_AddConfig: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
       case 3: try { try decoder.decodeSingularStringField(value: &self.configValue) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.configType) }()
       case 5: try { try decoder.decodeSingularStringField(value: &self.description_p) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.businessSystem) }()
       default: break
       }
     }
@@ -415,6 +437,9 @@ extension GloryApi_AddConfig: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     if !self.description_p.isEmpty {
       try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 5)
     }
+    if !self.businessSystem.isEmpty {
+      try visitor.visitSingularStringField(value: self.businessSystem, fieldNumber: 6)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -423,6 +448,7 @@ extension GloryApi_AddConfig: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     if lhs.configValue != rhs.configValue {return false}
     if lhs.configType != rhs.configType {return false}
     if lhs.description_p != rhs.description_p {return false}
+    if lhs.businessSystem != rhs.businessSystem {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -718,6 +744,7 @@ extension GloryApi_GetConfigRequest: SwiftProtobuf.Message, SwiftProtobuf._Messa
     1: .standard(proto: "base_request"),
     2: .standard(proto: "config_name"),
     3: .standard(proto: "config_type"),
+    4: .standard(proto: "business_system"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -729,6 +756,7 @@ extension GloryApi_GetConfigRequest: SwiftProtobuf.Message, SwiftProtobuf._Messa
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.configName) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.configType) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.businessSystem) }()
       default: break
       }
     }
@@ -748,6 +776,9 @@ extension GloryApi_GetConfigRequest: SwiftProtobuf.Message, SwiftProtobuf._Messa
     if !self.configType.isEmpty {
       try visitor.visitSingularStringField(value: self.configType, fieldNumber: 3)
     }
+    if !self.businessSystem.isEmpty {
+      try visitor.visitSingularStringField(value: self.businessSystem, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -755,6 +786,7 @@ extension GloryApi_GetConfigRequest: SwiftProtobuf.Message, SwiftProtobuf._Messa
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.configName != rhs.configName {return false}
     if lhs.configType != rhs.configType {return false}
+    if lhs.businessSystem != rhs.businessSystem {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
