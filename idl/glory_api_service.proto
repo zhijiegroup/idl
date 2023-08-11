@@ -351,8 +351,8 @@ service glory_api {
   }
 
   // cart
-  rpc CreateCart(CreateCartRequest) returns (CreateCartResponse) {
-    option (api.post) = '/api/shop/create_cart';
+  rpc CreateCart(AddCartResponse) returns (AddCartResponse) {
+    option (api.post) = '/api/shop/add_cart';
   }
   rpc GetCart(GetCartRequest) returns (GetCartResponse) {
     option (api.get) = '/api/shop/get_cart';

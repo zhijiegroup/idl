@@ -5,11 +5,12 @@ package glory_api;
 import "base.proto";
 
 message Cart {
+  //客户端 添加购物车 sku_id quantity shop_id seller_id tenant_id必传
   int64 cart_id = 1;
   int64 user_id = 2;
   int64 seller_id = 3;
   int64 tenant_id = 4;
-  repeated CartSku cart_sku = 5;
+  CartSku cart_sku = 5;
 }
 
 message CartSku {
@@ -54,14 +55,15 @@ message CartWithAuthor {
   base.AuthorInfo author_info = 2;
 }
 
-message CreateCartRequest {
+message AddCartRequest {
   base.BaseRequest base_request = 1;
   Cart cart =2;
   string created_by = 3;
 }
-message CreateCartResponse {
+message AddCartResponse {
   base.BaseResponse base_resp = 1;
   int64 cart_id = 2;
+  int32 cart_num = 3;
 }
 
 message GetCartRequest {
