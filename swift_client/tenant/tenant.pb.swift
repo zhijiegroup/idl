@@ -101,6 +101,10 @@ struct GloryApi_CreateTenantResponse {
 
   var tenantID: Int64 = 0
 
+  var adminUserID: Int64 = 0
+
+  var adminPhone: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1221,6 +1225,8 @@ extension GloryApi_CreateTenantResponse: SwiftProtobuf.Message, SwiftProtobuf._M
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
     2: .standard(proto: "tenant_id"),
+    3: .standard(proto: "admin_user_id"),
+    4: .standard(proto: "admin_phone"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1231,6 +1237,8 @@ extension GloryApi_CreateTenantResponse: SwiftProtobuf.Message, SwiftProtobuf._M
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.adminUserID) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.adminPhone) }()
       default: break
       }
     }
@@ -1247,12 +1255,20 @@ extension GloryApi_CreateTenantResponse: SwiftProtobuf.Message, SwiftProtobuf._M
     if self.tenantID != 0 {
       try visitor.visitSingularInt64Field(value: self.tenantID, fieldNumber: 2)
     }
+    if self.adminUserID != 0 {
+      try visitor.visitSingularInt64Field(value: self.adminUserID, fieldNumber: 3)
+    }
+    if !self.adminPhone.isEmpty {
+      try visitor.visitSingularStringField(value: self.adminPhone, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_CreateTenantResponse, rhs: GloryApi_CreateTenantResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.tenantID != rhs.tenantID {return false}
+    if lhs.adminUserID != rhs.adminUserID {return false}
+    if lhs.adminPhone != rhs.adminPhone {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

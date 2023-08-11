@@ -32,6 +32,8 @@ export interface CreateTenantRequest {
 export interface CreateTenantResponse {
   base_resp?: base.BaseResponse;
   tenant_id?: string;
+  admin_user_id?: string;
+  admin_phone?: string;
 }
 
 export interface GetTenantRequest {
