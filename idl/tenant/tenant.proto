@@ -24,6 +24,8 @@ message CreateTenantRequest {
 message CreateTenantResponse {
   base.BaseResponse base_resp = 1;
   int64 tenant_id = 2;
+  int64 admin_user_id = 3;
+  string admin_phone = 4;
 }
 
 message GetTenantRequest {
