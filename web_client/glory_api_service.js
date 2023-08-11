@@ -729,7 +729,7 @@ export class glory_api {
   }
 
   CreateCart(request) {
-    const uri = `${this.uriPrefix}/api/shop/create_cart`;
+    const uri = `${this.uriPrefix}/api/shop/add_cart`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse

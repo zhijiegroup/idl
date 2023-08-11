@@ -229,6 +229,7 @@ export interface ListResourceResponse {
 
 export interface ListUserByRole {
   user_id?: string;
+  phone?: string;
   user_name?: string;
   tenant_id?: string;
   role?: string;

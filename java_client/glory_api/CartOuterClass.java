@@ -19,6 +19,10 @@ public final class CartOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     *客户端 添加购物车 sku_id quantity shop_id seller_id tenant_id必传
+     * </pre>
+     *
      * <code>int64 cart_id = 1;</code>
      * @return The cartId.
      */
@@ -43,28 +47,19 @@ public final class CartOuterClass {
     long getTenantId();
 
     /**
-     * <code>repeated .glory_api.CartSku cart_sku = 5;</code>
+     * <code>.glory_api.CartSku cart_sku = 5;</code>
+     * @return Whether the cartSku field is set.
      */
-    java.util.List<glory_api.CartOuterClass.CartSku> 
-        getCartSkuList();
+    boolean hasCartSku();
     /**
-     * <code>repeated .glory_api.CartSku cart_sku = 5;</code>
+     * <code>.glory_api.CartSku cart_sku = 5;</code>
+     * @return The cartSku.
      */
-    glory_api.CartOuterClass.CartSku getCartSku(int index);
+    glory_api.CartOuterClass.CartSku getCartSku();
     /**
-     * <code>repeated .glory_api.CartSku cart_sku = 5;</code>
+     * <code>.glory_api.CartSku cart_sku = 5;</code>
      */
-    int getCartSkuCount();
-    /**
-     * <code>repeated .glory_api.CartSku cart_sku = 5;</code>
-     */
-    java.util.List<? extends glory_api.CartOuterClass.CartSkuOrBuilder> 
-        getCartSkuOrBuilderList();
-    /**
-     * <code>repeated .glory_api.CartSku cart_sku = 5;</code>
-     */
-    glory_api.CartOuterClass.CartSkuOrBuilder getCartSkuOrBuilder(
-        int index);
+    glory_api.CartOuterClass.CartSkuOrBuilder getCartSkuOrBuilder();
   }
   /**
    * Protobuf type {@code glory_api.Cart}
@@ -79,7 +74,6 @@ public final class CartOuterClass {
       super(builder);
     }
     private Cart() {
-      cartSku_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -102,7 +96,6 @@ public final class CartOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -134,12 +127,16 @@ public final class CartOuterClass {
               break;
             }
             case 42: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                cartSku_ = new java.util.ArrayList<glory_api.CartOuterClass.CartSku>();
-                mutable_bitField0_ |= 0x00000001;
+              glory_api.CartOuterClass.CartSku.Builder subBuilder = null;
+              if (cartSku_ != null) {
+                subBuilder = cartSku_.toBuilder();
               }
-              cartSku_.add(
-                  input.readMessage(glory_api.CartOuterClass.CartSku.parser(), extensionRegistry));
+              cartSku_ = input.readMessage(glory_api.CartOuterClass.CartSku.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(cartSku_);
+                cartSku_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -157,9 +154,6 @@ public final class CartOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          cartSku_ = java.util.Collections.unmodifiableList(cartSku_);
-        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -180,6 +174,10 @@ public final class CartOuterClass {
     public static final int CART_ID_FIELD_NUMBER = 1;
     private long cartId_;
     /**
+     * <pre>
+     *客户端 添加购物车 sku_id quantity shop_id seller_id tenant_id必传
+     * </pre>
+     *
      * <code>int64 cart_id = 1;</code>
      * @return The cartId.
      */
@@ -222,43 +220,29 @@ public final class CartOuterClass {
     }
 
     public static final int CART_SKU_FIELD_NUMBER = 5;
-    private java.util.List<glory_api.CartOuterClass.CartSku> cartSku_;
+    private glory_api.CartOuterClass.CartSku cartSku_;
     /**
-     * <code>repeated .glory_api.CartSku cart_sku = 5;</code>
+     * <code>.glory_api.CartSku cart_sku = 5;</code>
+     * @return Whether the cartSku field is set.
      */
     @java.lang.Override
-    public java.util.List<glory_api.CartOuterClass.CartSku> getCartSkuList() {
-      return cartSku_;
+    public boolean hasCartSku() {
+      return cartSku_ != null;
     }
     /**
-     * <code>repeated .glory_api.CartSku cart_sku = 5;</code>
+     * <code>.glory_api.CartSku cart_sku = 5;</code>
+     * @return The cartSku.
      */
     @java.lang.Override
-    public java.util.List<? extends glory_api.CartOuterClass.CartSkuOrBuilder> 
-        getCartSkuOrBuilderList() {
-      return cartSku_;
+    public glory_api.CartOuterClass.CartSku getCartSku() {
+      return cartSku_ == null ? glory_api.CartOuterClass.CartSku.getDefaultInstance() : cartSku_;
     }
     /**
-     * <code>repeated .glory_api.CartSku cart_sku = 5;</code>
+     * <code>.glory_api.CartSku cart_sku = 5;</code>
      */
     @java.lang.Override
-    public int getCartSkuCount() {
-      return cartSku_.size();
-    }
-    /**
-     * <code>repeated .glory_api.CartSku cart_sku = 5;</code>
-     */
-    @java.lang.Override
-    public glory_api.CartOuterClass.CartSku getCartSku(int index) {
-      return cartSku_.get(index);
-    }
-    /**
-     * <code>repeated .glory_api.CartSku cart_sku = 5;</code>
-     */
-    @java.lang.Override
-    public glory_api.CartOuterClass.CartSkuOrBuilder getCartSkuOrBuilder(
-        int index) {
-      return cartSku_.get(index);
+    public glory_api.CartOuterClass.CartSkuOrBuilder getCartSkuOrBuilder() {
+      return getCartSku();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -287,8 +271,8 @@ public final class CartOuterClass {
       if (tenantId_ != 0L) {
         output.writeInt64(4, tenantId_);
       }
-      for (int i = 0; i < cartSku_.size(); i++) {
-        output.writeMessage(5, cartSku_.get(i));
+      if (cartSku_ != null) {
+        output.writeMessage(5, getCartSku());
       }
       unknownFields.writeTo(output);
     }
@@ -315,9 +299,9 @@ public final class CartOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, tenantId_);
       }
-      for (int i = 0; i < cartSku_.size(); i++) {
+      if (cartSku_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, cartSku_.get(i));
+          .computeMessageSize(5, getCartSku());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -342,8 +326,11 @@ public final class CartOuterClass {
           != other.getSellerId()) return false;
       if (getTenantId()
           != other.getTenantId()) return false;
-      if (!getCartSkuList()
-          .equals(other.getCartSkuList())) return false;
+      if (hasCartSku() != other.hasCartSku()) return false;
+      if (hasCartSku()) {
+        if (!getCartSku()
+            .equals(other.getCartSku())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -367,9 +354,9 @@ public final class CartOuterClass {
       hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTenantId());
-      if (getCartSkuCount() > 0) {
+      if (hasCartSku()) {
         hash = (37 * hash) + CART_SKU_FIELD_NUMBER;
-        hash = (53 * hash) + getCartSkuList().hashCode();
+        hash = (53 * hash) + getCartSku().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -499,7 +486,6 @@ public final class CartOuterClass {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getCartSkuFieldBuilder();
         }
       }
       @java.lang.Override
@@ -514,10 +500,10 @@ public final class CartOuterClass {
         tenantId_ = 0L;
 
         if (cartSkuBuilder_ == null) {
-          cartSku_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          cartSku_ = null;
         } else {
-          cartSkuBuilder_.clear();
+          cartSku_ = null;
+          cartSkuBuilder_ = null;
         }
         return this;
       }
@@ -545,16 +531,11 @@ public final class CartOuterClass {
       @java.lang.Override
       public glory_api.CartOuterClass.Cart buildPartial() {
         glory_api.CartOuterClass.Cart result = new glory_api.CartOuterClass.Cart(this);
-        int from_bitField0_ = bitField0_;
         result.cartId_ = cartId_;
         result.userId_ = userId_;
         result.sellerId_ = sellerId_;
         result.tenantId_ = tenantId_;
         if (cartSkuBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            cartSku_ = java.util.Collections.unmodifiableList(cartSku_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
           result.cartSku_ = cartSku_;
         } else {
           result.cartSku_ = cartSkuBuilder_.build();
@@ -619,31 +600,8 @@ public final class CartOuterClass {
         if (other.getTenantId() != 0L) {
           setTenantId(other.getTenantId());
         }
-        if (cartSkuBuilder_ == null) {
-          if (!other.cartSku_.isEmpty()) {
-            if (cartSku_.isEmpty()) {
-              cartSku_ = other.cartSku_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureCartSkuIsMutable();
-              cartSku_.addAll(other.cartSku_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.cartSku_.isEmpty()) {
-            if (cartSkuBuilder_.isEmpty()) {
-              cartSkuBuilder_.dispose();
-              cartSkuBuilder_ = null;
-              cartSku_ = other.cartSku_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              cartSkuBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getCartSkuFieldBuilder() : null;
-            } else {
-              cartSkuBuilder_.addAllMessages(other.cartSku_);
-            }
-          }
+        if (other.hasCartSku()) {
+          mergeCartSku(other.getCartSku());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -673,10 +631,13 @@ public final class CartOuterClass {
         }
         return this;
       }
-      private int bitField0_;
 
       private long cartId_ ;
       /**
+       * <pre>
+       *客户端 添加购物车 sku_id quantity shop_id seller_id tenant_id必传
+       * </pre>
+       *
        * <code>int64 cart_id = 1;</code>
        * @return The cartId.
        */
@@ -685,6 +646,10 @@ public final class CartOuterClass {
         return cartId_;
       }
       /**
+       * <pre>
+       *客户端 添加购物车 sku_id quantity shop_id seller_id tenant_id必传
+       * </pre>
+       *
        * <code>int64 cart_id = 1;</code>
        * @param value The cartId to set.
        * @return This builder for chaining.
@@ -696,6 +661,10 @@ public final class CartOuterClass {
         return this;
       }
       /**
+       * <pre>
+       *客户端 添加购物车 sku_id quantity shop_id seller_id tenant_id必传
+       * </pre>
+       *
        * <code>int64 cart_id = 1;</code>
        * @return This builder for chaining.
        */
@@ -799,239 +768,118 @@ public final class CartOuterClass {
         return this;
       }
 
-      private java.util.List<glory_api.CartOuterClass.CartSku> cartSku_ =
-        java.util.Collections.emptyList();
-      private void ensureCartSkuIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          cartSku_ = new java.util.ArrayList<glory_api.CartOuterClass.CartSku>(cartSku_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
+      private glory_api.CartOuterClass.CartSku cartSku_;
+      private com.google.protobuf.SingleFieldBuilderV3<
           glory_api.CartOuterClass.CartSku, glory_api.CartOuterClass.CartSku.Builder, glory_api.CartOuterClass.CartSkuOrBuilder> cartSkuBuilder_;
+      /**
+       * <code>.glory_api.CartSku cart_sku = 5;</code>
+       * @return Whether the cartSku field is set.
+       */
+      public boolean hasCartSku() {
+        return cartSkuBuilder_ != null || cartSku_ != null;
+      }
+      /**
+       * <code>.glory_api.CartSku cart_sku = 5;</code>
+       * @return The cartSku.
+       */
+      public glory_api.CartOuterClass.CartSku getCartSku() {
+        if (cartSkuBuilder_ == null) {
+          return cartSku_ == null ? glory_api.CartOuterClass.CartSku.getDefaultInstance() : cartSku_;
+        } else {
+          return cartSkuBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.glory_api.CartSku cart_sku = 5;</code>
+       */
+      public Builder setCartSku(glory_api.CartOuterClass.CartSku value) {
+        if (cartSkuBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          cartSku_ = value;
+          onChanged();
+        } else {
+          cartSkuBuilder_.setMessage(value);
+        }
 
-      /**
-       * <code>repeated .glory_api.CartSku cart_sku = 5;</code>
-       */
-      public java.util.List<glory_api.CartOuterClass.CartSku> getCartSkuList() {
-        if (cartSkuBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(cartSku_);
-        } else {
-          return cartSkuBuilder_.getMessageList();
-        }
+        return this;
       }
       /**
-       * <code>repeated .glory_api.CartSku cart_sku = 5;</code>
-       */
-      public int getCartSkuCount() {
-        if (cartSkuBuilder_ == null) {
-          return cartSku_.size();
-        } else {
-          return cartSkuBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .glory_api.CartSku cart_sku = 5;</code>
-       */
-      public glory_api.CartOuterClass.CartSku getCartSku(int index) {
-        if (cartSkuBuilder_ == null) {
-          return cartSku_.get(index);
-        } else {
-          return cartSkuBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .glory_api.CartSku cart_sku = 5;</code>
+       * <code>.glory_api.CartSku cart_sku = 5;</code>
        */
       public Builder setCartSku(
-          int index, glory_api.CartOuterClass.CartSku value) {
-        if (cartSkuBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureCartSkuIsMutable();
-          cartSku_.set(index, value);
-          onChanged();
-        } else {
-          cartSkuBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .glory_api.CartSku cart_sku = 5;</code>
-       */
-      public Builder setCartSku(
-          int index, glory_api.CartOuterClass.CartSku.Builder builderForValue) {
-        if (cartSkuBuilder_ == null) {
-          ensureCartSkuIsMutable();
-          cartSku_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          cartSkuBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .glory_api.CartSku cart_sku = 5;</code>
-       */
-      public Builder addCartSku(glory_api.CartOuterClass.CartSku value) {
-        if (cartSkuBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureCartSkuIsMutable();
-          cartSku_.add(value);
-          onChanged();
-        } else {
-          cartSkuBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .glory_api.CartSku cart_sku = 5;</code>
-       */
-      public Builder addCartSku(
-          int index, glory_api.CartOuterClass.CartSku value) {
-        if (cartSkuBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureCartSkuIsMutable();
-          cartSku_.add(index, value);
-          onChanged();
-        } else {
-          cartSkuBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .glory_api.CartSku cart_sku = 5;</code>
-       */
-      public Builder addCartSku(
           glory_api.CartOuterClass.CartSku.Builder builderForValue) {
         if (cartSkuBuilder_ == null) {
-          ensureCartSkuIsMutable();
-          cartSku_.add(builderForValue.build());
+          cartSku_ = builderForValue.build();
           onChanged();
         } else {
-          cartSkuBuilder_.addMessage(builderForValue.build());
+          cartSkuBuilder_.setMessage(builderForValue.build());
         }
+
         return this;
       }
       /**
-       * <code>repeated .glory_api.CartSku cart_sku = 5;</code>
+       * <code>.glory_api.CartSku cart_sku = 5;</code>
        */
-      public Builder addCartSku(
-          int index, glory_api.CartOuterClass.CartSku.Builder builderForValue) {
+      public Builder mergeCartSku(glory_api.CartOuterClass.CartSku value) {
         if (cartSkuBuilder_ == null) {
-          ensureCartSkuIsMutable();
-          cartSku_.add(index, builderForValue.build());
+          if (cartSku_ != null) {
+            cartSku_ =
+              glory_api.CartOuterClass.CartSku.newBuilder(cartSku_).mergeFrom(value).buildPartial();
+          } else {
+            cartSku_ = value;
+          }
           onChanged();
         } else {
-          cartSkuBuilder_.addMessage(index, builderForValue.build());
+          cartSkuBuilder_.mergeFrom(value);
         }
+
         return this;
       }
       /**
-       * <code>repeated .glory_api.CartSku cart_sku = 5;</code>
-       */
-      public Builder addAllCartSku(
-          java.lang.Iterable<? extends glory_api.CartOuterClass.CartSku> values) {
-        if (cartSkuBuilder_ == null) {
-          ensureCartSkuIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, cartSku_);
-          onChanged();
-        } else {
-          cartSkuBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .glory_api.CartSku cart_sku = 5;</code>
+       * <code>.glory_api.CartSku cart_sku = 5;</code>
        */
       public Builder clearCartSku() {
         if (cartSkuBuilder_ == null) {
-          cartSku_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          cartSku_ = null;
           onChanged();
         } else {
-          cartSkuBuilder_.clear();
+          cartSku_ = null;
+          cartSkuBuilder_ = null;
         }
+
         return this;
       }
       /**
-       * <code>repeated .glory_api.CartSku cart_sku = 5;</code>
+       * <code>.glory_api.CartSku cart_sku = 5;</code>
        */
-      public Builder removeCartSku(int index) {
-        if (cartSkuBuilder_ == null) {
-          ensureCartSkuIsMutable();
-          cartSku_.remove(index);
-          onChanged();
-        } else {
-          cartSkuBuilder_.remove(index);
-        }
-        return this;
+      public glory_api.CartOuterClass.CartSku.Builder getCartSkuBuilder() {
+        
+        onChanged();
+        return getCartSkuFieldBuilder().getBuilder();
       }
       /**
-       * <code>repeated .glory_api.CartSku cart_sku = 5;</code>
+       * <code>.glory_api.CartSku cart_sku = 5;</code>
        */
-      public glory_api.CartOuterClass.CartSku.Builder getCartSkuBuilder(
-          int index) {
-        return getCartSkuFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .glory_api.CartSku cart_sku = 5;</code>
-       */
-      public glory_api.CartOuterClass.CartSkuOrBuilder getCartSkuOrBuilder(
-          int index) {
-        if (cartSkuBuilder_ == null) {
-          return cartSku_.get(index);  } else {
-          return cartSkuBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .glory_api.CartSku cart_sku = 5;</code>
-       */
-      public java.util.List<? extends glory_api.CartOuterClass.CartSkuOrBuilder> 
-           getCartSkuOrBuilderList() {
+      public glory_api.CartOuterClass.CartSkuOrBuilder getCartSkuOrBuilder() {
         if (cartSkuBuilder_ != null) {
-          return cartSkuBuilder_.getMessageOrBuilderList();
+          return cartSkuBuilder_.getMessageOrBuilder();
         } else {
-          return java.util.Collections.unmodifiableList(cartSku_);
+          return cartSku_ == null ?
+              glory_api.CartOuterClass.CartSku.getDefaultInstance() : cartSku_;
         }
       }
       /**
-       * <code>repeated .glory_api.CartSku cart_sku = 5;</code>
+       * <code>.glory_api.CartSku cart_sku = 5;</code>
        */
-      public glory_api.CartOuterClass.CartSku.Builder addCartSkuBuilder() {
-        return getCartSkuFieldBuilder().addBuilder(
-            glory_api.CartOuterClass.CartSku.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .glory_api.CartSku cart_sku = 5;</code>
-       */
-      public glory_api.CartOuterClass.CartSku.Builder addCartSkuBuilder(
-          int index) {
-        return getCartSkuFieldBuilder().addBuilder(
-            index, glory_api.CartOuterClass.CartSku.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .glory_api.CartSku cart_sku = 5;</code>
-       */
-      public java.util.List<glory_api.CartOuterClass.CartSku.Builder> 
-           getCartSkuBuilderList() {
-        return getCartSkuFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
+      private com.google.protobuf.SingleFieldBuilderV3<
           glory_api.CartOuterClass.CartSku, glory_api.CartOuterClass.CartSku.Builder, glory_api.CartOuterClass.CartSkuOrBuilder> 
           getCartSkuFieldBuilder() {
         if (cartSkuBuilder_ == null) {
-          cartSkuBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          cartSkuBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               glory_api.CartOuterClass.CartSku, glory_api.CartOuterClass.CartSku.Builder, glory_api.CartOuterClass.CartSkuOrBuilder>(
-                  cartSku_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  getCartSku(),
                   getParentForChildren(),
                   isClean());
           cartSku_ = null;
@@ -6181,8 +6029,8 @@ public final class CartOuterClass {
 
   }
 
-  public interface CreateCartRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:glory_api.CreateCartRequest)
+  public interface AddCartRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:glory_api.AddCartRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -6228,18 +6076,18 @@ public final class CartOuterClass {
         getCreatedByBytes();
   }
   /**
-   * Protobuf type {@code glory_api.CreateCartRequest}
+   * Protobuf type {@code glory_api.AddCartRequest}
    */
-  public static final class CreateCartRequest extends
+  public static final class AddCartRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:glory_api.CreateCartRequest)
-      CreateCartRequestOrBuilder {
+      // @@protoc_insertion_point(message_implements:glory_api.AddCartRequest)
+      AddCartRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use CreateCartRequest.newBuilder() to construct.
-    private CreateCartRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use AddCartRequest.newBuilder() to construct.
+    private AddCartRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private CreateCartRequest() {
+    private AddCartRequest() {
       createdBy_ = "";
     }
 
@@ -6247,7 +6095,7 @@ public final class CartOuterClass {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new CreateCartRequest();
+      return new AddCartRequest();
     }
 
     @java.lang.Override
@@ -6255,7 +6103,7 @@ public final class CartOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CreateCartRequest(
+    private AddCartRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6326,15 +6174,15 @@ public final class CartOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return glory_api.CartOuterClass.internal_static_glory_api_CreateCartRequest_descriptor;
+      return glory_api.CartOuterClass.internal_static_glory_api_AddCartRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return glory_api.CartOuterClass.internal_static_glory_api_CreateCartRequest_fieldAccessorTable
+      return glory_api.CartOuterClass.internal_static_glory_api_AddCartRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              glory_api.CartOuterClass.CreateCartRequest.class, glory_api.CartOuterClass.CreateCartRequest.Builder.class);
+              glory_api.CartOuterClass.AddCartRequest.class, glory_api.CartOuterClass.AddCartRequest.Builder.class);
     }
 
     public static final int BASE_REQUEST_FIELD_NUMBER = 1;
@@ -6480,10 +6328,10 @@ public final class CartOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof glory_api.CartOuterClass.CreateCartRequest)) {
+      if (!(obj instanceof glory_api.CartOuterClass.AddCartRequest)) {
         return super.equals(obj);
       }
-      glory_api.CartOuterClass.CreateCartRequest other = (glory_api.CartOuterClass.CreateCartRequest) obj;
+      glory_api.CartOuterClass.AddCartRequest other = (glory_api.CartOuterClass.AddCartRequest) obj;
 
       if (hasBaseRequest() != other.hasBaseRequest()) return false;
       if (hasBaseRequest()) {
@@ -6523,69 +6371,69 @@ public final class CartOuterClass {
       return hash;
     }
 
-    public static glory_api.CartOuterClass.CreateCartRequest parseFrom(
+    public static glory_api.CartOuterClass.AddCartRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static glory_api.CartOuterClass.CreateCartRequest parseFrom(
+    public static glory_api.CartOuterClass.AddCartRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static glory_api.CartOuterClass.CreateCartRequest parseFrom(
+    public static glory_api.CartOuterClass.AddCartRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static glory_api.CartOuterClass.CreateCartRequest parseFrom(
+    public static glory_api.CartOuterClass.AddCartRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static glory_api.CartOuterClass.CreateCartRequest parseFrom(byte[] data)
+    public static glory_api.CartOuterClass.AddCartRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static glory_api.CartOuterClass.CreateCartRequest parseFrom(
+    public static glory_api.CartOuterClass.AddCartRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static glory_api.CartOuterClass.CreateCartRequest parseFrom(java.io.InputStream input)
+    public static glory_api.CartOuterClass.AddCartRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static glory_api.CartOuterClass.CreateCartRequest parseFrom(
+    public static glory_api.CartOuterClass.AddCartRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static glory_api.CartOuterClass.CreateCartRequest parseDelimitedFrom(java.io.InputStream input)
+    public static glory_api.CartOuterClass.AddCartRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static glory_api.CartOuterClass.CreateCartRequest parseDelimitedFrom(
+    public static glory_api.CartOuterClass.AddCartRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static glory_api.CartOuterClass.CreateCartRequest parseFrom(
+    public static glory_api.CartOuterClass.AddCartRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static glory_api.CartOuterClass.CreateCartRequest parseFrom(
+    public static glory_api.CartOuterClass.AddCartRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -6598,7 +6446,7 @@ public final class CartOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(glory_api.CartOuterClass.CreateCartRequest prototype) {
+    public static Builder newBuilder(glory_api.CartOuterClass.AddCartRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -6614,26 +6462,26 @@ public final class CartOuterClass {
       return builder;
     }
     /**
-     * Protobuf type {@code glory_api.CreateCartRequest}
+     * Protobuf type {@code glory_api.AddCartRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:glory_api.CreateCartRequest)
-        glory_api.CartOuterClass.CreateCartRequestOrBuilder {
+        // @@protoc_insertion_point(builder_implements:glory_api.AddCartRequest)
+        glory_api.CartOuterClass.AddCartRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return glory_api.CartOuterClass.internal_static_glory_api_CreateCartRequest_descriptor;
+        return glory_api.CartOuterClass.internal_static_glory_api_AddCartRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return glory_api.CartOuterClass.internal_static_glory_api_CreateCartRequest_fieldAccessorTable
+        return glory_api.CartOuterClass.internal_static_glory_api_AddCartRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                glory_api.CartOuterClass.CreateCartRequest.class, glory_api.CartOuterClass.CreateCartRequest.Builder.class);
+                glory_api.CartOuterClass.AddCartRequest.class, glory_api.CartOuterClass.AddCartRequest.Builder.class);
       }
 
-      // Construct using glory_api.CartOuterClass.CreateCartRequest.newBuilder()
+      // Construct using glory_api.CartOuterClass.AddCartRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -6671,17 +6519,17 @@ public final class CartOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return glory_api.CartOuterClass.internal_static_glory_api_CreateCartRequest_descriptor;
+        return glory_api.CartOuterClass.internal_static_glory_api_AddCartRequest_descriptor;
       }
 
       @java.lang.Override
-      public glory_api.CartOuterClass.CreateCartRequest getDefaultInstanceForType() {
-        return glory_api.CartOuterClass.CreateCartRequest.getDefaultInstance();
+      public glory_api.CartOuterClass.AddCartRequest getDefaultInstanceForType() {
+        return glory_api.CartOuterClass.AddCartRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public glory_api.CartOuterClass.CreateCartRequest build() {
-        glory_api.CartOuterClass.CreateCartRequest result = buildPartial();
+      public glory_api.CartOuterClass.AddCartRequest build() {
+        glory_api.CartOuterClass.AddCartRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -6689,8 +6537,8 @@ public final class CartOuterClass {
       }
 
       @java.lang.Override
-      public glory_api.CartOuterClass.CreateCartRequest buildPartial() {
-        glory_api.CartOuterClass.CreateCartRequest result = new glory_api.CartOuterClass.CreateCartRequest(this);
+      public glory_api.CartOuterClass.AddCartRequest buildPartial() {
+        glory_api.CartOuterClass.AddCartRequest result = new glory_api.CartOuterClass.AddCartRequest(this);
         if (baseRequestBuilder_ == null) {
           result.baseRequest_ = baseRequest_;
         } else {
@@ -6740,16 +6588,16 @@ public final class CartOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof glory_api.CartOuterClass.CreateCartRequest) {
-          return mergeFrom((glory_api.CartOuterClass.CreateCartRequest)other);
+        if (other instanceof glory_api.CartOuterClass.AddCartRequest) {
+          return mergeFrom((glory_api.CartOuterClass.AddCartRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(glory_api.CartOuterClass.CreateCartRequest other) {
-        if (other == glory_api.CartOuterClass.CreateCartRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(glory_api.CartOuterClass.AddCartRequest other) {
+        if (other == glory_api.CartOuterClass.AddCartRequest.getDefaultInstance()) return this;
         if (other.hasBaseRequest()) {
           mergeBaseRequest(other.getBaseRequest());
         }
@@ -6775,11 +6623,11 @@ public final class CartOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        glory_api.CartOuterClass.CreateCartRequest parsedMessage = null;
+        glory_api.CartOuterClass.AddCartRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (glory_api.CartOuterClass.CreateCartRequest) e.getUnfinishedMessage();
+          parsedMessage = (glory_api.CartOuterClass.AddCartRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -7115,48 +6963,48 @@ public final class CartOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:glory_api.CreateCartRequest)
+      // @@protoc_insertion_point(builder_scope:glory_api.AddCartRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:glory_api.CreateCartRequest)
-    private static final glory_api.CartOuterClass.CreateCartRequest DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:glory_api.AddCartRequest)
+    private static final glory_api.CartOuterClass.AddCartRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new glory_api.CartOuterClass.CreateCartRequest();
+      DEFAULT_INSTANCE = new glory_api.CartOuterClass.AddCartRequest();
     }
 
-    public static glory_api.CartOuterClass.CreateCartRequest getDefaultInstance() {
+    public static glory_api.CartOuterClass.AddCartRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<CreateCartRequest>
-        PARSER = new com.google.protobuf.AbstractParser<CreateCartRequest>() {
+    private static final com.google.protobuf.Parser<AddCartRequest>
+        PARSER = new com.google.protobuf.AbstractParser<AddCartRequest>() {
       @java.lang.Override
-      public CreateCartRequest parsePartialFrom(
+      public AddCartRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CreateCartRequest(input, extensionRegistry);
+        return new AddCartRequest(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<CreateCartRequest> parser() {
+    public static com.google.protobuf.Parser<AddCartRequest> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<CreateCartRequest> getParserForType() {
+    public com.google.protobuf.Parser<AddCartRequest> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public glory_api.CartOuterClass.CreateCartRequest getDefaultInstanceForType() {
+    public glory_api.CartOuterClass.AddCartRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface CreateCartResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:glory_api.CreateCartResponse)
+  public interface AddCartResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:glory_api.AddCartResponse)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -7179,27 +7027,33 @@ public final class CartOuterClass {
      * @return The cartId.
      */
     long getCartId();
+
+    /**
+     * <code>int32 cart_num = 3;</code>
+     * @return The cartNum.
+     */
+    int getCartNum();
   }
   /**
-   * Protobuf type {@code glory_api.CreateCartResponse}
+   * Protobuf type {@code glory_api.AddCartResponse}
    */
-  public static final class CreateCartResponse extends
+  public static final class AddCartResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:glory_api.CreateCartResponse)
-      CreateCartResponseOrBuilder {
+      // @@protoc_insertion_point(message_implements:glory_api.AddCartResponse)
+      AddCartResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use CreateCartResponse.newBuilder() to construct.
-    private CreateCartResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use AddCartResponse.newBuilder() to construct.
+    private AddCartResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private CreateCartResponse() {
+    private AddCartResponse() {
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new CreateCartResponse();
+      return new AddCartResponse();
     }
 
     @java.lang.Override
@@ -7207,7 +7061,7 @@ public final class CartOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CreateCartResponse(
+    private AddCartResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -7243,6 +7097,11 @@ public final class CartOuterClass {
               cartId_ = input.readInt64();
               break;
             }
+            case 24: {
+
+              cartNum_ = input.readInt32();
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -7264,15 +7123,15 @@ public final class CartOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return glory_api.CartOuterClass.internal_static_glory_api_CreateCartResponse_descriptor;
+      return glory_api.CartOuterClass.internal_static_glory_api_AddCartResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return glory_api.CartOuterClass.internal_static_glory_api_CreateCartResponse_fieldAccessorTable
+      return glory_api.CartOuterClass.internal_static_glory_api_AddCartResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              glory_api.CartOuterClass.CreateCartResponse.class, glory_api.CartOuterClass.CreateCartResponse.Builder.class);
+              glory_api.CartOuterClass.AddCartResponse.class, glory_api.CartOuterClass.AddCartResponse.Builder.class);
     }
 
     public static final int BASE_RESP_FIELD_NUMBER = 1;
@@ -7312,6 +7171,17 @@ public final class CartOuterClass {
       return cartId_;
     }
 
+    public static final int CART_NUM_FIELD_NUMBER = 3;
+    private int cartNum_;
+    /**
+     * <code>int32 cart_num = 3;</code>
+     * @return The cartNum.
+     */
+    @java.lang.Override
+    public int getCartNum() {
+      return cartNum_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -7332,6 +7202,9 @@ public final class CartOuterClass {
       if (cartId_ != 0L) {
         output.writeInt64(2, cartId_);
       }
+      if (cartNum_ != 0) {
+        output.writeInt32(3, cartNum_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -7349,6 +7222,10 @@ public final class CartOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(2, cartId_);
       }
+      if (cartNum_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, cartNum_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -7359,10 +7236,10 @@ public final class CartOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof glory_api.CartOuterClass.CreateCartResponse)) {
+      if (!(obj instanceof glory_api.CartOuterClass.AddCartResponse)) {
         return super.equals(obj);
       }
-      glory_api.CartOuterClass.CreateCartResponse other = (glory_api.CartOuterClass.CreateCartResponse) obj;
+      glory_api.CartOuterClass.AddCartResponse other = (glory_api.CartOuterClass.AddCartResponse) obj;
 
       if (hasBaseResp() != other.hasBaseResp()) return false;
       if (hasBaseResp()) {
@@ -7371,6 +7248,8 @@ public final class CartOuterClass {
       }
       if (getCartId()
           != other.getCartId()) return false;
+      if (getCartNum()
+          != other.getCartNum()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -7389,74 +7268,76 @@ public final class CartOuterClass {
       hash = (37 * hash) + CART_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getCartId());
+      hash = (37 * hash) + CART_NUM_FIELD_NUMBER;
+      hash = (53 * hash) + getCartNum();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static glory_api.CartOuterClass.CreateCartResponse parseFrom(
+    public static glory_api.CartOuterClass.AddCartResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static glory_api.CartOuterClass.CreateCartResponse parseFrom(
+    public static glory_api.CartOuterClass.AddCartResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static glory_api.CartOuterClass.CreateCartResponse parseFrom(
+    public static glory_api.CartOuterClass.AddCartResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static glory_api.CartOuterClass.CreateCartResponse parseFrom(
+    public static glory_api.CartOuterClass.AddCartResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static glory_api.CartOuterClass.CreateCartResponse parseFrom(byte[] data)
+    public static glory_api.CartOuterClass.AddCartResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static glory_api.CartOuterClass.CreateCartResponse parseFrom(
+    public static glory_api.CartOuterClass.AddCartResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static glory_api.CartOuterClass.CreateCartResponse parseFrom(java.io.InputStream input)
+    public static glory_api.CartOuterClass.AddCartResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static glory_api.CartOuterClass.CreateCartResponse parseFrom(
+    public static glory_api.CartOuterClass.AddCartResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static glory_api.CartOuterClass.CreateCartResponse parseDelimitedFrom(java.io.InputStream input)
+    public static glory_api.CartOuterClass.AddCartResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static glory_api.CartOuterClass.CreateCartResponse parseDelimitedFrom(
+    public static glory_api.CartOuterClass.AddCartResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static glory_api.CartOuterClass.CreateCartResponse parseFrom(
+    public static glory_api.CartOuterClass.AddCartResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static glory_api.CartOuterClass.CreateCartResponse parseFrom(
+    public static glory_api.CartOuterClass.AddCartResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -7469,7 +7350,7 @@ public final class CartOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(glory_api.CartOuterClass.CreateCartResponse prototype) {
+    public static Builder newBuilder(glory_api.CartOuterClass.AddCartResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -7485,26 +7366,26 @@ public final class CartOuterClass {
       return builder;
     }
     /**
-     * Protobuf type {@code glory_api.CreateCartResponse}
+     * Protobuf type {@code glory_api.AddCartResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:glory_api.CreateCartResponse)
-        glory_api.CartOuterClass.CreateCartResponseOrBuilder {
+        // @@protoc_insertion_point(builder_implements:glory_api.AddCartResponse)
+        glory_api.CartOuterClass.AddCartResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return glory_api.CartOuterClass.internal_static_glory_api_CreateCartResponse_descriptor;
+        return glory_api.CartOuterClass.internal_static_glory_api_AddCartResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return glory_api.CartOuterClass.internal_static_glory_api_CreateCartResponse_fieldAccessorTable
+        return glory_api.CartOuterClass.internal_static_glory_api_AddCartResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                glory_api.CartOuterClass.CreateCartResponse.class, glory_api.CartOuterClass.CreateCartResponse.Builder.class);
+                glory_api.CartOuterClass.AddCartResponse.class, glory_api.CartOuterClass.AddCartResponse.Builder.class);
       }
 
-      // Construct using glory_api.CartOuterClass.CreateCartResponse.newBuilder()
+      // Construct using glory_api.CartOuterClass.AddCartResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -7530,23 +7411,25 @@ public final class CartOuterClass {
         }
         cartId_ = 0L;
 
+        cartNum_ = 0;
+
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return glory_api.CartOuterClass.internal_static_glory_api_CreateCartResponse_descriptor;
+        return glory_api.CartOuterClass.internal_static_glory_api_AddCartResponse_descriptor;
       }
 
       @java.lang.Override
-      public glory_api.CartOuterClass.CreateCartResponse getDefaultInstanceForType() {
-        return glory_api.CartOuterClass.CreateCartResponse.getDefaultInstance();
+      public glory_api.CartOuterClass.AddCartResponse getDefaultInstanceForType() {
+        return glory_api.CartOuterClass.AddCartResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public glory_api.CartOuterClass.CreateCartResponse build() {
-        glory_api.CartOuterClass.CreateCartResponse result = buildPartial();
+      public glory_api.CartOuterClass.AddCartResponse build() {
+        glory_api.CartOuterClass.AddCartResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -7554,14 +7437,15 @@ public final class CartOuterClass {
       }
 
       @java.lang.Override
-      public glory_api.CartOuterClass.CreateCartResponse buildPartial() {
-        glory_api.CartOuterClass.CreateCartResponse result = new glory_api.CartOuterClass.CreateCartResponse(this);
+      public glory_api.CartOuterClass.AddCartResponse buildPartial() {
+        glory_api.CartOuterClass.AddCartResponse result = new glory_api.CartOuterClass.AddCartResponse(this);
         if (baseRespBuilder_ == null) {
           result.baseResp_ = baseResp_;
         } else {
           result.baseResp_ = baseRespBuilder_.build();
         }
         result.cartId_ = cartId_;
+        result.cartNum_ = cartNum_;
         onBuilt();
         return result;
       }
@@ -7600,21 +7484,24 @@ public final class CartOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof glory_api.CartOuterClass.CreateCartResponse) {
-          return mergeFrom((glory_api.CartOuterClass.CreateCartResponse)other);
+        if (other instanceof glory_api.CartOuterClass.AddCartResponse) {
+          return mergeFrom((glory_api.CartOuterClass.AddCartResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(glory_api.CartOuterClass.CreateCartResponse other) {
-        if (other == glory_api.CartOuterClass.CreateCartResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(glory_api.CartOuterClass.AddCartResponse other) {
+        if (other == glory_api.CartOuterClass.AddCartResponse.getDefaultInstance()) return this;
         if (other.hasBaseResp()) {
           mergeBaseResp(other.getBaseResp());
         }
         if (other.getCartId() != 0L) {
           setCartId(other.getCartId());
+        }
+        if (other.getCartNum() != 0) {
+          setCartNum(other.getCartNum());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -7631,11 +7518,11 @@ public final class CartOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        glory_api.CartOuterClass.CreateCartResponse parsedMessage = null;
+        glory_api.CartOuterClass.AddCartResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (glory_api.CartOuterClass.CreateCartResponse) e.getUnfinishedMessage();
+          parsedMessage = (glory_api.CartOuterClass.AddCartResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -7794,6 +7681,37 @@ public final class CartOuterClass {
         onChanged();
         return this;
       }
+
+      private int cartNum_ ;
+      /**
+       * <code>int32 cart_num = 3;</code>
+       * @return The cartNum.
+       */
+      @java.lang.Override
+      public int getCartNum() {
+        return cartNum_;
+      }
+      /**
+       * <code>int32 cart_num = 3;</code>
+       * @param value The cartNum to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCartNum(int value) {
+        
+        cartNum_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 cart_num = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCartNum() {
+        
+        cartNum_ = 0;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -7807,41 +7725,41 @@ public final class CartOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:glory_api.CreateCartResponse)
+      // @@protoc_insertion_point(builder_scope:glory_api.AddCartResponse)
     }
 
-    // @@protoc_insertion_point(class_scope:glory_api.CreateCartResponse)
-    private static final glory_api.CartOuterClass.CreateCartResponse DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:glory_api.AddCartResponse)
+    private static final glory_api.CartOuterClass.AddCartResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new glory_api.CartOuterClass.CreateCartResponse();
+      DEFAULT_INSTANCE = new glory_api.CartOuterClass.AddCartResponse();
     }
 
-    public static glory_api.CartOuterClass.CreateCartResponse getDefaultInstance() {
+    public static glory_api.CartOuterClass.AddCartResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<CreateCartResponse>
-        PARSER = new com.google.protobuf.AbstractParser<CreateCartResponse>() {
+    private static final com.google.protobuf.Parser<AddCartResponse>
+        PARSER = new com.google.protobuf.AbstractParser<AddCartResponse>() {
       @java.lang.Override
-      public CreateCartResponse parsePartialFrom(
+      public AddCartResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CreateCartResponse(input, extensionRegistry);
+        return new AddCartResponse(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<CreateCartResponse> parser() {
+    public static com.google.protobuf.Parser<AddCartResponse> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<CreateCartResponse> getParserForType() {
+    public com.google.protobuf.Parser<AddCartResponse> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public glory_api.CartOuterClass.CreateCartResponse getDefaultInstanceForType() {
+    public glory_api.CartOuterClass.AddCartResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -12283,15 +12201,15 @@ public final class CartOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_CartWithAuthor_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_CreateCartRequest_descriptor;
+    internal_static_glory_api_AddCartRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_CreateCartRequest_fieldAccessorTable;
+      internal_static_glory_api_AddCartRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_CreateCartResponse_descriptor;
+    internal_static_glory_api_AddCartResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_CreateCartResponse_fieldAccessorTable;
+      internal_static_glory_api_AddCartResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_glory_api_GetCartRequest_descriptor;
   private static final 
@@ -12334,7 +12252,7 @@ public final class CartOuterClass {
       "\n\017shop/cart.proto\022\tglory_api\032\nbase.proto" +
       "\"t\n\004Cart\022\017\n\007cart_id\030\001 \001(\003\022\017\n\007user_id\030\002 \001" +
       "(\003\022\021\n\tseller_id\030\003 \001(\003\022\021\n\ttenant_id\030\004 \001(\003" +
-      "\022$\n\010cart_sku\030\005 \003(\0132\022.glory_api.CartSku\"Q" +
+      "\022$\n\010cart_sku\030\005 \001(\0132\022.glory_api.CartSku\"Q" +
       "\n\007CartSku\022\023\n\013cart_sku_id\030\001 \001(\003\022\016\n\006sku_id" +
       "\030\002 \001(\003\022\020\n\010quantity\030\003 \001(\005\022\017\n\007shop_id\030\004 \001(" +
       "\003\"\224\001\n\013ProductShow\022\022\n\nproduct_id\030\001 \001(\003\022\016\n" +
@@ -12350,24 +12268,24 @@ public final class CartOuterClass {
       "lory_api.ShopShow\022\026\n\016total_quantity\030\006 \001(" +
       "\005\"V\n\016CartWithAuthor\022\035\n\004cart\030\001 \001(\0132\017.glor" +
       "y_api.Cart\022%\n\013author_info\030\002 \001(\0132\020.base.A" +
-      "uthorInfo\"o\n\021CreateCartRequest\022\'\n\014base_r" +
-      "equest\030\001 \001(\0132\021.base.BaseRequest\022\035\n\004cart\030" +
-      "\002 \001(\0132\017.glory_api.Cart\022\022\n\ncreated_by\030\003 \001" +
-      "(\t\"L\n\022CreateCartResponse\022%\n\tbase_resp\030\001 " +
-      "\001(\0132\022.base.BaseResponse\022\017\n\007cart_id\030\002 \001(\003" +
-      "\"J\n\016GetCartRequest\022\'\n\014base_request\030\001 \001(\013" +
-      "2\021.base.BaseRequest\022\017\n\007cart_id\030\002 \001(\003\"`\n\017" +
-      "GetCartResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
-      "e.BaseResponse\022&\n\tcart_info\030\003 \001(\0132\023.glor" +
-      "y_api.CartShow\"[\n\021UpdateCartRequest\022\'\n\014b" +
-      "ase_request\030\001 \001(\0132\021.base.BaseRequest\022\035\n\004" +
-      "cart\030\002 \001(\0132\017.glory_api.Cart\"L\n\022UpdateCar" +
-      "tResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Base" +
-      "Response\022\017\n\007cart_id\030\002 \001(\003\"M\n\021DeleteCartR" +
-      "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
-      "Request\022\017\n\007cart_id\030\002 \001(\003\";\n\022DeleteCartRe" +
-      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
-      "ponseb\006proto3"
+      "uthorInfo\"l\n\016AddCartRequest\022\'\n\014base_requ" +
+      "est\030\001 \001(\0132\021.base.BaseRequest\022\035\n\004cart\030\002 \001" +
+      "(\0132\017.glory_api.Cart\022\022\n\ncreated_by\030\003 \001(\t\"" +
+      "[\n\017AddCartResponse\022%\n\tbase_resp\030\001 \001(\0132\022." +
+      "base.BaseResponse\022\017\n\007cart_id\030\002 \001(\003\022\020\n\010ca" +
+      "rt_num\030\003 \001(\005\"J\n\016GetCartRequest\022\'\n\014base_r" +
+      "equest\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007cart_" +
+      "id\030\002 \001(\003\"`\n\017GetCartResponse\022%\n\tbase_resp" +
+      "\030\001 \001(\0132\022.base.BaseResponse\022&\n\tcart_info\030" +
+      "\003 \001(\0132\023.glory_api.CartShow\"[\n\021UpdateCart" +
+      "Request\022\'\n\014base_request\030\001 \001(\0132\021.base.Bas" +
+      "eRequest\022\035\n\004cart\030\002 \001(\0132\017.glory_api.Cart\"" +
+      "L\n\022UpdateCartResponse\022%\n\tbase_resp\030\001 \001(\013" +
+      "2\022.base.BaseResponse\022\017\n\007cart_id\030\002 \001(\003\"M\n" +
+      "\021DeleteCartRequest\022\'\n\014base_request\030\001 \001(\013" +
+      "2\021.base.BaseRequest\022\017\n\007cart_id\030\002 \001(\003\";\n\022" +
+      "DeleteCartResponse\022%\n\tbase_resp\030\001 \001(\0132\022." +
+      "base.BaseResponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -12410,18 +12328,18 @@ public final class CartOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CartWithAuthor_descriptor,
         new java.lang.String[] { "Cart", "AuthorInfo", });
-    internal_static_glory_api_CreateCartRequest_descriptor =
+    internal_static_glory_api_AddCartRequest_descriptor =
       getDescriptor().getMessageTypes().get(6);
-    internal_static_glory_api_CreateCartRequest_fieldAccessorTable = new
+    internal_static_glory_api_AddCartRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_CreateCartRequest_descriptor,
+        internal_static_glory_api_AddCartRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "Cart", "CreatedBy", });
-    internal_static_glory_api_CreateCartResponse_descriptor =
+    internal_static_glory_api_AddCartResponse_descriptor =
       getDescriptor().getMessageTypes().get(7);
-    internal_static_glory_api_CreateCartResponse_fieldAccessorTable = new
+    internal_static_glory_api_AddCartResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_CreateCartResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "CartId", });
+        internal_static_glory_api_AddCartResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "CartId", "CartNum", });
     internal_static_glory_api_GetCartRequest_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_glory_api_GetCartRequest_fieldAccessorTable = new

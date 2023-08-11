@@ -2650,29 +2650,29 @@ public final class glory_apiGrpc {
     return getFreeShippingInBatchesMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<glory_api.CartOuterClass.CreateCartRequest,
-      glory_api.CartOuterClass.CreateCartResponse> getCreateCartMethod;
+  private static volatile io.grpc.MethodDescriptor<glory_api.CartOuterClass.AddCartRequest,
+      glory_api.CartOuterClass.AddCartResponse> getCreateCartMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "CreateCart",
-      requestType = glory_api.CartOuterClass.CreateCartRequest.class,
-      responseType = glory_api.CartOuterClass.CreateCartResponse.class,
+      requestType = glory_api.CartOuterClass.AddCartRequest.class,
+      responseType = glory_api.CartOuterClass.AddCartResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<glory_api.CartOuterClass.CreateCartRequest,
-      glory_api.CartOuterClass.CreateCartResponse> getCreateCartMethod() {
-    io.grpc.MethodDescriptor<glory_api.CartOuterClass.CreateCartRequest, glory_api.CartOuterClass.CreateCartResponse> getCreateCartMethod;
+  public static io.grpc.MethodDescriptor<glory_api.CartOuterClass.AddCartRequest,
+      glory_api.CartOuterClass.AddCartResponse> getCreateCartMethod() {
+    io.grpc.MethodDescriptor<glory_api.CartOuterClass.AddCartRequest, glory_api.CartOuterClass.AddCartResponse> getCreateCartMethod;
     if ((getCreateCartMethod = glory_apiGrpc.getCreateCartMethod) == null) {
       synchronized (glory_apiGrpc.class) {
         if ((getCreateCartMethod = glory_apiGrpc.getCreateCartMethod) == null) {
           glory_apiGrpc.getCreateCartMethod = getCreateCartMethod =
-              io.grpc.MethodDescriptor.<glory_api.CartOuterClass.CreateCartRequest, glory_api.CartOuterClass.CreateCartResponse>newBuilder()
+              io.grpc.MethodDescriptor.<glory_api.CartOuterClass.AddCartRequest, glory_api.CartOuterClass.AddCartResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateCart"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  glory_api.CartOuterClass.CreateCartRequest.getDefaultInstance()))
+                  glory_api.CartOuterClass.AddCartRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  glory_api.CartOuterClass.CreateCartResponse.getDefaultInstance()))
+                  glory_api.CartOuterClass.AddCartResponse.getDefaultInstance()))
               .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CreateCart"))
               .build();
         }
@@ -5889,8 +5889,8 @@ public final class glory_apiGrpc {
      * cart
      * </pre>
      */
-    default void createCart(glory_api.CartOuterClass.CreateCartRequest request,
-        io.grpc.stub.StreamObserver<glory_api.CartOuterClass.CreateCartResponse> responseObserver) {
+    default void createCart(glory_api.CartOuterClass.AddCartRequest request,
+        io.grpc.stub.StreamObserver<glory_api.CartOuterClass.AddCartResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateCartMethod(), responseObserver);
     }
 
@@ -7267,8 +7267,8 @@ public final class glory_apiGrpc {
      * cart
      * </pre>
      */
-    public void createCart(glory_api.CartOuterClass.CreateCartRequest request,
-        io.grpc.stub.StreamObserver<glory_api.CartOuterClass.CreateCartResponse> responseObserver) {
+    public void createCart(glory_api.CartOuterClass.AddCartRequest request,
+        io.grpc.stub.StreamObserver<glory_api.CartOuterClass.AddCartResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateCartMethod(), getCallOptions()), request, responseObserver);
     }
@@ -8631,7 +8631,7 @@ public final class glory_apiGrpc {
      * cart
      * </pre>
      */
-    public glory_api.CartOuterClass.CreateCartResponse createCart(glory_api.CartOuterClass.CreateCartRequest request) {
+    public glory_api.CartOuterClass.AddCartResponse createCart(glory_api.CartOuterClass.AddCartRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateCartMethod(), getCallOptions(), request);
     }
@@ -9998,8 +9998,8 @@ public final class glory_apiGrpc {
      * cart
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<glory_api.CartOuterClass.CreateCartResponse> createCart(
-        glory_api.CartOuterClass.CreateCartRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<glory_api.CartOuterClass.AddCartResponse> createCart(
+        glory_api.CartOuterClass.AddCartRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateCartMethod(), getCallOptions()), request);
     }
@@ -11223,8 +11223,8 @@ public final class glory_apiGrpc {
               (io.grpc.stub.StreamObserver<glory_api.OrderOuterClass.FreeShippingInBatchesResponse>) responseObserver);
           break;
         case METHODID_CREATE_CART:
-          serviceImpl.createCart((glory_api.CartOuterClass.CreateCartRequest) request,
-              (io.grpc.stub.StreamObserver<glory_api.CartOuterClass.CreateCartResponse>) responseObserver);
+          serviceImpl.createCart((glory_api.CartOuterClass.AddCartRequest) request,
+              (io.grpc.stub.StreamObserver<glory_api.CartOuterClass.AddCartResponse>) responseObserver);
           break;
         case METHODID_GET_CART:
           serviceImpl.getCart((glory_api.CartOuterClass.GetCartRequest) request,
@@ -12167,8 +12167,8 @@ public final class glory_apiGrpc {
           getCreateCartMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              glory_api.CartOuterClass.CreateCartRequest,
-              glory_api.CartOuterClass.CreateCartResponse>(
+              glory_api.CartOuterClass.AddCartRequest,
+              glory_api.CartOuterClass.AddCartResponse>(
                 service, METHODID_CREATE_CART)))
         .addMethod(
           getGetCartMethod(),

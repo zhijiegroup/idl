@@ -895,6 +895,8 @@ struct GloryApi_ListUserByRole {
 
   var userID: Int64 = 0
 
+  var phone: String = String()
+
   var userName: String = String()
 
   var tenantID: Int64 = 0
@@ -2529,10 +2531,11 @@ extension GloryApi_ListUserByRole: SwiftProtobuf.Message, SwiftProtobuf._Message
   static let protoMessageName: String = _protobuf_package + ".ListUserByRole"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "user_id"),
-    2: .standard(proto: "user_name"),
-    3: .standard(proto: "tenant_id"),
-    4: .same(proto: "role"),
-    5: .standard(proto: "created_at"),
+    2: .same(proto: "phone"),
+    3: .standard(proto: "user_name"),
+    4: .standard(proto: "tenant_id"),
+    5: .same(proto: "role"),
+    6: .standard(proto: "created_at"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2542,10 +2545,11 @@ extension GloryApi_ListUserByRole: SwiftProtobuf.Message, SwiftProtobuf._Message
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularInt64Field(value: &self.userID) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.userName) }()
-      case 3: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.role) }()
-      case 5: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.phone) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.userName) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.role) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
       default: break
       }
     }
@@ -2555,23 +2559,27 @@ extension GloryApi_ListUserByRole: SwiftProtobuf.Message, SwiftProtobuf._Message
     if self.userID != 0 {
       try visitor.visitSingularInt64Field(value: self.userID, fieldNumber: 1)
     }
+    if !self.phone.isEmpty {
+      try visitor.visitSingularStringField(value: self.phone, fieldNumber: 2)
+    }
     if !self.userName.isEmpty {
-      try visitor.visitSingularStringField(value: self.userName, fieldNumber: 2)
+      try visitor.visitSingularStringField(value: self.userName, fieldNumber: 3)
     }
     if self.tenantID != 0 {
-      try visitor.visitSingularInt64Field(value: self.tenantID, fieldNumber: 3)
+      try visitor.visitSingularInt64Field(value: self.tenantID, fieldNumber: 4)
     }
     if !self.role.isEmpty {
-      try visitor.visitSingularStringField(value: self.role, fieldNumber: 4)
+      try visitor.visitSingularStringField(value: self.role, fieldNumber: 5)
     }
     if !self.createdAt.isEmpty {
-      try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 5)
+      try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 6)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_ListUserByRole, rhs: GloryApi_ListUserByRole) -> Bool {
     if lhs.userID != rhs.userID {return false}
+    if lhs.phone != rhs.phone {return false}
     if lhs.userName != rhs.userName {return false}
     if lhs.tenantID != rhs.tenantID {return false}
     if lhs.role != rhs.role {return false}
