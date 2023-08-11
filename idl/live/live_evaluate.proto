@@ -1,0 +1,145 @@
+syntax = "proto3";
+package glory_api;
+
+import "base.proto";
+
+message GetEvaluateSelectorRequest {
+    base.BaseRequest base_request = 1;
+  }
+message GetEvaluateSelectorResponse {
+    base.BaseResponse base_resp = 1;
+    repeated string major = 2;
+    repeated string class = 100;
+}
+
+message EvaluateRoom {
+    int64 room_id = 1;
+    string room_title =2;
+    string room_url = 3;
+    double score = 4;
+    double duration = 5;
+    int64 like = 6;
+    int64 order = 7;
+    string ai_feedback = 8;
+    string evaluated_time = 9;
+
+}
+message EvaluateData {
+    double average_score =1;
+    double total_duration=2;
+    int64 total_like = 3;
+    int64 total_order = 4;
+    repeated EvaluateRoom evaluate_list = 5;
+}
+
+message ListPersonalEvaluateRequest {
+    base.BaseRequest base_request = 1;
+    int64 user_id = 2;
+    base.PaginationRequest pagination = 100;
+}
+
+message ListPersonalEvaluateResponse {
+    base.BaseResponse base_resp = 1;
+    EvaluateData evaluate_data=2;
+    base.PaginationResponse pagination = 100;
+}
+
+message EvaluateSubOption {
+    string name = 1;
+    double total = 2;
+    string content  =3;
+    string score = 4;
+}
+
+message EvaluateDetail {
+    string option = 1;
+    double total= 2;
+    string score =3;
+    bool is_expand = 4;
+    repeated EvaluateSubOption suboption = 5;
+}
+
+message GetEvaluateDetailRequest {
+    base.BaseRequest base_request = 1;
+    int64 room_id = 2;
+    base.PaginationRequest pagination = 100;
+}
+
+message GetEvaluateDetailResponse {
+    base.BaseResponse base_resp = 1;
+    string type = 2; // temp：暂存 submit: 提交  template：仅模版数据
+    int64 evaluate_id =3;
+    int64 template_id = 4;
+    int64 user_id = 5;
+    double extra_score = 6;
+    string extra_comment = 7;
+    string zero_comment=8;
+    double score = 9;
+    string ai_feedback = 10;
+    repeated EvaluateDetail detail = 11;
+}
+
+message SubmitEvaluateRequest {
+    base.BaseRequest base_request = 1;
+    string type = 2; // temp：暂存 submit: 提交 
+    int64 evaluate_id = 3;
+    int64 template_id = 4; // 从暂存提交的需要传该值，否则0即可
+    int64 user_id = 5;
+    int64 room_id = 6;
+    double extra_score = 7;
+    string extra_comment = 8;
+    string zero_comment=9;
+    double score = 10;
+    string ai_feedback = 11;
+    repeated EvaluateDetail detail = 12;
+}
+
+message SubmitEvaluateResponse {
+    base.BaseResponse base_resp = 1;
+}
+
+message UnevaluatedRoom {
+    int64 room_id = 1;
+    string room_title = 2;
+    string room_url = 3;
+    string shop_name = 4;
+    int64 user_id = 5;
+    string user_name = 6;
+    string status = 7;
+}
+
+message ListUnevaluatedRoomRequest {
+    base.BaseRequest base_request = 1;
+    base.PaginationRequest pagination = 2;
+}
+
+message ListUnevaluatedRoomResponse {
+    base.BaseResponse base_resp = 1;
+    repeated UnevaluatedRoom unevaluated_room = 2;
+    base.PaginationResponse pagination = 100;
+}
+
+message UserLiveData {
+    int64 user_id = 1;
+    string user_name = 2;
+    string major = 3;
+    string class = 4;
+    double total_duration = 5;
+    int64 total_like = 6;
+    int64 total_order =7;
+    double average_score = 8;
+}
+
+message ListStudentEvalutionsRequest {
+    base.BaseRequest base_request = 1;
+    string name = 2;
+    string major = 3;
+    string class = 4;
+    base.PaginationRequest pagination = 5;
+}
+
+message ListStudentEvalutionsResponse {
+    base.BaseResponse base_resp = 1;
+    repeated UserLiveData live_data = 2;
+    base.PaginationResponse pagination = 100;
+}
