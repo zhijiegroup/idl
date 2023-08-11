@@ -26,6 +26,7 @@ import "live/live_token.proto";
 import "live/live_user.proto";
 import "live/live_plan.proto";
 import "live/live_text.proto";
+import "live/live_evaluate.proto";
 import "account/account_operation.proto";
 import "currency/virtual_currency.proto";
 import "tenant/tenant.proto";
@@ -98,6 +99,9 @@ service glory_api {
   rpc ListAddress(ListAddressRequest) returns (ListAddressResponse) {
     option (api.get) = '/api/user/list_address';
   }
+  rpc ListUserByRole(ListUserByRoleRequest) returns (ListUserByRoleResponse) {
+    option (api.post) = '/api/user/list_user_by_role';
+  }
 
   // user permission
   //list the permissions that supported
@@ -119,6 +123,10 @@ service glory_api {
   rpc DeleteRole(DeleteRoleRequest) returns (DeleteRoleResponse) {
     option (api.post) = '/api/auth/delete_role';
   }
+  rpc ListResource(ListResourceRequest) returns (ListResourceResponse) {
+    option (api.post) = '/api/auth/list_resource';
+  }
+
 
   // shop
   rpc CreateShop(CreateShopRequest) returns (CreateShopResponse) {
@@ -559,7 +567,25 @@ service glory_api {
    rpc GetLiveChartData(GetLiveChartDataRequest) returns (GetLiveChartDataResponse) {
     option (api.get) = '/api/live/get_live_chart_data';
   }
-
+  // live evaluate
+  rpc GetEvaluateSelector(GetEvaluateSelectorRequest) returns (GetEvaluateSelectorResponse) {
+    option (api.get) = '/api/live/get_evaluation_selector';
+  }
+  rpc ListPersonalEvaluate(ListPersonalEvaluateRequest) returns (ListPersonalEvaluateResponse) {
+    option (api.post) = '/api/live/list_personal_evaluation';
+  }
+  rpc GetEvaluateDetail(GetEvaluateDetailRequest) returns (GetEvaluateDetailResponse) {
+    option (api.get) = '/api/live/get_evaluation_detail';
+  }
+  rpc SubmitEvaluate(SubmitEvaluateRequest) returns (SubmitEvaluateResponse) {
+    option (api.post) = '/api/live/submit_evaluation';
+  }
+  rpc ListUnevaluatedRoom(ListUnevaluatedRoomRequest) returns (ListUnevaluatedRoomResponse) {
+    option (api.post) = '/api/live/list_unevaluated_room';
+  }
+  rpc ListStudentEvaluations(ListStudentEvalutionsRequest) returns (ListStudentEvalutionsResponse) {
+    option (api.post) = '/api/live/list_student_evaluation';
+  }
   //tenant
   rpc CreateTenant(CreateTenantRequest) returns (CreateTenantResponse) {
     option (api.post) = '/api/tenant/create_tenant';

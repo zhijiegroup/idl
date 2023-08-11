@@ -16,6 +16,11 @@ export interface Tenant {
   tenant_overview?: string;
   /** 调用upload_attachment后返回的的attachment_id */
   logo_attachment_id?: string;
+  /** 自动创建的管理员的名字，若是手机已经是注册用户，则不会自动添加，而是用已经有的 */
+  admin_name?: string;
+  /** 自动创建的管理员的手机号 */
+  admin_phone?: string;
+  business_system?: Array<string>;
 }
 
 export interface CreateTenantRequest {

@@ -107,6 +107,18 @@ public final class ConfigOuterClass {
      */
     com.google.protobuf.ByteString
         getUpdatedAtBytes();
+
+    /**
+     * <code>string business_system = 11;</code>
+     * @return The businessSystem.
+     */
+    java.lang.String getBusinessSystem();
+    /**
+     * <code>string business_system = 11;</code>
+     * @return The bytes for businessSystem.
+     */
+    com.google.protobuf.ByteString
+        getBusinessSystemBytes();
   }
   /**
    * Protobuf type {@code glory_api.Config}
@@ -127,6 +139,7 @@ public final class ConfigOuterClass {
       description_ = "";
       createdAt_ = "";
       updatedAt_ = "";
+      businessSystem_ = "";
     }
 
     @java.lang.Override
@@ -208,6 +221,12 @@ public final class ConfigOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               updatedAt_ = s;
+              break;
+            }
+            case 90: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              businessSystem_ = s;
               break;
             }
             default: {
@@ -503,6 +522,44 @@ public final class ConfigOuterClass {
       }
     }
 
+    public static final int BUSINESS_SYSTEM_FIELD_NUMBER = 11;
+    private volatile java.lang.Object businessSystem_;
+    /**
+     * <code>string business_system = 11;</code>
+     * @return The businessSystem.
+     */
+    @java.lang.Override
+    public java.lang.String getBusinessSystem() {
+      java.lang.Object ref = businessSystem_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        businessSystem_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string business_system = 11;</code>
+     * @return The bytes for businessSystem.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getBusinessSystemBytes() {
+      java.lang.Object ref = businessSystem_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        businessSystem_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -544,6 +601,9 @@ public final class ConfigOuterClass {
       if (!getUpdatedAtBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, updatedAt_);
       }
+      if (!getBusinessSystemBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, businessSystem_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -583,6 +643,9 @@ public final class ConfigOuterClass {
       if (!getUpdatedAtBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, updatedAt_);
       }
+      if (!getBusinessSystemBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, businessSystem_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -616,6 +679,8 @@ public final class ConfigOuterClass {
           .equals(other.getCreatedAt())) return false;
       if (!getUpdatedAt()
           .equals(other.getUpdatedAt())) return false;
+      if (!getBusinessSystem()
+          .equals(other.getBusinessSystem())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -648,6 +713,8 @@ public final class ConfigOuterClass {
       hash = (53 * hash) + getCreatedAt().hashCode();
       hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
       hash = (53 * hash) + getUpdatedAt().hashCode();
+      hash = (37 * hash) + BUSINESS_SYSTEM_FIELD_NUMBER;
+      hash = (53 * hash) + getBusinessSystem().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -799,6 +866,8 @@ public final class ConfigOuterClass {
 
         updatedAt_ = "";
 
+        businessSystem_ = "";
+
         return this;
       }
 
@@ -834,6 +903,7 @@ public final class ConfigOuterClass {
         result.updatedBy_ = updatedBy_;
         result.createdAt_ = createdAt_;
         result.updatedAt_ = updatedAt_;
+        result.businessSystem_ = businessSystem_;
         onBuilt();
         return result;
       }
@@ -913,6 +983,10 @@ public final class ConfigOuterClass {
         }
         if (!other.getUpdatedAt().isEmpty()) {
           updatedAt_ = other.updatedAt_;
+          onChanged();
+        }
+        if (!other.getBusinessSystem().isEmpty()) {
+          businessSystem_ = other.businessSystem_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -1492,6 +1566,82 @@ public final class ConfigOuterClass {
         onChanged();
         return this;
       }
+
+      private java.lang.Object businessSystem_ = "";
+      /**
+       * <code>string business_system = 11;</code>
+       * @return The businessSystem.
+       */
+      public java.lang.String getBusinessSystem() {
+        java.lang.Object ref = businessSystem_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          businessSystem_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string business_system = 11;</code>
+       * @return The bytes for businessSystem.
+       */
+      public com.google.protobuf.ByteString
+          getBusinessSystemBytes() {
+        java.lang.Object ref = businessSystem_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          businessSystem_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string business_system = 11;</code>
+       * @param value The businessSystem to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBusinessSystem(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        businessSystem_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string business_system = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBusinessSystem() {
+        
+        businessSystem_ = getDefaultInstance().getBusinessSystem();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string business_system = 11;</code>
+       * @param value The bytes for businessSystem to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBusinessSystemBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        businessSystem_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1550,11 +1700,19 @@ public final class ConfigOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * 配置的名字
+     * </pre>
+     *
      * <code>string config_name = 2;</code>
      * @return The configName.
      */
     java.lang.String getConfigName();
     /**
+     * <pre>
+     * 配置的名字
+     * </pre>
+     *
      * <code>string config_name = 2;</code>
      * @return The bytes for configName.
      */
@@ -1562,11 +1720,19 @@ public final class ConfigOuterClass {
         getConfigNameBytes();
 
     /**
+     * <pre>
+     * 配置的值
+     * </pre>
+     *
      * <code>string config_value = 3;</code>
      * @return The configValue.
      */
     java.lang.String getConfigValue();
     /**
+     * <pre>
+     * 配置的值
+     * </pre>
+     *
      * <code>string config_value = 3;</code>
      * @return The bytes for configValue.
      */
@@ -1574,11 +1740,19 @@ public final class ConfigOuterClass {
         getConfigValueBytes();
 
     /**
+     * <pre>
+     * 配置的类型，支持page_permission, system_permission, public_config, system_owner_location
+     * </pre>
+     *
      * <code>string config_type = 4;</code>
      * @return The configType.
      */
     java.lang.String getConfigType();
     /**
+     * <pre>
+     * 配置的类型，支持page_permission, system_permission, public_config, system_owner_location
+     * </pre>
+     *
      * <code>string config_type = 4;</code>
      * @return The bytes for configType.
      */
@@ -1586,16 +1760,44 @@ public final class ConfigOuterClass {
         getConfigTypeBytes();
 
     /**
+     * <pre>
+     * 描述
+     * </pre>
+     *
      * <code>string description = 5;</code>
      * @return The description.
      */
     java.lang.String getDescription();
     /**
+     * <pre>
+     * 描述
+     * </pre>
+     *
      * <code>string description = 5;</code>
      * @return The bytes for description.
      */
     com.google.protobuf.ByteString
         getDescriptionBytes();
+
+    /**
+     * <pre>
+     * 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, short, shop
+     * </pre>
+     *
+     * <code>string business_system = 6;</code>
+     * @return The businessSystem.
+     */
+    java.lang.String getBusinessSystem();
+    /**
+     * <pre>
+     * 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, short, shop
+     * </pre>
+     *
+     * <code>string business_system = 6;</code>
+     * @return The bytes for businessSystem.
+     */
+    com.google.protobuf.ByteString
+        getBusinessSystemBytes();
   }
   /**
    * Protobuf type {@code glory_api.AddConfig}
@@ -1614,6 +1816,7 @@ public final class ConfigOuterClass {
       configValue_ = "";
       configType_ = "";
       description_ = "";
+      businessSystem_ = "";
     }
 
     @java.lang.Override
@@ -1670,6 +1873,12 @@ public final class ConfigOuterClass {
               description_ = s;
               break;
             }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              businessSystem_ = s;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -1705,6 +1914,10 @@ public final class ConfigOuterClass {
     public static final int CONFIG_NAME_FIELD_NUMBER = 2;
     private volatile java.lang.Object configName_;
     /**
+     * <pre>
+     * 配置的名字
+     * </pre>
+     *
      * <code>string config_name = 2;</code>
      * @return The configName.
      */
@@ -1722,6 +1935,10 @@ public final class ConfigOuterClass {
       }
     }
     /**
+     * <pre>
+     * 配置的名字
+     * </pre>
+     *
      * <code>string config_name = 2;</code>
      * @return The bytes for configName.
      */
@@ -1743,6 +1960,10 @@ public final class ConfigOuterClass {
     public static final int CONFIG_VALUE_FIELD_NUMBER = 3;
     private volatile java.lang.Object configValue_;
     /**
+     * <pre>
+     * 配置的值
+     * </pre>
+     *
      * <code>string config_value = 3;</code>
      * @return The configValue.
      */
@@ -1760,6 +1981,10 @@ public final class ConfigOuterClass {
       }
     }
     /**
+     * <pre>
+     * 配置的值
+     * </pre>
+     *
      * <code>string config_value = 3;</code>
      * @return The bytes for configValue.
      */
@@ -1781,6 +2006,10 @@ public final class ConfigOuterClass {
     public static final int CONFIG_TYPE_FIELD_NUMBER = 4;
     private volatile java.lang.Object configType_;
     /**
+     * <pre>
+     * 配置的类型，支持page_permission, system_permission, public_config, system_owner_location
+     * </pre>
+     *
      * <code>string config_type = 4;</code>
      * @return The configType.
      */
@@ -1798,6 +2027,10 @@ public final class ConfigOuterClass {
       }
     }
     /**
+     * <pre>
+     * 配置的类型，支持page_permission, system_permission, public_config, system_owner_location
+     * </pre>
+     *
      * <code>string config_type = 4;</code>
      * @return The bytes for configType.
      */
@@ -1819,6 +2052,10 @@ public final class ConfigOuterClass {
     public static final int DESCRIPTION_FIELD_NUMBER = 5;
     private volatile java.lang.Object description_;
     /**
+     * <pre>
+     * 描述
+     * </pre>
+     *
      * <code>string description = 5;</code>
      * @return The description.
      */
@@ -1836,6 +2073,10 @@ public final class ConfigOuterClass {
       }
     }
     /**
+     * <pre>
+     * 描述
+     * </pre>
+     *
      * <code>string description = 5;</code>
      * @return The bytes for description.
      */
@@ -1848,6 +2089,52 @@ public final class ConfigOuterClass {
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int BUSINESS_SYSTEM_FIELD_NUMBER = 6;
+    private volatile java.lang.Object businessSystem_;
+    /**
+     * <pre>
+     * 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, short, shop
+     * </pre>
+     *
+     * <code>string business_system = 6;</code>
+     * @return The businessSystem.
+     */
+    @java.lang.Override
+    public java.lang.String getBusinessSystem() {
+      java.lang.Object ref = businessSystem_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        businessSystem_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, short, shop
+     * </pre>
+     *
+     * <code>string business_system = 6;</code>
+     * @return The bytes for businessSystem.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getBusinessSystemBytes() {
+      java.lang.Object ref = businessSystem_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        businessSystem_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1880,6 +2167,9 @@ public final class ConfigOuterClass {
       if (!getDescriptionBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, description_);
       }
+      if (!getBusinessSystemBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, businessSystem_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1900,6 +2190,9 @@ public final class ConfigOuterClass {
       }
       if (!getDescriptionBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, description_);
+      }
+      if (!getBusinessSystemBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, businessSystem_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1924,6 +2217,8 @@ public final class ConfigOuterClass {
           .equals(other.getConfigType())) return false;
       if (!getDescription()
           .equals(other.getDescription())) return false;
+      if (!getBusinessSystem()
+          .equals(other.getBusinessSystem())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1943,6 +2238,8 @@ public final class ConfigOuterClass {
       hash = (53 * hash) + getConfigType().hashCode();
       hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDescription().hashCode();
+      hash = (37 * hash) + BUSINESS_SYSTEM_FIELD_NUMBER;
+      hash = (53 * hash) + getBusinessSystem().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2084,6 +2381,8 @@ public final class ConfigOuterClass {
 
         description_ = "";
 
+        businessSystem_ = "";
+
         return this;
       }
 
@@ -2114,6 +2413,7 @@ public final class ConfigOuterClass {
         result.configValue_ = configValue_;
         result.configType_ = configType_;
         result.description_ = description_;
+        result.businessSystem_ = businessSystem_;
         onBuilt();
         return result;
       }
@@ -2178,6 +2478,10 @@ public final class ConfigOuterClass {
           description_ = other.description_;
           onChanged();
         }
+        if (!other.getBusinessSystem().isEmpty()) {
+          businessSystem_ = other.businessSystem_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -2209,6 +2513,10 @@ public final class ConfigOuterClass {
 
       private java.lang.Object configName_ = "";
       /**
+       * <pre>
+       * 配置的名字
+       * </pre>
+       *
        * <code>string config_name = 2;</code>
        * @return The configName.
        */
@@ -2225,6 +2533,10 @@ public final class ConfigOuterClass {
         }
       }
       /**
+       * <pre>
+       * 配置的名字
+       * </pre>
+       *
        * <code>string config_name = 2;</code>
        * @return The bytes for configName.
        */
@@ -2242,6 +2554,10 @@ public final class ConfigOuterClass {
         }
       }
       /**
+       * <pre>
+       * 配置的名字
+       * </pre>
+       *
        * <code>string config_name = 2;</code>
        * @param value The configName to set.
        * @return This builder for chaining.
@@ -2257,6 +2573,10 @@ public final class ConfigOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * 配置的名字
+       * </pre>
+       *
        * <code>string config_name = 2;</code>
        * @return This builder for chaining.
        */
@@ -2267,6 +2587,10 @@ public final class ConfigOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * 配置的名字
+       * </pre>
+       *
        * <code>string config_name = 2;</code>
        * @param value The bytes for configName to set.
        * @return This builder for chaining.
@@ -2285,6 +2609,10 @@ public final class ConfigOuterClass {
 
       private java.lang.Object configValue_ = "";
       /**
+       * <pre>
+       * 配置的值
+       * </pre>
+       *
        * <code>string config_value = 3;</code>
        * @return The configValue.
        */
@@ -2301,6 +2629,10 @@ public final class ConfigOuterClass {
         }
       }
       /**
+       * <pre>
+       * 配置的值
+       * </pre>
+       *
        * <code>string config_value = 3;</code>
        * @return The bytes for configValue.
        */
@@ -2318,6 +2650,10 @@ public final class ConfigOuterClass {
         }
       }
       /**
+       * <pre>
+       * 配置的值
+       * </pre>
+       *
        * <code>string config_value = 3;</code>
        * @param value The configValue to set.
        * @return This builder for chaining.
@@ -2333,6 +2669,10 @@ public final class ConfigOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * 配置的值
+       * </pre>
+       *
        * <code>string config_value = 3;</code>
        * @return This builder for chaining.
        */
@@ -2343,6 +2683,10 @@ public final class ConfigOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * 配置的值
+       * </pre>
+       *
        * <code>string config_value = 3;</code>
        * @param value The bytes for configValue to set.
        * @return This builder for chaining.
@@ -2361,6 +2705,10 @@ public final class ConfigOuterClass {
 
       private java.lang.Object configType_ = "";
       /**
+       * <pre>
+       * 配置的类型，支持page_permission, system_permission, public_config, system_owner_location
+       * </pre>
+       *
        * <code>string config_type = 4;</code>
        * @return The configType.
        */
@@ -2377,6 +2725,10 @@ public final class ConfigOuterClass {
         }
       }
       /**
+       * <pre>
+       * 配置的类型，支持page_permission, system_permission, public_config, system_owner_location
+       * </pre>
+       *
        * <code>string config_type = 4;</code>
        * @return The bytes for configType.
        */
@@ -2394,6 +2746,10 @@ public final class ConfigOuterClass {
         }
       }
       /**
+       * <pre>
+       * 配置的类型，支持page_permission, system_permission, public_config, system_owner_location
+       * </pre>
+       *
        * <code>string config_type = 4;</code>
        * @param value The configType to set.
        * @return This builder for chaining.
@@ -2409,6 +2765,10 @@ public final class ConfigOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * 配置的类型，支持page_permission, system_permission, public_config, system_owner_location
+       * </pre>
+       *
        * <code>string config_type = 4;</code>
        * @return This builder for chaining.
        */
@@ -2419,6 +2779,10 @@ public final class ConfigOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * 配置的类型，支持page_permission, system_permission, public_config, system_owner_location
+       * </pre>
+       *
        * <code>string config_type = 4;</code>
        * @param value The bytes for configType to set.
        * @return This builder for chaining.
@@ -2437,6 +2801,10 @@ public final class ConfigOuterClass {
 
       private java.lang.Object description_ = "";
       /**
+       * <pre>
+       * 描述
+       * </pre>
+       *
        * <code>string description = 5;</code>
        * @return The description.
        */
@@ -2453,6 +2821,10 @@ public final class ConfigOuterClass {
         }
       }
       /**
+       * <pre>
+       * 描述
+       * </pre>
+       *
        * <code>string description = 5;</code>
        * @return The bytes for description.
        */
@@ -2470,6 +2842,10 @@ public final class ConfigOuterClass {
         }
       }
       /**
+       * <pre>
+       * 描述
+       * </pre>
+       *
        * <code>string description = 5;</code>
        * @param value The description to set.
        * @return This builder for chaining.
@@ -2485,6 +2861,10 @@ public final class ConfigOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * 描述
+       * </pre>
+       *
        * <code>string description = 5;</code>
        * @return This builder for chaining.
        */
@@ -2495,6 +2875,10 @@ public final class ConfigOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * 描述
+       * </pre>
+       *
        * <code>string description = 5;</code>
        * @param value The bytes for description to set.
        * @return This builder for chaining.
@@ -2507,6 +2891,102 @@ public final class ConfigOuterClass {
   checkByteStringIsUtf8(value);
         
         description_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object businessSystem_ = "";
+      /**
+       * <pre>
+       * 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, short, shop
+       * </pre>
+       *
+       * <code>string business_system = 6;</code>
+       * @return The businessSystem.
+       */
+      public java.lang.String getBusinessSystem() {
+        java.lang.Object ref = businessSystem_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          businessSystem_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, short, shop
+       * </pre>
+       *
+       * <code>string business_system = 6;</code>
+       * @return The bytes for businessSystem.
+       */
+      public com.google.protobuf.ByteString
+          getBusinessSystemBytes() {
+        java.lang.Object ref = businessSystem_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          businessSystem_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, short, shop
+       * </pre>
+       *
+       * <code>string business_system = 6;</code>
+       * @param value The businessSystem to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBusinessSystem(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        businessSystem_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, short, shop
+       * </pre>
+       *
+       * <code>string business_system = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBusinessSystem() {
+        
+        businessSystem_ = getDefaultInstance().getBusinessSystem();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, short, shop
+       * </pre>
+       *
+       * <code>string business_system = 6;</code>
+       * @param value The bytes for businessSystem to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBusinessSystemBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        businessSystem_ = value;
         onChanged();
         return this;
       }
@@ -7725,11 +8205,19 @@ public final class ConfigOuterClass {
     base.Base.BaseRequestOrBuilder getBaseRequestOrBuilder();
 
     /**
+     * <pre>
+     * config的名字
+     * </pre>
+     *
      * <code>string config_name = 2;</code>
      * @return The configName.
      */
     java.lang.String getConfigName();
     /**
+     * <pre>
+     * config的名字
+     * </pre>
+     *
      * <code>string config_name = 2;</code>
      * @return The bytes for configName.
      */
@@ -7737,16 +8225,44 @@ public final class ConfigOuterClass {
         getConfigNameBytes();
 
     /**
+     * <pre>
+     * config的类型，支持page_permission, system_permission, public_config, system_owner_location
+     * </pre>
+     *
      * <code>string config_type = 3;</code>
      * @return The configType.
      */
     java.lang.String getConfigType();
     /**
+     * <pre>
+     * config的类型，支持page_permission, system_permission, public_config, system_owner_location
+     * </pre>
+     *
      * <code>string config_type = 3;</code>
      * @return The bytes for configType.
      */
     com.google.protobuf.ByteString
         getConfigTypeBytes();
+
+    /**
+     * <pre>
+     * 业务系统，添加的时候默认是global(不属于任何业务系统）, 现在支持 shop, live, short
+     * </pre>
+     *
+     * <code>string business_system = 4;</code>
+     * @return The businessSystem.
+     */
+    java.lang.String getBusinessSystem();
+    /**
+     * <pre>
+     * 业务系统，添加的时候默认是global(不属于任何业务系统）, 现在支持 shop, live, short
+     * </pre>
+     *
+     * <code>string business_system = 4;</code>
+     * @return The bytes for businessSystem.
+     */
+    com.google.protobuf.ByteString
+        getBusinessSystemBytes();
   }
   /**
    * Protobuf type {@code glory_api.GetConfigRequest}
@@ -7763,6 +8279,7 @@ public final class ConfigOuterClass {
     private GetConfigRequest() {
       configName_ = "";
       configType_ = "";
+      businessSystem_ = "";
     }
 
     @java.lang.Override
@@ -7818,6 +8335,12 @@ public final class ConfigOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               configType_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              businessSystem_ = s;
               break;
             }
             default: {
@@ -7881,6 +8404,10 @@ public final class ConfigOuterClass {
     public static final int CONFIG_NAME_FIELD_NUMBER = 2;
     private volatile java.lang.Object configName_;
     /**
+     * <pre>
+     * config的名字
+     * </pre>
+     *
      * <code>string config_name = 2;</code>
      * @return The configName.
      */
@@ -7898,6 +8425,10 @@ public final class ConfigOuterClass {
       }
     }
     /**
+     * <pre>
+     * config的名字
+     * </pre>
+     *
      * <code>string config_name = 2;</code>
      * @return The bytes for configName.
      */
@@ -7919,6 +8450,10 @@ public final class ConfigOuterClass {
     public static final int CONFIG_TYPE_FIELD_NUMBER = 3;
     private volatile java.lang.Object configType_;
     /**
+     * <pre>
+     * config的类型，支持page_permission, system_permission, public_config, system_owner_location
+     * </pre>
+     *
      * <code>string config_type = 3;</code>
      * @return The configType.
      */
@@ -7936,6 +8471,10 @@ public final class ConfigOuterClass {
       }
     }
     /**
+     * <pre>
+     * config的类型，支持page_permission, system_permission, public_config, system_owner_location
+     * </pre>
+     *
      * <code>string config_type = 3;</code>
      * @return The bytes for configType.
      */
@@ -7948,6 +8487,52 @@ public final class ConfigOuterClass {
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         configType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int BUSINESS_SYSTEM_FIELD_NUMBER = 4;
+    private volatile java.lang.Object businessSystem_;
+    /**
+     * <pre>
+     * 业务系统，添加的时候默认是global(不属于任何业务系统）, 现在支持 shop, live, short
+     * </pre>
+     *
+     * <code>string business_system = 4;</code>
+     * @return The businessSystem.
+     */
+    @java.lang.Override
+    public java.lang.String getBusinessSystem() {
+      java.lang.Object ref = businessSystem_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        businessSystem_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 业务系统，添加的时候默认是global(不属于任何业务系统）, 现在支持 shop, live, short
+     * </pre>
+     *
+     * <code>string business_system = 4;</code>
+     * @return The bytes for businessSystem.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getBusinessSystemBytes() {
+      java.lang.Object ref = businessSystem_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        businessSystem_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -7977,6 +8562,9 @@ public final class ConfigOuterClass {
       if (!getConfigTypeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, configType_);
       }
+      if (!getBusinessSystemBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, businessSystem_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -7995,6 +8583,9 @@ public final class ConfigOuterClass {
       }
       if (!getConfigTypeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, configType_);
+      }
+      if (!getBusinessSystemBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, businessSystem_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -8020,6 +8611,8 @@ public final class ConfigOuterClass {
           .equals(other.getConfigName())) return false;
       if (!getConfigType()
           .equals(other.getConfigType())) return false;
+      if (!getBusinessSystem()
+          .equals(other.getBusinessSystem())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -8039,6 +8632,8 @@ public final class ConfigOuterClass {
       hash = (53 * hash) + getConfigName().hashCode();
       hash = (37 * hash) + CONFIG_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getConfigType().hashCode();
+      hash = (37 * hash) + BUSINESS_SYSTEM_FIELD_NUMBER;
+      hash = (53 * hash) + getBusinessSystem().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -8182,6 +8777,8 @@ public final class ConfigOuterClass {
 
         configType_ = "";
 
+        businessSystem_ = "";
+
         return this;
       }
 
@@ -8215,6 +8812,7 @@ public final class ConfigOuterClass {
         }
         result.configName_ = configName_;
         result.configType_ = configType_;
+        result.businessSystem_ = businessSystem_;
         onBuilt();
         return result;
       }
@@ -8272,6 +8870,10 @@ public final class ConfigOuterClass {
         }
         if (!other.getConfigType().isEmpty()) {
           configType_ = other.configType_;
+          onChanged();
+        }
+        if (!other.getBusinessSystem().isEmpty()) {
+          businessSystem_ = other.businessSystem_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -8424,6 +9026,10 @@ public final class ConfigOuterClass {
 
       private java.lang.Object configName_ = "";
       /**
+       * <pre>
+       * config的名字
+       * </pre>
+       *
        * <code>string config_name = 2;</code>
        * @return The configName.
        */
@@ -8440,6 +9046,10 @@ public final class ConfigOuterClass {
         }
       }
       /**
+       * <pre>
+       * config的名字
+       * </pre>
+       *
        * <code>string config_name = 2;</code>
        * @return The bytes for configName.
        */
@@ -8457,6 +9067,10 @@ public final class ConfigOuterClass {
         }
       }
       /**
+       * <pre>
+       * config的名字
+       * </pre>
+       *
        * <code>string config_name = 2;</code>
        * @param value The configName to set.
        * @return This builder for chaining.
@@ -8472,6 +9086,10 @@ public final class ConfigOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * config的名字
+       * </pre>
+       *
        * <code>string config_name = 2;</code>
        * @return This builder for chaining.
        */
@@ -8482,6 +9100,10 @@ public final class ConfigOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * config的名字
+       * </pre>
+       *
        * <code>string config_name = 2;</code>
        * @param value The bytes for configName to set.
        * @return This builder for chaining.
@@ -8500,6 +9122,10 @@ public final class ConfigOuterClass {
 
       private java.lang.Object configType_ = "";
       /**
+       * <pre>
+       * config的类型，支持page_permission, system_permission, public_config, system_owner_location
+       * </pre>
+       *
        * <code>string config_type = 3;</code>
        * @return The configType.
        */
@@ -8516,6 +9142,10 @@ public final class ConfigOuterClass {
         }
       }
       /**
+       * <pre>
+       * config的类型，支持page_permission, system_permission, public_config, system_owner_location
+       * </pre>
+       *
        * <code>string config_type = 3;</code>
        * @return The bytes for configType.
        */
@@ -8533,6 +9163,10 @@ public final class ConfigOuterClass {
         }
       }
       /**
+       * <pre>
+       * config的类型，支持page_permission, system_permission, public_config, system_owner_location
+       * </pre>
+       *
        * <code>string config_type = 3;</code>
        * @param value The configType to set.
        * @return This builder for chaining.
@@ -8548,6 +9182,10 @@ public final class ConfigOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * config的类型，支持page_permission, system_permission, public_config, system_owner_location
+       * </pre>
+       *
        * <code>string config_type = 3;</code>
        * @return This builder for chaining.
        */
@@ -8558,6 +9196,10 @@ public final class ConfigOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * config的类型，支持page_permission, system_permission, public_config, system_owner_location
+       * </pre>
+       *
        * <code>string config_type = 3;</code>
        * @param value The bytes for configType to set.
        * @return This builder for chaining.
@@ -8570,6 +9212,102 @@ public final class ConfigOuterClass {
   checkByteStringIsUtf8(value);
         
         configType_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object businessSystem_ = "";
+      /**
+       * <pre>
+       * 业务系统，添加的时候默认是global(不属于任何业务系统）, 现在支持 shop, live, short
+       * </pre>
+       *
+       * <code>string business_system = 4;</code>
+       * @return The businessSystem.
+       */
+      public java.lang.String getBusinessSystem() {
+        java.lang.Object ref = businessSystem_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          businessSystem_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 业务系统，添加的时候默认是global(不属于任何业务系统）, 现在支持 shop, live, short
+       * </pre>
+       *
+       * <code>string business_system = 4;</code>
+       * @return The bytes for businessSystem.
+       */
+      public com.google.protobuf.ByteString
+          getBusinessSystemBytes() {
+        java.lang.Object ref = businessSystem_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          businessSystem_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 业务系统，添加的时候默认是global(不属于任何业务系统）, 现在支持 shop, live, short
+       * </pre>
+       *
+       * <code>string business_system = 4;</code>
+       * @param value The businessSystem to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBusinessSystem(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        businessSystem_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 业务系统，添加的时候默认是global(不属于任何业务系统）, 现在支持 shop, live, short
+       * </pre>
+       *
+       * <code>string business_system = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBusinessSystem() {
+        
+        businessSystem_ = getDefaultInstance().getBusinessSystem();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 业务系统，添加的时候默认是global(不属于任何业务系统）, 现在支持 shop, live, short
+       * </pre>
+       *
+       * <code>string business_system = 4;</code>
+       * @param value The bytes for businessSystem to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBusinessSystemBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        businessSystem_ = value;
         onChanged();
         return this;
       }
@@ -9687,33 +10425,35 @@ public final class ConfigOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\022admin/config.proto\022\tglory_api\032\nbase.pr" +
-      "oto\"\271\001\n\006Config\022\n\n\002id\030\002 \001(\003\022\023\n\013config_nam" +
+      "oto\"\322\001\n\006Config\022\n\n\002id\030\002 \001(\003\022\023\n\013config_nam" +
       "e\030\003 \001(\t\022\024\n\014config_value\030\004 \001(\t\022\023\n\013config_" +
       "type\030\005 \001(\t\022\023\n\013description\030\006 \001(\t\022\022\n\ncreat" +
       "ed_by\030\007 \001(\003\022\022\n\nupdated_by\030\010 \001(\003\022\022\n\ncreat" +
-      "ed_at\030\t \001(\t\022\022\n\nupdated_at\030\n \001(\t\"`\n\tAddCo" +
-      "nfig\022\023\n\013config_name\030\002 \001(\t\022\024\n\014config_valu" +
-      "e\030\003 \001(\t\022\023\n\013config_type\030\004 \001(\t\022\023\n\013descript" +
-      "ion\030\005 \001(\t\"d\n\023CreateConfigRequest\022\'\n\014base" +
-      "_request\030\001 \001(\0132\021.base.BaseRequest\022$\n\006con" +
-      "fig\030\002 \001(\0132\024.glory_api.AddConfig\"=\n\024Creat" +
-      "eConfigResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
-      "e.BaseResponse\"a\n\014UpdateConfig\022\021\n\tconfig" +
-      "_id\030\002 \001(\003\022\023\n\013config_type\030\003 \001(\t\022\024\n\014config" +
-      "_value\030\004 \001(\t\022\023\n\013description\030\005 \001(\t\"g\n\023Upd" +
-      "ateConfigRequest\022\'\n\014base_request\030\001 \001(\0132\021" +
-      ".base.BaseRequest\022\'\n\006config\030\002 \001(\0132\027.glor" +
-      "y_api.UpdateConfig\"=\n\024UpdateConfigRespon" +
-      "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
-      "e\"Q\n\023DeleteConfigRequest\022\'\n\014base_request" +
-      "\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tconfig_id\030\002" +
-      " \001(\003\"=\n\024DeleteConfigResponse\022%\n\tbase_res" +
-      "p\030\001 \001(\0132\022.base.BaseResponse\"e\n\020GetConfig" +
-      "Request\022\'\n\014base_request\030\001 \001(\0132\021.base.Bas" +
-      "eRequest\022\023\n\013config_name\030\002 \001(\t\022\023\n\013config_" +
-      "type\030\003 \001(\t\"^\n\021GetConfigResponse\022%\n\tbase_" +
-      "resp\030\001 \001(\0132\022.base.BaseResponse\022\"\n\007config" +
-      "s\030\002 \003(\0132\021.glory_api.Configb\006proto3"
+      "ed_at\030\t \001(\t\022\022\n\nupdated_at\030\n \001(\t\022\027\n\017busin" +
+      "ess_system\030\013 \001(\t\"y\n\tAddConfig\022\023\n\013config_" +
+      "name\030\002 \001(\t\022\024\n\014config_value\030\003 \001(\t\022\023\n\013conf" +
+      "ig_type\030\004 \001(\t\022\023\n\013description\030\005 \001(\t\022\027\n\017bu" +
+      "siness_system\030\006 \001(\t\"d\n\023CreateConfigReque" +
+      "st\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequ" +
+      "est\022$\n\006config\030\002 \001(\0132\024.glory_api.AddConfi" +
+      "g\"=\n\024CreateConfigResponse\022%\n\tbase_resp\030\001" +
+      " \001(\0132\022.base.BaseResponse\"a\n\014UpdateConfig" +
+      "\022\021\n\tconfig_id\030\002 \001(\003\022\023\n\013config_type\030\003 \001(\t" +
+      "\022\024\n\014config_value\030\004 \001(\t\022\023\n\013description\030\005 " +
+      "\001(\t\"g\n\023UpdateConfigRequest\022\'\n\014base_reque" +
+      "st\030\001 \001(\0132\021.base.BaseRequest\022\'\n\006config\030\002 " +
+      "\001(\0132\027.glory_api.UpdateConfig\"=\n\024UpdateCo" +
+      "nfigResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.B" +
+      "aseResponse\"Q\n\023DeleteConfigRequest\022\'\n\014ba" +
+      "se_request\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tc" +
+      "onfig_id\030\002 \001(\003\"=\n\024DeleteConfigResponse\022%" +
+      "\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"~\n" +
+      "\020GetConfigRequest\022\'\n\014base_request\030\001 \001(\0132" +
+      "\021.base.BaseRequest\022\023\n\013config_name\030\002 \001(\t\022" +
+      "\023\n\013config_type\030\003 \001(\t\022\027\n\017business_system\030" +
+      "\004 \001(\t\"^\n\021GetConfigResponse\022%\n\tbase_resp\030" +
+      "\001 \001(\0132\022.base.BaseResponse\022\"\n\007configs\030\002 \003" +
+      "(\0132\021.glory_api.Configb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -9725,13 +10465,13 @@ public final class ConfigOuterClass {
     internal_static_glory_api_Config_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_Config_descriptor,
-        new java.lang.String[] { "Id", "ConfigName", "ConfigValue", "ConfigType", "Description", "CreatedBy", "UpdatedBy", "CreatedAt", "UpdatedAt", });
+        new java.lang.String[] { "Id", "ConfigName", "ConfigValue", "ConfigType", "Description", "CreatedBy", "UpdatedBy", "CreatedAt", "UpdatedAt", "BusinessSystem", });
     internal_static_glory_api_AddConfig_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_glory_api_AddConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_AddConfig_descriptor,
-        new java.lang.String[] { "ConfigName", "ConfigValue", "ConfigType", "Description", });
+        new java.lang.String[] { "ConfigName", "ConfigValue", "ConfigType", "Description", "BusinessSystem", });
     internal_static_glory_api_CreateConfigRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_glory_api_CreateConfigRequest_fieldAccessorTable = new
@@ -9779,7 +10519,7 @@ public final class ConfigOuterClass {
     internal_static_glory_api_GetConfigRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetConfigRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "ConfigName", "ConfigType", });
+        new java.lang.String[] { "BaseRequest", "ConfigName", "ConfigType", "BusinessSystem", });
     internal_static_glory_api_GetConfigResponse_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_glory_api_GetConfigResponse_fieldAccessorTable = new

@@ -10011,19 +10011,31 @@ public final class UserOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string page = 1;</code>
+     * <code>string business_system = 1;</code>
+     * @return The businessSystem.
+     */
+    java.lang.String getBusinessSystem();
+    /**
+     * <code>string business_system = 1;</code>
+     * @return The bytes for businessSystem.
+     */
+    com.google.protobuf.ByteString
+        getBusinessSystemBytes();
+
+    /**
+     * <code>string page = 2;</code>
      * @return The page.
      */
     java.lang.String getPage();
     /**
-     * <code>string page = 1;</code>
+     * <code>string page = 2;</code>
      * @return The bytes for page.
      */
     com.google.protobuf.ByteString
         getPageBytes();
 
     /**
-     * <code>bool has_permission = 2;</code>
+     * <code>bool has_permission = 3;</code>
      * @return The hasPermission.
      */
     boolean getHasPermission();
@@ -10041,6 +10053,7 @@ public final class UserOuterClass {
       super(builder);
     }
     private PagePermission() {
+      businessSystem_ = "";
       page_ = "";
     }
 
@@ -10077,10 +10090,16 @@ public final class UserOuterClass {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
+              businessSystem_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
               page_ = s;
               break;
             }
-            case 16: {
+            case 24: {
 
               hasPermission_ = input.readBool();
               break;
@@ -10117,10 +10136,48 @@ public final class UserOuterClass {
               glory_api.UserOuterClass.PagePermission.class, glory_api.UserOuterClass.PagePermission.Builder.class);
     }
 
-    public static final int PAGE_FIELD_NUMBER = 1;
+    public static final int BUSINESS_SYSTEM_FIELD_NUMBER = 1;
+    private volatile java.lang.Object businessSystem_;
+    /**
+     * <code>string business_system = 1;</code>
+     * @return The businessSystem.
+     */
+    @java.lang.Override
+    public java.lang.String getBusinessSystem() {
+      java.lang.Object ref = businessSystem_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        businessSystem_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string business_system = 1;</code>
+     * @return The bytes for businessSystem.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getBusinessSystemBytes() {
+      java.lang.Object ref = businessSystem_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        businessSystem_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PAGE_FIELD_NUMBER = 2;
     private volatile java.lang.Object page_;
     /**
-     * <code>string page = 1;</code>
+     * <code>string page = 2;</code>
      * @return The page.
      */
     @java.lang.Override
@@ -10137,7 +10194,7 @@ public final class UserOuterClass {
       }
     }
     /**
-     * <code>string page = 1;</code>
+     * <code>string page = 2;</code>
      * @return The bytes for page.
      */
     @java.lang.Override
@@ -10155,10 +10212,10 @@ public final class UserOuterClass {
       }
     }
 
-    public static final int HAS_PERMISSION_FIELD_NUMBER = 2;
+    public static final int HAS_PERMISSION_FIELD_NUMBER = 3;
     private boolean hasPermission_;
     /**
-     * <code>bool has_permission = 2;</code>
+     * <code>bool has_permission = 3;</code>
      * @return The hasPermission.
      */
     @java.lang.Override
@@ -10180,11 +10237,14 @@ public final class UserOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!getBusinessSystemBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, businessSystem_);
+      }
       if (!getPageBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, page_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, page_);
       }
       if (hasPermission_ != false) {
-        output.writeBool(2, hasPermission_);
+        output.writeBool(3, hasPermission_);
       }
       unknownFields.writeTo(output);
     }
@@ -10195,12 +10255,15 @@ public final class UserOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (!getBusinessSystemBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, businessSystem_);
+      }
       if (!getPageBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, page_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, page_);
       }
       if (hasPermission_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, hasPermission_);
+          .computeBoolSize(3, hasPermission_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -10217,6 +10280,8 @@ public final class UserOuterClass {
       }
       glory_api.UserOuterClass.PagePermission other = (glory_api.UserOuterClass.PagePermission) obj;
 
+      if (!getBusinessSystem()
+          .equals(other.getBusinessSystem())) return false;
       if (!getPage()
           .equals(other.getPage())) return false;
       if (getHasPermission()
@@ -10232,6 +10297,8 @@ public final class UserOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + BUSINESS_SYSTEM_FIELD_NUMBER;
+      hash = (53 * hash) + getBusinessSystem().hashCode();
       hash = (37 * hash) + PAGE_FIELD_NUMBER;
       hash = (53 * hash) + getPage().hashCode();
       hash = (37 * hash) + HAS_PERMISSION_FIELD_NUMBER;
@@ -10370,6 +10437,8 @@ public final class UserOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        businessSystem_ = "";
+
         page_ = "";
 
         hasPermission_ = false;
@@ -10400,6 +10469,7 @@ public final class UserOuterClass {
       @java.lang.Override
       public glory_api.UserOuterClass.PagePermission buildPartial() {
         glory_api.UserOuterClass.PagePermission result = new glory_api.UserOuterClass.PagePermission(this);
+        result.businessSystem_ = businessSystem_;
         result.page_ = page_;
         result.hasPermission_ = hasPermission_;
         onBuilt();
@@ -10450,6 +10520,10 @@ public final class UserOuterClass {
 
       public Builder mergeFrom(glory_api.UserOuterClass.PagePermission other) {
         if (other == glory_api.UserOuterClass.PagePermission.getDefaultInstance()) return this;
+        if (!other.getBusinessSystem().isEmpty()) {
+          businessSystem_ = other.businessSystem_;
+          onChanged();
+        }
         if (!other.getPage().isEmpty()) {
           page_ = other.page_;
           onChanged();
@@ -10486,9 +10560,85 @@ public final class UserOuterClass {
         return this;
       }
 
+      private java.lang.Object businessSystem_ = "";
+      /**
+       * <code>string business_system = 1;</code>
+       * @return The businessSystem.
+       */
+      public java.lang.String getBusinessSystem() {
+        java.lang.Object ref = businessSystem_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          businessSystem_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string business_system = 1;</code>
+       * @return The bytes for businessSystem.
+       */
+      public com.google.protobuf.ByteString
+          getBusinessSystemBytes() {
+        java.lang.Object ref = businessSystem_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          businessSystem_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string business_system = 1;</code>
+       * @param value The businessSystem to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBusinessSystem(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        businessSystem_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string business_system = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBusinessSystem() {
+        
+        businessSystem_ = getDefaultInstance().getBusinessSystem();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string business_system = 1;</code>
+       * @param value The bytes for businessSystem to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBusinessSystemBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        businessSystem_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object page_ = "";
       /**
-       * <code>string page = 1;</code>
+       * <code>string page = 2;</code>
        * @return The page.
        */
       public java.lang.String getPage() {
@@ -10504,7 +10654,7 @@ public final class UserOuterClass {
         }
       }
       /**
-       * <code>string page = 1;</code>
+       * <code>string page = 2;</code>
        * @return The bytes for page.
        */
       public com.google.protobuf.ByteString
@@ -10521,7 +10671,7 @@ public final class UserOuterClass {
         }
       }
       /**
-       * <code>string page = 1;</code>
+       * <code>string page = 2;</code>
        * @param value The page to set.
        * @return This builder for chaining.
        */
@@ -10536,7 +10686,7 @@ public final class UserOuterClass {
         return this;
       }
       /**
-       * <code>string page = 1;</code>
+       * <code>string page = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearPage() {
@@ -10546,7 +10696,7 @@ public final class UserOuterClass {
         return this;
       }
       /**
-       * <code>string page = 1;</code>
+       * <code>string page = 2;</code>
        * @param value The bytes for page to set.
        * @return This builder for chaining.
        */
@@ -10564,7 +10714,7 @@ public final class UserOuterClass {
 
       private boolean hasPermission_ ;
       /**
-       * <code>bool has_permission = 2;</code>
+       * <code>bool has_permission = 3;</code>
        * @return The hasPermission.
        */
       @java.lang.Override
@@ -10572,7 +10722,7 @@ public final class UserOuterClass {
         return hasPermission_;
       }
       /**
-       * <code>bool has_permission = 2;</code>
+       * <code>bool has_permission = 3;</code>
        * @param value The hasPermission to set.
        * @return This builder for chaining.
        */
@@ -10583,7 +10733,7 @@ public final class UserOuterClass {
         return this;
       }
       /**
-       * <code>bool has_permission = 2;</code>
+       * <code>bool has_permission = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearHasPermission() {
@@ -12437,6 +12587,12 @@ public final class UserOuterClass {
      */
     com.google.protobuf.ByteString
         getDescriptionBytes();
+
+    /**
+     * <code>int64 tenant_id = 6;</code>
+     * @return The tenantId.
+     */
+    long getTenantId();
   }
   /**
    * Protobuf type {@code glory_api.Permission}
@@ -12512,6 +12668,11 @@ public final class UserOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               description_ = s;
+              break;
+            }
+            case 48: {
+
+              tenantId_ = input.readInt64();
               break;
             }
             default: {
@@ -12694,6 +12855,17 @@ public final class UserOuterClass {
       }
     }
 
+    public static final int TENANT_ID_FIELD_NUMBER = 6;
+    private long tenantId_;
+    /**
+     * <code>int64 tenant_id = 6;</code>
+     * @return The tenantId.
+     */
+    @java.lang.Override
+    public long getTenantId() {
+      return tenantId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -12723,6 +12895,9 @@ public final class UserOuterClass {
       if (!getDescriptionBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, description_);
       }
+      if (tenantId_ != 0L) {
+        output.writeInt64(6, tenantId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -12749,6 +12924,10 @@ public final class UserOuterClass {
       if (!getDescriptionBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, description_);
       }
+      if (tenantId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(6, tenantId_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -12774,6 +12953,8 @@ public final class UserOuterClass {
           .equals(other.getPermission())) return false;
       if (!getDescription()
           .equals(other.getDescription())) return false;
+      if (getTenantId()
+          != other.getTenantId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -12797,6 +12978,9 @@ public final class UserOuterClass {
       hash = (53 * hash) + getPermission().hashCode();
       hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDescription().hashCode();
+      hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTenantId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -12940,6 +13124,8 @@ public final class UserOuterClass {
 
         description_ = "";
 
+        tenantId_ = 0L;
+
         return this;
       }
 
@@ -12971,6 +13157,7 @@ public final class UserOuterClass {
         result.resourceId_ = resourceId_;
         result.permission_ = permission_;
         result.description_ = description_;
+        result.tenantId_ = tenantId_;
         onBuilt();
         return result;
       }
@@ -13036,6 +13223,9 @@ public final class UserOuterClass {
         if (!other.getDescription().isEmpty()) {
           description_ = other.description_;
           onChanged();
+        }
+        if (other.getTenantId() != 0L) {
+          setTenantId(other.getTenantId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -13387,6 +13577,37 @@ public final class UserOuterClass {
         onChanged();
         return this;
       }
+
+      private long tenantId_ ;
+      /**
+       * <code>int64 tenant_id = 6;</code>
+       * @return The tenantId.
+       */
+      @java.lang.Override
+      public long getTenantId() {
+        return tenantId_;
+      }
+      /**
+       * <code>int64 tenant_id = 6;</code>
+       * @param value The tenantId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTenantId(long value) {
+        
+        tenantId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 tenant_id = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTenantId() {
+        
+        tenantId_ = 0L;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -13466,11 +13687,19 @@ public final class UserOuterClass {
     long getPermissionId();
 
     /**
+     * <pre>
+     * 权限的名字，模糊查找
+     * </pre>
+     *
      * <code>string permission_name = 3;</code>
      * @return The permissionName.
      */
     java.lang.String getPermissionName();
     /**
+     * <pre>
+     * 权限的名字，模糊查找
+     * </pre>
+     *
      * <code>string permission_name = 3;</code>
      * @return The bytes for permissionName.
      */
@@ -13478,22 +13707,44 @@ public final class UserOuterClass {
         getPermissionNameBytes();
 
     /**
+     * <pre>
+     * 权限对应的resource id
+     * </pre>
+     *
      * <code>int64 resource_id = 4;</code>
      * @return The resourceId.
      */
     long getResourceId();
 
     /**
+     * <pre>
+     * 权限, 支持 C, R, U D
+     * </pre>
+     *
      * <code>string permission = 5;</code>
      * @return The permission.
      */
     java.lang.String getPermission();
     /**
+     * <pre>
+     * 权限, 支持 C, R, U D
+     * </pre>
+     *
      * <code>string permission = 5;</code>
      * @return The bytes for permission.
      */
     com.google.protobuf.ByteString
         getPermissionBytes();
+
+    /**
+     * <pre>
+     * 学校的id
+     * </pre>
+     *
+     * <code>int64 tenant_id = 6;</code>
+     * @return The tenantId.
+     */
+    long getTenantId();
 
     /**
      * <code>.base.PaginationRequest pagination = 100;</code>
@@ -13592,6 +13843,11 @@ public final class UserOuterClass {
               permission_ = s;
               break;
             }
+            case 48: {
+
+              tenantId_ = input.readInt64();
+              break;
+            }
             case 802: {
               base.Base.PaginationRequest.Builder subBuilder = null;
               if (pagination_ != null) {
@@ -13677,6 +13933,10 @@ public final class UserOuterClass {
     public static final int PERMISSION_NAME_FIELD_NUMBER = 3;
     private volatile java.lang.Object permissionName_;
     /**
+     * <pre>
+     * 权限的名字，模糊查找
+     * </pre>
+     *
      * <code>string permission_name = 3;</code>
      * @return The permissionName.
      */
@@ -13694,6 +13954,10 @@ public final class UserOuterClass {
       }
     }
     /**
+     * <pre>
+     * 权限的名字，模糊查找
+     * </pre>
+     *
      * <code>string permission_name = 3;</code>
      * @return The bytes for permissionName.
      */
@@ -13715,6 +13979,10 @@ public final class UserOuterClass {
     public static final int RESOURCE_ID_FIELD_NUMBER = 4;
     private long resourceId_;
     /**
+     * <pre>
+     * 权限对应的resource id
+     * </pre>
+     *
      * <code>int64 resource_id = 4;</code>
      * @return The resourceId.
      */
@@ -13726,6 +13994,10 @@ public final class UserOuterClass {
     public static final int PERMISSION_FIELD_NUMBER = 5;
     private volatile java.lang.Object permission_;
     /**
+     * <pre>
+     * 权限, 支持 C, R, U D
+     * </pre>
+     *
      * <code>string permission = 5;</code>
      * @return The permission.
      */
@@ -13743,6 +14015,10 @@ public final class UserOuterClass {
       }
     }
     /**
+     * <pre>
+     * 权限, 支持 C, R, U D
+     * </pre>
+     *
      * <code>string permission = 5;</code>
      * @return The bytes for permission.
      */
@@ -13759,6 +14035,21 @@ public final class UserOuterClass {
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
+    }
+
+    public static final int TENANT_ID_FIELD_NUMBER = 6;
+    private long tenantId_;
+    /**
+     * <pre>
+     * 学校的id
+     * </pre>
+     *
+     * <code>int64 tenant_id = 6;</code>
+     * @return The tenantId.
+     */
+    @java.lang.Override
+    public long getTenantId() {
+      return tenantId_;
     }
 
     public static final int PAGINATION_FIELD_NUMBER = 100;
@@ -13816,6 +14107,9 @@ public final class UserOuterClass {
       if (!getPermissionBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, permission_);
       }
+      if (tenantId_ != 0L) {
+        output.writeInt64(6, tenantId_);
+      }
       if (pagination_ != null) {
         output.writeMessage(100, getPagination());
       }
@@ -13845,6 +14139,10 @@ public final class UserOuterClass {
       }
       if (!getPermissionBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, permission_);
+      }
+      if (tenantId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(6, tenantId_);
       }
       if (pagination_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -13878,6 +14176,8 @@ public final class UserOuterClass {
           != other.getResourceId()) return false;
       if (!getPermission()
           .equals(other.getPermission())) return false;
+      if (getTenantId()
+          != other.getTenantId()) return false;
       if (hasPagination() != other.hasPagination()) return false;
       if (hasPagination()) {
         if (!getPagination()
@@ -13908,6 +14208,9 @@ public final class UserOuterClass {
           getResourceId());
       hash = (37 * hash) + PERMISSION_FIELD_NUMBER;
       hash = (53 * hash) + getPermission().hashCode();
+      hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTenantId());
       if (hasPagination()) {
         hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
         hash = (53 * hash) + getPagination().hashCode();
@@ -14059,6 +14362,8 @@ public final class UserOuterClass {
 
         permission_ = "";
 
+        tenantId_ = 0L;
+
         if (paginationBuilder_ == null) {
           pagination_ = null;
         } else {
@@ -14100,6 +14405,7 @@ public final class UserOuterClass {
         result.permissionName_ = permissionName_;
         result.resourceId_ = resourceId_;
         result.permission_ = permission_;
+        result.tenantId_ = tenantId_;
         if (paginationBuilder_ == null) {
           result.pagination_ = pagination_;
         } else {
@@ -14169,6 +14475,9 @@ public final class UserOuterClass {
         if (!other.getPermission().isEmpty()) {
           permission_ = other.permission_;
           onChanged();
+        }
+        if (other.getTenantId() != 0L) {
+          setTenantId(other.getTenantId());
         }
         if (other.hasPagination()) {
           mergePagination(other.getPagination());
@@ -14354,6 +14663,10 @@ public final class UserOuterClass {
 
       private java.lang.Object permissionName_ = "";
       /**
+       * <pre>
+       * 权限的名字，模糊查找
+       * </pre>
+       *
        * <code>string permission_name = 3;</code>
        * @return The permissionName.
        */
@@ -14370,6 +14683,10 @@ public final class UserOuterClass {
         }
       }
       /**
+       * <pre>
+       * 权限的名字，模糊查找
+       * </pre>
+       *
        * <code>string permission_name = 3;</code>
        * @return The bytes for permissionName.
        */
@@ -14387,6 +14704,10 @@ public final class UserOuterClass {
         }
       }
       /**
+       * <pre>
+       * 权限的名字，模糊查找
+       * </pre>
+       *
        * <code>string permission_name = 3;</code>
        * @param value The permissionName to set.
        * @return This builder for chaining.
@@ -14402,6 +14723,10 @@ public final class UserOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * 权限的名字，模糊查找
+       * </pre>
+       *
        * <code>string permission_name = 3;</code>
        * @return This builder for chaining.
        */
@@ -14412,6 +14737,10 @@ public final class UserOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * 权限的名字，模糊查找
+       * </pre>
+       *
        * <code>string permission_name = 3;</code>
        * @param value The bytes for permissionName to set.
        * @return This builder for chaining.
@@ -14430,6 +14759,10 @@ public final class UserOuterClass {
 
       private long resourceId_ ;
       /**
+       * <pre>
+       * 权限对应的resource id
+       * </pre>
+       *
        * <code>int64 resource_id = 4;</code>
        * @return The resourceId.
        */
@@ -14438,6 +14771,10 @@ public final class UserOuterClass {
         return resourceId_;
       }
       /**
+       * <pre>
+       * 权限对应的resource id
+       * </pre>
+       *
        * <code>int64 resource_id = 4;</code>
        * @param value The resourceId to set.
        * @return This builder for chaining.
@@ -14449,6 +14786,10 @@ public final class UserOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * 权限对应的resource id
+       * </pre>
+       *
        * <code>int64 resource_id = 4;</code>
        * @return This builder for chaining.
        */
@@ -14461,6 +14802,10 @@ public final class UserOuterClass {
 
       private java.lang.Object permission_ = "";
       /**
+       * <pre>
+       * 权限, 支持 C, R, U D
+       * </pre>
+       *
        * <code>string permission = 5;</code>
        * @return The permission.
        */
@@ -14477,6 +14822,10 @@ public final class UserOuterClass {
         }
       }
       /**
+       * <pre>
+       * 权限, 支持 C, R, U D
+       * </pre>
+       *
        * <code>string permission = 5;</code>
        * @return The bytes for permission.
        */
@@ -14494,6 +14843,10 @@ public final class UserOuterClass {
         }
       }
       /**
+       * <pre>
+       * 权限, 支持 C, R, U D
+       * </pre>
+       *
        * <code>string permission = 5;</code>
        * @param value The permission to set.
        * @return This builder for chaining.
@@ -14509,6 +14862,10 @@ public final class UserOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * 权限, 支持 C, R, U D
+       * </pre>
+       *
        * <code>string permission = 5;</code>
        * @return This builder for chaining.
        */
@@ -14519,6 +14876,10 @@ public final class UserOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * 权限, 支持 C, R, U D
+       * </pre>
+       *
        * <code>string permission = 5;</code>
        * @param value The bytes for permission to set.
        * @return This builder for chaining.
@@ -14531,6 +14892,49 @@ public final class UserOuterClass {
   checkByteStringIsUtf8(value);
         
         permission_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long tenantId_ ;
+      /**
+       * <pre>
+       * 学校的id
+       * </pre>
+       *
+       * <code>int64 tenant_id = 6;</code>
+       * @return The tenantId.
+       */
+      @java.lang.Override
+      public long getTenantId() {
+        return tenantId_;
+      }
+      /**
+       * <pre>
+       * 学校的id
+       * </pre>
+       *
+       * <code>int64 tenant_id = 6;</code>
+       * @param value The tenantId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTenantId(long value) {
+        
+        tenantId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 学校的id
+       * </pre>
+       *
+       * <code>int64 tenant_id = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTenantId() {
+        
+        tenantId_ = 0L;
         onChanged();
         return this;
       }
@@ -16041,40 +16445,20 @@ public final class UserOuterClass {
 
     /**
      * <pre>
-     * 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
+     *  string source = 3;  // 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
+     *  int64 source_id =4; // 对应的资源来源id
      * </pre>
      *
-     * <code>string source = 3;</code>
-     * @return The source.
-     */
-    java.lang.String getSource();
-    /**
-     * <pre>
-     * 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
-     * </pre>
-     *
-     * <code>string source = 3;</code>
-     * @return The bytes for source.
-     */
-    com.google.protobuf.ByteString
-        getSourceBytes();
-
-    /**
-     * <pre>
-     * 对应的资源来源id
-     * </pre>
-     *
-     * <code>int64 source_id = 4;</code>
-     * @return The sourceId.
-     */
-    long getSourceId();
-
-    /**
      * <code>string description = 5;</code>
      * @return The description.
      */
     java.lang.String getDescription();
     /**
+     * <pre>
+     *  string source = 3;  // 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
+     *  int64 source_id =4; // 对应的资源来源id
+     * </pre>
+     *
      * <code>string description = 5;</code>
      * @return The bytes for description.
      */
@@ -16119,7 +16503,6 @@ public final class UserOuterClass {
     }
     private Role() {
       roleName_ = "";
-      source_ = "";
       description_ = "";
       rolePermission_ = java.util.Collections.emptyList();
     }
@@ -16164,17 +16547,6 @@ public final class UserOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               roleName_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              source_ = s;
-              break;
-            }
-            case 32: {
-
-              sourceId_ = input.readInt64();
               break;
             }
             case 42: {
@@ -16276,70 +16648,14 @@ public final class UserOuterClass {
       }
     }
 
-    public static final int SOURCE_FIELD_NUMBER = 3;
-    private volatile java.lang.Object source_;
-    /**
-     * <pre>
-     * 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
-     * </pre>
-     *
-     * <code>string source = 3;</code>
-     * @return The source.
-     */
-    @java.lang.Override
-    public java.lang.String getSource() {
-      java.lang.Object ref = source_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        source_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
-     * </pre>
-     *
-     * <code>string source = 3;</code>
-     * @return The bytes for source.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getSourceBytes() {
-      java.lang.Object ref = source_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        source_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int SOURCE_ID_FIELD_NUMBER = 4;
-    private long sourceId_;
-    /**
-     * <pre>
-     * 对应的资源来源id
-     * </pre>
-     *
-     * <code>int64 source_id = 4;</code>
-     * @return The sourceId.
-     */
-    @java.lang.Override
-    public long getSourceId() {
-      return sourceId_;
-    }
-
     public static final int DESCRIPTION_FIELD_NUMBER = 5;
     private volatile java.lang.Object description_;
     /**
+     * <pre>
+     *  string source = 3;  // 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
+     *  int64 source_id =4; // 对应的资源来源id
+     * </pre>
+     *
      * <code>string description = 5;</code>
      * @return The description.
      */
@@ -16357,6 +16673,11 @@ public final class UserOuterClass {
       }
     }
     /**
+     * <pre>
+     *  string source = 3;  // 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
+     *  int64 source_id =4; // 对应的资源来源id
+     * </pre>
+     *
      * <code>string description = 5;</code>
      * @return The bytes for description.
      */
@@ -16435,12 +16756,6 @@ public final class UserOuterClass {
       if (!getRoleNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, roleName_);
       }
-      if (!getSourceBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, source_);
-      }
-      if (sourceId_ != 0L) {
-        output.writeInt64(4, sourceId_);
-      }
       if (!getDescriptionBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, description_);
       }
@@ -16462,13 +16777,6 @@ public final class UserOuterClass {
       }
       if (!getRoleNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, roleName_);
-      }
-      if (!getSourceBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, source_);
-      }
-      if (sourceId_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(4, sourceId_);
       }
       if (!getDescriptionBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, description_);
@@ -16496,10 +16804,6 @@ public final class UserOuterClass {
           != other.getRoleId()) return false;
       if (!getRoleName()
           .equals(other.getRoleName())) return false;
-      if (!getSource()
-          .equals(other.getSource())) return false;
-      if (getSourceId()
-          != other.getSourceId()) return false;
       if (!getDescription()
           .equals(other.getDescription())) return false;
       if (!getRolePermissionList()
@@ -16520,11 +16824,6 @@ public final class UserOuterClass {
           getRoleId());
       hash = (37 * hash) + ROLE_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getRoleName().hashCode();
-      hash = (37 * hash) + SOURCE_FIELD_NUMBER;
-      hash = (53 * hash) + getSource().hashCode();
-      hash = (37 * hash) + SOURCE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getSourceId());
       hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDescription().hashCode();
       if (getRolePermissionCount() > 0) {
@@ -16669,10 +16968,6 @@ public final class UserOuterClass {
 
         roleName_ = "";
 
-        source_ = "";
-
-        sourceId_ = 0L;
-
         description_ = "";
 
         if (rolePermissionBuilder_ == null) {
@@ -16710,8 +17005,6 @@ public final class UserOuterClass {
         int from_bitField0_ = bitField0_;
         result.roleId_ = roleId_;
         result.roleName_ = roleName_;
-        result.source_ = source_;
-        result.sourceId_ = sourceId_;
         result.description_ = description_;
         if (rolePermissionBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
@@ -16776,13 +17069,6 @@ public final class UserOuterClass {
         if (!other.getRoleName().isEmpty()) {
           roleName_ = other.roleName_;
           onChanged();
-        }
-        if (!other.getSource().isEmpty()) {
-          source_ = other.source_;
-          onChanged();
-        }
-        if (other.getSourceId() != 0L) {
-          setSourceId(other.getSourceId());
         }
         if (!other.getDescription().isEmpty()) {
           description_ = other.description_;
@@ -16951,147 +17237,13 @@ public final class UserOuterClass {
         return this;
       }
 
-      private java.lang.Object source_ = "";
-      /**
-       * <pre>
-       * 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
-       * </pre>
-       *
-       * <code>string source = 3;</code>
-       * @return The source.
-       */
-      public java.lang.String getSource() {
-        java.lang.Object ref = source_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          source_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
-       * </pre>
-       *
-       * <code>string source = 3;</code>
-       * @return The bytes for source.
-       */
-      public com.google.protobuf.ByteString
-          getSourceBytes() {
-        java.lang.Object ref = source_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          source_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
-       * </pre>
-       *
-       * <code>string source = 3;</code>
-       * @param value The source to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSource(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        source_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
-       * </pre>
-       *
-       * <code>string source = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSource() {
-        
-        source_ = getDefaultInstance().getSource();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
-       * </pre>
-       *
-       * <code>string source = 3;</code>
-       * @param value The bytes for source to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSourceBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        source_ = value;
-        onChanged();
-        return this;
-      }
-
-      private long sourceId_ ;
-      /**
-       * <pre>
-       * 对应的资源来源id
-       * </pre>
-       *
-       * <code>int64 source_id = 4;</code>
-       * @return The sourceId.
-       */
-      @java.lang.Override
-      public long getSourceId() {
-        return sourceId_;
-      }
-      /**
-       * <pre>
-       * 对应的资源来源id
-       * </pre>
-       *
-       * <code>int64 source_id = 4;</code>
-       * @param value The sourceId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSourceId(long value) {
-        
-        sourceId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 对应的资源来源id
-       * </pre>
-       *
-       * <code>int64 source_id = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSourceId() {
-        
-        sourceId_ = 0L;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object description_ = "";
       /**
+       * <pre>
+       *  string source = 3;  // 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
+       *  int64 source_id =4; // 对应的资源来源id
+       * </pre>
+       *
        * <code>string description = 5;</code>
        * @return The description.
        */
@@ -17108,6 +17260,11 @@ public final class UserOuterClass {
         }
       }
       /**
+       * <pre>
+       *  string source = 3;  // 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
+       *  int64 source_id =4; // 对应的资源来源id
+       * </pre>
+       *
        * <code>string description = 5;</code>
        * @return The bytes for description.
        */
@@ -17125,6 +17282,11 @@ public final class UserOuterClass {
         }
       }
       /**
+       * <pre>
+       *  string source = 3;  // 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
+       *  int64 source_id =4; // 对应的资源来源id
+       * </pre>
+       *
        * <code>string description = 5;</code>
        * @param value The description to set.
        * @return This builder for chaining.
@@ -17140,6 +17302,11 @@ public final class UserOuterClass {
         return this;
       }
       /**
+       * <pre>
+       *  string source = 3;  // 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
+       *  int64 source_id =4; // 对应的资源来源id
+       * </pre>
+       *
        * <code>string description = 5;</code>
        * @return This builder for chaining.
        */
@@ -17150,6 +17317,11 @@ public final class UserOuterClass {
         return this;
       }
       /**
+       * <pre>
+       *  string source = 3;  // 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
+       *  int64 source_id =4; // 对应的资源来源id
+       * </pre>
+       *
        * <code>string description = 5;</code>
        * @param value The bytes for description to set.
        * @return This builder for chaining.
@@ -18484,52 +18656,61 @@ public final class UserOuterClass {
     base.Base.BaseRequestOrBuilder getBaseRequestOrBuilder();
 
     /**
-     * <code>int64 Role_id = 2;</code>
+     * <code>int64 role_id = 2;</code>
      * @return The roleId.
      */
     long getRoleId();
 
     /**
-     * <code>string Role_name = 3;</code>
+     * <pre>
+     * 角色名称，模糊查找
+     * </pre>
+     *
+     * <code>string role_name = 3;</code>
      * @return The roleName.
      */
     java.lang.String getRoleName();
     /**
-     * <code>string Role_name = 3;</code>
+     * <pre>
+     * 角色名称，模糊查找
+     * </pre>
+     *
+     * <code>string role_name = 3;</code>
      * @return The bytes for roleName.
      */
     com.google.protobuf.ByteString
         getRoleNameBytes();
 
     /**
-     * <code>string Role_type = 4;</code>
+     * <pre>
+     * 角色类型， 支持build-in，跟 user-defined
+     * </pre>
+     *
+     * <code>string role_type = 4;</code>
      * @return The roleType.
      */
     java.lang.String getRoleType();
     /**
-     * <code>string Role_type = 4;</code>
+     * <pre>
+     * 角色类型， 支持build-in，跟 user-defined
+     * </pre>
+     *
+     * <code>string role_type = 4;</code>
      * @return The bytes for roleType.
      */
     com.google.protobuf.ByteString
         getRoleTypeBytes();
 
     /**
-     * <code>string source = 5;</code>
-     * @return The source.
+     * <pre>
+     *  string source = 5;  // 对应的角色来源
+     *  int64 source_id =6;
+     * </pre>
+     *
+     * <code>int64 tenant_id = 7;</code>
+     * @return The tenantId.
      */
-    java.lang.String getSource();
-    /**
-     * <code>string source = 5;</code>
-     * @return The bytes for source.
-     */
-    com.google.protobuf.ByteString
-        getSourceBytes();
-
-    /**
-     * <code>int64 source_id = 6;</code>
-     * @return The sourceId.
-     */
-    long getSourceId();
+    long getTenantId();
 
     /**
      * <code>.base.PaginationRequest pagination = 100;</code>
@@ -18561,7 +18742,6 @@ public final class UserOuterClass {
     private ListRoleRequest() {
       roleName_ = "";
       roleType_ = "";
-      source_ = "";
     }
 
     @java.lang.Override
@@ -18624,15 +18804,9 @@ public final class UserOuterClass {
               roleType_ = s;
               break;
             }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 56: {
 
-              source_ = s;
-              break;
-            }
-            case 48: {
-
-              sourceId_ = input.readInt64();
+              tenantId_ = input.readInt64();
               break;
             }
             case 802: {
@@ -18709,7 +18883,7 @@ public final class UserOuterClass {
     public static final int ROLE_ID_FIELD_NUMBER = 2;
     private long roleId_;
     /**
-     * <code>int64 Role_id = 2;</code>
+     * <code>int64 role_id = 2;</code>
      * @return The roleId.
      */
     @java.lang.Override
@@ -18720,7 +18894,11 @@ public final class UserOuterClass {
     public static final int ROLE_NAME_FIELD_NUMBER = 3;
     private volatile java.lang.Object roleName_;
     /**
-     * <code>string Role_name = 3;</code>
+     * <pre>
+     * 角色名称，模糊查找
+     * </pre>
+     *
+     * <code>string role_name = 3;</code>
      * @return The roleName.
      */
     @java.lang.Override
@@ -18737,7 +18915,11 @@ public final class UserOuterClass {
       }
     }
     /**
-     * <code>string Role_name = 3;</code>
+     * <pre>
+     * 角色名称，模糊查找
+     * </pre>
+     *
+     * <code>string role_name = 3;</code>
      * @return The bytes for roleName.
      */
     @java.lang.Override
@@ -18758,7 +18940,11 @@ public final class UserOuterClass {
     public static final int ROLE_TYPE_FIELD_NUMBER = 4;
     private volatile java.lang.Object roleType_;
     /**
-     * <code>string Role_type = 4;</code>
+     * <pre>
+     * 角色类型， 支持build-in，跟 user-defined
+     * </pre>
+     *
+     * <code>string role_type = 4;</code>
      * @return The roleType.
      */
     @java.lang.Override
@@ -18775,7 +18961,11 @@ public final class UserOuterClass {
       }
     }
     /**
-     * <code>string Role_type = 4;</code>
+     * <pre>
+     * 角色类型， 支持build-in，跟 user-defined
+     * </pre>
+     *
+     * <code>string role_type = 4;</code>
      * @return The bytes for roleType.
      */
     @java.lang.Override
@@ -18793,53 +18983,20 @@ public final class UserOuterClass {
       }
     }
 
-    public static final int SOURCE_FIELD_NUMBER = 5;
-    private volatile java.lang.Object source_;
+    public static final int TENANT_ID_FIELD_NUMBER = 7;
+    private long tenantId_;
     /**
-     * <code>string source = 5;</code>
-     * @return The source.
+     * <pre>
+     *  string source = 5;  // 对应的角色来源
+     *  int64 source_id =6;
+     * </pre>
+     *
+     * <code>int64 tenant_id = 7;</code>
+     * @return The tenantId.
      */
     @java.lang.Override
-    public java.lang.String getSource() {
-      java.lang.Object ref = source_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        source_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string source = 5;</code>
-     * @return The bytes for source.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getSourceBytes() {
-      java.lang.Object ref = source_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        source_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int SOURCE_ID_FIELD_NUMBER = 6;
-    private long sourceId_;
-    /**
-     * <code>int64 source_id = 6;</code>
-     * @return The sourceId.
-     */
-    @java.lang.Override
-    public long getSourceId() {
-      return sourceId_;
+    public long getTenantId() {
+      return tenantId_;
     }
 
     public static final int PAGINATION_FIELD_NUMBER = 100;
@@ -18894,11 +19051,8 @@ public final class UserOuterClass {
       if (!getRoleTypeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, roleType_);
       }
-      if (!getSourceBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, source_);
-      }
-      if (sourceId_ != 0L) {
-        output.writeInt64(6, sourceId_);
+      if (tenantId_ != 0L) {
+        output.writeInt64(7, tenantId_);
       }
       if (pagination_ != null) {
         output.writeMessage(100, getPagination());
@@ -18926,12 +19080,9 @@ public final class UserOuterClass {
       if (!getRoleTypeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, roleType_);
       }
-      if (!getSourceBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, source_);
-      }
-      if (sourceId_ != 0L) {
+      if (tenantId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(6, sourceId_);
+          .computeInt64Size(7, tenantId_);
       }
       if (pagination_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -18963,10 +19114,8 @@ public final class UserOuterClass {
           .equals(other.getRoleName())) return false;
       if (!getRoleType()
           .equals(other.getRoleType())) return false;
-      if (!getSource()
-          .equals(other.getSource())) return false;
-      if (getSourceId()
-          != other.getSourceId()) return false;
+      if (getTenantId()
+          != other.getTenantId()) return false;
       if (hasPagination() != other.hasPagination()) return false;
       if (hasPagination()) {
         if (!getPagination()
@@ -18994,11 +19143,9 @@ public final class UserOuterClass {
       hash = (53 * hash) + getRoleName().hashCode();
       hash = (37 * hash) + ROLE_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getRoleType().hashCode();
-      hash = (37 * hash) + SOURCE_FIELD_NUMBER;
-      hash = (53 * hash) + getSource().hashCode();
-      hash = (37 * hash) + SOURCE_ID_FIELD_NUMBER;
+      hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getSourceId());
+          getTenantId());
       if (hasPagination()) {
         hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
         hash = (53 * hash) + getPagination().hashCode();
@@ -19148,9 +19295,7 @@ public final class UserOuterClass {
 
         roleType_ = "";
 
-        source_ = "";
-
-        sourceId_ = 0L;
+        tenantId_ = 0L;
 
         if (paginationBuilder_ == null) {
           pagination_ = null;
@@ -19192,8 +19337,7 @@ public final class UserOuterClass {
         result.roleId_ = roleId_;
         result.roleName_ = roleName_;
         result.roleType_ = roleType_;
-        result.source_ = source_;
-        result.sourceId_ = sourceId_;
+        result.tenantId_ = tenantId_;
         if (paginationBuilder_ == null) {
           result.pagination_ = pagination_;
         } else {
@@ -19261,12 +19405,8 @@ public final class UserOuterClass {
           roleType_ = other.roleType_;
           onChanged();
         }
-        if (!other.getSource().isEmpty()) {
-          source_ = other.source_;
-          onChanged();
-        }
-        if (other.getSourceId() != 0L) {
-          setSourceId(other.getSourceId());
+        if (other.getTenantId() != 0L) {
+          setTenantId(other.getTenantId());
         }
         if (other.hasPagination()) {
           mergePagination(other.getPagination());
@@ -19421,7 +19561,7 @@ public final class UserOuterClass {
 
       private long roleId_ ;
       /**
-       * <code>int64 Role_id = 2;</code>
+       * <code>int64 role_id = 2;</code>
        * @return The roleId.
        */
       @java.lang.Override
@@ -19429,7 +19569,7 @@ public final class UserOuterClass {
         return roleId_;
       }
       /**
-       * <code>int64 Role_id = 2;</code>
+       * <code>int64 role_id = 2;</code>
        * @param value The roleId to set.
        * @return This builder for chaining.
        */
@@ -19440,7 +19580,7 @@ public final class UserOuterClass {
         return this;
       }
       /**
-       * <code>int64 Role_id = 2;</code>
+       * <code>int64 role_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearRoleId() {
@@ -19452,7 +19592,11 @@ public final class UserOuterClass {
 
       private java.lang.Object roleName_ = "";
       /**
-       * <code>string Role_name = 3;</code>
+       * <pre>
+       * 角色名称，模糊查找
+       * </pre>
+       *
+       * <code>string role_name = 3;</code>
        * @return The roleName.
        */
       public java.lang.String getRoleName() {
@@ -19468,7 +19612,11 @@ public final class UserOuterClass {
         }
       }
       /**
-       * <code>string Role_name = 3;</code>
+       * <pre>
+       * 角色名称，模糊查找
+       * </pre>
+       *
+       * <code>string role_name = 3;</code>
        * @return The bytes for roleName.
        */
       public com.google.protobuf.ByteString
@@ -19485,7 +19633,11 @@ public final class UserOuterClass {
         }
       }
       /**
-       * <code>string Role_name = 3;</code>
+       * <pre>
+       * 角色名称，模糊查找
+       * </pre>
+       *
+       * <code>string role_name = 3;</code>
        * @param value The roleName to set.
        * @return This builder for chaining.
        */
@@ -19500,7 +19652,11 @@ public final class UserOuterClass {
         return this;
       }
       /**
-       * <code>string Role_name = 3;</code>
+       * <pre>
+       * 角色名称，模糊查找
+       * </pre>
+       *
+       * <code>string role_name = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearRoleName() {
@@ -19510,7 +19666,11 @@ public final class UserOuterClass {
         return this;
       }
       /**
-       * <code>string Role_name = 3;</code>
+       * <pre>
+       * 角色名称，模糊查找
+       * </pre>
+       *
+       * <code>string role_name = 3;</code>
        * @param value The bytes for roleName to set.
        * @return This builder for chaining.
        */
@@ -19528,7 +19688,11 @@ public final class UserOuterClass {
 
       private java.lang.Object roleType_ = "";
       /**
-       * <code>string Role_type = 4;</code>
+       * <pre>
+       * 角色类型， 支持build-in，跟 user-defined
+       * </pre>
+       *
+       * <code>string role_type = 4;</code>
        * @return The roleType.
        */
       public java.lang.String getRoleType() {
@@ -19544,7 +19708,11 @@ public final class UserOuterClass {
         }
       }
       /**
-       * <code>string Role_type = 4;</code>
+       * <pre>
+       * 角色类型， 支持build-in，跟 user-defined
+       * </pre>
+       *
+       * <code>string role_type = 4;</code>
        * @return The bytes for roleType.
        */
       public com.google.protobuf.ByteString
@@ -19561,7 +19729,11 @@ public final class UserOuterClass {
         }
       }
       /**
-       * <code>string Role_type = 4;</code>
+       * <pre>
+       * 角色类型， 支持build-in，跟 user-defined
+       * </pre>
+       *
+       * <code>string role_type = 4;</code>
        * @param value The roleType to set.
        * @return This builder for chaining.
        */
@@ -19576,7 +19748,11 @@ public final class UserOuterClass {
         return this;
       }
       /**
-       * <code>string Role_type = 4;</code>
+       * <pre>
+       * 角色类型， 支持build-in，跟 user-defined
+       * </pre>
+       *
+       * <code>string role_type = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearRoleType() {
@@ -19586,7 +19762,11 @@ public final class UserOuterClass {
         return this;
       }
       /**
-       * <code>string Role_type = 4;</code>
+       * <pre>
+       * 角色类型， 支持build-in，跟 user-defined
+       * </pre>
+       *
+       * <code>string role_type = 4;</code>
        * @param value The bytes for roleType to set.
        * @return This builder for chaining.
        */
@@ -19602,109 +19782,48 @@ public final class UserOuterClass {
         return this;
       }
 
-      private java.lang.Object source_ = "";
+      private long tenantId_ ;
       /**
-       * <code>string source = 5;</code>
-       * @return The source.
-       */
-      public java.lang.String getSource() {
-        java.lang.Object ref = source_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          source_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string source = 5;</code>
-       * @return The bytes for source.
-       */
-      public com.google.protobuf.ByteString
-          getSourceBytes() {
-        java.lang.Object ref = source_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          source_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string source = 5;</code>
-       * @param value The source to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSource(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        source_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string source = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSource() {
-        
-        source_ = getDefaultInstance().getSource();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string source = 5;</code>
-       * @param value The bytes for source to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSourceBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        source_ = value;
-        onChanged();
-        return this;
-      }
-
-      private long sourceId_ ;
-      /**
-       * <code>int64 source_id = 6;</code>
-       * @return The sourceId.
+       * <pre>
+       *  string source = 5;  // 对应的角色来源
+       *  int64 source_id =6;
+       * </pre>
+       *
+       * <code>int64 tenant_id = 7;</code>
+       * @return The tenantId.
        */
       @java.lang.Override
-      public long getSourceId() {
-        return sourceId_;
+      public long getTenantId() {
+        return tenantId_;
       }
       /**
-       * <code>int64 source_id = 6;</code>
-       * @param value The sourceId to set.
+       * <pre>
+       *  string source = 5;  // 对应的角色来源
+       *  int64 source_id =6;
+       * </pre>
+       *
+       * <code>int64 tenant_id = 7;</code>
+       * @param value The tenantId to set.
        * @return This builder for chaining.
        */
-      public Builder setSourceId(long value) {
+      public Builder setTenantId(long value) {
         
-        sourceId_ = value;
+        tenantId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int64 source_id = 6;</code>
+       * <pre>
+       *  string source = 5;  // 对应的角色来源
+       *  int64 source_id =6;
+       * </pre>
+       *
+       * <code>int64 tenant_id = 7;</code>
        * @return This builder for chaining.
        */
-      public Builder clearSourceId() {
+      public Builder clearTenantId() {
         
-        sourceId_ = 0L;
+        tenantId_ = 0L;
         onChanged();
         return this;
       }
@@ -24257,27 +24376,33 @@ public final class UserOuterClass {
     base.Base.BaseRequestOrBuilder getBaseRequestOrBuilder();
 
     /**
-     * <code>int64 role_id = 2;</code>
-     * @return The roleId.
+     * <pre>
+     * 这个role_permission_id在list_role里头有返回，是role跟permission 映射起来的唯一id
+     * </pre>
+     *
+     * <code>repeated int64 role_permission_id = 3;</code>
+     * @return A list containing the rolePermissionId.
      */
-    long getRoleId();
-
+    java.util.List<java.lang.Long> getRolePermissionIdList();
     /**
-     * <code>repeated int64 permission_id = 3;</code>
-     * @return A list containing the permissionId.
+     * <pre>
+     * 这个role_permission_id在list_role里头有返回，是role跟permission 映射起来的唯一id
+     * </pre>
+     *
+     * <code>repeated int64 role_permission_id = 3;</code>
+     * @return The count of rolePermissionId.
      */
-    java.util.List<java.lang.Long> getPermissionIdList();
+    int getRolePermissionIdCount();
     /**
-     * <code>repeated int64 permission_id = 3;</code>
-     * @return The count of permissionId.
-     */
-    int getPermissionIdCount();
-    /**
-     * <code>repeated int64 permission_id = 3;</code>
+     * <pre>
+     * 这个role_permission_id在list_role里头有返回，是role跟permission 映射起来的唯一id
+     * </pre>
+     *
+     * <code>repeated int64 role_permission_id = 3;</code>
      * @param index The index of the element to return.
-     * @return The permissionId at the given index.
+     * @return The rolePermissionId at the given index.
      */
-    long getPermissionId(int index);
+    long getRolePermissionId(int index);
   }
   /**
    * Protobuf type {@code glory_api.RemoveRolePermissionRequest}
@@ -24292,7 +24417,7 @@ public final class UserOuterClass {
       super(builder);
     }
     private RemoveRolePermissionRequest() {
-      permissionId_ = emptyLongList();
+      rolePermissionId_ = emptyLongList();
     }
 
     @java.lang.Override
@@ -24339,28 +24464,23 @@ public final class UserOuterClass {
 
               break;
             }
-            case 16: {
-
-              roleId_ = input.readInt64();
-              break;
-            }
             case 24: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                permissionId_ = newLongList();
+                rolePermissionId_ = newLongList();
                 mutable_bitField0_ |= 0x00000001;
               }
-              permissionId_.addLong(input.readInt64());
+              rolePermissionId_.addLong(input.readInt64());
               break;
             }
             case 26: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                permissionId_ = newLongList();
+                rolePermissionId_ = newLongList();
                 mutable_bitField0_ |= 0x00000001;
               }
               while (input.getBytesUntilLimit() > 0) {
-                permissionId_.addLong(input.readInt64());
+                rolePermissionId_.addLong(input.readInt64());
               }
               input.popLimit(limit);
               break;
@@ -24381,7 +24501,7 @@ public final class UserOuterClass {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          permissionId_.makeImmutable(); // C
+          rolePermissionId_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -24426,44 +24546,45 @@ public final class UserOuterClass {
       return getBaseRequest();
     }
 
-    public static final int ROLE_ID_FIELD_NUMBER = 2;
-    private long roleId_;
+    public static final int ROLE_PERMISSION_ID_FIELD_NUMBER = 3;
+    private com.google.protobuf.Internal.LongList rolePermissionId_;
     /**
-     * <code>int64 role_id = 2;</code>
-     * @return The roleId.
-     */
-    @java.lang.Override
-    public long getRoleId() {
-      return roleId_;
-    }
-
-    public static final int PERMISSION_ID_FIELD_NUMBER = 3;
-    private com.google.protobuf.Internal.LongList permissionId_;
-    /**
-     * <code>repeated int64 permission_id = 3;</code>
-     * @return A list containing the permissionId.
+     * <pre>
+     * 这个role_permission_id在list_role里头有返回，是role跟permission 映射起来的唯一id
+     * </pre>
+     *
+     * <code>repeated int64 role_permission_id = 3;</code>
+     * @return A list containing the rolePermissionId.
      */
     @java.lang.Override
     public java.util.List<java.lang.Long>
-        getPermissionIdList() {
-      return permissionId_;
+        getRolePermissionIdList() {
+      return rolePermissionId_;
     }
     /**
-     * <code>repeated int64 permission_id = 3;</code>
-     * @return The count of permissionId.
+     * <pre>
+     * 这个role_permission_id在list_role里头有返回，是role跟permission 映射起来的唯一id
+     * </pre>
+     *
+     * <code>repeated int64 role_permission_id = 3;</code>
+     * @return The count of rolePermissionId.
      */
-    public int getPermissionIdCount() {
-      return permissionId_.size();
+    public int getRolePermissionIdCount() {
+      return rolePermissionId_.size();
     }
     /**
-     * <code>repeated int64 permission_id = 3;</code>
+     * <pre>
+     * 这个role_permission_id在list_role里头有返回，是role跟permission 映射起来的唯一id
+     * </pre>
+     *
+     * <code>repeated int64 role_permission_id = 3;</code>
      * @param index The index of the element to return.
-     * @return The permissionId at the given index.
+     * @return The rolePermissionId at the given index.
      */
-    public long getPermissionId(int index) {
-      return permissionId_.getLong(index);
+    public long getRolePermissionId(int index) {
+      return rolePermissionId_.getLong(index);
     }
-    private int permissionIdMemoizedSerializedSize = -1;
+    private int rolePermissionIdMemoizedSerializedSize = -1;
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -24483,15 +24604,12 @@ public final class UserOuterClass {
       if (baseRequest_ != null) {
         output.writeMessage(1, getBaseRequest());
       }
-      if (roleId_ != 0L) {
-        output.writeInt64(2, roleId_);
-      }
-      if (getPermissionIdList().size() > 0) {
+      if (getRolePermissionIdList().size() > 0) {
         output.writeUInt32NoTag(26);
-        output.writeUInt32NoTag(permissionIdMemoizedSerializedSize);
+        output.writeUInt32NoTag(rolePermissionIdMemoizedSerializedSize);
       }
-      for (int i = 0; i < permissionId_.size(); i++) {
-        output.writeInt64NoTag(permissionId_.getLong(i));
+      for (int i = 0; i < rolePermissionId_.size(); i++) {
+        output.writeInt64NoTag(rolePermissionId_.getLong(i));
       }
       unknownFields.writeTo(output);
     }
@@ -24506,23 +24624,19 @@ public final class UserOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getBaseRequest());
       }
-      if (roleId_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, roleId_);
-      }
       {
         int dataSize = 0;
-        for (int i = 0; i < permissionId_.size(); i++) {
+        for (int i = 0; i < rolePermissionId_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeInt64SizeNoTag(permissionId_.getLong(i));
+            .computeInt64SizeNoTag(rolePermissionId_.getLong(i));
         }
         size += dataSize;
-        if (!getPermissionIdList().isEmpty()) {
+        if (!getRolePermissionIdList().isEmpty()) {
           size += 1;
           size += com.google.protobuf.CodedOutputStream
               .computeInt32SizeNoTag(dataSize);
         }
-        permissionIdMemoizedSerializedSize = dataSize;
+        rolePermissionIdMemoizedSerializedSize = dataSize;
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -24544,10 +24658,8 @@ public final class UserOuterClass {
         if (!getBaseRequest()
             .equals(other.getBaseRequest())) return false;
       }
-      if (getRoleId()
-          != other.getRoleId()) return false;
-      if (!getPermissionIdList()
-          .equals(other.getPermissionIdList())) return false;
+      if (!getRolePermissionIdList()
+          .equals(other.getRolePermissionIdList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -24563,12 +24675,9 @@ public final class UserOuterClass {
         hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
         hash = (53 * hash) + getBaseRequest().hashCode();
       }
-      hash = (37 * hash) + ROLE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getRoleId());
-      if (getPermissionIdCount() > 0) {
-        hash = (37 * hash) + PERMISSION_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getPermissionIdList().hashCode();
+      if (getRolePermissionIdCount() > 0) {
+        hash = (37 * hash) + ROLE_PERMISSION_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getRolePermissionIdList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -24709,9 +24818,7 @@ public final class UserOuterClass {
           baseRequest_ = null;
           baseRequestBuilder_ = null;
         }
-        roleId_ = 0L;
-
-        permissionId_ = emptyLongList();
+        rolePermissionId_ = emptyLongList();
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
@@ -24745,12 +24852,11 @@ public final class UserOuterClass {
         } else {
           result.baseRequest_ = baseRequestBuilder_.build();
         }
-        result.roleId_ = roleId_;
         if (((bitField0_ & 0x00000001) != 0)) {
-          permissionId_.makeImmutable();
+          rolePermissionId_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.permissionId_ = permissionId_;
+        result.rolePermissionId_ = rolePermissionId_;
         onBuilt();
         return result;
       }
@@ -24802,16 +24908,13 @@ public final class UserOuterClass {
         if (other.hasBaseRequest()) {
           mergeBaseRequest(other.getBaseRequest());
         }
-        if (other.getRoleId() != 0L) {
-          setRoleId(other.getRoleId());
-        }
-        if (!other.permissionId_.isEmpty()) {
-          if (permissionId_.isEmpty()) {
-            permissionId_ = other.permissionId_;
+        if (!other.rolePermissionId_.isEmpty()) {
+          if (rolePermissionId_.isEmpty()) {
+            rolePermissionId_ = other.rolePermissionId_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensurePermissionIdIsMutable();
-            permissionId_.addAll(other.permissionId_);
+            ensureRolePermissionIdIsMutable();
+            rolePermissionId_.addAll(other.rolePermissionId_);
           }
           onChanged();
         }
@@ -24964,111 +25067,108 @@ public final class UserOuterClass {
         return baseRequestBuilder_;
       }
 
-      private long roleId_ ;
-      /**
-       * <code>int64 role_id = 2;</code>
-       * @return The roleId.
-       */
-      @java.lang.Override
-      public long getRoleId() {
-        return roleId_;
-      }
-      /**
-       * <code>int64 role_id = 2;</code>
-       * @param value The roleId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRoleId(long value) {
-        
-        roleId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int64 role_id = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRoleId() {
-        
-        roleId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Internal.LongList permissionId_ = emptyLongList();
-      private void ensurePermissionIdIsMutable() {
+      private com.google.protobuf.Internal.LongList rolePermissionId_ = emptyLongList();
+      private void ensureRolePermissionIdIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          permissionId_ = mutableCopy(permissionId_);
+          rolePermissionId_ = mutableCopy(rolePermissionId_);
           bitField0_ |= 0x00000001;
          }
       }
       /**
-       * <code>repeated int64 permission_id = 3;</code>
-       * @return A list containing the permissionId.
+       * <pre>
+       * 这个role_permission_id在list_role里头有返回，是role跟permission 映射起来的唯一id
+       * </pre>
+       *
+       * <code>repeated int64 role_permission_id = 3;</code>
+       * @return A list containing the rolePermissionId.
        */
       public java.util.List<java.lang.Long>
-          getPermissionIdList() {
+          getRolePermissionIdList() {
         return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(permissionId_) : permissionId_;
+                 java.util.Collections.unmodifiableList(rolePermissionId_) : rolePermissionId_;
       }
       /**
-       * <code>repeated int64 permission_id = 3;</code>
-       * @return The count of permissionId.
+       * <pre>
+       * 这个role_permission_id在list_role里头有返回，是role跟permission 映射起来的唯一id
+       * </pre>
+       *
+       * <code>repeated int64 role_permission_id = 3;</code>
+       * @return The count of rolePermissionId.
        */
-      public int getPermissionIdCount() {
-        return permissionId_.size();
+      public int getRolePermissionIdCount() {
+        return rolePermissionId_.size();
       }
       /**
-       * <code>repeated int64 permission_id = 3;</code>
+       * <pre>
+       * 这个role_permission_id在list_role里头有返回，是role跟permission 映射起来的唯一id
+       * </pre>
+       *
+       * <code>repeated int64 role_permission_id = 3;</code>
        * @param index The index of the element to return.
-       * @return The permissionId at the given index.
+       * @return The rolePermissionId at the given index.
        */
-      public long getPermissionId(int index) {
-        return permissionId_.getLong(index);
+      public long getRolePermissionId(int index) {
+        return rolePermissionId_.getLong(index);
       }
       /**
-       * <code>repeated int64 permission_id = 3;</code>
+       * <pre>
+       * 这个role_permission_id在list_role里头有返回，是role跟permission 映射起来的唯一id
+       * </pre>
+       *
+       * <code>repeated int64 role_permission_id = 3;</code>
        * @param index The index to set the value at.
-       * @param value The permissionId to set.
+       * @param value The rolePermissionId to set.
        * @return This builder for chaining.
        */
-      public Builder setPermissionId(
+      public Builder setRolePermissionId(
           int index, long value) {
-        ensurePermissionIdIsMutable();
-        permissionId_.setLong(index, value);
+        ensureRolePermissionIdIsMutable();
+        rolePermissionId_.setLong(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated int64 permission_id = 3;</code>
-       * @param value The permissionId to add.
+       * <pre>
+       * 这个role_permission_id在list_role里头有返回，是role跟permission 映射起来的唯一id
+       * </pre>
+       *
+       * <code>repeated int64 role_permission_id = 3;</code>
+       * @param value The rolePermissionId to add.
        * @return This builder for chaining.
        */
-      public Builder addPermissionId(long value) {
-        ensurePermissionIdIsMutable();
-        permissionId_.addLong(value);
+      public Builder addRolePermissionId(long value) {
+        ensureRolePermissionIdIsMutable();
+        rolePermissionId_.addLong(value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated int64 permission_id = 3;</code>
-       * @param values The permissionId to add.
+       * <pre>
+       * 这个role_permission_id在list_role里头有返回，是role跟permission 映射起来的唯一id
+       * </pre>
+       *
+       * <code>repeated int64 role_permission_id = 3;</code>
+       * @param values The rolePermissionId to add.
        * @return This builder for chaining.
        */
-      public Builder addAllPermissionId(
+      public Builder addAllRolePermissionId(
           java.lang.Iterable<? extends java.lang.Long> values) {
-        ensurePermissionIdIsMutable();
+        ensureRolePermissionIdIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, permissionId_);
+            values, rolePermissionId_);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated int64 permission_id = 3;</code>
+       * <pre>
+       * 这个role_permission_id在list_role里头有返回，是role跟permission 映射起来的唯一id
+       * </pre>
+       *
+       * <code>repeated int64 role_permission_id = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearPermissionId() {
-        permissionId_ = emptyLongList();
+      public Builder clearRolePermissionId() {
+        rolePermissionId_ = emptyLongList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
@@ -27238,6 +27338,6959 @@ public final class UserOuterClass {
 
   }
 
+  public interface ResourceOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:glory_api.Resource)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int64 resource_id = 2;</code>
+     * @return The resourceId.
+     */
+    long getResourceId();
+
+    /**
+     * <code>string resource_name = 3;</code>
+     * @return The resourceName.
+     */
+    java.lang.String getResourceName();
+    /**
+     * <code>string resource_name = 3;</code>
+     * @return The bytes for resourceName.
+     */
+    com.google.protobuf.ByteString
+        getResourceNameBytes();
+
+    /**
+     * <pre>
+     * 支持 school, major_live, business_system, page_permission， 后面可能会增加
+     * </pre>
+     *
+     * <code>string resource_type = 4;</code>
+     * @return The resourceType.
+     */
+    java.lang.String getResourceType();
+    /**
+     * <pre>
+     * 支持 school, major_live, business_system, page_permission， 后面可能会增加
+     * </pre>
+     *
+     * <code>string resource_type = 4;</code>
+     * @return The bytes for resourceType.
+     */
+    com.google.protobuf.ByteString
+        getResourceTypeBytes();
+
+    /**
+     * <pre>
+     * 源表，有config, school, major, class，后面会增加
+     * </pre>
+     *
+     * <code>string source = 5;</code>
+     * @return The source.
+     */
+    java.lang.String getSource();
+    /**
+     * <pre>
+     * 源表，有config, school, major, class，后面会增加
+     * </pre>
+     *
+     * <code>string source = 5;</code>
+     * @return The bytes for source.
+     */
+    com.google.protobuf.ByteString
+        getSourceBytes();
+
+    /**
+     * <pre>
+     * 源表记录的id
+     * </pre>
+     *
+     * <code>int64 source_id = 6;</code>
+     * @return The sourceId.
+     */
+    long getSourceId();
+
+    /**
+     * <pre>
+     * 学校的id
+     * </pre>
+     *
+     * <code>int64 tenant_id = 7;</code>
+     * @return The tenantId.
+     */
+    long getTenantId();
+  }
+  /**
+   * Protobuf type {@code glory_api.Resource}
+   */
+  public static final class Resource extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:glory_api.Resource)
+      ResourceOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Resource.newBuilder() to construct.
+    private Resource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Resource() {
+      resourceName_ = "";
+      resourceType_ = "";
+      source_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Resource();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Resource(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+
+              resourceId_ = input.readInt64();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              resourceName_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              resourceType_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              source_ = s;
+              break;
+            }
+            case 48: {
+
+              sourceId_ = input.readInt64();
+              break;
+            }
+            case 56: {
+
+              tenantId_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return glory_api.UserOuterClass.internal_static_glory_api_Resource_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return glory_api.UserOuterClass.internal_static_glory_api_Resource_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              glory_api.UserOuterClass.Resource.class, glory_api.UserOuterClass.Resource.Builder.class);
+    }
+
+    public static final int RESOURCE_ID_FIELD_NUMBER = 2;
+    private long resourceId_;
+    /**
+     * <code>int64 resource_id = 2;</code>
+     * @return The resourceId.
+     */
+    @java.lang.Override
+    public long getResourceId() {
+      return resourceId_;
+    }
+
+    public static final int RESOURCE_NAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object resourceName_;
+    /**
+     * <code>string resource_name = 3;</code>
+     * @return The resourceName.
+     */
+    @java.lang.Override
+    public java.lang.String getResourceName() {
+      java.lang.Object ref = resourceName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        resourceName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string resource_name = 3;</code>
+     * @return The bytes for resourceName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getResourceNameBytes() {
+      java.lang.Object ref = resourceName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        resourceName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RESOURCE_TYPE_FIELD_NUMBER = 4;
+    private volatile java.lang.Object resourceType_;
+    /**
+     * <pre>
+     * 支持 school, major_live, business_system, page_permission， 后面可能会增加
+     * </pre>
+     *
+     * <code>string resource_type = 4;</code>
+     * @return The resourceType.
+     */
+    @java.lang.Override
+    public java.lang.String getResourceType() {
+      java.lang.Object ref = resourceType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        resourceType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 支持 school, major_live, business_system, page_permission， 后面可能会增加
+     * </pre>
+     *
+     * <code>string resource_type = 4;</code>
+     * @return The bytes for resourceType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getResourceTypeBytes() {
+      java.lang.Object ref = resourceType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        resourceType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SOURCE_FIELD_NUMBER = 5;
+    private volatile java.lang.Object source_;
+    /**
+     * <pre>
+     * 源表，有config, school, major, class，后面会增加
+     * </pre>
+     *
+     * <code>string source = 5;</code>
+     * @return The source.
+     */
+    @java.lang.Override
+    public java.lang.String getSource() {
+      java.lang.Object ref = source_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        source_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 源表，有config, school, major, class，后面会增加
+     * </pre>
+     *
+     * <code>string source = 5;</code>
+     * @return The bytes for source.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSourceBytes() {
+      java.lang.Object ref = source_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        source_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SOURCE_ID_FIELD_NUMBER = 6;
+    private long sourceId_;
+    /**
+     * <pre>
+     * 源表记录的id
+     * </pre>
+     *
+     * <code>int64 source_id = 6;</code>
+     * @return The sourceId.
+     */
+    @java.lang.Override
+    public long getSourceId() {
+      return sourceId_;
+    }
+
+    public static final int TENANT_ID_FIELD_NUMBER = 7;
+    private long tenantId_;
+    /**
+     * <pre>
+     * 学校的id
+     * </pre>
+     *
+     * <code>int64 tenant_id = 7;</code>
+     * @return The tenantId.
+     */
+    @java.lang.Override
+    public long getTenantId() {
+      return tenantId_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (resourceId_ != 0L) {
+        output.writeInt64(2, resourceId_);
+      }
+      if (!getResourceNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, resourceName_);
+      }
+      if (!getResourceTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, resourceType_);
+      }
+      if (!getSourceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, source_);
+      }
+      if (sourceId_ != 0L) {
+        output.writeInt64(6, sourceId_);
+      }
+      if (tenantId_ != 0L) {
+        output.writeInt64(7, tenantId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (resourceId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, resourceId_);
+      }
+      if (!getResourceNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, resourceName_);
+      }
+      if (!getResourceTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, resourceType_);
+      }
+      if (!getSourceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, source_);
+      }
+      if (sourceId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(6, sourceId_);
+      }
+      if (tenantId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(7, tenantId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof glory_api.UserOuterClass.Resource)) {
+        return super.equals(obj);
+      }
+      glory_api.UserOuterClass.Resource other = (glory_api.UserOuterClass.Resource) obj;
+
+      if (getResourceId()
+          != other.getResourceId()) return false;
+      if (!getResourceName()
+          .equals(other.getResourceName())) return false;
+      if (!getResourceType()
+          .equals(other.getResourceType())) return false;
+      if (!getSource()
+          .equals(other.getSource())) return false;
+      if (getSourceId()
+          != other.getSourceId()) return false;
+      if (getTenantId()
+          != other.getTenantId()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + RESOURCE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getResourceId());
+      hash = (37 * hash) + RESOURCE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getResourceName().hashCode();
+      hash = (37 * hash) + RESOURCE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getResourceType().hashCode();
+      hash = (37 * hash) + SOURCE_FIELD_NUMBER;
+      hash = (53 * hash) + getSource().hashCode();
+      hash = (37 * hash) + SOURCE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getSourceId());
+      hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTenantId());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static glory_api.UserOuterClass.Resource parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.UserOuterClass.Resource parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.Resource parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.UserOuterClass.Resource parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.Resource parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.UserOuterClass.Resource parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.Resource parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.UserOuterClass.Resource parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.Resource parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static glory_api.UserOuterClass.Resource parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.Resource parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.UserOuterClass.Resource parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(glory_api.UserOuterClass.Resource prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code glory_api.Resource}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:glory_api.Resource)
+        glory_api.UserOuterClass.ResourceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return glory_api.UserOuterClass.internal_static_glory_api_Resource_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return glory_api.UserOuterClass.internal_static_glory_api_Resource_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                glory_api.UserOuterClass.Resource.class, glory_api.UserOuterClass.Resource.Builder.class);
+      }
+
+      // Construct using glory_api.UserOuterClass.Resource.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        resourceId_ = 0L;
+
+        resourceName_ = "";
+
+        resourceType_ = "";
+
+        source_ = "";
+
+        sourceId_ = 0L;
+
+        tenantId_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return glory_api.UserOuterClass.internal_static_glory_api_Resource_descriptor;
+      }
+
+      @java.lang.Override
+      public glory_api.UserOuterClass.Resource getDefaultInstanceForType() {
+        return glory_api.UserOuterClass.Resource.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public glory_api.UserOuterClass.Resource build() {
+        glory_api.UserOuterClass.Resource result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public glory_api.UserOuterClass.Resource buildPartial() {
+        glory_api.UserOuterClass.Resource result = new glory_api.UserOuterClass.Resource(this);
+        result.resourceId_ = resourceId_;
+        result.resourceName_ = resourceName_;
+        result.resourceType_ = resourceType_;
+        result.source_ = source_;
+        result.sourceId_ = sourceId_;
+        result.tenantId_ = tenantId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof glory_api.UserOuterClass.Resource) {
+          return mergeFrom((glory_api.UserOuterClass.Resource)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(glory_api.UserOuterClass.Resource other) {
+        if (other == glory_api.UserOuterClass.Resource.getDefaultInstance()) return this;
+        if (other.getResourceId() != 0L) {
+          setResourceId(other.getResourceId());
+        }
+        if (!other.getResourceName().isEmpty()) {
+          resourceName_ = other.resourceName_;
+          onChanged();
+        }
+        if (!other.getResourceType().isEmpty()) {
+          resourceType_ = other.resourceType_;
+          onChanged();
+        }
+        if (!other.getSource().isEmpty()) {
+          source_ = other.source_;
+          onChanged();
+        }
+        if (other.getSourceId() != 0L) {
+          setSourceId(other.getSourceId());
+        }
+        if (other.getTenantId() != 0L) {
+          setTenantId(other.getTenantId());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        glory_api.UserOuterClass.Resource parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (glory_api.UserOuterClass.Resource) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long resourceId_ ;
+      /**
+       * <code>int64 resource_id = 2;</code>
+       * @return The resourceId.
+       */
+      @java.lang.Override
+      public long getResourceId() {
+        return resourceId_;
+      }
+      /**
+       * <code>int64 resource_id = 2;</code>
+       * @param value The resourceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResourceId(long value) {
+        
+        resourceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 resource_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearResourceId() {
+        
+        resourceId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object resourceName_ = "";
+      /**
+       * <code>string resource_name = 3;</code>
+       * @return The resourceName.
+       */
+      public java.lang.String getResourceName() {
+        java.lang.Object ref = resourceName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          resourceName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string resource_name = 3;</code>
+       * @return The bytes for resourceName.
+       */
+      public com.google.protobuf.ByteString
+          getResourceNameBytes() {
+        java.lang.Object ref = resourceName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          resourceName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string resource_name = 3;</code>
+       * @param value The resourceName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResourceName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        resourceName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string resource_name = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearResourceName() {
+        
+        resourceName_ = getDefaultInstance().getResourceName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string resource_name = 3;</code>
+       * @param value The bytes for resourceName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResourceNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        resourceName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object resourceType_ = "";
+      /**
+       * <pre>
+       * 支持 school, major_live, business_system, page_permission， 后面可能会增加
+       * </pre>
+       *
+       * <code>string resource_type = 4;</code>
+       * @return The resourceType.
+       */
+      public java.lang.String getResourceType() {
+        java.lang.Object ref = resourceType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          resourceType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 支持 school, major_live, business_system, page_permission， 后面可能会增加
+       * </pre>
+       *
+       * <code>string resource_type = 4;</code>
+       * @return The bytes for resourceType.
+       */
+      public com.google.protobuf.ByteString
+          getResourceTypeBytes() {
+        java.lang.Object ref = resourceType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          resourceType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 支持 school, major_live, business_system, page_permission， 后面可能会增加
+       * </pre>
+       *
+       * <code>string resource_type = 4;</code>
+       * @param value The resourceType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResourceType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        resourceType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 支持 school, major_live, business_system, page_permission， 后面可能会增加
+       * </pre>
+       *
+       * <code>string resource_type = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearResourceType() {
+        
+        resourceType_ = getDefaultInstance().getResourceType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 支持 school, major_live, business_system, page_permission， 后面可能会增加
+       * </pre>
+       *
+       * <code>string resource_type = 4;</code>
+       * @param value The bytes for resourceType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResourceTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        resourceType_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object source_ = "";
+      /**
+       * <pre>
+       * 源表，有config, school, major, class，后面会增加
+       * </pre>
+       *
+       * <code>string source = 5;</code>
+       * @return The source.
+       */
+      public java.lang.String getSource() {
+        java.lang.Object ref = source_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          source_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 源表，有config, school, major, class，后面会增加
+       * </pre>
+       *
+       * <code>string source = 5;</code>
+       * @return The bytes for source.
+       */
+      public com.google.protobuf.ByteString
+          getSourceBytes() {
+        java.lang.Object ref = source_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          source_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 源表，有config, school, major, class，后面会增加
+       * </pre>
+       *
+       * <code>string source = 5;</code>
+       * @param value The source to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSource(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        source_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 源表，有config, school, major, class，后面会增加
+       * </pre>
+       *
+       * <code>string source = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSource() {
+        
+        source_ = getDefaultInstance().getSource();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 源表，有config, school, major, class，后面会增加
+       * </pre>
+       *
+       * <code>string source = 5;</code>
+       * @param value The bytes for source to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSourceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        source_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long sourceId_ ;
+      /**
+       * <pre>
+       * 源表记录的id
+       * </pre>
+       *
+       * <code>int64 source_id = 6;</code>
+       * @return The sourceId.
+       */
+      @java.lang.Override
+      public long getSourceId() {
+        return sourceId_;
+      }
+      /**
+       * <pre>
+       * 源表记录的id
+       * </pre>
+       *
+       * <code>int64 source_id = 6;</code>
+       * @param value The sourceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSourceId(long value) {
+        
+        sourceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 源表记录的id
+       * </pre>
+       *
+       * <code>int64 source_id = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSourceId() {
+        
+        sourceId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long tenantId_ ;
+      /**
+       * <pre>
+       * 学校的id
+       * </pre>
+       *
+       * <code>int64 tenant_id = 7;</code>
+       * @return The tenantId.
+       */
+      @java.lang.Override
+      public long getTenantId() {
+        return tenantId_;
+      }
+      /**
+       * <pre>
+       * 学校的id
+       * </pre>
+       *
+       * <code>int64 tenant_id = 7;</code>
+       * @param value The tenantId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTenantId(long value) {
+        
+        tenantId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 学校的id
+       * </pre>
+       *
+       * <code>int64 tenant_id = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTenantId() {
+        
+        tenantId_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:glory_api.Resource)
+    }
+
+    // @@protoc_insertion_point(class_scope:glory_api.Resource)
+    private static final glory_api.UserOuterClass.Resource DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new glory_api.UserOuterClass.Resource();
+    }
+
+    public static glory_api.UserOuterClass.Resource getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Resource>
+        PARSER = new com.google.protobuf.AbstractParser<Resource>() {
+      @java.lang.Override
+      public Resource parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Resource(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Resource> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Resource> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public glory_api.UserOuterClass.Resource getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ListResourceRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:glory_api.ListResourceRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     * @return Whether the baseRequest field is set.
+     */
+    boolean hasBaseRequest();
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     * @return The baseRequest.
+     */
+    base.Base.BaseRequest getBaseRequest();
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     */
+    base.Base.BaseRequestOrBuilder getBaseRequestOrBuilder();
+
+    /**
+     * <code>.glory_api.Resource resource = 2;</code>
+     * @return Whether the resource field is set.
+     */
+    boolean hasResource();
+    /**
+     * <code>.glory_api.Resource resource = 2;</code>
+     * @return The resource.
+     */
+    glory_api.UserOuterClass.Resource getResource();
+    /**
+     * <code>.glory_api.Resource resource = 2;</code>
+     */
+    glory_api.UserOuterClass.ResourceOrBuilder getResourceOrBuilder();
+
+    /**
+     * <code>.base.PaginationRequest pagination = 100;</code>
+     * @return Whether the pagination field is set.
+     */
+    boolean hasPagination();
+    /**
+     * <code>.base.PaginationRequest pagination = 100;</code>
+     * @return The pagination.
+     */
+    base.Base.PaginationRequest getPagination();
+    /**
+     * <code>.base.PaginationRequest pagination = 100;</code>
+     */
+    base.Base.PaginationRequestOrBuilder getPaginationOrBuilder();
+  }
+  /**
+   * Protobuf type {@code glory_api.ListResourceRequest}
+   */
+  public static final class ListResourceRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:glory_api.ListResourceRequest)
+      ListResourceRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ListResourceRequest.newBuilder() to construct.
+    private ListResourceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ListResourceRequest() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ListResourceRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ListResourceRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              base.Base.BaseRequest.Builder subBuilder = null;
+              if (baseRequest_ != null) {
+                subBuilder = baseRequest_.toBuilder();
+              }
+              baseRequest_ = input.readMessage(base.Base.BaseRequest.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(baseRequest_);
+                baseRequest_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              glory_api.UserOuterClass.Resource.Builder subBuilder = null;
+              if (resource_ != null) {
+                subBuilder = resource_.toBuilder();
+              }
+              resource_ = input.readMessage(glory_api.UserOuterClass.Resource.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(resource_);
+                resource_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 802: {
+              base.Base.PaginationRequest.Builder subBuilder = null;
+              if (pagination_ != null) {
+                subBuilder = pagination_.toBuilder();
+              }
+              pagination_ = input.readMessage(base.Base.PaginationRequest.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(pagination_);
+                pagination_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return glory_api.UserOuterClass.internal_static_glory_api_ListResourceRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return glory_api.UserOuterClass.internal_static_glory_api_ListResourceRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              glory_api.UserOuterClass.ListResourceRequest.class, glory_api.UserOuterClass.ListResourceRequest.Builder.class);
+    }
+
+    public static final int BASE_REQUEST_FIELD_NUMBER = 1;
+    private base.Base.BaseRequest baseRequest_;
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     * @return Whether the baseRequest field is set.
+     */
+    @java.lang.Override
+    public boolean hasBaseRequest() {
+      return baseRequest_ != null;
+    }
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     * @return The baseRequest.
+     */
+    @java.lang.Override
+    public base.Base.BaseRequest getBaseRequest() {
+      return baseRequest_ == null ? base.Base.BaseRequest.getDefaultInstance() : baseRequest_;
+    }
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     */
+    @java.lang.Override
+    public base.Base.BaseRequestOrBuilder getBaseRequestOrBuilder() {
+      return getBaseRequest();
+    }
+
+    public static final int RESOURCE_FIELD_NUMBER = 2;
+    private glory_api.UserOuterClass.Resource resource_;
+    /**
+     * <code>.glory_api.Resource resource = 2;</code>
+     * @return Whether the resource field is set.
+     */
+    @java.lang.Override
+    public boolean hasResource() {
+      return resource_ != null;
+    }
+    /**
+     * <code>.glory_api.Resource resource = 2;</code>
+     * @return The resource.
+     */
+    @java.lang.Override
+    public glory_api.UserOuterClass.Resource getResource() {
+      return resource_ == null ? glory_api.UserOuterClass.Resource.getDefaultInstance() : resource_;
+    }
+    /**
+     * <code>.glory_api.Resource resource = 2;</code>
+     */
+    @java.lang.Override
+    public glory_api.UserOuterClass.ResourceOrBuilder getResourceOrBuilder() {
+      return getResource();
+    }
+
+    public static final int PAGINATION_FIELD_NUMBER = 100;
+    private base.Base.PaginationRequest pagination_;
+    /**
+     * <code>.base.PaginationRequest pagination = 100;</code>
+     * @return Whether the pagination field is set.
+     */
+    @java.lang.Override
+    public boolean hasPagination() {
+      return pagination_ != null;
+    }
+    /**
+     * <code>.base.PaginationRequest pagination = 100;</code>
+     * @return The pagination.
+     */
+    @java.lang.Override
+    public base.Base.PaginationRequest getPagination() {
+      return pagination_ == null ? base.Base.PaginationRequest.getDefaultInstance() : pagination_;
+    }
+    /**
+     * <code>.base.PaginationRequest pagination = 100;</code>
+     */
+    @java.lang.Override
+    public base.Base.PaginationRequestOrBuilder getPaginationOrBuilder() {
+      return getPagination();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (baseRequest_ != null) {
+        output.writeMessage(1, getBaseRequest());
+      }
+      if (resource_ != null) {
+        output.writeMessage(2, getResource());
+      }
+      if (pagination_ != null) {
+        output.writeMessage(100, getPagination());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (baseRequest_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getBaseRequest());
+      }
+      if (resource_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getResource());
+      }
+      if (pagination_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(100, getPagination());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof glory_api.UserOuterClass.ListResourceRequest)) {
+        return super.equals(obj);
+      }
+      glory_api.UserOuterClass.ListResourceRequest other = (glory_api.UserOuterClass.ListResourceRequest) obj;
+
+      if (hasBaseRequest() != other.hasBaseRequest()) return false;
+      if (hasBaseRequest()) {
+        if (!getBaseRequest()
+            .equals(other.getBaseRequest())) return false;
+      }
+      if (hasResource() != other.hasResource()) return false;
+      if (hasResource()) {
+        if (!getResource()
+            .equals(other.getResource())) return false;
+      }
+      if (hasPagination() != other.hasPagination()) return false;
+      if (hasPagination()) {
+        if (!getPagination()
+            .equals(other.getPagination())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasBaseRequest()) {
+        hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getBaseRequest().hashCode();
+      }
+      if (hasResource()) {
+        hash = (37 * hash) + RESOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getResource().hashCode();
+      }
+      if (hasPagination()) {
+        hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
+        hash = (53 * hash) + getPagination().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static glory_api.UserOuterClass.ListResourceRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.UserOuterClass.ListResourceRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.ListResourceRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.UserOuterClass.ListResourceRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.ListResourceRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.UserOuterClass.ListResourceRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.ListResourceRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.UserOuterClass.ListResourceRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.ListResourceRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static glory_api.UserOuterClass.ListResourceRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.ListResourceRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.UserOuterClass.ListResourceRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(glory_api.UserOuterClass.ListResourceRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code glory_api.ListResourceRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:glory_api.ListResourceRequest)
+        glory_api.UserOuterClass.ListResourceRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return glory_api.UserOuterClass.internal_static_glory_api_ListResourceRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return glory_api.UserOuterClass.internal_static_glory_api_ListResourceRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                glory_api.UserOuterClass.ListResourceRequest.class, glory_api.UserOuterClass.ListResourceRequest.Builder.class);
+      }
+
+      // Construct using glory_api.UserOuterClass.ListResourceRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (baseRequestBuilder_ == null) {
+          baseRequest_ = null;
+        } else {
+          baseRequest_ = null;
+          baseRequestBuilder_ = null;
+        }
+        if (resourceBuilder_ == null) {
+          resource_ = null;
+        } else {
+          resource_ = null;
+          resourceBuilder_ = null;
+        }
+        if (paginationBuilder_ == null) {
+          pagination_ = null;
+        } else {
+          pagination_ = null;
+          paginationBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return glory_api.UserOuterClass.internal_static_glory_api_ListResourceRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public glory_api.UserOuterClass.ListResourceRequest getDefaultInstanceForType() {
+        return glory_api.UserOuterClass.ListResourceRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public glory_api.UserOuterClass.ListResourceRequest build() {
+        glory_api.UserOuterClass.ListResourceRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public glory_api.UserOuterClass.ListResourceRequest buildPartial() {
+        glory_api.UserOuterClass.ListResourceRequest result = new glory_api.UserOuterClass.ListResourceRequest(this);
+        if (baseRequestBuilder_ == null) {
+          result.baseRequest_ = baseRequest_;
+        } else {
+          result.baseRequest_ = baseRequestBuilder_.build();
+        }
+        if (resourceBuilder_ == null) {
+          result.resource_ = resource_;
+        } else {
+          result.resource_ = resourceBuilder_.build();
+        }
+        if (paginationBuilder_ == null) {
+          result.pagination_ = pagination_;
+        } else {
+          result.pagination_ = paginationBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof glory_api.UserOuterClass.ListResourceRequest) {
+          return mergeFrom((glory_api.UserOuterClass.ListResourceRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(glory_api.UserOuterClass.ListResourceRequest other) {
+        if (other == glory_api.UserOuterClass.ListResourceRequest.getDefaultInstance()) return this;
+        if (other.hasBaseRequest()) {
+          mergeBaseRequest(other.getBaseRequest());
+        }
+        if (other.hasResource()) {
+          mergeResource(other.getResource());
+        }
+        if (other.hasPagination()) {
+          mergePagination(other.getPagination());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        glory_api.UserOuterClass.ListResourceRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (glory_api.UserOuterClass.ListResourceRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private base.Base.BaseRequest baseRequest_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          base.Base.BaseRequest, base.Base.BaseRequest.Builder, base.Base.BaseRequestOrBuilder> baseRequestBuilder_;
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       * @return Whether the baseRequest field is set.
+       */
+      public boolean hasBaseRequest() {
+        return baseRequestBuilder_ != null || baseRequest_ != null;
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       * @return The baseRequest.
+       */
+      public base.Base.BaseRequest getBaseRequest() {
+        if (baseRequestBuilder_ == null) {
+          return baseRequest_ == null ? base.Base.BaseRequest.getDefaultInstance() : baseRequest_;
+        } else {
+          return baseRequestBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public Builder setBaseRequest(base.Base.BaseRequest value) {
+        if (baseRequestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          baseRequest_ = value;
+          onChanged();
+        } else {
+          baseRequestBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public Builder setBaseRequest(
+          base.Base.BaseRequest.Builder builderForValue) {
+        if (baseRequestBuilder_ == null) {
+          baseRequest_ = builderForValue.build();
+          onChanged();
+        } else {
+          baseRequestBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public Builder mergeBaseRequest(base.Base.BaseRequest value) {
+        if (baseRequestBuilder_ == null) {
+          if (baseRequest_ != null) {
+            baseRequest_ =
+              base.Base.BaseRequest.newBuilder(baseRequest_).mergeFrom(value).buildPartial();
+          } else {
+            baseRequest_ = value;
+          }
+          onChanged();
+        } else {
+          baseRequestBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public Builder clearBaseRequest() {
+        if (baseRequestBuilder_ == null) {
+          baseRequest_ = null;
+          onChanged();
+        } else {
+          baseRequest_ = null;
+          baseRequestBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public base.Base.BaseRequest.Builder getBaseRequestBuilder() {
+        
+        onChanged();
+        return getBaseRequestFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public base.Base.BaseRequestOrBuilder getBaseRequestOrBuilder() {
+        if (baseRequestBuilder_ != null) {
+          return baseRequestBuilder_.getMessageOrBuilder();
+        } else {
+          return baseRequest_ == null ?
+              base.Base.BaseRequest.getDefaultInstance() : baseRequest_;
+        }
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          base.Base.BaseRequest, base.Base.BaseRequest.Builder, base.Base.BaseRequestOrBuilder> 
+          getBaseRequestFieldBuilder() {
+        if (baseRequestBuilder_ == null) {
+          baseRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              base.Base.BaseRequest, base.Base.BaseRequest.Builder, base.Base.BaseRequestOrBuilder>(
+                  getBaseRequest(),
+                  getParentForChildren(),
+                  isClean());
+          baseRequest_ = null;
+        }
+        return baseRequestBuilder_;
+      }
+
+      private glory_api.UserOuterClass.Resource resource_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          glory_api.UserOuterClass.Resource, glory_api.UserOuterClass.Resource.Builder, glory_api.UserOuterClass.ResourceOrBuilder> resourceBuilder_;
+      /**
+       * <code>.glory_api.Resource resource = 2;</code>
+       * @return Whether the resource field is set.
+       */
+      public boolean hasResource() {
+        return resourceBuilder_ != null || resource_ != null;
+      }
+      /**
+       * <code>.glory_api.Resource resource = 2;</code>
+       * @return The resource.
+       */
+      public glory_api.UserOuterClass.Resource getResource() {
+        if (resourceBuilder_ == null) {
+          return resource_ == null ? glory_api.UserOuterClass.Resource.getDefaultInstance() : resource_;
+        } else {
+          return resourceBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.glory_api.Resource resource = 2;</code>
+       */
+      public Builder setResource(glory_api.UserOuterClass.Resource value) {
+        if (resourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resource_ = value;
+          onChanged();
+        } else {
+          resourceBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.glory_api.Resource resource = 2;</code>
+       */
+      public Builder setResource(
+          glory_api.UserOuterClass.Resource.Builder builderForValue) {
+        if (resourceBuilder_ == null) {
+          resource_ = builderForValue.build();
+          onChanged();
+        } else {
+          resourceBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.glory_api.Resource resource = 2;</code>
+       */
+      public Builder mergeResource(glory_api.UserOuterClass.Resource value) {
+        if (resourceBuilder_ == null) {
+          if (resource_ != null) {
+            resource_ =
+              glory_api.UserOuterClass.Resource.newBuilder(resource_).mergeFrom(value).buildPartial();
+          } else {
+            resource_ = value;
+          }
+          onChanged();
+        } else {
+          resourceBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.glory_api.Resource resource = 2;</code>
+       */
+      public Builder clearResource() {
+        if (resourceBuilder_ == null) {
+          resource_ = null;
+          onChanged();
+        } else {
+          resource_ = null;
+          resourceBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.glory_api.Resource resource = 2;</code>
+       */
+      public glory_api.UserOuterClass.Resource.Builder getResourceBuilder() {
+        
+        onChanged();
+        return getResourceFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.glory_api.Resource resource = 2;</code>
+       */
+      public glory_api.UserOuterClass.ResourceOrBuilder getResourceOrBuilder() {
+        if (resourceBuilder_ != null) {
+          return resourceBuilder_.getMessageOrBuilder();
+        } else {
+          return resource_ == null ?
+              glory_api.UserOuterClass.Resource.getDefaultInstance() : resource_;
+        }
+      }
+      /**
+       * <code>.glory_api.Resource resource = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          glory_api.UserOuterClass.Resource, glory_api.UserOuterClass.Resource.Builder, glory_api.UserOuterClass.ResourceOrBuilder> 
+          getResourceFieldBuilder() {
+        if (resourceBuilder_ == null) {
+          resourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              glory_api.UserOuterClass.Resource, glory_api.UserOuterClass.Resource.Builder, glory_api.UserOuterClass.ResourceOrBuilder>(
+                  getResource(),
+                  getParentForChildren(),
+                  isClean());
+          resource_ = null;
+        }
+        return resourceBuilder_;
+      }
+
+      private base.Base.PaginationRequest pagination_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          base.Base.PaginationRequest, base.Base.PaginationRequest.Builder, base.Base.PaginationRequestOrBuilder> paginationBuilder_;
+      /**
+       * <code>.base.PaginationRequest pagination = 100;</code>
+       * @return Whether the pagination field is set.
+       */
+      public boolean hasPagination() {
+        return paginationBuilder_ != null || pagination_ != null;
+      }
+      /**
+       * <code>.base.PaginationRequest pagination = 100;</code>
+       * @return The pagination.
+       */
+      public base.Base.PaginationRequest getPagination() {
+        if (paginationBuilder_ == null) {
+          return pagination_ == null ? base.Base.PaginationRequest.getDefaultInstance() : pagination_;
+        } else {
+          return paginationBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.base.PaginationRequest pagination = 100;</code>
+       */
+      public Builder setPagination(base.Base.PaginationRequest value) {
+        if (paginationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          pagination_ = value;
+          onChanged();
+        } else {
+          paginationBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.PaginationRequest pagination = 100;</code>
+       */
+      public Builder setPagination(
+          base.Base.PaginationRequest.Builder builderForValue) {
+        if (paginationBuilder_ == null) {
+          pagination_ = builderForValue.build();
+          onChanged();
+        } else {
+          paginationBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.PaginationRequest pagination = 100;</code>
+       */
+      public Builder mergePagination(base.Base.PaginationRequest value) {
+        if (paginationBuilder_ == null) {
+          if (pagination_ != null) {
+            pagination_ =
+              base.Base.PaginationRequest.newBuilder(pagination_).mergeFrom(value).buildPartial();
+          } else {
+            pagination_ = value;
+          }
+          onChanged();
+        } else {
+          paginationBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.PaginationRequest pagination = 100;</code>
+       */
+      public Builder clearPagination() {
+        if (paginationBuilder_ == null) {
+          pagination_ = null;
+          onChanged();
+        } else {
+          pagination_ = null;
+          paginationBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.PaginationRequest pagination = 100;</code>
+       */
+      public base.Base.PaginationRequest.Builder getPaginationBuilder() {
+        
+        onChanged();
+        return getPaginationFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.base.PaginationRequest pagination = 100;</code>
+       */
+      public base.Base.PaginationRequestOrBuilder getPaginationOrBuilder() {
+        if (paginationBuilder_ != null) {
+          return paginationBuilder_.getMessageOrBuilder();
+        } else {
+          return pagination_ == null ?
+              base.Base.PaginationRequest.getDefaultInstance() : pagination_;
+        }
+      }
+      /**
+       * <code>.base.PaginationRequest pagination = 100;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          base.Base.PaginationRequest, base.Base.PaginationRequest.Builder, base.Base.PaginationRequestOrBuilder> 
+          getPaginationFieldBuilder() {
+        if (paginationBuilder_ == null) {
+          paginationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              base.Base.PaginationRequest, base.Base.PaginationRequest.Builder, base.Base.PaginationRequestOrBuilder>(
+                  getPagination(),
+                  getParentForChildren(),
+                  isClean());
+          pagination_ = null;
+        }
+        return paginationBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:glory_api.ListResourceRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:glory_api.ListResourceRequest)
+    private static final glory_api.UserOuterClass.ListResourceRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new glory_api.UserOuterClass.ListResourceRequest();
+    }
+
+    public static glory_api.UserOuterClass.ListResourceRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ListResourceRequest>
+        PARSER = new com.google.protobuf.AbstractParser<ListResourceRequest>() {
+      @java.lang.Override
+      public ListResourceRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ListResourceRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ListResourceRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ListResourceRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public glory_api.UserOuterClass.ListResourceRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ListResourceResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:glory_api.ListResourceResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     * @return Whether the baseResp field is set.
+     */
+    boolean hasBaseResp();
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     * @return The baseResp.
+     */
+    base.Base.BaseResponse getBaseResp();
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     */
+    base.Base.BaseResponseOrBuilder getBaseRespOrBuilder();
+
+    /**
+     * <pre>
+     * resource 列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.Resource resource = 2;</code>
+     */
+    java.util.List<glory_api.UserOuterClass.Resource> 
+        getResourceList();
+    /**
+     * <pre>
+     * resource 列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.Resource resource = 2;</code>
+     */
+    glory_api.UserOuterClass.Resource getResource(int index);
+    /**
+     * <pre>
+     * resource 列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.Resource resource = 2;</code>
+     */
+    int getResourceCount();
+    /**
+     * <pre>
+     * resource 列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.Resource resource = 2;</code>
+     */
+    java.util.List<? extends glory_api.UserOuterClass.ResourceOrBuilder> 
+        getResourceOrBuilderList();
+    /**
+     * <pre>
+     * resource 列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.Resource resource = 2;</code>
+     */
+    glory_api.UserOuterClass.ResourceOrBuilder getResourceOrBuilder(
+        int index);
+
+    /**
+     * <code>.base.PaginationResponse pagination = 100;</code>
+     * @return Whether the pagination field is set.
+     */
+    boolean hasPagination();
+    /**
+     * <code>.base.PaginationResponse pagination = 100;</code>
+     * @return The pagination.
+     */
+    base.Base.PaginationResponse getPagination();
+    /**
+     * <code>.base.PaginationResponse pagination = 100;</code>
+     */
+    base.Base.PaginationResponseOrBuilder getPaginationOrBuilder();
+  }
+  /**
+   * Protobuf type {@code glory_api.ListResourceResponse}
+   */
+  public static final class ListResourceResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:glory_api.ListResourceResponse)
+      ListResourceResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ListResourceResponse.newBuilder() to construct.
+    private ListResourceResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ListResourceResponse() {
+      resource_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ListResourceResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ListResourceResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              base.Base.BaseResponse.Builder subBuilder = null;
+              if (baseResp_ != null) {
+                subBuilder = baseResp_.toBuilder();
+              }
+              baseResp_ = input.readMessage(base.Base.BaseResponse.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(baseResp_);
+                baseResp_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                resource_ = new java.util.ArrayList<glory_api.UserOuterClass.Resource>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              resource_.add(
+                  input.readMessage(glory_api.UserOuterClass.Resource.parser(), extensionRegistry));
+              break;
+            }
+            case 802: {
+              base.Base.PaginationResponse.Builder subBuilder = null;
+              if (pagination_ != null) {
+                subBuilder = pagination_.toBuilder();
+              }
+              pagination_ = input.readMessage(base.Base.PaginationResponse.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(pagination_);
+                pagination_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          resource_ = java.util.Collections.unmodifiableList(resource_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return glory_api.UserOuterClass.internal_static_glory_api_ListResourceResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return glory_api.UserOuterClass.internal_static_glory_api_ListResourceResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              glory_api.UserOuterClass.ListResourceResponse.class, glory_api.UserOuterClass.ListResourceResponse.Builder.class);
+    }
+
+    public static final int BASE_RESP_FIELD_NUMBER = 1;
+    private base.Base.BaseResponse baseResp_;
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     * @return Whether the baseResp field is set.
+     */
+    @java.lang.Override
+    public boolean hasBaseResp() {
+      return baseResp_ != null;
+    }
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     * @return The baseResp.
+     */
+    @java.lang.Override
+    public base.Base.BaseResponse getBaseResp() {
+      return baseResp_ == null ? base.Base.BaseResponse.getDefaultInstance() : baseResp_;
+    }
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     */
+    @java.lang.Override
+    public base.Base.BaseResponseOrBuilder getBaseRespOrBuilder() {
+      return getBaseResp();
+    }
+
+    public static final int RESOURCE_FIELD_NUMBER = 2;
+    private java.util.List<glory_api.UserOuterClass.Resource> resource_;
+    /**
+     * <pre>
+     * resource 列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.Resource resource = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<glory_api.UserOuterClass.Resource> getResourceList() {
+      return resource_;
+    }
+    /**
+     * <pre>
+     * resource 列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.Resource resource = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends glory_api.UserOuterClass.ResourceOrBuilder> 
+        getResourceOrBuilderList() {
+      return resource_;
+    }
+    /**
+     * <pre>
+     * resource 列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.Resource resource = 2;</code>
+     */
+    @java.lang.Override
+    public int getResourceCount() {
+      return resource_.size();
+    }
+    /**
+     * <pre>
+     * resource 列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.Resource resource = 2;</code>
+     */
+    @java.lang.Override
+    public glory_api.UserOuterClass.Resource getResource(int index) {
+      return resource_.get(index);
+    }
+    /**
+     * <pre>
+     * resource 列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.Resource resource = 2;</code>
+     */
+    @java.lang.Override
+    public glory_api.UserOuterClass.ResourceOrBuilder getResourceOrBuilder(
+        int index) {
+      return resource_.get(index);
+    }
+
+    public static final int PAGINATION_FIELD_NUMBER = 100;
+    private base.Base.PaginationResponse pagination_;
+    /**
+     * <code>.base.PaginationResponse pagination = 100;</code>
+     * @return Whether the pagination field is set.
+     */
+    @java.lang.Override
+    public boolean hasPagination() {
+      return pagination_ != null;
+    }
+    /**
+     * <code>.base.PaginationResponse pagination = 100;</code>
+     * @return The pagination.
+     */
+    @java.lang.Override
+    public base.Base.PaginationResponse getPagination() {
+      return pagination_ == null ? base.Base.PaginationResponse.getDefaultInstance() : pagination_;
+    }
+    /**
+     * <code>.base.PaginationResponse pagination = 100;</code>
+     */
+    @java.lang.Override
+    public base.Base.PaginationResponseOrBuilder getPaginationOrBuilder() {
+      return getPagination();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (baseResp_ != null) {
+        output.writeMessage(1, getBaseResp());
+      }
+      for (int i = 0; i < resource_.size(); i++) {
+        output.writeMessage(2, resource_.get(i));
+      }
+      if (pagination_ != null) {
+        output.writeMessage(100, getPagination());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (baseResp_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getBaseResp());
+      }
+      for (int i = 0; i < resource_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, resource_.get(i));
+      }
+      if (pagination_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(100, getPagination());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof glory_api.UserOuterClass.ListResourceResponse)) {
+        return super.equals(obj);
+      }
+      glory_api.UserOuterClass.ListResourceResponse other = (glory_api.UserOuterClass.ListResourceResponse) obj;
+
+      if (hasBaseResp() != other.hasBaseResp()) return false;
+      if (hasBaseResp()) {
+        if (!getBaseResp()
+            .equals(other.getBaseResp())) return false;
+      }
+      if (!getResourceList()
+          .equals(other.getResourceList())) return false;
+      if (hasPagination() != other.hasPagination()) return false;
+      if (hasPagination()) {
+        if (!getPagination()
+            .equals(other.getPagination())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasBaseResp()) {
+        hash = (37 * hash) + BASE_RESP_FIELD_NUMBER;
+        hash = (53 * hash) + getBaseResp().hashCode();
+      }
+      if (getResourceCount() > 0) {
+        hash = (37 * hash) + RESOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getResourceList().hashCode();
+      }
+      if (hasPagination()) {
+        hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
+        hash = (53 * hash) + getPagination().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static glory_api.UserOuterClass.ListResourceResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.UserOuterClass.ListResourceResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.ListResourceResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.UserOuterClass.ListResourceResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.ListResourceResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.UserOuterClass.ListResourceResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.ListResourceResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.UserOuterClass.ListResourceResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.ListResourceResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static glory_api.UserOuterClass.ListResourceResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.ListResourceResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.UserOuterClass.ListResourceResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(glory_api.UserOuterClass.ListResourceResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code glory_api.ListResourceResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:glory_api.ListResourceResponse)
+        glory_api.UserOuterClass.ListResourceResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return glory_api.UserOuterClass.internal_static_glory_api_ListResourceResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return glory_api.UserOuterClass.internal_static_glory_api_ListResourceResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                glory_api.UserOuterClass.ListResourceResponse.class, glory_api.UserOuterClass.ListResourceResponse.Builder.class);
+      }
+
+      // Construct using glory_api.UserOuterClass.ListResourceResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getResourceFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (baseRespBuilder_ == null) {
+          baseResp_ = null;
+        } else {
+          baseResp_ = null;
+          baseRespBuilder_ = null;
+        }
+        if (resourceBuilder_ == null) {
+          resource_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          resourceBuilder_.clear();
+        }
+        if (paginationBuilder_ == null) {
+          pagination_ = null;
+        } else {
+          pagination_ = null;
+          paginationBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return glory_api.UserOuterClass.internal_static_glory_api_ListResourceResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public glory_api.UserOuterClass.ListResourceResponse getDefaultInstanceForType() {
+        return glory_api.UserOuterClass.ListResourceResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public glory_api.UserOuterClass.ListResourceResponse build() {
+        glory_api.UserOuterClass.ListResourceResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public glory_api.UserOuterClass.ListResourceResponse buildPartial() {
+        glory_api.UserOuterClass.ListResourceResponse result = new glory_api.UserOuterClass.ListResourceResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (baseRespBuilder_ == null) {
+          result.baseResp_ = baseResp_;
+        } else {
+          result.baseResp_ = baseRespBuilder_.build();
+        }
+        if (resourceBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            resource_ = java.util.Collections.unmodifiableList(resource_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.resource_ = resource_;
+        } else {
+          result.resource_ = resourceBuilder_.build();
+        }
+        if (paginationBuilder_ == null) {
+          result.pagination_ = pagination_;
+        } else {
+          result.pagination_ = paginationBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof glory_api.UserOuterClass.ListResourceResponse) {
+          return mergeFrom((glory_api.UserOuterClass.ListResourceResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(glory_api.UserOuterClass.ListResourceResponse other) {
+        if (other == glory_api.UserOuterClass.ListResourceResponse.getDefaultInstance()) return this;
+        if (other.hasBaseResp()) {
+          mergeBaseResp(other.getBaseResp());
+        }
+        if (resourceBuilder_ == null) {
+          if (!other.resource_.isEmpty()) {
+            if (resource_.isEmpty()) {
+              resource_ = other.resource_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureResourceIsMutable();
+              resource_.addAll(other.resource_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.resource_.isEmpty()) {
+            if (resourceBuilder_.isEmpty()) {
+              resourceBuilder_.dispose();
+              resourceBuilder_ = null;
+              resource_ = other.resource_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              resourceBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getResourceFieldBuilder() : null;
+            } else {
+              resourceBuilder_.addAllMessages(other.resource_);
+            }
+          }
+        }
+        if (other.hasPagination()) {
+          mergePagination(other.getPagination());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        glory_api.UserOuterClass.ListResourceResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (glory_api.UserOuterClass.ListResourceResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private base.Base.BaseResponse baseResp_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          base.Base.BaseResponse, base.Base.BaseResponse.Builder, base.Base.BaseResponseOrBuilder> baseRespBuilder_;
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       * @return Whether the baseResp field is set.
+       */
+      public boolean hasBaseResp() {
+        return baseRespBuilder_ != null || baseResp_ != null;
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       * @return The baseResp.
+       */
+      public base.Base.BaseResponse getBaseResp() {
+        if (baseRespBuilder_ == null) {
+          return baseResp_ == null ? base.Base.BaseResponse.getDefaultInstance() : baseResp_;
+        } else {
+          return baseRespBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public Builder setBaseResp(base.Base.BaseResponse value) {
+        if (baseRespBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          baseResp_ = value;
+          onChanged();
+        } else {
+          baseRespBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public Builder setBaseResp(
+          base.Base.BaseResponse.Builder builderForValue) {
+        if (baseRespBuilder_ == null) {
+          baseResp_ = builderForValue.build();
+          onChanged();
+        } else {
+          baseRespBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public Builder mergeBaseResp(base.Base.BaseResponse value) {
+        if (baseRespBuilder_ == null) {
+          if (baseResp_ != null) {
+            baseResp_ =
+              base.Base.BaseResponse.newBuilder(baseResp_).mergeFrom(value).buildPartial();
+          } else {
+            baseResp_ = value;
+          }
+          onChanged();
+        } else {
+          baseRespBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public Builder clearBaseResp() {
+        if (baseRespBuilder_ == null) {
+          baseResp_ = null;
+          onChanged();
+        } else {
+          baseResp_ = null;
+          baseRespBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public base.Base.BaseResponse.Builder getBaseRespBuilder() {
+        
+        onChanged();
+        return getBaseRespFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public base.Base.BaseResponseOrBuilder getBaseRespOrBuilder() {
+        if (baseRespBuilder_ != null) {
+          return baseRespBuilder_.getMessageOrBuilder();
+        } else {
+          return baseResp_ == null ?
+              base.Base.BaseResponse.getDefaultInstance() : baseResp_;
+        }
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          base.Base.BaseResponse, base.Base.BaseResponse.Builder, base.Base.BaseResponseOrBuilder> 
+          getBaseRespFieldBuilder() {
+        if (baseRespBuilder_ == null) {
+          baseRespBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              base.Base.BaseResponse, base.Base.BaseResponse.Builder, base.Base.BaseResponseOrBuilder>(
+                  getBaseResp(),
+                  getParentForChildren(),
+                  isClean());
+          baseResp_ = null;
+        }
+        return baseRespBuilder_;
+      }
+
+      private java.util.List<glory_api.UserOuterClass.Resource> resource_ =
+        java.util.Collections.emptyList();
+      private void ensureResourceIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          resource_ = new java.util.ArrayList<glory_api.UserOuterClass.Resource>(resource_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          glory_api.UserOuterClass.Resource, glory_api.UserOuterClass.Resource.Builder, glory_api.UserOuterClass.ResourceOrBuilder> resourceBuilder_;
+
+      /**
+       * <pre>
+       * resource 列表
+       * </pre>
+       *
+       * <code>repeated .glory_api.Resource resource = 2;</code>
+       */
+      public java.util.List<glory_api.UserOuterClass.Resource> getResourceList() {
+        if (resourceBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(resource_);
+        } else {
+          return resourceBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * resource 列表
+       * </pre>
+       *
+       * <code>repeated .glory_api.Resource resource = 2;</code>
+       */
+      public int getResourceCount() {
+        if (resourceBuilder_ == null) {
+          return resource_.size();
+        } else {
+          return resourceBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * resource 列表
+       * </pre>
+       *
+       * <code>repeated .glory_api.Resource resource = 2;</code>
+       */
+      public glory_api.UserOuterClass.Resource getResource(int index) {
+        if (resourceBuilder_ == null) {
+          return resource_.get(index);
+        } else {
+          return resourceBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * resource 列表
+       * </pre>
+       *
+       * <code>repeated .glory_api.Resource resource = 2;</code>
+       */
+      public Builder setResource(
+          int index, glory_api.UserOuterClass.Resource value) {
+        if (resourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureResourceIsMutable();
+          resource_.set(index, value);
+          onChanged();
+        } else {
+          resourceBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * resource 列表
+       * </pre>
+       *
+       * <code>repeated .glory_api.Resource resource = 2;</code>
+       */
+      public Builder setResource(
+          int index, glory_api.UserOuterClass.Resource.Builder builderForValue) {
+        if (resourceBuilder_ == null) {
+          ensureResourceIsMutable();
+          resource_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          resourceBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * resource 列表
+       * </pre>
+       *
+       * <code>repeated .glory_api.Resource resource = 2;</code>
+       */
+      public Builder addResource(glory_api.UserOuterClass.Resource value) {
+        if (resourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureResourceIsMutable();
+          resource_.add(value);
+          onChanged();
+        } else {
+          resourceBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * resource 列表
+       * </pre>
+       *
+       * <code>repeated .glory_api.Resource resource = 2;</code>
+       */
+      public Builder addResource(
+          int index, glory_api.UserOuterClass.Resource value) {
+        if (resourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureResourceIsMutable();
+          resource_.add(index, value);
+          onChanged();
+        } else {
+          resourceBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * resource 列表
+       * </pre>
+       *
+       * <code>repeated .glory_api.Resource resource = 2;</code>
+       */
+      public Builder addResource(
+          glory_api.UserOuterClass.Resource.Builder builderForValue) {
+        if (resourceBuilder_ == null) {
+          ensureResourceIsMutable();
+          resource_.add(builderForValue.build());
+          onChanged();
+        } else {
+          resourceBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * resource 列表
+       * </pre>
+       *
+       * <code>repeated .glory_api.Resource resource = 2;</code>
+       */
+      public Builder addResource(
+          int index, glory_api.UserOuterClass.Resource.Builder builderForValue) {
+        if (resourceBuilder_ == null) {
+          ensureResourceIsMutable();
+          resource_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          resourceBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * resource 列表
+       * </pre>
+       *
+       * <code>repeated .glory_api.Resource resource = 2;</code>
+       */
+      public Builder addAllResource(
+          java.lang.Iterable<? extends glory_api.UserOuterClass.Resource> values) {
+        if (resourceBuilder_ == null) {
+          ensureResourceIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, resource_);
+          onChanged();
+        } else {
+          resourceBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * resource 列表
+       * </pre>
+       *
+       * <code>repeated .glory_api.Resource resource = 2;</code>
+       */
+      public Builder clearResource() {
+        if (resourceBuilder_ == null) {
+          resource_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          resourceBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * resource 列表
+       * </pre>
+       *
+       * <code>repeated .glory_api.Resource resource = 2;</code>
+       */
+      public Builder removeResource(int index) {
+        if (resourceBuilder_ == null) {
+          ensureResourceIsMutable();
+          resource_.remove(index);
+          onChanged();
+        } else {
+          resourceBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * resource 列表
+       * </pre>
+       *
+       * <code>repeated .glory_api.Resource resource = 2;</code>
+       */
+      public glory_api.UserOuterClass.Resource.Builder getResourceBuilder(
+          int index) {
+        return getResourceFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * resource 列表
+       * </pre>
+       *
+       * <code>repeated .glory_api.Resource resource = 2;</code>
+       */
+      public glory_api.UserOuterClass.ResourceOrBuilder getResourceOrBuilder(
+          int index) {
+        if (resourceBuilder_ == null) {
+          return resource_.get(index);  } else {
+          return resourceBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * resource 列表
+       * </pre>
+       *
+       * <code>repeated .glory_api.Resource resource = 2;</code>
+       */
+      public java.util.List<? extends glory_api.UserOuterClass.ResourceOrBuilder> 
+           getResourceOrBuilderList() {
+        if (resourceBuilder_ != null) {
+          return resourceBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(resource_);
+        }
+      }
+      /**
+       * <pre>
+       * resource 列表
+       * </pre>
+       *
+       * <code>repeated .glory_api.Resource resource = 2;</code>
+       */
+      public glory_api.UserOuterClass.Resource.Builder addResourceBuilder() {
+        return getResourceFieldBuilder().addBuilder(
+            glory_api.UserOuterClass.Resource.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * resource 列表
+       * </pre>
+       *
+       * <code>repeated .glory_api.Resource resource = 2;</code>
+       */
+      public glory_api.UserOuterClass.Resource.Builder addResourceBuilder(
+          int index) {
+        return getResourceFieldBuilder().addBuilder(
+            index, glory_api.UserOuterClass.Resource.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * resource 列表
+       * </pre>
+       *
+       * <code>repeated .glory_api.Resource resource = 2;</code>
+       */
+      public java.util.List<glory_api.UserOuterClass.Resource.Builder> 
+           getResourceBuilderList() {
+        return getResourceFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          glory_api.UserOuterClass.Resource, glory_api.UserOuterClass.Resource.Builder, glory_api.UserOuterClass.ResourceOrBuilder> 
+          getResourceFieldBuilder() {
+        if (resourceBuilder_ == null) {
+          resourceBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              glory_api.UserOuterClass.Resource, glory_api.UserOuterClass.Resource.Builder, glory_api.UserOuterClass.ResourceOrBuilder>(
+                  resource_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          resource_ = null;
+        }
+        return resourceBuilder_;
+      }
+
+      private base.Base.PaginationResponse pagination_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          base.Base.PaginationResponse, base.Base.PaginationResponse.Builder, base.Base.PaginationResponseOrBuilder> paginationBuilder_;
+      /**
+       * <code>.base.PaginationResponse pagination = 100;</code>
+       * @return Whether the pagination field is set.
+       */
+      public boolean hasPagination() {
+        return paginationBuilder_ != null || pagination_ != null;
+      }
+      /**
+       * <code>.base.PaginationResponse pagination = 100;</code>
+       * @return The pagination.
+       */
+      public base.Base.PaginationResponse getPagination() {
+        if (paginationBuilder_ == null) {
+          return pagination_ == null ? base.Base.PaginationResponse.getDefaultInstance() : pagination_;
+        } else {
+          return paginationBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.base.PaginationResponse pagination = 100;</code>
+       */
+      public Builder setPagination(base.Base.PaginationResponse value) {
+        if (paginationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          pagination_ = value;
+          onChanged();
+        } else {
+          paginationBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.PaginationResponse pagination = 100;</code>
+       */
+      public Builder setPagination(
+          base.Base.PaginationResponse.Builder builderForValue) {
+        if (paginationBuilder_ == null) {
+          pagination_ = builderForValue.build();
+          onChanged();
+        } else {
+          paginationBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.PaginationResponse pagination = 100;</code>
+       */
+      public Builder mergePagination(base.Base.PaginationResponse value) {
+        if (paginationBuilder_ == null) {
+          if (pagination_ != null) {
+            pagination_ =
+              base.Base.PaginationResponse.newBuilder(pagination_).mergeFrom(value).buildPartial();
+          } else {
+            pagination_ = value;
+          }
+          onChanged();
+        } else {
+          paginationBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.PaginationResponse pagination = 100;</code>
+       */
+      public Builder clearPagination() {
+        if (paginationBuilder_ == null) {
+          pagination_ = null;
+          onChanged();
+        } else {
+          pagination_ = null;
+          paginationBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.PaginationResponse pagination = 100;</code>
+       */
+      public base.Base.PaginationResponse.Builder getPaginationBuilder() {
+        
+        onChanged();
+        return getPaginationFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.base.PaginationResponse pagination = 100;</code>
+       */
+      public base.Base.PaginationResponseOrBuilder getPaginationOrBuilder() {
+        if (paginationBuilder_ != null) {
+          return paginationBuilder_.getMessageOrBuilder();
+        } else {
+          return pagination_ == null ?
+              base.Base.PaginationResponse.getDefaultInstance() : pagination_;
+        }
+      }
+      /**
+       * <code>.base.PaginationResponse pagination = 100;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          base.Base.PaginationResponse, base.Base.PaginationResponse.Builder, base.Base.PaginationResponseOrBuilder> 
+          getPaginationFieldBuilder() {
+        if (paginationBuilder_ == null) {
+          paginationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              base.Base.PaginationResponse, base.Base.PaginationResponse.Builder, base.Base.PaginationResponseOrBuilder>(
+                  getPagination(),
+                  getParentForChildren(),
+                  isClean());
+          pagination_ = null;
+        }
+        return paginationBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:glory_api.ListResourceResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:glory_api.ListResourceResponse)
+    private static final glory_api.UserOuterClass.ListResourceResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new glory_api.UserOuterClass.ListResourceResponse();
+    }
+
+    public static glory_api.UserOuterClass.ListResourceResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ListResourceResponse>
+        PARSER = new com.google.protobuf.AbstractParser<ListResourceResponse>() {
+      @java.lang.Override
+      public ListResourceResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ListResourceResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ListResourceResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ListResourceResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public glory_api.UserOuterClass.ListResourceResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ListUserByRoleOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:glory_api.ListUserByRole)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int64 user_id = 1;</code>
+     * @return The userId.
+     */
+    long getUserId();
+
+    /**
+     * <code>string user_name = 2;</code>
+     * @return The userName.
+     */
+    java.lang.String getUserName();
+    /**
+     * <code>string user_name = 2;</code>
+     * @return The bytes for userName.
+     */
+    com.google.protobuf.ByteString
+        getUserNameBytes();
+
+    /**
+     * <code>int64 tenant_id = 3;</code>
+     * @return The tenantId.
+     */
+    long getTenantId();
+
+    /**
+     * <code>string role = 4;</code>
+     * @return The role.
+     */
+    java.lang.String getRole();
+    /**
+     * <code>string role = 4;</code>
+     * @return The bytes for role.
+     */
+    com.google.protobuf.ByteString
+        getRoleBytes();
+
+    /**
+     * <code>string created_at = 5;</code>
+     * @return The createdAt.
+     */
+    java.lang.String getCreatedAt();
+    /**
+     * <code>string created_at = 5;</code>
+     * @return The bytes for createdAt.
+     */
+    com.google.protobuf.ByteString
+        getCreatedAtBytes();
+  }
+  /**
+   * Protobuf type {@code glory_api.ListUserByRole}
+   */
+  public static final class ListUserByRole extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:glory_api.ListUserByRole)
+      ListUserByRoleOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ListUserByRole.newBuilder() to construct.
+    private ListUserByRole(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ListUserByRole() {
+      userName_ = "";
+      role_ = "";
+      createdAt_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ListUserByRole();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ListUserByRole(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              userId_ = input.readInt64();
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              userName_ = s;
+              break;
+            }
+            case 24: {
+
+              tenantId_ = input.readInt64();
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              role_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              createdAt_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return glory_api.UserOuterClass.internal_static_glory_api_ListUserByRole_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return glory_api.UserOuterClass.internal_static_glory_api_ListUserByRole_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              glory_api.UserOuterClass.ListUserByRole.class, glory_api.UserOuterClass.ListUserByRole.Builder.class);
+    }
+
+    public static final int USER_ID_FIELD_NUMBER = 1;
+    private long userId_;
+    /**
+     * <code>int64 user_id = 1;</code>
+     * @return The userId.
+     */
+    @java.lang.Override
+    public long getUserId() {
+      return userId_;
+    }
+
+    public static final int USER_NAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object userName_;
+    /**
+     * <code>string user_name = 2;</code>
+     * @return The userName.
+     */
+    @java.lang.Override
+    public java.lang.String getUserName() {
+      java.lang.Object ref = userName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string user_name = 2;</code>
+     * @return The bytes for userName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserNameBytes() {
+      java.lang.Object ref = userName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TENANT_ID_FIELD_NUMBER = 3;
+    private long tenantId_;
+    /**
+     * <code>int64 tenant_id = 3;</code>
+     * @return The tenantId.
+     */
+    @java.lang.Override
+    public long getTenantId() {
+      return tenantId_;
+    }
+
+    public static final int ROLE_FIELD_NUMBER = 4;
+    private volatile java.lang.Object role_;
+    /**
+     * <code>string role = 4;</code>
+     * @return The role.
+     */
+    @java.lang.Override
+    public java.lang.String getRole() {
+      java.lang.Object ref = role_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        role_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string role = 4;</code>
+     * @return The bytes for role.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRoleBytes() {
+      java.lang.Object ref = role_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        role_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CREATED_AT_FIELD_NUMBER = 5;
+    private volatile java.lang.Object createdAt_;
+    /**
+     * <code>string created_at = 5;</code>
+     * @return The createdAt.
+     */
+    @java.lang.Override
+    public java.lang.String getCreatedAt() {
+      java.lang.Object ref = createdAt_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        createdAt_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string created_at = 5;</code>
+     * @return The bytes for createdAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCreatedAtBytes() {
+      java.lang.Object ref = createdAt_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        createdAt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (userId_ != 0L) {
+        output.writeInt64(1, userId_);
+      }
+      if (!getUserNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, userName_);
+      }
+      if (tenantId_ != 0L) {
+        output.writeInt64(3, tenantId_);
+      }
+      if (!getRoleBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, role_);
+      }
+      if (!getCreatedAtBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, createdAt_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (userId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, userId_);
+      }
+      if (!getUserNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, userName_);
+      }
+      if (tenantId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, tenantId_);
+      }
+      if (!getRoleBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, role_);
+      }
+      if (!getCreatedAtBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, createdAt_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof glory_api.UserOuterClass.ListUserByRole)) {
+        return super.equals(obj);
+      }
+      glory_api.UserOuterClass.ListUserByRole other = (glory_api.UserOuterClass.ListUserByRole) obj;
+
+      if (getUserId()
+          != other.getUserId()) return false;
+      if (!getUserName()
+          .equals(other.getUserName())) return false;
+      if (getTenantId()
+          != other.getTenantId()) return false;
+      if (!getRole()
+          .equals(other.getRole())) return false;
+      if (!getCreatedAt()
+          .equals(other.getCreatedAt())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getUserId());
+      hash = (37 * hash) + USER_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getUserName().hashCode();
+      hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTenantId());
+      hash = (37 * hash) + ROLE_FIELD_NUMBER;
+      hash = (53 * hash) + getRole().hashCode();
+      hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getCreatedAt().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static glory_api.UserOuterClass.ListUserByRole parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.UserOuterClass.ListUserByRole parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.ListUserByRole parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.UserOuterClass.ListUserByRole parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.ListUserByRole parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.UserOuterClass.ListUserByRole parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.ListUserByRole parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.UserOuterClass.ListUserByRole parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.ListUserByRole parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static glory_api.UserOuterClass.ListUserByRole parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.ListUserByRole parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.UserOuterClass.ListUserByRole parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(glory_api.UserOuterClass.ListUserByRole prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code glory_api.ListUserByRole}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:glory_api.ListUserByRole)
+        glory_api.UserOuterClass.ListUserByRoleOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return glory_api.UserOuterClass.internal_static_glory_api_ListUserByRole_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return glory_api.UserOuterClass.internal_static_glory_api_ListUserByRole_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                glory_api.UserOuterClass.ListUserByRole.class, glory_api.UserOuterClass.ListUserByRole.Builder.class);
+      }
+
+      // Construct using glory_api.UserOuterClass.ListUserByRole.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        userId_ = 0L;
+
+        userName_ = "";
+
+        tenantId_ = 0L;
+
+        role_ = "";
+
+        createdAt_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return glory_api.UserOuterClass.internal_static_glory_api_ListUserByRole_descriptor;
+      }
+
+      @java.lang.Override
+      public glory_api.UserOuterClass.ListUserByRole getDefaultInstanceForType() {
+        return glory_api.UserOuterClass.ListUserByRole.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public glory_api.UserOuterClass.ListUserByRole build() {
+        glory_api.UserOuterClass.ListUserByRole result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public glory_api.UserOuterClass.ListUserByRole buildPartial() {
+        glory_api.UserOuterClass.ListUserByRole result = new glory_api.UserOuterClass.ListUserByRole(this);
+        result.userId_ = userId_;
+        result.userName_ = userName_;
+        result.tenantId_ = tenantId_;
+        result.role_ = role_;
+        result.createdAt_ = createdAt_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof glory_api.UserOuterClass.ListUserByRole) {
+          return mergeFrom((glory_api.UserOuterClass.ListUserByRole)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(glory_api.UserOuterClass.ListUserByRole other) {
+        if (other == glory_api.UserOuterClass.ListUserByRole.getDefaultInstance()) return this;
+        if (other.getUserId() != 0L) {
+          setUserId(other.getUserId());
+        }
+        if (!other.getUserName().isEmpty()) {
+          userName_ = other.userName_;
+          onChanged();
+        }
+        if (other.getTenantId() != 0L) {
+          setTenantId(other.getTenantId());
+        }
+        if (!other.getRole().isEmpty()) {
+          role_ = other.role_;
+          onChanged();
+        }
+        if (!other.getCreatedAt().isEmpty()) {
+          createdAt_ = other.createdAt_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        glory_api.UserOuterClass.ListUserByRole parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (glory_api.UserOuterClass.ListUserByRole) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long userId_ ;
+      /**
+       * <code>int64 user_id = 1;</code>
+       * @return The userId.
+       */
+      @java.lang.Override
+      public long getUserId() {
+        return userId_;
+      }
+      /**
+       * <code>int64 user_id = 1;</code>
+       * @param value The userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserId(long value) {
+        
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 user_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserId() {
+        
+        userId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userName_ = "";
+      /**
+       * <code>string user_name = 2;</code>
+       * @return The userName.
+       */
+      public java.lang.String getUserName() {
+        java.lang.Object ref = userName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string user_name = 2;</code>
+       * @return The bytes for userName.
+       */
+      public com.google.protobuf.ByteString
+          getUserNameBytes() {
+        java.lang.Object ref = userName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string user_name = 2;</code>
+       * @param value The userName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        userName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_name = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserName() {
+        
+        userName_ = getDefaultInstance().getUserName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_name = 2;</code>
+       * @param value The bytes for userName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        userName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long tenantId_ ;
+      /**
+       * <code>int64 tenant_id = 3;</code>
+       * @return The tenantId.
+       */
+      @java.lang.Override
+      public long getTenantId() {
+        return tenantId_;
+      }
+      /**
+       * <code>int64 tenant_id = 3;</code>
+       * @param value The tenantId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTenantId(long value) {
+        
+        tenantId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 tenant_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTenantId() {
+        
+        tenantId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object role_ = "";
+      /**
+       * <code>string role = 4;</code>
+       * @return The role.
+       */
+      public java.lang.String getRole() {
+        java.lang.Object ref = role_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          role_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string role = 4;</code>
+       * @return The bytes for role.
+       */
+      public com.google.protobuf.ByteString
+          getRoleBytes() {
+        java.lang.Object ref = role_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          role_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string role = 4;</code>
+       * @param value The role to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRole(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        role_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string role = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRole() {
+        
+        role_ = getDefaultInstance().getRole();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string role = 4;</code>
+       * @param value The bytes for role to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRoleBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        role_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object createdAt_ = "";
+      /**
+       * <code>string created_at = 5;</code>
+       * @return The createdAt.
+       */
+      public java.lang.String getCreatedAt() {
+        java.lang.Object ref = createdAt_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          createdAt_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string created_at = 5;</code>
+       * @return The bytes for createdAt.
+       */
+      public com.google.protobuf.ByteString
+          getCreatedAtBytes() {
+        java.lang.Object ref = createdAt_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          createdAt_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string created_at = 5;</code>
+       * @param value The createdAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedAt(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        createdAt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string created_at = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCreatedAt() {
+        
+        createdAt_ = getDefaultInstance().getCreatedAt();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string created_at = 5;</code>
+       * @param value The bytes for createdAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedAtBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        createdAt_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:glory_api.ListUserByRole)
+    }
+
+    // @@protoc_insertion_point(class_scope:glory_api.ListUserByRole)
+    private static final glory_api.UserOuterClass.ListUserByRole DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new glory_api.UserOuterClass.ListUserByRole();
+    }
+
+    public static glory_api.UserOuterClass.ListUserByRole getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ListUserByRole>
+        PARSER = new com.google.protobuf.AbstractParser<ListUserByRole>() {
+      @java.lang.Override
+      public ListUserByRole parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ListUserByRole(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ListUserByRole> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ListUserByRole> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public glory_api.UserOuterClass.ListUserByRole getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ListUserByRoleRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:glory_api.ListUserByRoleRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     * @return Whether the baseRequest field is set.
+     */
+    boolean hasBaseRequest();
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     * @return The baseRequest.
+     */
+    base.Base.BaseRequest getBaseRequest();
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     */
+    base.Base.BaseRequestOrBuilder getBaseRequestOrBuilder();
+
+    /**
+     * <pre>
+     * 平台管理员是admin, 学校管理员是school_admin_role
+     * </pre>
+     *
+     * <code>string role_name = 2;</code>
+     * @return The roleName.
+     */
+    java.lang.String getRoleName();
+    /**
+     * <pre>
+     * 平台管理员是admin, 学校管理员是school_admin_role
+     * </pre>
+     *
+     * <code>string role_name = 2;</code>
+     * @return The bytes for roleName.
+     */
+    com.google.protobuf.ByteString
+        getRoleNameBytes();
+
+    /**
+     * <pre>
+     * 学校的id，若是角色名称是admin，则会忽略这个
+     * </pre>
+     *
+     * <code>int64 tenant_id = 3;</code>
+     * @return The tenantId.
+     */
+    long getTenantId();
+
+    /**
+     * <code>.base.PaginationRequest pagination = 100;</code>
+     * @return Whether the pagination field is set.
+     */
+    boolean hasPagination();
+    /**
+     * <code>.base.PaginationRequest pagination = 100;</code>
+     * @return The pagination.
+     */
+    base.Base.PaginationRequest getPagination();
+    /**
+     * <code>.base.PaginationRequest pagination = 100;</code>
+     */
+    base.Base.PaginationRequestOrBuilder getPaginationOrBuilder();
+  }
+  /**
+   * Protobuf type {@code glory_api.ListUserByRoleRequest}
+   */
+  public static final class ListUserByRoleRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:glory_api.ListUserByRoleRequest)
+      ListUserByRoleRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ListUserByRoleRequest.newBuilder() to construct.
+    private ListUserByRoleRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ListUserByRoleRequest() {
+      roleName_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ListUserByRoleRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ListUserByRoleRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              base.Base.BaseRequest.Builder subBuilder = null;
+              if (baseRequest_ != null) {
+                subBuilder = baseRequest_.toBuilder();
+              }
+              baseRequest_ = input.readMessage(base.Base.BaseRequest.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(baseRequest_);
+                baseRequest_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              roleName_ = s;
+              break;
+            }
+            case 24: {
+
+              tenantId_ = input.readInt64();
+              break;
+            }
+            case 802: {
+              base.Base.PaginationRequest.Builder subBuilder = null;
+              if (pagination_ != null) {
+                subBuilder = pagination_.toBuilder();
+              }
+              pagination_ = input.readMessage(base.Base.PaginationRequest.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(pagination_);
+                pagination_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return glory_api.UserOuterClass.internal_static_glory_api_ListUserByRoleRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return glory_api.UserOuterClass.internal_static_glory_api_ListUserByRoleRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              glory_api.UserOuterClass.ListUserByRoleRequest.class, glory_api.UserOuterClass.ListUserByRoleRequest.Builder.class);
+    }
+
+    public static final int BASE_REQUEST_FIELD_NUMBER = 1;
+    private base.Base.BaseRequest baseRequest_;
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     * @return Whether the baseRequest field is set.
+     */
+    @java.lang.Override
+    public boolean hasBaseRequest() {
+      return baseRequest_ != null;
+    }
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     * @return The baseRequest.
+     */
+    @java.lang.Override
+    public base.Base.BaseRequest getBaseRequest() {
+      return baseRequest_ == null ? base.Base.BaseRequest.getDefaultInstance() : baseRequest_;
+    }
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     */
+    @java.lang.Override
+    public base.Base.BaseRequestOrBuilder getBaseRequestOrBuilder() {
+      return getBaseRequest();
+    }
+
+    public static final int ROLE_NAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object roleName_;
+    /**
+     * <pre>
+     * 平台管理员是admin, 学校管理员是school_admin_role
+     * </pre>
+     *
+     * <code>string role_name = 2;</code>
+     * @return The roleName.
+     */
+    @java.lang.Override
+    public java.lang.String getRoleName() {
+      java.lang.Object ref = roleName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        roleName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 平台管理员是admin, 学校管理员是school_admin_role
+     * </pre>
+     *
+     * <code>string role_name = 2;</code>
+     * @return The bytes for roleName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRoleNameBytes() {
+      java.lang.Object ref = roleName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        roleName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TENANT_ID_FIELD_NUMBER = 3;
+    private long tenantId_;
+    /**
+     * <pre>
+     * 学校的id，若是角色名称是admin，则会忽略这个
+     * </pre>
+     *
+     * <code>int64 tenant_id = 3;</code>
+     * @return The tenantId.
+     */
+    @java.lang.Override
+    public long getTenantId() {
+      return tenantId_;
+    }
+
+    public static final int PAGINATION_FIELD_NUMBER = 100;
+    private base.Base.PaginationRequest pagination_;
+    /**
+     * <code>.base.PaginationRequest pagination = 100;</code>
+     * @return Whether the pagination field is set.
+     */
+    @java.lang.Override
+    public boolean hasPagination() {
+      return pagination_ != null;
+    }
+    /**
+     * <code>.base.PaginationRequest pagination = 100;</code>
+     * @return The pagination.
+     */
+    @java.lang.Override
+    public base.Base.PaginationRequest getPagination() {
+      return pagination_ == null ? base.Base.PaginationRequest.getDefaultInstance() : pagination_;
+    }
+    /**
+     * <code>.base.PaginationRequest pagination = 100;</code>
+     */
+    @java.lang.Override
+    public base.Base.PaginationRequestOrBuilder getPaginationOrBuilder() {
+      return getPagination();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (baseRequest_ != null) {
+        output.writeMessage(1, getBaseRequest());
+      }
+      if (!getRoleNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, roleName_);
+      }
+      if (tenantId_ != 0L) {
+        output.writeInt64(3, tenantId_);
+      }
+      if (pagination_ != null) {
+        output.writeMessage(100, getPagination());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (baseRequest_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getBaseRequest());
+      }
+      if (!getRoleNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, roleName_);
+      }
+      if (tenantId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, tenantId_);
+      }
+      if (pagination_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(100, getPagination());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof glory_api.UserOuterClass.ListUserByRoleRequest)) {
+        return super.equals(obj);
+      }
+      glory_api.UserOuterClass.ListUserByRoleRequest other = (glory_api.UserOuterClass.ListUserByRoleRequest) obj;
+
+      if (hasBaseRequest() != other.hasBaseRequest()) return false;
+      if (hasBaseRequest()) {
+        if (!getBaseRequest()
+            .equals(other.getBaseRequest())) return false;
+      }
+      if (!getRoleName()
+          .equals(other.getRoleName())) return false;
+      if (getTenantId()
+          != other.getTenantId()) return false;
+      if (hasPagination() != other.hasPagination()) return false;
+      if (hasPagination()) {
+        if (!getPagination()
+            .equals(other.getPagination())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasBaseRequest()) {
+        hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getBaseRequest().hashCode();
+      }
+      hash = (37 * hash) + ROLE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getRoleName().hashCode();
+      hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTenantId());
+      if (hasPagination()) {
+        hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
+        hash = (53 * hash) + getPagination().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static glory_api.UserOuterClass.ListUserByRoleRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.UserOuterClass.ListUserByRoleRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.ListUserByRoleRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.UserOuterClass.ListUserByRoleRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.ListUserByRoleRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.UserOuterClass.ListUserByRoleRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.ListUserByRoleRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.UserOuterClass.ListUserByRoleRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.ListUserByRoleRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static glory_api.UserOuterClass.ListUserByRoleRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.ListUserByRoleRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.UserOuterClass.ListUserByRoleRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(glory_api.UserOuterClass.ListUserByRoleRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code glory_api.ListUserByRoleRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:glory_api.ListUserByRoleRequest)
+        glory_api.UserOuterClass.ListUserByRoleRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return glory_api.UserOuterClass.internal_static_glory_api_ListUserByRoleRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return glory_api.UserOuterClass.internal_static_glory_api_ListUserByRoleRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                glory_api.UserOuterClass.ListUserByRoleRequest.class, glory_api.UserOuterClass.ListUserByRoleRequest.Builder.class);
+      }
+
+      // Construct using glory_api.UserOuterClass.ListUserByRoleRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (baseRequestBuilder_ == null) {
+          baseRequest_ = null;
+        } else {
+          baseRequest_ = null;
+          baseRequestBuilder_ = null;
+        }
+        roleName_ = "";
+
+        tenantId_ = 0L;
+
+        if (paginationBuilder_ == null) {
+          pagination_ = null;
+        } else {
+          pagination_ = null;
+          paginationBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return glory_api.UserOuterClass.internal_static_glory_api_ListUserByRoleRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public glory_api.UserOuterClass.ListUserByRoleRequest getDefaultInstanceForType() {
+        return glory_api.UserOuterClass.ListUserByRoleRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public glory_api.UserOuterClass.ListUserByRoleRequest build() {
+        glory_api.UserOuterClass.ListUserByRoleRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public glory_api.UserOuterClass.ListUserByRoleRequest buildPartial() {
+        glory_api.UserOuterClass.ListUserByRoleRequest result = new glory_api.UserOuterClass.ListUserByRoleRequest(this);
+        if (baseRequestBuilder_ == null) {
+          result.baseRequest_ = baseRequest_;
+        } else {
+          result.baseRequest_ = baseRequestBuilder_.build();
+        }
+        result.roleName_ = roleName_;
+        result.tenantId_ = tenantId_;
+        if (paginationBuilder_ == null) {
+          result.pagination_ = pagination_;
+        } else {
+          result.pagination_ = paginationBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof glory_api.UserOuterClass.ListUserByRoleRequest) {
+          return mergeFrom((glory_api.UserOuterClass.ListUserByRoleRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(glory_api.UserOuterClass.ListUserByRoleRequest other) {
+        if (other == glory_api.UserOuterClass.ListUserByRoleRequest.getDefaultInstance()) return this;
+        if (other.hasBaseRequest()) {
+          mergeBaseRequest(other.getBaseRequest());
+        }
+        if (!other.getRoleName().isEmpty()) {
+          roleName_ = other.roleName_;
+          onChanged();
+        }
+        if (other.getTenantId() != 0L) {
+          setTenantId(other.getTenantId());
+        }
+        if (other.hasPagination()) {
+          mergePagination(other.getPagination());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        glory_api.UserOuterClass.ListUserByRoleRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (glory_api.UserOuterClass.ListUserByRoleRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private base.Base.BaseRequest baseRequest_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          base.Base.BaseRequest, base.Base.BaseRequest.Builder, base.Base.BaseRequestOrBuilder> baseRequestBuilder_;
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       * @return Whether the baseRequest field is set.
+       */
+      public boolean hasBaseRequest() {
+        return baseRequestBuilder_ != null || baseRequest_ != null;
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       * @return The baseRequest.
+       */
+      public base.Base.BaseRequest getBaseRequest() {
+        if (baseRequestBuilder_ == null) {
+          return baseRequest_ == null ? base.Base.BaseRequest.getDefaultInstance() : baseRequest_;
+        } else {
+          return baseRequestBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public Builder setBaseRequest(base.Base.BaseRequest value) {
+        if (baseRequestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          baseRequest_ = value;
+          onChanged();
+        } else {
+          baseRequestBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public Builder setBaseRequest(
+          base.Base.BaseRequest.Builder builderForValue) {
+        if (baseRequestBuilder_ == null) {
+          baseRequest_ = builderForValue.build();
+          onChanged();
+        } else {
+          baseRequestBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public Builder mergeBaseRequest(base.Base.BaseRequest value) {
+        if (baseRequestBuilder_ == null) {
+          if (baseRequest_ != null) {
+            baseRequest_ =
+              base.Base.BaseRequest.newBuilder(baseRequest_).mergeFrom(value).buildPartial();
+          } else {
+            baseRequest_ = value;
+          }
+          onChanged();
+        } else {
+          baseRequestBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public Builder clearBaseRequest() {
+        if (baseRequestBuilder_ == null) {
+          baseRequest_ = null;
+          onChanged();
+        } else {
+          baseRequest_ = null;
+          baseRequestBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public base.Base.BaseRequest.Builder getBaseRequestBuilder() {
+        
+        onChanged();
+        return getBaseRequestFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public base.Base.BaseRequestOrBuilder getBaseRequestOrBuilder() {
+        if (baseRequestBuilder_ != null) {
+          return baseRequestBuilder_.getMessageOrBuilder();
+        } else {
+          return baseRequest_ == null ?
+              base.Base.BaseRequest.getDefaultInstance() : baseRequest_;
+        }
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          base.Base.BaseRequest, base.Base.BaseRequest.Builder, base.Base.BaseRequestOrBuilder> 
+          getBaseRequestFieldBuilder() {
+        if (baseRequestBuilder_ == null) {
+          baseRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              base.Base.BaseRequest, base.Base.BaseRequest.Builder, base.Base.BaseRequestOrBuilder>(
+                  getBaseRequest(),
+                  getParentForChildren(),
+                  isClean());
+          baseRequest_ = null;
+        }
+        return baseRequestBuilder_;
+      }
+
+      private java.lang.Object roleName_ = "";
+      /**
+       * <pre>
+       * 平台管理员是admin, 学校管理员是school_admin_role
+       * </pre>
+       *
+       * <code>string role_name = 2;</code>
+       * @return The roleName.
+       */
+      public java.lang.String getRoleName() {
+        java.lang.Object ref = roleName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          roleName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 平台管理员是admin, 学校管理员是school_admin_role
+       * </pre>
+       *
+       * <code>string role_name = 2;</code>
+       * @return The bytes for roleName.
+       */
+      public com.google.protobuf.ByteString
+          getRoleNameBytes() {
+        java.lang.Object ref = roleName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          roleName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 平台管理员是admin, 学校管理员是school_admin_role
+       * </pre>
+       *
+       * <code>string role_name = 2;</code>
+       * @param value The roleName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRoleName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        roleName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 平台管理员是admin, 学校管理员是school_admin_role
+       * </pre>
+       *
+       * <code>string role_name = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRoleName() {
+        
+        roleName_ = getDefaultInstance().getRoleName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 平台管理员是admin, 学校管理员是school_admin_role
+       * </pre>
+       *
+       * <code>string role_name = 2;</code>
+       * @param value The bytes for roleName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRoleNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        roleName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long tenantId_ ;
+      /**
+       * <pre>
+       * 学校的id，若是角色名称是admin，则会忽略这个
+       * </pre>
+       *
+       * <code>int64 tenant_id = 3;</code>
+       * @return The tenantId.
+       */
+      @java.lang.Override
+      public long getTenantId() {
+        return tenantId_;
+      }
+      /**
+       * <pre>
+       * 学校的id，若是角色名称是admin，则会忽略这个
+       * </pre>
+       *
+       * <code>int64 tenant_id = 3;</code>
+       * @param value The tenantId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTenantId(long value) {
+        
+        tenantId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 学校的id，若是角色名称是admin，则会忽略这个
+       * </pre>
+       *
+       * <code>int64 tenant_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTenantId() {
+        
+        tenantId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private base.Base.PaginationRequest pagination_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          base.Base.PaginationRequest, base.Base.PaginationRequest.Builder, base.Base.PaginationRequestOrBuilder> paginationBuilder_;
+      /**
+       * <code>.base.PaginationRequest pagination = 100;</code>
+       * @return Whether the pagination field is set.
+       */
+      public boolean hasPagination() {
+        return paginationBuilder_ != null || pagination_ != null;
+      }
+      /**
+       * <code>.base.PaginationRequest pagination = 100;</code>
+       * @return The pagination.
+       */
+      public base.Base.PaginationRequest getPagination() {
+        if (paginationBuilder_ == null) {
+          return pagination_ == null ? base.Base.PaginationRequest.getDefaultInstance() : pagination_;
+        } else {
+          return paginationBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.base.PaginationRequest pagination = 100;</code>
+       */
+      public Builder setPagination(base.Base.PaginationRequest value) {
+        if (paginationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          pagination_ = value;
+          onChanged();
+        } else {
+          paginationBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.PaginationRequest pagination = 100;</code>
+       */
+      public Builder setPagination(
+          base.Base.PaginationRequest.Builder builderForValue) {
+        if (paginationBuilder_ == null) {
+          pagination_ = builderForValue.build();
+          onChanged();
+        } else {
+          paginationBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.PaginationRequest pagination = 100;</code>
+       */
+      public Builder mergePagination(base.Base.PaginationRequest value) {
+        if (paginationBuilder_ == null) {
+          if (pagination_ != null) {
+            pagination_ =
+              base.Base.PaginationRequest.newBuilder(pagination_).mergeFrom(value).buildPartial();
+          } else {
+            pagination_ = value;
+          }
+          onChanged();
+        } else {
+          paginationBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.PaginationRequest pagination = 100;</code>
+       */
+      public Builder clearPagination() {
+        if (paginationBuilder_ == null) {
+          pagination_ = null;
+          onChanged();
+        } else {
+          pagination_ = null;
+          paginationBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.PaginationRequest pagination = 100;</code>
+       */
+      public base.Base.PaginationRequest.Builder getPaginationBuilder() {
+        
+        onChanged();
+        return getPaginationFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.base.PaginationRequest pagination = 100;</code>
+       */
+      public base.Base.PaginationRequestOrBuilder getPaginationOrBuilder() {
+        if (paginationBuilder_ != null) {
+          return paginationBuilder_.getMessageOrBuilder();
+        } else {
+          return pagination_ == null ?
+              base.Base.PaginationRequest.getDefaultInstance() : pagination_;
+        }
+      }
+      /**
+       * <code>.base.PaginationRequest pagination = 100;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          base.Base.PaginationRequest, base.Base.PaginationRequest.Builder, base.Base.PaginationRequestOrBuilder> 
+          getPaginationFieldBuilder() {
+        if (paginationBuilder_ == null) {
+          paginationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              base.Base.PaginationRequest, base.Base.PaginationRequest.Builder, base.Base.PaginationRequestOrBuilder>(
+                  getPagination(),
+                  getParentForChildren(),
+                  isClean());
+          pagination_ = null;
+        }
+        return paginationBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:glory_api.ListUserByRoleRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:glory_api.ListUserByRoleRequest)
+    private static final glory_api.UserOuterClass.ListUserByRoleRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new glory_api.UserOuterClass.ListUserByRoleRequest();
+    }
+
+    public static glory_api.UserOuterClass.ListUserByRoleRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ListUserByRoleRequest>
+        PARSER = new com.google.protobuf.AbstractParser<ListUserByRoleRequest>() {
+      @java.lang.Override
+      public ListUserByRoleRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ListUserByRoleRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ListUserByRoleRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ListUserByRoleRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public glory_api.UserOuterClass.ListUserByRoleRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ListUserByRoleResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:glory_api.ListUserByRoleResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     * @return Whether the baseResp field is set.
+     */
+    boolean hasBaseResp();
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     * @return The baseResp.
+     */
+    base.Base.BaseResponse getBaseResp();
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     */
+    base.Base.BaseResponseOrBuilder getBaseRespOrBuilder();
+
+    /**
+     * <pre>
+     * user 列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.ListUserByRole user = 2;</code>
+     */
+    java.util.List<glory_api.UserOuterClass.ListUserByRole> 
+        getUserList();
+    /**
+     * <pre>
+     * user 列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.ListUserByRole user = 2;</code>
+     */
+    glory_api.UserOuterClass.ListUserByRole getUser(int index);
+    /**
+     * <pre>
+     * user 列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.ListUserByRole user = 2;</code>
+     */
+    int getUserCount();
+    /**
+     * <pre>
+     * user 列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.ListUserByRole user = 2;</code>
+     */
+    java.util.List<? extends glory_api.UserOuterClass.ListUserByRoleOrBuilder> 
+        getUserOrBuilderList();
+    /**
+     * <pre>
+     * user 列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.ListUserByRole user = 2;</code>
+     */
+    glory_api.UserOuterClass.ListUserByRoleOrBuilder getUserOrBuilder(
+        int index);
+
+    /**
+     * <code>.base.PaginationResponse pagination = 100;</code>
+     * @return Whether the pagination field is set.
+     */
+    boolean hasPagination();
+    /**
+     * <code>.base.PaginationResponse pagination = 100;</code>
+     * @return The pagination.
+     */
+    base.Base.PaginationResponse getPagination();
+    /**
+     * <code>.base.PaginationResponse pagination = 100;</code>
+     */
+    base.Base.PaginationResponseOrBuilder getPaginationOrBuilder();
+  }
+  /**
+   * Protobuf type {@code glory_api.ListUserByRoleResponse}
+   */
+  public static final class ListUserByRoleResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:glory_api.ListUserByRoleResponse)
+      ListUserByRoleResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ListUserByRoleResponse.newBuilder() to construct.
+    private ListUserByRoleResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ListUserByRoleResponse() {
+      user_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ListUserByRoleResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ListUserByRoleResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              base.Base.BaseResponse.Builder subBuilder = null;
+              if (baseResp_ != null) {
+                subBuilder = baseResp_.toBuilder();
+              }
+              baseResp_ = input.readMessage(base.Base.BaseResponse.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(baseResp_);
+                baseResp_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                user_ = new java.util.ArrayList<glory_api.UserOuterClass.ListUserByRole>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              user_.add(
+                  input.readMessage(glory_api.UserOuterClass.ListUserByRole.parser(), extensionRegistry));
+              break;
+            }
+            case 802: {
+              base.Base.PaginationResponse.Builder subBuilder = null;
+              if (pagination_ != null) {
+                subBuilder = pagination_.toBuilder();
+              }
+              pagination_ = input.readMessage(base.Base.PaginationResponse.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(pagination_);
+                pagination_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          user_ = java.util.Collections.unmodifiableList(user_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return glory_api.UserOuterClass.internal_static_glory_api_ListUserByRoleResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return glory_api.UserOuterClass.internal_static_glory_api_ListUserByRoleResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              glory_api.UserOuterClass.ListUserByRoleResponse.class, glory_api.UserOuterClass.ListUserByRoleResponse.Builder.class);
+    }
+
+    public static final int BASE_RESP_FIELD_NUMBER = 1;
+    private base.Base.BaseResponse baseResp_;
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     * @return Whether the baseResp field is set.
+     */
+    @java.lang.Override
+    public boolean hasBaseResp() {
+      return baseResp_ != null;
+    }
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     * @return The baseResp.
+     */
+    @java.lang.Override
+    public base.Base.BaseResponse getBaseResp() {
+      return baseResp_ == null ? base.Base.BaseResponse.getDefaultInstance() : baseResp_;
+    }
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     */
+    @java.lang.Override
+    public base.Base.BaseResponseOrBuilder getBaseRespOrBuilder() {
+      return getBaseResp();
+    }
+
+    public static final int USER_FIELD_NUMBER = 2;
+    private java.util.List<glory_api.UserOuterClass.ListUserByRole> user_;
+    /**
+     * <pre>
+     * user 列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.ListUserByRole user = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<glory_api.UserOuterClass.ListUserByRole> getUserList() {
+      return user_;
+    }
+    /**
+     * <pre>
+     * user 列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.ListUserByRole user = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends glory_api.UserOuterClass.ListUserByRoleOrBuilder> 
+        getUserOrBuilderList() {
+      return user_;
+    }
+    /**
+     * <pre>
+     * user 列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.ListUserByRole user = 2;</code>
+     */
+    @java.lang.Override
+    public int getUserCount() {
+      return user_.size();
+    }
+    /**
+     * <pre>
+     * user 列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.ListUserByRole user = 2;</code>
+     */
+    @java.lang.Override
+    public glory_api.UserOuterClass.ListUserByRole getUser(int index) {
+      return user_.get(index);
+    }
+    /**
+     * <pre>
+     * user 列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.ListUserByRole user = 2;</code>
+     */
+    @java.lang.Override
+    public glory_api.UserOuterClass.ListUserByRoleOrBuilder getUserOrBuilder(
+        int index) {
+      return user_.get(index);
+    }
+
+    public static final int PAGINATION_FIELD_NUMBER = 100;
+    private base.Base.PaginationResponse pagination_;
+    /**
+     * <code>.base.PaginationResponse pagination = 100;</code>
+     * @return Whether the pagination field is set.
+     */
+    @java.lang.Override
+    public boolean hasPagination() {
+      return pagination_ != null;
+    }
+    /**
+     * <code>.base.PaginationResponse pagination = 100;</code>
+     * @return The pagination.
+     */
+    @java.lang.Override
+    public base.Base.PaginationResponse getPagination() {
+      return pagination_ == null ? base.Base.PaginationResponse.getDefaultInstance() : pagination_;
+    }
+    /**
+     * <code>.base.PaginationResponse pagination = 100;</code>
+     */
+    @java.lang.Override
+    public base.Base.PaginationResponseOrBuilder getPaginationOrBuilder() {
+      return getPagination();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (baseResp_ != null) {
+        output.writeMessage(1, getBaseResp());
+      }
+      for (int i = 0; i < user_.size(); i++) {
+        output.writeMessage(2, user_.get(i));
+      }
+      if (pagination_ != null) {
+        output.writeMessage(100, getPagination());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (baseResp_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getBaseResp());
+      }
+      for (int i = 0; i < user_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, user_.get(i));
+      }
+      if (pagination_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(100, getPagination());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof glory_api.UserOuterClass.ListUserByRoleResponse)) {
+        return super.equals(obj);
+      }
+      glory_api.UserOuterClass.ListUserByRoleResponse other = (glory_api.UserOuterClass.ListUserByRoleResponse) obj;
+
+      if (hasBaseResp() != other.hasBaseResp()) return false;
+      if (hasBaseResp()) {
+        if (!getBaseResp()
+            .equals(other.getBaseResp())) return false;
+      }
+      if (!getUserList()
+          .equals(other.getUserList())) return false;
+      if (hasPagination() != other.hasPagination()) return false;
+      if (hasPagination()) {
+        if (!getPagination()
+            .equals(other.getPagination())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasBaseResp()) {
+        hash = (37 * hash) + BASE_RESP_FIELD_NUMBER;
+        hash = (53 * hash) + getBaseResp().hashCode();
+      }
+      if (getUserCount() > 0) {
+        hash = (37 * hash) + USER_FIELD_NUMBER;
+        hash = (53 * hash) + getUserList().hashCode();
+      }
+      if (hasPagination()) {
+        hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
+        hash = (53 * hash) + getPagination().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static glory_api.UserOuterClass.ListUserByRoleResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.UserOuterClass.ListUserByRoleResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.ListUserByRoleResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.UserOuterClass.ListUserByRoleResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.ListUserByRoleResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.UserOuterClass.ListUserByRoleResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.ListUserByRoleResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.UserOuterClass.ListUserByRoleResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.ListUserByRoleResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static glory_api.UserOuterClass.ListUserByRoleResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.UserOuterClass.ListUserByRoleResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.UserOuterClass.ListUserByRoleResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(glory_api.UserOuterClass.ListUserByRoleResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code glory_api.ListUserByRoleResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:glory_api.ListUserByRoleResponse)
+        glory_api.UserOuterClass.ListUserByRoleResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return glory_api.UserOuterClass.internal_static_glory_api_ListUserByRoleResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return glory_api.UserOuterClass.internal_static_glory_api_ListUserByRoleResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                glory_api.UserOuterClass.ListUserByRoleResponse.class, glory_api.UserOuterClass.ListUserByRoleResponse.Builder.class);
+      }
+
+      // Construct using glory_api.UserOuterClass.ListUserByRoleResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getUserFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (baseRespBuilder_ == null) {
+          baseResp_ = null;
+        } else {
+          baseResp_ = null;
+          baseRespBuilder_ = null;
+        }
+        if (userBuilder_ == null) {
+          user_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          userBuilder_.clear();
+        }
+        if (paginationBuilder_ == null) {
+          pagination_ = null;
+        } else {
+          pagination_ = null;
+          paginationBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return glory_api.UserOuterClass.internal_static_glory_api_ListUserByRoleResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public glory_api.UserOuterClass.ListUserByRoleResponse getDefaultInstanceForType() {
+        return glory_api.UserOuterClass.ListUserByRoleResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public glory_api.UserOuterClass.ListUserByRoleResponse build() {
+        glory_api.UserOuterClass.ListUserByRoleResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public glory_api.UserOuterClass.ListUserByRoleResponse buildPartial() {
+        glory_api.UserOuterClass.ListUserByRoleResponse result = new glory_api.UserOuterClass.ListUserByRoleResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (baseRespBuilder_ == null) {
+          result.baseResp_ = baseResp_;
+        } else {
+          result.baseResp_ = baseRespBuilder_.build();
+        }
+        if (userBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            user_ = java.util.Collections.unmodifiableList(user_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.user_ = user_;
+        } else {
+          result.user_ = userBuilder_.build();
+        }
+        if (paginationBuilder_ == null) {
+          result.pagination_ = pagination_;
+        } else {
+          result.pagination_ = paginationBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof glory_api.UserOuterClass.ListUserByRoleResponse) {
+          return mergeFrom((glory_api.UserOuterClass.ListUserByRoleResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(glory_api.UserOuterClass.ListUserByRoleResponse other) {
+        if (other == glory_api.UserOuterClass.ListUserByRoleResponse.getDefaultInstance()) return this;
+        if (other.hasBaseResp()) {
+          mergeBaseResp(other.getBaseResp());
+        }
+        if (userBuilder_ == null) {
+          if (!other.user_.isEmpty()) {
+            if (user_.isEmpty()) {
+              user_ = other.user_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureUserIsMutable();
+              user_.addAll(other.user_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.user_.isEmpty()) {
+            if (userBuilder_.isEmpty()) {
+              userBuilder_.dispose();
+              userBuilder_ = null;
+              user_ = other.user_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              userBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getUserFieldBuilder() : null;
+            } else {
+              userBuilder_.addAllMessages(other.user_);
+            }
+          }
+        }
+        if (other.hasPagination()) {
+          mergePagination(other.getPagination());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        glory_api.UserOuterClass.ListUserByRoleResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (glory_api.UserOuterClass.ListUserByRoleResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private base.Base.BaseResponse baseResp_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          base.Base.BaseResponse, base.Base.BaseResponse.Builder, base.Base.BaseResponseOrBuilder> baseRespBuilder_;
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       * @return Whether the baseResp field is set.
+       */
+      public boolean hasBaseResp() {
+        return baseRespBuilder_ != null || baseResp_ != null;
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       * @return The baseResp.
+       */
+      public base.Base.BaseResponse getBaseResp() {
+        if (baseRespBuilder_ == null) {
+          return baseResp_ == null ? base.Base.BaseResponse.getDefaultInstance() : baseResp_;
+        } else {
+          return baseRespBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public Builder setBaseResp(base.Base.BaseResponse value) {
+        if (baseRespBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          baseResp_ = value;
+          onChanged();
+        } else {
+          baseRespBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public Builder setBaseResp(
+          base.Base.BaseResponse.Builder builderForValue) {
+        if (baseRespBuilder_ == null) {
+          baseResp_ = builderForValue.build();
+          onChanged();
+        } else {
+          baseRespBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public Builder mergeBaseResp(base.Base.BaseResponse value) {
+        if (baseRespBuilder_ == null) {
+          if (baseResp_ != null) {
+            baseResp_ =
+              base.Base.BaseResponse.newBuilder(baseResp_).mergeFrom(value).buildPartial();
+          } else {
+            baseResp_ = value;
+          }
+          onChanged();
+        } else {
+          baseRespBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public Builder clearBaseResp() {
+        if (baseRespBuilder_ == null) {
+          baseResp_ = null;
+          onChanged();
+        } else {
+          baseResp_ = null;
+          baseRespBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public base.Base.BaseResponse.Builder getBaseRespBuilder() {
+        
+        onChanged();
+        return getBaseRespFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public base.Base.BaseResponseOrBuilder getBaseRespOrBuilder() {
+        if (baseRespBuilder_ != null) {
+          return baseRespBuilder_.getMessageOrBuilder();
+        } else {
+          return baseResp_ == null ?
+              base.Base.BaseResponse.getDefaultInstance() : baseResp_;
+        }
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          base.Base.BaseResponse, base.Base.BaseResponse.Builder, base.Base.BaseResponseOrBuilder> 
+          getBaseRespFieldBuilder() {
+        if (baseRespBuilder_ == null) {
+          baseRespBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              base.Base.BaseResponse, base.Base.BaseResponse.Builder, base.Base.BaseResponseOrBuilder>(
+                  getBaseResp(),
+                  getParentForChildren(),
+                  isClean());
+          baseResp_ = null;
+        }
+        return baseRespBuilder_;
+      }
+
+      private java.util.List<glory_api.UserOuterClass.ListUserByRole> user_ =
+        java.util.Collections.emptyList();
+      private void ensureUserIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          user_ = new java.util.ArrayList<glory_api.UserOuterClass.ListUserByRole>(user_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          glory_api.UserOuterClass.ListUserByRole, glory_api.UserOuterClass.ListUserByRole.Builder, glory_api.UserOuterClass.ListUserByRoleOrBuilder> userBuilder_;
+
+      /**
+       * <pre>
+       * user 列表
+       * </pre>
+       *
+       * <code>repeated .glory_api.ListUserByRole user = 2;</code>
+       */
+      public java.util.List<glory_api.UserOuterClass.ListUserByRole> getUserList() {
+        if (userBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(user_);
+        } else {
+          return userBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * user 列表
+       * </pre>
+       *
+       * <code>repeated .glory_api.ListUserByRole user = 2;</code>
+       */
+      public int getUserCount() {
+        if (userBuilder_ == null) {
+          return user_.size();
+        } else {
+          return userBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * user 列表
+       * </pre>
+       *
+       * <code>repeated .glory_api.ListUserByRole user = 2;</code>
+       */
+      public glory_api.UserOuterClass.ListUserByRole getUser(int index) {
+        if (userBuilder_ == null) {
+          return user_.get(index);
+        } else {
+          return userBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * user 列表
+       * </pre>
+       *
+       * <code>repeated .glory_api.ListUserByRole user = 2;</code>
+       */
+      public Builder setUser(
+          int index, glory_api.UserOuterClass.ListUserByRole value) {
+        if (userBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUserIsMutable();
+          user_.set(index, value);
+          onChanged();
+        } else {
+          userBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * user 列表
+       * </pre>
+       *
+       * <code>repeated .glory_api.ListUserByRole user = 2;</code>
+       */
+      public Builder setUser(
+          int index, glory_api.UserOuterClass.ListUserByRole.Builder builderForValue) {
+        if (userBuilder_ == null) {
+          ensureUserIsMutable();
+          user_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          userBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * user 列表
+       * </pre>
+       *
+       * <code>repeated .glory_api.ListUserByRole user = 2;</code>
+       */
+      public Builder addUser(glory_api.UserOuterClass.ListUserByRole value) {
+        if (userBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUserIsMutable();
+          user_.add(value);
+          onChanged();
+        } else {
+          userBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * user 列表
+       * </pre>
+       *
+       * <code>repeated .glory_api.ListUserByRole user = 2;</code>
+       */
+      public Builder addUser(
+          int index, glory_api.UserOuterClass.ListUserByRole value) {
+        if (userBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUserIsMutable();
+          user_.add(index, value);
+          onChanged();
+        } else {
+          userBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * user 列表
+       * </pre>
+       *
+       * <code>repeated .glory_api.ListUserByRole user = 2;</code>
+       */
+      public Builder addUser(
+          glory_api.UserOuterClass.ListUserByRole.Builder builderForValue) {
+        if (userBuilder_ == null) {
+          ensureUserIsMutable();
+          user_.add(builderForValue.build());
+          onChanged();
+        } else {
+          userBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * user 列表
+       * </pre>
+       *
+       * <code>repeated .glory_api.ListUserByRole user = 2;</code>
+       */
+      public Builder addUser(
+          int index, glory_api.UserOuterClass.ListUserByRole.Builder builderForValue) {
+        if (userBuilder_ == null) {
+          ensureUserIsMutable();
+          user_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          userBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * user 列表
+       * </pre>
+       *
+       * <code>repeated .glory_api.ListUserByRole user = 2;</code>
+       */
+      public Builder addAllUser(
+          java.lang.Iterable<? extends glory_api.UserOuterClass.ListUserByRole> values) {
+        if (userBuilder_ == null) {
+          ensureUserIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, user_);
+          onChanged();
+        } else {
+          userBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * user 列表
+       * </pre>
+       *
+       * <code>repeated .glory_api.ListUserByRole user = 2;</code>
+       */
+      public Builder clearUser() {
+        if (userBuilder_ == null) {
+          user_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          userBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * user 列表
+       * </pre>
+       *
+       * <code>repeated .glory_api.ListUserByRole user = 2;</code>
+       */
+      public Builder removeUser(int index) {
+        if (userBuilder_ == null) {
+          ensureUserIsMutable();
+          user_.remove(index);
+          onChanged();
+        } else {
+          userBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * user 列表
+       * </pre>
+       *
+       * <code>repeated .glory_api.ListUserByRole user = 2;</code>
+       */
+      public glory_api.UserOuterClass.ListUserByRole.Builder getUserBuilder(
+          int index) {
+        return getUserFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * user 列表
+       * </pre>
+       *
+       * <code>repeated .glory_api.ListUserByRole user = 2;</code>
+       */
+      public glory_api.UserOuterClass.ListUserByRoleOrBuilder getUserOrBuilder(
+          int index) {
+        if (userBuilder_ == null) {
+          return user_.get(index);  } else {
+          return userBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * user 列表
+       * </pre>
+       *
+       * <code>repeated .glory_api.ListUserByRole user = 2;</code>
+       */
+      public java.util.List<? extends glory_api.UserOuterClass.ListUserByRoleOrBuilder> 
+           getUserOrBuilderList() {
+        if (userBuilder_ != null) {
+          return userBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(user_);
+        }
+      }
+      /**
+       * <pre>
+       * user 列表
+       * </pre>
+       *
+       * <code>repeated .glory_api.ListUserByRole user = 2;</code>
+       */
+      public glory_api.UserOuterClass.ListUserByRole.Builder addUserBuilder() {
+        return getUserFieldBuilder().addBuilder(
+            glory_api.UserOuterClass.ListUserByRole.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * user 列表
+       * </pre>
+       *
+       * <code>repeated .glory_api.ListUserByRole user = 2;</code>
+       */
+      public glory_api.UserOuterClass.ListUserByRole.Builder addUserBuilder(
+          int index) {
+        return getUserFieldBuilder().addBuilder(
+            index, glory_api.UserOuterClass.ListUserByRole.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * user 列表
+       * </pre>
+       *
+       * <code>repeated .glory_api.ListUserByRole user = 2;</code>
+       */
+      public java.util.List<glory_api.UserOuterClass.ListUserByRole.Builder> 
+           getUserBuilderList() {
+        return getUserFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          glory_api.UserOuterClass.ListUserByRole, glory_api.UserOuterClass.ListUserByRole.Builder, glory_api.UserOuterClass.ListUserByRoleOrBuilder> 
+          getUserFieldBuilder() {
+        if (userBuilder_ == null) {
+          userBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              glory_api.UserOuterClass.ListUserByRole, glory_api.UserOuterClass.ListUserByRole.Builder, glory_api.UserOuterClass.ListUserByRoleOrBuilder>(
+                  user_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          user_ = null;
+        }
+        return userBuilder_;
+      }
+
+      private base.Base.PaginationResponse pagination_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          base.Base.PaginationResponse, base.Base.PaginationResponse.Builder, base.Base.PaginationResponseOrBuilder> paginationBuilder_;
+      /**
+       * <code>.base.PaginationResponse pagination = 100;</code>
+       * @return Whether the pagination field is set.
+       */
+      public boolean hasPagination() {
+        return paginationBuilder_ != null || pagination_ != null;
+      }
+      /**
+       * <code>.base.PaginationResponse pagination = 100;</code>
+       * @return The pagination.
+       */
+      public base.Base.PaginationResponse getPagination() {
+        if (paginationBuilder_ == null) {
+          return pagination_ == null ? base.Base.PaginationResponse.getDefaultInstance() : pagination_;
+        } else {
+          return paginationBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.base.PaginationResponse pagination = 100;</code>
+       */
+      public Builder setPagination(base.Base.PaginationResponse value) {
+        if (paginationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          pagination_ = value;
+          onChanged();
+        } else {
+          paginationBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.PaginationResponse pagination = 100;</code>
+       */
+      public Builder setPagination(
+          base.Base.PaginationResponse.Builder builderForValue) {
+        if (paginationBuilder_ == null) {
+          pagination_ = builderForValue.build();
+          onChanged();
+        } else {
+          paginationBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.PaginationResponse pagination = 100;</code>
+       */
+      public Builder mergePagination(base.Base.PaginationResponse value) {
+        if (paginationBuilder_ == null) {
+          if (pagination_ != null) {
+            pagination_ =
+              base.Base.PaginationResponse.newBuilder(pagination_).mergeFrom(value).buildPartial();
+          } else {
+            pagination_ = value;
+          }
+          onChanged();
+        } else {
+          paginationBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.PaginationResponse pagination = 100;</code>
+       */
+      public Builder clearPagination() {
+        if (paginationBuilder_ == null) {
+          pagination_ = null;
+          onChanged();
+        } else {
+          pagination_ = null;
+          paginationBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.PaginationResponse pagination = 100;</code>
+       */
+      public base.Base.PaginationResponse.Builder getPaginationBuilder() {
+        
+        onChanged();
+        return getPaginationFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.base.PaginationResponse pagination = 100;</code>
+       */
+      public base.Base.PaginationResponseOrBuilder getPaginationOrBuilder() {
+        if (paginationBuilder_ != null) {
+          return paginationBuilder_.getMessageOrBuilder();
+        } else {
+          return pagination_ == null ?
+              base.Base.PaginationResponse.getDefaultInstance() : pagination_;
+        }
+      }
+      /**
+       * <code>.base.PaginationResponse pagination = 100;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          base.Base.PaginationResponse, base.Base.PaginationResponse.Builder, base.Base.PaginationResponseOrBuilder> 
+          getPaginationFieldBuilder() {
+        if (paginationBuilder_ == null) {
+          paginationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              base.Base.PaginationResponse, base.Base.PaginationResponse.Builder, base.Base.PaginationResponseOrBuilder>(
+                  getPagination(),
+                  getParentForChildren(),
+                  isClean());
+          pagination_ = null;
+        }
+        return paginationBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:glory_api.ListUserByRoleResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:glory_api.ListUserByRoleResponse)
+    private static final glory_api.UserOuterClass.ListUserByRoleResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new glory_api.UserOuterClass.ListUserByRoleResponse();
+    }
+
+    public static glory_api.UserOuterClass.ListUserByRoleResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ListUserByRoleResponse>
+        PARSER = new com.google.protobuf.AbstractParser<ListUserByRoleResponse>() {
+      @java.lang.Override
+      public ListUserByRoleResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ListUserByRoleResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ListUserByRoleResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ListUserByRoleResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public glory_api.UserOuterClass.ListUserByRoleResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_glory_api_User_descriptor;
   private static final 
@@ -27383,6 +34436,36 @@ public final class UserOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_DeleteRoleResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_Resource_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_Resource_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ListResourceRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ListResourceRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ListResourceResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ListResourceResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ListUserByRole_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ListUserByRole_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ListUserByRoleRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ListUserByRoleRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ListUserByRoleResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ListUserByRoleResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -27419,58 +34502,79 @@ public final class UserOuterClass {
       "sponse\"9\n\016GetUserRequest\022\'\n\014base_request" +
       "\030\001 \001(\0132\021.base.BaseRequest\"W\n\017GetUserResp" +
       "onse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespo" +
-      "nse\022\035\n\004data\030\002 \001(\0132\017.glory_api.User\"6\n\016Pa" +
-      "gePermission\022\014\n\004page\030\001 \001(\t\022\026\n\016has_permis" +
-      "sion\030\002 \001(\010\"G\n\034GetUserPagePermissionReque" +
+      "nse\022\035\n\004data\030\002 \001(\0132\017.glory_api.User\"O\n\016Pa" +
+      "gePermission\022\027\n\017business_system\030\001 \001(\t\022\014\n" +
+      "\004page\030\002 \001(\t\022\026\n\016has_permission\030\003 \001(\010\"G\n\034G" +
+      "etUserPagePermissionRequest\022\'\n\014base_requ" +
+      "est\030\001 \001(\0132\021.base.BaseRequest\"z\n\035GetUserP" +
+      "agePermissionResponse\022%\n\tbase_resp\030\001 \001(\013" +
+      "2\022.base.BaseResponse\0222\n\017page_permission\030" +
+      "\002 \003(\0132\031.glory_api.PagePermission\"\215\001\n\nPer" +
+      "mission\022\025\n\rpermission_id\030\001 \001(\003\022\027\n\017permis" +
+      "sion_name\030\002 \001(\t\022\023\n\013resource_id\030\003 \001(\003\022\022\n\n" +
+      "permission\030\004 \001(\t\022\023\n\013description\030\005 \001(\t\022\021\n" +
+      "\ttenant_id\030\006 \001(\003\"\331\001\n\025ListPermissionReque" +
       "st\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequ" +
-      "est\"z\n\035GetUserPagePermissionResponse\022%\n\t" +
-      "base_resp\030\001 \001(\0132\022.base.BaseResponse\0222\n\017p" +
-      "age_permission\030\002 \003(\0132\031.glory_api.PagePer" +
-      "mission\"z\n\nPermission\022\025\n\rpermission_id\030\001" +
-      " \001(\003\022\027\n\017permission_name\030\002 \001(\t\022\023\n\013resourc" +
-      "e_id\030\003 \001(\003\022\022\n\npermission\030\004 \001(\t\022\023\n\013descri" +
-      "ption\030\005 \001(\t\"\306\001\n\025ListPermissionRequest\022\'\n" +
-      "\014base_request\030\001 \001(\0132\021.base.BaseRequest\022\025" +
-      "\n\rpermission_id\030\002 \001(\003\022\027\n\017permission_name" +
-      "\030\003 \001(\t\022\023\n\013resource_id\030\004 \001(\003\022\022\n\npermissio" +
-      "n\030\005 \001(\t\022+\n\npagination\030d \001(\0132\027.base.Pagin" +
-      "ationRequest\"\230\001\n\026ListPermissionResponse\022" +
-      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022)" +
-      "\n\npermission\030\002 \003(\0132\025.glory_api.Permissio" +
-      "n\022,\n\npagination\030d \001(\0132\030.base.PaginationR" +
-      "esponse\"\226\001\n\004Role\022\017\n\007role_id\030\001 \001(\003\022\021\n\trol" +
-      "e_name\030\002 \001(\t\022\016\n\006source\030\003 \001(\t\022\021\n\tsource_i" +
-      "d\030\004 \001(\003\022\023\n\013description\030\005 \001(\t\0222\n\017role_per" +
-      "mission\030\006 \003(\0132\031.glory_api.RolePermission" +
-      "\"\177\n\016RolePermission\022\032\n\022role_permission_id" +
-      "\030\001 \001(\003\022\017\n\007role_id\030\002 \001(\003\022\025\n\rpermission_id" +
-      "\030\003 \001(\003\022)\n\npermission\030\004 \003(\0132\025.glory_api.P" +
-      "ermission\"\301\001\n\017ListRoleRequest\022\'\n\014base_re" +
-      "quest\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007Role_i" +
-      "d\030\002 \001(\003\022\021\n\tRole_name\030\003 \001(\t\022\021\n\tRole_type\030" +
-      "\004 \001(\t\022\016\n\006source\030\005 \001(\t\022\021\n\tsource_id\030\006 \001(\003" +
-      "\022+\n\npagination\030d \001(\0132\027.base.PaginationRe" +
-      "quest\"\206\001\n\020ListRoleResponse\022%\n\tbase_resp\030" +
-      "\001 \001(\0132\022.base.BaseResponse\022\035\n\004role\030\002 \003(\0132" +
-      "\017.glory_api.Role\022,\n\npagination\030d \001(\0132\030.b" +
-      "ase.PaginationResponse\"[\n\021CreateRoleRequ" +
-      "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
-      "uest\022\035\n\004role\030\002 \001(\0132\017.glory_api.Role\"L\n\022C" +
-      "reateRoleResponse\022%\n\tbase_resp\030\001 \001(\0132\022.b" +
-      "ase.BaseResponse\022\017\n\007role_id\030\002 \001(\003\"l\n\031Giv" +
-      "eRolePermissionRequest\022\'\n\014base_request\030\001" +
-      " \001(\0132\021.base.BaseRequest\022\017\n\007role_id\030\002 \001(\003" +
-      "\022\025\n\rpermission_id\030\003 \003(\003\"C\n\032GiveRolePermi" +
-      "ssionResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
-      "BaseResponse\"n\n\033RemoveRolePermissionRequ" +
-      "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
-      "uest\022\017\n\007role_id\030\002 \001(\003\022\025\n\rpermission_id\030\003" +
+      "est\022\025\n\rpermission_id\030\002 \001(\003\022\027\n\017permission" +
+      "_name\030\003 \001(\t\022\023\n\013resource_id\030\004 \001(\003\022\022\n\nperm" +
+      "ission\030\005 \001(\t\022\021\n\ttenant_id\030\006 \001(\003\022+\n\npagin" +
+      "ation\030d \001(\0132\027.base.PaginationRequest\"\230\001\n" +
+      "\026ListPermissionResponse\022%\n\tbase_resp\030\001 \001" +
+      "(\0132\022.base.BaseResponse\022)\n\npermission\030\002 \003" +
+      "(\0132\025.glory_api.Permission\022,\n\npagination\030" +
+      "d \001(\0132\030.base.PaginationResponse\"s\n\004Role\022" +
+      "\017\n\007role_id\030\001 \001(\003\022\021\n\trole_name\030\002 \001(\t\022\023\n\013d" +
+      "escription\030\005 \001(\t\0222\n\017role_permission\030\006 \003(" +
+      "\0132\031.glory_api.RolePermission\"\177\n\016RolePerm" +
+      "ission\022\032\n\022role_permission_id\030\001 \001(\003\022\017\n\007ro" +
+      "le_id\030\002 \001(\003\022\025\n\rpermission_id\030\003 \001(\003\022)\n\npe" +
+      "rmission\030\004 \003(\0132\025.glory_api.Permission\"\261\001" +
+      "\n\017ListRoleRequest\022\'\n\014base_request\030\001 \001(\0132" +
+      "\021.base.BaseRequest\022\017\n\007role_id\030\002 \001(\003\022\021\n\tr" +
+      "ole_name\030\003 \001(\t\022\021\n\trole_type\030\004 \001(\t\022\021\n\tten" +
+      "ant_id\030\007 \001(\003\022+\n\npagination\030d \001(\0132\027.base." +
+      "PaginationRequest\"\206\001\n\020ListRoleResponse\022%" +
+      "\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022\035\n" +
+      "\004role\030\002 \003(\0132\017.glory_api.Role\022,\n\npaginati" +
+      "on\030d \001(\0132\030.base.PaginationResponse\"[\n\021Cr" +
+      "eateRoleRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
+      "base.BaseRequest\022\035\n\004role\030\002 \001(\0132\017.glory_a" +
+      "pi.Role\"L\n\022CreateRoleResponse\022%\n\tbase_re" +
+      "sp\030\001 \001(\0132\022.base.BaseResponse\022\017\n\007role_id\030" +
+      "\002 \001(\003\"l\n\031GiveRolePermissionRequest\022\'\n\014ba" +
+      "se_request\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007r" +
+      "ole_id\030\002 \001(\003\022\025\n\rpermission_id\030\003 \003(\003\"C\n\032G" +
+      "iveRolePermissionResponse\022%\n\tbase_resp\030\001" +
+      " \001(\0132\022.base.BaseResponse\"b\n\033RemoveRolePe" +
+      "rmissionRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
+      "base.BaseRequest\022\032\n\022role_permission_id\030\003" +
       " \003(\003\"E\n\034RemoveRolePermissionResponse\022%\n\t" +
       "base_resp\030\001 \001(\0132\022.base.BaseResponse\"M\n\021D" +
       "eleteRoleRequest\022\'\n\014base_request\030\001 \001(\0132\021" +
       ".base.BaseRequest\022\017\n\007role_id\030\002 \003(\003\";\n\022De" +
       "leteRoleResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
-      "se.BaseResponseb\006proto3"
+      "se.BaseResponse\"\203\001\n\010Resource\022\023\n\013resource" +
+      "_id\030\002 \001(\003\022\025\n\rresource_name\030\003 \001(\t\022\025\n\rreso" +
+      "urce_type\030\004 \001(\t\022\016\n\006source\030\005 \001(\t\022\021\n\tsourc" +
+      "e_id\030\006 \001(\003\022\021\n\ttenant_id\030\007 \001(\003\"\222\001\n\023ListRe" +
+      "sourceRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
+      "se.BaseRequest\022%\n\010resource\030\002 \001(\0132\023.glory" +
+      "_api.Resource\022+\n\npagination\030d \001(\0132\027.base" +
+      ".PaginationRequest\"\222\001\n\024ListResourceRespo" +
+      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
+      "se\022%\n\010resource\030\002 \003(\0132\023.glory_api.Resourc" +
+      "e\022,\n\npagination\030d \001(\0132\030.base.PaginationR" +
+      "esponse\"i\n\016ListUserByRole\022\017\n\007user_id\030\001 \001" +
+      "(\003\022\021\n\tuser_name\030\002 \001(\t\022\021\n\ttenant_id\030\003 \001(\003" +
+      "\022\014\n\004role\030\004 \001(\t\022\022\n\ncreated_at\030\005 \001(\t\"\223\001\n\025L" +
+      "istUserByRoleRequest\022\'\n\014base_request\030\001 \001" +
+      "(\0132\021.base.BaseRequest\022\021\n\trole_name\030\002 \001(\t" +
+      "\022\021\n\ttenant_id\030\003 \001(\003\022+\n\npagination\030d \001(\0132" +
+      "\027.base.PaginationRequest\"\226\001\n\026ListUserByR" +
+      "oleResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
+      "seResponse\022\'\n\004user\030\002 \003(\0132\031.glory_api.Lis" +
+      "tUserByRole\022,\n\npagination\030d \001(\0132\030.base.P" +
+      "aginationResponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -27550,7 +34654,7 @@ public final class UserOuterClass {
     internal_static_glory_api_PagePermission_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_PagePermission_descriptor,
-        new java.lang.String[] { "Page", "HasPermission", });
+        new java.lang.String[] { "BusinessSystem", "Page", "HasPermission", });
     internal_static_glory_api_GetUserPagePermissionRequest_descriptor =
       getDescriptor().getMessageTypes().get(12);
     internal_static_glory_api_GetUserPagePermissionRequest_fieldAccessorTable = new
@@ -27568,13 +34672,13 @@ public final class UserOuterClass {
     internal_static_glory_api_Permission_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_Permission_descriptor,
-        new java.lang.String[] { "PermissionId", "PermissionName", "ResourceId", "Permission", "Description", });
+        new java.lang.String[] { "PermissionId", "PermissionName", "ResourceId", "Permission", "Description", "TenantId", });
     internal_static_glory_api_ListPermissionRequest_descriptor =
       getDescriptor().getMessageTypes().get(15);
     internal_static_glory_api_ListPermissionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListPermissionRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "PermissionId", "PermissionName", "ResourceId", "Permission", "Pagination", });
+        new java.lang.String[] { "BaseRequest", "PermissionId", "PermissionName", "ResourceId", "Permission", "TenantId", "Pagination", });
     internal_static_glory_api_ListPermissionResponse_descriptor =
       getDescriptor().getMessageTypes().get(16);
     internal_static_glory_api_ListPermissionResponse_fieldAccessorTable = new
@@ -27586,7 +34690,7 @@ public final class UserOuterClass {
     internal_static_glory_api_Role_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_Role_descriptor,
-        new java.lang.String[] { "RoleId", "RoleName", "Source", "SourceId", "Description", "RolePermission", });
+        new java.lang.String[] { "RoleId", "RoleName", "Description", "RolePermission", });
     internal_static_glory_api_RolePermission_descriptor =
       getDescriptor().getMessageTypes().get(18);
     internal_static_glory_api_RolePermission_fieldAccessorTable = new
@@ -27598,7 +34702,7 @@ public final class UserOuterClass {
     internal_static_glory_api_ListRoleRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListRoleRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "RoleId", "RoleName", "RoleType", "Source", "SourceId", "Pagination", });
+        new java.lang.String[] { "BaseRequest", "RoleId", "RoleName", "RoleType", "TenantId", "Pagination", });
     internal_static_glory_api_ListRoleResponse_descriptor =
       getDescriptor().getMessageTypes().get(20);
     internal_static_glory_api_ListRoleResponse_fieldAccessorTable = new
@@ -27634,7 +34738,7 @@ public final class UserOuterClass {
     internal_static_glory_api_RemoveRolePermissionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_RemoveRolePermissionRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "RoleId", "PermissionId", });
+        new java.lang.String[] { "BaseRequest", "RolePermissionId", });
     internal_static_glory_api_RemoveRolePermissionResponse_descriptor =
       getDescriptor().getMessageTypes().get(26);
     internal_static_glory_api_RemoveRolePermissionResponse_fieldAccessorTable = new
@@ -27653,6 +34757,42 @@ public final class UserOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteRoleResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
+    internal_static_glory_api_Resource_descriptor =
+      getDescriptor().getMessageTypes().get(29);
+    internal_static_glory_api_Resource_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_Resource_descriptor,
+        new java.lang.String[] { "ResourceId", "ResourceName", "ResourceType", "Source", "SourceId", "TenantId", });
+    internal_static_glory_api_ListResourceRequest_descriptor =
+      getDescriptor().getMessageTypes().get(30);
+    internal_static_glory_api_ListResourceRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ListResourceRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "Resource", "Pagination", });
+    internal_static_glory_api_ListResourceResponse_descriptor =
+      getDescriptor().getMessageTypes().get(31);
+    internal_static_glory_api_ListResourceResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ListResourceResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "Resource", "Pagination", });
+    internal_static_glory_api_ListUserByRole_descriptor =
+      getDescriptor().getMessageTypes().get(32);
+    internal_static_glory_api_ListUserByRole_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ListUserByRole_descriptor,
+        new java.lang.String[] { "UserId", "UserName", "TenantId", "Role", "CreatedAt", });
+    internal_static_glory_api_ListUserByRoleRequest_descriptor =
+      getDescriptor().getMessageTypes().get(33);
+    internal_static_glory_api_ListUserByRoleRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ListUserByRoleRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "RoleName", "TenantId", "Pagination", });
+    internal_static_glory_api_ListUserByRoleResponse_descriptor =
+      getDescriptor().getMessageTypes().get(34);
+    internal_static_glory_api_ListUserByRoleResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ListUserByRoleResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "User", "Pagination", });
     base.Base.getDescriptor();
     glory_api.SellerOuterClass.getDescriptor();
     glory_api.ShopOuterClass.getDescriptor();

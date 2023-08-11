@@ -15,13 +15,15 @@ message Config {
   int64 updated_by = 8;
   string created_at = 9;
   string updated_at = 10;
+  string business_system = 11;
 }
 
 message AddConfig {
-  string config_name = 2;
-  string config_value = 3;
-  string config_type = 4;
-  string description = 5;
+  string config_name = 2; // 配置的名字
+  string config_value = 3;  // 配置的值
+  string config_type = 4; // 配置的类型，支持page_permission, system_permission, public_config, system_owner_location
+  string description = 5; // 描述
+  string business_system=6; // 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, short, shop
 }
 
 message CreateConfigRequest {
@@ -58,8 +60,9 @@ message DeleteConfigResponse {
 
 message GetConfigRequest {
   base.BaseRequest base_request=1;
-  string config_name =2;
-  string config_type =3;
+  string config_name =2;  // config的名字
+  string config_type =3;  // config的类型，支持page_permission, system_permission, public_config, system_owner_location
+  string business_system = 4; // 业务系统，添加的时候默认是global(不属于任何业务系统）, 现在支持 shop, live, short
 }
 
 message GetConfigResponse {

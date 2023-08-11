@@ -27,6 +27,7 @@ import * as live_token from "./live/live_token";
 import * as live_user from "./live/live_user";
 import * as live_plan from "./live/live_plan";
 import * as live_text from "./live/live_text";
+import * as live_evaluate from "./live/live_evaluate";
 import * as account_operation from "./account/account_operation";
 import * as virtual_currency from "./currency/virtual_currency";
 import * as tenant from "./tenant/tenant";
@@ -56,6 +57,7 @@ export {
   live_user,
   live_plan,
   live_text,
+  live_evaluate,
   account_operation,
   virtual_currency,
   tenant,
@@ -131,6 +133,10 @@ export class glory_api {
     request: address.ListAddressRequest
   ): Promise<address.ListAddressResponse>;
 
+  ListUserByRole(
+    request: user.ListUserByRoleRequest
+  ): Promise<user.ListUserByRoleResponse>;
+
   /** user permission
 list the permissions that supported */
   ListPermission(
@@ -150,6 +156,10 @@ list the permissions that supported */
   CreateRole(request: user.CreateRoleRequest): Promise<user.CreateRoleResponse>;
 
   DeleteRole(request: user.DeleteRoleRequest): Promise<user.DeleteRoleResponse>;
+
+  ListResource(
+    request: user.ListResourceRequest
+  ): Promise<user.ListResourceResponse>;
 
   /** shop */
   CreateShop(request: shop.CreateShopRequest): Promise<shop.CreateShopResponse>;
@@ -364,6 +374,10 @@ list the permissions that supported */
   ): Promise<order.DeleteOrderResponse>;
 
   ShipGoods(request: order.ShipGoodsRequest): Promise<order.ShipGoodsResponse>;
+
+  CancelOrder(
+    request: order.CancelOrderRequest
+  ): Promise<order.CancelOrderResponse>;
 
   ShipGoodsInBatches(
     request: order.ShipGoodsInBatchesRequest
@@ -619,6 +633,31 @@ CreateLivePlanProduct create live plan product */
   GetLiveChartData(
     request: live_room.GetLiveChartDataRequest
   ): Promise<live_room.GetLiveChartDataResponse>;
+
+  /** live evaluate */
+  GetEvaluateSelector(
+    request: live_evaluate.GetEvaluateSelectorRequest
+  ): Promise<live_evaluate.GetEvaluateSelectorResponse>;
+
+  ListPersonalEvaluate(
+    request: live_evaluate.ListPersonalEvaluateRequest
+  ): Promise<live_evaluate.ListPersonalEvaluateResponse>;
+
+  GetEvaluateDetail(
+    request: live_evaluate.GetEvaluateDetailRequest
+  ): Promise<live_evaluate.GetEvaluateDetailResponse>;
+
+  SubmitEvaluate(
+    request: live_evaluate.SubmitEvaluateRequest
+  ): Promise<live_evaluate.SubmitEvaluateResponse>;
+
+  ListUnevaluatedRoom(
+    request: live_evaluate.ListUnevaluatedRoomRequest
+  ): Promise<live_evaluate.ListUnevaluatedRoomResponse>;
+
+  ListStudentEvaluations(
+    request: live_evaluate.ListStudentEvalutionsRequest
+  ): Promise<live_evaluate.ListStudentEvalutionsResponse>;
 
   /** tenant */
   CreateTenant(

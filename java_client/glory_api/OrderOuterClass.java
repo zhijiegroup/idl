@@ -27009,6 +27009,1319 @@ public final class OrderOuterClass {
 
   }
 
+  public interface CancelOrderRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:glory_api.CancelOrderRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     * @return Whether the baseRequest field is set.
+     */
+    boolean hasBaseRequest();
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     * @return The baseRequest.
+     */
+    base.Base.BaseRequest getBaseRequest();
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     */
+    base.Base.BaseRequestOrBuilder getBaseRequestOrBuilder();
+
+    /**
+     * <code>int64 order_id = 2;</code>
+     * @return The orderId.
+     */
+    long getOrderId();
+  }
+  /**
+   * Protobuf type {@code glory_api.CancelOrderRequest}
+   */
+  public static final class CancelOrderRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:glory_api.CancelOrderRequest)
+      CancelOrderRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use CancelOrderRequest.newBuilder() to construct.
+    private CancelOrderRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private CancelOrderRequest() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CancelOrderRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CancelOrderRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              base.Base.BaseRequest.Builder subBuilder = null;
+              if (baseRequest_ != null) {
+                subBuilder = baseRequest_.toBuilder();
+              }
+              baseRequest_ = input.readMessage(base.Base.BaseRequest.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(baseRequest_);
+                baseRequest_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 16: {
+
+              orderId_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return glory_api.OrderOuterClass.internal_static_glory_api_CancelOrderRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return glory_api.OrderOuterClass.internal_static_glory_api_CancelOrderRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              glory_api.OrderOuterClass.CancelOrderRequest.class, glory_api.OrderOuterClass.CancelOrderRequest.Builder.class);
+    }
+
+    public static final int BASE_REQUEST_FIELD_NUMBER = 1;
+    private base.Base.BaseRequest baseRequest_;
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     * @return Whether the baseRequest field is set.
+     */
+    @java.lang.Override
+    public boolean hasBaseRequest() {
+      return baseRequest_ != null;
+    }
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     * @return The baseRequest.
+     */
+    @java.lang.Override
+    public base.Base.BaseRequest getBaseRequest() {
+      return baseRequest_ == null ? base.Base.BaseRequest.getDefaultInstance() : baseRequest_;
+    }
+    /**
+     * <code>.base.BaseRequest base_request = 1;</code>
+     */
+    @java.lang.Override
+    public base.Base.BaseRequestOrBuilder getBaseRequestOrBuilder() {
+      return getBaseRequest();
+    }
+
+    public static final int ORDER_ID_FIELD_NUMBER = 2;
+    private long orderId_;
+    /**
+     * <code>int64 order_id = 2;</code>
+     * @return The orderId.
+     */
+    @java.lang.Override
+    public long getOrderId() {
+      return orderId_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (baseRequest_ != null) {
+        output.writeMessage(1, getBaseRequest());
+      }
+      if (orderId_ != 0L) {
+        output.writeInt64(2, orderId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (baseRequest_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getBaseRequest());
+      }
+      if (orderId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, orderId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof glory_api.OrderOuterClass.CancelOrderRequest)) {
+        return super.equals(obj);
+      }
+      glory_api.OrderOuterClass.CancelOrderRequest other = (glory_api.OrderOuterClass.CancelOrderRequest) obj;
+
+      if (hasBaseRequest() != other.hasBaseRequest()) return false;
+      if (hasBaseRequest()) {
+        if (!getBaseRequest()
+            .equals(other.getBaseRequest())) return false;
+      }
+      if (getOrderId()
+          != other.getOrderId()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasBaseRequest()) {
+        hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getBaseRequest().hashCode();
+      }
+      hash = (37 * hash) + ORDER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getOrderId());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static glory_api.OrderOuterClass.CancelOrderRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.OrderOuterClass.CancelOrderRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.OrderOuterClass.CancelOrderRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.OrderOuterClass.CancelOrderRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.OrderOuterClass.CancelOrderRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.OrderOuterClass.CancelOrderRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.OrderOuterClass.CancelOrderRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.OrderOuterClass.CancelOrderRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.OrderOuterClass.CancelOrderRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static glory_api.OrderOuterClass.CancelOrderRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.OrderOuterClass.CancelOrderRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.OrderOuterClass.CancelOrderRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(glory_api.OrderOuterClass.CancelOrderRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code glory_api.CancelOrderRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:glory_api.CancelOrderRequest)
+        glory_api.OrderOuterClass.CancelOrderRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return glory_api.OrderOuterClass.internal_static_glory_api_CancelOrderRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return glory_api.OrderOuterClass.internal_static_glory_api_CancelOrderRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                glory_api.OrderOuterClass.CancelOrderRequest.class, glory_api.OrderOuterClass.CancelOrderRequest.Builder.class);
+      }
+
+      // Construct using glory_api.OrderOuterClass.CancelOrderRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (baseRequestBuilder_ == null) {
+          baseRequest_ = null;
+        } else {
+          baseRequest_ = null;
+          baseRequestBuilder_ = null;
+        }
+        orderId_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return glory_api.OrderOuterClass.internal_static_glory_api_CancelOrderRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public glory_api.OrderOuterClass.CancelOrderRequest getDefaultInstanceForType() {
+        return glory_api.OrderOuterClass.CancelOrderRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public glory_api.OrderOuterClass.CancelOrderRequest build() {
+        glory_api.OrderOuterClass.CancelOrderRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public glory_api.OrderOuterClass.CancelOrderRequest buildPartial() {
+        glory_api.OrderOuterClass.CancelOrderRequest result = new glory_api.OrderOuterClass.CancelOrderRequest(this);
+        if (baseRequestBuilder_ == null) {
+          result.baseRequest_ = baseRequest_;
+        } else {
+          result.baseRequest_ = baseRequestBuilder_.build();
+        }
+        result.orderId_ = orderId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof glory_api.OrderOuterClass.CancelOrderRequest) {
+          return mergeFrom((glory_api.OrderOuterClass.CancelOrderRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(glory_api.OrderOuterClass.CancelOrderRequest other) {
+        if (other == glory_api.OrderOuterClass.CancelOrderRequest.getDefaultInstance()) return this;
+        if (other.hasBaseRequest()) {
+          mergeBaseRequest(other.getBaseRequest());
+        }
+        if (other.getOrderId() != 0L) {
+          setOrderId(other.getOrderId());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        glory_api.OrderOuterClass.CancelOrderRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (glory_api.OrderOuterClass.CancelOrderRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private base.Base.BaseRequest baseRequest_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          base.Base.BaseRequest, base.Base.BaseRequest.Builder, base.Base.BaseRequestOrBuilder> baseRequestBuilder_;
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       * @return Whether the baseRequest field is set.
+       */
+      public boolean hasBaseRequest() {
+        return baseRequestBuilder_ != null || baseRequest_ != null;
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       * @return The baseRequest.
+       */
+      public base.Base.BaseRequest getBaseRequest() {
+        if (baseRequestBuilder_ == null) {
+          return baseRequest_ == null ? base.Base.BaseRequest.getDefaultInstance() : baseRequest_;
+        } else {
+          return baseRequestBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public Builder setBaseRequest(base.Base.BaseRequest value) {
+        if (baseRequestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          baseRequest_ = value;
+          onChanged();
+        } else {
+          baseRequestBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public Builder setBaseRequest(
+          base.Base.BaseRequest.Builder builderForValue) {
+        if (baseRequestBuilder_ == null) {
+          baseRequest_ = builderForValue.build();
+          onChanged();
+        } else {
+          baseRequestBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public Builder mergeBaseRequest(base.Base.BaseRequest value) {
+        if (baseRequestBuilder_ == null) {
+          if (baseRequest_ != null) {
+            baseRequest_ =
+              base.Base.BaseRequest.newBuilder(baseRequest_).mergeFrom(value).buildPartial();
+          } else {
+            baseRequest_ = value;
+          }
+          onChanged();
+        } else {
+          baseRequestBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public Builder clearBaseRequest() {
+        if (baseRequestBuilder_ == null) {
+          baseRequest_ = null;
+          onChanged();
+        } else {
+          baseRequest_ = null;
+          baseRequestBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public base.Base.BaseRequest.Builder getBaseRequestBuilder() {
+        
+        onChanged();
+        return getBaseRequestFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      public base.Base.BaseRequestOrBuilder getBaseRequestOrBuilder() {
+        if (baseRequestBuilder_ != null) {
+          return baseRequestBuilder_.getMessageOrBuilder();
+        } else {
+          return baseRequest_ == null ?
+              base.Base.BaseRequest.getDefaultInstance() : baseRequest_;
+        }
+      }
+      /**
+       * <code>.base.BaseRequest base_request = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          base.Base.BaseRequest, base.Base.BaseRequest.Builder, base.Base.BaseRequestOrBuilder> 
+          getBaseRequestFieldBuilder() {
+        if (baseRequestBuilder_ == null) {
+          baseRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              base.Base.BaseRequest, base.Base.BaseRequest.Builder, base.Base.BaseRequestOrBuilder>(
+                  getBaseRequest(),
+                  getParentForChildren(),
+                  isClean());
+          baseRequest_ = null;
+        }
+        return baseRequestBuilder_;
+      }
+
+      private long orderId_ ;
+      /**
+       * <code>int64 order_id = 2;</code>
+       * @return The orderId.
+       */
+      @java.lang.Override
+      public long getOrderId() {
+        return orderId_;
+      }
+      /**
+       * <code>int64 order_id = 2;</code>
+       * @param value The orderId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOrderId(long value) {
+        
+        orderId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 order_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOrderId() {
+        
+        orderId_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:glory_api.CancelOrderRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:glory_api.CancelOrderRequest)
+    private static final glory_api.OrderOuterClass.CancelOrderRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new glory_api.OrderOuterClass.CancelOrderRequest();
+    }
+
+    public static glory_api.OrderOuterClass.CancelOrderRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CancelOrderRequest>
+        PARSER = new com.google.protobuf.AbstractParser<CancelOrderRequest>() {
+      @java.lang.Override
+      public CancelOrderRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new CancelOrderRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<CancelOrderRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CancelOrderRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public glory_api.OrderOuterClass.CancelOrderRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface CancelOrderResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:glory_api.CancelOrderResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     * @return Whether the baseResp field is set.
+     */
+    boolean hasBaseResp();
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     * @return The baseResp.
+     */
+    base.Base.BaseResponse getBaseResp();
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     */
+    base.Base.BaseResponseOrBuilder getBaseRespOrBuilder();
+  }
+  /**
+   * Protobuf type {@code glory_api.CancelOrderResponse}
+   */
+  public static final class CancelOrderResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:glory_api.CancelOrderResponse)
+      CancelOrderResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use CancelOrderResponse.newBuilder() to construct.
+    private CancelOrderResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private CancelOrderResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CancelOrderResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CancelOrderResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              base.Base.BaseResponse.Builder subBuilder = null;
+              if (baseResp_ != null) {
+                subBuilder = baseResp_.toBuilder();
+              }
+              baseResp_ = input.readMessage(base.Base.BaseResponse.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(baseResp_);
+                baseResp_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return glory_api.OrderOuterClass.internal_static_glory_api_CancelOrderResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return glory_api.OrderOuterClass.internal_static_glory_api_CancelOrderResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              glory_api.OrderOuterClass.CancelOrderResponse.class, glory_api.OrderOuterClass.CancelOrderResponse.Builder.class);
+    }
+
+    public static final int BASE_RESP_FIELD_NUMBER = 1;
+    private base.Base.BaseResponse baseResp_;
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     * @return Whether the baseResp field is set.
+     */
+    @java.lang.Override
+    public boolean hasBaseResp() {
+      return baseResp_ != null;
+    }
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     * @return The baseResp.
+     */
+    @java.lang.Override
+    public base.Base.BaseResponse getBaseResp() {
+      return baseResp_ == null ? base.Base.BaseResponse.getDefaultInstance() : baseResp_;
+    }
+    /**
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     */
+    @java.lang.Override
+    public base.Base.BaseResponseOrBuilder getBaseRespOrBuilder() {
+      return getBaseResp();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (baseResp_ != null) {
+        output.writeMessage(1, getBaseResp());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (baseResp_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getBaseResp());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof glory_api.OrderOuterClass.CancelOrderResponse)) {
+        return super.equals(obj);
+      }
+      glory_api.OrderOuterClass.CancelOrderResponse other = (glory_api.OrderOuterClass.CancelOrderResponse) obj;
+
+      if (hasBaseResp() != other.hasBaseResp()) return false;
+      if (hasBaseResp()) {
+        if (!getBaseResp()
+            .equals(other.getBaseResp())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasBaseResp()) {
+        hash = (37 * hash) + BASE_RESP_FIELD_NUMBER;
+        hash = (53 * hash) + getBaseResp().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static glory_api.OrderOuterClass.CancelOrderResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.OrderOuterClass.CancelOrderResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.OrderOuterClass.CancelOrderResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.OrderOuterClass.CancelOrderResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.OrderOuterClass.CancelOrderResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static glory_api.OrderOuterClass.CancelOrderResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static glory_api.OrderOuterClass.CancelOrderResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.OrderOuterClass.CancelOrderResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.OrderOuterClass.CancelOrderResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static glory_api.OrderOuterClass.CancelOrderResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static glory_api.OrderOuterClass.CancelOrderResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static glory_api.OrderOuterClass.CancelOrderResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(glory_api.OrderOuterClass.CancelOrderResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code glory_api.CancelOrderResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:glory_api.CancelOrderResponse)
+        glory_api.OrderOuterClass.CancelOrderResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return glory_api.OrderOuterClass.internal_static_glory_api_CancelOrderResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return glory_api.OrderOuterClass.internal_static_glory_api_CancelOrderResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                glory_api.OrderOuterClass.CancelOrderResponse.class, glory_api.OrderOuterClass.CancelOrderResponse.Builder.class);
+      }
+
+      // Construct using glory_api.OrderOuterClass.CancelOrderResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (baseRespBuilder_ == null) {
+          baseResp_ = null;
+        } else {
+          baseResp_ = null;
+          baseRespBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return glory_api.OrderOuterClass.internal_static_glory_api_CancelOrderResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public glory_api.OrderOuterClass.CancelOrderResponse getDefaultInstanceForType() {
+        return glory_api.OrderOuterClass.CancelOrderResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public glory_api.OrderOuterClass.CancelOrderResponse build() {
+        glory_api.OrderOuterClass.CancelOrderResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public glory_api.OrderOuterClass.CancelOrderResponse buildPartial() {
+        glory_api.OrderOuterClass.CancelOrderResponse result = new glory_api.OrderOuterClass.CancelOrderResponse(this);
+        if (baseRespBuilder_ == null) {
+          result.baseResp_ = baseResp_;
+        } else {
+          result.baseResp_ = baseRespBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof glory_api.OrderOuterClass.CancelOrderResponse) {
+          return mergeFrom((glory_api.OrderOuterClass.CancelOrderResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(glory_api.OrderOuterClass.CancelOrderResponse other) {
+        if (other == glory_api.OrderOuterClass.CancelOrderResponse.getDefaultInstance()) return this;
+        if (other.hasBaseResp()) {
+          mergeBaseResp(other.getBaseResp());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        glory_api.OrderOuterClass.CancelOrderResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (glory_api.OrderOuterClass.CancelOrderResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private base.Base.BaseResponse baseResp_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          base.Base.BaseResponse, base.Base.BaseResponse.Builder, base.Base.BaseResponseOrBuilder> baseRespBuilder_;
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       * @return Whether the baseResp field is set.
+       */
+      public boolean hasBaseResp() {
+        return baseRespBuilder_ != null || baseResp_ != null;
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       * @return The baseResp.
+       */
+      public base.Base.BaseResponse getBaseResp() {
+        if (baseRespBuilder_ == null) {
+          return baseResp_ == null ? base.Base.BaseResponse.getDefaultInstance() : baseResp_;
+        } else {
+          return baseRespBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public Builder setBaseResp(base.Base.BaseResponse value) {
+        if (baseRespBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          baseResp_ = value;
+          onChanged();
+        } else {
+          baseRespBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public Builder setBaseResp(
+          base.Base.BaseResponse.Builder builderForValue) {
+        if (baseRespBuilder_ == null) {
+          baseResp_ = builderForValue.build();
+          onChanged();
+        } else {
+          baseRespBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public Builder mergeBaseResp(base.Base.BaseResponse value) {
+        if (baseRespBuilder_ == null) {
+          if (baseResp_ != null) {
+            baseResp_ =
+              base.Base.BaseResponse.newBuilder(baseResp_).mergeFrom(value).buildPartial();
+          } else {
+            baseResp_ = value;
+          }
+          onChanged();
+        } else {
+          baseRespBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public Builder clearBaseResp() {
+        if (baseRespBuilder_ == null) {
+          baseResp_ = null;
+          onChanged();
+        } else {
+          baseResp_ = null;
+          baseRespBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public base.Base.BaseResponse.Builder getBaseRespBuilder() {
+        
+        onChanged();
+        return getBaseRespFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      public base.Base.BaseResponseOrBuilder getBaseRespOrBuilder() {
+        if (baseRespBuilder_ != null) {
+          return baseRespBuilder_.getMessageOrBuilder();
+        } else {
+          return baseResp_ == null ?
+              base.Base.BaseResponse.getDefaultInstance() : baseResp_;
+        }
+      }
+      /**
+       * <code>.base.BaseResponse base_resp = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          base.Base.BaseResponse, base.Base.BaseResponse.Builder, base.Base.BaseResponseOrBuilder> 
+          getBaseRespFieldBuilder() {
+        if (baseRespBuilder_ == null) {
+          baseRespBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              base.Base.BaseResponse, base.Base.BaseResponse.Builder, base.Base.BaseResponseOrBuilder>(
+                  getBaseResp(),
+                  getParentForChildren(),
+                  isClean());
+          baseResp_ = null;
+        }
+        return baseRespBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:glory_api.CancelOrderResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:glory_api.CancelOrderResponse)
+    private static final glory_api.OrderOuterClass.CancelOrderResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new glory_api.OrderOuterClass.CancelOrderResponse();
+    }
+
+    public static glory_api.OrderOuterClass.CancelOrderResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CancelOrderResponse>
+        PARSER = new com.google.protobuf.AbstractParser<CancelOrderResponse>() {
+      @java.lang.Override
+      public CancelOrderResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new CancelOrderResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<CancelOrderResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CancelOrderResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public glory_api.OrderOuterClass.CancelOrderResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface ShipGoodsInBatchesRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:glory_api.ShipGoodsInBatchesRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -30003,6 +31316,16 @@ public final class OrderOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_ShipGoodsResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_CancelOrderRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_CancelOrderRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_CancelOrderResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_CancelOrderResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_glory_api_ShipGoodsInBatchesRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -30116,15 +31439,19 @@ public final class OrderOuterClass {
       "\"M\n\020ShipGoodsRequest\022\'\n\014base_request\030\001 \001" +
       "(\0132\021.base.BaseRequest\022\020\n\010order_id\030\002 \001(\003\"" +
       ":\n\021ShipGoodsResponse\022%\n\tbase_resp\030\001 \001(\0132" +
-      "\022.base.BaseResponse\"V\n\031ShipGoodsInBatche" +
-      "sRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
-      "seRequest\022\020\n\010order_id\030\002 \003(\003\"C\n\032ShipGoods" +
-      "InBatchesResponse\022%\n\tbase_resp\030\001 \001(\0132\022.b" +
-      "ase.BaseResponse\"Y\n\034FreeShippingInBatche" +
-      "sRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
-      "seRequest\022\020\n\010order_id\030\002 \003(\003\"F\n\035FreeShipp" +
-      "ingInBatchesResponse\022%\n\tbase_resp\030\001 \001(\0132" +
-      "\022.base.BaseResponseb\006proto3"
+      "\022.base.BaseResponse\"O\n\022CancelOrderReques" +
+      "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
+      "st\022\020\n\010order_id\030\002 \001(\003\"<\n\023CancelOrderRespo" +
+      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
+      "se\"V\n\031ShipGoodsInBatchesRequest\022\'\n\014base_" +
+      "request\030\001 \001(\0132\021.base.BaseRequest\022\020\n\010orde" +
+      "r_id\030\002 \003(\003\"C\n\032ShipGoodsInBatchesResponse" +
+      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"" +
+      "Y\n\034FreeShippingInBatchesRequest\022\'\n\014base_" +
+      "request\030\001 \001(\0132\021.base.BaseRequest\022\020\n\010orde" +
+      "r_id\030\002 \003(\003\"F\n\035FreeShippingInBatchesRespo" +
+      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
+      "seb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -30270,26 +31597,38 @@ public final class OrderOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ShipGoodsResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
-    internal_static_glory_api_ShipGoodsInBatchesRequest_descriptor =
+    internal_static_glory_api_CancelOrderRequest_descriptor =
       getDescriptor().getMessageTypes().get(23);
+    internal_static_glory_api_CancelOrderRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_CancelOrderRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "OrderId", });
+    internal_static_glory_api_CancelOrderResponse_descriptor =
+      getDescriptor().getMessageTypes().get(24);
+    internal_static_glory_api_CancelOrderResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_CancelOrderResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
+    internal_static_glory_api_ShipGoodsInBatchesRequest_descriptor =
+      getDescriptor().getMessageTypes().get(25);
     internal_static_glory_api_ShipGoodsInBatchesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ShipGoodsInBatchesRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "OrderId", });
     internal_static_glory_api_ShipGoodsInBatchesResponse_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_glory_api_ShipGoodsInBatchesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ShipGoodsInBatchesResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_FreeShippingInBatchesRequest_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_glory_api_FreeShippingInBatchesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_FreeShippingInBatchesRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "OrderId", });
     internal_static_glory_api_FreeShippingInBatchesResponse_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_glory_api_FreeShippingInBatchesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_FreeShippingInBatchesResponse_descriptor,

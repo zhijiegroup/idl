@@ -29,6 +29,7 @@ import * as live_token from "./live/live_token";
 import * as live_user from "./live/live_user";
 import * as live_plan from "./live/live_plan";
 import * as live_text from "./live/live_text";
+import * as live_evaluate from "./live/live_evaluate";
 import * as account_operation from "./account/account_operation";
 import * as virtual_currency from "./currency/virtual_currency";
 import * as tenant from "./tenant/tenant";
@@ -58,6 +59,7 @@ export {
   live_user,
   live_plan,
   live_text,
+  live_evaluate,
   account_operation,
   virtual_currency,
   tenant,
@@ -194,6 +196,14 @@ export class glory_api {
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
 
+  ListUserByRole(request) {
+    const uri = `${this.uriPrefix}/api/user/list_user_by_role`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   ListPermission(request) {
     const uri = `${this.uriPrefix}/api/auth/list_permission`;
     const body = JSONbigint.stringify(request);
@@ -236,6 +246,14 @@ export class glory_api {
 
   DeleteRole(request) {
     const uri = `${this.uriPrefix}/api/auth/delete_role`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListResource(request) {
+    const uri = `${this.uriPrefix}/api/auth/list_resource`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
@@ -680,6 +698,14 @@ export class glory_api {
 
   ShipGoods(request) {
     const uri = `${this.uriPrefix}/api/shop/ship_goods`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CancelOrder(request) {
+    const uri = `${this.uriPrefix}/api/shop/cancel_order`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
@@ -1162,6 +1188,50 @@ export class glory_api {
     const query = queryStringify(request);
     const uri = `${this.uriPrefix}/api/live/get_live_chart_data${query}`;
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  GetEvaluateSelector(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/live/get_evaluation_selector${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  ListPersonalEvaluate(request) {
+    const uri = `${this.uriPrefix}/api/live/list_personal_evaluation`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  GetEvaluateDetail(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/live/get_evaluation_detail${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  SubmitEvaluate(request) {
+    const uri = `${this.uriPrefix}/api/live/submit_evaluation`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListUnevaluatedRoom(request) {
+    const uri = `${this.uriPrefix}/api/live/list_unevaluated_room`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListStudentEvaluations(request) {
+    const uri = `${this.uriPrefix}/api/live/list_student_evaluation`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
   }
 
   CreateTenant(request) {

@@ -511,6 +511,37 @@ public final class glory_apiGrpc {
     return getListAddressMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<glory_api.UserOuterClass.ListUserByRoleRequest,
+      glory_api.UserOuterClass.ListUserByRoleResponse> getListUserByRoleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListUserByRole",
+      requestType = glory_api.UserOuterClass.ListUserByRoleRequest.class,
+      responseType = glory_api.UserOuterClass.ListUserByRoleResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<glory_api.UserOuterClass.ListUserByRoleRequest,
+      glory_api.UserOuterClass.ListUserByRoleResponse> getListUserByRoleMethod() {
+    io.grpc.MethodDescriptor<glory_api.UserOuterClass.ListUserByRoleRequest, glory_api.UserOuterClass.ListUserByRoleResponse> getListUserByRoleMethod;
+    if ((getListUserByRoleMethod = glory_apiGrpc.getListUserByRoleMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListUserByRoleMethod = glory_apiGrpc.getListUserByRoleMethod) == null) {
+          glory_apiGrpc.getListUserByRoleMethod = getListUserByRoleMethod =
+              io.grpc.MethodDescriptor.<glory_api.UserOuterClass.ListUserByRoleRequest, glory_api.UserOuterClass.ListUserByRoleResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListUserByRole"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.UserOuterClass.ListUserByRoleRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.UserOuterClass.ListUserByRoleResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListUserByRole"))
+              .build();
+        }
+      }
+    }
+    return getListUserByRoleMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<glory_api.UserOuterClass.ListPermissionRequest,
       glory_api.UserOuterClass.ListPermissionResponse> getListPermissionMethod;
 
@@ -695,6 +726,37 @@ public final class glory_apiGrpc {
       }
     }
     return getDeleteRoleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<glory_api.UserOuterClass.ListResourceRequest,
+      glory_api.UserOuterClass.ListResourceResponse> getListResourceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListResource",
+      requestType = glory_api.UserOuterClass.ListResourceRequest.class,
+      responseType = glory_api.UserOuterClass.ListResourceResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<glory_api.UserOuterClass.ListResourceRequest,
+      glory_api.UserOuterClass.ListResourceResponse> getListResourceMethod() {
+    io.grpc.MethodDescriptor<glory_api.UserOuterClass.ListResourceRequest, glory_api.UserOuterClass.ListResourceResponse> getListResourceMethod;
+    if ((getListResourceMethod = glory_apiGrpc.getListResourceMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListResourceMethod = glory_apiGrpc.getListResourceMethod) == null) {
+          glory_apiGrpc.getListResourceMethod = getListResourceMethod =
+              io.grpc.MethodDescriptor.<glory_api.UserOuterClass.ListResourceRequest, glory_api.UserOuterClass.ListResourceResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListResource"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.UserOuterClass.ListResourceRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.UserOuterClass.ListResourceResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListResource"))
+              .build();
+        }
+      }
+    }
+    return getListResourceMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<glory_api.ShopOuterClass.CreateShopRequest,
@@ -2493,6 +2555,37 @@ public final class glory_apiGrpc {
       }
     }
     return getShipGoodsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<glory_api.OrderOuterClass.CancelOrderRequest,
+      glory_api.OrderOuterClass.CancelOrderResponse> getCancelOrderMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CancelOrder",
+      requestType = glory_api.OrderOuterClass.CancelOrderRequest.class,
+      responseType = glory_api.OrderOuterClass.CancelOrderResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<glory_api.OrderOuterClass.CancelOrderRequest,
+      glory_api.OrderOuterClass.CancelOrderResponse> getCancelOrderMethod() {
+    io.grpc.MethodDescriptor<glory_api.OrderOuterClass.CancelOrderRequest, glory_api.OrderOuterClass.CancelOrderResponse> getCancelOrderMethod;
+    if ((getCancelOrderMethod = glory_apiGrpc.getCancelOrderMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCancelOrderMethod = glory_apiGrpc.getCancelOrderMethod) == null) {
+          glory_apiGrpc.getCancelOrderMethod = getCancelOrderMethod =
+              io.grpc.MethodDescriptor.<glory_api.OrderOuterClass.CancelOrderRequest, glory_api.OrderOuterClass.CancelOrderResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CancelOrder"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.OrderOuterClass.CancelOrderRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.OrderOuterClass.CancelOrderResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CancelOrder"))
+              .build();
+        }
+      }
+    }
+    return getCancelOrderMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<glory_api.OrderOuterClass.ShipGoodsInBatchesRequest,
@@ -4448,6 +4541,192 @@ public final class glory_apiGrpc {
     return getGetLiveChartDataMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<glory_api.LiveEvaluate.GetEvaluateSelectorRequest,
+      glory_api.LiveEvaluate.GetEvaluateSelectorResponse> getGetEvaluateSelectorMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetEvaluateSelector",
+      requestType = glory_api.LiveEvaluate.GetEvaluateSelectorRequest.class,
+      responseType = glory_api.LiveEvaluate.GetEvaluateSelectorResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<glory_api.LiveEvaluate.GetEvaluateSelectorRequest,
+      glory_api.LiveEvaluate.GetEvaluateSelectorResponse> getGetEvaluateSelectorMethod() {
+    io.grpc.MethodDescriptor<glory_api.LiveEvaluate.GetEvaluateSelectorRequest, glory_api.LiveEvaluate.GetEvaluateSelectorResponse> getGetEvaluateSelectorMethod;
+    if ((getGetEvaluateSelectorMethod = glory_apiGrpc.getGetEvaluateSelectorMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGetEvaluateSelectorMethod = glory_apiGrpc.getGetEvaluateSelectorMethod) == null) {
+          glory_apiGrpc.getGetEvaluateSelectorMethod = getGetEvaluateSelectorMethod =
+              io.grpc.MethodDescriptor.<glory_api.LiveEvaluate.GetEvaluateSelectorRequest, glory_api.LiveEvaluate.GetEvaluateSelectorResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetEvaluateSelector"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.LiveEvaluate.GetEvaluateSelectorRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.LiveEvaluate.GetEvaluateSelectorResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetEvaluateSelector"))
+              .build();
+        }
+      }
+    }
+    return getGetEvaluateSelectorMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<glory_api.LiveEvaluate.ListPersonalEvaluateRequest,
+      glory_api.LiveEvaluate.ListPersonalEvaluateResponse> getListPersonalEvaluateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListPersonalEvaluate",
+      requestType = glory_api.LiveEvaluate.ListPersonalEvaluateRequest.class,
+      responseType = glory_api.LiveEvaluate.ListPersonalEvaluateResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<glory_api.LiveEvaluate.ListPersonalEvaluateRequest,
+      glory_api.LiveEvaluate.ListPersonalEvaluateResponse> getListPersonalEvaluateMethod() {
+    io.grpc.MethodDescriptor<glory_api.LiveEvaluate.ListPersonalEvaluateRequest, glory_api.LiveEvaluate.ListPersonalEvaluateResponse> getListPersonalEvaluateMethod;
+    if ((getListPersonalEvaluateMethod = glory_apiGrpc.getListPersonalEvaluateMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListPersonalEvaluateMethod = glory_apiGrpc.getListPersonalEvaluateMethod) == null) {
+          glory_apiGrpc.getListPersonalEvaluateMethod = getListPersonalEvaluateMethod =
+              io.grpc.MethodDescriptor.<glory_api.LiveEvaluate.ListPersonalEvaluateRequest, glory_api.LiveEvaluate.ListPersonalEvaluateResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListPersonalEvaluate"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.LiveEvaluate.ListPersonalEvaluateRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.LiveEvaluate.ListPersonalEvaluateResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListPersonalEvaluate"))
+              .build();
+        }
+      }
+    }
+    return getListPersonalEvaluateMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<glory_api.LiveEvaluate.GetEvaluateDetailRequest,
+      glory_api.LiveEvaluate.GetEvaluateDetailResponse> getGetEvaluateDetailMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetEvaluateDetail",
+      requestType = glory_api.LiveEvaluate.GetEvaluateDetailRequest.class,
+      responseType = glory_api.LiveEvaluate.GetEvaluateDetailResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<glory_api.LiveEvaluate.GetEvaluateDetailRequest,
+      glory_api.LiveEvaluate.GetEvaluateDetailResponse> getGetEvaluateDetailMethod() {
+    io.grpc.MethodDescriptor<glory_api.LiveEvaluate.GetEvaluateDetailRequest, glory_api.LiveEvaluate.GetEvaluateDetailResponse> getGetEvaluateDetailMethod;
+    if ((getGetEvaluateDetailMethod = glory_apiGrpc.getGetEvaluateDetailMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGetEvaluateDetailMethod = glory_apiGrpc.getGetEvaluateDetailMethod) == null) {
+          glory_apiGrpc.getGetEvaluateDetailMethod = getGetEvaluateDetailMethod =
+              io.grpc.MethodDescriptor.<glory_api.LiveEvaluate.GetEvaluateDetailRequest, glory_api.LiveEvaluate.GetEvaluateDetailResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetEvaluateDetail"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.LiveEvaluate.GetEvaluateDetailRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.LiveEvaluate.GetEvaluateDetailResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetEvaluateDetail"))
+              .build();
+        }
+      }
+    }
+    return getGetEvaluateDetailMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<glory_api.LiveEvaluate.SubmitEvaluateRequest,
+      glory_api.LiveEvaluate.SubmitEvaluateResponse> getSubmitEvaluateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SubmitEvaluate",
+      requestType = glory_api.LiveEvaluate.SubmitEvaluateRequest.class,
+      responseType = glory_api.LiveEvaluate.SubmitEvaluateResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<glory_api.LiveEvaluate.SubmitEvaluateRequest,
+      glory_api.LiveEvaluate.SubmitEvaluateResponse> getSubmitEvaluateMethod() {
+    io.grpc.MethodDescriptor<glory_api.LiveEvaluate.SubmitEvaluateRequest, glory_api.LiveEvaluate.SubmitEvaluateResponse> getSubmitEvaluateMethod;
+    if ((getSubmitEvaluateMethod = glory_apiGrpc.getSubmitEvaluateMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getSubmitEvaluateMethod = glory_apiGrpc.getSubmitEvaluateMethod) == null) {
+          glory_apiGrpc.getSubmitEvaluateMethod = getSubmitEvaluateMethod =
+              io.grpc.MethodDescriptor.<glory_api.LiveEvaluate.SubmitEvaluateRequest, glory_api.LiveEvaluate.SubmitEvaluateResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SubmitEvaluate"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.LiveEvaluate.SubmitEvaluateRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.LiveEvaluate.SubmitEvaluateResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("SubmitEvaluate"))
+              .build();
+        }
+      }
+    }
+    return getSubmitEvaluateMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<glory_api.LiveEvaluate.ListUnevaluatedRoomRequest,
+      glory_api.LiveEvaluate.ListUnevaluatedRoomResponse> getListUnevaluatedRoomMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListUnevaluatedRoom",
+      requestType = glory_api.LiveEvaluate.ListUnevaluatedRoomRequest.class,
+      responseType = glory_api.LiveEvaluate.ListUnevaluatedRoomResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<glory_api.LiveEvaluate.ListUnevaluatedRoomRequest,
+      glory_api.LiveEvaluate.ListUnevaluatedRoomResponse> getListUnevaluatedRoomMethod() {
+    io.grpc.MethodDescriptor<glory_api.LiveEvaluate.ListUnevaluatedRoomRequest, glory_api.LiveEvaluate.ListUnevaluatedRoomResponse> getListUnevaluatedRoomMethod;
+    if ((getListUnevaluatedRoomMethod = glory_apiGrpc.getListUnevaluatedRoomMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListUnevaluatedRoomMethod = glory_apiGrpc.getListUnevaluatedRoomMethod) == null) {
+          glory_apiGrpc.getListUnevaluatedRoomMethod = getListUnevaluatedRoomMethod =
+              io.grpc.MethodDescriptor.<glory_api.LiveEvaluate.ListUnevaluatedRoomRequest, glory_api.LiveEvaluate.ListUnevaluatedRoomResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListUnevaluatedRoom"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.LiveEvaluate.ListUnevaluatedRoomRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.LiveEvaluate.ListUnevaluatedRoomResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListUnevaluatedRoom"))
+              .build();
+        }
+      }
+    }
+    return getListUnevaluatedRoomMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<glory_api.LiveEvaluate.ListStudentEvalutionsRequest,
+      glory_api.LiveEvaluate.ListStudentEvalutionsResponse> getListStudentEvaluationsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListStudentEvaluations",
+      requestType = glory_api.LiveEvaluate.ListStudentEvalutionsRequest.class,
+      responseType = glory_api.LiveEvaluate.ListStudentEvalutionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<glory_api.LiveEvaluate.ListStudentEvalutionsRequest,
+      glory_api.LiveEvaluate.ListStudentEvalutionsResponse> getListStudentEvaluationsMethod() {
+    io.grpc.MethodDescriptor<glory_api.LiveEvaluate.ListStudentEvalutionsRequest, glory_api.LiveEvaluate.ListStudentEvalutionsResponse> getListStudentEvaluationsMethod;
+    if ((getListStudentEvaluationsMethod = glory_apiGrpc.getListStudentEvaluationsMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListStudentEvaluationsMethod = glory_apiGrpc.getListStudentEvaluationsMethod) == null) {
+          glory_apiGrpc.getListStudentEvaluationsMethod = getListStudentEvaluationsMethod =
+              io.grpc.MethodDescriptor.<glory_api.LiveEvaluate.ListStudentEvalutionsRequest, glory_api.LiveEvaluate.ListStudentEvalutionsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListStudentEvaluations"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.LiveEvaluate.ListStudentEvalutionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  glory_api.LiveEvaluate.ListStudentEvalutionsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListStudentEvaluations"))
+              .build();
+        }
+      }
+    }
+    return getListStudentEvaluationsMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<glory_api.TenantOuterClass.CreateTenantRequest,
       glory_api.TenantOuterClass.CreateTenantResponse> getCreateTenantMethod;
 
@@ -5095,6 +5374,13 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    default void listUserByRole(glory_api.UserOuterClass.ListUserByRoleRequest request,
+        io.grpc.stub.StreamObserver<glory_api.UserOuterClass.ListUserByRoleResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListUserByRoleMethod(), responseObserver);
+    }
+
+    /**
      * <pre>
      * user permission
      *list the permissions that supported
@@ -5138,6 +5424,13 @@ public final class glory_apiGrpc {
     default void deleteRole(glory_api.UserOuterClass.DeleteRoleRequest request,
         io.grpc.stub.StreamObserver<glory_api.UserOuterClass.DeleteRoleResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteRoleMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void listResource(glory_api.UserOuterClass.ListResourceRequest request,
+        io.grpc.stub.StreamObserver<glory_api.UserOuterClass.ListResourceResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListResourceMethod(), responseObserver);
     }
 
     /**
@@ -5568,6 +5861,13 @@ public final class glory_apiGrpc {
     default void shipGoods(glory_api.OrderOuterClass.ShipGoodsRequest request,
         io.grpc.stub.StreamObserver<glory_api.OrderOuterClass.ShipGoodsResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getShipGoodsMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void cancelOrder(glory_api.OrderOuterClass.CancelOrderRequest request,
+        io.grpc.stub.StreamObserver<glory_api.OrderOuterClass.CancelOrderResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCancelOrderMethod(), responseObserver);
     }
 
     /**
@@ -6048,6 +6348,51 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * live evaluate
+     * </pre>
+     */
+    default void getEvaluateSelector(glory_api.LiveEvaluate.GetEvaluateSelectorRequest request,
+        io.grpc.stub.StreamObserver<glory_api.LiveEvaluate.GetEvaluateSelectorResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetEvaluateSelectorMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void listPersonalEvaluate(glory_api.LiveEvaluate.ListPersonalEvaluateRequest request,
+        io.grpc.stub.StreamObserver<glory_api.LiveEvaluate.ListPersonalEvaluateResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListPersonalEvaluateMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void getEvaluateDetail(glory_api.LiveEvaluate.GetEvaluateDetailRequest request,
+        io.grpc.stub.StreamObserver<glory_api.LiveEvaluate.GetEvaluateDetailResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetEvaluateDetailMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void submitEvaluate(glory_api.LiveEvaluate.SubmitEvaluateRequest request,
+        io.grpc.stub.StreamObserver<glory_api.LiveEvaluate.SubmitEvaluateResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSubmitEvaluateMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void listUnevaluatedRoom(glory_api.LiveEvaluate.ListUnevaluatedRoomRequest request,
+        io.grpc.stub.StreamObserver<glory_api.LiveEvaluate.ListUnevaluatedRoomResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListUnevaluatedRoomMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void listStudentEvaluations(glory_api.LiveEvaluate.ListStudentEvalutionsRequest request,
+        io.grpc.stub.StreamObserver<glory_api.LiveEvaluate.ListStudentEvalutionsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListStudentEvaluationsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      *tenant
      * </pre>
      */
@@ -6338,6 +6683,14 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public void listUserByRole(glory_api.UserOuterClass.ListUserByRoleRequest request,
+        io.grpc.stub.StreamObserver<glory_api.UserOuterClass.ListUserByRoleResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListUserByRoleMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
      * <pre>
      * user permission
      *list the permissions that supported
@@ -6387,6 +6740,14 @@ public final class glory_apiGrpc {
         io.grpc.stub.StreamObserver<glory_api.UserOuterClass.DeleteRoleResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteRoleMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void listResource(glory_api.UserOuterClass.ListResourceRequest request,
+        io.grpc.stub.StreamObserver<glory_api.UserOuterClass.ListResourceResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListResourceMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -6875,6 +7236,14 @@ public final class glory_apiGrpc {
         io.grpc.stub.StreamObserver<glory_api.OrderOuterClass.ShipGoodsResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getShipGoodsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void cancelOrder(glory_api.OrderOuterClass.CancelOrderRequest request,
+        io.grpc.stub.StreamObserver<glory_api.OrderOuterClass.CancelOrderResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCancelOrderMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -7418,6 +7787,57 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * live evaluate
+     * </pre>
+     */
+    public void getEvaluateSelector(glory_api.LiveEvaluate.GetEvaluateSelectorRequest request,
+        io.grpc.stub.StreamObserver<glory_api.LiveEvaluate.GetEvaluateSelectorResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetEvaluateSelectorMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void listPersonalEvaluate(glory_api.LiveEvaluate.ListPersonalEvaluateRequest request,
+        io.grpc.stub.StreamObserver<glory_api.LiveEvaluate.ListPersonalEvaluateResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListPersonalEvaluateMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getEvaluateDetail(glory_api.LiveEvaluate.GetEvaluateDetailRequest request,
+        io.grpc.stub.StreamObserver<glory_api.LiveEvaluate.GetEvaluateDetailResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetEvaluateDetailMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void submitEvaluate(glory_api.LiveEvaluate.SubmitEvaluateRequest request,
+        io.grpc.stub.StreamObserver<glory_api.LiveEvaluate.SubmitEvaluateResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSubmitEvaluateMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void listUnevaluatedRoom(glory_api.LiveEvaluate.ListUnevaluatedRoomRequest request,
+        io.grpc.stub.StreamObserver<glory_api.LiveEvaluate.ListUnevaluatedRoomResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListUnevaluatedRoomMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void listStudentEvaluations(glory_api.LiveEvaluate.ListStudentEvalutionsRequest request,
+        io.grpc.stub.StreamObserver<glory_api.LiveEvaluate.ListStudentEvalutionsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListStudentEvaluationsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      *tenant
      * </pre>
      */
@@ -7696,6 +8116,13 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public glory_api.UserOuterClass.ListUserByRoleResponse listUserByRole(glory_api.UserOuterClass.ListUserByRoleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListUserByRoleMethod(), getCallOptions(), request);
+    }
+
+    /**
      * <pre>
      * user permission
      *list the permissions that supported
@@ -7739,6 +8166,13 @@ public final class glory_apiGrpc {
     public glory_api.UserOuterClass.DeleteRoleResponse deleteRole(glory_api.UserOuterClass.DeleteRoleRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteRoleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public glory_api.UserOuterClass.ListResourceResponse listResource(glory_api.UserOuterClass.ListResourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListResourceMethod(), getCallOptions(), request);
     }
 
     /**
@@ -8169,6 +8603,13 @@ public final class glory_apiGrpc {
     public glory_api.OrderOuterClass.ShipGoodsResponse shipGoods(glory_api.OrderOuterClass.ShipGoodsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getShipGoodsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public glory_api.OrderOuterClass.CancelOrderResponse cancelOrder(glory_api.OrderOuterClass.CancelOrderRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCancelOrderMethod(), getCallOptions(), request);
     }
 
     /**
@@ -8649,6 +9090,51 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * live evaluate
+     * </pre>
+     */
+    public glory_api.LiveEvaluate.GetEvaluateSelectorResponse getEvaluateSelector(glory_api.LiveEvaluate.GetEvaluateSelectorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEvaluateSelectorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public glory_api.LiveEvaluate.ListPersonalEvaluateResponse listPersonalEvaluate(glory_api.LiveEvaluate.ListPersonalEvaluateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPersonalEvaluateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public glory_api.LiveEvaluate.GetEvaluateDetailResponse getEvaluateDetail(glory_api.LiveEvaluate.GetEvaluateDetailRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEvaluateDetailMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public glory_api.LiveEvaluate.SubmitEvaluateResponse submitEvaluate(glory_api.LiveEvaluate.SubmitEvaluateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSubmitEvaluateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public glory_api.LiveEvaluate.ListUnevaluatedRoomResponse listUnevaluatedRoom(glory_api.LiveEvaluate.ListUnevaluatedRoomRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListUnevaluatedRoomMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public glory_api.LiveEvaluate.ListStudentEvalutionsResponse listStudentEvaluations(glory_api.LiveEvaluate.ListStudentEvalutionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListStudentEvaluationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      *tenant
      * </pre>
      */
@@ -8928,6 +9414,14 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<glory_api.UserOuterClass.ListUserByRoleResponse> listUserByRole(
+        glory_api.UserOuterClass.ListUserByRoleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListUserByRoleMethod(), getCallOptions()), request);
+    }
+
+    /**
      * <pre>
      * user permission
      *list the permissions that supported
@@ -8977,6 +9471,14 @@ public final class glory_apiGrpc {
         glory_api.UserOuterClass.DeleteRoleRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteRoleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<glory_api.UserOuterClass.ListResourceResponse> listResource(
+        glory_api.UserOuterClass.ListResourceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListResourceMethod(), getCallOptions()), request);
     }
 
     /**
@@ -9465,6 +9967,14 @@ public final class glory_apiGrpc {
         glory_api.OrderOuterClass.ShipGoodsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getShipGoodsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<glory_api.OrderOuterClass.CancelOrderResponse> cancelOrder(
+        glory_api.OrderOuterClass.CancelOrderRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCancelOrderMethod(), getCallOptions()), request);
     }
 
     /**
@@ -10008,6 +10518,57 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * live evaluate
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<glory_api.LiveEvaluate.GetEvaluateSelectorResponse> getEvaluateSelector(
+        glory_api.LiveEvaluate.GetEvaluateSelectorRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetEvaluateSelectorMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<glory_api.LiveEvaluate.ListPersonalEvaluateResponse> listPersonalEvaluate(
+        glory_api.LiveEvaluate.ListPersonalEvaluateRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListPersonalEvaluateMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<glory_api.LiveEvaluate.GetEvaluateDetailResponse> getEvaluateDetail(
+        glory_api.LiveEvaluate.GetEvaluateDetailRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetEvaluateDetailMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<glory_api.LiveEvaluate.SubmitEvaluateResponse> submitEvaluate(
+        glory_api.LiveEvaluate.SubmitEvaluateRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSubmitEvaluateMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<glory_api.LiveEvaluate.ListUnevaluatedRoomResponse> listUnevaluatedRoom(
+        glory_api.LiveEvaluate.ListUnevaluatedRoomRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListUnevaluatedRoomMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<glory_api.LiveEvaluate.ListStudentEvalutionsResponse> listStudentEvaluations(
+        glory_api.LiveEvaluate.ListStudentEvalutionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListStudentEvaluationsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      *tenant
      * </pre>
      */
@@ -10152,148 +10713,157 @@ public final class glory_apiGrpc {
   private static final int METHODID_UPDATE_ADDRESS = 13;
   private static final int METHODID_GET_ADDRESS = 14;
   private static final int METHODID_LIST_ADDRESS = 15;
-  private static final int METHODID_LIST_PERMISSION = 16;
-  private static final int METHODID_LIST_ROLE = 17;
-  private static final int METHODID_GIVE_ROLE_PERMISSION = 18;
-  private static final int METHODID_REMOVE_ROLE_PERMISSION = 19;
-  private static final int METHODID_CREATE_ROLE = 20;
-  private static final int METHODID_DELETE_ROLE = 21;
-  private static final int METHODID_CREATE_SHOP = 22;
-  private static final int METHODID_GET_SHOP = 23;
-  private static final int METHODID_UPDATE_SHOP = 24;
-  private static final int METHODID_LIST_SHOP = 25;
-  private static final int METHODID_DELETE_SHOP = 26;
-  private static final int METHODID_LIST_OPERATION_METRICS = 27;
-  private static final int METHODID_GET_SHOP_QRCODE = 28;
-  private static final int METHODID_UPDATE_SHOP_MANAGER = 29;
-  private static final int METHODID_GET_SHOP_BUSINESS_DATA = 30;
-  private static final int METHODID_ADD_SHOP_ACCESS = 31;
-  private static final int METHODID_REMOVE_SHOP_ACCESS = 32;
-  private static final int METHODID_VERIFY_FIELD = 33;
-  private static final int METHODID_LIST_SHOP_ACCESS = 34;
-  private static final int METHODID_ADD_SHOP_CATEGORY = 35;
-  private static final int METHODID_GET_SHOP_CATEGORY = 36;
-  private static final int METHODID_REMOVE_SHOP_CATEGORY = 37;
-  private static final int METHODID_ADD_FREIGHT_TEMPLATE = 38;
-  private static final int METHODID_GET_FREIGHT_TEMPLATE = 39;
-  private static final int METHODID_UPDATE_FREIGHT_TEMPLATE = 40;
-  private static final int METHODID_DELETE_FREIGHT_TEMPLATE = 41;
-  private static final int METHODID_LIST_FREIGHT_TEMPLATE = 42;
-  private static final int METHODID_LIST_QUALIFICATION = 43;
-  private static final int METHODID_GET_MALL_INDEX = 44;
-  private static final int METHODID_CREATE_CATEGORY = 45;
-  private static final int METHODID_GET_CATEGORY = 46;
-  private static final int METHODID_UPDATE_CATEGORY = 47;
-  private static final int METHODID_LIST_CATEGORY = 48;
-  private static final int METHODID_DELETE_CATEGORY = 49;
-  private static final int METHODID_LIST_CATEGORY_QUALIFICATION = 50;
-  private static final int METHODID_CREATE_PRODUCT = 51;
-  private static final int METHODID_GET_PRODUCT = 52;
-  private static final int METHODID_UPDATE_PRODUCT = 53;
-  private static final int METHODID_LIST_PRODUCT = 54;
-  private static final int METHODID_DELETE_PRODUCT = 55;
-  private static final int METHODID_UPLOAD_MULTI_IMAGE = 56;
-  private static final int METHODID_DELETE_IMAGE_BY_ID = 57;
-  private static final int METHODID_BIND_ATTRIBUTE = 58;
-  private static final int METHODID_PUBLISH_PRODUCT = 59;
-  private static final int METHODID_OFF_SHELF_PRODUCT_IN_BATCHES = 60;
-  private static final int METHODID_DELETE_PRODUCT_IN_BATCHES = 61;
-  private static final int METHODID_CHANGE_PRODUCTS_STATE = 62;
-  private static final int METHODID_CREATE_SKU = 63;
-  private static final int METHODID_GET_SKU = 64;
-  private static final int METHODID_UPDATE_SKU = 65;
-  private static final int METHODID_LIST_SKU = 66;
-  private static final int METHODID_DELETE_SKU = 67;
-  private static final int METHODID_CREATE_ATTRIBUTE = 68;
-  private static final int METHODID_GET_ATTRIBUTE = 69;
-  private static final int METHODID_LIST_ATTRIBUTE = 70;
-  private static final int METHODID_DELETE_ATTRIBUTE = 71;
-  private static final int METHODID_ADD_ATTRIBUTE_VALUE = 72;
-  private static final int METHODID_DELETE_ATTRIBUTE_VALUE = 73;
-  private static final int METHODID_CREATE_ORDER = 74;
-  private static final int METHODID_GET_ORDER = 75;
-  private static final int METHODID_UPDATE_ORDER = 76;
-  private static final int METHODID_LIST_ORDER = 77;
-  private static final int METHODID_DELETE_ORDER = 78;
-  private static final int METHODID_SHIP_GOODS = 79;
-  private static final int METHODID_SHIP_GOODS_IN_BATCHES = 80;
-  private static final int METHODID_FREE_SHIPPING_IN_BATCHES = 81;
-  private static final int METHODID_CREATE_CART = 82;
-  private static final int METHODID_GET_CART = 83;
-  private static final int METHODID_UPDATE_CART = 84;
-  private static final int METHODID_DELETE_CART = 85;
-  private static final int METHODID_UPLOAD_ATTACHMENT = 86;
-  private static final int METHODID_LIST_ATTACHMENT = 87;
-  private static final int METHODID_DELETE_ATTACHMENT = 88;
-  private static final int METHODID_CREATE_SELLER = 89;
-  private static final int METHODID_CREATE_PAYMENT = 90;
-  private static final int METHODID_GET_PAYMENT = 91;
-  private static final int METHODID_UPDATE_PAYMENT = 92;
-  private static final int METHODID_DELETE_PAYMENT = 93;
-  private static final int METHODID_CREATE_CONFIG = 94;
-  private static final int METHODID_UPDATE_CONFIG = 95;
-  private static final int METHODID_DELETE_CONFIG = 96;
-  private static final int METHODID_GET_CONFIG = 97;
-  private static final int METHODID_WX_PREPAY = 98;
-  private static final int METHODID_CLOSE_ORDER = 99;
-  private static final int METHODID_QUERY_ORDER_BY_ID = 100;
-  private static final int METHODID_QUERY_ORDER_BY_OUT_TRADE = 101;
-  private static final int METHODID_ADD_VCURRENCY = 102;
-  private static final int METHODID_DELETE_VCURRENCY = 103;
-  private static final int METHODID_UPDATE_VCURRENCY = 104;
-  private static final int METHODID_GET_VCURRENCY = 105;
-  private static final int METHODID_LIST_VCURRENCY = 106;
-  private static final int METHODID_ADD_ACCOUNT_OPERATION = 107;
-  private static final int METHODID_GET_ACCOUNT_OPERATION = 108;
-  private static final int METHODID_LIST_ACCOUNT_OPERATION = 109;
-  private static final int METHODID_CREATE_ROOM = 110;
-  private static final int METHODID_GET_ROOM = 111;
-  private static final int METHODID_UPDATE_ROOM = 112;
-  private static final int METHODID_LIST_ROOM = 113;
-  private static final int METHODID_DELETE_ROOM = 114;
-  private static final int METHODID_LIST_FINISHED_ROOM = 115;
-  private static final int METHODID_RECORD = 116;
-  private static final int METHODID_CREATE_LIVE_USER_TOKEN = 117;
-  private static final int METHODID_USER_ENTER_ROOM = 118;
-  private static final int METHODID_USER_EXIT_ROOM = 119;
-  private static final int METHODID_LIST_ACTIVE_ROOM_USER = 120;
-  private static final int METHODID_CREATE_LIVE_PLAN = 121;
-  private static final int METHODID_GET_LIVE_PLAN = 122;
-  private static final int METHODID_UPDATE_LIVE_PLAN = 123;
-  private static final int METHODID_LIST_LIVE_PLAN = 124;
-  private static final int METHODID_DELETE_LIVE_PLAN = 125;
-  private static final int METHODID_CREATE_LIVE_PLAN_PRODUCT = 126;
-  private static final int METHODID_UPDATE_LIVE_PLAN_PRODUCT = 127;
-  private static final int METHODID_LIST_LIVE_PLAN_PRODUCT = 128;
-  private static final int METHODID_DELETE_LIVE_PLAN_PRODUCT = 129;
-  private static final int METHODID_LOAD_LIVE_PLAN_PRODUCT = 130;
-  private static final int METHODID_UPDATE_LIVE_PRODUCT_STATUS = 131;
-  private static final int METHODID_LIST_LIVE_PRODUCT_STATUS = 132;
-  private static final int METHODID_DELETE_LIVE_PRODUCT_STATUS = 133;
-  private static final int METHODID_CREATE_LIVE_PRODUCT_STATUS = 134;
-  private static final int METHODID_GET_LIVING_PRODUCT_STATUS = 135;
-  private static final int METHODID_UPDATE_LIVE_PRODUCT_INTRODUCT_STATUS = 136;
-  private static final int METHODID_CREATE_LIVE_TEXT = 137;
-  private static final int METHODID_UPDATE_LIVE_TEXT = 138;
-  private static final int METHODID_LIST_LIVE_TEXT = 139;
-  private static final int METHODID_GET_LIVE_TEXT = 140;
-  private static final int METHODID_DELETE_LIVE_TEXTS = 141;
-  private static final int METHODID_GET_LIVE_CHART_DATA = 142;
-  private static final int METHODID_CREATE_TENANT = 143;
-  private static final int METHODID_GET_TENANT = 144;
-  private static final int METHODID_UPDATE_TENANT = 145;
-  private static final int METHODID_DELETE_TENANT = 146;
-  private static final int METHODID_LIST_TENANT = 147;
-  private static final int METHODID_CREATE_MAJOR = 148;
-  private static final int METHODID_GET_MAJOR = 149;
-  private static final int METHODID_UPDATE_MAJOR = 150;
-  private static final int METHODID_DELETE_MAJOR = 151;
-  private static final int METHODID_LIST_MAJOR = 152;
-  private static final int METHODID_CREATE_CLASS = 153;
-  private static final int METHODID_GET_CLASS = 154;
-  private static final int METHODID_UPDATE_CLASS = 155;
-  private static final int METHODID_DELETE_CLASS = 156;
-  private static final int METHODID_LIST_CLASS = 157;
+  private static final int METHODID_LIST_USER_BY_ROLE = 16;
+  private static final int METHODID_LIST_PERMISSION = 17;
+  private static final int METHODID_LIST_ROLE = 18;
+  private static final int METHODID_GIVE_ROLE_PERMISSION = 19;
+  private static final int METHODID_REMOVE_ROLE_PERMISSION = 20;
+  private static final int METHODID_CREATE_ROLE = 21;
+  private static final int METHODID_DELETE_ROLE = 22;
+  private static final int METHODID_LIST_RESOURCE = 23;
+  private static final int METHODID_CREATE_SHOP = 24;
+  private static final int METHODID_GET_SHOP = 25;
+  private static final int METHODID_UPDATE_SHOP = 26;
+  private static final int METHODID_LIST_SHOP = 27;
+  private static final int METHODID_DELETE_SHOP = 28;
+  private static final int METHODID_LIST_OPERATION_METRICS = 29;
+  private static final int METHODID_GET_SHOP_QRCODE = 30;
+  private static final int METHODID_UPDATE_SHOP_MANAGER = 31;
+  private static final int METHODID_GET_SHOP_BUSINESS_DATA = 32;
+  private static final int METHODID_ADD_SHOP_ACCESS = 33;
+  private static final int METHODID_REMOVE_SHOP_ACCESS = 34;
+  private static final int METHODID_VERIFY_FIELD = 35;
+  private static final int METHODID_LIST_SHOP_ACCESS = 36;
+  private static final int METHODID_ADD_SHOP_CATEGORY = 37;
+  private static final int METHODID_GET_SHOP_CATEGORY = 38;
+  private static final int METHODID_REMOVE_SHOP_CATEGORY = 39;
+  private static final int METHODID_ADD_FREIGHT_TEMPLATE = 40;
+  private static final int METHODID_GET_FREIGHT_TEMPLATE = 41;
+  private static final int METHODID_UPDATE_FREIGHT_TEMPLATE = 42;
+  private static final int METHODID_DELETE_FREIGHT_TEMPLATE = 43;
+  private static final int METHODID_LIST_FREIGHT_TEMPLATE = 44;
+  private static final int METHODID_LIST_QUALIFICATION = 45;
+  private static final int METHODID_GET_MALL_INDEX = 46;
+  private static final int METHODID_CREATE_CATEGORY = 47;
+  private static final int METHODID_GET_CATEGORY = 48;
+  private static final int METHODID_UPDATE_CATEGORY = 49;
+  private static final int METHODID_LIST_CATEGORY = 50;
+  private static final int METHODID_DELETE_CATEGORY = 51;
+  private static final int METHODID_LIST_CATEGORY_QUALIFICATION = 52;
+  private static final int METHODID_CREATE_PRODUCT = 53;
+  private static final int METHODID_GET_PRODUCT = 54;
+  private static final int METHODID_UPDATE_PRODUCT = 55;
+  private static final int METHODID_LIST_PRODUCT = 56;
+  private static final int METHODID_DELETE_PRODUCT = 57;
+  private static final int METHODID_UPLOAD_MULTI_IMAGE = 58;
+  private static final int METHODID_DELETE_IMAGE_BY_ID = 59;
+  private static final int METHODID_BIND_ATTRIBUTE = 60;
+  private static final int METHODID_PUBLISH_PRODUCT = 61;
+  private static final int METHODID_OFF_SHELF_PRODUCT_IN_BATCHES = 62;
+  private static final int METHODID_DELETE_PRODUCT_IN_BATCHES = 63;
+  private static final int METHODID_CHANGE_PRODUCTS_STATE = 64;
+  private static final int METHODID_CREATE_SKU = 65;
+  private static final int METHODID_GET_SKU = 66;
+  private static final int METHODID_UPDATE_SKU = 67;
+  private static final int METHODID_LIST_SKU = 68;
+  private static final int METHODID_DELETE_SKU = 69;
+  private static final int METHODID_CREATE_ATTRIBUTE = 70;
+  private static final int METHODID_GET_ATTRIBUTE = 71;
+  private static final int METHODID_LIST_ATTRIBUTE = 72;
+  private static final int METHODID_DELETE_ATTRIBUTE = 73;
+  private static final int METHODID_ADD_ATTRIBUTE_VALUE = 74;
+  private static final int METHODID_DELETE_ATTRIBUTE_VALUE = 75;
+  private static final int METHODID_CREATE_ORDER = 76;
+  private static final int METHODID_GET_ORDER = 77;
+  private static final int METHODID_UPDATE_ORDER = 78;
+  private static final int METHODID_LIST_ORDER = 79;
+  private static final int METHODID_DELETE_ORDER = 80;
+  private static final int METHODID_SHIP_GOODS = 81;
+  private static final int METHODID_CANCEL_ORDER = 82;
+  private static final int METHODID_SHIP_GOODS_IN_BATCHES = 83;
+  private static final int METHODID_FREE_SHIPPING_IN_BATCHES = 84;
+  private static final int METHODID_CREATE_CART = 85;
+  private static final int METHODID_GET_CART = 86;
+  private static final int METHODID_UPDATE_CART = 87;
+  private static final int METHODID_DELETE_CART = 88;
+  private static final int METHODID_UPLOAD_ATTACHMENT = 89;
+  private static final int METHODID_LIST_ATTACHMENT = 90;
+  private static final int METHODID_DELETE_ATTACHMENT = 91;
+  private static final int METHODID_CREATE_SELLER = 92;
+  private static final int METHODID_CREATE_PAYMENT = 93;
+  private static final int METHODID_GET_PAYMENT = 94;
+  private static final int METHODID_UPDATE_PAYMENT = 95;
+  private static final int METHODID_DELETE_PAYMENT = 96;
+  private static final int METHODID_CREATE_CONFIG = 97;
+  private static final int METHODID_UPDATE_CONFIG = 98;
+  private static final int METHODID_DELETE_CONFIG = 99;
+  private static final int METHODID_GET_CONFIG = 100;
+  private static final int METHODID_WX_PREPAY = 101;
+  private static final int METHODID_CLOSE_ORDER = 102;
+  private static final int METHODID_QUERY_ORDER_BY_ID = 103;
+  private static final int METHODID_QUERY_ORDER_BY_OUT_TRADE = 104;
+  private static final int METHODID_ADD_VCURRENCY = 105;
+  private static final int METHODID_DELETE_VCURRENCY = 106;
+  private static final int METHODID_UPDATE_VCURRENCY = 107;
+  private static final int METHODID_GET_VCURRENCY = 108;
+  private static final int METHODID_LIST_VCURRENCY = 109;
+  private static final int METHODID_ADD_ACCOUNT_OPERATION = 110;
+  private static final int METHODID_GET_ACCOUNT_OPERATION = 111;
+  private static final int METHODID_LIST_ACCOUNT_OPERATION = 112;
+  private static final int METHODID_CREATE_ROOM = 113;
+  private static final int METHODID_GET_ROOM = 114;
+  private static final int METHODID_UPDATE_ROOM = 115;
+  private static final int METHODID_LIST_ROOM = 116;
+  private static final int METHODID_DELETE_ROOM = 117;
+  private static final int METHODID_LIST_FINISHED_ROOM = 118;
+  private static final int METHODID_RECORD = 119;
+  private static final int METHODID_CREATE_LIVE_USER_TOKEN = 120;
+  private static final int METHODID_USER_ENTER_ROOM = 121;
+  private static final int METHODID_USER_EXIT_ROOM = 122;
+  private static final int METHODID_LIST_ACTIVE_ROOM_USER = 123;
+  private static final int METHODID_CREATE_LIVE_PLAN = 124;
+  private static final int METHODID_GET_LIVE_PLAN = 125;
+  private static final int METHODID_UPDATE_LIVE_PLAN = 126;
+  private static final int METHODID_LIST_LIVE_PLAN = 127;
+  private static final int METHODID_DELETE_LIVE_PLAN = 128;
+  private static final int METHODID_CREATE_LIVE_PLAN_PRODUCT = 129;
+  private static final int METHODID_UPDATE_LIVE_PLAN_PRODUCT = 130;
+  private static final int METHODID_LIST_LIVE_PLAN_PRODUCT = 131;
+  private static final int METHODID_DELETE_LIVE_PLAN_PRODUCT = 132;
+  private static final int METHODID_LOAD_LIVE_PLAN_PRODUCT = 133;
+  private static final int METHODID_UPDATE_LIVE_PRODUCT_STATUS = 134;
+  private static final int METHODID_LIST_LIVE_PRODUCT_STATUS = 135;
+  private static final int METHODID_DELETE_LIVE_PRODUCT_STATUS = 136;
+  private static final int METHODID_CREATE_LIVE_PRODUCT_STATUS = 137;
+  private static final int METHODID_GET_LIVING_PRODUCT_STATUS = 138;
+  private static final int METHODID_UPDATE_LIVE_PRODUCT_INTRODUCT_STATUS = 139;
+  private static final int METHODID_CREATE_LIVE_TEXT = 140;
+  private static final int METHODID_UPDATE_LIVE_TEXT = 141;
+  private static final int METHODID_LIST_LIVE_TEXT = 142;
+  private static final int METHODID_GET_LIVE_TEXT = 143;
+  private static final int METHODID_DELETE_LIVE_TEXTS = 144;
+  private static final int METHODID_GET_LIVE_CHART_DATA = 145;
+  private static final int METHODID_GET_EVALUATE_SELECTOR = 146;
+  private static final int METHODID_LIST_PERSONAL_EVALUATE = 147;
+  private static final int METHODID_GET_EVALUATE_DETAIL = 148;
+  private static final int METHODID_SUBMIT_EVALUATE = 149;
+  private static final int METHODID_LIST_UNEVALUATED_ROOM = 150;
+  private static final int METHODID_LIST_STUDENT_EVALUATIONS = 151;
+  private static final int METHODID_CREATE_TENANT = 152;
+  private static final int METHODID_GET_TENANT = 153;
+  private static final int METHODID_UPDATE_TENANT = 154;
+  private static final int METHODID_DELETE_TENANT = 155;
+  private static final int METHODID_LIST_TENANT = 156;
+  private static final int METHODID_CREATE_MAJOR = 157;
+  private static final int METHODID_GET_MAJOR = 158;
+  private static final int METHODID_UPDATE_MAJOR = 159;
+  private static final int METHODID_DELETE_MAJOR = 160;
+  private static final int METHODID_LIST_MAJOR = 161;
+  private static final int METHODID_CREATE_CLASS = 162;
+  private static final int METHODID_GET_CLASS = 163;
+  private static final int METHODID_UPDATE_CLASS = 164;
+  private static final int METHODID_DELETE_CLASS = 165;
+  private static final int METHODID_LIST_CLASS = 166;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -10376,6 +10946,10 @@ public final class glory_apiGrpc {
           serviceImpl.listAddress((glory_api.AddressOuterClass.ListAddressRequest) request,
               (io.grpc.stub.StreamObserver<glory_api.AddressOuterClass.ListAddressResponse>) responseObserver);
           break;
+        case METHODID_LIST_USER_BY_ROLE:
+          serviceImpl.listUserByRole((glory_api.UserOuterClass.ListUserByRoleRequest) request,
+              (io.grpc.stub.StreamObserver<glory_api.UserOuterClass.ListUserByRoleResponse>) responseObserver);
+          break;
         case METHODID_LIST_PERMISSION:
           serviceImpl.listPermission((glory_api.UserOuterClass.ListPermissionRequest) request,
               (io.grpc.stub.StreamObserver<glory_api.UserOuterClass.ListPermissionResponse>) responseObserver);
@@ -10399,6 +10973,10 @@ public final class glory_apiGrpc {
         case METHODID_DELETE_ROLE:
           serviceImpl.deleteRole((glory_api.UserOuterClass.DeleteRoleRequest) request,
               (io.grpc.stub.StreamObserver<glory_api.UserOuterClass.DeleteRoleResponse>) responseObserver);
+          break;
+        case METHODID_LIST_RESOURCE:
+          serviceImpl.listResource((glory_api.UserOuterClass.ListResourceRequest) request,
+              (io.grpc.stub.StreamObserver<glory_api.UserOuterClass.ListResourceResponse>) responseObserver);
           break;
         case METHODID_CREATE_SHOP:
           serviceImpl.createShop((glory_api.ShopOuterClass.CreateShopRequest) request,
@@ -10631,6 +11209,10 @@ public final class glory_apiGrpc {
         case METHODID_SHIP_GOODS:
           serviceImpl.shipGoods((glory_api.OrderOuterClass.ShipGoodsRequest) request,
               (io.grpc.stub.StreamObserver<glory_api.OrderOuterClass.ShipGoodsResponse>) responseObserver);
+          break;
+        case METHODID_CANCEL_ORDER:
+          serviceImpl.cancelOrder((glory_api.OrderOuterClass.CancelOrderRequest) request,
+              (io.grpc.stub.StreamObserver<glory_api.OrderOuterClass.CancelOrderResponse>) responseObserver);
           break;
         case METHODID_SHIP_GOODS_IN_BATCHES:
           serviceImpl.shipGoodsInBatches((glory_api.OrderOuterClass.ShipGoodsInBatchesRequest) request,
@@ -10884,6 +11466,30 @@ public final class glory_apiGrpc {
           serviceImpl.getLiveChartData((glory_api.LiveRoom.GetLiveChartDataRequest) request,
               (io.grpc.stub.StreamObserver<glory_api.LiveRoom.GetLiveChartDataResponse>) responseObserver);
           break;
+        case METHODID_GET_EVALUATE_SELECTOR:
+          serviceImpl.getEvaluateSelector((glory_api.LiveEvaluate.GetEvaluateSelectorRequest) request,
+              (io.grpc.stub.StreamObserver<glory_api.LiveEvaluate.GetEvaluateSelectorResponse>) responseObserver);
+          break;
+        case METHODID_LIST_PERSONAL_EVALUATE:
+          serviceImpl.listPersonalEvaluate((glory_api.LiveEvaluate.ListPersonalEvaluateRequest) request,
+              (io.grpc.stub.StreamObserver<glory_api.LiveEvaluate.ListPersonalEvaluateResponse>) responseObserver);
+          break;
+        case METHODID_GET_EVALUATE_DETAIL:
+          serviceImpl.getEvaluateDetail((glory_api.LiveEvaluate.GetEvaluateDetailRequest) request,
+              (io.grpc.stub.StreamObserver<glory_api.LiveEvaluate.GetEvaluateDetailResponse>) responseObserver);
+          break;
+        case METHODID_SUBMIT_EVALUATE:
+          serviceImpl.submitEvaluate((glory_api.LiveEvaluate.SubmitEvaluateRequest) request,
+              (io.grpc.stub.StreamObserver<glory_api.LiveEvaluate.SubmitEvaluateResponse>) responseObserver);
+          break;
+        case METHODID_LIST_UNEVALUATED_ROOM:
+          serviceImpl.listUnevaluatedRoom((glory_api.LiveEvaluate.ListUnevaluatedRoomRequest) request,
+              (io.grpc.stub.StreamObserver<glory_api.LiveEvaluate.ListUnevaluatedRoomResponse>) responseObserver);
+          break;
+        case METHODID_LIST_STUDENT_EVALUATIONS:
+          serviceImpl.listStudentEvaluations((glory_api.LiveEvaluate.ListStudentEvalutionsRequest) request,
+              (io.grpc.stub.StreamObserver<glory_api.LiveEvaluate.ListStudentEvalutionsResponse>) responseObserver);
+          break;
         case METHODID_CREATE_TENANT:
           serviceImpl.createTenant((glory_api.TenantOuterClass.CreateTenantRequest) request,
               (io.grpc.stub.StreamObserver<glory_api.TenantOuterClass.CreateTenantResponse>) responseObserver);
@@ -11075,6 +11681,13 @@ public final class glory_apiGrpc {
               glory_api.AddressOuterClass.ListAddressResponse>(
                 service, METHODID_LIST_ADDRESS)))
         .addMethod(
+          getListUserByRoleMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              glory_api.UserOuterClass.ListUserByRoleRequest,
+              glory_api.UserOuterClass.ListUserByRoleResponse>(
+                service, METHODID_LIST_USER_BY_ROLE)))
+        .addMethod(
           getListPermissionMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -11116,6 +11729,13 @@ public final class glory_apiGrpc {
               glory_api.UserOuterClass.DeleteRoleRequest,
               glory_api.UserOuterClass.DeleteRoleResponse>(
                 service, METHODID_DELETE_ROLE)))
+        .addMethod(
+          getListResourceMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              glory_api.UserOuterClass.ListResourceRequest,
+              glory_api.UserOuterClass.ListResourceResponse>(
+                service, METHODID_LIST_RESOURCE)))
         .addMethod(
           getCreateShopMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -11522,6 +12142,13 @@ public final class glory_apiGrpc {
               glory_api.OrderOuterClass.ShipGoodsRequest,
               glory_api.OrderOuterClass.ShipGoodsResponse>(
                 service, METHODID_SHIP_GOODS)))
+        .addMethod(
+          getCancelOrderMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              glory_api.OrderOuterClass.CancelOrderRequest,
+              glory_api.OrderOuterClass.CancelOrderResponse>(
+                service, METHODID_CANCEL_ORDER)))
         .addMethod(
           getShipGoodsInBatchesMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -11964,6 +12591,48 @@ public final class glory_apiGrpc {
               glory_api.LiveRoom.GetLiveChartDataResponse>(
                 service, METHODID_GET_LIVE_CHART_DATA)))
         .addMethod(
+          getGetEvaluateSelectorMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              glory_api.LiveEvaluate.GetEvaluateSelectorRequest,
+              glory_api.LiveEvaluate.GetEvaluateSelectorResponse>(
+                service, METHODID_GET_EVALUATE_SELECTOR)))
+        .addMethod(
+          getListPersonalEvaluateMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              glory_api.LiveEvaluate.ListPersonalEvaluateRequest,
+              glory_api.LiveEvaluate.ListPersonalEvaluateResponse>(
+                service, METHODID_LIST_PERSONAL_EVALUATE)))
+        .addMethod(
+          getGetEvaluateDetailMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              glory_api.LiveEvaluate.GetEvaluateDetailRequest,
+              glory_api.LiveEvaluate.GetEvaluateDetailResponse>(
+                service, METHODID_GET_EVALUATE_DETAIL)))
+        .addMethod(
+          getSubmitEvaluateMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              glory_api.LiveEvaluate.SubmitEvaluateRequest,
+              glory_api.LiveEvaluate.SubmitEvaluateResponse>(
+                service, METHODID_SUBMIT_EVALUATE)))
+        .addMethod(
+          getListUnevaluatedRoomMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              glory_api.LiveEvaluate.ListUnevaluatedRoomRequest,
+              glory_api.LiveEvaluate.ListUnevaluatedRoomResponse>(
+                service, METHODID_LIST_UNEVALUATED_ROOM)))
+        .addMethod(
+          getListStudentEvaluationsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              glory_api.LiveEvaluate.ListStudentEvalutionsRequest,
+              glory_api.LiveEvaluate.ListStudentEvalutionsResponse>(
+                service, METHODID_LIST_STUDENT_EVALUATIONS)))
+        .addMethod(
           getCreateTenantMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -12132,12 +12801,14 @@ public final class glory_apiGrpc {
               .addMethod(getUpdateAddressMethod())
               .addMethod(getGetAddressMethod())
               .addMethod(getListAddressMethod())
+              .addMethod(getListUserByRoleMethod())
               .addMethod(getListPermissionMethod())
               .addMethod(getListRoleMethod())
               .addMethod(getGiveRolePermissionMethod())
               .addMethod(getRemoveRolePermissionMethod())
               .addMethod(getCreateRoleMethod())
               .addMethod(getDeleteRoleMethod())
+              .addMethod(getListResourceMethod())
               .addMethod(getCreateShopMethod())
               .addMethod(getGetShopMethod())
               .addMethod(getUpdateShopMethod())
@@ -12196,6 +12867,7 @@ public final class glory_apiGrpc {
               .addMethod(getListOrderMethod())
               .addMethod(getDeleteOrderMethod())
               .addMethod(getShipGoodsMethod())
+              .addMethod(getCancelOrderMethod())
               .addMethod(getShipGoodsInBatchesMethod())
               .addMethod(getFreeShippingInBatchesMethod())
               .addMethod(getCreateCartMethod())
@@ -12259,6 +12931,12 @@ public final class glory_apiGrpc {
               .addMethod(getGetLiveTextMethod())
               .addMethod(getDeleteLiveTextsMethod())
               .addMethod(getGetLiveChartDataMethod())
+              .addMethod(getGetEvaluateSelectorMethod())
+              .addMethod(getListPersonalEvaluateMethod())
+              .addMethod(getGetEvaluateDetailMethod())
+              .addMethod(getSubmitEvaluateMethod())
+              .addMethod(getListUnevaluatedRoomMethod())
+              .addMethod(getListStudentEvaluationsMethod())
               .addMethod(getCreateTenantMethod())
               .addMethod(getGetTenantMethod())
               .addMethod(getUpdateTenantMethod())

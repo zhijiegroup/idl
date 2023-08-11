@@ -69,8 +69,9 @@ message GetUserResponse {
 }
 
 message PagePermission {
-  string page = 1;
-  bool has_permission = 2;
+  string business_system = 1;
+  string page = 2;
+  bool has_permission = 3;
 }
 
 message GetUserPagePermissionRequest {
@@ -88,14 +89,16 @@ message Permission {
   int64 resource_id = 3;  // 权限对应的resource
   string permission =4; // 支持 C R U D
   string description =5;
+  int64 tenant_id = 6;
 }
 
 message ListPermissionRequest {
   base.BaseRequest base_request=1;
   int64 permission_id =2;
-  string permission_name =3;
-  int64 resource_id = 4;
-  string permission =5;
+  string permission_name =3;  // 权限的名字，模糊查找
+  int64 resource_id = 4;  // 权限对应的resource id
+  string permission =5; // 权限, 支持 C, R, U D
+  int64 tenant_id =6; // 学校的id
   base.PaginationRequest pagination = 100;
 }
 
@@ -108,8 +111,8 @@ message ListPermissionResponse {
 message Role {
   int64 role_id =1;
   string role_name =2;
-  string source = 3;  // 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
-  int64 source_id =4; // 对应的资源来源id
+//  string source = 3;  // 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
+//  int64 source_id =4; // 对应的资源来源id
   string description =5;
   repeated RolePermission role_permission = 6;
 }
@@ -124,11 +127,12 @@ message RolePermission {
 
 message ListRoleRequest {
   base.BaseRequest base_request=1;
-  int64 Role_id =2;
-  string Role_name =3;
-  string Role_type =4;
-  string source = 5;
-  int64 source_id =6;
+  int64 role_id =2;
+  string role_name =3;  // 角色名称，模糊查找
+  string role_type =4; // 角色类型， 支持build-in，跟 user-defined
+//  string source = 5;  // 对应的角色来源
+//  int64 source_id =6;
+  int64 tenant_id = 7;  // 学校id
   base.PaginationRequest pagination = 100;
 }
 
@@ -163,7 +167,7 @@ message GiveRolePermissionResponse {
 
 message RemoveRolePermissionRequest {
   base.BaseRequest base_request=1;
-  repeated int64 role_permission_id =3;
+  repeated int64 role_permission_id =3; // 这个role_permission_id在list_role里头有返回，是role跟permission 映射起来的唯一id
 }
 
 message RemoveRolePermissionResponse {
@@ -178,5 +182,48 @@ message DeleteRoleRequest {
 message DeleteRoleResponse {
   base.BaseResponse base_resp = 1;
 }
+
+message Resource {
+  int64 resource_id =2;
+  string resource_name =3;
+  string resource_type =4;  // 支持 school, major_live, business_system, page_permission， 后面可能会增加
+  string source = 5;  // 源表，有config, school, major, class，后面会增加
+  int64 source_id =6; // 源表记录的id
+  int64 tenant_id =7; // 学校的id
+}
+message ListResourceRequest {
+  base.BaseRequest base_request=1;
+  Resource resource = 2;
+  base.PaginationRequest pagination = 100;
+}
+
+message ListResourceResponse {
+  base.BaseResponse base_resp = 1;
+  repeated Resource resource =2; // resource 列表
+  base.PaginationResponse pagination = 100;
+}
+
+message ListUserByRole {
+  int64 user_id = 1;
+  string user_name = 2;
+  int64 tenant_id = 3;
+  string role = 4;
+  string created_at = 5;
+
+}
+message ListUserByRoleRequest {
+  base.BaseRequest base_request=1;
+  string role_name = 2; // 平台管理员是admin, 学校管理员是school_admin_role
+  int64 tenant_id = 3;  // 学校的id，若是角色名称是admin，则会忽略这个
+  base.PaginationRequest pagination = 100;
+}
+
+message ListUserByRoleResponse {
+  base.BaseResponse base_resp = 1;
+  repeated ListUserByRole user  =2; // user 列表
+  base.PaginationResponse pagination = 100;
+}
+
+
 
 
