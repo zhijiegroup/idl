@@ -3,7 +3,8 @@ package glory_api;
 
 
 import "base.proto";
-
+option java_package = "com.zhijiejiaoyu.glory_api.admin";
+option java_multiple_files = true;
 
 message Config {
   int64 id = 2;

@@ -1,8 +1,10 @@
 syntax = "proto3";
 
 package base;
-import "api.proto";
 
+option java_package = "com.zhijiejiaoyu.base";
+option java_multiple_files = true;
+import "api.proto";
 option go_package = "base";
 
 // All response will contain BaseResponse

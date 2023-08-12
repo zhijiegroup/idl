@@ -2,6 +2,8 @@
 syntax = "proto2";
 
 package api;
+option java_package = "com.zhijiejiaoyu.api";
+option java_multiple_files = true;
 
 import "google/protobuf/descriptor.proto";
 

@@ -1,6 +1,9 @@
 syntax = "proto3";
 package glory_api;
 
+option java_package = "com.zhijiejiaoyu.glory_api";
+option java_multiple_files = true;
+
 import "user/user.proto";
 import "user/address.proto";
 import "api.proto";
