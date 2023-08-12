@@ -16,7 +16,7 @@ message User {
   string name =6;
   string avatar_url = 7;
   Seller seller = 8;
-  repeated ShopAccess shop_access = 9;
+  repeated ShopAccess shop_access = 9;  //判断用户的shop访问权限
 }
 
 // login
