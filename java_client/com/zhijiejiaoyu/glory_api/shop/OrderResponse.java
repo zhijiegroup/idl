@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private OrderResponse() {
-    currency_ = "";
+    currency = "";
   }
 
   @java.lang.Override
@@ -51,13 +51,13 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            orderId_ = input.readInt64();
+            orderId = input.readInt64();
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            currency_ = s;
+            currency = s;
             break;
           }
           default: {
@@ -93,18 +93,18 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ORDER_ID_FIELD_NUMBER = 1;
-  private long orderId_;
+  private long orderId;
   /**
    * <code>int64 order_id = 1;</code>
    * @return The orderId.
    */
   @java.lang.Override
   public long getOrderId() {
-    return orderId_;
+    return orderId;
   }
 
   public static final int CURRENCY_FIELD_NUMBER = 2;
-  private volatile java.lang.Object currency_;
+  private volatile java.lang.Object currency;
   /**
    * <pre>
    *货币类型  CNY :人民币 , COIN:虚拟币
@@ -115,14 +115,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public java.lang.String getCurrency() {
-    java.lang.Object ref = currency_;
+    java.lang.Object ref = currency;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      currency_ = s;
+      currency = s;
       return s;
     }
   }
@@ -137,12 +137,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getCurrencyBytes() {
-    java.lang.Object ref = currency_;
+    java.lang.Object ref = currency;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      currency_ = b;
+      currency = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -164,10 +164,10 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (orderId_ != 0L) {
-      output.writeInt64(1, orderId_);
+      output.writeInt64(1, orderId);
     }
     if (!getCurrencyBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, currency_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, currency);
     }
     unknownFields.writeTo(output);
   }
@@ -180,10 +180,10 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (orderId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, orderId_);
+        .computeInt64Size(1, orderId);
     }
     if (!getCurrencyBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, currency_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, currency);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -353,9 +353,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      orderId_ = 0L;
+      orderId = 0L;
 
-      currency_ = "";
+      currency = "";
 
       return this;
     }
@@ -383,8 +383,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.shop.OrderResponse buildPartial() {
       com.zhijiejiaoyu.glory_api.shop.OrderResponse result = new com.zhijiejiaoyu.glory_api.shop.OrderResponse(this);
-      result.orderId_ = orderId_;
-      result.currency_ = currency_;
+      result.orderId = orderId;
+      result.currency = currency;
       onBuilt();
       return result;
     }
@@ -437,7 +437,7 @@ private static final long serialVersionUID = 0L;
         setOrderId(other.getOrderId());
       }
       if (!other.getCurrency().isEmpty()) {
-        currency_ = other.currency_;
+        currency = other.currency;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -476,7 +476,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getOrderId() {
-      return orderId_;
+      return orderId;
     }
     /**
      * <code>int64 order_id = 1;</code>
@@ -485,7 +485,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setOrderId(long value) {
       
-      orderId_ = value;
+      orderId = value;
       onChanged();
       return this;
     }
@@ -495,12 +495,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearOrderId() {
       
-      orderId_ = 0L;
+      orderId = 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object currency_ = "";
+    private java.lang.Object currency = "";
     /**
      * <pre>
      *货币类型  CNY :人民币 , COIN:虚拟币
@@ -510,12 +510,12 @@ private static final long serialVersionUID = 0L;
      * @return The currency.
      */
     public java.lang.String getCurrency() {
-      java.lang.Object ref = currency_;
+      java.lang.Object ref = currency;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        currency_ = s;
+        currency = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -531,12 +531,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getCurrencyBytes() {
-      java.lang.Object ref = currency_;
+      java.lang.Object ref = currency;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        currency_ = b;
+        currency = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -557,7 +557,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      currency_ = value;
+      currency = value;
       onChanged();
       return this;
     }
@@ -571,7 +571,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearCurrency() {
       
-      currency_ = getDefaultInstance().getCurrency();
+      currency = getDefaultInstance().getCurrency();
       onChanged();
       return this;
     }
@@ -591,7 +591,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      currency_ = value;
+      currency = value;
       onChanged();
       return this;
     }

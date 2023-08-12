@@ -16,8 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private SceneInfo() {
-    payerClientIp_ = "";
-    deviceId_ = "";
+    payerClientIp = "";
+    deviceId = "";
   }
 
   @java.lang.Override
@@ -53,13 +53,13 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            payerClientIp_ = s;
+            payerClientIp = s;
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            deviceId_ = s;
+            deviceId = s;
             break;
           }
           case 26: {
@@ -67,10 +67,10 @@ private static final long serialVersionUID = 0L;
             if (storeInfo_ != null) {
               subBuilder = storeInfo_.toBuilder();
             }
-            storeInfo_ = input.readMessage(com.zhijiejiaoyu.glory_api.wxpay.StoreInfo.parser(), extensionRegistry);
+            storeInfo = input.readMessage(com.zhijiejiaoyu.glory_api.wxpay.StoreInfo.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(storeInfo_);
-              storeInfo_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(storeInfo);
+              storeInfo = subBuilder.buildPartial();
             }
 
             break;
@@ -108,7 +108,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PAYER_CLIENT_IP_FIELD_NUMBER = 1;
-  private volatile java.lang.Object payerClientIp_;
+  private volatile java.lang.Object payerClientIp;
   /**
    * <pre>
    *用户终端IP
@@ -119,14 +119,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public java.lang.String getPayerClientIp() {
-    java.lang.Object ref = payerClientIp_;
+    java.lang.Object ref = payerClientIp;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      payerClientIp_ = s;
+      payerClientIp = s;
       return s;
     }
   }
@@ -141,12 +141,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getPayerClientIpBytes() {
-    java.lang.Object ref = payerClientIp_;
+    java.lang.Object ref = payerClientIp;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      payerClientIp_ = b;
+      payerClientIp = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -154,7 +154,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DEVICE_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object deviceId_;
+  private volatile java.lang.Object deviceId;
   /**
    * <pre>
    *商户端设备号
@@ -165,14 +165,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public java.lang.String getDeviceId() {
-    java.lang.Object ref = deviceId_;
+    java.lang.Object ref = deviceId;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      deviceId_ = s;
+      deviceId = s;
       return s;
     }
   }
@@ -187,12 +187,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getDeviceIdBytes() {
-    java.lang.Object ref = deviceId_;
+    java.lang.Object ref = deviceId;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      deviceId_ = b;
+      deviceId = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -200,7 +200,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int STORE_INFO_FIELD_NUMBER = 3;
-  private com.zhijiejiaoyu.glory_api.wxpay.StoreInfo storeInfo_;
+  private com.zhijiejiaoyu.glory_api.wxpay.StoreInfo storeInfo;
   /**
    * <pre>
    *商户门店信息
@@ -223,7 +223,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.wxpay.StoreInfo getStoreInfo() {
-    return storeInfo_ == null ? com.zhijiejiaoyu.glory_api.wxpay.StoreInfo.getDefaultInstance() : storeInfo_;
+    return storeInfo == null ? com.zhijiejiaoyu.glory_api.wxpay.StoreInfo.getDefaultInstance() : storeInfo;
   }
   /**
    * <pre>
@@ -252,10 +252,10 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getPayerClientIpBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, payerClientIp_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, payerClientIp);
     }
     if (!getDeviceIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, deviceId_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, deviceId);
     }
     if (storeInfo_ != null) {
       output.writeMessage(3, getStoreInfo());
@@ -270,10 +270,10 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (!getPayerClientIpBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, payerClientIp_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, payerClientIp);
     }
     if (!getDeviceIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, deviceId_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, deviceId);
     }
     if (storeInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -455,15 +455,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      payerClientIp_ = "";
+      payerClientIp = "";
 
-      deviceId_ = "";
+      deviceId = "";
 
-      if (storeInfoBuilder_ == null) {
-        storeInfo_ = null;
+      if (storeInfoBuilder == null) {
+        storeInfo = null;
       } else {
-        storeInfo_ = null;
-        storeInfoBuilder_ = null;
+        storeInfo = null;
+        storeInfoBuilder = null;
       }
       return this;
     }
@@ -491,12 +491,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.wxpay.SceneInfo buildPartial() {
       com.zhijiejiaoyu.glory_api.wxpay.SceneInfo result = new com.zhijiejiaoyu.glory_api.wxpay.SceneInfo(this);
-      result.payerClientIp_ = payerClientIp_;
-      result.deviceId_ = deviceId_;
-      if (storeInfoBuilder_ == null) {
-        result.storeInfo_ = storeInfo_;
+      result.payerClientIp = payerClientIp;
+      result.deviceId = deviceId;
+      if (storeInfoBuilder == null) {
+        result.storeInfo = storeInfo;
       } else {
-        result.storeInfo_ = storeInfoBuilder_.build();
+        result.storeInfo = storeInfoBuilder_.build();
       }
       onBuilt();
       return result;
@@ -547,11 +547,11 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.zhijiejiaoyu.glory_api.wxpay.SceneInfo other) {
       if (other == com.zhijiejiaoyu.glory_api.wxpay.SceneInfo.getDefaultInstance()) return this;
       if (!other.getPayerClientIp().isEmpty()) {
-        payerClientIp_ = other.payerClientIp_;
+        payerClientIp = other.payerClientIp;
         onChanged();
       }
       if (!other.getDeviceId().isEmpty()) {
-        deviceId_ = other.deviceId_;
+        deviceId = other.deviceId;
         onChanged();
       }
       if (other.hasStoreInfo()) {
@@ -586,7 +586,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object payerClientIp_ = "";
+    private java.lang.Object payerClientIp = "";
     /**
      * <pre>
      *用户终端IP
@@ -596,12 +596,12 @@ private static final long serialVersionUID = 0L;
      * @return The payerClientIp.
      */
     public java.lang.String getPayerClientIp() {
-      java.lang.Object ref = payerClientIp_;
+      java.lang.Object ref = payerClientIp;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        payerClientIp_ = s;
+        payerClientIp = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -617,12 +617,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getPayerClientIpBytes() {
-      java.lang.Object ref = payerClientIp_;
+      java.lang.Object ref = payerClientIp;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        payerClientIp_ = b;
+        payerClientIp = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -643,7 +643,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      payerClientIp_ = value;
+      payerClientIp = value;
       onChanged();
       return this;
     }
@@ -657,7 +657,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearPayerClientIp() {
       
-      payerClientIp_ = getDefaultInstance().getPayerClientIp();
+      payerClientIp = getDefaultInstance().getPayerClientIp();
       onChanged();
       return this;
     }
@@ -677,12 +677,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      payerClientIp_ = value;
+      payerClientIp = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object deviceId_ = "";
+    private java.lang.Object deviceId = "";
     /**
      * <pre>
      *商户端设备号
@@ -692,12 +692,12 @@ private static final long serialVersionUID = 0L;
      * @return The deviceId.
      */
     public java.lang.String getDeviceId() {
-      java.lang.Object ref = deviceId_;
+      java.lang.Object ref = deviceId;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        deviceId_ = s;
+        deviceId = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -713,12 +713,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getDeviceIdBytes() {
-      java.lang.Object ref = deviceId_;
+      java.lang.Object ref = deviceId;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        deviceId_ = b;
+        deviceId = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -739,7 +739,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      deviceId_ = value;
+      deviceId = value;
       onChanged();
       return this;
     }
@@ -753,7 +753,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearDeviceId() {
       
-      deviceId_ = getDefaultInstance().getDeviceId();
+      deviceId = getDefaultInstance().getDeviceId();
       onChanged();
       return this;
     }
@@ -773,14 +773,14 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      deviceId_ = value;
+      deviceId = value;
       onChanged();
       return this;
     }
 
-    private com.zhijiejiaoyu.glory_api.wxpay.StoreInfo storeInfo_;
+    private com.zhijiejiaoyu.glory_api.wxpay.StoreInfo storeInfo;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.wxpay.StoreInfo, com.zhijiejiaoyu.glory_api.wxpay.StoreInfo.Builder, com.zhijiejiaoyu.glory_api.wxpay.StoreInfoOrBuilder> storeInfoBuilder_;
+        com.zhijiejiaoyu.glory_api.wxpay.StoreInfo, com.zhijiejiaoyu.glory_api.wxpay.StoreInfo.Builder, com.zhijiejiaoyu.glory_api.wxpay.StoreInfoOrBuilder> storeInfoBuilder;
     /**
      * <pre>
      *商户门店信息
@@ -801,8 +801,8 @@ private static final long serialVersionUID = 0L;
      * @return The storeInfo.
      */
     public com.zhijiejiaoyu.glory_api.wxpay.StoreInfo getStoreInfo() {
-      if (storeInfoBuilder_ == null) {
-        return storeInfo_ == null ? com.zhijiejiaoyu.glory_api.wxpay.StoreInfo.getDefaultInstance() : storeInfo_;
+      if (storeInfoBuilder == null) {
+        return storeInfo == null ? com.zhijiejiaoyu.glory_api.wxpay.StoreInfo.getDefaultInstance() : storeInfo;
       } else {
         return storeInfoBuilder_.getMessage();
       }
@@ -815,11 +815,11 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.StoreInfo store_info = 3;</code>
      */
     public Builder setStoreInfo(com.zhijiejiaoyu.glory_api.wxpay.StoreInfo value) {
-      if (storeInfoBuilder_ == null) {
+      if (storeInfoBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        storeInfo_ = value;
+        storeInfo = value;
         onChanged();
       } else {
         storeInfoBuilder_.setMessage(value);
@@ -836,8 +836,8 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setStoreInfo(
         com.zhijiejiaoyu.glory_api.wxpay.StoreInfo.Builder builderForValue) {
-      if (storeInfoBuilder_ == null) {
-        storeInfo_ = builderForValue.build();
+      if (storeInfoBuilder == null) {
+        storeInfo = builderForValue.build();
         onChanged();
       } else {
         storeInfoBuilder_.setMessage(builderForValue.build());
@@ -853,12 +853,12 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.StoreInfo store_info = 3;</code>
      */
     public Builder mergeStoreInfo(com.zhijiejiaoyu.glory_api.wxpay.StoreInfo value) {
-      if (storeInfoBuilder_ == null) {
+      if (storeInfoBuilder == null) {
         if (storeInfo_ != null) {
-          storeInfo_ =
-            com.zhijiejiaoyu.glory_api.wxpay.StoreInfo.newBuilder(storeInfo_).mergeFrom(value).buildPartial();
+          storeInfo =
+            com.zhijiejiaoyu.glory_api.wxpay.StoreInfo.newBuilder(storeInfo).mergeFrom(value).buildPartial();
         } else {
-          storeInfo_ = value;
+          storeInfo = value;
         }
         onChanged();
       } else {
@@ -875,12 +875,12 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.StoreInfo store_info = 3;</code>
      */
     public Builder clearStoreInfo() {
-      if (storeInfoBuilder_ == null) {
-        storeInfo_ = null;
+      if (storeInfoBuilder == null) {
+        storeInfo = null;
         onChanged();
       } else {
-        storeInfo_ = null;
-        storeInfoBuilder_ = null;
+        storeInfo = null;
+        storeInfoBuilder = null;
       }
 
       return this;
@@ -908,8 +908,8 @@ private static final long serialVersionUID = 0L;
       if (storeInfoBuilder_ != null) {
         return storeInfoBuilder_.getMessageOrBuilder();
       } else {
-        return storeInfo_ == null ?
-            com.zhijiejiaoyu.glory_api.wxpay.StoreInfo.getDefaultInstance() : storeInfo_;
+        return storeInfo == null ?
+            com.zhijiejiaoyu.glory_api.wxpay.StoreInfo.getDefaultInstance() : storeInfo;
       }
     }
     /**
@@ -922,15 +922,15 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.wxpay.StoreInfo, com.zhijiejiaoyu.glory_api.wxpay.StoreInfo.Builder, com.zhijiejiaoyu.glory_api.wxpay.StoreInfoOrBuilder> 
         getStoreInfoFieldBuilder() {
-      if (storeInfoBuilder_ == null) {
-        storeInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+      if (storeInfoBuilder == null) {
+        storeInfoBuilder = new com.google.protobuf.SingleFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.wxpay.StoreInfo, com.zhijiejiaoyu.glory_api.wxpay.StoreInfo.Builder, com.zhijiejiaoyu.glory_api.wxpay.StoreInfoOrBuilder>(
                 getStoreInfo(),
                 getParentForChildren(),
                 isClean());
-        storeInfo_ = null;
+        storeInfo = null;
       }
-      return storeInfoBuilder_;
+      return storeInfoBuilder;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

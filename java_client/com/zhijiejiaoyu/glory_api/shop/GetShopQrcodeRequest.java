@@ -50,7 +50,7 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            shopId_ = input.readInt64();
+            shopId = input.readInt64();
             break;
           }
           default: {
@@ -86,14 +86,14 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int SHOP_ID_FIELD_NUMBER = 1;
-  private long shopId_;
+  private long shopId;
   /**
    * <code>int64 shop_id = 1;</code>
    * @return The shopId.
    */
   @java.lang.Override
   public long getShopId() {
-    return shopId_;
+    return shopId;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -111,7 +111,7 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (shopId_ != 0L) {
-      output.writeInt64(1, shopId_);
+      output.writeInt64(1, shopId);
     }
     unknownFields.writeTo(output);
   }
@@ -124,7 +124,7 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (shopId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, shopId_);
+        .computeInt64Size(1, shopId);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -290,7 +290,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      shopId_ = 0L;
+      shopId = 0L;
 
       return this;
     }
@@ -318,7 +318,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.shop.GetShopQrcodeRequest buildPartial() {
       com.zhijiejiaoyu.glory_api.shop.GetShopQrcodeRequest result = new com.zhijiejiaoyu.glory_api.shop.GetShopQrcodeRequest(this);
-      result.shopId_ = shopId_;
+      result.shopId = shopId;
       onBuilt();
       return result;
     }
@@ -406,7 +406,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getShopId() {
-      return shopId_;
+      return shopId;
     }
     /**
      * <code>int64 shop_id = 1;</code>
@@ -415,7 +415,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setShopId(long value) {
       
-      shopId_ = value;
+      shopId = value;
       onChanged();
       return this;
     }
@@ -425,7 +425,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearShopId() {
       
-      shopId_ = 0L;
+      shopId = 0L;
       onChanged();
       return this;
     }

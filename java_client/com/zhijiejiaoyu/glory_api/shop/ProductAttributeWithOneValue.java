@@ -16,9 +16,9 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ProductAttributeWithOneValue() {
-    attributeName_ = "";
-    attributeValue_ = "";
-    attributeType_ = "";
+    attributeName = "";
+    attributeValue = "";
+    attributeType = "";
   }
 
   @java.lang.Override
@@ -53,35 +53,35 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            attributeId_ = input.readInt64();
+            attributeId = input.readInt64();
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            attributeName_ = s;
+            attributeName = s;
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            attributeValue_ = s;
+            attributeValue = s;
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            attributeType_ = s;
+            attributeType = s;
             break;
           }
           case 48: {
 
-            productAttributeId_ = input.readInt64();
+            productAttributeId = input.readInt64();
             break;
           }
           case 56: {
 
-            attributeValueId_ = input.readInt64();
+            attributeValueId = input.readInt64();
             break;
           }
           default: {
@@ -117,32 +117,32 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ATTRIBUTE_ID_FIELD_NUMBER = 1;
-  private long attributeId_;
+  private long attributeId;
   /**
    * <code>int64 attribute_id = 1;</code>
    * @return The attributeId.
    */
   @java.lang.Override
   public long getAttributeId() {
-    return attributeId_;
+    return attributeId;
   }
 
   public static final int ATTRIBUTE_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object attributeName_;
+  private volatile java.lang.Object attributeName;
   /**
    * <code>string attribute_name = 2;</code>
    * @return The attributeName.
    */
   @java.lang.Override
   public java.lang.String getAttributeName() {
-    java.lang.Object ref = attributeName_;
+    java.lang.Object ref = attributeName;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      attributeName_ = s;
+      attributeName = s;
       return s;
     }
   }
@@ -153,12 +153,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getAttributeNameBytes() {
-    java.lang.Object ref = attributeName_;
+    java.lang.Object ref = attributeName;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      attributeName_ = b;
+      attributeName = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -166,21 +166,21 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ATTRIBUTE_VALUE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object attributeValue_;
+  private volatile java.lang.Object attributeValue;
   /**
    * <code>string attribute_value = 3;</code>
    * @return The attributeValue.
    */
   @java.lang.Override
   public java.lang.String getAttributeValue() {
-    java.lang.Object ref = attributeValue_;
+    java.lang.Object ref = attributeValue;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      attributeValue_ = s;
+      attributeValue = s;
       return s;
     }
   }
@@ -191,12 +191,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getAttributeValueBytes() {
-    java.lang.Object ref = attributeValue_;
+    java.lang.Object ref = attributeValue;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      attributeValue_ = b;
+      attributeValue = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -204,21 +204,21 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ATTRIBUTE_TYPE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object attributeType_;
+  private volatile java.lang.Object attributeType;
   /**
    * <code>string attribute_type = 4;</code>
    * @return The attributeType.
    */
   @java.lang.Override
   public java.lang.String getAttributeType() {
-    java.lang.Object ref = attributeType_;
+    java.lang.Object ref = attributeType;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      attributeType_ = s;
+      attributeType = s;
       return s;
     }
   }
@@ -229,12 +229,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getAttributeTypeBytes() {
-    java.lang.Object ref = attributeType_;
+    java.lang.Object ref = attributeType;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      attributeType_ = b;
+      attributeType = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -242,25 +242,25 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PRODUCT_ATTRIBUTE_ID_FIELD_NUMBER = 6;
-  private long productAttributeId_;
+  private long productAttributeId;
   /**
    * <code>int64 product_attribute_id = 6;</code>
    * @return The productAttributeId.
    */
   @java.lang.Override
   public long getProductAttributeId() {
-    return productAttributeId_;
+    return productAttributeId;
   }
 
   public static final int ATTRIBUTE_VALUE_ID_FIELD_NUMBER = 7;
-  private long attributeValueId_;
+  private long attributeValueId;
   /**
    * <code>int64 attribute_value_id = 7;</code>
    * @return The attributeValueId.
    */
   @java.lang.Override
   public long getAttributeValueId() {
-    return attributeValueId_;
+    return attributeValueId;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -278,22 +278,22 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (attributeId_ != 0L) {
-      output.writeInt64(1, attributeId_);
+      output.writeInt64(1, attributeId);
     }
     if (!getAttributeNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, attributeName_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, attributeName);
     }
     if (!getAttributeValueBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, attributeValue_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, attributeValue);
     }
     if (!getAttributeTypeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, attributeType_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, attributeType);
     }
     if (productAttributeId_ != 0L) {
-      output.writeInt64(6, productAttributeId_);
+      output.writeInt64(6, productAttributeId);
     }
     if (attributeValueId_ != 0L) {
-      output.writeInt64(7, attributeValueId_);
+      output.writeInt64(7, attributeValueId);
     }
     unknownFields.writeTo(output);
   }
@@ -306,24 +306,24 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (attributeId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, attributeId_);
+        .computeInt64Size(1, attributeId);
     }
     if (!getAttributeNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, attributeName_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, attributeName);
     }
     if (!getAttributeValueBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, attributeValue_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, attributeValue);
     }
     if (!getAttributeTypeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, attributeType_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, attributeType);
     }
     if (productAttributeId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(6, productAttributeId_);
+        .computeInt64Size(6, productAttributeId);
     }
     if (attributeValueId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(7, attributeValueId_);
+        .computeInt64Size(7, attributeValueId);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -511,17 +511,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      attributeId_ = 0L;
+      attributeId = 0L;
 
-      attributeName_ = "";
+      attributeName = "";
 
-      attributeValue_ = "";
+      attributeValue = "";
 
-      attributeType_ = "";
+      attributeType = "";
 
-      productAttributeId_ = 0L;
+      productAttributeId = 0L;
 
-      attributeValueId_ = 0L;
+      attributeValueId = 0L;
 
       return this;
     }
@@ -549,12 +549,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.shop.ProductAttributeWithOneValue buildPartial() {
       com.zhijiejiaoyu.glory_api.shop.ProductAttributeWithOneValue result = new com.zhijiejiaoyu.glory_api.shop.ProductAttributeWithOneValue(this);
-      result.attributeId_ = attributeId_;
-      result.attributeName_ = attributeName_;
-      result.attributeValue_ = attributeValue_;
-      result.attributeType_ = attributeType_;
-      result.productAttributeId_ = productAttributeId_;
-      result.attributeValueId_ = attributeValueId_;
+      result.attributeId = attributeId;
+      result.attributeName = attributeName;
+      result.attributeValue = attributeValue;
+      result.attributeType = attributeType;
+      result.productAttributeId = productAttributeId;
+      result.attributeValueId = attributeValueId;
       onBuilt();
       return result;
     }
@@ -607,15 +607,15 @@ private static final long serialVersionUID = 0L;
         setAttributeId(other.getAttributeId());
       }
       if (!other.getAttributeName().isEmpty()) {
-        attributeName_ = other.attributeName_;
+        attributeName = other.attributeName;
         onChanged();
       }
       if (!other.getAttributeValue().isEmpty()) {
-        attributeValue_ = other.attributeValue_;
+        attributeValue = other.attributeValue;
         onChanged();
       }
       if (!other.getAttributeType().isEmpty()) {
-        attributeType_ = other.attributeType_;
+        attributeType = other.attributeType;
         onChanged();
       }
       if (other.getProductAttributeId() != 0L) {
@@ -660,7 +660,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getAttributeId() {
-      return attributeId_;
+      return attributeId;
     }
     /**
      * <code>int64 attribute_id = 1;</code>
@@ -669,7 +669,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setAttributeId(long value) {
       
-      attributeId_ = value;
+      attributeId = value;
       onChanged();
       return this;
     }
@@ -679,23 +679,23 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearAttributeId() {
       
-      attributeId_ = 0L;
+      attributeId = 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object attributeName_ = "";
+    private java.lang.Object attributeName = "";
     /**
      * <code>string attribute_name = 2;</code>
      * @return The attributeName.
      */
     public java.lang.String getAttributeName() {
-      java.lang.Object ref = attributeName_;
+      java.lang.Object ref = attributeName;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        attributeName_ = s;
+        attributeName = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -707,12 +707,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getAttributeNameBytes() {
-      java.lang.Object ref = attributeName_;
+      java.lang.Object ref = attributeName;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        attributeName_ = b;
+        attributeName = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -729,7 +729,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      attributeName_ = value;
+      attributeName = value;
       onChanged();
       return this;
     }
@@ -739,7 +739,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearAttributeName() {
       
-      attributeName_ = getDefaultInstance().getAttributeName();
+      attributeName = getDefaultInstance().getAttributeName();
       onChanged();
       return this;
     }
@@ -755,23 +755,23 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      attributeName_ = value;
+      attributeName = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object attributeValue_ = "";
+    private java.lang.Object attributeValue = "";
     /**
      * <code>string attribute_value = 3;</code>
      * @return The attributeValue.
      */
     public java.lang.String getAttributeValue() {
-      java.lang.Object ref = attributeValue_;
+      java.lang.Object ref = attributeValue;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        attributeValue_ = s;
+        attributeValue = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -783,12 +783,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getAttributeValueBytes() {
-      java.lang.Object ref = attributeValue_;
+      java.lang.Object ref = attributeValue;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        attributeValue_ = b;
+        attributeValue = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -805,7 +805,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      attributeValue_ = value;
+      attributeValue = value;
       onChanged();
       return this;
     }
@@ -815,7 +815,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearAttributeValue() {
       
-      attributeValue_ = getDefaultInstance().getAttributeValue();
+      attributeValue = getDefaultInstance().getAttributeValue();
       onChanged();
       return this;
     }
@@ -831,23 +831,23 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      attributeValue_ = value;
+      attributeValue = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object attributeType_ = "";
+    private java.lang.Object attributeType = "";
     /**
      * <code>string attribute_type = 4;</code>
      * @return The attributeType.
      */
     public java.lang.String getAttributeType() {
-      java.lang.Object ref = attributeType_;
+      java.lang.Object ref = attributeType;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        attributeType_ = s;
+        attributeType = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -859,12 +859,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getAttributeTypeBytes() {
-      java.lang.Object ref = attributeType_;
+      java.lang.Object ref = attributeType;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        attributeType_ = b;
+        attributeType = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -881,7 +881,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      attributeType_ = value;
+      attributeType = value;
       onChanged();
       return this;
     }
@@ -891,7 +891,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearAttributeType() {
       
-      attributeType_ = getDefaultInstance().getAttributeType();
+      attributeType = getDefaultInstance().getAttributeType();
       onChanged();
       return this;
     }
@@ -907,7 +907,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      attributeType_ = value;
+      attributeType = value;
       onChanged();
       return this;
     }
@@ -919,7 +919,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getProductAttributeId() {
-      return productAttributeId_;
+      return productAttributeId;
     }
     /**
      * <code>int64 product_attribute_id = 6;</code>
@@ -928,7 +928,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setProductAttributeId(long value) {
       
-      productAttributeId_ = value;
+      productAttributeId = value;
       onChanged();
       return this;
     }
@@ -938,7 +938,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearProductAttributeId() {
       
-      productAttributeId_ = 0L;
+      productAttributeId = 0L;
       onChanged();
       return this;
     }
@@ -950,7 +950,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getAttributeValueId() {
-      return attributeValueId_;
+      return attributeValueId;
     }
     /**
      * <code>int64 attribute_value_id = 7;</code>
@@ -959,7 +959,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setAttributeValueId(long value) {
       
-      attributeValueId_ = value;
+      attributeValueId = value;
       onChanged();
       return this;
     }
@@ -969,7 +969,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearAttributeValueId() {
       
-      attributeValueId_ = 0L;
+      attributeValueId = 0L;
       onChanged();
       return this;
     }

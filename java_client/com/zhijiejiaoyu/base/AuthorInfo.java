@@ -16,8 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private AuthorInfo() {
-    createdAt_ = "";
-    updatedAt_ = "";
+    createdAt = "";
+    updatedAt = "";
   }
 
   @java.lang.Override
@@ -52,24 +52,24 @@ private static final long serialVersionUID = 0L;
             break;
           case 808: {
 
-            createdBy_ = input.readInt64();
+            createdBy = input.readInt64();
             break;
           }
           case 818: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            createdAt_ = s;
+            createdAt = s;
             break;
           }
           case 824: {
 
-            updatedBy_ = input.readInt64();
+            updatedBy = input.readInt64();
             break;
           }
           case 834: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            updatedAt_ = s;
+            updatedAt = s;
             break;
           }
           default: {
@@ -105,32 +105,32 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CREATED_BY_FIELD_NUMBER = 101;
-  private long createdBy_;
+  private long createdBy;
   /**
    * <code>int64 created_by = 101;</code>
    * @return The createdBy.
    */
   @java.lang.Override
   public long getCreatedBy() {
-    return createdBy_;
+    return createdBy;
   }
 
   public static final int CREATED_AT_FIELD_NUMBER = 102;
-  private volatile java.lang.Object createdAt_;
+  private volatile java.lang.Object createdAt;
   /**
    * <code>string created_at = 102;</code>
    * @return The createdAt.
    */
   @java.lang.Override
   public java.lang.String getCreatedAt() {
-    java.lang.Object ref = createdAt_;
+    java.lang.Object ref = createdAt;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      createdAt_ = s;
+      createdAt = s;
       return s;
     }
   }
@@ -141,12 +141,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getCreatedAtBytes() {
-    java.lang.Object ref = createdAt_;
+    java.lang.Object ref = createdAt;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      createdAt_ = b;
+      createdAt = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -154,32 +154,32 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int UPDATED_BY_FIELD_NUMBER = 103;
-  private long updatedBy_;
+  private long updatedBy;
   /**
    * <code>int64 updated_by = 103;</code>
    * @return The updatedBy.
    */
   @java.lang.Override
   public long getUpdatedBy() {
-    return updatedBy_;
+    return updatedBy;
   }
 
   public static final int UPDATED_AT_FIELD_NUMBER = 104;
-  private volatile java.lang.Object updatedAt_;
+  private volatile java.lang.Object updatedAt;
   /**
    * <code>string updated_at = 104;</code>
    * @return The updatedAt.
    */
   @java.lang.Override
   public java.lang.String getUpdatedAt() {
-    java.lang.Object ref = updatedAt_;
+    java.lang.Object ref = updatedAt;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      updatedAt_ = s;
+      updatedAt = s;
       return s;
     }
   }
@@ -190,12 +190,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getUpdatedAtBytes() {
-    java.lang.Object ref = updatedAt_;
+    java.lang.Object ref = updatedAt;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      updatedAt_ = b;
+      updatedAt = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -217,16 +217,16 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (createdBy_ != 0L) {
-      output.writeInt64(101, createdBy_);
+      output.writeInt64(101, createdBy);
     }
     if (!getCreatedAtBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 102, createdAt_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 102, createdAt);
     }
     if (updatedBy_ != 0L) {
-      output.writeInt64(103, updatedBy_);
+      output.writeInt64(103, updatedBy);
     }
     if (!getUpdatedAtBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 104, updatedAt_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 104, updatedAt);
     }
     unknownFields.writeTo(output);
   }
@@ -239,17 +239,17 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (createdBy_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(101, createdBy_);
+        .computeInt64Size(101, createdBy);
     }
     if (!getCreatedAtBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(102, createdAt_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(102, createdAt);
     }
     if (updatedBy_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(103, updatedBy_);
+        .computeInt64Size(103, updatedBy);
     }
     if (!getUpdatedAtBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(104, updatedAt_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(104, updatedAt);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -428,13 +428,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      createdBy_ = 0L;
+      createdBy = 0L;
 
-      createdAt_ = "";
+      createdAt = "";
 
-      updatedBy_ = 0L;
+      updatedBy = 0L;
 
-      updatedAt_ = "";
+      updatedAt = "";
 
       return this;
     }
@@ -462,10 +462,10 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.base.AuthorInfo buildPartial() {
       com.zhijiejiaoyu.base.AuthorInfo result = new com.zhijiejiaoyu.base.AuthorInfo(this);
-      result.createdBy_ = createdBy_;
-      result.createdAt_ = createdAt_;
-      result.updatedBy_ = updatedBy_;
-      result.updatedAt_ = updatedAt_;
+      result.createdBy = createdBy;
+      result.createdAt = createdAt;
+      result.updatedBy = updatedBy;
+      result.updatedAt = updatedAt;
       onBuilt();
       return result;
     }
@@ -518,14 +518,14 @@ private static final long serialVersionUID = 0L;
         setCreatedBy(other.getCreatedBy());
       }
       if (!other.getCreatedAt().isEmpty()) {
-        createdAt_ = other.createdAt_;
+        createdAt = other.createdAt;
         onChanged();
       }
       if (other.getUpdatedBy() != 0L) {
         setUpdatedBy(other.getUpdatedBy());
       }
       if (!other.getUpdatedAt().isEmpty()) {
-        updatedAt_ = other.updatedAt_;
+        updatedAt = other.updatedAt;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -564,7 +564,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getCreatedBy() {
-      return createdBy_;
+      return createdBy;
     }
     /**
      * <code>int64 created_by = 101;</code>
@@ -573,7 +573,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setCreatedBy(long value) {
       
-      createdBy_ = value;
+      createdBy = value;
       onChanged();
       return this;
     }
@@ -583,23 +583,23 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearCreatedBy() {
       
-      createdBy_ = 0L;
+      createdBy = 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object createdAt_ = "";
+    private java.lang.Object createdAt = "";
     /**
      * <code>string created_at = 102;</code>
      * @return The createdAt.
      */
     public java.lang.String getCreatedAt() {
-      java.lang.Object ref = createdAt_;
+      java.lang.Object ref = createdAt;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        createdAt_ = s;
+        createdAt = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -611,12 +611,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getCreatedAtBytes() {
-      java.lang.Object ref = createdAt_;
+      java.lang.Object ref = createdAt;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        createdAt_ = b;
+        createdAt = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -633,7 +633,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      createdAt_ = value;
+      createdAt = value;
       onChanged();
       return this;
     }
@@ -643,7 +643,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearCreatedAt() {
       
-      createdAt_ = getDefaultInstance().getCreatedAt();
+      createdAt = getDefaultInstance().getCreatedAt();
       onChanged();
       return this;
     }
@@ -659,7 +659,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      createdAt_ = value;
+      createdAt = value;
       onChanged();
       return this;
     }
@@ -671,7 +671,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getUpdatedBy() {
-      return updatedBy_;
+      return updatedBy;
     }
     /**
      * <code>int64 updated_by = 103;</code>
@@ -680,7 +680,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setUpdatedBy(long value) {
       
-      updatedBy_ = value;
+      updatedBy = value;
       onChanged();
       return this;
     }
@@ -690,23 +690,23 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearUpdatedBy() {
       
-      updatedBy_ = 0L;
+      updatedBy = 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object updatedAt_ = "";
+    private java.lang.Object updatedAt = "";
     /**
      * <code>string updated_at = 104;</code>
      * @return The updatedAt.
      */
     public java.lang.String getUpdatedAt() {
-      java.lang.Object ref = updatedAt_;
+      java.lang.Object ref = updatedAt;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        updatedAt_ = s;
+        updatedAt = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -718,12 +718,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getUpdatedAtBytes() {
-      java.lang.Object ref = updatedAt_;
+      java.lang.Object ref = updatedAt;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        updatedAt_ = b;
+        updatedAt = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -740,7 +740,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      updatedAt_ = value;
+      updatedAt = value;
       onChanged();
       return this;
     }
@@ -750,7 +750,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearUpdatedAt() {
       
-      updatedAt_ = getDefaultInstance().getUpdatedAt();
+      updatedAt = getDefaultInstance().getUpdatedAt();
       onChanged();
       return this;
     }
@@ -766,7 +766,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      updatedAt_ = value;
+      updatedAt = value;
       onChanged();
       return this;
     }

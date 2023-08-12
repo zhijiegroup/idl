@@ -16,10 +16,10 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListUserByRole() {
-    phone_ = "";
-    userName_ = "";
-    role_ = "";
-    createdAt_ = "";
+    phone = "";
+    userName = "";
+    role = "";
+    createdAt = "";
   }
 
   @java.lang.Override
@@ -54,36 +54,36 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            userId_ = input.readInt64();
+            userId = input.readInt64();
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            phone_ = s;
+            phone = s;
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            userName_ = s;
+            userName = s;
             break;
           }
           case 32: {
 
-            tenantId_ = input.readInt64();
+            tenantId = input.readInt64();
             break;
           }
           case 42: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            role_ = s;
+            role = s;
             break;
           }
           case 50: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            createdAt_ = s;
+            createdAt = s;
             break;
           }
           default: {
@@ -119,32 +119,32 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int USER_ID_FIELD_NUMBER = 1;
-  private long userId_;
+  private long userId;
   /**
    * <code>int64 user_id = 1;</code>
    * @return The userId.
    */
   @java.lang.Override
   public long getUserId() {
-    return userId_;
+    return userId;
   }
 
   public static final int PHONE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object phone_;
+  private volatile java.lang.Object phone;
   /**
    * <code>string phone = 2;</code>
    * @return The phone.
    */
   @java.lang.Override
   public java.lang.String getPhone() {
-    java.lang.Object ref = phone_;
+    java.lang.Object ref = phone;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      phone_ = s;
+      phone = s;
       return s;
     }
   }
@@ -155,12 +155,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getPhoneBytes() {
-    java.lang.Object ref = phone_;
+    java.lang.Object ref = phone;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      phone_ = b;
+      phone = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -168,21 +168,21 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int USER_NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object userName_;
+  private volatile java.lang.Object userName;
   /**
    * <code>string user_name = 3;</code>
    * @return The userName.
    */
   @java.lang.Override
   public java.lang.String getUserName() {
-    java.lang.Object ref = userName_;
+    java.lang.Object ref = userName;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      userName_ = s;
+      userName = s;
       return s;
     }
   }
@@ -193,12 +193,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getUserNameBytes() {
-    java.lang.Object ref = userName_;
+    java.lang.Object ref = userName;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      userName_ = b;
+      userName = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -206,32 +206,32 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TENANT_ID_FIELD_NUMBER = 4;
-  private long tenantId_;
+  private long tenantId;
   /**
    * <code>int64 tenant_id = 4;</code>
    * @return The tenantId.
    */
   @java.lang.Override
   public long getTenantId() {
-    return tenantId_;
+    return tenantId;
   }
 
   public static final int ROLE_FIELD_NUMBER = 5;
-  private volatile java.lang.Object role_;
+  private volatile java.lang.Object role;
   /**
    * <code>string role = 5;</code>
    * @return The role.
    */
   @java.lang.Override
   public java.lang.String getRole() {
-    java.lang.Object ref = role_;
+    java.lang.Object ref = role;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      role_ = s;
+      role = s;
       return s;
     }
   }
@@ -242,12 +242,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getRoleBytes() {
-    java.lang.Object ref = role_;
+    java.lang.Object ref = role;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      role_ = b;
+      role = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -255,21 +255,21 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CREATED_AT_FIELD_NUMBER = 6;
-  private volatile java.lang.Object createdAt_;
+  private volatile java.lang.Object createdAt;
   /**
    * <code>string created_at = 6;</code>
    * @return The createdAt.
    */
   @java.lang.Override
   public java.lang.String getCreatedAt() {
-    java.lang.Object ref = createdAt_;
+    java.lang.Object ref = createdAt;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      createdAt_ = s;
+      createdAt = s;
       return s;
     }
   }
@@ -280,12 +280,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getCreatedAtBytes() {
-    java.lang.Object ref = createdAt_;
+    java.lang.Object ref = createdAt;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      createdAt_ = b;
+      createdAt = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -307,22 +307,22 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (userId_ != 0L) {
-      output.writeInt64(1, userId_);
+      output.writeInt64(1, userId);
     }
     if (!getPhoneBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, phone_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, phone);
     }
     if (!getUserNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, userName_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, userName);
     }
     if (tenantId_ != 0L) {
-      output.writeInt64(4, tenantId_);
+      output.writeInt64(4, tenantId);
     }
     if (!getRoleBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, role_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, role);
     }
     if (!getCreatedAtBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, createdAt_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, createdAt);
     }
     unknownFields.writeTo(output);
   }
@@ -335,23 +335,23 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (userId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, userId_);
+        .computeInt64Size(1, userId);
     }
     if (!getPhoneBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, phone_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, phone);
     }
     if (!getUserNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, userName_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, userName);
     }
     if (tenantId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(4, tenantId_);
+        .computeInt64Size(4, tenantId);
     }
     if (!getRoleBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, role_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, role);
     }
     if (!getCreatedAtBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, createdAt_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, createdAt);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -538,17 +538,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      userId_ = 0L;
+      userId = 0L;
 
-      phone_ = "";
+      phone = "";
 
-      userName_ = "";
+      userName = "";
 
-      tenantId_ = 0L;
+      tenantId = 0L;
 
-      role_ = "";
+      role = "";
 
-      createdAt_ = "";
+      createdAt = "";
 
       return this;
     }
@@ -576,12 +576,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.user.ListUserByRole buildPartial() {
       com.zhijiejiaoyu.glory_api.user.ListUserByRole result = new com.zhijiejiaoyu.glory_api.user.ListUserByRole(this);
-      result.userId_ = userId_;
-      result.phone_ = phone_;
-      result.userName_ = userName_;
-      result.tenantId_ = tenantId_;
-      result.role_ = role_;
-      result.createdAt_ = createdAt_;
+      result.userId = userId;
+      result.phone = phone;
+      result.userName = userName;
+      result.tenantId = tenantId;
+      result.role = role;
+      result.createdAt = createdAt;
       onBuilt();
       return result;
     }
@@ -634,22 +634,22 @@ private static final long serialVersionUID = 0L;
         setUserId(other.getUserId());
       }
       if (!other.getPhone().isEmpty()) {
-        phone_ = other.phone_;
+        phone = other.phone;
         onChanged();
       }
       if (!other.getUserName().isEmpty()) {
-        userName_ = other.userName_;
+        userName = other.userName;
         onChanged();
       }
       if (other.getTenantId() != 0L) {
         setTenantId(other.getTenantId());
       }
       if (!other.getRole().isEmpty()) {
-        role_ = other.role_;
+        role = other.role;
         onChanged();
       }
       if (!other.getCreatedAt().isEmpty()) {
-        createdAt_ = other.createdAt_;
+        createdAt = other.createdAt;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -688,7 +688,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getUserId() {
-      return userId_;
+      return userId;
     }
     /**
      * <code>int64 user_id = 1;</code>
@@ -697,7 +697,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setUserId(long value) {
       
-      userId_ = value;
+      userId = value;
       onChanged();
       return this;
     }
@@ -707,23 +707,23 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearUserId() {
       
-      userId_ = 0L;
+      userId = 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object phone_ = "";
+    private java.lang.Object phone = "";
     /**
      * <code>string phone = 2;</code>
      * @return The phone.
      */
     public java.lang.String getPhone() {
-      java.lang.Object ref = phone_;
+      java.lang.Object ref = phone;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        phone_ = s;
+        phone = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -735,12 +735,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getPhoneBytes() {
-      java.lang.Object ref = phone_;
+      java.lang.Object ref = phone;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        phone_ = b;
+        phone = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -757,7 +757,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      phone_ = value;
+      phone = value;
       onChanged();
       return this;
     }
@@ -767,7 +767,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearPhone() {
       
-      phone_ = getDefaultInstance().getPhone();
+      phone = getDefaultInstance().getPhone();
       onChanged();
       return this;
     }
@@ -783,23 +783,23 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      phone_ = value;
+      phone = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object userName_ = "";
+    private java.lang.Object userName = "";
     /**
      * <code>string user_name = 3;</code>
      * @return The userName.
      */
     public java.lang.String getUserName() {
-      java.lang.Object ref = userName_;
+      java.lang.Object ref = userName;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        userName_ = s;
+        userName = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -811,12 +811,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getUserNameBytes() {
-      java.lang.Object ref = userName_;
+      java.lang.Object ref = userName;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        userName_ = b;
+        userName = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -833,7 +833,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      userName_ = value;
+      userName = value;
       onChanged();
       return this;
     }
@@ -843,7 +843,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearUserName() {
       
-      userName_ = getDefaultInstance().getUserName();
+      userName = getDefaultInstance().getUserName();
       onChanged();
       return this;
     }
@@ -859,7 +859,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      userName_ = value;
+      userName = value;
       onChanged();
       return this;
     }
@@ -871,7 +871,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getTenantId() {
-      return tenantId_;
+      return tenantId;
     }
     /**
      * <code>int64 tenant_id = 4;</code>
@@ -880,7 +880,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setTenantId(long value) {
       
-      tenantId_ = value;
+      tenantId = value;
       onChanged();
       return this;
     }
@@ -890,23 +890,23 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearTenantId() {
       
-      tenantId_ = 0L;
+      tenantId = 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object role_ = "";
+    private java.lang.Object role = "";
     /**
      * <code>string role = 5;</code>
      * @return The role.
      */
     public java.lang.String getRole() {
-      java.lang.Object ref = role_;
+      java.lang.Object ref = role;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        role_ = s;
+        role = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -918,12 +918,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getRoleBytes() {
-      java.lang.Object ref = role_;
+      java.lang.Object ref = role;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        role_ = b;
+        role = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -940,7 +940,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      role_ = value;
+      role = value;
       onChanged();
       return this;
     }
@@ -950,7 +950,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearRole() {
       
-      role_ = getDefaultInstance().getRole();
+      role = getDefaultInstance().getRole();
       onChanged();
       return this;
     }
@@ -966,23 +966,23 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      role_ = value;
+      role = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object createdAt_ = "";
+    private java.lang.Object createdAt = "";
     /**
      * <code>string created_at = 6;</code>
      * @return The createdAt.
      */
     public java.lang.String getCreatedAt() {
-      java.lang.Object ref = createdAt_;
+      java.lang.Object ref = createdAt;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        createdAt_ = s;
+        createdAt = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -994,12 +994,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getCreatedAtBytes() {
-      java.lang.Object ref = createdAt_;
+      java.lang.Object ref = createdAt;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        createdAt_ = b;
+        createdAt = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1016,7 +1016,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      createdAt_ = value;
+      createdAt = value;
       onChanged();
       return this;
     }
@@ -1026,7 +1026,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearCreatedAt() {
       
-      createdAt_ = getDefaultInstance().getCreatedAt();
+      createdAt = getDefaultInstance().getCreatedAt();
       onChanged();
       return this;
     }
@@ -1042,7 +1042,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      createdAt_ = value;
+      createdAt = value;
       onChanged();
       return this;
     }

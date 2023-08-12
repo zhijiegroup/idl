@@ -16,10 +16,10 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private LiveUserToken() {
-    deviceId_ = "";
-    deviceType_ = "";
-    token_ = "";
-    expiryTime_ = "";
+    deviceId = "";
+    deviceType = "";
+    token = "";
+    expiryTime = "";
   }
 
   @java.lang.Override
@@ -54,36 +54,36 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            userTokenId_ = input.readInt64();
+            userTokenId = input.readInt64();
             break;
           }
           case 16: {
 
-            userId_ = input.readInt64();
+            userId = input.readInt64();
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            deviceId_ = s;
+            deviceId = s;
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            deviceType_ = s;
+            deviceType = s;
             break;
           }
           case 42: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            token_ = s;
+            token = s;
             break;
           }
           case 50: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            expiryTime_ = s;
+            expiryTime = s;
             break;
           }
           default: {
@@ -119,43 +119,43 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int USER_TOKEN_ID_FIELD_NUMBER = 1;
-  private long userTokenId_;
+  private long userTokenId;
   /**
    * <code>int64 user_token_id = 1;</code>
    * @return The userTokenId.
    */
   @java.lang.Override
   public long getUserTokenId() {
-    return userTokenId_;
+    return userTokenId;
   }
 
   public static final int USER_ID_FIELD_NUMBER = 2;
-  private long userId_;
+  private long userId;
   /**
    * <code>int64 user_id = 2;</code>
    * @return The userId.
    */
   @java.lang.Override
   public long getUserId() {
-    return userId_;
+    return userId;
   }
 
   public static final int DEVICE_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object deviceId_;
+  private volatile java.lang.Object deviceId;
   /**
    * <code>string device_id = 3;</code>
    * @return The deviceId.
    */
   @java.lang.Override
   public java.lang.String getDeviceId() {
-    java.lang.Object ref = deviceId_;
+    java.lang.Object ref = deviceId;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      deviceId_ = s;
+      deviceId = s;
       return s;
     }
   }
@@ -166,12 +166,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getDeviceIdBytes() {
-    java.lang.Object ref = deviceId_;
+    java.lang.Object ref = deviceId;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      deviceId_ = b;
+      deviceId = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -179,21 +179,21 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DEVICE_TYPE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object deviceType_;
+  private volatile java.lang.Object deviceType;
   /**
    * <code>string device_type = 4;</code>
    * @return The deviceType.
    */
   @java.lang.Override
   public java.lang.String getDeviceType() {
-    java.lang.Object ref = deviceType_;
+    java.lang.Object ref = deviceType;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      deviceType_ = s;
+      deviceType = s;
       return s;
     }
   }
@@ -204,12 +204,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getDeviceTypeBytes() {
-    java.lang.Object ref = deviceType_;
+    java.lang.Object ref = deviceType;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      deviceType_ = b;
+      deviceType = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -217,21 +217,21 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TOKEN_FIELD_NUMBER = 5;
-  private volatile java.lang.Object token_;
+  private volatile java.lang.Object token;
   /**
    * <code>string token = 5;</code>
    * @return The token.
    */
   @java.lang.Override
   public java.lang.String getToken() {
-    java.lang.Object ref = token_;
+    java.lang.Object ref = token;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      token_ = s;
+      token = s;
       return s;
     }
   }
@@ -242,12 +242,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getTokenBytes() {
-    java.lang.Object ref = token_;
+    java.lang.Object ref = token;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      token_ = b;
+      token = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -255,21 +255,21 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int EXPIRY_TIME_FIELD_NUMBER = 6;
-  private volatile java.lang.Object expiryTime_;
+  private volatile java.lang.Object expiryTime;
   /**
    * <code>string expiry_time = 6;</code>
    * @return The expiryTime.
    */
   @java.lang.Override
   public java.lang.String getExpiryTime() {
-    java.lang.Object ref = expiryTime_;
+    java.lang.Object ref = expiryTime;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      expiryTime_ = s;
+      expiryTime = s;
       return s;
     }
   }
@@ -280,12 +280,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getExpiryTimeBytes() {
-    java.lang.Object ref = expiryTime_;
+    java.lang.Object ref = expiryTime;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      expiryTime_ = b;
+      expiryTime = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -307,22 +307,22 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (userTokenId_ != 0L) {
-      output.writeInt64(1, userTokenId_);
+      output.writeInt64(1, userTokenId);
     }
     if (userId_ != 0L) {
-      output.writeInt64(2, userId_);
+      output.writeInt64(2, userId);
     }
     if (!getDeviceIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, deviceId_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, deviceId);
     }
     if (!getDeviceTypeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, deviceType_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, deviceType);
     }
     if (!getTokenBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, token_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, token);
     }
     if (!getExpiryTimeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, expiryTime_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, expiryTime);
     }
     unknownFields.writeTo(output);
   }
@@ -335,23 +335,23 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (userTokenId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, userTokenId_);
+        .computeInt64Size(1, userTokenId);
     }
     if (userId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, userId_);
+        .computeInt64Size(2, userId);
     }
     if (!getDeviceIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, deviceId_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, deviceId);
     }
     if (!getDeviceTypeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, deviceType_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, deviceType);
     }
     if (!getTokenBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, token_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, token);
     }
     if (!getExpiryTimeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, expiryTime_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, expiryTime);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -538,17 +538,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      userTokenId_ = 0L;
+      userTokenId = 0L;
 
-      userId_ = 0L;
+      userId = 0L;
 
-      deviceId_ = "";
+      deviceId = "";
 
-      deviceType_ = "";
+      deviceType = "";
 
-      token_ = "";
+      token = "";
 
-      expiryTime_ = "";
+      expiryTime = "";
 
       return this;
     }
@@ -576,12 +576,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.live.LiveUserToken buildPartial() {
       com.zhijiejiaoyu.glory_api.live.LiveUserToken result = new com.zhijiejiaoyu.glory_api.live.LiveUserToken(this);
-      result.userTokenId_ = userTokenId_;
-      result.userId_ = userId_;
-      result.deviceId_ = deviceId_;
-      result.deviceType_ = deviceType_;
-      result.token_ = token_;
-      result.expiryTime_ = expiryTime_;
+      result.userTokenId = userTokenId;
+      result.userId = userId;
+      result.deviceId = deviceId;
+      result.deviceType = deviceType;
+      result.token = token;
+      result.expiryTime = expiryTime;
       onBuilt();
       return result;
     }
@@ -637,19 +637,19 @@ private static final long serialVersionUID = 0L;
         setUserId(other.getUserId());
       }
       if (!other.getDeviceId().isEmpty()) {
-        deviceId_ = other.deviceId_;
+        deviceId = other.deviceId;
         onChanged();
       }
       if (!other.getDeviceType().isEmpty()) {
-        deviceType_ = other.deviceType_;
+        deviceType = other.deviceType;
         onChanged();
       }
       if (!other.getToken().isEmpty()) {
-        token_ = other.token_;
+        token = other.token;
         onChanged();
       }
       if (!other.getExpiryTime().isEmpty()) {
-        expiryTime_ = other.expiryTime_;
+        expiryTime = other.expiryTime;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -688,7 +688,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getUserTokenId() {
-      return userTokenId_;
+      return userTokenId;
     }
     /**
      * <code>int64 user_token_id = 1;</code>
@@ -697,7 +697,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setUserTokenId(long value) {
       
-      userTokenId_ = value;
+      userTokenId = value;
       onChanged();
       return this;
     }
@@ -707,7 +707,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearUserTokenId() {
       
-      userTokenId_ = 0L;
+      userTokenId = 0L;
       onChanged();
       return this;
     }
@@ -719,7 +719,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getUserId() {
-      return userId_;
+      return userId;
     }
     /**
      * <code>int64 user_id = 2;</code>
@@ -728,7 +728,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setUserId(long value) {
       
-      userId_ = value;
+      userId = value;
       onChanged();
       return this;
     }
@@ -738,23 +738,23 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearUserId() {
       
-      userId_ = 0L;
+      userId = 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object deviceId_ = "";
+    private java.lang.Object deviceId = "";
     /**
      * <code>string device_id = 3;</code>
      * @return The deviceId.
      */
     public java.lang.String getDeviceId() {
-      java.lang.Object ref = deviceId_;
+      java.lang.Object ref = deviceId;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        deviceId_ = s;
+        deviceId = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -766,12 +766,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getDeviceIdBytes() {
-      java.lang.Object ref = deviceId_;
+      java.lang.Object ref = deviceId;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        deviceId_ = b;
+        deviceId = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -788,7 +788,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      deviceId_ = value;
+      deviceId = value;
       onChanged();
       return this;
     }
@@ -798,7 +798,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearDeviceId() {
       
-      deviceId_ = getDefaultInstance().getDeviceId();
+      deviceId = getDefaultInstance().getDeviceId();
       onChanged();
       return this;
     }
@@ -814,23 +814,23 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      deviceId_ = value;
+      deviceId = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object deviceType_ = "";
+    private java.lang.Object deviceType = "";
     /**
      * <code>string device_type = 4;</code>
      * @return The deviceType.
      */
     public java.lang.String getDeviceType() {
-      java.lang.Object ref = deviceType_;
+      java.lang.Object ref = deviceType;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        deviceType_ = s;
+        deviceType = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -842,12 +842,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getDeviceTypeBytes() {
-      java.lang.Object ref = deviceType_;
+      java.lang.Object ref = deviceType;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        deviceType_ = b;
+        deviceType = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -864,7 +864,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      deviceType_ = value;
+      deviceType = value;
       onChanged();
       return this;
     }
@@ -874,7 +874,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearDeviceType() {
       
-      deviceType_ = getDefaultInstance().getDeviceType();
+      deviceType = getDefaultInstance().getDeviceType();
       onChanged();
       return this;
     }
@@ -890,23 +890,23 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      deviceType_ = value;
+      deviceType = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object token_ = "";
+    private java.lang.Object token = "";
     /**
      * <code>string token = 5;</code>
      * @return The token.
      */
     public java.lang.String getToken() {
-      java.lang.Object ref = token_;
+      java.lang.Object ref = token;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        token_ = s;
+        token = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -918,12 +918,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getTokenBytes() {
-      java.lang.Object ref = token_;
+      java.lang.Object ref = token;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        token_ = b;
+        token = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -940,7 +940,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      token_ = value;
+      token = value;
       onChanged();
       return this;
     }
@@ -950,7 +950,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearToken() {
       
-      token_ = getDefaultInstance().getToken();
+      token = getDefaultInstance().getToken();
       onChanged();
       return this;
     }
@@ -966,23 +966,23 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      token_ = value;
+      token = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object expiryTime_ = "";
+    private java.lang.Object expiryTime = "";
     /**
      * <code>string expiry_time = 6;</code>
      * @return The expiryTime.
      */
     public java.lang.String getExpiryTime() {
-      java.lang.Object ref = expiryTime_;
+      java.lang.Object ref = expiryTime;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        expiryTime_ = s;
+        expiryTime = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -994,12 +994,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getExpiryTimeBytes() {
-      java.lang.Object ref = expiryTime_;
+      java.lang.Object ref = expiryTime;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        expiryTime_ = b;
+        expiryTime = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1016,7 +1016,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      expiryTime_ = value;
+      expiryTime = value;
       onChanged();
       return this;
     }
@@ -1026,7 +1026,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearExpiryTime() {
       
-      expiryTime_ = getDefaultInstance().getExpiryTime();
+      expiryTime = getDefaultInstance().getExpiryTime();
       onChanged();
       return this;
     }
@@ -1042,7 +1042,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      expiryTime_ = value;
+      expiryTime = value;
       onChanged();
       return this;
     }

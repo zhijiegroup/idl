@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private DailyOperationMetrics() {
-    metricsDate_ = "";
+    metricsDate = "";
   }
 
   @java.lang.Override
@@ -51,23 +51,23 @@ private static final long serialVersionUID = 0L;
             break;
           case 9: {
 
-            dailyOrderAmount_ = input.readDouble();
+            dailyOrderAmount = input.readDouble();
             break;
           }
           case 16: {
 
-            dailyOrderCount_ = input.readUInt32();
+            dailyOrderCount = input.readUInt32();
             break;
           }
           case 24: {
 
-            dailyDistinctUserCount_ = input.readUInt32();
+            dailyDistinctUserCount = input.readUInt32();
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            metricsDate_ = s;
+            metricsDate = s;
             break;
           }
           default: {
@@ -103,54 +103,54 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DAILY_ORDER_AMOUNT_FIELD_NUMBER = 1;
-  private double dailyOrderAmount_;
+  private double dailyOrderAmount;
   /**
    * <code>double daily_order_amount = 1;</code>
    * @return The dailyOrderAmount.
    */
   @java.lang.Override
   public double getDailyOrderAmount() {
-    return dailyOrderAmount_;
+    return dailyOrderAmount;
   }
 
   public static final int DAILY_ORDER_COUNT_FIELD_NUMBER = 2;
-  private int dailyOrderCount_;
+  private int dailyOrderCount;
   /**
    * <code>uint32 daily_order_count = 2;</code>
    * @return The dailyOrderCount.
    */
   @java.lang.Override
   public int getDailyOrderCount() {
-    return dailyOrderCount_;
+    return dailyOrderCount;
   }
 
   public static final int DAILY_DISTINCT_USER_COUNT_FIELD_NUMBER = 3;
-  private int dailyDistinctUserCount_;
+  private int dailyDistinctUserCount;
   /**
    * <code>uint32 daily_distinct_user_count = 3;</code>
    * @return The dailyDistinctUserCount.
    */
   @java.lang.Override
   public int getDailyDistinctUserCount() {
-    return dailyDistinctUserCount_;
+    return dailyDistinctUserCount;
   }
 
   public static final int METRICS_DATE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object metricsDate_;
+  private volatile java.lang.Object metricsDate;
   /**
    * <code>string metrics_date = 4;</code>
    * @return The metricsDate.
    */
   @java.lang.Override
   public java.lang.String getMetricsDate() {
-    java.lang.Object ref = metricsDate_;
+    java.lang.Object ref = metricsDate;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      metricsDate_ = s;
+      metricsDate = s;
       return s;
     }
   }
@@ -161,12 +161,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getMetricsDateBytes() {
-    java.lang.Object ref = metricsDate_;
+    java.lang.Object ref = metricsDate;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      metricsDate_ = b;
+      metricsDate = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -188,16 +188,16 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (dailyOrderAmount_ != 0D) {
-      output.writeDouble(1, dailyOrderAmount_);
+      output.writeDouble(1, dailyOrderAmount);
     }
     if (dailyOrderCount_ != 0) {
-      output.writeUInt32(2, dailyOrderCount_);
+      output.writeUInt32(2, dailyOrderCount);
     }
     if (dailyDistinctUserCount_ != 0) {
-      output.writeUInt32(3, dailyDistinctUserCount_);
+      output.writeUInt32(3, dailyDistinctUserCount);
     }
     if (!getMetricsDateBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, metricsDate_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, metricsDate);
     }
     unknownFields.writeTo(output);
   }
@@ -210,18 +210,18 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (dailyOrderAmount_ != 0D) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(1, dailyOrderAmount_);
+        .computeDoubleSize(1, dailyOrderAmount);
     }
     if (dailyOrderCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(2, dailyOrderCount_);
+        .computeUInt32Size(2, dailyOrderCount);
     }
     if (dailyDistinctUserCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(3, dailyDistinctUserCount_);
+        .computeUInt32Size(3, dailyDistinctUserCount);
     }
     if (!getMetricsDateBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, metricsDate_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, metricsDate);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -400,13 +400,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      dailyOrderAmount_ = 0D;
+      dailyOrderAmount = 0D;
 
-      dailyOrderCount_ = 0;
+      dailyOrderCount = 0;
 
-      dailyDistinctUserCount_ = 0;
+      dailyDistinctUserCount = 0;
 
-      metricsDate_ = "";
+      metricsDate = "";
 
       return this;
     }
@@ -434,10 +434,10 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.shop.DailyOperationMetrics buildPartial() {
       com.zhijiejiaoyu.glory_api.shop.DailyOperationMetrics result = new com.zhijiejiaoyu.glory_api.shop.DailyOperationMetrics(this);
-      result.dailyOrderAmount_ = dailyOrderAmount_;
-      result.dailyOrderCount_ = dailyOrderCount_;
-      result.dailyDistinctUserCount_ = dailyDistinctUserCount_;
-      result.metricsDate_ = metricsDate_;
+      result.dailyOrderAmount = dailyOrderAmount;
+      result.dailyOrderCount = dailyOrderCount;
+      result.dailyDistinctUserCount = dailyDistinctUserCount;
+      result.metricsDate = metricsDate;
       onBuilt();
       return result;
     }
@@ -496,7 +496,7 @@ private static final long serialVersionUID = 0L;
         setDailyDistinctUserCount(other.getDailyDistinctUserCount());
       }
       if (!other.getMetricsDate().isEmpty()) {
-        metricsDate_ = other.metricsDate_;
+        metricsDate = other.metricsDate;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -535,7 +535,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public double getDailyOrderAmount() {
-      return dailyOrderAmount_;
+      return dailyOrderAmount;
     }
     /**
      * <code>double daily_order_amount = 1;</code>
@@ -544,7 +544,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDailyOrderAmount(double value) {
       
-      dailyOrderAmount_ = value;
+      dailyOrderAmount = value;
       onChanged();
       return this;
     }
@@ -554,7 +554,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearDailyOrderAmount() {
       
-      dailyOrderAmount_ = 0D;
+      dailyOrderAmount = 0D;
       onChanged();
       return this;
     }
@@ -566,7 +566,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public int getDailyOrderCount() {
-      return dailyOrderCount_;
+      return dailyOrderCount;
     }
     /**
      * <code>uint32 daily_order_count = 2;</code>
@@ -575,7 +575,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDailyOrderCount(int value) {
       
-      dailyOrderCount_ = value;
+      dailyOrderCount = value;
       onChanged();
       return this;
     }
@@ -585,7 +585,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearDailyOrderCount() {
       
-      dailyOrderCount_ = 0;
+      dailyOrderCount = 0;
       onChanged();
       return this;
     }
@@ -597,7 +597,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public int getDailyDistinctUserCount() {
-      return dailyDistinctUserCount_;
+      return dailyDistinctUserCount;
     }
     /**
      * <code>uint32 daily_distinct_user_count = 3;</code>
@@ -606,7 +606,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDailyDistinctUserCount(int value) {
       
-      dailyDistinctUserCount_ = value;
+      dailyDistinctUserCount = value;
       onChanged();
       return this;
     }
@@ -616,23 +616,23 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearDailyDistinctUserCount() {
       
-      dailyDistinctUserCount_ = 0;
+      dailyDistinctUserCount = 0;
       onChanged();
       return this;
     }
 
-    private java.lang.Object metricsDate_ = "";
+    private java.lang.Object metricsDate = "";
     /**
      * <code>string metrics_date = 4;</code>
      * @return The metricsDate.
      */
     public java.lang.String getMetricsDate() {
-      java.lang.Object ref = metricsDate_;
+      java.lang.Object ref = metricsDate;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        metricsDate_ = s;
+        metricsDate = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -644,12 +644,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getMetricsDateBytes() {
-      java.lang.Object ref = metricsDate_;
+      java.lang.Object ref = metricsDate;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        metricsDate_ = b;
+        metricsDate = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -666,7 +666,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      metricsDate_ = value;
+      metricsDate = value;
       onChanged();
       return this;
     }
@@ -676,7 +676,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearMetricsDate() {
       
-      metricsDate_ = getDefaultInstance().getMetricsDate();
+      metricsDate = getDefaultInstance().getMetricsDate();
       onChanged();
       return this;
     }
@@ -692,7 +692,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      metricsDate_ = value;
+      metricsDate = value;
       onChanged();
       return this;
     }

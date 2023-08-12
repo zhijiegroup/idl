@@ -53,10 +53,10 @@ private static final long serialVersionUID = 0L;
             if (baseRequest_ != null) {
               subBuilder = baseRequest_.toBuilder();
             }
-            baseRequest_ = input.readMessage(com.zhijiejiaoyu.base.BaseRequest.parser(), extensionRegistry);
+            baseRequest = input.readMessage(com.zhijiejiaoyu.base.BaseRequest.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(baseRequest_);
-              baseRequest_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(baseRequest);
+              baseRequest = subBuilder.buildPartial();
             }
 
             break;
@@ -66,10 +66,10 @@ private static final long serialVersionUID = 0L;
             if (address_ != null) {
               subBuilder = address_.toBuilder();
             }
-            address_ = input.readMessage(com.zhijiejiaoyu.glory_api.user.Address.parser(), extensionRegistry);
+            address = input.readMessage(com.zhijiejiaoyu.glory_api.user.Address.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(address_);
-              address_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(address);
+              address = subBuilder.buildPartial();
             }
 
             break;
@@ -107,7 +107,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int BASE_REQUEST_FIELD_NUMBER = 1;
-  private com.zhijiejiaoyu.base.BaseRequest baseRequest_;
+  private com.zhijiejiaoyu.base.BaseRequest baseRequest;
   /**
    * <code>.base.BaseRequest base_request = 1;</code>
    * @return Whether the baseRequest field is set.
@@ -122,7 +122,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.zhijiejiaoyu.base.BaseRequest getBaseRequest() {
-    return baseRequest_ == null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest_;
+    return baseRequest == null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
   }
   /**
    * <code>.base.BaseRequest base_request = 1;</code>
@@ -133,7 +133,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ADDRESS_FIELD_NUMBER = 2;
-  private com.zhijiejiaoyu.glory_api.user.Address address_;
+  private com.zhijiejiaoyu.glory_api.user.Address address;
   /**
    * <code>.glory_api.Address address = 2;</code>
    * @return Whether the address field is set.
@@ -148,7 +148,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.user.Address getAddress() {
-    return address_ == null ? com.zhijiejiaoyu.glory_api.user.Address.getDefaultInstance() : address_;
+    return address == null ? com.zhijiejiaoyu.glory_api.user.Address.getDefaultInstance() : address;
   }
   /**
    * <code>.glory_api.Address address = 2;</code>
@@ -372,17 +372,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (baseRequestBuilder_ == null) {
-        baseRequest_ = null;
+      if (baseRequestBuilder == null) {
+        baseRequest = null;
       } else {
-        baseRequest_ = null;
-        baseRequestBuilder_ = null;
+        baseRequest = null;
+        baseRequestBuilder = null;
       }
-      if (addressBuilder_ == null) {
-        address_ = null;
+      if (addressBuilder == null) {
+        address = null;
       } else {
-        address_ = null;
-        addressBuilder_ = null;
+        address = null;
+        addressBuilder = null;
       }
       return this;
     }
@@ -410,15 +410,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.user.AddAddressRequest buildPartial() {
       com.zhijiejiaoyu.glory_api.user.AddAddressRequest result = new com.zhijiejiaoyu.glory_api.user.AddAddressRequest(this);
-      if (baseRequestBuilder_ == null) {
-        result.baseRequest_ = baseRequest_;
+      if (baseRequestBuilder == null) {
+        result.baseRequest = baseRequest;
       } else {
-        result.baseRequest_ = baseRequestBuilder_.build();
+        result.baseRequest = baseRequestBuilder_.build();
       }
-      if (addressBuilder_ == null) {
-        result.address_ = address_;
+      if (addressBuilder == null) {
+        result.address = address;
       } else {
-        result.address_ = addressBuilder_.build();
+        result.address = addressBuilder_.build();
       }
       onBuilt();
       return result;
@@ -503,9 +503,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.zhijiejiaoyu.base.BaseRequest baseRequest_;
+    private com.zhijiejiaoyu.base.BaseRequest baseRequest;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder> baseRequestBuilder_;
+        com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder> baseRequestBuilder;
     /**
      * <code>.base.BaseRequest base_request = 1;</code>
      * @return Whether the baseRequest field is set.
@@ -518,8 +518,8 @@ private static final long serialVersionUID = 0L;
      * @return The baseRequest.
      */
     public com.zhijiejiaoyu.base.BaseRequest getBaseRequest() {
-      if (baseRequestBuilder_ == null) {
-        return baseRequest_ == null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest_;
+      if (baseRequestBuilder == null) {
+        return baseRequest == null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
       } else {
         return baseRequestBuilder_.getMessage();
       }
@@ -528,11 +528,11 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseRequest base_request = 1;</code>
      */
     public Builder setBaseRequest(com.zhijiejiaoyu.base.BaseRequest value) {
-      if (baseRequestBuilder_ == null) {
+      if (baseRequestBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        baseRequest_ = value;
+        baseRequest = value;
         onChanged();
       } else {
         baseRequestBuilder_.setMessage(value);
@@ -545,8 +545,8 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setBaseRequest(
         com.zhijiejiaoyu.base.BaseRequest.Builder builderForValue) {
-      if (baseRequestBuilder_ == null) {
-        baseRequest_ = builderForValue.build();
+      if (baseRequestBuilder == null) {
+        baseRequest = builderForValue.build();
         onChanged();
       } else {
         baseRequestBuilder_.setMessage(builderForValue.build());
@@ -558,12 +558,12 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseRequest base_request = 1;</code>
      */
     public Builder mergeBaseRequest(com.zhijiejiaoyu.base.BaseRequest value) {
-      if (baseRequestBuilder_ == null) {
+      if (baseRequestBuilder == null) {
         if (baseRequest_ != null) {
-          baseRequest_ =
-            com.zhijiejiaoyu.base.BaseRequest.newBuilder(baseRequest_).mergeFrom(value).buildPartial();
+          baseRequest =
+            com.zhijiejiaoyu.base.BaseRequest.newBuilder(baseRequest).mergeFrom(value).buildPartial();
         } else {
-          baseRequest_ = value;
+          baseRequest = value;
         }
         onChanged();
       } else {
@@ -576,12 +576,12 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseRequest base_request = 1;</code>
      */
     public Builder clearBaseRequest() {
-      if (baseRequestBuilder_ == null) {
-        baseRequest_ = null;
+      if (baseRequestBuilder == null) {
+        baseRequest = null;
         onChanged();
       } else {
-        baseRequest_ = null;
-        baseRequestBuilder_ = null;
+        baseRequest = null;
+        baseRequestBuilder = null;
       }
 
       return this;
@@ -601,8 +601,8 @@ private static final long serialVersionUID = 0L;
       if (baseRequestBuilder_ != null) {
         return baseRequestBuilder_.getMessageOrBuilder();
       } else {
-        return baseRequest_ == null ?
-            com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest_;
+        return baseRequest == null ?
+            com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
       }
     }
     /**
@@ -611,20 +611,20 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder> 
         getBaseRequestFieldBuilder() {
-      if (baseRequestBuilder_ == null) {
-        baseRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+      if (baseRequestBuilder == null) {
+        baseRequestBuilder = new com.google.protobuf.SingleFieldBuilderV3<
             com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder>(
                 getBaseRequest(),
                 getParentForChildren(),
                 isClean());
-        baseRequest_ = null;
+        baseRequest = null;
       }
-      return baseRequestBuilder_;
+      return baseRequestBuilder;
     }
 
-    private com.zhijiejiaoyu.glory_api.user.Address address_;
+    private com.zhijiejiaoyu.glory_api.user.Address address;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.user.Address, com.zhijiejiaoyu.glory_api.user.Address.Builder, com.zhijiejiaoyu.glory_api.user.AddressOrBuilder> addressBuilder_;
+        com.zhijiejiaoyu.glory_api.user.Address, com.zhijiejiaoyu.glory_api.user.Address.Builder, com.zhijiejiaoyu.glory_api.user.AddressOrBuilder> addressBuilder;
     /**
      * <code>.glory_api.Address address = 2;</code>
      * @return Whether the address field is set.
@@ -637,8 +637,8 @@ private static final long serialVersionUID = 0L;
      * @return The address.
      */
     public com.zhijiejiaoyu.glory_api.user.Address getAddress() {
-      if (addressBuilder_ == null) {
-        return address_ == null ? com.zhijiejiaoyu.glory_api.user.Address.getDefaultInstance() : address_;
+      if (addressBuilder == null) {
+        return address == null ? com.zhijiejiaoyu.glory_api.user.Address.getDefaultInstance() : address;
       } else {
         return addressBuilder_.getMessage();
       }
@@ -647,11 +647,11 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.Address address = 2;</code>
      */
     public Builder setAddress(com.zhijiejiaoyu.glory_api.user.Address value) {
-      if (addressBuilder_ == null) {
+      if (addressBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        address_ = value;
+        address = value;
         onChanged();
       } else {
         addressBuilder_.setMessage(value);
@@ -664,8 +664,8 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setAddress(
         com.zhijiejiaoyu.glory_api.user.Address.Builder builderForValue) {
-      if (addressBuilder_ == null) {
-        address_ = builderForValue.build();
+      if (addressBuilder == null) {
+        address = builderForValue.build();
         onChanged();
       } else {
         addressBuilder_.setMessage(builderForValue.build());
@@ -677,12 +677,12 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.Address address = 2;</code>
      */
     public Builder mergeAddress(com.zhijiejiaoyu.glory_api.user.Address value) {
-      if (addressBuilder_ == null) {
+      if (addressBuilder == null) {
         if (address_ != null) {
-          address_ =
-            com.zhijiejiaoyu.glory_api.user.Address.newBuilder(address_).mergeFrom(value).buildPartial();
+          address =
+            com.zhijiejiaoyu.glory_api.user.Address.newBuilder(address).mergeFrom(value).buildPartial();
         } else {
-          address_ = value;
+          address = value;
         }
         onChanged();
       } else {
@@ -695,12 +695,12 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.Address address = 2;</code>
      */
     public Builder clearAddress() {
-      if (addressBuilder_ == null) {
-        address_ = null;
+      if (addressBuilder == null) {
+        address = null;
         onChanged();
       } else {
-        address_ = null;
-        addressBuilder_ = null;
+        address = null;
+        addressBuilder = null;
       }
 
       return this;
@@ -720,8 +720,8 @@ private static final long serialVersionUID = 0L;
       if (addressBuilder_ != null) {
         return addressBuilder_.getMessageOrBuilder();
       } else {
-        return address_ == null ?
-            com.zhijiejiaoyu.glory_api.user.Address.getDefaultInstance() : address_;
+        return address == null ?
+            com.zhijiejiaoyu.glory_api.user.Address.getDefaultInstance() : address;
       }
     }
     /**
@@ -730,15 +730,15 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.user.Address, com.zhijiejiaoyu.glory_api.user.Address.Builder, com.zhijiejiaoyu.glory_api.user.AddressOrBuilder> 
         getAddressFieldBuilder() {
-      if (addressBuilder_ == null) {
-        addressBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+      if (addressBuilder == null) {
+        addressBuilder = new com.google.protobuf.SingleFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.user.Address, com.zhijiejiaoyu.glory_api.user.Address.Builder, com.zhijiejiaoyu.glory_api.user.AddressOrBuilder>(
                 getAddress(),
                 getParentForChildren(),
                 isClean());
-        address_ = null;
+        address = null;
       }
-      return addressBuilder_;
+      return addressBuilder;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

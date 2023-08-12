@@ -101,24 +101,44 @@ public interface UserOrBuilder extends
   com.zhijiejiaoyu.glory_api.seller.SellerOrBuilder getSellerOrBuilder();
 
   /**
+   * <pre>
+   *判断用户的shop访问权限
+   * </pre>
+   *
    * <code>repeated .glory_api.ShopAccess shop_access = 9;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.shop.ShopAccess> 
       getShopAccessList();
   /**
+   * <pre>
+   *判断用户的shop访问权限
+   * </pre>
+   *
    * <code>repeated .glory_api.ShopAccess shop_access = 9;</code>
    */
   com.zhijiejiaoyu.glory_api.shop.ShopAccess getShopAccess(int index);
   /**
+   * <pre>
+   *判断用户的shop访问权限
+   * </pre>
+   *
    * <code>repeated .glory_api.ShopAccess shop_access = 9;</code>
    */
   int getShopAccessCount();
   /**
+   * <pre>
+   *判断用户的shop访问权限
+   * </pre>
+   *
    * <code>repeated .glory_api.ShopAccess shop_access = 9;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.ShopAccessOrBuilder> 
       getShopAccessOrBuilderList();
   /**
+   * <pre>
+   *判断用户的shop访问权限
+   * </pre>
+   *
    * <code>repeated .glory_api.ShopAccess shop_access = 9;</code>
    */
   com.zhijiejiaoyu.glory_api.shop.ShopAccessOrBuilder getShopAccessOrBuilder(

@@ -16,10 +16,10 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private StoreInfo() {
-    id_ = "";
-    name_ = "";
-    areaCode_ = "";
-    address_ = "";
+    id = "";
+    name = "";
+    areaCode = "";
+    address = "";
   }
 
   @java.lang.Override
@@ -55,25 +55,25 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            id_ = s;
+            id = s;
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
+            name = s;
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            areaCode_ = s;
+            areaCode = s;
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            address_ = s;
+            address = s;
             break;
           }
           default: {
@@ -109,7 +109,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object id_;
+  private volatile java.lang.Object id;
   /**
    * <pre>
    *门店编号
@@ -120,14 +120,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public java.lang.String getId() {
-    java.lang.Object ref = id_;
+    java.lang.Object ref = id;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      id_ = s;
+      id = s;
       return s;
     }
   }
@@ -142,12 +142,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getIdBytes() {
-    java.lang.Object ref = id_;
+    java.lang.Object ref = id;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      id_ = b;
+      id = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -155,7 +155,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object name_;
+  private volatile java.lang.Object name;
   /**
    * <pre>
    *门店名称
@@ -166,14 +166,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public java.lang.String getName() {
-    java.lang.Object ref = name_;
+    java.lang.Object ref = name;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      name_ = s;
+      name = s;
       return s;
     }
   }
@@ -188,12 +188,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getNameBytes() {
-    java.lang.Object ref = name_;
+    java.lang.Object ref = name;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      name_ = b;
+      name = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -201,7 +201,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int AREA_CODE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object areaCode_;
+  private volatile java.lang.Object areaCode;
   /**
    * <pre>
    *地区编码
@@ -212,14 +212,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public java.lang.String getAreaCode() {
-    java.lang.Object ref = areaCode_;
+    java.lang.Object ref = areaCode;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      areaCode_ = s;
+      areaCode = s;
       return s;
     }
   }
@@ -234,12 +234,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getAreaCodeBytes() {
-    java.lang.Object ref = areaCode_;
+    java.lang.Object ref = areaCode;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      areaCode_ = b;
+      areaCode = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -247,7 +247,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ADDRESS_FIELD_NUMBER = 4;
-  private volatile java.lang.Object address_;
+  private volatile java.lang.Object address;
   /**
    * <pre>
    *详细地址
@@ -258,14 +258,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public java.lang.String getAddress() {
-    java.lang.Object ref = address_;
+    java.lang.Object ref = address;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      address_ = s;
+      address = s;
       return s;
     }
   }
@@ -280,12 +280,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getAddressBytes() {
-    java.lang.Object ref = address_;
+    java.lang.Object ref = address;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      address_ = b;
+      address = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -307,16 +307,16 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id);
     }
     if (!getNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name);
     }
     if (!getAreaCodeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, areaCode_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, areaCode);
     }
     if (!getAddressBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, address_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, address);
     }
     unknownFields.writeTo(output);
   }
@@ -328,16 +328,16 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (!getIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id);
     }
     if (!getNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name);
     }
     if (!getAreaCodeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, areaCode_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, areaCode);
     }
     if (!getAddressBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, address_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, address);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -514,13 +514,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      id_ = "";
+      id = "";
 
-      name_ = "";
+      name = "";
 
-      areaCode_ = "";
+      areaCode = "";
 
-      address_ = "";
+      address = "";
 
       return this;
     }
@@ -548,10 +548,10 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.wxpay.StoreInfo buildPartial() {
       com.zhijiejiaoyu.glory_api.wxpay.StoreInfo result = new com.zhijiejiaoyu.glory_api.wxpay.StoreInfo(this);
-      result.id_ = id_;
-      result.name_ = name_;
-      result.areaCode_ = areaCode_;
-      result.address_ = address_;
+      result.id = id;
+      result.name = name;
+      result.areaCode = areaCode;
+      result.address = address;
       onBuilt();
       return result;
     }
@@ -601,19 +601,19 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.zhijiejiaoyu.glory_api.wxpay.StoreInfo other) {
       if (other == com.zhijiejiaoyu.glory_api.wxpay.StoreInfo.getDefaultInstance()) return this;
       if (!other.getId().isEmpty()) {
-        id_ = other.id_;
+        id = other.id;
         onChanged();
       }
       if (!other.getName().isEmpty()) {
-        name_ = other.name_;
+        name = other.name;
         onChanged();
       }
       if (!other.getAreaCode().isEmpty()) {
-        areaCode_ = other.areaCode_;
+        areaCode = other.areaCode;
         onChanged();
       }
       if (!other.getAddress().isEmpty()) {
-        address_ = other.address_;
+        address = other.address;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -645,7 +645,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object id_ = "";
+    private java.lang.Object id = "";
     /**
      * <pre>
      *门店编号
@@ -655,12 +655,12 @@ private static final long serialVersionUID = 0L;
      * @return The id.
      */
     public java.lang.String getId() {
-      java.lang.Object ref = id_;
+      java.lang.Object ref = id;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        id_ = s;
+        id = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -676,12 +676,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
-      java.lang.Object ref = id_;
+      java.lang.Object ref = id;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        id_ = b;
+        id = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -702,7 +702,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      id_ = value;
+      id = value;
       onChanged();
       return this;
     }
@@ -716,7 +716,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearId() {
       
-      id_ = getDefaultInstance().getId();
+      id = getDefaultInstance().getId();
       onChanged();
       return this;
     }
@@ -736,12 +736,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      id_ = value;
+      id = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object name_ = "";
+    private java.lang.Object name = "";
     /**
      * <pre>
      *门店名称
@@ -751,12 +751,12 @@ private static final long serialVersionUID = 0L;
      * @return The name.
      */
     public java.lang.String getName() {
-      java.lang.Object ref = name_;
+      java.lang.Object ref = name;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        name_ = s;
+        name = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -772,12 +772,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
-      java.lang.Object ref = name_;
+      java.lang.Object ref = name;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        name_ = b;
+        name = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -798,7 +798,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      name_ = value;
+      name = value;
       onChanged();
       return this;
     }
@@ -812,7 +812,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearName() {
       
-      name_ = getDefaultInstance().getName();
+      name = getDefaultInstance().getName();
       onChanged();
       return this;
     }
@@ -832,12 +832,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      name_ = value;
+      name = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object areaCode_ = "";
+    private java.lang.Object areaCode = "";
     /**
      * <pre>
      *地区编码
@@ -847,12 +847,12 @@ private static final long serialVersionUID = 0L;
      * @return The areaCode.
      */
     public java.lang.String getAreaCode() {
-      java.lang.Object ref = areaCode_;
+      java.lang.Object ref = areaCode;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        areaCode_ = s;
+        areaCode = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -868,12 +868,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getAreaCodeBytes() {
-      java.lang.Object ref = areaCode_;
+      java.lang.Object ref = areaCode;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        areaCode_ = b;
+        areaCode = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -894,7 +894,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      areaCode_ = value;
+      areaCode = value;
       onChanged();
       return this;
     }
@@ -908,7 +908,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearAreaCode() {
       
-      areaCode_ = getDefaultInstance().getAreaCode();
+      areaCode = getDefaultInstance().getAreaCode();
       onChanged();
       return this;
     }
@@ -928,12 +928,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      areaCode_ = value;
+      areaCode = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object address_ = "";
+    private java.lang.Object address = "";
     /**
      * <pre>
      *详细地址
@@ -943,12 +943,12 @@ private static final long serialVersionUID = 0L;
      * @return The address.
      */
     public java.lang.String getAddress() {
-      java.lang.Object ref = address_;
+      java.lang.Object ref = address;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        address_ = s;
+        address = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -964,12 +964,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getAddressBytes() {
-      java.lang.Object ref = address_;
+      java.lang.Object ref = address;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        address_ = b;
+        address = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -990,7 +990,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      address_ = value;
+      address = value;
       onChanged();
       return this;
     }
@@ -1004,7 +1004,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearAddress() {
       
-      address_ = getDefaultInstance().getAddress();
+      address = getDefaultInstance().getAddress();
       onChanged();
       return this;
     }
@@ -1024,7 +1024,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      address_ = value;
+      address = value;
       onChanged();
       return this;
     }

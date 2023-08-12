@@ -16,10 +16,10 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private VirtualCurrency() {
-    unit_ = "";
-    channel_ = "";
-    explain_ = "";
-    name_ = "";
+    unit = "";
+    channel = "";
+    explain = "";
+    name = "";
   }
 
   @java.lang.Override
@@ -54,41 +54,41 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            userId_ = input.readInt64();
+            userId = input.readInt64();
             break;
           }
           case 16: {
 
-            balance_ = input.readInt64();
+            balance = input.readInt64();
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            unit_ = s;
+            unit = s;
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            channel_ = s;
+            channel = s;
             break;
           }
           case 42: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            explain_ = s;
+            explain = s;
             break;
           }
           case 50: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
+            name = s;
             break;
           }
           case 56: {
 
-            rechargeAmount_ = input.readInt64();
+            rechargeAmount = input.readInt64();
             break;
           }
           default: {
@@ -124,18 +124,18 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int USER_ID_FIELD_NUMBER = 1;
-  private long userId_;
+  private long userId;
   /**
    * <code>int64 user_id = 1;</code>
    * @return The userId.
    */
   @java.lang.Override
   public long getUserId() {
-    return userId_;
+    return userId;
   }
 
   public static final int BALANCE_FIELD_NUMBER = 2;
-  private long balance_;
+  private long balance;
   /**
    * <pre>
    *余额
@@ -146,11 +146,11 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public long getBalance() {
-    return balance_;
+    return balance;
   }
 
   public static final int RECHARGE_AMOUNT_FIELD_NUMBER = 7;
-  private long rechargeAmount_;
+  private long rechargeAmount;
   /**
    * <pre>
    *充值金额
@@ -161,11 +161,11 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public long getRechargeAmount() {
-    return rechargeAmount_;
+    return rechargeAmount;
   }
 
   public static final int UNIT_FIELD_NUMBER = 3;
-  private volatile java.lang.Object unit_;
+  private volatile java.lang.Object unit;
   /**
    * <pre>
    *虚拟币单位
@@ -176,14 +176,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public java.lang.String getUnit() {
-    java.lang.Object ref = unit_;
+    java.lang.Object ref = unit;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      unit_ = s;
+      unit = s;
       return s;
     }
   }
@@ -198,12 +198,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getUnitBytes() {
-    java.lang.Object ref = unit_;
+    java.lang.Object ref = unit;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      unit_ = b;
+      unit = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -211,7 +211,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CHANNEL_FIELD_NUMBER = 4;
-  private volatile java.lang.Object channel_;
+  private volatile java.lang.Object channel;
   /**
    * <pre>
    *充值渠道
@@ -222,14 +222,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public java.lang.String getChannel() {
-    java.lang.Object ref = channel_;
+    java.lang.Object ref = channel;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      channel_ = s;
+      channel = s;
       return s;
     }
   }
@@ -244,12 +244,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getChannelBytes() {
-    java.lang.Object ref = channel_;
+    java.lang.Object ref = channel;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      channel_ = b;
+      channel = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -257,7 +257,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int EXPLAIN_FIELD_NUMBER = 5;
-  private volatile java.lang.Object explain_;
+  private volatile java.lang.Object explain;
   /**
    * <pre>
    *充值原因
@@ -268,14 +268,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public java.lang.String getExplain() {
-    java.lang.Object ref = explain_;
+    java.lang.Object ref = explain;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      explain_ = s;
+      explain = s;
       return s;
     }
   }
@@ -290,12 +290,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getExplainBytes() {
-    java.lang.Object ref = explain_;
+    java.lang.Object ref = explain;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      explain_ = b;
+      explain = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -303,7 +303,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int NAME_FIELD_NUMBER = 6;
-  private volatile java.lang.Object name_;
+  private volatile java.lang.Object name;
   /**
    * <pre>
    *虚拟币名称 默认： 成长币
@@ -314,14 +314,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public java.lang.String getName() {
-    java.lang.Object ref = name_;
+    java.lang.Object ref = name;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      name_ = s;
+      name = s;
       return s;
     }
   }
@@ -336,12 +336,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getNameBytes() {
-    java.lang.Object ref = name_;
+    java.lang.Object ref = name;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      name_ = b;
+      name = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -363,25 +363,25 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (userId_ != 0L) {
-      output.writeInt64(1, userId_);
+      output.writeInt64(1, userId);
     }
     if (balance_ != 0L) {
-      output.writeInt64(2, balance_);
+      output.writeInt64(2, balance);
     }
     if (!getUnitBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, unit_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, unit);
     }
     if (!getChannelBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, channel_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, channel);
     }
     if (!getExplainBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, explain_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, explain);
     }
     if (!getNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, name_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, name);
     }
     if (rechargeAmount_ != 0L) {
-      output.writeInt64(7, rechargeAmount_);
+      output.writeInt64(7, rechargeAmount);
     }
     unknownFields.writeTo(output);
   }
@@ -394,27 +394,27 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (userId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, userId_);
+        .computeInt64Size(1, userId);
     }
     if (balance_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, balance_);
+        .computeInt64Size(2, balance);
     }
     if (!getUnitBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, unit_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, unit);
     }
     if (!getChannelBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, channel_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, channel);
     }
     if (!getExplainBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, explain_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, explain);
     }
     if (!getNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, name_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, name);
     }
     if (rechargeAmount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(7, rechargeAmount_);
+        .computeInt64Size(7, rechargeAmount);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -606,19 +606,19 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      userId_ = 0L;
+      userId = 0L;
 
-      balance_ = 0L;
+      balance = 0L;
 
-      rechargeAmount_ = 0L;
+      rechargeAmount = 0L;
 
-      unit_ = "";
+      unit = "";
 
-      channel_ = "";
+      channel = "";
 
-      explain_ = "";
+      explain = "";
 
-      name_ = "";
+      name = "";
 
       return this;
     }
@@ -646,13 +646,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.currency.VirtualCurrency buildPartial() {
       com.zhijiejiaoyu.glory_api.currency.VirtualCurrency result = new com.zhijiejiaoyu.glory_api.currency.VirtualCurrency(this);
-      result.userId_ = userId_;
-      result.balance_ = balance_;
-      result.rechargeAmount_ = rechargeAmount_;
-      result.unit_ = unit_;
-      result.channel_ = channel_;
-      result.explain_ = explain_;
-      result.name_ = name_;
+      result.userId = userId;
+      result.balance = balance;
+      result.rechargeAmount = rechargeAmount;
+      result.unit = unit;
+      result.channel = channel;
+      result.explain = explain;
+      result.name = name;
       onBuilt();
       return result;
     }
@@ -711,19 +711,19 @@ private static final long serialVersionUID = 0L;
         setRechargeAmount(other.getRechargeAmount());
       }
       if (!other.getUnit().isEmpty()) {
-        unit_ = other.unit_;
+        unit = other.unit;
         onChanged();
       }
       if (!other.getChannel().isEmpty()) {
-        channel_ = other.channel_;
+        channel = other.channel;
         onChanged();
       }
       if (!other.getExplain().isEmpty()) {
-        explain_ = other.explain_;
+        explain = other.explain;
         onChanged();
       }
       if (!other.getName().isEmpty()) {
-        name_ = other.name_;
+        name = other.name;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -762,7 +762,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getUserId() {
-      return userId_;
+      return userId;
     }
     /**
      * <code>int64 user_id = 1;</code>
@@ -771,7 +771,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setUserId(long value) {
       
-      userId_ = value;
+      userId = value;
       onChanged();
       return this;
     }
@@ -781,7 +781,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearUserId() {
       
-      userId_ = 0L;
+      userId = 0L;
       onChanged();
       return this;
     }
@@ -797,7 +797,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getBalance() {
-      return balance_;
+      return balance;
     }
     /**
      * <pre>
@@ -810,7 +810,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setBalance(long value) {
       
-      balance_ = value;
+      balance = value;
       onChanged();
       return this;
     }
@@ -824,7 +824,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearBalance() {
       
-      balance_ = 0L;
+      balance = 0L;
       onChanged();
       return this;
     }
@@ -840,7 +840,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getRechargeAmount() {
-      return rechargeAmount_;
+      return rechargeAmount;
     }
     /**
      * <pre>
@@ -853,7 +853,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setRechargeAmount(long value) {
       
-      rechargeAmount_ = value;
+      rechargeAmount = value;
       onChanged();
       return this;
     }
@@ -867,12 +867,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearRechargeAmount() {
       
-      rechargeAmount_ = 0L;
+      rechargeAmount = 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object unit_ = "";
+    private java.lang.Object unit = "";
     /**
      * <pre>
      *虚拟币单位
@@ -882,12 +882,12 @@ private static final long serialVersionUID = 0L;
      * @return The unit.
      */
     public java.lang.String getUnit() {
-      java.lang.Object ref = unit_;
+      java.lang.Object ref = unit;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        unit_ = s;
+        unit = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -903,12 +903,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getUnitBytes() {
-      java.lang.Object ref = unit_;
+      java.lang.Object ref = unit;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        unit_ = b;
+        unit = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -929,7 +929,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      unit_ = value;
+      unit = value;
       onChanged();
       return this;
     }
@@ -943,7 +943,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearUnit() {
       
-      unit_ = getDefaultInstance().getUnit();
+      unit = getDefaultInstance().getUnit();
       onChanged();
       return this;
     }
@@ -963,12 +963,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      unit_ = value;
+      unit = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object channel_ = "";
+    private java.lang.Object channel = "";
     /**
      * <pre>
      *充值渠道
@@ -978,12 +978,12 @@ private static final long serialVersionUID = 0L;
      * @return The channel.
      */
     public java.lang.String getChannel() {
-      java.lang.Object ref = channel_;
+      java.lang.Object ref = channel;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        channel_ = s;
+        channel = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -999,12 +999,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getChannelBytes() {
-      java.lang.Object ref = channel_;
+      java.lang.Object ref = channel;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        channel_ = b;
+        channel = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1025,7 +1025,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      channel_ = value;
+      channel = value;
       onChanged();
       return this;
     }
@@ -1039,7 +1039,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearChannel() {
       
-      channel_ = getDefaultInstance().getChannel();
+      channel = getDefaultInstance().getChannel();
       onChanged();
       return this;
     }
@@ -1059,12 +1059,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      channel_ = value;
+      channel = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object explain_ = "";
+    private java.lang.Object explain = "";
     /**
      * <pre>
      *充值原因
@@ -1074,12 +1074,12 @@ private static final long serialVersionUID = 0L;
      * @return The explain.
      */
     public java.lang.String getExplain() {
-      java.lang.Object ref = explain_;
+      java.lang.Object ref = explain;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        explain_ = s;
+        explain = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1095,12 +1095,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getExplainBytes() {
-      java.lang.Object ref = explain_;
+      java.lang.Object ref = explain;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        explain_ = b;
+        explain = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1121,7 +1121,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      explain_ = value;
+      explain = value;
       onChanged();
       return this;
     }
@@ -1135,7 +1135,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearExplain() {
       
-      explain_ = getDefaultInstance().getExplain();
+      explain = getDefaultInstance().getExplain();
       onChanged();
       return this;
     }
@@ -1155,12 +1155,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      explain_ = value;
+      explain = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object name_ = "";
+    private java.lang.Object name = "";
     /**
      * <pre>
      *虚拟币名称 默认： 成长币
@@ -1170,12 +1170,12 @@ private static final long serialVersionUID = 0L;
      * @return The name.
      */
     public java.lang.String getName() {
-      java.lang.Object ref = name_;
+      java.lang.Object ref = name;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        name_ = s;
+        name = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1191,12 +1191,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
-      java.lang.Object ref = name_;
+      java.lang.Object ref = name;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        name_ = b;
+        name = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1217,7 +1217,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      name_ = value;
+      name = value;
       onChanged();
       return this;
     }
@@ -1231,7 +1231,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearName() {
       
-      name_ = getDefaultInstance().getName();
+      name = getDefaultInstance().getName();
       onChanged();
       return this;
     }
@@ -1251,7 +1251,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      name_ = value;
+      name = value;
       onChanged();
       return this;
     }

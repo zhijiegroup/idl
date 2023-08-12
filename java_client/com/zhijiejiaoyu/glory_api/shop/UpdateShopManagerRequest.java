@@ -16,8 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private UpdateShopManagerRequest() {
-    manager_ = "";
-    managerPhone_ = "";
+    manager = "";
+    managerPhone = "";
   }
 
   @java.lang.Override
@@ -55,29 +55,29 @@ private static final long serialVersionUID = 0L;
             if (baseRequest_ != null) {
               subBuilder = baseRequest_.toBuilder();
             }
-            baseRequest_ = input.readMessage(com.zhijiejiaoyu.base.BaseRequest.parser(), extensionRegistry);
+            baseRequest = input.readMessage(com.zhijiejiaoyu.base.BaseRequest.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(baseRequest_);
-              baseRequest_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(baseRequest);
+              baseRequest = subBuilder.buildPartial();
             }
 
             break;
           }
           case 16: {
 
-            shopId_ = input.readInt64();
+            shopId = input.readInt64();
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            manager_ = s;
+            manager = s;
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            managerPhone_ = s;
+            managerPhone = s;
             break;
           }
           default: {
@@ -113,7 +113,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int BASE_REQUEST_FIELD_NUMBER = 1;
-  private com.zhijiejiaoyu.base.BaseRequest baseRequest_;
+  private com.zhijiejiaoyu.base.BaseRequest baseRequest;
   /**
    * <code>.base.BaseRequest base_request = 1;</code>
    * @return Whether the baseRequest field is set.
@@ -128,7 +128,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.zhijiejiaoyu.base.BaseRequest getBaseRequest() {
-    return baseRequest_ == null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest_;
+    return baseRequest == null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
   }
   /**
    * <code>.base.BaseRequest base_request = 1;</code>
@@ -139,32 +139,32 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int SHOP_ID_FIELD_NUMBER = 2;
-  private long shopId_;
+  private long shopId;
   /**
    * <code>int64 shop_id = 2;</code>
    * @return The shopId.
    */
   @java.lang.Override
   public long getShopId() {
-    return shopId_;
+    return shopId;
   }
 
   public static final int MANAGER_FIELD_NUMBER = 3;
-  private volatile java.lang.Object manager_;
+  private volatile java.lang.Object manager;
   /**
    * <code>string manager = 3;</code>
    * @return The manager.
    */
   @java.lang.Override
   public java.lang.String getManager() {
-    java.lang.Object ref = manager_;
+    java.lang.Object ref = manager;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      manager_ = s;
+      manager = s;
       return s;
     }
   }
@@ -175,12 +175,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getManagerBytes() {
-    java.lang.Object ref = manager_;
+    java.lang.Object ref = manager;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      manager_ = b;
+      manager = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -188,21 +188,21 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int MANAGER_PHONE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object managerPhone_;
+  private volatile java.lang.Object managerPhone;
   /**
    * <code>string manager_phone = 4;</code>
    * @return The managerPhone.
    */
   @java.lang.Override
   public java.lang.String getManagerPhone() {
-    java.lang.Object ref = managerPhone_;
+    java.lang.Object ref = managerPhone;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      managerPhone_ = s;
+      managerPhone = s;
       return s;
     }
   }
@@ -213,12 +213,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getManagerPhoneBytes() {
-    java.lang.Object ref = managerPhone_;
+    java.lang.Object ref = managerPhone;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      managerPhone_ = b;
+      managerPhone = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -243,13 +243,13 @@ private static final long serialVersionUID = 0L;
       output.writeMessage(1, getBaseRequest());
     }
     if (shopId_ != 0L) {
-      output.writeInt64(2, shopId_);
+      output.writeInt64(2, shopId);
     }
     if (!getManagerBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, manager_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, manager);
     }
     if (!getManagerPhoneBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, managerPhone_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, managerPhone);
     }
     unknownFields.writeTo(output);
   }
@@ -266,13 +266,13 @@ private static final long serialVersionUID = 0L;
     }
     if (shopId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, shopId_);
+        .computeInt64Size(2, shopId);
     }
     if (!getManagerBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, manager_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, manager);
     }
     if (!getManagerPhoneBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, managerPhone_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, managerPhone);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -455,17 +455,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (baseRequestBuilder_ == null) {
-        baseRequest_ = null;
+      if (baseRequestBuilder == null) {
+        baseRequest = null;
       } else {
-        baseRequest_ = null;
-        baseRequestBuilder_ = null;
+        baseRequest = null;
+        baseRequestBuilder = null;
       }
-      shopId_ = 0L;
+      shopId = 0L;
 
-      manager_ = "";
+      manager = "";
 
-      managerPhone_ = "";
+      managerPhone = "";
 
       return this;
     }
@@ -493,14 +493,14 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.shop.UpdateShopManagerRequest buildPartial() {
       com.zhijiejiaoyu.glory_api.shop.UpdateShopManagerRequest result = new com.zhijiejiaoyu.glory_api.shop.UpdateShopManagerRequest(this);
-      if (baseRequestBuilder_ == null) {
-        result.baseRequest_ = baseRequest_;
+      if (baseRequestBuilder == null) {
+        result.baseRequest = baseRequest;
       } else {
-        result.baseRequest_ = baseRequestBuilder_.build();
+        result.baseRequest = baseRequestBuilder_.build();
       }
-      result.shopId_ = shopId_;
-      result.manager_ = manager_;
-      result.managerPhone_ = managerPhone_;
+      result.shopId = shopId;
+      result.manager = manager;
+      result.managerPhone = managerPhone;
       onBuilt();
       return result;
     }
@@ -556,11 +556,11 @@ private static final long serialVersionUID = 0L;
         setShopId(other.getShopId());
       }
       if (!other.getManager().isEmpty()) {
-        manager_ = other.manager_;
+        manager = other.manager;
         onChanged();
       }
       if (!other.getManagerPhone().isEmpty()) {
-        managerPhone_ = other.managerPhone_;
+        managerPhone = other.managerPhone;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -592,9 +592,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.zhijiejiaoyu.base.BaseRequest baseRequest_;
+    private com.zhijiejiaoyu.base.BaseRequest baseRequest;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder> baseRequestBuilder_;
+        com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder> baseRequestBuilder;
     /**
      * <code>.base.BaseRequest base_request = 1;</code>
      * @return Whether the baseRequest field is set.
@@ -607,8 +607,8 @@ private static final long serialVersionUID = 0L;
      * @return The baseRequest.
      */
     public com.zhijiejiaoyu.base.BaseRequest getBaseRequest() {
-      if (baseRequestBuilder_ == null) {
-        return baseRequest_ == null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest_;
+      if (baseRequestBuilder == null) {
+        return baseRequest == null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
       } else {
         return baseRequestBuilder_.getMessage();
       }
@@ -617,11 +617,11 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseRequest base_request = 1;</code>
      */
     public Builder setBaseRequest(com.zhijiejiaoyu.base.BaseRequest value) {
-      if (baseRequestBuilder_ == null) {
+      if (baseRequestBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        baseRequest_ = value;
+        baseRequest = value;
         onChanged();
       } else {
         baseRequestBuilder_.setMessage(value);
@@ -634,8 +634,8 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setBaseRequest(
         com.zhijiejiaoyu.base.BaseRequest.Builder builderForValue) {
-      if (baseRequestBuilder_ == null) {
-        baseRequest_ = builderForValue.build();
+      if (baseRequestBuilder == null) {
+        baseRequest = builderForValue.build();
         onChanged();
       } else {
         baseRequestBuilder_.setMessage(builderForValue.build());
@@ -647,12 +647,12 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseRequest base_request = 1;</code>
      */
     public Builder mergeBaseRequest(com.zhijiejiaoyu.base.BaseRequest value) {
-      if (baseRequestBuilder_ == null) {
+      if (baseRequestBuilder == null) {
         if (baseRequest_ != null) {
-          baseRequest_ =
-            com.zhijiejiaoyu.base.BaseRequest.newBuilder(baseRequest_).mergeFrom(value).buildPartial();
+          baseRequest =
+            com.zhijiejiaoyu.base.BaseRequest.newBuilder(baseRequest).mergeFrom(value).buildPartial();
         } else {
-          baseRequest_ = value;
+          baseRequest = value;
         }
         onChanged();
       } else {
@@ -665,12 +665,12 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseRequest base_request = 1;</code>
      */
     public Builder clearBaseRequest() {
-      if (baseRequestBuilder_ == null) {
-        baseRequest_ = null;
+      if (baseRequestBuilder == null) {
+        baseRequest = null;
         onChanged();
       } else {
-        baseRequest_ = null;
-        baseRequestBuilder_ = null;
+        baseRequest = null;
+        baseRequestBuilder = null;
       }
 
       return this;
@@ -690,8 +690,8 @@ private static final long serialVersionUID = 0L;
       if (baseRequestBuilder_ != null) {
         return baseRequestBuilder_.getMessageOrBuilder();
       } else {
-        return baseRequest_ == null ?
-            com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest_;
+        return baseRequest == null ?
+            com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
       }
     }
     /**
@@ -700,15 +700,15 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder> 
         getBaseRequestFieldBuilder() {
-      if (baseRequestBuilder_ == null) {
-        baseRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+      if (baseRequestBuilder == null) {
+        baseRequestBuilder = new com.google.protobuf.SingleFieldBuilderV3<
             com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder>(
                 getBaseRequest(),
                 getParentForChildren(),
                 isClean());
-        baseRequest_ = null;
+        baseRequest = null;
       }
-      return baseRequestBuilder_;
+      return baseRequestBuilder;
     }
 
     private long shopId_ ;
@@ -718,7 +718,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getShopId() {
-      return shopId_;
+      return shopId;
     }
     /**
      * <code>int64 shop_id = 2;</code>
@@ -727,7 +727,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setShopId(long value) {
       
-      shopId_ = value;
+      shopId = value;
       onChanged();
       return this;
     }
@@ -737,23 +737,23 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearShopId() {
       
-      shopId_ = 0L;
+      shopId = 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object manager_ = "";
+    private java.lang.Object manager = "";
     /**
      * <code>string manager = 3;</code>
      * @return The manager.
      */
     public java.lang.String getManager() {
-      java.lang.Object ref = manager_;
+      java.lang.Object ref = manager;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        manager_ = s;
+        manager = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -765,12 +765,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getManagerBytes() {
-      java.lang.Object ref = manager_;
+      java.lang.Object ref = manager;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        manager_ = b;
+        manager = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -787,7 +787,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      manager_ = value;
+      manager = value;
       onChanged();
       return this;
     }
@@ -797,7 +797,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearManager() {
       
-      manager_ = getDefaultInstance().getManager();
+      manager = getDefaultInstance().getManager();
       onChanged();
       return this;
     }
@@ -813,23 +813,23 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      manager_ = value;
+      manager = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object managerPhone_ = "";
+    private java.lang.Object managerPhone = "";
     /**
      * <code>string manager_phone = 4;</code>
      * @return The managerPhone.
      */
     public java.lang.String getManagerPhone() {
-      java.lang.Object ref = managerPhone_;
+      java.lang.Object ref = managerPhone;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        managerPhone_ = s;
+        managerPhone = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -841,12 +841,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getManagerPhoneBytes() {
-      java.lang.Object ref = managerPhone_;
+      java.lang.Object ref = managerPhone;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        managerPhone_ = b;
+        managerPhone = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -863,7 +863,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      managerPhone_ = value;
+      managerPhone = value;
       onChanged();
       return this;
     }
@@ -873,7 +873,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearManagerPhone() {
       
-      managerPhone_ = getDefaultInstance().getManagerPhone();
+      managerPhone = getDefaultInstance().getManagerPhone();
       onChanged();
       return this;
     }
@@ -889,7 +889,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      managerPhone_ = value;
+      managerPhone = value;
       onChanged();
       return this;
     }

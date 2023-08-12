@@ -50,12 +50,12 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            shopId_ = input.readInt64();
+            shopId = input.readInt64();
             break;
           }
           case 16: {
 
-            days_ = input.readInt32();
+            days = input.readInt32();
             break;
           }
           default: {
@@ -91,25 +91,25 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int SHOP_ID_FIELD_NUMBER = 1;
-  private long shopId_;
+  private long shopId;
   /**
    * <code>int64 shop_id = 1;</code>
    * @return The shopId.
    */
   @java.lang.Override
   public long getShopId() {
-    return shopId_;
+    return shopId;
   }
 
   public static final int DAYS_FIELD_NUMBER = 2;
-  private int days_;
+  private int days;
   /**
    * <code>int32 days = 2;</code>
    * @return The days.
    */
   @java.lang.Override
   public int getDays() {
-    return days_;
+    return days;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -127,10 +127,10 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (shopId_ != 0L) {
-      output.writeInt64(1, shopId_);
+      output.writeInt64(1, shopId);
     }
     if (days_ != 0) {
-      output.writeInt32(2, days_);
+      output.writeInt32(2, days);
     }
     unknownFields.writeTo(output);
   }
@@ -143,11 +143,11 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (shopId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, shopId_);
+        .computeInt64Size(1, shopId);
     }
     if (days_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, days_);
+        .computeInt32Size(2, days);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -317,9 +317,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      shopId_ = 0L;
+      shopId = 0L;
 
-      days_ = 0;
+      days = 0;
 
       return this;
     }
@@ -347,8 +347,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.shop.ListOperationMetricsRequest buildPartial() {
       com.zhijiejiaoyu.glory_api.shop.ListOperationMetricsRequest result = new com.zhijiejiaoyu.glory_api.shop.ListOperationMetricsRequest(this);
-      result.shopId_ = shopId_;
-      result.days_ = days_;
+      result.shopId = shopId;
+      result.days = days;
       onBuilt();
       return result;
     }
@@ -439,7 +439,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getShopId() {
-      return shopId_;
+      return shopId;
     }
     /**
      * <code>int64 shop_id = 1;</code>
@@ -448,7 +448,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setShopId(long value) {
       
-      shopId_ = value;
+      shopId = value;
       onChanged();
       return this;
     }
@@ -458,7 +458,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearShopId() {
       
-      shopId_ = 0L;
+      shopId = 0L;
       onChanged();
       return this;
     }
@@ -470,7 +470,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public int getDays() {
-      return days_;
+      return days;
     }
     /**
      * <code>int32 days = 2;</code>
@@ -479,7 +479,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDays(int value) {
       
-      days_ = value;
+      days = value;
       onChanged();
       return this;
     }
@@ -489,7 +489,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearDays() {
       
-      days_ = 0;
+      days = 0;
       onChanged();
       return this;
     }

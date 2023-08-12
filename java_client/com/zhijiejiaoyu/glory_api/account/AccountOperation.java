@@ -16,8 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private AccountOperation() {
-    accountOperationName_ = "";
-    unit_ = "";
+    accountOperationName = "";
+    unit = "";
   }
 
   @java.lang.Override
@@ -52,34 +52,34 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            userId_ = input.readInt64();
+            userId = input.readInt64();
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            accountOperationName_ = s;
+            accountOperationName = s;
             break;
           }
           case 24: {
 
-            accountOperationType_ = input.readInt32();
+            accountOperationType = input.readInt32();
             break;
           }
           case 32: {
 
-            amount_ = input.readInt64();
+            amount = input.readInt64();
             break;
           }
           case 42: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            unit_ = s;
+            unit = s;
             break;
           }
           case 48: {
 
-            accountOperationId_ = input.readInt64();
+            accountOperationId = input.readInt64();
             break;
           }
           default: {
@@ -115,32 +115,32 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int USER_ID_FIELD_NUMBER = 1;
-  private long userId_;
+  private long userId;
   /**
    * <code>int64 user_id = 1;</code>
    * @return The userId.
    */
   @java.lang.Override
   public long getUserId() {
-    return userId_;
+    return userId;
   }
 
   public static final int ACCOUNT_OPERATION_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object accountOperationName_;
+  private volatile java.lang.Object accountOperationName;
   /**
    * <code>string account_operation_name = 2;</code>
    * @return The accountOperationName.
    */
   @java.lang.Override
   public java.lang.String getAccountOperationName() {
-    java.lang.Object ref = accountOperationName_;
+    java.lang.Object ref = accountOperationName;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      accountOperationName_ = s;
+      accountOperationName = s;
       return s;
     }
   }
@@ -151,12 +151,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getAccountOperationNameBytes() {
-    java.lang.Object ref = accountOperationName_;
+    java.lang.Object ref = accountOperationName;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      accountOperationName_ = b;
+      accountOperationName = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -164,43 +164,43 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ACCOUNT_OPERATION_TYPE_FIELD_NUMBER = 3;
-  private int accountOperationType_;
+  private int accountOperationType;
   /**
    * <code>int32 account_operation_type = 3;</code>
    * @return The accountOperationType.
    */
   @java.lang.Override
   public int getAccountOperationType() {
-    return accountOperationType_;
+    return accountOperationType;
   }
 
   public static final int AMOUNT_FIELD_NUMBER = 4;
-  private long amount_;
+  private long amount;
   /**
    * <code>int64 amount = 4;</code>
    * @return The amount.
    */
   @java.lang.Override
   public long getAmount() {
-    return amount_;
+    return amount;
   }
 
   public static final int UNIT_FIELD_NUMBER = 5;
-  private volatile java.lang.Object unit_;
+  private volatile java.lang.Object unit;
   /**
    * <code>string unit = 5;</code>
    * @return The unit.
    */
   @java.lang.Override
   public java.lang.String getUnit() {
-    java.lang.Object ref = unit_;
+    java.lang.Object ref = unit;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      unit_ = s;
+      unit = s;
       return s;
     }
   }
@@ -211,12 +211,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getUnitBytes() {
-    java.lang.Object ref = unit_;
+    java.lang.Object ref = unit;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      unit_ = b;
+      unit = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -224,14 +224,14 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ACCOUNT_OPERATION_ID_FIELD_NUMBER = 6;
-  private long accountOperationId_;
+  private long accountOperationId;
   /**
    * <code>int64 account_operation_id = 6;</code>
    * @return The accountOperationId.
    */
   @java.lang.Override
   public long getAccountOperationId() {
-    return accountOperationId_;
+    return accountOperationId;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -249,22 +249,22 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (userId_ != 0L) {
-      output.writeInt64(1, userId_);
+      output.writeInt64(1, userId);
     }
     if (!getAccountOperationNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, accountOperationName_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, accountOperationName);
     }
     if (accountOperationType_ != 0) {
-      output.writeInt32(3, accountOperationType_);
+      output.writeInt32(3, accountOperationType);
     }
     if (amount_ != 0L) {
-      output.writeInt64(4, amount_);
+      output.writeInt64(4, amount);
     }
     if (!getUnitBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, unit_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, unit);
     }
     if (accountOperationId_ != 0L) {
-      output.writeInt64(6, accountOperationId_);
+      output.writeInt64(6, accountOperationId);
     }
     unknownFields.writeTo(output);
   }
@@ -277,25 +277,25 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (userId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, userId_);
+        .computeInt64Size(1, userId);
     }
     if (!getAccountOperationNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, accountOperationName_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, accountOperationName);
     }
     if (accountOperationType_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(3, accountOperationType_);
+        .computeInt32Size(3, accountOperationType);
     }
     if (amount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(4, amount_);
+        .computeInt64Size(4, amount);
     }
     if (!getUnitBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, unit_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, unit);
     }
     if (accountOperationId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(6, accountOperationId_);
+        .computeInt64Size(6, accountOperationId);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -483,17 +483,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      userId_ = 0L;
+      userId = 0L;
 
-      accountOperationName_ = "";
+      accountOperationName = "";
 
-      accountOperationType_ = 0;
+      accountOperationType = 0;
 
-      amount_ = 0L;
+      amount = 0L;
 
-      unit_ = "";
+      unit = "";
 
-      accountOperationId_ = 0L;
+      accountOperationId = 0L;
 
       return this;
     }
@@ -521,12 +521,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.account.AccountOperation buildPartial() {
       com.zhijiejiaoyu.glory_api.account.AccountOperation result = new com.zhijiejiaoyu.glory_api.account.AccountOperation(this);
-      result.userId_ = userId_;
-      result.accountOperationName_ = accountOperationName_;
-      result.accountOperationType_ = accountOperationType_;
-      result.amount_ = amount_;
-      result.unit_ = unit_;
-      result.accountOperationId_ = accountOperationId_;
+      result.userId = userId;
+      result.accountOperationName = accountOperationName;
+      result.accountOperationType = accountOperationType;
+      result.amount = amount;
+      result.unit = unit;
+      result.accountOperationId = accountOperationId;
       onBuilt();
       return result;
     }
@@ -579,7 +579,7 @@ private static final long serialVersionUID = 0L;
         setUserId(other.getUserId());
       }
       if (!other.getAccountOperationName().isEmpty()) {
-        accountOperationName_ = other.accountOperationName_;
+        accountOperationName = other.accountOperationName;
         onChanged();
       }
       if (other.getAccountOperationType() != 0) {
@@ -589,7 +589,7 @@ private static final long serialVersionUID = 0L;
         setAmount(other.getAmount());
       }
       if (!other.getUnit().isEmpty()) {
-        unit_ = other.unit_;
+        unit = other.unit;
         onChanged();
       }
       if (other.getAccountOperationId() != 0L) {
@@ -631,7 +631,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getUserId() {
-      return userId_;
+      return userId;
     }
     /**
      * <code>int64 user_id = 1;</code>
@@ -640,7 +640,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setUserId(long value) {
       
-      userId_ = value;
+      userId = value;
       onChanged();
       return this;
     }
@@ -650,23 +650,23 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearUserId() {
       
-      userId_ = 0L;
+      userId = 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object accountOperationName_ = "";
+    private java.lang.Object accountOperationName = "";
     /**
      * <code>string account_operation_name = 2;</code>
      * @return The accountOperationName.
      */
     public java.lang.String getAccountOperationName() {
-      java.lang.Object ref = accountOperationName_;
+      java.lang.Object ref = accountOperationName;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        accountOperationName_ = s;
+        accountOperationName = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -678,12 +678,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getAccountOperationNameBytes() {
-      java.lang.Object ref = accountOperationName_;
+      java.lang.Object ref = accountOperationName;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        accountOperationName_ = b;
+        accountOperationName = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -700,7 +700,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      accountOperationName_ = value;
+      accountOperationName = value;
       onChanged();
       return this;
     }
@@ -710,7 +710,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearAccountOperationName() {
       
-      accountOperationName_ = getDefaultInstance().getAccountOperationName();
+      accountOperationName = getDefaultInstance().getAccountOperationName();
       onChanged();
       return this;
     }
@@ -726,7 +726,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      accountOperationName_ = value;
+      accountOperationName = value;
       onChanged();
       return this;
     }
@@ -738,7 +738,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public int getAccountOperationType() {
-      return accountOperationType_;
+      return accountOperationType;
     }
     /**
      * <code>int32 account_operation_type = 3;</code>
@@ -747,7 +747,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setAccountOperationType(int value) {
       
-      accountOperationType_ = value;
+      accountOperationType = value;
       onChanged();
       return this;
     }
@@ -757,7 +757,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearAccountOperationType() {
       
-      accountOperationType_ = 0;
+      accountOperationType = 0;
       onChanged();
       return this;
     }
@@ -769,7 +769,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getAmount() {
-      return amount_;
+      return amount;
     }
     /**
      * <code>int64 amount = 4;</code>
@@ -778,7 +778,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setAmount(long value) {
       
-      amount_ = value;
+      amount = value;
       onChanged();
       return this;
     }
@@ -788,23 +788,23 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearAmount() {
       
-      amount_ = 0L;
+      amount = 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object unit_ = "";
+    private java.lang.Object unit = "";
     /**
      * <code>string unit = 5;</code>
      * @return The unit.
      */
     public java.lang.String getUnit() {
-      java.lang.Object ref = unit_;
+      java.lang.Object ref = unit;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        unit_ = s;
+        unit = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -816,12 +816,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getUnitBytes() {
-      java.lang.Object ref = unit_;
+      java.lang.Object ref = unit;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        unit_ = b;
+        unit = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -838,7 +838,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      unit_ = value;
+      unit = value;
       onChanged();
       return this;
     }
@@ -848,7 +848,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearUnit() {
       
-      unit_ = getDefaultInstance().getUnit();
+      unit = getDefaultInstance().getUnit();
       onChanged();
       return this;
     }
@@ -864,7 +864,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      unit_ = value;
+      unit = value;
       onChanged();
       return this;
     }
@@ -876,7 +876,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getAccountOperationId() {
-      return accountOperationId_;
+      return accountOperationId;
     }
     /**
      * <code>int64 account_operation_id = 6;</code>
@@ -885,7 +885,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setAccountOperationId(long value) {
       
-      accountOperationId_ = value;
+      accountOperationId = value;
       onChanged();
       return this;
     }
@@ -895,7 +895,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearAccountOperationId() {
       
-      accountOperationId_ = 0L;
+      accountOperationId = 0L;
       onChanged();
       return this;
     }

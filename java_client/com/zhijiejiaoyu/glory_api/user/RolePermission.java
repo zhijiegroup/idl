@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private RolePermission() {
-    permission_ = java.util.Collections.emptyList();
+    permission = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -39,7 +39,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
+    int mutable_bitField0 = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -52,22 +52,22 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            rolePermissionId_ = input.readInt64();
+            rolePermissionId = input.readInt64();
             break;
           }
           case 16: {
 
-            roleId_ = input.readInt64();
+            roleId = input.readInt64();
             break;
           }
           case 24: {
 
-            permissionId_ = input.readInt64();
+            permissionId = input.readInt64();
             break;
           }
           case 34: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              permission_ = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.Permission>();
+              permission = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.Permission>();
               mutable_bitField0_ |= 0x00000001;
             }
             permission_.add(
@@ -90,7 +90,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        permission_ = java.util.Collections.unmodifiableList(permission_);
+        permission = java.util.Collections.unmodifiableList(permission);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -110,46 +110,46 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ROLE_PERMISSION_ID_FIELD_NUMBER = 1;
-  private long rolePermissionId_;
+  private long rolePermissionId;
   /**
    * <code>int64 role_permission_id = 1;</code>
    * @return The rolePermissionId.
    */
   @java.lang.Override
   public long getRolePermissionId() {
-    return rolePermissionId_;
+    return rolePermissionId;
   }
 
   public static final int ROLE_ID_FIELD_NUMBER = 2;
-  private long roleId_;
+  private long roleId;
   /**
    * <code>int64 role_id = 2;</code>
    * @return The roleId.
    */
   @java.lang.Override
   public long getRoleId() {
-    return roleId_;
+    return roleId;
   }
 
   public static final int PERMISSION_ID_FIELD_NUMBER = 3;
-  private long permissionId_;
+  private long permissionId;
   /**
    * <code>int64 permission_id = 3;</code>
    * @return The permissionId.
    */
   @java.lang.Override
   public long getPermissionId() {
-    return permissionId_;
+    return permissionId;
   }
 
   public static final int PERMISSION_FIELD_NUMBER = 4;
-  private java.util.List<com.zhijiejiaoyu.glory_api.user.Permission> permission_;
+  private java.util.List<com.zhijiejiaoyu.glory_api.user.Permission> permission;
   /**
    * <code>repeated .glory_api.Permission permission = 4;</code>
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.user.Permission> getPermissionList() {
-    return permission_;
+    return permission;
   }
   /**
    * <code>repeated .glory_api.Permission permission = 4;</code>
@@ -157,7 +157,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.user.PermissionOrBuilder> 
       getPermissionOrBuilderList() {
-    return permission_;
+    return permission;
   }
   /**
    * <code>repeated .glory_api.Permission permission = 4;</code>
@@ -197,13 +197,13 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (rolePermissionId_ != 0L) {
-      output.writeInt64(1, rolePermissionId_);
+      output.writeInt64(1, rolePermissionId);
     }
     if (roleId_ != 0L) {
-      output.writeInt64(2, roleId_);
+      output.writeInt64(2, roleId);
     }
     if (permissionId_ != 0L) {
-      output.writeInt64(3, permissionId_);
+      output.writeInt64(3, permissionId);
     }
     for (int i = 0; i < permission_.size(); i++) {
       output.writeMessage(4, permission_.get(i));
@@ -219,15 +219,15 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (rolePermissionId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, rolePermissionId_);
+        .computeInt64Size(1, rolePermissionId);
     }
     if (roleId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, roleId_);
+        .computeInt64Size(2, roleId);
     }
     if (permissionId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(3, permissionId_);
+        .computeInt64Size(3, permissionId);
     }
     for (int i = 0; i < permission_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
@@ -414,15 +414,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      rolePermissionId_ = 0L;
+      rolePermissionId = 0L;
 
-      roleId_ = 0L;
+      roleId = 0L;
 
-      permissionId_ = 0L;
+      permissionId = 0L;
 
-      if (permissionBuilder_ == null) {
-        permission_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      if (permissionBuilder == null) {
+        permission = java.util.Collections.emptyList();
+        bitField0 = (bitField0_ & ~0x00000001);
       } else {
         permissionBuilder_.clear();
       }
@@ -452,18 +452,18 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.user.RolePermission buildPartial() {
       com.zhijiejiaoyu.glory_api.user.RolePermission result = new com.zhijiejiaoyu.glory_api.user.RolePermission(this);
-      int from_bitField0_ = bitField0_;
-      result.rolePermissionId_ = rolePermissionId_;
-      result.roleId_ = roleId_;
-      result.permissionId_ = permissionId_;
-      if (permissionBuilder_ == null) {
+      int from_bitField0 = bitField0;
+      result.rolePermissionId = rolePermissionId;
+      result.roleId = roleId;
+      result.permissionId = permissionId;
+      if (permissionBuilder == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
-          permission_ = java.util.Collections.unmodifiableList(permission_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          permission = java.util.Collections.unmodifiableList(permission);
+          bitField0 = (bitField0_ & ~0x00000001);
         }
-        result.permission_ = permission_;
+        result.permission = permission;
       } else {
-        result.permission_ = permissionBuilder_.build();
+        result.permission = permissionBuilder_.build();
       }
       onBuilt();
       return result;
@@ -522,14 +522,14 @@ private static final long serialVersionUID = 0L;
       if (other.getPermissionId() != 0L) {
         setPermissionId(other.getPermissionId());
       }
-      if (permissionBuilder_ == null) {
+      if (permissionBuilder == null) {
         if (!other.permission_.isEmpty()) {
           if (permission_.isEmpty()) {
-            permission_ = other.permission_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            permission = other.permission;
+            bitField0 = (bitField0_ & ~0x00000001);
           } else {
             ensurePermissionIsMutable();
-            permission_.addAll(other.permission_);
+            permission_.addAll(other.permission);
           }
           onChanged();
         }
@@ -537,14 +537,14 @@ private static final long serialVersionUID = 0L;
         if (!other.permission_.isEmpty()) {
           if (permissionBuilder_.isEmpty()) {
             permissionBuilder_.dispose();
-            permissionBuilder_ = null;
-            permission_ = other.permission_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-            permissionBuilder_ = 
+            permissionBuilder = null;
+            permission = other.permission;
+            bitField0 = (bitField0_ & ~0x00000001);
+            permissionBuilder = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getPermissionFieldBuilder() : null;
           } else {
-            permissionBuilder_.addAllMessages(other.permission_);
+            permissionBuilder_.addAllMessages(other.permission);
           }
         }
       }
@@ -576,7 +576,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int bitField0_;
+    private int bitField0;
 
     private long rolePermissionId_ ;
     /**
@@ -585,7 +585,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getRolePermissionId() {
-      return rolePermissionId_;
+      return rolePermissionId;
     }
     /**
      * <code>int64 role_permission_id = 1;</code>
@@ -594,7 +594,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setRolePermissionId(long value) {
       
-      rolePermissionId_ = value;
+      rolePermissionId = value;
       onChanged();
       return this;
     }
@@ -604,7 +604,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearRolePermissionId() {
       
-      rolePermissionId_ = 0L;
+      rolePermissionId = 0L;
       onChanged();
       return this;
     }
@@ -616,7 +616,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getRoleId() {
-      return roleId_;
+      return roleId;
     }
     /**
      * <code>int64 role_id = 2;</code>
@@ -625,7 +625,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setRoleId(long value) {
       
-      roleId_ = value;
+      roleId = value;
       onChanged();
       return this;
     }
@@ -635,7 +635,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearRoleId() {
       
-      roleId_ = 0L;
+      roleId = 0L;
       onChanged();
       return this;
     }
@@ -647,7 +647,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getPermissionId() {
-      return permissionId_;
+      return permissionId;
     }
     /**
      * <code>int64 permission_id = 3;</code>
@@ -656,7 +656,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setPermissionId(long value) {
       
-      permissionId_ = value;
+      permissionId = value;
       onChanged();
       return this;
     }
@@ -666,29 +666,29 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearPermissionId() {
       
-      permissionId_ = 0L;
+      permissionId = 0L;
       onChanged();
       return this;
     }
 
-    private java.util.List<com.zhijiejiaoyu.glory_api.user.Permission> permission_ =
+    private java.util.List<com.zhijiejiaoyu.glory_api.user.Permission> permission =
       java.util.Collections.emptyList();
     private void ensurePermissionIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        permission_ = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.Permission>(permission_);
+        permission = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.Permission>(permission);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.user.Permission, com.zhijiejiaoyu.glory_api.user.Permission.Builder, com.zhijiejiaoyu.glory_api.user.PermissionOrBuilder> permissionBuilder_;
+        com.zhijiejiaoyu.glory_api.user.Permission, com.zhijiejiaoyu.glory_api.user.Permission.Builder, com.zhijiejiaoyu.glory_api.user.PermissionOrBuilder> permissionBuilder;
 
     /**
      * <code>repeated .glory_api.Permission permission = 4;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.user.Permission> getPermissionList() {
-      if (permissionBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(permission_);
+      if (permissionBuilder == null) {
+        return java.util.Collections.unmodifiableList(permission);
       } else {
         return permissionBuilder_.getMessageList();
       }
@@ -697,7 +697,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.Permission permission = 4;</code>
      */
     public int getPermissionCount() {
-      if (permissionBuilder_ == null) {
+      if (permissionBuilder == null) {
         return permission_.size();
       } else {
         return permissionBuilder_.getCount();
@@ -707,7 +707,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.Permission permission = 4;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.Permission getPermission(int index) {
-      if (permissionBuilder_ == null) {
+      if (permissionBuilder == null) {
         return permission_.get(index);
       } else {
         return permissionBuilder_.getMessage(index);
@@ -718,7 +718,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setPermission(
         int index, com.zhijiejiaoyu.glory_api.user.Permission value) {
-      if (permissionBuilder_ == null) {
+      if (permissionBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -735,7 +735,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setPermission(
         int index, com.zhijiejiaoyu.glory_api.user.Permission.Builder builderForValue) {
-      if (permissionBuilder_ == null) {
+      if (permissionBuilder == null) {
         ensurePermissionIsMutable();
         permission_.set(index, builderForValue.build());
         onChanged();
@@ -748,7 +748,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.Permission permission = 4;</code>
      */
     public Builder addPermission(com.zhijiejiaoyu.glory_api.user.Permission value) {
-      if (permissionBuilder_ == null) {
+      if (permissionBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -765,7 +765,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addPermission(
         int index, com.zhijiejiaoyu.glory_api.user.Permission value) {
-      if (permissionBuilder_ == null) {
+      if (permissionBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -782,7 +782,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addPermission(
         com.zhijiejiaoyu.glory_api.user.Permission.Builder builderForValue) {
-      if (permissionBuilder_ == null) {
+      if (permissionBuilder == null) {
         ensurePermissionIsMutable();
         permission_.add(builderForValue.build());
         onChanged();
@@ -796,7 +796,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addPermission(
         int index, com.zhijiejiaoyu.glory_api.user.Permission.Builder builderForValue) {
-      if (permissionBuilder_ == null) {
+      if (permissionBuilder == null) {
         ensurePermissionIsMutable();
         permission_.add(index, builderForValue.build());
         onChanged();
@@ -810,10 +810,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addAllPermission(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.user.Permission> values) {
-      if (permissionBuilder_ == null) {
+      if (permissionBuilder == null) {
         ensurePermissionIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, permission_);
+            values, permission);
         onChanged();
       } else {
         permissionBuilder_.addAllMessages(values);
@@ -824,9 +824,9 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.Permission permission = 4;</code>
      */
     public Builder clearPermission() {
-      if (permissionBuilder_ == null) {
-        permission_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      if (permissionBuilder == null) {
+        permission = java.util.Collections.emptyList();
+        bitField0 = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         permissionBuilder_.clear();
@@ -837,7 +837,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.Permission permission = 4;</code>
      */
     public Builder removePermission(int index) {
-      if (permissionBuilder_ == null) {
+      if (permissionBuilder == null) {
         ensurePermissionIsMutable();
         permission_.remove(index);
         onChanged();
@@ -858,7 +858,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.user.PermissionOrBuilder getPermissionOrBuilder(
         int index) {
-      if (permissionBuilder_ == null) {
+      if (permissionBuilder == null) {
         return permission_.get(index);  } else {
         return permissionBuilder_.getMessageOrBuilder(index);
       }
@@ -871,7 +871,7 @@ private static final long serialVersionUID = 0L;
       if (permissionBuilder_ != null) {
         return permissionBuilder_.getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(permission_);
+        return java.util.Collections.unmodifiableList(permission);
       }
     }
     /**
@@ -899,16 +899,16 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.RepeatedFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.user.Permission, com.zhijiejiaoyu.glory_api.user.Permission.Builder, com.zhijiejiaoyu.glory_api.user.PermissionOrBuilder> 
         getPermissionFieldBuilder() {
-      if (permissionBuilder_ == null) {
-        permissionBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+      if (permissionBuilder == null) {
+        permissionBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.user.Permission, com.zhijiejiaoyu.glory_api.user.Permission.Builder, com.zhijiejiaoyu.glory_api.user.PermissionOrBuilder>(
                 permission_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        permission_ = null;
+        permission = null;
       }
-      return permissionBuilder_;
+      return permissionBuilder;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

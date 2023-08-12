@@ -53,10 +53,10 @@ private static final long serialVersionUID = 0L;
             if (major_ != null) {
               subBuilder = major_.toBuilder();
             }
-            major_ = input.readMessage(com.zhijiejiaoyu.glory_api.tenant.Major.parser(), extensionRegistry);
+            major = input.readMessage(com.zhijiejiaoyu.glory_api.tenant.Major.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(major_);
-              major_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(major);
+              major = subBuilder.buildPartial();
             }
 
             break;
@@ -66,10 +66,10 @@ private static final long serialVersionUID = 0L;
             if (authorInfo_ != null) {
               subBuilder = authorInfo_.toBuilder();
             }
-            authorInfo_ = input.readMessage(com.zhijiejiaoyu.base.AuthorInfo.parser(), extensionRegistry);
+            authorInfo = input.readMessage(com.zhijiejiaoyu.base.AuthorInfo.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(authorInfo_);
-              authorInfo_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(authorInfo);
+              authorInfo = subBuilder.buildPartial();
             }
 
             break;
@@ -107,7 +107,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int MAJOR_FIELD_NUMBER = 1;
-  private com.zhijiejiaoyu.glory_api.tenant.Major major_;
+  private com.zhijiejiaoyu.glory_api.tenant.Major major;
   /**
    * <code>.glory_api.Major major = 1;</code>
    * @return Whether the major field is set.
@@ -122,7 +122,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.tenant.Major getMajor() {
-    return major_ == null ? com.zhijiejiaoyu.glory_api.tenant.Major.getDefaultInstance() : major_;
+    return major == null ? com.zhijiejiaoyu.glory_api.tenant.Major.getDefaultInstance() : major;
   }
   /**
    * <code>.glory_api.Major major = 1;</code>
@@ -133,7 +133,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int AUTHOR_INFO_FIELD_NUMBER = 2;
-  private com.zhijiejiaoyu.base.AuthorInfo authorInfo_;
+  private com.zhijiejiaoyu.base.AuthorInfo authorInfo;
   /**
    * <code>.base.AuthorInfo author_info = 2;</code>
    * @return Whether the authorInfo field is set.
@@ -148,7 +148,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.zhijiejiaoyu.base.AuthorInfo getAuthorInfo() {
-    return authorInfo_ == null ? com.zhijiejiaoyu.base.AuthorInfo.getDefaultInstance() : authorInfo_;
+    return authorInfo == null ? com.zhijiejiaoyu.base.AuthorInfo.getDefaultInstance() : authorInfo;
   }
   /**
    * <code>.base.AuthorInfo author_info = 2;</code>
@@ -372,17 +372,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (majorBuilder_ == null) {
-        major_ = null;
+      if (majorBuilder == null) {
+        major = null;
       } else {
-        major_ = null;
-        majorBuilder_ = null;
+        major = null;
+        majorBuilder = null;
       }
-      if (authorInfoBuilder_ == null) {
-        authorInfo_ = null;
+      if (authorInfoBuilder == null) {
+        authorInfo = null;
       } else {
-        authorInfo_ = null;
-        authorInfoBuilder_ = null;
+        authorInfo = null;
+        authorInfoBuilder = null;
       }
       return this;
     }
@@ -410,15 +410,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.tenant.MajorWithAuthor buildPartial() {
       com.zhijiejiaoyu.glory_api.tenant.MajorWithAuthor result = new com.zhijiejiaoyu.glory_api.tenant.MajorWithAuthor(this);
-      if (majorBuilder_ == null) {
-        result.major_ = major_;
+      if (majorBuilder == null) {
+        result.major = major;
       } else {
-        result.major_ = majorBuilder_.build();
+        result.major = majorBuilder_.build();
       }
-      if (authorInfoBuilder_ == null) {
-        result.authorInfo_ = authorInfo_;
+      if (authorInfoBuilder == null) {
+        result.authorInfo = authorInfo;
       } else {
-        result.authorInfo_ = authorInfoBuilder_.build();
+        result.authorInfo = authorInfoBuilder_.build();
       }
       onBuilt();
       return result;
@@ -503,9 +503,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.zhijiejiaoyu.glory_api.tenant.Major major_;
+    private com.zhijiejiaoyu.glory_api.tenant.Major major;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.tenant.Major, com.zhijiejiaoyu.glory_api.tenant.Major.Builder, com.zhijiejiaoyu.glory_api.tenant.MajorOrBuilder> majorBuilder_;
+        com.zhijiejiaoyu.glory_api.tenant.Major, com.zhijiejiaoyu.glory_api.tenant.Major.Builder, com.zhijiejiaoyu.glory_api.tenant.MajorOrBuilder> majorBuilder;
     /**
      * <code>.glory_api.Major major = 1;</code>
      * @return Whether the major field is set.
@@ -518,8 +518,8 @@ private static final long serialVersionUID = 0L;
      * @return The major.
      */
     public com.zhijiejiaoyu.glory_api.tenant.Major getMajor() {
-      if (majorBuilder_ == null) {
-        return major_ == null ? com.zhijiejiaoyu.glory_api.tenant.Major.getDefaultInstance() : major_;
+      if (majorBuilder == null) {
+        return major == null ? com.zhijiejiaoyu.glory_api.tenant.Major.getDefaultInstance() : major;
       } else {
         return majorBuilder_.getMessage();
       }
@@ -528,11 +528,11 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.Major major = 1;</code>
      */
     public Builder setMajor(com.zhijiejiaoyu.glory_api.tenant.Major value) {
-      if (majorBuilder_ == null) {
+      if (majorBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        major_ = value;
+        major = value;
         onChanged();
       } else {
         majorBuilder_.setMessage(value);
@@ -545,8 +545,8 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setMajor(
         com.zhijiejiaoyu.glory_api.tenant.Major.Builder builderForValue) {
-      if (majorBuilder_ == null) {
-        major_ = builderForValue.build();
+      if (majorBuilder == null) {
+        major = builderForValue.build();
         onChanged();
       } else {
         majorBuilder_.setMessage(builderForValue.build());
@@ -558,12 +558,12 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.Major major = 1;</code>
      */
     public Builder mergeMajor(com.zhijiejiaoyu.glory_api.tenant.Major value) {
-      if (majorBuilder_ == null) {
+      if (majorBuilder == null) {
         if (major_ != null) {
-          major_ =
-            com.zhijiejiaoyu.glory_api.tenant.Major.newBuilder(major_).mergeFrom(value).buildPartial();
+          major =
+            com.zhijiejiaoyu.glory_api.tenant.Major.newBuilder(major).mergeFrom(value).buildPartial();
         } else {
-          major_ = value;
+          major = value;
         }
         onChanged();
       } else {
@@ -576,12 +576,12 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.Major major = 1;</code>
      */
     public Builder clearMajor() {
-      if (majorBuilder_ == null) {
-        major_ = null;
+      if (majorBuilder == null) {
+        major = null;
         onChanged();
       } else {
-        major_ = null;
-        majorBuilder_ = null;
+        major = null;
+        majorBuilder = null;
       }
 
       return this;
@@ -601,8 +601,8 @@ private static final long serialVersionUID = 0L;
       if (majorBuilder_ != null) {
         return majorBuilder_.getMessageOrBuilder();
       } else {
-        return major_ == null ?
-            com.zhijiejiaoyu.glory_api.tenant.Major.getDefaultInstance() : major_;
+        return major == null ?
+            com.zhijiejiaoyu.glory_api.tenant.Major.getDefaultInstance() : major;
       }
     }
     /**
@@ -611,20 +611,20 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.tenant.Major, com.zhijiejiaoyu.glory_api.tenant.Major.Builder, com.zhijiejiaoyu.glory_api.tenant.MajorOrBuilder> 
         getMajorFieldBuilder() {
-      if (majorBuilder_ == null) {
-        majorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+      if (majorBuilder == null) {
+        majorBuilder = new com.google.protobuf.SingleFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.tenant.Major, com.zhijiejiaoyu.glory_api.tenant.Major.Builder, com.zhijiejiaoyu.glory_api.tenant.MajorOrBuilder>(
                 getMajor(),
                 getParentForChildren(),
                 isClean());
-        major_ = null;
+        major = null;
       }
-      return majorBuilder_;
+      return majorBuilder;
     }
 
-    private com.zhijiejiaoyu.base.AuthorInfo authorInfo_;
+    private com.zhijiejiaoyu.base.AuthorInfo authorInfo;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.base.AuthorInfo, com.zhijiejiaoyu.base.AuthorInfo.Builder, com.zhijiejiaoyu.base.AuthorInfoOrBuilder> authorInfoBuilder_;
+        com.zhijiejiaoyu.base.AuthorInfo, com.zhijiejiaoyu.base.AuthorInfo.Builder, com.zhijiejiaoyu.base.AuthorInfoOrBuilder> authorInfoBuilder;
     /**
      * <code>.base.AuthorInfo author_info = 2;</code>
      * @return Whether the authorInfo field is set.
@@ -637,8 +637,8 @@ private static final long serialVersionUID = 0L;
      * @return The authorInfo.
      */
     public com.zhijiejiaoyu.base.AuthorInfo getAuthorInfo() {
-      if (authorInfoBuilder_ == null) {
-        return authorInfo_ == null ? com.zhijiejiaoyu.base.AuthorInfo.getDefaultInstance() : authorInfo_;
+      if (authorInfoBuilder == null) {
+        return authorInfo == null ? com.zhijiejiaoyu.base.AuthorInfo.getDefaultInstance() : authorInfo;
       } else {
         return authorInfoBuilder_.getMessage();
       }
@@ -647,11 +647,11 @@ private static final long serialVersionUID = 0L;
      * <code>.base.AuthorInfo author_info = 2;</code>
      */
     public Builder setAuthorInfo(com.zhijiejiaoyu.base.AuthorInfo value) {
-      if (authorInfoBuilder_ == null) {
+      if (authorInfoBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        authorInfo_ = value;
+        authorInfo = value;
         onChanged();
       } else {
         authorInfoBuilder_.setMessage(value);
@@ -664,8 +664,8 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setAuthorInfo(
         com.zhijiejiaoyu.base.AuthorInfo.Builder builderForValue) {
-      if (authorInfoBuilder_ == null) {
-        authorInfo_ = builderForValue.build();
+      if (authorInfoBuilder == null) {
+        authorInfo = builderForValue.build();
         onChanged();
       } else {
         authorInfoBuilder_.setMessage(builderForValue.build());
@@ -677,12 +677,12 @@ private static final long serialVersionUID = 0L;
      * <code>.base.AuthorInfo author_info = 2;</code>
      */
     public Builder mergeAuthorInfo(com.zhijiejiaoyu.base.AuthorInfo value) {
-      if (authorInfoBuilder_ == null) {
+      if (authorInfoBuilder == null) {
         if (authorInfo_ != null) {
-          authorInfo_ =
-            com.zhijiejiaoyu.base.AuthorInfo.newBuilder(authorInfo_).mergeFrom(value).buildPartial();
+          authorInfo =
+            com.zhijiejiaoyu.base.AuthorInfo.newBuilder(authorInfo).mergeFrom(value).buildPartial();
         } else {
-          authorInfo_ = value;
+          authorInfo = value;
         }
         onChanged();
       } else {
@@ -695,12 +695,12 @@ private static final long serialVersionUID = 0L;
      * <code>.base.AuthorInfo author_info = 2;</code>
      */
     public Builder clearAuthorInfo() {
-      if (authorInfoBuilder_ == null) {
-        authorInfo_ = null;
+      if (authorInfoBuilder == null) {
+        authorInfo = null;
         onChanged();
       } else {
-        authorInfo_ = null;
-        authorInfoBuilder_ = null;
+        authorInfo = null;
+        authorInfoBuilder = null;
       }
 
       return this;
@@ -720,8 +720,8 @@ private static final long serialVersionUID = 0L;
       if (authorInfoBuilder_ != null) {
         return authorInfoBuilder_.getMessageOrBuilder();
       } else {
-        return authorInfo_ == null ?
-            com.zhijiejiaoyu.base.AuthorInfo.getDefaultInstance() : authorInfo_;
+        return authorInfo == null ?
+            com.zhijiejiaoyu.base.AuthorInfo.getDefaultInstance() : authorInfo;
       }
     }
     /**
@@ -730,15 +730,15 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.base.AuthorInfo, com.zhijiejiaoyu.base.AuthorInfo.Builder, com.zhijiejiaoyu.base.AuthorInfoOrBuilder> 
         getAuthorInfoFieldBuilder() {
-      if (authorInfoBuilder_ == null) {
-        authorInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+      if (authorInfoBuilder == null) {
+        authorInfoBuilder = new com.google.protobuf.SingleFieldBuilderV3<
             com.zhijiejiaoyu.base.AuthorInfo, com.zhijiejiaoyu.base.AuthorInfo.Builder, com.zhijiejiaoyu.base.AuthorInfoOrBuilder>(
                 getAuthorInfo(),
                 getParentForChildren(),
                 isClean());
-        authorInfo_ = null;
+        authorInfo = null;
       }
-      return authorInfoBuilder_;
+      return authorInfoBuilder;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

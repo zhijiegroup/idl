@@ -16,8 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ProductImage() {
-    imageType_ = "";
-    imageUrl_ = "";
+    imageType = "";
+    imageUrl = "";
   }
 
   @java.lang.Override
@@ -52,19 +52,19 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            productImageId_ = input.readInt64();
+            productImageId = input.readInt64();
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            imageType_ = s;
+            imageType = s;
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            imageUrl_ = s;
+            imageUrl = s;
             break;
           }
           default: {
@@ -100,32 +100,32 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PRODUCT_IMAGE_ID_FIELD_NUMBER = 1;
-  private long productImageId_;
+  private long productImageId;
   /**
    * <code>int64 product_image_id = 1;</code>
    * @return The productImageId.
    */
   @java.lang.Override
   public long getProductImageId() {
-    return productImageId_;
+    return productImageId;
   }
 
   public static final int IMAGE_TYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object imageType_;
+  private volatile java.lang.Object imageType;
   /**
    * <code>string image_type = 2;</code>
    * @return The imageType.
    */
   @java.lang.Override
   public java.lang.String getImageType() {
-    java.lang.Object ref = imageType_;
+    java.lang.Object ref = imageType;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      imageType_ = s;
+      imageType = s;
       return s;
     }
   }
@@ -136,12 +136,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getImageTypeBytes() {
-    java.lang.Object ref = imageType_;
+    java.lang.Object ref = imageType;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      imageType_ = b;
+      imageType = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -149,21 +149,21 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int IMAGE_URL_FIELD_NUMBER = 3;
-  private volatile java.lang.Object imageUrl_;
+  private volatile java.lang.Object imageUrl;
   /**
    * <code>string image_url = 3;</code>
    * @return The imageUrl.
    */
   @java.lang.Override
   public java.lang.String getImageUrl() {
-    java.lang.Object ref = imageUrl_;
+    java.lang.Object ref = imageUrl;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      imageUrl_ = s;
+      imageUrl = s;
       return s;
     }
   }
@@ -174,12 +174,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getImageUrlBytes() {
-    java.lang.Object ref = imageUrl_;
+    java.lang.Object ref = imageUrl;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      imageUrl_ = b;
+      imageUrl = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -201,13 +201,13 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (productImageId_ != 0L) {
-      output.writeInt64(1, productImageId_);
+      output.writeInt64(1, productImageId);
     }
     if (!getImageTypeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, imageType_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, imageType);
     }
     if (!getImageUrlBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, imageUrl_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, imageUrl);
     }
     unknownFields.writeTo(output);
   }
@@ -220,13 +220,13 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (productImageId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, productImageId_);
+        .computeInt64Size(1, productImageId);
     }
     if (!getImageTypeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, imageType_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, imageType);
     }
     if (!getImageUrlBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, imageUrl_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, imageUrl);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -400,11 +400,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      productImageId_ = 0L;
+      productImageId = 0L;
 
-      imageType_ = "";
+      imageType = "";
 
-      imageUrl_ = "";
+      imageUrl = "";
 
       return this;
     }
@@ -432,9 +432,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.shop.ProductImage buildPartial() {
       com.zhijiejiaoyu.glory_api.shop.ProductImage result = new com.zhijiejiaoyu.glory_api.shop.ProductImage(this);
-      result.productImageId_ = productImageId_;
-      result.imageType_ = imageType_;
-      result.imageUrl_ = imageUrl_;
+      result.productImageId = productImageId;
+      result.imageType = imageType;
+      result.imageUrl = imageUrl;
       onBuilt();
       return result;
     }
@@ -487,11 +487,11 @@ private static final long serialVersionUID = 0L;
         setProductImageId(other.getProductImageId());
       }
       if (!other.getImageType().isEmpty()) {
-        imageType_ = other.imageType_;
+        imageType = other.imageType;
         onChanged();
       }
       if (!other.getImageUrl().isEmpty()) {
-        imageUrl_ = other.imageUrl_;
+        imageUrl = other.imageUrl;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -530,7 +530,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getProductImageId() {
-      return productImageId_;
+      return productImageId;
     }
     /**
      * <code>int64 product_image_id = 1;</code>
@@ -539,7 +539,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setProductImageId(long value) {
       
-      productImageId_ = value;
+      productImageId = value;
       onChanged();
       return this;
     }
@@ -549,23 +549,23 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearProductImageId() {
       
-      productImageId_ = 0L;
+      productImageId = 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object imageType_ = "";
+    private java.lang.Object imageType = "";
     /**
      * <code>string image_type = 2;</code>
      * @return The imageType.
      */
     public java.lang.String getImageType() {
-      java.lang.Object ref = imageType_;
+      java.lang.Object ref = imageType;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        imageType_ = s;
+        imageType = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -577,12 +577,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getImageTypeBytes() {
-      java.lang.Object ref = imageType_;
+      java.lang.Object ref = imageType;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        imageType_ = b;
+        imageType = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -599,7 +599,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      imageType_ = value;
+      imageType = value;
       onChanged();
       return this;
     }
@@ -609,7 +609,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearImageType() {
       
-      imageType_ = getDefaultInstance().getImageType();
+      imageType = getDefaultInstance().getImageType();
       onChanged();
       return this;
     }
@@ -625,23 +625,23 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      imageType_ = value;
+      imageType = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object imageUrl_ = "";
+    private java.lang.Object imageUrl = "";
     /**
      * <code>string image_url = 3;</code>
      * @return The imageUrl.
      */
     public java.lang.String getImageUrl() {
-      java.lang.Object ref = imageUrl_;
+      java.lang.Object ref = imageUrl;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        imageUrl_ = s;
+        imageUrl = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -653,12 +653,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getImageUrlBytes() {
-      java.lang.Object ref = imageUrl_;
+      java.lang.Object ref = imageUrl;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        imageUrl_ = b;
+        imageUrl = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -675,7 +675,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      imageUrl_ = value;
+      imageUrl = value;
       onChanged();
       return this;
     }
@@ -685,7 +685,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearImageUrl() {
       
-      imageUrl_ = getDefaultInstance().getImageUrl();
+      imageUrl = getDefaultInstance().getImageUrl();
       onChanged();
       return this;
     }
@@ -701,7 +701,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      imageUrl_ = value;
+      imageUrl = value;
       onChanged();
       return this;
     }

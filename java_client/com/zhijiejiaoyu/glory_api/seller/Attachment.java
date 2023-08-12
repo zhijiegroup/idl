@@ -16,8 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Attachment() {
-    attachmentName_ = "";
-    attachmentUrl_ = "";
+    attachmentName = "";
+    attachmentUrl = "";
   }
 
   @java.lang.Override
@@ -52,24 +52,24 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            attachmentId_ = input.readInt64();
+            attachmentId = input.readInt64();
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            attachmentName_ = s;
+            attachmentName = s;
             break;
           }
           case 24: {
 
-            attachmentType_ = input.readInt32();
+            attachmentType = input.readInt32();
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            attachmentUrl_ = s;
+            attachmentUrl = s;
             break;
           }
           default: {
@@ -105,32 +105,32 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ATTACHMENT_ID_FIELD_NUMBER = 1;
-  private long attachmentId_;
+  private long attachmentId;
   /**
    * <code>int64 attachment_id = 1;</code>
    * @return The attachmentId.
    */
   @java.lang.Override
   public long getAttachmentId() {
-    return attachmentId_;
+    return attachmentId;
   }
 
   public static final int ATTACHMENT_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object attachmentName_;
+  private volatile java.lang.Object attachmentName;
   /**
    * <code>string attachment_name = 2;</code>
    * @return The attachmentName.
    */
   @java.lang.Override
   public java.lang.String getAttachmentName() {
-    java.lang.Object ref = attachmentName_;
+    java.lang.Object ref = attachmentName;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      attachmentName_ = s;
+      attachmentName = s;
       return s;
     }
   }
@@ -141,12 +141,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getAttachmentNameBytes() {
-    java.lang.Object ref = attachmentName_;
+    java.lang.Object ref = attachmentName;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      attachmentName_ = b;
+      attachmentName = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -154,32 +154,32 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ATTACHMENT_TYPE_FIELD_NUMBER = 3;
-  private int attachmentType_;
+  private int attachmentType;
   /**
    * <code>int32 attachment_type = 3;</code>
    * @return The attachmentType.
    */
   @java.lang.Override
   public int getAttachmentType() {
-    return attachmentType_;
+    return attachmentType;
   }
 
   public static final int ATTACHMENT_URL_FIELD_NUMBER = 4;
-  private volatile java.lang.Object attachmentUrl_;
+  private volatile java.lang.Object attachmentUrl;
   /**
    * <code>string attachment_url = 4;</code>
    * @return The attachmentUrl.
    */
   @java.lang.Override
   public java.lang.String getAttachmentUrl() {
-    java.lang.Object ref = attachmentUrl_;
+    java.lang.Object ref = attachmentUrl;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      attachmentUrl_ = s;
+      attachmentUrl = s;
       return s;
     }
   }
@@ -190,12 +190,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getAttachmentUrlBytes() {
-    java.lang.Object ref = attachmentUrl_;
+    java.lang.Object ref = attachmentUrl;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      attachmentUrl_ = b;
+      attachmentUrl = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -217,16 +217,16 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (attachmentId_ != 0L) {
-      output.writeInt64(1, attachmentId_);
+      output.writeInt64(1, attachmentId);
     }
     if (!getAttachmentNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, attachmentName_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, attachmentName);
     }
     if (attachmentType_ != 0) {
-      output.writeInt32(3, attachmentType_);
+      output.writeInt32(3, attachmentType);
     }
     if (!getAttachmentUrlBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, attachmentUrl_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, attachmentUrl);
     }
     unknownFields.writeTo(output);
   }
@@ -239,17 +239,17 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (attachmentId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, attachmentId_);
+        .computeInt64Size(1, attachmentId);
     }
     if (!getAttachmentNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, attachmentName_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, attachmentName);
     }
     if (attachmentType_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(3, attachmentType_);
+        .computeInt32Size(3, attachmentType);
     }
     if (!getAttachmentUrlBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, attachmentUrl_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, attachmentUrl);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -427,13 +427,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      attachmentId_ = 0L;
+      attachmentId = 0L;
 
-      attachmentName_ = "";
+      attachmentName = "";
 
-      attachmentType_ = 0;
+      attachmentType = 0;
 
-      attachmentUrl_ = "";
+      attachmentUrl = "";
 
       return this;
     }
@@ -461,10 +461,10 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.seller.Attachment buildPartial() {
       com.zhijiejiaoyu.glory_api.seller.Attachment result = new com.zhijiejiaoyu.glory_api.seller.Attachment(this);
-      result.attachmentId_ = attachmentId_;
-      result.attachmentName_ = attachmentName_;
-      result.attachmentType_ = attachmentType_;
-      result.attachmentUrl_ = attachmentUrl_;
+      result.attachmentId = attachmentId;
+      result.attachmentName = attachmentName;
+      result.attachmentType = attachmentType;
+      result.attachmentUrl = attachmentUrl;
       onBuilt();
       return result;
     }
@@ -517,14 +517,14 @@ private static final long serialVersionUID = 0L;
         setAttachmentId(other.getAttachmentId());
       }
       if (!other.getAttachmentName().isEmpty()) {
-        attachmentName_ = other.attachmentName_;
+        attachmentName = other.attachmentName;
         onChanged();
       }
       if (other.getAttachmentType() != 0) {
         setAttachmentType(other.getAttachmentType());
       }
       if (!other.getAttachmentUrl().isEmpty()) {
-        attachmentUrl_ = other.attachmentUrl_;
+        attachmentUrl = other.attachmentUrl;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -563,7 +563,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getAttachmentId() {
-      return attachmentId_;
+      return attachmentId;
     }
     /**
      * <code>int64 attachment_id = 1;</code>
@@ -572,7 +572,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setAttachmentId(long value) {
       
-      attachmentId_ = value;
+      attachmentId = value;
       onChanged();
       return this;
     }
@@ -582,23 +582,23 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearAttachmentId() {
       
-      attachmentId_ = 0L;
+      attachmentId = 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object attachmentName_ = "";
+    private java.lang.Object attachmentName = "";
     /**
      * <code>string attachment_name = 2;</code>
      * @return The attachmentName.
      */
     public java.lang.String getAttachmentName() {
-      java.lang.Object ref = attachmentName_;
+      java.lang.Object ref = attachmentName;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        attachmentName_ = s;
+        attachmentName = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -610,12 +610,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getAttachmentNameBytes() {
-      java.lang.Object ref = attachmentName_;
+      java.lang.Object ref = attachmentName;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        attachmentName_ = b;
+        attachmentName = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -632,7 +632,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      attachmentName_ = value;
+      attachmentName = value;
       onChanged();
       return this;
     }
@@ -642,7 +642,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearAttachmentName() {
       
-      attachmentName_ = getDefaultInstance().getAttachmentName();
+      attachmentName = getDefaultInstance().getAttachmentName();
       onChanged();
       return this;
     }
@@ -658,7 +658,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      attachmentName_ = value;
+      attachmentName = value;
       onChanged();
       return this;
     }
@@ -670,7 +670,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public int getAttachmentType() {
-      return attachmentType_;
+      return attachmentType;
     }
     /**
      * <code>int32 attachment_type = 3;</code>
@@ -679,7 +679,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setAttachmentType(int value) {
       
-      attachmentType_ = value;
+      attachmentType = value;
       onChanged();
       return this;
     }
@@ -689,23 +689,23 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearAttachmentType() {
       
-      attachmentType_ = 0;
+      attachmentType = 0;
       onChanged();
       return this;
     }
 
-    private java.lang.Object attachmentUrl_ = "";
+    private java.lang.Object attachmentUrl = "";
     /**
      * <code>string attachment_url = 4;</code>
      * @return The attachmentUrl.
      */
     public java.lang.String getAttachmentUrl() {
-      java.lang.Object ref = attachmentUrl_;
+      java.lang.Object ref = attachmentUrl;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        attachmentUrl_ = s;
+        attachmentUrl = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -717,12 +717,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getAttachmentUrlBytes() {
-      java.lang.Object ref = attachmentUrl_;
+      java.lang.Object ref = attachmentUrl;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        attachmentUrl_ = b;
+        attachmentUrl = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -739,7 +739,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      attachmentUrl_ = value;
+      attachmentUrl = value;
       onChanged();
       return this;
     }
@@ -749,7 +749,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearAttachmentUrl() {
       
-      attachmentUrl_ = getDefaultInstance().getAttachmentUrl();
+      attachmentUrl = getDefaultInstance().getAttachmentUrl();
       onChanged();
       return this;
     }
@@ -765,7 +765,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      attachmentUrl_ = value;
+      attachmentUrl = value;
       onChanged();
       return this;
     }

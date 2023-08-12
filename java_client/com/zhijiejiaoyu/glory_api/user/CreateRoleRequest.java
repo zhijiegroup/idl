@@ -53,10 +53,10 @@ private static final long serialVersionUID = 0L;
             if (baseRequest_ != null) {
               subBuilder = baseRequest_.toBuilder();
             }
-            baseRequest_ = input.readMessage(com.zhijiejiaoyu.base.BaseRequest.parser(), extensionRegistry);
+            baseRequest = input.readMessage(com.zhijiejiaoyu.base.BaseRequest.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(baseRequest_);
-              baseRequest_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(baseRequest);
+              baseRequest = subBuilder.buildPartial();
             }
 
             break;
@@ -66,10 +66,10 @@ private static final long serialVersionUID = 0L;
             if (role_ != null) {
               subBuilder = role_.toBuilder();
             }
-            role_ = input.readMessage(com.zhijiejiaoyu.glory_api.user.Role.parser(), extensionRegistry);
+            role = input.readMessage(com.zhijiejiaoyu.glory_api.user.Role.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(role_);
-              role_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(role);
+              role = subBuilder.buildPartial();
             }
 
             break;
@@ -107,7 +107,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int BASE_REQUEST_FIELD_NUMBER = 1;
-  private com.zhijiejiaoyu.base.BaseRequest baseRequest_;
+  private com.zhijiejiaoyu.base.BaseRequest baseRequest;
   /**
    * <code>.base.BaseRequest base_request = 1;</code>
    * @return Whether the baseRequest field is set.
@@ -122,7 +122,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.zhijiejiaoyu.base.BaseRequest getBaseRequest() {
-    return baseRequest_ == null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest_;
+    return baseRequest == null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
   }
   /**
    * <code>.base.BaseRequest base_request = 1;</code>
@@ -133,7 +133,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ROLE_FIELD_NUMBER = 2;
-  private com.zhijiejiaoyu.glory_api.user.Role role_;
+  private com.zhijiejiaoyu.glory_api.user.Role role;
   /**
    * <code>.glory_api.Role role = 2;</code>
    * @return Whether the role field is set.
@@ -148,7 +148,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.user.Role getRole() {
-    return role_ == null ? com.zhijiejiaoyu.glory_api.user.Role.getDefaultInstance() : role_;
+    return role == null ? com.zhijiejiaoyu.glory_api.user.Role.getDefaultInstance() : role;
   }
   /**
    * <code>.glory_api.Role role = 2;</code>
@@ -372,17 +372,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (baseRequestBuilder_ == null) {
-        baseRequest_ = null;
+      if (baseRequestBuilder == null) {
+        baseRequest = null;
       } else {
-        baseRequest_ = null;
-        baseRequestBuilder_ = null;
+        baseRequest = null;
+        baseRequestBuilder = null;
       }
-      if (roleBuilder_ == null) {
-        role_ = null;
+      if (roleBuilder == null) {
+        role = null;
       } else {
-        role_ = null;
-        roleBuilder_ = null;
+        role = null;
+        roleBuilder = null;
       }
       return this;
     }
@@ -410,15 +410,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.user.CreateRoleRequest buildPartial() {
       com.zhijiejiaoyu.glory_api.user.CreateRoleRequest result = new com.zhijiejiaoyu.glory_api.user.CreateRoleRequest(this);
-      if (baseRequestBuilder_ == null) {
-        result.baseRequest_ = baseRequest_;
+      if (baseRequestBuilder == null) {
+        result.baseRequest = baseRequest;
       } else {
-        result.baseRequest_ = baseRequestBuilder_.build();
+        result.baseRequest = baseRequestBuilder_.build();
       }
-      if (roleBuilder_ == null) {
-        result.role_ = role_;
+      if (roleBuilder == null) {
+        result.role = role;
       } else {
-        result.role_ = roleBuilder_.build();
+        result.role = roleBuilder_.build();
       }
       onBuilt();
       return result;
@@ -503,9 +503,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.zhijiejiaoyu.base.BaseRequest baseRequest_;
+    private com.zhijiejiaoyu.base.BaseRequest baseRequest;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder> baseRequestBuilder_;
+        com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder> baseRequestBuilder;
     /**
      * <code>.base.BaseRequest base_request = 1;</code>
      * @return Whether the baseRequest field is set.
@@ -518,8 +518,8 @@ private static final long serialVersionUID = 0L;
      * @return The baseRequest.
      */
     public com.zhijiejiaoyu.base.BaseRequest getBaseRequest() {
-      if (baseRequestBuilder_ == null) {
-        return baseRequest_ == null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest_;
+      if (baseRequestBuilder == null) {
+        return baseRequest == null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
       } else {
         return baseRequestBuilder_.getMessage();
       }
@@ -528,11 +528,11 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseRequest base_request = 1;</code>
      */
     public Builder setBaseRequest(com.zhijiejiaoyu.base.BaseRequest value) {
-      if (baseRequestBuilder_ == null) {
+      if (baseRequestBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        baseRequest_ = value;
+        baseRequest = value;
         onChanged();
       } else {
         baseRequestBuilder_.setMessage(value);
@@ -545,8 +545,8 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setBaseRequest(
         com.zhijiejiaoyu.base.BaseRequest.Builder builderForValue) {
-      if (baseRequestBuilder_ == null) {
-        baseRequest_ = builderForValue.build();
+      if (baseRequestBuilder == null) {
+        baseRequest = builderForValue.build();
         onChanged();
       } else {
         baseRequestBuilder_.setMessage(builderForValue.build());
@@ -558,12 +558,12 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseRequest base_request = 1;</code>
      */
     public Builder mergeBaseRequest(com.zhijiejiaoyu.base.BaseRequest value) {
-      if (baseRequestBuilder_ == null) {
+      if (baseRequestBuilder == null) {
         if (baseRequest_ != null) {
-          baseRequest_ =
-            com.zhijiejiaoyu.base.BaseRequest.newBuilder(baseRequest_).mergeFrom(value).buildPartial();
+          baseRequest =
+            com.zhijiejiaoyu.base.BaseRequest.newBuilder(baseRequest).mergeFrom(value).buildPartial();
         } else {
-          baseRequest_ = value;
+          baseRequest = value;
         }
         onChanged();
       } else {
@@ -576,12 +576,12 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseRequest base_request = 1;</code>
      */
     public Builder clearBaseRequest() {
-      if (baseRequestBuilder_ == null) {
-        baseRequest_ = null;
+      if (baseRequestBuilder == null) {
+        baseRequest = null;
         onChanged();
       } else {
-        baseRequest_ = null;
-        baseRequestBuilder_ = null;
+        baseRequest = null;
+        baseRequestBuilder = null;
       }
 
       return this;
@@ -601,8 +601,8 @@ private static final long serialVersionUID = 0L;
       if (baseRequestBuilder_ != null) {
         return baseRequestBuilder_.getMessageOrBuilder();
       } else {
-        return baseRequest_ == null ?
-            com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest_;
+        return baseRequest == null ?
+            com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
       }
     }
     /**
@@ -611,20 +611,20 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder> 
         getBaseRequestFieldBuilder() {
-      if (baseRequestBuilder_ == null) {
-        baseRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+      if (baseRequestBuilder == null) {
+        baseRequestBuilder = new com.google.protobuf.SingleFieldBuilderV3<
             com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder>(
                 getBaseRequest(),
                 getParentForChildren(),
                 isClean());
-        baseRequest_ = null;
+        baseRequest = null;
       }
-      return baseRequestBuilder_;
+      return baseRequestBuilder;
     }
 
-    private com.zhijiejiaoyu.glory_api.user.Role role_;
+    private com.zhijiejiaoyu.glory_api.user.Role role;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.user.Role, com.zhijiejiaoyu.glory_api.user.Role.Builder, com.zhijiejiaoyu.glory_api.user.RoleOrBuilder> roleBuilder_;
+        com.zhijiejiaoyu.glory_api.user.Role, com.zhijiejiaoyu.glory_api.user.Role.Builder, com.zhijiejiaoyu.glory_api.user.RoleOrBuilder> roleBuilder;
     /**
      * <code>.glory_api.Role role = 2;</code>
      * @return Whether the role field is set.
@@ -637,8 +637,8 @@ private static final long serialVersionUID = 0L;
      * @return The role.
      */
     public com.zhijiejiaoyu.glory_api.user.Role getRole() {
-      if (roleBuilder_ == null) {
-        return role_ == null ? com.zhijiejiaoyu.glory_api.user.Role.getDefaultInstance() : role_;
+      if (roleBuilder == null) {
+        return role == null ? com.zhijiejiaoyu.glory_api.user.Role.getDefaultInstance() : role;
       } else {
         return roleBuilder_.getMessage();
       }
@@ -647,11 +647,11 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.Role role = 2;</code>
      */
     public Builder setRole(com.zhijiejiaoyu.glory_api.user.Role value) {
-      if (roleBuilder_ == null) {
+      if (roleBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        role_ = value;
+        role = value;
         onChanged();
       } else {
         roleBuilder_.setMessage(value);
@@ -664,8 +664,8 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setRole(
         com.zhijiejiaoyu.glory_api.user.Role.Builder builderForValue) {
-      if (roleBuilder_ == null) {
-        role_ = builderForValue.build();
+      if (roleBuilder == null) {
+        role = builderForValue.build();
         onChanged();
       } else {
         roleBuilder_.setMessage(builderForValue.build());
@@ -677,12 +677,12 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.Role role = 2;</code>
      */
     public Builder mergeRole(com.zhijiejiaoyu.glory_api.user.Role value) {
-      if (roleBuilder_ == null) {
+      if (roleBuilder == null) {
         if (role_ != null) {
-          role_ =
-            com.zhijiejiaoyu.glory_api.user.Role.newBuilder(role_).mergeFrom(value).buildPartial();
+          role =
+            com.zhijiejiaoyu.glory_api.user.Role.newBuilder(role).mergeFrom(value).buildPartial();
         } else {
-          role_ = value;
+          role = value;
         }
         onChanged();
       } else {
@@ -695,12 +695,12 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.Role role = 2;</code>
      */
     public Builder clearRole() {
-      if (roleBuilder_ == null) {
-        role_ = null;
+      if (roleBuilder == null) {
+        role = null;
         onChanged();
       } else {
-        role_ = null;
-        roleBuilder_ = null;
+        role = null;
+        roleBuilder = null;
       }
 
       return this;
@@ -720,8 +720,8 @@ private static final long serialVersionUID = 0L;
       if (roleBuilder_ != null) {
         return roleBuilder_.getMessageOrBuilder();
       } else {
-        return role_ == null ?
-            com.zhijiejiaoyu.glory_api.user.Role.getDefaultInstance() : role_;
+        return role == null ?
+            com.zhijiejiaoyu.glory_api.user.Role.getDefaultInstance() : role;
       }
     }
     /**
@@ -730,15 +730,15 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.user.Role, com.zhijiejiaoyu.glory_api.user.Role.Builder, com.zhijiejiaoyu.glory_api.user.RoleOrBuilder> 
         getRoleFieldBuilder() {
-      if (roleBuilder_ == null) {
-        roleBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+      if (roleBuilder == null) {
+        roleBuilder = new com.google.protobuf.SingleFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.user.Role, com.zhijiejiaoyu.glory_api.user.Role.Builder, com.zhijiejiaoyu.glory_api.user.RoleOrBuilder>(
                 getRole(),
                 getParentForChildren(),
                 isClean());
-        role_ = null;
+        role = null;
       }
-      return roleBuilder_;
+      return roleBuilder;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

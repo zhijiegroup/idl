@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private DealAmount() {
-    curreny_ = "";
+    curreny = "";
   }
 
   @java.lang.Override
@@ -52,12 +52,12 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            curreny_ = s;
+            curreny = s;
             break;
           }
           case 17: {
 
-            amount_ = input.readDouble();
+            amount = input.readDouble();
             break;
           }
           default: {
@@ -93,21 +93,21 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CURRENY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object curreny_;
+  private volatile java.lang.Object curreny;
   /**
    * <code>string curreny = 1;</code>
    * @return The curreny.
    */
   @java.lang.Override
   public java.lang.String getCurreny() {
-    java.lang.Object ref = curreny_;
+    java.lang.Object ref = curreny;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      curreny_ = s;
+      curreny = s;
       return s;
     }
   }
@@ -118,12 +118,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getCurrenyBytes() {
-    java.lang.Object ref = curreny_;
+    java.lang.Object ref = curreny;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      curreny_ = b;
+      curreny = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -131,14 +131,14 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int AMOUNT_FIELD_NUMBER = 2;
-  private double amount_;
+  private double amount;
   /**
    * <code>double amount = 2;</code>
    * @return The amount.
    */
   @java.lang.Override
   public double getAmount() {
-    return amount_;
+    return amount;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -156,10 +156,10 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getCurrenyBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, curreny_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, curreny);
     }
     if (amount_ != 0D) {
-      output.writeDouble(2, amount_);
+      output.writeDouble(2, amount);
     }
     unknownFields.writeTo(output);
   }
@@ -171,11 +171,11 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (!getCurrenyBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, curreny_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, curreny);
     }
     if (amount_ != 0D) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(2, amount_);
+        .computeDoubleSize(2, amount);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -346,9 +346,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      curreny_ = "";
+      curreny = "";
 
-      amount_ = 0D;
+      amount = 0D;
 
       return this;
     }
@@ -376,8 +376,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.live.DealAmount buildPartial() {
       com.zhijiejiaoyu.glory_api.live.DealAmount result = new com.zhijiejiaoyu.glory_api.live.DealAmount(this);
-      result.curreny_ = curreny_;
-      result.amount_ = amount_;
+      result.curreny = curreny;
+      result.amount = amount;
       onBuilt();
       return result;
     }
@@ -427,7 +427,7 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.zhijiejiaoyu.glory_api.live.DealAmount other) {
       if (other == com.zhijiejiaoyu.glory_api.live.DealAmount.getDefaultInstance()) return this;
       if (!other.getCurreny().isEmpty()) {
-        curreny_ = other.curreny_;
+        curreny = other.curreny;
         onChanged();
       }
       if (other.getAmount() != 0D) {
@@ -462,18 +462,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object curreny_ = "";
+    private java.lang.Object curreny = "";
     /**
      * <code>string curreny = 1;</code>
      * @return The curreny.
      */
     public java.lang.String getCurreny() {
-      java.lang.Object ref = curreny_;
+      java.lang.Object ref = curreny;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        curreny_ = s;
+        curreny = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -485,12 +485,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getCurrenyBytes() {
-      java.lang.Object ref = curreny_;
+      java.lang.Object ref = curreny;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        curreny_ = b;
+        curreny = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -507,7 +507,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      curreny_ = value;
+      curreny = value;
       onChanged();
       return this;
     }
@@ -517,7 +517,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearCurreny() {
       
-      curreny_ = getDefaultInstance().getCurreny();
+      curreny = getDefaultInstance().getCurreny();
       onChanged();
       return this;
     }
@@ -533,7 +533,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      curreny_ = value;
+      curreny = value;
       onChanged();
       return this;
     }
@@ -545,7 +545,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public double getAmount() {
-      return amount_;
+      return amount;
     }
     /**
      * <code>double amount = 2;</code>
@@ -554,7 +554,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setAmount(double value) {
       
-      amount_ = value;
+      amount = value;
       onChanged();
       return this;
     }
@@ -564,7 +564,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearAmount() {
       
-      amount_ = 0D;
+      amount = 0D;
       onChanged();
       return this;
     }

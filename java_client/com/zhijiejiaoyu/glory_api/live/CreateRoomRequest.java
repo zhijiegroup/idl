@@ -16,8 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CreateRoomRequest() {
-    groupId_ = "";
-    roomTitle_ = "";
+    groupId = "";
+    roomTitle = "";
   }
 
   @java.lang.Override
@@ -55,34 +55,34 @@ private static final long serialVersionUID = 0L;
             if (baseRequest_ != null) {
               subBuilder = baseRequest_.toBuilder();
             }
-            baseRequest_ = input.readMessage(com.zhijiejiaoyu.base.BaseRequest.parser(), extensionRegistry);
+            baseRequest = input.readMessage(com.zhijiejiaoyu.base.BaseRequest.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(baseRequest_);
-              baseRequest_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(baseRequest);
+              baseRequest = subBuilder.buildPartial();
             }
 
             break;
           }
           case 16: {
 
-            shopId_ = input.readInt64();
+            shopId = input.readInt64();
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            groupId_ = s;
+            groupId = s;
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            roomTitle_ = s;
+            roomTitle = s;
             break;
           }
           case 40: {
 
-            roomImageAttachmentId_ = input.readInt64();
+            roomImageAttachmentId = input.readInt64();
             break;
           }
           default: {
@@ -118,7 +118,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int BASE_REQUEST_FIELD_NUMBER = 1;
-  private com.zhijiejiaoyu.base.BaseRequest baseRequest_;
+  private com.zhijiejiaoyu.base.BaseRequest baseRequest;
   /**
    * <code>.base.BaseRequest base_request = 1;</code>
    * @return Whether the baseRequest field is set.
@@ -133,7 +133,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.zhijiejiaoyu.base.BaseRequest getBaseRequest() {
-    return baseRequest_ == null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest_;
+    return baseRequest == null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
   }
   /**
    * <code>.base.BaseRequest base_request = 1;</code>
@@ -144,32 +144,32 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int SHOP_ID_FIELD_NUMBER = 2;
-  private long shopId_;
+  private long shopId;
   /**
    * <code>int64 shop_id = 2;</code>
    * @return The shopId.
    */
   @java.lang.Override
   public long getShopId() {
-    return shopId_;
+    return shopId;
   }
 
   public static final int GROUP_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object groupId_;
+  private volatile java.lang.Object groupId;
   /**
    * <code>string group_id = 3;</code>
    * @return The groupId.
    */
   @java.lang.Override
   public java.lang.String getGroupId() {
-    java.lang.Object ref = groupId_;
+    java.lang.Object ref = groupId;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      groupId_ = s;
+      groupId = s;
       return s;
     }
   }
@@ -180,12 +180,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getGroupIdBytes() {
-    java.lang.Object ref = groupId_;
+    java.lang.Object ref = groupId;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      groupId_ = b;
+      groupId = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -193,7 +193,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ROOM_TITLE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object roomTitle_;
+  private volatile java.lang.Object roomTitle;
   /**
    * <pre>
    * 直播房间的标题
@@ -204,14 +204,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public java.lang.String getRoomTitle() {
-    java.lang.Object ref = roomTitle_;
+    java.lang.Object ref = roomTitle;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      roomTitle_ = s;
+      roomTitle = s;
       return s;
     }
   }
@@ -226,12 +226,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getRoomTitleBytes() {
-    java.lang.Object ref = roomTitle_;
+    java.lang.Object ref = roomTitle;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      roomTitle_ = b;
+      roomTitle = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -239,7 +239,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ROOM_IMAGE_ATTACHMENT_ID_FIELD_NUMBER = 5;
-  private long roomImageAttachmentId_;
+  private long roomImageAttachmentId;
   /**
    * <pre>
    * 直播房间的图片的id
@@ -250,7 +250,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public long getRoomImageAttachmentId() {
-    return roomImageAttachmentId_;
+    return roomImageAttachmentId;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -271,16 +271,16 @@ private static final long serialVersionUID = 0L;
       output.writeMessage(1, getBaseRequest());
     }
     if (shopId_ != 0L) {
-      output.writeInt64(2, shopId_);
+      output.writeInt64(2, shopId);
     }
     if (!getGroupIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, groupId_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, groupId);
     }
     if (!getRoomTitleBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, roomTitle_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, roomTitle);
     }
     if (roomImageAttachmentId_ != 0L) {
-      output.writeInt64(5, roomImageAttachmentId_);
+      output.writeInt64(5, roomImageAttachmentId);
     }
     unknownFields.writeTo(output);
   }
@@ -297,17 +297,17 @@ private static final long serialVersionUID = 0L;
     }
     if (shopId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, shopId_);
+        .computeInt64Size(2, shopId);
     }
     if (!getGroupIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, groupId_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, groupId);
     }
     if (!getRoomTitleBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, roomTitle_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, roomTitle);
     }
     if (roomImageAttachmentId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(5, roomImageAttachmentId_);
+        .computeInt64Size(5, roomImageAttachmentId);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -495,19 +495,19 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (baseRequestBuilder_ == null) {
-        baseRequest_ = null;
+      if (baseRequestBuilder == null) {
+        baseRequest = null;
       } else {
-        baseRequest_ = null;
-        baseRequestBuilder_ = null;
+        baseRequest = null;
+        baseRequestBuilder = null;
       }
-      shopId_ = 0L;
+      shopId = 0L;
 
-      groupId_ = "";
+      groupId = "";
 
-      roomTitle_ = "";
+      roomTitle = "";
 
-      roomImageAttachmentId_ = 0L;
+      roomImageAttachmentId = 0L;
 
       return this;
     }
@@ -535,15 +535,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.live.CreateRoomRequest buildPartial() {
       com.zhijiejiaoyu.glory_api.live.CreateRoomRequest result = new com.zhijiejiaoyu.glory_api.live.CreateRoomRequest(this);
-      if (baseRequestBuilder_ == null) {
-        result.baseRequest_ = baseRequest_;
+      if (baseRequestBuilder == null) {
+        result.baseRequest = baseRequest;
       } else {
-        result.baseRequest_ = baseRequestBuilder_.build();
+        result.baseRequest = baseRequestBuilder_.build();
       }
-      result.shopId_ = shopId_;
-      result.groupId_ = groupId_;
-      result.roomTitle_ = roomTitle_;
-      result.roomImageAttachmentId_ = roomImageAttachmentId_;
+      result.shopId = shopId;
+      result.groupId = groupId;
+      result.roomTitle = roomTitle;
+      result.roomImageAttachmentId = roomImageAttachmentId;
       onBuilt();
       return result;
     }
@@ -599,11 +599,11 @@ private static final long serialVersionUID = 0L;
         setShopId(other.getShopId());
       }
       if (!other.getGroupId().isEmpty()) {
-        groupId_ = other.groupId_;
+        groupId = other.groupId;
         onChanged();
       }
       if (!other.getRoomTitle().isEmpty()) {
-        roomTitle_ = other.roomTitle_;
+        roomTitle = other.roomTitle;
         onChanged();
       }
       if (other.getRoomImageAttachmentId() != 0L) {
@@ -638,9 +638,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.zhijiejiaoyu.base.BaseRequest baseRequest_;
+    private com.zhijiejiaoyu.base.BaseRequest baseRequest;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder> baseRequestBuilder_;
+        com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder> baseRequestBuilder;
     /**
      * <code>.base.BaseRequest base_request = 1;</code>
      * @return Whether the baseRequest field is set.
@@ -653,8 +653,8 @@ private static final long serialVersionUID = 0L;
      * @return The baseRequest.
      */
     public com.zhijiejiaoyu.base.BaseRequest getBaseRequest() {
-      if (baseRequestBuilder_ == null) {
-        return baseRequest_ == null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest_;
+      if (baseRequestBuilder == null) {
+        return baseRequest == null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
       } else {
         return baseRequestBuilder_.getMessage();
       }
@@ -663,11 +663,11 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseRequest base_request = 1;</code>
      */
     public Builder setBaseRequest(com.zhijiejiaoyu.base.BaseRequest value) {
-      if (baseRequestBuilder_ == null) {
+      if (baseRequestBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        baseRequest_ = value;
+        baseRequest = value;
         onChanged();
       } else {
         baseRequestBuilder_.setMessage(value);
@@ -680,8 +680,8 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setBaseRequest(
         com.zhijiejiaoyu.base.BaseRequest.Builder builderForValue) {
-      if (baseRequestBuilder_ == null) {
-        baseRequest_ = builderForValue.build();
+      if (baseRequestBuilder == null) {
+        baseRequest = builderForValue.build();
         onChanged();
       } else {
         baseRequestBuilder_.setMessage(builderForValue.build());
@@ -693,12 +693,12 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseRequest base_request = 1;</code>
      */
     public Builder mergeBaseRequest(com.zhijiejiaoyu.base.BaseRequest value) {
-      if (baseRequestBuilder_ == null) {
+      if (baseRequestBuilder == null) {
         if (baseRequest_ != null) {
-          baseRequest_ =
-            com.zhijiejiaoyu.base.BaseRequest.newBuilder(baseRequest_).mergeFrom(value).buildPartial();
+          baseRequest =
+            com.zhijiejiaoyu.base.BaseRequest.newBuilder(baseRequest).mergeFrom(value).buildPartial();
         } else {
-          baseRequest_ = value;
+          baseRequest = value;
         }
         onChanged();
       } else {
@@ -711,12 +711,12 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseRequest base_request = 1;</code>
      */
     public Builder clearBaseRequest() {
-      if (baseRequestBuilder_ == null) {
-        baseRequest_ = null;
+      if (baseRequestBuilder == null) {
+        baseRequest = null;
         onChanged();
       } else {
-        baseRequest_ = null;
-        baseRequestBuilder_ = null;
+        baseRequest = null;
+        baseRequestBuilder = null;
       }
 
       return this;
@@ -736,8 +736,8 @@ private static final long serialVersionUID = 0L;
       if (baseRequestBuilder_ != null) {
         return baseRequestBuilder_.getMessageOrBuilder();
       } else {
-        return baseRequest_ == null ?
-            com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest_;
+        return baseRequest == null ?
+            com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
       }
     }
     /**
@@ -746,15 +746,15 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder> 
         getBaseRequestFieldBuilder() {
-      if (baseRequestBuilder_ == null) {
-        baseRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+      if (baseRequestBuilder == null) {
+        baseRequestBuilder = new com.google.protobuf.SingleFieldBuilderV3<
             com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder>(
                 getBaseRequest(),
                 getParentForChildren(),
                 isClean());
-        baseRequest_ = null;
+        baseRequest = null;
       }
-      return baseRequestBuilder_;
+      return baseRequestBuilder;
     }
 
     private long shopId_ ;
@@ -764,7 +764,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getShopId() {
-      return shopId_;
+      return shopId;
     }
     /**
      * <code>int64 shop_id = 2;</code>
@@ -773,7 +773,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setShopId(long value) {
       
-      shopId_ = value;
+      shopId = value;
       onChanged();
       return this;
     }
@@ -783,23 +783,23 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearShopId() {
       
-      shopId_ = 0L;
+      shopId = 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object groupId_ = "";
+    private java.lang.Object groupId = "";
     /**
      * <code>string group_id = 3;</code>
      * @return The groupId.
      */
     public java.lang.String getGroupId() {
-      java.lang.Object ref = groupId_;
+      java.lang.Object ref = groupId;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        groupId_ = s;
+        groupId = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -811,12 +811,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getGroupIdBytes() {
-      java.lang.Object ref = groupId_;
+      java.lang.Object ref = groupId;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        groupId_ = b;
+        groupId = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -833,7 +833,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      groupId_ = value;
+      groupId = value;
       onChanged();
       return this;
     }
@@ -843,7 +843,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearGroupId() {
       
-      groupId_ = getDefaultInstance().getGroupId();
+      groupId = getDefaultInstance().getGroupId();
       onChanged();
       return this;
     }
@@ -859,12 +859,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      groupId_ = value;
+      groupId = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object roomTitle_ = "";
+    private java.lang.Object roomTitle = "";
     /**
      * <pre>
      * 直播房间的标题
@@ -874,12 +874,12 @@ private static final long serialVersionUID = 0L;
      * @return The roomTitle.
      */
     public java.lang.String getRoomTitle() {
-      java.lang.Object ref = roomTitle_;
+      java.lang.Object ref = roomTitle;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        roomTitle_ = s;
+        roomTitle = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -895,12 +895,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getRoomTitleBytes() {
-      java.lang.Object ref = roomTitle_;
+      java.lang.Object ref = roomTitle;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        roomTitle_ = b;
+        roomTitle = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -921,7 +921,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      roomTitle_ = value;
+      roomTitle = value;
       onChanged();
       return this;
     }
@@ -935,7 +935,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearRoomTitle() {
       
-      roomTitle_ = getDefaultInstance().getRoomTitle();
+      roomTitle = getDefaultInstance().getRoomTitle();
       onChanged();
       return this;
     }
@@ -955,7 +955,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      roomTitle_ = value;
+      roomTitle = value;
       onChanged();
       return this;
     }
@@ -971,7 +971,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getRoomImageAttachmentId() {
-      return roomImageAttachmentId_;
+      return roomImageAttachmentId;
     }
     /**
      * <pre>
@@ -984,7 +984,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setRoomImageAttachmentId(long value) {
       
-      roomImageAttachmentId_ = value;
+      roomImageAttachmentId = value;
       onChanged();
       return this;
     }
@@ -998,7 +998,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearRoomImageAttachmentId() {
       
-      roomImageAttachmentId_ = 0L;
+      roomImageAttachmentId = 0L;
       onChanged();
       return this;
     }

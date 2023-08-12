@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private GetUserPagePermissionResponse() {
-    pagePermission_ = java.util.Collections.emptyList();
+    pagePermission = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -39,7 +39,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
+    int mutable_bitField0 = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -55,17 +55,17 @@ private static final long serialVersionUID = 0L;
             if (baseResp_ != null) {
               subBuilder = baseResp_.toBuilder();
             }
-            baseResp_ = input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
+            baseResp = input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(baseResp_);
-              baseResp_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(baseResp);
+              baseResp = subBuilder.buildPartial();
             }
 
             break;
           }
           case 18: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              pagePermission_ = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.PagePermission>();
+              pagePermission = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.PagePermission>();
               mutable_bitField0_ |= 0x00000001;
             }
             pagePermission_.add(
@@ -88,7 +88,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        pagePermission_ = java.util.Collections.unmodifiableList(pagePermission_);
+        pagePermission = java.util.Collections.unmodifiableList(pagePermission);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -108,7 +108,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int BASE_RESP_FIELD_NUMBER = 1;
-  private com.zhijiejiaoyu.base.BaseResponse baseResp_;
+  private com.zhijiejiaoyu.base.BaseResponse baseResp;
   /**
    * <code>.base.BaseResponse base_resp = 1;</code>
    * @return Whether the baseResp field is set.
@@ -123,7 +123,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.zhijiejiaoyu.base.BaseResponse getBaseResp() {
-    return baseResp_ == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp_;
+    return baseResp == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
   }
   /**
    * <code>.base.BaseResponse base_resp = 1;</code>
@@ -134,7 +134,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PAGE_PERMISSION_FIELD_NUMBER = 2;
-  private java.util.List<com.zhijiejiaoyu.glory_api.user.PagePermission> pagePermission_;
+  private java.util.List<com.zhijiejiaoyu.glory_api.user.PagePermission> pagePermission;
   /**
    * <pre>
    * page permission of the user
@@ -144,7 +144,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.user.PagePermission> getPagePermissionList() {
-    return pagePermission_;
+    return pagePermission;
   }
   /**
    * <pre>
@@ -156,7 +156,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder> 
       getPagePermissionOrBuilderList() {
-    return pagePermission_;
+    return pagePermission;
   }
   /**
    * <pre>
@@ -405,15 +405,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (baseRespBuilder_ == null) {
-        baseResp_ = null;
+      if (baseRespBuilder == null) {
+        baseResp = null;
       } else {
-        baseResp_ = null;
-        baseRespBuilder_ = null;
+        baseResp = null;
+        baseRespBuilder = null;
       }
-      if (pagePermissionBuilder_ == null) {
-        pagePermission_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      if (pagePermissionBuilder == null) {
+        pagePermission = java.util.Collections.emptyList();
+        bitField0 = (bitField0_ & ~0x00000001);
       } else {
         pagePermissionBuilder_.clear();
       }
@@ -443,20 +443,20 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.user.GetUserPagePermissionResponse buildPartial() {
       com.zhijiejiaoyu.glory_api.user.GetUserPagePermissionResponse result = new com.zhijiejiaoyu.glory_api.user.GetUserPagePermissionResponse(this);
-      int from_bitField0_ = bitField0_;
-      if (baseRespBuilder_ == null) {
-        result.baseResp_ = baseResp_;
+      int from_bitField0 = bitField0;
+      if (baseRespBuilder == null) {
+        result.baseResp = baseResp;
       } else {
-        result.baseResp_ = baseRespBuilder_.build();
+        result.baseResp = baseRespBuilder_.build();
       }
-      if (pagePermissionBuilder_ == null) {
+      if (pagePermissionBuilder == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
-          pagePermission_ = java.util.Collections.unmodifiableList(pagePermission_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          pagePermission = java.util.Collections.unmodifiableList(pagePermission);
+          bitField0 = (bitField0_ & ~0x00000001);
         }
-        result.pagePermission_ = pagePermission_;
+        result.pagePermission = pagePermission;
       } else {
-        result.pagePermission_ = pagePermissionBuilder_.build();
+        result.pagePermission = pagePermissionBuilder_.build();
       }
       onBuilt();
       return result;
@@ -509,14 +509,14 @@ private static final long serialVersionUID = 0L;
       if (other.hasBaseResp()) {
         mergeBaseResp(other.getBaseResp());
       }
-      if (pagePermissionBuilder_ == null) {
+      if (pagePermissionBuilder == null) {
         if (!other.pagePermission_.isEmpty()) {
           if (pagePermission_.isEmpty()) {
-            pagePermission_ = other.pagePermission_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            pagePermission = other.pagePermission;
+            bitField0 = (bitField0_ & ~0x00000001);
           } else {
             ensurePagePermissionIsMutable();
-            pagePermission_.addAll(other.pagePermission_);
+            pagePermission_.addAll(other.pagePermission);
           }
           onChanged();
         }
@@ -524,14 +524,14 @@ private static final long serialVersionUID = 0L;
         if (!other.pagePermission_.isEmpty()) {
           if (pagePermissionBuilder_.isEmpty()) {
             pagePermissionBuilder_.dispose();
-            pagePermissionBuilder_ = null;
-            pagePermission_ = other.pagePermission_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-            pagePermissionBuilder_ = 
+            pagePermissionBuilder = null;
+            pagePermission = other.pagePermission;
+            bitField0 = (bitField0_ & ~0x00000001);
+            pagePermissionBuilder = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getPagePermissionFieldBuilder() : null;
           } else {
-            pagePermissionBuilder_.addAllMessages(other.pagePermission_);
+            pagePermissionBuilder_.addAllMessages(other.pagePermission);
           }
         }
       }
@@ -563,11 +563,11 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int bitField0_;
+    private int bitField0;
 
-    private com.zhijiejiaoyu.base.BaseResponse baseResp_;
+    private com.zhijiejiaoyu.base.BaseResponse baseResp;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.base.BaseResponse, com.zhijiejiaoyu.base.BaseResponse.Builder, com.zhijiejiaoyu.base.BaseResponseOrBuilder> baseRespBuilder_;
+        com.zhijiejiaoyu.base.BaseResponse, com.zhijiejiaoyu.base.BaseResponse.Builder, com.zhijiejiaoyu.base.BaseResponseOrBuilder> baseRespBuilder;
     /**
      * <code>.base.BaseResponse base_resp = 1;</code>
      * @return Whether the baseResp field is set.
@@ -580,8 +580,8 @@ private static final long serialVersionUID = 0L;
      * @return The baseResp.
      */
     public com.zhijiejiaoyu.base.BaseResponse getBaseResp() {
-      if (baseRespBuilder_ == null) {
-        return baseResp_ == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp_;
+      if (baseRespBuilder == null) {
+        return baseResp == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
       } else {
         return baseRespBuilder_.getMessage();
       }
@@ -590,11 +590,11 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public Builder setBaseResp(com.zhijiejiaoyu.base.BaseResponse value) {
-      if (baseRespBuilder_ == null) {
+      if (baseRespBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        baseResp_ = value;
+        baseResp = value;
         onChanged();
       } else {
         baseRespBuilder_.setMessage(value);
@@ -607,8 +607,8 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setBaseResp(
         com.zhijiejiaoyu.base.BaseResponse.Builder builderForValue) {
-      if (baseRespBuilder_ == null) {
-        baseResp_ = builderForValue.build();
+      if (baseRespBuilder == null) {
+        baseResp = builderForValue.build();
         onChanged();
       } else {
         baseRespBuilder_.setMessage(builderForValue.build());
@@ -620,12 +620,12 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public Builder mergeBaseResp(com.zhijiejiaoyu.base.BaseResponse value) {
-      if (baseRespBuilder_ == null) {
+      if (baseRespBuilder == null) {
         if (baseResp_ != null) {
-          baseResp_ =
-            com.zhijiejiaoyu.base.BaseResponse.newBuilder(baseResp_).mergeFrom(value).buildPartial();
+          baseResp =
+            com.zhijiejiaoyu.base.BaseResponse.newBuilder(baseResp).mergeFrom(value).buildPartial();
         } else {
-          baseResp_ = value;
+          baseResp = value;
         }
         onChanged();
       } else {
@@ -638,12 +638,12 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public Builder clearBaseResp() {
-      if (baseRespBuilder_ == null) {
-        baseResp_ = null;
+      if (baseRespBuilder == null) {
+        baseResp = null;
         onChanged();
       } else {
-        baseResp_ = null;
-        baseRespBuilder_ = null;
+        baseResp = null;
+        baseRespBuilder = null;
       }
 
       return this;
@@ -663,8 +663,8 @@ private static final long serialVersionUID = 0L;
       if (baseRespBuilder_ != null) {
         return baseRespBuilder_.getMessageOrBuilder();
       } else {
-        return baseResp_ == null ?
-            com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp_;
+        return baseResp == null ?
+            com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
       }
     }
     /**
@@ -673,28 +673,28 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.base.BaseResponse, com.zhijiejiaoyu.base.BaseResponse.Builder, com.zhijiejiaoyu.base.BaseResponseOrBuilder> 
         getBaseRespFieldBuilder() {
-      if (baseRespBuilder_ == null) {
-        baseRespBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+      if (baseRespBuilder == null) {
+        baseRespBuilder = new com.google.protobuf.SingleFieldBuilderV3<
             com.zhijiejiaoyu.base.BaseResponse, com.zhijiejiaoyu.base.BaseResponse.Builder, com.zhijiejiaoyu.base.BaseResponseOrBuilder>(
                 getBaseResp(),
                 getParentForChildren(),
                 isClean());
-        baseResp_ = null;
+        baseResp = null;
       }
-      return baseRespBuilder_;
+      return baseRespBuilder;
     }
 
-    private java.util.List<com.zhijiejiaoyu.glory_api.user.PagePermission> pagePermission_ =
+    private java.util.List<com.zhijiejiaoyu.glory_api.user.PagePermission> pagePermission =
       java.util.Collections.emptyList();
     private void ensurePagePermissionIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        pagePermission_ = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.PagePermission>(pagePermission_);
+        pagePermission = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.PagePermission>(pagePermission);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.user.PagePermission, com.zhijiejiaoyu.glory_api.user.PagePermission.Builder, com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder> pagePermissionBuilder_;
+        com.zhijiejiaoyu.glory_api.user.PagePermission, com.zhijiejiaoyu.glory_api.user.PagePermission.Builder, com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder> pagePermissionBuilder;
 
     /**
      * <pre>
@@ -704,8 +704,8 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.PagePermission page_permission = 2;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.user.PagePermission> getPagePermissionList() {
-      if (pagePermissionBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(pagePermission_);
+      if (pagePermissionBuilder == null) {
+        return java.util.Collections.unmodifiableList(pagePermission);
       } else {
         return pagePermissionBuilder_.getMessageList();
       }
@@ -718,7 +718,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.PagePermission page_permission = 2;</code>
      */
     public int getPagePermissionCount() {
-      if (pagePermissionBuilder_ == null) {
+      if (pagePermissionBuilder == null) {
         return pagePermission_.size();
       } else {
         return pagePermissionBuilder_.getCount();
@@ -732,7 +732,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.PagePermission page_permission = 2;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.PagePermission getPagePermission(int index) {
-      if (pagePermissionBuilder_ == null) {
+      if (pagePermissionBuilder == null) {
         return pagePermission_.get(index);
       } else {
         return pagePermissionBuilder_.getMessage(index);
@@ -747,7 +747,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setPagePermission(
         int index, com.zhijiejiaoyu.glory_api.user.PagePermission value) {
-      if (pagePermissionBuilder_ == null) {
+      if (pagePermissionBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -768,7 +768,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setPagePermission(
         int index, com.zhijiejiaoyu.glory_api.user.PagePermission.Builder builderForValue) {
-      if (pagePermissionBuilder_ == null) {
+      if (pagePermissionBuilder == null) {
         ensurePagePermissionIsMutable();
         pagePermission_.set(index, builderForValue.build());
         onChanged();
@@ -785,7 +785,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.PagePermission page_permission = 2;</code>
      */
     public Builder addPagePermission(com.zhijiejiaoyu.glory_api.user.PagePermission value) {
-      if (pagePermissionBuilder_ == null) {
+      if (pagePermissionBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -806,7 +806,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addPagePermission(
         int index, com.zhijiejiaoyu.glory_api.user.PagePermission value) {
-      if (pagePermissionBuilder_ == null) {
+      if (pagePermissionBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -827,7 +827,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addPagePermission(
         com.zhijiejiaoyu.glory_api.user.PagePermission.Builder builderForValue) {
-      if (pagePermissionBuilder_ == null) {
+      if (pagePermissionBuilder == null) {
         ensurePagePermissionIsMutable();
         pagePermission_.add(builderForValue.build());
         onChanged();
@@ -845,7 +845,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addPagePermission(
         int index, com.zhijiejiaoyu.glory_api.user.PagePermission.Builder builderForValue) {
-      if (pagePermissionBuilder_ == null) {
+      if (pagePermissionBuilder == null) {
         ensurePagePermissionIsMutable();
         pagePermission_.add(index, builderForValue.build());
         onChanged();
@@ -863,10 +863,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addAllPagePermission(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.user.PagePermission> values) {
-      if (pagePermissionBuilder_ == null) {
+      if (pagePermissionBuilder == null) {
         ensurePagePermissionIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, pagePermission_);
+            values, pagePermission);
         onChanged();
       } else {
         pagePermissionBuilder_.addAllMessages(values);
@@ -881,9 +881,9 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.PagePermission page_permission = 2;</code>
      */
     public Builder clearPagePermission() {
-      if (pagePermissionBuilder_ == null) {
-        pagePermission_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      if (pagePermissionBuilder == null) {
+        pagePermission = java.util.Collections.emptyList();
+        bitField0 = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         pagePermissionBuilder_.clear();
@@ -898,7 +898,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.PagePermission page_permission = 2;</code>
      */
     public Builder removePagePermission(int index) {
-      if (pagePermissionBuilder_ == null) {
+      if (pagePermissionBuilder == null) {
         ensurePagePermissionIsMutable();
         pagePermission_.remove(index);
         onChanged();
@@ -927,7 +927,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder getPagePermissionOrBuilder(
         int index) {
-      if (pagePermissionBuilder_ == null) {
+      if (pagePermissionBuilder == null) {
         return pagePermission_.get(index);  } else {
         return pagePermissionBuilder_.getMessageOrBuilder(index);
       }
@@ -944,7 +944,7 @@ private static final long serialVersionUID = 0L;
       if (pagePermissionBuilder_ != null) {
         return pagePermissionBuilder_.getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(pagePermission_);
+        return java.util.Collections.unmodifiableList(pagePermission);
       }
     }
     /**
@@ -984,16 +984,16 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.RepeatedFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.user.PagePermission, com.zhijiejiaoyu.glory_api.user.PagePermission.Builder, com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder> 
         getPagePermissionFieldBuilder() {
-      if (pagePermissionBuilder_ == null) {
-        pagePermissionBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+      if (pagePermissionBuilder == null) {
+        pagePermissionBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.user.PagePermission, com.zhijiejiaoyu.glory_api.user.PagePermission.Builder, com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder>(
                 pagePermission_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        pagePermission_ = null;
+        pagePermission = null;
       }
-      return pagePermissionBuilder_;
+      return pagePermissionBuilder;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

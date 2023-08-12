@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private BaseRequest() {
-    authToken_ = "";
+    authToken = "";
   }
 
   @java.lang.Override
@@ -52,7 +52,7 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            authToken_ = s;
+            authToken = s;
             break;
           }
           default: {
@@ -88,7 +88,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int AUTH_TOKEN_FIELD_NUMBER = 1;
-  private volatile java.lang.Object authToken_;
+  private volatile java.lang.Object authToken;
   /**
    * <pre>
    * API authentication token
@@ -99,14 +99,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public java.lang.String getAuthToken() {
-    java.lang.Object ref = authToken_;
+    java.lang.Object ref = authToken;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      authToken_ = s;
+      authToken = s;
       return s;
     }
   }
@@ -121,12 +121,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getAuthTokenBytes() {
-    java.lang.Object ref = authToken_;
+    java.lang.Object ref = authToken;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      authToken_ = b;
+      authToken = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -148,7 +148,7 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getAuthTokenBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, authToken_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, authToken);
     }
     unknownFields.writeTo(output);
   }
@@ -160,7 +160,7 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (!getAuthTokenBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, authToken_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, authToken);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -325,7 +325,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      authToken_ = "";
+      authToken = "";
 
       return this;
     }
@@ -353,7 +353,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.base.BaseRequest buildPartial() {
       com.zhijiejiaoyu.base.BaseRequest result = new com.zhijiejiaoyu.base.BaseRequest(this);
-      result.authToken_ = authToken_;
+      result.authToken = authToken;
       onBuilt();
       return result;
     }
@@ -403,7 +403,7 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.zhijiejiaoyu.base.BaseRequest other) {
       if (other == com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance()) return this;
       if (!other.getAuthToken().isEmpty()) {
-        authToken_ = other.authToken_;
+        authToken = other.authToken;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -435,7 +435,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object authToken_ = "";
+    private java.lang.Object authToken = "";
     /**
      * <pre>
      * API authentication token
@@ -445,12 +445,12 @@ private static final long serialVersionUID = 0L;
      * @return The authToken.
      */
     public java.lang.String getAuthToken() {
-      java.lang.Object ref = authToken_;
+      java.lang.Object ref = authToken;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        authToken_ = s;
+        authToken = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -466,12 +466,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getAuthTokenBytes() {
-      java.lang.Object ref = authToken_;
+      java.lang.Object ref = authToken;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        authToken_ = b;
+        authToken = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -492,7 +492,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      authToken_ = value;
+      authToken = value;
       onChanged();
       return this;
     }
@@ -506,7 +506,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearAuthToken() {
       
-      authToken_ = getDefaultInstance().getAuthToken();
+      authToken = getDefaultInstance().getAuthToken();
       onChanged();
       return this;
     }
@@ -526,7 +526,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      authToken_ = value;
+      authToken = value;
       onChanged();
       return this;
     }

@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListOperationMetricsResponse() {
-    dailyMetrics_ = java.util.Collections.emptyList();
+    dailyMetrics = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -39,7 +39,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
+    int mutable_bitField0 = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -55,32 +55,32 @@ private static final long serialVersionUID = 0L;
             if (baseResp_ != null) {
               subBuilder = baseResp_.toBuilder();
             }
-            baseResp_ = input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
+            baseResp = input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(baseResp_);
-              baseResp_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(baseResp);
+              baseResp = subBuilder.buildPartial();
             }
 
             break;
           }
           case 17: {
 
-            orderAmount_ = input.readDouble();
+            orderAmount = input.readDouble();
             break;
           }
           case 24: {
 
-            orderCount_ = input.readUInt32();
+            orderCount = input.readUInt32();
             break;
           }
           case 32: {
 
-            distinctUserCount_ = input.readUInt32();
+            distinctUserCount = input.readUInt32();
             break;
           }
           case 42: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              dailyMetrics_ = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.shop.DailyOperationMetrics>();
+              dailyMetrics = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.shop.DailyOperationMetrics>();
               mutable_bitField0_ |= 0x00000001;
             }
             dailyMetrics_.add(
@@ -103,7 +103,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        dailyMetrics_ = java.util.Collections.unmodifiableList(dailyMetrics_);
+        dailyMetrics = java.util.Collections.unmodifiableList(dailyMetrics);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -123,7 +123,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int BASE_RESP_FIELD_NUMBER = 1;
-  private com.zhijiejiaoyu.base.BaseResponse baseResp_;
+  private com.zhijiejiaoyu.base.BaseResponse baseResp;
   /**
    * <code>.base.BaseResponse base_resp = 1;</code>
    * @return Whether the baseResp field is set.
@@ -138,7 +138,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.zhijiejiaoyu.base.BaseResponse getBaseResp() {
-    return baseResp_ == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp_;
+    return baseResp == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
   }
   /**
    * <code>.base.BaseResponse base_resp = 1;</code>
@@ -149,46 +149,46 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ORDER_AMOUNT_FIELD_NUMBER = 2;
-  private double orderAmount_;
+  private double orderAmount;
   /**
    * <code>double order_amount = 2;</code>
    * @return The orderAmount.
    */
   @java.lang.Override
   public double getOrderAmount() {
-    return orderAmount_;
+    return orderAmount;
   }
 
   public static final int ORDER_COUNT_FIELD_NUMBER = 3;
-  private int orderCount_;
+  private int orderCount;
   /**
    * <code>uint32 order_count = 3;</code>
    * @return The orderCount.
    */
   @java.lang.Override
   public int getOrderCount() {
-    return orderCount_;
+    return orderCount;
   }
 
   public static final int DISTINCT_USER_COUNT_FIELD_NUMBER = 4;
-  private int distinctUserCount_;
+  private int distinctUserCount;
   /**
    * <code>uint32 distinct_user_count = 4;</code>
    * @return The distinctUserCount.
    */
   @java.lang.Override
   public int getDistinctUserCount() {
-    return distinctUserCount_;
+    return distinctUserCount;
   }
 
   public static final int DAILY_METRICS_FIELD_NUMBER = 5;
-  private java.util.List<com.zhijiejiaoyu.glory_api.shop.DailyOperationMetrics> dailyMetrics_;
+  private java.util.List<com.zhijiejiaoyu.glory_api.shop.DailyOperationMetrics> dailyMetrics;
   /**
    * <code>repeated .glory_api.DailyOperationMetrics daily_metrics = 5;</code>
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.shop.DailyOperationMetrics> getDailyMetricsList() {
-    return dailyMetrics_;
+    return dailyMetrics;
   }
   /**
    * <code>repeated .glory_api.DailyOperationMetrics daily_metrics = 5;</code>
@@ -196,7 +196,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.DailyOperationMetricsOrBuilder> 
       getDailyMetricsOrBuilderList() {
-    return dailyMetrics_;
+    return dailyMetrics;
   }
   /**
    * <code>repeated .glory_api.DailyOperationMetrics daily_metrics = 5;</code>
@@ -239,13 +239,13 @@ private static final long serialVersionUID = 0L;
       output.writeMessage(1, getBaseResp());
     }
     if (orderAmount_ != 0D) {
-      output.writeDouble(2, orderAmount_);
+      output.writeDouble(2, orderAmount);
     }
     if (orderCount_ != 0) {
-      output.writeUInt32(3, orderCount_);
+      output.writeUInt32(3, orderCount);
     }
     if (distinctUserCount_ != 0) {
-      output.writeUInt32(4, distinctUserCount_);
+      output.writeUInt32(4, distinctUserCount);
     }
     for (int i = 0; i < dailyMetrics_.size(); i++) {
       output.writeMessage(5, dailyMetrics_.get(i));
@@ -265,15 +265,15 @@ private static final long serialVersionUID = 0L;
     }
     if (orderAmount_ != 0D) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(2, orderAmount_);
+        .computeDoubleSize(2, orderAmount);
     }
     if (orderCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(3, orderCount_);
+        .computeUInt32Size(3, orderCount);
     }
     if (distinctUserCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(4, distinctUserCount_);
+        .computeUInt32Size(4, distinctUserCount);
     }
     for (int i = 0; i < dailyMetrics_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
@@ -468,21 +468,21 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (baseRespBuilder_ == null) {
-        baseResp_ = null;
+      if (baseRespBuilder == null) {
+        baseResp = null;
       } else {
-        baseResp_ = null;
-        baseRespBuilder_ = null;
+        baseResp = null;
+        baseRespBuilder = null;
       }
-      orderAmount_ = 0D;
+      orderAmount = 0D;
 
-      orderCount_ = 0;
+      orderCount = 0;
 
-      distinctUserCount_ = 0;
+      distinctUserCount = 0;
 
-      if (dailyMetricsBuilder_ == null) {
-        dailyMetrics_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      if (dailyMetricsBuilder == null) {
+        dailyMetrics = java.util.Collections.emptyList();
+        bitField0 = (bitField0_ & ~0x00000001);
       } else {
         dailyMetricsBuilder_.clear();
       }
@@ -512,23 +512,23 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.shop.ListOperationMetricsResponse buildPartial() {
       com.zhijiejiaoyu.glory_api.shop.ListOperationMetricsResponse result = new com.zhijiejiaoyu.glory_api.shop.ListOperationMetricsResponse(this);
-      int from_bitField0_ = bitField0_;
-      if (baseRespBuilder_ == null) {
-        result.baseResp_ = baseResp_;
+      int from_bitField0 = bitField0;
+      if (baseRespBuilder == null) {
+        result.baseResp = baseResp;
       } else {
-        result.baseResp_ = baseRespBuilder_.build();
+        result.baseResp = baseRespBuilder_.build();
       }
-      result.orderAmount_ = orderAmount_;
-      result.orderCount_ = orderCount_;
-      result.distinctUserCount_ = distinctUserCount_;
-      if (dailyMetricsBuilder_ == null) {
+      result.orderAmount = orderAmount;
+      result.orderCount = orderCount;
+      result.distinctUserCount = distinctUserCount;
+      if (dailyMetricsBuilder == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
-          dailyMetrics_ = java.util.Collections.unmodifiableList(dailyMetrics_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          dailyMetrics = java.util.Collections.unmodifiableList(dailyMetrics);
+          bitField0 = (bitField0_ & ~0x00000001);
         }
-        result.dailyMetrics_ = dailyMetrics_;
+        result.dailyMetrics = dailyMetrics;
       } else {
-        result.dailyMetrics_ = dailyMetricsBuilder_.build();
+        result.dailyMetrics = dailyMetricsBuilder_.build();
       }
       onBuilt();
       return result;
@@ -590,14 +590,14 @@ private static final long serialVersionUID = 0L;
       if (other.getDistinctUserCount() != 0) {
         setDistinctUserCount(other.getDistinctUserCount());
       }
-      if (dailyMetricsBuilder_ == null) {
+      if (dailyMetricsBuilder == null) {
         if (!other.dailyMetrics_.isEmpty()) {
           if (dailyMetrics_.isEmpty()) {
-            dailyMetrics_ = other.dailyMetrics_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            dailyMetrics = other.dailyMetrics;
+            bitField0 = (bitField0_ & ~0x00000001);
           } else {
             ensureDailyMetricsIsMutable();
-            dailyMetrics_.addAll(other.dailyMetrics_);
+            dailyMetrics_.addAll(other.dailyMetrics);
           }
           onChanged();
         }
@@ -605,14 +605,14 @@ private static final long serialVersionUID = 0L;
         if (!other.dailyMetrics_.isEmpty()) {
           if (dailyMetricsBuilder_.isEmpty()) {
             dailyMetricsBuilder_.dispose();
-            dailyMetricsBuilder_ = null;
-            dailyMetrics_ = other.dailyMetrics_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-            dailyMetricsBuilder_ = 
+            dailyMetricsBuilder = null;
+            dailyMetrics = other.dailyMetrics;
+            bitField0 = (bitField0_ & ~0x00000001);
+            dailyMetricsBuilder = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getDailyMetricsFieldBuilder() : null;
           } else {
-            dailyMetricsBuilder_.addAllMessages(other.dailyMetrics_);
+            dailyMetricsBuilder_.addAllMessages(other.dailyMetrics);
           }
         }
       }
@@ -644,11 +644,11 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int bitField0_;
+    private int bitField0;
 
-    private com.zhijiejiaoyu.base.BaseResponse baseResp_;
+    private com.zhijiejiaoyu.base.BaseResponse baseResp;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.base.BaseResponse, com.zhijiejiaoyu.base.BaseResponse.Builder, com.zhijiejiaoyu.base.BaseResponseOrBuilder> baseRespBuilder_;
+        com.zhijiejiaoyu.base.BaseResponse, com.zhijiejiaoyu.base.BaseResponse.Builder, com.zhijiejiaoyu.base.BaseResponseOrBuilder> baseRespBuilder;
     /**
      * <code>.base.BaseResponse base_resp = 1;</code>
      * @return Whether the baseResp field is set.
@@ -661,8 +661,8 @@ private static final long serialVersionUID = 0L;
      * @return The baseResp.
      */
     public com.zhijiejiaoyu.base.BaseResponse getBaseResp() {
-      if (baseRespBuilder_ == null) {
-        return baseResp_ == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp_;
+      if (baseRespBuilder == null) {
+        return baseResp == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
       } else {
         return baseRespBuilder_.getMessage();
       }
@@ -671,11 +671,11 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public Builder setBaseResp(com.zhijiejiaoyu.base.BaseResponse value) {
-      if (baseRespBuilder_ == null) {
+      if (baseRespBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        baseResp_ = value;
+        baseResp = value;
         onChanged();
       } else {
         baseRespBuilder_.setMessage(value);
@@ -688,8 +688,8 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setBaseResp(
         com.zhijiejiaoyu.base.BaseResponse.Builder builderForValue) {
-      if (baseRespBuilder_ == null) {
-        baseResp_ = builderForValue.build();
+      if (baseRespBuilder == null) {
+        baseResp = builderForValue.build();
         onChanged();
       } else {
         baseRespBuilder_.setMessage(builderForValue.build());
@@ -701,12 +701,12 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public Builder mergeBaseResp(com.zhijiejiaoyu.base.BaseResponse value) {
-      if (baseRespBuilder_ == null) {
+      if (baseRespBuilder == null) {
         if (baseResp_ != null) {
-          baseResp_ =
-            com.zhijiejiaoyu.base.BaseResponse.newBuilder(baseResp_).mergeFrom(value).buildPartial();
+          baseResp =
+            com.zhijiejiaoyu.base.BaseResponse.newBuilder(baseResp).mergeFrom(value).buildPartial();
         } else {
-          baseResp_ = value;
+          baseResp = value;
         }
         onChanged();
       } else {
@@ -719,12 +719,12 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public Builder clearBaseResp() {
-      if (baseRespBuilder_ == null) {
-        baseResp_ = null;
+      if (baseRespBuilder == null) {
+        baseResp = null;
         onChanged();
       } else {
-        baseResp_ = null;
-        baseRespBuilder_ = null;
+        baseResp = null;
+        baseRespBuilder = null;
       }
 
       return this;
@@ -744,8 +744,8 @@ private static final long serialVersionUID = 0L;
       if (baseRespBuilder_ != null) {
         return baseRespBuilder_.getMessageOrBuilder();
       } else {
-        return baseResp_ == null ?
-            com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp_;
+        return baseResp == null ?
+            com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
       }
     }
     /**
@@ -754,15 +754,15 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.base.BaseResponse, com.zhijiejiaoyu.base.BaseResponse.Builder, com.zhijiejiaoyu.base.BaseResponseOrBuilder> 
         getBaseRespFieldBuilder() {
-      if (baseRespBuilder_ == null) {
-        baseRespBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+      if (baseRespBuilder == null) {
+        baseRespBuilder = new com.google.protobuf.SingleFieldBuilderV3<
             com.zhijiejiaoyu.base.BaseResponse, com.zhijiejiaoyu.base.BaseResponse.Builder, com.zhijiejiaoyu.base.BaseResponseOrBuilder>(
                 getBaseResp(),
                 getParentForChildren(),
                 isClean());
-        baseResp_ = null;
+        baseResp = null;
       }
-      return baseRespBuilder_;
+      return baseRespBuilder;
     }
 
     private double orderAmount_ ;
@@ -772,7 +772,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public double getOrderAmount() {
-      return orderAmount_;
+      return orderAmount;
     }
     /**
      * <code>double order_amount = 2;</code>
@@ -781,7 +781,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setOrderAmount(double value) {
       
-      orderAmount_ = value;
+      orderAmount = value;
       onChanged();
       return this;
     }
@@ -791,7 +791,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearOrderAmount() {
       
-      orderAmount_ = 0D;
+      orderAmount = 0D;
       onChanged();
       return this;
     }
@@ -803,7 +803,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public int getOrderCount() {
-      return orderCount_;
+      return orderCount;
     }
     /**
      * <code>uint32 order_count = 3;</code>
@@ -812,7 +812,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setOrderCount(int value) {
       
-      orderCount_ = value;
+      orderCount = value;
       onChanged();
       return this;
     }
@@ -822,7 +822,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearOrderCount() {
       
-      orderCount_ = 0;
+      orderCount = 0;
       onChanged();
       return this;
     }
@@ -834,7 +834,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public int getDistinctUserCount() {
-      return distinctUserCount_;
+      return distinctUserCount;
     }
     /**
      * <code>uint32 distinct_user_count = 4;</code>
@@ -843,7 +843,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDistinctUserCount(int value) {
       
-      distinctUserCount_ = value;
+      distinctUserCount = value;
       onChanged();
       return this;
     }
@@ -853,29 +853,29 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearDistinctUserCount() {
       
-      distinctUserCount_ = 0;
+      distinctUserCount = 0;
       onChanged();
       return this;
     }
 
-    private java.util.List<com.zhijiejiaoyu.glory_api.shop.DailyOperationMetrics> dailyMetrics_ =
+    private java.util.List<com.zhijiejiaoyu.glory_api.shop.DailyOperationMetrics> dailyMetrics =
       java.util.Collections.emptyList();
     private void ensureDailyMetricsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        dailyMetrics_ = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.shop.DailyOperationMetrics>(dailyMetrics_);
+        dailyMetrics = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.shop.DailyOperationMetrics>(dailyMetrics);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.shop.DailyOperationMetrics, com.zhijiejiaoyu.glory_api.shop.DailyOperationMetrics.Builder, com.zhijiejiaoyu.glory_api.shop.DailyOperationMetricsOrBuilder> dailyMetricsBuilder_;
+        com.zhijiejiaoyu.glory_api.shop.DailyOperationMetrics, com.zhijiejiaoyu.glory_api.shop.DailyOperationMetrics.Builder, com.zhijiejiaoyu.glory_api.shop.DailyOperationMetricsOrBuilder> dailyMetricsBuilder;
 
     /**
      * <code>repeated .glory_api.DailyOperationMetrics daily_metrics = 5;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.shop.DailyOperationMetrics> getDailyMetricsList() {
-      if (dailyMetricsBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(dailyMetrics_);
+      if (dailyMetricsBuilder == null) {
+        return java.util.Collections.unmodifiableList(dailyMetrics);
       } else {
         return dailyMetricsBuilder_.getMessageList();
       }
@@ -884,7 +884,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.DailyOperationMetrics daily_metrics = 5;</code>
      */
     public int getDailyMetricsCount() {
-      if (dailyMetricsBuilder_ == null) {
+      if (dailyMetricsBuilder == null) {
         return dailyMetrics_.size();
       } else {
         return dailyMetricsBuilder_.getCount();
@@ -894,7 +894,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.DailyOperationMetrics daily_metrics = 5;</code>
      */
     public com.zhijiejiaoyu.glory_api.shop.DailyOperationMetrics getDailyMetrics(int index) {
-      if (dailyMetricsBuilder_ == null) {
+      if (dailyMetricsBuilder == null) {
         return dailyMetrics_.get(index);
       } else {
         return dailyMetricsBuilder_.getMessage(index);
@@ -905,7 +905,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDailyMetrics(
         int index, com.zhijiejiaoyu.glory_api.shop.DailyOperationMetrics value) {
-      if (dailyMetricsBuilder_ == null) {
+      if (dailyMetricsBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -922,7 +922,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDailyMetrics(
         int index, com.zhijiejiaoyu.glory_api.shop.DailyOperationMetrics.Builder builderForValue) {
-      if (dailyMetricsBuilder_ == null) {
+      if (dailyMetricsBuilder == null) {
         ensureDailyMetricsIsMutable();
         dailyMetrics_.set(index, builderForValue.build());
         onChanged();
@@ -935,7 +935,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.DailyOperationMetrics daily_metrics = 5;</code>
      */
     public Builder addDailyMetrics(com.zhijiejiaoyu.glory_api.shop.DailyOperationMetrics value) {
-      if (dailyMetricsBuilder_ == null) {
+      if (dailyMetricsBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -952,7 +952,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addDailyMetrics(
         int index, com.zhijiejiaoyu.glory_api.shop.DailyOperationMetrics value) {
-      if (dailyMetricsBuilder_ == null) {
+      if (dailyMetricsBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -969,7 +969,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addDailyMetrics(
         com.zhijiejiaoyu.glory_api.shop.DailyOperationMetrics.Builder builderForValue) {
-      if (dailyMetricsBuilder_ == null) {
+      if (dailyMetricsBuilder == null) {
         ensureDailyMetricsIsMutable();
         dailyMetrics_.add(builderForValue.build());
         onChanged();
@@ -983,7 +983,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addDailyMetrics(
         int index, com.zhijiejiaoyu.glory_api.shop.DailyOperationMetrics.Builder builderForValue) {
-      if (dailyMetricsBuilder_ == null) {
+      if (dailyMetricsBuilder == null) {
         ensureDailyMetricsIsMutable();
         dailyMetrics_.add(index, builderForValue.build());
         onChanged();
@@ -997,10 +997,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addAllDailyMetrics(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.shop.DailyOperationMetrics> values) {
-      if (dailyMetricsBuilder_ == null) {
+      if (dailyMetricsBuilder == null) {
         ensureDailyMetricsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, dailyMetrics_);
+            values, dailyMetrics);
         onChanged();
       } else {
         dailyMetricsBuilder_.addAllMessages(values);
@@ -1011,9 +1011,9 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.DailyOperationMetrics daily_metrics = 5;</code>
      */
     public Builder clearDailyMetrics() {
-      if (dailyMetricsBuilder_ == null) {
-        dailyMetrics_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      if (dailyMetricsBuilder == null) {
+        dailyMetrics = java.util.Collections.emptyList();
+        bitField0 = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         dailyMetricsBuilder_.clear();
@@ -1024,7 +1024,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.DailyOperationMetrics daily_metrics = 5;</code>
      */
     public Builder removeDailyMetrics(int index) {
-      if (dailyMetricsBuilder_ == null) {
+      if (dailyMetricsBuilder == null) {
         ensureDailyMetricsIsMutable();
         dailyMetrics_.remove(index);
         onChanged();
@@ -1045,7 +1045,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.shop.DailyOperationMetricsOrBuilder getDailyMetricsOrBuilder(
         int index) {
-      if (dailyMetricsBuilder_ == null) {
+      if (dailyMetricsBuilder == null) {
         return dailyMetrics_.get(index);  } else {
         return dailyMetricsBuilder_.getMessageOrBuilder(index);
       }
@@ -1058,7 +1058,7 @@ private static final long serialVersionUID = 0L;
       if (dailyMetricsBuilder_ != null) {
         return dailyMetricsBuilder_.getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(dailyMetrics_);
+        return java.util.Collections.unmodifiableList(dailyMetrics);
       }
     }
     /**
@@ -1086,16 +1086,16 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.RepeatedFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.shop.DailyOperationMetrics, com.zhijiejiaoyu.glory_api.shop.DailyOperationMetrics.Builder, com.zhijiejiaoyu.glory_api.shop.DailyOperationMetricsOrBuilder> 
         getDailyMetricsFieldBuilder() {
-      if (dailyMetricsBuilder_ == null) {
-        dailyMetricsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+      if (dailyMetricsBuilder == null) {
+        dailyMetricsBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.shop.DailyOperationMetrics, com.zhijiejiaoyu.glory_api.shop.DailyOperationMetrics.Builder, com.zhijiejiaoyu.glory_api.shop.DailyOperationMetricsOrBuilder>(
                 dailyMetrics_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        dailyMetrics_ = null;
+        dailyMetrics = null;
       }
-      return dailyMetricsBuilder_;
+      return dailyMetricsBuilder;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CartShow() {
-    shop_ = java.util.Collections.emptyList();
+    shop = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -39,7 +39,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
+    int mutable_bitField0 = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -52,27 +52,27 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            cartId_ = input.readInt64();
+            cartId = input.readInt64();
             break;
           }
           case 16: {
 
-            userId_ = input.readInt64();
+            userId = input.readInt64();
             break;
           }
           case 24: {
 
-            sellerId_ = input.readInt64();
+            sellerId = input.readInt64();
             break;
           }
           case 32: {
 
-            tenantId_ = input.readInt64();
+            tenantId = input.readInt64();
             break;
           }
           case 42: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              shop_ = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.shop.ShopShow>();
+              shop = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.shop.ShopShow>();
               mutable_bitField0_ |= 0x00000001;
             }
             shop_.add(
@@ -81,7 +81,7 @@ private static final long serialVersionUID = 0L;
           }
           case 48: {
 
-            totalQuantity_ = input.readInt32();
+            totalQuantity = input.readInt32();
             break;
           }
           default: {
@@ -100,7 +100,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        shop_ = java.util.Collections.unmodifiableList(shop_);
+        shop = java.util.Collections.unmodifiableList(shop);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -120,57 +120,57 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CART_ID_FIELD_NUMBER = 1;
-  private long cartId_;
+  private long cartId;
   /**
    * <code>int64 cart_id = 1;</code>
    * @return The cartId.
    */
   @java.lang.Override
   public long getCartId() {
-    return cartId_;
+    return cartId;
   }
 
   public static final int USER_ID_FIELD_NUMBER = 2;
-  private long userId_;
+  private long userId;
   /**
    * <code>int64 user_id = 2;</code>
    * @return The userId.
    */
   @java.lang.Override
   public long getUserId() {
-    return userId_;
+    return userId;
   }
 
   public static final int SELLER_ID_FIELD_NUMBER = 3;
-  private long sellerId_;
+  private long sellerId;
   /**
    * <code>int64 seller_id = 3;</code>
    * @return The sellerId.
    */
   @java.lang.Override
   public long getSellerId() {
-    return sellerId_;
+    return sellerId;
   }
 
   public static final int TENANT_ID_FIELD_NUMBER = 4;
-  private long tenantId_;
+  private long tenantId;
   /**
    * <code>int64 tenant_id = 4;</code>
    * @return The tenantId.
    */
   @java.lang.Override
   public long getTenantId() {
-    return tenantId_;
+    return tenantId;
   }
 
   public static final int SHOP_FIELD_NUMBER = 5;
-  private java.util.List<com.zhijiejiaoyu.glory_api.shop.ShopShow> shop_;
+  private java.util.List<com.zhijiejiaoyu.glory_api.shop.ShopShow> shop;
   /**
    * <code>repeated .glory_api.ShopShow shop = 5;</code>
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.shop.ShopShow> getShopList() {
-    return shop_;
+    return shop;
   }
   /**
    * <code>repeated .glory_api.ShopShow shop = 5;</code>
@@ -178,7 +178,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.ShopShowOrBuilder> 
       getShopOrBuilderList() {
-    return shop_;
+    return shop;
   }
   /**
    * <code>repeated .glory_api.ShopShow shop = 5;</code>
@@ -204,14 +204,14 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TOTAL_QUANTITY_FIELD_NUMBER = 6;
-  private int totalQuantity_;
+  private int totalQuantity;
   /**
    * <code>int32 total_quantity = 6;</code>
    * @return The totalQuantity.
    */
   @java.lang.Override
   public int getTotalQuantity() {
-    return totalQuantity_;
+    return totalQuantity;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -229,22 +229,22 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (cartId_ != 0L) {
-      output.writeInt64(1, cartId_);
+      output.writeInt64(1, cartId);
     }
     if (userId_ != 0L) {
-      output.writeInt64(2, userId_);
+      output.writeInt64(2, userId);
     }
     if (sellerId_ != 0L) {
-      output.writeInt64(3, sellerId_);
+      output.writeInt64(3, sellerId);
     }
     if (tenantId_ != 0L) {
-      output.writeInt64(4, tenantId_);
+      output.writeInt64(4, tenantId);
     }
     for (int i = 0; i < shop_.size(); i++) {
       output.writeMessage(5, shop_.get(i));
     }
     if (totalQuantity_ != 0) {
-      output.writeInt32(6, totalQuantity_);
+      output.writeInt32(6, totalQuantity);
     }
     unknownFields.writeTo(output);
   }
@@ -257,19 +257,19 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (cartId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, cartId_);
+        .computeInt64Size(1, cartId);
     }
     if (userId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, userId_);
+        .computeInt64Size(2, userId);
     }
     if (sellerId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(3, sellerId_);
+        .computeInt64Size(3, sellerId);
     }
     if (tenantId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(4, tenantId_);
+        .computeInt64Size(4, tenantId);
     }
     for (int i = 0; i < shop_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
@@ -277,7 +277,7 @@ private static final long serialVersionUID = 0L;
     }
     if (totalQuantity_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(6, totalQuantity_);
+        .computeInt32Size(6, totalQuantity);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -469,21 +469,21 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      cartId_ = 0L;
+      cartId = 0L;
 
-      userId_ = 0L;
+      userId = 0L;
 
-      sellerId_ = 0L;
+      sellerId = 0L;
 
-      tenantId_ = 0L;
+      tenantId = 0L;
 
-      if (shopBuilder_ == null) {
-        shop_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      if (shopBuilder == null) {
+        shop = java.util.Collections.emptyList();
+        bitField0 = (bitField0_ & ~0x00000001);
       } else {
         shopBuilder_.clear();
       }
-      totalQuantity_ = 0;
+      totalQuantity = 0;
 
       return this;
     }
@@ -511,21 +511,21 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.shop.CartShow buildPartial() {
       com.zhijiejiaoyu.glory_api.shop.CartShow result = new com.zhijiejiaoyu.glory_api.shop.CartShow(this);
-      int from_bitField0_ = bitField0_;
-      result.cartId_ = cartId_;
-      result.userId_ = userId_;
-      result.sellerId_ = sellerId_;
-      result.tenantId_ = tenantId_;
-      if (shopBuilder_ == null) {
+      int from_bitField0 = bitField0;
+      result.cartId = cartId;
+      result.userId = userId;
+      result.sellerId = sellerId;
+      result.tenantId = tenantId;
+      if (shopBuilder == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
-          shop_ = java.util.Collections.unmodifiableList(shop_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          shop = java.util.Collections.unmodifiableList(shop);
+          bitField0 = (bitField0_ & ~0x00000001);
         }
-        result.shop_ = shop_;
+        result.shop = shop;
       } else {
-        result.shop_ = shopBuilder_.build();
+        result.shop = shopBuilder_.build();
       }
-      result.totalQuantity_ = totalQuantity_;
+      result.totalQuantity = totalQuantity;
       onBuilt();
       return result;
     }
@@ -586,14 +586,14 @@ private static final long serialVersionUID = 0L;
       if (other.getTenantId() != 0L) {
         setTenantId(other.getTenantId());
       }
-      if (shopBuilder_ == null) {
+      if (shopBuilder == null) {
         if (!other.shop_.isEmpty()) {
           if (shop_.isEmpty()) {
-            shop_ = other.shop_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            shop = other.shop;
+            bitField0 = (bitField0_ & ~0x00000001);
           } else {
             ensureShopIsMutable();
-            shop_.addAll(other.shop_);
+            shop_.addAll(other.shop);
           }
           onChanged();
         }
@@ -601,14 +601,14 @@ private static final long serialVersionUID = 0L;
         if (!other.shop_.isEmpty()) {
           if (shopBuilder_.isEmpty()) {
             shopBuilder_.dispose();
-            shopBuilder_ = null;
-            shop_ = other.shop_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-            shopBuilder_ = 
+            shopBuilder = null;
+            shop = other.shop;
+            bitField0 = (bitField0_ & ~0x00000001);
+            shopBuilder = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getShopFieldBuilder() : null;
           } else {
-            shopBuilder_.addAllMessages(other.shop_);
+            shopBuilder_.addAllMessages(other.shop);
           }
         }
       }
@@ -643,7 +643,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int bitField0_;
+    private int bitField0;
 
     private long cartId_ ;
     /**
@@ -652,7 +652,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getCartId() {
-      return cartId_;
+      return cartId;
     }
     /**
      * <code>int64 cart_id = 1;</code>
@@ -661,7 +661,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setCartId(long value) {
       
-      cartId_ = value;
+      cartId = value;
       onChanged();
       return this;
     }
@@ -671,7 +671,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearCartId() {
       
-      cartId_ = 0L;
+      cartId = 0L;
       onChanged();
       return this;
     }
@@ -683,7 +683,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getUserId() {
-      return userId_;
+      return userId;
     }
     /**
      * <code>int64 user_id = 2;</code>
@@ -692,7 +692,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setUserId(long value) {
       
-      userId_ = value;
+      userId = value;
       onChanged();
       return this;
     }
@@ -702,7 +702,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearUserId() {
       
-      userId_ = 0L;
+      userId = 0L;
       onChanged();
       return this;
     }
@@ -714,7 +714,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getSellerId() {
-      return sellerId_;
+      return sellerId;
     }
     /**
      * <code>int64 seller_id = 3;</code>
@@ -723,7 +723,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setSellerId(long value) {
       
-      sellerId_ = value;
+      sellerId = value;
       onChanged();
       return this;
     }
@@ -733,7 +733,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearSellerId() {
       
-      sellerId_ = 0L;
+      sellerId = 0L;
       onChanged();
       return this;
     }
@@ -745,7 +745,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getTenantId() {
-      return tenantId_;
+      return tenantId;
     }
     /**
      * <code>int64 tenant_id = 4;</code>
@@ -754,7 +754,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setTenantId(long value) {
       
-      tenantId_ = value;
+      tenantId = value;
       onChanged();
       return this;
     }
@@ -764,29 +764,29 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearTenantId() {
       
-      tenantId_ = 0L;
+      tenantId = 0L;
       onChanged();
       return this;
     }
 
-    private java.util.List<com.zhijiejiaoyu.glory_api.shop.ShopShow> shop_ =
+    private java.util.List<com.zhijiejiaoyu.glory_api.shop.ShopShow> shop =
       java.util.Collections.emptyList();
     private void ensureShopIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        shop_ = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.shop.ShopShow>(shop_);
+        shop = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.shop.ShopShow>(shop);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.shop.ShopShow, com.zhijiejiaoyu.glory_api.shop.ShopShow.Builder, com.zhijiejiaoyu.glory_api.shop.ShopShowOrBuilder> shopBuilder_;
+        com.zhijiejiaoyu.glory_api.shop.ShopShow, com.zhijiejiaoyu.glory_api.shop.ShopShow.Builder, com.zhijiejiaoyu.glory_api.shop.ShopShowOrBuilder> shopBuilder;
 
     /**
      * <code>repeated .glory_api.ShopShow shop = 5;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.shop.ShopShow> getShopList() {
-      if (shopBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(shop_);
+      if (shopBuilder == null) {
+        return java.util.Collections.unmodifiableList(shop);
       } else {
         return shopBuilder_.getMessageList();
       }
@@ -795,7 +795,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.ShopShow shop = 5;</code>
      */
     public int getShopCount() {
-      if (shopBuilder_ == null) {
+      if (shopBuilder == null) {
         return shop_.size();
       } else {
         return shopBuilder_.getCount();
@@ -805,7 +805,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.ShopShow shop = 5;</code>
      */
     public com.zhijiejiaoyu.glory_api.shop.ShopShow getShop(int index) {
-      if (shopBuilder_ == null) {
+      if (shopBuilder == null) {
         return shop_.get(index);
       } else {
         return shopBuilder_.getMessage(index);
@@ -816,7 +816,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setShop(
         int index, com.zhijiejiaoyu.glory_api.shop.ShopShow value) {
-      if (shopBuilder_ == null) {
+      if (shopBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -833,7 +833,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setShop(
         int index, com.zhijiejiaoyu.glory_api.shop.ShopShow.Builder builderForValue) {
-      if (shopBuilder_ == null) {
+      if (shopBuilder == null) {
         ensureShopIsMutable();
         shop_.set(index, builderForValue.build());
         onChanged();
@@ -846,7 +846,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.ShopShow shop = 5;</code>
      */
     public Builder addShop(com.zhijiejiaoyu.glory_api.shop.ShopShow value) {
-      if (shopBuilder_ == null) {
+      if (shopBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -863,7 +863,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addShop(
         int index, com.zhijiejiaoyu.glory_api.shop.ShopShow value) {
-      if (shopBuilder_ == null) {
+      if (shopBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -880,7 +880,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addShop(
         com.zhijiejiaoyu.glory_api.shop.ShopShow.Builder builderForValue) {
-      if (shopBuilder_ == null) {
+      if (shopBuilder == null) {
         ensureShopIsMutable();
         shop_.add(builderForValue.build());
         onChanged();
@@ -894,7 +894,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addShop(
         int index, com.zhijiejiaoyu.glory_api.shop.ShopShow.Builder builderForValue) {
-      if (shopBuilder_ == null) {
+      if (shopBuilder == null) {
         ensureShopIsMutable();
         shop_.add(index, builderForValue.build());
         onChanged();
@@ -908,10 +908,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addAllShop(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.shop.ShopShow> values) {
-      if (shopBuilder_ == null) {
+      if (shopBuilder == null) {
         ensureShopIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, shop_);
+            values, shop);
         onChanged();
       } else {
         shopBuilder_.addAllMessages(values);
@@ -922,9 +922,9 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.ShopShow shop = 5;</code>
      */
     public Builder clearShop() {
-      if (shopBuilder_ == null) {
-        shop_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      if (shopBuilder == null) {
+        shop = java.util.Collections.emptyList();
+        bitField0 = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         shopBuilder_.clear();
@@ -935,7 +935,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.ShopShow shop = 5;</code>
      */
     public Builder removeShop(int index) {
-      if (shopBuilder_ == null) {
+      if (shopBuilder == null) {
         ensureShopIsMutable();
         shop_.remove(index);
         onChanged();
@@ -956,7 +956,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.shop.ShopShowOrBuilder getShopOrBuilder(
         int index) {
-      if (shopBuilder_ == null) {
+      if (shopBuilder == null) {
         return shop_.get(index);  } else {
         return shopBuilder_.getMessageOrBuilder(index);
       }
@@ -969,7 +969,7 @@ private static final long serialVersionUID = 0L;
       if (shopBuilder_ != null) {
         return shopBuilder_.getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(shop_);
+        return java.util.Collections.unmodifiableList(shop);
       }
     }
     /**
@@ -997,16 +997,16 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.RepeatedFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.shop.ShopShow, com.zhijiejiaoyu.glory_api.shop.ShopShow.Builder, com.zhijiejiaoyu.glory_api.shop.ShopShowOrBuilder> 
         getShopFieldBuilder() {
-      if (shopBuilder_ == null) {
-        shopBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+      if (shopBuilder == null) {
+        shopBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.shop.ShopShow, com.zhijiejiaoyu.glory_api.shop.ShopShow.Builder, com.zhijiejiaoyu.glory_api.shop.ShopShowOrBuilder>(
                 shop_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        shop_ = null;
+        shop = null;
       }
-      return shopBuilder_;
+      return shopBuilder;
     }
 
     private int totalQuantity_ ;
@@ -1016,7 +1016,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public int getTotalQuantity() {
-      return totalQuantity_;
+      return totalQuantity;
     }
     /**
      * <code>int32 total_quantity = 6;</code>
@@ -1025,7 +1025,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setTotalQuantity(int value) {
       
-      totalQuantity_ = value;
+      totalQuantity = value;
       onChanged();
       return this;
     }
@@ -1035,7 +1035,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearTotalQuantity() {
       
-      totalQuantity_ = 0;
+      totalQuantity = 0;
       onChanged();
       return this;
     }

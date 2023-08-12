@@ -16,8 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private PagePermission() {
-    businessSystem_ = "";
-    page_ = "";
+    businessSystem = "";
+    page = "";
   }
 
   @java.lang.Override
@@ -53,18 +53,18 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            businessSystem_ = s;
+            businessSystem = s;
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            page_ = s;
+            page = s;
             break;
           }
           case 24: {
 
-            hasPermission_ = input.readBool();
+            hasPermission = input.readBool();
             break;
           }
           default: {
@@ -100,21 +100,21 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int BUSINESS_SYSTEM_FIELD_NUMBER = 1;
-  private volatile java.lang.Object businessSystem_;
+  private volatile java.lang.Object businessSystem;
   /**
    * <code>string business_system = 1;</code>
    * @return The businessSystem.
    */
   @java.lang.Override
   public java.lang.String getBusinessSystem() {
-    java.lang.Object ref = businessSystem_;
+    java.lang.Object ref = businessSystem;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      businessSystem_ = s;
+      businessSystem = s;
       return s;
     }
   }
@@ -125,12 +125,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getBusinessSystemBytes() {
-    java.lang.Object ref = businessSystem_;
+    java.lang.Object ref = businessSystem;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      businessSystem_ = b;
+      businessSystem = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -138,21 +138,21 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PAGE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object page_;
+  private volatile java.lang.Object page;
   /**
    * <code>string page = 2;</code>
    * @return The page.
    */
   @java.lang.Override
   public java.lang.String getPage() {
-    java.lang.Object ref = page_;
+    java.lang.Object ref = page;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      page_ = s;
+      page = s;
       return s;
     }
   }
@@ -163,12 +163,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getPageBytes() {
-    java.lang.Object ref = page_;
+    java.lang.Object ref = page;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      page_ = b;
+      page = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -176,14 +176,14 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int HAS_PERMISSION_FIELD_NUMBER = 3;
-  private boolean hasPermission_;
+  private boolean hasPermission;
   /**
    * <code>bool has_permission = 3;</code>
    * @return The hasPermission.
    */
   @java.lang.Override
   public boolean getHasPermission() {
-    return hasPermission_;
+    return hasPermission;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -201,13 +201,13 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getBusinessSystemBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, businessSystem_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, businessSystem);
     }
     if (!getPageBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, page_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, page);
     }
     if (hasPermission_ != false) {
-      output.writeBool(3, hasPermission_);
+      output.writeBool(3, hasPermission);
     }
     unknownFields.writeTo(output);
   }
@@ -219,14 +219,14 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (!getBusinessSystemBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, businessSystem_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, businessSystem);
     }
     if (!getPageBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, page_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, page);
     }
     if (hasPermission_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(3, hasPermission_);
+        .computeBoolSize(3, hasPermission);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -400,11 +400,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      businessSystem_ = "";
+      businessSystem = "";
 
-      page_ = "";
+      page = "";
 
-      hasPermission_ = false;
+      hasPermission = false;
 
       return this;
     }
@@ -432,9 +432,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.user.PagePermission buildPartial() {
       com.zhijiejiaoyu.glory_api.user.PagePermission result = new com.zhijiejiaoyu.glory_api.user.PagePermission(this);
-      result.businessSystem_ = businessSystem_;
-      result.page_ = page_;
-      result.hasPermission_ = hasPermission_;
+      result.businessSystem = businessSystem;
+      result.page = page;
+      result.hasPermission = hasPermission;
       onBuilt();
       return result;
     }
@@ -484,11 +484,11 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.zhijiejiaoyu.glory_api.user.PagePermission other) {
       if (other == com.zhijiejiaoyu.glory_api.user.PagePermission.getDefaultInstance()) return this;
       if (!other.getBusinessSystem().isEmpty()) {
-        businessSystem_ = other.businessSystem_;
+        businessSystem = other.businessSystem;
         onChanged();
       }
       if (!other.getPage().isEmpty()) {
-        page_ = other.page_;
+        page = other.page;
         onChanged();
       }
       if (other.getHasPermission() != false) {
@@ -523,18 +523,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object businessSystem_ = "";
+    private java.lang.Object businessSystem = "";
     /**
      * <code>string business_system = 1;</code>
      * @return The businessSystem.
      */
     public java.lang.String getBusinessSystem() {
-      java.lang.Object ref = businessSystem_;
+      java.lang.Object ref = businessSystem;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        businessSystem_ = s;
+        businessSystem = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -546,12 +546,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getBusinessSystemBytes() {
-      java.lang.Object ref = businessSystem_;
+      java.lang.Object ref = businessSystem;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        businessSystem_ = b;
+        businessSystem = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -568,7 +568,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      businessSystem_ = value;
+      businessSystem = value;
       onChanged();
       return this;
     }
@@ -578,7 +578,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearBusinessSystem() {
       
-      businessSystem_ = getDefaultInstance().getBusinessSystem();
+      businessSystem = getDefaultInstance().getBusinessSystem();
       onChanged();
       return this;
     }
@@ -594,23 +594,23 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      businessSystem_ = value;
+      businessSystem = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object page_ = "";
+    private java.lang.Object page = "";
     /**
      * <code>string page = 2;</code>
      * @return The page.
      */
     public java.lang.String getPage() {
-      java.lang.Object ref = page_;
+      java.lang.Object ref = page;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        page_ = s;
+        page = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -622,12 +622,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getPageBytes() {
-      java.lang.Object ref = page_;
+      java.lang.Object ref = page;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        page_ = b;
+        page = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -644,7 +644,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      page_ = value;
+      page = value;
       onChanged();
       return this;
     }
@@ -654,7 +654,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearPage() {
       
-      page_ = getDefaultInstance().getPage();
+      page = getDefaultInstance().getPage();
       onChanged();
       return this;
     }
@@ -670,7 +670,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      page_ = value;
+      page = value;
       onChanged();
       return this;
     }
@@ -682,7 +682,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public boolean getHasPermission() {
-      return hasPermission_;
+      return hasPermission;
     }
     /**
      * <code>bool has_permission = 3;</code>
@@ -691,7 +691,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setHasPermission(boolean value) {
       
-      hasPermission_ = value;
+      hasPermission = value;
       onChanged();
       return this;
     }
@@ -701,7 +701,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearHasPermission() {
       
-      hasPermission_ = false;
+      hasPermission = false;
       onChanged();
       return this;
     }

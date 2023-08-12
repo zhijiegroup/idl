@@ -16,11 +16,11 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private AddConfig() {
-    configName_ = "";
-    configValue_ = "";
-    configType_ = "";
-    description_ = "";
-    businessSystem_ = "";
+    configName = "";
+    configValue = "";
+    configType = "";
+    description = "";
+    businessSystem = "";
   }
 
   @java.lang.Override
@@ -56,31 +56,31 @@ private static final long serialVersionUID = 0L;
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            configName_ = s;
+            configName = s;
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            configValue_ = s;
+            configValue = s;
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            configType_ = s;
+            configType = s;
             break;
           }
           case 42: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            description_ = s;
+            description = s;
             break;
           }
           case 50: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            businessSystem_ = s;
+            businessSystem = s;
             break;
           }
           default: {
@@ -116,7 +116,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CONFIG_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object configName_;
+  private volatile java.lang.Object configName;
   /**
    * <pre>
    * 配置的名字
@@ -127,14 +127,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public java.lang.String getConfigName() {
-    java.lang.Object ref = configName_;
+    java.lang.Object ref = configName;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      configName_ = s;
+      configName = s;
       return s;
     }
   }
@@ -149,12 +149,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getConfigNameBytes() {
-    java.lang.Object ref = configName_;
+    java.lang.Object ref = configName;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      configName_ = b;
+      configName = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -162,7 +162,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CONFIG_VALUE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object configValue_;
+  private volatile java.lang.Object configValue;
   /**
    * <pre>
    * 配置的值
@@ -173,14 +173,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public java.lang.String getConfigValue() {
-    java.lang.Object ref = configValue_;
+    java.lang.Object ref = configValue;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      configValue_ = s;
+      configValue = s;
       return s;
     }
   }
@@ -195,12 +195,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getConfigValueBytes() {
-    java.lang.Object ref = configValue_;
+    java.lang.Object ref = configValue;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      configValue_ = b;
+      configValue = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -208,7 +208,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CONFIG_TYPE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object configType_;
+  private volatile java.lang.Object configType;
   /**
    * <pre>
    * 配置的类型，支持page_permission, system_permission, public_config, system_owner_location
@@ -219,14 +219,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public java.lang.String getConfigType() {
-    java.lang.Object ref = configType_;
+    java.lang.Object ref = configType;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      configType_ = s;
+      configType = s;
       return s;
     }
   }
@@ -241,12 +241,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getConfigTypeBytes() {
-    java.lang.Object ref = configType_;
+    java.lang.Object ref = configType;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      configType_ = b;
+      configType = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -254,7 +254,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 5;
-  private volatile java.lang.Object description_;
+  private volatile java.lang.Object description;
   /**
    * <pre>
    * 描述
@@ -265,14 +265,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public java.lang.String getDescription() {
-    java.lang.Object ref = description_;
+    java.lang.Object ref = description;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      description_ = s;
+      description = s;
       return s;
     }
   }
@@ -287,12 +287,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getDescriptionBytes() {
-    java.lang.Object ref = description_;
+    java.lang.Object ref = description;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      description_ = b;
+      description = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -300,7 +300,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int BUSINESS_SYSTEM_FIELD_NUMBER = 6;
-  private volatile java.lang.Object businessSystem_;
+  private volatile java.lang.Object businessSystem;
   /**
    * <pre>
    * 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, score, auth
@@ -311,14 +311,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public java.lang.String getBusinessSystem() {
-    java.lang.Object ref = businessSystem_;
+    java.lang.Object ref = businessSystem;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      businessSystem_ = s;
+      businessSystem = s;
       return s;
     }
   }
@@ -333,12 +333,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getBusinessSystemBytes() {
-    java.lang.Object ref = businessSystem_;
+    java.lang.Object ref = businessSystem;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      businessSystem_ = b;
+      businessSystem = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -360,19 +360,19 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getConfigNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, configName_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, configName);
     }
     if (!getConfigValueBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, configValue_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, configValue);
     }
     if (!getConfigTypeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, configType_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, configType);
     }
     if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, description_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, description);
     }
     if (!getBusinessSystemBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, businessSystem_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, businessSystem);
     }
     unknownFields.writeTo(output);
   }
@@ -384,19 +384,19 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (!getConfigNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, configName_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, configName);
     }
     if (!getConfigValueBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, configValue_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, configValue);
     }
     if (!getConfigTypeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, configType_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, configType);
     }
     if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, description_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, description);
     }
     if (!getBusinessSystemBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, businessSystem_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, businessSystem);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -577,15 +577,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      configName_ = "";
+      configName = "";
 
-      configValue_ = "";
+      configValue = "";
 
-      configType_ = "";
+      configType = "";
 
-      description_ = "";
+      description = "";
 
-      businessSystem_ = "";
+      businessSystem = "";
 
       return this;
     }
@@ -613,11 +613,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.admin.AddConfig buildPartial() {
       com.zhijiejiaoyu.glory_api.admin.AddConfig result = new com.zhijiejiaoyu.glory_api.admin.AddConfig(this);
-      result.configName_ = configName_;
-      result.configValue_ = configValue_;
-      result.configType_ = configType_;
-      result.description_ = description_;
-      result.businessSystem_ = businessSystem_;
+      result.configName = configName;
+      result.configValue = configValue;
+      result.configType = configType;
+      result.description = description;
+      result.businessSystem = businessSystem;
       onBuilt();
       return result;
     }
@@ -667,23 +667,23 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.zhijiejiaoyu.glory_api.admin.AddConfig other) {
       if (other == com.zhijiejiaoyu.glory_api.admin.AddConfig.getDefaultInstance()) return this;
       if (!other.getConfigName().isEmpty()) {
-        configName_ = other.configName_;
+        configName = other.configName;
         onChanged();
       }
       if (!other.getConfigValue().isEmpty()) {
-        configValue_ = other.configValue_;
+        configValue = other.configValue;
         onChanged();
       }
       if (!other.getConfigType().isEmpty()) {
-        configType_ = other.configType_;
+        configType = other.configType;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
-        description_ = other.description_;
+        description = other.description;
         onChanged();
       }
       if (!other.getBusinessSystem().isEmpty()) {
-        businessSystem_ = other.businessSystem_;
+        businessSystem = other.businessSystem;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -715,7 +715,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object configName_ = "";
+    private java.lang.Object configName = "";
     /**
      * <pre>
      * 配置的名字
@@ -725,12 +725,12 @@ private static final long serialVersionUID = 0L;
      * @return The configName.
      */
     public java.lang.String getConfigName() {
-      java.lang.Object ref = configName_;
+      java.lang.Object ref = configName;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        configName_ = s;
+        configName = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -746,12 +746,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getConfigNameBytes() {
-      java.lang.Object ref = configName_;
+      java.lang.Object ref = configName;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        configName_ = b;
+        configName = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -772,7 +772,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      configName_ = value;
+      configName = value;
       onChanged();
       return this;
     }
@@ -786,7 +786,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearConfigName() {
       
-      configName_ = getDefaultInstance().getConfigName();
+      configName = getDefaultInstance().getConfigName();
       onChanged();
       return this;
     }
@@ -806,12 +806,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      configName_ = value;
+      configName = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object configValue_ = "";
+    private java.lang.Object configValue = "";
     /**
      * <pre>
      * 配置的值
@@ -821,12 +821,12 @@ private static final long serialVersionUID = 0L;
      * @return The configValue.
      */
     public java.lang.String getConfigValue() {
-      java.lang.Object ref = configValue_;
+      java.lang.Object ref = configValue;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        configValue_ = s;
+        configValue = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -842,12 +842,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getConfigValueBytes() {
-      java.lang.Object ref = configValue_;
+      java.lang.Object ref = configValue;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        configValue_ = b;
+        configValue = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -868,7 +868,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      configValue_ = value;
+      configValue = value;
       onChanged();
       return this;
     }
@@ -882,7 +882,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearConfigValue() {
       
-      configValue_ = getDefaultInstance().getConfigValue();
+      configValue = getDefaultInstance().getConfigValue();
       onChanged();
       return this;
     }
@@ -902,12 +902,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      configValue_ = value;
+      configValue = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object configType_ = "";
+    private java.lang.Object configType = "";
     /**
      * <pre>
      * 配置的类型，支持page_permission, system_permission, public_config, system_owner_location
@@ -917,12 +917,12 @@ private static final long serialVersionUID = 0L;
      * @return The configType.
      */
     public java.lang.String getConfigType() {
-      java.lang.Object ref = configType_;
+      java.lang.Object ref = configType;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        configType_ = s;
+        configType = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -938,12 +938,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getConfigTypeBytes() {
-      java.lang.Object ref = configType_;
+      java.lang.Object ref = configType;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        configType_ = b;
+        configType = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -964,7 +964,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      configType_ = value;
+      configType = value;
       onChanged();
       return this;
     }
@@ -978,7 +978,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearConfigType() {
       
-      configType_ = getDefaultInstance().getConfigType();
+      configType = getDefaultInstance().getConfigType();
       onChanged();
       return this;
     }
@@ -998,12 +998,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      configType_ = value;
+      configType = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object description_ = "";
+    private java.lang.Object description = "";
     /**
      * <pre>
      * 描述
@@ -1013,12 +1013,12 @@ private static final long serialVersionUID = 0L;
      * @return The description.
      */
     public java.lang.String getDescription() {
-      java.lang.Object ref = description_;
+      java.lang.Object ref = description;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        description_ = s;
+        description = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1034,12 +1034,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
-      java.lang.Object ref = description_;
+      java.lang.Object ref = description;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        description_ = b;
+        description = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1060,7 +1060,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      description_ = value;
+      description = value;
       onChanged();
       return this;
     }
@@ -1074,7 +1074,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearDescription() {
       
-      description_ = getDefaultInstance().getDescription();
+      description = getDefaultInstance().getDescription();
       onChanged();
       return this;
     }
@@ -1094,12 +1094,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      description_ = value;
+      description = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object businessSystem_ = "";
+    private java.lang.Object businessSystem = "";
     /**
      * <pre>
      * 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, score, auth
@@ -1109,12 +1109,12 @@ private static final long serialVersionUID = 0L;
      * @return The businessSystem.
      */
     public java.lang.String getBusinessSystem() {
-      java.lang.Object ref = businessSystem_;
+      java.lang.Object ref = businessSystem;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        businessSystem_ = s;
+        businessSystem = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1130,12 +1130,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getBusinessSystemBytes() {
-      java.lang.Object ref = businessSystem_;
+      java.lang.Object ref = businessSystem;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        businessSystem_ = b;
+        businessSystem = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1156,7 +1156,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      businessSystem_ = value;
+      businessSystem = value;
       onChanged();
       return this;
     }
@@ -1170,7 +1170,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearBusinessSystem() {
       
-      businessSystem_ = getDefaultInstance().getBusinessSystem();
+      businessSystem = getDefaultInstance().getBusinessSystem();
       onChanged();
       return this;
     }
@@ -1190,7 +1190,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      businessSystem_ = value;
+      businessSystem = value;
       onChanged();
       return this;
     }

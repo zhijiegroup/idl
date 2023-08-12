@@ -48,6 +48,7 @@ struct GloryApi_User {
   /// Clears the value of `seller`. Subsequent reads from it will return its default value.
   mutating func clearSeller() {self._seller = nil}
 
+  ///判断用户的shop访问权限
   var shopAccess: [GloryApi_ShopAccess] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()

@@ -16,8 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Major() {
-    majorName_ = "";
-    majorType_ = "";
+    majorName = "";
+    majorType = "";
   }
 
   @java.lang.Override
@@ -52,24 +52,24 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            majorId_ = input.readInt64();
+            majorId = input.readInt64();
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            majorName_ = s;
+            majorName = s;
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            majorType_ = s;
+            majorType = s;
             break;
           }
           case 56: {
 
-            tenantId_ = input.readInt64();
+            tenantId = input.readInt64();
             break;
           }
           default: {
@@ -105,7 +105,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int MAJOR_ID_FIELD_NUMBER = 1;
-  private long majorId_;
+  private long majorId;
   /**
    * <pre>
    * 创建不传
@@ -116,11 +116,11 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public long getMajorId() {
-    return majorId_;
+    return majorId;
   }
 
   public static final int MAJOR_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object majorName_;
+  private volatile java.lang.Object majorName;
   /**
    * <pre>
    *名称 必传
@@ -131,14 +131,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public java.lang.String getMajorName() {
-    java.lang.Object ref = majorName_;
+    java.lang.Object ref = majorName;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      majorName_ = s;
+      majorName = s;
       return s;
     }
   }
@@ -153,12 +153,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getMajorNameBytes() {
-    java.lang.Object ref = majorName_;
+    java.lang.Object ref = majorName;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      majorName_ = b;
+      majorName = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -166,7 +166,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int MAJOR_TYPE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object majorType_;
+  private volatile java.lang.Object majorType;
   /**
    * <pre>
    * 专业类型, 创建必传, e.g. live
@@ -177,14 +177,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public java.lang.String getMajorType() {
-    java.lang.Object ref = majorType_;
+    java.lang.Object ref = majorType;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      majorType_ = s;
+      majorType = s;
       return s;
     }
   }
@@ -199,12 +199,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getMajorTypeBytes() {
-    java.lang.Object ref = majorType_;
+    java.lang.Object ref = majorType;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      majorType_ = b;
+      majorType = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -212,7 +212,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TENANT_ID_FIELD_NUMBER = 7;
-  private long tenantId_;
+  private long tenantId;
   /**
    * <pre>
    * 学校id，创建必传
@@ -223,7 +223,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public long getTenantId() {
-    return tenantId_;
+    return tenantId;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -241,16 +241,16 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (majorId_ != 0L) {
-      output.writeInt64(1, majorId_);
+      output.writeInt64(1, majorId);
     }
     if (!getMajorNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, majorName_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, majorName);
     }
     if (!getMajorTypeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, majorType_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, majorType);
     }
     if (tenantId_ != 0L) {
-      output.writeInt64(7, tenantId_);
+      output.writeInt64(7, tenantId);
     }
     unknownFields.writeTo(output);
   }
@@ -263,17 +263,17 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (majorId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, majorId_);
+        .computeInt64Size(1, majorId);
     }
     if (!getMajorNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, majorName_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, majorName);
     }
     if (!getMajorTypeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, majorType_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, majorType);
     }
     if (tenantId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(7, tenantId_);
+        .computeInt64Size(7, tenantId);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -452,13 +452,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      majorId_ = 0L;
+      majorId = 0L;
 
-      majorName_ = "";
+      majorName = "";
 
-      majorType_ = "";
+      majorType = "";
 
-      tenantId_ = 0L;
+      tenantId = 0L;
 
       return this;
     }
@@ -486,10 +486,10 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.tenant.Major buildPartial() {
       com.zhijiejiaoyu.glory_api.tenant.Major result = new com.zhijiejiaoyu.glory_api.tenant.Major(this);
-      result.majorId_ = majorId_;
-      result.majorName_ = majorName_;
-      result.majorType_ = majorType_;
-      result.tenantId_ = tenantId_;
+      result.majorId = majorId;
+      result.majorName = majorName;
+      result.majorType = majorType;
+      result.tenantId = tenantId;
       onBuilt();
       return result;
     }
@@ -542,11 +542,11 @@ private static final long serialVersionUID = 0L;
         setMajorId(other.getMajorId());
       }
       if (!other.getMajorName().isEmpty()) {
-        majorName_ = other.majorName_;
+        majorName = other.majorName;
         onChanged();
       }
       if (!other.getMajorType().isEmpty()) {
-        majorType_ = other.majorType_;
+        majorType = other.majorType;
         onChanged();
       }
       if (other.getTenantId() != 0L) {
@@ -592,7 +592,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getMajorId() {
-      return majorId_;
+      return majorId;
     }
     /**
      * <pre>
@@ -605,7 +605,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setMajorId(long value) {
       
-      majorId_ = value;
+      majorId = value;
       onChanged();
       return this;
     }
@@ -619,12 +619,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearMajorId() {
       
-      majorId_ = 0L;
+      majorId = 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object majorName_ = "";
+    private java.lang.Object majorName = "";
     /**
      * <pre>
      *名称 必传
@@ -634,12 +634,12 @@ private static final long serialVersionUID = 0L;
      * @return The majorName.
      */
     public java.lang.String getMajorName() {
-      java.lang.Object ref = majorName_;
+      java.lang.Object ref = majorName;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        majorName_ = s;
+        majorName = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -655,12 +655,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getMajorNameBytes() {
-      java.lang.Object ref = majorName_;
+      java.lang.Object ref = majorName;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        majorName_ = b;
+        majorName = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -681,7 +681,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      majorName_ = value;
+      majorName = value;
       onChanged();
       return this;
     }
@@ -695,7 +695,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearMajorName() {
       
-      majorName_ = getDefaultInstance().getMajorName();
+      majorName = getDefaultInstance().getMajorName();
       onChanged();
       return this;
     }
@@ -715,12 +715,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      majorName_ = value;
+      majorName = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object majorType_ = "";
+    private java.lang.Object majorType = "";
     /**
      * <pre>
      * 专业类型, 创建必传, e.g. live
@@ -730,12 +730,12 @@ private static final long serialVersionUID = 0L;
      * @return The majorType.
      */
     public java.lang.String getMajorType() {
-      java.lang.Object ref = majorType_;
+      java.lang.Object ref = majorType;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        majorType_ = s;
+        majorType = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -751,12 +751,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getMajorTypeBytes() {
-      java.lang.Object ref = majorType_;
+      java.lang.Object ref = majorType;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        majorType_ = b;
+        majorType = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -777,7 +777,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      majorType_ = value;
+      majorType = value;
       onChanged();
       return this;
     }
@@ -791,7 +791,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearMajorType() {
       
-      majorType_ = getDefaultInstance().getMajorType();
+      majorType = getDefaultInstance().getMajorType();
       onChanged();
       return this;
     }
@@ -811,7 +811,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      majorType_ = value;
+      majorType = value;
       onChanged();
       return this;
     }
@@ -827,7 +827,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getTenantId() {
-      return tenantId_;
+      return tenantId;
     }
     /**
      * <pre>
@@ -840,7 +840,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setTenantId(long value) {
       
-      tenantId_ = value;
+      tenantId = value;
       onChanged();
       return this;
     }
@@ -854,7 +854,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearTenantId() {
       
-      tenantId_ = 0L;
+      tenantId = 0L;
       onChanged();
       return this;
     }

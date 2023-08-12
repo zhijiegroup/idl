@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private LiveData() {
-    liveChartData_ = java.util.Collections.emptyList();
+    liveChartData = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -39,7 +39,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
+    int mutable_bitField0 = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -52,7 +52,7 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              liveChartData_ = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.live.LiveChartData>();
+              liveChartData = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.live.LiveChartData>();
               mutable_bitField0_ |= 0x00000001;
             }
             liveChartData_.add(
@@ -61,17 +61,17 @@ private static final long serialVersionUID = 0L;
           }
           case 17: {
 
-            totalDealAmount_ = input.readDouble();
+            totalDealAmount = input.readDouble();
             break;
           }
           case 24: {
 
-            totalVisitorAmount_ = input.readInt64();
+            totalVisitorAmount = input.readInt64();
             break;
           }
           case 32: {
 
-            totalOrderAmount_ = input.readInt64();
+            totalOrderAmount = input.readInt64();
             break;
           }
           default: {
@@ -90,7 +90,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        liveChartData_ = java.util.Collections.unmodifiableList(liveChartData_);
+        liveChartData = java.util.Collections.unmodifiableList(liveChartData);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -110,13 +110,13 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int LIVE_CHART_DATA_FIELD_NUMBER = 1;
-  private java.util.List<com.zhijiejiaoyu.glory_api.live.LiveChartData> liveChartData_;
+  private java.util.List<com.zhijiejiaoyu.glory_api.live.LiveChartData> liveChartData;
   /**
    * <code>repeated .glory_api.LiveChartData live_chart_data = 1;</code>
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.live.LiveChartData> getLiveChartDataList() {
-    return liveChartData_;
+    return liveChartData;
   }
   /**
    * <code>repeated .glory_api.LiveChartData live_chart_data = 1;</code>
@@ -124,7 +124,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.live.LiveChartDataOrBuilder> 
       getLiveChartDataOrBuilderList() {
-    return liveChartData_;
+    return liveChartData;
   }
   /**
    * <code>repeated .glory_api.LiveChartData live_chart_data = 1;</code>
@@ -150,36 +150,36 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TOTAL_DEAL_AMOUNT_FIELD_NUMBER = 2;
-  private double totalDealAmount_;
+  private double totalDealAmount;
   /**
    * <code>double total_deal_amount = 2;</code>
    * @return The totalDealAmount.
    */
   @java.lang.Override
   public double getTotalDealAmount() {
-    return totalDealAmount_;
+    return totalDealAmount;
   }
 
   public static final int TOTAL_VISITOR_AMOUNT_FIELD_NUMBER = 3;
-  private long totalVisitorAmount_;
+  private long totalVisitorAmount;
   /**
    * <code>int64 total_visitor_amount = 3;</code>
    * @return The totalVisitorAmount.
    */
   @java.lang.Override
   public long getTotalVisitorAmount() {
-    return totalVisitorAmount_;
+    return totalVisitorAmount;
   }
 
   public static final int TOTAL_ORDER_AMOUNT_FIELD_NUMBER = 4;
-  private long totalOrderAmount_;
+  private long totalOrderAmount;
   /**
    * <code>int64 total_order_amount = 4;</code>
    * @return The totalOrderAmount.
    */
   @java.lang.Override
   public long getTotalOrderAmount() {
-    return totalOrderAmount_;
+    return totalOrderAmount;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -200,13 +200,13 @@ private static final long serialVersionUID = 0L;
       output.writeMessage(1, liveChartData_.get(i));
     }
     if (totalDealAmount_ != 0D) {
-      output.writeDouble(2, totalDealAmount_);
+      output.writeDouble(2, totalDealAmount);
     }
     if (totalVisitorAmount_ != 0L) {
-      output.writeInt64(3, totalVisitorAmount_);
+      output.writeInt64(3, totalVisitorAmount);
     }
     if (totalOrderAmount_ != 0L) {
-      output.writeInt64(4, totalOrderAmount_);
+      output.writeInt64(4, totalOrderAmount);
     }
     unknownFields.writeTo(output);
   }
@@ -223,15 +223,15 @@ private static final long serialVersionUID = 0L;
     }
     if (totalDealAmount_ != 0D) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(2, totalDealAmount_);
+        .computeDoubleSize(2, totalDealAmount);
     }
     if (totalVisitorAmount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(3, totalVisitorAmount_);
+        .computeInt64Size(3, totalVisitorAmount);
     }
     if (totalOrderAmount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(4, totalOrderAmount_);
+        .computeInt64Size(4, totalOrderAmount);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -415,17 +415,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (liveChartDataBuilder_ == null) {
-        liveChartData_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      if (liveChartDataBuilder == null) {
+        liveChartData = java.util.Collections.emptyList();
+        bitField0 = (bitField0_ & ~0x00000001);
       } else {
         liveChartDataBuilder_.clear();
       }
-      totalDealAmount_ = 0D;
+      totalDealAmount = 0D;
 
-      totalVisitorAmount_ = 0L;
+      totalVisitorAmount = 0L;
 
-      totalOrderAmount_ = 0L;
+      totalOrderAmount = 0L;
 
       return this;
     }
@@ -453,19 +453,19 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.live.LiveData buildPartial() {
       com.zhijiejiaoyu.glory_api.live.LiveData result = new com.zhijiejiaoyu.glory_api.live.LiveData(this);
-      int from_bitField0_ = bitField0_;
-      if (liveChartDataBuilder_ == null) {
+      int from_bitField0 = bitField0;
+      if (liveChartDataBuilder == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
-          liveChartData_ = java.util.Collections.unmodifiableList(liveChartData_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          liveChartData = java.util.Collections.unmodifiableList(liveChartData);
+          bitField0 = (bitField0_ & ~0x00000001);
         }
-        result.liveChartData_ = liveChartData_;
+        result.liveChartData = liveChartData;
       } else {
-        result.liveChartData_ = liveChartDataBuilder_.build();
+        result.liveChartData = liveChartDataBuilder_.build();
       }
-      result.totalDealAmount_ = totalDealAmount_;
-      result.totalVisitorAmount_ = totalVisitorAmount_;
-      result.totalOrderAmount_ = totalOrderAmount_;
+      result.totalDealAmount = totalDealAmount;
+      result.totalVisitorAmount = totalVisitorAmount;
+      result.totalOrderAmount = totalOrderAmount;
       onBuilt();
       return result;
     }
@@ -514,14 +514,14 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.zhijiejiaoyu.glory_api.live.LiveData other) {
       if (other == com.zhijiejiaoyu.glory_api.live.LiveData.getDefaultInstance()) return this;
-      if (liveChartDataBuilder_ == null) {
+      if (liveChartDataBuilder == null) {
         if (!other.liveChartData_.isEmpty()) {
           if (liveChartData_.isEmpty()) {
-            liveChartData_ = other.liveChartData_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            liveChartData = other.liveChartData;
+            bitField0 = (bitField0_ & ~0x00000001);
           } else {
             ensureLiveChartDataIsMutable();
-            liveChartData_.addAll(other.liveChartData_);
+            liveChartData_.addAll(other.liveChartData);
           }
           onChanged();
         }
@@ -529,14 +529,14 @@ private static final long serialVersionUID = 0L;
         if (!other.liveChartData_.isEmpty()) {
           if (liveChartDataBuilder_.isEmpty()) {
             liveChartDataBuilder_.dispose();
-            liveChartDataBuilder_ = null;
-            liveChartData_ = other.liveChartData_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-            liveChartDataBuilder_ = 
+            liveChartDataBuilder = null;
+            liveChartData = other.liveChartData;
+            bitField0 = (bitField0_ & ~0x00000001);
+            liveChartDataBuilder = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getLiveChartDataFieldBuilder() : null;
           } else {
-            liveChartDataBuilder_.addAllMessages(other.liveChartData_);
+            liveChartDataBuilder_.addAllMessages(other.liveChartData);
           }
         }
       }
@@ -577,26 +577,26 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int bitField0_;
+    private int bitField0;
 
-    private java.util.List<com.zhijiejiaoyu.glory_api.live.LiveChartData> liveChartData_ =
+    private java.util.List<com.zhijiejiaoyu.glory_api.live.LiveChartData> liveChartData =
       java.util.Collections.emptyList();
     private void ensureLiveChartDataIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        liveChartData_ = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.live.LiveChartData>(liveChartData_);
+        liveChartData = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.live.LiveChartData>(liveChartData);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.live.LiveChartData, com.zhijiejiaoyu.glory_api.live.LiveChartData.Builder, com.zhijiejiaoyu.glory_api.live.LiveChartDataOrBuilder> liveChartDataBuilder_;
+        com.zhijiejiaoyu.glory_api.live.LiveChartData, com.zhijiejiaoyu.glory_api.live.LiveChartData.Builder, com.zhijiejiaoyu.glory_api.live.LiveChartDataOrBuilder> liveChartDataBuilder;
 
     /**
      * <code>repeated .glory_api.LiveChartData live_chart_data = 1;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.live.LiveChartData> getLiveChartDataList() {
-      if (liveChartDataBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(liveChartData_);
+      if (liveChartDataBuilder == null) {
+        return java.util.Collections.unmodifiableList(liveChartData);
       } else {
         return liveChartDataBuilder_.getMessageList();
       }
@@ -605,7 +605,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.LiveChartData live_chart_data = 1;</code>
      */
     public int getLiveChartDataCount() {
-      if (liveChartDataBuilder_ == null) {
+      if (liveChartDataBuilder == null) {
         return liveChartData_.size();
       } else {
         return liveChartDataBuilder_.getCount();
@@ -615,7 +615,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.LiveChartData live_chart_data = 1;</code>
      */
     public com.zhijiejiaoyu.glory_api.live.LiveChartData getLiveChartData(int index) {
-      if (liveChartDataBuilder_ == null) {
+      if (liveChartDataBuilder == null) {
         return liveChartData_.get(index);
       } else {
         return liveChartDataBuilder_.getMessage(index);
@@ -626,7 +626,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setLiveChartData(
         int index, com.zhijiejiaoyu.glory_api.live.LiveChartData value) {
-      if (liveChartDataBuilder_ == null) {
+      if (liveChartDataBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -643,7 +643,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setLiveChartData(
         int index, com.zhijiejiaoyu.glory_api.live.LiveChartData.Builder builderForValue) {
-      if (liveChartDataBuilder_ == null) {
+      if (liveChartDataBuilder == null) {
         ensureLiveChartDataIsMutable();
         liveChartData_.set(index, builderForValue.build());
         onChanged();
@@ -656,7 +656,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.LiveChartData live_chart_data = 1;</code>
      */
     public Builder addLiveChartData(com.zhijiejiaoyu.glory_api.live.LiveChartData value) {
-      if (liveChartDataBuilder_ == null) {
+      if (liveChartDataBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -673,7 +673,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addLiveChartData(
         int index, com.zhijiejiaoyu.glory_api.live.LiveChartData value) {
-      if (liveChartDataBuilder_ == null) {
+      if (liveChartDataBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -690,7 +690,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addLiveChartData(
         com.zhijiejiaoyu.glory_api.live.LiveChartData.Builder builderForValue) {
-      if (liveChartDataBuilder_ == null) {
+      if (liveChartDataBuilder == null) {
         ensureLiveChartDataIsMutable();
         liveChartData_.add(builderForValue.build());
         onChanged();
@@ -704,7 +704,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addLiveChartData(
         int index, com.zhijiejiaoyu.glory_api.live.LiveChartData.Builder builderForValue) {
-      if (liveChartDataBuilder_ == null) {
+      if (liveChartDataBuilder == null) {
         ensureLiveChartDataIsMutable();
         liveChartData_.add(index, builderForValue.build());
         onChanged();
@@ -718,10 +718,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addAllLiveChartData(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.live.LiveChartData> values) {
-      if (liveChartDataBuilder_ == null) {
+      if (liveChartDataBuilder == null) {
         ensureLiveChartDataIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, liveChartData_);
+            values, liveChartData);
         onChanged();
       } else {
         liveChartDataBuilder_.addAllMessages(values);
@@ -732,9 +732,9 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.LiveChartData live_chart_data = 1;</code>
      */
     public Builder clearLiveChartData() {
-      if (liveChartDataBuilder_ == null) {
-        liveChartData_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      if (liveChartDataBuilder == null) {
+        liveChartData = java.util.Collections.emptyList();
+        bitField0 = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         liveChartDataBuilder_.clear();
@@ -745,7 +745,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.LiveChartData live_chart_data = 1;</code>
      */
     public Builder removeLiveChartData(int index) {
-      if (liveChartDataBuilder_ == null) {
+      if (liveChartDataBuilder == null) {
         ensureLiveChartDataIsMutable();
         liveChartData_.remove(index);
         onChanged();
@@ -766,7 +766,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.live.LiveChartDataOrBuilder getLiveChartDataOrBuilder(
         int index) {
-      if (liveChartDataBuilder_ == null) {
+      if (liveChartDataBuilder == null) {
         return liveChartData_.get(index);  } else {
         return liveChartDataBuilder_.getMessageOrBuilder(index);
       }
@@ -779,7 +779,7 @@ private static final long serialVersionUID = 0L;
       if (liveChartDataBuilder_ != null) {
         return liveChartDataBuilder_.getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(liveChartData_);
+        return java.util.Collections.unmodifiableList(liveChartData);
       }
     }
     /**
@@ -807,16 +807,16 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.RepeatedFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.live.LiveChartData, com.zhijiejiaoyu.glory_api.live.LiveChartData.Builder, com.zhijiejiaoyu.glory_api.live.LiveChartDataOrBuilder> 
         getLiveChartDataFieldBuilder() {
-      if (liveChartDataBuilder_ == null) {
-        liveChartDataBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+      if (liveChartDataBuilder == null) {
+        liveChartDataBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.live.LiveChartData, com.zhijiejiaoyu.glory_api.live.LiveChartData.Builder, com.zhijiejiaoyu.glory_api.live.LiveChartDataOrBuilder>(
                 liveChartData_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        liveChartData_ = null;
+        liveChartData = null;
       }
-      return liveChartDataBuilder_;
+      return liveChartDataBuilder;
     }
 
     private double totalDealAmount_ ;
@@ -826,7 +826,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public double getTotalDealAmount() {
-      return totalDealAmount_;
+      return totalDealAmount;
     }
     /**
      * <code>double total_deal_amount = 2;</code>
@@ -835,7 +835,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setTotalDealAmount(double value) {
       
-      totalDealAmount_ = value;
+      totalDealAmount = value;
       onChanged();
       return this;
     }
@@ -845,7 +845,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearTotalDealAmount() {
       
-      totalDealAmount_ = 0D;
+      totalDealAmount = 0D;
       onChanged();
       return this;
     }
@@ -857,7 +857,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getTotalVisitorAmount() {
-      return totalVisitorAmount_;
+      return totalVisitorAmount;
     }
     /**
      * <code>int64 total_visitor_amount = 3;</code>
@@ -866,7 +866,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setTotalVisitorAmount(long value) {
       
-      totalVisitorAmount_ = value;
+      totalVisitorAmount = value;
       onChanged();
       return this;
     }
@@ -876,7 +876,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearTotalVisitorAmount() {
       
-      totalVisitorAmount_ = 0L;
+      totalVisitorAmount = 0L;
       onChanged();
       return this;
     }
@@ -888,7 +888,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getTotalOrderAmount() {
-      return totalOrderAmount_;
+      return totalOrderAmount;
     }
     /**
      * <code>int64 total_order_amount = 4;</code>
@@ -897,7 +897,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setTotalOrderAmount(long value) {
       
-      totalOrderAmount_ = value;
+      totalOrderAmount = value;
       onChanged();
       return this;
     }
@@ -907,7 +907,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearTotalOrderAmount() {
       
-      totalOrderAmount_ = 0L;
+      totalOrderAmount = 0L;
       onChanged();
       return this;
     }

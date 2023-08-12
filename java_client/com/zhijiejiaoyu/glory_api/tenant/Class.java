@@ -16,8 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Class() {
-    className_ = "";
-    startDate_ = "";
+    className = "";
+    startDate = "";
   }
 
   @java.lang.Override
@@ -52,34 +52,34 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            classId_ = input.readInt64();
+            classId = input.readInt64();
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            className_ = s;
+            className = s;
             break;
           }
           case 32: {
 
-            majorId_ = input.readInt64();
+            majorId = input.readInt64();
             break;
           }
           case 40: {
 
-            tenantId_ = input.readInt64();
+            tenantId = input.readInt64();
             break;
           }
           case 48: {
 
-            grade_ = input.readInt32();
+            grade = input.readInt32();
             break;
           }
           case 58: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            startDate_ = s;
+            startDate = s;
             break;
           }
           default: {
@@ -115,7 +115,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CLASS_ID_FIELD_NUMBER = 1;
-  private long classId_;
+  private long classId;
   /**
    * <pre>
    * 创建不传
@@ -126,11 +126,11 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public long getClassId() {
-    return classId_;
+    return classId;
   }
 
   public static final int CLASS_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object className_;
+  private volatile java.lang.Object className;
   /**
    * <pre>
    *名称 必传
@@ -141,14 +141,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public java.lang.String getClassName() {
-    java.lang.Object ref = className_;
+    java.lang.Object ref = className;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      className_ = s;
+      className = s;
       return s;
     }
   }
@@ -163,12 +163,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getClassNameBytes() {
-    java.lang.Object ref = className_;
+    java.lang.Object ref = className;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      className_ = b;
+      className = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -176,7 +176,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int MAJOR_ID_FIELD_NUMBER = 4;
-  private long majorId_;
+  private long majorId;
   /**
    * <pre>
    * 专业id, 创建必传
@@ -187,11 +187,11 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public long getMajorId() {
-    return majorId_;
+    return majorId;
   }
 
   public static final int TENANT_ID_FIELD_NUMBER = 5;
-  private long tenantId_;
+  private long tenantId;
   /**
    * <pre>
    * 学校id，创建必传
@@ -202,11 +202,11 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public long getTenantId() {
-    return tenantId_;
+    return tenantId;
   }
 
   public static final int GRADE_FIELD_NUMBER = 6;
-  private int grade_;
+  private int grade;
   /**
    * <pre>
    * 年级, 创建必传
@@ -217,11 +217,11 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public int getGrade() {
-    return grade_;
+    return grade;
   }
 
   public static final int START_DATE_FIELD_NUMBER = 7;
-  private volatile java.lang.Object startDate_;
+  private volatile java.lang.Object startDate;
   /**
    * <pre>
    * 开学日期, 创建必传
@@ -232,14 +232,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public java.lang.String getStartDate() {
-    java.lang.Object ref = startDate_;
+    java.lang.Object ref = startDate;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      startDate_ = s;
+      startDate = s;
       return s;
     }
   }
@@ -254,12 +254,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getStartDateBytes() {
-    java.lang.Object ref = startDate_;
+    java.lang.Object ref = startDate;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      startDate_ = b;
+      startDate = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -281,22 +281,22 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (classId_ != 0L) {
-      output.writeInt64(1, classId_);
+      output.writeInt64(1, classId);
     }
     if (!getClassNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, className_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, className);
     }
     if (majorId_ != 0L) {
-      output.writeInt64(4, majorId_);
+      output.writeInt64(4, majorId);
     }
     if (tenantId_ != 0L) {
-      output.writeInt64(5, tenantId_);
+      output.writeInt64(5, tenantId);
     }
     if (grade_ != 0) {
-      output.writeInt32(6, grade_);
+      output.writeInt32(6, grade);
     }
     if (!getStartDateBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, startDate_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, startDate);
     }
     unknownFields.writeTo(output);
   }
@@ -309,25 +309,25 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (classId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, classId_);
+        .computeInt64Size(1, classId);
     }
     if (!getClassNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, className_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, className);
     }
     if (majorId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(4, majorId_);
+        .computeInt64Size(4, majorId);
     }
     if (tenantId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(5, tenantId_);
+        .computeInt64Size(5, tenantId);
     }
     if (grade_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(6, grade_);
+        .computeInt32Size(6, grade);
     }
     if (!getStartDateBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, startDate_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, startDate);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -515,17 +515,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      classId_ = 0L;
+      classId = 0L;
 
-      className_ = "";
+      className = "";
 
-      majorId_ = 0L;
+      majorId = 0L;
 
-      tenantId_ = 0L;
+      tenantId = 0L;
 
-      grade_ = 0;
+      grade = 0;
 
-      startDate_ = "";
+      startDate = "";
 
       return this;
     }
@@ -553,12 +553,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.tenant.Class buildPartial() {
       com.zhijiejiaoyu.glory_api.tenant.Class result = new com.zhijiejiaoyu.glory_api.tenant.Class(this);
-      result.classId_ = classId_;
-      result.className_ = className_;
-      result.majorId_ = majorId_;
-      result.tenantId_ = tenantId_;
-      result.grade_ = grade_;
-      result.startDate_ = startDate_;
+      result.classId = classId;
+      result.className = className;
+      result.majorId = majorId;
+      result.tenantId = tenantId;
+      result.grade = grade;
+      result.startDate = startDate;
       onBuilt();
       return result;
     }
@@ -611,7 +611,7 @@ private static final long serialVersionUID = 0L;
         setClassId(other.getClassId());
       }
       if (!other.getClassName().isEmpty()) {
-        className_ = other.className_;
+        className = other.className;
         onChanged();
       }
       if (other.getMajorId() != 0L) {
@@ -624,7 +624,7 @@ private static final long serialVersionUID = 0L;
         setGrade(other.getGrade());
       }
       if (!other.getStartDate().isEmpty()) {
-        startDate_ = other.startDate_;
+        startDate = other.startDate;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -667,7 +667,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getClassId() {
-      return classId_;
+      return classId;
     }
     /**
      * <pre>
@@ -680,7 +680,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setClassId(long value) {
       
-      classId_ = value;
+      classId = value;
       onChanged();
       return this;
     }
@@ -694,12 +694,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearClassId() {
       
-      classId_ = 0L;
+      classId = 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object className_ = "";
+    private java.lang.Object className = "";
     /**
      * <pre>
      *名称 必传
@@ -709,12 +709,12 @@ private static final long serialVersionUID = 0L;
      * @return The className.
      */
     public java.lang.String getClassName() {
-      java.lang.Object ref = className_;
+      java.lang.Object ref = className;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        className_ = s;
+        className = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -730,12 +730,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getClassNameBytes() {
-      java.lang.Object ref = className_;
+      java.lang.Object ref = className;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        className_ = b;
+        className = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -756,7 +756,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      className_ = value;
+      className = value;
       onChanged();
       return this;
     }
@@ -770,7 +770,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearClassName() {
       
-      className_ = getDefaultInstance().getClassName();
+      className = getDefaultInstance().getClassName();
       onChanged();
       return this;
     }
@@ -790,7 +790,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      className_ = value;
+      className = value;
       onChanged();
       return this;
     }
@@ -806,7 +806,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getMajorId() {
-      return majorId_;
+      return majorId;
     }
     /**
      * <pre>
@@ -819,7 +819,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setMajorId(long value) {
       
-      majorId_ = value;
+      majorId = value;
       onChanged();
       return this;
     }
@@ -833,7 +833,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearMajorId() {
       
-      majorId_ = 0L;
+      majorId = 0L;
       onChanged();
       return this;
     }
@@ -849,7 +849,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getTenantId() {
-      return tenantId_;
+      return tenantId;
     }
     /**
      * <pre>
@@ -862,7 +862,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setTenantId(long value) {
       
-      tenantId_ = value;
+      tenantId = value;
       onChanged();
       return this;
     }
@@ -876,7 +876,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearTenantId() {
       
-      tenantId_ = 0L;
+      tenantId = 0L;
       onChanged();
       return this;
     }
@@ -892,7 +892,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public int getGrade() {
-      return grade_;
+      return grade;
     }
     /**
      * <pre>
@@ -905,7 +905,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setGrade(int value) {
       
-      grade_ = value;
+      grade = value;
       onChanged();
       return this;
     }
@@ -919,12 +919,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearGrade() {
       
-      grade_ = 0;
+      grade = 0;
       onChanged();
       return this;
     }
 
-    private java.lang.Object startDate_ = "";
+    private java.lang.Object startDate = "";
     /**
      * <pre>
      * 开学日期, 创建必传
@@ -934,12 +934,12 @@ private static final long serialVersionUID = 0L;
      * @return The startDate.
      */
     public java.lang.String getStartDate() {
-      java.lang.Object ref = startDate_;
+      java.lang.Object ref = startDate;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        startDate_ = s;
+        startDate = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -955,12 +955,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getStartDateBytes() {
-      java.lang.Object ref = startDate_;
+      java.lang.Object ref = startDate;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        startDate_ = b;
+        startDate = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -981,7 +981,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      startDate_ = value;
+      startDate = value;
       onChanged();
       return this;
     }
@@ -995,7 +995,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearStartDate() {
       
-      startDate_ = getDefaultInstance().getStartDate();
+      startDate = getDefaultInstance().getStartDate();
       onChanged();
       return this;
     }
@@ -1015,7 +1015,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      startDate_ = value;
+      startDate = value;
       onChanged();
       return this;
     }
