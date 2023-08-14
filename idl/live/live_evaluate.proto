@@ -51,6 +51,7 @@ message EvaluateSubOption {
     double total = 2;
     string content  =3;
     string score = 4;
+    string name_key = 5;
 }
 
 message EvaluateDetail {
