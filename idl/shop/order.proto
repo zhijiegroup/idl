@@ -84,6 +84,7 @@ message OrderInfo {
   double payable_amount = 12;//应付金额
   repeated ProductInfo productInfo = 13;//商品信息
   string shop_name = 14;//商店名字
+  string shop_logo = 144;//商店logo
   string currency = 15;//货币单位
   string contact_name = 16;//收货人
   string buyer_name = 17;//购买人
