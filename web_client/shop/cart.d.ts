@@ -6,11 +6,12 @@ import * as base from "../base";
 export { base };
 
 export interface Cart {
+  /** 客户端 添加购物车 sku_id quantity shop_id seller_id tenant_id必传 */
   cart_id?: string;
   user_id?: string;
   seller_id?: string;
   tenant_id?: string;
-  cart_sku?: Array<CartSku>;
+  cart_sku?: CartSku;
 }
 
 export interface CartSku {
@@ -55,15 +56,16 @@ export interface CartWithAuthor {
   author_info?: base.AuthorInfo;
 }
 
-export interface CreateCartRequest {
+export interface AddCartRequest {
   base_request?: base.BaseRequest;
   cart?: Cart;
   created_by?: string;
 }
 
-export interface CreateCartResponse {
+export interface AddCartResponse {
   base_resp?: base.BaseResponse;
   cart_id?: string;
+  cart_num?: number;
 }
 
 export interface GetCartRequest {

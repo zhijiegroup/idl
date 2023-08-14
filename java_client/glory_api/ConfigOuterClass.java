@@ -1781,7 +1781,7 @@ public final class ConfigOuterClass {
 
     /**
      * <pre>
-     * 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, short, shop
+     * 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, score, auth
      * </pre>
      *
      * <code>string business_system = 6;</code>
@@ -1790,7 +1790,7 @@ public final class ConfigOuterClass {
     java.lang.String getBusinessSystem();
     /**
      * <pre>
-     * 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, short, shop
+     * 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, score, auth
      * </pre>
      *
      * <code>string business_system = 6;</code>
@@ -2099,7 +2099,7 @@ public final class ConfigOuterClass {
     private volatile java.lang.Object businessSystem_;
     /**
      * <pre>
-     * 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, short, shop
+     * 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, score, auth
      * </pre>
      *
      * <code>string business_system = 6;</code>
@@ -2120,7 +2120,7 @@ public final class ConfigOuterClass {
     }
     /**
      * <pre>
-     * 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, short, shop
+     * 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, score, auth
      * </pre>
      *
      * <code>string business_system = 6;</code>
@@ -2898,7 +2898,7 @@ public final class ConfigOuterClass {
       private java.lang.Object businessSystem_ = "";
       /**
        * <pre>
-       * 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, short, shop
+       * 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, score, auth
        * </pre>
        *
        * <code>string business_system = 6;</code>
@@ -2918,7 +2918,7 @@ public final class ConfigOuterClass {
       }
       /**
        * <pre>
-       * 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, short, shop
+       * 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, score, auth
        * </pre>
        *
        * <code>string business_system = 6;</code>
@@ -2939,7 +2939,7 @@ public final class ConfigOuterClass {
       }
       /**
        * <pre>
-       * 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, short, shop
+       * 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, score, auth
        * </pre>
        *
        * <code>string business_system = 6;</code>
@@ -2958,7 +2958,7 @@ public final class ConfigOuterClass {
       }
       /**
        * <pre>
-       * 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, short, shop
+       * 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, score, auth
        * </pre>
        *
        * <code>string business_system = 6;</code>
@@ -2972,7 +2972,7 @@ public final class ConfigOuterClass {
       }
       /**
        * <pre>
-       * 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, short, shop
+       * 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, score, auth
        * </pre>
        *
        * <code>string business_system = 6;</code>
@@ -8246,7 +8246,7 @@ public final class ConfigOuterClass {
 
     /**
      * <pre>
-     * 业务系统，添加的时候默认是global(不属于任何业务系统）, 现在支持 shop, live, short
+     * 业务系统，添加的时候默认是global(不属于任何业务系统）, 现在支持 score, live, auth
      * </pre>
      *
      * <code>string business_system = 4;</code>
@@ -8255,7 +8255,7 @@ public final class ConfigOuterClass {
     java.lang.String getBusinessSystem();
     /**
      * <pre>
-     * 业务系统，添加的时候默认是global(不属于任何业务系统）, 现在支持 shop, live, short
+     * 业务系统，添加的时候默认是global(不属于任何业务系统）, 现在支持 score, live, auth
      * </pre>
      *
      * <code>string business_system = 4;</code>
@@ -8497,7 +8497,7 @@ public final class ConfigOuterClass {
     private volatile java.lang.Object businessSystem_;
     /**
      * <pre>
-     * 业务系统，添加的时候默认是global(不属于任何业务系统）, 现在支持 shop, live, short
+     * 业务系统，添加的时候默认是global(不属于任何业务系统）, 现在支持 score, live, auth
      * </pre>
      *
      * <code>string business_system = 4;</code>
@@ -8518,7 +8518,7 @@ public final class ConfigOuterClass {
     }
     /**
      * <pre>
-     * 业务系统，添加的时候默认是global(不属于任何业务系统）, 现在支持 shop, live, short
+     * 业务系统，添加的时候默认是global(不属于任何业务系统）, 现在支持 score, live, auth
      * </pre>
      *
      * <code>string business_system = 4;</code>
@@ -9219,7 +9219,7 @@ public final class ConfigOuterClass {
       private java.lang.Object businessSystem_ = "";
       /**
        * <pre>
-       * 业务系统，添加的时候默认是global(不属于任何业务系统）, 现在支持 shop, live, short
+       * 业务系统，添加的时候默认是global(不属于任何业务系统）, 现在支持 score, live, auth
        * </pre>
        *
        * <code>string business_system = 4;</code>
@@ -9239,7 +9239,7 @@ public final class ConfigOuterClass {
       }
       /**
        * <pre>
-       * 业务系统，添加的时候默认是global(不属于任何业务系统）, 现在支持 shop, live, short
+       * 业务系统，添加的时候默认是global(不属于任何业务系统）, 现在支持 score, live, auth
        * </pre>
        *
        * <code>string business_system = 4;</code>
@@ -9260,7 +9260,7 @@ public final class ConfigOuterClass {
       }
       /**
        * <pre>
-       * 业务系统，添加的时候默认是global(不属于任何业务系统）, 现在支持 shop, live, short
+       * 业务系统，添加的时候默认是global(不属于任何业务系统）, 现在支持 score, live, auth
        * </pre>
        *
        * <code>string business_system = 4;</code>
@@ -9279,7 +9279,7 @@ public final class ConfigOuterClass {
       }
       /**
        * <pre>
-       * 业务系统，添加的时候默认是global(不属于任何业务系统）, 现在支持 shop, live, short
+       * 业务系统，添加的时候默认是global(不属于任何业务系统）, 现在支持 score, live, auth
        * </pre>
        *
        * <code>string business_system = 4;</code>
@@ -9293,7 +9293,7 @@ public final class ConfigOuterClass {
       }
       /**
        * <pre>
-       * 业务系统，添加的时候默认是global(不属于任何业务系统）, 现在支持 shop, live, short
+       * 业务系统，添加的时候默认是global(不属于任何业务系统）, 现在支持 score, live, auth
        * </pre>
        *
        * <code>string business_system = 4;</code>

@@ -30880,42 +30880,54 @@ public final class UserOuterClass {
     long getUserId();
 
     /**
-     * <code>string user_name = 2;</code>
+     * <code>string phone = 2;</code>
+     * @return The phone.
+     */
+    java.lang.String getPhone();
+    /**
+     * <code>string phone = 2;</code>
+     * @return The bytes for phone.
+     */
+    com.google.protobuf.ByteString
+        getPhoneBytes();
+
+    /**
+     * <code>string user_name = 3;</code>
      * @return The userName.
      */
     java.lang.String getUserName();
     /**
-     * <code>string user_name = 2;</code>
+     * <code>string user_name = 3;</code>
      * @return The bytes for userName.
      */
     com.google.protobuf.ByteString
         getUserNameBytes();
 
     /**
-     * <code>int64 tenant_id = 3;</code>
+     * <code>int64 tenant_id = 4;</code>
      * @return The tenantId.
      */
     long getTenantId();
 
     /**
-     * <code>string role = 4;</code>
+     * <code>string role = 5;</code>
      * @return The role.
      */
     java.lang.String getRole();
     /**
-     * <code>string role = 4;</code>
+     * <code>string role = 5;</code>
      * @return The bytes for role.
      */
     com.google.protobuf.ByteString
         getRoleBytes();
 
     /**
-     * <code>string created_at = 5;</code>
+     * <code>string created_at = 6;</code>
      * @return The createdAt.
      */
     java.lang.String getCreatedAt();
     /**
-     * <code>string created_at = 5;</code>
+     * <code>string created_at = 6;</code>
      * @return The bytes for createdAt.
      */
     com.google.protobuf.ByteString
@@ -30934,6 +30946,7 @@ public final class UserOuterClass {
       super(builder);
     }
     private ListUserByRole() {
+      phone_ = "";
       userName_ = "";
       role_ = "";
       createdAt_ = "";
@@ -30977,21 +30990,27 @@ public final class UserOuterClass {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
+              phone_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
               userName_ = s;
               break;
             }
-            case 24: {
+            case 32: {
 
               tenantId_ = input.readInt64();
               break;
             }
-            case 34: {
+            case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
               role_ = s;
               break;
             }
-            case 42: {
+            case 50: {
               java.lang.String s = input.readStringRequireUtf8();
 
               createdAt_ = s;
@@ -31040,10 +31059,48 @@ public final class UserOuterClass {
       return userId_;
     }
 
-    public static final int USER_NAME_FIELD_NUMBER = 2;
+    public static final int PHONE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object phone_;
+    /**
+     * <code>string phone = 2;</code>
+     * @return The phone.
+     */
+    @java.lang.Override
+    public java.lang.String getPhone() {
+      java.lang.Object ref = phone_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        phone_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string phone = 2;</code>
+     * @return The bytes for phone.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPhoneBytes() {
+      java.lang.Object ref = phone_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        phone_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USER_NAME_FIELD_NUMBER = 3;
     private volatile java.lang.Object userName_;
     /**
-     * <code>string user_name = 2;</code>
+     * <code>string user_name = 3;</code>
      * @return The userName.
      */
     @java.lang.Override
@@ -31060,7 +31117,7 @@ public final class UserOuterClass {
       }
     }
     /**
-     * <code>string user_name = 2;</code>
+     * <code>string user_name = 3;</code>
      * @return The bytes for userName.
      */
     @java.lang.Override
@@ -31078,10 +31135,10 @@ public final class UserOuterClass {
       }
     }
 
-    public static final int TENANT_ID_FIELD_NUMBER = 3;
+    public static final int TENANT_ID_FIELD_NUMBER = 4;
     private long tenantId_;
     /**
-     * <code>int64 tenant_id = 3;</code>
+     * <code>int64 tenant_id = 4;</code>
      * @return The tenantId.
      */
     @java.lang.Override
@@ -31089,10 +31146,10 @@ public final class UserOuterClass {
       return tenantId_;
     }
 
-    public static final int ROLE_FIELD_NUMBER = 4;
+    public static final int ROLE_FIELD_NUMBER = 5;
     private volatile java.lang.Object role_;
     /**
-     * <code>string role = 4;</code>
+     * <code>string role = 5;</code>
      * @return The role.
      */
     @java.lang.Override
@@ -31109,7 +31166,7 @@ public final class UserOuterClass {
       }
     }
     /**
-     * <code>string role = 4;</code>
+     * <code>string role = 5;</code>
      * @return The bytes for role.
      */
     @java.lang.Override
@@ -31127,10 +31184,10 @@ public final class UserOuterClass {
       }
     }
 
-    public static final int CREATED_AT_FIELD_NUMBER = 5;
+    public static final int CREATED_AT_FIELD_NUMBER = 6;
     private volatile java.lang.Object createdAt_;
     /**
-     * <code>string created_at = 5;</code>
+     * <code>string created_at = 6;</code>
      * @return The createdAt.
      */
     @java.lang.Override
@@ -31147,7 +31204,7 @@ public final class UserOuterClass {
       }
     }
     /**
-     * <code>string created_at = 5;</code>
+     * <code>string created_at = 6;</code>
      * @return The bytes for createdAt.
      */
     @java.lang.Override
@@ -31182,17 +31239,20 @@ public final class UserOuterClass {
       if (userId_ != 0L) {
         output.writeInt64(1, userId_);
       }
+      if (!getPhoneBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, phone_);
+      }
       if (!getUserNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, userName_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, userName_);
       }
       if (tenantId_ != 0L) {
-        output.writeInt64(3, tenantId_);
+        output.writeInt64(4, tenantId_);
       }
       if (!getRoleBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, role_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, role_);
       }
       if (!getCreatedAtBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, createdAt_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, createdAt_);
       }
       unknownFields.writeTo(output);
     }
@@ -31207,18 +31267,21 @@ public final class UserOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(1, userId_);
       }
+      if (!getPhoneBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, phone_);
+      }
       if (!getUserNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, userName_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, userName_);
       }
       if (tenantId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, tenantId_);
+          .computeInt64Size(4, tenantId_);
       }
       if (!getRoleBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, role_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, role_);
       }
       if (!getCreatedAtBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, createdAt_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, createdAt_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -31237,6 +31300,8 @@ public final class UserOuterClass {
 
       if (getUserId()
           != other.getUserId()) return false;
+      if (!getPhone()
+          .equals(other.getPhone())) return false;
       if (!getUserName()
           .equals(other.getUserName())) return false;
       if (getTenantId()
@@ -31259,6 +31324,8 @@ public final class UserOuterClass {
       hash = (37 * hash) + USER_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getUserId());
+      hash = (37 * hash) + PHONE_FIELD_NUMBER;
+      hash = (53 * hash) + getPhone().hashCode();
       hash = (37 * hash) + USER_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getUserName().hashCode();
       hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
@@ -31403,6 +31470,8 @@ public final class UserOuterClass {
         super.clear();
         userId_ = 0L;
 
+        phone_ = "";
+
         userName_ = "";
 
         tenantId_ = 0L;
@@ -31438,6 +31507,7 @@ public final class UserOuterClass {
       public glory_api.UserOuterClass.ListUserByRole buildPartial() {
         glory_api.UserOuterClass.ListUserByRole result = new glory_api.UserOuterClass.ListUserByRole(this);
         result.userId_ = userId_;
+        result.phone_ = phone_;
         result.userName_ = userName_;
         result.tenantId_ = tenantId_;
         result.role_ = role_;
@@ -31492,6 +31562,10 @@ public final class UserOuterClass {
         if (other == glory_api.UserOuterClass.ListUserByRole.getDefaultInstance()) return this;
         if (other.getUserId() != 0L) {
           setUserId(other.getUserId());
+        }
+        if (!other.getPhone().isEmpty()) {
+          phone_ = other.phone_;
+          onChanged();
         }
         if (!other.getUserName().isEmpty()) {
           userName_ = other.userName_;
@@ -31568,9 +31642,85 @@ public final class UserOuterClass {
         return this;
       }
 
+      private java.lang.Object phone_ = "";
+      /**
+       * <code>string phone = 2;</code>
+       * @return The phone.
+       */
+      public java.lang.String getPhone() {
+        java.lang.Object ref = phone_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          phone_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string phone = 2;</code>
+       * @return The bytes for phone.
+       */
+      public com.google.protobuf.ByteString
+          getPhoneBytes() {
+        java.lang.Object ref = phone_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          phone_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string phone = 2;</code>
+       * @param value The phone to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPhone(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        phone_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string phone = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPhone() {
+        
+        phone_ = getDefaultInstance().getPhone();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string phone = 2;</code>
+       * @param value The bytes for phone to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPhoneBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        phone_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object userName_ = "";
       /**
-       * <code>string user_name = 2;</code>
+       * <code>string user_name = 3;</code>
        * @return The userName.
        */
       public java.lang.String getUserName() {
@@ -31586,7 +31736,7 @@ public final class UserOuterClass {
         }
       }
       /**
-       * <code>string user_name = 2;</code>
+       * <code>string user_name = 3;</code>
        * @return The bytes for userName.
        */
       public com.google.protobuf.ByteString
@@ -31603,7 +31753,7 @@ public final class UserOuterClass {
         }
       }
       /**
-       * <code>string user_name = 2;</code>
+       * <code>string user_name = 3;</code>
        * @param value The userName to set.
        * @return This builder for chaining.
        */
@@ -31618,7 +31768,7 @@ public final class UserOuterClass {
         return this;
       }
       /**
-       * <code>string user_name = 2;</code>
+       * <code>string user_name = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearUserName() {
@@ -31628,7 +31778,7 @@ public final class UserOuterClass {
         return this;
       }
       /**
-       * <code>string user_name = 2;</code>
+       * <code>string user_name = 3;</code>
        * @param value The bytes for userName to set.
        * @return This builder for chaining.
        */
@@ -31646,7 +31796,7 @@ public final class UserOuterClass {
 
       private long tenantId_ ;
       /**
-       * <code>int64 tenant_id = 3;</code>
+       * <code>int64 tenant_id = 4;</code>
        * @return The tenantId.
        */
       @java.lang.Override
@@ -31654,7 +31804,7 @@ public final class UserOuterClass {
         return tenantId_;
       }
       /**
-       * <code>int64 tenant_id = 3;</code>
+       * <code>int64 tenant_id = 4;</code>
        * @param value The tenantId to set.
        * @return This builder for chaining.
        */
@@ -31665,7 +31815,7 @@ public final class UserOuterClass {
         return this;
       }
       /**
-       * <code>int64 tenant_id = 3;</code>
+       * <code>int64 tenant_id = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTenantId() {
@@ -31677,7 +31827,7 @@ public final class UserOuterClass {
 
       private java.lang.Object role_ = "";
       /**
-       * <code>string role = 4;</code>
+       * <code>string role = 5;</code>
        * @return The role.
        */
       public java.lang.String getRole() {
@@ -31693,7 +31843,7 @@ public final class UserOuterClass {
         }
       }
       /**
-       * <code>string role = 4;</code>
+       * <code>string role = 5;</code>
        * @return The bytes for role.
        */
       public com.google.protobuf.ByteString
@@ -31710,7 +31860,7 @@ public final class UserOuterClass {
         }
       }
       /**
-       * <code>string role = 4;</code>
+       * <code>string role = 5;</code>
        * @param value The role to set.
        * @return This builder for chaining.
        */
@@ -31725,7 +31875,7 @@ public final class UserOuterClass {
         return this;
       }
       /**
-       * <code>string role = 4;</code>
+       * <code>string role = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearRole() {
@@ -31735,7 +31885,7 @@ public final class UserOuterClass {
         return this;
       }
       /**
-       * <code>string role = 4;</code>
+       * <code>string role = 5;</code>
        * @param value The bytes for role to set.
        * @return This builder for chaining.
        */
@@ -31753,7 +31903,7 @@ public final class UserOuterClass {
 
       private java.lang.Object createdAt_ = "";
       /**
-       * <code>string created_at = 5;</code>
+       * <code>string created_at = 6;</code>
        * @return The createdAt.
        */
       public java.lang.String getCreatedAt() {
@@ -31769,7 +31919,7 @@ public final class UserOuterClass {
         }
       }
       /**
-       * <code>string created_at = 5;</code>
+       * <code>string created_at = 6;</code>
        * @return The bytes for createdAt.
        */
       public com.google.protobuf.ByteString
@@ -31786,7 +31936,7 @@ public final class UserOuterClass {
         }
       }
       /**
-       * <code>string created_at = 5;</code>
+       * <code>string created_at = 6;</code>
        * @param value The createdAt to set.
        * @return This builder for chaining.
        */
@@ -31801,7 +31951,7 @@ public final class UserOuterClass {
         return this;
       }
       /**
-       * <code>string created_at = 5;</code>
+       * <code>string created_at = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearCreatedAt() {
@@ -31811,7 +31961,7 @@ public final class UserOuterClass {
         return this;
       }
       /**
-       * <code>string created_at = 5;</code>
+       * <code>string created_at = 6;</code>
        * @param value The bytes for createdAt to set.
        * @return This builder for chaining.
        */
@@ -34564,17 +34714,17 @@ public final class UserOuterClass {
       "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
       "se\022%\n\010resource\030\002 \003(\0132\023.glory_api.Resourc" +
       "e\022,\n\npagination\030d \001(\0132\030.base.PaginationR" +
-      "esponse\"i\n\016ListUserByRole\022\017\n\007user_id\030\001 \001" +
-      "(\003\022\021\n\tuser_name\030\002 \001(\t\022\021\n\ttenant_id\030\003 \001(\003" +
-      "\022\014\n\004role\030\004 \001(\t\022\022\n\ncreated_at\030\005 \001(\t\"\223\001\n\025L" +
-      "istUserByRoleRequest\022\'\n\014base_request\030\001 \001" +
-      "(\0132\021.base.BaseRequest\022\021\n\trole_name\030\002 \001(\t" +
-      "\022\021\n\ttenant_id\030\003 \001(\003\022+\n\npagination\030d \001(\0132" +
-      "\027.base.PaginationRequest\"\226\001\n\026ListUserByR" +
-      "oleResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
-      "seResponse\022\'\n\004user\030\002 \003(\0132\031.glory_api.Lis" +
-      "tUserByRole\022,\n\npagination\030d \001(\0132\030.base.P" +
-      "aginationResponseb\006proto3"
+      "esponse\"x\n\016ListUserByRole\022\017\n\007user_id\030\001 \001" +
+      "(\003\022\r\n\005phone\030\002 \001(\t\022\021\n\tuser_name\030\003 \001(\t\022\021\n\t" +
+      "tenant_id\030\004 \001(\003\022\014\n\004role\030\005 \001(\t\022\022\n\ncreated" +
+      "_at\030\006 \001(\t\"\223\001\n\025ListUserByRoleRequest\022\'\n\014b" +
+      "ase_request\030\001 \001(\0132\021.base.BaseRequest\022\021\n\t" +
+      "role_name\030\002 \001(\t\022\021\n\ttenant_id\030\003 \001(\003\022+\n\npa" +
+      "gination\030d \001(\0132\027.base.PaginationRequest\"" +
+      "\226\001\n\026ListUserByRoleResponse\022%\n\tbase_resp\030" +
+      "\001 \001(\0132\022.base.BaseResponse\022\'\n\004user\030\002 \003(\0132" +
+      "\031.glory_api.ListUserByRole\022,\n\npagination" +
+      "\030d \001(\0132\030.base.PaginationResponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -34780,7 +34930,7 @@ public final class UserOuterClass {
     internal_static_glory_api_ListUserByRole_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListUserByRole_descriptor,
-        new java.lang.String[] { "UserId", "UserName", "TenantId", "Role", "CreatedAt", });
+        new java.lang.String[] { "UserId", "Phone", "UserName", "TenantId", "Role", "CreatedAt", });
     internal_static_glory_api_ListUserByRoleRequest_descriptor =
       getDescriptor().getMessageTypes().get(33);
     internal_static_glory_api_ListUserByRoleRequest_fieldAccessorTable = new

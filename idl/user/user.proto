@@ -1,5 +1,7 @@
 syntax = "proto3";
 package glory_api;
+option java_package = "com.zhijiejiaoyu.glory_api.user";
+option java_multiple_files = true;
 
 import "base.proto";
 import "seller/seller.proto";
@@ -14,7 +16,7 @@ message User {
   string name =6;
   string avatar_url = 7;
   Seller seller = 8;
-  repeated ShopAccess shop_access = 9;
+  repeated ShopAccess shop_access = 9;  //判断用户的shop访问权限
 }
 
 // login

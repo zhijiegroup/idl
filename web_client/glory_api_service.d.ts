@@ -388,7 +388,7 @@ list the permissions that supported */
   ): Promise<order.FreeShippingInBatchesResponse>;
 
   /** cart */
-  CreateCart(request: cart.CreateCartRequest): Promise<cart.CreateCartResponse>;
+  CreateCart(request: cart.AddCartRequest): Promise<cart.AddCartResponse>;
 
   GetCart(request: cart.GetCartRequest): Promise<cart.GetCartResponse>;
 
@@ -658,6 +658,14 @@ CreateLivePlanProduct create live plan product */
   ListStudentEvaluations(
     request: live_evaluate.ListStudentEvalutionsRequest
   ): Promise<live_evaluate.ListStudentEvalutionsResponse>;
+
+  IgnoreEvaluation(
+    request: live_evaluate.IgnoreLiveEvaluationRequest
+  ): Promise<live_evaluate.IgnoreLiveEvaluationResponse>;
+
+  GetRank(
+    request: live_evaluate.GetRankRequest
+  ): Promise<live_evaluate.GetRankResponse>;
 
   /** tenant */
   CreateTenant(

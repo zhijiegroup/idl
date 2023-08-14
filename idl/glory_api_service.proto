@@ -1,6 +1,9 @@
 syntax = "proto3";
 package glory_api;
 
+option java_package = "com.zhijiejiaoyu.glory_api";
+option java_multiple_files = true;
+
 import "user/user.proto";
 import "user/address.proto";
 import "api.proto";
@@ -585,6 +588,12 @@ service glory_api {
   }
   rpc ListStudentEvaluations(ListStudentEvalutionsRequest) returns (ListStudentEvalutionsResponse) {
     option (api.post) = '/api/live/list_student_evaluation';
+  }
+  rpc IgnoreEvaluation(IgnoreLiveEvaluationRequest) returns (IgnoreLiveEvaluationResponse) {
+    option (api.get) = '/api/live/ignore_evaluation';
+  }
+  rpc GetRank(GetRankRequest) returns (GetRankResponse) {
+    option (api.get) = '/api/live/get_rank';
   }
   //tenant
   rpc CreateTenant(CreateTenantRequest) returns (CreateTenantResponse) {

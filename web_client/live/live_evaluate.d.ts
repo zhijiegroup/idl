@@ -52,6 +52,7 @@ export interface EvaluateSubOption {
   total?: number;
   content?: string;
   score?: string;
+  name_key?: string;
 }
 
 export interface EvaluateDetail {
@@ -148,4 +149,87 @@ export interface ListStudentEvalutionsResponse {
   base_resp?: base.BaseResponse;
   live_data?: Array<UserLiveData>;
   pagination?: base.PaginationResponse;
+}
+
+export interface IgnoreLiveEvaluationRequest {
+  base_request?: base.BaseRequest;
+  room_id?: string;
+}
+
+export interface IgnoreLiveEvaluationResponse {
+  base_resp?: base.BaseResponse;
+}
+
+export interface LiveRankDetail {
+  user_name?: string;
+  major?: string;
+  class?: string;
+  live_duration?: string;
+}
+
+export interface LiveRankMine {
+  user_name?: string;
+  major?: string;
+  class?: string;
+  live_duration?: string;
+  rank?: string;
+}
+
+export interface LiveRank {
+  rank_list?: Array<LiveRankDetail>;
+  mine?: LiveRankMine;
+}
+
+export interface ShopRankDetail {
+  shop_name?: string;
+  shop_url?: string;
+  sale_amount?: string;
+}
+
+export interface ShopRankMine {
+  shop_name?: string;
+  shop_url?: string;
+  sale_amount?: string;
+  rank?: string;
+}
+
+export interface ShopRank {
+  rank_list?: Array<ShopRankDetail>;
+  mine?: ShopRankMine;
+}
+
+export interface ProductRankDetail {
+  product_name?: string;
+  product_url?: string;
+  shop_name?: string;
+  shop_url?: string;
+  sale_amount?: string;
+}
+
+export interface ProductRankMine {
+  product_name?: string;
+  product_url?: string;
+  shop_name?: string;
+  shop_url?: string;
+  sale_amount?: string;
+  rank?: string;
+}
+
+export interface ProductRank {
+  rank_list?: Array<ProductRankDetail>;
+  mine?: ProductRankMine;
+}
+
+export interface GetRankRequest {
+  base_request?: base.BaseRequest;
+  type?: string;
+  start?: string;
+  end?: string;
+}
+
+export interface GetRankResponse {
+  base_resp?: base.BaseResponse;
+  live?: LiveRank;
+  shop?: ShopRank;
+  product?: ProductRank;
 }

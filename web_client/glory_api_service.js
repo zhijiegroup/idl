@@ -729,7 +729,7 @@ export class glory_api {
   }
 
   CreateCart(request) {
-    const uri = `${this.uriPrefix}/api/shop/create_cart`;
+    const uri = `${this.uriPrefix}/api/shop/add_cart`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
@@ -1232,6 +1232,18 @@ export class glory_api {
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
+  }
+
+  IgnoreEvaluation(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/live/ignore_evaluation${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  GetRank(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/live/get_rank${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
 
   CreateTenant(request) {

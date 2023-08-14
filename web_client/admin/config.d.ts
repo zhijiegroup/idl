@@ -27,7 +27,7 @@ export interface AddConfig {
   config_type?: string;
   /** 描述 */
   description?: string;
-  /** 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, short, shop */
+  /** 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, score, auth */
   business_system?: string;
 }
 
@@ -71,7 +71,7 @@ export interface GetConfigRequest {
   config_name?: string;
   /** config的类型，支持page_permission, system_permission, public_config, system_owner_location */
   config_type?: string;
-  /** 业务系统，添加的时候默认是global(不属于任何业务系统）, 现在支持 shop, live, short */
+  /** 业务系统，添加的时候默认是global(不属于任何业务系统）, 现在支持 score, live, auth */
   business_system?: string;
 }
 

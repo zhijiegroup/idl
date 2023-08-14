@@ -16,6 +16,7 @@ export interface User {
   name?: string;
   avatar_url?: string;
   seller?: seller.Seller;
+  /** 判断用户的shop访问权限 */
   shop_access?: Array<shop.ShopAccess>;
 }
 
@@ -229,6 +230,7 @@ export interface ListResourceResponse {
 
 export interface ListUserByRole {
   user_id?: string;
+  phone?: string;
   user_name?: string;
   tenant_id?: string;
   role?: string;

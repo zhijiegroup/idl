@@ -25,6 +25,7 @@ struct GloryApi_Cart {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  ///客户端 添加购物车 sku_id quantity shop_id seller_id tenant_id必传
   var cartID: Int64 = 0
 
   var userID: Int64 = 0
@@ -33,11 +34,20 @@ struct GloryApi_Cart {
 
   var tenantID: Int64 = 0
 
-  var cartSku: [GloryApi_CartSku] = []
+  var cartSku: GloryApi_CartSku {
+    get {return _cartSku ?? GloryApi_CartSku()}
+    set {_cartSku = newValue}
+  }
+  /// Returns true if `cartSku` has been explicitly set.
+  var hasCartSku: Bool {return self._cartSku != nil}
+  /// Clears the value of `cartSku`. Subsequent reads from it will return its default value.
+  mutating func clearCartSku() {self._cartSku = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
+
+  fileprivate var _cartSku: GloryApi_CartSku? = nil
 }
 
 struct GloryApi_CartSku {
@@ -159,7 +169,7 @@ struct GloryApi_CartWithAuthor {
   fileprivate var _authorInfo: Base_AuthorInfo? = nil
 }
 
-struct GloryApi_CreateCartRequest {
+struct GloryApi_AddCartRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -192,7 +202,7 @@ struct GloryApi_CreateCartRequest {
   fileprivate var _cart: GloryApi_Cart? = nil
 }
 
-struct GloryApi_CreateCartResponse {
+struct GloryApi_AddCartResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -207,6 +217,8 @@ struct GloryApi_CreateCartResponse {
   mutating func clearBaseResp() {self._baseResp = nil}
 
   var cartID: Int64 = 0
+
+  var cartNum: Int32 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -375,8 +387,8 @@ extension GloryApi_ProductShow: @unchecked Sendable {}
 extension GloryApi_ShopShow: @unchecked Sendable {}
 extension GloryApi_CartShow: @unchecked Sendable {}
 extension GloryApi_CartWithAuthor: @unchecked Sendable {}
-extension GloryApi_CreateCartRequest: @unchecked Sendable {}
-extension GloryApi_CreateCartResponse: @unchecked Sendable {}
+extension GloryApi_AddCartRequest: @unchecked Sendable {}
+extension GloryApi_AddCartResponse: @unchecked Sendable {}
 extension GloryApi_GetCartRequest: @unchecked Sendable {}
 extension GloryApi_GetCartResponse: @unchecked Sendable {}
 extension GloryApi_UpdateCartRequest: @unchecked Sendable {}
@@ -409,13 +421,17 @@ extension GloryApi_Cart: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.userID) }()
       case 3: try { try decoder.decodeSingularInt64Field(value: &self.sellerID) }()
       case 4: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
-      case 5: try { try decoder.decodeRepeatedMessageField(value: &self.cartSku) }()
+      case 5: try { try decoder.decodeSingularMessageField(value: &self._cartSku) }()
       default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.cartID != 0 {
       try visitor.visitSingularInt64Field(value: self.cartID, fieldNumber: 1)
     }
@@ -428,9 +444,9 @@ extension GloryApi_Cart: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     if self.tenantID != 0 {
       try visitor.visitSingularInt64Field(value: self.tenantID, fieldNumber: 4)
     }
-    if !self.cartSku.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.cartSku, fieldNumber: 5)
-    }
+    try { if let v = self._cartSku {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -439,7 +455,7 @@ extension GloryApi_Cart: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     if lhs.userID != rhs.userID {return false}
     if lhs.sellerID != rhs.sellerID {return false}
     if lhs.tenantID != rhs.tenantID {return false}
-    if lhs.cartSku != rhs.cartSku {return false}
+    if lhs._cartSku != rhs._cartSku {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -729,8 +745,8 @@ extension GloryApi_CartWithAuthor: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension GloryApi_CreateCartRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".CreateCartRequest"
+extension GloryApi_AddCartRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".AddCartRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
     2: .same(proto: "cart"),
@@ -768,7 +784,7 @@ extension GloryApi_CreateCartRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: GloryApi_CreateCartRequest, rhs: GloryApi_CreateCartRequest) -> Bool {
+  static func ==(lhs: GloryApi_AddCartRequest, rhs: GloryApi_AddCartRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs._cart != rhs._cart {return false}
     if lhs.createdBy != rhs.createdBy {return false}
@@ -777,11 +793,12 @@ extension GloryApi_CreateCartRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension GloryApi_CreateCartResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".CreateCartResponse"
+extension GloryApi_AddCartResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".AddCartResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
     2: .standard(proto: "cart_id"),
+    3: .standard(proto: "cart_num"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -792,6 +809,7 @@ extension GloryApi_CreateCartResponse: SwiftProtobuf.Message, SwiftProtobuf._Mes
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.cartID) }()
+      case 3: try { try decoder.decodeSingularInt32Field(value: &self.cartNum) }()
       default: break
       }
     }
@@ -808,12 +826,16 @@ extension GloryApi_CreateCartResponse: SwiftProtobuf.Message, SwiftProtobuf._Mes
     if self.cartID != 0 {
       try visitor.visitSingularInt64Field(value: self.cartID, fieldNumber: 2)
     }
+    if self.cartNum != 0 {
+      try visitor.visitSingularInt32Field(value: self.cartNum, fieldNumber: 3)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: GloryApi_CreateCartResponse, rhs: GloryApi_CreateCartResponse) -> Bool {
+  static func ==(lhs: GloryApi_AddCartResponse, rhs: GloryApi_AddCartResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.cartID != rhs.cartID {return false}
+    if lhs.cartNum != rhs.cartNum {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
