@@ -320,6 +320,12 @@ struct GloryApi_OrderInfo {
     set {_uniqueStorage()._shopName = newValue}
   }
 
+  ///商店logo
+  var shopLogo: String {
+    get {return _storage._shopLogo}
+    set {_uniqueStorage()._shopLogo = newValue}
+  }
+
   ///货币单位
   var currency: String {
     get {return _storage._currency}
@@ -1508,6 +1514,7 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     12: .standard(proto: "payable_amount"),
     13: .same(proto: "productInfo"),
     14: .standard(proto: "shop_name"),
+    144: .standard(proto: "shop_logo"),
     15: .same(proto: "currency"),
     16: .standard(proto: "contact_name"),
     17: .standard(proto: "buyer_name"),
@@ -1529,6 +1536,7 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     var _payableAmount: Double = 0
     var _productInfo: [GloryApi_ProductInfo] = []
     var _shopName: String = String()
+    var _shopLogo: String = String()
     var _currency: String = String()
     var _contactName: String = String()
     var _buyerName: String = String()
@@ -1553,6 +1561,7 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
       _payableAmount = source._payableAmount
       _productInfo = source._productInfo
       _shopName = source._shopName
+      _shopLogo = source._shopLogo
       _currency = source._currency
       _contactName = source._contactName
       _buyerName = source._buyerName
@@ -1593,6 +1602,7 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
         case 16: try { try decoder.decodeSingularStringField(value: &_storage._contactName) }()
         case 17: try { try decoder.decodeSingularStringField(value: &_storage._buyerName) }()
         case 18: try { try decoder.decodeSingularStringField(value: &_storage._deliverAddress) }()
+        case 144: try { try decoder.decodeSingularStringField(value: &_storage._shopLogo) }()
         default: break
         }
       }
@@ -1655,6 +1665,9 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
       if !_storage._deliverAddress.isEmpty {
         try visitor.visitSingularStringField(value: _storage._deliverAddress, fieldNumber: 18)
       }
+      if !_storage._shopLogo.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._shopLogo, fieldNumber: 144)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1678,6 +1691,7 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
         if _storage._payableAmount != rhs_storage._payableAmount {return false}
         if _storage._productInfo != rhs_storage._productInfo {return false}
         if _storage._shopName != rhs_storage._shopName {return false}
+        if _storage._shopLogo != rhs_storage._shopLogo {return false}
         if _storage._currency != rhs_storage._currency {return false}
         if _storage._contactName != rhs_storage._contactName {return false}
         if _storage._buyerName != rhs_storage._buyerName {return false}

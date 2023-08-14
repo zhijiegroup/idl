@@ -243,6 +243,26 @@ public interface OrderInfoOrBuilder extends
 
   /**
    * <pre>
+   *商店logo
+   * </pre>
+   *
+   * <code>string shop_logo = 144;</code>
+   * @return The shopLogo.
+   */
+  java.lang.String getShopLogo();
+  /**
+   * <pre>
+   *商店logo
+   * </pre>
+   *
+   * <code>string shop_logo = 144;</code>
+   * @return The bytes for shopLogo.
+   */
+  com.google.protobuf.ByteString
+      getShopLogoBytes();
+
+  /**
+   * <pre>
    *货币单位
    * </pre>
    *

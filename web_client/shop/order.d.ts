@@ -102,6 +102,8 @@ export interface OrderInfo {
   productInfo?: Array<ProductInfo>;
   /** 商店名字 */
   shop_name?: string;
+  /** 商店logo */
+  shop_logo?: string;
   /** 货币单位 */
   currency?: string;
   /** 收货人 */
