@@ -589,6 +589,9 @@ service glory_api {
   rpc ListStudentEvaluations(ListStudentEvalutionsRequest) returns (ListStudentEvalutionsResponse) {
     option (api.post) = '/api/live/list_student_evaluation';
   }
+  rpc IgnoreEvaluation(IgnoreLiveEvaluationRequest) returns (IgnoreLiveEvaluationResponse) {
+    option (api.get) = '/api/live/ignore_evaluation';
+  }
   //tenant
   rpc CreateTenant(CreateTenantRequest) returns (CreateTenantResponse) {
     option (api.post) = '/api/tenant/create_tenant';

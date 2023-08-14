@@ -145,3 +145,12 @@ message ListStudentEvalutionsResponse {
     repeated UserLiveData live_data = 2;
     base.PaginationResponse pagination = 100;
 }
+
+message IgnoreLiveEvaluationRequest {
+    base.BaseRequest base_request = 1;
+    int64 rom_id = 2;
+}
+
+message IgnoreLiveEvaluationResponse {
+    base.BaseResponse base_resp = 1;
+}
