@@ -149,3 +149,12 @@ export interface ListStudentEvalutionsResponse {
   live_data?: Array<UserLiveData>;
   pagination?: base.PaginationResponse;
 }
+
+export interface IgnoreLiveEvaluationRequest {
+  base_request?: base.BaseRequest;
+  rom_id?: string;
+}
+
+export interface IgnoreLiveEvaluationResponse {
+  base_resp?: base.BaseResponse;
+}

@@ -659,6 +659,10 @@ CreateLivePlanProduct create live plan product */
     request: live_evaluate.ListStudentEvalutionsRequest
   ): Promise<live_evaluate.ListStudentEvalutionsResponse>;
 
+  IgnoreEvaluation(
+    request: live_evaluate.IgnoreLiveEvaluationRequest
+  ): Promise<live_evaluate.IgnoreLiveEvaluationResponse>;
+
   /** tenant */
   CreateTenant(
     request: tenant.CreateTenantRequest

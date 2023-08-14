@@ -104,6 +104,16 @@ public final class LiveEvaluate {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_ListStudentEvalutionsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_IgnoreLiveEvaluationRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_IgnoreLiveEvaluationRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_IgnoreLiveEvaluationResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_IgnoreLiveEvaluationResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -182,8 +192,12 @@ public final class LiveEvaluate {
       "lutionsResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
       "e.BaseResponse\022*\n\tlive_data\030\002 \003(\0132\027.glor" +
       "y_api.UserLiveData\022,\n\npagination\030d \001(\0132\030" +
-      ".base.PaginationResponseB#\n\037com.zhijieji" +
-      "aoyu.glory_api.liveP\001b\006proto3"
+      ".base.PaginationResponse\"V\n\033IgnoreLiveEv" +
+      "aluationRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
+      "base.BaseRequest\022\016\n\006rom_id\030\002 \001(\003\"E\n\034Igno" +
+      "reLiveEvaluationResponse\022%\n\tbase_resp\030\001 " +
+      "\001(\0132\022.base.BaseResponseB#\n\037com.zhijiejia" +
+      "oyu.glory_api.liveP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -298,6 +312,18 @@ public final class LiveEvaluate {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListStudentEvalutionsResponse_descriptor,
         new java.lang.String[] { "BaseResp", "LiveData", "Pagination", });
+    internal_static_glory_api_IgnoreLiveEvaluationRequest_descriptor =
+      getDescriptor().getMessageTypes().get(18);
+    internal_static_glory_api_IgnoreLiveEvaluationRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_IgnoreLiveEvaluationRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "RomId", });
+    internal_static_glory_api_IgnoreLiveEvaluationResponse_descriptor =
+      getDescriptor().getMessageTypes().get(19);
+    internal_static_glory_api_IgnoreLiveEvaluationResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_IgnoreLiveEvaluationResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
   }
 

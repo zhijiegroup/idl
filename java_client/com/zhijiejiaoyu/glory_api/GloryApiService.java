@@ -40,7 +40,7 @@ public final class GloryApiService {
       ".proto\032\030live/live_evaluate.proto\032\037accoun" +
       "t/account_operation.proto\032\037currency/virt" +
       "ual_currency.proto\032\023tenant/tenant.proto2" +
-      "\260\231\001\n\tglory_api\022s\n\rCreateExample\022\037.glory_" +
+      "\267\232\001\n\tglory_api\022s\n\rCreateExample\022\037.glory_" +
       "api.CreateExampleRequest\032 .glory_api.Cre" +
       "ateExampleResponse\"\037\322\301\030\033/api/example/cre" +
       "ate_example\022g\n\nGetExample\022\034.glory_api.Ge" +
@@ -491,47 +491,51 @@ public final class GloryApiService {
       "ntEvaluations\022\'.glory_api.ListStudentEva" +
       "lutionsRequest\032(.glory_api.ListStudentEv" +
       "alutionsResponse\"%\322\301\030!/api/live/list_stu" +
-      "dent_evaluation\022n\n\014CreateTenant\022\036.glory_" +
-      "api.CreateTenantRequest\032\037.glory_api.Crea" +
-      "teTenantResponse\"\035\322\301\030\031/api/tenant/create" +
-      "_tenant\022b\n\tGetTenant\022\033.glory_api.GetTena" +
-      "ntRequest\032\034.glory_api.GetTenantResponse\"" +
-      "\032\312\301\030\026/api/tenant/get_tenant\022n\n\014UpdateTen" +
-      "ant\022\036.glory_api.UpdateTenantRequest\032\037.gl" +
-      "ory_api.UpdateTenantResponse\"\035\322\301\030\031/api/t" +
-      "enant/update_tenant\022n\n\014DeleteTenant\022\036.gl" +
-      "ory_api.DeleteTenantRequest\032\037.glory_api." +
-      "DeleteTenantResponse\"\035\322\301\030\031/api/tenant/de" +
-      "lete_tenant\022f\n\nListTenant\022\034.glory_api.Li" +
-      "stTenantRequest\032\035.glory_api.ListTenantRe" +
-      "sponse\"\033\322\301\030\027/api/tenant/list_tenant\022j\n\013C" +
-      "reateMajor\022\035.glory_api.CreateMajorReques" +
-      "t\032\036.glory_api.CreateMajorResponse\"\034\322\301\030\030/" +
-      "api/tenant/create_major\022^\n\010GetMajor\022\032.gl" +
-      "ory_api.GetMajorRequest\032\033.glory_api.GetM" +
-      "ajorResponse\"\031\312\301\030\025/api/tenant/get_major\022" +
-      "j\n\013UpdateMajor\022\035.glory_api.UpdateMajorRe" +
-      "quest\032\036.glory_api.UpdateMajorResponse\"\034\322" +
-      "\301\030\030/api/tenant/update_major\022j\n\013DeleteMaj" +
-      "or\022\035.glory_api.DeleteMajorRequest\032\036.glor" +
-      "y_api.DeleteMajorResponse\"\034\322\301\030\030/api/tena" +
-      "nt/delete_major\022b\n\tListMajor\022\033.glory_api" +
-      ".ListMajorRequest\032\034.glory_api.ListMajorR" +
-      "esponse\"\032\322\301\030\026/api/tenant/list_major\022j\n\013C" +
-      "reateClass\022\035.glory_api.CreateClassReques" +
-      "t\032\036.glory_api.CreateClassResponse\"\034\322\301\030\030/" +
-      "api/tenant/create_class\022^\n\010GetClass\022\032.gl" +
-      "ory_api.GetClassRequest\032\033.glory_api.GetC" +
-      "lassResponse\"\031\312\301\030\025/api/tenant/get_class\022" +
-      "j\n\013UpdateClass\022\035.glory_api.UpdateClassRe" +
-      "quest\032\036.glory_api.UpdateClassResponse\"\034\322" +
-      "\301\030\030/api/tenant/update_class\022j\n\013DeleteCla" +
-      "ss\022\035.glory_api.DeleteClassRequest\032\036.glor" +
-      "y_api.DeleteClassResponse\"\034\322\301\030\030/api/tena" +
-      "nt/delete_class\022b\n\tListClass\022\033.glory_api" +
-      ".ListClassRequest\032\034.glory_api.ListClassR" +
-      "esponse\"\032\322\301\030\026/api/tenant/list_classB\036\n\032c" +
-      "om.zhijiejiaoyu.glory_apiP\001b\006proto3"
+      "dent_evaluation\022\204\001\n\020IgnoreEvaluation\022&.g" +
+      "lory_api.IgnoreLiveEvaluationRequest\032\'.g" +
+      "lory_api.IgnoreLiveEvaluationResponse\"\037\312" +
+      "\301\030\033/api/live/ignore_evaluation\022n\n\014Create" +
+      "Tenant\022\036.glory_api.CreateTenantRequest\032\037" +
+      ".glory_api.CreateTenantResponse\"\035\322\301\030\031/ap" +
+      "i/tenant/create_tenant\022b\n\tGetTenant\022\033.gl" +
+      "ory_api.GetTenantRequest\032\034.glory_api.Get" +
+      "TenantResponse\"\032\312\301\030\026/api/tenant/get_tena" +
+      "nt\022n\n\014UpdateTenant\022\036.glory_api.UpdateTen" +
+      "antRequest\032\037.glory_api.UpdateTenantRespo" +
+      "nse\"\035\322\301\030\031/api/tenant/update_tenant\022n\n\014De" +
+      "leteTenant\022\036.glory_api.DeleteTenantReque" +
+      "st\032\037.glory_api.DeleteTenantResponse\"\035\322\301\030" +
+      "\031/api/tenant/delete_tenant\022f\n\nListTenant" +
+      "\022\034.glory_api.ListTenantRequest\032\035.glory_a" +
+      "pi.ListTenantResponse\"\033\322\301\030\027/api/tenant/l" +
+      "ist_tenant\022j\n\013CreateMajor\022\035.glory_api.Cr" +
+      "eateMajorRequest\032\036.glory_api.CreateMajor" +
+      "Response\"\034\322\301\030\030/api/tenant/create_major\022^" +
+      "\n\010GetMajor\022\032.glory_api.GetMajorRequest\032\033" +
+      ".glory_api.GetMajorResponse\"\031\312\301\030\025/api/te" +
+      "nant/get_major\022j\n\013UpdateMajor\022\035.glory_ap" +
+      "i.UpdateMajorRequest\032\036.glory_api.UpdateM" +
+      "ajorResponse\"\034\322\301\030\030/api/tenant/update_maj" +
+      "or\022j\n\013DeleteMajor\022\035.glory_api.DeleteMajo" +
+      "rRequest\032\036.glory_api.DeleteMajorResponse" +
+      "\"\034\322\301\030\030/api/tenant/delete_major\022b\n\tListMa" +
+      "jor\022\033.glory_api.ListMajorRequest\032\034.glory" +
+      "_api.ListMajorResponse\"\032\322\301\030\026/api/tenant/" +
+      "list_major\022j\n\013CreateClass\022\035.glory_api.Cr" +
+      "eateClassRequest\032\036.glory_api.CreateClass" +
+      "Response\"\034\322\301\030\030/api/tenant/create_class\022^" +
+      "\n\010GetClass\022\032.glory_api.GetClassRequest\032\033" +
+      ".glory_api.GetClassResponse\"\031\312\301\030\025/api/te" +
+      "nant/get_class\022j\n\013UpdateClass\022\035.glory_ap" +
+      "i.UpdateClassRequest\032\036.glory_api.UpdateC" +
+      "lassResponse\"\034\322\301\030\030/api/tenant/update_cla" +
+      "ss\022j\n\013DeleteClass\022\035.glory_api.DeleteClas" +
+      "sRequest\032\036.glory_api.DeleteClassResponse" +
+      "\"\034\322\301\030\030/api/tenant/delete_class\022b\n\tListCl" +
+      "ass\022\033.glory_api.ListClassRequest\032\034.glory" +
+      "_api.ListClassResponse\"\032\322\301\030\026/api/tenant/" +
+      "list_classB\036\n\032com.zhijiejiaoyu.glory_api" +
+      "P\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
