@@ -149,9 +149,83 @@ message ListStudentEvalutionsResponse {
 
 message IgnoreLiveEvaluationRequest {
     base.BaseRequest base_request = 1;
-    int64 rom_id = 2;
+    int64 room_id = 2;
 }
 
 message IgnoreLiveEvaluationResponse {
     base.BaseResponse base_resp = 1;
+}
+message LiveRankDetail {
+    string user_name = 1;
+    string major = 2;
+    string class = 3;
+    int64 live_duration = 4;
+}
+
+message LiveRankMine {
+    string user_name = 1;
+    string major = 2;
+    string class = 3;
+    int64 live_duration = 4;
+    int64 rank = 5;
+}
+
+message LiveRank {
+    repeated LiveRankDetail rank_list = 1;
+    LiveRankMine mine = 100;
+}
+
+message ShopRankDetail {
+    string shop_name = 1;
+    string shop_url = 2;
+    int64 sale_amount = 3;
+}
+
+message ShopRankMine {
+    string shop_name = 1;
+    string shop_url = 2;
+    int64 sale_amount = 3;
+    int64 rank = 4;
+}
+
+message ShopRank {
+    repeated ShopRankDetail rank_list = 1;
+    ShopRankMine mine = 100;
+}
+
+message ProductRankDetail {
+    string product_name = 1;
+    string product_url = 2;
+    string shop_name = 3;
+    string shop_url = 4;
+    int64 sale_amount = 5;
+}
+
+message ProductRankMine {
+    string product_name = 1;
+    string product_url = 2;
+    string shop_name = 3;
+    string shop_url = 4;
+    int64 sale_amount = 5;
+    int64 rank = 6;
+}
+
+message ProductRank {
+    repeated ProductRankDetail rank_list = 1;
+    ProductRankMine mine = 100;
+}
+
+
+message GetRankRequest {
+    base.BaseRequest base_request = 1;
+    string type =2;
+    int64 start = 3;
+    int64 end = 4;
+}
+
+message GetRankResponse {
+    base.BaseResponse base_resp = 1;
+    LiveRank live = 2;
+    ShopRank shop = 3;
+    ProductRank product = 4;
 }
