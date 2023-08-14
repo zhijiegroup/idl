@@ -567,7 +567,7 @@ struct GloryApi_IgnoreLiveEvaluationRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
-  var romID: Int64 = 0
+  var roomID: Int64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -597,6 +597,264 @@ struct GloryApi_IgnoreLiveEvaluationResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
+struct GloryApi_LiveRankDetail {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var userName: String = String()
+
+  var major: String = String()
+
+  var `class`: String = String()
+
+  var liveDuration: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct GloryApi_LiveRankMine {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var userName: String = String()
+
+  var major: String = String()
+
+  var `class`: String = String()
+
+  var liveDuration: Int64 = 0
+
+  var rank: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct GloryApi_LiveRank {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var rankList: [GloryApi_LiveRankDetail] = []
+
+  var mine: GloryApi_LiveRankMine {
+    get {return _mine ?? GloryApi_LiveRankMine()}
+    set {_mine = newValue}
+  }
+  /// Returns true if `mine` has been explicitly set.
+  var hasMine: Bool {return self._mine != nil}
+  /// Clears the value of `mine`. Subsequent reads from it will return its default value.
+  mutating func clearMine() {self._mine = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _mine: GloryApi_LiveRankMine? = nil
+}
+
+struct GloryApi_ShopRankDetail {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var shopName: String = String()
+
+  var shopURL: String = String()
+
+  var saleAmount: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct GloryApi_ShopRankMine {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var shopName: String = String()
+
+  var shopURL: String = String()
+
+  var saleAmount: Int64 = 0
+
+  var rank: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct GloryApi_ShopRank {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var rankList: [GloryApi_ShopRankDetail] = []
+
+  var mine: GloryApi_ShopRankMine {
+    get {return _mine ?? GloryApi_ShopRankMine()}
+    set {_mine = newValue}
+  }
+  /// Returns true if `mine` has been explicitly set.
+  var hasMine: Bool {return self._mine != nil}
+  /// Clears the value of `mine`. Subsequent reads from it will return its default value.
+  mutating func clearMine() {self._mine = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _mine: GloryApi_ShopRankMine? = nil
+}
+
+struct GloryApi_ProductRankDetail {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var productName: String = String()
+
+  var productURL: String = String()
+
+  var shopName: String = String()
+
+  var shopURL: String = String()
+
+  var saleAmount: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct GloryApi_ProductRankMine {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var productName: String = String()
+
+  var productURL: String = String()
+
+  var shopName: String = String()
+
+  var shopURL: String = String()
+
+  var saleAmount: Int64 = 0
+
+  var rank: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct GloryApi_ProductRank {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var rankList: [GloryApi_ProductRankDetail] = []
+
+  var mine: GloryApi_ProductRankMine {
+    get {return _mine ?? GloryApi_ProductRankMine()}
+    set {_mine = newValue}
+  }
+  /// Returns true if `mine` has been explicitly set.
+  var hasMine: Bool {return self._mine != nil}
+  /// Clears the value of `mine`. Subsequent reads from it will return its default value.
+  mutating func clearMine() {self._mine = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _mine: GloryApi_ProductRankMine? = nil
+}
+
+struct GloryApi_GetRankRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var type: String = String()
+
+  var start: Int64 = 0
+
+  var end: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+struct GloryApi_GetRankResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _storage._baseResp ?? Base_BaseResponse()}
+    set {_uniqueStorage()._baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return _storage._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {_uniqueStorage()._baseResp = nil}
+
+  var live: GloryApi_LiveRank {
+    get {return _storage._live ?? GloryApi_LiveRank()}
+    set {_uniqueStorage()._live = newValue}
+  }
+  /// Returns true if `live` has been explicitly set.
+  var hasLive: Bool {return _storage._live != nil}
+  /// Clears the value of `live`. Subsequent reads from it will return its default value.
+  mutating func clearLive() {_uniqueStorage()._live = nil}
+
+  var shop: GloryApi_ShopRank {
+    get {return _storage._shop ?? GloryApi_ShopRank()}
+    set {_uniqueStorage()._shop = newValue}
+  }
+  /// Returns true if `shop` has been explicitly set.
+  var hasShop: Bool {return _storage._shop != nil}
+  /// Clears the value of `shop`. Subsequent reads from it will return its default value.
+  mutating func clearShop() {_uniqueStorage()._shop = nil}
+
+  var product: GloryApi_ProductRank {
+    get {return _storage._product ?? GloryApi_ProductRank()}
+    set {_uniqueStorage()._product = newValue}
+  }
+  /// Returns true if `product` has been explicitly set.
+  var hasProduct: Bool {return _storage._product != nil}
+  /// Clears the value of `product`. Subsequent reads from it will return its default value.
+  mutating func clearProduct() {_uniqueStorage()._product = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _storage = _StorageClass.defaultInstance
+}
+
 #if swift(>=5.5) && canImport(_Concurrency)
 extension GloryApi_GetEvaluateSelectorRequest: @unchecked Sendable {}
 extension GloryApi_GetEvaluateSelectorResponse: @unchecked Sendable {}
@@ -618,6 +876,17 @@ extension GloryApi_ListStudentEvalutionsRequest: @unchecked Sendable {}
 extension GloryApi_ListStudentEvalutionsResponse: @unchecked Sendable {}
 extension GloryApi_IgnoreLiveEvaluationRequest: @unchecked Sendable {}
 extension GloryApi_IgnoreLiveEvaluationResponse: @unchecked Sendable {}
+extension GloryApi_LiveRankDetail: @unchecked Sendable {}
+extension GloryApi_LiveRankMine: @unchecked Sendable {}
+extension GloryApi_LiveRank: @unchecked Sendable {}
+extension GloryApi_ShopRankDetail: @unchecked Sendable {}
+extension GloryApi_ShopRankMine: @unchecked Sendable {}
+extension GloryApi_ShopRank: @unchecked Sendable {}
+extension GloryApi_ProductRankDetail: @unchecked Sendable {}
+extension GloryApi_ProductRankMine: @unchecked Sendable {}
+extension GloryApi_ProductRank: @unchecked Sendable {}
+extension GloryApi_GetRankRequest: @unchecked Sendable {}
+extension GloryApi_GetRankResponse: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -1678,7 +1947,7 @@ extension GloryApi_IgnoreLiveEvaluationRequest: SwiftProtobuf.Message, SwiftProt
   static let protoMessageName: String = _protobuf_package + ".IgnoreLiveEvaluationRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
-    2: .standard(proto: "rom_id"),
+    2: .standard(proto: "room_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1688,7 +1957,7 @@ extension GloryApi_IgnoreLiveEvaluationRequest: SwiftProtobuf.Message, SwiftProt
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.romID) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.roomID) }()
       default: break
       }
     }
@@ -1702,15 +1971,15 @@ extension GloryApi_IgnoreLiveEvaluationRequest: SwiftProtobuf.Message, SwiftProt
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    if self.romID != 0 {
-      try visitor.visitSingularInt64Field(value: self.romID, fieldNumber: 2)
+    if self.roomID != 0 {
+      try visitor.visitSingularInt64Field(value: self.roomID, fieldNumber: 2)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_IgnoreLiveEvaluationRequest, rhs: GloryApi_IgnoreLiveEvaluationRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
-    if lhs.romID != rhs.romID {return false}
+    if lhs.roomID != rhs.roomID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -1747,6 +2016,596 @@ extension GloryApi_IgnoreLiveEvaluationResponse: SwiftProtobuf.Message, SwiftPro
 
   static func ==(lhs: GloryApi_IgnoreLiveEvaluationResponse, rhs: GloryApi_IgnoreLiveEvaluationResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_LiveRankDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".LiveRankDetail"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "user_name"),
+    2: .same(proto: "major"),
+    3: .same(proto: "class"),
+    4: .standard(proto: "live_duration"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.userName) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.major) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.`class`) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.liveDuration) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.userName.isEmpty {
+      try visitor.visitSingularStringField(value: self.userName, fieldNumber: 1)
+    }
+    if !self.major.isEmpty {
+      try visitor.visitSingularStringField(value: self.major, fieldNumber: 2)
+    }
+    if !self.`class`.isEmpty {
+      try visitor.visitSingularStringField(value: self.`class`, fieldNumber: 3)
+    }
+    if self.liveDuration != 0 {
+      try visitor.visitSingularInt64Field(value: self.liveDuration, fieldNumber: 4)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_LiveRankDetail, rhs: GloryApi_LiveRankDetail) -> Bool {
+    if lhs.userName != rhs.userName {return false}
+    if lhs.major != rhs.major {return false}
+    if lhs.`class` != rhs.`class` {return false}
+    if lhs.liveDuration != rhs.liveDuration {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_LiveRankMine: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".LiveRankMine"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "user_name"),
+    2: .same(proto: "major"),
+    3: .same(proto: "class"),
+    4: .standard(proto: "live_duration"),
+    5: .same(proto: "rank"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.userName) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.major) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.`class`) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.liveDuration) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.rank) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.userName.isEmpty {
+      try visitor.visitSingularStringField(value: self.userName, fieldNumber: 1)
+    }
+    if !self.major.isEmpty {
+      try visitor.visitSingularStringField(value: self.major, fieldNumber: 2)
+    }
+    if !self.`class`.isEmpty {
+      try visitor.visitSingularStringField(value: self.`class`, fieldNumber: 3)
+    }
+    if self.liveDuration != 0 {
+      try visitor.visitSingularInt64Field(value: self.liveDuration, fieldNumber: 4)
+    }
+    if self.rank != 0 {
+      try visitor.visitSingularInt64Field(value: self.rank, fieldNumber: 5)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_LiveRankMine, rhs: GloryApi_LiveRankMine) -> Bool {
+    if lhs.userName != rhs.userName {return false}
+    if lhs.major != rhs.major {return false}
+    if lhs.`class` != rhs.`class` {return false}
+    if lhs.liveDuration != rhs.liveDuration {return false}
+    if lhs.rank != rhs.rank {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_LiveRank: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".LiveRank"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "rank_list"),
+    100: .same(proto: "mine"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeRepeatedMessageField(value: &self.rankList) }()
+      case 100: try { try decoder.decodeSingularMessageField(value: &self._mine) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    if !self.rankList.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.rankList, fieldNumber: 1)
+    }
+    try { if let v = self._mine {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_LiveRank, rhs: GloryApi_LiveRank) -> Bool {
+    if lhs.rankList != rhs.rankList {return false}
+    if lhs._mine != rhs._mine {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_ShopRankDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ShopRankDetail"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "shop_name"),
+    2: .standard(proto: "shop_url"),
+    3: .standard(proto: "sale_amount"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.shopName) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.shopURL) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.saleAmount) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.shopName.isEmpty {
+      try visitor.visitSingularStringField(value: self.shopName, fieldNumber: 1)
+    }
+    if !self.shopURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.shopURL, fieldNumber: 2)
+    }
+    if self.saleAmount != 0 {
+      try visitor.visitSingularInt64Field(value: self.saleAmount, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ShopRankDetail, rhs: GloryApi_ShopRankDetail) -> Bool {
+    if lhs.shopName != rhs.shopName {return false}
+    if lhs.shopURL != rhs.shopURL {return false}
+    if lhs.saleAmount != rhs.saleAmount {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_ShopRankMine: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ShopRankMine"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "shop_name"),
+    2: .standard(proto: "shop_url"),
+    3: .standard(proto: "sale_amount"),
+    4: .same(proto: "rank"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.shopName) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.shopURL) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.saleAmount) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.rank) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.shopName.isEmpty {
+      try visitor.visitSingularStringField(value: self.shopName, fieldNumber: 1)
+    }
+    if !self.shopURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.shopURL, fieldNumber: 2)
+    }
+    if self.saleAmount != 0 {
+      try visitor.visitSingularInt64Field(value: self.saleAmount, fieldNumber: 3)
+    }
+    if self.rank != 0 {
+      try visitor.visitSingularInt64Field(value: self.rank, fieldNumber: 4)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ShopRankMine, rhs: GloryApi_ShopRankMine) -> Bool {
+    if lhs.shopName != rhs.shopName {return false}
+    if lhs.shopURL != rhs.shopURL {return false}
+    if lhs.saleAmount != rhs.saleAmount {return false}
+    if lhs.rank != rhs.rank {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_ShopRank: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ShopRank"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "rank_list"),
+    100: .same(proto: "mine"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeRepeatedMessageField(value: &self.rankList) }()
+      case 100: try { try decoder.decodeSingularMessageField(value: &self._mine) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    if !self.rankList.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.rankList, fieldNumber: 1)
+    }
+    try { if let v = self._mine {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ShopRank, rhs: GloryApi_ShopRank) -> Bool {
+    if lhs.rankList != rhs.rankList {return false}
+    if lhs._mine != rhs._mine {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_ProductRankDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ProductRankDetail"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "product_name"),
+    2: .standard(proto: "product_url"),
+    3: .standard(proto: "shop_name"),
+    4: .standard(proto: "shop_url"),
+    5: .standard(proto: "sale_amount"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.productName) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.productURL) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.shopName) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.shopURL) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.saleAmount) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.productName.isEmpty {
+      try visitor.visitSingularStringField(value: self.productName, fieldNumber: 1)
+    }
+    if !self.productURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.productURL, fieldNumber: 2)
+    }
+    if !self.shopName.isEmpty {
+      try visitor.visitSingularStringField(value: self.shopName, fieldNumber: 3)
+    }
+    if !self.shopURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.shopURL, fieldNumber: 4)
+    }
+    if self.saleAmount != 0 {
+      try visitor.visitSingularInt64Field(value: self.saleAmount, fieldNumber: 5)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ProductRankDetail, rhs: GloryApi_ProductRankDetail) -> Bool {
+    if lhs.productName != rhs.productName {return false}
+    if lhs.productURL != rhs.productURL {return false}
+    if lhs.shopName != rhs.shopName {return false}
+    if lhs.shopURL != rhs.shopURL {return false}
+    if lhs.saleAmount != rhs.saleAmount {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_ProductRankMine: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ProductRankMine"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "product_name"),
+    2: .standard(proto: "product_url"),
+    3: .standard(proto: "shop_name"),
+    4: .standard(proto: "shop_url"),
+    5: .standard(proto: "sale_amount"),
+    6: .same(proto: "rank"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.productName) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.productURL) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.shopName) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.shopURL) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.saleAmount) }()
+      case 6: try { try decoder.decodeSingularInt64Field(value: &self.rank) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.productName.isEmpty {
+      try visitor.visitSingularStringField(value: self.productName, fieldNumber: 1)
+    }
+    if !self.productURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.productURL, fieldNumber: 2)
+    }
+    if !self.shopName.isEmpty {
+      try visitor.visitSingularStringField(value: self.shopName, fieldNumber: 3)
+    }
+    if !self.shopURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.shopURL, fieldNumber: 4)
+    }
+    if self.saleAmount != 0 {
+      try visitor.visitSingularInt64Field(value: self.saleAmount, fieldNumber: 5)
+    }
+    if self.rank != 0 {
+      try visitor.visitSingularInt64Field(value: self.rank, fieldNumber: 6)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ProductRankMine, rhs: GloryApi_ProductRankMine) -> Bool {
+    if lhs.productName != rhs.productName {return false}
+    if lhs.productURL != rhs.productURL {return false}
+    if lhs.shopName != rhs.shopName {return false}
+    if lhs.shopURL != rhs.shopURL {return false}
+    if lhs.saleAmount != rhs.saleAmount {return false}
+    if lhs.rank != rhs.rank {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_ProductRank: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ProductRank"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "rank_list"),
+    100: .same(proto: "mine"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeRepeatedMessageField(value: &self.rankList) }()
+      case 100: try { try decoder.decodeSingularMessageField(value: &self._mine) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    if !self.rankList.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.rankList, fieldNumber: 1)
+    }
+    try { if let v = self._mine {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ProductRank, rhs: GloryApi_ProductRank) -> Bool {
+    if lhs.rankList != rhs.rankList {return false}
+    if lhs._mine != rhs._mine {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetRankRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetRankRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    2: .same(proto: "type"),
+    3: .same(proto: "start"),
+    4: .same(proto: "end"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.type) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.start) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.end) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if !self.type.isEmpty {
+      try visitor.visitSingularStringField(value: self.type, fieldNumber: 2)
+    }
+    if self.start != 0 {
+      try visitor.visitSingularInt64Field(value: self.start, fieldNumber: 3)
+    }
+    if self.end != 0 {
+      try visitor.visitSingularInt64Field(value: self.end, fieldNumber: 4)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetRankRequest, rhs: GloryApi_GetRankRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.type != rhs.type {return false}
+    if lhs.start != rhs.start {return false}
+    if lhs.end != rhs.end {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetRankResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetRankResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .same(proto: "live"),
+    3: .same(proto: "shop"),
+    4: .same(proto: "product"),
+  ]
+
+  fileprivate class _StorageClass {
+    var _baseResp: Base_BaseResponse? = nil
+    var _live: GloryApi_LiveRank? = nil
+    var _shop: GloryApi_ShopRank? = nil
+    var _product: GloryApi_ProductRank? = nil
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _baseResp = source._baseResp
+      _live = source._live
+      _shop = source._shop
+      _product = source._product
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        // The use of inline closures is to circumvent an issue where the compiler
+        // allocates stack space for every case branch when no optimizations are
+        // enabled. https://github.com/apple/swift-protobuf/issues/1034
+        switch fieldNumber {
+        case 1: try { try decoder.decodeSingularMessageField(value: &_storage._baseResp) }()
+        case 2: try { try decoder.decodeSingularMessageField(value: &_storage._live) }()
+        case 3: try { try decoder.decodeSingularMessageField(value: &_storage._shop) }()
+        case 4: try { try decoder.decodeSingularMessageField(value: &_storage._product) }()
+        default: break
+        }
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
+      try { if let v = _storage._baseResp {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+      } }()
+      try { if let v = _storage._live {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+      } }()
+      try { if let v = _storage._shop {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
+      } }()
+      try { if let v = _storage._product {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
+      } }()
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetRankResponse, rhs: GloryApi_GetRankResponse) -> Bool {
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._baseResp != rhs_storage._baseResp {return false}
+        if _storage._live != rhs_storage._live {return false}
+        if _storage._shop != rhs_storage._shop {return false}
+        if _storage._product != rhs_storage._product {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

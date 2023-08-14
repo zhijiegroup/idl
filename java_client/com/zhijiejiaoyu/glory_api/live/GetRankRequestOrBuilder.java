@@ -3,8 +3,8 @@
 
 package com.zhijiejiaoyu.glory_api.live;
 
-public interface IgnoreLiveEvaluationRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:glory_api.IgnoreLiveEvaluationRequest)
+public interface GetRankRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:glory_api.GetRankRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -23,8 +23,26 @@ public interface IgnoreLiveEvaluationRequestOrBuilder extends
   com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder();
 
   /**
-   * <code>int64 room_id = 2;</code>
-   * @return The roomId.
+   * <code>string type = 2;</code>
+   * @return The type.
    */
-  long getRoomId();
+  java.lang.String getType();
+  /**
+   * <code>string type = 2;</code>
+   * @return The bytes for type.
+   */
+  com.google.protobuf.ByteString
+      getTypeBytes();
+
+  /**
+   * <code>int64 start = 3;</code>
+   * @return The start.
+   */
+  long getStart();
+
+  /**
+   * <code>int64 end = 4;</code>
+   * @return The end.
+   */
+  long getEnd();
 }

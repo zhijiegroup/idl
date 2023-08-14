@@ -1240,6 +1240,12 @@ export class glory_api {
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
 
+  GetRank(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/live/get_rank${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
   CreateTenant(request) {
     const uri = `${this.uriPrefix}/api/tenant/create_tenant`;
     const body = JSONbigint.stringify(request);

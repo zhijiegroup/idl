@@ -4758,6 +4758,37 @@ public final class glory_apiGrpc {
     return getIgnoreEvaluationMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.GetRankRequest,
+      com.zhijiejiaoyu.glory_api.live.GetRankResponse> getGetRankMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetRank",
+      requestType = com.zhijiejiaoyu.glory_api.live.GetRankRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.live.GetRankResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.GetRankRequest,
+      com.zhijiejiaoyu.glory_api.live.GetRankResponse> getGetRankMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.GetRankRequest, com.zhijiejiaoyu.glory_api.live.GetRankResponse> getGetRankMethod;
+    if ((getGetRankMethod = glory_apiGrpc.getGetRankMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGetRankMethod = glory_apiGrpc.getGetRankMethod) == null) {
+          glory_apiGrpc.getGetRankMethod = getGetRankMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.live.GetRankRequest, com.zhijiejiaoyu.glory_api.live.GetRankResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetRank"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.GetRankRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.GetRankResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetRank"))
+              .build();
+        }
+      }
+    }
+    return getGetRankMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreateTenantRequest,
       com.zhijiejiaoyu.glory_api.tenant.CreateTenantResponse> getCreateTenantMethod;
 
@@ -6430,6 +6461,13 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    default void getRank(com.zhijiejiaoyu.glory_api.live.GetRankRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.GetRankResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetRankMethod(), responseObserver);
+    }
+
+    /**
      * <pre>
      *tenant
      * </pre>
@@ -7883,6 +7921,14 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public void getRank(com.zhijiejiaoyu.glory_api.live.GetRankRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.GetRankResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetRankMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
      * <pre>
      *tenant
      * </pre>
@@ -9184,6 +9230,13 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationResponse ignoreEvaluation(com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getIgnoreEvaluationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.live.GetRankResponse getRank(com.zhijiejiaoyu.glory_api.live.GetRankRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRankMethod(), getCallOptions(), request);
     }
 
     /**
@@ -10629,6 +10682,14 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.live.GetRankResponse> getRank(
+        com.zhijiejiaoyu.glory_api.live.GetRankRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetRankMethod(), getCallOptions()), request);
+    }
+
+    /**
      * <pre>
      *tenant
      * </pre>
@@ -10911,21 +10972,22 @@ public final class glory_apiGrpc {
   private static final int METHODID_LIST_UNEVALUATED_ROOM = 150;
   private static final int METHODID_LIST_STUDENT_EVALUATIONS = 151;
   private static final int METHODID_IGNORE_EVALUATION = 152;
-  private static final int METHODID_CREATE_TENANT = 153;
-  private static final int METHODID_GET_TENANT = 154;
-  private static final int METHODID_UPDATE_TENANT = 155;
-  private static final int METHODID_DELETE_TENANT = 156;
-  private static final int METHODID_LIST_TENANT = 157;
-  private static final int METHODID_CREATE_MAJOR = 158;
-  private static final int METHODID_GET_MAJOR = 159;
-  private static final int METHODID_UPDATE_MAJOR = 160;
-  private static final int METHODID_DELETE_MAJOR = 161;
-  private static final int METHODID_LIST_MAJOR = 162;
-  private static final int METHODID_CREATE_CLASS = 163;
-  private static final int METHODID_GET_CLASS = 164;
-  private static final int METHODID_UPDATE_CLASS = 165;
-  private static final int METHODID_DELETE_CLASS = 166;
-  private static final int METHODID_LIST_CLASS = 167;
+  private static final int METHODID_GET_RANK = 153;
+  private static final int METHODID_CREATE_TENANT = 154;
+  private static final int METHODID_GET_TENANT = 155;
+  private static final int METHODID_UPDATE_TENANT = 156;
+  private static final int METHODID_DELETE_TENANT = 157;
+  private static final int METHODID_LIST_TENANT = 158;
+  private static final int METHODID_CREATE_MAJOR = 159;
+  private static final int METHODID_GET_MAJOR = 160;
+  private static final int METHODID_UPDATE_MAJOR = 161;
+  private static final int METHODID_DELETE_MAJOR = 162;
+  private static final int METHODID_LIST_MAJOR = 163;
+  private static final int METHODID_CREATE_CLASS = 164;
+  private static final int METHODID_GET_CLASS = 165;
+  private static final int METHODID_UPDATE_CLASS = 166;
+  private static final int METHODID_DELETE_CLASS = 167;
+  private static final int METHODID_LIST_CLASS = 168;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -11555,6 +11617,10 @@ public final class glory_apiGrpc {
         case METHODID_IGNORE_EVALUATION:
           serviceImpl.ignoreEvaluation((com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationResponse>) responseObserver);
+          break;
+        case METHODID_GET_RANK:
+          serviceImpl.getRank((com.zhijiejiaoyu.glory_api.live.GetRankRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.GetRankResponse>) responseObserver);
           break;
         case METHODID_CREATE_TENANT:
           serviceImpl.createTenant((com.zhijiejiaoyu.glory_api.tenant.CreateTenantRequest) request,
@@ -12706,6 +12772,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationResponse>(
                 service, METHODID_IGNORE_EVALUATION)))
         .addMethod(
+          getGetRankMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.live.GetRankRequest,
+              com.zhijiejiaoyu.glory_api.live.GetRankResponse>(
+                service, METHODID_GET_RANK)))
+        .addMethod(
           getCreateTenantMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -13011,6 +13084,7 @@ public final class glory_apiGrpc {
               .addMethod(getListUnevaluatedRoomMethod())
               .addMethod(getListStudentEvaluationsMethod())
               .addMethod(getIgnoreEvaluationMethod())
+              .addMethod(getGetRankMethod())
               .addMethod(getCreateTenantMethod())
               .addMethod(getGetTenantMethod())
               .addMethod(getUpdateTenantMethod())

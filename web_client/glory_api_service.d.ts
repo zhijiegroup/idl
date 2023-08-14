@@ -663,6 +663,10 @@ CreateLivePlanProduct create live plan product */
     request: live_evaluate.IgnoreLiveEvaluationRequest
   ): Promise<live_evaluate.IgnoreLiveEvaluationResponse>;
 
+  GetRank(
+    request: live_evaluate.GetRankRequest
+  ): Promise<live_evaluate.GetRankResponse>;
+
   /** tenant */
   CreateTenant(
     request: tenant.CreateTenantRequest

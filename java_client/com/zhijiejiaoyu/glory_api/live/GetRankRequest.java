@@ -4,25 +4,26 @@
 package com.zhijiejiaoyu.glory_api.live;
 
 /**
- * Protobuf type {@code glory_api.IgnoreLiveEvaluationRequest}
+ * Protobuf type {@code glory_api.GetRankRequest}
  */
-public final class IgnoreLiveEvaluationRequest extends
+public final class GetRankRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:glory_api.IgnoreLiveEvaluationRequest)
-    IgnoreLiveEvaluationRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:glory_api.GetRankRequest)
+    GetRankRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use IgnoreLiveEvaluationRequest.newBuilder() to construct.
-  private IgnoreLiveEvaluationRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use GetRankRequest.newBuilder() to construct.
+  private GetRankRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private IgnoreLiveEvaluationRequest() {
+  private GetRankRequest() {
+    type = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new IgnoreLiveEvaluationRequest();
+    return new GetRankRequest();
   }
 
   @java.lang.Override
@@ -30,7 +31,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private IgnoreLiveEvaluationRequest(
+  private GetRankRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -61,9 +62,20 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 16: {
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
 
-            roomId = input.readInt64();
+            type = s;
+            break;
+          }
+          case 24: {
+
+            start = input.readInt64();
+            break;
+          }
+          case 32: {
+
+            end = input.readInt64();
             break;
           }
           default: {
@@ -87,15 +99,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.zhijiejiaoyu.glory_api.live.LiveEvaluate.internal_static_glory_api_IgnoreLiveEvaluationRequest_descriptor;
+    return com.zhijiejiaoyu.glory_api.live.LiveEvaluate.internal_static_glory_api_GetRankRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.zhijiejiaoyu.glory_api.live.LiveEvaluate.internal_static_glory_api_IgnoreLiveEvaluationRequest_fieldAccessorTable
+    return com.zhijiejiaoyu.glory_api.live.LiveEvaluate.internal_static_glory_api_GetRankRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationRequest.class, com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationRequest.Builder.class);
+            com.zhijiejiaoyu.glory_api.live.GetRankRequest.class, com.zhijiejiaoyu.glory_api.live.GetRankRequest.Builder.class);
   }
 
   public static final int BASE_REQUEST_FIELD_NUMBER = 1;
@@ -124,15 +136,64 @@ private static final long serialVersionUID = 0L;
     return getBaseRequest();
   }
 
-  public static final int ROOM_ID_FIELD_NUMBER = 2;
-  private long roomId;
+  public static final int TYPE_FIELD_NUMBER = 2;
+  private volatile java.lang.Object type;
   /**
-   * <code>int64 room_id = 2;</code>
-   * @return The roomId.
+   * <code>string type = 2;</code>
+   * @return The type.
    */
   @java.lang.Override
-  public long getRoomId() {
-    return roomId;
+  public java.lang.String getType() {
+    java.lang.Object ref = type;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      type = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string type = 2;</code>
+   * @return The bytes for type.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTypeBytes() {
+    java.lang.Object ref = type;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      type = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int START_FIELD_NUMBER = 3;
+  private long start;
+  /**
+   * <code>int64 start = 3;</code>
+   * @return The start.
+   */
+  @java.lang.Override
+  public long getStart() {
+    return start;
+  }
+
+  public static final int END_FIELD_NUMBER = 4;
+  private long end;
+  /**
+   * <code>int64 end = 4;</code>
+   * @return The end.
+   */
+  @java.lang.Override
+  public long getEnd() {
+    return end;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -152,8 +213,14 @@ private static final long serialVersionUID = 0L;
     if (baseRequest_ != null) {
       output.writeMessage(1, getBaseRequest());
     }
-    if (roomId_ != 0L) {
-      output.writeInt64(2, roomId);
+    if (!getTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, type);
+    }
+    if (start_ != 0L) {
+      output.writeInt64(3, start);
+    }
+    if (end_ != 0L) {
+      output.writeInt64(4, end);
     }
     unknownFields.writeTo(output);
   }
@@ -168,9 +235,16 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseRequest());
     }
-    if (roomId_ != 0L) {
+    if (!getTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, type);
+    }
+    if (start_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, roomId);
+        .computeInt64Size(3, start);
+    }
+    if (end_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(4, end);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -182,18 +256,22 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationRequest)) {
+    if (!(obj instanceof com.zhijiejiaoyu.glory_api.live.GetRankRequest)) {
       return super.equals(obj);
     }
-    com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationRequest other = (com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationRequest) obj;
+    com.zhijiejiaoyu.glory_api.live.GetRankRequest other = (com.zhijiejiaoyu.glory_api.live.GetRankRequest) obj;
 
     if (hasBaseRequest() != other.hasBaseRequest()) return false;
     if (hasBaseRequest()) {
       if (!getBaseRequest()
           .equals(other.getBaseRequest())) return false;
     }
-    if (getRoomId()
-        != other.getRoomId()) return false;
+    if (!getType()
+        .equals(other.getType())) return false;
+    if (getStart()
+        != other.getStart()) return false;
+    if (getEnd()
+        != other.getEnd()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -209,77 +287,82 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
       hash = (53 * hash) + getBaseRequest().hashCode();
     }
-    hash = (37 * hash) + ROOM_ID_FIELD_NUMBER;
+    hash = (37 * hash) + TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getType().hashCode();
+    hash = (37 * hash) + START_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getRoomId());
+        getStart());
+    hash = (37 * hash) + END_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getEnd());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.live.GetRankRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.live.GetRankRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.live.GetRankRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.live.GetRankRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationRequest parseFrom(byte[] data)
+  public static com.zhijiejiaoyu.glory_api.live.GetRankRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.live.GetRankRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationRequest parseFrom(java.io.InputStream input)
+  public static com.zhijiejiaoyu.glory_api.live.GetRankRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.live.GetRankRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.zhijiejiaoyu.glory_api.live.GetRankRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationRequest parseDelimitedFrom(
+  public static com.zhijiejiaoyu.glory_api.live.GetRankRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.live.GetRankRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.live.GetRankRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -292,7 +375,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationRequest prototype) {
+  public static Builder newBuilder(com.zhijiejiaoyu.glory_api.live.GetRankRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -308,26 +391,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code glory_api.IgnoreLiveEvaluationRequest}
+   * Protobuf type {@code glory_api.GetRankRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:glory_api.IgnoreLiveEvaluationRequest)
-      com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:glory_api.GetRankRequest)
+      com.zhijiejiaoyu.glory_api.live.GetRankRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.zhijiejiaoyu.glory_api.live.LiveEvaluate.internal_static_glory_api_IgnoreLiveEvaluationRequest_descriptor;
+      return com.zhijiejiaoyu.glory_api.live.LiveEvaluate.internal_static_glory_api_GetRankRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.zhijiejiaoyu.glory_api.live.LiveEvaluate.internal_static_glory_api_IgnoreLiveEvaluationRequest_fieldAccessorTable
+      return com.zhijiejiaoyu.glory_api.live.LiveEvaluate.internal_static_glory_api_GetRankRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationRequest.class, com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationRequest.Builder.class);
+              com.zhijiejiaoyu.glory_api.live.GetRankRequest.class, com.zhijiejiaoyu.glory_api.live.GetRankRequest.Builder.class);
     }
 
-    // Construct using com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationRequest.newBuilder()
+    // Construct using com.zhijiejiaoyu.glory_api.live.GetRankRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -351,7 +434,11 @@ private static final long serialVersionUID = 0L;
         baseRequest = null;
         baseRequestBuilder = null;
       }
-      roomId = 0L;
+      type = "";
+
+      start = 0L;
+
+      end = 0L;
 
       return this;
     }
@@ -359,17 +446,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.zhijiejiaoyu.glory_api.live.LiveEvaluate.internal_static_glory_api_IgnoreLiveEvaluationRequest_descriptor;
+      return com.zhijiejiaoyu.glory_api.live.LiveEvaluate.internal_static_glory_api_GetRankRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationRequest getDefaultInstanceForType() {
-      return com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationRequest.getDefaultInstance();
+    public com.zhijiejiaoyu.glory_api.live.GetRankRequest getDefaultInstanceForType() {
+      return com.zhijiejiaoyu.glory_api.live.GetRankRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationRequest build() {
-      com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationRequest result = buildPartial();
+    public com.zhijiejiaoyu.glory_api.live.GetRankRequest build() {
+      com.zhijiejiaoyu.glory_api.live.GetRankRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -377,14 +464,16 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationRequest buildPartial() {
-      com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationRequest result = new com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationRequest(this);
+    public com.zhijiejiaoyu.glory_api.live.GetRankRequest buildPartial() {
+      com.zhijiejiaoyu.glory_api.live.GetRankRequest result = new com.zhijiejiaoyu.glory_api.live.GetRankRequest(this);
       if (baseRequestBuilder == null) {
         result.baseRequest = baseRequest;
       } else {
         result.baseRequest = baseRequestBuilder_.build();
       }
-      result.roomId = roomId;
+      result.type = type;
+      result.start = start;
+      result.end = end;
       onBuilt();
       return result;
     }
@@ -423,21 +512,28 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationRequest) {
-        return mergeFrom((com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationRequest)other);
+      if (other instanceof com.zhijiejiaoyu.glory_api.live.GetRankRequest) {
+        return mergeFrom((com.zhijiejiaoyu.glory_api.live.GetRankRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationRequest other) {
-      if (other == com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.zhijiejiaoyu.glory_api.live.GetRankRequest other) {
+      if (other == com.zhijiejiaoyu.glory_api.live.GetRankRequest.getDefaultInstance()) return this;
       if (other.hasBaseRequest()) {
         mergeBaseRequest(other.getBaseRequest());
       }
-      if (other.getRoomId() != 0L) {
-        setRoomId(other.getRoomId());
+      if (!other.getType().isEmpty()) {
+        type = other.type;
+        onChanged();
+      }
+      if (other.getStart() != 0L) {
+        setStart(other.getStart());
+      }
+      if (other.getEnd() != 0L) {
+        setEnd(other.getEnd());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -454,11 +550,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationRequest parsedMessage = null;
+      com.zhijiejiaoyu.glory_api.live.GetRankRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.zhijiejiaoyu.glory_api.live.GetRankRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -587,33 +683,140 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder;
     }
 
-    private long roomId_ ;
+    private java.lang.Object type = "";
     /**
-     * <code>int64 room_id = 2;</code>
-     * @return The roomId.
+     * <code>string type = 2;</code>
+     * @return The type.
      */
-    @java.lang.Override
-    public long getRoomId() {
-      return roomId;
+    public java.lang.String getType() {
+      java.lang.Object ref = type;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>int64 room_id = 2;</code>
-     * @param value The roomId to set.
+     * <code>string type = 2;</code>
+     * @return The bytes for type.
+     */
+    public com.google.protobuf.ByteString
+        getTypeBytes() {
+      java.lang.Object ref = type;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        type = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string type = 2;</code>
+     * @param value The type to set.
      * @return This builder for chaining.
      */
-    public Builder setRoomId(long value) {
-      
-      roomId = value;
+    public Builder setType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      type = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 room_id = 2;</code>
+     * <code>string type = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder clearRoomId() {
+    public Builder clearType() {
       
-      roomId = 0L;
+      type = getDefaultInstance().getType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string type = 2;</code>
+     * @param value The bytes for type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      type = value;
+      onChanged();
+      return this;
+    }
+
+    private long start_ ;
+    /**
+     * <code>int64 start = 3;</code>
+     * @return The start.
+     */
+    @java.lang.Override
+    public long getStart() {
+      return start;
+    }
+    /**
+     * <code>int64 start = 3;</code>
+     * @param value The start to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStart(long value) {
+      
+      start = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 start = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStart() {
+      
+      start = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long end_ ;
+    /**
+     * <code>int64 end = 4;</code>
+     * @return The end.
+     */
+    @java.lang.Override
+    public long getEnd() {
+      return end;
+    }
+    /**
+     * <code>int64 end = 4;</code>
+     * @param value The end to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnd(long value) {
+      
+      end = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 end = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEnd() {
+      
+      end = 0L;
       onChanged();
       return this;
     }
@@ -630,41 +833,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:glory_api.IgnoreLiveEvaluationRequest)
+    // @@protoc_insertion_point(builder_scope:glory_api.GetRankRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:glory_api.IgnoreLiveEvaluationRequest)
-  private static final com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:glory_api.GetRankRequest)
+  private static final com.zhijiejiaoyu.glory_api.live.GetRankRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationRequest();
+    DEFAULT_INSTANCE = new com.zhijiejiaoyu.glory_api.live.GetRankRequest();
   }
 
-  public static com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationRequest getDefaultInstance() {
+  public static com.zhijiejiaoyu.glory_api.live.GetRankRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<IgnoreLiveEvaluationRequest>
-      PARSER = new com.google.protobuf.AbstractParser<IgnoreLiveEvaluationRequest>() {
+  private static final com.google.protobuf.Parser<GetRankRequest>
+      PARSER = new com.google.protobuf.AbstractParser<GetRankRequest>() {
     @java.lang.Override
-    public IgnoreLiveEvaluationRequest parsePartialFrom(
+    public GetRankRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new IgnoreLiveEvaluationRequest(input, extensionRegistry);
+      return new GetRankRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<IgnoreLiveEvaluationRequest> parser() {
+  public static com.google.protobuf.Parser<GetRankRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<IgnoreLiveEvaluationRequest> getParserForType() {
+  public com.google.protobuf.Parser<GetRankRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.live.IgnoreLiveEvaluationRequest getDefaultInstanceForType() {
+  public com.zhijiejiaoyu.glory_api.live.GetRankRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
