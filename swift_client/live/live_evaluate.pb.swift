@@ -201,6 +201,8 @@ struct GloryApi_EvaluateSubOption {
 
   var score: String = String()
 
+  var nameKey: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -945,6 +947,7 @@ extension GloryApi_EvaluateSubOption: SwiftProtobuf.Message, SwiftProtobuf._Mess
     2: .same(proto: "total"),
     3: .same(proto: "content"),
     4: .same(proto: "score"),
+    5: .standard(proto: "name_key"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -957,6 +960,7 @@ extension GloryApi_EvaluateSubOption: SwiftProtobuf.Message, SwiftProtobuf._Mess
       case 2: try { try decoder.decodeSingularDoubleField(value: &self.total) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.content) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.score) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.nameKey) }()
       default: break
       }
     }
@@ -975,6 +979,9 @@ extension GloryApi_EvaluateSubOption: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if !self.score.isEmpty {
       try visitor.visitSingularStringField(value: self.score, fieldNumber: 4)
     }
+    if !self.nameKey.isEmpty {
+      try visitor.visitSingularStringField(value: self.nameKey, fieldNumber: 5)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -983,6 +990,7 @@ extension GloryApi_EvaluateSubOption: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if lhs.total != rhs.total {return false}
     if lhs.content != rhs.content {return false}
     if lhs.score != rhs.score {return false}
+    if lhs.nameKey != rhs.nameKey {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

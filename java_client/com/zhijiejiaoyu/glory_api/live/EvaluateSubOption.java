@@ -19,6 +19,7 @@ private static final long serialVersionUID = 0L;
     name = "";
     content = "";
     score = "";
+    nameKey = "";
   }
 
   @java.lang.Override
@@ -72,6 +73,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             score = s;
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            nameKey = s;
             break;
           }
           default: {
@@ -231,6 +238,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int NAME_KEY_FIELD_NUMBER = 5;
+  private volatile java.lang.Object nameKey;
+  /**
+   * <code>string name_key = 5;</code>
+   * @return The nameKey.
+   */
+  @java.lang.Override
+  public java.lang.String getNameKey() {
+    java.lang.Object ref = nameKey;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      nameKey = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string name_key = 5;</code>
+   * @return The bytes for nameKey.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNameKeyBytes() {
+    java.lang.Object ref = nameKey;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      nameKey = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -257,6 +302,9 @@ private static final long serialVersionUID = 0L;
     if (!getScoreBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, score);
     }
+    if (!getNameKeyBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, nameKey);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -278,6 +326,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getScoreBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, score);
+    }
+    if (!getNameKeyBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, nameKey);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -303,6 +354,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getContent())) return false;
     if (!getScore()
         .equals(other.getScore())) return false;
+    if (!getNameKey()
+        .equals(other.getNameKey())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -323,6 +376,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getContent().hashCode();
     hash = (37 * hash) + SCORE_FIELD_NUMBER;
     hash = (53 * hash) + getScore().hashCode();
+    hash = (37 * hash) + NAME_KEY_FIELD_NUMBER;
+    hash = (53 * hash) + getNameKey().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -464,6 +519,8 @@ private static final long serialVersionUID = 0L;
 
       score = "";
 
+      nameKey = "";
+
       return this;
     }
 
@@ -494,6 +551,7 @@ private static final long serialVersionUID = 0L;
       result.total = total;
       result.content = content;
       result.score = score;
+      result.nameKey = nameKey;
       onBuilt();
       return result;
     }
@@ -555,6 +613,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getScore().isEmpty()) {
         score = other.score;
+        onChanged();
+      }
+      if (!other.getNameKey().isEmpty()) {
+        nameKey = other.nameKey;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -841,6 +903,82 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       score = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object nameKey = "";
+    /**
+     * <code>string name_key = 5;</code>
+     * @return The nameKey.
+     */
+    public java.lang.String getNameKey() {
+      java.lang.Object ref = nameKey;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nameKey = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string name_key = 5;</code>
+     * @return The bytes for nameKey.
+     */
+    public com.google.protobuf.ByteString
+        getNameKeyBytes() {
+      java.lang.Object ref = nameKey;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nameKey = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string name_key = 5;</code>
+     * @param value The nameKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNameKey(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      nameKey = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string name_key = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNameKey() {
+      
+      nameKey = getDefaultInstance().getNameKey();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string name_key = 5;</code>
+     * @param value The bytes for nameKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNameKeyBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      nameKey = value;
       onChanged();
       return this;
     }

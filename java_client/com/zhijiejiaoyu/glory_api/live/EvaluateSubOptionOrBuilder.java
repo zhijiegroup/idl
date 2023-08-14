@@ -48,4 +48,16 @@ public interface EvaluateSubOptionOrBuilder extends
    */
   com.google.protobuf.ByteString
       getScoreBytes();
+
+  /**
+   * <code>string name_key = 5;</code>
+   * @return The nameKey.
+   */
+  java.lang.String getNameKey();
+  /**
+   * <code>string name_key = 5;</code>
+   * @return The bytes for nameKey.
+   */
+  com.google.protobuf.ByteString
+      getNameKeyBytes();
 }

@@ -52,6 +52,7 @@ export interface EvaluateSubOption {
   total?: number;
   content?: string;
   score?: string;
+  name_key?: string;
 }
 
 export interface EvaluateDetail {
