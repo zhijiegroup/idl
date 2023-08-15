@@ -218,9 +218,10 @@ message ProductRank {
 
 message GetRankRequest {
     base.BaseRequest base_request = 1;
-    string type =2;
-    int64 start = 3;
-    int64 end = 4;
+    string category = 2;
+    string type =3;
+    int64 start = 4;
+    int64 end = 5;
 }
 
 message GetRankResponse {
