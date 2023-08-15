@@ -794,6 +794,8 @@ struct GloryApi_GetRankRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
+  var category: String = String()
+
   var type: String = String()
 
   var start: Int64 = 0
@@ -2469,9 +2471,10 @@ extension GloryApi_GetRankRequest: SwiftProtobuf.Message, SwiftProtobuf._Message
   static let protoMessageName: String = _protobuf_package + ".GetRankRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
-    2: .same(proto: "type"),
-    3: .same(proto: "start"),
-    4: .same(proto: "end"),
+    2: .same(proto: "category"),
+    3: .same(proto: "type"),
+    4: .same(proto: "start"),
+    5: .same(proto: "end"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2481,9 +2484,10 @@ extension GloryApi_GetRankRequest: SwiftProtobuf.Message, SwiftProtobuf._Message
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.type) }()
-      case 3: try { try decoder.decodeSingularInt64Field(value: &self.start) }()
-      case 4: try { try decoder.decodeSingularInt64Field(value: &self.end) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.category) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.type) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.start) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.end) }()
       default: break
       }
     }
@@ -2497,20 +2501,24 @@ extension GloryApi_GetRankRequest: SwiftProtobuf.Message, SwiftProtobuf._Message
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
+    if !self.category.isEmpty {
+      try visitor.visitSingularStringField(value: self.category, fieldNumber: 2)
+    }
     if !self.type.isEmpty {
-      try visitor.visitSingularStringField(value: self.type, fieldNumber: 2)
+      try visitor.visitSingularStringField(value: self.type, fieldNumber: 3)
     }
     if self.start != 0 {
-      try visitor.visitSingularInt64Field(value: self.start, fieldNumber: 3)
+      try visitor.visitSingularInt64Field(value: self.start, fieldNumber: 4)
     }
     if self.end != 0 {
-      try visitor.visitSingularInt64Field(value: self.end, fieldNumber: 4)
+      try visitor.visitSingularInt64Field(value: self.end, fieldNumber: 5)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_GetRankRequest, rhs: GloryApi_GetRankRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.category != rhs.category {return false}
     if lhs.type != rhs.type {return false}
     if lhs.start != rhs.start {return false}
     if lhs.end != rhs.end {return false}

@@ -274,15 +274,16 @@ public final class LiveEvaluate {
       "shop_url\030\004 \001(\t\022\023\n\013sale_amount\030\005 \001(\003\022\014\n\004r" +
       "ank\030\006 \001(\003\"h\n\013ProductRank\022/\n\trank_list\030\001 " +
       "\003(\0132\034.glory_api.ProductRankDetail\022(\n\004min" +
-      "e\030d \001(\0132\032.glory_api.ProductRankMine\"c\n\016G" +
+      "e\030d \001(\0132\032.glory_api.ProductRankMine\"u\n\016G" +
       "etRankRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
-      "se.BaseRequest\022\014\n\004type\030\002 \001(\t\022\r\n\005start\030\003 " +
-      "\001(\003\022\013\n\003end\030\004 \001(\003\"\247\001\n\017GetRankResponse\022%\n\t" +
-      "base_resp\030\001 \001(\0132\022.base.BaseResponse\022!\n\004l" +
-      "ive\030\002 \001(\0132\023.glory_api.LiveRank\022!\n\004shop\030\003" +
-      " \001(\0132\023.glory_api.ShopRank\022\'\n\007product\030\004 \001" +
-      "(\0132\026.glory_api.ProductRankB#\n\037com.zhijie" +
-      "jiaoyu.glory_api.liveP\001b\006proto3"
+      "se.BaseRequest\022\020\n\010category\030\002 \001(\t\022\014\n\004type" +
+      "\030\003 \001(\t\022\r\n\005start\030\004 \001(\003\022\013\n\003end\030\005 \001(\003\"\247\001\n\017G" +
+      "etRankResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
+      ".BaseResponse\022!\n\004live\030\002 \001(\0132\023.glory_api." +
+      "LiveRank\022!\n\004shop\030\003 \001(\0132\023.glory_api.ShopR" +
+      "ank\022\'\n\007product\030\004 \001(\0132\026.glory_api.Product" +
+      "RankB#\n\037com.zhijiejiaoyu.glory_api.liveP" +
+      "\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -468,7 +469,7 @@ public final class LiveEvaluate {
     internal_static_glory_api_GetRankRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetRankRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "Type", "Start", "End", });
+        new java.lang.String[] { "BaseRequest", "Category", "Type", "Start", "End", });
     internal_static_glory_api_GetRankResponse_descriptor =
       getDescriptor().getMessageTypes().get(30);
     internal_static_glory_api_GetRankResponse_fieldAccessorTable = new

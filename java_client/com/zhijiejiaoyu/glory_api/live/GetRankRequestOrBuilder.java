@@ -23,25 +23,37 @@ public interface GetRankRequestOrBuilder extends
   com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder();
 
   /**
-   * <code>string type = 2;</code>
+   * <code>string category = 2;</code>
+   * @return The category.
+   */
+  java.lang.String getCategory();
+  /**
+   * <code>string category = 2;</code>
+   * @return The bytes for category.
+   */
+  com.google.protobuf.ByteString
+      getCategoryBytes();
+
+  /**
+   * <code>string type = 3;</code>
    * @return The type.
    */
   java.lang.String getType();
   /**
-   * <code>string type = 2;</code>
+   * <code>string type = 3;</code>
    * @return The bytes for type.
    */
   com.google.protobuf.ByteString
       getTypeBytes();
 
   /**
-   * <code>int64 start = 3;</code>
+   * <code>int64 start = 4;</code>
    * @return The start.
    */
   long getStart();
 
   /**
-   * <code>int64 end = 4;</code>
+   * <code>int64 end = 5;</code>
    * @return The end.
    */
   long getEnd();

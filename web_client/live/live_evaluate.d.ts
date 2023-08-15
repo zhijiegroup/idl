@@ -222,6 +222,7 @@ export interface ProductRank {
 
 export interface GetRankRequest {
   base_request?: base.BaseRequest;
+  category?: string;
   type?: string;
   start?: string;
   end?: string;
