@@ -205,12 +205,13 @@ message ListResourceResponse {
 
 message ListUserByRole {
   int64 user_id = 1;
-  string user_name = 2;
-  int64 tenant_id = 3;
-  string role = 4;
-  string created_at = 5;
-
+  string phone = 2;
+  string user_name = 3;
+  int64 tenant_id = 4;
+  string role = 5;
+  string created_at = 6;
 }
+
 message ListUserByRoleRequest {
   base.BaseRequest base_request=1;
   string role_name = 2; // 平台管理员是admin, 学校管理员是school_admin_role
