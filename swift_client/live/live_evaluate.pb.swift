@@ -798,6 +798,8 @@ struct GloryApi_GetRankRequest {
 
   var type: String = String()
 
+  var shopID: Int64 = 0
+
   var start: Int64 = 0
 
   var end: Int64 = 0
@@ -2473,8 +2475,9 @@ extension GloryApi_GetRankRequest: SwiftProtobuf.Message, SwiftProtobuf._Message
     1: .standard(proto: "base_request"),
     2: .same(proto: "category"),
     3: .same(proto: "type"),
-    4: .same(proto: "start"),
-    5: .same(proto: "end"),
+    4: .standard(proto: "shop_id"),
+    5: .same(proto: "start"),
+    6: .same(proto: "end"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2486,8 +2489,9 @@ extension GloryApi_GetRankRequest: SwiftProtobuf.Message, SwiftProtobuf._Message
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.category) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.type) }()
-      case 4: try { try decoder.decodeSingularInt64Field(value: &self.start) }()
-      case 5: try { try decoder.decodeSingularInt64Field(value: &self.end) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.start) }()
+      case 6: try { try decoder.decodeSingularInt64Field(value: &self.end) }()
       default: break
       }
     }
@@ -2507,11 +2511,14 @@ extension GloryApi_GetRankRequest: SwiftProtobuf.Message, SwiftProtobuf._Message
     if !self.type.isEmpty {
       try visitor.visitSingularStringField(value: self.type, fieldNumber: 3)
     }
+    if self.shopID != 0 {
+      try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 4)
+    }
     if self.start != 0 {
-      try visitor.visitSingularInt64Field(value: self.start, fieldNumber: 4)
+      try visitor.visitSingularInt64Field(value: self.start, fieldNumber: 5)
     }
     if self.end != 0 {
-      try visitor.visitSingularInt64Field(value: self.end, fieldNumber: 5)
+      try visitor.visitSingularInt64Field(value: self.end, fieldNumber: 6)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -2520,6 +2527,7 @@ extension GloryApi_GetRankRequest: SwiftProtobuf.Message, SwiftProtobuf._Message
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.category != rhs.category {return false}
     if lhs.type != rhs.type {return false}
+    if lhs.shopID != rhs.shopID {return false}
     if lhs.start != rhs.start {return false}
     if lhs.end != rhs.end {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

@@ -224,6 +224,7 @@ export interface GetRankRequest {
   base_request?: base.BaseRequest;
   category?: string;
   type?: string;
+  shop_id?: string;
   start?: string;
   end?: string;
 }

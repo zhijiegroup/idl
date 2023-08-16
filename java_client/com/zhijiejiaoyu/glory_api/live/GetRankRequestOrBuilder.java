@@ -47,13 +47,19 @@ public interface GetRankRequestOrBuilder extends
       getTypeBytes();
 
   /**
-   * <code>int64 start = 4;</code>
+   * <code>int64 shop_id = 4;</code>
+   * @return The shopId.
+   */
+  long getShopId();
+
+  /**
+   * <code>int64 start = 5;</code>
    * @return The start.
    */
   long getStart();
 
   /**
-   * <code>int64 end = 5;</code>
+   * <code>int64 end = 6;</code>
    * @return The end.
    */
   long getEnd();
