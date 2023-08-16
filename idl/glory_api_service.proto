@@ -33,7 +33,7 @@ import "live/live_evaluate.proto";
 import "account/account_operation.proto";
 import "currency/virtual_currency.proto";
 import "tenant/tenant.proto";
-
+import "tenant/college.proto";
 
 service glory_api {
 
@@ -610,6 +610,23 @@ service glory_api {
   }
   rpc ListTenant(ListTenantRequest) returns (ListTenantResponse) {
     option (api.post) = '/api/tenant/list_tenant';
+  }
+
+  //college
+  rpc CreateCollege(CreateCollegeRequest) returns (CreateCollegeResponse) {
+    option (api.post) = '/api/college/create_college';
+  }
+  rpc GetCollege(GetCollegeRequest) returns (GetCollegeResponse) {
+    option (api.get) = '/api/college/get_college';
+  }
+  rpc UpdateCollege(UpdateCollegeRequest) returns (UpdateCollegeResponse) {
+    option (api.post) = '/api/college/update_college';
+  }
+  rpc DeleteCollege(DeleteCollegeRequest) returns (DeleteCollegeResponse) {
+    option (api.post) = '/api/college/delete_college';
+  }
+  rpc ListCollege(ListCollegeRequest) returns (ListCollegeResponse) {
+    option (api.post) = '/api/college/list_college';
   }
 
   //major
