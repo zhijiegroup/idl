@@ -428,6 +428,14 @@ service glory_api {
     option (api.post) = '/api/currency/add';
   }
 
+  rpc RechargeCurrency(RechargeCurrencyRequest) returns (RechargeCurrencyResponse) {
+    option (api.post) = '/api/currency/recharge';
+  }
+
+  rpc RechargeCurrencyInBatches(RechargeCurrencyInBatchesRequest) returns (RechargeCurrencyInBatchesResponse) {
+    option (api.post) = '/api/currency/recharge_batches';
+  }
+
   rpc DeleteVCurrency(DeleteVirtualCurrencyRequest) returns (DeleteVirtualCurrencyResponse) {
     option (api.post) = '/api/currency/clear';
   }
@@ -441,7 +449,7 @@ service glory_api {
   }
 
   rpc ListVCurrency(ListVirtualCurrencyRequest) returns (ListVirtualCurrencyResponse) {
-    option (api.get) = '/api/currency/list';
+    option (api.post) = '/api/currency/list';
   }
 
   // account
