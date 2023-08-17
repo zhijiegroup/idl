@@ -34,6 +34,7 @@ import "account/account_operation.proto";
 import "currency/virtual_currency.proto";
 import "tenant/tenant.proto";
 import "tenant/college.proto";
+import "tenant/edu_office.proto";
 
 service glory_api {
 
@@ -627,6 +628,24 @@ service glory_api {
   }
   rpc ListCollege(ListCollegeRequest) returns (ListCollegeResponse) {
     option (api.post) = '/api/college/list_college';
+  }
+
+  //edu_office
+  rpc CreateEduOffice(CreateEduOfficeRequest) returns (CreateEduOfficeResponse) {
+    option (api.post) = '/api/edu_office/create_edu_office';
+  }
+
+  rpc DeleteEduOffice(DeleteEduOfficeRequest) returns (DeleteEduOfficeResponse) {
+    option (api.post) = '/api/edu_office/delete_edu_office';
+  }
+
+  //principal_office
+  rpc CreatePrincipalOffice(CreatePrincipalOfficeRequest) returns (CreatePrincipalOfficeResponse) {
+    option (api.post) = '/api/principal_office/create_principal_office';
+  }
+
+  rpc DeletePrincipalOffice(DeletePrincipalOfficeRequest) returns (DeletePrincipalOfficeResponse) {
+    option (api.post) = '/api/principal_office/delete_principal_office';
   }
 
   //major

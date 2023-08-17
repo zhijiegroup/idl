@@ -1,0 +1,55 @@
+syntax = "proto3";
+package glory_api;
+
+
+import "base.proto";
+
+message EduOffice {
+    int64 tenant_id = 1;
+    int64 edu_office_id = 2; //创建不传
+}
+
+message CreateEduOfficeRequest {
+    base.BaseRequest base_request = 1;
+    EduOffice edu_office = 2;
+}
+
+message CreateEduOfficeResponse {
+    base.BaseResponse base_resp = 1;
+    int64 tenant_id = 2;
+    int64 edu_office_id = 3;
+}
+
+message DeleteEduOfficeRequest {
+    base.BaseRequest base_request = 1;
+    int64 edu_office_id = 2;
+}
+
+message DeleteEduOfficeResponse {
+    base.BaseResponse base_resp = 1;
+}
+
+message PrincipalOffice {
+    int64 tenant_id = 1;
+    int64 principal_office_id = 2; //创建不传
+}
+
+message CreatePrincipalOfficeRequest {
+    base.BaseRequest base_request = 1;
+    PrincipalOffice principal_office = 2;
+}
+
+message CreatePrincipalOfficeResponse {
+    base.BaseResponse base_resp = 1;
+    int64 tenant_id = 2;
+    int64 principal_office_id = 3;
+}
+
+message DeletePrincipalOfficeRequest {
+    base.BaseRequest base_request = 1;
+    int64 principal_office_id = 2;
+}
+
+message DeletePrincipalOfficeResponse {
+    base.BaseResponse base_resp = 1;
+}
