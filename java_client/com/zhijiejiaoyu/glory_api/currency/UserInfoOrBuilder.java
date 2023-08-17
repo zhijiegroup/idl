@@ -36,4 +36,16 @@ public interface UserInfoOrBuilder extends
    */
   com.google.protobuf.ByteString
       getTokenBytes();
+
+  /**
+   * <code>string name = 4;</code>
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   * <code>string name = 4;</code>
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString
+      getNameBytes();
 }

@@ -3301,6 +3301,68 @@ public final class glory_apiGrpc {
     return getAddVCurrencyMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest,
+      com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyResponse> getRechargeCurrencyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RechargeCurrency",
+      requestType = com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest,
+      com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyResponse> getRechargeCurrencyMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest, com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyResponse> getRechargeCurrencyMethod;
+    if ((getRechargeCurrencyMethod = glory_apiGrpc.getRechargeCurrencyMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getRechargeCurrencyMethod = glory_apiGrpc.getRechargeCurrencyMethod) == null) {
+          glory_apiGrpc.getRechargeCurrencyMethod = getRechargeCurrencyMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest, com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RechargeCurrency"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("RechargeCurrency"))
+              .build();
+        }
+      }
+    }
+    return getRechargeCurrencyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyInBatchesRequest,
+      com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyInBatchesResponse> getRechargeCurrencyInBatchesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RechargeCurrencyInBatches",
+      requestType = com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyInBatchesRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyInBatchesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyInBatchesRequest,
+      com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyInBatchesResponse> getRechargeCurrencyInBatchesMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyInBatchesRequest, com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyInBatchesResponse> getRechargeCurrencyInBatchesMethod;
+    if ((getRechargeCurrencyInBatchesMethod = glory_apiGrpc.getRechargeCurrencyInBatchesMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getRechargeCurrencyInBatchesMethod = glory_apiGrpc.getRechargeCurrencyInBatchesMethod) == null) {
+          glory_apiGrpc.getRechargeCurrencyInBatchesMethod = getRechargeCurrencyInBatchesMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyInBatchesRequest, com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyInBatchesResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RechargeCurrencyInBatches"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyInBatchesRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyInBatchesResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("RechargeCurrencyInBatches"))
+              .build();
+        }
+      }
+    }
+    return getRechargeCurrencyInBatchesMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.currency.DeleteVirtualCurrencyRequest,
       com.zhijiejiaoyu.glory_api.currency.DeleteVirtualCurrencyResponse> getDeleteVCurrencyMethod;
 
@@ -6110,6 +6172,20 @@ public final class glory_apiGrpc {
 
     /**
      */
+    default void rechargeCurrency(com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRechargeCurrencyMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void rechargeCurrencyInBatches(com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyInBatchesRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyInBatchesResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRechargeCurrencyInBatchesMethod(), responseObserver);
+    }
+
+    /**
+     */
     default void deleteVCurrency(com.zhijiejiaoyu.glory_api.currency.DeleteVirtualCurrencyRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.currency.DeleteVirtualCurrencyResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteVCurrencyMethod(), responseObserver);
@@ -7523,6 +7599,22 @@ public final class glory_apiGrpc {
 
     /**
      */
+    public void rechargeCurrency(com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRechargeCurrencyMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void rechargeCurrencyInBatches(com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyInBatchesRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyInBatchesResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRechargeCurrencyInBatchesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
     public void deleteVCurrency(com.zhijiejiaoyu.glory_api.currency.DeleteVirtualCurrencyRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.currency.DeleteVirtualCurrencyResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -8878,6 +8970,20 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.currency.AddVirtualCurrencyResponse addVCurrency(com.zhijiejiaoyu.glory_api.currency.AddVirtualCurrencyRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getAddVCurrencyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyResponse rechargeCurrency(com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRechargeCurrencyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyInBatchesResponse rechargeCurrencyInBatches(com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyInBatchesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRechargeCurrencyInBatchesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -10284,6 +10390,22 @@ public final class glory_apiGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyResponse> rechargeCurrency(
+        com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRechargeCurrencyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyInBatchesResponse> rechargeCurrencyInBatches(
+        com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyInBatchesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRechargeCurrencyInBatchesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.currency.DeleteVirtualCurrencyResponse> deleteVCurrency(
         com.zhijiejiaoyu.glory_api.currency.DeleteVirtualCurrencyRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -10925,69 +11047,71 @@ public final class glory_apiGrpc {
   private static final int METHODID_QUERY_ORDER_BY_ID = 103;
   private static final int METHODID_QUERY_ORDER_BY_OUT_TRADE = 104;
   private static final int METHODID_ADD_VCURRENCY = 105;
-  private static final int METHODID_DELETE_VCURRENCY = 106;
-  private static final int METHODID_UPDATE_VCURRENCY = 107;
-  private static final int METHODID_GET_VCURRENCY = 108;
-  private static final int METHODID_LIST_VCURRENCY = 109;
-  private static final int METHODID_ADD_ACCOUNT_OPERATION = 110;
-  private static final int METHODID_GET_ACCOUNT_OPERATION = 111;
-  private static final int METHODID_LIST_ACCOUNT_OPERATION = 112;
-  private static final int METHODID_CREATE_ROOM = 113;
-  private static final int METHODID_GET_ROOM = 114;
-  private static final int METHODID_UPDATE_ROOM = 115;
-  private static final int METHODID_LIST_ROOM = 116;
-  private static final int METHODID_DELETE_ROOM = 117;
-  private static final int METHODID_LIST_FINISHED_ROOM = 118;
-  private static final int METHODID_RECORD = 119;
-  private static final int METHODID_CREATE_LIVE_USER_TOKEN = 120;
-  private static final int METHODID_USER_ENTER_ROOM = 121;
-  private static final int METHODID_USER_EXIT_ROOM = 122;
-  private static final int METHODID_LIST_ACTIVE_ROOM_USER = 123;
-  private static final int METHODID_CREATE_LIVE_PLAN = 124;
-  private static final int METHODID_GET_LIVE_PLAN = 125;
-  private static final int METHODID_UPDATE_LIVE_PLAN = 126;
-  private static final int METHODID_LIST_LIVE_PLAN = 127;
-  private static final int METHODID_DELETE_LIVE_PLAN = 128;
-  private static final int METHODID_CREATE_LIVE_PLAN_PRODUCT = 129;
-  private static final int METHODID_UPDATE_LIVE_PLAN_PRODUCT = 130;
-  private static final int METHODID_LIST_LIVE_PLAN_PRODUCT = 131;
-  private static final int METHODID_DELETE_LIVE_PLAN_PRODUCT = 132;
-  private static final int METHODID_LOAD_LIVE_PLAN_PRODUCT = 133;
-  private static final int METHODID_UPDATE_LIVE_PRODUCT_STATUS = 134;
-  private static final int METHODID_LIST_LIVE_PRODUCT_STATUS = 135;
-  private static final int METHODID_DELETE_LIVE_PRODUCT_STATUS = 136;
-  private static final int METHODID_CREATE_LIVE_PRODUCT_STATUS = 137;
-  private static final int METHODID_GET_LIVING_PRODUCT_STATUS = 138;
-  private static final int METHODID_UPDATE_LIVE_PRODUCT_INTRODUCT_STATUS = 139;
-  private static final int METHODID_CREATE_LIVE_TEXT = 140;
-  private static final int METHODID_UPDATE_LIVE_TEXT = 141;
-  private static final int METHODID_LIST_LIVE_TEXT = 142;
-  private static final int METHODID_GET_LIVE_TEXT = 143;
-  private static final int METHODID_DELETE_LIVE_TEXTS = 144;
-  private static final int METHODID_GET_LIVE_CHART_DATA = 145;
-  private static final int METHODID_GET_EVALUATE_SELECTOR = 146;
-  private static final int METHODID_LIST_PERSONAL_EVALUATE = 147;
-  private static final int METHODID_GET_EVALUATE_DETAIL = 148;
-  private static final int METHODID_SUBMIT_EVALUATE = 149;
-  private static final int METHODID_LIST_UNEVALUATED_ROOM = 150;
-  private static final int METHODID_LIST_STUDENT_EVALUATIONS = 151;
-  private static final int METHODID_IGNORE_EVALUATION = 152;
-  private static final int METHODID_GET_RANK = 153;
-  private static final int METHODID_CREATE_TENANT = 154;
-  private static final int METHODID_GET_TENANT = 155;
-  private static final int METHODID_UPDATE_TENANT = 156;
-  private static final int METHODID_DELETE_TENANT = 157;
-  private static final int METHODID_LIST_TENANT = 158;
-  private static final int METHODID_CREATE_MAJOR = 159;
-  private static final int METHODID_GET_MAJOR = 160;
-  private static final int METHODID_UPDATE_MAJOR = 161;
-  private static final int METHODID_DELETE_MAJOR = 162;
-  private static final int METHODID_LIST_MAJOR = 163;
-  private static final int METHODID_CREATE_CLASS = 164;
-  private static final int METHODID_GET_CLASS = 165;
-  private static final int METHODID_UPDATE_CLASS = 166;
-  private static final int METHODID_DELETE_CLASS = 167;
-  private static final int METHODID_LIST_CLASS = 168;
+  private static final int METHODID_RECHARGE_CURRENCY = 106;
+  private static final int METHODID_RECHARGE_CURRENCY_IN_BATCHES = 107;
+  private static final int METHODID_DELETE_VCURRENCY = 108;
+  private static final int METHODID_UPDATE_VCURRENCY = 109;
+  private static final int METHODID_GET_VCURRENCY = 110;
+  private static final int METHODID_LIST_VCURRENCY = 111;
+  private static final int METHODID_ADD_ACCOUNT_OPERATION = 112;
+  private static final int METHODID_GET_ACCOUNT_OPERATION = 113;
+  private static final int METHODID_LIST_ACCOUNT_OPERATION = 114;
+  private static final int METHODID_CREATE_ROOM = 115;
+  private static final int METHODID_GET_ROOM = 116;
+  private static final int METHODID_UPDATE_ROOM = 117;
+  private static final int METHODID_LIST_ROOM = 118;
+  private static final int METHODID_DELETE_ROOM = 119;
+  private static final int METHODID_LIST_FINISHED_ROOM = 120;
+  private static final int METHODID_RECORD = 121;
+  private static final int METHODID_CREATE_LIVE_USER_TOKEN = 122;
+  private static final int METHODID_USER_ENTER_ROOM = 123;
+  private static final int METHODID_USER_EXIT_ROOM = 124;
+  private static final int METHODID_LIST_ACTIVE_ROOM_USER = 125;
+  private static final int METHODID_CREATE_LIVE_PLAN = 126;
+  private static final int METHODID_GET_LIVE_PLAN = 127;
+  private static final int METHODID_UPDATE_LIVE_PLAN = 128;
+  private static final int METHODID_LIST_LIVE_PLAN = 129;
+  private static final int METHODID_DELETE_LIVE_PLAN = 130;
+  private static final int METHODID_CREATE_LIVE_PLAN_PRODUCT = 131;
+  private static final int METHODID_UPDATE_LIVE_PLAN_PRODUCT = 132;
+  private static final int METHODID_LIST_LIVE_PLAN_PRODUCT = 133;
+  private static final int METHODID_DELETE_LIVE_PLAN_PRODUCT = 134;
+  private static final int METHODID_LOAD_LIVE_PLAN_PRODUCT = 135;
+  private static final int METHODID_UPDATE_LIVE_PRODUCT_STATUS = 136;
+  private static final int METHODID_LIST_LIVE_PRODUCT_STATUS = 137;
+  private static final int METHODID_DELETE_LIVE_PRODUCT_STATUS = 138;
+  private static final int METHODID_CREATE_LIVE_PRODUCT_STATUS = 139;
+  private static final int METHODID_GET_LIVING_PRODUCT_STATUS = 140;
+  private static final int METHODID_UPDATE_LIVE_PRODUCT_INTRODUCT_STATUS = 141;
+  private static final int METHODID_CREATE_LIVE_TEXT = 142;
+  private static final int METHODID_UPDATE_LIVE_TEXT = 143;
+  private static final int METHODID_LIST_LIVE_TEXT = 144;
+  private static final int METHODID_GET_LIVE_TEXT = 145;
+  private static final int METHODID_DELETE_LIVE_TEXTS = 146;
+  private static final int METHODID_GET_LIVE_CHART_DATA = 147;
+  private static final int METHODID_GET_EVALUATE_SELECTOR = 148;
+  private static final int METHODID_LIST_PERSONAL_EVALUATE = 149;
+  private static final int METHODID_GET_EVALUATE_DETAIL = 150;
+  private static final int METHODID_SUBMIT_EVALUATE = 151;
+  private static final int METHODID_LIST_UNEVALUATED_ROOM = 152;
+  private static final int METHODID_LIST_STUDENT_EVALUATIONS = 153;
+  private static final int METHODID_IGNORE_EVALUATION = 154;
+  private static final int METHODID_GET_RANK = 155;
+  private static final int METHODID_CREATE_TENANT = 156;
+  private static final int METHODID_GET_TENANT = 157;
+  private static final int METHODID_UPDATE_TENANT = 158;
+  private static final int METHODID_DELETE_TENANT = 159;
+  private static final int METHODID_LIST_TENANT = 160;
+  private static final int METHODID_CREATE_MAJOR = 161;
+  private static final int METHODID_GET_MAJOR = 162;
+  private static final int METHODID_UPDATE_MAJOR = 163;
+  private static final int METHODID_DELETE_MAJOR = 164;
+  private static final int METHODID_LIST_MAJOR = 165;
+  private static final int METHODID_CREATE_CLASS = 166;
+  private static final int METHODID_GET_CLASS = 167;
+  private static final int METHODID_UPDATE_CLASS = 168;
+  private static final int METHODID_DELETE_CLASS = 169;
+  private static final int METHODID_LIST_CLASS = 170;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -11429,6 +11553,14 @@ public final class glory_apiGrpc {
         case METHODID_ADD_VCURRENCY:
           serviceImpl.addVCurrency((com.zhijiejiaoyu.glory_api.currency.AddVirtualCurrencyRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.currency.AddVirtualCurrencyResponse>) responseObserver);
+          break;
+        case METHODID_RECHARGE_CURRENCY:
+          serviceImpl.rechargeCurrency((com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyResponse>) responseObserver);
+          break;
+        case METHODID_RECHARGE_CURRENCY_IN_BATCHES:
+          serviceImpl.rechargeCurrencyInBatches((com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyInBatchesRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyInBatchesResponse>) responseObserver);
           break;
         case METHODID_DELETE_VCURRENCY:
           serviceImpl.deleteVCurrency((com.zhijiejiaoyu.glory_api.currency.DeleteVirtualCurrencyRequest) request,
@@ -12443,6 +12575,20 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.currency.AddVirtualCurrencyResponse>(
                 service, METHODID_ADD_VCURRENCY)))
         .addMethod(
+          getRechargeCurrencyMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest,
+              com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyResponse>(
+                service, METHODID_RECHARGE_CURRENCY)))
+        .addMethod(
+          getRechargeCurrencyInBatchesMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyInBatchesRequest,
+              com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyInBatchesResponse>(
+                service, METHODID_RECHARGE_CURRENCY_IN_BATCHES)))
+        .addMethod(
           getDeleteVCurrencyMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -13037,6 +13183,8 @@ public final class glory_apiGrpc {
               .addMethod(getQueryOrderByIdMethod())
               .addMethod(getQueryOrderByOutTradeMethod())
               .addMethod(getAddVCurrencyMethod())
+              .addMethod(getRechargeCurrencyMethod())
+              .addMethod(getRechargeCurrencyInBatchesMethod())
               .addMethod(getDeleteVCurrencyMethod())
               .addMethod(getUpdateVCurrencyMethod())
               .addMethod(getGetVCurrencyMethod())
