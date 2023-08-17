@@ -220,11 +220,70 @@ export interface ProductRank {
   mine?: ProductRankMine;
 }
 
+export interface LiveLikeRankDetail {
+  user_name?: string;
+  major?: string;
+  class?: string;
+  like_amount?: string;
+}
+
+export interface LiveLikeRankMine {
+  user_name?: string;
+  major?: string;
+  class?: string;
+  like_amount?: string;
+  rank?: string;
+}
+
+export interface LiveLikeRank {
+  rank_list?: Array<LiveLikeRankDetail>;
+  mine?: LiveLikeRankMine;
+}
+
+export interface LiveOrderRankDetail {
+  user_name?: string;
+  major?: string;
+  class?: string;
+  order_amount?: string;
+}
+
+export interface LiveOrderRankMine {
+  user_name?: string;
+  major?: string;
+  class?: string;
+  order_amount?: string;
+  rank?: string;
+}
+
+export interface LiveOrderRank {
+  rank_list?: Array<LiveOrderRankDetail>;
+  mine?: LiveOrderRankMine;
+}
+
+export interface LiveEvaluationRankDetail {
+  user_name?: string;
+  major?: string;
+  class?: string;
+  score?: number;
+}
+
+export interface LiveEvaluationRankMine {
+  user_name?: string;
+  major?: string;
+  class?: string;
+  score?: number;
+  rank?: string;
+}
+
+export interface LiveEvaluationRank {
+  rank_list?: Array<LiveEvaluationRankDetail>;
+  mine?: LiveEvaluationRankMine;
+}
+
 export interface GetRankRequest {
   base_request?: base.BaseRequest;
   category?: string;
   type?: string;
-  shop_id?: string;
   start?: string;
   end?: string;
 }
@@ -234,4 +293,7 @@ export interface GetRankResponse {
   live?: LiveRank;
   shop?: ShopRank;
   product?: ProductRank;
+  live_like?: LiveLikeRank;
+  live_order?: LiveOrderRank;
+  live_evaluation?: LiveEvaluationRank;
 }

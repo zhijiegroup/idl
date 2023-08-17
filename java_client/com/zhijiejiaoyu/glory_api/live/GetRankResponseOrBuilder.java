@@ -66,4 +66,49 @@ public interface GetRankResponseOrBuilder extends
    * <code>.glory_api.ProductRank product = 4;</code>
    */
   com.zhijiejiaoyu.glory_api.live.ProductRankOrBuilder getProductOrBuilder();
+
+  /**
+   * <code>.glory_api.LiveLikeRank live_like = 5;</code>
+   * @return Whether the liveLike field is set.
+   */
+  boolean hasLiveLike();
+  /**
+   * <code>.glory_api.LiveLikeRank live_like = 5;</code>
+   * @return The liveLike.
+   */
+  com.zhijiejiaoyu.glory_api.live.LiveLikeRank getLiveLike();
+  /**
+   * <code>.glory_api.LiveLikeRank live_like = 5;</code>
+   */
+  com.zhijiejiaoyu.glory_api.live.LiveLikeRankOrBuilder getLiveLikeOrBuilder();
+
+  /**
+   * <code>.glory_api.LiveOrderRank live_order = 6;</code>
+   * @return Whether the liveOrder field is set.
+   */
+  boolean hasLiveOrder();
+  /**
+   * <code>.glory_api.LiveOrderRank live_order = 6;</code>
+   * @return The liveOrder.
+   */
+  com.zhijiejiaoyu.glory_api.live.LiveOrderRank getLiveOrder();
+  /**
+   * <code>.glory_api.LiveOrderRank live_order = 6;</code>
+   */
+  com.zhijiejiaoyu.glory_api.live.LiveOrderRankOrBuilder getLiveOrderOrBuilder();
+
+  /**
+   * <code>.glory_api.LiveEvaluationRank live_evaluation = 7;</code>
+   * @return Whether the liveEvaluation field is set.
+   */
+  boolean hasLiveEvaluation();
+  /**
+   * <code>.glory_api.LiveEvaluationRank live_evaluation = 7;</code>
+   * @return The liveEvaluation.
+   */
+  com.zhijiejiaoyu.glory_api.live.LiveEvaluationRank getLiveEvaluation();
+  /**
+   * <code>.glory_api.LiveEvaluationRank live_evaluation = 7;</code>
+   */
+  com.zhijiejiaoyu.glory_api.live.LiveEvaluationRankOrBuilder getLiveEvaluationOrBuilder();
 }

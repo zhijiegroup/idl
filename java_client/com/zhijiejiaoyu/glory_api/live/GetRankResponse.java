@@ -100,6 +100,45 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 42: {
+            com.zhijiejiaoyu.glory_api.live.LiveLikeRank.Builder subBuilder = null;
+            if (liveLike_ != null) {
+              subBuilder = liveLike_.toBuilder();
+            }
+            liveLike = input.readMessage(com.zhijiejiaoyu.glory_api.live.LiveLikeRank.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(liveLike);
+              liveLike = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 50: {
+            com.zhijiejiaoyu.glory_api.live.LiveOrderRank.Builder subBuilder = null;
+            if (liveOrder_ != null) {
+              subBuilder = liveOrder_.toBuilder();
+            }
+            liveOrder = input.readMessage(com.zhijiejiaoyu.glory_api.live.LiveOrderRank.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(liveOrder);
+              liveOrder = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 58: {
+            com.zhijiejiaoyu.glory_api.live.LiveEvaluationRank.Builder subBuilder = null;
+            if (liveEvaluation_ != null) {
+              subBuilder = liveEvaluation_.toBuilder();
+            }
+            liveEvaluation = input.readMessage(com.zhijiejiaoyu.glory_api.live.LiveEvaluationRank.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(liveEvaluation);
+              liveEvaluation = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -236,6 +275,84 @@ private static final long serialVersionUID = 0L;
     return getProduct();
   }
 
+  public static final int LIVE_LIKE_FIELD_NUMBER = 5;
+  private com.zhijiejiaoyu.glory_api.live.LiveLikeRank liveLike;
+  /**
+   * <code>.glory_api.LiveLikeRank live_like = 5;</code>
+   * @return Whether the liveLike field is set.
+   */
+  @java.lang.Override
+  public boolean hasLiveLike() {
+    return liveLike_ != null;
+  }
+  /**
+   * <code>.glory_api.LiveLikeRank live_like = 5;</code>
+   * @return The liveLike.
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.live.LiveLikeRank getLiveLike() {
+    return liveLike == null ? com.zhijiejiaoyu.glory_api.live.LiveLikeRank.getDefaultInstance() : liveLike;
+  }
+  /**
+   * <code>.glory_api.LiveLikeRank live_like = 5;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.live.LiveLikeRankOrBuilder getLiveLikeOrBuilder() {
+    return getLiveLike();
+  }
+
+  public static final int LIVE_ORDER_FIELD_NUMBER = 6;
+  private com.zhijiejiaoyu.glory_api.live.LiveOrderRank liveOrder;
+  /**
+   * <code>.glory_api.LiveOrderRank live_order = 6;</code>
+   * @return Whether the liveOrder field is set.
+   */
+  @java.lang.Override
+  public boolean hasLiveOrder() {
+    return liveOrder_ != null;
+  }
+  /**
+   * <code>.glory_api.LiveOrderRank live_order = 6;</code>
+   * @return The liveOrder.
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.live.LiveOrderRank getLiveOrder() {
+    return liveOrder == null ? com.zhijiejiaoyu.glory_api.live.LiveOrderRank.getDefaultInstance() : liveOrder;
+  }
+  /**
+   * <code>.glory_api.LiveOrderRank live_order = 6;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.live.LiveOrderRankOrBuilder getLiveOrderOrBuilder() {
+    return getLiveOrder();
+  }
+
+  public static final int LIVE_EVALUATION_FIELD_NUMBER = 7;
+  private com.zhijiejiaoyu.glory_api.live.LiveEvaluationRank liveEvaluation;
+  /**
+   * <code>.glory_api.LiveEvaluationRank live_evaluation = 7;</code>
+   * @return Whether the liveEvaluation field is set.
+   */
+  @java.lang.Override
+  public boolean hasLiveEvaluation() {
+    return liveEvaluation_ != null;
+  }
+  /**
+   * <code>.glory_api.LiveEvaluationRank live_evaluation = 7;</code>
+   * @return The liveEvaluation.
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.live.LiveEvaluationRank getLiveEvaluation() {
+    return liveEvaluation == null ? com.zhijiejiaoyu.glory_api.live.LiveEvaluationRank.getDefaultInstance() : liveEvaluation;
+  }
+  /**
+   * <code>.glory_api.LiveEvaluationRank live_evaluation = 7;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.live.LiveEvaluationRankOrBuilder getLiveEvaluationOrBuilder() {
+    return getLiveEvaluation();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -262,6 +379,15 @@ private static final long serialVersionUID = 0L;
     if (product_ != null) {
       output.writeMessage(4, getProduct());
     }
+    if (liveLike_ != null) {
+      output.writeMessage(5, getLiveLike());
+    }
+    if (liveOrder_ != null) {
+      output.writeMessage(6, getLiveOrder());
+    }
+    if (liveEvaluation_ != null) {
+      output.writeMessage(7, getLiveEvaluation());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -286,6 +412,18 @@ private static final long serialVersionUID = 0L;
     if (product_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getProduct());
+    }
+    if (liveLike_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, getLiveLike());
+    }
+    if (liveOrder_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, getLiveOrder());
+    }
+    if (liveEvaluation_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, getLiveEvaluation());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -322,6 +460,21 @@ private static final long serialVersionUID = 0L;
       if (!getProduct()
           .equals(other.getProduct())) return false;
     }
+    if (hasLiveLike() != other.hasLiveLike()) return false;
+    if (hasLiveLike()) {
+      if (!getLiveLike()
+          .equals(other.getLiveLike())) return false;
+    }
+    if (hasLiveOrder() != other.hasLiveOrder()) return false;
+    if (hasLiveOrder()) {
+      if (!getLiveOrder()
+          .equals(other.getLiveOrder())) return false;
+    }
+    if (hasLiveEvaluation() != other.hasLiveEvaluation()) return false;
+    if (hasLiveEvaluation()) {
+      if (!getLiveEvaluation()
+          .equals(other.getLiveEvaluation())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -348,6 +501,18 @@ private static final long serialVersionUID = 0L;
     if (hasProduct()) {
       hash = (37 * hash) + PRODUCT_FIELD_NUMBER;
       hash = (53 * hash) + getProduct().hashCode();
+    }
+    if (hasLiveLike()) {
+      hash = (37 * hash) + LIVE_LIKE_FIELD_NUMBER;
+      hash = (53 * hash) + getLiveLike().hashCode();
+    }
+    if (hasLiveOrder()) {
+      hash = (37 * hash) + LIVE_ORDER_FIELD_NUMBER;
+      hash = (53 * hash) + getLiveOrder().hashCode();
+    }
+    if (hasLiveEvaluation()) {
+      hash = (37 * hash) + LIVE_EVALUATION_FIELD_NUMBER;
+      hash = (53 * hash) + getLiveEvaluation().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -506,6 +671,24 @@ private static final long serialVersionUID = 0L;
         product = null;
         productBuilder = null;
       }
+      if (liveLikeBuilder == null) {
+        liveLike = null;
+      } else {
+        liveLike = null;
+        liveLikeBuilder = null;
+      }
+      if (liveOrderBuilder == null) {
+        liveOrder = null;
+      } else {
+        liveOrder = null;
+        liveOrderBuilder = null;
+      }
+      if (liveEvaluationBuilder == null) {
+        liveEvaluation = null;
+      } else {
+        liveEvaluation = null;
+        liveEvaluationBuilder = null;
+      }
       return this;
     }
 
@@ -551,6 +734,21 @@ private static final long serialVersionUID = 0L;
         result.product = product;
       } else {
         result.product = productBuilder_.build();
+      }
+      if (liveLikeBuilder == null) {
+        result.liveLike = liveLike;
+      } else {
+        result.liveLike = liveLikeBuilder_.build();
+      }
+      if (liveOrderBuilder == null) {
+        result.liveOrder = liveOrder;
+      } else {
+        result.liveOrder = liveOrderBuilder_.build();
+      }
+      if (liveEvaluationBuilder == null) {
+        result.liveEvaluation = liveEvaluation;
+      } else {
+        result.liveEvaluation = liveEvaluationBuilder_.build();
       }
       onBuilt();
       return result;
@@ -611,6 +809,15 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasProduct()) {
         mergeProduct(other.getProduct());
+      }
+      if (other.hasLiveLike()) {
+        mergeLiveLike(other.getLiveLike());
+      }
+      if (other.hasLiveOrder()) {
+        mergeLiveOrder(other.getLiveOrder());
+      }
+      if (other.hasLiveEvaluation()) {
+        mergeLiveEvaluation(other.getLiveEvaluation());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1115,6 +1322,363 @@ private static final long serialVersionUID = 0L;
         product = null;
       }
       return productBuilder;
+    }
+
+    private com.zhijiejiaoyu.glory_api.live.LiveLikeRank liveLike;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.live.LiveLikeRank, com.zhijiejiaoyu.glory_api.live.LiveLikeRank.Builder, com.zhijiejiaoyu.glory_api.live.LiveLikeRankOrBuilder> liveLikeBuilder;
+    /**
+     * <code>.glory_api.LiveLikeRank live_like = 5;</code>
+     * @return Whether the liveLike field is set.
+     */
+    public boolean hasLiveLike() {
+      return liveLikeBuilder_ != null || liveLike_ != null;
+    }
+    /**
+     * <code>.glory_api.LiveLikeRank live_like = 5;</code>
+     * @return The liveLike.
+     */
+    public com.zhijiejiaoyu.glory_api.live.LiveLikeRank getLiveLike() {
+      if (liveLikeBuilder == null) {
+        return liveLike == null ? com.zhijiejiaoyu.glory_api.live.LiveLikeRank.getDefaultInstance() : liveLike;
+      } else {
+        return liveLikeBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.glory_api.LiveLikeRank live_like = 5;</code>
+     */
+    public Builder setLiveLike(com.zhijiejiaoyu.glory_api.live.LiveLikeRank value) {
+      if (liveLikeBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        liveLike = value;
+        onChanged();
+      } else {
+        liveLikeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.LiveLikeRank live_like = 5;</code>
+     */
+    public Builder setLiveLike(
+        com.zhijiejiaoyu.glory_api.live.LiveLikeRank.Builder builderForValue) {
+      if (liveLikeBuilder == null) {
+        liveLike = builderForValue.build();
+        onChanged();
+      } else {
+        liveLikeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.LiveLikeRank live_like = 5;</code>
+     */
+    public Builder mergeLiveLike(com.zhijiejiaoyu.glory_api.live.LiveLikeRank value) {
+      if (liveLikeBuilder == null) {
+        if (liveLike_ != null) {
+          liveLike =
+            com.zhijiejiaoyu.glory_api.live.LiveLikeRank.newBuilder(liveLike).mergeFrom(value).buildPartial();
+        } else {
+          liveLike = value;
+        }
+        onChanged();
+      } else {
+        liveLikeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.LiveLikeRank live_like = 5;</code>
+     */
+    public Builder clearLiveLike() {
+      if (liveLikeBuilder == null) {
+        liveLike = null;
+        onChanged();
+      } else {
+        liveLike = null;
+        liveLikeBuilder = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.LiveLikeRank live_like = 5;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.live.LiveLikeRank.Builder getLiveLikeBuilder() {
+      
+      onChanged();
+      return getLiveLikeFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.glory_api.LiveLikeRank live_like = 5;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.live.LiveLikeRankOrBuilder getLiveLikeOrBuilder() {
+      if (liveLikeBuilder_ != null) {
+        return liveLikeBuilder_.getMessageOrBuilder();
+      } else {
+        return liveLike == null ?
+            com.zhijiejiaoyu.glory_api.live.LiveLikeRank.getDefaultInstance() : liveLike;
+      }
+    }
+    /**
+     * <code>.glory_api.LiveLikeRank live_like = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.live.LiveLikeRank, com.zhijiejiaoyu.glory_api.live.LiveLikeRank.Builder, com.zhijiejiaoyu.glory_api.live.LiveLikeRankOrBuilder> 
+        getLiveLikeFieldBuilder() {
+      if (liveLikeBuilder == null) {
+        liveLikeBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.live.LiveLikeRank, com.zhijiejiaoyu.glory_api.live.LiveLikeRank.Builder, com.zhijiejiaoyu.glory_api.live.LiveLikeRankOrBuilder>(
+                getLiveLike(),
+                getParentForChildren(),
+                isClean());
+        liveLike = null;
+      }
+      return liveLikeBuilder;
+    }
+
+    private com.zhijiejiaoyu.glory_api.live.LiveOrderRank liveOrder;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.live.LiveOrderRank, com.zhijiejiaoyu.glory_api.live.LiveOrderRank.Builder, com.zhijiejiaoyu.glory_api.live.LiveOrderRankOrBuilder> liveOrderBuilder;
+    /**
+     * <code>.glory_api.LiveOrderRank live_order = 6;</code>
+     * @return Whether the liveOrder field is set.
+     */
+    public boolean hasLiveOrder() {
+      return liveOrderBuilder_ != null || liveOrder_ != null;
+    }
+    /**
+     * <code>.glory_api.LiveOrderRank live_order = 6;</code>
+     * @return The liveOrder.
+     */
+    public com.zhijiejiaoyu.glory_api.live.LiveOrderRank getLiveOrder() {
+      if (liveOrderBuilder == null) {
+        return liveOrder == null ? com.zhijiejiaoyu.glory_api.live.LiveOrderRank.getDefaultInstance() : liveOrder;
+      } else {
+        return liveOrderBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.glory_api.LiveOrderRank live_order = 6;</code>
+     */
+    public Builder setLiveOrder(com.zhijiejiaoyu.glory_api.live.LiveOrderRank value) {
+      if (liveOrderBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        liveOrder = value;
+        onChanged();
+      } else {
+        liveOrderBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.LiveOrderRank live_order = 6;</code>
+     */
+    public Builder setLiveOrder(
+        com.zhijiejiaoyu.glory_api.live.LiveOrderRank.Builder builderForValue) {
+      if (liveOrderBuilder == null) {
+        liveOrder = builderForValue.build();
+        onChanged();
+      } else {
+        liveOrderBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.LiveOrderRank live_order = 6;</code>
+     */
+    public Builder mergeLiveOrder(com.zhijiejiaoyu.glory_api.live.LiveOrderRank value) {
+      if (liveOrderBuilder == null) {
+        if (liveOrder_ != null) {
+          liveOrder =
+            com.zhijiejiaoyu.glory_api.live.LiveOrderRank.newBuilder(liveOrder).mergeFrom(value).buildPartial();
+        } else {
+          liveOrder = value;
+        }
+        onChanged();
+      } else {
+        liveOrderBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.LiveOrderRank live_order = 6;</code>
+     */
+    public Builder clearLiveOrder() {
+      if (liveOrderBuilder == null) {
+        liveOrder = null;
+        onChanged();
+      } else {
+        liveOrder = null;
+        liveOrderBuilder = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.LiveOrderRank live_order = 6;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.live.LiveOrderRank.Builder getLiveOrderBuilder() {
+      
+      onChanged();
+      return getLiveOrderFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.glory_api.LiveOrderRank live_order = 6;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.live.LiveOrderRankOrBuilder getLiveOrderOrBuilder() {
+      if (liveOrderBuilder_ != null) {
+        return liveOrderBuilder_.getMessageOrBuilder();
+      } else {
+        return liveOrder == null ?
+            com.zhijiejiaoyu.glory_api.live.LiveOrderRank.getDefaultInstance() : liveOrder;
+      }
+    }
+    /**
+     * <code>.glory_api.LiveOrderRank live_order = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.live.LiveOrderRank, com.zhijiejiaoyu.glory_api.live.LiveOrderRank.Builder, com.zhijiejiaoyu.glory_api.live.LiveOrderRankOrBuilder> 
+        getLiveOrderFieldBuilder() {
+      if (liveOrderBuilder == null) {
+        liveOrderBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.live.LiveOrderRank, com.zhijiejiaoyu.glory_api.live.LiveOrderRank.Builder, com.zhijiejiaoyu.glory_api.live.LiveOrderRankOrBuilder>(
+                getLiveOrder(),
+                getParentForChildren(),
+                isClean());
+        liveOrder = null;
+      }
+      return liveOrderBuilder;
+    }
+
+    private com.zhijiejiaoyu.glory_api.live.LiveEvaluationRank liveEvaluation;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.live.LiveEvaluationRank, com.zhijiejiaoyu.glory_api.live.LiveEvaluationRank.Builder, com.zhijiejiaoyu.glory_api.live.LiveEvaluationRankOrBuilder> liveEvaluationBuilder;
+    /**
+     * <code>.glory_api.LiveEvaluationRank live_evaluation = 7;</code>
+     * @return Whether the liveEvaluation field is set.
+     */
+    public boolean hasLiveEvaluation() {
+      return liveEvaluationBuilder_ != null || liveEvaluation_ != null;
+    }
+    /**
+     * <code>.glory_api.LiveEvaluationRank live_evaluation = 7;</code>
+     * @return The liveEvaluation.
+     */
+    public com.zhijiejiaoyu.glory_api.live.LiveEvaluationRank getLiveEvaluation() {
+      if (liveEvaluationBuilder == null) {
+        return liveEvaluation == null ? com.zhijiejiaoyu.glory_api.live.LiveEvaluationRank.getDefaultInstance() : liveEvaluation;
+      } else {
+        return liveEvaluationBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.glory_api.LiveEvaluationRank live_evaluation = 7;</code>
+     */
+    public Builder setLiveEvaluation(com.zhijiejiaoyu.glory_api.live.LiveEvaluationRank value) {
+      if (liveEvaluationBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        liveEvaluation = value;
+        onChanged();
+      } else {
+        liveEvaluationBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.LiveEvaluationRank live_evaluation = 7;</code>
+     */
+    public Builder setLiveEvaluation(
+        com.zhijiejiaoyu.glory_api.live.LiveEvaluationRank.Builder builderForValue) {
+      if (liveEvaluationBuilder == null) {
+        liveEvaluation = builderForValue.build();
+        onChanged();
+      } else {
+        liveEvaluationBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.LiveEvaluationRank live_evaluation = 7;</code>
+     */
+    public Builder mergeLiveEvaluation(com.zhijiejiaoyu.glory_api.live.LiveEvaluationRank value) {
+      if (liveEvaluationBuilder == null) {
+        if (liveEvaluation_ != null) {
+          liveEvaluation =
+            com.zhijiejiaoyu.glory_api.live.LiveEvaluationRank.newBuilder(liveEvaluation).mergeFrom(value).buildPartial();
+        } else {
+          liveEvaluation = value;
+        }
+        onChanged();
+      } else {
+        liveEvaluationBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.LiveEvaluationRank live_evaluation = 7;</code>
+     */
+    public Builder clearLiveEvaluation() {
+      if (liveEvaluationBuilder == null) {
+        liveEvaluation = null;
+        onChanged();
+      } else {
+        liveEvaluation = null;
+        liveEvaluationBuilder = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.LiveEvaluationRank live_evaluation = 7;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.live.LiveEvaluationRank.Builder getLiveEvaluationBuilder() {
+      
+      onChanged();
+      return getLiveEvaluationFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.glory_api.LiveEvaluationRank live_evaluation = 7;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.live.LiveEvaluationRankOrBuilder getLiveEvaluationOrBuilder() {
+      if (liveEvaluationBuilder_ != null) {
+        return liveEvaluationBuilder_.getMessageOrBuilder();
+      } else {
+        return liveEvaluation == null ?
+            com.zhijiejiaoyu.glory_api.live.LiveEvaluationRank.getDefaultInstance() : liveEvaluation;
+      }
+    }
+    /**
+     * <code>.glory_api.LiveEvaluationRank live_evaluation = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.live.LiveEvaluationRank, com.zhijiejiaoyu.glory_api.live.LiveEvaluationRank.Builder, com.zhijiejiaoyu.glory_api.live.LiveEvaluationRankOrBuilder> 
+        getLiveEvaluationFieldBuilder() {
+      if (liveEvaluationBuilder == null) {
+        liveEvaluationBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.live.LiveEvaluationRank, com.zhijiejiaoyu.glory_api.live.LiveEvaluationRank.Builder, com.zhijiejiaoyu.glory_api.live.LiveEvaluationRankOrBuilder>(
+                getLiveEvaluation(),
+                getParentForChildren(),
+                isClean());
+        liveEvaluation = null;
+      }
+      return liveEvaluationBuilder;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

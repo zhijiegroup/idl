@@ -77,15 +77,10 @@ private static final long serialVersionUID = 0L;
           }
           case 32: {
 
-            shopId = input.readInt64();
-            break;
-          }
-          case 40: {
-
             start = input.readInt64();
             break;
           }
-          case 48: {
+          case 40: {
 
             end = input.readInt64();
             break;
@@ -224,21 +219,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int SHOP_ID_FIELD_NUMBER = 4;
-  private long shopId;
-  /**
-   * <code>int64 shop_id = 4;</code>
-   * @return The shopId.
-   */
-  @java.lang.Override
-  public long getShopId() {
-    return shopId;
-  }
-
-  public static final int START_FIELD_NUMBER = 5;
+  public static final int START_FIELD_NUMBER = 4;
   private long start;
   /**
-   * <code>int64 start = 5;</code>
+   * <code>int64 start = 4;</code>
    * @return The start.
    */
   @java.lang.Override
@@ -246,10 +230,10 @@ private static final long serialVersionUID = 0L;
     return start;
   }
 
-  public static final int END_FIELD_NUMBER = 6;
+  public static final int END_FIELD_NUMBER = 5;
   private long end;
   /**
-   * <code>int64 end = 6;</code>
+   * <code>int64 end = 5;</code>
    * @return The end.
    */
   @java.lang.Override
@@ -280,14 +264,11 @@ private static final long serialVersionUID = 0L;
     if (!getTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, type);
     }
-    if (shopId_ != 0L) {
-      output.writeInt64(4, shopId);
-    }
     if (start_ != 0L) {
-      output.writeInt64(5, start);
+      output.writeInt64(4, start);
     }
     if (end_ != 0L) {
-      output.writeInt64(6, end);
+      output.writeInt64(5, end);
     }
     unknownFields.writeTo(output);
   }
@@ -308,17 +289,13 @@ private static final long serialVersionUID = 0L;
     if (!getTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, type);
     }
-    if (shopId_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(4, shopId);
-    }
     if (start_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(5, start);
+        .computeInt64Size(4, start);
     }
     if (end_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(6, end);
+        .computeInt64Size(5, end);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -344,8 +321,6 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCategory())) return false;
     if (!getType()
         .equals(other.getType())) return false;
-    if (getShopId()
-        != other.getShopId()) return false;
     if (getStart()
         != other.getStart()) return false;
     if (getEnd()
@@ -369,9 +344,6 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getCategory().hashCode();
     hash = (37 * hash) + TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getType().hashCode();
-    hash = (37 * hash) + SHOP_ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getShopId());
     hash = (37 * hash) + START_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getStart());
@@ -521,8 +493,6 @@ private static final long serialVersionUID = 0L;
 
       type = "";
 
-      shopId = 0L;
-
       start = 0L;
 
       end = 0L;
@@ -560,7 +530,6 @@ private static final long serialVersionUID = 0L;
       }
       result.category = category;
       result.type = type;
-      result.shopId = shopId;
       result.start = start;
       result.end = end;
       onBuilt();
@@ -621,9 +590,6 @@ private static final long serialVersionUID = 0L;
       if (!other.getType().isEmpty()) {
         type = other.type;
         onChanged();
-      }
-      if (other.getShopId() != 0L) {
-        setShopId(other.getShopId());
       }
       if (other.getStart() != 0L) {
         setStart(other.getStart());
@@ -931,40 +897,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long shopId_ ;
-    /**
-     * <code>int64 shop_id = 4;</code>
-     * @return The shopId.
-     */
-    @java.lang.Override
-    public long getShopId() {
-      return shopId;
-    }
-    /**
-     * <code>int64 shop_id = 4;</code>
-     * @param value The shopId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setShopId(long value) {
-      
-      shopId = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int64 shop_id = 4;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearShopId() {
-      
-      shopId = 0L;
-      onChanged();
-      return this;
-    }
-
     private long start_ ;
     /**
-     * <code>int64 start = 5;</code>
+     * <code>int64 start = 4;</code>
      * @return The start.
      */
     @java.lang.Override
@@ -972,7 +907,7 @@ private static final long serialVersionUID = 0L;
       return start;
     }
     /**
-     * <code>int64 start = 5;</code>
+     * <code>int64 start = 4;</code>
      * @param value The start to set.
      * @return This builder for chaining.
      */
@@ -983,7 +918,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 start = 5;</code>
+     * <code>int64 start = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearStart() {
@@ -995,7 +930,7 @@ private static final long serialVersionUID = 0L;
 
     private long end_ ;
     /**
-     * <code>int64 end = 6;</code>
+     * <code>int64 end = 5;</code>
      * @return The end.
      */
     @java.lang.Override
@@ -1003,7 +938,7 @@ private static final long serialVersionUID = 0L;
       return end;
     }
     /**
-     * <code>int64 end = 6;</code>
+     * <code>int64 end = 5;</code>
      * @param value The end to set.
      * @return This builder for chaining.
      */
@@ -1014,7 +949,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 end = 6;</code>
+     * <code>int64 end = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearEnd() {

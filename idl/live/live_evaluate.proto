@@ -216,13 +216,73 @@ message ProductRank {
 }
 
 
+message LiveLikeRankDetail {
+    string user_name = 1;
+    string major = 2;
+    string class = 3;
+    int64 like_amount = 4;
+}
+
+message LiveLikeRankMine {
+    string user_name = 1;
+    string major = 2;
+    string class = 3;
+    int64 like_amount = 4;
+    int64 rank = 5;
+}
+
+message LiveLikeRank {
+    repeated LiveLikeRankDetail rank_list = 1;
+    LiveLikeRankMine mine = 100;
+}
+
+message LiveOrderRankDetail {
+    string user_name = 1;
+    string major = 2;
+    string class = 3;
+    int64 order_amount = 4;
+}
+
+message LiveOrderRankMine {
+    string user_name = 1;
+    string major = 2;
+    string class = 3;
+    int64 order_amount = 4;
+    int64 rank = 5;
+}
+
+message LiveOrderRank {
+    repeated LiveOrderRankDetail rank_list = 1;
+    LiveOrderRankMine mine = 100;
+}
+
+message LiveEvaluationRankDetail {
+    string user_name = 1;
+    string major = 2;
+    string class = 3;
+    double score = 4;
+}
+
+message LiveEvaluationRankMine {
+    string user_name = 1;
+    string major = 2;
+    string class = 3;
+    double score = 4;
+    int64 rank = 5;
+}
+
+message LiveEvaluationRank {
+    repeated LiveEvaluationRankDetail rank_list = 1;
+    LiveEvaluationRankMine mine = 100;
+}
+
+
 message GetRankRequest {
     base.BaseRequest base_request = 1;
     string category = 2;
     string type =3;
-    int64 shop_id =4;
-    int64 start = 5;
-    int64 end = 6;
+    int64 start = 4;
+    int64 end = 5;
 }
 
 message GetRankResponse {
@@ -230,4 +290,7 @@ message GetRankResponse {
     LiveRank live = 2;
     ShopRank shop = 3;
     ProductRank product = 4;
+    LiveLikeRank live_like = 5;
+    LiveOrderRank live_order = 6;
+    LiveEvaluationRank live_evaluation = 7;
 }
