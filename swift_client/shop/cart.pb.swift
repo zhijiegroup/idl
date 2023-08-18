@@ -296,21 +296,21 @@ struct GloryApi_UpdateCartRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
-  var cart: GloryApi_Cart {
-    get {return _cart ?? GloryApi_Cart()}
-    set {_cart = newValue}
+  var cartInfo: GloryApi_CartShow {
+    get {return _cartInfo ?? GloryApi_CartShow()}
+    set {_cartInfo = newValue}
   }
-  /// Returns true if `cart` has been explicitly set.
-  var hasCart: Bool {return self._cart != nil}
-  /// Clears the value of `cart`. Subsequent reads from it will return its default value.
-  mutating func clearCart() {self._cart = nil}
+  /// Returns true if `cartInfo` has been explicitly set.
+  var hasCartInfo: Bool {return self._cartInfo != nil}
+  /// Clears the value of `cartInfo`. Subsequent reads from it will return its default value.
+  mutating func clearCartInfo() {self._cartInfo = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
   fileprivate var _baseRequest: Base_BaseRequest? = nil
-  fileprivate var _cart: GloryApi_Cart? = nil
+  fileprivate var _cartInfo: GloryApi_CartShow? = nil
 }
 
 struct GloryApi_UpdateCartResponse {
@@ -327,13 +327,21 @@ struct GloryApi_UpdateCartResponse {
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
-  var cartID: Int64 = 0
+  var cartInfo: GloryApi_CartShow {
+    get {return _cartInfo ?? GloryApi_CartShow()}
+    set {_cartInfo = newValue}
+  }
+  /// Returns true if `cartInfo` has been explicitly set.
+  var hasCartInfo: Bool {return self._cartInfo != nil}
+  /// Clears the value of `cartInfo`. Subsequent reads from it will return its default value.
+  mutating func clearCartInfo() {self._cartInfo = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _cartInfo: GloryApi_CartShow? = nil
 }
 
 struct GloryApi_DeleteCartRequest {
@@ -929,7 +937,7 @@ extension GloryApi_UpdateCartRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
   static let protoMessageName: String = _protobuf_package + ".UpdateCartRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
-    2: .same(proto: "cart"),
+    2: .standard(proto: "cart_info"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -939,7 +947,7 @@ extension GloryApi_UpdateCartRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularMessageField(value: &self._cart) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._cartInfo) }()
       default: break
       }
     }
@@ -953,7 +961,7 @@ extension GloryApi_UpdateCartRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    try { if let v = self._cart {
+    try { if let v = self._cartInfo {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
     } }()
     try unknownFields.traverse(visitor: &visitor)
@@ -961,7 +969,7 @@ extension GloryApi_UpdateCartRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
 
   static func ==(lhs: GloryApi_UpdateCartRequest, rhs: GloryApi_UpdateCartRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
-    if lhs._cart != rhs._cart {return false}
+    if lhs._cartInfo != rhs._cartInfo {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -971,7 +979,7 @@ extension GloryApi_UpdateCartResponse: SwiftProtobuf.Message, SwiftProtobuf._Mes
   static let protoMessageName: String = _protobuf_package + ".UpdateCartResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
-    2: .standard(proto: "cart_id"),
+    2: .standard(proto: "cart_info"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -981,7 +989,7 @@ extension GloryApi_UpdateCartResponse: SwiftProtobuf.Message, SwiftProtobuf._Mes
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.cartID) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._cartInfo) }()
       default: break
       }
     }
@@ -995,15 +1003,15 @@ extension GloryApi_UpdateCartResponse: SwiftProtobuf.Message, SwiftProtobuf._Mes
     try { if let v = self._baseResp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    if self.cartID != 0 {
-      try visitor.visitSingularInt64Field(value: self.cartID, fieldNumber: 2)
-    }
+    try { if let v = self._cartInfo {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_UpdateCartResponse, rhs: GloryApi_UpdateCartResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
-    if lhs.cartID != rhs.cartID {return false}
+    if lhs._cartInfo != rhs._cartInfo {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
