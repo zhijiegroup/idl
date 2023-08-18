@@ -92,6 +92,7 @@ message ListVirtualCurrencyRequest {
 message ListVirtualCurrencyResponse {
   base.BaseResponse base_resp = 1;
   repeated VirtualCurrencyInfo virtual_currency_info = 2;
+  base.PaginationResponse pagination = 100;
 }
 
 
