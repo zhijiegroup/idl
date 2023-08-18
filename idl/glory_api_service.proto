@@ -35,6 +35,7 @@ import "currency/virtual_currency.proto";
 import "tenant/tenant.proto";
 import "tenant/college.proto";
 import "tenant/edu_office.proto";
+import "tenant/student.proto";
 
 service glory_api {
 
@@ -689,5 +690,12 @@ service glory_api {
   rpc ListClass(ListClassRequest) returns (ListClassResponse) {
     option (api.post) = '/api/tenant/list_class';
   }
-
+  
+  //student
+  rpc CreateStudents(CreateStudentsRequest) returns (CreateStudentsResponse) {
+    option (api.post) = '/api/student/create_students';
+  }
+  rpc DeleteStudents(DeleteStudentsRequest) returns (DeleteStudentsResponse) {
+    option (api.post) = '/api/student/delete_students';
+  }
 }
