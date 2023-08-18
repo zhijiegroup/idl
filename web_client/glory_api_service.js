@@ -927,9 +927,11 @@ export class glory_api {
   }
 
   ListVCurrency(request) {
-    const query = queryStringify(request);
-    const uri = `${this.uriPrefix}/api/currency/list${query}`;
-    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+    const uri = `${this.uriPrefix}/api/currency/list`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
   }
 
   AddAccountOperation(request) {

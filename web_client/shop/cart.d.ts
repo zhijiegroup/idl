@@ -81,12 +81,12 @@ export interface GetCartResponse {
 
 export interface UpdateCartRequest {
   base_request?: base.BaseRequest;
-  cart?: Cart;
+  cart_info?: CartShow;
 }
 
 export interface UpdateCartResponse {
   base_resp?: base.BaseResponse;
-  cart_id?: string;
+  cart_info?: CartShow;
 }
 
 export interface DeleteCartRequest {

@@ -23,8 +23,17 @@ public interface UpdateCartResponseOrBuilder extends
   com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder();
 
   /**
-   * <code>int64 cart_id = 2;</code>
-   * @return The cartId.
+   * <code>.glory_api.CartShow cart_info = 2;</code>
+   * @return Whether the cartInfo field is set.
    */
-  long getCartId();
+  boolean hasCartInfo();
+  /**
+   * <code>.glory_api.CartShow cart_info = 2;</code>
+   * @return The cartInfo.
+   */
+  com.zhijiejiaoyu.glory_api.shop.CartShow getCartInfo();
+  /**
+   * <code>.glory_api.CartShow cart_info = 2;</code>
+   */
+  com.zhijiejiaoyu.glory_api.shop.CartShowOrBuilder getCartInfoOrBuilder();
 }
