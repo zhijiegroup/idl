@@ -4,25 +4,25 @@
 package com.zhijiejiaoyu.glory_api.currency;
 
 /**
- * Protobuf type {@code glory_api.ListVirtualCurrencyRequest}
+ * Protobuf type {@code glory_api.RechargeCurrencyRequest}
  */
-public final class ListVirtualCurrencyRequest extends
+public final class RechargeCurrencyRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:glory_api.ListVirtualCurrencyRequest)
-    ListVirtualCurrencyRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:glory_api.RechargeCurrencyRequest)
+    RechargeCurrencyRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use ListVirtualCurrencyRequest.newBuilder() to construct.
-  private ListVirtualCurrencyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use RechargeCurrencyRequest.newBuilder() to construct.
+  private RechargeCurrencyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ListVirtualCurrencyRequest() {
+  private RechargeCurrencyRequest() {
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new ListVirtualCurrencyRequest();
+    return new RechargeCurrencyRequest();
   }
 
   @java.lang.Override
@@ -30,7 +30,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private ListVirtualCurrencyRequest(
+  private RechargeCurrencyRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -61,17 +61,9 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 802: {
-            com.zhijiejiaoyu.base.PaginationRequest.Builder subBuilder = null;
-            if (pagination_ != null) {
-              subBuilder = pagination_.toBuilder();
-            }
-            pagination = input.readMessage(com.zhijiejiaoyu.base.PaginationRequest.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(pagination);
-              pagination = subBuilder.buildPartial();
-            }
+          case 16: {
 
+            userId = input.readInt64();
             break;
           }
           default: {
@@ -95,15 +87,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.zhijiejiaoyu.glory_api.currency.VirtualCurrencyOuterClass.internal_static_glory_api_ListVirtualCurrencyRequest_descriptor;
+    return com.zhijiejiaoyu.glory_api.currency.VirtualCurrencyOuterClass.internal_static_glory_api_RechargeCurrencyRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.zhijiejiaoyu.glory_api.currency.VirtualCurrencyOuterClass.internal_static_glory_api_ListVirtualCurrencyRequest_fieldAccessorTable
+    return com.zhijiejiaoyu.glory_api.currency.VirtualCurrencyOuterClass.internal_static_glory_api_RechargeCurrencyRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest.class, com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest.Builder.class);
+            com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest.class, com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest.Builder.class);
   }
 
   public static final int BASE_REQUEST_FIELD_NUMBER = 1;
@@ -132,30 +124,15 @@ private static final long serialVersionUID = 0L;
     return getBaseRequest();
   }
 
-  public static final int PAGINATION_FIELD_NUMBER = 100;
-  private com.zhijiejiaoyu.base.PaginationRequest pagination;
+  public static final int USER_ID_FIELD_NUMBER = 2;
+  private long userId;
   /**
-   * <code>.base.PaginationRequest pagination = 100;</code>
-   * @return Whether the pagination field is set.
+   * <code>int64 user_id = 2;</code>
+   * @return The userId.
    */
   @java.lang.Override
-  public boolean hasPagination() {
-    return pagination_ != null;
-  }
-  /**
-   * <code>.base.PaginationRequest pagination = 100;</code>
-   * @return The pagination.
-   */
-  @java.lang.Override
-  public com.zhijiejiaoyu.base.PaginationRequest getPagination() {
-    return pagination == null ? com.zhijiejiaoyu.base.PaginationRequest.getDefaultInstance() : pagination;
-  }
-  /**
-   * <code>.base.PaginationRequest pagination = 100;</code>
-   */
-  @java.lang.Override
-  public com.zhijiejiaoyu.base.PaginationRequestOrBuilder getPaginationOrBuilder() {
-    return getPagination();
+  public long getUserId() {
+    return userId;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -175,8 +152,8 @@ private static final long serialVersionUID = 0L;
     if (baseRequest_ != null) {
       output.writeMessage(1, getBaseRequest());
     }
-    if (pagination_ != null) {
-      output.writeMessage(100, getPagination());
+    if (userId_ != 0L) {
+      output.writeInt64(2, userId);
     }
     unknownFields.writeTo(output);
   }
@@ -191,9 +168,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseRequest());
     }
-    if (pagination_ != null) {
+    if (userId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(100, getPagination());
+        .computeInt64Size(2, userId);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -205,21 +182,18 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest)) {
+    if (!(obj instanceof com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest)) {
       return super.equals(obj);
     }
-    com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest other = (com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest) obj;
+    com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest other = (com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest) obj;
 
     if (hasBaseRequest() != other.hasBaseRequest()) return false;
     if (hasBaseRequest()) {
       if (!getBaseRequest()
           .equals(other.getBaseRequest())) return false;
     }
-    if (hasPagination() != other.hasPagination()) return false;
-    if (hasPagination()) {
-      if (!getPagination()
-          .equals(other.getPagination())) return false;
-    }
+    if (getUserId()
+        != other.getUserId()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -235,78 +209,77 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
       hash = (53 * hash) + getBaseRequest().hashCode();
     }
-    if (hasPagination()) {
-      hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
-      hash = (53 * hash) + getPagination().hashCode();
-    }
+    hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getUserId());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest parseFrom(byte[] data)
+  public static com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest parseFrom(java.io.InputStream input)
+  public static com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest parseDelimitedFrom(
+  public static com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -319,7 +292,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest prototype) {
+  public static Builder newBuilder(com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -335,26 +308,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code glory_api.ListVirtualCurrencyRequest}
+   * Protobuf type {@code glory_api.RechargeCurrencyRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:glory_api.ListVirtualCurrencyRequest)
-      com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:glory_api.RechargeCurrencyRequest)
+      com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.zhijiejiaoyu.glory_api.currency.VirtualCurrencyOuterClass.internal_static_glory_api_ListVirtualCurrencyRequest_descriptor;
+      return com.zhijiejiaoyu.glory_api.currency.VirtualCurrencyOuterClass.internal_static_glory_api_RechargeCurrencyRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.zhijiejiaoyu.glory_api.currency.VirtualCurrencyOuterClass.internal_static_glory_api_ListVirtualCurrencyRequest_fieldAccessorTable
+      return com.zhijiejiaoyu.glory_api.currency.VirtualCurrencyOuterClass.internal_static_glory_api_RechargeCurrencyRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest.class, com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest.Builder.class);
+              com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest.class, com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest.Builder.class);
     }
 
-    // Construct using com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest.newBuilder()
+    // Construct using com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -378,29 +351,25 @@ private static final long serialVersionUID = 0L;
         baseRequest = null;
         baseRequestBuilder = null;
       }
-      if (paginationBuilder == null) {
-        pagination = null;
-      } else {
-        pagination = null;
-        paginationBuilder = null;
-      }
+      userId = 0L;
+
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.zhijiejiaoyu.glory_api.currency.VirtualCurrencyOuterClass.internal_static_glory_api_ListVirtualCurrencyRequest_descriptor;
+      return com.zhijiejiaoyu.glory_api.currency.VirtualCurrencyOuterClass.internal_static_glory_api_RechargeCurrencyRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest getDefaultInstanceForType() {
-      return com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest.getDefaultInstance();
+    public com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest getDefaultInstanceForType() {
+      return com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest build() {
-      com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest result = buildPartial();
+    public com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest build() {
+      com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -408,18 +377,14 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest buildPartial() {
-      com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest result = new com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest(this);
+    public com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest buildPartial() {
+      com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest result = new com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest(this);
       if (baseRequestBuilder == null) {
         result.baseRequest = baseRequest;
       } else {
         result.baseRequest = baseRequestBuilder_.build();
       }
-      if (paginationBuilder == null) {
-        result.pagination = pagination;
-      } else {
-        result.pagination = paginationBuilder_.build();
-      }
+      result.userId = userId;
       onBuilt();
       return result;
     }
@@ -458,21 +423,21 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest) {
-        return mergeFrom((com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest)other);
+      if (other instanceof com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest) {
+        return mergeFrom((com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest other) {
-      if (other == com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest other) {
+      if (other == com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest.getDefaultInstance()) return this;
       if (other.hasBaseRequest()) {
         mergeBaseRequest(other.getBaseRequest());
       }
-      if (other.hasPagination()) {
-        mergePagination(other.getPagination());
+      if (other.getUserId() != 0L) {
+        setUserId(other.getUserId());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -489,11 +454,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest parsedMessage = null;
+      com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -622,123 +587,35 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder;
     }
 
-    private com.zhijiejiaoyu.base.PaginationRequest pagination;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.base.PaginationRequest, com.zhijiejiaoyu.base.PaginationRequest.Builder, com.zhijiejiaoyu.base.PaginationRequestOrBuilder> paginationBuilder;
+    private long userId_ ;
     /**
-     * <code>.base.PaginationRequest pagination = 100;</code>
-     * @return Whether the pagination field is set.
+     * <code>int64 user_id = 2;</code>
+     * @return The userId.
      */
-    public boolean hasPagination() {
-      return paginationBuilder_ != null || pagination_ != null;
+    @java.lang.Override
+    public long getUserId() {
+      return userId;
     }
     /**
-     * <code>.base.PaginationRequest pagination = 100;</code>
-     * @return The pagination.
+     * <code>int64 user_id = 2;</code>
+     * @param value The userId to set.
+     * @return This builder for chaining.
      */
-    public com.zhijiejiaoyu.base.PaginationRequest getPagination() {
-      if (paginationBuilder == null) {
-        return pagination == null ? com.zhijiejiaoyu.base.PaginationRequest.getDefaultInstance() : pagination;
-      } else {
-        return paginationBuilder_.getMessage();
-      }
-    }
-    /**
-     * <code>.base.PaginationRequest pagination = 100;</code>
-     */
-    public Builder setPagination(com.zhijiejiaoyu.base.PaginationRequest value) {
-      if (paginationBuilder == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        pagination = value;
-        onChanged();
-      } else {
-        paginationBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.base.PaginationRequest pagination = 100;</code>
-     */
-    public Builder setPagination(
-        com.zhijiejiaoyu.base.PaginationRequest.Builder builderForValue) {
-      if (paginationBuilder == null) {
-        pagination = builderForValue.build();
-        onChanged();
-      } else {
-        paginationBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <code>.base.PaginationRequest pagination = 100;</code>
-     */
-    public Builder mergePagination(com.zhijiejiaoyu.base.PaginationRequest value) {
-      if (paginationBuilder == null) {
-        if (pagination_ != null) {
-          pagination =
-            com.zhijiejiaoyu.base.PaginationRequest.newBuilder(pagination).mergeFrom(value).buildPartial();
-        } else {
-          pagination = value;
-        }
-        onChanged();
-      } else {
-        paginationBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.base.PaginationRequest pagination = 100;</code>
-     */
-    public Builder clearPagination() {
-      if (paginationBuilder == null) {
-        pagination = null;
-        onChanged();
-      } else {
-        pagination = null;
-        paginationBuilder = null;
-      }
-
-      return this;
-    }
-    /**
-     * <code>.base.PaginationRequest pagination = 100;</code>
-     */
-    public com.zhijiejiaoyu.base.PaginationRequest.Builder getPaginationBuilder() {
+    public Builder setUserId(long value) {
       
+      userId = value;
       onChanged();
-      return getPaginationFieldBuilder().getBuilder();
+      return this;
     }
     /**
-     * <code>.base.PaginationRequest pagination = 100;</code>
+     * <code>int64 user_id = 2;</code>
+     * @return This builder for chaining.
      */
-    public com.zhijiejiaoyu.base.PaginationRequestOrBuilder getPaginationOrBuilder() {
-      if (paginationBuilder_ != null) {
-        return paginationBuilder_.getMessageOrBuilder();
-      } else {
-        return pagination == null ?
-            com.zhijiejiaoyu.base.PaginationRequest.getDefaultInstance() : pagination;
-      }
-    }
-    /**
-     * <code>.base.PaginationRequest pagination = 100;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.base.PaginationRequest, com.zhijiejiaoyu.base.PaginationRequest.Builder, com.zhijiejiaoyu.base.PaginationRequestOrBuilder> 
-        getPaginationFieldBuilder() {
-      if (paginationBuilder == null) {
-        paginationBuilder = new com.google.protobuf.SingleFieldBuilderV3<
-            com.zhijiejiaoyu.base.PaginationRequest, com.zhijiejiaoyu.base.PaginationRequest.Builder, com.zhijiejiaoyu.base.PaginationRequestOrBuilder>(
-                getPagination(),
-                getParentForChildren(),
-                isClean());
-        pagination = null;
-      }
-      return paginationBuilder;
+    public Builder clearUserId() {
+      
+      userId = 0L;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
@@ -753,41 +630,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:glory_api.ListVirtualCurrencyRequest)
+    // @@protoc_insertion_point(builder_scope:glory_api.RechargeCurrencyRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:glory_api.ListVirtualCurrencyRequest)
-  private static final com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:glory_api.RechargeCurrencyRequest)
+  private static final com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest();
+    DEFAULT_INSTANCE = new com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest();
   }
 
-  public static com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest getDefaultInstance() {
+  public static com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListVirtualCurrencyRequest>
-      PARSER = new com.google.protobuf.AbstractParser<ListVirtualCurrencyRequest>() {
+  private static final com.google.protobuf.Parser<RechargeCurrencyRequest>
+      PARSER = new com.google.protobuf.AbstractParser<RechargeCurrencyRequest>() {
     @java.lang.Override
-    public ListVirtualCurrencyRequest parsePartialFrom(
+    public RechargeCurrencyRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ListVirtualCurrencyRequest(input, extensionRegistry);
+      return new RechargeCurrencyRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<ListVirtualCurrencyRequest> parser() {
+  public static com.google.protobuf.Parser<RechargeCurrencyRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ListVirtualCurrencyRequest> getParserForType() {
+  public com.google.protobuf.Parser<RechargeCurrencyRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest getDefaultInstanceForType() {
+  public com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

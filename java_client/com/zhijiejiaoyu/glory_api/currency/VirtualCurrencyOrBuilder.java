@@ -112,4 +112,24 @@ public interface VirtualCurrencyOrBuilder extends
    */
   com.google.protobuf.ByteString
       getNameBytes();
+
+  /**
+   * <pre>
+   *recharge 待充值,recharged 已充值
+   * </pre>
+   *
+   * <code>string status = 8;</code>
+   * @return The status.
+   */
+  java.lang.String getStatus();
+  /**
+   * <pre>
+   *recharge 待充值,recharged 已充值
+   * </pre>
+   *
+   * <code>string status = 8;</code>
+   * @return The bytes for status.
+   */
+  com.google.protobuf.ByteString
+      getStatusBytes();
 }

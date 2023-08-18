@@ -3,8 +3,8 @@
 
 package com.zhijiejiaoyu.glory_api.currency;
 
-public interface ListVirtualCurrencyRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:glory_api.ListVirtualCurrencyRequest)
+public interface RechargeCurrencyInBatchesRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:glory_api.RechargeCurrencyInBatchesRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -23,17 +23,19 @@ public interface ListVirtualCurrencyRequestOrBuilder extends
   com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder();
 
   /**
-   * <code>.base.PaginationRequest pagination = 100;</code>
-   * @return Whether the pagination field is set.
+   * <code>repeated int64 users_id = 2;</code>
+   * @return A list containing the usersId.
    */
-  boolean hasPagination();
+  java.util.List<java.lang.Long> getUsersIdList();
   /**
-   * <code>.base.PaginationRequest pagination = 100;</code>
-   * @return The pagination.
+   * <code>repeated int64 users_id = 2;</code>
+   * @return The count of usersId.
    */
-  com.zhijiejiaoyu.base.PaginationRequest getPagination();
+  int getUsersIdCount();
   /**
-   * <code>.base.PaginationRequest pagination = 100;</code>
+   * <code>repeated int64 users_id = 2;</code>
+   * @param index The index of the element to return.
+   * @return The usersId at the given index.
    */
-  com.zhijiejiaoyu.base.PaginationRequestOrBuilder getPaginationOrBuilder();
+  long getUsersId(int index);
 }

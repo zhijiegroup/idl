@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     channel = "";
     explain = "";
     name = "";
+    status = "";
   }
 
   @java.lang.Override
@@ -89,6 +90,12 @@ private static final long serialVersionUID = 0L;
           case 56: {
 
             rechargeAmount = input.readInt64();
+            break;
+          }
+          case 66: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            status = s;
             break;
           }
           default: {
@@ -348,6 +355,52 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int STATUS_FIELD_NUMBER = 8;
+  private volatile java.lang.Object status;
+  /**
+   * <pre>
+   *recharge 待充值,recharged 已充值
+   * </pre>
+   *
+   * <code>string status = 8;</code>
+   * @return The status.
+   */
+  @java.lang.Override
+  public java.lang.String getStatus() {
+    java.lang.Object ref = status;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      status = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   *recharge 待充值,recharged 已充值
+   * </pre>
+   *
+   * <code>string status = 8;</code>
+   * @return The bytes for status.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getStatusBytes() {
+    java.lang.Object ref = status;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      status = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -383,6 +436,9 @@ private static final long serialVersionUID = 0L;
     if (rechargeAmount_ != 0L) {
       output.writeInt64(7, rechargeAmount);
     }
+    if (!getStatusBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, status);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -416,6 +472,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(7, rechargeAmount);
     }
+    if (!getStatusBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, status);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -445,6 +504,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getExplain())) return false;
     if (!getName()
         .equals(other.getName())) return false;
+    if (!getStatus()
+        .equals(other.getStatus())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -473,6 +534,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getExplain().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + STATUS_FIELD_NUMBER;
+    hash = (53 * hash) + getStatus().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -620,6 +683,8 @@ private static final long serialVersionUID = 0L;
 
       name = "";
 
+      status = "";
+
       return this;
     }
 
@@ -653,6 +718,7 @@ private static final long serialVersionUID = 0L;
       result.channel = channel;
       result.explain = explain;
       result.name = name;
+      result.status = status;
       onBuilt();
       return result;
     }
@@ -724,6 +790,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getName().isEmpty()) {
         name = other.name;
+        onChanged();
+      }
+      if (!other.getStatus().isEmpty()) {
+        status = other.status;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1252,6 +1322,102 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       name = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object status = "";
+    /**
+     * <pre>
+     *recharge 待充值,recharged 已充值
+     * </pre>
+     *
+     * <code>string status = 8;</code>
+     * @return The status.
+     */
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     *recharge 待充值,recharged 已充值
+     * </pre>
+     *
+     * <code>string status = 8;</code>
+     * @return The bytes for status.
+     */
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     *recharge 待充值,recharged 已充值
+     * </pre>
+     *
+     * <code>string status = 8;</code>
+     * @param value The status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatus(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      status = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *recharge 待充值,recharged 已充值
+     * </pre>
+     *
+     * <code>string status = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStatus() {
+      
+      status = getDefaultInstance().getStatus();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *recharge 待充值,recharged 已充值
+     * </pre>
+     *
+     * <code>string status = 8;</code>
+     * @param value The bytes for status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      status = value;
       onChanged();
       return this;
     }

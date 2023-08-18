@@ -3,8 +3,8 @@
 
 package com.zhijiejiaoyu.glory_api.currency;
 
-public interface ListVirtualCurrencyRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:glory_api.ListVirtualCurrencyRequest)
+public interface RechargeCurrencyRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:glory_api.RechargeCurrencyRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -23,17 +23,8 @@ public interface ListVirtualCurrencyRequestOrBuilder extends
   com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder();
 
   /**
-   * <code>.base.PaginationRequest pagination = 100;</code>
-   * @return Whether the pagination field is set.
+   * <code>int64 user_id = 2;</code>
+   * @return The userId.
    */
-  boolean hasPagination();
-  /**
-   * <code>.base.PaginationRequest pagination = 100;</code>
-   * @return The pagination.
-   */
-  com.zhijiejiaoyu.base.PaginationRequest getPagination();
-  /**
-   * <code>.base.PaginationRequest pagination = 100;</code>
-   */
-  com.zhijiejiaoyu.base.PaginationRequestOrBuilder getPaginationOrBuilder();
+  long getUserId();
 }

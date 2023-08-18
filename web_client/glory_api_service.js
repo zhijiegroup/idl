@@ -888,6 +888,22 @@ export class glory_api {
     );
   }
 
+  RechargeCurrency(request) {
+    const uri = `${this.uriPrefix}/api/currency/recharge`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  RechargeCurrencyInBatches(request) {
+    const uri = `${this.uriPrefix}/api/currency/recharge_batches`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   DeleteVCurrency(request) {
     const uri = `${this.uriPrefix}/api/currency/clear`;
     const body = JSONbigint.stringify(request);
