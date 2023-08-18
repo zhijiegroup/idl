@@ -21,6 +21,7 @@ export interface VirtualCurrency {
   name?: string;
   /** recharge 待充值,recharged 已充值 */
   status?: string;
+  created_at?: string;
 }
 
 export interface UserInfo {
@@ -98,4 +99,5 @@ export interface ListVirtualCurrencyRequest {
 export interface ListVirtualCurrencyResponse {
   base_resp?: base.BaseResponse;
   virtual_currency_info?: Array<VirtualCurrencyInfo>;
+  pagination?: base.PaginationResponse;
 }
