@@ -19,12 +19,15 @@ export interface VirtualCurrency {
   explain?: string;
   /** 虚拟币名称 默认： 成长币 */
   name?: string;
+  /** recharge 待充值,recharged 已充值 */
+  status?: string;
 }
 
 export interface UserInfo {
   id?: string;
   phone?: string;
   token?: string;
+  name?: string;
 }
 
 export interface VirtualCurrencyInfo {
@@ -38,6 +41,24 @@ export interface AddVirtualCurrencyRequest {
 }
 
 export interface AddVirtualCurrencyResponse {
+  base_resp?: base.BaseResponse;
+}
+
+export interface RechargeCurrencyRequest {
+  base_request?: base.BaseRequest;
+  user_id?: string;
+}
+
+export interface RechargeCurrencyResponse {
+  base_resp?: base.BaseResponse;
+}
+
+export interface RechargeCurrencyInBatchesRequest {
+  base_request?: base.BaseRequest;
+  users_id?: Array<string>;
+}
+
+export interface RechargeCurrencyInBatchesResponse {
   base_resp?: base.BaseResponse;
 }
 
@@ -71,6 +92,7 @@ export interface GetVirtualCurrencyResponse {
 
 export interface ListVirtualCurrencyRequest {
   base_request?: base.BaseRequest;
+  pagination?: base.PaginationRequest;
 }
 
 export interface ListVirtualCurrencyResponse {

@@ -14,12 +14,14 @@ message VirtualCurrency {
   string channel = 4;//充值渠道
   string explain = 5;//充值原因
   string name = 6;//虚拟币名称 默认： 成长币
+  string status = 8;//recharge 待充值,recharged 已充值
 }
 
 message UserInfo {
   int64 id = 1;
   string phone = 2;
   string token = 3;
+  string name = 4;
 }
 
 message VirtualCurrencyInfo {
@@ -33,6 +35,24 @@ message AddVirtualCurrencyRequest {
 }
 
 message AddVirtualCurrencyResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+message RechargeCurrencyRequest {
+  base.BaseRequest base_request = 1;
+  int64 user_id = 2;
+}
+
+message RechargeCurrencyResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+message RechargeCurrencyInBatchesRequest {
+  base.BaseRequest base_request = 1;
+  repeated int64 users_id = 2;
+}
+
+message RechargeCurrencyInBatchesResponse {
   base.BaseResponse base_resp = 1;
 }
 
@@ -66,6 +86,7 @@ message GetVirtualCurrencyResponse {
 
 message ListVirtualCurrencyRequest {
   base.BaseRequest base_request = 1;
+  base.PaginationRequest pagination = 100;
 }
 
 message ListVirtualCurrencyResponse {

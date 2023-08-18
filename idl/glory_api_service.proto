@@ -429,6 +429,14 @@ service glory_api {
     option (api.post) = '/api/currency/add';
   }
 
+  rpc RechargeCurrency(RechargeCurrencyRequest) returns (RechargeCurrencyResponse) {
+    option (api.post) = '/api/currency/recharge';
+  }
+
+  rpc RechargeCurrencyInBatches(RechargeCurrencyInBatchesRequest) returns (RechargeCurrencyInBatchesResponse) {
+    option (api.post) = '/api/currency/recharge_batches';
+  }
+
   rpc DeleteVCurrency(DeleteVirtualCurrencyRequest) returns (DeleteVirtualCurrencyResponse) {
     option (api.post) = '/api/currency/clear';
   }
