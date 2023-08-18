@@ -91,7 +91,7 @@ message UpdateCartResponse {
 
 message DeleteCartRequest {
   base.BaseRequest base_request=1;
-  int64 cart_id =2;
+  CartShow cart_info = 2;
 }
 message DeleteCartResponse {
   base.BaseResponse base_resp = 1;

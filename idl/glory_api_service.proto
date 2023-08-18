@@ -341,6 +341,9 @@ service glory_api {
   rpc ShipGoods(ShipGoodsRequest) returns (ShipGoodsResponse) {
     option (api.post) = '/api/shop/ship_goods';
   }
+  rpc ConfirmReceiptGoods(ConfirmReceiptGoodsRequest) returns (ConfirmReceiptGoodsResponse) {
+    option (api.post) = '/api/shop/confirm_goods';
+  }
   rpc CancelOrder(CancelOrderRequest) returns (CancelOrderResponse) {
     option (api.post) = '/api/shop/cancel_order';
   }
