@@ -48,6 +48,8 @@ struct GloryApi_VirtualCurrency {
   ///recharge 待充值,recharged 已充值
   var status: String = String()
 
+  var createdAt: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -439,11 +441,21 @@ struct GloryApi_ListVirtualCurrencyResponse {
 
   var virtualCurrencyInfo: [GloryApi_VirtualCurrencyInfo] = []
 
+  var pagination: Base_PaginationResponse {
+    get {return _pagination ?? Base_PaginationResponse()}
+    set {_pagination = newValue}
+  }
+  /// Returns true if `pagination` has been explicitly set.
+  var hasPagination: Bool {return self._pagination != nil}
+  /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
+  mutating func clearPagination() {self._pagination = nil}
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
 #if swift(>=5.5) && canImport(_Concurrency)
@@ -481,6 +493,7 @@ extension GloryApi_VirtualCurrency: SwiftProtobuf.Message, SwiftProtobuf._Messag
     5: .same(proto: "explain"),
     6: .same(proto: "name"),
     8: .same(proto: "status"),
+    9: .standard(proto: "created_at"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -497,6 +510,7 @@ extension GloryApi_VirtualCurrency: SwiftProtobuf.Message, SwiftProtobuf._Messag
       case 6: try { try decoder.decodeSingularStringField(value: &self.name) }()
       case 7: try { try decoder.decodeSingularInt64Field(value: &self.rechargeAmount) }()
       case 8: try { try decoder.decodeSingularStringField(value: &self.status) }()
+      case 9: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
       default: break
       }
     }
@@ -527,6 +541,9 @@ extension GloryApi_VirtualCurrency: SwiftProtobuf.Message, SwiftProtobuf._Messag
     if !self.status.isEmpty {
       try visitor.visitSingularStringField(value: self.status, fieldNumber: 8)
     }
+    if !self.createdAt.isEmpty {
+      try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 9)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -539,6 +556,7 @@ extension GloryApi_VirtualCurrency: SwiftProtobuf.Message, SwiftProtobuf._Messag
     if lhs.explain != rhs.explain {return false}
     if lhs.name != rhs.name {return false}
     if lhs.status != rhs.status {return false}
+    if lhs.createdAt != rhs.createdAt {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -1157,6 +1175,7 @@ extension GloryApi_ListVirtualCurrencyResponse: SwiftProtobuf.Message, SwiftProt
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
     2: .standard(proto: "virtual_currency_info"),
+    100: .same(proto: "pagination"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1167,6 +1186,7 @@ extension GloryApi_ListVirtualCurrencyResponse: SwiftProtobuf.Message, SwiftProt
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
       case 2: try { try decoder.decodeRepeatedMessageField(value: &self.virtualCurrencyInfo) }()
+      case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
     }
@@ -1183,12 +1203,16 @@ extension GloryApi_ListVirtualCurrencyResponse: SwiftProtobuf.Message, SwiftProt
     if !self.virtualCurrencyInfo.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.virtualCurrencyInfo, fieldNumber: 2)
     }
+    try { if let v = self._pagination {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_ListVirtualCurrencyResponse, rhs: GloryApi_ListVirtualCurrencyResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.virtualCurrencyInfo != rhs.virtualCurrencyInfo {return false}
+    if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
