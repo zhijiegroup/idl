@@ -449,7 +449,7 @@ service glory_api {
   }
 
   rpc ListVCurrency(ListVirtualCurrencyRequest) returns (ListVirtualCurrencyResponse) {
-    option (api.get) = '/api/currency/list';
+    option (api.post) = '/api/currency/list';
   }
 
   // account
