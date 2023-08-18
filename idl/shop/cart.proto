@@ -80,11 +80,11 @@ message GetCartResponse {
 
 message UpdateCartRequest {
   base.BaseRequest base_request = 1;
-  Cart cart = 2;
+  CartShow cart_info = 2;
 }
 message UpdateCartResponse {
   base.BaseResponse base_resp = 1;
-  int64 cart_id=2;
+  CartShow cart_info = 2;
 }
 
 
