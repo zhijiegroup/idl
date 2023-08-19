@@ -33,8 +33,7 @@ import "live/live_evaluate.proto";
 import "account/account_operation.proto";
 import "currency/virtual_currency.proto";
 import "tenant/tenant.proto";
-import "tenant/college.proto";
-import "tenant/edu_office.proto";
+import "tenant/tenant_dept.proto";
 import "tenant/student.proto";
 
 service glory_api {
@@ -624,6 +623,9 @@ service glory_api {
   rpc ListTenant(ListTenantRequest) returns (ListTenantResponse) {
     option (api.post) = '/api/tenant/list_tenant';
   }
+  rpc GetTenantOrg(GetTenantOrgRequest) returns (GetTenantOrgResponse) {
+    option (api.post) = '/api/tenant/tenant_org';
+  }
 
   //college
   rpc CreateCollege(CreateCollegeRequest) returns (CreateCollegeResponse) {
@@ -642,9 +644,26 @@ service glory_api {
     option (api.post) = '/api/college/list_college';
   }
 
-  //edu_office
+  //gover_dept
+  rpc CreateEduDept(CreateEduDeptRequest) returns (CreateEduDeptResponse) {
+    option (api.post) = '/api/edu_dept/create_edu_dept';
+  }
+
+  rpc UpdateEduDept(UpdateEduDeptRequest) returns (UpdateEduDeptResponse) {
+    option (api.post) = '/api/edu_dept/update_edu_dept';
+  }
+
+  rpc DeleteEduDept(DeleteEduDeptRequest) returns (DeleteEduDeptResponse) {
+    option (api.post) = '/api/edu_dept/delete_edu_dept';
+  }
+
+  // edu_office
   rpc CreateEduOffice(CreateEduOfficeRequest) returns (CreateEduOfficeResponse) {
     option (api.post) = '/api/edu_office/create_edu_office';
+  }
+
+  rpc UpdateEduOffice(UpdateEduOfficeRequest) returns (UpdateEduOfficeResponse) {
+    option (api.post) = '/api/edu_office/update_edu_office';
   }
 
   rpc DeleteEduOffice(DeleteEduOfficeRequest) returns (DeleteEduOfficeResponse) {
@@ -654,6 +673,10 @@ service glory_api {
   //principal_office
   rpc CreatePrincipalOffice(CreatePrincipalOfficeRequest) returns (CreatePrincipalOfficeResponse) {
     option (api.post) = '/api/principal_office/create_principal_office';
+  }
+
+  rpc UpdatePrincipalOffice(UpdatePrincipalOfficeRequest) returns (UpdatePrincipalOfficeResponse) {
+    option (api.post) = '/api/principal_office/update_principal_office';
   }
 
   rpc DeletePrincipalOffice(DeletePrincipalOfficeRequest) returns (DeletePrincipalOfficeResponse) {
