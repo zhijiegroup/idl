@@ -659,15 +659,15 @@ service glory_api {
 
   //gover_dept
   rpc CreateGoverDept(CreateGoverDeptRequest) returns (CreateGoverDeptResponse) {
-    option (api.post) = '/api/edu_dept/create_gover_dept';
+    option (api.post) = '/api/gover_dept/create_gover_dept';
   }
 
   rpc UpdateGoverDept(UpdateGoverDeptRequest) returns (UpdateGoverDeptResponse) {
-    option (api.post) = '/api/edu_dept/update_gover_dept';
+    option (api.post) = '/api/gover_dept/update_gover_dept';
   }
 
   rpc DeleteGoverDept(DeleteGoverDeptRequest) returns (DeleteGoverDeptResponse) {
-    option (api.post) = '/api/edu_dept/delete_gover_dept';
+    option (api.post) = '/api/gover_dept/delete_gover_dept';
   }
 
   // edu_office
