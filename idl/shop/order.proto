@@ -86,7 +86,7 @@ message OrderInfo {
   repeated ProductInfo productInfo = 13;//商品信息
   string shop_name = 14;//商店名字
   string shop_logo = 144;//商店logo
-  string currency = 15;//货币单位
+  string currency = 15;//货币单位  CNY :人民币    COIN:虚拟币 不区分大小写
   string contact_name = 16;//收货人
   string buyer_name = 17;//购买人
   string deliver_address = 18;//收获地址
