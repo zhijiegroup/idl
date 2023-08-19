@@ -644,7 +644,7 @@ service glory_api {
     option (api.post) = '/api/college/list_college';
   }
 
-  //gover_dept
+  // edu_dept
   rpc CreateEduDept(CreateEduDeptRequest) returns (CreateEduDeptResponse) {
     option (api.post) = '/api/edu_dept/create_edu_dept';
   }
@@ -655,6 +655,19 @@ service glory_api {
 
   rpc DeleteEduDept(DeleteEduDeptRequest) returns (DeleteEduDeptResponse) {
     option (api.post) = '/api/edu_dept/delete_edu_dept';
+  }
+
+  //gover_dept
+  rpc CreateGoverDept(CreateGoverDeptRequest) returns (CreateGoverDeptResponse) {
+    option (api.post) = '/api/edu_dept/create_gover_dept';
+  }
+
+  rpc UpdateGoverDept(UpdateGoverDeptRequest) returns (UpdateGoverDeptResponse) {
+    option (api.post) = '/api/edu_dept/update_gover_dept';
+  }
+
+  rpc DeleteGoverDept(DeleteGoverDeptRequest) returns (DeleteGoverDeptResponse) {
+    option (api.post) = '/api/edu_dept/delete_gover_dept';
   }
 
   // edu_office
