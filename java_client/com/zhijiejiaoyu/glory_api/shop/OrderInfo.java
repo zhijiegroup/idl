@@ -701,7 +701,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object currency;
   /**
    * <pre>
-   *货币单位
+   *货币单位  CNY :人民币    COIN:虚拟币 不区分大小写
    * </pre>
    *
    * <code>string currency = 15;</code>
@@ -722,7 +722,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *货币单位
+   *货币单位  CNY :人民币    COIN:虚拟币 不区分大小写
    * </pre>
    *
    * <code>string currency = 15;</code>
@@ -2834,7 +2834,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object currency = "";
     /**
      * <pre>
-     *货币单位
+     *货币单位  CNY :人民币    COIN:虚拟币 不区分大小写
      * </pre>
      *
      * <code>string currency = 15;</code>
@@ -2854,7 +2854,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *货币单位
+     *货币单位  CNY :人民币    COIN:虚拟币 不区分大小写
      * </pre>
      *
      * <code>string currency = 15;</code>
@@ -2875,7 +2875,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *货币单位
+     *货币单位  CNY :人民币    COIN:虚拟币 不区分大小写
      * </pre>
      *
      * <code>string currency = 15;</code>
@@ -2894,7 +2894,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *货币单位
+     *货币单位  CNY :人民币    COIN:虚拟币 不区分大小写
      * </pre>
      *
      * <code>string currency = 15;</code>
@@ -2908,7 +2908,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *货币单位
+     *货币单位  CNY :人民币    COIN:虚拟币 不区分大小写
      * </pre>
      *
      * <code>string currency = 15;</code>
