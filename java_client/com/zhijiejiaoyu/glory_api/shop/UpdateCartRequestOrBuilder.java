@@ -23,17 +23,17 @@ public interface UpdateCartRequestOrBuilder extends
   com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder();
 
   /**
-   * <code>.glory_api.Cart cart = 2;</code>
-   * @return Whether the cart field is set.
+   * <code>.glory_api.CartShow cart_info = 2;</code>
+   * @return Whether the cartInfo field is set.
    */
-  boolean hasCart();
+  boolean hasCartInfo();
   /**
-   * <code>.glory_api.Cart cart = 2;</code>
-   * @return The cart.
+   * <code>.glory_api.CartShow cart_info = 2;</code>
+   * @return The cartInfo.
    */
-  com.zhijiejiaoyu.glory_api.shop.Cart getCart();
+  com.zhijiejiaoyu.glory_api.shop.CartShow getCartInfo();
   /**
-   * <code>.glory_api.Cart cart = 2;</code>
+   * <code>.glory_api.CartShow cart_info = 2;</code>
    */
-  com.zhijiejiaoyu.glory_api.shop.CartOrBuilder getCartOrBuilder();
+  com.zhijiejiaoyu.glory_api.shop.CartShowOrBuilder getCartInfoOrBuilder();
 }

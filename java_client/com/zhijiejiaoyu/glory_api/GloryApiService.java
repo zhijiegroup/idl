@@ -362,7 +362,7 @@ public final class GloryApiService {
       "\030/api/currency/get_by_uid\022v\n\rListVCurren" +
       "cy\022%.glory_api.ListVirtualCurrencyReques" +
       "t\032&.glory_api.ListVirtualCurrencyRespons" +
-      "e\"\026\312\301\030\022/api/currency/list\022\204\001\n\023AddAccount" +
+      "e\"\026\322\301\030\022/api/currency/list\022\204\001\n\023AddAccount" +
       "Operation\022%.glory_api.AddAccountOperatio" +
       "nRequest\032&.glory_api.AddAccountOperation" +
       "Response\"\036\322\301\030\032/api/account/add_operation" +

@@ -109,50 +109,52 @@ public final class VirtualCurrencyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\037currency/virtual_currency.proto\022\tglory" +
-      "_api\032\nbase.proto\"\232\001\n\017VirtualCurrency\022\017\n\007" +
+      "_api\032\nbase.proto\"\256\001\n\017VirtualCurrency\022\017\n\007" +
       "user_id\030\001 \001(\003\022\017\n\007balance\030\002 \001(\003\022\027\n\017rechar" +
       "ge_amount\030\007 \001(\003\022\014\n\004unit\030\003 \001(\t\022\017\n\007channel" +
       "\030\004 \001(\t\022\017\n\007explain\030\005 \001(\t\022\014\n\004name\030\006 \001(\t\022\016\n" +
-      "\006status\030\010 \001(\t\"B\n\010UserInfo\022\n\n\002id\030\001 \001(\003\022\r\n" +
-      "\005phone\030\002 \001(\t\022\r\n\005token\030\003 \001(\t\022\014\n\004name\030\004 \001(" +
-      "\t\"r\n\023VirtualCurrencyInfo\0224\n\020virtual_curr" +
-      "ency\030\001 \001(\0132\032.glory_api.VirtualCurrency\022%" +
-      "\n\010userInfo\030\002 \001(\0132\023.glory_api.UserInfo\"z\n" +
-      "\031AddVirtualCurrencyRequest\022\'\n\014base_reque" +
-      "st\030\001 \001(\0132\021.base.BaseRequest\0224\n\020virtual_c" +
-      "urrency\030\002 \001(\0132\032.glory_api.VirtualCurrenc" +
-      "y\"C\n\032AddVirtualCurrencyResponse\022%\n\tbase_" +
-      "resp\030\001 \001(\0132\022.base.BaseResponse\"S\n\027Rechar" +
-      "geCurrencyRequest\022\'\n\014base_request\030\001 \001(\0132" +
-      "\021.base.BaseRequest\022\017\n\007user_id\030\002 \001(\003\"A\n\030R" +
-      "echargeCurrencyResponse\022%\n\tbase_resp\030\001 \001" +
-      "(\0132\022.base.BaseResponse\"]\n RechargeCurren" +
-      "cyInBatchesRequest\022\'\n\014base_request\030\001 \001(\013" +
-      "2\021.base.BaseRequest\022\020\n\010users_id\030\002 \003(\003\"J\n" +
-      "!RechargeCurrencyInBatchesResponse\022%\n\tba" +
-      "se_resp\030\001 \001(\0132\022.base.BaseResponse\"}\n\034Upd" +
-      "ateVirtualCurrencyRequest\022\'\n\014base_reques" +
-      "t\030\001 \001(\0132\021.base.BaseRequest\0224\n\020virtual_cu" +
-      "rrency\030\002 \001(\0132\032.glory_api.VirtualCurrency" +
-      "\"F\n\035UpdateVirtualCurrencyResponse\022%\n\tbas" +
-      "e_resp\030\001 \001(\0132\022.base.BaseResponse\"X\n\034Dele" +
-      "teVirtualCurrencyRequest\022\'\n\014base_request" +
-      "\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007user_id\030\002 \001" +
-      "(\003\"F\n\035DeleteVirtualCurrencyResponse\022%\n\tb" +
-      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\"U\n\031Ge" +
-      "tVirtualCurrencyRequest\022\'\n\014base_request\030" +
-      "\001 \001(\0132\021.base.BaseRequest\022\017\n\007user_id\030\002 \001(" +
-      "\003\"\202\001\n\032GetVirtualCurrencyResponse\022%\n\tbase" +
-      "_resp\030\001 \001(\0132\022.base.BaseResponse\022=\n\025virtu" +
-      "al_currency_info\030\002 \001(\0132\036.glory_api.Virtu" +
-      "alCurrencyInfo\"r\n\032ListVirtualCurrencyReq" +
+      "\006status\030\010 \001(\t\022\022\n\ncreated_at\030\t \001(\t\"B\n\010Use" +
+      "rInfo\022\n\n\002id\030\001 \001(\003\022\r\n\005phone\030\002 \001(\t\022\r\n\005toke" +
+      "n\030\003 \001(\t\022\014\n\004name\030\004 \001(\t\"r\n\023VirtualCurrency" +
+      "Info\0224\n\020virtual_currency\030\001 \001(\0132\032.glory_a" +
+      "pi.VirtualCurrency\022%\n\010userInfo\030\002 \001(\0132\023.g" +
+      "lory_api.UserInfo\"z\n\031AddVirtualCurrencyR" +
+      "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
+      "Request\0224\n\020virtual_currency\030\002 \001(\0132\032.glor" +
+      "y_api.VirtualCurrency\"C\n\032AddVirtualCurre" +
+      "ncyResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
+      "seResponse\"S\n\027RechargeCurrencyRequest\022\'\n" +
+      "\014base_request\030\001 \001(\0132\021.base.BaseRequest\022\017" +
+      "\n\007user_id\030\002 \001(\003\"A\n\030RechargeCurrencyRespo" +
+      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
+      "se\"]\n RechargeCurrencyInBatchesRequest\022\'" +
+      "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\022" +
+      "\020\n\010users_id\030\002 \003(\003\"J\n!RechargeCurrencyInB" +
+      "atchesResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
+      ".BaseResponse\"}\n\034UpdateVirtualCurrencyRe" +
+      "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
+      "equest\0224\n\020virtual_currency\030\002 \001(\0132\032.glory" +
+      "_api.VirtualCurrency\"F\n\035UpdateVirtualCur" +
+      "rencyResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
+      "BaseResponse\"X\n\034DeleteVirtualCurrencyReq" +
       "uest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRe" +
-      "quest\022+\n\npagination\030d \001(\0132\027.base.Paginat" +
-      "ionRequest\"\203\001\n\033ListVirtualCurrencyRespon" +
-      "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
-      "e\022=\n\025virtual_currency_info\030\002 \003(\0132\036.glory" +
-      "_api.VirtualCurrencyInfoB\'\n#com.zhijieji" +
-      "aoyu.glory_api.currencyP\001b\006proto3"
+      "quest\022\017\n\007user_id\030\002 \001(\003\"F\n\035DeleteVirtualC" +
+      "urrencyResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
+      "e.BaseResponse\"U\n\031GetVirtualCurrencyRequ" +
+      "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
+      "uest\022\017\n\007user_id\030\002 \001(\003\"\202\001\n\032GetVirtualCurr" +
+      "encyResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.B" +
+      "aseResponse\022=\n\025virtual_currency_info\030\002 \001" +
+      "(\0132\036.glory_api.VirtualCurrencyInfo\"r\n\032Li" +
+      "stVirtualCurrencyRequest\022\'\n\014base_request" +
+      "\030\001 \001(\0132\021.base.BaseRequest\022+\n\npagination\030" +
+      "d \001(\0132\027.base.PaginationRequest\"\261\001\n\033ListV" +
+      "irtualCurrencyResponse\022%\n\tbase_resp\030\001 \001(" +
+      "\0132\022.base.BaseResponse\022=\n\025virtual_currenc" +
+      "y_info\030\002 \003(\0132\036.glory_api.VirtualCurrency" +
+      "Info\022,\n\npagination\030d \001(\0132\030.base.Paginati" +
+      "onResponseB\'\n#com.zhijiejiaoyu.glory_api" +
+      ".currencyP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -164,7 +166,7 @@ public final class VirtualCurrencyOuterClass {
     internal_static_glory_api_VirtualCurrency_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_VirtualCurrency_descriptor,
-        new java.lang.String[] { "UserId", "Balance", "RechargeAmount", "Unit", "Channel", "Explain", "Name", "Status", });
+        new java.lang.String[] { "UserId", "Balance", "RechargeAmount", "Unit", "Channel", "Explain", "Name", "Status", "CreatedAt", });
     internal_static_glory_api_UserInfo_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_glory_api_UserInfo_fieldAccessorTable = new
@@ -260,7 +262,7 @@ public final class VirtualCurrencyOuterClass {
     internal_static_glory_api_ListVirtualCurrencyResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListVirtualCurrencyResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "VirtualCurrencyInfo", });
+        new java.lang.String[] { "BaseResp", "VirtualCurrencyInfo", "Pagination", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
   }
 

@@ -15,6 +15,7 @@ message VirtualCurrency {
   string explain = 5;//充值原因
   string name = 6;//虚拟币名称 默认： 成长币
   string status = 8;//recharge 待充值,recharged 已充值
+  string created_at = 9;
 }
 
 message UserInfo {
@@ -92,6 +93,7 @@ message ListVirtualCurrencyRequest {
 message ListVirtualCurrencyResponse {
   base.BaseResponse base_resp = 1;
   repeated VirtualCurrencyInfo virtual_currency_info = 2;
+  base.PaginationResponse pagination = 100;
 }
 
 

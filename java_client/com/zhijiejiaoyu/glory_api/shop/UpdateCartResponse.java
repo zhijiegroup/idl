@@ -61,9 +61,17 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 16: {
+          case 18: {
+            com.zhijiejiaoyu.glory_api.shop.CartShow.Builder subBuilder = null;
+            if (cartInfo_ != null) {
+              subBuilder = cartInfo_.toBuilder();
+            }
+            cartInfo = input.readMessage(com.zhijiejiaoyu.glory_api.shop.CartShow.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(cartInfo);
+              cartInfo = subBuilder.buildPartial();
+            }
 
-            cartId = input.readInt64();
             break;
           }
           default: {
@@ -124,15 +132,30 @@ private static final long serialVersionUID = 0L;
     return getBaseResp();
   }
 
-  public static final int CART_ID_FIELD_NUMBER = 2;
-  private long cartId;
+  public static final int CART_INFO_FIELD_NUMBER = 2;
+  private com.zhijiejiaoyu.glory_api.shop.CartShow cartInfo;
   /**
-   * <code>int64 cart_id = 2;</code>
-   * @return The cartId.
+   * <code>.glory_api.CartShow cart_info = 2;</code>
+   * @return Whether the cartInfo field is set.
    */
   @java.lang.Override
-  public long getCartId() {
-    return cartId;
+  public boolean hasCartInfo() {
+    return cartInfo_ != null;
+  }
+  /**
+   * <code>.glory_api.CartShow cart_info = 2;</code>
+   * @return The cartInfo.
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.shop.CartShow getCartInfo() {
+    return cartInfo == null ? com.zhijiejiaoyu.glory_api.shop.CartShow.getDefaultInstance() : cartInfo;
+  }
+  /**
+   * <code>.glory_api.CartShow cart_info = 2;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.shop.CartShowOrBuilder getCartInfoOrBuilder() {
+    return getCartInfo();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -152,8 +175,8 @@ private static final long serialVersionUID = 0L;
     if (baseResp_ != null) {
       output.writeMessage(1, getBaseResp());
     }
-    if (cartId_ != 0L) {
-      output.writeInt64(2, cartId);
+    if (cartInfo_ != null) {
+      output.writeMessage(2, getCartInfo());
     }
     unknownFields.writeTo(output);
   }
@@ -168,9 +191,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
-    if (cartId_ != 0L) {
+    if (cartInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, cartId);
+        .computeMessageSize(2, getCartInfo());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -192,8 +215,11 @@ private static final long serialVersionUID = 0L;
       if (!getBaseResp()
           .equals(other.getBaseResp())) return false;
     }
-    if (getCartId()
-        != other.getCartId()) return false;
+    if (hasCartInfo() != other.hasCartInfo()) return false;
+    if (hasCartInfo()) {
+      if (!getCartInfo()
+          .equals(other.getCartInfo())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -209,9 +235,10 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_RESP_FIELD_NUMBER;
       hash = (53 * hash) + getBaseResp().hashCode();
     }
-    hash = (37 * hash) + CART_ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getCartId());
+    if (hasCartInfo()) {
+      hash = (37 * hash) + CART_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getCartInfo().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -351,8 +378,12 @@ private static final long serialVersionUID = 0L;
         baseResp = null;
         baseRespBuilder = null;
       }
-      cartId = 0L;
-
+      if (cartInfoBuilder == null) {
+        cartInfo = null;
+      } else {
+        cartInfo = null;
+        cartInfoBuilder = null;
+      }
       return this;
     }
 
@@ -384,7 +415,11 @@ private static final long serialVersionUID = 0L;
       } else {
         result.baseResp = baseRespBuilder_.build();
       }
-      result.cartId = cartId;
+      if (cartInfoBuilder == null) {
+        result.cartInfo = cartInfo;
+      } else {
+        result.cartInfo = cartInfoBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -436,8 +471,8 @@ private static final long serialVersionUID = 0L;
       if (other.hasBaseResp()) {
         mergeBaseResp(other.getBaseResp());
       }
-      if (other.getCartId() != 0L) {
-        setCartId(other.getCartId());
+      if (other.hasCartInfo()) {
+        mergeCartInfo(other.getCartInfo());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -587,35 +622,123 @@ private static final long serialVersionUID = 0L;
       return baseRespBuilder;
     }
 
-    private long cartId_ ;
+    private com.zhijiejiaoyu.glory_api.shop.CartShow cartInfo;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.shop.CartShow, com.zhijiejiaoyu.glory_api.shop.CartShow.Builder, com.zhijiejiaoyu.glory_api.shop.CartShowOrBuilder> cartInfoBuilder;
     /**
-     * <code>int64 cart_id = 2;</code>
-     * @return The cartId.
+     * <code>.glory_api.CartShow cart_info = 2;</code>
+     * @return Whether the cartInfo field is set.
      */
-    @java.lang.Override
-    public long getCartId() {
-      return cartId;
+    public boolean hasCartInfo() {
+      return cartInfoBuilder_ != null || cartInfo_ != null;
     }
     /**
-     * <code>int64 cart_id = 2;</code>
-     * @param value The cartId to set.
-     * @return This builder for chaining.
+     * <code>.glory_api.CartShow cart_info = 2;</code>
+     * @return The cartInfo.
      */
-    public Builder setCartId(long value) {
-      
-      cartId = value;
-      onChanged();
+    public com.zhijiejiaoyu.glory_api.shop.CartShow getCartInfo() {
+      if (cartInfoBuilder == null) {
+        return cartInfo == null ? com.zhijiejiaoyu.glory_api.shop.CartShow.getDefaultInstance() : cartInfo;
+      } else {
+        return cartInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.glory_api.CartShow cart_info = 2;</code>
+     */
+    public Builder setCartInfo(com.zhijiejiaoyu.glory_api.shop.CartShow value) {
+      if (cartInfoBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        cartInfo = value;
+        onChanged();
+      } else {
+        cartInfoBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
-     * <code>int64 cart_id = 2;</code>
-     * @return This builder for chaining.
+     * <code>.glory_api.CartShow cart_info = 2;</code>
      */
-    public Builder clearCartId() {
-      
-      cartId = 0L;
-      onChanged();
+    public Builder setCartInfo(
+        com.zhijiejiaoyu.glory_api.shop.CartShow.Builder builderForValue) {
+      if (cartInfoBuilder == null) {
+        cartInfo = builderForValue.build();
+        onChanged();
+      } else {
+        cartInfoBuilder_.setMessage(builderForValue.build());
+      }
+
       return this;
+    }
+    /**
+     * <code>.glory_api.CartShow cart_info = 2;</code>
+     */
+    public Builder mergeCartInfo(com.zhijiejiaoyu.glory_api.shop.CartShow value) {
+      if (cartInfoBuilder == null) {
+        if (cartInfo_ != null) {
+          cartInfo =
+            com.zhijiejiaoyu.glory_api.shop.CartShow.newBuilder(cartInfo).mergeFrom(value).buildPartial();
+        } else {
+          cartInfo = value;
+        }
+        onChanged();
+      } else {
+        cartInfoBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.CartShow cart_info = 2;</code>
+     */
+    public Builder clearCartInfo() {
+      if (cartInfoBuilder == null) {
+        cartInfo = null;
+        onChanged();
+      } else {
+        cartInfo = null;
+        cartInfoBuilder = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.CartShow cart_info = 2;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.shop.CartShow.Builder getCartInfoBuilder() {
+      
+      onChanged();
+      return getCartInfoFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.glory_api.CartShow cart_info = 2;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.shop.CartShowOrBuilder getCartInfoOrBuilder() {
+      if (cartInfoBuilder_ != null) {
+        return cartInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return cartInfo == null ?
+            com.zhijiejiaoyu.glory_api.shop.CartShow.getDefaultInstance() : cartInfo;
+      }
+    }
+    /**
+     * <code>.glory_api.CartShow cart_info = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.shop.CartShow, com.zhijiejiaoyu.glory_api.shop.CartShow.Builder, com.zhijiejiaoyu.glory_api.shop.CartShowOrBuilder> 
+        getCartInfoFieldBuilder() {
+      if (cartInfoBuilder == null) {
+        cartInfoBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.shop.CartShow, com.zhijiejiaoyu.glory_api.shop.CartShow.Builder, com.zhijiejiaoyu.glory_api.shop.CartShowOrBuilder>(
+                getCartInfo(),
+                getParentForChildren(),
+                isClean());
+        cartInfo = null;
+      }
+      return cartInfoBuilder;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

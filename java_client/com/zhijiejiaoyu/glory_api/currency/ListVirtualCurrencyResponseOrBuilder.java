@@ -45,4 +45,19 @@ public interface ListVirtualCurrencyResponseOrBuilder extends
    */
   com.zhijiejiaoyu.glory_api.currency.VirtualCurrencyInfoOrBuilder getVirtualCurrencyInfoOrBuilder(
       int index);
+
+  /**
+   * <code>.base.PaginationResponse pagination = 100;</code>
+   * @return Whether the pagination field is set.
+   */
+  boolean hasPagination();
+  /**
+   * <code>.base.PaginationResponse pagination = 100;</code>
+   * @return The pagination.
+   */
+  com.zhijiejiaoyu.base.PaginationResponse getPagination();
+  /**
+   * <code>.base.PaginationResponse pagination = 100;</code>
+   */
+  com.zhijiejiaoyu.base.PaginationResponseOrBuilder getPaginationOrBuilder();
 }
