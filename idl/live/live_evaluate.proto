@@ -79,7 +79,8 @@ message GetEvaluateDetailResponse {
     string zero_comment=8;
     double score = 9;
     string ai_feedback = 10;
-    repeated EvaluateDetail detail = 11;
+    bool baseline = 11;
+    repeated EvaluateDetail detail = 12;
 }
 
 message SubmitEvaluateRequest {
@@ -94,7 +95,8 @@ message SubmitEvaluateRequest {
     string zero_comment=9;
     double score = 10;
     string ai_feedback = 11;
-    repeated EvaluateDetail detail = 12;
+    bool baseline = 12;
+    repeated EvaluateDetail detail = 13;
 }
 
 message SubmitEvaluateResponse {

@@ -233,7 +233,7 @@ public final class OrderOuterClass {
       "i.CreateOrderInfo\"\224\001\n\023CreateOrderRespons" +
       "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
       "\022/\n\ttrans_res\030\002 \003(\0132\034.glory_api.TransRes" +
-      "ponseInfo\022\021\n\tCNY_total\030\003 \001(\001\022\022\n\nCOIN_tot" +
+      "ponseInfo\022\021\n\tcny_total\030\003 \001(\001\022\022\n\ncoin_tot" +
       "al\030\004 \001(\001\"`\n\021TransResponseInfo\022\020\n\010trans_i" +
       "d\030\001 \001(\003\022\'\n\005order\030\002 \003(\0132\030.glory_api.Order" +
       "Response\022\020\n\010currency\030\003 \001(\t\"3\n\rOrderRespo" +
@@ -353,7 +353,7 @@ public final class OrderOuterClass {
     internal_static_glory_api_CreateOrderResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CreateOrderResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "TransRes", "CNYTotal", "COINTotal", });
+        new java.lang.String[] { "BaseResp", "TransRes", "CnyTotal", "CoinTotal", });
     internal_static_glory_api_TransResponseInfo_descriptor =
       getDescriptor().getMessageTypes().get(11);
     internal_static_glory_api_TransResponseInfo_fieldAccessorTable = new

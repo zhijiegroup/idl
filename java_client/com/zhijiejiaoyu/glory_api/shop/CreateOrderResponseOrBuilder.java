@@ -51,18 +51,18 @@ public interface CreateOrderResponseOrBuilder extends
    *人民币总金额，单位为分 微信支付使用
    * </pre>
    *
-   * <code>double CNY_total = 3;</code>
-   * @return The cNYTotal.
+   * <code>double cny_total = 3;</code>
+   * @return The cnyTotal.
    */
-  double getCNYTotal();
+  double getCnyTotal();
 
   /**
    * <pre>
    *虚拟币总金额
    * </pre>
    *
-   * <code>double COIN_total = 4;</code>
-   * @return The cOINTotal.
+   * <code>double coin_total = 4;</code>
+   * @return The coinTotal.
    */
-  double getCOINTotal();
+  double getCoinTotal();
 }

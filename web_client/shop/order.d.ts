@@ -40,7 +40,7 @@ export interface CreateOrderInfo {
   original_amount?: number;
   tax?: number;
   deliver_fee?: number;
-  /** 货币类型  CNY :人民币 , COIN:虚拟币 */
+  /** 货币类型  CNY :人民币 , COIN:虚拟币 不区分大小写 */
   currency?: string;
   deliver_address?: string;
   deliver_post?: number;
@@ -163,9 +163,9 @@ export interface CreateOrderResponse {
   base_resp?: base.BaseResponse;
   trans_res?: Array<TransResponseInfo>;
   /** 人民币总金额，单位为分 微信支付使用 */
-  CNY_total?: number;
+  cny_total?: number;
   /** 虚拟币总金额 */
-  COIN_total?: number;
+  coin_total?: number;
 }
 
 export interface TransResponseInfo {
