@@ -141,7 +141,8 @@ message ListCollegeResponse {
 
 message Major {
   int64 major_id = 1; // 创建不传
-  string major_name  = 2; //名称 必传
+  int64 college_id = 2; // 学院id, 创建必传
+  string major_name  = 3; //名称 必传
   string major_type = 4; // 专业类型, 创建必传, e.g. live
   int64 tenant_id = 7; // 学校id，创建必传
 }

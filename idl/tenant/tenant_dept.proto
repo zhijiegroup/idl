@@ -37,7 +37,6 @@ message UpdateEduDeptRequest {
 
 message UpdateEduDeptResponse {
     base.BaseResponse base_resp = 1;
-    int64 edu_dept_id = 2;
 }
 
 message GoverDept {
