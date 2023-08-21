@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private LiveLikeRankMine() {
     userName = "";
+    tenant = "";
     major = "";
     class_ = "";
   }
@@ -60,21 +61,27 @@ private static final long serialVersionUID = 0L;
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            major = s;
+            tenant = s;
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
+            major = s;
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
             class_ = s;
             break;
           }
-          case 32: {
+          case 40: {
 
             likeAmount = input.readInt64();
             break;
           }
-          case 40: {
+          case 48: {
 
             rank = input.readInt64();
             break;
@@ -149,10 +156,48 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int MAJOR_FIELD_NUMBER = 2;
+  public static final int TENANT_FIELD_NUMBER = 2;
+  private volatile java.lang.Object tenant;
+  /**
+   * <code>string tenant = 2;</code>
+   * @return The tenant.
+   */
+  @java.lang.Override
+  public java.lang.String getTenant() {
+    java.lang.Object ref = tenant;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      tenant = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string tenant = 2;</code>
+   * @return The bytes for tenant.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTenantBytes() {
+    java.lang.Object ref = tenant;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      tenant = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int MAJOR_FIELD_NUMBER = 3;
   private volatile java.lang.Object major;
   /**
-   * <code>string major = 2;</code>
+   * <code>string major = 3;</code>
    * @return The major.
    */
   @java.lang.Override
@@ -169,7 +214,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string major = 2;</code>
+   * <code>string major = 3;</code>
    * @return The bytes for major.
    */
   @java.lang.Override
@@ -187,10 +232,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int CLASS_FIELD_NUMBER = 3;
+  public static final int CLASS_FIELD_NUMBER = 4;
   private volatile java.lang.Object class_;
   /**
-   * <code>string class = 3;</code>
+   * <code>string class = 4;</code>
    * @return The class.
    */
   @java.lang.Override
@@ -207,7 +252,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string class = 3;</code>
+   * <code>string class = 4;</code>
    * @return The bytes for class.
    */
   @java.lang.Override
@@ -225,10 +270,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int LIKE_AMOUNT_FIELD_NUMBER = 4;
+  public static final int LIKE_AMOUNT_FIELD_NUMBER = 5;
   private long likeAmount;
   /**
-   * <code>int64 like_amount = 4;</code>
+   * <code>int64 like_amount = 5;</code>
    * @return The likeAmount.
    */
   @java.lang.Override
@@ -236,10 +281,10 @@ private static final long serialVersionUID = 0L;
     return likeAmount;
   }
 
-  public static final int RANK_FIELD_NUMBER = 5;
+  public static final int RANK_FIELD_NUMBER = 6;
   private long rank;
   /**
-   * <code>int64 rank = 5;</code>
+   * <code>int64 rank = 6;</code>
    * @return The rank.
    */
   @java.lang.Override
@@ -264,17 +309,20 @@ private static final long serialVersionUID = 0L;
     if (!getUserNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userName);
     }
+    if (!getTenantBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tenant);
+    }
     if (!getMajorBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, major);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, major);
     }
     if (!getClass_Bytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, class_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, class_);
     }
     if (likeAmount_ != 0L) {
-      output.writeInt64(4, likeAmount);
+      output.writeInt64(5, likeAmount);
     }
     if (rank_ != 0L) {
-      output.writeInt64(5, rank);
+      output.writeInt64(6, rank);
     }
     unknownFields.writeTo(output);
   }
@@ -288,19 +336,22 @@ private static final long serialVersionUID = 0L;
     if (!getUserNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userName);
     }
+    if (!getTenantBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tenant);
+    }
     if (!getMajorBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, major);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, major);
     }
     if (!getClass_Bytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, class_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, class_);
     }
     if (likeAmount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(4, likeAmount);
+        .computeInt64Size(5, likeAmount);
     }
     if (rank_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(5, rank);
+        .computeInt64Size(6, rank);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -319,6 +370,8 @@ private static final long serialVersionUID = 0L;
 
     if (!getUserName()
         .equals(other.getUserName())) return false;
+    if (!getTenant()
+        .equals(other.getTenant())) return false;
     if (!getMajor()
         .equals(other.getMajor())) return false;
     if (!getClass_()
@@ -340,6 +393,8 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + USER_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getUserName().hashCode();
+    hash = (37 * hash) + TENANT_FIELD_NUMBER;
+    hash = (53 * hash) + getTenant().hashCode();
     hash = (37 * hash) + MAJOR_FIELD_NUMBER;
     hash = (53 * hash) + getMajor().hashCode();
     hash = (37 * hash) + CLASS_FIELD_NUMBER;
@@ -485,6 +540,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       userName = "";
 
+      tenant = "";
+
       major = "";
 
       class_ = "";
@@ -520,6 +577,7 @@ private static final long serialVersionUID = 0L;
     public com.zhijiejiaoyu.glory_api.live.LiveLikeRankMine buildPartial() {
       com.zhijiejiaoyu.glory_api.live.LiveLikeRankMine result = new com.zhijiejiaoyu.glory_api.live.LiveLikeRankMine(this);
       result.userName = userName;
+      result.tenant = tenant;
       result.major = major;
       result.class_ = class_;
       result.likeAmount = likeAmount;
@@ -574,6 +632,10 @@ private static final long serialVersionUID = 0L;
       if (other == com.zhijiejiaoyu.glory_api.live.LiveLikeRankMine.getDefaultInstance()) return this;
       if (!other.getUserName().isEmpty()) {
         userName = other.userName;
+        onChanged();
+      }
+      if (!other.getTenant().isEmpty()) {
+        tenant = other.tenant;
         onChanged();
       }
       if (!other.getMajor().isEmpty()) {
@@ -695,9 +757,85 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object tenant = "";
+    /**
+     * <code>string tenant = 2;</code>
+     * @return The tenant.
+     */
+    public java.lang.String getTenant() {
+      java.lang.Object ref = tenant;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        tenant = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string tenant = 2;</code>
+     * @return The bytes for tenant.
+     */
+    public com.google.protobuf.ByteString
+        getTenantBytes() {
+      java.lang.Object ref = tenant;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        tenant = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string tenant = 2;</code>
+     * @param value The tenant to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTenant(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      tenant = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string tenant = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTenant() {
+      
+      tenant = getDefaultInstance().getTenant();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string tenant = 2;</code>
+     * @param value The bytes for tenant to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTenantBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      tenant = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object major = "";
     /**
-     * <code>string major = 2;</code>
+     * <code>string major = 3;</code>
      * @return The major.
      */
     public java.lang.String getMajor() {
@@ -713,7 +851,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string major = 2;</code>
+     * <code>string major = 3;</code>
      * @return The bytes for major.
      */
     public com.google.protobuf.ByteString
@@ -730,7 +868,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string major = 2;</code>
+     * <code>string major = 3;</code>
      * @param value The major to set.
      * @return This builder for chaining.
      */
@@ -745,7 +883,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string major = 2;</code>
+     * <code>string major = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearMajor() {
@@ -755,7 +893,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string major = 2;</code>
+     * <code>string major = 3;</code>
      * @param value The bytes for major to set.
      * @return This builder for chaining.
      */
@@ -773,7 +911,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object class_ = "";
     /**
-     * <code>string class = 3;</code>
+     * <code>string class = 4;</code>
      * @return The class.
      */
     public java.lang.String getClass_() {
@@ -789,7 +927,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string class = 3;</code>
+     * <code>string class = 4;</code>
      * @return The bytes for class.
      */
     public com.google.protobuf.ByteString
@@ -806,7 +944,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string class = 3;</code>
+     * <code>string class = 4;</code>
      * @param value The class to set.
      * @return This builder for chaining.
      */
@@ -821,7 +959,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string class = 3;</code>
+     * <code>string class = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearClass_() {
@@ -831,7 +969,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string class = 3;</code>
+     * <code>string class = 4;</code>
      * @param value The bytes for class to set.
      * @return This builder for chaining.
      */
@@ -849,7 +987,7 @@ private static final long serialVersionUID = 0L;
 
     private long likeAmount_ ;
     /**
-     * <code>int64 like_amount = 4;</code>
+     * <code>int64 like_amount = 5;</code>
      * @return The likeAmount.
      */
     @java.lang.Override
@@ -857,7 +995,7 @@ private static final long serialVersionUID = 0L;
       return likeAmount;
     }
     /**
-     * <code>int64 like_amount = 4;</code>
+     * <code>int64 like_amount = 5;</code>
      * @param value The likeAmount to set.
      * @return This builder for chaining.
      */
@@ -868,7 +1006,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 like_amount = 4;</code>
+     * <code>int64 like_amount = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearLikeAmount() {
@@ -880,7 +1018,7 @@ private static final long serialVersionUID = 0L;
 
     private long rank_ ;
     /**
-     * <code>int64 rank = 5;</code>
+     * <code>int64 rank = 6;</code>
      * @return The rank.
      */
     @java.lang.Override
@@ -888,7 +1026,7 @@ private static final long serialVersionUID = 0L;
       return rank;
     }
     /**
-     * <code>int64 rank = 5;</code>
+     * <code>int64 rank = 6;</code>
      * @param value The rank to set.
      * @return This builder for chaining.
      */
@@ -899,7 +1037,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 rank = 5;</code>
+     * <code>int64 rank = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearRank() {

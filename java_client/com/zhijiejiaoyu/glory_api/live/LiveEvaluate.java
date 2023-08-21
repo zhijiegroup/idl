@@ -297,66 +297,69 @@ public final class LiveEvaluate {
       "\n\033IgnoreLiveEvaluationRequest\022\'\n\014base_re" +
       "quest\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007room_i" +
       "d\030\002 \001(\003\"E\n\034IgnoreLiveEvaluationResponse\022" +
-      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"X" +
-      "\n\016LiveRankDetail\022\021\n\tuser_name\030\001 \001(\t\022\r\n\005m" +
-      "ajor\030\002 \001(\t\022\r\n\005class\030\003 \001(\t\022\025\n\rlive_durati" +
-      "on\030\004 \001(\003\"d\n\014LiveRankMine\022\021\n\tuser_name\030\001 " +
-      "\001(\t\022\r\n\005major\030\002 \001(\t\022\r\n\005class\030\003 \001(\t\022\025\n\rliv" +
-      "e_duration\030\004 \001(\003\022\014\n\004rank\030\005 \001(\003\"_\n\010LiveRa" +
-      "nk\022,\n\trank_list\030\001 \003(\0132\031.glory_api.LiveRa" +
-      "nkDetail\022%\n\004mine\030d \001(\0132\027.glory_api.LiveR" +
-      "ankMine\"J\n\016ShopRankDetail\022\021\n\tshop_name\030\001" +
-      " \001(\t\022\020\n\010shop_url\030\002 \001(\t\022\023\n\013sale_amount\030\003 " +
-      "\001(\003\"V\n\014ShopRankMine\022\021\n\tshop_name\030\001 \001(\t\022\020" +
-      "\n\010shop_url\030\002 \001(\t\022\023\n\013sale_amount\030\003 \001(\003\022\014\n" +
-      "\004rank\030\004 \001(\003\"_\n\010ShopRank\022,\n\trank_list\030\001 \003" +
-      "(\0132\031.glory_api.ShopRankDetail\022%\n\004mine\030d " +
-      "\001(\0132\027.glory_api.ShopRankMine\"x\n\021ProductR" +
-      "ankDetail\022\024\n\014product_name\030\001 \001(\t\022\023\n\013produ" +
-      "ct_url\030\002 \001(\t\022\021\n\tshop_name\030\003 \001(\t\022\020\n\010shop_" +
-      "url\030\004 \001(\t\022\023\n\013sale_amount\030\005 \001(\003\"\204\001\n\017Produ" +
-      "ctRankMine\022\024\n\014product_name\030\001 \001(\t\022\023\n\013prod" +
-      "uct_url\030\002 \001(\t\022\021\n\tshop_name\030\003 \001(\t\022\020\n\010shop" +
-      "_url\030\004 \001(\t\022\023\n\013sale_amount\030\005 \001(\003\022\014\n\004rank\030" +
-      "\006 \001(\003\"h\n\013ProductRank\022/\n\trank_list\030\001 \003(\0132" +
-      "\034.glory_api.ProductRankDetail\022(\n\004mine\030d " +
-      "\001(\0132\032.glory_api.ProductRankMine\"Z\n\022LiveL" +
-      "ikeRankDetail\022\021\n\tuser_name\030\001 \001(\t\022\r\n\005majo" +
-      "r\030\002 \001(\t\022\r\n\005class\030\003 \001(\t\022\023\n\013like_amount\030\004 " +
-      "\001(\003\"f\n\020LiveLikeRankMine\022\021\n\tuser_name\030\001 \001" +
-      "(\t\022\r\n\005major\030\002 \001(\t\022\r\n\005class\030\003 \001(\t\022\023\n\013like" +
-      "_amount\030\004 \001(\003\022\014\n\004rank\030\005 \001(\003\"k\n\014LiveLikeR" +
-      "ank\0220\n\trank_list\030\001 \003(\0132\035.glory_api.LiveL" +
-      "ikeRankDetail\022)\n\004mine\030d \001(\0132\033.glory_api." +
-      "LiveLikeRankMine\"\\\n\023LiveOrderRankDetail\022" +
-      "\021\n\tuser_name\030\001 \001(\t\022\r\n\005major\030\002 \001(\t\022\r\n\005cla" +
-      "ss\030\003 \001(\t\022\024\n\014order_amount\030\004 \001(\003\"h\n\021LiveOr" +
-      "derRankMine\022\021\n\tuser_name\030\001 \001(\t\022\r\n\005major\030" +
-      "\002 \001(\t\022\r\n\005class\030\003 \001(\t\022\024\n\014order_amount\030\004 \001" +
-      "(\003\022\014\n\004rank\030\005 \001(\003\"n\n\rLiveOrderRank\0221\n\tran" +
-      "k_list\030\001 \003(\0132\036.glory_api.LiveOrderRankDe" +
-      "tail\022*\n\004mine\030d \001(\0132\034.glory_api.LiveOrder" +
-      "RankMine\"Z\n\030LiveEvaluationRankDetail\022\021\n\t" +
-      "user_name\030\001 \001(\t\022\r\n\005major\030\002 \001(\t\022\r\n\005class\030" +
-      "\003 \001(\t\022\r\n\005score\030\004 \001(\001\"f\n\026LiveEvaluationRa" +
-      "nkMine\022\021\n\tuser_name\030\001 \001(\t\022\r\n\005major\030\002 \001(\t" +
-      "\022\r\n\005class\030\003 \001(\t\022\r\n\005score\030\004 \001(\001\022\014\n\004rank\030\005" +
-      " \001(\003\"}\n\022LiveEvaluationRank\0226\n\trank_list\030" +
-      "\001 \003(\0132#.glory_api.LiveEvaluationRankDeta" +
-      "il\022/\n\004mine\030d \001(\0132!.glory_api.LiveEvaluat" +
-      "ionRankMine\"u\n\016GetRankRequest\022\'\n\014base_re" +
-      "quest\030\001 \001(\0132\021.base.BaseRequest\022\020\n\010catego" +
-      "ry\030\002 \001(\t\022\014\n\004type\030\003 \001(\t\022\r\n\005start\030\004 \001(\003\022\013\n" +
-      "\003end\030\005 \001(\003\"\271\002\n\017GetRankResponse\022%\n\tbase_r" +
-      "esp\030\001 \001(\0132\022.base.BaseResponse\022!\n\004live\030\002 " +
-      "\001(\0132\023.glory_api.LiveRank\022!\n\004shop\030\003 \001(\0132\023" +
-      ".glory_api.ShopRank\022\'\n\007product\030\004 \001(\0132\026.g" +
-      "lory_api.ProductRank\022*\n\tlive_like\030\005 \001(\0132" +
-      "\027.glory_api.LiveLikeRank\022,\n\nlive_order\030\006" +
-      " \001(\0132\030.glory_api.LiveOrderRank\0226\n\017live_e" +
-      "valuation\030\007 \001(\0132\035.glory_api.LiveEvaluati" +
-      "onRankB#\n\037com.zhijiejiaoyu.glory_api.liv" +
-      "eP\001b\006proto3"
+      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"h" +
+      "\n\016LiveRankDetail\022\021\n\tuser_name\030\001 \001(\t\022\016\n\006t" +
+      "enant\030\002 \001(\t\022\r\n\005major\030\003 \001(\t\022\r\n\005class\030\004 \001(" +
+      "\t\022\025\n\rlive_duration\030\005 \001(\003\"t\n\014LiveRankMine" +
+      "\022\021\n\tuser_name\030\001 \001(\t\022\016\n\006tenant\030\002 \001(\t\022\r\n\005m" +
+      "ajor\030\003 \001(\t\022\r\n\005class\030\004 \001(\t\022\025\n\rlive_durati" +
+      "on\030\005 \001(\003\022\014\n\004rank\030\006 \001(\003\"_\n\010LiveRank\022,\n\tra" +
+      "nk_list\030\001 \003(\0132\031.glory_api.LiveRankDetail" +
+      "\022%\n\004mine\030d \001(\0132\027.glory_api.LiveRankMine\"" +
+      "J\n\016ShopRankDetail\022\021\n\tshop_name\030\001 \001(\t\022\020\n\010" +
+      "shop_url\030\002 \001(\t\022\023\n\013sale_amount\030\003 \001(\003\"V\n\014S" +
+      "hopRankMine\022\021\n\tshop_name\030\001 \001(\t\022\020\n\010shop_u" +
+      "rl\030\002 \001(\t\022\023\n\013sale_amount\030\003 \001(\003\022\014\n\004rank\030\004 " +
+      "\001(\003\"_\n\010ShopRank\022,\n\trank_list\030\001 \003(\0132\031.glo" +
+      "ry_api.ShopRankDetail\022%\n\004mine\030d \001(\0132\027.gl" +
+      "ory_api.ShopRankMine\"x\n\021ProductRankDetai" +
+      "l\022\024\n\014product_name\030\001 \001(\t\022\023\n\013product_url\030\002" +
+      " \001(\t\022\021\n\tshop_name\030\003 \001(\t\022\020\n\010shop_url\030\004 \001(" +
+      "\t\022\023\n\013sale_amount\030\005 \001(\003\"\204\001\n\017ProductRankMi" +
+      "ne\022\024\n\014product_name\030\001 \001(\t\022\023\n\013product_url\030" +
+      "\002 \001(\t\022\021\n\tshop_name\030\003 \001(\t\022\020\n\010shop_url\030\004 \001" +
+      "(\t\022\023\n\013sale_amount\030\005 \001(\003\022\014\n\004rank\030\006 \001(\003\"h\n" +
+      "\013ProductRank\022/\n\trank_list\030\001 \003(\0132\034.glory_" +
+      "api.ProductRankDetail\022(\n\004mine\030d \001(\0132\032.gl" +
+      "ory_api.ProductRankMine\"j\n\022LiveLikeRankD" +
+      "etail\022\021\n\tuser_name\030\001 \001(\t\022\016\n\006tenant\030\002 \001(\t" +
+      "\022\r\n\005major\030\003 \001(\t\022\r\n\005class\030\004 \001(\t\022\023\n\013like_a" +
+      "mount\030\005 \001(\003\"v\n\020LiveLikeRankMine\022\021\n\tuser_" +
+      "name\030\001 \001(\t\022\016\n\006tenant\030\002 \001(\t\022\r\n\005major\030\003 \001(" +
+      "\t\022\r\n\005class\030\004 \001(\t\022\023\n\013like_amount\030\005 \001(\003\022\014\n" +
+      "\004rank\030\006 \001(\003\"k\n\014LiveLikeRank\0220\n\trank_list" +
+      "\030\001 \003(\0132\035.glory_api.LiveLikeRankDetail\022)\n" +
+      "\004mine\030d \001(\0132\033.glory_api.LiveLikeRankMine" +
+      "\"l\n\023LiveOrderRankDetail\022\021\n\tuser_name\030\001 \001" +
+      "(\t\022\016\n\006tenant\030\002 \001(\t\022\r\n\005major\030\003 \001(\t\022\r\n\005cla" +
+      "ss\030\004 \001(\t\022\024\n\014order_amount\030\005 \001(\003\"x\n\021LiveOr" +
+      "derRankMine\022\021\n\tuser_name\030\001 \001(\t\022\016\n\006tenant" +
+      "\030\002 \001(\t\022\r\n\005major\030\003 \001(\t\022\r\n\005class\030\004 \001(\t\022\024\n\014" +
+      "order_amount\030\005 \001(\003\022\014\n\004rank\030\006 \001(\003\"n\n\rLive" +
+      "OrderRank\0221\n\trank_list\030\001 \003(\0132\036.glory_api" +
+      ".LiveOrderRankDetail\022*\n\004mine\030d \001(\0132\034.glo" +
+      "ry_api.LiveOrderRankMine\"j\n\030LiveEvaluati" +
+      "onRankDetail\022\021\n\tuser_name\030\001 \001(\t\022\016\n\006tenan" +
+      "t\030\002 \001(\t\022\r\n\005major\030\003 \001(\t\022\r\n\005class\030\004 \001(\t\022\r\n" +
+      "\005score\030\005 \001(\001\"v\n\026LiveEvaluationRankMine\022\021" +
+      "\n\tuser_name\030\001 \001(\t\022\016\n\006tenant\030\002 \001(\t\022\r\n\005maj" +
+      "or\030\003 \001(\t\022\r\n\005class\030\004 \001(\t\022\r\n\005score\030\005 \001(\001\022\014" +
+      "\n\004rank\030\006 \001(\003\"}\n\022LiveEvaluationRank\0226\n\tra" +
+      "nk_list\030\001 \003(\0132#.glory_api.LiveEvaluation" +
+      "RankDetail\022/\n\004mine\030d \001(\0132!.glory_api.Liv" +
+      "eEvaluationRankMine\"u\n\016GetRankRequest\022\'\n" +
+      "\014base_request\030\001 \001(\0132\021.base.BaseRequest\022\020" +
+      "\n\010category\030\002 \001(\t\022\014\n\004type\030\003 \001(\t\022\r\n\005start\030" +
+      "\004 \001(\003\022\013\n\003end\030\005 \001(\003\"\271\002\n\017GetRankResponse\022%" +
+      "\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022!\n" +
+      "\004live\030\002 \001(\0132\023.glory_api.LiveRank\022!\n\004shop" +
+      "\030\003 \001(\0132\023.glory_api.ShopRank\022\'\n\007product\030\004" +
+      " \001(\0132\026.glory_api.ProductRank\022*\n\tlive_lik" +
+      "e\030\005 \001(\0132\027.glory_api.LiveLikeRank\022,\n\nlive" +
+      "_order\030\006 \001(\0132\030.glory_api.LiveOrderRank\0226" +
+      "\n\017live_evaluation\030\007 \001(\0132\035.glory_api.Live" +
+      "EvaluationRankB#\n\037com.zhijiejiaoyu.glory" +
+      "_api.liveP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -488,13 +491,13 @@ public final class LiveEvaluate {
     internal_static_glory_api_LiveRankDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_LiveRankDetail_descriptor,
-        new java.lang.String[] { "UserName", "Major", "Class_", "LiveDuration", });
+        new java.lang.String[] { "UserName", "Tenant", "Major", "Class_", "LiveDuration", });
     internal_static_glory_api_LiveRankMine_descriptor =
       getDescriptor().getMessageTypes().get(21);
     internal_static_glory_api_LiveRankMine_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_LiveRankMine_descriptor,
-        new java.lang.String[] { "UserName", "Major", "Class_", "LiveDuration", "Rank", });
+        new java.lang.String[] { "UserName", "Tenant", "Major", "Class_", "LiveDuration", "Rank", });
     internal_static_glory_api_LiveRank_descriptor =
       getDescriptor().getMessageTypes().get(22);
     internal_static_glory_api_LiveRank_fieldAccessorTable = new
@@ -542,13 +545,13 @@ public final class LiveEvaluate {
     internal_static_glory_api_LiveLikeRankDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_LiveLikeRankDetail_descriptor,
-        new java.lang.String[] { "UserName", "Major", "Class_", "LikeAmount", });
+        new java.lang.String[] { "UserName", "Tenant", "Major", "Class_", "LikeAmount", });
     internal_static_glory_api_LiveLikeRankMine_descriptor =
       getDescriptor().getMessageTypes().get(30);
     internal_static_glory_api_LiveLikeRankMine_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_LiveLikeRankMine_descriptor,
-        new java.lang.String[] { "UserName", "Major", "Class_", "LikeAmount", "Rank", });
+        new java.lang.String[] { "UserName", "Tenant", "Major", "Class_", "LikeAmount", "Rank", });
     internal_static_glory_api_LiveLikeRank_descriptor =
       getDescriptor().getMessageTypes().get(31);
     internal_static_glory_api_LiveLikeRank_fieldAccessorTable = new
@@ -560,13 +563,13 @@ public final class LiveEvaluate {
     internal_static_glory_api_LiveOrderRankDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_LiveOrderRankDetail_descriptor,
-        new java.lang.String[] { "UserName", "Major", "Class_", "OrderAmount", });
+        new java.lang.String[] { "UserName", "Tenant", "Major", "Class_", "OrderAmount", });
     internal_static_glory_api_LiveOrderRankMine_descriptor =
       getDescriptor().getMessageTypes().get(33);
     internal_static_glory_api_LiveOrderRankMine_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_LiveOrderRankMine_descriptor,
-        new java.lang.String[] { "UserName", "Major", "Class_", "OrderAmount", "Rank", });
+        new java.lang.String[] { "UserName", "Tenant", "Major", "Class_", "OrderAmount", "Rank", });
     internal_static_glory_api_LiveOrderRank_descriptor =
       getDescriptor().getMessageTypes().get(34);
     internal_static_glory_api_LiveOrderRank_fieldAccessorTable = new
@@ -578,13 +581,13 @@ public final class LiveEvaluate {
     internal_static_glory_api_LiveEvaluationRankDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_LiveEvaluationRankDetail_descriptor,
-        new java.lang.String[] { "UserName", "Major", "Class_", "Score", });
+        new java.lang.String[] { "UserName", "Tenant", "Major", "Class_", "Score", });
     internal_static_glory_api_LiveEvaluationRankMine_descriptor =
       getDescriptor().getMessageTypes().get(36);
     internal_static_glory_api_LiveEvaluationRankMine_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_LiveEvaluationRankMine_descriptor,
-        new java.lang.String[] { "UserName", "Major", "Class_", "Score", "Rank", });
+        new java.lang.String[] { "UserName", "Tenant", "Major", "Class_", "Score", "Rank", });
     internal_static_glory_api_LiveEvaluationRank_descriptor =
       getDescriptor().getMessageTypes().get(37);
     internal_static_glory_api_LiveEvaluationRank_fieldAccessorTable = new
