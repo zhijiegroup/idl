@@ -5037,6 +5037,564 @@ public final class glory_apiGrpc {
     return getListTenantMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgRequest,
+      com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgResponse> getGetTenantOrgMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetTenantOrg",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgRequest,
+      com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgResponse> getGetTenantOrgMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgRequest, com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgResponse> getGetTenantOrgMethod;
+    if ((getGetTenantOrgMethod = glory_apiGrpc.getGetTenantOrgMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGetTenantOrgMethod = glory_apiGrpc.getGetTenantOrgMethod) == null) {
+          glory_apiGrpc.getGetTenantOrgMethod = getGetTenantOrgMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgRequest, com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetTenantOrg"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetTenantOrg"))
+              .build();
+        }
+      }
+    }
+    return getGetTenantOrgMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreateCollegeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.CreateCollegeResponse> getCreateCollegeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateCollege",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.CreateCollegeRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.CreateCollegeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreateCollegeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.CreateCollegeResponse> getCreateCollegeMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreateCollegeRequest, com.zhijiejiaoyu.glory_api.tenant.CreateCollegeResponse> getCreateCollegeMethod;
+    if ((getCreateCollegeMethod = glory_apiGrpc.getCreateCollegeMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCreateCollegeMethod = glory_apiGrpc.getCreateCollegeMethod) == null) {
+          glory_apiGrpc.getCreateCollegeMethod = getCreateCollegeMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.CreateCollegeRequest, com.zhijiejiaoyu.glory_api.tenant.CreateCollegeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateCollege"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.CreateCollegeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.CreateCollegeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CreateCollege"))
+              .build();
+        }
+      }
+    }
+    return getCreateCollegeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.GetCollegeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.GetCollegeResponse> getGetCollegeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetCollege",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.GetCollegeRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.GetCollegeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.GetCollegeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.GetCollegeResponse> getGetCollegeMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.GetCollegeRequest, com.zhijiejiaoyu.glory_api.tenant.GetCollegeResponse> getGetCollegeMethod;
+    if ((getGetCollegeMethod = glory_apiGrpc.getGetCollegeMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGetCollegeMethod = glory_apiGrpc.getGetCollegeMethod) == null) {
+          glory_apiGrpc.getGetCollegeMethod = getGetCollegeMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.GetCollegeRequest, com.zhijiejiaoyu.glory_api.tenant.GetCollegeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetCollege"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.GetCollegeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.GetCollegeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetCollege"))
+              .build();
+        }
+      }
+    }
+    return getGetCollegeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeResponse> getUpdateCollegeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateCollege",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeResponse> getUpdateCollegeMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeRequest, com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeResponse> getUpdateCollegeMethod;
+    if ((getUpdateCollegeMethod = glory_apiGrpc.getUpdateCollegeMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getUpdateCollegeMethod = glory_apiGrpc.getUpdateCollegeMethod) == null) {
+          glory_apiGrpc.getUpdateCollegeMethod = getUpdateCollegeMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeRequest, com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateCollege"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("UpdateCollege"))
+              .build();
+        }
+      }
+    }
+    return getUpdateCollegeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeResponse> getDeleteCollegeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteCollege",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeResponse> getDeleteCollegeMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeRequest, com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeResponse> getDeleteCollegeMethod;
+    if ((getDeleteCollegeMethod = glory_apiGrpc.getDeleteCollegeMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getDeleteCollegeMethod = glory_apiGrpc.getDeleteCollegeMethod) == null) {
+          glory_apiGrpc.getDeleteCollegeMethod = getDeleteCollegeMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeRequest, com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteCollege"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("DeleteCollege"))
+              .build();
+        }
+      }
+    }
+    return getDeleteCollegeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.ListCollegeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.ListCollegeResponse> getListCollegeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListCollege",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.ListCollegeRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.ListCollegeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.ListCollegeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.ListCollegeResponse> getListCollegeMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.ListCollegeRequest, com.zhijiejiaoyu.glory_api.tenant.ListCollegeResponse> getListCollegeMethod;
+    if ((getListCollegeMethod = glory_apiGrpc.getListCollegeMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListCollegeMethod = glory_apiGrpc.getListCollegeMethod) == null) {
+          glory_apiGrpc.getListCollegeMethod = getListCollegeMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.ListCollegeRequest, com.zhijiejiaoyu.glory_api.tenant.ListCollegeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListCollege"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.ListCollegeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.ListCollegeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListCollege"))
+              .build();
+        }
+      }
+    }
+    return getListCollegeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptRequest,
+      com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptResponse> getCreateEduDeptMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateEduDept",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptRequest,
+      com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptResponse> getCreateEduDeptMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptRequest, com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptResponse> getCreateEduDeptMethod;
+    if ((getCreateEduDeptMethod = glory_apiGrpc.getCreateEduDeptMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCreateEduDeptMethod = glory_apiGrpc.getCreateEduDeptMethod) == null) {
+          glory_apiGrpc.getCreateEduDeptMethod = getCreateEduDeptMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptRequest, com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateEduDept"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CreateEduDept"))
+              .build();
+        }
+      }
+    }
+    return getCreateEduDeptMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptRequest,
+      com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptResponse> getUpdateEduDeptMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateEduDept",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptRequest,
+      com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptResponse> getUpdateEduDeptMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptRequest, com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptResponse> getUpdateEduDeptMethod;
+    if ((getUpdateEduDeptMethod = glory_apiGrpc.getUpdateEduDeptMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getUpdateEduDeptMethod = glory_apiGrpc.getUpdateEduDeptMethod) == null) {
+          glory_apiGrpc.getUpdateEduDeptMethod = getUpdateEduDeptMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptRequest, com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateEduDept"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("UpdateEduDept"))
+              .build();
+        }
+      }
+    }
+    return getUpdateEduDeptMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptRequest,
+      com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptResponse> getDeleteEduDeptMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteEduDept",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptRequest,
+      com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptResponse> getDeleteEduDeptMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptRequest, com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptResponse> getDeleteEduDeptMethod;
+    if ((getDeleteEduDeptMethod = glory_apiGrpc.getDeleteEduDeptMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getDeleteEduDeptMethod = glory_apiGrpc.getDeleteEduDeptMethod) == null) {
+          glory_apiGrpc.getDeleteEduDeptMethod = getDeleteEduDeptMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptRequest, com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteEduDept"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("DeleteEduDept"))
+              .build();
+        }
+      }
+    }
+    return getDeleteEduDeptMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptRequest,
+      com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptResponse> getCreateGoverDeptMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateGoverDept",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptRequest,
+      com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptResponse> getCreateGoverDeptMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptRequest, com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptResponse> getCreateGoverDeptMethod;
+    if ((getCreateGoverDeptMethod = glory_apiGrpc.getCreateGoverDeptMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCreateGoverDeptMethod = glory_apiGrpc.getCreateGoverDeptMethod) == null) {
+          glory_apiGrpc.getCreateGoverDeptMethod = getCreateGoverDeptMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptRequest, com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateGoverDept"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CreateGoverDept"))
+              .build();
+        }
+      }
+    }
+    return getCreateGoverDeptMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptRequest,
+      com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptResponse> getUpdateGoverDeptMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateGoverDept",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptRequest,
+      com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptResponse> getUpdateGoverDeptMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptRequest, com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptResponse> getUpdateGoverDeptMethod;
+    if ((getUpdateGoverDeptMethod = glory_apiGrpc.getUpdateGoverDeptMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getUpdateGoverDeptMethod = glory_apiGrpc.getUpdateGoverDeptMethod) == null) {
+          glory_apiGrpc.getUpdateGoverDeptMethod = getUpdateGoverDeptMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptRequest, com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateGoverDept"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("UpdateGoverDept"))
+              .build();
+        }
+      }
+    }
+    return getUpdateGoverDeptMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptRequest,
+      com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptResponse> getDeleteGoverDeptMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteGoverDept",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptRequest,
+      com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptResponse> getDeleteGoverDeptMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptRequest, com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptResponse> getDeleteGoverDeptMethod;
+    if ((getDeleteGoverDeptMethod = glory_apiGrpc.getDeleteGoverDeptMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getDeleteGoverDeptMethod = glory_apiGrpc.getDeleteGoverDeptMethod) == null) {
+          glory_apiGrpc.getDeleteGoverDeptMethod = getDeleteGoverDeptMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptRequest, com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteGoverDept"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("DeleteGoverDept"))
+              .build();
+        }
+      }
+    }
+    return getDeleteGoverDeptMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeResponse> getCreateEduOfficeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateEduOffice",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeResponse> getCreateEduOfficeMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeRequest, com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeResponse> getCreateEduOfficeMethod;
+    if ((getCreateEduOfficeMethod = glory_apiGrpc.getCreateEduOfficeMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCreateEduOfficeMethod = glory_apiGrpc.getCreateEduOfficeMethod) == null) {
+          glory_apiGrpc.getCreateEduOfficeMethod = getCreateEduOfficeMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeRequest, com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateEduOffice"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CreateEduOffice"))
+              .build();
+        }
+      }
+    }
+    return getCreateEduOfficeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeResponse> getUpdateEduOfficeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateEduOffice",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeResponse> getUpdateEduOfficeMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeRequest, com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeResponse> getUpdateEduOfficeMethod;
+    if ((getUpdateEduOfficeMethod = glory_apiGrpc.getUpdateEduOfficeMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getUpdateEduOfficeMethod = glory_apiGrpc.getUpdateEduOfficeMethod) == null) {
+          glory_apiGrpc.getUpdateEduOfficeMethod = getUpdateEduOfficeMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeRequest, com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateEduOffice"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("UpdateEduOffice"))
+              .build();
+        }
+      }
+    }
+    return getUpdateEduOfficeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeResponse> getDeleteEduOfficeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteEduOffice",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeResponse> getDeleteEduOfficeMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeRequest, com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeResponse> getDeleteEduOfficeMethod;
+    if ((getDeleteEduOfficeMethod = glory_apiGrpc.getDeleteEduOfficeMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getDeleteEduOfficeMethod = glory_apiGrpc.getDeleteEduOfficeMethod) == null) {
+          glory_apiGrpc.getDeleteEduOfficeMethod = getDeleteEduOfficeMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeRequest, com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteEduOffice"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("DeleteEduOffice"))
+              .build();
+        }
+      }
+    }
+    return getDeleteEduOfficeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeResponse> getCreatePrincipalOfficeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreatePrincipalOffice",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeResponse> getCreatePrincipalOfficeMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeRequest, com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeResponse> getCreatePrincipalOfficeMethod;
+    if ((getCreatePrincipalOfficeMethod = glory_apiGrpc.getCreatePrincipalOfficeMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCreatePrincipalOfficeMethod = glory_apiGrpc.getCreatePrincipalOfficeMethod) == null) {
+          glory_apiGrpc.getCreatePrincipalOfficeMethod = getCreatePrincipalOfficeMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeRequest, com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreatePrincipalOffice"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CreatePrincipalOffice"))
+              .build();
+        }
+      }
+    }
+    return getCreatePrincipalOfficeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeResponse> getUpdatePrincipalOfficeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdatePrincipalOffice",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeResponse> getUpdatePrincipalOfficeMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeRequest, com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeResponse> getUpdatePrincipalOfficeMethod;
+    if ((getUpdatePrincipalOfficeMethod = glory_apiGrpc.getUpdatePrincipalOfficeMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getUpdatePrincipalOfficeMethod = glory_apiGrpc.getUpdatePrincipalOfficeMethod) == null) {
+          glory_apiGrpc.getUpdatePrincipalOfficeMethod = getUpdatePrincipalOfficeMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeRequest, com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdatePrincipalOffice"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("UpdatePrincipalOffice"))
+              .build();
+        }
+      }
+    }
+    return getUpdatePrincipalOfficeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeResponse> getDeletePrincipalOfficeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeletePrincipalOffice",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeResponse> getDeletePrincipalOfficeMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeRequest, com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeResponse> getDeletePrincipalOfficeMethod;
+    if ((getDeletePrincipalOfficeMethod = glory_apiGrpc.getDeletePrincipalOfficeMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getDeletePrincipalOfficeMethod = glory_apiGrpc.getDeletePrincipalOfficeMethod) == null) {
+          glory_apiGrpc.getDeletePrincipalOfficeMethod = getDeletePrincipalOfficeMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeRequest, com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeletePrincipalOffice"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("DeletePrincipalOffice"))
+              .build();
+        }
+      }
+    }
+    return getDeletePrincipalOfficeMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreateMajorRequest,
       com.zhijiejiaoyu.glory_api.tenant.CreateMajorResponse> getCreateMajorMethod;
 
@@ -5345,6 +5903,68 @@ public final class glory_apiGrpc {
       }
     }
     return getListClassMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreateStudentsRequest,
+      com.zhijiejiaoyu.glory_api.tenant.CreateStudentsResponse> getCreateStudentsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateStudents",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.CreateStudentsRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.CreateStudentsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreateStudentsRequest,
+      com.zhijiejiaoyu.glory_api.tenant.CreateStudentsResponse> getCreateStudentsMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreateStudentsRequest, com.zhijiejiaoyu.glory_api.tenant.CreateStudentsResponse> getCreateStudentsMethod;
+    if ((getCreateStudentsMethod = glory_apiGrpc.getCreateStudentsMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCreateStudentsMethod = glory_apiGrpc.getCreateStudentsMethod) == null) {
+          glory_apiGrpc.getCreateStudentsMethod = getCreateStudentsMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.CreateStudentsRequest, com.zhijiejiaoyu.glory_api.tenant.CreateStudentsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateStudents"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.CreateStudentsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.CreateStudentsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CreateStudents"))
+              .build();
+        }
+      }
+    }
+    return getCreateStudentsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsRequest,
+      com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsResponse> getDeleteStudentsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteStudents",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsRequest,
+      com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsResponse> getDeleteStudentsMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsRequest, com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsResponse> getDeleteStudentsMethod;
+    if ((getDeleteStudentsMethod = glory_apiGrpc.getDeleteStudentsMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getDeleteStudentsMethod = glory_apiGrpc.getDeleteStudentsMethod) == null) {
+          glory_apiGrpc.getDeleteStudentsMethod = getDeleteStudentsMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsRequest, com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteStudents"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("DeleteStudents"))
+              .build();
+        }
+      }
+    }
+    return getDeleteStudentsMethod;
   }
 
   /**
@@ -6620,6 +7240,147 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    default void getTenantOrg(com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetTenantOrgMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     *college
+     * </pre>
+     */
+    default void createCollege(com.zhijiejiaoyu.glory_api.tenant.CreateCollegeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.CreateCollegeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateCollegeMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void getCollege(com.zhijiejiaoyu.glory_api.tenant.GetCollegeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.GetCollegeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetCollegeMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updateCollege(com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateCollegeMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void deleteCollege(com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteCollegeMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void listCollege(com.zhijiejiaoyu.glory_api.tenant.ListCollegeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.ListCollegeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListCollegeMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * edu_dept
+     * </pre>
+     */
+    default void createEduDept(com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateEduDeptMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updateEduDept(com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateEduDeptMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void deleteEduDept(com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteEduDeptMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     *gover_dept
+     * </pre>
+     */
+    default void createGoverDept(com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateGoverDeptMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updateGoverDept(com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateGoverDeptMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void deleteGoverDept(com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteGoverDeptMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * edu_office
+     * </pre>
+     */
+    default void createEduOffice(com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateEduOfficeMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updateEduOffice(com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateEduOfficeMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void deleteEduOffice(com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteEduOfficeMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     *principal_office
+     * </pre>
+     */
+    default void createPrincipalOffice(com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreatePrincipalOfficeMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updatePrincipalOffice(com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdatePrincipalOfficeMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void deletePrincipalOffice(com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeletePrincipalOfficeMethod(), responseObserver);
+    }
+
+    /**
      * <pre>
      *major
      * </pre>
@@ -6693,6 +7454,23 @@ public final class glory_apiGrpc {
     default void listClass(com.zhijiejiaoyu.glory_api.tenant.ListClassRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.ListClassResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListClassMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     *student
+     * </pre>
+     */
+    default void createStudents(com.zhijiejiaoyu.glory_api.tenant.CreateStudentsRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.CreateStudentsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateStudentsMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void deleteStudents(com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteStudentsMethod(), responseObserver);
     }
   }
 
@@ -8110,6 +8888,165 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public void getTenantOrg(com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetTenantOrgMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     *college
+     * </pre>
+     */
+    public void createCollege(com.zhijiejiaoyu.glory_api.tenant.CreateCollegeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.CreateCollegeResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateCollegeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getCollege(com.zhijiejiaoyu.glory_api.tenant.GetCollegeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.GetCollegeResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetCollegeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateCollege(com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateCollegeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deleteCollege(com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteCollegeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void listCollege(com.zhijiejiaoyu.glory_api.tenant.ListCollegeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.ListCollegeResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListCollegeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * edu_dept
+     * </pre>
+     */
+    public void createEduDept(com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateEduDeptMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateEduDept(com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateEduDeptMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deleteEduDept(com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteEduDeptMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     *gover_dept
+     * </pre>
+     */
+    public void createGoverDept(com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateGoverDeptMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateGoverDept(com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateGoverDeptMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deleteGoverDept(com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteGoverDeptMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * edu_office
+     * </pre>
+     */
+    public void createEduOffice(com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateEduOfficeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateEduOffice(com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateEduOfficeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deleteEduOffice(com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteEduOfficeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     *principal_office
+     * </pre>
+     */
+    public void createPrincipalOffice(com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreatePrincipalOfficeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updatePrincipalOffice(com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdatePrincipalOfficeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deletePrincipalOffice(com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeletePrincipalOfficeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
      * <pre>
      *major
      * </pre>
@@ -8193,6 +9130,25 @@ public final class glory_apiGrpc {
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.ListClassResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListClassMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     *student
+     * </pre>
+     */
+    public void createStudents(com.zhijiejiaoyu.glory_api.tenant.CreateStudentsRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.CreateStudentsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateStudentsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deleteStudents(com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteStudentsMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -9437,6 +10393,147 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgResponse getTenantOrg(com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTenantOrgMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     *college
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.CreateCollegeResponse createCollege(com.zhijiejiaoyu.glory_api.tenant.CreateCollegeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCollegeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.GetCollegeResponse getCollege(com.zhijiejiaoyu.glory_api.tenant.GetCollegeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCollegeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeResponse updateCollege(com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCollegeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeResponse deleteCollege(com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteCollegeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.ListCollegeResponse listCollege(com.zhijiejiaoyu.glory_api.tenant.ListCollegeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCollegeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * edu_dept
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptResponse createEduDept(com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateEduDeptMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptResponse updateEduDept(com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateEduDeptMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptResponse deleteEduDept(com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteEduDeptMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     *gover_dept
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptResponse createGoverDept(com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateGoverDeptMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptResponse updateGoverDept(com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateGoverDeptMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptResponse deleteGoverDept(com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteGoverDeptMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * edu_office
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeResponse createEduOffice(com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateEduOfficeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeResponse updateEduOffice(com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateEduOfficeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeResponse deleteEduOffice(com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteEduOfficeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     *principal_office
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeResponse createPrincipalOffice(com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreatePrincipalOfficeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeResponse updatePrincipalOffice(com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdatePrincipalOfficeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeResponse deletePrincipalOffice(com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeletePrincipalOfficeMethod(), getCallOptions(), request);
+    }
+
+    /**
      * <pre>
      *major
      * </pre>
@@ -9510,6 +10607,23 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.tenant.ListClassResponse listClass(com.zhijiejiaoyu.glory_api.tenant.ListClassRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListClassMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     *student
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.CreateStudentsResponse createStudents(com.zhijiejiaoyu.glory_api.tenant.CreateStudentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateStudentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsResponse deleteStudents(com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteStudentsMethod(), getCallOptions(), request);
     }
   }
 
@@ -10916,6 +12030,165 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgResponse> getTenantOrg(
+        com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetTenantOrgMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     *college
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.CreateCollegeResponse> createCollege(
+        com.zhijiejiaoyu.glory_api.tenant.CreateCollegeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateCollegeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.GetCollegeResponse> getCollege(
+        com.zhijiejiaoyu.glory_api.tenant.GetCollegeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetCollegeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeResponse> updateCollege(
+        com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateCollegeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeResponse> deleteCollege(
+        com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteCollegeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.ListCollegeResponse> listCollege(
+        com.zhijiejiaoyu.glory_api.tenant.ListCollegeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListCollegeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * edu_dept
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptResponse> createEduDept(
+        com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateEduDeptMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptResponse> updateEduDept(
+        com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateEduDeptMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptResponse> deleteEduDept(
+        com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteEduDeptMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     *gover_dept
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptResponse> createGoverDept(
+        com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateGoverDeptMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptResponse> updateGoverDept(
+        com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateGoverDeptMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptResponse> deleteGoverDept(
+        com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteGoverDeptMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * edu_office
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeResponse> createEduOffice(
+        com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateEduOfficeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeResponse> updateEduOffice(
+        com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateEduOfficeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeResponse> deleteEduOffice(
+        com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteEduOfficeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     *principal_office
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeResponse> createPrincipalOffice(
+        com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreatePrincipalOfficeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeResponse> updatePrincipalOffice(
+        com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdatePrincipalOfficeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeResponse> deletePrincipalOffice(
+        com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeletePrincipalOfficeMethod(), getCallOptions()), request);
+    }
+
+    /**
      * <pre>
      *major
      * </pre>
@@ -10999,6 +12272,25 @@ public final class glory_apiGrpc {
         com.zhijiejiaoyu.glory_api.tenant.ListClassRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListClassMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     *student
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.CreateStudentsResponse> createStudents(
+        com.zhijiejiaoyu.glory_api.tenant.CreateStudentsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateStudentsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsResponse> deleteStudents(
+        com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteStudentsMethod(), getCallOptions()), request);
     }
   }
 
@@ -11164,16 +12456,36 @@ public final class glory_apiGrpc {
   private static final int METHODID_UPDATE_TENANT = 159;
   private static final int METHODID_DELETE_TENANT = 160;
   private static final int METHODID_LIST_TENANT = 161;
-  private static final int METHODID_CREATE_MAJOR = 162;
-  private static final int METHODID_GET_MAJOR = 163;
-  private static final int METHODID_UPDATE_MAJOR = 164;
-  private static final int METHODID_DELETE_MAJOR = 165;
-  private static final int METHODID_LIST_MAJOR = 166;
-  private static final int METHODID_CREATE_CLASS = 167;
-  private static final int METHODID_GET_CLASS = 168;
-  private static final int METHODID_UPDATE_CLASS = 169;
-  private static final int METHODID_DELETE_CLASS = 170;
-  private static final int METHODID_LIST_CLASS = 171;
+  private static final int METHODID_GET_TENANT_ORG = 162;
+  private static final int METHODID_CREATE_COLLEGE = 163;
+  private static final int METHODID_GET_COLLEGE = 164;
+  private static final int METHODID_UPDATE_COLLEGE = 165;
+  private static final int METHODID_DELETE_COLLEGE = 166;
+  private static final int METHODID_LIST_COLLEGE = 167;
+  private static final int METHODID_CREATE_EDU_DEPT = 168;
+  private static final int METHODID_UPDATE_EDU_DEPT = 169;
+  private static final int METHODID_DELETE_EDU_DEPT = 170;
+  private static final int METHODID_CREATE_GOVER_DEPT = 171;
+  private static final int METHODID_UPDATE_GOVER_DEPT = 172;
+  private static final int METHODID_DELETE_GOVER_DEPT = 173;
+  private static final int METHODID_CREATE_EDU_OFFICE = 174;
+  private static final int METHODID_UPDATE_EDU_OFFICE = 175;
+  private static final int METHODID_DELETE_EDU_OFFICE = 176;
+  private static final int METHODID_CREATE_PRINCIPAL_OFFICE = 177;
+  private static final int METHODID_UPDATE_PRINCIPAL_OFFICE = 178;
+  private static final int METHODID_DELETE_PRINCIPAL_OFFICE = 179;
+  private static final int METHODID_CREATE_MAJOR = 180;
+  private static final int METHODID_GET_MAJOR = 181;
+  private static final int METHODID_UPDATE_MAJOR = 182;
+  private static final int METHODID_DELETE_MAJOR = 183;
+  private static final int METHODID_LIST_MAJOR = 184;
+  private static final int METHODID_CREATE_CLASS = 185;
+  private static final int METHODID_GET_CLASS = 186;
+  private static final int METHODID_UPDATE_CLASS = 187;
+  private static final int METHODID_DELETE_CLASS = 188;
+  private static final int METHODID_LIST_CLASS = 189;
+  private static final int METHODID_CREATE_STUDENTS = 190;
+  private static final int METHODID_DELETE_STUDENTS = 191;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -11840,6 +13152,78 @@ public final class glory_apiGrpc {
           serviceImpl.listTenant((com.zhijiejiaoyu.glory_api.tenant.ListTenantRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.ListTenantResponse>) responseObserver);
           break;
+        case METHODID_GET_TENANT_ORG:
+          serviceImpl.getTenantOrg((com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_COLLEGE:
+          serviceImpl.createCollege((com.zhijiejiaoyu.glory_api.tenant.CreateCollegeRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.CreateCollegeResponse>) responseObserver);
+          break;
+        case METHODID_GET_COLLEGE:
+          serviceImpl.getCollege((com.zhijiejiaoyu.glory_api.tenant.GetCollegeRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.GetCollegeResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_COLLEGE:
+          serviceImpl.updateCollege((com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_COLLEGE:
+          serviceImpl.deleteCollege((com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeResponse>) responseObserver);
+          break;
+        case METHODID_LIST_COLLEGE:
+          serviceImpl.listCollege((com.zhijiejiaoyu.glory_api.tenant.ListCollegeRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.ListCollegeResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_EDU_DEPT:
+          serviceImpl.createEduDept((com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_EDU_DEPT:
+          serviceImpl.updateEduDept((com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_EDU_DEPT:
+          serviceImpl.deleteEduDept((com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_GOVER_DEPT:
+          serviceImpl.createGoverDept((com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_GOVER_DEPT:
+          serviceImpl.updateGoverDept((com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_GOVER_DEPT:
+          serviceImpl.deleteGoverDept((com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_EDU_OFFICE:
+          serviceImpl.createEduOffice((com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_EDU_OFFICE:
+          serviceImpl.updateEduOffice((com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_EDU_OFFICE:
+          serviceImpl.deleteEduOffice((com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_PRINCIPAL_OFFICE:
+          serviceImpl.createPrincipalOffice((com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_PRINCIPAL_OFFICE:
+          serviceImpl.updatePrincipalOffice((com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_PRINCIPAL_OFFICE:
+          serviceImpl.deletePrincipalOffice((com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeResponse>) responseObserver);
+          break;
         case METHODID_CREATE_MAJOR:
           serviceImpl.createMajor((com.zhijiejiaoyu.glory_api.tenant.CreateMajorRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.CreateMajorResponse>) responseObserver);
@@ -11879,6 +13263,14 @@ public final class glory_apiGrpc {
         case METHODID_LIST_CLASS:
           serviceImpl.listClass((com.zhijiejiaoyu.glory_api.tenant.ListClassRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.ListClassResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_STUDENTS:
+          serviceImpl.createStudents((com.zhijiejiaoyu.glory_api.tenant.CreateStudentsRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.CreateStudentsResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_STUDENTS:
+          serviceImpl.deleteStudents((com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -13033,6 +14425,132 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.tenant.ListTenantResponse>(
                 service, METHODID_LIST_TENANT)))
         .addMethod(
+          getGetTenantOrgMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgRequest,
+              com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgResponse>(
+                service, METHODID_GET_TENANT_ORG)))
+        .addMethod(
+          getCreateCollegeMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.CreateCollegeRequest,
+              com.zhijiejiaoyu.glory_api.tenant.CreateCollegeResponse>(
+                service, METHODID_CREATE_COLLEGE)))
+        .addMethod(
+          getGetCollegeMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.GetCollegeRequest,
+              com.zhijiejiaoyu.glory_api.tenant.GetCollegeResponse>(
+                service, METHODID_GET_COLLEGE)))
+        .addMethod(
+          getUpdateCollegeMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeRequest,
+              com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeResponse>(
+                service, METHODID_UPDATE_COLLEGE)))
+        .addMethod(
+          getDeleteCollegeMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeRequest,
+              com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeResponse>(
+                service, METHODID_DELETE_COLLEGE)))
+        .addMethod(
+          getListCollegeMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.ListCollegeRequest,
+              com.zhijiejiaoyu.glory_api.tenant.ListCollegeResponse>(
+                service, METHODID_LIST_COLLEGE)))
+        .addMethod(
+          getCreateEduDeptMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptRequest,
+              com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptResponse>(
+                service, METHODID_CREATE_EDU_DEPT)))
+        .addMethod(
+          getUpdateEduDeptMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptRequest,
+              com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptResponse>(
+                service, METHODID_UPDATE_EDU_DEPT)))
+        .addMethod(
+          getDeleteEduDeptMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptRequest,
+              com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptResponse>(
+                service, METHODID_DELETE_EDU_DEPT)))
+        .addMethod(
+          getCreateGoverDeptMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptRequest,
+              com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptResponse>(
+                service, METHODID_CREATE_GOVER_DEPT)))
+        .addMethod(
+          getUpdateGoverDeptMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptRequest,
+              com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptResponse>(
+                service, METHODID_UPDATE_GOVER_DEPT)))
+        .addMethod(
+          getDeleteGoverDeptMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptRequest,
+              com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptResponse>(
+                service, METHODID_DELETE_GOVER_DEPT)))
+        .addMethod(
+          getCreateEduOfficeMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeRequest,
+              com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeResponse>(
+                service, METHODID_CREATE_EDU_OFFICE)))
+        .addMethod(
+          getUpdateEduOfficeMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeRequest,
+              com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeResponse>(
+                service, METHODID_UPDATE_EDU_OFFICE)))
+        .addMethod(
+          getDeleteEduOfficeMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeRequest,
+              com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeResponse>(
+                service, METHODID_DELETE_EDU_OFFICE)))
+        .addMethod(
+          getCreatePrincipalOfficeMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeRequest,
+              com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeResponse>(
+                service, METHODID_CREATE_PRINCIPAL_OFFICE)))
+        .addMethod(
+          getUpdatePrincipalOfficeMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeRequest,
+              com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeResponse>(
+                service, METHODID_UPDATE_PRINCIPAL_OFFICE)))
+        .addMethod(
+          getDeletePrincipalOfficeMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeRequest,
+              com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeResponse>(
+                service, METHODID_DELETE_PRINCIPAL_OFFICE)))
+        .addMethod(
           getCreateMajorMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -13102,6 +14620,20 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.tenant.ListClassRequest,
               com.zhijiejiaoyu.glory_api.tenant.ListClassResponse>(
                 service, METHODID_LIST_CLASS)))
+        .addMethod(
+          getCreateStudentsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.CreateStudentsRequest,
+              com.zhijiejiaoyu.glory_api.tenant.CreateStudentsResponse>(
+                service, METHODID_CREATE_STUDENTS)))
+        .addMethod(
+          getDeleteStudentsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsRequest,
+              com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsResponse>(
+                service, METHODID_DELETE_STUDENTS)))
         .build();
   }
 
@@ -13312,6 +14844,24 @@ public final class glory_apiGrpc {
               .addMethod(getUpdateTenantMethod())
               .addMethod(getDeleteTenantMethod())
               .addMethod(getListTenantMethod())
+              .addMethod(getGetTenantOrgMethod())
+              .addMethod(getCreateCollegeMethod())
+              .addMethod(getGetCollegeMethod())
+              .addMethod(getUpdateCollegeMethod())
+              .addMethod(getDeleteCollegeMethod())
+              .addMethod(getListCollegeMethod())
+              .addMethod(getCreateEduDeptMethod())
+              .addMethod(getUpdateEduDeptMethod())
+              .addMethod(getDeleteEduDeptMethod())
+              .addMethod(getCreateGoverDeptMethod())
+              .addMethod(getUpdateGoverDeptMethod())
+              .addMethod(getDeleteGoverDeptMethod())
+              .addMethod(getCreateEduOfficeMethod())
+              .addMethod(getUpdateEduOfficeMethod())
+              .addMethod(getDeleteEduOfficeMethod())
+              .addMethod(getCreatePrincipalOfficeMethod())
+              .addMethod(getUpdatePrincipalOfficeMethod())
+              .addMethod(getDeletePrincipalOfficeMethod())
               .addMethod(getCreateMajorMethod())
               .addMethod(getGetMajorMethod())
               .addMethod(getUpdateMajorMethod())
@@ -13322,6 +14872,8 @@ public final class glory_apiGrpc {
               .addMethod(getUpdateClassMethod())
               .addMethod(getDeleteClassMethod())
               .addMethod(getListClassMethod())
+              .addMethod(getCreateStudentsMethod())
+              .addMethod(getDeleteStudentsMethod())
               .build();
         }
       }

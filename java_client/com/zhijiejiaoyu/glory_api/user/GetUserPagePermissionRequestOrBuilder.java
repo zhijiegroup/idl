@@ -21,4 +21,10 @@ public interface GetUserPagePermissionRequestOrBuilder extends
    * <code>.base.BaseRequest base_request = 1;</code>
    */
   com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder();
+
+  /**
+   * <code>int64 tenant_id = 2;</code>
+   * @return The tenantId.
+   */
+  long getTenantId();
 }

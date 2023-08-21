@@ -19,10 +19,20 @@ public interface MajorOrBuilder extends
 
   /**
    * <pre>
+   * 学院id, 创建必传
+   * </pre>
+   *
+   * <code>int64 college_id = 2;</code>
+   * @return The collegeId.
+   */
+  long getCollegeId();
+
+  /**
+   * <pre>
    *名称 必传
    * </pre>
    *
-   * <code>string major_name = 2;</code>
+   * <code>string major_name = 3;</code>
    * @return The majorName.
    */
   java.lang.String getMajorName();
@@ -31,7 +41,7 @@ public interface MajorOrBuilder extends
    *名称 必传
    * </pre>
    *
-   * <code>string major_name = 2;</code>
+   * <code>string major_name = 3;</code>
    * @return The bytes for majorName.
    */
   com.google.protobuf.ByteString

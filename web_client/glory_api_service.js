@@ -33,6 +33,8 @@ import * as live_evaluate from "./live/live_evaluate";
 import * as account_operation from "./account/account_operation";
 import * as virtual_currency from "./currency/virtual_currency";
 import * as tenant from "./tenant/tenant";
+import * as tenant_dept from "./tenant/tenant_dept";
+import * as student from "./tenant/student";
 export {
   user,
   address,
@@ -63,6 +65,8 @@ export {
   account_operation,
   virtual_currency,
   tenant,
+  tenant_dept,
+  student,
 };
 
 import {
@@ -1310,6 +1314,148 @@ export class glory_api {
     );
   }
 
+  GetTenantOrg(request) {
+    const uri = `${this.uriPrefix}/api/tenant/tenant_org`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreateCollege(request) {
+    const uri = `${this.uriPrefix}/api/college/create_college`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  GetCollege(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/college/get_college${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  UpdateCollege(request) {
+    const uri = `${this.uriPrefix}/api/college/update_college`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteCollege(request) {
+    const uri = `${this.uriPrefix}/api/college/delete_college`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListCollege(request) {
+    const uri = `${this.uriPrefix}/api/college/list_college`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreateEduDept(request) {
+    const uri = `${this.uriPrefix}/api/edu_dept/create_edu_dept`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  UpdateEduDept(request) {
+    const uri = `${this.uriPrefix}/api/edu_dept/update_edu_dept`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteEduDept(request) {
+    const uri = `${this.uriPrefix}/api/edu_dept/delete_edu_dept`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreateGoverDept(request) {
+    const uri = `${this.uriPrefix}/api/gover_dept/create_gover_dept`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  UpdateGoverDept(request) {
+    const uri = `${this.uriPrefix}/api/gover_dept/update_gover_dept`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteGoverDept(request) {
+    const uri = `${this.uriPrefix}/api/gover_dept/delete_gover_dept`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreateEduOffice(request) {
+    const uri = `${this.uriPrefix}/api/edu_office/create_edu_office`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  UpdateEduOffice(request) {
+    const uri = `${this.uriPrefix}/api/edu_office/update_edu_office`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteEduOffice(request) {
+    const uri = `${this.uriPrefix}/api/edu_office/delete_edu_office`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreatePrincipalOffice(request) {
+    const uri = `${this.uriPrefix}/api/principal_office/create_principal_office`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  UpdatePrincipalOffice(request) {
+    const uri = `${this.uriPrefix}/api/principal_office/update_principal_office`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeletePrincipalOffice(request) {
+    const uri = `${this.uriPrefix}/api/principal_office/delete_principal_office`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   CreateMajor(request) {
     const uri = `${this.uriPrefix}/api/tenant/create_major`;
     const body = JSONbigint.stringify(request);
@@ -1380,6 +1526,22 @@ export class glory_api {
 
   ListClass(request) {
     const uri = `${this.uriPrefix}/api/tenant/list_class`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreateStudents(request) {
+    const uri = `${this.uriPrefix}/api/student/create_students`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteStudents(request) {
+    const uri = `${this.uriPrefix}/api/student/delete_students`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse

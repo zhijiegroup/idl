@@ -55,7 +55,12 @@ private static final long serialVersionUID = 0L;
             majorId = input.readInt64();
             break;
           }
-          case 18: {
+          case 16: {
+
+            collegeId = input.readInt64();
+            break;
+          }
+          case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
             majorName = s;
@@ -119,14 +124,29 @@ private static final long serialVersionUID = 0L;
     return majorId;
   }
 
-  public static final int MAJOR_NAME_FIELD_NUMBER = 2;
+  public static final int COLLEGE_ID_FIELD_NUMBER = 2;
+  private long collegeId;
+  /**
+   * <pre>
+   * 学院id, 创建必传
+   * </pre>
+   *
+   * <code>int64 college_id = 2;</code>
+   * @return The collegeId.
+   */
+  @java.lang.Override
+  public long getCollegeId() {
+    return collegeId;
+  }
+
+  public static final int MAJOR_NAME_FIELD_NUMBER = 3;
   private volatile java.lang.Object majorName;
   /**
    * <pre>
    *名称 必传
    * </pre>
    *
-   * <code>string major_name = 2;</code>
+   * <code>string major_name = 3;</code>
    * @return The majorName.
    */
   @java.lang.Override
@@ -147,7 +167,7 @@ private static final long serialVersionUID = 0L;
    *名称 必传
    * </pre>
    *
-   * <code>string major_name = 2;</code>
+   * <code>string major_name = 3;</code>
    * @return The bytes for majorName.
    */
   @java.lang.Override
@@ -243,8 +263,11 @@ private static final long serialVersionUID = 0L;
     if (majorId_ != 0L) {
       output.writeInt64(1, majorId);
     }
+    if (collegeId_ != 0L) {
+      output.writeInt64(2, collegeId);
+    }
     if (!getMajorNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, majorName);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, majorName);
     }
     if (!getMajorTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, majorType);
@@ -265,8 +288,12 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, majorId);
     }
+    if (collegeId_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(2, collegeId);
+    }
     if (!getMajorNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, majorName);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, majorName);
     }
     if (!getMajorTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, majorType);
@@ -292,6 +319,8 @@ private static final long serialVersionUID = 0L;
 
     if (getMajorId()
         != other.getMajorId()) return false;
+    if (getCollegeId()
+        != other.getCollegeId()) return false;
     if (!getMajorName()
         .equals(other.getMajorName())) return false;
     if (!getMajorType()
@@ -312,6 +341,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + MAJOR_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getMajorId());
+    hash = (37 * hash) + COLLEGE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getCollegeId());
     hash = (37 * hash) + MAJOR_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getMajorName().hashCode();
     hash = (37 * hash) + MAJOR_TYPE_FIELD_NUMBER;
@@ -454,6 +486,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       majorId = 0L;
 
+      collegeId = 0L;
+
       majorName = "";
 
       majorType = "";
@@ -487,6 +521,7 @@ private static final long serialVersionUID = 0L;
     public com.zhijiejiaoyu.glory_api.tenant.Major buildPartial() {
       com.zhijiejiaoyu.glory_api.tenant.Major result = new com.zhijiejiaoyu.glory_api.tenant.Major(this);
       result.majorId = majorId;
+      result.collegeId = collegeId;
       result.majorName = majorName;
       result.majorType = majorType;
       result.tenantId = tenantId;
@@ -540,6 +575,9 @@ private static final long serialVersionUID = 0L;
       if (other == com.zhijiejiaoyu.glory_api.tenant.Major.getDefaultInstance()) return this;
       if (other.getMajorId() != 0L) {
         setMajorId(other.getMajorId());
+      }
+      if (other.getCollegeId() != 0L) {
+        setCollegeId(other.getCollegeId());
       }
       if (!other.getMajorName().isEmpty()) {
         majorName = other.majorName;
@@ -624,13 +662,56 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private long collegeId_ ;
+    /**
+     * <pre>
+     * 学院id, 创建必传
+     * </pre>
+     *
+     * <code>int64 college_id = 2;</code>
+     * @return The collegeId.
+     */
+    @java.lang.Override
+    public long getCollegeId() {
+      return collegeId;
+    }
+    /**
+     * <pre>
+     * 学院id, 创建必传
+     * </pre>
+     *
+     * <code>int64 college_id = 2;</code>
+     * @param value The collegeId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCollegeId(long value) {
+      
+      collegeId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 学院id, 创建必传
+     * </pre>
+     *
+     * <code>int64 college_id = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCollegeId() {
+      
+      collegeId = 0L;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object majorName = "";
     /**
      * <pre>
      *名称 必传
      * </pre>
      *
-     * <code>string major_name = 2;</code>
+     * <code>string major_name = 3;</code>
      * @return The majorName.
      */
     public java.lang.String getMajorName() {
@@ -650,7 +731,7 @@ private static final long serialVersionUID = 0L;
      *名称 必传
      * </pre>
      *
-     * <code>string major_name = 2;</code>
+     * <code>string major_name = 3;</code>
      * @return The bytes for majorName.
      */
     public com.google.protobuf.ByteString
@@ -671,7 +752,7 @@ private static final long serialVersionUID = 0L;
      *名称 必传
      * </pre>
      *
-     * <code>string major_name = 2;</code>
+     * <code>string major_name = 3;</code>
      * @param value The majorName to set.
      * @return This builder for chaining.
      */
@@ -690,7 +771,7 @@ private static final long serialVersionUID = 0L;
      *名称 必传
      * </pre>
      *
-     * <code>string major_name = 2;</code>
+     * <code>string major_name = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearMajorName() {
@@ -704,7 +785,7 @@ private static final long serialVersionUID = 0L;
      *名称 必传
      * </pre>
      *
-     * <code>string major_name = 2;</code>
+     * <code>string major_name = 3;</code>
      * @param value The bytes for majorName to set.
      * @return This builder for chaining.
      */
