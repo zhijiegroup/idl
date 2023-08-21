@@ -375,6 +375,10 @@ list the permissions that supported */
 
   ShipGoods(request: order.ShipGoodsRequest): Promise<order.ShipGoodsResponse>;
 
+  ConfirmReceiptGoods(
+    request: order.ConfirmReceiptGoodsRequest
+  ): Promise<order.ConfirmReceiptGoodsResponse>;
+
   CancelOrder(
     request: order.CancelOrderRequest
   ): Promise<order.CancelOrderResponse>;

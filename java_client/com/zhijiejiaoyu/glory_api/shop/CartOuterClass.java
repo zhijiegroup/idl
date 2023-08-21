@@ -126,12 +126,12 @@ public final class CartOuterClass {
       "eRequest\022&\n\tcart_info\030\002 \001(\0132\023.glory_api." +
       "CartShow\"c\n\022UpdateCartResponse\022%\n\tbase_r" +
       "esp\030\001 \001(\0132\022.base.BaseResponse\022&\n\tcart_in" +
-      "fo\030\002 \001(\0132\023.glory_api.CartShow\"M\n\021DeleteC" +
+      "fo\030\002 \001(\0132\023.glory_api.CartShow\"d\n\021DeleteC" +
       "artRequest\022\'\n\014base_request\030\001 \001(\0132\021.base." +
-      "BaseRequest\022\017\n\007cart_id\030\002 \001(\003\";\n\022DeleteCa" +
-      "rtResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
-      "eResponseB#\n\037com.zhijiejiaoyu.glory_api." +
-      "shopP\001b\006proto3"
+      "BaseRequest\022&\n\tcart_info\030\002 \001(\0132\023.glory_a" +
+      "pi.CartShow\";\n\022DeleteCartResponse\022%\n\tbas" +
+      "e_resp\030\001 \001(\0132\022.base.BaseResponseB#\n\037com." +
+      "zhijiejiaoyu.glory_api.shopP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -215,7 +215,7 @@ public final class CartOuterClass {
     internal_static_glory_api_DeleteCartRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteCartRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "CartId", });
+        new java.lang.String[] { "BaseRequest", "CartInfo", });
     internal_static_glory_api_DeleteCartResponse_descriptor =
       getDescriptor().getMessageTypes().get(13);
     internal_static_glory_api_DeleteCartResponse_fieldAccessorTable = new

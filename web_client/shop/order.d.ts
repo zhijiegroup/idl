@@ -104,7 +104,7 @@ export interface OrderInfo {
   shop_name?: string;
   /** 商店logo */
   shop_logo?: string;
-  /** 货币单位 */
+  /** 货币单位  CNY :人民币    COIN:虚拟币 不区分大小写 */
   currency?: string;
   /** 收货人 */
   contact_name?: string;
@@ -234,6 +234,15 @@ export interface ShipGoodsRequest {
 }
 
 export interface ShipGoodsResponse {
+  base_resp?: base.BaseResponse;
+}
+
+export interface ConfirmReceiptGoodsRequest {
+  base_request?: base.BaseRequest;
+  order_id?: string;
+}
+
+export interface ConfirmReceiptGoodsResponse {
   base_resp?: base.BaseResponse;
 }
 
