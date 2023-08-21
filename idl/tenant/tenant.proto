@@ -288,6 +288,7 @@ message TenantOrg {
   int64 id = 1;
   string name = 2;
   repeated TenantOrg children = 3;
+  repeated string child_types = 4;
 }
 
 message GetTenantOrgRequest {
