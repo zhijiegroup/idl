@@ -263,7 +263,7 @@ public interface OrderInfoOrBuilder extends
 
   /**
    * <pre>
-   *货币单位
+   *货币单位  CNY :人民币    COIN:虚拟币 不区分大小写
    * </pre>
    *
    * <code>string currency = 15;</code>
@@ -272,7 +272,7 @@ public interface OrderInfoOrBuilder extends
   java.lang.String getCurrency();
   /**
    * <pre>
-   *货币单位
+   *货币单位  CNY :人民币    COIN:虚拟币 不区分大小写
    * </pre>
    *
    * <code>string currency = 15;</code>

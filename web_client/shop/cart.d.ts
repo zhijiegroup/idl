@@ -91,7 +91,7 @@ export interface UpdateCartResponse {
 
 export interface DeleteCartRequest {
   base_request?: base.BaseRequest;
-  cart_id?: string;
+  cart_info?: CartShow;
 }
 
 export interface DeleteCartResponse {
