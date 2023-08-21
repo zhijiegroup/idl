@@ -78,6 +78,7 @@ message PagePermission {
 
 message GetUserPagePermissionRequest {
   base.BaseRequest base_request=1;
+  int64 tenant_id = 2;
 }
 
 message GetUserPagePermissionResponse {
@@ -212,8 +213,8 @@ message ListUserByRole {
   int64 tenant_id = 4;
   string role = 5;
   string created_at = 6;
-
 }
+
 message ListUserByRoleRequest {
   base.BaseRequest base_request=1;
   string role_name = 2; // 平台管理员是admin, 学校管理员是school_admin_role
