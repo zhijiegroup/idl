@@ -81,9 +81,10 @@ message ListTenantResponse {
 
 message College {
     int64 tenant_id = 1;
-    int64 college_id = 2; //创建不传
-    string college_name  = 3; //名称 必传
-    string college_introduce = 4; // 介绍
+    int64 edu_dept_id = 2;
+    int64 college_id = 3; //创建不传
+    string college_name  = 4; //名称 必传
+    string college_overview = 5; // 介绍
 }
 
 message CreateCollegeRequest {

@@ -78,6 +78,7 @@ message PagePermission {
 
 message GetUserPagePermissionRequest {
   base.BaseRequest base_request=1;
+  int64 tenant_id = 2;
 }
 
 message GetUserPagePermissionResponse {
