@@ -63,7 +63,7 @@ public interface CreateOrderInfoOrBuilder extends
 
   /**
    * <pre>
-   *货币类型  CNY :人民币 , COIN:虚拟币
+   *货币类型  CNY :人民币 , COIN:虚拟币 不区分大小写
    * </pre>
    *
    * <code>string currency = 11;</code>
@@ -72,7 +72,7 @@ public interface CreateOrderInfoOrBuilder extends
   java.lang.String getCurrency();
   /**
    * <pre>
-   *货币类型  CNY :人民币 , COIN:虚拟币
+   *货币类型  CNY :人民币 , COIN:虚拟币 不区分大小写
    * </pre>
    *
    * <code>string currency = 11;</code>

@@ -121,7 +121,12 @@ private static final long serialVersionUID = 0L;
             aiFeedback = s;
             break;
           }
-          case 98: {
+          case 96: {
+
+            baseline = input.readBool();
+            break;
+          }
+          case 106: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               detail = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.live.EvaluateDetail>();
               mutable_bitField0_ |= 0x00000001;
@@ -421,17 +426,28 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int DETAIL_FIELD_NUMBER = 12;
+  public static final int BASELINE_FIELD_NUMBER = 12;
+  private boolean baseline;
+  /**
+   * <code>bool baseline = 12;</code>
+   * @return The baseline.
+   */
+  @java.lang.Override
+  public boolean getBaseline() {
+    return baseline;
+  }
+
+  public static final int DETAIL_FIELD_NUMBER = 13;
   private java.util.List<com.zhijiejiaoyu.glory_api.live.EvaluateDetail> detail;
   /**
-   * <code>repeated .glory_api.EvaluateDetail detail = 12;</code>
+   * <code>repeated .glory_api.EvaluateDetail detail = 13;</code>
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.live.EvaluateDetail> getDetailList() {
     return detail;
   }
   /**
-   * <code>repeated .glory_api.EvaluateDetail detail = 12;</code>
+   * <code>repeated .glory_api.EvaluateDetail detail = 13;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.live.EvaluateDetailOrBuilder> 
@@ -439,21 +455,21 @@ private static final long serialVersionUID = 0L;
     return detail;
   }
   /**
-   * <code>repeated .glory_api.EvaluateDetail detail = 12;</code>
+   * <code>repeated .glory_api.EvaluateDetail detail = 13;</code>
    */
   @java.lang.Override
   public int getDetailCount() {
     return detail_.size();
   }
   /**
-   * <code>repeated .glory_api.EvaluateDetail detail = 12;</code>
+   * <code>repeated .glory_api.EvaluateDetail detail = 13;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.live.EvaluateDetail getDetail(int index) {
     return detail_.get(index);
   }
   /**
-   * <code>repeated .glory_api.EvaluateDetail detail = 12;</code>
+   * <code>repeated .glory_api.EvaluateDetail detail = 13;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.live.EvaluateDetailOrBuilder getDetailOrBuilder(
@@ -508,8 +524,11 @@ private static final long serialVersionUID = 0L;
     if (!getAiFeedbackBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, aiFeedback);
     }
+    if (baseline_ != false) {
+      output.writeBool(12, baseline);
+    }
     for (int i = 0; i < detail_.size(); i++) {
-      output.writeMessage(12, detail_.get(i));
+      output.writeMessage(13, detail_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -560,9 +579,13 @@ private static final long serialVersionUID = 0L;
     if (!getAiFeedbackBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, aiFeedback);
     }
+    if (baseline_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(12, baseline);
+    }
     for (int i = 0; i < detail_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(12, detail_.get(i));
+        .computeMessageSize(13, detail_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -606,6 +629,8 @@ private static final long serialVersionUID = 0L;
             other.getScore())) return false;
     if (!getAiFeedback()
         .equals(other.getAiFeedback())) return false;
+    if (getBaseline()
+        != other.getBaseline()) return false;
     if (!getDetailList()
         .equals(other.getDetailList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -649,6 +674,9 @@ private static final long serialVersionUID = 0L;
         java.lang.Double.doubleToLongBits(getScore()));
     hash = (37 * hash) + AI_FEEDBACK_FIELD_NUMBER;
     hash = (53 * hash) + getAiFeedback().hashCode();
+    hash = (37 * hash) + BASELINE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getBaseline());
     if (getDetailCount() > 0) {
       hash = (37 * hash) + DETAIL_FIELD_NUMBER;
       hash = (53 * hash) + getDetailList().hashCode();
@@ -813,6 +841,8 @@ private static final long serialVersionUID = 0L;
 
       aiFeedback = "";
 
+      baseline = false;
+
       if (detailBuilder == null) {
         detail = java.util.Collections.emptyList();
         bitField0 = (bitField0_ & ~0x00000001);
@@ -861,6 +891,7 @@ private static final long serialVersionUID = 0L;
       result.zeroComment = zeroComment;
       result.score = score;
       result.aiFeedback = aiFeedback;
+      result.baseline = baseline;
       if (detailBuilder == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           detail = java.util.Collections.unmodifiableList(detail);
@@ -954,6 +985,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getAiFeedback().isEmpty()) {
         aiFeedback = other.aiFeedback;
         onChanged();
+      }
+      if (other.getBaseline() != false) {
+        setBaseline(other.getBaseline());
       }
       if (detailBuilder == null) {
         if (!other.detail_.isEmpty()) {
@@ -1652,6 +1686,37 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private boolean baseline_ ;
+    /**
+     * <code>bool baseline = 12;</code>
+     * @return The baseline.
+     */
+    @java.lang.Override
+    public boolean getBaseline() {
+      return baseline;
+    }
+    /**
+     * <code>bool baseline = 12;</code>
+     * @param value The baseline to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBaseline(boolean value) {
+      
+      baseline = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool baseline = 12;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearBaseline() {
+      
+      baseline = false;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.zhijiejiaoyu.glory_api.live.EvaluateDetail> detail =
       java.util.Collections.emptyList();
     private void ensureDetailIsMutable() {
@@ -1665,7 +1730,7 @@ private static final long serialVersionUID = 0L;
         com.zhijiejiaoyu.glory_api.live.EvaluateDetail, com.zhijiejiaoyu.glory_api.live.EvaluateDetail.Builder, com.zhijiejiaoyu.glory_api.live.EvaluateDetailOrBuilder> detailBuilder;
 
     /**
-     * <code>repeated .glory_api.EvaluateDetail detail = 12;</code>
+     * <code>repeated .glory_api.EvaluateDetail detail = 13;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.live.EvaluateDetail> getDetailList() {
       if (detailBuilder == null) {
@@ -1675,7 +1740,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.EvaluateDetail detail = 12;</code>
+     * <code>repeated .glory_api.EvaluateDetail detail = 13;</code>
      */
     public int getDetailCount() {
       if (detailBuilder == null) {
@@ -1685,7 +1750,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.EvaluateDetail detail = 12;</code>
+     * <code>repeated .glory_api.EvaluateDetail detail = 13;</code>
      */
     public com.zhijiejiaoyu.glory_api.live.EvaluateDetail getDetail(int index) {
       if (detailBuilder == null) {
@@ -1695,7 +1760,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.EvaluateDetail detail = 12;</code>
+     * <code>repeated .glory_api.EvaluateDetail detail = 13;</code>
      */
     public Builder setDetail(
         int index, com.zhijiejiaoyu.glory_api.live.EvaluateDetail value) {
@@ -1712,7 +1777,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.EvaluateDetail detail = 12;</code>
+     * <code>repeated .glory_api.EvaluateDetail detail = 13;</code>
      */
     public Builder setDetail(
         int index, com.zhijiejiaoyu.glory_api.live.EvaluateDetail.Builder builderForValue) {
@@ -1726,7 +1791,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.EvaluateDetail detail = 12;</code>
+     * <code>repeated .glory_api.EvaluateDetail detail = 13;</code>
      */
     public Builder addDetail(com.zhijiejiaoyu.glory_api.live.EvaluateDetail value) {
       if (detailBuilder == null) {
@@ -1742,7 +1807,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.EvaluateDetail detail = 12;</code>
+     * <code>repeated .glory_api.EvaluateDetail detail = 13;</code>
      */
     public Builder addDetail(
         int index, com.zhijiejiaoyu.glory_api.live.EvaluateDetail value) {
@@ -1759,7 +1824,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.EvaluateDetail detail = 12;</code>
+     * <code>repeated .glory_api.EvaluateDetail detail = 13;</code>
      */
     public Builder addDetail(
         com.zhijiejiaoyu.glory_api.live.EvaluateDetail.Builder builderForValue) {
@@ -1773,7 +1838,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.EvaluateDetail detail = 12;</code>
+     * <code>repeated .glory_api.EvaluateDetail detail = 13;</code>
      */
     public Builder addDetail(
         int index, com.zhijiejiaoyu.glory_api.live.EvaluateDetail.Builder builderForValue) {
@@ -1787,7 +1852,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.EvaluateDetail detail = 12;</code>
+     * <code>repeated .glory_api.EvaluateDetail detail = 13;</code>
      */
     public Builder addAllDetail(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.live.EvaluateDetail> values) {
@@ -1802,7 +1867,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.EvaluateDetail detail = 12;</code>
+     * <code>repeated .glory_api.EvaluateDetail detail = 13;</code>
      */
     public Builder clearDetail() {
       if (detailBuilder == null) {
@@ -1815,7 +1880,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.EvaluateDetail detail = 12;</code>
+     * <code>repeated .glory_api.EvaluateDetail detail = 13;</code>
      */
     public Builder removeDetail(int index) {
       if (detailBuilder == null) {
@@ -1828,14 +1893,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.EvaluateDetail detail = 12;</code>
+     * <code>repeated .glory_api.EvaluateDetail detail = 13;</code>
      */
     public com.zhijiejiaoyu.glory_api.live.EvaluateDetail.Builder getDetailBuilder(
         int index) {
       return getDetailFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .glory_api.EvaluateDetail detail = 12;</code>
+     * <code>repeated .glory_api.EvaluateDetail detail = 13;</code>
      */
     public com.zhijiejiaoyu.glory_api.live.EvaluateDetailOrBuilder getDetailOrBuilder(
         int index) {
@@ -1845,7 +1910,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.EvaluateDetail detail = 12;</code>
+     * <code>repeated .glory_api.EvaluateDetail detail = 13;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.live.EvaluateDetailOrBuilder> 
          getDetailOrBuilderList() {
@@ -1856,14 +1921,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.EvaluateDetail detail = 12;</code>
+     * <code>repeated .glory_api.EvaluateDetail detail = 13;</code>
      */
     public com.zhijiejiaoyu.glory_api.live.EvaluateDetail.Builder addDetailBuilder() {
       return getDetailFieldBuilder().addBuilder(
           com.zhijiejiaoyu.glory_api.live.EvaluateDetail.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.EvaluateDetail detail = 12;</code>
+     * <code>repeated .glory_api.EvaluateDetail detail = 13;</code>
      */
     public com.zhijiejiaoyu.glory_api.live.EvaluateDetail.Builder addDetailBuilder(
         int index) {
@@ -1871,7 +1936,7 @@ private static final long serialVersionUID = 0L;
           index, com.zhijiejiaoyu.glory_api.live.EvaluateDetail.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.EvaluateDetail detail = 12;</code>
+     * <code>repeated .glory_api.EvaluateDetail detail = 13;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.live.EvaluateDetail.Builder> 
          getDetailBuilderList() {

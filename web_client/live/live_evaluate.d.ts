@@ -81,6 +81,7 @@ export interface GetEvaluateDetailResponse {
   zero_comment?: string;
   score?: number;
   ai_feedback?: string;
+  baseline?: boolean;
   detail?: Array<EvaluateDetail>;
 }
 
@@ -98,6 +99,7 @@ export interface SubmitEvaluateRequest {
   zero_comment?: string;
   score?: number;
   ai_feedback?: string;
+  baseline?: boolean;
   detail?: Array<EvaluateDetail>;
 }
 
