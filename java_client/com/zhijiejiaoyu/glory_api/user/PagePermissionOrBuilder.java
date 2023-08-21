@@ -32,7 +32,25 @@ public interface PagePermissionOrBuilder extends
       getPageBytes();
 
   /**
-   * <code>bool has_permission = 3;</code>
+   * <code>int64 id = 3;</code>
+   * @return The id.
+   */
+  long getId();
+
+  /**
+   * <code>string name = 4;</code>
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   * <code>string name = 4;</code>
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString
+      getNameBytes();
+
+  /**
+   * <code>bool has_permission = 5;</code>
    * @return The hasPermission.
    */
   boolean getHasPermission();

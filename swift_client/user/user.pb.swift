@@ -327,6 +327,10 @@ struct GloryApi_PagePermission {
 
   var page: String = String()
 
+  var id: Int64 = 0
+
+  var name: String = String()
+
   var hasPermission_p: Bool = false
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -1535,7 +1539,9 @@ extension GloryApi_PagePermission: SwiftProtobuf.Message, SwiftProtobuf._Message
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "business_system"),
     2: .same(proto: "page"),
-    3: .standard(proto: "has_permission"),
+    3: .same(proto: "id"),
+    4: .same(proto: "name"),
+    5: .standard(proto: "has_permission"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1546,7 +1552,9 @@ extension GloryApi_PagePermission: SwiftProtobuf.Message, SwiftProtobuf._Message
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularStringField(value: &self.businessSystem) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.page) }()
-      case 3: try { try decoder.decodeSingularBoolField(value: &self.hasPermission_p) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.id) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.name) }()
+      case 5: try { try decoder.decodeSingularBoolField(value: &self.hasPermission_p) }()
       default: break
       }
     }
@@ -1559,8 +1567,14 @@ extension GloryApi_PagePermission: SwiftProtobuf.Message, SwiftProtobuf._Message
     if !self.page.isEmpty {
       try visitor.visitSingularStringField(value: self.page, fieldNumber: 2)
     }
+    if self.id != 0 {
+      try visitor.visitSingularInt64Field(value: self.id, fieldNumber: 3)
+    }
+    if !self.name.isEmpty {
+      try visitor.visitSingularStringField(value: self.name, fieldNumber: 4)
+    }
     if self.hasPermission_p != false {
-      try visitor.visitSingularBoolField(value: self.hasPermission_p, fieldNumber: 3)
+      try visitor.visitSingularBoolField(value: self.hasPermission_p, fieldNumber: 5)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1568,6 +1582,8 @@ extension GloryApi_PagePermission: SwiftProtobuf.Message, SwiftProtobuf._Message
   static func ==(lhs: GloryApi_PagePermission, rhs: GloryApi_PagePermission) -> Bool {
     if lhs.businessSystem != rhs.businessSystem {return false}
     if lhs.page != rhs.page {return false}
+    if lhs.id != rhs.id {return false}
+    if lhs.name != rhs.name {return false}
     if lhs.hasPermission_p != rhs.hasPermission_p {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

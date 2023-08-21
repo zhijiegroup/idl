@@ -79,6 +79,8 @@ export interface GetUserResponse {
 export interface PagePermission {
   business_system?: string;
   page?: string;
+  id?: string;
+  name?: string;
   has_permission?: boolean;
 }
 
