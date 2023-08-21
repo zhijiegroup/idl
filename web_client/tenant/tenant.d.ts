@@ -83,9 +83,75 @@ export interface ListTenantResponse {
   pagination?: base.PaginationResponse;
 }
 
+export interface College {
+  tenant_id?: string;
+  edu_dept_id?: string;
+  /** 创建不传 */
+  college_id?: string;
+  /** 名称 必传 */
+  college_name?: string;
+  /** 介绍 */
+  college_overview?: string;
+}
+
+export interface CreateCollegeRequest {
+  base_request?: base.BaseRequest;
+  college?: College;
+}
+
+export interface CreateCollegeResponse {
+  base_resp?: base.BaseResponse;
+  tenant_id?: string;
+  college_id?: string;
+}
+
+export interface GetCollegeRequest {
+  base_request?: base.BaseRequest;
+  college_id?: string;
+}
+
+export interface GetCollegeResponse {
+  base_resp?: base.BaseResponse;
+  college?: College;
+}
+
+export interface UpdateCollegeRequest {
+  base_request?: base.BaseRequest;
+  college?: College;
+}
+
+export interface UpdateCollegeResponse {
+  base_resp?: base.BaseResponse;
+  tenant_id?: string;
+  college_id?: string;
+}
+
+export interface DeleteCollegeRequest {
+  base_request?: base.BaseRequest;
+  college_id?: string;
+}
+
+export interface DeleteCollegeResponse {
+  base_resp?: base.BaseResponse;
+}
+
+export interface ListCollegeRequest {
+  base_request?: base.BaseRequest;
+  college_name?: string;
+  pagination?: base.PaginationRequest;
+}
+
+export interface ListCollegeResponse {
+  base_resp?: base.BaseResponse;
+  colleges?: Array<College>;
+  pagination?: base.PaginationResponse;
+}
+
 export interface Major {
   /** 创建不传 */
   major_id?: string;
+  /** 学院id, 创建必传 */
+  college_id?: string;
   /** 名称 必传 */
   major_name?: string;
   /** 专业类型, 创建必传, e.g. live */
@@ -229,4 +295,22 @@ export interface ListClassResponse {
   base_resp?: base.BaseResponse;
   class?: Array<ClassWithAuthor>;
   pagination?: base.PaginationResponse;
+}
+
+/** 学校组织架构 */
+export interface TenantOrg {
+  id?: string;
+  name?: string;
+  children?: Array<TenantOrg>;
+  child_types?: Array<string>;
+}
+
+export interface GetTenantOrgRequest {
+  base_request?: base.BaseRequest;
+  tenant_id?: string;
+}
+
+export interface GetTenantOrgResponse {
+  base_resp?: base.BaseResponse;
+  tenant_org?: TenantOrg;
 }

@@ -31,6 +31,8 @@ import * as live_evaluate from "./live/live_evaluate";
 import * as account_operation from "./account/account_operation";
 import * as virtual_currency from "./currency/virtual_currency";
 import * as tenant from "./tenant/tenant";
+import * as tenant_dept from "./tenant/tenant_dept";
+import * as student from "./tenant/student";
 export {
   user,
   address,
@@ -61,6 +63,8 @@ export {
   account_operation,
   virtual_currency,
   tenant,
+  tenant_dept,
+  student,
 };
 
 export class glory_api {
@@ -700,6 +704,83 @@ CreateLivePlanProduct create live plan product */
     request: tenant.ListTenantRequest
   ): Promise<tenant.ListTenantResponse>;
 
+  GetTenantOrg(
+    request: tenant.GetTenantOrgRequest
+  ): Promise<tenant.GetTenantOrgResponse>;
+
+  /** college */
+  CreateCollege(
+    request: tenant.CreateCollegeRequest
+  ): Promise<tenant.CreateCollegeResponse>;
+
+  GetCollege(
+    request: tenant.GetCollegeRequest
+  ): Promise<tenant.GetCollegeResponse>;
+
+  UpdateCollege(
+    request: tenant.UpdateCollegeRequest
+  ): Promise<tenant.UpdateCollegeResponse>;
+
+  DeleteCollege(
+    request: tenant.DeleteCollegeRequest
+  ): Promise<tenant.DeleteCollegeResponse>;
+
+  ListCollege(
+    request: tenant.ListCollegeRequest
+  ): Promise<tenant.ListCollegeResponse>;
+
+  /** edu_dept */
+  CreateEduDept(
+    request: tenant_dept.CreateEduDeptRequest
+  ): Promise<tenant_dept.CreateEduDeptResponse>;
+
+  UpdateEduDept(
+    request: tenant_dept.UpdateEduDeptRequest
+  ): Promise<tenant_dept.UpdateEduDeptResponse>;
+
+  DeleteEduDept(
+    request: tenant_dept.DeleteEduDeptRequest
+  ): Promise<tenant_dept.DeleteEduDeptResponse>;
+
+  /** gover_dept */
+  CreateGoverDept(
+    request: tenant_dept.CreateGoverDeptRequest
+  ): Promise<tenant_dept.CreateGoverDeptResponse>;
+
+  UpdateGoverDept(
+    request: tenant_dept.UpdateGoverDeptRequest
+  ): Promise<tenant_dept.UpdateGoverDeptResponse>;
+
+  DeleteGoverDept(
+    request: tenant_dept.DeleteGoverDeptRequest
+  ): Promise<tenant_dept.DeleteGoverDeptResponse>;
+
+  /** edu_office */
+  CreateEduOffice(
+    request: tenant_dept.CreateEduOfficeRequest
+  ): Promise<tenant_dept.CreateEduOfficeResponse>;
+
+  UpdateEduOffice(
+    request: tenant_dept.UpdateEduOfficeRequest
+  ): Promise<tenant_dept.UpdateEduOfficeResponse>;
+
+  DeleteEduOffice(
+    request: tenant_dept.DeleteEduOfficeRequest
+  ): Promise<tenant_dept.DeleteEduOfficeResponse>;
+
+  /** principal_office */
+  CreatePrincipalOffice(
+    request: tenant_dept.CreatePrincipalOfficeRequest
+  ): Promise<tenant_dept.CreatePrincipalOfficeResponse>;
+
+  UpdatePrincipalOffice(
+    request: tenant_dept.UpdatePrincipalOfficeRequest
+  ): Promise<tenant_dept.UpdatePrincipalOfficeResponse>;
+
+  DeletePrincipalOffice(
+    request: tenant_dept.DeletePrincipalOfficeRequest
+  ): Promise<tenant_dept.DeletePrincipalOfficeResponse>;
+
   /** major */
   CreateMajor(
     request: tenant.CreateMajorRequest
@@ -737,6 +818,15 @@ CreateLivePlanProduct create live plan product */
   ListClass(
     request: tenant.ListClassRequest
   ): Promise<tenant.ListClassResponse>;
+
+  /** student */
+  CreateStudents(
+    request: student.CreateStudentsRequest
+  ): Promise<student.CreateStudentsResponse>;
+
+  DeleteStudents(
+    request: student.DeleteStudentsRequest
+  ): Promise<student.DeleteStudentsResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

@@ -348,6 +348,8 @@ struct GloryApi_GetUserPagePermissionRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
+  var tenantID: Int64 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1576,6 +1578,7 @@ extension GloryApi_GetUserPagePermissionRequest: SwiftProtobuf.Message, SwiftPro
   static let protoMessageName: String = _protobuf_package + ".GetUserPagePermissionRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
+    2: .standard(proto: "tenant_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1585,6 +1588,7 @@ extension GloryApi_GetUserPagePermissionRequest: SwiftProtobuf.Message, SwiftPro
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
       default: break
       }
     }
@@ -1598,11 +1602,15 @@ extension GloryApi_GetUserPagePermissionRequest: SwiftProtobuf.Message, SwiftPro
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
+    if self.tenantID != 0 {
+      try visitor.visitSingularInt64Field(value: self.tenantID, fieldNumber: 2)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_GetUserPagePermissionRequest, rhs: GloryApi_GetUserPagePermissionRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.tenantID != rhs.tenantID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

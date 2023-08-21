@@ -84,6 +84,7 @@ export interface PagePermission {
 
 export interface GetUserPagePermissionRequest {
   base_request?: base.BaseRequest;
+  tenant_id?: string;
 }
 
 export interface GetUserPagePermissionResponse {
