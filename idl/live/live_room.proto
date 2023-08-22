@@ -141,6 +141,49 @@ message GetLiveChartDataResponse{
   LiveData live_data =2;
 }
 
+message RecordLiveCallbackRequest {
+  string domain = 1;
+  string app = 2;
+  string stream = 3;
+  string uri = 4;
+  double duration = 5;
+  int64 start_time = 6;
+  int64 stop_time = 7;
+}
+
+message RecordLiveCallbackResponse{
+  base.BaseResponse base_resp = 1;
+}
+
+message VideoToTextSentence {
+  int64 BeginTime = 1;
+  int64 EndTime = 2;
+  int64 ChannelId = 3;
+  int64 SpeechRate = 4;
+  double EmotionValue = 5;
+  int64 SilenceDuration = 6;
+  string Text = 7;
+}
+
+message VideoToTextResult {
+  repeated VideoToTextSentence Sentences = 1;
+}
+
+message VideoToTextCallbackRequest {
+  string TaskId = 1;
+  int64 StatusCode = 2;
+  string StatusText = 3;
+  int64 RequestTime = 4;
+  int64 SolveTime = 5;
+  int64 BizDuration = 6;
+  int64 stop_time = 7;
+  VideoToTextResult Result = 8;
+}
+
+message VideoToTextCallbackResponse{
+  base.BaseResponse base_resp = 1;
+}
+
 
 
 
