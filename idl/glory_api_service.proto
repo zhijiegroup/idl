@@ -35,6 +35,7 @@ import "currency/virtual_currency.proto";
 import "tenant/tenant.proto";
 import "tenant/tenant_dept.proto";
 import "tenant/student.proto";
+import "short_video/short_video.proto";
 
 service glory_api {
 
@@ -736,5 +737,13 @@ service glory_api {
   }
   rpc DeleteStudents(DeleteStudentsRequest) returns (DeleteStudentsResponse) {
     option (api.post) = '/api/student/delete_students';
+  }
+
+  // short_video
+  rpc CreateShortVideo(CreateShortVideoRequest) returns (CreateShortVideoResponse) {
+    option (api.post) = '/api/short_video/create_short_video';
+  }
+  rpc StageShortVideo(StageShortVideoRequest) returns (StageShortVideoResponse) {
+    option (api.post) = '/api/short_video/stage_short_video';
   }
 }
