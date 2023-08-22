@@ -1373,6 +1373,12 @@ struct GloryApi_TenantOrg {
 
   var name: String = String()
 
+  var type: String = String()
+
+  var parent: Int64 = 0
+
+  var tenant: Int64 = 0
+
   var children: [GloryApi_TenantOrg] = []
 
   var childTypes: [String] = []
@@ -3654,8 +3660,11 @@ extension GloryApi_TenantOrg: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "id"),
     2: .same(proto: "name"),
-    3: .same(proto: "children"),
-    4: .standard(proto: "child_types"),
+    3: .same(proto: "type"),
+    4: .same(proto: "parent"),
+    5: .same(proto: "tenant"),
+    6: .same(proto: "children"),
+    7: .standard(proto: "child_types"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -3666,8 +3675,11 @@ extension GloryApi_TenantOrg: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularInt64Field(value: &self.id) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.name) }()
-      case 3: try { try decoder.decodeRepeatedMessageField(value: &self.children) }()
-      case 4: try { try decoder.decodeRepeatedStringField(value: &self.childTypes) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.type) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.parent) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.tenant) }()
+      case 6: try { try decoder.decodeRepeatedMessageField(value: &self.children) }()
+      case 7: try { try decoder.decodeRepeatedStringField(value: &self.childTypes) }()
       default: break
       }
     }
@@ -3680,11 +3692,20 @@ extension GloryApi_TenantOrg: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     if !self.name.isEmpty {
       try visitor.visitSingularStringField(value: self.name, fieldNumber: 2)
     }
+    if !self.type.isEmpty {
+      try visitor.visitSingularStringField(value: self.type, fieldNumber: 3)
+    }
+    if self.parent != 0 {
+      try visitor.visitSingularInt64Field(value: self.parent, fieldNumber: 4)
+    }
+    if self.tenant != 0 {
+      try visitor.visitSingularInt64Field(value: self.tenant, fieldNumber: 5)
+    }
     if !self.children.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.children, fieldNumber: 3)
+      try visitor.visitRepeatedMessageField(value: self.children, fieldNumber: 6)
     }
     if !self.childTypes.isEmpty {
-      try visitor.visitRepeatedStringField(value: self.childTypes, fieldNumber: 4)
+      try visitor.visitRepeatedStringField(value: self.childTypes, fieldNumber: 7)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -3692,6 +3713,9 @@ extension GloryApi_TenantOrg: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
   static func ==(lhs: GloryApi_TenantOrg, rhs: GloryApi_TenantOrg) -> Bool {
     if lhs.id != rhs.id {return false}
     if lhs.name != rhs.name {return false}
+    if lhs.type != rhs.type {return false}
+    if lhs.parent != rhs.parent {return false}
+    if lhs.tenant != rhs.tenant {return false}
     if lhs.children != rhs.children {return false}
     if lhs.childTypes != rhs.childTypes {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

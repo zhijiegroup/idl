@@ -26,48 +26,72 @@ public interface TenantOrgOrBuilder extends
       getNameBytes();
 
   /**
-   * <code>repeated .glory_api.TenantOrg children = 3;</code>
+   * <code>string type = 3;</code>
+   * @return The type.
+   */
+  java.lang.String getType();
+  /**
+   * <code>string type = 3;</code>
+   * @return The bytes for type.
+   */
+  com.google.protobuf.ByteString
+      getTypeBytes();
+
+  /**
+   * <code>int64 parent = 4;</code>
+   * @return The parent.
+   */
+  long getParent();
+
+  /**
+   * <code>int64 tenant = 5;</code>
+   * @return The tenant.
+   */
+  long getTenant();
+
+  /**
+   * <code>repeated .glory_api.TenantOrg children = 6;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.tenant.TenantOrg> 
       getChildrenList();
   /**
-   * <code>repeated .glory_api.TenantOrg children = 3;</code>
+   * <code>repeated .glory_api.TenantOrg children = 6;</code>
    */
   com.zhijiejiaoyu.glory_api.tenant.TenantOrg getChildren(int index);
   /**
-   * <code>repeated .glory_api.TenantOrg children = 3;</code>
+   * <code>repeated .glory_api.TenantOrg children = 6;</code>
    */
   int getChildrenCount();
   /**
-   * <code>repeated .glory_api.TenantOrg children = 3;</code>
+   * <code>repeated .glory_api.TenantOrg children = 6;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.tenant.TenantOrgOrBuilder> 
       getChildrenOrBuilderList();
   /**
-   * <code>repeated .glory_api.TenantOrg children = 3;</code>
+   * <code>repeated .glory_api.TenantOrg children = 6;</code>
    */
   com.zhijiejiaoyu.glory_api.tenant.TenantOrgOrBuilder getChildrenOrBuilder(
       int index);
 
   /**
-   * <code>repeated string child_types = 4;</code>
+   * <code>repeated string child_types = 7;</code>
    * @return A list containing the childTypes.
    */
   java.util.List<java.lang.String>
       getChildTypesList();
   /**
-   * <code>repeated string child_types = 4;</code>
+   * <code>repeated string child_types = 7;</code>
    * @return The count of childTypes.
    */
   int getChildTypesCount();
   /**
-   * <code>repeated string child_types = 4;</code>
+   * <code>repeated string child_types = 7;</code>
    * @param index The index of the element to return.
    * @return The childTypes at the given index.
    */
   java.lang.String getChildTypes(int index);
   /**
-   * <code>repeated string child_types = 4;</code>
+   * <code>repeated string child_types = 7;</code>
    * @param index The index of the value to return.
    * @return The bytes of the childTypes at the given index.
    */

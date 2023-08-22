@@ -159,9 +159,35 @@ export class glory_api {
   }
 
   GetUserPagePermission(request) {
-    const query = queryStringify(request);
-    const uri = `${this.uriPrefix}/api/user/get_user_page_permission${query}`;
-    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+    const uri = `${this.uriPrefix}/api/user/get_user_page_permission`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreateRolePagePermission(request) {
+    const uri = `${this.uriPrefix}/api/user/create_role_page_permission`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  UpdateRolePagePermission(request) {
+    const uri = `${this.uriPrefix}/api/user/update_role_page_permission`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  GetRolePagePermission(request) {
+    const uri = `${this.uriPrefix}/api/user/get_role_page_permission`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
   }
 
   AddAddress(request) {
@@ -1323,7 +1349,7 @@ export class glory_api {
   }
 
   CreateCollege(request) {
-    const uri = `${this.uriPrefix}/api/college/create_college`;
+    const uri = `${this.uriPrefix}/api/tenant/create_college`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
@@ -1332,12 +1358,12 @@ export class glory_api {
 
   GetCollege(request) {
     const query = queryStringify(request);
-    const uri = `${this.uriPrefix}/api/college/get_college${query}`;
+    const uri = `${this.uriPrefix}/api/tenant/get_college${query}`;
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
 
   UpdateCollege(request) {
-    const uri = `${this.uriPrefix}/api/college/update_college`;
+    const uri = `${this.uriPrefix}/api/tenant/update_college`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
@@ -1345,7 +1371,7 @@ export class glory_api {
   }
 
   DeleteCollege(request) {
-    const uri = `${this.uriPrefix}/api/college/delete_college`;
+    const uri = `${this.uriPrefix}/api/tenant/delete_college`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
@@ -1353,7 +1379,7 @@ export class glory_api {
   }
 
   ListCollege(request) {
-    const uri = `${this.uriPrefix}/api/college/list_college`;
+    const uri = `${this.uriPrefix}/api/tenant/list_college`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
@@ -1361,7 +1387,7 @@ export class glory_api {
   }
 
   CreateEduDept(request) {
-    const uri = `${this.uriPrefix}/api/edu_dept/create_edu_dept`;
+    const uri = `${this.uriPrefix}/api/tenant/create_edu_dept`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
@@ -1369,7 +1395,7 @@ export class glory_api {
   }
 
   UpdateEduDept(request) {
-    const uri = `${this.uriPrefix}/api/edu_dept/update_edu_dept`;
+    const uri = `${this.uriPrefix}/api/tenant/update_edu_dept`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
@@ -1377,7 +1403,7 @@ export class glory_api {
   }
 
   DeleteEduDept(request) {
-    const uri = `${this.uriPrefix}/api/edu_dept/delete_edu_dept`;
+    const uri = `${this.uriPrefix}/api/tenant/delete_edu_dept`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
@@ -1385,7 +1411,7 @@ export class glory_api {
   }
 
   CreateGoverDept(request) {
-    const uri = `${this.uriPrefix}/api/gover_dept/create_gover_dept`;
+    const uri = `${this.uriPrefix}/api/tenant/create_gover_dept`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
@@ -1393,7 +1419,7 @@ export class glory_api {
   }
 
   UpdateGoverDept(request) {
-    const uri = `${this.uriPrefix}/api/gover_dept/update_gover_dept`;
+    const uri = `${this.uriPrefix}/api/tenant/update_gover_dept`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
@@ -1401,7 +1427,7 @@ export class glory_api {
   }
 
   DeleteGoverDept(request) {
-    const uri = `${this.uriPrefix}/api/gover_dept/delete_gover_dept`;
+    const uri = `${this.uriPrefix}/api/tenant/delete_gover_dept`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
@@ -1409,7 +1435,7 @@ export class glory_api {
   }
 
   CreateEduOffice(request) {
-    const uri = `${this.uriPrefix}/api/edu_office/create_edu_office`;
+    const uri = `${this.uriPrefix}/api/tenant/create_edu_office`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
@@ -1417,7 +1443,7 @@ export class glory_api {
   }
 
   UpdateEduOffice(request) {
-    const uri = `${this.uriPrefix}/api/edu_office/update_edu_office`;
+    const uri = `${this.uriPrefix}/api/tenant/update_edu_office`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
@@ -1425,7 +1451,7 @@ export class glory_api {
   }
 
   DeleteEduOffice(request) {
-    const uri = `${this.uriPrefix}/api/edu_office/delete_edu_office`;
+    const uri = `${this.uriPrefix}/api/tenant/delete_edu_office`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
@@ -1433,7 +1459,7 @@ export class glory_api {
   }
 
   CreatePrincipalOffice(request) {
-    const uri = `${this.uriPrefix}/api/principal_office/create_principal_office`;
+    const uri = `${this.uriPrefix}/api/tenant/create_principal_office`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
@@ -1441,7 +1467,7 @@ export class glory_api {
   }
 
   UpdatePrincipalOffice(request) {
-    const uri = `${this.uriPrefix}/api/principal_office/update_principal_office`;
+    const uri = `${this.uriPrefix}/api/tenant/update_principal_office`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
@@ -1449,7 +1475,7 @@ export class glory_api {
   }
 
   DeletePrincipalOffice(request) {
-    const uri = `${this.uriPrefix}/api/principal_office/delete_principal_office`;
+    const uri = `${this.uriPrefix}/api/tenant/delete_principal_office`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
@@ -1533,7 +1559,7 @@ export class glory_api {
   }
 
   CreateStudents(request) {
-    const uri = `${this.uriPrefix}/api/student/create_students`;
+    const uri = `${this.uriPrefix}/api/tenant/create_students`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
@@ -1541,7 +1567,7 @@ export class glory_api {
   }
 
   DeleteStudents(request) {
-    const uri = `${this.uriPrefix}/api/student/delete_students`;
+    const uri = `${this.uriPrefix}/api/tenant/delete_students`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse

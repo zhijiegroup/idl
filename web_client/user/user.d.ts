@@ -95,6 +95,45 @@ export interface GetUserPagePermissionResponse {
   page_permission?: Array<PagePermission>;
 }
 
+export interface CreateRolePagePermissionRequest {
+  base_request?: base.BaseRequest;
+  tenant_id?: string;
+  role_name?: string;
+  role_description?: string;
+  page_permission?: Array<PagePermission>;
+}
+
+export interface CreateRolePagePermissionResponse {
+  base_resp?: base.BaseResponse;
+  role_id?: string;
+}
+
+export interface GetRolePagePermissionRequest {
+  base_request?: base.BaseRequest;
+  role_id?: string;
+  tenant_id?: string;
+}
+
+export interface GetRolePagePermissionResponse {
+  base_resp?: base.BaseResponse;
+  tenant_id?: string;
+  role_id?: string;
+  role_name?: string;
+  role_description?: string;
+  page_permission?: Array<PagePermission>;
+}
+
+export interface UpdateRolePagePermissionRequest {
+  base_request?: base.BaseRequest;
+  tenant_id?: string;
+  role_id?: string;
+  page_permission?: Array<PagePermission>;
+}
+
+export interface UpdateRolePagePermissionResponse {
+  base_resp?: base.BaseResponse;
+}
+
 export interface Permission {
   permission_id?: string;
   permission_name?: string;

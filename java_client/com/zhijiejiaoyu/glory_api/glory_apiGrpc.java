@@ -356,6 +356,99 @@ public final class glory_apiGrpc {
     return getGetUserPagePermissionMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionRequest,
+      com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionResponse> getCreateRolePagePermissionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateRolePagePermission",
+      requestType = com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionRequest,
+      com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionResponse> getCreateRolePagePermissionMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionRequest, com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionResponse> getCreateRolePagePermissionMethod;
+    if ((getCreateRolePagePermissionMethod = glory_apiGrpc.getCreateRolePagePermissionMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCreateRolePagePermissionMethod = glory_apiGrpc.getCreateRolePagePermissionMethod) == null) {
+          glory_apiGrpc.getCreateRolePagePermissionMethod = getCreateRolePagePermissionMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionRequest, com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateRolePagePermission"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CreateRolePagePermission"))
+              .build();
+        }
+      }
+    }
+    return getCreateRolePagePermissionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionRequest,
+      com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionResponse> getUpdateRolePagePermissionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateRolePagePermission",
+      requestType = com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionRequest,
+      com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionResponse> getUpdateRolePagePermissionMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionRequest, com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionResponse> getUpdateRolePagePermissionMethod;
+    if ((getUpdateRolePagePermissionMethod = glory_apiGrpc.getUpdateRolePagePermissionMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getUpdateRolePagePermissionMethod = glory_apiGrpc.getUpdateRolePagePermissionMethod) == null) {
+          glory_apiGrpc.getUpdateRolePagePermissionMethod = getUpdateRolePagePermissionMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionRequest, com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateRolePagePermission"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("UpdateRolePagePermission"))
+              .build();
+        }
+      }
+    }
+    return getUpdateRolePagePermissionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionRequest,
+      com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionResponse> getGetRolePagePermissionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetRolePagePermission",
+      requestType = com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionRequest,
+      com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionResponse> getGetRolePagePermissionMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionRequest, com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionResponse> getGetRolePagePermissionMethod;
+    if ((getGetRolePagePermissionMethod = glory_apiGrpc.getGetRolePagePermissionMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGetRolePagePermissionMethod = glory_apiGrpc.getGetRolePagePermissionMethod) == null) {
+          glory_apiGrpc.getGetRolePagePermissionMethod = getGetRolePagePermissionMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionRequest, com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetRolePagePermission"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetRolePagePermission"))
+              .build();
+        }
+      }
+    }
+    return getGetRolePagePermissionMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.user.AddAddressRequest,
       com.zhijiejiaoyu.glory_api.user.AddAddressResponse> getAddAddressMethod;
 
@@ -6104,10 +6197,34 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     * page permission
+     * </pre>
      */
     default void getUserPagePermission(com.zhijiejiaoyu.glory_api.user.GetUserPagePermissionRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.GetUserPagePermissionResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetUserPagePermissionMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void createRolePagePermission(com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateRolePagePermissionMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updateRolePagePermission(com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateRolePagePermissionMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void getRolePagePermission(com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetRolePagePermissionMethod(), responseObserver);
     }
 
     /**
@@ -7600,11 +7717,38 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     * page permission
+     * </pre>
      */
     public void getUserPagePermission(com.zhijiejiaoyu.glory_api.user.GetUserPagePermissionRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.GetUserPagePermissionResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetUserPagePermissionMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void createRolePagePermission(com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateRolePagePermissionMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateRolePagePermission(com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateRolePagePermissionMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getRolePagePermission(com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetRolePagePermissionMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -9257,10 +9401,34 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     * page permission
+     * </pre>
      */
     public com.zhijiejiaoyu.glory_api.user.GetUserPagePermissionResponse getUserPagePermission(com.zhijiejiaoyu.glory_api.user.GetUserPagePermissionRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetUserPagePermissionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionResponse createRolePagePermission(com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateRolePagePermissionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionResponse updateRolePagePermission(com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateRolePagePermissionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionResponse getRolePagePermission(com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRolePagePermissionMethod(), getCallOptions(), request);
     }
 
     /**
@@ -10742,11 +10910,38 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     * page permission
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.user.GetUserPagePermissionResponse> getUserPagePermission(
         com.zhijiejiaoyu.glory_api.user.GetUserPagePermissionRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetUserPagePermissionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionResponse> createRolePagePermission(
+        com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateRolePagePermissionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionResponse> updateRolePagePermission(
+        com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateRolePagePermissionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionResponse> getRolePagePermission(
+        com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetRolePagePermissionMethod(), getCallOptions()), request);
     }
 
     /**
@@ -12305,187 +12500,190 @@ public final class glory_apiGrpc {
   private static final int METHODID_LOGIN_WITH_PASSWORD = 8;
   private static final int METHODID_UPDATE_PASSWORD = 9;
   private static final int METHODID_GET_USER_PAGE_PERMISSION = 10;
-  private static final int METHODID_ADD_ADDRESS = 11;
-  private static final int METHODID_DELETE_ADDRESS = 12;
-  private static final int METHODID_UPDATE_ADDRESS = 13;
-  private static final int METHODID_GET_ADDRESS = 14;
-  private static final int METHODID_LIST_ADDRESS = 15;
-  private static final int METHODID_LIST_USER_BY_ROLE = 16;
-  private static final int METHODID_LIST_PERMISSION = 17;
-  private static final int METHODID_LIST_ROLE = 18;
-  private static final int METHODID_GIVE_ROLE_PERMISSION = 19;
-  private static final int METHODID_REMOVE_ROLE_PERMISSION = 20;
-  private static final int METHODID_CREATE_ROLE = 21;
-  private static final int METHODID_DELETE_ROLE = 22;
-  private static final int METHODID_LIST_RESOURCE = 23;
-  private static final int METHODID_CREATE_SHOP = 24;
-  private static final int METHODID_GET_SHOP = 25;
-  private static final int METHODID_UPDATE_SHOP = 26;
-  private static final int METHODID_LIST_SHOP = 27;
-  private static final int METHODID_DELETE_SHOP = 28;
-  private static final int METHODID_LIST_OPERATION_METRICS = 29;
-  private static final int METHODID_GET_SHOP_QRCODE = 30;
-  private static final int METHODID_UPDATE_SHOP_MANAGER = 31;
-  private static final int METHODID_GET_SHOP_BUSINESS_DATA = 32;
-  private static final int METHODID_ADD_SHOP_ACCESS = 33;
-  private static final int METHODID_REMOVE_SHOP_ACCESS = 34;
-  private static final int METHODID_VERIFY_FIELD = 35;
-  private static final int METHODID_LIST_SHOP_ACCESS = 36;
-  private static final int METHODID_ADD_SHOP_CATEGORY = 37;
-  private static final int METHODID_GET_SHOP_CATEGORY = 38;
-  private static final int METHODID_REMOVE_SHOP_CATEGORY = 39;
-  private static final int METHODID_ADD_FREIGHT_TEMPLATE = 40;
-  private static final int METHODID_GET_FREIGHT_TEMPLATE = 41;
-  private static final int METHODID_UPDATE_FREIGHT_TEMPLATE = 42;
-  private static final int METHODID_DELETE_FREIGHT_TEMPLATE = 43;
-  private static final int METHODID_LIST_FREIGHT_TEMPLATE = 44;
-  private static final int METHODID_LIST_QUALIFICATION = 45;
-  private static final int METHODID_GET_MALL_INDEX = 46;
-  private static final int METHODID_CREATE_CATEGORY = 47;
-  private static final int METHODID_GET_CATEGORY = 48;
-  private static final int METHODID_UPDATE_CATEGORY = 49;
-  private static final int METHODID_LIST_CATEGORY = 50;
-  private static final int METHODID_DELETE_CATEGORY = 51;
-  private static final int METHODID_LIST_CATEGORY_QUALIFICATION = 52;
-  private static final int METHODID_CREATE_PRODUCT = 53;
-  private static final int METHODID_GET_PRODUCT = 54;
-  private static final int METHODID_UPDATE_PRODUCT = 55;
-  private static final int METHODID_LIST_PRODUCT = 56;
-  private static final int METHODID_DELETE_PRODUCT = 57;
-  private static final int METHODID_UPLOAD_MULTI_IMAGE = 58;
-  private static final int METHODID_DELETE_IMAGE_BY_ID = 59;
-  private static final int METHODID_BIND_ATTRIBUTE = 60;
-  private static final int METHODID_PUBLISH_PRODUCT = 61;
-  private static final int METHODID_OFF_SHELF_PRODUCT_IN_BATCHES = 62;
-  private static final int METHODID_DELETE_PRODUCT_IN_BATCHES = 63;
-  private static final int METHODID_CHANGE_PRODUCTS_STATE = 64;
-  private static final int METHODID_CREATE_SKU = 65;
-  private static final int METHODID_GET_SKU = 66;
-  private static final int METHODID_UPDATE_SKU = 67;
-  private static final int METHODID_LIST_SKU = 68;
-  private static final int METHODID_DELETE_SKU = 69;
-  private static final int METHODID_CREATE_ATTRIBUTE = 70;
-  private static final int METHODID_GET_ATTRIBUTE = 71;
-  private static final int METHODID_LIST_ATTRIBUTE = 72;
-  private static final int METHODID_DELETE_ATTRIBUTE = 73;
-  private static final int METHODID_ADD_ATTRIBUTE_VALUE = 74;
-  private static final int METHODID_DELETE_ATTRIBUTE_VALUE = 75;
-  private static final int METHODID_CREATE_ORDER = 76;
-  private static final int METHODID_GET_ORDER = 77;
-  private static final int METHODID_UPDATE_ORDER = 78;
-  private static final int METHODID_LIST_ORDER = 79;
-  private static final int METHODID_DELETE_ORDER = 80;
-  private static final int METHODID_SHIP_GOODS = 81;
-  private static final int METHODID_CONFIRM_RECEIPT_GOODS = 82;
-  private static final int METHODID_CANCEL_ORDER = 83;
-  private static final int METHODID_SHIP_GOODS_IN_BATCHES = 84;
-  private static final int METHODID_FREE_SHIPPING_IN_BATCHES = 85;
-  private static final int METHODID_CREATE_CART = 86;
-  private static final int METHODID_GET_CART = 87;
-  private static final int METHODID_UPDATE_CART = 88;
-  private static final int METHODID_DELETE_CART = 89;
-  private static final int METHODID_UPLOAD_ATTACHMENT = 90;
-  private static final int METHODID_LIST_ATTACHMENT = 91;
-  private static final int METHODID_DELETE_ATTACHMENT = 92;
-  private static final int METHODID_CREATE_SELLER = 93;
-  private static final int METHODID_CREATE_PAYMENT = 94;
-  private static final int METHODID_GET_PAYMENT = 95;
-  private static final int METHODID_UPDATE_PAYMENT = 96;
-  private static final int METHODID_DELETE_PAYMENT = 97;
-  private static final int METHODID_CREATE_CONFIG = 98;
-  private static final int METHODID_UPDATE_CONFIG = 99;
-  private static final int METHODID_DELETE_CONFIG = 100;
-  private static final int METHODID_GET_CONFIG = 101;
-  private static final int METHODID_WX_PREPAY = 102;
-  private static final int METHODID_CLOSE_ORDER = 103;
-  private static final int METHODID_QUERY_ORDER_BY_ID = 104;
-  private static final int METHODID_QUERY_ORDER_BY_OUT_TRADE = 105;
-  private static final int METHODID_ADD_VCURRENCY = 106;
-  private static final int METHODID_RECHARGE_CURRENCY = 107;
-  private static final int METHODID_RECHARGE_CURRENCY_IN_BATCHES = 108;
-  private static final int METHODID_DELETE_VCURRENCY = 109;
-  private static final int METHODID_UPDATE_VCURRENCY = 110;
-  private static final int METHODID_GET_VCURRENCY = 111;
-  private static final int METHODID_LIST_VCURRENCY = 112;
-  private static final int METHODID_ADD_ACCOUNT_OPERATION = 113;
-  private static final int METHODID_GET_ACCOUNT_OPERATION = 114;
-  private static final int METHODID_LIST_ACCOUNT_OPERATION = 115;
-  private static final int METHODID_CREATE_ROOM = 116;
-  private static final int METHODID_GET_ROOM = 117;
-  private static final int METHODID_UPDATE_ROOM = 118;
-  private static final int METHODID_LIST_ROOM = 119;
-  private static final int METHODID_DELETE_ROOM = 120;
-  private static final int METHODID_LIST_FINISHED_ROOM = 121;
-  private static final int METHODID_RECORD = 122;
-  private static final int METHODID_CREATE_LIVE_USER_TOKEN = 123;
-  private static final int METHODID_USER_ENTER_ROOM = 124;
-  private static final int METHODID_USER_EXIT_ROOM = 125;
-  private static final int METHODID_LIST_ACTIVE_ROOM_USER = 126;
-  private static final int METHODID_CREATE_LIVE_PLAN = 127;
-  private static final int METHODID_GET_LIVE_PLAN = 128;
-  private static final int METHODID_UPDATE_LIVE_PLAN = 129;
-  private static final int METHODID_LIST_LIVE_PLAN = 130;
-  private static final int METHODID_DELETE_LIVE_PLAN = 131;
-  private static final int METHODID_CREATE_LIVE_PLAN_PRODUCT = 132;
-  private static final int METHODID_UPDATE_LIVE_PLAN_PRODUCT = 133;
-  private static final int METHODID_LIST_LIVE_PLAN_PRODUCT = 134;
-  private static final int METHODID_DELETE_LIVE_PLAN_PRODUCT = 135;
-  private static final int METHODID_LOAD_LIVE_PLAN_PRODUCT = 136;
-  private static final int METHODID_UPDATE_LIVE_PRODUCT_STATUS = 137;
-  private static final int METHODID_LIST_LIVE_PRODUCT_STATUS = 138;
-  private static final int METHODID_DELETE_LIVE_PRODUCT_STATUS = 139;
-  private static final int METHODID_CREATE_LIVE_PRODUCT_STATUS = 140;
-  private static final int METHODID_GET_LIVING_PRODUCT_STATUS = 141;
-  private static final int METHODID_UPDATE_LIVE_PRODUCT_INTRODUCT_STATUS = 142;
-  private static final int METHODID_CREATE_LIVE_TEXT = 143;
-  private static final int METHODID_UPDATE_LIVE_TEXT = 144;
-  private static final int METHODID_LIST_LIVE_TEXT = 145;
-  private static final int METHODID_GET_LIVE_TEXT = 146;
-  private static final int METHODID_DELETE_LIVE_TEXTS = 147;
-  private static final int METHODID_GET_LIVE_CHART_DATA = 148;
-  private static final int METHODID_GET_EVALUATE_SELECTOR = 149;
-  private static final int METHODID_LIST_PERSONAL_EVALUATE = 150;
-  private static final int METHODID_GET_EVALUATE_DETAIL = 151;
-  private static final int METHODID_SUBMIT_EVALUATE = 152;
-  private static final int METHODID_LIST_UNEVALUATED_ROOM = 153;
-  private static final int METHODID_LIST_STUDENT_EVALUATIONS = 154;
-  private static final int METHODID_IGNORE_EVALUATION = 155;
-  private static final int METHODID_GET_RANK = 156;
-  private static final int METHODID_CREATE_TENANT = 157;
-  private static final int METHODID_GET_TENANT = 158;
-  private static final int METHODID_UPDATE_TENANT = 159;
-  private static final int METHODID_DELETE_TENANT = 160;
-  private static final int METHODID_LIST_TENANT = 161;
-  private static final int METHODID_GET_TENANT_ORG = 162;
-  private static final int METHODID_CREATE_COLLEGE = 163;
-  private static final int METHODID_GET_COLLEGE = 164;
-  private static final int METHODID_UPDATE_COLLEGE = 165;
-  private static final int METHODID_DELETE_COLLEGE = 166;
-  private static final int METHODID_LIST_COLLEGE = 167;
-  private static final int METHODID_CREATE_EDU_DEPT = 168;
-  private static final int METHODID_UPDATE_EDU_DEPT = 169;
-  private static final int METHODID_DELETE_EDU_DEPT = 170;
-  private static final int METHODID_CREATE_GOVER_DEPT = 171;
-  private static final int METHODID_UPDATE_GOVER_DEPT = 172;
-  private static final int METHODID_DELETE_GOVER_DEPT = 173;
-  private static final int METHODID_CREATE_EDU_OFFICE = 174;
-  private static final int METHODID_UPDATE_EDU_OFFICE = 175;
-  private static final int METHODID_DELETE_EDU_OFFICE = 176;
-  private static final int METHODID_CREATE_PRINCIPAL_OFFICE = 177;
-  private static final int METHODID_UPDATE_PRINCIPAL_OFFICE = 178;
-  private static final int METHODID_DELETE_PRINCIPAL_OFFICE = 179;
-  private static final int METHODID_CREATE_MAJOR = 180;
-  private static final int METHODID_GET_MAJOR = 181;
-  private static final int METHODID_UPDATE_MAJOR = 182;
-  private static final int METHODID_DELETE_MAJOR = 183;
-  private static final int METHODID_LIST_MAJOR = 184;
-  private static final int METHODID_CREATE_CLASS = 185;
-  private static final int METHODID_GET_CLASS = 186;
-  private static final int METHODID_UPDATE_CLASS = 187;
-  private static final int METHODID_DELETE_CLASS = 188;
-  private static final int METHODID_LIST_CLASS = 189;
-  private static final int METHODID_CREATE_STUDENTS = 190;
-  private static final int METHODID_DELETE_STUDENTS = 191;
+  private static final int METHODID_CREATE_ROLE_PAGE_PERMISSION = 11;
+  private static final int METHODID_UPDATE_ROLE_PAGE_PERMISSION = 12;
+  private static final int METHODID_GET_ROLE_PAGE_PERMISSION = 13;
+  private static final int METHODID_ADD_ADDRESS = 14;
+  private static final int METHODID_DELETE_ADDRESS = 15;
+  private static final int METHODID_UPDATE_ADDRESS = 16;
+  private static final int METHODID_GET_ADDRESS = 17;
+  private static final int METHODID_LIST_ADDRESS = 18;
+  private static final int METHODID_LIST_USER_BY_ROLE = 19;
+  private static final int METHODID_LIST_PERMISSION = 20;
+  private static final int METHODID_LIST_ROLE = 21;
+  private static final int METHODID_GIVE_ROLE_PERMISSION = 22;
+  private static final int METHODID_REMOVE_ROLE_PERMISSION = 23;
+  private static final int METHODID_CREATE_ROLE = 24;
+  private static final int METHODID_DELETE_ROLE = 25;
+  private static final int METHODID_LIST_RESOURCE = 26;
+  private static final int METHODID_CREATE_SHOP = 27;
+  private static final int METHODID_GET_SHOP = 28;
+  private static final int METHODID_UPDATE_SHOP = 29;
+  private static final int METHODID_LIST_SHOP = 30;
+  private static final int METHODID_DELETE_SHOP = 31;
+  private static final int METHODID_LIST_OPERATION_METRICS = 32;
+  private static final int METHODID_GET_SHOP_QRCODE = 33;
+  private static final int METHODID_UPDATE_SHOP_MANAGER = 34;
+  private static final int METHODID_GET_SHOP_BUSINESS_DATA = 35;
+  private static final int METHODID_ADD_SHOP_ACCESS = 36;
+  private static final int METHODID_REMOVE_SHOP_ACCESS = 37;
+  private static final int METHODID_VERIFY_FIELD = 38;
+  private static final int METHODID_LIST_SHOP_ACCESS = 39;
+  private static final int METHODID_ADD_SHOP_CATEGORY = 40;
+  private static final int METHODID_GET_SHOP_CATEGORY = 41;
+  private static final int METHODID_REMOVE_SHOP_CATEGORY = 42;
+  private static final int METHODID_ADD_FREIGHT_TEMPLATE = 43;
+  private static final int METHODID_GET_FREIGHT_TEMPLATE = 44;
+  private static final int METHODID_UPDATE_FREIGHT_TEMPLATE = 45;
+  private static final int METHODID_DELETE_FREIGHT_TEMPLATE = 46;
+  private static final int METHODID_LIST_FREIGHT_TEMPLATE = 47;
+  private static final int METHODID_LIST_QUALIFICATION = 48;
+  private static final int METHODID_GET_MALL_INDEX = 49;
+  private static final int METHODID_CREATE_CATEGORY = 50;
+  private static final int METHODID_GET_CATEGORY = 51;
+  private static final int METHODID_UPDATE_CATEGORY = 52;
+  private static final int METHODID_LIST_CATEGORY = 53;
+  private static final int METHODID_DELETE_CATEGORY = 54;
+  private static final int METHODID_LIST_CATEGORY_QUALIFICATION = 55;
+  private static final int METHODID_CREATE_PRODUCT = 56;
+  private static final int METHODID_GET_PRODUCT = 57;
+  private static final int METHODID_UPDATE_PRODUCT = 58;
+  private static final int METHODID_LIST_PRODUCT = 59;
+  private static final int METHODID_DELETE_PRODUCT = 60;
+  private static final int METHODID_UPLOAD_MULTI_IMAGE = 61;
+  private static final int METHODID_DELETE_IMAGE_BY_ID = 62;
+  private static final int METHODID_BIND_ATTRIBUTE = 63;
+  private static final int METHODID_PUBLISH_PRODUCT = 64;
+  private static final int METHODID_OFF_SHELF_PRODUCT_IN_BATCHES = 65;
+  private static final int METHODID_DELETE_PRODUCT_IN_BATCHES = 66;
+  private static final int METHODID_CHANGE_PRODUCTS_STATE = 67;
+  private static final int METHODID_CREATE_SKU = 68;
+  private static final int METHODID_GET_SKU = 69;
+  private static final int METHODID_UPDATE_SKU = 70;
+  private static final int METHODID_LIST_SKU = 71;
+  private static final int METHODID_DELETE_SKU = 72;
+  private static final int METHODID_CREATE_ATTRIBUTE = 73;
+  private static final int METHODID_GET_ATTRIBUTE = 74;
+  private static final int METHODID_LIST_ATTRIBUTE = 75;
+  private static final int METHODID_DELETE_ATTRIBUTE = 76;
+  private static final int METHODID_ADD_ATTRIBUTE_VALUE = 77;
+  private static final int METHODID_DELETE_ATTRIBUTE_VALUE = 78;
+  private static final int METHODID_CREATE_ORDER = 79;
+  private static final int METHODID_GET_ORDER = 80;
+  private static final int METHODID_UPDATE_ORDER = 81;
+  private static final int METHODID_LIST_ORDER = 82;
+  private static final int METHODID_DELETE_ORDER = 83;
+  private static final int METHODID_SHIP_GOODS = 84;
+  private static final int METHODID_CONFIRM_RECEIPT_GOODS = 85;
+  private static final int METHODID_CANCEL_ORDER = 86;
+  private static final int METHODID_SHIP_GOODS_IN_BATCHES = 87;
+  private static final int METHODID_FREE_SHIPPING_IN_BATCHES = 88;
+  private static final int METHODID_CREATE_CART = 89;
+  private static final int METHODID_GET_CART = 90;
+  private static final int METHODID_UPDATE_CART = 91;
+  private static final int METHODID_DELETE_CART = 92;
+  private static final int METHODID_UPLOAD_ATTACHMENT = 93;
+  private static final int METHODID_LIST_ATTACHMENT = 94;
+  private static final int METHODID_DELETE_ATTACHMENT = 95;
+  private static final int METHODID_CREATE_SELLER = 96;
+  private static final int METHODID_CREATE_PAYMENT = 97;
+  private static final int METHODID_GET_PAYMENT = 98;
+  private static final int METHODID_UPDATE_PAYMENT = 99;
+  private static final int METHODID_DELETE_PAYMENT = 100;
+  private static final int METHODID_CREATE_CONFIG = 101;
+  private static final int METHODID_UPDATE_CONFIG = 102;
+  private static final int METHODID_DELETE_CONFIG = 103;
+  private static final int METHODID_GET_CONFIG = 104;
+  private static final int METHODID_WX_PREPAY = 105;
+  private static final int METHODID_CLOSE_ORDER = 106;
+  private static final int METHODID_QUERY_ORDER_BY_ID = 107;
+  private static final int METHODID_QUERY_ORDER_BY_OUT_TRADE = 108;
+  private static final int METHODID_ADD_VCURRENCY = 109;
+  private static final int METHODID_RECHARGE_CURRENCY = 110;
+  private static final int METHODID_RECHARGE_CURRENCY_IN_BATCHES = 111;
+  private static final int METHODID_DELETE_VCURRENCY = 112;
+  private static final int METHODID_UPDATE_VCURRENCY = 113;
+  private static final int METHODID_GET_VCURRENCY = 114;
+  private static final int METHODID_LIST_VCURRENCY = 115;
+  private static final int METHODID_ADD_ACCOUNT_OPERATION = 116;
+  private static final int METHODID_GET_ACCOUNT_OPERATION = 117;
+  private static final int METHODID_LIST_ACCOUNT_OPERATION = 118;
+  private static final int METHODID_CREATE_ROOM = 119;
+  private static final int METHODID_GET_ROOM = 120;
+  private static final int METHODID_UPDATE_ROOM = 121;
+  private static final int METHODID_LIST_ROOM = 122;
+  private static final int METHODID_DELETE_ROOM = 123;
+  private static final int METHODID_LIST_FINISHED_ROOM = 124;
+  private static final int METHODID_RECORD = 125;
+  private static final int METHODID_CREATE_LIVE_USER_TOKEN = 126;
+  private static final int METHODID_USER_ENTER_ROOM = 127;
+  private static final int METHODID_USER_EXIT_ROOM = 128;
+  private static final int METHODID_LIST_ACTIVE_ROOM_USER = 129;
+  private static final int METHODID_CREATE_LIVE_PLAN = 130;
+  private static final int METHODID_GET_LIVE_PLAN = 131;
+  private static final int METHODID_UPDATE_LIVE_PLAN = 132;
+  private static final int METHODID_LIST_LIVE_PLAN = 133;
+  private static final int METHODID_DELETE_LIVE_PLAN = 134;
+  private static final int METHODID_CREATE_LIVE_PLAN_PRODUCT = 135;
+  private static final int METHODID_UPDATE_LIVE_PLAN_PRODUCT = 136;
+  private static final int METHODID_LIST_LIVE_PLAN_PRODUCT = 137;
+  private static final int METHODID_DELETE_LIVE_PLAN_PRODUCT = 138;
+  private static final int METHODID_LOAD_LIVE_PLAN_PRODUCT = 139;
+  private static final int METHODID_UPDATE_LIVE_PRODUCT_STATUS = 140;
+  private static final int METHODID_LIST_LIVE_PRODUCT_STATUS = 141;
+  private static final int METHODID_DELETE_LIVE_PRODUCT_STATUS = 142;
+  private static final int METHODID_CREATE_LIVE_PRODUCT_STATUS = 143;
+  private static final int METHODID_GET_LIVING_PRODUCT_STATUS = 144;
+  private static final int METHODID_UPDATE_LIVE_PRODUCT_INTRODUCT_STATUS = 145;
+  private static final int METHODID_CREATE_LIVE_TEXT = 146;
+  private static final int METHODID_UPDATE_LIVE_TEXT = 147;
+  private static final int METHODID_LIST_LIVE_TEXT = 148;
+  private static final int METHODID_GET_LIVE_TEXT = 149;
+  private static final int METHODID_DELETE_LIVE_TEXTS = 150;
+  private static final int METHODID_GET_LIVE_CHART_DATA = 151;
+  private static final int METHODID_GET_EVALUATE_SELECTOR = 152;
+  private static final int METHODID_LIST_PERSONAL_EVALUATE = 153;
+  private static final int METHODID_GET_EVALUATE_DETAIL = 154;
+  private static final int METHODID_SUBMIT_EVALUATE = 155;
+  private static final int METHODID_LIST_UNEVALUATED_ROOM = 156;
+  private static final int METHODID_LIST_STUDENT_EVALUATIONS = 157;
+  private static final int METHODID_IGNORE_EVALUATION = 158;
+  private static final int METHODID_GET_RANK = 159;
+  private static final int METHODID_CREATE_TENANT = 160;
+  private static final int METHODID_GET_TENANT = 161;
+  private static final int METHODID_UPDATE_TENANT = 162;
+  private static final int METHODID_DELETE_TENANT = 163;
+  private static final int METHODID_LIST_TENANT = 164;
+  private static final int METHODID_GET_TENANT_ORG = 165;
+  private static final int METHODID_CREATE_COLLEGE = 166;
+  private static final int METHODID_GET_COLLEGE = 167;
+  private static final int METHODID_UPDATE_COLLEGE = 168;
+  private static final int METHODID_DELETE_COLLEGE = 169;
+  private static final int METHODID_LIST_COLLEGE = 170;
+  private static final int METHODID_CREATE_EDU_DEPT = 171;
+  private static final int METHODID_UPDATE_EDU_DEPT = 172;
+  private static final int METHODID_DELETE_EDU_DEPT = 173;
+  private static final int METHODID_CREATE_GOVER_DEPT = 174;
+  private static final int METHODID_UPDATE_GOVER_DEPT = 175;
+  private static final int METHODID_DELETE_GOVER_DEPT = 176;
+  private static final int METHODID_CREATE_EDU_OFFICE = 177;
+  private static final int METHODID_UPDATE_EDU_OFFICE = 178;
+  private static final int METHODID_DELETE_EDU_OFFICE = 179;
+  private static final int METHODID_CREATE_PRINCIPAL_OFFICE = 180;
+  private static final int METHODID_UPDATE_PRINCIPAL_OFFICE = 181;
+  private static final int METHODID_DELETE_PRINCIPAL_OFFICE = 182;
+  private static final int METHODID_CREATE_MAJOR = 183;
+  private static final int METHODID_GET_MAJOR = 184;
+  private static final int METHODID_UPDATE_MAJOR = 185;
+  private static final int METHODID_DELETE_MAJOR = 186;
+  private static final int METHODID_LIST_MAJOR = 187;
+  private static final int METHODID_CREATE_CLASS = 188;
+  private static final int METHODID_GET_CLASS = 189;
+  private static final int METHODID_UPDATE_CLASS = 190;
+  private static final int METHODID_DELETE_CLASS = 191;
+  private static final int METHODID_LIST_CLASS = 192;
+  private static final int METHODID_CREATE_STUDENTS = 193;
+  private static final int METHODID_DELETE_STUDENTS = 194;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -12547,6 +12745,18 @@ public final class glory_apiGrpc {
         case METHODID_GET_USER_PAGE_PERMISSION:
           serviceImpl.getUserPagePermission((com.zhijiejiaoyu.glory_api.user.GetUserPagePermissionRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.GetUserPagePermissionResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_ROLE_PAGE_PERMISSION:
+          serviceImpl.createRolePagePermission((com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_ROLE_PAGE_PERMISSION:
+          serviceImpl.updateRolePagePermission((com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionResponse>) responseObserver);
+          break;
+        case METHODID_GET_ROLE_PAGE_PERMISSION:
+          serviceImpl.getRolePagePermission((com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionResponse>) responseObserver);
           break;
         case METHODID_ADD_ADDRESS:
           serviceImpl.addAddress((com.zhijiejiaoyu.glory_api.user.AddAddressRequest) request,
@@ -13367,6 +13577,27 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.user.GetUserPagePermissionRequest,
               com.zhijiejiaoyu.glory_api.user.GetUserPagePermissionResponse>(
                 service, METHODID_GET_USER_PAGE_PERMISSION)))
+        .addMethod(
+          getCreateRolePagePermissionMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionRequest,
+              com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionResponse>(
+                service, METHODID_CREATE_ROLE_PAGE_PERMISSION)))
+        .addMethod(
+          getUpdateRolePagePermissionMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionRequest,
+              com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionResponse>(
+                service, METHODID_UPDATE_ROLE_PAGE_PERMISSION)))
+        .addMethod(
+          getGetRolePagePermissionMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionRequest,
+              com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionResponse>(
+                service, METHODID_GET_ROLE_PAGE_PERMISSION)))
         .addMethod(
           getAddAddressMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -14693,6 +14924,9 @@ public final class glory_apiGrpc {
               .addMethod(getLoginWithPasswordMethod())
               .addMethod(getUpdatePasswordMethod())
               .addMethod(getGetUserPagePermissionMethod())
+              .addMethod(getCreateRolePagePermissionMethod())
+              .addMethod(getUpdateRolePagePermissionMethod())
+              .addMethod(getGetRolePagePermissionMethod())
               .addMethod(getAddAddressMethod())
               .addMethod(getDeleteAddressMethod())
               .addMethod(getUpdateAddressMethod())

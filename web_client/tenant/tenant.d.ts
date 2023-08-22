@@ -301,6 +301,9 @@ export interface ListClassResponse {
 export interface TenantOrg {
   id?: string;
   name?: string;
+  type?: string;
+  parent?: string;
+  tenant?: string;
   children?: Array<TenantOrg>;
   child_types?: Array<string>;
 }

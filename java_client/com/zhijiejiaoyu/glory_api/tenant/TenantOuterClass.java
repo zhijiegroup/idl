@@ -398,15 +398,16 @@ public final class TenantOuterClass {
       "resp\030\001 \001(\0132\022.base.BaseResponse\022)\n\005class\030" +
       "\002 \003(\0132\032.glory_api.ClassWithAuthor\022,\n\npag" +
       "ination\030d \001(\0132\030.base.PaginationResponse\"" +
-      "b\n\tTenantOrg\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022&" +
-      "\n\010children\030\003 \003(\0132\024.glory_api.TenantOrg\022\023" +
-      "\n\013child_types\030\004 \003(\t\"Q\n\023GetTenantOrgReque" +
-      "st\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequ" +
-      "est\022\021\n\ttenant_id\030\002 \001(\003\"g\n\024GetTenantOrgRe" +
-      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
-      "ponse\022(\n\ntenant_org\030\002 \001(\0132\024.glory_api.Te" +
-      "nantOrgB%\n!com.zhijiejiaoyu.glory_api.te" +
-      "nantP\001b\006proto3"
+      "\220\001\n\tTenantOrg\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022" +
+      "\014\n\004type\030\003 \001(\t\022\016\n\006parent\030\004 \001(\003\022\016\n\006tenant\030" +
+      "\005 \001(\003\022&\n\010children\030\006 \003(\0132\024.glory_api.Tena" +
+      "ntOrg\022\023\n\013child_types\030\007 \003(\t\"Q\n\023GetTenantO" +
+      "rgRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.B" +
+      "aseRequest\022\021\n\ttenant_id\030\002 \001(\003\"g\n\024GetTena" +
+      "ntOrgResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
+      "BaseResponse\022(\n\ntenant_org\030\002 \001(\0132\024.glory" +
+      "_api.TenantOrgB%\n!com.zhijiejiaoyu.glory" +
+      "_api.tenantP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -700,7 +701,7 @@ public final class TenantOuterClass {
     internal_static_glory_api_TenantOrg_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_TenantOrg_descriptor,
-        new java.lang.String[] { "Id", "Name", "Children", "ChildTypes", });
+        new java.lang.String[] { "Id", "Name", "Type", "Parent", "Tenant", "Children", "ChildTypes", });
     internal_static_glory_api_GetTenantOrgRequest_descriptor =
       getDescriptor().getMessageTypes().get(48);
     internal_static_glory_api_GetTenantOrgRequest_fieldAccessorTable = new
