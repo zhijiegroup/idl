@@ -19,6 +19,7 @@ message CreateLiveTextRequest {
     string title =2;
     string content =3;
     int64 shop_id =4;
+    string type = 5;
   }
 message CreateLiveTextResponse {
     base.BaseResponse base_resp = 1;
@@ -30,6 +31,7 @@ message UpdateLiveTextRequest {
     int64 text_id = 2; 
     string title =3;
     string content =4;  
+    string type = 5;
 }
 message UpdateLiveTextResponse {
     base.BaseResponse base_resp = 1;
@@ -38,6 +40,7 @@ message UpdateLiveTextResponse {
 message ListLiveTextRequest {
     base.BaseRequest base_request = 1;
     int64 shop_id = 2;
+    string type = 3;
     base.PaginationRequest pagination = 100;
 }
 message ListLiveTextResponse {
