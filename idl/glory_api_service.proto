@@ -80,7 +80,7 @@ service glory_api {
   }
 
   rpc GetUserPagePermission(GetUserPagePermissionRequest) returns (GetUserPagePermissionResponse) {
-    option (api.get) = '/api/user/get_user_page_permission';  // get user page permission with token
+    option (api.post) = '/api/user/get_user_page_permission';  // get user page permission with token
   }
 
   // address
@@ -123,6 +123,12 @@ service glory_api {
   }
   rpc CreateRole(CreateRoleRequest) returns (CreateRoleResponse) {
     option (api.post) = '/api/auth/create_role';
+  }
+  rpc UpdateRole(UpdateRoleRequest) returns (UpdateRoleResponse) {
+    option (api.post) = '/api/auth/update_role';
+  }
+  rpc GetRole(GetRoleRequest) returns (GetRoleResponse) {
+    option (api.post) = '/api/auth/get_role';
   }
   rpc DeleteRole(DeleteRoleRequest) returns (DeleteRoleResponse) {
     option (api.post) = '/api/auth/delete_role';
@@ -629,71 +635,71 @@ service glory_api {
 
   //college
   rpc CreateCollege(CreateCollegeRequest) returns (CreateCollegeResponse) {
-    option (api.post) = '/api/college/create_college';
+    option (api.post) = '/api/tenant/create_college';
   }
   rpc GetCollege(GetCollegeRequest) returns (GetCollegeResponse) {
-    option (api.get) = '/api/college/get_college';
+    option (api.get) = '/api/tenant/get_college';
   }
   rpc UpdateCollege(UpdateCollegeRequest) returns (UpdateCollegeResponse) {
-    option (api.post) = '/api/college/update_college';
+    option (api.post) = '/api/tenant/update_college';
   }
   rpc DeleteCollege(DeleteCollegeRequest) returns (DeleteCollegeResponse) {
-    option (api.post) = '/api/college/delete_college';
+    option (api.post) = '/api/tenant/delete_college';
   }
   rpc ListCollege(ListCollegeRequest) returns (ListCollegeResponse) {
-    option (api.post) = '/api/college/list_college';
+    option (api.post) = '/api/tenant/list_college';
   }
 
   // edu_dept
   rpc CreateEduDept(CreateEduDeptRequest) returns (CreateEduDeptResponse) {
-    option (api.post) = '/api/edu_dept/create_edu_dept';
+    option (api.post) = '/api/tenant/create_edu_dept';
   }
 
   rpc UpdateEduDept(UpdateEduDeptRequest) returns (UpdateEduDeptResponse) {
-    option (api.post) = '/api/edu_dept/update_edu_dept';
+    option (api.post) = '/api/tenant/update_edu_dept';
   }
 
   rpc DeleteEduDept(DeleteEduDeptRequest) returns (DeleteEduDeptResponse) {
-    option (api.post) = '/api/edu_dept/delete_edu_dept';
+    option (api.post) = '/api/tenant/delete_edu_dept';
   }
 
   //gover_dept
   rpc CreateGoverDept(CreateGoverDeptRequest) returns (CreateGoverDeptResponse) {
-    option (api.post) = '/api/gover_dept/create_gover_dept';
+    option (api.post) = '/api/tenant/create_gover_dept';
   }
 
   rpc UpdateGoverDept(UpdateGoverDeptRequest) returns (UpdateGoverDeptResponse) {
-    option (api.post) = '/api/gover_dept/update_gover_dept';
+    option (api.post) = '/api/tenant/update_gover_dept';
   }
 
   rpc DeleteGoverDept(DeleteGoverDeptRequest) returns (DeleteGoverDeptResponse) {
-    option (api.post) = '/api/gover_dept/delete_gover_dept';
+    option (api.post) = '/api/tenant/delete_gover_dept';
   }
 
   // edu_office
   rpc CreateEduOffice(CreateEduOfficeRequest) returns (CreateEduOfficeResponse) {
-    option (api.post) = '/api/edu_office/create_edu_office';
+    option (api.post) = '/api/tenant/create_edu_office';
   }
 
   rpc UpdateEduOffice(UpdateEduOfficeRequest) returns (UpdateEduOfficeResponse) {
-    option (api.post) = '/api/edu_office/update_edu_office';
+    option (api.post) = '/api/tenant/update_edu_office';
   }
 
   rpc DeleteEduOffice(DeleteEduOfficeRequest) returns (DeleteEduOfficeResponse) {
-    option (api.post) = '/api/edu_office/delete_edu_office';
+    option (api.post) = '/api/tenant/delete_edu_office';
   }
 
   //principal_office
   rpc CreatePrincipalOffice(CreatePrincipalOfficeRequest) returns (CreatePrincipalOfficeResponse) {
-    option (api.post) = '/api/principal_office/create_principal_office';
+    option (api.post) = '/api/tenant/create_principal_office';
   }
 
   rpc UpdatePrincipalOffice(UpdatePrincipalOfficeRequest) returns (UpdatePrincipalOfficeResponse) {
-    option (api.post) = '/api/principal_office/update_principal_office';
+    option (api.post) = '/api/tenant/update_principal_office';
   }
 
   rpc DeletePrincipalOffice(DeletePrincipalOfficeRequest) returns (DeletePrincipalOfficeResponse) {
-    option (api.post) = '/api/principal_office/delete_principal_office';
+    option (api.post) = '/api/tenant/delete_principal_office';
   }
 
   //major
@@ -732,9 +738,9 @@ service glory_api {
   
   //student
   rpc CreateStudents(CreateStudentsRequest) returns (CreateStudentsResponse) {
-    option (api.post) = '/api/student/create_students';
+    option (api.post) = '/api/tenant/create_students';
   }
   rpc DeleteStudents(DeleteStudentsRequest) returns (DeleteStudentsResponse) {
-    option (api.post) = '/api/student/delete_students';
+    option (api.post) = '/api/tenant/delete_students';
   }
 }
