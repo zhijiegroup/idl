@@ -51,4 +51,16 @@ public interface UpdateLiveTextRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getContentBytes();
+
+  /**
+   * <code>string type = 5;</code>
+   * @return The type.
+   */
+  java.lang.String getType();
+  /**
+   * <code>string type = 5;</code>
+   * @return The bytes for type.
+   */
+  com.google.protobuf.ByteString
+      getTypeBytes();
 }

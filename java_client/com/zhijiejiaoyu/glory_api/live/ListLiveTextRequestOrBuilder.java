@@ -29,6 +29,18 @@ public interface ListLiveTextRequestOrBuilder extends
   long getShopId();
 
   /**
+   * <code>string type = 3;</code>
+   * @return The type.
+   */
+  java.lang.String getType();
+  /**
+   * <code>string type = 3;</code>
+   * @return The bytes for type.
+   */
+  com.google.protobuf.ByteString
+      getTypeBytes();
+
+  /**
    * <code>.base.PaginationRequest pagination = 100;</code>
    * @return Whether the pagination field is set.
    */

@@ -19,6 +19,7 @@ export interface CreateLiveTextRequest {
   title?: string;
   content?: string;
   shop_id?: string;
+  type?: string;
 }
 
 export interface CreateLiveTextResponse {
@@ -31,6 +32,7 @@ export interface UpdateLiveTextRequest {
   text_id?: string;
   title?: string;
   content?: string;
+  type?: string;
 }
 
 export interface UpdateLiveTextResponse {
@@ -40,6 +42,7 @@ export interface UpdateLiveTextResponse {
 export interface ListLiveTextRequest {
   base_request?: base.BaseRequest;
   shop_id?: string;
+  type?: string;
   pagination?: base.PaginationRequest;
 }
 

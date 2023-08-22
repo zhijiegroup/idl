@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListLiveTextRequest() {
+    type = "";
   }
 
   @java.lang.Override
@@ -64,6 +65,12 @@ private static final long serialVersionUID = 0L;
           case 16: {
 
             shopId = input.readInt64();
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            type = s;
             break;
           }
           case 802: {
@@ -148,6 +155,44 @@ private static final long serialVersionUID = 0L;
     return shopId;
   }
 
+  public static final int TYPE_FIELD_NUMBER = 3;
+  private volatile java.lang.Object type;
+  /**
+   * <code>string type = 3;</code>
+   * @return The type.
+   */
+  @java.lang.Override
+  public java.lang.String getType() {
+    java.lang.Object ref = type;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      type = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string type = 3;</code>
+   * @return The bytes for type.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTypeBytes() {
+    java.lang.Object ref = type;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      type = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int PAGINATION_FIELD_NUMBER = 100;
   private com.zhijiejiaoyu.base.PaginationRequest pagination;
   /**
@@ -194,6 +239,9 @@ private static final long serialVersionUID = 0L;
     if (shopId_ != 0L) {
       output.writeInt64(2, shopId);
     }
+    if (!getTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, type);
+    }
     if (pagination_ != null) {
       output.writeMessage(100, getPagination());
     }
@@ -213,6 +261,9 @@ private static final long serialVersionUID = 0L;
     if (shopId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, shopId);
+    }
+    if (!getTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, type);
     }
     if (pagination_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -240,6 +291,8 @@ private static final long serialVersionUID = 0L;
     }
     if (getShopId()
         != other.getShopId()) return false;
+    if (!getType()
+        .equals(other.getType())) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -263,6 +316,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + SHOP_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getShopId());
+    hash = (37 * hash) + TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getType().hashCode();
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
@@ -408,6 +463,8 @@ private static final long serialVersionUID = 0L;
       }
       shopId = 0L;
 
+      type = "";
+
       if (paginationBuilder == null) {
         pagination = null;
       } else {
@@ -446,6 +503,7 @@ private static final long serialVersionUID = 0L;
         result.baseRequest = baseRequestBuilder_.build();
       }
       result.shopId = shopId;
+      result.type = type;
       if (paginationBuilder == null) {
         result.pagination = pagination;
       } else {
@@ -504,6 +562,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getShopId() != 0L) {
         setShopId(other.getShopId());
+      }
+      if (!other.getType().isEmpty()) {
+        type = other.type;
+        onChanged();
       }
       if (other.hasPagination()) {
         mergePagination(other.getPagination());
@@ -683,6 +745,82 @@ private static final long serialVersionUID = 0L;
     public Builder clearShopId() {
       
       shopId = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object type = "";
+    /**
+     * <code>string type = 3;</code>
+     * @return The type.
+     */
+    public java.lang.String getType() {
+      java.lang.Object ref = type;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string type = 3;</code>
+     * @return The bytes for type.
+     */
+    public com.google.protobuf.ByteString
+        getTypeBytes() {
+      java.lang.Object ref = type;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        type = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string type = 3;</code>
+     * @param value The type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      type = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string type = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearType() {
+      
+      type = getDefaultInstance().getType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string type = 3;</code>
+     * @param value The bytes for type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      type = value;
       onChanged();
       return this;
     }
