@@ -88,6 +88,45 @@ message GetUserPagePermissionResponse {
   repeated PagePermission page_permission =2; // page permission of the user
 }
 
+message CreateRolePagePermissionRequest {
+  base.BaseRequest base_request = 1;
+  int64 tenant_id = 2;
+  string role_name = 3;
+  string role_description = 4;
+  repeated PagePermission page_permission = 5;
+}
+
+message CreateRolePagePermissionResponse {
+  base.BaseResponse base_resp = 1;
+  int64 role_id = 2;
+}
+
+message GetRolePagePermissionRequest {
+  base.BaseRequest base_request = 1;
+  int64 role_id = 2;
+  int64 tenant_id = 3;
+}
+
+message GetRolePagePermissionResponse {
+  base.BaseResponse base_resp = 1;
+  int64 tenant_id = 2;
+  int64 role_id = 3;
+  string role_name = 4;
+  string role_description = 5;
+  repeated PagePermission page_permission = 6;
+}
+
+message UpdateRolePagePermissionRequest {
+  base.BaseRequest base_request = 1;
+  int64 tenant_id = 2;
+  int64 role_id = 3;
+  repeated PagePermission page_permission = 4;
+}
+
+message UpdateRolePagePermissionResponse {
+  base.BaseResponse base_resp = 1;
+}
+
 message Permission {
   int64 permission_id =1;
   string permission_name =2;
@@ -156,8 +195,6 @@ message CreateRoleResponse {
   base.BaseResponse base_resp = 1;
   int64 role_id =2; // role id
 }
-
-
 
 message GiveRolePermissionRequest {
   base.BaseRequest base_request=1;
