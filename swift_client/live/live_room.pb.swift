@@ -566,6 +566,143 @@ struct GloryApi_GetLiveChartDataResponse {
   fileprivate var _liveData: GloryApi_LiveData? = nil
 }
 
+struct GloryApi_RecordLiveCallbackRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var domain: String = String()
+
+  var app: String = String()
+
+  var stream: String = String()
+
+  var uri: String = String()
+
+  var duration: Double = 0
+
+  var startTime: Int64 = 0
+
+  var stopTime: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct GloryApi_RecordLiveCallbackResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+}
+
+struct GloryApi_VideoToTextSentence {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var beginTime: Int64 = 0
+
+  var endTime: Int64 = 0
+
+  var channelID: Int64 = 0
+
+  var speechRate: Int64 = 0
+
+  var emotionValue: Double = 0
+
+  var silenceDuration: Int64 = 0
+
+  var text: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct GloryApi_VideoToTextResult {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var sentences: [GloryApi_VideoToTextSentence] = []
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct GloryApi_VideoToTextCallbackRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var taskID: String = String()
+
+  var statusCode: Int64 = 0
+
+  var statusText: String = String()
+
+  var requestTime: Int64 = 0
+
+  var solveTime: Int64 = 0
+
+  var bizDuration: Int64 = 0
+
+  var stopTime: Int64 = 0
+
+  var result: GloryApi_VideoToTextResult {
+    get {return _result ?? GloryApi_VideoToTextResult()}
+    set {_result = newValue}
+  }
+  /// Returns true if `result` has been explicitly set.
+  var hasResult: Bool {return self._result != nil}
+  /// Clears the value of `result`. Subsequent reads from it will return its default value.
+  mutating func clearResult() {self._result = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _result: GloryApi_VideoToTextResult? = nil
+}
+
+struct GloryApi_VideoToTextCallbackResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+}
+
 #if swift(>=5.5) && canImport(_Concurrency)
 extension GloryApi_Room: @unchecked Sendable {}
 extension GloryApi_CreateRoomRequest: @unchecked Sendable {}
@@ -586,6 +723,12 @@ extension GloryApi_GetLiveChartDataRequest: @unchecked Sendable {}
 extension GloryApi_LiveChartData: @unchecked Sendable {}
 extension GloryApi_LiveData: @unchecked Sendable {}
 extension GloryApi_GetLiveChartDataResponse: @unchecked Sendable {}
+extension GloryApi_RecordLiveCallbackRequest: @unchecked Sendable {}
+extension GloryApi_RecordLiveCallbackResponse: @unchecked Sendable {}
+extension GloryApi_VideoToTextSentence: @unchecked Sendable {}
+extension GloryApi_VideoToTextResult: @unchecked Sendable {}
+extension GloryApi_VideoToTextCallbackRequest: @unchecked Sendable {}
+extension GloryApi_VideoToTextCallbackResponse: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -1699,6 +1842,324 @@ extension GloryApi_GetLiveChartDataResponse: SwiftProtobuf.Message, SwiftProtobu
   static func ==(lhs: GloryApi_GetLiveChartDataResponse, rhs: GloryApi_GetLiveChartDataResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs._liveData != rhs._liveData {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_RecordLiveCallbackRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".RecordLiveCallbackRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "domain"),
+    2: .same(proto: "app"),
+    3: .same(proto: "stream"),
+    4: .same(proto: "uri"),
+    5: .same(proto: "duration"),
+    6: .standard(proto: "start_time"),
+    7: .standard(proto: "stop_time"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.domain) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.app) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.stream) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.uri) }()
+      case 5: try { try decoder.decodeSingularDoubleField(value: &self.duration) }()
+      case 6: try { try decoder.decodeSingularInt64Field(value: &self.startTime) }()
+      case 7: try { try decoder.decodeSingularInt64Field(value: &self.stopTime) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.domain.isEmpty {
+      try visitor.visitSingularStringField(value: self.domain, fieldNumber: 1)
+    }
+    if !self.app.isEmpty {
+      try visitor.visitSingularStringField(value: self.app, fieldNumber: 2)
+    }
+    if !self.stream.isEmpty {
+      try visitor.visitSingularStringField(value: self.stream, fieldNumber: 3)
+    }
+    if !self.uri.isEmpty {
+      try visitor.visitSingularStringField(value: self.uri, fieldNumber: 4)
+    }
+    if self.duration != 0 {
+      try visitor.visitSingularDoubleField(value: self.duration, fieldNumber: 5)
+    }
+    if self.startTime != 0 {
+      try visitor.visitSingularInt64Field(value: self.startTime, fieldNumber: 6)
+    }
+    if self.stopTime != 0 {
+      try visitor.visitSingularInt64Field(value: self.stopTime, fieldNumber: 7)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_RecordLiveCallbackRequest, rhs: GloryApi_RecordLiveCallbackRequest) -> Bool {
+    if lhs.domain != rhs.domain {return false}
+    if lhs.app != rhs.app {return false}
+    if lhs.stream != rhs.stream {return false}
+    if lhs.uri != rhs.uri {return false}
+    if lhs.duration != rhs.duration {return false}
+    if lhs.startTime != rhs.startTime {return false}
+    if lhs.stopTime != rhs.stopTime {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_RecordLiveCallbackResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".RecordLiveCallbackResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_RecordLiveCallbackResponse, rhs: GloryApi_RecordLiveCallbackResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_VideoToTextSentence: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".VideoToTextSentence"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "BeginTime"),
+    2: .same(proto: "EndTime"),
+    3: .same(proto: "ChannelId"),
+    4: .same(proto: "SpeechRate"),
+    5: .same(proto: "EmotionValue"),
+    6: .same(proto: "SilenceDuration"),
+    7: .same(proto: "Text"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.beginTime) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.endTime) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.channelID) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.speechRate) }()
+      case 5: try { try decoder.decodeSingularDoubleField(value: &self.emotionValue) }()
+      case 6: try { try decoder.decodeSingularInt64Field(value: &self.silenceDuration) }()
+      case 7: try { try decoder.decodeSingularStringField(value: &self.text) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.beginTime != 0 {
+      try visitor.visitSingularInt64Field(value: self.beginTime, fieldNumber: 1)
+    }
+    if self.endTime != 0 {
+      try visitor.visitSingularInt64Field(value: self.endTime, fieldNumber: 2)
+    }
+    if self.channelID != 0 {
+      try visitor.visitSingularInt64Field(value: self.channelID, fieldNumber: 3)
+    }
+    if self.speechRate != 0 {
+      try visitor.visitSingularInt64Field(value: self.speechRate, fieldNumber: 4)
+    }
+    if self.emotionValue != 0 {
+      try visitor.visitSingularDoubleField(value: self.emotionValue, fieldNumber: 5)
+    }
+    if self.silenceDuration != 0 {
+      try visitor.visitSingularInt64Field(value: self.silenceDuration, fieldNumber: 6)
+    }
+    if !self.text.isEmpty {
+      try visitor.visitSingularStringField(value: self.text, fieldNumber: 7)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_VideoToTextSentence, rhs: GloryApi_VideoToTextSentence) -> Bool {
+    if lhs.beginTime != rhs.beginTime {return false}
+    if lhs.endTime != rhs.endTime {return false}
+    if lhs.channelID != rhs.channelID {return false}
+    if lhs.speechRate != rhs.speechRate {return false}
+    if lhs.emotionValue != rhs.emotionValue {return false}
+    if lhs.silenceDuration != rhs.silenceDuration {return false}
+    if lhs.text != rhs.text {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_VideoToTextResult: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".VideoToTextResult"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "Sentences"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeRepeatedMessageField(value: &self.sentences) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.sentences.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.sentences, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_VideoToTextResult, rhs: GloryApi_VideoToTextResult) -> Bool {
+    if lhs.sentences != rhs.sentences {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_VideoToTextCallbackRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".VideoToTextCallbackRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "TaskId"),
+    2: .same(proto: "StatusCode"),
+    3: .same(proto: "StatusText"),
+    4: .same(proto: "RequestTime"),
+    5: .same(proto: "SolveTime"),
+    6: .same(proto: "BizDuration"),
+    7: .standard(proto: "stop_time"),
+    8: .same(proto: "Result"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.taskID) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.statusCode) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.statusText) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.requestTime) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.solveTime) }()
+      case 6: try { try decoder.decodeSingularInt64Field(value: &self.bizDuration) }()
+      case 7: try { try decoder.decodeSingularInt64Field(value: &self.stopTime) }()
+      case 8: try { try decoder.decodeSingularMessageField(value: &self._result) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    if !self.taskID.isEmpty {
+      try visitor.visitSingularStringField(value: self.taskID, fieldNumber: 1)
+    }
+    if self.statusCode != 0 {
+      try visitor.visitSingularInt64Field(value: self.statusCode, fieldNumber: 2)
+    }
+    if !self.statusText.isEmpty {
+      try visitor.visitSingularStringField(value: self.statusText, fieldNumber: 3)
+    }
+    if self.requestTime != 0 {
+      try visitor.visitSingularInt64Field(value: self.requestTime, fieldNumber: 4)
+    }
+    if self.solveTime != 0 {
+      try visitor.visitSingularInt64Field(value: self.solveTime, fieldNumber: 5)
+    }
+    if self.bizDuration != 0 {
+      try visitor.visitSingularInt64Field(value: self.bizDuration, fieldNumber: 6)
+    }
+    if self.stopTime != 0 {
+      try visitor.visitSingularInt64Field(value: self.stopTime, fieldNumber: 7)
+    }
+    try { if let v = self._result {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_VideoToTextCallbackRequest, rhs: GloryApi_VideoToTextCallbackRequest) -> Bool {
+    if lhs.taskID != rhs.taskID {return false}
+    if lhs.statusCode != rhs.statusCode {return false}
+    if lhs.statusText != rhs.statusText {return false}
+    if lhs.requestTime != rhs.requestTime {return false}
+    if lhs.solveTime != rhs.solveTime {return false}
+    if lhs.bizDuration != rhs.bizDuration {return false}
+    if lhs.stopTime != rhs.stopTime {return false}
+    if lhs._result != rhs._result {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_VideoToTextCallbackResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".VideoToTextCallbackResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_VideoToTextCallbackResponse, rhs: GloryApi_VideoToTextCallbackResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

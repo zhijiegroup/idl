@@ -152,3 +152,46 @@ export interface GetLiveChartDataResponse {
   base_resp?: base.BaseResponse;
   live_data?: LiveData;
 }
+
+export interface RecordLiveCallbackRequest {
+  domain?: string;
+  app?: string;
+  stream?: string;
+  uri?: string;
+  duration?: number;
+  start_time?: string;
+  stop_time?: string;
+}
+
+export interface RecordLiveCallbackResponse {
+  base_resp?: base.BaseResponse;
+}
+
+export interface VideoToTextSentence {
+  BeginTime?: string;
+  EndTime?: string;
+  ChannelId?: string;
+  SpeechRate?: string;
+  EmotionValue?: number;
+  SilenceDuration?: string;
+  Text?: string;
+}
+
+export interface VideoToTextResult {
+  Sentences?: Array<VideoToTextSentence>;
+}
+
+export interface VideoToTextCallbackRequest {
+  TaskId?: string;
+  StatusCode?: string;
+  StatusText?: string;
+  RequestTime?: string;
+  SolveTime?: string;
+  BizDuration?: string;
+  stop_time?: string;
+  Result?: VideoToTextResult;
+}
+
+export interface VideoToTextCallbackResponse {
+  base_resp?: base.BaseResponse;
+}
