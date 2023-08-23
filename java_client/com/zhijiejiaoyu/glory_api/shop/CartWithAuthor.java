@@ -50,7 +50,7 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             com.zhijiejiaoyu.glory_api.shop.Cart.Builder subBuilder = null;
-            if (cart_ != null) {
+            if (cart != null) {
               subBuilder = cart.toBuilder();
             }
             cart = input.readMessage(com.zhijiejiaoyu.glory_api.shop.Cart.parser(), extensionRegistry);
@@ -63,7 +63,7 @@ private static final long serialVersionUID = 0L;
           }
           case 18: {
             com.zhijiejiaoyu.base.AuthorInfo.Builder subBuilder = null;
-            if (authorInfo_ != null) {
+            if (authorInfo != null) {
               subBuilder = authorInfo.toBuilder();
             }
             authorInfo = input.readMessage(com.zhijiejiaoyu.base.AuthorInfo.parser(), extensionRegistry);
@@ -114,7 +114,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasCart() {
-    return cart_ != null;
+    return cart != null;
   }
   /**
    * <code>.glory_api.Cart cart = 1;</code>
@@ -140,7 +140,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasAuthorInfo() {
-    return authorInfo_ != null;
+    return authorInfo != null;
   }
   /**
    * <code>.base.AuthorInfo author_info = 2;</code>
@@ -172,10 +172,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (cart_ != null) {
+    if (cart != null) {
       output.writeMessage(1, getCart());
     }
-    if (authorInfo_ != null) {
+    if (authorInfo != null) {
       output.writeMessage(2, getAuthorInfo());
     }
     unknownFields.writeTo(output);
@@ -187,11 +187,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (cart_ != null) {
+    if (cart != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getCart());
     }
-    if (authorInfo_ != null) {
+    if (authorInfo != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getAuthorInfo());
     }
@@ -511,7 +511,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the cart field is set.
      */
     public boolean hasCart() {
-      return cartBuilder_ != null || cart_ != null;
+      return cartBuilder != null || cart != null;
     }
     /**
      * <code>.glory_api.Cart cart = 1;</code>
@@ -559,7 +559,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeCart(com.zhijiejiaoyu.glory_api.shop.Cart value) {
       if (cartBuilder == null) {
-        if (cart_ != null) {
+        if (cart != null) {
           cart =
             com.zhijiejiaoyu.glory_api.shop.Cart.newBuilder(cart).mergeFrom(value).buildPartial();
         } else {
@@ -598,7 +598,7 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.Cart cart = 1;</code>
      */
     public com.zhijiejiaoyu.glory_api.shop.CartOrBuilder getCartOrBuilder() {
-      if (cartBuilder_ != null) {
+      if (cartBuilder != null) {
         return cartBuilder.getMessageOrBuilder();
       } else {
         return cart == null ?
@@ -630,7 +630,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the authorInfo field is set.
      */
     public boolean hasAuthorInfo() {
-      return authorInfoBuilder_ != null || authorInfo_ != null;
+      return authorInfoBuilder != null || authorInfo != null;
     }
     /**
      * <code>.base.AuthorInfo author_info = 2;</code>
@@ -678,7 +678,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeAuthorInfo(com.zhijiejiaoyu.base.AuthorInfo value) {
       if (authorInfoBuilder == null) {
-        if (authorInfo_ != null) {
+        if (authorInfo != null) {
           authorInfo =
             com.zhijiejiaoyu.base.AuthorInfo.newBuilder(authorInfo).mergeFrom(value).buildPartial();
         } else {
@@ -717,7 +717,7 @@ private static final long serialVersionUID = 0L;
      * <code>.base.AuthorInfo author_info = 2;</code>
      */
     public com.zhijiejiaoyu.base.AuthorInfoOrBuilder getAuthorInfoOrBuilder() {
-      if (authorInfoBuilder_ != null) {
+      if (authorInfoBuilder != null) {
         return authorInfoBuilder.getMessageOrBuilder();
       } else {
         return authorInfo == null ?

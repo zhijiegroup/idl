@@ -241,7 +241,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (costPrice_ != 0L) {
+    if (costPrice != 0L) {
       output.writeInt64(1, costPrice);
     }
     if (!getInvoiceIdBytes().isEmpty()) {
@@ -259,7 +259,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (costPrice_ != 0L) {
+    if (costPrice != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, costPrice);
     }
@@ -1000,7 +1000,7 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.wxpay.GoodsDetailOrBuilder> 
          getGoodsDetailOrBuilderList() {
-      if (goodsDetailBuilder_ != null) {
+      if (goodsDetailBuilder != null) {
         return goodsDetailBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(goodsDetail);

@@ -56,7 +56,7 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             com.zhijiejiaoyu.base.BaseResponse.Builder subBuilder = null;
-            if (baseResp_ != null) {
+            if (baseResp != null) {
               subBuilder = baseResp.toBuilder();
             }
             baseResp = input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
@@ -173,7 +173,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasBaseResp() {
-    return baseResp_ != null;
+    return baseResp != null;
   }
   /**
    * <code>.base.BaseResponse base_resp = 1;</code>
@@ -471,22 +471,22 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (baseResp_ != null) {
+    if (baseResp != null) {
       output.writeMessage(1, getBaseResp());
     }
     if (!getTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, type);
     }
-    if (evaluateId_ != 0L) {
+    if (evaluateId != 0L) {
       output.writeInt64(3, evaluateId);
     }
-    if (templateId_ != 0L) {
+    if (templateId != 0L) {
       output.writeInt64(4, templateId);
     }
-    if (userId_ != 0L) {
+    if (userId != 0L) {
       output.writeInt64(5, userId);
     }
-    if (extraScore_ != 0D) {
+    if (extraScore != 0D) {
       output.writeDouble(6, extraScore);
     }
     if (!getExtraCommentBytes().isEmpty()) {
@@ -495,13 +495,13 @@ private static final long serialVersionUID = 0L;
     if (!getZeroCommentBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, zeroComment);
     }
-    if (score_ != 0D) {
+    if (score != 0D) {
       output.writeDouble(9, score);
     }
     if (!getAiFeedbackBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, aiFeedback);
     }
-    if (baseline_ != false) {
+    if (baseline != false) {
       output.writeBool(11, baseline);
     }
     for (int i = 0; i < detail.size(); i++) {
@@ -516,26 +516,26 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (baseResp_ != null) {
+    if (baseResp != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
     if (!getTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, type);
     }
-    if (evaluateId_ != 0L) {
+    if (evaluateId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, evaluateId);
     }
-    if (templateId_ != 0L) {
+    if (templateId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, templateId);
     }
-    if (userId_ != 0L) {
+    if (userId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(5, userId);
     }
-    if (extraScore_ != 0D) {
+    if (extraScore != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(6, extraScore);
     }
@@ -545,14 +545,14 @@ private static final long serialVersionUID = 0L;
     if (!getZeroCommentBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, zeroComment);
     }
-    if (score_ != 0D) {
+    if (score != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(9, score);
     }
     if (!getAiFeedbackBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, aiFeedback);
     }
-    if (baseline_ != false) {
+    if (baseline != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(11, baseline);
     }
@@ -1015,7 +1015,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the baseResp field is set.
      */
     public boolean hasBaseResp() {
-      return baseRespBuilder_ != null || baseResp_ != null;
+      return baseRespBuilder != null || baseResp != null;
     }
     /**
      * <code>.base.BaseResponse base_resp = 1;</code>
@@ -1063,7 +1063,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeBaseResp(com.zhijiejiaoyu.base.BaseResponse value) {
       if (baseRespBuilder == null) {
-        if (baseResp_ != null) {
+        if (baseResp != null) {
           baseResp =
             com.zhijiejiaoyu.base.BaseResponse.newBuilder(baseResp).mergeFrom(value).buildPartial();
         } else {
@@ -1102,7 +1102,7 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder() {
-      if (baseRespBuilder_ != null) {
+      if (baseRespBuilder != null) {
         return baseRespBuilder.getMessageOrBuilder();
       } else {
         return baseResp == null ?
@@ -1833,7 +1833,7 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.live.EvaluateDetailOrBuilder> 
          getDetailOrBuilderList() {
-      if (detailBuilder_ != null) {
+      if (detailBuilder != null) {
         return detailBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(detail);

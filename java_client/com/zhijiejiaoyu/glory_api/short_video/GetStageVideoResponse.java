@@ -50,7 +50,7 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             com.zhijiejiaoyu.base.BaseResponse.Builder subBuilder = null;
-            if (baseResp_ != null) {
+            if (baseResp != null) {
               subBuilder = baseResp.toBuilder();
             }
             baseResp = input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
@@ -63,7 +63,7 @@ private static final long serialVersionUID = 0L;
           }
           case 18: {
             com.zhijiejiaoyu.glory_api.short_video.StageVideo.Builder subBuilder = null;
-            if (stageVideo_ != null) {
+            if (stageVideo != null) {
               subBuilder = stageVideo.toBuilder();
             }
             stageVideo = input.readMessage(com.zhijiejiaoyu.glory_api.short_video.StageVideo.parser(), extensionRegistry);
@@ -114,7 +114,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasBaseResp() {
-    return baseResp_ != null;
+    return baseResp != null;
   }
   /**
    * <code>.base.BaseResponse base_resp = 1;</code>
@@ -140,7 +140,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasStageVideo() {
-    return stageVideo_ != null;
+    return stageVideo != null;
   }
   /**
    * <code>.glory_api.StageVideo stage_video = 2;</code>
@@ -172,10 +172,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (baseResp_ != null) {
+    if (baseResp != null) {
       output.writeMessage(1, getBaseResp());
     }
-    if (stageVideo_ != null) {
+    if (stageVideo != null) {
       output.writeMessage(2, getStageVideo());
     }
     unknownFields.writeTo(output);
@@ -187,11 +187,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (baseResp_ != null) {
+    if (baseResp != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
-    if (stageVideo_ != null) {
+    if (stageVideo != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getStageVideo());
     }
@@ -511,7 +511,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the baseResp field is set.
      */
     public boolean hasBaseResp() {
-      return baseRespBuilder_ != null || baseResp_ != null;
+      return baseRespBuilder != null || baseResp != null;
     }
     /**
      * <code>.base.BaseResponse base_resp = 1;</code>
@@ -559,7 +559,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeBaseResp(com.zhijiejiaoyu.base.BaseResponse value) {
       if (baseRespBuilder == null) {
-        if (baseResp_ != null) {
+        if (baseResp != null) {
           baseResp =
             com.zhijiejiaoyu.base.BaseResponse.newBuilder(baseResp).mergeFrom(value).buildPartial();
         } else {
@@ -598,7 +598,7 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder() {
-      if (baseRespBuilder_ != null) {
+      if (baseRespBuilder != null) {
         return baseRespBuilder.getMessageOrBuilder();
       } else {
         return baseResp == null ?
@@ -630,7 +630,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the stageVideo field is set.
      */
     public boolean hasStageVideo() {
-      return stageVideoBuilder_ != null || stageVideo_ != null;
+      return stageVideoBuilder != null || stageVideo != null;
     }
     /**
      * <code>.glory_api.StageVideo stage_video = 2;</code>
@@ -678,7 +678,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeStageVideo(com.zhijiejiaoyu.glory_api.short_video.StageVideo value) {
       if (stageVideoBuilder == null) {
-        if (stageVideo_ != null) {
+        if (stageVideo != null) {
           stageVideo =
             com.zhijiejiaoyu.glory_api.short_video.StageVideo.newBuilder(stageVideo).mergeFrom(value).buildPartial();
         } else {
@@ -717,7 +717,7 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.StageVideo stage_video = 2;</code>
      */
     public com.zhijiejiaoyu.glory_api.short_video.StageVideoOrBuilder getStageVideoOrBuilder() {
-      if (stageVideoBuilder_ != null) {
+      if (stageVideoBuilder != null) {
         return stageVideoBuilder.getMessageOrBuilder();
       } else {
         return stageVideo == null ?

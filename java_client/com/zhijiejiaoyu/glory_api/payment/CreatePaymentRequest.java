@@ -51,7 +51,7 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             com.zhijiejiaoyu.base.BaseRequest.Builder subBuilder = null;
-            if (baseRequest_ != null) {
+            if (baseRequest != null) {
               subBuilder = baseRequest.toBuilder();
             }
             baseRequest = input.readMessage(com.zhijiejiaoyu.base.BaseRequest.parser(), extensionRegistry);
@@ -64,7 +64,7 @@ private static final long serialVersionUID = 0L;
           }
           case 18: {
             com.zhijiejiaoyu.glory_api.payment.Payment.Builder subBuilder = null;
-            if (payment_ != null) {
+            if (payment != null) {
               subBuilder = payment.toBuilder();
             }
             payment = input.readMessage(com.zhijiejiaoyu.glory_api.payment.Payment.parser(), extensionRegistry);
@@ -121,7 +121,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasBaseRequest() {
-    return baseRequest_ != null;
+    return baseRequest != null;
   }
   /**
    * <code>.base.BaseRequest base_request = 1;</code>
@@ -147,7 +147,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasPayment() {
-    return payment_ != null;
+    return payment != null;
   }
   /**
    * <code>.glory_api.Payment payment = 2;</code>
@@ -217,10 +217,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (baseRequest_ != null) {
+    if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
-    if (payment_ != null) {
+    if (payment != null) {
       output.writeMessage(2, getPayment());
     }
     if (!getCreatedByBytes().isEmpty()) {
@@ -235,11 +235,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (baseRequest_ != null) {
+    if (baseRequest != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseRequest());
     }
-    if (payment_ != null) {
+    if (payment != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getPayment());
     }
@@ -573,7 +573,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the baseRequest field is set.
      */
     public boolean hasBaseRequest() {
-      return baseRequestBuilder_ != null || baseRequest_ != null;
+      return baseRequestBuilder != null || baseRequest != null;
     }
     /**
      * <code>.base.BaseRequest base_request = 1;</code>
@@ -621,7 +621,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeBaseRequest(com.zhijiejiaoyu.base.BaseRequest value) {
       if (baseRequestBuilder == null) {
-        if (baseRequest_ != null) {
+        if (baseRequest != null) {
           baseRequest =
             com.zhijiejiaoyu.base.BaseRequest.newBuilder(baseRequest).mergeFrom(value).buildPartial();
         } else {
@@ -660,7 +660,7 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseRequest base_request = 1;</code>
      */
     public com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder() {
-      if (baseRequestBuilder_ != null) {
+      if (baseRequestBuilder != null) {
         return baseRequestBuilder.getMessageOrBuilder();
       } else {
         return baseRequest == null ?
@@ -692,7 +692,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the payment field is set.
      */
     public boolean hasPayment() {
-      return paymentBuilder_ != null || payment_ != null;
+      return paymentBuilder != null || payment != null;
     }
     /**
      * <code>.glory_api.Payment payment = 2;</code>
@@ -740,7 +740,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergePayment(com.zhijiejiaoyu.glory_api.payment.Payment value) {
       if (paymentBuilder == null) {
-        if (payment_ != null) {
+        if (payment != null) {
           payment =
             com.zhijiejiaoyu.glory_api.payment.Payment.newBuilder(payment).mergeFrom(value).buildPartial();
         } else {
@@ -779,7 +779,7 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.Payment payment = 2;</code>
      */
     public com.zhijiejiaoyu.glory_api.payment.PaymentOrBuilder getPaymentOrBuilder() {
-      if (paymentBuilder_ != null) {
+      if (paymentBuilder != null) {
         return paymentBuilder.getMessageOrBuilder();
       } else {
         return payment == null ?

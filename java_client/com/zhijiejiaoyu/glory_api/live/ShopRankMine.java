@@ -222,10 +222,10 @@ private static final long serialVersionUID = 0L;
     if (!getShopUrlBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, shopUrl);
     }
-    if (saleAmount_ != 0L) {
+    if (saleAmount != 0L) {
       output.writeInt64(3, saleAmount);
     }
-    if (rank_ != 0L) {
+    if (rank != 0L) {
       output.writeInt64(4, rank);
     }
     unknownFields.writeTo(output);
@@ -243,11 +243,11 @@ private static final long serialVersionUID = 0L;
     if (!getShopUrlBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, shopUrl);
     }
-    if (saleAmount_ != 0L) {
+    if (saleAmount != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, saleAmount);
     }
-    if (rank_ != 0L) {
+    if (rank != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, rank);
     }

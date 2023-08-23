@@ -267,13 +267,13 @@ private static final long serialVersionUID = 0L;
     if (!getPageBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, page);
     }
-    if (id_ != 0L) {
+    if (id != 0L) {
       output.writeInt64(3, id);
     }
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name);
     }
-    if (hasPermission_ != false) {
+    if (hasPermission != false) {
       output.writeBool(5, hasPermission);
     }
     unknownFields.writeTo(output);
@@ -291,14 +291,14 @@ private static final long serialVersionUID = 0L;
     if (!getPageBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, page);
     }
-    if (id_ != 0L) {
+    if (id != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, id);
     }
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name);
     }
-    if (hasPermission_ != false) {
+    if (hasPermission != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(5, hasPermission);
     }

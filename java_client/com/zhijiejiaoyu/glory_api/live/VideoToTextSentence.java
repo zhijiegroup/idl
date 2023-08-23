@@ -235,22 +235,22 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (beginTime_ != 0L) {
+    if (beginTime != 0L) {
       output.writeInt64(1, beginTime);
     }
-    if (endTime_ != 0L) {
+    if (endTime != 0L) {
       output.writeInt64(2, endTime);
     }
-    if (channelId_ != 0L) {
+    if (channelId != 0L) {
       output.writeInt64(3, channelId);
     }
-    if (speechRate_ != 0L) {
+    if (speechRate != 0L) {
       output.writeInt64(4, speechRate);
     }
-    if (emotionValue_ != 0D) {
+    if (emotionValue != 0D) {
       output.writeDouble(5, emotionValue);
     }
-    if (silenceDuration_ != 0L) {
+    if (silenceDuration != 0L) {
       output.writeInt64(6, silenceDuration);
     }
     if (!getTextBytes().isEmpty()) {
@@ -265,27 +265,27 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (beginTime_ != 0L) {
+    if (beginTime != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, beginTime);
     }
-    if (endTime_ != 0L) {
+    if (endTime != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, endTime);
     }
-    if (channelId_ != 0L) {
+    if (channelId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, channelId);
     }
-    if (speechRate_ != 0L) {
+    if (speechRate != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, speechRate);
     }
-    if (emotionValue_ != 0D) {
+    if (emotionValue != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(5, emotionValue);
     }
-    if (silenceDuration_ != 0L) {
+    if (silenceDuration != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(6, silenceDuration);
     }

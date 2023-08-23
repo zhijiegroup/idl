@@ -50,7 +50,7 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             com.zhijiejiaoyu.base.BaseResponse.Builder subBuilder = null;
-            if (baseResp_ != null) {
+            if (baseResp != null) {
               subBuilder = baseResp.toBuilder();
             }
             baseResp = input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
@@ -63,7 +63,7 @@ private static final long serialVersionUID = 0L;
           }
           case 18: {
             com.zhijiejiaoyu.glory_api.tenant.College.Builder subBuilder = null;
-            if (college_ != null) {
+            if (college != null) {
               subBuilder = college.toBuilder();
             }
             college = input.readMessage(com.zhijiejiaoyu.glory_api.tenant.College.parser(), extensionRegistry);
@@ -114,7 +114,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasBaseResp() {
-    return baseResp_ != null;
+    return baseResp != null;
   }
   /**
    * <code>.base.BaseResponse base_resp = 1;</code>
@@ -140,7 +140,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasCollege() {
-    return college_ != null;
+    return college != null;
   }
   /**
    * <code>.glory_api.College college = 2;</code>
@@ -172,10 +172,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (baseResp_ != null) {
+    if (baseResp != null) {
       output.writeMessage(1, getBaseResp());
     }
-    if (college_ != null) {
+    if (college != null) {
       output.writeMessage(2, getCollege());
     }
     unknownFields.writeTo(output);
@@ -187,11 +187,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (baseResp_ != null) {
+    if (baseResp != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
-    if (college_ != null) {
+    if (college != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getCollege());
     }
@@ -511,7 +511,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the baseResp field is set.
      */
     public boolean hasBaseResp() {
-      return baseRespBuilder_ != null || baseResp_ != null;
+      return baseRespBuilder != null || baseResp != null;
     }
     /**
      * <code>.base.BaseResponse base_resp = 1;</code>
@@ -559,7 +559,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeBaseResp(com.zhijiejiaoyu.base.BaseResponse value) {
       if (baseRespBuilder == null) {
-        if (baseResp_ != null) {
+        if (baseResp != null) {
           baseResp =
             com.zhijiejiaoyu.base.BaseResponse.newBuilder(baseResp).mergeFrom(value).buildPartial();
         } else {
@@ -598,7 +598,7 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder() {
-      if (baseRespBuilder_ != null) {
+      if (baseRespBuilder != null) {
         return baseRespBuilder.getMessageOrBuilder();
       } else {
         return baseResp == null ?
@@ -630,7 +630,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the college field is set.
      */
     public boolean hasCollege() {
-      return collegeBuilder_ != null || college_ != null;
+      return collegeBuilder != null || college != null;
     }
     /**
      * <code>.glory_api.College college = 2;</code>
@@ -678,7 +678,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeCollege(com.zhijiejiaoyu.glory_api.tenant.College value) {
       if (collegeBuilder == null) {
-        if (college_ != null) {
+        if (college != null) {
           college =
             com.zhijiejiaoyu.glory_api.tenant.College.newBuilder(college).mergeFrom(value).buildPartial();
         } else {
@@ -717,7 +717,7 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.College college = 2;</code>
      */
     public com.zhijiejiaoyu.glory_api.tenant.CollegeOrBuilder getCollegeOrBuilder() {
-      if (collegeBuilder_ != null) {
+      if (collegeBuilder != null) {
         return collegeBuilder.getMessageOrBuilder();
       } else {
         return college == null ?

@@ -289,13 +289,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (permissionId_ != 0L) {
+    if (permissionId != 0L) {
       output.writeInt64(1, permissionId);
     }
     if (!getPermissionNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, permissionName);
     }
-    if (resourceId_ != 0L) {
+    if (resourceId != 0L) {
       output.writeInt64(3, resourceId);
     }
     if (!getPermissionBytes().isEmpty()) {
@@ -304,7 +304,7 @@ private static final long serialVersionUID = 0L;
     if (!getDescriptionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, description);
     }
-    if (tenantId_ != 0L) {
+    if (tenantId != 0L) {
       output.writeInt64(6, tenantId);
     }
     unknownFields.writeTo(output);
@@ -316,14 +316,14 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (permissionId_ != 0L) {
+    if (permissionId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, permissionId);
     }
     if (!getPermissionNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, permissionName);
     }
-    if (resourceId_ != 0L) {
+    if (resourceId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, resourceId);
     }
@@ -333,7 +333,7 @@ private static final long serialVersionUID = 0L;
     if (!getDescriptionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, description);
     }
-    if (tenantId_ != 0L) {
+    if (tenantId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(6, tenantId);
     }

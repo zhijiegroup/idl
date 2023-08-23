@@ -228,22 +228,22 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (cartId_ != 0L) {
+    if (cartId != 0L) {
       output.writeInt64(1, cartId);
     }
-    if (userId_ != 0L) {
+    if (userId != 0L) {
       output.writeInt64(2, userId);
     }
-    if (sellerId_ != 0L) {
+    if (sellerId != 0L) {
       output.writeInt64(3, sellerId);
     }
-    if (tenantId_ != 0L) {
+    if (tenantId != 0L) {
       output.writeInt64(4, tenantId);
     }
     for (int i = 0; i < shop.size(); i++) {
       output.writeMessage(5, shop.get(i));
     }
-    if (totalQuantity_ != 0) {
+    if (totalQuantity != 0) {
       output.writeInt32(6, totalQuantity);
     }
     unknownFields.writeTo(output);
@@ -255,19 +255,19 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (cartId_ != 0L) {
+    if (cartId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, cartId);
     }
-    if (userId_ != 0L) {
+    if (userId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, userId);
     }
-    if (sellerId_ != 0L) {
+    if (sellerId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, sellerId);
     }
-    if (tenantId_ != 0L) {
+    if (tenantId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, tenantId);
     }
@@ -275,7 +275,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, shop.get(i));
     }
-    if (totalQuantity_ != 0) {
+    if (totalQuantity != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(6, totalQuantity);
     }
@@ -966,7 +966,7 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.ShopShowOrBuilder> 
          getShopOrBuilderList() {
-      if (shopBuilder_ != null) {
+      if (shopBuilder != null) {
         return shopBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(shop);

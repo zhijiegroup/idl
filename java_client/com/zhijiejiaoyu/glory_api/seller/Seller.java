@@ -196,13 +196,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (sellerId_ != 0L) {
+    if (sellerId != 0L) {
       output.writeInt64(1, sellerId);
     }
-    if (tenantId_ != 0L) {
+    if (tenantId != 0L) {
       output.writeInt64(2, tenantId);
     }
-    if (userId_ != 0L) {
+    if (userId != 0L) {
       output.writeInt64(3, userId);
     }
     for (int i = 0; i < shop.size(); i++) {
@@ -217,15 +217,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (sellerId_ != 0L) {
+    if (sellerId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, sellerId);
     }
-    if (tenantId_ != 0L) {
+    if (tenantId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, tenantId);
     }
-    if (userId_ != 0L) {
+    if (userId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, userId);
     }
@@ -868,7 +868,7 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.ShopOrBuilder> 
          getShopOrBuilderList() {
-      if (shopBuilder_ != null) {
+      if (shopBuilder != null) {
         return shopBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(shop);

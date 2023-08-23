@@ -120,7 +120,7 @@ private static final long serialVersionUID = 0L;
           }
           case 90: {
             com.zhijiejiaoyu.glory_api.wxpay.PayerAmount.Builder subBuilder = null;
-            if (amount_ != null) {
+            if (amount != null) {
               subBuilder = amount.toBuilder();
             }
             amount = input.readMessage(com.zhijiejiaoyu.glory_api.wxpay.PayerAmount.parser(), extensionRegistry);
@@ -133,7 +133,7 @@ private static final long serialVersionUID = 0L;
           }
           case 98: {
             com.zhijiejiaoyu.glory_api.wxpay.Payer.Builder subBuilder = null;
-            if (payer_ != null) {
+            if (payer != null) {
               subBuilder = payer.toBuilder();
             }
             payer = input.readMessage(com.zhijiejiaoyu.glory_api.wxpay.Payer.parser(), extensionRegistry);
@@ -564,7 +564,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasAmount() {
-    return amount_ != null;
+    return amount != null;
   }
   /**
    * <code>.glory_api.PayerAmount amount = 11;</code>
@@ -590,7 +590,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasPayer() {
-    return payer_ != null;
+    return payer != null;
   }
   /**
    * <code>.glory_api.Payer payer = 12;</code>
@@ -652,10 +652,10 @@ private static final long serialVersionUID = 0L;
     if (!getTransactionIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, transactionId);
     }
-    if (amount_ != null) {
+    if (amount != null) {
       output.writeMessage(11, getAmount());
     }
-    if (payer_ != null) {
+    if (payer != null) {
       output.writeMessage(12, getPayer());
     }
     unknownFields.writeTo(output);
@@ -697,11 +697,11 @@ private static final long serialVersionUID = 0L;
     if (!getTransactionIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, transactionId);
     }
-    if (amount_ != null) {
+    if (amount != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(11, getAmount());
     }
-    if (payer_ != null) {
+    if (payer != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(12, getPayer());
     }
@@ -1891,7 +1891,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the amount field is set.
      */
     public boolean hasAmount() {
-      return amountBuilder_ != null || amount_ != null;
+      return amountBuilder != null || amount != null;
     }
     /**
      * <code>.glory_api.PayerAmount amount = 11;</code>
@@ -1939,7 +1939,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeAmount(com.zhijiejiaoyu.glory_api.wxpay.PayerAmount value) {
       if (amountBuilder == null) {
-        if (amount_ != null) {
+        if (amount != null) {
           amount =
             com.zhijiejiaoyu.glory_api.wxpay.PayerAmount.newBuilder(amount).mergeFrom(value).buildPartial();
         } else {
@@ -1978,7 +1978,7 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.PayerAmount amount = 11;</code>
      */
     public com.zhijiejiaoyu.glory_api.wxpay.PayerAmountOrBuilder getAmountOrBuilder() {
-      if (amountBuilder_ != null) {
+      if (amountBuilder != null) {
         return amountBuilder.getMessageOrBuilder();
       } else {
         return amount == null ?
@@ -2010,7 +2010,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the payer field is set.
      */
     public boolean hasPayer() {
-      return payerBuilder_ != null || payer_ != null;
+      return payerBuilder != null || payer != null;
     }
     /**
      * <code>.glory_api.Payer payer = 12;</code>
@@ -2058,7 +2058,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergePayer(com.zhijiejiaoyu.glory_api.wxpay.Payer value) {
       if (payerBuilder == null) {
-        if (payer_ != null) {
+        if (payer != null) {
           payer =
             com.zhijiejiaoyu.glory_api.wxpay.Payer.newBuilder(payer).mergeFrom(value).buildPartial();
         } else {
@@ -2097,7 +2097,7 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.Payer payer = 12;</code>
      */
     public com.zhijiejiaoyu.glory_api.wxpay.PayerOrBuilder getPayerOrBuilder() {
-      if (payerBuilder_ != null) {
+      if (payerBuilder != null) {
         return payerBuilder.getMessageOrBuilder();
       } else {
         return payer == null ?

@@ -50,7 +50,7 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             com.zhijiejiaoyu.glory_api.seller.Attachment.Builder subBuilder = null;
-            if (attachment_ != null) {
+            if (attachment != null) {
               subBuilder = attachment.toBuilder();
             }
             attachment = input.readMessage(com.zhijiejiaoyu.glory_api.seller.Attachment.parser(), extensionRegistry);
@@ -63,7 +63,7 @@ private static final long serialVersionUID = 0L;
           }
           case 18: {
             com.zhijiejiaoyu.base.AuthorInfo.Builder subBuilder = null;
-            if (authorInfo_ != null) {
+            if (authorInfo != null) {
               subBuilder = authorInfo.toBuilder();
             }
             authorInfo = input.readMessage(com.zhijiejiaoyu.base.AuthorInfo.parser(), extensionRegistry);
@@ -114,7 +114,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasAttachment() {
-    return attachment_ != null;
+    return attachment != null;
   }
   /**
    * <code>.glory_api.Attachment attachment = 1;</code>
@@ -140,7 +140,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasAuthorInfo() {
-    return authorInfo_ != null;
+    return authorInfo != null;
   }
   /**
    * <code>.base.AuthorInfo author_info = 2;</code>
@@ -172,10 +172,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (attachment_ != null) {
+    if (attachment != null) {
       output.writeMessage(1, getAttachment());
     }
-    if (authorInfo_ != null) {
+    if (authorInfo != null) {
       output.writeMessage(2, getAuthorInfo());
     }
     unknownFields.writeTo(output);
@@ -187,11 +187,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (attachment_ != null) {
+    if (attachment != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getAttachment());
     }
-    if (authorInfo_ != null) {
+    if (authorInfo != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getAuthorInfo());
     }
@@ -511,7 +511,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the attachment field is set.
      */
     public boolean hasAttachment() {
-      return attachmentBuilder_ != null || attachment_ != null;
+      return attachmentBuilder != null || attachment != null;
     }
     /**
      * <code>.glory_api.Attachment attachment = 1;</code>
@@ -559,7 +559,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeAttachment(com.zhijiejiaoyu.glory_api.seller.Attachment value) {
       if (attachmentBuilder == null) {
-        if (attachment_ != null) {
+        if (attachment != null) {
           attachment =
             com.zhijiejiaoyu.glory_api.seller.Attachment.newBuilder(attachment).mergeFrom(value).buildPartial();
         } else {
@@ -598,7 +598,7 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.Attachment attachment = 1;</code>
      */
     public com.zhijiejiaoyu.glory_api.seller.AttachmentOrBuilder getAttachmentOrBuilder() {
-      if (attachmentBuilder_ != null) {
+      if (attachmentBuilder != null) {
         return attachmentBuilder.getMessageOrBuilder();
       } else {
         return attachment == null ?
@@ -630,7 +630,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the authorInfo field is set.
      */
     public boolean hasAuthorInfo() {
-      return authorInfoBuilder_ != null || authorInfo_ != null;
+      return authorInfoBuilder != null || authorInfo != null;
     }
     /**
      * <code>.base.AuthorInfo author_info = 2;</code>
@@ -678,7 +678,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeAuthorInfo(com.zhijiejiaoyu.base.AuthorInfo value) {
       if (authorInfoBuilder == null) {
-        if (authorInfo_ != null) {
+        if (authorInfo != null) {
           authorInfo =
             com.zhijiejiaoyu.base.AuthorInfo.newBuilder(authorInfo).mergeFrom(value).buildPartial();
         } else {
@@ -717,7 +717,7 @@ private static final long serialVersionUID = 0L;
      * <code>.base.AuthorInfo author_info = 2;</code>
      */
     public com.zhijiejiaoyu.base.AuthorInfoOrBuilder getAuthorInfoOrBuilder() {
-      if (authorInfoBuilder_ != null) {
+      if (authorInfoBuilder != null) {
         return authorInfoBuilder.getMessageOrBuilder();
       } else {
         return authorInfo == null ?

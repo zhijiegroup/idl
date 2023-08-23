@@ -206,25 +206,25 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (orderSkuId_ != 0L) {
+    if (orderSkuId != 0L) {
       output.writeInt64(1, orderSkuId);
     }
-    if (orderId_ != 0L) {
+    if (orderId != 0L) {
       output.writeInt64(2, orderId);
     }
-    if (skuId_ != 0L) {
+    if (skuId != 0L) {
       output.writeInt64(3, skuId);
     }
-    if (sellerId_ != 0L) {
+    if (sellerId != 0L) {
       output.writeInt64(4, sellerId);
     }
-    if (shopId_ != 0L) {
+    if (shopId != 0L) {
       output.writeInt64(5, shopId);
     }
-    if (quantity_ != 0) {
+    if (quantity != 0) {
       output.writeInt32(6, quantity);
     }
-    if (freightTemplateId_ != 0L) {
+    if (freightTemplateId != 0L) {
       output.writeInt64(7, freightTemplateId);
     }
     unknownFields.writeTo(output);
@@ -236,31 +236,31 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (orderSkuId_ != 0L) {
+    if (orderSkuId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, orderSkuId);
     }
-    if (orderId_ != 0L) {
+    if (orderId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, orderId);
     }
-    if (skuId_ != 0L) {
+    if (skuId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, skuId);
     }
-    if (sellerId_ != 0L) {
+    if (sellerId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, sellerId);
     }
-    if (shopId_ != 0L) {
+    if (shopId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(5, shopId);
     }
-    if (quantity_ != 0) {
+    if (quantity != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(6, quantity);
     }
-    if (freightTemplateId_ != 0L) {
+    if (freightTemplateId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(7, freightTemplateId);
     }

@@ -52,7 +52,7 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             com.zhijiejiaoyu.base.BaseResponse.Builder subBuilder = null;
-            if (baseResp_ != null) {
+            if (baseResp != null) {
               subBuilder = baseResp.toBuilder();
             }
             baseResp = input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
@@ -65,7 +65,7 @@ private static final long serialVersionUID = 0L;
           }
           case 18: {
             com.zhijiejiaoyu.glory_api.live.LivePlan.Builder subBuilder = null;
-            if (livePlan_ != null) {
+            if (livePlan != null) {
               subBuilder = livePlan.toBuilder();
             }
             livePlan = input.readMessage(com.zhijiejiaoyu.glory_api.live.LivePlan.parser(), extensionRegistry);
@@ -128,7 +128,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasBaseResp() {
-    return baseResp_ != null;
+    return baseResp != null;
   }
   /**
    * <code>.base.BaseResponse base_resp = 1;</code>
@@ -154,7 +154,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasLivePlan() {
-    return livePlan_ != null;
+    return livePlan != null;
   }
   /**
    * <code>.glory_api.LivePlan live_plan = 2;</code>
@@ -226,10 +226,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (baseResp_ != null) {
+    if (baseResp != null) {
       output.writeMessage(1, getBaseResp());
     }
-    if (livePlan_ != null) {
+    if (livePlan != null) {
       output.writeMessage(2, getLivePlan());
     }
     for (int i = 0; i < livePlanProduct.size(); i++) {
@@ -244,11 +244,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (baseResp_ != null) {
+    if (baseResp != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
-    if (livePlan_ != null) {
+    if (livePlan != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getLivePlan());
     }
@@ -622,7 +622,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the baseResp field is set.
      */
     public boolean hasBaseResp() {
-      return baseRespBuilder_ != null || baseResp_ != null;
+      return baseRespBuilder != null || baseResp != null;
     }
     /**
      * <code>.base.BaseResponse base_resp = 1;</code>
@@ -670,7 +670,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeBaseResp(com.zhijiejiaoyu.base.BaseResponse value) {
       if (baseRespBuilder == null) {
-        if (baseResp_ != null) {
+        if (baseResp != null) {
           baseResp =
             com.zhijiejiaoyu.base.BaseResponse.newBuilder(baseResp).mergeFrom(value).buildPartial();
         } else {
@@ -709,7 +709,7 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder() {
-      if (baseRespBuilder_ != null) {
+      if (baseRespBuilder != null) {
         return baseRespBuilder.getMessageOrBuilder();
       } else {
         return baseResp == null ?
@@ -741,7 +741,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the livePlan field is set.
      */
     public boolean hasLivePlan() {
-      return livePlanBuilder_ != null || livePlan_ != null;
+      return livePlanBuilder != null || livePlan != null;
     }
     /**
      * <code>.glory_api.LivePlan live_plan = 2;</code>
@@ -789,7 +789,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeLivePlan(com.zhijiejiaoyu.glory_api.live.LivePlan value) {
       if (livePlanBuilder == null) {
-        if (livePlan_ != null) {
+        if (livePlan != null) {
           livePlan =
             com.zhijiejiaoyu.glory_api.live.LivePlan.newBuilder(livePlan).mergeFrom(value).buildPartial();
         } else {
@@ -828,7 +828,7 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.LivePlan live_plan = 2;</code>
      */
     public com.zhijiejiaoyu.glory_api.live.LivePlanOrBuilder getLivePlanOrBuilder() {
-      if (livePlanBuilder_ != null) {
+      if (livePlanBuilder != null) {
         return livePlanBuilder.getMessageOrBuilder();
       } else {
         return livePlan == null ?
@@ -1049,7 +1049,7 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.live.PlanProductOrBuilder> 
          getLivePlanProductOrBuilderList() {
-      if (livePlanProductBuilder_ != null) {
+      if (livePlanProductBuilder != null) {
         return livePlanProductBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(livePlanProduct);

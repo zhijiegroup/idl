@@ -50,7 +50,7 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             com.zhijiejiaoyu.base.BaseResponse.Builder subBuilder = null;
-            if (baseResp_ != null) {
+            if (baseResp != null) {
               subBuilder = baseResp.toBuilder();
             }
             baseResp = input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
@@ -63,7 +63,7 @@ private static final long serialVersionUID = 0L;
           }
           case 18: {
             com.zhijiejiaoyu.glory_api.shop.ProductWithValueAuthor.Builder subBuilder = null;
-            if (productDetail_ != null) {
+            if (productDetail != null) {
               subBuilder = productDetail.toBuilder();
             }
             productDetail = input.readMessage(com.zhijiejiaoyu.glory_api.shop.ProductWithValueAuthor.parser(), extensionRegistry);
@@ -114,7 +114,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasBaseResp() {
-    return baseResp_ != null;
+    return baseResp != null;
   }
   /**
    * <code>.base.BaseResponse base_resp = 1;</code>
@@ -140,7 +140,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasProductDetail() {
-    return productDetail_ != null;
+    return productDetail != null;
   }
   /**
    * <code>.glory_api.ProductWithValueAuthor product_detail = 2;</code>
@@ -172,10 +172,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (baseResp_ != null) {
+    if (baseResp != null) {
       output.writeMessage(1, getBaseResp());
     }
-    if (productDetail_ != null) {
+    if (productDetail != null) {
       output.writeMessage(2, getProductDetail());
     }
     unknownFields.writeTo(output);
@@ -187,11 +187,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (baseResp_ != null) {
+    if (baseResp != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
-    if (productDetail_ != null) {
+    if (productDetail != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getProductDetail());
     }
@@ -511,7 +511,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the baseResp field is set.
      */
     public boolean hasBaseResp() {
-      return baseRespBuilder_ != null || baseResp_ != null;
+      return baseRespBuilder != null || baseResp != null;
     }
     /**
      * <code>.base.BaseResponse base_resp = 1;</code>
@@ -559,7 +559,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeBaseResp(com.zhijiejiaoyu.base.BaseResponse value) {
       if (baseRespBuilder == null) {
-        if (baseResp_ != null) {
+        if (baseResp != null) {
           baseResp =
             com.zhijiejiaoyu.base.BaseResponse.newBuilder(baseResp).mergeFrom(value).buildPartial();
         } else {
@@ -598,7 +598,7 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder() {
-      if (baseRespBuilder_ != null) {
+      if (baseRespBuilder != null) {
         return baseRespBuilder.getMessageOrBuilder();
       } else {
         return baseResp == null ?
@@ -630,7 +630,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the productDetail field is set.
      */
     public boolean hasProductDetail() {
-      return productDetailBuilder_ != null || productDetail_ != null;
+      return productDetailBuilder != null || productDetail != null;
     }
     /**
      * <code>.glory_api.ProductWithValueAuthor product_detail = 2;</code>
@@ -678,7 +678,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeProductDetail(com.zhijiejiaoyu.glory_api.shop.ProductWithValueAuthor value) {
       if (productDetailBuilder == null) {
-        if (productDetail_ != null) {
+        if (productDetail != null) {
           productDetail =
             com.zhijiejiaoyu.glory_api.shop.ProductWithValueAuthor.newBuilder(productDetail).mergeFrom(value).buildPartial();
         } else {
@@ -717,7 +717,7 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.ProductWithValueAuthor product_detail = 2;</code>
      */
     public com.zhijiejiaoyu.glory_api.shop.ProductWithValueAuthorOrBuilder getProductDetailOrBuilder() {
-      if (productDetailBuilder_ != null) {
+      if (productDetailBuilder != null) {
         return productDetailBuilder.getMessageOrBuilder();
       } else {
         return productDetail == null ?

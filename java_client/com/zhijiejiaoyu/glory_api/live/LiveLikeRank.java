@@ -61,7 +61,7 @@ private static final long serialVersionUID = 0L;
           }
           case 802: {
             com.zhijiejiaoyu.glory_api.live.LiveLikeRankMine.Builder subBuilder = null;
-            if (mine_ != null) {
+            if (mine != null) {
               subBuilder = mine.toBuilder();
             }
             mine = input.readMessage(com.zhijiejiaoyu.glory_api.live.LiveLikeRankMine.parser(), extensionRegistry);
@@ -155,7 +155,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasMine() {
-    return mine_ != null;
+    return mine != null;
   }
   /**
    * <code>.glory_api.LiveLikeRankMine mine = 100;</code>
@@ -190,7 +190,7 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < rankList.size(); i++) {
       output.writeMessage(1, rankList.get(i));
     }
-    if (mine_ != null) {
+    if (mine != null) {
       output.writeMessage(100, getMine());
     }
     unknownFields.writeTo(output);
@@ -206,7 +206,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, rankList.get(i));
     }
-    if (mine_ != null) {
+    if (mine != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(100, getMine());
     }
@@ -742,7 +742,7 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.live.LiveLikeRankDetailOrBuilder> 
          getRankListOrBuilderList() {
-      if (rankListBuilder_ != null) {
+      if (rankListBuilder != null) {
         return rankListBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(rankList);
@@ -793,7 +793,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the mine field is set.
      */
     public boolean hasMine() {
-      return mineBuilder_ != null || mine_ != null;
+      return mineBuilder != null || mine != null;
     }
     /**
      * <code>.glory_api.LiveLikeRankMine mine = 100;</code>
@@ -841,7 +841,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeMine(com.zhijiejiaoyu.glory_api.live.LiveLikeRankMine value) {
       if (mineBuilder == null) {
-        if (mine_ != null) {
+        if (mine != null) {
           mine =
             com.zhijiejiaoyu.glory_api.live.LiveLikeRankMine.newBuilder(mine).mergeFrom(value).buildPartial();
         } else {
@@ -880,7 +880,7 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.LiveLikeRankMine mine = 100;</code>
      */
     public com.zhijiejiaoyu.glory_api.live.LiveLikeRankMineOrBuilder getMineOrBuilder() {
-      if (mineBuilder_ != null) {
+      if (mineBuilder != null) {
         return mineBuilder.getMessageOrBuilder();
       } else {
         return mine == null ?

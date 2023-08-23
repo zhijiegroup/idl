@@ -155,7 +155,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (exampleId_ != 0L) {
+    if (exampleId != 0L) {
       output.writeInt64(1, exampleId);
     }
     if (!getExampleNameBytes().isEmpty()) {
@@ -170,7 +170,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (exampleId_ != 0L) {
+    if (exampleId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, exampleId);
     }

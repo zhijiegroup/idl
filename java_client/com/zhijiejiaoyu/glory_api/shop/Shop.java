@@ -1666,10 +1666,10 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     getSerializedSize();
-    if (shopId_ != 0L) {
+    if (shopId != 0L) {
       output.writeInt64(1, shopId);
     }
-    if (sellerId_ != 0L) {
+    if (sellerId != 0L) {
       output.writeInt64(2, sellerId);
     }
     if (!getShopNameBytes().isEmpty()) {
@@ -1738,22 +1738,22 @@ private static final long serialVersionUID = 0L;
     if (!getCompanyBankPhoneBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 26, companyBankPhone);
     }
-    if (companyBankValidated_ != false) {
+    if (companyBankValidated != false) {
       output.writeBool(27, companyBankValidated);
     }
-    if (certifyStatus_ != 0) {
+    if (certifyStatus != 0) {
       output.writeInt32(28, certifyStatus);
     }
-    if (ownerIdFrontAttachmentId_ != 0L) {
+    if (ownerIdFrontAttachmentId != 0L) {
       output.writeInt64(29, ownerIdFrontAttachmentId);
     }
-    if (ownerIdBackAttachmentId_ != 0L) {
+    if (ownerIdBackAttachmentId != 0L) {
       output.writeInt64(30, ownerIdBackAttachmentId);
     }
-    if (shopLogoAttachmentId_ != 0L) {
+    if (shopLogoAttachmentId != 0L) {
       output.writeInt64(31, shopLogoAttachmentId);
     }
-    if (businessLicenseAttachmentId_ != 0L) {
+    if (businessLicenseAttachmentId != 0L) {
       output.writeInt64(32, businessLicenseAttachmentId);
     }
     if (!getManagerBytes().isEmpty()) {
@@ -1781,11 +1781,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (shopId_ != 0L) {
+    if (shopId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, shopId);
     }
-    if (sellerId_ != 0L) {
+    if (sellerId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, sellerId);
     }
@@ -1855,27 +1855,27 @@ private static final long serialVersionUID = 0L;
     if (!getCompanyBankPhoneBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(26, companyBankPhone);
     }
-    if (companyBankValidated_ != false) {
+    if (companyBankValidated != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(27, companyBankValidated);
     }
-    if (certifyStatus_ != 0) {
+    if (certifyStatus != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(28, certifyStatus);
     }
-    if (ownerIdFrontAttachmentId_ != 0L) {
+    if (ownerIdFrontAttachmentId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(29, ownerIdFrontAttachmentId);
     }
-    if (ownerIdBackAttachmentId_ != 0L) {
+    if (ownerIdBackAttachmentId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(30, ownerIdBackAttachmentId);
     }
-    if (shopLogoAttachmentId_ != 0L) {
+    if (shopLogoAttachmentId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(31, shopLogoAttachmentId);
     }
-    if (businessLicenseAttachmentId_ != 0L) {
+    if (businessLicenseAttachmentId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(32, businessLicenseAttachmentId);
     }
@@ -3135,7 +3135,7 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.ShopQualificationOrBuilder> 
          getShopQualificationOrBuilderList() {
-      if (shopQualificationBuilder_ != null) {
+      if (shopQualificationBuilder != null) {
         return shopQualificationBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(shopQualification);

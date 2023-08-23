@@ -199,13 +199,13 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < liveChartData.size(); i++) {
       output.writeMessage(1, liveChartData.get(i));
     }
-    if (totalDealAmount_ != 0D) {
+    if (totalDealAmount != 0D) {
       output.writeDouble(2, totalDealAmount);
     }
-    if (totalVisitorAmount_ != 0L) {
+    if (totalVisitorAmount != 0L) {
       output.writeInt64(3, totalVisitorAmount);
     }
-    if (totalOrderAmount_ != 0L) {
+    if (totalOrderAmount != 0L) {
       output.writeInt64(4, totalOrderAmount);
     }
     unknownFields.writeTo(output);
@@ -221,15 +221,15 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, liveChartData.get(i));
     }
-    if (totalDealAmount_ != 0D) {
+    if (totalDealAmount != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(2, totalDealAmount);
     }
-    if (totalVisitorAmount_ != 0L) {
+    if (totalVisitorAmount != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, totalVisitorAmount);
     }
-    if (totalOrderAmount_ != 0L) {
+    if (totalOrderAmount != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, totalOrderAmount);
     }
@@ -776,7 +776,7 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.live.LiveChartDataOrBuilder> 
          getLiveChartDataOrBuilderList() {
-      if (liveChartDataBuilder_ != null) {
+      if (liveChartDataBuilder != null) {
         return liveChartDataBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(liveChartData);

@@ -479,34 +479,34 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (orderId_ != 0L) {
+    if (orderId != 0L) {
       output.writeInt64(1, orderId);
     }
-    if (userId_ != 0L) {
+    if (userId != 0L) {
       output.writeInt64(2, userId);
     }
-    if (shopId_ != 0L) {
+    if (shopId != 0L) {
       output.writeInt64(3, shopId);
     }
-    if (sellerId_ != 0L) {
+    if (sellerId != 0L) {
       output.writeInt64(4, sellerId);
     }
-    if (tenantId_ != 0L) {
+    if (tenantId != 0L) {
       output.writeInt64(5, tenantId);
     }
     if (!getOrderStatusBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, orderStatus);
     }
-    if (totalAmount_ != 0D) {
+    if (totalAmount != 0D) {
       output.writeDouble(7, totalAmount);
     }
-    if (originalAmount_ != 0D) {
+    if (originalAmount != 0D) {
       output.writeDouble(8, originalAmount);
     }
-    if (tax_ != 0D) {
+    if (tax != 0D) {
       output.writeDouble(9, tax);
     }
-    if (deliverFee_ != 0D) {
+    if (deliverFee != 0D) {
       output.writeDouble(10, deliverFee);
     }
     if (!getCurrencyBytes().isEmpty()) {
@@ -515,7 +515,7 @@ private static final long serialVersionUID = 0L;
     if (!getDeliverAddressBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, deliverAddress);
     }
-    if (deliverPost_ != 0) {
+    if (deliverPost != 0) {
       output.writeInt32(13, deliverPost);
     }
     if (!getContactNameBytes().isEmpty()) {
@@ -533,42 +533,42 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (orderId_ != 0L) {
+    if (orderId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, orderId);
     }
-    if (userId_ != 0L) {
+    if (userId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, userId);
     }
-    if (shopId_ != 0L) {
+    if (shopId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, shopId);
     }
-    if (sellerId_ != 0L) {
+    if (sellerId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, sellerId);
     }
-    if (tenantId_ != 0L) {
+    if (tenantId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(5, tenantId);
     }
     if (!getOrderStatusBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, orderStatus);
     }
-    if (totalAmount_ != 0D) {
+    if (totalAmount != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(7, totalAmount);
     }
-    if (originalAmount_ != 0D) {
+    if (originalAmount != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(8, originalAmount);
     }
-    if (tax_ != 0D) {
+    if (tax != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(9, tax);
     }
-    if (deliverFee_ != 0D) {
+    if (deliverFee != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(10, deliverFee);
     }
@@ -578,7 +578,7 @@ private static final long serialVersionUID = 0L;
     if (!getDeliverAddressBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, deliverAddress);
     }
-    if (deliverPost_ != 0) {
+    if (deliverPost != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(13, deliverPost);
     }

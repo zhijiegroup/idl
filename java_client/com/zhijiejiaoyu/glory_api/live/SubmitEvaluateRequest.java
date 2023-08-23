@@ -56,7 +56,7 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             com.zhijiejiaoyu.base.BaseRequest.Builder subBuilder = null;
-            if (baseRequest_ != null) {
+            if (baseRequest != null) {
               subBuilder = baseRequest.toBuilder();
             }
             baseRequest = input.readMessage(com.zhijiejiaoyu.base.BaseRequest.parser(), extensionRegistry);
@@ -178,7 +178,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasBaseRequest() {
-    return baseRequest_ != null;
+    return baseRequest != null;
   }
   /**
    * <code>.base.BaseRequest base_request = 1;</code>
@@ -491,25 +491,25 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (baseRequest_ != null) {
+    if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
     if (!getTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, type);
     }
-    if (evaluateId_ != 0L) {
+    if (evaluateId != 0L) {
       output.writeInt64(3, evaluateId);
     }
-    if (templateId_ != 0L) {
+    if (templateId != 0L) {
       output.writeInt64(4, templateId);
     }
-    if (userId_ != 0L) {
+    if (userId != 0L) {
       output.writeInt64(5, userId);
     }
-    if (roomId_ != 0L) {
+    if (roomId != 0L) {
       output.writeInt64(6, roomId);
     }
-    if (extraScore_ != 0D) {
+    if (extraScore != 0D) {
       output.writeDouble(7, extraScore);
     }
     if (!getExtraCommentBytes().isEmpty()) {
@@ -518,13 +518,13 @@ private static final long serialVersionUID = 0L;
     if (!getZeroCommentBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, zeroComment);
     }
-    if (score_ != 0D) {
+    if (score != 0D) {
       output.writeDouble(10, score);
     }
     if (!getAiFeedbackBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, aiFeedback);
     }
-    if (baseline_ != false) {
+    if (baseline != false) {
       output.writeBool(12, baseline);
     }
     for (int i = 0; i < detail.size(); i++) {
@@ -539,30 +539,30 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (baseRequest_ != null) {
+    if (baseRequest != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseRequest());
     }
     if (!getTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, type);
     }
-    if (evaluateId_ != 0L) {
+    if (evaluateId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, evaluateId);
     }
-    if (templateId_ != 0L) {
+    if (templateId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, templateId);
     }
-    if (userId_ != 0L) {
+    if (userId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(5, userId);
     }
-    if (roomId_ != 0L) {
+    if (roomId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(6, roomId);
     }
-    if (extraScore_ != 0D) {
+    if (extraScore != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(7, extraScore);
     }
@@ -572,14 +572,14 @@ private static final long serialVersionUID = 0L;
     if (!getZeroCommentBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, zeroComment);
     }
-    if (score_ != 0D) {
+    if (score != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(10, score);
     }
     if (!getAiFeedbackBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, aiFeedback);
     }
-    if (baseline_ != false) {
+    if (baseline != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(12, baseline);
     }
@@ -1053,7 +1053,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the baseRequest field is set.
      */
     public boolean hasBaseRequest() {
-      return baseRequestBuilder_ != null || baseRequest_ != null;
+      return baseRequestBuilder != null || baseRequest != null;
     }
     /**
      * <code>.base.BaseRequest base_request = 1;</code>
@@ -1101,7 +1101,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeBaseRequest(com.zhijiejiaoyu.base.BaseRequest value) {
       if (baseRequestBuilder == null) {
-        if (baseRequest_ != null) {
+        if (baseRequest != null) {
           baseRequest =
             com.zhijiejiaoyu.base.BaseRequest.newBuilder(baseRequest).mergeFrom(value).buildPartial();
         } else {
@@ -1140,7 +1140,7 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseRequest base_request = 1;</code>
      */
     public com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder() {
-      if (baseRequestBuilder_ != null) {
+      if (baseRequestBuilder != null) {
         return baseRequestBuilder.getMessageOrBuilder();
       } else {
         return baseRequest == null ?
@@ -1914,7 +1914,7 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.live.EvaluateDetailOrBuilder> 
          getDetailOrBuilderList() {
-      if (detailBuilder_ != null) {
+      if (detailBuilder != null) {
         return detailBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(detail);

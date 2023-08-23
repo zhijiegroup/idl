@@ -338,7 +338,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (id_ != 0L) {
+    if (id != 0L) {
       output.writeInt64(1, id);
     }
     if (!getNameBytes().isEmpty()) {
@@ -347,10 +347,10 @@ private static final long serialVersionUID = 0L;
     if (!getTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, type);
     }
-    if (parent_ != 0L) {
+    if (parent != 0L) {
       output.writeInt64(4, parent);
     }
-    if (tenant_ != 0L) {
+    if (tenant != 0L) {
       output.writeInt64(5, tenant);
     }
     for (int i = 0; i < children.size(); i++) {
@@ -368,7 +368,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (id_ != 0L) {
+    if (id != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, id);
     }
@@ -378,11 +378,11 @@ private static final long serialVersionUID = 0L;
     if (!getTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, type);
     }
-    if (parent_ != 0L) {
+    if (parent != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, parent);
     }
-    if (tenant_ != 0L) {
+    if (tenant != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(5, tenant);
     }
@@ -1234,7 +1234,7 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.tenant.TenantOrgOrBuilder> 
          getChildrenOrBuilderList() {
-      if (childrenBuilder_ != null) {
+      if (childrenBuilder != null) {
         return childrenBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(children);

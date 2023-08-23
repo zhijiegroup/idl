@@ -50,7 +50,7 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             com.zhijiejiaoyu.base.BaseRequest.Builder subBuilder = null;
-            if (baseRequest_ != null) {
+            if (baseRequest != null) {
               subBuilder = baseRequest.toBuilder();
             }
             baseRequest = input.readMessage(com.zhijiejiaoyu.base.BaseRequest.parser(), extensionRegistry);
@@ -63,7 +63,7 @@ private static final long serialVersionUID = 0L;
           }
           case 26: {
             com.zhijiejiaoyu.glory_api.tenant.Major.Builder subBuilder = null;
-            if (major_ != null) {
+            if (major != null) {
               subBuilder = major.toBuilder();
             }
             major = input.readMessage(com.zhijiejiaoyu.glory_api.tenant.Major.parser(), extensionRegistry);
@@ -114,7 +114,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasBaseRequest() {
-    return baseRequest_ != null;
+    return baseRequest != null;
   }
   /**
    * <code>.base.BaseRequest base_request = 1;</code>
@@ -140,7 +140,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasMajor() {
-    return major_ != null;
+    return major != null;
   }
   /**
    * <code>.glory_api.Major Major = 3;</code>
@@ -172,10 +172,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (baseRequest_ != null) {
+    if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
-    if (major_ != null) {
+    if (major != null) {
       output.writeMessage(3, getMajor());
     }
     unknownFields.writeTo(output);
@@ -187,11 +187,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (baseRequest_ != null) {
+    if (baseRequest != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseRequest());
     }
-    if (major_ != null) {
+    if (major != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getMajor());
     }
@@ -511,7 +511,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the baseRequest field is set.
      */
     public boolean hasBaseRequest() {
-      return baseRequestBuilder_ != null || baseRequest_ != null;
+      return baseRequestBuilder != null || baseRequest != null;
     }
     /**
      * <code>.base.BaseRequest base_request = 1;</code>
@@ -559,7 +559,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeBaseRequest(com.zhijiejiaoyu.base.BaseRequest value) {
       if (baseRequestBuilder == null) {
-        if (baseRequest_ != null) {
+        if (baseRequest != null) {
           baseRequest =
             com.zhijiejiaoyu.base.BaseRequest.newBuilder(baseRequest).mergeFrom(value).buildPartial();
         } else {
@@ -598,7 +598,7 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseRequest base_request = 1;</code>
      */
     public com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder() {
-      if (baseRequestBuilder_ != null) {
+      if (baseRequestBuilder != null) {
         return baseRequestBuilder.getMessageOrBuilder();
       } else {
         return baseRequest == null ?
@@ -630,7 +630,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the major field is set.
      */
     public boolean hasMajor() {
-      return majorBuilder_ != null || major_ != null;
+      return majorBuilder != null || major != null;
     }
     /**
      * <code>.glory_api.Major Major = 3;</code>
@@ -678,7 +678,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeMajor(com.zhijiejiaoyu.glory_api.tenant.Major value) {
       if (majorBuilder == null) {
-        if (major_ != null) {
+        if (major != null) {
           major =
             com.zhijiejiaoyu.glory_api.tenant.Major.newBuilder(major).mergeFrom(value).buildPartial();
         } else {
@@ -717,7 +717,7 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.Major Major = 3;</code>
      */
     public com.zhijiejiaoyu.glory_api.tenant.MajorOrBuilder getMajorOrBuilder() {
-      if (majorBuilder_ != null) {
+      if (majorBuilder != null) {
         return majorBuilder.getMessageOrBuilder();
       } else {
         return major == null ?

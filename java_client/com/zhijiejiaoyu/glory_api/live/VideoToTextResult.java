@@ -673,7 +673,7 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.live.VideoToTextSentenceOrBuilder> 
          getSentencesOrBuilderList() {
-      if (sentencesBuilder_ != null) {
+      if (sentencesBuilder != null) {
         return sentencesBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(sentences);

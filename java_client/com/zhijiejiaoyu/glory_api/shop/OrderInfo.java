@@ -895,7 +895,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (orderId_ != 0L) {
+    if (orderId != 0L) {
       output.writeInt64(1, orderId);
     }
     if (!getOrderStatusBytes().isEmpty()) {
@@ -913,22 +913,22 @@ private static final long serialVersionUID = 0L;
     if (!getPayTimeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, payTime);
     }
-    if (totalAmount_ != 0D) {
+    if (totalAmount != 0D) {
       output.writeDouble(7, totalAmount);
     }
-    if (originalAmount_ != 0D) {
+    if (originalAmount != 0D) {
       output.writeDouble(8, originalAmount);
     }
-    if (deliverFee_ != 0D) {
+    if (deliverFee != 0D) {
       output.writeDouble(9, deliverFee);
     }
-    if (discountAmount_ != 0D) {
+    if (discountAmount != 0D) {
       output.writeDouble(10, discountAmount);
     }
-    if (paymentAmount_ != 0D) {
+    if (paymentAmount != 0D) {
       output.writeDouble(11, paymentAmount);
     }
-    if (payableAmount_ != 0D) {
+    if (payableAmount != 0D) {
       output.writeDouble(12, payableAmount);
     }
     for (int i = 0; i < productInfo.size(); i++) {
@@ -961,7 +961,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (orderId_ != 0L) {
+    if (orderId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, orderId);
     }
@@ -980,27 +980,27 @@ private static final long serialVersionUID = 0L;
     if (!getPayTimeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, payTime);
     }
-    if (totalAmount_ != 0D) {
+    if (totalAmount != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(7, totalAmount);
     }
-    if (originalAmount_ != 0D) {
+    if (originalAmount != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(8, originalAmount);
     }
-    if (deliverFee_ != 0D) {
+    if (deliverFee != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(9, deliverFee);
     }
-    if (discountAmount_ != 0D) {
+    if (discountAmount != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(10, discountAmount);
     }
-    if (paymentAmount_ != 0D) {
+    if (paymentAmount != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(11, paymentAmount);
     }
-    if (payableAmount_ != 0D) {
+    if (payableAmount != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(12, payableAmount);
     }
@@ -2584,7 +2584,7 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.ProductInfoOrBuilder> 
          getProductInfoOrBuilderList() {
-      if (productInfoBuilder_ != null) {
+      if (productInfoBuilder != null) {
         return productInfoBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(productInfo);

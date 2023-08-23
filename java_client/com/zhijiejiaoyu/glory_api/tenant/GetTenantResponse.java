@@ -50,7 +50,7 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             com.zhijiejiaoyu.base.BaseResponse.Builder subBuilder = null;
-            if (baseResp_ != null) {
+            if (baseResp != null) {
               subBuilder = baseResp.toBuilder();
             }
             baseResp = input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
@@ -63,7 +63,7 @@ private static final long serialVersionUID = 0L;
           }
           case 18: {
             com.zhijiejiaoyu.glory_api.tenant.Tenant.Builder subBuilder = null;
-            if (tenant_ != null) {
+            if (tenant != null) {
               subBuilder = tenant.toBuilder();
             }
             tenant = input.readMessage(com.zhijiejiaoyu.glory_api.tenant.Tenant.parser(), extensionRegistry);
@@ -76,7 +76,7 @@ private static final long serialVersionUID = 0L;
           }
           case 26: {
             com.zhijiejiaoyu.base.AuthorInfo.Builder subBuilder = null;
-            if (authorInfo_ != null) {
+            if (authorInfo != null) {
               subBuilder = authorInfo.toBuilder();
             }
             authorInfo = input.readMessage(com.zhijiejiaoyu.base.AuthorInfo.parser(), extensionRegistry);
@@ -127,7 +127,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasBaseResp() {
-    return baseResp_ != null;
+    return baseResp != null;
   }
   /**
    * <code>.base.BaseResponse base_resp = 1;</code>
@@ -153,7 +153,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasTenant() {
-    return tenant_ != null;
+    return tenant != null;
   }
   /**
    * <code>.glory_api.Tenant tenant = 2;</code>
@@ -179,7 +179,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasAuthorInfo() {
-    return authorInfo_ != null;
+    return authorInfo != null;
   }
   /**
    * <code>.base.AuthorInfo author_info = 3;</code>
@@ -211,13 +211,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (baseResp_ != null) {
+    if (baseResp != null) {
       output.writeMessage(1, getBaseResp());
     }
-    if (tenant_ != null) {
+    if (tenant != null) {
       output.writeMessage(2, getTenant());
     }
-    if (authorInfo_ != null) {
+    if (authorInfo != null) {
       output.writeMessage(3, getAuthorInfo());
     }
     unknownFields.writeTo(output);
@@ -229,15 +229,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (baseResp_ != null) {
+    if (baseResp != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
-    if (tenant_ != null) {
+    if (tenant != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getTenant());
     }
-    if (authorInfo_ != null) {
+    if (authorInfo != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getAuthorInfo());
     }
@@ -580,7 +580,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the baseResp field is set.
      */
     public boolean hasBaseResp() {
-      return baseRespBuilder_ != null || baseResp_ != null;
+      return baseRespBuilder != null || baseResp != null;
     }
     /**
      * <code>.base.BaseResponse base_resp = 1;</code>
@@ -628,7 +628,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeBaseResp(com.zhijiejiaoyu.base.BaseResponse value) {
       if (baseRespBuilder == null) {
-        if (baseResp_ != null) {
+        if (baseResp != null) {
           baseResp =
             com.zhijiejiaoyu.base.BaseResponse.newBuilder(baseResp).mergeFrom(value).buildPartial();
         } else {
@@ -667,7 +667,7 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder() {
-      if (baseRespBuilder_ != null) {
+      if (baseRespBuilder != null) {
         return baseRespBuilder.getMessageOrBuilder();
       } else {
         return baseResp == null ?
@@ -699,7 +699,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the tenant field is set.
      */
     public boolean hasTenant() {
-      return tenantBuilder_ != null || tenant_ != null;
+      return tenantBuilder != null || tenant != null;
     }
     /**
      * <code>.glory_api.Tenant tenant = 2;</code>
@@ -747,7 +747,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeTenant(com.zhijiejiaoyu.glory_api.tenant.Tenant value) {
       if (tenantBuilder == null) {
-        if (tenant_ != null) {
+        if (tenant != null) {
           tenant =
             com.zhijiejiaoyu.glory_api.tenant.Tenant.newBuilder(tenant).mergeFrom(value).buildPartial();
         } else {
@@ -786,7 +786,7 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.Tenant tenant = 2;</code>
      */
     public com.zhijiejiaoyu.glory_api.tenant.TenantOrBuilder getTenantOrBuilder() {
-      if (tenantBuilder_ != null) {
+      if (tenantBuilder != null) {
         return tenantBuilder.getMessageOrBuilder();
       } else {
         return tenant == null ?
@@ -818,7 +818,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the authorInfo field is set.
      */
     public boolean hasAuthorInfo() {
-      return authorInfoBuilder_ != null || authorInfo_ != null;
+      return authorInfoBuilder != null || authorInfo != null;
     }
     /**
      * <code>.base.AuthorInfo author_info = 3;</code>
@@ -866,7 +866,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeAuthorInfo(com.zhijiejiaoyu.base.AuthorInfo value) {
       if (authorInfoBuilder == null) {
-        if (authorInfo_ != null) {
+        if (authorInfo != null) {
           authorInfo =
             com.zhijiejiaoyu.base.AuthorInfo.newBuilder(authorInfo).mergeFrom(value).buildPartial();
         } else {
@@ -905,7 +905,7 @@ private static final long serialVersionUID = 0L;
      * <code>.base.AuthorInfo author_info = 3;</code>
      */
     public com.zhijiejiaoyu.base.AuthorInfoOrBuilder getAuthorInfoOrBuilder() {
-      if (authorInfoBuilder_ != null) {
+      if (authorInfoBuilder != null) {
         return authorInfoBuilder.getMessageOrBuilder();
       } else {
         return authorInfo == null ?

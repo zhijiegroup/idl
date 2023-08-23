@@ -99,7 +99,7 @@ private static final long serialVersionUID = 0L;
           }
           case 66: {
             com.zhijiejiaoyu.glory_api.seller.Seller.Builder subBuilder = null;
-            if (seller_ != null) {
+            if (seller != null) {
               subBuilder = seller.toBuilder();
             }
             seller = input.readMessage(com.zhijiejiaoyu.glory_api.seller.Seller.parser(), extensionRegistry);
@@ -401,7 +401,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasSeller() {
-    return seller_ != null;
+    return seller != null;
   }
   /**
    * <code>.glory_api.Seller seller = 8;</code>
@@ -493,7 +493,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (id_ != 0L) {
+    if (id != 0L) {
       output.writeInt64(1, id);
     }
     if (!getPhoneBytes().isEmpty()) {
@@ -514,7 +514,7 @@ private static final long serialVersionUID = 0L;
     if (!getAvatarUrlBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, avatarUrl);
     }
-    if (seller_ != null) {
+    if (seller != null) {
       output.writeMessage(8, getSeller());
     }
     for (int i = 0; i < shopAccess.size(); i++) {
@@ -529,7 +529,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (id_ != 0L) {
+    if (id != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, id);
     }
@@ -551,7 +551,7 @@ private static final long serialVersionUID = 0L;
     if (!getAvatarUrlBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, avatarUrl);
     }
-    if (seller_ != null) {
+    if (seller != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(8, getSeller());
     }
@@ -1466,7 +1466,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the seller field is set.
      */
     public boolean hasSeller() {
-      return sellerBuilder_ != null || seller_ != null;
+      return sellerBuilder != null || seller != null;
     }
     /**
      * <code>.glory_api.Seller seller = 8;</code>
@@ -1514,7 +1514,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeSeller(com.zhijiejiaoyu.glory_api.seller.Seller value) {
       if (sellerBuilder == null) {
-        if (seller_ != null) {
+        if (seller != null) {
           seller =
             com.zhijiejiaoyu.glory_api.seller.Seller.newBuilder(seller).mergeFrom(value).buildPartial();
         } else {
@@ -1553,7 +1553,7 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.Seller seller = 8;</code>
      */
     public com.zhijiejiaoyu.glory_api.seller.SellerOrBuilder getSellerOrBuilder() {
-      if (sellerBuilder_ != null) {
+      if (sellerBuilder != null) {
         return sellerBuilder.getMessageOrBuilder();
       } else {
         return seller == null ?
@@ -1834,7 +1834,7 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.ShopAccessOrBuilder> 
          getShopAccessOrBuilderList() {
-      if (shopAccessBuilder_ != null) {
+      if (shopAccessBuilder != null) {
         return shopAccessBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(shopAccess);

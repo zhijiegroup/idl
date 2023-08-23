@@ -273,13 +273,13 @@ private static final long serialVersionUID = 0L;
     if (!getOptionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, option);
     }
-    if (total_ != 0D) {
+    if (total != 0D) {
       output.writeDouble(2, total);
     }
     if (!getScoreBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, score);
     }
-    if (isExpand_ != false) {
+    if (isExpand != false) {
       output.writeBool(4, isExpand);
     }
     for (int i = 0; i < suboption.size(); i++) {
@@ -297,14 +297,14 @@ private static final long serialVersionUID = 0L;
     if (!getOptionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, option);
     }
-    if (total_ != 0D) {
+    if (total != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(2, total);
     }
     if (!getScoreBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, score);
     }
-    if (isExpand_ != false) {
+    if (isExpand != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(4, isExpand);
     }
@@ -1080,7 +1080,7 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.live.EvaluateSubOptionOrBuilder> 
          getSuboptionOrBuilderList() {
-      if (suboptionBuilder_ != null) {
+      if (suboptionBuilder != null) {
         return suboptionBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(suboption);

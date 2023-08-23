@@ -260,10 +260,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (majorId_ != 0L) {
+    if (majorId != 0L) {
       output.writeInt64(1, majorId);
     }
-    if (collegeId_ != 0L) {
+    if (collegeId != 0L) {
       output.writeInt64(2, collegeId);
     }
     if (!getMajorNameBytes().isEmpty()) {
@@ -272,7 +272,7 @@ private static final long serialVersionUID = 0L;
     if (!getMajorTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, majorType);
     }
-    if (tenantId_ != 0L) {
+    if (tenantId != 0L) {
       output.writeInt64(7, tenantId);
     }
     unknownFields.writeTo(output);
@@ -284,11 +284,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (majorId_ != 0L) {
+    if (majorId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, majorId);
     }
-    if (collegeId_ != 0L) {
+    if (collegeId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, collegeId);
     }
@@ -298,7 +298,7 @@ private static final long serialVersionUID = 0L;
     if (!getMajorTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, majorType);
     }
-    if (tenantId_ != 0L) {
+    if (tenantId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(7, tenantId);
     }

@@ -254,7 +254,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (attributeId_ != 0L) {
+    if (attributeId != 0L) {
       output.writeInt64(1, attributeId);
     }
     if (!getAttributeNameBytes().isEmpty()) {
@@ -275,7 +275,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (attributeId_ != 0L) {
+    if (attributeId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, attributeId);
     }
@@ -938,7 +938,7 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.AttributeValueOrBuilder> 
          getAttributeValueOrBuilderList() {
-      if (attributeValueBuilder_ != null) {
+      if (attributeValueBuilder != null) {
         return attributeValueBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(attributeValue);

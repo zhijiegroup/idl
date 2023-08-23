@@ -131,7 +131,7 @@ private static final long serialVersionUID = 0L;
           }
           case 114: {
             com.zhijiejiaoyu.glory_api.shop.Template.Builder subBuilder = null;
-            if (freightTemplate_ != null) {
+            if (freightTemplate != null) {
               subBuilder = freightTemplate.toBuilder();
             }
             freightTemplate = input.readMessage(com.zhijiejiaoyu.glory_api.shop.Template.parser(), extensionRegistry);
@@ -519,7 +519,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasFreightTemplate() {
-    return freightTemplate_ != null;
+    return freightTemplate != null;
   }
   /**
    * <pre>
@@ -695,34 +695,34 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (productId_ != 0L) {
+    if (productId != 0L) {
       output.writeInt64(1, productId);
     }
-    if (shopId_ != 0L) {
+    if (shopId != 0L) {
       output.writeInt64(2, shopId);
     }
     if (!getProductNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, productName);
     }
-    if (categoryId_ != 0L) {
+    if (categoryId != 0L) {
       output.writeInt64(4, categoryId);
     }
     for (int i = 0; i < sku.size(); i++) {
       output.writeMessage(5, sku.get(i));
     }
-    if (state_ != com.zhijiejiaoyu.glory_api.shop.State.DEFAULT.getNumber()) {
+    if (state != com.zhijiejiaoyu.glory_api.shop.State.DEFAULT.getNumber()) {
       output.writeEnum(7, state);
     }
     for (int i = 0; i < images.size(); i++) {
       output.writeMessage(8, images.get(i));
     }
-    if (productPrice_ != 0F) {
+    if (productPrice != 0F) {
       output.writeFloat(9, productPrice);
     }
-    if (productQuantity_ != 0) {
+    if (productQuantity != 0) {
       output.writeInt32(10, productQuantity);
     }
-    if (productSold_ != 0) {
+    if (productSold != 0) {
       output.writeInt32(11, productSold);
     }
     if (!getShopNameBytes().isEmpty()) {
@@ -731,16 +731,16 @@ private static final long serialVersionUID = 0L;
     if (!getShopLogoUrlBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, shopLogoUrl);
     }
-    if (freightTemplate_ != null) {
+    if (freightTemplate != null) {
       output.writeMessage(14, getFreightTemplate());
     }
     for (int i = 0; i < shipmentAttribute.size(); i++) {
       output.writeMessage(15, shipmentAttribute.get(i));
     }
-    if (salePrice_ != 0F) {
+    if (salePrice != 0F) {
       output.writeFloat(16, salePrice);
     }
-    if (referencePrice_ != 0F) {
+    if (referencePrice != 0F) {
       output.writeFloat(17, referencePrice);
     }
     if (!getProductBrandBytes().isEmpty()) {
@@ -755,18 +755,18 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (productId_ != 0L) {
+    if (productId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, productId);
     }
-    if (shopId_ != 0L) {
+    if (shopId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, shopId);
     }
     if (!getProductNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, productName);
     }
-    if (categoryId_ != 0L) {
+    if (categoryId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, categoryId);
     }
@@ -774,7 +774,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, sku.get(i));
     }
-    if (state_ != com.zhijiejiaoyu.glory_api.shop.State.DEFAULT.getNumber()) {
+    if (state != com.zhijiejiaoyu.glory_api.shop.State.DEFAULT.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(7, state);
     }
@@ -782,15 +782,15 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(8, images.get(i));
     }
-    if (productPrice_ != 0F) {
+    if (productPrice != 0F) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(9, productPrice);
     }
-    if (productQuantity_ != 0) {
+    if (productQuantity != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(10, productQuantity);
     }
-    if (productSold_ != 0) {
+    if (productSold != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(11, productSold);
     }
@@ -800,7 +800,7 @@ private static final long serialVersionUID = 0L;
     if (!getShopLogoUrlBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, shopLogoUrl);
     }
-    if (freightTemplate_ != null) {
+    if (freightTemplate != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(14, getFreightTemplate());
     }
@@ -808,11 +808,11 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(15, shipmentAttribute.get(i));
     }
-    if (salePrice_ != 0F) {
+    if (salePrice != 0F) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(16, salePrice);
     }
-    if (referencePrice_ != 0F) {
+    if (referencePrice != 0F) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(17, referencePrice);
     }
@@ -844,7 +844,7 @@ private static final long serialVersionUID = 0L;
         != other.getCategoryId()) return false;
     if (!getSkuList()
         .equals(other.getSkuList())) return false;
-    if (state_ != other.state) return false;
+    if (state != other.state) return false;
     if (!getImagesList()
         .equals(other.getImagesList())) return false;
     if (java.lang.Float.floatToIntBits(getProductPrice())
@@ -1277,7 +1277,7 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
-      if (other.state_ != 0) {
+      if (other.state != 0) {
         setStateValue(other.getStateValue());
       }
       if (imagesBuilder == null) {
@@ -1758,7 +1758,7 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.SkuOrBuilder> 
          getSkuOrBuilderList() {
-      if (skuBuilder_ != null) {
+      if (skuBuilder != null) {
         return skuBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(sku);
@@ -2072,7 +2072,7 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.ProductImageOrBuilder> 
          getImagesOrBuilderList() {
-      if (imagesBuilder_ != null) {
+      if (imagesBuilder != null) {
         return imagesBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(images);
@@ -2408,7 +2408,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the freightTemplate field is set.
      */
     public boolean hasFreightTemplate() {
-      return freightTemplateBuilder_ != null || freightTemplate_ != null;
+      return freightTemplateBuilder != null || freightTemplate != null;
     }
     /**
      * <pre>
@@ -2472,7 +2472,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeFreightTemplate(com.zhijiejiaoyu.glory_api.shop.Template value) {
       if (freightTemplateBuilder == null) {
-        if (freightTemplate_ != null) {
+        if (freightTemplate != null) {
           freightTemplate =
             com.zhijiejiaoyu.glory_api.shop.Template.newBuilder(freightTemplate).mergeFrom(value).buildPartial();
         } else {
@@ -2523,7 +2523,7 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.Template freight_template = 14;</code>
      */
     public com.zhijiejiaoyu.glory_api.shop.TemplateOrBuilder getFreightTemplateOrBuilder() {
-      if (freightTemplateBuilder_ != null) {
+      if (freightTemplateBuilder != null) {
         return freightTemplateBuilder.getMessageOrBuilder();
       } else {
         return freightTemplate == null ?
@@ -2808,7 +2808,7 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.ShipmentAttributeOrBuilder> 
          getShipmentAttributeOrBuilderList() {
-      if (shipmentAttributeBuilder_ != null) {
+      if (shipmentAttributeBuilder != null) {
         return shipmentAttributeBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(shipmentAttribute);

@@ -64,7 +64,7 @@ private static final long serialVersionUID = 0L;
           }
           case 26: {
             com.zhijiejiaoyu.glory_api.wxpay.StoreInfo.Builder subBuilder = null;
-            if (storeInfo_ != null) {
+            if (storeInfo != null) {
               subBuilder = storeInfo.toBuilder();
             }
             storeInfo = input.readMessage(com.zhijiejiaoyu.glory_api.wxpay.StoreInfo.parser(), extensionRegistry);
@@ -211,7 +211,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasStoreInfo() {
-    return storeInfo_ != null;
+    return storeInfo != null;
   }
   /**
    * <pre>
@@ -257,7 +257,7 @@ private static final long serialVersionUID = 0L;
     if (!getDeviceIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, deviceId);
     }
-    if (storeInfo_ != null) {
+    if (storeInfo != null) {
       output.writeMessage(3, getStoreInfo());
     }
     unknownFields.writeTo(output);
@@ -275,7 +275,7 @@ private static final long serialVersionUID = 0L;
     if (!getDeviceIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, deviceId);
     }
-    if (storeInfo_ != null) {
+    if (storeInfo != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getStoreInfo());
     }
@@ -790,7 +790,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the storeInfo field is set.
      */
     public boolean hasStoreInfo() {
-      return storeInfoBuilder_ != null || storeInfo_ != null;
+      return storeInfoBuilder != null || storeInfo != null;
     }
     /**
      * <pre>
@@ -854,7 +854,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeStoreInfo(com.zhijiejiaoyu.glory_api.wxpay.StoreInfo value) {
       if (storeInfoBuilder == null) {
-        if (storeInfo_ != null) {
+        if (storeInfo != null) {
           storeInfo =
             com.zhijiejiaoyu.glory_api.wxpay.StoreInfo.newBuilder(storeInfo).mergeFrom(value).buildPartial();
         } else {
@@ -905,7 +905,7 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.StoreInfo store_info = 3;</code>
      */
     public com.zhijiejiaoyu.glory_api.wxpay.StoreInfoOrBuilder getStoreInfoOrBuilder() {
-      if (storeInfoBuilder_ != null) {
+      if (storeInfoBuilder != null) {
         return storeInfoBuilder.getMessageOrBuilder();
       } else {
         return storeInfo == null ?

@@ -158,7 +158,7 @@ private static final long serialVersionUID = 0L;
     if (!getProductUrlBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, productUrl);
     }
-    if (productImageId_ != 0L) {
+    if (productImageId != 0L) {
       output.writeInt64(2, productImageId);
     }
     unknownFields.writeTo(output);
@@ -173,7 +173,7 @@ private static final long serialVersionUID = 0L;
     if (!getProductUrlBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, productUrl);
     }
-    if (productImageId_ != 0L) {
+    if (productImageId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, productImageId);
     }

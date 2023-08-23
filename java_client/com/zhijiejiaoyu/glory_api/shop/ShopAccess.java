@@ -375,13 +375,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (shopAccessId_ != 0L) {
+    if (shopAccessId != 0L) {
       output.writeInt64(1, shopAccessId);
     }
-    if (shopId_ != 0L) {
+    if (shopId != 0L) {
       output.writeInt64(2, shopId);
     }
-    if (userId_ != 0L) {
+    if (userId != 0L) {
       output.writeInt64(3, userId);
     }
     if (!getAccessTypeBytes().isEmpty()) {
@@ -408,15 +408,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (shopAccessId_ != 0L) {
+    if (shopAccessId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, shopAccessId);
     }
-    if (shopId_ != 0L) {
+    if (shopId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, shopId);
     }
-    if (userId_ != 0L) {
+    if (userId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, userId);
     }

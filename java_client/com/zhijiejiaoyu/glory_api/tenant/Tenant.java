@@ -448,7 +448,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (tenantId_ != 0L) {
+    if (tenantId != 0L) {
       output.writeInt64(1, tenantId);
     }
     if (!getTenantNameBytes().isEmpty()) {
@@ -460,7 +460,7 @@ private static final long serialVersionUID = 0L;
     if (!getTenantOverviewBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, tenantOverview);
     }
-    if (logoAttachmentId_ != 0L) {
+    if (logoAttachmentId != 0L) {
       output.writeInt64(7, logoAttachmentId);
     }
     if (!getAdminNameBytes().isEmpty()) {
@@ -481,7 +481,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (tenantId_ != 0L) {
+    if (tenantId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, tenantId);
     }
@@ -494,7 +494,7 @@ private static final long serialVersionUID = 0L;
     if (!getTenantOverviewBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, tenantOverview);
     }
-    if (logoAttachmentId_ != 0L) {
+    if (logoAttachmentId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(7, logoAttachmentId);
     }

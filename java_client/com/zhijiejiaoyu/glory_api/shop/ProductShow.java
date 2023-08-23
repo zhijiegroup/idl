@@ -362,19 +362,19 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (productId_ != 0L) {
+    if (productId != 0L) {
       output.writeInt64(1, productId);
     }
-    if (skuId_ != 0L) {
+    if (skuId != 0L) {
       output.writeInt64(2, skuId);
     }
     if (!getProductNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, productName);
     }
-    if (quantity_ != 0) {
+    if (quantity != 0) {
       output.writeInt32(4, quantity);
     }
-    if (unitPrice_ != 0D) {
+    if (unitPrice != 0D) {
       output.writeDouble(5, unitPrice);
     }
     if (!getProductUrlBytes().isEmpty()) {
@@ -386,7 +386,7 @@ private static final long serialVersionUID = 0L;
     if (!getCurrencyBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, currency);
     }
-    if (freightAmount_ != 0F) {
+    if (freightAmount != 0F) {
       output.writeFloat(9, freightAmount);
     }
     unknownFields.writeTo(output);
@@ -398,22 +398,22 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (productId_ != 0L) {
+    if (productId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, productId);
     }
-    if (skuId_ != 0L) {
+    if (skuId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, skuId);
     }
     if (!getProductNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, productName);
     }
-    if (quantity_ != 0) {
+    if (quantity != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(4, quantity);
     }
-    if (unitPrice_ != 0D) {
+    if (unitPrice != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(5, unitPrice);
     }
@@ -426,7 +426,7 @@ private static final long serialVersionUID = 0L;
     if (!getCurrencyBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, currency);
     }
-    if (freightAmount_ != 0F) {
+    if (freightAmount != 0F) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(9, freightAmount);
     }

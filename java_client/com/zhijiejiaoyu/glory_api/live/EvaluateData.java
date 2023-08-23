@@ -212,16 +212,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (averageScore_ != 0D) {
+    if (averageScore != 0D) {
       output.writeDouble(1, averageScore);
     }
-    if (totalDuration_ != 0D) {
+    if (totalDuration != 0D) {
       output.writeDouble(2, totalDuration);
     }
-    if (totalLike_ != 0L) {
+    if (totalLike != 0L) {
       output.writeInt64(3, totalLike);
     }
-    if (totalOrder_ != 0L) {
+    if (totalOrder != 0L) {
       output.writeInt64(4, totalOrder);
     }
     for (int i = 0; i < evaluateList.size(); i++) {
@@ -236,19 +236,19 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (averageScore_ != 0D) {
+    if (averageScore != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(1, averageScore);
     }
-    if (totalDuration_ != 0D) {
+    if (totalDuration != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(2, totalDuration);
     }
-    if (totalLike_ != 0L) {
+    if (totalLike != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, totalLike);
     }
-    if (totalOrder_ != 0L) {
+    if (totalOrder != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, totalOrder);
     }
@@ -935,7 +935,7 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.live.EvaluateRoomOrBuilder> 
          getEvaluateListOrBuilderList() {
-      if (evaluateListBuilder_ != null) {
+      if (evaluateListBuilder != null) {
         return evaluateListBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(evaluateList);

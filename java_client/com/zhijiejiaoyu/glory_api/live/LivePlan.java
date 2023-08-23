@@ -282,7 +282,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (livePlanId_ != 0L) {
+    if (livePlanId != 0L) {
       output.writeInt64(1, livePlanId);
     }
     if (!getLivePlanNameBytes().isEmpty()) {
@@ -291,7 +291,7 @@ private static final long serialVersionUID = 0L;
     if (!getDescriptionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, description);
     }
-    if (shopId_ != 0L) {
+    if (shopId != 0L) {
       output.writeInt64(4, shopId);
     }
     for (int i = 0; i < livePlanProduct.size(); i++) {
@@ -306,7 +306,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (livePlanId_ != 0L) {
+    if (livePlanId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, livePlanId);
     }
@@ -316,7 +316,7 @@ private static final long serialVersionUID = 0L;
     if (!getDescriptionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, description);
     }
-    if (shopId_ != 0L) {
+    if (shopId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, shopId);
     }
@@ -1123,7 +1123,7 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.live.LivePlanProductOrBuilder> 
          getLivePlanProductOrBuilderList() {
-      if (livePlanProductBuilder_ != null) {
+      if (livePlanProductBuilder != null) {
         return livePlanProductBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(livePlanProduct);

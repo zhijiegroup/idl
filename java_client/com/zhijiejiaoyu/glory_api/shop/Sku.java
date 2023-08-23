@@ -424,31 +424,31 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (skuId_ != 0L) {
+    if (skuId != 0L) {
       output.writeInt64(1, skuId);
     }
     if (!getSkuNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, skuName);
     }
-    if (productId_ != 0L) {
+    if (productId != 0L) {
       output.writeInt64(3, productId);
     }
-    if (unitPrice_ != 0D) {
+    if (unitPrice != 0D) {
       output.writeDouble(5, unitPrice);
     }
     if (!getCurrencyBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, currency);
     }
-    if (remainingQuantity_ != 0) {
+    if (remainingQuantity != 0) {
       output.writeInt32(7, remainingQuantity);
     }
-    if (totalSold_ != 0) {
+    if (totalSold != 0) {
       output.writeInt32(8, totalSold);
     }
     for (int i = 0; i < attribute.size(); i++) {
       output.writeMessage(9, attribute.get(i));
     }
-    if (attachmentId_ != 0L) {
+    if (attachmentId != 0L) {
       output.writeInt64(10, attachmentId);
     }
     if (!getSkuUrlBytes().isEmpty()) {
@@ -466,29 +466,29 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (skuId_ != 0L) {
+    if (skuId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, skuId);
     }
     if (!getSkuNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, skuName);
     }
-    if (productId_ != 0L) {
+    if (productId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, productId);
     }
-    if (unitPrice_ != 0D) {
+    if (unitPrice != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(5, unitPrice);
     }
     if (!getCurrencyBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, currency);
     }
-    if (remainingQuantity_ != 0) {
+    if (remainingQuantity != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(7, remainingQuantity);
     }
-    if (totalSold_ != 0) {
+    if (totalSold != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(8, totalSold);
     }
@@ -496,7 +496,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(9, attribute.get(i));
     }
-    if (attachmentId_ != 0L) {
+    if (attachmentId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(10, attachmentId);
     }
@@ -1431,7 +1431,7 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.AttributeOrBuilder> 
          getAttributeOrBuilderList() {
-      if (attributeBuilder_ != null) {
+      if (attributeBuilder != null) {
         return attributeBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(attribute);

@@ -264,7 +264,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (roleId_ != 0L) {
+    if (roleId != 0L) {
       output.writeInt64(1, roleId);
     }
     if (!getRoleNameBytes().isEmpty()) {
@@ -285,7 +285,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (roleId_ != 0L) {
+    if (roleId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, roleId);
     }
@@ -1049,7 +1049,7 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.user.RolePermissionOrBuilder> 
          getRolePermissionOrBuilderList() {
-      if (rolePermissionBuilder_ != null) {
+      if (rolePermissionBuilder != null) {
         return rolePermissionBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(rolePermission);

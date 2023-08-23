@@ -334,25 +334,25 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (freightTemplateId_ != 0L) {
+    if (freightTemplateId != 0L) {
       output.writeInt64(1, freightTemplateId);
     }
-    if (configId_ != 0L) {
+    if (configId != 0L) {
       output.writeInt64(2, configId);
     }
-    if (shopId_ != 0L) {
+    if (shopId != 0L) {
       output.writeInt64(3, shopId);
     }
-    if (freightSetting_ != 0) {
+    if (freightSetting != 0) {
       output.writeInt32(4, freightSetting);
     }
     if (!getTemplateNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, templateName);
     }
-    if (isDefault_ != false) {
+    if (isDefault != false) {
       output.writeBool(6, isDefault);
     }
-    if (freightAmount_ != 0F) {
+    if (freightAmount != 0F) {
       output.writeFloat(7, freightAmount);
     }
     if (!getAddressBytes().isEmpty()) {
@@ -370,30 +370,30 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (freightTemplateId_ != 0L) {
+    if (freightTemplateId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, freightTemplateId);
     }
-    if (configId_ != 0L) {
+    if (configId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, configId);
     }
-    if (shopId_ != 0L) {
+    if (shopId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, shopId);
     }
-    if (freightSetting_ != 0) {
+    if (freightSetting != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(4, freightSetting);
     }
     if (!getTemplateNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, templateName);
     }
-    if (isDefault_ != false) {
+    if (isDefault != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(6, isDefault);
     }
-    if (freightAmount_ != 0F) {
+    if (freightAmount != 0F) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(7, freightAmount);
     }
@@ -1339,7 +1339,7 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.ProductNameOrBuilder> 
          getProductInfoOrBuilderList() {
-      if (productInfoBuilder_ != null) {
+      if (productInfoBuilder != null) {
         return productInfoBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(productInfo);

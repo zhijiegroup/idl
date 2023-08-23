@@ -217,7 +217,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (transId_ != 0L) {
+    if (transId != 0L) {
       output.writeInt64(1, transId);
     }
     for (int i = 0; i < order.size(); i++) {
@@ -235,7 +235,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (transId_ != 0L) {
+    if (transId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, transId);
     }
@@ -808,7 +808,7 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.OrderResponseOrBuilder> 
          getOrderOrBuilderList() {
-      if (orderBuilder_ != null) {
+      if (orderBuilder != null) {
         return orderBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(order);

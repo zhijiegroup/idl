@@ -55,7 +55,7 @@ private static final long serialVersionUID = 0L;
           }
           case 26: {
             com.zhijiejiaoyu.glory_api.shop.Category.Builder subBuilder = null;
-            if (category_ != null) {
+            if (category != null) {
               subBuilder = category.toBuilder();
             }
             category = input.readMessage(com.zhijiejiaoyu.glory_api.shop.Category.parser(), extensionRegistry);
@@ -117,7 +117,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasCategory() {
-    return category_ != null;
+    return category != null;
   }
   /**
    * <code>.glory_api.Category category = 3;</code>
@@ -149,10 +149,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (shopCategoryId_ != 0L) {
+    if (shopCategoryId != 0L) {
       output.writeInt64(1, shopCategoryId);
     }
-    if (category_ != null) {
+    if (category != null) {
       output.writeMessage(3, getCategory());
     }
     unknownFields.writeTo(output);
@@ -164,11 +164,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (shopCategoryId_ != 0L) {
+    if (shopCategoryId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, shopCategoryId);
     }
-    if (category_ != null) {
+    if (category != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getCategory());
     }
@@ -507,7 +507,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the category field is set.
      */
     public boolean hasCategory() {
-      return categoryBuilder_ != null || category_ != null;
+      return categoryBuilder != null || category != null;
     }
     /**
      * <code>.glory_api.Category category = 3;</code>
@@ -555,7 +555,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeCategory(com.zhijiejiaoyu.glory_api.shop.Category value) {
       if (categoryBuilder == null) {
-        if (category_ != null) {
+        if (category != null) {
           category =
             com.zhijiejiaoyu.glory_api.shop.Category.newBuilder(category).mergeFrom(value).buildPartial();
         } else {
@@ -594,7 +594,7 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.Category category = 3;</code>
      */
     public com.zhijiejiaoyu.glory_api.shop.CategoryOrBuilder getCategoryOrBuilder() {
-      if (categoryBuilder_ != null) {
+      if (categoryBuilder != null) {
         return categoryBuilder.getMessageOrBuilder();
       } else {
         return category == null ?

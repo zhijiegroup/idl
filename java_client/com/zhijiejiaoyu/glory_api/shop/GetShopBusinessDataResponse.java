@@ -50,7 +50,7 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             com.zhijiejiaoyu.base.BaseResponse.Builder subBuilder = null;
-            if (baseResp_ != null) {
+            if (baseResp != null) {
               subBuilder = baseResp.toBuilder();
             }
             baseResp = input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
@@ -63,7 +63,7 @@ private static final long serialVersionUID = 0L;
           }
           case 18: {
             com.zhijiejiaoyu.glory_api.shop.ShopBusinessData.Builder subBuilder = null;
-            if (shopBusinessData_ != null) {
+            if (shopBusinessData != null) {
               subBuilder = shopBusinessData.toBuilder();
             }
             shopBusinessData = input.readMessage(com.zhijiejiaoyu.glory_api.shop.ShopBusinessData.parser(), extensionRegistry);
@@ -114,7 +114,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasBaseResp() {
-    return baseResp_ != null;
+    return baseResp != null;
   }
   /**
    * <code>.base.BaseResponse base_resp = 1;</code>
@@ -140,7 +140,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasShopBusinessData() {
-    return shopBusinessData_ != null;
+    return shopBusinessData != null;
   }
   /**
    * <code>.glory_api.ShopBusinessData shop_business_data = 2;</code>
@@ -172,10 +172,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (baseResp_ != null) {
+    if (baseResp != null) {
       output.writeMessage(1, getBaseResp());
     }
-    if (shopBusinessData_ != null) {
+    if (shopBusinessData != null) {
       output.writeMessage(2, getShopBusinessData());
     }
     unknownFields.writeTo(output);
@@ -187,11 +187,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (baseResp_ != null) {
+    if (baseResp != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
-    if (shopBusinessData_ != null) {
+    if (shopBusinessData != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getShopBusinessData());
     }
@@ -511,7 +511,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the baseResp field is set.
      */
     public boolean hasBaseResp() {
-      return baseRespBuilder_ != null || baseResp_ != null;
+      return baseRespBuilder != null || baseResp != null;
     }
     /**
      * <code>.base.BaseResponse base_resp = 1;</code>
@@ -559,7 +559,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeBaseResp(com.zhijiejiaoyu.base.BaseResponse value) {
       if (baseRespBuilder == null) {
-        if (baseResp_ != null) {
+        if (baseResp != null) {
           baseResp =
             com.zhijiejiaoyu.base.BaseResponse.newBuilder(baseResp).mergeFrom(value).buildPartial();
         } else {
@@ -598,7 +598,7 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder() {
-      if (baseRespBuilder_ != null) {
+      if (baseRespBuilder != null) {
         return baseRespBuilder.getMessageOrBuilder();
       } else {
         return baseResp == null ?
@@ -630,7 +630,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the shopBusinessData field is set.
      */
     public boolean hasShopBusinessData() {
-      return shopBusinessDataBuilder_ != null || shopBusinessData_ != null;
+      return shopBusinessDataBuilder != null || shopBusinessData != null;
     }
     /**
      * <code>.glory_api.ShopBusinessData shop_business_data = 2;</code>
@@ -678,7 +678,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeShopBusinessData(com.zhijiejiaoyu.glory_api.shop.ShopBusinessData value) {
       if (shopBusinessDataBuilder == null) {
-        if (shopBusinessData_ != null) {
+        if (shopBusinessData != null) {
           shopBusinessData =
             com.zhijiejiaoyu.glory_api.shop.ShopBusinessData.newBuilder(shopBusinessData).mergeFrom(value).buildPartial();
         } else {
@@ -717,7 +717,7 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.ShopBusinessData shop_business_data = 2;</code>
      */
     public com.zhijiejiaoyu.glory_api.shop.ShopBusinessDataOrBuilder getShopBusinessDataOrBuilder() {
-      if (shopBusinessDataBuilder_ != null) {
+      if (shopBusinessDataBuilder != null) {
         return shopBusinessDataBuilder.getMessageOrBuilder();
       } else {
         return shopBusinessData == null ?

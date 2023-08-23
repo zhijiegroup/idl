@@ -50,7 +50,7 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             com.zhijiejiaoyu.base.BaseResponse.Builder subBuilder = null;
-            if (baseResp_ != null) {
+            if (baseResp != null) {
               subBuilder = baseResp.toBuilder();
             }
             baseResp = input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
@@ -63,7 +63,7 @@ private static final long serialVersionUID = 0L;
           }
           case 18: {
             com.zhijiejiaoyu.glory_api.user.User.Builder subBuilder = null;
-            if (data_ != null) {
+            if (data != null) {
               subBuilder = data.toBuilder();
             }
             data = input.readMessage(com.zhijiejiaoyu.glory_api.user.User.parser(), extensionRegistry);
@@ -114,7 +114,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasBaseResp() {
-    return baseResp_ != null;
+    return baseResp != null;
   }
   /**
    * <code>.base.BaseResponse base_resp = 1;</code>
@@ -144,7 +144,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasData() {
-    return data_ != null;
+    return data != null;
   }
   /**
    * <pre>
@@ -184,10 +184,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (baseResp_ != null) {
+    if (baseResp != null) {
       output.writeMessage(1, getBaseResp());
     }
-    if (data_ != null) {
+    if (data != null) {
       output.writeMessage(2, getData());
     }
     unknownFields.writeTo(output);
@@ -199,11 +199,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (baseResp_ != null) {
+    if (baseResp != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
-    if (data_ != null) {
+    if (data != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getData());
     }
@@ -523,7 +523,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the baseResp field is set.
      */
     public boolean hasBaseResp() {
-      return baseRespBuilder_ != null || baseResp_ != null;
+      return baseRespBuilder != null || baseResp != null;
     }
     /**
      * <code>.base.BaseResponse base_resp = 1;</code>
@@ -571,7 +571,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeBaseResp(com.zhijiejiaoyu.base.BaseResponse value) {
       if (baseRespBuilder == null) {
-        if (baseResp_ != null) {
+        if (baseResp != null) {
           baseResp =
             com.zhijiejiaoyu.base.BaseResponse.newBuilder(baseResp).mergeFrom(value).buildPartial();
         } else {
@@ -610,7 +610,7 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder() {
-      if (baseRespBuilder_ != null) {
+      if (baseRespBuilder != null) {
         return baseRespBuilder.getMessageOrBuilder();
       } else {
         return baseResp == null ?
@@ -646,7 +646,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the data field is set.
      */
     public boolean hasData() {
-      return dataBuilder_ != null || data_ != null;
+      return dataBuilder != null || data != null;
     }
     /**
      * <pre>
@@ -710,7 +710,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeData(com.zhijiejiaoyu.glory_api.user.User value) {
       if (dataBuilder == null) {
-        if (data_ != null) {
+        if (data != null) {
           data =
             com.zhijiejiaoyu.glory_api.user.User.newBuilder(data).mergeFrom(value).buildPartial();
         } else {
@@ -761,7 +761,7 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.User data = 2;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.UserOrBuilder getDataOrBuilder() {
-      if (dataBuilder_ != null) {
+      if (dataBuilder != null) {
         return dataBuilder.getMessageOrBuilder();
       } else {
         return data == null ?

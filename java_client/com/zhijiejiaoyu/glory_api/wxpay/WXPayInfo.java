@@ -67,7 +67,7 @@ private static final long serialVersionUID = 0L;
           }
           case 26: {
             com.zhijiejiaoyu.glory_api.wxpay.Amount.Builder subBuilder = null;
-            if (amount_ != null) {
+            if (amount != null) {
               subBuilder = amount.toBuilder();
             }
             amount = input.readMessage(com.zhijiejiaoyu.glory_api.wxpay.Amount.parser(), extensionRegistry);
@@ -97,7 +97,7 @@ private static final long serialVersionUID = 0L;
           }
           case 58: {
             com.zhijiejiaoyu.glory_api.wxpay.Detail.Builder subBuilder = null;
-            if (detail_ != null) {
+            if (detail != null) {
               subBuilder = detail.toBuilder();
             }
             detail = input.readMessage(com.zhijiejiaoyu.glory_api.wxpay.Detail.parser(), extensionRegistry);
@@ -110,7 +110,7 @@ private static final long serialVersionUID = 0L;
           }
           case 66: {
             com.zhijiejiaoyu.glory_api.wxpay.SceneInfo.Builder subBuilder = null;
-            if (sceneInfo_ != null) {
+            if (sceneInfo != null) {
               subBuilder = sceneInfo.toBuilder();
             }
             sceneInfo = input.readMessage(com.zhijiejiaoyu.glory_api.wxpay.SceneInfo.parser(), extensionRegistry);
@@ -123,7 +123,7 @@ private static final long serialVersionUID = 0L;
           }
           case 74: {
             com.zhijiejiaoyu.glory_api.wxpay.SettleInfo.Builder subBuilder = null;
-            if (settleInfo_ != null) {
+            if (settleInfo != null) {
               subBuilder = settleInfo.toBuilder();
             }
             settleInfo = input.readMessage(com.zhijiejiaoyu.glory_api.wxpay.SettleInfo.parser(), extensionRegistry);
@@ -272,7 +272,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasAmount() {
-    return amount_ != null;
+    return amount != null;
   }
   /**
    * <code>.glory_api.Amount amount = 3;</code>
@@ -455,7 +455,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasDetail() {
-    return detail_ != null;
+    return detail != null;
   }
   /**
    * <pre>
@@ -493,7 +493,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasSceneInfo() {
-    return sceneInfo_ != null;
+    return sceneInfo != null;
   }
   /**
    * <pre>
@@ -531,7 +531,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasSettleInfo() {
-    return settleInfo_ != null;
+    return settleInfo != null;
   }
   /**
    * <pre>
@@ -577,7 +577,7 @@ private static final long serialVersionUID = 0L;
     if (!getOutTradeNoBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, outTradeNo);
     }
-    if (amount_ != null) {
+    if (amount != null) {
       output.writeMessage(3, getAmount());
     }
     if (!getAttachBytes().isEmpty()) {
@@ -586,16 +586,16 @@ private static final long serialVersionUID = 0L;
     if (!getGoodsTagBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, goodsTag);
     }
-    if (supportFapiao_ != false) {
+    if (supportFapiao != false) {
       output.writeBool(6, supportFapiao);
     }
-    if (detail_ != null) {
+    if (detail != null) {
       output.writeMessage(7, getDetail());
     }
-    if (sceneInfo_ != null) {
+    if (sceneInfo != null) {
       output.writeMessage(8, getSceneInfo());
     }
-    if (settleInfo_ != null) {
+    if (settleInfo != null) {
       output.writeMessage(9, getSettleInfo());
     }
     if (!getAppidBytes().isEmpty()) {
@@ -616,7 +616,7 @@ private static final long serialVersionUID = 0L;
     if (!getOutTradeNoBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, outTradeNo);
     }
-    if (amount_ != null) {
+    if (amount != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getAmount());
     }
@@ -626,19 +626,19 @@ private static final long serialVersionUID = 0L;
     if (!getGoodsTagBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, goodsTag);
     }
-    if (supportFapiao_ != false) {
+    if (supportFapiao != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(6, supportFapiao);
     }
-    if (detail_ != null) {
+    if (detail != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, getDetail());
     }
-    if (sceneInfo_ != null) {
+    if (sceneInfo != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(8, getSceneInfo());
     }
-    if (settleInfo_ != null) {
+    if (settleInfo != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(9, getSettleInfo());
     }
@@ -1265,7 +1265,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the amount field is set.
      */
     public boolean hasAmount() {
-      return amountBuilder_ != null || amount_ != null;
+      return amountBuilder != null || amount != null;
     }
     /**
      * <code>.glory_api.Amount amount = 3;</code>
@@ -1313,7 +1313,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeAmount(com.zhijiejiaoyu.glory_api.wxpay.Amount value) {
       if (amountBuilder == null) {
-        if (amount_ != null) {
+        if (amount != null) {
           amount =
             com.zhijiejiaoyu.glory_api.wxpay.Amount.newBuilder(amount).mergeFrom(value).buildPartial();
         } else {
@@ -1352,7 +1352,7 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.Amount amount = 3;</code>
      */
     public com.zhijiejiaoyu.glory_api.wxpay.AmountOrBuilder getAmountOrBuilder() {
-      if (amountBuilder_ != null) {
+      if (amountBuilder != null) {
         return amountBuilder.getMessageOrBuilder();
       } else {
         return amount == null ?
@@ -1719,7 +1719,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the detail field is set.
      */
     public boolean hasDetail() {
-      return detailBuilder_ != null || detail_ != null;
+      return detailBuilder != null || detail != null;
     }
     /**
      * <pre>
@@ -1783,7 +1783,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeDetail(com.zhijiejiaoyu.glory_api.wxpay.Detail value) {
       if (detailBuilder == null) {
-        if (detail_ != null) {
+        if (detail != null) {
           detail =
             com.zhijiejiaoyu.glory_api.wxpay.Detail.newBuilder(detail).mergeFrom(value).buildPartial();
         } else {
@@ -1834,7 +1834,7 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.Detail detail = 7;</code>
      */
     public com.zhijiejiaoyu.glory_api.wxpay.DetailOrBuilder getDetailOrBuilder() {
-      if (detailBuilder_ != null) {
+      if (detailBuilder != null) {
         return detailBuilder.getMessageOrBuilder();
       } else {
         return detail == null ?
@@ -1874,7 +1874,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the sceneInfo field is set.
      */
     public boolean hasSceneInfo() {
-      return sceneInfoBuilder_ != null || sceneInfo_ != null;
+      return sceneInfoBuilder != null || sceneInfo != null;
     }
     /**
      * <pre>
@@ -1938,7 +1938,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeSceneInfo(com.zhijiejiaoyu.glory_api.wxpay.SceneInfo value) {
       if (sceneInfoBuilder == null) {
-        if (sceneInfo_ != null) {
+        if (sceneInfo != null) {
           sceneInfo =
             com.zhijiejiaoyu.glory_api.wxpay.SceneInfo.newBuilder(sceneInfo).mergeFrom(value).buildPartial();
         } else {
@@ -1989,7 +1989,7 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.SceneInfo scene_info = 8;</code>
      */
     public com.zhijiejiaoyu.glory_api.wxpay.SceneInfoOrBuilder getSceneInfoOrBuilder() {
-      if (sceneInfoBuilder_ != null) {
+      if (sceneInfoBuilder != null) {
         return sceneInfoBuilder.getMessageOrBuilder();
       } else {
         return sceneInfo == null ?
@@ -2029,7 +2029,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the settleInfo field is set.
      */
     public boolean hasSettleInfo() {
-      return settleInfoBuilder_ != null || settleInfo_ != null;
+      return settleInfoBuilder != null || settleInfo != null;
     }
     /**
      * <pre>
@@ -2093,7 +2093,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeSettleInfo(com.zhijiejiaoyu.glory_api.wxpay.SettleInfo value) {
       if (settleInfoBuilder == null) {
-        if (settleInfo_ != null) {
+        if (settleInfo != null) {
           settleInfo =
             com.zhijiejiaoyu.glory_api.wxpay.SettleInfo.newBuilder(settleInfo).mergeFrom(value).buildPartial();
         } else {
@@ -2144,7 +2144,7 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.SettleInfo settle_info = 9;</code>
      */
     public com.zhijiejiaoyu.glory_api.wxpay.SettleInfoOrBuilder getSettleInfoOrBuilder() {
-      if (settleInfoBuilder_ != null) {
+      if (settleInfoBuilder != null) {
         return settleInfoBuilder.getMessageOrBuilder();
       } else {
         return settleInfo == null ?

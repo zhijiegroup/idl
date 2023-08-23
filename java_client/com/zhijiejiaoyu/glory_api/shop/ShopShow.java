@@ -302,16 +302,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (cartSkuId_ != 0L) {
+    if (cartSkuId != 0L) {
       output.writeInt64(1, cartSkuId);
     }
-    if (skuId_ != 0L) {
+    if (skuId != 0L) {
       output.writeInt64(2, skuId);
     }
-    if (quantity_ != 0) {
+    if (quantity != 0) {
       output.writeInt32(3, quantity);
     }
-    if (shopId_ != 0L) {
+    if (shopId != 0L) {
       output.writeInt64(4, shopId);
     }
     if (!getShopNameBytes().isEmpty()) {
@@ -332,19 +332,19 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (cartSkuId_ != 0L) {
+    if (cartSkuId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, cartSkuId);
     }
-    if (skuId_ != 0L) {
+    if (skuId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, skuId);
     }
-    if (quantity_ != 0) {
+    if (quantity != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(3, quantity);
     }
-    if (shopId_ != 0L) {
+    if (shopId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, shopId);
     }
@@ -1208,7 +1208,7 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.ProductShowOrBuilder> 
          getProductOrBuilderList() {
-      if (productBuilder_ != null) {
+      if (productBuilder != null) {
         return productBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(product);

@@ -196,13 +196,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (rolePermissionId_ != 0L) {
+    if (rolePermissionId != 0L) {
       output.writeInt64(1, rolePermissionId);
     }
-    if (roleId_ != 0L) {
+    if (roleId != 0L) {
       output.writeInt64(2, roleId);
     }
-    if (permissionId_ != 0L) {
+    if (permissionId != 0L) {
       output.writeInt64(3, permissionId);
     }
     for (int i = 0; i < permission.size(); i++) {
@@ -217,15 +217,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (rolePermissionId_ != 0L) {
+    if (rolePermissionId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, rolePermissionId);
     }
-    if (roleId_ != 0L) {
+    if (roleId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, roleId);
     }
-    if (permissionId_ != 0L) {
+    if (permissionId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, permissionId);
     }
@@ -868,7 +868,7 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.user.PermissionOrBuilder> 
          getPermissionOrBuilderList() {
-      if (permissionBuilder_ != null) {
+      if (permissionBuilder != null) {
         return permissionBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(permission);

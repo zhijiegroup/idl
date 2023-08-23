@@ -248,22 +248,22 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (userId_ != 0L) {
+    if (userId != 0L) {
       output.writeInt64(1, userId);
     }
     if (!getAccountOperationNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, accountOperationName);
     }
-    if (accountOperationType_ != 0) {
+    if (accountOperationType != 0) {
       output.writeInt32(3, accountOperationType);
     }
-    if (amount_ != 0L) {
+    if (amount != 0L) {
       output.writeInt64(4, amount);
     }
     if (!getUnitBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, unit);
     }
-    if (accountOperationId_ != 0L) {
+    if (accountOperationId != 0L) {
       output.writeInt64(6, accountOperationId);
     }
     unknownFields.writeTo(output);
@@ -275,25 +275,25 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (userId_ != 0L) {
+    if (userId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, userId);
     }
     if (!getAccountOperationNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, accountOperationName);
     }
-    if (accountOperationType_ != 0) {
+    if (accountOperationType != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(3, accountOperationType);
     }
-    if (amount_ != 0L) {
+    if (amount != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, amount);
     }
     if (!getUnitBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, unit);
     }
-    if (accountOperationId_ != 0L) {
+    if (accountOperationId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(6, accountOperationId);
     }

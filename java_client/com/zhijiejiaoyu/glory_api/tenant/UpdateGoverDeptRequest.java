@@ -50,7 +50,7 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             com.zhijiejiaoyu.base.BaseRequest.Builder subBuilder = null;
-            if (baseRequest_ != null) {
+            if (baseRequest != null) {
               subBuilder = baseRequest.toBuilder();
             }
             baseRequest = input.readMessage(com.zhijiejiaoyu.base.BaseRequest.parser(), extensionRegistry);
@@ -63,7 +63,7 @@ private static final long serialVersionUID = 0L;
           }
           case 18: {
             com.zhijiejiaoyu.glory_api.tenant.GoverDept.Builder subBuilder = null;
-            if (goverDept_ != null) {
+            if (goverDept != null) {
               subBuilder = goverDept.toBuilder();
             }
             goverDept = input.readMessage(com.zhijiejiaoyu.glory_api.tenant.GoverDept.parser(), extensionRegistry);
@@ -114,7 +114,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasBaseRequest() {
-    return baseRequest_ != null;
+    return baseRequest != null;
   }
   /**
    * <code>.base.BaseRequest base_request = 1;</code>
@@ -140,7 +140,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasGoverDept() {
-    return goverDept_ != null;
+    return goverDept != null;
   }
   /**
    * <code>.glory_api.GoverDept gover_dept = 2;</code>
@@ -172,10 +172,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (baseRequest_ != null) {
+    if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
-    if (goverDept_ != null) {
+    if (goverDept != null) {
       output.writeMessage(2, getGoverDept());
     }
     unknownFields.writeTo(output);
@@ -187,11 +187,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (baseRequest_ != null) {
+    if (baseRequest != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseRequest());
     }
-    if (goverDept_ != null) {
+    if (goverDept != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getGoverDept());
     }
@@ -511,7 +511,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the baseRequest field is set.
      */
     public boolean hasBaseRequest() {
-      return baseRequestBuilder_ != null || baseRequest_ != null;
+      return baseRequestBuilder != null || baseRequest != null;
     }
     /**
      * <code>.base.BaseRequest base_request = 1;</code>
@@ -559,7 +559,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeBaseRequest(com.zhijiejiaoyu.base.BaseRequest value) {
       if (baseRequestBuilder == null) {
-        if (baseRequest_ != null) {
+        if (baseRequest != null) {
           baseRequest =
             com.zhijiejiaoyu.base.BaseRequest.newBuilder(baseRequest).mergeFrom(value).buildPartial();
         } else {
@@ -598,7 +598,7 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseRequest base_request = 1;</code>
      */
     public com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder() {
-      if (baseRequestBuilder_ != null) {
+      if (baseRequestBuilder != null) {
         return baseRequestBuilder.getMessageOrBuilder();
       } else {
         return baseRequest == null ?
@@ -630,7 +630,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the goverDept field is set.
      */
     public boolean hasGoverDept() {
-      return goverDeptBuilder_ != null || goverDept_ != null;
+      return goverDeptBuilder != null || goverDept != null;
     }
     /**
      * <code>.glory_api.GoverDept gover_dept = 2;</code>
@@ -678,7 +678,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeGoverDept(com.zhijiejiaoyu.glory_api.tenant.GoverDept value) {
       if (goverDeptBuilder == null) {
-        if (goverDept_ != null) {
+        if (goverDept != null) {
           goverDept =
             com.zhijiejiaoyu.glory_api.tenant.GoverDept.newBuilder(goverDept).mergeFrom(value).buildPartial();
         } else {
@@ -717,7 +717,7 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.GoverDept gover_dept = 2;</code>
      */
     public com.zhijiejiaoyu.glory_api.tenant.GoverDeptOrBuilder getGoverDeptOrBuilder() {
-      if (goverDeptBuilder_ != null) {
+      if (goverDeptBuilder != null) {
         return goverDeptBuilder.getMessageOrBuilder();
       } else {
         return goverDept == null ?
