@@ -1081,13 +1081,21 @@ struct GloryApi_CreateClassResponse {
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
-  var classID: Int64 = 0
+  var `class`: GloryApi_TenantOrg {
+    get {return _class ?? GloryApi_TenantOrg()}
+    set {_class = newValue}
+  }
+  /// Returns true if ``class`` has been explicitly set.
+  var hasClass: Bool {return self._class != nil}
+  /// Clears the value of ``class``. Subsequent reads from it will return its default value.
+  mutating func clearClass() {self._class = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _class: GloryApi_TenantOrg? = nil
 }
 
 struct GloryApi_GetClassRequest {
@@ -3185,7 +3193,7 @@ extension GloryApi_CreateClassResponse: SwiftProtobuf.Message, SwiftProtobuf._Me
   static let protoMessageName: String = _protobuf_package + ".CreateClassResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
-    2: .standard(proto: "class_id"),
+    2: .same(proto: "class"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -3195,7 +3203,7 @@ extension GloryApi_CreateClassResponse: SwiftProtobuf.Message, SwiftProtobuf._Me
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.classID) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._class) }()
       default: break
       }
     }
@@ -3209,15 +3217,15 @@ extension GloryApi_CreateClassResponse: SwiftProtobuf.Message, SwiftProtobuf._Me
     try { if let v = self._baseResp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    if self.classID != 0 {
-      try visitor.visitSingularInt64Field(value: self.classID, fieldNumber: 2)
-    }
+    try { if let v = self._class {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_CreateClassResponse, rhs: GloryApi_CreateClassResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
-    if lhs.classID != rhs.classID {return false}
+    if lhs._class != rhs._class {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

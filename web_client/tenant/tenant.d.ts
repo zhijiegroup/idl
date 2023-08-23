@@ -241,7 +241,7 @@ export interface CreateClassRequest {
 
 export interface CreateClassResponse {
   base_resp?: base.BaseResponse;
-  class_id?: string;
+  class?: TenantOrg;
 }
 
 export interface GetClassRequest {
