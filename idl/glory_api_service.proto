@@ -33,7 +33,9 @@ import "live/live_evaluate.proto";
 import "account/account_operation.proto";
 import "currency/virtual_currency.proto";
 import "tenant/tenant.proto";
-
+import "tenant/tenant_dept.proto";
+import "tenant/student.proto";
+import "short_video/short_video.proto";
 
 service glory_api {
 
@@ -78,8 +80,21 @@ service glory_api {
     option (api.post) = '/api/user/update_password';
   }
 
+  // page permission
   rpc GetUserPagePermission(GetUserPagePermissionRequest) returns (GetUserPagePermissionResponse) {
-    option (api.get) = '/api/user/get_user_page_permission';  // get user page permission with token
+    option (api.post) = '/api/user/get_user_page_permission';  // get user page permission with token
+  }
+
+  rpc CreateRolePagePermission(CreateRolePagePermissionRequest) returns (CreateRolePagePermissionResponse) {
+    option (api.post) = '/api/user/create_role_page_permission';  // create role page permission with token
+  }
+
+  rpc UpdateRolePagePermission(UpdateRolePagePermissionRequest) returns (UpdateRolePagePermissionResponse) {
+    option (api.post) = '/api/user/update_role_page_permission';  // update role page permission with token
+  }
+
+  rpc GetRolePagePermission(GetRolePagePermissionRequest) returns (GetRolePagePermissionResponse) {
+    option (api.post) = '/api/user/get_role_page_permission';  // update role page permission with token
   }
 
   // address
@@ -129,7 +144,6 @@ service glory_api {
   rpc ListResource(ListResourceRequest) returns (ListResourceResponse) {
     option (api.post) = '/api/auth/list_resource';
   }
-
 
   // shop
   rpc CreateShop(CreateShopRequest) returns (CreateShopResponse) {
@@ -622,6 +636,78 @@ service glory_api {
   rpc ListTenant(ListTenantRequest) returns (ListTenantResponse) {
     option (api.post) = '/api/tenant/list_tenant';
   }
+  rpc GetTenantOrg(GetTenantOrgRequest) returns (GetTenantOrgResponse) {
+    option (api.post) = '/api/tenant/tenant_org';
+  }
+
+  //college
+  rpc CreateCollege(CreateCollegeRequest) returns (CreateCollegeResponse) {
+    option (api.post) = '/api/tenant/create_college';
+  }
+  rpc GetCollege(GetCollegeRequest) returns (GetCollegeResponse) {
+    option (api.get) = '/api/tenant/get_college';
+  }
+  rpc UpdateCollege(UpdateCollegeRequest) returns (UpdateCollegeResponse) {
+    option (api.post) = '/api/tenant/update_college';
+  }
+  rpc DeleteCollege(DeleteCollegeRequest) returns (DeleteCollegeResponse) {
+    option (api.post) = '/api/tenant/delete_college';
+  }
+  rpc ListCollege(ListCollegeRequest) returns (ListCollegeResponse) {
+    option (api.post) = '/api/tenant/list_college';
+  }
+
+  // edu_dept
+  rpc CreateEduDept(CreateEduDeptRequest) returns (CreateEduDeptResponse) {
+    option (api.post) = '/api/tenant/create_edu_dept';
+  }
+
+  rpc UpdateEduDept(UpdateEduDeptRequest) returns (UpdateEduDeptResponse) {
+    option (api.post) = '/api/tenant/update_edu_dept';
+  }
+
+  rpc DeleteEduDept(DeleteEduDeptRequest) returns (DeleteEduDeptResponse) {
+    option (api.post) = '/api/tenant/delete_edu_dept';
+  }
+
+  //gover_dept
+  rpc CreateGoverDept(CreateGoverDeptRequest) returns (CreateGoverDeptResponse) {
+    option (api.post) = '/api/tenant/create_gover_dept';
+  }
+
+  rpc UpdateGoverDept(UpdateGoverDeptRequest) returns (UpdateGoverDeptResponse) {
+    option (api.post) = '/api/tenant/update_gover_dept';
+  }
+
+  rpc DeleteGoverDept(DeleteGoverDeptRequest) returns (DeleteGoverDeptResponse) {
+    option (api.post) = '/api/tenant/delete_gover_dept';
+  }
+
+  // edu_office
+  rpc CreateEduOffice(CreateEduOfficeRequest) returns (CreateEduOfficeResponse) {
+    option (api.post) = '/api/tenant/create_edu_office';
+  }
+
+  rpc UpdateEduOffice(UpdateEduOfficeRequest) returns (UpdateEduOfficeResponse) {
+    option (api.post) = '/api/tenant/update_edu_office';
+  }
+
+  rpc DeleteEduOffice(DeleteEduOfficeRequest) returns (DeleteEduOfficeResponse) {
+    option (api.post) = '/api/tenant/delete_edu_office';
+  }
+
+  //principal_office
+  rpc CreatePrincipalOffice(CreatePrincipalOfficeRequest) returns (CreatePrincipalOfficeResponse) {
+    option (api.post) = '/api/tenant/create_principal_office';
+  }
+
+  rpc UpdatePrincipalOffice(UpdatePrincipalOfficeRequest) returns (UpdatePrincipalOfficeResponse) {
+    option (api.post) = '/api/tenant/update_principal_office';
+  }
+
+  rpc DeletePrincipalOffice(DeletePrincipalOfficeRequest) returns (DeletePrincipalOfficeResponse) {
+    option (api.post) = '/api/tenant/delete_principal_office';
+  }
 
   //major
   rpc CreateMajor(CreateMajorRequest) returns (CreateMajorResponse) {
@@ -656,5 +742,72 @@ service glory_api {
   rpc ListClass(ListClassRequest) returns (ListClassResponse) {
     option (api.post) = '/api/tenant/list_class';
   }
+  
+  //student
+  rpc CreateStudents(CreateStudentsRequest) returns (CreateStudentsResponse) {
+    option (api.post) = '/api/tenant/create_students';
+  }
+  rpc DeleteStudents(DeleteStudentsRequest) returns (DeleteStudentsResponse) {
+    option (api.post) = '/api/tenant/delete_students';
+  }
 
+  // short_video
+  rpc CreateShortVideo(CreateShortVideoRequest) returns (CreateShortVideoResponse) {
+    option (api.post) = '/api/short_video/create_short_video';
+  }
+  rpc StageShortVideo(StageShortVideoRequest) returns (StageShortVideoResponse) {
+    option (api.post) = '/api/short_video/stage_short_video';
+  }
+
+  // 我的短视频列表
+  rpc ListMyShortVideo(ListMyShortVideoRequest) returns (ListMyShortVideoResponse) {
+    option (api.post) = '/api/short_video/list_my_short_video';
+  }
+
+  // 我的暂存视频列表
+  rpc ListMyStageVideo(ListMyStageVideoRequest) returns (ListMyStageVideoResponse) {
+    option (api.get) = '/api/short_video/list_my_stage_video';
+  }
+
+  // 我的喜欢视频列表
+  rpc ListMyLikeVideo(ListMyLikeVideoRequest) returns (ListMyLikeVideoResponse) {
+    option (api.post) = '/api/short_video/list_my_like_video';
+  }
+
+  // 我的收藏视频列表
+  rpc ListMyFavoriteVideo(ListMyFavoriteVideoRequest) returns (ListMyFavoriteVideoResponse) {
+    option (api.post) = '/api/short_video/list_my_favorite_video';
+  }
+
+  // 获取短视频详情
+  rpc GetShortVideo(GetShortVideoRequest) returns (GetShortVideoResponse) {
+    option (api.post) = '/api/short_video/get_short_video';
+  }
+
+  // 删除短视频
+  rpc DeleteShortVideo(DeleteShortVideoRequest) returns (DeleteShortVideoResponse) {
+    option (api.post) = '/api/short_video/delete_short_video';
+  }
+
+  // 获取暂存视频详情
+  rpc GetStageVideo(GetStageVideoRequest) returns (GetStageVideoResponse) {
+    option (api.post) = '/api/short_video/get_stage_video';
+  }
+
+  // 删除暂存视频
+  rpc DeleteStageVideo(DeleteStageVideoRequest) returns (DeleteStageVideoResponse) {
+    option (api.post) = '/api/short_video/delete_stage_video';
+  }
+
+  rpc ManagementListShortVideo(ManagementListShortVideoRequest) returns (ManagementListShortVideoResponse) {
+    option (api.post) = '/api/short_video/management/list_short_video';
+  }
+
+  rpc ManagementCensorShortVideo(ManagementCensorShortVideoRequest) returns (ManagementCensorShortVideoResponse) {
+    option (api.post) = '/api/short_video/management/censor_short_video';
+  }
+
+  rpc ManagementDeleteShortVideo(ManagementDeleteShortVideoRequest) returns (ManagementDeleteShortVideoResponse) {
+    option (api.post) = '/api/short_video/management/delete_short_video';
+  }
 }

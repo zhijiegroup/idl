@@ -23,8 +23,17 @@ public interface CreateClassResponseOrBuilder extends
   com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder();
 
   /**
-   * <code>int64 class_id = 2;</code>
-   * @return The classId.
+   * <code>.glory_api.TenantOrg class = 2;</code>
+   * @return Whether the class field is set.
    */
-  long getClassId();
+  boolean hasClass_();
+  /**
+   * <code>.glory_api.TenantOrg class = 2;</code>
+   * @return The class.
+   */
+  com.zhijiejiaoyu.glory_api.tenant.TenantOrg getClass_();
+  /**
+   * <code>.glory_api.TenantOrg class = 2;</code>
+   */
+  com.zhijiejiaoyu.glory_api.tenant.TenantOrgOrBuilder getClass_OrBuilder();
 }

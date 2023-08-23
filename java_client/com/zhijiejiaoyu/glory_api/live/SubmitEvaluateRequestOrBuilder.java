@@ -119,25 +119,31 @@ public interface SubmitEvaluateRequestOrBuilder extends
       getAiFeedbackBytes();
 
   /**
-   * <code>repeated .glory_api.EvaluateDetail detail = 12;</code>
+   * <code>bool baseline = 12;</code>
+   * @return The baseline.
+   */
+  boolean getBaseline();
+
+  /**
+   * <code>repeated .glory_api.EvaluateDetail detail = 13;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.live.EvaluateDetail> 
       getDetailList();
   /**
-   * <code>repeated .glory_api.EvaluateDetail detail = 12;</code>
+   * <code>repeated .glory_api.EvaluateDetail detail = 13;</code>
    */
   com.zhijiejiaoyu.glory_api.live.EvaluateDetail getDetail(int index);
   /**
-   * <code>repeated .glory_api.EvaluateDetail detail = 12;</code>
+   * <code>repeated .glory_api.EvaluateDetail detail = 13;</code>
    */
   int getDetailCount();
   /**
-   * <code>repeated .glory_api.EvaluateDetail detail = 12;</code>
+   * <code>repeated .glory_api.EvaluateDetail detail = 13;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.live.EvaluateDetailOrBuilder> 
       getDetailOrBuilderList();
   /**
-   * <code>repeated .glory_api.EvaluateDetail detail = 12;</code>
+   * <code>repeated .glory_api.EvaluateDetail detail = 13;</code>
    */
   com.zhijiejiaoyu.glory_api.live.EvaluateDetailOrBuilder getDetailOrBuilder(
       int index);

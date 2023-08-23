@@ -61,9 +61,17 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 16: {
+          case 18: {
+            com.zhijiejiaoyu.glory_api.tenant.TenantOrg.Builder subBuilder = null;
+            if (class__ != null) {
+              subBuilder = class__.toBuilder();
+            }
+            class_ = input.readMessage(com.zhijiejiaoyu.glory_api.tenant.TenantOrg.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(class_);
+              class_ = subBuilder.buildPartial();
+            }
 
-            classId = input.readInt64();
             break;
           }
           default: {
@@ -124,15 +132,30 @@ private static final long serialVersionUID = 0L;
     return getBaseResp();
   }
 
-  public static final int CLASS_ID_FIELD_NUMBER = 2;
-  private long classId;
+  public static final int CLASS_FIELD_NUMBER = 2;
+  private com.zhijiejiaoyu.glory_api.tenant.TenantOrg class_;
   /**
-   * <code>int64 class_id = 2;</code>
-   * @return The classId.
+   * <code>.glory_api.TenantOrg class = 2;</code>
+   * @return Whether the class field is set.
    */
   @java.lang.Override
-  public long getClassId() {
-    return classId;
+  public boolean hasClass_() {
+    return class__ != null;
+  }
+  /**
+   * <code>.glory_api.TenantOrg class = 2;</code>
+   * @return The class.
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.tenant.TenantOrg getClass_() {
+    return class_ == null ? com.zhijiejiaoyu.glory_api.tenant.TenantOrg.getDefaultInstance() : class_;
+  }
+  /**
+   * <code>.glory_api.TenantOrg class = 2;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.tenant.TenantOrgOrBuilder getClass_OrBuilder() {
+    return getClass_();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -152,8 +175,8 @@ private static final long serialVersionUID = 0L;
     if (baseResp_ != null) {
       output.writeMessage(1, getBaseResp());
     }
-    if (classId_ != 0L) {
-      output.writeInt64(2, classId);
+    if (class__ != null) {
+      output.writeMessage(2, getClass_());
     }
     unknownFields.writeTo(output);
   }
@@ -168,9 +191,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
-    if (classId_ != 0L) {
+    if (class__ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, classId);
+        .computeMessageSize(2, getClass_());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -192,8 +215,11 @@ private static final long serialVersionUID = 0L;
       if (!getBaseResp()
           .equals(other.getBaseResp())) return false;
     }
-    if (getClassId()
-        != other.getClassId()) return false;
+    if (hasClass_() != other.hasClass_()) return false;
+    if (hasClass_()) {
+      if (!getClass_()
+          .equals(other.getClass_())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -209,9 +235,10 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_RESP_FIELD_NUMBER;
       hash = (53 * hash) + getBaseResp().hashCode();
     }
-    hash = (37 * hash) + CLASS_ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getClassId());
+    if (hasClass_()) {
+      hash = (37 * hash) + CLASS_FIELD_NUMBER;
+      hash = (53 * hash) + getClass_().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -351,8 +378,12 @@ private static final long serialVersionUID = 0L;
         baseResp = null;
         baseRespBuilder = null;
       }
-      classId = 0L;
-
+      if (class_Builder == null) {
+        class_ = null;
+      } else {
+        class_ = null;
+        class_Builder = null;
+      }
       return this;
     }
 
@@ -384,7 +415,11 @@ private static final long serialVersionUID = 0L;
       } else {
         result.baseResp = baseRespBuilder_.build();
       }
-      result.classId = classId;
+      if (class_Builder == null) {
+        result.class_ = class_;
+      } else {
+        result.class_ = class_Builder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -436,8 +471,8 @@ private static final long serialVersionUID = 0L;
       if (other.hasBaseResp()) {
         mergeBaseResp(other.getBaseResp());
       }
-      if (other.getClassId() != 0L) {
-        setClassId(other.getClassId());
+      if (other.hasClass_()) {
+        mergeClass_(other.getClass_());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -587,35 +622,123 @@ private static final long serialVersionUID = 0L;
       return baseRespBuilder;
     }
 
-    private long classId_ ;
+    private com.zhijiejiaoyu.glory_api.tenant.TenantOrg class_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.tenant.TenantOrg, com.zhijiejiaoyu.glory_api.tenant.TenantOrg.Builder, com.zhijiejiaoyu.glory_api.tenant.TenantOrgOrBuilder> class_Builder;
     /**
-     * <code>int64 class_id = 2;</code>
-     * @return The classId.
+     * <code>.glory_api.TenantOrg class = 2;</code>
+     * @return Whether the class field is set.
      */
-    @java.lang.Override
-    public long getClassId() {
-      return classId;
+    public boolean hasClass_() {
+      return class_Builder_ != null || class__ != null;
     }
     /**
-     * <code>int64 class_id = 2;</code>
-     * @param value The classId to set.
-     * @return This builder for chaining.
+     * <code>.glory_api.TenantOrg class = 2;</code>
+     * @return The class.
      */
-    public Builder setClassId(long value) {
-      
-      classId = value;
-      onChanged();
+    public com.zhijiejiaoyu.glory_api.tenant.TenantOrg getClass_() {
+      if (class_Builder == null) {
+        return class_ == null ? com.zhijiejiaoyu.glory_api.tenant.TenantOrg.getDefaultInstance() : class_;
+      } else {
+        return class_Builder_.getMessage();
+      }
+    }
+    /**
+     * <code>.glory_api.TenantOrg class = 2;</code>
+     */
+    public Builder setClass_(com.zhijiejiaoyu.glory_api.tenant.TenantOrg value) {
+      if (class_Builder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        class_ = value;
+        onChanged();
+      } else {
+        class_Builder_.setMessage(value);
+      }
+
       return this;
     }
     /**
-     * <code>int64 class_id = 2;</code>
-     * @return This builder for chaining.
+     * <code>.glory_api.TenantOrg class = 2;</code>
      */
-    public Builder clearClassId() {
-      
-      classId = 0L;
-      onChanged();
+    public Builder setClass_(
+        com.zhijiejiaoyu.glory_api.tenant.TenantOrg.Builder builderForValue) {
+      if (class_Builder == null) {
+        class_ = builderForValue.build();
+        onChanged();
+      } else {
+        class_Builder_.setMessage(builderForValue.build());
+      }
+
       return this;
+    }
+    /**
+     * <code>.glory_api.TenantOrg class = 2;</code>
+     */
+    public Builder mergeClass_(com.zhijiejiaoyu.glory_api.tenant.TenantOrg value) {
+      if (class_Builder == null) {
+        if (class__ != null) {
+          class_ =
+            com.zhijiejiaoyu.glory_api.tenant.TenantOrg.newBuilder(class_).mergeFrom(value).buildPartial();
+        } else {
+          class_ = value;
+        }
+        onChanged();
+      } else {
+        class_Builder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.TenantOrg class = 2;</code>
+     */
+    public Builder clearClass_() {
+      if (class_Builder == null) {
+        class_ = null;
+        onChanged();
+      } else {
+        class_ = null;
+        class_Builder = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.TenantOrg class = 2;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.TenantOrg.Builder getClass_Builder() {
+      
+      onChanged();
+      return getClass_FieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.glory_api.TenantOrg class = 2;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.TenantOrgOrBuilder getClass_OrBuilder() {
+      if (class_Builder_ != null) {
+        return class_Builder_.getMessageOrBuilder();
+      } else {
+        return class_ == null ?
+            com.zhijiejiaoyu.glory_api.tenant.TenantOrg.getDefaultInstance() : class_;
+      }
+    }
+    /**
+     * <code>.glory_api.TenantOrg class = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.tenant.TenantOrg, com.zhijiejiaoyu.glory_api.tenant.TenantOrg.Builder, com.zhijiejiaoyu.glory_api.tenant.TenantOrgOrBuilder> 
+        getClass_FieldBuilder() {
+      if (class_Builder == null) {
+        class_Builder = new com.google.protobuf.SingleFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.tenant.TenantOrg, com.zhijiejiaoyu.glory_api.tenant.TenantOrg.Builder, com.zhijiejiaoyu.glory_api.tenant.TenantOrgOrBuilder>(
+                getClass_(),
+                getParentForChildren(),
+                isClean());
+        class_ = null;
+      }
+      return class_Builder;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

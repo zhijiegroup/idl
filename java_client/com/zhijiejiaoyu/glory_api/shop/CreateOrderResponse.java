@@ -74,12 +74,12 @@ private static final long serialVersionUID = 0L;
           }
           case 25: {
 
-            cNYTotal = input.readDouble();
+            cnyTotal = input.readDouble();
             break;
           }
           case 33: {
 
-            cOINTotal = input.readDouble();
+            coinTotal = input.readDouble();
             break;
           }
           default: {
@@ -184,33 +184,33 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CNY_TOTAL_FIELD_NUMBER = 3;
-  private double cNYTotal;
+  private double cnyTotal;
   /**
    * <pre>
    *人民币总金额，单位为分 微信支付使用
    * </pre>
    *
-   * <code>double CNY_total = 3;</code>
-   * @return The cNYTotal.
+   * <code>double cny_total = 3;</code>
+   * @return The cnyTotal.
    */
   @java.lang.Override
-  public double getCNYTotal() {
-    return cNYTotal;
+  public double getCnyTotal() {
+    return cnyTotal;
   }
 
   public static final int COIN_TOTAL_FIELD_NUMBER = 4;
-  private double cOINTotal;
+  private double coinTotal;
   /**
    * <pre>
    *虚拟币总金额
    * </pre>
    *
-   * <code>double COIN_total = 4;</code>
-   * @return The cOINTotal.
+   * <code>double coin_total = 4;</code>
+   * @return The coinTotal.
    */
   @java.lang.Override
-  public double getCOINTotal() {
-    return cOINTotal;
+  public double getCoinTotal() {
+    return coinTotal;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -233,11 +233,11 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < transRes_.size(); i++) {
       output.writeMessage(2, transRes_.get(i));
     }
-    if (cNYTotal_ != 0D) {
-      output.writeDouble(3, cNYTotal);
+    if (cnyTotal_ != 0D) {
+      output.writeDouble(3, cnyTotal);
     }
-    if (cOINTotal_ != 0D) {
-      output.writeDouble(4, cOINTotal);
+    if (coinTotal_ != 0D) {
+      output.writeDouble(4, coinTotal);
     }
     unknownFields.writeTo(output);
   }
@@ -256,13 +256,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, transRes_.get(i));
     }
-    if (cNYTotal_ != 0D) {
+    if (cnyTotal_ != 0D) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(3, cNYTotal);
+        .computeDoubleSize(3, cnyTotal);
     }
-    if (cOINTotal_ != 0D) {
+    if (coinTotal_ != 0D) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(4, cOINTotal);
+        .computeDoubleSize(4, coinTotal);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -286,12 +286,12 @@ private static final long serialVersionUID = 0L;
     }
     if (!getTransResList()
         .equals(other.getTransResList())) return false;
-    if (java.lang.Double.doubleToLongBits(getCNYTotal())
+    if (java.lang.Double.doubleToLongBits(getCnyTotal())
         != java.lang.Double.doubleToLongBits(
-            other.getCNYTotal())) return false;
-    if (java.lang.Double.doubleToLongBits(getCOINTotal())
+            other.getCnyTotal())) return false;
+    if (java.lang.Double.doubleToLongBits(getCoinTotal())
         != java.lang.Double.doubleToLongBits(
-            other.getCOINTotal())) return false;
+            other.getCoinTotal())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -313,10 +313,10 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + CNY_TOTAL_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        java.lang.Double.doubleToLongBits(getCNYTotal()));
+        java.lang.Double.doubleToLongBits(getCnyTotal()));
     hash = (37 * hash) + COIN_TOTAL_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        java.lang.Double.doubleToLongBits(getCOINTotal()));
+        java.lang.Double.doubleToLongBits(getCoinTotal()));
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -463,9 +463,9 @@ private static final long serialVersionUID = 0L;
       } else {
         transResBuilder_.clear();
       }
-      cNYTotal = 0D;
+      cnyTotal = 0D;
 
-      cOINTotal = 0D;
+      coinTotal = 0D;
 
       return this;
     }
@@ -508,8 +508,8 @@ private static final long serialVersionUID = 0L;
       } else {
         result.transRes = transResBuilder_.build();
       }
-      result.cNYTotal = cNYTotal;
-      result.cOINTotal = cOINTotal;
+      result.cnyTotal = cnyTotal;
+      result.coinTotal = coinTotal;
       onBuilt();
       return result;
     }
@@ -587,11 +587,11 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
-      if (other.getCNYTotal() != 0D) {
-        setCNYTotal(other.getCNYTotal());
+      if (other.getCnyTotal() != 0D) {
+        setCnyTotal(other.getCnyTotal());
       }
-      if (other.getCOINTotal() != 0D) {
-        setCOINTotal(other.getCOINTotal());
+      if (other.getCoinTotal() != 0D) {
+        setCoinTotal(other.getCoinTotal());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -982,31 +982,31 @@ private static final long serialVersionUID = 0L;
       return transResBuilder;
     }
 
-    private double cNYTotal_ ;
+    private double cnyTotal_ ;
     /**
      * <pre>
      *人民币总金额，单位为分 微信支付使用
      * </pre>
      *
-     * <code>double CNY_total = 3;</code>
-     * @return The cNYTotal.
+     * <code>double cny_total = 3;</code>
+     * @return The cnyTotal.
      */
     @java.lang.Override
-    public double getCNYTotal() {
-      return cNYTotal;
+    public double getCnyTotal() {
+      return cnyTotal;
     }
     /**
      * <pre>
      *人民币总金额，单位为分 微信支付使用
      * </pre>
      *
-     * <code>double CNY_total = 3;</code>
-     * @param value The cNYTotal to set.
+     * <code>double cny_total = 3;</code>
+     * @param value The cnyTotal to set.
      * @return This builder for chaining.
      */
-    public Builder setCNYTotal(double value) {
+    public Builder setCnyTotal(double value) {
       
-      cNYTotal = value;
+      cnyTotal = value;
       onChanged();
       return this;
     }
@@ -1015,41 +1015,41 @@ private static final long serialVersionUID = 0L;
      *人民币总金额，单位为分 微信支付使用
      * </pre>
      *
-     * <code>double CNY_total = 3;</code>
+     * <code>double cny_total = 3;</code>
      * @return This builder for chaining.
      */
-    public Builder clearCNYTotal() {
+    public Builder clearCnyTotal() {
       
-      cNYTotal = 0D;
+      cnyTotal = 0D;
       onChanged();
       return this;
     }
 
-    private double cOINTotal_ ;
+    private double coinTotal_ ;
     /**
      * <pre>
      *虚拟币总金额
      * </pre>
      *
-     * <code>double COIN_total = 4;</code>
-     * @return The cOINTotal.
+     * <code>double coin_total = 4;</code>
+     * @return The coinTotal.
      */
     @java.lang.Override
-    public double getCOINTotal() {
-      return cOINTotal;
+    public double getCoinTotal() {
+      return coinTotal;
     }
     /**
      * <pre>
      *虚拟币总金额
      * </pre>
      *
-     * <code>double COIN_total = 4;</code>
-     * @param value The cOINTotal to set.
+     * <code>double coin_total = 4;</code>
+     * @param value The coinTotal to set.
      * @return This builder for chaining.
      */
-    public Builder setCOINTotal(double value) {
+    public Builder setCoinTotal(double value) {
       
-      cOINTotal = value;
+      coinTotal = value;
       onChanged();
       return this;
     }
@@ -1058,12 +1058,12 @@ private static final long serialVersionUID = 0L;
      *虚拟币总金额
      * </pre>
      *
-     * <code>double COIN_total = 4;</code>
+     * <code>double coin_total = 4;</code>
      * @return This builder for chaining.
      */
-    public Builder clearCOINTotal() {
+    public Builder clearCoinTotal() {
       
-      cOINTotal = 0D;
+      coinTotal = 0D;
       onChanged();
       return this;
     }

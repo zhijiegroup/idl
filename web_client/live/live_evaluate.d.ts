@@ -81,6 +81,7 @@ export interface GetEvaluateDetailResponse {
   zero_comment?: string;
   score?: number;
   ai_feedback?: string;
+  baseline?: boolean;
   detail?: Array<EvaluateDetail>;
 }
 
@@ -98,6 +99,7 @@ export interface SubmitEvaluateRequest {
   zero_comment?: string;
   score?: number;
   ai_feedback?: string;
+  baseline?: boolean;
   detail?: Array<EvaluateDetail>;
 }
 
@@ -162,6 +164,7 @@ export interface IgnoreLiveEvaluationResponse {
 
 export interface LiveRankDetail {
   user_name?: string;
+  tenant?: string;
   major?: string;
   class?: string;
   live_duration?: string;
@@ -169,6 +172,7 @@ export interface LiveRankDetail {
 
 export interface LiveRankMine {
   user_name?: string;
+  tenant?: string;
   major?: string;
   class?: string;
   live_duration?: string;
@@ -222,6 +226,7 @@ export interface ProductRank {
 
 export interface LiveLikeRankDetail {
   user_name?: string;
+  tenant?: string;
   major?: string;
   class?: string;
   like_amount?: string;
@@ -229,6 +234,7 @@ export interface LiveLikeRankDetail {
 
 export interface LiveLikeRankMine {
   user_name?: string;
+  tenant?: string;
   major?: string;
   class?: string;
   like_amount?: string;
@@ -242,6 +248,7 @@ export interface LiveLikeRank {
 
 export interface LiveOrderRankDetail {
   user_name?: string;
+  tenant?: string;
   major?: string;
   class?: string;
   order_amount?: string;
@@ -249,6 +256,7 @@ export interface LiveOrderRankDetail {
 
 export interface LiveOrderRankMine {
   user_name?: string;
+  tenant?: string;
   major?: string;
   class?: string;
   order_amount?: string;
@@ -262,6 +270,7 @@ export interface LiveOrderRank {
 
 export interface LiveEvaluationRankDetail {
   user_name?: string;
+  tenant?: string;
   major?: string;
   class?: string;
   score?: number;
@@ -269,6 +278,7 @@ export interface LiveEvaluationRankDetail {
 
 export interface LiveEvaluationRankMine {
   user_name?: string;
+  tenant?: string;
   major?: string;
   class?: string;
   score?: number;

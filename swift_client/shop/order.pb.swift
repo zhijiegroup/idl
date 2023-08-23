@@ -126,7 +126,7 @@ struct GloryApi_CreateOrderInfo {
     set {_uniqueStorage()._deliverFee = newValue}
   }
 
-  ///货币类型  CNY :人民币 , COIN:虚拟币
+  ///货币类型  CNY :人民币 , COIN:虚拟币 不区分大小写
   var currency: String {
     get {return _storage._currency}
     set {_uniqueStorage()._currency = newValue}
@@ -2032,8 +2032,8 @@ extension GloryApi_CreateOrderResponse: SwiftProtobuf.Message, SwiftProtobuf._Me
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
     2: .standard(proto: "trans_res"),
-    3: .standard(proto: "CNY_total"),
-    4: .standard(proto: "COIN_total"),
+    3: .standard(proto: "cny_total"),
+    4: .standard(proto: "coin_total"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {

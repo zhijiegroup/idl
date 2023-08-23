@@ -31,6 +31,9 @@ import * as live_evaluate from "./live/live_evaluate";
 import * as account_operation from "./account/account_operation";
 import * as virtual_currency from "./currency/virtual_currency";
 import * as tenant from "./tenant/tenant";
+import * as tenant_dept from "./tenant/tenant_dept";
+import * as student from "./tenant/student";
+import * as short_video from "./short_video/short_video";
 export {
   user,
   address,
@@ -61,6 +64,9 @@ export {
   account_operation,
   virtual_currency,
   tenant,
+  tenant_dept,
+  student,
+  short_video,
 };
 
 export class glory_api {
@@ -108,9 +114,22 @@ export class glory_api {
     request: user.UpdatePasswordRequest
   ): Promise<user.UpdatePasswordResponse>;
 
+  /** page permission */
   GetUserPagePermission(
     request: user.GetUserPagePermissionRequest
   ): Promise<user.GetUserPagePermissionResponse>;
+
+  CreateRolePagePermission(
+    request: user.CreateRolePagePermissionRequest
+  ): Promise<user.CreateRolePagePermissionResponse>;
+
+  UpdateRolePagePermission(
+    request: user.UpdateRolePagePermissionRequest
+  ): Promise<user.UpdateRolePagePermissionResponse>;
+
+  GetRolePagePermission(
+    request: user.GetRolePagePermissionRequest
+  ): Promise<user.GetRolePagePermissionResponse>;
 
   /** address */
   AddAddress(
@@ -700,6 +719,83 @@ CreateLivePlanProduct create live plan product */
     request: tenant.ListTenantRequest
   ): Promise<tenant.ListTenantResponse>;
 
+  GetTenantOrg(
+    request: tenant.GetTenantOrgRequest
+  ): Promise<tenant.GetTenantOrgResponse>;
+
+  /** college */
+  CreateCollege(
+    request: tenant.CreateCollegeRequest
+  ): Promise<tenant.CreateCollegeResponse>;
+
+  GetCollege(
+    request: tenant.GetCollegeRequest
+  ): Promise<tenant.GetCollegeResponse>;
+
+  UpdateCollege(
+    request: tenant.UpdateCollegeRequest
+  ): Promise<tenant.UpdateCollegeResponse>;
+
+  DeleteCollege(
+    request: tenant.DeleteCollegeRequest
+  ): Promise<tenant.DeleteCollegeResponse>;
+
+  ListCollege(
+    request: tenant.ListCollegeRequest
+  ): Promise<tenant.ListCollegeResponse>;
+
+  /** edu_dept */
+  CreateEduDept(
+    request: tenant_dept.CreateEduDeptRequest
+  ): Promise<tenant_dept.CreateEduDeptResponse>;
+
+  UpdateEduDept(
+    request: tenant_dept.UpdateEduDeptRequest
+  ): Promise<tenant_dept.UpdateEduDeptResponse>;
+
+  DeleteEduDept(
+    request: tenant_dept.DeleteEduDeptRequest
+  ): Promise<tenant_dept.DeleteEduDeptResponse>;
+
+  /** gover_dept */
+  CreateGoverDept(
+    request: tenant_dept.CreateGoverDeptRequest
+  ): Promise<tenant_dept.CreateGoverDeptResponse>;
+
+  UpdateGoverDept(
+    request: tenant_dept.UpdateGoverDeptRequest
+  ): Promise<tenant_dept.UpdateGoverDeptResponse>;
+
+  DeleteGoverDept(
+    request: tenant_dept.DeleteGoverDeptRequest
+  ): Promise<tenant_dept.DeleteGoverDeptResponse>;
+
+  /** edu_office */
+  CreateEduOffice(
+    request: tenant_dept.CreateEduOfficeRequest
+  ): Promise<tenant_dept.CreateEduOfficeResponse>;
+
+  UpdateEduOffice(
+    request: tenant_dept.UpdateEduOfficeRequest
+  ): Promise<tenant_dept.UpdateEduOfficeResponse>;
+
+  DeleteEduOffice(
+    request: tenant_dept.DeleteEduOfficeRequest
+  ): Promise<tenant_dept.DeleteEduOfficeResponse>;
+
+  /** principal_office */
+  CreatePrincipalOffice(
+    request: tenant_dept.CreatePrincipalOfficeRequest
+  ): Promise<tenant_dept.CreatePrincipalOfficeResponse>;
+
+  UpdatePrincipalOffice(
+    request: tenant_dept.UpdatePrincipalOfficeRequest
+  ): Promise<tenant_dept.UpdatePrincipalOfficeResponse>;
+
+  DeletePrincipalOffice(
+    request: tenant_dept.DeletePrincipalOfficeRequest
+  ): Promise<tenant_dept.DeletePrincipalOfficeResponse>;
+
   /** major */
   CreateMajor(
     request: tenant.CreateMajorRequest
@@ -737,6 +833,76 @@ CreateLivePlanProduct create live plan product */
   ListClass(
     request: tenant.ListClassRequest
   ): Promise<tenant.ListClassResponse>;
+
+  /** student */
+  CreateStudents(
+    request: student.CreateStudentsRequest
+  ): Promise<student.CreateStudentsResponse>;
+
+  DeleteStudents(
+    request: student.DeleteStudentsRequest
+  ): Promise<student.DeleteStudentsResponse>;
+
+  /** short_video */
+  CreateShortVideo(
+    request: short_video.CreateShortVideoRequest
+  ): Promise<short_video.CreateShortVideoResponse>;
+
+  StageShortVideo(
+    request: short_video.StageShortVideoRequest
+  ): Promise<short_video.StageShortVideoResponse>;
+
+  /** 我的短视频列表 */
+  ListMyShortVideo(
+    request: short_video.ListMyShortVideoRequest
+  ): Promise<short_video.ListMyShortVideoResponse>;
+
+  /** 我的暂存视频列表 */
+  ListMyStageVideo(
+    request: short_video.ListMyStageVideoRequest
+  ): Promise<short_video.ListMyStageVideoResponse>;
+
+  /** 我的喜欢视频列表 */
+  ListMyLikeVideo(
+    request: short_video.ListMyLikeVideoRequest
+  ): Promise<short_video.ListMyLikeVideoResponse>;
+
+  /** 我的收藏视频列表 */
+  ListMyFavoriteVideo(
+    request: short_video.ListMyFavoriteVideoRequest
+  ): Promise<short_video.ListMyFavoriteVideoResponse>;
+
+  /** 获取短视频详情 */
+  GetShortVideo(
+    request: short_video.GetShortVideoRequest
+  ): Promise<short_video.GetShortVideoResponse>;
+
+  /** 删除短视频 */
+  DeleteShortVideo(
+    request: short_video.DeleteShortVideoRequest
+  ): Promise<short_video.DeleteShortVideoResponse>;
+
+  /** 获取暂存视频详情 */
+  GetStageVideo(
+    request: short_video.GetStageVideoRequest
+  ): Promise<short_video.GetStageVideoResponse>;
+
+  /** 删除暂存视频 */
+  DeleteStageVideo(
+    request: short_video.DeleteStageVideoRequest
+  ): Promise<short_video.DeleteStageVideoResponse>;
+
+  ManagementListShortVideo(
+    request: short_video.ManagementListShortVideoRequest
+  ): Promise<short_video.ManagementListShortVideoResponse>;
+
+  ManagementCensorShortVideo(
+    request: short_video.ManagementCensorShortVideoRequest
+  ): Promise<short_video.ManagementCensorShortVideoResponse>;
+
+  ManagementDeleteShortVideo(
+    request: short_video.ManagementDeleteShortVideoRequest
+  ): Promise<short_video.ManagementDeleteShortVideoResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

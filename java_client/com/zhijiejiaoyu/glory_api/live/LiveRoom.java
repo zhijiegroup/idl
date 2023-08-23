@@ -109,6 +109,36 @@ public final class LiveRoom {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_GetLiveChartDataResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_RecordLiveCallbackRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_RecordLiveCallbackRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_RecordLiveCallbackResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_RecordLiveCallbackResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_VideoToTextSentence_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_VideoToTextSentence_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_VideoToTextResult_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_VideoToTextResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_VideoToTextCallbackRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_VideoToTextCallbackRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_VideoToTextCallbackResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_VideoToTextCallbackResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -183,8 +213,26 @@ public final class LiveRoom {
       "\022total_order_amount\030\004 \001(\003\"i\n\030GetLiveChar" +
       "tDataResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
       "BaseResponse\022&\n\tlive_data\030\002 \001(\0132\023.glory_" +
-      "api.LiveDataB#\n\037com.zhijiejiaoyu.glory_a" +
-      "pi.liveP\001b\006proto3"
+      "api.LiveData\"\216\001\n\031RecordLiveCallbackReque" +
+      "st\022\016\n\006domain\030\001 \001(\t\022\013\n\003app\030\002 \001(\t\022\016\n\006strea" +
+      "m\030\003 \001(\t\022\013\n\003uri\030\004 \001(\t\022\020\n\010duration\030\005 \001(\001\022\022" +
+      "\n\nstart_time\030\006 \001(\003\022\021\n\tstop_time\030\007 \001(\003\"C\n" +
+      "\032RecordLiveCallbackResponse\022%\n\tbase_resp" +
+      "\030\001 \001(\0132\022.base.BaseResponse\"\235\001\n\023VideoToTe" +
+      "xtSentence\022\021\n\tBeginTime\030\001 \001(\003\022\017\n\007EndTime" +
+      "\030\002 \001(\003\022\021\n\tChannelId\030\003 \001(\003\022\022\n\nSpeechRate\030" +
+      "\004 \001(\003\022\024\n\014EmotionValue\030\005 \001(\001\022\027\n\017SilenceDu" +
+      "ration\030\006 \001(\003\022\014\n\004Text\030\007 \001(\t\"F\n\021VideoToTex" +
+      "tResult\0221\n\tSentences\030\001 \003(\0132\036.glory_api.V" +
+      "ideoToTextSentence\"\322\001\n\032VideoToTextCallba" +
+      "ckRequest\022\016\n\006TaskId\030\001 \001(\t\022\022\n\nStatusCode\030" +
+      "\002 \001(\003\022\022\n\nStatusText\030\003 \001(\t\022\023\n\013RequestTime" +
+      "\030\004 \001(\003\022\021\n\tSolveTime\030\005 \001(\003\022\023\n\013BizDuration" +
+      "\030\006 \001(\003\022\021\n\tstop_time\030\007 \001(\003\022,\n\006Result\030\010 \001(" +
+      "\0132\034.glory_api.VideoToTextResult\"D\n\033Video" +
+      "ToTextCallbackResponse\022%\n\tbase_resp\030\001 \001(" +
+      "\0132\022.base.BaseResponseB#\n\037com.zhijiejiaoy" +
+      "u.glory_api.liveP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -305,6 +353,42 @@ public final class LiveRoom {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetLiveChartDataResponse_descriptor,
         new java.lang.String[] { "BaseResp", "LiveData", });
+    internal_static_glory_api_RecordLiveCallbackRequest_descriptor =
+      getDescriptor().getMessageTypes().get(19);
+    internal_static_glory_api_RecordLiveCallbackRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_RecordLiveCallbackRequest_descriptor,
+        new java.lang.String[] { "Domain", "App", "Stream", "Uri", "Duration", "StartTime", "StopTime", });
+    internal_static_glory_api_RecordLiveCallbackResponse_descriptor =
+      getDescriptor().getMessageTypes().get(20);
+    internal_static_glory_api_RecordLiveCallbackResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_RecordLiveCallbackResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
+    internal_static_glory_api_VideoToTextSentence_descriptor =
+      getDescriptor().getMessageTypes().get(21);
+    internal_static_glory_api_VideoToTextSentence_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_VideoToTextSentence_descriptor,
+        new java.lang.String[] { "BeginTime", "EndTime", "ChannelId", "SpeechRate", "EmotionValue", "SilenceDuration", "Text", });
+    internal_static_glory_api_VideoToTextResult_descriptor =
+      getDescriptor().getMessageTypes().get(22);
+    internal_static_glory_api_VideoToTextResult_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_VideoToTextResult_descriptor,
+        new java.lang.String[] { "Sentences", });
+    internal_static_glory_api_VideoToTextCallbackRequest_descriptor =
+      getDescriptor().getMessageTypes().get(23);
+    internal_static_glory_api_VideoToTextCallbackRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_VideoToTextCallbackRequest_descriptor,
+        new java.lang.String[] { "TaskId", "StatusCode", "StatusText", "RequestTime", "SolveTime", "BizDuration", "StopTime", "Result", });
+    internal_static_glory_api_VideoToTextCallbackResponse_descriptor =
+      getDescriptor().getMessageTypes().get(24);
+    internal_static_glory_api_VideoToTextCallbackResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_VideoToTextCallbackResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
   }
 

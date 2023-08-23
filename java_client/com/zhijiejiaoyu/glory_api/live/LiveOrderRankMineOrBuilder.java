@@ -20,37 +20,49 @@ public interface LiveOrderRankMineOrBuilder extends
       getUserNameBytes();
 
   /**
-   * <code>string major = 2;</code>
+   * <code>string tenant = 2;</code>
+   * @return The tenant.
+   */
+  java.lang.String getTenant();
+  /**
+   * <code>string tenant = 2;</code>
+   * @return The bytes for tenant.
+   */
+  com.google.protobuf.ByteString
+      getTenantBytes();
+
+  /**
+   * <code>string major = 3;</code>
    * @return The major.
    */
   java.lang.String getMajor();
   /**
-   * <code>string major = 2;</code>
+   * <code>string major = 3;</code>
    * @return The bytes for major.
    */
   com.google.protobuf.ByteString
       getMajorBytes();
 
   /**
-   * <code>string class = 3;</code>
+   * <code>string class = 4;</code>
    * @return The class.
    */
   java.lang.String getClass_();
   /**
-   * <code>string class = 3;</code>
+   * <code>string class = 4;</code>
    * @return The bytes for class.
    */
   com.google.protobuf.ByteString
       getClass_Bytes();
 
   /**
-   * <code>int64 order_amount = 4;</code>
+   * <code>int64 order_amount = 5;</code>
    * @return The orderAmount.
    */
   long getOrderAmount();
 
   /**
-   * <code>int64 rank = 5;</code>
+   * <code>int64 rank = 6;</code>
    * @return The rank.
    */
   long getRank();

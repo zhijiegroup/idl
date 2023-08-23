@@ -56,34 +56,4 @@ public interface ClassOrBuilder extends
    * @return The tenantId.
    */
   long getTenantId();
-
-  /**
-   * <pre>
-   * 年级, 创建必传
-   * </pre>
-   *
-   * <code>int32 grade = 6;</code>
-   * @return The grade.
-   */
-  int getGrade();
-
-  /**
-   * <pre>
-   * 开学日期, 创建必传
-   * </pre>
-   *
-   * <code>string start_date = 7;</code>
-   * @return The startDate.
-   */
-  java.lang.String getStartDate();
-  /**
-   * <pre>
-   * 开学日期, 创建必传
-   * </pre>
-   *
-   * <code>string start_date = 7;</code>
-   * @return The bytes for startDate.
-   */
-  com.google.protobuf.ByteString
-      getStartDateBytes();
 }

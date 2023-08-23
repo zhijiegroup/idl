@@ -79,7 +79,8 @@ message GetEvaluateDetailResponse {
     string zero_comment=8;
     double score = 9;
     string ai_feedback = 10;
-    repeated EvaluateDetail detail = 11;
+    bool baseline = 11;
+    repeated EvaluateDetail detail = 12;
 }
 
 message SubmitEvaluateRequest {
@@ -94,7 +95,8 @@ message SubmitEvaluateRequest {
     string zero_comment=9;
     double score = 10;
     string ai_feedback = 11;
-    repeated EvaluateDetail detail = 12;
+    bool baseline = 12;
+    repeated EvaluateDetail detail = 13;
 }
 
 message SubmitEvaluateResponse {
@@ -157,17 +159,19 @@ message IgnoreLiveEvaluationResponse {
 }
 message LiveRankDetail {
     string user_name = 1;
-    string major = 2;
-    string class = 3;
-    int64 live_duration = 4;
+    string tenant = 2;
+    string major = 3;
+    string class = 4;
+    int64 live_duration = 5;
 }
 
 message LiveRankMine {
     string user_name = 1;
-    string major = 2;
-    string class = 3;
-    int64 live_duration = 4;
-    int64 rank = 5;
+    string tenant = 2;
+    string major = 3;
+    string class = 4;
+    int64 live_duration = 5;
+    int64 rank = 6;
 }
 
 message LiveRank {
@@ -218,17 +222,19 @@ message ProductRank {
 
 message LiveLikeRankDetail {
     string user_name = 1;
-    string major = 2;
-    string class = 3;
-    int64 like_amount = 4;
+    string tenant = 2;
+    string major = 3;
+    string class = 4;
+    int64 like_amount = 5;
 }
 
 message LiveLikeRankMine {
     string user_name = 1;
-    string major = 2;
-    string class = 3;
-    int64 like_amount = 4;
-    int64 rank = 5;
+    string tenant = 2;
+    string major = 3;
+    string class = 4;
+    int64 like_amount = 5;
+    int64 rank = 6;
 }
 
 message LiveLikeRank {
@@ -238,17 +244,19 @@ message LiveLikeRank {
 
 message LiveOrderRankDetail {
     string user_name = 1;
-    string major = 2;
-    string class = 3;
-    int64 order_amount = 4;
+    string tenant = 2;
+    string major = 3;
+    string class = 4;
+    int64 order_amount = 5;
 }
 
 message LiveOrderRankMine {
     string user_name = 1;
-    string major = 2;
-    string class = 3;
-    int64 order_amount = 4;
-    int64 rank = 5;
+    string tenant = 2;
+    string major = 3;
+    string class = 4;
+    int64 order_amount = 5;
+    int64 rank = 6;
 }
 
 message LiveOrderRank {
@@ -258,17 +266,19 @@ message LiveOrderRank {
 
 message LiveEvaluationRankDetail {
     string user_name = 1;
-    string major = 2;
-    string class = 3;
-    double score = 4;
+    string tenant = 2;
+    string major = 3;
+    string class = 4;
+    double score = 5;
 }
 
 message LiveEvaluationRankMine {
     string user_name = 1;
-    string major = 2;
-    string class = 3;
-    double score = 4;
-    int64 rank = 5;
+    string tenant = 2;
+    string major = 3;
+    string class = 4;
+    double score = 5;
+    int64 rank = 6;
 }
 
 message LiveEvaluationRank {

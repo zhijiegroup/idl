@@ -33,6 +33,9 @@ import * as live_evaluate from "./live/live_evaluate";
 import * as account_operation from "./account/account_operation";
 import * as virtual_currency from "./currency/virtual_currency";
 import * as tenant from "./tenant/tenant";
+import * as tenant_dept from "./tenant/tenant_dept";
+import * as student from "./tenant/student";
+import * as short_video from "./short_video/short_video";
 export {
   user,
   address,
@@ -63,6 +66,9 @@ export {
   account_operation,
   virtual_currency,
   tenant,
+  tenant_dept,
+  student,
+  short_video,
 };
 
 import {
@@ -155,9 +161,35 @@ export class glory_api {
   }
 
   GetUserPagePermission(request) {
-    const query = queryStringify(request);
-    const uri = `${this.uriPrefix}/api/user/get_user_page_permission${query}`;
-    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+    const uri = `${this.uriPrefix}/api/user/get_user_page_permission`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreateRolePagePermission(request) {
+    const uri = `${this.uriPrefix}/api/user/create_role_page_permission`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  UpdateRolePagePermission(request) {
+    const uri = `${this.uriPrefix}/api/user/update_role_page_permission`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  GetRolePagePermission(request) {
+    const uri = `${this.uriPrefix}/api/user/get_role_page_permission`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
   }
 
   AddAddress(request) {
@@ -1310,6 +1342,148 @@ export class glory_api {
     );
   }
 
+  GetTenantOrg(request) {
+    const uri = `${this.uriPrefix}/api/tenant/tenant_org`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreateCollege(request) {
+    const uri = `${this.uriPrefix}/api/tenant/create_college`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  GetCollege(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/tenant/get_college${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  UpdateCollege(request) {
+    const uri = `${this.uriPrefix}/api/tenant/update_college`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteCollege(request) {
+    const uri = `${this.uriPrefix}/api/tenant/delete_college`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListCollege(request) {
+    const uri = `${this.uriPrefix}/api/tenant/list_college`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreateEduDept(request) {
+    const uri = `${this.uriPrefix}/api/tenant/create_edu_dept`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  UpdateEduDept(request) {
+    const uri = `${this.uriPrefix}/api/tenant/update_edu_dept`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteEduDept(request) {
+    const uri = `${this.uriPrefix}/api/tenant/delete_edu_dept`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreateGoverDept(request) {
+    const uri = `${this.uriPrefix}/api/tenant/create_gover_dept`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  UpdateGoverDept(request) {
+    const uri = `${this.uriPrefix}/api/tenant/update_gover_dept`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteGoverDept(request) {
+    const uri = `${this.uriPrefix}/api/tenant/delete_gover_dept`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreateEduOffice(request) {
+    const uri = `${this.uriPrefix}/api/tenant/create_edu_office`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  UpdateEduOffice(request) {
+    const uri = `${this.uriPrefix}/api/tenant/update_edu_office`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteEduOffice(request) {
+    const uri = `${this.uriPrefix}/api/tenant/delete_edu_office`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreatePrincipalOffice(request) {
+    const uri = `${this.uriPrefix}/api/tenant/create_principal_office`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  UpdatePrincipalOffice(request) {
+    const uri = `${this.uriPrefix}/api/tenant/update_principal_office`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeletePrincipalOffice(request) {
+    const uri = `${this.uriPrefix}/api/tenant/delete_principal_office`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   CreateMajor(request) {
     const uri = `${this.uriPrefix}/api/tenant/create_major`;
     const body = JSONbigint.stringify(request);
@@ -1380,6 +1554,124 @@ export class glory_api {
 
   ListClass(request) {
     const uri = `${this.uriPrefix}/api/tenant/list_class`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreateStudents(request) {
+    const uri = `${this.uriPrefix}/api/tenant/create_students`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteStudents(request) {
+    const uri = `${this.uriPrefix}/api/tenant/delete_students`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreateShortVideo(request) {
+    const uri = `${this.uriPrefix}/api/short_video/create_short_video`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  StageShortVideo(request) {
+    const uri = `${this.uriPrefix}/api/short_video/stage_short_video`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListMyShortVideo(request) {
+    const uri = `${this.uriPrefix}/api/short_video/list_my_short_video`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListMyStageVideo(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/short_video/list_my_stage_video${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  ListMyLikeVideo(request) {
+    const uri = `${this.uriPrefix}/api/short_video/list_my_like_video`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListMyFavoriteVideo(request) {
+    const uri = `${this.uriPrefix}/api/short_video/list_my_favorite_video`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  GetShortVideo(request) {
+    const uri = `${this.uriPrefix}/api/short_video/get_short_video`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteShortVideo(request) {
+    const uri = `${this.uriPrefix}/api/short_video/delete_short_video`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  GetStageVideo(request) {
+    const uri = `${this.uriPrefix}/api/short_video/get_stage_video`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteStageVideo(request) {
+    const uri = `${this.uriPrefix}/api/short_video/delete_stage_video`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ManagementListShortVideo(request) {
+    const uri = `${this.uriPrefix}/api/short_video/management/list_short_video`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ManagementCensorShortVideo(request) {
+    const uri = `${this.uriPrefix}/api/short_video/management/censor_short_video`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ManagementDeleteShortVideo(request) {
+    const uri = `${this.uriPrefix}/api/short_video/management/delete_short_video`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse

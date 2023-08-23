@@ -356,6 +356,99 @@ public final class glory_apiGrpc {
     return getGetUserPagePermissionMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionRequest,
+      com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionResponse> getCreateRolePagePermissionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateRolePagePermission",
+      requestType = com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionRequest,
+      com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionResponse> getCreateRolePagePermissionMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionRequest, com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionResponse> getCreateRolePagePermissionMethod;
+    if ((getCreateRolePagePermissionMethod = glory_apiGrpc.getCreateRolePagePermissionMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCreateRolePagePermissionMethod = glory_apiGrpc.getCreateRolePagePermissionMethod) == null) {
+          glory_apiGrpc.getCreateRolePagePermissionMethod = getCreateRolePagePermissionMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionRequest, com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateRolePagePermission"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CreateRolePagePermission"))
+              .build();
+        }
+      }
+    }
+    return getCreateRolePagePermissionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionRequest,
+      com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionResponse> getUpdateRolePagePermissionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateRolePagePermission",
+      requestType = com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionRequest,
+      com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionResponse> getUpdateRolePagePermissionMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionRequest, com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionResponse> getUpdateRolePagePermissionMethod;
+    if ((getUpdateRolePagePermissionMethod = glory_apiGrpc.getUpdateRolePagePermissionMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getUpdateRolePagePermissionMethod = glory_apiGrpc.getUpdateRolePagePermissionMethod) == null) {
+          glory_apiGrpc.getUpdateRolePagePermissionMethod = getUpdateRolePagePermissionMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionRequest, com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateRolePagePermission"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("UpdateRolePagePermission"))
+              .build();
+        }
+      }
+    }
+    return getUpdateRolePagePermissionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionRequest,
+      com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionResponse> getGetRolePagePermissionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetRolePagePermission",
+      requestType = com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionRequest,
+      com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionResponse> getGetRolePagePermissionMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionRequest, com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionResponse> getGetRolePagePermissionMethod;
+    if ((getGetRolePagePermissionMethod = glory_apiGrpc.getGetRolePagePermissionMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGetRolePagePermissionMethod = glory_apiGrpc.getGetRolePagePermissionMethod) == null) {
+          glory_apiGrpc.getGetRolePagePermissionMethod = getGetRolePagePermissionMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionRequest, com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetRolePagePermission"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetRolePagePermission"))
+              .build();
+        }
+      }
+    }
+    return getGetRolePagePermissionMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.user.AddAddressRequest,
       com.zhijiejiaoyu.glory_api.user.AddAddressResponse> getAddAddressMethod;
 
@@ -5037,6 +5130,564 @@ public final class glory_apiGrpc {
     return getListTenantMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgRequest,
+      com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgResponse> getGetTenantOrgMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetTenantOrg",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgRequest,
+      com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgResponse> getGetTenantOrgMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgRequest, com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgResponse> getGetTenantOrgMethod;
+    if ((getGetTenantOrgMethod = glory_apiGrpc.getGetTenantOrgMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGetTenantOrgMethod = glory_apiGrpc.getGetTenantOrgMethod) == null) {
+          glory_apiGrpc.getGetTenantOrgMethod = getGetTenantOrgMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgRequest, com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetTenantOrg"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetTenantOrg"))
+              .build();
+        }
+      }
+    }
+    return getGetTenantOrgMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreateCollegeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.CreateCollegeResponse> getCreateCollegeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateCollege",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.CreateCollegeRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.CreateCollegeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreateCollegeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.CreateCollegeResponse> getCreateCollegeMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreateCollegeRequest, com.zhijiejiaoyu.glory_api.tenant.CreateCollegeResponse> getCreateCollegeMethod;
+    if ((getCreateCollegeMethod = glory_apiGrpc.getCreateCollegeMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCreateCollegeMethod = glory_apiGrpc.getCreateCollegeMethod) == null) {
+          glory_apiGrpc.getCreateCollegeMethod = getCreateCollegeMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.CreateCollegeRequest, com.zhijiejiaoyu.glory_api.tenant.CreateCollegeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateCollege"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.CreateCollegeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.CreateCollegeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CreateCollege"))
+              .build();
+        }
+      }
+    }
+    return getCreateCollegeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.GetCollegeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.GetCollegeResponse> getGetCollegeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetCollege",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.GetCollegeRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.GetCollegeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.GetCollegeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.GetCollegeResponse> getGetCollegeMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.GetCollegeRequest, com.zhijiejiaoyu.glory_api.tenant.GetCollegeResponse> getGetCollegeMethod;
+    if ((getGetCollegeMethod = glory_apiGrpc.getGetCollegeMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGetCollegeMethod = glory_apiGrpc.getGetCollegeMethod) == null) {
+          glory_apiGrpc.getGetCollegeMethod = getGetCollegeMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.GetCollegeRequest, com.zhijiejiaoyu.glory_api.tenant.GetCollegeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetCollege"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.GetCollegeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.GetCollegeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetCollege"))
+              .build();
+        }
+      }
+    }
+    return getGetCollegeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeResponse> getUpdateCollegeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateCollege",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeResponse> getUpdateCollegeMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeRequest, com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeResponse> getUpdateCollegeMethod;
+    if ((getUpdateCollegeMethod = glory_apiGrpc.getUpdateCollegeMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getUpdateCollegeMethod = glory_apiGrpc.getUpdateCollegeMethod) == null) {
+          glory_apiGrpc.getUpdateCollegeMethod = getUpdateCollegeMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeRequest, com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateCollege"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("UpdateCollege"))
+              .build();
+        }
+      }
+    }
+    return getUpdateCollegeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeResponse> getDeleteCollegeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteCollege",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeResponse> getDeleteCollegeMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeRequest, com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeResponse> getDeleteCollegeMethod;
+    if ((getDeleteCollegeMethod = glory_apiGrpc.getDeleteCollegeMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getDeleteCollegeMethod = glory_apiGrpc.getDeleteCollegeMethod) == null) {
+          glory_apiGrpc.getDeleteCollegeMethod = getDeleteCollegeMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeRequest, com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteCollege"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("DeleteCollege"))
+              .build();
+        }
+      }
+    }
+    return getDeleteCollegeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.ListCollegeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.ListCollegeResponse> getListCollegeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListCollege",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.ListCollegeRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.ListCollegeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.ListCollegeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.ListCollegeResponse> getListCollegeMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.ListCollegeRequest, com.zhijiejiaoyu.glory_api.tenant.ListCollegeResponse> getListCollegeMethod;
+    if ((getListCollegeMethod = glory_apiGrpc.getListCollegeMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListCollegeMethod = glory_apiGrpc.getListCollegeMethod) == null) {
+          glory_apiGrpc.getListCollegeMethod = getListCollegeMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.ListCollegeRequest, com.zhijiejiaoyu.glory_api.tenant.ListCollegeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListCollege"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.ListCollegeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.ListCollegeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListCollege"))
+              .build();
+        }
+      }
+    }
+    return getListCollegeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptRequest,
+      com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptResponse> getCreateEduDeptMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateEduDept",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptRequest,
+      com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptResponse> getCreateEduDeptMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptRequest, com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptResponse> getCreateEduDeptMethod;
+    if ((getCreateEduDeptMethod = glory_apiGrpc.getCreateEduDeptMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCreateEduDeptMethod = glory_apiGrpc.getCreateEduDeptMethod) == null) {
+          glory_apiGrpc.getCreateEduDeptMethod = getCreateEduDeptMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptRequest, com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateEduDept"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CreateEduDept"))
+              .build();
+        }
+      }
+    }
+    return getCreateEduDeptMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptRequest,
+      com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptResponse> getUpdateEduDeptMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateEduDept",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptRequest,
+      com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptResponse> getUpdateEduDeptMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptRequest, com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptResponse> getUpdateEduDeptMethod;
+    if ((getUpdateEduDeptMethod = glory_apiGrpc.getUpdateEduDeptMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getUpdateEduDeptMethod = glory_apiGrpc.getUpdateEduDeptMethod) == null) {
+          glory_apiGrpc.getUpdateEduDeptMethod = getUpdateEduDeptMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptRequest, com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateEduDept"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("UpdateEduDept"))
+              .build();
+        }
+      }
+    }
+    return getUpdateEduDeptMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptRequest,
+      com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptResponse> getDeleteEduDeptMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteEduDept",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptRequest,
+      com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptResponse> getDeleteEduDeptMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptRequest, com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptResponse> getDeleteEduDeptMethod;
+    if ((getDeleteEduDeptMethod = glory_apiGrpc.getDeleteEduDeptMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getDeleteEduDeptMethod = glory_apiGrpc.getDeleteEduDeptMethod) == null) {
+          glory_apiGrpc.getDeleteEduDeptMethod = getDeleteEduDeptMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptRequest, com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteEduDept"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("DeleteEduDept"))
+              .build();
+        }
+      }
+    }
+    return getDeleteEduDeptMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptRequest,
+      com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptResponse> getCreateGoverDeptMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateGoverDept",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptRequest,
+      com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptResponse> getCreateGoverDeptMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptRequest, com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptResponse> getCreateGoverDeptMethod;
+    if ((getCreateGoverDeptMethod = glory_apiGrpc.getCreateGoverDeptMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCreateGoverDeptMethod = glory_apiGrpc.getCreateGoverDeptMethod) == null) {
+          glory_apiGrpc.getCreateGoverDeptMethod = getCreateGoverDeptMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptRequest, com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateGoverDept"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CreateGoverDept"))
+              .build();
+        }
+      }
+    }
+    return getCreateGoverDeptMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptRequest,
+      com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptResponse> getUpdateGoverDeptMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateGoverDept",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptRequest,
+      com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptResponse> getUpdateGoverDeptMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptRequest, com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptResponse> getUpdateGoverDeptMethod;
+    if ((getUpdateGoverDeptMethod = glory_apiGrpc.getUpdateGoverDeptMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getUpdateGoverDeptMethod = glory_apiGrpc.getUpdateGoverDeptMethod) == null) {
+          glory_apiGrpc.getUpdateGoverDeptMethod = getUpdateGoverDeptMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptRequest, com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateGoverDept"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("UpdateGoverDept"))
+              .build();
+        }
+      }
+    }
+    return getUpdateGoverDeptMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptRequest,
+      com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptResponse> getDeleteGoverDeptMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteGoverDept",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptRequest,
+      com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptResponse> getDeleteGoverDeptMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptRequest, com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptResponse> getDeleteGoverDeptMethod;
+    if ((getDeleteGoverDeptMethod = glory_apiGrpc.getDeleteGoverDeptMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getDeleteGoverDeptMethod = glory_apiGrpc.getDeleteGoverDeptMethod) == null) {
+          glory_apiGrpc.getDeleteGoverDeptMethod = getDeleteGoverDeptMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptRequest, com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteGoverDept"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("DeleteGoverDept"))
+              .build();
+        }
+      }
+    }
+    return getDeleteGoverDeptMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeResponse> getCreateEduOfficeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateEduOffice",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeResponse> getCreateEduOfficeMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeRequest, com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeResponse> getCreateEduOfficeMethod;
+    if ((getCreateEduOfficeMethod = glory_apiGrpc.getCreateEduOfficeMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCreateEduOfficeMethod = glory_apiGrpc.getCreateEduOfficeMethod) == null) {
+          glory_apiGrpc.getCreateEduOfficeMethod = getCreateEduOfficeMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeRequest, com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateEduOffice"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CreateEduOffice"))
+              .build();
+        }
+      }
+    }
+    return getCreateEduOfficeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeResponse> getUpdateEduOfficeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateEduOffice",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeResponse> getUpdateEduOfficeMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeRequest, com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeResponse> getUpdateEduOfficeMethod;
+    if ((getUpdateEduOfficeMethod = glory_apiGrpc.getUpdateEduOfficeMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getUpdateEduOfficeMethod = glory_apiGrpc.getUpdateEduOfficeMethod) == null) {
+          glory_apiGrpc.getUpdateEduOfficeMethod = getUpdateEduOfficeMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeRequest, com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateEduOffice"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("UpdateEduOffice"))
+              .build();
+        }
+      }
+    }
+    return getUpdateEduOfficeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeResponse> getDeleteEduOfficeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteEduOffice",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeResponse> getDeleteEduOfficeMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeRequest, com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeResponse> getDeleteEduOfficeMethod;
+    if ((getDeleteEduOfficeMethod = glory_apiGrpc.getDeleteEduOfficeMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getDeleteEduOfficeMethod = glory_apiGrpc.getDeleteEduOfficeMethod) == null) {
+          glory_apiGrpc.getDeleteEduOfficeMethod = getDeleteEduOfficeMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeRequest, com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteEduOffice"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("DeleteEduOffice"))
+              .build();
+        }
+      }
+    }
+    return getDeleteEduOfficeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeResponse> getCreatePrincipalOfficeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreatePrincipalOffice",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeResponse> getCreatePrincipalOfficeMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeRequest, com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeResponse> getCreatePrincipalOfficeMethod;
+    if ((getCreatePrincipalOfficeMethod = glory_apiGrpc.getCreatePrincipalOfficeMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCreatePrincipalOfficeMethod = glory_apiGrpc.getCreatePrincipalOfficeMethod) == null) {
+          glory_apiGrpc.getCreatePrincipalOfficeMethod = getCreatePrincipalOfficeMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeRequest, com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreatePrincipalOffice"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CreatePrincipalOffice"))
+              .build();
+        }
+      }
+    }
+    return getCreatePrincipalOfficeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeResponse> getUpdatePrincipalOfficeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdatePrincipalOffice",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeResponse> getUpdatePrincipalOfficeMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeRequest, com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeResponse> getUpdatePrincipalOfficeMethod;
+    if ((getUpdatePrincipalOfficeMethod = glory_apiGrpc.getUpdatePrincipalOfficeMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getUpdatePrincipalOfficeMethod = glory_apiGrpc.getUpdatePrincipalOfficeMethod) == null) {
+          glory_apiGrpc.getUpdatePrincipalOfficeMethod = getUpdatePrincipalOfficeMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeRequest, com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdatePrincipalOffice"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("UpdatePrincipalOffice"))
+              .build();
+        }
+      }
+    }
+    return getUpdatePrincipalOfficeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeResponse> getDeletePrincipalOfficeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeletePrincipalOffice",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeRequest,
+      com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeResponse> getDeletePrincipalOfficeMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeRequest, com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeResponse> getDeletePrincipalOfficeMethod;
+    if ((getDeletePrincipalOfficeMethod = glory_apiGrpc.getDeletePrincipalOfficeMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getDeletePrincipalOfficeMethod = glory_apiGrpc.getDeletePrincipalOfficeMethod) == null) {
+          glory_apiGrpc.getDeletePrincipalOfficeMethod = getDeletePrincipalOfficeMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeRequest, com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeletePrincipalOffice"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("DeletePrincipalOffice"))
+              .build();
+        }
+      }
+    }
+    return getDeletePrincipalOfficeMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreateMajorRequest,
       com.zhijiejiaoyu.glory_api.tenant.CreateMajorResponse> getCreateMajorMethod;
 
@@ -5347,6 +5998,471 @@ public final class glory_apiGrpc {
     return getListClassMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreateStudentsRequest,
+      com.zhijiejiaoyu.glory_api.tenant.CreateStudentsResponse> getCreateStudentsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateStudents",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.CreateStudentsRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.CreateStudentsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreateStudentsRequest,
+      com.zhijiejiaoyu.glory_api.tenant.CreateStudentsResponse> getCreateStudentsMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreateStudentsRequest, com.zhijiejiaoyu.glory_api.tenant.CreateStudentsResponse> getCreateStudentsMethod;
+    if ((getCreateStudentsMethod = glory_apiGrpc.getCreateStudentsMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCreateStudentsMethod = glory_apiGrpc.getCreateStudentsMethod) == null) {
+          glory_apiGrpc.getCreateStudentsMethod = getCreateStudentsMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.CreateStudentsRequest, com.zhijiejiaoyu.glory_api.tenant.CreateStudentsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateStudents"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.CreateStudentsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.CreateStudentsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CreateStudents"))
+              .build();
+        }
+      }
+    }
+    return getCreateStudentsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsRequest,
+      com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsResponse> getDeleteStudentsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteStudents",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsRequest,
+      com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsResponse> getDeleteStudentsMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsRequest, com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsResponse> getDeleteStudentsMethod;
+    if ((getDeleteStudentsMethod = glory_apiGrpc.getDeleteStudentsMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getDeleteStudentsMethod = glory_apiGrpc.getDeleteStudentsMethod) == null) {
+          glory_apiGrpc.getDeleteStudentsMethod = getDeleteStudentsMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsRequest, com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteStudents"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("DeleteStudents"))
+              .build();
+        }
+      }
+    }
+    return getDeleteStudentsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoResponse> getCreateShortVideoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateShortVideo",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoResponse> getCreateShortVideoMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoRequest, com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoResponse> getCreateShortVideoMethod;
+    if ((getCreateShortVideoMethod = glory_apiGrpc.getCreateShortVideoMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCreateShortVideoMethod = glory_apiGrpc.getCreateShortVideoMethod) == null) {
+          glory_apiGrpc.getCreateShortVideoMethod = getCreateShortVideoMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoRequest, com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateShortVideo"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CreateShortVideo"))
+              .build();
+        }
+      }
+    }
+    return getCreateShortVideoMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.StageShortVideoResponse> getStageShortVideoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "StageShortVideo",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.StageShortVideoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.StageShortVideoResponse> getStageShortVideoMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest, com.zhijiejiaoyu.glory_api.short_video.StageShortVideoResponse> getStageShortVideoMethod;
+    if ((getStageShortVideoMethod = glory_apiGrpc.getStageShortVideoMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getStageShortVideoMethod = glory_apiGrpc.getStageShortVideoMethod) == null) {
+          glory_apiGrpc.getStageShortVideoMethod = getStageShortVideoMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest, com.zhijiejiaoyu.glory_api.short_video.StageShortVideoResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "StageShortVideo"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.StageShortVideoResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("StageShortVideo"))
+              .build();
+        }
+      }
+    }
+    return getStageShortVideoMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListMyShortVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.ListMyShortVideoResponse> getListMyShortVideoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListMyShortVideo",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.ListMyShortVideoRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.ListMyShortVideoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListMyShortVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.ListMyShortVideoResponse> getListMyShortVideoMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListMyShortVideoRequest, com.zhijiejiaoyu.glory_api.short_video.ListMyShortVideoResponse> getListMyShortVideoMethod;
+    if ((getListMyShortVideoMethod = glory_apiGrpc.getListMyShortVideoMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListMyShortVideoMethod = glory_apiGrpc.getListMyShortVideoMethod) == null) {
+          glory_apiGrpc.getListMyShortVideoMethod = getListMyShortVideoMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.ListMyShortVideoRequest, com.zhijiejiaoyu.glory_api.short_video.ListMyShortVideoResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListMyShortVideo"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.ListMyShortVideoRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.ListMyShortVideoResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListMyShortVideo"))
+              .build();
+        }
+      }
+    }
+    return getListMyShortVideoMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListMyStageVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.ListMyStageVideoResponse> getListMyStageVideoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListMyStageVideo",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.ListMyStageVideoRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.ListMyStageVideoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListMyStageVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.ListMyStageVideoResponse> getListMyStageVideoMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListMyStageVideoRequest, com.zhijiejiaoyu.glory_api.short_video.ListMyStageVideoResponse> getListMyStageVideoMethod;
+    if ((getListMyStageVideoMethod = glory_apiGrpc.getListMyStageVideoMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListMyStageVideoMethod = glory_apiGrpc.getListMyStageVideoMethod) == null) {
+          glory_apiGrpc.getListMyStageVideoMethod = getListMyStageVideoMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.ListMyStageVideoRequest, com.zhijiejiaoyu.glory_api.short_video.ListMyStageVideoResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListMyStageVideo"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.ListMyStageVideoRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.ListMyStageVideoResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListMyStageVideo"))
+              .build();
+        }
+      }
+    }
+    return getListMyStageVideoMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListMyLikeVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.ListMyLikeVideoResponse> getListMyLikeVideoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListMyLikeVideo",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.ListMyLikeVideoRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.ListMyLikeVideoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListMyLikeVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.ListMyLikeVideoResponse> getListMyLikeVideoMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListMyLikeVideoRequest, com.zhijiejiaoyu.glory_api.short_video.ListMyLikeVideoResponse> getListMyLikeVideoMethod;
+    if ((getListMyLikeVideoMethod = glory_apiGrpc.getListMyLikeVideoMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListMyLikeVideoMethod = glory_apiGrpc.getListMyLikeVideoMethod) == null) {
+          glory_apiGrpc.getListMyLikeVideoMethod = getListMyLikeVideoMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.ListMyLikeVideoRequest, com.zhijiejiaoyu.glory_api.short_video.ListMyLikeVideoResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListMyLikeVideo"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.ListMyLikeVideoRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.ListMyLikeVideoResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListMyLikeVideo"))
+              .build();
+        }
+      }
+    }
+    return getListMyLikeVideoMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListMyFavoriteVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.ListMyFavoriteVideoResponse> getListMyFavoriteVideoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListMyFavoriteVideo",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.ListMyFavoriteVideoRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.ListMyFavoriteVideoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListMyFavoriteVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.ListMyFavoriteVideoResponse> getListMyFavoriteVideoMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListMyFavoriteVideoRequest, com.zhijiejiaoyu.glory_api.short_video.ListMyFavoriteVideoResponse> getListMyFavoriteVideoMethod;
+    if ((getListMyFavoriteVideoMethod = glory_apiGrpc.getListMyFavoriteVideoMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListMyFavoriteVideoMethod = glory_apiGrpc.getListMyFavoriteVideoMethod) == null) {
+          glory_apiGrpc.getListMyFavoriteVideoMethod = getListMyFavoriteVideoMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.ListMyFavoriteVideoRequest, com.zhijiejiaoyu.glory_api.short_video.ListMyFavoriteVideoResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListMyFavoriteVideo"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.ListMyFavoriteVideoRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.ListMyFavoriteVideoResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListMyFavoriteVideo"))
+              .build();
+        }
+      }
+    }
+    return getListMyFavoriteVideoMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.GetShortVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.GetShortVideoResponse> getGetShortVideoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetShortVideo",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.GetShortVideoRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.GetShortVideoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.GetShortVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.GetShortVideoResponse> getGetShortVideoMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.GetShortVideoRequest, com.zhijiejiaoyu.glory_api.short_video.GetShortVideoResponse> getGetShortVideoMethod;
+    if ((getGetShortVideoMethod = glory_apiGrpc.getGetShortVideoMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGetShortVideoMethod = glory_apiGrpc.getGetShortVideoMethod) == null) {
+          glory_apiGrpc.getGetShortVideoMethod = getGetShortVideoMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.GetShortVideoRequest, com.zhijiejiaoyu.glory_api.short_video.GetShortVideoResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetShortVideo"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.GetShortVideoRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.GetShortVideoResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetShortVideo"))
+              .build();
+        }
+      }
+    }
+    return getGetShortVideoMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.DeleteShortVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.DeleteShortVideoResponse> getDeleteShortVideoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteShortVideo",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.DeleteShortVideoRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.DeleteShortVideoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.DeleteShortVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.DeleteShortVideoResponse> getDeleteShortVideoMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.DeleteShortVideoRequest, com.zhijiejiaoyu.glory_api.short_video.DeleteShortVideoResponse> getDeleteShortVideoMethod;
+    if ((getDeleteShortVideoMethod = glory_apiGrpc.getDeleteShortVideoMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getDeleteShortVideoMethod = glory_apiGrpc.getDeleteShortVideoMethod) == null) {
+          glory_apiGrpc.getDeleteShortVideoMethod = getDeleteShortVideoMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.DeleteShortVideoRequest, com.zhijiejiaoyu.glory_api.short_video.DeleteShortVideoResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteShortVideo"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.DeleteShortVideoRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.DeleteShortVideoResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("DeleteShortVideo"))
+              .build();
+        }
+      }
+    }
+    return getDeleteShortVideoMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.GetStageVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.GetStageVideoResponse> getGetStageVideoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetStageVideo",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.GetStageVideoRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.GetStageVideoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.GetStageVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.GetStageVideoResponse> getGetStageVideoMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.GetStageVideoRequest, com.zhijiejiaoyu.glory_api.short_video.GetStageVideoResponse> getGetStageVideoMethod;
+    if ((getGetStageVideoMethod = glory_apiGrpc.getGetStageVideoMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGetStageVideoMethod = glory_apiGrpc.getGetStageVideoMethod) == null) {
+          glory_apiGrpc.getGetStageVideoMethod = getGetStageVideoMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.GetStageVideoRequest, com.zhijiejiaoyu.glory_api.short_video.GetStageVideoResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetStageVideo"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.GetStageVideoRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.GetStageVideoResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetStageVideo"))
+              .build();
+        }
+      }
+    }
+    return getGetStageVideoMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.DeleteStageVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.DeleteStageVideoResponse> getDeleteStageVideoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteStageVideo",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.DeleteStageVideoRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.DeleteStageVideoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.DeleteStageVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.DeleteStageVideoResponse> getDeleteStageVideoMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.DeleteStageVideoRequest, com.zhijiejiaoyu.glory_api.short_video.DeleteStageVideoResponse> getDeleteStageVideoMethod;
+    if ((getDeleteStageVideoMethod = glory_apiGrpc.getDeleteStageVideoMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getDeleteStageVideoMethod = glory_apiGrpc.getDeleteStageVideoMethod) == null) {
+          glory_apiGrpc.getDeleteStageVideoMethod = getDeleteStageVideoMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.DeleteStageVideoRequest, com.zhijiejiaoyu.glory_api.short_video.DeleteStageVideoResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteStageVideo"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.DeleteStageVideoRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.DeleteStageVideoResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("DeleteStageVideo"))
+              .build();
+        }
+      }
+    }
+    return getDeleteStageVideoMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoResponse> getManagementListShortVideoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ManagementListShortVideo",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoResponse> getManagementListShortVideoMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoRequest, com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoResponse> getManagementListShortVideoMethod;
+    if ((getManagementListShortVideoMethod = glory_apiGrpc.getManagementListShortVideoMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getManagementListShortVideoMethod = glory_apiGrpc.getManagementListShortVideoMethod) == null) {
+          glory_apiGrpc.getManagementListShortVideoMethod = getManagementListShortVideoMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoRequest, com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ManagementListShortVideo"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ManagementListShortVideo"))
+              .build();
+        }
+      }
+    }
+    return getManagementListShortVideoMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ManagementCensorShortVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.ManagementCensorShortVideoResponse> getManagementCensorShortVideoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ManagementCensorShortVideo",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.ManagementCensorShortVideoRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.ManagementCensorShortVideoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ManagementCensorShortVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.ManagementCensorShortVideoResponse> getManagementCensorShortVideoMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ManagementCensorShortVideoRequest, com.zhijiejiaoyu.glory_api.short_video.ManagementCensorShortVideoResponse> getManagementCensorShortVideoMethod;
+    if ((getManagementCensorShortVideoMethod = glory_apiGrpc.getManagementCensorShortVideoMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getManagementCensorShortVideoMethod = glory_apiGrpc.getManagementCensorShortVideoMethod) == null) {
+          glory_apiGrpc.getManagementCensorShortVideoMethod = getManagementCensorShortVideoMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.ManagementCensorShortVideoRequest, com.zhijiejiaoyu.glory_api.short_video.ManagementCensorShortVideoResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ManagementCensorShortVideo"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.ManagementCensorShortVideoRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.ManagementCensorShortVideoResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ManagementCensorShortVideo"))
+              .build();
+        }
+      }
+    }
+    return getManagementCensorShortVideoMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoResponse> getManagementDeleteShortVideoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ManagementDeleteShortVideo",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoResponse> getManagementDeleteShortVideoMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoRequest, com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoResponse> getManagementDeleteShortVideoMethod;
+    if ((getManagementDeleteShortVideoMethod = glory_apiGrpc.getManagementDeleteShortVideoMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getManagementDeleteShortVideoMethod = glory_apiGrpc.getManagementDeleteShortVideoMethod) == null) {
+          glory_apiGrpc.getManagementDeleteShortVideoMethod = getManagementDeleteShortVideoMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoRequest, com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ManagementDeleteShortVideo"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ManagementDeleteShortVideo"))
+              .build();
+        }
+      }
+    }
+    return getManagementDeleteShortVideoMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -5484,10 +6600,34 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     * page permission
+     * </pre>
      */
     default void getUserPagePermission(com.zhijiejiaoyu.glory_api.user.GetUserPagePermissionRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.GetUserPagePermissionResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetUserPagePermissionMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void createRolePagePermission(com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateRolePagePermissionMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updateRolePagePermission(com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateRolePagePermissionMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void getRolePagePermission(com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetRolePagePermissionMethod(), responseObserver);
     }
 
     /**
@@ -6620,6 +7760,147 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    default void getTenantOrg(com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetTenantOrgMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     *college
+     * </pre>
+     */
+    default void createCollege(com.zhijiejiaoyu.glory_api.tenant.CreateCollegeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.CreateCollegeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateCollegeMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void getCollege(com.zhijiejiaoyu.glory_api.tenant.GetCollegeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.GetCollegeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetCollegeMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updateCollege(com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateCollegeMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void deleteCollege(com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteCollegeMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void listCollege(com.zhijiejiaoyu.glory_api.tenant.ListCollegeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.ListCollegeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListCollegeMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * edu_dept
+     * </pre>
+     */
+    default void createEduDept(com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateEduDeptMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updateEduDept(com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateEduDeptMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void deleteEduDept(com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteEduDeptMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     *gover_dept
+     * </pre>
+     */
+    default void createGoverDept(com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateGoverDeptMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updateGoverDept(com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateGoverDeptMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void deleteGoverDept(com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteGoverDeptMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * edu_office
+     * </pre>
+     */
+    default void createEduOffice(com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateEduOfficeMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updateEduOffice(com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateEduOfficeMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void deleteEduOffice(com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteEduOfficeMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     *principal_office
+     * </pre>
+     */
+    default void createPrincipalOffice(com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreatePrincipalOfficeMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updatePrincipalOffice(com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdatePrincipalOfficeMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void deletePrincipalOffice(com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeletePrincipalOfficeMethod(), responseObserver);
+    }
+
+    /**
      * <pre>
      *major
      * </pre>
@@ -6693,6 +7974,141 @@ public final class glory_apiGrpc {
     default void listClass(com.zhijiejiaoyu.glory_api.tenant.ListClassRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.ListClassResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListClassMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     *student
+     * </pre>
+     */
+    default void createStudents(com.zhijiejiaoyu.glory_api.tenant.CreateStudentsRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.CreateStudentsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateStudentsMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void deleteStudents(com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteStudentsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * short_video
+     * </pre>
+     */
+    default void createShortVideo(com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateShortVideoMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void stageShortVideo(com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.StageShortVideoResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStageShortVideoMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 我的短视频列表
+     * </pre>
+     */
+    default void listMyShortVideo(com.zhijiejiaoyu.glory_api.short_video.ListMyShortVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListMyShortVideoResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListMyShortVideoMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 我的暂存视频列表
+     * </pre>
+     */
+    default void listMyStageVideo(com.zhijiejiaoyu.glory_api.short_video.ListMyStageVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListMyStageVideoResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListMyStageVideoMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 我的喜欢视频列表
+     * </pre>
+     */
+    default void listMyLikeVideo(com.zhijiejiaoyu.glory_api.short_video.ListMyLikeVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListMyLikeVideoResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListMyLikeVideoMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 我的收藏视频列表
+     * </pre>
+     */
+    default void listMyFavoriteVideo(com.zhijiejiaoyu.glory_api.short_video.ListMyFavoriteVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListMyFavoriteVideoResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListMyFavoriteVideoMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 获取短视频详情
+     * </pre>
+     */
+    default void getShortVideo(com.zhijiejiaoyu.glory_api.short_video.GetShortVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.GetShortVideoResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetShortVideoMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 删除短视频
+     * </pre>
+     */
+    default void deleteShortVideo(com.zhijiejiaoyu.glory_api.short_video.DeleteShortVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.DeleteShortVideoResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteShortVideoMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 获取暂存视频详情
+     * </pre>
+     */
+    default void getStageVideo(com.zhijiejiaoyu.glory_api.short_video.GetStageVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.GetStageVideoResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetStageVideoMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 删除暂存视频
+     * </pre>
+     */
+    default void deleteStageVideo(com.zhijiejiaoyu.glory_api.short_video.DeleteStageVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.DeleteStageVideoResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteStageVideoMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void managementListShortVideo(com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getManagementListShortVideoMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void managementCensorShortVideo(com.zhijiejiaoyu.glory_api.short_video.ManagementCensorShortVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ManagementCensorShortVideoResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getManagementCensorShortVideoMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void managementDeleteShortVideo(com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getManagementDeleteShortVideoMethod(), responseObserver);
     }
   }
 
@@ -6822,11 +8238,38 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     * page permission
+     * </pre>
      */
     public void getUserPagePermission(com.zhijiejiaoyu.glory_api.user.GetUserPagePermissionRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.GetUserPagePermissionResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetUserPagePermissionMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void createRolePagePermission(com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateRolePagePermissionMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateRolePagePermission(com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateRolePagePermissionMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getRolePagePermission(com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetRolePagePermissionMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -8110,6 +9553,165 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public void getTenantOrg(com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetTenantOrgMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     *college
+     * </pre>
+     */
+    public void createCollege(com.zhijiejiaoyu.glory_api.tenant.CreateCollegeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.CreateCollegeResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateCollegeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getCollege(com.zhijiejiaoyu.glory_api.tenant.GetCollegeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.GetCollegeResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetCollegeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateCollege(com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateCollegeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deleteCollege(com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteCollegeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void listCollege(com.zhijiejiaoyu.glory_api.tenant.ListCollegeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.ListCollegeResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListCollegeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * edu_dept
+     * </pre>
+     */
+    public void createEduDept(com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateEduDeptMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateEduDept(com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateEduDeptMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deleteEduDept(com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteEduDeptMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     *gover_dept
+     * </pre>
+     */
+    public void createGoverDept(com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateGoverDeptMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateGoverDept(com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateGoverDeptMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deleteGoverDept(com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteGoverDeptMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * edu_office
+     * </pre>
+     */
+    public void createEduOffice(com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateEduOfficeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateEduOffice(com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateEduOfficeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deleteEduOffice(com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteEduOfficeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     *principal_office
+     * </pre>
+     */
+    public void createPrincipalOffice(com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreatePrincipalOfficeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updatePrincipalOffice(com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdatePrincipalOfficeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deletePrincipalOffice(com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeletePrincipalOfficeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
      * <pre>
      *major
      * </pre>
@@ -8193,6 +9795,156 @@ public final class glory_apiGrpc {
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.ListClassResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListClassMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     *student
+     * </pre>
+     */
+    public void createStudents(com.zhijiejiaoyu.glory_api.tenant.CreateStudentsRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.CreateStudentsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateStudentsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deleteStudents(com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteStudentsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * short_video
+     * </pre>
+     */
+    public void createShortVideo(com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateShortVideoMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void stageShortVideo(com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.StageShortVideoResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getStageShortVideoMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 我的短视频列表
+     * </pre>
+     */
+    public void listMyShortVideo(com.zhijiejiaoyu.glory_api.short_video.ListMyShortVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListMyShortVideoResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListMyShortVideoMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 我的暂存视频列表
+     * </pre>
+     */
+    public void listMyStageVideo(com.zhijiejiaoyu.glory_api.short_video.ListMyStageVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListMyStageVideoResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListMyStageVideoMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 我的喜欢视频列表
+     * </pre>
+     */
+    public void listMyLikeVideo(com.zhijiejiaoyu.glory_api.short_video.ListMyLikeVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListMyLikeVideoResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListMyLikeVideoMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 我的收藏视频列表
+     * </pre>
+     */
+    public void listMyFavoriteVideo(com.zhijiejiaoyu.glory_api.short_video.ListMyFavoriteVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListMyFavoriteVideoResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListMyFavoriteVideoMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 获取短视频详情
+     * </pre>
+     */
+    public void getShortVideo(com.zhijiejiaoyu.glory_api.short_video.GetShortVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.GetShortVideoResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetShortVideoMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 删除短视频
+     * </pre>
+     */
+    public void deleteShortVideo(com.zhijiejiaoyu.glory_api.short_video.DeleteShortVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.DeleteShortVideoResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteShortVideoMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 获取暂存视频详情
+     * </pre>
+     */
+    public void getStageVideo(com.zhijiejiaoyu.glory_api.short_video.GetStageVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.GetStageVideoResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetStageVideoMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 删除暂存视频
+     * </pre>
+     */
+    public void deleteStageVideo(com.zhijiejiaoyu.glory_api.short_video.DeleteStageVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.DeleteStageVideoResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteStageVideoMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void managementListShortVideo(com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getManagementListShortVideoMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void managementCensorShortVideo(com.zhijiejiaoyu.glory_api.short_video.ManagementCensorShortVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ManagementCensorShortVideoResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getManagementCensorShortVideoMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void managementDeleteShortVideo(com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getManagementDeleteShortVideoMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -8301,10 +10053,34 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     * page permission
+     * </pre>
      */
     public com.zhijiejiaoyu.glory_api.user.GetUserPagePermissionResponse getUserPagePermission(com.zhijiejiaoyu.glory_api.user.GetUserPagePermissionRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetUserPagePermissionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionResponse createRolePagePermission(com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateRolePagePermissionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionResponse updateRolePagePermission(com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateRolePagePermissionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionResponse getRolePagePermission(com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRolePagePermissionMethod(), getCallOptions(), request);
     }
 
     /**
@@ -9437,6 +11213,147 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgResponse getTenantOrg(com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTenantOrgMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     *college
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.CreateCollegeResponse createCollege(com.zhijiejiaoyu.glory_api.tenant.CreateCollegeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCollegeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.GetCollegeResponse getCollege(com.zhijiejiaoyu.glory_api.tenant.GetCollegeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCollegeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeResponse updateCollege(com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCollegeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeResponse deleteCollege(com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteCollegeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.ListCollegeResponse listCollege(com.zhijiejiaoyu.glory_api.tenant.ListCollegeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCollegeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * edu_dept
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptResponse createEduDept(com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateEduDeptMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptResponse updateEduDept(com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateEduDeptMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptResponse deleteEduDept(com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteEduDeptMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     *gover_dept
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptResponse createGoverDept(com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateGoverDeptMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptResponse updateGoverDept(com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateGoverDeptMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptResponse deleteGoverDept(com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteGoverDeptMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * edu_office
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeResponse createEduOffice(com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateEduOfficeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeResponse updateEduOffice(com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateEduOfficeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeResponse deleteEduOffice(com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteEduOfficeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     *principal_office
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeResponse createPrincipalOffice(com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreatePrincipalOfficeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeResponse updatePrincipalOffice(com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdatePrincipalOfficeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeResponse deletePrincipalOffice(com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeletePrincipalOfficeMethod(), getCallOptions(), request);
+    }
+
+    /**
      * <pre>
      *major
      * </pre>
@@ -9510,6 +11427,141 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.tenant.ListClassResponse listClass(com.zhijiejiaoyu.glory_api.tenant.ListClassRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListClassMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     *student
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.CreateStudentsResponse createStudents(com.zhijiejiaoyu.glory_api.tenant.CreateStudentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateStudentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsResponse deleteStudents(com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteStudentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * short_video
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoResponse createShortVideo(com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateShortVideoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.StageShortVideoResponse stageShortVideo(com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStageShortVideoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 我的短视频列表
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.ListMyShortVideoResponse listMyShortVideo(com.zhijiejiaoyu.glory_api.short_video.ListMyShortVideoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMyShortVideoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 我的暂存视频列表
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.ListMyStageVideoResponse listMyStageVideo(com.zhijiejiaoyu.glory_api.short_video.ListMyStageVideoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMyStageVideoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 我的喜欢视频列表
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.ListMyLikeVideoResponse listMyLikeVideo(com.zhijiejiaoyu.glory_api.short_video.ListMyLikeVideoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMyLikeVideoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 我的收藏视频列表
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.ListMyFavoriteVideoResponse listMyFavoriteVideo(com.zhijiejiaoyu.glory_api.short_video.ListMyFavoriteVideoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMyFavoriteVideoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 获取短视频详情
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.GetShortVideoResponse getShortVideo(com.zhijiejiaoyu.glory_api.short_video.GetShortVideoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetShortVideoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 删除短视频
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.DeleteShortVideoResponse deleteShortVideo(com.zhijiejiaoyu.glory_api.short_video.DeleteShortVideoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteShortVideoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 获取暂存视频详情
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.GetStageVideoResponse getStageVideo(com.zhijiejiaoyu.glory_api.short_video.GetStageVideoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetStageVideoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 删除暂存视频
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.DeleteStageVideoResponse deleteStageVideo(com.zhijiejiaoyu.glory_api.short_video.DeleteStageVideoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteStageVideoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoResponse managementListShortVideo(com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getManagementListShortVideoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.ManagementCensorShortVideoResponse managementCensorShortVideo(com.zhijiejiaoyu.glory_api.short_video.ManagementCensorShortVideoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getManagementCensorShortVideoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoResponse managementDeleteShortVideo(com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getManagementDeleteShortVideoMethod(), getCallOptions(), request);
     }
   }
 
@@ -9628,11 +11680,38 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     * page permission
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.user.GetUserPagePermissionResponse> getUserPagePermission(
         com.zhijiejiaoyu.glory_api.user.GetUserPagePermissionRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetUserPagePermissionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionResponse> createRolePagePermission(
+        com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateRolePagePermissionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionResponse> updateRolePagePermission(
+        com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateRolePagePermissionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionResponse> getRolePagePermission(
+        com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetRolePagePermissionMethod(), getCallOptions()), request);
     }
 
     /**
@@ -10916,6 +12995,165 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgResponse> getTenantOrg(
+        com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetTenantOrgMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     *college
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.CreateCollegeResponse> createCollege(
+        com.zhijiejiaoyu.glory_api.tenant.CreateCollegeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateCollegeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.GetCollegeResponse> getCollege(
+        com.zhijiejiaoyu.glory_api.tenant.GetCollegeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetCollegeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeResponse> updateCollege(
+        com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateCollegeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeResponse> deleteCollege(
+        com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteCollegeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.ListCollegeResponse> listCollege(
+        com.zhijiejiaoyu.glory_api.tenant.ListCollegeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListCollegeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * edu_dept
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptResponse> createEduDept(
+        com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateEduDeptMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptResponse> updateEduDept(
+        com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateEduDeptMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptResponse> deleteEduDept(
+        com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteEduDeptMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     *gover_dept
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptResponse> createGoverDept(
+        com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateGoverDeptMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptResponse> updateGoverDept(
+        com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateGoverDeptMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptResponse> deleteGoverDept(
+        com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteGoverDeptMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * edu_office
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeResponse> createEduOffice(
+        com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateEduOfficeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeResponse> updateEduOffice(
+        com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateEduOfficeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeResponse> deleteEduOffice(
+        com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteEduOfficeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     *principal_office
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeResponse> createPrincipalOffice(
+        com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreatePrincipalOfficeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeResponse> updatePrincipalOffice(
+        com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdatePrincipalOfficeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeResponse> deletePrincipalOffice(
+        com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeletePrincipalOfficeMethod(), getCallOptions()), request);
+    }
+
+    /**
      * <pre>
      *major
      * </pre>
@@ -11000,6 +13238,156 @@ public final class glory_apiGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListClassMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     *student
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.CreateStudentsResponse> createStudents(
+        com.zhijiejiaoyu.glory_api.tenant.CreateStudentsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateStudentsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsResponse> deleteStudents(
+        com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteStudentsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * short_video
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoResponse> createShortVideo(
+        com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateShortVideoMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.StageShortVideoResponse> stageShortVideo(
+        com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getStageShortVideoMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 我的短视频列表
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.ListMyShortVideoResponse> listMyShortVideo(
+        com.zhijiejiaoyu.glory_api.short_video.ListMyShortVideoRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListMyShortVideoMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 我的暂存视频列表
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.ListMyStageVideoResponse> listMyStageVideo(
+        com.zhijiejiaoyu.glory_api.short_video.ListMyStageVideoRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListMyStageVideoMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 我的喜欢视频列表
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.ListMyLikeVideoResponse> listMyLikeVideo(
+        com.zhijiejiaoyu.glory_api.short_video.ListMyLikeVideoRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListMyLikeVideoMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 我的收藏视频列表
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.ListMyFavoriteVideoResponse> listMyFavoriteVideo(
+        com.zhijiejiaoyu.glory_api.short_video.ListMyFavoriteVideoRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListMyFavoriteVideoMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 获取短视频详情
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.GetShortVideoResponse> getShortVideo(
+        com.zhijiejiaoyu.glory_api.short_video.GetShortVideoRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetShortVideoMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 删除短视频
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.DeleteShortVideoResponse> deleteShortVideo(
+        com.zhijiejiaoyu.glory_api.short_video.DeleteShortVideoRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteShortVideoMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 获取暂存视频详情
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.GetStageVideoResponse> getStageVideo(
+        com.zhijiejiaoyu.glory_api.short_video.GetStageVideoRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetStageVideoMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 删除暂存视频
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.DeleteStageVideoResponse> deleteStageVideo(
+        com.zhijiejiaoyu.glory_api.short_video.DeleteStageVideoRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteStageVideoMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoResponse> managementListShortVideo(
+        com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getManagementListShortVideoMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.ManagementCensorShortVideoResponse> managementCensorShortVideo(
+        com.zhijiejiaoyu.glory_api.short_video.ManagementCensorShortVideoRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getManagementCensorShortVideoMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoResponse> managementDeleteShortVideo(
+        com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getManagementDeleteShortVideoMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_EXAMPLE = 0;
@@ -11013,167 +13401,203 @@ public final class glory_apiGrpc {
   private static final int METHODID_LOGIN_WITH_PASSWORD = 8;
   private static final int METHODID_UPDATE_PASSWORD = 9;
   private static final int METHODID_GET_USER_PAGE_PERMISSION = 10;
-  private static final int METHODID_ADD_ADDRESS = 11;
-  private static final int METHODID_DELETE_ADDRESS = 12;
-  private static final int METHODID_UPDATE_ADDRESS = 13;
-  private static final int METHODID_GET_ADDRESS = 14;
-  private static final int METHODID_LIST_ADDRESS = 15;
-  private static final int METHODID_LIST_USER_BY_ROLE = 16;
-  private static final int METHODID_LIST_PERMISSION = 17;
-  private static final int METHODID_LIST_ROLE = 18;
-  private static final int METHODID_GIVE_ROLE_PERMISSION = 19;
-  private static final int METHODID_REMOVE_ROLE_PERMISSION = 20;
-  private static final int METHODID_CREATE_ROLE = 21;
-  private static final int METHODID_DELETE_ROLE = 22;
-  private static final int METHODID_LIST_RESOURCE = 23;
-  private static final int METHODID_CREATE_SHOP = 24;
-  private static final int METHODID_GET_SHOP = 25;
-  private static final int METHODID_UPDATE_SHOP = 26;
-  private static final int METHODID_LIST_SHOP = 27;
-  private static final int METHODID_DELETE_SHOP = 28;
-  private static final int METHODID_LIST_OPERATION_METRICS = 29;
-  private static final int METHODID_GET_SHOP_QRCODE = 30;
-  private static final int METHODID_UPDATE_SHOP_MANAGER = 31;
-  private static final int METHODID_GET_SHOP_BUSINESS_DATA = 32;
-  private static final int METHODID_ADD_SHOP_ACCESS = 33;
-  private static final int METHODID_REMOVE_SHOP_ACCESS = 34;
-  private static final int METHODID_VERIFY_FIELD = 35;
-  private static final int METHODID_LIST_SHOP_ACCESS = 36;
-  private static final int METHODID_ADD_SHOP_CATEGORY = 37;
-  private static final int METHODID_GET_SHOP_CATEGORY = 38;
-  private static final int METHODID_REMOVE_SHOP_CATEGORY = 39;
-  private static final int METHODID_ADD_FREIGHT_TEMPLATE = 40;
-  private static final int METHODID_GET_FREIGHT_TEMPLATE = 41;
-  private static final int METHODID_UPDATE_FREIGHT_TEMPLATE = 42;
-  private static final int METHODID_DELETE_FREIGHT_TEMPLATE = 43;
-  private static final int METHODID_LIST_FREIGHT_TEMPLATE = 44;
-  private static final int METHODID_LIST_QUALIFICATION = 45;
-  private static final int METHODID_GET_MALL_INDEX = 46;
-  private static final int METHODID_CREATE_CATEGORY = 47;
-  private static final int METHODID_GET_CATEGORY = 48;
-  private static final int METHODID_UPDATE_CATEGORY = 49;
-  private static final int METHODID_LIST_CATEGORY = 50;
-  private static final int METHODID_DELETE_CATEGORY = 51;
-  private static final int METHODID_LIST_CATEGORY_QUALIFICATION = 52;
-  private static final int METHODID_CREATE_PRODUCT = 53;
-  private static final int METHODID_GET_PRODUCT = 54;
-  private static final int METHODID_UPDATE_PRODUCT = 55;
-  private static final int METHODID_LIST_PRODUCT = 56;
-  private static final int METHODID_DELETE_PRODUCT = 57;
-  private static final int METHODID_UPLOAD_MULTI_IMAGE = 58;
-  private static final int METHODID_DELETE_IMAGE_BY_ID = 59;
-  private static final int METHODID_BIND_ATTRIBUTE = 60;
-  private static final int METHODID_PUBLISH_PRODUCT = 61;
-  private static final int METHODID_OFF_SHELF_PRODUCT_IN_BATCHES = 62;
-  private static final int METHODID_DELETE_PRODUCT_IN_BATCHES = 63;
-  private static final int METHODID_CHANGE_PRODUCTS_STATE = 64;
-  private static final int METHODID_CREATE_SKU = 65;
-  private static final int METHODID_GET_SKU = 66;
-  private static final int METHODID_UPDATE_SKU = 67;
-  private static final int METHODID_LIST_SKU = 68;
-  private static final int METHODID_DELETE_SKU = 69;
-  private static final int METHODID_CREATE_ATTRIBUTE = 70;
-  private static final int METHODID_GET_ATTRIBUTE = 71;
-  private static final int METHODID_LIST_ATTRIBUTE = 72;
-  private static final int METHODID_DELETE_ATTRIBUTE = 73;
-  private static final int METHODID_ADD_ATTRIBUTE_VALUE = 74;
-  private static final int METHODID_DELETE_ATTRIBUTE_VALUE = 75;
-  private static final int METHODID_CREATE_ORDER = 76;
-  private static final int METHODID_GET_ORDER = 77;
-  private static final int METHODID_UPDATE_ORDER = 78;
-  private static final int METHODID_LIST_ORDER = 79;
-  private static final int METHODID_DELETE_ORDER = 80;
-  private static final int METHODID_SHIP_GOODS = 81;
-  private static final int METHODID_CONFIRM_RECEIPT_GOODS = 82;
-  private static final int METHODID_CANCEL_ORDER = 83;
-  private static final int METHODID_SHIP_GOODS_IN_BATCHES = 84;
-  private static final int METHODID_FREE_SHIPPING_IN_BATCHES = 85;
-  private static final int METHODID_CREATE_CART = 86;
-  private static final int METHODID_GET_CART = 87;
-  private static final int METHODID_UPDATE_CART = 88;
-  private static final int METHODID_DELETE_CART = 89;
-  private static final int METHODID_UPLOAD_ATTACHMENT = 90;
-  private static final int METHODID_LIST_ATTACHMENT = 91;
-  private static final int METHODID_DELETE_ATTACHMENT = 92;
-  private static final int METHODID_CREATE_SELLER = 93;
-  private static final int METHODID_CREATE_PAYMENT = 94;
-  private static final int METHODID_GET_PAYMENT = 95;
-  private static final int METHODID_UPDATE_PAYMENT = 96;
-  private static final int METHODID_DELETE_PAYMENT = 97;
-  private static final int METHODID_CREATE_CONFIG = 98;
-  private static final int METHODID_UPDATE_CONFIG = 99;
-  private static final int METHODID_DELETE_CONFIG = 100;
-  private static final int METHODID_GET_CONFIG = 101;
-  private static final int METHODID_WX_PREPAY = 102;
-  private static final int METHODID_CLOSE_ORDER = 103;
-  private static final int METHODID_QUERY_ORDER_BY_ID = 104;
-  private static final int METHODID_QUERY_ORDER_BY_OUT_TRADE = 105;
-  private static final int METHODID_ADD_VCURRENCY = 106;
-  private static final int METHODID_RECHARGE_CURRENCY = 107;
-  private static final int METHODID_RECHARGE_CURRENCY_IN_BATCHES = 108;
-  private static final int METHODID_DELETE_VCURRENCY = 109;
-  private static final int METHODID_UPDATE_VCURRENCY = 110;
-  private static final int METHODID_GET_VCURRENCY = 111;
-  private static final int METHODID_LIST_VCURRENCY = 112;
-  private static final int METHODID_ADD_ACCOUNT_OPERATION = 113;
-  private static final int METHODID_GET_ACCOUNT_OPERATION = 114;
-  private static final int METHODID_LIST_ACCOUNT_OPERATION = 115;
-  private static final int METHODID_CREATE_ROOM = 116;
-  private static final int METHODID_GET_ROOM = 117;
-  private static final int METHODID_UPDATE_ROOM = 118;
-  private static final int METHODID_LIST_ROOM = 119;
-  private static final int METHODID_DELETE_ROOM = 120;
-  private static final int METHODID_LIST_FINISHED_ROOM = 121;
-  private static final int METHODID_RECORD = 122;
-  private static final int METHODID_CREATE_LIVE_USER_TOKEN = 123;
-  private static final int METHODID_USER_ENTER_ROOM = 124;
-  private static final int METHODID_USER_EXIT_ROOM = 125;
-  private static final int METHODID_LIST_ACTIVE_ROOM_USER = 126;
-  private static final int METHODID_CREATE_LIVE_PLAN = 127;
-  private static final int METHODID_GET_LIVE_PLAN = 128;
-  private static final int METHODID_UPDATE_LIVE_PLAN = 129;
-  private static final int METHODID_LIST_LIVE_PLAN = 130;
-  private static final int METHODID_DELETE_LIVE_PLAN = 131;
-  private static final int METHODID_CREATE_LIVE_PLAN_PRODUCT = 132;
-  private static final int METHODID_UPDATE_LIVE_PLAN_PRODUCT = 133;
-  private static final int METHODID_LIST_LIVE_PLAN_PRODUCT = 134;
-  private static final int METHODID_DELETE_LIVE_PLAN_PRODUCT = 135;
-  private static final int METHODID_LOAD_LIVE_PLAN_PRODUCT = 136;
-  private static final int METHODID_UPDATE_LIVE_PRODUCT_STATUS = 137;
-  private static final int METHODID_LIST_LIVE_PRODUCT_STATUS = 138;
-  private static final int METHODID_DELETE_LIVE_PRODUCT_STATUS = 139;
-  private static final int METHODID_CREATE_LIVE_PRODUCT_STATUS = 140;
-  private static final int METHODID_GET_LIVING_PRODUCT_STATUS = 141;
-  private static final int METHODID_UPDATE_LIVE_PRODUCT_INTRODUCT_STATUS = 142;
-  private static final int METHODID_CREATE_LIVE_TEXT = 143;
-  private static final int METHODID_UPDATE_LIVE_TEXT = 144;
-  private static final int METHODID_LIST_LIVE_TEXT = 145;
-  private static final int METHODID_GET_LIVE_TEXT = 146;
-  private static final int METHODID_DELETE_LIVE_TEXTS = 147;
-  private static final int METHODID_GET_LIVE_CHART_DATA = 148;
-  private static final int METHODID_GET_EVALUATE_SELECTOR = 149;
-  private static final int METHODID_LIST_PERSONAL_EVALUATE = 150;
-  private static final int METHODID_GET_EVALUATE_DETAIL = 151;
-  private static final int METHODID_SUBMIT_EVALUATE = 152;
-  private static final int METHODID_LIST_UNEVALUATED_ROOM = 153;
-  private static final int METHODID_LIST_STUDENT_EVALUATIONS = 154;
-  private static final int METHODID_IGNORE_EVALUATION = 155;
-  private static final int METHODID_GET_RANK = 156;
-  private static final int METHODID_CREATE_TENANT = 157;
-  private static final int METHODID_GET_TENANT = 158;
-  private static final int METHODID_UPDATE_TENANT = 159;
-  private static final int METHODID_DELETE_TENANT = 160;
-  private static final int METHODID_LIST_TENANT = 161;
-  private static final int METHODID_CREATE_MAJOR = 162;
-  private static final int METHODID_GET_MAJOR = 163;
-  private static final int METHODID_UPDATE_MAJOR = 164;
-  private static final int METHODID_DELETE_MAJOR = 165;
-  private static final int METHODID_LIST_MAJOR = 166;
-  private static final int METHODID_CREATE_CLASS = 167;
-  private static final int METHODID_GET_CLASS = 168;
-  private static final int METHODID_UPDATE_CLASS = 169;
-  private static final int METHODID_DELETE_CLASS = 170;
-  private static final int METHODID_LIST_CLASS = 171;
+  private static final int METHODID_CREATE_ROLE_PAGE_PERMISSION = 11;
+  private static final int METHODID_UPDATE_ROLE_PAGE_PERMISSION = 12;
+  private static final int METHODID_GET_ROLE_PAGE_PERMISSION = 13;
+  private static final int METHODID_ADD_ADDRESS = 14;
+  private static final int METHODID_DELETE_ADDRESS = 15;
+  private static final int METHODID_UPDATE_ADDRESS = 16;
+  private static final int METHODID_GET_ADDRESS = 17;
+  private static final int METHODID_LIST_ADDRESS = 18;
+  private static final int METHODID_LIST_USER_BY_ROLE = 19;
+  private static final int METHODID_LIST_PERMISSION = 20;
+  private static final int METHODID_LIST_ROLE = 21;
+  private static final int METHODID_GIVE_ROLE_PERMISSION = 22;
+  private static final int METHODID_REMOVE_ROLE_PERMISSION = 23;
+  private static final int METHODID_CREATE_ROLE = 24;
+  private static final int METHODID_DELETE_ROLE = 25;
+  private static final int METHODID_LIST_RESOURCE = 26;
+  private static final int METHODID_CREATE_SHOP = 27;
+  private static final int METHODID_GET_SHOP = 28;
+  private static final int METHODID_UPDATE_SHOP = 29;
+  private static final int METHODID_LIST_SHOP = 30;
+  private static final int METHODID_DELETE_SHOP = 31;
+  private static final int METHODID_LIST_OPERATION_METRICS = 32;
+  private static final int METHODID_GET_SHOP_QRCODE = 33;
+  private static final int METHODID_UPDATE_SHOP_MANAGER = 34;
+  private static final int METHODID_GET_SHOP_BUSINESS_DATA = 35;
+  private static final int METHODID_ADD_SHOP_ACCESS = 36;
+  private static final int METHODID_REMOVE_SHOP_ACCESS = 37;
+  private static final int METHODID_VERIFY_FIELD = 38;
+  private static final int METHODID_LIST_SHOP_ACCESS = 39;
+  private static final int METHODID_ADD_SHOP_CATEGORY = 40;
+  private static final int METHODID_GET_SHOP_CATEGORY = 41;
+  private static final int METHODID_REMOVE_SHOP_CATEGORY = 42;
+  private static final int METHODID_ADD_FREIGHT_TEMPLATE = 43;
+  private static final int METHODID_GET_FREIGHT_TEMPLATE = 44;
+  private static final int METHODID_UPDATE_FREIGHT_TEMPLATE = 45;
+  private static final int METHODID_DELETE_FREIGHT_TEMPLATE = 46;
+  private static final int METHODID_LIST_FREIGHT_TEMPLATE = 47;
+  private static final int METHODID_LIST_QUALIFICATION = 48;
+  private static final int METHODID_GET_MALL_INDEX = 49;
+  private static final int METHODID_CREATE_CATEGORY = 50;
+  private static final int METHODID_GET_CATEGORY = 51;
+  private static final int METHODID_UPDATE_CATEGORY = 52;
+  private static final int METHODID_LIST_CATEGORY = 53;
+  private static final int METHODID_DELETE_CATEGORY = 54;
+  private static final int METHODID_LIST_CATEGORY_QUALIFICATION = 55;
+  private static final int METHODID_CREATE_PRODUCT = 56;
+  private static final int METHODID_GET_PRODUCT = 57;
+  private static final int METHODID_UPDATE_PRODUCT = 58;
+  private static final int METHODID_LIST_PRODUCT = 59;
+  private static final int METHODID_DELETE_PRODUCT = 60;
+  private static final int METHODID_UPLOAD_MULTI_IMAGE = 61;
+  private static final int METHODID_DELETE_IMAGE_BY_ID = 62;
+  private static final int METHODID_BIND_ATTRIBUTE = 63;
+  private static final int METHODID_PUBLISH_PRODUCT = 64;
+  private static final int METHODID_OFF_SHELF_PRODUCT_IN_BATCHES = 65;
+  private static final int METHODID_DELETE_PRODUCT_IN_BATCHES = 66;
+  private static final int METHODID_CHANGE_PRODUCTS_STATE = 67;
+  private static final int METHODID_CREATE_SKU = 68;
+  private static final int METHODID_GET_SKU = 69;
+  private static final int METHODID_UPDATE_SKU = 70;
+  private static final int METHODID_LIST_SKU = 71;
+  private static final int METHODID_DELETE_SKU = 72;
+  private static final int METHODID_CREATE_ATTRIBUTE = 73;
+  private static final int METHODID_GET_ATTRIBUTE = 74;
+  private static final int METHODID_LIST_ATTRIBUTE = 75;
+  private static final int METHODID_DELETE_ATTRIBUTE = 76;
+  private static final int METHODID_ADD_ATTRIBUTE_VALUE = 77;
+  private static final int METHODID_DELETE_ATTRIBUTE_VALUE = 78;
+  private static final int METHODID_CREATE_ORDER = 79;
+  private static final int METHODID_GET_ORDER = 80;
+  private static final int METHODID_UPDATE_ORDER = 81;
+  private static final int METHODID_LIST_ORDER = 82;
+  private static final int METHODID_DELETE_ORDER = 83;
+  private static final int METHODID_SHIP_GOODS = 84;
+  private static final int METHODID_CONFIRM_RECEIPT_GOODS = 85;
+  private static final int METHODID_CANCEL_ORDER = 86;
+  private static final int METHODID_SHIP_GOODS_IN_BATCHES = 87;
+  private static final int METHODID_FREE_SHIPPING_IN_BATCHES = 88;
+  private static final int METHODID_CREATE_CART = 89;
+  private static final int METHODID_GET_CART = 90;
+  private static final int METHODID_UPDATE_CART = 91;
+  private static final int METHODID_DELETE_CART = 92;
+  private static final int METHODID_UPLOAD_ATTACHMENT = 93;
+  private static final int METHODID_LIST_ATTACHMENT = 94;
+  private static final int METHODID_DELETE_ATTACHMENT = 95;
+  private static final int METHODID_CREATE_SELLER = 96;
+  private static final int METHODID_CREATE_PAYMENT = 97;
+  private static final int METHODID_GET_PAYMENT = 98;
+  private static final int METHODID_UPDATE_PAYMENT = 99;
+  private static final int METHODID_DELETE_PAYMENT = 100;
+  private static final int METHODID_CREATE_CONFIG = 101;
+  private static final int METHODID_UPDATE_CONFIG = 102;
+  private static final int METHODID_DELETE_CONFIG = 103;
+  private static final int METHODID_GET_CONFIG = 104;
+  private static final int METHODID_WX_PREPAY = 105;
+  private static final int METHODID_CLOSE_ORDER = 106;
+  private static final int METHODID_QUERY_ORDER_BY_ID = 107;
+  private static final int METHODID_QUERY_ORDER_BY_OUT_TRADE = 108;
+  private static final int METHODID_ADD_VCURRENCY = 109;
+  private static final int METHODID_RECHARGE_CURRENCY = 110;
+  private static final int METHODID_RECHARGE_CURRENCY_IN_BATCHES = 111;
+  private static final int METHODID_DELETE_VCURRENCY = 112;
+  private static final int METHODID_UPDATE_VCURRENCY = 113;
+  private static final int METHODID_GET_VCURRENCY = 114;
+  private static final int METHODID_LIST_VCURRENCY = 115;
+  private static final int METHODID_ADD_ACCOUNT_OPERATION = 116;
+  private static final int METHODID_GET_ACCOUNT_OPERATION = 117;
+  private static final int METHODID_LIST_ACCOUNT_OPERATION = 118;
+  private static final int METHODID_CREATE_ROOM = 119;
+  private static final int METHODID_GET_ROOM = 120;
+  private static final int METHODID_UPDATE_ROOM = 121;
+  private static final int METHODID_LIST_ROOM = 122;
+  private static final int METHODID_DELETE_ROOM = 123;
+  private static final int METHODID_LIST_FINISHED_ROOM = 124;
+  private static final int METHODID_RECORD = 125;
+  private static final int METHODID_CREATE_LIVE_USER_TOKEN = 126;
+  private static final int METHODID_USER_ENTER_ROOM = 127;
+  private static final int METHODID_USER_EXIT_ROOM = 128;
+  private static final int METHODID_LIST_ACTIVE_ROOM_USER = 129;
+  private static final int METHODID_CREATE_LIVE_PLAN = 130;
+  private static final int METHODID_GET_LIVE_PLAN = 131;
+  private static final int METHODID_UPDATE_LIVE_PLAN = 132;
+  private static final int METHODID_LIST_LIVE_PLAN = 133;
+  private static final int METHODID_DELETE_LIVE_PLAN = 134;
+  private static final int METHODID_CREATE_LIVE_PLAN_PRODUCT = 135;
+  private static final int METHODID_UPDATE_LIVE_PLAN_PRODUCT = 136;
+  private static final int METHODID_LIST_LIVE_PLAN_PRODUCT = 137;
+  private static final int METHODID_DELETE_LIVE_PLAN_PRODUCT = 138;
+  private static final int METHODID_LOAD_LIVE_PLAN_PRODUCT = 139;
+  private static final int METHODID_UPDATE_LIVE_PRODUCT_STATUS = 140;
+  private static final int METHODID_LIST_LIVE_PRODUCT_STATUS = 141;
+  private static final int METHODID_DELETE_LIVE_PRODUCT_STATUS = 142;
+  private static final int METHODID_CREATE_LIVE_PRODUCT_STATUS = 143;
+  private static final int METHODID_GET_LIVING_PRODUCT_STATUS = 144;
+  private static final int METHODID_UPDATE_LIVE_PRODUCT_INTRODUCT_STATUS = 145;
+  private static final int METHODID_CREATE_LIVE_TEXT = 146;
+  private static final int METHODID_UPDATE_LIVE_TEXT = 147;
+  private static final int METHODID_LIST_LIVE_TEXT = 148;
+  private static final int METHODID_GET_LIVE_TEXT = 149;
+  private static final int METHODID_DELETE_LIVE_TEXTS = 150;
+  private static final int METHODID_GET_LIVE_CHART_DATA = 151;
+  private static final int METHODID_GET_EVALUATE_SELECTOR = 152;
+  private static final int METHODID_LIST_PERSONAL_EVALUATE = 153;
+  private static final int METHODID_GET_EVALUATE_DETAIL = 154;
+  private static final int METHODID_SUBMIT_EVALUATE = 155;
+  private static final int METHODID_LIST_UNEVALUATED_ROOM = 156;
+  private static final int METHODID_LIST_STUDENT_EVALUATIONS = 157;
+  private static final int METHODID_IGNORE_EVALUATION = 158;
+  private static final int METHODID_GET_RANK = 159;
+  private static final int METHODID_CREATE_TENANT = 160;
+  private static final int METHODID_GET_TENANT = 161;
+  private static final int METHODID_UPDATE_TENANT = 162;
+  private static final int METHODID_DELETE_TENANT = 163;
+  private static final int METHODID_LIST_TENANT = 164;
+  private static final int METHODID_GET_TENANT_ORG = 165;
+  private static final int METHODID_CREATE_COLLEGE = 166;
+  private static final int METHODID_GET_COLLEGE = 167;
+  private static final int METHODID_UPDATE_COLLEGE = 168;
+  private static final int METHODID_DELETE_COLLEGE = 169;
+  private static final int METHODID_LIST_COLLEGE = 170;
+  private static final int METHODID_CREATE_EDU_DEPT = 171;
+  private static final int METHODID_UPDATE_EDU_DEPT = 172;
+  private static final int METHODID_DELETE_EDU_DEPT = 173;
+  private static final int METHODID_CREATE_GOVER_DEPT = 174;
+  private static final int METHODID_UPDATE_GOVER_DEPT = 175;
+  private static final int METHODID_DELETE_GOVER_DEPT = 176;
+  private static final int METHODID_CREATE_EDU_OFFICE = 177;
+  private static final int METHODID_UPDATE_EDU_OFFICE = 178;
+  private static final int METHODID_DELETE_EDU_OFFICE = 179;
+  private static final int METHODID_CREATE_PRINCIPAL_OFFICE = 180;
+  private static final int METHODID_UPDATE_PRINCIPAL_OFFICE = 181;
+  private static final int METHODID_DELETE_PRINCIPAL_OFFICE = 182;
+  private static final int METHODID_CREATE_MAJOR = 183;
+  private static final int METHODID_GET_MAJOR = 184;
+  private static final int METHODID_UPDATE_MAJOR = 185;
+  private static final int METHODID_DELETE_MAJOR = 186;
+  private static final int METHODID_LIST_MAJOR = 187;
+  private static final int METHODID_CREATE_CLASS = 188;
+  private static final int METHODID_GET_CLASS = 189;
+  private static final int METHODID_UPDATE_CLASS = 190;
+  private static final int METHODID_DELETE_CLASS = 191;
+  private static final int METHODID_LIST_CLASS = 192;
+  private static final int METHODID_CREATE_STUDENTS = 193;
+  private static final int METHODID_DELETE_STUDENTS = 194;
+  private static final int METHODID_CREATE_SHORT_VIDEO = 195;
+  private static final int METHODID_STAGE_SHORT_VIDEO = 196;
+  private static final int METHODID_LIST_MY_SHORT_VIDEO = 197;
+  private static final int METHODID_LIST_MY_STAGE_VIDEO = 198;
+  private static final int METHODID_LIST_MY_LIKE_VIDEO = 199;
+  private static final int METHODID_LIST_MY_FAVORITE_VIDEO = 200;
+  private static final int METHODID_GET_SHORT_VIDEO = 201;
+  private static final int METHODID_DELETE_SHORT_VIDEO = 202;
+  private static final int METHODID_GET_STAGE_VIDEO = 203;
+  private static final int METHODID_DELETE_STAGE_VIDEO = 204;
+  private static final int METHODID_MANAGEMENT_LIST_SHORT_VIDEO = 205;
+  private static final int METHODID_MANAGEMENT_CENSOR_SHORT_VIDEO = 206;
+  private static final int METHODID_MANAGEMENT_DELETE_SHORT_VIDEO = 207;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -11235,6 +13659,18 @@ public final class glory_apiGrpc {
         case METHODID_GET_USER_PAGE_PERMISSION:
           serviceImpl.getUserPagePermission((com.zhijiejiaoyu.glory_api.user.GetUserPagePermissionRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.GetUserPagePermissionResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_ROLE_PAGE_PERMISSION:
+          serviceImpl.createRolePagePermission((com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_ROLE_PAGE_PERMISSION:
+          serviceImpl.updateRolePagePermission((com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionResponse>) responseObserver);
+          break;
+        case METHODID_GET_ROLE_PAGE_PERMISSION:
+          serviceImpl.getRolePagePermission((com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionResponse>) responseObserver);
           break;
         case METHODID_ADD_ADDRESS:
           serviceImpl.addAddress((com.zhijiejiaoyu.glory_api.user.AddAddressRequest) request,
@@ -11840,6 +14276,78 @@ public final class glory_apiGrpc {
           serviceImpl.listTenant((com.zhijiejiaoyu.glory_api.tenant.ListTenantRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.ListTenantResponse>) responseObserver);
           break;
+        case METHODID_GET_TENANT_ORG:
+          serviceImpl.getTenantOrg((com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_COLLEGE:
+          serviceImpl.createCollege((com.zhijiejiaoyu.glory_api.tenant.CreateCollegeRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.CreateCollegeResponse>) responseObserver);
+          break;
+        case METHODID_GET_COLLEGE:
+          serviceImpl.getCollege((com.zhijiejiaoyu.glory_api.tenant.GetCollegeRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.GetCollegeResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_COLLEGE:
+          serviceImpl.updateCollege((com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_COLLEGE:
+          serviceImpl.deleteCollege((com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeResponse>) responseObserver);
+          break;
+        case METHODID_LIST_COLLEGE:
+          serviceImpl.listCollege((com.zhijiejiaoyu.glory_api.tenant.ListCollegeRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.ListCollegeResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_EDU_DEPT:
+          serviceImpl.createEduDept((com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_EDU_DEPT:
+          serviceImpl.updateEduDept((com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_EDU_DEPT:
+          serviceImpl.deleteEduDept((com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_GOVER_DEPT:
+          serviceImpl.createGoverDept((com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_GOVER_DEPT:
+          serviceImpl.updateGoverDept((com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_GOVER_DEPT:
+          serviceImpl.deleteGoverDept((com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_EDU_OFFICE:
+          serviceImpl.createEduOffice((com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_EDU_OFFICE:
+          serviceImpl.updateEduOffice((com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_EDU_OFFICE:
+          serviceImpl.deleteEduOffice((com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_PRINCIPAL_OFFICE:
+          serviceImpl.createPrincipalOffice((com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_PRINCIPAL_OFFICE:
+          serviceImpl.updatePrincipalOffice((com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_PRINCIPAL_OFFICE:
+          serviceImpl.deletePrincipalOffice((com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeResponse>) responseObserver);
+          break;
         case METHODID_CREATE_MAJOR:
           serviceImpl.createMajor((com.zhijiejiaoyu.glory_api.tenant.CreateMajorRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.CreateMajorResponse>) responseObserver);
@@ -11879,6 +14387,66 @@ public final class glory_apiGrpc {
         case METHODID_LIST_CLASS:
           serviceImpl.listClass((com.zhijiejiaoyu.glory_api.tenant.ListClassRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.ListClassResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_STUDENTS:
+          serviceImpl.createStudents((com.zhijiejiaoyu.glory_api.tenant.CreateStudentsRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.CreateStudentsResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_STUDENTS:
+          serviceImpl.deleteStudents((com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_SHORT_VIDEO:
+          serviceImpl.createShortVideo((com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoResponse>) responseObserver);
+          break;
+        case METHODID_STAGE_SHORT_VIDEO:
+          serviceImpl.stageShortVideo((com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.StageShortVideoResponse>) responseObserver);
+          break;
+        case METHODID_LIST_MY_SHORT_VIDEO:
+          serviceImpl.listMyShortVideo((com.zhijiejiaoyu.glory_api.short_video.ListMyShortVideoRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListMyShortVideoResponse>) responseObserver);
+          break;
+        case METHODID_LIST_MY_STAGE_VIDEO:
+          serviceImpl.listMyStageVideo((com.zhijiejiaoyu.glory_api.short_video.ListMyStageVideoRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListMyStageVideoResponse>) responseObserver);
+          break;
+        case METHODID_LIST_MY_LIKE_VIDEO:
+          serviceImpl.listMyLikeVideo((com.zhijiejiaoyu.glory_api.short_video.ListMyLikeVideoRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListMyLikeVideoResponse>) responseObserver);
+          break;
+        case METHODID_LIST_MY_FAVORITE_VIDEO:
+          serviceImpl.listMyFavoriteVideo((com.zhijiejiaoyu.glory_api.short_video.ListMyFavoriteVideoRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListMyFavoriteVideoResponse>) responseObserver);
+          break;
+        case METHODID_GET_SHORT_VIDEO:
+          serviceImpl.getShortVideo((com.zhijiejiaoyu.glory_api.short_video.GetShortVideoRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.GetShortVideoResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_SHORT_VIDEO:
+          serviceImpl.deleteShortVideo((com.zhijiejiaoyu.glory_api.short_video.DeleteShortVideoRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.DeleteShortVideoResponse>) responseObserver);
+          break;
+        case METHODID_GET_STAGE_VIDEO:
+          serviceImpl.getStageVideo((com.zhijiejiaoyu.glory_api.short_video.GetStageVideoRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.GetStageVideoResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_STAGE_VIDEO:
+          serviceImpl.deleteStageVideo((com.zhijiejiaoyu.glory_api.short_video.DeleteStageVideoRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.DeleteStageVideoResponse>) responseObserver);
+          break;
+        case METHODID_MANAGEMENT_LIST_SHORT_VIDEO:
+          serviceImpl.managementListShortVideo((com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoResponse>) responseObserver);
+          break;
+        case METHODID_MANAGEMENT_CENSOR_SHORT_VIDEO:
+          serviceImpl.managementCensorShortVideo((com.zhijiejiaoyu.glory_api.short_video.ManagementCensorShortVideoRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ManagementCensorShortVideoResponse>) responseObserver);
+          break;
+        case METHODID_MANAGEMENT_DELETE_SHORT_VIDEO:
+          serviceImpl.managementDeleteShortVideo((com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -11975,6 +14543,27 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.user.GetUserPagePermissionRequest,
               com.zhijiejiaoyu.glory_api.user.GetUserPagePermissionResponse>(
                 service, METHODID_GET_USER_PAGE_PERMISSION)))
+        .addMethod(
+          getCreateRolePagePermissionMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionRequest,
+              com.zhijiejiaoyu.glory_api.user.CreateRolePagePermissionResponse>(
+                service, METHODID_CREATE_ROLE_PAGE_PERMISSION)))
+        .addMethod(
+          getUpdateRolePagePermissionMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionRequest,
+              com.zhijiejiaoyu.glory_api.user.UpdateRolePagePermissionResponse>(
+                service, METHODID_UPDATE_ROLE_PAGE_PERMISSION)))
+        .addMethod(
+          getGetRolePagePermissionMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionRequest,
+              com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionResponse>(
+                service, METHODID_GET_ROLE_PAGE_PERMISSION)))
         .addMethod(
           getAddAddressMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -13033,6 +15622,132 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.tenant.ListTenantResponse>(
                 service, METHODID_LIST_TENANT)))
         .addMethod(
+          getGetTenantOrgMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgRequest,
+              com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgResponse>(
+                service, METHODID_GET_TENANT_ORG)))
+        .addMethod(
+          getCreateCollegeMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.CreateCollegeRequest,
+              com.zhijiejiaoyu.glory_api.tenant.CreateCollegeResponse>(
+                service, METHODID_CREATE_COLLEGE)))
+        .addMethod(
+          getGetCollegeMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.GetCollegeRequest,
+              com.zhijiejiaoyu.glory_api.tenant.GetCollegeResponse>(
+                service, METHODID_GET_COLLEGE)))
+        .addMethod(
+          getUpdateCollegeMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeRequest,
+              com.zhijiejiaoyu.glory_api.tenant.UpdateCollegeResponse>(
+                service, METHODID_UPDATE_COLLEGE)))
+        .addMethod(
+          getDeleteCollegeMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeRequest,
+              com.zhijiejiaoyu.glory_api.tenant.DeleteCollegeResponse>(
+                service, METHODID_DELETE_COLLEGE)))
+        .addMethod(
+          getListCollegeMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.ListCollegeRequest,
+              com.zhijiejiaoyu.glory_api.tenant.ListCollegeResponse>(
+                service, METHODID_LIST_COLLEGE)))
+        .addMethod(
+          getCreateEduDeptMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptRequest,
+              com.zhijiejiaoyu.glory_api.tenant.CreateEduDeptResponse>(
+                service, METHODID_CREATE_EDU_DEPT)))
+        .addMethod(
+          getUpdateEduDeptMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptRequest,
+              com.zhijiejiaoyu.glory_api.tenant.UpdateEduDeptResponse>(
+                service, METHODID_UPDATE_EDU_DEPT)))
+        .addMethod(
+          getDeleteEduDeptMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptRequest,
+              com.zhijiejiaoyu.glory_api.tenant.DeleteEduDeptResponse>(
+                service, METHODID_DELETE_EDU_DEPT)))
+        .addMethod(
+          getCreateGoverDeptMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptRequest,
+              com.zhijiejiaoyu.glory_api.tenant.CreateGoverDeptResponse>(
+                service, METHODID_CREATE_GOVER_DEPT)))
+        .addMethod(
+          getUpdateGoverDeptMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptRequest,
+              com.zhijiejiaoyu.glory_api.tenant.UpdateGoverDeptResponse>(
+                service, METHODID_UPDATE_GOVER_DEPT)))
+        .addMethod(
+          getDeleteGoverDeptMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptRequest,
+              com.zhijiejiaoyu.glory_api.tenant.DeleteGoverDeptResponse>(
+                service, METHODID_DELETE_GOVER_DEPT)))
+        .addMethod(
+          getCreateEduOfficeMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeRequest,
+              com.zhijiejiaoyu.glory_api.tenant.CreateEduOfficeResponse>(
+                service, METHODID_CREATE_EDU_OFFICE)))
+        .addMethod(
+          getUpdateEduOfficeMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeRequest,
+              com.zhijiejiaoyu.glory_api.tenant.UpdateEduOfficeResponse>(
+                service, METHODID_UPDATE_EDU_OFFICE)))
+        .addMethod(
+          getDeleteEduOfficeMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeRequest,
+              com.zhijiejiaoyu.glory_api.tenant.DeleteEduOfficeResponse>(
+                service, METHODID_DELETE_EDU_OFFICE)))
+        .addMethod(
+          getCreatePrincipalOfficeMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeRequest,
+              com.zhijiejiaoyu.glory_api.tenant.CreatePrincipalOfficeResponse>(
+                service, METHODID_CREATE_PRINCIPAL_OFFICE)))
+        .addMethod(
+          getUpdatePrincipalOfficeMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeRequest,
+              com.zhijiejiaoyu.glory_api.tenant.UpdatePrincipalOfficeResponse>(
+                service, METHODID_UPDATE_PRINCIPAL_OFFICE)))
+        .addMethod(
+          getDeletePrincipalOfficeMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeRequest,
+              com.zhijiejiaoyu.glory_api.tenant.DeletePrincipalOfficeResponse>(
+                service, METHODID_DELETE_PRINCIPAL_OFFICE)))
+        .addMethod(
           getCreateMajorMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -13102,6 +15817,111 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.tenant.ListClassRequest,
               com.zhijiejiaoyu.glory_api.tenant.ListClassResponse>(
                 service, METHODID_LIST_CLASS)))
+        .addMethod(
+          getCreateStudentsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.CreateStudentsRequest,
+              com.zhijiejiaoyu.glory_api.tenant.CreateStudentsResponse>(
+                service, METHODID_CREATE_STUDENTS)))
+        .addMethod(
+          getDeleteStudentsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsRequest,
+              com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsResponse>(
+                service, METHODID_DELETE_STUDENTS)))
+        .addMethod(
+          getCreateShortVideoMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoRequest,
+              com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoResponse>(
+                service, METHODID_CREATE_SHORT_VIDEO)))
+        .addMethod(
+          getStageShortVideoMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest,
+              com.zhijiejiaoyu.glory_api.short_video.StageShortVideoResponse>(
+                service, METHODID_STAGE_SHORT_VIDEO)))
+        .addMethod(
+          getListMyShortVideoMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.ListMyShortVideoRequest,
+              com.zhijiejiaoyu.glory_api.short_video.ListMyShortVideoResponse>(
+                service, METHODID_LIST_MY_SHORT_VIDEO)))
+        .addMethod(
+          getListMyStageVideoMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.ListMyStageVideoRequest,
+              com.zhijiejiaoyu.glory_api.short_video.ListMyStageVideoResponse>(
+                service, METHODID_LIST_MY_STAGE_VIDEO)))
+        .addMethod(
+          getListMyLikeVideoMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.ListMyLikeVideoRequest,
+              com.zhijiejiaoyu.glory_api.short_video.ListMyLikeVideoResponse>(
+                service, METHODID_LIST_MY_LIKE_VIDEO)))
+        .addMethod(
+          getListMyFavoriteVideoMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.ListMyFavoriteVideoRequest,
+              com.zhijiejiaoyu.glory_api.short_video.ListMyFavoriteVideoResponse>(
+                service, METHODID_LIST_MY_FAVORITE_VIDEO)))
+        .addMethod(
+          getGetShortVideoMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.GetShortVideoRequest,
+              com.zhijiejiaoyu.glory_api.short_video.GetShortVideoResponse>(
+                service, METHODID_GET_SHORT_VIDEO)))
+        .addMethod(
+          getDeleteShortVideoMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.DeleteShortVideoRequest,
+              com.zhijiejiaoyu.glory_api.short_video.DeleteShortVideoResponse>(
+                service, METHODID_DELETE_SHORT_VIDEO)))
+        .addMethod(
+          getGetStageVideoMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.GetStageVideoRequest,
+              com.zhijiejiaoyu.glory_api.short_video.GetStageVideoResponse>(
+                service, METHODID_GET_STAGE_VIDEO)))
+        .addMethod(
+          getDeleteStageVideoMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.DeleteStageVideoRequest,
+              com.zhijiejiaoyu.glory_api.short_video.DeleteStageVideoResponse>(
+                service, METHODID_DELETE_STAGE_VIDEO)))
+        .addMethod(
+          getManagementListShortVideoMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoRequest,
+              com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoResponse>(
+                service, METHODID_MANAGEMENT_LIST_SHORT_VIDEO)))
+        .addMethod(
+          getManagementCensorShortVideoMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.ManagementCensorShortVideoRequest,
+              com.zhijiejiaoyu.glory_api.short_video.ManagementCensorShortVideoResponse>(
+                service, METHODID_MANAGEMENT_CENSOR_SHORT_VIDEO)))
+        .addMethod(
+          getManagementDeleteShortVideoMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoRequest,
+              com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoResponse>(
+                service, METHODID_MANAGEMENT_DELETE_SHORT_VIDEO)))
         .build();
   }
 
@@ -13161,6 +15981,9 @@ public final class glory_apiGrpc {
               .addMethod(getLoginWithPasswordMethod())
               .addMethod(getUpdatePasswordMethod())
               .addMethod(getGetUserPagePermissionMethod())
+              .addMethod(getCreateRolePagePermissionMethod())
+              .addMethod(getUpdateRolePagePermissionMethod())
+              .addMethod(getGetRolePagePermissionMethod())
               .addMethod(getAddAddressMethod())
               .addMethod(getDeleteAddressMethod())
               .addMethod(getUpdateAddressMethod())
@@ -13312,6 +16135,24 @@ public final class glory_apiGrpc {
               .addMethod(getUpdateTenantMethod())
               .addMethod(getDeleteTenantMethod())
               .addMethod(getListTenantMethod())
+              .addMethod(getGetTenantOrgMethod())
+              .addMethod(getCreateCollegeMethod())
+              .addMethod(getGetCollegeMethod())
+              .addMethod(getUpdateCollegeMethod())
+              .addMethod(getDeleteCollegeMethod())
+              .addMethod(getListCollegeMethod())
+              .addMethod(getCreateEduDeptMethod())
+              .addMethod(getUpdateEduDeptMethod())
+              .addMethod(getDeleteEduDeptMethod())
+              .addMethod(getCreateGoverDeptMethod())
+              .addMethod(getUpdateGoverDeptMethod())
+              .addMethod(getDeleteGoverDeptMethod())
+              .addMethod(getCreateEduOfficeMethod())
+              .addMethod(getUpdateEduOfficeMethod())
+              .addMethod(getDeleteEduOfficeMethod())
+              .addMethod(getCreatePrincipalOfficeMethod())
+              .addMethod(getUpdatePrincipalOfficeMethod())
+              .addMethod(getDeletePrincipalOfficeMethod())
               .addMethod(getCreateMajorMethod())
               .addMethod(getGetMajorMethod())
               .addMethod(getUpdateMajorMethod())
@@ -13322,6 +16163,21 @@ public final class glory_apiGrpc {
               .addMethod(getUpdateClassMethod())
               .addMethod(getDeleteClassMethod())
               .addMethod(getListClassMethod())
+              .addMethod(getCreateStudentsMethod())
+              .addMethod(getDeleteStudentsMethod())
+              .addMethod(getCreateShortVideoMethod())
+              .addMethod(getStageShortVideoMethod())
+              .addMethod(getListMyShortVideoMethod())
+              .addMethod(getListMyStageVideoMethod())
+              .addMethod(getListMyLikeVideoMethod())
+              .addMethod(getListMyFavoriteVideoMethod())
+              .addMethod(getGetShortVideoMethod())
+              .addMethod(getDeleteShortVideoMethod())
+              .addMethod(getGetStageVideoMethod())
+              .addMethod(getDeleteStageVideoMethod())
+              .addMethod(getManagementListShortVideoMethod())
+              .addMethod(getManagementCensorShortVideoMethod())
+              .addMethod(getManagementDeleteShortVideoMethod())
               .build();
         }
       }

@@ -73,16 +73,58 @@ message GetUserResponse {
 message PagePermission {
   string business_system = 1;
   string page = 2;
-  bool has_permission = 3;
+  int64 id = 3;
+  string name = 4;
+  bool has_permission = 5;
 }
 
 message GetUserPagePermissionRequest {
   base.BaseRequest base_request=1;
+  int64 tenant_id = 2;
 }
 
 message GetUserPagePermissionResponse {
   base.BaseResponse base_resp = 1;
   repeated PagePermission page_permission =2; // page permission of the user
+}
+
+message CreateRolePagePermissionRequest {
+  base.BaseRequest base_request = 1;
+  int64 tenant_id = 2;
+  string role_name = 3;
+  string role_description = 4;
+  repeated PagePermission page_permission = 5;
+}
+
+message CreateRolePagePermissionResponse {
+  base.BaseResponse base_resp = 1;
+  int64 role_id = 2;
+}
+
+message GetRolePagePermissionRequest {
+  base.BaseRequest base_request = 1;
+  int64 role_id = 2;
+  int64 tenant_id = 3;
+}
+
+message GetRolePagePermissionResponse {
+  base.BaseResponse base_resp = 1;
+  int64 tenant_id = 2;
+  int64 role_id = 3;
+  string role_name = 4;
+  string role_description = 5;
+  repeated PagePermission page_permission = 6;
+}
+
+message UpdateRolePagePermissionRequest {
+  base.BaseRequest base_request = 1;
+  int64 tenant_id = 2;
+  int64 role_id = 3;
+  repeated PagePermission page_permission = 4;
+}
+
+message UpdateRolePagePermissionResponse {
+  base.BaseResponse base_resp = 1;
 }
 
 message Permission {
@@ -154,8 +196,6 @@ message CreateRoleResponse {
   int64 role_id =2; // role id
 }
 
-
-
 message GiveRolePermissionRequest {
   base.BaseRequest base_request=1;
   int64 role_id = 2;
@@ -212,8 +252,8 @@ message ListUserByRole {
   int64 tenant_id = 4;
   string role = 5;
   string created_at = 6;
-
 }
+
 message ListUserByRoleRequest {
   base.BaseRequest base_request=1;
   string role_name = 2; // 平台管理员是admin, 学校管理员是school_admin_role

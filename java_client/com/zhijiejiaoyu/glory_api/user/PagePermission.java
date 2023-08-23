@@ -18,6 +18,7 @@ private static final long serialVersionUID = 0L;
   private PagePermission() {
     businessSystem = "";
     page = "";
+    name = "";
   }
 
   @java.lang.Override
@@ -63,6 +64,17 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 24: {
+
+            id = input.readInt64();
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            name = s;
+            break;
+          }
+          case 40: {
 
             hasPermission = input.readBool();
             break;
@@ -175,10 +187,59 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int HAS_PERMISSION_FIELD_NUMBER = 3;
+  public static final int ID_FIELD_NUMBER = 3;
+  private long id;
+  /**
+   * <code>int64 id = 3;</code>
+   * @return The id.
+   */
+  @java.lang.Override
+  public long getId() {
+    return id;
+  }
+
+  public static final int NAME_FIELD_NUMBER = 4;
+  private volatile java.lang.Object name;
+  /**
+   * <code>string name = 4;</code>
+   * @return The name.
+   */
+  @java.lang.Override
+  public java.lang.String getName() {
+    java.lang.Object ref = name;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string name = 4;</code>
+   * @return The bytes for name.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNameBytes() {
+    java.lang.Object ref = name;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      name = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int HAS_PERMISSION_FIELD_NUMBER = 5;
   private boolean hasPermission;
   /**
-   * <code>bool has_permission = 3;</code>
+   * <code>bool has_permission = 5;</code>
    * @return The hasPermission.
    */
   @java.lang.Override
@@ -206,8 +267,14 @@ private static final long serialVersionUID = 0L;
     if (!getPageBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, page);
     }
+    if (id_ != 0L) {
+      output.writeInt64(3, id);
+    }
+    if (!getNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name);
+    }
     if (hasPermission_ != false) {
-      output.writeBool(3, hasPermission);
+      output.writeBool(5, hasPermission);
     }
     unknownFields.writeTo(output);
   }
@@ -224,9 +291,16 @@ private static final long serialVersionUID = 0L;
     if (!getPageBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, page);
     }
+    if (id_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(3, id);
+    }
+    if (!getNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name);
+    }
     if (hasPermission_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(3, hasPermission);
+        .computeBoolSize(5, hasPermission);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -247,6 +321,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getBusinessSystem())) return false;
     if (!getPage()
         .equals(other.getPage())) return false;
+    if (getId()
+        != other.getId()) return false;
+    if (!getName()
+        .equals(other.getName())) return false;
     if (getHasPermission()
         != other.getHasPermission()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -264,6 +342,11 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getBusinessSystem().hashCode();
     hash = (37 * hash) + PAGE_FIELD_NUMBER;
     hash = (53 * hash) + getPage().hashCode();
+    hash = (37 * hash) + ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getId());
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + HAS_PERMISSION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getHasPermission());
@@ -404,6 +487,10 @@ private static final long serialVersionUID = 0L;
 
       page = "";
 
+      id = 0L;
+
+      name = "";
+
       hasPermission = false;
 
       return this;
@@ -434,6 +521,8 @@ private static final long serialVersionUID = 0L;
       com.zhijiejiaoyu.glory_api.user.PagePermission result = new com.zhijiejiaoyu.glory_api.user.PagePermission(this);
       result.businessSystem = businessSystem;
       result.page = page;
+      result.id = id;
+      result.name = name;
       result.hasPermission = hasPermission;
       onBuilt();
       return result;
@@ -489,6 +578,13 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getPage().isEmpty()) {
         page = other.page;
+        onChanged();
+      }
+      if (other.getId() != 0L) {
+        setId(other.getId());
+      }
+      if (!other.getName().isEmpty()) {
+        name = other.name;
         onChanged();
       }
       if (other.getHasPermission() != false) {
@@ -675,9 +771,116 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private long id_ ;
+    /**
+     * <code>int64 id = 3;</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public long getId() {
+      return id;
+    }
+    /**
+     * <code>int64 id = 3;</code>
+     * @param value The id to set.
+     * @return This builder for chaining.
+     */
+    public Builder setId(long value) {
+      
+      id = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 id = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearId() {
+      
+      id = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object name = "";
+    /**
+     * <code>string name = 4;</code>
+     * @return The name.
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string name = 4;</code>
+     * @return The bytes for name.
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string name = 4;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      name = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string name = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearName() {
+      
+      name = getDefaultInstance().getName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string name = 4;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      name = value;
+      onChanged();
+      return this;
+    }
+
     private boolean hasPermission_ ;
     /**
-     * <code>bool has_permission = 3;</code>
+     * <code>bool has_permission = 5;</code>
      * @return The hasPermission.
      */
     @java.lang.Override
@@ -685,7 +888,7 @@ private static final long serialVersionUID = 0L;
       return hasPermission;
     }
     /**
-     * <code>bool has_permission = 3;</code>
+     * <code>bool has_permission = 5;</code>
      * @param value The hasPermission to set.
      * @return This builder for chaining.
      */
@@ -696,7 +899,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>bool has_permission = 3;</code>
+     * <code>bool has_permission = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearHasPermission() {
