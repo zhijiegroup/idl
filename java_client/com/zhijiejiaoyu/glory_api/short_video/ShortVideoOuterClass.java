@@ -139,6 +139,36 @@ public final class ShortVideoOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_DeleteStageVideoResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ManagementListShortVideoRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ManagementListShortVideoRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ManagementListShortVideoResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ManagementListShortVideoResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ManagementCensorShortVideoRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ManagementCensorShortVideoRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ManagementCensorShortVideoResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ManagementCensorShortVideoResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ManagementDeleteShortVideoRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ManagementDeleteShortVideoRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ManagementDeleteShortVideoResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ManagementDeleteShortVideoResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -224,8 +254,26 @@ public final class ShortVideoOuterClass {
       "eoRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.B" +
       "aseRequest\022\026\n\016stage_video_id\030\002 \001(\003\"A\n\030De" +
       "leteStageVideoResponse\022%\n\tbase_resp\030\001 \001(" +
-      "\0132\022.base.BaseResponseB*\n&com.zhijiejiaoy" +
-      "u.glory_api.short_videoP\001b\006proto3"
+      "\0132\022.base.BaseResponse\"\205\001\n\037ManagementList" +
+      "ShortVideoRequest\022\'\n\014base_request\030\001 \001(\0132" +
+      "\021.base.BaseRequest\022\014\n\004type\030\002 \001(\005\022+\n\npagi" +
+      "nation\030d \001(\0132\027.base.PaginationRequest\"\250\001" +
+      "\n ManagementListShortVideoResponse\022%\n\tba" +
+      "se_resp\030\001 \001(\0132\022.base.BaseResponse\022/\n\020sho" +
+      "rt_video_list\030\002 \003(\0132\025.glory_api.ShortVid" +
+      "eo\022,\n\npagination\030d \001(\0132\030.base.Pagination" +
+      "Response\"\233\001\n!ManagementCensorShortVideoR" +
+      "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
+      "Request\022\026\n\016short_video_id\030\002 \001(\003\022\025\n\rcenso" +
+      "r_status\030\003 \001(\005\022\036\n\026censor_rejected_reason" +
+      "\030\004 \001(\t\"K\n\"ManagementCensorShortVideoResp" +
+      "onse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespo" +
+      "nse\"d\n!ManagementDeleteShortVideoRequest" +
+      "\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReques" +
+      "t\022\026\n\016short_video_id\030\002 \001(\003\"K\n\"ManagementD" +
+      "eleteShortVideoResponse\022%\n\tbase_resp\030\001 \001" +
+      "(\0132\022.base.BaseResponseB*\n&com.zhijiejiao" +
+      "yu.glory_api.short_videoP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -381,6 +429,42 @@ public final class ShortVideoOuterClass {
     internal_static_glory_api_DeleteStageVideoResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteStageVideoResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
+    internal_static_glory_api_ManagementListShortVideoRequest_descriptor =
+      getDescriptor().getMessageTypes().get(25);
+    internal_static_glory_api_ManagementListShortVideoRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ManagementListShortVideoRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "Type", "Pagination", });
+    internal_static_glory_api_ManagementListShortVideoResponse_descriptor =
+      getDescriptor().getMessageTypes().get(26);
+    internal_static_glory_api_ManagementListShortVideoResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ManagementListShortVideoResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "ShortVideoList", "Pagination", });
+    internal_static_glory_api_ManagementCensorShortVideoRequest_descriptor =
+      getDescriptor().getMessageTypes().get(27);
+    internal_static_glory_api_ManagementCensorShortVideoRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ManagementCensorShortVideoRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "ShortVideoId", "CensorStatus", "CensorRejectedReason", });
+    internal_static_glory_api_ManagementCensorShortVideoResponse_descriptor =
+      getDescriptor().getMessageTypes().get(28);
+    internal_static_glory_api_ManagementCensorShortVideoResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ManagementCensorShortVideoResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
+    internal_static_glory_api_ManagementDeleteShortVideoRequest_descriptor =
+      getDescriptor().getMessageTypes().get(29);
+    internal_static_glory_api_ManagementDeleteShortVideoRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ManagementDeleteShortVideoRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "ShortVideoId", });
+    internal_static_glory_api_ManagementDeleteShortVideoResponse_descriptor =
+      getDescriptor().getMessageTypes().get(30);
+    internal_static_glory_api_ManagementDeleteShortVideoResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ManagementDeleteShortVideoResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
   }

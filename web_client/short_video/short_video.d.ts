@@ -198,3 +198,39 @@ export interface DeleteStageVideoRequest {
 export interface DeleteStageVideoResponse {
   base_resp?: base.BaseResponse;
 }
+
+/** 管理平台短视频列表 */
+export interface ManagementListShortVideoRequest {
+  base_request?: base.BaseRequest;
+  /** 短视频类型：1: 待审核视频列表；2: 已审核视频列表；3: 被驳回视频列表；4: 全部视频列表 */
+  type?: number;
+  pagination?: base.PaginationRequest;
+}
+
+export interface ManagementListShortVideoResponse {
+  base_resp?: base.BaseResponse;
+  short_video_list?: Array<ShortVideo>;
+  pagination?: base.PaginationResponse;
+}
+
+/** 管理平台审核短视频 */
+export interface ManagementCensorShortVideoRequest {
+  base_request?: base.BaseRequest;
+  short_video_id?: string;
+  censor_status?: number;
+  censor_rejected_reason?: string;
+}
+
+export interface ManagementCensorShortVideoResponse {
+  base_resp?: base.BaseResponse;
+}
+
+/** 管理平台删除短视频 */
+export interface ManagementDeleteShortVideoRequest {
+  base_request?: base.BaseRequest;
+  short_video_id?: string;
+}
+
+export interface ManagementDeleteShortVideoResponse {
+  base_resp?: base.BaseResponse;
+}

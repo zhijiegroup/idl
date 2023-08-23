@@ -891,6 +891,18 @@ CreateLivePlanProduct create live plan product */
   DeleteStageVideo(
     request: short_video.DeleteStageVideoRequest
   ): Promise<short_video.DeleteStageVideoResponse>;
+
+  ManagementListShortVideo(
+    request: short_video.ManagementListShortVideoRequest
+  ): Promise<short_video.ManagementListShortVideoResponse>;
+
+  ManagementCensorShortVideo(
+    request: short_video.ManagementCensorShortVideoRequest
+  ): Promise<short_video.ManagementCensorShortVideoResponse>;
+
+  ManagementDeleteShortVideo(
+    request: short_video.ManagementDeleteShortVideoRequest
+  ): Promise<short_video.ManagementDeleteShortVideoResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

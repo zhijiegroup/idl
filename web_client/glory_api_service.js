@@ -1653,6 +1653,30 @@ export class glory_api {
       handleResponse
     );
   }
+
+  ManagementListShortVideo(request) {
+    const uri = `${this.uriPrefix}/api/short_video/management/list_short_video`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ManagementCensorShortVideo(request) {
+    const uri = `${this.uriPrefix}/api/short_video/management/censor_short_video`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ManagementDeleteShortVideo(request) {
+    const uri = `${this.uriPrefix}/api/short_video/management/delete_short_video`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
 }
 
 export const glory_apiClient = new glory_api();
