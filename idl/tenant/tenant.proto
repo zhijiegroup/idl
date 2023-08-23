@@ -215,15 +215,13 @@ message Class {
   string class_name  = 2; //名称 必传
   int64 major_id = 4; // 专业id, 创建必传
   int64 tenant_id = 5; // 学校id，创建必传
-  int32 grade = 6; // 年级, 创建必传
-  string start_date = 7; // 开学日期, 创建必传
-
+  // int32 grade = 6; // 年级, 创建必传
+  // string start_date = 7; // 开学日期, 创建必传
 }
 
 message CreateClassRequest {
   base.BaseRequest base_request = 1; // token
   Class class = 2;
-
 }
 
 message CreateClassResponse {
@@ -234,7 +232,6 @@ message CreateClassResponse {
 message GetClassRequest {
   base.BaseRequest base_request = 1;
   int64 class_id = 2;
-
 }
 
 message GetClassResponse {
@@ -256,7 +253,6 @@ message UpdateClassResponse {
 message DeleteClassRequest {
   base.BaseRequest base_request = 1;
   int64 class_id = 2;
-
 }
 
 message DeleteClassResponse {
