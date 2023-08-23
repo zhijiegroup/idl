@@ -1591,6 +1591,68 @@ export class glory_api {
       handleResponse
     );
   }
+
+  ListMyShortVideo(request) {
+    const uri = `${this.uriPrefix}/api/short_video/list_my_short_video`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListMyStageVideo(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/short_video/list_my_stage_video${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  ListMyLikeVideo(request) {
+    const uri = `${this.uriPrefix}/api/short_video/list_my_like_video`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListMyFavoriteVideo(request) {
+    const uri = `${this.uriPrefix}/api/short_video/list_my_favorite_video`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  GetShortVideo(request) {
+    const uri = `${this.uriPrefix}/api/short_video/get_short_video`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteShortVideo(request) {
+    const uri = `${this.uriPrefix}/api/short_video/delete_short_video`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  GetStageVideo(request) {
+    const uri = `${this.uriPrefix}/api/short_video/get_stage_video`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteStageVideo(request) {
+    const uri = `${this.uriPrefix}/api/short_video/delete_stage_video`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
 }
 
 export const glory_apiClient = new glory_api();

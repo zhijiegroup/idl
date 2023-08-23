@@ -327,6 +327,459 @@ struct GloryApi_StageShortVideoResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
+/// 我的短视频列表
+struct GloryApi_ListMyShortVideoRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  /// 短视频类型：1: 待审核视频列表；2: 已审核视频列表；3: 被驳回视频列表；4: 全部视频列表
+  var type: Int32 = 0
+
+  var pagination: Base_PaginationRequest {
+    get {return _pagination ?? Base_PaginationRequest()}
+    set {_pagination = newValue}
+  }
+  /// Returns true if `pagination` has been explicitly set.
+  var hasPagination: Bool {return self._pagination != nil}
+  /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
+  mutating func clearPagination() {self._pagination = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+  fileprivate var _pagination: Base_PaginationRequest? = nil
+}
+
+struct GloryApi_ListMyShortVideoResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var shortVideoList: [GloryApi_ShortVideo] = []
+
+  var pagination: Base_PaginationResponse {
+    get {return _pagination ?? Base_PaginationResponse()}
+    set {_pagination = newValue}
+  }
+  /// Returns true if `pagination` has been explicitly set.
+  var hasPagination: Bool {return self._pagination != nil}
+  /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
+  mutating func clearPagination() {self._pagination = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _pagination: Base_PaginationResponse? = nil
+}
+
+/// 我的暂存视频列表
+struct GloryApi_ListMyStageVideoRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var pagination: Base_PaginationRequest {
+    get {return _pagination ?? Base_PaginationRequest()}
+    set {_pagination = newValue}
+  }
+  /// Returns true if `pagination` has been explicitly set.
+  var hasPagination: Bool {return self._pagination != nil}
+  /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
+  mutating func clearPagination() {self._pagination = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+  fileprivate var _pagination: Base_PaginationRequest? = nil
+}
+
+struct GloryApi_ListMyStageVideoResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var stageVideoList: [GloryApi_StageVideo] = []
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+}
+
+/// 我的喜欢视频列表
+struct GloryApi_ListMyLikeVideoRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var pagination: Base_PaginationRequest {
+    get {return _pagination ?? Base_PaginationRequest()}
+    set {_pagination = newValue}
+  }
+  /// Returns true if `pagination` has been explicitly set.
+  var hasPagination: Bool {return self._pagination != nil}
+  /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
+  mutating func clearPagination() {self._pagination = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+  fileprivate var _pagination: Base_PaginationRequest? = nil
+}
+
+struct GloryApi_ListMyLikeVideoResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var shortVideoList: [GloryApi_ShortVideo] = []
+
+  var pagination: Base_PaginationResponse {
+    get {return _pagination ?? Base_PaginationResponse()}
+    set {_pagination = newValue}
+  }
+  /// Returns true if `pagination` has been explicitly set.
+  var hasPagination: Bool {return self._pagination != nil}
+  /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
+  mutating func clearPagination() {self._pagination = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _pagination: Base_PaginationResponse? = nil
+}
+
+/// 我的收藏视频列表
+struct GloryApi_ListMyFavoriteVideoRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var pagination: Base_PaginationRequest {
+    get {return _pagination ?? Base_PaginationRequest()}
+    set {_pagination = newValue}
+  }
+  /// Returns true if `pagination` has been explicitly set.
+  var hasPagination: Bool {return self._pagination != nil}
+  /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
+  mutating func clearPagination() {self._pagination = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+  fileprivate var _pagination: Base_PaginationRequest? = nil
+}
+
+struct GloryApi_ListMyFavoriteVideoResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var shortVideoList: [GloryApi_ShortVideo] = []
+
+  var pagination: Base_PaginationResponse {
+    get {return _pagination ?? Base_PaginationResponse()}
+    set {_pagination = newValue}
+  }
+  /// Returns true if `pagination` has been explicitly set.
+  var hasPagination: Bool {return self._pagination != nil}
+  /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
+  mutating func clearPagination() {self._pagination = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _pagination: Base_PaginationResponse? = nil
+}
+
+/// 获取短视频详情
+struct GloryApi_GetShortVideoRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var shortVideoID: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+struct GloryApi_GetShortVideoResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var shortVideo: GloryApi_ShortVideo {
+    get {return _shortVideo ?? GloryApi_ShortVideo()}
+    set {_shortVideo = newValue}
+  }
+  /// Returns true if `shortVideo` has been explicitly set.
+  var hasShortVideo: Bool {return self._shortVideo != nil}
+  /// Clears the value of `shortVideo`. Subsequent reads from it will return its default value.
+  mutating func clearShortVideo() {self._shortVideo = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _shortVideo: GloryApi_ShortVideo? = nil
+}
+
+/// 删除短视频
+struct GloryApi_DeleteShortVideoRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var shortVideoID: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+struct GloryApi_DeleteShortVideoResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+}
+
+/// 获取暂存视频详情
+struct GloryApi_GetStageVideoRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var stageVideoID: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+struct GloryApi_GetStageVideoResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var stageVideo: GloryApi_StageVideo {
+    get {return _stageVideo ?? GloryApi_StageVideo()}
+    set {_stageVideo = newValue}
+  }
+  /// Returns true if `stageVideo` has been explicitly set.
+  var hasStageVideo: Bool {return self._stageVideo != nil}
+  /// Clears the value of `stageVideo`. Subsequent reads from it will return its default value.
+  mutating func clearStageVideo() {self._stageVideo = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _stageVideo: GloryApi_StageVideo? = nil
+}
+
+/// 删除暂存视频
+struct GloryApi_DeleteStageVideoRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var stageVideoID: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+struct GloryApi_DeleteStageVideoResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+}
+
 #if swift(>=5.5) && canImport(_Concurrency)
 extension GloryApi_ShortVideoProduct: @unchecked Sendable {}
 extension GloryApi_ShortVideoShop: @unchecked Sendable {}
@@ -337,6 +790,22 @@ extension GloryApi_CreateShortVideoRequest: @unchecked Sendable {}
 extension GloryApi_CreateShortVideoResponse: @unchecked Sendable {}
 extension GloryApi_StageShortVideoRequest: @unchecked Sendable {}
 extension GloryApi_StageShortVideoResponse: @unchecked Sendable {}
+extension GloryApi_ListMyShortVideoRequest: @unchecked Sendable {}
+extension GloryApi_ListMyShortVideoResponse: @unchecked Sendable {}
+extension GloryApi_ListMyStageVideoRequest: @unchecked Sendable {}
+extension GloryApi_ListMyStageVideoResponse: @unchecked Sendable {}
+extension GloryApi_ListMyLikeVideoRequest: @unchecked Sendable {}
+extension GloryApi_ListMyLikeVideoResponse: @unchecked Sendable {}
+extension GloryApi_ListMyFavoriteVideoRequest: @unchecked Sendable {}
+extension GloryApi_ListMyFavoriteVideoResponse: @unchecked Sendable {}
+extension GloryApi_GetShortVideoRequest: @unchecked Sendable {}
+extension GloryApi_GetShortVideoResponse: @unchecked Sendable {}
+extension GloryApi_DeleteShortVideoRequest: @unchecked Sendable {}
+extension GloryApi_DeleteShortVideoResponse: @unchecked Sendable {}
+extension GloryApi_GetStageVideoRequest: @unchecked Sendable {}
+extension GloryApi_GetStageVideoResponse: @unchecked Sendable {}
+extension GloryApi_DeleteStageVideoRequest: @unchecked Sendable {}
+extension GloryApi_DeleteStageVideoResponse: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -904,6 +1373,690 @@ extension GloryApi_StageShortVideoResponse: SwiftProtobuf.Message, SwiftProtobuf
   static func ==(lhs: GloryApi_StageShortVideoResponse, rhs: GloryApi_StageShortVideoResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.stageVideoID != rhs.stageVideoID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_ListMyShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ListMyShortVideoRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    2: .same(proto: "type"),
+    100: .same(proto: "pagination"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularInt32Field(value: &self.type) }()
+      case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if self.type != 0 {
+      try visitor.visitSingularInt32Field(value: self.type, fieldNumber: 2)
+    }
+    try { if let v = self._pagination {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ListMyShortVideoRequest, rhs: GloryApi_ListMyShortVideoRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.type != rhs.type {return false}
+    if lhs._pagination != rhs._pagination {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_ListMyShortVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ListMyShortVideoResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .standard(proto: "short_video_list"),
+    100: .same(proto: "pagination"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.shortVideoList) }()
+      case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if !self.shortVideoList.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.shortVideoList, fieldNumber: 2)
+    }
+    try { if let v = self._pagination {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ListMyShortVideoResponse, rhs: GloryApi_ListMyShortVideoResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.shortVideoList != rhs.shortVideoList {return false}
+    if lhs._pagination != rhs._pagination {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_ListMyStageVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ListMyStageVideoRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    100: .same(proto: "pagination"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try { if let v = self._pagination {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ListMyStageVideoRequest, rhs: GloryApi_ListMyStageVideoRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs._pagination != rhs._pagination {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_ListMyStageVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ListMyStageVideoResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .standard(proto: "stage_video_list"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.stageVideoList) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if !self.stageVideoList.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.stageVideoList, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ListMyStageVideoResponse, rhs: GloryApi_ListMyStageVideoResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.stageVideoList != rhs.stageVideoList {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_ListMyLikeVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ListMyLikeVideoRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    100: .same(proto: "pagination"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try { if let v = self._pagination {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ListMyLikeVideoRequest, rhs: GloryApi_ListMyLikeVideoRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs._pagination != rhs._pagination {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_ListMyLikeVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ListMyLikeVideoResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .standard(proto: "short_video_list"),
+    100: .same(proto: "pagination"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.shortVideoList) }()
+      case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if !self.shortVideoList.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.shortVideoList, fieldNumber: 2)
+    }
+    try { if let v = self._pagination {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ListMyLikeVideoResponse, rhs: GloryApi_ListMyLikeVideoResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.shortVideoList != rhs.shortVideoList {return false}
+    if lhs._pagination != rhs._pagination {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_ListMyFavoriteVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ListMyFavoriteVideoRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    100: .same(proto: "pagination"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try { if let v = self._pagination {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ListMyFavoriteVideoRequest, rhs: GloryApi_ListMyFavoriteVideoRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs._pagination != rhs._pagination {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_ListMyFavoriteVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ListMyFavoriteVideoResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .standard(proto: "short_video_list"),
+    100: .same(proto: "pagination"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.shortVideoList) }()
+      case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if !self.shortVideoList.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.shortVideoList, fieldNumber: 2)
+    }
+    try { if let v = self._pagination {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ListMyFavoriteVideoResponse, rhs: GloryApi_ListMyFavoriteVideoResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.shortVideoList != rhs.shortVideoList {return false}
+    if lhs._pagination != rhs._pagination {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetShortVideoRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    2: .standard(proto: "short_video_id"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.shortVideoID) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if self.shortVideoID != 0 {
+      try visitor.visitSingularInt64Field(value: self.shortVideoID, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetShortVideoRequest, rhs: GloryApi_GetShortVideoRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.shortVideoID != rhs.shortVideoID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetShortVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetShortVideoResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .standard(proto: "short_video"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._shortVideo) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try { if let v = self._shortVideo {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetShortVideoResponse, rhs: GloryApi_GetShortVideoResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs._shortVideo != rhs._shortVideo {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_DeleteShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".DeleteShortVideoRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    2: .standard(proto: "short_video_id"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.shortVideoID) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if self.shortVideoID != 0 {
+      try visitor.visitSingularInt64Field(value: self.shortVideoID, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_DeleteShortVideoRequest, rhs: GloryApi_DeleteShortVideoRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.shortVideoID != rhs.shortVideoID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_DeleteShortVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".DeleteShortVideoResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_DeleteShortVideoResponse, rhs: GloryApi_DeleteShortVideoResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetStageVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetStageVideoRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    2: .standard(proto: "stage_video_id"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.stageVideoID) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if self.stageVideoID != 0 {
+      try visitor.visitSingularInt64Field(value: self.stageVideoID, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetStageVideoRequest, rhs: GloryApi_GetStageVideoRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.stageVideoID != rhs.stageVideoID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetStageVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetStageVideoResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .standard(proto: "stage_video"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._stageVideo) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try { if let v = self._stageVideo {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetStageVideoResponse, rhs: GloryApi_GetStageVideoResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs._stageVideo != rhs._stageVideo {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_DeleteStageVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".DeleteStageVideoRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    2: .standard(proto: "stage_video_id"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.stageVideoID) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if self.stageVideoID != 0 {
+      try visitor.visitSingularInt64Field(value: self.stageVideoID, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_DeleteStageVideoRequest, rhs: GloryApi_DeleteStageVideoRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.stageVideoID != rhs.stageVideoID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_DeleteStageVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".DeleteStageVideoResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_DeleteStageVideoResponse, rhs: GloryApi_DeleteStageVideoResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -41,8 +41,8 @@ public final class GloryApiService {
       "t/account_operation.proto\032\037currency/virt" +
       "ual_currency.proto\032\023tenant/tenant.proto\032" +
       "\030tenant/tenant_dept.proto\032\024tenant/studen" +
-      "t.proto\032\035short_video/short_video.proto2\250" +
-      "\267\001\n\tglory_api\022s\n\rCreateExample\022\037.glory_a" +
+      "t.proto\032\035short_video/short_video.proto2\322" +
+      "\277\001\n\tglory_api\022s\n\rCreateExample\022\037.glory_a" +
       "pi.CreateExampleRequest\032 .glory_api.Crea" +
       "teExampleResponse\"\037\322\301\030\033/api/example/crea" +
       "te_example\022g\n\nGetExample\022\034.glory_api.Get" +
@@ -628,8 +628,35 @@ public final class GloryApiService {
       "ate_short_video\022\200\001\n\017StageShortVideo\022!.gl" +
       "ory_api.StageShortVideoRequest\032\".glory_a" +
       "pi.StageShortVideoResponse\"&\322\301\030\"/api/sho" +
-      "rt_video/stage_short_videoB\036\n\032com.zhijie" +
-      "jiaoyu.glory_apiP\001b\006proto3"
+      "rt_video/stage_short_video\022\205\001\n\020ListMySho" +
+      "rtVideo\022\".glory_api.ListMyShortVideoRequ" +
+      "est\032#.glory_api.ListMyShortVideoResponse" +
+      "\"(\322\301\030$/api/short_video/list_my_short_vid" +
+      "eo\022\205\001\n\020ListMyStageVideo\022\".glory_api.List" +
+      "MyStageVideoRequest\032#.glory_api.ListMySt" +
+      "ageVideoResponse\"(\312\301\030$/api/short_video/l" +
+      "ist_my_stage_video\022\201\001\n\017ListMyLikeVideo\022!" +
+      ".glory_api.ListMyLikeVideoRequest\032\".glor" +
+      "y_api.ListMyLikeVideoResponse\"\'\322\301\030#/api/" +
+      "short_video/list_my_like_video\022\221\001\n\023ListM" +
+      "yFavoriteVideo\022%.glory_api.ListMyFavorit" +
+      "eVideoRequest\032&.glory_api.ListMyFavorite" +
+      "VideoResponse\"+\322\301\030\'/api/short_video/list" +
+      "_my_favorite_video\022x\n\rGetShortVideo\022\037.gl" +
+      "ory_api.GetShortVideoRequest\032 .glory_api" +
+      ".GetShortVideoResponse\"$\322\301\030 /api/short_v" +
+      "ideo/get_short_video\022\204\001\n\020DeleteShortVide" +
+      "o\022\".glory_api.DeleteShortVideoRequest\032#." +
+      "glory_api.DeleteShortVideoResponse\"\'\322\301\030#" +
+      "/api/short_video/delete_short_video\022x\n\rG" +
+      "etStageVideo\022\037.glory_api.GetStageVideoRe" +
+      "quest\032 .glory_api.GetStageVideoResponse\"" +
+      "$\322\301\030 /api/short_video/get_stage_video\022\204\001" +
+      "\n\020DeleteStageVideo\022\".glory_api.DeleteSta" +
+      "geVideoRequest\032#.glory_api.DeleteStageVi" +
+      "deoResponse\"\'\322\301\030#/api/short_video/delete" +
+      "_stage_videoB\036\n\032com.zhijiejiaoyu.glory_a" +
+      "piP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

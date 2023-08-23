@@ -107,3 +107,94 @@ export interface StageShortVideoResponse {
   base_resp?: base.BaseResponse;
   stage_video_id?: string;
 }
+
+/** 我的短视频列表 */
+export interface ListMyShortVideoRequest {
+  base_request?: base.BaseRequest;
+  /** 短视频类型：1: 待审核视频列表；2: 已审核视频列表；3: 被驳回视频列表；4: 全部视频列表 */
+  type?: number;
+  pagination?: base.PaginationRequest;
+}
+
+export interface ListMyShortVideoResponse {
+  base_resp?: base.BaseResponse;
+  short_video_list?: Array<ShortVideo>;
+  pagination?: base.PaginationResponse;
+}
+
+/** 我的暂存视频列表 */
+export interface ListMyStageVideoRequest {
+  base_request?: base.BaseRequest;
+  pagination?: base.PaginationRequest;
+}
+
+export interface ListMyStageVideoResponse {
+  base_resp?: base.BaseResponse;
+  stage_video_list?: Array<StageVideo>;
+}
+
+/** 我的喜欢视频列表 */
+export interface ListMyLikeVideoRequest {
+  base_request?: base.BaseRequest;
+  pagination?: base.PaginationRequest;
+}
+
+export interface ListMyLikeVideoResponse {
+  base_resp?: base.BaseResponse;
+  short_video_list?: Array<ShortVideo>;
+  pagination?: base.PaginationResponse;
+}
+
+/** 我的收藏视频列表 */
+export interface ListMyFavoriteVideoRequest {
+  base_request?: base.BaseRequest;
+  pagination?: base.PaginationRequest;
+}
+
+export interface ListMyFavoriteVideoResponse {
+  base_resp?: base.BaseResponse;
+  short_video_list?: Array<ShortVideo>;
+  pagination?: base.PaginationResponse;
+}
+
+/** 获取短视频详情 */
+export interface GetShortVideoRequest {
+  base_request?: base.BaseRequest;
+  short_video_id?: string;
+}
+
+export interface GetShortVideoResponse {
+  base_resp?: base.BaseResponse;
+  short_video?: ShortVideo;
+}
+
+/** 删除短视频 */
+export interface DeleteShortVideoRequest {
+  base_request?: base.BaseRequest;
+  short_video_id?: string;
+}
+
+export interface DeleteShortVideoResponse {
+  base_resp?: base.BaseResponse;
+}
+
+/** 获取暂存视频详情 */
+export interface GetStageVideoRequest {
+  base_request?: base.BaseRequest;
+  stage_video_id?: string;
+}
+
+export interface GetStageVideoResponse {
+  base_resp?: base.BaseResponse;
+  stage_video?: StageVideo;
+}
+
+/** 删除暂存视频 */
+export interface DeleteStageVideoRequest {
+  base_request?: base.BaseRequest;
+  stage_video_id?: string;
+}
+
+export interface DeleteStageVideoResponse {
+  base_resp?: base.BaseResponse;
+}
