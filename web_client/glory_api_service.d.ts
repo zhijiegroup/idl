@@ -33,6 +33,7 @@ import * as virtual_currency from "./currency/virtual_currency";
 import * as tenant from "./tenant/tenant";
 import * as tenant_dept from "./tenant/tenant_dept";
 import * as student from "./tenant/student";
+import * as short_video from "./short_video/short_video";
 export {
   user,
   address,
@@ -65,6 +66,7 @@ export {
   tenant,
   tenant_dept,
   student,
+  short_video,
 };
 
 export class glory_api {
@@ -840,6 +842,55 @@ CreateLivePlanProduct create live plan product */
   DeleteStudents(
     request: student.DeleteStudentsRequest
   ): Promise<student.DeleteStudentsResponse>;
+
+  /** short_video */
+  CreateShortVideo(
+    request: short_video.CreateShortVideoRequest
+  ): Promise<short_video.CreateShortVideoResponse>;
+
+  StageShortVideo(
+    request: short_video.StageShortVideoRequest
+  ): Promise<short_video.StageShortVideoResponse>;
+
+  /** 我的短视频列表 */
+  ListMyShortVideo(
+    request: short_video.ListMyShortVideoRequest
+  ): Promise<short_video.ListMyShortVideoResponse>;
+
+  /** 我的暂存视频列表 */
+  ListMyStageVideo(
+    request: short_video.ListMyStageVideoRequest
+  ): Promise<short_video.ListMyStageVideoResponse>;
+
+  /** 我的喜欢视频列表 */
+  ListMyLikeVideo(
+    request: short_video.ListMyLikeVideoRequest
+  ): Promise<short_video.ListMyLikeVideoResponse>;
+
+  /** 我的收藏视频列表 */
+  ListMyFavoriteVideo(
+    request: short_video.ListMyFavoriteVideoRequest
+  ): Promise<short_video.ListMyFavoriteVideoResponse>;
+
+  /** 获取短视频详情 */
+  GetShortVideo(
+    request: short_video.GetShortVideoRequest
+  ): Promise<short_video.GetShortVideoResponse>;
+
+  /** 删除短视频 */
+  DeleteShortVideo(
+    request: short_video.DeleteShortVideoRequest
+  ): Promise<short_video.DeleteShortVideoResponse>;
+
+  /** 获取暂存视频详情 */
+  GetStageVideo(
+    request: short_video.GetStageVideoRequest
+  ): Promise<short_video.GetStageVideoResponse>;
+
+  /** 删除暂存视频 */
+  DeleteStageVideo(
+    request: short_video.DeleteStageVideoRequest
+  ): Promise<short_video.DeleteStageVideoResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

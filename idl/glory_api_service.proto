@@ -35,6 +35,7 @@ import "currency/virtual_currency.proto";
 import "tenant/tenant.proto";
 import "tenant/tenant_dept.proto";
 import "tenant/student.proto";
+import "short_video/short_video.proto";
 
 service glory_api {
 
@@ -748,5 +749,53 @@ service glory_api {
   }
   rpc DeleteStudents(DeleteStudentsRequest) returns (DeleteStudentsResponse) {
     option (api.post) = '/api/tenant/delete_students';
+  }
+
+  // short_video
+  rpc CreateShortVideo(CreateShortVideoRequest) returns (CreateShortVideoResponse) {
+    option (api.post) = '/api/short_video/create_short_video';
+  }
+  rpc StageShortVideo(StageShortVideoRequest) returns (StageShortVideoResponse) {
+    option (api.post) = '/api/short_video/stage_short_video';
+  }
+
+  // 我的短视频列表
+  rpc ListMyShortVideo(ListMyShortVideoRequest) returns (ListMyShortVideoResponse) {
+    option (api.post) = '/api/short_video/list_my_short_video';
+  }
+
+  // 我的暂存视频列表
+  rpc ListMyStageVideo(ListMyStageVideoRequest) returns (ListMyStageVideoResponse) {
+    option (api.get) = '/api/short_video/list_my_stage_video';
+  }
+
+  // 我的喜欢视频列表
+  rpc ListMyLikeVideo(ListMyLikeVideoRequest) returns (ListMyLikeVideoResponse) {
+    option (api.post) = '/api/short_video/list_my_like_video';
+  }
+
+  // 我的收藏视频列表
+  rpc ListMyFavoriteVideo(ListMyFavoriteVideoRequest) returns (ListMyFavoriteVideoResponse) {
+    option (api.post) = '/api/short_video/list_my_favorite_video';
+  }
+
+  // 获取短视频详情
+  rpc GetShortVideo(GetShortVideoRequest) returns (GetShortVideoResponse) {
+    option (api.post) = '/api/short_video/get_short_video';
+  }
+
+  // 删除短视频
+  rpc DeleteShortVideo(DeleteShortVideoRequest) returns (DeleteShortVideoResponse) {
+    option (api.post) = '/api/short_video/delete_short_video';
+  }
+
+  // 获取暂存视频详情
+  rpc GetStageVideo(GetStageVideoRequest) returns (GetStageVideoResponse) {
+    option (api.post) = '/api/short_video/get_stage_video';
+  }
+
+  // 删除暂存视频
+  rpc DeleteStageVideo(DeleteStageVideoRequest) returns (DeleteStageVideoResponse) {
+    option (api.post) = '/api/short_video/delete_stage_video';
   }
 }

@@ -1,0 +1,164 @@
+syntax = "proto3";
+package glory_api;
+option java_package = "com.zhijiejiaoyu.glory_api.short_video";
+option java_multiple_files = true;
+
+import "base.proto";
+
+message ShortVideoProduct {
+  int64 product_id = 1; // 商品ID
+  string product_promotion_text = 2; // 商品推广信息
+}
+
+message ShortVideoShop {
+  int64 shop_id = 1; // 店铺ID
+  string shop_name = 2; // 店铺名称
+}
+
+message ShortVideoUser {
+  int64 user_id = 1; // 用户ID
+  string user_name = 2; // 用户名称
+  string avatar_url = 3; // 用户头像URL
+}
+
+message ShortVideo {
+  int64 short_video_id = 1; // 短视频ID
+  string video_url = 2; // 短视频URL
+  string cover_url = 3; // 视频封面URL
+  string description = 4; // 短视频描述
+  int32 visibility = 5; // 视频可见性：1. 公开，2: 隐私，仅自己可见
+  int32 video_length = 6; // 视频文件大小
+  int32 video_duration = 7; // 视频时长
+  int32 censor_status = 8; // 审核状态：1: 待审核，2: 审核通过，3:审核被驳回
+  string censor_rejected_reason = 9; //视频被驳回原因
+  repeated ShortVideoProduct products = 10; // 商品列表
+  ShortVideoShop shop = 11; // 店铺信息
+  ShortVideoUser user_info = 12; // 用户信息
+  bool is_like = 13; // 是否喜欢
+  int32 like_count = 14; // 喜欢数量
+  bool is_favorite = 15; // 是否收藏
+  int32 favorite_count = 16; // 收藏数量
+  int32 comment_count = 17; // 评论数量
+  string created_at = 18; // 创建时间
+}
+
+message StageVideo {
+  int64 stage_video_id = 1; // 暂存视频ID
+  string video_url = 2; // 短视频URL
+  int32 video_length = 3; // 视频文件大小
+  int32 video_duration = 4; // 视频时长
+  string created_at = 5; // 创建时间
+}
+
+message CreateShortVideoRequest {
+  base.BaseRequest base_request = 1;
+  string description = 2; // 短视频描述
+  int32 visibility = 3; // 视频可见性：1.公开；2:隐私，仅自己可见
+  string products = 4; // JSON序列化的商品信息
+  int64 shop_id = 5; // 店铺ID
+  int64 stage_video_id = 6; // 暂存视频ID（如果是发布暂存视频的话）
+}
+
+message CreateShortVideoResponse {
+  base.BaseResponse base_resp = 1;
+  int64 short_video_id = 2;
+}
+
+message StageShortVideoRequest {
+  base.BaseRequest base_request = 1;
+}
+
+message StageShortVideoResponse {
+  base.BaseResponse base_resp = 1;
+  int64 stage_video_id = 2;
+}
+
+// 我的短视频列表
+message ListMyShortVideoRequest {
+  base.BaseRequest base_request = 1;
+  int32 type = 2; // 短视频类型：1: 待审核视频列表；2: 已审核视频列表；3: 被驳回视频列表；4: 全部视频列表
+  base.PaginationRequest pagination = 100;
+}
+
+message ListMyShortVideoResponse {
+  base.BaseResponse base_resp = 1;
+  repeated ShortVideo short_video_list = 2;
+  base.PaginationResponse pagination = 100;
+}
+
+// 我的暂存视频列表
+message ListMyStageVideoRequest {
+  base.BaseRequest base_request = 1;
+  base.PaginationRequest pagination = 100;
+}
+
+message ListMyStageVideoResponse {
+  base.BaseResponse base_resp = 1;
+  repeated StageVideo stage_video_list = 2;
+}
+
+// 我的喜欢视频列表
+message ListMyLikeVideoRequest {
+  base.BaseRequest base_request = 1;
+  base.PaginationRequest pagination = 100;
+}
+
+message ListMyLikeVideoResponse {
+  base.BaseResponse base_resp = 1;
+  repeated ShortVideo short_video_list = 2;
+  base.PaginationResponse pagination = 100;
+}
+
+// 我的收藏视频列表
+message ListMyFavoriteVideoRequest {
+  base.BaseRequest base_request = 1;
+  base.PaginationRequest pagination = 100;
+}
+
+message ListMyFavoriteVideoResponse {
+  base.BaseResponse base_resp = 1;
+  repeated ShortVideo short_video_list = 2;
+  base.PaginationResponse pagination = 100;
+}
+
+// 获取短视频详情
+message GetShortVideoRequest {
+  base.BaseRequest base_request = 1;
+  int64 short_video_id = 2;
+}
+
+message GetShortVideoResponse {
+  base.BaseResponse base_resp = 1;
+  ShortVideo short_video = 2;
+}
+
+// 删除短视频
+message DeleteShortVideoRequest {
+  base.BaseRequest base_request = 1;
+  int64 short_video_id = 2;
+}
+
+message DeleteShortVideoResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+// 获取暂存视频详情
+message GetStageVideoRequest {
+  base.BaseRequest base_request = 1;
+  int64 stage_video_id = 2;
+}
+
+message GetStageVideoResponse {
+  base.BaseResponse base_resp = 1;
+  StageVideo stage_video = 2;
+}
+
+// 删除暂存视频
+message DeleteStageVideoRequest {
+  base.BaseRequest base_request = 1;
+  int64 stage_video_id = 2;
+}
+
+message DeleteStageVideoResponse {
+  base.BaseResponse base_resp = 1;
+}

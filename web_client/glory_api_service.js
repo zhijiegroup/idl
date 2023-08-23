@@ -35,6 +35,7 @@ import * as virtual_currency from "./currency/virtual_currency";
 import * as tenant from "./tenant/tenant";
 import * as tenant_dept from "./tenant/tenant_dept";
 import * as student from "./tenant/student";
+import * as short_video from "./short_video/short_video";
 export {
   user,
   address,
@@ -67,6 +68,7 @@ export {
   tenant,
   tenant_dept,
   student,
+  short_video,
 };
 
 import {
@@ -1568,6 +1570,84 @@ export class glory_api {
 
   DeleteStudents(request) {
     const uri = `${this.uriPrefix}/api/tenant/delete_students`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreateShortVideo(request) {
+    const uri = `${this.uriPrefix}/api/short_video/create_short_video`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  StageShortVideo(request) {
+    const uri = `${this.uriPrefix}/api/short_video/stage_short_video`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListMyShortVideo(request) {
+    const uri = `${this.uriPrefix}/api/short_video/list_my_short_video`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListMyStageVideo(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/short_video/list_my_stage_video${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  ListMyLikeVideo(request) {
+    const uri = `${this.uriPrefix}/api/short_video/list_my_like_video`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListMyFavoriteVideo(request) {
+    const uri = `${this.uriPrefix}/api/short_video/list_my_favorite_video`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  GetShortVideo(request) {
+    const uri = `${this.uriPrefix}/api/short_video/get_short_video`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteShortVideo(request) {
+    const uri = `${this.uriPrefix}/api/short_video/delete_short_video`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  GetStageVideo(request) {
+    const uri = `${this.uriPrefix}/api/short_video/get_stage_video`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteStageVideo(request) {
+    const uri = `${this.uriPrefix}/api/short_video/delete_stage_video`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
