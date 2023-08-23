@@ -33,6 +33,7 @@ import * as virtual_currency from "./currency/virtual_currency";
 import * as tenant from "./tenant/tenant";
 import * as tenant_dept from "./tenant/tenant_dept";
 import * as student from "./tenant/student";
+import * as short_video from "./short_video/short_video";
 export {
   user,
   address,
@@ -65,6 +66,7 @@ export {
   tenant,
   tenant_dept,
   student,
+  short_video,
 };
 
 export class glory_api {
@@ -840,6 +842,15 @@ CreateLivePlanProduct create live plan product */
   DeleteStudents(
     request: student.DeleteStudentsRequest
   ): Promise<student.DeleteStudentsResponse>;
+
+  /** short_video */
+  CreateShortVideo(
+    request: short_video.CreateShortVideoRequest
+  ): Promise<short_video.CreateShortVideoResponse>;
+
+  StageShortVideo(
+    request: short_video.StageShortVideoRequest
+  ): Promise<short_video.StageShortVideoResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

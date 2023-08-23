@@ -6060,6 +6060,68 @@ public final class glory_apiGrpc {
     return getDeleteStudentsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoResponse> getCreateShortVideoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateShortVideo",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoResponse> getCreateShortVideoMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoRequest, com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoResponse> getCreateShortVideoMethod;
+    if ((getCreateShortVideoMethod = glory_apiGrpc.getCreateShortVideoMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCreateShortVideoMethod = glory_apiGrpc.getCreateShortVideoMethod) == null) {
+          glory_apiGrpc.getCreateShortVideoMethod = getCreateShortVideoMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoRequest, com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateShortVideo"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CreateShortVideo"))
+              .build();
+        }
+      }
+    }
+    return getCreateShortVideoMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.StageShortVideoResponse> getStageShortVideoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "StageShortVideo",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.StageShortVideoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.StageShortVideoResponse> getStageShortVideoMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest, com.zhijiejiaoyu.glory_api.short_video.StageShortVideoResponse> getStageShortVideoMethod;
+    if ((getStageShortVideoMethod = glory_apiGrpc.getStageShortVideoMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getStageShortVideoMethod = glory_apiGrpc.getStageShortVideoMethod) == null) {
+          glory_apiGrpc.getStageShortVideoMethod = getStageShortVideoMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest, com.zhijiejiaoyu.glory_api.short_video.StageShortVideoResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "StageShortVideo"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.StageShortVideoResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("StageShortVideo"))
+              .build();
+        }
+      }
+    }
+    return getStageShortVideoMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -7588,6 +7650,23 @@ public final class glory_apiGrpc {
     default void deleteStudents(com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteStudentsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * short_video
+     * </pre>
+     */
+    default void createShortVideo(com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateShortVideoMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void stageShortVideo(com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.StageShortVideoResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStageShortVideoMethod(), responseObserver);
     }
   }
 
@@ -9294,6 +9373,25 @@ public final class glory_apiGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteStudentsMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * short_video
+     * </pre>
+     */
+    public void createShortVideo(com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateShortVideoMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void stageShortVideo(com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.StageShortVideoResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getStageShortVideoMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -10792,6 +10890,23 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsResponse deleteStudents(com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteStudentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * short_video
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoResponse createShortVideo(com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateShortVideoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.StageShortVideoResponse stageShortVideo(com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStageShortVideoMethod(), getCallOptions(), request);
     }
   }
 
@@ -12487,6 +12602,25 @@ public final class glory_apiGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteStudentsMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * short_video
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoResponse> createShortVideo(
+        com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateShortVideoMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.StageShortVideoResponse> stageShortVideo(
+        com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getStageShortVideoMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_EXAMPLE = 0;
@@ -12684,6 +12818,8 @@ public final class glory_apiGrpc {
   private static final int METHODID_LIST_CLASS = 192;
   private static final int METHODID_CREATE_STUDENTS = 193;
   private static final int METHODID_DELETE_STUDENTS = 194;
+  private static final int METHODID_CREATE_SHORT_VIDEO = 195;
+  private static final int METHODID_STAGE_SHORT_VIDEO = 196;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -13481,6 +13617,14 @@ public final class glory_apiGrpc {
         case METHODID_DELETE_STUDENTS:
           serviceImpl.deleteStudents((com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_SHORT_VIDEO:
+          serviceImpl.createShortVideo((com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoResponse>) responseObserver);
+          break;
+        case METHODID_STAGE_SHORT_VIDEO:
+          serviceImpl.stageShortVideo((com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.StageShortVideoResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -14865,6 +15009,20 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsRequest,
               com.zhijiejiaoyu.glory_api.tenant.DeleteStudentsResponse>(
                 service, METHODID_DELETE_STUDENTS)))
+        .addMethod(
+          getCreateShortVideoMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoRequest,
+              com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoResponse>(
+                service, METHODID_CREATE_SHORT_VIDEO)))
+        .addMethod(
+          getStageShortVideoMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest,
+              com.zhijiejiaoyu.glory_api.short_video.StageShortVideoResponse>(
+                service, METHODID_STAGE_SHORT_VIDEO)))
         .build();
   }
 
@@ -15108,6 +15266,8 @@ public final class glory_apiGrpc {
               .addMethod(getListClassMethod())
               .addMethod(getCreateStudentsMethod())
               .addMethod(getDeleteStudentsMethod())
+              .addMethod(getCreateShortVideoMethod())
+              .addMethod(getStageShortVideoMethod())
               .build();
         }
       }
