@@ -29,6 +29,8 @@ message ProductShow {
   double unit_price = 5;//价格
   string product_url = 6;
   string sku_info = 7;
+  string currency = 8;
+  float freight_amount = 9;
 }
 
 
@@ -38,6 +40,7 @@ message ShopShow {
   int32 quantity = 3;
   int64 shop_id = 4;
   string shop_name = 5;
+  string shop_logo = 7;
   repeated ProductShow product = 6;
 }
 
@@ -96,5 +99,3 @@ message DeleteCartRequest {
 message DeleteCartResponse {
   base.BaseResponse base_resp = 1;
 }
-
-
