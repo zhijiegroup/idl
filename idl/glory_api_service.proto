@@ -798,4 +798,16 @@ service glory_api {
   rpc DeleteStageVideo(DeleteStageVideoRequest) returns (DeleteStageVideoResponse) {
     option (api.post) = '/api/short_video/delete_stage_video';
   }
+
+  rpc ManagementListShortVideo(ManagementListShortVideoRequest) returns (ManagementListShortVideoResponse) {
+    option (api.post) = '/api/short_video/management/list_short_video';
+  }
+
+  rpc ManagementCensorShortVideo(ManagementCensorShortVideoRequest) returns (ManagementCensorShortVideoResponse) {
+    option (api.post) = '/api/short_video/management/censor_short_video';
+  }
+
+  rpc ManagementDeleteShortVideo(ManagementDeleteShortVideoRequest) returns (ManagementDeleteShortVideoResponse) {
+    option (api.post) = '/api/short_video/management/delete_short_video';
+  }
 }
