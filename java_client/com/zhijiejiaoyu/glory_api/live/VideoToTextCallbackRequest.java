@@ -90,7 +90,7 @@ private static final long serialVersionUID = 0L;
           case 66: {
             com.zhijiejiaoyu.glory_api.live.VideoToTextResult.Builder subBuilder = null;
             if (result_ != null) {
-              subBuilder = result_.toBuilder();
+              subBuilder = result.toBuilder();
             }
             result = input.readMessage(com.zhijiejiaoyu.glory_api.live.VideoToTextResult.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -623,7 +623,7 @@ private static final long serialVersionUID = 0L;
       if (resultBuilder == null) {
         result.result = result;
       } else {
-        result.result = resultBuilder_.build();
+        result.result = resultBuilder.build();
       }
       onBuilt();
       return result;
@@ -1053,7 +1053,7 @@ private static final long serialVersionUID = 0L;
       if (resultBuilder == null) {
         return result == null ? com.zhijiejiaoyu.glory_api.live.VideoToTextResult.getDefaultInstance() : result;
       } else {
-        return resultBuilder_.getMessage();
+        return resultBuilder.getMessage();
       }
     }
     /**
@@ -1067,7 +1067,7 @@ private static final long serialVersionUID = 0L;
         result = value;
         onChanged();
       } else {
-        resultBuilder_.setMessage(value);
+        resultBuilder.setMessage(value);
       }
 
       return this;
@@ -1081,7 +1081,7 @@ private static final long serialVersionUID = 0L;
         result = builderForValue.build();
         onChanged();
       } else {
-        resultBuilder_.setMessage(builderForValue.build());
+        resultBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -1099,7 +1099,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        resultBuilder_.mergeFrom(value);
+        resultBuilder.mergeFrom(value);
       }
 
       return this;
@@ -1131,7 +1131,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.live.VideoToTextResultOrBuilder getResultOrBuilder() {
       if (resultBuilder_ != null) {
-        return resultBuilder_.getMessageOrBuilder();
+        return resultBuilder.getMessageOrBuilder();
       } else {
         return result == null ?
             com.zhijiejiaoyu.glory_api.live.VideoToTextResult.getDefaultInstance() : result;

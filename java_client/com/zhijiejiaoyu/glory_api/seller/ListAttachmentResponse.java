@@ -53,7 +53,7 @@ private static final long serialVersionUID = 0L;
           case 10: {
             com.zhijiejiaoyu.base.BaseResponse.Builder subBuilder = null;
             if (baseResp_ != null) {
-              subBuilder = baseResp_.toBuilder();
+              subBuilder = baseResp.toBuilder();
             }
             baseResp = input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -68,7 +68,7 @@ private static final long serialVersionUID = 0L;
               attachment = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.seller.Attachment>();
               mutable_bitField0_ |= 0x00000001;
             }
-            attachment_.add(
+            attachment.add(
                 input.readMessage(com.zhijiejiaoyu.glory_api.seller.Attachment.parser(), extensionRegistry));
             break;
           }
@@ -155,14 +155,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public int getAttachmentCount() {
-    return attachment_.size();
+    return attachment.size();
   }
   /**
    * <code>repeated .glory_api.Attachment attachment = 2;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.seller.Attachment getAttachment(int index) {
-    return attachment_.get(index);
+    return attachment.get(index);
   }
   /**
    * <code>repeated .glory_api.Attachment attachment = 2;</code>
@@ -170,7 +170,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.seller.AttachmentOrBuilder getAttachmentOrBuilder(
       int index) {
-    return attachment_.get(index);
+    return attachment.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -190,8 +190,8 @@ private static final long serialVersionUID = 0L;
     if (baseResp_ != null) {
       output.writeMessage(1, getBaseResp());
     }
-    for (int i = 0; i < attachment_.size(); i++) {
-      output.writeMessage(2, attachment_.get(i));
+    for (int i = 0; i < attachment.size(); i++) {
+      output.writeMessage(2, attachment.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -206,9 +206,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
-    for (int i = 0; i < attachment_.size(); i++) {
+    for (int i = 0; i < attachment.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, attachment_.get(i));
+        .computeMessageSize(2, attachment.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -395,7 +395,7 @@ private static final long serialVersionUID = 0L;
         attachment = java.util.Collections.emptyList();
         bitField0 = (bitField0_ & ~0x00000001);
       } else {
-        attachmentBuilder_.clear();
+        attachmentBuilder.clear();
       }
       return this;
     }
@@ -427,7 +427,7 @@ private static final long serialVersionUID = 0L;
       if (baseRespBuilder == null) {
         result.baseResp = baseResp;
       } else {
-        result.baseResp = baseRespBuilder_.build();
+        result.baseResp = baseRespBuilder.build();
       }
       if (attachmentBuilder == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
@@ -436,7 +436,7 @@ private static final long serialVersionUID = 0L;
         }
         result.attachment = attachment;
       } else {
-        result.attachment = attachmentBuilder_.build();
+        result.attachment = attachmentBuilder.build();
       }
       onBuilt();
       return result;
@@ -490,20 +490,20 @@ private static final long serialVersionUID = 0L;
         mergeBaseResp(other.getBaseResp());
       }
       if (attachmentBuilder == null) {
-        if (!other.attachment_.isEmpty()) {
-          if (attachment_.isEmpty()) {
+        if (!other.attachment.isEmpty()) {
+          if (attachment.isEmpty()) {
             attachment = other.attachment;
             bitField0 = (bitField0_ & ~0x00000001);
           } else {
             ensureAttachmentIsMutable();
-            attachment_.addAll(other.attachment);
+            attachment.addAll(other.attachment);
           }
           onChanged();
         }
       } else {
-        if (!other.attachment_.isEmpty()) {
-          if (attachmentBuilder_.isEmpty()) {
-            attachmentBuilder_.dispose();
+        if (!other.attachment.isEmpty()) {
+          if (attachmentBuilder.isEmpty()) {
+            attachmentBuilder.dispose();
             attachmentBuilder = null;
             attachment = other.attachment;
             bitField0 = (bitField0_ & ~0x00000001);
@@ -511,7 +511,7 @@ private static final long serialVersionUID = 0L;
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getAttachmentFieldBuilder() : null;
           } else {
-            attachmentBuilder_.addAllMessages(other.attachment);
+            attachmentBuilder.addAllMessages(other.attachment);
           }
         }
       }
@@ -563,7 +563,7 @@ private static final long serialVersionUID = 0L;
       if (baseRespBuilder == null) {
         return baseResp == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
       } else {
-        return baseRespBuilder_.getMessage();
+        return baseRespBuilder.getMessage();
       }
     }
     /**
@@ -577,7 +577,7 @@ private static final long serialVersionUID = 0L;
         baseResp = value;
         onChanged();
       } else {
-        baseRespBuilder_.setMessage(value);
+        baseRespBuilder.setMessage(value);
       }
 
       return this;
@@ -591,7 +591,7 @@ private static final long serialVersionUID = 0L;
         baseResp = builderForValue.build();
         onChanged();
       } else {
-        baseRespBuilder_.setMessage(builderForValue.build());
+        baseRespBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -609,7 +609,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        baseRespBuilder_.mergeFrom(value);
+        baseRespBuilder.mergeFrom(value);
       }
 
       return this;
@@ -641,7 +641,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder() {
       if (baseRespBuilder_ != null) {
-        return baseRespBuilder_.getMessageOrBuilder();
+        return baseRespBuilder.getMessageOrBuilder();
       } else {
         return baseResp == null ?
             com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
@@ -683,7 +683,7 @@ private static final long serialVersionUID = 0L;
       if (attachmentBuilder == null) {
         return java.util.Collections.unmodifiableList(attachment);
       } else {
-        return attachmentBuilder_.getMessageList();
+        return attachmentBuilder.getMessageList();
       }
     }
     /**
@@ -691,9 +691,9 @@ private static final long serialVersionUID = 0L;
      */
     public int getAttachmentCount() {
       if (attachmentBuilder == null) {
-        return attachment_.size();
+        return attachment.size();
       } else {
-        return attachmentBuilder_.getCount();
+        return attachmentBuilder.getCount();
       }
     }
     /**
@@ -701,9 +701,9 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.seller.Attachment getAttachment(int index) {
       if (attachmentBuilder == null) {
-        return attachment_.get(index);
+        return attachment.get(index);
       } else {
-        return attachmentBuilder_.getMessage(index);
+        return attachmentBuilder.getMessage(index);
       }
     }
     /**
@@ -716,10 +716,10 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         ensureAttachmentIsMutable();
-        attachment_.set(index, value);
+        attachment.set(index, value);
         onChanged();
       } else {
-        attachmentBuilder_.setMessage(index, value);
+        attachmentBuilder.setMessage(index, value);
       }
       return this;
     }
@@ -730,10 +730,10 @@ private static final long serialVersionUID = 0L;
         int index, com.zhijiejiaoyu.glory_api.seller.Attachment.Builder builderForValue) {
       if (attachmentBuilder == null) {
         ensureAttachmentIsMutable();
-        attachment_.set(index, builderForValue.build());
+        attachment.set(index, builderForValue.build());
         onChanged();
       } else {
-        attachmentBuilder_.setMessage(index, builderForValue.build());
+        attachmentBuilder.setMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -746,10 +746,10 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         ensureAttachmentIsMutable();
-        attachment_.add(value);
+        attachment.add(value);
         onChanged();
       } else {
-        attachmentBuilder_.addMessage(value);
+        attachmentBuilder.addMessage(value);
       }
       return this;
     }
@@ -763,10 +763,10 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         ensureAttachmentIsMutable();
-        attachment_.add(index, value);
+        attachment.add(index, value);
         onChanged();
       } else {
-        attachmentBuilder_.addMessage(index, value);
+        attachmentBuilder.addMessage(index, value);
       }
       return this;
     }
@@ -777,10 +777,10 @@ private static final long serialVersionUID = 0L;
         com.zhijiejiaoyu.glory_api.seller.Attachment.Builder builderForValue) {
       if (attachmentBuilder == null) {
         ensureAttachmentIsMutable();
-        attachment_.add(builderForValue.build());
+        attachment.add(builderForValue.build());
         onChanged();
       } else {
-        attachmentBuilder_.addMessage(builderForValue.build());
+        attachmentBuilder.addMessage(builderForValue.build());
       }
       return this;
     }
@@ -791,10 +791,10 @@ private static final long serialVersionUID = 0L;
         int index, com.zhijiejiaoyu.glory_api.seller.Attachment.Builder builderForValue) {
       if (attachmentBuilder == null) {
         ensureAttachmentIsMutable();
-        attachment_.add(index, builderForValue.build());
+        attachment.add(index, builderForValue.build());
         onChanged();
       } else {
-        attachmentBuilder_.addMessage(index, builderForValue.build());
+        attachmentBuilder.addMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -809,7 +809,7 @@ private static final long serialVersionUID = 0L;
             values, attachment);
         onChanged();
       } else {
-        attachmentBuilder_.addAllMessages(values);
+        attachmentBuilder.addAllMessages(values);
       }
       return this;
     }
@@ -822,7 +822,7 @@ private static final long serialVersionUID = 0L;
         bitField0 = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
-        attachmentBuilder_.clear();
+        attachmentBuilder.clear();
       }
       return this;
     }
@@ -832,10 +832,10 @@ private static final long serialVersionUID = 0L;
     public Builder removeAttachment(int index) {
       if (attachmentBuilder == null) {
         ensureAttachmentIsMutable();
-        attachment_.remove(index);
+        attachment.remove(index);
         onChanged();
       } else {
-        attachmentBuilder_.remove(index);
+        attachmentBuilder.remove(index);
       }
       return this;
     }
@@ -852,8 +852,8 @@ private static final long serialVersionUID = 0L;
     public com.zhijiejiaoyu.glory_api.seller.AttachmentOrBuilder getAttachmentOrBuilder(
         int index) {
       if (attachmentBuilder == null) {
-        return attachment_.get(index);  } else {
-        return attachmentBuilder_.getMessageOrBuilder(index);
+        return attachment.get(index);  } else {
+        return attachmentBuilder.getMessageOrBuilder(index);
       }
     }
     /**
@@ -862,7 +862,7 @@ private static final long serialVersionUID = 0L;
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.seller.AttachmentOrBuilder> 
          getAttachmentOrBuilderList() {
       if (attachmentBuilder_ != null) {
-        return attachmentBuilder_.getMessageOrBuilderList();
+        return attachmentBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(attachment);
       }

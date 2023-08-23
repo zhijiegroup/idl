@@ -53,7 +53,7 @@ private static final long serialVersionUID = 0L;
           case 10: {
             com.zhijiejiaoyu.base.BaseRequest.Builder subBuilder = null;
             if (baseRequest_ != null) {
-              subBuilder = baseRequest_.toBuilder();
+              subBuilder = baseRequest.toBuilder();
             }
             baseRequest = input.readMessage(com.zhijiejiaoyu.base.BaseRequest.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -73,7 +73,7 @@ private static final long serialVersionUID = 0L;
               permissionId = newLongList();
               mutable_bitField0_ |= 0x00000001;
             }
-            permissionId_.addLong(input.readInt64());
+            permissionId.addLong(input.readInt64());
             break;
           }
           case 26: {
@@ -84,7 +84,7 @@ private static final long serialVersionUID = 0L;
               mutable_bitField0_ |= 0x00000001;
             }
             while (input.getBytesUntilLimit() > 0) {
-              permissionId_.addLong(input.readInt64());
+              permissionId.addLong(input.readInt64());
             }
             input.popLimit(limit);
             break;
@@ -105,7 +105,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        permissionId_.makeImmutable(); // C
+        permissionId.makeImmutable(); // C
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -177,7 +177,7 @@ private static final long serialVersionUID = 0L;
    * @return The count of permissionId.
    */
   public int getPermissionIdCount() {
-    return permissionId_.size();
+    return permissionId.size();
   }
   /**
    * <code>repeated int64 permission_id = 3;</code>
@@ -185,7 +185,7 @@ private static final long serialVersionUID = 0L;
    * @return The permissionId at the given index.
    */
   public long getPermissionId(int index) {
-    return permissionId_.getLong(index);
+    return permissionId.getLong(index);
   }
   private int permissionIdMemoizedSerializedSize = -1;
 
@@ -214,8 +214,8 @@ private static final long serialVersionUID = 0L;
       output.writeUInt32NoTag(26);
       output.writeUInt32NoTag(permissionIdMemoizedSerializedSize);
     }
-    for (int i = 0; i < permissionId_.size(); i++) {
-      output.writeInt64NoTag(permissionId_.getLong(i));
+    for (int i = 0; i < permissionId.size(); i++) {
+      output.writeInt64NoTag(permissionId.getLong(i));
     }
     unknownFields.writeTo(output);
   }
@@ -236,9 +236,9 @@ private static final long serialVersionUID = 0L;
     }
     {
       int dataSize = 0;
-      for (int i = 0; i < permissionId_.size(); i++) {
+      for (int i = 0; i < permissionId.size(); i++) {
         dataSize += com.google.protobuf.CodedOutputStream
-          .computeInt64SizeNoTag(permissionId_.getLong(i));
+          .computeInt64SizeNoTag(permissionId.getLong(i));
       }
       size += dataSize;
       if (!getPermissionIdList().isEmpty()) {
@@ -467,11 +467,11 @@ private static final long serialVersionUID = 0L;
       if (baseRequestBuilder == null) {
         result.baseRequest = baseRequest;
       } else {
-        result.baseRequest = baseRequestBuilder_.build();
+        result.baseRequest = baseRequestBuilder.build();
       }
       result.roleId = roleId;
       if (((bitField0_ & 0x00000001) != 0)) {
-        permissionId_.makeImmutable();
+        permissionId.makeImmutable();
         bitField0 = (bitField0_ & ~0x00000001);
       }
       result.permissionId = permissionId;
@@ -529,13 +529,13 @@ private static final long serialVersionUID = 0L;
       if (other.getRoleId() != 0L) {
         setRoleId(other.getRoleId());
       }
-      if (!other.permissionId_.isEmpty()) {
-        if (permissionId_.isEmpty()) {
+      if (!other.permissionId.isEmpty()) {
+        if (permissionId.isEmpty()) {
           permissionId = other.permissionId;
           bitField0 = (bitField0_ & ~0x00000001);
         } else {
           ensurePermissionIdIsMutable();
-          permissionId_.addAll(other.permissionId);
+          permissionId.addAll(other.permissionId);
         }
         onChanged();
       }
@@ -587,7 +587,7 @@ private static final long serialVersionUID = 0L;
       if (baseRequestBuilder == null) {
         return baseRequest == null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
       } else {
-        return baseRequestBuilder_.getMessage();
+        return baseRequestBuilder.getMessage();
       }
     }
     /**
@@ -601,7 +601,7 @@ private static final long serialVersionUID = 0L;
         baseRequest = value;
         onChanged();
       } else {
-        baseRequestBuilder_.setMessage(value);
+        baseRequestBuilder.setMessage(value);
       }
 
       return this;
@@ -615,7 +615,7 @@ private static final long serialVersionUID = 0L;
         baseRequest = builderForValue.build();
         onChanged();
       } else {
-        baseRequestBuilder_.setMessage(builderForValue.build());
+        baseRequestBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -633,7 +633,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        baseRequestBuilder_.mergeFrom(value);
+        baseRequestBuilder.mergeFrom(value);
       }
 
       return this;
@@ -665,7 +665,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder() {
       if (baseRequestBuilder_ != null) {
-        return baseRequestBuilder_.getMessageOrBuilder();
+        return baseRequestBuilder.getMessageOrBuilder();
       } else {
         return baseRequest == null ?
             com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
@@ -740,7 +740,7 @@ private static final long serialVersionUID = 0L;
      * @return The count of permissionId.
      */
     public int getPermissionIdCount() {
-      return permissionId_.size();
+      return permissionId.size();
     }
     /**
      * <code>repeated int64 permission_id = 3;</code>
@@ -748,7 +748,7 @@ private static final long serialVersionUID = 0L;
      * @return The permissionId at the given index.
      */
     public long getPermissionId(int index) {
-      return permissionId_.getLong(index);
+      return permissionId.getLong(index);
     }
     /**
      * <code>repeated int64 permission_id = 3;</code>
@@ -759,7 +759,7 @@ private static final long serialVersionUID = 0L;
     public Builder setPermissionId(
         int index, long value) {
       ensurePermissionIdIsMutable();
-      permissionId_.setLong(index, value);
+      permissionId.setLong(index, value);
       onChanged();
       return this;
     }
@@ -770,7 +770,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addPermissionId(long value) {
       ensurePermissionIdIsMutable();
-      permissionId_.addLong(value);
+      permissionId.addLong(value);
       onChanged();
       return this;
     }

@@ -55,7 +55,7 @@ private static final long serialVersionUID = 0L;
               shopChartData = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.shop.ShopChartData>();
               mutable_bitField0_ |= 0x00000001;
             }
-            shopChartData_.add(
+            shopChartData.add(
                 input.readMessage(com.zhijiejiaoyu.glory_api.shop.ShopChartData.parser(), extensionRegistry));
             break;
           }
@@ -131,14 +131,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public int getShopChartDataCount() {
-    return shopChartData_.size();
+    return shopChartData.size();
   }
   /**
    * <code>repeated .glory_api.ShopChartData shop_chart_data = 1;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.shop.ShopChartData getShopChartData(int index) {
-    return shopChartData_.get(index);
+    return shopChartData.get(index);
   }
   /**
    * <code>repeated .glory_api.ShopChartData shop_chart_data = 1;</code>
@@ -146,7 +146,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.shop.ShopChartDataOrBuilder getShopChartDataOrBuilder(
       int index) {
-    return shopChartData_.get(index);
+    return shopChartData.get(index);
   }
 
   public static final int TOTAL_DEAL_AMOUNT_FIELD_NUMBER = 2;
@@ -196,8 +196,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    for (int i = 0; i < shopChartData_.size(); i++) {
-      output.writeMessage(1, shopChartData_.get(i));
+    for (int i = 0; i < shopChartData.size(); i++) {
+      output.writeMessage(1, shopChartData.get(i));
     }
     if (totalDealAmount_ != 0D) {
       output.writeDouble(2, totalDealAmount);
@@ -217,9 +217,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    for (int i = 0; i < shopChartData_.size(); i++) {
+    for (int i = 0; i < shopChartData.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, shopChartData_.get(i));
+        .computeMessageSize(1, shopChartData.get(i));
     }
     if (totalDealAmount_ != 0D) {
       size += com.google.protobuf.CodedOutputStream
@@ -419,7 +419,7 @@ private static final long serialVersionUID = 0L;
         shopChartData = java.util.Collections.emptyList();
         bitField0 = (bitField0_ & ~0x00000001);
       } else {
-        shopChartDataBuilder_.clear();
+        shopChartDataBuilder.clear();
       }
       totalDealAmount = 0D;
 
@@ -461,7 +461,7 @@ private static final long serialVersionUID = 0L;
         }
         result.shopChartData = shopChartData;
       } else {
-        result.shopChartData = shopChartDataBuilder_.build();
+        result.shopChartData = shopChartDataBuilder.build();
       }
       result.totalDealAmount = totalDealAmount;
       result.totalVisitorAmount = totalVisitorAmount;
@@ -515,20 +515,20 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.zhijiejiaoyu.glory_api.shop.ShopBusinessData other) {
       if (other == com.zhijiejiaoyu.glory_api.shop.ShopBusinessData.getDefaultInstance()) return this;
       if (shopChartDataBuilder == null) {
-        if (!other.shopChartData_.isEmpty()) {
-          if (shopChartData_.isEmpty()) {
+        if (!other.shopChartData.isEmpty()) {
+          if (shopChartData.isEmpty()) {
             shopChartData = other.shopChartData;
             bitField0 = (bitField0_ & ~0x00000001);
           } else {
             ensureShopChartDataIsMutable();
-            shopChartData_.addAll(other.shopChartData);
+            shopChartData.addAll(other.shopChartData);
           }
           onChanged();
         }
       } else {
-        if (!other.shopChartData_.isEmpty()) {
-          if (shopChartDataBuilder_.isEmpty()) {
-            shopChartDataBuilder_.dispose();
+        if (!other.shopChartData.isEmpty()) {
+          if (shopChartDataBuilder.isEmpty()) {
+            shopChartDataBuilder.dispose();
             shopChartDataBuilder = null;
             shopChartData = other.shopChartData;
             bitField0 = (bitField0_ & ~0x00000001);
@@ -536,7 +536,7 @@ private static final long serialVersionUID = 0L;
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getShopChartDataFieldBuilder() : null;
           } else {
-            shopChartDataBuilder_.addAllMessages(other.shopChartData);
+            shopChartDataBuilder.addAllMessages(other.shopChartData);
           }
         }
       }
@@ -598,7 +598,7 @@ private static final long serialVersionUID = 0L;
       if (shopChartDataBuilder == null) {
         return java.util.Collections.unmodifiableList(shopChartData);
       } else {
-        return shopChartDataBuilder_.getMessageList();
+        return shopChartDataBuilder.getMessageList();
       }
     }
     /**
@@ -606,9 +606,9 @@ private static final long serialVersionUID = 0L;
      */
     public int getShopChartDataCount() {
       if (shopChartDataBuilder == null) {
-        return shopChartData_.size();
+        return shopChartData.size();
       } else {
-        return shopChartDataBuilder_.getCount();
+        return shopChartDataBuilder.getCount();
       }
     }
     /**
@@ -616,9 +616,9 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.shop.ShopChartData getShopChartData(int index) {
       if (shopChartDataBuilder == null) {
-        return shopChartData_.get(index);
+        return shopChartData.get(index);
       } else {
-        return shopChartDataBuilder_.getMessage(index);
+        return shopChartDataBuilder.getMessage(index);
       }
     }
     /**
@@ -631,10 +631,10 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         ensureShopChartDataIsMutable();
-        shopChartData_.set(index, value);
+        shopChartData.set(index, value);
         onChanged();
       } else {
-        shopChartDataBuilder_.setMessage(index, value);
+        shopChartDataBuilder.setMessage(index, value);
       }
       return this;
     }
@@ -645,10 +645,10 @@ private static final long serialVersionUID = 0L;
         int index, com.zhijiejiaoyu.glory_api.shop.ShopChartData.Builder builderForValue) {
       if (shopChartDataBuilder == null) {
         ensureShopChartDataIsMutable();
-        shopChartData_.set(index, builderForValue.build());
+        shopChartData.set(index, builderForValue.build());
         onChanged();
       } else {
-        shopChartDataBuilder_.setMessage(index, builderForValue.build());
+        shopChartDataBuilder.setMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -661,10 +661,10 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         ensureShopChartDataIsMutable();
-        shopChartData_.add(value);
+        shopChartData.add(value);
         onChanged();
       } else {
-        shopChartDataBuilder_.addMessage(value);
+        shopChartDataBuilder.addMessage(value);
       }
       return this;
     }
@@ -678,10 +678,10 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         ensureShopChartDataIsMutable();
-        shopChartData_.add(index, value);
+        shopChartData.add(index, value);
         onChanged();
       } else {
-        shopChartDataBuilder_.addMessage(index, value);
+        shopChartDataBuilder.addMessage(index, value);
       }
       return this;
     }
@@ -692,10 +692,10 @@ private static final long serialVersionUID = 0L;
         com.zhijiejiaoyu.glory_api.shop.ShopChartData.Builder builderForValue) {
       if (shopChartDataBuilder == null) {
         ensureShopChartDataIsMutable();
-        shopChartData_.add(builderForValue.build());
+        shopChartData.add(builderForValue.build());
         onChanged();
       } else {
-        shopChartDataBuilder_.addMessage(builderForValue.build());
+        shopChartDataBuilder.addMessage(builderForValue.build());
       }
       return this;
     }
@@ -706,10 +706,10 @@ private static final long serialVersionUID = 0L;
         int index, com.zhijiejiaoyu.glory_api.shop.ShopChartData.Builder builderForValue) {
       if (shopChartDataBuilder == null) {
         ensureShopChartDataIsMutable();
-        shopChartData_.add(index, builderForValue.build());
+        shopChartData.add(index, builderForValue.build());
         onChanged();
       } else {
-        shopChartDataBuilder_.addMessage(index, builderForValue.build());
+        shopChartDataBuilder.addMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -724,7 +724,7 @@ private static final long serialVersionUID = 0L;
             values, shopChartData);
         onChanged();
       } else {
-        shopChartDataBuilder_.addAllMessages(values);
+        shopChartDataBuilder.addAllMessages(values);
       }
       return this;
     }
@@ -737,7 +737,7 @@ private static final long serialVersionUID = 0L;
         bitField0 = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
-        shopChartDataBuilder_.clear();
+        shopChartDataBuilder.clear();
       }
       return this;
     }
@@ -747,10 +747,10 @@ private static final long serialVersionUID = 0L;
     public Builder removeShopChartData(int index) {
       if (shopChartDataBuilder == null) {
         ensureShopChartDataIsMutable();
-        shopChartData_.remove(index);
+        shopChartData.remove(index);
         onChanged();
       } else {
-        shopChartDataBuilder_.remove(index);
+        shopChartDataBuilder.remove(index);
       }
       return this;
     }
@@ -767,8 +767,8 @@ private static final long serialVersionUID = 0L;
     public com.zhijiejiaoyu.glory_api.shop.ShopChartDataOrBuilder getShopChartDataOrBuilder(
         int index) {
       if (shopChartDataBuilder == null) {
-        return shopChartData_.get(index);  } else {
-        return shopChartDataBuilder_.getMessageOrBuilder(index);
+        return shopChartData.get(index);  } else {
+        return shopChartDataBuilder.getMessageOrBuilder(index);
       }
     }
     /**
@@ -777,7 +777,7 @@ private static final long serialVersionUID = 0L;
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.ShopChartDataOrBuilder> 
          getShopChartDataOrBuilderList() {
       if (shopChartDataBuilder_ != null) {
-        return shopChartDataBuilder_.getMessageOrBuilderList();
+        return shopChartDataBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(shopChartData);
       }

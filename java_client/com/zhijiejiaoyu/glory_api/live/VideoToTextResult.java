@@ -55,7 +55,7 @@ private static final long serialVersionUID = 0L;
               sentences = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.live.VideoToTextSentence>();
               mutable_bitField0_ |= 0x00000001;
             }
-            sentences_.add(
+            sentences.add(
                 input.readMessage(com.zhijiejiaoyu.glory_api.live.VideoToTextSentence.parser(), extensionRegistry));
             break;
           }
@@ -116,14 +116,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public int getSentencesCount() {
-    return sentences_.size();
+    return sentences.size();
   }
   /**
    * <code>repeated .glory_api.VideoToTextSentence Sentences = 1;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.live.VideoToTextSentence getSentences(int index) {
-    return sentences_.get(index);
+    return sentences.get(index);
   }
   /**
    * <code>repeated .glory_api.VideoToTextSentence Sentences = 1;</code>
@@ -131,7 +131,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.live.VideoToTextSentenceOrBuilder getSentencesOrBuilder(
       int index) {
-    return sentences_.get(index);
+    return sentences.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -148,8 +148,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    for (int i = 0; i < sentences_.size(); i++) {
-      output.writeMessage(1, sentences_.get(i));
+    for (int i = 0; i < sentences.size(); i++) {
+      output.writeMessage(1, sentences.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -160,9 +160,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    for (int i = 0; i < sentences_.size(); i++) {
+    for (int i = 0; i < sentences.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, sentences_.get(i));
+        .computeMessageSize(1, sentences.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -334,7 +334,7 @@ private static final long serialVersionUID = 0L;
         sentences = java.util.Collections.emptyList();
         bitField0 = (bitField0_ & ~0x00000001);
       } else {
-        sentencesBuilder_.clear();
+        sentencesBuilder.clear();
       }
       return this;
     }
@@ -370,7 +370,7 @@ private static final long serialVersionUID = 0L;
         }
         result.sentences = sentences;
       } else {
-        result.sentences = sentencesBuilder_.build();
+        result.sentences = sentencesBuilder.build();
       }
       onBuilt();
       return result;
@@ -421,20 +421,20 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.zhijiejiaoyu.glory_api.live.VideoToTextResult other) {
       if (other == com.zhijiejiaoyu.glory_api.live.VideoToTextResult.getDefaultInstance()) return this;
       if (sentencesBuilder == null) {
-        if (!other.sentences_.isEmpty()) {
-          if (sentences_.isEmpty()) {
+        if (!other.sentences.isEmpty()) {
+          if (sentences.isEmpty()) {
             sentences = other.sentences;
             bitField0 = (bitField0_ & ~0x00000001);
           } else {
             ensureSentencesIsMutable();
-            sentences_.addAll(other.sentences);
+            sentences.addAll(other.sentences);
           }
           onChanged();
         }
       } else {
-        if (!other.sentences_.isEmpty()) {
-          if (sentencesBuilder_.isEmpty()) {
-            sentencesBuilder_.dispose();
+        if (!other.sentences.isEmpty()) {
+          if (sentencesBuilder.isEmpty()) {
+            sentencesBuilder.dispose();
             sentencesBuilder = null;
             sentences = other.sentences;
             bitField0 = (bitField0_ & ~0x00000001);
@@ -442,7 +442,7 @@ private static final long serialVersionUID = 0L;
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getSentencesFieldBuilder() : null;
           } else {
-            sentencesBuilder_.addAllMessages(other.sentences);
+            sentencesBuilder.addAllMessages(other.sentences);
           }
         }
       }
@@ -495,7 +495,7 @@ private static final long serialVersionUID = 0L;
       if (sentencesBuilder == null) {
         return java.util.Collections.unmodifiableList(sentences);
       } else {
-        return sentencesBuilder_.getMessageList();
+        return sentencesBuilder.getMessageList();
       }
     }
     /**
@@ -503,9 +503,9 @@ private static final long serialVersionUID = 0L;
      */
     public int getSentencesCount() {
       if (sentencesBuilder == null) {
-        return sentences_.size();
+        return sentences.size();
       } else {
-        return sentencesBuilder_.getCount();
+        return sentencesBuilder.getCount();
       }
     }
     /**
@@ -513,9 +513,9 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.live.VideoToTextSentence getSentences(int index) {
       if (sentencesBuilder == null) {
-        return sentences_.get(index);
+        return sentences.get(index);
       } else {
-        return sentencesBuilder_.getMessage(index);
+        return sentencesBuilder.getMessage(index);
       }
     }
     /**
@@ -528,10 +528,10 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         ensureSentencesIsMutable();
-        sentences_.set(index, value);
+        sentences.set(index, value);
         onChanged();
       } else {
-        sentencesBuilder_.setMessage(index, value);
+        sentencesBuilder.setMessage(index, value);
       }
       return this;
     }
@@ -542,10 +542,10 @@ private static final long serialVersionUID = 0L;
         int index, com.zhijiejiaoyu.glory_api.live.VideoToTextSentence.Builder builderForValue) {
       if (sentencesBuilder == null) {
         ensureSentencesIsMutable();
-        sentences_.set(index, builderForValue.build());
+        sentences.set(index, builderForValue.build());
         onChanged();
       } else {
-        sentencesBuilder_.setMessage(index, builderForValue.build());
+        sentencesBuilder.setMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -558,10 +558,10 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         ensureSentencesIsMutable();
-        sentences_.add(value);
+        sentences.add(value);
         onChanged();
       } else {
-        sentencesBuilder_.addMessage(value);
+        sentencesBuilder.addMessage(value);
       }
       return this;
     }
@@ -575,10 +575,10 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         ensureSentencesIsMutable();
-        sentences_.add(index, value);
+        sentences.add(index, value);
         onChanged();
       } else {
-        sentencesBuilder_.addMessage(index, value);
+        sentencesBuilder.addMessage(index, value);
       }
       return this;
     }
@@ -589,10 +589,10 @@ private static final long serialVersionUID = 0L;
         com.zhijiejiaoyu.glory_api.live.VideoToTextSentence.Builder builderForValue) {
       if (sentencesBuilder == null) {
         ensureSentencesIsMutable();
-        sentences_.add(builderForValue.build());
+        sentences.add(builderForValue.build());
         onChanged();
       } else {
-        sentencesBuilder_.addMessage(builderForValue.build());
+        sentencesBuilder.addMessage(builderForValue.build());
       }
       return this;
     }
@@ -603,10 +603,10 @@ private static final long serialVersionUID = 0L;
         int index, com.zhijiejiaoyu.glory_api.live.VideoToTextSentence.Builder builderForValue) {
       if (sentencesBuilder == null) {
         ensureSentencesIsMutable();
-        sentences_.add(index, builderForValue.build());
+        sentences.add(index, builderForValue.build());
         onChanged();
       } else {
-        sentencesBuilder_.addMessage(index, builderForValue.build());
+        sentencesBuilder.addMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -621,7 +621,7 @@ private static final long serialVersionUID = 0L;
             values, sentences);
         onChanged();
       } else {
-        sentencesBuilder_.addAllMessages(values);
+        sentencesBuilder.addAllMessages(values);
       }
       return this;
     }
@@ -634,7 +634,7 @@ private static final long serialVersionUID = 0L;
         bitField0 = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
-        sentencesBuilder_.clear();
+        sentencesBuilder.clear();
       }
       return this;
     }
@@ -644,10 +644,10 @@ private static final long serialVersionUID = 0L;
     public Builder removeSentences(int index) {
       if (sentencesBuilder == null) {
         ensureSentencesIsMutable();
-        sentences_.remove(index);
+        sentences.remove(index);
         onChanged();
       } else {
-        sentencesBuilder_.remove(index);
+        sentencesBuilder.remove(index);
       }
       return this;
     }
@@ -664,8 +664,8 @@ private static final long serialVersionUID = 0L;
     public com.zhijiejiaoyu.glory_api.live.VideoToTextSentenceOrBuilder getSentencesOrBuilder(
         int index) {
       if (sentencesBuilder == null) {
-        return sentences_.get(index);  } else {
-        return sentencesBuilder_.getMessageOrBuilder(index);
+        return sentences.get(index);  } else {
+        return sentencesBuilder.getMessageOrBuilder(index);
       }
     }
     /**
@@ -674,7 +674,7 @@ private static final long serialVersionUID = 0L;
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.live.VideoToTextSentenceOrBuilder> 
          getSentencesOrBuilderList() {
       if (sentencesBuilder_ != null) {
-        return sentencesBuilder_.getMessageOrBuilderList();
+        return sentencesBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(sentences);
       }

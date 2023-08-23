@@ -68,7 +68,7 @@ private static final long serialVersionUID = 0L;
           case 26: {
             com.zhijiejiaoyu.glory_api.wxpay.Amount.Builder subBuilder = null;
             if (amount_ != null) {
-              subBuilder = amount_.toBuilder();
+              subBuilder = amount.toBuilder();
             }
             amount = input.readMessage(com.zhijiejiaoyu.glory_api.wxpay.Amount.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -98,7 +98,7 @@ private static final long serialVersionUID = 0L;
           case 58: {
             com.zhijiejiaoyu.glory_api.wxpay.Detail.Builder subBuilder = null;
             if (detail_ != null) {
-              subBuilder = detail_.toBuilder();
+              subBuilder = detail.toBuilder();
             }
             detail = input.readMessage(com.zhijiejiaoyu.glory_api.wxpay.Detail.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -111,7 +111,7 @@ private static final long serialVersionUID = 0L;
           case 66: {
             com.zhijiejiaoyu.glory_api.wxpay.SceneInfo.Builder subBuilder = null;
             if (sceneInfo_ != null) {
-              subBuilder = sceneInfo_.toBuilder();
+              subBuilder = sceneInfo.toBuilder();
             }
             sceneInfo = input.readMessage(com.zhijiejiaoyu.glory_api.wxpay.SceneInfo.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -124,7 +124,7 @@ private static final long serialVersionUID = 0L;
           case 74: {
             com.zhijiejiaoyu.glory_api.wxpay.SettleInfo.Builder subBuilder = null;
             if (settleInfo_ != null) {
-              subBuilder = settleInfo_.toBuilder();
+              subBuilder = settleInfo.toBuilder();
             }
             settleInfo = input.readMessage(com.zhijiejiaoyu.glory_api.wxpay.SettleInfo.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -932,7 +932,7 @@ private static final long serialVersionUID = 0L;
       if (amountBuilder == null) {
         result.amount = amount;
       } else {
-        result.amount = amountBuilder_.build();
+        result.amount = amountBuilder.build();
       }
       result.appid = appid;
       result.attach = attach;
@@ -941,17 +941,17 @@ private static final long serialVersionUID = 0L;
       if (detailBuilder == null) {
         result.detail = detail;
       } else {
-        result.detail = detailBuilder_.build();
+        result.detail = detailBuilder.build();
       }
       if (sceneInfoBuilder == null) {
         result.sceneInfo = sceneInfo;
       } else {
-        result.sceneInfo = sceneInfoBuilder_.build();
+        result.sceneInfo = sceneInfoBuilder.build();
       }
       if (settleInfoBuilder == null) {
         result.settleInfo = settleInfo;
       } else {
-        result.settleInfo = settleInfoBuilder_.build();
+        result.settleInfo = settleInfoBuilder.build();
       }
       onBuilt();
       return result;
@@ -1275,7 +1275,7 @@ private static final long serialVersionUID = 0L;
       if (amountBuilder == null) {
         return amount == null ? com.zhijiejiaoyu.glory_api.wxpay.Amount.getDefaultInstance() : amount;
       } else {
-        return amountBuilder_.getMessage();
+        return amountBuilder.getMessage();
       }
     }
     /**
@@ -1289,7 +1289,7 @@ private static final long serialVersionUID = 0L;
         amount = value;
         onChanged();
       } else {
-        amountBuilder_.setMessage(value);
+        amountBuilder.setMessage(value);
       }
 
       return this;
@@ -1303,7 +1303,7 @@ private static final long serialVersionUID = 0L;
         amount = builderForValue.build();
         onChanged();
       } else {
-        amountBuilder_.setMessage(builderForValue.build());
+        amountBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -1321,7 +1321,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        amountBuilder_.mergeFrom(value);
+        amountBuilder.mergeFrom(value);
       }
 
       return this;
@@ -1353,7 +1353,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.wxpay.AmountOrBuilder getAmountOrBuilder() {
       if (amountBuilder_ != null) {
-        return amountBuilder_.getMessageOrBuilder();
+        return amountBuilder.getMessageOrBuilder();
       } else {
         return amount == null ?
             com.zhijiejiaoyu.glory_api.wxpay.Amount.getDefaultInstance() : amount;
@@ -1733,7 +1733,7 @@ private static final long serialVersionUID = 0L;
       if (detailBuilder == null) {
         return detail == null ? com.zhijiejiaoyu.glory_api.wxpay.Detail.getDefaultInstance() : detail;
       } else {
-        return detailBuilder_.getMessage();
+        return detailBuilder.getMessage();
       }
     }
     /**
@@ -1751,7 +1751,7 @@ private static final long serialVersionUID = 0L;
         detail = value;
         onChanged();
       } else {
-        detailBuilder_.setMessage(value);
+        detailBuilder.setMessage(value);
       }
 
       return this;
@@ -1769,7 +1769,7 @@ private static final long serialVersionUID = 0L;
         detail = builderForValue.build();
         onChanged();
       } else {
-        detailBuilder_.setMessage(builderForValue.build());
+        detailBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -1791,7 +1791,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        detailBuilder_.mergeFrom(value);
+        detailBuilder.mergeFrom(value);
       }
 
       return this;
@@ -1835,7 +1835,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.wxpay.DetailOrBuilder getDetailOrBuilder() {
       if (detailBuilder_ != null) {
-        return detailBuilder_.getMessageOrBuilder();
+        return detailBuilder.getMessageOrBuilder();
       } else {
         return detail == null ?
             com.zhijiejiaoyu.glory_api.wxpay.Detail.getDefaultInstance() : detail;
@@ -1888,7 +1888,7 @@ private static final long serialVersionUID = 0L;
       if (sceneInfoBuilder == null) {
         return sceneInfo == null ? com.zhijiejiaoyu.glory_api.wxpay.SceneInfo.getDefaultInstance() : sceneInfo;
       } else {
-        return sceneInfoBuilder_.getMessage();
+        return sceneInfoBuilder.getMessage();
       }
     }
     /**
@@ -1906,7 +1906,7 @@ private static final long serialVersionUID = 0L;
         sceneInfo = value;
         onChanged();
       } else {
-        sceneInfoBuilder_.setMessage(value);
+        sceneInfoBuilder.setMessage(value);
       }
 
       return this;
@@ -1924,7 +1924,7 @@ private static final long serialVersionUID = 0L;
         sceneInfo = builderForValue.build();
         onChanged();
       } else {
-        sceneInfoBuilder_.setMessage(builderForValue.build());
+        sceneInfoBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -1946,7 +1946,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        sceneInfoBuilder_.mergeFrom(value);
+        sceneInfoBuilder.mergeFrom(value);
       }
 
       return this;
@@ -1990,7 +1990,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.wxpay.SceneInfoOrBuilder getSceneInfoOrBuilder() {
       if (sceneInfoBuilder_ != null) {
-        return sceneInfoBuilder_.getMessageOrBuilder();
+        return sceneInfoBuilder.getMessageOrBuilder();
       } else {
         return sceneInfo == null ?
             com.zhijiejiaoyu.glory_api.wxpay.SceneInfo.getDefaultInstance() : sceneInfo;
@@ -2043,7 +2043,7 @@ private static final long serialVersionUID = 0L;
       if (settleInfoBuilder == null) {
         return settleInfo == null ? com.zhijiejiaoyu.glory_api.wxpay.SettleInfo.getDefaultInstance() : settleInfo;
       } else {
-        return settleInfoBuilder_.getMessage();
+        return settleInfoBuilder.getMessage();
       }
     }
     /**
@@ -2061,7 +2061,7 @@ private static final long serialVersionUID = 0L;
         settleInfo = value;
         onChanged();
       } else {
-        settleInfoBuilder_.setMessage(value);
+        settleInfoBuilder.setMessage(value);
       }
 
       return this;
@@ -2079,7 +2079,7 @@ private static final long serialVersionUID = 0L;
         settleInfo = builderForValue.build();
         onChanged();
       } else {
-        settleInfoBuilder_.setMessage(builderForValue.build());
+        settleInfoBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -2101,7 +2101,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        settleInfoBuilder_.mergeFrom(value);
+        settleInfoBuilder.mergeFrom(value);
       }
 
       return this;
@@ -2145,7 +2145,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.wxpay.SettleInfoOrBuilder getSettleInfoOrBuilder() {
       if (settleInfoBuilder_ != null) {
-        return settleInfoBuilder_.getMessageOrBuilder();
+        return settleInfoBuilder.getMessageOrBuilder();
       } else {
         return settleInfo == null ?
             com.zhijiejiaoyu.glory_api.wxpay.SettleInfo.getDefaultInstance() : settleInfo;

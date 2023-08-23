@@ -51,7 +51,7 @@ private static final long serialVersionUID = 0L;
           case 10: {
             com.zhijiejiaoyu.base.BaseResponse.Builder subBuilder = null;
             if (baseResp_ != null) {
-              subBuilder = baseResp_.toBuilder();
+              subBuilder = baseResp.toBuilder();
             }
             baseResp = input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -64,7 +64,7 @@ private static final long serialVersionUID = 0L;
           case 18: {
             com.zhijiejiaoyu.glory_api.shop.ShopBusinessData.Builder subBuilder = null;
             if (shopBusinessData_ != null) {
-              subBuilder = shopBusinessData_.toBuilder();
+              subBuilder = shopBusinessData.toBuilder();
             }
             shopBusinessData = input.readMessage(com.zhijiejiaoyu.glory_api.shop.ShopBusinessData.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -413,12 +413,12 @@ private static final long serialVersionUID = 0L;
       if (baseRespBuilder == null) {
         result.baseResp = baseResp;
       } else {
-        result.baseResp = baseRespBuilder_.build();
+        result.baseResp = baseRespBuilder.build();
       }
       if (shopBusinessDataBuilder == null) {
         result.shopBusinessData = shopBusinessData;
       } else {
-        result.shopBusinessData = shopBusinessDataBuilder_.build();
+        result.shopBusinessData = shopBusinessDataBuilder.build();
       }
       onBuilt();
       return result;
@@ -521,7 +521,7 @@ private static final long serialVersionUID = 0L;
       if (baseRespBuilder == null) {
         return baseResp == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
       } else {
-        return baseRespBuilder_.getMessage();
+        return baseRespBuilder.getMessage();
       }
     }
     /**
@@ -535,7 +535,7 @@ private static final long serialVersionUID = 0L;
         baseResp = value;
         onChanged();
       } else {
-        baseRespBuilder_.setMessage(value);
+        baseRespBuilder.setMessage(value);
       }
 
       return this;
@@ -549,7 +549,7 @@ private static final long serialVersionUID = 0L;
         baseResp = builderForValue.build();
         onChanged();
       } else {
-        baseRespBuilder_.setMessage(builderForValue.build());
+        baseRespBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -567,7 +567,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        baseRespBuilder_.mergeFrom(value);
+        baseRespBuilder.mergeFrom(value);
       }
 
       return this;
@@ -599,7 +599,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder() {
       if (baseRespBuilder_ != null) {
-        return baseRespBuilder_.getMessageOrBuilder();
+        return baseRespBuilder.getMessageOrBuilder();
       } else {
         return baseResp == null ?
             com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
@@ -640,7 +640,7 @@ private static final long serialVersionUID = 0L;
       if (shopBusinessDataBuilder == null) {
         return shopBusinessData == null ? com.zhijiejiaoyu.glory_api.shop.ShopBusinessData.getDefaultInstance() : shopBusinessData;
       } else {
-        return shopBusinessDataBuilder_.getMessage();
+        return shopBusinessDataBuilder.getMessage();
       }
     }
     /**
@@ -654,7 +654,7 @@ private static final long serialVersionUID = 0L;
         shopBusinessData = value;
         onChanged();
       } else {
-        shopBusinessDataBuilder_.setMessage(value);
+        shopBusinessDataBuilder.setMessage(value);
       }
 
       return this;
@@ -668,7 +668,7 @@ private static final long serialVersionUID = 0L;
         shopBusinessData = builderForValue.build();
         onChanged();
       } else {
-        shopBusinessDataBuilder_.setMessage(builderForValue.build());
+        shopBusinessDataBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -686,7 +686,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        shopBusinessDataBuilder_.mergeFrom(value);
+        shopBusinessDataBuilder.mergeFrom(value);
       }
 
       return this;
@@ -718,7 +718,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.shop.ShopBusinessDataOrBuilder getShopBusinessDataOrBuilder() {
       if (shopBusinessDataBuilder_ != null) {
-        return shopBusinessDataBuilder_.getMessageOrBuilder();
+        return shopBusinessDataBuilder.getMessageOrBuilder();
       } else {
         return shopBusinessData == null ?
             com.zhijiejiaoyu.glory_api.shop.ShopBusinessData.getDefaultInstance() : shopBusinessData;

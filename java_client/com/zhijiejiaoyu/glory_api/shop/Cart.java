@@ -71,7 +71,7 @@ private static final long serialVersionUID = 0L;
           case 42: {
             com.zhijiejiaoyu.glory_api.shop.CartSku.Builder subBuilder = null;
             if (cartSku_ != null) {
-              subBuilder = cartSku_.toBuilder();
+              subBuilder = cartSku.toBuilder();
             }
             cartSku = input.readMessage(com.zhijiejiaoyu.glory_api.shop.CartSku.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -480,7 +480,7 @@ private static final long serialVersionUID = 0L;
       if (cartSkuBuilder == null) {
         result.cartSku = cartSku;
       } else {
-        result.cartSku = cartSkuBuilder_.build();
+        result.cartSku = cartSkuBuilder.build();
       }
       onBuilt();
       return result;
@@ -728,7 +728,7 @@ private static final long serialVersionUID = 0L;
       if (cartSkuBuilder == null) {
         return cartSku == null ? com.zhijiejiaoyu.glory_api.shop.CartSku.getDefaultInstance() : cartSku;
       } else {
-        return cartSkuBuilder_.getMessage();
+        return cartSkuBuilder.getMessage();
       }
     }
     /**
@@ -742,7 +742,7 @@ private static final long serialVersionUID = 0L;
         cartSku = value;
         onChanged();
       } else {
-        cartSkuBuilder_.setMessage(value);
+        cartSkuBuilder.setMessage(value);
       }
 
       return this;
@@ -756,7 +756,7 @@ private static final long serialVersionUID = 0L;
         cartSku = builderForValue.build();
         onChanged();
       } else {
-        cartSkuBuilder_.setMessage(builderForValue.build());
+        cartSkuBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -774,7 +774,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        cartSkuBuilder_.mergeFrom(value);
+        cartSkuBuilder.mergeFrom(value);
       }
 
       return this;
@@ -806,7 +806,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.shop.CartSkuOrBuilder getCartSkuOrBuilder() {
       if (cartSkuBuilder_ != null) {
-        return cartSkuBuilder_.getMessageOrBuilder();
+        return cartSkuBuilder.getMessageOrBuilder();
       } else {
         return cartSku == null ?
             com.zhijiejiaoyu.glory_api.shop.CartSku.getDefaultInstance() : cartSku;

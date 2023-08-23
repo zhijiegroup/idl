@@ -53,7 +53,7 @@ private static final long serialVersionUID = 0L;
           case 10: {
             com.zhijiejiaoyu.base.BaseResponse.Builder subBuilder = null;
             if (baseResp_ != null) {
-              subBuilder = baseResp_.toBuilder();
+              subBuilder = baseResp.toBuilder();
             }
             baseResp = input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -68,14 +68,14 @@ private static final long serialVersionUID = 0L;
               attributeDetail = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.shop.AttributeWithAuthor>();
               mutable_bitField0_ |= 0x00000001;
             }
-            attributeDetail_.add(
+            attributeDetail.add(
                 input.readMessage(com.zhijiejiaoyu.glory_api.shop.AttributeWithAuthor.parser(), extensionRegistry));
             break;
           }
           case 802: {
             com.zhijiejiaoyu.base.PaginationResponse.Builder subBuilder = null;
             if (pagination_ != null) {
-              subBuilder = pagination_.toBuilder();
+              subBuilder = pagination.toBuilder();
             }
             pagination = input.readMessage(com.zhijiejiaoyu.base.PaginationResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -168,14 +168,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public int getAttributeDetailCount() {
-    return attributeDetail_.size();
+    return attributeDetail.size();
   }
   /**
    * <code>repeated .glory_api.AttributeWithAuthor attribute_detail = 2;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.shop.AttributeWithAuthor getAttributeDetail(int index) {
-    return attributeDetail_.get(index);
+    return attributeDetail.get(index);
   }
   /**
    * <code>repeated .glory_api.AttributeWithAuthor attribute_detail = 2;</code>
@@ -183,7 +183,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.shop.AttributeWithAuthorOrBuilder getAttributeDetailOrBuilder(
       int index) {
-    return attributeDetail_.get(index);
+    return attributeDetail.get(index);
   }
 
   public static final int PAGINATION_FIELD_NUMBER = 100;
@@ -229,8 +229,8 @@ private static final long serialVersionUID = 0L;
     if (baseResp_ != null) {
       output.writeMessage(1, getBaseResp());
     }
-    for (int i = 0; i < attributeDetail_.size(); i++) {
-      output.writeMessage(2, attributeDetail_.get(i));
+    for (int i = 0; i < attributeDetail.size(); i++) {
+      output.writeMessage(2, attributeDetail.get(i));
     }
     if (pagination_ != null) {
       output.writeMessage(100, getPagination());
@@ -248,9 +248,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
-    for (int i = 0; i < attributeDetail_.size(); i++) {
+    for (int i = 0; i < attributeDetail.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, attributeDetail_.get(i));
+        .computeMessageSize(2, attributeDetail.get(i));
     }
     if (pagination_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -450,7 +450,7 @@ private static final long serialVersionUID = 0L;
         attributeDetail = java.util.Collections.emptyList();
         bitField0 = (bitField0_ & ~0x00000001);
       } else {
-        attributeDetailBuilder_.clear();
+        attributeDetailBuilder.clear();
       }
       if (paginationBuilder == null) {
         pagination = null;
@@ -488,7 +488,7 @@ private static final long serialVersionUID = 0L;
       if (baseRespBuilder == null) {
         result.baseResp = baseResp;
       } else {
-        result.baseResp = baseRespBuilder_.build();
+        result.baseResp = baseRespBuilder.build();
       }
       if (attributeDetailBuilder == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
@@ -497,12 +497,12 @@ private static final long serialVersionUID = 0L;
         }
         result.attributeDetail = attributeDetail;
       } else {
-        result.attributeDetail = attributeDetailBuilder_.build();
+        result.attributeDetail = attributeDetailBuilder.build();
       }
       if (paginationBuilder == null) {
         result.pagination = pagination;
       } else {
-        result.pagination = paginationBuilder_.build();
+        result.pagination = paginationBuilder.build();
       }
       onBuilt();
       return result;
@@ -556,20 +556,20 @@ private static final long serialVersionUID = 0L;
         mergeBaseResp(other.getBaseResp());
       }
       if (attributeDetailBuilder == null) {
-        if (!other.attributeDetail_.isEmpty()) {
-          if (attributeDetail_.isEmpty()) {
+        if (!other.attributeDetail.isEmpty()) {
+          if (attributeDetail.isEmpty()) {
             attributeDetail = other.attributeDetail;
             bitField0 = (bitField0_ & ~0x00000001);
           } else {
             ensureAttributeDetailIsMutable();
-            attributeDetail_.addAll(other.attributeDetail);
+            attributeDetail.addAll(other.attributeDetail);
           }
           onChanged();
         }
       } else {
-        if (!other.attributeDetail_.isEmpty()) {
-          if (attributeDetailBuilder_.isEmpty()) {
-            attributeDetailBuilder_.dispose();
+        if (!other.attributeDetail.isEmpty()) {
+          if (attributeDetailBuilder.isEmpty()) {
+            attributeDetailBuilder.dispose();
             attributeDetailBuilder = null;
             attributeDetail = other.attributeDetail;
             bitField0 = (bitField0_ & ~0x00000001);
@@ -577,7 +577,7 @@ private static final long serialVersionUID = 0L;
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getAttributeDetailFieldBuilder() : null;
           } else {
-            attributeDetailBuilder_.addAllMessages(other.attributeDetail);
+            attributeDetailBuilder.addAllMessages(other.attributeDetail);
           }
         }
       }
@@ -632,7 +632,7 @@ private static final long serialVersionUID = 0L;
       if (baseRespBuilder == null) {
         return baseResp == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
       } else {
-        return baseRespBuilder_.getMessage();
+        return baseRespBuilder.getMessage();
       }
     }
     /**
@@ -646,7 +646,7 @@ private static final long serialVersionUID = 0L;
         baseResp = value;
         onChanged();
       } else {
-        baseRespBuilder_.setMessage(value);
+        baseRespBuilder.setMessage(value);
       }
 
       return this;
@@ -660,7 +660,7 @@ private static final long serialVersionUID = 0L;
         baseResp = builderForValue.build();
         onChanged();
       } else {
-        baseRespBuilder_.setMessage(builderForValue.build());
+        baseRespBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -678,7 +678,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        baseRespBuilder_.mergeFrom(value);
+        baseRespBuilder.mergeFrom(value);
       }
 
       return this;
@@ -710,7 +710,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder() {
       if (baseRespBuilder_ != null) {
-        return baseRespBuilder_.getMessageOrBuilder();
+        return baseRespBuilder.getMessageOrBuilder();
       } else {
         return baseResp == null ?
             com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
@@ -752,7 +752,7 @@ private static final long serialVersionUID = 0L;
       if (attributeDetailBuilder == null) {
         return java.util.Collections.unmodifiableList(attributeDetail);
       } else {
-        return attributeDetailBuilder_.getMessageList();
+        return attributeDetailBuilder.getMessageList();
       }
     }
     /**
@@ -760,9 +760,9 @@ private static final long serialVersionUID = 0L;
      */
     public int getAttributeDetailCount() {
       if (attributeDetailBuilder == null) {
-        return attributeDetail_.size();
+        return attributeDetail.size();
       } else {
-        return attributeDetailBuilder_.getCount();
+        return attributeDetailBuilder.getCount();
       }
     }
     /**
@@ -770,9 +770,9 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.shop.AttributeWithAuthor getAttributeDetail(int index) {
       if (attributeDetailBuilder == null) {
-        return attributeDetail_.get(index);
+        return attributeDetail.get(index);
       } else {
-        return attributeDetailBuilder_.getMessage(index);
+        return attributeDetailBuilder.getMessage(index);
       }
     }
     /**
@@ -785,10 +785,10 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         ensureAttributeDetailIsMutable();
-        attributeDetail_.set(index, value);
+        attributeDetail.set(index, value);
         onChanged();
       } else {
-        attributeDetailBuilder_.setMessage(index, value);
+        attributeDetailBuilder.setMessage(index, value);
       }
       return this;
     }
@@ -799,10 +799,10 @@ private static final long serialVersionUID = 0L;
         int index, com.zhijiejiaoyu.glory_api.shop.AttributeWithAuthor.Builder builderForValue) {
       if (attributeDetailBuilder == null) {
         ensureAttributeDetailIsMutable();
-        attributeDetail_.set(index, builderForValue.build());
+        attributeDetail.set(index, builderForValue.build());
         onChanged();
       } else {
-        attributeDetailBuilder_.setMessage(index, builderForValue.build());
+        attributeDetailBuilder.setMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -815,10 +815,10 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         ensureAttributeDetailIsMutable();
-        attributeDetail_.add(value);
+        attributeDetail.add(value);
         onChanged();
       } else {
-        attributeDetailBuilder_.addMessage(value);
+        attributeDetailBuilder.addMessage(value);
       }
       return this;
     }
@@ -832,10 +832,10 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         ensureAttributeDetailIsMutable();
-        attributeDetail_.add(index, value);
+        attributeDetail.add(index, value);
         onChanged();
       } else {
-        attributeDetailBuilder_.addMessage(index, value);
+        attributeDetailBuilder.addMessage(index, value);
       }
       return this;
     }
@@ -846,10 +846,10 @@ private static final long serialVersionUID = 0L;
         com.zhijiejiaoyu.glory_api.shop.AttributeWithAuthor.Builder builderForValue) {
       if (attributeDetailBuilder == null) {
         ensureAttributeDetailIsMutable();
-        attributeDetail_.add(builderForValue.build());
+        attributeDetail.add(builderForValue.build());
         onChanged();
       } else {
-        attributeDetailBuilder_.addMessage(builderForValue.build());
+        attributeDetailBuilder.addMessage(builderForValue.build());
       }
       return this;
     }
@@ -860,10 +860,10 @@ private static final long serialVersionUID = 0L;
         int index, com.zhijiejiaoyu.glory_api.shop.AttributeWithAuthor.Builder builderForValue) {
       if (attributeDetailBuilder == null) {
         ensureAttributeDetailIsMutable();
-        attributeDetail_.add(index, builderForValue.build());
+        attributeDetail.add(index, builderForValue.build());
         onChanged();
       } else {
-        attributeDetailBuilder_.addMessage(index, builderForValue.build());
+        attributeDetailBuilder.addMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -878,7 +878,7 @@ private static final long serialVersionUID = 0L;
             values, attributeDetail);
         onChanged();
       } else {
-        attributeDetailBuilder_.addAllMessages(values);
+        attributeDetailBuilder.addAllMessages(values);
       }
       return this;
     }
@@ -891,7 +891,7 @@ private static final long serialVersionUID = 0L;
         bitField0 = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
-        attributeDetailBuilder_.clear();
+        attributeDetailBuilder.clear();
       }
       return this;
     }
@@ -901,10 +901,10 @@ private static final long serialVersionUID = 0L;
     public Builder removeAttributeDetail(int index) {
       if (attributeDetailBuilder == null) {
         ensureAttributeDetailIsMutable();
-        attributeDetail_.remove(index);
+        attributeDetail.remove(index);
         onChanged();
       } else {
-        attributeDetailBuilder_.remove(index);
+        attributeDetailBuilder.remove(index);
       }
       return this;
     }
@@ -921,8 +921,8 @@ private static final long serialVersionUID = 0L;
     public com.zhijiejiaoyu.glory_api.shop.AttributeWithAuthorOrBuilder getAttributeDetailOrBuilder(
         int index) {
       if (attributeDetailBuilder == null) {
-        return attributeDetail_.get(index);  } else {
-        return attributeDetailBuilder_.getMessageOrBuilder(index);
+        return attributeDetail.get(index);  } else {
+        return attributeDetailBuilder.getMessageOrBuilder(index);
       }
     }
     /**
@@ -931,7 +931,7 @@ private static final long serialVersionUID = 0L;
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.AttributeWithAuthorOrBuilder> 
          getAttributeDetailOrBuilderList() {
       if (attributeDetailBuilder_ != null) {
-        return attributeDetailBuilder_.getMessageOrBuilderList();
+        return attributeDetailBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(attributeDetail);
       }
@@ -991,7 +991,7 @@ private static final long serialVersionUID = 0L;
       if (paginationBuilder == null) {
         return pagination == null ? com.zhijiejiaoyu.base.PaginationResponse.getDefaultInstance() : pagination;
       } else {
-        return paginationBuilder_.getMessage();
+        return paginationBuilder.getMessage();
       }
     }
     /**
@@ -1005,7 +1005,7 @@ private static final long serialVersionUID = 0L;
         pagination = value;
         onChanged();
       } else {
-        paginationBuilder_.setMessage(value);
+        paginationBuilder.setMessage(value);
       }
 
       return this;
@@ -1019,7 +1019,7 @@ private static final long serialVersionUID = 0L;
         pagination = builderForValue.build();
         onChanged();
       } else {
-        paginationBuilder_.setMessage(builderForValue.build());
+        paginationBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -1037,7 +1037,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        paginationBuilder_.mergeFrom(value);
+        paginationBuilder.mergeFrom(value);
       }
 
       return this;
@@ -1069,7 +1069,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.base.PaginationResponseOrBuilder getPaginationOrBuilder() {
       if (paginationBuilder_ != null) {
-        return paginationBuilder_.getMessageOrBuilder();
+        return paginationBuilder.getMessageOrBuilder();
       } else {
         return pagination == null ?
             com.zhijiejiaoyu.base.PaginationResponse.getDefaultInstance() : pagination;

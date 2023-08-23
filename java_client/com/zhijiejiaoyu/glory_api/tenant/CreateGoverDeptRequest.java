@@ -51,7 +51,7 @@ private static final long serialVersionUID = 0L;
           case 10: {
             com.zhijiejiaoyu.base.BaseRequest.Builder subBuilder = null;
             if (baseRequest_ != null) {
-              subBuilder = baseRequest_.toBuilder();
+              subBuilder = baseRequest.toBuilder();
             }
             baseRequest = input.readMessage(com.zhijiejiaoyu.base.BaseRequest.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -64,7 +64,7 @@ private static final long serialVersionUID = 0L;
           case 18: {
             com.zhijiejiaoyu.glory_api.tenant.GoverDept.Builder subBuilder = null;
             if (goverDept_ != null) {
-              subBuilder = goverDept_.toBuilder();
+              subBuilder = goverDept.toBuilder();
             }
             goverDept = input.readMessage(com.zhijiejiaoyu.glory_api.tenant.GoverDept.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -413,12 +413,12 @@ private static final long serialVersionUID = 0L;
       if (baseRequestBuilder == null) {
         result.baseRequest = baseRequest;
       } else {
-        result.baseRequest = baseRequestBuilder_.build();
+        result.baseRequest = baseRequestBuilder.build();
       }
       if (goverDeptBuilder == null) {
         result.goverDept = goverDept;
       } else {
-        result.goverDept = goverDeptBuilder_.build();
+        result.goverDept = goverDeptBuilder.build();
       }
       onBuilt();
       return result;
@@ -521,7 +521,7 @@ private static final long serialVersionUID = 0L;
       if (baseRequestBuilder == null) {
         return baseRequest == null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
       } else {
-        return baseRequestBuilder_.getMessage();
+        return baseRequestBuilder.getMessage();
       }
     }
     /**
@@ -535,7 +535,7 @@ private static final long serialVersionUID = 0L;
         baseRequest = value;
         onChanged();
       } else {
-        baseRequestBuilder_.setMessage(value);
+        baseRequestBuilder.setMessage(value);
       }
 
       return this;
@@ -549,7 +549,7 @@ private static final long serialVersionUID = 0L;
         baseRequest = builderForValue.build();
         onChanged();
       } else {
-        baseRequestBuilder_.setMessage(builderForValue.build());
+        baseRequestBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -567,7 +567,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        baseRequestBuilder_.mergeFrom(value);
+        baseRequestBuilder.mergeFrom(value);
       }
 
       return this;
@@ -599,7 +599,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder() {
       if (baseRequestBuilder_ != null) {
-        return baseRequestBuilder_.getMessageOrBuilder();
+        return baseRequestBuilder.getMessageOrBuilder();
       } else {
         return baseRequest == null ?
             com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
@@ -640,7 +640,7 @@ private static final long serialVersionUID = 0L;
       if (goverDeptBuilder == null) {
         return goverDept == null ? com.zhijiejiaoyu.glory_api.tenant.GoverDept.getDefaultInstance() : goverDept;
       } else {
-        return goverDeptBuilder_.getMessage();
+        return goverDeptBuilder.getMessage();
       }
     }
     /**
@@ -654,7 +654,7 @@ private static final long serialVersionUID = 0L;
         goverDept = value;
         onChanged();
       } else {
-        goverDeptBuilder_.setMessage(value);
+        goverDeptBuilder.setMessage(value);
       }
 
       return this;
@@ -668,7 +668,7 @@ private static final long serialVersionUID = 0L;
         goverDept = builderForValue.build();
         onChanged();
       } else {
-        goverDeptBuilder_.setMessage(builderForValue.build());
+        goverDeptBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -686,7 +686,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        goverDeptBuilder_.mergeFrom(value);
+        goverDeptBuilder.mergeFrom(value);
       }
 
       return this;
@@ -718,7 +718,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.tenant.GoverDeptOrBuilder getGoverDeptOrBuilder() {
       if (goverDeptBuilder_ != null) {
-        return goverDeptBuilder_.getMessageOrBuilder();
+        return goverDeptBuilder.getMessageOrBuilder();
       } else {
         return goverDept == null ?
             com.zhijiejiaoyu.glory_api.tenant.GoverDept.getDefaultInstance() : goverDept;

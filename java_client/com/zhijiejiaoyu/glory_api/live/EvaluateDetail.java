@@ -79,7 +79,7 @@ private static final long serialVersionUID = 0L;
               suboption = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.live.EvaluateSubOption>();
               mutable_bitField0_ |= 0x00000001;
             }
-            suboption_.add(
+            suboption.add(
                 input.readMessage(com.zhijiejiaoyu.glory_api.live.EvaluateSubOption.parser(), extensionRegistry));
             break;
           }
@@ -238,14 +238,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public int getSuboptionCount() {
-    return suboption_.size();
+    return suboption.size();
   }
   /**
    * <code>repeated .glory_api.EvaluateSubOption suboption = 5;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.live.EvaluateSubOption getSuboption(int index) {
-    return suboption_.get(index);
+    return suboption.get(index);
   }
   /**
    * <code>repeated .glory_api.EvaluateSubOption suboption = 5;</code>
@@ -253,7 +253,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.live.EvaluateSubOptionOrBuilder getSuboptionOrBuilder(
       int index) {
-    return suboption_.get(index);
+    return suboption.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -282,8 +282,8 @@ private static final long serialVersionUID = 0L;
     if (isExpand_ != false) {
       output.writeBool(4, isExpand);
     }
-    for (int i = 0; i < suboption_.size(); i++) {
-      output.writeMessage(5, suboption_.get(i));
+    for (int i = 0; i < suboption.size(); i++) {
+      output.writeMessage(5, suboption.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -308,9 +308,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(4, isExpand);
     }
-    for (int i = 0; i < suboption_.size(); i++) {
+    for (int i = 0; i < suboption.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, suboption_.get(i));
+        .computeMessageSize(5, suboption.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -509,7 +509,7 @@ private static final long serialVersionUID = 0L;
         suboption = java.util.Collections.emptyList();
         bitField0 = (bitField0_ & ~0x00000001);
       } else {
-        suboptionBuilder_.clear();
+        suboptionBuilder.clear();
       }
       return this;
     }
@@ -549,7 +549,7 @@ private static final long serialVersionUID = 0L;
         }
         result.suboption = suboption;
       } else {
-        result.suboption = suboptionBuilder_.build();
+        result.suboption = suboptionBuilder.build();
       }
       onBuilt();
       return result;
@@ -614,20 +614,20 @@ private static final long serialVersionUID = 0L;
         setIsExpand(other.getIsExpand());
       }
       if (suboptionBuilder == null) {
-        if (!other.suboption_.isEmpty()) {
-          if (suboption_.isEmpty()) {
+        if (!other.suboption.isEmpty()) {
+          if (suboption.isEmpty()) {
             suboption = other.suboption;
             bitField0 = (bitField0_ & ~0x00000001);
           } else {
             ensureSuboptionIsMutable();
-            suboption_.addAll(other.suboption);
+            suboption.addAll(other.suboption);
           }
           onChanged();
         }
       } else {
-        if (!other.suboption_.isEmpty()) {
-          if (suboptionBuilder_.isEmpty()) {
-            suboptionBuilder_.dispose();
+        if (!other.suboption.isEmpty()) {
+          if (suboptionBuilder.isEmpty()) {
+            suboptionBuilder.dispose();
             suboptionBuilder = null;
             suboption = other.suboption;
             bitField0 = (bitField0_ & ~0x00000001);
@@ -635,7 +635,7 @@ private static final long serialVersionUID = 0L;
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getSuboptionFieldBuilder() : null;
           } else {
-            suboptionBuilder_.addAllMessages(other.suboption);
+            suboptionBuilder.addAllMessages(other.suboption);
           }
         }
       }
@@ -902,7 +902,7 @@ private static final long serialVersionUID = 0L;
       if (suboptionBuilder == null) {
         return java.util.Collections.unmodifiableList(suboption);
       } else {
-        return suboptionBuilder_.getMessageList();
+        return suboptionBuilder.getMessageList();
       }
     }
     /**
@@ -910,9 +910,9 @@ private static final long serialVersionUID = 0L;
      */
     public int getSuboptionCount() {
       if (suboptionBuilder == null) {
-        return suboption_.size();
+        return suboption.size();
       } else {
-        return suboptionBuilder_.getCount();
+        return suboptionBuilder.getCount();
       }
     }
     /**
@@ -920,9 +920,9 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.live.EvaluateSubOption getSuboption(int index) {
       if (suboptionBuilder == null) {
-        return suboption_.get(index);
+        return suboption.get(index);
       } else {
-        return suboptionBuilder_.getMessage(index);
+        return suboptionBuilder.getMessage(index);
       }
     }
     /**
@@ -935,10 +935,10 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         ensureSuboptionIsMutable();
-        suboption_.set(index, value);
+        suboption.set(index, value);
         onChanged();
       } else {
-        suboptionBuilder_.setMessage(index, value);
+        suboptionBuilder.setMessage(index, value);
       }
       return this;
     }
@@ -949,10 +949,10 @@ private static final long serialVersionUID = 0L;
         int index, com.zhijiejiaoyu.glory_api.live.EvaluateSubOption.Builder builderForValue) {
       if (suboptionBuilder == null) {
         ensureSuboptionIsMutable();
-        suboption_.set(index, builderForValue.build());
+        suboption.set(index, builderForValue.build());
         onChanged();
       } else {
-        suboptionBuilder_.setMessage(index, builderForValue.build());
+        suboptionBuilder.setMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -965,10 +965,10 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         ensureSuboptionIsMutable();
-        suboption_.add(value);
+        suboption.add(value);
         onChanged();
       } else {
-        suboptionBuilder_.addMessage(value);
+        suboptionBuilder.addMessage(value);
       }
       return this;
     }
@@ -982,10 +982,10 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         ensureSuboptionIsMutable();
-        suboption_.add(index, value);
+        suboption.add(index, value);
         onChanged();
       } else {
-        suboptionBuilder_.addMessage(index, value);
+        suboptionBuilder.addMessage(index, value);
       }
       return this;
     }
@@ -996,10 +996,10 @@ private static final long serialVersionUID = 0L;
         com.zhijiejiaoyu.glory_api.live.EvaluateSubOption.Builder builderForValue) {
       if (suboptionBuilder == null) {
         ensureSuboptionIsMutable();
-        suboption_.add(builderForValue.build());
+        suboption.add(builderForValue.build());
         onChanged();
       } else {
-        suboptionBuilder_.addMessage(builderForValue.build());
+        suboptionBuilder.addMessage(builderForValue.build());
       }
       return this;
     }
@@ -1010,10 +1010,10 @@ private static final long serialVersionUID = 0L;
         int index, com.zhijiejiaoyu.glory_api.live.EvaluateSubOption.Builder builderForValue) {
       if (suboptionBuilder == null) {
         ensureSuboptionIsMutable();
-        suboption_.add(index, builderForValue.build());
+        suboption.add(index, builderForValue.build());
         onChanged();
       } else {
-        suboptionBuilder_.addMessage(index, builderForValue.build());
+        suboptionBuilder.addMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -1028,7 +1028,7 @@ private static final long serialVersionUID = 0L;
             values, suboption);
         onChanged();
       } else {
-        suboptionBuilder_.addAllMessages(values);
+        suboptionBuilder.addAllMessages(values);
       }
       return this;
     }
@@ -1041,7 +1041,7 @@ private static final long serialVersionUID = 0L;
         bitField0 = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
-        suboptionBuilder_.clear();
+        suboptionBuilder.clear();
       }
       return this;
     }
@@ -1051,10 +1051,10 @@ private static final long serialVersionUID = 0L;
     public Builder removeSuboption(int index) {
       if (suboptionBuilder == null) {
         ensureSuboptionIsMutable();
-        suboption_.remove(index);
+        suboption.remove(index);
         onChanged();
       } else {
-        suboptionBuilder_.remove(index);
+        suboptionBuilder.remove(index);
       }
       return this;
     }
@@ -1071,8 +1071,8 @@ private static final long serialVersionUID = 0L;
     public com.zhijiejiaoyu.glory_api.live.EvaluateSubOptionOrBuilder getSuboptionOrBuilder(
         int index) {
       if (suboptionBuilder == null) {
-        return suboption_.get(index);  } else {
-        return suboptionBuilder_.getMessageOrBuilder(index);
+        return suboption.get(index);  } else {
+        return suboptionBuilder.getMessageOrBuilder(index);
       }
     }
     /**
@@ -1081,7 +1081,7 @@ private static final long serialVersionUID = 0L;
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.live.EvaluateSubOptionOrBuilder> 
          getSuboptionOrBuilderList() {
       if (suboptionBuilder_ != null) {
-        return suboptionBuilder_.getMessageOrBuilderList();
+        return suboptionBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(suboption);
       }

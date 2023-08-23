@@ -53,7 +53,7 @@ private static final long serialVersionUID = 0L;
           case 10: {
             com.zhijiejiaoyu.base.BaseRequest.Builder subBuilder = null;
             if (baseRequest_ != null) {
-              subBuilder = baseRequest_.toBuilder();
+              subBuilder = baseRequest.toBuilder();
             }
             baseRequest = input.readMessage(com.zhijiejiaoyu.base.BaseRequest.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -68,7 +68,7 @@ private static final long serialVersionUID = 0L;
               studentIds = newLongList();
               mutable_bitField0_ |= 0x00000001;
             }
-            studentIds_.addLong(input.readInt64());
+            studentIds.addLong(input.readInt64());
             break;
           }
           case 18: {
@@ -79,7 +79,7 @@ private static final long serialVersionUID = 0L;
               mutable_bitField0_ |= 0x00000001;
             }
             while (input.getBytesUntilLimit() > 0) {
-              studentIds_.addLong(input.readInt64());
+              studentIds.addLong(input.readInt64());
             }
             input.popLimit(limit);
             break;
@@ -100,7 +100,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        studentIds_.makeImmutable(); // C
+        studentIds.makeImmutable(); // C
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -161,7 +161,7 @@ private static final long serialVersionUID = 0L;
    * @return The count of studentIds.
    */
   public int getStudentIdsCount() {
-    return studentIds_.size();
+    return studentIds.size();
   }
   /**
    * <code>repeated int64 student_ids = 2;</code>
@@ -169,7 +169,7 @@ private static final long serialVersionUID = 0L;
    * @return The studentIds at the given index.
    */
   public long getStudentIds(int index) {
-    return studentIds_.getLong(index);
+    return studentIds.getLong(index);
   }
   private int studentIdsMemoizedSerializedSize = -1;
 
@@ -195,8 +195,8 @@ private static final long serialVersionUID = 0L;
       output.writeUInt32NoTag(18);
       output.writeUInt32NoTag(studentIdsMemoizedSerializedSize);
     }
-    for (int i = 0; i < studentIds_.size(); i++) {
-      output.writeInt64NoTag(studentIds_.getLong(i));
+    for (int i = 0; i < studentIds.size(); i++) {
+      output.writeInt64NoTag(studentIds.getLong(i));
     }
     unknownFields.writeTo(output);
   }
@@ -213,9 +213,9 @@ private static final long serialVersionUID = 0L;
     }
     {
       int dataSize = 0;
-      for (int i = 0; i < studentIds_.size(); i++) {
+      for (int i = 0; i < studentIds.size(); i++) {
         dataSize += com.google.protobuf.CodedOutputStream
-          .computeInt64SizeNoTag(studentIds_.getLong(i));
+          .computeInt64SizeNoTag(studentIds.getLong(i));
       }
       size += dataSize;
       if (!getStudentIdsList().isEmpty()) {
@@ -437,10 +437,10 @@ private static final long serialVersionUID = 0L;
       if (baseRequestBuilder == null) {
         result.baseRequest = baseRequest;
       } else {
-        result.baseRequest = baseRequestBuilder_.build();
+        result.baseRequest = baseRequestBuilder.build();
       }
       if (((bitField0_ & 0x00000001) != 0)) {
-        studentIds_.makeImmutable();
+        studentIds.makeImmutable();
         bitField0 = (bitField0_ & ~0x00000001);
       }
       result.studentIds = studentIds;
@@ -495,13 +495,13 @@ private static final long serialVersionUID = 0L;
       if (other.hasBaseRequest()) {
         mergeBaseRequest(other.getBaseRequest());
       }
-      if (!other.studentIds_.isEmpty()) {
-        if (studentIds_.isEmpty()) {
+      if (!other.studentIds.isEmpty()) {
+        if (studentIds.isEmpty()) {
           studentIds = other.studentIds;
           bitField0 = (bitField0_ & ~0x00000001);
         } else {
           ensureStudentIdsIsMutable();
-          studentIds_.addAll(other.studentIds);
+          studentIds.addAll(other.studentIds);
         }
         onChanged();
       }
@@ -553,7 +553,7 @@ private static final long serialVersionUID = 0L;
       if (baseRequestBuilder == null) {
         return baseRequest == null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
       } else {
-        return baseRequestBuilder_.getMessage();
+        return baseRequestBuilder.getMessage();
       }
     }
     /**
@@ -567,7 +567,7 @@ private static final long serialVersionUID = 0L;
         baseRequest = value;
         onChanged();
       } else {
-        baseRequestBuilder_.setMessage(value);
+        baseRequestBuilder.setMessage(value);
       }
 
       return this;
@@ -581,7 +581,7 @@ private static final long serialVersionUID = 0L;
         baseRequest = builderForValue.build();
         onChanged();
       } else {
-        baseRequestBuilder_.setMessage(builderForValue.build());
+        baseRequestBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -599,7 +599,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        baseRequestBuilder_.mergeFrom(value);
+        baseRequestBuilder.mergeFrom(value);
       }
 
       return this;
@@ -631,7 +631,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder() {
       if (baseRequestBuilder_ != null) {
-        return baseRequestBuilder_.getMessageOrBuilder();
+        return baseRequestBuilder.getMessageOrBuilder();
       } else {
         return baseRequest == null ?
             com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
@@ -675,7 +675,7 @@ private static final long serialVersionUID = 0L;
      * @return The count of studentIds.
      */
     public int getStudentIdsCount() {
-      return studentIds_.size();
+      return studentIds.size();
     }
     /**
      * <code>repeated int64 student_ids = 2;</code>
@@ -683,7 +683,7 @@ private static final long serialVersionUID = 0L;
      * @return The studentIds at the given index.
      */
     public long getStudentIds(int index) {
-      return studentIds_.getLong(index);
+      return studentIds.getLong(index);
     }
     /**
      * <code>repeated int64 student_ids = 2;</code>
@@ -694,7 +694,7 @@ private static final long serialVersionUID = 0L;
     public Builder setStudentIds(
         int index, long value) {
       ensureStudentIdsIsMutable();
-      studentIds_.setLong(index, value);
+      studentIds.setLong(index, value);
       onChanged();
       return this;
     }
@@ -705,7 +705,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addStudentIds(long value) {
       ensureStudentIdsIsMutable();
-      studentIds_.addLong(value);
+      studentIds.addLong(value);
       onChanged();
       return this;
     }

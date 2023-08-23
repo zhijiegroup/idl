@@ -66,7 +66,7 @@ private static final long serialVersionUID = 0L;
           case 42: {
             com.zhijiejiaoyu.glory_api.shop.Attribute.Builder subBuilder = null;
             if (attribute_ != null) {
-              subBuilder = attribute_.toBuilder();
+              subBuilder = attribute.toBuilder();
             }
             attribute = input.readMessage(com.zhijiejiaoyu.glory_api.shop.Attribute.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -445,7 +445,7 @@ private static final long serialVersionUID = 0L;
       if (attributeBuilder == null) {
         result.attribute = attribute;
       } else {
-        result.attribute = attributeBuilder_.build();
+        result.attribute = attributeBuilder.build();
       }
       onBuilt();
       return result;
@@ -647,7 +647,7 @@ private static final long serialVersionUID = 0L;
       if (attributeBuilder == null) {
         return attribute == null ? com.zhijiejiaoyu.glory_api.shop.Attribute.getDefaultInstance() : attribute;
       } else {
-        return attributeBuilder_.getMessage();
+        return attributeBuilder.getMessage();
       }
     }
     /**
@@ -661,7 +661,7 @@ private static final long serialVersionUID = 0L;
         attribute = value;
         onChanged();
       } else {
-        attributeBuilder_.setMessage(value);
+        attributeBuilder.setMessage(value);
       }
 
       return this;
@@ -675,7 +675,7 @@ private static final long serialVersionUID = 0L;
         attribute = builderForValue.build();
         onChanged();
       } else {
-        attributeBuilder_.setMessage(builderForValue.build());
+        attributeBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -693,7 +693,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        attributeBuilder_.mergeFrom(value);
+        attributeBuilder.mergeFrom(value);
       }
 
       return this;
@@ -725,7 +725,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.shop.AttributeOrBuilder getAttributeOrBuilder() {
       if (attributeBuilder_ != null) {
-        return attributeBuilder_.getMessageOrBuilder();
+        return attributeBuilder.getMessageOrBuilder();
       } else {
         return attribute == null ?
             com.zhijiejiaoyu.glory_api.shop.Attribute.getDefaultInstance() : attribute;

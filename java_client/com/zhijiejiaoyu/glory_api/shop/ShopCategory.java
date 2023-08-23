@@ -56,7 +56,7 @@ private static final long serialVersionUID = 0L;
           case 26: {
             com.zhijiejiaoyu.glory_api.shop.Category.Builder subBuilder = null;
             if (category_ != null) {
-              subBuilder = category_.toBuilder();
+              subBuilder = category.toBuilder();
             }
             category = input.readMessage(com.zhijiejiaoyu.glory_api.shop.Category.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -383,7 +383,7 @@ private static final long serialVersionUID = 0L;
       if (categoryBuilder == null) {
         result.category = category;
       } else {
-        result.category = categoryBuilder_.build();
+        result.category = categoryBuilder.build();
       }
       onBuilt();
       return result;
@@ -517,7 +517,7 @@ private static final long serialVersionUID = 0L;
       if (categoryBuilder == null) {
         return category == null ? com.zhijiejiaoyu.glory_api.shop.Category.getDefaultInstance() : category;
       } else {
-        return categoryBuilder_.getMessage();
+        return categoryBuilder.getMessage();
       }
     }
     /**
@@ -531,7 +531,7 @@ private static final long serialVersionUID = 0L;
         category = value;
         onChanged();
       } else {
-        categoryBuilder_.setMessage(value);
+        categoryBuilder.setMessage(value);
       }
 
       return this;
@@ -545,7 +545,7 @@ private static final long serialVersionUID = 0L;
         category = builderForValue.build();
         onChanged();
       } else {
-        categoryBuilder_.setMessage(builderForValue.build());
+        categoryBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -563,7 +563,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        categoryBuilder_.mergeFrom(value);
+        categoryBuilder.mergeFrom(value);
       }
 
       return this;
@@ -595,7 +595,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.shop.CategoryOrBuilder getCategoryOrBuilder() {
       if (categoryBuilder_ != null) {
-        return categoryBuilder_.getMessageOrBuilder();
+        return categoryBuilder.getMessageOrBuilder();
       } else {
         return category == null ?
             com.zhijiejiaoyu.glory_api.shop.Category.getDefaultInstance() : category;

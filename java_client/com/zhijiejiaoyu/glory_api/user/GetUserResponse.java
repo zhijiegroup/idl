@@ -51,7 +51,7 @@ private static final long serialVersionUID = 0L;
           case 10: {
             com.zhijiejiaoyu.base.BaseResponse.Builder subBuilder = null;
             if (baseResp_ != null) {
-              subBuilder = baseResp_.toBuilder();
+              subBuilder = baseResp.toBuilder();
             }
             baseResp = input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -64,7 +64,7 @@ private static final long serialVersionUID = 0L;
           case 18: {
             com.zhijiejiaoyu.glory_api.user.User.Builder subBuilder = null;
             if (data_ != null) {
-              subBuilder = data_.toBuilder();
+              subBuilder = data.toBuilder();
             }
             data = input.readMessage(com.zhijiejiaoyu.glory_api.user.User.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -425,12 +425,12 @@ private static final long serialVersionUID = 0L;
       if (baseRespBuilder == null) {
         result.baseResp = baseResp;
       } else {
-        result.baseResp = baseRespBuilder_.build();
+        result.baseResp = baseRespBuilder.build();
       }
       if (dataBuilder == null) {
         result.data = data;
       } else {
-        result.data = dataBuilder_.build();
+        result.data = dataBuilder.build();
       }
       onBuilt();
       return result;
@@ -533,7 +533,7 @@ private static final long serialVersionUID = 0L;
       if (baseRespBuilder == null) {
         return baseResp == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
       } else {
-        return baseRespBuilder_.getMessage();
+        return baseRespBuilder.getMessage();
       }
     }
     /**
@@ -547,7 +547,7 @@ private static final long serialVersionUID = 0L;
         baseResp = value;
         onChanged();
       } else {
-        baseRespBuilder_.setMessage(value);
+        baseRespBuilder.setMessage(value);
       }
 
       return this;
@@ -561,7 +561,7 @@ private static final long serialVersionUID = 0L;
         baseResp = builderForValue.build();
         onChanged();
       } else {
-        baseRespBuilder_.setMessage(builderForValue.build());
+        baseRespBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -579,7 +579,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        baseRespBuilder_.mergeFrom(value);
+        baseRespBuilder.mergeFrom(value);
       }
 
       return this;
@@ -611,7 +611,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder() {
       if (baseRespBuilder_ != null) {
-        return baseRespBuilder_.getMessageOrBuilder();
+        return baseRespBuilder.getMessageOrBuilder();
       } else {
         return baseResp == null ?
             com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
@@ -660,7 +660,7 @@ private static final long serialVersionUID = 0L;
       if (dataBuilder == null) {
         return data == null ? com.zhijiejiaoyu.glory_api.user.User.getDefaultInstance() : data;
       } else {
-        return dataBuilder_.getMessage();
+        return dataBuilder.getMessage();
       }
     }
     /**
@@ -678,7 +678,7 @@ private static final long serialVersionUID = 0L;
         data = value;
         onChanged();
       } else {
-        dataBuilder_.setMessage(value);
+        dataBuilder.setMessage(value);
       }
 
       return this;
@@ -696,7 +696,7 @@ private static final long serialVersionUID = 0L;
         data = builderForValue.build();
         onChanged();
       } else {
-        dataBuilder_.setMessage(builderForValue.build());
+        dataBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -718,7 +718,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        dataBuilder_.mergeFrom(value);
+        dataBuilder.mergeFrom(value);
       }
 
       return this;
@@ -762,7 +762,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.user.UserOrBuilder getDataOrBuilder() {
       if (dataBuilder_ != null) {
-        return dataBuilder_.getMessageOrBuilder();
+        return dataBuilder.getMessageOrBuilder();
       } else {
         return data == null ?
             com.zhijiejiaoyu.glory_api.user.User.getDefaultInstance() : data;

@@ -53,7 +53,7 @@ private static final long serialVersionUID = 0L;
           case 10: {
             com.zhijiejiaoyu.base.BaseRequest.Builder subBuilder = null;
             if (baseRequest_ != null) {
-              subBuilder = baseRequest_.toBuilder();
+              subBuilder = baseRequest.toBuilder();
             }
             baseRequest = input.readMessage(com.zhijiejiaoyu.base.BaseRequest.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -68,7 +68,7 @@ private static final long serialVersionUID = 0L;
               roleId = newLongList();
               mutable_bitField0_ |= 0x00000001;
             }
-            roleId_.addLong(input.readInt64());
+            roleId.addLong(input.readInt64());
             break;
           }
           case 18: {
@@ -79,7 +79,7 @@ private static final long serialVersionUID = 0L;
               mutable_bitField0_ |= 0x00000001;
             }
             while (input.getBytesUntilLimit() > 0) {
-              roleId_.addLong(input.readInt64());
+              roleId.addLong(input.readInt64());
             }
             input.popLimit(limit);
             break;
@@ -100,7 +100,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        roleId_.makeImmutable(); // C
+        roleId.makeImmutable(); // C
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -169,7 +169,7 @@ private static final long serialVersionUID = 0L;
    * @return The count of roleId.
    */
   public int getRoleIdCount() {
-    return roleId_.size();
+    return roleId.size();
   }
   /**
    * <pre>
@@ -181,7 +181,7 @@ private static final long serialVersionUID = 0L;
    * @return The roleId at the given index.
    */
   public long getRoleId(int index) {
-    return roleId_.getLong(index);
+    return roleId.getLong(index);
   }
   private int roleIdMemoizedSerializedSize = -1;
 
@@ -207,8 +207,8 @@ private static final long serialVersionUID = 0L;
       output.writeUInt32NoTag(18);
       output.writeUInt32NoTag(roleIdMemoizedSerializedSize);
     }
-    for (int i = 0; i < roleId_.size(); i++) {
-      output.writeInt64NoTag(roleId_.getLong(i));
+    for (int i = 0; i < roleId.size(); i++) {
+      output.writeInt64NoTag(roleId.getLong(i));
     }
     unknownFields.writeTo(output);
   }
@@ -225,9 +225,9 @@ private static final long serialVersionUID = 0L;
     }
     {
       int dataSize = 0;
-      for (int i = 0; i < roleId_.size(); i++) {
+      for (int i = 0; i < roleId.size(); i++) {
         dataSize += com.google.protobuf.CodedOutputStream
-          .computeInt64SizeNoTag(roleId_.getLong(i));
+          .computeInt64SizeNoTag(roleId.getLong(i));
       }
       size += dataSize;
       if (!getRoleIdList().isEmpty()) {
@@ -449,10 +449,10 @@ private static final long serialVersionUID = 0L;
       if (baseRequestBuilder == null) {
         result.baseRequest = baseRequest;
       } else {
-        result.baseRequest = baseRequestBuilder_.build();
+        result.baseRequest = baseRequestBuilder.build();
       }
       if (((bitField0_ & 0x00000001) != 0)) {
-        roleId_.makeImmutable();
+        roleId.makeImmutable();
         bitField0 = (bitField0_ & ~0x00000001);
       }
       result.roleId = roleId;
@@ -507,13 +507,13 @@ private static final long serialVersionUID = 0L;
       if (other.hasBaseRequest()) {
         mergeBaseRequest(other.getBaseRequest());
       }
-      if (!other.roleId_.isEmpty()) {
-        if (roleId_.isEmpty()) {
+      if (!other.roleId.isEmpty()) {
+        if (roleId.isEmpty()) {
           roleId = other.roleId;
           bitField0 = (bitField0_ & ~0x00000001);
         } else {
           ensureRoleIdIsMutable();
-          roleId_.addAll(other.roleId);
+          roleId.addAll(other.roleId);
         }
         onChanged();
       }
@@ -565,7 +565,7 @@ private static final long serialVersionUID = 0L;
       if (baseRequestBuilder == null) {
         return baseRequest == null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
       } else {
-        return baseRequestBuilder_.getMessage();
+        return baseRequestBuilder.getMessage();
       }
     }
     /**
@@ -579,7 +579,7 @@ private static final long serialVersionUID = 0L;
         baseRequest = value;
         onChanged();
       } else {
-        baseRequestBuilder_.setMessage(value);
+        baseRequestBuilder.setMessage(value);
       }
 
       return this;
@@ -593,7 +593,7 @@ private static final long serialVersionUID = 0L;
         baseRequest = builderForValue.build();
         onChanged();
       } else {
-        baseRequestBuilder_.setMessage(builderForValue.build());
+        baseRequestBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -611,7 +611,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        baseRequestBuilder_.mergeFrom(value);
+        baseRequestBuilder.mergeFrom(value);
       }
 
       return this;
@@ -643,7 +643,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder() {
       if (baseRequestBuilder_ != null) {
-        return baseRequestBuilder_.getMessageOrBuilder();
+        return baseRequestBuilder.getMessageOrBuilder();
       } else {
         return baseRequest == null ?
             com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
@@ -695,7 +695,7 @@ private static final long serialVersionUID = 0L;
      * @return The count of roleId.
      */
     public int getRoleIdCount() {
-      return roleId_.size();
+      return roleId.size();
     }
     /**
      * <pre>
@@ -707,7 +707,7 @@ private static final long serialVersionUID = 0L;
      * @return The roleId at the given index.
      */
     public long getRoleId(int index) {
-      return roleId_.getLong(index);
+      return roleId.getLong(index);
     }
     /**
      * <pre>
@@ -722,7 +722,7 @@ private static final long serialVersionUID = 0L;
     public Builder setRoleId(
         int index, long value) {
       ensureRoleIdIsMutable();
-      roleId_.setLong(index, value);
+      roleId.setLong(index, value);
       onChanged();
       return this;
     }
@@ -737,7 +737,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addRoleId(long value) {
       ensureRoleIdIsMutable();
-      roleId_.addLong(value);
+      roleId.addLong(value);
       onChanged();
       return this;
     }

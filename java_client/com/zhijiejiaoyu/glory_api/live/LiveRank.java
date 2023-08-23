@@ -55,14 +55,14 @@ private static final long serialVersionUID = 0L;
               rankList = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.live.LiveRankDetail>();
               mutable_bitField0_ |= 0x00000001;
             }
-            rankList_.add(
+            rankList.add(
                 input.readMessage(com.zhijiejiaoyu.glory_api.live.LiveRankDetail.parser(), extensionRegistry));
             break;
           }
           case 802: {
             com.zhijiejiaoyu.glory_api.live.LiveRankMine.Builder subBuilder = null;
             if (mine_ != null) {
-              subBuilder = mine_.toBuilder();
+              subBuilder = mine.toBuilder();
             }
             mine = input.readMessage(com.zhijiejiaoyu.glory_api.live.LiveRankMine.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -129,14 +129,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public int getRankListCount() {
-    return rankList_.size();
+    return rankList.size();
   }
   /**
    * <code>repeated .glory_api.LiveRankDetail rank_list = 1;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.live.LiveRankDetail getRankList(int index) {
-    return rankList_.get(index);
+    return rankList.get(index);
   }
   /**
    * <code>repeated .glory_api.LiveRankDetail rank_list = 1;</code>
@@ -144,7 +144,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.live.LiveRankDetailOrBuilder getRankListOrBuilder(
       int index) {
-    return rankList_.get(index);
+    return rankList.get(index);
   }
 
   public static final int MINE_FIELD_NUMBER = 100;
@@ -187,8 +187,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    for (int i = 0; i < rankList_.size(); i++) {
-      output.writeMessage(1, rankList_.get(i));
+    for (int i = 0; i < rankList.size(); i++) {
+      output.writeMessage(1, rankList.get(i));
     }
     if (mine_ != null) {
       output.writeMessage(100, getMine());
@@ -202,9 +202,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    for (int i = 0; i < rankList_.size(); i++) {
+    for (int i = 0; i < rankList.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, rankList_.get(i));
+        .computeMessageSize(1, rankList.get(i));
     }
     if (mine_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -389,7 +389,7 @@ private static final long serialVersionUID = 0L;
         rankList = java.util.Collections.emptyList();
         bitField0 = (bitField0_ & ~0x00000001);
       } else {
-        rankListBuilder_.clear();
+        rankListBuilder.clear();
       }
       if (mineBuilder == null) {
         mine = null;
@@ -431,12 +431,12 @@ private static final long serialVersionUID = 0L;
         }
         result.rankList = rankList;
       } else {
-        result.rankList = rankListBuilder_.build();
+        result.rankList = rankListBuilder.build();
       }
       if (mineBuilder == null) {
         result.mine = mine;
       } else {
-        result.mine = mineBuilder_.build();
+        result.mine = mineBuilder.build();
       }
       onBuilt();
       return result;
@@ -487,20 +487,20 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.zhijiejiaoyu.glory_api.live.LiveRank other) {
       if (other == com.zhijiejiaoyu.glory_api.live.LiveRank.getDefaultInstance()) return this;
       if (rankListBuilder == null) {
-        if (!other.rankList_.isEmpty()) {
-          if (rankList_.isEmpty()) {
+        if (!other.rankList.isEmpty()) {
+          if (rankList.isEmpty()) {
             rankList = other.rankList;
             bitField0 = (bitField0_ & ~0x00000001);
           } else {
             ensureRankListIsMutable();
-            rankList_.addAll(other.rankList);
+            rankList.addAll(other.rankList);
           }
           onChanged();
         }
       } else {
-        if (!other.rankList_.isEmpty()) {
-          if (rankListBuilder_.isEmpty()) {
-            rankListBuilder_.dispose();
+        if (!other.rankList.isEmpty()) {
+          if (rankListBuilder.isEmpty()) {
+            rankListBuilder.dispose();
             rankListBuilder = null;
             rankList = other.rankList;
             bitField0 = (bitField0_ & ~0x00000001);
@@ -508,7 +508,7 @@ private static final long serialVersionUID = 0L;
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getRankListFieldBuilder() : null;
           } else {
-            rankListBuilder_.addAllMessages(other.rankList);
+            rankListBuilder.addAllMessages(other.rankList);
           }
         }
       }
@@ -564,7 +564,7 @@ private static final long serialVersionUID = 0L;
       if (rankListBuilder == null) {
         return java.util.Collections.unmodifiableList(rankList);
       } else {
-        return rankListBuilder_.getMessageList();
+        return rankListBuilder.getMessageList();
       }
     }
     /**
@@ -572,9 +572,9 @@ private static final long serialVersionUID = 0L;
      */
     public int getRankListCount() {
       if (rankListBuilder == null) {
-        return rankList_.size();
+        return rankList.size();
       } else {
-        return rankListBuilder_.getCount();
+        return rankListBuilder.getCount();
       }
     }
     /**
@@ -582,9 +582,9 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.live.LiveRankDetail getRankList(int index) {
       if (rankListBuilder == null) {
-        return rankList_.get(index);
+        return rankList.get(index);
       } else {
-        return rankListBuilder_.getMessage(index);
+        return rankListBuilder.getMessage(index);
       }
     }
     /**
@@ -597,10 +597,10 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         ensureRankListIsMutable();
-        rankList_.set(index, value);
+        rankList.set(index, value);
         onChanged();
       } else {
-        rankListBuilder_.setMessage(index, value);
+        rankListBuilder.setMessage(index, value);
       }
       return this;
     }
@@ -611,10 +611,10 @@ private static final long serialVersionUID = 0L;
         int index, com.zhijiejiaoyu.glory_api.live.LiveRankDetail.Builder builderForValue) {
       if (rankListBuilder == null) {
         ensureRankListIsMutable();
-        rankList_.set(index, builderForValue.build());
+        rankList.set(index, builderForValue.build());
         onChanged();
       } else {
-        rankListBuilder_.setMessage(index, builderForValue.build());
+        rankListBuilder.setMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -627,10 +627,10 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         ensureRankListIsMutable();
-        rankList_.add(value);
+        rankList.add(value);
         onChanged();
       } else {
-        rankListBuilder_.addMessage(value);
+        rankListBuilder.addMessage(value);
       }
       return this;
     }
@@ -644,10 +644,10 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         ensureRankListIsMutable();
-        rankList_.add(index, value);
+        rankList.add(index, value);
         onChanged();
       } else {
-        rankListBuilder_.addMessage(index, value);
+        rankListBuilder.addMessage(index, value);
       }
       return this;
     }
@@ -658,10 +658,10 @@ private static final long serialVersionUID = 0L;
         com.zhijiejiaoyu.glory_api.live.LiveRankDetail.Builder builderForValue) {
       if (rankListBuilder == null) {
         ensureRankListIsMutable();
-        rankList_.add(builderForValue.build());
+        rankList.add(builderForValue.build());
         onChanged();
       } else {
-        rankListBuilder_.addMessage(builderForValue.build());
+        rankListBuilder.addMessage(builderForValue.build());
       }
       return this;
     }
@@ -672,10 +672,10 @@ private static final long serialVersionUID = 0L;
         int index, com.zhijiejiaoyu.glory_api.live.LiveRankDetail.Builder builderForValue) {
       if (rankListBuilder == null) {
         ensureRankListIsMutable();
-        rankList_.add(index, builderForValue.build());
+        rankList.add(index, builderForValue.build());
         onChanged();
       } else {
-        rankListBuilder_.addMessage(index, builderForValue.build());
+        rankListBuilder.addMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -690,7 +690,7 @@ private static final long serialVersionUID = 0L;
             values, rankList);
         onChanged();
       } else {
-        rankListBuilder_.addAllMessages(values);
+        rankListBuilder.addAllMessages(values);
       }
       return this;
     }
@@ -703,7 +703,7 @@ private static final long serialVersionUID = 0L;
         bitField0 = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
-        rankListBuilder_.clear();
+        rankListBuilder.clear();
       }
       return this;
     }
@@ -713,10 +713,10 @@ private static final long serialVersionUID = 0L;
     public Builder removeRankList(int index) {
       if (rankListBuilder == null) {
         ensureRankListIsMutable();
-        rankList_.remove(index);
+        rankList.remove(index);
         onChanged();
       } else {
-        rankListBuilder_.remove(index);
+        rankListBuilder.remove(index);
       }
       return this;
     }
@@ -733,8 +733,8 @@ private static final long serialVersionUID = 0L;
     public com.zhijiejiaoyu.glory_api.live.LiveRankDetailOrBuilder getRankListOrBuilder(
         int index) {
       if (rankListBuilder == null) {
-        return rankList_.get(index);  } else {
-        return rankListBuilder_.getMessageOrBuilder(index);
+        return rankList.get(index);  } else {
+        return rankListBuilder.getMessageOrBuilder(index);
       }
     }
     /**
@@ -743,7 +743,7 @@ private static final long serialVersionUID = 0L;
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.live.LiveRankDetailOrBuilder> 
          getRankListOrBuilderList() {
       if (rankListBuilder_ != null) {
-        return rankListBuilder_.getMessageOrBuilderList();
+        return rankListBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(rankList);
       }
@@ -803,7 +803,7 @@ private static final long serialVersionUID = 0L;
       if (mineBuilder == null) {
         return mine == null ? com.zhijiejiaoyu.glory_api.live.LiveRankMine.getDefaultInstance() : mine;
       } else {
-        return mineBuilder_.getMessage();
+        return mineBuilder.getMessage();
       }
     }
     /**
@@ -817,7 +817,7 @@ private static final long serialVersionUID = 0L;
         mine = value;
         onChanged();
       } else {
-        mineBuilder_.setMessage(value);
+        mineBuilder.setMessage(value);
       }
 
       return this;
@@ -831,7 +831,7 @@ private static final long serialVersionUID = 0L;
         mine = builderForValue.build();
         onChanged();
       } else {
-        mineBuilder_.setMessage(builderForValue.build());
+        mineBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -849,7 +849,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        mineBuilder_.mergeFrom(value);
+        mineBuilder.mergeFrom(value);
       }
 
       return this;
@@ -881,7 +881,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.live.LiveRankMineOrBuilder getMineOrBuilder() {
       if (mineBuilder_ != null) {
-        return mineBuilder_.getMessageOrBuilder();
+        return mineBuilder.getMessageOrBuilder();
       } else {
         return mine == null ?
             com.zhijiejiaoyu.glory_api.live.LiveRankMine.getDefaultInstance() : mine;

@@ -57,7 +57,7 @@ private static final long serialVersionUID = 0L;
           case 10: {
             com.zhijiejiaoyu.base.BaseResponse.Builder subBuilder = null;
             if (baseResp_ != null) {
-              subBuilder = baseResp_.toBuilder();
+              subBuilder = baseResp.toBuilder();
             }
             baseResp = input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -126,7 +126,7 @@ private static final long serialVersionUID = 0L;
               detail = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.live.EvaluateDetail>();
               mutable_bitField0_ |= 0x00000001;
             }
-            detail_.add(
+            detail.add(
                 input.readMessage(com.zhijiejiaoyu.glory_api.live.EvaluateDetail.parser(), extensionRegistry));
             break;
           }
@@ -439,14 +439,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public int getDetailCount() {
-    return detail_.size();
+    return detail.size();
   }
   /**
    * <code>repeated .glory_api.EvaluateDetail detail = 12;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.live.EvaluateDetail getDetail(int index) {
-    return detail_.get(index);
+    return detail.get(index);
   }
   /**
    * <code>repeated .glory_api.EvaluateDetail detail = 12;</code>
@@ -454,7 +454,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.live.EvaluateDetailOrBuilder getDetailOrBuilder(
       int index) {
-    return detail_.get(index);
+    return detail.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -504,8 +504,8 @@ private static final long serialVersionUID = 0L;
     if (baseline_ != false) {
       output.writeBool(11, baseline);
     }
-    for (int i = 0; i < detail_.size(); i++) {
-      output.writeMessage(12, detail_.get(i));
+    for (int i = 0; i < detail.size(); i++) {
+      output.writeMessage(12, detail.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -556,9 +556,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(11, baseline);
     }
-    for (int i = 0; i < detail_.size(); i++) {
+    for (int i = 0; i < detail.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(12, detail_.get(i));
+        .computeMessageSize(12, detail.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -813,7 +813,7 @@ private static final long serialVersionUID = 0L;
         detail = java.util.Collections.emptyList();
         bitField0 = (bitField0_ & ~0x00000001);
       } else {
-        detailBuilder_.clear();
+        detailBuilder.clear();
       }
       return this;
     }
@@ -845,7 +845,7 @@ private static final long serialVersionUID = 0L;
       if (baseRespBuilder == null) {
         result.baseResp = baseResp;
       } else {
-        result.baseResp = baseRespBuilder_.build();
+        result.baseResp = baseRespBuilder.build();
       }
       result.type = type;
       result.evaluateId = evaluateId;
@@ -864,7 +864,7 @@ private static final long serialVersionUID = 0L;
         }
         result.detail = detail;
       } else {
-        result.detail = detailBuilder_.build();
+        result.detail = detailBuilder.build();
       }
       onBuilt();
       return result;
@@ -952,20 +952,20 @@ private static final long serialVersionUID = 0L;
         setBaseline(other.getBaseline());
       }
       if (detailBuilder == null) {
-        if (!other.detail_.isEmpty()) {
-          if (detail_.isEmpty()) {
+        if (!other.detail.isEmpty()) {
+          if (detail.isEmpty()) {
             detail = other.detail;
             bitField0 = (bitField0_ & ~0x00000001);
           } else {
             ensureDetailIsMutable();
-            detail_.addAll(other.detail);
+            detail.addAll(other.detail);
           }
           onChanged();
         }
       } else {
-        if (!other.detail_.isEmpty()) {
-          if (detailBuilder_.isEmpty()) {
-            detailBuilder_.dispose();
+        if (!other.detail.isEmpty()) {
+          if (detailBuilder.isEmpty()) {
+            detailBuilder.dispose();
             detailBuilder = null;
             detail = other.detail;
             bitField0 = (bitField0_ & ~0x00000001);
@@ -973,7 +973,7 @@ private static final long serialVersionUID = 0L;
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getDetailFieldBuilder() : null;
           } else {
-            detailBuilder_.addAllMessages(other.detail);
+            detailBuilder.addAllMessages(other.detail);
           }
         }
       }
@@ -1025,7 +1025,7 @@ private static final long serialVersionUID = 0L;
       if (baseRespBuilder == null) {
         return baseResp == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
       } else {
-        return baseRespBuilder_.getMessage();
+        return baseRespBuilder.getMessage();
       }
     }
     /**
@@ -1039,7 +1039,7 @@ private static final long serialVersionUID = 0L;
         baseResp = value;
         onChanged();
       } else {
-        baseRespBuilder_.setMessage(value);
+        baseRespBuilder.setMessage(value);
       }
 
       return this;
@@ -1053,7 +1053,7 @@ private static final long serialVersionUID = 0L;
         baseResp = builderForValue.build();
         onChanged();
       } else {
-        baseRespBuilder_.setMessage(builderForValue.build());
+        baseRespBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -1071,7 +1071,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        baseRespBuilder_.mergeFrom(value);
+        baseRespBuilder.mergeFrom(value);
       }
 
       return this;
@@ -1103,7 +1103,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder() {
       if (baseRespBuilder_ != null) {
-        return baseRespBuilder_.getMessageOrBuilder();
+        return baseRespBuilder.getMessageOrBuilder();
       } else {
         return baseResp == null ?
             com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
@@ -1655,7 +1655,7 @@ private static final long serialVersionUID = 0L;
       if (detailBuilder == null) {
         return java.util.Collections.unmodifiableList(detail);
       } else {
-        return detailBuilder_.getMessageList();
+        return detailBuilder.getMessageList();
       }
     }
     /**
@@ -1663,9 +1663,9 @@ private static final long serialVersionUID = 0L;
      */
     public int getDetailCount() {
       if (detailBuilder == null) {
-        return detail_.size();
+        return detail.size();
       } else {
-        return detailBuilder_.getCount();
+        return detailBuilder.getCount();
       }
     }
     /**
@@ -1673,9 +1673,9 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.live.EvaluateDetail getDetail(int index) {
       if (detailBuilder == null) {
-        return detail_.get(index);
+        return detail.get(index);
       } else {
-        return detailBuilder_.getMessage(index);
+        return detailBuilder.getMessage(index);
       }
     }
     /**
@@ -1688,10 +1688,10 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         ensureDetailIsMutable();
-        detail_.set(index, value);
+        detail.set(index, value);
         onChanged();
       } else {
-        detailBuilder_.setMessage(index, value);
+        detailBuilder.setMessage(index, value);
       }
       return this;
     }
@@ -1702,10 +1702,10 @@ private static final long serialVersionUID = 0L;
         int index, com.zhijiejiaoyu.glory_api.live.EvaluateDetail.Builder builderForValue) {
       if (detailBuilder == null) {
         ensureDetailIsMutable();
-        detail_.set(index, builderForValue.build());
+        detail.set(index, builderForValue.build());
         onChanged();
       } else {
-        detailBuilder_.setMessage(index, builderForValue.build());
+        detailBuilder.setMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -1718,10 +1718,10 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         ensureDetailIsMutable();
-        detail_.add(value);
+        detail.add(value);
         onChanged();
       } else {
-        detailBuilder_.addMessage(value);
+        detailBuilder.addMessage(value);
       }
       return this;
     }
@@ -1735,10 +1735,10 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         ensureDetailIsMutable();
-        detail_.add(index, value);
+        detail.add(index, value);
         onChanged();
       } else {
-        detailBuilder_.addMessage(index, value);
+        detailBuilder.addMessage(index, value);
       }
       return this;
     }
@@ -1749,10 +1749,10 @@ private static final long serialVersionUID = 0L;
         com.zhijiejiaoyu.glory_api.live.EvaluateDetail.Builder builderForValue) {
       if (detailBuilder == null) {
         ensureDetailIsMutable();
-        detail_.add(builderForValue.build());
+        detail.add(builderForValue.build());
         onChanged();
       } else {
-        detailBuilder_.addMessage(builderForValue.build());
+        detailBuilder.addMessage(builderForValue.build());
       }
       return this;
     }
@@ -1763,10 +1763,10 @@ private static final long serialVersionUID = 0L;
         int index, com.zhijiejiaoyu.glory_api.live.EvaluateDetail.Builder builderForValue) {
       if (detailBuilder == null) {
         ensureDetailIsMutable();
-        detail_.add(index, builderForValue.build());
+        detail.add(index, builderForValue.build());
         onChanged();
       } else {
-        detailBuilder_.addMessage(index, builderForValue.build());
+        detailBuilder.addMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -1781,7 +1781,7 @@ private static final long serialVersionUID = 0L;
             values, detail);
         onChanged();
       } else {
-        detailBuilder_.addAllMessages(values);
+        detailBuilder.addAllMessages(values);
       }
       return this;
     }
@@ -1794,7 +1794,7 @@ private static final long serialVersionUID = 0L;
         bitField0 = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
-        detailBuilder_.clear();
+        detailBuilder.clear();
       }
       return this;
     }
@@ -1804,10 +1804,10 @@ private static final long serialVersionUID = 0L;
     public Builder removeDetail(int index) {
       if (detailBuilder == null) {
         ensureDetailIsMutable();
-        detail_.remove(index);
+        detail.remove(index);
         onChanged();
       } else {
-        detailBuilder_.remove(index);
+        detailBuilder.remove(index);
       }
       return this;
     }
@@ -1824,8 +1824,8 @@ private static final long serialVersionUID = 0L;
     public com.zhijiejiaoyu.glory_api.live.EvaluateDetailOrBuilder getDetailOrBuilder(
         int index) {
       if (detailBuilder == null) {
-        return detail_.get(index);  } else {
-        return detailBuilder_.getMessageOrBuilder(index);
+        return detail.get(index);  } else {
+        return detailBuilder.getMessageOrBuilder(index);
       }
     }
     /**
@@ -1834,7 +1834,7 @@ private static final long serialVersionUID = 0L;
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.live.EvaluateDetailOrBuilder> 
          getDetailOrBuilderList() {
       if (detailBuilder_ != null) {
-        return detailBuilder_.getMessageOrBuilderList();
+        return detailBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(detail);
       }

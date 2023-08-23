@@ -51,7 +51,7 @@ private static final long serialVersionUID = 0L;
           case 10: {
             com.zhijiejiaoyu.base.BaseRequest.Builder subBuilder = null;
             if (baseRequest_ != null) {
-              subBuilder = baseRequest_.toBuilder();
+              subBuilder = baseRequest.toBuilder();
             }
             baseRequest = input.readMessage(com.zhijiejiaoyu.base.BaseRequest.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -64,7 +64,7 @@ private static final long serialVersionUID = 0L;
           case 18: {
             com.zhijiejiaoyu.glory_api.tenant.EduDept.Builder subBuilder = null;
             if (eduDept_ != null) {
-              subBuilder = eduDept_.toBuilder();
+              subBuilder = eduDept.toBuilder();
             }
             eduDept = input.readMessage(com.zhijiejiaoyu.glory_api.tenant.EduDept.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -425,12 +425,12 @@ private static final long serialVersionUID = 0L;
       if (baseRequestBuilder == null) {
         result.baseRequest = baseRequest;
       } else {
-        result.baseRequest = baseRequestBuilder_.build();
+        result.baseRequest = baseRequestBuilder.build();
       }
       if (eduDeptBuilder == null) {
         result.eduDept = eduDept;
       } else {
-        result.eduDept = eduDeptBuilder_.build();
+        result.eduDept = eduDeptBuilder.build();
       }
       onBuilt();
       return result;
@@ -541,7 +541,7 @@ private static final long serialVersionUID = 0L;
       if (baseRequestBuilder == null) {
         return baseRequest == null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
       } else {
-        return baseRequestBuilder_.getMessage();
+        return baseRequestBuilder.getMessage();
       }
     }
     /**
@@ -559,7 +559,7 @@ private static final long serialVersionUID = 0L;
         baseRequest = value;
         onChanged();
       } else {
-        baseRequestBuilder_.setMessage(value);
+        baseRequestBuilder.setMessage(value);
       }
 
       return this;
@@ -577,7 +577,7 @@ private static final long serialVersionUID = 0L;
         baseRequest = builderForValue.build();
         onChanged();
       } else {
-        baseRequestBuilder_.setMessage(builderForValue.build());
+        baseRequestBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -599,7 +599,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        baseRequestBuilder_.mergeFrom(value);
+        baseRequestBuilder.mergeFrom(value);
       }
 
       return this;
@@ -643,7 +643,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder() {
       if (baseRequestBuilder_ != null) {
-        return baseRequestBuilder_.getMessageOrBuilder();
+        return baseRequestBuilder.getMessageOrBuilder();
       } else {
         return baseRequest == null ?
             com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
@@ -688,7 +688,7 @@ private static final long serialVersionUID = 0L;
       if (eduDeptBuilder == null) {
         return eduDept == null ? com.zhijiejiaoyu.glory_api.tenant.EduDept.getDefaultInstance() : eduDept;
       } else {
-        return eduDeptBuilder_.getMessage();
+        return eduDeptBuilder.getMessage();
       }
     }
     /**
@@ -702,7 +702,7 @@ private static final long serialVersionUID = 0L;
         eduDept = value;
         onChanged();
       } else {
-        eduDeptBuilder_.setMessage(value);
+        eduDeptBuilder.setMessage(value);
       }
 
       return this;
@@ -716,7 +716,7 @@ private static final long serialVersionUID = 0L;
         eduDept = builderForValue.build();
         onChanged();
       } else {
-        eduDeptBuilder_.setMessage(builderForValue.build());
+        eduDeptBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -734,7 +734,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        eduDeptBuilder_.mergeFrom(value);
+        eduDeptBuilder.mergeFrom(value);
       }
 
       return this;
@@ -766,7 +766,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.tenant.EduDeptOrBuilder getEduDeptOrBuilder() {
       if (eduDeptBuilder_ != null) {
-        return eduDeptBuilder_.getMessageOrBuilder();
+        return eduDeptBuilder.getMessageOrBuilder();
       } else {
         return eduDept == null ?
             com.zhijiejiaoyu.glory_api.tenant.EduDept.getDefaultInstance() : eduDept;

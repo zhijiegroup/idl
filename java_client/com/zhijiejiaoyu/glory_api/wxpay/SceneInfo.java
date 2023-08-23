@@ -65,7 +65,7 @@ private static final long serialVersionUID = 0L;
           case 26: {
             com.zhijiejiaoyu.glory_api.wxpay.StoreInfo.Builder subBuilder = null;
             if (storeInfo_ != null) {
-              subBuilder = storeInfo_.toBuilder();
+              subBuilder = storeInfo.toBuilder();
             }
             storeInfo = input.readMessage(com.zhijiejiaoyu.glory_api.wxpay.StoreInfo.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -496,7 +496,7 @@ private static final long serialVersionUID = 0L;
       if (storeInfoBuilder == null) {
         result.storeInfo = storeInfo;
       } else {
-        result.storeInfo = storeInfoBuilder_.build();
+        result.storeInfo = storeInfoBuilder.build();
       }
       onBuilt();
       return result;
@@ -804,7 +804,7 @@ private static final long serialVersionUID = 0L;
       if (storeInfoBuilder == null) {
         return storeInfo == null ? com.zhijiejiaoyu.glory_api.wxpay.StoreInfo.getDefaultInstance() : storeInfo;
       } else {
-        return storeInfoBuilder_.getMessage();
+        return storeInfoBuilder.getMessage();
       }
     }
     /**
@@ -822,7 +822,7 @@ private static final long serialVersionUID = 0L;
         storeInfo = value;
         onChanged();
       } else {
-        storeInfoBuilder_.setMessage(value);
+        storeInfoBuilder.setMessage(value);
       }
 
       return this;
@@ -840,7 +840,7 @@ private static final long serialVersionUID = 0L;
         storeInfo = builderForValue.build();
         onChanged();
       } else {
-        storeInfoBuilder_.setMessage(builderForValue.build());
+        storeInfoBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -862,7 +862,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        storeInfoBuilder_.mergeFrom(value);
+        storeInfoBuilder.mergeFrom(value);
       }
 
       return this;
@@ -906,7 +906,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.wxpay.StoreInfoOrBuilder getStoreInfoOrBuilder() {
       if (storeInfoBuilder_ != null) {
-        return storeInfoBuilder_.getMessageOrBuilder();
+        return storeInfoBuilder.getMessageOrBuilder();
       } else {
         return storeInfo == null ?
             com.zhijiejiaoyu.glory_api.wxpay.StoreInfo.getDefaultInstance() : storeInfo;
