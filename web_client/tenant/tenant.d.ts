@@ -227,12 +227,10 @@ export interface Class {
   class_name?: string;
   /** 专业id, 创建必传 */
   major_id?: string;
-  /** 学校id，创建必传 */
+  /** 学校id，创建必传
+int32 grade = 6; // 年级, 创建必传
+string start_date = 7; // 开学日期, 创建必传 */
   tenant_id?: string;
-  /** 年级, 创建必传 */
-  grade?: number;
-  /** 开学日期, 创建必传 */
-  start_date?: string;
 }
 
 export interface CreateClassRequest {

@@ -17,7 +17,6 @@ private static final long serialVersionUID = 0L;
   }
   private Class() {
     className = "";
-    startDate = "";
   }
 
   @java.lang.Override
@@ -69,17 +68,6 @@ private static final long serialVersionUID = 0L;
           case 40: {
 
             tenantId = input.readInt64();
-            break;
-          }
-          case 48: {
-
-            grade = input.readInt32();
-            break;
-          }
-          case 58: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            startDate = s;
             break;
           }
           default: {
@@ -205,67 +193,6 @@ private static final long serialVersionUID = 0L;
     return tenantId;
   }
 
-  public static final int GRADE_FIELD_NUMBER = 6;
-  private int grade;
-  /**
-   * <pre>
-   * 年级, 创建必传
-   * </pre>
-   *
-   * <code>int32 grade = 6;</code>
-   * @return The grade.
-   */
-  @java.lang.Override
-  public int getGrade() {
-    return grade;
-  }
-
-  public static final int START_DATE_FIELD_NUMBER = 7;
-  private volatile java.lang.Object startDate;
-  /**
-   * <pre>
-   * 开学日期, 创建必传
-   * </pre>
-   *
-   * <code>string start_date = 7;</code>
-   * @return The startDate.
-   */
-  @java.lang.Override
-  public java.lang.String getStartDate() {
-    java.lang.Object ref = startDate;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      startDate = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * 开学日期, 创建必传
-   * </pre>
-   *
-   * <code>string start_date = 7;</code>
-   * @return The bytes for startDate.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getStartDateBytes() {
-    java.lang.Object ref = startDate;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      startDate = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -292,12 +219,6 @@ private static final long serialVersionUID = 0L;
     if (tenantId_ != 0L) {
       output.writeInt64(5, tenantId);
     }
-    if (grade_ != 0) {
-      output.writeInt32(6, grade);
-    }
-    if (!getStartDateBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, startDate);
-    }
     unknownFields.writeTo(output);
   }
 
@@ -322,13 +243,6 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(5, tenantId);
     }
-    if (grade_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(6, grade);
-    }
-    if (!getStartDateBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, startDate);
-    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -352,10 +266,6 @@ private static final long serialVersionUID = 0L;
         != other.getMajorId()) return false;
     if (getTenantId()
         != other.getTenantId()) return false;
-    if (getGrade()
-        != other.getGrade()) return false;
-    if (!getStartDate()
-        .equals(other.getStartDate())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -378,10 +288,6 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getTenantId());
-    hash = (37 * hash) + GRADE_FIELD_NUMBER;
-    hash = (53 * hash) + getGrade();
-    hash = (37 * hash) + START_DATE_FIELD_NUMBER;
-    hash = (53 * hash) + getStartDate().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -523,10 +429,6 @@ private static final long serialVersionUID = 0L;
 
       tenantId = 0L;
 
-      grade = 0;
-
-      startDate = "";
-
       return this;
     }
 
@@ -557,8 +459,6 @@ private static final long serialVersionUID = 0L;
       result.className = className;
       result.majorId = majorId;
       result.tenantId = tenantId;
-      result.grade = grade;
-      result.startDate = startDate;
       onBuilt();
       return result;
     }
@@ -619,13 +519,6 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getTenantId() != 0L) {
         setTenantId(other.getTenantId());
-      }
-      if (other.getGrade() != 0) {
-        setGrade(other.getGrade());
-      }
-      if (!other.getStartDate().isEmpty()) {
-        startDate = other.startDate;
-        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -877,145 +770,6 @@ private static final long serialVersionUID = 0L;
     public Builder clearTenantId() {
       
       tenantId = 0L;
-      onChanged();
-      return this;
-    }
-
-    private int grade_ ;
-    /**
-     * <pre>
-     * 年级, 创建必传
-     * </pre>
-     *
-     * <code>int32 grade = 6;</code>
-     * @return The grade.
-     */
-    @java.lang.Override
-    public int getGrade() {
-      return grade;
-    }
-    /**
-     * <pre>
-     * 年级, 创建必传
-     * </pre>
-     *
-     * <code>int32 grade = 6;</code>
-     * @param value The grade to set.
-     * @return This builder for chaining.
-     */
-    public Builder setGrade(int value) {
-      
-      grade = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 年级, 创建必传
-     * </pre>
-     *
-     * <code>int32 grade = 6;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearGrade() {
-      
-      grade = 0;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object startDate = "";
-    /**
-     * <pre>
-     * 开学日期, 创建必传
-     * </pre>
-     *
-     * <code>string start_date = 7;</code>
-     * @return The startDate.
-     */
-    public java.lang.String getStartDate() {
-      java.lang.Object ref = startDate;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        startDate = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * 开学日期, 创建必传
-     * </pre>
-     *
-     * <code>string start_date = 7;</code>
-     * @return The bytes for startDate.
-     */
-    public com.google.protobuf.ByteString
-        getStartDateBytes() {
-      java.lang.Object ref = startDate;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        startDate = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * 开学日期, 创建必传
-     * </pre>
-     *
-     * <code>string start_date = 7;</code>
-     * @param value The startDate to set.
-     * @return This builder for chaining.
-     */
-    public Builder setStartDate(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      startDate = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 开学日期, 创建必传
-     * </pre>
-     *
-     * <code>string start_date = 7;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearStartDate() {
-      
-      startDate = getDefaultInstance().getStartDate();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 开学日期, 创建必传
-     * </pre>
-     *
-     * <code>string start_date = 7;</code>
-     * @param value The bytes for startDate to set.
-     * @return This builder for chaining.
-     */
-    public Builder setStartDateBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      startDate = value;
       onChanged();
       return this;
     }

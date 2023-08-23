@@ -1030,12 +1030,6 @@ struct GloryApi_Class {
   /// 学校id，创建必传
   var tenantID: Int64 = 0
 
-  /// 年级, 创建必传
-  var grade: Int32 = 0
-
-  /// 开学日期, 创建必传
-  var startDate: String = String()
-
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -3102,8 +3096,6 @@ extension GloryApi_Class: SwiftProtobuf.Message, SwiftProtobuf._MessageImplement
     2: .standard(proto: "class_name"),
     4: .standard(proto: "major_id"),
     5: .standard(proto: "tenant_id"),
-    6: .same(proto: "grade"),
-    7: .standard(proto: "start_date"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -3116,8 +3108,6 @@ extension GloryApi_Class: SwiftProtobuf.Message, SwiftProtobuf._MessageImplement
       case 2: try { try decoder.decodeSingularStringField(value: &self.className) }()
       case 4: try { try decoder.decodeSingularInt64Field(value: &self.majorID) }()
       case 5: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
-      case 6: try { try decoder.decodeSingularInt32Field(value: &self.grade) }()
-      case 7: try { try decoder.decodeSingularStringField(value: &self.startDate) }()
       default: break
       }
     }
@@ -3136,12 +3126,6 @@ extension GloryApi_Class: SwiftProtobuf.Message, SwiftProtobuf._MessageImplement
     if self.tenantID != 0 {
       try visitor.visitSingularInt64Field(value: self.tenantID, fieldNumber: 5)
     }
-    if self.grade != 0 {
-      try visitor.visitSingularInt32Field(value: self.grade, fieldNumber: 6)
-    }
-    if !self.startDate.isEmpty {
-      try visitor.visitSingularStringField(value: self.startDate, fieldNumber: 7)
-    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -3150,8 +3134,6 @@ extension GloryApi_Class: SwiftProtobuf.Message, SwiftProtobuf._MessageImplement
     if lhs.className != rhs.className {return false}
     if lhs.majorID != rhs.majorID {return false}
     if lhs.tenantID != rhs.tenantID {return false}
-    if lhs.grade != rhs.grade {return false}
-    if lhs.startDate != rhs.startDate {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
