@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private ShopShow() {
     shopName = "";
+    shopLogo = "";
     product = java.util.Collections.emptyList();
   }
 
@@ -84,6 +85,12 @@ private static final long serialVersionUID = 0L;
             }
             product_.add(
                 input.readMessage(com.zhijiejiaoyu.glory_api.shop.ProductShow.parser(), extensionRegistry));
+            break;
+          }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            shopLogo = s;
             break;
           }
           default: {
@@ -203,6 +210,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int SHOP_LOGO_FIELD_NUMBER = 7;
+  private volatile java.lang.Object shopLogo;
+  /**
+   * <code>string shop_logo = 7;</code>
+   * @return The shopLogo.
+   */
+  @java.lang.Override
+  public java.lang.String getShopLogo() {
+    java.lang.Object ref = shopLogo;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      shopLogo = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string shop_logo = 7;</code>
+   * @return The bytes for shopLogo.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getShopLogoBytes() {
+    java.lang.Object ref = shopLogo;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      shopLogo = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int PRODUCT_FIELD_NUMBER = 6;
   private java.util.List<com.zhijiejiaoyu.glory_api.shop.ProductShow> product;
   /**
@@ -275,6 +320,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < product_.size(); i++) {
       output.writeMessage(6, product_.get(i));
     }
+    if (!getShopLogoBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, shopLogo);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -307,6 +355,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, product_.get(i));
     }
+    if (!getShopLogoBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, shopLogo);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -332,6 +383,8 @@ private static final long serialVersionUID = 0L;
         != other.getShopId()) return false;
     if (!getShopName()
         .equals(other.getShopName())) return false;
+    if (!getShopLogo()
+        .equals(other.getShopLogo())) return false;
     if (!getProductList()
         .equals(other.getProductList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -358,6 +411,8 @@ private static final long serialVersionUID = 0L;
         getShopId());
     hash = (37 * hash) + SHOP_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getShopName().hashCode();
+    hash = (37 * hash) + SHOP_LOGO_FIELD_NUMBER;
+    hash = (53 * hash) + getShopLogo().hashCode();
     if (getProductCount() > 0) {
       hash = (37 * hash) + PRODUCT_FIELD_NUMBER;
       hash = (53 * hash) + getProductList().hashCode();
@@ -506,6 +561,8 @@ private static final long serialVersionUID = 0L;
 
       shopName = "";
 
+      shopLogo = "";
+
       if (productBuilder == null) {
         product = java.util.Collections.emptyList();
         bitField0 = (bitField0_ & ~0x00000001);
@@ -544,6 +601,7 @@ private static final long serialVersionUID = 0L;
       result.quantity = quantity;
       result.shopId = shopId;
       result.shopName = shopName;
+      result.shopLogo = shopLogo;
       if (productBuilder == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           product = java.util.Collections.unmodifiableList(product);
@@ -615,6 +673,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getShopName().isEmpty()) {
         shopName = other.shopName;
+        onChanged();
+      }
+      if (!other.getShopLogo().isEmpty()) {
+        shopLogo = other.shopLogo;
         onChanged();
       }
       if (productBuilder == null) {
@@ -869,6 +931,82 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       shopName = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object shopLogo = "";
+    /**
+     * <code>string shop_logo = 7;</code>
+     * @return The shopLogo.
+     */
+    public java.lang.String getShopLogo() {
+      java.lang.Object ref = shopLogo;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        shopLogo = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string shop_logo = 7;</code>
+     * @return The bytes for shopLogo.
+     */
+    public com.google.protobuf.ByteString
+        getShopLogoBytes() {
+      java.lang.Object ref = shopLogo;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        shopLogo = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string shop_logo = 7;</code>
+     * @param value The shopLogo to set.
+     * @return This builder for chaining.
+     */
+    public Builder setShopLogo(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      shopLogo = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string shop_logo = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearShopLogo() {
+      
+      shopLogo = getDefaultInstance().getShopLogo();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string shop_logo = 7;</code>
+     * @param value The bytes for shopLogo to set.
+     * @return This builder for chaining.
+     */
+    public Builder setShopLogoBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      shopLogo = value;
       onChanged();
       return this;
     }

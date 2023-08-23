@@ -31,6 +31,8 @@ export interface ProductShow {
   unit_price?: number;
   product_url?: string;
   sku_info?: string;
+  currency?: string;
+  freight_amount?: number;
 }
 
 export interface ShopShow {
@@ -39,6 +41,7 @@ export interface ShopShow {
   quantity?: number;
   shop_id?: string;
   shop_name?: string;
+  shop_logo?: string;
   product?: Array<ProductShow>;
 }
 

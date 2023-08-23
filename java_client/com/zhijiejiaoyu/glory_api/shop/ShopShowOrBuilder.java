@@ -44,6 +44,18 @@ public interface ShopShowOrBuilder extends
       getShopNameBytes();
 
   /**
+   * <code>string shop_logo = 7;</code>
+   * @return The shopLogo.
+   */
+  java.lang.String getShopLogo();
+  /**
+   * <code>string shop_logo = 7;</code>
+   * @return The bytes for shopLogo.
+   */
+  com.google.protobuf.ByteString
+      getShopLogoBytes();
+
+  /**
    * <code>repeated .glory_api.ProductShow product = 6;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.shop.ProductShow> 
