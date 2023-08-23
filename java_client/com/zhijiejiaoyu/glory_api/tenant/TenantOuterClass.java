@@ -366,48 +366,47 @@ public final class TenantOuterClass {
       "Response\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseR" +
       "esponse\022*\n\006majors\030\002 \003(\0132\032.glory_api.Majo" +
       "rWithAuthor\022,\n\npagination\030d \001(\0132\030.base.P" +
-      "aginationResponse\"u\n\005Class\022\020\n\010class_id\030\001" +
+      "aginationResponse\"R\n\005Class\022\020\n\010class_id\030\001" +
       " \001(\003\022\022\n\nclass_name\030\002 \001(\t\022\020\n\010major_id\030\004 \001" +
-      "(\003\022\021\n\ttenant_id\030\005 \001(\003\022\r\n\005grade\030\006 \001(\005\022\022\n\n" +
-      "start_date\030\007 \001(\t\"^\n\022CreateClassRequest\022\'" +
-      "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\022" +
-      "\037\n\005class\030\002 \001(\0132\020.glory_api.Class\"N\n\023Crea" +
-      "teClassResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
-      "e.BaseResponse\022\020\n\010class_id\030\002 \001(\003\"L\n\017GetC" +
-      "lassRequest\022\'\n\014base_request\030\001 \001(\0132\021.base" +
-      ".BaseRequest\022\020\n\010class_id\030\002 \001(\003\"\201\001\n\020GetCl" +
-      "assResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
-      "seResponse\022\037\n\005class\030\002 \001(\0132\020.glory_api.Cl" +
-      "ass\022%\n\013author_info\030\003 \001(\0132\020.base.AuthorIn" +
-      "fo\"^\n\022UpdateClassRequest\022\'\n\014base_request" +
-      "\030\001 \001(\0132\021.base.BaseRequest\022\037\n\005Class\030\003 \001(\013" +
-      "2\020.glory_api.Class\"N\n\023UpdateClassRespons" +
-      "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
-      "\022\020\n\010class_id\030\002 \001(\003\"O\n\022DeleteClassRequest" +
-      "\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReques" +
-      "t\022\020\n\010class_id\030\002 \001(\003\"<\n\023DeleteClassRespon" +
-      "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
-      "e\"\302\001\n\020ListClassRequest\022\'\n\014base_request\030\001" +
-      " \001(\0132\021.base.BaseRequest\022\022\n\nclass_name\030\002 " +
-      "\001(\t\022\020\n\010class_id\030\003 \001(\003\022\020\n\010major_id\030\004 \001(\003\022" +
-      "\021\n\ttenant_id\030\005 \001(\003\022\r\n\005grade\030\006 \001(\005\022+\n\npag" +
-      "ination\030d \001(\0132\027.base.PaginationRequest\"Y" +
-      "\n\017ClassWithAuthor\022\037\n\005class\030\001 \001(\0132\020.glory" +
-      "_api.Class\022%\n\013author_info\030\002 \001(\0132\020.base.A" +
-      "uthorInfo\"\223\001\n\021ListClassResponse\022%\n\tbase_" +
-      "resp\030\001 \001(\0132\022.base.BaseResponse\022)\n\005class\030" +
-      "\002 \003(\0132\032.glory_api.ClassWithAuthor\022,\n\npag" +
-      "ination\030d \001(\0132\030.base.PaginationResponse\"" +
-      "\220\001\n\tTenantOrg\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022" +
-      "\014\n\004type\030\003 \001(\t\022\016\n\006parent\030\004 \001(\003\022\016\n\006tenant\030" +
-      "\005 \001(\003\022&\n\010children\030\006 \003(\0132\024.glory_api.Tena" +
-      "ntOrg\022\023\n\013child_types\030\007 \003(\t\"Q\n\023GetTenantO" +
-      "rgRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.B" +
-      "aseRequest\022\021\n\ttenant_id\030\002 \001(\003\"g\n\024GetTena" +
-      "ntOrgResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
-      "BaseResponse\022(\n\ntenant_org\030\002 \001(\0132\024.glory" +
-      "_api.TenantOrgB%\n!com.zhijiejiaoyu.glory" +
-      "_api.tenantP\001b\006proto3"
+      "(\003\022\021\n\ttenant_id\030\005 \001(\003\"^\n\022CreateClassRequ" +
+      "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
+      "uest\022\037\n\005class\030\002 \001(\0132\020.glory_api.Class\"N\n" +
+      "\023CreateClassResponse\022%\n\tbase_resp\030\001 \001(\0132" +
+      "\022.base.BaseResponse\022\020\n\010class_id\030\002 \001(\003\"L\n" +
+      "\017GetClassRequest\022\'\n\014base_request\030\001 \001(\0132\021" +
+      ".base.BaseRequest\022\020\n\010class_id\030\002 \001(\003\"\201\001\n\020" +
+      "GetClassResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
+      "se.BaseResponse\022\037\n\005class\030\002 \001(\0132\020.glory_a" +
+      "pi.Class\022%\n\013author_info\030\003 \001(\0132\020.base.Aut" +
+      "horInfo\"^\n\022UpdateClassRequest\022\'\n\014base_re" +
+      "quest\030\001 \001(\0132\021.base.BaseRequest\022\037\n\005Class\030" +
+      "\003 \001(\0132\020.glory_api.Class\"N\n\023UpdateClassRe" +
+      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
+      "ponse\022\020\n\010class_id\030\002 \001(\003\"O\n\022DeleteClassRe" +
+      "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
+      "equest\022\020\n\010class_id\030\002 \001(\003\"<\n\023DeleteClassR" +
+      "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
+      "sponse\"\302\001\n\020ListClassRequest\022\'\n\014base_requ" +
+      "est\030\001 \001(\0132\021.base.BaseRequest\022\022\n\nclass_na" +
+      "me\030\002 \001(\t\022\020\n\010class_id\030\003 \001(\003\022\020\n\010major_id\030\004" +
+      " \001(\003\022\021\n\ttenant_id\030\005 \001(\003\022\r\n\005grade\030\006 \001(\005\022+" +
+      "\n\npagination\030d \001(\0132\027.base.PaginationRequ" +
+      "est\"Y\n\017ClassWithAuthor\022\037\n\005class\030\001 \001(\0132\020." +
+      "glory_api.Class\022%\n\013author_info\030\002 \001(\0132\020.b" +
+      "ase.AuthorInfo\"\223\001\n\021ListClassResponse\022%\n\t" +
+      "base_resp\030\001 \001(\0132\022.base.BaseResponse\022)\n\005c" +
+      "lass\030\002 \003(\0132\032.glory_api.ClassWithAuthor\022," +
+      "\n\npagination\030d \001(\0132\030.base.PaginationResp" +
+      "onse\"\220\001\n\tTenantOrg\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002" +
+      " \001(\t\022\014\n\004type\030\003 \001(\t\022\016\n\006parent\030\004 \001(\003\022\016\n\006te" +
+      "nant\030\005 \001(\003\022&\n\010children\030\006 \003(\0132\024.glory_api" +
+      ".TenantOrg\022\023\n\013child_types\030\007 \003(\t\"Q\n\023GetTe" +
+      "nantOrgRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
+      "ase.BaseRequest\022\021\n\ttenant_id\030\002 \001(\003\"g\n\024Ge" +
+      "tTenantOrgResponse\022%\n\tbase_resp\030\001 \001(\0132\022." +
+      "base.BaseResponse\022(\n\ntenant_org\030\002 \001(\0132\024." +
+      "glory_api.TenantOrgB%\n!com.zhijiejiaoyu." +
+      "glory_api.tenantP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -629,7 +628,7 @@ public final class TenantOuterClass {
     internal_static_glory_api_Class_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_Class_descriptor,
-        new java.lang.String[] { "ClassId", "ClassName", "MajorId", "TenantId", "Grade", "StartDate", });
+        new java.lang.String[] { "ClassId", "ClassName", "MajorId", "TenantId", });
     internal_static_glory_api_CreateClassRequest_descriptor =
       getDescriptor().getMessageTypes().get(36);
     internal_static_glory_api_CreateClassRequest_fieldAccessorTable = new
