@@ -72,3 +72,93 @@ message StageShortVideoResponse {
   base.BaseResponse base_resp = 1;
   int64 stage_video_id = 2;
 }
+
+// 我的短视频列表
+message ListMyShortVideoRequest {
+  base.BaseRequest base_request = 1;
+  int32 type = 2; // 短视频类型：1: 待审核视频列表；2: 已审核视频列表；3: 被驳回视频列表；4: 全部视频列表
+  base.PaginationRequest pagination = 100;
+}
+
+message ListMyShortVideoResponse {
+  base.BaseResponse base_resp = 1;
+  repeated ShortVideo short_video_list = 2;
+  base.PaginationResponse pagination = 100;
+}
+
+// 我的暂存视频列表
+message ListMyStageVideoRequest {
+  base.BaseRequest base_request = 1;
+  base.PaginationRequest pagination = 100;
+}
+
+message ListMyStageVideoResponse {
+  base.BaseResponse base_resp = 1;
+  repeated StageVideo stage_video_list = 2;
+}
+
+// 我的喜欢视频列表
+message ListMyLikeVideoRequest {
+  base.BaseRequest base_request = 1;
+  base.PaginationRequest pagination = 100;
+}
+
+message ListMyLikeVideoResponse {
+  base.BaseResponse base_resp = 1;
+  repeated ShortVideo short_video_list = 2;
+  base.PaginationResponse pagination = 100;
+}
+
+// 我的收藏视频列表
+message ListMyFavoriteVideoRequest {
+  base.BaseRequest base_request = 1;
+  base.PaginationRequest pagination = 100;
+}
+
+message ListMyFavoriteVideoResponse {
+  base.BaseResponse base_resp = 1;
+  repeated ShortVideo short_video_list = 2;
+  base.PaginationResponse pagination = 100;
+}
+
+// 获取短视频详情
+message GetShortVideoRequest {
+  base.BaseRequest base_request = 1;
+  int64 short_video_id = 2;
+}
+
+message GetShortVideoResponse {
+  base.BaseResponse base_resp = 1;
+  ShortVideo short_video = 2;
+}
+
+// 删除短视频
+message DeleteShortVideoRequest {
+  base.BaseRequest base_request = 1;
+  int64 short_video_id = 2;
+}
+
+message DeleteShortVideoResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+// 获取暂存视频详情
+message GetStageVideoRequest {
+  base.BaseRequest base_request = 1;
+  int64 stage_video_id = 2;
+}
+
+message GetStageVideoResponse {
+  base.BaseResponse base_resp = 1;
+  StageVideo stage_video = 2;
+}
+
+// 删除暂存视频
+message DeleteStageVideoRequest {
+  base.BaseRequest base_request = 1;
+  int64 stage_video_id = 2;
+}
+
+message DeleteStageVideoResponse {
+  base.BaseResponse base_resp = 1;
+}
