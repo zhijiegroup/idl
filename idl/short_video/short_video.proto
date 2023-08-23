@@ -162,3 +162,39 @@ message DeleteStageVideoRequest {
 message DeleteStageVideoResponse {
   base.BaseResponse base_resp = 1;
 }
+
+// 管理平台短视频列表
+message ManagementListShortVideoRequest {
+  base.BaseRequest base_request = 1;
+  int32 type = 2; // 短视频类型：1: 待审核视频列表；2: 已审核视频列表；3: 被驳回视频列表；4: 全部视频列表
+  base.PaginationRequest pagination = 100;
+}
+
+message ManagementListShortVideoResponse {
+  base.BaseResponse base_resp = 1;
+  repeated ShortVideo short_video_list = 2;
+  base.PaginationResponse pagination = 100;
+}
+
+// 管理平台审核短视频
+message ManagementCensorShortVideoRequest {
+  base.BaseRequest base_request = 1;
+  int64 short_video_id = 2;
+  int32 censor_status = 3;
+  string censor_rejected_reason = 4;
+}
+
+message ManagementCensorShortVideoResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+// 管理平台删除短视频
+message ManagementDeleteShortVideoRequest {
+  base.BaseRequest base_request = 1;
+  int64 short_video_id = 2;
+}
+
+message ManagementDeleteShortVideoResponse {
+  base.BaseResponse base_resp = 1;
+
+}
