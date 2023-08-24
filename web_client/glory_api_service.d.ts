@@ -877,6 +877,11 @@ CreateLivePlanProduct create live plan product */
     request: short_video.GetShortVideoRequest
   ): Promise<short_video.GetShortVideoResponse>;
 
+  /** 更新短视频详情 */
+  UpdateShortVideo(
+    request: short_video.UpdateShortVideoRequest
+  ): Promise<short_video.UpdateShortVideoResponse>;
+
   /** 删除短视频 */
   DeleteShortVideo(
     request: short_video.DeleteShortVideoRequest

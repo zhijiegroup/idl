@@ -168,6 +168,26 @@ export interface GetShortVideoResponse {
   short_video?: ShortVideo;
 }
 
+/** 更新短视频详情 */
+export interface UpdateShortVideoRequest {
+  base_request?: base.BaseRequest;
+  /** 短视频ID */
+  short_video_id?: string;
+  /** 短视频描述 */
+  description?: string;
+  /** 视频可见性：1.公开；2:隐私，仅自己可见 */
+  visibility?: number;
+  /** JSON序列化的商品信息 */
+  products?: string;
+  /** 店铺ID */
+  shop_id?: string;
+}
+
+export interface UpdateShortVideoResponse {
+  base_resp?: base.BaseResponse;
+  short_video_id?: string;
+}
+
 /** 删除短视频 */
 export interface DeleteShortVideoRequest {
   base_request?: base.BaseRequest;

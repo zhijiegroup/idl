@@ -635,6 +635,66 @@ struct GloryApi_GetShortVideoResponse {
   fileprivate var _shortVideo: GloryApi_ShortVideo? = nil
 }
 
+/// 更新短视频详情
+struct GloryApi_UpdateShortVideoRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  /// 短视频ID
+  var shortVideoID: Int64 = 0
+
+  /// 短视频描述
+  var description_p: String = String()
+
+  /// 视频可见性：1.公开；2:隐私，仅自己可见
+  var visibility: Int32 = 0
+
+  /// JSON序列化的商品信息
+  var products: String = String()
+
+  /// 店铺ID
+  var shopID: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+struct GloryApi_UpdateShortVideoResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var shortVideoID: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+}
+
 /// 删除短视频
 struct GloryApi_DeleteShortVideoRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
@@ -1121,6 +1181,8 @@ extension GloryApi_ListMyFavoriteVideoRequest: @unchecked Sendable {}
 extension GloryApi_ListMyFavoriteVideoResponse: @unchecked Sendable {}
 extension GloryApi_GetShortVideoRequest: @unchecked Sendable {}
 extension GloryApi_GetShortVideoResponse: @unchecked Sendable {}
+extension GloryApi_UpdateShortVideoRequest: @unchecked Sendable {}
+extension GloryApi_UpdateShortVideoResponse: @unchecked Sendable {}
 extension GloryApi_DeleteShortVideoRequest: @unchecked Sendable {}
 extension GloryApi_DeleteShortVideoResponse: @unchecked Sendable {}
 extension GloryApi_GetStageVideoRequest: @unchecked Sendable {}
@@ -2150,6 +2212,114 @@ extension GloryApi_GetShortVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._
   static func ==(lhs: GloryApi_GetShortVideoResponse, rhs: GloryApi_GetShortVideoResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs._shortVideo != rhs._shortVideo {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_UpdateShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".UpdateShortVideoRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    2: .standard(proto: "short_video_id"),
+    3: .same(proto: "description"),
+    4: .same(proto: "visibility"),
+    5: .same(proto: "products"),
+    6: .standard(proto: "shop_id"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.shortVideoID) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.description_p) }()
+      case 4: try { try decoder.decodeSingularInt32Field(value: &self.visibility) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.products) }()
+      case 6: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if self.shortVideoID != 0 {
+      try visitor.visitSingularInt64Field(value: self.shortVideoID, fieldNumber: 2)
+    }
+    if !self.description_p.isEmpty {
+      try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 3)
+    }
+    if self.visibility != 0 {
+      try visitor.visitSingularInt32Field(value: self.visibility, fieldNumber: 4)
+    }
+    if !self.products.isEmpty {
+      try visitor.visitSingularStringField(value: self.products, fieldNumber: 5)
+    }
+    if self.shopID != 0 {
+      try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 6)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_UpdateShortVideoRequest, rhs: GloryApi_UpdateShortVideoRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.shortVideoID != rhs.shortVideoID {return false}
+    if lhs.description_p != rhs.description_p {return false}
+    if lhs.visibility != rhs.visibility {return false}
+    if lhs.products != rhs.products {return false}
+    if lhs.shopID != rhs.shopID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_UpdateShortVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".UpdateShortVideoResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .standard(proto: "short_video_id"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.shortVideoID) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if self.shortVideoID != 0 {
+      try visitor.visitSingularInt64Field(value: self.shortVideoID, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_UpdateShortVideoResponse, rhs: GloryApi_UpdateShortVideoResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.shortVideoID != rhs.shortVideoID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

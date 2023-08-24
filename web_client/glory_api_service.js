@@ -1630,6 +1630,14 @@ export class glory_api {
     );
   }
 
+  UpdateShortVideo(request) {
+    const uri = `${this.uriPrefix}/api/short_video/update_short_video`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   DeleteShortVideo(request) {
     const uri = `${this.uriPrefix}/api/short_video/delete_short_video`;
     const body = JSONbigint.stringify(request);
