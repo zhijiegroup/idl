@@ -799,15 +799,33 @@ service glory_api {
     option (api.post) = '/api/short_video/delete_stage_video';
   }
 
+  // 平台短短视频列表
   rpc ManagementListShortVideo(ManagementListShortVideoRequest) returns (ManagementListShortVideoResponse) {
     option (api.post) = '/api/short_video/management/list_short_video';
   }
 
+  // 平台审核短视频
   rpc ManagementCensorShortVideo(ManagementCensorShortVideoRequest) returns (ManagementCensorShortVideoResponse) {
     option (api.post) = '/api/short_video/management/censor_short_video';
   }
 
+  // 平台删除短视频
   rpc ManagementDeleteShortVideo(ManagementDeleteShortVideoRequest) returns (ManagementDeleteShortVideoResponse) {
     option (api.post) = '/api/short_video/management/delete_short_video';
+  }
+
+  // APP首页短视频列表
+  rpc ListShortVideo(ListShortVideoRequest) returns (ListShortVideoResponse) {
+    option (api.post) = '/api/short_video/list_short_video';
+  }
+
+  // 点赞短视频
+  rpc LikeShortVideo(LikeShortVideoRequest) returns (LikeShortVideoResponse) {
+    option (api.post) = '/api/short_video/like_short_video';
+  }
+
+  // 收藏短视频
+  rpc FavoriteShortVideo(FavoriteShortVideoRequest) returns (FavoriteShortVideoResponse) {
+    option (api.post) = '/api/short_video/favorite_short_video';
   }
 }
