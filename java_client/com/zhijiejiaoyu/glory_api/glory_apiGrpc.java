@@ -6463,6 +6463,99 @@ public final class glory_apiGrpc {
     return getManagementDeleteShortVideoMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListShortVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.ListShortVideoResponse> getListShortVideoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListShortVideo",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.ListShortVideoRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.ListShortVideoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListShortVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.ListShortVideoResponse> getListShortVideoMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListShortVideoRequest, com.zhijiejiaoyu.glory_api.short_video.ListShortVideoResponse> getListShortVideoMethod;
+    if ((getListShortVideoMethod = glory_apiGrpc.getListShortVideoMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListShortVideoMethod = glory_apiGrpc.getListShortVideoMethod) == null) {
+          glory_apiGrpc.getListShortVideoMethod = getListShortVideoMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.ListShortVideoRequest, com.zhijiejiaoyu.glory_api.short_video.ListShortVideoResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListShortVideo"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.ListShortVideoRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.ListShortVideoResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListShortVideo"))
+              .build();
+        }
+      }
+    }
+    return getListShortVideoMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoResponse> getLikeShortVideoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "LikeShortVideo",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoResponse> getLikeShortVideoMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoRequest, com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoResponse> getLikeShortVideoMethod;
+    if ((getLikeShortVideoMethod = glory_apiGrpc.getLikeShortVideoMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getLikeShortVideoMethod = glory_apiGrpc.getLikeShortVideoMethod) == null) {
+          glory_apiGrpc.getLikeShortVideoMethod = getLikeShortVideoMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoRequest, com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "LikeShortVideo"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("LikeShortVideo"))
+              .build();
+        }
+      }
+    }
+    return getLikeShortVideoMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoResponse> getFavoriteShortVideoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FavoriteShortVideo",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoResponse> getFavoriteShortVideoMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoRequest, com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoResponse> getFavoriteShortVideoMethod;
+    if ((getFavoriteShortVideoMethod = glory_apiGrpc.getFavoriteShortVideoMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getFavoriteShortVideoMethod = glory_apiGrpc.getFavoriteShortVideoMethod) == null) {
+          glory_apiGrpc.getFavoriteShortVideoMethod = getFavoriteShortVideoMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoRequest, com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FavoriteShortVideo"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("FavoriteShortVideo"))
+              .build();
+        }
+      }
+    }
+    return getFavoriteShortVideoMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -8091,6 +8184,9 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     * 平台短短视频列表
+     * </pre>
      */
     default void managementListShortVideo(com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoResponse> responseObserver) {
@@ -8098,6 +8194,9 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     * 平台审核短视频
+     * </pre>
      */
     default void managementCensorShortVideo(com.zhijiejiaoyu.glory_api.short_video.ManagementCensorShortVideoRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ManagementCensorShortVideoResponse> responseObserver) {
@@ -8105,10 +8204,43 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     * 平台删除短视频
+     * </pre>
      */
     default void managementDeleteShortVideo(com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getManagementDeleteShortVideoMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * APP首页短视频列表
+     * </pre>
+     */
+    default void listShortVideo(com.zhijiejiaoyu.glory_api.short_video.ListShortVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListShortVideoResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListShortVideoMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 点赞短视频
+     * </pre>
+     */
+    default void likeShortVideo(com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getLikeShortVideoMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 收藏短视频
+     * </pre>
+     */
+    default void favoriteShortVideo(com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFavoriteShortVideoMethod(), responseObserver);
     }
   }
 
@@ -9924,6 +10056,9 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     * 平台短短视频列表
+     * </pre>
      */
     public void managementListShortVideo(com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoResponse> responseObserver) {
@@ -9932,6 +10067,9 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     * 平台审核短视频
+     * </pre>
      */
     public void managementCensorShortVideo(com.zhijiejiaoyu.glory_api.short_video.ManagementCensorShortVideoRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ManagementCensorShortVideoResponse> responseObserver) {
@@ -9940,11 +10078,47 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     * 平台删除短视频
+     * </pre>
      */
     public void managementDeleteShortVideo(com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getManagementDeleteShortVideoMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * APP首页短视频列表
+     * </pre>
+     */
+    public void listShortVideo(com.zhijiejiaoyu.glory_api.short_video.ListShortVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListShortVideoResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListShortVideoMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 点赞短视频
+     * </pre>
+     */
+    public void likeShortVideo(com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getLikeShortVideoMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 收藏短视频
+     * </pre>
+     */
+    public void favoriteShortVideo(com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFavoriteShortVideoMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -11544,6 +11718,9 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     * 平台短短视频列表
+     * </pre>
      */
     public com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoResponse managementListShortVideo(com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -11551,6 +11728,9 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     * 平台审核短视频
+     * </pre>
      */
     public com.zhijiejiaoyu.glory_api.short_video.ManagementCensorShortVideoResponse managementCensorShortVideo(com.zhijiejiaoyu.glory_api.short_video.ManagementCensorShortVideoRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -11558,10 +11738,43 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     * 平台删除短视频
+     * </pre>
      */
     public com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoResponse managementDeleteShortVideo(com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getManagementDeleteShortVideoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * APP首页短视频列表
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.ListShortVideoResponse listShortVideo(com.zhijiejiaoyu.glory_api.short_video.ListShortVideoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListShortVideoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 点赞短视频
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoResponse likeShortVideo(com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getLikeShortVideoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 收藏短视频
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoResponse favoriteShortVideo(com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFavoriteShortVideoMethod(), getCallOptions(), request);
     }
   }
 
@@ -13366,6 +13579,9 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     * 平台短短视频列表
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoResponse> managementListShortVideo(
         com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoRequest request) {
@@ -13374,6 +13590,9 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     * 平台审核短视频
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.ManagementCensorShortVideoResponse> managementCensorShortVideo(
         com.zhijiejiaoyu.glory_api.short_video.ManagementCensorShortVideoRequest request) {
@@ -13382,11 +13601,47 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     * 平台删除短视频
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoResponse> managementDeleteShortVideo(
         com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getManagementDeleteShortVideoMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * APP首页短视频列表
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.ListShortVideoResponse> listShortVideo(
+        com.zhijiejiaoyu.glory_api.short_video.ListShortVideoRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListShortVideoMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 点赞短视频
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoResponse> likeShortVideo(
+        com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getLikeShortVideoMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 收藏短视频
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoResponse> favoriteShortVideo(
+        com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFavoriteShortVideoMethod(), getCallOptions()), request);
     }
   }
 
@@ -13598,6 +13853,9 @@ public final class glory_apiGrpc {
   private static final int METHODID_MANAGEMENT_LIST_SHORT_VIDEO = 205;
   private static final int METHODID_MANAGEMENT_CENSOR_SHORT_VIDEO = 206;
   private static final int METHODID_MANAGEMENT_DELETE_SHORT_VIDEO = 207;
+  private static final int METHODID_LIST_SHORT_VIDEO = 208;
+  private static final int METHODID_LIKE_SHORT_VIDEO = 209;
+  private static final int METHODID_FAVORITE_SHORT_VIDEO = 210;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -14447,6 +14705,18 @@ public final class glory_apiGrpc {
         case METHODID_MANAGEMENT_DELETE_SHORT_VIDEO:
           serviceImpl.managementDeleteShortVideo((com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoResponse>) responseObserver);
+          break;
+        case METHODID_LIST_SHORT_VIDEO:
+          serviceImpl.listShortVideo((com.zhijiejiaoyu.glory_api.short_video.ListShortVideoRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListShortVideoResponse>) responseObserver);
+          break;
+        case METHODID_LIKE_SHORT_VIDEO:
+          serviceImpl.likeShortVideo((com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoResponse>) responseObserver);
+          break;
+        case METHODID_FAVORITE_SHORT_VIDEO:
+          serviceImpl.favoriteShortVideo((com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -15922,6 +16192,27 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoRequest,
               com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoResponse>(
                 service, METHODID_MANAGEMENT_DELETE_SHORT_VIDEO)))
+        .addMethod(
+          getListShortVideoMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.ListShortVideoRequest,
+              com.zhijiejiaoyu.glory_api.short_video.ListShortVideoResponse>(
+                service, METHODID_LIST_SHORT_VIDEO)))
+        .addMethod(
+          getLikeShortVideoMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoRequest,
+              com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoResponse>(
+                service, METHODID_LIKE_SHORT_VIDEO)))
+        .addMethod(
+          getFavoriteShortVideoMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoRequest,
+              com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoResponse>(
+                service, METHODID_FAVORITE_SHORT_VIDEO)))
         .build();
   }
 
@@ -16178,6 +16469,9 @@ public final class glory_apiGrpc {
               .addMethod(getManagementListShortVideoMethod())
               .addMethod(getManagementCensorShortVideoMethod())
               .addMethod(getManagementDeleteShortVideoMethod())
+              .addMethod(getListShortVideoMethod())
+              .addMethod(getLikeShortVideoMethod())
+              .addMethod(getFavoriteShortVideoMethod())
               .build();
         }
       }

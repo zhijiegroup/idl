@@ -146,7 +146,7 @@ private static final long serialVersionUID = 0L;
           }
           case 112: {
 
-            likeCount = input.readInt32();
+            likeCount = input.readInt64();
             break;
           }
           case 120: {
@@ -156,12 +156,12 @@ private static final long serialVersionUID = 0L;
           }
           case 128: {
 
-            favoriteCount = input.readInt32();
+            favoriteCount = input.readInt64();
             break;
           }
           case 136: {
 
-            commentCount = input.readInt32();
+            commentCount = input.readInt64();
             break;
           }
           case 146: {
@@ -616,17 +616,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int LIKE_COUNT_FIELD_NUMBER = 14;
-  private int likeCount;
+  private long likeCount;
   /**
    * <pre>
    * 喜欢数量
    * </pre>
    *
-   * <code>int32 like_count = 14;</code>
+   * <code>int64 like_count = 14;</code>
    * @return The likeCount.
    */
   @java.lang.Override
-  public int getLikeCount() {
+  public long getLikeCount() {
     return likeCount;
   }
 
@@ -646,32 +646,32 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int FAVORITE_COUNT_FIELD_NUMBER = 16;
-  private int favoriteCount;
+  private long favoriteCount;
   /**
    * <pre>
    * 收藏数量
    * </pre>
    *
-   * <code>int32 favorite_count = 16;</code>
+   * <code>int64 favorite_count = 16;</code>
    * @return The favoriteCount.
    */
   @java.lang.Override
-  public int getFavoriteCount() {
+  public long getFavoriteCount() {
     return favoriteCount;
   }
 
   public static final int COMMENT_COUNT_FIELD_NUMBER = 17;
-  private int commentCount;
+  private long commentCount;
   /**
    * <pre>
    * 评论数量
    * </pre>
    *
-   * <code>int32 comment_count = 17;</code>
+   * <code>int64 comment_count = 17;</code>
    * @return The commentCount.
    */
   @java.lang.Override
-  public int getCommentCount() {
+  public long getCommentCount() {
     return commentCount;
   }
 
@@ -774,17 +774,17 @@ private static final long serialVersionUID = 0L;
     if (isLike != false) {
       output.writeBool(13, isLike);
     }
-    if (likeCount != 0) {
-      output.writeInt32(14, likeCount);
+    if (likeCount != 0L) {
+      output.writeInt64(14, likeCount);
     }
     if (isFavorite != false) {
       output.writeBool(15, isFavorite);
     }
-    if (favoriteCount != 0) {
-      output.writeInt32(16, favoriteCount);
+    if (favoriteCount != 0L) {
+      output.writeInt64(16, favoriteCount);
     }
-    if (commentCount != 0) {
-      output.writeInt32(17, commentCount);
+    if (commentCount != 0L) {
+      output.writeInt64(17, commentCount);
     }
     if (!getCreatedAtBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18, createdAt);
@@ -846,21 +846,21 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(13, isLike);
     }
-    if (likeCount != 0) {
+    if (likeCount != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(14, likeCount);
+        .computeInt64Size(14, likeCount);
     }
     if (isFavorite != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(15, isFavorite);
     }
-    if (favoriteCount != 0) {
+    if (favoriteCount != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(16, favoriteCount);
+        .computeInt64Size(16, favoriteCount);
     }
-    if (commentCount != 0) {
+    if (commentCount != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(17, commentCount);
+        .computeInt64Size(17, commentCount);
     }
     if (!getCreatedAtBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, createdAt);
@@ -968,14 +968,17 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getIsLike());
     hash = (37 * hash) + LIKE_COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + getLikeCount();
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getLikeCount());
     hash = (37 * hash) + IS_FAVORITE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getIsFavorite());
     hash = (37 * hash) + FAVORITE_COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + getFavoriteCount();
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getFavoriteCount());
     hash = (37 * hash) + COMMENT_COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + getCommentCount();
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getCommentCount());
     hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
     hash = (53 * hash) + getCreatedAt().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -1150,13 +1153,13 @@ private static final long serialVersionUID = 0L;
       }
       isLike = false;
 
-      likeCount = 0;
+      likeCount = 0L;
 
       isFavorite = false;
 
-      favoriteCount = 0;
+      favoriteCount = 0L;
 
-      commentCount = 0;
+      commentCount = 0L;
 
       createdAt = "";
 
@@ -1335,16 +1338,16 @@ private static final long serialVersionUID = 0L;
       if (other.getIsLike() != false) {
         setIsLike(other.getIsLike());
       }
-      if (other.getLikeCount() != 0) {
+      if (other.getLikeCount() != 0L) {
         setLikeCount(other.getLikeCount());
       }
       if (other.getIsFavorite() != false) {
         setIsFavorite(other.getIsFavorite());
       }
-      if (other.getFavoriteCount() != 0) {
+      if (other.getFavoriteCount() != 0L) {
         setFavoriteCount(other.getFavoriteCount());
       }
-      if (other.getCommentCount() != 0) {
+      if (other.getCommentCount() != 0L) {
         setCommentCount(other.getCommentCount());
       }
       if (!other.getCreatedAt().isEmpty()) {
@@ -2645,17 +2648,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int likeCount_ ;
+    private long likeCount_ ;
     /**
      * <pre>
      * 喜欢数量
      * </pre>
      *
-     * <code>int32 like_count = 14;</code>
+     * <code>int64 like_count = 14;</code>
      * @return The likeCount.
      */
     @java.lang.Override
-    public int getLikeCount() {
+    public long getLikeCount() {
       return likeCount;
     }
     /**
@@ -2663,11 +2666,11 @@ private static final long serialVersionUID = 0L;
      * 喜欢数量
      * </pre>
      *
-     * <code>int32 like_count = 14;</code>
+     * <code>int64 like_count = 14;</code>
      * @param value The likeCount to set.
      * @return This builder for chaining.
      */
-    public Builder setLikeCount(int value) {
+    public Builder setLikeCount(long value) {
       
       likeCount = value;
       onChanged();
@@ -2678,12 +2681,12 @@ private static final long serialVersionUID = 0L;
      * 喜欢数量
      * </pre>
      *
-     * <code>int32 like_count = 14;</code>
+     * <code>int64 like_count = 14;</code>
      * @return This builder for chaining.
      */
     public Builder clearLikeCount() {
       
-      likeCount = 0;
+      likeCount = 0L;
       onChanged();
       return this;
     }
@@ -2731,17 +2734,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int favoriteCount_ ;
+    private long favoriteCount_ ;
     /**
      * <pre>
      * 收藏数量
      * </pre>
      *
-     * <code>int32 favorite_count = 16;</code>
+     * <code>int64 favorite_count = 16;</code>
      * @return The favoriteCount.
      */
     @java.lang.Override
-    public int getFavoriteCount() {
+    public long getFavoriteCount() {
       return favoriteCount;
     }
     /**
@@ -2749,11 +2752,11 @@ private static final long serialVersionUID = 0L;
      * 收藏数量
      * </pre>
      *
-     * <code>int32 favorite_count = 16;</code>
+     * <code>int64 favorite_count = 16;</code>
      * @param value The favoriteCount to set.
      * @return This builder for chaining.
      */
-    public Builder setFavoriteCount(int value) {
+    public Builder setFavoriteCount(long value) {
       
       favoriteCount = value;
       onChanged();
@@ -2764,27 +2767,27 @@ private static final long serialVersionUID = 0L;
      * 收藏数量
      * </pre>
      *
-     * <code>int32 favorite_count = 16;</code>
+     * <code>int64 favorite_count = 16;</code>
      * @return This builder for chaining.
      */
     public Builder clearFavoriteCount() {
       
-      favoriteCount = 0;
+      favoriteCount = 0L;
       onChanged();
       return this;
     }
 
-    private int commentCount_ ;
+    private long commentCount_ ;
     /**
      * <pre>
      * 评论数量
      * </pre>
      *
-     * <code>int32 comment_count = 17;</code>
+     * <code>int64 comment_count = 17;</code>
      * @return The commentCount.
      */
     @java.lang.Override
-    public int getCommentCount() {
+    public long getCommentCount() {
       return commentCount;
     }
     /**
@@ -2792,11 +2795,11 @@ private static final long serialVersionUID = 0L;
      * 评论数量
      * </pre>
      *
-     * <code>int32 comment_count = 17;</code>
+     * <code>int64 comment_count = 17;</code>
      * @param value The commentCount to set.
      * @return This builder for chaining.
      */
-    public Builder setCommentCount(int value) {
+    public Builder setCommentCount(long value) {
       
       commentCount = value;
       onChanged();
@@ -2807,12 +2810,12 @@ private static final long serialVersionUID = 0L;
      * 评论数量
      * </pre>
      *
-     * <code>int32 comment_count = 17;</code>
+     * <code>int64 comment_count = 17;</code>
      * @return This builder for chaining.
      */
     public Builder clearCommentCount() {
       
-      commentCount = 0;
+      commentCount = 0L;
       onChanged();
       return this;
     }

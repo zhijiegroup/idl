@@ -1677,6 +1677,30 @@ export class glory_api {
       handleResponse
     );
   }
+
+  ListShortVideo(request) {
+    const uri = `${this.uriPrefix}/api/short_video/list_short_video`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  LikeShortVideo(request) {
+    const uri = `${this.uriPrefix}/api/short_video/like_short_video`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  FavoriteShortVideo(request) {
+    const uri = `${this.uriPrefix}/api/short_video/favorite_short_video`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
 }
 
 export const glory_apiClient = new glory_api();

@@ -169,6 +169,36 @@ public final class ShortVideoOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_ManagementDeleteShortVideoResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ListShortVideoRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ListShortVideoRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ListShortVideoResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ListShortVideoResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_LikeShortVideoRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_LikeShortVideoRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_LikeShortVideoResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_LikeShortVideoResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_FavoriteShortVideoRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_FavoriteShortVideoRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_FavoriteShortVideoResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_FavoriteShortVideoResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -194,8 +224,8 @@ public final class ShortVideoOuterClass {
       "ct\022\'\n\004shop\030\013 \001(\0132\031.glory_api.ShortVideoS" +
       "hop\022,\n\tuser_info\030\014 \001(\0132\031.glory_api.Short" +
       "VideoUser\022\017\n\007is_like\030\r \001(\010\022\022\n\nlike_count" +
-      "\030\016 \001(\005\022\023\n\013is_favorite\030\017 \001(\010\022\026\n\016favorite_" +
-      "count\030\020 \001(\005\022\025\n\rcomment_count\030\021 \001(\005\022\022\n\ncr" +
+      "\030\016 \001(\003\022\023\n\013is_favorite\030\017 \001(\010\022\026\n\016favorite_" +
+      "count\030\020 \001(\003\022\025\n\rcomment_count\030\021 \001(\003\022\022\n\ncr" +
       "eated_at\030\022 \001(\t\"y\n\nStageVideo\022\026\n\016stage_vi" +
       "deo_id\030\001 \001(\003\022\021\n\tvideo_url\030\002 \001(\t\022\024\n\014video" +
       "_length\030\003 \001(\005\022\026\n\016video_duration\030\004 \001(\005\022\022\n" +
@@ -272,8 +302,24 @@ public final class ShortVideoOuterClass {
       "\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReques" +
       "t\022\026\n\016short_video_id\030\002 \001(\003\"K\n\"ManagementD" +
       "eleteShortVideoResponse\022%\n\tbase_resp\030\001 \001" +
-      "(\0132\022.base.BaseResponseB*\n&com.zhijiejiao" +
-      "yu.glory_api.short_videoP\001b\006proto3"
+      "(\0132\022.base.BaseResponse\"m\n\025ListShortVideo" +
+      "Request\022\'\n\014base_request\030\001 \001(\0132\021.base.Bas" +
+      "eRequest\022+\n\npagination\030d \001(\0132\027.base.Pagi" +
+      "nationRequest\"\236\001\n\026ListShortVideoResponse" +
+      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022" +
+      "/\n\020short_video_list\030\002 \003(\0132\025.glory_api.Sh" +
+      "ortVideo\022,\n\npagination\030d \001(\0132\030.base.Pagi" +
+      "nationResponse\"f\n\025LikeShortVideoRequest\022" +
+      "\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequest" +
+      "\022\026\n\016short_video_id\030\002 \001(\003\022\014\n\004like\030\003 \001(\010\"?" +
+      "\n\026LikeShortVideoResponse\022%\n\tbase_resp\030\001 " +
+      "\001(\0132\022.base.BaseResponse\"n\n\031FavoriteShort" +
+      "VideoRequest\022\'\n\014base_request\030\001 \001(\0132\021.bas" +
+      "e.BaseRequest\022\026\n\016short_video_id\030\002 \001(\003\022\020\n" +
+      "\010favorite\030\003 \001(\010\"C\n\032FavoriteShortVideoRes" +
+      "ponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResp" +
+      "onseB*\n&com.zhijiejiaoyu.glory_api.short" +
+      "_videoP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -465,6 +511,42 @@ public final class ShortVideoOuterClass {
     internal_static_glory_api_ManagementDeleteShortVideoResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ManagementDeleteShortVideoResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
+    internal_static_glory_api_ListShortVideoRequest_descriptor =
+      getDescriptor().getMessageTypes().get(31);
+    internal_static_glory_api_ListShortVideoRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ListShortVideoRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "Pagination", });
+    internal_static_glory_api_ListShortVideoResponse_descriptor =
+      getDescriptor().getMessageTypes().get(32);
+    internal_static_glory_api_ListShortVideoResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ListShortVideoResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "ShortVideoList", "Pagination", });
+    internal_static_glory_api_LikeShortVideoRequest_descriptor =
+      getDescriptor().getMessageTypes().get(33);
+    internal_static_glory_api_LikeShortVideoRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_LikeShortVideoRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "ShortVideoId", "Like", });
+    internal_static_glory_api_LikeShortVideoResponse_descriptor =
+      getDescriptor().getMessageTypes().get(34);
+    internal_static_glory_api_LikeShortVideoResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_LikeShortVideoResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
+    internal_static_glory_api_FavoriteShortVideoRequest_descriptor =
+      getDescriptor().getMessageTypes().get(35);
+    internal_static_glory_api_FavoriteShortVideoRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_FavoriteShortVideoRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "ShortVideoId", "Favorite", });
+    internal_static_glory_api_FavoriteShortVideoResponse_descriptor =
+      getDescriptor().getMessageTypes().get(36);
+    internal_static_glory_api_FavoriteShortVideoResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_FavoriteShortVideoResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
   }
