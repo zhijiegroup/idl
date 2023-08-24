@@ -443,7 +443,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (roomId_ != 0L) {
+    if (roomId != 0L) {
       output.writeInt64(1, roomId);
     }
     if (!getUserNameBytes().isEmpty()) {
@@ -452,19 +452,19 @@ private static final long serialVersionUID = 0L;
     if (!getUserAvatarUrlBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, userAvatarUrl);
     }
-    if (sellerId_ != 0L) {
+    if (sellerId != 0L) {
       output.writeInt64(4, sellerId);
     }
     if (!getStartTimeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, startTime);
     }
-    if (averageOnlineUser_ != 0D) {
+    if (averageOnlineUser != 0D) {
       output.writeDouble(6, averageOnlineUser);
     }
-    if (roomProductAmount_ != 0L) {
+    if (roomProductAmount != 0L) {
       output.writeInt64(7, roomProductAmount);
     }
-    if (roomOrderAmount_ != 0L) {
+    if (roomOrderAmount != 0L) {
       output.writeInt64(8, roomOrderAmount);
     }
     if (!getRoomImageUrlBytes().isEmpty()) {
@@ -473,10 +473,10 @@ private static final long serialVersionUID = 0L;
     if (!getRoomTitleBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, roomTitle);
     }
-    if (roomImageAttachmentId_ != 0L) {
+    if (roomImageAttachmentId != 0L) {
       output.writeInt64(11, roomImageAttachmentId);
     }
-    if (roomDealAmount_ != 0D) {
+    if (roomDealAmount != 0D) {
       output.writeDouble(12, roomDealAmount);
     }
     unknownFields.writeTo(output);
@@ -488,7 +488,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (roomId_ != 0L) {
+    if (roomId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, roomId);
     }
@@ -498,22 +498,22 @@ private static final long serialVersionUID = 0L;
     if (!getUserAvatarUrlBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, userAvatarUrl);
     }
-    if (sellerId_ != 0L) {
+    if (sellerId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, sellerId);
     }
     if (!getStartTimeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, startTime);
     }
-    if (averageOnlineUser_ != 0D) {
+    if (averageOnlineUser != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(6, averageOnlineUser);
     }
-    if (roomProductAmount_ != 0L) {
+    if (roomProductAmount != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(7, roomProductAmount);
     }
-    if (roomOrderAmount_ != 0L) {
+    if (roomOrderAmount != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(8, roomOrderAmount);
     }
@@ -523,11 +523,11 @@ private static final long serialVersionUID = 0L;
     if (!getRoomTitleBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, roomTitle);
     }
-    if (roomImageAttachmentId_ != 0L) {
+    if (roomImageAttachmentId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(11, roomImageAttachmentId);
     }
-    if (roomDealAmount_ != 0D) {
+    if (roomDealAmount != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(12, roomDealAmount);
     }

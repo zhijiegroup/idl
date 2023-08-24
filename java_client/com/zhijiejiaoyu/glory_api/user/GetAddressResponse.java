@@ -50,8 +50,8 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             com.zhijiejiaoyu.base.BaseResponse.Builder subBuilder = null;
-            if (baseResp_ != null) {
-              subBuilder = baseResp_.toBuilder();
+            if (baseResp != null) {
+              subBuilder = baseResp.toBuilder();
             }
             baseResp = input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -63,8 +63,8 @@ private static final long serialVersionUID = 0L;
           }
           case 18: {
             com.zhijiejiaoyu.glory_api.user.Address.Builder subBuilder = null;
-            if (address_ != null) {
-              subBuilder = address_.toBuilder();
+            if (address != null) {
+              subBuilder = address.toBuilder();
             }
             address = input.readMessage(com.zhijiejiaoyu.glory_api.user.Address.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -114,7 +114,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasBaseResp() {
-    return baseResp_ != null;
+    return baseResp != null;
   }
   /**
    * <code>.base.BaseResponse base_resp = 1;</code>
@@ -140,7 +140,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasAddress() {
-    return address_ != null;
+    return address != null;
   }
   /**
    * <code>.glory_api.Address address = 2;</code>
@@ -172,10 +172,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (baseResp_ != null) {
+    if (baseResp != null) {
       output.writeMessage(1, getBaseResp());
     }
-    if (address_ != null) {
+    if (address != null) {
       output.writeMessage(2, getAddress());
     }
     unknownFields.writeTo(output);
@@ -187,11 +187,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (baseResp_ != null) {
+    if (baseResp != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
-    if (address_ != null) {
+    if (address != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getAddress());
     }
@@ -413,12 +413,12 @@ private static final long serialVersionUID = 0L;
       if (baseRespBuilder == null) {
         result.baseResp = baseResp;
       } else {
-        result.baseResp = baseRespBuilder_.build();
+        result.baseResp = baseRespBuilder.build();
       }
       if (addressBuilder == null) {
         result.address = address;
       } else {
-        result.address = addressBuilder_.build();
+        result.address = addressBuilder.build();
       }
       onBuilt();
       return result;
@@ -511,7 +511,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the baseResp field is set.
      */
     public boolean hasBaseResp() {
-      return baseRespBuilder_ != null || baseResp_ != null;
+      return baseRespBuilder != null || baseResp != null;
     }
     /**
      * <code>.base.BaseResponse base_resp = 1;</code>
@@ -521,7 +521,7 @@ private static final long serialVersionUID = 0L;
       if (baseRespBuilder == null) {
         return baseResp == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
       } else {
-        return baseRespBuilder_.getMessage();
+        return baseRespBuilder.getMessage();
       }
     }
     /**
@@ -535,7 +535,7 @@ private static final long serialVersionUID = 0L;
         baseResp = value;
         onChanged();
       } else {
-        baseRespBuilder_.setMessage(value);
+        baseRespBuilder.setMessage(value);
       }
 
       return this;
@@ -549,7 +549,7 @@ private static final long serialVersionUID = 0L;
         baseResp = builderForValue.build();
         onChanged();
       } else {
-        baseRespBuilder_.setMessage(builderForValue.build());
+        baseRespBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -559,7 +559,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeBaseResp(com.zhijiejiaoyu.base.BaseResponse value) {
       if (baseRespBuilder == null) {
-        if (baseResp_ != null) {
+        if (baseResp != null) {
           baseResp =
             com.zhijiejiaoyu.base.BaseResponse.newBuilder(baseResp).mergeFrom(value).buildPartial();
         } else {
@@ -567,7 +567,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        baseRespBuilder_.mergeFrom(value);
+        baseRespBuilder.mergeFrom(value);
       }
 
       return this;
@@ -598,8 +598,8 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder() {
-      if (baseRespBuilder_ != null) {
-        return baseRespBuilder_.getMessageOrBuilder();
+      if (baseRespBuilder != null) {
+        return baseRespBuilder.getMessageOrBuilder();
       } else {
         return baseResp == null ?
             com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
@@ -630,7 +630,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the address field is set.
      */
     public boolean hasAddress() {
-      return addressBuilder_ != null || address_ != null;
+      return addressBuilder != null || address != null;
     }
     /**
      * <code>.glory_api.Address address = 2;</code>
@@ -640,7 +640,7 @@ private static final long serialVersionUID = 0L;
       if (addressBuilder == null) {
         return address == null ? com.zhijiejiaoyu.glory_api.user.Address.getDefaultInstance() : address;
       } else {
-        return addressBuilder_.getMessage();
+        return addressBuilder.getMessage();
       }
     }
     /**
@@ -654,7 +654,7 @@ private static final long serialVersionUID = 0L;
         address = value;
         onChanged();
       } else {
-        addressBuilder_.setMessage(value);
+        addressBuilder.setMessage(value);
       }
 
       return this;
@@ -668,7 +668,7 @@ private static final long serialVersionUID = 0L;
         address = builderForValue.build();
         onChanged();
       } else {
-        addressBuilder_.setMessage(builderForValue.build());
+        addressBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -678,7 +678,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeAddress(com.zhijiejiaoyu.glory_api.user.Address value) {
       if (addressBuilder == null) {
-        if (address_ != null) {
+        if (address != null) {
           address =
             com.zhijiejiaoyu.glory_api.user.Address.newBuilder(address).mergeFrom(value).buildPartial();
         } else {
@@ -686,7 +686,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        addressBuilder_.mergeFrom(value);
+        addressBuilder.mergeFrom(value);
       }
 
       return this;
@@ -717,8 +717,8 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.Address address = 2;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.AddressOrBuilder getAddressOrBuilder() {
-      if (addressBuilder_ != null) {
-        return addressBuilder_.getMessageOrBuilder();
+      if (addressBuilder != null) {
+        return addressBuilder.getMessageOrBuilder();
       } else {
         return address == null ?
             com.zhijiejiaoyu.glory_api.user.Address.getDefaultInstance() : address;

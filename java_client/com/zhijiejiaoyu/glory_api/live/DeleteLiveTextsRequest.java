@@ -52,8 +52,8 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             com.zhijiejiaoyu.base.BaseRequest.Builder subBuilder = null;
-            if (baseRequest_ != null) {
-              subBuilder = baseRequest_.toBuilder();
+            if (baseRequest != null) {
+              subBuilder = baseRequest.toBuilder();
             }
             baseRequest = input.readMessage(com.zhijiejiaoyu.base.BaseRequest.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -68,7 +68,7 @@ private static final long serialVersionUID = 0L;
               textIds = newLongList();
               mutable_bitField0_ |= 0x00000001;
             }
-            textIds_.addLong(input.readInt64());
+            textIds.addLong(input.readInt64());
             break;
           }
           case 18: {
@@ -79,7 +79,7 @@ private static final long serialVersionUID = 0L;
               mutable_bitField0_ |= 0x00000001;
             }
             while (input.getBytesUntilLimit() > 0) {
-              textIds_.addLong(input.readInt64());
+              textIds.addLong(input.readInt64());
             }
             input.popLimit(limit);
             break;
@@ -100,7 +100,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        textIds_.makeImmutable(); // C
+        textIds.makeImmutable(); // C
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -127,7 +127,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasBaseRequest() {
-    return baseRequest_ != null;
+    return baseRequest != null;
   }
   /**
    * <code>.base.BaseRequest base_request = 1;</code>
@@ -161,7 +161,7 @@ private static final long serialVersionUID = 0L;
    * @return The count of textIds.
    */
   public int getTextIdsCount() {
-    return textIds_.size();
+    return textIds.size();
   }
   /**
    * <code>repeated int64 text_ids = 2;</code>
@@ -169,7 +169,7 @@ private static final long serialVersionUID = 0L;
    * @return The textIds at the given index.
    */
   public long getTextIds(int index) {
-    return textIds_.getLong(index);
+    return textIds.getLong(index);
   }
   private int textIdsMemoizedSerializedSize = -1;
 
@@ -188,15 +188,15 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     getSerializedSize();
-    if (baseRequest_ != null) {
+    if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
     if (getTextIdsList().size() > 0) {
       output.writeUInt32NoTag(18);
       output.writeUInt32NoTag(textIdsMemoizedSerializedSize);
     }
-    for (int i = 0; i < textIds_.size(); i++) {
-      output.writeInt64NoTag(textIds_.getLong(i));
+    for (int i = 0; i < textIds.size(); i++) {
+      output.writeInt64NoTag(textIds.getLong(i));
     }
     unknownFields.writeTo(output);
   }
@@ -207,15 +207,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (baseRequest_ != null) {
+    if (baseRequest != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseRequest());
     }
     {
       int dataSize = 0;
-      for (int i = 0; i < textIds_.size(); i++) {
+      for (int i = 0; i < textIds.size(); i++) {
         dataSize += com.google.protobuf.CodedOutputStream
-          .computeInt64SizeNoTag(textIds_.getLong(i));
+          .computeInt64SizeNoTag(textIds.getLong(i));
       }
       size += dataSize;
       if (!getTextIdsList().isEmpty()) {
@@ -437,10 +437,10 @@ private static final long serialVersionUID = 0L;
       if (baseRequestBuilder == null) {
         result.baseRequest = baseRequest;
       } else {
-        result.baseRequest = baseRequestBuilder_.build();
+        result.baseRequest = baseRequestBuilder.build();
       }
       if (((bitField0_ & 0x00000001) != 0)) {
-        textIds_.makeImmutable();
+        textIds.makeImmutable();
         bitField0 = (bitField0_ & ~0x00000001);
       }
       result.textIds = textIds;
@@ -495,13 +495,13 @@ private static final long serialVersionUID = 0L;
       if (other.hasBaseRequest()) {
         mergeBaseRequest(other.getBaseRequest());
       }
-      if (!other.textIds_.isEmpty()) {
-        if (textIds_.isEmpty()) {
+      if (!other.textIds.isEmpty()) {
+        if (textIds.isEmpty()) {
           textIds = other.textIds;
           bitField0 = (bitField0_ & ~0x00000001);
         } else {
           ensureTextIdsIsMutable();
-          textIds_.addAll(other.textIds);
+          textIds.addAll(other.textIds);
         }
         onChanged();
       }
@@ -543,7 +543,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the baseRequest field is set.
      */
     public boolean hasBaseRequest() {
-      return baseRequestBuilder_ != null || baseRequest_ != null;
+      return baseRequestBuilder != null || baseRequest != null;
     }
     /**
      * <code>.base.BaseRequest base_request = 1;</code>
@@ -553,7 +553,7 @@ private static final long serialVersionUID = 0L;
       if (baseRequestBuilder == null) {
         return baseRequest == null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
       } else {
-        return baseRequestBuilder_.getMessage();
+        return baseRequestBuilder.getMessage();
       }
     }
     /**
@@ -567,7 +567,7 @@ private static final long serialVersionUID = 0L;
         baseRequest = value;
         onChanged();
       } else {
-        baseRequestBuilder_.setMessage(value);
+        baseRequestBuilder.setMessage(value);
       }
 
       return this;
@@ -581,7 +581,7 @@ private static final long serialVersionUID = 0L;
         baseRequest = builderForValue.build();
         onChanged();
       } else {
-        baseRequestBuilder_.setMessage(builderForValue.build());
+        baseRequestBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -591,7 +591,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeBaseRequest(com.zhijiejiaoyu.base.BaseRequest value) {
       if (baseRequestBuilder == null) {
-        if (baseRequest_ != null) {
+        if (baseRequest != null) {
           baseRequest =
             com.zhijiejiaoyu.base.BaseRequest.newBuilder(baseRequest).mergeFrom(value).buildPartial();
         } else {
@@ -599,7 +599,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        baseRequestBuilder_.mergeFrom(value);
+        baseRequestBuilder.mergeFrom(value);
       }
 
       return this;
@@ -630,8 +630,8 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseRequest base_request = 1;</code>
      */
     public com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder() {
-      if (baseRequestBuilder_ != null) {
-        return baseRequestBuilder_.getMessageOrBuilder();
+      if (baseRequestBuilder != null) {
+        return baseRequestBuilder.getMessageOrBuilder();
       } else {
         return baseRequest == null ?
             com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
@@ -675,7 +675,7 @@ private static final long serialVersionUID = 0L;
      * @return The count of textIds.
      */
     public int getTextIdsCount() {
-      return textIds_.size();
+      return textIds.size();
     }
     /**
      * <code>repeated int64 text_ids = 2;</code>
@@ -683,7 +683,7 @@ private static final long serialVersionUID = 0L;
      * @return The textIds at the given index.
      */
     public long getTextIds(int index) {
-      return textIds_.getLong(index);
+      return textIds.getLong(index);
     }
     /**
      * <code>repeated int64 text_ids = 2;</code>
@@ -694,7 +694,7 @@ private static final long serialVersionUID = 0L;
     public Builder setTextIds(
         int index, long value) {
       ensureTextIdsIsMutable();
-      textIds_.setLong(index, value);
+      textIds.setLong(index, value);
       onChanged();
       return this;
     }
@@ -705,7 +705,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addTextIds(long value) {
       ensureTextIdsIsMutable();
-      textIds_.addLong(value);
+      textIds.addLong(value);
       onChanged();
       return this;
     }

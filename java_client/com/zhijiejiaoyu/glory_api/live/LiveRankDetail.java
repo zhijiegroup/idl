@@ -302,7 +302,7 @@ private static final long serialVersionUID = 0L;
     if (!getClass_Bytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, class_);
     }
-    if (liveDuration_ != 0L) {
+    if (liveDuration != 0L) {
       output.writeInt64(5, liveDuration);
     }
     unknownFields.writeTo(output);
@@ -326,7 +326,7 @@ private static final long serialVersionUID = 0L;
     if (!getClass_Bytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, class_);
     }
-    if (liveDuration_ != 0L) {
+    if (liveDuration != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(5, liveDuration);
     }

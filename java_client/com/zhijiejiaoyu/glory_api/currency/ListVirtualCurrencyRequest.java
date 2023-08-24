@@ -50,8 +50,8 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             com.zhijiejiaoyu.base.BaseRequest.Builder subBuilder = null;
-            if (baseRequest_ != null) {
-              subBuilder = baseRequest_.toBuilder();
+            if (baseRequest != null) {
+              subBuilder = baseRequest.toBuilder();
             }
             baseRequest = input.readMessage(com.zhijiejiaoyu.base.BaseRequest.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -63,8 +63,8 @@ private static final long serialVersionUID = 0L;
           }
           case 802: {
             com.zhijiejiaoyu.base.PaginationRequest.Builder subBuilder = null;
-            if (pagination_ != null) {
-              subBuilder = pagination_.toBuilder();
+            if (pagination != null) {
+              subBuilder = pagination.toBuilder();
             }
             pagination = input.readMessage(com.zhijiejiaoyu.base.PaginationRequest.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -114,7 +114,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasBaseRequest() {
-    return baseRequest_ != null;
+    return baseRequest != null;
   }
   /**
    * <code>.base.BaseRequest base_request = 1;</code>
@@ -140,7 +140,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasPagination() {
-    return pagination_ != null;
+    return pagination != null;
   }
   /**
    * <code>.base.PaginationRequest pagination = 100;</code>
@@ -172,10 +172,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (baseRequest_ != null) {
+    if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
-    if (pagination_ != null) {
+    if (pagination != null) {
       output.writeMessage(100, getPagination());
     }
     unknownFields.writeTo(output);
@@ -187,11 +187,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (baseRequest_ != null) {
+    if (baseRequest != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseRequest());
     }
-    if (pagination_ != null) {
+    if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(100, getPagination());
     }
@@ -413,12 +413,12 @@ private static final long serialVersionUID = 0L;
       if (baseRequestBuilder == null) {
         result.baseRequest = baseRequest;
       } else {
-        result.baseRequest = baseRequestBuilder_.build();
+        result.baseRequest = baseRequestBuilder.build();
       }
       if (paginationBuilder == null) {
         result.pagination = pagination;
       } else {
-        result.pagination = paginationBuilder_.build();
+        result.pagination = paginationBuilder.build();
       }
       onBuilt();
       return result;
@@ -511,7 +511,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the baseRequest field is set.
      */
     public boolean hasBaseRequest() {
-      return baseRequestBuilder_ != null || baseRequest_ != null;
+      return baseRequestBuilder != null || baseRequest != null;
     }
     /**
      * <code>.base.BaseRequest base_request = 1;</code>
@@ -521,7 +521,7 @@ private static final long serialVersionUID = 0L;
       if (baseRequestBuilder == null) {
         return baseRequest == null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
       } else {
-        return baseRequestBuilder_.getMessage();
+        return baseRequestBuilder.getMessage();
       }
     }
     /**
@@ -535,7 +535,7 @@ private static final long serialVersionUID = 0L;
         baseRequest = value;
         onChanged();
       } else {
-        baseRequestBuilder_.setMessage(value);
+        baseRequestBuilder.setMessage(value);
       }
 
       return this;
@@ -549,7 +549,7 @@ private static final long serialVersionUID = 0L;
         baseRequest = builderForValue.build();
         onChanged();
       } else {
-        baseRequestBuilder_.setMessage(builderForValue.build());
+        baseRequestBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -559,7 +559,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeBaseRequest(com.zhijiejiaoyu.base.BaseRequest value) {
       if (baseRequestBuilder == null) {
-        if (baseRequest_ != null) {
+        if (baseRequest != null) {
           baseRequest =
             com.zhijiejiaoyu.base.BaseRequest.newBuilder(baseRequest).mergeFrom(value).buildPartial();
         } else {
@@ -567,7 +567,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        baseRequestBuilder_.mergeFrom(value);
+        baseRequestBuilder.mergeFrom(value);
       }
 
       return this;
@@ -598,8 +598,8 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseRequest base_request = 1;</code>
      */
     public com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder() {
-      if (baseRequestBuilder_ != null) {
-        return baseRequestBuilder_.getMessageOrBuilder();
+      if (baseRequestBuilder != null) {
+        return baseRequestBuilder.getMessageOrBuilder();
       } else {
         return baseRequest == null ?
             com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
@@ -630,7 +630,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the pagination field is set.
      */
     public boolean hasPagination() {
-      return paginationBuilder_ != null || pagination_ != null;
+      return paginationBuilder != null || pagination != null;
     }
     /**
      * <code>.base.PaginationRequest pagination = 100;</code>
@@ -640,7 +640,7 @@ private static final long serialVersionUID = 0L;
       if (paginationBuilder == null) {
         return pagination == null ? com.zhijiejiaoyu.base.PaginationRequest.getDefaultInstance() : pagination;
       } else {
-        return paginationBuilder_.getMessage();
+        return paginationBuilder.getMessage();
       }
     }
     /**
@@ -654,7 +654,7 @@ private static final long serialVersionUID = 0L;
         pagination = value;
         onChanged();
       } else {
-        paginationBuilder_.setMessage(value);
+        paginationBuilder.setMessage(value);
       }
 
       return this;
@@ -668,7 +668,7 @@ private static final long serialVersionUID = 0L;
         pagination = builderForValue.build();
         onChanged();
       } else {
-        paginationBuilder_.setMessage(builderForValue.build());
+        paginationBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -678,7 +678,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergePagination(com.zhijiejiaoyu.base.PaginationRequest value) {
       if (paginationBuilder == null) {
-        if (pagination_ != null) {
+        if (pagination != null) {
           pagination =
             com.zhijiejiaoyu.base.PaginationRequest.newBuilder(pagination).mergeFrom(value).buildPartial();
         } else {
@@ -686,7 +686,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        paginationBuilder_.mergeFrom(value);
+        paginationBuilder.mergeFrom(value);
       }
 
       return this;
@@ -717,8 +717,8 @@ private static final long serialVersionUID = 0L;
      * <code>.base.PaginationRequest pagination = 100;</code>
      */
     public com.zhijiejiaoyu.base.PaginationRequestOrBuilder getPaginationOrBuilder() {
-      if (paginationBuilder_ != null) {
-        return paginationBuilder_.getMessageOrBuilder();
+      if (paginationBuilder != null) {
+        return paginationBuilder.getMessageOrBuilder();
       } else {
         return pagination == null ?
             com.zhijiejiaoyu.base.PaginationRequest.getDefaultInstance() : pagination;

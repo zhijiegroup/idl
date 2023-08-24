@@ -215,19 +215,19 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (size_ != 0) {
+    if (size != 0) {
       output.writeInt32(1, size);
     }
-    if (page_ != 0) {
+    if (page != 0) {
       output.writeInt32(2, page);
     }
-    if (totalCount_ != 0L) {
+    if (totalCount != 0L) {
       output.writeInt64(3, totalCount);
     }
     if (!getSortKeyBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, sortKey);
     }
-    if (sortDescending_ != false) {
+    if (sortDescending != false) {
       output.writeBool(5, sortDescending);
     }
     unknownFields.writeTo(output);
@@ -239,22 +239,22 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (size_ != 0) {
+    if (size != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(1, size);
     }
-    if (page_ != 0) {
+    if (page != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(2, page);
     }
-    if (totalCount_ != 0L) {
+    if (totalCount != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, totalCount);
     }
     if (!getSortKeyBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, sortKey);
     }
-    if (sortDescending_ != false) {
+    if (sortDescending != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(5, sortDescending);
     }

@@ -50,8 +50,8 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             com.zhijiejiaoyu.base.BaseResponse.Builder subBuilder = null;
-            if (baseResp_ != null) {
-              subBuilder = baseResp_.toBuilder();
+            if (baseResp != null) {
+              subBuilder = baseResp.toBuilder();
             }
             baseResp = input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -63,8 +63,8 @@ private static final long serialVersionUID = 0L;
           }
           case 18: {
             com.zhijiejiaoyu.glory_api.shop.OrderInfo.Builder subBuilder = null;
-            if (orderInfo_ != null) {
-              subBuilder = orderInfo_.toBuilder();
+            if (orderInfo != null) {
+              subBuilder = orderInfo.toBuilder();
             }
             orderInfo = input.readMessage(com.zhijiejiaoyu.glory_api.shop.OrderInfo.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -76,8 +76,8 @@ private static final long serialVersionUID = 0L;
           }
           case 34: {
             com.zhijiejiaoyu.glory_api.shop.DeliverInfo.Builder subBuilder = null;
-            if (deliverInfo_ != null) {
-              subBuilder = deliverInfo_.toBuilder();
+            if (deliverInfo != null) {
+              subBuilder = deliverInfo.toBuilder();
             }
             deliverInfo = input.readMessage(com.zhijiejiaoyu.glory_api.shop.DeliverInfo.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -127,7 +127,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasBaseResp() {
-    return baseResp_ != null;
+    return baseResp != null;
   }
   /**
    * <code>.base.BaseResponse base_resp = 1;</code>
@@ -153,7 +153,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasOrderInfo() {
-    return orderInfo_ != null;
+    return orderInfo != null;
   }
   /**
    * <code>.glory_api.OrderInfo orderInfo = 2;</code>
@@ -183,7 +183,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasDeliverInfo() {
-    return deliverInfo_ != null;
+    return deliverInfo != null;
   }
   /**
    * <pre>
@@ -223,13 +223,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (baseResp_ != null) {
+    if (baseResp != null) {
       output.writeMessage(1, getBaseResp());
     }
-    if (orderInfo_ != null) {
+    if (orderInfo != null) {
       output.writeMessage(2, getOrderInfo());
     }
-    if (deliverInfo_ != null) {
+    if (deliverInfo != null) {
       output.writeMessage(4, getDeliverInfo());
     }
     unknownFields.writeTo(output);
@@ -241,15 +241,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (baseResp_ != null) {
+    if (baseResp != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
-    if (orderInfo_ != null) {
+    if (orderInfo != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getOrderInfo());
     }
-    if (deliverInfo_ != null) {
+    if (deliverInfo != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getDeliverInfo());
     }
@@ -486,17 +486,17 @@ private static final long serialVersionUID = 0L;
       if (baseRespBuilder == null) {
         result.baseResp = baseResp;
       } else {
-        result.baseResp = baseRespBuilder_.build();
+        result.baseResp = baseRespBuilder.build();
       }
       if (orderInfoBuilder == null) {
         result.orderInfo = orderInfo;
       } else {
-        result.orderInfo = orderInfoBuilder_.build();
+        result.orderInfo = orderInfoBuilder.build();
       }
       if (deliverInfoBuilder == null) {
         result.deliverInfo = deliverInfo;
       } else {
-        result.deliverInfo = deliverInfoBuilder_.build();
+        result.deliverInfo = deliverInfoBuilder.build();
       }
       onBuilt();
       return result;
@@ -592,7 +592,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the baseResp field is set.
      */
     public boolean hasBaseResp() {
-      return baseRespBuilder_ != null || baseResp_ != null;
+      return baseRespBuilder != null || baseResp != null;
     }
     /**
      * <code>.base.BaseResponse base_resp = 1;</code>
@@ -602,7 +602,7 @@ private static final long serialVersionUID = 0L;
       if (baseRespBuilder == null) {
         return baseResp == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
       } else {
-        return baseRespBuilder_.getMessage();
+        return baseRespBuilder.getMessage();
       }
     }
     /**
@@ -616,7 +616,7 @@ private static final long serialVersionUID = 0L;
         baseResp = value;
         onChanged();
       } else {
-        baseRespBuilder_.setMessage(value);
+        baseRespBuilder.setMessage(value);
       }
 
       return this;
@@ -630,7 +630,7 @@ private static final long serialVersionUID = 0L;
         baseResp = builderForValue.build();
         onChanged();
       } else {
-        baseRespBuilder_.setMessage(builderForValue.build());
+        baseRespBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -640,7 +640,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeBaseResp(com.zhijiejiaoyu.base.BaseResponse value) {
       if (baseRespBuilder == null) {
-        if (baseResp_ != null) {
+        if (baseResp != null) {
           baseResp =
             com.zhijiejiaoyu.base.BaseResponse.newBuilder(baseResp).mergeFrom(value).buildPartial();
         } else {
@@ -648,7 +648,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        baseRespBuilder_.mergeFrom(value);
+        baseRespBuilder.mergeFrom(value);
       }
 
       return this;
@@ -679,8 +679,8 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder() {
-      if (baseRespBuilder_ != null) {
-        return baseRespBuilder_.getMessageOrBuilder();
+      if (baseRespBuilder != null) {
+        return baseRespBuilder.getMessageOrBuilder();
       } else {
         return baseResp == null ?
             com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
@@ -711,7 +711,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the orderInfo field is set.
      */
     public boolean hasOrderInfo() {
-      return orderInfoBuilder_ != null || orderInfo_ != null;
+      return orderInfoBuilder != null || orderInfo != null;
     }
     /**
      * <code>.glory_api.OrderInfo orderInfo = 2;</code>
@@ -721,7 +721,7 @@ private static final long serialVersionUID = 0L;
       if (orderInfoBuilder == null) {
         return orderInfo == null ? com.zhijiejiaoyu.glory_api.shop.OrderInfo.getDefaultInstance() : orderInfo;
       } else {
-        return orderInfoBuilder_.getMessage();
+        return orderInfoBuilder.getMessage();
       }
     }
     /**
@@ -735,7 +735,7 @@ private static final long serialVersionUID = 0L;
         orderInfo = value;
         onChanged();
       } else {
-        orderInfoBuilder_.setMessage(value);
+        orderInfoBuilder.setMessage(value);
       }
 
       return this;
@@ -749,7 +749,7 @@ private static final long serialVersionUID = 0L;
         orderInfo = builderForValue.build();
         onChanged();
       } else {
-        orderInfoBuilder_.setMessage(builderForValue.build());
+        orderInfoBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -759,7 +759,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeOrderInfo(com.zhijiejiaoyu.glory_api.shop.OrderInfo value) {
       if (orderInfoBuilder == null) {
-        if (orderInfo_ != null) {
+        if (orderInfo != null) {
           orderInfo =
             com.zhijiejiaoyu.glory_api.shop.OrderInfo.newBuilder(orderInfo).mergeFrom(value).buildPartial();
         } else {
@@ -767,7 +767,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        orderInfoBuilder_.mergeFrom(value);
+        orderInfoBuilder.mergeFrom(value);
       }
 
       return this;
@@ -798,8 +798,8 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.OrderInfo orderInfo = 2;</code>
      */
     public com.zhijiejiaoyu.glory_api.shop.OrderInfoOrBuilder getOrderInfoOrBuilder() {
-      if (orderInfoBuilder_ != null) {
-        return orderInfoBuilder_.getMessageOrBuilder();
+      if (orderInfoBuilder != null) {
+        return orderInfoBuilder.getMessageOrBuilder();
       } else {
         return orderInfo == null ?
             com.zhijiejiaoyu.glory_api.shop.OrderInfo.getDefaultInstance() : orderInfo;
@@ -834,7 +834,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the deliverInfo field is set.
      */
     public boolean hasDeliverInfo() {
-      return deliverInfoBuilder_ != null || deliverInfo_ != null;
+      return deliverInfoBuilder != null || deliverInfo != null;
     }
     /**
      * <pre>
@@ -848,7 +848,7 @@ private static final long serialVersionUID = 0L;
       if (deliverInfoBuilder == null) {
         return deliverInfo == null ? com.zhijiejiaoyu.glory_api.shop.DeliverInfo.getDefaultInstance() : deliverInfo;
       } else {
-        return deliverInfoBuilder_.getMessage();
+        return deliverInfoBuilder.getMessage();
       }
     }
     /**
@@ -866,7 +866,7 @@ private static final long serialVersionUID = 0L;
         deliverInfo = value;
         onChanged();
       } else {
-        deliverInfoBuilder_.setMessage(value);
+        deliverInfoBuilder.setMessage(value);
       }
 
       return this;
@@ -884,7 +884,7 @@ private static final long serialVersionUID = 0L;
         deliverInfo = builderForValue.build();
         onChanged();
       } else {
-        deliverInfoBuilder_.setMessage(builderForValue.build());
+        deliverInfoBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -898,7 +898,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeDeliverInfo(com.zhijiejiaoyu.glory_api.shop.DeliverInfo value) {
       if (deliverInfoBuilder == null) {
-        if (deliverInfo_ != null) {
+        if (deliverInfo != null) {
           deliverInfo =
             com.zhijiejiaoyu.glory_api.shop.DeliverInfo.newBuilder(deliverInfo).mergeFrom(value).buildPartial();
         } else {
@@ -906,7 +906,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        deliverInfoBuilder_.mergeFrom(value);
+        deliverInfoBuilder.mergeFrom(value);
       }
 
       return this;
@@ -949,8 +949,8 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.DeliverInfo deliverInfo = 4;</code>
      */
     public com.zhijiejiaoyu.glory_api.shop.DeliverInfoOrBuilder getDeliverInfoOrBuilder() {
-      if (deliverInfoBuilder_ != null) {
-        return deliverInfoBuilder_.getMessageOrBuilder();
+      if (deliverInfoBuilder != null) {
+        return deliverInfoBuilder.getMessageOrBuilder();
       } else {
         return deliverInfo == null ?
             com.zhijiejiaoyu.glory_api.shop.DeliverInfo.getDefaultInstance() : deliverInfo;

@@ -277,7 +277,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (attributeId_ != 0L) {
+    if (attributeId != 0L) {
       output.writeInt64(1, attributeId);
     }
     if (!getAttributeNameBytes().isEmpty()) {
@@ -289,10 +289,10 @@ private static final long serialVersionUID = 0L;
     if (!getAttributeTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, attributeType);
     }
-    if (productAttributeId_ != 0L) {
+    if (productAttributeId != 0L) {
       output.writeInt64(6, productAttributeId);
     }
-    if (attributeValueId_ != 0L) {
+    if (attributeValueId != 0L) {
       output.writeInt64(7, attributeValueId);
     }
     unknownFields.writeTo(output);
@@ -304,7 +304,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (attributeId_ != 0L) {
+    if (attributeId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, attributeId);
     }
@@ -317,11 +317,11 @@ private static final long serialVersionUID = 0L;
     if (!getAttributeTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, attributeType);
     }
-    if (productAttributeId_ != 0L) {
+    if (productAttributeId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(6, productAttributeId);
     }
-    if (attributeValueId_ != 0L) {
+    if (attributeValueId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(7, attributeValueId);
     }

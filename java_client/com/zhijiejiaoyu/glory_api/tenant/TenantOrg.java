@@ -89,7 +89,7 @@ private static final long serialVersionUID = 0L;
               children = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.tenant.TenantOrg>();
               mutable_bitField0_ |= 0x00000001;
             }
-            children_.add(
+            children.add(
                 input.readMessage(com.zhijiejiaoyu.glory_api.tenant.TenantOrg.parser(), extensionRegistry));
             break;
           }
@@ -99,7 +99,7 @@ private static final long serialVersionUID = 0L;
               childTypes = new com.google.protobuf.LazyStringArrayList();
               mutable_bitField0_ |= 0x00000002;
             }
-            childTypes_.add(s);
+            childTypes.add(s);
             break;
           }
           default: {
@@ -121,7 +121,7 @@ private static final long serialVersionUID = 0L;
         children = java.util.Collections.unmodifiableList(children);
       }
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        childTypes = childTypes_.getUnmodifiableView();
+        childTypes = childTypes.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -271,14 +271,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public int getChildrenCount() {
-    return children_.size();
+    return children.size();
   }
   /**
    * <code>repeated .glory_api.TenantOrg children = 6;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.tenant.TenantOrg getChildren(int index) {
-    return children_.get(index);
+    return children.get(index);
   }
   /**
    * <code>repeated .glory_api.TenantOrg children = 6;</code>
@@ -286,7 +286,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.tenant.TenantOrgOrBuilder getChildrenOrBuilder(
       int index) {
-    return children_.get(index);
+    return children.get(index);
   }
 
   public static final int CHILD_TYPES_FIELD_NUMBER = 7;
@@ -304,7 +304,7 @@ private static final long serialVersionUID = 0L;
    * @return The count of childTypes.
    */
   public int getChildTypesCount() {
-    return childTypes_.size();
+    return childTypes.size();
   }
   /**
    * <code>repeated string child_types = 7;</code>
@@ -312,7 +312,7 @@ private static final long serialVersionUID = 0L;
    * @return The childTypes at the given index.
    */
   public java.lang.String getChildTypes(int index) {
-    return childTypes_.get(index);
+    return childTypes.get(index);
   }
   /**
    * <code>repeated string child_types = 7;</code>
@@ -321,7 +321,7 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.protobuf.ByteString
       getChildTypesBytes(int index) {
-    return childTypes_.getByteString(index);
+    return childTypes.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -338,7 +338,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (id_ != 0L) {
+    if (id != 0L) {
       output.writeInt64(1, id);
     }
     if (!getNameBytes().isEmpty()) {
@@ -347,17 +347,17 @@ private static final long serialVersionUID = 0L;
     if (!getTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, type);
     }
-    if (parent_ != 0L) {
+    if (parent != 0L) {
       output.writeInt64(4, parent);
     }
-    if (tenant_ != 0L) {
+    if (tenant != 0L) {
       output.writeInt64(5, tenant);
     }
-    for (int i = 0; i < children_.size(); i++) {
-      output.writeMessage(6, children_.get(i));
+    for (int i = 0; i < children.size(); i++) {
+      output.writeMessage(6, children.get(i));
     }
-    for (int i = 0; i < childTypes_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, childTypes_.getRaw(i));
+    for (int i = 0; i < childTypes.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, childTypes.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -368,7 +368,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (id_ != 0L) {
+    if (id != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, id);
     }
@@ -378,22 +378,22 @@ private static final long serialVersionUID = 0L;
     if (!getTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, type);
     }
-    if (parent_ != 0L) {
+    if (parent != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, parent);
     }
-    if (tenant_ != 0L) {
+    if (tenant != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(5, tenant);
     }
-    for (int i = 0; i < children_.size(); i++) {
+    for (int i = 0; i < children.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, children_.get(i));
+        .computeMessageSize(6, children.get(i));
     }
     {
       int dataSize = 0;
-      for (int i = 0; i < childTypes_.size(); i++) {
-        dataSize += computeStringSizeNoTag(childTypes_.getRaw(i));
+      for (int i = 0; i < childTypes.size(); i++) {
+        dataSize += computeStringSizeNoTag(childTypes.getRaw(i));
       }
       size += dataSize;
       size += 1 * getChildTypesList().size();
@@ -611,7 +611,7 @@ private static final long serialVersionUID = 0L;
         children = java.util.Collections.emptyList();
         bitField0 = (bitField0_ & ~0x00000001);
       } else {
-        childrenBuilder_.clear();
+        childrenBuilder.clear();
       }
       childTypes = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0 = (bitField0_ & ~0x00000002);
@@ -654,10 +654,10 @@ private static final long serialVersionUID = 0L;
         }
         result.children = children;
       } else {
-        result.children = childrenBuilder_.build();
+        result.children = childrenBuilder.build();
       }
       if (((bitField0_ & 0x00000002) != 0)) {
-        childTypes = childTypes_.getUnmodifiableView();
+        childTypes = childTypes.getUnmodifiableView();
         bitField0 = (bitField0_ & ~0x00000002);
       }
       result.childTypes = childTypes;
@@ -727,20 +727,20 @@ private static final long serialVersionUID = 0L;
         setTenant(other.getTenant());
       }
       if (childrenBuilder == null) {
-        if (!other.children_.isEmpty()) {
-          if (children_.isEmpty()) {
+        if (!other.children.isEmpty()) {
+          if (children.isEmpty()) {
             children = other.children;
             bitField0 = (bitField0_ & ~0x00000001);
           } else {
             ensureChildrenIsMutable();
-            children_.addAll(other.children);
+            children.addAll(other.children);
           }
           onChanged();
         }
       } else {
-        if (!other.children_.isEmpty()) {
-          if (childrenBuilder_.isEmpty()) {
-            childrenBuilder_.dispose();
+        if (!other.children.isEmpty()) {
+          if (childrenBuilder.isEmpty()) {
+            childrenBuilder.dispose();
             childrenBuilder = null;
             children = other.children;
             bitField0 = (bitField0_ & ~0x00000001);
@@ -748,17 +748,17 @@ private static final long serialVersionUID = 0L;
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getChildrenFieldBuilder() : null;
           } else {
-            childrenBuilder_.addAllMessages(other.children);
+            childrenBuilder.addAllMessages(other.children);
           }
         }
       }
-      if (!other.childTypes_.isEmpty()) {
-        if (childTypes_.isEmpty()) {
+      if (!other.childTypes.isEmpty()) {
+        if (childTypes.isEmpty()) {
           childTypes = other.childTypes;
           bitField0 = (bitField0_ & ~0x00000002);
         } else {
           ensureChildTypesIsMutable();
-          childTypes_.addAll(other.childTypes);
+          childTypes.addAll(other.childTypes);
         }
         onChanged();
       }
@@ -1056,7 +1056,7 @@ private static final long serialVersionUID = 0L;
       if (childrenBuilder == null) {
         return java.util.Collections.unmodifiableList(children);
       } else {
-        return childrenBuilder_.getMessageList();
+        return childrenBuilder.getMessageList();
       }
     }
     /**
@@ -1064,9 +1064,9 @@ private static final long serialVersionUID = 0L;
      */
     public int getChildrenCount() {
       if (childrenBuilder == null) {
-        return children_.size();
+        return children.size();
       } else {
-        return childrenBuilder_.getCount();
+        return childrenBuilder.getCount();
       }
     }
     /**
@@ -1074,9 +1074,9 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.tenant.TenantOrg getChildren(int index) {
       if (childrenBuilder == null) {
-        return children_.get(index);
+        return children.get(index);
       } else {
-        return childrenBuilder_.getMessage(index);
+        return childrenBuilder.getMessage(index);
       }
     }
     /**
@@ -1089,10 +1089,10 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         ensureChildrenIsMutable();
-        children_.set(index, value);
+        children.set(index, value);
         onChanged();
       } else {
-        childrenBuilder_.setMessage(index, value);
+        childrenBuilder.setMessage(index, value);
       }
       return this;
     }
@@ -1103,10 +1103,10 @@ private static final long serialVersionUID = 0L;
         int index, com.zhijiejiaoyu.glory_api.tenant.TenantOrg.Builder builderForValue) {
       if (childrenBuilder == null) {
         ensureChildrenIsMutable();
-        children_.set(index, builderForValue.build());
+        children.set(index, builderForValue.build());
         onChanged();
       } else {
-        childrenBuilder_.setMessage(index, builderForValue.build());
+        childrenBuilder.setMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -1119,10 +1119,10 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         ensureChildrenIsMutable();
-        children_.add(value);
+        children.add(value);
         onChanged();
       } else {
-        childrenBuilder_.addMessage(value);
+        childrenBuilder.addMessage(value);
       }
       return this;
     }
@@ -1136,10 +1136,10 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         ensureChildrenIsMutable();
-        children_.add(index, value);
+        children.add(index, value);
         onChanged();
       } else {
-        childrenBuilder_.addMessage(index, value);
+        childrenBuilder.addMessage(index, value);
       }
       return this;
     }
@@ -1150,10 +1150,10 @@ private static final long serialVersionUID = 0L;
         com.zhijiejiaoyu.glory_api.tenant.TenantOrg.Builder builderForValue) {
       if (childrenBuilder == null) {
         ensureChildrenIsMutable();
-        children_.add(builderForValue.build());
+        children.add(builderForValue.build());
         onChanged();
       } else {
-        childrenBuilder_.addMessage(builderForValue.build());
+        childrenBuilder.addMessage(builderForValue.build());
       }
       return this;
     }
@@ -1164,10 +1164,10 @@ private static final long serialVersionUID = 0L;
         int index, com.zhijiejiaoyu.glory_api.tenant.TenantOrg.Builder builderForValue) {
       if (childrenBuilder == null) {
         ensureChildrenIsMutable();
-        children_.add(index, builderForValue.build());
+        children.add(index, builderForValue.build());
         onChanged();
       } else {
-        childrenBuilder_.addMessage(index, builderForValue.build());
+        childrenBuilder.addMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -1182,7 +1182,7 @@ private static final long serialVersionUID = 0L;
             values, children);
         onChanged();
       } else {
-        childrenBuilder_.addAllMessages(values);
+        childrenBuilder.addAllMessages(values);
       }
       return this;
     }
@@ -1195,7 +1195,7 @@ private static final long serialVersionUID = 0L;
         bitField0 = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
-        childrenBuilder_.clear();
+        childrenBuilder.clear();
       }
       return this;
     }
@@ -1205,10 +1205,10 @@ private static final long serialVersionUID = 0L;
     public Builder removeChildren(int index) {
       if (childrenBuilder == null) {
         ensureChildrenIsMutable();
-        children_.remove(index);
+        children.remove(index);
         onChanged();
       } else {
-        childrenBuilder_.remove(index);
+        childrenBuilder.remove(index);
       }
       return this;
     }
@@ -1225,8 +1225,8 @@ private static final long serialVersionUID = 0L;
     public com.zhijiejiaoyu.glory_api.tenant.TenantOrgOrBuilder getChildrenOrBuilder(
         int index) {
       if (childrenBuilder == null) {
-        return children_.get(index);  } else {
-        return childrenBuilder_.getMessageOrBuilder(index);
+        return children.get(index);  } else {
+        return childrenBuilder.getMessageOrBuilder(index);
       }
     }
     /**
@@ -1234,8 +1234,8 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.tenant.TenantOrgOrBuilder> 
          getChildrenOrBuilderList() {
-      if (childrenBuilder_ != null) {
-        return childrenBuilder_.getMessageOrBuilderList();
+      if (childrenBuilder != null) {
+        return childrenBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(children);
       }
@@ -1290,14 +1290,14 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ProtocolStringList
         getChildTypesList() {
-      return childTypes_.getUnmodifiableView();
+      return childTypes.getUnmodifiableView();
     }
     /**
      * <code>repeated string child_types = 7;</code>
      * @return The count of childTypes.
      */
     public int getChildTypesCount() {
-      return childTypes_.size();
+      return childTypes.size();
     }
     /**
      * <code>repeated string child_types = 7;</code>
@@ -1305,7 +1305,7 @@ private static final long serialVersionUID = 0L;
      * @return The childTypes at the given index.
      */
     public java.lang.String getChildTypes(int index) {
-      return childTypes_.get(index);
+      return childTypes.get(index);
     }
     /**
      * <code>repeated string child_types = 7;</code>
@@ -1314,7 +1314,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getChildTypesBytes(int index) {
-      return childTypes_.getByteString(index);
+      return childTypes.getByteString(index);
     }
     /**
      * <code>repeated string child_types = 7;</code>
@@ -1328,7 +1328,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   ensureChildTypesIsMutable();
-      childTypes_.set(index, value);
+      childTypes.set(index, value);
       onChanged();
       return this;
     }
@@ -1343,7 +1343,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   ensureChildTypesIsMutable();
-      childTypes_.add(value);
+      childTypes.add(value);
       onChanged();
       return this;
     }
@@ -1382,7 +1382,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       ensureChildTypesIsMutable();
-      childTypes_.add(value);
+      childTypes.add(value);
       onChanged();
       return this;
     }

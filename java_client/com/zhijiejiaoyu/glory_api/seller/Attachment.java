@@ -216,13 +216,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (attachmentId_ != 0L) {
+    if (attachmentId != 0L) {
       output.writeInt64(1, attachmentId);
     }
     if (!getAttachmentNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, attachmentName);
     }
-    if (attachmentType_ != 0) {
+    if (attachmentType != 0) {
       output.writeInt32(3, attachmentType);
     }
     if (!getAttachmentUrlBytes().isEmpty()) {
@@ -237,14 +237,14 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (attachmentId_ != 0L) {
+    if (attachmentId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, attachmentId);
     }
     if (!getAttachmentNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, attachmentName);
     }
-    if (attachmentType_ != 0) {
+    if (attachmentType != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(3, attachmentType);
     }

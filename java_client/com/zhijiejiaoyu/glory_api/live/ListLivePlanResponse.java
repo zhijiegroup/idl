@@ -52,8 +52,8 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             com.zhijiejiaoyu.base.BaseResponse.Builder subBuilder = null;
-            if (baseResp_ != null) {
-              subBuilder = baseResp_.toBuilder();
+            if (baseResp != null) {
+              subBuilder = baseResp.toBuilder();
             }
             baseResp = input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -68,14 +68,14 @@ private static final long serialVersionUID = 0L;
               livePlan = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.live.LivePlan>();
               mutable_bitField0_ |= 0x00000001;
             }
-            livePlan_.add(
+            livePlan.add(
                 input.readMessage(com.zhijiejiaoyu.glory_api.live.LivePlan.parser(), extensionRegistry));
             break;
           }
           case 802: {
             com.zhijiejiaoyu.base.PaginationResponse.Builder subBuilder = null;
-            if (pagination_ != null) {
-              subBuilder = pagination_.toBuilder();
+            if (pagination != null) {
+              subBuilder = pagination.toBuilder();
             }
             pagination = input.readMessage(com.zhijiejiaoyu.base.PaginationResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -128,7 +128,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasBaseResp() {
-    return baseResp_ != null;
+    return baseResp != null;
   }
   /**
    * <code>.base.BaseResponse base_resp = 1;</code>
@@ -168,14 +168,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public int getLivePlanCount() {
-    return livePlan_.size();
+    return livePlan.size();
   }
   /**
    * <code>repeated .glory_api.LivePlan live_plan = 2;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.live.LivePlan getLivePlan(int index) {
-    return livePlan_.get(index);
+    return livePlan.get(index);
   }
   /**
    * <code>repeated .glory_api.LivePlan live_plan = 2;</code>
@@ -183,7 +183,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.live.LivePlanOrBuilder getLivePlanOrBuilder(
       int index) {
-    return livePlan_.get(index);
+    return livePlan.get(index);
   }
 
   public static final int PAGINATION_FIELD_NUMBER = 100;
@@ -194,7 +194,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasPagination() {
-    return pagination_ != null;
+    return pagination != null;
   }
   /**
    * <code>.base.PaginationResponse pagination = 100;</code>
@@ -226,13 +226,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (baseResp_ != null) {
+    if (baseResp != null) {
       output.writeMessage(1, getBaseResp());
     }
-    for (int i = 0; i < livePlan_.size(); i++) {
-      output.writeMessage(2, livePlan_.get(i));
+    for (int i = 0; i < livePlan.size(); i++) {
+      output.writeMessage(2, livePlan.get(i));
     }
-    if (pagination_ != null) {
+    if (pagination != null) {
       output.writeMessage(100, getPagination());
     }
     unknownFields.writeTo(output);
@@ -244,15 +244,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (baseResp_ != null) {
+    if (baseResp != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
-    for (int i = 0; i < livePlan_.size(); i++) {
+    for (int i = 0; i < livePlan.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, livePlan_.get(i));
+        .computeMessageSize(2, livePlan.get(i));
     }
-    if (pagination_ != null) {
+    if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(100, getPagination());
     }
@@ -450,7 +450,7 @@ private static final long serialVersionUID = 0L;
         livePlan = java.util.Collections.emptyList();
         bitField0 = (bitField0_ & ~0x00000001);
       } else {
-        livePlanBuilder_.clear();
+        livePlanBuilder.clear();
       }
       if (paginationBuilder == null) {
         pagination = null;
@@ -488,7 +488,7 @@ private static final long serialVersionUID = 0L;
       if (baseRespBuilder == null) {
         result.baseResp = baseResp;
       } else {
-        result.baseResp = baseRespBuilder_.build();
+        result.baseResp = baseRespBuilder.build();
       }
       if (livePlanBuilder == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
@@ -497,12 +497,12 @@ private static final long serialVersionUID = 0L;
         }
         result.livePlan = livePlan;
       } else {
-        result.livePlan = livePlanBuilder_.build();
+        result.livePlan = livePlanBuilder.build();
       }
       if (paginationBuilder == null) {
         result.pagination = pagination;
       } else {
-        result.pagination = paginationBuilder_.build();
+        result.pagination = paginationBuilder.build();
       }
       onBuilt();
       return result;
@@ -556,20 +556,20 @@ private static final long serialVersionUID = 0L;
         mergeBaseResp(other.getBaseResp());
       }
       if (livePlanBuilder == null) {
-        if (!other.livePlan_.isEmpty()) {
-          if (livePlan_.isEmpty()) {
+        if (!other.livePlan.isEmpty()) {
+          if (livePlan.isEmpty()) {
             livePlan = other.livePlan;
             bitField0 = (bitField0_ & ~0x00000001);
           } else {
             ensureLivePlanIsMutable();
-            livePlan_.addAll(other.livePlan);
+            livePlan.addAll(other.livePlan);
           }
           onChanged();
         }
       } else {
-        if (!other.livePlan_.isEmpty()) {
-          if (livePlanBuilder_.isEmpty()) {
-            livePlanBuilder_.dispose();
+        if (!other.livePlan.isEmpty()) {
+          if (livePlanBuilder.isEmpty()) {
+            livePlanBuilder.dispose();
             livePlanBuilder = null;
             livePlan = other.livePlan;
             bitField0 = (bitField0_ & ~0x00000001);
@@ -577,7 +577,7 @@ private static final long serialVersionUID = 0L;
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getLivePlanFieldBuilder() : null;
           } else {
-            livePlanBuilder_.addAllMessages(other.livePlan);
+            livePlanBuilder.addAllMessages(other.livePlan);
           }
         }
       }
@@ -622,7 +622,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the baseResp field is set.
      */
     public boolean hasBaseResp() {
-      return baseRespBuilder_ != null || baseResp_ != null;
+      return baseRespBuilder != null || baseResp != null;
     }
     /**
      * <code>.base.BaseResponse base_resp = 1;</code>
@@ -632,7 +632,7 @@ private static final long serialVersionUID = 0L;
       if (baseRespBuilder == null) {
         return baseResp == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
       } else {
-        return baseRespBuilder_.getMessage();
+        return baseRespBuilder.getMessage();
       }
     }
     /**
@@ -646,7 +646,7 @@ private static final long serialVersionUID = 0L;
         baseResp = value;
         onChanged();
       } else {
-        baseRespBuilder_.setMessage(value);
+        baseRespBuilder.setMessage(value);
       }
 
       return this;
@@ -660,7 +660,7 @@ private static final long serialVersionUID = 0L;
         baseResp = builderForValue.build();
         onChanged();
       } else {
-        baseRespBuilder_.setMessage(builderForValue.build());
+        baseRespBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -670,7 +670,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeBaseResp(com.zhijiejiaoyu.base.BaseResponse value) {
       if (baseRespBuilder == null) {
-        if (baseResp_ != null) {
+        if (baseResp != null) {
           baseResp =
             com.zhijiejiaoyu.base.BaseResponse.newBuilder(baseResp).mergeFrom(value).buildPartial();
         } else {
@@ -678,7 +678,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        baseRespBuilder_.mergeFrom(value);
+        baseRespBuilder.mergeFrom(value);
       }
 
       return this;
@@ -709,8 +709,8 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder() {
-      if (baseRespBuilder_ != null) {
-        return baseRespBuilder_.getMessageOrBuilder();
+      if (baseRespBuilder != null) {
+        return baseRespBuilder.getMessageOrBuilder();
       } else {
         return baseResp == null ?
             com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
@@ -752,7 +752,7 @@ private static final long serialVersionUID = 0L;
       if (livePlanBuilder == null) {
         return java.util.Collections.unmodifiableList(livePlan);
       } else {
-        return livePlanBuilder_.getMessageList();
+        return livePlanBuilder.getMessageList();
       }
     }
     /**
@@ -760,9 +760,9 @@ private static final long serialVersionUID = 0L;
      */
     public int getLivePlanCount() {
       if (livePlanBuilder == null) {
-        return livePlan_.size();
+        return livePlan.size();
       } else {
-        return livePlanBuilder_.getCount();
+        return livePlanBuilder.getCount();
       }
     }
     /**
@@ -770,9 +770,9 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.live.LivePlan getLivePlan(int index) {
       if (livePlanBuilder == null) {
-        return livePlan_.get(index);
+        return livePlan.get(index);
       } else {
-        return livePlanBuilder_.getMessage(index);
+        return livePlanBuilder.getMessage(index);
       }
     }
     /**
@@ -785,10 +785,10 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         ensureLivePlanIsMutable();
-        livePlan_.set(index, value);
+        livePlan.set(index, value);
         onChanged();
       } else {
-        livePlanBuilder_.setMessage(index, value);
+        livePlanBuilder.setMessage(index, value);
       }
       return this;
     }
@@ -799,10 +799,10 @@ private static final long serialVersionUID = 0L;
         int index, com.zhijiejiaoyu.glory_api.live.LivePlan.Builder builderForValue) {
       if (livePlanBuilder == null) {
         ensureLivePlanIsMutable();
-        livePlan_.set(index, builderForValue.build());
+        livePlan.set(index, builderForValue.build());
         onChanged();
       } else {
-        livePlanBuilder_.setMessage(index, builderForValue.build());
+        livePlanBuilder.setMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -815,10 +815,10 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         ensureLivePlanIsMutable();
-        livePlan_.add(value);
+        livePlan.add(value);
         onChanged();
       } else {
-        livePlanBuilder_.addMessage(value);
+        livePlanBuilder.addMessage(value);
       }
       return this;
     }
@@ -832,10 +832,10 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         ensureLivePlanIsMutable();
-        livePlan_.add(index, value);
+        livePlan.add(index, value);
         onChanged();
       } else {
-        livePlanBuilder_.addMessage(index, value);
+        livePlanBuilder.addMessage(index, value);
       }
       return this;
     }
@@ -846,10 +846,10 @@ private static final long serialVersionUID = 0L;
         com.zhijiejiaoyu.glory_api.live.LivePlan.Builder builderForValue) {
       if (livePlanBuilder == null) {
         ensureLivePlanIsMutable();
-        livePlan_.add(builderForValue.build());
+        livePlan.add(builderForValue.build());
         onChanged();
       } else {
-        livePlanBuilder_.addMessage(builderForValue.build());
+        livePlanBuilder.addMessage(builderForValue.build());
       }
       return this;
     }
@@ -860,10 +860,10 @@ private static final long serialVersionUID = 0L;
         int index, com.zhijiejiaoyu.glory_api.live.LivePlan.Builder builderForValue) {
       if (livePlanBuilder == null) {
         ensureLivePlanIsMutable();
-        livePlan_.add(index, builderForValue.build());
+        livePlan.add(index, builderForValue.build());
         onChanged();
       } else {
-        livePlanBuilder_.addMessage(index, builderForValue.build());
+        livePlanBuilder.addMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -878,7 +878,7 @@ private static final long serialVersionUID = 0L;
             values, livePlan);
         onChanged();
       } else {
-        livePlanBuilder_.addAllMessages(values);
+        livePlanBuilder.addAllMessages(values);
       }
       return this;
     }
@@ -891,7 +891,7 @@ private static final long serialVersionUID = 0L;
         bitField0 = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
-        livePlanBuilder_.clear();
+        livePlanBuilder.clear();
       }
       return this;
     }
@@ -901,10 +901,10 @@ private static final long serialVersionUID = 0L;
     public Builder removeLivePlan(int index) {
       if (livePlanBuilder == null) {
         ensureLivePlanIsMutable();
-        livePlan_.remove(index);
+        livePlan.remove(index);
         onChanged();
       } else {
-        livePlanBuilder_.remove(index);
+        livePlanBuilder.remove(index);
       }
       return this;
     }
@@ -921,8 +921,8 @@ private static final long serialVersionUID = 0L;
     public com.zhijiejiaoyu.glory_api.live.LivePlanOrBuilder getLivePlanOrBuilder(
         int index) {
       if (livePlanBuilder == null) {
-        return livePlan_.get(index);  } else {
-        return livePlanBuilder_.getMessageOrBuilder(index);
+        return livePlan.get(index);  } else {
+        return livePlanBuilder.getMessageOrBuilder(index);
       }
     }
     /**
@@ -930,8 +930,8 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.live.LivePlanOrBuilder> 
          getLivePlanOrBuilderList() {
-      if (livePlanBuilder_ != null) {
-        return livePlanBuilder_.getMessageOrBuilderList();
+      if (livePlanBuilder != null) {
+        return livePlanBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(livePlan);
       }
@@ -981,7 +981,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the pagination field is set.
      */
     public boolean hasPagination() {
-      return paginationBuilder_ != null || pagination_ != null;
+      return paginationBuilder != null || pagination != null;
     }
     /**
      * <code>.base.PaginationResponse pagination = 100;</code>
@@ -991,7 +991,7 @@ private static final long serialVersionUID = 0L;
       if (paginationBuilder == null) {
         return pagination == null ? com.zhijiejiaoyu.base.PaginationResponse.getDefaultInstance() : pagination;
       } else {
-        return paginationBuilder_.getMessage();
+        return paginationBuilder.getMessage();
       }
     }
     /**
@@ -1005,7 +1005,7 @@ private static final long serialVersionUID = 0L;
         pagination = value;
         onChanged();
       } else {
-        paginationBuilder_.setMessage(value);
+        paginationBuilder.setMessage(value);
       }
 
       return this;
@@ -1019,7 +1019,7 @@ private static final long serialVersionUID = 0L;
         pagination = builderForValue.build();
         onChanged();
       } else {
-        paginationBuilder_.setMessage(builderForValue.build());
+        paginationBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -1029,7 +1029,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergePagination(com.zhijiejiaoyu.base.PaginationResponse value) {
       if (paginationBuilder == null) {
-        if (pagination_ != null) {
+        if (pagination != null) {
           pagination =
             com.zhijiejiaoyu.base.PaginationResponse.newBuilder(pagination).mergeFrom(value).buildPartial();
         } else {
@@ -1037,7 +1037,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        paginationBuilder_.mergeFrom(value);
+        paginationBuilder.mergeFrom(value);
       }
 
       return this;
@@ -1068,8 +1068,8 @@ private static final long serialVersionUID = 0L;
      * <code>.base.PaginationResponse pagination = 100;</code>
      */
     public com.zhijiejiaoyu.base.PaginationResponseOrBuilder getPaginationOrBuilder() {
-      if (paginationBuilder_ != null) {
-        return paginationBuilder_.getMessageOrBuilder();
+      if (paginationBuilder != null) {
+        return paginationBuilder.getMessageOrBuilder();
       } else {
         return pagination == null ?
             com.zhijiejiaoyu.base.PaginationResponse.getDefaultInstance() : pagination;

@@ -354,7 +354,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (roomId_ != 0L) {
+    if (roomId != 0L) {
       output.writeInt64(1, roomId);
     }
     if (!getRoomTitleBytes().isEmpty()) {
@@ -363,16 +363,16 @@ private static final long serialVersionUID = 0L;
     if (!getRoomUrlBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, roomUrl);
     }
-    if (score_ != 0D) {
+    if (score != 0D) {
       output.writeDouble(4, score);
     }
-    if (duration_ != 0D) {
+    if (duration != 0D) {
       output.writeDouble(5, duration);
     }
-    if (like_ != 0L) {
+    if (like != 0L) {
       output.writeInt64(6, like);
     }
-    if (order_ != 0L) {
+    if (order != 0L) {
       output.writeInt64(7, order);
     }
     if (!getAiFeedbackBytes().isEmpty()) {
@@ -390,7 +390,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (roomId_ != 0L) {
+    if (roomId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, roomId);
     }
@@ -400,19 +400,19 @@ private static final long serialVersionUID = 0L;
     if (!getRoomUrlBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, roomUrl);
     }
-    if (score_ != 0D) {
+    if (score != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(4, score);
     }
-    if (duration_ != 0D) {
+    if (duration != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(5, duration);
     }
-    if (like_ != 0L) {
+    if (like != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(6, like);
     }
-    if (order_ != 0L) {
+    if (order != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(7, order);
     }

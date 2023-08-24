@@ -334,13 +334,13 @@ private static final long serialVersionUID = 0L;
     if (!getUriBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, uri);
     }
-    if (duration_ != 0D) {
+    if (duration != 0D) {
       output.writeDouble(5, duration);
     }
-    if (startTime_ != 0L) {
+    if (startTime != 0L) {
       output.writeInt64(6, startTime);
     }
-    if (stopTime_ != 0L) {
+    if (stopTime != 0L) {
       output.writeInt64(7, stopTime);
     }
     unknownFields.writeTo(output);
@@ -364,15 +364,15 @@ private static final long serialVersionUID = 0L;
     if (!getUriBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, uri);
     }
-    if (duration_ != 0D) {
+    if (duration != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(5, duration);
     }
-    if (startTime_ != 0L) {
+    if (startTime != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(6, startTime);
     }
-    if (stopTime_ != 0L) {
+    if (stopTime != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(7, stopTime);
     }

@@ -672,13 +672,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (shopId_ != 0L) {
+    if (shopId != 0L) {
       output.writeInt64(1, shopId);
     }
-    if (roomId_ != 0L) {
+    if (roomId != 0L) {
       output.writeInt64(2, roomId);
     }
-    if (userId_ != 0L) {
+    if (userId != 0L) {
       output.writeInt64(3, userId);
     }
     if (!getGroupIdBytes().isEmpty()) {
@@ -699,7 +699,7 @@ private static final long serialVersionUID = 0L;
     if (!getStartTimeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, startTime);
     }
-    if (likeCount_ != 0L) {
+    if (likeCount != 0L) {
       output.writeInt64(10, likeCount);
     }
     if (!getEndTimeBytes().isEmpty()) {
@@ -708,7 +708,7 @@ private static final long serialVersionUID = 0L;
     if (!getStatusBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, status);
     }
-    if (livePlanId_ != 0L) {
+    if (livePlanId != 0L) {
       output.writeInt64(13, livePlanId);
     }
     if (!getRoomTitleBytes().isEmpty()) {
@@ -717,7 +717,7 @@ private static final long serialVersionUID = 0L;
     if (!getRoomImageUrlBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, roomImageUrl);
     }
-    if (roomImageAttachmentId_ != 0L) {
+    if (roomImageAttachmentId != 0L) {
       output.writeInt64(16, roomImageAttachmentId);
     }
     unknownFields.writeTo(output);
@@ -729,15 +729,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (shopId_ != 0L) {
+    if (shopId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, shopId);
     }
-    if (roomId_ != 0L) {
+    if (roomId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, roomId);
     }
-    if (userId_ != 0L) {
+    if (userId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, userId);
     }
@@ -759,7 +759,7 @@ private static final long serialVersionUID = 0L;
     if (!getStartTimeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, startTime);
     }
-    if (likeCount_ != 0L) {
+    if (likeCount != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(10, likeCount);
     }
@@ -769,7 +769,7 @@ private static final long serialVersionUID = 0L;
     if (!getStatusBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, status);
     }
-    if (livePlanId_ != 0L) {
+    if (livePlanId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(13, livePlanId);
     }
@@ -779,7 +779,7 @@ private static final long serialVersionUID = 0L;
     if (!getRoomImageUrlBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, roomImageUrl);
     }
-    if (roomImageAttachmentId_ != 0L) {
+    if (roomImageAttachmentId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(16, roomImageAttachmentId);
     }

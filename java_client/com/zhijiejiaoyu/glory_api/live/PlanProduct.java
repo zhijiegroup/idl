@@ -392,13 +392,13 @@ private static final long serialVersionUID = 0L;
     if (!getCurrencyBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, currency);
     }
-    if (salePrice_ != 0D) {
+    if (salePrice != 0D) {
       output.writeDouble(4, salePrice);
     }
-    if (productRemaining_ != 0L) {
+    if (productRemaining != 0L) {
       output.writeInt64(5, productRemaining);
     }
-    if (productId_ != 0L) {
+    if (productId != 0L) {
       output.writeInt64(6, productId);
     }
     if (!getProductSellingPointBytes().isEmpty()) {
@@ -425,15 +425,15 @@ private static final long serialVersionUID = 0L;
     if (!getCurrencyBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, currency);
     }
-    if (salePrice_ != 0D) {
+    if (salePrice != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(4, salePrice);
     }
-    if (productRemaining_ != 0L) {
+    if (productRemaining != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(5, productRemaining);
     }
-    if (productId_ != 0L) {
+    if (productId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(6, productId);
     }

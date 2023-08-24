@@ -206,16 +206,16 @@ private static final long serialVersionUID = 0L;
     if (!getDateBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, date);
     }
-    if (dealAmount_ != 0D) {
+    if (dealAmount != 0D) {
       output.writeDouble(2, dealAmount);
     }
-    if (roomBuyerAmount_ != 0L) {
+    if (roomBuyerAmount != 0L) {
       output.writeInt64(3, roomBuyerAmount);
     }
-    if (roomOrderAmount_ != 0L) {
+    if (roomOrderAmount != 0L) {
       output.writeInt64(4, roomOrderAmount);
     }
-    if (timestamp_ != 0L) {
+    if (timestamp != 0L) {
       output.writeInt64(5, timestamp);
     }
     unknownFields.writeTo(output);
@@ -230,19 +230,19 @@ private static final long serialVersionUID = 0L;
     if (!getDateBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, date);
     }
-    if (dealAmount_ != 0D) {
+    if (dealAmount != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(2, dealAmount);
     }
-    if (roomBuyerAmount_ != 0L) {
+    if (roomBuyerAmount != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, roomBuyerAmount);
     }
-    if (roomOrderAmount_ != 0L) {
+    if (roomOrderAmount != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, roomOrderAmount);
     }
-    if (timestamp_ != 0L) {
+    if (timestamp != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(5, timestamp);
     }

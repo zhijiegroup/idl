@@ -256,13 +256,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (livePlanProductId_ != 0L) {
+    if (livePlanProductId != 0L) {
       output.writeInt64(1, livePlanProductId);
     }
-    if (livePlanId_ != 0L) {
+    if (livePlanId != 0L) {
       output.writeInt64(2, livePlanId);
     }
-    if (productId_ != 0L) {
+    if (productId != 0L) {
       output.writeInt64(3, productId);
     }
     if (!getProductSellingPointBytes().isEmpty()) {
@@ -280,15 +280,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (livePlanProductId_ != 0L) {
+    if (livePlanProductId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, livePlanProductId);
     }
-    if (livePlanId_ != 0L) {
+    if (livePlanId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, livePlanId);
     }
-    if (productId_ != 0L) {
+    if (productId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, productId);
     }

@@ -309,7 +309,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (userId_ != 0L) {
+    if (userId != 0L) {
       output.writeInt64(1, userId);
     }
     if (!getUserNameBytes().isEmpty()) {
@@ -321,16 +321,16 @@ private static final long serialVersionUID = 0L;
     if (!getClass_Bytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, class_);
     }
-    if (totalDuration_ != 0D) {
+    if (totalDuration != 0D) {
       output.writeDouble(5, totalDuration);
     }
-    if (totalLike_ != 0L) {
+    if (totalLike != 0L) {
       output.writeInt64(6, totalLike);
     }
-    if (totalOrder_ != 0L) {
+    if (totalOrder != 0L) {
       output.writeInt64(7, totalOrder);
     }
-    if (averageScore_ != 0D) {
+    if (averageScore != 0D) {
       output.writeDouble(8, averageScore);
     }
     unknownFields.writeTo(output);
@@ -342,7 +342,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (userId_ != 0L) {
+    if (userId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, userId);
     }
@@ -355,19 +355,19 @@ private static final long serialVersionUID = 0L;
     if (!getClass_Bytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, class_);
     }
-    if (totalDuration_ != 0D) {
+    if (totalDuration != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(5, totalDuration);
     }
-    if (totalLike_ != 0L) {
+    if (totalLike != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(6, totalLike);
     }
-    if (totalOrder_ != 0L) {
+    if (totalOrder != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(7, totalOrder);
     }
-    if (averageScore_ != 0D) {
+    if (averageScore != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(8, averageScore);
     }

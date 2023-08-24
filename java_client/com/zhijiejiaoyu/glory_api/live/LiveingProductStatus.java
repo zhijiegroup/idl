@@ -338,19 +338,19 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (productId_ != 0L) {
+    if (productId != 0L) {
       output.writeInt64(2, productId);
     }
     if (!getProductNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, productName);
     }
-    if (productPrice_ != 0D) {
+    if (productPrice != 0D) {
       output.writeDouble(4, productPrice);
     }
-    if (productCount_ != 0) {
+    if (productCount != 0) {
       output.writeInt32(5, productCount);
     }
-    if (liveRoomOrder_ != 0) {
+    if (liveRoomOrder != 0) {
       output.writeInt32(6, liveRoomOrder);
     }
     if (!getPlayedAtBytes().isEmpty()) {
@@ -371,22 +371,22 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (productId_ != 0L) {
+    if (productId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, productId);
     }
     if (!getProductNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, productName);
     }
-    if (productPrice_ != 0D) {
+    if (productPrice != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(4, productPrice);
     }
-    if (productCount_ != 0) {
+    if (productCount != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(5, productCount);
     }
-    if (liveRoomOrder_ != 0) {
+    if (liveRoomOrder != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(6, liveRoomOrder);
     }

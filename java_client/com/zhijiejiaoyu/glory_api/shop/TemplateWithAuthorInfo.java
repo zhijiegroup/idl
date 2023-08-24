@@ -50,8 +50,8 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             com.zhijiejiaoyu.glory_api.shop.Template.Builder subBuilder = null;
-            if (template_ != null) {
-              subBuilder = template_.toBuilder();
+            if (template != null) {
+              subBuilder = template.toBuilder();
             }
             template = input.readMessage(com.zhijiejiaoyu.glory_api.shop.Template.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -63,8 +63,8 @@ private static final long serialVersionUID = 0L;
           }
           case 18: {
             com.zhijiejiaoyu.base.AuthorInfo.Builder subBuilder = null;
-            if (authorInfo_ != null) {
-              subBuilder = authorInfo_.toBuilder();
+            if (authorInfo != null) {
+              subBuilder = authorInfo.toBuilder();
             }
             authorInfo = input.readMessage(com.zhijiejiaoyu.base.AuthorInfo.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -114,7 +114,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasTemplate() {
-    return template_ != null;
+    return template != null;
   }
   /**
    * <code>.glory_api.Template template = 1;</code>
@@ -140,7 +140,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasAuthorInfo() {
-    return authorInfo_ != null;
+    return authorInfo != null;
   }
   /**
    * <code>.base.AuthorInfo author_info = 2;</code>
@@ -172,10 +172,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (template_ != null) {
+    if (template != null) {
       output.writeMessage(1, getTemplate());
     }
-    if (authorInfo_ != null) {
+    if (authorInfo != null) {
       output.writeMessage(2, getAuthorInfo());
     }
     unknownFields.writeTo(output);
@@ -187,11 +187,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (template_ != null) {
+    if (template != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getTemplate());
     }
-    if (authorInfo_ != null) {
+    if (authorInfo != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getAuthorInfo());
     }
@@ -413,12 +413,12 @@ private static final long serialVersionUID = 0L;
       if (templateBuilder == null) {
         result.template = template;
       } else {
-        result.template = templateBuilder_.build();
+        result.template = templateBuilder.build();
       }
       if (authorInfoBuilder == null) {
         result.authorInfo = authorInfo;
       } else {
-        result.authorInfo = authorInfoBuilder_.build();
+        result.authorInfo = authorInfoBuilder.build();
       }
       onBuilt();
       return result;
@@ -511,7 +511,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the template field is set.
      */
     public boolean hasTemplate() {
-      return templateBuilder_ != null || template_ != null;
+      return templateBuilder != null || template != null;
     }
     /**
      * <code>.glory_api.Template template = 1;</code>
@@ -521,7 +521,7 @@ private static final long serialVersionUID = 0L;
       if (templateBuilder == null) {
         return template == null ? com.zhijiejiaoyu.glory_api.shop.Template.getDefaultInstance() : template;
       } else {
-        return templateBuilder_.getMessage();
+        return templateBuilder.getMessage();
       }
     }
     /**
@@ -535,7 +535,7 @@ private static final long serialVersionUID = 0L;
         template = value;
         onChanged();
       } else {
-        templateBuilder_.setMessage(value);
+        templateBuilder.setMessage(value);
       }
 
       return this;
@@ -549,7 +549,7 @@ private static final long serialVersionUID = 0L;
         template = builderForValue.build();
         onChanged();
       } else {
-        templateBuilder_.setMessage(builderForValue.build());
+        templateBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -559,7 +559,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeTemplate(com.zhijiejiaoyu.glory_api.shop.Template value) {
       if (templateBuilder == null) {
-        if (template_ != null) {
+        if (template != null) {
           template =
             com.zhijiejiaoyu.glory_api.shop.Template.newBuilder(template).mergeFrom(value).buildPartial();
         } else {
@@ -567,7 +567,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        templateBuilder_.mergeFrom(value);
+        templateBuilder.mergeFrom(value);
       }
 
       return this;
@@ -598,8 +598,8 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.Template template = 1;</code>
      */
     public com.zhijiejiaoyu.glory_api.shop.TemplateOrBuilder getTemplateOrBuilder() {
-      if (templateBuilder_ != null) {
-        return templateBuilder_.getMessageOrBuilder();
+      if (templateBuilder != null) {
+        return templateBuilder.getMessageOrBuilder();
       } else {
         return template == null ?
             com.zhijiejiaoyu.glory_api.shop.Template.getDefaultInstance() : template;
@@ -630,7 +630,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the authorInfo field is set.
      */
     public boolean hasAuthorInfo() {
-      return authorInfoBuilder_ != null || authorInfo_ != null;
+      return authorInfoBuilder != null || authorInfo != null;
     }
     /**
      * <code>.base.AuthorInfo author_info = 2;</code>
@@ -640,7 +640,7 @@ private static final long serialVersionUID = 0L;
       if (authorInfoBuilder == null) {
         return authorInfo == null ? com.zhijiejiaoyu.base.AuthorInfo.getDefaultInstance() : authorInfo;
       } else {
-        return authorInfoBuilder_.getMessage();
+        return authorInfoBuilder.getMessage();
       }
     }
     /**
@@ -654,7 +654,7 @@ private static final long serialVersionUID = 0L;
         authorInfo = value;
         onChanged();
       } else {
-        authorInfoBuilder_.setMessage(value);
+        authorInfoBuilder.setMessage(value);
       }
 
       return this;
@@ -668,7 +668,7 @@ private static final long serialVersionUID = 0L;
         authorInfo = builderForValue.build();
         onChanged();
       } else {
-        authorInfoBuilder_.setMessage(builderForValue.build());
+        authorInfoBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -678,7 +678,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeAuthorInfo(com.zhijiejiaoyu.base.AuthorInfo value) {
       if (authorInfoBuilder == null) {
-        if (authorInfo_ != null) {
+        if (authorInfo != null) {
           authorInfo =
             com.zhijiejiaoyu.base.AuthorInfo.newBuilder(authorInfo).mergeFrom(value).buildPartial();
         } else {
@@ -686,7 +686,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        authorInfoBuilder_.mergeFrom(value);
+        authorInfoBuilder.mergeFrom(value);
       }
 
       return this;
@@ -717,8 +717,8 @@ private static final long serialVersionUID = 0L;
      * <code>.base.AuthorInfo author_info = 2;</code>
      */
     public com.zhijiejiaoyu.base.AuthorInfoOrBuilder getAuthorInfoOrBuilder() {
-      if (authorInfoBuilder_ != null) {
-        return authorInfoBuilder_.getMessageOrBuilder();
+      if (authorInfoBuilder != null) {
+        return authorInfoBuilder.getMessageOrBuilder();
       } else {
         return authorInfo == null ?
             com.zhijiejiaoyu.base.AuthorInfo.getDefaultInstance() : authorInfo;

@@ -232,16 +232,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (shipmentAttributeId_ != 0L) {
+    if (shipmentAttributeId != 0L) {
       output.writeInt64(1, shipmentAttributeId);
     }
-    if (attributeId_ != 0L) {
+    if (attributeId != 0L) {
       output.writeInt64(2, attributeId);
     }
     if (!getAttributeNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, attributeName);
     }
-    if (attributeValueId_ != 0L) {
+    if (attributeValueId != 0L) {
       output.writeInt64(4, attributeValueId);
     }
     if (!getAttributeValueBytes().isEmpty()) {
@@ -256,18 +256,18 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (shipmentAttributeId_ != 0L) {
+    if (shipmentAttributeId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, shipmentAttributeId);
     }
-    if (attributeId_ != 0L) {
+    if (attributeId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, attributeId);
     }
     if (!getAttributeNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, attributeName);
     }
-    if (attributeValueId_ != 0L) {
+    if (attributeValueId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, attributeValueId);
     }

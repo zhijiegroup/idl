@@ -182,10 +182,10 @@ private static final long serialVersionUID = 0L;
     if (!getCurrencyBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, currency);
     }
-    if (payerTotal_ != 0L) {
+    if (payerTotal != 0L) {
       output.writeInt64(2, payerTotal);
     }
-    if (total_ != 0L) {
+    if (total != 0L) {
       output.writeInt64(3, total);
     }
     unknownFields.writeTo(output);
@@ -200,11 +200,11 @@ private static final long serialVersionUID = 0L;
     if (!getCurrencyBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, currency);
     }
-    if (payerTotal_ != 0L) {
+    if (payerTotal != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, payerTotal);
     }
-    if (total_ != 0L) {
+    if (total != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, total);
     }
