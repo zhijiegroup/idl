@@ -639,110 +639,24 @@ service glory_api {
   rpc GetTenantOrg(GetTenantOrgRequest) returns (GetTenantOrgResponse) {
     option (api.post) = '/api/tenant/tenant_org';
   }
-
-  //college
-  rpc CreateCollege(CreateCollegeRequest) returns (CreateCollegeResponse) {
-    option (api.post) = '/api/tenant/create_college';
-  }
-  rpc GetCollege(GetCollegeRequest) returns (GetCollegeResponse) {
-    option (api.get) = '/api/tenant/get_college';
-  }
-  rpc UpdateCollege(UpdateCollegeRequest) returns (UpdateCollegeResponse) {
-    option (api.post) = '/api/tenant/update_college';
-  }
-  rpc DeleteCollege(DeleteCollegeRequest) returns (DeleteCollegeResponse) {
-    option (api.post) = '/api/tenant/delete_college';
-  }
-  rpc ListCollege(ListCollegeRequest) returns (ListCollegeResponse) {
-    option (api.post) = '/api/tenant/list_college';
-  }
-
-  // edu_dept
-  rpc CreateEduDept(CreateEduDeptRequest) returns (CreateEduDeptResponse) {
-    option (api.post) = '/api/tenant/create_edu_dept';
-  }
-
-  rpc UpdateEduDept(UpdateEduDeptRequest) returns (UpdateEduDeptResponse) {
-    option (api.post) = '/api/tenant/update_edu_dept';
-  }
-
-  rpc DeleteEduDept(DeleteEduDeptRequest) returns (DeleteEduDeptResponse) {
-    option (api.post) = '/api/tenant/delete_edu_dept';
-  }
-
-  //gover_dept
-  rpc CreateGoverDept(CreateGoverDeptRequest) returns (CreateGoverDeptResponse) {
-    option (api.post) = '/api/tenant/create_gover_dept';
-  }
-
-  rpc UpdateGoverDept(UpdateGoverDeptRequest) returns (UpdateGoverDeptResponse) {
-    option (api.post) = '/api/tenant/update_gover_dept';
-  }
-
-  rpc DeleteGoverDept(DeleteGoverDeptRequest) returns (DeleteGoverDeptResponse) {
-    option (api.post) = '/api/tenant/delete_gover_dept';
-  }
-
-  // edu_office
-  rpc CreateEduOffice(CreateEduOfficeRequest) returns (CreateEduOfficeResponse) {
-    option (api.post) = '/api/tenant/create_edu_office';
-  }
-
-  rpc UpdateEduOffice(UpdateEduOfficeRequest) returns (UpdateEduOfficeResponse) {
-    option (api.post) = '/api/tenant/update_edu_office';
-  }
-
-  rpc DeleteEduOffice(DeleteEduOfficeRequest) returns (DeleteEduOfficeResponse) {
-    option (api.post) = '/api/tenant/delete_edu_office';
-  }
-
-  //principal_office
-  rpc CreatePrincipalOffice(CreatePrincipalOfficeRequest) returns (CreatePrincipalOfficeResponse) {
-    option (api.post) = '/api/tenant/create_principal_office';
-  }
-
-  rpc UpdatePrincipalOffice(UpdatePrincipalOfficeRequest) returns (UpdatePrincipalOfficeResponse) {
-    option (api.post) = '/api/tenant/update_principal_office';
-  }
-
-  rpc DeletePrincipalOffice(DeletePrincipalOfficeRequest) returns (DeletePrincipalOfficeResponse) {
-    option (api.post) = '/api/tenant/delete_principal_office';
-  }
-
-  //major
-  rpc CreateMajor(CreateMajorRequest) returns (CreateMajorResponse) {
-    option (api.post) = '/api/tenant/create_major';
-  }
-  rpc GetMajor(GetMajorRequest) returns (GetMajorResponse) {
-    option (api.get) = '/api/tenant/get_major';
-  }
-  rpc UpdateMajor(UpdateMajorRequest) returns (UpdateMajorResponse) {
-    option (api.post) = '/api/tenant/update_major';
-  }
-  rpc DeleteMajor(DeleteMajorRequest) returns (DeleteMajorResponse) {
-    option (api.post) = '/api/tenant/delete_major';
-  }
-  rpc ListMajor(ListMajorRequest) returns (ListMajorResponse) {
-    option (api.post) = '/api/tenant/list_major';
-  }
-
-  // class
-  rpc CreateClass(CreateClassRequest) returns (CreateClassResponse) {
-    option (api.post) = '/api/tenant/create_class';
-  }
-  rpc GetClass(GetClassRequest) returns (GetClassResponse) {
-    option (api.get) = '/api/tenant/get_class';
-  }
-  rpc UpdateClass(UpdateClassRequest) returns (UpdateClassResponse) {
-    option (api.post) = '/api/tenant/update_class';
-  }
-  rpc DeleteClass(DeleteClassRequest) returns (DeleteClassResponse) {
-    option (api.post) = '/api/tenant/delete_class';
-  }
-  rpc ListClass(ListClassRequest) returns (ListClassResponse) {
-    option (api.post) = '/api/tenant/list_class';
-  }
   
+  //tenant_dept
+  rpc CreateTenantDept(CreateTenantDeptRequest) returns(CreateTenantDeptResponse) {
+    option (api.post) = '/api/tenant/create_tenant_dept';
+  }
+
+  rpc UpdateTenantDept(UpdateTenantDeptRequest) returns(UpdateTenantDeptResponse) {
+    option (api.post) = '/api/tenant/update_tenant_dept';
+  }
+
+  rpc DeleteTenantDept(DeleteTenantDeptRequest) returns(DeleteTenantDeptResponse) {
+    option (api.post) = '/api/tenant/delete_tenant_dept';
+  }
+
+  rpc GetTenantDept(GetTenantDeptRequest) returns(GetTenantDeptResponse) {
+    option (api.post) = '/api/tenant/get_tenant_dept';
+  }
+
   //student
   rpc CreateStudents(CreateStudentsRequest) returns (CreateStudentsResponse) {
     option (api.post) = '/api/tenant/create_students';

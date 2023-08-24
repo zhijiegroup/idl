@@ -5,142 +5,48 @@ option java_multiple_files = true;
 
 import "base.proto";
 
-message EduDept {
-    int64 tenant_id = 1;
-    int64 edu_dept_id = 2;
-    string edu_dept_name = 3;
+message TenantDept {
+    int64 dept_id = 1;
+    string dept_name = 2;
+    string dept_type = 3;
+    string depe_overview = 4;
+    int64 tenant_id = 5;
+    int64 parent_id = 6;
 }
 
-message CreateEduDeptRequest {
-    base.BaseRequest base_request = 1; //token
-    EduDept edu_dept = 2;
-}
-
-message CreateEduDeptResponse {
-    base.BaseResponse base_resp = 1;
-    int64 edu_dept_id = 2;
-}
-
-message DeleteEduDeptRequest {
+message CreateTenantDeptRequest {
     base.BaseRequest base_request = 1;
-    int64 edu_dept_id = 2;
+    TenantDept tenant_dept = 2;
 }
 
-message DeleteEduDeptResponse {
+message CreateTenantDeptResponse {
     base.BaseResponse base_resp = 1;
 }
 
-message UpdateEduDeptRequest {
+message DeleteTenantDeptRequest {
     base.BaseRequest base_request = 1;
-    EduDept edu_dept = 2;
+    int64 dept_id = 2;
 }
 
-message UpdateEduDeptResponse {
+message DeleteTenantDeptResponse {
     base.BaseResponse base_resp = 1;
 }
 
-message GoverDept {
-    int64 tenant_id = 1;
-    int64 gover_dept_id = 2;
-    string gover_dept_name = 3;
-}
-
-message CreateGoverDeptRequest {
+message UpdateTenantDeptRequest {
     base.BaseRequest base_request = 1;
-    GoverDept gover_dept = 2;
+    TenantDept tenant_dept = 2;
 }
 
-message CreateGoverDeptResponse {
+message UpdateTenantDeptResponse {
     base.BaseResponse base_resp = 1;
-    int64 gover_dept_id = 2;
 }
 
-message UpdateGoverDeptRequest {
+message GetTenantDeptRequest {
     base.BaseRequest base_request = 1;
-    GoverDept gover_dept = 2;
+    int64 dept_id = 2;
 }
 
-message UpdateGoverDeptResponse {
+message GetTenantDeptResponse {
     base.BaseResponse base_resp = 1;
-}
-
-message DeleteGoverDeptRequest {
-    base.BaseRequest base_request = 1;
-    int64 gover_dept_id = 2;
-}
-
-message DeleteGoverDeptResponse {
-    base.BaseResponse base_resp = 1;
-}
-
-message EduOffice {
-    int64 tenant_id = 1;
-    int64 gover_dept_id = 2;
-    int64 edu_office_id = 3; //创建不传
-    string edu_office_name = 4;
-}
-
-message CreateEduOfficeRequest {
-    base.BaseRequest base_request = 1;
-    EduOffice edu_office = 2;
-}
-
-message CreateEduOfficeResponse {
-    base.BaseResponse base_resp = 1;
-    int64 tenant_id = 2;
-    int64 edu_office_id = 3;
-}
-
-message UpdateEduOfficeRequest {
-    base.BaseRequest base_request = 1;
-    EduOffice edu_office = 2;
-}
-
-message UpdateEduOfficeResponse {
-    base.BaseResponse base_resp = 1;
-}
-
-message DeleteEduOfficeRequest {
-    base.BaseRequest base_request = 1;
-    int64 edu_office_id = 2;
-}
-
-message DeleteEduOfficeResponse {
-    base.BaseResponse base_resp = 1;
-}
-
-message PrincipalOffice {
-    int64 tenant_id = 1;
-    int64 gover_dept_id = 2;
-    int64 principal_office_id = 3; //创建不传
-    string principal_office_name = 4;
-}
-
-message CreatePrincipalOfficeRequest {
-    base.BaseRequest base_request = 1;
-    PrincipalOffice principal_office = 2;
-}
-
-message CreatePrincipalOfficeResponse {
-    base.BaseResponse base_resp = 1;
-    int64 tenant_id = 2;
-    int64 principal_office_id = 3;
-}
-
-message UpdatePrincipalOfficeRequest {
-    base.BaseRequest base_request = 1;
-    PrincipalOffice principal_office = 2;
-}
-
-message UpdatePrincipalOfficeResponse {
-    base.BaseResponse base_resp = 1;
-}
-
-message DeletePrincipalOfficeRequest {
-    base.BaseRequest base_request = 1;
-    int64 principal_office_id = 2;
-}
-
-message DeletePrincipalOfficeResponse {
-    base.BaseResponse base_resp = 1;
+    TenantDept tenant_dept = 2;
 }
