@@ -132,6 +132,21 @@ message GetShortVideoResponse {
   ShortVideo short_video = 2;
 }
 
+// 更新短视频详情
+message UpdateShortVideoRequest {
+  base.BaseRequest base_request = 1;
+  int64 short_video_id = 2; // 短视频ID
+  string description = 3; // 短视频描述
+  int32 visibility = 4; // 视频可见性：1.公开；2:隐私，仅自己可见
+  string products = 5; // JSON序列化的商品信息
+  int64 shop_id = 6; // 店铺ID
+}
+
+message UpdateShortVideoResponse {
+  base.BaseResponse base_resp = 1;
+  int64 short_video_id = 2;
+}
+
 // 删除短视频
 message DeleteShortVideoRequest {
   base.BaseRequest base_request = 1;

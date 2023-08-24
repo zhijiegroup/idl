@@ -784,6 +784,11 @@ service glory_api {
     option (api.post) = '/api/short_video/get_short_video';
   }
 
+  // 更新短视频详情
+  rpc UpdateShortVideo(UpdateShortVideoRequest) returns (UpdateShortVideoResponse) {
+    option (api.post) = '/api/short_video/update_short_video';
+  }
+
   // 删除短视频
   rpc DeleteShortVideo(DeleteShortVideoRequest) returns (DeleteShortVideoResponse) {
     option (api.post) = '/api/short_video/delete_short_video';
