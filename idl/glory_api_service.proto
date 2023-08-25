@@ -34,7 +34,6 @@ import "account/account_operation.proto";
 import "currency/virtual_currency.proto";
 import "tenant/tenant.proto";
 import "tenant/tenant_dept.proto";
-import "tenant/student.proto";
 import "short_video/short_video.proto";
 
 service glory_api {
@@ -657,12 +656,29 @@ service glory_api {
     option (api.post) = '/api/tenant/get_tenant_dept';
   }
 
-  //student
-  rpc CreateStudents(CreateStudentsRequest) returns (CreateStudentsResponse) {
-    option (api.post) = '/api/tenant/create_students';
+  rpc GetTenantDeptType(GetTenantDeptTypeRequest) returns(GetTenantDeptTypeResponse) {
+    option (api.get) = '/api/tenant/get_tenant_dept_type';
   }
-  rpc DeleteStudents(DeleteStudentsRequest) returns (DeleteStudentsResponse) {
-    option (api.post) = '/api/tenant/delete_students';
+  
+  // tenant_user
+  rpc CreateTenantUser(CreateTenantUserRequest) returns(CreateTenantUserResponse) {
+    option (api.post) = '/api/tenant/create_tenant_user';
+  }
+
+  rpc UpdateTenantUser(UpdateTenantUserRequest) returns(UpdateTenantUserResponse) {
+    option (api.post) = '/api/tenant/update_tenant_user';
+  }
+
+  rpc DeleteTenantUser(DeleteTenantUserRequest) returns(DeleteTenantUserResponse) {
+    option (api.post) = '/api/tenant/delete_tenant_user';
+  }
+
+  rpc GetTenantUser(GetTenantUserRequest) returns(GetTenantUserResponse) {
+    option (api.post) = '/api/tenant/get_tenant_user';
+  }
+
+  rpc ListTenantUser(ListTenantUserRequest) returns(ListTenantUserResponse) {
+    option (api.post) = '/api/tenant/list_tenant_user';
   }
 
   // short_video

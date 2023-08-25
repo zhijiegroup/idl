@@ -157,7 +157,6 @@ message TenantOrg {
   int64 parent = 4;
   int64 tenant = 5;
   repeated TenantOrg children = 6;
-  repeated string child_types = 7;
 }
 
 message GetTenantOrgRequest {
