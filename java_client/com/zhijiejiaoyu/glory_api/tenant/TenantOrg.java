@@ -23,7 +23,6 @@ private static final long serialVersionUID = 0L;
     name = "";
     type = "";
     children = java.util.Collections.emptyList();
-    childTypes = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -93,15 +92,6 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.zhijiejiaoyu.glory_api.tenant.TenantOrg.parser(), extensionRegistry));
             break;
           }
-          case 58: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-              childTypes = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000002;
-            }
-            childTypes.add(s);
-            break;
-          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -119,9 +109,6 @@ private static final long serialVersionUID = 0L;
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         children = java.util.Collections.unmodifiableList(children);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        childTypes = childTypes.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -289,41 +276,6 @@ private static final long serialVersionUID = 0L;
     return children.get(index);
   }
 
-  public static final int CHILD_TYPES_FIELD_NUMBER = 7;
-  private com.google.protobuf.LazyStringList childTypes;
-  /**
-   * <code>repeated string child_types = 7;</code>
-   * @return A list containing the childTypes.
-   */
-  public com.google.protobuf.ProtocolStringList
-      getChildTypesList() {
-    return childTypes;
-  }
-  /**
-   * <code>repeated string child_types = 7;</code>
-   * @return The count of childTypes.
-   */
-  public int getChildTypesCount() {
-    return childTypes.size();
-  }
-  /**
-   * <code>repeated string child_types = 7;</code>
-   * @param index The index of the element to return.
-   * @return The childTypes at the given index.
-   */
-  public java.lang.String getChildTypes(int index) {
-    return childTypes.get(index);
-  }
-  /**
-   * <code>repeated string child_types = 7;</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the childTypes at the given index.
-   */
-  public com.google.protobuf.ByteString
-      getChildTypesBytes(int index) {
-    return childTypes.getByteString(index);
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -356,9 +308,6 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < children.size(); i++) {
       output.writeMessage(6, children.get(i));
     }
-    for (int i = 0; i < childTypes.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, childTypes.getRaw(i));
-    }
     unknownFields.writeTo(output);
   }
 
@@ -390,14 +339,6 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, children.get(i));
     }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < childTypes.size(); i++) {
-        dataSize += computeStringSizeNoTag(childTypes.getRaw(i));
-      }
-      size += dataSize;
-      size += 1 * getChildTypesList().size();
-    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -425,8 +366,6 @@ private static final long serialVersionUID = 0L;
         != other.getTenant()) return false;
     if (!getChildrenList()
         .equals(other.getChildrenList())) return false;
-    if (!getChildTypesList()
-        .equals(other.getChildTypesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -454,10 +393,6 @@ private static final long serialVersionUID = 0L;
     if (getChildrenCount() > 0) {
       hash = (37 * hash) + CHILDREN_FIELD_NUMBER;
       hash = (53 * hash) + getChildrenList().hashCode();
-    }
-    if (getChildTypesCount() > 0) {
-      hash = (37 * hash) + CHILD_TYPES_FIELD_NUMBER;
-      hash = (53 * hash) + getChildTypesList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -613,8 +548,6 @@ private static final long serialVersionUID = 0L;
       } else {
         childrenBuilder.clear();
       }
-      childTypes = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0 = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -656,11 +589,6 @@ private static final long serialVersionUID = 0L;
       } else {
         result.children = childrenBuilder.build();
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        childTypes = childTypes.getUnmodifiableView();
-        bitField0 = (bitField0_ & ~0x00000002);
-      }
-      result.childTypes = childTypes;
       onBuilt();
       return result;
     }
@@ -751,16 +679,6 @@ private static final long serialVersionUID = 0L;
             childrenBuilder.addAllMessages(other.children);
           }
         }
-      }
-      if (!other.childTypes.isEmpty()) {
-        if (childTypes.isEmpty()) {
-          childTypes = other.childTypes;
-          bitField0 = (bitField0_ & ~0x00000002);
-        } else {
-          ensureChildTypesIsMutable();
-          childTypes.addAll(other.childTypes);
-        }
-        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1275,116 +1193,6 @@ private static final long serialVersionUID = 0L;
         children = null;
       }
       return childrenBuilder;
-    }
-
-    private com.google.protobuf.LazyStringList childTypes = com.google.protobuf.LazyStringArrayList.EMPTY;
-    private void ensureChildTypesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
-        childTypes = new com.google.protobuf.LazyStringArrayList(childTypes);
-        bitField0_ |= 0x00000002;
-       }
-    }
-    /**
-     * <code>repeated string child_types = 7;</code>
-     * @return A list containing the childTypes.
-     */
-    public com.google.protobuf.ProtocolStringList
-        getChildTypesList() {
-      return childTypes.getUnmodifiableView();
-    }
-    /**
-     * <code>repeated string child_types = 7;</code>
-     * @return The count of childTypes.
-     */
-    public int getChildTypesCount() {
-      return childTypes.size();
-    }
-    /**
-     * <code>repeated string child_types = 7;</code>
-     * @param index The index of the element to return.
-     * @return The childTypes at the given index.
-     */
-    public java.lang.String getChildTypes(int index) {
-      return childTypes.get(index);
-    }
-    /**
-     * <code>repeated string child_types = 7;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the childTypes at the given index.
-     */
-    public com.google.protobuf.ByteString
-        getChildTypesBytes(int index) {
-      return childTypes.getByteString(index);
-    }
-    /**
-     * <code>repeated string child_types = 7;</code>
-     * @param index The index to set the value at.
-     * @param value The childTypes to set.
-     * @return This builder for chaining.
-     */
-    public Builder setChildTypes(
-        int index, java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureChildTypesIsMutable();
-      childTypes.set(index, value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string child_types = 7;</code>
-     * @param value The childTypes to add.
-     * @return This builder for chaining.
-     */
-    public Builder addChildTypes(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureChildTypesIsMutable();
-      childTypes.add(value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string child_types = 7;</code>
-     * @param values The childTypes to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAllChildTypes(
-        java.lang.Iterable<java.lang.String> values) {
-      ensureChildTypesIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, childTypes);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string child_types = 7;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearChildTypes() {
-      childTypes = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0 = (bitField0_ & ~0x00000002);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string child_types = 7;</code>
-     * @param value The bytes of the childTypes to add.
-     * @return This builder for chaining.
-     */
-    public Builder addChildTypesBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      ensureChildTypesIsMutable();
-      childTypes.add(value);
-      onChanged();
-      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

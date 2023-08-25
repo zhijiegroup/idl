@@ -20,78 +20,89 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct GloryApi_EduDept {
+struct GloryApi_TenantDeptType {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
+
+  var label: String = String()
+
+  var value: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct GloryApi_GetTenantDeptTypeRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var value: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+struct GloryApi_GetTenantDeptTypeResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var tenantDeptType: [GloryApi_TenantDeptType] = []
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+}
+
+struct GloryApi_TenantDept {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var deptID: Int64 = 0
+
+  var deptName: String = String()
+
+  var deptType: String = String()
+
+  var deptOverview: String = String()
 
   var tenantID: Int64 = 0
 
-  var eduDeptID: Int64 = 0
-
-  var eduDeptName: String = String()
+  var parentID: Int64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 }
 
-struct GloryApi_CreateEduDeptRequest {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  ///token
-  var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
-    set {_baseRequest = newValue}
-  }
-  /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
-  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
-  mutating func clearBaseRequest() {self._baseRequest = nil}
-
-  var eduDept: GloryApi_EduDept {
-    get {return _eduDept ?? GloryApi_EduDept()}
-    set {_eduDept = newValue}
-  }
-  /// Returns true if `eduDept` has been explicitly set.
-  var hasEduDept: Bool {return self._eduDept != nil}
-  /// Clears the value of `eduDept`. Subsequent reads from it will return its default value.
-  mutating func clearEduDept() {self._eduDept = nil}
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  fileprivate var _baseRequest: Base_BaseRequest? = nil
-  fileprivate var _eduDept: GloryApi_EduDept? = nil
-}
-
-struct GloryApi_CreateEduDeptResponse {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
-    set {_baseResp = newValue}
-  }
-  /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
-  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
-  mutating func clearBaseResp() {self._baseResp = nil}
-
-  var eduDeptID: Int64 = 0
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  fileprivate var _baseResp: Base_BaseResponse? = nil
-}
-
-struct GloryApi_DeleteEduDeptRequest {
+struct GloryApi_CreateTenantDeptRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -105,16 +116,24 @@ struct GloryApi_DeleteEduDeptRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
-  var eduDeptID: Int64 = 0
+  var tenantDept: GloryApi_TenantDept {
+    get {return _tenantDept ?? GloryApi_TenantDept()}
+    set {_tenantDept = newValue}
+  }
+  /// Returns true if `tenantDept` has been explicitly set.
+  var hasTenantDept: Bool {return self._tenantDept != nil}
+  /// Clears the value of `tenantDept`. Subsequent reads from it will return its default value.
+  mutating func clearTenantDept() {self._tenantDept = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
   fileprivate var _baseRequest: Base_BaseRequest? = nil
+  fileprivate var _tenantDept: GloryApi_TenantDept? = nil
 }
 
-struct GloryApi_DeleteEduDeptResponse {
+struct GloryApi_CreateTenantDeptResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -135,7 +154,7 @@ struct GloryApi_DeleteEduDeptResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_UpdateEduDeptRequest {
+struct GloryApi_DeleteTenantDeptRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -149,146 +168,18 @@ struct GloryApi_UpdateEduDeptRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
-  var eduDept: GloryApi_EduDept {
-    get {return _eduDept ?? GloryApi_EduDept()}
-    set {_eduDept = newValue}
-  }
-  /// Returns true if `eduDept` has been explicitly set.
-  var hasEduDept: Bool {return self._eduDept != nil}
-  /// Clears the value of `eduDept`. Subsequent reads from it will return its default value.
-  mutating func clearEduDept() {self._eduDept = nil}
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  fileprivate var _baseRequest: Base_BaseRequest? = nil
-  fileprivate var _eduDept: GloryApi_EduDept? = nil
-}
-
-struct GloryApi_UpdateEduDeptResponse {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
-    set {_baseResp = newValue}
-  }
-  /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
-  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
-  mutating func clearBaseResp() {self._baseResp = nil}
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  fileprivate var _baseResp: Base_BaseResponse? = nil
-}
-
-struct GloryApi_GoverDept {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
+  var deptID: Int64 = 0
 
   var tenantID: Int64 = 0
 
-  var goverDeptID: Int64 = 0
-
-  var goverDeptName: String = String()
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-}
-
-struct GloryApi_CreateGoverDeptRequest {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
-    set {_baseRequest = newValue}
-  }
-  /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
-  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
-  mutating func clearBaseRequest() {self._baseRequest = nil}
-
-  var goverDept: GloryApi_GoverDept {
-    get {return _goverDept ?? GloryApi_GoverDept()}
-    set {_goverDept = newValue}
-  }
-  /// Returns true if `goverDept` has been explicitly set.
-  var hasGoverDept: Bool {return self._goverDept != nil}
-  /// Clears the value of `goverDept`. Subsequent reads from it will return its default value.
-  mutating func clearGoverDept() {self._goverDept = nil}
-
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
   fileprivate var _baseRequest: Base_BaseRequest? = nil
-  fileprivate var _goverDept: GloryApi_GoverDept? = nil
 }
 
-struct GloryApi_CreateGoverDeptResponse {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
-    set {_baseResp = newValue}
-  }
-  /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
-  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
-  mutating func clearBaseResp() {self._baseResp = nil}
-
-  var goverDeptID: Int64 = 0
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  fileprivate var _baseResp: Base_BaseResponse? = nil
-}
-
-struct GloryApi_UpdateGoverDeptRequest {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
-    set {_baseRequest = newValue}
-  }
-  /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
-  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
-  mutating func clearBaseRequest() {self._baseRequest = nil}
-
-  var goverDept: GloryApi_GoverDept {
-    get {return _goverDept ?? GloryApi_GoverDept()}
-    set {_goverDept = newValue}
-  }
-  /// Returns true if `goverDept` has been explicitly set.
-  var hasGoverDept: Bool {return self._goverDept != nil}
-  /// Clears the value of `goverDept`. Subsequent reads from it will return its default value.
-  mutating func clearGoverDept() {self._goverDept = nil}
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  fileprivate var _baseRequest: Base_BaseRequest? = nil
-  fileprivate var _goverDept: GloryApi_GoverDept? = nil
-}
-
-struct GloryApi_UpdateGoverDeptResponse {
+struct GloryApi_DeleteTenantDeptResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -309,7 +200,7 @@ struct GloryApi_UpdateGoverDeptResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_DeleteGoverDeptRequest {
+struct GloryApi_UpdateTenantDeptRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -323,16 +214,24 @@ struct GloryApi_DeleteGoverDeptRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
-  var goverDeptID: Int64 = 0
+  var tenantDept: GloryApi_TenantDept {
+    get {return _tenantDept ?? GloryApi_TenantDept()}
+    set {_tenantDept = newValue}
+  }
+  /// Returns true if `tenantDept` has been explicitly set.
+  var hasTenantDept: Bool {return self._tenantDept != nil}
+  /// Clears the value of `tenantDept`. Subsequent reads from it will return its default value.
+  mutating func clearTenantDept() {self._tenantDept = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
   fileprivate var _baseRequest: Base_BaseRequest? = nil
+  fileprivate var _tenantDept: GloryApi_TenantDept? = nil
 }
 
-struct GloryApi_DeleteGoverDeptResponse {
+struct GloryApi_UpdateTenantDeptResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -353,57 +252,32 @@ struct GloryApi_DeleteGoverDeptResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_EduOffice {
+struct GloryApi_GetTenantDeptRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
 
   var tenantID: Int64 = 0
 
-  var goverDeptID: Int64 = 0
-
-  ///创建不传
-  var eduOfficeID: Int64 = 0
-
-  var eduOfficeName: String = String()
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-}
-
-struct GloryApi_CreateEduOfficeRequest {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
-    set {_baseRequest = newValue}
-  }
-  /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
-  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
-  mutating func clearBaseRequest() {self._baseRequest = nil}
-
-  var eduOffice: GloryApi_EduOffice {
-    get {return _eduOffice ?? GloryApi_EduOffice()}
-    set {_eduOffice = newValue}
-  }
-  /// Returns true if `eduOffice` has been explicitly set.
-  var hasEduOffice: Bool {return self._eduOffice != nil}
-  /// Clears the value of `eduOffice`. Subsequent reads from it will return its default value.
-  mutating func clearEduOffice() {self._eduOffice = nil}
+  var deptID: Int64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
   fileprivate var _baseRequest: Base_BaseRequest? = nil
-  fileprivate var _eduOffice: GloryApi_EduOffice? = nil
 }
 
-struct GloryApi_CreateEduOfficeResponse {
+struct GloryApi_GetTenantDeptResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -416,10 +290,97 @@ struct GloryApi_CreateEduOfficeResponse {
   var hasBaseResp: Bool {return self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
+
+  var tenantDept: GloryApi_TenantDept {
+    get {return _tenantDept ?? GloryApi_TenantDept()}
+    set {_tenantDept = newValue}
+  }
+  /// Returns true if `tenantDept` has been explicitly set.
+  var hasTenantDept: Bool {return self._tenantDept != nil}
+  /// Clears the value of `tenantDept`. Subsequent reads from it will return its default value.
+  mutating func clearTenantDept() {self._tenantDept = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _tenantDept: GloryApi_TenantDept? = nil
+}
+
+struct GloryApi_TenantUser {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var tenantUserID: Int64 = 0
+
+  var userID: Int64 = 0
+
+  var phone: String = String()
+
+  var name: String = String()
+
+  var user: GloryApi_User {
+    get {return _user ?? GloryApi_User()}
+    set {_user = newValue}
+  }
+  /// Returns true if `user` has been explicitly set.
+  var hasUser: Bool {return self._user != nil}
+  /// Clears the value of `user`. Subsequent reads from it will return its default value.
+  mutating func clearUser() {self._user = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _user: GloryApi_User? = nil
+}
+
+struct GloryApi_CreateTenantUserRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
 
   var tenantID: Int64 = 0
 
-  var eduOfficeID: Int64 = 0
+  var deptID: Int64 = 0
+
+  var roleID: Int64 = 0
+
+  var users: [GloryApi_TenantUser] = []
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+struct GloryApi_CreateTenantUserResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var tenantUsers: Dictionary<Int64,String> = [:]
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -428,7 +389,7 @@ struct GloryApi_CreateEduOfficeResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_UpdateEduOfficeRequest {
+struct GloryApi_DeleteTenantUserRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -442,24 +403,16 @@ struct GloryApi_UpdateEduOfficeRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
-  var eduOffice: GloryApi_EduOffice {
-    get {return _eduOffice ?? GloryApi_EduOffice()}
-    set {_eduOffice = newValue}
-  }
-  /// Returns true if `eduOffice` has been explicitly set.
-  var hasEduOffice: Bool {return self._eduOffice != nil}
-  /// Clears the value of `eduOffice`. Subsequent reads from it will return its default value.
-  mutating func clearEduOffice() {self._eduOffice = nil}
+  var tenantUserIds: [Int64] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
   fileprivate var _baseRequest: Base_BaseRequest? = nil
-  fileprivate var _eduOffice: GloryApi_EduOffice? = nil
 }
 
-struct GloryApi_UpdateEduOfficeResponse {
+struct GloryApi_DeleteTenantUserResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -480,30 +433,37 @@ struct GloryApi_UpdateEduOfficeResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_DeleteEduOfficeRequest {
+struct GloryApi_UpdateTenantUserRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
-    set {_baseRequest = newValue}
+    get {return _storage._baseRequest ?? Base_BaseRequest()}
+    set {_uniqueStorage()._baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {return _storage._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
-  mutating func clearBaseRequest() {self._baseRequest = nil}
+  mutating func clearBaseRequest() {_uniqueStorage()._baseRequest = nil}
 
-  var eduOfficeID: Int64 = 0
+  var user: GloryApi_TenantUser {
+    get {return _storage._user ?? GloryApi_TenantUser()}
+    set {_uniqueStorage()._user = newValue}
+  }
+  /// Returns true if `user` has been explicitly set.
+  var hasUser: Bool {return _storage._user != nil}
+  /// Clears the value of `user`. Subsequent reads from it will return its default value.
+  mutating func clearUser() {_uniqueStorage()._user = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  fileprivate var _baseRequest: Base_BaseRequest? = nil
+  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct GloryApi_DeleteEduOfficeResponse {
+struct GloryApi_UpdateTenantUserResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -517,6 +477,8 @@ struct GloryApi_DeleteEduOfficeResponse {
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
+  var tenantUserID: Int64 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -524,57 +486,97 @@ struct GloryApi_DeleteEduOfficeResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_PrincipalOffice {
+struct GloryApi_GetTenantUserRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var tenantUserID: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+struct GloryApi_GetTenantUserResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _storage._baseResp ?? Base_BaseResponse()}
+    set {_uniqueStorage()._baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return _storage._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {_uniqueStorage()._baseResp = nil}
+
+  var user: GloryApi_TenantUser {
+    get {return _storage._user ?? GloryApi_TenantUser()}
+    set {_uniqueStorage()._user = newValue}
+  }
+  /// Returns true if `user` has been explicitly set.
+  var hasUser: Bool {return _storage._user != nil}
+  /// Clears the value of `user`. Subsequent reads from it will return its default value.
+  mutating func clearUser() {_uniqueStorage()._user = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _storage = _StorageClass.defaultInstance
+}
+
+struct GloryApi_ListTenantUserRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
 
   var tenantID: Int64 = 0
 
-  var goverDeptID: Int64 = 0
+  var deptID: Int64 = 0
 
-  ///创建不传
-  var principalOfficeID: Int64 = 0
+  var name: String = String()
 
-  var principalOfficeName: String = String()
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-}
-
-struct GloryApi_CreatePrincipalOfficeRequest {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
-    set {_baseRequest = newValue}
+  var pagination: Base_PaginationRequest {
+    get {return _pagination ?? Base_PaginationRequest()}
+    set {_pagination = newValue}
   }
-  /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
-  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
-  mutating func clearBaseRequest() {self._baseRequest = nil}
-
-  var principalOffice: GloryApi_PrincipalOffice {
-    get {return _principalOffice ?? GloryApi_PrincipalOffice()}
-    set {_principalOffice = newValue}
-  }
-  /// Returns true if `principalOffice` has been explicitly set.
-  var hasPrincipalOffice: Bool {return self._principalOffice != nil}
-  /// Clears the value of `principalOffice`. Subsequent reads from it will return its default value.
-  mutating func clearPrincipalOffice() {self._principalOffice = nil}
+  /// Returns true if `pagination` has been explicitly set.
+  var hasPagination: Bool {return self._pagination != nil}
+  /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
+  mutating func clearPagination() {self._pagination = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
   fileprivate var _baseRequest: Base_BaseRequest? = nil
-  fileprivate var _principalOffice: GloryApi_PrincipalOffice? = nil
+  fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_CreatePrincipalOfficeResponse {
+struct GloryApi_ListTenantUserResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -588,154 +590,60 @@ struct GloryApi_CreatePrincipalOfficeResponse {
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
-  var tenantID: Int64 = 0
+  var users: [GloryApi_TenantUser] = []
 
-  var principalOfficeID: Int64 = 0
+  var pagination: Base_PaginationResponse {
+    get {return _pagination ?? Base_PaginationResponse()}
+    set {_pagination = newValue}
+  }
+  /// Returns true if `pagination` has been explicitly set.
+  var hasPagination: Bool {return self._pagination != nil}
+  /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
+  mutating func clearPagination() {self._pagination = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
-}
-
-struct GloryApi_UpdatePrincipalOfficeRequest {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
-    set {_baseRequest = newValue}
-  }
-  /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
-  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
-  mutating func clearBaseRequest() {self._baseRequest = nil}
-
-  var principalOffice: GloryApi_PrincipalOffice {
-    get {return _principalOffice ?? GloryApi_PrincipalOffice()}
-    set {_principalOffice = newValue}
-  }
-  /// Returns true if `principalOffice` has been explicitly set.
-  var hasPrincipalOffice: Bool {return self._principalOffice != nil}
-  /// Clears the value of `principalOffice`. Subsequent reads from it will return its default value.
-  mutating func clearPrincipalOffice() {self._principalOffice = nil}
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  fileprivate var _baseRequest: Base_BaseRequest? = nil
-  fileprivate var _principalOffice: GloryApi_PrincipalOffice? = nil
-}
-
-struct GloryApi_UpdatePrincipalOfficeResponse {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
-    set {_baseResp = newValue}
-  }
-  /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
-  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
-  mutating func clearBaseResp() {self._baseResp = nil}
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  fileprivate var _baseResp: Base_BaseResponse? = nil
-}
-
-struct GloryApi_DeletePrincipalOfficeRequest {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
-    set {_baseRequest = newValue}
-  }
-  /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
-  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
-  mutating func clearBaseRequest() {self._baseRequest = nil}
-
-  var principalOfficeID: Int64 = 0
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  fileprivate var _baseRequest: Base_BaseRequest? = nil
-}
-
-struct GloryApi_DeletePrincipalOfficeResponse {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
-    set {_baseResp = newValue}
-  }
-  /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
-  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
-  mutating func clearBaseResp() {self._baseResp = nil}
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
 #if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_EduDept: @unchecked Sendable {}
-extension GloryApi_CreateEduDeptRequest: @unchecked Sendable {}
-extension GloryApi_CreateEduDeptResponse: @unchecked Sendable {}
-extension GloryApi_DeleteEduDeptRequest: @unchecked Sendable {}
-extension GloryApi_DeleteEduDeptResponse: @unchecked Sendable {}
-extension GloryApi_UpdateEduDeptRequest: @unchecked Sendable {}
-extension GloryApi_UpdateEduDeptResponse: @unchecked Sendable {}
-extension GloryApi_GoverDept: @unchecked Sendable {}
-extension GloryApi_CreateGoverDeptRequest: @unchecked Sendable {}
-extension GloryApi_CreateGoverDeptResponse: @unchecked Sendable {}
-extension GloryApi_UpdateGoverDeptRequest: @unchecked Sendable {}
-extension GloryApi_UpdateGoverDeptResponse: @unchecked Sendable {}
-extension GloryApi_DeleteGoverDeptRequest: @unchecked Sendable {}
-extension GloryApi_DeleteGoverDeptResponse: @unchecked Sendable {}
-extension GloryApi_EduOffice: @unchecked Sendable {}
-extension GloryApi_CreateEduOfficeRequest: @unchecked Sendable {}
-extension GloryApi_CreateEduOfficeResponse: @unchecked Sendable {}
-extension GloryApi_UpdateEduOfficeRequest: @unchecked Sendable {}
-extension GloryApi_UpdateEduOfficeResponse: @unchecked Sendable {}
-extension GloryApi_DeleteEduOfficeRequest: @unchecked Sendable {}
-extension GloryApi_DeleteEduOfficeResponse: @unchecked Sendable {}
-extension GloryApi_PrincipalOffice: @unchecked Sendable {}
-extension GloryApi_CreatePrincipalOfficeRequest: @unchecked Sendable {}
-extension GloryApi_CreatePrincipalOfficeResponse: @unchecked Sendable {}
-extension GloryApi_UpdatePrincipalOfficeRequest: @unchecked Sendable {}
-extension GloryApi_UpdatePrincipalOfficeResponse: @unchecked Sendable {}
-extension GloryApi_DeletePrincipalOfficeRequest: @unchecked Sendable {}
-extension GloryApi_DeletePrincipalOfficeResponse: @unchecked Sendable {}
+extension GloryApi_TenantDeptType: @unchecked Sendable {}
+extension GloryApi_GetTenantDeptTypeRequest: @unchecked Sendable {}
+extension GloryApi_GetTenantDeptTypeResponse: @unchecked Sendable {}
+extension GloryApi_TenantDept: @unchecked Sendable {}
+extension GloryApi_CreateTenantDeptRequest: @unchecked Sendable {}
+extension GloryApi_CreateTenantDeptResponse: @unchecked Sendable {}
+extension GloryApi_DeleteTenantDeptRequest: @unchecked Sendable {}
+extension GloryApi_DeleteTenantDeptResponse: @unchecked Sendable {}
+extension GloryApi_UpdateTenantDeptRequest: @unchecked Sendable {}
+extension GloryApi_UpdateTenantDeptResponse: @unchecked Sendable {}
+extension GloryApi_GetTenantDeptRequest: @unchecked Sendable {}
+extension GloryApi_GetTenantDeptResponse: @unchecked Sendable {}
+extension GloryApi_TenantUser: @unchecked Sendable {}
+extension GloryApi_CreateTenantUserRequest: @unchecked Sendable {}
+extension GloryApi_CreateTenantUserResponse: @unchecked Sendable {}
+extension GloryApi_DeleteTenantUserRequest: @unchecked Sendable {}
+extension GloryApi_DeleteTenantUserResponse: @unchecked Sendable {}
+extension GloryApi_UpdateTenantUserRequest: @unchecked Sendable {}
+extension GloryApi_UpdateTenantUserResponse: @unchecked Sendable {}
+extension GloryApi_GetTenantUserRequest: @unchecked Sendable {}
+extension GloryApi_GetTenantUserResponse: @unchecked Sendable {}
+extension GloryApi_ListTenantUserRequest: @unchecked Sendable {}
+extension GloryApi_ListTenantUserResponse: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "glory_api"
 
-extension GloryApi_EduDept: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".EduDept"
+extension GloryApi_TenantDeptType: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".TenantDeptType"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "tenant_id"),
-    2: .standard(proto: "edu_dept_id"),
-    3: .standard(proto: "edu_dept_name"),
+    1: .same(proto: "label"),
+    2: .same(proto: "value"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -744,41 +652,182 @@ extension GloryApi_EduDept: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
       // allocates stack space for every case branch when no optimizations are
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.eduDeptID) }()
-      case 3: try { try decoder.decodeSingularStringField(value: &self.eduDeptName) }()
+      case 1: try { try decoder.decodeSingularStringField(value: &self.label) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.value) }()
       default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.label.isEmpty {
+      try visitor.visitSingularStringField(value: self.label, fieldNumber: 1)
+    }
+    if !self.value.isEmpty {
+      try visitor.visitSingularStringField(value: self.value, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_TenantDeptType, rhs: GloryApi_TenantDeptType) -> Bool {
+    if lhs.label != rhs.label {return false}
+    if lhs.value != rhs.value {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetTenantDeptTypeRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetTenantDeptTypeRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    2: .same(proto: "value"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.value) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if !self.value.isEmpty {
+      try visitor.visitSingularStringField(value: self.value, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetTenantDeptTypeRequest, rhs: GloryApi_GetTenantDeptTypeRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.value != rhs.value {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetTenantDeptTypeResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetTenantDeptTypeResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .standard(proto: "tenant_dept_type"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.tenantDeptType) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if !self.tenantDeptType.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.tenantDeptType, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetTenantDeptTypeResponse, rhs: GloryApi_GetTenantDeptTypeResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.tenantDeptType != rhs.tenantDeptType {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_TenantDept: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".TenantDept"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "dept_id"),
+    2: .standard(proto: "dept_name"),
+    3: .standard(proto: "dept_type"),
+    4: .standard(proto: "dept_overview"),
+    5: .standard(proto: "tenant_id"),
+    6: .standard(proto: "parent_id"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.deptID) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.deptName) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.deptType) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.deptOverview) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
+      case 6: try { try decoder.decodeSingularInt64Field(value: &self.parentID) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.deptID != 0 {
+      try visitor.visitSingularInt64Field(value: self.deptID, fieldNumber: 1)
+    }
+    if !self.deptName.isEmpty {
+      try visitor.visitSingularStringField(value: self.deptName, fieldNumber: 2)
+    }
+    if !self.deptType.isEmpty {
+      try visitor.visitSingularStringField(value: self.deptType, fieldNumber: 3)
+    }
+    if !self.deptOverview.isEmpty {
+      try visitor.visitSingularStringField(value: self.deptOverview, fieldNumber: 4)
+    }
     if self.tenantID != 0 {
-      try visitor.visitSingularInt64Field(value: self.tenantID, fieldNumber: 1)
+      try visitor.visitSingularInt64Field(value: self.tenantID, fieldNumber: 5)
     }
-    if self.eduDeptID != 0 {
-      try visitor.visitSingularInt64Field(value: self.eduDeptID, fieldNumber: 2)
-    }
-    if !self.eduDeptName.isEmpty {
-      try visitor.visitSingularStringField(value: self.eduDeptName, fieldNumber: 3)
+    if self.parentID != 0 {
+      try visitor.visitSingularInt64Field(value: self.parentID, fieldNumber: 6)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: GloryApi_EduDept, rhs: GloryApi_EduDept) -> Bool {
+  static func ==(lhs: GloryApi_TenantDept, rhs: GloryApi_TenantDept) -> Bool {
+    if lhs.deptID != rhs.deptID {return false}
+    if lhs.deptName != rhs.deptName {return false}
+    if lhs.deptType != rhs.deptType {return false}
+    if lhs.deptOverview != rhs.deptOverview {return false}
     if lhs.tenantID != rhs.tenantID {return false}
-    if lhs.eduDeptID != rhs.eduDeptID {return false}
-    if lhs.eduDeptName != rhs.eduDeptName {return false}
+    if lhs.parentID != rhs.parentID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension GloryApi_CreateEduDeptRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".CreateEduDeptRequest"
+extension GloryApi_CreateTenantDeptRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".CreateTenantDeptRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
-    2: .standard(proto: "edu_dept"),
+    2: .standard(proto: "tenant_dept"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -788,7 +837,7 @@ extension GloryApi_CreateEduDeptRequest: SwiftProtobuf.Message, SwiftProtobuf._M
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularMessageField(value: &self._eduDept) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._tenantDept) }()
       default: break
       }
     }
@@ -802,25 +851,24 @@ extension GloryApi_CreateEduDeptRequest: SwiftProtobuf.Message, SwiftProtobuf._M
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    try { if let v = self._eduDept {
+    try { if let v = self._tenantDept {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
     } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: GloryApi_CreateEduDeptRequest, rhs: GloryApi_CreateEduDeptRequest) -> Bool {
+  static func ==(lhs: GloryApi_CreateTenantDeptRequest, rhs: GloryApi_CreateTenantDeptRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
-    if lhs._eduDept != rhs._eduDept {return false}
+    if lhs._tenantDept != rhs._tenantDept {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension GloryApi_CreateEduDeptResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".CreateEduDeptResponse"
+extension GloryApi_CreateTenantDeptResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".CreateTenantDeptResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
-    2: .standard(proto: "edu_dept_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -830,7 +878,6 @@ extension GloryApi_CreateEduDeptResponse: SwiftProtobuf.Message, SwiftProtobuf._
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.eduDeptID) }()
       default: break
       }
     }
@@ -844,25 +891,22 @@ extension GloryApi_CreateEduDeptResponse: SwiftProtobuf.Message, SwiftProtobuf._
     try { if let v = self._baseResp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    if self.eduDeptID != 0 {
-      try visitor.visitSingularInt64Field(value: self.eduDeptID, fieldNumber: 2)
-    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: GloryApi_CreateEduDeptResponse, rhs: GloryApi_CreateEduDeptResponse) -> Bool {
+  static func ==(lhs: GloryApi_CreateTenantDeptResponse, rhs: GloryApi_CreateTenantDeptResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
-    if lhs.eduDeptID != rhs.eduDeptID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension GloryApi_DeleteEduDeptRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".DeleteEduDeptRequest"
+extension GloryApi_DeleteTenantDeptRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".DeleteTenantDeptRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
-    2: .standard(proto: "edu_dept_id"),
+    2: .standard(proto: "dept_id"),
+    3: .standard(proto: "tenant_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -872,7 +916,8 @@ extension GloryApi_DeleteEduDeptRequest: SwiftProtobuf.Message, SwiftProtobuf._M
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.eduDeptID) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.deptID) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
       default: break
       }
     }
@@ -886,306 +931,26 @@ extension GloryApi_DeleteEduDeptRequest: SwiftProtobuf.Message, SwiftProtobuf._M
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    if self.eduDeptID != 0 {
-      try visitor.visitSingularInt64Field(value: self.eduDeptID, fieldNumber: 2)
+    if self.deptID != 0 {
+      try visitor.visitSingularInt64Field(value: self.deptID, fieldNumber: 2)
     }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: GloryApi_DeleteEduDeptRequest, rhs: GloryApi_DeleteEduDeptRequest) -> Bool {
-    if lhs._baseRequest != rhs._baseRequest {return false}
-    if lhs.eduDeptID != rhs.eduDeptID {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension GloryApi_DeleteEduDeptResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".DeleteEduDeptResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "base_resp"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._baseResp {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: GloryApi_DeleteEduDeptResponse, rhs: GloryApi_DeleteEduDeptResponse) -> Bool {
-    if lhs._baseResp != rhs._baseResp {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension GloryApi_UpdateEduDeptRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".UpdateEduDeptRequest"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "base_request"),
-    2: .standard(proto: "edu_dept"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularMessageField(value: &self._eduDept) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._baseRequest {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    try { if let v = self._eduDept {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: GloryApi_UpdateEduDeptRequest, rhs: GloryApi_UpdateEduDeptRequest) -> Bool {
-    if lhs._baseRequest != rhs._baseRequest {return false}
-    if lhs._eduDept != rhs._eduDept {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension GloryApi_UpdateEduDeptResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".UpdateEduDeptResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "base_resp"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._baseResp {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: GloryApi_UpdateEduDeptResponse, rhs: GloryApi_UpdateEduDeptResponse) -> Bool {
-    if lhs._baseResp != rhs._baseResp {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension GloryApi_GoverDept: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GoverDept"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "tenant_id"),
-    2: .standard(proto: "gover_dept_id"),
-    3: .standard(proto: "gover_dept_name"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.goverDeptID) }()
-      case 3: try { try decoder.decodeSingularStringField(value: &self.goverDeptName) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.tenantID != 0 {
-      try visitor.visitSingularInt64Field(value: self.tenantID, fieldNumber: 1)
-    }
-    if self.goverDeptID != 0 {
-      try visitor.visitSingularInt64Field(value: self.goverDeptID, fieldNumber: 2)
-    }
-    if !self.goverDeptName.isEmpty {
-      try visitor.visitSingularStringField(value: self.goverDeptName, fieldNumber: 3)
+      try visitor.visitSingularInt64Field(value: self.tenantID, fieldNumber: 3)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: GloryApi_GoverDept, rhs: GloryApi_GoverDept) -> Bool {
+  static func ==(lhs: GloryApi_DeleteTenantDeptRequest, rhs: GloryApi_DeleteTenantDeptRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.deptID != rhs.deptID {return false}
     if lhs.tenantID != rhs.tenantID {return false}
-    if lhs.goverDeptID != rhs.goverDeptID {return false}
-    if lhs.goverDeptName != rhs.goverDeptName {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension GloryApi_CreateGoverDeptRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".CreateGoverDeptRequest"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "base_request"),
-    2: .standard(proto: "gover_dept"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularMessageField(value: &self._goverDept) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._baseRequest {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    try { if let v = self._goverDept {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: GloryApi_CreateGoverDeptRequest, rhs: GloryApi_CreateGoverDeptRequest) -> Bool {
-    if lhs._baseRequest != rhs._baseRequest {return false}
-    if lhs._goverDept != rhs._goverDept {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension GloryApi_CreateGoverDeptResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".CreateGoverDeptResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "base_resp"),
-    2: .standard(proto: "gover_dept_id"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.goverDeptID) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._baseResp {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    if self.goverDeptID != 0 {
-      try visitor.visitSingularInt64Field(value: self.goverDeptID, fieldNumber: 2)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: GloryApi_CreateGoverDeptResponse, rhs: GloryApi_CreateGoverDeptResponse) -> Bool {
-    if lhs._baseResp != rhs._baseResp {return false}
-    if lhs.goverDeptID != rhs.goverDeptID {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension GloryApi_UpdateGoverDeptRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".UpdateGoverDeptRequest"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "base_request"),
-    2: .standard(proto: "gover_dept"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularMessageField(value: &self._goverDept) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._baseRequest {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    try { if let v = self._goverDept {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: GloryApi_UpdateGoverDeptRequest, rhs: GloryApi_UpdateGoverDeptRequest) -> Bool {
-    if lhs._baseRequest != rhs._baseRequest {return false}
-    if lhs._goverDept != rhs._goverDept {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension GloryApi_UpdateGoverDeptResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".UpdateGoverDeptResponse"
+extension GloryApi_DeleteTenantDeptResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".DeleteTenantDeptResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
   ]
@@ -1213,18 +978,18 @@ extension GloryApi_UpdateGoverDeptResponse: SwiftProtobuf.Message, SwiftProtobuf
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: GloryApi_UpdateGoverDeptResponse, rhs: GloryApi_UpdateGoverDeptResponse) -> Bool {
+  static func ==(lhs: GloryApi_DeleteTenantDeptResponse, rhs: GloryApi_DeleteTenantDeptResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension GloryApi_DeleteGoverDeptRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".DeleteGoverDeptRequest"
+extension GloryApi_UpdateTenantDeptRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".UpdateTenantDeptRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
-    2: .standard(proto: "gover_dept_id"),
+    2: .standard(proto: "tenant_dept"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1234,7 +999,7 @@ extension GloryApi_DeleteGoverDeptRequest: SwiftProtobuf.Message, SwiftProtobuf.
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.goverDeptID) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._tenantDept) }()
       default: break
       }
     }
@@ -1248,22 +1013,22 @@ extension GloryApi_DeleteGoverDeptRequest: SwiftProtobuf.Message, SwiftProtobuf.
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    if self.goverDeptID != 0 {
-      try visitor.visitSingularInt64Field(value: self.goverDeptID, fieldNumber: 2)
-    }
+    try { if let v = self._tenantDept {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: GloryApi_DeleteGoverDeptRequest, rhs: GloryApi_DeleteGoverDeptRequest) -> Bool {
+  static func ==(lhs: GloryApi_UpdateTenantDeptRequest, rhs: GloryApi_UpdateTenantDeptRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
-    if lhs.goverDeptID != rhs.goverDeptID {return false}
+    if lhs._tenantDept != rhs._tenantDept {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension GloryApi_DeleteGoverDeptResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".DeleteGoverDeptResponse"
+extension GloryApi_UpdateTenantDeptResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".UpdateTenantDeptResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
   ]
@@ -1291,111 +1056,19 @@ extension GloryApi_DeleteGoverDeptResponse: SwiftProtobuf.Message, SwiftProtobuf
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: GloryApi_DeleteGoverDeptResponse, rhs: GloryApi_DeleteGoverDeptResponse) -> Bool {
+  static func ==(lhs: GloryApi_UpdateTenantDeptResponse, rhs: GloryApi_UpdateTenantDeptResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension GloryApi_EduOffice: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".EduOffice"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "tenant_id"),
-    2: .standard(proto: "gover_dept_id"),
-    3: .standard(proto: "edu_office_id"),
-    4: .standard(proto: "edu_office_name"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.goverDeptID) }()
-      case 3: try { try decoder.decodeSingularInt64Field(value: &self.eduOfficeID) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.eduOfficeName) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.tenantID != 0 {
-      try visitor.visitSingularInt64Field(value: self.tenantID, fieldNumber: 1)
-    }
-    if self.goverDeptID != 0 {
-      try visitor.visitSingularInt64Field(value: self.goverDeptID, fieldNumber: 2)
-    }
-    if self.eduOfficeID != 0 {
-      try visitor.visitSingularInt64Field(value: self.eduOfficeID, fieldNumber: 3)
-    }
-    if !self.eduOfficeName.isEmpty {
-      try visitor.visitSingularStringField(value: self.eduOfficeName, fieldNumber: 4)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: GloryApi_EduOffice, rhs: GloryApi_EduOffice) -> Bool {
-    if lhs.tenantID != rhs.tenantID {return false}
-    if lhs.goverDeptID != rhs.goverDeptID {return false}
-    if lhs.eduOfficeID != rhs.eduOfficeID {return false}
-    if lhs.eduOfficeName != rhs.eduOfficeName {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension GloryApi_CreateEduOfficeRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".CreateEduOfficeRequest"
+extension GloryApi_GetTenantDeptRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetTenantDeptRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
-    2: .standard(proto: "edu_office"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularMessageField(value: &self._eduOffice) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._baseRequest {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    try { if let v = self._eduOffice {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: GloryApi_CreateEduOfficeRequest, rhs: GloryApi_CreateEduOfficeRequest) -> Bool {
-    if lhs._baseRequest != rhs._baseRequest {return false}
-    if lhs._eduOffice != rhs._eduOffice {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension GloryApi_CreateEduOfficeResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".CreateEduOfficeResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "base_resp"),
     2: .standard(proto: "tenant_id"),
-    3: .standard(proto: "edu_office_id"),
+    3: .standard(proto: "dept_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1404,9 +1077,9 @@ extension GloryApi_CreateEduOfficeResponse: SwiftProtobuf.Message, SwiftProtobuf
       // allocates stack space for every case branch when no optimizations are
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
-      case 3: try { try decoder.decodeSingularInt64Field(value: &self.eduOfficeID) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.deptID) }()
       default: break
       }
     }
@@ -1417,73 +1090,32 @@ extension GloryApi_CreateEduOfficeResponse: SwiftProtobuf.Message, SwiftProtobuf
     // allocates stack space for every if/case branch local when no optimizations
     // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
     // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._baseResp {
+    try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
     if self.tenantID != 0 {
       try visitor.visitSingularInt64Field(value: self.tenantID, fieldNumber: 2)
     }
-    if self.eduOfficeID != 0 {
-      try visitor.visitSingularInt64Field(value: self.eduOfficeID, fieldNumber: 3)
+    if self.deptID != 0 {
+      try visitor.visitSingularInt64Field(value: self.deptID, fieldNumber: 3)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: GloryApi_CreateEduOfficeResponse, rhs: GloryApi_CreateEduOfficeResponse) -> Bool {
-    if lhs._baseResp != rhs._baseResp {return false}
-    if lhs.tenantID != rhs.tenantID {return false}
-    if lhs.eduOfficeID != rhs.eduOfficeID {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension GloryApi_UpdateEduOfficeRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".UpdateEduOfficeRequest"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "base_request"),
-    2: .standard(proto: "edu_office"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularMessageField(value: &self._eduOffice) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._baseRequest {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    try { if let v = self._eduOffice {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: GloryApi_UpdateEduOfficeRequest, rhs: GloryApi_UpdateEduOfficeRequest) -> Bool {
+  static func ==(lhs: GloryApi_GetTenantDeptRequest, rhs: GloryApi_GetTenantDeptRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
-    if lhs._eduOffice != rhs._eduOffice {return false}
+    if lhs.tenantID != rhs.tenantID {return false}
+    if lhs.deptID != rhs.deptID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension GloryApi_UpdateEduOfficeResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".UpdateEduOfficeResponse"
+extension GloryApi_GetTenantDeptResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetTenantDeptResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
+    2: .standard(proto: "tenant_dept"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1493,6 +1125,7 @@ extension GloryApi_UpdateEduOfficeResponse: SwiftProtobuf.Message, SwiftProtobuf
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._tenantDept) }()
       default: break
       }
     }
@@ -1506,192 +1139,88 @@ extension GloryApi_UpdateEduOfficeResponse: SwiftProtobuf.Message, SwiftProtobuf
     try { if let v = self._baseResp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: GloryApi_UpdateEduOfficeResponse, rhs: GloryApi_UpdateEduOfficeResponse) -> Bool {
-    if lhs._baseResp != rhs._baseResp {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension GloryApi_DeleteEduOfficeRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".DeleteEduOfficeRequest"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "base_request"),
-    2: .standard(proto: "edu_office_id"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.eduOfficeID) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._baseRequest {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    if self.eduOfficeID != 0 {
-      try visitor.visitSingularInt64Field(value: self.eduOfficeID, fieldNumber: 2)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: GloryApi_DeleteEduOfficeRequest, rhs: GloryApi_DeleteEduOfficeRequest) -> Bool {
-    if lhs._baseRequest != rhs._baseRequest {return false}
-    if lhs.eduOfficeID != rhs.eduOfficeID {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension GloryApi_DeleteEduOfficeResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".DeleteEduOfficeResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "base_resp"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._baseResp {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: GloryApi_DeleteEduOfficeResponse, rhs: GloryApi_DeleteEduOfficeResponse) -> Bool {
-    if lhs._baseResp != rhs._baseResp {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension GloryApi_PrincipalOffice: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".PrincipalOffice"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "tenant_id"),
-    2: .standard(proto: "gover_dept_id"),
-    3: .standard(proto: "principal_office_id"),
-    4: .standard(proto: "principal_office_name"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.goverDeptID) }()
-      case 3: try { try decoder.decodeSingularInt64Field(value: &self.principalOfficeID) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.principalOfficeName) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.tenantID != 0 {
-      try visitor.visitSingularInt64Field(value: self.tenantID, fieldNumber: 1)
-    }
-    if self.goverDeptID != 0 {
-      try visitor.visitSingularInt64Field(value: self.goverDeptID, fieldNumber: 2)
-    }
-    if self.principalOfficeID != 0 {
-      try visitor.visitSingularInt64Field(value: self.principalOfficeID, fieldNumber: 3)
-    }
-    if !self.principalOfficeName.isEmpty {
-      try visitor.visitSingularStringField(value: self.principalOfficeName, fieldNumber: 4)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: GloryApi_PrincipalOffice, rhs: GloryApi_PrincipalOffice) -> Bool {
-    if lhs.tenantID != rhs.tenantID {return false}
-    if lhs.goverDeptID != rhs.goverDeptID {return false}
-    if lhs.principalOfficeID != rhs.principalOfficeID {return false}
-    if lhs.principalOfficeName != rhs.principalOfficeName {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension GloryApi_CreatePrincipalOfficeRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".CreatePrincipalOfficeRequest"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "base_request"),
-    2: .standard(proto: "principal_office"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularMessageField(value: &self._principalOffice) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._baseRequest {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    try { if let v = self._principalOffice {
+    try { if let v = self._tenantDept {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
     } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: GloryApi_CreatePrincipalOfficeRequest, rhs: GloryApi_CreatePrincipalOfficeRequest) -> Bool {
-    if lhs._baseRequest != rhs._baseRequest {return false}
-    if lhs._principalOffice != rhs._principalOffice {return false}
+  static func ==(lhs: GloryApi_GetTenantDeptResponse, rhs: GloryApi_GetTenantDeptResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs._tenantDept != rhs._tenantDept {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension GloryApi_CreatePrincipalOfficeResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".CreatePrincipalOfficeResponse"
+extension GloryApi_TenantUser: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".TenantUser"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "base_resp"),
+    1: .standard(proto: "tenant_user_id"),
+    2: .standard(proto: "user_id"),
+    4: .same(proto: "phone"),
+    5: .same(proto: "name"),
+    6: .same(proto: "user"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.tenantUserID) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.userID) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.phone) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.name) }()
+      case 6: try { try decoder.decodeSingularMessageField(value: &self._user) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    if self.tenantUserID != 0 {
+      try visitor.visitSingularInt64Field(value: self.tenantUserID, fieldNumber: 1)
+    }
+    if self.userID != 0 {
+      try visitor.visitSingularInt64Field(value: self.userID, fieldNumber: 2)
+    }
+    if !self.phone.isEmpty {
+      try visitor.visitSingularStringField(value: self.phone, fieldNumber: 4)
+    }
+    if !self.name.isEmpty {
+      try visitor.visitSingularStringField(value: self.name, fieldNumber: 5)
+    }
+    try { if let v = self._user {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_TenantUser, rhs: GloryApi_TenantUser) -> Bool {
+    if lhs.tenantUserID != rhs.tenantUserID {return false}
+    if lhs.userID != rhs.userID {return false}
+    if lhs.phone != rhs.phone {return false}
+    if lhs.name != rhs.name {return false}
+    if lhs._user != rhs._user {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_CreateTenantUserRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".CreateTenantUserRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
     2: .standard(proto: "tenant_id"),
-    3: .standard(proto: "principal_office_id"),
+    3: .standard(proto: "dept_id"),
+    4: .standard(proto: "role_id"),
+    5: .same(proto: "users"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1700,9 +1229,11 @@ extension GloryApi_CreatePrincipalOfficeResponse: SwiftProtobuf.Message, SwiftPr
       // allocates stack space for every case branch when no optimizations are
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
-      case 3: try { try decoder.decodeSingularInt64Field(value: &self.principalOfficeID) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.deptID) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.roleID) }()
+      case 5: try { try decoder.decodeRepeatedMessageField(value: &self.users) }()
       default: break
       }
     }
@@ -1713,32 +1244,82 @@ extension GloryApi_CreatePrincipalOfficeResponse: SwiftProtobuf.Message, SwiftPr
     // allocates stack space for every if/case branch local when no optimizations
     // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
     // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._baseResp {
+    try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
     if self.tenantID != 0 {
       try visitor.visitSingularInt64Field(value: self.tenantID, fieldNumber: 2)
     }
-    if self.principalOfficeID != 0 {
-      try visitor.visitSingularInt64Field(value: self.principalOfficeID, fieldNumber: 3)
+    if self.deptID != 0 {
+      try visitor.visitSingularInt64Field(value: self.deptID, fieldNumber: 3)
+    }
+    if self.roleID != 0 {
+      try visitor.visitSingularInt64Field(value: self.roleID, fieldNumber: 4)
+    }
+    if !self.users.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.users, fieldNumber: 5)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: GloryApi_CreatePrincipalOfficeResponse, rhs: GloryApi_CreatePrincipalOfficeResponse) -> Bool {
-    if lhs._baseResp != rhs._baseResp {return false}
+  static func ==(lhs: GloryApi_CreateTenantUserRequest, rhs: GloryApi_CreateTenantUserRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.tenantID != rhs.tenantID {return false}
-    if lhs.principalOfficeID != rhs.principalOfficeID {return false}
+    if lhs.deptID != rhs.deptID {return false}
+    if lhs.roleID != rhs.roleID {return false}
+    if lhs.users != rhs.users {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension GloryApi_UpdatePrincipalOfficeRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".UpdatePrincipalOfficeRequest"
+extension GloryApi_CreateTenantUserResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".CreateTenantUserResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .standard(proto: "tenant_users"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeMapField(fieldType: SwiftProtobuf._ProtobufMap<SwiftProtobuf.ProtobufInt64,SwiftProtobuf.ProtobufString>.self, value: &self.tenantUsers) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if !self.tenantUsers.isEmpty {
+      try visitor.visitMapField(fieldType: SwiftProtobuf._ProtobufMap<SwiftProtobuf.ProtobufInt64,SwiftProtobuf.ProtobufString>.self, value: self.tenantUsers, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_CreateTenantUserResponse, rhs: GloryApi_CreateTenantUserResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.tenantUsers != rhs.tenantUsers {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_DeleteTenantUserRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".DeleteTenantUserRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
-    2: .standard(proto: "principal_office"),
+    2: .standard(proto: "tenant_user_ids"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1748,7 +1329,7 @@ extension GloryApi_UpdatePrincipalOfficeRequest: SwiftProtobuf.Message, SwiftPro
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularMessageField(value: &self._principalOffice) }()
+      case 2: try { try decoder.decodeRepeatedInt64Field(value: &self.tenantUserIds) }()
       default: break
       }
     }
@@ -1762,22 +1343,22 @@ extension GloryApi_UpdatePrincipalOfficeRequest: SwiftProtobuf.Message, SwiftPro
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    try { if let v = self._principalOffice {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    if !self.tenantUserIds.isEmpty {
+      try visitor.visitPackedInt64Field(value: self.tenantUserIds, fieldNumber: 2)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: GloryApi_UpdatePrincipalOfficeRequest, rhs: GloryApi_UpdatePrincipalOfficeRequest) -> Bool {
+  static func ==(lhs: GloryApi_DeleteTenantUserRequest, rhs: GloryApi_DeleteTenantUserRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
-    if lhs._principalOffice != rhs._principalOffice {return false}
+    if lhs.tenantUserIds != rhs.tenantUserIds {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension GloryApi_UpdatePrincipalOfficeResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".UpdatePrincipalOfficeResponse"
+extension GloryApi_DeleteTenantUserResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".DeleteTenantUserResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
   ]
@@ -1805,59 +1386,94 @@ extension GloryApi_UpdatePrincipalOfficeResponse: SwiftProtobuf.Message, SwiftPr
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: GloryApi_UpdatePrincipalOfficeResponse, rhs: GloryApi_UpdatePrincipalOfficeResponse) -> Bool {
+  static func ==(lhs: GloryApi_DeleteTenantUserResponse, rhs: GloryApi_DeleteTenantUserResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension GloryApi_DeletePrincipalOfficeRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".DeletePrincipalOfficeRequest"
+extension GloryApi_UpdateTenantUserRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".UpdateTenantUserRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
-    2: .standard(proto: "principal_office_id"),
+    2: .same(proto: "user"),
   ]
 
+  fileprivate class _StorageClass {
+    var _baseRequest: Base_BaseRequest? = nil
+    var _user: GloryApi_TenantUser? = nil
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _baseRequest = source._baseRequest
+      _user = source._user
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.principalOfficeID) }()
-      default: break
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        // The use of inline closures is to circumvent an issue where the compiler
+        // allocates stack space for every case branch when no optimizations are
+        // enabled. https://github.com/apple/swift-protobuf/issues/1034
+        switch fieldNumber {
+        case 1: try { try decoder.decodeSingularMessageField(value: &_storage._baseRequest) }()
+        case 2: try { try decoder.decodeSingularMessageField(value: &_storage._user) }()
+        default: break
+        }
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._baseRequest {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    if self.principalOfficeID != 0 {
-      try visitor.visitSingularInt64Field(value: self.principalOfficeID, fieldNumber: 2)
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
+      try { if let v = _storage._baseRequest {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+      } }()
+      try { if let v = _storage._user {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+      } }()
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: GloryApi_DeletePrincipalOfficeRequest, rhs: GloryApi_DeletePrincipalOfficeRequest) -> Bool {
-    if lhs._baseRequest != rhs._baseRequest {return false}
-    if lhs.principalOfficeID != rhs.principalOfficeID {return false}
+  static func ==(lhs: GloryApi_UpdateTenantUserRequest, rhs: GloryApi_UpdateTenantUserRequest) -> Bool {
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._baseRequest != rhs_storage._baseRequest {return false}
+        if _storage._user != rhs_storage._user {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension GloryApi_DeletePrincipalOfficeResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".DeletePrincipalOfficeResponse"
+extension GloryApi_UpdateTenantUserResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".UpdateTenantUserResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
+    2: .standard(proto: "tenant_user_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1867,6 +1483,7 @@ extension GloryApi_DeletePrincipalOfficeResponse: SwiftProtobuf.Message, SwiftPr
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.tenantUserID) }()
       default: break
       }
     }
@@ -1880,11 +1497,241 @@ extension GloryApi_DeletePrincipalOfficeResponse: SwiftProtobuf.Message, SwiftPr
     try { if let v = self._baseResp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
+    if self.tenantUserID != 0 {
+      try visitor.visitSingularInt64Field(value: self.tenantUserID, fieldNumber: 2)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: GloryApi_DeletePrincipalOfficeResponse, rhs: GloryApi_DeletePrincipalOfficeResponse) -> Bool {
+  static func ==(lhs: GloryApi_UpdateTenantUserResponse, rhs: GloryApi_UpdateTenantUserResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.tenantUserID != rhs.tenantUserID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetTenantUserRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetTenantUserRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    2: .standard(proto: "tenant_user_id"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.tenantUserID) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if self.tenantUserID != 0 {
+      try visitor.visitSingularInt64Field(value: self.tenantUserID, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetTenantUserRequest, rhs: GloryApi_GetTenantUserRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.tenantUserID != rhs.tenantUserID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetTenantUserResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetTenantUserResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .same(proto: "user"),
+  ]
+
+  fileprivate class _StorageClass {
+    var _baseResp: Base_BaseResponse? = nil
+    var _user: GloryApi_TenantUser? = nil
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _baseResp = source._baseResp
+      _user = source._user
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        // The use of inline closures is to circumvent an issue where the compiler
+        // allocates stack space for every case branch when no optimizations are
+        // enabled. https://github.com/apple/swift-protobuf/issues/1034
+        switch fieldNumber {
+        case 1: try { try decoder.decodeSingularMessageField(value: &_storage._baseResp) }()
+        case 2: try { try decoder.decodeSingularMessageField(value: &_storage._user) }()
+        default: break
+        }
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
+      try { if let v = _storage._baseResp {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+      } }()
+      try { if let v = _storage._user {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+      } }()
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetTenantUserResponse, rhs: GloryApi_GetTenantUserResponse) -> Bool {
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._baseResp != rhs_storage._baseResp {return false}
+        if _storage._user != rhs_storage._user {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_ListTenantUserRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ListTenantUserRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    2: .standard(proto: "tenant_id"),
+    3: .standard(proto: "dept_id"),
+    4: .same(proto: "name"),
+    100: .same(proto: "pagination"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.deptID) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.name) }()
+      case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if self.tenantID != 0 {
+      try visitor.visitSingularInt64Field(value: self.tenantID, fieldNumber: 2)
+    }
+    if self.deptID != 0 {
+      try visitor.visitSingularInt64Field(value: self.deptID, fieldNumber: 3)
+    }
+    if !self.name.isEmpty {
+      try visitor.visitSingularStringField(value: self.name, fieldNumber: 4)
+    }
+    try { if let v = self._pagination {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ListTenantUserRequest, rhs: GloryApi_ListTenantUserRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.tenantID != rhs.tenantID {return false}
+    if lhs.deptID != rhs.deptID {return false}
+    if lhs.name != rhs.name {return false}
+    if lhs._pagination != rhs._pagination {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_ListTenantUserResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ListTenantUserResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .same(proto: "users"),
+    100: .same(proto: "pagination"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.users) }()
+      case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if !self.users.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.users, fieldNumber: 2)
+    }
+    try { if let v = self._pagination {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ListTenantUserResponse, rhs: GloryApi_ListTenantUserResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.users != rhs.users {return false}
+    if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

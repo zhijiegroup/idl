@@ -32,7 +32,6 @@ import * as account_operation from "./account/account_operation";
 import * as virtual_currency from "./currency/virtual_currency";
 import * as tenant from "./tenant/tenant";
 import * as tenant_dept from "./tenant/tenant_dept";
-import * as student from "./tenant/student";
 import * as short_video from "./short_video/short_video";
 export {
   user,
@@ -65,7 +64,6 @@ export {
   virtual_currency,
   tenant,
   tenant_dept,
-  student,
   short_video,
 };
 
@@ -738,125 +736,47 @@ CreateLivePlanProduct create live plan product */
     request: tenant.GetTenantOrgRequest
   ): Promise<tenant.GetTenantOrgResponse>;
 
-  /** college */
-  CreateCollege(
-    request: tenant.CreateCollegeRequest
-  ): Promise<tenant.CreateCollegeResponse>;
+  /** tenant_dept */
+  CreateTenantDept(
+    request: tenant_dept.CreateTenantDeptRequest
+  ): Promise<tenant_dept.CreateTenantDeptResponse>;
 
-  GetCollege(
-    request: tenant.GetCollegeRequest
-  ): Promise<tenant.GetCollegeResponse>;
+  UpdateTenantDept(
+    request: tenant_dept.UpdateTenantDeptRequest
+  ): Promise<tenant_dept.UpdateTenantDeptResponse>;
 
-  UpdateCollege(
-    request: tenant.UpdateCollegeRequest
-  ): Promise<tenant.UpdateCollegeResponse>;
+  DeleteTenantDept(
+    request: tenant_dept.DeleteTenantDeptRequest
+  ): Promise<tenant_dept.DeleteTenantDeptResponse>;
 
-  DeleteCollege(
-    request: tenant.DeleteCollegeRequest
-  ): Promise<tenant.DeleteCollegeResponse>;
+  GetTenantDept(
+    request: tenant_dept.GetTenantDeptRequest
+  ): Promise<tenant_dept.GetTenantDeptResponse>;
 
-  ListCollege(
-    request: tenant.ListCollegeRequest
-  ): Promise<tenant.ListCollegeResponse>;
+  GetTenantDeptType(
+    request: tenant_dept.GetTenantDeptTypeRequest
+  ): Promise<tenant_dept.GetTenantDeptTypeResponse>;
 
-  /** edu_dept */
-  CreateEduDept(
-    request: tenant_dept.CreateEduDeptRequest
-  ): Promise<tenant_dept.CreateEduDeptResponse>;
+  /** tenant_user */
+  CreateTenantUser(
+    request: tenant_dept.CreateTenantUserRequest
+  ): Promise<tenant_dept.CreateTenantUserResponse>;
 
-  UpdateEduDept(
-    request: tenant_dept.UpdateEduDeptRequest
-  ): Promise<tenant_dept.UpdateEduDeptResponse>;
+  UpdateTenantUser(
+    request: tenant_dept.UpdateTenantUserRequest
+  ): Promise<tenant_dept.UpdateTenantUserResponse>;
 
-  DeleteEduDept(
-    request: tenant_dept.DeleteEduDeptRequest
-  ): Promise<tenant_dept.DeleteEduDeptResponse>;
+  DeleteTenantUser(
+    request: tenant_dept.DeleteTenantUserRequest
+  ): Promise<tenant_dept.DeleteTenantUserResponse>;
 
-  /** gover_dept */
-  CreateGoverDept(
-    request: tenant_dept.CreateGoverDeptRequest
-  ): Promise<tenant_dept.CreateGoverDeptResponse>;
+  GetTenantUser(
+    request: tenant_dept.GetTenantUserRequest
+  ): Promise<tenant_dept.GetTenantUserResponse>;
 
-  UpdateGoverDept(
-    request: tenant_dept.UpdateGoverDeptRequest
-  ): Promise<tenant_dept.UpdateGoverDeptResponse>;
-
-  DeleteGoverDept(
-    request: tenant_dept.DeleteGoverDeptRequest
-  ): Promise<tenant_dept.DeleteGoverDeptResponse>;
-
-  /** edu_office */
-  CreateEduOffice(
-    request: tenant_dept.CreateEduOfficeRequest
-  ): Promise<tenant_dept.CreateEduOfficeResponse>;
-
-  UpdateEduOffice(
-    request: tenant_dept.UpdateEduOfficeRequest
-  ): Promise<tenant_dept.UpdateEduOfficeResponse>;
-
-  DeleteEduOffice(
-    request: tenant_dept.DeleteEduOfficeRequest
-  ): Promise<tenant_dept.DeleteEduOfficeResponse>;
-
-  /** principal_office */
-  CreatePrincipalOffice(
-    request: tenant_dept.CreatePrincipalOfficeRequest
-  ): Promise<tenant_dept.CreatePrincipalOfficeResponse>;
-
-  UpdatePrincipalOffice(
-    request: tenant_dept.UpdatePrincipalOfficeRequest
-  ): Promise<tenant_dept.UpdatePrincipalOfficeResponse>;
-
-  DeletePrincipalOffice(
-    request: tenant_dept.DeletePrincipalOfficeRequest
-  ): Promise<tenant_dept.DeletePrincipalOfficeResponse>;
-
-  /** major */
-  CreateMajor(
-    request: tenant.CreateMajorRequest
-  ): Promise<tenant.CreateMajorResponse>;
-
-  GetMajor(request: tenant.GetMajorRequest): Promise<tenant.GetMajorResponse>;
-
-  UpdateMajor(
-    request: tenant.UpdateMajorRequest
-  ): Promise<tenant.UpdateMajorResponse>;
-
-  DeleteMajor(
-    request: tenant.DeleteMajorRequest
-  ): Promise<tenant.DeleteMajorResponse>;
-
-  ListMajor(
-    request: tenant.ListMajorRequest
-  ): Promise<tenant.ListMajorResponse>;
-
-  /** class */
-  CreateClass(
-    request: tenant.CreateClassRequest
-  ): Promise<tenant.CreateClassResponse>;
-
-  GetClass(request: tenant.GetClassRequest): Promise<tenant.GetClassResponse>;
-
-  UpdateClass(
-    request: tenant.UpdateClassRequest
-  ): Promise<tenant.UpdateClassResponse>;
-
-  DeleteClass(
-    request: tenant.DeleteClassRequest
-  ): Promise<tenant.DeleteClassResponse>;
-
-  ListClass(
-    request: tenant.ListClassRequest
-  ): Promise<tenant.ListClassResponse>;
-
-  /** student */
-  CreateStudents(
-    request: student.CreateStudentsRequest
-  ): Promise<student.CreateStudentsResponse>;
-
-  DeleteStudents(
-    request: student.DeleteStudentsRequest
-  ): Promise<student.DeleteStudentsResponse>;
+  ListTenantUser(
+    request: tenant_dept.ListTenantUserRequest
+  ): Promise<tenant_dept.ListTenantUserResponse>;
 
   /** short_video */
   CreateShortVideo(

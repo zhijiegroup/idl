@@ -3,409 +3,1026 @@
 
 package com.zhijiejiaoyu.glory_api.tenant;
 
-public final class TenantDept {
-  private TenantDept() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
+/**
+ * Protobuf type {@code glory_api.TenantDept}
+ */
+public final class TenantDept extends
+    com.google.protobuf.GeneratedMessageV3 implements
+    // @@protoc_insertion_point(message_implements:glory_api.TenantDept)
+    TenantDeptOrBuilder {
+private static final long serialVersionUID = 0L;
+  // Use TenantDept.newBuilder() to construct.
+  private TenantDept(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    super(builder);
+  }
+  private TenantDept() {
+    deptName = "";
+    deptType = "";
+    deptOverview = "";
   }
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new TenantDept();
   }
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_EduDept_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_EduDept_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_CreateEduDeptRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_CreateEduDeptRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_CreateEduDeptResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_CreateEduDeptResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_DeleteEduDeptRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_DeleteEduDeptRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_DeleteEduDeptResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_DeleteEduDeptResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_UpdateEduDeptRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_UpdateEduDeptRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_UpdateEduDeptResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_UpdateEduDeptResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_GoverDept_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_GoverDept_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_CreateGoverDeptRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_CreateGoverDeptRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_CreateGoverDeptResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_CreateGoverDeptResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_UpdateGoverDeptRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_UpdateGoverDeptRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_UpdateGoverDeptResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_UpdateGoverDeptResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_DeleteGoverDeptRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_DeleteGoverDeptRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_DeleteGoverDeptResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_DeleteGoverDeptResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_EduOffice_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_EduOffice_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_CreateEduOfficeRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_CreateEduOfficeRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_CreateEduOfficeResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_CreateEduOfficeResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_UpdateEduOfficeRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_UpdateEduOfficeRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_UpdateEduOfficeResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_UpdateEduOfficeResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_DeleteEduOfficeRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_DeleteEduOfficeRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_DeleteEduOfficeResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_DeleteEduOfficeResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_PrincipalOffice_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_PrincipalOffice_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_CreatePrincipalOfficeRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_CreatePrincipalOfficeRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_CreatePrincipalOfficeResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_CreatePrincipalOfficeResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_UpdatePrincipalOfficeRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_UpdatePrincipalOfficeRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_UpdatePrincipalOfficeResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_UpdatePrincipalOfficeResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_DeletePrincipalOfficeRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_DeletePrincipalOfficeRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_DeletePrincipalOfficeResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_DeletePrincipalOfficeResponse_fieldAccessorTable;
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet
+  getUnknownFields() {
+    return this.unknownFields;
+  }
+  private TenantDept(
+      com.google.protobuf.CodedInputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
+    try {
+      boolean done = false;
+      while (!done) {
+        int tag = input.readTag();
+        switch (tag) {
+          case 0:
+            done = true;
+            break;
+          case 8: {
+
+            deptId = input.readInt64();
+            break;
+          }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            deptName = s;
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            deptType = s;
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            deptOverview = s;
+            break;
+          }
+          case 40: {
+
+            tenantId = input.readInt64();
+            break;
+          }
+          case 48: {
+
+            parentId = input.readInt64();
+            break;
+          }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
+        }
+      }
+    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+      throw e.setUnfinishedMessage(this);
+    } catch (java.io.IOException e) {
+      throw new com.google.protobuf.InvalidProtocolBufferException(
+          e).setUnfinishedMessage(this);
+    } finally {
+      this.unknownFields = unknownFields.build();
+      makeExtensionsImmutable();
+    }
+  }
+  public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
-  static {
-    java.lang.String[] descriptorData = {
-      "\n\030tenant/tenant_dept.proto\022\tglory_api\032\nb" +
-      "ase.proto\"H\n\007EduDept\022\021\n\ttenant_id\030\001 \001(\003\022" +
-      "\023\n\013edu_dept_id\030\002 \001(\003\022\025\n\redu_dept_name\030\003 " +
-      "\001(\t\"e\n\024CreateEduDeptRequest\022\'\n\014base_requ" +
-      "est\030\001 \001(\0132\021.base.BaseRequest\022$\n\010edu_dept" +
-      "\030\002 \001(\0132\022.glory_api.EduDept\"S\n\025CreateEduD" +
-      "eptResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
-      "seResponse\022\023\n\013edu_dept_id\030\002 \001(\003\"T\n\024Delet" +
-      "eEduDeptRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
-      "base.BaseRequest\022\023\n\013edu_dept_id\030\002 \001(\003\">\n" +
-      "\025DeleteEduDeptResponse\022%\n\tbase_resp\030\001 \001(" +
-      "\0132\022.base.BaseResponse\"e\n\024UpdateEduDeptRe" +
-      "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
-      "equest\022$\n\010edu_dept\030\002 \001(\0132\022.glory_api.Edu" +
-      "Dept\">\n\025UpdateEduDeptResponse\022%\n\tbase_re" +
-      "sp\030\001 \001(\0132\022.base.BaseResponse\"N\n\tGoverDep" +
-      "t\022\021\n\ttenant_id\030\001 \001(\003\022\025\n\rgover_dept_id\030\002 " +
-      "\001(\003\022\027\n\017gover_dept_name\030\003 \001(\t\"k\n\026CreateGo" +
-      "verDeptRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
-      "ase.BaseRequest\022(\n\ngover_dept\030\002 \001(\0132\024.gl" +
-      "ory_api.GoverDept\"W\n\027CreateGoverDeptResp" +
-      "onse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespo" +
-      "nse\022\025\n\rgover_dept_id\030\002 \001(\003\"k\n\026UpdateGove" +
-      "rDeptRequest\022\'\n\014base_request\030\001 \001(\0132\021.bas" +
-      "e.BaseRequest\022(\n\ngover_dept\030\002 \001(\0132\024.glor" +
-      "y_api.GoverDept\"@\n\027UpdateGoverDeptRespon" +
-      "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
-      "e\"X\n\026DeleteGoverDeptRequest\022\'\n\014base_requ" +
-      "est\030\001 \001(\0132\021.base.BaseRequest\022\025\n\rgover_de" +
-      "pt_id\030\002 \001(\003\"@\n\027DeleteGoverDeptResponse\022%" +
-      "\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"e\n" +
-      "\tEduOffice\022\021\n\ttenant_id\030\001 \001(\003\022\025\n\rgover_d" +
-      "ept_id\030\002 \001(\003\022\025\n\redu_office_id\030\003 \001(\003\022\027\n\017e" +
-      "du_office_name\030\004 \001(\t\"k\n\026CreateEduOfficeR" +
-      "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
-      "Request\022(\n\nedu_office\030\002 \001(\0132\024.glory_api." +
-      "EduOffice\"j\n\027CreateEduOfficeResponse\022%\n\t" +
-      "base_resp\030\001 \001(\0132\022.base.BaseResponse\022\021\n\tt" +
-      "enant_id\030\002 \001(\003\022\025\n\redu_office_id\030\003 \001(\003\"k\n" +
-      "\026UpdateEduOfficeRequest\022\'\n\014base_request\030" +
-      "\001 \001(\0132\021.base.BaseRequest\022(\n\nedu_office\030\002" +
-      " \001(\0132\024.glory_api.EduOffice\"@\n\027UpdateEduO" +
-      "fficeResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
-      "BaseResponse\"X\n\026DeleteEduOfficeRequest\022\'" +
-      "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\022" +
-      "\025\n\redu_office_id\030\002 \001(\003\"@\n\027DeleteEduOffic" +
-      "eResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Base" +
-      "Response\"w\n\017PrincipalOffice\022\021\n\ttenant_id" +
-      "\030\001 \001(\003\022\025\n\rgover_dept_id\030\002 \001(\003\022\033\n\023princip" +
-      "al_office_id\030\003 \001(\003\022\035\n\025principal_office_n" +
-      "ame\030\004 \001(\t\"}\n\034CreatePrincipalOfficeReques" +
-      "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
-      "st\0224\n\020principal_office\030\002 \001(\0132\032.glory_api" +
-      ".PrincipalOffice\"v\n\035CreatePrincipalOffic" +
-      "eResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Base" +
-      "Response\022\021\n\ttenant_id\030\002 \001(\003\022\033\n\023principal" +
-      "_office_id\030\003 \001(\003\"}\n\034UpdatePrincipalOffic" +
-      "eRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
-      "seRequest\0224\n\020principal_office\030\002 \001(\0132\032.gl" +
-      "ory_api.PrincipalOffice\"F\n\035UpdatePrincip" +
-      "alOfficeResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
-      "se.BaseResponse\"d\n\034DeletePrincipalOffice" +
-      "Request\022\'\n\014base_request\030\001 \001(\0132\021.base.Bas" +
-      "eRequest\022\033\n\023principal_office_id\030\002 \001(\003\"F\n" +
-      "\035DeletePrincipalOfficeResponse\022%\n\tbase_r" +
-      "esp\030\001 \001(\0132\022.base.BaseResponseB%\n!com.zhi" +
-      "jiejiaoyu.glory_api.tenantP\001b\006proto3"
-    };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.zhijiejiaoyu.base.Base.getDescriptor(),
-        });
-    internal_static_glory_api_EduDept_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_glory_api_EduDept_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_EduDept_descriptor,
-        new java.lang.String[] { "TenantId", "EduDeptId", "EduDeptName", });
-    internal_static_glory_api_CreateEduDeptRequest_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_glory_api_CreateEduDeptRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_CreateEduDeptRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "EduDept", });
-    internal_static_glory_api_CreateEduDeptResponse_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_glory_api_CreateEduDeptResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_CreateEduDeptResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "EduDeptId", });
-    internal_static_glory_api_DeleteEduDeptRequest_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_glory_api_DeleteEduDeptRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_DeleteEduDeptRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "EduDeptId", });
-    internal_static_glory_api_DeleteEduDeptResponse_descriptor =
-      getDescriptor().getMessageTypes().get(4);
-    internal_static_glory_api_DeleteEduDeptResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_DeleteEduDeptResponse_descriptor,
-        new java.lang.String[] { "BaseResp", });
-    internal_static_glory_api_UpdateEduDeptRequest_descriptor =
-      getDescriptor().getMessageTypes().get(5);
-    internal_static_glory_api_UpdateEduDeptRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_UpdateEduDeptRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "EduDept", });
-    internal_static_glory_api_UpdateEduDeptResponse_descriptor =
-      getDescriptor().getMessageTypes().get(6);
-    internal_static_glory_api_UpdateEduDeptResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_UpdateEduDeptResponse_descriptor,
-        new java.lang.String[] { "BaseResp", });
-    internal_static_glory_api_GoverDept_descriptor =
-      getDescriptor().getMessageTypes().get(7);
-    internal_static_glory_api_GoverDept_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_GoverDept_descriptor,
-        new java.lang.String[] { "TenantId", "GoverDeptId", "GoverDeptName", });
-    internal_static_glory_api_CreateGoverDeptRequest_descriptor =
-      getDescriptor().getMessageTypes().get(8);
-    internal_static_glory_api_CreateGoverDeptRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_CreateGoverDeptRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "GoverDept", });
-    internal_static_glory_api_CreateGoverDeptResponse_descriptor =
-      getDescriptor().getMessageTypes().get(9);
-    internal_static_glory_api_CreateGoverDeptResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_CreateGoverDeptResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "GoverDeptId", });
-    internal_static_glory_api_UpdateGoverDeptRequest_descriptor =
-      getDescriptor().getMessageTypes().get(10);
-    internal_static_glory_api_UpdateGoverDeptRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_UpdateGoverDeptRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "GoverDept", });
-    internal_static_glory_api_UpdateGoverDeptResponse_descriptor =
-      getDescriptor().getMessageTypes().get(11);
-    internal_static_glory_api_UpdateGoverDeptResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_UpdateGoverDeptResponse_descriptor,
-        new java.lang.String[] { "BaseResp", });
-    internal_static_glory_api_DeleteGoverDeptRequest_descriptor =
-      getDescriptor().getMessageTypes().get(12);
-    internal_static_glory_api_DeleteGoverDeptRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_DeleteGoverDeptRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "GoverDeptId", });
-    internal_static_glory_api_DeleteGoverDeptResponse_descriptor =
-      getDescriptor().getMessageTypes().get(13);
-    internal_static_glory_api_DeleteGoverDeptResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_DeleteGoverDeptResponse_descriptor,
-        new java.lang.String[] { "BaseResp", });
-    internal_static_glory_api_EduOffice_descriptor =
-      getDescriptor().getMessageTypes().get(14);
-    internal_static_glory_api_EduOffice_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_EduOffice_descriptor,
-        new java.lang.String[] { "TenantId", "GoverDeptId", "EduOfficeId", "EduOfficeName", });
-    internal_static_glory_api_CreateEduOfficeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(15);
-    internal_static_glory_api_CreateEduOfficeRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_CreateEduOfficeRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "EduOffice", });
-    internal_static_glory_api_CreateEduOfficeResponse_descriptor =
-      getDescriptor().getMessageTypes().get(16);
-    internal_static_glory_api_CreateEduOfficeResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_CreateEduOfficeResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "TenantId", "EduOfficeId", });
-    internal_static_glory_api_UpdateEduOfficeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(17);
-    internal_static_glory_api_UpdateEduOfficeRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_UpdateEduOfficeRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "EduOffice", });
-    internal_static_glory_api_UpdateEduOfficeResponse_descriptor =
-      getDescriptor().getMessageTypes().get(18);
-    internal_static_glory_api_UpdateEduOfficeResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_UpdateEduOfficeResponse_descriptor,
-        new java.lang.String[] { "BaseResp", });
-    internal_static_glory_api_DeleteEduOfficeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(19);
-    internal_static_glory_api_DeleteEduOfficeRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_DeleteEduOfficeRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "EduOfficeId", });
-    internal_static_glory_api_DeleteEduOfficeResponse_descriptor =
-      getDescriptor().getMessageTypes().get(20);
-    internal_static_glory_api_DeleteEduOfficeResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_DeleteEduOfficeResponse_descriptor,
-        new java.lang.String[] { "BaseResp", });
-    internal_static_glory_api_PrincipalOffice_descriptor =
-      getDescriptor().getMessageTypes().get(21);
-    internal_static_glory_api_PrincipalOffice_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_PrincipalOffice_descriptor,
-        new java.lang.String[] { "TenantId", "GoverDeptId", "PrincipalOfficeId", "PrincipalOfficeName", });
-    internal_static_glory_api_CreatePrincipalOfficeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(22);
-    internal_static_glory_api_CreatePrincipalOfficeRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_CreatePrincipalOfficeRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "PrincipalOffice", });
-    internal_static_glory_api_CreatePrincipalOfficeResponse_descriptor =
-      getDescriptor().getMessageTypes().get(23);
-    internal_static_glory_api_CreatePrincipalOfficeResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_CreatePrincipalOfficeResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "TenantId", "PrincipalOfficeId", });
-    internal_static_glory_api_UpdatePrincipalOfficeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(24);
-    internal_static_glory_api_UpdatePrincipalOfficeRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_UpdatePrincipalOfficeRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "PrincipalOffice", });
-    internal_static_glory_api_UpdatePrincipalOfficeResponse_descriptor =
-      getDescriptor().getMessageTypes().get(25);
-    internal_static_glory_api_UpdatePrincipalOfficeResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_UpdatePrincipalOfficeResponse_descriptor,
-        new java.lang.String[] { "BaseResp", });
-    internal_static_glory_api_DeletePrincipalOfficeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(26);
-    internal_static_glory_api_DeletePrincipalOfficeRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_DeletePrincipalOfficeRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "PrincipalOfficeId", });
-    internal_static_glory_api_DeletePrincipalOfficeResponse_descriptor =
-      getDescriptor().getMessageTypes().get(27);
-    internal_static_glory_api_DeletePrincipalOfficeResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_DeletePrincipalOfficeResponse_descriptor,
-        new java.lang.String[] { "BaseResp", });
-    com.zhijiejiaoyu.base.Base.getDescriptor();
+    return com.zhijiejiaoyu.glory_api.tenant.TenantDeptOuterClass.internal_static_glory_api_TenantDept_descriptor;
   }
 
-  // @@protoc_insertion_point(outer_class_scope)
+  @java.lang.Override
+  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internalGetFieldAccessorTable() {
+    return com.zhijiejiaoyu.glory_api.tenant.TenantDeptOuterClass.internal_static_glory_api_TenantDept_fieldAccessorTable
+        .ensureFieldAccessorsInitialized(
+            com.zhijiejiaoyu.glory_api.tenant.TenantDept.class, com.zhijiejiaoyu.glory_api.tenant.TenantDept.Builder.class);
+  }
+
+  public static final int DEPT_ID_FIELD_NUMBER = 1;
+  private long deptId;
+  /**
+   * <code>int64 dept_id = 1;</code>
+   * @return The deptId.
+   */
+  @java.lang.Override
+  public long getDeptId() {
+    return deptId;
+  }
+
+  public static final int DEPT_NAME_FIELD_NUMBER = 2;
+  private volatile java.lang.Object deptName;
+  /**
+   * <code>string dept_name = 2;</code>
+   * @return The deptName.
+   */
+  @java.lang.Override
+  public java.lang.String getDeptName() {
+    java.lang.Object ref = deptName;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      deptName = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string dept_name = 2;</code>
+   * @return The bytes for deptName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getDeptNameBytes() {
+    java.lang.Object ref = deptName;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      deptName = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DEPT_TYPE_FIELD_NUMBER = 3;
+  private volatile java.lang.Object deptType;
+  /**
+   * <code>string dept_type = 3;</code>
+   * @return The deptType.
+   */
+  @java.lang.Override
+  public java.lang.String getDeptType() {
+    java.lang.Object ref = deptType;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      deptType = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string dept_type = 3;</code>
+   * @return The bytes for deptType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getDeptTypeBytes() {
+    java.lang.Object ref = deptType;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      deptType = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DEPT_OVERVIEW_FIELD_NUMBER = 4;
+  private volatile java.lang.Object deptOverview;
+  /**
+   * <code>string dept_overview = 4;</code>
+   * @return The deptOverview.
+   */
+  @java.lang.Override
+  public java.lang.String getDeptOverview() {
+    java.lang.Object ref = deptOverview;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      deptOverview = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string dept_overview = 4;</code>
+   * @return The bytes for deptOverview.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getDeptOverviewBytes() {
+    java.lang.Object ref = deptOverview;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      deptOverview = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TENANT_ID_FIELD_NUMBER = 5;
+  private long tenantId;
+  /**
+   * <code>int64 tenant_id = 5;</code>
+   * @return The tenantId.
+   */
+  @java.lang.Override
+  public long getTenantId() {
+    return tenantId;
+  }
+
+  public static final int PARENT_ID_FIELD_NUMBER = 6;
+  private long parentId;
+  /**
+   * <code>int64 parent_id = 6;</code>
+   * @return The parentId.
+   */
+  @java.lang.Override
+  public long getParentId() {
+    return parentId;
+  }
+
+  private byte memoizedIsInitialized = -1;
+  @java.lang.Override
+  public final boolean isInitialized() {
+    byte isInitialized = memoizedIsInitialized;
+    if (isInitialized == 1) return true;
+    if (isInitialized == 0) return false;
+
+    memoizedIsInitialized = 1;
+    return true;
+  }
+
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output)
+                      throws java.io.IOException {
+    if (deptId != 0L) {
+      output.writeInt64(1, deptId);
+    }
+    if (!getDeptNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, deptName);
+    }
+    if (!getDeptTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, deptType);
+    }
+    if (!getDeptOverviewBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, deptOverview);
+    }
+    if (tenantId != 0L) {
+      output.writeInt64(5, tenantId);
+    }
+    if (parentId != 0L) {
+      output.writeInt64(6, parentId);
+    }
+    unknownFields.writeTo(output);
+  }
+
+  @java.lang.Override
+  public int getSerializedSize() {
+    int size = memoizedSize;
+    if (size != -1) return size;
+
+    size = 0;
+    if (deptId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(1, deptId);
+    }
+    if (!getDeptNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, deptName);
+    }
+    if (!getDeptTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, deptType);
+    }
+    if (!getDeptOverviewBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, deptOverview);
+    }
+    if (tenantId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(5, tenantId);
+    }
+    if (parentId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(6, parentId);
+    }
+    size += unknownFields.getSerializedSize();
+    memoizedSize = size;
+    return size;
+  }
+
+  @java.lang.Override
+  public boolean equals(final java.lang.Object obj) {
+    if (obj == this) {
+     return true;
+    }
+    if (!(obj instanceof com.zhijiejiaoyu.glory_api.tenant.TenantDept)) {
+      return super.equals(obj);
+    }
+    com.zhijiejiaoyu.glory_api.tenant.TenantDept other = (com.zhijiejiaoyu.glory_api.tenant.TenantDept) obj;
+
+    if (getDeptId()
+        != other.getDeptId()) return false;
+    if (!getDeptName()
+        .equals(other.getDeptName())) return false;
+    if (!getDeptType()
+        .equals(other.getDeptType())) return false;
+    if (!getDeptOverview()
+        .equals(other.getDeptOverview())) return false;
+    if (getTenantId()
+        != other.getTenantId()) return false;
+    if (getParentId()
+        != other.getParentId()) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
+  }
+
+  @java.lang.Override
+  public int hashCode() {
+    if (memoizedHashCode != 0) {
+      return memoizedHashCode;
+    }
+    int hash = 41;
+    hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + DEPT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getDeptId());
+    hash = (37 * hash) + DEPT_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getDeptName().hashCode();
+    hash = (37 * hash) + DEPT_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getDeptType().hashCode();
+    hash = (37 * hash) + DEPT_OVERVIEW_FIELD_NUMBER;
+    hash = (53 * hash) + getDeptOverview().hashCode();
+    hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getTenantId());
+    hash = (37 * hash) + PARENT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getParentId());
+    hash = (29 * hash) + unknownFields.hashCode();
+    memoizedHashCode = hash;
+    return hash;
+  }
+
+  public static com.zhijiejiaoyu.glory_api.tenant.TenantDept parseFrom(
+      java.nio.ByteBuffer data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+  public static com.zhijiejiaoyu.glory_api.tenant.TenantDept parseFrom(
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
+  public static com.zhijiejiaoyu.glory_api.tenant.TenantDept parseFrom(
+      com.google.protobuf.ByteString data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+  public static com.zhijiejiaoyu.glory_api.tenant.TenantDept parseFrom(
+      com.google.protobuf.ByteString data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
+  public static com.zhijiejiaoyu.glory_api.tenant.TenantDept parseFrom(byte[] data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+  public static com.zhijiejiaoyu.glory_api.tenant.TenantDept parseFrom(
+      byte[] data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
+  public static com.zhijiejiaoyu.glory_api.tenant.TenantDept parseFrom(java.io.InputStream input)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
+  }
+  public static com.zhijiejiaoyu.glory_api.tenant.TenantDept parseFrom(
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
+  }
+  public static com.zhijiejiaoyu.glory_api.tenant.TenantDept parseDelimitedFrom(java.io.InputStream input)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input);
+  }
+  public static com.zhijiejiaoyu.glory_api.tenant.TenantDept parseDelimitedFrom(
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+  }
+  public static com.zhijiejiaoyu.glory_api.tenant.TenantDept parseFrom(
+      com.google.protobuf.CodedInputStream input)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
+  }
+  public static com.zhijiejiaoyu.glory_api.tenant.TenantDept parseFrom(
+      com.google.protobuf.CodedInputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
+  }
+
+  @java.lang.Override
+  public Builder newBuilderForType() { return newBuilder(); }
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+  public static Builder newBuilder(com.zhijiejiaoyu.glory_api.tenant.TenantDept prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE
+        ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    Builder builder = new Builder(parent);
+    return builder;
+  }
+  /**
+   * Protobuf type {@code glory_api.TenantDept}
+   */
+  public static final class Builder extends
+      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+      // @@protoc_insertion_point(builder_implements:glory_api.TenantDept)
+      com.zhijiejiaoyu.glory_api.tenant.TenantDeptOrBuilder {
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.zhijiejiaoyu.glory_api.tenant.TenantDeptOuterClass.internal_static_glory_api_TenantDept_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.zhijiejiaoyu.glory_api.tenant.TenantDeptOuterClass.internal_static_glory_api_TenantDept_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.zhijiejiaoyu.glory_api.tenant.TenantDept.class, com.zhijiejiaoyu.glory_api.tenant.TenantDept.Builder.class);
+    }
+
+    // Construct using com.zhijiejiaoyu.glory_api.tenant.TenantDept.newBuilder()
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
+
+    private Builder(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      super(parent);
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+      }
+    }
+    @java.lang.Override
+    public Builder clear() {
+      super.clear();
+      deptId = 0L;
+
+      deptName = "";
+
+      deptType = "";
+
+      deptOverview = "";
+
+      tenantId = 0L;
+
+      parentId = 0L;
+
+      return this;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor
+        getDescriptorForType() {
+      return com.zhijiejiaoyu.glory_api.tenant.TenantDeptOuterClass.internal_static_glory_api_TenantDept_descriptor;
+    }
+
+    @java.lang.Override
+    public com.zhijiejiaoyu.glory_api.tenant.TenantDept getDefaultInstanceForType() {
+      return com.zhijiejiaoyu.glory_api.tenant.TenantDept.getDefaultInstance();
+    }
+
+    @java.lang.Override
+    public com.zhijiejiaoyu.glory_api.tenant.TenantDept build() {
+      com.zhijiejiaoyu.glory_api.tenant.TenantDept result = buildPartial();
+      if (!result.isInitialized()) {
+        throw newUninitializedMessageException(result);
+      }
+      return result;
+    }
+
+    @java.lang.Override
+    public com.zhijiejiaoyu.glory_api.tenant.TenantDept buildPartial() {
+      com.zhijiejiaoyu.glory_api.tenant.TenantDept result = new com.zhijiejiaoyu.glory_api.tenant.TenantDept(this);
+      result.deptId = deptId;
+      result.deptName = deptName;
+      result.deptType = deptType;
+      result.deptOverview = deptOverview;
+      result.tenantId = tenantId;
+      result.parentId = parentId;
+      onBuilt();
+      return result;
+    }
+
+    @java.lang.Override
+    public Builder clone() {
+      return super.clone();
+    }
+    @java.lang.Override
+    public Builder setField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
+      return super.setField(field, value);
+    }
+    @java.lang.Override
+    public Builder clearField(
+        com.google.protobuf.Descriptors.FieldDescriptor field) {
+      return super.clearField(field);
+    }
+    @java.lang.Override
+    public Builder clearOneof(
+        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      return super.clearOneof(oneof);
+    }
+    @java.lang.Override
+    public Builder setRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        int index, java.lang.Object value) {
+      return super.setRepeatedField(field, index, value);
+    }
+    @java.lang.Override
+    public Builder addRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
+      return super.addRepeatedField(field, value);
+    }
+    @java.lang.Override
+    public Builder mergeFrom(com.google.protobuf.Message other) {
+      if (other instanceof com.zhijiejiaoyu.glory_api.tenant.TenantDept) {
+        return mergeFrom((com.zhijiejiaoyu.glory_api.tenant.TenantDept)other);
+      } else {
+        super.mergeFrom(other);
+        return this;
+      }
+    }
+
+    public Builder mergeFrom(com.zhijiejiaoyu.glory_api.tenant.TenantDept other) {
+      if (other == com.zhijiejiaoyu.glory_api.tenant.TenantDept.getDefaultInstance()) return this;
+      if (other.getDeptId() != 0L) {
+        setDeptId(other.getDeptId());
+      }
+      if (!other.getDeptName().isEmpty()) {
+        deptName = other.deptName;
+        onChanged();
+      }
+      if (!other.getDeptType().isEmpty()) {
+        deptType = other.deptType;
+        onChanged();
+      }
+      if (!other.getDeptOverview().isEmpty()) {
+        deptOverview = other.deptOverview;
+        onChanged();
+      }
+      if (other.getTenantId() != 0L) {
+        setTenantId(other.getTenantId());
+      }
+      if (other.getParentId() != 0L) {
+        setParentId(other.getParentId());
+      }
+      this.mergeUnknownFields(other.unknownFields);
+      onChanged();
+      return this;
+    }
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      return true;
+    }
+
+    @java.lang.Override
+    public Builder mergeFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      com.zhijiejiaoyu.glory_api.tenant.TenantDept parsedMessage = null;
+      try {
+        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        parsedMessage = (com.zhijiejiaoyu.glory_api.tenant.TenantDept) e.getUnfinishedMessage();
+        throw e.unwrapIOException();
+      } finally {
+        if (parsedMessage != null) {
+          mergeFrom(parsedMessage);
+        }
+      }
+      return this;
+    }
+
+    private long deptId_ ;
+    /**
+     * <code>int64 dept_id = 1;</code>
+     * @return The deptId.
+     */
+    @java.lang.Override
+    public long getDeptId() {
+      return deptId;
+    }
+    /**
+     * <code>int64 dept_id = 1;</code>
+     * @param value The deptId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeptId(long value) {
+      
+      deptId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 dept_id = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDeptId() {
+      
+      deptId = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object deptName = "";
+    /**
+     * <code>string dept_name = 2;</code>
+     * @return The deptName.
+     */
+    public java.lang.String getDeptName() {
+      java.lang.Object ref = deptName;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        deptName = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string dept_name = 2;</code>
+     * @return The bytes for deptName.
+     */
+    public com.google.protobuf.ByteString
+        getDeptNameBytes() {
+      java.lang.Object ref = deptName;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        deptName = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string dept_name = 2;</code>
+     * @param value The deptName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeptName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      deptName = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string dept_name = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDeptName() {
+      
+      deptName = getDefaultInstance().getDeptName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string dept_name = 2;</code>
+     * @param value The bytes for deptName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeptNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      deptName = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object deptType = "";
+    /**
+     * <code>string dept_type = 3;</code>
+     * @return The deptType.
+     */
+    public java.lang.String getDeptType() {
+      java.lang.Object ref = deptType;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        deptType = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string dept_type = 3;</code>
+     * @return The bytes for deptType.
+     */
+    public com.google.protobuf.ByteString
+        getDeptTypeBytes() {
+      java.lang.Object ref = deptType;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        deptType = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string dept_type = 3;</code>
+     * @param value The deptType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeptType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      deptType = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string dept_type = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDeptType() {
+      
+      deptType = getDefaultInstance().getDeptType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string dept_type = 3;</code>
+     * @param value The bytes for deptType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeptTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      deptType = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object deptOverview = "";
+    /**
+     * <code>string dept_overview = 4;</code>
+     * @return The deptOverview.
+     */
+    public java.lang.String getDeptOverview() {
+      java.lang.Object ref = deptOverview;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        deptOverview = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string dept_overview = 4;</code>
+     * @return The bytes for deptOverview.
+     */
+    public com.google.protobuf.ByteString
+        getDeptOverviewBytes() {
+      java.lang.Object ref = deptOverview;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        deptOverview = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string dept_overview = 4;</code>
+     * @param value The deptOverview to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeptOverview(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      deptOverview = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string dept_overview = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDeptOverview() {
+      
+      deptOverview = getDefaultInstance().getDeptOverview();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string dept_overview = 4;</code>
+     * @param value The bytes for deptOverview to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeptOverviewBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      deptOverview = value;
+      onChanged();
+      return this;
+    }
+
+    private long tenantId_ ;
+    /**
+     * <code>int64 tenant_id = 5;</code>
+     * @return The tenantId.
+     */
+    @java.lang.Override
+    public long getTenantId() {
+      return tenantId;
+    }
+    /**
+     * <code>int64 tenant_id = 5;</code>
+     * @param value The tenantId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTenantId(long value) {
+      
+      tenantId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 tenant_id = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTenantId() {
+      
+      tenantId = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long parentId_ ;
+    /**
+     * <code>int64 parent_id = 6;</code>
+     * @return The parentId.
+     */
+    @java.lang.Override
+    public long getParentId() {
+      return parentId;
+    }
+    /**
+     * <code>int64 parent_id = 6;</code>
+     * @param value The parentId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParentId(long value) {
+      
+      parentId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 parent_id = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearParentId() {
+      
+      parentId = 0L;
+      onChanged();
+      return this;
+    }
+    @java.lang.Override
+    public final Builder setUnknownFields(
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
+      return super.setUnknownFields(unknownFields);
+    }
+
+    @java.lang.Override
+    public final Builder mergeUnknownFields(
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
+      return super.mergeUnknownFields(unknownFields);
+    }
+
+
+    // @@protoc_insertion_point(builder_scope:glory_api.TenantDept)
+  }
+
+  // @@protoc_insertion_point(class_scope:glory_api.TenantDept)
+  private static final com.zhijiejiaoyu.glory_api.tenant.TenantDept DEFAULT_INSTANCE;
+  static {
+    DEFAULT_INSTANCE = new com.zhijiejiaoyu.glory_api.tenant.TenantDept();
+  }
+
+  public static com.zhijiejiaoyu.glory_api.tenant.TenantDept getDefaultInstance() {
+    return DEFAULT_INSTANCE;
+  }
+
+  private static final com.google.protobuf.Parser<TenantDept>
+      PARSER = new com.google.protobuf.AbstractParser<TenantDept>() {
+    @java.lang.Override
+    public TenantDept parsePartialFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return new TenantDept(input, extensionRegistry);
+    }
+  };
+
+  public static com.google.protobuf.Parser<TenantDept> parser() {
+    return PARSER;
+  }
+
+  @java.lang.Override
+  public com.google.protobuf.Parser<TenantDept> getParserForType() {
+    return PARSER;
+  }
+
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.tenant.TenantDept getDefaultInstanceForType() {
+    return DEFAULT_INSTANCE;
+  }
+
 }
+

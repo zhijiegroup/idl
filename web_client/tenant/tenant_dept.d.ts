@@ -3,147 +3,132 @@
 // @ts-nocheck
 
 import * as base from "../base";
-export { base };
+import * as user from "../user/user";
+export { base, user };
 
-export interface EduDept {
+export interface TenantDeptType {
+  label?: string;
+  value?: string;
+}
+
+export interface GetTenantDeptTypeRequest {
+  base_request?: base.BaseRequest;
+  value?: string;
+}
+
+export interface GetTenantDeptTypeResponse {
+  base_resp?: base.BaseResponse;
+  tenant_dept_type?: Array<TenantDeptType>;
+}
+
+export interface TenantDept {
+  dept_id?: string;
+  dept_name?: string;
+  dept_type?: string;
+  dept_overview?: string;
   tenant_id?: string;
-  edu_dept_id?: string;
-  edu_dept_name?: string;
+  parent_id?: string;
 }
 
-export interface CreateEduDeptRequest {
-  /** token */
+export interface CreateTenantDeptRequest {
   base_request?: base.BaseRequest;
-  edu_dept?: EduDept;
+  tenant_dept?: TenantDept;
 }
 
-export interface CreateEduDeptResponse {
-  base_resp?: base.BaseResponse;
-  edu_dept_id?: string;
-}
-
-export interface DeleteEduDeptRequest {
-  base_request?: base.BaseRequest;
-  edu_dept_id?: string;
-}
-
-export interface DeleteEduDeptResponse {
+export interface CreateTenantDeptResponse {
   base_resp?: base.BaseResponse;
 }
 
-export interface UpdateEduDeptRequest {
+export interface DeleteTenantDeptRequest {
   base_request?: base.BaseRequest;
-  edu_dept?: EduDept;
-}
-
-export interface UpdateEduDeptResponse {
-  base_resp?: base.BaseResponse;
-}
-
-export interface GoverDept {
+  dept_id?: string;
   tenant_id?: string;
-  gover_dept_id?: string;
-  gover_dept_name?: string;
 }
 
-export interface CreateGoverDeptRequest {
-  base_request?: base.BaseRequest;
-  gover_dept?: GoverDept;
-}
-
-export interface CreateGoverDeptResponse {
-  base_resp?: base.BaseResponse;
-  gover_dept_id?: string;
-}
-
-export interface UpdateGoverDeptRequest {
-  base_request?: base.BaseRequest;
-  gover_dept?: GoverDept;
-}
-
-export interface UpdateGoverDeptResponse {
+export interface DeleteTenantDeptResponse {
   base_resp?: base.BaseResponse;
 }
 
-export interface DeleteGoverDeptRequest {
+export interface UpdateTenantDeptRequest {
   base_request?: base.BaseRequest;
-  gover_dept_id?: string;
+  tenant_dept?: TenantDept;
 }
 
-export interface DeleteGoverDeptResponse {
+export interface UpdateTenantDeptResponse {
   base_resp?: base.BaseResponse;
 }
 
-export interface EduOffice {
+export interface GetTenantDeptRequest {
+  base_request?: base.BaseRequest;
   tenant_id?: string;
-  gover_dept_id?: string;
-  /** 创建不传 */
-  edu_office_id?: string;
-  edu_office_name?: string;
+  dept_id?: string;
 }
 
-export interface CreateEduOfficeRequest {
-  base_request?: base.BaseRequest;
-  edu_office?: EduOffice;
-}
-
-export interface CreateEduOfficeResponse {
+export interface GetTenantDeptResponse {
   base_resp?: base.BaseResponse;
+  tenant_dept?: TenantDept;
+}
+
+export interface TenantUser {
+  tenant_user_id?: string;
+  user_id?: string;
+  phone?: string;
+  name?: string;
+  user?: user.User;
+}
+
+export interface CreateTenantUserRequest {
+  base_request?: base.BaseRequest;
   tenant_id?: string;
-  edu_office_id?: string;
+  dept_id?: string;
+  role_id?: string;
+  users?: Array<TenantUser>;
 }
 
-export interface UpdateEduOfficeRequest {
+export interface CreateTenantUserResponse {
+  base_resp?: base.BaseResponse;
+  tenant_users?: { [key: string]: string };
+}
+
+export interface DeleteTenantUserRequest {
   base_request?: base.BaseRequest;
-  edu_office?: EduOffice;
+  tenant_user_ids?: Array<string>;
 }
 
-export interface UpdateEduOfficeResponse {
+export interface DeleteTenantUserResponse {
   base_resp?: base.BaseResponse;
 }
 
-export interface DeleteEduOfficeRequest {
+export interface UpdateTenantUserRequest {
   base_request?: base.BaseRequest;
-  edu_office_id?: string;
+  user?: TenantUser;
 }
 
-export interface DeleteEduOfficeResponse {
+export interface UpdateTenantUserResponse {
   base_resp?: base.BaseResponse;
+  tenant_user_id?: string;
 }
 
-export interface PrincipalOffice {
+export interface GetTenantUserRequest {
+  base_request?: base.BaseRequest;
+  tenant_user_id?: string;
+}
+
+export interface GetTenantUserResponse {
+  base_resp?: base.BaseResponse;
+  user?: TenantUser;
+}
+
+export interface ListTenantUserRequest {
+  base_request?: base.BaseRequest;
   tenant_id?: string;
-  gover_dept_id?: string;
-  /** 创建不传 */
-  principal_office_id?: string;
-  principal_office_name?: string;
+  dept_id?: string;
+  name?: string;
+  pagination?: base.PaginationRequest;
 }
 
-export interface CreatePrincipalOfficeRequest {
-  base_request?: base.BaseRequest;
-  principal_office?: PrincipalOffice;
-}
-
-export interface CreatePrincipalOfficeResponse {
+export interface ListTenantUserResponse {
   base_resp?: base.BaseResponse;
-  tenant_id?: string;
-  principal_office_id?: string;
-}
-
-export interface UpdatePrincipalOfficeRequest {
-  base_request?: base.BaseRequest;
-  principal_office?: PrincipalOffice;
-}
-
-export interface UpdatePrincipalOfficeResponse {
-  base_resp?: base.BaseResponse;
-}
-
-export interface DeletePrincipalOfficeRequest {
-  base_request?: base.BaseRequest;
-  principal_office_id?: string;
-}
-
-export interface DeletePrincipalOfficeResponse {
-  base_resp?: base.BaseResponse;
+  users?: Array<TenantUser>;
+  pagination?: base.PaginationResponse;
 }

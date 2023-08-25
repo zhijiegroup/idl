@@ -72,29 +72,4 @@ public interface TenantOrgOrBuilder extends
    */
   com.zhijiejiaoyu.glory_api.tenant.TenantOrgOrBuilder getChildrenOrBuilder(
       int index);
-
-  /**
-   * <code>repeated string child_types = 7;</code>
-   * @return A list containing the childTypes.
-   */
-  java.util.List<java.lang.String>
-      getChildTypesList();
-  /**
-   * <code>repeated string child_types = 7;</code>
-   * @return The count of childTypes.
-   */
-  int getChildTypesCount();
-  /**
-   * <code>repeated string child_types = 7;</code>
-   * @param index The index of the element to return.
-   * @return The childTypes at the given index.
-   */
-  java.lang.String getChildTypes(int index);
-  /**
-   * <code>repeated string child_types = 7;</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the childTypes at the given index.
-   */
-  com.google.protobuf.ByteString
-      getChildTypesBytes(int index);
 }

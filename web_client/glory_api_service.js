@@ -34,7 +34,6 @@ import * as account_operation from "./account/account_operation";
 import * as virtual_currency from "./currency/virtual_currency";
 import * as tenant from "./tenant/tenant";
 import * as tenant_dept from "./tenant/tenant_dept";
-import * as student from "./tenant/student";
 import * as short_video from "./short_video/short_video";
 export {
   user,
@@ -67,7 +66,6 @@ export {
   virtual_currency,
   tenant,
   tenant_dept,
-  student,
   short_video,
 };
 
@@ -1382,226 +1380,78 @@ export class glory_api {
     );
   }
 
-  CreateCollege(request) {
-    const uri = `${this.uriPrefix}/api/tenant/create_college`;
+  CreateTenantDept(request) {
+    const uri = `${this.uriPrefix}/api/tenant/create_tenant_dept`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
   }
 
-  GetCollege(request) {
+  UpdateTenantDept(request) {
+    const uri = `${this.uriPrefix}/api/tenant/update_tenant_dept`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteTenantDept(request) {
+    const uri = `${this.uriPrefix}/api/tenant/delete_tenant_dept`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  GetTenantDept(request) {
+    const uri = `${this.uriPrefix}/api/tenant/get_tenant_dept`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  GetTenantDeptType(request) {
     const query = queryStringify(request);
-    const uri = `${this.uriPrefix}/api/tenant/get_college${query}`;
+    const uri = `${this.uriPrefix}/api/tenant/get_tenant_dept_type${query}`;
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
 
-  UpdateCollege(request) {
-    const uri = `${this.uriPrefix}/api/tenant/update_college`;
+  CreateTenantUser(request) {
+    const uri = `${this.uriPrefix}/api/tenant/create_tenant_user`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
   }
 
-  DeleteCollege(request) {
-    const uri = `${this.uriPrefix}/api/tenant/delete_college`;
+  UpdateTenantUser(request) {
+    const uri = `${this.uriPrefix}/api/tenant/update_tenant_user`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
   }
 
-  ListCollege(request) {
-    const uri = `${this.uriPrefix}/api/tenant/list_college`;
+  DeleteTenantUser(request) {
+    const uri = `${this.uriPrefix}/api/tenant/delete_tenant_user`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
   }
 
-  CreateEduDept(request) {
-    const uri = `${this.uriPrefix}/api/tenant/create_edu_dept`;
+  GetTenantUser(request) {
+    const uri = `${this.uriPrefix}/api/tenant/get_tenant_user`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
   }
 
-  UpdateEduDept(request) {
-    const uri = `${this.uriPrefix}/api/tenant/update_edu_dept`;
-    const body = JSONbigint.stringify(request);
-    return fetch(uri, { method: "POST", headers, body, credentials }).then(
-      handleResponse
-    );
-  }
-
-  DeleteEduDept(request) {
-    const uri = `${this.uriPrefix}/api/tenant/delete_edu_dept`;
-    const body = JSONbigint.stringify(request);
-    return fetch(uri, { method: "POST", headers, body, credentials }).then(
-      handleResponse
-    );
-  }
-
-  CreateGoverDept(request) {
-    const uri = `${this.uriPrefix}/api/tenant/create_gover_dept`;
-    const body = JSONbigint.stringify(request);
-    return fetch(uri, { method: "POST", headers, body, credentials }).then(
-      handleResponse
-    );
-  }
-
-  UpdateGoverDept(request) {
-    const uri = `${this.uriPrefix}/api/tenant/update_gover_dept`;
-    const body = JSONbigint.stringify(request);
-    return fetch(uri, { method: "POST", headers, body, credentials }).then(
-      handleResponse
-    );
-  }
-
-  DeleteGoverDept(request) {
-    const uri = `${this.uriPrefix}/api/tenant/delete_gover_dept`;
-    const body = JSONbigint.stringify(request);
-    return fetch(uri, { method: "POST", headers, body, credentials }).then(
-      handleResponse
-    );
-  }
-
-  CreateEduOffice(request) {
-    const uri = `${this.uriPrefix}/api/tenant/create_edu_office`;
-    const body = JSONbigint.stringify(request);
-    return fetch(uri, { method: "POST", headers, body, credentials }).then(
-      handleResponse
-    );
-  }
-
-  UpdateEduOffice(request) {
-    const uri = `${this.uriPrefix}/api/tenant/update_edu_office`;
-    const body = JSONbigint.stringify(request);
-    return fetch(uri, { method: "POST", headers, body, credentials }).then(
-      handleResponse
-    );
-  }
-
-  DeleteEduOffice(request) {
-    const uri = `${this.uriPrefix}/api/tenant/delete_edu_office`;
-    const body = JSONbigint.stringify(request);
-    return fetch(uri, { method: "POST", headers, body, credentials }).then(
-      handleResponse
-    );
-  }
-
-  CreatePrincipalOffice(request) {
-    const uri = `${this.uriPrefix}/api/tenant/create_principal_office`;
-    const body = JSONbigint.stringify(request);
-    return fetch(uri, { method: "POST", headers, body, credentials }).then(
-      handleResponse
-    );
-  }
-
-  UpdatePrincipalOffice(request) {
-    const uri = `${this.uriPrefix}/api/tenant/update_principal_office`;
-    const body = JSONbigint.stringify(request);
-    return fetch(uri, { method: "POST", headers, body, credentials }).then(
-      handleResponse
-    );
-  }
-
-  DeletePrincipalOffice(request) {
-    const uri = `${this.uriPrefix}/api/tenant/delete_principal_office`;
-    const body = JSONbigint.stringify(request);
-    return fetch(uri, { method: "POST", headers, body, credentials }).then(
-      handleResponse
-    );
-  }
-
-  CreateMajor(request) {
-    const uri = `${this.uriPrefix}/api/tenant/create_major`;
-    const body = JSONbigint.stringify(request);
-    return fetch(uri, { method: "POST", headers, body, credentials }).then(
-      handleResponse
-    );
-  }
-
-  GetMajor(request) {
-    const query = queryStringify(request);
-    const uri = `${this.uriPrefix}/api/tenant/get_major${query}`;
-    return fetch(uri, { method, headers, credentials }).then(handleResponse);
-  }
-
-  UpdateMajor(request) {
-    const uri = `${this.uriPrefix}/api/tenant/update_major`;
-    const body = JSONbigint.stringify(request);
-    return fetch(uri, { method: "POST", headers, body, credentials }).then(
-      handleResponse
-    );
-  }
-
-  DeleteMajor(request) {
-    const uri = `${this.uriPrefix}/api/tenant/delete_major`;
-    const body = JSONbigint.stringify(request);
-    return fetch(uri, { method: "POST", headers, body, credentials }).then(
-      handleResponse
-    );
-  }
-
-  ListMajor(request) {
-    const uri = `${this.uriPrefix}/api/tenant/list_major`;
-    const body = JSONbigint.stringify(request);
-    return fetch(uri, { method: "POST", headers, body, credentials }).then(
-      handleResponse
-    );
-  }
-
-  CreateClass(request) {
-    const uri = `${this.uriPrefix}/api/tenant/create_class`;
-    const body = JSONbigint.stringify(request);
-    return fetch(uri, { method: "POST", headers, body, credentials }).then(
-      handleResponse
-    );
-  }
-
-  GetClass(request) {
-    const query = queryStringify(request);
-    const uri = `${this.uriPrefix}/api/tenant/get_class${query}`;
-    return fetch(uri, { method, headers, credentials }).then(handleResponse);
-  }
-
-  UpdateClass(request) {
-    const uri = `${this.uriPrefix}/api/tenant/update_class`;
-    const body = JSONbigint.stringify(request);
-    return fetch(uri, { method: "POST", headers, body, credentials }).then(
-      handleResponse
-    );
-  }
-
-  DeleteClass(request) {
-    const uri = `${this.uriPrefix}/api/tenant/delete_class`;
-    const body = JSONbigint.stringify(request);
-    return fetch(uri, { method: "POST", headers, body, credentials }).then(
-      handleResponse
-    );
-  }
-
-  ListClass(request) {
-    const uri = `${this.uriPrefix}/api/tenant/list_class`;
-    const body = JSONbigint.stringify(request);
-    return fetch(uri, { method: "POST", headers, body, credentials }).then(
-      handleResponse
-    );
-  }
-
-  CreateStudents(request) {
-    const uri = `${this.uriPrefix}/api/tenant/create_students`;
-    const body = JSONbigint.stringify(request);
-    return fetch(uri, { method: "POST", headers, body, credentials }).then(
-      handleResponse
-    );
-  }
-
-  DeleteStudents(request) {
-    const uri = `${this.uriPrefix}/api/tenant/delete_students`;
+  ListTenantUser(request) {
+    const uri = `${this.uriPrefix}/api/tenant/list_tenant_user`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse

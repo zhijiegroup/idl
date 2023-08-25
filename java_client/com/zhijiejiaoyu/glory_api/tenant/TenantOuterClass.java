@@ -75,121 +75,6 @@ public final class TenantOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_ListTenantResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_College_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_College_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_CreateCollegeRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_CreateCollegeRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_CreateCollegeResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_CreateCollegeResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_GetCollegeRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_GetCollegeRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_GetCollegeResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_GetCollegeResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_UpdateCollegeRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_UpdateCollegeRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_UpdateCollegeResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_UpdateCollegeResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_DeleteCollegeRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_DeleteCollegeRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_DeleteCollegeResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_DeleteCollegeResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_ListCollegeRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_ListCollegeRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_ListCollegeResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_ListCollegeResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_Major_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_Major_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_CreateMajorRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_CreateMajorRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_CreateMajorResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_CreateMajorResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_GetMajorRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_GetMajorRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_GetMajorResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_GetMajorResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_UpdateMajorRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_UpdateMajorRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_UpdateMajorResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_UpdateMajorResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_DeleteMajorRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_DeleteMajorRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_DeleteMajorResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_DeleteMajorResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_ListMajorRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_ListMajorRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_MajorWithAuthor_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_MajorWithAuthor_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_ListMajorResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_ListMajorResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_glory_api_Class_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -307,107 +192,47 @@ public final class TenantOuterClass {
       "antResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
       "seResponse\022,\n\007tenants\030\002 \003(\0132\033.glory_api." +
       "TenantWithAuthor\022,\n\npagination\030d \001(\0132\030.b" +
-      "ase.PaginationResponse\"u\n\007College\022\021\n\tten" +
-      "ant_id\030\001 \001(\003\022\023\n\013edu_dept_id\030\002 \001(\003\022\022\n\ncol" +
-      "lege_id\030\003 \001(\003\022\024\n\014college_name\030\004 \001(\t\022\030\n\020c" +
-      "ollege_overview\030\005 \001(\t\"d\n\024CreateCollegeRe" +
-      "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
-      "equest\022#\n\007college\030\002 \001(\0132\022.glory_api.Coll" +
-      "ege\"e\n\025CreateCollegeResponse\022%\n\tbase_res" +
-      "p\030\001 \001(\0132\022.base.BaseResponse\022\021\n\ttenant_id" +
-      "\030\002 \001(\003\022\022\n\ncollege_id\030\003 \001(\003\"P\n\021GetCollege" +
-      "Request\022\'\n\014base_request\030\001 \001(\0132\021.base.Bas" +
-      "eRequest\022\022\n\ncollege_id\030\002 \001(\003\"`\n\022GetColle" +
-      "geResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
-      "eResponse\022#\n\007college\030\002 \001(\0132\022.glory_api.C" +
-      "ollege\"d\n\024UpdateCollegeRequest\022\'\n\014base_r" +
-      "equest\030\001 \001(\0132\021.base.BaseRequest\022#\n\007colle" +
-      "ge\030\002 \001(\0132\022.glory_api.College\"e\n\025UpdateCo" +
-      "llegeResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
-      "BaseResponse\022\021\n\ttenant_id\030\002 \001(\003\022\022\n\ncolle" +
-      "ge_id\030\003 \001(\003\"S\n\024DeleteCollegeRequest\022\'\n\014b" +
-      "ase_request\030\001 \001(\0132\021.base.BaseRequest\022\022\n\n" +
-      "college_id\030\002 \001(\003\">\n\025DeleteCollegeRespons" +
-      "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
-      "\"\200\001\n\022ListCollegeRequest\022\'\n\014base_request\030" +
-      "\001 \001(\0132\021.base.BaseRequest\022\024\n\014college_name" +
-      "\030\002 \001(\t\022+\n\npagination\030d \001(\0132\027.base.Pagina" +
-      "tionRequest\"\220\001\n\023ListCollegeResponse\022%\n\tb" +
-      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\022$\n\010co" +
-      "lleges\030\002 \003(\0132\022.glory_api.College\022,\n\npagi" +
-      "nation\030d \001(\0132\030.base.PaginationResponse\"h" +
-      "\n\005Major\022\020\n\010major_id\030\001 \001(\003\022\022\n\ncollege_id\030" +
-      "\002 \001(\003\022\022\n\nmajor_name\030\003 \001(\t\022\022\n\nmajor_type\030" +
-      "\004 \001(\t\022\021\n\ttenant_id\030\007 \001(\003\"^\n\022CreateMajorR" +
-      "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
-      "Request\022\037\n\005major\030\002 \001(\0132\020.glory_api.Major" +
-      "\"N\n\023CreateMajorResponse\022%\n\tbase_resp\030\001 \001" +
-      "(\0132\022.base.BaseResponse\022\020\n\010major_id\030\002 \001(\003" +
-      "\"L\n\017GetMajorRequest\022\'\n\014base_request\030\001 \001(" +
-      "\0132\021.base.BaseRequest\022\020\n\010major_id\030\002 \001(\003\"\201" +
-      "\001\n\020GetMajorResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
-      ".base.BaseResponse\022\037\n\005major\030\002 \001(\0132\020.glor" +
-      "y_api.Major\022%\n\013author_info\030\003 \001(\0132\020.base." +
-      "AuthorInfo\"^\n\022UpdateMajorRequest\022\'\n\014base" +
-      "_request\030\001 \001(\0132\021.base.BaseRequest\022\037\n\005Maj" +
-      "or\030\003 \001(\0132\020.glory_api.Major\"N\n\023UpdateMajo" +
-      "rResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Base" +
-      "Response\022\020\n\010major_id\030\002 \001(\003\"O\n\022DeleteMajo" +
-      "rRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
-      "seRequest\022\020\n\010major_id\030\002 \001(\003\"<\n\023DeleteMaj" +
-      "orResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
-      "eResponse\"\243\001\n\020ListMajorRequest\022\'\n\014base_r" +
-      "equest\030\001 \001(\0132\021.base.BaseRequest\022\022\n\nmajor" +
-      "_name\030\002 \001(\t\022\022\n\nmajor_type\030\003 \001(\t\022\021\n\ttenan" +
-      "t_id\030\004 \001(\003\022+\n\npagination\030d \001(\0132\027.base.Pa" +
-      "ginationRequest\"Y\n\017MajorWithAuthor\022\037\n\005ma" +
-      "jor\030\001 \001(\0132\020.glory_api.Major\022%\n\013author_in" +
-      "fo\030\002 \001(\0132\020.base.AuthorInfo\"\224\001\n\021ListMajor" +
-      "Response\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseR" +
-      "esponse\022*\n\006majors\030\002 \003(\0132\032.glory_api.Majo" +
-      "rWithAuthor\022,\n\npagination\030d \001(\0132\030.base.P" +
-      "aginationResponse\"R\n\005Class\022\020\n\010class_id\030\001" +
-      " \001(\003\022\022\n\nclass_name\030\002 \001(\t\022\020\n\010major_id\030\004 \001" +
-      "(\003\022\021\n\ttenant_id\030\005 \001(\003\"^\n\022CreateClassRequ" +
-      "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
-      "uest\022\037\n\005class\030\002 \001(\0132\020.glory_api.Class\"a\n" +
-      "\023CreateClassResponse\022%\n\tbase_resp\030\001 \001(\0132" +
-      "\022.base.BaseResponse\022#\n\005class\030\002 \001(\0132\024.glo" +
-      "ry_api.TenantOrg\"L\n\017GetClassRequest\022\'\n\014b" +
-      "ase_request\030\001 \001(\0132\021.base.BaseRequest\022\020\n\010" +
-      "class_id\030\002 \001(\003\"\201\001\n\020GetClassResponse\022%\n\tb" +
-      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\022\037\n\005cl" +
-      "ass\030\002 \001(\0132\020.glory_api.Class\022%\n\013author_in" +
-      "fo\030\003 \001(\0132\020.base.AuthorInfo\"^\n\022UpdateClas" +
+      "ase.PaginationResponse\"R\n\005Class\022\020\n\010class" +
+      "_id\030\001 \001(\003\022\022\n\nclass_name\030\002 \001(\t\022\020\n\010major_i" +
+      "d\030\004 \001(\003\022\021\n\ttenant_id\030\005 \001(\003\"^\n\022CreateClas" +
       "sRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
-      "seRequest\022\037\n\005Class\030\003 \001(\0132\020.glory_api.Cla" +
-      "ss\"N\n\023UpdateClassResponse\022%\n\tbase_resp\030\001" +
-      " \001(\0132\022.base.BaseResponse\022\020\n\010class_id\030\002 \001" +
-      "(\003\"O\n\022DeleteClassRequest\022\'\n\014base_request" +
-      "\030\001 \001(\0132\021.base.BaseRequest\022\020\n\010class_id\030\002 " +
-      "\001(\003\"<\n\023DeleteClassResponse\022%\n\tbase_resp\030" +
-      "\001 \001(\0132\022.base.BaseResponse\"\302\001\n\020ListClassR" +
-      "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
-      "Request\022\022\n\nclass_name\030\002 \001(\t\022\020\n\010class_id\030" +
-      "\003 \001(\003\022\020\n\010major_id\030\004 \001(\003\022\021\n\ttenant_id\030\005 \001" +
-      "(\003\022\r\n\005grade\030\006 \001(\005\022+\n\npagination\030d \001(\0132\027." +
-      "base.PaginationRequest\"Y\n\017ClassWithAutho" +
-      "r\022\037\n\005class\030\001 \001(\0132\020.glory_api.Class\022%\n\013au" +
-      "thor_info\030\002 \001(\0132\020.base.AuthorInfo\"\223\001\n\021Li" +
-      "stClassResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
-      "e.BaseResponse\022)\n\005class\030\002 \003(\0132\032.glory_ap" +
-      "i.ClassWithAuthor\022,\n\npagination\030d \001(\0132\030." +
-      "base.PaginationResponse\"\220\001\n\tTenantOrg\022\n\n" +
-      "\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\014\n\004type\030\003 \001(\t\022\016\n" +
-      "\006parent\030\004 \001(\003\022\016\n\006tenant\030\005 \001(\003\022&\n\010childre" +
-      "n\030\006 \003(\0132\024.glory_api.TenantOrg\022\023\n\013child_t" +
-      "ypes\030\007 \003(\t\"Q\n\023GetTenantOrgRequest\022\'\n\014bas" +
-      "e_request\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tte" +
-      "nant_id\030\002 \001(\003\"g\n\024GetTenantOrgResponse\022%\n" +
-      "\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022(\n\n" +
-      "tenant_org\030\002 \001(\0132\024.glory_api.TenantOrgB%" +
-      "\n!com.zhijiejiaoyu.glory_api.tenantP\001b\006p" +
-      "roto3"
+      "seRequest\022\037\n\005class\030\002 \001(\0132\020.glory_api.Cla" +
+      "ss\"a\n\023CreateClassResponse\022%\n\tbase_resp\030\001" +
+      " \001(\0132\022.base.BaseResponse\022#\n\005class\030\002 \001(\0132" +
+      "\024.glory_api.TenantOrg\"L\n\017GetClassRequest" +
+      "\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReques" +
+      "t\022\020\n\010class_id\030\002 \001(\003\"\201\001\n\020GetClassResponse" +
+      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022" +
+      "\037\n\005class\030\002 \001(\0132\020.glory_api.Class\022%\n\013auth" +
+      "or_info\030\003 \001(\0132\020.base.AuthorInfo\"^\n\022Updat" +
+      "eClassRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
+      "se.BaseRequest\022\037\n\005Class\030\003 \001(\0132\020.glory_ap" +
+      "i.Class\"N\n\023UpdateClassResponse\022%\n\tbase_r" +
+      "esp\030\001 \001(\0132\022.base.BaseResponse\022\020\n\010class_i" +
+      "d\030\002 \001(\003\"O\n\022DeleteClassRequest\022\'\n\014base_re" +
+      "quest\030\001 \001(\0132\021.base.BaseRequest\022\020\n\010class_" +
+      "id\030\002 \001(\003\"<\n\023DeleteClassResponse\022%\n\tbase_" +
+      "resp\030\001 \001(\0132\022.base.BaseResponse\"\302\001\n\020ListC" +
+      "lassRequest\022\'\n\014base_request\030\001 \001(\0132\021.base" +
+      ".BaseRequest\022\022\n\nclass_name\030\002 \001(\t\022\020\n\010clas" +
+      "s_id\030\003 \001(\003\022\020\n\010major_id\030\004 \001(\003\022\021\n\ttenant_i" +
+      "d\030\005 \001(\003\022\r\n\005grade\030\006 \001(\005\022+\n\npagination\030d \001" +
+      "(\0132\027.base.PaginationRequest\"Y\n\017ClassWith" +
+      "Author\022\037\n\005class\030\001 \001(\0132\020.glory_api.Class\022" +
+      "%\n\013author_info\030\002 \001(\0132\020.base.AuthorInfo\"\223" +
+      "\001\n\021ListClassResponse\022%\n\tbase_resp\030\001 \001(\0132" +
+      "\022.base.BaseResponse\022)\n\005class\030\002 \003(\0132\032.glo" +
+      "ry_api.ClassWithAuthor\022,\n\npagination\030d \001" +
+      "(\0132\030.base.PaginationResponse\"{\n\tTenantOr" +
+      "g\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\014\n\004type\030\003 \001(" +
+      "\t\022\016\n\006parent\030\004 \001(\003\022\016\n\006tenant\030\005 \001(\003\022&\n\010chi" +
+      "ldren\030\006 \003(\0132\024.glory_api.TenantOrg\"Q\n\023Get" +
+      "TenantOrgRequest\022\'\n\014base_request\030\001 \001(\0132\021" +
+      ".base.BaseRequest\022\021\n\ttenant_id\030\002 \001(\003\"g\n\024" +
+      "GetTenantOrgResponse\022%\n\tbase_resp\030\001 \001(\0132" +
+      "\022.base.BaseResponse\022(\n\ntenant_org\030\002 \001(\0132" +
+      "\024.glory_api.TenantOrgB%\n!com.zhijiejiaoy" +
+      "u.glory_api.tenantP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -486,230 +311,92 @@ public final class TenantOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListTenantResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Tenants", "Pagination", });
-    internal_static_glory_api_College_descriptor =
-      getDescriptor().getMessageTypes().get(12);
-    internal_static_glory_api_College_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_College_descriptor,
-        new java.lang.String[] { "TenantId", "EduDeptId", "CollegeId", "CollegeName", "CollegeOverview", });
-    internal_static_glory_api_CreateCollegeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(13);
-    internal_static_glory_api_CreateCollegeRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_CreateCollegeRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "College", });
-    internal_static_glory_api_CreateCollegeResponse_descriptor =
-      getDescriptor().getMessageTypes().get(14);
-    internal_static_glory_api_CreateCollegeResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_CreateCollegeResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "TenantId", "CollegeId", });
-    internal_static_glory_api_GetCollegeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(15);
-    internal_static_glory_api_GetCollegeRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_GetCollegeRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "CollegeId", });
-    internal_static_glory_api_GetCollegeResponse_descriptor =
-      getDescriptor().getMessageTypes().get(16);
-    internal_static_glory_api_GetCollegeResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_GetCollegeResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "College", });
-    internal_static_glory_api_UpdateCollegeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(17);
-    internal_static_glory_api_UpdateCollegeRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_UpdateCollegeRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "College", });
-    internal_static_glory_api_UpdateCollegeResponse_descriptor =
-      getDescriptor().getMessageTypes().get(18);
-    internal_static_glory_api_UpdateCollegeResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_UpdateCollegeResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "TenantId", "CollegeId", });
-    internal_static_glory_api_DeleteCollegeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(19);
-    internal_static_glory_api_DeleteCollegeRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_DeleteCollegeRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "CollegeId", });
-    internal_static_glory_api_DeleteCollegeResponse_descriptor =
-      getDescriptor().getMessageTypes().get(20);
-    internal_static_glory_api_DeleteCollegeResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_DeleteCollegeResponse_descriptor,
-        new java.lang.String[] { "BaseResp", });
-    internal_static_glory_api_ListCollegeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(21);
-    internal_static_glory_api_ListCollegeRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_ListCollegeRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "CollegeName", "Pagination", });
-    internal_static_glory_api_ListCollegeResponse_descriptor =
-      getDescriptor().getMessageTypes().get(22);
-    internal_static_glory_api_ListCollegeResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_ListCollegeResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "Colleges", "Pagination", });
-    internal_static_glory_api_Major_descriptor =
-      getDescriptor().getMessageTypes().get(23);
-    internal_static_glory_api_Major_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_Major_descriptor,
-        new java.lang.String[] { "MajorId", "CollegeId", "MajorName", "MajorType", "TenantId", });
-    internal_static_glory_api_CreateMajorRequest_descriptor =
-      getDescriptor().getMessageTypes().get(24);
-    internal_static_glory_api_CreateMajorRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_CreateMajorRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "Major", });
-    internal_static_glory_api_CreateMajorResponse_descriptor =
-      getDescriptor().getMessageTypes().get(25);
-    internal_static_glory_api_CreateMajorResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_CreateMajorResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "MajorId", });
-    internal_static_glory_api_GetMajorRequest_descriptor =
-      getDescriptor().getMessageTypes().get(26);
-    internal_static_glory_api_GetMajorRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_GetMajorRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "MajorId", });
-    internal_static_glory_api_GetMajorResponse_descriptor =
-      getDescriptor().getMessageTypes().get(27);
-    internal_static_glory_api_GetMajorResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_GetMajorResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "Major", "AuthorInfo", });
-    internal_static_glory_api_UpdateMajorRequest_descriptor =
-      getDescriptor().getMessageTypes().get(28);
-    internal_static_glory_api_UpdateMajorRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_UpdateMajorRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "Major", });
-    internal_static_glory_api_UpdateMajorResponse_descriptor =
-      getDescriptor().getMessageTypes().get(29);
-    internal_static_glory_api_UpdateMajorResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_UpdateMajorResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "MajorId", });
-    internal_static_glory_api_DeleteMajorRequest_descriptor =
-      getDescriptor().getMessageTypes().get(30);
-    internal_static_glory_api_DeleteMajorRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_DeleteMajorRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "MajorId", });
-    internal_static_glory_api_DeleteMajorResponse_descriptor =
-      getDescriptor().getMessageTypes().get(31);
-    internal_static_glory_api_DeleteMajorResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_DeleteMajorResponse_descriptor,
-        new java.lang.String[] { "BaseResp", });
-    internal_static_glory_api_ListMajorRequest_descriptor =
-      getDescriptor().getMessageTypes().get(32);
-    internal_static_glory_api_ListMajorRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_ListMajorRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "MajorName", "MajorType", "TenantId", "Pagination", });
-    internal_static_glory_api_MajorWithAuthor_descriptor =
-      getDescriptor().getMessageTypes().get(33);
-    internal_static_glory_api_MajorWithAuthor_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_MajorWithAuthor_descriptor,
-        new java.lang.String[] { "Major", "AuthorInfo", });
-    internal_static_glory_api_ListMajorResponse_descriptor =
-      getDescriptor().getMessageTypes().get(34);
-    internal_static_glory_api_ListMajorResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_ListMajorResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "Majors", "Pagination", });
     internal_static_glory_api_Class_descriptor =
-      getDescriptor().getMessageTypes().get(35);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_glory_api_Class_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_Class_descriptor,
         new java.lang.String[] { "ClassId", "ClassName", "MajorId", "TenantId", });
     internal_static_glory_api_CreateClassRequest_descriptor =
-      getDescriptor().getMessageTypes().get(36);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_glory_api_CreateClassRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CreateClassRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "Class_", });
     internal_static_glory_api_CreateClassResponse_descriptor =
-      getDescriptor().getMessageTypes().get(37);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_glory_api_CreateClassResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CreateClassResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Class_", });
     internal_static_glory_api_GetClassRequest_descriptor =
-      getDescriptor().getMessageTypes().get(38);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_glory_api_GetClassRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetClassRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "ClassId", });
     internal_static_glory_api_GetClassResponse_descriptor =
-      getDescriptor().getMessageTypes().get(39);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_glory_api_GetClassResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetClassResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Class_", "AuthorInfo", });
     internal_static_glory_api_UpdateClassRequest_descriptor =
-      getDescriptor().getMessageTypes().get(40);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_glory_api_UpdateClassRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateClassRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "Class", });
     internal_static_glory_api_UpdateClassResponse_descriptor =
-      getDescriptor().getMessageTypes().get(41);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_glory_api_UpdateClassResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateClassResponse_descriptor,
         new java.lang.String[] { "BaseResp", "ClassId", });
     internal_static_glory_api_DeleteClassRequest_descriptor =
-      getDescriptor().getMessageTypes().get(42);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_glory_api_DeleteClassRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteClassRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "ClassId", });
     internal_static_glory_api_DeleteClassResponse_descriptor =
-      getDescriptor().getMessageTypes().get(43);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_glory_api_DeleteClassResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteClassResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_ListClassRequest_descriptor =
-      getDescriptor().getMessageTypes().get(44);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_glory_api_ListClassRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListClassRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "ClassName", "ClassId", "MajorId", "TenantId", "Grade", "Pagination", });
     internal_static_glory_api_ClassWithAuthor_descriptor =
-      getDescriptor().getMessageTypes().get(45);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_glory_api_ClassWithAuthor_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ClassWithAuthor_descriptor,
         new java.lang.String[] { "Class_", "AuthorInfo", });
     internal_static_glory_api_ListClassResponse_descriptor =
-      getDescriptor().getMessageTypes().get(46);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_glory_api_ListClassResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListClassResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Class_", "Pagination", });
     internal_static_glory_api_TenantOrg_descriptor =
-      getDescriptor().getMessageTypes().get(47);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_glory_api_TenantOrg_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_TenantOrg_descriptor,
-        new java.lang.String[] { "Id", "Name", "Type", "Parent", "Tenant", "Children", "ChildTypes", });
+        new java.lang.String[] { "Id", "Name", "Type", "Parent", "Tenant", "Children", });
     internal_static_glory_api_GetTenantOrgRequest_descriptor =
-      getDescriptor().getMessageTypes().get(48);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_glory_api_GetTenantOrgRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetTenantOrgRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "TenantId", });
     internal_static_glory_api_GetTenantOrgResponse_descriptor =
-      getDescriptor().getMessageTypes().get(49);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_glory_api_GetTenantOrgResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetTenantOrgResponse_descriptor,
