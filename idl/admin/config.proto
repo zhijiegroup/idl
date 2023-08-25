@@ -70,3 +70,20 @@ message GetConfigResponse {
   base.BaseResponse base_resp = 1;
   repeated Config configs = 2;
 }
+
+message STS {
+  string AccessKeyId = 1;
+  string AccessKeySecret = 2;
+  string Expiration = 3;
+  string SecurityToken = 4;
+}
+
+message GetSTSRequest {
+  base.BaseRequest base_request = 1;
+}
+
+message GetSTSResponse {
+  base.BaseResponse base_resp = 1;
+  STS sts = 2;
+}
+

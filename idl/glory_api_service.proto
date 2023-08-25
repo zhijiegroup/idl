@@ -441,6 +441,9 @@ service glory_api {
   rpc GetConfig(GetConfigRequest) returns (GetConfigResponse) {
     option (api.post) = '/api/admin/get_config';
   }
+  rpc GetSTS(GetSTSRequest) returns (GetSTSResponse) {
+    option (api.get) = '/api/admin/get_sts';
+  }
 
   // wxpay
   rpc WxPrepay(PrepayRequest) returns (PrepayResponse) {
