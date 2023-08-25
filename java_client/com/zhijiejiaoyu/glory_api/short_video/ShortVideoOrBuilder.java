@@ -250,10 +250,10 @@ public interface ShortVideoOrBuilder extends
    * 喜欢数量
    * </pre>
    *
-   * <code>int32 like_count = 14;</code>
+   * <code>int64 like_count = 14;</code>
    * @return The likeCount.
    */
-  int getLikeCount();
+  long getLikeCount();
 
   /**
    * <pre>
@@ -270,20 +270,20 @@ public interface ShortVideoOrBuilder extends
    * 收藏数量
    * </pre>
    *
-   * <code>int32 favorite_count = 16;</code>
+   * <code>int64 favorite_count = 16;</code>
    * @return The favoriteCount.
    */
-  int getFavoriteCount();
+  long getFavoriteCount();
 
   /**
    * <pre>
    * 评论数量
    * </pre>
    *
-   * <code>int32 comment_count = 17;</code>
+   * <code>int64 comment_count = 17;</code>
    * @return The commentCount.
    */
-  int getCommentCount();
+  long getCommentCount();
 
   /**
    * <pre>

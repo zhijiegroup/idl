@@ -37,6 +37,8 @@ struct GloryApi_AccountOperation {
 
   var accountOperationID: Int64 = 0
 
+  var createdAt: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -162,11 +164,25 @@ struct GloryApi_ListAccountOperationRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
+  var userID: Int64 = 0
+
+  var accountOperationName: String = String()
+
+  var pagination: Base_PaginationRequest {
+    get {return _pagination ?? Base_PaginationRequest()}
+    set {_pagination = newValue}
+  }
+  /// Returns true if `pagination` has been explicitly set.
+  var hasPagination: Bool {return self._pagination != nil}
+  /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
+  mutating func clearPagination() {self._pagination = nil}
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
   fileprivate var _baseRequest: Base_BaseRequest? = nil
+  fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
 struct GloryApi_ListAccountOperationResponse {
@@ -185,11 +201,21 @@ struct GloryApi_ListAccountOperationResponse {
 
   var accountOperation: [GloryApi_AccountOperation] = []
 
+  var pagination: Base_PaginationResponse {
+    get {return _pagination ?? Base_PaginationResponse()}
+    set {_pagination = newValue}
+  }
+  /// Returns true if `pagination` has been explicitly set.
+  var hasPagination: Bool {return self._pagination != nil}
+  /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
+  mutating func clearPagination() {self._pagination = nil}
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
 #if swift(>=5.5) && canImport(_Concurrency)
@@ -215,6 +241,7 @@ extension GloryApi_AccountOperation: SwiftProtobuf.Message, SwiftProtobuf._Messa
     4: .same(proto: "amount"),
     5: .same(proto: "unit"),
     6: .standard(proto: "account_operation_id"),
+    7: .standard(proto: "created_at"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -229,6 +256,7 @@ extension GloryApi_AccountOperation: SwiftProtobuf.Message, SwiftProtobuf._Messa
       case 4: try { try decoder.decodeSingularInt64Field(value: &self.amount) }()
       case 5: try { try decoder.decodeSingularStringField(value: &self.unit) }()
       case 6: try { try decoder.decodeSingularInt64Field(value: &self.accountOperationID) }()
+      case 7: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
       default: break
       }
     }
@@ -253,6 +281,9 @@ extension GloryApi_AccountOperation: SwiftProtobuf.Message, SwiftProtobuf._Messa
     if self.accountOperationID != 0 {
       try visitor.visitSingularInt64Field(value: self.accountOperationID, fieldNumber: 6)
     }
+    if !self.createdAt.isEmpty {
+      try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 7)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -263,6 +294,7 @@ extension GloryApi_AccountOperation: SwiftProtobuf.Message, SwiftProtobuf._Messa
     if lhs.amount != rhs.amount {return false}
     if lhs.unit != rhs.unit {return false}
     if lhs.accountOperationID != rhs.accountOperationID {return false}
+    if lhs.createdAt != rhs.createdAt {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -434,6 +466,9 @@ extension GloryApi_ListAccountOperationRequest: SwiftProtobuf.Message, SwiftProt
   static let protoMessageName: String = _protobuf_package + ".ListAccountOperationRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
+    2: .standard(proto: "user_id"),
+    3: .standard(proto: "account_operation_name"),
+    100: .same(proto: "pagination"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -443,6 +478,9 @@ extension GloryApi_ListAccountOperationRequest: SwiftProtobuf.Message, SwiftProt
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.userID) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.accountOperationName) }()
+      case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
     }
@@ -456,11 +494,23 @@ extension GloryApi_ListAccountOperationRequest: SwiftProtobuf.Message, SwiftProt
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
+    if self.userID != 0 {
+      try visitor.visitSingularInt64Field(value: self.userID, fieldNumber: 2)
+    }
+    if !self.accountOperationName.isEmpty {
+      try visitor.visitSingularStringField(value: self.accountOperationName, fieldNumber: 3)
+    }
+    try { if let v = self._pagination {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_ListAccountOperationRequest, rhs: GloryApi_ListAccountOperationRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.userID != rhs.userID {return false}
+    if lhs.accountOperationName != rhs.accountOperationName {return false}
+    if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -471,6 +521,7 @@ extension GloryApi_ListAccountOperationResponse: SwiftProtobuf.Message, SwiftPro
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
     2: .standard(proto: "account_operation"),
+    100: .same(proto: "pagination"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -481,6 +532,7 @@ extension GloryApi_ListAccountOperationResponse: SwiftProtobuf.Message, SwiftPro
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
       case 2: try { try decoder.decodeRepeatedMessageField(value: &self.accountOperation) }()
+      case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
     }
@@ -497,12 +549,16 @@ extension GloryApi_ListAccountOperationResponse: SwiftProtobuf.Message, SwiftPro
     if !self.accountOperation.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.accountOperation, fieldNumber: 2)
     }
+    try { if let v = self._pagination {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_ListAccountOperationResponse, rhs: GloryApi_ListAccountOperationResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.accountOperation != rhs.accountOperation {return false}
+    if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

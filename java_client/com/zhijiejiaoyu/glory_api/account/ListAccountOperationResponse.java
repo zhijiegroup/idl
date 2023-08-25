@@ -72,6 +72,19 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.zhijiejiaoyu.glory_api.account.AccountOperation.parser(), extensionRegistry));
             break;
           }
+          case 802: {
+            com.zhijiejiaoyu.base.PaginationResponse.Builder subBuilder = null;
+            if (pagination != null) {
+              subBuilder = pagination.toBuilder();
+            }
+            pagination = input.readMessage(com.zhijiejiaoyu.base.PaginationResponse.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(pagination);
+              pagination = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -173,6 +186,32 @@ private static final long serialVersionUID = 0L;
     return accountOperation.get(index);
   }
 
+  public static final int PAGINATION_FIELD_NUMBER = 100;
+  private com.zhijiejiaoyu.base.PaginationResponse pagination;
+  /**
+   * <code>.base.PaginationResponse pagination = 100;</code>
+   * @return Whether the pagination field is set.
+   */
+  @java.lang.Override
+  public boolean hasPagination() {
+    return pagination != null;
+  }
+  /**
+   * <code>.base.PaginationResponse pagination = 100;</code>
+   * @return The pagination.
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.base.PaginationResponse getPagination() {
+    return pagination == null ? com.zhijiejiaoyu.base.PaginationResponse.getDefaultInstance() : pagination;
+  }
+  /**
+   * <code>.base.PaginationResponse pagination = 100;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.base.PaginationResponseOrBuilder getPaginationOrBuilder() {
+    return getPagination();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -193,6 +232,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < accountOperation.size(); i++) {
       output.writeMessage(2, accountOperation.get(i));
     }
+    if (pagination != null) {
+      output.writeMessage(100, getPagination());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -209,6 +251,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < accountOperation.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, accountOperation.get(i));
+    }
+    if (pagination != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(100, getPagination());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -232,6 +278,11 @@ private static final long serialVersionUID = 0L;
     }
     if (!getAccountOperationList()
         .equals(other.getAccountOperationList())) return false;
+    if (hasPagination() != other.hasPagination()) return false;
+    if (hasPagination()) {
+      if (!getPagination()
+          .equals(other.getPagination())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -250,6 +301,10 @@ private static final long serialVersionUID = 0L;
     if (getAccountOperationCount() > 0) {
       hash = (37 * hash) + ACCOUNT_OPERATION_FIELD_NUMBER;
       hash = (53 * hash) + getAccountOperationList().hashCode();
+    }
+    if (hasPagination()) {
+      hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
+      hash = (53 * hash) + getPagination().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -397,6 +452,12 @@ private static final long serialVersionUID = 0L;
       } else {
         accountOperationBuilder.clear();
       }
+      if (paginationBuilder == null) {
+        pagination = null;
+      } else {
+        pagination = null;
+        paginationBuilder = null;
+      }
       return this;
     }
 
@@ -437,6 +498,11 @@ private static final long serialVersionUID = 0L;
         result.accountOperation = accountOperation;
       } else {
         result.accountOperation = accountOperationBuilder.build();
+      }
+      if (paginationBuilder == null) {
+        result.pagination = pagination;
+      } else {
+        result.pagination = paginationBuilder.build();
       }
       onBuilt();
       return result;
@@ -514,6 +580,9 @@ private static final long serialVersionUID = 0L;
             accountOperationBuilder.addAllMessages(other.accountOperation);
           }
         }
+      }
+      if (other.hasPagination()) {
+        mergePagination(other.getPagination());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -902,6 +971,125 @@ private static final long serialVersionUID = 0L;
         accountOperation = null;
       }
       return accountOperationBuilder;
+    }
+
+    private com.zhijiejiaoyu.base.PaginationResponse pagination;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.base.PaginationResponse, com.zhijiejiaoyu.base.PaginationResponse.Builder, com.zhijiejiaoyu.base.PaginationResponseOrBuilder> paginationBuilder;
+    /**
+     * <code>.base.PaginationResponse pagination = 100;</code>
+     * @return Whether the pagination field is set.
+     */
+    public boolean hasPagination() {
+      return paginationBuilder != null || pagination != null;
+    }
+    /**
+     * <code>.base.PaginationResponse pagination = 100;</code>
+     * @return The pagination.
+     */
+    public com.zhijiejiaoyu.base.PaginationResponse getPagination() {
+      if (paginationBuilder == null) {
+        return pagination == null ? com.zhijiejiaoyu.base.PaginationResponse.getDefaultInstance() : pagination;
+      } else {
+        return paginationBuilder.getMessage();
+      }
+    }
+    /**
+     * <code>.base.PaginationResponse pagination = 100;</code>
+     */
+    public Builder setPagination(com.zhijiejiaoyu.base.PaginationResponse value) {
+      if (paginationBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        pagination = value;
+        onChanged();
+      } else {
+        paginationBuilder.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.base.PaginationResponse pagination = 100;</code>
+     */
+    public Builder setPagination(
+        com.zhijiejiaoyu.base.PaginationResponse.Builder builderForValue) {
+      if (paginationBuilder == null) {
+        pagination = builderForValue.build();
+        onChanged();
+      } else {
+        paginationBuilder.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.base.PaginationResponse pagination = 100;</code>
+     */
+    public Builder mergePagination(com.zhijiejiaoyu.base.PaginationResponse value) {
+      if (paginationBuilder == null) {
+        if (pagination != null) {
+          pagination =
+            com.zhijiejiaoyu.base.PaginationResponse.newBuilder(pagination).mergeFrom(value).buildPartial();
+        } else {
+          pagination = value;
+        }
+        onChanged();
+      } else {
+        paginationBuilder.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.base.PaginationResponse pagination = 100;</code>
+     */
+    public Builder clearPagination() {
+      if (paginationBuilder == null) {
+        pagination = null;
+        onChanged();
+      } else {
+        pagination = null;
+        paginationBuilder = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.base.PaginationResponse pagination = 100;</code>
+     */
+    public com.zhijiejiaoyu.base.PaginationResponse.Builder getPaginationBuilder() {
+      
+      onChanged();
+      return getPaginationFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.base.PaginationResponse pagination = 100;</code>
+     */
+    public com.zhijiejiaoyu.base.PaginationResponseOrBuilder getPaginationOrBuilder() {
+      if (paginationBuilder != null) {
+        return paginationBuilder.getMessageOrBuilder();
+      } else {
+        return pagination == null ?
+            com.zhijiejiaoyu.base.PaginationResponse.getDefaultInstance() : pagination;
+      }
+    }
+    /**
+     * <code>.base.PaginationResponse pagination = 100;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.base.PaginationResponse, com.zhijiejiaoyu.base.PaginationResponse.Builder, com.zhijiejiaoyu.base.PaginationResponseOrBuilder> 
+        getPaginationFieldBuilder() {
+      if (paginationBuilder == null) {
+        paginationBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+            com.zhijiejiaoyu.base.PaginationResponse, com.zhijiejiaoyu.base.PaginationResponse.Builder, com.zhijiejiaoyu.base.PaginationResponseOrBuilder>(
+                getPagination(),
+                getParentForChildren(),
+                isClean());
+        pagination = null;
+      }
+      return paginationBuilder;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

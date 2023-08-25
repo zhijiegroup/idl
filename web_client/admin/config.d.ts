@@ -79,3 +79,19 @@ export interface GetConfigResponse {
   base_resp?: base.BaseResponse;
   configs?: Array<Config>;
 }
+
+export interface STS {
+  AccessKeyId?: string;
+  AccessKeySecret?: string;
+  Expiration?: string;
+  SecurityToken?: string;
+}
+
+export interface GetSTSRequest {
+  base_request?: base.BaseRequest;
+}
+
+export interface GetSTSResponse {
+  base_resp?: base.BaseResponse;
+  sts?: STS;
+}

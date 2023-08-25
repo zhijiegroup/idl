@@ -56,13 +56,13 @@ export interface ShortVideo {
   /** 是否喜欢 */
   is_like?: boolean;
   /** 喜欢数量 */
-  like_count?: number;
+  like_count?: string;
   /** 是否收藏 */
   is_favorite?: boolean;
   /** 收藏数量 */
-  favorite_count?: number;
+  favorite_count?: string;
   /** 评论数量 */
-  comment_count?: number;
+  comment_count?: string;
   /** 创建时间 */
   created_at?: string;
 }
@@ -168,6 +168,26 @@ export interface GetShortVideoResponse {
   short_video?: ShortVideo;
 }
 
+/** 更新短视频详情 */
+export interface UpdateShortVideoRequest {
+  base_request?: base.BaseRequest;
+  /** 短视频ID */
+  short_video_id?: string;
+  /** 短视频描述 */
+  description?: string;
+  /** 视频可见性：1.公开；2:隐私，仅自己可见 */
+  visibility?: number;
+  /** JSON序列化的商品信息 */
+  products?: string;
+  /** 店铺ID */
+  shop_id?: string;
+}
+
+export interface UpdateShortVideoResponse {
+  base_resp?: base.BaseResponse;
+  short_video_id?: string;
+}
+
 /** 删除短视频 */
 export interface DeleteShortVideoRequest {
   base_request?: base.BaseRequest;
@@ -232,5 +252,39 @@ export interface ManagementDeleteShortVideoRequest {
 }
 
 export interface ManagementDeleteShortVideoResponse {
+  base_resp?: base.BaseResponse;
+}
+
+/** APP首页短视频列表 */
+export interface ListShortVideoRequest {
+  base_request?: base.BaseRequest;
+  pagination?: base.PaginationRequest;
+}
+
+export interface ListShortVideoResponse {
+  base_resp?: base.BaseResponse;
+  short_video_list?: Array<ShortVideo>;
+  pagination?: base.PaginationResponse;
+}
+
+/** 点赞短视频 */
+export interface LikeShortVideoRequest {
+  base_request?: base.BaseRequest;
+  short_video_id?: string;
+  like?: boolean;
+}
+
+export interface LikeShortVideoResponse {
+  base_resp?: base.BaseResponse;
+}
+
+/** 收藏短视频 */
+export interface FavoriteShortVideoRequest {
+  base_request?: base.BaseRequest;
+  short_video_id?: string;
+  favorite?: boolean;
+}
+
+export interface FavoriteShortVideoResponse {
   base_resp?: base.BaseResponse;
 }

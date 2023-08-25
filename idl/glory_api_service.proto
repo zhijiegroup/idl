@@ -75,8 +75,24 @@ service glory_api {
   rpc LoginWithPassword(LoginWithPasswordRequest) returns (LoginWithPasswordResponse) {
     option (api.post) = '/api/user/login_with_password';
   }
+
   rpc UpdatePassword(UpdatePasswordRequest) returns (UpdatePasswordResponse) {
     option (api.post) = '/api/user/update_password';
+  }
+
+  // 关注用户
+  rpc FollowUser(FollowUserRequest) returns (FollowUserResponse) {
+    option (api.post) = '/api/user/follow_user';
+  }
+
+  // 我的关注列表
+  rpc ListMyFollowedUser(ListMyFollowedUserRequest) returns (ListMyFollowedUserResponse) {
+    option (api.post) = '/api/user/list_my_followed_user';
+  }
+
+  // 我的粉丝列表
+  rpc ListMyFollowerUser(ListMyFollowerUserRequest) returns (ListMyFollowerUserResponse) {
+    option (api.post) = '/api/user/list_my_follower_user';
   }
 
   // page permission
@@ -424,6 +440,9 @@ service glory_api {
   rpc GetConfig(GetConfigRequest) returns (GetConfigResponse) {
     option (api.post) = '/api/admin/get_config';
   }
+  rpc GetSTS(GetSTSRequest) returns (GetSTSResponse) {
+    option (api.get) = '/api/admin/get_sts';
+  }
 
   // wxpay
   rpc WxPrepay(PrepayRequest) returns (PrepayResponse) {
@@ -478,7 +497,7 @@ service glory_api {
   }
 
   rpc ListAccountOperation(ListAccountOperationRequest) returns (ListAccountOperationResponse) {
-    option (api.get) = '/api/account/list_operation';
+    option (api.post) = '/api/account/list_operation';
   }
 
   // live
@@ -714,6 +733,11 @@ service glory_api {
     option (api.post) = '/api/short_video/get_short_video';
   }
 
+  // 更新短视频详情
+  rpc UpdateShortVideo(UpdateShortVideoRequest) returns (UpdateShortVideoResponse) {
+    option (api.post) = '/api/short_video/update_short_video';
+  }
+
   // 删除短视频
   rpc DeleteShortVideo(DeleteShortVideoRequest) returns (DeleteShortVideoResponse) {
     option (api.post) = '/api/short_video/delete_short_video';
@@ -729,15 +753,33 @@ service glory_api {
     option (api.post) = '/api/short_video/delete_stage_video';
   }
 
+  // 平台短短视频列表
   rpc ManagementListShortVideo(ManagementListShortVideoRequest) returns (ManagementListShortVideoResponse) {
     option (api.post) = '/api/short_video/management/list_short_video';
   }
 
+  // 平台审核短视频
   rpc ManagementCensorShortVideo(ManagementCensorShortVideoRequest) returns (ManagementCensorShortVideoResponse) {
     option (api.post) = '/api/short_video/management/censor_short_video';
   }
 
+  // 平台删除短视频
   rpc ManagementDeleteShortVideo(ManagementDeleteShortVideoRequest) returns (ManagementDeleteShortVideoResponse) {
     option (api.post) = '/api/short_video/management/delete_short_video';
+  }
+
+  // APP首页短视频列表
+  rpc ListShortVideo(ListShortVideoRequest) returns (ListShortVideoResponse) {
+    option (api.post) = '/api/short_video/list_short_video';
+  }
+
+  // 点赞短视频
+  rpc LikeShortVideo(LikeShortVideoRequest) returns (LikeShortVideoResponse) {
+    option (api.post) = '/api/short_video/like_short_video';
+  }
+
+  // 收藏短视频
+  rpc FavoriteShortVideo(FavoriteShortVideoRequest) returns (FavoriteShortVideoResponse) {
+    option (api.post) = '/api/short_video/favorite_short_video';
   }
 }

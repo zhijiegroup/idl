@@ -160,6 +160,30 @@ export class glory_api {
     );
   }
 
+  FollowUser(request) {
+    const uri = `${this.uriPrefix}/api/user/follow_user`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListMyFollowedUser(request) {
+    const uri = `${this.uriPrefix}/api/user/list_my_followed_user`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListMyFollowerUser(request) {
+    const uri = `${this.uriPrefix}/api/user/list_my_follower_user`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   GetUserPagePermission(request) {
     const uri = `${this.uriPrefix}/api/user/get_user_page_permission`;
     const body = JSONbigint.stringify(request);
@@ -892,6 +916,12 @@ export class glory_api {
     );
   }
 
+  GetSTS(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/admin/get_sts${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
   WxPrepay(request) {
     const uri = `${this.uriPrefix}/api/wxpay/prepay`;
     const body = JSONbigint.stringify(request);
@@ -989,9 +1019,11 @@ export class glory_api {
   }
 
   ListAccountOperation(request) {
-    const query = queryStringify(request);
-    const uri = `${this.uriPrefix}/api/account/list_operation${query}`;
-    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+    const uri = `${this.uriPrefix}/api/account/list_operation`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
   }
 
   CreateRoom(request) {
@@ -1630,6 +1662,14 @@ export class glory_api {
     );
   }
 
+  UpdateShortVideo(request) {
+    const uri = `${this.uriPrefix}/api/short_video/update_short_video`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   DeleteShortVideo(request) {
     const uri = `${this.uriPrefix}/api/short_video/delete_short_video`;
     const body = JSONbigint.stringify(request);
@@ -1672,6 +1712,30 @@ export class glory_api {
 
   ManagementDeleteShortVideo(request) {
     const uri = `${this.uriPrefix}/api/short_video/management/delete_short_video`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListShortVideo(request) {
+    const uri = `${this.uriPrefix}/api/short_video/list_short_video`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  LikeShortVideo(request) {
+    const uri = `${this.uriPrefix}/api/short_video/like_short_video`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  FavoriteShortVideo(request) {
+    const uri = `${this.uriPrefix}/api/short_video/favorite_short_video`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse

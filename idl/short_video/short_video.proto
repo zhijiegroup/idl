@@ -35,10 +35,10 @@ message ShortVideo {
   ShortVideoShop shop = 11; // 店铺信息
   ShortVideoUser user_info = 12; // 用户信息
   bool is_like = 13; // 是否喜欢
-  int32 like_count = 14; // 喜欢数量
+  int64 like_count = 14; // 喜欢数量
   bool is_favorite = 15; // 是否收藏
-  int32 favorite_count = 16; // 收藏数量
-  int32 comment_count = 17; // 评论数量
+  int64 favorite_count = 16; // 收藏数量
+  int64 comment_count = 17; // 评论数量
   string created_at = 18; // 创建时间
 }
 
@@ -132,6 +132,21 @@ message GetShortVideoResponse {
   ShortVideo short_video = 2;
 }
 
+// 更新短视频详情
+message UpdateShortVideoRequest {
+  base.BaseRequest base_request = 1;
+  int64 short_video_id = 2; // 短视频ID
+  string description = 3; // 短视频描述
+  int32 visibility = 4; // 视频可见性：1.公开；2:隐私，仅自己可见
+  string products = 5; // JSON序列化的商品信息
+  int64 shop_id = 6; // 店铺ID
+}
+
+message UpdateShortVideoResponse {
+  base.BaseResponse base_resp = 1;
+  int64 short_video_id = 2;
+}
+
 // 删除短视频
 message DeleteShortVideoRequest {
   base.BaseRequest base_request = 1;
@@ -196,5 +211,38 @@ message ManagementDeleteShortVideoRequest {
 
 message ManagementDeleteShortVideoResponse {
   base.BaseResponse base_resp = 1;
+}
 
+// APP首页短视频列表
+message ListShortVideoRequest {
+  base.BaseRequest base_request = 1;
+  base.PaginationRequest pagination = 100;
+}
+
+message ListShortVideoResponse {
+  base.BaseResponse base_resp = 1;
+  repeated ShortVideo short_video_list = 2;
+  base.PaginationResponse pagination = 100;
+}
+
+// 点赞短视频
+message LikeShortVideoRequest {
+  base.BaseRequest base_request = 1;
+  int64 short_video_id = 2;
+  bool like = 3;
+}
+
+message LikeShortVideoResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+// 收藏短视频
+message FavoriteShortVideoRequest {
+  base.BaseRequest base_request = 1;
+  int64 short_video_id = 2;
+  bool favorite = 3;
+}
+
+message FavoriteShortVideoResponse {
+  base.BaseResponse base_resp = 1;
 }

@@ -21,4 +21,37 @@ public interface ListAccountOperationRequestOrBuilder extends
    * <code>.base.BaseRequest base_request = 1;</code>
    */
   com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder();
+
+  /**
+   * <code>int64 user_id = 2;</code>
+   * @return The userId.
+   */
+  long getUserId();
+
+  /**
+   * <code>string account_operation_name = 3;</code>
+   * @return The accountOperationName.
+   */
+  java.lang.String getAccountOperationName();
+  /**
+   * <code>string account_operation_name = 3;</code>
+   * @return The bytes for accountOperationName.
+   */
+  com.google.protobuf.ByteString
+      getAccountOperationNameBytes();
+
+  /**
+   * <code>.base.PaginationRequest pagination = 100;</code>
+   * @return Whether the pagination field is set.
+   */
+  boolean hasPagination();
+  /**
+   * <code>.base.PaginationRequest pagination = 100;</code>
+   * @return The pagination.
+   */
+  com.zhijiejiaoyu.base.PaginationRequest getPagination();
+  /**
+   * <code>.base.PaginationRequest pagination = 100;</code>
+   */
+  com.zhijiejiaoyu.base.PaginationRequestOrBuilder getPaginationOrBuilder();
 }

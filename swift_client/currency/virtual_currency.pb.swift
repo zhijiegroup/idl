@@ -408,6 +408,8 @@ struct GloryApi_ListVirtualCurrencyRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
+  var userID: Int64 = 0
+
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
@@ -1132,6 +1134,7 @@ extension GloryApi_ListVirtualCurrencyRequest: SwiftProtobuf.Message, SwiftProto
   static let protoMessageName: String = _protobuf_package + ".ListVirtualCurrencyRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
+    2: .standard(proto: "user_id"),
     100: .same(proto: "pagination"),
   ]
 
@@ -1142,6 +1145,7 @@ extension GloryApi_ListVirtualCurrencyRequest: SwiftProtobuf.Message, SwiftProto
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.userID) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -1156,6 +1160,9 @@ extension GloryApi_ListVirtualCurrencyRequest: SwiftProtobuf.Message, SwiftProto
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
+    if self.userID != 0 {
+      try visitor.visitSingularInt64Field(value: self.userID, fieldNumber: 2)
+    }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
     } }()
@@ -1164,6 +1171,7 @@ extension GloryApi_ListVirtualCurrencyRequest: SwiftProtobuf.Message, SwiftProto
 
   static func ==(lhs: GloryApi_ListVirtualCurrencyRequest, rhs: GloryApi_ListVirtualCurrencyRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.userID != rhs.userID {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

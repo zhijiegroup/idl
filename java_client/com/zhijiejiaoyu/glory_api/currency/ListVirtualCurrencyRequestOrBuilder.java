@@ -23,6 +23,12 @@ public interface ListVirtualCurrencyRequestOrBuilder extends
   com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder();
 
   /**
+   * <code>int64 user_id = 2;</code>
+   * @return The userId.
+   */
+  long getUserId();
+
+  /**
    * <code>.base.PaginationRequest pagination = 100;</code>
    * @return Whether the pagination field is set.
    */

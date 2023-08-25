@@ -69,6 +69,21 @@ public final class ConfigOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_GetConfigResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_STS_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_STS_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetSTSRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetSTSRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetSTSResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetSTSResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -107,7 +122,13 @@ public final class ConfigOuterClass {
       "\023\n\013config_type\030\003 \001(\t\022\027\n\017business_system\030" +
       "\004 \001(\t\"^\n\021GetConfigResponse\022%\n\tbase_resp\030" +
       "\001 \001(\0132\022.base.BaseResponse\022\"\n\007configs\030\002 \003" +
-      "(\0132\021.glory_api.ConfigB$\n com.zhijiejiaoy" +
+      "(\0132\021.glory_api.Config\"^\n\003STS\022\023\n\013AccessKe" +
+      "yId\030\001 \001(\t\022\027\n\017AccessKeySecret\030\002 \001(\t\022\022\n\nEx" +
+      "piration\030\003 \001(\t\022\025\n\rSecurityToken\030\004 \001(\t\"8\n" +
+      "\rGetSTSRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
+      "ase.BaseRequest\"T\n\016GetSTSResponse\022%\n\tbas" +
+      "e_resp\030\001 \001(\0132\022.base.BaseResponse\022\033\n\003sts\030" +
+      "\002 \001(\0132\016.glory_api.STSB$\n com.zhijiejiaoy" +
       "u.glory_api.adminP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -181,6 +202,24 @@ public final class ConfigOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetConfigResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Configs", });
+    internal_static_glory_api_STS_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_glory_api_STS_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_STS_descriptor,
+        new java.lang.String[] { "AccessKeyId", "AccessKeySecret", "Expiration", "SecurityToken", });
+    internal_static_glory_api_GetSTSRequest_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_glory_api_GetSTSRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetSTSRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", });
+    internal_static_glory_api_GetSTSResponse_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_glory_api_GetSTSResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetSTSResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "Sts", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
   }
 

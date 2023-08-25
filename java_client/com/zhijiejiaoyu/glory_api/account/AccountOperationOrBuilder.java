@@ -54,4 +54,16 @@ public interface AccountOperationOrBuilder extends
    * @return The accountOperationId.
    */
   long getAccountOperationId();
+
+  /**
+   * <code>string created_at = 7;</code>
+   * @return The createdAt.
+   */
+  java.lang.String getCreatedAt();
+  /**
+   * <code>string created_at = 7;</code>
+   * @return The bytes for createdAt.
+   */
+  com.google.protobuf.ByteString
+      getCreatedAtBytes();
 }

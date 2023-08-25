@@ -93,6 +93,7 @@ export interface GetVirtualCurrencyResponse {
 
 export interface ListVirtualCurrencyRequest {
   base_request?: base.BaseRequest;
+  user_id?: string;
   pagination?: base.PaginationRequest;
 }
 

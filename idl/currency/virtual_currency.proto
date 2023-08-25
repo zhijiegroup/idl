@@ -87,6 +87,7 @@ message GetVirtualCurrencyResponse {
 
 message ListVirtualCurrencyRequest {
   base.BaseRequest base_request = 1;
+  int64 user_id = 2;
   base.PaginationRequest pagination = 100;
 }
 

@@ -19,6 +19,12 @@ message User {
   repeated ShopAccess shop_access = 9;  //判断用户的shop访问权限
 }
 
+message UserFollow {
+  int64 user_id = 1;
+  string user_name = 2;
+  string avatar_url = 3;
+}
+
 // login
 message LoginRequest {
   base.BaseRequest base_request=1;
@@ -267,6 +273,37 @@ message ListUserByRoleResponse {
   base.PaginationResponse pagination = 100;
 }
 
+// 关注用户
+message FollowUserRequest {
+  base.BaseRequest base_request = 1;
+  int64 followed_user_id = 2;
+  bool follow = 3; // 是否关注
+}
 
+message FollowUserResponse {
+  base.BaseResponse base_resp = 1;
+}
 
+// 我的关注列表
+message ListMyFollowedUserRequest {
+  base.BaseRequest base_request = 1;
+  base.PaginationRequest pagination = 100;
+}
 
+message ListMyFollowedUserResponse {
+  base.BaseResponse base_resp = 1;
+  repeated UserFollow followed_user_list = 2;
+  base.PaginationResponse pagination = 100;
+}
+
+// 我的粉丝列表
+message ListMyFollowerUserRequest {
+  base.BaseRequest base_request = 1;
+  base.PaginationRequest pagination = 100;
+}
+
+message ListMyFollowerUserResponse {
+  base.BaseResponse base_resp = 1;
+  repeated UserFollow follower_user_list = 2;
+  base.PaginationResponse pagination = 100;
+}

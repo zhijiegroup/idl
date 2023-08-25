@@ -61,6 +61,11 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 16: {
+
+            userId = input.readInt64();
+            break;
+          }
           case 802: {
             com.zhijiejiaoyu.base.PaginationRequest.Builder subBuilder = null;
             if (pagination != null) {
@@ -132,6 +137,17 @@ private static final long serialVersionUID = 0L;
     return getBaseRequest();
   }
 
+  public static final int USER_ID_FIELD_NUMBER = 2;
+  private long userId;
+  /**
+   * <code>int64 user_id = 2;</code>
+   * @return The userId.
+   */
+  @java.lang.Override
+  public long getUserId() {
+    return userId;
+  }
+
   public static final int PAGINATION_FIELD_NUMBER = 100;
   private com.zhijiejiaoyu.base.PaginationRequest pagination;
   /**
@@ -175,6 +191,9 @@ private static final long serialVersionUID = 0L;
     if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
+    if (userId != 0L) {
+      output.writeInt64(2, userId);
+    }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
     }
@@ -190,6 +209,10 @@ private static final long serialVersionUID = 0L;
     if (baseRequest != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseRequest());
+    }
+    if (userId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(2, userId);
     }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -215,6 +238,8 @@ private static final long serialVersionUID = 0L;
       if (!getBaseRequest()
           .equals(other.getBaseRequest())) return false;
     }
+    if (getUserId()
+        != other.getUserId()) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -235,6 +260,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
       hash = (53 * hash) + getBaseRequest().hashCode();
     }
+    hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getUserId());
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
@@ -378,6 +406,8 @@ private static final long serialVersionUID = 0L;
         baseRequest = null;
         baseRequestBuilder = null;
       }
+      userId = 0L;
+
       if (paginationBuilder == null) {
         pagination = null;
       } else {
@@ -415,6 +445,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.baseRequest = baseRequestBuilder.build();
       }
+      result.userId = userId;
       if (paginationBuilder == null) {
         result.pagination = pagination;
       } else {
@@ -470,6 +501,9 @@ private static final long serialVersionUID = 0L;
       if (other == com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest.getDefaultInstance()) return this;
       if (other.hasBaseRequest()) {
         mergeBaseRequest(other.getBaseRequest());
+      }
+      if (other.getUserId() != 0L) {
+        setUserId(other.getUserId());
       }
       if (other.hasPagination()) {
         mergePagination(other.getPagination());
@@ -620,6 +654,37 @@ private static final long serialVersionUID = 0L;
         baseRequest = null;
       }
       return baseRequestBuilder;
+    }
+
+    private long userId_ ;
+    /**
+     * <code>int64 user_id = 2;</code>
+     * @return The userId.
+     */
+    @java.lang.Override
+    public long getUserId() {
+      return userId;
+    }
+    /**
+     * <code>int64 user_id = 2;</code>
+     * @param value The userId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserId(long value) {
+      
+      userId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 user_id = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUserId() {
+      
+      userId = 0L;
+      onChanged();
+      return this;
     }
 
     private com.zhijiejiaoyu.base.PaginationRequest pagination;
