@@ -655,7 +655,7 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder;
     }
 
-    private long shopId_ ;
+    private long shopId ;
     /**
      * <code>int64 shop_id = 2;</code>
      * @return The shopId.
@@ -686,7 +686,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long start_ ;
+    private long start ;
     /**
      * <code>int64 start = 3;</code>
      * @return The start.
@@ -717,7 +717,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long end_ ;
+    private long end ;
     /**
      * <code>int64 end = 4;</code>
      * @return The end.

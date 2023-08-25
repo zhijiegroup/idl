@@ -632,7 +632,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long beginTime_ ;
+    private long beginTime ;
     /**
      * <code>int64 BeginTime = 1;</code>
      * @return The beginTime.
@@ -663,7 +663,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long endTime_ ;
+    private long endTime ;
     /**
      * <code>int64 EndTime = 2;</code>
      * @return The endTime.
@@ -694,7 +694,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long channelId_ ;
+    private long channelId ;
     /**
      * <code>int64 ChannelId = 3;</code>
      * @return The channelId.
@@ -725,7 +725,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long speechRate_ ;
+    private long speechRate ;
     /**
      * <code>int64 SpeechRate = 4;</code>
      * @return The speechRate.
@@ -756,7 +756,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double emotionValue_ ;
+    private double emotionValue ;
     /**
      * <code>double EmotionValue = 5;</code>
      * @return The emotionValue.
@@ -787,7 +787,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long silenceDuration_ ;
+    private long silenceDuration ;
     /**
      * <code>int64 SilenceDuration = 6;</code>
      * @return The silenceDuration.

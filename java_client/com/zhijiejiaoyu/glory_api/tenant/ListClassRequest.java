@@ -895,7 +895,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long classId_ ;
+    private long classId ;
     /**
      * <code>int64 class_id = 3;</code>
      * @return The classId.
@@ -926,7 +926,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long majorId_ ;
+    private long majorId ;
     /**
      * <code>int64 major_id = 4;</code>
      * @return The majorId.
@@ -957,7 +957,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long tenantId_ ;
+    private long tenantId ;
     /**
      * <code>int64 tenant_id = 5;</code>
      * @return The tenantId.
@@ -988,7 +988,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int grade_ ;
+    private int grade ;
     /**
      * <code>int32 grade = 6;</code>
      * @return The grade.

@@ -617,7 +617,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long stageVideoId_ ;
+    private long stageVideoId ;
     /**
      * <pre>
      * 暂存视频ID
@@ -756,7 +756,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int videoLength_ ;
+    private int videoLength ;
     /**
      * <pre>
      * 视频文件大小
@@ -799,7 +799,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int videoDuration_ ;
+    private int videoDuration ;
     /**
      * <pre>
      * 视频时长

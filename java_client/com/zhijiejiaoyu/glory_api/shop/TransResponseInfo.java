@@ -580,7 +580,7 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0;
 
-    private long transId_ ;
+    private long transId ;
     /**
      * <code>int64 trans_id = 1;</code>
      * @return The transId.

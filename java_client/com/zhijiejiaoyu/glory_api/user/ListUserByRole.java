@@ -681,7 +681,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long userId_ ;
+    private long userId ;
     /**
      * <code>int64 user_id = 1;</code>
      * @return The userId.
@@ -864,7 +864,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long tenantId_ ;
+    private long tenantId ;
     /**
      * <code>int64 tenant_id = 4;</code>
      * @return The tenantId.

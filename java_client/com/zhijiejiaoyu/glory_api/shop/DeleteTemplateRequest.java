@@ -587,7 +587,7 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder;
     }
 
-    private long freightTemplateId_ ;
+    private long freightTemplateId ;
     /**
      * <code>int64 freight_template_id = 2;</code>
      * @return The freightTemplateId.

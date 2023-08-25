@@ -819,7 +819,7 @@ private static final long serialVersionUID = 0L;
       return shopChartDataBuilder;
     }
 
-    private double totalDealAmount_ ;
+    private double totalDealAmount ;
     /**
      * <code>double total_deal_amount = 2;</code>
      * @return The totalDealAmount.
@@ -850,7 +850,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long totalVisitorAmount_ ;
+    private long totalVisitorAmount ;
     /**
      * <code>int64 total_visitor_amount = 3;</code>
      * @return The totalVisitorAmount.
@@ -881,7 +881,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long totalOrderAmount_ ;
+    private long totalOrderAmount ;
     /**
      * <code>int64 total_order_amount = 4;</code>
      * @return The totalOrderAmount.

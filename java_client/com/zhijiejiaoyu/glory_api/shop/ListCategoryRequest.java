@@ -842,7 +842,7 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder;
     }
 
-    private long categoryId_ ;
+    private long categoryId ;
     /**
      * <code>int64 category_id = 2;</code>
      * @return The categoryId.

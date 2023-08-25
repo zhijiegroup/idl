@@ -587,7 +587,7 @@ private static final long serialVersionUID = 0L;
       return baseRespBuilder;
     }
 
-    private long paymentId_ ;
+    private long paymentId ;
     /**
      * <code>int64 payment_id = 2;</code>
      * @return The paymentId.

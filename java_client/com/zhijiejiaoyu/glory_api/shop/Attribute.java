@@ -634,7 +634,7 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0;
 
-    private long attributeId_ ;
+    private long attributeId ;
     /**
      * <code>int64 attribute_id = 1;</code>
      * @return The attributeId.

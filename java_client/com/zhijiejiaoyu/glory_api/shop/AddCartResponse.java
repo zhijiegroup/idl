@@ -620,7 +620,7 @@ private static final long serialVersionUID = 0L;
       return baseRespBuilder;
     }
 
-    private long cartId_ ;
+    private long cartId ;
     /**
      * <code>int64 cart_id = 2;</code>
      * @return The cartId.
@@ -651,7 +651,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int cartNum_ ;
+    private int cartNum ;
     /**
      * <code>int32 cart_num = 3;</code>
      * @return The cartNum.

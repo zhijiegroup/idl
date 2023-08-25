@@ -587,7 +587,7 @@ private static final long serialVersionUID = 0L;
       return baseRespBuilder;
     }
 
-    private long tenantUserId_ ;
+    private long tenantUserId ;
     /**
      * <code>int64 tenant_user_id = 2;</code>
      * @return The tenantUserId.

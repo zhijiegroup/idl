@@ -677,7 +677,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long resourceId_ ;
+    private long resourceId ;
     /**
      * <code>int64 resource_id = 2;</code>
      * @return The resourceId.
@@ -976,7 +976,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long sourceId_ ;
+    private long sourceId ;
     /**
      * <pre>
      * 源表记录的id
@@ -1019,7 +1019,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long tenantId_ ;
+    private long tenantId ;
     /**
      * <pre>
      * 学校的id

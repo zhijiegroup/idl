@@ -432,7 +432,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long shopId_ ;
+    private long shopId ;
     /**
      * <code>int64 shop_id = 1;</code>
      * @return The shopId.
@@ -463,7 +463,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int days_ ;
+    private int days ;
     /**
      * <code>int32 days = 2;</code>
      * @return The days.

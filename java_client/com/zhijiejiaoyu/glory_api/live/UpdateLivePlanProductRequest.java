@@ -715,7 +715,7 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder;
     }
 
-    private long livePlanProductId_ ;
+    private long livePlanProductId ;
     /**
      * <pre>
      * 必传

@@ -771,7 +771,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long id_ ;
+    private long id ;
     /**
      * <code>int64 id = 3;</code>
      * @return The id.
@@ -878,7 +878,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private boolean hasPermission_ ;
+    private boolean hasPermission ;
     /**
      * <code>bool has_permission = 5;</code>
      * @return The hasPermission.

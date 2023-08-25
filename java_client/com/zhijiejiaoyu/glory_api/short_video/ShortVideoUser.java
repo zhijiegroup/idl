@@ -543,7 +543,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long userId_ ;
+    private long userId ;
     /**
      * <pre>
      * 用户ID

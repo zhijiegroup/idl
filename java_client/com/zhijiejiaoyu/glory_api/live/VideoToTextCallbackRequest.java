@@ -804,7 +804,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long statusCode_ ;
+    private long statusCode ;
     /**
      * <code>int64 StatusCode = 2;</code>
      * @return The statusCode.
@@ -911,7 +911,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long requestTime_ ;
+    private long requestTime ;
     /**
      * <code>int64 RequestTime = 4;</code>
      * @return The requestTime.
@@ -942,7 +942,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long solveTime_ ;
+    private long solveTime ;
     /**
      * <code>int64 SolveTime = 5;</code>
      * @return The solveTime.
@@ -973,7 +973,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long bizDuration_ ;
+    private long bizDuration ;
     /**
      * <code>int64 BizDuration = 6;</code>
      * @return The bizDuration.
@@ -1004,7 +1004,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long stopTime_ ;
+    private long stopTime ;
     /**
      * <code>int64 stop_time = 7;</code>
      * @return The stopTime.

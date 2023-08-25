@@ -495,7 +495,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long tenantId_ ;
+    private long tenantId ;
     /**
      * <code>int64 tenant_id = 1;</code>
      * @return The tenantId.
@@ -526,7 +526,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long goverDeptId_ ;
+    private long goverDeptId ;
     /**
      * <code>int64 gover_dept_id = 2;</code>
      * @return The goverDeptId.

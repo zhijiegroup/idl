@@ -614,7 +614,7 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0;
 
-    private double averageScore_ ;
+    private double averageScore ;
     /**
      * <code>double average_score = 1;</code>
      * @return The averageScore.
@@ -645,7 +645,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double totalDuration_ ;
+    private double totalDuration ;
     /**
      * <code>double total_duration = 2;</code>
      * @return The totalDuration.
@@ -676,7 +676,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long totalLike_ ;
+    private long totalLike ;
     /**
      * <code>int64 total_like = 3;</code>
      * @return The totalLike.
@@ -707,7 +707,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long totalOrder_ ;
+    private long totalOrder ;
     /**
      * <code>int64 total_order = 4;</code>
      * @return The totalOrder.

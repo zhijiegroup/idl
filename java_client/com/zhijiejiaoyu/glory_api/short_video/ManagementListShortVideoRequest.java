@@ -667,7 +667,7 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder;
     }
 
-    private int type_ ;
+    private int type ;
     /**
      * <pre>
      * 短视频类型：1: 待审核视频列表；2: 已审核视频列表；3: 被驳回视频列表；4: 全部视频列表

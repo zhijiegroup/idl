@@ -591,7 +591,7 @@ private static final long serialVersionUID = 0L;
       return baseRespBuilder;
     }
 
-    private long productId_ ;
+    private long productId ;
     /**
      * <pre>
      *  ProductWithAuthor product_detail =2;

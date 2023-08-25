@@ -653,7 +653,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long deptId_ ;
+    private long deptId ;
     /**
      * <code>int64 dept_id = 1;</code>
      * @return The deptId.
@@ -912,7 +912,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long tenantId_ ;
+    private long tenantId ;
     /**
      * <code>int64 tenant_id = 5;</code>
      * @return The tenantId.
@@ -943,7 +943,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long parentId_ ;
+    private long parentId ;
     /**
      * <code>int64 parent_id = 6;</code>
      * @return The parentId.

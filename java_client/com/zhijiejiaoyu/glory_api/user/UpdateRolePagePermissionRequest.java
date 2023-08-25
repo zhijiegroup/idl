@@ -732,7 +732,7 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder;
     }
 
-    private long tenantId_ ;
+    private long tenantId ;
     /**
      * <code>int64 tenant_id = 2;</code>
      * @return The tenantId.
@@ -763,7 +763,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long roleId_ ;
+    private long roleId ;
     /**
      * <code>int64 role_id = 3;</code>
      * @return The roleId.

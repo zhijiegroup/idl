@@ -587,7 +587,7 @@ private static final long serialVersionUID = 0L;
       return baseRespBuilder;
     }
 
-    private long goverDeptId_ ;
+    private long goverDeptId ;
     /**
      * <code>int64 gover_dept_id = 2;</code>
      * @return The goverDeptId.

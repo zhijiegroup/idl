@@ -611,7 +611,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long tenantId_ ;
+    private long tenantId ;
     /**
      * <code>int64 tenant_id = 1;</code>
      * @return The tenantId.
@@ -642,7 +642,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long eduDeptId_ ;
+    private long eduDeptId ;
     /**
      * <code>int64 edu_dept_id = 2;</code>
      * @return The eduDeptId.
@@ -673,7 +673,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long collegeId_ ;
+    private long collegeId ;
     /**
      * <pre>
      *创建不传

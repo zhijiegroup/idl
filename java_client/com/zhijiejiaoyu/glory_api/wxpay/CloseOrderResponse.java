@@ -587,7 +587,7 @@ private static final long serialVersionUID = 0L;
       return baseRespBuilder;
     }
 
-    private long statusCode_ ;
+    private long statusCode ;
     /**
      * <code>int64 status_code = 2;</code>
      * @return The statusCode.

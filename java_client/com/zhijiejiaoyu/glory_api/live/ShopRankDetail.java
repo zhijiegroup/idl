@@ -675,7 +675,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long saleAmount_ ;
+    private long saleAmount ;
     /**
      * <code>int64 sale_amount = 3;</code>
      * @return The saleAmount.

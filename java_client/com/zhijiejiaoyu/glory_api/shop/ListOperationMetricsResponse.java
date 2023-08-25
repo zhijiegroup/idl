@@ -765,7 +765,7 @@ private static final long serialVersionUID = 0L;
       return baseRespBuilder;
     }
 
-    private double orderAmount_ ;
+    private double orderAmount ;
     /**
      * <code>double order_amount = 2;</code>
      * @return The orderAmount.
@@ -796,7 +796,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int orderCount_ ;
+    private int orderCount ;
     /**
      * <code>uint32 order_count = 3;</code>
      * @return The orderCount.
@@ -827,7 +827,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int distinctUserCount_ ;
+    private int distinctUserCount ;
     /**
      * <code>uint32 distinct_user_count = 4;</code>
      * @return The distinctUserCount.

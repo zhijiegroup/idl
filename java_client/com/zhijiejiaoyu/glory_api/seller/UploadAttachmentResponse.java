@@ -649,7 +649,7 @@ private static final long serialVersionUID = 0L;
       return baseRespBuilder;
     }
 
-    private long attachmentId_ ;
+    private long attachmentId ;
     /**
      * <code>int64 attachment_id = 2;</code>
      * @return The attachmentId.

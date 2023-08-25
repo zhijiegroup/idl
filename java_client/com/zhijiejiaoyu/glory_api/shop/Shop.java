@@ -2589,7 +2589,7 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0;
 
-    private long shopId_ ;
+    private long shopId ;
     /**
      * <pre>
      *店铺id,创建时 不传
@@ -2632,7 +2632,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long sellerId_ ;
+    private long sellerId ;
     /**
      * <pre>
      *提前调用 create_seller 生成 seller_id
@@ -5206,7 +5206,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private boolean companyBankValidated_ ;
+    private boolean companyBankValidated ;
     /**
      * <pre>
      *输入银行卡号,验证结果
@@ -5249,7 +5249,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int certifyStatus_ ;
+    private int certifyStatus ;
     /**
      * <pre>
      *店铺状态 1: inProgress, 2: Approved, 3: Rejected
@@ -5292,7 +5292,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long ownerIdFrontAttachmentId_ ;
+    private long ownerIdFrontAttachmentId ;
     /**
      * <pre>
      * 上传附件的接口返回的 attachment id
@@ -5335,7 +5335,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long ownerIdBackAttachmentId_ ;
+    private long ownerIdBackAttachmentId ;
     /**
      * <pre>
      * 上传附件的接口返回的 attachment id
@@ -5378,7 +5378,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long shopLogoAttachmentId_ ;
+    private long shopLogoAttachmentId ;
     /**
      * <pre>
      * 上传附件的接口返回的 attachment id
@@ -5421,7 +5421,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long businessLicenseAttachmentId_ ;
+    private long businessLicenseAttachmentId ;
     /**
      * <pre>
      * 上传附件的接口返回的 attachment id

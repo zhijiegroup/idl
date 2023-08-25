@@ -709,7 +709,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long textId_ ;
+    private long textId ;
     /**
      * <code>int64 text_id = 1;</code>
      * @return The textId.

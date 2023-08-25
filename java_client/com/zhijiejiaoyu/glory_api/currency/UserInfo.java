@@ -585,7 +585,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long id_ ;
+    private long id ;
     /**
      * <code>int64 id = 1;</code>
      * @return The id.

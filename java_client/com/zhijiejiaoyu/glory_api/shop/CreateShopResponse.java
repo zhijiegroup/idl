@@ -591,7 +591,7 @@ private static final long serialVersionUID = 0L;
       return baseRespBuilder;
     }
 
-    private long shopId_ ;
+    private long shopId ;
     /**
      * <pre>
      *  ShopWithAuthor shop_detail =2;

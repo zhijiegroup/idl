@@ -1345,7 +1345,7 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0;
 
-    private long orderId_ ;
+    private long orderId ;
     /**
      * <code>int64 order_id = 1;</code>
      * @return The orderId.
@@ -1376,7 +1376,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long userId_ ;
+    private long userId ;
     /**
      * <code>int64 user_id = 2;</code>
      * @return The userId.
@@ -1407,7 +1407,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long shopId_ ;
+    private long shopId ;
     /**
      * <code>int64 shop_id = 3;</code>
      * @return The shopId.
@@ -1438,7 +1438,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long sellerId_ ;
+    private long sellerId ;
     /**
      * <code>int64 seller_id = 4;</code>
      * @return The sellerId.
@@ -1469,7 +1469,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long tenantId_ ;
+    private long tenantId ;
     /**
      * <code>int64 tenant_id = 5;</code>
      * @return The tenantId.
@@ -1500,7 +1500,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double totalAmount_ ;
+    private double totalAmount ;
     /**
      * <code>double total_amount = 7;</code>
      * @return The totalAmount.
@@ -1531,7 +1531,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double originalAmount_ ;
+    private double originalAmount ;
     /**
      * <code>double original_amount = 8;</code>
      * @return The originalAmount.
@@ -1562,7 +1562,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double tax_ ;
+    private double tax ;
     /**
      * <code>double tax = 9;</code>
      * @return The tax.
@@ -1593,7 +1593,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double deliverFee_ ;
+    private double deliverFee ;
     /**
      * <code>double deliver_fee = 10;</code>
      * @return The deliverFee.
@@ -1796,7 +1796,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int deliverPost_ ;
+    private int deliverPost ;
     /**
      * <code>int32 deliver_post = 13;</code>
      * @return The deliverPost.
@@ -2371,7 +2371,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long roomId_ ;
+    private long roomId ;
     /**
      * <pre>
      *直播房间id
@@ -2510,7 +2510,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long transId_ ;
+    private long transId ;
     /**
      * <pre>
      *流水id,下单时候 货币订单、虚拟币订单,分别进行合并,合并后称之为 trans_id(流水id)

@@ -523,7 +523,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long userId_ ;
+    private long userId ;
     /**
      * <code>int64 user_id = 1;</code>
      * @return The userId.

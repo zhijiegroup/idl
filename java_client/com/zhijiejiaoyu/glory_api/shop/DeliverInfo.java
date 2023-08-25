@@ -926,7 +926,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int deliverPost_ ;
+    private int deliverPost ;
     /**
      * <pre>
      *邮编

@@ -952,7 +952,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double score_ ;
+    private double score ;
     /**
      * <code>double score = 5;</code>
      * @return The score.

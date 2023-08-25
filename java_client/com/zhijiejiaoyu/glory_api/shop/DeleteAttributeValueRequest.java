@@ -587,7 +587,7 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder;
     }
 
-    private long attributeValueId_ ;
+    private long attributeValueId ;
     /**
      * <code>int64 attribute_value_id = 2;</code>
      * @return The attributeValueId.

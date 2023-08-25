@@ -591,7 +591,7 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder;
     }
 
-    private long shopId_ ;
+    private long shopId ;
     /**
      * <pre>
      * shop id

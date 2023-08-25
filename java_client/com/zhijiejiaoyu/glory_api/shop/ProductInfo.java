@@ -885,7 +885,7 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0;
 
-    private long productId_ ;
+    private long productId ;
     /**
      * <code>int64 product_id = 1;</code>
      * @return The productId.
@@ -1207,7 +1207,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double unitPrice_ ;
+    private double unitPrice ;
     /**
      * <pre>
      *单价
@@ -1250,7 +1250,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int quantity_ ;
+    private int quantity ;
     /**
      * <pre>
      *数量

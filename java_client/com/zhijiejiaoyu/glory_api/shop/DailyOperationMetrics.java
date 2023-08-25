@@ -528,7 +528,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double dailyOrderAmount_ ;
+    private double dailyOrderAmount ;
     /**
      * <code>double daily_order_amount = 1;</code>
      * @return The dailyOrderAmount.
@@ -559,7 +559,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int dailyOrderCount_ ;
+    private int dailyOrderCount ;
     /**
      * <code>uint32 daily_order_count = 2;</code>
      * @return The dailyOrderCount.
@@ -590,7 +590,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int dailyDistinctUserCount_ ;
+    private int dailyDistinctUserCount ;
     /**
      * <code>uint32 daily_distinct_user_count = 3;</code>
      * @return The dailyDistinctUserCount.

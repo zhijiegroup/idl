@@ -686,7 +686,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long userId_ ;
+    private long userId ;
     /**
      * <code>int64 user_id = 1;</code>
      * @return The userId.
@@ -793,7 +793,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int accountOperationType_ ;
+    private int accountOperationType ;
     /**
      * <code>int32 account_operation_type = 3;</code>
      * @return The accountOperationType.
@@ -824,7 +824,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long amount_ ;
+    private long amount ;
     /**
      * <code>int64 amount = 4;</code>
      * @return The amount.
@@ -931,7 +931,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long accountOperationId_ ;
+    private long accountOperationId ;
     /**
      * <code>int64 account_operation_id = 6;</code>
      * @return The accountOperationId.

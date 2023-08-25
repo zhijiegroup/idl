@@ -1546,7 +1546,7 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0;
 
-    private long orderId_ ;
+    private long orderId ;
     /**
      * <pre>
      *订单id
@@ -2069,7 +2069,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double totalAmount_ ;
+    private double totalAmount ;
     /**
      * <pre>
      *商品总价 = 原价+运费
@@ -2112,7 +2112,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double originalAmount_ ;
+    private double originalAmount ;
     /**
      * <pre>
      *原价
@@ -2155,7 +2155,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double deliverFee_ ;
+    private double deliverFee ;
     /**
      * <pre>
      *运费
@@ -2198,7 +2198,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double discountAmount_ ;
+    private double discountAmount ;
     /**
      * <pre>
      *优惠金额
@@ -2241,7 +2241,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double paymentAmount_ ;
+    private double paymentAmount ;
     /**
      * <pre>
      *实付金额
@@ -2284,7 +2284,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double payableAmount_ ;
+    private double payableAmount ;
     /**
      * <pre>
      *应付金额

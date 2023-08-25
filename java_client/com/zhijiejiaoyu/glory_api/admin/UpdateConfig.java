@@ -585,7 +585,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long configId_ ;
+    private long configId ;
     /**
      * <code>int64 config_id = 2;</code>
      * @return The configId.

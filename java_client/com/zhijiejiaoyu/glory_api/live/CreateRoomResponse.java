@@ -773,7 +773,7 @@ private static final long serialVersionUID = 0L;
       return baseRespBuilder;
     }
 
-    private long roomId_ ;
+    private long roomId ;
     /**
      * <code>int64 room_id = 2;</code>
      * @return The roomId.

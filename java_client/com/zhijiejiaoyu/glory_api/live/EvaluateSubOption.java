@@ -724,7 +724,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double total_ ;
+    private double total ;
     /**
      * <code>double total = 2;</code>
      * @return The total.

@@ -599,7 +599,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long payerTotal_ ;
+    private long payerTotal ;
     /**
      * <code>int64 payer_total = 2;</code>
      * @return The payerTotal.
@@ -630,7 +630,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long total_ ;
+    private long total ;
     /**
      * <code>int64 total = 3;</code>
      * @return The total.

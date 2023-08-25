@@ -927,7 +927,7 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0;
 
-    private long skuId_ ;
+    private long skuId ;
     /**
      * <code>int64 sku_id = 1;</code>
      * @return The skuId.
@@ -1034,7 +1034,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long productId_ ;
+    private long productId ;
     /**
      * <code>int64 product_id = 3;</code>
      * @return The productId.
@@ -1065,7 +1065,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double unitPrice_ ;
+    private double unitPrice ;
     /**
      * <code>double unit_price = 5;</code>
      * @return The unitPrice.
@@ -1172,7 +1172,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int remainingQuantity_ ;
+    private int remainingQuantity ;
     /**
      * <code>int32 remaining_quantity = 7;</code>
      * @return The remainingQuantity.
@@ -1203,7 +1203,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int totalSold_ ;
+    private int totalSold ;
     /**
      * <code>int32 total_sold = 8;</code>
      * @return The totalSold.
@@ -1474,7 +1474,7 @@ private static final long serialVersionUID = 0L;
       return attributeBuilder;
     }
 
-    private long attachmentId_ ;
+    private long attachmentId ;
     /**
      * <code>int64 attachment_id = 10;</code>
      * @return The attachmentId.

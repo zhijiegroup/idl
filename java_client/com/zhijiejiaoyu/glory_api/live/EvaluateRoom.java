@@ -785,7 +785,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long roomId_ ;
+    private long roomId ;
     /**
      * <code>int64 room_id = 1;</code>
      * @return The roomId.
@@ -968,7 +968,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double score_ ;
+    private double score ;
     /**
      * <code>double score = 4;</code>
      * @return The score.
@@ -999,7 +999,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double duration_ ;
+    private double duration ;
     /**
      * <code>double duration = 5;</code>
      * @return The duration.
@@ -1030,7 +1030,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long like_ ;
+    private long like ;
     /**
      * <code>int64 like = 6;</code>
      * @return The like.
@@ -1061,7 +1061,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long order_ ;
+    private long order ;
     /**
      * <code>int64 order = 7;</code>
      * @return The order.

@@ -473,7 +473,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long productId_ ;
+    private long productId ;
     /**
      * <pre>
      * 商品ID

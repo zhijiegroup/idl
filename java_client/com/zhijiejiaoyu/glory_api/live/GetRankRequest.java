@@ -897,7 +897,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long start_ ;
+    private long start ;
     /**
      * <code>int64 start = 4;</code>
      * @return The start.
@@ -928,7 +928,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long end_ ;
+    private long end ;
     /**
      * <code>int64 end = 5;</code>
      * @return The end.

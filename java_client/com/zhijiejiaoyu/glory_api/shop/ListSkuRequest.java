@@ -794,7 +794,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long productId_ ;
+    private long productId ;
     /**
      * <code>int64 product_id = 3;</code>
      * @return The productId.

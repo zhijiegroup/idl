@@ -985,7 +985,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long likeAmount_ ;
+    private long likeAmount ;
     /**
      * <code>int64 like_amount = 5;</code>
      * @return The likeAmount.
@@ -1016,7 +1016,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long rank_ ;
+    private long rank ;
     /**
      * <code>int64 rank = 6;</code>
      * @return The rank.

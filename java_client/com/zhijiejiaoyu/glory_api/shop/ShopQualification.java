@@ -717,7 +717,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long shopQualificationId_ ;
+    private long shopQualificationId ;
     /**
      * <pre>
      *不传
@@ -1048,7 +1048,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long attachmentId_ ;
+    private long attachmentId ;
     /**
      * <code>int64 attachment_id = 5;</code>
      * @return The attachmentId.

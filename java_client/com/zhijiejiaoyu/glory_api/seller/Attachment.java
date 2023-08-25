@@ -556,7 +556,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long attachmentId_ ;
+    private long attachmentId ;
     /**
      * <code>int64 attachment_id = 1;</code>
      * @return The attachmentId.
@@ -663,7 +663,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int attachmentType_ ;
+    private int attachmentType ;
     /**
      * <code>int32 attachment_type = 3;</code>
      * @return The attachmentType.

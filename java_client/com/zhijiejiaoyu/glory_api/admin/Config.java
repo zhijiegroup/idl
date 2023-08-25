@@ -901,7 +901,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long id_ ;
+    private long id ;
     /**
      * <code>int64 id = 2;</code>
      * @return The id.
@@ -1236,7 +1236,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long createdBy_ ;
+    private long createdBy ;
     /**
      * <code>int64 created_by = 7;</code>
      * @return The createdBy.
@@ -1267,7 +1267,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long updatedBy_ ;
+    private long updatedBy ;
     /**
      * <code>int64 updated_by = 8;</code>
      * @return The updatedBy.

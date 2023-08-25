@@ -665,7 +665,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long permissionId_ ;
+    private long permissionId ;
     /**
      * <code>int64 permission_id = 1;</code>
      * @return The permissionId.
@@ -772,7 +772,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long resourceId_ ;
+    private long resourceId ;
     /**
      * <pre>
      * 权限对应的resource
@@ -987,7 +987,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long tenantId_ ;
+    private long tenantId ;
     /**
      * <code>int64 tenant_id = 6;</code>
      * @return The tenantId.

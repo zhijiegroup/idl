@@ -587,7 +587,7 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder;
     }
 
-    private long shopAccessId_ ;
+    private long shopAccessId ;
     /**
      * <code>int64 shop_access_id = 2;</code>
      * @return The shopAccessId.

@@ -927,7 +927,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long roomId_ ;
+    private long roomId ;
     /**
      * <code>int64 room_id = 1;</code>
      * @return The roomId.
@@ -1110,7 +1110,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long sellerId_ ;
+    private long sellerId ;
     /**
      * <code>int64 seller_id = 4;</code>
      * @return The sellerId.
@@ -1217,7 +1217,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double averageOnlineUser_ ;
+    private double averageOnlineUser ;
     /**
      * <code>double average_online_user = 6;</code>
      * @return The averageOnlineUser.
@@ -1248,7 +1248,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long roomProductAmount_ ;
+    private long roomProductAmount ;
     /**
      * <code>int64 room_product_amount = 7;</code>
      * @return The roomProductAmount.
@@ -1279,7 +1279,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long roomOrderAmount_ ;
+    private long roomOrderAmount ;
     /**
      * <code>int64 room_order_amount = 8;</code>
      * @return The roomOrderAmount.
@@ -1482,7 +1482,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long roomImageAttachmentId_ ;
+    private long roomImageAttachmentId ;
     /**
      * <pre>
      * 直播间的封面的image 的id
@@ -1525,7 +1525,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double roomDealAmount_ ;
+    private double roomDealAmount ;
     /**
      * <code>double room_deal_amount = 12;</code>
      * @return The roomDealAmount.

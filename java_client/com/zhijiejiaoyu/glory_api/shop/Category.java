@@ -585,7 +585,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long categoryId_ ;
+    private long categoryId ;
     /**
      * <code>int64 category_id = 1;</code>
      * @return The categoryId.

@@ -591,7 +591,7 @@ private static final long serialVersionUID = 0L;
       return baseRespBuilder;
     }
 
-    private long attributeId_ ;
+    private long attributeId ;
     /**
      * <pre>
      *  AttributeWithAuthor attribute_detail =2;

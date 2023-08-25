@@ -1020,7 +1020,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double duration_ ;
+    private double duration ;
     /**
      * <code>double duration = 5;</code>
      * @return The duration.
@@ -1051,7 +1051,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long startTime_ ;
+    private long startTime ;
     /**
      * <code>int64 start_time = 6;</code>
      * @return The startTime.
@@ -1082,7 +1082,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long stopTime_ ;
+    private long stopTime ;
     /**
      * <code>int64 stop_time = 7;</code>
      * @return The stopTime.

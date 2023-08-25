@@ -587,7 +587,7 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder;
     }
 
-    private long productId_ ;
+    private long productId ;
     /**
      * <code>int64 product_id = 2;</code>
      * @return The productId.

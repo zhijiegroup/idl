@@ -982,7 +982,7 @@ private static final long serialVersionUID = 0L;
       return transResBuilder;
     }
 
-    private double cnyTotal_ ;
+    private double cnyTotal ;
     /**
      * <pre>
      *人民币总金额，单位为分 微信支付使用
@@ -1025,7 +1025,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double coinTotal_ ;
+    private double coinTotal ;
     /**
      * <pre>
      *虚拟币总金额

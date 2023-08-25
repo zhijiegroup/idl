@@ -951,7 +951,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long orderAmount_ ;
+    private long orderAmount ;
     /**
      * <code>int64 order_amount = 5;</code>
      * @return The orderAmount.

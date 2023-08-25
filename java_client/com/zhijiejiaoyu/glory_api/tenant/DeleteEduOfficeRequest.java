@@ -587,7 +587,7 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder;
     }
 
-    private long eduOfficeId_ ;
+    private long eduOfficeId ;
     /**
      * <code>int64 edu_office_id = 2;</code>
      * @return The eduOfficeId.

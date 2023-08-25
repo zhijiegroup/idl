@@ -621,7 +621,7 @@ private static final long serialVersionUID = 0L;
       return baseRespBuilder;
     }
 
-    private long tenantId_ ;
+    private long tenantId ;
     /**
      * <code>int64 tenant_id = 2;</code>
      * @return The tenantId.
@@ -652,7 +652,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long eduOfficeId_ ;
+    private long eduOfficeId ;
     /**
      * <code>int64 edu_office_id = 3;</code>
      * @return The eduOfficeId.

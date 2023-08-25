@@ -939,7 +939,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long quantity_ ;
+    private long quantity ;
     /**
      * <pre>
      *商品数量
@@ -982,7 +982,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long unitPrice_ ;
+    private long unitPrice ;
     /**
      * <pre>
      *商品单价

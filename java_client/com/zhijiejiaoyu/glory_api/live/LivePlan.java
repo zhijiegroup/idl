@@ -680,7 +680,7 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0;
 
-    private long livePlanId_ ;
+    private long livePlanId ;
     /**
      * <code>int64 live_plan_id = 1;</code>
      * @return The livePlanId.
@@ -883,7 +883,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long shopId_ ;
+    private long shopId ;
     /**
      * <pre>
      * 创建必传

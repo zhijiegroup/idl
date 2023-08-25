@@ -667,7 +667,7 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder;
     }
 
-    private long shopId_ ;
+    private long shopId ;
     /**
      * <pre>
      * shop id
@@ -710,7 +710,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long livePlanId_ ;
+    private long livePlanId ;
     /**
      * <pre>
      * live plan id
@@ -753,7 +753,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private boolean isPlaying_ ;
+    private boolean isPlaying ;
     /**
      * <pre>
      * is load to playing product

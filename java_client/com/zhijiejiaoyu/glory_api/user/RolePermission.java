@@ -578,7 +578,7 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0;
 
-    private long rolePermissionId_ ;
+    private long rolePermissionId ;
     /**
      * <code>int64 role_permission_id = 1;</code>
      * @return The rolePermissionId.
@@ -609,7 +609,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long roleId_ ;
+    private long roleId ;
     /**
      * <code>int64 role_id = 2;</code>
      * @return The roleId.
@@ -640,7 +640,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long permissionId_ ;
+    private long permissionId ;
     /**
      * <code>int64 permission_id = 3;</code>
      * @return The permissionId.

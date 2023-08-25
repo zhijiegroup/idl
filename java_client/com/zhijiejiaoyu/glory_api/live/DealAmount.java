@@ -538,7 +538,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double amount_ ;
+    private double amount ;
     /**
      * <code>double amount = 2;</code>
      * @return The amount.

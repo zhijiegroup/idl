@@ -820,7 +820,7 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder;
     }
 
-    private long userId_ ;
+    private long userId ;
     /**
      * <code>int64 user_id = 2;</code>
      * @return The userId.
@@ -851,7 +851,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long sellerId_ ;
+    private long sellerId ;
     /**
      * <code>int64 seller_id = 3;</code>
      * @return The sellerId.
@@ -882,7 +882,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long tenantId_ ;
+    private long tenantId ;
     /**
      * <code>int64 tenant_id = 4;</code>
      * @return The tenantId.
@@ -913,7 +913,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long shopId_ ;
+    private long shopId ;
     /**
      * <code>int64 shop_id = 5;</code>
      * @return The shopId.

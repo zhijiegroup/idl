@@ -688,7 +688,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long paymentId_ ;
+    private long paymentId ;
     /**
      * <code>int64 payment_id = 1;</code>
      * @return The paymentId.
@@ -719,7 +719,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long orderId_ ;
+    private long orderId ;
     /**
      * <code>int64 order_id = 2;</code>
      * @return The orderId.
@@ -902,7 +902,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private float totalAmount_ ;
+    private float totalAmount ;
     /**
      * <code>float total_amount = 5;</code>
      * @return The totalAmount.
@@ -933,7 +933,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long supplierPaymentId_ ;
+    private long supplierPaymentId ;
     /**
      * <code>int64 supplier_payment_id = 6;</code>
      * @return The supplierPaymentId.

@@ -587,7 +587,7 @@ private static final long serialVersionUID = 0L;
       return baseRespBuilder;
     }
 
-    private long skuId_ ;
+    private long skuId ;
     /**
      * <code>int64 sku_id = 2;</code>
      * @return The skuId.

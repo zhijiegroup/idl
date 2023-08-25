@@ -468,7 +468,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int statusCode_ ;
+    private int statusCode ;
     /**
      * <code>sint32 status_code = 1;</code>
      * @return The statusCode.

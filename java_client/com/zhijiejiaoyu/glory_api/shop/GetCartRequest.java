@@ -587,7 +587,7 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder;
     }
 
-    private long cartId_ ;
+    private long cartId ;
     /**
      * <code>int64 cart_id = 2;</code>
      * @return The cartId.

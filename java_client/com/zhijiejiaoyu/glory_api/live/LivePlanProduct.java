@@ -615,7 +615,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long livePlanProductId_ ;
+    private long livePlanProductId ;
     /**
      * <code>int64 live_plan_product_id = 1;</code>
      * @return The livePlanProductId.
@@ -646,7 +646,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long livePlanId_ ;
+    private long livePlanId ;
     /**
      * <pre>
      * 创建必传
@@ -689,7 +689,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long productId_ ;
+    private long productId ;
     /**
      * <pre>
      * 创建必传

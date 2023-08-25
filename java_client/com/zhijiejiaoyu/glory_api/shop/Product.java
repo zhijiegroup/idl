@@ -1392,7 +1392,7 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0;
 
-    private long productId_ ;
+    private long productId ;
     /**
      * <code>int64 product_id = 1;</code>
      * @return The productId.
@@ -1423,7 +1423,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long shopId_ ;
+    private long shopId ;
     /**
      * <code>int64 shop_id = 2;</code>
      * @return The shopId.
@@ -1530,7 +1530,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long categoryId_ ;
+    private long categoryId ;
     /**
      * <code>int64 category_id = 4;</code>
      * @return The categoryId.
@@ -2115,7 +2115,7 @@ private static final long serialVersionUID = 0L;
       return imagesBuilder;
     }
 
-    private float productPrice_ ;
+    private float productPrice ;
     /**
      * <pre>
      *价格,取所有sku 中最低的一个
@@ -2158,7 +2158,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int productQuantity_ ;
+    private int productQuantity ;
     /**
      * <pre>
      *总库存
@@ -2201,7 +2201,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int productSold_ ;
+    private int productSold ;
     /**
      * <pre>
      *总销量
@@ -2863,7 +2863,7 @@ private static final long serialVersionUID = 0L;
       return shipmentAttributeBuilder;
     }
 
-    private float salePrice_ ;
+    private float salePrice ;
     /**
      * <pre>
      *售卖价
@@ -2906,7 +2906,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private float referencePrice_ ;
+    private float referencePrice ;
     /**
      * <pre>
      *参考价

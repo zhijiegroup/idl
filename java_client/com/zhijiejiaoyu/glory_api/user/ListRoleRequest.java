@@ -835,7 +835,7 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder;
     }
 
-    private long roleId_ ;
+    private long roleId ;
     /**
      * <code>int64 role_id = 2;</code>
      * @return The roleId.
@@ -1058,7 +1058,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long tenantId_ ;
+    private long tenantId ;
     /**
      * <pre>
      *  string source = 5;  // 对应的角色来源

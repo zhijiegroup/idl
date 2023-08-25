@@ -591,7 +591,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long roomUserId_ ;
+    private long roomUserId ;
     /**
      * <code>int64 room_user_id = 1;</code>
      * @return The roomUserId.
@@ -622,7 +622,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long userId_ ;
+    private long userId ;
     /**
      * <code>int64 user_id = 2;</code>
      * @return The userId.
@@ -653,7 +653,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long roomId_ ;
+    private long roomId ;
     /**
      * <code>int64 room_id = 3;</code>
      * @return The roomId.

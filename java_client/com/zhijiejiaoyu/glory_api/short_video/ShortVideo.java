@@ -1384,7 +1384,7 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0;
 
-    private long shortVideoId_ ;
+    private long shortVideoId ;
     /**
      * <pre>
      * 短视频ID
@@ -1715,7 +1715,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int visibility_ ;
+    private int visibility ;
     /**
      * <pre>
      * 视频可见性：1. 公开，2: 隐私，仅自己可见
@@ -1758,7 +1758,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int videoLength_ ;
+    private int videoLength ;
     /**
      * <pre>
      * 视频文件大小
@@ -1801,7 +1801,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int videoDuration_ ;
+    private int videoDuration ;
     /**
      * <pre>
      * 视频时长
@@ -1844,7 +1844,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int censorStatus_ ;
+    private int censorStatus ;
     /**
      * <pre>
      * 审核状态：1: 待审核，2: 审核通过，3:审核被驳回
@@ -2605,7 +2605,7 @@ private static final long serialVersionUID = 0L;
       return userInfoBuilder;
     }
 
-    private boolean isLike_ ;
+    private boolean isLike ;
     /**
      * <pre>
      * 是否喜欢
@@ -2648,7 +2648,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long likeCount_ ;
+    private long likeCount ;
     /**
      * <pre>
      * 喜欢数量
@@ -2691,7 +2691,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private boolean isFavorite_ ;
+    private boolean isFavorite ;
     /**
      * <pre>
      * 是否收藏
@@ -2734,7 +2734,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long favoriteCount_ ;
+    private long favoriteCount ;
     /**
      * <pre>
      * 收藏数量
@@ -2777,7 +2777,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long commentCount_ ;
+    private long commentCount ;
     /**
      * <pre>
      * 评论数量

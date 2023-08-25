@@ -468,7 +468,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long shopCategoryId_ ;
+    private long shopCategoryId ;
     /**
      * <code>int64 shop_category_id = 1;</code>
      * @return The shopCategoryId.

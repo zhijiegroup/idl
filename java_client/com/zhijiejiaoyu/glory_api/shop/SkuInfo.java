@@ -432,7 +432,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long skuId_ ;
+    private long skuId ;
     /**
      * <code>int64 sku_id = 1;</code>
      * @return The skuId.
@@ -463,7 +463,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int number_ ;
+    private int number ;
     /**
      * <code>int32 number = 2;</code>
      * @return The number.

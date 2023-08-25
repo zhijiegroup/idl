@@ -598,7 +598,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long skuAttributeId_ ;
+    private long skuAttributeId ;
     /**
      * <code>int64 sku_attribute_id = 1;</code>
      * @return The skuAttributeId.
@@ -629,7 +629,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long skuId_ ;
+    private long skuId ;
     /**
      * <code>int64 sku_id = 2;</code>
      * @return The skuId.
@@ -660,7 +660,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long attributeId_ ;
+    private long attributeId ;
     /**
      * <code>int64 attribute_id = 3;</code>
      * @return The attributeId.

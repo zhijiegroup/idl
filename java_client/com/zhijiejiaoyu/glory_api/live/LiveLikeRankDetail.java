@@ -951,7 +951,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long likeAmount_ ;
+    private long likeAmount ;
     /**
      * <code>int64 like_amount = 5;</code>
      * @return The likeAmount.

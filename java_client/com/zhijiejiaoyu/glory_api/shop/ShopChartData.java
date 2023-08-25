@@ -640,7 +640,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double dealAmount_ ;
+    private double dealAmount ;
     /**
      * <code>double deal_amount = 2;</code>
      * @return The dealAmount.
@@ -671,7 +671,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long shopBuyerAmount_ ;
+    private long shopBuyerAmount ;
     /**
      * <code>int64 shop_buyer_amount = 3;</code>
      * @return The shopBuyerAmount.
@@ -702,7 +702,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long shopOrderAmount_ ;
+    private long shopOrderAmount ;
     /**
      * <code>int64 shop_order_amount = 4;</code>
      * @return The shopOrderAmount.
@@ -733,7 +733,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long timestamp_ ;
+    private long timestamp ;
     /**
      * <code>int64 timestamp = 5;</code>
      * @return The timestamp.

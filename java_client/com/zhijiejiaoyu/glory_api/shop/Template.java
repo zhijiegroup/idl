@@ -804,7 +804,7 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0;
 
-    private long freightTemplateId_ ;
+    private long freightTemplateId ;
     /**
      * <code>int64 freight_template_id = 1;</code>
      * @return The freightTemplateId.
@@ -835,7 +835,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long configId_ ;
+    private long configId ;
     /**
      * <code>int64 config_id = 2;</code>
      * @return The configId.
@@ -866,7 +866,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long shopId_ ;
+    private long shopId ;
     /**
      * <code>int64 shop_id = 3;</code>
      * @return The shopId.
@@ -897,7 +897,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int freightSetting_ ;
+    private int freightSetting ;
     /**
      * <code>int32 freight_setting = 4;</code>
      * @return The freightSetting.
@@ -1004,7 +1004,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private boolean isDefault_ ;
+    private boolean isDefault ;
     /**
      * <code>bool is_default = 6;</code>
      * @return The isDefault.
@@ -1035,7 +1035,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private float freightAmount_ ;
+    private float freightAmount ;
     /**
      * <code>float freight_amount = 7;</code>
      * @return The freightAmount.

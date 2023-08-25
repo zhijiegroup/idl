@@ -523,7 +523,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long categoryQualificationId_ ;
+    private long categoryQualificationId ;
     /**
      * <code>int64 category_qualification_id = 1;</code>
      * @return The categoryQualificationId.

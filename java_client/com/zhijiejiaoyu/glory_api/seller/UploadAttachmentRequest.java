@@ -857,7 +857,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long sellerId_ ;
+    private long sellerId ;
     /**
      * <pre>
      * 如果传了seller_id, grouping_id跟grouping_key会不起作用
@@ -976,7 +976,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long groupingId_ ;
+    private long groupingId ;
     /**
      * <pre>
      * 保存到oss的时候，这个id会成为地址的一部分，增加这个来支持更多的upload场景

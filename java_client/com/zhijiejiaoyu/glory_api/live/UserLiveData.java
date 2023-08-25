@@ -723,7 +723,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long userId_ ;
+    private long userId ;
     /**
      * <code>int64 user_id = 1;</code>
      * @return The userId.
@@ -982,7 +982,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double totalDuration_ ;
+    private double totalDuration ;
     /**
      * <code>double total_duration = 5;</code>
      * @return The totalDuration.
@@ -1013,7 +1013,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long totalLike_ ;
+    private long totalLike ;
     /**
      * <code>int64 total_like = 6;</code>
      * @return The totalLike.
@@ -1044,7 +1044,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long totalOrder_ ;
+    private long totalOrder ;
     /**
      * <code>int64 total_order = 7;</code>
      * @return The totalOrder.
@@ -1075,7 +1075,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double averageScore_ ;
+    private double averageScore ;
     /**
      * <code>double average_score = 8;</code>
      * @return The averageScore.

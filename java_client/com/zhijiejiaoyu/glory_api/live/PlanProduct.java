@@ -1022,7 +1022,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double salePrice_ ;
+    private double salePrice ;
     /**
      * <code>double sale_price = 4;</code>
      * @return The salePrice.
@@ -1053,7 +1053,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long productRemaining_ ;
+    private long productRemaining ;
     /**
      * <code>int64 product_remaining = 5;</code>
      * @return The productRemaining.
@@ -1084,7 +1084,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long productId_ ;
+    private long productId ;
     /**
      * <code>int64 product_id = 6;</code>
      * @return The productId.

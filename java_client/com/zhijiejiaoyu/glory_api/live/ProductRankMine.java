@@ -985,7 +985,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long saleAmount_ ;
+    private long saleAmount ;
     /**
      * <code>int64 sale_amount = 5;</code>
      * @return The saleAmount.
@@ -1016,7 +1016,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long rank_ ;
+    private long rank ;
     /**
      * <code>int64 rank = 6;</code>
      * @return The rank.

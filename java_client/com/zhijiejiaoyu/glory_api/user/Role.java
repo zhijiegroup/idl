@@ -644,7 +644,7 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0;
 
-    private long roleId_ ;
+    private long roleId ;
     /**
      * <code>int64 role_id = 1;</code>
      * @return The roleId.

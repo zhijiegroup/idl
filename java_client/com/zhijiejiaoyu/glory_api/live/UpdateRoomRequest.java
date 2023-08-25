@@ -656,7 +656,7 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder;
     }
 
-    private boolean closeRoom_ ;
+    private boolean closeRoom ;
     /**
      * <code>bool close_room = 2;</code>
      * @return The closeRoom.

@@ -403,7 +403,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private boolean profitSharing_ ;
+    private boolean profitSharing ;
     /**
      * <pre>
      *是否指定分账

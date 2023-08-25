@@ -735,7 +735,7 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0;
 
-    private long cartSkuId_ ;
+    private long cartSkuId ;
     /**
      * <code>int64 cart_sku_id = 1;</code>
      * @return The cartSkuId.
@@ -766,7 +766,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long skuId_ ;
+    private long skuId ;
     /**
      * <code>int64 sku_id = 2;</code>
      * @return The skuId.
@@ -797,7 +797,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int quantity_ ;
+    private int quantity ;
     /**
      * <code>int32 quantity = 3;</code>
      * @return The quantity.
@@ -828,7 +828,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long shopId_ ;
+    private long shopId ;
     /**
      * <code>int64 shop_id = 4;</code>
      * @return The shopId.

@@ -876,7 +876,7 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0;
 
-    private long tenantId_ ;
+    private long tenantId ;
     /**
      * <pre>
      *创建不传
@@ -1207,7 +1207,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long logoAttachmentId_ ;
+    private long logoAttachmentId ;
     /**
      * <pre>
      * 调用upload_attachment后返回的的attachment_id

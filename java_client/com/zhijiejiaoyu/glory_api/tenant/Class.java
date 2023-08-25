@@ -549,7 +549,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long classId_ ;
+    private long classId ;
     /**
      * <pre>
      * 创建不传
@@ -688,7 +688,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long majorId_ ;
+    private long majorId ;
     /**
      * <pre>
      * 专业id, 创建必传
@@ -731,7 +731,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long tenantId_ ;
+    private long tenantId ;
     /**
      * <pre>
      * 学校id，创建必传

@@ -902,7 +902,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int visibility_ ;
+    private int visibility ;
     /**
      * <pre>
      * 视频可见性：1.公开；2:隐私，仅自己可见
@@ -1041,7 +1041,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long shopId_ ;
+    private long shopId ;
     /**
      * <pre>
      * 店铺ID
@@ -1084,7 +1084,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long stageVideoId_ ;
+    private long stageVideoId ;
     /**
      * <pre>
      * 暂存视频ID（如果是发布暂存视频的话）

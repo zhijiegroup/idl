@@ -1089,7 +1089,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long liveProductStatusId_ ;
+    private long liveProductStatusId ;
     /**
      * <code>int64 live_product_status_id = 1;</code>
      * @return The liveProductStatusId.
@@ -1120,7 +1120,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long productId_ ;
+    private long productId ;
     /**
      * <code>int64 product_id = 2;</code>
      * @return The productId.
@@ -1227,7 +1227,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long shopId_ ;
+    private long shopId ;
     /**
      * <code>int64 shop_id = 4;</code>
      * @return The shopId.
@@ -1258,7 +1258,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long roomId_ ;
+    private long roomId ;
     /**
      * <code>int64 room_id = 5;</code>
      * @return The roomId.
@@ -1441,7 +1441,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private boolean isIntroduct_ ;
+    private boolean isIntroduct ;
     /**
      * <pre>
      * 是否讲解中
@@ -1772,7 +1772,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double productPrice_ ;
+    private double productPrice ;
     /**
      * <pre>
      * 商品价格
@@ -1815,7 +1815,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long productRemainingAmount_ ;
+    private long productRemainingAmount ;
     /**
      * <pre>
      * 商品库存数量
@@ -1858,7 +1858,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long productSoldAmount_ ;
+    private long productSoldAmount ;
     /**
      * <pre>
      * 商品售出数量
@@ -1901,7 +1901,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double productDealAmount_ ;
+    private double productDealAmount ;
     /**
      * <pre>
      * 商品成交金额

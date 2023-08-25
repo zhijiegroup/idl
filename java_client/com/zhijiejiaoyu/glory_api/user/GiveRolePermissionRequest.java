@@ -688,7 +688,7 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder;
     }
 
-    private long roleId_ ;
+    private long roleId ;
     /**
      * <code>int64 role_id = 2;</code>
      * @return The roleId.

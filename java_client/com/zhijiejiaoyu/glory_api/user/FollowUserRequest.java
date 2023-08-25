@@ -633,7 +633,7 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder;
     }
 
-    private long followedUserId_ ;
+    private long followedUserId ;
     /**
      * <code>int64 followed_user_id = 2;</code>
      * @return The followedUserId.
@@ -664,7 +664,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private boolean follow_ ;
+    private boolean follow ;
     /**
      * <pre>
      * 是否关注

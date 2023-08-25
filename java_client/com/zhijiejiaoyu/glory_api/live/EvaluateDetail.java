@@ -745,7 +745,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double total_ ;
+    private double total ;
     /**
      * <code>double total = 2;</code>
      * @return The total.
@@ -852,7 +852,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private boolean isExpand_ ;
+    private boolean isExpand ;
     /**
      * <code>bool is_expand = 4;</code>
      * @return The isExpand.

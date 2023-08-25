@@ -535,7 +535,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int size_ ;
+    private int size ;
     /**
      * <pre>
      * number of elements requested
@@ -578,7 +578,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int page_ ;
+    private int page ;
     /**
      * <pre>
      * offset to start from
@@ -697,7 +697,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private boolean sortDescending_ ;
+    private boolean sortDescending ;
     /**
      * <code>bool sort_descending = 4;</code>
      * @return The sortDescending.

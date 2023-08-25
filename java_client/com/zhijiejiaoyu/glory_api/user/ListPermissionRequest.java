@@ -872,7 +872,7 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder;
     }
 
-    private long permissionId_ ;
+    private long permissionId ;
     /**
      * <code>int64 permission_id = 2;</code>
      * @return The permissionId.
@@ -999,7 +999,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long resourceId_ ;
+    private long resourceId ;
     /**
      * <pre>
      * 权限对应的resource id
@@ -1138,7 +1138,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long tenantId_ ;
+    private long tenantId ;
     /**
      * <pre>
      * 学校的id

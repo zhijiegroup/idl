@@ -826,7 +826,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long tenantId_ ;
+    private long tenantId ;
     /**
      * <pre>
      * 学校的id，若是角色名称是admin，则会忽略这个

@@ -786,7 +786,7 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder;
     }
 
-    private long roomId_ ;
+    private long roomId ;
     /**
      * <code>int64 room_id = 2;</code>
      * @return The roomId.
@@ -817,7 +817,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long userId_ ;
+    private long userId ;
     /**
      * <code>int64 user_id = 4;</code>
      * @return The userId.
@@ -924,7 +924,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private boolean includeClosedRoom_ ;
+    private boolean includeClosedRoom ;
     /**
      * <code>bool include_closed_room = 6;</code>
      * @return The includeClosedRoom.

@@ -773,7 +773,7 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder;
     }
 
-    private long textId_ ;
+    private long textId ;
     /**
      * <code>int64 text_id = 2;</code>
      * @return The textId.

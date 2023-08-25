@@ -748,7 +748,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long productId_ ;
+    private long productId ;
     /**
      * <code>int64 product_id = 2;</code>
      * @return The productId.
@@ -855,7 +855,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double productPrice_ ;
+    private double productPrice ;
     /**
      * <code>double product_price = 4;</code>
      * @return The productPrice.
@@ -886,7 +886,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int productCount_ ;
+    private int productCount ;
     /**
      * <code>int32 product_count = 5;</code>
      * @return The productCount.
@@ -917,7 +917,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int liveRoomOrder_ ;
+    private int liveRoomOrder ;
     /**
      * <code>int32 live_room_order = 6;</code>
      * @return The liveRoomOrder.

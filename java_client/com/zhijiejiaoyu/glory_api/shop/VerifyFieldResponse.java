@@ -587,7 +587,7 @@ private static final long serialVersionUID = 0L;
       return baseRespBuilder;
     }
 
-    private boolean shopNameValid_ ;
+    private boolean shopNameValid ;
     /**
      * <code>bool shop_name_valid = 2;</code>
      * @return The shopNameValid.

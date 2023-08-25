@@ -604,7 +604,7 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0;
 
-    private long costPrice_ ;
+    private long costPrice ;
     /**
      * <pre>
      *订单原价

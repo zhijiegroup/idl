@@ -1238,7 +1238,7 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder;
     }
 
-    private long productId_ ;
+    private long productId ;
     /**
      * <code>int64 product_id = 2;</code>
      * @return The productId.
@@ -2119,7 +2119,7 @@ private static final long serialVersionUID = 0L;
       return shipmentAttributeBuilder;
     }
 
-    private long freightTemplateId_ ;
+    private long freightTemplateId ;
     /**
      * <code>int64 freight_template_id = 7;</code>
      * @return The freightTemplateId.
@@ -2150,7 +2150,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private float salePrice_ ;
+    private float salePrice ;
     /**
      * <pre>
      *售卖价格
@@ -2193,7 +2193,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private float referencePrice_ ;
+    private float referencePrice ;
     /**
      * <pre>
      *参考价格
@@ -2332,7 +2332,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long categoryId_ ;
+    private long categoryId ;
     /**
      * <pre>
      *商品类目

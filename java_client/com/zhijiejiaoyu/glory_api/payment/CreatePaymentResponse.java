@@ -591,7 +591,7 @@ private static final long serialVersionUID = 0L;
       return baseRespBuilder;
     }
 
-    private long paymentId_ ;
+    private long paymentId ;
     /**
      * <pre>
      *  PaymentWithAuthor payment_detail =2;

@@ -587,7 +587,7 @@ private static final long serialVersionUID = 0L;
       return baseRespBuilder;
     }
 
-    private long studentId_ ;
+    private long studentId ;
     /**
      * <code>int64 student_id = 2;</code>
      * @return The studentId.

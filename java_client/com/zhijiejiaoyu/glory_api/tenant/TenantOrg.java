@@ -710,7 +710,7 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0;
 
-    private long id_ ;
+    private long id ;
     /**
      * <code>int64 id = 1;</code>
      * @return The id.
@@ -893,7 +893,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long parent_ ;
+    private long parent ;
     /**
      * <code>int64 parent = 4;</code>
      * @return The parent.
@@ -924,7 +924,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long tenant_ ;
+    private long tenant ;
     /**
      * <code>int64 tenant = 5;</code>
      * @return The tenant.

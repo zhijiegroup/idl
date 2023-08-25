@@ -757,7 +757,7 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder;
     }
 
-    private long shopId_ ;
+    private long shopId ;
     /**
      * <code>int64 shop_id = 2;</code>
      * @return The shopId.
@@ -960,7 +960,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long roomImageAttachmentId_ ;
+    private long roomImageAttachmentId ;
     /**
      * <pre>
      * 直播房间的图片的id

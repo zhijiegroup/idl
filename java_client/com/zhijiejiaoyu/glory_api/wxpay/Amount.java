@@ -473,7 +473,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long total_ ;
+    private long total ;
     /**
      * <pre>
      *订单总金额，单位为分。

@@ -591,7 +591,7 @@ private static final long serialVersionUID = 0L;
       return baseRespBuilder;
     }
 
-    private long roleId_ ;
+    private long roleId ;
     /**
      * <pre>
      * role id

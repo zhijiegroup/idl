@@ -587,7 +587,7 @@ private static final long serialVersionUID = 0L;
       return baseRespBuilder;
     }
 
-    private long orderId_ ;
+    private long orderId ;
     /**
      * <code>int64 order_id = 2;</code>
      * @return The orderId.

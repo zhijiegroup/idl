@@ -587,7 +587,7 @@ private static final long serialVersionUID = 0L;
       return baseRespBuilder;
     }
 
-    private long shortVideoId_ ;
+    private long shortVideoId ;
     /**
      * <code>int64 short_video_id = 2;</code>
      * @return The shortVideoId.

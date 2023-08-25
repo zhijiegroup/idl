@@ -1222,7 +1222,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long evaluateId_ ;
+    private long evaluateId ;
     /**
      * <code>int64 evaluate_id = 3;</code>
      * @return The evaluateId.
@@ -1253,7 +1253,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long templateId_ ;
+    private long templateId ;
     /**
      * <code>int64 template_id = 4;</code>
      * @return The templateId.
@@ -1284,7 +1284,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long userId_ ;
+    private long userId ;
     /**
      * <code>int64 user_id = 5;</code>
      * @return The userId.
@@ -1315,7 +1315,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double extraScore_ ;
+    private double extraScore ;
     /**
      * <code>double extra_score = 6;</code>
      * @return The extraScore.
@@ -1498,7 +1498,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double score_ ;
+    private double score ;
     /**
      * <code>double score = 9;</code>
      * @return The score.
@@ -1605,7 +1605,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private boolean baseline_ ;
+    private boolean baseline ;
     /**
      * <code>bool baseline = 11;</code>
      * @return The baseline.

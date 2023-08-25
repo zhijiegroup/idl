@@ -602,7 +602,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long orderSkuId_ ;
+    private long orderSkuId ;
     /**
      * <code>int64 order_sku_id = 1;</code>
      * @return The orderSkuId.
@@ -633,7 +633,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long orderId_ ;
+    private long orderId ;
     /**
      * <code>int64 order_id = 2;</code>
      * @return The orderId.
@@ -664,7 +664,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long skuId_ ;
+    private long skuId ;
     /**
      * <code>int64 sku_id = 3;</code>
      * @return The skuId.
@@ -695,7 +695,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long sellerId_ ;
+    private long sellerId ;
     /**
      * <code>int64 seller_id = 4;</code>
      * @return The sellerId.
@@ -726,7 +726,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long shopId_ ;
+    private long shopId ;
     /**
      * <code>int64 shop_id = 5;</code>
      * @return The shopId.
@@ -757,7 +757,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int quantity_ ;
+    private int quantity ;
     /**
      * <code>int32 quantity = 6;</code>
      * @return The quantity.
@@ -788,7 +788,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long freightTemplateId_ ;
+    private long freightTemplateId ;
     /**
      * <code>int64 freight_template_id = 7;</code>
      * @return The freightTemplateId.

@@ -587,7 +587,7 @@ private static final long serialVersionUID = 0L;
       return baseRespBuilder;
     }
 
-    private long livePlanId_ ;
+    private long livePlanId ;
     /**
      * <code>int64 live_plan_id = 2;</code>
      * @return The livePlanId.
