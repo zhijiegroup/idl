@@ -114,6 +114,19 @@ export class glory_api {
     request: user.UpdatePasswordRequest
   ): Promise<user.UpdatePasswordResponse>;
 
+  /** 关注用户 */
+  FollowUser(request: user.FollowUserRequest): Promise<user.FollowUserResponse>;
+
+  /** 我的关注列表 */
+  ListMyFollowedUser(
+    request: user.ListMyFollowedUserRequest
+  ): Promise<user.ListMyFollowedUserResponse>;
+
+  /** 我的粉丝列表 */
+  ListMyFollowerUser(
+    request: user.ListMyFollowerUserRequest
+  ): Promise<user.ListMyFollowerUserResponse>;
+
   /** page permission */
   GetUserPagePermission(
     request: user.GetUserPagePermissionRequest

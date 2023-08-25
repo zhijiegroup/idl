@@ -20,6 +20,12 @@ export interface User {
   shop_access?: Array<shop.ShopAccess>;
 }
 
+export interface UserFollow {
+  user_id?: string;
+  user_name?: string;
+  avatar_url?: string;
+}
+
 /** login */
 export interface LoginRequest {
   base_request?: base.BaseRequest;
@@ -292,5 +298,41 @@ export interface ListUserByRoleResponse {
   base_resp?: base.BaseResponse;
   /** user 列表 */
   user?: Array<ListUserByRole>;
+  pagination?: base.PaginationResponse;
+}
+
+/** 关注用户 */
+export interface FollowUserRequest {
+  base_request?: base.BaseRequest;
+  followed_user_id?: string;
+  /** 是否关注 */
+  follow?: boolean;
+}
+
+export interface FollowUserResponse {
+  base_resp?: base.BaseResponse;
+}
+
+/** 我的关注列表 */
+export interface ListMyFollowedUserRequest {
+  base_request?: base.BaseRequest;
+  pagination?: base.PaginationRequest;
+}
+
+export interface ListMyFollowedUserResponse {
+  base_resp?: base.BaseResponse;
+  followed_user_list?: Array<UserFollow>;
+  pagination?: base.PaginationResponse;
+}
+
+/** 我的粉丝列表 */
+export interface ListMyFollowerUserRequest {
+  base_request?: base.BaseRequest;
+  pagination?: base.PaginationRequest;
+}
+
+export interface ListMyFollowerUserResponse {
+  base_resp?: base.BaseResponse;
+  follower_user_list?: Array<UserFollow>;
   pagination?: base.PaginationResponse;
 }
