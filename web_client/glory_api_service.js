@@ -1013,9 +1013,11 @@ export class glory_api {
   }
 
   ListAccountOperation(request) {
-    const query = queryStringify(request);
-    const uri = `${this.uriPrefix}/api/account/list_operation${query}`;
-    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+    const uri = `${this.uriPrefix}/api/account/list_operation`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
   }
 
   CreateRoom(request) {

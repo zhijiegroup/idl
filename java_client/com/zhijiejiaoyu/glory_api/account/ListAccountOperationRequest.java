@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListAccountOperationRequest() {
+    accountOperationName = "";
   }
 
   @java.lang.Override
@@ -57,6 +58,30 @@ private static final long serialVersionUID = 0L;
             if (subBuilder != null) {
               subBuilder.mergeFrom(baseRequest);
               baseRequest = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 16: {
+
+            userId = input.readInt64();
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            accountOperationName = s;
+            break;
+          }
+          case 802: {
+            com.zhijiejiaoyu.base.PaginationRequest.Builder subBuilder = null;
+            if (pagination != null) {
+              subBuilder = pagination.toBuilder();
+            }
+            pagination = input.readMessage(com.zhijiejiaoyu.base.PaginationRequest.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(pagination);
+              pagination = subBuilder.buildPartial();
             }
 
             break;
@@ -119,6 +144,81 @@ private static final long serialVersionUID = 0L;
     return getBaseRequest();
   }
 
+  public static final int USER_ID_FIELD_NUMBER = 2;
+  private long userId;
+  /**
+   * <code>int64 user_id = 2;</code>
+   * @return The userId.
+   */
+  @java.lang.Override
+  public long getUserId() {
+    return userId;
+  }
+
+  public static final int ACCOUNT_OPERATION_NAME_FIELD_NUMBER = 3;
+  private volatile java.lang.Object accountOperationName;
+  /**
+   * <code>string account_operation_name = 3;</code>
+   * @return The accountOperationName.
+   */
+  @java.lang.Override
+  public java.lang.String getAccountOperationName() {
+    java.lang.Object ref = accountOperationName;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      accountOperationName = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string account_operation_name = 3;</code>
+   * @return The bytes for accountOperationName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getAccountOperationNameBytes() {
+    java.lang.Object ref = accountOperationName;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      accountOperationName = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PAGINATION_FIELD_NUMBER = 100;
+  private com.zhijiejiaoyu.base.PaginationRequest pagination;
+  /**
+   * <code>.base.PaginationRequest pagination = 100;</code>
+   * @return Whether the pagination field is set.
+   */
+  @java.lang.Override
+  public boolean hasPagination() {
+    return pagination != null;
+  }
+  /**
+   * <code>.base.PaginationRequest pagination = 100;</code>
+   * @return The pagination.
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.base.PaginationRequest getPagination() {
+    return pagination == null ? com.zhijiejiaoyu.base.PaginationRequest.getDefaultInstance() : pagination;
+  }
+  /**
+   * <code>.base.PaginationRequest pagination = 100;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.base.PaginationRequestOrBuilder getPaginationOrBuilder() {
+    return getPagination();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -136,6 +236,15 @@ private static final long serialVersionUID = 0L;
     if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
+    if (userId != 0L) {
+      output.writeInt64(2, userId);
+    }
+    if (!getAccountOperationNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, accountOperationName);
+    }
+    if (pagination != null) {
+      output.writeMessage(100, getPagination());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -148,6 +257,17 @@ private static final long serialVersionUID = 0L;
     if (baseRequest != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseRequest());
+    }
+    if (userId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(2, userId);
+    }
+    if (!getAccountOperationNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, accountOperationName);
+    }
+    if (pagination != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(100, getPagination());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -169,6 +289,15 @@ private static final long serialVersionUID = 0L;
       if (!getBaseRequest()
           .equals(other.getBaseRequest())) return false;
     }
+    if (getUserId()
+        != other.getUserId()) return false;
+    if (!getAccountOperationName()
+        .equals(other.getAccountOperationName())) return false;
+    if (hasPagination() != other.hasPagination()) return false;
+    if (hasPagination()) {
+      if (!getPagination()
+          .equals(other.getPagination())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -183,6 +312,15 @@ private static final long serialVersionUID = 0L;
     if (hasBaseRequest()) {
       hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
       hash = (53 * hash) + getBaseRequest().hashCode();
+    }
+    hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getUserId());
+    hash = (37 * hash) + ACCOUNT_OPERATION_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getAccountOperationName().hashCode();
+    if (hasPagination()) {
+      hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
+      hash = (53 * hash) + getPagination().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -323,6 +461,16 @@ private static final long serialVersionUID = 0L;
         baseRequest = null;
         baseRequestBuilder = null;
       }
+      userId = 0L;
+
+      accountOperationName = "";
+
+      if (paginationBuilder == null) {
+        pagination = null;
+      } else {
+        pagination = null;
+        paginationBuilder = null;
+      }
       return this;
     }
 
@@ -353,6 +501,13 @@ private static final long serialVersionUID = 0L;
         result.baseRequest = baseRequest;
       } else {
         result.baseRequest = baseRequestBuilder.build();
+      }
+      result.userId = userId;
+      result.accountOperationName = accountOperationName;
+      if (paginationBuilder == null) {
+        result.pagination = pagination;
+      } else {
+        result.pagination = paginationBuilder.build();
       }
       onBuilt();
       return result;
@@ -404,6 +559,16 @@ private static final long serialVersionUID = 0L;
       if (other == com.zhijiejiaoyu.glory_api.account.ListAccountOperationRequest.getDefaultInstance()) return this;
       if (other.hasBaseRequest()) {
         mergeBaseRequest(other.getBaseRequest());
+      }
+      if (other.getUserId() != 0L) {
+        setUserId(other.getUserId());
+      }
+      if (!other.getAccountOperationName().isEmpty()) {
+        accountOperationName = other.accountOperationName;
+        onChanged();
+      }
+      if (other.hasPagination()) {
+        mergePagination(other.getPagination());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -551,6 +716,232 @@ private static final long serialVersionUID = 0L;
         baseRequest = null;
       }
       return baseRequestBuilder;
+    }
+
+    private long userId_ ;
+    /**
+     * <code>int64 user_id = 2;</code>
+     * @return The userId.
+     */
+    @java.lang.Override
+    public long getUserId() {
+      return userId;
+    }
+    /**
+     * <code>int64 user_id = 2;</code>
+     * @param value The userId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserId(long value) {
+      
+      userId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 user_id = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUserId() {
+      
+      userId = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object accountOperationName = "";
+    /**
+     * <code>string account_operation_name = 3;</code>
+     * @return The accountOperationName.
+     */
+    public java.lang.String getAccountOperationName() {
+      java.lang.Object ref = accountOperationName;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        accountOperationName = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string account_operation_name = 3;</code>
+     * @return The bytes for accountOperationName.
+     */
+    public com.google.protobuf.ByteString
+        getAccountOperationNameBytes() {
+      java.lang.Object ref = accountOperationName;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        accountOperationName = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string account_operation_name = 3;</code>
+     * @param value The accountOperationName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAccountOperationName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      accountOperationName = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string account_operation_name = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAccountOperationName() {
+      
+      accountOperationName = getDefaultInstance().getAccountOperationName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string account_operation_name = 3;</code>
+     * @param value The bytes for accountOperationName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAccountOperationNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      accountOperationName = value;
+      onChanged();
+      return this;
+    }
+
+    private com.zhijiejiaoyu.base.PaginationRequest pagination;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.base.PaginationRequest, com.zhijiejiaoyu.base.PaginationRequest.Builder, com.zhijiejiaoyu.base.PaginationRequestOrBuilder> paginationBuilder;
+    /**
+     * <code>.base.PaginationRequest pagination = 100;</code>
+     * @return Whether the pagination field is set.
+     */
+    public boolean hasPagination() {
+      return paginationBuilder != null || pagination != null;
+    }
+    /**
+     * <code>.base.PaginationRequest pagination = 100;</code>
+     * @return The pagination.
+     */
+    public com.zhijiejiaoyu.base.PaginationRequest getPagination() {
+      if (paginationBuilder == null) {
+        return pagination == null ? com.zhijiejiaoyu.base.PaginationRequest.getDefaultInstance() : pagination;
+      } else {
+        return paginationBuilder.getMessage();
+      }
+    }
+    /**
+     * <code>.base.PaginationRequest pagination = 100;</code>
+     */
+    public Builder setPagination(com.zhijiejiaoyu.base.PaginationRequest value) {
+      if (paginationBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        pagination = value;
+        onChanged();
+      } else {
+        paginationBuilder.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.base.PaginationRequest pagination = 100;</code>
+     */
+    public Builder setPagination(
+        com.zhijiejiaoyu.base.PaginationRequest.Builder builderForValue) {
+      if (paginationBuilder == null) {
+        pagination = builderForValue.build();
+        onChanged();
+      } else {
+        paginationBuilder.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.base.PaginationRequest pagination = 100;</code>
+     */
+    public Builder mergePagination(com.zhijiejiaoyu.base.PaginationRequest value) {
+      if (paginationBuilder == null) {
+        if (pagination != null) {
+          pagination =
+            com.zhijiejiaoyu.base.PaginationRequest.newBuilder(pagination).mergeFrom(value).buildPartial();
+        } else {
+          pagination = value;
+        }
+        onChanged();
+      } else {
+        paginationBuilder.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.base.PaginationRequest pagination = 100;</code>
+     */
+    public Builder clearPagination() {
+      if (paginationBuilder == null) {
+        pagination = null;
+        onChanged();
+      } else {
+        pagination = null;
+        paginationBuilder = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.base.PaginationRequest pagination = 100;</code>
+     */
+    public com.zhijiejiaoyu.base.PaginationRequest.Builder getPaginationBuilder() {
+      
+      onChanged();
+      return getPaginationFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.base.PaginationRequest pagination = 100;</code>
+     */
+    public com.zhijiejiaoyu.base.PaginationRequestOrBuilder getPaginationOrBuilder() {
+      if (paginationBuilder != null) {
+        return paginationBuilder.getMessageOrBuilder();
+      } else {
+        return pagination == null ?
+            com.zhijiejiaoyu.base.PaginationRequest.getDefaultInstance() : pagination;
+      }
+    }
+    /**
+     * <code>.base.PaginationRequest pagination = 100;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.base.PaginationRequest, com.zhijiejiaoyu.base.PaginationRequest.Builder, com.zhijiejiaoyu.base.PaginationRequestOrBuilder> 
+        getPaginationFieldBuilder() {
+      if (paginationBuilder == null) {
+        paginationBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+            com.zhijiejiaoyu.base.PaginationRequest, com.zhijiejiaoyu.base.PaginationRequest.Builder, com.zhijiejiaoyu.base.PaginationRequestOrBuilder>(
+                getPagination(),
+                getParentForChildren(),
+                isClean());
+        pagination = null;
+      }
+      return paginationBuilder;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -398,7 +398,7 @@ public final class GloryApiService {
       "e\"\036\312\301\030\032/api/account/get_operation\022\210\001\n\024Li" +
       "stAccountOperation\022&.glory_api.ListAccou" +
       "ntOperationRequest\032\'.glory_api.ListAccou" +
-      "ntOperationResponse\"\037\312\301\030\033/api/account/li" +
+      "ntOperationResponse\"\037\322\301\030\033/api/account/li" +
       "st_operation\022d\n\nCreateRoom\022\034.glory_api.C" +
       "reateRoomRequest\032\035.glory_api.CreateRoomR" +
       "esponse\"\031\322\301\030\025/api/live/create_room\022X\n\007Ge" +

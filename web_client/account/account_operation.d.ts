@@ -12,6 +12,7 @@ export interface AccountOperation {
   amount?: string;
   unit?: string;
   account_operation_id?: string;
+  created_at?: string;
 }
 
 export interface AddAccountOperationRequest {
@@ -35,9 +36,13 @@ export interface GetAccountOperationResponse {
 
 export interface ListAccountOperationRequest {
   base_request?: base.BaseRequest;
+  user_id?: string;
+  account_operation_name?: string;
+  pagination?: base.PaginationRequest;
 }
 
 export interface ListAccountOperationResponse {
   base_resp?: base.BaseResponse;
   account_operation?: Array<AccountOperation>;
+  pagination?: base.PaginationResponse;
 }
