@@ -12,6 +12,7 @@ message AccountOperation {
   int64 amount = 4;
   string unit = 5;
   int64 account_operation_id = 6;
+  string created_at = 7;
 }
 
 message AddAccountOperationRequest {
@@ -35,11 +36,15 @@ message GetAccountOperationResponse {
 
 message ListAccountOperationRequest {
   base.BaseRequest base_request = 1;
+  int64 user_id = 2;
+  string account_operation_name = 3;
+  base.PaginationRequest pagination = 100;
 }
 
 message ListAccountOperationResponse {
   base.BaseResponse base_resp = 1;
   repeated AccountOperation account_operation = 2;
+  base.PaginationResponse pagination = 100;
 }
 
 

@@ -479,7 +479,7 @@ service glory_api {
   }
 
   rpc ListAccountOperation(ListAccountOperationRequest) returns (ListAccountOperationResponse) {
-    option (api.get) = '/api/account/list_operation';
+    option (api.post) = '/api/account/list_operation';
   }
 
   // live
