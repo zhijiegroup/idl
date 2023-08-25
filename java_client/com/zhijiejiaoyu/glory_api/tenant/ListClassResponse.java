@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListClassResponse() {
-    class = java.util.Collections.emptyList();
+    class_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -65,7 +65,7 @@ private static final long serialVersionUID = 0L;
           }
           case 18: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              class = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.tenant.ClassWithAuthor>();
+              class_ = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.tenant.ClassWithAuthor>();
               mutable_bitField0_ |= 0x00000001;
             }
             class_.add(
@@ -101,7 +101,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        class = java.util.Collections.unmodifiableList(class_);
+        class_ = java.util.Collections.unmodifiableList(class_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -447,7 +447,7 @@ private static final long serialVersionUID = 0L;
         baseRespBuilder = null;
       }
       if (class_Builder == null) {
-        class = java.util.Collections.emptyList();
+        class_ = java.util.Collections.emptyList();
         bitField0 = (bitField0_ & ~0x00000001);
       } else {
         class_Builder.clear();
@@ -492,12 +492,12 @@ private static final long serialVersionUID = 0L;
       }
       if (class_Builder == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
-          class = java.util.Collections.unmodifiableList(class_);
+          class_ = java.util.Collections.unmodifiableList(class_);
           bitField0 = (bitField0_ & ~0x00000001);
         }
-        result.class = class_;
+        result.class_ = class_;
       } else {
-        result.class = class_Builder.build();
+        result.class_ = class_Builder.build();
       }
       if (paginationBuilder == null) {
         result.pagination = pagination;
@@ -558,7 +558,7 @@ private static final long serialVersionUID = 0L;
       if (class_Builder == null) {
         if (!other.class_.isEmpty()) {
           if (class_.isEmpty()) {
-            class = other.class_;
+            class_ = other.class_;
             bitField0 = (bitField0_ & ~0x00000001);
           } else {
             ensureClass_IsMutable();
@@ -571,7 +571,7 @@ private static final long serialVersionUID = 0L;
           if (class_Builder.isEmpty()) {
             class_Builder.dispose();
             class_Builder = null;
-            class = other.class_;
+            class_ = other.class_;
             bitField0 = (bitField0_ & ~0x00000001);
             class_Builder = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
@@ -733,11 +733,11 @@ private static final long serialVersionUID = 0L;
       return baseRespBuilder;
     }
 
-    private java.util.List<com.zhijiejiaoyu.glory_api.tenant.ClassWithAuthor> class =
+    private java.util.List<com.zhijiejiaoyu.glory_api.tenant.ClassWithAuthor> class_ =
       java.util.Collections.emptyList();
     private void ensureClass_IsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        class = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.tenant.ClassWithAuthor>(class_);
+        class_ = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.tenant.ClassWithAuthor>(class_);
         bitField0_ |= 0x00000001;
        }
     }
@@ -887,7 +887,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearClass_() {
       if (class_Builder == null) {
-        class = java.util.Collections.emptyList();
+        class_ = java.util.Collections.emptyList();
         bitField0 = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
@@ -968,7 +968,7 @@ private static final long serialVersionUID = 0L;
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        class = null;
+        class_ = null;
       }
       return class_Builder;
     }

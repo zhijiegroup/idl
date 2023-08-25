@@ -69,7 +69,7 @@ private static final long serialVersionUID = 0L;
               mutable_bitField0_ |= 0x00000001;
             }
             com.google.protobuf.MapEntry<java.lang.Long, java.lang.String>
-            tenantUsers = input.readMessage(
+            tenantUsers_ = input.readMessage(
                 TenantUsersDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
             tenantUsers.getMutableMap().put(
                 tenantUsers_.getKey(), tenantUsers_.getValue());
@@ -265,7 +265,7 @@ private static final long serialVersionUID = 0L;
     for (java.util.Map.Entry<java.lang.Long, java.lang.String> entry
          : internalGetTenantUsers().getMap().entrySet()) {
       com.google.protobuf.MapEntry<java.lang.Long, java.lang.String>
-      tenantUsers = TenantUsersDefaultEntryHolder.defaultEntry.newBuilderForType()
+      tenantUsers_ = TenantUsersDefaultEntryHolder.defaultEntry.newBuilderForType()
           .setKey(entry.getKey())
           .setValue(entry.getValue())
           .build();

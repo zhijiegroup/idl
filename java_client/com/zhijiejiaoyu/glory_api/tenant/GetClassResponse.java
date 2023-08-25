@@ -66,10 +66,10 @@ private static final long serialVersionUID = 0L;
             if (class_ != null) {
               subBuilder = class_.toBuilder();
             }
-            class = input.readMessage(com.zhijiejiaoyu.glory_api.tenant.Class.parser(), extensionRegistry);
+            class_ = input.readMessage(com.zhijiejiaoyu.glory_api.tenant.Class.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(class_);
-              class = subBuilder.buildPartial();
+              class_ = subBuilder.buildPartial();
             }
 
             break;
@@ -161,7 +161,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.tenant.Class getClass_() {
-    return class == null ? com.zhijiejiaoyu.glory_api.tenant.Class.getDefaultInstance() : class_;
+    return class_ == null ? com.zhijiejiaoyu.glory_api.tenant.Class.getDefaultInstance() : class_;
   }
   /**
    * <code>.glory_api.Class class = 2;</code>
@@ -434,9 +434,9 @@ private static final long serialVersionUID = 0L;
         baseRespBuilder = null;
       }
       if (class_Builder == null) {
-        class = null;
+        class_ = null;
       } else {
-        class = null;
+        class_ = null;
         class_Builder = null;
       }
       if (authorInfoBuilder == null) {
@@ -477,9 +477,9 @@ private static final long serialVersionUID = 0L;
         result.baseResp = baseRespBuilder.build();
       }
       if (class_Builder == null) {
-        result.class = class_;
+        result.class_ = class_;
       } else {
-        result.class = class_Builder.build();
+        result.class_ = class_Builder.build();
       }
       if (authorInfoBuilder == null) {
         result.authorInfo = authorInfo;
@@ -707,7 +707,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.tenant.Class getClass_() {
       if (class_Builder == null) {
-        return class == null ? com.zhijiejiaoyu.glory_api.tenant.Class.getDefaultInstance() : class_;
+        return class_ == null ? com.zhijiejiaoyu.glory_api.tenant.Class.getDefaultInstance() : class_;
       } else {
         return class_Builder.getMessage();
       }
@@ -720,7 +720,7 @@ private static final long serialVersionUID = 0L;
         if (value == null) {
           throw new NullPointerException();
         }
-        class = value;
+        class_ = value;
         onChanged();
       } else {
         class_Builder.setMessage(value);
@@ -734,7 +734,7 @@ private static final long serialVersionUID = 0L;
     public Builder setClass_(
         com.zhijiejiaoyu.glory_api.tenant.Class.Builder builderForValue) {
       if (class_Builder == null) {
-        class = builderForValue.build();
+        class_ = builderForValue.build();
         onChanged();
       } else {
         class_Builder.setMessage(builderForValue.build());
@@ -748,10 +748,10 @@ private static final long serialVersionUID = 0L;
     public Builder mergeClass_(com.zhijiejiaoyu.glory_api.tenant.Class value) {
       if (class_Builder == null) {
         if (class_ != null) {
-          class =
+          class_ =
             com.zhijiejiaoyu.glory_api.tenant.Class.newBuilder(class_).mergeFrom(value).buildPartial();
         } else {
-          class = value;
+          class_ = value;
         }
         onChanged();
       } else {
@@ -765,10 +765,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearClass_() {
       if (class_Builder == null) {
-        class = null;
+        class_ = null;
         onChanged();
       } else {
-        class = null;
+        class_ = null;
         class_Builder = null;
       }
 
@@ -789,7 +789,7 @@ private static final long serialVersionUID = 0L;
       if (class_Builder != null) {
         return class_Builder.getMessageOrBuilder();
       } else {
-        return class == null ?
+        return class_ == null ?
             com.zhijiejiaoyu.glory_api.tenant.Class.getDefaultInstance() : class_;
       }
     }
@@ -805,7 +805,7 @@ private static final long serialVersionUID = 0L;
                 getClass_(),
                 getParentForChildren(),
                 isClean());
-        class = null;
+        class_ = null;
       }
       return class_Builder;
     }
