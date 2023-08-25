@@ -114,6 +114,19 @@ export class glory_api {
     request: user.UpdatePasswordRequest
   ): Promise<user.UpdatePasswordResponse>;
 
+  /** 关注用户 */
+  FollowUser(request: user.FollowUserRequest): Promise<user.FollowUserResponse>;
+
+  /** 我的关注列表 */
+  ListMyFollowedUser(
+    request: user.ListMyFollowedUserRequest
+  ): Promise<user.ListMyFollowedUserResponse>;
+
+  /** 我的粉丝列表 */
+  ListMyFollowerUser(
+    request: user.ListMyFollowerUserRequest
+  ): Promise<user.ListMyFollowerUserResponse>;
+
   /** page permission */
   GetUserPagePermission(
     request: user.GetUserPagePermissionRequest
@@ -877,6 +890,11 @@ CreateLivePlanProduct create live plan product */
     request: short_video.GetShortVideoRequest
   ): Promise<short_video.GetShortVideoResponse>;
 
+  /** 更新短视频详情 */
+  UpdateShortVideo(
+    request: short_video.UpdateShortVideoRequest
+  ): Promise<short_video.UpdateShortVideoResponse>;
+
   /** 删除短视频 */
   DeleteShortVideo(
     request: short_video.DeleteShortVideoRequest
@@ -892,17 +910,35 @@ CreateLivePlanProduct create live plan product */
     request: short_video.DeleteStageVideoRequest
   ): Promise<short_video.DeleteStageVideoResponse>;
 
+  /** 平台短短视频列表 */
   ManagementListShortVideo(
     request: short_video.ManagementListShortVideoRequest
   ): Promise<short_video.ManagementListShortVideoResponse>;
 
+  /** 平台审核短视频 */
   ManagementCensorShortVideo(
     request: short_video.ManagementCensorShortVideoRequest
   ): Promise<short_video.ManagementCensorShortVideoResponse>;
 
+  /** 平台删除短视频 */
   ManagementDeleteShortVideo(
     request: short_video.ManagementDeleteShortVideoRequest
   ): Promise<short_video.ManagementDeleteShortVideoResponse>;
+
+  /** APP首页短视频列表 */
+  ListShortVideo(
+    request: short_video.ListShortVideoRequest
+  ): Promise<short_video.ListShortVideoResponse>;
+
+  /** 点赞短视频 */
+  LikeShortVideo(
+    request: short_video.LikeShortVideoRequest
+  ): Promise<short_video.LikeShortVideoResponse>;
+
+  /** 收藏短视频 */
+  FavoriteShortVideo(
+    request: short_video.FavoriteShortVideoRequest
+  ): Promise<short_video.FavoriteShortVideoResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

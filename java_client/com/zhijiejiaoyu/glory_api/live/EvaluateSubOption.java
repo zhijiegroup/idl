@@ -293,7 +293,7 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name);
     }
-    if (total_ != 0D) {
+    if (total != 0D) {
       output.writeDouble(2, total);
     }
     if (!getContentBytes().isEmpty()) {
@@ -317,7 +317,7 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name);
     }
-    if (total_ != 0D) {
+    if (total != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(2, total);
     }

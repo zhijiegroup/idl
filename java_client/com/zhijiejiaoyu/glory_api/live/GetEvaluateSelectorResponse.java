@@ -53,8 +53,8 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             com.zhijiejiaoyu.base.BaseResponse.Builder subBuilder = null;
-            if (baseResp_ != null) {
-              subBuilder = baseResp_.toBuilder();
+            if (baseResp != null) {
+              subBuilder = baseResp.toBuilder();
             }
             baseResp = input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -70,7 +70,7 @@ private static final long serialVersionUID = 0L;
               major = new com.google.protobuf.LazyStringArrayList();
               mutable_bitField0_ |= 0x00000001;
             }
-            major_.add(s);
+            major.add(s);
             break;
           }
           case 802: {
@@ -79,7 +79,7 @@ private static final long serialVersionUID = 0L;
               class_ = new com.google.protobuf.LazyStringArrayList();
               mutable_bitField0_ |= 0x00000002;
             }
-            class__.add(s);
+            class_.add(s);
             break;
           }
           default: {
@@ -98,10 +98,10 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        major = major_.getUnmodifiableView();
+        major = major.getUnmodifiableView();
       }
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        class_ = class__.getUnmodifiableView();
+        class_ = class_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -128,7 +128,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasBaseResp() {
-    return baseResp_ != null;
+    return baseResp != null;
   }
   /**
    * <code>.base.BaseResponse base_resp = 1;</code>
@@ -161,7 +161,7 @@ private static final long serialVersionUID = 0L;
    * @return The count of major.
    */
   public int getMajorCount() {
-    return major_.size();
+    return major.size();
   }
   /**
    * <code>repeated string major = 2;</code>
@@ -169,7 +169,7 @@ private static final long serialVersionUID = 0L;
    * @return The major at the given index.
    */
   public java.lang.String getMajor(int index) {
-    return major_.get(index);
+    return major.get(index);
   }
   /**
    * <code>repeated string major = 2;</code>
@@ -178,7 +178,7 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.protobuf.ByteString
       getMajorBytes(int index) {
-    return major_.getByteString(index);
+    return major.getByteString(index);
   }
 
   public static final int CLASS_FIELD_NUMBER = 100;
@@ -196,7 +196,7 @@ private static final long serialVersionUID = 0L;
    * @return The count of class.
    */
   public int getClass_Count() {
-    return class__.size();
+    return class_.size();
   }
   /**
    * <code>repeated string class = 100;</code>
@@ -204,7 +204,7 @@ private static final long serialVersionUID = 0L;
    * @return The class at the given index.
    */
   public java.lang.String getClass_(int index) {
-    return class__.get(index);
+    return class_.get(index);
   }
   /**
    * <code>repeated string class = 100;</code>
@@ -213,7 +213,7 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.protobuf.ByteString
       getClass_Bytes(int index) {
-    return class__.getByteString(index);
+    return class_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -230,14 +230,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (baseResp_ != null) {
+    if (baseResp != null) {
       output.writeMessage(1, getBaseResp());
     }
-    for (int i = 0; i < major_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, major_.getRaw(i));
+    for (int i = 0; i < major.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, major.getRaw(i));
     }
-    for (int i = 0; i < class__.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 100, class__.getRaw(i));
+    for (int i = 0; i < class_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 100, class_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -248,22 +248,22 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (baseResp_ != null) {
+    if (baseResp != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
     {
       int dataSize = 0;
-      for (int i = 0; i < major_.size(); i++) {
-        dataSize += computeStringSizeNoTag(major_.getRaw(i));
+      for (int i = 0; i < major.size(); i++) {
+        dataSize += computeStringSizeNoTag(major.getRaw(i));
       }
       size += dataSize;
       size += 1 * getMajorList().size();
     }
     {
       int dataSize = 0;
-      for (int i = 0; i < class__.size(); i++) {
-        dataSize += computeStringSizeNoTag(class__.getRaw(i));
+      for (int i = 0; i < class_.size(); i++) {
+        dataSize += computeStringSizeNoTag(class_.getRaw(i));
       }
       size += dataSize;
       size += 2 * getClass_List().size();
@@ -488,15 +488,15 @@ private static final long serialVersionUID = 0L;
       if (baseRespBuilder == null) {
         result.baseResp = baseResp;
       } else {
-        result.baseResp = baseRespBuilder_.build();
+        result.baseResp = baseRespBuilder.build();
       }
       if (((bitField0_ & 0x00000001) != 0)) {
-        major = major_.getUnmodifiableView();
+        major = major.getUnmodifiableView();
         bitField0 = (bitField0_ & ~0x00000001);
       }
       result.major = major;
       if (((bitField0_ & 0x00000002) != 0)) {
-        class_ = class__.getUnmodifiableView();
+        class_ = class_.getUnmodifiableView();
         bitField0 = (bitField0_ & ~0x00000002);
       }
       result.class_ = class_;
@@ -551,23 +551,23 @@ private static final long serialVersionUID = 0L;
       if (other.hasBaseResp()) {
         mergeBaseResp(other.getBaseResp());
       }
-      if (!other.major_.isEmpty()) {
-        if (major_.isEmpty()) {
+      if (!other.major.isEmpty()) {
+        if (major.isEmpty()) {
           major = other.major;
           bitField0 = (bitField0_ & ~0x00000001);
         } else {
           ensureMajorIsMutable();
-          major_.addAll(other.major);
+          major.addAll(other.major);
         }
         onChanged();
       }
-      if (!other.class__.isEmpty()) {
-        if (class__.isEmpty()) {
+      if (!other.class_.isEmpty()) {
+        if (class_.isEmpty()) {
           class_ = other.class_;
           bitField0 = (bitField0_ & ~0x00000002);
         } else {
           ensureClass_IsMutable();
-          class__.addAll(other.class_);
+          class_.addAll(other.class_);
         }
         onChanged();
       }
@@ -609,7 +609,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the baseResp field is set.
      */
     public boolean hasBaseResp() {
-      return baseRespBuilder_ != null || baseResp_ != null;
+      return baseRespBuilder != null || baseResp != null;
     }
     /**
      * <code>.base.BaseResponse base_resp = 1;</code>
@@ -619,7 +619,7 @@ private static final long serialVersionUID = 0L;
       if (baseRespBuilder == null) {
         return baseResp == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
       } else {
-        return baseRespBuilder_.getMessage();
+        return baseRespBuilder.getMessage();
       }
     }
     /**
@@ -633,7 +633,7 @@ private static final long serialVersionUID = 0L;
         baseResp = value;
         onChanged();
       } else {
-        baseRespBuilder_.setMessage(value);
+        baseRespBuilder.setMessage(value);
       }
 
       return this;
@@ -647,7 +647,7 @@ private static final long serialVersionUID = 0L;
         baseResp = builderForValue.build();
         onChanged();
       } else {
-        baseRespBuilder_.setMessage(builderForValue.build());
+        baseRespBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -657,7 +657,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeBaseResp(com.zhijiejiaoyu.base.BaseResponse value) {
       if (baseRespBuilder == null) {
-        if (baseResp_ != null) {
+        if (baseResp != null) {
           baseResp =
             com.zhijiejiaoyu.base.BaseResponse.newBuilder(baseResp).mergeFrom(value).buildPartial();
         } else {
@@ -665,7 +665,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        baseRespBuilder_.mergeFrom(value);
+        baseRespBuilder.mergeFrom(value);
       }
 
       return this;
@@ -696,8 +696,8 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder() {
-      if (baseRespBuilder_ != null) {
-        return baseRespBuilder_.getMessageOrBuilder();
+      if (baseRespBuilder != null) {
+        return baseRespBuilder.getMessageOrBuilder();
       } else {
         return baseResp == null ?
             com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
@@ -733,14 +733,14 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ProtocolStringList
         getMajorList() {
-      return major_.getUnmodifiableView();
+      return major.getUnmodifiableView();
     }
     /**
      * <code>repeated string major = 2;</code>
      * @return The count of major.
      */
     public int getMajorCount() {
-      return major_.size();
+      return major.size();
     }
     /**
      * <code>repeated string major = 2;</code>
@@ -748,7 +748,7 @@ private static final long serialVersionUID = 0L;
      * @return The major at the given index.
      */
     public java.lang.String getMajor(int index) {
-      return major_.get(index);
+      return major.get(index);
     }
     /**
      * <code>repeated string major = 2;</code>
@@ -757,7 +757,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getMajorBytes(int index) {
-      return major_.getByteString(index);
+      return major.getByteString(index);
     }
     /**
      * <code>repeated string major = 2;</code>
@@ -771,7 +771,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   ensureMajorIsMutable();
-      major_.set(index, value);
+      major.set(index, value);
       onChanged();
       return this;
     }
@@ -786,7 +786,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   ensureMajorIsMutable();
-      major_.add(value);
+      major.add(value);
       onChanged();
       return this;
     }
@@ -825,7 +825,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       ensureMajorIsMutable();
-      major_.add(value);
+      major.add(value);
       onChanged();
       return this;
     }
@@ -843,14 +843,14 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ProtocolStringList
         getClass_List() {
-      return class__.getUnmodifiableView();
+      return class_.getUnmodifiableView();
     }
     /**
      * <code>repeated string class = 100;</code>
      * @return The count of class.
      */
     public int getClass_Count() {
-      return class__.size();
+      return class_.size();
     }
     /**
      * <code>repeated string class = 100;</code>
@@ -858,7 +858,7 @@ private static final long serialVersionUID = 0L;
      * @return The class at the given index.
      */
     public java.lang.String getClass_(int index) {
-      return class__.get(index);
+      return class_.get(index);
     }
     /**
      * <code>repeated string class = 100;</code>
@@ -867,7 +867,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getClass_Bytes(int index) {
-      return class__.getByteString(index);
+      return class_.getByteString(index);
     }
     /**
      * <code>repeated string class = 100;</code>
@@ -881,7 +881,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   ensureClass_IsMutable();
-      class__.set(index, value);
+      class_.set(index, value);
       onChanged();
       return this;
     }
@@ -896,7 +896,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   ensureClass_IsMutable();
-      class__.add(value);
+      class_.add(value);
       onChanged();
       return this;
     }
@@ -935,7 +935,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       ensureClass_IsMutable();
-      class__.add(value);
+      class_.add(value);
       onChanged();
       return this;
     }

@@ -74,4 +74,22 @@ public interface ProductShowOrBuilder extends
    */
   com.google.protobuf.ByteString
       getSkuInfoBytes();
+
+  /**
+   * <code>string currency = 8;</code>
+   * @return The currency.
+   */
+  java.lang.String getCurrency();
+  /**
+   * <code>string currency = 8;</code>
+   * @return The bytes for currency.
+   */
+  com.google.protobuf.ByteString
+      getCurrencyBytes();
+
+  /**
+   * <code>float freight_amount = 9;</code>
+   * @return The freightAmount.
+   */
+  float getFreightAmount();
 }

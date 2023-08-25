@@ -260,16 +260,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (stageVideoId_ != 0L) {
+    if (stageVideoId != 0L) {
       output.writeInt64(1, stageVideoId);
     }
     if (!getVideoUrlBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, videoUrl);
     }
-    if (videoLength_ != 0) {
+    if (videoLength != 0) {
       output.writeInt32(3, videoLength);
     }
-    if (videoDuration_ != 0) {
+    if (videoDuration != 0) {
       output.writeInt32(4, videoDuration);
     }
     if (!getCreatedAtBytes().isEmpty()) {
@@ -284,18 +284,18 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (stageVideoId_ != 0L) {
+    if (stageVideoId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, stageVideoId);
     }
     if (!getVideoUrlBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, videoUrl);
     }
-    if (videoLength_ != 0) {
+    if (videoLength != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(3, videoLength);
     }
-    if (videoDuration_ != 0) {
+    if (videoDuration != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(4, videoDuration);
     }

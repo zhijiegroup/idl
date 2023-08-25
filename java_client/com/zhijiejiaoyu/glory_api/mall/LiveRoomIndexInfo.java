@@ -502,10 +502,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (roomId_ != 0L) {
+    if (roomId != 0L) {
       output.writeInt64(1, roomId);
     }
-    if (userId_ != 0L) {
+    if (userId != 0L) {
       output.writeInt64(2, userId);
     }
     if (!getGroupIdBytes().isEmpty()) {
@@ -526,7 +526,7 @@ private static final long serialVersionUID = 0L;
     if (!getStartTimeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, startTime);
     }
-    if (likeCount_ != 0L) {
+    if (likeCount != 0L) {
       output.writeInt64(9, likeCount);
     }
     if (!getEndTimeBytes().isEmpty()) {
@@ -544,11 +544,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (roomId_ != 0L) {
+    if (roomId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, roomId);
     }
-    if (userId_ != 0L) {
+    if (userId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, userId);
     }
@@ -570,7 +570,7 @@ private static final long serialVersionUID = 0L;
     if (!getStartTimeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, startTime);
     }
-    if (likeCount_ != 0L) {
+    if (likeCount != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(9, likeCount);
     }

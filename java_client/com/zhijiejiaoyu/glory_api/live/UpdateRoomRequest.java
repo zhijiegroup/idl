@@ -50,8 +50,8 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             com.zhijiejiaoyu.base.BaseRequest.Builder subBuilder = null;
-            if (baseRequest_ != null) {
-              subBuilder = baseRequest_.toBuilder();
+            if (baseRequest != null) {
+              subBuilder = baseRequest.toBuilder();
             }
             baseRequest = input.readMessage(com.zhijiejiaoyu.base.BaseRequest.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -68,8 +68,8 @@ private static final long serialVersionUID = 0L;
           }
           case 26: {
             com.zhijiejiaoyu.glory_api.live.Room.Builder subBuilder = null;
-            if (room_ != null) {
-              subBuilder = room_.toBuilder();
+            if (room != null) {
+              subBuilder = room.toBuilder();
             }
             room = input.readMessage(com.zhijiejiaoyu.glory_api.live.Room.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -119,7 +119,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasBaseRequest() {
-    return baseRequest_ != null;
+    return baseRequest != null;
   }
   /**
    * <code>.base.BaseRequest base_request = 1;</code>
@@ -156,7 +156,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasRoom() {
-    return room_ != null;
+    return room != null;
   }
   /**
    * <code>.glory_api.Room room = 3;</code>
@@ -188,13 +188,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (baseRequest_ != null) {
+    if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
-    if (closeRoom_ != false) {
+    if (closeRoom != false) {
       output.writeBool(2, closeRoom);
     }
-    if (room_ != null) {
+    if (room != null) {
       output.writeMessage(3, getRoom());
     }
     unknownFields.writeTo(output);
@@ -206,15 +206,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (baseRequest_ != null) {
+    if (baseRequest != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseRequest());
     }
-    if (closeRoom_ != false) {
+    if (closeRoom != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(2, closeRoom);
     }
-    if (room_ != null) {
+    if (room != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getRoom());
     }
@@ -443,13 +443,13 @@ private static final long serialVersionUID = 0L;
       if (baseRequestBuilder == null) {
         result.baseRequest = baseRequest;
       } else {
-        result.baseRequest = baseRequestBuilder_.build();
+        result.baseRequest = baseRequestBuilder.build();
       }
       result.closeRoom = closeRoom;
       if (roomBuilder == null) {
         result.room = room;
       } else {
-        result.room = roomBuilder_.build();
+        result.room = roomBuilder.build();
       }
       onBuilt();
       return result;
@@ -545,7 +545,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the baseRequest field is set.
      */
     public boolean hasBaseRequest() {
-      return baseRequestBuilder_ != null || baseRequest_ != null;
+      return baseRequestBuilder != null || baseRequest != null;
     }
     /**
      * <code>.base.BaseRequest base_request = 1;</code>
@@ -555,7 +555,7 @@ private static final long serialVersionUID = 0L;
       if (baseRequestBuilder == null) {
         return baseRequest == null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
       } else {
-        return baseRequestBuilder_.getMessage();
+        return baseRequestBuilder.getMessage();
       }
     }
     /**
@@ -569,7 +569,7 @@ private static final long serialVersionUID = 0L;
         baseRequest = value;
         onChanged();
       } else {
-        baseRequestBuilder_.setMessage(value);
+        baseRequestBuilder.setMessage(value);
       }
 
       return this;
@@ -583,7 +583,7 @@ private static final long serialVersionUID = 0L;
         baseRequest = builderForValue.build();
         onChanged();
       } else {
-        baseRequestBuilder_.setMessage(builderForValue.build());
+        baseRequestBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -593,7 +593,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeBaseRequest(com.zhijiejiaoyu.base.BaseRequest value) {
       if (baseRequestBuilder == null) {
-        if (baseRequest_ != null) {
+        if (baseRequest != null) {
           baseRequest =
             com.zhijiejiaoyu.base.BaseRequest.newBuilder(baseRequest).mergeFrom(value).buildPartial();
         } else {
@@ -601,7 +601,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        baseRequestBuilder_.mergeFrom(value);
+        baseRequestBuilder.mergeFrom(value);
       }
 
       return this;
@@ -632,8 +632,8 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseRequest base_request = 1;</code>
      */
     public com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder() {
-      if (baseRequestBuilder_ != null) {
-        return baseRequestBuilder_.getMessageOrBuilder();
+      if (baseRequestBuilder != null) {
+        return baseRequestBuilder.getMessageOrBuilder();
       } else {
         return baseRequest == null ?
             com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
@@ -695,7 +695,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the room field is set.
      */
     public boolean hasRoom() {
-      return roomBuilder_ != null || room_ != null;
+      return roomBuilder != null || room != null;
     }
     /**
      * <code>.glory_api.Room room = 3;</code>
@@ -705,7 +705,7 @@ private static final long serialVersionUID = 0L;
       if (roomBuilder == null) {
         return room == null ? com.zhijiejiaoyu.glory_api.live.Room.getDefaultInstance() : room;
       } else {
-        return roomBuilder_.getMessage();
+        return roomBuilder.getMessage();
       }
     }
     /**
@@ -719,7 +719,7 @@ private static final long serialVersionUID = 0L;
         room = value;
         onChanged();
       } else {
-        roomBuilder_.setMessage(value);
+        roomBuilder.setMessage(value);
       }
 
       return this;
@@ -733,7 +733,7 @@ private static final long serialVersionUID = 0L;
         room = builderForValue.build();
         onChanged();
       } else {
-        roomBuilder_.setMessage(builderForValue.build());
+        roomBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -743,7 +743,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeRoom(com.zhijiejiaoyu.glory_api.live.Room value) {
       if (roomBuilder == null) {
-        if (room_ != null) {
+        if (room != null) {
           room =
             com.zhijiejiaoyu.glory_api.live.Room.newBuilder(room).mergeFrom(value).buildPartial();
         } else {
@@ -751,7 +751,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        roomBuilder_.mergeFrom(value);
+        roomBuilder.mergeFrom(value);
       }
 
       return this;
@@ -782,8 +782,8 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.Room room = 3;</code>
      */
     public com.zhijiejiaoyu.glory_api.live.RoomOrBuilder getRoomOrBuilder() {
-      if (roomBuilder_ != null) {
-        return roomBuilder_.getMessageOrBuilder();
+      if (roomBuilder != null) {
+        return roomBuilder.getMessageOrBuilder();
       } else {
         return room == null ?
             com.zhijiejiaoyu.glory_api.live.Room.getDefaultInstance() : room;

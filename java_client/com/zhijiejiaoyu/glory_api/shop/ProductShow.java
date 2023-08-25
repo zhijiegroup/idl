@@ -19,6 +19,7 @@ private static final long serialVersionUID = 0L;
     productName = "";
     productUrl = "";
     skuInfo = "";
+    currency = "";
   }
 
   @java.lang.Override
@@ -87,6 +88,17 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             skuInfo = s;
+            break;
+          }
+          case 66: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            currency = s;
+            break;
+          }
+          case 77: {
+
+            freightAmount = input.readFloat();
             break;
           }
           default: {
@@ -287,6 +299,55 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int CURRENCY_FIELD_NUMBER = 8;
+  private volatile java.lang.Object currency;
+  /**
+   * <code>string currency = 8;</code>
+   * @return The currency.
+   */
+  @java.lang.Override
+  public java.lang.String getCurrency() {
+    java.lang.Object ref = currency;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      currency = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string currency = 8;</code>
+   * @return The bytes for currency.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCurrencyBytes() {
+    java.lang.Object ref = currency;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      currency = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int FREIGHT_AMOUNT_FIELD_NUMBER = 9;
+  private float freightAmount;
+  /**
+   * <code>float freight_amount = 9;</code>
+   * @return The freightAmount.
+   */
+  @java.lang.Override
+  public float getFreightAmount() {
+    return freightAmount;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -301,19 +362,19 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (productId_ != 0L) {
+    if (productId != 0L) {
       output.writeInt64(1, productId);
     }
-    if (skuId_ != 0L) {
+    if (skuId != 0L) {
       output.writeInt64(2, skuId);
     }
     if (!getProductNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, productName);
     }
-    if (quantity_ != 0) {
+    if (quantity != 0) {
       output.writeInt32(4, quantity);
     }
-    if (unitPrice_ != 0D) {
+    if (unitPrice != 0D) {
       output.writeDouble(5, unitPrice);
     }
     if (!getProductUrlBytes().isEmpty()) {
@@ -321,6 +382,12 @@ private static final long serialVersionUID = 0L;
     }
     if (!getSkuInfoBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, skuInfo);
+    }
+    if (!getCurrencyBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, currency);
+    }
+    if (freightAmount != 0F) {
+      output.writeFloat(9, freightAmount);
     }
     unknownFields.writeTo(output);
   }
@@ -331,22 +398,22 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (productId_ != 0L) {
+    if (productId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, productId);
     }
-    if (skuId_ != 0L) {
+    if (skuId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, skuId);
     }
     if (!getProductNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, productName);
     }
-    if (quantity_ != 0) {
+    if (quantity != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(4, quantity);
     }
-    if (unitPrice_ != 0D) {
+    if (unitPrice != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(5, unitPrice);
     }
@@ -355,6 +422,13 @@ private static final long serialVersionUID = 0L;
     }
     if (!getSkuInfoBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, skuInfo);
+    }
+    if (!getCurrencyBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, currency);
+    }
+    if (freightAmount != 0F) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeFloatSize(9, freightAmount);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -386,6 +460,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getProductUrl())) return false;
     if (!getSkuInfo()
         .equals(other.getSkuInfo())) return false;
+    if (!getCurrency()
+        .equals(other.getCurrency())) return false;
+    if (java.lang.Float.floatToIntBits(getFreightAmount())
+        != java.lang.Float.floatToIntBits(
+            other.getFreightAmount())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -414,6 +493,11 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getProductUrl().hashCode();
     hash = (37 * hash) + SKU_INFO_FIELD_NUMBER;
     hash = (53 * hash) + getSkuInfo().hashCode();
+    hash = (37 * hash) + CURRENCY_FIELD_NUMBER;
+    hash = (53 * hash) + getCurrency().hashCode();
+    hash = (37 * hash) + FREIGHT_AMOUNT_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(
+        getFreightAmount());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -561,6 +645,10 @@ private static final long serialVersionUID = 0L;
 
       skuInfo = "";
 
+      currency = "";
+
+      freightAmount = 0F;
+
       return this;
     }
 
@@ -594,6 +682,8 @@ private static final long serialVersionUID = 0L;
       result.unitPrice = unitPrice;
       result.productUrl = productUrl;
       result.skuInfo = skuInfo;
+      result.currency = currency;
+      result.freightAmount = freightAmount;
       onBuilt();
       return result;
     }
@@ -665,6 +755,13 @@ private static final long serialVersionUID = 0L;
       if (!other.getSkuInfo().isEmpty()) {
         skuInfo = other.skuInfo;
         onChanged();
+      }
+      if (!other.getCurrency().isEmpty()) {
+        currency = other.currency;
+        onChanged();
+      }
+      if (other.getFreightAmount() != 0F) {
+        setFreightAmount(other.getFreightAmount());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1067,6 +1164,113 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       skuInfo = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object currency = "";
+    /**
+     * <code>string currency = 8;</code>
+     * @return The currency.
+     */
+    public java.lang.String getCurrency() {
+      java.lang.Object ref = currency;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        currency = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string currency = 8;</code>
+     * @return The bytes for currency.
+     */
+    public com.google.protobuf.ByteString
+        getCurrencyBytes() {
+      java.lang.Object ref = currency;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        currency = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string currency = 8;</code>
+     * @param value The currency to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCurrency(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      currency = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string currency = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCurrency() {
+      
+      currency = getDefaultInstance().getCurrency();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string currency = 8;</code>
+     * @param value The bytes for currency to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCurrencyBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      currency = value;
+      onChanged();
+      return this;
+    }
+
+    private float freightAmount_ ;
+    /**
+     * <code>float freight_amount = 9;</code>
+     * @return The freightAmount.
+     */
+    @java.lang.Override
+    public float getFreightAmount() {
+      return freightAmount;
+    }
+    /**
+     * <code>float freight_amount = 9;</code>
+     * @param value The freightAmount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFreightAmount(float value) {
+      
+      freightAmount = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>float freight_amount = 9;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearFreightAmount() {
+      
+      freightAmount = 0F;
       onChanged();
       return this;
     }

@@ -552,19 +552,19 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (liveProductStatusId_ != 0L) {
+    if (liveProductStatusId != 0L) {
       output.writeInt64(1, liveProductStatusId);
     }
-    if (productId_ != 0L) {
+    if (productId != 0L) {
       output.writeInt64(2, productId);
     }
     if (!getStatusBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, status);
     }
-    if (shopId_ != 0L) {
+    if (shopId != 0L) {
       output.writeInt64(4, shopId);
     }
-    if (roomId_ != 0L) {
+    if (roomId != 0L) {
       output.writeInt64(5, roomId);
     }
     if (!getProductSellingPointBytes().isEmpty()) {
@@ -573,7 +573,7 @@ private static final long serialVersionUID = 0L;
     if (!getProductDescriptionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, productDescription);
     }
-    if (isIntroduct_ != false) {
+    if (isIntroduct != false) {
       output.writeBool(8, isIntroduct);
     }
     if (!getStateBytes().isEmpty()) {
@@ -585,16 +585,16 @@ private static final long serialVersionUID = 0L;
     if (!getProductNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, productName);
     }
-    if (productPrice_ != 0D) {
+    if (productPrice != 0D) {
       output.writeDouble(12, productPrice);
     }
-    if (productRemainingAmount_ != 0L) {
+    if (productRemainingAmount != 0L) {
       output.writeInt64(13, productRemainingAmount);
     }
-    if (productSoldAmount_ != 0L) {
+    if (productSoldAmount != 0L) {
       output.writeInt64(14, productSoldAmount);
     }
-    if (productDealAmount_ != 0D) {
+    if (productDealAmount != 0D) {
       output.writeDouble(15, productDealAmount);
     }
     unknownFields.writeTo(output);
@@ -606,22 +606,22 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (liveProductStatusId_ != 0L) {
+    if (liveProductStatusId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, liveProductStatusId);
     }
-    if (productId_ != 0L) {
+    if (productId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, productId);
     }
     if (!getStatusBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, status);
     }
-    if (shopId_ != 0L) {
+    if (shopId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, shopId);
     }
-    if (roomId_ != 0L) {
+    if (roomId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(5, roomId);
     }
@@ -631,7 +631,7 @@ private static final long serialVersionUID = 0L;
     if (!getProductDescriptionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, productDescription);
     }
-    if (isIntroduct_ != false) {
+    if (isIntroduct != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(8, isIntroduct);
     }
@@ -644,19 +644,19 @@ private static final long serialVersionUID = 0L;
     if (!getProductNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, productName);
     }
-    if (productPrice_ != 0D) {
+    if (productPrice != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(12, productPrice);
     }
-    if (productRemainingAmount_ != 0L) {
+    if (productRemainingAmount != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(13, productRemainingAmount);
     }
-    if (productSoldAmount_ != 0L) {
+    if (productSoldAmount != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(14, productSoldAmount);
     }
-    if (productDealAmount_ != 0D) {
+    if (productDealAmount != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(15, productDealAmount);
     }

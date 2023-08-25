@@ -325,6 +325,99 @@ public final class glory_apiGrpc {
     return getUpdatePasswordMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.user.FollowUserRequest,
+      com.zhijiejiaoyu.glory_api.user.FollowUserResponse> getFollowUserMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FollowUser",
+      requestType = com.zhijiejiaoyu.glory_api.user.FollowUserRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.user.FollowUserResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.user.FollowUserRequest,
+      com.zhijiejiaoyu.glory_api.user.FollowUserResponse> getFollowUserMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.user.FollowUserRequest, com.zhijiejiaoyu.glory_api.user.FollowUserResponse> getFollowUserMethod;
+    if ((getFollowUserMethod = glory_apiGrpc.getFollowUserMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getFollowUserMethod = glory_apiGrpc.getFollowUserMethod) == null) {
+          glory_apiGrpc.getFollowUserMethod = getFollowUserMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.user.FollowUserRequest, com.zhijiejiaoyu.glory_api.user.FollowUserResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FollowUser"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.user.FollowUserRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.user.FollowUserResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("FollowUser"))
+              .build();
+        }
+      }
+    }
+    return getFollowUserMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.user.ListMyFollowedUserRequest,
+      com.zhijiejiaoyu.glory_api.user.ListMyFollowedUserResponse> getListMyFollowedUserMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListMyFollowedUser",
+      requestType = com.zhijiejiaoyu.glory_api.user.ListMyFollowedUserRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.user.ListMyFollowedUserResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.user.ListMyFollowedUserRequest,
+      com.zhijiejiaoyu.glory_api.user.ListMyFollowedUserResponse> getListMyFollowedUserMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.user.ListMyFollowedUserRequest, com.zhijiejiaoyu.glory_api.user.ListMyFollowedUserResponse> getListMyFollowedUserMethod;
+    if ((getListMyFollowedUserMethod = glory_apiGrpc.getListMyFollowedUserMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListMyFollowedUserMethod = glory_apiGrpc.getListMyFollowedUserMethod) == null) {
+          glory_apiGrpc.getListMyFollowedUserMethod = getListMyFollowedUserMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.user.ListMyFollowedUserRequest, com.zhijiejiaoyu.glory_api.user.ListMyFollowedUserResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListMyFollowedUser"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.user.ListMyFollowedUserRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.user.ListMyFollowedUserResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListMyFollowedUser"))
+              .build();
+        }
+      }
+    }
+    return getListMyFollowedUserMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.user.ListMyFollowerUserRequest,
+      com.zhijiejiaoyu.glory_api.user.ListMyFollowerUserResponse> getListMyFollowerUserMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListMyFollowerUser",
+      requestType = com.zhijiejiaoyu.glory_api.user.ListMyFollowerUserRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.user.ListMyFollowerUserResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.user.ListMyFollowerUserRequest,
+      com.zhijiejiaoyu.glory_api.user.ListMyFollowerUserResponse> getListMyFollowerUserMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.user.ListMyFollowerUserRequest, com.zhijiejiaoyu.glory_api.user.ListMyFollowerUserResponse> getListMyFollowerUserMethod;
+    if ((getListMyFollowerUserMethod = glory_apiGrpc.getListMyFollowerUserMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListMyFollowerUserMethod = glory_apiGrpc.getListMyFollowerUserMethod) == null) {
+          glory_apiGrpc.getListMyFollowerUserMethod = getListMyFollowerUserMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.user.ListMyFollowerUserRequest, com.zhijiejiaoyu.glory_api.user.ListMyFollowerUserResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListMyFollowerUser"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.user.ListMyFollowerUserRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.user.ListMyFollowerUserResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListMyFollowerUser"))
+              .build();
+        }
+      }
+    }
+    return getListMyFollowerUserMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.user.GetUserPagePermissionRequest,
       com.zhijiejiaoyu.glory_api.user.GetUserPagePermissionResponse> getGetUserPagePermissionMethod;
 
@@ -6277,6 +6370,37 @@ public final class glory_apiGrpc {
     return getGetShortVideoMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.UpdateShortVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.UpdateShortVideoResponse> getUpdateShortVideoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateShortVideo",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.UpdateShortVideoRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.UpdateShortVideoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.UpdateShortVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.UpdateShortVideoResponse> getUpdateShortVideoMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.UpdateShortVideoRequest, com.zhijiejiaoyu.glory_api.short_video.UpdateShortVideoResponse> getUpdateShortVideoMethod;
+    if ((getUpdateShortVideoMethod = glory_apiGrpc.getUpdateShortVideoMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getUpdateShortVideoMethod = glory_apiGrpc.getUpdateShortVideoMethod) == null) {
+          glory_apiGrpc.getUpdateShortVideoMethod = getUpdateShortVideoMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.UpdateShortVideoRequest, com.zhijiejiaoyu.glory_api.short_video.UpdateShortVideoResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateShortVideo"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.UpdateShortVideoRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.UpdateShortVideoResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("UpdateShortVideo"))
+              .build();
+        }
+      }
+    }
+    return getUpdateShortVideoMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.DeleteShortVideoRequest,
       com.zhijiejiaoyu.glory_api.short_video.DeleteShortVideoResponse> getDeleteShortVideoMethod;
 
@@ -6463,6 +6587,99 @@ public final class glory_apiGrpc {
     return getManagementDeleteShortVideoMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListShortVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.ListShortVideoResponse> getListShortVideoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListShortVideo",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.ListShortVideoRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.ListShortVideoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListShortVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.ListShortVideoResponse> getListShortVideoMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListShortVideoRequest, com.zhijiejiaoyu.glory_api.short_video.ListShortVideoResponse> getListShortVideoMethod;
+    if ((getListShortVideoMethod = glory_apiGrpc.getListShortVideoMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListShortVideoMethod = glory_apiGrpc.getListShortVideoMethod) == null) {
+          glory_apiGrpc.getListShortVideoMethod = getListShortVideoMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.ListShortVideoRequest, com.zhijiejiaoyu.glory_api.short_video.ListShortVideoResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListShortVideo"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.ListShortVideoRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.ListShortVideoResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListShortVideo"))
+              .build();
+        }
+      }
+    }
+    return getListShortVideoMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoResponse> getLikeShortVideoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "LikeShortVideo",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoResponse> getLikeShortVideoMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoRequest, com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoResponse> getLikeShortVideoMethod;
+    if ((getLikeShortVideoMethod = glory_apiGrpc.getLikeShortVideoMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getLikeShortVideoMethod = glory_apiGrpc.getLikeShortVideoMethod) == null) {
+          glory_apiGrpc.getLikeShortVideoMethod = getLikeShortVideoMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoRequest, com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "LikeShortVideo"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("LikeShortVideo"))
+              .build();
+        }
+      }
+    }
+    return getLikeShortVideoMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoResponse> getFavoriteShortVideoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FavoriteShortVideo",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoResponse> getFavoriteShortVideoMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoRequest, com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoResponse> getFavoriteShortVideoMethod;
+    if ((getFavoriteShortVideoMethod = glory_apiGrpc.getFavoriteShortVideoMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getFavoriteShortVideoMethod = glory_apiGrpc.getFavoriteShortVideoMethod) == null) {
+          glory_apiGrpc.getFavoriteShortVideoMethod = getFavoriteShortVideoMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoRequest, com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FavoriteShortVideo"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("FavoriteShortVideo"))
+              .build();
+        }
+      }
+    }
+    return getFavoriteShortVideoMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -6597,6 +6814,36 @@ public final class glory_apiGrpc {
     default void updatePassword(com.zhijiejiaoyu.glory_api.user.UpdatePasswordRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.UpdatePasswordResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdatePasswordMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 关注用户
+     * </pre>
+     */
+    default void followUser(com.zhijiejiaoyu.glory_api.user.FollowUserRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.FollowUserResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFollowUserMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 我的关注列表
+     * </pre>
+     */
+    default void listMyFollowedUser(com.zhijiejiaoyu.glory_api.user.ListMyFollowedUserRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.ListMyFollowedUserResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListMyFollowedUserMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 我的粉丝列表
+     * </pre>
+     */
+    default void listMyFollowerUser(com.zhijiejiaoyu.glory_api.user.ListMyFollowerUserRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.ListMyFollowerUserResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListMyFollowerUserMethod(), responseObserver);
     }
 
     /**
@@ -8062,6 +8309,16 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * 更新短视频详情
+     * </pre>
+     */
+    default void updateShortVideo(com.zhijiejiaoyu.glory_api.short_video.UpdateShortVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.UpdateShortVideoResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateShortVideoMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * 删除短视频
      * </pre>
      */
@@ -8091,6 +8348,9 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     * 平台短短视频列表
+     * </pre>
      */
     default void managementListShortVideo(com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoResponse> responseObserver) {
@@ -8098,6 +8358,9 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     * 平台审核短视频
+     * </pre>
      */
     default void managementCensorShortVideo(com.zhijiejiaoyu.glory_api.short_video.ManagementCensorShortVideoRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ManagementCensorShortVideoResponse> responseObserver) {
@@ -8105,10 +8368,43 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     * 平台删除短视频
+     * </pre>
      */
     default void managementDeleteShortVideo(com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getManagementDeleteShortVideoMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * APP首页短视频列表
+     * </pre>
+     */
+    default void listShortVideo(com.zhijiejiaoyu.glory_api.short_video.ListShortVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListShortVideoResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListShortVideoMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 点赞短视频
+     * </pre>
+     */
+    default void likeShortVideo(com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getLikeShortVideoMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 收藏短视频
+     * </pre>
+     */
+    default void favoriteShortVideo(com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFavoriteShortVideoMethod(), responseObserver);
     }
   }
 
@@ -8235,6 +8531,39 @@ public final class glory_apiGrpc {
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.UpdatePasswordResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdatePasswordMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 关注用户
+     * </pre>
+     */
+    public void followUser(com.zhijiejiaoyu.glory_api.user.FollowUserRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.FollowUserResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFollowUserMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 我的关注列表
+     * </pre>
+     */
+    public void listMyFollowedUser(com.zhijiejiaoyu.glory_api.user.ListMyFollowedUserRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.ListMyFollowedUserResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListMyFollowedUserMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 我的粉丝列表
+     * </pre>
+     */
+    public void listMyFollowerUser(com.zhijiejiaoyu.glory_api.user.ListMyFollowerUserRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.ListMyFollowerUserResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListMyFollowerUserMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -9892,6 +10221,17 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * 更新短视频详情
+     * </pre>
+     */
+    public void updateShortVideo(com.zhijiejiaoyu.glory_api.short_video.UpdateShortVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.UpdateShortVideoResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateShortVideoMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * 删除短视频
      * </pre>
      */
@@ -9924,6 +10264,9 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     * 平台短短视频列表
+     * </pre>
      */
     public void managementListShortVideo(com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoResponse> responseObserver) {
@@ -9932,6 +10275,9 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     * 平台审核短视频
+     * </pre>
      */
     public void managementCensorShortVideo(com.zhijiejiaoyu.glory_api.short_video.ManagementCensorShortVideoRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ManagementCensorShortVideoResponse> responseObserver) {
@@ -9940,11 +10286,47 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     * 平台删除短视频
+     * </pre>
      */
     public void managementDeleteShortVideo(com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getManagementDeleteShortVideoMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * APP首页短视频列表
+     * </pre>
+     */
+    public void listShortVideo(com.zhijiejiaoyu.glory_api.short_video.ListShortVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListShortVideoResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListShortVideoMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 点赞短视频
+     * </pre>
+     */
+    public void likeShortVideo(com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getLikeShortVideoMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 收藏短视频
+     * </pre>
+     */
+    public void favoriteShortVideo(com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFavoriteShortVideoMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -10050,6 +10432,36 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.user.UpdatePasswordResponse updatePassword(com.zhijiejiaoyu.glory_api.user.UpdatePasswordRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdatePasswordMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 关注用户
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.user.FollowUserResponse followUser(com.zhijiejiaoyu.glory_api.user.FollowUserRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFollowUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 我的关注列表
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.user.ListMyFollowedUserResponse listMyFollowedUser(com.zhijiejiaoyu.glory_api.user.ListMyFollowedUserRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMyFollowedUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 我的粉丝列表
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.user.ListMyFollowerUserResponse listMyFollowerUser(com.zhijiejiaoyu.glory_api.user.ListMyFollowerUserRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMyFollowerUserMethod(), getCallOptions(), request);
     }
 
     /**
@@ -11515,6 +11927,16 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * 更新短视频详情
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.UpdateShortVideoResponse updateShortVideo(com.zhijiejiaoyu.glory_api.short_video.UpdateShortVideoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateShortVideoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * 删除短视频
      * </pre>
      */
@@ -11544,6 +11966,9 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     * 平台短短视频列表
+     * </pre>
      */
     public com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoResponse managementListShortVideo(com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -11551,6 +11976,9 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     * 平台审核短视频
+     * </pre>
      */
     public com.zhijiejiaoyu.glory_api.short_video.ManagementCensorShortVideoResponse managementCensorShortVideo(com.zhijiejiaoyu.glory_api.short_video.ManagementCensorShortVideoRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -11558,10 +11986,43 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     * 平台删除短视频
+     * </pre>
      */
     public com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoResponse managementDeleteShortVideo(com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getManagementDeleteShortVideoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * APP首页短视频列表
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.ListShortVideoResponse listShortVideo(com.zhijiejiaoyu.glory_api.short_video.ListShortVideoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListShortVideoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 点赞短视频
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoResponse likeShortVideo(com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getLikeShortVideoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 收藏短视频
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoResponse favoriteShortVideo(com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFavoriteShortVideoMethod(), getCallOptions(), request);
     }
   }
 
@@ -11677,6 +12138,39 @@ public final class glory_apiGrpc {
         com.zhijiejiaoyu.glory_api.user.UpdatePasswordRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdatePasswordMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 关注用户
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.user.FollowUserResponse> followUser(
+        com.zhijiejiaoyu.glory_api.user.FollowUserRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFollowUserMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 我的关注列表
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.user.ListMyFollowedUserResponse> listMyFollowedUser(
+        com.zhijiejiaoyu.glory_api.user.ListMyFollowedUserRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListMyFollowedUserMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 我的粉丝列表
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.user.ListMyFollowerUserResponse> listMyFollowerUser(
+        com.zhijiejiaoyu.glory_api.user.ListMyFollowerUserRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListMyFollowerUserMethod(), getCallOptions()), request);
     }
 
     /**
@@ -13334,6 +13828,17 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * 更新短视频详情
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.UpdateShortVideoResponse> updateShortVideo(
+        com.zhijiejiaoyu.glory_api.short_video.UpdateShortVideoRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateShortVideoMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * 删除短视频
      * </pre>
      */
@@ -13366,6 +13871,9 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     * 平台短短视频列表
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoResponse> managementListShortVideo(
         com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoRequest request) {
@@ -13374,6 +13882,9 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     * 平台审核短视频
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.ManagementCensorShortVideoResponse> managementCensorShortVideo(
         com.zhijiejiaoyu.glory_api.short_video.ManagementCensorShortVideoRequest request) {
@@ -13382,11 +13893,47 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     * 平台删除短视频
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoResponse> managementDeleteShortVideo(
         com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getManagementDeleteShortVideoMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * APP首页短视频列表
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.ListShortVideoResponse> listShortVideo(
+        com.zhijiejiaoyu.glory_api.short_video.ListShortVideoRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListShortVideoMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 点赞短视频
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoResponse> likeShortVideo(
+        com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getLikeShortVideoMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 收藏短视频
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoResponse> favoriteShortVideo(
+        com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFavoriteShortVideoMethod(), getCallOptions()), request);
     }
   }
 
@@ -13400,204 +13947,211 @@ public final class glory_apiGrpc {
   private static final int METHODID_GET_USER = 7;
   private static final int METHODID_LOGIN_WITH_PASSWORD = 8;
   private static final int METHODID_UPDATE_PASSWORD = 9;
-  private static final int METHODID_GET_USER_PAGE_PERMISSION = 10;
-  private static final int METHODID_CREATE_ROLE_PAGE_PERMISSION = 11;
-  private static final int METHODID_UPDATE_ROLE_PAGE_PERMISSION = 12;
-  private static final int METHODID_GET_ROLE_PAGE_PERMISSION = 13;
-  private static final int METHODID_ADD_ADDRESS = 14;
-  private static final int METHODID_DELETE_ADDRESS = 15;
-  private static final int METHODID_UPDATE_ADDRESS = 16;
-  private static final int METHODID_GET_ADDRESS = 17;
-  private static final int METHODID_LIST_ADDRESS = 18;
-  private static final int METHODID_LIST_USER_BY_ROLE = 19;
-  private static final int METHODID_LIST_PERMISSION = 20;
-  private static final int METHODID_LIST_ROLE = 21;
-  private static final int METHODID_GIVE_ROLE_PERMISSION = 22;
-  private static final int METHODID_REMOVE_ROLE_PERMISSION = 23;
-  private static final int METHODID_CREATE_ROLE = 24;
-  private static final int METHODID_DELETE_ROLE = 25;
-  private static final int METHODID_LIST_RESOURCE = 26;
-  private static final int METHODID_CREATE_SHOP = 27;
-  private static final int METHODID_GET_SHOP = 28;
-  private static final int METHODID_UPDATE_SHOP = 29;
-  private static final int METHODID_LIST_SHOP = 30;
-  private static final int METHODID_DELETE_SHOP = 31;
-  private static final int METHODID_LIST_OPERATION_METRICS = 32;
-  private static final int METHODID_GET_SHOP_QRCODE = 33;
-  private static final int METHODID_UPDATE_SHOP_MANAGER = 34;
-  private static final int METHODID_GET_SHOP_BUSINESS_DATA = 35;
-  private static final int METHODID_ADD_SHOP_ACCESS = 36;
-  private static final int METHODID_REMOVE_SHOP_ACCESS = 37;
-  private static final int METHODID_VERIFY_FIELD = 38;
-  private static final int METHODID_LIST_SHOP_ACCESS = 39;
-  private static final int METHODID_ADD_SHOP_CATEGORY = 40;
-  private static final int METHODID_GET_SHOP_CATEGORY = 41;
-  private static final int METHODID_REMOVE_SHOP_CATEGORY = 42;
-  private static final int METHODID_ADD_FREIGHT_TEMPLATE = 43;
-  private static final int METHODID_GET_FREIGHT_TEMPLATE = 44;
-  private static final int METHODID_UPDATE_FREIGHT_TEMPLATE = 45;
-  private static final int METHODID_DELETE_FREIGHT_TEMPLATE = 46;
-  private static final int METHODID_LIST_FREIGHT_TEMPLATE = 47;
-  private static final int METHODID_LIST_QUALIFICATION = 48;
-  private static final int METHODID_GET_MALL_INDEX = 49;
-  private static final int METHODID_CREATE_CATEGORY = 50;
-  private static final int METHODID_GET_CATEGORY = 51;
-  private static final int METHODID_UPDATE_CATEGORY = 52;
-  private static final int METHODID_LIST_CATEGORY = 53;
-  private static final int METHODID_DELETE_CATEGORY = 54;
-  private static final int METHODID_LIST_CATEGORY_QUALIFICATION = 55;
-  private static final int METHODID_CREATE_PRODUCT = 56;
-  private static final int METHODID_GET_PRODUCT = 57;
-  private static final int METHODID_UPDATE_PRODUCT = 58;
-  private static final int METHODID_LIST_PRODUCT = 59;
-  private static final int METHODID_DELETE_PRODUCT = 60;
-  private static final int METHODID_UPLOAD_MULTI_IMAGE = 61;
-  private static final int METHODID_DELETE_IMAGE_BY_ID = 62;
-  private static final int METHODID_BIND_ATTRIBUTE = 63;
-  private static final int METHODID_PUBLISH_PRODUCT = 64;
-  private static final int METHODID_OFF_SHELF_PRODUCT_IN_BATCHES = 65;
-  private static final int METHODID_DELETE_PRODUCT_IN_BATCHES = 66;
-  private static final int METHODID_CHANGE_PRODUCTS_STATE = 67;
-  private static final int METHODID_CREATE_SKU = 68;
-  private static final int METHODID_GET_SKU = 69;
-  private static final int METHODID_UPDATE_SKU = 70;
-  private static final int METHODID_LIST_SKU = 71;
-  private static final int METHODID_DELETE_SKU = 72;
-  private static final int METHODID_CREATE_ATTRIBUTE = 73;
-  private static final int METHODID_GET_ATTRIBUTE = 74;
-  private static final int METHODID_LIST_ATTRIBUTE = 75;
-  private static final int METHODID_DELETE_ATTRIBUTE = 76;
-  private static final int METHODID_ADD_ATTRIBUTE_VALUE = 77;
-  private static final int METHODID_DELETE_ATTRIBUTE_VALUE = 78;
-  private static final int METHODID_CREATE_ORDER = 79;
-  private static final int METHODID_GET_ORDER = 80;
-  private static final int METHODID_UPDATE_ORDER = 81;
-  private static final int METHODID_LIST_ORDER = 82;
-  private static final int METHODID_DELETE_ORDER = 83;
-  private static final int METHODID_SHIP_GOODS = 84;
-  private static final int METHODID_CONFIRM_RECEIPT_GOODS = 85;
-  private static final int METHODID_CANCEL_ORDER = 86;
-  private static final int METHODID_SHIP_GOODS_IN_BATCHES = 87;
-  private static final int METHODID_FREE_SHIPPING_IN_BATCHES = 88;
-  private static final int METHODID_CREATE_CART = 89;
-  private static final int METHODID_GET_CART = 90;
-  private static final int METHODID_UPDATE_CART = 91;
-  private static final int METHODID_DELETE_CART = 92;
-  private static final int METHODID_UPLOAD_ATTACHMENT = 93;
-  private static final int METHODID_LIST_ATTACHMENT = 94;
-  private static final int METHODID_DELETE_ATTACHMENT = 95;
-  private static final int METHODID_CREATE_SELLER = 96;
-  private static final int METHODID_CREATE_PAYMENT = 97;
-  private static final int METHODID_GET_PAYMENT = 98;
-  private static final int METHODID_UPDATE_PAYMENT = 99;
-  private static final int METHODID_DELETE_PAYMENT = 100;
-  private static final int METHODID_CREATE_CONFIG = 101;
-  private static final int METHODID_UPDATE_CONFIG = 102;
-  private static final int METHODID_DELETE_CONFIG = 103;
-  private static final int METHODID_GET_CONFIG = 104;
-  private static final int METHODID_WX_PREPAY = 105;
-  private static final int METHODID_CLOSE_ORDER = 106;
-  private static final int METHODID_QUERY_ORDER_BY_ID = 107;
-  private static final int METHODID_QUERY_ORDER_BY_OUT_TRADE = 108;
-  private static final int METHODID_ADD_VCURRENCY = 109;
-  private static final int METHODID_RECHARGE_CURRENCY = 110;
-  private static final int METHODID_RECHARGE_CURRENCY_IN_BATCHES = 111;
-  private static final int METHODID_DELETE_VCURRENCY = 112;
-  private static final int METHODID_UPDATE_VCURRENCY = 113;
-  private static final int METHODID_GET_VCURRENCY = 114;
-  private static final int METHODID_LIST_VCURRENCY = 115;
-  private static final int METHODID_ADD_ACCOUNT_OPERATION = 116;
-  private static final int METHODID_GET_ACCOUNT_OPERATION = 117;
-  private static final int METHODID_LIST_ACCOUNT_OPERATION = 118;
-  private static final int METHODID_CREATE_ROOM = 119;
-  private static final int METHODID_GET_ROOM = 120;
-  private static final int METHODID_UPDATE_ROOM = 121;
-  private static final int METHODID_LIST_ROOM = 122;
-  private static final int METHODID_DELETE_ROOM = 123;
-  private static final int METHODID_LIST_FINISHED_ROOM = 124;
-  private static final int METHODID_RECORD = 125;
-  private static final int METHODID_CREATE_LIVE_USER_TOKEN = 126;
-  private static final int METHODID_USER_ENTER_ROOM = 127;
-  private static final int METHODID_USER_EXIT_ROOM = 128;
-  private static final int METHODID_LIST_ACTIVE_ROOM_USER = 129;
-  private static final int METHODID_CREATE_LIVE_PLAN = 130;
-  private static final int METHODID_GET_LIVE_PLAN = 131;
-  private static final int METHODID_UPDATE_LIVE_PLAN = 132;
-  private static final int METHODID_LIST_LIVE_PLAN = 133;
-  private static final int METHODID_DELETE_LIVE_PLAN = 134;
-  private static final int METHODID_CREATE_LIVE_PLAN_PRODUCT = 135;
-  private static final int METHODID_UPDATE_LIVE_PLAN_PRODUCT = 136;
-  private static final int METHODID_LIST_LIVE_PLAN_PRODUCT = 137;
-  private static final int METHODID_DELETE_LIVE_PLAN_PRODUCT = 138;
-  private static final int METHODID_LOAD_LIVE_PLAN_PRODUCT = 139;
-  private static final int METHODID_UPDATE_LIVE_PRODUCT_STATUS = 140;
-  private static final int METHODID_LIST_LIVE_PRODUCT_STATUS = 141;
-  private static final int METHODID_DELETE_LIVE_PRODUCT_STATUS = 142;
-  private static final int METHODID_CREATE_LIVE_PRODUCT_STATUS = 143;
-  private static final int METHODID_GET_LIVING_PRODUCT_STATUS = 144;
-  private static final int METHODID_UPDATE_LIVE_PRODUCT_INTRODUCT_STATUS = 145;
-  private static final int METHODID_CREATE_LIVE_TEXT = 146;
-  private static final int METHODID_UPDATE_LIVE_TEXT = 147;
-  private static final int METHODID_LIST_LIVE_TEXT = 148;
-  private static final int METHODID_GET_LIVE_TEXT = 149;
-  private static final int METHODID_DELETE_LIVE_TEXTS = 150;
-  private static final int METHODID_GET_LIVE_CHART_DATA = 151;
-  private static final int METHODID_GET_EVALUATE_SELECTOR = 152;
-  private static final int METHODID_LIST_PERSONAL_EVALUATE = 153;
-  private static final int METHODID_GET_EVALUATE_DETAIL = 154;
-  private static final int METHODID_SUBMIT_EVALUATE = 155;
-  private static final int METHODID_LIST_UNEVALUATED_ROOM = 156;
-  private static final int METHODID_LIST_STUDENT_EVALUATIONS = 157;
-  private static final int METHODID_IGNORE_EVALUATION = 158;
-  private static final int METHODID_GET_RANK = 159;
-  private static final int METHODID_CREATE_TENANT = 160;
-  private static final int METHODID_GET_TENANT = 161;
-  private static final int METHODID_UPDATE_TENANT = 162;
-  private static final int METHODID_DELETE_TENANT = 163;
-  private static final int METHODID_LIST_TENANT = 164;
-  private static final int METHODID_GET_TENANT_ORG = 165;
-  private static final int METHODID_CREATE_COLLEGE = 166;
-  private static final int METHODID_GET_COLLEGE = 167;
-  private static final int METHODID_UPDATE_COLLEGE = 168;
-  private static final int METHODID_DELETE_COLLEGE = 169;
-  private static final int METHODID_LIST_COLLEGE = 170;
-  private static final int METHODID_CREATE_EDU_DEPT = 171;
-  private static final int METHODID_UPDATE_EDU_DEPT = 172;
-  private static final int METHODID_DELETE_EDU_DEPT = 173;
-  private static final int METHODID_CREATE_GOVER_DEPT = 174;
-  private static final int METHODID_UPDATE_GOVER_DEPT = 175;
-  private static final int METHODID_DELETE_GOVER_DEPT = 176;
-  private static final int METHODID_CREATE_EDU_OFFICE = 177;
-  private static final int METHODID_UPDATE_EDU_OFFICE = 178;
-  private static final int METHODID_DELETE_EDU_OFFICE = 179;
-  private static final int METHODID_CREATE_PRINCIPAL_OFFICE = 180;
-  private static final int METHODID_UPDATE_PRINCIPAL_OFFICE = 181;
-  private static final int METHODID_DELETE_PRINCIPAL_OFFICE = 182;
-  private static final int METHODID_CREATE_MAJOR = 183;
-  private static final int METHODID_GET_MAJOR = 184;
-  private static final int METHODID_UPDATE_MAJOR = 185;
-  private static final int METHODID_DELETE_MAJOR = 186;
-  private static final int METHODID_LIST_MAJOR = 187;
-  private static final int METHODID_CREATE_CLASS = 188;
-  private static final int METHODID_GET_CLASS = 189;
-  private static final int METHODID_UPDATE_CLASS = 190;
-  private static final int METHODID_DELETE_CLASS = 191;
-  private static final int METHODID_LIST_CLASS = 192;
-  private static final int METHODID_CREATE_STUDENTS = 193;
-  private static final int METHODID_DELETE_STUDENTS = 194;
-  private static final int METHODID_CREATE_SHORT_VIDEO = 195;
-  private static final int METHODID_STAGE_SHORT_VIDEO = 196;
-  private static final int METHODID_LIST_MY_SHORT_VIDEO = 197;
-  private static final int METHODID_LIST_MY_STAGE_VIDEO = 198;
-  private static final int METHODID_LIST_MY_LIKE_VIDEO = 199;
-  private static final int METHODID_LIST_MY_FAVORITE_VIDEO = 200;
-  private static final int METHODID_GET_SHORT_VIDEO = 201;
-  private static final int METHODID_DELETE_SHORT_VIDEO = 202;
-  private static final int METHODID_GET_STAGE_VIDEO = 203;
-  private static final int METHODID_DELETE_STAGE_VIDEO = 204;
-  private static final int METHODID_MANAGEMENT_LIST_SHORT_VIDEO = 205;
-  private static final int METHODID_MANAGEMENT_CENSOR_SHORT_VIDEO = 206;
-  private static final int METHODID_MANAGEMENT_DELETE_SHORT_VIDEO = 207;
+  private static final int METHODID_FOLLOW_USER = 10;
+  private static final int METHODID_LIST_MY_FOLLOWED_USER = 11;
+  private static final int METHODID_LIST_MY_FOLLOWER_USER = 12;
+  private static final int METHODID_GET_USER_PAGE_PERMISSION = 13;
+  private static final int METHODID_CREATE_ROLE_PAGE_PERMISSION = 14;
+  private static final int METHODID_UPDATE_ROLE_PAGE_PERMISSION = 15;
+  private static final int METHODID_GET_ROLE_PAGE_PERMISSION = 16;
+  private static final int METHODID_ADD_ADDRESS = 17;
+  private static final int METHODID_DELETE_ADDRESS = 18;
+  private static final int METHODID_UPDATE_ADDRESS = 19;
+  private static final int METHODID_GET_ADDRESS = 20;
+  private static final int METHODID_LIST_ADDRESS = 21;
+  private static final int METHODID_LIST_USER_BY_ROLE = 22;
+  private static final int METHODID_LIST_PERMISSION = 23;
+  private static final int METHODID_LIST_ROLE = 24;
+  private static final int METHODID_GIVE_ROLE_PERMISSION = 25;
+  private static final int METHODID_REMOVE_ROLE_PERMISSION = 26;
+  private static final int METHODID_CREATE_ROLE = 27;
+  private static final int METHODID_DELETE_ROLE = 28;
+  private static final int METHODID_LIST_RESOURCE = 29;
+  private static final int METHODID_CREATE_SHOP = 30;
+  private static final int METHODID_GET_SHOP = 31;
+  private static final int METHODID_UPDATE_SHOP = 32;
+  private static final int METHODID_LIST_SHOP = 33;
+  private static final int METHODID_DELETE_SHOP = 34;
+  private static final int METHODID_LIST_OPERATION_METRICS = 35;
+  private static final int METHODID_GET_SHOP_QRCODE = 36;
+  private static final int METHODID_UPDATE_SHOP_MANAGER = 37;
+  private static final int METHODID_GET_SHOP_BUSINESS_DATA = 38;
+  private static final int METHODID_ADD_SHOP_ACCESS = 39;
+  private static final int METHODID_REMOVE_SHOP_ACCESS = 40;
+  private static final int METHODID_VERIFY_FIELD = 41;
+  private static final int METHODID_LIST_SHOP_ACCESS = 42;
+  private static final int METHODID_ADD_SHOP_CATEGORY = 43;
+  private static final int METHODID_GET_SHOP_CATEGORY = 44;
+  private static final int METHODID_REMOVE_SHOP_CATEGORY = 45;
+  private static final int METHODID_ADD_FREIGHT_TEMPLATE = 46;
+  private static final int METHODID_GET_FREIGHT_TEMPLATE = 47;
+  private static final int METHODID_UPDATE_FREIGHT_TEMPLATE = 48;
+  private static final int METHODID_DELETE_FREIGHT_TEMPLATE = 49;
+  private static final int METHODID_LIST_FREIGHT_TEMPLATE = 50;
+  private static final int METHODID_LIST_QUALIFICATION = 51;
+  private static final int METHODID_GET_MALL_INDEX = 52;
+  private static final int METHODID_CREATE_CATEGORY = 53;
+  private static final int METHODID_GET_CATEGORY = 54;
+  private static final int METHODID_UPDATE_CATEGORY = 55;
+  private static final int METHODID_LIST_CATEGORY = 56;
+  private static final int METHODID_DELETE_CATEGORY = 57;
+  private static final int METHODID_LIST_CATEGORY_QUALIFICATION = 58;
+  private static final int METHODID_CREATE_PRODUCT = 59;
+  private static final int METHODID_GET_PRODUCT = 60;
+  private static final int METHODID_UPDATE_PRODUCT = 61;
+  private static final int METHODID_LIST_PRODUCT = 62;
+  private static final int METHODID_DELETE_PRODUCT = 63;
+  private static final int METHODID_UPLOAD_MULTI_IMAGE = 64;
+  private static final int METHODID_DELETE_IMAGE_BY_ID = 65;
+  private static final int METHODID_BIND_ATTRIBUTE = 66;
+  private static final int METHODID_PUBLISH_PRODUCT = 67;
+  private static final int METHODID_OFF_SHELF_PRODUCT_IN_BATCHES = 68;
+  private static final int METHODID_DELETE_PRODUCT_IN_BATCHES = 69;
+  private static final int METHODID_CHANGE_PRODUCTS_STATE = 70;
+  private static final int METHODID_CREATE_SKU = 71;
+  private static final int METHODID_GET_SKU = 72;
+  private static final int METHODID_UPDATE_SKU = 73;
+  private static final int METHODID_LIST_SKU = 74;
+  private static final int METHODID_DELETE_SKU = 75;
+  private static final int METHODID_CREATE_ATTRIBUTE = 76;
+  private static final int METHODID_GET_ATTRIBUTE = 77;
+  private static final int METHODID_LIST_ATTRIBUTE = 78;
+  private static final int METHODID_DELETE_ATTRIBUTE = 79;
+  private static final int METHODID_ADD_ATTRIBUTE_VALUE = 80;
+  private static final int METHODID_DELETE_ATTRIBUTE_VALUE = 81;
+  private static final int METHODID_CREATE_ORDER = 82;
+  private static final int METHODID_GET_ORDER = 83;
+  private static final int METHODID_UPDATE_ORDER = 84;
+  private static final int METHODID_LIST_ORDER = 85;
+  private static final int METHODID_DELETE_ORDER = 86;
+  private static final int METHODID_SHIP_GOODS = 87;
+  private static final int METHODID_CONFIRM_RECEIPT_GOODS = 88;
+  private static final int METHODID_CANCEL_ORDER = 89;
+  private static final int METHODID_SHIP_GOODS_IN_BATCHES = 90;
+  private static final int METHODID_FREE_SHIPPING_IN_BATCHES = 91;
+  private static final int METHODID_CREATE_CART = 92;
+  private static final int METHODID_GET_CART = 93;
+  private static final int METHODID_UPDATE_CART = 94;
+  private static final int METHODID_DELETE_CART = 95;
+  private static final int METHODID_UPLOAD_ATTACHMENT = 96;
+  private static final int METHODID_LIST_ATTACHMENT = 97;
+  private static final int METHODID_DELETE_ATTACHMENT = 98;
+  private static final int METHODID_CREATE_SELLER = 99;
+  private static final int METHODID_CREATE_PAYMENT = 100;
+  private static final int METHODID_GET_PAYMENT = 101;
+  private static final int METHODID_UPDATE_PAYMENT = 102;
+  private static final int METHODID_DELETE_PAYMENT = 103;
+  private static final int METHODID_CREATE_CONFIG = 104;
+  private static final int METHODID_UPDATE_CONFIG = 105;
+  private static final int METHODID_DELETE_CONFIG = 106;
+  private static final int METHODID_GET_CONFIG = 107;
+  private static final int METHODID_WX_PREPAY = 108;
+  private static final int METHODID_CLOSE_ORDER = 109;
+  private static final int METHODID_QUERY_ORDER_BY_ID = 110;
+  private static final int METHODID_QUERY_ORDER_BY_OUT_TRADE = 111;
+  private static final int METHODID_ADD_VCURRENCY = 112;
+  private static final int METHODID_RECHARGE_CURRENCY = 113;
+  private static final int METHODID_RECHARGE_CURRENCY_IN_BATCHES = 114;
+  private static final int METHODID_DELETE_VCURRENCY = 115;
+  private static final int METHODID_UPDATE_VCURRENCY = 116;
+  private static final int METHODID_GET_VCURRENCY = 117;
+  private static final int METHODID_LIST_VCURRENCY = 118;
+  private static final int METHODID_ADD_ACCOUNT_OPERATION = 119;
+  private static final int METHODID_GET_ACCOUNT_OPERATION = 120;
+  private static final int METHODID_LIST_ACCOUNT_OPERATION = 121;
+  private static final int METHODID_CREATE_ROOM = 122;
+  private static final int METHODID_GET_ROOM = 123;
+  private static final int METHODID_UPDATE_ROOM = 124;
+  private static final int METHODID_LIST_ROOM = 125;
+  private static final int METHODID_DELETE_ROOM = 126;
+  private static final int METHODID_LIST_FINISHED_ROOM = 127;
+  private static final int METHODID_RECORD = 128;
+  private static final int METHODID_CREATE_LIVE_USER_TOKEN = 129;
+  private static final int METHODID_USER_ENTER_ROOM = 130;
+  private static final int METHODID_USER_EXIT_ROOM = 131;
+  private static final int METHODID_LIST_ACTIVE_ROOM_USER = 132;
+  private static final int METHODID_CREATE_LIVE_PLAN = 133;
+  private static final int METHODID_GET_LIVE_PLAN = 134;
+  private static final int METHODID_UPDATE_LIVE_PLAN = 135;
+  private static final int METHODID_LIST_LIVE_PLAN = 136;
+  private static final int METHODID_DELETE_LIVE_PLAN = 137;
+  private static final int METHODID_CREATE_LIVE_PLAN_PRODUCT = 138;
+  private static final int METHODID_UPDATE_LIVE_PLAN_PRODUCT = 139;
+  private static final int METHODID_LIST_LIVE_PLAN_PRODUCT = 140;
+  private static final int METHODID_DELETE_LIVE_PLAN_PRODUCT = 141;
+  private static final int METHODID_LOAD_LIVE_PLAN_PRODUCT = 142;
+  private static final int METHODID_UPDATE_LIVE_PRODUCT_STATUS = 143;
+  private static final int METHODID_LIST_LIVE_PRODUCT_STATUS = 144;
+  private static final int METHODID_DELETE_LIVE_PRODUCT_STATUS = 145;
+  private static final int METHODID_CREATE_LIVE_PRODUCT_STATUS = 146;
+  private static final int METHODID_GET_LIVING_PRODUCT_STATUS = 147;
+  private static final int METHODID_UPDATE_LIVE_PRODUCT_INTRODUCT_STATUS = 148;
+  private static final int METHODID_CREATE_LIVE_TEXT = 149;
+  private static final int METHODID_UPDATE_LIVE_TEXT = 150;
+  private static final int METHODID_LIST_LIVE_TEXT = 151;
+  private static final int METHODID_GET_LIVE_TEXT = 152;
+  private static final int METHODID_DELETE_LIVE_TEXTS = 153;
+  private static final int METHODID_GET_LIVE_CHART_DATA = 154;
+  private static final int METHODID_GET_EVALUATE_SELECTOR = 155;
+  private static final int METHODID_LIST_PERSONAL_EVALUATE = 156;
+  private static final int METHODID_GET_EVALUATE_DETAIL = 157;
+  private static final int METHODID_SUBMIT_EVALUATE = 158;
+  private static final int METHODID_LIST_UNEVALUATED_ROOM = 159;
+  private static final int METHODID_LIST_STUDENT_EVALUATIONS = 160;
+  private static final int METHODID_IGNORE_EVALUATION = 161;
+  private static final int METHODID_GET_RANK = 162;
+  private static final int METHODID_CREATE_TENANT = 163;
+  private static final int METHODID_GET_TENANT = 164;
+  private static final int METHODID_UPDATE_TENANT = 165;
+  private static final int METHODID_DELETE_TENANT = 166;
+  private static final int METHODID_LIST_TENANT = 167;
+  private static final int METHODID_GET_TENANT_ORG = 168;
+  private static final int METHODID_CREATE_COLLEGE = 169;
+  private static final int METHODID_GET_COLLEGE = 170;
+  private static final int METHODID_UPDATE_COLLEGE = 171;
+  private static final int METHODID_DELETE_COLLEGE = 172;
+  private static final int METHODID_LIST_COLLEGE = 173;
+  private static final int METHODID_CREATE_EDU_DEPT = 174;
+  private static final int METHODID_UPDATE_EDU_DEPT = 175;
+  private static final int METHODID_DELETE_EDU_DEPT = 176;
+  private static final int METHODID_CREATE_GOVER_DEPT = 177;
+  private static final int METHODID_UPDATE_GOVER_DEPT = 178;
+  private static final int METHODID_DELETE_GOVER_DEPT = 179;
+  private static final int METHODID_CREATE_EDU_OFFICE = 180;
+  private static final int METHODID_UPDATE_EDU_OFFICE = 181;
+  private static final int METHODID_DELETE_EDU_OFFICE = 182;
+  private static final int METHODID_CREATE_PRINCIPAL_OFFICE = 183;
+  private static final int METHODID_UPDATE_PRINCIPAL_OFFICE = 184;
+  private static final int METHODID_DELETE_PRINCIPAL_OFFICE = 185;
+  private static final int METHODID_CREATE_MAJOR = 186;
+  private static final int METHODID_GET_MAJOR = 187;
+  private static final int METHODID_UPDATE_MAJOR = 188;
+  private static final int METHODID_DELETE_MAJOR = 189;
+  private static final int METHODID_LIST_MAJOR = 190;
+  private static final int METHODID_CREATE_CLASS = 191;
+  private static final int METHODID_GET_CLASS = 192;
+  private static final int METHODID_UPDATE_CLASS = 193;
+  private static final int METHODID_DELETE_CLASS = 194;
+  private static final int METHODID_LIST_CLASS = 195;
+  private static final int METHODID_CREATE_STUDENTS = 196;
+  private static final int METHODID_DELETE_STUDENTS = 197;
+  private static final int METHODID_CREATE_SHORT_VIDEO = 198;
+  private static final int METHODID_STAGE_SHORT_VIDEO = 199;
+  private static final int METHODID_LIST_MY_SHORT_VIDEO = 200;
+  private static final int METHODID_LIST_MY_STAGE_VIDEO = 201;
+  private static final int METHODID_LIST_MY_LIKE_VIDEO = 202;
+  private static final int METHODID_LIST_MY_FAVORITE_VIDEO = 203;
+  private static final int METHODID_GET_SHORT_VIDEO = 204;
+  private static final int METHODID_UPDATE_SHORT_VIDEO = 205;
+  private static final int METHODID_DELETE_SHORT_VIDEO = 206;
+  private static final int METHODID_GET_STAGE_VIDEO = 207;
+  private static final int METHODID_DELETE_STAGE_VIDEO = 208;
+  private static final int METHODID_MANAGEMENT_LIST_SHORT_VIDEO = 209;
+  private static final int METHODID_MANAGEMENT_CENSOR_SHORT_VIDEO = 210;
+  private static final int METHODID_MANAGEMENT_DELETE_SHORT_VIDEO = 211;
+  private static final int METHODID_LIST_SHORT_VIDEO = 212;
+  private static final int METHODID_LIKE_SHORT_VIDEO = 213;
+  private static final int METHODID_FAVORITE_SHORT_VIDEO = 214;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -13655,6 +14209,18 @@ public final class glory_apiGrpc {
         case METHODID_UPDATE_PASSWORD:
           serviceImpl.updatePassword((com.zhijiejiaoyu.glory_api.user.UpdatePasswordRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.UpdatePasswordResponse>) responseObserver);
+          break;
+        case METHODID_FOLLOW_USER:
+          serviceImpl.followUser((com.zhijiejiaoyu.glory_api.user.FollowUserRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.FollowUserResponse>) responseObserver);
+          break;
+        case METHODID_LIST_MY_FOLLOWED_USER:
+          serviceImpl.listMyFollowedUser((com.zhijiejiaoyu.glory_api.user.ListMyFollowedUserRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.ListMyFollowedUserResponse>) responseObserver);
+          break;
+        case METHODID_LIST_MY_FOLLOWER_USER:
+          serviceImpl.listMyFollowerUser((com.zhijiejiaoyu.glory_api.user.ListMyFollowerUserRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.ListMyFollowerUserResponse>) responseObserver);
           break;
         case METHODID_GET_USER_PAGE_PERMISSION:
           serviceImpl.getUserPagePermission((com.zhijiejiaoyu.glory_api.user.GetUserPagePermissionRequest) request,
@@ -14424,6 +14990,10 @@ public final class glory_apiGrpc {
           serviceImpl.getShortVideo((com.zhijiejiaoyu.glory_api.short_video.GetShortVideoRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.GetShortVideoResponse>) responseObserver);
           break;
+        case METHODID_UPDATE_SHORT_VIDEO:
+          serviceImpl.updateShortVideo((com.zhijiejiaoyu.glory_api.short_video.UpdateShortVideoRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.UpdateShortVideoResponse>) responseObserver);
+          break;
         case METHODID_DELETE_SHORT_VIDEO:
           serviceImpl.deleteShortVideo((com.zhijiejiaoyu.glory_api.short_video.DeleteShortVideoRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.DeleteShortVideoResponse>) responseObserver);
@@ -14447,6 +15017,18 @@ public final class glory_apiGrpc {
         case METHODID_MANAGEMENT_DELETE_SHORT_VIDEO:
           serviceImpl.managementDeleteShortVideo((com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoResponse>) responseObserver);
+          break;
+        case METHODID_LIST_SHORT_VIDEO:
+          serviceImpl.listShortVideo((com.zhijiejiaoyu.glory_api.short_video.ListShortVideoRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListShortVideoResponse>) responseObserver);
+          break;
+        case METHODID_LIKE_SHORT_VIDEO:
+          serviceImpl.likeShortVideo((com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoResponse>) responseObserver);
+          break;
+        case METHODID_FAVORITE_SHORT_VIDEO:
+          serviceImpl.favoriteShortVideo((com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -14536,6 +15118,27 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.user.UpdatePasswordRequest,
               com.zhijiejiaoyu.glory_api.user.UpdatePasswordResponse>(
                 service, METHODID_UPDATE_PASSWORD)))
+        .addMethod(
+          getFollowUserMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.user.FollowUserRequest,
+              com.zhijiejiaoyu.glory_api.user.FollowUserResponse>(
+                service, METHODID_FOLLOW_USER)))
+        .addMethod(
+          getListMyFollowedUserMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.user.ListMyFollowedUserRequest,
+              com.zhijiejiaoyu.glory_api.user.ListMyFollowedUserResponse>(
+                service, METHODID_LIST_MY_FOLLOWED_USER)))
+        .addMethod(
+          getListMyFollowerUserMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.user.ListMyFollowerUserRequest,
+              com.zhijiejiaoyu.glory_api.user.ListMyFollowerUserResponse>(
+                service, METHODID_LIST_MY_FOLLOWER_USER)))
         .addMethod(
           getGetUserPagePermissionMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -15881,6 +16484,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.short_video.GetShortVideoResponse>(
                 service, METHODID_GET_SHORT_VIDEO)))
         .addMethod(
+          getUpdateShortVideoMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.UpdateShortVideoRequest,
+              com.zhijiejiaoyu.glory_api.short_video.UpdateShortVideoResponse>(
+                service, METHODID_UPDATE_SHORT_VIDEO)))
+        .addMethod(
           getDeleteShortVideoMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -15922,6 +16532,27 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoRequest,
               com.zhijiejiaoyu.glory_api.short_video.ManagementDeleteShortVideoResponse>(
                 service, METHODID_MANAGEMENT_DELETE_SHORT_VIDEO)))
+        .addMethod(
+          getListShortVideoMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.ListShortVideoRequest,
+              com.zhijiejiaoyu.glory_api.short_video.ListShortVideoResponse>(
+                service, METHODID_LIST_SHORT_VIDEO)))
+        .addMethod(
+          getLikeShortVideoMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoRequest,
+              com.zhijiejiaoyu.glory_api.short_video.LikeShortVideoResponse>(
+                service, METHODID_LIKE_SHORT_VIDEO)))
+        .addMethod(
+          getFavoriteShortVideoMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoRequest,
+              com.zhijiejiaoyu.glory_api.short_video.FavoriteShortVideoResponse>(
+                service, METHODID_FAVORITE_SHORT_VIDEO)))
         .build();
   }
 
@@ -15980,6 +16611,9 @@ public final class glory_apiGrpc {
               .addMethod(getGetUserMethod())
               .addMethod(getLoginWithPasswordMethod())
               .addMethod(getUpdatePasswordMethod())
+              .addMethod(getFollowUserMethod())
+              .addMethod(getListMyFollowedUserMethod())
+              .addMethod(getListMyFollowerUserMethod())
               .addMethod(getGetUserPagePermissionMethod())
               .addMethod(getCreateRolePagePermissionMethod())
               .addMethod(getUpdateRolePagePermissionMethod())
@@ -16172,12 +16806,16 @@ public final class glory_apiGrpc {
               .addMethod(getListMyLikeVideoMethod())
               .addMethod(getListMyFavoriteVideoMethod())
               .addMethod(getGetShortVideoMethod())
+              .addMethod(getUpdateShortVideoMethod())
               .addMethod(getDeleteShortVideoMethod())
               .addMethod(getGetStageVideoMethod())
               .addMethod(getDeleteStageVideoMethod())
               .addMethod(getManagementListShortVideoMethod())
               .addMethod(getManagementCensorShortVideoMethod())
               .addMethod(getManagementDeleteShortVideoMethod())
+              .addMethod(getListShortVideoMethod())
+              .addMethod(getLikeShortVideoMethod())
+              .addMethod(getFavoriteShortVideoMethod())
               .build();
         }
       }

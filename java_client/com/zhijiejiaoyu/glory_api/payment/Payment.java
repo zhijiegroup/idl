@@ -293,10 +293,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (paymentId_ != 0L) {
+    if (paymentId != 0L) {
       output.writeInt64(1, paymentId);
     }
-    if (orderId_ != 0L) {
+    if (orderId != 0L) {
       output.writeInt64(2, orderId);
     }
     if (!getPaymentMethodBytes().isEmpty()) {
@@ -305,10 +305,10 @@ private static final long serialVersionUID = 0L;
     if (!getPaymentStatusBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, paymentStatus);
     }
-    if (totalAmount_ != 0F) {
+    if (totalAmount != 0F) {
       output.writeFloat(5, totalAmount);
     }
-    if (supplierPaymentId_ != 0L) {
+    if (supplierPaymentId != 0L) {
       output.writeInt64(6, supplierPaymentId);
     }
     if (!getSupplierPaymentUrlBytes().isEmpty()) {
@@ -323,11 +323,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (paymentId_ != 0L) {
+    if (paymentId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, paymentId);
     }
-    if (orderId_ != 0L) {
+    if (orderId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, orderId);
     }
@@ -337,11 +337,11 @@ private static final long serialVersionUID = 0L;
     if (!getPaymentStatusBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, paymentStatus);
     }
-    if (totalAmount_ != 0F) {
+    if (totalAmount != 0F) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(5, totalAmount);
     }
-    if (supplierPaymentId_ != 0L) {
+    if (supplierPaymentId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(6, supplierPaymentId);
     }

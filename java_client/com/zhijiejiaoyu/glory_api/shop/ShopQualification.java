@@ -342,7 +342,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (shopQualificationId_ != 0L) {
+    if (shopQualificationId != 0L) {
       output.writeInt64(1, shopQualificationId);
     }
     if (!getShopQualificationUrlBytes().isEmpty()) {
@@ -354,7 +354,7 @@ private static final long serialVersionUID = 0L;
     if (!getQualificationNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, qualificationName);
     }
-    if (attachmentId_ != 0L) {
+    if (attachmentId != 0L) {
       output.writeInt64(5, attachmentId);
     }
     if (!getValidityPeriodBytes().isEmpty()) {
@@ -369,7 +369,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (shopQualificationId_ != 0L) {
+    if (shopQualificationId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, shopQualificationId);
     }
@@ -382,7 +382,7 @@ private static final long serialVersionUID = 0L;
     if (!getQualificationNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, qualificationName);
     }
-    if (attachmentId_ != 0L) {
+    if (attachmentId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(5, attachmentId);
     }

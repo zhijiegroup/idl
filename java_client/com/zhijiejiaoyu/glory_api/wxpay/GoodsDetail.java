@@ -302,10 +302,10 @@ private static final long serialVersionUID = 0L;
     if (!getGoodsNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, goodsName);
     }
-    if (quantity_ != 0L) {
+    if (quantity != 0L) {
       output.writeInt64(4, quantity);
     }
-    if (unitPrice_ != 0L) {
+    if (unitPrice != 0L) {
       output.writeInt64(5, unitPrice);
     }
     unknownFields.writeTo(output);
@@ -326,11 +326,11 @@ private static final long serialVersionUID = 0L;
     if (!getGoodsNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, goodsName);
     }
-    if (quantity_ != 0L) {
+    if (quantity != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, quantity);
     }
-    if (unitPrice_ != 0L) {
+    if (unitPrice != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(5, unitPrice);
     }

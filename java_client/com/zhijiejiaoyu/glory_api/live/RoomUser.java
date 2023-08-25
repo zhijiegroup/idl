@@ -232,13 +232,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (roomUserId_ != 0L) {
+    if (roomUserId != 0L) {
       output.writeInt64(1, roomUserId);
     }
-    if (userId_ != 0L) {
+    if (userId != 0L) {
       output.writeInt64(2, userId);
     }
-    if (roomId_ != 0L) {
+    if (roomId != 0L) {
       output.writeInt64(3, roomId);
     }
     if (!getEnterTimeBytes().isEmpty()) {
@@ -256,15 +256,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (roomUserId_ != 0L) {
+    if (roomUserId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, roomUserId);
     }
-    if (userId_ != 0L) {
+    if (userId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, userId);
     }
-    if (roomId_ != 0L) {
+    if (roomId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, roomId);
     }

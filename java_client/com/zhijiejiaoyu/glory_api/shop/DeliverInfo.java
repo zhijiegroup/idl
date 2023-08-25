@@ -439,7 +439,7 @@ private static final long serialVersionUID = 0L;
     if (!getDeliverAddressBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, deliverAddress);
     }
-    if (deliverPost_ != 0) {
+    if (deliverPost != 0) {
       output.writeInt32(2, deliverPost);
     }
     if (!getContactNameBytes().isEmpty()) {
@@ -469,7 +469,7 @@ private static final long serialVersionUID = 0L;
     if (!getDeliverAddressBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, deliverAddress);
     }
-    if (deliverPost_ != 0) {
+    if (deliverPost != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(2, deliverPost);
     }

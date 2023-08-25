@@ -89,6 +89,10 @@ struct GloryApi_ProductShow {
 
   var skuInfo: String = String()
 
+  var currency: String = String()
+
+  var freightAmount: Float = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -108,6 +112,8 @@ struct GloryApi_ShopShow {
   var shopID: Int64 = 0
 
   var shopName: String = String()
+
+  var shopLogo: String = String()
 
   var product: [GloryApi_ProductShow] = []
 
@@ -537,6 +543,8 @@ extension GloryApi_ProductShow: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     5: .standard(proto: "unit_price"),
     6: .standard(proto: "product_url"),
     7: .standard(proto: "sku_info"),
+    8: .same(proto: "currency"),
+    9: .standard(proto: "freight_amount"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -552,6 +560,8 @@ extension GloryApi_ProductShow: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       case 5: try { try decoder.decodeSingularDoubleField(value: &self.unitPrice) }()
       case 6: try { try decoder.decodeSingularStringField(value: &self.productURL) }()
       case 7: try { try decoder.decodeSingularStringField(value: &self.skuInfo) }()
+      case 8: try { try decoder.decodeSingularStringField(value: &self.currency) }()
+      case 9: try { try decoder.decodeSingularFloatField(value: &self.freightAmount) }()
       default: break
       }
     }
@@ -579,6 +589,12 @@ extension GloryApi_ProductShow: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     if !self.skuInfo.isEmpty {
       try visitor.visitSingularStringField(value: self.skuInfo, fieldNumber: 7)
     }
+    if !self.currency.isEmpty {
+      try visitor.visitSingularStringField(value: self.currency, fieldNumber: 8)
+    }
+    if self.freightAmount != 0 {
+      try visitor.visitSingularFloatField(value: self.freightAmount, fieldNumber: 9)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -590,6 +606,8 @@ extension GloryApi_ProductShow: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     if lhs.unitPrice != rhs.unitPrice {return false}
     if lhs.productURL != rhs.productURL {return false}
     if lhs.skuInfo != rhs.skuInfo {return false}
+    if lhs.currency != rhs.currency {return false}
+    if lhs.freightAmount != rhs.freightAmount {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -603,6 +621,7 @@ extension GloryApi_ShopShow: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     3: .same(proto: "quantity"),
     4: .standard(proto: "shop_id"),
     5: .standard(proto: "shop_name"),
+    7: .standard(proto: "shop_logo"),
     6: .same(proto: "product"),
   ]
 
@@ -618,6 +637,7 @@ extension GloryApi_ShopShow: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
       case 4: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
       case 5: try { try decoder.decodeSingularStringField(value: &self.shopName) }()
       case 6: try { try decoder.decodeRepeatedMessageField(value: &self.product) }()
+      case 7: try { try decoder.decodeSingularStringField(value: &self.shopLogo) }()
       default: break
       }
     }
@@ -642,6 +662,9 @@ extension GloryApi_ShopShow: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     if !self.product.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.product, fieldNumber: 6)
     }
+    if !self.shopLogo.isEmpty {
+      try visitor.visitSingularStringField(value: self.shopLogo, fieldNumber: 7)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -651,6 +674,7 @@ extension GloryApi_ShopShow: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     if lhs.quantity != rhs.quantity {return false}
     if lhs.shopID != rhs.shopID {return false}
     if lhs.shopName != rhs.shopName {return false}
+    if lhs.shopLogo != rhs.shopLogo {return false}
     if lhs.product != rhs.product {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

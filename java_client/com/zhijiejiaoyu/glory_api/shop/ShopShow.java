@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private ShopShow() {
     shopName = "";
+    shopLogo = "";
     product = java.util.Collections.emptyList();
   }
 
@@ -82,8 +83,14 @@ private static final long serialVersionUID = 0L;
               product = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.shop.ProductShow>();
               mutable_bitField0_ |= 0x00000001;
             }
-            product_.add(
+            product.add(
                 input.readMessage(com.zhijiejiaoyu.glory_api.shop.ProductShow.parser(), extensionRegistry));
+            break;
+          }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            shopLogo = s;
             break;
           }
           default: {
@@ -203,6 +210,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int SHOP_LOGO_FIELD_NUMBER = 7;
+  private volatile java.lang.Object shopLogo;
+  /**
+   * <code>string shop_logo = 7;</code>
+   * @return The shopLogo.
+   */
+  @java.lang.Override
+  public java.lang.String getShopLogo() {
+    java.lang.Object ref = shopLogo;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      shopLogo = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string shop_logo = 7;</code>
+   * @return The bytes for shopLogo.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getShopLogoBytes() {
+    java.lang.Object ref = shopLogo;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      shopLogo = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int PRODUCT_FIELD_NUMBER = 6;
   private java.util.List<com.zhijiejiaoyu.glory_api.shop.ProductShow> product;
   /**
@@ -225,14 +270,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public int getProductCount() {
-    return product_.size();
+    return product.size();
   }
   /**
    * <code>repeated .glory_api.ProductShow product = 6;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.shop.ProductShow getProduct(int index) {
-    return product_.get(index);
+    return product.get(index);
   }
   /**
    * <code>repeated .glory_api.ProductShow product = 6;</code>
@@ -240,7 +285,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.shop.ProductShowOrBuilder getProductOrBuilder(
       int index) {
-    return product_.get(index);
+    return product.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -257,23 +302,26 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (cartSkuId_ != 0L) {
+    if (cartSkuId != 0L) {
       output.writeInt64(1, cartSkuId);
     }
-    if (skuId_ != 0L) {
+    if (skuId != 0L) {
       output.writeInt64(2, skuId);
     }
-    if (quantity_ != 0) {
+    if (quantity != 0) {
       output.writeInt32(3, quantity);
     }
-    if (shopId_ != 0L) {
+    if (shopId != 0L) {
       output.writeInt64(4, shopId);
     }
     if (!getShopNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, shopName);
     }
-    for (int i = 0; i < product_.size(); i++) {
-      output.writeMessage(6, product_.get(i));
+    for (int i = 0; i < product.size(); i++) {
+      output.writeMessage(6, product.get(i));
+    }
+    if (!getShopLogoBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, shopLogo);
     }
     unknownFields.writeTo(output);
   }
@@ -284,28 +332,31 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (cartSkuId_ != 0L) {
+    if (cartSkuId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, cartSkuId);
     }
-    if (skuId_ != 0L) {
+    if (skuId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, skuId);
     }
-    if (quantity_ != 0) {
+    if (quantity != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(3, quantity);
     }
-    if (shopId_ != 0L) {
+    if (shopId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, shopId);
     }
     if (!getShopNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, shopName);
     }
-    for (int i = 0; i < product_.size(); i++) {
+    for (int i = 0; i < product.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, product_.get(i));
+        .computeMessageSize(6, product.get(i));
+    }
+    if (!getShopLogoBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, shopLogo);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -332,6 +383,8 @@ private static final long serialVersionUID = 0L;
         != other.getShopId()) return false;
     if (!getShopName()
         .equals(other.getShopName())) return false;
+    if (!getShopLogo()
+        .equals(other.getShopLogo())) return false;
     if (!getProductList()
         .equals(other.getProductList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -358,6 +411,8 @@ private static final long serialVersionUID = 0L;
         getShopId());
     hash = (37 * hash) + SHOP_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getShopName().hashCode();
+    hash = (37 * hash) + SHOP_LOGO_FIELD_NUMBER;
+    hash = (53 * hash) + getShopLogo().hashCode();
     if (getProductCount() > 0) {
       hash = (37 * hash) + PRODUCT_FIELD_NUMBER;
       hash = (53 * hash) + getProductList().hashCode();
@@ -506,11 +561,13 @@ private static final long serialVersionUID = 0L;
 
       shopName = "";
 
+      shopLogo = "";
+
       if (productBuilder == null) {
         product = java.util.Collections.emptyList();
         bitField0 = (bitField0_ & ~0x00000001);
       } else {
-        productBuilder_.clear();
+        productBuilder.clear();
       }
       return this;
     }
@@ -544,6 +601,7 @@ private static final long serialVersionUID = 0L;
       result.quantity = quantity;
       result.shopId = shopId;
       result.shopName = shopName;
+      result.shopLogo = shopLogo;
       if (productBuilder == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           product = java.util.Collections.unmodifiableList(product);
@@ -551,7 +609,7 @@ private static final long serialVersionUID = 0L;
         }
         result.product = product;
       } else {
-        result.product = productBuilder_.build();
+        result.product = productBuilder.build();
       }
       onBuilt();
       return result;
@@ -617,21 +675,25 @@ private static final long serialVersionUID = 0L;
         shopName = other.shopName;
         onChanged();
       }
+      if (!other.getShopLogo().isEmpty()) {
+        shopLogo = other.shopLogo;
+        onChanged();
+      }
       if (productBuilder == null) {
-        if (!other.product_.isEmpty()) {
-          if (product_.isEmpty()) {
+        if (!other.product.isEmpty()) {
+          if (product.isEmpty()) {
             product = other.product;
             bitField0 = (bitField0_ & ~0x00000001);
           } else {
             ensureProductIsMutable();
-            product_.addAll(other.product);
+            product.addAll(other.product);
           }
           onChanged();
         }
       } else {
-        if (!other.product_.isEmpty()) {
-          if (productBuilder_.isEmpty()) {
-            productBuilder_.dispose();
+        if (!other.product.isEmpty()) {
+          if (productBuilder.isEmpty()) {
+            productBuilder.dispose();
             productBuilder = null;
             product = other.product;
             bitField0 = (bitField0_ & ~0x00000001);
@@ -639,7 +701,7 @@ private static final long serialVersionUID = 0L;
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getProductFieldBuilder() : null;
           } else {
-            productBuilder_.addAllMessages(other.product);
+            productBuilder.addAllMessages(other.product);
           }
         }
       }
@@ -873,6 +935,82 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object shopLogo = "";
+    /**
+     * <code>string shop_logo = 7;</code>
+     * @return The shopLogo.
+     */
+    public java.lang.String getShopLogo() {
+      java.lang.Object ref = shopLogo;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        shopLogo = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string shop_logo = 7;</code>
+     * @return The bytes for shopLogo.
+     */
+    public com.google.protobuf.ByteString
+        getShopLogoBytes() {
+      java.lang.Object ref = shopLogo;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        shopLogo = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string shop_logo = 7;</code>
+     * @param value The shopLogo to set.
+     * @return This builder for chaining.
+     */
+    public Builder setShopLogo(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      shopLogo = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string shop_logo = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearShopLogo() {
+      
+      shopLogo = getDefaultInstance().getShopLogo();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string shop_logo = 7;</code>
+     * @param value The bytes for shopLogo to set.
+     * @return This builder for chaining.
+     */
+    public Builder setShopLogoBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      shopLogo = value;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.zhijiejiaoyu.glory_api.shop.ProductShow> product =
       java.util.Collections.emptyList();
     private void ensureProductIsMutable() {
@@ -892,7 +1030,7 @@ private static final long serialVersionUID = 0L;
       if (productBuilder == null) {
         return java.util.Collections.unmodifiableList(product);
       } else {
-        return productBuilder_.getMessageList();
+        return productBuilder.getMessageList();
       }
     }
     /**
@@ -900,9 +1038,9 @@ private static final long serialVersionUID = 0L;
      */
     public int getProductCount() {
       if (productBuilder == null) {
-        return product_.size();
+        return product.size();
       } else {
-        return productBuilder_.getCount();
+        return productBuilder.getCount();
       }
     }
     /**
@@ -910,9 +1048,9 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.shop.ProductShow getProduct(int index) {
       if (productBuilder == null) {
-        return product_.get(index);
+        return product.get(index);
       } else {
-        return productBuilder_.getMessage(index);
+        return productBuilder.getMessage(index);
       }
     }
     /**
@@ -925,10 +1063,10 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         ensureProductIsMutable();
-        product_.set(index, value);
+        product.set(index, value);
         onChanged();
       } else {
-        productBuilder_.setMessage(index, value);
+        productBuilder.setMessage(index, value);
       }
       return this;
     }
@@ -939,10 +1077,10 @@ private static final long serialVersionUID = 0L;
         int index, com.zhijiejiaoyu.glory_api.shop.ProductShow.Builder builderForValue) {
       if (productBuilder == null) {
         ensureProductIsMutable();
-        product_.set(index, builderForValue.build());
+        product.set(index, builderForValue.build());
         onChanged();
       } else {
-        productBuilder_.setMessage(index, builderForValue.build());
+        productBuilder.setMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -955,10 +1093,10 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         ensureProductIsMutable();
-        product_.add(value);
+        product.add(value);
         onChanged();
       } else {
-        productBuilder_.addMessage(value);
+        productBuilder.addMessage(value);
       }
       return this;
     }
@@ -972,10 +1110,10 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         ensureProductIsMutable();
-        product_.add(index, value);
+        product.add(index, value);
         onChanged();
       } else {
-        productBuilder_.addMessage(index, value);
+        productBuilder.addMessage(index, value);
       }
       return this;
     }
@@ -986,10 +1124,10 @@ private static final long serialVersionUID = 0L;
         com.zhijiejiaoyu.glory_api.shop.ProductShow.Builder builderForValue) {
       if (productBuilder == null) {
         ensureProductIsMutable();
-        product_.add(builderForValue.build());
+        product.add(builderForValue.build());
         onChanged();
       } else {
-        productBuilder_.addMessage(builderForValue.build());
+        productBuilder.addMessage(builderForValue.build());
       }
       return this;
     }
@@ -1000,10 +1138,10 @@ private static final long serialVersionUID = 0L;
         int index, com.zhijiejiaoyu.glory_api.shop.ProductShow.Builder builderForValue) {
       if (productBuilder == null) {
         ensureProductIsMutable();
-        product_.add(index, builderForValue.build());
+        product.add(index, builderForValue.build());
         onChanged();
       } else {
-        productBuilder_.addMessage(index, builderForValue.build());
+        productBuilder.addMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -1018,7 +1156,7 @@ private static final long serialVersionUID = 0L;
             values, product);
         onChanged();
       } else {
-        productBuilder_.addAllMessages(values);
+        productBuilder.addAllMessages(values);
       }
       return this;
     }
@@ -1031,7 +1169,7 @@ private static final long serialVersionUID = 0L;
         bitField0 = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
-        productBuilder_.clear();
+        productBuilder.clear();
       }
       return this;
     }
@@ -1041,10 +1179,10 @@ private static final long serialVersionUID = 0L;
     public Builder removeProduct(int index) {
       if (productBuilder == null) {
         ensureProductIsMutable();
-        product_.remove(index);
+        product.remove(index);
         onChanged();
       } else {
-        productBuilder_.remove(index);
+        productBuilder.remove(index);
       }
       return this;
     }
@@ -1061,8 +1199,8 @@ private static final long serialVersionUID = 0L;
     public com.zhijiejiaoyu.glory_api.shop.ProductShowOrBuilder getProductOrBuilder(
         int index) {
       if (productBuilder == null) {
-        return product_.get(index);  } else {
-        return productBuilder_.getMessageOrBuilder(index);
+        return product.get(index);  } else {
+        return productBuilder.getMessageOrBuilder(index);
       }
     }
     /**
@@ -1070,8 +1208,8 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.ProductShowOrBuilder> 
          getProductOrBuilderList() {
-      if (productBuilder_ != null) {
-        return productBuilder_.getMessageOrBuilderList();
+      if (productBuilder != null) {
+        return productBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(product);
       }

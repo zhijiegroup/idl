@@ -460,10 +460,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (userId_ != 0L) {
+    if (userId != 0L) {
       output.writeInt64(1, userId);
     }
-    if (balance_ != 0L) {
+    if (balance != 0L) {
       output.writeInt64(2, balance);
     }
     if (!getUnitBytes().isEmpty()) {
@@ -478,7 +478,7 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, name);
     }
-    if (rechargeAmount_ != 0L) {
+    if (rechargeAmount != 0L) {
       output.writeInt64(7, rechargeAmount);
     }
     if (!getStatusBytes().isEmpty()) {
@@ -496,11 +496,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (userId_ != 0L) {
+    if (userId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, userId);
     }
-    if (balance_ != 0L) {
+    if (balance != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, balance);
     }
@@ -516,7 +516,7 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, name);
     }
-    if (rechargeAmount_ != 0L) {
+    if (rechargeAmount != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(7, rechargeAmount);
     }

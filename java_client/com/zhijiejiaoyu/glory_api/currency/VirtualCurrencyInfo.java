@@ -50,8 +50,8 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             com.zhijiejiaoyu.glory_api.currency.VirtualCurrency.Builder subBuilder = null;
-            if (virtualCurrency_ != null) {
-              subBuilder = virtualCurrency_.toBuilder();
+            if (virtualCurrency != null) {
+              subBuilder = virtualCurrency.toBuilder();
             }
             virtualCurrency = input.readMessage(com.zhijiejiaoyu.glory_api.currency.VirtualCurrency.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -63,8 +63,8 @@ private static final long serialVersionUID = 0L;
           }
           case 18: {
             com.zhijiejiaoyu.glory_api.currency.UserInfo.Builder subBuilder = null;
-            if (userInfo_ != null) {
-              subBuilder = userInfo_.toBuilder();
+            if (userInfo != null) {
+              subBuilder = userInfo.toBuilder();
             }
             userInfo = input.readMessage(com.zhijiejiaoyu.glory_api.currency.UserInfo.parser(), extensionRegistry);
             if (subBuilder != null) {
@@ -114,7 +114,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasVirtualCurrency() {
-    return virtualCurrency_ != null;
+    return virtualCurrency != null;
   }
   /**
    * <code>.glory_api.VirtualCurrency virtual_currency = 1;</code>
@@ -140,7 +140,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasUserInfo() {
-    return userInfo_ != null;
+    return userInfo != null;
   }
   /**
    * <code>.glory_api.UserInfo userInfo = 2;</code>
@@ -172,10 +172,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (virtualCurrency_ != null) {
+    if (virtualCurrency != null) {
       output.writeMessage(1, getVirtualCurrency());
     }
-    if (userInfo_ != null) {
+    if (userInfo != null) {
       output.writeMessage(2, getUserInfo());
     }
     unknownFields.writeTo(output);
@@ -187,11 +187,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (virtualCurrency_ != null) {
+    if (virtualCurrency != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getVirtualCurrency());
     }
-    if (userInfo_ != null) {
+    if (userInfo != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getUserInfo());
     }
@@ -413,12 +413,12 @@ private static final long serialVersionUID = 0L;
       if (virtualCurrencyBuilder == null) {
         result.virtualCurrency = virtualCurrency;
       } else {
-        result.virtualCurrency = virtualCurrencyBuilder_.build();
+        result.virtualCurrency = virtualCurrencyBuilder.build();
       }
       if (userInfoBuilder == null) {
         result.userInfo = userInfo;
       } else {
-        result.userInfo = userInfoBuilder_.build();
+        result.userInfo = userInfoBuilder.build();
       }
       onBuilt();
       return result;
@@ -511,7 +511,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the virtualCurrency field is set.
      */
     public boolean hasVirtualCurrency() {
-      return virtualCurrencyBuilder_ != null || virtualCurrency_ != null;
+      return virtualCurrencyBuilder != null || virtualCurrency != null;
     }
     /**
      * <code>.glory_api.VirtualCurrency virtual_currency = 1;</code>
@@ -521,7 +521,7 @@ private static final long serialVersionUID = 0L;
       if (virtualCurrencyBuilder == null) {
         return virtualCurrency == null ? com.zhijiejiaoyu.glory_api.currency.VirtualCurrency.getDefaultInstance() : virtualCurrency;
       } else {
-        return virtualCurrencyBuilder_.getMessage();
+        return virtualCurrencyBuilder.getMessage();
       }
     }
     /**
@@ -535,7 +535,7 @@ private static final long serialVersionUID = 0L;
         virtualCurrency = value;
         onChanged();
       } else {
-        virtualCurrencyBuilder_.setMessage(value);
+        virtualCurrencyBuilder.setMessage(value);
       }
 
       return this;
@@ -549,7 +549,7 @@ private static final long serialVersionUID = 0L;
         virtualCurrency = builderForValue.build();
         onChanged();
       } else {
-        virtualCurrencyBuilder_.setMessage(builderForValue.build());
+        virtualCurrencyBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -559,7 +559,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeVirtualCurrency(com.zhijiejiaoyu.glory_api.currency.VirtualCurrency value) {
       if (virtualCurrencyBuilder == null) {
-        if (virtualCurrency_ != null) {
+        if (virtualCurrency != null) {
           virtualCurrency =
             com.zhijiejiaoyu.glory_api.currency.VirtualCurrency.newBuilder(virtualCurrency).mergeFrom(value).buildPartial();
         } else {
@@ -567,7 +567,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        virtualCurrencyBuilder_.mergeFrom(value);
+        virtualCurrencyBuilder.mergeFrom(value);
       }
 
       return this;
@@ -598,8 +598,8 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.VirtualCurrency virtual_currency = 1;</code>
      */
     public com.zhijiejiaoyu.glory_api.currency.VirtualCurrencyOrBuilder getVirtualCurrencyOrBuilder() {
-      if (virtualCurrencyBuilder_ != null) {
-        return virtualCurrencyBuilder_.getMessageOrBuilder();
+      if (virtualCurrencyBuilder != null) {
+        return virtualCurrencyBuilder.getMessageOrBuilder();
       } else {
         return virtualCurrency == null ?
             com.zhijiejiaoyu.glory_api.currency.VirtualCurrency.getDefaultInstance() : virtualCurrency;
@@ -630,7 +630,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the userInfo field is set.
      */
     public boolean hasUserInfo() {
-      return userInfoBuilder_ != null || userInfo_ != null;
+      return userInfoBuilder != null || userInfo != null;
     }
     /**
      * <code>.glory_api.UserInfo userInfo = 2;</code>
@@ -640,7 +640,7 @@ private static final long serialVersionUID = 0L;
       if (userInfoBuilder == null) {
         return userInfo == null ? com.zhijiejiaoyu.glory_api.currency.UserInfo.getDefaultInstance() : userInfo;
       } else {
-        return userInfoBuilder_.getMessage();
+        return userInfoBuilder.getMessage();
       }
     }
     /**
@@ -654,7 +654,7 @@ private static final long serialVersionUID = 0L;
         userInfo = value;
         onChanged();
       } else {
-        userInfoBuilder_.setMessage(value);
+        userInfoBuilder.setMessage(value);
       }
 
       return this;
@@ -668,7 +668,7 @@ private static final long serialVersionUID = 0L;
         userInfo = builderForValue.build();
         onChanged();
       } else {
-        userInfoBuilder_.setMessage(builderForValue.build());
+        userInfoBuilder.setMessage(builderForValue.build());
       }
 
       return this;
@@ -678,7 +678,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeUserInfo(com.zhijiejiaoyu.glory_api.currency.UserInfo value) {
       if (userInfoBuilder == null) {
-        if (userInfo_ != null) {
+        if (userInfo != null) {
           userInfo =
             com.zhijiejiaoyu.glory_api.currency.UserInfo.newBuilder(userInfo).mergeFrom(value).buildPartial();
         } else {
@@ -686,7 +686,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        userInfoBuilder_.mergeFrom(value);
+        userInfoBuilder.mergeFrom(value);
       }
 
       return this;
@@ -717,8 +717,8 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.UserInfo userInfo = 2;</code>
      */
     public com.zhijiejiaoyu.glory_api.currency.UserInfoOrBuilder getUserInfoOrBuilder() {
-      if (userInfoBuilder_ != null) {
-        return userInfoBuilder_.getMessageOrBuilder();
+      if (userInfoBuilder != null) {
+        return userInfoBuilder.getMessageOrBuilder();
       } else {
         return userInfo == null ?
             com.zhijiejiaoyu.glory_api.currency.UserInfo.getDefaultInstance() : userInfo;

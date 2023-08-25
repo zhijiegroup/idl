@@ -322,10 +322,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (addressId_ != 0L) {
+    if (addressId != 0L) {
       output.writeInt64(1, addressId);
     }
-    if (userId_ != 0L) {
+    if (userId != 0L) {
       output.writeInt64(2, userId);
     }
     if (!getNameBytes().isEmpty()) {
@@ -340,7 +340,7 @@ private static final long serialVersionUID = 0L;
     if (!getAddressDetailBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, addressDetail);
     }
-    if (isDefault_ != false) {
+    if (isDefault != false) {
       output.writeBool(7, isDefault);
     }
     unknownFields.writeTo(output);
@@ -352,11 +352,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (addressId_ != 0L) {
+    if (addressId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, addressId);
     }
-    if (userId_ != 0L) {
+    if (userId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, userId);
     }
@@ -372,7 +372,7 @@ private static final long serialVersionUID = 0L;
     if (!getAddressDetailBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, addressDetail);
     }
-    if (isDefault_ != false) {
+    if (isDefault != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(7, isDefault);
     }

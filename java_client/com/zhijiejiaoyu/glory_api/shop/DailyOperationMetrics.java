@@ -187,13 +187,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (dailyOrderAmount_ != 0D) {
+    if (dailyOrderAmount != 0D) {
       output.writeDouble(1, dailyOrderAmount);
     }
-    if (dailyOrderCount_ != 0) {
+    if (dailyOrderCount != 0) {
       output.writeUInt32(2, dailyOrderCount);
     }
-    if (dailyDistinctUserCount_ != 0) {
+    if (dailyDistinctUserCount != 0) {
       output.writeUInt32(3, dailyDistinctUserCount);
     }
     if (!getMetricsDateBytes().isEmpty()) {
@@ -208,15 +208,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (dailyOrderAmount_ != 0D) {
+    if (dailyOrderAmount != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(1, dailyOrderAmount);
     }
-    if (dailyOrderCount_ != 0) {
+    if (dailyOrderCount != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(2, dailyOrderCount);
     }
-    if (dailyDistinctUserCount_ != 0) {
+    if (dailyDistinctUserCount != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(3, dailyDistinctUserCount);
     }

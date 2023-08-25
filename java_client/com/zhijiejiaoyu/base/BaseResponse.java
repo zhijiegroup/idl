@@ -159,7 +159,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (statusCode_ != 0) {
+    if (statusCode != 0) {
       output.writeSInt32(1, statusCode);
     }
     if (!getStatusMessageBytes().isEmpty()) {
@@ -174,7 +174,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (statusCode_ != 0) {
+    if (statusCode != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeSInt32Size(1, statusCode);
     }
