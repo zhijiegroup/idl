@@ -482,6 +482,8 @@ list the permissions that supported */
     request: config.GetConfigRequest
   ): Promise<config.GetConfigResponse>;
 
+  GetSTS(request: config.GetSTSRequest): Promise<config.GetSTSResponse>;
+
   /** wxpay */
   WxPrepay(request: wxpay.PrepayRequest): Promise<wxpay.PrepayResponse>;
 

@@ -916,6 +916,12 @@ export class glory_api {
     );
   }
 
+  GetSTS(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/admin/get_sts${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
   WxPrepay(request) {
     const uri = `${this.uriPrefix}/api/wxpay/prepay`;
     const body = JSONbigint.stringify(request);

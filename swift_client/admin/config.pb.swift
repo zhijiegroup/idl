@@ -294,6 +294,76 @@ struct GloryApi_GetConfigResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
+struct GloryApi_STS {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var accessKeyID: String = String()
+
+  var accessKeySecret: String = String()
+
+  var expiration: String = String()
+
+  var securityToken: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct GloryApi_GetSTSRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+struct GloryApi_GetSTSResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var sts: GloryApi_STS {
+    get {return _sts ?? GloryApi_STS()}
+    set {_sts = newValue}
+  }
+  /// Returns true if `sts` has been explicitly set.
+  var hasSts: Bool {return self._sts != nil}
+  /// Clears the value of `sts`. Subsequent reads from it will return its default value.
+  mutating func clearSts() {self._sts = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _sts: GloryApi_STS? = nil
+}
+
 #if swift(>=5.5) && canImport(_Concurrency)
 extension GloryApi_Config: @unchecked Sendable {}
 extension GloryApi_AddConfig: @unchecked Sendable {}
@@ -306,6 +376,9 @@ extension GloryApi_DeleteConfigRequest: @unchecked Sendable {}
 extension GloryApi_DeleteConfigResponse: @unchecked Sendable {}
 extension GloryApi_GetConfigRequest: @unchecked Sendable {}
 extension GloryApi_GetConfigResponse: @unchecked Sendable {}
+extension GloryApi_STS: @unchecked Sendable {}
+extension GloryApi_GetSTSRequest: @unchecked Sendable {}
+extension GloryApi_GetSTSResponse: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -829,6 +902,134 @@ extension GloryApi_GetConfigResponse: SwiftProtobuf.Message, SwiftProtobuf._Mess
   static func ==(lhs: GloryApi_GetConfigResponse, rhs: GloryApi_GetConfigResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.configs != rhs.configs {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_STS: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".STS"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "AccessKeyId"),
+    2: .same(proto: "AccessKeySecret"),
+    3: .same(proto: "Expiration"),
+    4: .same(proto: "SecurityToken"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.accessKeyID) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.accessKeySecret) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.expiration) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.securityToken) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.accessKeyID.isEmpty {
+      try visitor.visitSingularStringField(value: self.accessKeyID, fieldNumber: 1)
+    }
+    if !self.accessKeySecret.isEmpty {
+      try visitor.visitSingularStringField(value: self.accessKeySecret, fieldNumber: 2)
+    }
+    if !self.expiration.isEmpty {
+      try visitor.visitSingularStringField(value: self.expiration, fieldNumber: 3)
+    }
+    if !self.securityToken.isEmpty {
+      try visitor.visitSingularStringField(value: self.securityToken, fieldNumber: 4)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_STS, rhs: GloryApi_STS) -> Bool {
+    if lhs.accessKeyID != rhs.accessKeyID {return false}
+    if lhs.accessKeySecret != rhs.accessKeySecret {return false}
+    if lhs.expiration != rhs.expiration {return false}
+    if lhs.securityToken != rhs.securityToken {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetSTSRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetSTSRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetSTSRequest, rhs: GloryApi_GetSTSRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetSTSResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetSTSResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .same(proto: "sts"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._sts) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try { if let v = self._sts {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetSTSResponse, rhs: GloryApi_GetSTSResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs._sts != rhs._sts {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
