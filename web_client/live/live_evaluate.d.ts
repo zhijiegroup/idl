@@ -162,6 +162,15 @@ export interface IgnoreLiveEvaluationResponse {
   base_resp?: base.BaseResponse;
 }
 
+export interface RegenerationAiFeedbackRequest {
+  base_request?: base.BaseRequest;
+  room_id?: string;
+}
+
+export interface RegenerationAiFeedbackResponse {
+  base_resp?: base.BaseResponse;
+}
+
 export interface LiveRankDetail {
   user_name?: string;
   tenant?: string;

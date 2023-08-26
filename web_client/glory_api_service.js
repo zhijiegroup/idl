@@ -1350,6 +1350,12 @@ export class glory_api {
     );
   }
 
+  RegenerationAiFeedback(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/live/regeneration_ai_feedback${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
   CreateTenant(request) {
     const uri = `${this.uriPrefix}/api/tenant/create_tenant`;
     const body = JSONbigint.stringify(request);

@@ -719,6 +719,10 @@ CreateLivePlanProduct create live plan product */
     request: live_room.VideoToTextCallbackRequest
   ): Promise<live_room.VideoToTextCallbackResponse>;
 
+  RegenerationAiFeedback(
+    request: live_evaluate.RegenerationAiFeedbackRequest
+  ): Promise<live_evaluate.RegenerationAiFeedbackResponse>;
+
   /** tenant */
   CreateTenant(
     request: tenant.CreateTenantRequest
