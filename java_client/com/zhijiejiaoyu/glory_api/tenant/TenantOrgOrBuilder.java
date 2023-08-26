@@ -50,25 +50,31 @@ public interface TenantOrgOrBuilder extends
   long getTenant();
 
   /**
-   * <code>repeated .glory_api.TenantOrg children = 6;</code>
+   * <code>int64 count = 6;</code>
+   * @return The count.
+   */
+  long getCount();
+
+  /**
+   * <code>repeated .glory_api.TenantOrg children = 7;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.tenant.TenantOrg> 
       getChildrenList();
   /**
-   * <code>repeated .glory_api.TenantOrg children = 6;</code>
+   * <code>repeated .glory_api.TenantOrg children = 7;</code>
    */
   com.zhijiejiaoyu.glory_api.tenant.TenantOrg getChildren(int index);
   /**
-   * <code>repeated .glory_api.TenantOrg children = 6;</code>
+   * <code>repeated .glory_api.TenantOrg children = 7;</code>
    */
   int getChildrenCount();
   /**
-   * <code>repeated .glory_api.TenantOrg children = 6;</code>
+   * <code>repeated .glory_api.TenantOrg children = 7;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.tenant.TenantOrgOrBuilder> 
       getChildrenOrBuilderList();
   /**
-   * <code>repeated .glory_api.TenantOrg children = 6;</code>
+   * <code>repeated .glory_api.TenantOrg children = 7;</code>
    */
   com.zhijiejiaoyu.glory_api.tenant.TenantOrgOrBuilder getChildrenOrBuilder(
       int index);

@@ -23,17 +23,17 @@ public interface GetTenantUserResponseOrBuilder extends
   com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder();
 
   /**
-   * <code>.glory_api.TenantUser user = 2;</code>
+   * <code>.glory_api.User user = 2;</code>
    * @return Whether the user field is set.
    */
   boolean hasUser();
   /**
-   * <code>.glory_api.TenantUser user = 2;</code>
+   * <code>.glory_api.User user = 2;</code>
    * @return The user.
    */
-  com.zhijiejiaoyu.glory_api.tenant.TenantUser getUser();
+  com.zhijiejiaoyu.glory_api.user.User getUser();
   /**
-   * <code>.glory_api.TenantUser user = 2;</code>
+   * <code>.glory_api.User user = 2;</code>
    */
-  com.zhijiejiaoyu.glory_api.tenant.TenantUserOrBuilder getUserOrBuilder();
+  com.zhijiejiaoyu.glory_api.user.UserOrBuilder getUserOrBuilder();
 }

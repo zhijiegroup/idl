@@ -21,10 +21,4 @@ public interface UpdateTenantUserResponseOrBuilder extends
    * <code>.base.BaseResponse base_resp = 1;</code>
    */
   com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder();
-
-  /**
-   * <code>int64 tenant_user_id = 2;</code>
-   * @return The tenantUserId.
-   */
-  long getTenantUserId();
 }

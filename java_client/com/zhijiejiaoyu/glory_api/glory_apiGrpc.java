@@ -5471,37 +5471,6 @@ public final class glory_apiGrpc {
     return getCreateTenantUserMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserRequest,
-      com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserResponse> getUpdateTenantUserMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "UpdateTenantUser",
-      requestType = com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserRequest.class,
-      responseType = com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserRequest,
-      com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserResponse> getUpdateTenantUserMethod() {
-    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserRequest, com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserResponse> getUpdateTenantUserMethod;
-    if ((getUpdateTenantUserMethod = glory_apiGrpc.getUpdateTenantUserMethod) == null) {
-      synchronized (glory_apiGrpc.class) {
-        if ((getUpdateTenantUserMethod = glory_apiGrpc.getUpdateTenantUserMethod) == null) {
-          glory_apiGrpc.getUpdateTenantUserMethod = getUpdateTenantUserMethod =
-              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserRequest, com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateTenantUser"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("UpdateTenantUser"))
-              .build();
-        }
-      }
-    }
-    return getUpdateTenantUserMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.DeleteTenantUserRequest,
       com.zhijiejiaoyu.glory_api.tenant.DeleteTenantUserResponse> getDeleteTenantUserMethod;
 
@@ -5531,6 +5500,37 @@ public final class glory_apiGrpc {
       }
     }
     return getDeleteTenantUserMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserRequest,
+      com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserResponse> getUpdateTenantUserMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateTenantUser",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserRequest,
+      com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserResponse> getUpdateTenantUserMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserRequest, com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserResponse> getUpdateTenantUserMethod;
+    if ((getUpdateTenantUserMethod = glory_apiGrpc.getUpdateTenantUserMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getUpdateTenantUserMethod = glory_apiGrpc.getUpdateTenantUserMethod) == null) {
+          glory_apiGrpc.getUpdateTenantUserMethod = getUpdateTenantUserMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserRequest, com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateTenantUser"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("UpdateTenantUser"))
+              .build();
+        }
+      }
+    }
+    return getUpdateTenantUserMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.GetTenantUserRequest,
@@ -7512,16 +7512,16 @@ public final class glory_apiGrpc {
 
     /**
      */
-    default void updateTenantUser(com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserRequest request,
-        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateTenantUserMethod(), responseObserver);
+    default void deleteTenantUser(com.zhijiejiaoyu.glory_api.tenant.DeleteTenantUserRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeleteTenantUserResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteTenantUserMethod(), responseObserver);
     }
 
     /**
      */
-    default void deleteTenantUser(com.zhijiejiaoyu.glory_api.tenant.DeleteTenantUserRequest request,
-        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeleteTenantUserResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteTenantUserMethod(), responseObserver);
+    default void updateTenantUser(com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateTenantUserMethod(), responseObserver);
     }
 
     /**
@@ -9251,18 +9251,18 @@ public final class glory_apiGrpc {
 
     /**
      */
-    public void updateTenantUser(com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserRequest request,
-        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getUpdateTenantUserMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
     public void deleteTenantUser(com.zhijiejiaoyu.glory_api.tenant.DeleteTenantUserRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeleteTenantUserResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteTenantUserMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateTenantUser(com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateTenantUserMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -10824,16 +10824,16 @@ public final class glory_apiGrpc {
 
     /**
      */
-    public com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserResponse updateTenantUser(com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserRequest request) {
+    public com.zhijiejiaoyu.glory_api.tenant.DeleteTenantUserResponse deleteTenantUser(com.zhijiejiaoyu.glory_api.tenant.DeleteTenantUserRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateTenantUserMethod(), getCallOptions(), request);
+          getChannel(), getDeleteTenantUserMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.zhijiejiaoyu.glory_api.tenant.DeleteTenantUserResponse deleteTenantUser(com.zhijiejiaoyu.glory_api.tenant.DeleteTenantUserRequest request) {
+    public com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserResponse updateTenantUser(com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteTenantUserMethod(), getCallOptions(), request);
+          getChannel(), getUpdateTenantUserMethod(), getCallOptions(), request);
     }
 
     /**
@@ -12552,18 +12552,18 @@ public final class glory_apiGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserResponse> updateTenantUser(
-        com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getUpdateTenantUserMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
     public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.DeleteTenantUserResponse> deleteTenantUser(
         com.zhijiejiaoyu.glory_api.tenant.DeleteTenantUserRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteTenantUserMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserResponse> updateTenantUser(
+        com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateTenantUserMethod(), getCallOptions()), request);
     }
 
     /**
@@ -12943,8 +12943,8 @@ public final class glory_apiGrpc {
   private static final int METHODID_GET_TENANT_DEPT = 173;
   private static final int METHODID_GET_TENANT_DEPT_TYPE = 174;
   private static final int METHODID_CREATE_TENANT_USER = 175;
-  private static final int METHODID_UPDATE_TENANT_USER = 176;
-  private static final int METHODID_DELETE_TENANT_USER = 177;
+  private static final int METHODID_DELETE_TENANT_USER = 176;
+  private static final int METHODID_UPDATE_TENANT_USER = 177;
   private static final int METHODID_GET_TENANT_USER = 178;
   private static final int METHODID_LIST_TENANT_USER = 179;
   private static final int METHODID_CREATE_SHORT_VIDEO = 180;
@@ -13686,13 +13686,13 @@ public final class glory_apiGrpc {
           serviceImpl.createTenantUser((com.zhijiejiaoyu.glory_api.tenant.CreateTenantUserRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.CreateTenantUserResponse>) responseObserver);
           break;
-        case METHODID_UPDATE_TENANT_USER:
-          serviceImpl.updateTenantUser((com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserRequest) request,
-              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserResponse>) responseObserver);
-          break;
         case METHODID_DELETE_TENANT_USER:
           serviceImpl.deleteTenantUser((com.zhijiejiaoyu.glory_api.tenant.DeleteTenantUserRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.DeleteTenantUserResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_TENANT_USER:
+          serviceImpl.updateTenantUser((com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserResponse>) responseObserver);
           break;
         case METHODID_GET_TENANT_USER:
           serviceImpl.getTenantUser((com.zhijiejiaoyu.glory_api.tenant.GetTenantUserRequest) request,
@@ -15021,19 +15021,19 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.tenant.CreateTenantUserResponse>(
                 service, METHODID_CREATE_TENANT_USER)))
         .addMethod(
-          getUpdateTenantUserMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserRequest,
-              com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserResponse>(
-                service, METHODID_UPDATE_TENANT_USER)))
-        .addMethod(
           getDeleteTenantUserMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
               com.zhijiejiaoyu.glory_api.tenant.DeleteTenantUserRequest,
               com.zhijiejiaoyu.glory_api.tenant.DeleteTenantUserResponse>(
                 service, METHODID_DELETE_TENANT_USER)))
+        .addMethod(
+          getUpdateTenantUserMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserRequest,
+              com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserResponse>(
+                service, METHODID_UPDATE_TENANT_USER)))
         .addMethod(
           getGetTenantUserMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -15391,8 +15391,8 @@ public final class glory_apiGrpc {
               .addMethod(getGetTenantDeptMethod())
               .addMethod(getGetTenantDeptTypeMethod())
               .addMethod(getCreateTenantUserMethod())
-              .addMethod(getUpdateTenantUserMethod())
               .addMethod(getDeleteTenantUserMethod())
+              .addMethod(getUpdateTenantUserMethod())
               .addMethod(getGetTenantUserMethod())
               .addMethod(getListTenantUserMethod())
               .addMethod(getCreateShortVideoMethod())

@@ -83,7 +83,12 @@ private static final long serialVersionUID = 0L;
             tenant = input.readInt64();
             break;
           }
-          case 50: {
+          case 48: {
+
+            count = input.readInt64();
+            break;
+          }
+          case 58: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               children = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.tenant.TenantOrg>();
               mutable_bitField0_ |= 0x00000001;
@@ -236,17 +241,28 @@ private static final long serialVersionUID = 0L;
     return tenant;
   }
 
-  public static final int CHILDREN_FIELD_NUMBER = 6;
+  public static final int COUNT_FIELD_NUMBER = 6;
+  private long count;
+  /**
+   * <code>int64 count = 6;</code>
+   * @return The count.
+   */
+  @java.lang.Override
+  public long getCount() {
+    return count;
+  }
+
+  public static final int CHILDREN_FIELD_NUMBER = 7;
   private java.util.List<com.zhijiejiaoyu.glory_api.tenant.TenantOrg> children;
   /**
-   * <code>repeated .glory_api.TenantOrg children = 6;</code>
+   * <code>repeated .glory_api.TenantOrg children = 7;</code>
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.tenant.TenantOrg> getChildrenList() {
     return children;
   }
   /**
-   * <code>repeated .glory_api.TenantOrg children = 6;</code>
+   * <code>repeated .glory_api.TenantOrg children = 7;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.tenant.TenantOrgOrBuilder> 
@@ -254,21 +270,21 @@ private static final long serialVersionUID = 0L;
     return children;
   }
   /**
-   * <code>repeated .glory_api.TenantOrg children = 6;</code>
+   * <code>repeated .glory_api.TenantOrg children = 7;</code>
    */
   @java.lang.Override
   public int getChildrenCount() {
     return children.size();
   }
   /**
-   * <code>repeated .glory_api.TenantOrg children = 6;</code>
+   * <code>repeated .glory_api.TenantOrg children = 7;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.tenant.TenantOrg getChildren(int index) {
     return children.get(index);
   }
   /**
-   * <code>repeated .glory_api.TenantOrg children = 6;</code>
+   * <code>repeated .glory_api.TenantOrg children = 7;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.tenant.TenantOrgOrBuilder getChildrenOrBuilder(
@@ -305,8 +321,11 @@ private static final long serialVersionUID = 0L;
     if (tenant != 0L) {
       output.writeInt64(5, tenant);
     }
+    if (count != 0L) {
+      output.writeInt64(6, count);
+    }
     for (int i = 0; i < children.size(); i++) {
-      output.writeMessage(6, children.get(i));
+      output.writeMessage(7, children.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -335,9 +354,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(5, tenant);
     }
+    if (count != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(6, count);
+    }
     for (int i = 0; i < children.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, children.get(i));
+        .computeMessageSize(7, children.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -364,6 +387,8 @@ private static final long serialVersionUID = 0L;
         != other.getParent()) return false;
     if (getTenant()
         != other.getTenant()) return false;
+    if (getCount()
+        != other.getCount()) return false;
     if (!getChildrenList()
         .equals(other.getChildrenList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -390,6 +415,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + TENANT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getTenant());
+    hash = (37 * hash) + COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getCount());
     if (getChildrenCount() > 0) {
       hash = (37 * hash) + CHILDREN_FIELD_NUMBER;
       hash = (53 * hash) + getChildrenList().hashCode();
@@ -542,6 +570,8 @@ private static final long serialVersionUID = 0L;
 
       tenant = 0L;
 
+      count = 0L;
+
       if (childrenBuilder == null) {
         children = java.util.Collections.emptyList();
         bitField0 = (bitField0_ & ~0x00000001);
@@ -580,6 +610,7 @@ private static final long serialVersionUID = 0L;
       result.type = type;
       result.parent = parent;
       result.tenant = tenant;
+      result.count = count;
       if (childrenBuilder == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           children = java.util.Collections.unmodifiableList(children);
@@ -653,6 +684,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getTenant() != 0L) {
         setTenant(other.getTenant());
+      }
+      if (other.getCount() != 0L) {
+        setCount(other.getCount());
       }
       if (childrenBuilder == null) {
         if (!other.children.isEmpty()) {
@@ -955,6 +989,37 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private long count ;
+    /**
+     * <code>int64 count = 6;</code>
+     * @return The count.
+     */
+    @java.lang.Override
+    public long getCount() {
+      return count;
+    }
+    /**
+     * <code>int64 count = 6;</code>
+     * @param value The count to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCount(long value) {
+      
+      count = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 count = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCount() {
+      
+      count = 0L;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.zhijiejiaoyu.glory_api.tenant.TenantOrg> children =
       java.util.Collections.emptyList();
     private void ensureChildrenIsMutable() {
@@ -968,7 +1033,7 @@ private static final long serialVersionUID = 0L;
         com.zhijiejiaoyu.glory_api.tenant.TenantOrg, com.zhijiejiaoyu.glory_api.tenant.TenantOrg.Builder, com.zhijiejiaoyu.glory_api.tenant.TenantOrgOrBuilder> childrenBuilder;
 
     /**
-     * <code>repeated .glory_api.TenantOrg children = 6;</code>
+     * <code>repeated .glory_api.TenantOrg children = 7;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.tenant.TenantOrg> getChildrenList() {
       if (childrenBuilder == null) {
@@ -978,7 +1043,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.TenantOrg children = 6;</code>
+     * <code>repeated .glory_api.TenantOrg children = 7;</code>
      */
     public int getChildrenCount() {
       if (childrenBuilder == null) {
@@ -988,7 +1053,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.TenantOrg children = 6;</code>
+     * <code>repeated .glory_api.TenantOrg children = 7;</code>
      */
     public com.zhijiejiaoyu.glory_api.tenant.TenantOrg getChildren(int index) {
       if (childrenBuilder == null) {
@@ -998,7 +1063,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.TenantOrg children = 6;</code>
+     * <code>repeated .glory_api.TenantOrg children = 7;</code>
      */
     public Builder setChildren(
         int index, com.zhijiejiaoyu.glory_api.tenant.TenantOrg value) {
@@ -1015,7 +1080,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantOrg children = 6;</code>
+     * <code>repeated .glory_api.TenantOrg children = 7;</code>
      */
     public Builder setChildren(
         int index, com.zhijiejiaoyu.glory_api.tenant.TenantOrg.Builder builderForValue) {
@@ -1029,7 +1094,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantOrg children = 6;</code>
+     * <code>repeated .glory_api.TenantOrg children = 7;</code>
      */
     public Builder addChildren(com.zhijiejiaoyu.glory_api.tenant.TenantOrg value) {
       if (childrenBuilder == null) {
@@ -1045,7 +1110,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantOrg children = 6;</code>
+     * <code>repeated .glory_api.TenantOrg children = 7;</code>
      */
     public Builder addChildren(
         int index, com.zhijiejiaoyu.glory_api.tenant.TenantOrg value) {
@@ -1062,7 +1127,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantOrg children = 6;</code>
+     * <code>repeated .glory_api.TenantOrg children = 7;</code>
      */
     public Builder addChildren(
         com.zhijiejiaoyu.glory_api.tenant.TenantOrg.Builder builderForValue) {
@@ -1076,7 +1141,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantOrg children = 6;</code>
+     * <code>repeated .glory_api.TenantOrg children = 7;</code>
      */
     public Builder addChildren(
         int index, com.zhijiejiaoyu.glory_api.tenant.TenantOrg.Builder builderForValue) {
@@ -1090,7 +1155,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantOrg children = 6;</code>
+     * <code>repeated .glory_api.TenantOrg children = 7;</code>
      */
     public Builder addAllChildren(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.tenant.TenantOrg> values) {
@@ -1105,7 +1170,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantOrg children = 6;</code>
+     * <code>repeated .glory_api.TenantOrg children = 7;</code>
      */
     public Builder clearChildren() {
       if (childrenBuilder == null) {
@@ -1118,7 +1183,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantOrg children = 6;</code>
+     * <code>repeated .glory_api.TenantOrg children = 7;</code>
      */
     public Builder removeChildren(int index) {
       if (childrenBuilder == null) {
@@ -1131,14 +1196,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantOrg children = 6;</code>
+     * <code>repeated .glory_api.TenantOrg children = 7;</code>
      */
     public com.zhijiejiaoyu.glory_api.tenant.TenantOrg.Builder getChildrenBuilder(
         int index) {
       return getChildrenFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .glory_api.TenantOrg children = 6;</code>
+     * <code>repeated .glory_api.TenantOrg children = 7;</code>
      */
     public com.zhijiejiaoyu.glory_api.tenant.TenantOrgOrBuilder getChildrenOrBuilder(
         int index) {
@@ -1148,7 +1213,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.TenantOrg children = 6;</code>
+     * <code>repeated .glory_api.TenantOrg children = 7;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.tenant.TenantOrgOrBuilder> 
          getChildrenOrBuilderList() {
@@ -1159,14 +1224,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.TenantOrg children = 6;</code>
+     * <code>repeated .glory_api.TenantOrg children = 7;</code>
      */
     public com.zhijiejiaoyu.glory_api.tenant.TenantOrg.Builder addChildrenBuilder() {
       return getChildrenFieldBuilder().addBuilder(
           com.zhijiejiaoyu.glory_api.tenant.TenantOrg.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.TenantOrg children = 6;</code>
+     * <code>repeated .glory_api.TenantOrg children = 7;</code>
      */
     public com.zhijiejiaoyu.glory_api.tenant.TenantOrg.Builder addChildrenBuilder(
         int index) {
@@ -1174,7 +1239,7 @@ private static final long serialVersionUID = 0L;
           index, com.zhijiejiaoyu.glory_api.tenant.TenantOrg.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.TenantOrg children = 6;</code>
+     * <code>repeated .glory_api.TenantOrg children = 7;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.tenant.TenantOrg.Builder> 
          getChildrenBuilderList() {

@@ -739,6 +739,8 @@ struct GloryApi_TenantOrg {
 
   var tenant: Int64 = 0
 
+  var count: Int64 = 0
+
   var children: [GloryApi_TenantOrg] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -1950,7 +1952,8 @@ extension GloryApi_TenantOrg: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     3: .same(proto: "type"),
     4: .same(proto: "parent"),
     5: .same(proto: "tenant"),
-    6: .same(proto: "children"),
+    6: .same(proto: "count"),
+    7: .same(proto: "children"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1964,7 +1967,8 @@ extension GloryApi_TenantOrg: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
       case 3: try { try decoder.decodeSingularStringField(value: &self.type) }()
       case 4: try { try decoder.decodeSingularInt64Field(value: &self.parent) }()
       case 5: try { try decoder.decodeSingularInt64Field(value: &self.tenant) }()
-      case 6: try { try decoder.decodeRepeatedMessageField(value: &self.children) }()
+      case 6: try { try decoder.decodeSingularInt64Field(value: &self.count) }()
+      case 7: try { try decoder.decodeRepeatedMessageField(value: &self.children) }()
       default: break
       }
     }
@@ -1986,8 +1990,11 @@ extension GloryApi_TenantOrg: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     if self.tenant != 0 {
       try visitor.visitSingularInt64Field(value: self.tenant, fieldNumber: 5)
     }
+    if self.count != 0 {
+      try visitor.visitSingularInt64Field(value: self.count, fieldNumber: 6)
+    }
     if !self.children.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.children, fieldNumber: 6)
+      try visitor.visitRepeatedMessageField(value: self.children, fieldNumber: 7)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1998,6 +2005,7 @@ extension GloryApi_TenantOrg: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     if lhs.type != rhs.type {return false}
     if lhs.parent != rhs.parent {return false}
     if lhs.tenant != rhs.tenant {return false}
+    if lhs.count != rhs.count {return false}
     if lhs.children != rhs.children {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

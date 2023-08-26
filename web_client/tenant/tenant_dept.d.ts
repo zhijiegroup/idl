@@ -101,22 +101,21 @@ export interface DeleteTenantUserResponse {
 
 export interface UpdateTenantUserRequest {
   base_request?: base.BaseRequest;
-  user?: TenantUser;
+  user?: user.User;
 }
 
 export interface UpdateTenantUserResponse {
   base_resp?: base.BaseResponse;
-  tenant_user_id?: string;
 }
 
 export interface GetTenantUserRequest {
   base_request?: base.BaseRequest;
-  tenant_user_id?: string;
+  user_id?: string;
 }
 
 export interface GetTenantUserResponse {
   base_resp?: base.BaseResponse;
-  user?: TenantUser;
+  user?: user.User;
 }
 
 export interface ListTenantUserRequest {

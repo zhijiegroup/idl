@@ -165,6 +165,7 @@ export interface TenantOrg {
   type?: string;
   parent?: string;
   tenant?: string;
+  count?: string;
   children?: Array<TenantOrg>;
 }
 

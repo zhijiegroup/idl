@@ -62,11 +62,11 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder subBuilder = null;
+            com.zhijiejiaoyu.glory_api.user.User.Builder subBuilder = null;
             if (user != null) {
               subBuilder = user.toBuilder();
             }
-            user = input.readMessage(com.zhijiejiaoyu.glory_api.tenant.TenantUser.parser(), extensionRegistry);
+            user = input.readMessage(com.zhijiejiaoyu.glory_api.user.User.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(user);
               user = subBuilder.buildPartial();
@@ -133,9 +133,9 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int USER_FIELD_NUMBER = 2;
-  private com.zhijiejiaoyu.glory_api.tenant.TenantUser user;
+  private com.zhijiejiaoyu.glory_api.user.User user;
   /**
-   * <code>.glory_api.TenantUser user = 2;</code>
+   * <code>.glory_api.User user = 2;</code>
    * @return Whether the user field is set.
    */
   @java.lang.Override
@@ -143,18 +143,18 @@ private static final long serialVersionUID = 0L;
     return user != null;
   }
   /**
-   * <code>.glory_api.TenantUser user = 2;</code>
+   * <code>.glory_api.User user = 2;</code>
    * @return The user.
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.tenant.TenantUser getUser() {
-    return user == null ? com.zhijiejiaoyu.glory_api.tenant.TenantUser.getDefaultInstance() : user;
+  public com.zhijiejiaoyu.glory_api.user.User getUser() {
+    return user == null ? com.zhijiejiaoyu.glory_api.user.User.getDefaultInstance() : user;
   }
   /**
-   * <code>.glory_api.TenantUser user = 2;</code>
+   * <code>.glory_api.User user = 2;</code>
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.tenant.TenantUserOrBuilder getUserOrBuilder() {
+  public com.zhijiejiaoyu.glory_api.user.UserOrBuilder getUserOrBuilder() {
     return getUser();
   }
 
@@ -622,31 +622,31 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder;
     }
 
-    private com.zhijiejiaoyu.glory_api.tenant.TenantUser user;
+    private com.zhijiejiaoyu.glory_api.user.User user;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.tenant.TenantUser, com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder, com.zhijiejiaoyu.glory_api.tenant.TenantUserOrBuilder> userBuilder;
+        com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder> userBuilder;
     /**
-     * <code>.glory_api.TenantUser user = 2;</code>
+     * <code>.glory_api.User user = 2;</code>
      * @return Whether the user field is set.
      */
     public boolean hasUser() {
       return userBuilder != null || user != null;
     }
     /**
-     * <code>.glory_api.TenantUser user = 2;</code>
+     * <code>.glory_api.User user = 2;</code>
      * @return The user.
      */
-    public com.zhijiejiaoyu.glory_api.tenant.TenantUser getUser() {
+    public com.zhijiejiaoyu.glory_api.user.User getUser() {
       if (userBuilder == null) {
-        return user == null ? com.zhijiejiaoyu.glory_api.tenant.TenantUser.getDefaultInstance() : user;
+        return user == null ? com.zhijiejiaoyu.glory_api.user.User.getDefaultInstance() : user;
       } else {
         return userBuilder.getMessage();
       }
     }
     /**
-     * <code>.glory_api.TenantUser user = 2;</code>
+     * <code>.glory_api.User user = 2;</code>
      */
-    public Builder setUser(com.zhijiejiaoyu.glory_api.tenant.TenantUser value) {
+    public Builder setUser(com.zhijiejiaoyu.glory_api.user.User value) {
       if (userBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -660,10 +660,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.TenantUser user = 2;</code>
+     * <code>.glory_api.User user = 2;</code>
      */
     public Builder setUser(
-        com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder builderForValue) {
+        com.zhijiejiaoyu.glory_api.user.User.Builder builderForValue) {
       if (userBuilder == null) {
         user = builderForValue.build();
         onChanged();
@@ -674,13 +674,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.TenantUser user = 2;</code>
+     * <code>.glory_api.User user = 2;</code>
      */
-    public Builder mergeUser(com.zhijiejiaoyu.glory_api.tenant.TenantUser value) {
+    public Builder mergeUser(com.zhijiejiaoyu.glory_api.user.User value) {
       if (userBuilder == null) {
         if (user != null) {
           user =
-            com.zhijiejiaoyu.glory_api.tenant.TenantUser.newBuilder(user).mergeFrom(value).buildPartial();
+            com.zhijiejiaoyu.glory_api.user.User.newBuilder(user).mergeFrom(value).buildPartial();
         } else {
           user = value;
         }
@@ -692,7 +692,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.TenantUser user = 2;</code>
+     * <code>.glory_api.User user = 2;</code>
      */
     public Builder clearUser() {
       if (userBuilder == null) {
@@ -706,33 +706,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.TenantUser user = 2;</code>
+     * <code>.glory_api.User user = 2;</code>
      */
-    public com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder getUserBuilder() {
+    public com.zhijiejiaoyu.glory_api.user.User.Builder getUserBuilder() {
       
       onChanged();
       return getUserFieldBuilder().getBuilder();
     }
     /**
-     * <code>.glory_api.TenantUser user = 2;</code>
+     * <code>.glory_api.User user = 2;</code>
      */
-    public com.zhijiejiaoyu.glory_api.tenant.TenantUserOrBuilder getUserOrBuilder() {
+    public com.zhijiejiaoyu.glory_api.user.UserOrBuilder getUserOrBuilder() {
       if (userBuilder != null) {
         return userBuilder.getMessageOrBuilder();
       } else {
         return user == null ?
-            com.zhijiejiaoyu.glory_api.tenant.TenantUser.getDefaultInstance() : user;
+            com.zhijiejiaoyu.glory_api.user.User.getDefaultInstance() : user;
       }
     }
     /**
-     * <code>.glory_api.TenantUser user = 2;</code>
+     * <code>.glory_api.User user = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.tenant.TenantUser, com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder, com.zhijiejiaoyu.glory_api.tenant.TenantUserOrBuilder> 
+        com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder> 
         getUserFieldBuilder() {
       if (userBuilder == null) {
         userBuilder = new com.google.protobuf.SingleFieldBuilderV3<
-            com.zhijiejiaoyu.glory_api.tenant.TenantUser, com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder, com.zhijiejiaoyu.glory_api.tenant.TenantUserOrBuilder>(
+            com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder>(
                 getUser(),
                 getParentForChildren(),
                 isClean());

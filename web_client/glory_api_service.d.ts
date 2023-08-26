@@ -762,13 +762,13 @@ CreateLivePlanProduct create live plan product */
     request: tenant_dept.CreateTenantUserRequest
   ): Promise<tenant_dept.CreateTenantUserResponse>;
 
-  UpdateTenantUser(
-    request: tenant_dept.UpdateTenantUserRequest
-  ): Promise<tenant_dept.UpdateTenantUserResponse>;
-
   DeleteTenantUser(
     request: tenant_dept.DeleteTenantUserRequest
   ): Promise<tenant_dept.DeleteTenantUserResponse>;
+
+  UpdateTenantUser(
+    request: tenant_dept.UpdateTenantUserRequest
+  ): Promise<tenant_dept.UpdateTenantUserResponse>;
 
   GetTenantUser(
     request: tenant_dept.GetTenantUserRequest

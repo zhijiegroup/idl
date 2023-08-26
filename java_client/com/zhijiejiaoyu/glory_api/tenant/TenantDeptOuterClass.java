@@ -188,26 +188,25 @@ public final class TenantDeptOuterClass {
       "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
       "Request\022\027\n\017tenant_user_ids\030\002 \003(\003\"A\n\030Dele" +
       "teTenantUserResponse\022%\n\tbase_resp\030\001 \001(\0132" +
-      "\022.base.BaseResponse\"g\n\027UpdateTenantUserR" +
+      "\022.base.BaseResponse\"a\n\027UpdateTenantUserR" +
       "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
-      "Request\022#\n\004user\030\002 \001(\0132\025.glory_api.Tenant" +
-      "User\"Y\n\030UpdateTenantUserResponse\022%\n\tbase" +
-      "_resp\030\001 \001(\0132\022.base.BaseResponse\022\026\n\016tenan" +
-      "t_user_id\030\002 \001(\003\"W\n\024GetTenantUserRequest\022" +
-      "\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequest" +
-      "\022\026\n\016tenant_user_id\030\002 \001(\003\"c\n\025GetTenantUse" +
-      "rResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Base" +
-      "Response\022#\n\004user\030\002 \001(\0132\025.glory_api.Tenan" +
-      "tUser\"\237\001\n\025ListTenantUserRequest\022\'\n\014base_" +
-      "request\030\001 \001(\0132\021.base.BaseRequest\022\021\n\ttena" +
-      "nt_id\030\002 \001(\003\022\017\n\007dept_id\030\003 \001(\003\022\014\n\004name\030\004 \001" +
-      "(\t\022+\n\npagination\030d \001(\0132\027.base.Pagination" +
-      "Request\"\223\001\n\026ListTenantUserResponse\022%\n\tba" +
-      "se_resp\030\001 \001(\0132\022.base.BaseResponse\022$\n\005use" +
-      "rs\030\002 \003(\0132\025.glory_api.TenantUser\022,\n\npagin" +
-      "ation\030d \001(\0132\030.base.PaginationResponseB%\n" +
-      "!com.zhijiejiaoyu.glory_api.tenantP\001b\006pr" +
-      "oto3"
+      "Request\022\035\n\004user\030\002 \001(\0132\017.glory_api.User\"A" +
+      "\n\030UpdateTenantUserResponse\022%\n\tbase_resp\030" +
+      "\001 \001(\0132\022.base.BaseResponse\"P\n\024GetTenantUs" +
+      "erRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.B" +
+      "aseRequest\022\017\n\007user_id\030\002 \001(\003\"]\n\025GetTenant" +
+      "UserResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.B" +
+      "aseResponse\022\035\n\004user\030\002 \001(\0132\017.glory_api.Us" +
+      "er\"\237\001\n\025ListTenantUserRequest\022\'\n\014base_req" +
+      "uest\030\001 \001(\0132\021.base.BaseRequest\022\021\n\ttenant_" +
+      "id\030\002 \001(\003\022\017\n\007dept_id\030\003 \001(\003\022\014\n\004name\030\004 \001(\t\022" +
+      "+\n\npagination\030d \001(\0132\027.base.PaginationReq" +
+      "uest\"\223\001\n\026ListTenantUserResponse\022%\n\tbase_" +
+      "resp\030\001 \001(\0132\022.base.BaseResponse\022$\n\005users\030" +
+      "\002 \003(\0132\025.glory_api.TenantUser\022,\n\npaginati" +
+      "on\030d \001(\0132\030.base.PaginationResponseB%\n!co" +
+      "m.zhijiejiaoyu.glory_api.tenantP\001b\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -334,13 +333,13 @@ public final class TenantDeptOuterClass {
     internal_static_glory_api_UpdateTenantUserResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateTenantUserResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "TenantUserId", });
+        new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_GetTenantUserRequest_descriptor =
       getDescriptor().getMessageTypes().get(19);
     internal_static_glory_api_GetTenantUserRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetTenantUserRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "TenantUserId", });
+        new java.lang.String[] { "BaseRequest", "UserId", });
     internal_static_glory_api_GetTenantUserResponse_descriptor =
       getDescriptor().getMessageTypes().get(20);
     internal_static_glory_api_GetTenantUserResponse_fieldAccessorTable = new

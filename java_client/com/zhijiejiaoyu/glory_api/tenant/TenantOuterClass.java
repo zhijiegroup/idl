@@ -223,16 +223,17 @@ public final class TenantOuterClass {
       "\001\n\021ListClassResponse\022%\n\tbase_resp\030\001 \001(\0132" +
       "\022.base.BaseResponse\022)\n\005class\030\002 \003(\0132\032.glo" +
       "ry_api.ClassWithAuthor\022,\n\npagination\030d \001" +
-      "(\0132\030.base.PaginationResponse\"{\n\tTenantOr" +
-      "g\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\014\n\004type\030\003 \001(" +
-      "\t\022\016\n\006parent\030\004 \001(\003\022\016\n\006tenant\030\005 \001(\003\022&\n\010chi" +
-      "ldren\030\006 \003(\0132\024.glory_api.TenantOrg\"Q\n\023Get" +
-      "TenantOrgRequest\022\'\n\014base_request\030\001 \001(\0132\021" +
-      ".base.BaseRequest\022\021\n\ttenant_id\030\002 \001(\003\"g\n\024" +
-      "GetTenantOrgResponse\022%\n\tbase_resp\030\001 \001(\0132" +
-      "\022.base.BaseResponse\022(\n\ntenant_org\030\002 \001(\0132" +
-      "\024.glory_api.TenantOrgB%\n!com.zhijiejiaoy" +
-      "u.glory_api.tenantP\001b\006proto3"
+      "(\0132\030.base.PaginationResponse\"\212\001\n\tTenantO" +
+      "rg\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\014\n\004type\030\003 \001" +
+      "(\t\022\016\n\006parent\030\004 \001(\003\022\016\n\006tenant\030\005 \001(\003\022\r\n\005co" +
+      "unt\030\006 \001(\003\022&\n\010children\030\007 \003(\0132\024.glory_api." +
+      "TenantOrg\"Q\n\023GetTenantOrgRequest\022\'\n\014base" +
+      "_request\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tten" +
+      "ant_id\030\002 \001(\003\"g\n\024GetTenantOrgResponse\022%\n\t" +
+      "base_resp\030\001 \001(\0132\022.base.BaseResponse\022(\n\nt" +
+      "enant_org\030\002 \001(\0132\024.glory_api.TenantOrgB%\n" +
+      "!com.zhijiejiaoyu.glory_api.tenantP\001b\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -388,7 +389,7 @@ public final class TenantOuterClass {
     internal_static_glory_api_TenantOrg_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_TenantOrg_descriptor,
-        new java.lang.String[] { "Id", "Name", "Type", "Parent", "Tenant", "Children", });
+        new java.lang.String[] { "Id", "Name", "Type", "Parent", "Tenant", "Count", "Children", });
     internal_static_glory_api_GetTenantOrgRequest_descriptor =
       getDescriptor().getMessageTypes().get(25);
     internal_static_glory_api_GetTenantOrgRequest_fieldAccessorTable = new

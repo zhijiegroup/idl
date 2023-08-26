@@ -63,7 +63,7 @@ private static final long serialVersionUID = 0L;
           }
           case 16: {
 
-            tenantUserId = input.readInt64();
+            userId = input.readInt64();
             break;
           }
           default: {
@@ -124,15 +124,15 @@ private static final long serialVersionUID = 0L;
     return getBaseRequest();
   }
 
-  public static final int TENANT_USER_ID_FIELD_NUMBER = 2;
-  private long tenantUserId;
+  public static final int USER_ID_FIELD_NUMBER = 2;
+  private long userId;
   /**
-   * <code>int64 tenant_user_id = 2;</code>
-   * @return The tenantUserId.
+   * <code>int64 user_id = 2;</code>
+   * @return The userId.
    */
   @java.lang.Override
-  public long getTenantUserId() {
-    return tenantUserId;
+  public long getUserId() {
+    return userId;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -152,8 +152,8 @@ private static final long serialVersionUID = 0L;
     if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
-    if (tenantUserId != 0L) {
-      output.writeInt64(2, tenantUserId);
+    if (userId != 0L) {
+      output.writeInt64(2, userId);
     }
     unknownFields.writeTo(output);
   }
@@ -168,9 +168,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseRequest());
     }
-    if (tenantUserId != 0L) {
+    if (userId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, tenantUserId);
+        .computeInt64Size(2, userId);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -192,8 +192,8 @@ private static final long serialVersionUID = 0L;
       if (!getBaseRequest()
           .equals(other.getBaseRequest())) return false;
     }
-    if (getTenantUserId()
-        != other.getTenantUserId()) return false;
+    if (getUserId()
+        != other.getUserId()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -209,9 +209,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
       hash = (53 * hash) + getBaseRequest().hashCode();
     }
-    hash = (37 * hash) + TENANT_USER_ID_FIELD_NUMBER;
+    hash = (37 * hash) + USER_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getTenantUserId());
+        getUserId());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -351,7 +351,7 @@ private static final long serialVersionUID = 0L;
         baseRequest = null;
         baseRequestBuilder = null;
       }
-      tenantUserId = 0L;
+      userId = 0L;
 
       return this;
     }
@@ -384,7 +384,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.baseRequest = baseRequestBuilder.build();
       }
-      result.tenantUserId = tenantUserId;
+      result.userId = userId;
       onBuilt();
       return result;
     }
@@ -436,8 +436,8 @@ private static final long serialVersionUID = 0L;
       if (other.hasBaseRequest()) {
         mergeBaseRequest(other.getBaseRequest());
       }
-      if (other.getTenantUserId() != 0L) {
-        setTenantUserId(other.getTenantUserId());
+      if (other.getUserId() != 0L) {
+        setUserId(other.getUserId());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -587,33 +587,33 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder;
     }
 
-    private long tenantUserId ;
+    private long userId ;
     /**
-     * <code>int64 tenant_user_id = 2;</code>
-     * @return The tenantUserId.
+     * <code>int64 user_id = 2;</code>
+     * @return The userId.
      */
     @java.lang.Override
-    public long getTenantUserId() {
-      return tenantUserId;
+    public long getUserId() {
+      return userId;
     }
     /**
-     * <code>int64 tenant_user_id = 2;</code>
-     * @param value The tenantUserId to set.
+     * <code>int64 user_id = 2;</code>
+     * @param value The userId to set.
      * @return This builder for chaining.
      */
-    public Builder setTenantUserId(long value) {
+    public Builder setUserId(long value) {
       
-      tenantUserId = value;
+      userId = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 tenant_user_id = 2;</code>
+     * <code>int64 user_id = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder clearTenantUserId() {
+    public Builder clearUserId() {
       
-      tenantUserId = 0L;
+      userId = 0L;
       onChanged();
       return this;
     }

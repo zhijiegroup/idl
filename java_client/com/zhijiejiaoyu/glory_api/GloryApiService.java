@@ -567,13 +567,13 @@ public final class GloryApiService {
       "dept_type\022\177\n\020CreateTenantUser\022\".glory_ap" +
       "i.CreateTenantUserRequest\032#.glory_api.Cr" +
       "eateTenantUserResponse\"\"\322\301\030\036/api/tenant/" +
-      "create_tenant_user\022\177\n\020UpdateTenantUser\022\"" +
-      ".glory_api.UpdateTenantUserRequest\032#.glo" +
-      "ry_api.UpdateTenantUserResponse\"\"\322\301\030\036/ap" +
-      "i/tenant/update_tenant_user\022\177\n\020DeleteTen" +
-      "antUser\022\".glory_api.DeleteTenantUserRequ" +
-      "est\032#.glory_api.DeleteTenantUserResponse" +
-      "\"\"\322\301\030\036/api/tenant/delete_tenant_user\022s\n\r" +
+      "create_tenant_user\022\177\n\020DeleteTenantUser\022\"" +
+      ".glory_api.DeleteTenantUserRequest\032#.glo" +
+      "ry_api.DeleteTenantUserResponse\"\"\322\301\030\036/ap" +
+      "i/tenant/delete_tenant_user\022\177\n\020UpdateTen" +
+      "antUser\022\".glory_api.UpdateTenantUserRequ" +
+      "est\032#.glory_api.UpdateTenantUserResponse" +
+      "\"\"\322\301\030\036/api/tenant/update_tenant_user\022s\n\r" +
       "GetTenantUser\022\037.glory_api.GetTenantUserR" +
       "equest\032 .glory_api.GetTenantUserResponse" +
       "\"\037\322\301\030\033/api/tenant/get_tenant_user\022w\n\016Lis" +

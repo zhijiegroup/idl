@@ -61,11 +61,6 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 16: {
-
-            tenantUserId = input.readInt64();
-            break;
-          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -124,17 +119,6 @@ private static final long serialVersionUID = 0L;
     return getBaseResp();
   }
 
-  public static final int TENANT_USER_ID_FIELD_NUMBER = 2;
-  private long tenantUserId;
-  /**
-   * <code>int64 tenant_user_id = 2;</code>
-   * @return The tenantUserId.
-   */
-  @java.lang.Override
-  public long getTenantUserId() {
-    return tenantUserId;
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -152,9 +136,6 @@ private static final long serialVersionUID = 0L;
     if (baseResp != null) {
       output.writeMessage(1, getBaseResp());
     }
-    if (tenantUserId != 0L) {
-      output.writeInt64(2, tenantUserId);
-    }
     unknownFields.writeTo(output);
   }
 
@@ -167,10 +148,6 @@ private static final long serialVersionUID = 0L;
     if (baseResp != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
-    }
-    if (tenantUserId != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, tenantUserId);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -192,8 +169,6 @@ private static final long serialVersionUID = 0L;
       if (!getBaseResp()
           .equals(other.getBaseResp())) return false;
     }
-    if (getTenantUserId()
-        != other.getTenantUserId()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -209,9 +184,6 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_RESP_FIELD_NUMBER;
       hash = (53 * hash) + getBaseResp().hashCode();
     }
-    hash = (37 * hash) + TENANT_USER_ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getTenantUserId());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -351,8 +323,6 @@ private static final long serialVersionUID = 0L;
         baseResp = null;
         baseRespBuilder = null;
       }
-      tenantUserId = 0L;
-
       return this;
     }
 
@@ -384,7 +354,6 @@ private static final long serialVersionUID = 0L;
       } else {
         result.baseResp = baseRespBuilder.build();
       }
-      result.tenantUserId = tenantUserId;
       onBuilt();
       return result;
     }
@@ -435,9 +404,6 @@ private static final long serialVersionUID = 0L;
       if (other == com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserResponse.getDefaultInstance()) return this;
       if (other.hasBaseResp()) {
         mergeBaseResp(other.getBaseResp());
-      }
-      if (other.getTenantUserId() != 0L) {
-        setTenantUserId(other.getTenantUserId());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -585,37 +551,6 @@ private static final long serialVersionUID = 0L;
         baseResp = null;
       }
       return baseRespBuilder;
-    }
-
-    private long tenantUserId ;
-    /**
-     * <code>int64 tenant_user_id = 2;</code>
-     * @return The tenantUserId.
-     */
-    @java.lang.Override
-    public long getTenantUserId() {
-      return tenantUserId;
-    }
-    /**
-     * <code>int64 tenant_user_id = 2;</code>
-     * @param value The tenantUserId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTenantUserId(long value) {
-      
-      tenantUserId = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int64 tenant_user_id = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearTenantUserId() {
-      
-      tenantUserId = 0L;
-      onChanged();
-      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -1426,16 +1426,16 @@ export class glory_api {
     );
   }
 
-  UpdateTenantUser(request) {
-    const uri = `${this.uriPrefix}/api/tenant/update_tenant_user`;
+  DeleteTenantUser(request) {
+    const uri = `${this.uriPrefix}/api/tenant/delete_tenant_user`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
   }
 
-  DeleteTenantUser(request) {
-    const uri = `${this.uriPrefix}/api/tenant/delete_tenant_user`;
+  UpdateTenantUser(request) {
+    const uri = `${this.uriPrefix}/api/tenant/update_tenant_user`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
