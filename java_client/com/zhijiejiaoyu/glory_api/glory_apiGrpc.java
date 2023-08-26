@@ -5099,6 +5099,68 @@ public final class glory_apiGrpc {
     return getGetRankMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.RecordLiveCallbackRequest,
+      com.zhijiejiaoyu.glory_api.live.RecordLiveCallbackResponse> getRecordLiveCallbackMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RecordLiveCallback",
+      requestType = com.zhijiejiaoyu.glory_api.live.RecordLiveCallbackRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.live.RecordLiveCallbackResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.RecordLiveCallbackRequest,
+      com.zhijiejiaoyu.glory_api.live.RecordLiveCallbackResponse> getRecordLiveCallbackMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.RecordLiveCallbackRequest, com.zhijiejiaoyu.glory_api.live.RecordLiveCallbackResponse> getRecordLiveCallbackMethod;
+    if ((getRecordLiveCallbackMethod = glory_apiGrpc.getRecordLiveCallbackMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getRecordLiveCallbackMethod = glory_apiGrpc.getRecordLiveCallbackMethod) == null) {
+          glory_apiGrpc.getRecordLiveCallbackMethod = getRecordLiveCallbackMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.live.RecordLiveCallbackRequest, com.zhijiejiaoyu.glory_api.live.RecordLiveCallbackResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RecordLiveCallback"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.RecordLiveCallbackRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.RecordLiveCallbackResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("RecordLiveCallback"))
+              .build();
+        }
+      }
+    }
+    return getRecordLiveCallbackMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.VideoToTextCallbackRequest,
+      com.zhijiejiaoyu.glory_api.live.VideoToTextCallbackResponse> getVideoToTextCallbackMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "VideoToTextCallback",
+      requestType = com.zhijiejiaoyu.glory_api.live.VideoToTextCallbackRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.live.VideoToTextCallbackResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.VideoToTextCallbackRequest,
+      com.zhijiejiaoyu.glory_api.live.VideoToTextCallbackResponse> getVideoToTextCallbackMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.VideoToTextCallbackRequest, com.zhijiejiaoyu.glory_api.live.VideoToTextCallbackResponse> getVideoToTextCallbackMethod;
+    if ((getVideoToTextCallbackMethod = glory_apiGrpc.getVideoToTextCallbackMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getVideoToTextCallbackMethod = glory_apiGrpc.getVideoToTextCallbackMethod) == null) {
+          glory_apiGrpc.getVideoToTextCallbackMethod = getVideoToTextCallbackMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.live.VideoToTextCallbackRequest, com.zhijiejiaoyu.glory_api.live.VideoToTextCallbackResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "VideoToTextCallback"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.VideoToTextCallbackRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.VideoToTextCallbackResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("VideoToTextCallback"))
+              .build();
+        }
+      }
+    }
+    return getVideoToTextCallbackMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreateTenantRequest,
       com.zhijiejiaoyu.glory_api.tenant.CreateTenantResponse> getCreateTenantMethod;
 
@@ -7418,6 +7480,20 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    default void recordLiveCallback(com.zhijiejiaoyu.glory_api.live.RecordLiveCallbackRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.RecordLiveCallbackResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRecordLiveCallbackMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void videoToTextCallback(com.zhijiejiaoyu.glory_api.live.VideoToTextCallbackRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.VideoToTextCallbackResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getVideoToTextCallbackMethod(), responseObserver);
+    }
+
+    /**
      * <pre>
      *tenant
      * </pre>
@@ -9145,6 +9221,22 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public void recordLiveCallback(com.zhijiejiaoyu.glory_api.live.RecordLiveCallbackRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.RecordLiveCallbackResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRecordLiveCallbackMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void videoToTextCallback(com.zhijiejiaoyu.glory_api.live.VideoToTextCallbackRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.VideoToTextCallbackResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getVideoToTextCallbackMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
      * <pre>
      *tenant
      * </pre>
@@ -10727,6 +10819,20 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.live.GetRankResponse getRank(com.zhijiejiaoyu.glory_api.live.GetRankRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetRankMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.live.RecordLiveCallbackResponse recordLiveCallback(com.zhijiejiaoyu.glory_api.live.RecordLiveCallbackRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRecordLiveCallbackMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.live.VideoToTextCallbackResponse videoToTextCallback(com.zhijiejiaoyu.glory_api.live.VideoToTextCallbackRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getVideoToTextCallbackMethod(), getCallOptions(), request);
     }
 
     /**
@@ -12446,6 +12552,22 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.live.RecordLiveCallbackResponse> recordLiveCallback(
+        com.zhijiejiaoyu.glory_api.live.RecordLiveCallbackRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRecordLiveCallbackMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.live.VideoToTextCallbackResponse> videoToTextCallback(
+        com.zhijiejiaoyu.glory_api.live.VideoToTextCallbackRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getVideoToTextCallbackMethod(), getCallOptions()), request);
+    }
+
+    /**
      * <pre>
      *tenant
      * </pre>
@@ -12931,39 +13053,41 @@ public final class glory_apiGrpc {
   private static final int METHODID_LIST_STUDENT_EVALUATIONS = 161;
   private static final int METHODID_IGNORE_EVALUATION = 162;
   private static final int METHODID_GET_RANK = 163;
-  private static final int METHODID_CREATE_TENANT = 164;
-  private static final int METHODID_GET_TENANT = 165;
-  private static final int METHODID_UPDATE_TENANT = 166;
-  private static final int METHODID_DELETE_TENANT = 167;
-  private static final int METHODID_LIST_TENANT = 168;
-  private static final int METHODID_GET_TENANT_ORG = 169;
-  private static final int METHODID_CREATE_TENANT_DEPT = 170;
-  private static final int METHODID_UPDATE_TENANT_DEPT = 171;
-  private static final int METHODID_DELETE_TENANT_DEPT = 172;
-  private static final int METHODID_GET_TENANT_DEPT = 173;
-  private static final int METHODID_GET_TENANT_DEPT_TYPE = 174;
-  private static final int METHODID_CREATE_TENANT_USER = 175;
-  private static final int METHODID_DELETE_TENANT_USER = 176;
-  private static final int METHODID_UPDATE_TENANT_USER = 177;
-  private static final int METHODID_GET_TENANT_USER = 178;
-  private static final int METHODID_LIST_TENANT_USER = 179;
-  private static final int METHODID_CREATE_SHORT_VIDEO = 180;
-  private static final int METHODID_STAGE_SHORT_VIDEO = 181;
-  private static final int METHODID_LIST_MY_SHORT_VIDEO = 182;
-  private static final int METHODID_LIST_MY_STAGE_VIDEO = 183;
-  private static final int METHODID_LIST_MY_LIKE_VIDEO = 184;
-  private static final int METHODID_LIST_MY_FAVORITE_VIDEO = 185;
-  private static final int METHODID_GET_SHORT_VIDEO = 186;
-  private static final int METHODID_UPDATE_SHORT_VIDEO = 187;
-  private static final int METHODID_DELETE_SHORT_VIDEO = 188;
-  private static final int METHODID_GET_STAGE_VIDEO = 189;
-  private static final int METHODID_DELETE_STAGE_VIDEO = 190;
-  private static final int METHODID_MANAGEMENT_LIST_SHORT_VIDEO = 191;
-  private static final int METHODID_MANAGEMENT_CENSOR_SHORT_VIDEO = 192;
-  private static final int METHODID_MANAGEMENT_DELETE_SHORT_VIDEO = 193;
-  private static final int METHODID_LIST_SHORT_VIDEO = 194;
-  private static final int METHODID_LIKE_SHORT_VIDEO = 195;
-  private static final int METHODID_FAVORITE_SHORT_VIDEO = 196;
+  private static final int METHODID_RECORD_LIVE_CALLBACK = 164;
+  private static final int METHODID_VIDEO_TO_TEXT_CALLBACK = 165;
+  private static final int METHODID_CREATE_TENANT = 166;
+  private static final int METHODID_GET_TENANT = 167;
+  private static final int METHODID_UPDATE_TENANT = 168;
+  private static final int METHODID_DELETE_TENANT = 169;
+  private static final int METHODID_LIST_TENANT = 170;
+  private static final int METHODID_GET_TENANT_ORG = 171;
+  private static final int METHODID_CREATE_TENANT_DEPT = 172;
+  private static final int METHODID_UPDATE_TENANT_DEPT = 173;
+  private static final int METHODID_DELETE_TENANT_DEPT = 174;
+  private static final int METHODID_GET_TENANT_DEPT = 175;
+  private static final int METHODID_GET_TENANT_DEPT_TYPE = 176;
+  private static final int METHODID_CREATE_TENANT_USER = 177;
+  private static final int METHODID_DELETE_TENANT_USER = 178;
+  private static final int METHODID_UPDATE_TENANT_USER = 179;
+  private static final int METHODID_GET_TENANT_USER = 180;
+  private static final int METHODID_LIST_TENANT_USER = 181;
+  private static final int METHODID_CREATE_SHORT_VIDEO = 182;
+  private static final int METHODID_STAGE_SHORT_VIDEO = 183;
+  private static final int METHODID_LIST_MY_SHORT_VIDEO = 184;
+  private static final int METHODID_LIST_MY_STAGE_VIDEO = 185;
+  private static final int METHODID_LIST_MY_LIKE_VIDEO = 186;
+  private static final int METHODID_LIST_MY_FAVORITE_VIDEO = 187;
+  private static final int METHODID_GET_SHORT_VIDEO = 188;
+  private static final int METHODID_UPDATE_SHORT_VIDEO = 189;
+  private static final int METHODID_DELETE_SHORT_VIDEO = 190;
+  private static final int METHODID_GET_STAGE_VIDEO = 191;
+  private static final int METHODID_DELETE_STAGE_VIDEO = 192;
+  private static final int METHODID_MANAGEMENT_LIST_SHORT_VIDEO = 193;
+  private static final int METHODID_MANAGEMENT_CENSOR_SHORT_VIDEO = 194;
+  private static final int METHODID_MANAGEMENT_DELETE_SHORT_VIDEO = 195;
+  private static final int METHODID_LIST_SHORT_VIDEO = 196;
+  private static final int METHODID_LIKE_SHORT_VIDEO = 197;
+  private static final int METHODID_FAVORITE_SHORT_VIDEO = 198;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -13637,6 +13761,14 @@ public final class glory_apiGrpc {
         case METHODID_GET_RANK:
           serviceImpl.getRank((com.zhijiejiaoyu.glory_api.live.GetRankRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.GetRankResponse>) responseObserver);
+          break;
+        case METHODID_RECORD_LIVE_CALLBACK:
+          serviceImpl.recordLiveCallback((com.zhijiejiaoyu.glory_api.live.RecordLiveCallbackRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.RecordLiveCallbackResponse>) responseObserver);
+          break;
+        case METHODID_VIDEO_TO_TEXT_CALLBACK:
+          serviceImpl.videoToTextCallback((com.zhijiejiaoyu.glory_api.live.VideoToTextCallbackRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.VideoToTextCallbackResponse>) responseObserver);
           break;
         case METHODID_CREATE_TENANT:
           serviceImpl.createTenant((com.zhijiejiaoyu.glory_api.tenant.CreateTenantRequest) request,
@@ -14937,6 +15069,20 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.live.GetRankResponse>(
                 service, METHODID_GET_RANK)))
         .addMethod(
+          getRecordLiveCallbackMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.live.RecordLiveCallbackRequest,
+              com.zhijiejiaoyu.glory_api.live.RecordLiveCallbackResponse>(
+                service, METHODID_RECORD_LIVE_CALLBACK)))
+        .addMethod(
+          getVideoToTextCallbackMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.live.VideoToTextCallbackRequest,
+              com.zhijiejiaoyu.glory_api.live.VideoToTextCallbackResponse>(
+                service, METHODID_VIDEO_TO_TEXT_CALLBACK)))
+        .addMethod(
           getCreateTenantMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -15379,6 +15525,8 @@ public final class glory_apiGrpc {
               .addMethod(getListStudentEvaluationsMethod())
               .addMethod(getIgnoreEvaluationMethod())
               .addMethod(getGetRankMethod())
+              .addMethod(getRecordLiveCallbackMethod())
+              .addMethod(getVideoToTextCallbackMethod())
               .addMethod(getCreateTenantMethod())
               .addMethod(getGetTenantMethod())
               .addMethod(getUpdateTenantMethod())

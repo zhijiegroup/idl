@@ -41,7 +41,7 @@ public final class GloryApiService {
       "t/account_operation.proto\032\037currency/virt" +
       "ual_currency.proto\032\023tenant/tenant.proto\032" +
       "\030tenant/tenant_dept.proto\032\035short_video/s" +
-      "hort_video.proto2\354\272\001\n\tglory_api\022s\n\rCreat" +
+      "hort_video.proto2\374\274\001\n\tglory_api\022s\n\rCreat" +
       "eExample\022\037.glory_api.CreateExampleReques" +
       "t\032 .glory_api.CreateExampleResponse\"\037\322\301\030" +
       "\033/api/example/create_example\022g\n\nGetExamp" +
@@ -532,115 +532,122 @@ public final class GloryApiService {
       "\312\301\030\033/api/live/ignore_evaluation\022X\n\007GetRa" +
       "nk\022\031.glory_api.GetRankRequest\032\032.glory_ap" +
       "i.GetRankResponse\"\026\312\301\030\022/api/live/get_ran" +
-      "k\022n\n\014CreateTenant\022\036.glory_api.CreateTena" +
-      "ntRequest\032\037.glory_api.CreateTenantRespon" +
-      "se\"\035\322\301\030\031/api/tenant/create_tenant\022b\n\tGet" +
-      "Tenant\022\033.glory_api.GetTenantRequest\032\034.gl" +
-      "ory_api.GetTenantResponse\"\032\312\301\030\026/api/tena" +
-      "nt/get_tenant\022n\n\014UpdateTenant\022\036.glory_ap" +
-      "i.UpdateTenantRequest\032\037.glory_api.Update" +
-      "TenantResponse\"\035\322\301\030\031/api/tenant/update_t" +
-      "enant\022n\n\014DeleteTenant\022\036.glory_api.Delete" +
-      "TenantRequest\032\037.glory_api.DeleteTenantRe" +
-      "sponse\"\035\322\301\030\031/api/tenant/delete_tenant\022f\n" +
-      "\nListTenant\022\034.glory_api.ListTenantReques" +
-      "t\032\035.glory_api.ListTenantResponse\"\033\322\301\030\027/a" +
-      "pi/tenant/list_tenant\022k\n\014GetTenantOrg\022\036." +
-      "glory_api.GetTenantOrgRequest\032\037.glory_ap" +
-      "i.GetTenantOrgResponse\"\032\322\301\030\026/api/tenant/" +
-      "tenant_org\022\177\n\020CreateTenantDept\022\".glory_a" +
-      "pi.CreateTenantDeptRequest\032#.glory_api.C" +
-      "reateTenantDeptResponse\"\"\322\301\030\036/api/tenant" +
-      "/create_tenant_dept\022\177\n\020UpdateTenantDept\022" +
-      "\".glory_api.UpdateTenantDeptRequest\032#.gl" +
-      "ory_api.UpdateTenantDeptResponse\"\"\322\301\030\036/a" +
-      "pi/tenant/update_tenant_dept\022\177\n\020DeleteTe" +
-      "nantDept\022\".glory_api.DeleteTenantDeptReq" +
-      "uest\032#.glory_api.DeleteTenantDeptRespons" +
-      "e\"\"\322\301\030\036/api/tenant/delete_tenant_dept\022s\n" +
-      "\rGetTenantDept\022\037.glory_api.GetTenantDept" +
-      "Request\032 .glory_api.GetTenantDeptRespons" +
-      "e\"\037\322\301\030\033/api/tenant/get_tenant_dept\022\204\001\n\021G" +
-      "etTenantDeptType\022#.glory_api.GetTenantDe" +
-      "ptTypeRequest\032$.glory_api.GetTenantDeptT" +
-      "ypeResponse\"$\312\301\030 /api/tenant/get_tenant_" +
-      "dept_type\022\177\n\020CreateTenantUser\022\".glory_ap" +
-      "i.CreateTenantUserRequest\032#.glory_api.Cr" +
-      "eateTenantUserResponse\"\"\322\301\030\036/api/tenant/" +
-      "create_tenant_user\022\177\n\020DeleteTenantUser\022\"" +
-      ".glory_api.DeleteTenantUserRequest\032#.glo" +
-      "ry_api.DeleteTenantUserResponse\"\"\322\301\030\036/ap" +
-      "i/tenant/delete_tenant_user\022\177\n\020UpdateTen" +
-      "antUser\022\".glory_api.UpdateTenantUserRequ" +
-      "est\032#.glory_api.UpdateTenantUserResponse" +
-      "\"\"\322\301\030\036/api/tenant/update_tenant_user\022s\n\r" +
-      "GetTenantUser\022\037.glory_api.GetTenantUserR" +
-      "equest\032 .glory_api.GetTenantUserResponse" +
-      "\"\037\322\301\030\033/api/tenant/get_tenant_user\022w\n\016Lis" +
-      "tTenantUser\022 .glory_api.ListTenantUserRe" +
-      "quest\032!.glory_api.ListTenantUserResponse" +
-      "\" \322\301\030\034/api/tenant/list_tenant_user\022\204\001\n\020C" +
-      "reateShortVideo\022\".glory_api.CreateShortV" +
-      "ideoRequest\032#.glory_api.CreateShortVideo" +
-      "Response\"\'\322\301\030#/api/short_video/create_sh" +
-      "ort_video\022\200\001\n\017StageShortVideo\022!.glory_ap" +
-      "i.StageShortVideoRequest\032\".glory_api.Sta" +
-      "geShortVideoResponse\"&\322\301\030\"/api/short_vid" +
-      "eo/stage_short_video\022\205\001\n\020ListMyShortVide" +
-      "o\022\".glory_api.ListMyShortVideoRequest\032#." +
-      "glory_api.ListMyShortVideoResponse\"(\322\301\030$" +
-      "/api/short_video/list_my_short_video\022\205\001\n" +
-      "\020ListMyStageVideo\022\".glory_api.ListMyStag" +
-      "eVideoRequest\032#.glory_api.ListMyStageVid" +
-      "eoResponse\"(\312\301\030$/api/short_video/list_my" +
-      "_stage_video\022\201\001\n\017ListMyLikeVideo\022!.glory" +
-      "_api.ListMyLikeVideoRequest\032\".glory_api." +
-      "ListMyLikeVideoResponse\"\'\322\301\030#/api/short_" +
-      "video/list_my_like_video\022\221\001\n\023ListMyFavor" +
-      "iteVideo\022%.glory_api.ListMyFavoriteVideo" +
-      "Request\032&.glory_api.ListMyFavoriteVideoR" +
-      "esponse\"+\322\301\030\'/api/short_video/list_my_fa" +
-      "vorite_video\022x\n\rGetShortVideo\022\037.glory_ap" +
-      "i.GetShortVideoRequest\032 .glory_api.GetSh" +
-      "ortVideoResponse\"$\322\301\030 /api/short_video/g" +
-      "et_short_video\022\204\001\n\020UpdateShortVideo\022\".gl" +
-      "ory_api.UpdateShortVideoRequest\032#.glory_" +
-      "api.UpdateShortVideoResponse\"\'\322\301\030#/api/s" +
-      "hort_video/update_short_video\022\204\001\n\020Delete" +
-      "ShortVideo\022\".glory_api.DeleteShortVideoR" +
-      "equest\032#.glory_api.DeleteShortVideoRespo" +
-      "nse\"\'\322\301\030#/api/short_video/delete_short_v" +
-      "ideo\022x\n\rGetStageVideo\022\037.glory_api.GetSta" +
-      "geVideoRequest\032 .glory_api.GetStageVideo" +
-      "Response\"$\322\301\030 /api/short_video/get_stage" +
-      "_video\022\204\001\n\020DeleteStageVideo\022\".glory_api." +
-      "DeleteStageVideoRequest\032#.glory_api.Dele" +
-      "teStageVideoResponse\"\'\322\301\030#/api/short_vid" +
-      "eo/delete_stage_video\022\245\001\n\030ManagementList" +
-      "ShortVideo\022*.glory_api.ManagementListSho" +
-      "rtVideoRequest\032+.glory_api.ManagementLis" +
-      "tShortVideoResponse\"0\322\301\030,/api/short_vide" +
-      "o/management/list_short_video\022\255\001\n\032Manage" +
-      "mentCensorShortVideo\022,.glory_api.Managem" +
-      "entCensorShortVideoRequest\032-.glory_api.M" +
-      "anagementCensorShortVideoResponse\"2\322\301\030./" +
-      "api/short_video/management/censor_short_" +
-      "video\022\255\001\n\032ManagementDeleteShortVideo\022,.g" +
-      "lory_api.ManagementDeleteShortVideoReque" +
-      "st\032-.glory_api.ManagementDeleteShortVide" +
-      "oResponse\"2\322\301\030./api/short_video/manageme" +
-      "nt/delete_short_video\022|\n\016ListShortVideo\022" +
-      " .glory_api.ListShortVideoRequest\032!.glor" +
-      "y_api.ListShortVideoResponse\"%\322\301\030!/api/s" +
-      "hort_video/list_short_video\022|\n\016LikeShort" +
-      "Video\022 .glory_api.LikeShortVideoRequest\032" +
-      "!.glory_api.LikeShortVideoResponse\"%\322\301\030!" +
-      "/api/short_video/like_short_video\022\214\001\n\022Fa" +
-      "voriteShortVideo\022$.glory_api.FavoriteSho" +
-      "rtVideoRequest\032%.glory_api.FavoriteShort" +
-      "VideoResponse\")\322\301\030%/api/short_video/favo" +
-      "rite_short_videoB\036\n\032com.zhijiejiaoyu.glo" +
-      "ry_apiP\001b\006proto3"
+      "k\022\200\001\n\022RecordLiveCallback\022$.glory_api.Rec" +
+      "ordLiveCallbackRequest\032%.glory_api.Recor" +
+      "dLiveCallbackResponse\"\035\322\301\030\031/api/live/rec" +
+      "ord_callback\022\212\001\n\023VideoToTextCallback\022%.g" +
+      "lory_api.VideoToTextCallbackRequest\032&.gl" +
+      "ory_api.VideoToTextCallbackResponse\"$\322\301\030" +
+      " /api/live/video_to_text_callback\022n\n\014Cre" +
+      "ateTenant\022\036.glory_api.CreateTenantReques" +
+      "t\032\037.glory_api.CreateTenantResponse\"\035\322\301\030\031" +
+      "/api/tenant/create_tenant\022b\n\tGetTenant\022\033" +
+      ".glory_api.GetTenantRequest\032\034.glory_api." +
+      "GetTenantResponse\"\032\312\301\030\026/api/tenant/get_t" +
+      "enant\022n\n\014UpdateTenant\022\036.glory_api.Update" +
+      "TenantRequest\032\037.glory_api.UpdateTenantRe" +
+      "sponse\"\035\322\301\030\031/api/tenant/update_tenant\022n\n" +
+      "\014DeleteTenant\022\036.glory_api.DeleteTenantRe" +
+      "quest\032\037.glory_api.DeleteTenantResponse\"\035" +
+      "\322\301\030\031/api/tenant/delete_tenant\022f\n\nListTen" +
+      "ant\022\034.glory_api.ListTenantRequest\032\035.glor" +
+      "y_api.ListTenantResponse\"\033\322\301\030\027/api/tenan" +
+      "t/list_tenant\022k\n\014GetTenantOrg\022\036.glory_ap" +
+      "i.GetTenantOrgRequest\032\037.glory_api.GetTen" +
+      "antOrgResponse\"\032\322\301\030\026/api/tenant/tenant_o" +
+      "rg\022\177\n\020CreateTenantDept\022\".glory_api.Creat" +
+      "eTenantDeptRequest\032#.glory_api.CreateTen" +
+      "antDeptResponse\"\"\322\301\030\036/api/tenant/create_" +
+      "tenant_dept\022\177\n\020UpdateTenantDept\022\".glory_" +
+      "api.UpdateTenantDeptRequest\032#.glory_api." +
+      "UpdateTenantDeptResponse\"\"\322\301\030\036/api/tenan" +
+      "t/update_tenant_dept\022\177\n\020DeleteTenantDept" +
+      "\022\".glory_api.DeleteTenantDeptRequest\032#.g" +
+      "lory_api.DeleteTenantDeptResponse\"\"\322\301\030\036/" +
+      "api/tenant/delete_tenant_dept\022s\n\rGetTena" +
+      "ntDept\022\037.glory_api.GetTenantDeptRequest\032" +
+      " .glory_api.GetTenantDeptResponse\"\037\322\301\030\033/" +
+      "api/tenant/get_tenant_dept\022\204\001\n\021GetTenant" +
+      "DeptType\022#.glory_api.GetTenantDeptTypeRe" +
+      "quest\032$.glory_api.GetTenantDeptTypeRespo" +
+      "nse\"$\312\301\030 /api/tenant/get_tenant_dept_typ" +
+      "e\022\177\n\020CreateTenantUser\022\".glory_api.Create" +
+      "TenantUserRequest\032#.glory_api.CreateTena" +
+      "ntUserResponse\"\"\322\301\030\036/api/tenant/create_t" +
+      "enant_user\022\177\n\020DeleteTenantUser\022\".glory_a" +
+      "pi.DeleteTenantUserRequest\032#.glory_api.D" +
+      "eleteTenantUserResponse\"\"\322\301\030\036/api/tenant" +
+      "/delete_tenant_user\022\177\n\020UpdateTenantUser\022" +
+      "\".glory_api.UpdateTenantUserRequest\032#.gl" +
+      "ory_api.UpdateTenantUserResponse\"\"\322\301\030\036/a" +
+      "pi/tenant/update_tenant_user\022s\n\rGetTenan" +
+      "tUser\022\037.glory_api.GetTenantUserRequest\032 " +
+      ".glory_api.GetTenantUserResponse\"\037\322\301\030\033/a" +
+      "pi/tenant/get_tenant_user\022w\n\016ListTenantU" +
+      "ser\022 .glory_api.ListTenantUserRequest\032!." +
+      "glory_api.ListTenantUserResponse\" \322\301\030\034/a" +
+      "pi/tenant/list_tenant_user\022\204\001\n\020CreateSho" +
+      "rtVideo\022\".glory_api.CreateShortVideoRequ" +
+      "est\032#.glory_api.CreateShortVideoResponse" +
+      "\"\'\322\301\030#/api/short_video/create_short_vide" +
+      "o\022\200\001\n\017StageShortVideo\022!.glory_api.StageS" +
+      "hortVideoRequest\032\".glory_api.StageShortV" +
+      "ideoResponse\"&\322\301\030\"/api/short_video/stage" +
+      "_short_video\022\205\001\n\020ListMyShortVideo\022\".glor" +
+      "y_api.ListMyShortVideoRequest\032#.glory_ap" +
+      "i.ListMyShortVideoResponse\"(\322\301\030$/api/sho" +
+      "rt_video/list_my_short_video\022\205\001\n\020ListMyS" +
+      "tageVideo\022\".glory_api.ListMyStageVideoRe" +
+      "quest\032#.glory_api.ListMyStageVideoRespon" +
+      "se\"(\312\301\030$/api/short_video/list_my_stage_v" +
+      "ideo\022\201\001\n\017ListMyLikeVideo\022!.glory_api.Lis" +
+      "tMyLikeVideoRequest\032\".glory_api.ListMyLi" +
+      "keVideoResponse\"\'\322\301\030#/api/short_video/li" +
+      "st_my_like_video\022\221\001\n\023ListMyFavoriteVideo" +
+      "\022%.glory_api.ListMyFavoriteVideoRequest\032" +
+      "&.glory_api.ListMyFavoriteVideoResponse\"" +
+      "+\322\301\030\'/api/short_video/list_my_favorite_v" +
+      "ideo\022x\n\rGetShortVideo\022\037.glory_api.GetSho" +
+      "rtVideoRequest\032 .glory_api.GetShortVideo" +
+      "Response\"$\322\301\030 /api/short_video/get_short" +
+      "_video\022\204\001\n\020UpdateShortVideo\022\".glory_api." +
+      "UpdateShortVideoRequest\032#.glory_api.Upda" +
+      "teShortVideoResponse\"\'\322\301\030#/api/short_vid" +
+      "eo/update_short_video\022\204\001\n\020DeleteShortVid" +
+      "eo\022\".glory_api.DeleteShortVideoRequest\032#" +
+      ".glory_api.DeleteShortVideoResponse\"\'\322\301\030" +
+      "#/api/short_video/delete_short_video\022x\n\r" +
+      "GetStageVideo\022\037.glory_api.GetStageVideoR" +
+      "equest\032 .glory_api.GetStageVideoResponse" +
+      "\"$\322\301\030 /api/short_video/get_stage_video\022\204" +
+      "\001\n\020DeleteStageVideo\022\".glory_api.DeleteSt" +
+      "ageVideoRequest\032#.glory_api.DeleteStageV" +
+      "ideoResponse\"\'\322\301\030#/api/short_video/delet" +
+      "e_stage_video\022\245\001\n\030ManagementListShortVid" +
+      "eo\022*.glory_api.ManagementListShortVideoR" +
+      "equest\032+.glory_api.ManagementListShortVi" +
+      "deoResponse\"0\322\301\030,/api/short_video/manage" +
+      "ment/list_short_video\022\255\001\n\032ManagementCens" +
+      "orShortVideo\022,.glory_api.ManagementCenso" +
+      "rShortVideoRequest\032-.glory_api.Managemen" +
+      "tCensorShortVideoResponse\"2\322\301\030./api/shor" +
+      "t_video/management/censor_short_video\022\255\001" +
+      "\n\032ManagementDeleteShortVideo\022,.glory_api" +
+      ".ManagementDeleteShortVideoRequest\032-.glo" +
+      "ry_api.ManagementDeleteShortVideoRespons" +
+      "e\"2\322\301\030./api/short_video/management/delet" +
+      "e_short_video\022|\n\016ListShortVideo\022 .glory_" +
+      "api.ListShortVideoRequest\032!.glory_api.Li" +
+      "stShortVideoResponse\"%\322\301\030!/api/short_vid" +
+      "eo/list_short_video\022|\n\016LikeShortVideo\022 ." +
+      "glory_api.LikeShortVideoRequest\032!.glory_" +
+      "api.LikeShortVideoResponse\"%\322\301\030!/api/sho" +
+      "rt_video/like_short_video\022\214\001\n\022FavoriteSh" +
+      "ortVideo\022$.glory_api.FavoriteShortVideoR" +
+      "equest\032%.glory_api.FavoriteShortVideoRes" +
+      "ponse\")\322\301\030%/api/short_video/favorite_sho" +
+      "rt_videoB\036\n\032com.zhijiejiaoyu.glory_apiP\001" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

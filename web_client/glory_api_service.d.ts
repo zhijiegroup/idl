@@ -711,6 +711,14 @@ CreateLivePlanProduct create live plan product */
     request: live_evaluate.GetRankRequest
   ): Promise<live_evaluate.GetRankResponse>;
 
+  RecordLiveCallback(
+    request: live_room.RecordLiveCallbackRequest
+  ): Promise<live_room.RecordLiveCallbackResponse>;
+
+  VideoToTextCallback(
+    request: live_room.VideoToTextCallbackRequest
+  ): Promise<live_room.VideoToTextCallbackResponse>;
+
   /** tenant */
   CreateTenant(
     request: tenant.CreateTenantRequest
