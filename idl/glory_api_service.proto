@@ -683,13 +683,13 @@ service glory_api {
   rpc CreateTenantUser(CreateTenantUserRequest) returns(CreateTenantUserResponse) {
     option (api.post) = '/api/tenant/create_tenant_user';
   }
+  
+  rpc DeleteTenantUser(DeleteTenantUserRequest) returns(DeleteTenantUserResponse) {
+    option (api.post) = '/api/tenant/delete_tenant_user';
+  }
 
   rpc UpdateTenantUser(UpdateTenantUserRequest) returns(UpdateTenantUserResponse) {
     option (api.post) = '/api/tenant/update_tenant_user';
-  }
-
-  rpc DeleteTenantUser(DeleteTenantUserRequest) returns(DeleteTenantUserResponse) {
-    option (api.post) = '/api/tenant/delete_tenant_user';
   }
 
   rpc GetTenantUser(GetTenantUserRequest) returns(GetTenantUserResponse) {
