@@ -18,6 +18,8 @@ private static final long serialVersionUID = 0L;
   private TenantUser() {
     phone = "";
     name = "";
+    role = "";
+    dept = "";
   }
 
   @java.lang.Override
@@ -73,6 +75,28 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            role = s;
+            break;
+          }
+          case 56: {
+
+            roleId = input.readInt64();
+            break;
+          }
+          case 66: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            dept = s;
+            break;
+          }
+          case 72: {
+
+            deptId = input.readInt64();
+            break;
+          }
+          case 82: {
             com.zhijiejiaoyu.glory_api.user.User.Builder subBuilder = null;
             if (user != null) {
               subBuilder = user.toBuilder();
@@ -215,10 +239,108 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int USER_FIELD_NUMBER = 6;
+  public static final int ROLE_FIELD_NUMBER = 6;
+  private volatile java.lang.Object role;
+  /**
+   * <code>string role = 6;</code>
+   * @return The role.
+   */
+  @java.lang.Override
+  public java.lang.String getRole() {
+    java.lang.Object ref = role;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      role = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string role = 6;</code>
+   * @return The bytes for role.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getRoleBytes() {
+    java.lang.Object ref = role;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      role = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ROLE_ID_FIELD_NUMBER = 7;
+  private long roleId;
+  /**
+   * <code>int64 role_id = 7;</code>
+   * @return The roleId.
+   */
+  @java.lang.Override
+  public long getRoleId() {
+    return roleId;
+  }
+
+  public static final int DEPT_FIELD_NUMBER = 8;
+  private volatile java.lang.Object dept;
+  /**
+   * <code>string dept = 8;</code>
+   * @return The dept.
+   */
+  @java.lang.Override
+  public java.lang.String getDept() {
+    java.lang.Object ref = dept;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      dept = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string dept = 8;</code>
+   * @return The bytes for dept.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getDeptBytes() {
+    java.lang.Object ref = dept;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      dept = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DEPT_ID_FIELD_NUMBER = 9;
+  private long deptId;
+  /**
+   * <code>int64 dept_id = 9;</code>
+   * @return The deptId.
+   */
+  @java.lang.Override
+  public long getDeptId() {
+    return deptId;
+  }
+
+  public static final int USER_FIELD_NUMBER = 10;
   private com.zhijiejiaoyu.glory_api.user.User user;
   /**
-   * <code>.glory_api.User user = 6;</code>
+   * <code>.glory_api.User user = 10;</code>
    * @return Whether the user field is set.
    */
   @java.lang.Override
@@ -226,7 +348,7 @@ private static final long serialVersionUID = 0L;
     return user != null;
   }
   /**
-   * <code>.glory_api.User user = 6;</code>
+   * <code>.glory_api.User user = 10;</code>
    * @return The user.
    */
   @java.lang.Override
@@ -234,7 +356,7 @@ private static final long serialVersionUID = 0L;
     return user == null ? com.zhijiejiaoyu.glory_api.user.User.getDefaultInstance() : user;
   }
   /**
-   * <code>.glory_api.User user = 6;</code>
+   * <code>.glory_api.User user = 10;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.user.UserOrBuilder getUserOrBuilder() {
@@ -267,8 +389,20 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, name);
     }
+    if (!getRoleBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, role);
+    }
+    if (roleId != 0L) {
+      output.writeInt64(7, roleId);
+    }
+    if (!getDeptBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, dept);
+    }
+    if (deptId != 0L) {
+      output.writeInt64(9, deptId);
+    }
     if (user != null) {
-      output.writeMessage(6, getUser());
+      output.writeMessage(10, getUser());
     }
     unknownFields.writeTo(output);
   }
@@ -293,9 +427,23 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, name);
     }
+    if (!getRoleBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, role);
+    }
+    if (roleId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(7, roleId);
+    }
+    if (!getDeptBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, dept);
+    }
+    if (deptId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(9, deptId);
+    }
     if (user != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, getUser());
+        .computeMessageSize(10, getUser());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -320,6 +468,14 @@ private static final long serialVersionUID = 0L;
         .equals(other.getPhone())) return false;
     if (!getName()
         .equals(other.getName())) return false;
+    if (!getRole()
+        .equals(other.getRole())) return false;
+    if (getRoleId()
+        != other.getRoleId()) return false;
+    if (!getDept()
+        .equals(other.getDept())) return false;
+    if (getDeptId()
+        != other.getDeptId()) return false;
     if (hasUser() != other.hasUser()) return false;
     if (hasUser()) {
       if (!getUser()
@@ -346,6 +502,16 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getPhone().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + ROLE_FIELD_NUMBER;
+    hash = (53 * hash) + getRole().hashCode();
+    hash = (37 * hash) + ROLE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getRoleId());
+    hash = (37 * hash) + DEPT_FIELD_NUMBER;
+    hash = (53 * hash) + getDept().hashCode();
+    hash = (37 * hash) + DEPT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getDeptId());
     if (hasUser()) {
       hash = (37 * hash) + USER_FIELD_NUMBER;
       hash = (53 * hash) + getUser().hashCode();
@@ -491,6 +657,14 @@ private static final long serialVersionUID = 0L;
 
       name = "";
 
+      role = "";
+
+      roleId = 0L;
+
+      dept = "";
+
+      deptId = 0L;
+
       if (userBuilder == null) {
         user = null;
       } else {
@@ -527,6 +701,10 @@ private static final long serialVersionUID = 0L;
       result.userId = userId;
       result.phone = phone;
       result.name = name;
+      result.role = role;
+      result.roleId = roleId;
+      result.dept = dept;
+      result.deptId = deptId;
       if (userBuilder == null) {
         result.user = user;
       } else {
@@ -593,6 +771,20 @@ private static final long serialVersionUID = 0L;
       if (!other.getName().isEmpty()) {
         name = other.name;
         onChanged();
+      }
+      if (!other.getRole().isEmpty()) {
+        role = other.role;
+        onChanged();
+      }
+      if (other.getRoleId() != 0L) {
+        setRoleId(other.getRoleId());
+      }
+      if (!other.getDept().isEmpty()) {
+        dept = other.dept;
+        onChanged();
+      }
+      if (other.getDeptId() != 0L) {
+        setDeptId(other.getDeptId());
       }
       if (other.hasUser()) {
         mergeUser(other.getUser());
@@ -840,18 +1032,232 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object role = "";
+    /**
+     * <code>string role = 6;</code>
+     * @return The role.
+     */
+    public java.lang.String getRole() {
+      java.lang.Object ref = role;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        role = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string role = 6;</code>
+     * @return The bytes for role.
+     */
+    public com.google.protobuf.ByteString
+        getRoleBytes() {
+      java.lang.Object ref = role;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        role = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string role = 6;</code>
+     * @param value The role to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRole(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      role = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string role = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRole() {
+      
+      role = getDefaultInstance().getRole();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string role = 6;</code>
+     * @param value The bytes for role to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRoleBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      role = value;
+      onChanged();
+      return this;
+    }
+
+    private long roleId ;
+    /**
+     * <code>int64 role_id = 7;</code>
+     * @return The roleId.
+     */
+    @java.lang.Override
+    public long getRoleId() {
+      return roleId;
+    }
+    /**
+     * <code>int64 role_id = 7;</code>
+     * @param value The roleId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRoleId(long value) {
+      
+      roleId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 role_id = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRoleId() {
+      
+      roleId = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object dept = "";
+    /**
+     * <code>string dept = 8;</code>
+     * @return The dept.
+     */
+    public java.lang.String getDept() {
+      java.lang.Object ref = dept;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        dept = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string dept = 8;</code>
+     * @return The bytes for dept.
+     */
+    public com.google.protobuf.ByteString
+        getDeptBytes() {
+      java.lang.Object ref = dept;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        dept = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string dept = 8;</code>
+     * @param value The dept to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDept(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      dept = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string dept = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDept() {
+      
+      dept = getDefaultInstance().getDept();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string dept = 8;</code>
+     * @param value The bytes for dept to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeptBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      dept = value;
+      onChanged();
+      return this;
+    }
+
+    private long deptId ;
+    /**
+     * <code>int64 dept_id = 9;</code>
+     * @return The deptId.
+     */
+    @java.lang.Override
+    public long getDeptId() {
+      return deptId;
+    }
+    /**
+     * <code>int64 dept_id = 9;</code>
+     * @param value The deptId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeptId(long value) {
+      
+      deptId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 dept_id = 9;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDeptId() {
+      
+      deptId = 0L;
+      onChanged();
+      return this;
+    }
+
     private com.zhijiejiaoyu.glory_api.user.User user;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder> userBuilder;
     /**
-     * <code>.glory_api.User user = 6;</code>
+     * <code>.glory_api.User user = 10;</code>
      * @return Whether the user field is set.
      */
     public boolean hasUser() {
       return userBuilder != null || user != null;
     }
     /**
-     * <code>.glory_api.User user = 6;</code>
+     * <code>.glory_api.User user = 10;</code>
      * @return The user.
      */
     public com.zhijiejiaoyu.glory_api.user.User getUser() {
@@ -862,7 +1268,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.glory_api.User user = 6;</code>
+     * <code>.glory_api.User user = 10;</code>
      */
     public Builder setUser(com.zhijiejiaoyu.glory_api.user.User value) {
       if (userBuilder == null) {
@@ -878,7 +1284,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User user = 6;</code>
+     * <code>.glory_api.User user = 10;</code>
      */
     public Builder setUser(
         com.zhijiejiaoyu.glory_api.user.User.Builder builderForValue) {
@@ -892,7 +1298,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User user = 6;</code>
+     * <code>.glory_api.User user = 10;</code>
      */
     public Builder mergeUser(com.zhijiejiaoyu.glory_api.user.User value) {
       if (userBuilder == null) {
@@ -910,7 +1316,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User user = 6;</code>
+     * <code>.glory_api.User user = 10;</code>
      */
     public Builder clearUser() {
       if (userBuilder == null) {
@@ -924,7 +1330,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User user = 6;</code>
+     * <code>.glory_api.User user = 10;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.User.Builder getUserBuilder() {
       
@@ -932,7 +1338,7 @@ private static final long serialVersionUID = 0L;
       return getUserFieldBuilder().getBuilder();
     }
     /**
-     * <code>.glory_api.User user = 6;</code>
+     * <code>.glory_api.User user = 10;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.UserOrBuilder getUserOrBuilder() {
       if (userBuilder != null) {
@@ -943,7 +1349,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.glory_api.User user = 6;</code>
+     * <code>.glory_api.User user = 10;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder> 

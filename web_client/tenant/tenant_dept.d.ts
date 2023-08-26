@@ -74,6 +74,10 @@ export interface TenantUser {
   user_id?: string;
   phone?: string;
   name?: string;
+  role?: string;
+  role_id?: string;
+  dept?: string;
+  dept_id?: string;
   user?: user.User;
 }
 

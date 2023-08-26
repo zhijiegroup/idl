@@ -44,17 +44,53 @@ public interface TenantUserOrBuilder extends
       getNameBytes();
 
   /**
-   * <code>.glory_api.User user = 6;</code>
+   * <code>string role = 6;</code>
+   * @return The role.
+   */
+  java.lang.String getRole();
+  /**
+   * <code>string role = 6;</code>
+   * @return The bytes for role.
+   */
+  com.google.protobuf.ByteString
+      getRoleBytes();
+
+  /**
+   * <code>int64 role_id = 7;</code>
+   * @return The roleId.
+   */
+  long getRoleId();
+
+  /**
+   * <code>string dept = 8;</code>
+   * @return The dept.
+   */
+  java.lang.String getDept();
+  /**
+   * <code>string dept = 8;</code>
+   * @return The bytes for dept.
+   */
+  com.google.protobuf.ByteString
+      getDeptBytes();
+
+  /**
+   * <code>int64 dept_id = 9;</code>
+   * @return The deptId.
+   */
+  long getDeptId();
+
+  /**
+   * <code>.glory_api.User user = 10;</code>
    * @return Whether the user field is set.
    */
   boolean hasUser();
   /**
-   * <code>.glory_api.User user = 6;</code>
+   * <code>.glory_api.User user = 10;</code>
    * @return The user.
    */
   com.zhijiejiaoyu.glory_api.user.User getUser();
   /**
-   * <code>.glory_api.User user = 6;</code>
+   * <code>.glory_api.User user = 10;</code>
    */
   com.zhijiejiaoyu.glory_api.user.UserOrBuilder getUserOrBuilder();
 }
