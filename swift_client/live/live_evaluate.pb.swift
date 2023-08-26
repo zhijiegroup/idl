@@ -228,6 +228,26 @@ struct GloryApi_EvaluateDetail {
   init() {}
 }
 
+struct GloryApi_AiResult {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var liveAiFeedbackID: Int64 = 0
+
+  var roomID: Int64 = 0
+
+  var feedback: String = String()
+
+  var userAttitude: String = String()
+
+  var createdAt: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
 struct GloryApi_GetEvaluateDetailRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -295,6 +315,8 @@ struct GloryApi_GetEvaluateDetailResponse {
   var aiFeedback: String = String()
 
   var baseline: Bool = false
+
+  var aiResult: [GloryApi_AiResult] = []
 
   var detail: [GloryApi_EvaluateDetail] = []
 
@@ -581,6 +603,50 @@ struct GloryApi_IgnoreLiveEvaluationRequest {
 }
 
 struct GloryApi_IgnoreLiveEvaluationResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+}
+
+struct GloryApi_RegenerationAiFeedbackRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var roomID: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+struct GloryApi_RegenerationAiFeedbackResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1096,6 +1162,7 @@ extension GloryApi_ListPersonalEvaluateRequest: @unchecked Sendable {}
 extension GloryApi_ListPersonalEvaluateResponse: @unchecked Sendable {}
 extension GloryApi_EvaluateSubOption: @unchecked Sendable {}
 extension GloryApi_EvaluateDetail: @unchecked Sendable {}
+extension GloryApi_AiResult: @unchecked Sendable {}
 extension GloryApi_GetEvaluateDetailRequest: @unchecked Sendable {}
 extension GloryApi_GetEvaluateDetailResponse: @unchecked Sendable {}
 extension GloryApi_SubmitEvaluateRequest: @unchecked Sendable {}
@@ -1108,6 +1175,8 @@ extension GloryApi_ListStudentEvalutionsRequest: @unchecked Sendable {}
 extension GloryApi_ListStudentEvalutionsResponse: @unchecked Sendable {}
 extension GloryApi_IgnoreLiveEvaluationRequest: @unchecked Sendable {}
 extension GloryApi_IgnoreLiveEvaluationResponse: @unchecked Sendable {}
+extension GloryApi_RegenerationAiFeedbackRequest: @unchecked Sendable {}
+extension GloryApi_RegenerationAiFeedbackResponse: @unchecked Sendable {}
 extension GloryApi_LiveRankDetail: @unchecked Sendable {}
 extension GloryApi_LiveRankMine: @unchecked Sendable {}
 extension GloryApi_LiveRank: @unchecked Sendable {}
@@ -1562,6 +1631,62 @@ extension GloryApi_EvaluateDetail: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
+extension GloryApi_AiResult: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".AiResult"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "live_ai_feedback_id"),
+    2: .standard(proto: "room_id"),
+    3: .same(proto: "feedback"),
+    4: .standard(proto: "user_attitude"),
+    5: .standard(proto: "created_at"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.liveAiFeedbackID) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.roomID) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.feedback) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.userAttitude) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.liveAiFeedbackID != 0 {
+      try visitor.visitSingularInt64Field(value: self.liveAiFeedbackID, fieldNumber: 1)
+    }
+    if self.roomID != 0 {
+      try visitor.visitSingularInt64Field(value: self.roomID, fieldNumber: 2)
+    }
+    if !self.feedback.isEmpty {
+      try visitor.visitSingularStringField(value: self.feedback, fieldNumber: 3)
+    }
+    if !self.userAttitude.isEmpty {
+      try visitor.visitSingularStringField(value: self.userAttitude, fieldNumber: 4)
+    }
+    if !self.createdAt.isEmpty {
+      try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 5)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_AiResult, rhs: GloryApi_AiResult) -> Bool {
+    if lhs.liveAiFeedbackID != rhs.liveAiFeedbackID {return false}
+    if lhs.roomID != rhs.roomID {return false}
+    if lhs.feedback != rhs.feedback {return false}
+    if lhs.userAttitude != rhs.userAttitude {return false}
+    if lhs.createdAt != rhs.createdAt {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
 extension GloryApi_GetEvaluateDetailRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetEvaluateDetailRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
@@ -1624,7 +1749,8 @@ extension GloryApi_GetEvaluateDetailResponse: SwiftProtobuf.Message, SwiftProtob
     9: .same(proto: "score"),
     10: .standard(proto: "ai_feedback"),
     11: .same(proto: "baseline"),
-    12: .same(proto: "detail"),
+    12: .standard(proto: "ai_result"),
+    100: .same(proto: "detail"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1644,7 +1770,8 @@ extension GloryApi_GetEvaluateDetailResponse: SwiftProtobuf.Message, SwiftProtob
       case 9: try { try decoder.decodeSingularDoubleField(value: &self.score) }()
       case 10: try { try decoder.decodeSingularStringField(value: &self.aiFeedback) }()
       case 11: try { try decoder.decodeSingularBoolField(value: &self.baseline) }()
-      case 12: try { try decoder.decodeRepeatedMessageField(value: &self.detail) }()
+      case 12: try { try decoder.decodeRepeatedMessageField(value: &self.aiResult) }()
+      case 100: try { try decoder.decodeRepeatedMessageField(value: &self.detail) }()
       default: break
       }
     }
@@ -1688,8 +1815,11 @@ extension GloryApi_GetEvaluateDetailResponse: SwiftProtobuf.Message, SwiftProtob
     if self.baseline != false {
       try visitor.visitSingularBoolField(value: self.baseline, fieldNumber: 11)
     }
+    if !self.aiResult.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.aiResult, fieldNumber: 12)
+    }
     if !self.detail.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.detail, fieldNumber: 12)
+      try visitor.visitRepeatedMessageField(value: self.detail, fieldNumber: 100)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1706,6 +1836,7 @@ extension GloryApi_GetEvaluateDetailResponse: SwiftProtobuf.Message, SwiftProtob
     if lhs.score != rhs.score {return false}
     if lhs.aiFeedback != rhs.aiFeedback {return false}
     if lhs.baseline != rhs.baseline {return false}
+    if lhs.aiResult != rhs.aiResult {return false}
     if lhs.detail != rhs.detail {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -2268,6 +2399,84 @@ extension GloryApi_IgnoreLiveEvaluationResponse: SwiftProtobuf.Message, SwiftPro
   }
 
   static func ==(lhs: GloryApi_IgnoreLiveEvaluationResponse, rhs: GloryApi_IgnoreLiveEvaluationResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_RegenerationAiFeedbackRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".RegenerationAiFeedbackRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    2: .standard(proto: "room_id"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.roomID) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if self.roomID != 0 {
+      try visitor.visitSingularInt64Field(value: self.roomID, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_RegenerationAiFeedbackRequest, rhs: GloryApi_RegenerationAiFeedbackRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.roomID != rhs.roomID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_RegenerationAiFeedbackResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".RegenerationAiFeedbackResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_RegenerationAiFeedbackResponse, rhs: GloryApi_RegenerationAiFeedbackResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

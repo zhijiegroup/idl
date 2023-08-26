@@ -63,6 +63,14 @@ export interface EvaluateDetail {
   suboption?: Array<EvaluateSubOption>;
 }
 
+export interface AiResult {
+  live_ai_feedback_id?: string;
+  room_id?: string;
+  feedback?: string;
+  user_attitude?: string;
+  created_at?: string;
+}
+
 export interface GetEvaluateDetailRequest {
   base_request?: base.BaseRequest;
   room_id?: string;
@@ -82,6 +90,7 @@ export interface GetEvaluateDetailResponse {
   score?: number;
   ai_feedback?: string;
   baseline?: boolean;
+  ai_result?: Array<AiResult>;
   detail?: Array<EvaluateDetail>;
 }
 
@@ -159,6 +168,15 @@ export interface IgnoreLiveEvaluationRequest {
 }
 
 export interface IgnoreLiveEvaluationResponse {
+  base_resp?: base.BaseResponse;
+}
+
+export interface RegenerationAiFeedbackRequest {
+  base_request?: base.BaseRequest;
+  room_id?: string;
+}
+
+export interface RegenerationAiFeedbackResponse {
   base_resp?: base.BaseResponse;
 }
 

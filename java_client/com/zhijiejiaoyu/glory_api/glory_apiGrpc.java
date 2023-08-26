@@ -5161,6 +5161,37 @@ public final class glory_apiGrpc {
     return getVideoToTextCallbackMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.RegenerationAiFeedbackRequest,
+      com.zhijiejiaoyu.glory_api.live.RegenerationAiFeedbackResponse> getRegenerationAiFeedbackMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RegenerationAiFeedback",
+      requestType = com.zhijiejiaoyu.glory_api.live.RegenerationAiFeedbackRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.live.RegenerationAiFeedbackResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.RegenerationAiFeedbackRequest,
+      com.zhijiejiaoyu.glory_api.live.RegenerationAiFeedbackResponse> getRegenerationAiFeedbackMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.RegenerationAiFeedbackRequest, com.zhijiejiaoyu.glory_api.live.RegenerationAiFeedbackResponse> getRegenerationAiFeedbackMethod;
+    if ((getRegenerationAiFeedbackMethod = glory_apiGrpc.getRegenerationAiFeedbackMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getRegenerationAiFeedbackMethod = glory_apiGrpc.getRegenerationAiFeedbackMethod) == null) {
+          glory_apiGrpc.getRegenerationAiFeedbackMethod = getRegenerationAiFeedbackMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.live.RegenerationAiFeedbackRequest, com.zhijiejiaoyu.glory_api.live.RegenerationAiFeedbackResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RegenerationAiFeedback"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.RegenerationAiFeedbackRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.RegenerationAiFeedbackResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("RegenerationAiFeedback"))
+              .build();
+        }
+      }
+    }
+    return getRegenerationAiFeedbackMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreateTenantRequest,
       com.zhijiejiaoyu.glory_api.tenant.CreateTenantResponse> getCreateTenantMethod;
 
@@ -7525,6 +7556,13 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    default void regenerationAiFeedback(com.zhijiejiaoyu.glory_api.live.RegenerationAiFeedbackRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.RegenerationAiFeedbackResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRegenerationAiFeedbackMethod(), responseObserver);
+    }
+
+    /**
      * <pre>
      *tenant
      * </pre>
@@ -9275,6 +9313,14 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public void regenerationAiFeedback(com.zhijiejiaoyu.glory_api.live.RegenerationAiFeedbackRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.RegenerationAiFeedbackResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRegenerationAiFeedbackMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
      * <pre>
      *tenant
      * </pre>
@@ -10879,6 +10925,13 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.live.VideoToTextCallbackResponse videoToTextCallback(com.zhijiejiaoyu.glory_api.live.VideoToTextCallbackRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getVideoToTextCallbackMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.live.RegenerationAiFeedbackResponse regenerationAiFeedback(com.zhijiejiaoyu.glory_api.live.RegenerationAiFeedbackRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRegenerationAiFeedbackMethod(), getCallOptions(), request);
     }
 
     /**
@@ -12621,6 +12674,14 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.live.RegenerationAiFeedbackResponse> regenerationAiFeedback(
+        com.zhijiejiaoyu.glory_api.live.RegenerationAiFeedbackRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRegenerationAiFeedbackMethod(), getCallOptions()), request);
+    }
+
+    /**
      * <pre>
      *tenant
      * </pre>
@@ -13116,40 +13177,41 @@ public final class glory_apiGrpc {
   private static final int METHODID_GET_RANK = 163;
   private static final int METHODID_RECORD_LIVE_CALLBACK = 164;
   private static final int METHODID_VIDEO_TO_TEXT_CALLBACK = 165;
-  private static final int METHODID_CREATE_TENANT = 166;
-  private static final int METHODID_GET_TENANT = 167;
-  private static final int METHODID_UPDATE_TENANT = 168;
-  private static final int METHODID_DELETE_TENANT = 169;
-  private static final int METHODID_LIST_TENANT = 170;
-  private static final int METHODID_GET_TENANT_ORG = 171;
-  private static final int METHODID_CREATE_TENANT_DEPT = 172;
-  private static final int METHODID_UPDATE_TENANT_DEPT = 173;
-  private static final int METHODID_DELETE_TENANT_DEPT = 174;
-  private static final int METHODID_GET_TENANT_DEPT = 175;
-  private static final int METHODID_GET_TENANT_DEPT_TYPE = 176;
-  private static final int METHODID_CREATE_TENANT_USER = 177;
-  private static final int METHODID_DELETE_TENANT_USER = 178;
-  private static final int METHODID_UPDATE_TENANT_USER = 179;
-  private static final int METHODID_GET_TENANT_USER = 180;
-  private static final int METHODID_LIST_TENANT_USER = 181;
-  private static final int METHODID_CREATE_SHORT_VIDEO = 182;
-  private static final int METHODID_STAGE_SHORT_VIDEO = 183;
-  private static final int METHODID_LIST_MY_SHORT_VIDEO = 184;
-  private static final int METHODID_LIST_MY_STAGE_VIDEO = 185;
-  private static final int METHODID_LIST_MY_LIKE_VIDEO = 186;
-  private static final int METHODID_LIST_MY_FAVORITE_VIDEO = 187;
-  private static final int METHODID_GET_SHORT_VIDEO = 188;
-  private static final int METHODID_UPDATE_SHORT_VIDEO = 189;
-  private static final int METHODID_DELETE_SHORT_VIDEO = 190;
-  private static final int METHODID_GET_STAGE_VIDEO = 191;
-  private static final int METHODID_DELETE_STAGE_VIDEO = 192;
-  private static final int METHODID_UPDATE_STAGE_VIDEO = 193;
-  private static final int METHODID_MANAGEMENT_LIST_SHORT_VIDEO = 194;
-  private static final int METHODID_MANAGEMENT_CENSOR_SHORT_VIDEO = 195;
-  private static final int METHODID_MANAGEMENT_DELETE_SHORT_VIDEO = 196;
-  private static final int METHODID_LIST_SHORT_VIDEO = 197;
-  private static final int METHODID_LIKE_SHORT_VIDEO = 198;
-  private static final int METHODID_FAVORITE_SHORT_VIDEO = 199;
+  private static final int METHODID_REGENERATION_AI_FEEDBACK = 166;
+  private static final int METHODID_CREATE_TENANT = 167;
+  private static final int METHODID_GET_TENANT = 168;
+  private static final int METHODID_UPDATE_TENANT = 169;
+  private static final int METHODID_DELETE_TENANT = 170;
+  private static final int METHODID_LIST_TENANT = 171;
+  private static final int METHODID_GET_TENANT_ORG = 172;
+  private static final int METHODID_CREATE_TENANT_DEPT = 173;
+  private static final int METHODID_UPDATE_TENANT_DEPT = 174;
+  private static final int METHODID_DELETE_TENANT_DEPT = 175;
+  private static final int METHODID_GET_TENANT_DEPT = 176;
+  private static final int METHODID_GET_TENANT_DEPT_TYPE = 177;
+  private static final int METHODID_CREATE_TENANT_USER = 178;
+  private static final int METHODID_DELETE_TENANT_USER = 179;
+  private static final int METHODID_UPDATE_TENANT_USER = 180;
+  private static final int METHODID_GET_TENANT_USER = 181;
+  private static final int METHODID_LIST_TENANT_USER = 182;
+  private static final int METHODID_CREATE_SHORT_VIDEO = 183;
+  private static final int METHODID_STAGE_SHORT_VIDEO = 184;
+  private static final int METHODID_LIST_MY_SHORT_VIDEO = 185;
+  private static final int METHODID_LIST_MY_STAGE_VIDEO = 186;
+  private static final int METHODID_LIST_MY_LIKE_VIDEO = 187;
+  private static final int METHODID_LIST_MY_FAVORITE_VIDEO = 188;
+  private static final int METHODID_GET_SHORT_VIDEO = 189;
+  private static final int METHODID_UPDATE_SHORT_VIDEO = 190;
+  private static final int METHODID_DELETE_SHORT_VIDEO = 191;
+  private static final int METHODID_GET_STAGE_VIDEO = 192;
+  private static final int METHODID_DELETE_STAGE_VIDEO = 193;
+  private static final int METHODID_UPDATE_STAGE_VIDEO = 194;
+  private static final int METHODID_MANAGEMENT_LIST_SHORT_VIDEO = 195;
+  private static final int METHODID_MANAGEMENT_CENSOR_SHORT_VIDEO = 196;
+  private static final int METHODID_MANAGEMENT_DELETE_SHORT_VIDEO = 197;
+  private static final int METHODID_LIST_SHORT_VIDEO = 198;
+  private static final int METHODID_LIKE_SHORT_VIDEO = 199;
+  private static final int METHODID_FAVORITE_SHORT_VIDEO = 200;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -13831,6 +13893,10 @@ public final class glory_apiGrpc {
         case METHODID_VIDEO_TO_TEXT_CALLBACK:
           serviceImpl.videoToTextCallback((com.zhijiejiaoyu.glory_api.live.VideoToTextCallbackRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.VideoToTextCallbackResponse>) responseObserver);
+          break;
+        case METHODID_REGENERATION_AI_FEEDBACK:
+          serviceImpl.regenerationAiFeedback((com.zhijiejiaoyu.glory_api.live.RegenerationAiFeedbackRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.RegenerationAiFeedbackResponse>) responseObserver);
           break;
         case METHODID_CREATE_TENANT:
           serviceImpl.createTenant((com.zhijiejiaoyu.glory_api.tenant.CreateTenantRequest) request,
@@ -15149,6 +15215,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.live.VideoToTextCallbackResponse>(
                 service, METHODID_VIDEO_TO_TEXT_CALLBACK)))
         .addMethod(
+          getRegenerationAiFeedbackMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.live.RegenerationAiFeedbackRequest,
+              com.zhijiejiaoyu.glory_api.live.RegenerationAiFeedbackResponse>(
+                service, METHODID_REGENERATION_AI_FEEDBACK)))
+        .addMethod(
           getCreateTenantMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -15600,6 +15673,7 @@ public final class glory_apiGrpc {
               .addMethod(getGetRankMethod())
               .addMethod(getRecordLiveCallbackMethod())
               .addMethod(getVideoToTextCallbackMethod())
+              .addMethod(getRegenerationAiFeedbackMethod())
               .addMethod(getCreateTenantMethod())
               .addMethod(getGetTenantMethod())
               .addMethod(getUpdateTenantMethod())

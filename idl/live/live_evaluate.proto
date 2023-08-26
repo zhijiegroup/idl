@@ -62,6 +62,14 @@ message EvaluateDetail {
     repeated EvaluateSubOption suboption = 5;
 }
 
+message AiResult {
+    int64 live_ai_feedback_id  = 1;
+    int64 room_id = 2;
+    string feedback = 3;
+    string user_attitude = 4;
+    string created_at = 5;
+}
+
 message GetEvaluateDetailRequest {
     base.BaseRequest base_request = 1;
     int64 room_id = 2;
@@ -80,7 +88,8 @@ message GetEvaluateDetailResponse {
     double score = 9;
     string ai_feedback = 10;
     bool baseline = 11;
-    repeated EvaluateDetail detail = 12;
+    repeated AiResult ai_result = 12;
+    repeated EvaluateDetail detail = 100;
 }
 
 message SubmitEvaluateRequest {
