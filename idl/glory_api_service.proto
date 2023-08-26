@@ -759,6 +759,10 @@ service glory_api {
     option (api.post) = '/api/short_video/delete_stage_video';
   }
 
+  rpc UpdateStageVideo(UpdateStageVideoRequest) returns (UpdateStageVideoResponse) {
+    option (api.post) = '/api/short_video/update_stage_video';
+  }
+
   // 平台短短视频列表
   rpc ManagementListShortVideo(ManagementListShortVideoRequest) returns (ManagementListShortVideoResponse) {
     option (api.post) = '/api/short_video/management/list_short_video';
