@@ -101,22 +101,21 @@ message DeleteTenantUserResponse {
 
 message UpdateTenantUserRequest {
     base.BaseRequest base_request = 1;
-    TenantUser user = 2;
+    User user = 2;
 }
 
 message UpdateTenantUserResponse {
     base.BaseResponse base_resp = 1;
-    int64 tenant_user_id = 2;
 }
 
 message GetTenantUserRequest {
     base.BaseRequest base_request = 1;
-    int64 tenant_user_id = 2;
+    int64 user_id = 2;
 }
 
 message GetTenantUserResponse {
     base.BaseResponse base_resp = 1;
-    TenantUser user = 2;
+    User user = 2;
 }
 
 message ListTenantUserRequest {
