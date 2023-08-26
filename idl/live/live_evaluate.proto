@@ -157,6 +157,16 @@ message IgnoreLiveEvaluationRequest {
 message IgnoreLiveEvaluationResponse {
     base.BaseResponse base_resp = 1;
 }
+
+message RegenerationAiFeedbackRequest {
+    base.BaseRequest base_request = 1;
+    int64 room_id = 2;
+}
+
+message RegenerationAiFeedbackResponse {
+    base.BaseResponse base_resp = 1;
+}
+
 message LiveRankDetail {
     string user_name = 1;
     string tenant = 2;
