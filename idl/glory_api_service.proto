@@ -638,6 +638,12 @@ service glory_api {
   rpc GetRank(GetRankRequest) returns (GetRankResponse) {
     option (api.get) = '/api/live/get_rank';
   }
+  rpc RecordLiveCallback(RecordLiveCallbackRequest) returns (RecordLiveCallbackResponse) {
+    option (api.post) = '/api/live/record_callback';
+  }
+  rpc VideoToTextCallback(VideoToTextCallbackRequest) returns (VideoToTextCallbackResponse) {
+    option (api.post) = '/api/live/video_to_text_callback';
+  }
   //tenant
   rpc CreateTenant(CreateTenantRequest) returns (CreateTenantResponse) {
     option (api.post) = '/api/tenant/create_tenant';
