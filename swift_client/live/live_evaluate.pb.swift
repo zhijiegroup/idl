@@ -228,6 +228,26 @@ struct GloryApi_EvaluateDetail {
   init() {}
 }
 
+struct GloryApi_AiResult {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var liveAiFeedbackID: Int64 = 0
+
+  var roomID: Int64 = 0
+
+  var feedback: String = String()
+
+  var userAttitude: String = String()
+
+  var createdAt: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
 struct GloryApi_GetEvaluateDetailRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -295,6 +315,8 @@ struct GloryApi_GetEvaluateDetailResponse {
   var aiFeedback: String = String()
 
   var baseline: Bool = false
+
+  var aiResult: [GloryApi_AiResult] = []
 
   var detail: [GloryApi_EvaluateDetail] = []
 
@@ -1140,6 +1162,7 @@ extension GloryApi_ListPersonalEvaluateRequest: @unchecked Sendable {}
 extension GloryApi_ListPersonalEvaluateResponse: @unchecked Sendable {}
 extension GloryApi_EvaluateSubOption: @unchecked Sendable {}
 extension GloryApi_EvaluateDetail: @unchecked Sendable {}
+extension GloryApi_AiResult: @unchecked Sendable {}
 extension GloryApi_GetEvaluateDetailRequest: @unchecked Sendable {}
 extension GloryApi_GetEvaluateDetailResponse: @unchecked Sendable {}
 extension GloryApi_SubmitEvaluateRequest: @unchecked Sendable {}
@@ -1608,6 +1631,62 @@ extension GloryApi_EvaluateDetail: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
+extension GloryApi_AiResult: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".AiResult"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "live_ai_feedback_id"),
+    2: .standard(proto: "room_id"),
+    3: .same(proto: "feedback"),
+    4: .standard(proto: "user_attitude"),
+    5: .standard(proto: "created_at"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.liveAiFeedbackID) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.roomID) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.feedback) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.userAttitude) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.liveAiFeedbackID != 0 {
+      try visitor.visitSingularInt64Field(value: self.liveAiFeedbackID, fieldNumber: 1)
+    }
+    if self.roomID != 0 {
+      try visitor.visitSingularInt64Field(value: self.roomID, fieldNumber: 2)
+    }
+    if !self.feedback.isEmpty {
+      try visitor.visitSingularStringField(value: self.feedback, fieldNumber: 3)
+    }
+    if !self.userAttitude.isEmpty {
+      try visitor.visitSingularStringField(value: self.userAttitude, fieldNumber: 4)
+    }
+    if !self.createdAt.isEmpty {
+      try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 5)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_AiResult, rhs: GloryApi_AiResult) -> Bool {
+    if lhs.liveAiFeedbackID != rhs.liveAiFeedbackID {return false}
+    if lhs.roomID != rhs.roomID {return false}
+    if lhs.feedback != rhs.feedback {return false}
+    if lhs.userAttitude != rhs.userAttitude {return false}
+    if lhs.createdAt != rhs.createdAt {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
 extension GloryApi_GetEvaluateDetailRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetEvaluateDetailRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
@@ -1670,7 +1749,8 @@ extension GloryApi_GetEvaluateDetailResponse: SwiftProtobuf.Message, SwiftProtob
     9: .same(proto: "score"),
     10: .standard(proto: "ai_feedback"),
     11: .same(proto: "baseline"),
-    12: .same(proto: "detail"),
+    12: .standard(proto: "ai_result"),
+    100: .same(proto: "detail"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1690,7 +1770,8 @@ extension GloryApi_GetEvaluateDetailResponse: SwiftProtobuf.Message, SwiftProtob
       case 9: try { try decoder.decodeSingularDoubleField(value: &self.score) }()
       case 10: try { try decoder.decodeSingularStringField(value: &self.aiFeedback) }()
       case 11: try { try decoder.decodeSingularBoolField(value: &self.baseline) }()
-      case 12: try { try decoder.decodeRepeatedMessageField(value: &self.detail) }()
+      case 12: try { try decoder.decodeRepeatedMessageField(value: &self.aiResult) }()
+      case 100: try { try decoder.decodeRepeatedMessageField(value: &self.detail) }()
       default: break
       }
     }
@@ -1734,8 +1815,11 @@ extension GloryApi_GetEvaluateDetailResponse: SwiftProtobuf.Message, SwiftProtob
     if self.baseline != false {
       try visitor.visitSingularBoolField(value: self.baseline, fieldNumber: 11)
     }
+    if !self.aiResult.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.aiResult, fieldNumber: 12)
+    }
     if !self.detail.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.detail, fieldNumber: 12)
+      try visitor.visitRepeatedMessageField(value: self.detail, fieldNumber: 100)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1752,6 +1836,7 @@ extension GloryApi_GetEvaluateDetailResponse: SwiftProtobuf.Message, SwiftProtob
     if lhs.score != rhs.score {return false}
     if lhs.aiFeedback != rhs.aiFeedback {return false}
     if lhs.baseline != rhs.baseline {return false}
+    if lhs.aiResult != rhs.aiResult {return false}
     if lhs.detail != rhs.detail {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
