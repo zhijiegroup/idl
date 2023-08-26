@@ -17,6 +17,11 @@ private static final long serialVersionUID = 0L;
   }
   private StageVideo() {
     videoUrl = "";
+    videoPath = "";
+    coverUrl = "";
+    coverPath = "";
+    description = "";
+    products = java.util.Collections.emptyList();
     createdAt = "";
   }
 
@@ -40,6 +45,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0 = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -61,17 +67,68 @@ private static final long serialVersionUID = 0L;
             videoUrl = s;
             break;
           }
-          case 24: {
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            videoPath = s;
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            coverUrl = s;
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            coverPath = s;
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            description = s;
+            break;
+          }
+          case 56: {
+
+            visibility = input.readInt32();
+            break;
+          }
+          case 64: {
 
             videoLength = input.readInt32();
             break;
           }
-          case 32: {
+          case 72: {
 
             videoDuration = input.readInt32();
             break;
           }
-          case 42: {
+          case 82: {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              products = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct>();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            products.add(
+                input.readMessage(com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct.parser(), extensionRegistry));
+            break;
+          }
+          case 90: {
+            com.zhijiejiaoyu.glory_api.short_video.ShortVideoShop.Builder subBuilder = null;
+            if (shop != null) {
+              subBuilder = shop.toBuilder();
+            }
+            shop = input.readMessage(com.zhijiejiaoyu.glory_api.short_video.ShortVideoShop.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(shop);
+              shop = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 98: {
             java.lang.String s = input.readStringRequireUtf8();
 
             createdAt = s;
@@ -92,6 +149,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        products = java.util.Collections.unmodifiableList(products);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -128,7 +188,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object videoUrl;
   /**
    * <pre>
-   * 短视频URL
+   * 暂存视频URL
    * </pre>
    *
    * <code>string video_url = 2;</code>
@@ -149,7 +209,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 短视频URL
+   * 暂存视频URL
    * </pre>
    *
    * <code>string video_url = 2;</code>
@@ -170,14 +230,213 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int VIDEO_LENGTH_FIELD_NUMBER = 3;
+  public static final int VIDEO_PATH_FIELD_NUMBER = 3;
+  private volatile java.lang.Object videoPath;
+  /**
+   * <pre>
+   * 暂存视频OSS路径
+   * </pre>
+   *
+   * <code>string video_path = 3;</code>
+   * @return The videoPath.
+   */
+  @java.lang.Override
+  public java.lang.String getVideoPath() {
+    java.lang.Object ref = videoPath;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      videoPath = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 暂存视频OSS路径
+   * </pre>
+   *
+   * <code>string video_path = 3;</code>
+   * @return The bytes for videoPath.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getVideoPathBytes() {
+    java.lang.Object ref = videoPath;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      videoPath = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int COVER_URL_FIELD_NUMBER = 4;
+  private volatile java.lang.Object coverUrl;
+  /**
+   * <pre>
+   * 暂存视频封面URL
+   * </pre>
+   *
+   * <code>string cover_url = 4;</code>
+   * @return The coverUrl.
+   */
+  @java.lang.Override
+  public java.lang.String getCoverUrl() {
+    java.lang.Object ref = coverUrl;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      coverUrl = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 暂存视频封面URL
+   * </pre>
+   *
+   * <code>string cover_url = 4;</code>
+   * @return The bytes for coverUrl.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCoverUrlBytes() {
+    java.lang.Object ref = coverUrl;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      coverUrl = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int COVER_PATH_FIELD_NUMBER = 5;
+  private volatile java.lang.Object coverPath;
+  /**
+   * <pre>
+   * 暂存视频封面OSS路径
+   * </pre>
+   *
+   * <code>string cover_path = 5;</code>
+   * @return The coverPath.
+   */
+  @java.lang.Override
+  public java.lang.String getCoverPath() {
+    java.lang.Object ref = coverPath;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      coverPath = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 暂存视频封面OSS路径
+   * </pre>
+   *
+   * <code>string cover_path = 5;</code>
+   * @return The bytes for coverPath.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCoverPathBytes() {
+    java.lang.Object ref = coverPath;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      coverPath = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DESCRIPTION_FIELD_NUMBER = 6;
+  private volatile java.lang.Object description;
+  /**
+   * <pre>
+   * 暂存视频描述
+   * </pre>
+   *
+   * <code>string description = 6;</code>
+   * @return The description.
+   */
+  @java.lang.Override
+  public java.lang.String getDescription() {
+    java.lang.Object ref = description;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      description = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 暂存视频描述
+   * </pre>
+   *
+   * <code>string description = 6;</code>
+   * @return The bytes for description.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getDescriptionBytes() {
+    java.lang.Object ref = description;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      description = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int VISIBILITY_FIELD_NUMBER = 7;
+  private int visibility;
+  /**
+   * <pre>
+   * 视频可见性：1. 公开；2: 隐私，仅自己可见
+   * </pre>
+   *
+   * <code>int32 visibility = 7;</code>
+   * @return The visibility.
+   */
+  @java.lang.Override
+  public int getVisibility() {
+    return visibility;
+  }
+
+  public static final int VIDEO_LENGTH_FIELD_NUMBER = 8;
   private int videoLength;
   /**
    * <pre>
    * 视频文件大小
    * </pre>
    *
-   * <code>int32 video_length = 3;</code>
+   * <code>int32 video_length = 8;</code>
    * @return The videoLength.
    */
   @java.lang.Override
@@ -185,14 +444,14 @@ private static final long serialVersionUID = 0L;
     return videoLength;
   }
 
-  public static final int VIDEO_DURATION_FIELD_NUMBER = 4;
+  public static final int VIDEO_DURATION_FIELD_NUMBER = 9;
   private int videoDuration;
   /**
    * <pre>
    * 视频时长
    * </pre>
    *
-   * <code>int32 video_duration = 4;</code>
+   * <code>int32 video_duration = 9;</code>
    * @return The videoDuration.
    */
   @java.lang.Override
@@ -200,14 +459,112 @@ private static final long serialVersionUID = 0L;
     return videoDuration;
   }
 
-  public static final int CREATED_AT_FIELD_NUMBER = 5;
+  public static final int PRODUCTS_FIELD_NUMBER = 10;
+  private java.util.List<com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct> products;
+  /**
+   * <pre>
+   * 商品列表
+   * </pre>
+   *
+   * <code>repeated .glory_api.ShortVideoProduct products = 10;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct> getProductsList() {
+    return products;
+  }
+  /**
+   * <pre>
+   * 商品列表
+   * </pre>
+   *
+   * <code>repeated .glory_api.ShortVideoProduct products = 10;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.zhijiejiaoyu.glory_api.short_video.ShortVideoProductOrBuilder> 
+      getProductsOrBuilderList() {
+    return products;
+  }
+  /**
+   * <pre>
+   * 商品列表
+   * </pre>
+   *
+   * <code>repeated .glory_api.ShortVideoProduct products = 10;</code>
+   */
+  @java.lang.Override
+  public int getProductsCount() {
+    return products.size();
+  }
+  /**
+   * <pre>
+   * 商品列表
+   * </pre>
+   *
+   * <code>repeated .glory_api.ShortVideoProduct products = 10;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct getProducts(int index) {
+    return products.get(index);
+  }
+  /**
+   * <pre>
+   * 商品列表
+   * </pre>
+   *
+   * <code>repeated .glory_api.ShortVideoProduct products = 10;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.short_video.ShortVideoProductOrBuilder getProductsOrBuilder(
+      int index) {
+    return products.get(index);
+  }
+
+  public static final int SHOP_FIELD_NUMBER = 11;
+  private com.zhijiejiaoyu.glory_api.short_video.ShortVideoShop shop;
+  /**
+   * <pre>
+   * 店铺信息
+   * </pre>
+   *
+   * <code>.glory_api.ShortVideoShop shop = 11;</code>
+   * @return Whether the shop field is set.
+   */
+  @java.lang.Override
+  public boolean hasShop() {
+    return shop != null;
+  }
+  /**
+   * <pre>
+   * 店铺信息
+   * </pre>
+   *
+   * <code>.glory_api.ShortVideoShop shop = 11;</code>
+   * @return The shop.
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.short_video.ShortVideoShop getShop() {
+    return shop == null ? com.zhijiejiaoyu.glory_api.short_video.ShortVideoShop.getDefaultInstance() : shop;
+  }
+  /**
+   * <pre>
+   * 店铺信息
+   * </pre>
+   *
+   * <code>.glory_api.ShortVideoShop shop = 11;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.short_video.ShortVideoShopOrBuilder getShopOrBuilder() {
+    return getShop();
+  }
+
+  public static final int CREATED_AT_FIELD_NUMBER = 12;
   private volatile java.lang.Object createdAt;
   /**
    * <pre>
    * 创建时间
    * </pre>
    *
-   * <code>string created_at = 5;</code>
+   * <code>string created_at = 12;</code>
    * @return The createdAt.
    */
   @java.lang.Override
@@ -228,7 +585,7 @@ private static final long serialVersionUID = 0L;
    * 创建时间
    * </pre>
    *
-   * <code>string created_at = 5;</code>
+   * <code>string created_at = 12;</code>
    * @return The bytes for createdAt.
    */
   @java.lang.Override
@@ -266,14 +623,35 @@ private static final long serialVersionUID = 0L;
     if (!getVideoUrlBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, videoUrl);
     }
+    if (!getVideoPathBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, videoPath);
+    }
+    if (!getCoverUrlBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, coverUrl);
+    }
+    if (!getCoverPathBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, coverPath);
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, description);
+    }
+    if (visibility != 0) {
+      output.writeInt32(7, visibility);
+    }
     if (videoLength != 0) {
-      output.writeInt32(3, videoLength);
+      output.writeInt32(8, videoLength);
     }
     if (videoDuration != 0) {
-      output.writeInt32(4, videoDuration);
+      output.writeInt32(9, videoDuration);
+    }
+    for (int i = 0; i < products.size(); i++) {
+      output.writeMessage(10, products.get(i));
+    }
+    if (shop != null) {
+      output.writeMessage(11, getShop());
     }
     if (!getCreatedAtBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, createdAt);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, createdAt);
     }
     unknownFields.writeTo(output);
   }
@@ -291,16 +669,40 @@ private static final long serialVersionUID = 0L;
     if (!getVideoUrlBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, videoUrl);
     }
+    if (!getVideoPathBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, videoPath);
+    }
+    if (!getCoverUrlBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, coverUrl);
+    }
+    if (!getCoverPathBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, coverPath);
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, description);
+    }
+    if (visibility != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(7, visibility);
+    }
     if (videoLength != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(3, videoLength);
+        .computeInt32Size(8, videoLength);
     }
     if (videoDuration != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(4, videoDuration);
+        .computeInt32Size(9, videoDuration);
+    }
+    for (int i = 0; i < products.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(10, products.get(i));
+    }
+    if (shop != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(11, getShop());
     }
     if (!getCreatedAtBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, createdAt);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, createdAt);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -321,10 +723,27 @@ private static final long serialVersionUID = 0L;
         != other.getStageVideoId()) return false;
     if (!getVideoUrl()
         .equals(other.getVideoUrl())) return false;
+    if (!getVideoPath()
+        .equals(other.getVideoPath())) return false;
+    if (!getCoverUrl()
+        .equals(other.getCoverUrl())) return false;
+    if (!getCoverPath()
+        .equals(other.getCoverPath())) return false;
+    if (!getDescription()
+        .equals(other.getDescription())) return false;
+    if (getVisibility()
+        != other.getVisibility()) return false;
     if (getVideoLength()
         != other.getVideoLength()) return false;
     if (getVideoDuration()
         != other.getVideoDuration()) return false;
+    if (!getProductsList()
+        .equals(other.getProductsList())) return false;
+    if (hasShop() != other.hasShop()) return false;
+    if (hasShop()) {
+      if (!getShop()
+          .equals(other.getShop())) return false;
+    }
     if (!getCreatedAt()
         .equals(other.getCreatedAt())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -343,10 +762,28 @@ private static final long serialVersionUID = 0L;
         getStageVideoId());
     hash = (37 * hash) + VIDEO_URL_FIELD_NUMBER;
     hash = (53 * hash) + getVideoUrl().hashCode();
+    hash = (37 * hash) + VIDEO_PATH_FIELD_NUMBER;
+    hash = (53 * hash) + getVideoPath().hashCode();
+    hash = (37 * hash) + COVER_URL_FIELD_NUMBER;
+    hash = (53 * hash) + getCoverUrl().hashCode();
+    hash = (37 * hash) + COVER_PATH_FIELD_NUMBER;
+    hash = (53 * hash) + getCoverPath().hashCode();
+    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+    hash = (53 * hash) + getDescription().hashCode();
+    hash = (37 * hash) + VISIBILITY_FIELD_NUMBER;
+    hash = (53 * hash) + getVisibility();
     hash = (37 * hash) + VIDEO_LENGTH_FIELD_NUMBER;
     hash = (53 * hash) + getVideoLength();
     hash = (37 * hash) + VIDEO_DURATION_FIELD_NUMBER;
     hash = (53 * hash) + getVideoDuration();
+    if (getProductsCount() > 0) {
+      hash = (37 * hash) + PRODUCTS_FIELD_NUMBER;
+      hash = (53 * hash) + getProductsList().hashCode();
+    }
+    if (hasShop()) {
+      hash = (37 * hash) + SHOP_FIELD_NUMBER;
+      hash = (53 * hash) + getShop().hashCode();
+    }
     hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
     hash = (53 * hash) + getCreatedAt().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -477,6 +914,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getProductsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -486,10 +924,32 @@ private static final long serialVersionUID = 0L;
 
       videoUrl = "";
 
+      videoPath = "";
+
+      coverUrl = "";
+
+      coverPath = "";
+
+      description = "";
+
+      visibility = 0;
+
       videoLength = 0;
 
       videoDuration = 0;
 
+      if (productsBuilder == null) {
+        products = java.util.Collections.emptyList();
+        bitField0 = (bitField0_ & ~0x00000001);
+      } else {
+        productsBuilder.clear();
+      }
+      if (shopBuilder == null) {
+        shop = null;
+      } else {
+        shop = null;
+        shopBuilder = null;
+      }
       createdAt = "";
 
       return this;
@@ -518,10 +978,30 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.short_video.StageVideo buildPartial() {
       com.zhijiejiaoyu.glory_api.short_video.StageVideo result = new com.zhijiejiaoyu.glory_api.short_video.StageVideo(this);
+      int from_bitField0 = bitField0;
       result.stageVideoId = stageVideoId;
       result.videoUrl = videoUrl;
+      result.videoPath = videoPath;
+      result.coverUrl = coverUrl;
+      result.coverPath = coverPath;
+      result.description = description;
+      result.visibility = visibility;
       result.videoLength = videoLength;
       result.videoDuration = videoDuration;
+      if (productsBuilder == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          products = java.util.Collections.unmodifiableList(products);
+          bitField0 = (bitField0_ & ~0x00000001);
+        }
+        result.products = products;
+      } else {
+        result.products = productsBuilder.build();
+      }
+      if (shopBuilder == null) {
+        result.shop = shop;
+      } else {
+        result.shop = shopBuilder.build();
+      }
       result.createdAt = createdAt;
       onBuilt();
       return result;
@@ -578,11 +1058,59 @@ private static final long serialVersionUID = 0L;
         videoUrl = other.videoUrl;
         onChanged();
       }
+      if (!other.getVideoPath().isEmpty()) {
+        videoPath = other.videoPath;
+        onChanged();
+      }
+      if (!other.getCoverUrl().isEmpty()) {
+        coverUrl = other.coverUrl;
+        onChanged();
+      }
+      if (!other.getCoverPath().isEmpty()) {
+        coverPath = other.coverPath;
+        onChanged();
+      }
+      if (!other.getDescription().isEmpty()) {
+        description = other.description;
+        onChanged();
+      }
+      if (other.getVisibility() != 0) {
+        setVisibility(other.getVisibility());
+      }
       if (other.getVideoLength() != 0) {
         setVideoLength(other.getVideoLength());
       }
       if (other.getVideoDuration() != 0) {
         setVideoDuration(other.getVideoDuration());
+      }
+      if (productsBuilder == null) {
+        if (!other.products.isEmpty()) {
+          if (products.isEmpty()) {
+            products = other.products;
+            bitField0 = (bitField0_ & ~0x00000001);
+          } else {
+            ensureProductsIsMutable();
+            products.addAll(other.products);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.products.isEmpty()) {
+          if (productsBuilder.isEmpty()) {
+            productsBuilder.dispose();
+            productsBuilder = null;
+            products = other.products;
+            bitField0 = (bitField0_ & ~0x00000001);
+            productsBuilder = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getProductsFieldBuilder() : null;
+          } else {
+            productsBuilder.addAllMessages(other.products);
+          }
+        }
+      }
+      if (other.hasShop()) {
+        mergeShop(other.getShop());
       }
       if (!other.getCreatedAt().isEmpty()) {
         createdAt = other.createdAt;
@@ -616,6 +1144,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0;
 
     private long stageVideoId ;
     /**
@@ -663,7 +1192,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object videoUrl = "";
     /**
      * <pre>
-     * 短视频URL
+     * 暂存视频URL
      * </pre>
      *
      * <code>string video_url = 2;</code>
@@ -683,7 +1212,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 短视频URL
+     * 暂存视频URL
      * </pre>
      *
      * <code>string video_url = 2;</code>
@@ -704,7 +1233,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 短视频URL
+     * 暂存视频URL
      * </pre>
      *
      * <code>string video_url = 2;</code>
@@ -723,7 +1252,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 短视频URL
+     * 暂存视频URL
      * </pre>
      *
      * <code>string video_url = 2;</code>
@@ -737,7 +1266,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 短视频URL
+     * 暂存视频URL
      * </pre>
      *
      * <code>string video_url = 2;</code>
@@ -756,13 +1285,440 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object videoPath = "";
+    /**
+     * <pre>
+     * 暂存视频OSS路径
+     * </pre>
+     *
+     * <code>string video_path = 3;</code>
+     * @return The videoPath.
+     */
+    public java.lang.String getVideoPath() {
+      java.lang.Object ref = videoPath;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        videoPath = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 暂存视频OSS路径
+     * </pre>
+     *
+     * <code>string video_path = 3;</code>
+     * @return The bytes for videoPath.
+     */
+    public com.google.protobuf.ByteString
+        getVideoPathBytes() {
+      java.lang.Object ref = videoPath;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        videoPath = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 暂存视频OSS路径
+     * </pre>
+     *
+     * <code>string video_path = 3;</code>
+     * @param value The videoPath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVideoPath(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      videoPath = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 暂存视频OSS路径
+     * </pre>
+     *
+     * <code>string video_path = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearVideoPath() {
+      
+      videoPath = getDefaultInstance().getVideoPath();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 暂存视频OSS路径
+     * </pre>
+     *
+     * <code>string video_path = 3;</code>
+     * @param value The bytes for videoPath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVideoPathBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      videoPath = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object coverUrl = "";
+    /**
+     * <pre>
+     * 暂存视频封面URL
+     * </pre>
+     *
+     * <code>string cover_url = 4;</code>
+     * @return The coverUrl.
+     */
+    public java.lang.String getCoverUrl() {
+      java.lang.Object ref = coverUrl;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        coverUrl = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 暂存视频封面URL
+     * </pre>
+     *
+     * <code>string cover_url = 4;</code>
+     * @return The bytes for coverUrl.
+     */
+    public com.google.protobuf.ByteString
+        getCoverUrlBytes() {
+      java.lang.Object ref = coverUrl;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        coverUrl = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 暂存视频封面URL
+     * </pre>
+     *
+     * <code>string cover_url = 4;</code>
+     * @param value The coverUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCoverUrl(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      coverUrl = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 暂存视频封面URL
+     * </pre>
+     *
+     * <code>string cover_url = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCoverUrl() {
+      
+      coverUrl = getDefaultInstance().getCoverUrl();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 暂存视频封面URL
+     * </pre>
+     *
+     * <code>string cover_url = 4;</code>
+     * @param value The bytes for coverUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCoverUrlBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      coverUrl = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object coverPath = "";
+    /**
+     * <pre>
+     * 暂存视频封面OSS路径
+     * </pre>
+     *
+     * <code>string cover_path = 5;</code>
+     * @return The coverPath.
+     */
+    public java.lang.String getCoverPath() {
+      java.lang.Object ref = coverPath;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        coverPath = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 暂存视频封面OSS路径
+     * </pre>
+     *
+     * <code>string cover_path = 5;</code>
+     * @return The bytes for coverPath.
+     */
+    public com.google.protobuf.ByteString
+        getCoverPathBytes() {
+      java.lang.Object ref = coverPath;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        coverPath = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 暂存视频封面OSS路径
+     * </pre>
+     *
+     * <code>string cover_path = 5;</code>
+     * @param value The coverPath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCoverPath(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      coverPath = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 暂存视频封面OSS路径
+     * </pre>
+     *
+     * <code>string cover_path = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCoverPath() {
+      
+      coverPath = getDefaultInstance().getCoverPath();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 暂存视频封面OSS路径
+     * </pre>
+     *
+     * <code>string cover_path = 5;</code>
+     * @param value The bytes for coverPath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCoverPathBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      coverPath = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object description = "";
+    /**
+     * <pre>
+     * 暂存视频描述
+     * </pre>
+     *
+     * <code>string description = 6;</code>
+     * @return The description.
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 暂存视频描述
+     * </pre>
+     *
+     * <code>string description = 6;</code>
+     * @return The bytes for description.
+     */
+    public com.google.protobuf.ByteString
+        getDescriptionBytes() {
+      java.lang.Object ref = description;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        description = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 暂存视频描述
+     * </pre>
+     *
+     * <code>string description = 6;</code>
+     * @param value The description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescription(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      description = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 暂存视频描述
+     * </pre>
+     *
+     * <code>string description = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDescription() {
+      
+      description = getDefaultInstance().getDescription();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 暂存视频描述
+     * </pre>
+     *
+     * <code>string description = 6;</code>
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescriptionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      description = value;
+      onChanged();
+      return this;
+    }
+
+    private int visibility ;
+    /**
+     * <pre>
+     * 视频可见性：1. 公开；2: 隐私，仅自己可见
+     * </pre>
+     *
+     * <code>int32 visibility = 7;</code>
+     * @return The visibility.
+     */
+    @java.lang.Override
+    public int getVisibility() {
+      return visibility;
+    }
+    /**
+     * <pre>
+     * 视频可见性：1. 公开；2: 隐私，仅自己可见
+     * </pre>
+     *
+     * <code>int32 visibility = 7;</code>
+     * @param value The visibility to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVisibility(int value) {
+      
+      visibility = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 视频可见性：1. 公开；2: 隐私，仅自己可见
+     * </pre>
+     *
+     * <code>int32 visibility = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearVisibility() {
+      
+      visibility = 0;
+      onChanged();
+      return this;
+    }
+
     private int videoLength ;
     /**
      * <pre>
      * 视频文件大小
      * </pre>
      *
-     * <code>int32 video_length = 3;</code>
+     * <code>int32 video_length = 8;</code>
      * @return The videoLength.
      */
     @java.lang.Override
@@ -774,7 +1730,7 @@ private static final long serialVersionUID = 0L;
      * 视频文件大小
      * </pre>
      *
-     * <code>int32 video_length = 3;</code>
+     * <code>int32 video_length = 8;</code>
      * @param value The videoLength to set.
      * @return This builder for chaining.
      */
@@ -789,7 +1745,7 @@ private static final long serialVersionUID = 0L;
      * 视频文件大小
      * </pre>
      *
-     * <code>int32 video_length = 3;</code>
+     * <code>int32 video_length = 8;</code>
      * @return This builder for chaining.
      */
     public Builder clearVideoLength() {
@@ -805,7 +1761,7 @@ private static final long serialVersionUID = 0L;
      * 视频时长
      * </pre>
      *
-     * <code>int32 video_duration = 4;</code>
+     * <code>int32 video_duration = 9;</code>
      * @return The videoDuration.
      */
     @java.lang.Override
@@ -817,7 +1773,7 @@ private static final long serialVersionUID = 0L;
      * 视频时长
      * </pre>
      *
-     * <code>int32 video_duration = 4;</code>
+     * <code>int32 video_duration = 9;</code>
      * @param value The videoDuration to set.
      * @return This builder for chaining.
      */
@@ -832,7 +1788,7 @@ private static final long serialVersionUID = 0L;
      * 视频时长
      * </pre>
      *
-     * <code>int32 video_duration = 4;</code>
+     * <code>int32 video_duration = 9;</code>
      * @return This builder for chaining.
      */
     public Builder clearVideoDuration() {
@@ -842,13 +1798,480 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.util.List<com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct> products =
+      java.util.Collections.emptyList();
+    private void ensureProductsIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        products = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct>(products);
+        bitField0_ |= 0x00000001;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct, com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct.Builder, com.zhijiejiaoyu.glory_api.short_video.ShortVideoProductOrBuilder> productsBuilder;
+
+    /**
+     * <pre>
+     * 商品列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.ShortVideoProduct products = 10;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct> getProductsList() {
+      if (productsBuilder == null) {
+        return java.util.Collections.unmodifiableList(products);
+      } else {
+        return productsBuilder.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 商品列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.ShortVideoProduct products = 10;</code>
+     */
+    public int getProductsCount() {
+      if (productsBuilder == null) {
+        return products.size();
+      } else {
+        return productsBuilder.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 商品列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.ShortVideoProduct products = 10;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct getProducts(int index) {
+      if (productsBuilder == null) {
+        return products.get(index);
+      } else {
+        return productsBuilder.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 商品列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.ShortVideoProduct products = 10;</code>
+     */
+    public Builder setProducts(
+        int index, com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct value) {
+      if (productsBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureProductsIsMutable();
+        products.set(index, value);
+        onChanged();
+      } else {
+        productsBuilder.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 商品列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.ShortVideoProduct products = 10;</code>
+     */
+    public Builder setProducts(
+        int index, com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct.Builder builderForValue) {
+      if (productsBuilder == null) {
+        ensureProductsIsMutable();
+        products.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        productsBuilder.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 商品列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.ShortVideoProduct products = 10;</code>
+     */
+    public Builder addProducts(com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct value) {
+      if (productsBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureProductsIsMutable();
+        products.add(value);
+        onChanged();
+      } else {
+        productsBuilder.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 商品列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.ShortVideoProduct products = 10;</code>
+     */
+    public Builder addProducts(
+        int index, com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct value) {
+      if (productsBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureProductsIsMutable();
+        products.add(index, value);
+        onChanged();
+      } else {
+        productsBuilder.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 商品列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.ShortVideoProduct products = 10;</code>
+     */
+    public Builder addProducts(
+        com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct.Builder builderForValue) {
+      if (productsBuilder == null) {
+        ensureProductsIsMutable();
+        products.add(builderForValue.build());
+        onChanged();
+      } else {
+        productsBuilder.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 商品列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.ShortVideoProduct products = 10;</code>
+     */
+    public Builder addProducts(
+        int index, com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct.Builder builderForValue) {
+      if (productsBuilder == null) {
+        ensureProductsIsMutable();
+        products.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        productsBuilder.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 商品列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.ShortVideoProduct products = 10;</code>
+     */
+    public Builder addAllProducts(
+        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct> values) {
+      if (productsBuilder == null) {
+        ensureProductsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, products);
+        onChanged();
+      } else {
+        productsBuilder.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 商品列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.ShortVideoProduct products = 10;</code>
+     */
+    public Builder clearProducts() {
+      if (productsBuilder == null) {
+        products = java.util.Collections.emptyList();
+        bitField0 = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        productsBuilder.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 商品列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.ShortVideoProduct products = 10;</code>
+     */
+    public Builder removeProducts(int index) {
+      if (productsBuilder == null) {
+        ensureProductsIsMutable();
+        products.remove(index);
+        onChanged();
+      } else {
+        productsBuilder.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 商品列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.ShortVideoProduct products = 10;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct.Builder getProductsBuilder(
+        int index) {
+      return getProductsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 商品列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.ShortVideoProduct products = 10;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.ShortVideoProductOrBuilder getProductsOrBuilder(
+        int index) {
+      if (productsBuilder == null) {
+        return products.get(index);  } else {
+        return productsBuilder.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 商品列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.ShortVideoProduct products = 10;</code>
+     */
+    public java.util.List<? extends com.zhijiejiaoyu.glory_api.short_video.ShortVideoProductOrBuilder> 
+         getProductsOrBuilderList() {
+      if (productsBuilder != null) {
+        return productsBuilder.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(products);
+      }
+    }
+    /**
+     * <pre>
+     * 商品列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.ShortVideoProduct products = 10;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct.Builder addProductsBuilder() {
+      return getProductsFieldBuilder().addBuilder(
+          com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 商品列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.ShortVideoProduct products = 10;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct.Builder addProductsBuilder(
+        int index) {
+      return getProductsFieldBuilder().addBuilder(
+          index, com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 商品列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.ShortVideoProduct products = 10;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct.Builder> 
+         getProductsBuilderList() {
+      return getProductsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct, com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct.Builder, com.zhijiejiaoyu.glory_api.short_video.ShortVideoProductOrBuilder> 
+        getProductsFieldBuilder() {
+      if (productsBuilder == null) {
+        productsBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct, com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct.Builder, com.zhijiejiaoyu.glory_api.short_video.ShortVideoProductOrBuilder>(
+                products_,
+                ((bitField0_ & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        products = null;
+      }
+      return productsBuilder;
+    }
+
+    private com.zhijiejiaoyu.glory_api.short_video.ShortVideoShop shop;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.short_video.ShortVideoShop, com.zhijiejiaoyu.glory_api.short_video.ShortVideoShop.Builder, com.zhijiejiaoyu.glory_api.short_video.ShortVideoShopOrBuilder> shopBuilder;
+    /**
+     * <pre>
+     * 店铺信息
+     * </pre>
+     *
+     * <code>.glory_api.ShortVideoShop shop = 11;</code>
+     * @return Whether the shop field is set.
+     */
+    public boolean hasShop() {
+      return shopBuilder != null || shop != null;
+    }
+    /**
+     * <pre>
+     * 店铺信息
+     * </pre>
+     *
+     * <code>.glory_api.ShortVideoShop shop = 11;</code>
+     * @return The shop.
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.ShortVideoShop getShop() {
+      if (shopBuilder == null) {
+        return shop == null ? com.zhijiejiaoyu.glory_api.short_video.ShortVideoShop.getDefaultInstance() : shop;
+      } else {
+        return shopBuilder.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 店铺信息
+     * </pre>
+     *
+     * <code>.glory_api.ShortVideoShop shop = 11;</code>
+     */
+    public Builder setShop(com.zhijiejiaoyu.glory_api.short_video.ShortVideoShop value) {
+      if (shopBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        shop = value;
+        onChanged();
+      } else {
+        shopBuilder.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 店铺信息
+     * </pre>
+     *
+     * <code>.glory_api.ShortVideoShop shop = 11;</code>
+     */
+    public Builder setShop(
+        com.zhijiejiaoyu.glory_api.short_video.ShortVideoShop.Builder builderForValue) {
+      if (shopBuilder == null) {
+        shop = builderForValue.build();
+        onChanged();
+      } else {
+        shopBuilder.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 店铺信息
+     * </pre>
+     *
+     * <code>.glory_api.ShortVideoShop shop = 11;</code>
+     */
+    public Builder mergeShop(com.zhijiejiaoyu.glory_api.short_video.ShortVideoShop value) {
+      if (shopBuilder == null) {
+        if (shop != null) {
+          shop =
+            com.zhijiejiaoyu.glory_api.short_video.ShortVideoShop.newBuilder(shop).mergeFrom(value).buildPartial();
+        } else {
+          shop = value;
+        }
+        onChanged();
+      } else {
+        shopBuilder.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 店铺信息
+     * </pre>
+     *
+     * <code>.glory_api.ShortVideoShop shop = 11;</code>
+     */
+    public Builder clearShop() {
+      if (shopBuilder == null) {
+        shop = null;
+        onChanged();
+      } else {
+        shop = null;
+        shopBuilder = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 店铺信息
+     * </pre>
+     *
+     * <code>.glory_api.ShortVideoShop shop = 11;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.ShortVideoShop.Builder getShopBuilder() {
+      
+      onChanged();
+      return getShopFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 店铺信息
+     * </pre>
+     *
+     * <code>.glory_api.ShortVideoShop shop = 11;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.ShortVideoShopOrBuilder getShopOrBuilder() {
+      if (shopBuilder != null) {
+        return shopBuilder.getMessageOrBuilder();
+      } else {
+        return shop == null ?
+            com.zhijiejiaoyu.glory_api.short_video.ShortVideoShop.getDefaultInstance() : shop;
+      }
+    }
+    /**
+     * <pre>
+     * 店铺信息
+     * </pre>
+     *
+     * <code>.glory_api.ShortVideoShop shop = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.short_video.ShortVideoShop, com.zhijiejiaoyu.glory_api.short_video.ShortVideoShop.Builder, com.zhijiejiaoyu.glory_api.short_video.ShortVideoShopOrBuilder> 
+        getShopFieldBuilder() {
+      if (shopBuilder == null) {
+        shopBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.short_video.ShortVideoShop, com.zhijiejiaoyu.glory_api.short_video.ShortVideoShop.Builder, com.zhijiejiaoyu.glory_api.short_video.ShortVideoShopOrBuilder>(
+                getShop(),
+                getParentForChildren(),
+                isClean());
+        shop = null;
+      }
+      return shopBuilder;
+    }
+
     private java.lang.Object createdAt = "";
     /**
      * <pre>
      * 创建时间
      * </pre>
      *
-     * <code>string created_at = 5;</code>
+     * <code>string created_at = 12;</code>
      * @return The createdAt.
      */
     public java.lang.String getCreatedAt() {
@@ -868,7 +2291,7 @@ private static final long serialVersionUID = 0L;
      * 创建时间
      * </pre>
      *
-     * <code>string created_at = 5;</code>
+     * <code>string created_at = 12;</code>
      * @return The bytes for createdAt.
      */
     public com.google.protobuf.ByteString
@@ -889,7 +2312,7 @@ private static final long serialVersionUID = 0L;
      * 创建时间
      * </pre>
      *
-     * <code>string created_at = 5;</code>
+     * <code>string created_at = 12;</code>
      * @param value The createdAt to set.
      * @return This builder for chaining.
      */
@@ -908,7 +2331,7 @@ private static final long serialVersionUID = 0L;
      * 创建时间
      * </pre>
      *
-     * <code>string created_at = 5;</code>
+     * <code>string created_at = 12;</code>
      * @return This builder for chaining.
      */
     public Builder clearCreatedAt() {
@@ -922,7 +2345,7 @@ private static final long serialVersionUID = 0L;
      * 创建时间
      * </pre>
      *
-     * <code>string created_at = 5;</code>
+     * <code>string created_at = 12;</code>
      * @param value The bytes for createdAt to set.
      * @return This builder for chaining.
      */

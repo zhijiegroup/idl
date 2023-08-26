@@ -70,24 +70,40 @@ export interface ShortVideo {
 export interface StageVideo {
   /** 暂存视频ID */
   stage_video_id?: string;
-  /** 短视频URL */
+  /** 暂存视频URL */
   video_url?: string;
+  /** 暂存视频OSS路径 */
+  video_path?: string;
+  /** 暂存视频封面URL */
+  cover_url?: string;
+  /** 暂存视频封面OSS路径 */
+  cover_path?: string;
+  /** 暂存视频描述 */
+  description?: string;
+  /** 视频可见性：1. 公开；2: 隐私，仅自己可见 */
+  visibility?: number;
   /** 视频文件大小 */
   video_length?: number;
   /** 视频时长 */
   video_duration?: number;
+  /** 商品列表 */
+  products?: Array<ShortVideoProduct>;
+  /** 店铺信息 */
+  shop?: ShortVideoShop;
   /** 创建时间 */
   created_at?: string;
 }
 
 export interface CreateShortVideoRequest {
   base_request?: base.BaseRequest;
+  video_path?: string;
+  cover_path?: string;
   /** 短视频描述 */
   description?: string;
   /** 视频可见性：1.公开；2:隐私，仅自己可见 */
   visibility?: number;
-  /** JSON序列化的商品信息 */
-  products?: string;
+  /** 商品信息 */
+  products?: Array<ShortVideoProduct>;
   /** 店铺ID */
   shop_id?: string;
   /** 暂存视频ID（如果是发布暂存视频的话） */
@@ -101,6 +117,16 @@ export interface CreateShortVideoResponse {
 
 export interface StageShortVideoRequest {
   base_request?: base.BaseRequest;
+  video_path?: string;
+  cover_path?: string;
+  /** 短视频描述 */
+  description?: string;
+  /** 视频可见性：1.公开；2:隐私，仅自己可见 */
+  visibility?: number;
+  /** 商品信息 */
+  products?: Array<ShortVideoProduct>;
+  /** 店铺ID */
+  shop_id?: string;
 }
 
 export interface StageShortVideoResponse {
@@ -173,12 +199,13 @@ export interface UpdateShortVideoRequest {
   base_request?: base.BaseRequest;
   /** 短视频ID */
   short_video_id?: string;
+  cover_path?: string;
   /** 短视频描述 */
   description?: string;
   /** 视频可见性：1.公开；2:隐私，仅自己可见 */
   visibility?: number;
-  /** JSON序列化的商品信息 */
-  products?: string;
+  /** 商品信息 */
+  products?: Array<ShortVideoProduct>;
   /** 店铺ID */
   shop_id?: string;
 }
@@ -217,6 +244,29 @@ export interface DeleteStageVideoRequest {
 
 export interface DeleteStageVideoResponse {
   base_resp?: base.BaseResponse;
+}
+
+export interface UpdateStageVideoRequest {
+  base_request?: base.BaseRequest;
+  /** 暂存视频ID */
+  stage_video_id?: string;
+  /** 暂存视频OSS路径 */
+  video_path?: string;
+  /** 暂存视频封面OSS路径 */
+  cover_path?: string;
+  /** 短视频描述 */
+  description?: string;
+  /** 视频可见性：1.公开；2:隐私，仅自己可见 */
+  visibility?: number;
+  /** 商品信息 */
+  products?: Array<ShortVideoProduct>;
+  /** 店铺ID */
+  shop_id?: string;
+}
+
+export interface UpdateStageVideoResponse {
+  base_resp?: base.BaseResponse;
+  stage_video_id?: string;
 }
 
 /** 管理平台短视频列表 */

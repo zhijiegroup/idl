@@ -41,7 +41,7 @@ public final class GloryApiService {
       "t/account_operation.proto\032\037currency/virt" +
       "ual_currency.proto\032\023tenant/tenant.proto\032" +
       "\030tenant/tenant_dept.proto\032\035short_video/s" +
-      "hort_video.proto2\374\274\001\n\tglory_api\022s\n\rCreat" +
+      "hort_video.proto2\203\276\001\n\tglory_api\022s\n\rCreat" +
       "eExample\022\037.glory_api.CreateExampleReques" +
       "t\032 .glory_api.CreateExampleResponse\"\037\322\301\030" +
       "\033/api/example/create_example\022g\n\nGetExamp" +
@@ -623,31 +623,34 @@ public final class GloryApiService {
       "\001\n\020DeleteStageVideo\022\".glory_api.DeleteSt" +
       "ageVideoRequest\032#.glory_api.DeleteStageV" +
       "ideoResponse\"\'\322\301\030#/api/short_video/delet" +
-      "e_stage_video\022\245\001\n\030ManagementListShortVid" +
-      "eo\022*.glory_api.ManagementListShortVideoR" +
-      "equest\032+.glory_api.ManagementListShortVi" +
-      "deoResponse\"0\322\301\030,/api/short_video/manage" +
-      "ment/list_short_video\022\255\001\n\032ManagementCens" +
-      "orShortVideo\022,.glory_api.ManagementCenso" +
-      "rShortVideoRequest\032-.glory_api.Managemen" +
-      "tCensorShortVideoResponse\"2\322\301\030./api/shor" +
-      "t_video/management/censor_short_video\022\255\001" +
-      "\n\032ManagementDeleteShortVideo\022,.glory_api" +
-      ".ManagementDeleteShortVideoRequest\032-.glo" +
-      "ry_api.ManagementDeleteShortVideoRespons" +
-      "e\"2\322\301\030./api/short_video/management/delet" +
-      "e_short_video\022|\n\016ListShortVideo\022 .glory_" +
-      "api.ListShortVideoRequest\032!.glory_api.Li" +
-      "stShortVideoResponse\"%\322\301\030!/api/short_vid" +
-      "eo/list_short_video\022|\n\016LikeShortVideo\022 ." +
-      "glory_api.LikeShortVideoRequest\032!.glory_" +
-      "api.LikeShortVideoResponse\"%\322\301\030!/api/sho" +
-      "rt_video/like_short_video\022\214\001\n\022FavoriteSh" +
-      "ortVideo\022$.glory_api.FavoriteShortVideoR" +
-      "equest\032%.glory_api.FavoriteShortVideoRes" +
-      "ponse\")\322\301\030%/api/short_video/favorite_sho" +
-      "rt_videoB\036\n\032com.zhijiejiaoyu.glory_apiP\001" +
-      "b\006proto3"
+      "e_stage_video\022\204\001\n\020UpdateStageVideo\022\".glo" +
+      "ry_api.UpdateStageVideoRequest\032#.glory_a" +
+      "pi.UpdateStageVideoResponse\"\'\322\301\030#/api/sh" +
+      "ort_video/update_stage_video\022\245\001\n\030Managem" +
+      "entListShortVideo\022*.glory_api.Management" +
+      "ListShortVideoRequest\032+.glory_api.Manage" +
+      "mentListShortVideoResponse\"0\322\301\030,/api/sho" +
+      "rt_video/management/list_short_video\022\255\001\n" +
+      "\032ManagementCensorShortVideo\022,.glory_api." +
+      "ManagementCensorShortVideoRequest\032-.glor" +
+      "y_api.ManagementCensorShortVideoResponse" +
+      "\"2\322\301\030./api/short_video/management/censor" +
+      "_short_video\022\255\001\n\032ManagementDeleteShortVi" +
+      "deo\022,.glory_api.ManagementDeleteShortVid" +
+      "eoRequest\032-.glory_api.ManagementDeleteSh" +
+      "ortVideoResponse\"2\322\301\030./api/short_video/m" +
+      "anagement/delete_short_video\022|\n\016ListShor" +
+      "tVideo\022 .glory_api.ListShortVideoRequest" +
+      "\032!.glory_api.ListShortVideoResponse\"%\322\301\030" +
+      "!/api/short_video/list_short_video\022|\n\016Li" +
+      "keShortVideo\022 .glory_api.LikeShortVideoR" +
+      "equest\032!.glory_api.LikeShortVideoRespons" +
+      "e\"%\322\301\030!/api/short_video/like_short_video" +
+      "\022\214\001\n\022FavoriteShortVideo\022$.glory_api.Favo" +
+      "riteShortVideoRequest\032%.glory_api.Favori" +
+      "teShortVideoResponse\")\322\301\030%/api/short_vid" +
+      "eo/favorite_short_videoB\036\n\032com.zhijiejia" +
+      "oyu.glory_apiP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

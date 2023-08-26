@@ -21,4 +21,112 @@ public interface StageShortVideoRequestOrBuilder extends
    * <code>.base.BaseRequest base_request = 1;</code>
    */
   com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder();
+
+  /**
+   * <code>string video_path = 2;</code>
+   * @return The videoPath.
+   */
+  java.lang.String getVideoPath();
+  /**
+   * <code>string video_path = 2;</code>
+   * @return The bytes for videoPath.
+   */
+  com.google.protobuf.ByteString
+      getVideoPathBytes();
+
+  /**
+   * <code>string cover_path = 3;</code>
+   * @return The coverPath.
+   */
+  java.lang.String getCoverPath();
+  /**
+   * <code>string cover_path = 3;</code>
+   * @return The bytes for coverPath.
+   */
+  com.google.protobuf.ByteString
+      getCoverPathBytes();
+
+  /**
+   * <pre>
+   * 短视频描述
+   * </pre>
+   *
+   * <code>string description = 4;</code>
+   * @return The description.
+   */
+  java.lang.String getDescription();
+  /**
+   * <pre>
+   * 短视频描述
+   * </pre>
+   *
+   * <code>string description = 4;</code>
+   * @return The bytes for description.
+   */
+  com.google.protobuf.ByteString
+      getDescriptionBytes();
+
+  /**
+   * <pre>
+   * 视频可见性：1.公开；2:隐私，仅自己可见
+   * </pre>
+   *
+   * <code>int32 visibility = 5;</code>
+   * @return The visibility.
+   */
+  int getVisibility();
+
+  /**
+   * <pre>
+   * 商品信息
+   * </pre>
+   *
+   * <code>repeated .glory_api.ShortVideoProduct products = 6;</code>
+   */
+  java.util.List<com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct> 
+      getProductsList();
+  /**
+   * <pre>
+   * 商品信息
+   * </pre>
+   *
+   * <code>repeated .glory_api.ShortVideoProduct products = 6;</code>
+   */
+  com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct getProducts(int index);
+  /**
+   * <pre>
+   * 商品信息
+   * </pre>
+   *
+   * <code>repeated .glory_api.ShortVideoProduct products = 6;</code>
+   */
+  int getProductsCount();
+  /**
+   * <pre>
+   * 商品信息
+   * </pre>
+   *
+   * <code>repeated .glory_api.ShortVideoProduct products = 6;</code>
+   */
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.short_video.ShortVideoProductOrBuilder> 
+      getProductsOrBuilderList();
+  /**
+   * <pre>
+   * 商品信息
+   * </pre>
+   *
+   * <code>repeated .glory_api.ShortVideoProduct products = 6;</code>
+   */
+  com.zhijiejiaoyu.glory_api.short_video.ShortVideoProductOrBuilder getProductsOrBuilder(
+      int index);
+
+  /**
+   * <pre>
+   * 店铺ID
+   * </pre>
+   *
+   * <code>int64 shop_id = 7;</code>
+   * @return The shopId.
+   */
+  long getShopId();
 }

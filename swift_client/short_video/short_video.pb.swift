@@ -207,8 +207,23 @@ struct GloryApi_StageVideo {
   /// 暂存视频ID
   var stageVideoID: Int64 = 0
 
-  /// 短视频URL
+  /// 暂存视频URL
   var videoURL: String = String()
+
+  /// 暂存视频OSS路径
+  var videoPath: String = String()
+
+  /// 暂存视频封面URL
+  var coverURL: String = String()
+
+  /// 暂存视频封面OSS路径
+  var coverPath: String = String()
+
+  /// 暂存视频描述
+  var description_p: String = String()
+
+  /// 视频可见性：1. 公开；2: 隐私，仅自己可见
+  var visibility: Int32 = 0
 
   /// 视频文件大小
   var videoLength: Int32 = 0
@@ -216,12 +231,27 @@ struct GloryApi_StageVideo {
   /// 视频时长
   var videoDuration: Int32 = 0
 
+  /// 商品列表
+  var products: [GloryApi_ShortVideoProduct] = []
+
+  /// 店铺信息
+  var shop: GloryApi_ShortVideoShop {
+    get {return _shop ?? GloryApi_ShortVideoShop()}
+    set {_shop = newValue}
+  }
+  /// Returns true if `shop` has been explicitly set.
+  var hasShop: Bool {return self._shop != nil}
+  /// Clears the value of `shop`. Subsequent reads from it will return its default value.
+  mutating func clearShop() {self._shop = nil}
+
   /// 创建时间
   var createdAt: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
+
+  fileprivate var _shop: GloryApi_ShortVideoShop? = nil
 }
 
 struct GloryApi_CreateShortVideoRequest {
@@ -238,14 +268,18 @@ struct GloryApi_CreateShortVideoRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
+  var videoPath: String = String()
+
+  var coverPath: String = String()
+
   /// 短视频描述
   var description_p: String = String()
 
   /// 视频可见性：1.公开；2:隐私，仅自己可见
   var visibility: Int32 = 0
 
-  /// JSON序列化的商品信息
-  var products: String = String()
+  /// 商品信息
+  var products: [GloryApi_ShortVideoProduct] = []
 
   /// 店铺ID
   var shopID: Int64 = 0
@@ -296,6 +330,22 @@ struct GloryApi_StageShortVideoRequest {
   var hasBaseRequest: Bool {return self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var videoPath: String = String()
+
+  var coverPath: String = String()
+
+  /// 短视频描述
+  var description_p: String = String()
+
+  /// 视频可见性：1.公开；2:隐私，仅自己可见
+  var visibility: Int32 = 0
+
+  /// 商品信息
+  var products: [GloryApi_ShortVideoProduct] = []
+
+  /// 店铺ID
+  var shopID: Int64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -653,14 +703,16 @@ struct GloryApi_UpdateShortVideoRequest {
   /// 短视频ID
   var shortVideoID: Int64 = 0
 
+  var coverPath: String = String()
+
   /// 短视频描述
   var description_p: String = String()
 
   /// 视频可见性：1.公开；2:隐私，仅自己可见
   var visibility: Int32 = 0
 
-  /// JSON序列化的商品信息
-  var products: String = String()
+  /// 商品信息
+  var products: [GloryApi_ShortVideoProduct] = []
 
   /// 店铺ID
   var shopID: Int64 = 0
@@ -832,6 +884,71 @@ struct GloryApi_DeleteStageVideoResponse {
   var hasBaseResp: Bool {return self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+}
+
+struct GloryApi_UpdateStageVideoRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  /// 暂存视频ID
+  var stageVideoID: Int64 = 0
+
+  /// 暂存视频OSS路径
+  var videoPath: String = String()
+
+  /// 暂存视频封面OSS路径
+  var coverPath: String = String()
+
+  /// 短视频描述
+  var description_p: String = String()
+
+  /// 视频可见性：1.公开；2:隐私，仅自己可见
+  var visibility: Int32 = 0
+
+  /// 商品信息
+  var products: [GloryApi_ShortVideoProduct] = []
+
+  /// 店铺ID
+  var shopID: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+struct GloryApi_UpdateStageVideoResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var stageVideoID: Int64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1189,6 +1306,8 @@ extension GloryApi_GetStageVideoRequest: @unchecked Sendable {}
 extension GloryApi_GetStageVideoResponse: @unchecked Sendable {}
 extension GloryApi_DeleteStageVideoRequest: @unchecked Sendable {}
 extension GloryApi_DeleteStageVideoResponse: @unchecked Sendable {}
+extension GloryApi_UpdateStageVideoRequest: @unchecked Sendable {}
+extension GloryApi_UpdateStageVideoResponse: @unchecked Sendable {}
 extension GloryApi_ManagementListShortVideoRequest: @unchecked Sendable {}
 extension GloryApi_ManagementListShortVideoResponse: @unchecked Sendable {}
 extension GloryApi_ManagementCensorShortVideoRequest: @unchecked Sendable {}
@@ -1536,9 +1655,16 @@ extension GloryApi_StageVideo: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "stage_video_id"),
     2: .standard(proto: "video_url"),
-    3: .standard(proto: "video_length"),
-    4: .standard(proto: "video_duration"),
-    5: .standard(proto: "created_at"),
+    3: .standard(proto: "video_path"),
+    4: .standard(proto: "cover_url"),
+    5: .standard(proto: "cover_path"),
+    6: .same(proto: "description"),
+    7: .same(proto: "visibility"),
+    8: .standard(proto: "video_length"),
+    9: .standard(proto: "video_duration"),
+    10: .same(proto: "products"),
+    11: .same(proto: "shop"),
+    12: .standard(proto: "created_at"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1549,29 +1675,61 @@ extension GloryApi_StageVideo: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularInt64Field(value: &self.stageVideoID) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.videoURL) }()
-      case 3: try { try decoder.decodeSingularInt32Field(value: &self.videoLength) }()
-      case 4: try { try decoder.decodeSingularInt32Field(value: &self.videoDuration) }()
-      case 5: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.videoPath) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.coverURL) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.coverPath) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.description_p) }()
+      case 7: try { try decoder.decodeSingularInt32Field(value: &self.visibility) }()
+      case 8: try { try decoder.decodeSingularInt32Field(value: &self.videoLength) }()
+      case 9: try { try decoder.decodeSingularInt32Field(value: &self.videoDuration) }()
+      case 10: try { try decoder.decodeRepeatedMessageField(value: &self.products) }()
+      case 11: try { try decoder.decodeSingularMessageField(value: &self._shop) }()
+      case 12: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
       default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.stageVideoID != 0 {
       try visitor.visitSingularInt64Field(value: self.stageVideoID, fieldNumber: 1)
     }
     if !self.videoURL.isEmpty {
       try visitor.visitSingularStringField(value: self.videoURL, fieldNumber: 2)
     }
+    if !self.videoPath.isEmpty {
+      try visitor.visitSingularStringField(value: self.videoPath, fieldNumber: 3)
+    }
+    if !self.coverURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.coverURL, fieldNumber: 4)
+    }
+    if !self.coverPath.isEmpty {
+      try visitor.visitSingularStringField(value: self.coverPath, fieldNumber: 5)
+    }
+    if !self.description_p.isEmpty {
+      try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 6)
+    }
+    if self.visibility != 0 {
+      try visitor.visitSingularInt32Field(value: self.visibility, fieldNumber: 7)
+    }
     if self.videoLength != 0 {
-      try visitor.visitSingularInt32Field(value: self.videoLength, fieldNumber: 3)
+      try visitor.visitSingularInt32Field(value: self.videoLength, fieldNumber: 8)
     }
     if self.videoDuration != 0 {
-      try visitor.visitSingularInt32Field(value: self.videoDuration, fieldNumber: 4)
+      try visitor.visitSingularInt32Field(value: self.videoDuration, fieldNumber: 9)
     }
+    if !self.products.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.products, fieldNumber: 10)
+    }
+    try { if let v = self._shop {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 11)
+    } }()
     if !self.createdAt.isEmpty {
-      try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 5)
+      try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 12)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1579,8 +1737,15 @@ extension GloryApi_StageVideo: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   static func ==(lhs: GloryApi_StageVideo, rhs: GloryApi_StageVideo) -> Bool {
     if lhs.stageVideoID != rhs.stageVideoID {return false}
     if lhs.videoURL != rhs.videoURL {return false}
+    if lhs.videoPath != rhs.videoPath {return false}
+    if lhs.coverURL != rhs.coverURL {return false}
+    if lhs.coverPath != rhs.coverPath {return false}
+    if lhs.description_p != rhs.description_p {return false}
+    if lhs.visibility != rhs.visibility {return false}
     if lhs.videoLength != rhs.videoLength {return false}
     if lhs.videoDuration != rhs.videoDuration {return false}
+    if lhs.products != rhs.products {return false}
+    if lhs._shop != rhs._shop {return false}
     if lhs.createdAt != rhs.createdAt {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -1591,11 +1756,13 @@ extension GloryApi_CreateShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf
   static let protoMessageName: String = _protobuf_package + ".CreateShortVideoRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
-    2: .same(proto: "description"),
-    3: .same(proto: "visibility"),
-    4: .same(proto: "products"),
-    5: .standard(proto: "shop_id"),
-    6: .standard(proto: "stage_video_id"),
+    2: .standard(proto: "video_path"),
+    3: .standard(proto: "cover_path"),
+    4: .same(proto: "description"),
+    5: .same(proto: "visibility"),
+    6: .same(proto: "products"),
+    7: .standard(proto: "shop_id"),
+    8: .standard(proto: "stage_video_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1605,11 +1772,13 @@ extension GloryApi_CreateShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.description_p) }()
-      case 3: try { try decoder.decodeSingularInt32Field(value: &self.visibility) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.products) }()
-      case 5: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
-      case 6: try { try decoder.decodeSingularInt64Field(value: &self.stageVideoID) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.videoPath) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.coverPath) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.description_p) }()
+      case 5: try { try decoder.decodeSingularInt32Field(value: &self.visibility) }()
+      case 6: try { try decoder.decodeRepeatedMessageField(value: &self.products) }()
+      case 7: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
+      case 8: try { try decoder.decodeSingularInt64Field(value: &self.stageVideoID) }()
       default: break
       }
     }
@@ -1623,26 +1792,34 @@ extension GloryApi_CreateShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
+    if !self.videoPath.isEmpty {
+      try visitor.visitSingularStringField(value: self.videoPath, fieldNumber: 2)
+    }
+    if !self.coverPath.isEmpty {
+      try visitor.visitSingularStringField(value: self.coverPath, fieldNumber: 3)
+    }
     if !self.description_p.isEmpty {
-      try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 2)
+      try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 4)
     }
     if self.visibility != 0 {
-      try visitor.visitSingularInt32Field(value: self.visibility, fieldNumber: 3)
+      try visitor.visitSingularInt32Field(value: self.visibility, fieldNumber: 5)
     }
     if !self.products.isEmpty {
-      try visitor.visitSingularStringField(value: self.products, fieldNumber: 4)
+      try visitor.visitRepeatedMessageField(value: self.products, fieldNumber: 6)
     }
     if self.shopID != 0 {
-      try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 5)
+      try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 7)
     }
     if self.stageVideoID != 0 {
-      try visitor.visitSingularInt64Field(value: self.stageVideoID, fieldNumber: 6)
+      try visitor.visitSingularInt64Field(value: self.stageVideoID, fieldNumber: 8)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_CreateShortVideoRequest, rhs: GloryApi_CreateShortVideoRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.videoPath != rhs.videoPath {return false}
+    if lhs.coverPath != rhs.coverPath {return false}
     if lhs.description_p != rhs.description_p {return false}
     if lhs.visibility != rhs.visibility {return false}
     if lhs.products != rhs.products {return false}
@@ -1699,6 +1876,12 @@ extension GloryApi_StageShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf.
   static let protoMessageName: String = _protobuf_package + ".StageShortVideoRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
+    2: .standard(proto: "video_path"),
+    3: .standard(proto: "cover_path"),
+    4: .same(proto: "description"),
+    5: .same(proto: "visibility"),
+    6: .same(proto: "products"),
+    7: .standard(proto: "shop_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1708,6 +1891,12 @@ extension GloryApi_StageShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf.
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.videoPath) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.coverPath) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.description_p) }()
+      case 5: try { try decoder.decodeSingularInt32Field(value: &self.visibility) }()
+      case 6: try { try decoder.decodeRepeatedMessageField(value: &self.products) }()
+      case 7: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
       default: break
       }
     }
@@ -1721,11 +1910,35 @@ extension GloryApi_StageShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf.
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
+    if !self.videoPath.isEmpty {
+      try visitor.visitSingularStringField(value: self.videoPath, fieldNumber: 2)
+    }
+    if !self.coverPath.isEmpty {
+      try visitor.visitSingularStringField(value: self.coverPath, fieldNumber: 3)
+    }
+    if !self.description_p.isEmpty {
+      try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 4)
+    }
+    if self.visibility != 0 {
+      try visitor.visitSingularInt32Field(value: self.visibility, fieldNumber: 5)
+    }
+    if !self.products.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.products, fieldNumber: 6)
+    }
+    if self.shopID != 0 {
+      try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 7)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_StageShortVideoRequest, rhs: GloryApi_StageShortVideoRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.videoPath != rhs.videoPath {return false}
+    if lhs.coverPath != rhs.coverPath {return false}
+    if lhs.description_p != rhs.description_p {return false}
+    if lhs.visibility != rhs.visibility {return false}
+    if lhs.products != rhs.products {return false}
+    if lhs.shopID != rhs.shopID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -2222,10 +2435,11 @@ extension GloryApi_UpdateShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
     2: .standard(proto: "short_video_id"),
-    3: .same(proto: "description"),
-    4: .same(proto: "visibility"),
-    5: .same(proto: "products"),
-    6: .standard(proto: "shop_id"),
+    3: .standard(proto: "cover_path"),
+    4: .same(proto: "description"),
+    5: .same(proto: "visibility"),
+    6: .same(proto: "products"),
+    7: .standard(proto: "shop_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2236,10 +2450,11 @@ extension GloryApi_UpdateShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.shortVideoID) }()
-      case 3: try { try decoder.decodeSingularStringField(value: &self.description_p) }()
-      case 4: try { try decoder.decodeSingularInt32Field(value: &self.visibility) }()
-      case 5: try { try decoder.decodeSingularStringField(value: &self.products) }()
-      case 6: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.coverPath) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.description_p) }()
+      case 5: try { try decoder.decodeSingularInt32Field(value: &self.visibility) }()
+      case 6: try { try decoder.decodeRepeatedMessageField(value: &self.products) }()
+      case 7: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
       default: break
       }
     }
@@ -2256,17 +2471,20 @@ extension GloryApi_UpdateShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf
     if self.shortVideoID != 0 {
       try visitor.visitSingularInt64Field(value: self.shortVideoID, fieldNumber: 2)
     }
+    if !self.coverPath.isEmpty {
+      try visitor.visitSingularStringField(value: self.coverPath, fieldNumber: 3)
+    }
     if !self.description_p.isEmpty {
-      try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 3)
+      try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 4)
     }
     if self.visibility != 0 {
-      try visitor.visitSingularInt32Field(value: self.visibility, fieldNumber: 4)
+      try visitor.visitSingularInt32Field(value: self.visibility, fieldNumber: 5)
     }
     if !self.products.isEmpty {
-      try visitor.visitSingularStringField(value: self.products, fieldNumber: 5)
+      try visitor.visitRepeatedMessageField(value: self.products, fieldNumber: 6)
     }
     if self.shopID != 0 {
-      try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 6)
+      try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 7)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -2274,6 +2492,7 @@ extension GloryApi_UpdateShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf
   static func ==(lhs: GloryApi_UpdateShortVideoRequest, rhs: GloryApi_UpdateShortVideoRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.shortVideoID != rhs.shortVideoID {return false}
+    if lhs.coverPath != rhs.coverPath {return false}
     if lhs.description_p != rhs.description_p {return false}
     if lhs.visibility != rhs.visibility {return false}
     if lhs.products != rhs.products {return false}
@@ -2560,6 +2779,126 @@ extension GloryApi_DeleteStageVideoResponse: SwiftProtobuf.Message, SwiftProtobu
 
   static func ==(lhs: GloryApi_DeleteStageVideoResponse, rhs: GloryApi_DeleteStageVideoResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_UpdateStageVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".UpdateStageVideoRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    2: .standard(proto: "stage_video_id"),
+    3: .standard(proto: "video_path"),
+    4: .standard(proto: "cover_path"),
+    5: .same(proto: "description"),
+    6: .same(proto: "visibility"),
+    7: .same(proto: "products"),
+    8: .standard(proto: "shop_id"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.stageVideoID) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.videoPath) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.coverPath) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.description_p) }()
+      case 6: try { try decoder.decodeSingularInt32Field(value: &self.visibility) }()
+      case 7: try { try decoder.decodeRepeatedMessageField(value: &self.products) }()
+      case 8: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if self.stageVideoID != 0 {
+      try visitor.visitSingularInt64Field(value: self.stageVideoID, fieldNumber: 2)
+    }
+    if !self.videoPath.isEmpty {
+      try visitor.visitSingularStringField(value: self.videoPath, fieldNumber: 3)
+    }
+    if !self.coverPath.isEmpty {
+      try visitor.visitSingularStringField(value: self.coverPath, fieldNumber: 4)
+    }
+    if !self.description_p.isEmpty {
+      try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 5)
+    }
+    if self.visibility != 0 {
+      try visitor.visitSingularInt32Field(value: self.visibility, fieldNumber: 6)
+    }
+    if !self.products.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.products, fieldNumber: 7)
+    }
+    if self.shopID != 0 {
+      try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 8)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_UpdateStageVideoRequest, rhs: GloryApi_UpdateStageVideoRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.stageVideoID != rhs.stageVideoID {return false}
+    if lhs.videoPath != rhs.videoPath {return false}
+    if lhs.coverPath != rhs.coverPath {return false}
+    if lhs.description_p != rhs.description_p {return false}
+    if lhs.visibility != rhs.visibility {return false}
+    if lhs.products != rhs.products {return false}
+    if lhs.shopID != rhs.shopID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_UpdateStageVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".UpdateStageVideoResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .standard(proto: "stage_video_id"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.stageVideoID) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if self.stageVideoID != 0 {
+      try visitor.visitSingularInt64Field(value: self.stageVideoID, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_UpdateStageVideoResponse, rhs: GloryApi_UpdateStageVideoResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.stageVideoID != rhs.stageVideoID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -1560,6 +1560,14 @@ export class glory_api {
     );
   }
 
+  UpdateStageVideo(request) {
+    const uri = `${this.uriPrefix}/api/short_video/update_stage_video`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   ManagementListShortVideo(request) {
     const uri = `${this.uriPrefix}/api/short_video/management/list_short_video`;
     const body = JSONbigint.stringify(request);

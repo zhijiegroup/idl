@@ -840,6 +840,10 @@ CreateLivePlanProduct create live plan product */
     request: short_video.DeleteStageVideoRequest
   ): Promise<short_video.DeleteStageVideoResponse>;
 
+  UpdateStageVideo(
+    request: short_video.UpdateStageVideoRequest
+  ): Promise<short_video.UpdateStageVideoResponse>;
+
   /** 平台短短视频列表 */
   ManagementListShortVideo(
     request: short_video.ManagementListShortVideoRequest

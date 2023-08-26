@@ -19,7 +19,7 @@ public interface StageVideoOrBuilder extends
 
   /**
    * <pre>
-   * 短视频URL
+   * 暂存视频URL
    * </pre>
    *
    * <code>string video_url = 2;</code>
@@ -28,7 +28,7 @@ public interface StageVideoOrBuilder extends
   java.lang.String getVideoUrl();
   /**
    * <pre>
-   * 短视频URL
+   * 暂存视频URL
    * </pre>
    *
    * <code>string video_url = 2;</code>
@@ -39,10 +39,100 @@ public interface StageVideoOrBuilder extends
 
   /**
    * <pre>
+   * 暂存视频OSS路径
+   * </pre>
+   *
+   * <code>string video_path = 3;</code>
+   * @return The videoPath.
+   */
+  java.lang.String getVideoPath();
+  /**
+   * <pre>
+   * 暂存视频OSS路径
+   * </pre>
+   *
+   * <code>string video_path = 3;</code>
+   * @return The bytes for videoPath.
+   */
+  com.google.protobuf.ByteString
+      getVideoPathBytes();
+
+  /**
+   * <pre>
+   * 暂存视频封面URL
+   * </pre>
+   *
+   * <code>string cover_url = 4;</code>
+   * @return The coverUrl.
+   */
+  java.lang.String getCoverUrl();
+  /**
+   * <pre>
+   * 暂存视频封面URL
+   * </pre>
+   *
+   * <code>string cover_url = 4;</code>
+   * @return The bytes for coverUrl.
+   */
+  com.google.protobuf.ByteString
+      getCoverUrlBytes();
+
+  /**
+   * <pre>
+   * 暂存视频封面OSS路径
+   * </pre>
+   *
+   * <code>string cover_path = 5;</code>
+   * @return The coverPath.
+   */
+  java.lang.String getCoverPath();
+  /**
+   * <pre>
+   * 暂存视频封面OSS路径
+   * </pre>
+   *
+   * <code>string cover_path = 5;</code>
+   * @return The bytes for coverPath.
+   */
+  com.google.protobuf.ByteString
+      getCoverPathBytes();
+
+  /**
+   * <pre>
+   * 暂存视频描述
+   * </pre>
+   *
+   * <code>string description = 6;</code>
+   * @return The description.
+   */
+  java.lang.String getDescription();
+  /**
+   * <pre>
+   * 暂存视频描述
+   * </pre>
+   *
+   * <code>string description = 6;</code>
+   * @return The bytes for description.
+   */
+  com.google.protobuf.ByteString
+      getDescriptionBytes();
+
+  /**
+   * <pre>
+   * 视频可见性：1. 公开；2: 隐私，仅自己可见
+   * </pre>
+   *
+   * <code>int32 visibility = 7;</code>
+   * @return The visibility.
+   */
+  int getVisibility();
+
+  /**
+   * <pre>
    * 视频文件大小
    * </pre>
    *
-   * <code>int32 video_length = 3;</code>
+   * <code>int32 video_length = 8;</code>
    * @return The videoLength.
    */
   int getVideoLength();
@@ -52,17 +142,88 @@ public interface StageVideoOrBuilder extends
    * 视频时长
    * </pre>
    *
-   * <code>int32 video_duration = 4;</code>
+   * <code>int32 video_duration = 9;</code>
    * @return The videoDuration.
    */
   int getVideoDuration();
 
   /**
    * <pre>
+   * 商品列表
+   * </pre>
+   *
+   * <code>repeated .glory_api.ShortVideoProduct products = 10;</code>
+   */
+  java.util.List<com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct> 
+      getProductsList();
+  /**
+   * <pre>
+   * 商品列表
+   * </pre>
+   *
+   * <code>repeated .glory_api.ShortVideoProduct products = 10;</code>
+   */
+  com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct getProducts(int index);
+  /**
+   * <pre>
+   * 商品列表
+   * </pre>
+   *
+   * <code>repeated .glory_api.ShortVideoProduct products = 10;</code>
+   */
+  int getProductsCount();
+  /**
+   * <pre>
+   * 商品列表
+   * </pre>
+   *
+   * <code>repeated .glory_api.ShortVideoProduct products = 10;</code>
+   */
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.short_video.ShortVideoProductOrBuilder> 
+      getProductsOrBuilderList();
+  /**
+   * <pre>
+   * 商品列表
+   * </pre>
+   *
+   * <code>repeated .glory_api.ShortVideoProduct products = 10;</code>
+   */
+  com.zhijiejiaoyu.glory_api.short_video.ShortVideoProductOrBuilder getProductsOrBuilder(
+      int index);
+
+  /**
+   * <pre>
+   * 店铺信息
+   * </pre>
+   *
+   * <code>.glory_api.ShortVideoShop shop = 11;</code>
+   * @return Whether the shop field is set.
+   */
+  boolean hasShop();
+  /**
+   * <pre>
+   * 店铺信息
+   * </pre>
+   *
+   * <code>.glory_api.ShortVideoShop shop = 11;</code>
+   * @return The shop.
+   */
+  com.zhijiejiaoyu.glory_api.short_video.ShortVideoShop getShop();
+  /**
+   * <pre>
+   * 店铺信息
+   * </pre>
+   *
+   * <code>.glory_api.ShortVideoShop shop = 11;</code>
+   */
+  com.zhijiejiaoyu.glory_api.short_video.ShortVideoShopOrBuilder getShopOrBuilder();
+
+  /**
+   * <pre>
    * 创建时间
    * </pre>
    *
-   * <code>string created_at = 5;</code>
+   * <code>string created_at = 12;</code>
    * @return The createdAt.
    */
   java.lang.String getCreatedAt();
@@ -71,7 +232,7 @@ public interface StageVideoOrBuilder extends
    * 创建时间
    * </pre>
    *
-   * <code>string created_at = 5;</code>
+   * <code>string created_at = 12;</code>
    * @return The bytes for createdAt.
    */
   com.google.protobuf.ByteString

@@ -4,18 +4,18 @@
 package com.zhijiejiaoyu.glory_api.short_video;
 
 /**
- * Protobuf type {@code glory_api.StageShortVideoRequest}
+ * Protobuf type {@code glory_api.UpdateStageVideoRequest}
  */
-public final class StageShortVideoRequest extends
+public final class UpdateStageVideoRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:glory_api.StageShortVideoRequest)
-    StageShortVideoRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:glory_api.UpdateStageVideoRequest)
+    UpdateStageVideoRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use StageShortVideoRequest.newBuilder() to construct.
-  private StageShortVideoRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use UpdateStageVideoRequest.newBuilder() to construct.
+  private UpdateStageVideoRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private StageShortVideoRequest() {
+  private UpdateStageVideoRequest() {
     videoPath = "";
     coverPath = "";
     description = "";
@@ -26,7 +26,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new StageShortVideoRequest();
+    return new UpdateStageVideoRequest();
   }
 
   @java.lang.Override
@@ -34,7 +34,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private StageShortVideoRequest(
+  private UpdateStageVideoRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -66,30 +66,35 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 16: {
 
-            videoPath = s;
+            stageVideoId = input.readInt64();
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            coverPath = s;
+            videoPath = s;
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
+            coverPath = s;
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
             description = s;
             break;
           }
-          case 40: {
+          case 48: {
 
             visibility = input.readInt32();
             break;
           }
-          case 50: {
+          case 58: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               products = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct>();
               mutable_bitField0_ |= 0x00000001;
@@ -98,7 +103,7 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct.parser(), extensionRegistry));
             break;
           }
-          case 56: {
+          case 64: {
 
             shopId = input.readInt64();
             break;
@@ -127,15 +132,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.zhijiejiaoyu.glory_api.short_video.ShortVideoOuterClass.internal_static_glory_api_StageShortVideoRequest_descriptor;
+    return com.zhijiejiaoyu.glory_api.short_video.ShortVideoOuterClass.internal_static_glory_api_UpdateStageVideoRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.zhijiejiaoyu.glory_api.short_video.ShortVideoOuterClass.internal_static_glory_api_StageShortVideoRequest_fieldAccessorTable
+    return com.zhijiejiaoyu.glory_api.short_video.ShortVideoOuterClass.internal_static_glory_api_UpdateStageVideoRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest.class, com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest.Builder.class);
+            com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest.class, com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest.Builder.class);
   }
 
   public static final int BASE_REQUEST_FIELD_NUMBER = 1;
@@ -164,10 +169,29 @@ private static final long serialVersionUID = 0L;
     return getBaseRequest();
   }
 
-  public static final int VIDEO_PATH_FIELD_NUMBER = 2;
+  public static final int STAGE_VIDEO_ID_FIELD_NUMBER = 2;
+  private long stageVideoId;
+  /**
+   * <pre>
+   * 暂存视频ID
+   * </pre>
+   *
+   * <code>int64 stage_video_id = 2;</code>
+   * @return The stageVideoId.
+   */
+  @java.lang.Override
+  public long getStageVideoId() {
+    return stageVideoId;
+  }
+
+  public static final int VIDEO_PATH_FIELD_NUMBER = 3;
   private volatile java.lang.Object videoPath;
   /**
-   * <code>string video_path = 2;</code>
+   * <pre>
+   * 暂存视频OSS路径
+   * </pre>
+   *
+   * <code>string video_path = 3;</code>
    * @return The videoPath.
    */
   @java.lang.Override
@@ -184,7 +208,11 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string video_path = 2;</code>
+   * <pre>
+   * 暂存视频OSS路径
+   * </pre>
+   *
+   * <code>string video_path = 3;</code>
    * @return The bytes for videoPath.
    */
   @java.lang.Override
@@ -202,10 +230,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int COVER_PATH_FIELD_NUMBER = 3;
+  public static final int COVER_PATH_FIELD_NUMBER = 4;
   private volatile java.lang.Object coverPath;
   /**
-   * <code>string cover_path = 3;</code>
+   * <pre>
+   * 暂存视频封面OSS路径
+   * </pre>
+   *
+   * <code>string cover_path = 4;</code>
    * @return The coverPath.
    */
   @java.lang.Override
@@ -222,7 +254,11 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string cover_path = 3;</code>
+   * <pre>
+   * 暂存视频封面OSS路径
+   * </pre>
+   *
+   * <code>string cover_path = 4;</code>
    * @return The bytes for coverPath.
    */
   @java.lang.Override
@@ -240,14 +276,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 4;
+  public static final int DESCRIPTION_FIELD_NUMBER = 5;
   private volatile java.lang.Object description;
   /**
    * <pre>
    * 短视频描述
    * </pre>
    *
-   * <code>string description = 4;</code>
+   * <code>string description = 5;</code>
    * @return The description.
    */
   @java.lang.Override
@@ -268,7 +304,7 @@ private static final long serialVersionUID = 0L;
    * 短视频描述
    * </pre>
    *
-   * <code>string description = 4;</code>
+   * <code>string description = 5;</code>
    * @return The bytes for description.
    */
   @java.lang.Override
@@ -286,14 +322,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int VISIBILITY_FIELD_NUMBER = 5;
+  public static final int VISIBILITY_FIELD_NUMBER = 6;
   private int visibility;
   /**
    * <pre>
    * 视频可见性：1.公开；2:隐私，仅自己可见
    * </pre>
    *
-   * <code>int32 visibility = 5;</code>
+   * <code>int32 visibility = 6;</code>
    * @return The visibility.
    */
   @java.lang.Override
@@ -301,14 +337,14 @@ private static final long serialVersionUID = 0L;
     return visibility;
   }
 
-  public static final int PRODUCTS_FIELD_NUMBER = 6;
+  public static final int PRODUCTS_FIELD_NUMBER = 7;
   private java.util.List<com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct> products;
   /**
    * <pre>
    * 商品信息
    * </pre>
    *
-   * <code>repeated .glory_api.ShortVideoProduct products = 6;</code>
+   * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct> getProductsList() {
@@ -319,7 +355,7 @@ private static final long serialVersionUID = 0L;
    * 商品信息
    * </pre>
    *
-   * <code>repeated .glory_api.ShortVideoProduct products = 6;</code>
+   * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.short_video.ShortVideoProductOrBuilder> 
@@ -331,7 +367,7 @@ private static final long serialVersionUID = 0L;
    * 商品信息
    * </pre>
    *
-   * <code>repeated .glory_api.ShortVideoProduct products = 6;</code>
+   * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
    */
   @java.lang.Override
   public int getProductsCount() {
@@ -342,7 +378,7 @@ private static final long serialVersionUID = 0L;
    * 商品信息
    * </pre>
    *
-   * <code>repeated .glory_api.ShortVideoProduct products = 6;</code>
+   * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct getProducts(int index) {
@@ -353,7 +389,7 @@ private static final long serialVersionUID = 0L;
    * 商品信息
    * </pre>
    *
-   * <code>repeated .glory_api.ShortVideoProduct products = 6;</code>
+   * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.short_video.ShortVideoProductOrBuilder getProductsOrBuilder(
@@ -361,14 +397,14 @@ private static final long serialVersionUID = 0L;
     return products.get(index);
   }
 
-  public static final int SHOP_ID_FIELD_NUMBER = 7;
+  public static final int SHOP_ID_FIELD_NUMBER = 8;
   private long shopId;
   /**
    * <pre>
    * 店铺ID
    * </pre>
    *
-   * <code>int64 shop_id = 7;</code>
+   * <code>int64 shop_id = 8;</code>
    * @return The shopId.
    */
   @java.lang.Override
@@ -393,23 +429,26 @@ private static final long serialVersionUID = 0L;
     if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
+    if (stageVideoId != 0L) {
+      output.writeInt64(2, stageVideoId);
+    }
     if (!getVideoPathBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, videoPath);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, videoPath);
     }
     if (!getCoverPathBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, coverPath);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, coverPath);
     }
     if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, description);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, description);
     }
     if (visibility != 0) {
-      output.writeInt32(5, visibility);
+      output.writeInt32(6, visibility);
     }
     for (int i = 0; i < products.size(); i++) {
-      output.writeMessage(6, products.get(i));
+      output.writeMessage(7, products.get(i));
     }
     if (shopId != 0L) {
-      output.writeInt64(7, shopId);
+      output.writeInt64(8, shopId);
     }
     unknownFields.writeTo(output);
   }
@@ -424,26 +463,30 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseRequest());
     }
+    if (stageVideoId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(2, stageVideoId);
+    }
     if (!getVideoPathBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, videoPath);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, videoPath);
     }
     if (!getCoverPathBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, coverPath);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, coverPath);
     }
     if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, description);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, description);
     }
     if (visibility != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(5, visibility);
+        .computeInt32Size(6, visibility);
     }
     for (int i = 0; i < products.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, products.get(i));
+        .computeMessageSize(7, products.get(i));
     }
     if (shopId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(7, shopId);
+        .computeInt64Size(8, shopId);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -455,16 +498,18 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest)) {
+    if (!(obj instanceof com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest)) {
       return super.equals(obj);
     }
-    com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest other = (com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest) obj;
+    com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest other = (com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest) obj;
 
     if (hasBaseRequest() != other.hasBaseRequest()) return false;
     if (hasBaseRequest()) {
       if (!getBaseRequest()
           .equals(other.getBaseRequest())) return false;
     }
+    if (getStageVideoId()
+        != other.getStageVideoId()) return false;
     if (!getVideoPath()
         .equals(other.getVideoPath())) return false;
     if (!getCoverPath()
@@ -492,6 +537,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
       hash = (53 * hash) + getBaseRequest().hashCode();
     }
+    hash = (37 * hash) + STAGE_VIDEO_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getStageVideoId());
     hash = (37 * hash) + VIDEO_PATH_FIELD_NUMBER;
     hash = (53 * hash) + getVideoPath().hashCode();
     hash = (37 * hash) + COVER_PATH_FIELD_NUMBER;
@@ -512,69 +560,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest parseFrom(byte[] data)
+  public static com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest parseFrom(java.io.InputStream input)
+  public static com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest parseDelimitedFrom(
+  public static com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -587,7 +635,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest prototype) {
+  public static Builder newBuilder(com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -603,26 +651,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code glory_api.StageShortVideoRequest}
+   * Protobuf type {@code glory_api.UpdateStageVideoRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:glory_api.StageShortVideoRequest)
-      com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:glory_api.UpdateStageVideoRequest)
+      com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.zhijiejiaoyu.glory_api.short_video.ShortVideoOuterClass.internal_static_glory_api_StageShortVideoRequest_descriptor;
+      return com.zhijiejiaoyu.glory_api.short_video.ShortVideoOuterClass.internal_static_glory_api_UpdateStageVideoRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.zhijiejiaoyu.glory_api.short_video.ShortVideoOuterClass.internal_static_glory_api_StageShortVideoRequest_fieldAccessorTable
+      return com.zhijiejiaoyu.glory_api.short_video.ShortVideoOuterClass.internal_static_glory_api_UpdateStageVideoRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest.class, com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest.Builder.class);
+              com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest.class, com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest.Builder.class);
     }
 
-    // Construct using com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest.newBuilder()
+    // Construct using com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -647,6 +695,8 @@ private static final long serialVersionUID = 0L;
         baseRequest = null;
         baseRequestBuilder = null;
       }
+      stageVideoId = 0L;
+
       videoPath = "";
 
       coverPath = "";
@@ -669,17 +719,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.zhijiejiaoyu.glory_api.short_video.ShortVideoOuterClass.internal_static_glory_api_StageShortVideoRequest_descriptor;
+      return com.zhijiejiaoyu.glory_api.short_video.ShortVideoOuterClass.internal_static_glory_api_UpdateStageVideoRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest getDefaultInstanceForType() {
-      return com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest.getDefaultInstance();
+    public com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest getDefaultInstanceForType() {
+      return com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest build() {
-      com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest result = buildPartial();
+    public com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest build() {
+      com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -687,14 +737,15 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest buildPartial() {
-      com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest result = new com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest(this);
+    public com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest buildPartial() {
+      com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest result = new com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest(this);
       int from_bitField0 = bitField0;
       if (baseRequestBuilder == null) {
         result.baseRequest = baseRequest;
       } else {
         result.baseRequest = baseRequestBuilder.build();
       }
+      result.stageVideoId = stageVideoId;
       result.videoPath = videoPath;
       result.coverPath = coverPath;
       result.description = description;
@@ -747,18 +798,21 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest) {
-        return mergeFrom((com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest)other);
+      if (other instanceof com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest) {
+        return mergeFrom((com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest other) {
-      if (other == com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest other) {
+      if (other == com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest.getDefaultInstance()) return this;
       if (other.hasBaseRequest()) {
         mergeBaseRequest(other.getBaseRequest());
+      }
+      if (other.getStageVideoId() != 0L) {
+        setStageVideoId(other.getStageVideoId());
       }
       if (!other.getVideoPath().isEmpty()) {
         videoPath = other.videoPath;
@@ -819,11 +873,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest parsedMessage = null;
+      com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -953,9 +1007,56 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder;
     }
 
+    private long stageVideoId ;
+    /**
+     * <pre>
+     * 暂存视频ID
+     * </pre>
+     *
+     * <code>int64 stage_video_id = 2;</code>
+     * @return The stageVideoId.
+     */
+    @java.lang.Override
+    public long getStageVideoId() {
+      return stageVideoId;
+    }
+    /**
+     * <pre>
+     * 暂存视频ID
+     * </pre>
+     *
+     * <code>int64 stage_video_id = 2;</code>
+     * @param value The stageVideoId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStageVideoId(long value) {
+      
+      stageVideoId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 暂存视频ID
+     * </pre>
+     *
+     * <code>int64 stage_video_id = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStageVideoId() {
+      
+      stageVideoId = 0L;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object videoPath = "";
     /**
-     * <code>string video_path = 2;</code>
+     * <pre>
+     * 暂存视频OSS路径
+     * </pre>
+     *
+     * <code>string video_path = 3;</code>
      * @return The videoPath.
      */
     public java.lang.String getVideoPath() {
@@ -971,7 +1072,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string video_path = 2;</code>
+     * <pre>
+     * 暂存视频OSS路径
+     * </pre>
+     *
+     * <code>string video_path = 3;</code>
      * @return The bytes for videoPath.
      */
     public com.google.protobuf.ByteString
@@ -988,7 +1093,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string video_path = 2;</code>
+     * <pre>
+     * 暂存视频OSS路径
+     * </pre>
+     *
+     * <code>string video_path = 3;</code>
      * @param value The videoPath to set.
      * @return This builder for chaining.
      */
@@ -1003,7 +1112,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string video_path = 2;</code>
+     * <pre>
+     * 暂存视频OSS路径
+     * </pre>
+     *
+     * <code>string video_path = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearVideoPath() {
@@ -1013,7 +1126,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string video_path = 2;</code>
+     * <pre>
+     * 暂存视频OSS路径
+     * </pre>
+     *
+     * <code>string video_path = 3;</code>
      * @param value The bytes for videoPath to set.
      * @return This builder for chaining.
      */
@@ -1031,7 +1148,11 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object coverPath = "";
     /**
-     * <code>string cover_path = 3;</code>
+     * <pre>
+     * 暂存视频封面OSS路径
+     * </pre>
+     *
+     * <code>string cover_path = 4;</code>
      * @return The coverPath.
      */
     public java.lang.String getCoverPath() {
@@ -1047,7 +1168,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string cover_path = 3;</code>
+     * <pre>
+     * 暂存视频封面OSS路径
+     * </pre>
+     *
+     * <code>string cover_path = 4;</code>
      * @return The bytes for coverPath.
      */
     public com.google.protobuf.ByteString
@@ -1064,7 +1189,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string cover_path = 3;</code>
+     * <pre>
+     * 暂存视频封面OSS路径
+     * </pre>
+     *
+     * <code>string cover_path = 4;</code>
      * @param value The coverPath to set.
      * @return This builder for chaining.
      */
@@ -1079,7 +1208,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string cover_path = 3;</code>
+     * <pre>
+     * 暂存视频封面OSS路径
+     * </pre>
+     *
+     * <code>string cover_path = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearCoverPath() {
@@ -1089,7 +1222,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string cover_path = 3;</code>
+     * <pre>
+     * 暂存视频封面OSS路径
+     * </pre>
+     *
+     * <code>string cover_path = 4;</code>
      * @param value The bytes for coverPath to set.
      * @return This builder for chaining.
      */
@@ -1111,7 +1248,7 @@ private static final long serialVersionUID = 0L;
      * 短视频描述
      * </pre>
      *
-     * <code>string description = 4;</code>
+     * <code>string description = 5;</code>
      * @return The description.
      */
     public java.lang.String getDescription() {
@@ -1131,7 +1268,7 @@ private static final long serialVersionUID = 0L;
      * 短视频描述
      * </pre>
      *
-     * <code>string description = 4;</code>
+     * <code>string description = 5;</code>
      * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
@@ -1152,7 +1289,7 @@ private static final long serialVersionUID = 0L;
      * 短视频描述
      * </pre>
      *
-     * <code>string description = 4;</code>
+     * <code>string description = 5;</code>
      * @param value The description to set.
      * @return This builder for chaining.
      */
@@ -1171,7 +1308,7 @@ private static final long serialVersionUID = 0L;
      * 短视频描述
      * </pre>
      *
-     * <code>string description = 4;</code>
+     * <code>string description = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
@@ -1185,7 +1322,7 @@ private static final long serialVersionUID = 0L;
      * 短视频描述
      * </pre>
      *
-     * <code>string description = 4;</code>
+     * <code>string description = 5;</code>
      * @param value The bytes for description to set.
      * @return This builder for chaining.
      */
@@ -1207,7 +1344,7 @@ private static final long serialVersionUID = 0L;
      * 视频可见性：1.公开；2:隐私，仅自己可见
      * </pre>
      *
-     * <code>int32 visibility = 5;</code>
+     * <code>int32 visibility = 6;</code>
      * @return The visibility.
      */
     @java.lang.Override
@@ -1219,7 +1356,7 @@ private static final long serialVersionUID = 0L;
      * 视频可见性：1.公开；2:隐私，仅自己可见
      * </pre>
      *
-     * <code>int32 visibility = 5;</code>
+     * <code>int32 visibility = 6;</code>
      * @param value The visibility to set.
      * @return This builder for chaining.
      */
@@ -1234,7 +1371,7 @@ private static final long serialVersionUID = 0L;
      * 视频可见性：1.公开；2:隐私，仅自己可见
      * </pre>
      *
-     * <code>int32 visibility = 5;</code>
+     * <code>int32 visibility = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearVisibility() {
@@ -1261,7 +1398,7 @@ private static final long serialVersionUID = 0L;
      * 商品信息
      * </pre>
      *
-     * <code>repeated .glory_api.ShortVideoProduct products = 6;</code>
+     * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct> getProductsList() {
       if (productsBuilder == null) {
@@ -1275,7 +1412,7 @@ private static final long serialVersionUID = 0L;
      * 商品信息
      * </pre>
      *
-     * <code>repeated .glory_api.ShortVideoProduct products = 6;</code>
+     * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
      */
     public int getProductsCount() {
       if (productsBuilder == null) {
@@ -1289,7 +1426,7 @@ private static final long serialVersionUID = 0L;
      * 商品信息
      * </pre>
      *
-     * <code>repeated .glory_api.ShortVideoProduct products = 6;</code>
+     * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
      */
     public com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct getProducts(int index) {
       if (productsBuilder == null) {
@@ -1303,7 +1440,7 @@ private static final long serialVersionUID = 0L;
      * 商品信息
      * </pre>
      *
-     * <code>repeated .glory_api.ShortVideoProduct products = 6;</code>
+     * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
      */
     public Builder setProducts(
         int index, com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct value) {
@@ -1324,7 +1461,7 @@ private static final long serialVersionUID = 0L;
      * 商品信息
      * </pre>
      *
-     * <code>repeated .glory_api.ShortVideoProduct products = 6;</code>
+     * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
      */
     public Builder setProducts(
         int index, com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct.Builder builderForValue) {
@@ -1342,7 +1479,7 @@ private static final long serialVersionUID = 0L;
      * 商品信息
      * </pre>
      *
-     * <code>repeated .glory_api.ShortVideoProduct products = 6;</code>
+     * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
      */
     public Builder addProducts(com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct value) {
       if (productsBuilder == null) {
@@ -1362,7 +1499,7 @@ private static final long serialVersionUID = 0L;
      * 商品信息
      * </pre>
      *
-     * <code>repeated .glory_api.ShortVideoProduct products = 6;</code>
+     * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
      */
     public Builder addProducts(
         int index, com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct value) {
@@ -1383,7 +1520,7 @@ private static final long serialVersionUID = 0L;
      * 商品信息
      * </pre>
      *
-     * <code>repeated .glory_api.ShortVideoProduct products = 6;</code>
+     * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
      */
     public Builder addProducts(
         com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct.Builder builderForValue) {
@@ -1401,7 +1538,7 @@ private static final long serialVersionUID = 0L;
      * 商品信息
      * </pre>
      *
-     * <code>repeated .glory_api.ShortVideoProduct products = 6;</code>
+     * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
      */
     public Builder addProducts(
         int index, com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct.Builder builderForValue) {
@@ -1419,7 +1556,7 @@ private static final long serialVersionUID = 0L;
      * 商品信息
      * </pre>
      *
-     * <code>repeated .glory_api.ShortVideoProduct products = 6;</code>
+     * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
      */
     public Builder addAllProducts(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct> values) {
@@ -1438,7 +1575,7 @@ private static final long serialVersionUID = 0L;
      * 商品信息
      * </pre>
      *
-     * <code>repeated .glory_api.ShortVideoProduct products = 6;</code>
+     * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
      */
     public Builder clearProducts() {
       if (productsBuilder == null) {
@@ -1455,7 +1592,7 @@ private static final long serialVersionUID = 0L;
      * 商品信息
      * </pre>
      *
-     * <code>repeated .glory_api.ShortVideoProduct products = 6;</code>
+     * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
      */
     public Builder removeProducts(int index) {
       if (productsBuilder == null) {
@@ -1472,7 +1609,7 @@ private static final long serialVersionUID = 0L;
      * 商品信息
      * </pre>
      *
-     * <code>repeated .glory_api.ShortVideoProduct products = 6;</code>
+     * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
      */
     public com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct.Builder getProductsBuilder(
         int index) {
@@ -1483,7 +1620,7 @@ private static final long serialVersionUID = 0L;
      * 商品信息
      * </pre>
      *
-     * <code>repeated .glory_api.ShortVideoProduct products = 6;</code>
+     * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
      */
     public com.zhijiejiaoyu.glory_api.short_video.ShortVideoProductOrBuilder getProductsOrBuilder(
         int index) {
@@ -1497,7 +1634,7 @@ private static final long serialVersionUID = 0L;
      * 商品信息
      * </pre>
      *
-     * <code>repeated .glory_api.ShortVideoProduct products = 6;</code>
+     * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.short_video.ShortVideoProductOrBuilder> 
          getProductsOrBuilderList() {
@@ -1512,7 +1649,7 @@ private static final long serialVersionUID = 0L;
      * 商品信息
      * </pre>
      *
-     * <code>repeated .glory_api.ShortVideoProduct products = 6;</code>
+     * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
      */
     public com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct.Builder addProductsBuilder() {
       return getProductsFieldBuilder().addBuilder(
@@ -1523,7 +1660,7 @@ private static final long serialVersionUID = 0L;
      * 商品信息
      * </pre>
      *
-     * <code>repeated .glory_api.ShortVideoProduct products = 6;</code>
+     * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
      */
     public com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct.Builder addProductsBuilder(
         int index) {
@@ -1535,7 +1672,7 @@ private static final long serialVersionUID = 0L;
      * 商品信息
      * </pre>
      *
-     * <code>repeated .glory_api.ShortVideoProduct products = 6;</code>
+     * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct.Builder> 
          getProductsBuilderList() {
@@ -1562,7 +1699,7 @@ private static final long serialVersionUID = 0L;
      * 店铺ID
      * </pre>
      *
-     * <code>int64 shop_id = 7;</code>
+     * <code>int64 shop_id = 8;</code>
      * @return The shopId.
      */
     @java.lang.Override
@@ -1574,7 +1711,7 @@ private static final long serialVersionUID = 0L;
      * 店铺ID
      * </pre>
      *
-     * <code>int64 shop_id = 7;</code>
+     * <code>int64 shop_id = 8;</code>
      * @param value The shopId to set.
      * @return This builder for chaining.
      */
@@ -1589,7 +1726,7 @@ private static final long serialVersionUID = 0L;
      * 店铺ID
      * </pre>
      *
-     * <code>int64 shop_id = 7;</code>
+     * <code>int64 shop_id = 8;</code>
      * @return This builder for chaining.
      */
     public Builder clearShopId() {
@@ -1611,41 +1748,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:glory_api.StageShortVideoRequest)
+    // @@protoc_insertion_point(builder_scope:glory_api.UpdateStageVideoRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:glory_api.StageShortVideoRequest)
-  private static final com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:glory_api.UpdateStageVideoRequest)
+  private static final com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest();
+    DEFAULT_INSTANCE = new com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest();
   }
 
-  public static com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest getDefaultInstance() {
+  public static com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<StageShortVideoRequest>
-      PARSER = new com.google.protobuf.AbstractParser<StageShortVideoRequest>() {
+  private static final com.google.protobuf.Parser<UpdateStageVideoRequest>
+      PARSER = new com.google.protobuf.AbstractParser<UpdateStageVideoRequest>() {
     @java.lang.Override
-    public StageShortVideoRequest parsePartialFrom(
+    public UpdateStageVideoRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new StageShortVideoRequest(input, extensionRegistry);
+      return new UpdateStageVideoRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<StageShortVideoRequest> parser() {
+  public static com.google.protobuf.Parser<UpdateStageVideoRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<StageShortVideoRequest> getParserForType() {
+  public com.google.protobuf.Parser<UpdateStageVideoRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.short_video.StageShortVideoRequest getDefaultInstanceForType() {
+  public com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

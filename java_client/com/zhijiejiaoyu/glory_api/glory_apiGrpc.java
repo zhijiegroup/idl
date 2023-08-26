@@ -5998,6 +5998,37 @@ public final class glory_apiGrpc {
     return getDeleteStageVideoMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoResponse> getUpdateStageVideoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateStageVideo",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoResponse> getUpdateStageVideoMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest, com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoResponse> getUpdateStageVideoMethod;
+    if ((getUpdateStageVideoMethod = glory_apiGrpc.getUpdateStageVideoMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getUpdateStageVideoMethod = glory_apiGrpc.getUpdateStageVideoMethod) == null) {
+          glory_apiGrpc.getUpdateStageVideoMethod = getUpdateStageVideoMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest, com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateStageVideo"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("UpdateStageVideo"))
+              .build();
+        }
+      }
+    }
+    return getUpdateStageVideoMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoRequest,
       com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoResponse> getManagementListShortVideoMethod;
 
@@ -7719,6 +7750,13 @@ public final class glory_apiGrpc {
     default void deleteStageVideo(com.zhijiejiaoyu.glory_api.short_video.DeleteStageVideoRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.DeleteStageVideoResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteStageVideoMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updateStageVideo(com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateStageVideoMethod(), responseObserver);
     }
 
     /**
@@ -9492,6 +9530,14 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public void updateStageVideo(com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateStageVideoMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
      * <pre>
      * 平台短短视频列表
      * </pre>
@@ -11061,6 +11107,13 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.short_video.DeleteStageVideoResponse deleteStageVideo(com.zhijiejiaoyu.glory_api.short_video.DeleteStageVideoRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteStageVideoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoResponse updateStageVideo(com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateStageVideoMethod(), getCallOptions(), request);
     }
 
     /**
@@ -12823,6 +12876,14 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoResponse> updateStageVideo(
+        com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateStageVideoMethod(), getCallOptions()), request);
+    }
+
+    /**
      * <pre>
      * 平台短短视频列表
      * </pre>
@@ -13082,12 +13143,13 @@ public final class glory_apiGrpc {
   private static final int METHODID_DELETE_SHORT_VIDEO = 190;
   private static final int METHODID_GET_STAGE_VIDEO = 191;
   private static final int METHODID_DELETE_STAGE_VIDEO = 192;
-  private static final int METHODID_MANAGEMENT_LIST_SHORT_VIDEO = 193;
-  private static final int METHODID_MANAGEMENT_CENSOR_SHORT_VIDEO = 194;
-  private static final int METHODID_MANAGEMENT_DELETE_SHORT_VIDEO = 195;
-  private static final int METHODID_LIST_SHORT_VIDEO = 196;
-  private static final int METHODID_LIKE_SHORT_VIDEO = 197;
-  private static final int METHODID_FAVORITE_SHORT_VIDEO = 198;
+  private static final int METHODID_UPDATE_STAGE_VIDEO = 193;
+  private static final int METHODID_MANAGEMENT_LIST_SHORT_VIDEO = 194;
+  private static final int METHODID_MANAGEMENT_CENSOR_SHORT_VIDEO = 195;
+  private static final int METHODID_MANAGEMENT_DELETE_SHORT_VIDEO = 196;
+  private static final int METHODID_LIST_SHORT_VIDEO = 197;
+  private static final int METHODID_LIKE_SHORT_VIDEO = 198;
+  private static final int METHODID_FAVORITE_SHORT_VIDEO = 199;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -13877,6 +13939,10 @@ public final class glory_apiGrpc {
         case METHODID_DELETE_STAGE_VIDEO:
           serviceImpl.deleteStageVideo((com.zhijiejiaoyu.glory_api.short_video.DeleteStageVideoRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.DeleteStageVideoResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_STAGE_VIDEO:
+          serviceImpl.updateStageVideo((com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoResponse>) responseObserver);
           break;
         case METHODID_MANAGEMENT_LIST_SHORT_VIDEO:
           serviceImpl.managementListShortVideo((com.zhijiejiaoyu.glory_api.short_video.ManagementListShortVideoRequest) request,
@@ -15272,6 +15338,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.short_video.DeleteStageVideoResponse>(
                 service, METHODID_DELETE_STAGE_VIDEO)))
         .addMethod(
+          getUpdateStageVideoMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoRequest,
+              com.zhijiejiaoyu.glory_api.short_video.UpdateStageVideoResponse>(
+                service, METHODID_UPDATE_STAGE_VIDEO)))
+        .addMethod(
           getManagementListShortVideoMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -15554,6 +15627,7 @@ public final class glory_apiGrpc {
               .addMethod(getDeleteShortVideoMethod())
               .addMethod(getGetStageVideoMethod())
               .addMethod(getDeleteStageVideoMethod())
+              .addMethod(getUpdateStageVideoMethod())
               .addMethod(getManagementListShortVideoMethod())
               .addMethod(getManagementCensorShortVideoMethod())
               .addMethod(getManagementDeleteShortVideoMethod())
