@@ -4,26 +4,27 @@
 package com.zhijiejiaoyu.glory_api.tenant;
 
 /**
- * Protobuf type {@code glory_api.ListTenantUserRequest}
+ * Protobuf type {@code glory_api.UpdateTenantUserPasswordRequest}
  */
-public final class ListTenantUserRequest extends
+public final class UpdateTenantUserPasswordRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:glory_api.ListTenantUserRequest)
-    ListTenantUserRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:glory_api.UpdateTenantUserPasswordRequest)
+    UpdateTenantUserPasswordRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use ListTenantUserRequest.newBuilder() to construct.
-  private ListTenantUserRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use UpdateTenantUserPasswordRequest.newBuilder() to construct.
+  private UpdateTenantUserPasswordRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ListTenantUserRequest() {
-    name = "";
+  private UpdateTenantUserPasswordRequest() {
+    phone = "";
+    password = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new ListTenantUserRequest();
+    return new UpdateTenantUserPasswordRequest();
   }
 
   @java.lang.Override
@@ -31,7 +32,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private ListTenantUserRequest(
+  private UpdateTenantUserPasswordRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -62,33 +63,16 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 16: {
-
-            tenantId = input.readInt64();
-            break;
-          }
-          case 24: {
-
-            deptId = input.readInt64();
-            break;
-          }
-          case 34: {
+          case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            name = s;
+            phone = s;
             break;
           }
-          case 802: {
-            com.zhijiejiaoyu.base.PaginationRequest.Builder subBuilder = null;
-            if (pagination != null) {
-              subBuilder = pagination.toBuilder();
-            }
-            pagination = input.readMessage(com.zhijiejiaoyu.base.PaginationRequest.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(pagination);
-              pagination = subBuilder.buildPartial();
-            }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
 
+            password = s;
             break;
           }
           default: {
@@ -112,15 +96,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.zhijiejiaoyu.glory_api.tenant.TenantDept.internal_static_glory_api_ListTenantUserRequest_descriptor;
+    return com.zhijiejiaoyu.glory_api.tenant.TenantDept.internal_static_glory_api_UpdateTenantUserPasswordRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.zhijiejiaoyu.glory_api.tenant.TenantDept.internal_static_glory_api_ListTenantUserRequest_fieldAccessorTable
+    return com.zhijiejiaoyu.glory_api.tenant.TenantDept.internal_static_glory_api_UpdateTenantUserPasswordRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.zhijiejiaoyu.glory_api.tenant.ListTenantUserRequest.class, com.zhijiejiaoyu.glory_api.tenant.ListTenantUserRequest.Builder.class);
+            com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest.class, com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest.Builder.class);
   }
 
   public static final int BASE_REQUEST_FIELD_NUMBER = 1;
@@ -149,90 +133,80 @@ private static final long serialVersionUID = 0L;
     return getBaseRequest();
   }
 
-  public static final int TENANT_ID_FIELD_NUMBER = 2;
-  private long tenantId;
+  public static final int PHONE_FIELD_NUMBER = 2;
+  private volatile java.lang.Object phone;
   /**
-   * <code>int64 tenant_id = 2;</code>
-   * @return The tenantId.
+   * <code>string phone = 2;</code>
+   * @return The phone.
    */
   @java.lang.Override
-  public long getTenantId() {
-    return tenantId;
-  }
-
-  public static final int DEPT_ID_FIELD_NUMBER = 3;
-  private long deptId;
-  /**
-   * <code>int64 dept_id = 3;</code>
-   * @return The deptId.
-   */
-  @java.lang.Override
-  public long getDeptId() {
-    return deptId;
-  }
-
-  public static final int NAME_FIELD_NUMBER = 4;
-  private volatile java.lang.Object name;
-  /**
-   * <code>string name = 4;</code>
-   * @return The name.
-   */
-  @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name;
+  public java.lang.String getPhone() {
+    java.lang.Object ref = phone;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      name = s;
+      phone = s;
       return s;
     }
   }
   /**
-   * <code>string name = 4;</code>
-   * @return The bytes for name.
+   * <code>string phone = 2;</code>
+   * @return The bytes for phone.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getNameBytes() {
-    java.lang.Object ref = name;
+      getPhoneBytes() {
+    java.lang.Object ref = phone;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      name = b;
+      phone = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int PAGINATION_FIELD_NUMBER = 100;
-  private com.zhijiejiaoyu.base.PaginationRequest pagination;
+  public static final int PASSWORD_FIELD_NUMBER = 3;
+  private volatile java.lang.Object password;
   /**
-   * <code>.base.PaginationRequest pagination = 100;</code>
-   * @return Whether the pagination field is set.
+   * <code>string password = 3;</code>
+   * @return The password.
    */
   @java.lang.Override
-  public boolean hasPagination() {
-    return pagination != null;
+  public java.lang.String getPassword() {
+    java.lang.Object ref = password;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      password = s;
+      return s;
+    }
   }
   /**
-   * <code>.base.PaginationRequest pagination = 100;</code>
-   * @return The pagination.
+   * <code>string password = 3;</code>
+   * @return The bytes for password.
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.base.PaginationRequest getPagination() {
-    return pagination == null ? com.zhijiejiaoyu.base.PaginationRequest.getDefaultInstance() : pagination;
-  }
-  /**
-   * <code>.base.PaginationRequest pagination = 100;</code>
-   */
-  @java.lang.Override
-  public com.zhijiejiaoyu.base.PaginationRequestOrBuilder getPaginationOrBuilder() {
-    return getPagination();
+  public com.google.protobuf.ByteString
+      getPasswordBytes() {
+    java.lang.Object ref = password;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      password = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -252,17 +226,11 @@ private static final long serialVersionUID = 0L;
     if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
-    if (tenantId != 0L) {
-      output.writeInt64(2, tenantId);
+    if (!getPhoneBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, phone);
     }
-    if (deptId != 0L) {
-      output.writeInt64(3, deptId);
-    }
-    if (!getNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name);
-    }
-    if (pagination != null) {
-      output.writeMessage(100, getPagination());
+    if (!getPasswordBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, password);
     }
     unknownFields.writeTo(output);
   }
@@ -277,20 +245,11 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseRequest());
     }
-    if (tenantId != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, tenantId);
+    if (!getPhoneBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, phone);
     }
-    if (deptId != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(3, deptId);
-    }
-    if (!getNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name);
-    }
-    if (pagination != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(100, getPagination());
+    if (!getPasswordBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, password);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -302,27 +261,20 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.zhijiejiaoyu.glory_api.tenant.ListTenantUserRequest)) {
+    if (!(obj instanceof com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest)) {
       return super.equals(obj);
     }
-    com.zhijiejiaoyu.glory_api.tenant.ListTenantUserRequest other = (com.zhijiejiaoyu.glory_api.tenant.ListTenantUserRequest) obj;
+    com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest other = (com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest) obj;
 
     if (hasBaseRequest() != other.hasBaseRequest()) return false;
     if (hasBaseRequest()) {
       if (!getBaseRequest()
           .equals(other.getBaseRequest())) return false;
     }
-    if (getTenantId()
-        != other.getTenantId()) return false;
-    if (getDeptId()
-        != other.getDeptId()) return false;
-    if (!getName()
-        .equals(other.getName())) return false;
-    if (hasPagination() != other.hasPagination()) return false;
-    if (hasPagination()) {
-      if (!getPagination()
-          .equals(other.getPagination())) return false;
-    }
+    if (!getPhone()
+        .equals(other.getPhone())) return false;
+    if (!getPassword()
+        .equals(other.getPassword())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -338,86 +290,78 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
       hash = (53 * hash) + getBaseRequest().hashCode();
     }
-    hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getTenantId());
-    hash = (37 * hash) + DEPT_ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getDeptId());
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    if (hasPagination()) {
-      hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
-      hash = (53 * hash) + getPagination().hashCode();
-    }
+    hash = (37 * hash) + PHONE_FIELD_NUMBER;
+    hash = (53 * hash) + getPhone().hashCode();
+    hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
+    hash = (53 * hash) + getPassword().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.zhijiejiaoyu.glory_api.tenant.ListTenantUserRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.tenant.ListTenantUserRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.tenant.ListTenantUserRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.tenant.ListTenantUserRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.tenant.ListTenantUserRequest parseFrom(byte[] data)
+  public static com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.tenant.ListTenantUserRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.tenant.ListTenantUserRequest parseFrom(java.io.InputStream input)
+  public static com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.tenant.ListTenantUserRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.tenant.ListTenantUserRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.tenant.ListTenantUserRequest parseDelimitedFrom(
+  public static com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.tenant.ListTenantUserRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.tenant.ListTenantUserRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -430,7 +374,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.zhijiejiaoyu.glory_api.tenant.ListTenantUserRequest prototype) {
+  public static Builder newBuilder(com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -446,26 +390,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code glory_api.ListTenantUserRequest}
+   * Protobuf type {@code glory_api.UpdateTenantUserPasswordRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:glory_api.ListTenantUserRequest)
-      com.zhijiejiaoyu.glory_api.tenant.ListTenantUserRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:glory_api.UpdateTenantUserPasswordRequest)
+      com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.zhijiejiaoyu.glory_api.tenant.TenantDept.internal_static_glory_api_ListTenantUserRequest_descriptor;
+      return com.zhijiejiaoyu.glory_api.tenant.TenantDept.internal_static_glory_api_UpdateTenantUserPasswordRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.zhijiejiaoyu.glory_api.tenant.TenantDept.internal_static_glory_api_ListTenantUserRequest_fieldAccessorTable
+      return com.zhijiejiaoyu.glory_api.tenant.TenantDept.internal_static_glory_api_UpdateTenantUserPasswordRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.zhijiejiaoyu.glory_api.tenant.ListTenantUserRequest.class, com.zhijiejiaoyu.glory_api.tenant.ListTenantUserRequest.Builder.class);
+              com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest.class, com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest.Builder.class);
     }
 
-    // Construct using com.zhijiejiaoyu.glory_api.tenant.ListTenantUserRequest.newBuilder()
+    // Construct using com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -489,35 +433,27 @@ private static final long serialVersionUID = 0L;
         baseRequest = null;
         baseRequestBuilder = null;
       }
-      tenantId = 0L;
+      phone = "";
 
-      deptId = 0L;
+      password = "";
 
-      name = "";
-
-      if (paginationBuilder == null) {
-        pagination = null;
-      } else {
-        pagination = null;
-        paginationBuilder = null;
-      }
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.zhijiejiaoyu.glory_api.tenant.TenantDept.internal_static_glory_api_ListTenantUserRequest_descriptor;
+      return com.zhijiejiaoyu.glory_api.tenant.TenantDept.internal_static_glory_api_UpdateTenantUserPasswordRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.tenant.ListTenantUserRequest getDefaultInstanceForType() {
-      return com.zhijiejiaoyu.glory_api.tenant.ListTenantUserRequest.getDefaultInstance();
+    public com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest getDefaultInstanceForType() {
+      return com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.tenant.ListTenantUserRequest build() {
-      com.zhijiejiaoyu.glory_api.tenant.ListTenantUserRequest result = buildPartial();
+    public com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest build() {
+      com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -525,21 +461,15 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.tenant.ListTenantUserRequest buildPartial() {
-      com.zhijiejiaoyu.glory_api.tenant.ListTenantUserRequest result = new com.zhijiejiaoyu.glory_api.tenant.ListTenantUserRequest(this);
+    public com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest buildPartial() {
+      com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest result = new com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest(this);
       if (baseRequestBuilder == null) {
         result.baseRequest = baseRequest;
       } else {
         result.baseRequest = baseRequestBuilder.build();
       }
-      result.tenantId = tenantId;
-      result.deptId = deptId;
-      result.name = name;
-      if (paginationBuilder == null) {
-        result.pagination = pagination;
-      } else {
-        result.pagination = paginationBuilder.build();
-      }
+      result.phone = phone;
+      result.password = password;
       onBuilt();
       return result;
     }
@@ -578,31 +508,26 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.zhijiejiaoyu.glory_api.tenant.ListTenantUserRequest) {
-        return mergeFrom((com.zhijiejiaoyu.glory_api.tenant.ListTenantUserRequest)other);
+      if (other instanceof com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest) {
+        return mergeFrom((com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.zhijiejiaoyu.glory_api.tenant.ListTenantUserRequest other) {
-      if (other == com.zhijiejiaoyu.glory_api.tenant.ListTenantUserRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest other) {
+      if (other == com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest.getDefaultInstance()) return this;
       if (other.hasBaseRequest()) {
         mergeBaseRequest(other.getBaseRequest());
       }
-      if (other.getTenantId() != 0L) {
-        setTenantId(other.getTenantId());
-      }
-      if (other.getDeptId() != 0L) {
-        setDeptId(other.getDeptId());
-      }
-      if (!other.getName().isEmpty()) {
-        name = other.name;
+      if (!other.getPhone().isEmpty()) {
+        phone = other.phone;
         onChanged();
       }
-      if (other.hasPagination()) {
-        mergePagination(other.getPagination());
+      if (!other.getPassword().isEmpty()) {
+        password = other.password;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -619,11 +544,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.zhijiejiaoyu.glory_api.tenant.ListTenantUserRequest parsedMessage = null;
+      com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.zhijiejiaoyu.glory_api.tenant.ListTenantUserRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -752,261 +677,156 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder;
     }
 
-    private long tenantId ;
+    private java.lang.Object phone = "";
     /**
-     * <code>int64 tenant_id = 2;</code>
-     * @return The tenantId.
+     * <code>string phone = 2;</code>
+     * @return The phone.
      */
-    @java.lang.Override
-    public long getTenantId() {
-      return tenantId;
-    }
-    /**
-     * <code>int64 tenant_id = 2;</code>
-     * @param value The tenantId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTenantId(long value) {
-      
-      tenantId = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int64 tenant_id = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearTenantId() {
-      
-      tenantId = 0L;
-      onChanged();
-      return this;
-    }
-
-    private long deptId ;
-    /**
-     * <code>int64 dept_id = 3;</code>
-     * @return The deptId.
-     */
-    @java.lang.Override
-    public long getDeptId() {
-      return deptId;
-    }
-    /**
-     * <code>int64 dept_id = 3;</code>
-     * @param value The deptId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDeptId(long value) {
-      
-      deptId = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int64 dept_id = 3;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearDeptId() {
-      
-      deptId = 0L;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object name = "";
-    /**
-     * <code>string name = 4;</code>
-     * @return The name.
-     */
-    public java.lang.String getName() {
-      java.lang.Object ref = name;
+    public java.lang.String getPhone() {
+      java.lang.Object ref = phone;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        name = s;
+        phone = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string name = 4;</code>
-     * @return The bytes for name.
+     * <code>string phone = 2;</code>
+     * @return The bytes for phone.
      */
     public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name;
+        getPhoneBytes() {
+      java.lang.Object ref = phone;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        name = b;
+        phone = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string name = 4;</code>
-     * @param value The name to set.
+     * <code>string phone = 2;</code>
+     * @param value The phone to set.
      * @return This builder for chaining.
      */
-    public Builder setName(
+    public Builder setPhone(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      name = value;
+      phone = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string name = 4;</code>
+     * <code>string phone = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder clearName() {
+    public Builder clearPhone() {
       
-      name = getDefaultInstance().getName();
+      phone = getDefaultInstance().getPhone();
       onChanged();
       return this;
     }
     /**
-     * <code>string name = 4;</code>
-     * @param value The bytes for name to set.
+     * <code>string phone = 2;</code>
+     * @param value The bytes for phone to set.
      * @return This builder for chaining.
      */
-    public Builder setNameBytes(
+    public Builder setPhoneBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      name = value;
+      phone = value;
       onChanged();
       return this;
     }
 
-    private com.zhijiejiaoyu.base.PaginationRequest pagination;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.base.PaginationRequest, com.zhijiejiaoyu.base.PaginationRequest.Builder, com.zhijiejiaoyu.base.PaginationRequestOrBuilder> paginationBuilder;
+    private java.lang.Object password = "";
     /**
-     * <code>.base.PaginationRequest pagination = 100;</code>
-     * @return Whether the pagination field is set.
+     * <code>string password = 3;</code>
+     * @return The password.
      */
-    public boolean hasPagination() {
-      return paginationBuilder != null || pagination != null;
-    }
-    /**
-     * <code>.base.PaginationRequest pagination = 100;</code>
-     * @return The pagination.
-     */
-    public com.zhijiejiaoyu.base.PaginationRequest getPagination() {
-      if (paginationBuilder == null) {
-        return pagination == null ? com.zhijiejiaoyu.base.PaginationRequest.getDefaultInstance() : pagination;
+    public java.lang.String getPassword() {
+      java.lang.Object ref = password;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        password = s;
+        return s;
       } else {
-        return paginationBuilder.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
-     * <code>.base.PaginationRequest pagination = 100;</code>
+     * <code>string password = 3;</code>
+     * @return The bytes for password.
      */
-    public Builder setPagination(com.zhijiejiaoyu.base.PaginationRequest value) {
-      if (paginationBuilder == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        pagination = value;
-        onChanged();
+    public com.google.protobuf.ByteString
+        getPasswordBytes() {
+      java.lang.Object ref = password;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        password = b;
+        return b;
       } else {
-        paginationBuilder.setMessage(value);
+        return (com.google.protobuf.ByteString) ref;
       }
-
+    }
+    /**
+     * <code>string password = 3;</code>
+     * @param value The password to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPassword(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      password = value;
+      onChanged();
       return this;
     }
     /**
-     * <code>.base.PaginationRequest pagination = 100;</code>
+     * <code>string password = 3;</code>
+     * @return This builder for chaining.
      */
-    public Builder setPagination(
-        com.zhijiejiaoyu.base.PaginationRequest.Builder builderForValue) {
-      if (paginationBuilder == null) {
-        pagination = builderForValue.build();
-        onChanged();
-      } else {
-        paginationBuilder.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <code>.base.PaginationRequest pagination = 100;</code>
-     */
-    public Builder mergePagination(com.zhijiejiaoyu.base.PaginationRequest value) {
-      if (paginationBuilder == null) {
-        if (pagination != null) {
-          pagination =
-            com.zhijiejiaoyu.base.PaginationRequest.newBuilder(pagination).mergeFrom(value).buildPartial();
-        } else {
-          pagination = value;
-        }
-        onChanged();
-      } else {
-        paginationBuilder.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.base.PaginationRequest pagination = 100;</code>
-     */
-    public Builder clearPagination() {
-      if (paginationBuilder == null) {
-        pagination = null;
-        onChanged();
-      } else {
-        pagination = null;
-        paginationBuilder = null;
-      }
-
-      return this;
-    }
-    /**
-     * <code>.base.PaginationRequest pagination = 100;</code>
-     */
-    public com.zhijiejiaoyu.base.PaginationRequest.Builder getPaginationBuilder() {
+    public Builder clearPassword() {
       
+      password = getDefaultInstance().getPassword();
       onChanged();
-      return getPaginationFieldBuilder().getBuilder();
+      return this;
     }
     /**
-     * <code>.base.PaginationRequest pagination = 100;</code>
+     * <code>string password = 3;</code>
+     * @param value The bytes for password to set.
+     * @return This builder for chaining.
      */
-    public com.zhijiejiaoyu.base.PaginationRequestOrBuilder getPaginationOrBuilder() {
-      if (paginationBuilder != null) {
-        return paginationBuilder.getMessageOrBuilder();
-      } else {
-        return pagination == null ?
-            com.zhijiejiaoyu.base.PaginationRequest.getDefaultInstance() : pagination;
-      }
-    }
-    /**
-     * <code>.base.PaginationRequest pagination = 100;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.base.PaginationRequest, com.zhijiejiaoyu.base.PaginationRequest.Builder, com.zhijiejiaoyu.base.PaginationRequestOrBuilder> 
-        getPaginationFieldBuilder() {
-      if (paginationBuilder == null) {
-        paginationBuilder = new com.google.protobuf.SingleFieldBuilderV3<
-            com.zhijiejiaoyu.base.PaginationRequest, com.zhijiejiaoyu.base.PaginationRequest.Builder, com.zhijiejiaoyu.base.PaginationRequestOrBuilder>(
-                getPagination(),
-                getParentForChildren(),
-                isClean());
-        pagination = null;
-      }
-      return paginationBuilder;
+    public Builder setPasswordBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      password = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
@@ -1021,41 +841,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:glory_api.ListTenantUserRequest)
+    // @@protoc_insertion_point(builder_scope:glory_api.UpdateTenantUserPasswordRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:glory_api.ListTenantUserRequest)
-  private static final com.zhijiejiaoyu.glory_api.tenant.ListTenantUserRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:glory_api.UpdateTenantUserPasswordRequest)
+  private static final com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.zhijiejiaoyu.glory_api.tenant.ListTenantUserRequest();
+    DEFAULT_INSTANCE = new com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest();
   }
 
-  public static com.zhijiejiaoyu.glory_api.tenant.ListTenantUserRequest getDefaultInstance() {
+  public static com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListTenantUserRequest>
-      PARSER = new com.google.protobuf.AbstractParser<ListTenantUserRequest>() {
+  private static final com.google.protobuf.Parser<UpdateTenantUserPasswordRequest>
+      PARSER = new com.google.protobuf.AbstractParser<UpdateTenantUserPasswordRequest>() {
     @java.lang.Override
-    public ListTenantUserRequest parsePartialFrom(
+    public UpdateTenantUserPasswordRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ListTenantUserRequest(input, extensionRegistry);
+      return new UpdateTenantUserPasswordRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<ListTenantUserRequest> parser() {
+  public static com.google.protobuf.Parser<UpdateTenantUserPasswordRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ListTenantUserRequest> getParserForType() {
+  public com.google.protobuf.Parser<UpdateTenantUserPasswordRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.tenant.ListTenantUserRequest getDefaultInstanceForType() {
+  public com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

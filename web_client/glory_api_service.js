@@ -1480,6 +1480,14 @@ export class glory_api {
     );
   }
 
+  UpdateTenantUserPassword(request) {
+    const uri = `${this.uriPrefix}/api/tenant/update_tenent_user_password`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   CreateShortVideo(request) {
     const uri = `${this.uriPrefix}/api/short_video/create_short_video`;
     const body = JSONbigint.stringify(request);
@@ -1616,6 +1624,30 @@ export class glory_api {
 
   FavoriteShortVideo(request) {
     const uri = `${this.uriPrefix}/api/short_video/favorite_short_video`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreateShortVideoComment(request) {
+    const uri = `${this.uriPrefix}/api/short_video/create_short_video_comment`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteShortVideoComment(request) {
+    const uri = `${this.uriPrefix}/api/short_video/delete_short_video_comment`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListShortVideoComment(request) {
+    const uri = `${this.uriPrefix}/api/short_video/list_short_video_comment`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse

@@ -31,9 +31,9 @@ public interface CreateTenantDeptRequestOrBuilder extends
    * <code>.glory_api.TenantDept tenant_dept = 2;</code>
    * @return The tenantDept.
    */
-  com.zhijiejiaoyu.glory_api.tenant.TenantDept getTenantDept();
+  com.zhijiejiaoyu.glory_api.user.TenantDept getTenantDept();
   /**
    * <code>.glory_api.TenantDept tenant_dept = 2;</code>
    */
-  com.zhijiejiaoyu.glory_api.tenant.TenantDeptOrBuilder getTenantDeptOrBuilder();
+  com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getTenantDeptOrBuilder();
 }

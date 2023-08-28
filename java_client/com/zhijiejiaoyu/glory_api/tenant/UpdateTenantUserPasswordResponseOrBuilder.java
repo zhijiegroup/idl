@@ -3,8 +3,8 @@
 
 package com.zhijiejiaoyu.glory_api.tenant;
 
-public interface GetTenantDeptResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:glory_api.GetTenantDeptResponse)
+public interface UpdateTenantUserPasswordResponseOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:glory_api.UpdateTenantUserPasswordResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -21,19 +21,4 @@ public interface GetTenantDeptResponseOrBuilder extends
    * <code>.base.BaseResponse base_resp = 1;</code>
    */
   com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder();
-
-  /**
-   * <code>.glory_api.TenantDept tenant_dept = 2;</code>
-   * @return Whether the tenantDept field is set.
-   */
-  boolean hasTenantDept();
-  /**
-   * <code>.glory_api.TenantDept tenant_dept = 2;</code>
-   * @return The tenantDept.
-   */
-  com.zhijiejiaoyu.glory_api.user.TenantDept getTenantDept();
-  /**
-   * <code>.glory_api.TenantDept tenant_dept = 2;</code>
-   */
-  com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getTenantDeptOrBuilder();
 }

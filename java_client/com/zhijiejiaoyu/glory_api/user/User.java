@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
     name = "";
     avatarUrl = "";
     shopAccess = java.util.Collections.emptyList();
+    permissions = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -119,6 +120,33 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.zhijiejiaoyu.glory_api.shop.ShopAccess.parser(), extensionRegistry));
             break;
           }
+          case 82: {
+            com.zhijiejiaoyu.glory_api.user.TenantDept.Builder subBuilder = null;
+            if (tenantDept != null) {
+              subBuilder = tenantDept.toBuilder();
+            }
+            tenantDept = input.readMessage(com.zhijiejiaoyu.glory_api.user.TenantDept.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(tenantDept);
+              tenantDept = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 90: {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              permissions = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.Permission>();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            permissions.add(
+                input.readMessage(com.zhijiejiaoyu.glory_api.user.Permission.parser(), extensionRegistry));
+            break;
+          }
+          case 96: {
+
+            isAdmin = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -136,6 +164,9 @@ private static final long serialVersionUID = 0L;
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         shopAccess = java.util.Collections.unmodifiableList(shopAccess);
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        permissions = java.util.Collections.unmodifiableList(permissions);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -479,6 +510,83 @@ private static final long serialVersionUID = 0L;
     return shopAccess.get(index);
   }
 
+  public static final int TENANT_DEPT_FIELD_NUMBER = 10;
+  private com.zhijiejiaoyu.glory_api.user.TenantDept tenantDept;
+  /**
+   * <code>.glory_api.TenantDept tenant_dept = 10;</code>
+   * @return Whether the tenantDept field is set.
+   */
+  @java.lang.Override
+  public boolean hasTenantDept() {
+    return tenantDept != null;
+  }
+  /**
+   * <code>.glory_api.TenantDept tenant_dept = 10;</code>
+   * @return The tenantDept.
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.user.TenantDept getTenantDept() {
+    return tenantDept == null ? com.zhijiejiaoyu.glory_api.user.TenantDept.getDefaultInstance() : tenantDept;
+  }
+  /**
+   * <code>.glory_api.TenantDept tenant_dept = 10;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getTenantDeptOrBuilder() {
+    return getTenantDept();
+  }
+
+  public static final int PERMISSIONS_FIELD_NUMBER = 11;
+  private java.util.List<com.zhijiejiaoyu.glory_api.user.Permission> permissions;
+  /**
+   * <code>repeated .glory_api.Permission permissions = 11;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.zhijiejiaoyu.glory_api.user.Permission> getPermissionsList() {
+    return permissions;
+  }
+  /**
+   * <code>repeated .glory_api.Permission permissions = 11;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.zhijiejiaoyu.glory_api.user.PermissionOrBuilder> 
+      getPermissionsOrBuilderList() {
+    return permissions;
+  }
+  /**
+   * <code>repeated .glory_api.Permission permissions = 11;</code>
+   */
+  @java.lang.Override
+  public int getPermissionsCount() {
+    return permissions.size();
+  }
+  /**
+   * <code>repeated .glory_api.Permission permissions = 11;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.user.Permission getPermissions(int index) {
+    return permissions.get(index);
+  }
+  /**
+   * <code>repeated .glory_api.Permission permissions = 11;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.user.PermissionOrBuilder getPermissionsOrBuilder(
+      int index) {
+    return permissions.get(index);
+  }
+
+  public static final int IS_ADMIN_FIELD_NUMBER = 12;
+  private boolean isAdmin;
+  /**
+   * <code>bool is_admin = 12;</code>
+   * @return The isAdmin.
+   */
+  @java.lang.Override
+  public boolean getIsAdmin() {
+    return isAdmin;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -520,6 +628,15 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < shopAccess.size(); i++) {
       output.writeMessage(9, shopAccess.get(i));
     }
+    if (tenantDept != null) {
+      output.writeMessage(10, getTenantDept());
+    }
+    for (int i = 0; i < permissions.size(); i++) {
+      output.writeMessage(11, permissions.get(i));
+    }
+    if (isAdmin != false) {
+      output.writeBool(12, isAdmin);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -559,6 +676,18 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(9, shopAccess.get(i));
     }
+    if (tenantDept != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(10, getTenantDept());
+    }
+    for (int i = 0; i < permissions.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(11, permissions.get(i));
+    }
+    if (isAdmin != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(12, isAdmin);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -595,6 +724,15 @@ private static final long serialVersionUID = 0L;
     }
     if (!getShopAccessList()
         .equals(other.getShopAccessList())) return false;
+    if (hasTenantDept() != other.hasTenantDept()) return false;
+    if (hasTenantDept()) {
+      if (!getTenantDept()
+          .equals(other.getTenantDept())) return false;
+    }
+    if (!getPermissionsList()
+        .equals(other.getPermissionsList())) return false;
+    if (getIsAdmin()
+        != other.getIsAdmin()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -629,6 +767,17 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + SHOP_ACCESS_FIELD_NUMBER;
       hash = (53 * hash) + getShopAccessList().hashCode();
     }
+    if (hasTenantDept()) {
+      hash = (37 * hash) + TENANT_DEPT_FIELD_NUMBER;
+      hash = (53 * hash) + getTenantDept().hashCode();
+    }
+    if (getPermissionsCount() > 0) {
+      hash = (37 * hash) + PERMISSIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getPermissionsList().hashCode();
+    }
+    hash = (37 * hash) + IS_ADMIN_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsAdmin());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -758,6 +907,7 @@ private static final long serialVersionUID = 0L;
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
         getShopAccessFieldBuilder();
+        getPermissionsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -789,6 +939,20 @@ private static final long serialVersionUID = 0L;
       } else {
         shopAccessBuilder.clear();
       }
+      if (tenantDeptBuilder == null) {
+        tenantDept = null;
+      } else {
+        tenantDept = null;
+        tenantDeptBuilder = null;
+      }
+      if (permissionsBuilder == null) {
+        permissions = java.util.Collections.emptyList();
+        bitField0 = (bitField0_ & ~0x00000002);
+      } else {
+        permissionsBuilder.clear();
+      }
+      isAdmin = false;
+
       return this;
     }
 
@@ -837,6 +1001,21 @@ private static final long serialVersionUID = 0L;
       } else {
         result.shopAccess = shopAccessBuilder.build();
       }
+      if (tenantDeptBuilder == null) {
+        result.tenantDept = tenantDept;
+      } else {
+        result.tenantDept = tenantDeptBuilder.build();
+      }
+      if (permissionsBuilder == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          permissions = java.util.Collections.unmodifiableList(permissions);
+          bitField0 = (bitField0_ & ~0x00000002);
+        }
+        result.permissions = permissions;
+      } else {
+        result.permissions = permissionsBuilder.build();
+      }
+      result.isAdmin = isAdmin;
       onBuilt();
       return result;
     }
@@ -940,6 +1119,38 @@ private static final long serialVersionUID = 0L;
             shopAccessBuilder.addAllMessages(other.shopAccess);
           }
         }
+      }
+      if (other.hasTenantDept()) {
+        mergeTenantDept(other.getTenantDept());
+      }
+      if (permissionsBuilder == null) {
+        if (!other.permissions.isEmpty()) {
+          if (permissions.isEmpty()) {
+            permissions = other.permissions;
+            bitField0 = (bitField0_ & ~0x00000002);
+          } else {
+            ensurePermissionsIsMutable();
+            permissions.addAll(other.permissions);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.permissions.isEmpty()) {
+          if (permissionsBuilder.isEmpty()) {
+            permissionsBuilder.dispose();
+            permissionsBuilder = null;
+            permissions = other.permissions;
+            bitField0 = (bitField0_ & ~0x00000002);
+            permissionsBuilder = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getPermissionsFieldBuilder() : null;
+          } else {
+            permissionsBuilder.addAllMessages(other.permissions);
+          }
+        }
+      }
+      if (other.getIsAdmin() != false) {
+        setIsAdmin(other.getIsAdmin());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1887,6 +2098,396 @@ private static final long serialVersionUID = 0L;
         shopAccess = null;
       }
       return shopAccessBuilder;
+    }
+
+    private com.zhijiejiaoyu.glory_api.user.TenantDept tenantDept;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.user.TenantDept, com.zhijiejiaoyu.glory_api.user.TenantDept.Builder, com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder> tenantDeptBuilder;
+    /**
+     * <code>.glory_api.TenantDept tenant_dept = 10;</code>
+     * @return Whether the tenantDept field is set.
+     */
+    public boolean hasTenantDept() {
+      return tenantDeptBuilder != null || tenantDept != null;
+    }
+    /**
+     * <code>.glory_api.TenantDept tenant_dept = 10;</code>
+     * @return The tenantDept.
+     */
+    public com.zhijiejiaoyu.glory_api.user.TenantDept getTenantDept() {
+      if (tenantDeptBuilder == null) {
+        return tenantDept == null ? com.zhijiejiaoyu.glory_api.user.TenantDept.getDefaultInstance() : tenantDept;
+      } else {
+        return tenantDeptBuilder.getMessage();
+      }
+    }
+    /**
+     * <code>.glory_api.TenantDept tenant_dept = 10;</code>
+     */
+    public Builder setTenantDept(com.zhijiejiaoyu.glory_api.user.TenantDept value) {
+      if (tenantDeptBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        tenantDept = value;
+        onChanged();
+      } else {
+        tenantDeptBuilder.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.TenantDept tenant_dept = 10;</code>
+     */
+    public Builder setTenantDept(
+        com.zhijiejiaoyu.glory_api.user.TenantDept.Builder builderForValue) {
+      if (tenantDeptBuilder == null) {
+        tenantDept = builderForValue.build();
+        onChanged();
+      } else {
+        tenantDeptBuilder.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.TenantDept tenant_dept = 10;</code>
+     */
+    public Builder mergeTenantDept(com.zhijiejiaoyu.glory_api.user.TenantDept value) {
+      if (tenantDeptBuilder == null) {
+        if (tenantDept != null) {
+          tenantDept =
+            com.zhijiejiaoyu.glory_api.user.TenantDept.newBuilder(tenantDept).mergeFrom(value).buildPartial();
+        } else {
+          tenantDept = value;
+        }
+        onChanged();
+      } else {
+        tenantDeptBuilder.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.TenantDept tenant_dept = 10;</code>
+     */
+    public Builder clearTenantDept() {
+      if (tenantDeptBuilder == null) {
+        tenantDept = null;
+        onChanged();
+      } else {
+        tenantDept = null;
+        tenantDeptBuilder = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.TenantDept tenant_dept = 10;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.TenantDept.Builder getTenantDeptBuilder() {
+      
+      onChanged();
+      return getTenantDeptFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.glory_api.TenantDept tenant_dept = 10;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getTenantDeptOrBuilder() {
+      if (tenantDeptBuilder != null) {
+        return tenantDeptBuilder.getMessageOrBuilder();
+      } else {
+        return tenantDept == null ?
+            com.zhijiejiaoyu.glory_api.user.TenantDept.getDefaultInstance() : tenantDept;
+      }
+    }
+    /**
+     * <code>.glory_api.TenantDept tenant_dept = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.user.TenantDept, com.zhijiejiaoyu.glory_api.user.TenantDept.Builder, com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder> 
+        getTenantDeptFieldBuilder() {
+      if (tenantDeptBuilder == null) {
+        tenantDeptBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.user.TenantDept, com.zhijiejiaoyu.glory_api.user.TenantDept.Builder, com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder>(
+                getTenantDept(),
+                getParentForChildren(),
+                isClean());
+        tenantDept = null;
+      }
+      return tenantDeptBuilder;
+    }
+
+    private java.util.List<com.zhijiejiaoyu.glory_api.user.Permission> permissions =
+      java.util.Collections.emptyList();
+    private void ensurePermissionsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        permissions = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.Permission>(permissions);
+        bitField0_ |= 0x00000002;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.user.Permission, com.zhijiejiaoyu.glory_api.user.Permission.Builder, com.zhijiejiaoyu.glory_api.user.PermissionOrBuilder> permissionsBuilder;
+
+    /**
+     * <code>repeated .glory_api.Permission permissions = 11;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.user.Permission> getPermissionsList() {
+      if (permissionsBuilder == null) {
+        return java.util.Collections.unmodifiableList(permissions);
+      } else {
+        return permissionsBuilder.getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .glory_api.Permission permissions = 11;</code>
+     */
+    public int getPermissionsCount() {
+      if (permissionsBuilder == null) {
+        return permissions.size();
+      } else {
+        return permissionsBuilder.getCount();
+      }
+    }
+    /**
+     * <code>repeated .glory_api.Permission permissions = 11;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.Permission getPermissions(int index) {
+      if (permissionsBuilder == null) {
+        return permissions.get(index);
+      } else {
+        return permissionsBuilder.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .glory_api.Permission permissions = 11;</code>
+     */
+    public Builder setPermissions(
+        int index, com.zhijiejiaoyu.glory_api.user.Permission value) {
+      if (permissionsBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePermissionsIsMutable();
+        permissions.set(index, value);
+        onChanged();
+      } else {
+        permissionsBuilder.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.Permission permissions = 11;</code>
+     */
+    public Builder setPermissions(
+        int index, com.zhijiejiaoyu.glory_api.user.Permission.Builder builderForValue) {
+      if (permissionsBuilder == null) {
+        ensurePermissionsIsMutable();
+        permissions.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        permissionsBuilder.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.Permission permissions = 11;</code>
+     */
+    public Builder addPermissions(com.zhijiejiaoyu.glory_api.user.Permission value) {
+      if (permissionsBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePermissionsIsMutable();
+        permissions.add(value);
+        onChanged();
+      } else {
+        permissionsBuilder.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.Permission permissions = 11;</code>
+     */
+    public Builder addPermissions(
+        int index, com.zhijiejiaoyu.glory_api.user.Permission value) {
+      if (permissionsBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePermissionsIsMutable();
+        permissions.add(index, value);
+        onChanged();
+      } else {
+        permissionsBuilder.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.Permission permissions = 11;</code>
+     */
+    public Builder addPermissions(
+        com.zhijiejiaoyu.glory_api.user.Permission.Builder builderForValue) {
+      if (permissionsBuilder == null) {
+        ensurePermissionsIsMutable();
+        permissions.add(builderForValue.build());
+        onChanged();
+      } else {
+        permissionsBuilder.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.Permission permissions = 11;</code>
+     */
+    public Builder addPermissions(
+        int index, com.zhijiejiaoyu.glory_api.user.Permission.Builder builderForValue) {
+      if (permissionsBuilder == null) {
+        ensurePermissionsIsMutable();
+        permissions.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        permissionsBuilder.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.Permission permissions = 11;</code>
+     */
+    public Builder addAllPermissions(
+        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.user.Permission> values) {
+      if (permissionsBuilder == null) {
+        ensurePermissionsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, permissions);
+        onChanged();
+      } else {
+        permissionsBuilder.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.Permission permissions = 11;</code>
+     */
+    public Builder clearPermissions() {
+      if (permissionsBuilder == null) {
+        permissions = java.util.Collections.emptyList();
+        bitField0 = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        permissionsBuilder.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.Permission permissions = 11;</code>
+     */
+    public Builder removePermissions(int index) {
+      if (permissionsBuilder == null) {
+        ensurePermissionsIsMutable();
+        permissions.remove(index);
+        onChanged();
+      } else {
+        permissionsBuilder.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.Permission permissions = 11;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.Permission.Builder getPermissionsBuilder(
+        int index) {
+      return getPermissionsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .glory_api.Permission permissions = 11;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.PermissionOrBuilder getPermissionsOrBuilder(
+        int index) {
+      if (permissionsBuilder == null) {
+        return permissions.get(index);  } else {
+        return permissionsBuilder.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .glory_api.Permission permissions = 11;</code>
+     */
+    public java.util.List<? extends com.zhijiejiaoyu.glory_api.user.PermissionOrBuilder> 
+         getPermissionsOrBuilderList() {
+      if (permissionsBuilder != null) {
+        return permissionsBuilder.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(permissions);
+      }
+    }
+    /**
+     * <code>repeated .glory_api.Permission permissions = 11;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.Permission.Builder addPermissionsBuilder() {
+      return getPermissionsFieldBuilder().addBuilder(
+          com.zhijiejiaoyu.glory_api.user.Permission.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .glory_api.Permission permissions = 11;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.Permission.Builder addPermissionsBuilder(
+        int index) {
+      return getPermissionsFieldBuilder().addBuilder(
+          index, com.zhijiejiaoyu.glory_api.user.Permission.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .glory_api.Permission permissions = 11;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.user.Permission.Builder> 
+         getPermissionsBuilderList() {
+      return getPermissionsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.user.Permission, com.zhijiejiaoyu.glory_api.user.Permission.Builder, com.zhijiejiaoyu.glory_api.user.PermissionOrBuilder> 
+        getPermissionsFieldBuilder() {
+      if (permissionsBuilder == null) {
+        permissionsBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.user.Permission, com.zhijiejiaoyu.glory_api.user.Permission.Builder, com.zhijiejiaoyu.glory_api.user.PermissionOrBuilder>(
+                permissions_,
+                ((bitField0_ & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        permissions = null;
+      }
+      return permissionsBuilder;
+    }
+
+    private boolean isAdmin ;
+    /**
+     * <code>bool is_admin = 12;</code>
+     * @return The isAdmin.
+     */
+    @java.lang.Override
+    public boolean getIsAdmin() {
+      return isAdmin;
+    }
+    /**
+     * <code>bool is_admin = 12;</code>
+     * @param value The isAdmin to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsAdmin(boolean value) {
+      
+      isAdmin = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool is_admin = 12;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsAdmin() {
+      
+      isAdmin = false;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

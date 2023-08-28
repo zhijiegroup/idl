@@ -4,25 +4,25 @@
 package com.zhijiejiaoyu.glory_api.tenant;
 
 /**
- * Protobuf type {@code glory_api.UpdateTenantDeptResponse}
+ * Protobuf type {@code glory_api.UpdateTenantUserPasswordResponse}
  */
-public final class UpdateTenantDeptResponse extends
+public final class UpdateTenantUserPasswordResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:glory_api.UpdateTenantDeptResponse)
-    UpdateTenantDeptResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:glory_api.UpdateTenantUserPasswordResponse)
+    UpdateTenantUserPasswordResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use UpdateTenantDeptResponse.newBuilder() to construct.
-  private UpdateTenantDeptResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use UpdateTenantUserPasswordResponse.newBuilder() to construct.
+  private UpdateTenantUserPasswordResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private UpdateTenantDeptResponse() {
+  private UpdateTenantUserPasswordResponse() {
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new UpdateTenantDeptResponse();
+    return new UpdateTenantUserPasswordResponse();
   }
 
   @java.lang.Override
@@ -30,7 +30,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private UpdateTenantDeptResponse(
+  private UpdateTenantUserPasswordResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -82,15 +82,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.zhijiejiaoyu.glory_api.tenant.TenantDept.internal_static_glory_api_UpdateTenantDeptResponse_descriptor;
+    return com.zhijiejiaoyu.glory_api.tenant.TenantDept.internal_static_glory_api_UpdateTenantUserPasswordResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.zhijiejiaoyu.glory_api.tenant.TenantDept.internal_static_glory_api_UpdateTenantDeptResponse_fieldAccessorTable
+    return com.zhijiejiaoyu.glory_api.tenant.TenantDept.internal_static_glory_api_UpdateTenantUserPasswordResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptResponse.class, com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptResponse.Builder.class);
+            com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse.class, com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse.Builder.class);
   }
 
   public static final int BASE_RESP_FIELD_NUMBER = 1;
@@ -159,10 +159,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptResponse)) {
+    if (!(obj instanceof com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse)) {
       return super.equals(obj);
     }
-    com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptResponse other = (com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptResponse) obj;
+    com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse other = (com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse) obj;
 
     if (hasBaseResp() != other.hasBaseResp()) return false;
     if (hasBaseResp()) {
@@ -189,69 +189,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptResponse parseFrom(byte[] data)
+  public static com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptResponse parseFrom(java.io.InputStream input)
+  public static com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptResponse parseDelimitedFrom(java.io.InputStream input)
+  public static com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptResponse parseDelimitedFrom(
+  public static com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -264,7 +264,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptResponse prototype) {
+  public static Builder newBuilder(com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -280,26 +280,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code glory_api.UpdateTenantDeptResponse}
+   * Protobuf type {@code glory_api.UpdateTenantUserPasswordResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:glory_api.UpdateTenantDeptResponse)
-      com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:glory_api.UpdateTenantUserPasswordResponse)
+      com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.zhijiejiaoyu.glory_api.tenant.TenantDept.internal_static_glory_api_UpdateTenantDeptResponse_descriptor;
+      return com.zhijiejiaoyu.glory_api.tenant.TenantDept.internal_static_glory_api_UpdateTenantUserPasswordResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.zhijiejiaoyu.glory_api.tenant.TenantDept.internal_static_glory_api_UpdateTenantDeptResponse_fieldAccessorTable
+      return com.zhijiejiaoyu.glory_api.tenant.TenantDept.internal_static_glory_api_UpdateTenantUserPasswordResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptResponse.class, com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptResponse.Builder.class);
+              com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse.class, com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse.Builder.class);
     }
 
-    // Construct using com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptResponse.newBuilder()
+    // Construct using com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -329,17 +329,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.zhijiejiaoyu.glory_api.tenant.TenantDept.internal_static_glory_api_UpdateTenantDeptResponse_descriptor;
+      return com.zhijiejiaoyu.glory_api.tenant.TenantDept.internal_static_glory_api_UpdateTenantUserPasswordResponse_descriptor;
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptResponse getDefaultInstanceForType() {
-      return com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptResponse.getDefaultInstance();
+    public com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse getDefaultInstanceForType() {
+      return com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptResponse build() {
-      com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptResponse result = buildPartial();
+    public com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse build() {
+      com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -347,8 +347,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptResponse buildPartial() {
-      com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptResponse result = new com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptResponse(this);
+    public com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse buildPartial() {
+      com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse result = new com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse(this);
       if (baseRespBuilder == null) {
         result.baseResp = baseResp;
       } else {
@@ -392,16 +392,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptResponse) {
-        return mergeFrom((com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptResponse)other);
+      if (other instanceof com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse) {
+        return mergeFrom((com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptResponse other) {
-      if (other == com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse other) {
+      if (other == com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse.getDefaultInstance()) return this;
       if (other.hasBaseResp()) {
         mergeBaseResp(other.getBaseResp());
       }
@@ -420,11 +420,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptResponse parsedMessage = null;
+      com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptResponse) e.getUnfinishedMessage();
+        parsedMessage = (com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -565,41 +565,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:glory_api.UpdateTenantDeptResponse)
+    // @@protoc_insertion_point(builder_scope:glory_api.UpdateTenantUserPasswordResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:glory_api.UpdateTenantDeptResponse)
-  private static final com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:glory_api.UpdateTenantUserPasswordResponse)
+  private static final com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptResponse();
+    DEFAULT_INSTANCE = new com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse();
   }
 
-  public static com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptResponse getDefaultInstance() {
+  public static com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<UpdateTenantDeptResponse>
-      PARSER = new com.google.protobuf.AbstractParser<UpdateTenantDeptResponse>() {
+  private static final com.google.protobuf.Parser<UpdateTenantUserPasswordResponse>
+      PARSER = new com.google.protobuf.AbstractParser<UpdateTenantUserPasswordResponse>() {
     @java.lang.Override
-    public UpdateTenantDeptResponse parsePartialFrom(
+    public UpdateTenantUserPasswordResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new UpdateTenantDeptResponse(input, extensionRegistry);
+      return new UpdateTenantUserPasswordResponse(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<UpdateTenantDeptResponse> parser() {
+  public static com.google.protobuf.Parser<UpdateTenantUserPasswordResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<UpdateTenantDeptResponse> getParserForType() {
+  public com.google.protobuf.Parser<UpdateTenantUserPasswordResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptResponse getDefaultInstanceForType() {
+  public com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

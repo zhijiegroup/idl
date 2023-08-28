@@ -62,11 +62,11 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            com.zhijiejiaoyu.glory_api.tenant.TenantDept.Builder subBuilder = null;
+            com.zhijiejiaoyu.glory_api.user.TenantDept.Builder subBuilder = null;
             if (tenantDept != null) {
               subBuilder = tenantDept.toBuilder();
             }
-            tenantDept = input.readMessage(com.zhijiejiaoyu.glory_api.tenant.TenantDept.parser(), extensionRegistry);
+            tenantDept = input.readMessage(com.zhijiejiaoyu.glory_api.user.TenantDept.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(tenantDept);
               tenantDept = subBuilder.buildPartial();
@@ -95,13 +95,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.zhijiejiaoyu.glory_api.tenant.TenantDeptOuterClass.internal_static_glory_api_UpdateTenantDeptRequest_descriptor;
+    return com.zhijiejiaoyu.glory_api.tenant.TenantDept.internal_static_glory_api_UpdateTenantDeptRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.zhijiejiaoyu.glory_api.tenant.TenantDeptOuterClass.internal_static_glory_api_UpdateTenantDeptRequest_fieldAccessorTable
+    return com.zhijiejiaoyu.glory_api.tenant.TenantDept.internal_static_glory_api_UpdateTenantDeptRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptRequest.class, com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptRequest.Builder.class);
   }
@@ -133,7 +133,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TENANT_DEPT_FIELD_NUMBER = 2;
-  private com.zhijiejiaoyu.glory_api.tenant.TenantDept tenantDept;
+  private com.zhijiejiaoyu.glory_api.user.TenantDept tenantDept;
   /**
    * <code>.glory_api.TenantDept tenant_dept = 2;</code>
    * @return Whether the tenantDept field is set.
@@ -147,14 +147,14 @@ private static final long serialVersionUID = 0L;
    * @return The tenantDept.
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.tenant.TenantDept getTenantDept() {
-    return tenantDept == null ? com.zhijiejiaoyu.glory_api.tenant.TenantDept.getDefaultInstance() : tenantDept;
+  public com.zhijiejiaoyu.glory_api.user.TenantDept getTenantDept() {
+    return tenantDept == null ? com.zhijiejiaoyu.glory_api.user.TenantDept.getDefaultInstance() : tenantDept;
   }
   /**
    * <code>.glory_api.TenantDept tenant_dept = 2;</code>
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.tenant.TenantDeptOrBuilder getTenantDeptOrBuilder() {
+  public com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getTenantDeptOrBuilder() {
     return getTenantDept();
   }
 
@@ -343,13 +343,13 @@ private static final long serialVersionUID = 0L;
       com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.zhijiejiaoyu.glory_api.tenant.TenantDeptOuterClass.internal_static_glory_api_UpdateTenantDeptRequest_descriptor;
+      return com.zhijiejiaoyu.glory_api.tenant.TenantDept.internal_static_glory_api_UpdateTenantDeptRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.zhijiejiaoyu.glory_api.tenant.TenantDeptOuterClass.internal_static_glory_api_UpdateTenantDeptRequest_fieldAccessorTable
+      return com.zhijiejiaoyu.glory_api.tenant.TenantDept.internal_static_glory_api_UpdateTenantDeptRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptRequest.class, com.zhijiejiaoyu.glory_api.tenant.UpdateTenantDeptRequest.Builder.class);
     }
@@ -390,7 +390,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.zhijiejiaoyu.glory_api.tenant.TenantDeptOuterClass.internal_static_glory_api_UpdateTenantDeptRequest_descriptor;
+      return com.zhijiejiaoyu.glory_api.tenant.TenantDept.internal_static_glory_api_UpdateTenantDeptRequest_descriptor;
     }
 
     @java.lang.Override
@@ -622,9 +622,9 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder;
     }
 
-    private com.zhijiejiaoyu.glory_api.tenant.TenantDept tenantDept;
+    private com.zhijiejiaoyu.glory_api.user.TenantDept tenantDept;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.tenant.TenantDept, com.zhijiejiaoyu.glory_api.tenant.TenantDept.Builder, com.zhijiejiaoyu.glory_api.tenant.TenantDeptOrBuilder> tenantDeptBuilder;
+        com.zhijiejiaoyu.glory_api.user.TenantDept, com.zhijiejiaoyu.glory_api.user.TenantDept.Builder, com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder> tenantDeptBuilder;
     /**
      * <code>.glory_api.TenantDept tenant_dept = 2;</code>
      * @return Whether the tenantDept field is set.
@@ -636,9 +636,9 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.TenantDept tenant_dept = 2;</code>
      * @return The tenantDept.
      */
-    public com.zhijiejiaoyu.glory_api.tenant.TenantDept getTenantDept() {
+    public com.zhijiejiaoyu.glory_api.user.TenantDept getTenantDept() {
       if (tenantDeptBuilder == null) {
-        return tenantDept == null ? com.zhijiejiaoyu.glory_api.tenant.TenantDept.getDefaultInstance() : tenantDept;
+        return tenantDept == null ? com.zhijiejiaoyu.glory_api.user.TenantDept.getDefaultInstance() : tenantDept;
       } else {
         return tenantDeptBuilder.getMessage();
       }
@@ -646,7 +646,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.glory_api.TenantDept tenant_dept = 2;</code>
      */
-    public Builder setTenantDept(com.zhijiejiaoyu.glory_api.tenant.TenantDept value) {
+    public Builder setTenantDept(com.zhijiejiaoyu.glory_api.user.TenantDept value) {
       if (tenantDeptBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -663,7 +663,7 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.TenantDept tenant_dept = 2;</code>
      */
     public Builder setTenantDept(
-        com.zhijiejiaoyu.glory_api.tenant.TenantDept.Builder builderForValue) {
+        com.zhijiejiaoyu.glory_api.user.TenantDept.Builder builderForValue) {
       if (tenantDeptBuilder == null) {
         tenantDept = builderForValue.build();
         onChanged();
@@ -676,11 +676,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.glory_api.TenantDept tenant_dept = 2;</code>
      */
-    public Builder mergeTenantDept(com.zhijiejiaoyu.glory_api.tenant.TenantDept value) {
+    public Builder mergeTenantDept(com.zhijiejiaoyu.glory_api.user.TenantDept value) {
       if (tenantDeptBuilder == null) {
         if (tenantDept != null) {
           tenantDept =
-            com.zhijiejiaoyu.glory_api.tenant.TenantDept.newBuilder(tenantDept).mergeFrom(value).buildPartial();
+            com.zhijiejiaoyu.glory_api.user.TenantDept.newBuilder(tenantDept).mergeFrom(value).buildPartial();
         } else {
           tenantDept = value;
         }
@@ -708,7 +708,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.glory_api.TenantDept tenant_dept = 2;</code>
      */
-    public com.zhijiejiaoyu.glory_api.tenant.TenantDept.Builder getTenantDeptBuilder() {
+    public com.zhijiejiaoyu.glory_api.user.TenantDept.Builder getTenantDeptBuilder() {
       
       onChanged();
       return getTenantDeptFieldBuilder().getBuilder();
@@ -716,23 +716,23 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.glory_api.TenantDept tenant_dept = 2;</code>
      */
-    public com.zhijiejiaoyu.glory_api.tenant.TenantDeptOrBuilder getTenantDeptOrBuilder() {
+    public com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getTenantDeptOrBuilder() {
       if (tenantDeptBuilder != null) {
         return tenantDeptBuilder.getMessageOrBuilder();
       } else {
         return tenantDept == null ?
-            com.zhijiejiaoyu.glory_api.tenant.TenantDept.getDefaultInstance() : tenantDept;
+            com.zhijiejiaoyu.glory_api.user.TenantDept.getDefaultInstance() : tenantDept;
       }
     }
     /**
      * <code>.glory_api.TenantDept tenant_dept = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.tenant.TenantDept, com.zhijiejiaoyu.glory_api.tenant.TenantDept.Builder, com.zhijiejiaoyu.glory_api.tenant.TenantDeptOrBuilder> 
+        com.zhijiejiaoyu.glory_api.user.TenantDept, com.zhijiejiaoyu.glory_api.user.TenantDept.Builder, com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder> 
         getTenantDeptFieldBuilder() {
       if (tenantDeptBuilder == null) {
         tenantDeptBuilder = new com.google.protobuf.SingleFieldBuilderV3<
-            com.zhijiejiaoyu.glory_api.tenant.TenantDept, com.zhijiejiaoyu.glory_api.tenant.TenantDept.Builder, com.zhijiejiaoyu.glory_api.tenant.TenantDeptOrBuilder>(
+            com.zhijiejiaoyu.glory_api.user.TenantDept, com.zhijiejiaoyu.glory_api.user.TenantDept.Builder, com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder>(
                 getTenantDept(),
                 getParentForChildren(),
                 isClean());

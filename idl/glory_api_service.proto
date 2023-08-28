@@ -809,4 +809,19 @@ service glory_api {
   rpc FavoriteShortVideo(FavoriteShortVideoRequest) returns (FavoriteShortVideoResponse) {
     option (api.post) = '/api/short_video/favorite_short_video';
   }
+
+  // 发布短视频评论
+  rpc CreateShortVideoComment(CreateShortVideoCommentRequest) returns (CreateShortVideoCommentResponse) {
+    option (api.post) = '/api/short_video/create_short_video_comment';
+  }
+
+  // 删除短视频评论
+  rpc DeleteShortVideoComment(DeleteShortVideoCommentRequest) returns (DeleteShortVideoCommentResponse) {
+    option (api.post) = '/api/short_video/delete_short_video_comment';
+  }
+
+  // 短视频评论列表
+  rpc ListShortVideoComment(ListShortVideoCommentRequest) returns (ListShortVideoCommentResponse) {
+    option (api.post) = '/api/short_video/list_short_video_comment';
+  }
 }

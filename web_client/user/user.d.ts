@@ -7,6 +7,15 @@ import * as seller from "../seller/seller";
 import * as shop from "../shop/shop";
 export { base, seller, shop };
 
+export interface TenantDept {
+  dept_id?: string;
+  dept_name?: string;
+  dept_type?: string;
+  dept_overview?: string;
+  tenant_id?: string;
+  parent_id?: string;
+}
+
 export interface User {
   id?: string;
   phone?: string;
@@ -18,6 +27,9 @@ export interface User {
   seller?: seller.Seller;
   /** 判断用户的shop访问权限 */
   shop_access?: Array<shop.ShopAccess>;
+  tenant_dept?: TenantDept;
+  permissions?: Array<Permission>;
+  is_admin?: boolean;
 }
 
 export interface UserFollow {
