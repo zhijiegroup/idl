@@ -292,8 +292,9 @@ message FavoriteShortVideoResponse {
 // 发布评论
 message CreateShortVideoCommentRequest {
   base.BaseRequest base_request = 1;
-  string content = 2; // 评论内容
-  int64 parent_comment_id = 3; // 上级评论ID
+  int64 short_video_id = 2; // 短视频ID
+  string content = 3; // 评论内容
+  int64 parent_comment_id = 4; // 上级评论ID
 }
 
 message CreateShortVideoCommentResponse {
@@ -308,13 +309,14 @@ message DeleteShortVideoCommentRequest {
 }
 
 message DeleteShortVideoCommentResponse {
-  base.BaseRequest base_request = 1;
+  base.BaseResponse base_response = 1;
 }
 
 // 短视频评论列表
 message ListShortVideoCommentRequest {
   base.BaseRequest base_request = 1;
   int64 short_video_id = 2;
+  int64 parent_comment_id = 3;
   base.PaginationRequest pagination = 100;
 }
 
