@@ -70,6 +70,11 @@ private static final long serialVersionUID = 0L;
             shortVideoId = input.readInt64();
             break;
           }
+          case 24: {
+
+            parentCommentId = input.readInt64();
+            break;
+          }
           case 802: {
             com.zhijiejiaoyu.base.PaginationRequest.Builder subBuilder = null;
             if (pagination != null) {
@@ -152,6 +157,17 @@ private static final long serialVersionUID = 0L;
     return shortVideoId;
   }
 
+  public static final int PARENT_COMMENT_ID_FIELD_NUMBER = 3;
+  private long parentCommentId;
+  /**
+   * <code>int64 parent_comment_id = 3;</code>
+   * @return The parentCommentId.
+   */
+  @java.lang.Override
+  public long getParentCommentId() {
+    return parentCommentId;
+  }
+
   public static final int PAGINATION_FIELD_NUMBER = 100;
   private com.zhijiejiaoyu.base.PaginationRequest pagination;
   /**
@@ -198,6 +214,9 @@ private static final long serialVersionUID = 0L;
     if (shortVideoId != 0L) {
       output.writeInt64(2, shortVideoId);
     }
+    if (parentCommentId != 0L) {
+      output.writeInt64(3, parentCommentId);
+    }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
     }
@@ -217,6 +236,10 @@ private static final long serialVersionUID = 0L;
     if (shortVideoId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, shortVideoId);
+    }
+    if (parentCommentId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(3, parentCommentId);
     }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -244,6 +267,8 @@ private static final long serialVersionUID = 0L;
     }
     if (getShortVideoId()
         != other.getShortVideoId()) return false;
+    if (getParentCommentId()
+        != other.getParentCommentId()) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -267,6 +292,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + SHORT_VIDEO_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getShortVideoId());
+    hash = (37 * hash) + PARENT_COMMENT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getParentCommentId());
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
@@ -416,6 +444,8 @@ private static final long serialVersionUID = 0L;
       }
       shortVideoId = 0L;
 
+      parentCommentId = 0L;
+
       if (paginationBuilder == null) {
         pagination = null;
       } else {
@@ -454,6 +484,7 @@ private static final long serialVersionUID = 0L;
         result.baseRequest = baseRequestBuilder.build();
       }
       result.shortVideoId = shortVideoId;
+      result.parentCommentId = parentCommentId;
       if (paginationBuilder == null) {
         result.pagination = pagination;
       } else {
@@ -512,6 +543,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getShortVideoId() != 0L) {
         setShortVideoId(other.getShortVideoId());
+      }
+      if (other.getParentCommentId() != 0L) {
+        setParentCommentId(other.getParentCommentId());
       }
       if (other.hasPagination()) {
         mergePagination(other.getPagination());
@@ -691,6 +725,37 @@ private static final long serialVersionUID = 0L;
     public Builder clearShortVideoId() {
       
       shortVideoId = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long parentCommentId ;
+    /**
+     * <code>int64 parent_comment_id = 3;</code>
+     * @return The parentCommentId.
+     */
+    @java.lang.Override
+    public long getParentCommentId() {
+      return parentCommentId;
+    }
+    /**
+     * <code>int64 parent_comment_id = 3;</code>
+     * @param value The parentCommentId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParentCommentId(long value) {
+      
+      parentCommentId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 parent_comment_id = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearParentCommentId() {
+      
+      parentCommentId = 0L;
       onChanged();
       return this;
     }

@@ -1352,6 +1352,9 @@ struct GloryApi_CreateShortVideoCommentRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
+  /// 短视频ID
+  var shortVideoID: Int64 = 0
+
   /// 评论内容
   var content: String = String()
 
@@ -1417,20 +1420,20 @@ struct GloryApi_DeleteShortVideoCommentResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
-    set {_baseRequest = newValue}
+  var baseResponse: Base_BaseResponse {
+    get {return _baseResponse ?? Base_BaseResponse()}
+    set {_baseResponse = newValue}
   }
-  /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
-  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
-  mutating func clearBaseRequest() {self._baseRequest = nil}
+  /// Returns true if `baseResponse` has been explicitly set.
+  var hasBaseResponse: Bool {return self._baseResponse != nil}
+  /// Clears the value of `baseResponse`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResponse() {self._baseResponse = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  fileprivate var _baseRequest: Base_BaseRequest? = nil
+  fileprivate var _baseResponse: Base_BaseResponse? = nil
 }
 
 /// 短视频评论列表
@@ -1449,6 +1452,8 @@ struct GloryApi_ListShortVideoCommentRequest {
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
   var shortVideoID: Int64 = 0
+
+  var parentCommentID: Int64 = 0
 
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
@@ -3773,8 +3778,9 @@ extension GloryApi_CreateShortVideoCommentRequest: SwiftProtobuf.Message, SwiftP
   static let protoMessageName: String = _protobuf_package + ".CreateShortVideoCommentRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
-    2: .same(proto: "content"),
-    3: .standard(proto: "parent_comment_id"),
+    2: .standard(proto: "short_video_id"),
+    3: .same(proto: "content"),
+    4: .standard(proto: "parent_comment_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -3784,8 +3790,9 @@ extension GloryApi_CreateShortVideoCommentRequest: SwiftProtobuf.Message, SwiftP
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.content) }()
-      case 3: try { try decoder.decodeSingularInt64Field(value: &self.parentCommentID) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.shortVideoID) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.content) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.parentCommentID) }()
       default: break
       }
     }
@@ -3799,17 +3806,21 @@ extension GloryApi_CreateShortVideoCommentRequest: SwiftProtobuf.Message, SwiftP
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
+    if self.shortVideoID != 0 {
+      try visitor.visitSingularInt64Field(value: self.shortVideoID, fieldNumber: 2)
+    }
     if !self.content.isEmpty {
-      try visitor.visitSingularStringField(value: self.content, fieldNumber: 2)
+      try visitor.visitSingularStringField(value: self.content, fieldNumber: 3)
     }
     if self.parentCommentID != 0 {
-      try visitor.visitSingularInt64Field(value: self.parentCommentID, fieldNumber: 3)
+      try visitor.visitSingularInt64Field(value: self.parentCommentID, fieldNumber: 4)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_CreateShortVideoCommentRequest, rhs: GloryApi_CreateShortVideoCommentRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.shortVideoID != rhs.shortVideoID {return false}
     if lhs.content != rhs.content {return false}
     if lhs.parentCommentID != rhs.parentCommentID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -3904,7 +3915,7 @@ extension GloryApi_DeleteShortVideoCommentRequest: SwiftProtobuf.Message, SwiftP
 extension GloryApi_DeleteShortVideoCommentResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".DeleteShortVideoCommentResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "base_request"),
+    1: .standard(proto: "base_response"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -3913,7 +3924,7 @@ extension GloryApi_DeleteShortVideoCommentResponse: SwiftProtobuf.Message, Swift
       // allocates stack space for every case branch when no optimizations are
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResponse) }()
       default: break
       }
     }
@@ -3924,14 +3935,14 @@ extension GloryApi_DeleteShortVideoCommentResponse: SwiftProtobuf.Message, Swift
     // allocates stack space for every if/case branch local when no optimizations
     // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
     // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._baseRequest {
+    try { if let v = self._baseResponse {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_DeleteShortVideoCommentResponse, rhs: GloryApi_DeleteShortVideoCommentResponse) -> Bool {
-    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs._baseResponse != rhs._baseResponse {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -3942,6 +3953,7 @@ extension GloryApi_ListShortVideoCommentRequest: SwiftProtobuf.Message, SwiftPro
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
     2: .standard(proto: "short_video_id"),
+    3: .standard(proto: "parent_comment_id"),
     100: .same(proto: "pagination"),
   ]
 
@@ -3953,6 +3965,7 @@ extension GloryApi_ListShortVideoCommentRequest: SwiftProtobuf.Message, SwiftPro
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.shortVideoID) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.parentCommentID) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -3970,6 +3983,9 @@ extension GloryApi_ListShortVideoCommentRequest: SwiftProtobuf.Message, SwiftPro
     if self.shortVideoID != 0 {
       try visitor.visitSingularInt64Field(value: self.shortVideoID, fieldNumber: 2)
     }
+    if self.parentCommentID != 0 {
+      try visitor.visitSingularInt64Field(value: self.parentCommentID, fieldNumber: 3)
+    }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
     } }()
@@ -3979,6 +3995,7 @@ extension GloryApi_ListShortVideoCommentRequest: SwiftProtobuf.Message, SwiftPro
   static func ==(lhs: GloryApi_ListShortVideoCommentRequest, rhs: GloryApi_ListShortVideoCommentRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.shortVideoID != rhs.shortVideoID {return false}
+    if lhs.parentCommentID != rhs.parentCommentID {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

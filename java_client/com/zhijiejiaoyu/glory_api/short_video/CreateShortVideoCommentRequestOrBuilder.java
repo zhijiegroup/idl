@@ -24,10 +24,20 @@ public interface CreateShortVideoCommentRequestOrBuilder extends
 
   /**
    * <pre>
+   * 短视频ID
+   * </pre>
+   *
+   * <code>int64 short_video_id = 2;</code>
+   * @return The shortVideoId.
+   */
+  long getShortVideoId();
+
+  /**
+   * <pre>
    * 评论内容
    * </pre>
    *
-   * <code>string content = 2;</code>
+   * <code>string content = 3;</code>
    * @return The content.
    */
   java.lang.String getContent();
@@ -36,7 +46,7 @@ public interface CreateShortVideoCommentRequestOrBuilder extends
    * 评论内容
    * </pre>
    *
-   * <code>string content = 2;</code>
+   * <code>string content = 3;</code>
    * @return The bytes for content.
    */
   com.google.protobuf.ByteString
@@ -47,7 +57,7 @@ public interface CreateShortVideoCommentRequestOrBuilder extends
    * 上级评论ID
    * </pre>
    *
-   * <code>int64 parent_comment_id = 3;</code>
+   * <code>int64 parent_comment_id = 4;</code>
    * @return The parentCommentId.
    */
   long getParentCommentId();

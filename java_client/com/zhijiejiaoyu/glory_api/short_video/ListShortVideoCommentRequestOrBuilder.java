@@ -29,6 +29,12 @@ public interface ListShortVideoCommentRequestOrBuilder extends
   long getShortVideoId();
 
   /**
+   * <code>int64 parent_comment_id = 3;</code>
+   * @return The parentCommentId.
+   */
+  long getParentCommentId();
+
+  /**
    * <code>.base.PaginationRequest pagination = 100;</code>
    * @return Whether the pagination field is set.
    */

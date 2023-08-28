@@ -49,14 +49,14 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            com.zhijiejiaoyu.base.BaseRequest.Builder subBuilder = null;
-            if (baseRequest != null) {
-              subBuilder = baseRequest.toBuilder();
+            com.zhijiejiaoyu.base.BaseResponse.Builder subBuilder = null;
+            if (baseResponse != null) {
+              subBuilder = baseResponse.toBuilder();
             }
-            baseRequest = input.readMessage(com.zhijiejiaoyu.base.BaseRequest.parser(), extensionRegistry);
+            baseResponse = input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(baseRequest);
-              baseRequest = subBuilder.buildPartial();
+              subBuilder.mergeFrom(baseResponse);
+              baseResponse = subBuilder.buildPartial();
             }
 
             break;
@@ -93,30 +93,30 @@ private static final long serialVersionUID = 0L;
             com.zhijiejiaoyu.glory_api.short_video.DeleteShortVideoCommentResponse.class, com.zhijiejiaoyu.glory_api.short_video.DeleteShortVideoCommentResponse.Builder.class);
   }
 
-  public static final int BASE_REQUEST_FIELD_NUMBER = 1;
-  private com.zhijiejiaoyu.base.BaseRequest baseRequest;
+  public static final int BASE_RESPONSE_FIELD_NUMBER = 1;
+  private com.zhijiejiaoyu.base.BaseResponse baseResponse;
   /**
-   * <code>.base.BaseRequest base_request = 1;</code>
-   * @return Whether the baseRequest field is set.
+   * <code>.base.BaseResponse base_response = 1;</code>
+   * @return Whether the baseResponse field is set.
    */
   @java.lang.Override
-  public boolean hasBaseRequest() {
-    return baseRequest != null;
+  public boolean hasBaseResponse() {
+    return baseResponse != null;
   }
   /**
-   * <code>.base.BaseRequest base_request = 1;</code>
-   * @return The baseRequest.
+   * <code>.base.BaseResponse base_response = 1;</code>
+   * @return The baseResponse.
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.base.BaseRequest getBaseRequest() {
-    return baseRequest == null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
+  public com.zhijiejiaoyu.base.BaseResponse getBaseResponse() {
+    return baseResponse == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResponse;
   }
   /**
-   * <code>.base.BaseRequest base_request = 1;</code>
+   * <code>.base.BaseResponse base_response = 1;</code>
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder() {
-    return getBaseRequest();
+  public com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseResponseOrBuilder() {
+    return getBaseResponse();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -133,8 +133,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (baseRequest != null) {
-      output.writeMessage(1, getBaseRequest());
+    if (baseResponse != null) {
+      output.writeMessage(1, getBaseResponse());
     }
     unknownFields.writeTo(output);
   }
@@ -145,9 +145,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (baseRequest != null) {
+    if (baseResponse != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getBaseRequest());
+        .computeMessageSize(1, getBaseResponse());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -164,10 +164,10 @@ private static final long serialVersionUID = 0L;
     }
     com.zhijiejiaoyu.glory_api.short_video.DeleteShortVideoCommentResponse other = (com.zhijiejiaoyu.glory_api.short_video.DeleteShortVideoCommentResponse) obj;
 
-    if (hasBaseRequest() != other.hasBaseRequest()) return false;
-    if (hasBaseRequest()) {
-      if (!getBaseRequest()
-          .equals(other.getBaseRequest())) return false;
+    if (hasBaseResponse() != other.hasBaseResponse()) return false;
+    if (hasBaseResponse()) {
+      if (!getBaseResponse()
+          .equals(other.getBaseResponse())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -180,9 +180,9 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasBaseRequest()) {
-      hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
-      hash = (53 * hash) + getBaseRequest().hashCode();
+    if (hasBaseResponse()) {
+      hash = (37 * hash) + BASE_RESPONSE_FIELD_NUMBER;
+      hash = (53 * hash) + getBaseResponse().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -317,11 +317,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (baseRequestBuilder == null) {
-        baseRequest = null;
+      if (baseResponseBuilder == null) {
+        baseResponse = null;
       } else {
-        baseRequest = null;
-        baseRequestBuilder = null;
+        baseResponse = null;
+        baseResponseBuilder = null;
       }
       return this;
     }
@@ -349,10 +349,10 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.short_video.DeleteShortVideoCommentResponse buildPartial() {
       com.zhijiejiaoyu.glory_api.short_video.DeleteShortVideoCommentResponse result = new com.zhijiejiaoyu.glory_api.short_video.DeleteShortVideoCommentResponse(this);
-      if (baseRequestBuilder == null) {
-        result.baseRequest = baseRequest;
+      if (baseResponseBuilder == null) {
+        result.baseResponse = baseResponse;
       } else {
-        result.baseRequest = baseRequestBuilder.build();
+        result.baseResponse = baseResponseBuilder.build();
       }
       onBuilt();
       return result;
@@ -402,8 +402,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.zhijiejiaoyu.glory_api.short_video.DeleteShortVideoCommentResponse other) {
       if (other == com.zhijiejiaoyu.glory_api.short_video.DeleteShortVideoCommentResponse.getDefaultInstance()) return this;
-      if (other.hasBaseRequest()) {
-        mergeBaseRequest(other.getBaseRequest());
+      if (other.hasBaseResponse()) {
+        mergeBaseResponse(other.getBaseResponse());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -434,123 +434,123 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.zhijiejiaoyu.base.BaseRequest baseRequest;
+    private com.zhijiejiaoyu.base.BaseResponse baseResponse;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder> baseRequestBuilder;
+        com.zhijiejiaoyu.base.BaseResponse, com.zhijiejiaoyu.base.BaseResponse.Builder, com.zhijiejiaoyu.base.BaseResponseOrBuilder> baseResponseBuilder;
     /**
-     * <code>.base.BaseRequest base_request = 1;</code>
-     * @return Whether the baseRequest field is set.
+     * <code>.base.BaseResponse base_response = 1;</code>
+     * @return Whether the baseResponse field is set.
      */
-    public boolean hasBaseRequest() {
-      return baseRequestBuilder != null || baseRequest != null;
+    public boolean hasBaseResponse() {
+      return baseResponseBuilder != null || baseResponse != null;
     }
     /**
-     * <code>.base.BaseRequest base_request = 1;</code>
-     * @return The baseRequest.
+     * <code>.base.BaseResponse base_response = 1;</code>
+     * @return The baseResponse.
      */
-    public com.zhijiejiaoyu.base.BaseRequest getBaseRequest() {
-      if (baseRequestBuilder == null) {
-        return baseRequest == null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
+    public com.zhijiejiaoyu.base.BaseResponse getBaseResponse() {
+      if (baseResponseBuilder == null) {
+        return baseResponse == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResponse;
       } else {
-        return baseRequestBuilder.getMessage();
+        return baseResponseBuilder.getMessage();
       }
     }
     /**
-     * <code>.base.BaseRequest base_request = 1;</code>
+     * <code>.base.BaseResponse base_response = 1;</code>
      */
-    public Builder setBaseRequest(com.zhijiejiaoyu.base.BaseRequest value) {
-      if (baseRequestBuilder == null) {
+    public Builder setBaseResponse(com.zhijiejiaoyu.base.BaseResponse value) {
+      if (baseResponseBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        baseRequest = value;
+        baseResponse = value;
         onChanged();
       } else {
-        baseRequestBuilder.setMessage(value);
+        baseResponseBuilder.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.base.BaseRequest base_request = 1;</code>
+     * <code>.base.BaseResponse base_response = 1;</code>
      */
-    public Builder setBaseRequest(
-        com.zhijiejiaoyu.base.BaseRequest.Builder builderForValue) {
-      if (baseRequestBuilder == null) {
-        baseRequest = builderForValue.build();
+    public Builder setBaseResponse(
+        com.zhijiejiaoyu.base.BaseResponse.Builder builderForValue) {
+      if (baseResponseBuilder == null) {
+        baseResponse = builderForValue.build();
         onChanged();
       } else {
-        baseRequestBuilder.setMessage(builderForValue.build());
+        baseResponseBuilder.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.base.BaseRequest base_request = 1;</code>
+     * <code>.base.BaseResponse base_response = 1;</code>
      */
-    public Builder mergeBaseRequest(com.zhijiejiaoyu.base.BaseRequest value) {
-      if (baseRequestBuilder == null) {
-        if (baseRequest != null) {
-          baseRequest =
-            com.zhijiejiaoyu.base.BaseRequest.newBuilder(baseRequest).mergeFrom(value).buildPartial();
+    public Builder mergeBaseResponse(com.zhijiejiaoyu.base.BaseResponse value) {
+      if (baseResponseBuilder == null) {
+        if (baseResponse != null) {
+          baseResponse =
+            com.zhijiejiaoyu.base.BaseResponse.newBuilder(baseResponse).mergeFrom(value).buildPartial();
         } else {
-          baseRequest = value;
+          baseResponse = value;
         }
         onChanged();
       } else {
-        baseRequestBuilder.mergeFrom(value);
+        baseResponseBuilder.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.base.BaseRequest base_request = 1;</code>
+     * <code>.base.BaseResponse base_response = 1;</code>
      */
-    public Builder clearBaseRequest() {
-      if (baseRequestBuilder == null) {
-        baseRequest = null;
+    public Builder clearBaseResponse() {
+      if (baseResponseBuilder == null) {
+        baseResponse = null;
         onChanged();
       } else {
-        baseRequest = null;
-        baseRequestBuilder = null;
+        baseResponse = null;
+        baseResponseBuilder = null;
       }
 
       return this;
     }
     /**
-     * <code>.base.BaseRequest base_request = 1;</code>
+     * <code>.base.BaseResponse base_response = 1;</code>
      */
-    public com.zhijiejiaoyu.base.BaseRequest.Builder getBaseRequestBuilder() {
+    public com.zhijiejiaoyu.base.BaseResponse.Builder getBaseResponseBuilder() {
       
       onChanged();
-      return getBaseRequestFieldBuilder().getBuilder();
+      return getBaseResponseFieldBuilder().getBuilder();
     }
     /**
-     * <code>.base.BaseRequest base_request = 1;</code>
+     * <code>.base.BaseResponse base_response = 1;</code>
      */
-    public com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder() {
-      if (baseRequestBuilder != null) {
-        return baseRequestBuilder.getMessageOrBuilder();
+    public com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseResponseOrBuilder() {
+      if (baseResponseBuilder != null) {
+        return baseResponseBuilder.getMessageOrBuilder();
       } else {
-        return baseRequest == null ?
-            com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
+        return baseResponse == null ?
+            com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResponse;
       }
     }
     /**
-     * <code>.base.BaseRequest base_request = 1;</code>
+     * <code>.base.BaseResponse base_response = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder> 
-        getBaseRequestFieldBuilder() {
-      if (baseRequestBuilder == null) {
-        baseRequestBuilder = new com.google.protobuf.SingleFieldBuilderV3<
-            com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder>(
-                getBaseRequest(),
+        com.zhijiejiaoyu.base.BaseResponse, com.zhijiejiaoyu.base.BaseResponse.Builder, com.zhijiejiaoyu.base.BaseResponseOrBuilder> 
+        getBaseResponseFieldBuilder() {
+      if (baseResponseBuilder == null) {
+        baseResponseBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+            com.zhijiejiaoyu.base.BaseResponse, com.zhijiejiaoyu.base.BaseResponse.Builder, com.zhijiejiaoyu.base.BaseResponseOrBuilder>(
+                getBaseResponse(),
                 getParentForChildren(),
                 isClean());
-        baseRequest = null;
+        baseResponse = null;
       }
-      return baseRequestBuilder;
+      return baseResponseBuilder;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
