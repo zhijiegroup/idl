@@ -58,6 +58,15 @@ message StageVideo {
   string created_at = 12; // 创建时间
 }
 
+message ShortVideoComment {
+  int64 comment_id = 1; // 评论ID
+  int64 short_video_id = 2; // 短视频ID
+  string content = 3; // 评论内容
+  string created_at = 4; // 评论发布时间
+  ShortVideoUser user_info = 5; // 评论用户信息
+  ShortVideoComment parent = 6; // 上级评论
+}
+
 message CreateShortVideoRequest {
   base.BaseRequest base_request = 1;
   string video_path = 2;
@@ -278,4 +287,40 @@ message FavoriteShortVideoRequest {
 
 message FavoriteShortVideoResponse {
   base.BaseResponse base_resp = 1;
+}
+
+// 发布评论
+message CreateShortVideoCommentRequest {
+  base.BaseRequest base_request = 1;
+  string content = 2; // 评论内容
+  int64 parent_comment_id = 3; // 上级评论ID
+}
+
+message CreateShortVideoCommentResponse {
+  base.BaseResponse base_resp = 1;
+  int64 comment_id = 2;
+}
+
+// 删除评论
+message DeleteShortVideoCommentRequest {
+  base.BaseRequest base_request = 1;
+  int64 short_video_comment_id = 2;
+}
+
+message DeleteShortVideoCommentResponse {
+  base.BaseRequest base_request = 1;
+}
+
+// 短视频评论列表
+message ListShortVideoCommentRequest {
+  base.BaseRequest base_request = 1;
+  int64 short_video_id = 2;
+  base.PaginationRequest pagination = 100;
+}
+
+message ListShortVideoCommentResponse {
+  base.BaseResponse base_resp = 1;
+  repeated ShortVideoComment short_video_comment_list = 2;
+  base.PaginationResponse pagination = 100;
+
 }
