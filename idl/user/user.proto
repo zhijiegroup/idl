@@ -7,6 +7,15 @@ import "base.proto";
 import "seller/seller.proto";
 import "shop/shop.proto";
 
+message TenantDept {
+    int64 dept_id = 1;
+    string dept_name = 2;
+    string dept_type = 3;
+    string dept_overview = 4;
+    int64 tenant_id = 5;
+    int64 parent_id = 6;
+}
+
 message User {
   int64 id = 1;
   string phone = 2;
@@ -17,6 +26,10 @@ message User {
   string avatar_url = 7;
   Seller seller = 8;
   repeated ShopAccess shop_access = 9;  //判断用户的shop访问权限
+
+  TenantDept tenant_dept = 10;
+  repeated Permission permissions = 11;
+  bool is_admin = 12;
 }
 
 message UserFollow {
