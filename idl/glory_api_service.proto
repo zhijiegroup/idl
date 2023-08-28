@@ -709,6 +709,10 @@ service glory_api {
     option (api.post) = '/api/tenant/list_tenant_user';
   }
 
+  rpc UpdateTenantUserPassword(UpdateTenantUserPasswordRequest) returns(UpdateTenantUserPasswordResponse) {
+    option (api.post) = '/api/tenant/update_tenent_user_password';
+  }
+
   // short_video
   rpc CreateShortVideo(CreateShortVideoRequest) returns (CreateShortVideoResponse) {
     option (api.post) = '/api/short_video/create_short_video';

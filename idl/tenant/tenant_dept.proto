@@ -21,15 +21,6 @@ message GetTenantDeptTypeResponse {
     repeated TenantDeptType tenant_dept_type = 2;
 }
 
-message TenantDept {
-    int64 dept_id = 1;
-    string dept_name = 2;
-    string dept_type = 3;
-    string dept_overview = 4;
-    int64 tenant_id = 5;
-    int64 parent_id = 6;
-}
-
 message CreateTenantDeptRequest {
     base.BaseRequest base_request = 1;
     TenantDept tenant_dept = 2;
@@ -134,4 +125,14 @@ message ListTenantUserResponse {
     base.BaseResponse base_resp = 1;
     repeated TenantUser users = 2;
     base.PaginationResponse pagination = 100;
+}
+
+message UpdateTenantUserPasswordRequest {
+    base.BaseRequest base_request = 1;
+    string phone = 2;
+    string password = 3;
+}
+
+message UpdateTenantUserPasswordResponse {
+    base.BaseResponse base_resp = 1;
 }
