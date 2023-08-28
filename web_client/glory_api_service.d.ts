@@ -881,6 +881,21 @@ CreateLivePlanProduct create live plan product */
   FavoriteShortVideo(
     request: short_video.FavoriteShortVideoRequest
   ): Promise<short_video.FavoriteShortVideoResponse>;
+
+  /** 发布短视频评论 */
+  CreateShortVideoComment(
+    request: short_video.CreateShortVideoCommentRequest
+  ): Promise<short_video.CreateShortVideoCommentResponse>;
+
+  /** 删除短视频评论 */
+  DeleteShortVideoComment(
+    request: short_video.DeleteShortVideoCommentRequest
+  ): Promise<short_video.DeleteShortVideoCommentResponse>;
+
+  /** 短视频评论列表 */
+  ListShortVideoComment(
+    request: short_video.ListShortVideoCommentRequest
+  ): Promise<short_video.ListShortVideoCommentResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

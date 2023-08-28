@@ -96,6 +96,21 @@ export interface StageVideo {
   created_at?: string;
 }
 
+export interface ShortVideoComment {
+  /** 评论ID */
+  comment_id?: string;
+  /** 短视频ID */
+  short_video_id?: string;
+  /** 评论内容 */
+  content?: string;
+  /** 评论发布时间 */
+  created_at?: string;
+  /** 评论用户信息 */
+  user_info?: ShortVideoUser;
+  /** 上级评论 */
+  parent?: ShortVideoComment;
+}
+
 export interface CreateShortVideoRequest {
   base_request?: base.BaseRequest;
   video_path?: string;
@@ -339,4 +354,41 @@ export interface FavoriteShortVideoRequest {
 
 export interface FavoriteShortVideoResponse {
   base_resp?: base.BaseResponse;
+}
+
+/** 发布评论 */
+export interface CreateShortVideoCommentRequest {
+  base_request?: base.BaseRequest;
+  /** 评论内容 */
+  content?: string;
+  /** 上级评论ID */
+  parent_comment_id?: string;
+}
+
+export interface CreateShortVideoCommentResponse {
+  base_resp?: base.BaseResponse;
+  comment_id?: string;
+}
+
+/** 删除评论 */
+export interface DeleteShortVideoCommentRequest {
+  base_request?: base.BaseRequest;
+  short_video_comment_id?: string;
+}
+
+export interface DeleteShortVideoCommentResponse {
+  base_request?: base.BaseRequest;
+}
+
+/** 短视频评论列表 */
+export interface ListShortVideoCommentRequest {
+  base_request?: base.BaseRequest;
+  short_video_id?: string;
+  pagination?: base.PaginationRequest;
+}
+
+export interface ListShortVideoCommentResponse {
+  base_resp?: base.BaseResponse;
+  short_video_comment_list?: Array<ShortVideoComment>;
+  pagination?: base.PaginationResponse;
 }

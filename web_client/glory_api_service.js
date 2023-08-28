@@ -1629,6 +1629,30 @@ export class glory_api {
       handleResponse
     );
   }
+
+  CreateShortVideoComment(request) {
+    const uri = `${this.uriPrefix}/api/short_video/create_short_video_comment`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteShortVideoComment(request) {
+    const uri = `${this.uriPrefix}/api/short_video/delete_short_video_comment`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListShortVideoComment(request) {
+    const uri = `${this.uriPrefix}/api/short_video/list_short_video_comment`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
 }
 
 export const glory_apiClient = new glory_api();
