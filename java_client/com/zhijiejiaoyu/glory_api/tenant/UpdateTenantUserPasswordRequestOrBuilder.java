@@ -3,8 +3,8 @@
 
 package com.zhijiejiaoyu.glory_api.tenant;
 
-public interface UpdateTenantDeptRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:glory_api.UpdateTenantDeptRequest)
+public interface UpdateTenantUserPasswordRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:glory_api.UpdateTenantUserPasswordRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -23,17 +23,26 @@ public interface UpdateTenantDeptRequestOrBuilder extends
   com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder();
 
   /**
-   * <code>.glory_api.TenantDept tenant_dept = 2;</code>
-   * @return Whether the tenantDept field is set.
+   * <code>string phone = 2;</code>
+   * @return The phone.
    */
-  boolean hasTenantDept();
+  java.lang.String getPhone();
   /**
-   * <code>.glory_api.TenantDept tenant_dept = 2;</code>
-   * @return The tenantDept.
+   * <code>string phone = 2;</code>
+   * @return The bytes for phone.
    */
-  com.zhijiejiaoyu.glory_api.user.TenantDept getTenantDept();
+  com.google.protobuf.ByteString
+      getPhoneBytes();
+
   /**
-   * <code>.glory_api.TenantDept tenant_dept = 2;</code>
+   * <code>string password = 3;</code>
+   * @return The password.
    */
-  com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getTenantDeptOrBuilder();
+  java.lang.String getPassword();
+  /**
+   * <code>string password = 3;</code>
+   * @return The bytes for password.
+   */
+  com.google.protobuf.ByteString
+      getPasswordBytes();
 }

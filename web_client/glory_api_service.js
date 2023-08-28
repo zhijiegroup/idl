@@ -1480,6 +1480,14 @@ export class glory_api {
     );
   }
 
+  UpdateTenantUserPassword(request) {
+    const uri = `${this.uriPrefix}/api/tenant/update_tenent_user_password`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   CreateShortVideo(request) {
     const uri = `${this.uriPrefix}/api/short_video/create_short_video`;
     const body = JSONbigint.stringify(request);

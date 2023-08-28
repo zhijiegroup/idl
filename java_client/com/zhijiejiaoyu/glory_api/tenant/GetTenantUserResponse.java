@@ -95,13 +95,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.zhijiejiaoyu.glory_api.tenant.TenantDeptOuterClass.internal_static_glory_api_GetTenantUserResponse_descriptor;
+    return com.zhijiejiaoyu.glory_api.tenant.TenantDept.internal_static_glory_api_GetTenantUserResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.zhijiejiaoyu.glory_api.tenant.TenantDeptOuterClass.internal_static_glory_api_GetTenantUserResponse_fieldAccessorTable
+    return com.zhijiejiaoyu.glory_api.tenant.TenantDept.internal_static_glory_api_GetTenantUserResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.zhijiejiaoyu.glory_api.tenant.GetTenantUserResponse.class, com.zhijiejiaoyu.glory_api.tenant.GetTenantUserResponse.Builder.class);
   }
@@ -343,13 +343,13 @@ private static final long serialVersionUID = 0L;
       com.zhijiejiaoyu.glory_api.tenant.GetTenantUserResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.zhijiejiaoyu.glory_api.tenant.TenantDeptOuterClass.internal_static_glory_api_GetTenantUserResponse_descriptor;
+      return com.zhijiejiaoyu.glory_api.tenant.TenantDept.internal_static_glory_api_GetTenantUserResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.zhijiejiaoyu.glory_api.tenant.TenantDeptOuterClass.internal_static_glory_api_GetTenantUserResponse_fieldAccessorTable
+      return com.zhijiejiaoyu.glory_api.tenant.TenantDept.internal_static_glory_api_GetTenantUserResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.zhijiejiaoyu.glory_api.tenant.GetTenantUserResponse.class, com.zhijiejiaoyu.glory_api.tenant.GetTenantUserResponse.Builder.class);
     }
@@ -390,7 +390,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.zhijiejiaoyu.glory_api.tenant.TenantDeptOuterClass.internal_static_glory_api_GetTenantUserResponse_descriptor;
+      return com.zhijiejiaoyu.glory_api.tenant.TenantDept.internal_static_glory_api_GetTenantUserResponse_descriptor;
     }
 
     @java.lang.Override

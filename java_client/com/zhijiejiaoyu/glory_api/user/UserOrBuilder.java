@@ -143,4 +143,49 @@ public interface UserOrBuilder extends
    */
   com.zhijiejiaoyu.glory_api.shop.ShopAccessOrBuilder getShopAccessOrBuilder(
       int index);
+
+  /**
+   * <code>.glory_api.TenantDept tenant_dept = 10;</code>
+   * @return Whether the tenantDept field is set.
+   */
+  boolean hasTenantDept();
+  /**
+   * <code>.glory_api.TenantDept tenant_dept = 10;</code>
+   * @return The tenantDept.
+   */
+  com.zhijiejiaoyu.glory_api.user.TenantDept getTenantDept();
+  /**
+   * <code>.glory_api.TenantDept tenant_dept = 10;</code>
+   */
+  com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getTenantDeptOrBuilder();
+
+  /**
+   * <code>repeated .glory_api.Permission permissions = 11;</code>
+   */
+  java.util.List<com.zhijiejiaoyu.glory_api.user.Permission> 
+      getPermissionsList();
+  /**
+   * <code>repeated .glory_api.Permission permissions = 11;</code>
+   */
+  com.zhijiejiaoyu.glory_api.user.Permission getPermissions(int index);
+  /**
+   * <code>repeated .glory_api.Permission permissions = 11;</code>
+   */
+  int getPermissionsCount();
+  /**
+   * <code>repeated .glory_api.Permission permissions = 11;</code>
+   */
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.user.PermissionOrBuilder> 
+      getPermissionsOrBuilderList();
+  /**
+   * <code>repeated .glory_api.Permission permissions = 11;</code>
+   */
+  com.zhijiejiaoyu.glory_api.user.PermissionOrBuilder getPermissionsOrBuilder(
+      int index);
+
+  /**
+   * <code>bool is_admin = 12;</code>
+   * @return The isAdmin.
+   */
+  boolean getIsAdmin();
 }

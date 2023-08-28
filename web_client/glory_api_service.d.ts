@@ -790,6 +790,10 @@ CreateLivePlanProduct create live plan product */
     request: tenant_dept.ListTenantUserRequest
   ): Promise<tenant_dept.ListTenantUserResponse>;
 
+  UpdateTenantUserPassword(
+    request: tenant_dept.UpdateTenantUserPasswordRequest
+  ): Promise<tenant_dept.UpdateTenantUserPasswordResponse>;
+
   /** short_video */
   CreateShortVideo(
     request: short_video.CreateShortVideoRequest

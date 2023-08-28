@@ -21,18 +21,9 @@ export interface GetTenantDeptTypeResponse {
   tenant_dept_type?: Array<TenantDeptType>;
 }
 
-export interface TenantDept {
-  dept_id?: string;
-  dept_name?: string;
-  dept_type?: string;
-  dept_overview?: string;
-  tenant_id?: string;
-  parent_id?: string;
-}
-
 export interface CreateTenantDeptRequest {
   base_request?: base.BaseRequest;
-  tenant_dept?: TenantDept;
+  tenant_dept?: user.TenantDept;
 }
 
 export interface CreateTenantDeptResponse {
@@ -51,7 +42,7 @@ export interface DeleteTenantDeptResponse {
 
 export interface UpdateTenantDeptRequest {
   base_request?: base.BaseRequest;
-  tenant_dept?: TenantDept;
+  tenant_dept?: user.TenantDept;
 }
 
 export interface UpdateTenantDeptResponse {
@@ -66,7 +57,7 @@ export interface GetTenantDeptRequest {
 
 export interface GetTenantDeptResponse {
   base_resp?: base.BaseResponse;
-  tenant_dept?: TenantDept;
+  tenant_dept?: user.TenantDept;
 }
 
 export interface TenantUser {
@@ -134,4 +125,14 @@ export interface ListTenantUserResponse {
   base_resp?: base.BaseResponse;
   users?: Array<TenantUser>;
   pagination?: base.PaginationResponse;
+}
+
+export interface UpdateTenantUserPasswordRequest {
+  base_request?: base.BaseRequest;
+  phone?: string;
+  password?: string;
+}
+
+export interface UpdateTenantUserPasswordResponse {
+  base_resp?: base.BaseResponse;
 }

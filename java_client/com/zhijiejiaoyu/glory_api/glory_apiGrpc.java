@@ -5688,6 +5688,37 @@ public final class glory_apiGrpc {
     return getListTenantUserMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest,
+      com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse> getUpdateTenantUserPasswordMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateTenantUserPassword",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest,
+      com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse> getUpdateTenantUserPasswordMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest, com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse> getUpdateTenantUserPasswordMethod;
+    if ((getUpdateTenantUserPasswordMethod = glory_apiGrpc.getUpdateTenantUserPasswordMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getUpdateTenantUserPasswordMethod = glory_apiGrpc.getUpdateTenantUserPasswordMethod) == null) {
+          glory_apiGrpc.getUpdateTenantUserPasswordMethod = getUpdateTenantUserPasswordMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest, com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateTenantUserPassword"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("UpdateTenantUserPassword"))
+              .build();
+        }
+      }
+    }
+    return getUpdateTenantUserPasswordMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoRequest,
       com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoResponse> getCreateShortVideoMethod;
 
@@ -7684,6 +7715,13 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    default void updateTenantUserPassword(com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateTenantUserPasswordMethod(), responseObserver);
+    }
+
+    /**
      * <pre>
      * short_video
      * </pre>
@@ -9458,6 +9496,14 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public void updateTenantUserPassword(com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateTenantUserPasswordMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
      * <pre>
      * short_video
      * </pre>
@@ -11053,6 +11099,13 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponse listTenantUser(com.zhijiejiaoyu.glory_api.tenant.ListTenantUserRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListTenantUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse updateTenantUserPassword(com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateTenantUserPasswordMethod(), getCallOptions(), request);
     }
 
     /**
@@ -12819,6 +12872,14 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse> updateTenantUserPassword(
+        com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateTenantUserPasswordMethod(), getCallOptions()), request);
+    }
+
+    /**
      * <pre>
      * short_video
      * </pre>
@@ -13194,24 +13255,25 @@ public final class glory_apiGrpc {
   private static final int METHODID_UPDATE_TENANT_USER = 180;
   private static final int METHODID_GET_TENANT_USER = 181;
   private static final int METHODID_LIST_TENANT_USER = 182;
-  private static final int METHODID_CREATE_SHORT_VIDEO = 183;
-  private static final int METHODID_STAGE_SHORT_VIDEO = 184;
-  private static final int METHODID_LIST_MY_SHORT_VIDEO = 185;
-  private static final int METHODID_LIST_MY_STAGE_VIDEO = 186;
-  private static final int METHODID_LIST_MY_LIKE_VIDEO = 187;
-  private static final int METHODID_LIST_MY_FAVORITE_VIDEO = 188;
-  private static final int METHODID_GET_SHORT_VIDEO = 189;
-  private static final int METHODID_UPDATE_SHORT_VIDEO = 190;
-  private static final int METHODID_DELETE_SHORT_VIDEO = 191;
-  private static final int METHODID_GET_STAGE_VIDEO = 192;
-  private static final int METHODID_DELETE_STAGE_VIDEO = 193;
-  private static final int METHODID_UPDATE_STAGE_VIDEO = 194;
-  private static final int METHODID_MANAGEMENT_LIST_SHORT_VIDEO = 195;
-  private static final int METHODID_MANAGEMENT_CENSOR_SHORT_VIDEO = 196;
-  private static final int METHODID_MANAGEMENT_DELETE_SHORT_VIDEO = 197;
-  private static final int METHODID_LIST_SHORT_VIDEO = 198;
-  private static final int METHODID_LIKE_SHORT_VIDEO = 199;
-  private static final int METHODID_FAVORITE_SHORT_VIDEO = 200;
+  private static final int METHODID_UPDATE_TENANT_USER_PASSWORD = 183;
+  private static final int METHODID_CREATE_SHORT_VIDEO = 184;
+  private static final int METHODID_STAGE_SHORT_VIDEO = 185;
+  private static final int METHODID_LIST_MY_SHORT_VIDEO = 186;
+  private static final int METHODID_LIST_MY_STAGE_VIDEO = 187;
+  private static final int METHODID_LIST_MY_LIKE_VIDEO = 188;
+  private static final int METHODID_LIST_MY_FAVORITE_VIDEO = 189;
+  private static final int METHODID_GET_SHORT_VIDEO = 190;
+  private static final int METHODID_UPDATE_SHORT_VIDEO = 191;
+  private static final int METHODID_DELETE_SHORT_VIDEO = 192;
+  private static final int METHODID_GET_STAGE_VIDEO = 193;
+  private static final int METHODID_DELETE_STAGE_VIDEO = 194;
+  private static final int METHODID_UPDATE_STAGE_VIDEO = 195;
+  private static final int METHODID_MANAGEMENT_LIST_SHORT_VIDEO = 196;
+  private static final int METHODID_MANAGEMENT_CENSOR_SHORT_VIDEO = 197;
+  private static final int METHODID_MANAGEMENT_DELETE_SHORT_VIDEO = 198;
+  private static final int METHODID_LIST_SHORT_VIDEO = 199;
+  private static final int METHODID_LIKE_SHORT_VIDEO = 200;
+  private static final int METHODID_FAVORITE_SHORT_VIDEO = 201;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -13961,6 +14023,10 @@ public final class glory_apiGrpc {
         case METHODID_LIST_TENANT_USER:
           serviceImpl.listTenantUser((com.zhijiejiaoyu.glory_api.tenant.ListTenantUserRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_TENANT_USER_PASSWORD:
+          serviceImpl.updateTenantUserPassword((com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse>) responseObserver);
           break;
         case METHODID_CREATE_SHORT_VIDEO:
           serviceImpl.createShortVideo((com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoRequest) request,
@@ -15334,6 +15400,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponse>(
                 service, METHODID_LIST_TENANT_USER)))
         .addMethod(
+          getUpdateTenantUserPasswordMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest,
+              com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse>(
+                service, METHODID_UPDATE_TENANT_USER_PASSWORD)))
+        .addMethod(
           getCreateShortVideoMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -15690,6 +15763,7 @@ public final class glory_apiGrpc {
               .addMethod(getUpdateTenantUserMethod())
               .addMethod(getGetTenantUserMethod())
               .addMethod(getListTenantUserMethod())
+              .addMethod(getUpdateTenantUserPasswordMethod())
               .addMethod(getCreateShortVideoMethod())
               .addMethod(getStageShortVideoMethod())
               .addMethod(getListMyShortVideoMethod())

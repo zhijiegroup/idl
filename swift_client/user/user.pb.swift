@@ -20,42 +20,107 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
+struct GloryApi_TenantDept {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var deptID: Int64 = 0
+
+  var deptName: String = String()
+
+  var deptType: String = String()
+
+  var deptOverview: String = String()
+
+  var tenantID: Int64 = 0
+
+  var parentID: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
 struct GloryApi_User {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var id: Int64 = 0
+  var id: Int64 {
+    get {return _storage._id}
+    set {_uniqueStorage()._id = newValue}
+  }
 
-  var phone: String = String()
+  var phone: String {
+    get {return _storage._phone}
+    set {_uniqueStorage()._phone = newValue}
+  }
 
-  var token: String = String()
+  var token: String {
+    get {return _storage._token}
+    set {_uniqueStorage()._token = newValue}
+  }
 
-  var tokenExpiry: String = String()
+  var tokenExpiry: String {
+    get {return _storage._tokenExpiry}
+    set {_uniqueStorage()._tokenExpiry = newValue}
+  }
 
-  var createdAt: String = String()
+  var createdAt: String {
+    get {return _storage._createdAt}
+    set {_uniqueStorage()._createdAt = newValue}
+  }
 
-  var name: String = String()
+  var name: String {
+    get {return _storage._name}
+    set {_uniqueStorage()._name = newValue}
+  }
 
-  var avatarURL: String = String()
+  var avatarURL: String {
+    get {return _storage._avatarURL}
+    set {_uniqueStorage()._avatarURL = newValue}
+  }
 
   var seller: GloryApi_Seller {
-    get {return _seller ?? GloryApi_Seller()}
-    set {_seller = newValue}
+    get {return _storage._seller ?? GloryApi_Seller()}
+    set {_uniqueStorage()._seller = newValue}
   }
   /// Returns true if `seller` has been explicitly set.
-  var hasSeller: Bool {return self._seller != nil}
+  var hasSeller: Bool {return _storage._seller != nil}
   /// Clears the value of `seller`. Subsequent reads from it will return its default value.
-  mutating func clearSeller() {self._seller = nil}
+  mutating func clearSeller() {_uniqueStorage()._seller = nil}
 
   ///判断用户的shop访问权限
-  var shopAccess: [GloryApi_ShopAccess] = []
+  var shopAccess: [GloryApi_ShopAccess] {
+    get {return _storage._shopAccess}
+    set {_uniqueStorage()._shopAccess = newValue}
+  }
+
+  var tenantDept: GloryApi_TenantDept {
+    get {return _storage._tenantDept ?? GloryApi_TenantDept()}
+    set {_uniqueStorage()._tenantDept = newValue}
+  }
+  /// Returns true if `tenantDept` has been explicitly set.
+  var hasTenantDept: Bool {return _storage._tenantDept != nil}
+  /// Clears the value of `tenantDept`. Subsequent reads from it will return its default value.
+  mutating func clearTenantDept() {_uniqueStorage()._tenantDept = nil}
+
+  var permissions: [GloryApi_Permission] {
+    get {return _storage._permissions}
+    set {_uniqueStorage()._permissions = newValue}
+  }
+
+  var isAdmin: Bool {
+    get {return _storage._isAdmin}
+    set {_uniqueStorage()._isAdmin = newValue}
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  fileprivate var _seller: GloryApi_Seller? = nil
+  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 struct GloryApi_UserFollow {
@@ -1339,6 +1404,7 @@ struct GloryApi_ListMyFollowerUserResponse {
 }
 
 #if swift(>=5.5) && canImport(_Concurrency)
+extension GloryApi_TenantDept: @unchecked Sendable {}
 extension GloryApi_User: @unchecked Sendable {}
 extension GloryApi_UserFollow: @unchecked Sendable {}
 extension GloryApi_LoginRequest: @unchecked Sendable {}
@@ -1393,6 +1459,68 @@ extension GloryApi_ListMyFollowerUserResponse: @unchecked Sendable {}
 
 fileprivate let _protobuf_package = "glory_api"
 
+extension GloryApi_TenantDept: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".TenantDept"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "dept_id"),
+    2: .standard(proto: "dept_name"),
+    3: .standard(proto: "dept_type"),
+    4: .standard(proto: "dept_overview"),
+    5: .standard(proto: "tenant_id"),
+    6: .standard(proto: "parent_id"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.deptID) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.deptName) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.deptType) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.deptOverview) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
+      case 6: try { try decoder.decodeSingularInt64Field(value: &self.parentID) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.deptID != 0 {
+      try visitor.visitSingularInt64Field(value: self.deptID, fieldNumber: 1)
+    }
+    if !self.deptName.isEmpty {
+      try visitor.visitSingularStringField(value: self.deptName, fieldNumber: 2)
+    }
+    if !self.deptType.isEmpty {
+      try visitor.visitSingularStringField(value: self.deptType, fieldNumber: 3)
+    }
+    if !self.deptOverview.isEmpty {
+      try visitor.visitSingularStringField(value: self.deptOverview, fieldNumber: 4)
+    }
+    if self.tenantID != 0 {
+      try visitor.visitSingularInt64Field(value: self.tenantID, fieldNumber: 5)
+    }
+    if self.parentID != 0 {
+      try visitor.visitSingularInt64Field(value: self.parentID, fieldNumber: 6)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_TenantDept, rhs: GloryApi_TenantDept) -> Bool {
+    if lhs.deptID != rhs.deptID {return false}
+    if lhs.deptName != rhs.deptName {return false}
+    if lhs.deptType != rhs.deptType {return false}
+    if lhs.deptOverview != rhs.deptOverview {return false}
+    if lhs.tenantID != rhs.tenantID {return false}
+    if lhs.parentID != rhs.parentID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
 extension GloryApi_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".User"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
@@ -1405,73 +1533,145 @@ extension GloryApi_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     7: .standard(proto: "avatar_url"),
     8: .same(proto: "seller"),
     9: .standard(proto: "shop_access"),
+    10: .standard(proto: "tenant_dept"),
+    11: .same(proto: "permissions"),
+    12: .standard(proto: "is_admin"),
   ]
 
+  fileprivate class _StorageClass {
+    var _id: Int64 = 0
+    var _phone: String = String()
+    var _token: String = String()
+    var _tokenExpiry: String = String()
+    var _createdAt: String = String()
+    var _name: String = String()
+    var _avatarURL: String = String()
+    var _seller: GloryApi_Seller? = nil
+    var _shopAccess: [GloryApi_ShopAccess] = []
+    var _tenantDept: GloryApi_TenantDept? = nil
+    var _permissions: [GloryApi_Permission] = []
+    var _isAdmin: Bool = false
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _id = source._id
+      _phone = source._phone
+      _token = source._token
+      _tokenExpiry = source._tokenExpiry
+      _createdAt = source._createdAt
+      _name = source._name
+      _avatarURL = source._avatarURL
+      _seller = source._seller
+      _shopAccess = source._shopAccess
+      _tenantDept = source._tenantDept
+      _permissions = source._permissions
+      _isAdmin = source._isAdmin
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularInt64Field(value: &self.id) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.phone) }()
-      case 3: try { try decoder.decodeSingularStringField(value: &self.token) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.tokenExpiry) }()
-      case 5: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
-      case 6: try { try decoder.decodeSingularStringField(value: &self.name) }()
-      case 7: try { try decoder.decodeSingularStringField(value: &self.avatarURL) }()
-      case 8: try { try decoder.decodeSingularMessageField(value: &self._seller) }()
-      case 9: try { try decoder.decodeRepeatedMessageField(value: &self.shopAccess) }()
-      default: break
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        // The use of inline closures is to circumvent an issue where the compiler
+        // allocates stack space for every case branch when no optimizations are
+        // enabled. https://github.com/apple/swift-protobuf/issues/1034
+        switch fieldNumber {
+        case 1: try { try decoder.decodeSingularInt64Field(value: &_storage._id) }()
+        case 2: try { try decoder.decodeSingularStringField(value: &_storage._phone) }()
+        case 3: try { try decoder.decodeSingularStringField(value: &_storage._token) }()
+        case 4: try { try decoder.decodeSingularStringField(value: &_storage._tokenExpiry) }()
+        case 5: try { try decoder.decodeSingularStringField(value: &_storage._createdAt) }()
+        case 6: try { try decoder.decodeSingularStringField(value: &_storage._name) }()
+        case 7: try { try decoder.decodeSingularStringField(value: &_storage._avatarURL) }()
+        case 8: try { try decoder.decodeSingularMessageField(value: &_storage._seller) }()
+        case 9: try { try decoder.decodeRepeatedMessageField(value: &_storage._shopAccess) }()
+        case 10: try { try decoder.decodeSingularMessageField(value: &_storage._tenantDept) }()
+        case 11: try { try decoder.decodeRepeatedMessageField(value: &_storage._permissions) }()
+        case 12: try { try decoder.decodeSingularBoolField(value: &_storage._isAdmin) }()
+        default: break
+        }
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    if self.id != 0 {
-      try visitor.visitSingularInt64Field(value: self.id, fieldNumber: 1)
-    }
-    if !self.phone.isEmpty {
-      try visitor.visitSingularStringField(value: self.phone, fieldNumber: 2)
-    }
-    if !self.token.isEmpty {
-      try visitor.visitSingularStringField(value: self.token, fieldNumber: 3)
-    }
-    if !self.tokenExpiry.isEmpty {
-      try visitor.visitSingularStringField(value: self.tokenExpiry, fieldNumber: 4)
-    }
-    if !self.createdAt.isEmpty {
-      try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 5)
-    }
-    if !self.name.isEmpty {
-      try visitor.visitSingularStringField(value: self.name, fieldNumber: 6)
-    }
-    if !self.avatarURL.isEmpty {
-      try visitor.visitSingularStringField(value: self.avatarURL, fieldNumber: 7)
-    }
-    try { if let v = self._seller {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
-    } }()
-    if !self.shopAccess.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.shopAccess, fieldNumber: 9)
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
+      if _storage._id != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._id, fieldNumber: 1)
+      }
+      if !_storage._phone.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._phone, fieldNumber: 2)
+      }
+      if !_storage._token.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._token, fieldNumber: 3)
+      }
+      if !_storage._tokenExpiry.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._tokenExpiry, fieldNumber: 4)
+      }
+      if !_storage._createdAt.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._createdAt, fieldNumber: 5)
+      }
+      if !_storage._name.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._name, fieldNumber: 6)
+      }
+      if !_storage._avatarURL.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._avatarURL, fieldNumber: 7)
+      }
+      try { if let v = _storage._seller {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
+      } }()
+      if !_storage._shopAccess.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._shopAccess, fieldNumber: 9)
+      }
+      try { if let v = _storage._tenantDept {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 10)
+      } }()
+      if !_storage._permissions.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._permissions, fieldNumber: 11)
+      }
+      if _storage._isAdmin != false {
+        try visitor.visitSingularBoolField(value: _storage._isAdmin, fieldNumber: 12)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_User, rhs: GloryApi_User) -> Bool {
-    if lhs.id != rhs.id {return false}
-    if lhs.phone != rhs.phone {return false}
-    if lhs.token != rhs.token {return false}
-    if lhs.tokenExpiry != rhs.tokenExpiry {return false}
-    if lhs.createdAt != rhs.createdAt {return false}
-    if lhs.name != rhs.name {return false}
-    if lhs.avatarURL != rhs.avatarURL {return false}
-    if lhs._seller != rhs._seller {return false}
-    if lhs.shopAccess != rhs.shopAccess {return false}
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._id != rhs_storage._id {return false}
+        if _storage._phone != rhs_storage._phone {return false}
+        if _storage._token != rhs_storage._token {return false}
+        if _storage._tokenExpiry != rhs_storage._tokenExpiry {return false}
+        if _storage._createdAt != rhs_storage._createdAt {return false}
+        if _storage._name != rhs_storage._name {return false}
+        if _storage._avatarURL != rhs_storage._avatarURL {return false}
+        if _storage._seller != rhs_storage._seller {return false}
+        if _storage._shopAccess != rhs_storage._shopAccess {return false}
+        if _storage._tenantDept != rhs_storage._tenantDept {return false}
+        if _storage._permissions != rhs_storage._permissions {return false}
+        if _storage._isAdmin != rhs_storage._isAdmin {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

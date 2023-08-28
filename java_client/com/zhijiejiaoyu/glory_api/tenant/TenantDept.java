@@ -3,1026 +3,377 @@
 
 package com.zhijiejiaoyu.glory_api.tenant;
 
-/**
- * Protobuf type {@code glory_api.TenantDept}
- */
-public final class TenantDept extends
-    com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:glory_api.TenantDept)
-    TenantDeptOrBuilder {
-private static final long serialVersionUID = 0L;
-  // Use TenantDept.newBuilder() to construct.
-  private TenantDept(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-    super(builder);
-  }
-  private TenantDept() {
-    deptName = "";
-    deptType = "";
-    deptOverview = "";
+public final class TenantDept {
+  private TenantDept() {}
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistryLite registry) {
   }
 
-  @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
-      UnusedPrivateParameter unused) {
-    return new TenantDept();
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_TenantDeptType_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_TenantDeptType_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetTenantDeptTypeRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetTenantDeptTypeRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetTenantDeptTypeResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetTenantDeptTypeResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_CreateTenantDeptRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_CreateTenantDeptRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_CreateTenantDeptResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_CreateTenantDeptResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_DeleteTenantDeptRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_DeleteTenantDeptRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_DeleteTenantDeptResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_DeleteTenantDeptResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_UpdateTenantDeptRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_UpdateTenantDeptRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_UpdateTenantDeptResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_UpdateTenantDeptResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetTenantDeptRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetTenantDeptRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetTenantDeptResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetTenantDeptResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_TenantUser_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_TenantUser_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_CreateTenantUserRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_CreateTenantUserRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_CreateTenantUserResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_CreateTenantUserResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_CreateTenantUserResponse_TenantUsersEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_CreateTenantUserResponse_TenantUsersEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_DeleteTenantUserRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_DeleteTenantUserRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_DeleteTenantUserResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_DeleteTenantUserResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_UpdateTenantUserRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_UpdateTenantUserRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_UpdateTenantUserResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_UpdateTenantUserResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetTenantUserRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetTenantUserRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetTenantUserResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetTenantUserResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ListTenantUserRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ListTenantUserRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ListTenantUserResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ListTenantUserResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_UpdateTenantUserPasswordRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_UpdateTenantUserPasswordRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_UpdateTenantUserPasswordResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_UpdateTenantUserPasswordResponse_fieldAccessorTable;
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
-  private TenantDept(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8: {
-
-            deptId = input.readInt64();
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            deptName = s;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            deptType = s;
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            deptOverview = s;
-            break;
-          }
-          case 40: {
-
-            tenantId = input.readInt64();
-            break;
-          }
-          case 48: {
-
-            parentId = input.readInt64();
-            break;
-          }
-          default: {
-            if (!parseUnknownField(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-  public static final com.google.protobuf.Descriptors.Descriptor
+  public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
-    return com.zhijiejiaoyu.glory_api.tenant.TenantDeptOuterClass.internal_static_glory_api_TenantDept_descriptor;
+    return descriptor;
   }
-
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internalGetFieldAccessorTable() {
-    return com.zhijiejiaoyu.glory_api.tenant.TenantDeptOuterClass.internal_static_glory_api_TenantDept_fieldAccessorTable
-        .ensureFieldAccessorsInitialized(
-            com.zhijiejiaoyu.glory_api.tenant.TenantDept.class, com.zhijiejiaoyu.glory_api.tenant.TenantDept.Builder.class);
-  }
-
-  public static final int DEPT_ID_FIELD_NUMBER = 1;
-  private long deptId;
-  /**
-   * <code>int64 dept_id = 1;</code>
-   * @return The deptId.
-   */
-  @java.lang.Override
-  public long getDeptId() {
-    return deptId;
-  }
-
-  public static final int DEPT_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object deptName;
-  /**
-   * <code>string dept_name = 2;</code>
-   * @return The deptName.
-   */
-  @java.lang.Override
-  public java.lang.String getDeptName() {
-    java.lang.Object ref = deptName;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      deptName = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string dept_name = 2;</code>
-   * @return The bytes for deptName.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getDeptNameBytes() {
-    java.lang.Object ref = deptName;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      deptName = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int DEPT_TYPE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object deptType;
-  /**
-   * <code>string dept_type = 3;</code>
-   * @return The deptType.
-   */
-  @java.lang.Override
-  public java.lang.String getDeptType() {
-    java.lang.Object ref = deptType;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      deptType = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string dept_type = 3;</code>
-   * @return The bytes for deptType.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getDeptTypeBytes() {
-    java.lang.Object ref = deptType;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      deptType = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int DEPT_OVERVIEW_FIELD_NUMBER = 4;
-  private volatile java.lang.Object deptOverview;
-  /**
-   * <code>string dept_overview = 4;</code>
-   * @return The deptOverview.
-   */
-  @java.lang.Override
-  public java.lang.String getDeptOverview() {
-    java.lang.Object ref = deptOverview;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      deptOverview = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string dept_overview = 4;</code>
-   * @return The bytes for deptOverview.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getDeptOverviewBytes() {
-    java.lang.Object ref = deptOverview;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      deptOverview = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int TENANT_ID_FIELD_NUMBER = 5;
-  private long tenantId;
-  /**
-   * <code>int64 tenant_id = 5;</code>
-   * @return The tenantId.
-   */
-  @java.lang.Override
-  public long getTenantId() {
-    return tenantId;
-  }
-
-  public static final int PARENT_ID_FIELD_NUMBER = 6;
-  private long parentId;
-  /**
-   * <code>int64 parent_id = 6;</code>
-   * @return The parentId.
-   */
-  @java.lang.Override
-  public long getParentId() {
-    return parentId;
-  }
-
-  private byte memoizedIsInitialized = -1;
-  @java.lang.Override
-  public final boolean isInitialized() {
-    byte isInitialized = memoizedIsInitialized;
-    if (isInitialized == 1) return true;
-    if (isInitialized == 0) return false;
-
-    memoizedIsInitialized = 1;
-    return true;
-  }
-
-  @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
-    if (deptId != 0L) {
-      output.writeInt64(1, deptId);
-    }
-    if (!getDeptNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, deptName);
-    }
-    if (!getDeptTypeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, deptType);
-    }
-    if (!getDeptOverviewBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, deptOverview);
-    }
-    if (tenantId != 0L) {
-      output.writeInt64(5, tenantId);
-    }
-    if (parentId != 0L) {
-      output.writeInt64(6, parentId);
-    }
-    unknownFields.writeTo(output);
-  }
-
-  @java.lang.Override
-  public int getSerializedSize() {
-    int size = memoizedSize;
-    if (size != -1) return size;
-
-    size = 0;
-    if (deptId != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, deptId);
-    }
-    if (!getDeptNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, deptName);
-    }
-    if (!getDeptTypeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, deptType);
-    }
-    if (!getDeptOverviewBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, deptOverview);
-    }
-    if (tenantId != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(5, tenantId);
-    }
-    if (parentId != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(6, parentId);
-    }
-    size += unknownFields.getSerializedSize();
-    memoizedSize = size;
-    return size;
-  }
-
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
-    if (obj == this) {
-     return true;
-    }
-    if (!(obj instanceof com.zhijiejiaoyu.glory_api.tenant.TenantDept)) {
-      return super.equals(obj);
-    }
-    com.zhijiejiaoyu.glory_api.tenant.TenantDept other = (com.zhijiejiaoyu.glory_api.tenant.TenantDept) obj;
-
-    if (getDeptId()
-        != other.getDeptId()) return false;
-    if (!getDeptName()
-        .equals(other.getDeptName())) return false;
-    if (!getDeptType()
-        .equals(other.getDeptType())) return false;
-    if (!getDeptOverview()
-        .equals(other.getDeptOverview())) return false;
-    if (getTenantId()
-        != other.getTenantId()) return false;
-    if (getParentId()
-        != other.getParentId()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
-    return true;
-  }
-
-  @java.lang.Override
-  public int hashCode() {
-    if (memoizedHashCode != 0) {
-      return memoizedHashCode;
-    }
-    int hash = 41;
-    hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + DEPT_ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getDeptId());
-    hash = (37 * hash) + DEPT_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getDeptName().hashCode();
-    hash = (37 * hash) + DEPT_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getDeptType().hashCode();
-    hash = (37 * hash) + DEPT_OVERVIEW_FIELD_NUMBER;
-    hash = (53 * hash) + getDeptOverview().hashCode();
-    hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getTenantId());
-    hash = (37 * hash) + PARENT_ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getParentId());
-    hash = (29 * hash) + unknownFields.hashCode();
-    memoizedHashCode = hash;
-    return hash;
-  }
-
-  public static com.zhijiejiaoyu.glory_api.tenant.TenantDept parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-  public static com.zhijiejiaoyu.glory_api.tenant.TenantDept parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
-  public static com.zhijiejiaoyu.glory_api.tenant.TenantDept parseFrom(
-      com.google.protobuf.ByteString data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-  public static com.zhijiejiaoyu.glory_api.tenant.TenantDept parseFrom(
-      com.google.protobuf.ByteString data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
-  public static com.zhijiejiaoyu.glory_api.tenant.TenantDept parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-  public static com.zhijiejiaoyu.glory_api.tenant.TenantDept parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
-  public static com.zhijiejiaoyu.glory_api.tenant.TenantDept parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
-  public static com.zhijiejiaoyu.glory_api.tenant.TenantDept parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-  public static com.zhijiejiaoyu.glory_api.tenant.TenantDept parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
-  public static com.zhijiejiaoyu.glory_api.tenant.TenantDept parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-  }
-  public static com.zhijiejiaoyu.glory_api.tenant.TenantDept parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
-  public static com.zhijiejiaoyu.glory_api.tenant.TenantDept parseFrom(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.zhijiejiaoyu.glory_api.tenant.TenantDept prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
-  }
-
-  @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-    Builder builder = new Builder(parent);
-    return builder;
-  }
-  /**
-   * Protobuf type {@code glory_api.TenantDept}
-   */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:glory_api.TenantDept)
-      com.zhijiejiaoyu.glory_api.tenant.TenantDeptOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.zhijiejiaoyu.glory_api.tenant.TenantDeptOuterClass.internal_static_glory_api_TenantDept_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.zhijiejiaoyu.glory_api.tenant.TenantDeptOuterClass.internal_static_glory_api_TenantDept_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.zhijiejiaoyu.glory_api.tenant.TenantDept.class, com.zhijiejiaoyu.glory_api.tenant.TenantDept.Builder.class);
-    }
-
-    // Construct using com.zhijiejiaoyu.glory_api.tenant.TenantDept.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
-
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      super(parent);
-      maybeForceBuilderInitialization();
-    }
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
-    }
-    @java.lang.Override
-    public Builder clear() {
-      super.clear();
-      deptId = 0L;
-
-      deptName = "";
-
-      deptType = "";
-
-      deptOverview = "";
-
-      tenantId = 0L;
-
-      parentId = 0L;
-
-      return this;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.zhijiejiaoyu.glory_api.tenant.TenantDeptOuterClass.internal_static_glory_api_TenantDept_descriptor;
-    }
-
-    @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.tenant.TenantDept getDefaultInstanceForType() {
-      return com.zhijiejiaoyu.glory_api.tenant.TenantDept.getDefaultInstance();
-    }
-
-    @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.tenant.TenantDept build() {
-      com.zhijiejiaoyu.glory_api.tenant.TenantDept result = buildPartial();
-      if (!result.isInitialized()) {
-        throw newUninitializedMessageException(result);
-      }
-      return result;
-    }
-
-    @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.tenant.TenantDept buildPartial() {
-      com.zhijiejiaoyu.glory_api.tenant.TenantDept result = new com.zhijiejiaoyu.glory_api.tenant.TenantDept(this);
-      result.deptId = deptId;
-      result.deptName = deptName;
-      result.deptType = deptType;
-      result.deptOverview = deptOverview;
-      result.tenantId = tenantId;
-      result.parentId = parentId;
-      onBuilt();
-      return result;
-    }
-
-    @java.lang.Override
-    public Builder clone() {
-      return super.clone();
-    }
-    @java.lang.Override
-    public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return super.setField(field, value);
-    }
-    @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
-    }
-    @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
-    }
-    @java.lang.Override
-    public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
-    }
-    @java.lang.Override
-    public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return super.addRepeatedField(field, value);
-    }
-    @java.lang.Override
-    public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.zhijiejiaoyu.glory_api.tenant.TenantDept) {
-        return mergeFrom((com.zhijiejiaoyu.glory_api.tenant.TenantDept)other);
-      } else {
-        super.mergeFrom(other);
-        return this;
-      }
-    }
-
-    public Builder mergeFrom(com.zhijiejiaoyu.glory_api.tenant.TenantDept other) {
-      if (other == com.zhijiejiaoyu.glory_api.tenant.TenantDept.getDefaultInstance()) return this;
-      if (other.getDeptId() != 0L) {
-        setDeptId(other.getDeptId());
-      }
-      if (!other.getDeptName().isEmpty()) {
-        deptName = other.deptName;
-        onChanged();
-      }
-      if (!other.getDeptType().isEmpty()) {
-        deptType = other.deptType;
-        onChanged();
-      }
-      if (!other.getDeptOverview().isEmpty()) {
-        deptOverview = other.deptOverview;
-        onChanged();
-      }
-      if (other.getTenantId() != 0L) {
-        setTenantId(other.getTenantId());
-      }
-      if (other.getParentId() != 0L) {
-        setParentId(other.getParentId());
-      }
-      this.mergeUnknownFields(other.unknownFields);
-      onChanged();
-      return this;
-    }
-
-    @java.lang.Override
-    public final boolean isInitialized() {
-      return true;
-    }
-
-    @java.lang.Override
-    public Builder mergeFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      com.zhijiejiaoyu.glory_api.tenant.TenantDept parsedMessage = null;
-      try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.zhijiejiaoyu.glory_api.tenant.TenantDept) e.getUnfinishedMessage();
-        throw e.unwrapIOException();
-      } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
-      return this;
-    }
-
-    private long deptId ;
-    /**
-     * <code>int64 dept_id = 1;</code>
-     * @return The deptId.
-     */
-    @java.lang.Override
-    public long getDeptId() {
-      return deptId;
-    }
-    /**
-     * <code>int64 dept_id = 1;</code>
-     * @param value The deptId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDeptId(long value) {
-      
-      deptId = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int64 dept_id = 1;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearDeptId() {
-      
-      deptId = 0L;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object deptName = "";
-    /**
-     * <code>string dept_name = 2;</code>
-     * @return The deptName.
-     */
-    public java.lang.String getDeptName() {
-      java.lang.Object ref = deptName;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        deptName = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string dept_name = 2;</code>
-     * @return The bytes for deptName.
-     */
-    public com.google.protobuf.ByteString
-        getDeptNameBytes() {
-      java.lang.Object ref = deptName;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        deptName = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string dept_name = 2;</code>
-     * @param value The deptName to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDeptName(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      deptName = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string dept_name = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearDeptName() {
-      
-      deptName = getDefaultInstance().getDeptName();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string dept_name = 2;</code>
-     * @param value The bytes for deptName to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDeptNameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      deptName = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object deptType = "";
-    /**
-     * <code>string dept_type = 3;</code>
-     * @return The deptType.
-     */
-    public java.lang.String getDeptType() {
-      java.lang.Object ref = deptType;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        deptType = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string dept_type = 3;</code>
-     * @return The bytes for deptType.
-     */
-    public com.google.protobuf.ByteString
-        getDeptTypeBytes() {
-      java.lang.Object ref = deptType;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        deptType = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string dept_type = 3;</code>
-     * @param value The deptType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDeptType(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      deptType = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string dept_type = 3;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearDeptType() {
-      
-      deptType = getDefaultInstance().getDeptType();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string dept_type = 3;</code>
-     * @param value The bytes for deptType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDeptTypeBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      deptType = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object deptOverview = "";
-    /**
-     * <code>string dept_overview = 4;</code>
-     * @return The deptOverview.
-     */
-    public java.lang.String getDeptOverview() {
-      java.lang.Object ref = deptOverview;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        deptOverview = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string dept_overview = 4;</code>
-     * @return The bytes for deptOverview.
-     */
-    public com.google.protobuf.ByteString
-        getDeptOverviewBytes() {
-      java.lang.Object ref = deptOverview;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        deptOverview = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string dept_overview = 4;</code>
-     * @param value The deptOverview to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDeptOverview(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      deptOverview = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string dept_overview = 4;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearDeptOverview() {
-      
-      deptOverview = getDefaultInstance().getDeptOverview();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string dept_overview = 4;</code>
-     * @param value The bytes for deptOverview to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDeptOverviewBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      deptOverview = value;
-      onChanged();
-      return this;
-    }
-
-    private long tenantId ;
-    /**
-     * <code>int64 tenant_id = 5;</code>
-     * @return The tenantId.
-     */
-    @java.lang.Override
-    public long getTenantId() {
-      return tenantId;
-    }
-    /**
-     * <code>int64 tenant_id = 5;</code>
-     * @param value The tenantId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTenantId(long value) {
-      
-      tenantId = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int64 tenant_id = 5;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearTenantId() {
-      
-      tenantId = 0L;
-      onChanged();
-      return this;
-    }
-
-    private long parentId ;
-    /**
-     * <code>int64 parent_id = 6;</code>
-     * @return The parentId.
-     */
-    @java.lang.Override
-    public long getParentId() {
-      return parentId;
-    }
-    /**
-     * <code>int64 parent_id = 6;</code>
-     * @param value The parentId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setParentId(long value) {
-      
-      parentId = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int64 parent_id = 6;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearParentId() {
-      
-      parentId = 0L;
-      onChanged();
-      return this;
-    }
-    @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFields(unknownFields);
-    }
-
-    @java.lang.Override
-    public final Builder mergeUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.mergeUnknownFields(unknownFields);
-    }
-
-
-    // @@protoc_insertion_point(builder_scope:glory_api.TenantDept)
-  }
-
-  // @@protoc_insertion_point(class_scope:glory_api.TenantDept)
-  private static final com.zhijiejiaoyu.glory_api.tenant.TenantDept DEFAULT_INSTANCE;
+  private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
   static {
-    DEFAULT_INSTANCE = new com.zhijiejiaoyu.glory_api.tenant.TenantDept();
+    java.lang.String[] descriptorData = {
+      "\n\030tenant/tenant_dept.proto\022\tglory_api\032\nb" +
+      "ase.proto\032\017user/user.proto\".\n\016TenantDept" +
+      "Type\022\r\n\005label\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\"R\n\030Ge" +
+      "tTenantDeptTypeRequest\022\'\n\014base_request\030\001" +
+      " \001(\0132\021.base.BaseRequest\022\r\n\005value\030\002 \001(\t\"w" +
+      "\n\031GetTenantDeptTypeResponse\022%\n\tbase_resp" +
+      "\030\001 \001(\0132\022.base.BaseResponse\0223\n\020tenant_dep" +
+      "t_type\030\002 \003(\0132\031.glory_api.TenantDeptType\"" +
+      "n\n\027CreateTenantDeptRequest\022\'\n\014base_reque" +
+      "st\030\001 \001(\0132\021.base.BaseRequest\022*\n\013tenant_de" +
+      "pt\030\002 \001(\0132\025.glory_api.TenantDept\"A\n\030Creat" +
+      "eTenantDeptResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
+      ".base.BaseResponse\"f\n\027DeleteTenantDeptRe" +
+      "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
+      "equest\022\017\n\007dept_id\030\002 \001(\003\022\021\n\ttenant_id\030\003 \001" +
+      "(\003\"A\n\030DeleteTenantDeptResponse\022%\n\tbase_r" +
+      "esp\030\001 \001(\0132\022.base.BaseResponse\"n\n\027UpdateT" +
+      "enantDeptRequest\022\'\n\014base_request\030\001 \001(\0132\021" +
+      ".base.BaseRequest\022*\n\013tenant_dept\030\002 \001(\0132\025" +
+      ".glory_api.TenantDept\"A\n\030UpdateTenantDep" +
+      "tResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Base" +
+      "Response\"c\n\024GetTenantDeptRequest\022\'\n\014base" +
+      "_request\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tten" +
+      "ant_id\030\002 \001(\003\022\017\n\007dept_id\030\003 \001(\003\"j\n\025GetTena" +
+      "ntDeptResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
+      ".BaseResponse\022*\n\013tenant_dept\030\002 \001(\0132\025.glo" +
+      "ry_api.TenantDept\"\257\001\n\nTenantUser\022\026\n\016tena" +
+      "nt_user_id\030\001 \001(\003\022\017\n\007user_id\030\002 \001(\003\022\r\n\005pho" +
+      "ne\030\004 \001(\t\022\014\n\004name\030\005 \001(\t\022\014\n\004role\030\006 \001(\t\022\017\n\007" +
+      "role_id\030\007 \001(\003\022\014\n\004dept\030\010 \001(\t\022\017\n\007dept_id\030\t" +
+      " \001(\003\022\035\n\004user\030\n \001(\0132\017.glory_api.User\"\235\001\n\027" +
+      "CreateTenantUserRequest\022\'\n\014base_request\030" +
+      "\001 \001(\0132\021.base.BaseRequest\022\021\n\ttenant_id\030\002 " +
+      "\001(\003\022\017\n\007dept_id\030\003 \001(\003\022\017\n\007role_id\030\004 \001(\003\022$\n" +
+      "\005users\030\005 \003(\0132\025.glory_api.TenantUser\"\301\001\n\030" +
+      "CreateTenantUserResponse\022%\n\tbase_resp\030\001 " +
+      "\001(\0132\022.base.BaseResponse\022J\n\014tenant_users\030" +
+      "\002 \003(\01324.glory_api.CreateTenantUserRespon" +
+      "se.TenantUsersEntry\0322\n\020TenantUsersEntry\022" +
+      "\013\n\003key\030\001 \001(\003\022\r\n\005value\030\002 \001(\t:\0028\001\"[\n\027Delet" +
+      "eTenantUserRequest\022\'\n\014base_request\030\001 \001(\013" +
+      "2\021.base.BaseRequest\022\027\n\017tenant_user_ids\030\002" +
+      " \003(\003\"A\n\030DeleteTenantUserResponse\022%\n\tbase" +
+      "_resp\030\001 \001(\0132\022.base.BaseResponse\"a\n\027Updat" +
+      "eTenantUserRequest\022\'\n\014base_request\030\001 \001(\013" +
+      "2\021.base.BaseRequest\022\035\n\004user\030\002 \001(\0132\017.glor" +
+      "y_api.User\"A\n\030UpdateTenantUserResponse\022%" +
+      "\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"P\n" +
+      "\024GetTenantUserRequest\022\'\n\014base_request\030\001 " +
+      "\001(\0132\021.base.BaseRequest\022\017\n\007user_id\030\002 \001(\003\"" +
+      "]\n\025GetTenantUserResponse\022%\n\tbase_resp\030\001 " +
+      "\001(\0132\022.base.BaseResponse\022\035\n\004user\030\002 \001(\0132\017." +
+      "glory_api.User\"\237\001\n\025ListTenantUserRequest" +
+      "\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReques" +
+      "t\022\021\n\ttenant_id\030\002 \001(\003\022\017\n\007dept_id\030\003 \001(\003\022\014\n" +
+      "\004name\030\004 \001(\t\022+\n\npagination\030d \001(\0132\027.base.P" +
+      "aginationRequest\"\223\001\n\026ListTenantUserRespo" +
+      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
+      "se\022$\n\005users\030\002 \003(\0132\025.glory_api.TenantUser" +
+      "\022,\n\npagination\030d \001(\0132\030.base.PaginationRe" +
+      "sponse\"k\n\037UpdateTenantUserPasswordReques" +
+      "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
+      "st\022\r\n\005phone\030\002 \001(\t\022\020\n\010password\030\003 \001(\t\"I\n U" +
+      "pdateTenantUserPasswordResponse\022%\n\tbase_" +
+      "resp\030\001 \001(\0132\022.base.BaseResponseB%\n!com.zh" +
+      "ijiejiaoyu.glory_api.tenantP\001b\006proto3"
+    };
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.zhijiejiaoyu.base.Base.getDescriptor(),
+          com.zhijiejiaoyu.glory_api.user.UserOuterClass.getDescriptor(),
+        });
+    internal_static_glory_api_TenantDeptType_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_glory_api_TenantDeptType_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_TenantDeptType_descriptor,
+        new java.lang.String[] { "Label", "Value", });
+    internal_static_glory_api_GetTenantDeptTypeRequest_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_glory_api_GetTenantDeptTypeRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetTenantDeptTypeRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "Value", });
+    internal_static_glory_api_GetTenantDeptTypeResponse_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_glory_api_GetTenantDeptTypeResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetTenantDeptTypeResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "TenantDeptType", });
+    internal_static_glory_api_CreateTenantDeptRequest_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_glory_api_CreateTenantDeptRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_CreateTenantDeptRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "TenantDept", });
+    internal_static_glory_api_CreateTenantDeptResponse_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_glory_api_CreateTenantDeptResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_CreateTenantDeptResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
+    internal_static_glory_api_DeleteTenantDeptRequest_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_glory_api_DeleteTenantDeptRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_DeleteTenantDeptRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "DeptId", "TenantId", });
+    internal_static_glory_api_DeleteTenantDeptResponse_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_glory_api_DeleteTenantDeptResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_DeleteTenantDeptResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
+    internal_static_glory_api_UpdateTenantDeptRequest_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_glory_api_UpdateTenantDeptRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_UpdateTenantDeptRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "TenantDept", });
+    internal_static_glory_api_UpdateTenantDeptResponse_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_glory_api_UpdateTenantDeptResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_UpdateTenantDeptResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
+    internal_static_glory_api_GetTenantDeptRequest_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_glory_api_GetTenantDeptRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetTenantDeptRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "TenantId", "DeptId", });
+    internal_static_glory_api_GetTenantDeptResponse_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_glory_api_GetTenantDeptResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetTenantDeptResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "TenantDept", });
+    internal_static_glory_api_TenantUser_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_glory_api_TenantUser_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_TenantUser_descriptor,
+        new java.lang.String[] { "TenantUserId", "UserId", "Phone", "Name", "Role", "RoleId", "Dept", "DeptId", "User", });
+    internal_static_glory_api_CreateTenantUserRequest_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_glory_api_CreateTenantUserRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_CreateTenantUserRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "TenantId", "DeptId", "RoleId", "Users", });
+    internal_static_glory_api_CreateTenantUserResponse_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_glory_api_CreateTenantUserResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_CreateTenantUserResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "TenantUsers", });
+    internal_static_glory_api_CreateTenantUserResponse_TenantUsersEntry_descriptor =
+      internal_static_glory_api_CreateTenantUserResponse_descriptor.getNestedTypes().get(0);
+    internal_static_glory_api_CreateTenantUserResponse_TenantUsersEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_CreateTenantUserResponse_TenantUsersEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_glory_api_DeleteTenantUserRequest_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_glory_api_DeleteTenantUserRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_DeleteTenantUserRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "TenantUserIds", });
+    internal_static_glory_api_DeleteTenantUserResponse_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_glory_api_DeleteTenantUserResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_DeleteTenantUserResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
+    internal_static_glory_api_UpdateTenantUserRequest_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_glory_api_UpdateTenantUserRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_UpdateTenantUserRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "User", });
+    internal_static_glory_api_UpdateTenantUserResponse_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_glory_api_UpdateTenantUserResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_UpdateTenantUserResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
+    internal_static_glory_api_GetTenantUserRequest_descriptor =
+      getDescriptor().getMessageTypes().get(18);
+    internal_static_glory_api_GetTenantUserRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetTenantUserRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "UserId", });
+    internal_static_glory_api_GetTenantUserResponse_descriptor =
+      getDescriptor().getMessageTypes().get(19);
+    internal_static_glory_api_GetTenantUserResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetTenantUserResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "User", });
+    internal_static_glory_api_ListTenantUserRequest_descriptor =
+      getDescriptor().getMessageTypes().get(20);
+    internal_static_glory_api_ListTenantUserRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ListTenantUserRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "TenantId", "DeptId", "Name", "Pagination", });
+    internal_static_glory_api_ListTenantUserResponse_descriptor =
+      getDescriptor().getMessageTypes().get(21);
+    internal_static_glory_api_ListTenantUserResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ListTenantUserResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "Users", "Pagination", });
+    internal_static_glory_api_UpdateTenantUserPasswordRequest_descriptor =
+      getDescriptor().getMessageTypes().get(22);
+    internal_static_glory_api_UpdateTenantUserPasswordRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_UpdateTenantUserPasswordRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "Phone", "Password", });
+    internal_static_glory_api_UpdateTenantUserPasswordResponse_descriptor =
+      getDescriptor().getMessageTypes().get(23);
+    internal_static_glory_api_UpdateTenantUserPasswordResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_UpdateTenantUserPasswordResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
+    com.zhijiejiaoyu.base.Base.getDescriptor();
+    com.zhijiejiaoyu.glory_api.user.UserOuterClass.getDescriptor();
   }
 
-  public static com.zhijiejiaoyu.glory_api.tenant.TenantDept getDefaultInstance() {
-    return DEFAULT_INSTANCE;
-  }
-
-  private static final com.google.protobuf.Parser<TenantDept>
-      PARSER = new com.google.protobuf.AbstractParser<TenantDept>() {
-    @java.lang.Override
-    public TenantDept parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new TenantDept(input, extensionRegistry);
-    }
-  };
-
-  public static com.google.protobuf.Parser<TenantDept> parser() {
-    return PARSER;
-  }
-
-  @java.lang.Override
-  public com.google.protobuf.Parser<TenantDept> getParserForType() {
-    return PARSER;
-  }
-
-  @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.tenant.TenantDept getDefaultInstanceForType() {
-    return DEFAULT_INSTANCE;
-  }
-
+  // @@protoc_insertion_point(outer_class_scope)
 }
-
