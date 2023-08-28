@@ -56,4 +56,14 @@ public interface ShortVideoUserOrBuilder extends
    */
   com.google.protobuf.ByteString
       getAvatarUrlBytes();
+
+  /**
+   * <pre>
+   * 是否已关注用户
+   * </pre>
+   *
+   * <code>bool is_follow = 4;</code>
+   * @return The isFollow.
+   */
+  boolean getIsFollow();
 }

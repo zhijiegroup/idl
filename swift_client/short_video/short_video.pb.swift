@@ -66,6 +66,9 @@ struct GloryApi_ShortVideoUser {
   /// 用户头像URL
   var avatarURL: String = String()
 
+  /// 是否已关注用户
+  var isFollow: Bool = false
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1408,6 +1411,7 @@ extension GloryApi_ShortVideoUser: SwiftProtobuf.Message, SwiftProtobuf._Message
     1: .standard(proto: "user_id"),
     2: .standard(proto: "user_name"),
     3: .standard(proto: "avatar_url"),
+    4: .standard(proto: "is_follow"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1419,6 +1423,7 @@ extension GloryApi_ShortVideoUser: SwiftProtobuf.Message, SwiftProtobuf._Message
       case 1: try { try decoder.decodeSingularInt64Field(value: &self.userID) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.userName) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.avatarURL) }()
+      case 4: try { try decoder.decodeSingularBoolField(value: &self.isFollow) }()
       default: break
       }
     }
@@ -1434,6 +1439,9 @@ extension GloryApi_ShortVideoUser: SwiftProtobuf.Message, SwiftProtobuf._Message
     if !self.avatarURL.isEmpty {
       try visitor.visitSingularStringField(value: self.avatarURL, fieldNumber: 3)
     }
+    if self.isFollow != false {
+      try visitor.visitSingularBoolField(value: self.isFollow, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1441,6 +1449,7 @@ extension GloryApi_ShortVideoUser: SwiftProtobuf.Message, SwiftProtobuf._Message
     if lhs.userID != rhs.userID {return false}
     if lhs.userName != rhs.userName {return false}
     if lhs.avatarURL != rhs.avatarURL {return false}
+    if lhs.isFollow != rhs.isFollow {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

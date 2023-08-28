@@ -232,140 +232,141 @@ public final class ShortVideoOuterClass {
       "pi\032\nbase.proto\"G\n\021ShortVideoProduct\022\022\n\np" +
       "roduct_id\030\001 \001(\003\022\036\n\026product_promotion_tex" +
       "t\030\002 \001(\t\"4\n\016ShortVideoShop\022\017\n\007shop_id\030\001 \001" +
-      "(\003\022\021\n\tshop_name\030\002 \001(\t\"H\n\016ShortVideoUser\022" +
+      "(\003\022\021\n\tshop_name\030\002 \001(\t\"[\n\016ShortVideoUser\022" +
       "\017\n\007user_id\030\001 \001(\003\022\021\n\tuser_name\030\002 \001(\t\022\022\n\na" +
-      "vatar_url\030\003 \001(\t\"\334\003\n\nShortVideo\022\026\n\016short_" +
-      "video_id\030\001 \001(\003\022\021\n\tvideo_url\030\002 \001(\t\022\021\n\tcov" +
-      "er_url\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\022\n\nvis" +
-      "ibility\030\005 \001(\005\022\024\n\014video_length\030\006 \001(\005\022\026\n\016v" +
-      "ideo_duration\030\007 \001(\005\022\025\n\rcensor_status\030\010 \001" +
-      "(\005\022\036\n\026censor_rejected_reason\030\t \001(\t\022.\n\010pr" +
-      "oducts\030\n \003(\0132\034.glory_api.ShortVideoProdu" +
-      "ct\022\'\n\004shop\030\013 \001(\0132\031.glory_api.ShortVideoS" +
-      "hop\022,\n\tuser_info\030\014 \001(\0132\031.glory_api.Short" +
-      "VideoUser\022\017\n\007is_like\030\r \001(\010\022\022\n\nlike_count" +
-      "\030\016 \001(\003\022\023\n\013is_favorite\030\017 \001(\010\022\026\n\016favorite_" +
-      "count\030\020 \001(\003\022\025\n\rcomment_count\030\021 \001(\003\022\022\n\ncr" +
-      "eated_at\030\022 \001(\t\"\266\002\n\nStageVideo\022\026\n\016stage_v" +
-      "ideo_id\030\001 \001(\003\022\021\n\tvideo_url\030\002 \001(\t\022\022\n\nvide" +
-      "o_path\030\003 \001(\t\022\021\n\tcover_url\030\004 \001(\t\022\022\n\ncover" +
-      "_path\030\005 \001(\t\022\023\n\013description\030\006 \001(\t\022\022\n\nvisi" +
-      "bility\030\007 \001(\005\022\024\n\014video_length\030\010 \001(\005\022\026\n\016vi" +
-      "deo_duration\030\t \001(\005\022.\n\010products\030\n \003(\0132\034.g" +
-      "lory_api.ShortVideoProduct\022\'\n\004shop\030\013 \001(\013" +
-      "2\031.glory_api.ShortVideoShop\022\022\n\ncreated_a" +
-      "t\030\014 \001(\t\"\354\001\n\027CreateShortVideoRequest\022\'\n\014b" +
-      "ase_request\030\001 \001(\0132\021.base.BaseRequest\022\022\n\n" +
-      "video_path\030\002 \001(\t\022\022\n\ncover_path\030\003 \001(\t\022\023\n\013" +
-      "description\030\004 \001(\t\022\022\n\nvisibility\030\005 \001(\005\022.\n" +
-      "\010products\030\006 \003(\0132\034.glory_api.ShortVideoPr" +
-      "oduct\022\017\n\007shop_id\030\007 \001(\003\022\026\n\016stage_video_id" +
-      "\030\010 \001(\003\"Y\n\030CreateShortVideoResponse\022%\n\tba" +
-      "se_resp\030\001 \001(\0132\022.base.BaseResponse\022\026\n\016sho" +
-      "rt_video_id\030\002 \001(\003\"\323\001\n\026StageShortVideoReq" +
-      "uest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRe" +
-      "quest\022\022\n\nvideo_path\030\002 \001(\t\022\022\n\ncover_path\030" +
-      "\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\022\n\nvisibility" +
-      "\030\005 \001(\005\022.\n\010products\030\006 \003(\0132\034.glory_api.Sho" +
-      "rtVideoProduct\022\017\n\007shop_id\030\007 \001(\003\"X\n\027Stage" +
-      "ShortVideoResponse\022%\n\tbase_resp\030\001 \001(\0132\022." +
-      "base.BaseResponse\022\026\n\016stage_video_id\030\002 \001(" +
-      "\003\"}\n\027ListMyShortVideoRequest\022\'\n\014base_req" +
-      "uest\030\001 \001(\0132\021.base.BaseRequest\022\014\n\004type\030\002 " +
-      "\001(\005\022+\n\npagination\030d \001(\0132\027.base.Paginatio" +
-      "nRequest\"\240\001\n\030ListMyShortVideoResponse\022%\n" +
-      "\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022/\n\020" +
-      "short_video_list\030\002 \003(\0132\025.glory_api.Short" +
-      "Video\022,\n\npagination\030d \001(\0132\030.base.Paginat" +
-      "ionResponse\"o\n\027ListMyStageVideoRequest\022\'" +
-      "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\022" +
-      "+\n\npagination\030d \001(\0132\027.base.PaginationReq" +
-      "uest\"r\n\030ListMyStageVideoResponse\022%\n\tbase" +
-      "_resp\030\001 \001(\0132\022.base.BaseResponse\022/\n\020stage" +
-      "_video_list\030\002 \003(\0132\025.glory_api.StageVideo" +
-      "\"n\n\026ListMyLikeVideoRequest\022\'\n\014base_reque" +
-      "st\030\001 \001(\0132\021.base.BaseRequest\022+\n\npaginatio" +
-      "n\030d \001(\0132\027.base.PaginationRequest\"\237\001\n\027Lis" +
-      "tMyLikeVideoResponse\022%\n\tbase_resp\030\001 \001(\0132" +
-      "\022.base.BaseResponse\022/\n\020short_video_list\030" +
-      "\002 \003(\0132\025.glory_api.ShortVideo\022,\n\npaginati" +
-      "on\030d \001(\0132\030.base.PaginationResponse\"r\n\032Li" +
-      "stMyFavoriteVideoRequest\022\'\n\014base_request" +
-      "\030\001 \001(\0132\021.base.BaseRequest\022+\n\npagination\030" +
-      "d \001(\0132\027.base.PaginationRequest\"\243\001\n\033ListM" +
-      "yFavoriteVideoResponse\022%\n\tbase_resp\030\001 \001(" +
-      "\0132\022.base.BaseResponse\022/\n\020short_video_lis" +
-      "t\030\002 \003(\0132\025.glory_api.ShortVideo\022,\n\npagina" +
-      "tion\030d \001(\0132\030.base.PaginationResponse\"W\n\024" +
-      "GetShortVideoRequest\022\'\n\014base_request\030\001 \001" +
-      "(\0132\021.base.BaseRequest\022\026\n\016short_video_id\030" +
-      "\002 \001(\003\"j\n\025GetShortVideoResponse\022%\n\tbase_r" +
-      "esp\030\001 \001(\0132\022.base.BaseResponse\022*\n\013short_v" +
-      "ideo\030\002 \001(\0132\025.glory_api.ShortVideo\"\330\001\n\027Up" +
-      "dateShortVideoRequest\022\'\n\014base_request\030\001 " +
-      "\001(\0132\021.base.BaseRequest\022\026\n\016short_video_id" +
-      "\030\002 \001(\003\022\022\n\ncover_path\030\003 \001(\t\022\023\n\013descriptio" +
-      "n\030\004 \001(\t\022\022\n\nvisibility\030\005 \001(\005\022.\n\010products\030" +
-      "\006 \003(\0132\034.glory_api.ShortVideoProduct\022\017\n\007s" +
-      "hop_id\030\007 \001(\003\"Y\n\030UpdateShortVideoResponse" +
-      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022" +
-      "\026\n\016short_video_id\030\002 \001(\003\"Z\n\027DeleteShortVi" +
-      "deoRequest\022\'\n\014base_request\030\001 \001(\0132\021.base." +
-      "BaseRequest\022\026\n\016short_video_id\030\002 \001(\003\"A\n\030D" +
-      "eleteShortVideoResponse\022%\n\tbase_resp\030\001 \001" +
-      "(\0132\022.base.BaseResponse\"W\n\024GetStageVideoR" +
-      "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
-      "Request\022\026\n\016stage_video_id\030\002 \001(\003\"j\n\025GetSt" +
-      "ageVideoResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
-      "se.BaseResponse\022*\n\013stage_video\030\002 \001(\0132\025.g" +
-      "lory_api.StageVideo\"Z\n\027DeleteStageVideoR" +
-      "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
-      "Request\022\026\n\016stage_video_id\030\002 \001(\003\"A\n\030Delet" +
-      "eStageVideoResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
-      ".base.BaseResponse\"\354\001\n\027UpdateStageVideoR" +
-      "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
-      "Request\022\026\n\016stage_video_id\030\002 \001(\003\022\022\n\nvideo" +
-      "_path\030\003 \001(\t\022\022\n\ncover_path\030\004 \001(\t\022\023\n\013descr" +
-      "iption\030\005 \001(\t\022\022\n\nvisibility\030\006 \001(\005\022.\n\010prod" +
-      "ucts\030\007 \003(\0132\034.glory_api.ShortVideoProduct" +
-      "\022\017\n\007shop_id\030\010 \001(\003\"Y\n\030UpdateStageVideoRes" +
-      "ponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResp" +
-      "onse\022\026\n\016stage_video_id\030\002 \001(\003\"\205\001\n\037Managem" +
-      "entListShortVideoRequest\022\'\n\014base_request" +
-      "\030\001 \001(\0132\021.base.BaseRequest\022\014\n\004type\030\002 \001(\005\022" +
-      "+\n\npagination\030d \001(\0132\027.base.PaginationReq" +
-      "uest\"\250\001\n ManagementListShortVideoRespons" +
+      "vatar_url\030\003 \001(\t\022\021\n\tis_follow\030\004 \001(\010\"\334\003\n\nS" +
+      "hortVideo\022\026\n\016short_video_id\030\001 \001(\003\022\021\n\tvid" +
+      "eo_url\030\002 \001(\t\022\021\n\tcover_url\030\003 \001(\t\022\023\n\013descr" +
+      "iption\030\004 \001(\t\022\022\n\nvisibility\030\005 \001(\005\022\024\n\014vide" +
+      "o_length\030\006 \001(\005\022\026\n\016video_duration\030\007 \001(\005\022\025" +
+      "\n\rcensor_status\030\010 \001(\005\022\036\n\026censor_rejected" +
+      "_reason\030\t \001(\t\022.\n\010products\030\n \003(\0132\034.glory_" +
+      "api.ShortVideoProduct\022\'\n\004shop\030\013 \001(\0132\031.gl" +
+      "ory_api.ShortVideoShop\022,\n\tuser_info\030\014 \001(" +
+      "\0132\031.glory_api.ShortVideoUser\022\017\n\007is_like\030" +
+      "\r \001(\010\022\022\n\nlike_count\030\016 \001(\003\022\023\n\013is_favorite" +
+      "\030\017 \001(\010\022\026\n\016favorite_count\030\020 \001(\003\022\025\n\rcommen" +
+      "t_count\030\021 \001(\003\022\022\n\ncreated_at\030\022 \001(\t\"\266\002\n\nSt" +
+      "ageVideo\022\026\n\016stage_video_id\030\001 \001(\003\022\021\n\tvide" +
+      "o_url\030\002 \001(\t\022\022\n\nvideo_path\030\003 \001(\t\022\021\n\tcover" +
+      "_url\030\004 \001(\t\022\022\n\ncover_path\030\005 \001(\t\022\023\n\013descri" +
+      "ption\030\006 \001(\t\022\022\n\nvisibility\030\007 \001(\005\022\024\n\014video" +
+      "_length\030\010 \001(\005\022\026\n\016video_duration\030\t \001(\005\022.\n" +
+      "\010products\030\n \003(\0132\034.glory_api.ShortVideoPr" +
+      "oduct\022\'\n\004shop\030\013 \001(\0132\031.glory_api.ShortVid" +
+      "eoShop\022\022\n\ncreated_at\030\014 \001(\t\"\354\001\n\027CreateSho" +
+      "rtVideoRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
+      "ase.BaseRequest\022\022\n\nvideo_path\030\002 \001(\t\022\022\n\nc" +
+      "over_path\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\022\n\n" +
+      "visibility\030\005 \001(\005\022.\n\010products\030\006 \003(\0132\034.glo" +
+      "ry_api.ShortVideoProduct\022\017\n\007shop_id\030\007 \001(" +
+      "\003\022\026\n\016stage_video_id\030\010 \001(\003\"Y\n\030CreateShort" +
+      "VideoResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
+      "BaseResponse\022\026\n\016short_video_id\030\002 \001(\003\"\323\001\n" +
+      "\026StageShortVideoRequest\022\'\n\014base_request\030" +
+      "\001 \001(\0132\021.base.BaseRequest\022\022\n\nvideo_path\030\002" +
+      " \001(\t\022\022\n\ncover_path\030\003 \001(\t\022\023\n\013description\030" +
+      "\004 \001(\t\022\022\n\nvisibility\030\005 \001(\005\022.\n\010products\030\006 " +
+      "\003(\0132\034.glory_api.ShortVideoProduct\022\017\n\007sho" +
+      "p_id\030\007 \001(\003\"X\n\027StageShortVideoResponse\022%\n" +
+      "\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022\026\n\016" +
+      "stage_video_id\030\002 \001(\003\"}\n\027ListMyShortVideo" +
+      "Request\022\'\n\014base_request\030\001 \001(\0132\021.base.Bas" +
+      "eRequest\022\014\n\004type\030\002 \001(\005\022+\n\npagination\030d \001" +
+      "(\0132\027.base.PaginationRequest\"\240\001\n\030ListMySh" +
+      "ortVideoResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
+      "se.BaseResponse\022/\n\020short_video_list\030\002 \003(" +
+      "\0132\025.glory_api.ShortVideo\022,\n\npagination\030d" +
+      " \001(\0132\030.base.PaginationResponse\"o\n\027ListMy" +
+      "StageVideoRequest\022\'\n\014base_request\030\001 \001(\0132" +
+      "\021.base.BaseRequest\022+\n\npagination\030d \001(\0132\027" +
+      ".base.PaginationRequest\"r\n\030ListMyStageVi" +
+      "deoResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
+      "seResponse\022/\n\020stage_video_list\030\002 \003(\0132\025.g" +
+      "lory_api.StageVideo\"n\n\026ListMyLikeVideoRe" +
+      "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
+      "equest\022+\n\npagination\030d \001(\0132\027.base.Pagina" +
+      "tionRequest\"\237\001\n\027ListMyLikeVideoResponse\022" +
+      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022/" +
+      "\n\020short_video_list\030\002 \003(\0132\025.glory_api.Sho" +
+      "rtVideo\022,\n\npagination\030d \001(\0132\030.base.Pagin" +
+      "ationResponse\"r\n\032ListMyFavoriteVideoRequ" +
+      "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
+      "uest\022+\n\npagination\030d \001(\0132\027.base.Paginati" +
+      "onRequest\"\243\001\n\033ListMyFavoriteVideoRespons" +
       "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
       "\022/\n\020short_video_list\030\002 \003(\0132\025.glory_api.S" +
       "hortVideo\022,\n\npagination\030d \001(\0132\030.base.Pag" +
-      "inationResponse\"\233\001\n!ManagementCensorShor" +
-      "tVideoRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
-      "se.BaseRequest\022\026\n\016short_video_id\030\002 \001(\003\022\025" +
-      "\n\rcensor_status\030\003 \001(\005\022\036\n\026censor_rejected" +
-      "_reason\030\004 \001(\t\"K\n\"ManagementCensorShortVi" +
-      "deoResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
-      "seResponse\"d\n!ManagementDeleteShortVideo" +
-      "Request\022\'\n\014base_request\030\001 \001(\0132\021.base.Bas" +
-      "eRequest\022\026\n\016short_video_id\030\002 \001(\003\"K\n\"Mana" +
-      "gementDeleteShortVideoResponse\022%\n\tbase_r" +
-      "esp\030\001 \001(\0132\022.base.BaseResponse\"m\n\025ListSho" +
-      "rtVideoRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
-      "ase.BaseRequest\022+\n\npagination\030d \001(\0132\027.ba" +
-      "se.PaginationRequest\"\236\001\n\026ListShortVideoR" +
-      "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
-      "sponse\022/\n\020short_video_list\030\002 \003(\0132\025.glory" +
-      "_api.ShortVideo\022,\n\npagination\030d \001(\0132\030.ba" +
-      "se.PaginationResponse\"f\n\025LikeShortVideoR" +
-      "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
-      "Request\022\026\n\016short_video_id\030\002 \001(\003\022\014\n\004like\030" +
-      "\003 \001(\010\"?\n\026LikeShortVideoResponse\022%\n\tbase_" +
-      "resp\030\001 \001(\0132\022.base.BaseResponse\"n\n\031Favori" +
-      "teShortVideoRequest\022\'\n\014base_request\030\001 \001(" +
-      "\0132\021.base.BaseRequest\022\026\n\016short_video_id\030\002" +
-      " \001(\003\022\020\n\010favorite\030\003 \001(\010\"C\n\032FavoriteShortV" +
-      "ideoResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.B" +
-      "aseResponseB*\n&com.zhijiejiaoyu.glory_ap" +
-      "i.short_videoP\001b\006proto3"
+      "inationResponse\"W\n\024GetShortVideoRequest\022" +
+      "\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequest" +
+      "\022\026\n\016short_video_id\030\002 \001(\003\"j\n\025GetShortVide" +
+      "oResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Base" +
+      "Response\022*\n\013short_video\030\002 \001(\0132\025.glory_ap" +
+      "i.ShortVideo\"\330\001\n\027UpdateShortVideoRequest" +
+      "\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReques" +
+      "t\022\026\n\016short_video_id\030\002 \001(\003\022\022\n\ncover_path\030" +
+      "\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\022\n\nvisibility" +
+      "\030\005 \001(\005\022.\n\010products\030\006 \003(\0132\034.glory_api.Sho" +
+      "rtVideoProduct\022\017\n\007shop_id\030\007 \001(\003\"Y\n\030Updat" +
+      "eShortVideoResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
+      ".base.BaseResponse\022\026\n\016short_video_id\030\002 \001" +
+      "(\003\"Z\n\027DeleteShortVideoRequest\022\'\n\014base_re" +
+      "quest\030\001 \001(\0132\021.base.BaseRequest\022\026\n\016short_" +
+      "video_id\030\002 \001(\003\"A\n\030DeleteShortVideoRespon" +
+      "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
+      "e\"W\n\024GetStageVideoRequest\022\'\n\014base_reques" +
+      "t\030\001 \001(\0132\021.base.BaseRequest\022\026\n\016stage_vide" +
+      "o_id\030\002 \001(\003\"j\n\025GetStageVideoResponse\022%\n\tb" +
+      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\022*\n\013st" +
+      "age_video\030\002 \001(\0132\025.glory_api.StageVideo\"Z" +
+      "\n\027DeleteStageVideoRequest\022\'\n\014base_reques" +
+      "t\030\001 \001(\0132\021.base.BaseRequest\022\026\n\016stage_vide" +
+      "o_id\030\002 \001(\003\"A\n\030DeleteStageVideoResponse\022%" +
+      "\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"\354\001" +
+      "\n\027UpdateStageVideoRequest\022\'\n\014base_reques" +
+      "t\030\001 \001(\0132\021.base.BaseRequest\022\026\n\016stage_vide" +
+      "o_id\030\002 \001(\003\022\022\n\nvideo_path\030\003 \001(\t\022\022\n\ncover_" +
+      "path\030\004 \001(\t\022\023\n\013description\030\005 \001(\t\022\022\n\nvisib" +
+      "ility\030\006 \001(\005\022.\n\010products\030\007 \003(\0132\034.glory_ap" +
+      "i.ShortVideoProduct\022\017\n\007shop_id\030\010 \001(\003\"Y\n\030" +
+      "UpdateStageVideoResponse\022%\n\tbase_resp\030\001 " +
+      "\001(\0132\022.base.BaseResponse\022\026\n\016stage_video_i" +
+      "d\030\002 \001(\003\"\205\001\n\037ManagementListShortVideoRequ" +
+      "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
+      "uest\022\014\n\004type\030\002 \001(\005\022+\n\npagination\030d \001(\0132\027" +
+      ".base.PaginationRequest\"\250\001\n ManagementLi" +
+      "stShortVideoResponse\022%\n\tbase_resp\030\001 \001(\0132" +
+      "\022.base.BaseResponse\022/\n\020short_video_list\030" +
+      "\002 \003(\0132\025.glory_api.ShortVideo\022,\n\npaginati" +
+      "on\030d \001(\0132\030.base.PaginationResponse\"\233\001\n!M" +
+      "anagementCensorShortVideoRequest\022\'\n\014base" +
+      "_request\030\001 \001(\0132\021.base.BaseRequest\022\026\n\016sho" +
+      "rt_video_id\030\002 \001(\003\022\025\n\rcensor_status\030\003 \001(\005" +
+      "\022\036\n\026censor_rejected_reason\030\004 \001(\t\"K\n\"Mana" +
+      "gementCensorShortVideoResponse\022%\n\tbase_r" +
+      "esp\030\001 \001(\0132\022.base.BaseResponse\"d\n!Managem" +
+      "entDeleteShortVideoRequest\022\'\n\014base_reque" +
+      "st\030\001 \001(\0132\021.base.BaseRequest\022\026\n\016short_vid" +
+      "eo_id\030\002 \001(\003\"K\n\"ManagementDeleteShortVide" +
+      "oResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Base" +
+      "Response\"m\n\025ListShortVideoRequest\022\'\n\014bas" +
+      "e_request\030\001 \001(\0132\021.base.BaseRequest\022+\n\npa" +
+      "gination\030d \001(\0132\027.base.PaginationRequest\"" +
+      "\236\001\n\026ListShortVideoResponse\022%\n\tbase_resp\030" +
+      "\001 \001(\0132\022.base.BaseResponse\022/\n\020short_video" +
+      "_list\030\002 \003(\0132\025.glory_api.ShortVideo\022,\n\npa" +
+      "gination\030d \001(\0132\030.base.PaginationResponse" +
+      "\"f\n\025LikeShortVideoRequest\022\'\n\014base_reques" +
+      "t\030\001 \001(\0132\021.base.BaseRequest\022\026\n\016short_vide" +
+      "o_id\030\002 \001(\003\022\014\n\004like\030\003 \001(\010\"?\n\026LikeShortVid" +
+      "eoResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
+      "eResponse\"n\n\031FavoriteShortVideoRequest\022\'" +
+      "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\022" +
+      "\026\n\016short_video_id\030\002 \001(\003\022\020\n\010favorite\030\003 \001(" +
+      "\010\"C\n\032FavoriteShortVideoResponse\022%\n\tbase_" +
+      "resp\030\001 \001(\0132\022.base.BaseResponseB*\n&com.zh" +
+      "ijiejiaoyu.glory_api.short_videoP\001b\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -389,7 +390,7 @@ public final class ShortVideoOuterClass {
     internal_static_glory_api_ShortVideoUser_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ShortVideoUser_descriptor,
-        new java.lang.String[] { "UserId", "UserName", "AvatarUrl", });
+        new java.lang.String[] { "UserId", "UserName", "AvatarUrl", "IsFollow", });
     internal_static_glory_api_ShortVideo_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_glory_api_ShortVideo_fieldAccessorTable = new
