@@ -135,3 +135,13 @@ message ListTenantUserResponse {
     repeated TenantUser users = 2;
     base.PaginationResponse pagination = 100;
 }
+
+message UpdateTenantUserPasswordRequest {
+    base.BaseRequest base_request = 1;
+    string phone = 2;
+    string password = 3;
+}
+
+message UpdateTenantUserPasswordResponse {
+    base.BaseResponse base_resp = 1;
+}
