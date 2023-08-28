@@ -19,6 +19,7 @@ message ShortVideoUser {
   int64 user_id = 1; // 用户ID
   string user_name = 2; // 用户名称
   string avatar_url = 3; // 用户头像URL
+  bool is_follow = 4; // 是否已关注用户
 }
 
 message ShortVideo {
