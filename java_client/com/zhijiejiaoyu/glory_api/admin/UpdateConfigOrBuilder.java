@@ -38,12 +38,24 @@ public interface UpdateConfigOrBuilder extends
       getConfigValueBytes();
 
   /**
-   * <code>string description = 5;</code>
+   * <code>string default_value = 5;</code>
+   * @return The defaultValue.
+   */
+  java.lang.String getDefaultValue();
+  /**
+   * <code>string default_value = 5;</code>
+   * @return The bytes for defaultValue.
+   */
+  com.google.protobuf.ByteString
+      getDefaultValueBytes();
+
+  /**
+   * <code>string description = 6;</code>
    * @return The description.
    */
   java.lang.String getDescription();
   /**
-   * <code>string description = 5;</code>
+   * <code>string description = 6;</code>
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString

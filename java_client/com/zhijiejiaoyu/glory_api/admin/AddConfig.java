@@ -18,6 +18,7 @@ private static final long serialVersionUID = 0L;
   private AddConfig() {
     configName = "";
     configValue = "";
+    defaultValue = "";
     configType = "";
     description = "";
     businessSystem = "";
@@ -68,16 +69,22 @@ private static final long serialVersionUID = 0L;
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            configType = s;
+            defaultValue = s;
             break;
           }
           case 42: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            description = s;
+            configType = s;
             break;
           }
           case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            description = s;
+            break;
+          }
+          case 58: {
             java.lang.String s = input.readStringRequireUtf8();
 
             businessSystem = s;
@@ -207,14 +214,60 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int CONFIG_TYPE_FIELD_NUMBER = 4;
+  public static final int DEFAULT_VALUE_FIELD_NUMBER = 4;
+  private volatile java.lang.Object defaultValue;
+  /**
+   * <pre>
+   * 默认值
+   * </pre>
+   *
+   * <code>string default_value = 4;</code>
+   * @return The defaultValue.
+   */
+  @java.lang.Override
+  public java.lang.String getDefaultValue() {
+    java.lang.Object ref = defaultValue;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      defaultValue = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 默认值
+   * </pre>
+   *
+   * <code>string default_value = 4;</code>
+   * @return The bytes for defaultValue.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getDefaultValueBytes() {
+    java.lang.Object ref = defaultValue;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      defaultValue = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CONFIG_TYPE_FIELD_NUMBER = 5;
   private volatile java.lang.Object configType;
   /**
    * <pre>
    * 配置的类型，支持page_permission, system_permission, public_config, system_owner_location
    * </pre>
    *
-   * <code>string config_type = 4;</code>
+   * <code>string config_type = 5;</code>
    * @return The configType.
    */
   @java.lang.Override
@@ -235,7 +288,7 @@ private static final long serialVersionUID = 0L;
    * 配置的类型，支持page_permission, system_permission, public_config, system_owner_location
    * </pre>
    *
-   * <code>string config_type = 4;</code>
+   * <code>string config_type = 5;</code>
    * @return The bytes for configType.
    */
   @java.lang.Override
@@ -253,14 +306,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 5;
+  public static final int DESCRIPTION_FIELD_NUMBER = 6;
   private volatile java.lang.Object description;
   /**
    * <pre>
    * 描述
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 6;</code>
    * @return The description.
    */
   @java.lang.Override
@@ -281,7 +334,7 @@ private static final long serialVersionUID = 0L;
    * 描述
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 6;</code>
    * @return The bytes for description.
    */
   @java.lang.Override
@@ -299,14 +352,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int BUSINESS_SYSTEM_FIELD_NUMBER = 6;
+  public static final int BUSINESS_SYSTEM_FIELD_NUMBER = 7;
   private volatile java.lang.Object businessSystem;
   /**
    * <pre>
    * 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, score, auth
    * </pre>
    *
-   * <code>string business_system = 6;</code>
+   * <code>string business_system = 7;</code>
    * @return The businessSystem.
    */
   @java.lang.Override
@@ -327,7 +380,7 @@ private static final long serialVersionUID = 0L;
    * 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, score, auth
    * </pre>
    *
-   * <code>string business_system = 6;</code>
+   * <code>string business_system = 7;</code>
    * @return The bytes for businessSystem.
    */
   @java.lang.Override
@@ -365,14 +418,17 @@ private static final long serialVersionUID = 0L;
     if (!getConfigValueBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, configValue);
     }
+    if (!getDefaultValueBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, defaultValue);
+    }
     if (!getConfigTypeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, configType);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, configType);
     }
     if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, description);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, description);
     }
     if (!getBusinessSystemBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, businessSystem);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, businessSystem);
     }
     unknownFields.writeTo(output);
   }
@@ -389,14 +445,17 @@ private static final long serialVersionUID = 0L;
     if (!getConfigValueBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, configValue);
     }
+    if (!getDefaultValueBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, defaultValue);
+    }
     if (!getConfigTypeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, configType);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, configType);
     }
     if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, description);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, description);
     }
     if (!getBusinessSystemBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, businessSystem);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, businessSystem);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -417,6 +476,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getConfigName())) return false;
     if (!getConfigValue()
         .equals(other.getConfigValue())) return false;
+    if (!getDefaultValue()
+        .equals(other.getDefaultValue())) return false;
     if (!getConfigType()
         .equals(other.getConfigType())) return false;
     if (!getDescription()
@@ -438,6 +499,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getConfigName().hashCode();
     hash = (37 * hash) + CONFIG_VALUE_FIELD_NUMBER;
     hash = (53 * hash) + getConfigValue().hashCode();
+    hash = (37 * hash) + DEFAULT_VALUE_FIELD_NUMBER;
+    hash = (53 * hash) + getDefaultValue().hashCode();
     hash = (37 * hash) + CONFIG_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getConfigType().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
@@ -581,6 +644,8 @@ private static final long serialVersionUID = 0L;
 
       configValue = "";
 
+      defaultValue = "";
+
       configType = "";
 
       description = "";
@@ -615,6 +680,7 @@ private static final long serialVersionUID = 0L;
       com.zhijiejiaoyu.glory_api.admin.AddConfig result = new com.zhijiejiaoyu.glory_api.admin.AddConfig(this);
       result.configName = configName;
       result.configValue = configValue;
+      result.defaultValue = defaultValue;
       result.configType = configType;
       result.description = description;
       result.businessSystem = businessSystem;
@@ -672,6 +738,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getConfigValue().isEmpty()) {
         configValue = other.configValue;
+        onChanged();
+      }
+      if (!other.getDefaultValue().isEmpty()) {
+        defaultValue = other.defaultValue;
         onChanged();
       }
       if (!other.getConfigType().isEmpty()) {
@@ -907,13 +977,109 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object defaultValue = "";
+    /**
+     * <pre>
+     * 默认值
+     * </pre>
+     *
+     * <code>string default_value = 4;</code>
+     * @return The defaultValue.
+     */
+    public java.lang.String getDefaultValue() {
+      java.lang.Object ref = defaultValue;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        defaultValue = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 默认值
+     * </pre>
+     *
+     * <code>string default_value = 4;</code>
+     * @return The bytes for defaultValue.
+     */
+    public com.google.protobuf.ByteString
+        getDefaultValueBytes() {
+      java.lang.Object ref = defaultValue;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        defaultValue = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 默认值
+     * </pre>
+     *
+     * <code>string default_value = 4;</code>
+     * @param value The defaultValue to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDefaultValue(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      defaultValue = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 默认值
+     * </pre>
+     *
+     * <code>string default_value = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDefaultValue() {
+      
+      defaultValue = getDefaultInstance().getDefaultValue();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 默认值
+     * </pre>
+     *
+     * <code>string default_value = 4;</code>
+     * @param value The bytes for defaultValue to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDefaultValueBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      defaultValue = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object configType = "";
     /**
      * <pre>
      * 配置的类型，支持page_permission, system_permission, public_config, system_owner_location
      * </pre>
      *
-     * <code>string config_type = 4;</code>
+     * <code>string config_type = 5;</code>
      * @return The configType.
      */
     public java.lang.String getConfigType() {
@@ -933,7 +1099,7 @@ private static final long serialVersionUID = 0L;
      * 配置的类型，支持page_permission, system_permission, public_config, system_owner_location
      * </pre>
      *
-     * <code>string config_type = 4;</code>
+     * <code>string config_type = 5;</code>
      * @return The bytes for configType.
      */
     public com.google.protobuf.ByteString
@@ -954,7 +1120,7 @@ private static final long serialVersionUID = 0L;
      * 配置的类型，支持page_permission, system_permission, public_config, system_owner_location
      * </pre>
      *
-     * <code>string config_type = 4;</code>
+     * <code>string config_type = 5;</code>
      * @param value The configType to set.
      * @return This builder for chaining.
      */
@@ -973,7 +1139,7 @@ private static final long serialVersionUID = 0L;
      * 配置的类型，支持page_permission, system_permission, public_config, system_owner_location
      * </pre>
      *
-     * <code>string config_type = 4;</code>
+     * <code>string config_type = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearConfigType() {
@@ -987,7 +1153,7 @@ private static final long serialVersionUID = 0L;
      * 配置的类型，支持page_permission, system_permission, public_config, system_owner_location
      * </pre>
      *
-     * <code>string config_type = 4;</code>
+     * <code>string config_type = 5;</code>
      * @param value The bytes for configType to set.
      * @return This builder for chaining.
      */
@@ -1009,7 +1175,7 @@ private static final long serialVersionUID = 0L;
      * 描述
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 6;</code>
      * @return The description.
      */
     public java.lang.String getDescription() {
@@ -1029,7 +1195,7 @@ private static final long serialVersionUID = 0L;
      * 描述
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 6;</code>
      * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
@@ -1050,7 +1216,7 @@ private static final long serialVersionUID = 0L;
      * 描述
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 6;</code>
      * @param value The description to set.
      * @return This builder for chaining.
      */
@@ -1069,7 +1235,7 @@ private static final long serialVersionUID = 0L;
      * 描述
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
@@ -1083,7 +1249,7 @@ private static final long serialVersionUID = 0L;
      * 描述
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 6;</code>
      * @param value The bytes for description to set.
      * @return This builder for chaining.
      */
@@ -1105,7 +1271,7 @@ private static final long serialVersionUID = 0L;
      * 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, score, auth
      * </pre>
      *
-     * <code>string business_system = 6;</code>
+     * <code>string business_system = 7;</code>
      * @return The businessSystem.
      */
     public java.lang.String getBusinessSystem() {
@@ -1125,7 +1291,7 @@ private static final long serialVersionUID = 0L;
      * 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, score, auth
      * </pre>
      *
-     * <code>string business_system = 6;</code>
+     * <code>string business_system = 7;</code>
      * @return The bytes for businessSystem.
      */
     public com.google.protobuf.ByteString
@@ -1146,7 +1312,7 @@ private static final long serialVersionUID = 0L;
      * 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, score, auth
      * </pre>
      *
-     * <code>string business_system = 6;</code>
+     * <code>string business_system = 7;</code>
      * @param value The businessSystem to set.
      * @return This builder for chaining.
      */
@@ -1165,7 +1331,7 @@ private static final long serialVersionUID = 0L;
      * 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, score, auth
      * </pre>
      *
-     * <code>string business_system = 6;</code>
+     * <code>string business_system = 7;</code>
      * @return This builder for chaining.
      */
     public Builder clearBusinessSystem() {
@@ -1179,7 +1345,7 @@ private static final long serialVersionUID = 0L;
      * 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, score, auth
      * </pre>
      *
-     * <code>string business_system = 6;</code>
+     * <code>string business_system = 7;</code>
      * @param value The bytes for businessSystem to set.
      * @return This builder for chaining.
      */

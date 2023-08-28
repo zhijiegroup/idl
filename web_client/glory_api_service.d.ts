@@ -32,6 +32,7 @@ import * as account_operation from "./account/account_operation";
 import * as virtual_currency from "./currency/virtual_currency";
 import * as tenant from "./tenant/tenant";
 import * as tenant_dept from "./tenant/tenant_dept";
+import * as tenant_config from "./tenant/tenant_config";
 import * as short_video from "./short_video/short_video";
 export {
   user,
@@ -64,6 +65,7 @@ export {
   virtual_currency,
   tenant,
   tenant_dept,
+  tenant_config,
   short_video,
 };
 
@@ -793,6 +795,15 @@ CreateLivePlanProduct create live plan product */
   UpdateTenantUserPassword(
     request: tenant_dept.UpdateTenantUserPasswordRequest
   ): Promise<tenant_dept.UpdateTenantUserPasswordResponse>;
+
+  /** tenant_config */
+  UpdateTenantConfig(
+    request: tenant_config.UpdateTenantConfigRequest
+  ): Promise<tenant_config.UpdateTenantConfigResponse>;
+
+  ListTenantConfig(
+    request: tenant_config.ListTenantConfigRequest
+  ): Promise<tenant_config.ListTenantConfigResponse>;
 
   /** short_video */
   CreateShortVideo(

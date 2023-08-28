@@ -61,6 +61,9 @@ struct GloryApi_AddConfig {
   /// 配置的值
   var configValue: String = String()
 
+  /// 默认值
+  var defaultValue: String = String()
+
   /// 配置的类型，支持page_permission, system_permission, public_config, system_owner_location
   var configType: String = String()
 
@@ -137,6 +140,8 @@ struct GloryApi_UpdateConfig {
   var configType: String = String()
 
   var configValue: String = String()
+
+  var defaultValue: String = String()
 
   var description_p: String = String()
 
@@ -476,9 +481,10 @@ extension GloryApi_AddConfig: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .standard(proto: "config_name"),
     3: .standard(proto: "config_value"),
-    4: .standard(proto: "config_type"),
-    5: .same(proto: "description"),
-    6: .standard(proto: "business_system"),
+    4: .standard(proto: "default_value"),
+    5: .standard(proto: "config_type"),
+    6: .same(proto: "description"),
+    7: .standard(proto: "business_system"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -489,9 +495,10 @@ extension GloryApi_AddConfig: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
       switch fieldNumber {
       case 2: try { try decoder.decodeSingularStringField(value: &self.configName) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.configValue) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.configType) }()
-      case 5: try { try decoder.decodeSingularStringField(value: &self.description_p) }()
-      case 6: try { try decoder.decodeSingularStringField(value: &self.businessSystem) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.defaultValue) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.configType) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.description_p) }()
+      case 7: try { try decoder.decodeSingularStringField(value: &self.businessSystem) }()
       default: break
       }
     }
@@ -504,14 +511,17 @@ extension GloryApi_AddConfig: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     if !self.configValue.isEmpty {
       try visitor.visitSingularStringField(value: self.configValue, fieldNumber: 3)
     }
+    if !self.defaultValue.isEmpty {
+      try visitor.visitSingularStringField(value: self.defaultValue, fieldNumber: 4)
+    }
     if !self.configType.isEmpty {
-      try visitor.visitSingularStringField(value: self.configType, fieldNumber: 4)
+      try visitor.visitSingularStringField(value: self.configType, fieldNumber: 5)
     }
     if !self.description_p.isEmpty {
-      try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 5)
+      try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 6)
     }
     if !self.businessSystem.isEmpty {
-      try visitor.visitSingularStringField(value: self.businessSystem, fieldNumber: 6)
+      try visitor.visitSingularStringField(value: self.businessSystem, fieldNumber: 7)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -519,6 +529,7 @@ extension GloryApi_AddConfig: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
   static func ==(lhs: GloryApi_AddConfig, rhs: GloryApi_AddConfig) -> Bool {
     if lhs.configName != rhs.configName {return false}
     if lhs.configValue != rhs.configValue {return false}
+    if lhs.defaultValue != rhs.defaultValue {return false}
     if lhs.configType != rhs.configType {return false}
     if lhs.description_p != rhs.description_p {return false}
     if lhs.businessSystem != rhs.businessSystem {return false}
@@ -611,7 +622,8 @@ extension GloryApi_UpdateConfig: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     2: .standard(proto: "config_id"),
     3: .standard(proto: "config_type"),
     4: .standard(proto: "config_value"),
-    5: .same(proto: "description"),
+    5: .standard(proto: "default_value"),
+    6: .same(proto: "description"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -623,7 +635,8 @@ extension GloryApi_UpdateConfig: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.configID) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.configType) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.configValue) }()
-      case 5: try { try decoder.decodeSingularStringField(value: &self.description_p) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.defaultValue) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.description_p) }()
       default: break
       }
     }
@@ -639,8 +652,11 @@ extension GloryApi_UpdateConfig: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     if !self.configValue.isEmpty {
       try visitor.visitSingularStringField(value: self.configValue, fieldNumber: 4)
     }
+    if !self.defaultValue.isEmpty {
+      try visitor.visitSingularStringField(value: self.defaultValue, fieldNumber: 5)
+    }
     if !self.description_p.isEmpty {
-      try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 5)
+      try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 6)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -649,6 +665,7 @@ extension GloryApi_UpdateConfig: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     if lhs.configID != rhs.configID {return false}
     if lhs.configType != rhs.configType {return false}
     if lhs.configValue != rhs.configValue {return false}
+    if lhs.defaultValue != rhs.defaultValue {return false}
     if lhs.description_p != rhs.description_p {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

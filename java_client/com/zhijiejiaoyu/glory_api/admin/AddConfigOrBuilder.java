@@ -49,10 +49,30 @@ public interface AddConfigOrBuilder extends
 
   /**
    * <pre>
+   * 默认值
+   * </pre>
+   *
+   * <code>string default_value = 4;</code>
+   * @return The defaultValue.
+   */
+  java.lang.String getDefaultValue();
+  /**
+   * <pre>
+   * 默认值
+   * </pre>
+   *
+   * <code>string default_value = 4;</code>
+   * @return The bytes for defaultValue.
+   */
+  com.google.protobuf.ByteString
+      getDefaultValueBytes();
+
+  /**
+   * <pre>
    * 配置的类型，支持page_permission, system_permission, public_config, system_owner_location
    * </pre>
    *
-   * <code>string config_type = 4;</code>
+   * <code>string config_type = 5;</code>
    * @return The configType.
    */
   java.lang.String getConfigType();
@@ -61,7 +81,7 @@ public interface AddConfigOrBuilder extends
    * 配置的类型，支持page_permission, system_permission, public_config, system_owner_location
    * </pre>
    *
-   * <code>string config_type = 4;</code>
+   * <code>string config_type = 5;</code>
    * @return The bytes for configType.
    */
   com.google.protobuf.ByteString
@@ -72,7 +92,7 @@ public interface AddConfigOrBuilder extends
    * 描述
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 6;</code>
    * @return The description.
    */
   java.lang.String getDescription();
@@ -81,7 +101,7 @@ public interface AddConfigOrBuilder extends
    * 描述
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 6;</code>
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString
@@ -92,7 +112,7 @@ public interface AddConfigOrBuilder extends
    * 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, score, auth
    * </pre>
    *
-   * <code>string business_system = 6;</code>
+   * <code>string business_system = 7;</code>
    * @return The businessSystem.
    */
   java.lang.String getBusinessSystem();
@@ -101,7 +121,7 @@ public interface AddConfigOrBuilder extends
    * 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, score, auth
    * </pre>
    *
-   * <code>string business_system = 6;</code>
+   * <code>string business_system = 7;</code>
    * @return The bytes for businessSystem.
    */
   com.google.protobuf.ByteString

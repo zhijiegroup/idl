@@ -34,6 +34,7 @@ import * as account_operation from "./account/account_operation";
 import * as virtual_currency from "./currency/virtual_currency";
 import * as tenant from "./tenant/tenant";
 import * as tenant_dept from "./tenant/tenant_dept";
+import * as tenant_config from "./tenant/tenant_config";
 import * as short_video from "./short_video/short_video";
 export {
   user,
@@ -66,6 +67,7 @@ export {
   virtual_currency,
   tenant,
   tenant_dept,
+  tenant_config,
   short_video,
 };
 
@@ -1482,6 +1484,22 @@ export class glory_api {
 
   UpdateTenantUserPassword(request) {
     const uri = `${this.uriPrefix}/api/tenant/update_tenent_user_password`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  UpdateTenantConfig(request) {
+    const uri = `${this.uriPrefix}/api/tenant/update_tenant_config`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListTenantConfig(request) {
+    const uri = `${this.uriPrefix}/api/tenant/list_tenant_config`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse

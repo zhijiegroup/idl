@@ -23,6 +23,8 @@ export interface AddConfig {
   config_name?: string;
   /** 配置的值 */
   config_value?: string;
+  /** 默认值 */
+  default_value?: string;
   /** 配置的类型，支持page_permission, system_permission, public_config, system_owner_location */
   config_type?: string;
   /** 描述 */
@@ -44,6 +46,7 @@ export interface UpdateConfig {
   config_id?: string;
   config_type?: string;
   config_value?: string;
+  default_value?: string;
   description?: string;
 }
 
