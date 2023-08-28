@@ -26,6 +26,8 @@ export interface ShortVideoUser {
   user_name?: string;
   /** 用户头像URL */
   avatar_url?: string;
+  /** 是否已关注用户 */
+  is_follow?: boolean;
 }
 
 export interface ShortVideo {

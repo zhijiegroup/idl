@@ -67,6 +67,11 @@ private static final long serialVersionUID = 0L;
             avatarUrl = s;
             break;
           }
+          case 32: {
+
+            isFollow = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -206,6 +211,21 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int IS_FOLLOW_FIELD_NUMBER = 4;
+  private boolean isFollow;
+  /**
+   * <pre>
+   * 是否已关注用户
+   * </pre>
+   *
+   * <code>bool is_follow = 4;</code>
+   * @return The isFollow.
+   */
+  @java.lang.Override
+  public boolean getIsFollow() {
+    return isFollow;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -229,6 +249,9 @@ private static final long serialVersionUID = 0L;
     if (!getAvatarUrlBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, avatarUrl);
     }
+    if (isFollow != false) {
+      output.writeBool(4, isFollow);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -247,6 +270,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getAvatarUrlBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, avatarUrl);
+    }
+    if (isFollow != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(4, isFollow);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -269,6 +296,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getUserName())) return false;
     if (!getAvatarUrl()
         .equals(other.getAvatarUrl())) return false;
+    if (getIsFollow()
+        != other.getIsFollow()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -287,6 +316,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getUserName().hashCode();
     hash = (37 * hash) + AVATAR_URL_FIELD_NUMBER;
     hash = (53 * hash) + getAvatarUrl().hashCode();
+    hash = (37 * hash) + IS_FOLLOW_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsFollow());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -426,6 +458,8 @@ private static final long serialVersionUID = 0L;
 
       avatarUrl = "";
 
+      isFollow = false;
+
       return this;
     }
 
@@ -455,6 +489,7 @@ private static final long serialVersionUID = 0L;
       result.userId = userId;
       result.userName = userName;
       result.avatarUrl = avatarUrl;
+      result.isFollow = isFollow;
       onBuilt();
       return result;
     }
@@ -513,6 +548,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getAvatarUrl().isEmpty()) {
         avatarUrl = other.avatarUrl;
         onChanged();
+      }
+      if (other.getIsFollow() != false) {
+        setIsFollow(other.getIsFollow());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -774,6 +812,49 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       avatarUrl = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean isFollow ;
+    /**
+     * <pre>
+     * 是否已关注用户
+     * </pre>
+     *
+     * <code>bool is_follow = 4;</code>
+     * @return The isFollow.
+     */
+    @java.lang.Override
+    public boolean getIsFollow() {
+      return isFollow;
+    }
+    /**
+     * <pre>
+     * 是否已关注用户
+     * </pre>
+     *
+     * <code>bool is_follow = 4;</code>
+     * @param value The isFollow to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsFollow(boolean value) {
+      
+      isFollow = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 是否已关注用户
+     * </pre>
+     *
+     * <code>bool is_follow = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsFollow() {
+      
+      isFollow = false;
       onChanged();
       return this;
     }
