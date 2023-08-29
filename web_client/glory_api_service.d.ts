@@ -193,6 +193,10 @@ list the permissions that supported */
     request: user.ListResourceRequest
   ): Promise<user.ListResourceResponse>;
 
+  GetRoleType(
+    request: user.GetRoleTypeRequest
+  ): Promise<user.GetRoleTypeResponse>;
+
   /** shop */
   CreateShop(request: shop.CreateShopRequest): Promise<shop.CreateShopResponse>;
 

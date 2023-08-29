@@ -106,9 +106,9 @@ struct GloryApi_User {
   /// Clears the value of `tenantDept`. Subsequent reads from it will return its default value.
   mutating func clearTenantDept() {_uniqueStorage()._tenantDept = nil}
 
-  var permissions: [GloryApi_Permission] {
-    get {return _storage._permissions}
-    set {_uniqueStorage()._permissions = newValue}
+  var pages: [GloryApi_PagePermission] {
+    get {return _storage._pages}
+    set {_uniqueStorage()._pages = newValue}
   }
 
   var isAdmin: Bool {
@@ -484,6 +484,8 @@ struct GloryApi_CreateRolePagePermissionRequest {
 
   var roleName: String = String()
 
+  var roleType: String = String()
+
   var roleDescription: String = String()
 
   var pagePermission: [GloryApi_PagePermission] = []
@@ -563,7 +565,11 @@ struct GloryApi_GetRolePagePermissionResponse {
 
   var roleName: String = String()
 
+  var roleType: String = String()
+
   var roleDescription: String = String()
+
+  var roleReadonly: Bool = false
 
   var pagePermission: [GloryApi_PagePermission] = []
 
@@ -591,6 +597,12 @@ struct GloryApi_UpdateRolePagePermissionRequest {
   var tenantID: Int64 = 0
 
   var roleID: Int64 = 0
+
+  var roleName: String = String()
+
+  var roleType: String = String()
+
+  var roleDescription: String = String()
 
   var pagePermission: [GloryApi_PagePermission] = []
 
@@ -723,6 +735,64 @@ struct GloryApi_ListPermissionResponse {
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
   fileprivate var _pagination: Base_PaginationResponse? = nil
+}
+
+struct GloryApi_RoleType {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var label: String = String()
+
+  var value: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct GloryApi_GetRoleTypeRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+struct GloryApi_GetRoleTypeResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var types: [GloryApi_RoleType] = []
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
 struct GloryApi_Role {
@@ -1429,6 +1499,9 @@ extension GloryApi_UpdateRolePagePermissionResponse: @unchecked Sendable {}
 extension GloryApi_Permission: @unchecked Sendable {}
 extension GloryApi_ListPermissionRequest: @unchecked Sendable {}
 extension GloryApi_ListPermissionResponse: @unchecked Sendable {}
+extension GloryApi_RoleType: @unchecked Sendable {}
+extension GloryApi_GetRoleTypeRequest: @unchecked Sendable {}
+extension GloryApi_GetRoleTypeResponse: @unchecked Sendable {}
 extension GloryApi_Role: @unchecked Sendable {}
 extension GloryApi_RolePermission: @unchecked Sendable {}
 extension GloryApi_ListRoleRequest: @unchecked Sendable {}
@@ -1534,7 +1607,7 @@ extension GloryApi_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     8: .same(proto: "seller"),
     9: .standard(proto: "shop_access"),
     10: .standard(proto: "tenant_dept"),
-    11: .same(proto: "permissions"),
+    11: .same(proto: "pages"),
     12: .standard(proto: "is_admin"),
   ]
 
@@ -1549,7 +1622,7 @@ extension GloryApi_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     var _seller: GloryApi_Seller? = nil
     var _shopAccess: [GloryApi_ShopAccess] = []
     var _tenantDept: GloryApi_TenantDept? = nil
-    var _permissions: [GloryApi_Permission] = []
+    var _pages: [GloryApi_PagePermission] = []
     var _isAdmin: Bool = false
 
     static let defaultInstance = _StorageClass()
@@ -1567,7 +1640,7 @@ extension GloryApi_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       _seller = source._seller
       _shopAccess = source._shopAccess
       _tenantDept = source._tenantDept
-      _permissions = source._permissions
+      _pages = source._pages
       _isAdmin = source._isAdmin
     }
   }
@@ -1597,7 +1670,7 @@ extension GloryApi_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
         case 8: try { try decoder.decodeSingularMessageField(value: &_storage._seller) }()
         case 9: try { try decoder.decodeRepeatedMessageField(value: &_storage._shopAccess) }()
         case 10: try { try decoder.decodeSingularMessageField(value: &_storage._tenantDept) }()
-        case 11: try { try decoder.decodeRepeatedMessageField(value: &_storage._permissions) }()
+        case 11: try { try decoder.decodeRepeatedMessageField(value: &_storage._pages) }()
         case 12: try { try decoder.decodeSingularBoolField(value: &_storage._isAdmin) }()
         default: break
         }
@@ -1641,8 +1714,8 @@ extension GloryApi_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       try { if let v = _storage._tenantDept {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 10)
       } }()
-      if !_storage._permissions.isEmpty {
-        try visitor.visitRepeatedMessageField(value: _storage._permissions, fieldNumber: 11)
+      if !_storage._pages.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._pages, fieldNumber: 11)
       }
       if _storage._isAdmin != false {
         try visitor.visitSingularBoolField(value: _storage._isAdmin, fieldNumber: 12)
@@ -1666,7 +1739,7 @@ extension GloryApi_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
         if _storage._seller != rhs_storage._seller {return false}
         if _storage._shopAccess != rhs_storage._shopAccess {return false}
         if _storage._tenantDept != rhs_storage._tenantDept {return false}
-        if _storage._permissions != rhs_storage._permissions {return false}
+        if _storage._pages != rhs_storage._pages {return false}
         if _storage._isAdmin != rhs_storage._isAdmin {return false}
         return true
       }
@@ -2287,8 +2360,9 @@ extension GloryApi_CreateRolePagePermissionRequest: SwiftProtobuf.Message, Swift
     1: .standard(proto: "base_request"),
     2: .standard(proto: "tenant_id"),
     3: .standard(proto: "role_name"),
-    4: .standard(proto: "role_description"),
-    5: .standard(proto: "page_permission"),
+    4: .standard(proto: "role_type"),
+    5: .standard(proto: "role_description"),
+    6: .standard(proto: "page_permission"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2300,8 +2374,9 @@ extension GloryApi_CreateRolePagePermissionRequest: SwiftProtobuf.Message, Swift
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.roleName) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.roleDescription) }()
-      case 5: try { try decoder.decodeRepeatedMessageField(value: &self.pagePermission) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.roleType) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.roleDescription) }()
+      case 6: try { try decoder.decodeRepeatedMessageField(value: &self.pagePermission) }()
       default: break
       }
     }
@@ -2321,11 +2396,14 @@ extension GloryApi_CreateRolePagePermissionRequest: SwiftProtobuf.Message, Swift
     if !self.roleName.isEmpty {
       try visitor.visitSingularStringField(value: self.roleName, fieldNumber: 3)
     }
+    if !self.roleType.isEmpty {
+      try visitor.visitSingularStringField(value: self.roleType, fieldNumber: 4)
+    }
     if !self.roleDescription.isEmpty {
-      try visitor.visitSingularStringField(value: self.roleDescription, fieldNumber: 4)
+      try visitor.visitSingularStringField(value: self.roleDescription, fieldNumber: 5)
     }
     if !self.pagePermission.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.pagePermission, fieldNumber: 5)
+      try visitor.visitRepeatedMessageField(value: self.pagePermission, fieldNumber: 6)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -2334,6 +2412,7 @@ extension GloryApi_CreateRolePagePermissionRequest: SwiftProtobuf.Message, Swift
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.tenantID != rhs.tenantID {return false}
     if lhs.roleName != rhs.roleName {return false}
+    if lhs.roleType != rhs.roleType {return false}
     if lhs.roleDescription != rhs.roleDescription {return false}
     if lhs.pagePermission != rhs.pagePermission {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -2438,8 +2517,10 @@ extension GloryApi_GetRolePagePermissionResponse: SwiftProtobuf.Message, SwiftPr
     2: .standard(proto: "tenant_id"),
     3: .standard(proto: "role_id"),
     4: .standard(proto: "role_name"),
-    5: .standard(proto: "role_description"),
-    6: .standard(proto: "page_permission"),
+    5: .standard(proto: "role_type"),
+    6: .standard(proto: "role_description"),
+    7: .standard(proto: "role_readonly"),
+    8: .standard(proto: "page_permission"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2452,8 +2533,10 @@ extension GloryApi_GetRolePagePermissionResponse: SwiftProtobuf.Message, SwiftPr
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
       case 3: try { try decoder.decodeSingularInt64Field(value: &self.roleID) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.roleName) }()
-      case 5: try { try decoder.decodeSingularStringField(value: &self.roleDescription) }()
-      case 6: try { try decoder.decodeRepeatedMessageField(value: &self.pagePermission) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.roleType) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.roleDescription) }()
+      case 7: try { try decoder.decodeSingularBoolField(value: &self.roleReadonly) }()
+      case 8: try { try decoder.decodeRepeatedMessageField(value: &self.pagePermission) }()
       default: break
       }
     }
@@ -2476,11 +2559,17 @@ extension GloryApi_GetRolePagePermissionResponse: SwiftProtobuf.Message, SwiftPr
     if !self.roleName.isEmpty {
       try visitor.visitSingularStringField(value: self.roleName, fieldNumber: 4)
     }
+    if !self.roleType.isEmpty {
+      try visitor.visitSingularStringField(value: self.roleType, fieldNumber: 5)
+    }
     if !self.roleDescription.isEmpty {
-      try visitor.visitSingularStringField(value: self.roleDescription, fieldNumber: 5)
+      try visitor.visitSingularStringField(value: self.roleDescription, fieldNumber: 6)
+    }
+    if self.roleReadonly != false {
+      try visitor.visitSingularBoolField(value: self.roleReadonly, fieldNumber: 7)
     }
     if !self.pagePermission.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.pagePermission, fieldNumber: 6)
+      try visitor.visitRepeatedMessageField(value: self.pagePermission, fieldNumber: 8)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -2490,7 +2579,9 @@ extension GloryApi_GetRolePagePermissionResponse: SwiftProtobuf.Message, SwiftPr
     if lhs.tenantID != rhs.tenantID {return false}
     if lhs.roleID != rhs.roleID {return false}
     if lhs.roleName != rhs.roleName {return false}
+    if lhs.roleType != rhs.roleType {return false}
     if lhs.roleDescription != rhs.roleDescription {return false}
+    if lhs.roleReadonly != rhs.roleReadonly {return false}
     if lhs.pagePermission != rhs.pagePermission {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -2503,7 +2594,10 @@ extension GloryApi_UpdateRolePagePermissionRequest: SwiftProtobuf.Message, Swift
     1: .standard(proto: "base_request"),
     2: .standard(proto: "tenant_id"),
     3: .standard(proto: "role_id"),
-    4: .standard(proto: "page_permission"),
+    4: .standard(proto: "role_name"),
+    5: .standard(proto: "role_type"),
+    6: .standard(proto: "role_description"),
+    7: .standard(proto: "page_permission"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2515,7 +2609,10 @@ extension GloryApi_UpdateRolePagePermissionRequest: SwiftProtobuf.Message, Swift
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
       case 3: try { try decoder.decodeSingularInt64Field(value: &self.roleID) }()
-      case 4: try { try decoder.decodeRepeatedMessageField(value: &self.pagePermission) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.roleName) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.roleType) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.roleDescription) }()
+      case 7: try { try decoder.decodeRepeatedMessageField(value: &self.pagePermission) }()
       default: break
       }
     }
@@ -2535,8 +2632,17 @@ extension GloryApi_UpdateRolePagePermissionRequest: SwiftProtobuf.Message, Swift
     if self.roleID != 0 {
       try visitor.visitSingularInt64Field(value: self.roleID, fieldNumber: 3)
     }
+    if !self.roleName.isEmpty {
+      try visitor.visitSingularStringField(value: self.roleName, fieldNumber: 4)
+    }
+    if !self.roleType.isEmpty {
+      try visitor.visitSingularStringField(value: self.roleType, fieldNumber: 5)
+    }
+    if !self.roleDescription.isEmpty {
+      try visitor.visitSingularStringField(value: self.roleDescription, fieldNumber: 6)
+    }
     if !self.pagePermission.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.pagePermission, fieldNumber: 4)
+      try visitor.visitRepeatedMessageField(value: self.pagePermission, fieldNumber: 7)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -2545,6 +2651,9 @@ extension GloryApi_UpdateRolePagePermissionRequest: SwiftProtobuf.Message, Swift
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.tenantID != rhs.tenantID {return false}
     if lhs.roleID != rhs.roleID {return false}
+    if lhs.roleName != rhs.roleName {return false}
+    if lhs.roleType != rhs.roleType {return false}
+    if lhs.roleDescription != rhs.roleDescription {return false}
     if lhs.pagePermission != rhs.pagePermission {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -2764,6 +2873,122 @@ extension GloryApi_ListPermissionResponse: SwiftProtobuf.Message, SwiftProtobuf.
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.permission != rhs.permission {return false}
     if lhs._pagination != rhs._pagination {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_RoleType: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".RoleType"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "label"),
+    2: .same(proto: "value"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.label) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.value) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.label.isEmpty {
+      try visitor.visitSingularStringField(value: self.label, fieldNumber: 1)
+    }
+    if !self.value.isEmpty {
+      try visitor.visitSingularStringField(value: self.value, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_RoleType, rhs: GloryApi_RoleType) -> Bool {
+    if lhs.label != rhs.label {return false}
+    if lhs.value != rhs.value {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetRoleTypeRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetRoleTypeRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetRoleTypeRequest, rhs: GloryApi_GetRoleTypeRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetRoleTypeResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetRoleTypeResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .same(proto: "types"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.types) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if !self.types.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.types, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetRoleTypeResponse, rhs: GloryApi_GetRoleTypeResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.types != rhs.types {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

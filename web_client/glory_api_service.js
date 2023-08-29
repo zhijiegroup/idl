@@ -316,6 +316,12 @@ export class glory_api {
     );
   }
 
+  GetRoleType(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/role/get_role_type${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
   CreateShop(request) {
     const uri = `${this.uriPrefix}/api/shop/create_shop`;
     const body = JSONbigint.stringify(request);

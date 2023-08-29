@@ -28,7 +28,7 @@ export interface User {
   /** 判断用户的shop访问权限 */
   shop_access?: Array<shop.ShopAccess>;
   tenant_dept?: TenantDept;
-  permissions?: Array<Permission>;
+  pages?: Array<PagePermission>;
   is_admin?: boolean;
 }
 
@@ -117,6 +117,7 @@ export interface CreateRolePagePermissionRequest {
   base_request?: base.BaseRequest;
   tenant_id?: string;
   role_name?: string;
+  role_type?: string;
   role_description?: string;
   page_permission?: Array<PagePermission>;
 }
@@ -137,7 +138,9 @@ export interface GetRolePagePermissionResponse {
   tenant_id?: string;
   role_id?: string;
   role_name?: string;
+  role_type?: string;
   role_description?: string;
+  role_readonly?: boolean;
   page_permission?: Array<PagePermission>;
 }
 
@@ -145,6 +148,9 @@ export interface UpdateRolePagePermissionRequest {
   base_request?: base.BaseRequest;
   tenant_id?: string;
   role_id?: string;
+  role_name?: string;
+  role_type?: string;
+  role_description?: string;
   page_permission?: Array<PagePermission>;
 }
 
@@ -182,6 +188,20 @@ export interface ListPermissionResponse {
   /** permission列表 */
   permission?: Array<Permission>;
   pagination?: base.PaginationResponse;
+}
+
+export interface RoleType {
+  label?: string;
+  value?: string;
+}
+
+export interface GetRoleTypeRequest {
+  base_request?: base.BaseRequest;
+}
+
+export interface GetRoleTypeResponse {
+  base_resp?: base.BaseResponse;
+  types?: Array<RoleType>;
 }
 
 export interface Role {

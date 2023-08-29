@@ -35,25 +35,61 @@ public interface UpdateRolePagePermissionRequestOrBuilder extends
   long getRoleId();
 
   /**
-   * <code>repeated .glory_api.PagePermission page_permission = 4;</code>
+   * <code>string role_name = 4;</code>
+   * @return The roleName.
+   */
+  java.lang.String getRoleName();
+  /**
+   * <code>string role_name = 4;</code>
+   * @return The bytes for roleName.
+   */
+  com.google.protobuf.ByteString
+      getRoleNameBytes();
+
+  /**
+   * <code>string role_type = 5;</code>
+   * @return The roleType.
+   */
+  java.lang.String getRoleType();
+  /**
+   * <code>string role_type = 5;</code>
+   * @return The bytes for roleType.
+   */
+  com.google.protobuf.ByteString
+      getRoleTypeBytes();
+
+  /**
+   * <code>string role_description = 6;</code>
+   * @return The roleDescription.
+   */
+  java.lang.String getRoleDescription();
+  /**
+   * <code>string role_description = 6;</code>
+   * @return The bytes for roleDescription.
+   */
+  com.google.protobuf.ByteString
+      getRoleDescriptionBytes();
+
+  /**
+   * <code>repeated .glory_api.PagePermission page_permission = 7;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.user.PagePermission> 
       getPagePermissionList();
   /**
-   * <code>repeated .glory_api.PagePermission page_permission = 4;</code>
+   * <code>repeated .glory_api.PagePermission page_permission = 7;</code>
    */
   com.zhijiejiaoyu.glory_api.user.PagePermission getPagePermission(int index);
   /**
-   * <code>repeated .glory_api.PagePermission page_permission = 4;</code>
+   * <code>repeated .glory_api.PagePermission page_permission = 7;</code>
    */
   int getPagePermissionCount();
   /**
-   * <code>repeated .glory_api.PagePermission page_permission = 4;</code>
+   * <code>repeated .glory_api.PagePermission page_permission = 7;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder> 
       getPagePermissionOrBuilderList();
   /**
-   * <code>repeated .glory_api.PagePermission page_permission = 4;</code>
+   * <code>repeated .glory_api.PagePermission page_permission = 7;</code>
    */
   com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder getPagePermissionOrBuilder(
       int index);

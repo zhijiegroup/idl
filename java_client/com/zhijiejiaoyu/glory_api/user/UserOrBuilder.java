@@ -160,27 +160,27 @@ public interface UserOrBuilder extends
   com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getTenantDeptOrBuilder();
 
   /**
-   * <code>repeated .glory_api.Permission permissions = 11;</code>
+   * <code>repeated .glory_api.PagePermission pages = 11;</code>
    */
-  java.util.List<com.zhijiejiaoyu.glory_api.user.Permission> 
-      getPermissionsList();
+  java.util.List<com.zhijiejiaoyu.glory_api.user.PagePermission> 
+      getPagesList();
   /**
-   * <code>repeated .glory_api.Permission permissions = 11;</code>
+   * <code>repeated .glory_api.PagePermission pages = 11;</code>
    */
-  com.zhijiejiaoyu.glory_api.user.Permission getPermissions(int index);
+  com.zhijiejiaoyu.glory_api.user.PagePermission getPages(int index);
   /**
-   * <code>repeated .glory_api.Permission permissions = 11;</code>
+   * <code>repeated .glory_api.PagePermission pages = 11;</code>
    */
-  int getPermissionsCount();
+  int getPagesCount();
   /**
-   * <code>repeated .glory_api.Permission permissions = 11;</code>
+   * <code>repeated .glory_api.PagePermission pages = 11;</code>
    */
-  java.util.List<? extends com.zhijiejiaoyu.glory_api.user.PermissionOrBuilder> 
-      getPermissionsOrBuilderList();
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder> 
+      getPagesOrBuilderList();
   /**
-   * <code>repeated .glory_api.Permission permissions = 11;</code>
+   * <code>repeated .glory_api.PagePermission pages = 11;</code>
    */
-  com.zhijiejiaoyu.glory_api.user.PermissionOrBuilder getPermissionsOrBuilder(
+  com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder getPagesOrBuilder(
       int index);
 
   /**

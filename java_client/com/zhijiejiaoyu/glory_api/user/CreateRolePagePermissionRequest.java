@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private CreateRolePagePermissionRequest() {
     roleName = "";
+    roleType = "";
     roleDescription = "";
     pagePermission = java.util.Collections.emptyList();
   }
@@ -79,10 +80,16 @@ private static final long serialVersionUID = 0L;
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            roleDescription = s;
+            roleType = s;
             break;
           }
           case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            roleDescription = s;
+            break;
+          }
+          case 50: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               pagePermission = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.PagePermission>();
               mutable_bitField0_ |= 0x00000001;
@@ -201,10 +208,48 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int ROLE_DESCRIPTION_FIELD_NUMBER = 4;
+  public static final int ROLE_TYPE_FIELD_NUMBER = 4;
+  private volatile java.lang.Object roleType;
+  /**
+   * <code>string role_type = 4;</code>
+   * @return The roleType.
+   */
+  @java.lang.Override
+  public java.lang.String getRoleType() {
+    java.lang.Object ref = roleType;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      roleType = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string role_type = 4;</code>
+   * @return The bytes for roleType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getRoleTypeBytes() {
+    java.lang.Object ref = roleType;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      roleType = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ROLE_DESCRIPTION_FIELD_NUMBER = 5;
   private volatile java.lang.Object roleDescription;
   /**
-   * <code>string role_description = 4;</code>
+   * <code>string role_description = 5;</code>
    * @return The roleDescription.
    */
   @java.lang.Override
@@ -221,7 +266,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string role_description = 4;</code>
+   * <code>string role_description = 5;</code>
    * @return The bytes for roleDescription.
    */
   @java.lang.Override
@@ -239,17 +284,17 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int PAGE_PERMISSION_FIELD_NUMBER = 5;
+  public static final int PAGE_PERMISSION_FIELD_NUMBER = 6;
   private java.util.List<com.zhijiejiaoyu.glory_api.user.PagePermission> pagePermission;
   /**
-   * <code>repeated .glory_api.PagePermission page_permission = 5;</code>
+   * <code>repeated .glory_api.PagePermission page_permission = 6;</code>
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.user.PagePermission> getPagePermissionList() {
     return pagePermission;
   }
   /**
-   * <code>repeated .glory_api.PagePermission page_permission = 5;</code>
+   * <code>repeated .glory_api.PagePermission page_permission = 6;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder> 
@@ -257,21 +302,21 @@ private static final long serialVersionUID = 0L;
     return pagePermission;
   }
   /**
-   * <code>repeated .glory_api.PagePermission page_permission = 5;</code>
+   * <code>repeated .glory_api.PagePermission page_permission = 6;</code>
    */
   @java.lang.Override
   public int getPagePermissionCount() {
     return pagePermission.size();
   }
   /**
-   * <code>repeated .glory_api.PagePermission page_permission = 5;</code>
+   * <code>repeated .glory_api.PagePermission page_permission = 6;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.user.PagePermission getPagePermission(int index) {
     return pagePermission.get(index);
   }
   /**
-   * <code>repeated .glory_api.PagePermission page_permission = 5;</code>
+   * <code>repeated .glory_api.PagePermission page_permission = 6;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder getPagePermissionOrBuilder(
@@ -302,11 +347,14 @@ private static final long serialVersionUID = 0L;
     if (!getRoleNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, roleName);
     }
+    if (!getRoleTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, roleType);
+    }
     if (!getRoleDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, roleDescription);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, roleDescription);
     }
     for (int i = 0; i < pagePermission.size(); i++) {
-      output.writeMessage(5, pagePermission.get(i));
+      output.writeMessage(6, pagePermission.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -328,12 +376,15 @@ private static final long serialVersionUID = 0L;
     if (!getRoleNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, roleName);
     }
+    if (!getRoleTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, roleType);
+    }
     if (!getRoleDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, roleDescription);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, roleDescription);
     }
     for (int i = 0; i < pagePermission.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, pagePermission.get(i));
+        .computeMessageSize(6, pagePermission.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -359,6 +410,8 @@ private static final long serialVersionUID = 0L;
         != other.getTenantId()) return false;
     if (!getRoleName()
         .equals(other.getRoleName())) return false;
+    if (!getRoleType()
+        .equals(other.getRoleType())) return false;
     if (!getRoleDescription()
         .equals(other.getRoleDescription())) return false;
     if (!getPagePermissionList()
@@ -383,6 +436,8 @@ private static final long serialVersionUID = 0L;
         getTenantId());
     hash = (37 * hash) + ROLE_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getRoleName().hashCode();
+    hash = (37 * hash) + ROLE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getRoleType().hashCode();
     hash = (37 * hash) + ROLE_DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getRoleDescription().hashCode();
     if (getPagePermissionCount() > 0) {
@@ -533,6 +588,8 @@ private static final long serialVersionUID = 0L;
 
       roleName = "";
 
+      roleType = "";
+
       roleDescription = "";
 
       if (pagePermissionBuilder == null) {
@@ -575,6 +632,7 @@ private static final long serialVersionUID = 0L;
       }
       result.tenantId = tenantId;
       result.roleName = roleName;
+      result.roleType = roleType;
       result.roleDescription = roleDescription;
       if (pagePermissionBuilder == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
@@ -641,6 +699,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getRoleName().isEmpty()) {
         roleName = other.roleName;
+        onChanged();
+      }
+      if (!other.getRoleType().isEmpty()) {
+        roleType = other.roleType;
         onChanged();
       }
       if (!other.getRoleDescription().isEmpty()) {
@@ -929,9 +991,85 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object roleType = "";
+    /**
+     * <code>string role_type = 4;</code>
+     * @return The roleType.
+     */
+    public java.lang.String getRoleType() {
+      java.lang.Object ref = roleType;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        roleType = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string role_type = 4;</code>
+     * @return The bytes for roleType.
+     */
+    public com.google.protobuf.ByteString
+        getRoleTypeBytes() {
+      java.lang.Object ref = roleType;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        roleType = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string role_type = 4;</code>
+     * @param value The roleType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRoleType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      roleType = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string role_type = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRoleType() {
+      
+      roleType = getDefaultInstance().getRoleType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string role_type = 4;</code>
+     * @param value The bytes for roleType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRoleTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      roleType = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object roleDescription = "";
     /**
-     * <code>string role_description = 4;</code>
+     * <code>string role_description = 5;</code>
      * @return The roleDescription.
      */
     public java.lang.String getRoleDescription() {
@@ -947,7 +1085,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string role_description = 4;</code>
+     * <code>string role_description = 5;</code>
      * @return The bytes for roleDescription.
      */
     public com.google.protobuf.ByteString
@@ -964,7 +1102,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string role_description = 4;</code>
+     * <code>string role_description = 5;</code>
      * @param value The roleDescription to set.
      * @return This builder for chaining.
      */
@@ -979,7 +1117,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string role_description = 4;</code>
+     * <code>string role_description = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearRoleDescription() {
@@ -989,7 +1127,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string role_description = 4;</code>
+     * <code>string role_description = 5;</code>
      * @param value The bytes for roleDescription to set.
      * @return This builder for chaining.
      */
@@ -1018,7 +1156,7 @@ private static final long serialVersionUID = 0L;
         com.zhijiejiaoyu.glory_api.user.PagePermission, com.zhijiejiaoyu.glory_api.user.PagePermission.Builder, com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder> pagePermissionBuilder;
 
     /**
-     * <code>repeated .glory_api.PagePermission page_permission = 5;</code>
+     * <code>repeated .glory_api.PagePermission page_permission = 6;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.user.PagePermission> getPagePermissionList() {
       if (pagePermissionBuilder == null) {
@@ -1028,7 +1166,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.PagePermission page_permission = 5;</code>
+     * <code>repeated .glory_api.PagePermission page_permission = 6;</code>
      */
     public int getPagePermissionCount() {
       if (pagePermissionBuilder == null) {
@@ -1038,7 +1176,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.PagePermission page_permission = 5;</code>
+     * <code>repeated .glory_api.PagePermission page_permission = 6;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.PagePermission getPagePermission(int index) {
       if (pagePermissionBuilder == null) {
@@ -1048,7 +1186,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.PagePermission page_permission = 5;</code>
+     * <code>repeated .glory_api.PagePermission page_permission = 6;</code>
      */
     public Builder setPagePermission(
         int index, com.zhijiejiaoyu.glory_api.user.PagePermission value) {
@@ -1065,7 +1203,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.PagePermission page_permission = 5;</code>
+     * <code>repeated .glory_api.PagePermission page_permission = 6;</code>
      */
     public Builder setPagePermission(
         int index, com.zhijiejiaoyu.glory_api.user.PagePermission.Builder builderForValue) {
@@ -1079,7 +1217,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.PagePermission page_permission = 5;</code>
+     * <code>repeated .glory_api.PagePermission page_permission = 6;</code>
      */
     public Builder addPagePermission(com.zhijiejiaoyu.glory_api.user.PagePermission value) {
       if (pagePermissionBuilder == null) {
@@ -1095,7 +1233,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.PagePermission page_permission = 5;</code>
+     * <code>repeated .glory_api.PagePermission page_permission = 6;</code>
      */
     public Builder addPagePermission(
         int index, com.zhijiejiaoyu.glory_api.user.PagePermission value) {
@@ -1112,7 +1250,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.PagePermission page_permission = 5;</code>
+     * <code>repeated .glory_api.PagePermission page_permission = 6;</code>
      */
     public Builder addPagePermission(
         com.zhijiejiaoyu.glory_api.user.PagePermission.Builder builderForValue) {
@@ -1126,7 +1264,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.PagePermission page_permission = 5;</code>
+     * <code>repeated .glory_api.PagePermission page_permission = 6;</code>
      */
     public Builder addPagePermission(
         int index, com.zhijiejiaoyu.glory_api.user.PagePermission.Builder builderForValue) {
@@ -1140,7 +1278,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.PagePermission page_permission = 5;</code>
+     * <code>repeated .glory_api.PagePermission page_permission = 6;</code>
      */
     public Builder addAllPagePermission(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.user.PagePermission> values) {
@@ -1155,7 +1293,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.PagePermission page_permission = 5;</code>
+     * <code>repeated .glory_api.PagePermission page_permission = 6;</code>
      */
     public Builder clearPagePermission() {
       if (pagePermissionBuilder == null) {
@@ -1168,7 +1306,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.PagePermission page_permission = 5;</code>
+     * <code>repeated .glory_api.PagePermission page_permission = 6;</code>
      */
     public Builder removePagePermission(int index) {
       if (pagePermissionBuilder == null) {
@@ -1181,14 +1319,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.PagePermission page_permission = 5;</code>
+     * <code>repeated .glory_api.PagePermission page_permission = 6;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.PagePermission.Builder getPagePermissionBuilder(
         int index) {
       return getPagePermissionFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .glory_api.PagePermission page_permission = 5;</code>
+     * <code>repeated .glory_api.PagePermission page_permission = 6;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder getPagePermissionOrBuilder(
         int index) {
@@ -1198,7 +1336,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.PagePermission page_permission = 5;</code>
+     * <code>repeated .glory_api.PagePermission page_permission = 6;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder> 
          getPagePermissionOrBuilderList() {
@@ -1209,14 +1347,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.PagePermission page_permission = 5;</code>
+     * <code>repeated .glory_api.PagePermission page_permission = 6;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.PagePermission.Builder addPagePermissionBuilder() {
       return getPagePermissionFieldBuilder().addBuilder(
           com.zhijiejiaoyu.glory_api.user.PagePermission.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.PagePermission page_permission = 5;</code>
+     * <code>repeated .glory_api.PagePermission page_permission = 6;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.PagePermission.Builder addPagePermissionBuilder(
         int index) {
@@ -1224,7 +1362,7 @@ private static final long serialVersionUID = 0L;
           index, com.zhijiejiaoyu.glory_api.user.PagePermission.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.PagePermission page_permission = 5;</code>
+     * <code>repeated .glory_api.PagePermission page_permission = 6;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.user.PagePermission.Builder> 
          getPagePermissionBuilderList() {

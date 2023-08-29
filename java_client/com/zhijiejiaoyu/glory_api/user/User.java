@@ -23,7 +23,7 @@ private static final long serialVersionUID = 0L;
     name = "";
     avatarUrl = "";
     shopAccess = java.util.Collections.emptyList();
-    permissions = java.util.Collections.emptyList();
+    pages = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -135,11 +135,11 @@ private static final long serialVersionUID = 0L;
           }
           case 90: {
             if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-              permissions = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.Permission>();
+              pages = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.PagePermission>();
               mutable_bitField0_ |= 0x00000002;
             }
-            permissions.add(
-                input.readMessage(com.zhijiejiaoyu.glory_api.user.Permission.parser(), extensionRegistry));
+            pages.add(
+                input.readMessage(com.zhijiejiaoyu.glory_api.user.PagePermission.parser(), extensionRegistry));
             break;
           }
           case 96: {
@@ -166,7 +166,7 @@ private static final long serialVersionUID = 0L;
         shopAccess = java.util.Collections.unmodifiableList(shopAccess);
       }
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        permissions = java.util.Collections.unmodifiableList(permissions);
+        pages = java.util.Collections.unmodifiableList(pages);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -536,44 +536,44 @@ private static final long serialVersionUID = 0L;
     return getTenantDept();
   }
 
-  public static final int PERMISSIONS_FIELD_NUMBER = 11;
-  private java.util.List<com.zhijiejiaoyu.glory_api.user.Permission> permissions;
+  public static final int PAGES_FIELD_NUMBER = 11;
+  private java.util.List<com.zhijiejiaoyu.glory_api.user.PagePermission> pages;
   /**
-   * <code>repeated .glory_api.Permission permissions = 11;</code>
+   * <code>repeated .glory_api.PagePermission pages = 11;</code>
    */
   @java.lang.Override
-  public java.util.List<com.zhijiejiaoyu.glory_api.user.Permission> getPermissionsList() {
-    return permissions;
+  public java.util.List<com.zhijiejiaoyu.glory_api.user.PagePermission> getPagesList() {
+    return pages;
   }
   /**
-   * <code>repeated .glory_api.Permission permissions = 11;</code>
+   * <code>repeated .glory_api.PagePermission pages = 11;</code>
    */
   @java.lang.Override
-  public java.util.List<? extends com.zhijiejiaoyu.glory_api.user.PermissionOrBuilder> 
-      getPermissionsOrBuilderList() {
-    return permissions;
+  public java.util.List<? extends com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder> 
+      getPagesOrBuilderList() {
+    return pages;
   }
   /**
-   * <code>repeated .glory_api.Permission permissions = 11;</code>
+   * <code>repeated .glory_api.PagePermission pages = 11;</code>
    */
   @java.lang.Override
-  public int getPermissionsCount() {
-    return permissions.size();
+  public int getPagesCount() {
+    return pages.size();
   }
   /**
-   * <code>repeated .glory_api.Permission permissions = 11;</code>
+   * <code>repeated .glory_api.PagePermission pages = 11;</code>
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.user.Permission getPermissions(int index) {
-    return permissions.get(index);
+  public com.zhijiejiaoyu.glory_api.user.PagePermission getPages(int index) {
+    return pages.get(index);
   }
   /**
-   * <code>repeated .glory_api.Permission permissions = 11;</code>
+   * <code>repeated .glory_api.PagePermission pages = 11;</code>
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.user.PermissionOrBuilder getPermissionsOrBuilder(
+  public com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder getPagesOrBuilder(
       int index) {
-    return permissions.get(index);
+    return pages.get(index);
   }
 
   public static final int IS_ADMIN_FIELD_NUMBER = 12;
@@ -631,8 +631,8 @@ private static final long serialVersionUID = 0L;
     if (tenantDept != null) {
       output.writeMessage(10, getTenantDept());
     }
-    for (int i = 0; i < permissions.size(); i++) {
-      output.writeMessage(11, permissions.get(i));
+    for (int i = 0; i < pages.size(); i++) {
+      output.writeMessage(11, pages.get(i));
     }
     if (isAdmin != false) {
       output.writeBool(12, isAdmin);
@@ -680,9 +680,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(10, getTenantDept());
     }
-    for (int i = 0; i < permissions.size(); i++) {
+    for (int i = 0; i < pages.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(11, permissions.get(i));
+        .computeMessageSize(11, pages.get(i));
     }
     if (isAdmin != false) {
       size += com.google.protobuf.CodedOutputStream
@@ -729,8 +729,8 @@ private static final long serialVersionUID = 0L;
       if (!getTenantDept()
           .equals(other.getTenantDept())) return false;
     }
-    if (!getPermissionsList()
-        .equals(other.getPermissionsList())) return false;
+    if (!getPagesList()
+        .equals(other.getPagesList())) return false;
     if (getIsAdmin()
         != other.getIsAdmin()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -771,9 +771,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + TENANT_DEPT_FIELD_NUMBER;
       hash = (53 * hash) + getTenantDept().hashCode();
     }
-    if (getPermissionsCount() > 0) {
-      hash = (37 * hash) + PERMISSIONS_FIELD_NUMBER;
-      hash = (53 * hash) + getPermissionsList().hashCode();
+    if (getPagesCount() > 0) {
+      hash = (37 * hash) + PAGES_FIELD_NUMBER;
+      hash = (53 * hash) + getPagesList().hashCode();
     }
     hash = (37 * hash) + IS_ADMIN_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
@@ -907,7 +907,7 @@ private static final long serialVersionUID = 0L;
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
         getShopAccessFieldBuilder();
-        getPermissionsFieldBuilder();
+        getPagesFieldBuilder();
       }
     }
     @java.lang.Override
@@ -945,11 +945,11 @@ private static final long serialVersionUID = 0L;
         tenantDept = null;
         tenantDeptBuilder = null;
       }
-      if (permissionsBuilder == null) {
-        permissions = java.util.Collections.emptyList();
+      if (pagesBuilder == null) {
+        pages = java.util.Collections.emptyList();
         bitField0 = (bitField0_ & ~0x00000002);
       } else {
-        permissionsBuilder.clear();
+        pagesBuilder.clear();
       }
       isAdmin = false;
 
@@ -1006,14 +1006,14 @@ private static final long serialVersionUID = 0L;
       } else {
         result.tenantDept = tenantDeptBuilder.build();
       }
-      if (permissionsBuilder == null) {
+      if (pagesBuilder == null) {
         if (((bitField0_ & 0x00000002) != 0)) {
-          permissions = java.util.Collections.unmodifiableList(permissions);
+          pages = java.util.Collections.unmodifiableList(pages);
           bitField0 = (bitField0_ & ~0x00000002);
         }
-        result.permissions = permissions;
+        result.pages = pages;
       } else {
-        result.permissions = permissionsBuilder.build();
+        result.pages = pagesBuilder.build();
       }
       result.isAdmin = isAdmin;
       onBuilt();
@@ -1123,29 +1123,29 @@ private static final long serialVersionUID = 0L;
       if (other.hasTenantDept()) {
         mergeTenantDept(other.getTenantDept());
       }
-      if (permissionsBuilder == null) {
-        if (!other.permissions.isEmpty()) {
-          if (permissions.isEmpty()) {
-            permissions = other.permissions;
+      if (pagesBuilder == null) {
+        if (!other.pages.isEmpty()) {
+          if (pages.isEmpty()) {
+            pages = other.pages;
             bitField0 = (bitField0_ & ~0x00000002);
           } else {
-            ensurePermissionsIsMutable();
-            permissions.addAll(other.permissions);
+            ensurePagesIsMutable();
+            pages.addAll(other.pages);
           }
           onChanged();
         }
       } else {
-        if (!other.permissions.isEmpty()) {
-          if (permissionsBuilder.isEmpty()) {
-            permissionsBuilder.dispose();
-            permissionsBuilder = null;
-            permissions = other.permissions;
+        if (!other.pages.isEmpty()) {
+          if (pagesBuilder.isEmpty()) {
+            pagesBuilder.dispose();
+            pagesBuilder = null;
+            pages = other.pages;
             bitField0 = (bitField0_ & ~0x00000002);
-            permissionsBuilder = 
+            pagesBuilder = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getPermissionsFieldBuilder() : null;
+                 getPagesFieldBuilder() : null;
           } else {
-            permissionsBuilder.addAllMessages(other.permissions);
+            pagesBuilder.addAllMessages(other.pages);
           }
         }
       }
@@ -2219,244 +2219,244 @@ private static final long serialVersionUID = 0L;
       return tenantDeptBuilder;
     }
 
-    private java.util.List<com.zhijiejiaoyu.glory_api.user.Permission> permissions =
+    private java.util.List<com.zhijiejiaoyu.glory_api.user.PagePermission> pages =
       java.util.Collections.emptyList();
-    private void ensurePermissionsIsMutable() {
+    private void ensurePagesIsMutable() {
       if (!((bitField0_ & 0x00000002) != 0)) {
-        permissions = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.Permission>(permissions);
+        pages = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.PagePermission>(pages);
         bitField0_ |= 0x00000002;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.user.Permission, com.zhijiejiaoyu.glory_api.user.Permission.Builder, com.zhijiejiaoyu.glory_api.user.PermissionOrBuilder> permissionsBuilder;
+        com.zhijiejiaoyu.glory_api.user.PagePermission, com.zhijiejiaoyu.glory_api.user.PagePermission.Builder, com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder> pagesBuilder;
 
     /**
-     * <code>repeated .glory_api.Permission permissions = 11;</code>
+     * <code>repeated .glory_api.PagePermission pages = 11;</code>
      */
-    public java.util.List<com.zhijiejiaoyu.glory_api.user.Permission> getPermissionsList() {
-      if (permissionsBuilder == null) {
-        return java.util.Collections.unmodifiableList(permissions);
+    public java.util.List<com.zhijiejiaoyu.glory_api.user.PagePermission> getPagesList() {
+      if (pagesBuilder == null) {
+        return java.util.Collections.unmodifiableList(pages);
       } else {
-        return permissionsBuilder.getMessageList();
+        return pagesBuilder.getMessageList();
       }
     }
     /**
-     * <code>repeated .glory_api.Permission permissions = 11;</code>
+     * <code>repeated .glory_api.PagePermission pages = 11;</code>
      */
-    public int getPermissionsCount() {
-      if (permissionsBuilder == null) {
-        return permissions.size();
+    public int getPagesCount() {
+      if (pagesBuilder == null) {
+        return pages.size();
       } else {
-        return permissionsBuilder.getCount();
+        return pagesBuilder.getCount();
       }
     }
     /**
-     * <code>repeated .glory_api.Permission permissions = 11;</code>
+     * <code>repeated .glory_api.PagePermission pages = 11;</code>
      */
-    public com.zhijiejiaoyu.glory_api.user.Permission getPermissions(int index) {
-      if (permissionsBuilder == null) {
-        return permissions.get(index);
+    public com.zhijiejiaoyu.glory_api.user.PagePermission getPages(int index) {
+      if (pagesBuilder == null) {
+        return pages.get(index);
       } else {
-        return permissionsBuilder.getMessage(index);
+        return pagesBuilder.getMessage(index);
       }
     }
     /**
-     * <code>repeated .glory_api.Permission permissions = 11;</code>
+     * <code>repeated .glory_api.PagePermission pages = 11;</code>
      */
-    public Builder setPermissions(
-        int index, com.zhijiejiaoyu.glory_api.user.Permission value) {
-      if (permissionsBuilder == null) {
+    public Builder setPages(
+        int index, com.zhijiejiaoyu.glory_api.user.PagePermission value) {
+      if (pagesBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensurePermissionsIsMutable();
-        permissions.set(index, value);
+        ensurePagesIsMutable();
+        pages.set(index, value);
         onChanged();
       } else {
-        permissionsBuilder.setMessage(index, value);
+        pagesBuilder.setMessage(index, value);
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.Permission permissions = 11;</code>
+     * <code>repeated .glory_api.PagePermission pages = 11;</code>
      */
-    public Builder setPermissions(
-        int index, com.zhijiejiaoyu.glory_api.user.Permission.Builder builderForValue) {
-      if (permissionsBuilder == null) {
-        ensurePermissionsIsMutable();
-        permissions.set(index, builderForValue.build());
+    public Builder setPages(
+        int index, com.zhijiejiaoyu.glory_api.user.PagePermission.Builder builderForValue) {
+      if (pagesBuilder == null) {
+        ensurePagesIsMutable();
+        pages.set(index, builderForValue.build());
         onChanged();
       } else {
-        permissionsBuilder.setMessage(index, builderForValue.build());
+        pagesBuilder.setMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.Permission permissions = 11;</code>
+     * <code>repeated .glory_api.PagePermission pages = 11;</code>
      */
-    public Builder addPermissions(com.zhijiejiaoyu.glory_api.user.Permission value) {
-      if (permissionsBuilder == null) {
+    public Builder addPages(com.zhijiejiaoyu.glory_api.user.PagePermission value) {
+      if (pagesBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensurePermissionsIsMutable();
-        permissions.add(value);
+        ensurePagesIsMutable();
+        pages.add(value);
         onChanged();
       } else {
-        permissionsBuilder.addMessage(value);
+        pagesBuilder.addMessage(value);
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.Permission permissions = 11;</code>
+     * <code>repeated .glory_api.PagePermission pages = 11;</code>
      */
-    public Builder addPermissions(
-        int index, com.zhijiejiaoyu.glory_api.user.Permission value) {
-      if (permissionsBuilder == null) {
+    public Builder addPages(
+        int index, com.zhijiejiaoyu.glory_api.user.PagePermission value) {
+      if (pagesBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensurePermissionsIsMutable();
-        permissions.add(index, value);
+        ensurePagesIsMutable();
+        pages.add(index, value);
         onChanged();
       } else {
-        permissionsBuilder.addMessage(index, value);
+        pagesBuilder.addMessage(index, value);
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.Permission permissions = 11;</code>
+     * <code>repeated .glory_api.PagePermission pages = 11;</code>
      */
-    public Builder addPermissions(
-        com.zhijiejiaoyu.glory_api.user.Permission.Builder builderForValue) {
-      if (permissionsBuilder == null) {
-        ensurePermissionsIsMutable();
-        permissions.add(builderForValue.build());
+    public Builder addPages(
+        com.zhijiejiaoyu.glory_api.user.PagePermission.Builder builderForValue) {
+      if (pagesBuilder == null) {
+        ensurePagesIsMutable();
+        pages.add(builderForValue.build());
         onChanged();
       } else {
-        permissionsBuilder.addMessage(builderForValue.build());
+        pagesBuilder.addMessage(builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.Permission permissions = 11;</code>
+     * <code>repeated .glory_api.PagePermission pages = 11;</code>
      */
-    public Builder addPermissions(
-        int index, com.zhijiejiaoyu.glory_api.user.Permission.Builder builderForValue) {
-      if (permissionsBuilder == null) {
-        ensurePermissionsIsMutable();
-        permissions.add(index, builderForValue.build());
+    public Builder addPages(
+        int index, com.zhijiejiaoyu.glory_api.user.PagePermission.Builder builderForValue) {
+      if (pagesBuilder == null) {
+        ensurePagesIsMutable();
+        pages.add(index, builderForValue.build());
         onChanged();
       } else {
-        permissionsBuilder.addMessage(index, builderForValue.build());
+        pagesBuilder.addMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.Permission permissions = 11;</code>
+     * <code>repeated .glory_api.PagePermission pages = 11;</code>
      */
-    public Builder addAllPermissions(
-        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.user.Permission> values) {
-      if (permissionsBuilder == null) {
-        ensurePermissionsIsMutable();
+    public Builder addAllPages(
+        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.user.PagePermission> values) {
+      if (pagesBuilder == null) {
+        ensurePagesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, permissions);
+            values, pages);
         onChanged();
       } else {
-        permissionsBuilder.addAllMessages(values);
+        pagesBuilder.addAllMessages(values);
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.Permission permissions = 11;</code>
+     * <code>repeated .glory_api.PagePermission pages = 11;</code>
      */
-    public Builder clearPermissions() {
-      if (permissionsBuilder == null) {
-        permissions = java.util.Collections.emptyList();
+    public Builder clearPages() {
+      if (pagesBuilder == null) {
+        pages = java.util.Collections.emptyList();
         bitField0 = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
-        permissionsBuilder.clear();
+        pagesBuilder.clear();
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.Permission permissions = 11;</code>
+     * <code>repeated .glory_api.PagePermission pages = 11;</code>
      */
-    public Builder removePermissions(int index) {
-      if (permissionsBuilder == null) {
-        ensurePermissionsIsMutable();
-        permissions.remove(index);
+    public Builder removePages(int index) {
+      if (pagesBuilder == null) {
+        ensurePagesIsMutable();
+        pages.remove(index);
         onChanged();
       } else {
-        permissionsBuilder.remove(index);
+        pagesBuilder.remove(index);
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.Permission permissions = 11;</code>
+     * <code>repeated .glory_api.PagePermission pages = 11;</code>
      */
-    public com.zhijiejiaoyu.glory_api.user.Permission.Builder getPermissionsBuilder(
+    public com.zhijiejiaoyu.glory_api.user.PagePermission.Builder getPagesBuilder(
         int index) {
-      return getPermissionsFieldBuilder().getBuilder(index);
+      return getPagesFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .glory_api.Permission permissions = 11;</code>
+     * <code>repeated .glory_api.PagePermission pages = 11;</code>
      */
-    public com.zhijiejiaoyu.glory_api.user.PermissionOrBuilder getPermissionsOrBuilder(
+    public com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder getPagesOrBuilder(
         int index) {
-      if (permissionsBuilder == null) {
-        return permissions.get(index);  } else {
-        return permissionsBuilder.getMessageOrBuilder(index);
+      if (pagesBuilder == null) {
+        return pages.get(index);  } else {
+        return pagesBuilder.getMessageOrBuilder(index);
       }
     }
     /**
-     * <code>repeated .glory_api.Permission permissions = 11;</code>
+     * <code>repeated .glory_api.PagePermission pages = 11;</code>
      */
-    public java.util.List<? extends com.zhijiejiaoyu.glory_api.user.PermissionOrBuilder> 
-         getPermissionsOrBuilderList() {
-      if (permissionsBuilder != null) {
-        return permissionsBuilder.getMessageOrBuilderList();
+    public java.util.List<? extends com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder> 
+         getPagesOrBuilderList() {
+      if (pagesBuilder != null) {
+        return pagesBuilder.getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(permissions);
+        return java.util.Collections.unmodifiableList(pages);
       }
     }
     /**
-     * <code>repeated .glory_api.Permission permissions = 11;</code>
+     * <code>repeated .glory_api.PagePermission pages = 11;</code>
      */
-    public com.zhijiejiaoyu.glory_api.user.Permission.Builder addPermissionsBuilder() {
-      return getPermissionsFieldBuilder().addBuilder(
-          com.zhijiejiaoyu.glory_api.user.Permission.getDefaultInstance());
+    public com.zhijiejiaoyu.glory_api.user.PagePermission.Builder addPagesBuilder() {
+      return getPagesFieldBuilder().addBuilder(
+          com.zhijiejiaoyu.glory_api.user.PagePermission.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.Permission permissions = 11;</code>
+     * <code>repeated .glory_api.PagePermission pages = 11;</code>
      */
-    public com.zhijiejiaoyu.glory_api.user.Permission.Builder addPermissionsBuilder(
+    public com.zhijiejiaoyu.glory_api.user.PagePermission.Builder addPagesBuilder(
         int index) {
-      return getPermissionsFieldBuilder().addBuilder(
-          index, com.zhijiejiaoyu.glory_api.user.Permission.getDefaultInstance());
+      return getPagesFieldBuilder().addBuilder(
+          index, com.zhijiejiaoyu.glory_api.user.PagePermission.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.Permission permissions = 11;</code>
+     * <code>repeated .glory_api.PagePermission pages = 11;</code>
      */
-    public java.util.List<com.zhijiejiaoyu.glory_api.user.Permission.Builder> 
-         getPermissionsBuilderList() {
-      return getPermissionsFieldBuilder().getBuilderList();
+    public java.util.List<com.zhijiejiaoyu.glory_api.user.PagePermission.Builder> 
+         getPagesBuilderList() {
+      return getPagesFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.user.Permission, com.zhijiejiaoyu.glory_api.user.Permission.Builder, com.zhijiejiaoyu.glory_api.user.PermissionOrBuilder> 
-        getPermissionsFieldBuilder() {
-      if (permissionsBuilder == null) {
-        permissionsBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.zhijiejiaoyu.glory_api.user.Permission, com.zhijiejiaoyu.glory_api.user.Permission.Builder, com.zhijiejiaoyu.glory_api.user.PermissionOrBuilder>(
-                permissions_,
+        com.zhijiejiaoyu.glory_api.user.PagePermission, com.zhijiejiaoyu.glory_api.user.PagePermission.Builder, com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder> 
+        getPagesFieldBuilder() {
+      if (pagesBuilder == null) {
+        pagesBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.user.PagePermission, com.zhijiejiaoyu.glory_api.user.PagePermission.Builder, com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder>(
+                pages_,
                 ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
-        permissions = null;
+        pages = null;
       }
-      return permissionsBuilder;
+      return pagesBuilder;
     }
 
     private boolean isAdmin ;
