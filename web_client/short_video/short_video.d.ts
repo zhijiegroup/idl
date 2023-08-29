@@ -105,10 +105,10 @@ export interface ShortVideoComment {
   content?: string;
   /** 评论发布时间 */
   created_at?: string;
+  /** 评论回复数量 */
+  reply_count?: string;
   /** 评论用户信息 */
   user_info?: ShortVideoUser;
-  /** 上级评论 */
-  parent?: ShortVideoComment;
 }
 
 export interface CreateShortVideoRequest {

@@ -263,54 +263,35 @@ struct GloryApi_ShortVideoComment {
   // methods supported on all messages.
 
   /// 评论ID
-  var commentID: Int64 {
-    get {return _storage._commentID}
-    set {_uniqueStorage()._commentID = newValue}
-  }
+  var commentID: Int64 = 0
 
   /// 短视频ID
-  var shortVideoID: Int64 {
-    get {return _storage._shortVideoID}
-    set {_uniqueStorage()._shortVideoID = newValue}
-  }
+  var shortVideoID: Int64 = 0
 
   /// 评论内容
-  var content: String {
-    get {return _storage._content}
-    set {_uniqueStorage()._content = newValue}
-  }
+  var content: String = String()
 
   /// 评论发布时间
-  var createdAt: String {
-    get {return _storage._createdAt}
-    set {_uniqueStorage()._createdAt = newValue}
-  }
+  var createdAt: String = String()
+
+  /// 评论回复数量
+  var replyCount: Int64 = 0
 
   /// 评论用户信息
   var userInfo: GloryApi_ShortVideoUser {
-    get {return _storage._userInfo ?? GloryApi_ShortVideoUser()}
-    set {_uniqueStorage()._userInfo = newValue}
+    get {return _userInfo ?? GloryApi_ShortVideoUser()}
+    set {_userInfo = newValue}
   }
   /// Returns true if `userInfo` has been explicitly set.
-  var hasUserInfo: Bool {return _storage._userInfo != nil}
+  var hasUserInfo: Bool {return self._userInfo != nil}
   /// Clears the value of `userInfo`. Subsequent reads from it will return its default value.
-  mutating func clearUserInfo() {_uniqueStorage()._userInfo = nil}
-
-  /// 上级评论
-  var parent: GloryApi_ShortVideoComment {
-    get {return _storage._parent ?? GloryApi_ShortVideoComment()}
-    set {_uniqueStorage()._parent = newValue}
-  }
-  /// Returns true if `parent` has been explicitly set.
-  var hasParent: Bool {return _storage._parent != nil}
-  /// Clears the value of `parent`. Subsequent reads from it will return its default value.
-  mutating func clearParent() {_uniqueStorage()._parent = nil}
+  mutating func clearUserInfo() {self._userInfo = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  fileprivate var _storage = _StorageClass.defaultInstance
+  fileprivate var _userInfo: GloryApi_ShortVideoUser? = nil
 }
 
 struct GloryApi_CreateShortVideoRequest {
@@ -1999,102 +1980,60 @@ extension GloryApi_ShortVideoComment: SwiftProtobuf.Message, SwiftProtobuf._Mess
     2: .standard(proto: "short_video_id"),
     3: .same(proto: "content"),
     4: .standard(proto: "created_at"),
-    5: .standard(proto: "user_info"),
-    6: .same(proto: "parent"),
+    5: .standard(proto: "reply_count"),
+    6: .standard(proto: "user_info"),
   ]
 
-  fileprivate class _StorageClass {
-    var _commentID: Int64 = 0
-    var _shortVideoID: Int64 = 0
-    var _content: String = String()
-    var _createdAt: String = String()
-    var _userInfo: GloryApi_ShortVideoUser? = nil
-    var _parent: GloryApi_ShortVideoComment? = nil
-
-    static let defaultInstance = _StorageClass()
-
-    private init() {}
-
-    init(copying source: _StorageClass) {
-      _commentID = source._commentID
-      _shortVideoID = source._shortVideoID
-      _content = source._content
-      _createdAt = source._createdAt
-      _userInfo = source._userInfo
-      _parent = source._parent
-    }
-  }
-
-  fileprivate mutating func _uniqueStorage() -> _StorageClass {
-    if !isKnownUniquelyReferenced(&_storage) {
-      _storage = _StorageClass(copying: _storage)
-    }
-    return _storage
-  }
-
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    _ = _uniqueStorage()
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        // The use of inline closures is to circumvent an issue where the compiler
-        // allocates stack space for every case branch when no optimizations are
-        // enabled. https://github.com/apple/swift-protobuf/issues/1034
-        switch fieldNumber {
-        case 1: try { try decoder.decodeSingularInt64Field(value: &_storage._commentID) }()
-        case 2: try { try decoder.decodeSingularInt64Field(value: &_storage._shortVideoID) }()
-        case 3: try { try decoder.decodeSingularStringField(value: &_storage._content) }()
-        case 4: try { try decoder.decodeSingularStringField(value: &_storage._createdAt) }()
-        case 5: try { try decoder.decodeSingularMessageField(value: &_storage._userInfo) }()
-        case 6: try { try decoder.decodeSingularMessageField(value: &_storage._parent) }()
-        default: break
-        }
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.commentID) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.shortVideoID) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.content) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.replyCount) }()
+      case 6: try { try decoder.decodeSingularMessageField(value: &self._userInfo) }()
+      default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every if/case branch local when no optimizations
-      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-      // https://github.com/apple/swift-protobuf/issues/1182
-      if _storage._commentID != 0 {
-        try visitor.visitSingularInt64Field(value: _storage._commentID, fieldNumber: 1)
-      }
-      if _storage._shortVideoID != 0 {
-        try visitor.visitSingularInt64Field(value: _storage._shortVideoID, fieldNumber: 2)
-      }
-      if !_storage._content.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._content, fieldNumber: 3)
-      }
-      if !_storage._createdAt.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._createdAt, fieldNumber: 4)
-      }
-      try { if let v = _storage._userInfo {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-      } }()
-      try { if let v = _storage._parent {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-      } }()
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    if self.commentID != 0 {
+      try visitor.visitSingularInt64Field(value: self.commentID, fieldNumber: 1)
     }
+    if self.shortVideoID != 0 {
+      try visitor.visitSingularInt64Field(value: self.shortVideoID, fieldNumber: 2)
+    }
+    if !self.content.isEmpty {
+      try visitor.visitSingularStringField(value: self.content, fieldNumber: 3)
+    }
+    if !self.createdAt.isEmpty {
+      try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 4)
+    }
+    if self.replyCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.replyCount, fieldNumber: 5)
+    }
+    try { if let v = self._userInfo {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_ShortVideoComment, rhs: GloryApi_ShortVideoComment) -> Bool {
-    if lhs._storage !== rhs._storage {
-      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
-        let _storage = _args.0
-        let rhs_storage = _args.1
-        if _storage._commentID != rhs_storage._commentID {return false}
-        if _storage._shortVideoID != rhs_storage._shortVideoID {return false}
-        if _storage._content != rhs_storage._content {return false}
-        if _storage._createdAt != rhs_storage._createdAt {return false}
-        if _storage._userInfo != rhs_storage._userInfo {return false}
-        if _storage._parent != rhs_storage._parent {return false}
-        return true
-      }
-      if !storagesAreEqual {return false}
-    }
+    if lhs.commentID != rhs.commentID {return false}
+    if lhs.shortVideoID != rhs.shortVideoID {return false}
+    if lhs.content != rhs.content {return false}
+    if lhs.createdAt != rhs.createdAt {return false}
+    if lhs.replyCount != rhs.replyCount {return false}
+    if lhs._userInfo != rhs._userInfo {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
