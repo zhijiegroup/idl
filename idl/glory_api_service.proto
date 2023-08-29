@@ -160,6 +160,9 @@ service glory_api {
   rpc ListResource(ListResourceRequest) returns (ListResourceResponse) {
     option (api.post) = '/api/auth/list_resource';
   }
+  rpc GetRoleType(GetRoleTypeRequest) returns (GetRoleTypeResponse) {
+    option (api.get) = '/api/role/get_role_type';
+  }
 
   // shop
   rpc CreateShop(CreateShopRequest) returns (CreateShopResponse) {
