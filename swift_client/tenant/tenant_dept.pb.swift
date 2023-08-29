@@ -433,21 +433,21 @@ struct GloryApi_UpdateTenantUserRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
-  var user: GloryApi_User {
-    get {return _user ?? GloryApi_User()}
-    set {_user = newValue}
+  var tenantUser: GloryApi_TenantUser {
+    get {return _tenantUser ?? GloryApi_TenantUser()}
+    set {_tenantUser = newValue}
   }
-  /// Returns true if `user` has been explicitly set.
-  var hasUser: Bool {return self._user != nil}
-  /// Clears the value of `user`. Subsequent reads from it will return its default value.
-  mutating func clearUser() {self._user = nil}
+  /// Returns true if `tenantUser` has been explicitly set.
+  var hasTenantUser: Bool {return self._tenantUser != nil}
+  /// Clears the value of `tenantUser`. Subsequent reads from it will return its default value.
+  mutating func clearTenantUser() {self._tenantUser = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
   fileprivate var _baseRequest: Base_BaseRequest? = nil
-  fileprivate var _user: GloryApi_User? = nil
+  fileprivate var _tenantUser: GloryApi_TenantUser? = nil
 }
 
 struct GloryApi_UpdateTenantUserResponse {
@@ -485,7 +485,7 @@ struct GloryApi_GetTenantUserRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
-  var userID: Int64 = 0
+  var tenantUserID: Int64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -508,21 +508,21 @@ struct GloryApi_GetTenantUserResponse {
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
-  var user: GloryApi_User {
-    get {return _user ?? GloryApi_User()}
-    set {_user = newValue}
+  var tenantUser: GloryApi_TenantUser {
+    get {return _tenantUser ?? GloryApi_TenantUser()}
+    set {_tenantUser = newValue}
   }
-  /// Returns true if `user` has been explicitly set.
-  var hasUser: Bool {return self._user != nil}
-  /// Clears the value of `user`. Subsequent reads from it will return its default value.
-  mutating func clearUser() {self._user = nil}
+  /// Returns true if `tenantUser` has been explicitly set.
+  var hasTenantUser: Bool {return self._tenantUser != nil}
+  /// Clears the value of `tenantUser`. Subsequent reads from it will return its default value.
+  mutating func clearTenantUser() {self._tenantUser = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
-  fileprivate var _user: GloryApi_User? = nil
+  fileprivate var _tenantUser: GloryApi_TenantUser? = nil
 }
 
 struct GloryApi_ListTenantUserRequest {
@@ -1392,7 +1392,7 @@ extension GloryApi_UpdateTenantUserRequest: SwiftProtobuf.Message, SwiftProtobuf
   static let protoMessageName: String = _protobuf_package + ".UpdateTenantUserRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
-    2: .same(proto: "user"),
+    2: .standard(proto: "tenant_user"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1402,7 +1402,7 @@ extension GloryApi_UpdateTenantUserRequest: SwiftProtobuf.Message, SwiftProtobuf
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularMessageField(value: &self._user) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._tenantUser) }()
       default: break
       }
     }
@@ -1416,7 +1416,7 @@ extension GloryApi_UpdateTenantUserRequest: SwiftProtobuf.Message, SwiftProtobuf
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    try { if let v = self._user {
+    try { if let v = self._tenantUser {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
     } }()
     try unknownFields.traverse(visitor: &visitor)
@@ -1424,7 +1424,7 @@ extension GloryApi_UpdateTenantUserRequest: SwiftProtobuf.Message, SwiftProtobuf
 
   static func ==(lhs: GloryApi_UpdateTenantUserRequest, rhs: GloryApi_UpdateTenantUserRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
-    if lhs._user != rhs._user {return false}
+    if lhs._tenantUser != rhs._tenantUser {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -1470,7 +1470,7 @@ extension GloryApi_GetTenantUserRequest: SwiftProtobuf.Message, SwiftProtobuf._M
   static let protoMessageName: String = _protobuf_package + ".GetTenantUserRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
-    2: .standard(proto: "user_id"),
+    2: .standard(proto: "tenant_user_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1480,7 +1480,7 @@ extension GloryApi_GetTenantUserRequest: SwiftProtobuf.Message, SwiftProtobuf._M
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.userID) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.tenantUserID) }()
       default: break
       }
     }
@@ -1494,15 +1494,15 @@ extension GloryApi_GetTenantUserRequest: SwiftProtobuf.Message, SwiftProtobuf._M
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    if self.userID != 0 {
-      try visitor.visitSingularInt64Field(value: self.userID, fieldNumber: 2)
+    if self.tenantUserID != 0 {
+      try visitor.visitSingularInt64Field(value: self.tenantUserID, fieldNumber: 2)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_GetTenantUserRequest, rhs: GloryApi_GetTenantUserRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
-    if lhs.userID != rhs.userID {return false}
+    if lhs.tenantUserID != rhs.tenantUserID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -1512,7 +1512,7 @@ extension GloryApi_GetTenantUserResponse: SwiftProtobuf.Message, SwiftProtobuf._
   static let protoMessageName: String = _protobuf_package + ".GetTenantUserResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
-    2: .same(proto: "user"),
+    2: .standard(proto: "tenant_user"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1522,7 +1522,7 @@ extension GloryApi_GetTenantUserResponse: SwiftProtobuf.Message, SwiftProtobuf._
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
-      case 2: try { try decoder.decodeSingularMessageField(value: &self._user) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._tenantUser) }()
       default: break
       }
     }
@@ -1536,7 +1536,7 @@ extension GloryApi_GetTenantUserResponse: SwiftProtobuf.Message, SwiftProtobuf._
     try { if let v = self._baseResp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    try { if let v = self._user {
+    try { if let v = self._tenantUser {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
     } }()
     try unknownFields.traverse(visitor: &visitor)
@@ -1544,7 +1544,7 @@ extension GloryApi_GetTenantUserResponse: SwiftProtobuf.Message, SwiftProtobuf._
 
   static func ==(lhs: GloryApi_GetTenantUserResponse, rhs: GloryApi_GetTenantUserResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
-    if lhs._user != rhs._user {return false}
+    if lhs._tenantUser != rhs._tenantUser {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

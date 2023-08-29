@@ -23,17 +23,17 @@ public interface UpdateTenantUserRequestOrBuilder extends
   com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder();
 
   /**
-   * <code>.glory_api.User user = 2;</code>
-   * @return Whether the user field is set.
+   * <code>.glory_api.TenantUser tenant_user = 2;</code>
+   * @return Whether the tenantUser field is set.
    */
-  boolean hasUser();
+  boolean hasTenantUser();
   /**
-   * <code>.glory_api.User user = 2;</code>
-   * @return The user.
+   * <code>.glory_api.TenantUser tenant_user = 2;</code>
+   * @return The tenantUser.
    */
-  com.zhijiejiaoyu.glory_api.user.User getUser();
+  com.zhijiejiaoyu.glory_api.tenant.TenantUser getTenantUser();
   /**
-   * <code>.glory_api.User user = 2;</code>
+   * <code>.glory_api.TenantUser tenant_user = 2;</code>
    */
-  com.zhijiejiaoyu.glory_api.user.UserOrBuilder getUserOrBuilder();
+  com.zhijiejiaoyu.glory_api.tenant.TenantUserOrBuilder getTenantUserOrBuilder();
 }

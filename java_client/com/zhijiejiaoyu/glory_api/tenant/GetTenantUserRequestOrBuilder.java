@@ -23,8 +23,8 @@ public interface GetTenantUserRequestOrBuilder extends
   com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder();
 
   /**
-   * <code>int64 user_id = 2;</code>
-   * @return The userId.
+   * <code>int64 tenant_user_id = 2;</code>
+   * @return The tenantUserId.
    */
-  long getUserId();
+  long getTenantUserId();
 }

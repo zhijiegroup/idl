@@ -62,14 +62,14 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            com.zhijiejiaoyu.glory_api.user.User.Builder subBuilder = null;
-            if (user != null) {
-              subBuilder = user.toBuilder();
+            com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder subBuilder = null;
+            if (tenantUser != null) {
+              subBuilder = tenantUser.toBuilder();
             }
-            user = input.readMessage(com.zhijiejiaoyu.glory_api.user.User.parser(), extensionRegistry);
+            tenantUser = input.readMessage(com.zhijiejiaoyu.glory_api.tenant.TenantUser.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(user);
-              user = subBuilder.buildPartial();
+              subBuilder.mergeFrom(tenantUser);
+              tenantUser = subBuilder.buildPartial();
             }
 
             break;
@@ -132,30 +132,30 @@ private static final long serialVersionUID = 0L;
     return getBaseRequest();
   }
 
-  public static final int USER_FIELD_NUMBER = 2;
-  private com.zhijiejiaoyu.glory_api.user.User user;
+  public static final int TENANT_USER_FIELD_NUMBER = 2;
+  private com.zhijiejiaoyu.glory_api.tenant.TenantUser tenantUser;
   /**
-   * <code>.glory_api.User user = 2;</code>
-   * @return Whether the user field is set.
+   * <code>.glory_api.TenantUser tenant_user = 2;</code>
+   * @return Whether the tenantUser field is set.
    */
   @java.lang.Override
-  public boolean hasUser() {
-    return user != null;
+  public boolean hasTenantUser() {
+    return tenantUser != null;
   }
   /**
-   * <code>.glory_api.User user = 2;</code>
-   * @return The user.
+   * <code>.glory_api.TenantUser tenant_user = 2;</code>
+   * @return The tenantUser.
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.user.User getUser() {
-    return user == null ? com.zhijiejiaoyu.glory_api.user.User.getDefaultInstance() : user;
+  public com.zhijiejiaoyu.glory_api.tenant.TenantUser getTenantUser() {
+    return tenantUser == null ? com.zhijiejiaoyu.glory_api.tenant.TenantUser.getDefaultInstance() : tenantUser;
   }
   /**
-   * <code>.glory_api.User user = 2;</code>
+   * <code>.glory_api.TenantUser tenant_user = 2;</code>
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.user.UserOrBuilder getUserOrBuilder() {
-    return getUser();
+  public com.zhijiejiaoyu.glory_api.tenant.TenantUserOrBuilder getTenantUserOrBuilder() {
+    return getTenantUser();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -175,8 +175,8 @@ private static final long serialVersionUID = 0L;
     if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
-    if (user != null) {
-      output.writeMessage(2, getUser());
+    if (tenantUser != null) {
+      output.writeMessage(2, getTenantUser());
     }
     unknownFields.writeTo(output);
   }
@@ -191,9 +191,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseRequest());
     }
-    if (user != null) {
+    if (tenantUser != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getUser());
+        .computeMessageSize(2, getTenantUser());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -215,10 +215,10 @@ private static final long serialVersionUID = 0L;
       if (!getBaseRequest()
           .equals(other.getBaseRequest())) return false;
     }
-    if (hasUser() != other.hasUser()) return false;
-    if (hasUser()) {
-      if (!getUser()
-          .equals(other.getUser())) return false;
+    if (hasTenantUser() != other.hasTenantUser()) return false;
+    if (hasTenantUser()) {
+      if (!getTenantUser()
+          .equals(other.getTenantUser())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -235,9 +235,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
       hash = (53 * hash) + getBaseRequest().hashCode();
     }
-    if (hasUser()) {
-      hash = (37 * hash) + USER_FIELD_NUMBER;
-      hash = (53 * hash) + getUser().hashCode();
+    if (hasTenantUser()) {
+      hash = (37 * hash) + TENANT_USER_FIELD_NUMBER;
+      hash = (53 * hash) + getTenantUser().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -378,11 +378,11 @@ private static final long serialVersionUID = 0L;
         baseRequest = null;
         baseRequestBuilder = null;
       }
-      if (userBuilder == null) {
-        user = null;
+      if (tenantUserBuilder == null) {
+        tenantUser = null;
       } else {
-        user = null;
-        userBuilder = null;
+        tenantUser = null;
+        tenantUserBuilder = null;
       }
       return this;
     }
@@ -415,10 +415,10 @@ private static final long serialVersionUID = 0L;
       } else {
         result.baseRequest = baseRequestBuilder.build();
       }
-      if (userBuilder == null) {
-        result.user = user;
+      if (tenantUserBuilder == null) {
+        result.tenantUser = tenantUser;
       } else {
-        result.user = userBuilder.build();
+        result.tenantUser = tenantUserBuilder.build();
       }
       onBuilt();
       return result;
@@ -471,8 +471,8 @@ private static final long serialVersionUID = 0L;
       if (other.hasBaseRequest()) {
         mergeBaseRequest(other.getBaseRequest());
       }
-      if (other.hasUser()) {
-        mergeUser(other.getUser());
+      if (other.hasTenantUser()) {
+        mergeTenantUser(other.getTenantUser());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -622,123 +622,123 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder;
     }
 
-    private com.zhijiejiaoyu.glory_api.user.User user;
+    private com.zhijiejiaoyu.glory_api.tenant.TenantUser tenantUser;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder> userBuilder;
+        com.zhijiejiaoyu.glory_api.tenant.TenantUser, com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder, com.zhijiejiaoyu.glory_api.tenant.TenantUserOrBuilder> tenantUserBuilder;
     /**
-     * <code>.glory_api.User user = 2;</code>
-     * @return Whether the user field is set.
+     * <code>.glory_api.TenantUser tenant_user = 2;</code>
+     * @return Whether the tenantUser field is set.
      */
-    public boolean hasUser() {
-      return userBuilder != null || user != null;
+    public boolean hasTenantUser() {
+      return tenantUserBuilder != null || tenantUser != null;
     }
     /**
-     * <code>.glory_api.User user = 2;</code>
-     * @return The user.
+     * <code>.glory_api.TenantUser tenant_user = 2;</code>
+     * @return The tenantUser.
      */
-    public com.zhijiejiaoyu.glory_api.user.User getUser() {
-      if (userBuilder == null) {
-        return user == null ? com.zhijiejiaoyu.glory_api.user.User.getDefaultInstance() : user;
+    public com.zhijiejiaoyu.glory_api.tenant.TenantUser getTenantUser() {
+      if (tenantUserBuilder == null) {
+        return tenantUser == null ? com.zhijiejiaoyu.glory_api.tenant.TenantUser.getDefaultInstance() : tenantUser;
       } else {
-        return userBuilder.getMessage();
+        return tenantUserBuilder.getMessage();
       }
     }
     /**
-     * <code>.glory_api.User user = 2;</code>
+     * <code>.glory_api.TenantUser tenant_user = 2;</code>
      */
-    public Builder setUser(com.zhijiejiaoyu.glory_api.user.User value) {
-      if (userBuilder == null) {
+    public Builder setTenantUser(com.zhijiejiaoyu.glory_api.tenant.TenantUser value) {
+      if (tenantUserBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        user = value;
+        tenantUser = value;
         onChanged();
       } else {
-        userBuilder.setMessage(value);
+        tenantUserBuilder.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.glory_api.User user = 2;</code>
+     * <code>.glory_api.TenantUser tenant_user = 2;</code>
      */
-    public Builder setUser(
-        com.zhijiejiaoyu.glory_api.user.User.Builder builderForValue) {
-      if (userBuilder == null) {
-        user = builderForValue.build();
+    public Builder setTenantUser(
+        com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder builderForValue) {
+      if (tenantUserBuilder == null) {
+        tenantUser = builderForValue.build();
         onChanged();
       } else {
-        userBuilder.setMessage(builderForValue.build());
+        tenantUserBuilder.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.glory_api.User user = 2;</code>
+     * <code>.glory_api.TenantUser tenant_user = 2;</code>
      */
-    public Builder mergeUser(com.zhijiejiaoyu.glory_api.user.User value) {
-      if (userBuilder == null) {
-        if (user != null) {
-          user =
-            com.zhijiejiaoyu.glory_api.user.User.newBuilder(user).mergeFrom(value).buildPartial();
+    public Builder mergeTenantUser(com.zhijiejiaoyu.glory_api.tenant.TenantUser value) {
+      if (tenantUserBuilder == null) {
+        if (tenantUser != null) {
+          tenantUser =
+            com.zhijiejiaoyu.glory_api.tenant.TenantUser.newBuilder(tenantUser).mergeFrom(value).buildPartial();
         } else {
-          user = value;
+          tenantUser = value;
         }
         onChanged();
       } else {
-        userBuilder.mergeFrom(value);
+        tenantUserBuilder.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.glory_api.User user = 2;</code>
+     * <code>.glory_api.TenantUser tenant_user = 2;</code>
      */
-    public Builder clearUser() {
-      if (userBuilder == null) {
-        user = null;
+    public Builder clearTenantUser() {
+      if (tenantUserBuilder == null) {
+        tenantUser = null;
         onChanged();
       } else {
-        user = null;
-        userBuilder = null;
+        tenantUser = null;
+        tenantUserBuilder = null;
       }
 
       return this;
     }
     /**
-     * <code>.glory_api.User user = 2;</code>
+     * <code>.glory_api.TenantUser tenant_user = 2;</code>
      */
-    public com.zhijiejiaoyu.glory_api.user.User.Builder getUserBuilder() {
+    public com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder getTenantUserBuilder() {
       
       onChanged();
-      return getUserFieldBuilder().getBuilder();
+      return getTenantUserFieldBuilder().getBuilder();
     }
     /**
-     * <code>.glory_api.User user = 2;</code>
+     * <code>.glory_api.TenantUser tenant_user = 2;</code>
      */
-    public com.zhijiejiaoyu.glory_api.user.UserOrBuilder getUserOrBuilder() {
-      if (userBuilder != null) {
-        return userBuilder.getMessageOrBuilder();
+    public com.zhijiejiaoyu.glory_api.tenant.TenantUserOrBuilder getTenantUserOrBuilder() {
+      if (tenantUserBuilder != null) {
+        return tenantUserBuilder.getMessageOrBuilder();
       } else {
-        return user == null ?
-            com.zhijiejiaoyu.glory_api.user.User.getDefaultInstance() : user;
+        return tenantUser == null ?
+            com.zhijiejiaoyu.glory_api.tenant.TenantUser.getDefaultInstance() : tenantUser;
       }
     }
     /**
-     * <code>.glory_api.User user = 2;</code>
+     * <code>.glory_api.TenantUser tenant_user = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder> 
-        getUserFieldBuilder() {
-      if (userBuilder == null) {
-        userBuilder = new com.google.protobuf.SingleFieldBuilderV3<
-            com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder>(
-                getUser(),
+        com.zhijiejiaoyu.glory_api.tenant.TenantUser, com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder, com.zhijiejiaoyu.glory_api.tenant.TenantUserOrBuilder> 
+        getTenantUserFieldBuilder() {
+      if (tenantUserBuilder == null) {
+        tenantUserBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.tenant.TenantUser, com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder, com.zhijiejiaoyu.glory_api.tenant.TenantUserOrBuilder>(
+                getTenantUser(),
                 getParentForChildren(),
                 isClean());
-        user = null;
+        tenantUser = null;
       }
-      return userBuilder;
+      return tenantUserBuilder;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
