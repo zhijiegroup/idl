@@ -63,8 +63,8 @@ message ShortVideoComment {
   int64 short_video_id = 2; // 短视频ID
   string content = 3; // 评论内容
   string created_at = 4; // 评论发布时间
-  ShortVideoUser user_info = 5; // 评论用户信息
-  ShortVideoComment parent = 6; // 上级评论
+  int64 reply_count = 5; // 评论回复数量
+  ShortVideoUser user_info = 6; // 评论用户信息
 }
 
 message CreateShortVideoRequest {

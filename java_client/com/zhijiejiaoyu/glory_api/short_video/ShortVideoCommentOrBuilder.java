@@ -69,10 +69,20 @@ public interface ShortVideoCommentOrBuilder extends
 
   /**
    * <pre>
+   * 评论回复数量
+   * </pre>
+   *
+   * <code>int64 reply_count = 5;</code>
+   * @return The replyCount.
+   */
+  long getReplyCount();
+
+  /**
+   * <pre>
    * 评论用户信息
    * </pre>
    *
-   * <code>.glory_api.ShortVideoUser user_info = 5;</code>
+   * <code>.glory_api.ShortVideoUser user_info = 6;</code>
    * @return Whether the userInfo field is set.
    */
   boolean hasUserInfo();
@@ -81,7 +91,7 @@ public interface ShortVideoCommentOrBuilder extends
    * 评论用户信息
    * </pre>
    *
-   * <code>.glory_api.ShortVideoUser user_info = 5;</code>
+   * <code>.glory_api.ShortVideoUser user_info = 6;</code>
    * @return The userInfo.
    */
   com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser getUserInfo();
@@ -90,34 +100,7 @@ public interface ShortVideoCommentOrBuilder extends
    * 评论用户信息
    * </pre>
    *
-   * <code>.glory_api.ShortVideoUser user_info = 5;</code>
+   * <code>.glory_api.ShortVideoUser user_info = 6;</code>
    */
   com.zhijiejiaoyu.glory_api.short_video.ShortVideoUserOrBuilder getUserInfoOrBuilder();
-
-  /**
-   * <pre>
-   * 上级评论
-   * </pre>
-   *
-   * <code>.glory_api.ShortVideoComment parent = 6;</code>
-   * @return Whether the parent field is set.
-   */
-  boolean hasParent();
-  /**
-   * <pre>
-   * 上级评论
-   * </pre>
-   *
-   * <code>.glory_api.ShortVideoComment parent = 6;</code>
-   * @return The parent.
-   */
-  com.zhijiejiaoyu.glory_api.short_video.ShortVideoComment getParent();
-  /**
-   * <pre>
-   * 上级评论
-   * </pre>
-   *
-   * <code>.glory_api.ShortVideoComment parent = 6;</code>
-   */
-  com.zhijiejiaoyu.glory_api.short_video.ShortVideoCommentOrBuilder getParentOrBuilder();
 }

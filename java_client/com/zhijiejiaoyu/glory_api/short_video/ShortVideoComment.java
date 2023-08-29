@@ -72,7 +72,12 @@ private static final long serialVersionUID = 0L;
             createdAt = s;
             break;
           }
-          case 42: {
+          case 40: {
+
+            replyCount = input.readInt64();
+            break;
+          }
+          case 50: {
             com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser.Builder subBuilder = null;
             if (userInfo != null) {
               subBuilder = userInfo.toBuilder();
@@ -81,19 +86,6 @@ private static final long serialVersionUID = 0L;
             if (subBuilder != null) {
               subBuilder.mergeFrom(userInfo);
               userInfo = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 50: {
-            com.zhijiejiaoyu.glory_api.short_video.ShortVideoComment.Builder subBuilder = null;
-            if (parent != null) {
-              subBuilder = parent.toBuilder();
-            }
-            parent = input.readMessage(com.zhijiejiaoyu.glory_api.short_video.ShortVideoComment.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(parent);
-              parent = subBuilder.buildPartial();
             }
 
             break;
@@ -252,14 +244,29 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int USER_INFO_FIELD_NUMBER = 5;
+  public static final int REPLY_COUNT_FIELD_NUMBER = 5;
+  private long replyCount;
+  /**
+   * <pre>
+   * 评论回复数量
+   * </pre>
+   *
+   * <code>int64 reply_count = 5;</code>
+   * @return The replyCount.
+   */
+  @java.lang.Override
+  public long getReplyCount() {
+    return replyCount;
+  }
+
+  public static final int USER_INFO_FIELD_NUMBER = 6;
   private com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser userInfo;
   /**
    * <pre>
    * 评论用户信息
    * </pre>
    *
-   * <code>.glory_api.ShortVideoUser user_info = 5;</code>
+   * <code>.glory_api.ShortVideoUser user_info = 6;</code>
    * @return Whether the userInfo field is set.
    */
   @java.lang.Override
@@ -271,7 +278,7 @@ private static final long serialVersionUID = 0L;
    * 评论用户信息
    * </pre>
    *
-   * <code>.glory_api.ShortVideoUser user_info = 5;</code>
+   * <code>.glory_api.ShortVideoUser user_info = 6;</code>
    * @return The userInfo.
    */
   @java.lang.Override
@@ -283,49 +290,11 @@ private static final long serialVersionUID = 0L;
    * 评论用户信息
    * </pre>
    *
-   * <code>.glory_api.ShortVideoUser user_info = 5;</code>
+   * <code>.glory_api.ShortVideoUser user_info = 6;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.short_video.ShortVideoUserOrBuilder getUserInfoOrBuilder() {
     return getUserInfo();
-  }
-
-  public static final int PARENT_FIELD_NUMBER = 6;
-  private com.zhijiejiaoyu.glory_api.short_video.ShortVideoComment parent;
-  /**
-   * <pre>
-   * 上级评论
-   * </pre>
-   *
-   * <code>.glory_api.ShortVideoComment parent = 6;</code>
-   * @return Whether the parent field is set.
-   */
-  @java.lang.Override
-  public boolean hasParent() {
-    return parent != null;
-  }
-  /**
-   * <pre>
-   * 上级评论
-   * </pre>
-   *
-   * <code>.glory_api.ShortVideoComment parent = 6;</code>
-   * @return The parent.
-   */
-  @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.short_video.ShortVideoComment getParent() {
-    return parent == null ? com.zhijiejiaoyu.glory_api.short_video.ShortVideoComment.getDefaultInstance() : parent;
-  }
-  /**
-   * <pre>
-   * 上级评论
-   * </pre>
-   *
-   * <code>.glory_api.ShortVideoComment parent = 6;</code>
-   */
-  @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.short_video.ShortVideoCommentOrBuilder getParentOrBuilder() {
-    return getParent();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -354,11 +323,11 @@ private static final long serialVersionUID = 0L;
     if (!getCreatedAtBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, createdAt);
     }
-    if (userInfo != null) {
-      output.writeMessage(5, getUserInfo());
+    if (replyCount != 0L) {
+      output.writeInt64(5, replyCount);
     }
-    if (parent != null) {
-      output.writeMessage(6, getParent());
+    if (userInfo != null) {
+      output.writeMessage(6, getUserInfo());
     }
     unknownFields.writeTo(output);
   }
@@ -383,13 +352,13 @@ private static final long serialVersionUID = 0L;
     if (!getCreatedAtBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, createdAt);
     }
+    if (replyCount != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(5, replyCount);
+    }
     if (userInfo != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getUserInfo());
-    }
-    if (parent != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, getParent());
+        .computeMessageSize(6, getUserInfo());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -414,15 +383,12 @@ private static final long serialVersionUID = 0L;
         .equals(other.getContent())) return false;
     if (!getCreatedAt()
         .equals(other.getCreatedAt())) return false;
+    if (getReplyCount()
+        != other.getReplyCount()) return false;
     if (hasUserInfo() != other.hasUserInfo()) return false;
     if (hasUserInfo()) {
       if (!getUserInfo()
           .equals(other.getUserInfo())) return false;
-    }
-    if (hasParent() != other.hasParent()) return false;
-    if (hasParent()) {
-      if (!getParent()
-          .equals(other.getParent())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -445,13 +411,12 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getContent().hashCode();
     hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
     hash = (53 * hash) + getCreatedAt().hashCode();
+    hash = (37 * hash) + REPLY_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getReplyCount());
     if (hasUserInfo()) {
       hash = (37 * hash) + USER_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getUserInfo().hashCode();
-    }
-    if (hasParent()) {
-      hash = (37 * hash) + PARENT_FIELD_NUMBER;
-      hash = (53 * hash) + getParent().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -594,17 +559,13 @@ private static final long serialVersionUID = 0L;
 
       createdAt = "";
 
+      replyCount = 0L;
+
       if (userInfoBuilder == null) {
         userInfo = null;
       } else {
         userInfo = null;
         userInfoBuilder = null;
-      }
-      if (parentBuilder == null) {
-        parent = null;
-      } else {
-        parent = null;
-        parentBuilder = null;
       }
       return this;
     }
@@ -636,15 +597,11 @@ private static final long serialVersionUID = 0L;
       result.shortVideoId = shortVideoId;
       result.content = content;
       result.createdAt = createdAt;
+      result.replyCount = replyCount;
       if (userInfoBuilder == null) {
         result.userInfo = userInfo;
       } else {
         result.userInfo = userInfoBuilder.build();
-      }
-      if (parentBuilder == null) {
-        result.parent = parent;
-      } else {
-        result.parent = parentBuilder.build();
       }
       onBuilt();
       return result;
@@ -708,11 +665,11 @@ private static final long serialVersionUID = 0L;
         createdAt = other.createdAt;
         onChanged();
       }
+      if (other.getReplyCount() != 0L) {
+        setReplyCount(other.getReplyCount());
+      }
       if (other.hasUserInfo()) {
         mergeUserInfo(other.getUserInfo());
-      }
-      if (other.hasParent()) {
-        mergeParent(other.getParent());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1021,6 +978,49 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private long replyCount ;
+    /**
+     * <pre>
+     * 评论回复数量
+     * </pre>
+     *
+     * <code>int64 reply_count = 5;</code>
+     * @return The replyCount.
+     */
+    @java.lang.Override
+    public long getReplyCount() {
+      return replyCount;
+    }
+    /**
+     * <pre>
+     * 评论回复数量
+     * </pre>
+     *
+     * <code>int64 reply_count = 5;</code>
+     * @param value The replyCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReplyCount(long value) {
+      
+      replyCount = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 评论回复数量
+     * </pre>
+     *
+     * <code>int64 reply_count = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearReplyCount() {
+      
+      replyCount = 0L;
+      onChanged();
+      return this;
+    }
+
     private com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser userInfo;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser, com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser.Builder, com.zhijiejiaoyu.glory_api.short_video.ShortVideoUserOrBuilder> userInfoBuilder;
@@ -1029,7 +1029,7 @@ private static final long serialVersionUID = 0L;
      * 评论用户信息
      * </pre>
      *
-     * <code>.glory_api.ShortVideoUser user_info = 5;</code>
+     * <code>.glory_api.ShortVideoUser user_info = 6;</code>
      * @return Whether the userInfo field is set.
      */
     public boolean hasUserInfo() {
@@ -1040,7 +1040,7 @@ private static final long serialVersionUID = 0L;
      * 评论用户信息
      * </pre>
      *
-     * <code>.glory_api.ShortVideoUser user_info = 5;</code>
+     * <code>.glory_api.ShortVideoUser user_info = 6;</code>
      * @return The userInfo.
      */
     public com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser getUserInfo() {
@@ -1055,7 +1055,7 @@ private static final long serialVersionUID = 0L;
      * 评论用户信息
      * </pre>
      *
-     * <code>.glory_api.ShortVideoUser user_info = 5;</code>
+     * <code>.glory_api.ShortVideoUser user_info = 6;</code>
      */
     public Builder setUserInfo(com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser value) {
       if (userInfoBuilder == null) {
@@ -1075,7 +1075,7 @@ private static final long serialVersionUID = 0L;
      * 评论用户信息
      * </pre>
      *
-     * <code>.glory_api.ShortVideoUser user_info = 5;</code>
+     * <code>.glory_api.ShortVideoUser user_info = 6;</code>
      */
     public Builder setUserInfo(
         com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser.Builder builderForValue) {
@@ -1093,7 +1093,7 @@ private static final long serialVersionUID = 0L;
      * 评论用户信息
      * </pre>
      *
-     * <code>.glory_api.ShortVideoUser user_info = 5;</code>
+     * <code>.glory_api.ShortVideoUser user_info = 6;</code>
      */
     public Builder mergeUserInfo(com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser value) {
       if (userInfoBuilder == null) {
@@ -1115,7 +1115,7 @@ private static final long serialVersionUID = 0L;
      * 评论用户信息
      * </pre>
      *
-     * <code>.glory_api.ShortVideoUser user_info = 5;</code>
+     * <code>.glory_api.ShortVideoUser user_info = 6;</code>
      */
     public Builder clearUserInfo() {
       if (userInfoBuilder == null) {
@@ -1133,7 +1133,7 @@ private static final long serialVersionUID = 0L;
      * 评论用户信息
      * </pre>
      *
-     * <code>.glory_api.ShortVideoUser user_info = 5;</code>
+     * <code>.glory_api.ShortVideoUser user_info = 6;</code>
      */
     public com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser.Builder getUserInfoBuilder() {
       
@@ -1145,7 +1145,7 @@ private static final long serialVersionUID = 0L;
      * 评论用户信息
      * </pre>
      *
-     * <code>.glory_api.ShortVideoUser user_info = 5;</code>
+     * <code>.glory_api.ShortVideoUser user_info = 6;</code>
      */
     public com.zhijiejiaoyu.glory_api.short_video.ShortVideoUserOrBuilder getUserInfoOrBuilder() {
       if (userInfoBuilder != null) {
@@ -1160,7 +1160,7 @@ private static final long serialVersionUID = 0L;
      * 评论用户信息
      * </pre>
      *
-     * <code>.glory_api.ShortVideoUser user_info = 5;</code>
+     * <code>.glory_api.ShortVideoUser user_info = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser, com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser.Builder, com.zhijiejiaoyu.glory_api.short_video.ShortVideoUserOrBuilder> 
@@ -1174,161 +1174,6 @@ private static final long serialVersionUID = 0L;
         userInfo = null;
       }
       return userInfoBuilder;
-    }
-
-    private com.zhijiejiaoyu.glory_api.short_video.ShortVideoComment parent;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.short_video.ShortVideoComment, com.zhijiejiaoyu.glory_api.short_video.ShortVideoComment.Builder, com.zhijiejiaoyu.glory_api.short_video.ShortVideoCommentOrBuilder> parentBuilder;
-    /**
-     * <pre>
-     * 上级评论
-     * </pre>
-     *
-     * <code>.glory_api.ShortVideoComment parent = 6;</code>
-     * @return Whether the parent field is set.
-     */
-    public boolean hasParent() {
-      return parentBuilder != null || parent != null;
-    }
-    /**
-     * <pre>
-     * 上级评论
-     * </pre>
-     *
-     * <code>.glory_api.ShortVideoComment parent = 6;</code>
-     * @return The parent.
-     */
-    public com.zhijiejiaoyu.glory_api.short_video.ShortVideoComment getParent() {
-      if (parentBuilder == null) {
-        return parent == null ? com.zhijiejiaoyu.glory_api.short_video.ShortVideoComment.getDefaultInstance() : parent;
-      } else {
-        return parentBuilder.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * 上级评论
-     * </pre>
-     *
-     * <code>.glory_api.ShortVideoComment parent = 6;</code>
-     */
-    public Builder setParent(com.zhijiejiaoyu.glory_api.short_video.ShortVideoComment value) {
-      if (parentBuilder == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        parent = value;
-        onChanged();
-      } else {
-        parentBuilder.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * 上级评论
-     * </pre>
-     *
-     * <code>.glory_api.ShortVideoComment parent = 6;</code>
-     */
-    public Builder setParent(
-        com.zhijiejiaoyu.glory_api.short_video.ShortVideoComment.Builder builderForValue) {
-      if (parentBuilder == null) {
-        parent = builderForValue.build();
-        onChanged();
-      } else {
-        parentBuilder.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * 上级评论
-     * </pre>
-     *
-     * <code>.glory_api.ShortVideoComment parent = 6;</code>
-     */
-    public Builder mergeParent(com.zhijiejiaoyu.glory_api.short_video.ShortVideoComment value) {
-      if (parentBuilder == null) {
-        if (parent != null) {
-          parent =
-            com.zhijiejiaoyu.glory_api.short_video.ShortVideoComment.newBuilder(parent).mergeFrom(value).buildPartial();
-        } else {
-          parent = value;
-        }
-        onChanged();
-      } else {
-        parentBuilder.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * 上级评论
-     * </pre>
-     *
-     * <code>.glory_api.ShortVideoComment parent = 6;</code>
-     */
-    public Builder clearParent() {
-      if (parentBuilder == null) {
-        parent = null;
-        onChanged();
-      } else {
-        parent = null;
-        parentBuilder = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * 上级评论
-     * </pre>
-     *
-     * <code>.glory_api.ShortVideoComment parent = 6;</code>
-     */
-    public com.zhijiejiaoyu.glory_api.short_video.ShortVideoComment.Builder getParentBuilder() {
-      
-      onChanged();
-      return getParentFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * 上级评论
-     * </pre>
-     *
-     * <code>.glory_api.ShortVideoComment parent = 6;</code>
-     */
-    public com.zhijiejiaoyu.glory_api.short_video.ShortVideoCommentOrBuilder getParentOrBuilder() {
-      if (parentBuilder != null) {
-        return parentBuilder.getMessageOrBuilder();
-      } else {
-        return parent == null ?
-            com.zhijiejiaoyu.glory_api.short_video.ShortVideoComment.getDefaultInstance() : parent;
-      }
-    }
-    /**
-     * <pre>
-     * 上级评论
-     * </pre>
-     *
-     * <code>.glory_api.ShortVideoComment parent = 6;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.short_video.ShortVideoComment, com.zhijiejiaoyu.glory_api.short_video.ShortVideoComment.Builder, com.zhijiejiaoyu.glory_api.short_video.ShortVideoCommentOrBuilder> 
-        getParentFieldBuilder() {
-      if (parentBuilder == null) {
-        parentBuilder = new com.google.protobuf.SingleFieldBuilderV3<
-            com.zhijiejiaoyu.glory_api.short_video.ShortVideoComment, com.zhijiejiaoyu.glory_api.short_video.ShortVideoComment.Builder, com.zhijiejiaoyu.glory_api.short_video.ShortVideoCommentOrBuilder>(
-                getParent(),
-                getParentForChildren(),
-                isClean());
-        parent = null;
-      }
-      return parentBuilder;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
