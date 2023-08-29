@@ -28,7 +28,7 @@ message User {
   repeated ShopAccess shop_access = 9;  //判断用户的shop访问权限
 
   TenantDept tenant_dept = 10;
-  repeated Permission permissions = 11;
+  repeated PagePermission pages = 11;
   bool is_admin = 12;
 }
 
@@ -111,8 +111,9 @@ message CreateRolePagePermissionRequest {
   base.BaseRequest base_request = 1;
   int64 tenant_id = 2;
   string role_name = 3;
-  string role_description = 4;
-  repeated PagePermission page_permission = 5;
+  string role_type = 4;
+  string role_description = 5;
+  repeated PagePermission page_permission = 6;
 }
 
 message CreateRolePagePermissionResponse {
@@ -131,15 +132,20 @@ message GetRolePagePermissionResponse {
   int64 tenant_id = 2;
   int64 role_id = 3;
   string role_name = 4;
-  string role_description = 5;
-  repeated PagePermission page_permission = 6;
+  string role_type = 5;
+  string role_description = 6;
+  bool role_readonly = 7;
+  repeated PagePermission page_permission = 8;
 }
 
 message UpdateRolePagePermissionRequest {
   base.BaseRequest base_request = 1;
   int64 tenant_id = 2;
   int64 role_id = 3;
-  repeated PagePermission page_permission = 4;
+  string role_name = 4;
+  string role_type = 5;
+  string role_description = 6;
+  repeated PagePermission page_permission = 7;
 }
 
 message UpdateRolePagePermissionResponse {
@@ -169,6 +175,20 @@ message ListPermissionResponse {
   base.BaseResponse base_resp = 1;
   repeated Permission permission =2; // permission列表
   base.PaginationResponse pagination = 100;
+}
+
+message RoleType {
+  string label = 1;
+  string value = 2;
+}
+
+message GetRoleTypeRequest {
+  base.BaseRequest base_request = 1;
+}
+
+message GetRoleTypeResponse {
+  base.BaseResponse base_resp = 1;
+  repeated RoleType types = 2;
 }
 
 message Role {
