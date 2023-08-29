@@ -404,26 +404,28 @@ public final class ShortVideoOuterClass {
       "e_request\030\001 \001(\0132\021.base.BaseRequest\022\026\n\016sh" +
       "ort_video_id\030\002 \001(\003\022\020\n\010favorite\030\003 \001(\010\"C\n\032" +
       "FavoriteShortVideoResponse\022%\n\tbase_resp\030" +
-      "\001 \001(\0132\022.base.BaseResponse\"u\n\036CreateShort" +
-      "VideoCommentRequest\022\'\n\014base_request\030\001 \001(" +
-      "\0132\021.base.BaseRequest\022\017\n\007content\030\002 \001(\t\022\031\n" +
-      "\021parent_comment_id\030\003 \001(\003\"\\\n\037CreateShortV" +
-      "ideoCommentResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
-      ".base.BaseResponse\022\022\n\ncomment_id\030\002 \001(\003\"i" +
-      "\n\036DeleteShortVideoCommentRequest\022\'\n\014base" +
-      "_request\030\001 \001(\0132\021.base.BaseRequest\022\036\n\026sho" +
-      "rt_video_comment_id\030\002 \001(\003\"J\n\037DeleteShort" +
-      "VideoCommentResponse\022\'\n\014base_request\030\001 \001" +
-      "(\0132\021.base.BaseRequest\"\214\001\n\034ListShortVideo" +
-      "CommentRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
-      "ase.BaseRequest\022\026\n\016short_video_id\030\002 \001(\003\022" +
-      "+\n\npagination\030d \001(\0132\027.base.PaginationReq" +
-      "uest\"\264\001\n\035ListShortVideoCommentResponse\022%" +
-      "\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022>\n" +
-      "\030short_video_comment_list\030\002 \003(\0132\034.glory_" +
-      "api.ShortVideoComment\022,\n\npagination\030d \001(" +
-      "\0132\030.base.PaginationResponseB*\n&com.zhiji" +
-      "ejiaoyu.glory_api.short_videoP\001b\006proto3"
+      "\001 \001(\0132\022.base.BaseResponse\"\215\001\n\036CreateShor" +
+      "tVideoCommentRequest\022\'\n\014base_request\030\001 \001" +
+      "(\0132\021.base.BaseRequest\022\026\n\016short_video_id\030" +
+      "\002 \001(\003\022\017\n\007content\030\003 \001(\t\022\031\n\021parent_comment" +
+      "_id\030\004 \001(\003\"\\\n\037CreateShortVideoCommentResp" +
+      "onse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespo" +
+      "nse\022\022\n\ncomment_id\030\002 \001(\003\"i\n\036DeleteShortVi" +
+      "deoCommentRequest\022\'\n\014base_request\030\001 \001(\0132" +
+      "\021.base.BaseRequest\022\036\n\026short_video_commen" +
+      "t_id\030\002 \001(\003\"L\n\037DeleteShortVideoCommentRes" +
+      "ponse\022)\n\rbase_response\030\001 \001(\0132\022.base.Base" +
+      "Response\"\247\001\n\034ListShortVideoCommentReques" +
+      "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
+      "st\022\026\n\016short_video_id\030\002 \001(\003\022\031\n\021parent_com" +
+      "ment_id\030\003 \001(\003\022+\n\npagination\030d \001(\0132\027.base" +
+      ".PaginationRequest\"\264\001\n\035ListShortVideoCom" +
+      "mentResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.B" +
+      "aseResponse\022>\n\030short_video_comment_list\030" +
+      "\002 \003(\0132\034.glory_api.ShortVideoComment\022,\n\np" +
+      "agination\030d \001(\0132\030.base.PaginationRespons" +
+      "eB*\n&com.zhijiejiaoyu.glory_api.short_vi" +
+      "deoP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -687,7 +689,7 @@ public final class ShortVideoOuterClass {
     internal_static_glory_api_CreateShortVideoCommentRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CreateShortVideoCommentRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "Content", "ParentCommentId", });
+        new java.lang.String[] { "BaseRequest", "ShortVideoId", "Content", "ParentCommentId", });
     internal_static_glory_api_CreateShortVideoCommentResponse_descriptor =
       getDescriptor().getMessageTypes().get(43);
     internal_static_glory_api_CreateShortVideoCommentResponse_fieldAccessorTable = new
@@ -705,13 +707,13 @@ public final class ShortVideoOuterClass {
     internal_static_glory_api_DeleteShortVideoCommentResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteShortVideoCommentResponse_descriptor,
-        new java.lang.String[] { "BaseRequest", });
+        new java.lang.String[] { "BaseResponse", });
     internal_static_glory_api_ListShortVideoCommentRequest_descriptor =
       getDescriptor().getMessageTypes().get(46);
     internal_static_glory_api_ListShortVideoCommentRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListShortVideoCommentRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "ShortVideoId", "Pagination", });
+        new java.lang.String[] { "BaseRequest", "ShortVideoId", "ParentCommentId", "Pagination", });
     internal_static_glory_api_ListShortVideoCommentResponse_descriptor =
       getDescriptor().getMessageTypes().get(47);
     internal_static_glory_api_ListShortVideoCommentResponse_fieldAccessorTable = new

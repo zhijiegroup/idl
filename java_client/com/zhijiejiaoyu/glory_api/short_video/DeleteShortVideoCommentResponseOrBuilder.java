@@ -8,17 +8,17 @@ public interface DeleteShortVideoCommentResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.base.BaseRequest base_request = 1;</code>
-   * @return Whether the baseRequest field is set.
+   * <code>.base.BaseResponse base_response = 1;</code>
+   * @return Whether the baseResponse field is set.
    */
-  boolean hasBaseRequest();
+  boolean hasBaseResponse();
   /**
-   * <code>.base.BaseRequest base_request = 1;</code>
-   * @return The baseRequest.
+   * <code>.base.BaseResponse base_response = 1;</code>
+   * @return The baseResponse.
    */
-  com.zhijiejiaoyu.base.BaseRequest getBaseRequest();
+  com.zhijiejiaoyu.base.BaseResponse getBaseResponse();
   /**
-   * <code>.base.BaseRequest base_request = 1;</code>
+   * <code>.base.BaseResponse base_response = 1;</code>
    */
-  com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder();
+  com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseResponseOrBuilder();
 }

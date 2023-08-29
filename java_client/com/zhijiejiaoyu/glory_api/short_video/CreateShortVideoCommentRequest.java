@@ -66,13 +66,18 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 18: {
+          case 16: {
+
+            shortVideoId = input.readInt64();
+            break;
+          }
+          case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
             content = s;
             break;
           }
-          case 24: {
+          case 32: {
 
             parentCommentId = input.readInt64();
             break;
@@ -135,14 +140,29 @@ private static final long serialVersionUID = 0L;
     return getBaseRequest();
   }
 
-  public static final int CONTENT_FIELD_NUMBER = 2;
+  public static final int SHORT_VIDEO_ID_FIELD_NUMBER = 2;
+  private long shortVideoId;
+  /**
+   * <pre>
+   * 短视频ID
+   * </pre>
+   *
+   * <code>int64 short_video_id = 2;</code>
+   * @return The shortVideoId.
+   */
+  @java.lang.Override
+  public long getShortVideoId() {
+    return shortVideoId;
+  }
+
+  public static final int CONTENT_FIELD_NUMBER = 3;
   private volatile java.lang.Object content;
   /**
    * <pre>
    * 评论内容
    * </pre>
    *
-   * <code>string content = 2;</code>
+   * <code>string content = 3;</code>
    * @return The content.
    */
   @java.lang.Override
@@ -163,7 +183,7 @@ private static final long serialVersionUID = 0L;
    * 评论内容
    * </pre>
    *
-   * <code>string content = 2;</code>
+   * <code>string content = 3;</code>
    * @return The bytes for content.
    */
   @java.lang.Override
@@ -181,14 +201,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int PARENT_COMMENT_ID_FIELD_NUMBER = 3;
+  public static final int PARENT_COMMENT_ID_FIELD_NUMBER = 4;
   private long parentCommentId;
   /**
    * <pre>
    * 上级评论ID
    * </pre>
    *
-   * <code>int64 parent_comment_id = 3;</code>
+   * <code>int64 parent_comment_id = 4;</code>
    * @return The parentCommentId.
    */
   @java.lang.Override
@@ -213,11 +233,14 @@ private static final long serialVersionUID = 0L;
     if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
+    if (shortVideoId != 0L) {
+      output.writeInt64(2, shortVideoId);
+    }
     if (!getContentBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, content);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, content);
     }
     if (parentCommentId != 0L) {
-      output.writeInt64(3, parentCommentId);
+      output.writeInt64(4, parentCommentId);
     }
     unknownFields.writeTo(output);
   }
@@ -232,12 +255,16 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseRequest());
     }
+    if (shortVideoId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(2, shortVideoId);
+    }
     if (!getContentBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, content);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, content);
     }
     if (parentCommentId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(3, parentCommentId);
+        .computeInt64Size(4, parentCommentId);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -259,6 +286,8 @@ private static final long serialVersionUID = 0L;
       if (!getBaseRequest()
           .equals(other.getBaseRequest())) return false;
     }
+    if (getShortVideoId()
+        != other.getShortVideoId()) return false;
     if (!getContent()
         .equals(other.getContent())) return false;
     if (getParentCommentId()
@@ -278,6 +307,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
       hash = (53 * hash) + getBaseRequest().hashCode();
     }
+    hash = (37 * hash) + SHORT_VIDEO_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getShortVideoId());
     hash = (37 * hash) + CONTENT_FIELD_NUMBER;
     hash = (53 * hash) + getContent().hashCode();
     hash = (37 * hash) + PARENT_COMMENT_ID_FIELD_NUMBER;
@@ -426,6 +458,8 @@ private static final long serialVersionUID = 0L;
         baseRequest = null;
         baseRequestBuilder = null;
       }
+      shortVideoId = 0L;
+
       content = "";
 
       parentCommentId = 0L;
@@ -461,6 +495,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.baseRequest = baseRequestBuilder.build();
       }
+      result.shortVideoId = shortVideoId;
       result.content = content;
       result.parentCommentId = parentCommentId;
       onBuilt();
@@ -513,6 +548,9 @@ private static final long serialVersionUID = 0L;
       if (other == com.zhijiejiaoyu.glory_api.short_video.CreateShortVideoCommentRequest.getDefaultInstance()) return this;
       if (other.hasBaseRequest()) {
         mergeBaseRequest(other.getBaseRequest());
+      }
+      if (other.getShortVideoId() != 0L) {
+        setShortVideoId(other.getShortVideoId());
       }
       if (!other.getContent().isEmpty()) {
         content = other.content;
@@ -669,13 +707,56 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder;
     }
 
+    private long shortVideoId ;
+    /**
+     * <pre>
+     * 短视频ID
+     * </pre>
+     *
+     * <code>int64 short_video_id = 2;</code>
+     * @return The shortVideoId.
+     */
+    @java.lang.Override
+    public long getShortVideoId() {
+      return shortVideoId;
+    }
+    /**
+     * <pre>
+     * 短视频ID
+     * </pre>
+     *
+     * <code>int64 short_video_id = 2;</code>
+     * @param value The shortVideoId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setShortVideoId(long value) {
+      
+      shortVideoId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 短视频ID
+     * </pre>
+     *
+     * <code>int64 short_video_id = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearShortVideoId() {
+      
+      shortVideoId = 0L;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object content = "";
     /**
      * <pre>
      * 评论内容
      * </pre>
      *
-     * <code>string content = 2;</code>
+     * <code>string content = 3;</code>
      * @return The content.
      */
     public java.lang.String getContent() {
@@ -695,7 +776,7 @@ private static final long serialVersionUID = 0L;
      * 评论内容
      * </pre>
      *
-     * <code>string content = 2;</code>
+     * <code>string content = 3;</code>
      * @return The bytes for content.
      */
     public com.google.protobuf.ByteString
@@ -716,7 +797,7 @@ private static final long serialVersionUID = 0L;
      * 评论内容
      * </pre>
      *
-     * <code>string content = 2;</code>
+     * <code>string content = 3;</code>
      * @param value The content to set.
      * @return This builder for chaining.
      */
@@ -735,7 +816,7 @@ private static final long serialVersionUID = 0L;
      * 评论内容
      * </pre>
      *
-     * <code>string content = 2;</code>
+     * <code>string content = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearContent() {
@@ -749,7 +830,7 @@ private static final long serialVersionUID = 0L;
      * 评论内容
      * </pre>
      *
-     * <code>string content = 2;</code>
+     * <code>string content = 3;</code>
      * @param value The bytes for content to set.
      * @return This builder for chaining.
      */
@@ -771,7 +852,7 @@ private static final long serialVersionUID = 0L;
      * 上级评论ID
      * </pre>
      *
-     * <code>int64 parent_comment_id = 3;</code>
+     * <code>int64 parent_comment_id = 4;</code>
      * @return The parentCommentId.
      */
     @java.lang.Override
@@ -783,7 +864,7 @@ private static final long serialVersionUID = 0L;
      * 上级评论ID
      * </pre>
      *
-     * <code>int64 parent_comment_id = 3;</code>
+     * <code>int64 parent_comment_id = 4;</code>
      * @param value The parentCommentId to set.
      * @return This builder for chaining.
      */
@@ -798,7 +879,7 @@ private static final long serialVersionUID = 0L;
      * 上级评论ID
      * </pre>
      *
-     * <code>int64 parent_comment_id = 3;</code>
+     * <code>int64 parent_comment_id = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearParentCommentId() {

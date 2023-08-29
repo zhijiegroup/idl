@@ -359,6 +359,8 @@ export interface FavoriteShortVideoResponse {
 /** 发布评论 */
 export interface CreateShortVideoCommentRequest {
   base_request?: base.BaseRequest;
+  /** 短视频ID */
+  short_video_id?: string;
   /** 评论内容 */
   content?: string;
   /** 上级评论ID */
@@ -377,13 +379,14 @@ export interface DeleteShortVideoCommentRequest {
 }
 
 export interface DeleteShortVideoCommentResponse {
-  base_request?: base.BaseRequest;
+  base_response?: base.BaseResponse;
 }
 
 /** 短视频评论列表 */
 export interface ListShortVideoCommentRequest {
   base_request?: base.BaseRequest;
   short_video_id?: string;
+  parent_comment_id?: string;
   pagination?: base.PaginationRequest;
 }
 
