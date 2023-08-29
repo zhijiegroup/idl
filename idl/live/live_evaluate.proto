@@ -5,13 +5,14 @@ option java_multiple_files = true;
 
 import "base.proto";
 
+// NOTE: class 改为 clas 为了和java的class关键字不冲突
 message GetEvaluateSelectorRequest {
     base.BaseRequest base_request = 1;
   }
 message GetEvaluateSelectorResponse {
     base.BaseResponse base_resp = 1;
     repeated string major = 2;
-    repeated string class = 100;
+    repeated string clas = 100;
 }
 
 message EvaluateRoom {
@@ -137,7 +138,7 @@ message UserLiveData {
     int64 user_id = 1;
     string user_name = 2;
     string major = 3;
-    string class = 4;
+    string clas = 4;
     double total_duration = 5;
     int64 total_like = 6;
     int64 total_order =7;
@@ -148,7 +149,7 @@ message ListStudentEvalutionsRequest {
     base.BaseRequest base_request = 1;
     string name = 2;
     string major = 3;
-    string class = 4;
+    string clas = 4;
     base.PaginationRequest pagination = 5;
 }
 
@@ -180,7 +181,7 @@ message LiveRankDetail {
     string user_name = 1;
     string tenant = 2;
     string major = 3;
-    string class = 4;
+    string clas = 4;
     int64 live_duration = 5;
 }
 
@@ -188,7 +189,7 @@ message LiveRankMine {
     string user_name = 1;
     string tenant = 2;
     string major = 3;
-    string class = 4;
+    string clas = 4;
     int64 live_duration = 5;
     int64 rank = 6;
 }
@@ -243,7 +244,7 @@ message LiveLikeRankDetail {
     string user_name = 1;
     string tenant = 2;
     string major = 3;
-    string class = 4;
+    string clas = 4;
     int64 like_amount = 5;
 }
 
@@ -251,7 +252,7 @@ message LiveLikeRankMine {
     string user_name = 1;
     string tenant = 2;
     string major = 3;
-    string class = 4;
+    string clas = 4;
     int64 like_amount = 5;
     int64 rank = 6;
 }
@@ -265,7 +266,7 @@ message LiveOrderRankDetail {
     string user_name = 1;
     string tenant = 2;
     string major = 3;
-    string class = 4;
+    string clas = 4;
     int64 order_amount = 5;
 }
 
@@ -273,7 +274,7 @@ message LiveOrderRankMine {
     string user_name = 1;
     string tenant = 2;
     string major = 3;
-    string class = 4;
+    string clas = 4;
     int64 order_amount = 5;
     int64 rank = 6;
 }
@@ -287,7 +288,7 @@ message LiveEvaluationRankDetail {
     string user_name = 1;
     string tenant = 2;
     string major = 3;
-    string class = 4;
+    string clas = 4;
     double score = 5;
 }
 
@@ -295,7 +296,7 @@ message LiveEvaluationRankMine {
     string user_name = 1;
     string tenant = 2;
     string major = 3;
-    string class = 4;
+    string clas = 4;
     double score = 5;
     int64 rank = 6;
 }

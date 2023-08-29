@@ -19,7 +19,7 @@ private static final long serialVersionUID = 0L;
     userName = "";
     tenant = "";
     major = "";
-    class = "";
+    clas = "";
   }
 
   @java.lang.Override
@@ -73,7 +73,7 @@ private static final long serialVersionUID = 0L;
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            class = s;
+            clas = s;
             break;
           }
           case 41: {
@@ -232,38 +232,38 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int CLASS_FIELD_NUMBER = 4;
-  private volatile java.lang.Object class;
+  public static final int CLAS_FIELD_NUMBER = 4;
+  private volatile java.lang.Object clas;
   /**
-   * <code>string class = 4;</code>
-   * @return The class.
+   * <code>string clas = 4;</code>
+   * @return The clas.
    */
   @java.lang.Override
-  public java.lang.String getClass_() {
-    java.lang.Object ref = class;
+  public java.lang.String getClas() {
+    java.lang.Object ref = clas;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      class = s;
+      clas = s;
       return s;
     }
   }
   /**
-   * <code>string class = 4;</code>
-   * @return The bytes for class.
+   * <code>string clas = 4;</code>
+   * @return The bytes for clas.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getClass_Bytes() {
-    java.lang.Object ref = class;
+      getClasBytes() {
+    java.lang.Object ref = clas;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      class = b;
+      clas = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -315,8 +315,8 @@ private static final long serialVersionUID = 0L;
     if (!getMajorBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, major);
     }
-    if (!getClass_Bytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, class);
+    if (!getClasBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, clas);
     }
     if (score != 0D) {
       output.writeDouble(5, score);
@@ -342,8 +342,8 @@ private static final long serialVersionUID = 0L;
     if (!getMajorBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, major);
     }
-    if (!getClass_Bytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, class);
+    if (!getClasBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, clas);
     }
     if (score != 0D) {
       size += com.google.protobuf.CodedOutputStream
@@ -374,8 +374,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getTenant())) return false;
     if (!getMajor()
         .equals(other.getMajor())) return false;
-    if (!getClass_()
-        .equals(other.getClass_())) return false;
+    if (!getClas()
+        .equals(other.getClas())) return false;
     if (java.lang.Double.doubleToLongBits(getScore())
         != java.lang.Double.doubleToLongBits(
             other.getScore())) return false;
@@ -398,8 +398,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getTenant().hashCode();
     hash = (37 * hash) + MAJOR_FIELD_NUMBER;
     hash = (53 * hash) + getMajor().hashCode();
-    hash = (37 * hash) + CLASS_FIELD_NUMBER;
-    hash = (53 * hash) + getClass_().hashCode();
+    hash = (37 * hash) + CLAS_FIELD_NUMBER;
+    hash = (53 * hash) + getClas().hashCode();
     hash = (37 * hash) + SCORE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         java.lang.Double.doubleToLongBits(getScore()));
@@ -545,7 +545,7 @@ private static final long serialVersionUID = 0L;
 
       major = "";
 
-      class = "";
+      clas = "";
 
       score = 0D;
 
@@ -580,7 +580,7 @@ private static final long serialVersionUID = 0L;
       result.userName = userName;
       result.tenant = tenant;
       result.major = major;
-      result.class = class;
+      result.clas = clas;
       result.score = score;
       result.rank = rank;
       onBuilt();
@@ -643,8 +643,8 @@ private static final long serialVersionUID = 0L;
         major = other.major;
         onChanged();
       }
-      if (!other.getClass_().isEmpty()) {
-        class = other.class;
+      if (!other.getClas().isEmpty()) {
+        clas = other.clas;
         onChanged();
       }
       if (other.getScore() != 0D) {
@@ -910,78 +910,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object class = "";
+    private java.lang.Object clas = "";
     /**
-     * <code>string class = 4;</code>
-     * @return The class.
+     * <code>string clas = 4;</code>
+     * @return The clas.
      */
-    public java.lang.String getClass_() {
-      java.lang.Object ref = class;
+    public java.lang.String getClas() {
+      java.lang.Object ref = clas;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        class = s;
+        clas = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string class = 4;</code>
-     * @return The bytes for class.
+     * <code>string clas = 4;</code>
+     * @return The bytes for clas.
      */
     public com.google.protobuf.ByteString
-        getClass_Bytes() {
-      java.lang.Object ref = class;
+        getClasBytes() {
+      java.lang.Object ref = clas;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        class = b;
+        clas = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string class = 4;</code>
-     * @param value The class to set.
+     * <code>string clas = 4;</code>
+     * @param value The clas to set.
      * @return This builder for chaining.
      */
-    public Builder setClass_(
+    public Builder setClas(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      class = value;
+      clas = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string class = 4;</code>
+     * <code>string clas = 4;</code>
      * @return This builder for chaining.
      */
-    public Builder clearClass_() {
+    public Builder clearClas() {
       
-      class = getDefaultInstance().getClass_();
+      clas = getDefaultInstance().getClas();
       onChanged();
       return this;
     }
     /**
-     * <code>string class = 4;</code>
-     * @param value The bytes for class to set.
+     * <code>string clas = 4;</code>
+     * @param value The bytes for clas to set.
      * @return This builder for chaining.
      */
-    public Builder setClass_Bytes(
+    public Builder setClasBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      class = value;
+      clas = value;
       onChanged();
       return this;
     }

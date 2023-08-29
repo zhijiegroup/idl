@@ -20,6 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
+/// NOTE: class 改为 clas 为了和java的class关键字不冲突
 struct GloryApi_GetEvaluateSelectorRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -57,7 +58,7 @@ struct GloryApi_GetEvaluateSelectorResponse {
 
   var major: [String] = []
 
-  var `class`: [String] = []
+  var clas: [String] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -494,7 +495,7 @@ struct GloryApi_UserLiveData {
 
   var major: String = String()
 
-  var `class`: String = String()
+  var clas: String = String()
 
   var totalDuration: Double = 0
 
@@ -527,7 +528,7 @@ struct GloryApi_ListStudentEvalutionsRequest {
 
   var major: String = String()
 
-  var `class`: String = String()
+  var clas: String = String()
 
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
@@ -678,7 +679,7 @@ struct GloryApi_LiveRankDetail {
 
   var major: String = String()
 
-  var `class`: String = String()
+  var clas: String = String()
 
   var liveDuration: Int64 = 0
 
@@ -698,7 +699,7 @@ struct GloryApi_LiveRankMine {
 
   var major: String = String()
 
-  var `class`: String = String()
+  var clas: String = String()
 
   var liveDuration: Int64 = 0
 
@@ -865,7 +866,7 @@ struct GloryApi_LiveLikeRankDetail {
 
   var major: String = String()
 
-  var `class`: String = String()
+  var clas: String = String()
 
   var likeAmount: Int64 = 0
 
@@ -885,7 +886,7 @@ struct GloryApi_LiveLikeRankMine {
 
   var major: String = String()
 
-  var `class`: String = String()
+  var clas: String = String()
 
   var likeAmount: Int64 = 0
 
@@ -930,7 +931,7 @@ struct GloryApi_LiveOrderRankDetail {
 
   var major: String = String()
 
-  var `class`: String = String()
+  var clas: String = String()
 
   var orderAmount: Int64 = 0
 
@@ -950,7 +951,7 @@ struct GloryApi_LiveOrderRankMine {
 
   var major: String = String()
 
-  var `class`: String = String()
+  var clas: String = String()
 
   var orderAmount: Int64 = 0
 
@@ -995,7 +996,7 @@ struct GloryApi_LiveEvaluationRankDetail {
 
   var major: String = String()
 
-  var `class`: String = String()
+  var clas: String = String()
 
   var score: Double = 0
 
@@ -1015,7 +1016,7 @@ struct GloryApi_LiveEvaluationRankMine {
 
   var major: String = String()
 
-  var `class`: String = String()
+  var clas: String = String()
 
   var score: Double = 0
 
@@ -1244,7 +1245,7 @@ extension GloryApi_GetEvaluateSelectorResponse: SwiftProtobuf.Message, SwiftProt
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
     2: .same(proto: "major"),
-    100: .same(proto: "class"),
+    100: .same(proto: "clas"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1255,7 +1256,7 @@ extension GloryApi_GetEvaluateSelectorResponse: SwiftProtobuf.Message, SwiftProt
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
       case 2: try { try decoder.decodeRepeatedStringField(value: &self.major) }()
-      case 100: try { try decoder.decodeRepeatedStringField(value: &self.`class`) }()
+      case 100: try { try decoder.decodeRepeatedStringField(value: &self.clas) }()
       default: break
       }
     }
@@ -1272,8 +1273,8 @@ extension GloryApi_GetEvaluateSelectorResponse: SwiftProtobuf.Message, SwiftProt
     if !self.major.isEmpty {
       try visitor.visitRepeatedStringField(value: self.major, fieldNumber: 2)
     }
-    if !self.`class`.isEmpty {
-      try visitor.visitRepeatedStringField(value: self.`class`, fieldNumber: 100)
+    if !self.clas.isEmpty {
+      try visitor.visitRepeatedStringField(value: self.clas, fieldNumber: 100)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1281,7 +1282,7 @@ extension GloryApi_GetEvaluateSelectorResponse: SwiftProtobuf.Message, SwiftProt
   static func ==(lhs: GloryApi_GetEvaluateSelectorResponse, rhs: GloryApi_GetEvaluateSelectorResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.major != rhs.major {return false}
-    if lhs.`class` != rhs.`class` {return false}
+    if lhs.clas != rhs.clas {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -2151,7 +2152,7 @@ extension GloryApi_UserLiveData: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     1: .standard(proto: "user_id"),
     2: .standard(proto: "user_name"),
     3: .same(proto: "major"),
-    4: .same(proto: "class"),
+    4: .same(proto: "clas"),
     5: .standard(proto: "total_duration"),
     6: .standard(proto: "total_like"),
     7: .standard(proto: "total_order"),
@@ -2167,7 +2168,7 @@ extension GloryApi_UserLiveData: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
       case 1: try { try decoder.decodeSingularInt64Field(value: &self.userID) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.userName) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.major) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.`class`) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.clas) }()
       case 5: try { try decoder.decodeSingularDoubleField(value: &self.totalDuration) }()
       case 6: try { try decoder.decodeSingularInt64Field(value: &self.totalLike) }()
       case 7: try { try decoder.decodeSingularInt64Field(value: &self.totalOrder) }()
@@ -2187,8 +2188,8 @@ extension GloryApi_UserLiveData: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     if !self.major.isEmpty {
       try visitor.visitSingularStringField(value: self.major, fieldNumber: 3)
     }
-    if !self.`class`.isEmpty {
-      try visitor.visitSingularStringField(value: self.`class`, fieldNumber: 4)
+    if !self.clas.isEmpty {
+      try visitor.visitSingularStringField(value: self.clas, fieldNumber: 4)
     }
     if self.totalDuration != 0 {
       try visitor.visitSingularDoubleField(value: self.totalDuration, fieldNumber: 5)
@@ -2209,7 +2210,7 @@ extension GloryApi_UserLiveData: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     if lhs.userID != rhs.userID {return false}
     if lhs.userName != rhs.userName {return false}
     if lhs.major != rhs.major {return false}
-    if lhs.`class` != rhs.`class` {return false}
+    if lhs.clas != rhs.clas {return false}
     if lhs.totalDuration != rhs.totalDuration {return false}
     if lhs.totalLike != rhs.totalLike {return false}
     if lhs.totalOrder != rhs.totalOrder {return false}
@@ -2225,7 +2226,7 @@ extension GloryApi_ListStudentEvalutionsRequest: SwiftProtobuf.Message, SwiftPro
     1: .standard(proto: "base_request"),
     2: .same(proto: "name"),
     3: .same(proto: "major"),
-    4: .same(proto: "class"),
+    4: .same(proto: "clas"),
     5: .same(proto: "pagination"),
   ]
 
@@ -2238,7 +2239,7 @@ extension GloryApi_ListStudentEvalutionsRequest: SwiftProtobuf.Message, SwiftPro
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.name) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.major) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.`class`) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.clas) }()
       case 5: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -2259,8 +2260,8 @@ extension GloryApi_ListStudentEvalutionsRequest: SwiftProtobuf.Message, SwiftPro
     if !self.major.isEmpty {
       try visitor.visitSingularStringField(value: self.major, fieldNumber: 3)
     }
-    if !self.`class`.isEmpty {
-      try visitor.visitSingularStringField(value: self.`class`, fieldNumber: 4)
+    if !self.clas.isEmpty {
+      try visitor.visitSingularStringField(value: self.clas, fieldNumber: 4)
     }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
@@ -2272,7 +2273,7 @@ extension GloryApi_ListStudentEvalutionsRequest: SwiftProtobuf.Message, SwiftPro
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.name != rhs.name {return false}
     if lhs.major != rhs.major {return false}
-    if lhs.`class` != rhs.`class` {return false}
+    if lhs.clas != rhs.clas {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -2489,7 +2490,7 @@ extension GloryApi_LiveRankDetail: SwiftProtobuf.Message, SwiftProtobuf._Message
     1: .standard(proto: "user_name"),
     2: .same(proto: "tenant"),
     3: .same(proto: "major"),
-    4: .same(proto: "class"),
+    4: .same(proto: "clas"),
     5: .standard(proto: "live_duration"),
   ]
 
@@ -2502,7 +2503,7 @@ extension GloryApi_LiveRankDetail: SwiftProtobuf.Message, SwiftProtobuf._Message
       case 1: try { try decoder.decodeSingularStringField(value: &self.userName) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.tenant) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.major) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.`class`) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.clas) }()
       case 5: try { try decoder.decodeSingularInt64Field(value: &self.liveDuration) }()
       default: break
       }
@@ -2519,8 +2520,8 @@ extension GloryApi_LiveRankDetail: SwiftProtobuf.Message, SwiftProtobuf._Message
     if !self.major.isEmpty {
       try visitor.visitSingularStringField(value: self.major, fieldNumber: 3)
     }
-    if !self.`class`.isEmpty {
-      try visitor.visitSingularStringField(value: self.`class`, fieldNumber: 4)
+    if !self.clas.isEmpty {
+      try visitor.visitSingularStringField(value: self.clas, fieldNumber: 4)
     }
     if self.liveDuration != 0 {
       try visitor.visitSingularInt64Field(value: self.liveDuration, fieldNumber: 5)
@@ -2532,7 +2533,7 @@ extension GloryApi_LiveRankDetail: SwiftProtobuf.Message, SwiftProtobuf._Message
     if lhs.userName != rhs.userName {return false}
     if lhs.tenant != rhs.tenant {return false}
     if lhs.major != rhs.major {return false}
-    if lhs.`class` != rhs.`class` {return false}
+    if lhs.clas != rhs.clas {return false}
     if lhs.liveDuration != rhs.liveDuration {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -2545,7 +2546,7 @@ extension GloryApi_LiveRankMine: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     1: .standard(proto: "user_name"),
     2: .same(proto: "tenant"),
     3: .same(proto: "major"),
-    4: .same(proto: "class"),
+    4: .same(proto: "clas"),
     5: .standard(proto: "live_duration"),
     6: .same(proto: "rank"),
   ]
@@ -2559,7 +2560,7 @@ extension GloryApi_LiveRankMine: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
       case 1: try { try decoder.decodeSingularStringField(value: &self.userName) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.tenant) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.major) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.`class`) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.clas) }()
       case 5: try { try decoder.decodeSingularInt64Field(value: &self.liveDuration) }()
       case 6: try { try decoder.decodeSingularInt64Field(value: &self.rank) }()
       default: break
@@ -2577,8 +2578,8 @@ extension GloryApi_LiveRankMine: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     if !self.major.isEmpty {
       try visitor.visitSingularStringField(value: self.major, fieldNumber: 3)
     }
-    if !self.`class`.isEmpty {
-      try visitor.visitSingularStringField(value: self.`class`, fieldNumber: 4)
+    if !self.clas.isEmpty {
+      try visitor.visitSingularStringField(value: self.clas, fieldNumber: 4)
     }
     if self.liveDuration != 0 {
       try visitor.visitSingularInt64Field(value: self.liveDuration, fieldNumber: 5)
@@ -2593,7 +2594,7 @@ extension GloryApi_LiveRankMine: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     if lhs.userName != rhs.userName {return false}
     if lhs.tenant != rhs.tenant {return false}
     if lhs.major != rhs.major {return false}
-    if lhs.`class` != rhs.`class` {return false}
+    if lhs.clas != rhs.clas {return false}
     if lhs.liveDuration != rhs.liveDuration {return false}
     if lhs.rank != rhs.rank {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -2945,7 +2946,7 @@ extension GloryApi_LiveLikeRankDetail: SwiftProtobuf.Message, SwiftProtobuf._Mes
     1: .standard(proto: "user_name"),
     2: .same(proto: "tenant"),
     3: .same(proto: "major"),
-    4: .same(proto: "class"),
+    4: .same(proto: "clas"),
     5: .standard(proto: "like_amount"),
   ]
 
@@ -2958,7 +2959,7 @@ extension GloryApi_LiveLikeRankDetail: SwiftProtobuf.Message, SwiftProtobuf._Mes
       case 1: try { try decoder.decodeSingularStringField(value: &self.userName) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.tenant) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.major) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.`class`) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.clas) }()
       case 5: try { try decoder.decodeSingularInt64Field(value: &self.likeAmount) }()
       default: break
       }
@@ -2975,8 +2976,8 @@ extension GloryApi_LiveLikeRankDetail: SwiftProtobuf.Message, SwiftProtobuf._Mes
     if !self.major.isEmpty {
       try visitor.visitSingularStringField(value: self.major, fieldNumber: 3)
     }
-    if !self.`class`.isEmpty {
-      try visitor.visitSingularStringField(value: self.`class`, fieldNumber: 4)
+    if !self.clas.isEmpty {
+      try visitor.visitSingularStringField(value: self.clas, fieldNumber: 4)
     }
     if self.likeAmount != 0 {
       try visitor.visitSingularInt64Field(value: self.likeAmount, fieldNumber: 5)
@@ -2988,7 +2989,7 @@ extension GloryApi_LiveLikeRankDetail: SwiftProtobuf.Message, SwiftProtobuf._Mes
     if lhs.userName != rhs.userName {return false}
     if lhs.tenant != rhs.tenant {return false}
     if lhs.major != rhs.major {return false}
-    if lhs.`class` != rhs.`class` {return false}
+    if lhs.clas != rhs.clas {return false}
     if lhs.likeAmount != rhs.likeAmount {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -3001,7 +3002,7 @@ extension GloryApi_LiveLikeRankMine: SwiftProtobuf.Message, SwiftProtobuf._Messa
     1: .standard(proto: "user_name"),
     2: .same(proto: "tenant"),
     3: .same(proto: "major"),
-    4: .same(proto: "class"),
+    4: .same(proto: "clas"),
     5: .standard(proto: "like_amount"),
     6: .same(proto: "rank"),
   ]
@@ -3015,7 +3016,7 @@ extension GloryApi_LiveLikeRankMine: SwiftProtobuf.Message, SwiftProtobuf._Messa
       case 1: try { try decoder.decodeSingularStringField(value: &self.userName) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.tenant) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.major) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.`class`) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.clas) }()
       case 5: try { try decoder.decodeSingularInt64Field(value: &self.likeAmount) }()
       case 6: try { try decoder.decodeSingularInt64Field(value: &self.rank) }()
       default: break
@@ -3033,8 +3034,8 @@ extension GloryApi_LiveLikeRankMine: SwiftProtobuf.Message, SwiftProtobuf._Messa
     if !self.major.isEmpty {
       try visitor.visitSingularStringField(value: self.major, fieldNumber: 3)
     }
-    if !self.`class`.isEmpty {
-      try visitor.visitSingularStringField(value: self.`class`, fieldNumber: 4)
+    if !self.clas.isEmpty {
+      try visitor.visitSingularStringField(value: self.clas, fieldNumber: 4)
     }
     if self.likeAmount != 0 {
       try visitor.visitSingularInt64Field(value: self.likeAmount, fieldNumber: 5)
@@ -3049,7 +3050,7 @@ extension GloryApi_LiveLikeRankMine: SwiftProtobuf.Message, SwiftProtobuf._Messa
     if lhs.userName != rhs.userName {return false}
     if lhs.tenant != rhs.tenant {return false}
     if lhs.major != rhs.major {return false}
-    if lhs.`class` != rhs.`class` {return false}
+    if lhs.clas != rhs.clas {return false}
     if lhs.likeAmount != rhs.likeAmount {return false}
     if lhs.rank != rhs.rank {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -3105,7 +3106,7 @@ extension GloryApi_LiveOrderRankDetail: SwiftProtobuf.Message, SwiftProtobuf._Me
     1: .standard(proto: "user_name"),
     2: .same(proto: "tenant"),
     3: .same(proto: "major"),
-    4: .same(proto: "class"),
+    4: .same(proto: "clas"),
     5: .standard(proto: "order_amount"),
   ]
 
@@ -3118,7 +3119,7 @@ extension GloryApi_LiveOrderRankDetail: SwiftProtobuf.Message, SwiftProtobuf._Me
       case 1: try { try decoder.decodeSingularStringField(value: &self.userName) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.tenant) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.major) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.`class`) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.clas) }()
       case 5: try { try decoder.decodeSingularInt64Field(value: &self.orderAmount) }()
       default: break
       }
@@ -3135,8 +3136,8 @@ extension GloryApi_LiveOrderRankDetail: SwiftProtobuf.Message, SwiftProtobuf._Me
     if !self.major.isEmpty {
       try visitor.visitSingularStringField(value: self.major, fieldNumber: 3)
     }
-    if !self.`class`.isEmpty {
-      try visitor.visitSingularStringField(value: self.`class`, fieldNumber: 4)
+    if !self.clas.isEmpty {
+      try visitor.visitSingularStringField(value: self.clas, fieldNumber: 4)
     }
     if self.orderAmount != 0 {
       try visitor.visitSingularInt64Field(value: self.orderAmount, fieldNumber: 5)
@@ -3148,7 +3149,7 @@ extension GloryApi_LiveOrderRankDetail: SwiftProtobuf.Message, SwiftProtobuf._Me
     if lhs.userName != rhs.userName {return false}
     if lhs.tenant != rhs.tenant {return false}
     if lhs.major != rhs.major {return false}
-    if lhs.`class` != rhs.`class` {return false}
+    if lhs.clas != rhs.clas {return false}
     if lhs.orderAmount != rhs.orderAmount {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -3161,7 +3162,7 @@ extension GloryApi_LiveOrderRankMine: SwiftProtobuf.Message, SwiftProtobuf._Mess
     1: .standard(proto: "user_name"),
     2: .same(proto: "tenant"),
     3: .same(proto: "major"),
-    4: .same(proto: "class"),
+    4: .same(proto: "clas"),
     5: .standard(proto: "order_amount"),
     6: .same(proto: "rank"),
   ]
@@ -3175,7 +3176,7 @@ extension GloryApi_LiveOrderRankMine: SwiftProtobuf.Message, SwiftProtobuf._Mess
       case 1: try { try decoder.decodeSingularStringField(value: &self.userName) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.tenant) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.major) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.`class`) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.clas) }()
       case 5: try { try decoder.decodeSingularInt64Field(value: &self.orderAmount) }()
       case 6: try { try decoder.decodeSingularInt64Field(value: &self.rank) }()
       default: break
@@ -3193,8 +3194,8 @@ extension GloryApi_LiveOrderRankMine: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if !self.major.isEmpty {
       try visitor.visitSingularStringField(value: self.major, fieldNumber: 3)
     }
-    if !self.`class`.isEmpty {
-      try visitor.visitSingularStringField(value: self.`class`, fieldNumber: 4)
+    if !self.clas.isEmpty {
+      try visitor.visitSingularStringField(value: self.clas, fieldNumber: 4)
     }
     if self.orderAmount != 0 {
       try visitor.visitSingularInt64Field(value: self.orderAmount, fieldNumber: 5)
@@ -3209,7 +3210,7 @@ extension GloryApi_LiveOrderRankMine: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if lhs.userName != rhs.userName {return false}
     if lhs.tenant != rhs.tenant {return false}
     if lhs.major != rhs.major {return false}
-    if lhs.`class` != rhs.`class` {return false}
+    if lhs.clas != rhs.clas {return false}
     if lhs.orderAmount != rhs.orderAmount {return false}
     if lhs.rank != rhs.rank {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -3265,7 +3266,7 @@ extension GloryApi_LiveEvaluationRankDetail: SwiftProtobuf.Message, SwiftProtobu
     1: .standard(proto: "user_name"),
     2: .same(proto: "tenant"),
     3: .same(proto: "major"),
-    4: .same(proto: "class"),
+    4: .same(proto: "clas"),
     5: .same(proto: "score"),
   ]
 
@@ -3278,7 +3279,7 @@ extension GloryApi_LiveEvaluationRankDetail: SwiftProtobuf.Message, SwiftProtobu
       case 1: try { try decoder.decodeSingularStringField(value: &self.userName) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.tenant) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.major) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.`class`) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.clas) }()
       case 5: try { try decoder.decodeSingularDoubleField(value: &self.score) }()
       default: break
       }
@@ -3295,8 +3296,8 @@ extension GloryApi_LiveEvaluationRankDetail: SwiftProtobuf.Message, SwiftProtobu
     if !self.major.isEmpty {
       try visitor.visitSingularStringField(value: self.major, fieldNumber: 3)
     }
-    if !self.`class`.isEmpty {
-      try visitor.visitSingularStringField(value: self.`class`, fieldNumber: 4)
+    if !self.clas.isEmpty {
+      try visitor.visitSingularStringField(value: self.clas, fieldNumber: 4)
     }
     if self.score != 0 {
       try visitor.visitSingularDoubleField(value: self.score, fieldNumber: 5)
@@ -3308,7 +3309,7 @@ extension GloryApi_LiveEvaluationRankDetail: SwiftProtobuf.Message, SwiftProtobu
     if lhs.userName != rhs.userName {return false}
     if lhs.tenant != rhs.tenant {return false}
     if lhs.major != rhs.major {return false}
-    if lhs.`class` != rhs.`class` {return false}
+    if lhs.clas != rhs.clas {return false}
     if lhs.score != rhs.score {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -3321,7 +3322,7 @@ extension GloryApi_LiveEvaluationRankMine: SwiftProtobuf.Message, SwiftProtobuf.
     1: .standard(proto: "user_name"),
     2: .same(proto: "tenant"),
     3: .same(proto: "major"),
-    4: .same(proto: "class"),
+    4: .same(proto: "clas"),
     5: .same(proto: "score"),
     6: .same(proto: "rank"),
   ]
@@ -3335,7 +3336,7 @@ extension GloryApi_LiveEvaluationRankMine: SwiftProtobuf.Message, SwiftProtobuf.
       case 1: try { try decoder.decodeSingularStringField(value: &self.userName) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.tenant) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.major) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.`class`) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.clas) }()
       case 5: try { try decoder.decodeSingularDoubleField(value: &self.score) }()
       case 6: try { try decoder.decodeSingularInt64Field(value: &self.rank) }()
       default: break
@@ -3353,8 +3354,8 @@ extension GloryApi_LiveEvaluationRankMine: SwiftProtobuf.Message, SwiftProtobuf.
     if !self.major.isEmpty {
       try visitor.visitSingularStringField(value: self.major, fieldNumber: 3)
     }
-    if !self.`class`.isEmpty {
-      try visitor.visitSingularStringField(value: self.`class`, fieldNumber: 4)
+    if !self.clas.isEmpty {
+      try visitor.visitSingularStringField(value: self.clas, fieldNumber: 4)
     }
     if self.score != 0 {
       try visitor.visitSingularDoubleField(value: self.score, fieldNumber: 5)
@@ -3369,7 +3370,7 @@ extension GloryApi_LiveEvaluationRankMine: SwiftProtobuf.Message, SwiftProtobuf.
     if lhs.userName != rhs.userName {return false}
     if lhs.tenant != rhs.tenant {return false}
     if lhs.major != rhs.major {return false}
-    if lhs.`class` != rhs.`class` {return false}
+    if lhs.clas != rhs.clas {return false}
     if lhs.score != rhs.score {return false}
     if lhs.rank != rhs.rank {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
