@@ -96,7 +96,7 @@ message DeleteTenantUserResponse {
 
 message UpdateTenantUserRequest {
     base.BaseRequest base_request = 1;
-    User user = 2;
+    TenantUser tenant_user = 2;
 }
 
 message UpdateTenantUserResponse {
@@ -105,12 +105,12 @@ message UpdateTenantUserResponse {
 
 message GetTenantUserRequest {
     base.BaseRequest base_request = 1;
-    int64 user_id = 2;
+    int64 tenant_user_id = 2;
 }
 
 message GetTenantUserResponse {
     base.BaseResponse base_resp = 1;
-    User user = 2;
+    TenantUser tenant_user = 2;
 }
 
 message ListTenantUserRequest {
