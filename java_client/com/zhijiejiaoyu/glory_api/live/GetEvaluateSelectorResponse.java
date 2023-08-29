@@ -17,7 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private GetEvaluateSelectorResponse() {
     major = com.google.protobuf.LazyStringArrayList.EMPTY;
-    class = com.google.protobuf.LazyStringArrayList.EMPTY;
+    clas = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -76,10 +76,10 @@ private static final long serialVersionUID = 0L;
           case 802: {
             java.lang.String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-              class = new com.google.protobuf.LazyStringArrayList();
+              clas = new com.google.protobuf.LazyStringArrayList();
               mutable_bitField0_ |= 0x00000002;
             }
-            class.add(s);
+            clas.add(s);
             break;
           }
           default: {
@@ -101,7 +101,7 @@ private static final long serialVersionUID = 0L;
         major = major.getUnmodifiableView();
       }
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        class = class.getUnmodifiableView();
+        clas = clas.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -181,39 +181,39 @@ private static final long serialVersionUID = 0L;
     return major.getByteString(index);
   }
 
-  public static final int CLASS_FIELD_NUMBER = 100;
-  private com.google.protobuf.LazyStringList class;
+  public static final int CLAS_FIELD_NUMBER = 100;
+  private com.google.protobuf.LazyStringList clas;
   /**
-   * <code>repeated string class = 100;</code>
-   * @return A list containing the class.
+   * <code>repeated string clas = 100;</code>
+   * @return A list containing the clas.
    */
   public com.google.protobuf.ProtocolStringList
-      getClass_List() {
-    return class;
+      getClasList() {
+    return clas;
   }
   /**
-   * <code>repeated string class = 100;</code>
-   * @return The count of class.
+   * <code>repeated string clas = 100;</code>
+   * @return The count of clas.
    */
-  public int getClass_Count() {
-    return class.size();
+  public int getClasCount() {
+    return clas.size();
   }
   /**
-   * <code>repeated string class = 100;</code>
+   * <code>repeated string clas = 100;</code>
    * @param index The index of the element to return.
-   * @return The class at the given index.
+   * @return The clas at the given index.
    */
-  public java.lang.String getClass_(int index) {
-    return class.get(index);
+  public java.lang.String getClas(int index) {
+    return clas.get(index);
   }
   /**
-   * <code>repeated string class = 100;</code>
+   * <code>repeated string clas = 100;</code>
    * @param index The index of the value to return.
-   * @return The bytes of the class at the given index.
+   * @return The bytes of the clas at the given index.
    */
   public com.google.protobuf.ByteString
-      getClass_Bytes(int index) {
-    return class.getByteString(index);
+      getClasBytes(int index) {
+    return clas.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -236,8 +236,8 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < major.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, major.getRaw(i));
     }
-    for (int i = 0; i < class.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 100, class.getRaw(i));
+    for (int i = 0; i < clas.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 100, clas.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -262,11 +262,11 @@ private static final long serialVersionUID = 0L;
     }
     {
       int dataSize = 0;
-      for (int i = 0; i < class.size(); i++) {
-        dataSize += computeStringSizeNoTag(class.getRaw(i));
+      for (int i = 0; i < clas.size(); i++) {
+        dataSize += computeStringSizeNoTag(clas.getRaw(i));
       }
       size += dataSize;
-      size += 2 * getClass_List().size();
+      size += 2 * getClasList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -290,8 +290,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getMajorList()
         .equals(other.getMajorList())) return false;
-    if (!getClass_List()
-        .equals(other.getClass_List())) return false;
+    if (!getClasList()
+        .equals(other.getClasList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -311,9 +311,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + MAJOR_FIELD_NUMBER;
       hash = (53 * hash) + getMajorList().hashCode();
     }
-    if (getClass_Count() > 0) {
-      hash = (37 * hash) + CLASS_FIELD_NUMBER;
-      hash = (53 * hash) + getClass_List().hashCode();
+    if (getClasCount() > 0) {
+      hash = (37 * hash) + CLAS_FIELD_NUMBER;
+      hash = (53 * hash) + getClasList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -456,7 +456,7 @@ private static final long serialVersionUID = 0L;
       }
       major = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0 = (bitField0_ & ~0x00000001);
-      class = com.google.protobuf.LazyStringArrayList.EMPTY;
+      clas = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0 = (bitField0_ & ~0x00000002);
       return this;
     }
@@ -496,10 +496,10 @@ private static final long serialVersionUID = 0L;
       }
       result.major = major;
       if (((bitField0_ & 0x00000002) != 0)) {
-        class = class.getUnmodifiableView();
+        clas = clas.getUnmodifiableView();
         bitField0 = (bitField0_ & ~0x00000002);
       }
-      result.class = class;
+      result.clas = clas;
       onBuilt();
       return result;
     }
@@ -561,13 +561,13 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
-      if (!other.class.isEmpty()) {
-        if (class.isEmpty()) {
-          class = other.class;
+      if (!other.clas.isEmpty()) {
+        if (clas.isEmpty()) {
+          clas = other.clas;
           bitField0 = (bitField0_ & ~0x00000002);
         } else {
-          ensureClass_IsMutable();
-          class.addAll(other.class);
+          ensureClasIsMutable();
+          clas.addAll(other.clas);
         }
         onChanged();
       }
@@ -830,112 +830,112 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.protobuf.LazyStringList class = com.google.protobuf.LazyStringArrayList.EMPTY;
-    private void ensureClass_IsMutable() {
+    private com.google.protobuf.LazyStringList clas = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureClasIsMutable() {
       if (!((bitField0_ & 0x00000002) != 0)) {
-        class = new com.google.protobuf.LazyStringArrayList(class);
+        clas = new com.google.protobuf.LazyStringArrayList(clas);
         bitField0_ |= 0x00000002;
        }
     }
     /**
-     * <code>repeated string class = 100;</code>
-     * @return A list containing the class.
+     * <code>repeated string clas = 100;</code>
+     * @return A list containing the clas.
      */
     public com.google.protobuf.ProtocolStringList
-        getClass_List() {
-      return class.getUnmodifiableView();
+        getClasList() {
+      return clas.getUnmodifiableView();
     }
     /**
-     * <code>repeated string class = 100;</code>
-     * @return The count of class.
+     * <code>repeated string clas = 100;</code>
+     * @return The count of clas.
      */
-    public int getClass_Count() {
-      return class.size();
+    public int getClasCount() {
+      return clas.size();
     }
     /**
-     * <code>repeated string class = 100;</code>
+     * <code>repeated string clas = 100;</code>
      * @param index The index of the element to return.
-     * @return The class at the given index.
+     * @return The clas at the given index.
      */
-    public java.lang.String getClass_(int index) {
-      return class.get(index);
+    public java.lang.String getClas(int index) {
+      return clas.get(index);
     }
     /**
-     * <code>repeated string class = 100;</code>
+     * <code>repeated string clas = 100;</code>
      * @param index The index of the value to return.
-     * @return The bytes of the class at the given index.
+     * @return The bytes of the clas at the given index.
      */
     public com.google.protobuf.ByteString
-        getClass_Bytes(int index) {
-      return class.getByteString(index);
+        getClasBytes(int index) {
+      return clas.getByteString(index);
     }
     /**
-     * <code>repeated string class = 100;</code>
+     * <code>repeated string clas = 100;</code>
      * @param index The index to set the value at.
-     * @param value The class to set.
+     * @param value The clas to set.
      * @return This builder for chaining.
      */
-    public Builder setClass_(
+    public Builder setClas(
         int index, java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  ensureClass_IsMutable();
-      class.set(index, value);
+  ensureClasIsMutable();
+      clas.set(index, value);
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string class = 100;</code>
-     * @param value The class to add.
+     * <code>repeated string clas = 100;</code>
+     * @param value The clas to add.
      * @return This builder for chaining.
      */
-    public Builder addClass_(
+    public Builder addClas(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  ensureClass_IsMutable();
-      class.add(value);
+  ensureClasIsMutable();
+      clas.add(value);
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string class = 100;</code>
-     * @param values The class to add.
+     * <code>repeated string clas = 100;</code>
+     * @param values The clas to add.
      * @return This builder for chaining.
      */
-    public Builder addAllClass_(
+    public Builder addAllClas(
         java.lang.Iterable<java.lang.String> values) {
-      ensureClass_IsMutable();
+      ensureClasIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, class);
+          values, clas);
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string class = 100;</code>
+     * <code>repeated string clas = 100;</code>
      * @return This builder for chaining.
      */
-    public Builder clearClass_() {
-      class = com.google.protobuf.LazyStringArrayList.EMPTY;
+    public Builder clearClas() {
+      clas = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0 = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string class = 100;</code>
-     * @param value The bytes of the class to add.
+     * <code>repeated string clas = 100;</code>
+     * @param value The bytes of the clas to add.
      * @return This builder for chaining.
      */
-    public Builder addClass_Bytes(
+    public Builder addClasBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-      ensureClass_IsMutable();
-      class.add(value);
+      ensureClasIsMutable();
+      clas.add(value);
       onChanged();
       return this;
     }

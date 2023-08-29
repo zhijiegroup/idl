@@ -48,27 +48,27 @@ public interface GetEvaluateSelectorResponseOrBuilder extends
       getMajorBytes(int index);
 
   /**
-   * <code>repeated string class = 100;</code>
-   * @return A list containing the class.
+   * <code>repeated string clas = 100;</code>
+   * @return A list containing the clas.
    */
   java.util.List<java.lang.String>
-      getClass_List();
+      getClasList();
   /**
-   * <code>repeated string class = 100;</code>
-   * @return The count of class.
+   * <code>repeated string clas = 100;</code>
+   * @return The count of clas.
    */
-  int getClass_Count();
+  int getClasCount();
   /**
-   * <code>repeated string class = 100;</code>
+   * <code>repeated string clas = 100;</code>
    * @param index The index of the element to return.
-   * @return The class at the given index.
+   * @return The clas at the given index.
    */
-  java.lang.String getClass_(int index);
+  java.lang.String getClas(int index);
   /**
-   * <code>repeated string class = 100;</code>
+   * <code>repeated string clas = 100;</code>
    * @param index The index of the value to return.
-   * @return The bytes of the class at the given index.
+   * @return The bytes of the clas at the given index.
    */
   com.google.protobuf.ByteString
-      getClass_Bytes(int index);
+      getClasBytes(int index);
 }

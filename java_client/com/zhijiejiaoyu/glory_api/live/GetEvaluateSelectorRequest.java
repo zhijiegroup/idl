@@ -4,6 +4,10 @@
 package com.zhijiejiaoyu.glory_api.live;
 
 /**
+ * <pre>
+ * NOTE: class 改为 clas 为了和java的class关键字不冲突
+ * </pre>
+ *
  * Protobuf type {@code glory_api.GetEvaluateSelectorRequest}
  */
 public final class GetEvaluateSelectorRequest extends
@@ -280,6 +284,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * NOTE: class 改为 clas 为了和java的class关键字不冲突
+   * </pre>
+   *
    * Protobuf type {@code glory_api.GetEvaluateSelectorRequest}
    */
   public static final class Builder extends

@@ -44,16 +44,16 @@ public interface LiveLikeRankDetailOrBuilder extends
       getMajorBytes();
 
   /**
-   * <code>string class = 4;</code>
-   * @return The class.
+   * <code>string clas = 4;</code>
+   * @return The clas.
    */
-  java.lang.String getClass_();
+  java.lang.String getClas();
   /**
-   * <code>string class = 4;</code>
-   * @return The bytes for class.
+   * <code>string clas = 4;</code>
+   * @return The bytes for clas.
    */
   com.google.protobuf.ByteString
-      getClass_Bytes();
+      getClasBytes();
 
   /**
    * <code>int64 like_amount = 5;</code>

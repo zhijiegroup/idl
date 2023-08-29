@@ -5,6 +5,7 @@
 import * as base from "../base";
 export { base };
 
+/** NOTE: class 改为 clas 为了和java的class关键字不冲突 */
 export interface GetEvaluateSelectorRequest {
   base_request?: base.BaseRequest;
 }
@@ -12,7 +13,7 @@ export interface GetEvaluateSelectorRequest {
 export interface GetEvaluateSelectorResponse {
   base_resp?: base.BaseResponse;
   major?: Array<string>;
-  class?: Array<string>;
+  clas?: Array<string>;
 }
 
 export interface EvaluateRoom {
@@ -141,7 +142,7 @@ export interface UserLiveData {
   user_id?: string;
   user_name?: string;
   major?: string;
-  class?: string;
+  clas?: string;
   total_duration?: number;
   total_like?: string;
   total_order?: string;
@@ -152,7 +153,7 @@ export interface ListStudentEvalutionsRequest {
   base_request?: base.BaseRequest;
   name?: string;
   major?: string;
-  class?: string;
+  clas?: string;
   pagination?: base.PaginationRequest;
 }
 
@@ -184,7 +185,7 @@ export interface LiveRankDetail {
   user_name?: string;
   tenant?: string;
   major?: string;
-  class?: string;
+  clas?: string;
   live_duration?: string;
 }
 
@@ -192,7 +193,7 @@ export interface LiveRankMine {
   user_name?: string;
   tenant?: string;
   major?: string;
-  class?: string;
+  clas?: string;
   live_duration?: string;
   rank?: string;
 }
@@ -246,7 +247,7 @@ export interface LiveLikeRankDetail {
   user_name?: string;
   tenant?: string;
   major?: string;
-  class?: string;
+  clas?: string;
   like_amount?: string;
 }
 
@@ -254,7 +255,7 @@ export interface LiveLikeRankMine {
   user_name?: string;
   tenant?: string;
   major?: string;
-  class?: string;
+  clas?: string;
   like_amount?: string;
   rank?: string;
 }
@@ -268,7 +269,7 @@ export interface LiveOrderRankDetail {
   user_name?: string;
   tenant?: string;
   major?: string;
-  class?: string;
+  clas?: string;
   order_amount?: string;
 }
 
@@ -276,7 +277,7 @@ export interface LiveOrderRankMine {
   user_name?: string;
   tenant?: string;
   major?: string;
-  class?: string;
+  clas?: string;
   order_amount?: string;
   rank?: string;
 }
@@ -290,7 +291,7 @@ export interface LiveEvaluationRankDetail {
   user_name?: string;
   tenant?: string;
   major?: string;
-  class?: string;
+  clas?: string;
   score?: number;
 }
 
@@ -298,7 +299,7 @@ export interface LiveEvaluationRankMine {
   user_name?: string;
   tenant?: string;
   major?: string;
-  class?: string;
+  clas?: string;
   score?: number;
   rank?: string;
 }
