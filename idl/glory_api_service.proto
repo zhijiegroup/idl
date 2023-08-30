@@ -655,6 +655,9 @@ service glory_api {
   rpc RegenerationAiFeedback(RegenerationAiFeedbackRequest) returns (RegenerationAiFeedbackResponse) {
     option (api.get) = '/api/live/regeneration_ai_feedback';
   }
+  rpc SubmitUserAttitudeForAiResult(SubmitUserAttitudeForAIResultRequest) returns (SubmitUserAttitudeForAIResultResponse) {
+    option (api.post) = '/api/live/submit_user_attitude';
+  }
   //tenant
   rpc CreateTenant(CreateTenantRequest) returns (CreateTenantResponse) {
     option (api.post) = '/api/tenant/create_tenant';
