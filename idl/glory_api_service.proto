@@ -24,6 +24,7 @@ import "payment/payment.proto";
 import "example/example.proto";
 import "admin/config.proto";
 import "admin/admin_tenant.proto";
+import "admin/admin_user.proto";
 import "wxpay/wxpay.proto";
 import "live/live_room.proto";
 import "live/live_token.proto";
@@ -433,6 +434,7 @@ service glory_api {
     option (api.post) = '/api/payment/delete_payment';
   }
 
+  //admin_config
   rpc CreateConfig(CreateConfigRequest) returns (CreateConfigResponse) {
     option (api.post) = '/api/admin/add_config';
   }
@@ -445,11 +447,25 @@ service glory_api {
   rpc GetConfig(GetConfigRequest) returns (GetConfigResponse) {
     option (api.post) = '/api/admin/get_config';
   }
+  //admin_other
   rpc GetSTS(GetSTSRequest) returns (GetSTSResponse) {
     option (api.get) = '/api/admin/get_sts';
   }
   rpc ListTenantOrg(ListTenantOrgRequest) returns(ListTenantOrgResponse) {
     option (api.get) = '/api/admin/list_tenant_org';
+  }
+  //admin_user
+  rpc ListAdminUser(ListAdminUserRequest) returns(ListAdminUserResponse) {
+    option (api.post) = '/api/admin/list_admin_user';
+  }
+  rpc CreateAdminUser(CreateAdminUserRequest) returns(CreateAdminUserResponse) {
+    option (api.post) = '/api/admin/create_admin_user';
+  }
+  rpc UpdateAdminUser(UpdateAdminUserRequest) returns(UpdateAdminUserResponse) {
+    option (api.post) = '/api/admin/update_admin_user';
+  }
+  rpc DeleteAdminUser(DeleteAdminUserRequest) returns(DeleteAdminUserResponse) {
+    option (api.post) = '/api/admin/delete_admin_user';
   }
 
   // wxpay

@@ -1,0 +1,54 @@
+syntax = "proto3";
+package glory_api;
+
+import "base.proto";
+option java_package = "com.zhijiejiaoyu.glory_api.admin";
+option java_multiple_files = true;
+
+message AdminUser {
+    int64 user_id = 1;
+    string user_name = 2;
+    string user_phone = 3;
+    int64 role_id = 4;
+    string role_name = 5;
+    string created_at = 6;
+}
+
+message CreateAdminUserRequest {
+    base.BaseRequest base_request = 1;
+    AdminUser admin_user = 2;
+}
+
+message CreateAdminUserResponse {
+    base.BaseResponse base_resp = 1;
+}
+
+message UpdateAdminUserRequest {
+    base.BaseRequest base_request = 1;
+    AdminUser admin_user = 2;
+}
+
+message UpdateAdminUserResponse {
+    base.BaseResponse base_resp = 1;
+}
+
+message DeleteAdminUserRequest {
+    base.BaseRequest base_request = 1;
+    int64 user_id = 2;
+}
+
+message DeleteAdminUserResponse {
+    base.BaseResponse base_resp = 1;
+}
+
+message ListAdminUserRequest {
+    base.BaseRequest base_request = 1;
+    string name = 2;
+    base.PaginationRequest pagination = 100;
+}
+
+message ListAdminUserResponse {
+    base.BaseResponse base_resp = 1;
+    AdminUser admin_users = 2;
+    base.PaginationResponse pagination = 100;
+}
