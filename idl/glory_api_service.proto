@@ -23,6 +23,7 @@ import "seller/seller.proto";
 import "payment/payment.proto";
 import "example/example.proto";
 import "admin/config.proto";
+import "admin/admin_tenant.proto";
 import "wxpay/wxpay.proto";
 import "live/live_room.proto";
 import "live/live_token.proto";
@@ -446,6 +447,9 @@ service glory_api {
   }
   rpc GetSTS(GetSTSRequest) returns (GetSTSResponse) {
     option (api.get) = '/api/admin/get_sts';
+  }
+  rpc ListTenantOrg(ListTenantOrgRequest) returns(ListTenantOrgResponse) {
+    option (api.get) = '/api/admin/list_tenant_org';
   }
 
   // wxpay

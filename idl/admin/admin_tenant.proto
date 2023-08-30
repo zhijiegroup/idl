@@ -1,0 +1,17 @@
+syntax = "proto3";
+package glory_api;
+
+
+import "base.proto";
+import "tenant/tenant.proto";
+option java_package = "com.zhijiejiaoyu.glory_api.admin";
+option java_multiple_files = true;
+
+message ListTenantOrgRequest {
+    base.BaseRequest base_request = 1;
+}
+
+message ListTenantOrgResponse {
+    base.BaseResponse base_resp = 1;
+    repeated TenantOrg tenant_orgs = 2;
+}

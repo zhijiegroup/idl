@@ -77,7 +77,8 @@ message CreateTenantUserRequest {
     int64 tenant_id = 2;
     int64 dept_id = 3;
     int64 role_id = 4;
-    repeated TenantUser users = 5;
+    bool is_admin = 5;
+    repeated TenantUser users = 6;
 }
 
 message CreateTenantUserResponse {
