@@ -237,14 +237,7 @@ struct GloryApi_ListAdminUserResponse {
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
-  var adminUsers: GloryApi_AdminUser {
-    get {return _adminUsers ?? GloryApi_AdminUser()}
-    set {_adminUsers = newValue}
-  }
-  /// Returns true if `adminUsers` has been explicitly set.
-  var hasAdminUsers: Bool {return self._adminUsers != nil}
-  /// Clears the value of `adminUsers`. Subsequent reads from it will return its default value.
-  mutating func clearAdminUsers() {self._adminUsers = nil}
+  var adminUsers: [GloryApi_AdminUser] = []
 
   var pagination: Base_PaginationResponse {
     get {return _pagination ?? Base_PaginationResponse()}
@@ -260,7 +253,6 @@ struct GloryApi_ListAdminUserResponse {
   init() {}
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
-  fileprivate var _adminUsers: GloryApi_AdminUser? = nil
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
@@ -639,7 +631,7 @@ extension GloryApi_ListAdminUserResponse: SwiftProtobuf.Message, SwiftProtobuf._
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
-      case 2: try { try decoder.decodeSingularMessageField(value: &self._adminUsers) }()
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.adminUsers) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -654,9 +646,9 @@ extension GloryApi_ListAdminUserResponse: SwiftProtobuf.Message, SwiftProtobuf._
     try { if let v = self._baseResp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    try { if let v = self._adminUsers {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    if !self.adminUsers.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.adminUsers, fieldNumber: 2)
+    }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
     } }()
@@ -665,7 +657,7 @@ extension GloryApi_ListAdminUserResponse: SwiftProtobuf.Message, SwiftProtobuf._
 
   static func ==(lhs: GloryApi_ListAdminUserResponse, rhs: GloryApi_ListAdminUserResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
-    if lhs._adminUsers != rhs._adminUsers {return false}
+    if lhs.adminUsers != rhs.adminUsers {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

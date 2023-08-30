@@ -23,19 +23,28 @@ public interface ListAdminUserResponseOrBuilder extends
   com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder();
 
   /**
-   * <code>.glory_api.AdminUser admin_users = 2;</code>
-   * @return Whether the adminUsers field is set.
+   * <code>repeated .glory_api.AdminUser admin_users = 2;</code>
    */
-  boolean hasAdminUsers();
+  java.util.List<com.zhijiejiaoyu.glory_api.admin.AdminUser> 
+      getAdminUsersList();
   /**
-   * <code>.glory_api.AdminUser admin_users = 2;</code>
-   * @return The adminUsers.
+   * <code>repeated .glory_api.AdminUser admin_users = 2;</code>
    */
-  com.zhijiejiaoyu.glory_api.admin.AdminUser getAdminUsers();
+  com.zhijiejiaoyu.glory_api.admin.AdminUser getAdminUsers(int index);
   /**
-   * <code>.glory_api.AdminUser admin_users = 2;</code>
+   * <code>repeated .glory_api.AdminUser admin_users = 2;</code>
    */
-  com.zhijiejiaoyu.glory_api.admin.AdminUserOrBuilder getAdminUsersOrBuilder();
+  int getAdminUsersCount();
+  /**
+   * <code>repeated .glory_api.AdminUser admin_users = 2;</code>
+   */
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.admin.AdminUserOrBuilder> 
+      getAdminUsersOrBuilderList();
+  /**
+   * <code>repeated .glory_api.AdminUser admin_users = 2;</code>
+   */
+  com.zhijiejiaoyu.glory_api.admin.AdminUserOrBuilder getAdminUsersOrBuilder(
+      int index);
 
   /**
    * <code>.base.PaginationResponse pagination = 100;</code>

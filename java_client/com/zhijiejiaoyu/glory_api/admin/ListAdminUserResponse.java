@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListAdminUserResponse() {
+    adminUsers = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -38,6 +39,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0 = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -62,16 +64,12 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            com.zhijiejiaoyu.glory_api.admin.AdminUser.Builder subBuilder = null;
-            if (adminUsers != null) {
-              subBuilder = adminUsers.toBuilder();
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              adminUsers = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.admin.AdminUser>();
+              mutable_bitField0_ |= 0x00000001;
             }
-            adminUsers = input.readMessage(com.zhijiejiaoyu.glory_api.admin.AdminUser.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(adminUsers);
-              adminUsers = subBuilder.buildPartial();
-            }
-
+            adminUsers.add(
+                input.readMessage(com.zhijiejiaoyu.glory_api.admin.AdminUser.parser(), extensionRegistry));
             break;
           }
           case 802: {
@@ -102,6 +100,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        adminUsers = java.util.Collections.unmodifiableList(adminUsers);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -146,29 +147,43 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ADMIN_USERS_FIELD_NUMBER = 2;
-  private com.zhijiejiaoyu.glory_api.admin.AdminUser adminUsers;
+  private java.util.List<com.zhijiejiaoyu.glory_api.admin.AdminUser> adminUsers;
   /**
-   * <code>.glory_api.AdminUser admin_users = 2;</code>
-   * @return Whether the adminUsers field is set.
+   * <code>repeated .glory_api.AdminUser admin_users = 2;</code>
    */
   @java.lang.Override
-  public boolean hasAdminUsers() {
-    return adminUsers != null;
+  public java.util.List<com.zhijiejiaoyu.glory_api.admin.AdminUser> getAdminUsersList() {
+    return adminUsers;
   }
   /**
-   * <code>.glory_api.AdminUser admin_users = 2;</code>
-   * @return The adminUsers.
+   * <code>repeated .glory_api.AdminUser admin_users = 2;</code>
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.admin.AdminUser getAdminUsers() {
-    return adminUsers == null ? com.zhijiejiaoyu.glory_api.admin.AdminUser.getDefaultInstance() : adminUsers;
+  public java.util.List<? extends com.zhijiejiaoyu.glory_api.admin.AdminUserOrBuilder> 
+      getAdminUsersOrBuilderList() {
+    return adminUsers;
   }
   /**
-   * <code>.glory_api.AdminUser admin_users = 2;</code>
+   * <code>repeated .glory_api.AdminUser admin_users = 2;</code>
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.admin.AdminUserOrBuilder getAdminUsersOrBuilder() {
-    return getAdminUsers();
+  public int getAdminUsersCount() {
+    return adminUsers.size();
+  }
+  /**
+   * <code>repeated .glory_api.AdminUser admin_users = 2;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.admin.AdminUser getAdminUsers(int index) {
+    return adminUsers.get(index);
+  }
+  /**
+   * <code>repeated .glory_api.AdminUser admin_users = 2;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.admin.AdminUserOrBuilder getAdminUsersOrBuilder(
+      int index) {
+    return adminUsers.get(index);
   }
 
   public static final int PAGINATION_FIELD_NUMBER = 100;
@@ -214,8 +229,8 @@ private static final long serialVersionUID = 0L;
     if (baseResp != null) {
       output.writeMessage(1, getBaseResp());
     }
-    if (adminUsers != null) {
-      output.writeMessage(2, getAdminUsers());
+    for (int i = 0; i < adminUsers.size(); i++) {
+      output.writeMessage(2, adminUsers.get(i));
     }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
@@ -233,9 +248,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
-    if (adminUsers != null) {
+    for (int i = 0; i < adminUsers.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getAdminUsers());
+        .computeMessageSize(2, adminUsers.get(i));
     }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -261,11 +276,8 @@ private static final long serialVersionUID = 0L;
       if (!getBaseResp()
           .equals(other.getBaseResp())) return false;
     }
-    if (hasAdminUsers() != other.hasAdminUsers()) return false;
-    if (hasAdminUsers()) {
-      if (!getAdminUsers()
-          .equals(other.getAdminUsers())) return false;
-    }
+    if (!getAdminUsersList()
+        .equals(other.getAdminUsersList())) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -286,9 +298,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_RESP_FIELD_NUMBER;
       hash = (53 * hash) + getBaseResp().hashCode();
     }
-    if (hasAdminUsers()) {
+    if (getAdminUsersCount() > 0) {
       hash = (37 * hash) + ADMIN_USERS_FIELD_NUMBER;
-      hash = (53 * hash) + getAdminUsers().hashCode();
+      hash = (53 * hash) + getAdminUsersList().hashCode();
     }
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
@@ -422,6 +434,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getAdminUsersFieldBuilder();
       }
     }
     @java.lang.Override
@@ -434,10 +447,10 @@ private static final long serialVersionUID = 0L;
         baseRespBuilder = null;
       }
       if (adminUsersBuilder == null) {
-        adminUsers = null;
+        adminUsers = java.util.Collections.emptyList();
+        bitField0 = (bitField0_ & ~0x00000001);
       } else {
-        adminUsers = null;
-        adminUsersBuilder = null;
+        adminUsersBuilder.clear();
       }
       if (paginationBuilder == null) {
         pagination = null;
@@ -471,12 +484,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.admin.ListAdminUserResponse buildPartial() {
       com.zhijiejiaoyu.glory_api.admin.ListAdminUserResponse result = new com.zhijiejiaoyu.glory_api.admin.ListAdminUserResponse(this);
+      int from_bitField0 = bitField0;
       if (baseRespBuilder == null) {
         result.baseResp = baseResp;
       } else {
         result.baseResp = baseRespBuilder.build();
       }
       if (adminUsersBuilder == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          adminUsers = java.util.Collections.unmodifiableList(adminUsers);
+          bitField0 = (bitField0_ & ~0x00000001);
+        }
         result.adminUsers = adminUsers;
       } else {
         result.adminUsers = adminUsersBuilder.build();
@@ -537,8 +555,31 @@ private static final long serialVersionUID = 0L;
       if (other.hasBaseResp()) {
         mergeBaseResp(other.getBaseResp());
       }
-      if (other.hasAdminUsers()) {
-        mergeAdminUsers(other.getAdminUsers());
+      if (adminUsersBuilder == null) {
+        if (!other.adminUsers.isEmpty()) {
+          if (adminUsers.isEmpty()) {
+            adminUsers = other.adminUsers;
+            bitField0 = (bitField0_ & ~0x00000001);
+          } else {
+            ensureAdminUsersIsMutable();
+            adminUsers.addAll(other.adminUsers);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.adminUsers.isEmpty()) {
+          if (adminUsersBuilder.isEmpty()) {
+            adminUsersBuilder.dispose();
+            adminUsersBuilder = null;
+            adminUsers = other.adminUsers;
+            bitField0 = (bitField0_ & ~0x00000001);
+            adminUsersBuilder = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getAdminUsersFieldBuilder() : null;
+          } else {
+            adminUsersBuilder.addAllMessages(other.adminUsers);
+          }
+        }
       }
       if (other.hasPagination()) {
         mergePagination(other.getPagination());
@@ -571,6 +612,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0;
 
     private com.zhijiejiaoyu.base.BaseResponse baseResp;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -691,118 +733,239 @@ private static final long serialVersionUID = 0L;
       return baseRespBuilder;
     }
 
-    private com.zhijiejiaoyu.glory_api.admin.AdminUser adminUsers;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.admin.AdminUser, com.zhijiejiaoyu.glory_api.admin.AdminUser.Builder, com.zhijiejiaoyu.glory_api.admin.AdminUserOrBuilder> adminUsersBuilder;
-    /**
-     * <code>.glory_api.AdminUser admin_users = 2;</code>
-     * @return Whether the adminUsers field is set.
-     */
-    public boolean hasAdminUsers() {
-      return adminUsersBuilder != null || adminUsers != null;
+    private java.util.List<com.zhijiejiaoyu.glory_api.admin.AdminUser> adminUsers =
+      java.util.Collections.emptyList();
+    private void ensureAdminUsersIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        adminUsers = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.admin.AdminUser>(adminUsers);
+        bitField0_ |= 0x00000001;
+       }
     }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.admin.AdminUser, com.zhijiejiaoyu.glory_api.admin.AdminUser.Builder, com.zhijiejiaoyu.glory_api.admin.AdminUserOrBuilder> adminUsersBuilder;
+
     /**
-     * <code>.glory_api.AdminUser admin_users = 2;</code>
-     * @return The adminUsers.
+     * <code>repeated .glory_api.AdminUser admin_users = 2;</code>
      */
-    public com.zhijiejiaoyu.glory_api.admin.AdminUser getAdminUsers() {
+    public java.util.List<com.zhijiejiaoyu.glory_api.admin.AdminUser> getAdminUsersList() {
       if (adminUsersBuilder == null) {
-        return adminUsers == null ? com.zhijiejiaoyu.glory_api.admin.AdminUser.getDefaultInstance() : adminUsers;
+        return java.util.Collections.unmodifiableList(adminUsers);
       } else {
-        return adminUsersBuilder.getMessage();
+        return adminUsersBuilder.getMessageList();
       }
     }
     /**
-     * <code>.glory_api.AdminUser admin_users = 2;</code>
+     * <code>repeated .glory_api.AdminUser admin_users = 2;</code>
      */
-    public Builder setAdminUsers(com.zhijiejiaoyu.glory_api.admin.AdminUser value) {
+    public int getAdminUsersCount() {
+      if (adminUsersBuilder == null) {
+        return adminUsers.size();
+      } else {
+        return adminUsersBuilder.getCount();
+      }
+    }
+    /**
+     * <code>repeated .glory_api.AdminUser admin_users = 2;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.admin.AdminUser getAdminUsers(int index) {
+      if (adminUsersBuilder == null) {
+        return adminUsers.get(index);
+      } else {
+        return adminUsersBuilder.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .glory_api.AdminUser admin_users = 2;</code>
+     */
+    public Builder setAdminUsers(
+        int index, com.zhijiejiaoyu.glory_api.admin.AdminUser value) {
       if (adminUsersBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        adminUsers = value;
+        ensureAdminUsersIsMutable();
+        adminUsers.set(index, value);
         onChanged();
       } else {
-        adminUsersBuilder.setMessage(value);
+        adminUsersBuilder.setMessage(index, value);
       }
-
       return this;
     }
     /**
-     * <code>.glory_api.AdminUser admin_users = 2;</code>
+     * <code>repeated .glory_api.AdminUser admin_users = 2;</code>
      */
     public Builder setAdminUsers(
+        int index, com.zhijiejiaoyu.glory_api.admin.AdminUser.Builder builderForValue) {
+      if (adminUsersBuilder == null) {
+        ensureAdminUsersIsMutable();
+        adminUsers.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        adminUsersBuilder.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.AdminUser admin_users = 2;</code>
+     */
+    public Builder addAdminUsers(com.zhijiejiaoyu.glory_api.admin.AdminUser value) {
+      if (adminUsersBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAdminUsersIsMutable();
+        adminUsers.add(value);
+        onChanged();
+      } else {
+        adminUsersBuilder.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.AdminUser admin_users = 2;</code>
+     */
+    public Builder addAdminUsers(
+        int index, com.zhijiejiaoyu.glory_api.admin.AdminUser value) {
+      if (adminUsersBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAdminUsersIsMutable();
+        adminUsers.add(index, value);
+        onChanged();
+      } else {
+        adminUsersBuilder.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.AdminUser admin_users = 2;</code>
+     */
+    public Builder addAdminUsers(
         com.zhijiejiaoyu.glory_api.admin.AdminUser.Builder builderForValue) {
       if (adminUsersBuilder == null) {
-        adminUsers = builderForValue.build();
+        ensureAdminUsersIsMutable();
+        adminUsers.add(builderForValue.build());
         onChanged();
       } else {
-        adminUsersBuilder.setMessage(builderForValue.build());
+        adminUsersBuilder.addMessage(builderForValue.build());
       }
-
       return this;
     }
     /**
-     * <code>.glory_api.AdminUser admin_users = 2;</code>
+     * <code>repeated .glory_api.AdminUser admin_users = 2;</code>
      */
-    public Builder mergeAdminUsers(com.zhijiejiaoyu.glory_api.admin.AdminUser value) {
+    public Builder addAdminUsers(
+        int index, com.zhijiejiaoyu.glory_api.admin.AdminUser.Builder builderForValue) {
       if (adminUsersBuilder == null) {
-        if (adminUsers != null) {
-          adminUsers =
-            com.zhijiejiaoyu.glory_api.admin.AdminUser.newBuilder(adminUsers).mergeFrom(value).buildPartial();
-        } else {
-          adminUsers = value;
-        }
+        ensureAdminUsersIsMutable();
+        adminUsers.add(index, builderForValue.build());
         onChanged();
       } else {
-        adminUsersBuilder.mergeFrom(value);
+        adminUsersBuilder.addMessage(index, builderForValue.build());
       }
-
       return this;
     }
     /**
-     * <code>.glory_api.AdminUser admin_users = 2;</code>
+     * <code>repeated .glory_api.AdminUser admin_users = 2;</code>
+     */
+    public Builder addAllAdminUsers(
+        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.admin.AdminUser> values) {
+      if (adminUsersBuilder == null) {
+        ensureAdminUsersIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, adminUsers);
+        onChanged();
+      } else {
+        adminUsersBuilder.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.AdminUser admin_users = 2;</code>
      */
     public Builder clearAdminUsers() {
       if (adminUsersBuilder == null) {
-        adminUsers = null;
+        adminUsers = java.util.Collections.emptyList();
+        bitField0 = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
-        adminUsers = null;
-        adminUsersBuilder = null;
+        adminUsersBuilder.clear();
       }
-
       return this;
     }
     /**
-     * <code>.glory_api.AdminUser admin_users = 2;</code>
+     * <code>repeated .glory_api.AdminUser admin_users = 2;</code>
      */
-    public com.zhijiejiaoyu.glory_api.admin.AdminUser.Builder getAdminUsersBuilder() {
-      
-      onChanged();
-      return getAdminUsersFieldBuilder().getBuilder();
+    public Builder removeAdminUsers(int index) {
+      if (adminUsersBuilder == null) {
+        ensureAdminUsersIsMutable();
+        adminUsers.remove(index);
+        onChanged();
+      } else {
+        adminUsersBuilder.remove(index);
+      }
+      return this;
     }
     /**
-     * <code>.glory_api.AdminUser admin_users = 2;</code>
+     * <code>repeated .glory_api.AdminUser admin_users = 2;</code>
      */
-    public com.zhijiejiaoyu.glory_api.admin.AdminUserOrBuilder getAdminUsersOrBuilder() {
-      if (adminUsersBuilder != null) {
-        return adminUsersBuilder.getMessageOrBuilder();
-      } else {
-        return adminUsers == null ?
-            com.zhijiejiaoyu.glory_api.admin.AdminUser.getDefaultInstance() : adminUsers;
+    public com.zhijiejiaoyu.glory_api.admin.AdminUser.Builder getAdminUsersBuilder(
+        int index) {
+      return getAdminUsersFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .glory_api.AdminUser admin_users = 2;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.admin.AdminUserOrBuilder getAdminUsersOrBuilder(
+        int index) {
+      if (adminUsersBuilder == null) {
+        return adminUsers.get(index);  } else {
+        return adminUsersBuilder.getMessageOrBuilder(index);
       }
     }
     /**
-     * <code>.glory_api.AdminUser admin_users = 2;</code>
+     * <code>repeated .glory_api.AdminUser admin_users = 2;</code>
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
+    public java.util.List<? extends com.zhijiejiaoyu.glory_api.admin.AdminUserOrBuilder> 
+         getAdminUsersOrBuilderList() {
+      if (adminUsersBuilder != null) {
+        return adminUsersBuilder.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(adminUsers);
+      }
+    }
+    /**
+     * <code>repeated .glory_api.AdminUser admin_users = 2;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.admin.AdminUser.Builder addAdminUsersBuilder() {
+      return getAdminUsersFieldBuilder().addBuilder(
+          com.zhijiejiaoyu.glory_api.admin.AdminUser.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .glory_api.AdminUser admin_users = 2;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.admin.AdminUser.Builder addAdminUsersBuilder(
+        int index) {
+      return getAdminUsersFieldBuilder().addBuilder(
+          index, com.zhijiejiaoyu.glory_api.admin.AdminUser.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .glory_api.AdminUser admin_users = 2;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.admin.AdminUser.Builder> 
+         getAdminUsersBuilderList() {
+      return getAdminUsersFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.admin.AdminUser, com.zhijiejiaoyu.glory_api.admin.AdminUser.Builder, com.zhijiejiaoyu.glory_api.admin.AdminUserOrBuilder> 
         getAdminUsersFieldBuilder() {
       if (adminUsersBuilder == null) {
-        adminUsersBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+        adminUsersBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.admin.AdminUser, com.zhijiejiaoyu.glory_api.admin.AdminUser.Builder, com.zhijiejiaoyu.glory_api.admin.AdminUserOrBuilder>(
-                getAdminUsers(),
+                adminUsers_,
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         adminUsers = null;

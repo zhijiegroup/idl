@@ -49,6 +49,6 @@ export interface ListAdminUserRequest {
 
 export interface ListAdminUserResponse {
   base_resp?: base.BaseResponse;
-  admin_users?: AdminUser;
+  admin_users?: Array<AdminUser>;
   pagination?: base.PaginationResponse;
 }

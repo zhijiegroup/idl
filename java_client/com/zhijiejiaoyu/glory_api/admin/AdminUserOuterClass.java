@@ -89,7 +89,7 @@ public final class AdminUserOuterClass {
       ".base.BaseRequest\022\014\n\004name\030\002 \001(\t\022+\n\npagin" +
       "ation\030d \001(\0132\027.base.PaginationRequest\"\227\001\n" +
       "\025ListAdminUserResponse\022%\n\tbase_resp\030\001 \001(" +
-      "\0132\022.base.BaseResponse\022)\n\013admin_users\030\002 \001" +
+      "\0132\022.base.BaseResponse\022)\n\013admin_users\030\002 \003" +
       "(\0132\024.glory_api.AdminUser\022,\n\npagination\030d" +
       " \001(\0132\030.base.PaginationResponseB$\n com.zh" +
       "ijiejiaoyu.glory_api.adminP\001b\006proto3"
