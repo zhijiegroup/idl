@@ -77,6 +77,7 @@ export interface CreateTenantUserRequest {
   tenant_id?: string;
   dept_id?: string;
   role_id?: string;
+  is_admin?: boolean;
   users?: Array<TenantUser>;
 }
 

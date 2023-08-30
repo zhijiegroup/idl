@@ -178,43 +178,44 @@ public final class TenantDept {
       "nt_user_id\030\001 \001(\003\022\017\n\007user_id\030\002 \001(\003\022\r\n\005pho" +
       "ne\030\004 \001(\t\022\014\n\004name\030\005 \001(\t\022\014\n\004role\030\006 \001(\t\022\017\n\007" +
       "role_id\030\007 \001(\003\022\014\n\004dept\030\010 \001(\t\022\017\n\007dept_id\030\t" +
-      " \001(\003\022\035\n\004user\030\n \001(\0132\017.glory_api.User\"\235\001\n\027" +
+      " \001(\003\022\035\n\004user\030\n \001(\0132\017.glory_api.User\"\257\001\n\027" +
       "CreateTenantUserRequest\022\'\n\014base_request\030" +
       "\001 \001(\0132\021.base.BaseRequest\022\021\n\ttenant_id\030\002 " +
-      "\001(\003\022\017\n\007dept_id\030\003 \001(\003\022\017\n\007role_id\030\004 \001(\003\022$\n" +
-      "\005users\030\005 \003(\0132\025.glory_api.TenantUser\"\301\001\n\030" +
-      "CreateTenantUserResponse\022%\n\tbase_resp\030\001 " +
-      "\001(\0132\022.base.BaseResponse\022J\n\014tenant_users\030" +
-      "\002 \003(\01324.glory_api.CreateTenantUserRespon" +
-      "se.TenantUsersEntry\0322\n\020TenantUsersEntry\022" +
-      "\013\n\003key\030\001 \001(\003\022\r\n\005value\030\002 \001(\t:\0028\001\"[\n\027Delet" +
-      "eTenantUserRequest\022\'\n\014base_request\030\001 \001(\013" +
-      "2\021.base.BaseRequest\022\027\n\017tenant_user_ids\030\002" +
-      " \003(\003\"A\n\030DeleteTenantUserResponse\022%\n\tbase" +
-      "_resp\030\001 \001(\0132\022.base.BaseResponse\"n\n\027Updat" +
-      "eTenantUserRequest\022\'\n\014base_request\030\001 \001(\013" +
-      "2\021.base.BaseRequest\022*\n\013tenant_user\030\002 \001(\013" +
-      "2\025.glory_api.TenantUser\"A\n\030UpdateTenantU" +
-      "serResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
-      "seResponse\"W\n\024GetTenantUserRequest\022\'\n\014ba" +
-      "se_request\030\001 \001(\0132\021.base.BaseRequest\022\026\n\016t" +
-      "enant_user_id\030\002 \001(\003\"j\n\025GetTenantUserResp" +
-      "onse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespo" +
-      "nse\022*\n\013tenant_user\030\002 \001(\0132\025.glory_api.Ten" +
-      "antUser\"\237\001\n\025ListTenantUserRequest\022\'\n\014bas" +
-      "e_request\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tte" +
-      "nant_id\030\002 \001(\003\022\017\n\007dept_id\030\003 \001(\003\022\014\n\004name\030\004" +
-      " \001(\t\022+\n\npagination\030d \001(\0132\027.base.Paginati" +
-      "onRequest\"\223\001\n\026ListTenantUserResponse\022%\n\t" +
-      "base_resp\030\001 \001(\0132\022.base.BaseResponse\022$\n\005u" +
-      "sers\030\002 \003(\0132\025.glory_api.TenantUser\022,\n\npag" +
-      "ination\030d \001(\0132\030.base.PaginationResponse\"" +
-      "k\n\037UpdateTenantUserPasswordRequest\022\'\n\014ba" +
-      "se_request\030\001 \001(\0132\021.base.BaseRequest\022\r\n\005p" +
-      "hone\030\002 \001(\t\022\020\n\010password\030\003 \001(\t\"I\n UpdateTe" +
-      "nantUserPasswordResponse\022%\n\tbase_resp\030\001 " +
-      "\001(\0132\022.base.BaseResponseB%\n!com.zhijiejia" +
-      "oyu.glory_api.tenantP\001b\006proto3"
+      "\001(\003\022\017\n\007dept_id\030\003 \001(\003\022\017\n\007role_id\030\004 \001(\003\022\020\n" +
+      "\010is_admin\030\005 \001(\010\022$\n\005users\030\006 \003(\0132\025.glory_a" +
+      "pi.TenantUser\"\301\001\n\030CreateTenantUserRespon" +
+      "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
+      "e\022J\n\014tenant_users\030\002 \003(\01324.glory_api.Crea" +
+      "teTenantUserResponse.TenantUsersEntry\0322\n" +
+      "\020TenantUsersEntry\022\013\n\003key\030\001 \001(\003\022\r\n\005value\030" +
+      "\002 \001(\t:\0028\001\"[\n\027DeleteTenantUserRequest\022\'\n\014" +
+      "base_request\030\001 \001(\0132\021.base.BaseRequest\022\027\n" +
+      "\017tenant_user_ids\030\002 \003(\003\"A\n\030DeleteTenantUs" +
+      "erResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
+      "eResponse\"n\n\027UpdateTenantUserRequest\022\'\n\014" +
+      "base_request\030\001 \001(\0132\021.base.BaseRequest\022*\n" +
+      "\013tenant_user\030\002 \001(\0132\025.glory_api.TenantUse" +
+      "r\"A\n\030UpdateTenantUserResponse\022%\n\tbase_re" +
+      "sp\030\001 \001(\0132\022.base.BaseResponse\"W\n\024GetTenan" +
+      "tUserRequest\022\'\n\014base_request\030\001 \001(\0132\021.bas" +
+      "e.BaseRequest\022\026\n\016tenant_user_id\030\002 \001(\003\"j\n" +
+      "\025GetTenantUserResponse\022%\n\tbase_resp\030\001 \001(" +
+      "\0132\022.base.BaseResponse\022*\n\013tenant_user\030\002 \001" +
+      "(\0132\025.glory_api.TenantUser\"\237\001\n\025ListTenant" +
+      "UserRequest\022\'\n\014base_request\030\001 \001(\0132\021.base" +
+      ".BaseRequest\022\021\n\ttenant_id\030\002 \001(\003\022\017\n\007dept_" +
+      "id\030\003 \001(\003\022\014\n\004name\030\004 \001(\t\022+\n\npagination\030d \001" +
+      "(\0132\027.base.PaginationRequest\"\223\001\n\026ListTena" +
+      "ntUserResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
+      ".BaseResponse\022$\n\005users\030\002 \003(\0132\025.glory_api" +
+      ".TenantUser\022,\n\npagination\030d \001(\0132\030.base.P" +
+      "aginationResponse\"k\n\037UpdateTenantUserPas" +
+      "swordRequest\022\'\n\014base_request\030\001 \001(\0132\021.bas" +
+      "e.BaseRequest\022\r\n\005phone\030\002 \001(\t\022\020\n\010password" +
+      "\030\003 \001(\t\"I\n UpdateTenantUserPasswordRespon" +
+      "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
+      "eB%\n!com.zhijiejiaoyu.glory_api.tenantP\001" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -299,7 +300,7 @@ public final class TenantDept {
     internal_static_glory_api_CreateTenantUserRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CreateTenantUserRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "TenantId", "DeptId", "RoleId", "Users", });
+        new java.lang.String[] { "BaseRequest", "TenantId", "DeptId", "RoleId", "IsAdmin", "Users", });
     internal_static_glory_api_CreateTenantUserResponse_descriptor =
       getDescriptor().getMessageTypes().get(13);
     internal_static_glory_api_CreateTenantUserResponse_fieldAccessorTable = new
