@@ -23,6 +23,7 @@ import * as seller from "./seller/seller";
 import * as payment from "./payment/payment";
 import * as example from "./example/example";
 import * as config from "./admin/config";
+import * as admin_tenant from "./admin/admin_tenant";
 import * as wxpay from "./wxpay/wxpay";
 import * as live_room from "./live/live_room";
 import * as live_token from "./live/live_token";
@@ -56,6 +57,7 @@ export {
   payment,
   example,
   config,
+  admin_tenant,
   wxpay,
   live_room,
   live_token,
@@ -925,6 +927,12 @@ export class glory_api {
   GetSTS(request) {
     const query = queryStringify(request);
     const uri = `${this.uriPrefix}/api/admin/get_sts${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  ListTenantOrg(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/admin/list_tenant_org${query}`;
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
 

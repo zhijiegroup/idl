@@ -78,7 +78,12 @@ private static final long serialVersionUID = 0L;
             roleId = input.readInt64();
             break;
           }
-          case 42: {
+          case 40: {
+
+            isAdmin = input.readBool();
+            break;
+          }
+          case 50: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               users = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.tenant.TenantUser>();
               mutable_bitField0_ |= 0x00000001;
@@ -181,17 +186,28 @@ private static final long serialVersionUID = 0L;
     return roleId;
   }
 
-  public static final int USERS_FIELD_NUMBER = 5;
+  public static final int IS_ADMIN_FIELD_NUMBER = 5;
+  private boolean isAdmin;
+  /**
+   * <code>bool is_admin = 5;</code>
+   * @return The isAdmin.
+   */
+  @java.lang.Override
+  public boolean getIsAdmin() {
+    return isAdmin;
+  }
+
+  public static final int USERS_FIELD_NUMBER = 6;
   private java.util.List<com.zhijiejiaoyu.glory_api.tenant.TenantUser> users;
   /**
-   * <code>repeated .glory_api.TenantUser users = 5;</code>
+   * <code>repeated .glory_api.TenantUser users = 6;</code>
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.tenant.TenantUser> getUsersList() {
     return users;
   }
   /**
-   * <code>repeated .glory_api.TenantUser users = 5;</code>
+   * <code>repeated .glory_api.TenantUser users = 6;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.tenant.TenantUserOrBuilder> 
@@ -199,21 +215,21 @@ private static final long serialVersionUID = 0L;
     return users;
   }
   /**
-   * <code>repeated .glory_api.TenantUser users = 5;</code>
+   * <code>repeated .glory_api.TenantUser users = 6;</code>
    */
   @java.lang.Override
   public int getUsersCount() {
     return users.size();
   }
   /**
-   * <code>repeated .glory_api.TenantUser users = 5;</code>
+   * <code>repeated .glory_api.TenantUser users = 6;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.tenant.TenantUser getUsers(int index) {
     return users.get(index);
   }
   /**
-   * <code>repeated .glory_api.TenantUser users = 5;</code>
+   * <code>repeated .glory_api.TenantUser users = 6;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.tenant.TenantUserOrBuilder getUsersOrBuilder(
@@ -247,8 +263,11 @@ private static final long serialVersionUID = 0L;
     if (roleId != 0L) {
       output.writeInt64(4, roleId);
     }
+    if (isAdmin != false) {
+      output.writeBool(5, isAdmin);
+    }
     for (int i = 0; i < users.size(); i++) {
-      output.writeMessage(5, users.get(i));
+      output.writeMessage(6, users.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -275,9 +294,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, roleId);
     }
+    if (isAdmin != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(5, isAdmin);
+    }
     for (int i = 0; i < users.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, users.get(i));
+        .computeMessageSize(6, users.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -305,6 +328,8 @@ private static final long serialVersionUID = 0L;
         != other.getDeptId()) return false;
     if (getRoleId()
         != other.getRoleId()) return false;
+    if (getIsAdmin()
+        != other.getIsAdmin()) return false;
     if (!getUsersList()
         .equals(other.getUsersList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -331,6 +356,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ROLE_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getRoleId());
+    hash = (37 * hash) + IS_ADMIN_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsAdmin());
     if (getUsersCount() > 0) {
       hash = (37 * hash) + USERS_FIELD_NUMBER;
       hash = (53 * hash) + getUsersList().hashCode();
@@ -481,6 +509,8 @@ private static final long serialVersionUID = 0L;
 
       roleId = 0L;
 
+      isAdmin = false;
+
       if (usersBuilder == null) {
         users = java.util.Collections.emptyList();
         bitField0 = (bitField0_ & ~0x00000001);
@@ -522,6 +552,7 @@ private static final long serialVersionUID = 0L;
       result.tenantId = tenantId;
       result.deptId = deptId;
       result.roleId = roleId;
+      result.isAdmin = isAdmin;
       if (usersBuilder == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           users = java.util.Collections.unmodifiableList(users);
@@ -590,6 +621,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getRoleId() != 0L) {
         setRoleId(other.getRoleId());
+      }
+      if (other.getIsAdmin() != false) {
+        setIsAdmin(other.getIsAdmin());
       }
       if (usersBuilder == null) {
         if (!other.users.isEmpty()) {
@@ -859,6 +893,37 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private boolean isAdmin ;
+    /**
+     * <code>bool is_admin = 5;</code>
+     * @return The isAdmin.
+     */
+    @java.lang.Override
+    public boolean getIsAdmin() {
+      return isAdmin;
+    }
+    /**
+     * <code>bool is_admin = 5;</code>
+     * @param value The isAdmin to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsAdmin(boolean value) {
+      
+      isAdmin = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool is_admin = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsAdmin() {
+      
+      isAdmin = false;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.zhijiejiaoyu.glory_api.tenant.TenantUser> users =
       java.util.Collections.emptyList();
     private void ensureUsersIsMutable() {
@@ -872,7 +937,7 @@ private static final long serialVersionUID = 0L;
         com.zhijiejiaoyu.glory_api.tenant.TenantUser, com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder, com.zhijiejiaoyu.glory_api.tenant.TenantUserOrBuilder> usersBuilder;
 
     /**
-     * <code>repeated .glory_api.TenantUser users = 5;</code>
+     * <code>repeated .glory_api.TenantUser users = 6;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.tenant.TenantUser> getUsersList() {
       if (usersBuilder == null) {
@@ -882,7 +947,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 5;</code>
+     * <code>repeated .glory_api.TenantUser users = 6;</code>
      */
     public int getUsersCount() {
       if (usersBuilder == null) {
@@ -892,7 +957,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 5;</code>
+     * <code>repeated .glory_api.TenantUser users = 6;</code>
      */
     public com.zhijiejiaoyu.glory_api.tenant.TenantUser getUsers(int index) {
       if (usersBuilder == null) {
@@ -902,7 +967,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 5;</code>
+     * <code>repeated .glory_api.TenantUser users = 6;</code>
      */
     public Builder setUsers(
         int index, com.zhijiejiaoyu.glory_api.tenant.TenantUser value) {
@@ -919,7 +984,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 5;</code>
+     * <code>repeated .glory_api.TenantUser users = 6;</code>
      */
     public Builder setUsers(
         int index, com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder builderForValue) {
@@ -933,7 +998,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 5;</code>
+     * <code>repeated .glory_api.TenantUser users = 6;</code>
      */
     public Builder addUsers(com.zhijiejiaoyu.glory_api.tenant.TenantUser value) {
       if (usersBuilder == null) {
@@ -949,7 +1014,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 5;</code>
+     * <code>repeated .glory_api.TenantUser users = 6;</code>
      */
     public Builder addUsers(
         int index, com.zhijiejiaoyu.glory_api.tenant.TenantUser value) {
@@ -966,7 +1031,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 5;</code>
+     * <code>repeated .glory_api.TenantUser users = 6;</code>
      */
     public Builder addUsers(
         com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder builderForValue) {
@@ -980,7 +1045,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 5;</code>
+     * <code>repeated .glory_api.TenantUser users = 6;</code>
      */
     public Builder addUsers(
         int index, com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder builderForValue) {
@@ -994,7 +1059,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 5;</code>
+     * <code>repeated .glory_api.TenantUser users = 6;</code>
      */
     public Builder addAllUsers(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.tenant.TenantUser> values) {
@@ -1009,7 +1074,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 5;</code>
+     * <code>repeated .glory_api.TenantUser users = 6;</code>
      */
     public Builder clearUsers() {
       if (usersBuilder == null) {
@@ -1022,7 +1087,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 5;</code>
+     * <code>repeated .glory_api.TenantUser users = 6;</code>
      */
     public Builder removeUsers(int index) {
       if (usersBuilder == null) {
@@ -1035,14 +1100,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 5;</code>
+     * <code>repeated .glory_api.TenantUser users = 6;</code>
      */
     public com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder getUsersBuilder(
         int index) {
       return getUsersFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 5;</code>
+     * <code>repeated .glory_api.TenantUser users = 6;</code>
      */
     public com.zhijiejiaoyu.glory_api.tenant.TenantUserOrBuilder getUsersOrBuilder(
         int index) {
@@ -1052,7 +1117,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 5;</code>
+     * <code>repeated .glory_api.TenantUser users = 6;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.tenant.TenantUserOrBuilder> 
          getUsersOrBuilderList() {
@@ -1063,14 +1128,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 5;</code>
+     * <code>repeated .glory_api.TenantUser users = 6;</code>
      */
     public com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder addUsersBuilder() {
       return getUsersFieldBuilder().addBuilder(
           com.zhijiejiaoyu.glory_api.tenant.TenantUser.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 5;</code>
+     * <code>repeated .glory_api.TenantUser users = 6;</code>
      */
     public com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder addUsersBuilder(
         int index) {
@@ -1078,7 +1143,7 @@ private static final long serialVersionUID = 0L;
           index, com.zhijiejiaoyu.glory_api.tenant.TenantUser.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 5;</code>
+     * <code>repeated .glory_api.TenantUser users = 6;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder> 
          getUsersBuilderList() {

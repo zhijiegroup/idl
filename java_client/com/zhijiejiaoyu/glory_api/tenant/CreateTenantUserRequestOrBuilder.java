@@ -41,25 +41,31 @@ public interface CreateTenantUserRequestOrBuilder extends
   long getRoleId();
 
   /**
-   * <code>repeated .glory_api.TenantUser users = 5;</code>
+   * <code>bool is_admin = 5;</code>
+   * @return The isAdmin.
+   */
+  boolean getIsAdmin();
+
+  /**
+   * <code>repeated .glory_api.TenantUser users = 6;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.tenant.TenantUser> 
       getUsersList();
   /**
-   * <code>repeated .glory_api.TenantUser users = 5;</code>
+   * <code>repeated .glory_api.TenantUser users = 6;</code>
    */
   com.zhijiejiaoyu.glory_api.tenant.TenantUser getUsers(int index);
   /**
-   * <code>repeated .glory_api.TenantUser users = 5;</code>
+   * <code>repeated .glory_api.TenantUser users = 6;</code>
    */
   int getUsersCount();
   /**
-   * <code>repeated .glory_api.TenantUser users = 5;</code>
+   * <code>repeated .glory_api.TenantUser users = 6;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.tenant.TenantUserOrBuilder> 
       getUsersOrBuilderList();
   /**
-   * <code>repeated .glory_api.TenantUser users = 5;</code>
+   * <code>repeated .glory_api.TenantUser users = 6;</code>
    */
   com.zhijiejiaoyu.glory_api.tenant.TenantUserOrBuilder getUsersOrBuilder(
       int index);

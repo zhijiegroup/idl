@@ -21,6 +21,7 @@ import * as seller from "./seller/seller";
 import * as payment from "./payment/payment";
 import * as example from "./example/example";
 import * as config from "./admin/config";
+import * as admin_tenant from "./admin/admin_tenant";
 import * as wxpay from "./wxpay/wxpay";
 import * as live_room from "./live/live_room";
 import * as live_token from "./live/live_token";
@@ -54,6 +55,7 @@ export {
   payment,
   example,
   config,
+  admin_tenant,
   wxpay,
   live_room,
   live_token,
@@ -487,6 +489,10 @@ list the permissions that supported */
   ): Promise<config.GetConfigResponse>;
 
   GetSTS(request: config.GetSTSRequest): Promise<config.GetSTSResponse>;
+
+  ListTenantOrg(
+    request: admin_tenant.ListTenantOrgRequest
+  ): Promise<admin_tenant.ListTenantOrgResponse>;
 
   /** wxpay */
   WxPrepay(request: wxpay.PrepayRequest): Promise<wxpay.PrepayResponse>;
