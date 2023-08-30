@@ -48,25 +48,31 @@ public interface RoleOrBuilder extends
       getDescriptionBytes();
 
   /**
-   * <code>repeated .glory_api.RolePermission role_permission = 6;</code>
+   * <code>bool readonly = 6;</code>
+   * @return The readonly.
+   */
+  boolean getReadonly();
+
+  /**
+   * <code>repeated .glory_api.RolePermission role_permission = 7;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.user.RolePermission> 
       getRolePermissionList();
   /**
-   * <code>repeated .glory_api.RolePermission role_permission = 6;</code>
+   * <code>repeated .glory_api.RolePermission role_permission = 7;</code>
    */
   com.zhijiejiaoyu.glory_api.user.RolePermission getRolePermission(int index);
   /**
-   * <code>repeated .glory_api.RolePermission role_permission = 6;</code>
+   * <code>repeated .glory_api.RolePermission role_permission = 7;</code>
    */
   int getRolePermissionCount();
   /**
-   * <code>repeated .glory_api.RolePermission role_permission = 6;</code>
+   * <code>repeated .glory_api.RolePermission role_permission = 7;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.user.RolePermissionOrBuilder> 
       getRolePermissionOrBuilderList();
   /**
-   * <code>repeated .glory_api.RolePermission role_permission = 6;</code>
+   * <code>repeated .glory_api.RolePermission role_permission = 7;</code>
    */
   com.zhijiejiaoyu.glory_api.user.RolePermissionOrBuilder getRolePermissionOrBuilder(
       int index);

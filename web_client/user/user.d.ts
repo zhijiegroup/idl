@@ -210,6 +210,7 @@ export interface Role {
   /** string source = 3;  // 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
 int64 source_id =4; // 对应的资源来源id */
   description?: string;
+  readonly?: boolean;
   role_permission?: Array<RolePermission>;
 }
 

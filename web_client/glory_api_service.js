@@ -24,6 +24,7 @@ import * as payment from "./payment/payment";
 import * as example from "./example/example";
 import * as config from "./admin/config";
 import * as admin_tenant from "./admin/admin_tenant";
+import * as admin_user from "./admin/admin_user";
 import * as wxpay from "./wxpay/wxpay";
 import * as live_room from "./live/live_room";
 import * as live_token from "./live/live_token";
@@ -58,6 +59,7 @@ export {
   example,
   config,
   admin_tenant,
+  admin_user,
   wxpay,
   live_room,
   live_token,
@@ -934,6 +936,38 @@ export class glory_api {
     const query = queryStringify(request);
     const uri = `${this.uriPrefix}/api/admin/list_tenant_org${query}`;
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  ListAdminUser(request) {
+    const uri = `${this.uriPrefix}/api/admin/list_admin_user`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreateAdminUser(request) {
+    const uri = `${this.uriPrefix}/api/admin/create_admin_user`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  UpdateAdminUser(request) {
+    const uri = `${this.uriPrefix}/api/admin/update_admin_user`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteAdminUser(request) {
+    const uri = `${this.uriPrefix}/api/admin/delete_admin_user`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
   }
 
   WxPrepay(request) {

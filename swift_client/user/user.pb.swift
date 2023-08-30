@@ -808,6 +808,8 @@ struct GloryApi_Role {
   ///  int64 source_id =4; // 对应的资源来源id
   var description_p: String = String()
 
+  var readonly: Bool = false
+
   var rolePermission: [GloryApi_RolePermission] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -3000,7 +3002,8 @@ extension GloryApi_Role: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     1: .standard(proto: "role_id"),
     2: .standard(proto: "role_name"),
     5: .same(proto: "description"),
-    6: .standard(proto: "role_permission"),
+    6: .same(proto: "readonly"),
+    7: .standard(proto: "role_permission"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -3012,7 +3015,8 @@ extension GloryApi_Role: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       case 1: try { try decoder.decodeSingularInt64Field(value: &self.roleID) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.roleName) }()
       case 5: try { try decoder.decodeSingularStringField(value: &self.description_p) }()
-      case 6: try { try decoder.decodeRepeatedMessageField(value: &self.rolePermission) }()
+      case 6: try { try decoder.decodeSingularBoolField(value: &self.readonly) }()
+      case 7: try { try decoder.decodeRepeatedMessageField(value: &self.rolePermission) }()
       default: break
       }
     }
@@ -3028,8 +3032,11 @@ extension GloryApi_Role: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     if !self.description_p.isEmpty {
       try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 5)
     }
+    if self.readonly != false {
+      try visitor.visitSingularBoolField(value: self.readonly, fieldNumber: 6)
+    }
     if !self.rolePermission.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.rolePermission, fieldNumber: 6)
+      try visitor.visitRepeatedMessageField(value: self.rolePermission, fieldNumber: 7)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -3038,6 +3045,7 @@ extension GloryApi_Role: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     if lhs.roleID != rhs.roleID {return false}
     if lhs.roleName != rhs.roleName {return false}
     if lhs.description_p != rhs.description_p {return false}
+    if lhs.readonly != rhs.readonly {return false}
     if lhs.rolePermission != rhs.rolePermission {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
