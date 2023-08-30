@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private EvaluateData() {
-    evaluateList= java.util.Collections.emptyList();
+    evaluateList = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -39,7 +39,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0= 0;
+    int mutable_bitField0 = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -52,30 +52,30 @@ private static final long serialVersionUID = 0L;
             break;
           case 9: {
 
-            averageScore= input.readDouble();
+            averageScore = input.readDouble();
             break;
           }
           case 17: {
 
-            totalDuration= input.readDouble();
+            totalDuration = input.readDouble();
             break;
           }
           case 24: {
 
-            totalLike= input.readInt64();
+            totalLike = input.readInt64();
             break;
           }
           case 32: {
 
-            totalOrder= input.readInt64();
+            totalOrder = input.readInt64();
             break;
           }
           case 42: {
-            if (!((mutable_bitField0& 0x00000001) != 0)) {
-              evaluateList= new java.util.ArrayList<com.zhijiejiaoyu.glory_api.live.EvaluateRoom>();
+            if (!((mutable_bitField0 & 0x00000001) != 0)) {
+              evaluateList = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.live.EvaluateRoom>();
               mutable_bitField0_ |= 0x00000001;
             }
-            evaluateList.add(
+            evaluateList .add(
                 input.readMessage(com.zhijiejiaoyu.glory_api.live.EvaluateRoom.parser(), extensionRegistry));
             break;
           }
@@ -94,8 +94,8 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0& 0x00000001) != 0)) {
-        evaluateList= java.util.Collections.unmodifiableList(evaluateList);
+      if (((mutable_bitField0 & 0x00000001) != 0)) {
+        evaluateList = java.util.Collections.unmodifiableList(evaluateList );
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -115,57 +115,57 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int AVERAGE_SCORE_FIELD_NUMBER = 1;
-  private double averageScore;
+  private double averageScore ;
   /**
    * <code>double average_score = 1;</code>
    * @return The averageScore.
    */
   @java.lang.Override
   public double getAverageScore() {
-    return averageScore;
+    return averageScore ;
   }
 
   public static final int TOTAL_DURATION_FIELD_NUMBER = 2;
-  private double totalDuration;
+  private double totalDuration ;
   /**
    * <code>double total_duration = 2;</code>
    * @return The totalDuration.
    */
   @java.lang.Override
   public double getTotalDuration() {
-    return totalDuration;
+    return totalDuration ;
   }
 
   public static final int TOTAL_LIKE_FIELD_NUMBER = 3;
-  private long totalLike;
+  private long totalLike ;
   /**
    * <code>int64 total_like = 3;</code>
    * @return The totalLike.
    */
   @java.lang.Override
   public long getTotalLike() {
-    return totalLike;
+    return totalLike ;
   }
 
   public static final int TOTAL_ORDER_FIELD_NUMBER = 4;
-  private long totalOrder;
+  private long totalOrder ;
   /**
    * <code>int64 total_order = 4;</code>
    * @return The totalOrder.
    */
   @java.lang.Override
   public long getTotalOrder() {
-    return totalOrder;
+    return totalOrder ;
   }
 
   public static final int EVALUATE_LIST_FIELD_NUMBER = 5;
-  private java.util.List<com.zhijiejiaoyu.glory_api.live.EvaluateRoom> evaluateList;
+  private java.util.List<com.zhijiejiaoyu.glory_api.live.EvaluateRoom> evaluateList ;
   /**
    * <code>repeated .glory_api.EvaluateRoom evaluate_list = 5;</code>
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.live.EvaluateRoom> getEvaluateListList() {
-    return evaluateList;
+    return evaluateList ;
   }
   /**
    * <code>repeated .glory_api.EvaluateRoom evaluate_list = 5;</code>
@@ -173,21 +173,21 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.live.EvaluateRoomOrBuilder> 
       getEvaluateListOrBuilderList() {
-    return evaluateList;
+    return evaluateList ;
   }
   /**
    * <code>repeated .glory_api.EvaluateRoom evaluate_list = 5;</code>
    */
   @java.lang.Override
   public int getEvaluateListCount() {
-    return evaluateList.size();
+    return evaluateList .size();
   }
   /**
    * <code>repeated .glory_api.EvaluateRoom evaluate_list = 5;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.live.EvaluateRoom getEvaluateList(int index) {
-    return evaluateList.get(index);
+    return evaluateList .get(index);
   }
   /**
    * <code>repeated .glory_api.EvaluateRoom evaluate_list = 5;</code>
@@ -195,7 +195,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.live.EvaluateRoomOrBuilder getEvaluateListOrBuilder(
       int index) {
-    return evaluateList.get(index);
+    return evaluateList .get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -212,20 +212,20 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (averageScore!= 0D) {
-      output.writeDouble(1, averageScore);
+    if (averageScore != 0D) {
+      output.writeDouble(1, averageScore );
     }
-    if (totalDuration!= 0D) {
-      output.writeDouble(2, totalDuration);
+    if (totalDuration != 0D) {
+      output.writeDouble(2, totalDuration );
     }
-    if (totalLike!= 0L) {
-      output.writeInt64(3, totalLike);
+    if (totalLike != 0L) {
+      output.writeInt64(3, totalLike );
     }
-    if (totalOrder!= 0L) {
-      output.writeInt64(4, totalOrder);
+    if (totalOrder != 0L) {
+      output.writeInt64(4, totalOrder );
     }
-    for (int i = 0; i < evaluateList.size(); i++) {
-      output.writeMessage(5, evaluateList.get(i));
+    for (int i = 0; i < evaluateList .size(); i++) {
+      output.writeMessage(5, evaluateList .get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -236,25 +236,25 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (averageScore!= 0D) {
+    if (averageScore != 0D) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(1, averageScore);
+        .computeDoubleSize(1, averageScore );
     }
-    if (totalDuration!= 0D) {
+    if (totalDuration != 0D) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(2, totalDuration);
+        .computeDoubleSize(2, totalDuration );
     }
-    if (totalLike!= 0L) {
+    if (totalLike != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(3, totalLike);
+        .computeInt64Size(3, totalLike );
     }
-    if (totalOrder!= 0L) {
+    if (totalOrder != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(4, totalOrder);
+        .computeInt64Size(4, totalOrder );
     }
-    for (int i = 0; i < evaluateList.size(); i++) {
+    for (int i = 0; i < evaluateList .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, evaluateList.get(i));
+        .computeMessageSize(5, evaluateList .get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -444,19 +444,19 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      averageScore= 0D;
+      averageScore = 0D;
 
-      totalDuration= 0D;
+      totalDuration = 0D;
 
-      totalLike= 0L;
+      totalLike = 0L;
 
-      totalOrder= 0L;
+      totalOrder = 0L;
 
-      if (evaluateListBuilder== null) {
-        evaluateList= java.util.Collections.emptyList();
-        bitField0= (bitField0& ~0x00000001);
+      if (evaluateListBuilder == null) {
+        evaluateList = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000001);
       } else {
-        evaluateListBuilder.clear();
+        evaluateListBuilder .clear();
       }
       return this;
     }
@@ -484,19 +484,19 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.live.EvaluateData buildPartial() {
       com.zhijiejiaoyu.glory_api.live.EvaluateData result = new com.zhijiejiaoyu.glory_api.live.EvaluateData(this);
-      int from_bitField0= bitField0;
-      result.averageScore= averageScore;
-      result.totalDuration= totalDuration;
-      result.totalLike= totalLike;
-      result.totalOrder= totalOrder;
-      if (evaluateListBuilder== null) {
-        if (((bitField0& 0x00000001) != 0)) {
-          evaluateList= java.util.Collections.unmodifiableList(evaluateList);
-          bitField0= (bitField0& ~0x00000001);
+      int from_bitField0 = bitField0 ;
+      result.averageScore = averageScore ;
+      result.totalDuration = totalDuration ;
+      result.totalLike = totalLike ;
+      result.totalOrder = totalOrder ;
+      if (evaluateListBuilder == null) {
+        if (((bitField0 & 0x00000001) != 0)) {
+          evaluateList = java.util.Collections.unmodifiableList(evaluateList );
+          bitField0 = (bitField0 & ~0x00000001);
         }
-        result.evaluateList= evaluateList;
+        result.evaluateList = evaluateList ;
       } else {
-        result.evaluateList= evaluateListBuilder.build();
+        result.evaluateList = evaluateListBuilder .build();
       }
       onBuilt();
       return result;
@@ -558,29 +558,29 @@ private static final long serialVersionUID = 0L;
       if (other.getTotalOrder() != 0L) {
         setTotalOrder(other.getTotalOrder());
       }
-      if (evaluateListBuilder== null) {
-        if (!other.evaluateList.isEmpty()) {
-          if (evaluateList.isEmpty()) {
-            evaluateList= other.evaluateList;
-            bitField0= (bitField0& ~0x00000001);
+      if (evaluateListBuilder == null) {
+        if (!other.evaluateList .isEmpty()) {
+          if (evaluateList .isEmpty()) {
+            evaluateList = other.evaluateList ;
+            bitField0 = (bitField0 & ~0x00000001);
           } else {
             ensureEvaluateListIsMutable();
-            evaluateList.addAll(other.evaluateList);
+            evaluateList .addAll(other.evaluateList );
           }
           onChanged();
         }
       } else {
-        if (!other.evaluateList.isEmpty()) {
-          if (evaluateListBuilder.isEmpty()) {
-            evaluateListBuilder.dispose();
-            evaluateListBuilder= null;
-            evaluateList= other.evaluateList;
-            bitField0= (bitField0& ~0x00000001);
-            evaluateListBuilder= 
+        if (!other.evaluateList .isEmpty()) {
+          if (evaluateListBuilder .isEmpty()) {
+            evaluateListBuilder .dispose();
+            evaluateListBuilder = null;
+            evaluateList = other.evaluateList ;
+            bitField0 = (bitField0 & ~0x00000001);
+            evaluateListBuilder = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getEvaluateListFieldBuilder() : null;
           } else {
-            evaluateListBuilder.addAllMessages(other.evaluateList);
+            evaluateListBuilder .addAllMessages(other.evaluateList );
           }
         }
       }
@@ -612,16 +612,16 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int bitField0;
+    private int bitField0 ;
 
-    private double averageScore;
+    private double averageScore ;
     /**
      * <code>double average_score = 1;</code>
      * @return The averageScore.
      */
     @java.lang.Override
     public double getAverageScore() {
-      return averageScore;
+      return averageScore ;
     }
     /**
      * <code>double average_score = 1;</code>
@@ -630,7 +630,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setAverageScore(double value) {
       
-      averageScore= value;
+      averageScore = value;
       onChanged();
       return this;
     }
@@ -640,19 +640,19 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearAverageScore() {
       
-      averageScore= 0D;
+      averageScore = 0D;
       onChanged();
       return this;
     }
 
-    private double totalDuration;
+    private double totalDuration ;
     /**
      * <code>double total_duration = 2;</code>
      * @return The totalDuration.
      */
     @java.lang.Override
     public double getTotalDuration() {
-      return totalDuration;
+      return totalDuration ;
     }
     /**
      * <code>double total_duration = 2;</code>
@@ -661,7 +661,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setTotalDuration(double value) {
       
-      totalDuration= value;
+      totalDuration = value;
       onChanged();
       return this;
     }
@@ -671,19 +671,19 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearTotalDuration() {
       
-      totalDuration= 0D;
+      totalDuration = 0D;
       onChanged();
       return this;
     }
 
-    private long totalLike;
+    private long totalLike ;
     /**
      * <code>int64 total_like = 3;</code>
      * @return The totalLike.
      */
     @java.lang.Override
     public long getTotalLike() {
-      return totalLike;
+      return totalLike ;
     }
     /**
      * <code>int64 total_like = 3;</code>
@@ -692,7 +692,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setTotalLike(long value) {
       
-      totalLike= value;
+      totalLike = value;
       onChanged();
       return this;
     }
@@ -702,19 +702,19 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearTotalLike() {
       
-      totalLike= 0L;
+      totalLike = 0L;
       onChanged();
       return this;
     }
 
-    private long totalOrder;
+    private long totalOrder ;
     /**
      * <code>int64 total_order = 4;</code>
      * @return The totalOrder.
      */
     @java.lang.Override
     public long getTotalOrder() {
-      return totalOrder;
+      return totalOrder ;
     }
     /**
      * <code>int64 total_order = 4;</code>
@@ -723,7 +723,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setTotalOrder(long value) {
       
-      totalOrder= value;
+      totalOrder = value;
       onChanged();
       return this;
     }
@@ -733,51 +733,51 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearTotalOrder() {
       
-      totalOrder= 0L;
+      totalOrder = 0L;
       onChanged();
       return this;
     }
 
-    private java.util.List<com.zhijiejiaoyu.glory_api.live.EvaluateRoom> evaluateList=
+    private java.util.List<com.zhijiejiaoyu.glory_api.live.EvaluateRoom> evaluateList =
       java.util.Collections.emptyList();
     private void ensureEvaluateListIsMutable() {
-      if (!((bitField0& 0x00000001) != 0)) {
-        evaluateList= new java.util.ArrayList<com.zhijiejiaoyu.glory_api.live.EvaluateRoom>(evaluateList);
+      if (!((bitField0 & 0x00000001) != 0)) {
+        evaluateList = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.live.EvaluateRoom>(evaluateList );
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.live.EvaluateRoom, com.zhijiejiaoyu.glory_api.live.EvaluateRoom.Builder, com.zhijiejiaoyu.glory_api.live.EvaluateRoomOrBuilder> evaluateListBuilder;
+        com.zhijiejiaoyu.glory_api.live.EvaluateRoom, com.zhijiejiaoyu.glory_api.live.EvaluateRoom.Builder, com.zhijiejiaoyu.glory_api.live.EvaluateRoomOrBuilder> evaluateListBuilder ;
 
     /**
      * <code>repeated .glory_api.EvaluateRoom evaluate_list = 5;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.live.EvaluateRoom> getEvaluateListList() {
-      if (evaluateListBuilder== null) {
-        return java.util.Collections.unmodifiableList(evaluateList);
+      if (evaluateListBuilder == null) {
+        return java.util.Collections.unmodifiableList(evaluateList );
       } else {
-        return evaluateListBuilder.getMessageList();
+        return evaluateListBuilder .getMessageList();
       }
     }
     /**
      * <code>repeated .glory_api.EvaluateRoom evaluate_list = 5;</code>
      */
     public int getEvaluateListCount() {
-      if (evaluateListBuilder== null) {
-        return evaluateList.size();
+      if (evaluateListBuilder == null) {
+        return evaluateList .size();
       } else {
-        return evaluateListBuilder.getCount();
+        return evaluateListBuilder .getCount();
       }
     }
     /**
      * <code>repeated .glory_api.EvaluateRoom evaluate_list = 5;</code>
      */
     public com.zhijiejiaoyu.glory_api.live.EvaluateRoom getEvaluateList(int index) {
-      if (evaluateListBuilder== null) {
-        return evaluateList.get(index);
+      if (evaluateListBuilder == null) {
+        return evaluateList .get(index);
       } else {
-        return evaluateListBuilder.getMessage(index);
+        return evaluateListBuilder .getMessage(index);
       }
     }
     /**
@@ -785,15 +785,15 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setEvaluateList(
         int index, com.zhijiejiaoyu.glory_api.live.EvaluateRoom value) {
-      if (evaluateListBuilder== null) {
+      if (evaluateListBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         ensureEvaluateListIsMutable();
-        evaluateList.set(index, value);
+        evaluateList .set(index, value);
         onChanged();
       } else {
-        evaluateListBuilder.setMessage(index, value);
+        evaluateListBuilder .setMessage(index, value);
       }
       return this;
     }
@@ -802,12 +802,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setEvaluateList(
         int index, com.zhijiejiaoyu.glory_api.live.EvaluateRoom.Builder builderForValue) {
-      if (evaluateListBuilder== null) {
+      if (evaluateListBuilder == null) {
         ensureEvaluateListIsMutable();
-        evaluateList.set(index, builderForValue.build());
+        evaluateList .set(index, builderForValue.build());
         onChanged();
       } else {
-        evaluateListBuilder.setMessage(index, builderForValue.build());
+        evaluateListBuilder .setMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -815,15 +815,15 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.EvaluateRoom evaluate_list = 5;</code>
      */
     public Builder addEvaluateList(com.zhijiejiaoyu.glory_api.live.EvaluateRoom value) {
-      if (evaluateListBuilder== null) {
+      if (evaluateListBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         ensureEvaluateListIsMutable();
-        evaluateList.add(value);
+        evaluateList .add(value);
         onChanged();
       } else {
-        evaluateListBuilder.addMessage(value);
+        evaluateListBuilder .addMessage(value);
       }
       return this;
     }
@@ -832,15 +832,15 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addEvaluateList(
         int index, com.zhijiejiaoyu.glory_api.live.EvaluateRoom value) {
-      if (evaluateListBuilder== null) {
+      if (evaluateListBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         ensureEvaluateListIsMutable();
-        evaluateList.add(index, value);
+        evaluateList .add(index, value);
         onChanged();
       } else {
-        evaluateListBuilder.addMessage(index, value);
+        evaluateListBuilder .addMessage(index, value);
       }
       return this;
     }
@@ -849,12 +849,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addEvaluateList(
         com.zhijiejiaoyu.glory_api.live.EvaluateRoom.Builder builderForValue) {
-      if (evaluateListBuilder== null) {
+      if (evaluateListBuilder == null) {
         ensureEvaluateListIsMutable();
-        evaluateList.add(builderForValue.build());
+        evaluateList .add(builderForValue.build());
         onChanged();
       } else {
-        evaluateListBuilder.addMessage(builderForValue.build());
+        evaluateListBuilder .addMessage(builderForValue.build());
       }
       return this;
     }
@@ -863,12 +863,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addEvaluateList(
         int index, com.zhijiejiaoyu.glory_api.live.EvaluateRoom.Builder builderForValue) {
-      if (evaluateListBuilder== null) {
+      if (evaluateListBuilder == null) {
         ensureEvaluateListIsMutable();
-        evaluateList.add(index, builderForValue.build());
+        evaluateList .add(index, builderForValue.build());
         onChanged();
       } else {
-        evaluateListBuilder.addMessage(index, builderForValue.build());
+        evaluateListBuilder .addMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -877,13 +877,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addAllEvaluateList(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.live.EvaluateRoom> values) {
-      if (evaluateListBuilder== null) {
+      if (evaluateListBuilder == null) {
         ensureEvaluateListIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, evaluateList);
+            values, evaluateList );
         onChanged();
       } else {
-        evaluateListBuilder.addAllMessages(values);
+        evaluateListBuilder .addAllMessages(values);
       }
       return this;
     }
@@ -891,12 +891,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.EvaluateRoom evaluate_list = 5;</code>
      */
     public Builder clearEvaluateList() {
-      if (evaluateListBuilder== null) {
-        evaluateList= java.util.Collections.emptyList();
-        bitField0= (bitField0& ~0x00000001);
+      if (evaluateListBuilder == null) {
+        evaluateList = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000001);
         onChanged();
       } else {
-        evaluateListBuilder.clear();
+        evaluateListBuilder .clear();
       }
       return this;
     }
@@ -904,12 +904,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.EvaluateRoom evaluate_list = 5;</code>
      */
     public Builder removeEvaluateList(int index) {
-      if (evaluateListBuilder== null) {
+      if (evaluateListBuilder == null) {
         ensureEvaluateListIsMutable();
-        evaluateList.remove(index);
+        evaluateList .remove(index);
         onChanged();
       } else {
-        evaluateListBuilder.remove(index);
+        evaluateListBuilder .remove(index);
       }
       return this;
     }
@@ -925,9 +925,9 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.live.EvaluateRoomOrBuilder getEvaluateListOrBuilder(
         int index) {
-      if (evaluateListBuilder== null) {
-        return evaluateList.get(index);  } else {
-        return evaluateListBuilder.getMessageOrBuilder(index);
+      if (evaluateListBuilder == null) {
+        return evaluateList .get(index);  } else {
+        return evaluateListBuilder .getMessageOrBuilder(index);
       }
     }
     /**
@@ -935,10 +935,10 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.live.EvaluateRoomOrBuilder> 
          getEvaluateListOrBuilderList() {
-      if (evaluateListBuilder!= null) {
-        return evaluateListBuilder.getMessageOrBuilderList();
+      if (evaluateListBuilder != null) {
+        return evaluateListBuilder .getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(evaluateList);
+        return java.util.Collections.unmodifiableList(evaluateList );
       }
     }
     /**
@@ -966,16 +966,16 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.RepeatedFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.live.EvaluateRoom, com.zhijiejiaoyu.glory_api.live.EvaluateRoom.Builder, com.zhijiejiaoyu.glory_api.live.EvaluateRoomOrBuilder> 
         getEvaluateListFieldBuilder() {
-      if (evaluateListBuilder== null) {
-        evaluateListBuilder= new com.google.protobuf.RepeatedFieldBuilderV3<
+      if (evaluateListBuilder == null) {
+        evaluateListBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.live.EvaluateRoom, com.zhijiejiaoyu.glory_api.live.EvaluateRoom.Builder, com.zhijiejiaoyu.glory_api.live.EvaluateRoomOrBuilder>(
-                evaluateList,
-                ((bitField0& 0x00000001) != 0),
+                evaluateList ,
+                ((bitField0 & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        evaluateList= null;
+        evaluateList = null;
       }
-      return evaluateListBuilder;
+      return evaluateListBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

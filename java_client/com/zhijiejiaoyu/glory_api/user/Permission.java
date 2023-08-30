@@ -16,9 +16,9 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Permission() {
-    permissionName= "";
-    permission= "";
-    description= "";
+    permissionName = "";
+    permission = "";
+    description = "";
   }
 
   @java.lang.Override
@@ -53,35 +53,35 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            permissionId= input.readInt64();
+            permissionId = input.readInt64();
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            permissionName= s;
+            permissionName = s;
             break;
           }
           case 24: {
 
-            resourceId= input.readInt64();
+            resourceId = input.readInt64();
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            permission= s;
+            permission = s;
             break;
           }
           case 42: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            description= s;
+            description = s;
             break;
           }
           case 48: {
 
-            tenantId= input.readInt64();
+            tenantId = input.readInt64();
             break;
           }
           default: {
@@ -117,32 +117,32 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PERMISSION_ID_FIELD_NUMBER = 1;
-  private long permissionId;
+  private long permissionId ;
   /**
    * <code>int64 permission_id = 1;</code>
    * @return The permissionId.
    */
   @java.lang.Override
   public long getPermissionId() {
-    return permissionId;
+    return permissionId ;
   }
 
   public static final int PERMISSION_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object permissionName;
+  private volatile java.lang.Object permissionName ;
   /**
    * <code>string permission_name = 2;</code>
    * @return The permissionName.
    */
   @java.lang.Override
   public java.lang.String getPermissionName() {
-    java.lang.Object ref = permissionName;
+    java.lang.Object ref = permissionName ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      permissionName= s;
+      permissionName = s;
       return s;
     }
   }
@@ -153,12 +153,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getPermissionNameBytes() {
-    java.lang.Object ref = permissionName;
+    java.lang.Object ref = permissionName ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      permissionName= b;
+      permissionName = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -166,7 +166,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int RESOURCE_ID_FIELD_NUMBER = 3;
-  private long resourceId;
+  private long resourceId ;
   /**
    * <pre>
    * 权限对应的resource
@@ -177,11 +177,11 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public long getResourceId() {
-    return resourceId;
+    return resourceId ;
   }
 
   public static final int PERMISSION_FIELD_NUMBER = 4;
-  private volatile java.lang.Object permission;
+  private volatile java.lang.Object permission ;
   /**
    * <pre>
    * 支持 C R U D
@@ -192,14 +192,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public java.lang.String getPermission() {
-    java.lang.Object ref = permission;
+    java.lang.Object ref = permission ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      permission= s;
+      permission = s;
       return s;
     }
   }
@@ -214,12 +214,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getPermissionBytes() {
-    java.lang.Object ref = permission;
+    java.lang.Object ref = permission ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      permission= b;
+      permission = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -227,21 +227,21 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 5;
-  private volatile java.lang.Object description;
+  private volatile java.lang.Object description ;
   /**
    * <code>string description = 5;</code>
    * @return The description.
    */
   @java.lang.Override
   public java.lang.String getDescription() {
-    java.lang.Object ref = description;
+    java.lang.Object ref = description ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      description= s;
+      description = s;
       return s;
     }
   }
@@ -252,12 +252,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getDescriptionBytes() {
-    java.lang.Object ref = description;
+    java.lang.Object ref = description ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      description= b;
+      description = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -265,14 +265,14 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TENANT_ID_FIELD_NUMBER = 6;
-  private long tenantId;
+  private long tenantId ;
   /**
    * <code>int64 tenant_id = 6;</code>
    * @return The tenantId.
    */
   @java.lang.Override
   public long getTenantId() {
-    return tenantId;
+    return tenantId ;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -289,23 +289,23 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (permissionId!= 0L) {
-      output.writeInt64(1, permissionId);
+    if (permissionId != 0L) {
+      output.writeInt64(1, permissionId );
     }
     if (!getPermissionNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, permissionName);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, permissionName );
     }
-    if (resourceId!= 0L) {
-      output.writeInt64(3, resourceId);
+    if (resourceId != 0L) {
+      output.writeInt64(3, resourceId );
     }
     if (!getPermissionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, permission);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, permission );
     }
     if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, description);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, description );
     }
-    if (tenantId!= 0L) {
-      output.writeInt64(6, tenantId);
+    if (tenantId != 0L) {
+      output.writeInt64(6, tenantId );
     }
     unknownFields.writeTo(output);
   }
@@ -316,26 +316,26 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (permissionId!= 0L) {
+    if (permissionId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, permissionId);
+        .computeInt64Size(1, permissionId );
     }
     if (!getPermissionNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, permissionName);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, permissionName );
     }
-    if (resourceId!= 0L) {
+    if (resourceId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(3, resourceId);
+        .computeInt64Size(3, resourceId );
     }
     if (!getPermissionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, permission);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, permission );
     }
     if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, description);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, description );
     }
-    if (tenantId!= 0L) {
+    if (tenantId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(6, tenantId);
+        .computeInt64Size(6, tenantId );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -523,17 +523,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      permissionId= 0L;
+      permissionId = 0L;
 
-      permissionName= "";
+      permissionName = "";
 
-      resourceId= 0L;
+      resourceId = 0L;
 
-      permission= "";
+      permission = "";
 
-      description= "";
+      description = "";
 
-      tenantId= 0L;
+      tenantId = 0L;
 
       return this;
     }
@@ -561,12 +561,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.user.Permission buildPartial() {
       com.zhijiejiaoyu.glory_api.user.Permission result = new com.zhijiejiaoyu.glory_api.user.Permission(this);
-      result.permissionId= permissionId;
-      result.permissionName= permissionName;
-      result.resourceId= resourceId;
-      result.permission= permission;
-      result.description= description;
-      result.tenantId= tenantId;
+      result.permissionId = permissionId ;
+      result.permissionName = permissionName ;
+      result.resourceId = resourceId ;
+      result.permission = permission ;
+      result.description = description ;
+      result.tenantId = tenantId ;
       onBuilt();
       return result;
     }
@@ -619,18 +619,18 @@ private static final long serialVersionUID = 0L;
         setPermissionId(other.getPermissionId());
       }
       if (!other.getPermissionName().isEmpty()) {
-        permissionName= other.permissionName;
+        permissionName = other.permissionName ;
         onChanged();
       }
       if (other.getResourceId() != 0L) {
         setResourceId(other.getResourceId());
       }
       if (!other.getPermission().isEmpty()) {
-        permission= other.permission;
+        permission = other.permission ;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
-        description= other.description;
+        description = other.description ;
         onChanged();
       }
       if (other.getTenantId() != 0L) {
@@ -665,14 +665,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long permissionId;
+    private long permissionId ;
     /**
      * <code>int64 permission_id = 1;</code>
      * @return The permissionId.
      */
     @java.lang.Override
     public long getPermissionId() {
-      return permissionId;
+      return permissionId ;
     }
     /**
      * <code>int64 permission_id = 1;</code>
@@ -681,7 +681,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setPermissionId(long value) {
       
-      permissionId= value;
+      permissionId = value;
       onChanged();
       return this;
     }
@@ -691,23 +691,23 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearPermissionId() {
       
-      permissionId= 0L;
+      permissionId = 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object permissionName= "";
+    private java.lang.Object permissionName = "";
     /**
      * <code>string permission_name = 2;</code>
      * @return The permissionName.
      */
     public java.lang.String getPermissionName() {
-      java.lang.Object ref = permissionName;
+      java.lang.Object ref = permissionName ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        permissionName= s;
+        permissionName = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -719,12 +719,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getPermissionNameBytes() {
-      java.lang.Object ref = permissionName;
+      java.lang.Object ref = permissionName ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        permissionName= b;
+        permissionName = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -741,7 +741,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      permissionName= value;
+      permissionName = value;
       onChanged();
       return this;
     }
@@ -751,7 +751,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearPermissionName() {
       
-      permissionName= getDefaultInstance().getPermissionName();
+      permissionName = getDefaultInstance().getPermissionName();
       onChanged();
       return this;
     }
@@ -767,12 +767,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      permissionName= value;
+      permissionName = value;
       onChanged();
       return this;
     }
 
-    private long resourceId;
+    private long resourceId ;
     /**
      * <pre>
      * 权限对应的resource
@@ -783,7 +783,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getResourceId() {
-      return resourceId;
+      return resourceId ;
     }
     /**
      * <pre>
@@ -796,7 +796,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setResourceId(long value) {
       
-      resourceId= value;
+      resourceId = value;
       onChanged();
       return this;
     }
@@ -810,12 +810,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearResourceId() {
       
-      resourceId= 0L;
+      resourceId = 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object permission= "";
+    private java.lang.Object permission = "";
     /**
      * <pre>
      * 支持 C R U D
@@ -825,12 +825,12 @@ private static final long serialVersionUID = 0L;
      * @return The permission.
      */
     public java.lang.String getPermission() {
-      java.lang.Object ref = permission;
+      java.lang.Object ref = permission ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        permission= s;
+        permission = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -846,12 +846,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getPermissionBytes() {
-      java.lang.Object ref = permission;
+      java.lang.Object ref = permission ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        permission= b;
+        permission = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -872,7 +872,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      permission= value;
+      permission = value;
       onChanged();
       return this;
     }
@@ -886,7 +886,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearPermission() {
       
-      permission= getDefaultInstance().getPermission();
+      permission = getDefaultInstance().getPermission();
       onChanged();
       return this;
     }
@@ -906,23 +906,23 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      permission= value;
+      permission = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object description= "";
+    private java.lang.Object description = "";
     /**
      * <code>string description = 5;</code>
      * @return The description.
      */
     public java.lang.String getDescription() {
-      java.lang.Object ref = description;
+      java.lang.Object ref = description ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        description= s;
+        description = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -934,12 +934,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
-      java.lang.Object ref = description;
+      java.lang.Object ref = description ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        description= b;
+        description = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -956,7 +956,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      description= value;
+      description = value;
       onChanged();
       return this;
     }
@@ -966,7 +966,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearDescription() {
       
-      description= getDefaultInstance().getDescription();
+      description = getDefaultInstance().getDescription();
       onChanged();
       return this;
     }
@@ -982,19 +982,19 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      description= value;
+      description = value;
       onChanged();
       return this;
     }
 
-    private long tenantId;
+    private long tenantId ;
     /**
      * <code>int64 tenant_id = 6;</code>
      * @return The tenantId.
      */
     @java.lang.Override
     public long getTenantId() {
-      return tenantId;
+      return tenantId ;
     }
     /**
      * <code>int64 tenant_id = 6;</code>
@@ -1003,7 +1003,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setTenantId(long value) {
       
-      tenantId= value;
+      tenantId = value;
       onChanged();
       return this;
     }
@@ -1013,7 +1013,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearTenantId() {
       
-      tenantId= 0L;
+      tenantId = 0L;
       onChanged();
       return this;
     }

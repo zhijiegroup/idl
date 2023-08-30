@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private PayerAmount() {
-    currency= "";
+    currency = "";
   }
 
   @java.lang.Override
@@ -52,17 +52,17 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            currency= s;
+            currency = s;
             break;
           }
           case 16: {
 
-            payerTotal= input.readInt64();
+            payerTotal = input.readInt64();
             break;
           }
           case 24: {
 
-            total= input.readInt64();
+            total = input.readInt64();
             break;
           }
           default: {
@@ -98,7 +98,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CURRENCY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object currency;
+  private volatile java.lang.Object currency ;
   /**
    * <pre>
    *CNY：人民币，境内商户号仅支持人民币
@@ -109,14 +109,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public java.lang.String getCurrency() {
-    java.lang.Object ref = currency;
+    java.lang.Object ref = currency ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      currency= s;
+      currency = s;
       return s;
     }
   }
@@ -131,12 +131,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getCurrencyBytes() {
-    java.lang.Object ref = currency;
+    java.lang.Object ref = currency ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      currency= b;
+      currency = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -144,25 +144,25 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PAYER_TOTAL_FIELD_NUMBER = 2;
-  private long payerTotal;
+  private long payerTotal ;
   /**
    * <code>int64 payer_total = 2;</code>
    * @return The payerTotal.
    */
   @java.lang.Override
   public long getPayerTotal() {
-    return payerTotal;
+    return payerTotal ;
   }
 
   public static final int TOTAL_FIELD_NUMBER = 3;
-  private long total;
+  private long total ;
   /**
    * <code>int64 total = 3;</code>
    * @return The total.
    */
   @java.lang.Override
   public long getTotal() {
-    return total;
+    return total ;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -180,13 +180,13 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getCurrencyBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, currency);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, currency );
     }
-    if (payerTotal!= 0L) {
-      output.writeInt64(2, payerTotal);
+    if (payerTotal != 0L) {
+      output.writeInt64(2, payerTotal );
     }
-    if (total!= 0L) {
-      output.writeInt64(3, total);
+    if (total != 0L) {
+      output.writeInt64(3, total );
     }
     unknownFields.writeTo(output);
   }
@@ -198,15 +198,15 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (!getCurrencyBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, currency);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, currency );
     }
-    if (payerTotal!= 0L) {
+    if (payerTotal != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, payerTotal);
+        .computeInt64Size(2, payerTotal );
     }
-    if (total!= 0L) {
+    if (total != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(3, total);
+        .computeInt64Size(3, total );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -381,11 +381,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      currency= "";
+      currency = "";
 
-      payerTotal= 0L;
+      payerTotal = 0L;
 
-      total= 0L;
+      total = 0L;
 
       return this;
     }
@@ -413,9 +413,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.wxpay.PayerAmount buildPartial() {
       com.zhijiejiaoyu.glory_api.wxpay.PayerAmount result = new com.zhijiejiaoyu.glory_api.wxpay.PayerAmount(this);
-      result.currency= currency;
-      result.payerTotal= payerTotal;
-      result.total= total;
+      result.currency = currency ;
+      result.payerTotal = payerTotal ;
+      result.total = total ;
       onBuilt();
       return result;
     }
@@ -465,7 +465,7 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.zhijiejiaoyu.glory_api.wxpay.PayerAmount other) {
       if (other == com.zhijiejiaoyu.glory_api.wxpay.PayerAmount.getDefaultInstance()) return this;
       if (!other.getCurrency().isEmpty()) {
-        currency= other.currency;
+        currency = other.currency ;
         onChanged();
       }
       if (other.getPayerTotal() != 0L) {
@@ -503,7 +503,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object currency= "";
+    private java.lang.Object currency = "";
     /**
      * <pre>
      *CNY：人民币，境内商户号仅支持人民币
@@ -513,12 +513,12 @@ private static final long serialVersionUID = 0L;
      * @return The currency.
      */
     public java.lang.String getCurrency() {
-      java.lang.Object ref = currency;
+      java.lang.Object ref = currency ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        currency= s;
+        currency = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -534,12 +534,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getCurrencyBytes() {
-      java.lang.Object ref = currency;
+      java.lang.Object ref = currency ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        currency= b;
+        currency = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -560,7 +560,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      currency= value;
+      currency = value;
       onChanged();
       return this;
     }
@@ -574,7 +574,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearCurrency() {
       
-      currency= getDefaultInstance().getCurrency();
+      currency = getDefaultInstance().getCurrency();
       onChanged();
       return this;
     }
@@ -594,19 +594,19 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      currency= value;
+      currency = value;
       onChanged();
       return this;
     }
 
-    private long payerTotal;
+    private long payerTotal ;
     /**
      * <code>int64 payer_total = 2;</code>
      * @return The payerTotal.
      */
     @java.lang.Override
     public long getPayerTotal() {
-      return payerTotal;
+      return payerTotal ;
     }
     /**
      * <code>int64 payer_total = 2;</code>
@@ -615,7 +615,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setPayerTotal(long value) {
       
-      payerTotal= value;
+      payerTotal = value;
       onChanged();
       return this;
     }
@@ -625,19 +625,19 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearPayerTotal() {
       
-      payerTotal= 0L;
+      payerTotal = 0L;
       onChanged();
       return this;
     }
 
-    private long total;
+    private long total ;
     /**
      * <code>int64 total = 3;</code>
      * @return The total.
      */
     @java.lang.Override
     public long getTotal() {
-      return total;
+      return total ;
     }
     /**
      * <code>int64 total = 3;</code>
@@ -646,7 +646,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setTotal(long value) {
       
-      total= value;
+      total = value;
       onChanged();
       return this;
     }
@@ -656,7 +656,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearTotal() {
       
-      total= 0L;
+      total = 0L;
       onChanged();
       return this;
     }

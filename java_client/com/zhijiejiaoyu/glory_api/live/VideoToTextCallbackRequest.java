@@ -16,8 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private VideoToTextCallbackRequest() {
-    taskId= "";
-    statusText= "";
+    taskId = "";
+    statusText = "";
   }
 
   @java.lang.Override
@@ -53,49 +53,49 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            taskId= s;
+            taskId = s;
             break;
           }
           case 16: {
 
-            statusCode= input.readInt64();
+            statusCode = input.readInt64();
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            statusText= s;
+            statusText = s;
             break;
           }
           case 32: {
 
-            requestTime= input.readInt64();
+            requestTime = input.readInt64();
             break;
           }
           case 40: {
 
-            solveTime= input.readInt64();
+            solveTime = input.readInt64();
             break;
           }
           case 48: {
 
-            bizDuration= input.readInt64();
+            bizDuration = input.readInt64();
             break;
           }
           case 56: {
 
-            stopTime= input.readInt64();
+            stopTime = input.readInt64();
             break;
           }
           case 66: {
             com.zhijiejiaoyu.glory_api.live.VideoToTextResult.Builder subBuilder = null;
-            if (result!= null) {
-              subBuilder = result.toBuilder();
+            if (result != null) {
+              subBuilder = result .toBuilder();
             }
-            result= input.readMessage(com.zhijiejiaoyu.glory_api.live.VideoToTextResult.parser(), extensionRegistry);
+            result = input.readMessage(com.zhijiejiaoyu.glory_api.live.VideoToTextResult.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(result);
-              result= subBuilder.buildPartial();
+              subBuilder.mergeFrom(result );
+              result = subBuilder.buildPartial();
             }
 
             break;
@@ -133,21 +133,21 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TASKID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object taskId;
+  private volatile java.lang.Object taskId ;
   /**
    * <code>string TaskId = 1;</code>
    * @return The taskId.
    */
   @java.lang.Override
   public java.lang.String getTaskId() {
-    java.lang.Object ref = taskId;
+    java.lang.Object ref = taskId ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      taskId= s;
+      taskId = s;
       return s;
     }
   }
@@ -158,12 +158,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getTaskIdBytes() {
-    java.lang.Object ref = taskId;
+    java.lang.Object ref = taskId ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      taskId= b;
+      taskId = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -171,32 +171,32 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int STATUSCODE_FIELD_NUMBER = 2;
-  private long statusCode;
+  private long statusCode ;
   /**
    * <code>int64 StatusCode = 2;</code>
    * @return The statusCode.
    */
   @java.lang.Override
   public long getStatusCode() {
-    return statusCode;
+    return statusCode ;
   }
 
   public static final int STATUSTEXT_FIELD_NUMBER = 3;
-  private volatile java.lang.Object statusText;
+  private volatile java.lang.Object statusText ;
   /**
    * <code>string StatusText = 3;</code>
    * @return The statusText.
    */
   @java.lang.Override
   public java.lang.String getStatusText() {
-    java.lang.Object ref = statusText;
+    java.lang.Object ref = statusText ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      statusText= s;
+      statusText = s;
       return s;
     }
   }
@@ -207,12 +207,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getStatusTextBytes() {
-    java.lang.Object ref = statusText;
+    java.lang.Object ref = statusText ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      statusText= b;
+      statusText = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -220,58 +220,58 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int REQUESTTIME_FIELD_NUMBER = 4;
-  private long requestTime;
+  private long requestTime ;
   /**
    * <code>int64 RequestTime = 4;</code>
    * @return The requestTime.
    */
   @java.lang.Override
   public long getRequestTime() {
-    return requestTime;
+    return requestTime ;
   }
 
   public static final int SOLVETIME_FIELD_NUMBER = 5;
-  private long solveTime;
+  private long solveTime ;
   /**
    * <code>int64 SolveTime = 5;</code>
    * @return The solveTime.
    */
   @java.lang.Override
   public long getSolveTime() {
-    return solveTime;
+    return solveTime ;
   }
 
   public static final int BIZDURATION_FIELD_NUMBER = 6;
-  private long bizDuration;
+  private long bizDuration ;
   /**
    * <code>int64 BizDuration = 6;</code>
    * @return The bizDuration.
    */
   @java.lang.Override
   public long getBizDuration() {
-    return bizDuration;
+    return bizDuration ;
   }
 
   public static final int STOP_TIME_FIELD_NUMBER = 7;
-  private long stopTime;
+  private long stopTime ;
   /**
    * <code>int64 stop_time = 7;</code>
    * @return The stopTime.
    */
   @java.lang.Override
   public long getStopTime() {
-    return stopTime;
+    return stopTime ;
   }
 
   public static final int RESULT_FIELD_NUMBER = 8;
-  private com.zhijiejiaoyu.glory_api.live.VideoToTextResult result;
+  private com.zhijiejiaoyu.glory_api.live.VideoToTextResult result ;
   /**
    * <code>.glory_api.VideoToTextResult Result = 8;</code>
    * @return Whether the result field is set.
    */
   @java.lang.Override
   public boolean hasResult() {
-    return result!= null;
+    return result != null;
   }
   /**
    * <code>.glory_api.VideoToTextResult Result = 8;</code>
@@ -279,7 +279,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.live.VideoToTextResult getResult() {
-    return result== null ? com.zhijiejiaoyu.glory_api.live.VideoToTextResult.getDefaultInstance() : result;
+    return result == null ? com.zhijiejiaoyu.glory_api.live.VideoToTextResult.getDefaultInstance() : result ;
   }
   /**
    * <code>.glory_api.VideoToTextResult Result = 8;</code>
@@ -304,27 +304,27 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getTaskIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, taskId);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, taskId );
     }
-    if (statusCode!= 0L) {
-      output.writeInt64(2, statusCode);
+    if (statusCode != 0L) {
+      output.writeInt64(2, statusCode );
     }
     if (!getStatusTextBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, statusText);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, statusText );
     }
-    if (requestTime!= 0L) {
-      output.writeInt64(4, requestTime);
+    if (requestTime != 0L) {
+      output.writeInt64(4, requestTime );
     }
-    if (solveTime!= 0L) {
-      output.writeInt64(5, solveTime);
+    if (solveTime != 0L) {
+      output.writeInt64(5, solveTime );
     }
-    if (bizDuration!= 0L) {
-      output.writeInt64(6, bizDuration);
+    if (bizDuration != 0L) {
+      output.writeInt64(6, bizDuration );
     }
-    if (stopTime!= 0L) {
-      output.writeInt64(7, stopTime);
+    if (stopTime != 0L) {
+      output.writeInt64(7, stopTime );
     }
-    if (result!= null) {
+    if (result != null) {
       output.writeMessage(8, getResult());
     }
     unknownFields.writeTo(output);
@@ -337,32 +337,32 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (!getTaskIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, taskId);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, taskId );
     }
-    if (statusCode!= 0L) {
+    if (statusCode != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, statusCode);
+        .computeInt64Size(2, statusCode );
     }
     if (!getStatusTextBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, statusText);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, statusText );
     }
-    if (requestTime!= 0L) {
+    if (requestTime != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(4, requestTime);
+        .computeInt64Size(4, requestTime );
     }
-    if (solveTime!= 0L) {
+    if (solveTime != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(5, solveTime);
+        .computeInt64Size(5, solveTime );
     }
-    if (bizDuration!= 0L) {
+    if (bizDuration != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(6, bizDuration);
+        .computeInt64Size(6, bizDuration );
     }
-    if (stopTime!= 0L) {
+    if (stopTime != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(7, stopTime);
+        .computeInt64Size(7, stopTime );
     }
-    if (result!= null) {
+    if (result != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(8, getResult());
     }
@@ -567,25 +567,25 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      taskId= "";
+      taskId = "";
 
-      statusCode= 0L;
+      statusCode = 0L;
 
-      statusText= "";
+      statusText = "";
 
-      requestTime= 0L;
+      requestTime = 0L;
 
-      solveTime= 0L;
+      solveTime = 0L;
 
-      bizDuration= 0L;
+      bizDuration = 0L;
 
-      stopTime= 0L;
+      stopTime = 0L;
 
-      if (resultBuilder== null) {
-        result= null;
+      if (resultBuilder == null) {
+        result = null;
       } else {
-        result= null;
-        resultBuilder= null;
+        result = null;
+        resultBuilder = null;
       }
       return this;
     }
@@ -613,17 +613,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.live.VideoToTextCallbackRequest buildPartial() {
       com.zhijiejiaoyu.glory_api.live.VideoToTextCallbackRequest result = new com.zhijiejiaoyu.glory_api.live.VideoToTextCallbackRequest(this);
-      result.taskId= taskId;
-      result.statusCode= statusCode;
-      result.statusText= statusText;
-      result.requestTime= requestTime;
-      result.solveTime= solveTime;
-      result.bizDuration= bizDuration;
-      result.stopTime= stopTime;
-      if (resultBuilder== null) {
-        result.result= result;
+      result.taskId = taskId ;
+      result.statusCode = statusCode ;
+      result.statusText = statusText ;
+      result.requestTime = requestTime ;
+      result.solveTime = solveTime ;
+      result.bizDuration = bizDuration ;
+      result.stopTime = stopTime ;
+      if (resultBuilder == null) {
+        result.result = result ;
       } else {
-        result.result= resultBuilder.build();
+        result.result = resultBuilder .build();
       }
       onBuilt();
       return result;
@@ -674,14 +674,14 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.zhijiejiaoyu.glory_api.live.VideoToTextCallbackRequest other) {
       if (other == com.zhijiejiaoyu.glory_api.live.VideoToTextCallbackRequest.getDefaultInstance()) return this;
       if (!other.getTaskId().isEmpty()) {
-        taskId= other.taskId;
+        taskId = other.taskId ;
         onChanged();
       }
       if (other.getStatusCode() != 0L) {
         setStatusCode(other.getStatusCode());
       }
       if (!other.getStatusText().isEmpty()) {
-        statusText= other.statusText;
+        statusText = other.statusText ;
         onChanged();
       }
       if (other.getRequestTime() != 0L) {
@@ -728,18 +728,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object taskId= "";
+    private java.lang.Object taskId = "";
     /**
      * <code>string TaskId = 1;</code>
      * @return The taskId.
      */
     public java.lang.String getTaskId() {
-      java.lang.Object ref = taskId;
+      java.lang.Object ref = taskId ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        taskId= s;
+        taskId = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -751,12 +751,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getTaskIdBytes() {
-      java.lang.Object ref = taskId;
+      java.lang.Object ref = taskId ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        taskId= b;
+        taskId = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -773,7 +773,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      taskId= value;
+      taskId = value;
       onChanged();
       return this;
     }
@@ -783,7 +783,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearTaskId() {
       
-      taskId= getDefaultInstance().getTaskId();
+      taskId = getDefaultInstance().getTaskId();
       onChanged();
       return this;
     }
@@ -799,19 +799,19 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      taskId= value;
+      taskId = value;
       onChanged();
       return this;
     }
 
-    private long statusCode;
+    private long statusCode ;
     /**
      * <code>int64 StatusCode = 2;</code>
      * @return The statusCode.
      */
     @java.lang.Override
     public long getStatusCode() {
-      return statusCode;
+      return statusCode ;
     }
     /**
      * <code>int64 StatusCode = 2;</code>
@@ -820,7 +820,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setStatusCode(long value) {
       
-      statusCode= value;
+      statusCode = value;
       onChanged();
       return this;
     }
@@ -830,23 +830,23 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearStatusCode() {
       
-      statusCode= 0L;
+      statusCode = 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object statusText= "";
+    private java.lang.Object statusText = "";
     /**
      * <code>string StatusText = 3;</code>
      * @return The statusText.
      */
     public java.lang.String getStatusText() {
-      java.lang.Object ref = statusText;
+      java.lang.Object ref = statusText ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        statusText= s;
+        statusText = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -858,12 +858,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getStatusTextBytes() {
-      java.lang.Object ref = statusText;
+      java.lang.Object ref = statusText ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        statusText= b;
+        statusText = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -880,7 +880,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      statusText= value;
+      statusText = value;
       onChanged();
       return this;
     }
@@ -890,7 +890,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearStatusText() {
       
-      statusText= getDefaultInstance().getStatusText();
+      statusText = getDefaultInstance().getStatusText();
       onChanged();
       return this;
     }
@@ -906,19 +906,19 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      statusText= value;
+      statusText = value;
       onChanged();
       return this;
     }
 
-    private long requestTime;
+    private long requestTime ;
     /**
      * <code>int64 RequestTime = 4;</code>
      * @return The requestTime.
      */
     @java.lang.Override
     public long getRequestTime() {
-      return requestTime;
+      return requestTime ;
     }
     /**
      * <code>int64 RequestTime = 4;</code>
@@ -927,7 +927,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setRequestTime(long value) {
       
-      requestTime= value;
+      requestTime = value;
       onChanged();
       return this;
     }
@@ -937,19 +937,19 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearRequestTime() {
       
-      requestTime= 0L;
+      requestTime = 0L;
       onChanged();
       return this;
     }
 
-    private long solveTime;
+    private long solveTime ;
     /**
      * <code>int64 SolveTime = 5;</code>
      * @return The solveTime.
      */
     @java.lang.Override
     public long getSolveTime() {
-      return solveTime;
+      return solveTime ;
     }
     /**
      * <code>int64 SolveTime = 5;</code>
@@ -958,7 +958,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setSolveTime(long value) {
       
-      solveTime= value;
+      solveTime = value;
       onChanged();
       return this;
     }
@@ -968,19 +968,19 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearSolveTime() {
       
-      solveTime= 0L;
+      solveTime = 0L;
       onChanged();
       return this;
     }
 
-    private long bizDuration;
+    private long bizDuration ;
     /**
      * <code>int64 BizDuration = 6;</code>
      * @return The bizDuration.
      */
     @java.lang.Override
     public long getBizDuration() {
-      return bizDuration;
+      return bizDuration ;
     }
     /**
      * <code>int64 BizDuration = 6;</code>
@@ -989,7 +989,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setBizDuration(long value) {
       
-      bizDuration= value;
+      bizDuration = value;
       onChanged();
       return this;
     }
@@ -999,19 +999,19 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearBizDuration() {
       
-      bizDuration= 0L;
+      bizDuration = 0L;
       onChanged();
       return this;
     }
 
-    private long stopTime;
+    private long stopTime ;
     /**
      * <code>int64 stop_time = 7;</code>
      * @return The stopTime.
      */
     @java.lang.Override
     public long getStopTime() {
-      return stopTime;
+      return stopTime ;
     }
     /**
      * <code>int64 stop_time = 7;</code>
@@ -1020,7 +1020,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setStopTime(long value) {
       
-      stopTime= value;
+      stopTime = value;
       onChanged();
       return this;
     }
@@ -1030,44 +1030,44 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearStopTime() {
       
-      stopTime= 0L;
+      stopTime = 0L;
       onChanged();
       return this;
     }
 
-    private com.zhijiejiaoyu.glory_api.live.VideoToTextResult result;
+    private com.zhijiejiaoyu.glory_api.live.VideoToTextResult result ;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.live.VideoToTextResult, com.zhijiejiaoyu.glory_api.live.VideoToTextResult.Builder, com.zhijiejiaoyu.glory_api.live.VideoToTextResultOrBuilder> resultBuilder;
+        com.zhijiejiaoyu.glory_api.live.VideoToTextResult, com.zhijiejiaoyu.glory_api.live.VideoToTextResult.Builder, com.zhijiejiaoyu.glory_api.live.VideoToTextResultOrBuilder> resultBuilder ;
     /**
      * <code>.glory_api.VideoToTextResult Result = 8;</code>
      * @return Whether the result field is set.
      */
     public boolean hasResult() {
-      return resultBuilder!= null || result!= null;
+      return resultBuilder != null || result != null;
     }
     /**
      * <code>.glory_api.VideoToTextResult Result = 8;</code>
      * @return The result.
      */
     public com.zhijiejiaoyu.glory_api.live.VideoToTextResult getResult() {
-      if (resultBuilder== null) {
-        return result== null ? com.zhijiejiaoyu.glory_api.live.VideoToTextResult.getDefaultInstance() : result;
+      if (resultBuilder == null) {
+        return result == null ? com.zhijiejiaoyu.glory_api.live.VideoToTextResult.getDefaultInstance() : result ;
       } else {
-        return resultBuilder.getMessage();
+        return resultBuilder .getMessage();
       }
     }
     /**
      * <code>.glory_api.VideoToTextResult Result = 8;</code>
      */
     public Builder setResult(com.zhijiejiaoyu.glory_api.live.VideoToTextResult value) {
-      if (resultBuilder== null) {
+      if (resultBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        result= value;
+        result = value;
         onChanged();
       } else {
-        resultBuilder.setMessage(value);
+        resultBuilder .setMessage(value);
       }
 
       return this;
@@ -1077,11 +1077,11 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setResult(
         com.zhijiejiaoyu.glory_api.live.VideoToTextResult.Builder builderForValue) {
-      if (resultBuilder== null) {
-        result= builderForValue.build();
+      if (resultBuilder == null) {
+        result = builderForValue.build();
         onChanged();
       } else {
-        resultBuilder.setMessage(builderForValue.build());
+        resultBuilder .setMessage(builderForValue.build());
       }
 
       return this;
@@ -1090,16 +1090,16 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.VideoToTextResult Result = 8;</code>
      */
     public Builder mergeResult(com.zhijiejiaoyu.glory_api.live.VideoToTextResult value) {
-      if (resultBuilder== null) {
-        if (result!= null) {
-          result=
-            com.zhijiejiaoyu.glory_api.live.VideoToTextResult.newBuilder(result).mergeFrom(value).buildPartial();
+      if (resultBuilder == null) {
+        if (result != null) {
+          result =
+            com.zhijiejiaoyu.glory_api.live.VideoToTextResult.newBuilder(result ).mergeFrom(value).buildPartial();
         } else {
-          result= value;
+          result = value;
         }
         onChanged();
       } else {
-        resultBuilder.mergeFrom(value);
+        resultBuilder .mergeFrom(value);
       }
 
       return this;
@@ -1108,12 +1108,12 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.VideoToTextResult Result = 8;</code>
      */
     public Builder clearResult() {
-      if (resultBuilder== null) {
-        result= null;
+      if (resultBuilder == null) {
+        result = null;
         onChanged();
       } else {
-        result= null;
-        resultBuilder= null;
+        result = null;
+        resultBuilder = null;
       }
 
       return this;
@@ -1130,11 +1130,11 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.VideoToTextResult Result = 8;</code>
      */
     public com.zhijiejiaoyu.glory_api.live.VideoToTextResultOrBuilder getResultOrBuilder() {
-      if (resultBuilder!= null) {
-        return resultBuilder.getMessageOrBuilder();
+      if (resultBuilder != null) {
+        return resultBuilder .getMessageOrBuilder();
       } else {
-        return result== null ?
-            com.zhijiejiaoyu.glory_api.live.VideoToTextResult.getDefaultInstance() : result;
+        return result == null ?
+            com.zhijiejiaoyu.glory_api.live.VideoToTextResult.getDefaultInstance() : result ;
       }
     }
     /**
@@ -1143,15 +1143,15 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.live.VideoToTextResult, com.zhijiejiaoyu.glory_api.live.VideoToTextResult.Builder, com.zhijiejiaoyu.glory_api.live.VideoToTextResultOrBuilder> 
         getResultFieldBuilder() {
-      if (resultBuilder== null) {
-        resultBuilder= new com.google.protobuf.SingleFieldBuilderV3<
+      if (resultBuilder == null) {
+        resultBuilder = new com.google.protobuf.SingleFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.live.VideoToTextResult, com.zhijiejiaoyu.glory_api.live.VideoToTextResult.Builder, com.zhijiejiaoyu.glory_api.live.VideoToTextResultOrBuilder>(
                 getResult(),
                 getParentForChildren(),
                 isClean());
-        result= null;
+        result = null;
       }
-      return resultBuilder;
+      return resultBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

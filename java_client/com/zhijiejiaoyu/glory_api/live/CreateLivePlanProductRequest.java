@@ -50,26 +50,26 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             com.zhijiejiaoyu.base.BaseRequest.Builder subBuilder = null;
-            if (baseRequest!= null) {
-              subBuilder = baseRequest.toBuilder();
+            if (baseRequest != null) {
+              subBuilder = baseRequest .toBuilder();
             }
-            baseRequest= input.readMessage(com.zhijiejiaoyu.base.BaseRequest.parser(), extensionRegistry);
+            baseRequest = input.readMessage(com.zhijiejiaoyu.base.BaseRequest.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(baseRequest);
-              baseRequest= subBuilder.buildPartial();
+              subBuilder.mergeFrom(baseRequest );
+              baseRequest = subBuilder.buildPartial();
             }
 
             break;
           }
           case 18: {
             com.zhijiejiaoyu.glory_api.live.LivePlanProduct.Builder subBuilder = null;
-            if (livePlanProduct!= null) {
-              subBuilder = livePlanProduct.toBuilder();
+            if (livePlanProduct != null) {
+              subBuilder = livePlanProduct .toBuilder();
             }
-            livePlanProduct= input.readMessage(com.zhijiejiaoyu.glory_api.live.LivePlanProduct.parser(), extensionRegistry);
+            livePlanProduct = input.readMessage(com.zhijiejiaoyu.glory_api.live.LivePlanProduct.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(livePlanProduct);
-              livePlanProduct= subBuilder.buildPartial();
+              subBuilder.mergeFrom(livePlanProduct );
+              livePlanProduct = subBuilder.buildPartial();
             }
 
             break;
@@ -107,14 +107,14 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int BASE_REQUEST_FIELD_NUMBER = 1;
-  private com.zhijiejiaoyu.base.BaseRequest baseRequest;
+  private com.zhijiejiaoyu.base.BaseRequest baseRequest ;
   /**
    * <code>.base.BaseRequest base_request = 1;</code>
    * @return Whether the baseRequest field is set.
    */
   @java.lang.Override
   public boolean hasBaseRequest() {
-    return baseRequest!= null;
+    return baseRequest != null;
   }
   /**
    * <code>.base.BaseRequest base_request = 1;</code>
@@ -122,7 +122,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.zhijiejiaoyu.base.BaseRequest getBaseRequest() {
-    return baseRequest== null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
+    return baseRequest == null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest ;
   }
   /**
    * <code>.base.BaseRequest base_request = 1;</code>
@@ -133,14 +133,14 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int LIVE_PLAN_PRODUCT_FIELD_NUMBER = 2;
-  private com.zhijiejiaoyu.glory_api.live.LivePlanProduct livePlanProduct;
+  private com.zhijiejiaoyu.glory_api.live.LivePlanProduct livePlanProduct ;
   /**
    * <code>.glory_api.LivePlanProduct live_plan_product = 2;</code>
    * @return Whether the livePlanProduct field is set.
    */
   @java.lang.Override
   public boolean hasLivePlanProduct() {
-    return livePlanProduct!= null;
+    return livePlanProduct != null;
   }
   /**
    * <code>.glory_api.LivePlanProduct live_plan_product = 2;</code>
@@ -148,7 +148,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.live.LivePlanProduct getLivePlanProduct() {
-    return livePlanProduct== null ? com.zhijiejiaoyu.glory_api.live.LivePlanProduct.getDefaultInstance() : livePlanProduct;
+    return livePlanProduct == null ? com.zhijiejiaoyu.glory_api.live.LivePlanProduct.getDefaultInstance() : livePlanProduct ;
   }
   /**
    * <code>.glory_api.LivePlanProduct live_plan_product = 2;</code>
@@ -172,10 +172,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (baseRequest!= null) {
+    if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
-    if (livePlanProduct!= null) {
+    if (livePlanProduct != null) {
       output.writeMessage(2, getLivePlanProduct());
     }
     unknownFields.writeTo(output);
@@ -187,11 +187,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (baseRequest!= null) {
+    if (baseRequest != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseRequest());
     }
-    if (livePlanProduct!= null) {
+    if (livePlanProduct != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getLivePlanProduct());
     }
@@ -372,17 +372,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (baseRequestBuilder== null) {
-        baseRequest= null;
+      if (baseRequestBuilder == null) {
+        baseRequest = null;
       } else {
-        baseRequest= null;
-        baseRequestBuilder= null;
+        baseRequest = null;
+        baseRequestBuilder = null;
       }
-      if (livePlanProductBuilder== null) {
-        livePlanProduct= null;
+      if (livePlanProductBuilder == null) {
+        livePlanProduct = null;
       } else {
-        livePlanProduct= null;
-        livePlanProductBuilder= null;
+        livePlanProduct = null;
+        livePlanProductBuilder = null;
       }
       return this;
     }
@@ -410,15 +410,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.live.CreateLivePlanProductRequest buildPartial() {
       com.zhijiejiaoyu.glory_api.live.CreateLivePlanProductRequest result = new com.zhijiejiaoyu.glory_api.live.CreateLivePlanProductRequest(this);
-      if (baseRequestBuilder== null) {
-        result.baseRequest= baseRequest;
+      if (baseRequestBuilder == null) {
+        result.baseRequest = baseRequest ;
       } else {
-        result.baseRequest= baseRequestBuilder.build();
+        result.baseRequest = baseRequestBuilder .build();
       }
-      if (livePlanProductBuilder== null) {
-        result.livePlanProduct= livePlanProduct;
+      if (livePlanProductBuilder == null) {
+        result.livePlanProduct = livePlanProduct ;
       } else {
-        result.livePlanProduct= livePlanProductBuilder.build();
+        result.livePlanProduct = livePlanProductBuilder .build();
       }
       onBuilt();
       return result;
@@ -503,39 +503,39 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.zhijiejiaoyu.base.BaseRequest baseRequest;
+    private com.zhijiejiaoyu.base.BaseRequest baseRequest ;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder> baseRequestBuilder;
+        com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder> baseRequestBuilder ;
     /**
      * <code>.base.BaseRequest base_request = 1;</code>
      * @return Whether the baseRequest field is set.
      */
     public boolean hasBaseRequest() {
-      return baseRequestBuilder!= null || baseRequest!= null;
+      return baseRequestBuilder != null || baseRequest != null;
     }
     /**
      * <code>.base.BaseRequest base_request = 1;</code>
      * @return The baseRequest.
      */
     public com.zhijiejiaoyu.base.BaseRequest getBaseRequest() {
-      if (baseRequestBuilder== null) {
-        return baseRequest== null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
+      if (baseRequestBuilder == null) {
+        return baseRequest == null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest ;
       } else {
-        return baseRequestBuilder.getMessage();
+        return baseRequestBuilder .getMessage();
       }
     }
     /**
      * <code>.base.BaseRequest base_request = 1;</code>
      */
     public Builder setBaseRequest(com.zhijiejiaoyu.base.BaseRequest value) {
-      if (baseRequestBuilder== null) {
+      if (baseRequestBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        baseRequest= value;
+        baseRequest = value;
         onChanged();
       } else {
-        baseRequestBuilder.setMessage(value);
+        baseRequestBuilder .setMessage(value);
       }
 
       return this;
@@ -545,11 +545,11 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setBaseRequest(
         com.zhijiejiaoyu.base.BaseRequest.Builder builderForValue) {
-      if (baseRequestBuilder== null) {
-        baseRequest= builderForValue.build();
+      if (baseRequestBuilder == null) {
+        baseRequest = builderForValue.build();
         onChanged();
       } else {
-        baseRequestBuilder.setMessage(builderForValue.build());
+        baseRequestBuilder .setMessage(builderForValue.build());
       }
 
       return this;
@@ -558,16 +558,16 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseRequest base_request = 1;</code>
      */
     public Builder mergeBaseRequest(com.zhijiejiaoyu.base.BaseRequest value) {
-      if (baseRequestBuilder== null) {
-        if (baseRequest!= null) {
-          baseRequest=
-            com.zhijiejiaoyu.base.BaseRequest.newBuilder(baseRequest).mergeFrom(value).buildPartial();
+      if (baseRequestBuilder == null) {
+        if (baseRequest != null) {
+          baseRequest =
+            com.zhijiejiaoyu.base.BaseRequest.newBuilder(baseRequest ).mergeFrom(value).buildPartial();
         } else {
-          baseRequest= value;
+          baseRequest = value;
         }
         onChanged();
       } else {
-        baseRequestBuilder.mergeFrom(value);
+        baseRequestBuilder .mergeFrom(value);
       }
 
       return this;
@@ -576,12 +576,12 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseRequest base_request = 1;</code>
      */
     public Builder clearBaseRequest() {
-      if (baseRequestBuilder== null) {
-        baseRequest= null;
+      if (baseRequestBuilder == null) {
+        baseRequest = null;
         onChanged();
       } else {
-        baseRequest= null;
-        baseRequestBuilder= null;
+        baseRequest = null;
+        baseRequestBuilder = null;
       }
 
       return this;
@@ -598,11 +598,11 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseRequest base_request = 1;</code>
      */
     public com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder() {
-      if (baseRequestBuilder!= null) {
-        return baseRequestBuilder.getMessageOrBuilder();
+      if (baseRequestBuilder != null) {
+        return baseRequestBuilder .getMessageOrBuilder();
       } else {
-        return baseRequest== null ?
-            com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
+        return baseRequest == null ?
+            com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest ;
       }
     }
     /**
@@ -611,50 +611,50 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder> 
         getBaseRequestFieldBuilder() {
-      if (baseRequestBuilder== null) {
-        baseRequestBuilder= new com.google.protobuf.SingleFieldBuilderV3<
+      if (baseRequestBuilder == null) {
+        baseRequestBuilder = new com.google.protobuf.SingleFieldBuilderV3<
             com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder>(
                 getBaseRequest(),
                 getParentForChildren(),
                 isClean());
-        baseRequest= null;
+        baseRequest = null;
       }
-      return baseRequestBuilder;
+      return baseRequestBuilder ;
     }
 
-    private com.zhijiejiaoyu.glory_api.live.LivePlanProduct livePlanProduct;
+    private com.zhijiejiaoyu.glory_api.live.LivePlanProduct livePlanProduct ;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.live.LivePlanProduct, com.zhijiejiaoyu.glory_api.live.LivePlanProduct.Builder, com.zhijiejiaoyu.glory_api.live.LivePlanProductOrBuilder> livePlanProductBuilder;
+        com.zhijiejiaoyu.glory_api.live.LivePlanProduct, com.zhijiejiaoyu.glory_api.live.LivePlanProduct.Builder, com.zhijiejiaoyu.glory_api.live.LivePlanProductOrBuilder> livePlanProductBuilder ;
     /**
      * <code>.glory_api.LivePlanProduct live_plan_product = 2;</code>
      * @return Whether the livePlanProduct field is set.
      */
     public boolean hasLivePlanProduct() {
-      return livePlanProductBuilder!= null || livePlanProduct!= null;
+      return livePlanProductBuilder != null || livePlanProduct != null;
     }
     /**
      * <code>.glory_api.LivePlanProduct live_plan_product = 2;</code>
      * @return The livePlanProduct.
      */
     public com.zhijiejiaoyu.glory_api.live.LivePlanProduct getLivePlanProduct() {
-      if (livePlanProductBuilder== null) {
-        return livePlanProduct== null ? com.zhijiejiaoyu.glory_api.live.LivePlanProduct.getDefaultInstance() : livePlanProduct;
+      if (livePlanProductBuilder == null) {
+        return livePlanProduct == null ? com.zhijiejiaoyu.glory_api.live.LivePlanProduct.getDefaultInstance() : livePlanProduct ;
       } else {
-        return livePlanProductBuilder.getMessage();
+        return livePlanProductBuilder .getMessage();
       }
     }
     /**
      * <code>.glory_api.LivePlanProduct live_plan_product = 2;</code>
      */
     public Builder setLivePlanProduct(com.zhijiejiaoyu.glory_api.live.LivePlanProduct value) {
-      if (livePlanProductBuilder== null) {
+      if (livePlanProductBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        livePlanProduct= value;
+        livePlanProduct = value;
         onChanged();
       } else {
-        livePlanProductBuilder.setMessage(value);
+        livePlanProductBuilder .setMessage(value);
       }
 
       return this;
@@ -664,11 +664,11 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setLivePlanProduct(
         com.zhijiejiaoyu.glory_api.live.LivePlanProduct.Builder builderForValue) {
-      if (livePlanProductBuilder== null) {
-        livePlanProduct= builderForValue.build();
+      if (livePlanProductBuilder == null) {
+        livePlanProduct = builderForValue.build();
         onChanged();
       } else {
-        livePlanProductBuilder.setMessage(builderForValue.build());
+        livePlanProductBuilder .setMessage(builderForValue.build());
       }
 
       return this;
@@ -677,16 +677,16 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.LivePlanProduct live_plan_product = 2;</code>
      */
     public Builder mergeLivePlanProduct(com.zhijiejiaoyu.glory_api.live.LivePlanProduct value) {
-      if (livePlanProductBuilder== null) {
-        if (livePlanProduct!= null) {
-          livePlanProduct=
-            com.zhijiejiaoyu.glory_api.live.LivePlanProduct.newBuilder(livePlanProduct).mergeFrom(value).buildPartial();
+      if (livePlanProductBuilder == null) {
+        if (livePlanProduct != null) {
+          livePlanProduct =
+            com.zhijiejiaoyu.glory_api.live.LivePlanProduct.newBuilder(livePlanProduct ).mergeFrom(value).buildPartial();
         } else {
-          livePlanProduct= value;
+          livePlanProduct = value;
         }
         onChanged();
       } else {
-        livePlanProductBuilder.mergeFrom(value);
+        livePlanProductBuilder .mergeFrom(value);
       }
 
       return this;
@@ -695,12 +695,12 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.LivePlanProduct live_plan_product = 2;</code>
      */
     public Builder clearLivePlanProduct() {
-      if (livePlanProductBuilder== null) {
-        livePlanProduct= null;
+      if (livePlanProductBuilder == null) {
+        livePlanProduct = null;
         onChanged();
       } else {
-        livePlanProduct= null;
-        livePlanProductBuilder= null;
+        livePlanProduct = null;
+        livePlanProductBuilder = null;
       }
 
       return this;
@@ -717,11 +717,11 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.LivePlanProduct live_plan_product = 2;</code>
      */
     public com.zhijiejiaoyu.glory_api.live.LivePlanProductOrBuilder getLivePlanProductOrBuilder() {
-      if (livePlanProductBuilder!= null) {
-        return livePlanProductBuilder.getMessageOrBuilder();
+      if (livePlanProductBuilder != null) {
+        return livePlanProductBuilder .getMessageOrBuilder();
       } else {
-        return livePlanProduct== null ?
-            com.zhijiejiaoyu.glory_api.live.LivePlanProduct.getDefaultInstance() : livePlanProduct;
+        return livePlanProduct == null ?
+            com.zhijiejiaoyu.glory_api.live.LivePlanProduct.getDefaultInstance() : livePlanProduct ;
       }
     }
     /**
@@ -730,15 +730,15 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.live.LivePlanProduct, com.zhijiejiaoyu.glory_api.live.LivePlanProduct.Builder, com.zhijiejiaoyu.glory_api.live.LivePlanProductOrBuilder> 
         getLivePlanProductFieldBuilder() {
-      if (livePlanProductBuilder== null) {
-        livePlanProductBuilder= new com.google.protobuf.SingleFieldBuilderV3<
+      if (livePlanProductBuilder == null) {
+        livePlanProductBuilder = new com.google.protobuf.SingleFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.live.LivePlanProduct, com.zhijiejiaoyu.glory_api.live.LivePlanProduct.Builder, com.zhijiejiaoyu.glory_api.live.LivePlanProductOrBuilder>(
                 getLivePlanProduct(),
                 getParentForChildren(),
                 isClean());
-        livePlanProduct= null;
+        livePlanProduct = null;
       }
-      return livePlanProductBuilder;
+      return livePlanProductBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

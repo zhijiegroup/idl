@@ -16,9 +16,9 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private EvaluateDetail() {
-    option= "";
-    score= "";
-    suboption= java.util.Collections.emptyList();
+    option = "";
+    score = "";
+    suboption = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -41,7 +41,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0= 0;
+    int mutable_bitField0 = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -55,31 +55,31 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            option= s;
+            option = s;
             break;
           }
           case 17: {
 
-            total= input.readDouble();
+            total = input.readDouble();
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            score= s;
+            score = s;
             break;
           }
           case 32: {
 
-            isExpand= input.readBool();
+            isExpand = input.readBool();
             break;
           }
           case 42: {
-            if (!((mutable_bitField0& 0x00000001) != 0)) {
-              suboption= new java.util.ArrayList<com.zhijiejiaoyu.glory_api.live.EvaluateSubOption>();
+            if (!((mutable_bitField0 & 0x00000001) != 0)) {
+              suboption = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.live.EvaluateSubOption>();
               mutable_bitField0_ |= 0x00000001;
             }
-            suboption.add(
+            suboption .add(
                 input.readMessage(com.zhijiejiaoyu.glory_api.live.EvaluateSubOption.parser(), extensionRegistry));
             break;
           }
@@ -98,8 +98,8 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0& 0x00000001) != 0)) {
-        suboption= java.util.Collections.unmodifiableList(suboption);
+      if (((mutable_bitField0 & 0x00000001) != 0)) {
+        suboption = java.util.Collections.unmodifiableList(suboption );
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -119,21 +119,21 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int OPTION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object option;
+  private volatile java.lang.Object option ;
   /**
    * <code>string option = 1;</code>
    * @return The option.
    */
   @java.lang.Override
   public java.lang.String getOption() {
-    java.lang.Object ref = option;
+    java.lang.Object ref = option ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      option= s;
+      option = s;
       return s;
     }
   }
@@ -144,12 +144,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getOptionBytes() {
-    java.lang.Object ref = option;
+    java.lang.Object ref = option ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      option= b;
+      option = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -157,32 +157,32 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TOTAL_FIELD_NUMBER = 2;
-  private double total;
+  private double total ;
   /**
    * <code>double total = 2;</code>
    * @return The total.
    */
   @java.lang.Override
   public double getTotal() {
-    return total;
+    return total ;
   }
 
   public static final int SCORE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object score;
+  private volatile java.lang.Object score ;
   /**
    * <code>string score = 3;</code>
    * @return The score.
    */
   @java.lang.Override
   public java.lang.String getScore() {
-    java.lang.Object ref = score;
+    java.lang.Object ref = score ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      score= s;
+      score = s;
       return s;
     }
   }
@@ -193,12 +193,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getScoreBytes() {
-    java.lang.Object ref = score;
+    java.lang.Object ref = score ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      score= b;
+      score = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -206,24 +206,24 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int IS_EXPAND_FIELD_NUMBER = 4;
-  private boolean isExpand;
+  private boolean isExpand ;
   /**
    * <code>bool is_expand = 4;</code>
    * @return The isExpand.
    */
   @java.lang.Override
   public boolean getIsExpand() {
-    return isExpand;
+    return isExpand ;
   }
 
   public static final int SUBOPTION_FIELD_NUMBER = 5;
-  private java.util.List<com.zhijiejiaoyu.glory_api.live.EvaluateSubOption> suboption;
+  private java.util.List<com.zhijiejiaoyu.glory_api.live.EvaluateSubOption> suboption ;
   /**
    * <code>repeated .glory_api.EvaluateSubOption suboption = 5;</code>
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.live.EvaluateSubOption> getSuboptionList() {
-    return suboption;
+    return suboption ;
   }
   /**
    * <code>repeated .glory_api.EvaluateSubOption suboption = 5;</code>
@@ -231,21 +231,21 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.live.EvaluateSubOptionOrBuilder> 
       getSuboptionOrBuilderList() {
-    return suboption;
+    return suboption ;
   }
   /**
    * <code>repeated .glory_api.EvaluateSubOption suboption = 5;</code>
    */
   @java.lang.Override
   public int getSuboptionCount() {
-    return suboption.size();
+    return suboption .size();
   }
   /**
    * <code>repeated .glory_api.EvaluateSubOption suboption = 5;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.live.EvaluateSubOption getSuboption(int index) {
-    return suboption.get(index);
+    return suboption .get(index);
   }
   /**
    * <code>repeated .glory_api.EvaluateSubOption suboption = 5;</code>
@@ -253,7 +253,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.live.EvaluateSubOptionOrBuilder getSuboptionOrBuilder(
       int index) {
-    return suboption.get(index);
+    return suboption .get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -271,19 +271,19 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getOptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, option);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, option );
     }
-    if (total!= 0D) {
-      output.writeDouble(2, total);
+    if (total != 0D) {
+      output.writeDouble(2, total );
     }
     if (!getScoreBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, score);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, score );
     }
-    if (isExpand!= false) {
-      output.writeBool(4, isExpand);
+    if (isExpand != false) {
+      output.writeBool(4, isExpand );
     }
-    for (int i = 0; i < suboption.size(); i++) {
-      output.writeMessage(5, suboption.get(i));
+    for (int i = 0; i < suboption .size(); i++) {
+      output.writeMessage(5, suboption .get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -295,22 +295,22 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (!getOptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, option);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, option );
     }
-    if (total!= 0D) {
+    if (total != 0D) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(2, total);
+        .computeDoubleSize(2, total );
     }
     if (!getScoreBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, score);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, score );
     }
-    if (isExpand!= false) {
+    if (isExpand != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(4, isExpand);
+        .computeBoolSize(4, isExpand );
     }
-    for (int i = 0; i < suboption.size(); i++) {
+    for (int i = 0; i < suboption .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, suboption.get(i));
+        .computeMessageSize(5, suboption .get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -497,19 +497,19 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      option= "";
+      option = "";
 
-      total= 0D;
+      total = 0D;
 
-      score= "";
+      score = "";
 
-      isExpand= false;
+      isExpand = false;
 
-      if (suboptionBuilder== null) {
-        suboption= java.util.Collections.emptyList();
-        bitField0= (bitField0& ~0x00000001);
+      if (suboptionBuilder == null) {
+        suboption = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000001);
       } else {
-        suboptionBuilder.clear();
+        suboptionBuilder .clear();
       }
       return this;
     }
@@ -537,19 +537,19 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.live.EvaluateDetail buildPartial() {
       com.zhijiejiaoyu.glory_api.live.EvaluateDetail result = new com.zhijiejiaoyu.glory_api.live.EvaluateDetail(this);
-      int from_bitField0= bitField0;
-      result.option= option;
-      result.total= total;
-      result.score= score;
-      result.isExpand= isExpand;
-      if (suboptionBuilder== null) {
-        if (((bitField0& 0x00000001) != 0)) {
-          suboption= java.util.Collections.unmodifiableList(suboption);
-          bitField0= (bitField0& ~0x00000001);
+      int from_bitField0 = bitField0 ;
+      result.option = option ;
+      result.total = total ;
+      result.score = score ;
+      result.isExpand = isExpand ;
+      if (suboptionBuilder == null) {
+        if (((bitField0 & 0x00000001) != 0)) {
+          suboption = java.util.Collections.unmodifiableList(suboption );
+          bitField0 = (bitField0 & ~0x00000001);
         }
-        result.suboption= suboption;
+        result.suboption = suboption ;
       } else {
-        result.suboption= suboptionBuilder.build();
+        result.suboption = suboptionBuilder .build();
       }
       onBuilt();
       return result;
@@ -600,42 +600,42 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.zhijiejiaoyu.glory_api.live.EvaluateDetail other) {
       if (other == com.zhijiejiaoyu.glory_api.live.EvaluateDetail.getDefaultInstance()) return this;
       if (!other.getOption().isEmpty()) {
-        option= other.option;
+        option = other.option ;
         onChanged();
       }
       if (other.getTotal() != 0D) {
         setTotal(other.getTotal());
       }
       if (!other.getScore().isEmpty()) {
-        score= other.score;
+        score = other.score ;
         onChanged();
       }
       if (other.getIsExpand() != false) {
         setIsExpand(other.getIsExpand());
       }
-      if (suboptionBuilder== null) {
-        if (!other.suboption.isEmpty()) {
-          if (suboption.isEmpty()) {
-            suboption= other.suboption;
-            bitField0= (bitField0& ~0x00000001);
+      if (suboptionBuilder == null) {
+        if (!other.suboption .isEmpty()) {
+          if (suboption .isEmpty()) {
+            suboption = other.suboption ;
+            bitField0 = (bitField0 & ~0x00000001);
           } else {
             ensureSuboptionIsMutable();
-            suboption.addAll(other.suboption);
+            suboption .addAll(other.suboption );
           }
           onChanged();
         }
       } else {
-        if (!other.suboption.isEmpty()) {
-          if (suboptionBuilder.isEmpty()) {
-            suboptionBuilder.dispose();
-            suboptionBuilder= null;
-            suboption= other.suboption;
-            bitField0= (bitField0& ~0x00000001);
-            suboptionBuilder= 
+        if (!other.suboption .isEmpty()) {
+          if (suboptionBuilder .isEmpty()) {
+            suboptionBuilder .dispose();
+            suboptionBuilder = null;
+            suboption = other.suboption ;
+            bitField0 = (bitField0 & ~0x00000001);
+            suboptionBuilder = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getSuboptionFieldBuilder() : null;
           } else {
-            suboptionBuilder.addAllMessages(other.suboption);
+            suboptionBuilder .addAllMessages(other.suboption );
           }
         }
       }
@@ -667,20 +667,20 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int bitField0;
+    private int bitField0 ;
 
-    private java.lang.Object option= "";
+    private java.lang.Object option = "";
     /**
      * <code>string option = 1;</code>
      * @return The option.
      */
     public java.lang.String getOption() {
-      java.lang.Object ref = option;
+      java.lang.Object ref = option ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        option= s;
+        option = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -692,12 +692,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getOptionBytes() {
-      java.lang.Object ref = option;
+      java.lang.Object ref = option ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        option= b;
+        option = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -714,7 +714,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      option= value;
+      option = value;
       onChanged();
       return this;
     }
@@ -724,7 +724,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearOption() {
       
-      option= getDefaultInstance().getOption();
+      option = getDefaultInstance().getOption();
       onChanged();
       return this;
     }
@@ -740,19 +740,19 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      option= value;
+      option = value;
       onChanged();
       return this;
     }
 
-    private double total;
+    private double total ;
     /**
      * <code>double total = 2;</code>
      * @return The total.
      */
     @java.lang.Override
     public double getTotal() {
-      return total;
+      return total ;
     }
     /**
      * <code>double total = 2;</code>
@@ -761,7 +761,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setTotal(double value) {
       
-      total= value;
+      total = value;
       onChanged();
       return this;
     }
@@ -771,23 +771,23 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearTotal() {
       
-      total= 0D;
+      total = 0D;
       onChanged();
       return this;
     }
 
-    private java.lang.Object score= "";
+    private java.lang.Object score = "";
     /**
      * <code>string score = 3;</code>
      * @return The score.
      */
     public java.lang.String getScore() {
-      java.lang.Object ref = score;
+      java.lang.Object ref = score ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        score= s;
+        score = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -799,12 +799,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getScoreBytes() {
-      java.lang.Object ref = score;
+      java.lang.Object ref = score ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        score= b;
+        score = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -821,7 +821,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      score= value;
+      score = value;
       onChanged();
       return this;
     }
@@ -831,7 +831,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearScore() {
       
-      score= getDefaultInstance().getScore();
+      score = getDefaultInstance().getScore();
       onChanged();
       return this;
     }
@@ -847,19 +847,19 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      score= value;
+      score = value;
       onChanged();
       return this;
     }
 
-    private boolean isExpand;
+    private boolean isExpand ;
     /**
      * <code>bool is_expand = 4;</code>
      * @return The isExpand.
      */
     @java.lang.Override
     public boolean getIsExpand() {
-      return isExpand;
+      return isExpand ;
     }
     /**
      * <code>bool is_expand = 4;</code>
@@ -868,7 +868,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setIsExpand(boolean value) {
       
-      isExpand= value;
+      isExpand = value;
       onChanged();
       return this;
     }
@@ -878,51 +878,51 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearIsExpand() {
       
-      isExpand= false;
+      isExpand = false;
       onChanged();
       return this;
     }
 
-    private java.util.List<com.zhijiejiaoyu.glory_api.live.EvaluateSubOption> suboption=
+    private java.util.List<com.zhijiejiaoyu.glory_api.live.EvaluateSubOption> suboption =
       java.util.Collections.emptyList();
     private void ensureSuboptionIsMutable() {
-      if (!((bitField0& 0x00000001) != 0)) {
-        suboption= new java.util.ArrayList<com.zhijiejiaoyu.glory_api.live.EvaluateSubOption>(suboption);
+      if (!((bitField0 & 0x00000001) != 0)) {
+        suboption = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.live.EvaluateSubOption>(suboption );
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.live.EvaluateSubOption, com.zhijiejiaoyu.glory_api.live.EvaluateSubOption.Builder, com.zhijiejiaoyu.glory_api.live.EvaluateSubOptionOrBuilder> suboptionBuilder;
+        com.zhijiejiaoyu.glory_api.live.EvaluateSubOption, com.zhijiejiaoyu.glory_api.live.EvaluateSubOption.Builder, com.zhijiejiaoyu.glory_api.live.EvaluateSubOptionOrBuilder> suboptionBuilder ;
 
     /**
      * <code>repeated .glory_api.EvaluateSubOption suboption = 5;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.live.EvaluateSubOption> getSuboptionList() {
-      if (suboptionBuilder== null) {
-        return java.util.Collections.unmodifiableList(suboption);
+      if (suboptionBuilder == null) {
+        return java.util.Collections.unmodifiableList(suboption );
       } else {
-        return suboptionBuilder.getMessageList();
+        return suboptionBuilder .getMessageList();
       }
     }
     /**
      * <code>repeated .glory_api.EvaluateSubOption suboption = 5;</code>
      */
     public int getSuboptionCount() {
-      if (suboptionBuilder== null) {
-        return suboption.size();
+      if (suboptionBuilder == null) {
+        return suboption .size();
       } else {
-        return suboptionBuilder.getCount();
+        return suboptionBuilder .getCount();
       }
     }
     /**
      * <code>repeated .glory_api.EvaluateSubOption suboption = 5;</code>
      */
     public com.zhijiejiaoyu.glory_api.live.EvaluateSubOption getSuboption(int index) {
-      if (suboptionBuilder== null) {
-        return suboption.get(index);
+      if (suboptionBuilder == null) {
+        return suboption .get(index);
       } else {
-        return suboptionBuilder.getMessage(index);
+        return suboptionBuilder .getMessage(index);
       }
     }
     /**
@@ -930,15 +930,15 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setSuboption(
         int index, com.zhijiejiaoyu.glory_api.live.EvaluateSubOption value) {
-      if (suboptionBuilder== null) {
+      if (suboptionBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         ensureSuboptionIsMutable();
-        suboption.set(index, value);
+        suboption .set(index, value);
         onChanged();
       } else {
-        suboptionBuilder.setMessage(index, value);
+        suboptionBuilder .setMessage(index, value);
       }
       return this;
     }
@@ -947,12 +947,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setSuboption(
         int index, com.zhijiejiaoyu.glory_api.live.EvaluateSubOption.Builder builderForValue) {
-      if (suboptionBuilder== null) {
+      if (suboptionBuilder == null) {
         ensureSuboptionIsMutable();
-        suboption.set(index, builderForValue.build());
+        suboption .set(index, builderForValue.build());
         onChanged();
       } else {
-        suboptionBuilder.setMessage(index, builderForValue.build());
+        suboptionBuilder .setMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -960,15 +960,15 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.EvaluateSubOption suboption = 5;</code>
      */
     public Builder addSuboption(com.zhijiejiaoyu.glory_api.live.EvaluateSubOption value) {
-      if (suboptionBuilder== null) {
+      if (suboptionBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         ensureSuboptionIsMutable();
-        suboption.add(value);
+        suboption .add(value);
         onChanged();
       } else {
-        suboptionBuilder.addMessage(value);
+        suboptionBuilder .addMessage(value);
       }
       return this;
     }
@@ -977,15 +977,15 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addSuboption(
         int index, com.zhijiejiaoyu.glory_api.live.EvaluateSubOption value) {
-      if (suboptionBuilder== null) {
+      if (suboptionBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         ensureSuboptionIsMutable();
-        suboption.add(index, value);
+        suboption .add(index, value);
         onChanged();
       } else {
-        suboptionBuilder.addMessage(index, value);
+        suboptionBuilder .addMessage(index, value);
       }
       return this;
     }
@@ -994,12 +994,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addSuboption(
         com.zhijiejiaoyu.glory_api.live.EvaluateSubOption.Builder builderForValue) {
-      if (suboptionBuilder== null) {
+      if (suboptionBuilder == null) {
         ensureSuboptionIsMutable();
-        suboption.add(builderForValue.build());
+        suboption .add(builderForValue.build());
         onChanged();
       } else {
-        suboptionBuilder.addMessage(builderForValue.build());
+        suboptionBuilder .addMessage(builderForValue.build());
       }
       return this;
     }
@@ -1008,12 +1008,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addSuboption(
         int index, com.zhijiejiaoyu.glory_api.live.EvaluateSubOption.Builder builderForValue) {
-      if (suboptionBuilder== null) {
+      if (suboptionBuilder == null) {
         ensureSuboptionIsMutable();
-        suboption.add(index, builderForValue.build());
+        suboption .add(index, builderForValue.build());
         onChanged();
       } else {
-        suboptionBuilder.addMessage(index, builderForValue.build());
+        suboptionBuilder .addMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -1022,13 +1022,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addAllSuboption(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.live.EvaluateSubOption> values) {
-      if (suboptionBuilder== null) {
+      if (suboptionBuilder == null) {
         ensureSuboptionIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, suboption);
+            values, suboption );
         onChanged();
       } else {
-        suboptionBuilder.addAllMessages(values);
+        suboptionBuilder .addAllMessages(values);
       }
       return this;
     }
@@ -1036,12 +1036,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.EvaluateSubOption suboption = 5;</code>
      */
     public Builder clearSuboption() {
-      if (suboptionBuilder== null) {
-        suboption= java.util.Collections.emptyList();
-        bitField0= (bitField0& ~0x00000001);
+      if (suboptionBuilder == null) {
+        suboption = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000001);
         onChanged();
       } else {
-        suboptionBuilder.clear();
+        suboptionBuilder .clear();
       }
       return this;
     }
@@ -1049,12 +1049,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.EvaluateSubOption suboption = 5;</code>
      */
     public Builder removeSuboption(int index) {
-      if (suboptionBuilder== null) {
+      if (suboptionBuilder == null) {
         ensureSuboptionIsMutable();
-        suboption.remove(index);
+        suboption .remove(index);
         onChanged();
       } else {
-        suboptionBuilder.remove(index);
+        suboptionBuilder .remove(index);
       }
       return this;
     }
@@ -1070,9 +1070,9 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.live.EvaluateSubOptionOrBuilder getSuboptionOrBuilder(
         int index) {
-      if (suboptionBuilder== null) {
-        return suboption.get(index);  } else {
-        return suboptionBuilder.getMessageOrBuilder(index);
+      if (suboptionBuilder == null) {
+        return suboption .get(index);  } else {
+        return suboptionBuilder .getMessageOrBuilder(index);
       }
     }
     /**
@@ -1080,10 +1080,10 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.live.EvaluateSubOptionOrBuilder> 
          getSuboptionOrBuilderList() {
-      if (suboptionBuilder!= null) {
-        return suboptionBuilder.getMessageOrBuilderList();
+      if (suboptionBuilder != null) {
+        return suboptionBuilder .getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(suboption);
+        return java.util.Collections.unmodifiableList(suboption );
       }
     }
     /**
@@ -1111,16 +1111,16 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.RepeatedFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.live.EvaluateSubOption, com.zhijiejiaoyu.glory_api.live.EvaluateSubOption.Builder, com.zhijiejiaoyu.glory_api.live.EvaluateSubOptionOrBuilder> 
         getSuboptionFieldBuilder() {
-      if (suboptionBuilder== null) {
-        suboptionBuilder= new com.google.protobuf.RepeatedFieldBuilderV3<
+      if (suboptionBuilder == null) {
+        suboptionBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.live.EvaluateSubOption, com.zhijiejiaoyu.glory_api.live.EvaluateSubOption.Builder, com.zhijiejiaoyu.glory_api.live.EvaluateSubOptionOrBuilder>(
-                suboption,
-                ((bitField0& 0x00000001) != 0),
+                suboption ,
+                ((bitField0 & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        suboption= null;
+        suboption = null;
       }
-      return suboptionBuilder;
+      return suboptionBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -16,9 +16,9 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private UploadAttachmentRequest() {
-    attachmentType= 0;
-    description= "";
-    groupingKey= "";
+    attachmentType = 0;
+    description = "";
+    groupingKey = "";
   }
 
   @java.lang.Override
@@ -53,13 +53,13 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             com.zhijiejiaoyu.base.BaseRequest.Builder subBuilder = null;
-            if (baseRequest!= null) {
-              subBuilder = baseRequest.toBuilder();
+            if (baseRequest != null) {
+              subBuilder = baseRequest .toBuilder();
             }
-            baseRequest= input.readMessage(com.zhijiejiaoyu.base.BaseRequest.parser(), extensionRegistry);
+            baseRequest = input.readMessage(com.zhijiejiaoyu.base.BaseRequest.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(baseRequest);
-              baseRequest= subBuilder.buildPartial();
+              subBuilder.mergeFrom(baseRequest );
+              baseRequest = subBuilder.buildPartial();
             }
 
             break;
@@ -67,29 +67,29 @@ private static final long serialVersionUID = 0L;
           case 16: {
             int rawValue = input.readEnum();
 
-            attachmentType= rawValue;
+            attachmentType = rawValue;
             break;
           }
           case 24: {
 
-            sellerId= input.readInt64();
+            sellerId = input.readInt64();
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            description= s;
+            description = s;
             break;
           }
           case 40: {
 
-            groupingId= input.readInt64();
+            groupingId = input.readInt64();
             break;
           }
           case 50: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            groupingKey= s;
+            groupingKey = s;
             break;
           }
           default: {
@@ -125,14 +125,14 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int BASE_REQUEST_FIELD_NUMBER = 1;
-  private com.zhijiejiaoyu.base.BaseRequest baseRequest;
+  private com.zhijiejiaoyu.base.BaseRequest baseRequest ;
   /**
    * <code>.base.BaseRequest base_request = 1;</code>
    * @return Whether the baseRequest field is set.
    */
   @java.lang.Override
   public boolean hasBaseRequest() {
-    return baseRequest!= null;
+    return baseRequest != null;
   }
   /**
    * <code>.base.BaseRequest base_request = 1;</code>
@@ -140,7 +140,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.zhijiejiaoyu.base.BaseRequest getBaseRequest() {
-    return baseRequest== null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
+    return baseRequest == null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest ;
   }
   /**
    * <code>.base.BaseRequest base_request = 1;</code>
@@ -151,13 +151,13 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ATTACHMENT_TYPE_FIELD_NUMBER = 2;
-  private int attachmentType;
+  private int attachmentType ;
   /**
    * <code>.glory_api.AttachmentType attachment_type = 2;</code>
    * @return The enum numeric value on the wire for attachmentType.
    */
   @java.lang.Override public int getAttachmentTypeValue() {
-    return attachmentType;
+    return attachmentType ;
   }
   /**
    * <code>.glory_api.AttachmentType attachment_type = 2;</code>
@@ -165,12 +165,12 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override public com.zhijiejiaoyu.glory_api.seller.AttachmentType getAttachmentType() {
     @SuppressWarnings("deprecation")
-    com.zhijiejiaoyu.glory_api.seller.AttachmentType result = com.zhijiejiaoyu.glory_api.seller.AttachmentType.valueOf(attachmentType);
+    com.zhijiejiaoyu.glory_api.seller.AttachmentType result = com.zhijiejiaoyu.glory_api.seller.AttachmentType.valueOf(attachmentType );
     return result == null ? com.zhijiejiaoyu.glory_api.seller.AttachmentType.UNRECOGNIZED : result;
   }
 
   public static final int SELLER_ID_FIELD_NUMBER = 3;
-  private long sellerId;
+  private long sellerId ;
   /**
    * <pre>
    * 如果传了seller_id, grouping_id跟grouping_key会不起作用
@@ -181,25 +181,25 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public long getSellerId() {
-    return sellerId;
+    return sellerId ;
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 4;
-  private volatile java.lang.Object description;
+  private volatile java.lang.Object description ;
   /**
    * <code>string description = 4;</code>
    * @return The description.
    */
   @java.lang.Override
   public java.lang.String getDescription() {
-    java.lang.Object ref = description;
+    java.lang.Object ref = description ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      description= s;
+      description = s;
       return s;
     }
   }
@@ -210,12 +210,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getDescriptionBytes() {
-    java.lang.Object ref = description;
+    java.lang.Object ref = description ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      description= b;
+      description = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -223,7 +223,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int GROUPING_ID_FIELD_NUMBER = 5;
-  private long groupingId;
+  private long groupingId ;
   /**
    * <pre>
    * 保存到oss的时候，这个id会成为地址的一部分，增加这个来支持更多的upload场景
@@ -234,11 +234,11 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public long getGroupingId() {
-    return groupingId;
+    return groupingId ;
   }
 
   public static final int GROUPING_KEY_FIELD_NUMBER = 6;
-  private volatile java.lang.Object groupingKey;
+  private volatile java.lang.Object groupingKey ;
   /**
    * <pre>
    * 保存到oss的时候这个key会作为地址的一部分，增加这个来支持更多的upload场景
@@ -249,14 +249,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public java.lang.String getGroupingKey() {
-    java.lang.Object ref = groupingKey;
+    java.lang.Object ref = groupingKey ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      groupingKey= s;
+      groupingKey = s;
       return s;
     }
   }
@@ -271,12 +271,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getGroupingKeyBytes() {
-    java.lang.Object ref = groupingKey;
+    java.lang.Object ref = groupingKey ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      groupingKey= b;
+      groupingKey = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -297,23 +297,23 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (baseRequest!= null) {
+    if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
-    if (attachmentType!= com.zhijiejiaoyu.glory_api.seller.AttachmentType.unSpecified.getNumber()) {
-      output.writeEnum(2, attachmentType);
+    if (attachmentType != com.zhijiejiaoyu.glory_api.seller.AttachmentType.unSpecified.getNumber()) {
+      output.writeEnum(2, attachmentType );
     }
-    if (sellerId!= 0L) {
-      output.writeInt64(3, sellerId);
+    if (sellerId != 0L) {
+      output.writeInt64(3, sellerId );
     }
     if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, description);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, description );
     }
-    if (groupingId!= 0L) {
-      output.writeInt64(5, groupingId);
+    if (groupingId != 0L) {
+      output.writeInt64(5, groupingId );
     }
     if (!getGroupingKeyBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, groupingKey);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, groupingKey );
     }
     unknownFields.writeTo(output);
   }
@@ -324,27 +324,27 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (baseRequest!= null) {
+    if (baseRequest != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseRequest());
     }
-    if (attachmentType!= com.zhijiejiaoyu.glory_api.seller.AttachmentType.unSpecified.getNumber()) {
+    if (attachmentType != com.zhijiejiaoyu.glory_api.seller.AttachmentType.unSpecified.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(2, attachmentType);
+        .computeEnumSize(2, attachmentType );
     }
-    if (sellerId!= 0L) {
+    if (sellerId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(3, sellerId);
+        .computeInt64Size(3, sellerId );
     }
     if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, description);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, description );
     }
-    if (groupingId!= 0L) {
+    if (groupingId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(5, groupingId);
+        .computeInt64Size(5, groupingId );
     }
     if (!getGroupingKeyBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, groupingKey);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, groupingKey );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -366,7 +366,7 @@ private static final long serialVersionUID = 0L;
       if (!getBaseRequest()
           .equals(other.getBaseRequest())) return false;
     }
-    if (attachmentType!= other.attachmentType) return false;
+    if (attachmentType != other.attachmentType ) return false;
     if (getSellerId()
         != other.getSellerId()) return false;
     if (!getDescription()
@@ -391,7 +391,7 @@ private static final long serialVersionUID = 0L;
       hash = (53 * hash) + getBaseRequest().hashCode();
     }
     hash = (37 * hash) + ATTACHMENT_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + attachmentType;
+    hash = (53 * hash) + attachmentType ;
     hash = (37 * hash) + SELLER_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getSellerId());
@@ -535,21 +535,21 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (baseRequestBuilder== null) {
-        baseRequest= null;
+      if (baseRequestBuilder == null) {
+        baseRequest = null;
       } else {
-        baseRequest= null;
-        baseRequestBuilder= null;
+        baseRequest = null;
+        baseRequestBuilder = null;
       }
-      attachmentType= 0;
+      attachmentType = 0;
 
-      sellerId= 0L;
+      sellerId = 0L;
 
-      description= "";
+      description = "";
 
-      groupingId= 0L;
+      groupingId = 0L;
 
-      groupingKey= "";
+      groupingKey = "";
 
       return this;
     }
@@ -577,16 +577,16 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.seller.UploadAttachmentRequest buildPartial() {
       com.zhijiejiaoyu.glory_api.seller.UploadAttachmentRequest result = new com.zhijiejiaoyu.glory_api.seller.UploadAttachmentRequest(this);
-      if (baseRequestBuilder== null) {
-        result.baseRequest= baseRequest;
+      if (baseRequestBuilder == null) {
+        result.baseRequest = baseRequest ;
       } else {
-        result.baseRequest= baseRequestBuilder.build();
+        result.baseRequest = baseRequestBuilder .build();
       }
-      result.attachmentType= attachmentType;
-      result.sellerId= sellerId;
-      result.description= description;
-      result.groupingId= groupingId;
-      result.groupingKey= groupingKey;
+      result.attachmentType = attachmentType ;
+      result.sellerId = sellerId ;
+      result.description = description ;
+      result.groupingId = groupingId ;
+      result.groupingKey = groupingKey ;
       onBuilt();
       return result;
     }
@@ -638,21 +638,21 @@ private static final long serialVersionUID = 0L;
       if (other.hasBaseRequest()) {
         mergeBaseRequest(other.getBaseRequest());
       }
-      if (other.attachmentType!= 0) {
+      if (other.attachmentType != 0) {
         setAttachmentTypeValue(other.getAttachmentTypeValue());
       }
       if (other.getSellerId() != 0L) {
         setSellerId(other.getSellerId());
       }
       if (!other.getDescription().isEmpty()) {
-        description= other.description;
+        description = other.description ;
         onChanged();
       }
       if (other.getGroupingId() != 0L) {
         setGroupingId(other.getGroupingId());
       }
       if (!other.getGroupingKey().isEmpty()) {
-        groupingKey= other.groupingKey;
+        groupingKey = other.groupingKey ;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -684,39 +684,39 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.zhijiejiaoyu.base.BaseRequest baseRequest;
+    private com.zhijiejiaoyu.base.BaseRequest baseRequest ;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder> baseRequestBuilder;
+        com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder> baseRequestBuilder ;
     /**
      * <code>.base.BaseRequest base_request = 1;</code>
      * @return Whether the baseRequest field is set.
      */
     public boolean hasBaseRequest() {
-      return baseRequestBuilder!= null || baseRequest!= null;
+      return baseRequestBuilder != null || baseRequest != null;
     }
     /**
      * <code>.base.BaseRequest base_request = 1;</code>
      * @return The baseRequest.
      */
     public com.zhijiejiaoyu.base.BaseRequest getBaseRequest() {
-      if (baseRequestBuilder== null) {
-        return baseRequest== null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
+      if (baseRequestBuilder == null) {
+        return baseRequest == null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest ;
       } else {
-        return baseRequestBuilder.getMessage();
+        return baseRequestBuilder .getMessage();
       }
     }
     /**
      * <code>.base.BaseRequest base_request = 1;</code>
      */
     public Builder setBaseRequest(com.zhijiejiaoyu.base.BaseRequest value) {
-      if (baseRequestBuilder== null) {
+      if (baseRequestBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        baseRequest= value;
+        baseRequest = value;
         onChanged();
       } else {
-        baseRequestBuilder.setMessage(value);
+        baseRequestBuilder .setMessage(value);
       }
 
       return this;
@@ -726,11 +726,11 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setBaseRequest(
         com.zhijiejiaoyu.base.BaseRequest.Builder builderForValue) {
-      if (baseRequestBuilder== null) {
-        baseRequest= builderForValue.build();
+      if (baseRequestBuilder == null) {
+        baseRequest = builderForValue.build();
         onChanged();
       } else {
-        baseRequestBuilder.setMessage(builderForValue.build());
+        baseRequestBuilder .setMessage(builderForValue.build());
       }
 
       return this;
@@ -739,16 +739,16 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseRequest base_request = 1;</code>
      */
     public Builder mergeBaseRequest(com.zhijiejiaoyu.base.BaseRequest value) {
-      if (baseRequestBuilder== null) {
-        if (baseRequest!= null) {
-          baseRequest=
-            com.zhijiejiaoyu.base.BaseRequest.newBuilder(baseRequest).mergeFrom(value).buildPartial();
+      if (baseRequestBuilder == null) {
+        if (baseRequest != null) {
+          baseRequest =
+            com.zhijiejiaoyu.base.BaseRequest.newBuilder(baseRequest ).mergeFrom(value).buildPartial();
         } else {
-          baseRequest= value;
+          baseRequest = value;
         }
         onChanged();
       } else {
-        baseRequestBuilder.mergeFrom(value);
+        baseRequestBuilder .mergeFrom(value);
       }
 
       return this;
@@ -757,12 +757,12 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseRequest base_request = 1;</code>
      */
     public Builder clearBaseRequest() {
-      if (baseRequestBuilder== null) {
-        baseRequest= null;
+      if (baseRequestBuilder == null) {
+        baseRequest = null;
         onChanged();
       } else {
-        baseRequest= null;
-        baseRequestBuilder= null;
+        baseRequest = null;
+        baseRequestBuilder = null;
       }
 
       return this;
@@ -779,11 +779,11 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseRequest base_request = 1;</code>
      */
     public com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder() {
-      if (baseRequestBuilder!= null) {
-        return baseRequestBuilder.getMessageOrBuilder();
+      if (baseRequestBuilder != null) {
+        return baseRequestBuilder .getMessageOrBuilder();
       } else {
-        return baseRequest== null ?
-            com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
+        return baseRequest == null ?
+            com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest ;
       }
     }
     /**
@@ -792,24 +792,24 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder> 
         getBaseRequestFieldBuilder() {
-      if (baseRequestBuilder== null) {
-        baseRequestBuilder= new com.google.protobuf.SingleFieldBuilderV3<
+      if (baseRequestBuilder == null) {
+        baseRequestBuilder = new com.google.protobuf.SingleFieldBuilderV3<
             com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder>(
                 getBaseRequest(),
                 getParentForChildren(),
                 isClean());
-        baseRequest= null;
+        baseRequest = null;
       }
-      return baseRequestBuilder;
+      return baseRequestBuilder ;
     }
 
-    private int attachmentType= 0;
+    private int attachmentType = 0;
     /**
      * <code>.glory_api.AttachmentType attachment_type = 2;</code>
      * @return The enum numeric value on the wire for attachmentType.
      */
     @java.lang.Override public int getAttachmentTypeValue() {
-      return attachmentType;
+      return attachmentType ;
     }
     /**
      * <code>.glory_api.AttachmentType attachment_type = 2;</code>
@@ -818,7 +818,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setAttachmentTypeValue(int value) {
       
-      attachmentType= value;
+      attachmentType = value;
       onChanged();
       return this;
     }
@@ -829,7 +829,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.seller.AttachmentType getAttachmentType() {
       @SuppressWarnings("deprecation")
-      com.zhijiejiaoyu.glory_api.seller.AttachmentType result = com.zhijiejiaoyu.glory_api.seller.AttachmentType.valueOf(attachmentType);
+      com.zhijiejiaoyu.glory_api.seller.AttachmentType result = com.zhijiejiaoyu.glory_api.seller.AttachmentType.valueOf(attachmentType );
       return result == null ? com.zhijiejiaoyu.glory_api.seller.AttachmentType.UNRECOGNIZED : result;
     }
     /**
@@ -842,7 +842,7 @@ private static final long serialVersionUID = 0L;
         throw new NullPointerException();
       }
       
-      attachmentType= value.getNumber();
+      attachmentType = value.getNumber();
       onChanged();
       return this;
     }
@@ -852,12 +852,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearAttachmentType() {
       
-      attachmentType= 0;
+      attachmentType = 0;
       onChanged();
       return this;
     }
 
-    private long sellerId;
+    private long sellerId ;
     /**
      * <pre>
      * 如果传了seller_id, grouping_id跟grouping_key会不起作用
@@ -868,7 +868,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getSellerId() {
-      return sellerId;
+      return sellerId ;
     }
     /**
      * <pre>
@@ -881,7 +881,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setSellerId(long value) {
       
-      sellerId= value;
+      sellerId = value;
       onChanged();
       return this;
     }
@@ -895,23 +895,23 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearSellerId() {
       
-      sellerId= 0L;
+      sellerId = 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object description= "";
+    private java.lang.Object description = "";
     /**
      * <code>string description = 4;</code>
      * @return The description.
      */
     public java.lang.String getDescription() {
-      java.lang.Object ref = description;
+      java.lang.Object ref = description ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        description= s;
+        description = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -923,12 +923,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
-      java.lang.Object ref = description;
+      java.lang.Object ref = description ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        description= b;
+        description = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -945,7 +945,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      description= value;
+      description = value;
       onChanged();
       return this;
     }
@@ -955,7 +955,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearDescription() {
       
-      description= getDefaultInstance().getDescription();
+      description = getDefaultInstance().getDescription();
       onChanged();
       return this;
     }
@@ -971,12 +971,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      description= value;
+      description = value;
       onChanged();
       return this;
     }
 
-    private long groupingId;
+    private long groupingId ;
     /**
      * <pre>
      * 保存到oss的时候，这个id会成为地址的一部分，增加这个来支持更多的upload场景
@@ -987,7 +987,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getGroupingId() {
-      return groupingId;
+      return groupingId ;
     }
     /**
      * <pre>
@@ -1000,7 +1000,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setGroupingId(long value) {
       
-      groupingId= value;
+      groupingId = value;
       onChanged();
       return this;
     }
@@ -1014,12 +1014,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearGroupingId() {
       
-      groupingId= 0L;
+      groupingId = 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object groupingKey= "";
+    private java.lang.Object groupingKey = "";
     /**
      * <pre>
      * 保存到oss的时候这个key会作为地址的一部分，增加这个来支持更多的upload场景
@@ -1029,12 +1029,12 @@ private static final long serialVersionUID = 0L;
      * @return The groupingKey.
      */
     public java.lang.String getGroupingKey() {
-      java.lang.Object ref = groupingKey;
+      java.lang.Object ref = groupingKey ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        groupingKey= s;
+        groupingKey = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1050,12 +1050,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getGroupingKeyBytes() {
-      java.lang.Object ref = groupingKey;
+      java.lang.Object ref = groupingKey ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        groupingKey= b;
+        groupingKey = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1076,7 +1076,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      groupingKey= value;
+      groupingKey = value;
       onChanged();
       return this;
     }
@@ -1090,7 +1090,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearGroupingKey() {
       
-      groupingKey= getDefaultInstance().getGroupingKey();
+      groupingKey = getDefaultInstance().getGroupingKey();
       onChanged();
       return this;
     }
@@ -1110,7 +1110,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      groupingKey= value;
+      groupingKey = value;
       onChanged();
       return this;
     }

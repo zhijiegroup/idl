@@ -50,22 +50,22 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            cartSkuId= input.readInt64();
+            cartSkuId = input.readInt64();
             break;
           }
           case 16: {
 
-            skuId= input.readInt64();
+            skuId = input.readInt64();
             break;
           }
           case 24: {
 
-            quantity= input.readInt32();
+            quantity = input.readInt32();
             break;
           }
           case 32: {
 
-            shopId= input.readInt64();
+            shopId = input.readInt64();
             break;
           }
           default: {
@@ -101,47 +101,47 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CART_SKU_ID_FIELD_NUMBER = 1;
-  private long cartSkuId;
+  private long cartSkuId ;
   /**
    * <code>int64 cart_sku_id = 1;</code>
    * @return The cartSkuId.
    */
   @java.lang.Override
   public long getCartSkuId() {
-    return cartSkuId;
+    return cartSkuId ;
   }
 
   public static final int SKU_ID_FIELD_NUMBER = 2;
-  private long skuId;
+  private long skuId ;
   /**
    * <code>int64 sku_id = 2;</code>
    * @return The skuId.
    */
   @java.lang.Override
   public long getSkuId() {
-    return skuId;
+    return skuId ;
   }
 
   public static final int QUANTITY_FIELD_NUMBER = 3;
-  private int quantity;
+  private int quantity ;
   /**
    * <code>int32 quantity = 3;</code>
    * @return The quantity.
    */
   @java.lang.Override
   public int getQuantity() {
-    return quantity;
+    return quantity ;
   }
 
   public static final int SHOP_ID_FIELD_NUMBER = 4;
-  private long shopId;
+  private long shopId ;
   /**
    * <code>int64 shop_id = 4;</code>
    * @return The shopId.
    */
   @java.lang.Override
   public long getShopId() {
-    return shopId;
+    return shopId ;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -158,17 +158,17 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (cartSkuId!= 0L) {
-      output.writeInt64(1, cartSkuId);
+    if (cartSkuId != 0L) {
+      output.writeInt64(1, cartSkuId );
     }
-    if (skuId!= 0L) {
-      output.writeInt64(2, skuId);
+    if (skuId != 0L) {
+      output.writeInt64(2, skuId );
     }
-    if (quantity!= 0) {
-      output.writeInt32(3, quantity);
+    if (quantity != 0) {
+      output.writeInt32(3, quantity );
     }
-    if (shopId!= 0L) {
-      output.writeInt64(4, shopId);
+    if (shopId != 0L) {
+      output.writeInt64(4, shopId );
     }
     unknownFields.writeTo(output);
   }
@@ -179,21 +179,21 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (cartSkuId!= 0L) {
+    if (cartSkuId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, cartSkuId);
+        .computeInt64Size(1, cartSkuId );
     }
-    if (skuId!= 0L) {
+    if (skuId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, skuId);
+        .computeInt64Size(2, skuId );
     }
-    if (quantity!= 0) {
+    if (quantity != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(3, quantity);
+        .computeInt32Size(3, quantity );
     }
-    if (shopId!= 0L) {
+    if (shopId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(4, shopId);
+        .computeInt64Size(4, shopId );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -373,13 +373,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      cartSkuId= 0L;
+      cartSkuId = 0L;
 
-      skuId= 0L;
+      skuId = 0L;
 
-      quantity= 0;
+      quantity = 0;
 
-      shopId= 0L;
+      shopId = 0L;
 
       return this;
     }
@@ -407,10 +407,10 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.shop.CartSku buildPartial() {
       com.zhijiejiaoyu.glory_api.shop.CartSku result = new com.zhijiejiaoyu.glory_api.shop.CartSku(this);
-      result.cartSkuId= cartSkuId;
-      result.skuId= skuId;
-      result.quantity= quantity;
-      result.shopId= shopId;
+      result.cartSkuId = cartSkuId ;
+      result.skuId = skuId ;
+      result.quantity = quantity ;
+      result.shopId = shopId ;
       onBuilt();
       return result;
     }
@@ -500,14 +500,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long cartSkuId;
+    private long cartSkuId ;
     /**
      * <code>int64 cart_sku_id = 1;</code>
      * @return The cartSkuId.
      */
     @java.lang.Override
     public long getCartSkuId() {
-      return cartSkuId;
+      return cartSkuId ;
     }
     /**
      * <code>int64 cart_sku_id = 1;</code>
@@ -516,7 +516,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setCartSkuId(long value) {
       
-      cartSkuId= value;
+      cartSkuId = value;
       onChanged();
       return this;
     }
@@ -526,19 +526,19 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearCartSkuId() {
       
-      cartSkuId= 0L;
+      cartSkuId = 0L;
       onChanged();
       return this;
     }
 
-    private long skuId;
+    private long skuId ;
     /**
      * <code>int64 sku_id = 2;</code>
      * @return The skuId.
      */
     @java.lang.Override
     public long getSkuId() {
-      return skuId;
+      return skuId ;
     }
     /**
      * <code>int64 sku_id = 2;</code>
@@ -547,7 +547,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setSkuId(long value) {
       
-      skuId= value;
+      skuId = value;
       onChanged();
       return this;
     }
@@ -557,19 +557,19 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearSkuId() {
       
-      skuId= 0L;
+      skuId = 0L;
       onChanged();
       return this;
     }
 
-    private int quantity;
+    private int quantity ;
     /**
      * <code>int32 quantity = 3;</code>
      * @return The quantity.
      */
     @java.lang.Override
     public int getQuantity() {
-      return quantity;
+      return quantity ;
     }
     /**
      * <code>int32 quantity = 3;</code>
@@ -578,7 +578,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setQuantity(int value) {
       
-      quantity= value;
+      quantity = value;
       onChanged();
       return this;
     }
@@ -588,19 +588,19 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearQuantity() {
       
-      quantity= 0;
+      quantity = 0;
       onChanged();
       return this;
     }
 
-    private long shopId;
+    private long shopId ;
     /**
      * <code>int64 shop_id = 4;</code>
      * @return The shopId.
      */
     @java.lang.Override
     public long getShopId() {
-      return shopId;
+      return shopId ;
     }
     /**
      * <code>int64 shop_id = 4;</code>
@@ -609,7 +609,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setShopId(long value) {
       
-      shopId= value;
+      shopId = value;
       onChanged();
       return this;
     }
@@ -619,7 +619,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearShopId() {
       
-      shopId= 0L;
+      shopId = 0L;
       onChanged();
       return this;
     }

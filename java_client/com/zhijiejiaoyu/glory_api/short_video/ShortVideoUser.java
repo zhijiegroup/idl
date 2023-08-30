@@ -16,8 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ShortVideoUser() {
-    userName= "";
-    avatarUrl= "";
+    userName = "";
+    avatarUrl = "";
   }
 
   @java.lang.Override
@@ -52,24 +52,24 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            userId= input.readInt64();
+            userId = input.readInt64();
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            userName= s;
+            userName = s;
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            avatarUrl= s;
+            avatarUrl = s;
             break;
           }
           case 32: {
 
-            isFollow= input.readBool();
+            isFollow = input.readBool();
             break;
           }
           default: {
@@ -105,7 +105,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int USER_ID_FIELD_NUMBER = 1;
-  private long userId;
+  private long userId ;
   /**
    * <pre>
    * 用户ID
@@ -116,11 +116,11 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public long getUserId() {
-    return userId;
+    return userId ;
   }
 
   public static final int USER_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object userName;
+  private volatile java.lang.Object userName ;
   /**
    * <pre>
    * 用户名称
@@ -131,14 +131,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public java.lang.String getUserName() {
-    java.lang.Object ref = userName;
+    java.lang.Object ref = userName ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      userName= s;
+      userName = s;
       return s;
     }
   }
@@ -153,12 +153,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getUserNameBytes() {
-    java.lang.Object ref = userName;
+    java.lang.Object ref = userName ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      userName= b;
+      userName = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -166,7 +166,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int AVATAR_URL_FIELD_NUMBER = 3;
-  private volatile java.lang.Object avatarUrl;
+  private volatile java.lang.Object avatarUrl ;
   /**
    * <pre>
    * 用户头像URL
@@ -177,14 +177,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public java.lang.String getAvatarUrl() {
-    java.lang.Object ref = avatarUrl;
+    java.lang.Object ref = avatarUrl ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      avatarUrl= s;
+      avatarUrl = s;
       return s;
     }
   }
@@ -199,12 +199,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getAvatarUrlBytes() {
-    java.lang.Object ref = avatarUrl;
+    java.lang.Object ref = avatarUrl ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      avatarUrl= b;
+      avatarUrl = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -212,7 +212,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int IS_FOLLOW_FIELD_NUMBER = 4;
-  private boolean isFollow;
+  private boolean isFollow ;
   /**
    * <pre>
    * 是否已关注用户
@@ -223,7 +223,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean getIsFollow() {
-    return isFollow;
+    return isFollow ;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -240,17 +240,17 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (userId!= 0L) {
-      output.writeInt64(1, userId);
+    if (userId != 0L) {
+      output.writeInt64(1, userId );
     }
     if (!getUserNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, userName);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, userName );
     }
     if (!getAvatarUrlBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, avatarUrl);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, avatarUrl );
     }
-    if (isFollow!= false) {
-      output.writeBool(4, isFollow);
+    if (isFollow != false) {
+      output.writeBool(4, isFollow );
     }
     unknownFields.writeTo(output);
   }
@@ -261,19 +261,19 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (userId!= 0L) {
+    if (userId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, userId);
+        .computeInt64Size(1, userId );
     }
     if (!getUserNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, userName);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, userName );
     }
     if (!getAvatarUrlBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, avatarUrl);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, avatarUrl );
     }
-    if (isFollow!= false) {
+    if (isFollow != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(4, isFollow);
+        .computeBoolSize(4, isFollow );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -452,13 +452,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      userId= 0L;
+      userId = 0L;
 
-      userName= "";
+      userName = "";
 
-      avatarUrl= "";
+      avatarUrl = "";
 
-      isFollow= false;
+      isFollow = false;
 
       return this;
     }
@@ -486,10 +486,10 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser buildPartial() {
       com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser result = new com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser(this);
-      result.userId= userId;
-      result.userName= userName;
-      result.avatarUrl= avatarUrl;
-      result.isFollow= isFollow;
+      result.userId = userId ;
+      result.userName = userName ;
+      result.avatarUrl = avatarUrl ;
+      result.isFollow = isFollow ;
       onBuilt();
       return result;
     }
@@ -542,11 +542,11 @@ private static final long serialVersionUID = 0L;
         setUserId(other.getUserId());
       }
       if (!other.getUserName().isEmpty()) {
-        userName= other.userName;
+        userName = other.userName ;
         onChanged();
       }
       if (!other.getAvatarUrl().isEmpty()) {
-        avatarUrl= other.avatarUrl;
+        avatarUrl = other.avatarUrl ;
         onChanged();
       }
       if (other.getIsFollow() != false) {
@@ -581,7 +581,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long userId;
+    private long userId ;
     /**
      * <pre>
      * 用户ID
@@ -592,7 +592,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getUserId() {
-      return userId;
+      return userId ;
     }
     /**
      * <pre>
@@ -605,7 +605,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setUserId(long value) {
       
-      userId= value;
+      userId = value;
       onChanged();
       return this;
     }
@@ -619,12 +619,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearUserId() {
       
-      userId= 0L;
+      userId = 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object userName= "";
+    private java.lang.Object userName = "";
     /**
      * <pre>
      * 用户名称
@@ -634,12 +634,12 @@ private static final long serialVersionUID = 0L;
      * @return The userName.
      */
     public java.lang.String getUserName() {
-      java.lang.Object ref = userName;
+      java.lang.Object ref = userName ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        userName= s;
+        userName = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -655,12 +655,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getUserNameBytes() {
-      java.lang.Object ref = userName;
+      java.lang.Object ref = userName ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        userName= b;
+        userName = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -681,7 +681,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      userName= value;
+      userName = value;
       onChanged();
       return this;
     }
@@ -695,7 +695,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearUserName() {
       
-      userName= getDefaultInstance().getUserName();
+      userName = getDefaultInstance().getUserName();
       onChanged();
       return this;
     }
@@ -715,12 +715,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      userName= value;
+      userName = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object avatarUrl= "";
+    private java.lang.Object avatarUrl = "";
     /**
      * <pre>
      * 用户头像URL
@@ -730,12 +730,12 @@ private static final long serialVersionUID = 0L;
      * @return The avatarUrl.
      */
     public java.lang.String getAvatarUrl() {
-      java.lang.Object ref = avatarUrl;
+      java.lang.Object ref = avatarUrl ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        avatarUrl= s;
+        avatarUrl = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -751,12 +751,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getAvatarUrlBytes() {
-      java.lang.Object ref = avatarUrl;
+      java.lang.Object ref = avatarUrl ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        avatarUrl= b;
+        avatarUrl = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -777,7 +777,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      avatarUrl= value;
+      avatarUrl = value;
       onChanged();
       return this;
     }
@@ -791,7 +791,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearAvatarUrl() {
       
-      avatarUrl= getDefaultInstance().getAvatarUrl();
+      avatarUrl = getDefaultInstance().getAvatarUrl();
       onChanged();
       return this;
     }
@@ -811,12 +811,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      avatarUrl= value;
+      avatarUrl = value;
       onChanged();
       return this;
     }
 
-    private boolean isFollow;
+    private boolean isFollow ;
     /**
      * <pre>
      * 是否已关注用户
@@ -827,7 +827,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public boolean getIsFollow() {
-      return isFollow;
+      return isFollow ;
     }
     /**
      * <pre>
@@ -840,7 +840,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setIsFollow(boolean value) {
       
-      isFollow= value;
+      isFollow = value;
       onChanged();
       return this;
     }
@@ -854,7 +854,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearIsFollow() {
       
-      isFollow= false;
+      isFollow = false;
       onChanged();
       return this;
     }

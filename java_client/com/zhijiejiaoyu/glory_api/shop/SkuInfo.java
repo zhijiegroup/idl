@@ -50,12 +50,12 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            skuId= input.readInt64();
+            skuId = input.readInt64();
             break;
           }
           case 16: {
 
-            number= input.readInt32();
+            number = input.readInt32();
             break;
           }
           default: {
@@ -91,25 +91,25 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int SKU_ID_FIELD_NUMBER = 1;
-  private long skuId;
+  private long skuId ;
   /**
    * <code>int64 sku_id = 1;</code>
    * @return The skuId.
    */
   @java.lang.Override
   public long getSkuId() {
-    return skuId;
+    return skuId ;
   }
 
   public static final int NUMBER_FIELD_NUMBER = 2;
-  private int number;
+  private int number ;
   /**
    * <code>int32 number = 2;</code>
    * @return The number.
    */
   @java.lang.Override
   public int getNumber() {
-    return number;
+    return number ;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -126,11 +126,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (skuId!= 0L) {
-      output.writeInt64(1, skuId);
+    if (skuId != 0L) {
+      output.writeInt64(1, skuId );
     }
-    if (number!= 0) {
-      output.writeInt32(2, number);
+    if (number != 0) {
+      output.writeInt32(2, number );
     }
     unknownFields.writeTo(output);
   }
@@ -141,13 +141,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (skuId!= 0L) {
+    if (skuId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, skuId);
+        .computeInt64Size(1, skuId );
     }
-    if (number!= 0) {
+    if (number != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, number);
+        .computeInt32Size(2, number );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -317,9 +317,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      skuId= 0L;
+      skuId = 0L;
 
-      number= 0;
+      number = 0;
 
       return this;
     }
@@ -347,8 +347,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.shop.SkuInfo buildPartial() {
       com.zhijiejiaoyu.glory_api.shop.SkuInfo result = new com.zhijiejiaoyu.glory_api.shop.SkuInfo(this);
-      result.skuId= skuId;
-      result.number= number;
+      result.skuId = skuId ;
+      result.number = number ;
       onBuilt();
       return result;
     }
@@ -432,14 +432,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long skuId;
+    private long skuId ;
     /**
      * <code>int64 sku_id = 1;</code>
      * @return The skuId.
      */
     @java.lang.Override
     public long getSkuId() {
-      return skuId;
+      return skuId ;
     }
     /**
      * <code>int64 sku_id = 1;</code>
@@ -448,7 +448,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setSkuId(long value) {
       
-      skuId= value;
+      skuId = value;
       onChanged();
       return this;
     }
@@ -458,19 +458,19 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearSkuId() {
       
-      skuId= 0L;
+      skuId = 0L;
       onChanged();
       return this;
     }
 
-    private int number;
+    private int number ;
     /**
      * <code>int32 number = 2;</code>
      * @return The number.
      */
     @java.lang.Override
     public int getNumber() {
-      return number;
+      return number ;
     }
     /**
      * <code>int32 number = 2;</code>
@@ -479,7 +479,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setNumber(int value) {
       
-      number= value;
+      number = value;
       onChanged();
       return this;
     }
@@ -489,7 +489,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearNumber() {
       
-      number= 0;
+      number = 0;
       onChanged();
       return this;
     }

@@ -20,12 +20,12 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private DeliverInfo() {
-    deliverAddress= "";
-    contactName= "";
-    contactPhone= "";
-    buyerName= "";
-    buyerComment= "";
-    deliveryMethod= "";
+    deliverAddress = "";
+    contactName = "";
+    contactPhone = "";
+    buyerName = "";
+    buyerComment = "";
+    deliveryMethod = "";
   }
 
   @java.lang.Override
@@ -61,42 +61,42 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            deliverAddress= s;
+            deliverAddress = s;
             break;
           }
           case 16: {
 
-            deliverPost= input.readInt32();
+            deliverPost = input.readInt32();
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            contactName= s;
+            contactName = s;
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            contactPhone= s;
+            contactPhone = s;
             break;
           }
           case 42: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            buyerName= s;
+            buyerName = s;
             break;
           }
           case 50: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            buyerComment= s;
+            buyerComment = s;
             break;
           }
           case 58: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            deliveryMethod= s;
+            deliveryMethod = s;
             break;
           }
           default: {
@@ -132,7 +132,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DELIVER_ADDRESS_FIELD_NUMBER = 1;
-  private volatile java.lang.Object deliverAddress;
+  private volatile java.lang.Object deliverAddress ;
   /**
    * <pre>
    *收获地址
@@ -143,14 +143,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public java.lang.String getDeliverAddress() {
-    java.lang.Object ref = deliverAddress;
+    java.lang.Object ref = deliverAddress ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      deliverAddress= s;
+      deliverAddress = s;
       return s;
     }
   }
@@ -165,12 +165,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getDeliverAddressBytes() {
-    java.lang.Object ref = deliverAddress;
+    java.lang.Object ref = deliverAddress ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      deliverAddress= b;
+      deliverAddress = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -178,7 +178,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DELIVER_POST_FIELD_NUMBER = 2;
-  private int deliverPost;
+  private int deliverPost ;
   /**
    * <pre>
    *邮编
@@ -189,11 +189,11 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public int getDeliverPost() {
-    return deliverPost;
+    return deliverPost ;
   }
 
   public static final int CONTACT_NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object contactName;
+  private volatile java.lang.Object contactName ;
   /**
    * <pre>
    *收获人
@@ -204,14 +204,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public java.lang.String getContactName() {
-    java.lang.Object ref = contactName;
+    java.lang.Object ref = contactName ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      contactName= s;
+      contactName = s;
       return s;
     }
   }
@@ -226,12 +226,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getContactNameBytes() {
-    java.lang.Object ref = contactName;
+    java.lang.Object ref = contactName ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      contactName= b;
+      contactName = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -239,7 +239,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CONTACT_PHONE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object contactPhone;
+  private volatile java.lang.Object contactPhone ;
   /**
    * <pre>
    *收货人手机
@@ -250,14 +250,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public java.lang.String getContactPhone() {
-    java.lang.Object ref = contactPhone;
+    java.lang.Object ref = contactPhone ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      contactPhone= s;
+      contactPhone = s;
       return s;
     }
   }
@@ -272,12 +272,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getContactPhoneBytes() {
-    java.lang.Object ref = contactPhone;
+    java.lang.Object ref = contactPhone ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      contactPhone= b;
+      contactPhone = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -285,7 +285,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int BUYER_NAME_FIELD_NUMBER = 5;
-  private volatile java.lang.Object buyerName;
+  private volatile java.lang.Object buyerName ;
   /**
    * <pre>
    *买家名字 或昵称
@@ -296,14 +296,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public java.lang.String getBuyerName() {
-    java.lang.Object ref = buyerName;
+    java.lang.Object ref = buyerName ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      buyerName= s;
+      buyerName = s;
       return s;
     }
   }
@@ -318,12 +318,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getBuyerNameBytes() {
-    java.lang.Object ref = buyerName;
+    java.lang.Object ref = buyerName ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      buyerName= b;
+      buyerName = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -331,7 +331,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int BUYER_COMMENT_FIELD_NUMBER = 6;
-  private volatile java.lang.Object buyerComment;
+  private volatile java.lang.Object buyerComment ;
   /**
    * <pre>
    *买家留言
@@ -342,14 +342,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public java.lang.String getBuyerComment() {
-    java.lang.Object ref = buyerComment;
+    java.lang.Object ref = buyerComment ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      buyerComment= s;
+      buyerComment = s;
       return s;
     }
   }
@@ -364,12 +364,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getBuyerCommentBytes() {
-    java.lang.Object ref = buyerComment;
+    java.lang.Object ref = buyerComment ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      buyerComment= b;
+      buyerComment = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -377,7 +377,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DELIVERY_METHOD_FIELD_NUMBER = 7;
-  private volatile java.lang.Object deliveryMethod;
+  private volatile java.lang.Object deliveryMethod ;
   /**
    * <pre>
    *配送方式
@@ -388,14 +388,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public java.lang.String getDeliveryMethod() {
-    java.lang.Object ref = deliveryMethod;
+    java.lang.Object ref = deliveryMethod ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      deliveryMethod= s;
+      deliveryMethod = s;
       return s;
     }
   }
@@ -410,12 +410,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getDeliveryMethodBytes() {
-    java.lang.Object ref = deliveryMethod;
+    java.lang.Object ref = deliveryMethod ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      deliveryMethod= b;
+      deliveryMethod = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -437,25 +437,25 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getDeliverAddressBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, deliverAddress);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, deliverAddress );
     }
-    if (deliverPost!= 0) {
-      output.writeInt32(2, deliverPost);
+    if (deliverPost != 0) {
+      output.writeInt32(2, deliverPost );
     }
     if (!getContactNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, contactName);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, contactName );
     }
     if (!getContactPhoneBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, contactPhone);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, contactPhone );
     }
     if (!getBuyerNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, buyerName);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, buyerName );
     }
     if (!getBuyerCommentBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, buyerComment);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, buyerComment );
     }
     if (!getDeliveryMethodBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, deliveryMethod);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, deliveryMethod );
     }
     unknownFields.writeTo(output);
   }
@@ -467,26 +467,26 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (!getDeliverAddressBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, deliverAddress);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, deliverAddress );
     }
-    if (deliverPost!= 0) {
+    if (deliverPost != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, deliverPost);
+        .computeInt32Size(2, deliverPost );
     }
     if (!getContactNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, contactName);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, contactName );
     }
     if (!getContactPhoneBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, contactPhone);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, contactPhone );
     }
     if (!getBuyerNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, buyerName);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, buyerName );
     }
     if (!getBuyerCommentBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, buyerComment);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, buyerComment );
     }
     if (!getDeliveryMethodBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, deliveryMethod);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, deliveryMethod );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -679,19 +679,19 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      deliverAddress= "";
+      deliverAddress = "";
 
-      deliverPost= 0;
+      deliverPost = 0;
 
-      contactName= "";
+      contactName = "";
 
-      contactPhone= "";
+      contactPhone = "";
 
-      buyerName= "";
+      buyerName = "";
 
-      buyerComment= "";
+      buyerComment = "";
 
-      deliveryMethod= "";
+      deliveryMethod = "";
 
       return this;
     }
@@ -719,13 +719,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.shop.DeliverInfo buildPartial() {
       com.zhijiejiaoyu.glory_api.shop.DeliverInfo result = new com.zhijiejiaoyu.glory_api.shop.DeliverInfo(this);
-      result.deliverAddress= deliverAddress;
-      result.deliverPost= deliverPost;
-      result.contactName= contactName;
-      result.contactPhone= contactPhone;
-      result.buyerName= buyerName;
-      result.buyerComment= buyerComment;
-      result.deliveryMethod= deliveryMethod;
+      result.deliverAddress = deliverAddress ;
+      result.deliverPost = deliverPost ;
+      result.contactName = contactName ;
+      result.contactPhone = contactPhone ;
+      result.buyerName = buyerName ;
+      result.buyerComment = buyerComment ;
+      result.deliveryMethod = deliveryMethod ;
       onBuilt();
       return result;
     }
@@ -775,30 +775,30 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.zhijiejiaoyu.glory_api.shop.DeliverInfo other) {
       if (other == com.zhijiejiaoyu.glory_api.shop.DeliverInfo.getDefaultInstance()) return this;
       if (!other.getDeliverAddress().isEmpty()) {
-        deliverAddress= other.deliverAddress;
+        deliverAddress = other.deliverAddress ;
         onChanged();
       }
       if (other.getDeliverPost() != 0) {
         setDeliverPost(other.getDeliverPost());
       }
       if (!other.getContactName().isEmpty()) {
-        contactName= other.contactName;
+        contactName = other.contactName ;
         onChanged();
       }
       if (!other.getContactPhone().isEmpty()) {
-        contactPhone= other.contactPhone;
+        contactPhone = other.contactPhone ;
         onChanged();
       }
       if (!other.getBuyerName().isEmpty()) {
-        buyerName= other.buyerName;
+        buyerName = other.buyerName ;
         onChanged();
       }
       if (!other.getBuyerComment().isEmpty()) {
-        buyerComment= other.buyerComment;
+        buyerComment = other.buyerComment ;
         onChanged();
       }
       if (!other.getDeliveryMethod().isEmpty()) {
-        deliveryMethod= other.deliveryMethod;
+        deliveryMethod = other.deliveryMethod ;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -830,7 +830,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object deliverAddress= "";
+    private java.lang.Object deliverAddress = "";
     /**
      * <pre>
      *收获地址
@@ -840,12 +840,12 @@ private static final long serialVersionUID = 0L;
      * @return The deliverAddress.
      */
     public java.lang.String getDeliverAddress() {
-      java.lang.Object ref = deliverAddress;
+      java.lang.Object ref = deliverAddress ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        deliverAddress= s;
+        deliverAddress = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -861,12 +861,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getDeliverAddressBytes() {
-      java.lang.Object ref = deliverAddress;
+      java.lang.Object ref = deliverAddress ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        deliverAddress= b;
+        deliverAddress = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -887,7 +887,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      deliverAddress= value;
+      deliverAddress = value;
       onChanged();
       return this;
     }
@@ -901,7 +901,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearDeliverAddress() {
       
-      deliverAddress= getDefaultInstance().getDeliverAddress();
+      deliverAddress = getDefaultInstance().getDeliverAddress();
       onChanged();
       return this;
     }
@@ -921,12 +921,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      deliverAddress= value;
+      deliverAddress = value;
       onChanged();
       return this;
     }
 
-    private int deliverPost;
+    private int deliverPost ;
     /**
      * <pre>
      *邮编
@@ -937,7 +937,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public int getDeliverPost() {
-      return deliverPost;
+      return deliverPost ;
     }
     /**
      * <pre>
@@ -950,7 +950,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDeliverPost(int value) {
       
-      deliverPost= value;
+      deliverPost = value;
       onChanged();
       return this;
     }
@@ -964,12 +964,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearDeliverPost() {
       
-      deliverPost= 0;
+      deliverPost = 0;
       onChanged();
       return this;
     }
 
-    private java.lang.Object contactName= "";
+    private java.lang.Object contactName = "";
     /**
      * <pre>
      *收获人
@@ -979,12 +979,12 @@ private static final long serialVersionUID = 0L;
      * @return The contactName.
      */
     public java.lang.String getContactName() {
-      java.lang.Object ref = contactName;
+      java.lang.Object ref = contactName ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        contactName= s;
+        contactName = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1000,12 +1000,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getContactNameBytes() {
-      java.lang.Object ref = contactName;
+      java.lang.Object ref = contactName ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        contactName= b;
+        contactName = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1026,7 +1026,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      contactName= value;
+      contactName = value;
       onChanged();
       return this;
     }
@@ -1040,7 +1040,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearContactName() {
       
-      contactName= getDefaultInstance().getContactName();
+      contactName = getDefaultInstance().getContactName();
       onChanged();
       return this;
     }
@@ -1060,12 +1060,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      contactName= value;
+      contactName = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object contactPhone= "";
+    private java.lang.Object contactPhone = "";
     /**
      * <pre>
      *收货人手机
@@ -1075,12 +1075,12 @@ private static final long serialVersionUID = 0L;
      * @return The contactPhone.
      */
     public java.lang.String getContactPhone() {
-      java.lang.Object ref = contactPhone;
+      java.lang.Object ref = contactPhone ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        contactPhone= s;
+        contactPhone = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1096,12 +1096,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getContactPhoneBytes() {
-      java.lang.Object ref = contactPhone;
+      java.lang.Object ref = contactPhone ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        contactPhone= b;
+        contactPhone = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1122,7 +1122,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      contactPhone= value;
+      contactPhone = value;
       onChanged();
       return this;
     }
@@ -1136,7 +1136,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearContactPhone() {
       
-      contactPhone= getDefaultInstance().getContactPhone();
+      contactPhone = getDefaultInstance().getContactPhone();
       onChanged();
       return this;
     }
@@ -1156,12 +1156,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      contactPhone= value;
+      contactPhone = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object buyerName= "";
+    private java.lang.Object buyerName = "";
     /**
      * <pre>
      *买家名字 或昵称
@@ -1171,12 +1171,12 @@ private static final long serialVersionUID = 0L;
      * @return The buyerName.
      */
     public java.lang.String getBuyerName() {
-      java.lang.Object ref = buyerName;
+      java.lang.Object ref = buyerName ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        buyerName= s;
+        buyerName = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1192,12 +1192,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getBuyerNameBytes() {
-      java.lang.Object ref = buyerName;
+      java.lang.Object ref = buyerName ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        buyerName= b;
+        buyerName = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1218,7 +1218,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      buyerName= value;
+      buyerName = value;
       onChanged();
       return this;
     }
@@ -1232,7 +1232,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearBuyerName() {
       
-      buyerName= getDefaultInstance().getBuyerName();
+      buyerName = getDefaultInstance().getBuyerName();
       onChanged();
       return this;
     }
@@ -1252,12 +1252,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      buyerName= value;
+      buyerName = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object buyerComment= "";
+    private java.lang.Object buyerComment = "";
     /**
      * <pre>
      *买家留言
@@ -1267,12 +1267,12 @@ private static final long serialVersionUID = 0L;
      * @return The buyerComment.
      */
     public java.lang.String getBuyerComment() {
-      java.lang.Object ref = buyerComment;
+      java.lang.Object ref = buyerComment ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        buyerComment= s;
+        buyerComment = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1288,12 +1288,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getBuyerCommentBytes() {
-      java.lang.Object ref = buyerComment;
+      java.lang.Object ref = buyerComment ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        buyerComment= b;
+        buyerComment = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1314,7 +1314,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      buyerComment= value;
+      buyerComment = value;
       onChanged();
       return this;
     }
@@ -1328,7 +1328,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearBuyerComment() {
       
-      buyerComment= getDefaultInstance().getBuyerComment();
+      buyerComment = getDefaultInstance().getBuyerComment();
       onChanged();
       return this;
     }
@@ -1348,12 +1348,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      buyerComment= value;
+      buyerComment = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object deliveryMethod= "";
+    private java.lang.Object deliveryMethod = "";
     /**
      * <pre>
      *配送方式
@@ -1363,12 +1363,12 @@ private static final long serialVersionUID = 0L;
      * @return The deliveryMethod.
      */
     public java.lang.String getDeliveryMethod() {
-      java.lang.Object ref = deliveryMethod;
+      java.lang.Object ref = deliveryMethod ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        deliveryMethod= s;
+        deliveryMethod = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1384,12 +1384,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getDeliveryMethodBytes() {
-      java.lang.Object ref = deliveryMethod;
+      java.lang.Object ref = deliveryMethod ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        deliveryMethod= b;
+        deliveryMethod = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1410,7 +1410,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      deliveryMethod= value;
+      deliveryMethod = value;
       onChanged();
       return this;
     }
@@ -1424,7 +1424,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearDeliveryMethod() {
       
-      deliveryMethod= getDefaultInstance().getDeliveryMethod();
+      deliveryMethod = getDefaultInstance().getDeliveryMethod();
       onChanged();
       return this;
     }
@@ -1444,7 +1444,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      deliveryMethod= value;
+      deliveryMethod = value;
       onChanged();
       return this;
     }

@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListRoleResponse() {
-    role= java.util.Collections.emptyList();
+    role = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -39,7 +39,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0= 0;
+    int mutable_bitField0 = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -52,35 +52,35 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             com.zhijiejiaoyu.base.BaseResponse.Builder subBuilder = null;
-            if (baseResp!= null) {
-              subBuilder = baseResp.toBuilder();
+            if (baseResp != null) {
+              subBuilder = baseResp .toBuilder();
             }
-            baseResp= input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
+            baseResp = input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(baseResp);
-              baseResp= subBuilder.buildPartial();
+              subBuilder.mergeFrom(baseResp );
+              baseResp = subBuilder.buildPartial();
             }
 
             break;
           }
           case 18: {
-            if (!((mutable_bitField0& 0x00000001) != 0)) {
-              role= new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.Role>();
+            if (!((mutable_bitField0 & 0x00000001) != 0)) {
+              role = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.Role>();
               mutable_bitField0_ |= 0x00000001;
             }
-            role.add(
+            role .add(
                 input.readMessage(com.zhijiejiaoyu.glory_api.user.Role.parser(), extensionRegistry));
             break;
           }
           case 802: {
             com.zhijiejiaoyu.base.PaginationResponse.Builder subBuilder = null;
-            if (pagination!= null) {
-              subBuilder = pagination.toBuilder();
+            if (pagination != null) {
+              subBuilder = pagination .toBuilder();
             }
-            pagination= input.readMessage(com.zhijiejiaoyu.base.PaginationResponse.parser(), extensionRegistry);
+            pagination = input.readMessage(com.zhijiejiaoyu.base.PaginationResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(pagination);
-              pagination= subBuilder.buildPartial();
+              subBuilder.mergeFrom(pagination );
+              pagination = subBuilder.buildPartial();
             }
 
             break;
@@ -100,8 +100,8 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0& 0x00000001) != 0)) {
-        role= java.util.Collections.unmodifiableList(role);
+      if (((mutable_bitField0 & 0x00000001) != 0)) {
+        role = java.util.Collections.unmodifiableList(role );
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -121,14 +121,14 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int BASE_RESP_FIELD_NUMBER = 1;
-  private com.zhijiejiaoyu.base.BaseResponse baseResp;
+  private com.zhijiejiaoyu.base.BaseResponse baseResp ;
   /**
    * <code>.base.BaseResponse base_resp = 1;</code>
    * @return Whether the baseResp field is set.
    */
   @java.lang.Override
   public boolean hasBaseResp() {
-    return baseResp!= null;
+    return baseResp != null;
   }
   /**
    * <code>.base.BaseResponse base_resp = 1;</code>
@@ -136,7 +136,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.zhijiejiaoyu.base.BaseResponse getBaseResp() {
-    return baseResp== null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
+    return baseResp == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp ;
   }
   /**
    * <code>.base.BaseResponse base_resp = 1;</code>
@@ -147,7 +147,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ROLE_FIELD_NUMBER = 2;
-  private java.util.List<com.zhijiejiaoyu.glory_api.user.Role> role;
+  private java.util.List<com.zhijiejiaoyu.glory_api.user.Role> role ;
   /**
    * <pre>
    * Role列表
@@ -157,7 +157,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.user.Role> getRoleList() {
-    return role;
+    return role ;
   }
   /**
    * <pre>
@@ -169,7 +169,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.user.RoleOrBuilder> 
       getRoleOrBuilderList() {
-    return role;
+    return role ;
   }
   /**
    * <pre>
@@ -180,7 +180,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public int getRoleCount() {
-    return role.size();
+    return role .size();
   }
   /**
    * <pre>
@@ -191,7 +191,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.user.Role getRole(int index) {
-    return role.get(index);
+    return role .get(index);
   }
   /**
    * <pre>
@@ -203,18 +203,18 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.user.RoleOrBuilder getRoleOrBuilder(
       int index) {
-    return role.get(index);
+    return role .get(index);
   }
 
   public static final int PAGINATION_FIELD_NUMBER = 100;
-  private com.zhijiejiaoyu.base.PaginationResponse pagination;
+  private com.zhijiejiaoyu.base.PaginationResponse pagination ;
   /**
    * <code>.base.PaginationResponse pagination = 100;</code>
    * @return Whether the pagination field is set.
    */
   @java.lang.Override
   public boolean hasPagination() {
-    return pagination!= null;
+    return pagination != null;
   }
   /**
    * <code>.base.PaginationResponse pagination = 100;</code>
@@ -222,7 +222,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.zhijiejiaoyu.base.PaginationResponse getPagination() {
-    return pagination== null ? com.zhijiejiaoyu.base.PaginationResponse.getDefaultInstance() : pagination;
+    return pagination == null ? com.zhijiejiaoyu.base.PaginationResponse.getDefaultInstance() : pagination ;
   }
   /**
    * <code>.base.PaginationResponse pagination = 100;</code>
@@ -246,13 +246,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (baseResp!= null) {
+    if (baseResp != null) {
       output.writeMessage(1, getBaseResp());
     }
-    for (int i = 0; i < role.size(); i++) {
-      output.writeMessage(2, role.get(i));
+    for (int i = 0; i < role .size(); i++) {
+      output.writeMessage(2, role .get(i));
     }
-    if (pagination!= null) {
+    if (pagination != null) {
       output.writeMessage(100, getPagination());
     }
     unknownFields.writeTo(output);
@@ -264,15 +264,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (baseResp!= null) {
+    if (baseResp != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
-    for (int i = 0; i < role.size(); i++) {
+    for (int i = 0; i < role .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, role.get(i));
+        .computeMessageSize(2, role .get(i));
     }
-    if (pagination!= null) {
+    if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(100, getPagination());
     }
@@ -460,23 +460,23 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (baseRespBuilder== null) {
-        baseResp= null;
+      if (baseRespBuilder == null) {
+        baseResp = null;
       } else {
-        baseResp= null;
-        baseRespBuilder= null;
+        baseResp = null;
+        baseRespBuilder = null;
       }
-      if (roleBuilder== null) {
-        role= java.util.Collections.emptyList();
-        bitField0= (bitField0& ~0x00000001);
+      if (roleBuilder == null) {
+        role = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000001);
       } else {
-        roleBuilder.clear();
+        roleBuilder .clear();
       }
-      if (paginationBuilder== null) {
-        pagination= null;
+      if (paginationBuilder == null) {
+        pagination = null;
       } else {
-        pagination= null;
-        paginationBuilder= null;
+        pagination = null;
+        paginationBuilder = null;
       }
       return this;
     }
@@ -504,25 +504,25 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.user.ListRoleResponse buildPartial() {
       com.zhijiejiaoyu.glory_api.user.ListRoleResponse result = new com.zhijiejiaoyu.glory_api.user.ListRoleResponse(this);
-      int from_bitField0= bitField0;
-      if (baseRespBuilder== null) {
-        result.baseResp= baseResp;
+      int from_bitField0 = bitField0 ;
+      if (baseRespBuilder == null) {
+        result.baseResp = baseResp ;
       } else {
-        result.baseResp= baseRespBuilder.build();
+        result.baseResp = baseRespBuilder .build();
       }
-      if (roleBuilder== null) {
-        if (((bitField0& 0x00000001) != 0)) {
-          role= java.util.Collections.unmodifiableList(role);
-          bitField0= (bitField0& ~0x00000001);
+      if (roleBuilder == null) {
+        if (((bitField0 & 0x00000001) != 0)) {
+          role = java.util.Collections.unmodifiableList(role );
+          bitField0 = (bitField0 & ~0x00000001);
         }
-        result.role= role;
+        result.role = role ;
       } else {
-        result.role= roleBuilder.build();
+        result.role = roleBuilder .build();
       }
-      if (paginationBuilder== null) {
-        result.pagination= pagination;
+      if (paginationBuilder == null) {
+        result.pagination = pagination ;
       } else {
-        result.pagination= paginationBuilder.build();
+        result.pagination = paginationBuilder .build();
       }
       onBuilt();
       return result;
@@ -575,29 +575,29 @@ private static final long serialVersionUID = 0L;
       if (other.hasBaseResp()) {
         mergeBaseResp(other.getBaseResp());
       }
-      if (roleBuilder== null) {
-        if (!other.role.isEmpty()) {
-          if (role.isEmpty()) {
-            role= other.role;
-            bitField0= (bitField0& ~0x00000001);
+      if (roleBuilder == null) {
+        if (!other.role .isEmpty()) {
+          if (role .isEmpty()) {
+            role = other.role ;
+            bitField0 = (bitField0 & ~0x00000001);
           } else {
             ensureRoleIsMutable();
-            role.addAll(other.role);
+            role .addAll(other.role );
           }
           onChanged();
         }
       } else {
-        if (!other.role.isEmpty()) {
-          if (roleBuilder.isEmpty()) {
-            roleBuilder.dispose();
-            roleBuilder= null;
-            role= other.role;
-            bitField0= (bitField0& ~0x00000001);
-            roleBuilder= 
+        if (!other.role .isEmpty()) {
+          if (roleBuilder .isEmpty()) {
+            roleBuilder .dispose();
+            roleBuilder = null;
+            role = other.role ;
+            bitField0 = (bitField0 & ~0x00000001);
+            roleBuilder = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getRoleFieldBuilder() : null;
           } else {
-            roleBuilder.addAllMessages(other.role);
+            roleBuilder .addAllMessages(other.role );
           }
         }
       }
@@ -632,41 +632,41 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int bitField0;
+    private int bitField0 ;
 
-    private com.zhijiejiaoyu.base.BaseResponse baseResp;
+    private com.zhijiejiaoyu.base.BaseResponse baseResp ;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.base.BaseResponse, com.zhijiejiaoyu.base.BaseResponse.Builder, com.zhijiejiaoyu.base.BaseResponseOrBuilder> baseRespBuilder;
+        com.zhijiejiaoyu.base.BaseResponse, com.zhijiejiaoyu.base.BaseResponse.Builder, com.zhijiejiaoyu.base.BaseResponseOrBuilder> baseRespBuilder ;
     /**
      * <code>.base.BaseResponse base_resp = 1;</code>
      * @return Whether the baseResp field is set.
      */
     public boolean hasBaseResp() {
-      return baseRespBuilder!= null || baseResp!= null;
+      return baseRespBuilder != null || baseResp != null;
     }
     /**
      * <code>.base.BaseResponse base_resp = 1;</code>
      * @return The baseResp.
      */
     public com.zhijiejiaoyu.base.BaseResponse getBaseResp() {
-      if (baseRespBuilder== null) {
-        return baseResp== null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
+      if (baseRespBuilder == null) {
+        return baseResp == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp ;
       } else {
-        return baseRespBuilder.getMessage();
+        return baseRespBuilder .getMessage();
       }
     }
     /**
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public Builder setBaseResp(com.zhijiejiaoyu.base.BaseResponse value) {
-      if (baseRespBuilder== null) {
+      if (baseRespBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        baseResp= value;
+        baseResp = value;
         onChanged();
       } else {
-        baseRespBuilder.setMessage(value);
+        baseRespBuilder .setMessage(value);
       }
 
       return this;
@@ -676,11 +676,11 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setBaseResp(
         com.zhijiejiaoyu.base.BaseResponse.Builder builderForValue) {
-      if (baseRespBuilder== null) {
-        baseResp= builderForValue.build();
+      if (baseRespBuilder == null) {
+        baseResp = builderForValue.build();
         onChanged();
       } else {
-        baseRespBuilder.setMessage(builderForValue.build());
+        baseRespBuilder .setMessage(builderForValue.build());
       }
 
       return this;
@@ -689,16 +689,16 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public Builder mergeBaseResp(com.zhijiejiaoyu.base.BaseResponse value) {
-      if (baseRespBuilder== null) {
-        if (baseResp!= null) {
-          baseResp=
-            com.zhijiejiaoyu.base.BaseResponse.newBuilder(baseResp).mergeFrom(value).buildPartial();
+      if (baseRespBuilder == null) {
+        if (baseResp != null) {
+          baseResp =
+            com.zhijiejiaoyu.base.BaseResponse.newBuilder(baseResp ).mergeFrom(value).buildPartial();
         } else {
-          baseResp= value;
+          baseResp = value;
         }
         onChanged();
       } else {
-        baseRespBuilder.mergeFrom(value);
+        baseRespBuilder .mergeFrom(value);
       }
 
       return this;
@@ -707,12 +707,12 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public Builder clearBaseResp() {
-      if (baseRespBuilder== null) {
-        baseResp= null;
+      if (baseRespBuilder == null) {
+        baseResp = null;
         onChanged();
       } else {
-        baseResp= null;
-        baseRespBuilder= null;
+        baseResp = null;
+        baseRespBuilder = null;
       }
 
       return this;
@@ -729,11 +729,11 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder() {
-      if (baseRespBuilder!= null) {
-        return baseRespBuilder.getMessageOrBuilder();
+      if (baseRespBuilder != null) {
+        return baseRespBuilder .getMessageOrBuilder();
       } else {
-        return baseResp== null ?
-            com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
+        return baseResp == null ?
+            com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp ;
       }
     }
     /**
@@ -742,28 +742,28 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.base.BaseResponse, com.zhijiejiaoyu.base.BaseResponse.Builder, com.zhijiejiaoyu.base.BaseResponseOrBuilder> 
         getBaseRespFieldBuilder() {
-      if (baseRespBuilder== null) {
-        baseRespBuilder= new com.google.protobuf.SingleFieldBuilderV3<
+      if (baseRespBuilder == null) {
+        baseRespBuilder = new com.google.protobuf.SingleFieldBuilderV3<
             com.zhijiejiaoyu.base.BaseResponse, com.zhijiejiaoyu.base.BaseResponse.Builder, com.zhijiejiaoyu.base.BaseResponseOrBuilder>(
                 getBaseResp(),
                 getParentForChildren(),
                 isClean());
-        baseResp= null;
+        baseResp = null;
       }
-      return baseRespBuilder;
+      return baseRespBuilder ;
     }
 
-    private java.util.List<com.zhijiejiaoyu.glory_api.user.Role> role=
+    private java.util.List<com.zhijiejiaoyu.glory_api.user.Role> role =
       java.util.Collections.emptyList();
     private void ensureRoleIsMutable() {
-      if (!((bitField0& 0x00000001) != 0)) {
-        role= new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.Role>(role);
+      if (!((bitField0 & 0x00000001) != 0)) {
+        role = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.Role>(role );
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.user.Role, com.zhijiejiaoyu.glory_api.user.Role.Builder, com.zhijiejiaoyu.glory_api.user.RoleOrBuilder> roleBuilder;
+        com.zhijiejiaoyu.glory_api.user.Role, com.zhijiejiaoyu.glory_api.user.Role.Builder, com.zhijiejiaoyu.glory_api.user.RoleOrBuilder> roleBuilder ;
 
     /**
      * <pre>
@@ -773,10 +773,10 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.Role role = 2;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.user.Role> getRoleList() {
-      if (roleBuilder== null) {
-        return java.util.Collections.unmodifiableList(role);
+      if (roleBuilder == null) {
+        return java.util.Collections.unmodifiableList(role );
       } else {
-        return roleBuilder.getMessageList();
+        return roleBuilder .getMessageList();
       }
     }
     /**
@@ -787,10 +787,10 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.Role role = 2;</code>
      */
     public int getRoleCount() {
-      if (roleBuilder== null) {
-        return role.size();
+      if (roleBuilder == null) {
+        return role .size();
       } else {
-        return roleBuilder.getCount();
+        return roleBuilder .getCount();
       }
     }
     /**
@@ -801,10 +801,10 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.Role role = 2;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.Role getRole(int index) {
-      if (roleBuilder== null) {
-        return role.get(index);
+      if (roleBuilder == null) {
+        return role .get(index);
       } else {
-        return roleBuilder.getMessage(index);
+        return roleBuilder .getMessage(index);
       }
     }
     /**
@@ -816,15 +816,15 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setRole(
         int index, com.zhijiejiaoyu.glory_api.user.Role value) {
-      if (roleBuilder== null) {
+      if (roleBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         ensureRoleIsMutable();
-        role.set(index, value);
+        role .set(index, value);
         onChanged();
       } else {
-        roleBuilder.setMessage(index, value);
+        roleBuilder .setMessage(index, value);
       }
       return this;
     }
@@ -837,12 +837,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setRole(
         int index, com.zhijiejiaoyu.glory_api.user.Role.Builder builderForValue) {
-      if (roleBuilder== null) {
+      if (roleBuilder == null) {
         ensureRoleIsMutable();
-        role.set(index, builderForValue.build());
+        role .set(index, builderForValue.build());
         onChanged();
       } else {
-        roleBuilder.setMessage(index, builderForValue.build());
+        roleBuilder .setMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -854,15 +854,15 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.Role role = 2;</code>
      */
     public Builder addRole(com.zhijiejiaoyu.glory_api.user.Role value) {
-      if (roleBuilder== null) {
+      if (roleBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         ensureRoleIsMutable();
-        role.add(value);
+        role .add(value);
         onChanged();
       } else {
-        roleBuilder.addMessage(value);
+        roleBuilder .addMessage(value);
       }
       return this;
     }
@@ -875,15 +875,15 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addRole(
         int index, com.zhijiejiaoyu.glory_api.user.Role value) {
-      if (roleBuilder== null) {
+      if (roleBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         ensureRoleIsMutable();
-        role.add(index, value);
+        role .add(index, value);
         onChanged();
       } else {
-        roleBuilder.addMessage(index, value);
+        roleBuilder .addMessage(index, value);
       }
       return this;
     }
@@ -896,12 +896,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addRole(
         com.zhijiejiaoyu.glory_api.user.Role.Builder builderForValue) {
-      if (roleBuilder== null) {
+      if (roleBuilder == null) {
         ensureRoleIsMutable();
-        role.add(builderForValue.build());
+        role .add(builderForValue.build());
         onChanged();
       } else {
-        roleBuilder.addMessage(builderForValue.build());
+        roleBuilder .addMessage(builderForValue.build());
       }
       return this;
     }
@@ -914,12 +914,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addRole(
         int index, com.zhijiejiaoyu.glory_api.user.Role.Builder builderForValue) {
-      if (roleBuilder== null) {
+      if (roleBuilder == null) {
         ensureRoleIsMutable();
-        role.add(index, builderForValue.build());
+        role .add(index, builderForValue.build());
         onChanged();
       } else {
-        roleBuilder.addMessage(index, builderForValue.build());
+        roleBuilder .addMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -932,13 +932,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addAllRole(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.user.Role> values) {
-      if (roleBuilder== null) {
+      if (roleBuilder == null) {
         ensureRoleIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, role);
+            values, role );
         onChanged();
       } else {
-        roleBuilder.addAllMessages(values);
+        roleBuilder .addAllMessages(values);
       }
       return this;
     }
@@ -950,12 +950,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.Role role = 2;</code>
      */
     public Builder clearRole() {
-      if (roleBuilder== null) {
-        role= java.util.Collections.emptyList();
-        bitField0= (bitField0& ~0x00000001);
+      if (roleBuilder == null) {
+        role = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000001);
         onChanged();
       } else {
-        roleBuilder.clear();
+        roleBuilder .clear();
       }
       return this;
     }
@@ -967,12 +967,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.Role role = 2;</code>
      */
     public Builder removeRole(int index) {
-      if (roleBuilder== null) {
+      if (roleBuilder == null) {
         ensureRoleIsMutable();
-        role.remove(index);
+        role .remove(index);
         onChanged();
       } else {
-        roleBuilder.remove(index);
+        roleBuilder .remove(index);
       }
       return this;
     }
@@ -996,9 +996,9 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.user.RoleOrBuilder getRoleOrBuilder(
         int index) {
-      if (roleBuilder== null) {
-        return role.get(index);  } else {
-        return roleBuilder.getMessageOrBuilder(index);
+      if (roleBuilder == null) {
+        return role .get(index);  } else {
+        return roleBuilder .getMessageOrBuilder(index);
       }
     }
     /**
@@ -1010,10 +1010,10 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.user.RoleOrBuilder> 
          getRoleOrBuilderList() {
-      if (roleBuilder!= null) {
-        return roleBuilder.getMessageOrBuilderList();
+      if (roleBuilder != null) {
+        return roleBuilder .getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(role);
+        return java.util.Collections.unmodifiableList(role );
       }
     }
     /**
@@ -1053,51 +1053,51 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.RepeatedFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.user.Role, com.zhijiejiaoyu.glory_api.user.Role.Builder, com.zhijiejiaoyu.glory_api.user.RoleOrBuilder> 
         getRoleFieldBuilder() {
-      if (roleBuilder== null) {
-        roleBuilder= new com.google.protobuf.RepeatedFieldBuilderV3<
+      if (roleBuilder == null) {
+        roleBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.user.Role, com.zhijiejiaoyu.glory_api.user.Role.Builder, com.zhijiejiaoyu.glory_api.user.RoleOrBuilder>(
-                role,
-                ((bitField0& 0x00000001) != 0),
+                role ,
+                ((bitField0 & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        role= null;
+        role = null;
       }
-      return roleBuilder;
+      return roleBuilder ;
     }
 
-    private com.zhijiejiaoyu.base.PaginationResponse pagination;
+    private com.zhijiejiaoyu.base.PaginationResponse pagination ;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.base.PaginationResponse, com.zhijiejiaoyu.base.PaginationResponse.Builder, com.zhijiejiaoyu.base.PaginationResponseOrBuilder> paginationBuilder;
+        com.zhijiejiaoyu.base.PaginationResponse, com.zhijiejiaoyu.base.PaginationResponse.Builder, com.zhijiejiaoyu.base.PaginationResponseOrBuilder> paginationBuilder ;
     /**
      * <code>.base.PaginationResponse pagination = 100;</code>
      * @return Whether the pagination field is set.
      */
     public boolean hasPagination() {
-      return paginationBuilder!= null || pagination!= null;
+      return paginationBuilder != null || pagination != null;
     }
     /**
      * <code>.base.PaginationResponse pagination = 100;</code>
      * @return The pagination.
      */
     public com.zhijiejiaoyu.base.PaginationResponse getPagination() {
-      if (paginationBuilder== null) {
-        return pagination== null ? com.zhijiejiaoyu.base.PaginationResponse.getDefaultInstance() : pagination;
+      if (paginationBuilder == null) {
+        return pagination == null ? com.zhijiejiaoyu.base.PaginationResponse.getDefaultInstance() : pagination ;
       } else {
-        return paginationBuilder.getMessage();
+        return paginationBuilder .getMessage();
       }
     }
     /**
      * <code>.base.PaginationResponse pagination = 100;</code>
      */
     public Builder setPagination(com.zhijiejiaoyu.base.PaginationResponse value) {
-      if (paginationBuilder== null) {
+      if (paginationBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        pagination= value;
+        pagination = value;
         onChanged();
       } else {
-        paginationBuilder.setMessage(value);
+        paginationBuilder .setMessage(value);
       }
 
       return this;
@@ -1107,11 +1107,11 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setPagination(
         com.zhijiejiaoyu.base.PaginationResponse.Builder builderForValue) {
-      if (paginationBuilder== null) {
-        pagination= builderForValue.build();
+      if (paginationBuilder == null) {
+        pagination = builderForValue.build();
         onChanged();
       } else {
-        paginationBuilder.setMessage(builderForValue.build());
+        paginationBuilder .setMessage(builderForValue.build());
       }
 
       return this;
@@ -1120,16 +1120,16 @@ private static final long serialVersionUID = 0L;
      * <code>.base.PaginationResponse pagination = 100;</code>
      */
     public Builder mergePagination(com.zhijiejiaoyu.base.PaginationResponse value) {
-      if (paginationBuilder== null) {
-        if (pagination!= null) {
-          pagination=
-            com.zhijiejiaoyu.base.PaginationResponse.newBuilder(pagination).mergeFrom(value).buildPartial();
+      if (paginationBuilder == null) {
+        if (pagination != null) {
+          pagination =
+            com.zhijiejiaoyu.base.PaginationResponse.newBuilder(pagination ).mergeFrom(value).buildPartial();
         } else {
-          pagination= value;
+          pagination = value;
         }
         onChanged();
       } else {
-        paginationBuilder.mergeFrom(value);
+        paginationBuilder .mergeFrom(value);
       }
 
       return this;
@@ -1138,12 +1138,12 @@ private static final long serialVersionUID = 0L;
      * <code>.base.PaginationResponse pagination = 100;</code>
      */
     public Builder clearPagination() {
-      if (paginationBuilder== null) {
-        pagination= null;
+      if (paginationBuilder == null) {
+        pagination = null;
         onChanged();
       } else {
-        pagination= null;
-        paginationBuilder= null;
+        pagination = null;
+        paginationBuilder = null;
       }
 
       return this;
@@ -1160,11 +1160,11 @@ private static final long serialVersionUID = 0L;
      * <code>.base.PaginationResponse pagination = 100;</code>
      */
     public com.zhijiejiaoyu.base.PaginationResponseOrBuilder getPaginationOrBuilder() {
-      if (paginationBuilder!= null) {
-        return paginationBuilder.getMessageOrBuilder();
+      if (paginationBuilder != null) {
+        return paginationBuilder .getMessageOrBuilder();
       } else {
-        return pagination== null ?
-            com.zhijiejiaoyu.base.PaginationResponse.getDefaultInstance() : pagination;
+        return pagination == null ?
+            com.zhijiejiaoyu.base.PaginationResponse.getDefaultInstance() : pagination ;
       }
     }
     /**
@@ -1173,15 +1173,15 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.base.PaginationResponse, com.zhijiejiaoyu.base.PaginationResponse.Builder, com.zhijiejiaoyu.base.PaginationResponseOrBuilder> 
         getPaginationFieldBuilder() {
-      if (paginationBuilder== null) {
-        paginationBuilder= new com.google.protobuf.SingleFieldBuilderV3<
+      if (paginationBuilder == null) {
+        paginationBuilder = new com.google.protobuf.SingleFieldBuilderV3<
             com.zhijiejiaoyu.base.PaginationResponse, com.zhijiejiaoyu.base.PaginationResponse.Builder, com.zhijiejiaoyu.base.PaginationResponseOrBuilder>(
                 getPagination(),
                 getParentForChildren(),
                 isClean());
-        pagination= null;
+        pagination = null;
       }
-      return paginationBuilder;
+      return paginationBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

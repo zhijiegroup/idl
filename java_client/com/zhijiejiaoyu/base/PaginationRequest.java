@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private PaginationRequest() {
-    sortKey= "";
+    sortKey = "";
   }
 
   @java.lang.Override
@@ -51,23 +51,23 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            size= input.readInt32();
+            size = input.readInt32();
             break;
           }
           case 16: {
 
-            page= input.readInt32();
+            page = input.readInt32();
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            sortKey= s;
+            sortKey = s;
             break;
           }
           case 32: {
 
-            sortDescending= input.readBool();
+            sortDescending = input.readBool();
             break;
           }
           default: {
@@ -103,7 +103,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int SIZE_FIELD_NUMBER = 1;
-  private int size;
+  private int size ;
   /**
    * <pre>
    * number of elements requested
@@ -114,11 +114,11 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public int getSize() {
-    return size;
+    return size ;
   }
 
   public static final int PAGE_FIELD_NUMBER = 2;
-  private int page;
+  private int page ;
   /**
    * <pre>
    * offset to start from
@@ -129,25 +129,25 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public int getPage() {
-    return page;
+    return page ;
   }
 
   public static final int SORT_KEY_FIELD_NUMBER = 3;
-  private volatile java.lang.Object sortKey;
+  private volatile java.lang.Object sortKey ;
   /**
    * <code>string sort_key = 3;</code>
    * @return The sortKey.
    */
   @java.lang.Override
   public java.lang.String getSortKey() {
-    java.lang.Object ref = sortKey;
+    java.lang.Object ref = sortKey ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      sortKey= s;
+      sortKey = s;
       return s;
     }
   }
@@ -158,12 +158,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getSortKeyBytes() {
-    java.lang.Object ref = sortKey;
+    java.lang.Object ref = sortKey ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      sortKey= b;
+      sortKey = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -171,14 +171,14 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int SORT_DESCENDING_FIELD_NUMBER = 4;
-  private boolean sortDescending;
+  private boolean sortDescending ;
   /**
    * <code>bool sort_descending = 4;</code>
    * @return The sortDescending.
    */
   @java.lang.Override
   public boolean getSortDescending() {
-    return sortDescending;
+    return sortDescending ;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -195,17 +195,17 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (size!= 0) {
-      output.writeInt32(1, size);
+    if (size != 0) {
+      output.writeInt32(1, size );
     }
-    if (page!= 0) {
-      output.writeInt32(2, page);
+    if (page != 0) {
+      output.writeInt32(2, page );
     }
     if (!getSortKeyBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, sortKey);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, sortKey );
     }
-    if (sortDescending!= false) {
-      output.writeBool(4, sortDescending);
+    if (sortDescending != false) {
+      output.writeBool(4, sortDescending );
     }
     unknownFields.writeTo(output);
   }
@@ -216,20 +216,20 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (size!= 0) {
+    if (size != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(1, size);
+        .computeInt32Size(1, size );
     }
-    if (page!= 0) {
+    if (page != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, page);
+        .computeInt32Size(2, page );
     }
     if (!getSortKeyBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, sortKey);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, sortKey );
     }
-    if (sortDescending!= false) {
+    if (sortDescending != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(4, sortDescending);
+        .computeBoolSize(4, sortDescending );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -407,13 +407,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      size= 0;
+      size = 0;
 
-      page= 0;
+      page = 0;
 
-      sortKey= "";
+      sortKey = "";
 
-      sortDescending= false;
+      sortDescending = false;
 
       return this;
     }
@@ -441,10 +441,10 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.base.PaginationRequest buildPartial() {
       com.zhijiejiaoyu.base.PaginationRequest result = new com.zhijiejiaoyu.base.PaginationRequest(this);
-      result.size= size;
-      result.page= page;
-      result.sortKey= sortKey;
-      result.sortDescending= sortDescending;
+      result.size = size ;
+      result.page = page ;
+      result.sortKey = sortKey ;
+      result.sortDescending = sortDescending ;
       onBuilt();
       return result;
     }
@@ -500,7 +500,7 @@ private static final long serialVersionUID = 0L;
         setPage(other.getPage());
       }
       if (!other.getSortKey().isEmpty()) {
-        sortKey= other.sortKey;
+        sortKey = other.sortKey ;
         onChanged();
       }
       if (other.getSortDescending() != false) {
@@ -535,7 +535,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int size;
+    private int size ;
     /**
      * <pre>
      * number of elements requested
@@ -546,7 +546,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public int getSize() {
-      return size;
+      return size ;
     }
     /**
      * <pre>
@@ -559,7 +559,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setSize(int value) {
       
-      size= value;
+      size = value;
       onChanged();
       return this;
     }
@@ -573,12 +573,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearSize() {
       
-      size= 0;
+      size = 0;
       onChanged();
       return this;
     }
 
-    private int page;
+    private int page ;
     /**
      * <pre>
      * offset to start from
@@ -589,7 +589,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public int getPage() {
-      return page;
+      return page ;
     }
     /**
      * <pre>
@@ -602,7 +602,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setPage(int value) {
       
-      page= value;
+      page = value;
       onChanged();
       return this;
     }
@@ -616,23 +616,23 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearPage() {
       
-      page= 0;
+      page = 0;
       onChanged();
       return this;
     }
 
-    private java.lang.Object sortKey= "";
+    private java.lang.Object sortKey = "";
     /**
      * <code>string sort_key = 3;</code>
      * @return The sortKey.
      */
     public java.lang.String getSortKey() {
-      java.lang.Object ref = sortKey;
+      java.lang.Object ref = sortKey ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        sortKey= s;
+        sortKey = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -644,12 +644,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getSortKeyBytes() {
-      java.lang.Object ref = sortKey;
+      java.lang.Object ref = sortKey ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        sortKey= b;
+        sortKey = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -666,7 +666,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      sortKey= value;
+      sortKey = value;
       onChanged();
       return this;
     }
@@ -676,7 +676,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearSortKey() {
       
-      sortKey= getDefaultInstance().getSortKey();
+      sortKey = getDefaultInstance().getSortKey();
       onChanged();
       return this;
     }
@@ -692,19 +692,19 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      sortKey= value;
+      sortKey = value;
       onChanged();
       return this;
     }
 
-    private boolean sortDescending;
+    private boolean sortDescending ;
     /**
      * <code>bool sort_descending = 4;</code>
      * @return The sortDescending.
      */
     @java.lang.Override
     public boolean getSortDescending() {
-      return sortDescending;
+      return sortDescending ;
     }
     /**
      * <code>bool sort_descending = 4;</code>
@@ -713,7 +713,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setSortDescending(boolean value) {
       
-      sortDescending= value;
+      sortDescending = value;
       onChanged();
       return this;
     }
@@ -723,7 +723,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearSortDescending() {
       
-      sortDescending= false;
+      sortDescending = false;
       onChanged();
       return this;
     }

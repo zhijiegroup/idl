@@ -50,33 +50,33 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            cartId= input.readInt64();
+            cartId = input.readInt64();
             break;
           }
           case 16: {
 
-            userId= input.readInt64();
+            userId = input.readInt64();
             break;
           }
           case 24: {
 
-            sellerId= input.readInt64();
+            sellerId = input.readInt64();
             break;
           }
           case 32: {
 
-            tenantId= input.readInt64();
+            tenantId = input.readInt64();
             break;
           }
           case 42: {
             com.zhijiejiaoyu.glory_api.shop.CartSku.Builder subBuilder = null;
-            if (cartSku!= null) {
-              subBuilder = cartSku.toBuilder();
+            if (cartSku != null) {
+              subBuilder = cartSku .toBuilder();
             }
-            cartSku= input.readMessage(com.zhijiejiaoyu.glory_api.shop.CartSku.parser(), extensionRegistry);
+            cartSku = input.readMessage(com.zhijiejiaoyu.glory_api.shop.CartSku.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(cartSku);
-              cartSku= subBuilder.buildPartial();
+              subBuilder.mergeFrom(cartSku );
+              cartSku = subBuilder.buildPartial();
             }
 
             break;
@@ -114,7 +114,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CART_ID_FIELD_NUMBER = 1;
-  private long cartId;
+  private long cartId ;
   /**
    * <pre>
    *客户端 添加购物车 sku_id quantity shop_id seller_id tenant_id必传
@@ -125,51 +125,51 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public long getCartId() {
-    return cartId;
+    return cartId ;
   }
 
   public static final int USER_ID_FIELD_NUMBER = 2;
-  private long userId;
+  private long userId ;
   /**
    * <code>int64 user_id = 2;</code>
    * @return The userId.
    */
   @java.lang.Override
   public long getUserId() {
-    return userId;
+    return userId ;
   }
 
   public static final int SELLER_ID_FIELD_NUMBER = 3;
-  private long sellerId;
+  private long sellerId ;
   /**
    * <code>int64 seller_id = 3;</code>
    * @return The sellerId.
    */
   @java.lang.Override
   public long getSellerId() {
-    return sellerId;
+    return sellerId ;
   }
 
   public static final int TENANT_ID_FIELD_NUMBER = 4;
-  private long tenantId;
+  private long tenantId ;
   /**
    * <code>int64 tenant_id = 4;</code>
    * @return The tenantId.
    */
   @java.lang.Override
   public long getTenantId() {
-    return tenantId;
+    return tenantId ;
   }
 
   public static final int CART_SKU_FIELD_NUMBER = 5;
-  private com.zhijiejiaoyu.glory_api.shop.CartSku cartSku;
+  private com.zhijiejiaoyu.glory_api.shop.CartSku cartSku ;
   /**
    * <code>.glory_api.CartSku cart_sku = 5;</code>
    * @return Whether the cartSku field is set.
    */
   @java.lang.Override
   public boolean hasCartSku() {
-    return cartSku!= null;
+    return cartSku != null;
   }
   /**
    * <code>.glory_api.CartSku cart_sku = 5;</code>
@@ -177,7 +177,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.shop.CartSku getCartSku() {
-    return cartSku== null ? com.zhijiejiaoyu.glory_api.shop.CartSku.getDefaultInstance() : cartSku;
+    return cartSku == null ? com.zhijiejiaoyu.glory_api.shop.CartSku.getDefaultInstance() : cartSku ;
   }
   /**
    * <code>.glory_api.CartSku cart_sku = 5;</code>
@@ -201,19 +201,19 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (cartId!= 0L) {
-      output.writeInt64(1, cartId);
+    if (cartId != 0L) {
+      output.writeInt64(1, cartId );
     }
-    if (userId!= 0L) {
-      output.writeInt64(2, userId);
+    if (userId != 0L) {
+      output.writeInt64(2, userId );
     }
-    if (sellerId!= 0L) {
-      output.writeInt64(3, sellerId);
+    if (sellerId != 0L) {
+      output.writeInt64(3, sellerId );
     }
-    if (tenantId!= 0L) {
-      output.writeInt64(4, tenantId);
+    if (tenantId != 0L) {
+      output.writeInt64(4, tenantId );
     }
-    if (cartSku!= null) {
+    if (cartSku != null) {
       output.writeMessage(5, getCartSku());
     }
     unknownFields.writeTo(output);
@@ -225,23 +225,23 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (cartId!= 0L) {
+    if (cartId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, cartId);
+        .computeInt64Size(1, cartId );
     }
-    if (userId!= 0L) {
+    if (userId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, userId);
+        .computeInt64Size(2, userId );
     }
-    if (sellerId!= 0L) {
+    if (sellerId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(3, sellerId);
+        .computeInt64Size(3, sellerId );
     }
-    if (tenantId!= 0L) {
+    if (tenantId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(4, tenantId);
+        .computeInt64Size(4, tenantId );
     }
-    if (cartSku!= null) {
+    if (cartSku != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, getCartSku());
     }
@@ -433,19 +433,19 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      cartId= 0L;
+      cartId = 0L;
 
-      userId= 0L;
+      userId = 0L;
 
-      sellerId= 0L;
+      sellerId = 0L;
 
-      tenantId= 0L;
+      tenantId = 0L;
 
-      if (cartSkuBuilder== null) {
-        cartSku= null;
+      if (cartSkuBuilder == null) {
+        cartSku = null;
       } else {
-        cartSku= null;
-        cartSkuBuilder= null;
+        cartSku = null;
+        cartSkuBuilder = null;
       }
       return this;
     }
@@ -473,14 +473,14 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.shop.Cart buildPartial() {
       com.zhijiejiaoyu.glory_api.shop.Cart result = new com.zhijiejiaoyu.glory_api.shop.Cart(this);
-      result.cartId= cartId;
-      result.userId= userId;
-      result.sellerId= sellerId;
-      result.tenantId= tenantId;
-      if (cartSkuBuilder== null) {
-        result.cartSku= cartSku;
+      result.cartId = cartId ;
+      result.userId = userId ;
+      result.sellerId = sellerId ;
+      result.tenantId = tenantId ;
+      if (cartSkuBuilder == null) {
+        result.cartSku = cartSku ;
       } else {
-        result.cartSku= cartSkuBuilder.build();
+        result.cartSku = cartSkuBuilder .build();
       }
       onBuilt();
       return result;
@@ -574,7 +574,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long cartId;
+    private long cartId ;
     /**
      * <pre>
      *客户端 添加购物车 sku_id quantity shop_id seller_id tenant_id必传
@@ -585,7 +585,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getCartId() {
-      return cartId;
+      return cartId ;
     }
     /**
      * <pre>
@@ -598,7 +598,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setCartId(long value) {
       
-      cartId= value;
+      cartId = value;
       onChanged();
       return this;
     }
@@ -612,19 +612,19 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearCartId() {
       
-      cartId= 0L;
+      cartId = 0L;
       onChanged();
       return this;
     }
 
-    private long userId;
+    private long userId ;
     /**
      * <code>int64 user_id = 2;</code>
      * @return The userId.
      */
     @java.lang.Override
     public long getUserId() {
-      return userId;
+      return userId ;
     }
     /**
      * <code>int64 user_id = 2;</code>
@@ -633,7 +633,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setUserId(long value) {
       
-      userId= value;
+      userId = value;
       onChanged();
       return this;
     }
@@ -643,19 +643,19 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearUserId() {
       
-      userId= 0L;
+      userId = 0L;
       onChanged();
       return this;
     }
 
-    private long sellerId;
+    private long sellerId ;
     /**
      * <code>int64 seller_id = 3;</code>
      * @return The sellerId.
      */
     @java.lang.Override
     public long getSellerId() {
-      return sellerId;
+      return sellerId ;
     }
     /**
      * <code>int64 seller_id = 3;</code>
@@ -664,7 +664,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setSellerId(long value) {
       
-      sellerId= value;
+      sellerId = value;
       onChanged();
       return this;
     }
@@ -674,19 +674,19 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearSellerId() {
       
-      sellerId= 0L;
+      sellerId = 0L;
       onChanged();
       return this;
     }
 
-    private long tenantId;
+    private long tenantId ;
     /**
      * <code>int64 tenant_id = 4;</code>
      * @return The tenantId.
      */
     @java.lang.Override
     public long getTenantId() {
-      return tenantId;
+      return tenantId ;
     }
     /**
      * <code>int64 tenant_id = 4;</code>
@@ -695,7 +695,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setTenantId(long value) {
       
-      tenantId= value;
+      tenantId = value;
       onChanged();
       return this;
     }
@@ -705,44 +705,44 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearTenantId() {
       
-      tenantId= 0L;
+      tenantId = 0L;
       onChanged();
       return this;
     }
 
-    private com.zhijiejiaoyu.glory_api.shop.CartSku cartSku;
+    private com.zhijiejiaoyu.glory_api.shop.CartSku cartSku ;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.shop.CartSku, com.zhijiejiaoyu.glory_api.shop.CartSku.Builder, com.zhijiejiaoyu.glory_api.shop.CartSkuOrBuilder> cartSkuBuilder;
+        com.zhijiejiaoyu.glory_api.shop.CartSku, com.zhijiejiaoyu.glory_api.shop.CartSku.Builder, com.zhijiejiaoyu.glory_api.shop.CartSkuOrBuilder> cartSkuBuilder ;
     /**
      * <code>.glory_api.CartSku cart_sku = 5;</code>
      * @return Whether the cartSku field is set.
      */
     public boolean hasCartSku() {
-      return cartSkuBuilder!= null || cartSku!= null;
+      return cartSkuBuilder != null || cartSku != null;
     }
     /**
      * <code>.glory_api.CartSku cart_sku = 5;</code>
      * @return The cartSku.
      */
     public com.zhijiejiaoyu.glory_api.shop.CartSku getCartSku() {
-      if (cartSkuBuilder== null) {
-        return cartSku== null ? com.zhijiejiaoyu.glory_api.shop.CartSku.getDefaultInstance() : cartSku;
+      if (cartSkuBuilder == null) {
+        return cartSku == null ? com.zhijiejiaoyu.glory_api.shop.CartSku.getDefaultInstance() : cartSku ;
       } else {
-        return cartSkuBuilder.getMessage();
+        return cartSkuBuilder .getMessage();
       }
     }
     /**
      * <code>.glory_api.CartSku cart_sku = 5;</code>
      */
     public Builder setCartSku(com.zhijiejiaoyu.glory_api.shop.CartSku value) {
-      if (cartSkuBuilder== null) {
+      if (cartSkuBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        cartSku= value;
+        cartSku = value;
         onChanged();
       } else {
-        cartSkuBuilder.setMessage(value);
+        cartSkuBuilder .setMessage(value);
       }
 
       return this;
@@ -752,11 +752,11 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setCartSku(
         com.zhijiejiaoyu.glory_api.shop.CartSku.Builder builderForValue) {
-      if (cartSkuBuilder== null) {
-        cartSku= builderForValue.build();
+      if (cartSkuBuilder == null) {
+        cartSku = builderForValue.build();
         onChanged();
       } else {
-        cartSkuBuilder.setMessage(builderForValue.build());
+        cartSkuBuilder .setMessage(builderForValue.build());
       }
 
       return this;
@@ -765,16 +765,16 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.CartSku cart_sku = 5;</code>
      */
     public Builder mergeCartSku(com.zhijiejiaoyu.glory_api.shop.CartSku value) {
-      if (cartSkuBuilder== null) {
-        if (cartSku!= null) {
-          cartSku=
-            com.zhijiejiaoyu.glory_api.shop.CartSku.newBuilder(cartSku).mergeFrom(value).buildPartial();
+      if (cartSkuBuilder == null) {
+        if (cartSku != null) {
+          cartSku =
+            com.zhijiejiaoyu.glory_api.shop.CartSku.newBuilder(cartSku ).mergeFrom(value).buildPartial();
         } else {
-          cartSku= value;
+          cartSku = value;
         }
         onChanged();
       } else {
-        cartSkuBuilder.mergeFrom(value);
+        cartSkuBuilder .mergeFrom(value);
       }
 
       return this;
@@ -783,12 +783,12 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.CartSku cart_sku = 5;</code>
      */
     public Builder clearCartSku() {
-      if (cartSkuBuilder== null) {
-        cartSku= null;
+      if (cartSkuBuilder == null) {
+        cartSku = null;
         onChanged();
       } else {
-        cartSku= null;
-        cartSkuBuilder= null;
+        cartSku = null;
+        cartSkuBuilder = null;
       }
 
       return this;
@@ -805,11 +805,11 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.CartSku cart_sku = 5;</code>
      */
     public com.zhijiejiaoyu.glory_api.shop.CartSkuOrBuilder getCartSkuOrBuilder() {
-      if (cartSkuBuilder!= null) {
-        return cartSkuBuilder.getMessageOrBuilder();
+      if (cartSkuBuilder != null) {
+        return cartSkuBuilder .getMessageOrBuilder();
       } else {
-        return cartSku== null ?
-            com.zhijiejiaoyu.glory_api.shop.CartSku.getDefaultInstance() : cartSku;
+        return cartSku == null ?
+            com.zhijiejiaoyu.glory_api.shop.CartSku.getDefaultInstance() : cartSku ;
       }
     }
     /**
@@ -818,15 +818,15 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.shop.CartSku, com.zhijiejiaoyu.glory_api.shop.CartSku.Builder, com.zhijiejiaoyu.glory_api.shop.CartSkuOrBuilder> 
         getCartSkuFieldBuilder() {
-      if (cartSkuBuilder== null) {
-        cartSkuBuilder= new com.google.protobuf.SingleFieldBuilderV3<
+      if (cartSkuBuilder == null) {
+        cartSkuBuilder = new com.google.protobuf.SingleFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.shop.CartSku, com.zhijiejiaoyu.glory_api.shop.CartSku.Builder, com.zhijiejiaoyu.glory_api.shop.CartSkuOrBuilder>(
                 getCartSku(),
                 getParentForChildren(),
                 isClean());
-        cartSku= null;
+        cartSku = null;
       }
-      return cartSkuBuilder;
+      return cartSkuBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

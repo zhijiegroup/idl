@@ -16,8 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CategoryQualification() {
-    categoryRoot= "";
-    qualificationName= "";
+    categoryRoot = "";
+    qualificationName = "";
   }
 
   @java.lang.Override
@@ -52,19 +52,19 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            categoryQualificationId= input.readInt64();
+            categoryQualificationId = input.readInt64();
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            categoryRoot= s;
+            categoryRoot = s;
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            qualificationName= s;
+            qualificationName = s;
             break;
           }
           default: {
@@ -100,32 +100,32 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CATEGORY_QUALIFICATION_ID_FIELD_NUMBER = 1;
-  private long categoryQualificationId;
+  private long categoryQualificationId ;
   /**
    * <code>int64 category_qualification_id = 1;</code>
    * @return The categoryQualificationId.
    */
   @java.lang.Override
   public long getCategoryQualificationId() {
-    return categoryQualificationId;
+    return categoryQualificationId ;
   }
 
   public static final int CATEGORY_ROOT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object categoryRoot;
+  private volatile java.lang.Object categoryRoot ;
   /**
    * <code>string category_root = 2;</code>
    * @return The categoryRoot.
    */
   @java.lang.Override
   public java.lang.String getCategoryRoot() {
-    java.lang.Object ref = categoryRoot;
+    java.lang.Object ref = categoryRoot ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      categoryRoot= s;
+      categoryRoot = s;
       return s;
     }
   }
@@ -136,12 +136,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getCategoryRootBytes() {
-    java.lang.Object ref = categoryRoot;
+    java.lang.Object ref = categoryRoot ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      categoryRoot= b;
+      categoryRoot = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -149,21 +149,21 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int QUALIFICATION_NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object qualificationName;
+  private volatile java.lang.Object qualificationName ;
   /**
    * <code>string qualification_name = 3;</code>
    * @return The qualificationName.
    */
   @java.lang.Override
   public java.lang.String getQualificationName() {
-    java.lang.Object ref = qualificationName;
+    java.lang.Object ref = qualificationName ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      qualificationName= s;
+      qualificationName = s;
       return s;
     }
   }
@@ -174,12 +174,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getQualificationNameBytes() {
-    java.lang.Object ref = qualificationName;
+    java.lang.Object ref = qualificationName ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      qualificationName= b;
+      qualificationName = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -200,14 +200,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (categoryQualificationId!= 0L) {
-      output.writeInt64(1, categoryQualificationId);
+    if (categoryQualificationId != 0L) {
+      output.writeInt64(1, categoryQualificationId );
     }
     if (!getCategoryRootBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, categoryRoot);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, categoryRoot );
     }
     if (!getQualificationNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, qualificationName);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, qualificationName );
     }
     unknownFields.writeTo(output);
   }
@@ -218,15 +218,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (categoryQualificationId!= 0L) {
+    if (categoryQualificationId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, categoryQualificationId);
+        .computeInt64Size(1, categoryQualificationId );
     }
     if (!getCategoryRootBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, categoryRoot);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, categoryRoot );
     }
     if (!getQualificationNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, qualificationName);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, qualificationName );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -400,11 +400,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      categoryQualificationId= 0L;
+      categoryQualificationId = 0L;
 
-      categoryRoot= "";
+      categoryRoot = "";
 
-      qualificationName= "";
+      qualificationName = "";
 
       return this;
     }
@@ -432,9 +432,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.shop.CategoryQualification buildPartial() {
       com.zhijiejiaoyu.glory_api.shop.CategoryQualification result = new com.zhijiejiaoyu.glory_api.shop.CategoryQualification(this);
-      result.categoryQualificationId= categoryQualificationId;
-      result.categoryRoot= categoryRoot;
-      result.qualificationName= qualificationName;
+      result.categoryQualificationId = categoryQualificationId ;
+      result.categoryRoot = categoryRoot ;
+      result.qualificationName = qualificationName ;
       onBuilt();
       return result;
     }
@@ -487,11 +487,11 @@ private static final long serialVersionUID = 0L;
         setCategoryQualificationId(other.getCategoryQualificationId());
       }
       if (!other.getCategoryRoot().isEmpty()) {
-        categoryRoot= other.categoryRoot;
+        categoryRoot = other.categoryRoot ;
         onChanged();
       }
       if (!other.getQualificationName().isEmpty()) {
-        qualificationName= other.qualificationName;
+        qualificationName = other.qualificationName ;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -523,14 +523,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long categoryQualificationId;
+    private long categoryQualificationId ;
     /**
      * <code>int64 category_qualification_id = 1;</code>
      * @return The categoryQualificationId.
      */
     @java.lang.Override
     public long getCategoryQualificationId() {
-      return categoryQualificationId;
+      return categoryQualificationId ;
     }
     /**
      * <code>int64 category_qualification_id = 1;</code>
@@ -539,7 +539,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setCategoryQualificationId(long value) {
       
-      categoryQualificationId= value;
+      categoryQualificationId = value;
       onChanged();
       return this;
     }
@@ -549,23 +549,23 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearCategoryQualificationId() {
       
-      categoryQualificationId= 0L;
+      categoryQualificationId = 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object categoryRoot= "";
+    private java.lang.Object categoryRoot = "";
     /**
      * <code>string category_root = 2;</code>
      * @return The categoryRoot.
      */
     public java.lang.String getCategoryRoot() {
-      java.lang.Object ref = categoryRoot;
+      java.lang.Object ref = categoryRoot ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        categoryRoot= s;
+        categoryRoot = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -577,12 +577,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getCategoryRootBytes() {
-      java.lang.Object ref = categoryRoot;
+      java.lang.Object ref = categoryRoot ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        categoryRoot= b;
+        categoryRoot = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -599,7 +599,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      categoryRoot= value;
+      categoryRoot = value;
       onChanged();
       return this;
     }
@@ -609,7 +609,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearCategoryRoot() {
       
-      categoryRoot= getDefaultInstance().getCategoryRoot();
+      categoryRoot = getDefaultInstance().getCategoryRoot();
       onChanged();
       return this;
     }
@@ -625,23 +625,23 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      categoryRoot= value;
+      categoryRoot = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object qualificationName= "";
+    private java.lang.Object qualificationName = "";
     /**
      * <code>string qualification_name = 3;</code>
      * @return The qualificationName.
      */
     public java.lang.String getQualificationName() {
-      java.lang.Object ref = qualificationName;
+      java.lang.Object ref = qualificationName ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        qualificationName= s;
+        qualificationName = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -653,12 +653,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getQualificationNameBytes() {
-      java.lang.Object ref = qualificationName;
+      java.lang.Object ref = qualificationName ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        qualificationName= b;
+        qualificationName = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -675,7 +675,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      qualificationName= value;
+      qualificationName = value;
       onChanged();
       return this;
     }
@@ -685,7 +685,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearQualificationName() {
       
-      qualificationName= getDefaultInstance().getQualificationName();
+      qualificationName = getDefaultInstance().getQualificationName();
       onChanged();
       return this;
     }
@@ -701,7 +701,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      qualificationName= value;
+      qualificationName = value;
       onChanged();
       return this;
     }

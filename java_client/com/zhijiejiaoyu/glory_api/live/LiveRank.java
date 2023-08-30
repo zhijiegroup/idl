@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private LiveRank() {
-    rankList= java.util.Collections.emptyList();
+    rankList = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -39,7 +39,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0= 0;
+    int mutable_bitField0 = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -51,23 +51,23 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            if (!((mutable_bitField0& 0x00000001) != 0)) {
-              rankList= new java.util.ArrayList<com.zhijiejiaoyu.glory_api.live.LiveRankDetail>();
+            if (!((mutable_bitField0 & 0x00000001) != 0)) {
+              rankList = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.live.LiveRankDetail>();
               mutable_bitField0_ |= 0x00000001;
             }
-            rankList.add(
+            rankList .add(
                 input.readMessage(com.zhijiejiaoyu.glory_api.live.LiveRankDetail.parser(), extensionRegistry));
             break;
           }
           case 802: {
             com.zhijiejiaoyu.glory_api.live.LiveRankMine.Builder subBuilder = null;
-            if (mine!= null) {
-              subBuilder = mine.toBuilder();
+            if (mine != null) {
+              subBuilder = mine .toBuilder();
             }
-            mine= input.readMessage(com.zhijiejiaoyu.glory_api.live.LiveRankMine.parser(), extensionRegistry);
+            mine = input.readMessage(com.zhijiejiaoyu.glory_api.live.LiveRankMine.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(mine);
-              mine= subBuilder.buildPartial();
+              subBuilder.mergeFrom(mine );
+              mine = subBuilder.buildPartial();
             }
 
             break;
@@ -87,8 +87,8 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0& 0x00000001) != 0)) {
-        rankList= java.util.Collections.unmodifiableList(rankList);
+      if (((mutable_bitField0 & 0x00000001) != 0)) {
+        rankList = java.util.Collections.unmodifiableList(rankList );
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -108,13 +108,13 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int RANK_LIST_FIELD_NUMBER = 1;
-  private java.util.List<com.zhijiejiaoyu.glory_api.live.LiveRankDetail> rankList;
+  private java.util.List<com.zhijiejiaoyu.glory_api.live.LiveRankDetail> rankList ;
   /**
    * <code>repeated .glory_api.LiveRankDetail rank_list = 1;</code>
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.live.LiveRankDetail> getRankListList() {
-    return rankList;
+    return rankList ;
   }
   /**
    * <code>repeated .glory_api.LiveRankDetail rank_list = 1;</code>
@@ -122,21 +122,21 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.live.LiveRankDetailOrBuilder> 
       getRankListOrBuilderList() {
-    return rankList;
+    return rankList ;
   }
   /**
    * <code>repeated .glory_api.LiveRankDetail rank_list = 1;</code>
    */
   @java.lang.Override
   public int getRankListCount() {
-    return rankList.size();
+    return rankList .size();
   }
   /**
    * <code>repeated .glory_api.LiveRankDetail rank_list = 1;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.live.LiveRankDetail getRankList(int index) {
-    return rankList.get(index);
+    return rankList .get(index);
   }
   /**
    * <code>repeated .glory_api.LiveRankDetail rank_list = 1;</code>
@@ -144,18 +144,18 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.live.LiveRankDetailOrBuilder getRankListOrBuilder(
       int index) {
-    return rankList.get(index);
+    return rankList .get(index);
   }
 
   public static final int MINE_FIELD_NUMBER = 100;
-  private com.zhijiejiaoyu.glory_api.live.LiveRankMine mine;
+  private com.zhijiejiaoyu.glory_api.live.LiveRankMine mine ;
   /**
    * <code>.glory_api.LiveRankMine mine = 100;</code>
    * @return Whether the mine field is set.
    */
   @java.lang.Override
   public boolean hasMine() {
-    return mine!= null;
+    return mine != null;
   }
   /**
    * <code>.glory_api.LiveRankMine mine = 100;</code>
@@ -163,7 +163,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.live.LiveRankMine getMine() {
-    return mine== null ? com.zhijiejiaoyu.glory_api.live.LiveRankMine.getDefaultInstance() : mine;
+    return mine == null ? com.zhijiejiaoyu.glory_api.live.LiveRankMine.getDefaultInstance() : mine ;
   }
   /**
    * <code>.glory_api.LiveRankMine mine = 100;</code>
@@ -187,10 +187,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    for (int i = 0; i < rankList.size(); i++) {
-      output.writeMessage(1, rankList.get(i));
+    for (int i = 0; i < rankList .size(); i++) {
+      output.writeMessage(1, rankList .get(i));
     }
-    if (mine!= null) {
+    if (mine != null) {
       output.writeMessage(100, getMine());
     }
     unknownFields.writeTo(output);
@@ -202,11 +202,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    for (int i = 0; i < rankList.size(); i++) {
+    for (int i = 0; i < rankList .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, rankList.get(i));
+        .computeMessageSize(1, rankList .get(i));
     }
-    if (mine!= null) {
+    if (mine != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(100, getMine());
     }
@@ -385,17 +385,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (rankListBuilder== null) {
-        rankList= java.util.Collections.emptyList();
-        bitField0= (bitField0& ~0x00000001);
+      if (rankListBuilder == null) {
+        rankList = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000001);
       } else {
-        rankListBuilder.clear();
+        rankListBuilder .clear();
       }
-      if (mineBuilder== null) {
-        mine= null;
+      if (mineBuilder == null) {
+        mine = null;
       } else {
-        mine= null;
-        mineBuilder= null;
+        mine = null;
+        mineBuilder = null;
       }
       return this;
     }
@@ -423,20 +423,20 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.live.LiveRank buildPartial() {
       com.zhijiejiaoyu.glory_api.live.LiveRank result = new com.zhijiejiaoyu.glory_api.live.LiveRank(this);
-      int from_bitField0= bitField0;
-      if (rankListBuilder== null) {
-        if (((bitField0& 0x00000001) != 0)) {
-          rankList= java.util.Collections.unmodifiableList(rankList);
-          bitField0= (bitField0& ~0x00000001);
+      int from_bitField0 = bitField0 ;
+      if (rankListBuilder == null) {
+        if (((bitField0 & 0x00000001) != 0)) {
+          rankList = java.util.Collections.unmodifiableList(rankList );
+          bitField0 = (bitField0 & ~0x00000001);
         }
-        result.rankList= rankList;
+        result.rankList = rankList ;
       } else {
-        result.rankList= rankListBuilder.build();
+        result.rankList = rankListBuilder .build();
       }
-      if (mineBuilder== null) {
-        result.mine= mine;
+      if (mineBuilder == null) {
+        result.mine = mine ;
       } else {
-        result.mine= mineBuilder.build();
+        result.mine = mineBuilder .build();
       }
       onBuilt();
       return result;
@@ -486,29 +486,29 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.zhijiejiaoyu.glory_api.live.LiveRank other) {
       if (other == com.zhijiejiaoyu.glory_api.live.LiveRank.getDefaultInstance()) return this;
-      if (rankListBuilder== null) {
-        if (!other.rankList.isEmpty()) {
-          if (rankList.isEmpty()) {
-            rankList= other.rankList;
-            bitField0= (bitField0& ~0x00000001);
+      if (rankListBuilder == null) {
+        if (!other.rankList .isEmpty()) {
+          if (rankList .isEmpty()) {
+            rankList = other.rankList ;
+            bitField0 = (bitField0 & ~0x00000001);
           } else {
             ensureRankListIsMutable();
-            rankList.addAll(other.rankList);
+            rankList .addAll(other.rankList );
           }
           onChanged();
         }
       } else {
-        if (!other.rankList.isEmpty()) {
-          if (rankListBuilder.isEmpty()) {
-            rankListBuilder.dispose();
-            rankListBuilder= null;
-            rankList= other.rankList;
-            bitField0= (bitField0& ~0x00000001);
-            rankListBuilder= 
+        if (!other.rankList .isEmpty()) {
+          if (rankListBuilder .isEmpty()) {
+            rankListBuilder .dispose();
+            rankListBuilder = null;
+            rankList = other.rankList ;
+            bitField0 = (bitField0 & ~0x00000001);
+            rankListBuilder = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getRankListFieldBuilder() : null;
           } else {
-            rankListBuilder.addAllMessages(other.rankList);
+            rankListBuilder .addAllMessages(other.rankList );
           }
         }
       }
@@ -543,48 +543,48 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int bitField0;
+    private int bitField0 ;
 
-    private java.util.List<com.zhijiejiaoyu.glory_api.live.LiveRankDetail> rankList=
+    private java.util.List<com.zhijiejiaoyu.glory_api.live.LiveRankDetail> rankList =
       java.util.Collections.emptyList();
     private void ensureRankListIsMutable() {
-      if (!((bitField0& 0x00000001) != 0)) {
-        rankList= new java.util.ArrayList<com.zhijiejiaoyu.glory_api.live.LiveRankDetail>(rankList);
+      if (!((bitField0 & 0x00000001) != 0)) {
+        rankList = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.live.LiveRankDetail>(rankList );
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.live.LiveRankDetail, com.zhijiejiaoyu.glory_api.live.LiveRankDetail.Builder, com.zhijiejiaoyu.glory_api.live.LiveRankDetailOrBuilder> rankListBuilder;
+        com.zhijiejiaoyu.glory_api.live.LiveRankDetail, com.zhijiejiaoyu.glory_api.live.LiveRankDetail.Builder, com.zhijiejiaoyu.glory_api.live.LiveRankDetailOrBuilder> rankListBuilder ;
 
     /**
      * <code>repeated .glory_api.LiveRankDetail rank_list = 1;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.live.LiveRankDetail> getRankListList() {
-      if (rankListBuilder== null) {
-        return java.util.Collections.unmodifiableList(rankList);
+      if (rankListBuilder == null) {
+        return java.util.Collections.unmodifiableList(rankList );
       } else {
-        return rankListBuilder.getMessageList();
+        return rankListBuilder .getMessageList();
       }
     }
     /**
      * <code>repeated .glory_api.LiveRankDetail rank_list = 1;</code>
      */
     public int getRankListCount() {
-      if (rankListBuilder== null) {
-        return rankList.size();
+      if (rankListBuilder == null) {
+        return rankList .size();
       } else {
-        return rankListBuilder.getCount();
+        return rankListBuilder .getCount();
       }
     }
     /**
      * <code>repeated .glory_api.LiveRankDetail rank_list = 1;</code>
      */
     public com.zhijiejiaoyu.glory_api.live.LiveRankDetail getRankList(int index) {
-      if (rankListBuilder== null) {
-        return rankList.get(index);
+      if (rankListBuilder == null) {
+        return rankList .get(index);
       } else {
-        return rankListBuilder.getMessage(index);
+        return rankListBuilder .getMessage(index);
       }
     }
     /**
@@ -592,15 +592,15 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setRankList(
         int index, com.zhijiejiaoyu.glory_api.live.LiveRankDetail value) {
-      if (rankListBuilder== null) {
+      if (rankListBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         ensureRankListIsMutable();
-        rankList.set(index, value);
+        rankList .set(index, value);
         onChanged();
       } else {
-        rankListBuilder.setMessage(index, value);
+        rankListBuilder .setMessage(index, value);
       }
       return this;
     }
@@ -609,12 +609,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setRankList(
         int index, com.zhijiejiaoyu.glory_api.live.LiveRankDetail.Builder builderForValue) {
-      if (rankListBuilder== null) {
+      if (rankListBuilder == null) {
         ensureRankListIsMutable();
-        rankList.set(index, builderForValue.build());
+        rankList .set(index, builderForValue.build());
         onChanged();
       } else {
-        rankListBuilder.setMessage(index, builderForValue.build());
+        rankListBuilder .setMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -622,15 +622,15 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.LiveRankDetail rank_list = 1;</code>
      */
     public Builder addRankList(com.zhijiejiaoyu.glory_api.live.LiveRankDetail value) {
-      if (rankListBuilder== null) {
+      if (rankListBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         ensureRankListIsMutable();
-        rankList.add(value);
+        rankList .add(value);
         onChanged();
       } else {
-        rankListBuilder.addMessage(value);
+        rankListBuilder .addMessage(value);
       }
       return this;
     }
@@ -639,15 +639,15 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addRankList(
         int index, com.zhijiejiaoyu.glory_api.live.LiveRankDetail value) {
-      if (rankListBuilder== null) {
+      if (rankListBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         ensureRankListIsMutable();
-        rankList.add(index, value);
+        rankList .add(index, value);
         onChanged();
       } else {
-        rankListBuilder.addMessage(index, value);
+        rankListBuilder .addMessage(index, value);
       }
       return this;
     }
@@ -656,12 +656,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addRankList(
         com.zhijiejiaoyu.glory_api.live.LiveRankDetail.Builder builderForValue) {
-      if (rankListBuilder== null) {
+      if (rankListBuilder == null) {
         ensureRankListIsMutable();
-        rankList.add(builderForValue.build());
+        rankList .add(builderForValue.build());
         onChanged();
       } else {
-        rankListBuilder.addMessage(builderForValue.build());
+        rankListBuilder .addMessage(builderForValue.build());
       }
       return this;
     }
@@ -670,12 +670,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addRankList(
         int index, com.zhijiejiaoyu.glory_api.live.LiveRankDetail.Builder builderForValue) {
-      if (rankListBuilder== null) {
+      if (rankListBuilder == null) {
         ensureRankListIsMutable();
-        rankList.add(index, builderForValue.build());
+        rankList .add(index, builderForValue.build());
         onChanged();
       } else {
-        rankListBuilder.addMessage(index, builderForValue.build());
+        rankListBuilder .addMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -684,13 +684,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addAllRankList(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.live.LiveRankDetail> values) {
-      if (rankListBuilder== null) {
+      if (rankListBuilder == null) {
         ensureRankListIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, rankList);
+            values, rankList );
         onChanged();
       } else {
-        rankListBuilder.addAllMessages(values);
+        rankListBuilder .addAllMessages(values);
       }
       return this;
     }
@@ -698,12 +698,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.LiveRankDetail rank_list = 1;</code>
      */
     public Builder clearRankList() {
-      if (rankListBuilder== null) {
-        rankList= java.util.Collections.emptyList();
-        bitField0= (bitField0& ~0x00000001);
+      if (rankListBuilder == null) {
+        rankList = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000001);
         onChanged();
       } else {
-        rankListBuilder.clear();
+        rankListBuilder .clear();
       }
       return this;
     }
@@ -711,12 +711,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.LiveRankDetail rank_list = 1;</code>
      */
     public Builder removeRankList(int index) {
-      if (rankListBuilder== null) {
+      if (rankListBuilder == null) {
         ensureRankListIsMutable();
-        rankList.remove(index);
+        rankList .remove(index);
         onChanged();
       } else {
-        rankListBuilder.remove(index);
+        rankListBuilder .remove(index);
       }
       return this;
     }
@@ -732,9 +732,9 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.live.LiveRankDetailOrBuilder getRankListOrBuilder(
         int index) {
-      if (rankListBuilder== null) {
-        return rankList.get(index);  } else {
-        return rankListBuilder.getMessageOrBuilder(index);
+      if (rankListBuilder == null) {
+        return rankList .get(index);  } else {
+        return rankListBuilder .getMessageOrBuilder(index);
       }
     }
     /**
@@ -742,10 +742,10 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.live.LiveRankDetailOrBuilder> 
          getRankListOrBuilderList() {
-      if (rankListBuilder!= null) {
-        return rankListBuilder.getMessageOrBuilderList();
+      if (rankListBuilder != null) {
+        return rankListBuilder .getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(rankList);
+        return java.util.Collections.unmodifiableList(rankList );
       }
     }
     /**
@@ -773,51 +773,51 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.RepeatedFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.live.LiveRankDetail, com.zhijiejiaoyu.glory_api.live.LiveRankDetail.Builder, com.zhijiejiaoyu.glory_api.live.LiveRankDetailOrBuilder> 
         getRankListFieldBuilder() {
-      if (rankListBuilder== null) {
-        rankListBuilder= new com.google.protobuf.RepeatedFieldBuilderV3<
+      if (rankListBuilder == null) {
+        rankListBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.live.LiveRankDetail, com.zhijiejiaoyu.glory_api.live.LiveRankDetail.Builder, com.zhijiejiaoyu.glory_api.live.LiveRankDetailOrBuilder>(
-                rankList,
-                ((bitField0& 0x00000001) != 0),
+                rankList ,
+                ((bitField0 & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        rankList= null;
+        rankList = null;
       }
-      return rankListBuilder;
+      return rankListBuilder ;
     }
 
-    private com.zhijiejiaoyu.glory_api.live.LiveRankMine mine;
+    private com.zhijiejiaoyu.glory_api.live.LiveRankMine mine ;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.live.LiveRankMine, com.zhijiejiaoyu.glory_api.live.LiveRankMine.Builder, com.zhijiejiaoyu.glory_api.live.LiveRankMineOrBuilder> mineBuilder;
+        com.zhijiejiaoyu.glory_api.live.LiveRankMine, com.zhijiejiaoyu.glory_api.live.LiveRankMine.Builder, com.zhijiejiaoyu.glory_api.live.LiveRankMineOrBuilder> mineBuilder ;
     /**
      * <code>.glory_api.LiveRankMine mine = 100;</code>
      * @return Whether the mine field is set.
      */
     public boolean hasMine() {
-      return mineBuilder!= null || mine!= null;
+      return mineBuilder != null || mine != null;
     }
     /**
      * <code>.glory_api.LiveRankMine mine = 100;</code>
      * @return The mine.
      */
     public com.zhijiejiaoyu.glory_api.live.LiveRankMine getMine() {
-      if (mineBuilder== null) {
-        return mine== null ? com.zhijiejiaoyu.glory_api.live.LiveRankMine.getDefaultInstance() : mine;
+      if (mineBuilder == null) {
+        return mine == null ? com.zhijiejiaoyu.glory_api.live.LiveRankMine.getDefaultInstance() : mine ;
       } else {
-        return mineBuilder.getMessage();
+        return mineBuilder .getMessage();
       }
     }
     /**
      * <code>.glory_api.LiveRankMine mine = 100;</code>
      */
     public Builder setMine(com.zhijiejiaoyu.glory_api.live.LiveRankMine value) {
-      if (mineBuilder== null) {
+      if (mineBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        mine= value;
+        mine = value;
         onChanged();
       } else {
-        mineBuilder.setMessage(value);
+        mineBuilder .setMessage(value);
       }
 
       return this;
@@ -827,11 +827,11 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setMine(
         com.zhijiejiaoyu.glory_api.live.LiveRankMine.Builder builderForValue) {
-      if (mineBuilder== null) {
-        mine= builderForValue.build();
+      if (mineBuilder == null) {
+        mine = builderForValue.build();
         onChanged();
       } else {
-        mineBuilder.setMessage(builderForValue.build());
+        mineBuilder .setMessage(builderForValue.build());
       }
 
       return this;
@@ -840,16 +840,16 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.LiveRankMine mine = 100;</code>
      */
     public Builder mergeMine(com.zhijiejiaoyu.glory_api.live.LiveRankMine value) {
-      if (mineBuilder== null) {
-        if (mine!= null) {
-          mine=
-            com.zhijiejiaoyu.glory_api.live.LiveRankMine.newBuilder(mine).mergeFrom(value).buildPartial();
+      if (mineBuilder == null) {
+        if (mine != null) {
+          mine =
+            com.zhijiejiaoyu.glory_api.live.LiveRankMine.newBuilder(mine ).mergeFrom(value).buildPartial();
         } else {
-          mine= value;
+          mine = value;
         }
         onChanged();
       } else {
-        mineBuilder.mergeFrom(value);
+        mineBuilder .mergeFrom(value);
       }
 
       return this;
@@ -858,12 +858,12 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.LiveRankMine mine = 100;</code>
      */
     public Builder clearMine() {
-      if (mineBuilder== null) {
-        mine= null;
+      if (mineBuilder == null) {
+        mine = null;
         onChanged();
       } else {
-        mine= null;
-        mineBuilder= null;
+        mine = null;
+        mineBuilder = null;
       }
 
       return this;
@@ -880,11 +880,11 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.LiveRankMine mine = 100;</code>
      */
     public com.zhijiejiaoyu.glory_api.live.LiveRankMineOrBuilder getMineOrBuilder() {
-      if (mineBuilder!= null) {
-        return mineBuilder.getMessageOrBuilder();
+      if (mineBuilder != null) {
+        return mineBuilder .getMessageOrBuilder();
       } else {
-        return mine== null ?
-            com.zhijiejiaoyu.glory_api.live.LiveRankMine.getDefaultInstance() : mine;
+        return mine == null ?
+            com.zhijiejiaoyu.glory_api.live.LiveRankMine.getDefaultInstance() : mine ;
       }
     }
     /**
@@ -893,15 +893,15 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.live.LiveRankMine, com.zhijiejiaoyu.glory_api.live.LiveRankMine.Builder, com.zhijiejiaoyu.glory_api.live.LiveRankMineOrBuilder> 
         getMineFieldBuilder() {
-      if (mineBuilder== null) {
-        mineBuilder= new com.google.protobuf.SingleFieldBuilderV3<
+      if (mineBuilder == null) {
+        mineBuilder = new com.google.protobuf.SingleFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.live.LiveRankMine, com.zhijiejiaoyu.glory_api.live.LiveRankMine.Builder, com.zhijiejiaoyu.glory_api.live.LiveRankMineOrBuilder>(
                 getMine(),
                 getParentForChildren(),
                 isClean());
-        mine= null;
+        mine = null;
       }
-      return mineBuilder;
+      return mineBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private VideoToTextSentence() {
-    text= "";
+    text = "";
   }
 
   @java.lang.Override
@@ -51,38 +51,38 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            beginTime= input.readInt64();
+            beginTime = input.readInt64();
             break;
           }
           case 16: {
 
-            endTime= input.readInt64();
+            endTime = input.readInt64();
             break;
           }
           case 24: {
 
-            channelId= input.readInt64();
+            channelId = input.readInt64();
             break;
           }
           case 32: {
 
-            speechRate= input.readInt64();
+            speechRate = input.readInt64();
             break;
           }
           case 41: {
 
-            emotionValue= input.readDouble();
+            emotionValue = input.readDouble();
             break;
           }
           case 48: {
 
-            silenceDuration= input.readInt64();
+            silenceDuration = input.readInt64();
             break;
           }
           case 58: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            text= s;
+            text = s;
             break;
           }
           default: {
@@ -118,87 +118,87 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int BEGINTIME_FIELD_NUMBER = 1;
-  private long beginTime;
+  private long beginTime ;
   /**
    * <code>int64 BeginTime = 1;</code>
    * @return The beginTime.
    */
   @java.lang.Override
   public long getBeginTime() {
-    return beginTime;
+    return beginTime ;
   }
 
   public static final int ENDTIME_FIELD_NUMBER = 2;
-  private long endTime;
+  private long endTime ;
   /**
    * <code>int64 EndTime = 2;</code>
    * @return The endTime.
    */
   @java.lang.Override
   public long getEndTime() {
-    return endTime;
+    return endTime ;
   }
 
   public static final int CHANNELID_FIELD_NUMBER = 3;
-  private long channelId;
+  private long channelId ;
   /**
    * <code>int64 ChannelId = 3;</code>
    * @return The channelId.
    */
   @java.lang.Override
   public long getChannelId() {
-    return channelId;
+    return channelId ;
   }
 
   public static final int SPEECHRATE_FIELD_NUMBER = 4;
-  private long speechRate;
+  private long speechRate ;
   /**
    * <code>int64 SpeechRate = 4;</code>
    * @return The speechRate.
    */
   @java.lang.Override
   public long getSpeechRate() {
-    return speechRate;
+    return speechRate ;
   }
 
   public static final int EMOTIONVALUE_FIELD_NUMBER = 5;
-  private double emotionValue;
+  private double emotionValue ;
   /**
    * <code>double EmotionValue = 5;</code>
    * @return The emotionValue.
    */
   @java.lang.Override
   public double getEmotionValue() {
-    return emotionValue;
+    return emotionValue ;
   }
 
   public static final int SILENCEDURATION_FIELD_NUMBER = 6;
-  private long silenceDuration;
+  private long silenceDuration ;
   /**
    * <code>int64 SilenceDuration = 6;</code>
    * @return The silenceDuration.
    */
   @java.lang.Override
   public long getSilenceDuration() {
-    return silenceDuration;
+    return silenceDuration ;
   }
 
   public static final int TEXT_FIELD_NUMBER = 7;
-  private volatile java.lang.Object text;
+  private volatile java.lang.Object text ;
   /**
    * <code>string Text = 7;</code>
    * @return The text.
    */
   @java.lang.Override
   public java.lang.String getText() {
-    java.lang.Object ref = text;
+    java.lang.Object ref = text ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      text= s;
+      text = s;
       return s;
     }
   }
@@ -209,12 +209,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getTextBytes() {
-    java.lang.Object ref = text;
+    java.lang.Object ref = text ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      text= b;
+      text = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -235,26 +235,26 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (beginTime!= 0L) {
-      output.writeInt64(1, beginTime);
+    if (beginTime != 0L) {
+      output.writeInt64(1, beginTime );
     }
-    if (endTime!= 0L) {
-      output.writeInt64(2, endTime);
+    if (endTime != 0L) {
+      output.writeInt64(2, endTime );
     }
-    if (channelId!= 0L) {
-      output.writeInt64(3, channelId);
+    if (channelId != 0L) {
+      output.writeInt64(3, channelId );
     }
-    if (speechRate!= 0L) {
-      output.writeInt64(4, speechRate);
+    if (speechRate != 0L) {
+      output.writeInt64(4, speechRate );
     }
-    if (emotionValue!= 0D) {
-      output.writeDouble(5, emotionValue);
+    if (emotionValue != 0D) {
+      output.writeDouble(5, emotionValue );
     }
-    if (silenceDuration!= 0L) {
-      output.writeInt64(6, silenceDuration);
+    if (silenceDuration != 0L) {
+      output.writeInt64(6, silenceDuration );
     }
     if (!getTextBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, text);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, text );
     }
     unknownFields.writeTo(output);
   }
@@ -265,32 +265,32 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (beginTime!= 0L) {
+    if (beginTime != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, beginTime);
+        .computeInt64Size(1, beginTime );
     }
-    if (endTime!= 0L) {
+    if (endTime != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, endTime);
+        .computeInt64Size(2, endTime );
     }
-    if (channelId!= 0L) {
+    if (channelId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(3, channelId);
+        .computeInt64Size(3, channelId );
     }
-    if (speechRate!= 0L) {
+    if (speechRate != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(4, speechRate);
+        .computeInt64Size(4, speechRate );
     }
-    if (emotionValue!= 0D) {
+    if (emotionValue != 0D) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(5, emotionValue);
+        .computeDoubleSize(5, emotionValue );
     }
-    if (silenceDuration!= 0L) {
+    if (silenceDuration != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(6, silenceDuration);
+        .computeInt64Size(6, silenceDuration );
     }
     if (!getTextBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, text);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, text );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -486,19 +486,19 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      beginTime= 0L;
+      beginTime = 0L;
 
-      endTime= 0L;
+      endTime = 0L;
 
-      channelId= 0L;
+      channelId = 0L;
 
-      speechRate= 0L;
+      speechRate = 0L;
 
-      emotionValue= 0D;
+      emotionValue = 0D;
 
-      silenceDuration= 0L;
+      silenceDuration = 0L;
 
-      text= "";
+      text = "";
 
       return this;
     }
@@ -526,13 +526,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.live.VideoToTextSentence buildPartial() {
       com.zhijiejiaoyu.glory_api.live.VideoToTextSentence result = new com.zhijiejiaoyu.glory_api.live.VideoToTextSentence(this);
-      result.beginTime= beginTime;
-      result.endTime= endTime;
-      result.channelId= channelId;
-      result.speechRate= speechRate;
-      result.emotionValue= emotionValue;
-      result.silenceDuration= silenceDuration;
-      result.text= text;
+      result.beginTime = beginTime ;
+      result.endTime = endTime ;
+      result.channelId = channelId ;
+      result.speechRate = speechRate ;
+      result.emotionValue = emotionValue ;
+      result.silenceDuration = silenceDuration ;
+      result.text = text ;
       onBuilt();
       return result;
     }
@@ -600,7 +600,7 @@ private static final long serialVersionUID = 0L;
         setSilenceDuration(other.getSilenceDuration());
       }
       if (!other.getText().isEmpty()) {
-        text= other.text;
+        text = other.text ;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -632,14 +632,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long beginTime;
+    private long beginTime ;
     /**
      * <code>int64 BeginTime = 1;</code>
      * @return The beginTime.
      */
     @java.lang.Override
     public long getBeginTime() {
-      return beginTime;
+      return beginTime ;
     }
     /**
      * <code>int64 BeginTime = 1;</code>
@@ -648,7 +648,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setBeginTime(long value) {
       
-      beginTime= value;
+      beginTime = value;
       onChanged();
       return this;
     }
@@ -658,19 +658,19 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearBeginTime() {
       
-      beginTime= 0L;
+      beginTime = 0L;
       onChanged();
       return this;
     }
 
-    private long endTime;
+    private long endTime ;
     /**
      * <code>int64 EndTime = 2;</code>
      * @return The endTime.
      */
     @java.lang.Override
     public long getEndTime() {
-      return endTime;
+      return endTime ;
     }
     /**
      * <code>int64 EndTime = 2;</code>
@@ -679,7 +679,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setEndTime(long value) {
       
-      endTime= value;
+      endTime = value;
       onChanged();
       return this;
     }
@@ -689,19 +689,19 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearEndTime() {
       
-      endTime= 0L;
+      endTime = 0L;
       onChanged();
       return this;
     }
 
-    private long channelId;
+    private long channelId ;
     /**
      * <code>int64 ChannelId = 3;</code>
      * @return The channelId.
      */
     @java.lang.Override
     public long getChannelId() {
-      return channelId;
+      return channelId ;
     }
     /**
      * <code>int64 ChannelId = 3;</code>
@@ -710,7 +710,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setChannelId(long value) {
       
-      channelId= value;
+      channelId = value;
       onChanged();
       return this;
     }
@@ -720,19 +720,19 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearChannelId() {
       
-      channelId= 0L;
+      channelId = 0L;
       onChanged();
       return this;
     }
 
-    private long speechRate;
+    private long speechRate ;
     /**
      * <code>int64 SpeechRate = 4;</code>
      * @return The speechRate.
      */
     @java.lang.Override
     public long getSpeechRate() {
-      return speechRate;
+      return speechRate ;
     }
     /**
      * <code>int64 SpeechRate = 4;</code>
@@ -741,7 +741,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setSpeechRate(long value) {
       
-      speechRate= value;
+      speechRate = value;
       onChanged();
       return this;
     }
@@ -751,19 +751,19 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearSpeechRate() {
       
-      speechRate= 0L;
+      speechRate = 0L;
       onChanged();
       return this;
     }
 
-    private double emotionValue;
+    private double emotionValue ;
     /**
      * <code>double EmotionValue = 5;</code>
      * @return The emotionValue.
      */
     @java.lang.Override
     public double getEmotionValue() {
-      return emotionValue;
+      return emotionValue ;
     }
     /**
      * <code>double EmotionValue = 5;</code>
@@ -772,7 +772,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setEmotionValue(double value) {
       
-      emotionValue= value;
+      emotionValue = value;
       onChanged();
       return this;
     }
@@ -782,19 +782,19 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearEmotionValue() {
       
-      emotionValue= 0D;
+      emotionValue = 0D;
       onChanged();
       return this;
     }
 
-    private long silenceDuration;
+    private long silenceDuration ;
     /**
      * <code>int64 SilenceDuration = 6;</code>
      * @return The silenceDuration.
      */
     @java.lang.Override
     public long getSilenceDuration() {
-      return silenceDuration;
+      return silenceDuration ;
     }
     /**
      * <code>int64 SilenceDuration = 6;</code>
@@ -803,7 +803,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setSilenceDuration(long value) {
       
-      silenceDuration= value;
+      silenceDuration = value;
       onChanged();
       return this;
     }
@@ -813,23 +813,23 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearSilenceDuration() {
       
-      silenceDuration= 0L;
+      silenceDuration = 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object text= "";
+    private java.lang.Object text = "";
     /**
      * <code>string Text = 7;</code>
      * @return The text.
      */
     public java.lang.String getText() {
-      java.lang.Object ref = text;
+      java.lang.Object ref = text ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        text= s;
+        text = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -841,12 +841,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getTextBytes() {
-      java.lang.Object ref = text;
+      java.lang.Object ref = text ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        text= b;
+        text = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -863,7 +863,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      text= value;
+      text = value;
       onChanged();
       return this;
     }
@@ -873,7 +873,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearText() {
       
-      text= getDefaultInstance().getText();
+      text = getDefaultInstance().getText();
       onChanged();
       return this;
     }
@@ -889,7 +889,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      text= value;
+      text = value;
       onChanged();
       return this;
     }

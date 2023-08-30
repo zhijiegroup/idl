@@ -16,10 +16,10 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private STS() {
-    accessKeyId= "";
-    accessKeySecret= "";
-    expiration= "";
-    securityToken= "";
+    accessKeyId = "";
+    accessKeySecret = "";
+    expiration = "";
+    securityToken = "";
   }
 
   @java.lang.Override
@@ -55,25 +55,25 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            accessKeyId= s;
+            accessKeyId = s;
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            accessKeySecret= s;
+            accessKeySecret = s;
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            expiration= s;
+            expiration = s;
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            securityToken= s;
+            securityToken = s;
             break;
           }
           default: {
@@ -109,21 +109,21 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ACCESSKEYID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object accessKeyId;
+  private volatile java.lang.Object accessKeyId ;
   /**
    * <code>string AccessKeyId = 1;</code>
    * @return The accessKeyId.
    */
   @java.lang.Override
   public java.lang.String getAccessKeyId() {
-    java.lang.Object ref = accessKeyId;
+    java.lang.Object ref = accessKeyId ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      accessKeyId= s;
+      accessKeyId = s;
       return s;
     }
   }
@@ -134,12 +134,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getAccessKeyIdBytes() {
-    java.lang.Object ref = accessKeyId;
+    java.lang.Object ref = accessKeyId ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      accessKeyId= b;
+      accessKeyId = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -147,21 +147,21 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ACCESSKEYSECRET_FIELD_NUMBER = 2;
-  private volatile java.lang.Object accessKeySecret;
+  private volatile java.lang.Object accessKeySecret ;
   /**
    * <code>string AccessKeySecret = 2;</code>
    * @return The accessKeySecret.
    */
   @java.lang.Override
   public java.lang.String getAccessKeySecret() {
-    java.lang.Object ref = accessKeySecret;
+    java.lang.Object ref = accessKeySecret ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      accessKeySecret= s;
+      accessKeySecret = s;
       return s;
     }
   }
@@ -172,12 +172,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getAccessKeySecretBytes() {
-    java.lang.Object ref = accessKeySecret;
+    java.lang.Object ref = accessKeySecret ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      accessKeySecret= b;
+      accessKeySecret = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -185,21 +185,21 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int EXPIRATION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object expiration;
+  private volatile java.lang.Object expiration ;
   /**
    * <code>string Expiration = 3;</code>
    * @return The expiration.
    */
   @java.lang.Override
   public java.lang.String getExpiration() {
-    java.lang.Object ref = expiration;
+    java.lang.Object ref = expiration ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      expiration= s;
+      expiration = s;
       return s;
     }
   }
@@ -210,12 +210,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getExpirationBytes() {
-    java.lang.Object ref = expiration;
+    java.lang.Object ref = expiration ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      expiration= b;
+      expiration = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -223,21 +223,21 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int SECURITYTOKEN_FIELD_NUMBER = 4;
-  private volatile java.lang.Object securityToken;
+  private volatile java.lang.Object securityToken ;
   /**
    * <code>string SecurityToken = 4;</code>
    * @return The securityToken.
    */
   @java.lang.Override
   public java.lang.String getSecurityToken() {
-    java.lang.Object ref = securityToken;
+    java.lang.Object ref = securityToken ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      securityToken= s;
+      securityToken = s;
       return s;
     }
   }
@@ -248,12 +248,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getSecurityTokenBytes() {
-    java.lang.Object ref = securityToken;
+    java.lang.Object ref = securityToken ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      securityToken= b;
+      securityToken = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -275,16 +275,16 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getAccessKeyIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, accessKeyId);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, accessKeyId );
     }
     if (!getAccessKeySecretBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, accessKeySecret);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, accessKeySecret );
     }
     if (!getExpirationBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, expiration);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, expiration );
     }
     if (!getSecurityTokenBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, securityToken);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, securityToken );
     }
     unknownFields.writeTo(output);
   }
@@ -296,16 +296,16 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (!getAccessKeyIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, accessKeyId);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, accessKeyId );
     }
     if (!getAccessKeySecretBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, accessKeySecret);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, accessKeySecret );
     }
     if (!getExpirationBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, expiration);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, expiration );
     }
     if (!getSecurityTokenBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, securityToken);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, securityToken );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -482,13 +482,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      accessKeyId= "";
+      accessKeyId = "";
 
-      accessKeySecret= "";
+      accessKeySecret = "";
 
-      expiration= "";
+      expiration = "";
 
-      securityToken= "";
+      securityToken = "";
 
       return this;
     }
@@ -516,10 +516,10 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.admin.STS buildPartial() {
       com.zhijiejiaoyu.glory_api.admin.STS result = new com.zhijiejiaoyu.glory_api.admin.STS(this);
-      result.accessKeyId= accessKeyId;
-      result.accessKeySecret= accessKeySecret;
-      result.expiration= expiration;
-      result.securityToken= securityToken;
+      result.accessKeyId = accessKeyId ;
+      result.accessKeySecret = accessKeySecret ;
+      result.expiration = expiration ;
+      result.securityToken = securityToken ;
       onBuilt();
       return result;
     }
@@ -569,19 +569,19 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.zhijiejiaoyu.glory_api.admin.STS other) {
       if (other == com.zhijiejiaoyu.glory_api.admin.STS.getDefaultInstance()) return this;
       if (!other.getAccessKeyId().isEmpty()) {
-        accessKeyId= other.accessKeyId;
+        accessKeyId = other.accessKeyId ;
         onChanged();
       }
       if (!other.getAccessKeySecret().isEmpty()) {
-        accessKeySecret= other.accessKeySecret;
+        accessKeySecret = other.accessKeySecret ;
         onChanged();
       }
       if (!other.getExpiration().isEmpty()) {
-        expiration= other.expiration;
+        expiration = other.expiration ;
         onChanged();
       }
       if (!other.getSecurityToken().isEmpty()) {
-        securityToken= other.securityToken;
+        securityToken = other.securityToken ;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -613,18 +613,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object accessKeyId= "";
+    private java.lang.Object accessKeyId = "";
     /**
      * <code>string AccessKeyId = 1;</code>
      * @return The accessKeyId.
      */
     public java.lang.String getAccessKeyId() {
-      java.lang.Object ref = accessKeyId;
+      java.lang.Object ref = accessKeyId ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        accessKeyId= s;
+        accessKeyId = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -636,12 +636,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getAccessKeyIdBytes() {
-      java.lang.Object ref = accessKeyId;
+      java.lang.Object ref = accessKeyId ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        accessKeyId= b;
+        accessKeyId = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -658,7 +658,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      accessKeyId= value;
+      accessKeyId = value;
       onChanged();
       return this;
     }
@@ -668,7 +668,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearAccessKeyId() {
       
-      accessKeyId= getDefaultInstance().getAccessKeyId();
+      accessKeyId = getDefaultInstance().getAccessKeyId();
       onChanged();
       return this;
     }
@@ -684,23 +684,23 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      accessKeyId= value;
+      accessKeyId = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object accessKeySecret= "";
+    private java.lang.Object accessKeySecret = "";
     /**
      * <code>string AccessKeySecret = 2;</code>
      * @return The accessKeySecret.
      */
     public java.lang.String getAccessKeySecret() {
-      java.lang.Object ref = accessKeySecret;
+      java.lang.Object ref = accessKeySecret ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        accessKeySecret= s;
+        accessKeySecret = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -712,12 +712,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getAccessKeySecretBytes() {
-      java.lang.Object ref = accessKeySecret;
+      java.lang.Object ref = accessKeySecret ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        accessKeySecret= b;
+        accessKeySecret = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -734,7 +734,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      accessKeySecret= value;
+      accessKeySecret = value;
       onChanged();
       return this;
     }
@@ -744,7 +744,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearAccessKeySecret() {
       
-      accessKeySecret= getDefaultInstance().getAccessKeySecret();
+      accessKeySecret = getDefaultInstance().getAccessKeySecret();
       onChanged();
       return this;
     }
@@ -760,23 +760,23 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      accessKeySecret= value;
+      accessKeySecret = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object expiration= "";
+    private java.lang.Object expiration = "";
     /**
      * <code>string Expiration = 3;</code>
      * @return The expiration.
      */
     public java.lang.String getExpiration() {
-      java.lang.Object ref = expiration;
+      java.lang.Object ref = expiration ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        expiration= s;
+        expiration = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -788,12 +788,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getExpirationBytes() {
-      java.lang.Object ref = expiration;
+      java.lang.Object ref = expiration ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        expiration= b;
+        expiration = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -810,7 +810,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      expiration= value;
+      expiration = value;
       onChanged();
       return this;
     }
@@ -820,7 +820,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearExpiration() {
       
-      expiration= getDefaultInstance().getExpiration();
+      expiration = getDefaultInstance().getExpiration();
       onChanged();
       return this;
     }
@@ -836,23 +836,23 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      expiration= value;
+      expiration = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object securityToken= "";
+    private java.lang.Object securityToken = "";
     /**
      * <code>string SecurityToken = 4;</code>
      * @return The securityToken.
      */
     public java.lang.String getSecurityToken() {
-      java.lang.Object ref = securityToken;
+      java.lang.Object ref = securityToken ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        securityToken= s;
+        securityToken = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -864,12 +864,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getSecurityTokenBytes() {
-      java.lang.Object ref = securityToken;
+      java.lang.Object ref = securityToken ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        securityToken= b;
+        securityToken = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -886,7 +886,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      securityToken= value;
+      securityToken = value;
       onChanged();
       return this;
     }
@@ -896,7 +896,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearSecurityToken() {
       
-      securityToken= getDefaultInstance().getSecurityToken();
+      securityToken = getDefaultInstance().getSecurityToken();
       onChanged();
       return this;
     }
@@ -912,7 +912,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      securityToken= value;
+      securityToken = value;
       onChanged();
       return this;
     }

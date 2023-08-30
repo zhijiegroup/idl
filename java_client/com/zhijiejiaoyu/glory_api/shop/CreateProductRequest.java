@@ -16,8 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CreateProductRequest() {
-    productAttribute= java.util.Collections.emptyList();
-    createdBy= "";
+    productAttribute = java.util.Collections.emptyList();
+    createdBy = "";
   }
 
   @java.lang.Override
@@ -40,7 +40,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0= 0;
+    int mutable_bitField0 = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -53,43 +53,43 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             com.zhijiejiaoyu.base.BaseRequest.Builder subBuilder = null;
-            if (baseRequest!= null) {
-              subBuilder = baseRequest.toBuilder();
+            if (baseRequest != null) {
+              subBuilder = baseRequest .toBuilder();
             }
-            baseRequest= input.readMessage(com.zhijiejiaoyu.base.BaseRequest.parser(), extensionRegistry);
+            baseRequest = input.readMessage(com.zhijiejiaoyu.base.BaseRequest.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(baseRequest);
-              baseRequest= subBuilder.buildPartial();
+              subBuilder.mergeFrom(baseRequest );
+              baseRequest = subBuilder.buildPartial();
             }
 
             break;
           }
           case 18: {
             com.zhijiejiaoyu.glory_api.shop.Product.Builder subBuilder = null;
-            if (product!= null) {
-              subBuilder = product.toBuilder();
+            if (product != null) {
+              subBuilder = product .toBuilder();
             }
-            product= input.readMessage(com.zhijiejiaoyu.glory_api.shop.Product.parser(), extensionRegistry);
+            product = input.readMessage(com.zhijiejiaoyu.glory_api.shop.Product.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(product);
-              product= subBuilder.buildPartial();
+              subBuilder.mergeFrom(product );
+              product = subBuilder.buildPartial();
             }
 
             break;
           }
           case 26: {
-            if (!((mutable_bitField0& 0x00000001) != 0)) {
-              productAttribute= new java.util.ArrayList<com.zhijiejiaoyu.glory_api.shop.ProductAttribute>();
+            if (!((mutable_bitField0 & 0x00000001) != 0)) {
+              productAttribute = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.shop.ProductAttribute>();
               mutable_bitField0_ |= 0x00000001;
             }
-            productAttribute.add(
+            productAttribute .add(
                 input.readMessage(com.zhijiejiaoyu.glory_api.shop.ProductAttribute.parser(), extensionRegistry));
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            createdBy= s;
+            createdBy = s;
             break;
           }
           default: {
@@ -107,8 +107,8 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0& 0x00000001) != 0)) {
-        productAttribute= java.util.Collections.unmodifiableList(productAttribute);
+      if (((mutable_bitField0 & 0x00000001) != 0)) {
+        productAttribute = java.util.Collections.unmodifiableList(productAttribute );
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -128,14 +128,14 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int BASE_REQUEST_FIELD_NUMBER = 1;
-  private com.zhijiejiaoyu.base.BaseRequest baseRequest;
+  private com.zhijiejiaoyu.base.BaseRequest baseRequest ;
   /**
    * <code>.base.BaseRequest base_request = 1;</code>
    * @return Whether the baseRequest field is set.
    */
   @java.lang.Override
   public boolean hasBaseRequest() {
-    return baseRequest!= null;
+    return baseRequest != null;
   }
   /**
    * <code>.base.BaseRequest base_request = 1;</code>
@@ -143,7 +143,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.zhijiejiaoyu.base.BaseRequest getBaseRequest() {
-    return baseRequest== null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
+    return baseRequest == null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest ;
   }
   /**
    * <code>.base.BaseRequest base_request = 1;</code>
@@ -154,14 +154,14 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PRODUCT_FIELD_NUMBER = 2;
-  private com.zhijiejiaoyu.glory_api.shop.Product product;
+  private com.zhijiejiaoyu.glory_api.shop.Product product ;
   /**
    * <code>.glory_api.Product product = 2;</code>
    * @return Whether the product field is set.
    */
   @java.lang.Override
   public boolean hasProduct() {
-    return product!= null;
+    return product != null;
   }
   /**
    * <code>.glory_api.Product product = 2;</code>
@@ -169,7 +169,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.shop.Product getProduct() {
-    return product== null ? com.zhijiejiaoyu.glory_api.shop.Product.getDefaultInstance() : product;
+    return product == null ? com.zhijiejiaoyu.glory_api.shop.Product.getDefaultInstance() : product ;
   }
   /**
    * <code>.glory_api.Product product = 2;</code>
@@ -180,13 +180,13 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PRODUCT_ATTRIBUTE_FIELD_NUMBER = 3;
-  private java.util.List<com.zhijiejiaoyu.glory_api.shop.ProductAttribute> productAttribute;
+  private java.util.List<com.zhijiejiaoyu.glory_api.shop.ProductAttribute> productAttribute ;
   /**
    * <code>repeated .glory_api.ProductAttribute product_attribute = 3;</code>
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.shop.ProductAttribute> getProductAttributeList() {
-    return productAttribute;
+    return productAttribute ;
   }
   /**
    * <code>repeated .glory_api.ProductAttribute product_attribute = 3;</code>
@@ -194,21 +194,21 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.ProductAttributeOrBuilder> 
       getProductAttributeOrBuilderList() {
-    return productAttribute;
+    return productAttribute ;
   }
   /**
    * <code>repeated .glory_api.ProductAttribute product_attribute = 3;</code>
    */
   @java.lang.Override
   public int getProductAttributeCount() {
-    return productAttribute.size();
+    return productAttribute .size();
   }
   /**
    * <code>repeated .glory_api.ProductAttribute product_attribute = 3;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.shop.ProductAttribute getProductAttribute(int index) {
-    return productAttribute.get(index);
+    return productAttribute .get(index);
   }
   /**
    * <code>repeated .glory_api.ProductAttribute product_attribute = 3;</code>
@@ -216,25 +216,25 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.shop.ProductAttributeOrBuilder getProductAttributeOrBuilder(
       int index) {
-    return productAttribute.get(index);
+    return productAttribute .get(index);
   }
 
   public static final int CREATED_BY_FIELD_NUMBER = 4;
-  private volatile java.lang.Object createdBy;
+  private volatile java.lang.Object createdBy ;
   /**
    * <code>string created_by = 4;</code>
    * @return The createdBy.
    */
   @java.lang.Override
   public java.lang.String getCreatedBy() {
-    java.lang.Object ref = createdBy;
+    java.lang.Object ref = createdBy ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      createdBy= s;
+      createdBy = s;
       return s;
     }
   }
@@ -245,12 +245,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getCreatedByBytes() {
-    java.lang.Object ref = createdBy;
+    java.lang.Object ref = createdBy ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      createdBy= b;
+      createdBy = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -271,17 +271,17 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (baseRequest!= null) {
+    if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
-    if (product!= null) {
+    if (product != null) {
       output.writeMessage(2, getProduct());
     }
-    for (int i = 0; i < productAttribute.size(); i++) {
-      output.writeMessage(3, productAttribute.get(i));
+    for (int i = 0; i < productAttribute .size(); i++) {
+      output.writeMessage(3, productAttribute .get(i));
     }
     if (!getCreatedByBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, createdBy);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, createdBy );
     }
     unknownFields.writeTo(output);
   }
@@ -292,20 +292,20 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (baseRequest!= null) {
+    if (baseRequest != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseRequest());
     }
-    if (product!= null) {
+    if (product != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getProduct());
     }
-    for (int i = 0; i < productAttribute.size(); i++) {
+    for (int i = 0; i < productAttribute .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, productAttribute.get(i));
+        .computeMessageSize(3, productAttribute .get(i));
     }
     if (!getCreatedByBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, createdBy);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, createdBy );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -495,25 +495,25 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (baseRequestBuilder== null) {
-        baseRequest= null;
+      if (baseRequestBuilder == null) {
+        baseRequest = null;
       } else {
-        baseRequest= null;
-        baseRequestBuilder= null;
+        baseRequest = null;
+        baseRequestBuilder = null;
       }
-      if (productBuilder== null) {
-        product= null;
+      if (productBuilder == null) {
+        product = null;
       } else {
-        product= null;
-        productBuilder= null;
+        product = null;
+        productBuilder = null;
       }
-      if (productAttributeBuilder== null) {
-        productAttribute= java.util.Collections.emptyList();
-        bitField0= (bitField0& ~0x00000001);
+      if (productAttributeBuilder == null) {
+        productAttribute = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000001);
       } else {
-        productAttributeBuilder.clear();
+        productAttributeBuilder .clear();
       }
-      createdBy= "";
+      createdBy = "";
 
       return this;
     }
@@ -541,27 +541,27 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.shop.CreateProductRequest buildPartial() {
       com.zhijiejiaoyu.glory_api.shop.CreateProductRequest result = new com.zhijiejiaoyu.glory_api.shop.CreateProductRequest(this);
-      int from_bitField0= bitField0;
-      if (baseRequestBuilder== null) {
-        result.baseRequest= baseRequest;
+      int from_bitField0 = bitField0 ;
+      if (baseRequestBuilder == null) {
+        result.baseRequest = baseRequest ;
       } else {
-        result.baseRequest= baseRequestBuilder.build();
+        result.baseRequest = baseRequestBuilder .build();
       }
-      if (productBuilder== null) {
-        result.product= product;
+      if (productBuilder == null) {
+        result.product = product ;
       } else {
-        result.product= productBuilder.build();
+        result.product = productBuilder .build();
       }
-      if (productAttributeBuilder== null) {
-        if (((bitField0& 0x00000001) != 0)) {
-          productAttribute= java.util.Collections.unmodifiableList(productAttribute);
-          bitField0= (bitField0& ~0x00000001);
+      if (productAttributeBuilder == null) {
+        if (((bitField0 & 0x00000001) != 0)) {
+          productAttribute = java.util.Collections.unmodifiableList(productAttribute );
+          bitField0 = (bitField0 & ~0x00000001);
         }
-        result.productAttribute= productAttribute;
+        result.productAttribute = productAttribute ;
       } else {
-        result.productAttribute= productAttributeBuilder.build();
+        result.productAttribute = productAttributeBuilder .build();
       }
-      result.createdBy= createdBy;
+      result.createdBy = createdBy ;
       onBuilt();
       return result;
     }
@@ -616,34 +616,34 @@ private static final long serialVersionUID = 0L;
       if (other.hasProduct()) {
         mergeProduct(other.getProduct());
       }
-      if (productAttributeBuilder== null) {
-        if (!other.productAttribute.isEmpty()) {
-          if (productAttribute.isEmpty()) {
-            productAttribute= other.productAttribute;
-            bitField0= (bitField0& ~0x00000001);
+      if (productAttributeBuilder == null) {
+        if (!other.productAttribute .isEmpty()) {
+          if (productAttribute .isEmpty()) {
+            productAttribute = other.productAttribute ;
+            bitField0 = (bitField0 & ~0x00000001);
           } else {
             ensureProductAttributeIsMutable();
-            productAttribute.addAll(other.productAttribute);
+            productAttribute .addAll(other.productAttribute );
           }
           onChanged();
         }
       } else {
-        if (!other.productAttribute.isEmpty()) {
-          if (productAttributeBuilder.isEmpty()) {
-            productAttributeBuilder.dispose();
-            productAttributeBuilder= null;
-            productAttribute= other.productAttribute;
-            bitField0= (bitField0& ~0x00000001);
-            productAttributeBuilder= 
+        if (!other.productAttribute .isEmpty()) {
+          if (productAttributeBuilder .isEmpty()) {
+            productAttributeBuilder .dispose();
+            productAttributeBuilder = null;
+            productAttribute = other.productAttribute ;
+            bitField0 = (bitField0 & ~0x00000001);
+            productAttributeBuilder = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getProductAttributeFieldBuilder() : null;
           } else {
-            productAttributeBuilder.addAllMessages(other.productAttribute);
+            productAttributeBuilder .addAllMessages(other.productAttribute );
           }
         }
       }
       if (!other.getCreatedBy().isEmpty()) {
-        createdBy= other.createdBy;
+        createdBy = other.createdBy ;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -674,41 +674,41 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int bitField0;
+    private int bitField0 ;
 
-    private com.zhijiejiaoyu.base.BaseRequest baseRequest;
+    private com.zhijiejiaoyu.base.BaseRequest baseRequest ;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder> baseRequestBuilder;
+        com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder> baseRequestBuilder ;
     /**
      * <code>.base.BaseRequest base_request = 1;</code>
      * @return Whether the baseRequest field is set.
      */
     public boolean hasBaseRequest() {
-      return baseRequestBuilder!= null || baseRequest!= null;
+      return baseRequestBuilder != null || baseRequest != null;
     }
     /**
      * <code>.base.BaseRequest base_request = 1;</code>
      * @return The baseRequest.
      */
     public com.zhijiejiaoyu.base.BaseRequest getBaseRequest() {
-      if (baseRequestBuilder== null) {
-        return baseRequest== null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
+      if (baseRequestBuilder == null) {
+        return baseRequest == null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest ;
       } else {
-        return baseRequestBuilder.getMessage();
+        return baseRequestBuilder .getMessage();
       }
     }
     /**
      * <code>.base.BaseRequest base_request = 1;</code>
      */
     public Builder setBaseRequest(com.zhijiejiaoyu.base.BaseRequest value) {
-      if (baseRequestBuilder== null) {
+      if (baseRequestBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        baseRequest= value;
+        baseRequest = value;
         onChanged();
       } else {
-        baseRequestBuilder.setMessage(value);
+        baseRequestBuilder .setMessage(value);
       }
 
       return this;
@@ -718,11 +718,11 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setBaseRequest(
         com.zhijiejiaoyu.base.BaseRequest.Builder builderForValue) {
-      if (baseRequestBuilder== null) {
-        baseRequest= builderForValue.build();
+      if (baseRequestBuilder == null) {
+        baseRequest = builderForValue.build();
         onChanged();
       } else {
-        baseRequestBuilder.setMessage(builderForValue.build());
+        baseRequestBuilder .setMessage(builderForValue.build());
       }
 
       return this;
@@ -731,16 +731,16 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseRequest base_request = 1;</code>
      */
     public Builder mergeBaseRequest(com.zhijiejiaoyu.base.BaseRequest value) {
-      if (baseRequestBuilder== null) {
-        if (baseRequest!= null) {
-          baseRequest=
-            com.zhijiejiaoyu.base.BaseRequest.newBuilder(baseRequest).mergeFrom(value).buildPartial();
+      if (baseRequestBuilder == null) {
+        if (baseRequest != null) {
+          baseRequest =
+            com.zhijiejiaoyu.base.BaseRequest.newBuilder(baseRequest ).mergeFrom(value).buildPartial();
         } else {
-          baseRequest= value;
+          baseRequest = value;
         }
         onChanged();
       } else {
-        baseRequestBuilder.mergeFrom(value);
+        baseRequestBuilder .mergeFrom(value);
       }
 
       return this;
@@ -749,12 +749,12 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseRequest base_request = 1;</code>
      */
     public Builder clearBaseRequest() {
-      if (baseRequestBuilder== null) {
-        baseRequest= null;
+      if (baseRequestBuilder == null) {
+        baseRequest = null;
         onChanged();
       } else {
-        baseRequest= null;
-        baseRequestBuilder= null;
+        baseRequest = null;
+        baseRequestBuilder = null;
       }
 
       return this;
@@ -771,11 +771,11 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseRequest base_request = 1;</code>
      */
     public com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder() {
-      if (baseRequestBuilder!= null) {
-        return baseRequestBuilder.getMessageOrBuilder();
+      if (baseRequestBuilder != null) {
+        return baseRequestBuilder .getMessageOrBuilder();
       } else {
-        return baseRequest== null ?
-            com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
+        return baseRequest == null ?
+            com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest ;
       }
     }
     /**
@@ -784,50 +784,50 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder> 
         getBaseRequestFieldBuilder() {
-      if (baseRequestBuilder== null) {
-        baseRequestBuilder= new com.google.protobuf.SingleFieldBuilderV3<
+      if (baseRequestBuilder == null) {
+        baseRequestBuilder = new com.google.protobuf.SingleFieldBuilderV3<
             com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder>(
                 getBaseRequest(),
                 getParentForChildren(),
                 isClean());
-        baseRequest= null;
+        baseRequest = null;
       }
-      return baseRequestBuilder;
+      return baseRequestBuilder ;
     }
 
-    private com.zhijiejiaoyu.glory_api.shop.Product product;
+    private com.zhijiejiaoyu.glory_api.shop.Product product ;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.shop.Product, com.zhijiejiaoyu.glory_api.shop.Product.Builder, com.zhijiejiaoyu.glory_api.shop.ProductOrBuilder> productBuilder;
+        com.zhijiejiaoyu.glory_api.shop.Product, com.zhijiejiaoyu.glory_api.shop.Product.Builder, com.zhijiejiaoyu.glory_api.shop.ProductOrBuilder> productBuilder ;
     /**
      * <code>.glory_api.Product product = 2;</code>
      * @return Whether the product field is set.
      */
     public boolean hasProduct() {
-      return productBuilder!= null || product!= null;
+      return productBuilder != null || product != null;
     }
     /**
      * <code>.glory_api.Product product = 2;</code>
      * @return The product.
      */
     public com.zhijiejiaoyu.glory_api.shop.Product getProduct() {
-      if (productBuilder== null) {
-        return product== null ? com.zhijiejiaoyu.glory_api.shop.Product.getDefaultInstance() : product;
+      if (productBuilder == null) {
+        return product == null ? com.zhijiejiaoyu.glory_api.shop.Product.getDefaultInstance() : product ;
       } else {
-        return productBuilder.getMessage();
+        return productBuilder .getMessage();
       }
     }
     /**
      * <code>.glory_api.Product product = 2;</code>
      */
     public Builder setProduct(com.zhijiejiaoyu.glory_api.shop.Product value) {
-      if (productBuilder== null) {
+      if (productBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        product= value;
+        product = value;
         onChanged();
       } else {
-        productBuilder.setMessage(value);
+        productBuilder .setMessage(value);
       }
 
       return this;
@@ -837,11 +837,11 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setProduct(
         com.zhijiejiaoyu.glory_api.shop.Product.Builder builderForValue) {
-      if (productBuilder== null) {
-        product= builderForValue.build();
+      if (productBuilder == null) {
+        product = builderForValue.build();
         onChanged();
       } else {
-        productBuilder.setMessage(builderForValue.build());
+        productBuilder .setMessage(builderForValue.build());
       }
 
       return this;
@@ -850,16 +850,16 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.Product product = 2;</code>
      */
     public Builder mergeProduct(com.zhijiejiaoyu.glory_api.shop.Product value) {
-      if (productBuilder== null) {
-        if (product!= null) {
-          product=
-            com.zhijiejiaoyu.glory_api.shop.Product.newBuilder(product).mergeFrom(value).buildPartial();
+      if (productBuilder == null) {
+        if (product != null) {
+          product =
+            com.zhijiejiaoyu.glory_api.shop.Product.newBuilder(product ).mergeFrom(value).buildPartial();
         } else {
-          product= value;
+          product = value;
         }
         onChanged();
       } else {
-        productBuilder.mergeFrom(value);
+        productBuilder .mergeFrom(value);
       }
 
       return this;
@@ -868,12 +868,12 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.Product product = 2;</code>
      */
     public Builder clearProduct() {
-      if (productBuilder== null) {
-        product= null;
+      if (productBuilder == null) {
+        product = null;
         onChanged();
       } else {
-        product= null;
-        productBuilder= null;
+        product = null;
+        productBuilder = null;
       }
 
       return this;
@@ -890,11 +890,11 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.Product product = 2;</code>
      */
     public com.zhijiejiaoyu.glory_api.shop.ProductOrBuilder getProductOrBuilder() {
-      if (productBuilder!= null) {
-        return productBuilder.getMessageOrBuilder();
+      if (productBuilder != null) {
+        return productBuilder .getMessageOrBuilder();
       } else {
-        return product== null ?
-            com.zhijiejiaoyu.glory_api.shop.Product.getDefaultInstance() : product;
+        return product == null ?
+            com.zhijiejiaoyu.glory_api.shop.Product.getDefaultInstance() : product ;
       }
     }
     /**
@@ -903,57 +903,57 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.shop.Product, com.zhijiejiaoyu.glory_api.shop.Product.Builder, com.zhijiejiaoyu.glory_api.shop.ProductOrBuilder> 
         getProductFieldBuilder() {
-      if (productBuilder== null) {
-        productBuilder= new com.google.protobuf.SingleFieldBuilderV3<
+      if (productBuilder == null) {
+        productBuilder = new com.google.protobuf.SingleFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.shop.Product, com.zhijiejiaoyu.glory_api.shop.Product.Builder, com.zhijiejiaoyu.glory_api.shop.ProductOrBuilder>(
                 getProduct(),
                 getParentForChildren(),
                 isClean());
-        product= null;
+        product = null;
       }
-      return productBuilder;
+      return productBuilder ;
     }
 
-    private java.util.List<com.zhijiejiaoyu.glory_api.shop.ProductAttribute> productAttribute=
+    private java.util.List<com.zhijiejiaoyu.glory_api.shop.ProductAttribute> productAttribute =
       java.util.Collections.emptyList();
     private void ensureProductAttributeIsMutable() {
-      if (!((bitField0& 0x00000001) != 0)) {
-        productAttribute= new java.util.ArrayList<com.zhijiejiaoyu.glory_api.shop.ProductAttribute>(productAttribute);
+      if (!((bitField0 & 0x00000001) != 0)) {
+        productAttribute = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.shop.ProductAttribute>(productAttribute );
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.shop.ProductAttribute, com.zhijiejiaoyu.glory_api.shop.ProductAttribute.Builder, com.zhijiejiaoyu.glory_api.shop.ProductAttributeOrBuilder> productAttributeBuilder;
+        com.zhijiejiaoyu.glory_api.shop.ProductAttribute, com.zhijiejiaoyu.glory_api.shop.ProductAttribute.Builder, com.zhijiejiaoyu.glory_api.shop.ProductAttributeOrBuilder> productAttributeBuilder ;
 
     /**
      * <code>repeated .glory_api.ProductAttribute product_attribute = 3;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.shop.ProductAttribute> getProductAttributeList() {
-      if (productAttributeBuilder== null) {
-        return java.util.Collections.unmodifiableList(productAttribute);
+      if (productAttributeBuilder == null) {
+        return java.util.Collections.unmodifiableList(productAttribute );
       } else {
-        return productAttributeBuilder.getMessageList();
+        return productAttributeBuilder .getMessageList();
       }
     }
     /**
      * <code>repeated .glory_api.ProductAttribute product_attribute = 3;</code>
      */
     public int getProductAttributeCount() {
-      if (productAttributeBuilder== null) {
-        return productAttribute.size();
+      if (productAttributeBuilder == null) {
+        return productAttribute .size();
       } else {
-        return productAttributeBuilder.getCount();
+        return productAttributeBuilder .getCount();
       }
     }
     /**
      * <code>repeated .glory_api.ProductAttribute product_attribute = 3;</code>
      */
     public com.zhijiejiaoyu.glory_api.shop.ProductAttribute getProductAttribute(int index) {
-      if (productAttributeBuilder== null) {
-        return productAttribute.get(index);
+      if (productAttributeBuilder == null) {
+        return productAttribute .get(index);
       } else {
-        return productAttributeBuilder.getMessage(index);
+        return productAttributeBuilder .getMessage(index);
       }
     }
     /**
@@ -961,15 +961,15 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setProductAttribute(
         int index, com.zhijiejiaoyu.glory_api.shop.ProductAttribute value) {
-      if (productAttributeBuilder== null) {
+      if (productAttributeBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         ensureProductAttributeIsMutable();
-        productAttribute.set(index, value);
+        productAttribute .set(index, value);
         onChanged();
       } else {
-        productAttributeBuilder.setMessage(index, value);
+        productAttributeBuilder .setMessage(index, value);
       }
       return this;
     }
@@ -978,12 +978,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setProductAttribute(
         int index, com.zhijiejiaoyu.glory_api.shop.ProductAttribute.Builder builderForValue) {
-      if (productAttributeBuilder== null) {
+      if (productAttributeBuilder == null) {
         ensureProductAttributeIsMutable();
-        productAttribute.set(index, builderForValue.build());
+        productAttribute .set(index, builderForValue.build());
         onChanged();
       } else {
-        productAttributeBuilder.setMessage(index, builderForValue.build());
+        productAttributeBuilder .setMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -991,15 +991,15 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.ProductAttribute product_attribute = 3;</code>
      */
     public Builder addProductAttribute(com.zhijiejiaoyu.glory_api.shop.ProductAttribute value) {
-      if (productAttributeBuilder== null) {
+      if (productAttributeBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         ensureProductAttributeIsMutable();
-        productAttribute.add(value);
+        productAttribute .add(value);
         onChanged();
       } else {
-        productAttributeBuilder.addMessage(value);
+        productAttributeBuilder .addMessage(value);
       }
       return this;
     }
@@ -1008,15 +1008,15 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addProductAttribute(
         int index, com.zhijiejiaoyu.glory_api.shop.ProductAttribute value) {
-      if (productAttributeBuilder== null) {
+      if (productAttributeBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         ensureProductAttributeIsMutable();
-        productAttribute.add(index, value);
+        productAttribute .add(index, value);
         onChanged();
       } else {
-        productAttributeBuilder.addMessage(index, value);
+        productAttributeBuilder .addMessage(index, value);
       }
       return this;
     }
@@ -1025,12 +1025,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addProductAttribute(
         com.zhijiejiaoyu.glory_api.shop.ProductAttribute.Builder builderForValue) {
-      if (productAttributeBuilder== null) {
+      if (productAttributeBuilder == null) {
         ensureProductAttributeIsMutable();
-        productAttribute.add(builderForValue.build());
+        productAttribute .add(builderForValue.build());
         onChanged();
       } else {
-        productAttributeBuilder.addMessage(builderForValue.build());
+        productAttributeBuilder .addMessage(builderForValue.build());
       }
       return this;
     }
@@ -1039,12 +1039,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addProductAttribute(
         int index, com.zhijiejiaoyu.glory_api.shop.ProductAttribute.Builder builderForValue) {
-      if (productAttributeBuilder== null) {
+      if (productAttributeBuilder == null) {
         ensureProductAttributeIsMutable();
-        productAttribute.add(index, builderForValue.build());
+        productAttribute .add(index, builderForValue.build());
         onChanged();
       } else {
-        productAttributeBuilder.addMessage(index, builderForValue.build());
+        productAttributeBuilder .addMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -1053,13 +1053,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addAllProductAttribute(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.shop.ProductAttribute> values) {
-      if (productAttributeBuilder== null) {
+      if (productAttributeBuilder == null) {
         ensureProductAttributeIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, productAttribute);
+            values, productAttribute );
         onChanged();
       } else {
-        productAttributeBuilder.addAllMessages(values);
+        productAttributeBuilder .addAllMessages(values);
       }
       return this;
     }
@@ -1067,12 +1067,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.ProductAttribute product_attribute = 3;</code>
      */
     public Builder clearProductAttribute() {
-      if (productAttributeBuilder== null) {
-        productAttribute= java.util.Collections.emptyList();
-        bitField0= (bitField0& ~0x00000001);
+      if (productAttributeBuilder == null) {
+        productAttribute = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000001);
         onChanged();
       } else {
-        productAttributeBuilder.clear();
+        productAttributeBuilder .clear();
       }
       return this;
     }
@@ -1080,12 +1080,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.ProductAttribute product_attribute = 3;</code>
      */
     public Builder removeProductAttribute(int index) {
-      if (productAttributeBuilder== null) {
+      if (productAttributeBuilder == null) {
         ensureProductAttributeIsMutable();
-        productAttribute.remove(index);
+        productAttribute .remove(index);
         onChanged();
       } else {
-        productAttributeBuilder.remove(index);
+        productAttributeBuilder .remove(index);
       }
       return this;
     }
@@ -1101,9 +1101,9 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.shop.ProductAttributeOrBuilder getProductAttributeOrBuilder(
         int index) {
-      if (productAttributeBuilder== null) {
-        return productAttribute.get(index);  } else {
-        return productAttributeBuilder.getMessageOrBuilder(index);
+      if (productAttributeBuilder == null) {
+        return productAttribute .get(index);  } else {
+        return productAttributeBuilder .getMessageOrBuilder(index);
       }
     }
     /**
@@ -1111,10 +1111,10 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.ProductAttributeOrBuilder> 
          getProductAttributeOrBuilderList() {
-      if (productAttributeBuilder!= null) {
-        return productAttributeBuilder.getMessageOrBuilderList();
+      if (productAttributeBuilder != null) {
+        return productAttributeBuilder .getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(productAttribute);
+        return java.util.Collections.unmodifiableList(productAttribute );
       }
     }
     /**
@@ -1142,30 +1142,30 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.RepeatedFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.shop.ProductAttribute, com.zhijiejiaoyu.glory_api.shop.ProductAttribute.Builder, com.zhijiejiaoyu.glory_api.shop.ProductAttributeOrBuilder> 
         getProductAttributeFieldBuilder() {
-      if (productAttributeBuilder== null) {
-        productAttributeBuilder= new com.google.protobuf.RepeatedFieldBuilderV3<
+      if (productAttributeBuilder == null) {
+        productAttributeBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.shop.ProductAttribute, com.zhijiejiaoyu.glory_api.shop.ProductAttribute.Builder, com.zhijiejiaoyu.glory_api.shop.ProductAttributeOrBuilder>(
-                productAttribute,
-                ((bitField0& 0x00000001) != 0),
+                productAttribute ,
+                ((bitField0 & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        productAttribute= null;
+        productAttribute = null;
       }
-      return productAttributeBuilder;
+      return productAttributeBuilder ;
     }
 
-    private java.lang.Object createdBy= "";
+    private java.lang.Object createdBy = "";
     /**
      * <code>string created_by = 4;</code>
      * @return The createdBy.
      */
     public java.lang.String getCreatedBy() {
-      java.lang.Object ref = createdBy;
+      java.lang.Object ref = createdBy ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        createdBy= s;
+        createdBy = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1177,12 +1177,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getCreatedByBytes() {
-      java.lang.Object ref = createdBy;
+      java.lang.Object ref = createdBy ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        createdBy= b;
+        createdBy = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1199,7 +1199,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      createdBy= value;
+      createdBy = value;
       onChanged();
       return this;
     }
@@ -1209,7 +1209,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearCreatedBy() {
       
-      createdBy= getDefaultInstance().getCreatedBy();
+      createdBy = getDefaultInstance().getCreatedBy();
       onChanged();
       return this;
     }
@@ -1225,7 +1225,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      createdBy= value;
+      createdBy = value;
       onChanged();
       return this;
     }

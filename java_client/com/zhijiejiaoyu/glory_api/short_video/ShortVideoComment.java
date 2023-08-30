@@ -16,8 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ShortVideoComment() {
-    content= "";
-    createdAt= "";
+    content = "";
+    createdAt = "";
   }
 
   @java.lang.Override
@@ -52,40 +52,40 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            commentId= input.readInt64();
+            commentId = input.readInt64();
             break;
           }
           case 16: {
 
-            shortVideoId= input.readInt64();
+            shortVideoId = input.readInt64();
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            content= s;
+            content = s;
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            createdAt= s;
+            createdAt = s;
             break;
           }
           case 40: {
 
-            replyCount= input.readInt64();
+            replyCount = input.readInt64();
             break;
           }
           case 50: {
             com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser.Builder subBuilder = null;
-            if (userInfo!= null) {
-              subBuilder = userInfo.toBuilder();
+            if (userInfo != null) {
+              subBuilder = userInfo .toBuilder();
             }
-            userInfo= input.readMessage(com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser.parser(), extensionRegistry);
+            userInfo = input.readMessage(com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(userInfo);
-              userInfo= subBuilder.buildPartial();
+              subBuilder.mergeFrom(userInfo );
+              userInfo = subBuilder.buildPartial();
             }
 
             break;
@@ -123,7 +123,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int COMMENT_ID_FIELD_NUMBER = 1;
-  private long commentId;
+  private long commentId ;
   /**
    * <pre>
    * 评论ID
@@ -134,11 +134,11 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public long getCommentId() {
-    return commentId;
+    return commentId ;
   }
 
   public static final int SHORT_VIDEO_ID_FIELD_NUMBER = 2;
-  private long shortVideoId;
+  private long shortVideoId ;
   /**
    * <pre>
    * 短视频ID
@@ -149,11 +149,11 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public long getShortVideoId() {
-    return shortVideoId;
+    return shortVideoId ;
   }
 
   public static final int CONTENT_FIELD_NUMBER = 3;
-  private volatile java.lang.Object content;
+  private volatile java.lang.Object content ;
   /**
    * <pre>
    * 评论内容
@@ -164,14 +164,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public java.lang.String getContent() {
-    java.lang.Object ref = content;
+    java.lang.Object ref = content ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      content= s;
+      content = s;
       return s;
     }
   }
@@ -186,12 +186,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getContentBytes() {
-    java.lang.Object ref = content;
+    java.lang.Object ref = content ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      content= b;
+      content = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -199,7 +199,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CREATED_AT_FIELD_NUMBER = 4;
-  private volatile java.lang.Object createdAt;
+  private volatile java.lang.Object createdAt ;
   /**
    * <pre>
    * 评论发布时间
@@ -210,14 +210,14 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public java.lang.String getCreatedAt() {
-    java.lang.Object ref = createdAt;
+    java.lang.Object ref = createdAt ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      createdAt= s;
+      createdAt = s;
       return s;
     }
   }
@@ -232,12 +232,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getCreatedAtBytes() {
-    java.lang.Object ref = createdAt;
+    java.lang.Object ref = createdAt ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      createdAt= b;
+      createdAt = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -245,7 +245,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int REPLY_COUNT_FIELD_NUMBER = 5;
-  private long replyCount;
+  private long replyCount ;
   /**
    * <pre>
    * 评论回复数量
@@ -256,11 +256,11 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public long getReplyCount() {
-    return replyCount;
+    return replyCount ;
   }
 
   public static final int USER_INFO_FIELD_NUMBER = 6;
-  private com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser userInfo;
+  private com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser userInfo ;
   /**
    * <pre>
    * 评论用户信息
@@ -271,7 +271,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasUserInfo() {
-    return userInfo!= null;
+    return userInfo != null;
   }
   /**
    * <pre>
@@ -283,7 +283,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser getUserInfo() {
-    return userInfo== null ? com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser.getDefaultInstance() : userInfo;
+    return userInfo == null ? com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser.getDefaultInstance() : userInfo ;
   }
   /**
    * <pre>
@@ -311,22 +311,22 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (commentId!= 0L) {
-      output.writeInt64(1, commentId);
+    if (commentId != 0L) {
+      output.writeInt64(1, commentId );
     }
-    if (shortVideoId!= 0L) {
-      output.writeInt64(2, shortVideoId);
+    if (shortVideoId != 0L) {
+      output.writeInt64(2, shortVideoId );
     }
     if (!getContentBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, content);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, content );
     }
     if (!getCreatedAtBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, createdAt);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, createdAt );
     }
-    if (replyCount!= 0L) {
-      output.writeInt64(5, replyCount);
+    if (replyCount != 0L) {
+      output.writeInt64(5, replyCount );
     }
-    if (userInfo!= null) {
+    if (userInfo != null) {
       output.writeMessage(6, getUserInfo());
     }
     unknownFields.writeTo(output);
@@ -338,25 +338,25 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (commentId!= 0L) {
+    if (commentId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, commentId);
+        .computeInt64Size(1, commentId );
     }
-    if (shortVideoId!= 0L) {
+    if (shortVideoId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, shortVideoId);
+        .computeInt64Size(2, shortVideoId );
     }
     if (!getContentBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, content);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, content );
     }
     if (!getCreatedAtBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, createdAt);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, createdAt );
     }
-    if (replyCount!= 0L) {
+    if (replyCount != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(5, replyCount);
+        .computeInt64Size(5, replyCount );
     }
-    if (userInfo!= null) {
+    if (userInfo != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getUserInfo());
     }
@@ -551,21 +551,21 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      commentId= 0L;
+      commentId = 0L;
 
-      shortVideoId= 0L;
+      shortVideoId = 0L;
 
-      content= "";
+      content = "";
 
-      createdAt= "";
+      createdAt = "";
 
-      replyCount= 0L;
+      replyCount = 0L;
 
-      if (userInfoBuilder== null) {
-        userInfo= null;
+      if (userInfoBuilder == null) {
+        userInfo = null;
       } else {
-        userInfo= null;
-        userInfoBuilder= null;
+        userInfo = null;
+        userInfoBuilder = null;
       }
       return this;
     }
@@ -593,15 +593,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.short_video.ShortVideoComment buildPartial() {
       com.zhijiejiaoyu.glory_api.short_video.ShortVideoComment result = new com.zhijiejiaoyu.glory_api.short_video.ShortVideoComment(this);
-      result.commentId= commentId;
-      result.shortVideoId= shortVideoId;
-      result.content= content;
-      result.createdAt= createdAt;
-      result.replyCount= replyCount;
-      if (userInfoBuilder== null) {
-        result.userInfo= userInfo;
+      result.commentId = commentId ;
+      result.shortVideoId = shortVideoId ;
+      result.content = content ;
+      result.createdAt = createdAt ;
+      result.replyCount = replyCount ;
+      if (userInfoBuilder == null) {
+        result.userInfo = userInfo ;
       } else {
-        result.userInfo= userInfoBuilder.build();
+        result.userInfo = userInfoBuilder .build();
       }
       onBuilt();
       return result;
@@ -658,11 +658,11 @@ private static final long serialVersionUID = 0L;
         setShortVideoId(other.getShortVideoId());
       }
       if (!other.getContent().isEmpty()) {
-        content= other.content;
+        content = other.content ;
         onChanged();
       }
       if (!other.getCreatedAt().isEmpty()) {
-        createdAt= other.createdAt;
+        createdAt = other.createdAt ;
         onChanged();
       }
       if (other.getReplyCount() != 0L) {
@@ -700,7 +700,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long commentId;
+    private long commentId ;
     /**
      * <pre>
      * 评论ID
@@ -711,7 +711,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getCommentId() {
-      return commentId;
+      return commentId ;
     }
     /**
      * <pre>
@@ -724,7 +724,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setCommentId(long value) {
       
-      commentId= value;
+      commentId = value;
       onChanged();
       return this;
     }
@@ -738,12 +738,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearCommentId() {
       
-      commentId= 0L;
+      commentId = 0L;
       onChanged();
       return this;
     }
 
-    private long shortVideoId;
+    private long shortVideoId ;
     /**
      * <pre>
      * 短视频ID
@@ -754,7 +754,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getShortVideoId() {
-      return shortVideoId;
+      return shortVideoId ;
     }
     /**
      * <pre>
@@ -767,7 +767,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setShortVideoId(long value) {
       
-      shortVideoId= value;
+      shortVideoId = value;
       onChanged();
       return this;
     }
@@ -781,12 +781,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearShortVideoId() {
       
-      shortVideoId= 0L;
+      shortVideoId = 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object content= "";
+    private java.lang.Object content = "";
     /**
      * <pre>
      * 评论内容
@@ -796,12 +796,12 @@ private static final long serialVersionUID = 0L;
      * @return The content.
      */
     public java.lang.String getContent() {
-      java.lang.Object ref = content;
+      java.lang.Object ref = content ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        content= s;
+        content = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -817,12 +817,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getContentBytes() {
-      java.lang.Object ref = content;
+      java.lang.Object ref = content ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        content= b;
+        content = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -843,7 +843,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      content= value;
+      content = value;
       onChanged();
       return this;
     }
@@ -857,7 +857,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearContent() {
       
-      content= getDefaultInstance().getContent();
+      content = getDefaultInstance().getContent();
       onChanged();
       return this;
     }
@@ -877,12 +877,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      content= value;
+      content = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object createdAt= "";
+    private java.lang.Object createdAt = "";
     /**
      * <pre>
      * 评论发布时间
@@ -892,12 +892,12 @@ private static final long serialVersionUID = 0L;
      * @return The createdAt.
      */
     public java.lang.String getCreatedAt() {
-      java.lang.Object ref = createdAt;
+      java.lang.Object ref = createdAt ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        createdAt= s;
+        createdAt = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -913,12 +913,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getCreatedAtBytes() {
-      java.lang.Object ref = createdAt;
+      java.lang.Object ref = createdAt ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        createdAt= b;
+        createdAt = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -939,7 +939,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      createdAt= value;
+      createdAt = value;
       onChanged();
       return this;
     }
@@ -953,7 +953,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearCreatedAt() {
       
-      createdAt= getDefaultInstance().getCreatedAt();
+      createdAt = getDefaultInstance().getCreatedAt();
       onChanged();
       return this;
     }
@@ -973,12 +973,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      createdAt= value;
+      createdAt = value;
       onChanged();
       return this;
     }
 
-    private long replyCount;
+    private long replyCount ;
     /**
      * <pre>
      * 评论回复数量
@@ -989,7 +989,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public long getReplyCount() {
-      return replyCount;
+      return replyCount ;
     }
     /**
      * <pre>
@@ -1002,7 +1002,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setReplyCount(long value) {
       
-      replyCount= value;
+      replyCount = value;
       onChanged();
       return this;
     }
@@ -1016,14 +1016,14 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearReplyCount() {
       
-      replyCount= 0L;
+      replyCount = 0L;
       onChanged();
       return this;
     }
 
-    private com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser userInfo;
+    private com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser userInfo ;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser, com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser.Builder, com.zhijiejiaoyu.glory_api.short_video.ShortVideoUserOrBuilder> userInfoBuilder;
+        com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser, com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser.Builder, com.zhijiejiaoyu.glory_api.short_video.ShortVideoUserOrBuilder> userInfoBuilder ;
     /**
      * <pre>
      * 评论用户信息
@@ -1033,7 +1033,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the userInfo field is set.
      */
     public boolean hasUserInfo() {
-      return userInfoBuilder!= null || userInfo!= null;
+      return userInfoBuilder != null || userInfo != null;
     }
     /**
      * <pre>
@@ -1044,10 +1044,10 @@ private static final long serialVersionUID = 0L;
      * @return The userInfo.
      */
     public com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser getUserInfo() {
-      if (userInfoBuilder== null) {
-        return userInfo== null ? com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser.getDefaultInstance() : userInfo;
+      if (userInfoBuilder == null) {
+        return userInfo == null ? com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser.getDefaultInstance() : userInfo ;
       } else {
-        return userInfoBuilder.getMessage();
+        return userInfoBuilder .getMessage();
       }
     }
     /**
@@ -1058,14 +1058,14 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.ShortVideoUser user_info = 6;</code>
      */
     public Builder setUserInfo(com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser value) {
-      if (userInfoBuilder== null) {
+      if (userInfoBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        userInfo= value;
+        userInfo = value;
         onChanged();
       } else {
-        userInfoBuilder.setMessage(value);
+        userInfoBuilder .setMessage(value);
       }
 
       return this;
@@ -1079,11 +1079,11 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setUserInfo(
         com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser.Builder builderForValue) {
-      if (userInfoBuilder== null) {
-        userInfo= builderForValue.build();
+      if (userInfoBuilder == null) {
+        userInfo = builderForValue.build();
         onChanged();
       } else {
-        userInfoBuilder.setMessage(builderForValue.build());
+        userInfoBuilder .setMessage(builderForValue.build());
       }
 
       return this;
@@ -1096,16 +1096,16 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.ShortVideoUser user_info = 6;</code>
      */
     public Builder mergeUserInfo(com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser value) {
-      if (userInfoBuilder== null) {
-        if (userInfo!= null) {
-          userInfo=
-            com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser.newBuilder(userInfo).mergeFrom(value).buildPartial();
+      if (userInfoBuilder == null) {
+        if (userInfo != null) {
+          userInfo =
+            com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser.newBuilder(userInfo ).mergeFrom(value).buildPartial();
         } else {
-          userInfo= value;
+          userInfo = value;
         }
         onChanged();
       } else {
-        userInfoBuilder.mergeFrom(value);
+        userInfoBuilder .mergeFrom(value);
       }
 
       return this;
@@ -1118,12 +1118,12 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.ShortVideoUser user_info = 6;</code>
      */
     public Builder clearUserInfo() {
-      if (userInfoBuilder== null) {
-        userInfo= null;
+      if (userInfoBuilder == null) {
+        userInfo = null;
         onChanged();
       } else {
-        userInfo= null;
-        userInfoBuilder= null;
+        userInfo = null;
+        userInfoBuilder = null;
       }
 
       return this;
@@ -1148,11 +1148,11 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.ShortVideoUser user_info = 6;</code>
      */
     public com.zhijiejiaoyu.glory_api.short_video.ShortVideoUserOrBuilder getUserInfoOrBuilder() {
-      if (userInfoBuilder!= null) {
-        return userInfoBuilder.getMessageOrBuilder();
+      if (userInfoBuilder != null) {
+        return userInfoBuilder .getMessageOrBuilder();
       } else {
-        return userInfo== null ?
-            com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser.getDefaultInstance() : userInfo;
+        return userInfo == null ?
+            com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser.getDefaultInstance() : userInfo ;
       }
     }
     /**
@@ -1165,15 +1165,15 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser, com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser.Builder, com.zhijiejiaoyu.glory_api.short_video.ShortVideoUserOrBuilder> 
         getUserInfoFieldBuilder() {
-      if (userInfoBuilder== null) {
-        userInfoBuilder= new com.google.protobuf.SingleFieldBuilderV3<
+      if (userInfoBuilder == null) {
+        userInfoBuilder = new com.google.protobuf.SingleFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser, com.zhijiejiaoyu.glory_api.short_video.ShortVideoUser.Builder, com.zhijiejiaoyu.glory_api.short_video.ShortVideoUserOrBuilder>(
                 getUserInfo(),
                 getParentForChildren(),
                 isClean());
-        userInfo= null;
+        userInfo = null;
       }
-      return userInfoBuilder;
+      return userInfoBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

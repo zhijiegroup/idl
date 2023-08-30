@@ -16,9 +16,9 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private AiResult() {
-    feedback= "";
-    userAttitude= "";
-    createdAt= "";
+    feedback = "";
+    userAttitude = "";
+    createdAt = "";
   }
 
   @java.lang.Override
@@ -53,30 +53,30 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            liveAiFeedbackId= input.readInt64();
+            liveAiFeedbackId = input.readInt64();
             break;
           }
           case 16: {
 
-            roomId= input.readInt64();
+            roomId = input.readInt64();
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            feedback= s;
+            feedback = s;
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            userAttitude= s;
+            userAttitude = s;
             break;
           }
           case 42: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            createdAt= s;
+            createdAt = s;
             break;
           }
           default: {
@@ -112,43 +112,43 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int LIVE_AI_FEEDBACK_ID_FIELD_NUMBER = 1;
-  private long liveAiFeedbackId;
+  private long liveAiFeedbackId ;
   /**
    * <code>int64 live_ai_feedback_id = 1;</code>
    * @return The liveAiFeedbackId.
    */
   @java.lang.Override
   public long getLiveAiFeedbackId() {
-    return liveAiFeedbackId;
+    return liveAiFeedbackId ;
   }
 
   public static final int ROOM_ID_FIELD_NUMBER = 2;
-  private long roomId;
+  private long roomId ;
   /**
    * <code>int64 room_id = 2;</code>
    * @return The roomId.
    */
   @java.lang.Override
   public long getRoomId() {
-    return roomId;
+    return roomId ;
   }
 
   public static final int FEEDBACK_FIELD_NUMBER = 3;
-  private volatile java.lang.Object feedback;
+  private volatile java.lang.Object feedback ;
   /**
    * <code>string feedback = 3;</code>
    * @return The feedback.
    */
   @java.lang.Override
   public java.lang.String getFeedback() {
-    java.lang.Object ref = feedback;
+    java.lang.Object ref = feedback ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      feedback= s;
+      feedback = s;
       return s;
     }
   }
@@ -159,12 +159,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getFeedbackBytes() {
-    java.lang.Object ref = feedback;
+    java.lang.Object ref = feedback ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      feedback= b;
+      feedback = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -172,21 +172,21 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int USER_ATTITUDE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object userAttitude;
+  private volatile java.lang.Object userAttitude ;
   /**
    * <code>string user_attitude = 4;</code>
    * @return The userAttitude.
    */
   @java.lang.Override
   public java.lang.String getUserAttitude() {
-    java.lang.Object ref = userAttitude;
+    java.lang.Object ref = userAttitude ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      userAttitude= s;
+      userAttitude = s;
       return s;
     }
   }
@@ -197,12 +197,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getUserAttitudeBytes() {
-    java.lang.Object ref = userAttitude;
+    java.lang.Object ref = userAttitude ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      userAttitude= b;
+      userAttitude = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -210,21 +210,21 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CREATED_AT_FIELD_NUMBER = 5;
-  private volatile java.lang.Object createdAt;
+  private volatile java.lang.Object createdAt ;
   /**
    * <code>string created_at = 5;</code>
    * @return The createdAt.
    */
   @java.lang.Override
   public java.lang.String getCreatedAt() {
-    java.lang.Object ref = createdAt;
+    java.lang.Object ref = createdAt ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      createdAt= s;
+      createdAt = s;
       return s;
     }
   }
@@ -235,12 +235,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.ByteString
       getCreatedAtBytes() {
-    java.lang.Object ref = createdAt;
+    java.lang.Object ref = createdAt ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      createdAt= b;
+      createdAt = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -261,20 +261,20 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (liveAiFeedbackId!= 0L) {
-      output.writeInt64(1, liveAiFeedbackId);
+    if (liveAiFeedbackId != 0L) {
+      output.writeInt64(1, liveAiFeedbackId );
     }
-    if (roomId!= 0L) {
-      output.writeInt64(2, roomId);
+    if (roomId != 0L) {
+      output.writeInt64(2, roomId );
     }
     if (!getFeedbackBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, feedback);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, feedback );
     }
     if (!getUserAttitudeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, userAttitude);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, userAttitude );
     }
     if (!getCreatedAtBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, createdAt);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, createdAt );
     }
     unknownFields.writeTo(output);
   }
@@ -285,22 +285,22 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (liveAiFeedbackId!= 0L) {
+    if (liveAiFeedbackId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, liveAiFeedbackId);
+        .computeInt64Size(1, liveAiFeedbackId );
     }
-    if (roomId!= 0L) {
+    if (roomId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, roomId);
+        .computeInt64Size(2, roomId );
     }
     if (!getFeedbackBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, feedback);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, feedback );
     }
     if (!getUserAttitudeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, userAttitude);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, userAttitude );
     }
     if (!getCreatedAtBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, createdAt);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, createdAt );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -483,15 +483,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      liveAiFeedbackId= 0L;
+      liveAiFeedbackId = 0L;
 
-      roomId= 0L;
+      roomId = 0L;
 
-      feedback= "";
+      feedback = "";
 
-      userAttitude= "";
+      userAttitude = "";
 
-      createdAt= "";
+      createdAt = "";
 
       return this;
     }
@@ -519,11 +519,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.live.AiResult buildPartial() {
       com.zhijiejiaoyu.glory_api.live.AiResult result = new com.zhijiejiaoyu.glory_api.live.AiResult(this);
-      result.liveAiFeedbackId= liveAiFeedbackId;
-      result.roomId= roomId;
-      result.feedback= feedback;
-      result.userAttitude= userAttitude;
-      result.createdAt= createdAt;
+      result.liveAiFeedbackId = liveAiFeedbackId ;
+      result.roomId = roomId ;
+      result.feedback = feedback ;
+      result.userAttitude = userAttitude ;
+      result.createdAt = createdAt ;
       onBuilt();
       return result;
     }
@@ -579,15 +579,15 @@ private static final long serialVersionUID = 0L;
         setRoomId(other.getRoomId());
       }
       if (!other.getFeedback().isEmpty()) {
-        feedback= other.feedback;
+        feedback = other.feedback ;
         onChanged();
       }
       if (!other.getUserAttitude().isEmpty()) {
-        userAttitude= other.userAttitude;
+        userAttitude = other.userAttitude ;
         onChanged();
       }
       if (!other.getCreatedAt().isEmpty()) {
-        createdAt= other.createdAt;
+        createdAt = other.createdAt ;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -619,14 +619,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long liveAiFeedbackId;
+    private long liveAiFeedbackId ;
     /**
      * <code>int64 live_ai_feedback_id = 1;</code>
      * @return The liveAiFeedbackId.
      */
     @java.lang.Override
     public long getLiveAiFeedbackId() {
-      return liveAiFeedbackId;
+      return liveAiFeedbackId ;
     }
     /**
      * <code>int64 live_ai_feedback_id = 1;</code>
@@ -635,7 +635,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setLiveAiFeedbackId(long value) {
       
-      liveAiFeedbackId= value;
+      liveAiFeedbackId = value;
       onChanged();
       return this;
     }
@@ -645,19 +645,19 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearLiveAiFeedbackId() {
       
-      liveAiFeedbackId= 0L;
+      liveAiFeedbackId = 0L;
       onChanged();
       return this;
     }
 
-    private long roomId;
+    private long roomId ;
     /**
      * <code>int64 room_id = 2;</code>
      * @return The roomId.
      */
     @java.lang.Override
     public long getRoomId() {
-      return roomId;
+      return roomId ;
     }
     /**
      * <code>int64 room_id = 2;</code>
@@ -666,7 +666,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setRoomId(long value) {
       
-      roomId= value;
+      roomId = value;
       onChanged();
       return this;
     }
@@ -676,23 +676,23 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearRoomId() {
       
-      roomId= 0L;
+      roomId = 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object feedback= "";
+    private java.lang.Object feedback = "";
     /**
      * <code>string feedback = 3;</code>
      * @return The feedback.
      */
     public java.lang.String getFeedback() {
-      java.lang.Object ref = feedback;
+      java.lang.Object ref = feedback ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        feedback= s;
+        feedback = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -704,12 +704,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getFeedbackBytes() {
-      java.lang.Object ref = feedback;
+      java.lang.Object ref = feedback ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        feedback= b;
+        feedback = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -726,7 +726,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      feedback= value;
+      feedback = value;
       onChanged();
       return this;
     }
@@ -736,7 +736,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearFeedback() {
       
-      feedback= getDefaultInstance().getFeedback();
+      feedback = getDefaultInstance().getFeedback();
       onChanged();
       return this;
     }
@@ -752,23 +752,23 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      feedback= value;
+      feedback = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object userAttitude= "";
+    private java.lang.Object userAttitude = "";
     /**
      * <code>string user_attitude = 4;</code>
      * @return The userAttitude.
      */
     public java.lang.String getUserAttitude() {
-      java.lang.Object ref = userAttitude;
+      java.lang.Object ref = userAttitude ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        userAttitude= s;
+        userAttitude = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -780,12 +780,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getUserAttitudeBytes() {
-      java.lang.Object ref = userAttitude;
+      java.lang.Object ref = userAttitude ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        userAttitude= b;
+        userAttitude = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -802,7 +802,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      userAttitude= value;
+      userAttitude = value;
       onChanged();
       return this;
     }
@@ -812,7 +812,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearUserAttitude() {
       
-      userAttitude= getDefaultInstance().getUserAttitude();
+      userAttitude = getDefaultInstance().getUserAttitude();
       onChanged();
       return this;
     }
@@ -828,23 +828,23 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      userAttitude= value;
+      userAttitude = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object createdAt= "";
+    private java.lang.Object createdAt = "";
     /**
      * <code>string created_at = 5;</code>
      * @return The createdAt.
      */
     public java.lang.String getCreatedAt() {
-      java.lang.Object ref = createdAt;
+      java.lang.Object ref = createdAt ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        createdAt= s;
+        createdAt = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -856,12 +856,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getCreatedAtBytes() {
-      java.lang.Object ref = createdAt;
+      java.lang.Object ref = createdAt ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        createdAt= b;
+        createdAt = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -878,7 +878,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      createdAt= value;
+      createdAt = value;
       onChanged();
       return this;
     }
@@ -888,7 +888,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearCreatedAt() {
       
-      createdAt= getDefaultInstance().getCreatedAt();
+      createdAt = getDefaultInstance().getCreatedAt();
       onChanged();
       return this;
     }
@@ -904,7 +904,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      createdAt= value;
+      createdAt = value;
       onChanged();
       return this;
     }
