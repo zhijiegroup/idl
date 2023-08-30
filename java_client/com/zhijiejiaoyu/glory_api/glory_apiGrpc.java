@@ -3456,6 +3456,130 @@ public final class glory_apiGrpc {
     return getListTenantOrgMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.admin.ListAdminUserRequest,
+      com.zhijiejiaoyu.glory_api.admin.ListAdminUserResponse> getListAdminUserMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAdminUser",
+      requestType = com.zhijiejiaoyu.glory_api.admin.ListAdminUserRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.admin.ListAdminUserResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.admin.ListAdminUserRequest,
+      com.zhijiejiaoyu.glory_api.admin.ListAdminUserResponse> getListAdminUserMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.admin.ListAdminUserRequest, com.zhijiejiaoyu.glory_api.admin.ListAdminUserResponse> getListAdminUserMethod;
+    if ((getListAdminUserMethod = glory_apiGrpc.getListAdminUserMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListAdminUserMethod = glory_apiGrpc.getListAdminUserMethod) == null) {
+          glory_apiGrpc.getListAdminUserMethod = getListAdminUserMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.admin.ListAdminUserRequest, com.zhijiejiaoyu.glory_api.admin.ListAdminUserResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListAdminUser"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.admin.ListAdminUserRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.admin.ListAdminUserResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListAdminUser"))
+              .build();
+        }
+      }
+    }
+    return getListAdminUserMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.admin.CreateAdminUserRequest,
+      com.zhijiejiaoyu.glory_api.admin.CreateAdminUserResponse> getCreateAdminUserMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateAdminUser",
+      requestType = com.zhijiejiaoyu.glory_api.admin.CreateAdminUserRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.admin.CreateAdminUserResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.admin.CreateAdminUserRequest,
+      com.zhijiejiaoyu.glory_api.admin.CreateAdminUserResponse> getCreateAdminUserMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.admin.CreateAdminUserRequest, com.zhijiejiaoyu.glory_api.admin.CreateAdminUserResponse> getCreateAdminUserMethod;
+    if ((getCreateAdminUserMethod = glory_apiGrpc.getCreateAdminUserMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCreateAdminUserMethod = glory_apiGrpc.getCreateAdminUserMethod) == null) {
+          glory_apiGrpc.getCreateAdminUserMethod = getCreateAdminUserMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.admin.CreateAdminUserRequest, com.zhijiejiaoyu.glory_api.admin.CreateAdminUserResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateAdminUser"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.admin.CreateAdminUserRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.admin.CreateAdminUserResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CreateAdminUser"))
+              .build();
+        }
+      }
+    }
+    return getCreateAdminUserMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.admin.UpdateAdminUserRequest,
+      com.zhijiejiaoyu.glory_api.admin.UpdateAdminUserResponse> getUpdateAdminUserMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateAdminUser",
+      requestType = com.zhijiejiaoyu.glory_api.admin.UpdateAdminUserRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.admin.UpdateAdminUserResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.admin.UpdateAdminUserRequest,
+      com.zhijiejiaoyu.glory_api.admin.UpdateAdminUserResponse> getUpdateAdminUserMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.admin.UpdateAdminUserRequest, com.zhijiejiaoyu.glory_api.admin.UpdateAdminUserResponse> getUpdateAdminUserMethod;
+    if ((getUpdateAdminUserMethod = glory_apiGrpc.getUpdateAdminUserMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getUpdateAdminUserMethod = glory_apiGrpc.getUpdateAdminUserMethod) == null) {
+          glory_apiGrpc.getUpdateAdminUserMethod = getUpdateAdminUserMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.admin.UpdateAdminUserRequest, com.zhijiejiaoyu.glory_api.admin.UpdateAdminUserResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateAdminUser"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.admin.UpdateAdminUserRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.admin.UpdateAdminUserResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("UpdateAdminUser"))
+              .build();
+        }
+      }
+    }
+    return getUpdateAdminUserMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.admin.DeleteAdminUserRequest,
+      com.zhijiejiaoyu.glory_api.admin.DeleteAdminUserResponse> getDeleteAdminUserMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteAdminUser",
+      requestType = com.zhijiejiaoyu.glory_api.admin.DeleteAdminUserRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.admin.DeleteAdminUserResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.admin.DeleteAdminUserRequest,
+      com.zhijiejiaoyu.glory_api.admin.DeleteAdminUserResponse> getDeleteAdminUserMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.admin.DeleteAdminUserRequest, com.zhijiejiaoyu.glory_api.admin.DeleteAdminUserResponse> getDeleteAdminUserMethod;
+    if ((getDeleteAdminUserMethod = glory_apiGrpc.getDeleteAdminUserMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getDeleteAdminUserMethod = glory_apiGrpc.getDeleteAdminUserMethod) == null) {
+          glory_apiGrpc.getDeleteAdminUserMethod = getDeleteAdminUserMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.admin.DeleteAdminUserRequest, com.zhijiejiaoyu.glory_api.admin.DeleteAdminUserResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteAdminUser"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.admin.DeleteAdminUserRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.admin.DeleteAdminUserResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("DeleteAdminUser"))
+              .build();
+        }
+      }
+    }
+    return getDeleteAdminUserMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.wxpay.PrepayRequest,
       com.zhijiejiaoyu.glory_api.wxpay.PrepayResponse> getWxPrepayMethod;
 
@@ -7379,6 +7503,9 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     *admin_config
+     * </pre>
      */
     default void createConfig(com.zhijiejiaoyu.glory_api.admin.CreateConfigRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.admin.CreateConfigResponse> responseObserver) {
@@ -7407,6 +7534,9 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     *admin_other
+     * </pre>
      */
     default void getSTS(com.zhijiejiaoyu.glory_api.admin.GetSTSRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.admin.GetSTSResponse> responseObserver) {
@@ -7418,6 +7548,37 @@ public final class glory_apiGrpc {
     default void listTenantOrg(com.zhijiejiaoyu.glory_api.admin.ListTenantOrgRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.admin.ListTenantOrgResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListTenantOrgMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     *admin_user
+     * </pre>
+     */
+    default void listAdminUser(com.zhijiejiaoyu.glory_api.admin.ListAdminUserRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.admin.ListAdminUserResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListAdminUserMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void createAdminUser(com.zhijiejiaoyu.glory_api.admin.CreateAdminUserRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.admin.CreateAdminUserResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateAdminUserMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updateAdminUser(com.zhijiejiaoyu.glory_api.admin.UpdateAdminUserRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.admin.UpdateAdminUserResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateAdminUserMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void deleteAdminUser(com.zhijiejiaoyu.glory_api.admin.DeleteAdminUserRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.admin.DeleteAdminUserResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteAdminUserMethod(), responseObserver);
     }
 
     /**
@@ -9150,6 +9311,9 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     *admin_config
+     * </pre>
      */
     public void createConfig(com.zhijiejiaoyu.glory_api.admin.CreateConfigRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.admin.CreateConfigResponse> responseObserver) {
@@ -9182,6 +9346,9 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     *admin_other
+     * </pre>
      */
     public void getSTS(com.zhijiejiaoyu.glory_api.admin.GetSTSRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.admin.GetSTSResponse> responseObserver) {
@@ -9195,6 +9362,41 @@ public final class glory_apiGrpc {
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.admin.ListTenantOrgResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListTenantOrgMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     *admin_user
+     * </pre>
+     */
+    public void listAdminUser(com.zhijiejiaoyu.glory_api.admin.ListAdminUserRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.admin.ListAdminUserResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListAdminUserMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void createAdminUser(com.zhijiejiaoyu.glory_api.admin.CreateAdminUserRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.admin.CreateAdminUserResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateAdminUserMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateAdminUser(com.zhijiejiaoyu.glory_api.admin.UpdateAdminUserRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.admin.UpdateAdminUserResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateAdminUserMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deleteAdminUser(com.zhijiejiaoyu.glory_api.admin.DeleteAdminUserRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.admin.DeleteAdminUserResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteAdminUserMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -10910,6 +11112,9 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     *admin_config
+     * </pre>
      */
     public com.zhijiejiaoyu.glory_api.admin.CreateConfigResponse createConfig(com.zhijiejiaoyu.glory_api.admin.CreateConfigRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -10938,6 +11143,9 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     *admin_other
+     * </pre>
      */
     public com.zhijiejiaoyu.glory_api.admin.GetSTSResponse getSTS(com.zhijiejiaoyu.glory_api.admin.GetSTSRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -10949,6 +11157,37 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.admin.ListTenantOrgResponse listTenantOrg(com.zhijiejiaoyu.glory_api.admin.ListTenantOrgRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListTenantOrgMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     *admin_user
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.admin.ListAdminUserResponse listAdminUser(com.zhijiejiaoyu.glory_api.admin.ListAdminUserRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAdminUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.admin.CreateAdminUserResponse createAdminUser(com.zhijiejiaoyu.glory_api.admin.CreateAdminUserRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAdminUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.admin.UpdateAdminUserResponse updateAdminUser(com.zhijiejiaoyu.glory_api.admin.UpdateAdminUserRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAdminUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.admin.DeleteAdminUserResponse deleteAdminUser(com.zhijiejiaoyu.glory_api.admin.DeleteAdminUserRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAdminUserMethod(), getCallOptions(), request);
     }
 
     /**
@@ -12670,6 +12909,9 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     *admin_config
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.admin.CreateConfigResponse> createConfig(
         com.zhijiejiaoyu.glory_api.admin.CreateConfigRequest request) {
@@ -12702,6 +12944,9 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     *admin_other
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.admin.GetSTSResponse> getSTS(
         com.zhijiejiaoyu.glory_api.admin.GetSTSRequest request) {
@@ -12715,6 +12960,41 @@ public final class glory_apiGrpc {
         com.zhijiejiaoyu.glory_api.admin.ListTenantOrgRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListTenantOrgMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     *admin_user
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.admin.ListAdminUserResponse> listAdminUser(
+        com.zhijiejiaoyu.glory_api.admin.ListAdminUserRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListAdminUserMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.admin.CreateAdminUserResponse> createAdminUser(
+        com.zhijiejiaoyu.glory_api.admin.CreateAdminUserRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateAdminUserMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.admin.UpdateAdminUserResponse> updateAdminUser(
+        com.zhijiejiaoyu.glory_api.admin.UpdateAdminUserRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateAdminUserMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.admin.DeleteAdminUserResponse> deleteAdminUser(
+        com.zhijiejiaoyu.glory_api.admin.DeleteAdminUserRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteAdminUserMethod(), getCallOptions()), request);
     }
 
     /**
@@ -13719,105 +13999,109 @@ public final class glory_apiGrpc {
   private static final int METHODID_GET_CONFIG = 108;
   private static final int METHODID_GET_STS = 109;
   private static final int METHODID_LIST_TENANT_ORG = 110;
-  private static final int METHODID_WX_PREPAY = 111;
-  private static final int METHODID_CLOSE_ORDER = 112;
-  private static final int METHODID_QUERY_ORDER_BY_ID = 113;
-  private static final int METHODID_QUERY_ORDER_BY_OUT_TRADE = 114;
-  private static final int METHODID_ADD_VCURRENCY = 115;
-  private static final int METHODID_RECHARGE_CURRENCY = 116;
-  private static final int METHODID_RECHARGE_CURRENCY_IN_BATCHES = 117;
-  private static final int METHODID_DELETE_VCURRENCY = 118;
-  private static final int METHODID_UPDATE_VCURRENCY = 119;
-  private static final int METHODID_GET_VCURRENCY = 120;
-  private static final int METHODID_LIST_VCURRENCY = 121;
-  private static final int METHODID_ADD_ACCOUNT_OPERATION = 122;
-  private static final int METHODID_GET_ACCOUNT_OPERATION = 123;
-  private static final int METHODID_LIST_ACCOUNT_OPERATION = 124;
-  private static final int METHODID_CREATE_ROOM = 125;
-  private static final int METHODID_GET_ROOM = 126;
-  private static final int METHODID_UPDATE_ROOM = 127;
-  private static final int METHODID_LIST_ROOM = 128;
-  private static final int METHODID_DELETE_ROOM = 129;
-  private static final int METHODID_LIST_FINISHED_ROOM = 130;
-  private static final int METHODID_RECORD = 131;
-  private static final int METHODID_CREATE_LIVE_USER_TOKEN = 132;
-  private static final int METHODID_USER_ENTER_ROOM = 133;
-  private static final int METHODID_USER_EXIT_ROOM = 134;
-  private static final int METHODID_LIST_ACTIVE_ROOM_USER = 135;
-  private static final int METHODID_CREATE_LIVE_PLAN = 136;
-  private static final int METHODID_GET_LIVE_PLAN = 137;
-  private static final int METHODID_UPDATE_LIVE_PLAN = 138;
-  private static final int METHODID_LIST_LIVE_PLAN = 139;
-  private static final int METHODID_DELETE_LIVE_PLAN = 140;
-  private static final int METHODID_CREATE_LIVE_PLAN_PRODUCT = 141;
-  private static final int METHODID_UPDATE_LIVE_PLAN_PRODUCT = 142;
-  private static final int METHODID_LIST_LIVE_PLAN_PRODUCT = 143;
-  private static final int METHODID_DELETE_LIVE_PLAN_PRODUCT = 144;
-  private static final int METHODID_LOAD_LIVE_PLAN_PRODUCT = 145;
-  private static final int METHODID_UPDATE_LIVE_PRODUCT_STATUS = 146;
-  private static final int METHODID_LIST_LIVE_PRODUCT_STATUS = 147;
-  private static final int METHODID_DELETE_LIVE_PRODUCT_STATUS = 148;
-  private static final int METHODID_CREATE_LIVE_PRODUCT_STATUS = 149;
-  private static final int METHODID_GET_LIVING_PRODUCT_STATUS = 150;
-  private static final int METHODID_UPDATE_LIVE_PRODUCT_INTRODUCT_STATUS = 151;
-  private static final int METHODID_CREATE_LIVE_TEXT = 152;
-  private static final int METHODID_UPDATE_LIVE_TEXT = 153;
-  private static final int METHODID_LIST_LIVE_TEXT = 154;
-  private static final int METHODID_GET_LIVE_TEXT = 155;
-  private static final int METHODID_DELETE_LIVE_TEXTS = 156;
-  private static final int METHODID_GET_LIVE_CHART_DATA = 157;
-  private static final int METHODID_GET_EVALUATE_SELECTOR = 158;
-  private static final int METHODID_LIST_PERSONAL_EVALUATE = 159;
-  private static final int METHODID_GET_EVALUATE_DETAIL = 160;
-  private static final int METHODID_SUBMIT_EVALUATE = 161;
-  private static final int METHODID_LIST_UNEVALUATED_ROOM = 162;
-  private static final int METHODID_LIST_STUDENT_EVALUATIONS = 163;
-  private static final int METHODID_IGNORE_EVALUATION = 164;
-  private static final int METHODID_GET_RANK = 165;
-  private static final int METHODID_RECORD_LIVE_CALLBACK = 166;
-  private static final int METHODID_VIDEO_TO_TEXT_CALLBACK = 167;
-  private static final int METHODID_REGENERATION_AI_FEEDBACK = 168;
-  private static final int METHODID_SUBMIT_USER_ATTITUDE_FOR_AI_RESULT = 169;
-  private static final int METHODID_CREATE_TENANT = 170;
-  private static final int METHODID_GET_TENANT = 171;
-  private static final int METHODID_UPDATE_TENANT = 172;
-  private static final int METHODID_DELETE_TENANT = 173;
-  private static final int METHODID_LIST_TENANT = 174;
-  private static final int METHODID_GET_TENANT_ORG = 175;
-  private static final int METHODID_CREATE_TENANT_DEPT = 176;
-  private static final int METHODID_UPDATE_TENANT_DEPT = 177;
-  private static final int METHODID_DELETE_TENANT_DEPT = 178;
-  private static final int METHODID_GET_TENANT_DEPT = 179;
-  private static final int METHODID_GET_TENANT_DEPT_TYPE = 180;
-  private static final int METHODID_CREATE_TENANT_USER = 181;
-  private static final int METHODID_DELETE_TENANT_USER = 182;
-  private static final int METHODID_UPDATE_TENANT_USER = 183;
-  private static final int METHODID_GET_TENANT_USER = 184;
-  private static final int METHODID_LIST_TENANT_USER = 185;
-  private static final int METHODID_UPDATE_TENANT_USER_PASSWORD = 186;
-  private static final int METHODID_UPDATE_TENANT_CONFIG = 187;
-  private static final int METHODID_LIST_TENANT_CONFIG = 188;
-  private static final int METHODID_CREATE_SHORT_VIDEO = 189;
-  private static final int METHODID_STAGE_SHORT_VIDEO = 190;
-  private static final int METHODID_LIST_MY_SHORT_VIDEO = 191;
-  private static final int METHODID_LIST_MY_STAGE_VIDEO = 192;
-  private static final int METHODID_LIST_MY_LIKE_VIDEO = 193;
-  private static final int METHODID_LIST_MY_FAVORITE_VIDEO = 194;
-  private static final int METHODID_GET_SHORT_VIDEO = 195;
-  private static final int METHODID_UPDATE_SHORT_VIDEO = 196;
-  private static final int METHODID_DELETE_SHORT_VIDEO = 197;
-  private static final int METHODID_GET_STAGE_VIDEO = 198;
-  private static final int METHODID_DELETE_STAGE_VIDEO = 199;
-  private static final int METHODID_UPDATE_STAGE_VIDEO = 200;
-  private static final int METHODID_MANAGEMENT_LIST_SHORT_VIDEO = 201;
-  private static final int METHODID_MANAGEMENT_CENSOR_SHORT_VIDEO = 202;
-  private static final int METHODID_MANAGEMENT_DELETE_SHORT_VIDEO = 203;
-  private static final int METHODID_LIST_SHORT_VIDEO = 204;
-  private static final int METHODID_LIKE_SHORT_VIDEO = 205;
-  private static final int METHODID_FAVORITE_SHORT_VIDEO = 206;
-  private static final int METHODID_CREATE_SHORT_VIDEO_COMMENT = 207;
-  private static final int METHODID_DELETE_SHORT_VIDEO_COMMENT = 208;
-  private static final int METHODID_LIST_SHORT_VIDEO_COMMENT = 209;
+  private static final int METHODID_LIST_ADMIN_USER = 111;
+  private static final int METHODID_CREATE_ADMIN_USER = 112;
+  private static final int METHODID_UPDATE_ADMIN_USER = 113;
+  private static final int METHODID_DELETE_ADMIN_USER = 114;
+  private static final int METHODID_WX_PREPAY = 115;
+  private static final int METHODID_CLOSE_ORDER = 116;
+  private static final int METHODID_QUERY_ORDER_BY_ID = 117;
+  private static final int METHODID_QUERY_ORDER_BY_OUT_TRADE = 118;
+  private static final int METHODID_ADD_VCURRENCY = 119;
+  private static final int METHODID_RECHARGE_CURRENCY = 120;
+  private static final int METHODID_RECHARGE_CURRENCY_IN_BATCHES = 121;
+  private static final int METHODID_DELETE_VCURRENCY = 122;
+  private static final int METHODID_UPDATE_VCURRENCY = 123;
+  private static final int METHODID_GET_VCURRENCY = 124;
+  private static final int METHODID_LIST_VCURRENCY = 125;
+  private static final int METHODID_ADD_ACCOUNT_OPERATION = 126;
+  private static final int METHODID_GET_ACCOUNT_OPERATION = 127;
+  private static final int METHODID_LIST_ACCOUNT_OPERATION = 128;
+  private static final int METHODID_CREATE_ROOM = 129;
+  private static final int METHODID_GET_ROOM = 130;
+  private static final int METHODID_UPDATE_ROOM = 131;
+  private static final int METHODID_LIST_ROOM = 132;
+  private static final int METHODID_DELETE_ROOM = 133;
+  private static final int METHODID_LIST_FINISHED_ROOM = 134;
+  private static final int METHODID_RECORD = 135;
+  private static final int METHODID_CREATE_LIVE_USER_TOKEN = 136;
+  private static final int METHODID_USER_ENTER_ROOM = 137;
+  private static final int METHODID_USER_EXIT_ROOM = 138;
+  private static final int METHODID_LIST_ACTIVE_ROOM_USER = 139;
+  private static final int METHODID_CREATE_LIVE_PLAN = 140;
+  private static final int METHODID_GET_LIVE_PLAN = 141;
+  private static final int METHODID_UPDATE_LIVE_PLAN = 142;
+  private static final int METHODID_LIST_LIVE_PLAN = 143;
+  private static final int METHODID_DELETE_LIVE_PLAN = 144;
+  private static final int METHODID_CREATE_LIVE_PLAN_PRODUCT = 145;
+  private static final int METHODID_UPDATE_LIVE_PLAN_PRODUCT = 146;
+  private static final int METHODID_LIST_LIVE_PLAN_PRODUCT = 147;
+  private static final int METHODID_DELETE_LIVE_PLAN_PRODUCT = 148;
+  private static final int METHODID_LOAD_LIVE_PLAN_PRODUCT = 149;
+  private static final int METHODID_UPDATE_LIVE_PRODUCT_STATUS = 150;
+  private static final int METHODID_LIST_LIVE_PRODUCT_STATUS = 151;
+  private static final int METHODID_DELETE_LIVE_PRODUCT_STATUS = 152;
+  private static final int METHODID_CREATE_LIVE_PRODUCT_STATUS = 153;
+  private static final int METHODID_GET_LIVING_PRODUCT_STATUS = 154;
+  private static final int METHODID_UPDATE_LIVE_PRODUCT_INTRODUCT_STATUS = 155;
+  private static final int METHODID_CREATE_LIVE_TEXT = 156;
+  private static final int METHODID_UPDATE_LIVE_TEXT = 157;
+  private static final int METHODID_LIST_LIVE_TEXT = 158;
+  private static final int METHODID_GET_LIVE_TEXT = 159;
+  private static final int METHODID_DELETE_LIVE_TEXTS = 160;
+  private static final int METHODID_GET_LIVE_CHART_DATA = 161;
+  private static final int METHODID_GET_EVALUATE_SELECTOR = 162;
+  private static final int METHODID_LIST_PERSONAL_EVALUATE = 163;
+  private static final int METHODID_GET_EVALUATE_DETAIL = 164;
+  private static final int METHODID_SUBMIT_EVALUATE = 165;
+  private static final int METHODID_LIST_UNEVALUATED_ROOM = 166;
+  private static final int METHODID_LIST_STUDENT_EVALUATIONS = 167;
+  private static final int METHODID_IGNORE_EVALUATION = 168;
+  private static final int METHODID_GET_RANK = 169;
+  private static final int METHODID_RECORD_LIVE_CALLBACK = 170;
+  private static final int METHODID_VIDEO_TO_TEXT_CALLBACK = 171;
+  private static final int METHODID_REGENERATION_AI_FEEDBACK = 172;
+  private static final int METHODID_SUBMIT_USER_ATTITUDE_FOR_AI_RESULT = 173;
+  private static final int METHODID_CREATE_TENANT = 174;
+  private static final int METHODID_GET_TENANT = 175;
+  private static final int METHODID_UPDATE_TENANT = 176;
+  private static final int METHODID_DELETE_TENANT = 177;
+  private static final int METHODID_LIST_TENANT = 178;
+  private static final int METHODID_GET_TENANT_ORG = 179;
+  private static final int METHODID_CREATE_TENANT_DEPT = 180;
+  private static final int METHODID_UPDATE_TENANT_DEPT = 181;
+  private static final int METHODID_DELETE_TENANT_DEPT = 182;
+  private static final int METHODID_GET_TENANT_DEPT = 183;
+  private static final int METHODID_GET_TENANT_DEPT_TYPE = 184;
+  private static final int METHODID_CREATE_TENANT_USER = 185;
+  private static final int METHODID_DELETE_TENANT_USER = 186;
+  private static final int METHODID_UPDATE_TENANT_USER = 187;
+  private static final int METHODID_GET_TENANT_USER = 188;
+  private static final int METHODID_LIST_TENANT_USER = 189;
+  private static final int METHODID_UPDATE_TENANT_USER_PASSWORD = 190;
+  private static final int METHODID_UPDATE_TENANT_CONFIG = 191;
+  private static final int METHODID_LIST_TENANT_CONFIG = 192;
+  private static final int METHODID_CREATE_SHORT_VIDEO = 193;
+  private static final int METHODID_STAGE_SHORT_VIDEO = 194;
+  private static final int METHODID_LIST_MY_SHORT_VIDEO = 195;
+  private static final int METHODID_LIST_MY_STAGE_VIDEO = 196;
+  private static final int METHODID_LIST_MY_LIKE_VIDEO = 197;
+  private static final int METHODID_LIST_MY_FAVORITE_VIDEO = 198;
+  private static final int METHODID_GET_SHORT_VIDEO = 199;
+  private static final int METHODID_UPDATE_SHORT_VIDEO = 200;
+  private static final int METHODID_DELETE_SHORT_VIDEO = 201;
+  private static final int METHODID_GET_STAGE_VIDEO = 202;
+  private static final int METHODID_DELETE_STAGE_VIDEO = 203;
+  private static final int METHODID_UPDATE_STAGE_VIDEO = 204;
+  private static final int METHODID_MANAGEMENT_LIST_SHORT_VIDEO = 205;
+  private static final int METHODID_MANAGEMENT_CENSOR_SHORT_VIDEO = 206;
+  private static final int METHODID_MANAGEMENT_DELETE_SHORT_VIDEO = 207;
+  private static final int METHODID_LIST_SHORT_VIDEO = 208;
+  private static final int METHODID_LIKE_SHORT_VIDEO = 209;
+  private static final int METHODID_FAVORITE_SHORT_VIDEO = 210;
+  private static final int METHODID_CREATE_SHORT_VIDEO_COMMENT = 211;
+  private static final int METHODID_DELETE_SHORT_VIDEO_COMMENT = 212;
+  private static final int METHODID_LIST_SHORT_VIDEO_COMMENT = 213;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -14279,6 +14563,22 @@ public final class glory_apiGrpc {
         case METHODID_LIST_TENANT_ORG:
           serviceImpl.listTenantOrg((com.zhijiejiaoyu.glory_api.admin.ListTenantOrgRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.admin.ListTenantOrgResponse>) responseObserver);
+          break;
+        case METHODID_LIST_ADMIN_USER:
+          serviceImpl.listAdminUser((com.zhijiejiaoyu.glory_api.admin.ListAdminUserRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.admin.ListAdminUserResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_ADMIN_USER:
+          serviceImpl.createAdminUser((com.zhijiejiaoyu.glory_api.admin.CreateAdminUserRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.admin.CreateAdminUserResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_ADMIN_USER:
+          serviceImpl.updateAdminUser((com.zhijiejiaoyu.glory_api.admin.UpdateAdminUserRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.admin.UpdateAdminUserResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_ADMIN_USER:
+          serviceImpl.deleteAdminUser((com.zhijiejiaoyu.glory_api.admin.DeleteAdminUserRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.admin.DeleteAdminUserResponse>) responseObserver);
           break;
         case METHODID_WX_PREPAY:
           serviceImpl.wxPrepay((com.zhijiejiaoyu.glory_api.wxpay.PrepayRequest) request,
@@ -15472,6 +15772,34 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.admin.ListTenantOrgResponse>(
                 service, METHODID_LIST_TENANT_ORG)))
         .addMethod(
+          getListAdminUserMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.admin.ListAdminUserRequest,
+              com.zhijiejiaoyu.glory_api.admin.ListAdminUserResponse>(
+                service, METHODID_LIST_ADMIN_USER)))
+        .addMethod(
+          getCreateAdminUserMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.admin.CreateAdminUserRequest,
+              com.zhijiejiaoyu.glory_api.admin.CreateAdminUserResponse>(
+                service, METHODID_CREATE_ADMIN_USER)))
+        .addMethod(
+          getUpdateAdminUserMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.admin.UpdateAdminUserRequest,
+              com.zhijiejiaoyu.glory_api.admin.UpdateAdminUserResponse>(
+                service, METHODID_UPDATE_ADMIN_USER)))
+        .addMethod(
+          getDeleteAdminUserMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.admin.DeleteAdminUserRequest,
+              com.zhijiejiaoyu.glory_api.admin.DeleteAdminUserResponse>(
+                service, METHODID_DELETE_ADMIN_USER)))
+        .addMethod(
           getWxPrepayMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -16323,6 +16651,10 @@ public final class glory_apiGrpc {
               .addMethod(getGetConfigMethod())
               .addMethod(getGetSTSMethod())
               .addMethod(getListTenantOrgMethod())
+              .addMethod(getListAdminUserMethod())
+              .addMethod(getCreateAdminUserMethod())
+              .addMethod(getUpdateAdminUserMethod())
+              .addMethod(getDeleteAdminUserMethod())
               .addMethod(getWxPrepayMethod())
               .addMethod(getCloseOrderMethod())
               .addMethod(getQueryOrderByIdMethod())

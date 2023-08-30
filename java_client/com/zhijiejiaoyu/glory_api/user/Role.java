@@ -69,7 +69,12 @@ private static final long serialVersionUID = 0L;
             description = s;
             break;
           }
-          case 50: {
+          case 48: {
+
+            readonly = input.readBool();
+            break;
+          }
+          case 58: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               rolePermission = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.RolePermission>();
               mutable_bitField0_ |= 0x00000001;
@@ -210,17 +215,28 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int ROLE_PERMISSION_FIELD_NUMBER = 6;
+  public static final int READONLY_FIELD_NUMBER = 6;
+  private boolean readonly;
+  /**
+   * <code>bool readonly = 6;</code>
+   * @return The readonly.
+   */
+  @java.lang.Override
+  public boolean getReadonly() {
+    return readonly;
+  }
+
+  public static final int ROLE_PERMISSION_FIELD_NUMBER = 7;
   private java.util.List<com.zhijiejiaoyu.glory_api.user.RolePermission> rolePermission;
   /**
-   * <code>repeated .glory_api.RolePermission role_permission = 6;</code>
+   * <code>repeated .glory_api.RolePermission role_permission = 7;</code>
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.user.RolePermission> getRolePermissionList() {
     return rolePermission;
   }
   /**
-   * <code>repeated .glory_api.RolePermission role_permission = 6;</code>
+   * <code>repeated .glory_api.RolePermission role_permission = 7;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.user.RolePermissionOrBuilder> 
@@ -228,21 +244,21 @@ private static final long serialVersionUID = 0L;
     return rolePermission;
   }
   /**
-   * <code>repeated .glory_api.RolePermission role_permission = 6;</code>
+   * <code>repeated .glory_api.RolePermission role_permission = 7;</code>
    */
   @java.lang.Override
   public int getRolePermissionCount() {
     return rolePermission.size();
   }
   /**
-   * <code>repeated .glory_api.RolePermission role_permission = 6;</code>
+   * <code>repeated .glory_api.RolePermission role_permission = 7;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.user.RolePermission getRolePermission(int index) {
     return rolePermission.get(index);
   }
   /**
-   * <code>repeated .glory_api.RolePermission role_permission = 6;</code>
+   * <code>repeated .glory_api.RolePermission role_permission = 7;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.user.RolePermissionOrBuilder getRolePermissionOrBuilder(
@@ -273,8 +289,11 @@ private static final long serialVersionUID = 0L;
     if (!getDescriptionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, description);
     }
+    if (readonly != false) {
+      output.writeBool(6, readonly);
+    }
     for (int i = 0; i < rolePermission.size(); i++) {
-      output.writeMessage(6, rolePermission.get(i));
+      output.writeMessage(7, rolePermission.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -295,9 +314,13 @@ private static final long serialVersionUID = 0L;
     if (!getDescriptionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, description);
     }
+    if (readonly != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(6, readonly);
+    }
     for (int i = 0; i < rolePermission.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, rolePermission.get(i));
+        .computeMessageSize(7, rolePermission.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -320,6 +343,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getRoleName())) return false;
     if (!getDescription()
         .equals(other.getDescription())) return false;
+    if (getReadonly()
+        != other.getReadonly()) return false;
     if (!getRolePermissionList()
         .equals(other.getRolePermissionList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -340,6 +365,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getRoleName().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
+    hash = (37 * hash) + READONLY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getReadonly());
     if (getRolePermissionCount() > 0) {
       hash = (37 * hash) + ROLE_PERMISSION_FIELD_NUMBER;
       hash = (53 * hash) + getRolePermissionList().hashCode();
@@ -484,6 +512,8 @@ private static final long serialVersionUID = 0L;
 
       description = "";
 
+      readonly = false;
+
       if (rolePermissionBuilder == null) {
         rolePermission = java.util.Collections.emptyList();
         bitField0 = (bitField0_ & ~0x00000001);
@@ -520,6 +550,7 @@ private static final long serialVersionUID = 0L;
       result.roleId = roleId;
       result.roleName = roleName;
       result.description = description;
+      result.readonly = readonly;
       if (rolePermissionBuilder == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           rolePermission = java.util.Collections.unmodifiableList(rolePermission);
@@ -587,6 +618,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getDescription().isEmpty()) {
         description = other.description;
         onChanged();
+      }
+      if (other.getReadonly() != false) {
+        setReadonly(other.getReadonly());
       }
       if (rolePermissionBuilder == null) {
         if (!other.rolePermission.isEmpty()) {
@@ -852,6 +886,37 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private boolean readonly ;
+    /**
+     * <code>bool readonly = 6;</code>
+     * @return The readonly.
+     */
+    @java.lang.Override
+    public boolean getReadonly() {
+      return readonly;
+    }
+    /**
+     * <code>bool readonly = 6;</code>
+     * @param value The readonly to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReadonly(boolean value) {
+      
+      readonly = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool readonly = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearReadonly() {
+      
+      readonly = false;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.zhijiejiaoyu.glory_api.user.RolePermission> rolePermission =
       java.util.Collections.emptyList();
     private void ensureRolePermissionIsMutable() {
@@ -865,7 +930,7 @@ private static final long serialVersionUID = 0L;
         com.zhijiejiaoyu.glory_api.user.RolePermission, com.zhijiejiaoyu.glory_api.user.RolePermission.Builder, com.zhijiejiaoyu.glory_api.user.RolePermissionOrBuilder> rolePermissionBuilder;
 
     /**
-     * <code>repeated .glory_api.RolePermission role_permission = 6;</code>
+     * <code>repeated .glory_api.RolePermission role_permission = 7;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.user.RolePermission> getRolePermissionList() {
       if (rolePermissionBuilder == null) {
@@ -875,7 +940,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.RolePermission role_permission = 6;</code>
+     * <code>repeated .glory_api.RolePermission role_permission = 7;</code>
      */
     public int getRolePermissionCount() {
       if (rolePermissionBuilder == null) {
@@ -885,7 +950,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.RolePermission role_permission = 6;</code>
+     * <code>repeated .glory_api.RolePermission role_permission = 7;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.RolePermission getRolePermission(int index) {
       if (rolePermissionBuilder == null) {
@@ -895,7 +960,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.RolePermission role_permission = 6;</code>
+     * <code>repeated .glory_api.RolePermission role_permission = 7;</code>
      */
     public Builder setRolePermission(
         int index, com.zhijiejiaoyu.glory_api.user.RolePermission value) {
@@ -912,7 +977,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.RolePermission role_permission = 6;</code>
+     * <code>repeated .glory_api.RolePermission role_permission = 7;</code>
      */
     public Builder setRolePermission(
         int index, com.zhijiejiaoyu.glory_api.user.RolePermission.Builder builderForValue) {
@@ -926,7 +991,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.RolePermission role_permission = 6;</code>
+     * <code>repeated .glory_api.RolePermission role_permission = 7;</code>
      */
     public Builder addRolePermission(com.zhijiejiaoyu.glory_api.user.RolePermission value) {
       if (rolePermissionBuilder == null) {
@@ -942,7 +1007,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.RolePermission role_permission = 6;</code>
+     * <code>repeated .glory_api.RolePermission role_permission = 7;</code>
      */
     public Builder addRolePermission(
         int index, com.zhijiejiaoyu.glory_api.user.RolePermission value) {
@@ -959,7 +1024,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.RolePermission role_permission = 6;</code>
+     * <code>repeated .glory_api.RolePermission role_permission = 7;</code>
      */
     public Builder addRolePermission(
         com.zhijiejiaoyu.glory_api.user.RolePermission.Builder builderForValue) {
@@ -973,7 +1038,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.RolePermission role_permission = 6;</code>
+     * <code>repeated .glory_api.RolePermission role_permission = 7;</code>
      */
     public Builder addRolePermission(
         int index, com.zhijiejiaoyu.glory_api.user.RolePermission.Builder builderForValue) {
@@ -987,7 +1052,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.RolePermission role_permission = 6;</code>
+     * <code>repeated .glory_api.RolePermission role_permission = 7;</code>
      */
     public Builder addAllRolePermission(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.user.RolePermission> values) {
@@ -1002,7 +1067,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.RolePermission role_permission = 6;</code>
+     * <code>repeated .glory_api.RolePermission role_permission = 7;</code>
      */
     public Builder clearRolePermission() {
       if (rolePermissionBuilder == null) {
@@ -1015,7 +1080,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.RolePermission role_permission = 6;</code>
+     * <code>repeated .glory_api.RolePermission role_permission = 7;</code>
      */
     public Builder removeRolePermission(int index) {
       if (rolePermissionBuilder == null) {
@@ -1028,14 +1093,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.RolePermission role_permission = 6;</code>
+     * <code>repeated .glory_api.RolePermission role_permission = 7;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.RolePermission.Builder getRolePermissionBuilder(
         int index) {
       return getRolePermissionFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .glory_api.RolePermission role_permission = 6;</code>
+     * <code>repeated .glory_api.RolePermission role_permission = 7;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.RolePermissionOrBuilder getRolePermissionOrBuilder(
         int index) {
@@ -1045,7 +1110,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.RolePermission role_permission = 6;</code>
+     * <code>repeated .glory_api.RolePermission role_permission = 7;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.user.RolePermissionOrBuilder> 
          getRolePermissionOrBuilderList() {
@@ -1056,14 +1121,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.RolePermission role_permission = 6;</code>
+     * <code>repeated .glory_api.RolePermission role_permission = 7;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.RolePermission.Builder addRolePermissionBuilder() {
       return getRolePermissionFieldBuilder().addBuilder(
           com.zhijiejiaoyu.glory_api.user.RolePermission.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.RolePermission role_permission = 6;</code>
+     * <code>repeated .glory_api.RolePermission role_permission = 7;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.RolePermission.Builder addRolePermissionBuilder(
         int index) {
@@ -1071,7 +1136,7 @@ private static final long serialVersionUID = 0L;
           index, com.zhijiejiaoyu.glory_api.user.RolePermission.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.RolePermission role_permission = 6;</code>
+     * <code>repeated .glory_api.RolePermission role_permission = 7;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.user.RolePermission.Builder> 
          getRolePermissionBuilderList() {

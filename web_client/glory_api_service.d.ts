@@ -22,6 +22,7 @@ import * as payment from "./payment/payment";
 import * as example from "./example/example";
 import * as config from "./admin/config";
 import * as admin_tenant from "./admin/admin_tenant";
+import * as admin_user from "./admin/admin_user";
 import * as wxpay from "./wxpay/wxpay";
 import * as live_room from "./live/live_room";
 import * as live_token from "./live/live_token";
@@ -56,6 +57,7 @@ export {
   example,
   config,
   admin_tenant,
+  admin_user,
   wxpay,
   live_room,
   live_token,
@@ -472,6 +474,7 @@ list the permissions that supported */
     request: payment.DeletePaymentRequest
   ): Promise<payment.DeletePaymentResponse>;
 
+  /** admin_config */
   CreateConfig(
     request: config.CreateConfigRequest
   ): Promise<config.CreateConfigResponse>;
@@ -488,11 +491,29 @@ list the permissions that supported */
     request: config.GetConfigRequest
   ): Promise<config.GetConfigResponse>;
 
+  /** admin_other */
   GetSTS(request: config.GetSTSRequest): Promise<config.GetSTSResponse>;
 
   ListTenantOrg(
     request: admin_tenant.ListTenantOrgRequest
   ): Promise<admin_tenant.ListTenantOrgResponse>;
+
+  /** admin_user */
+  ListAdminUser(
+    request: admin_user.ListAdminUserRequest
+  ): Promise<admin_user.ListAdminUserResponse>;
+
+  CreateAdminUser(
+    request: admin_user.CreateAdminUserRequest
+  ): Promise<admin_user.CreateAdminUserResponse>;
+
+  UpdateAdminUser(
+    request: admin_user.UpdateAdminUserRequest
+  ): Promise<admin_user.UpdateAdminUserResponse>;
+
+  DeleteAdminUser(
+    request: admin_user.DeleteAdminUserRequest
+  ): Promise<admin_user.DeleteAdminUserResponse>;
 
   /** wxpay */
   WxPrepay(request: wxpay.PrepayRequest): Promise<wxpay.PrepayResponse>;
