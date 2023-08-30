@@ -78,6 +78,11 @@ private static final long serialVersionUID = 0L;
             name = s;
             break;
           }
+          case 40: {
+
+            isAdmin = input.readBool();
+            break;
+          }
           case 802: {
             com.zhijiejiaoyu.base.PaginationRequest.Builder subBuilder = null;
             if (pagination != null) {
@@ -209,6 +214,17 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int IS_ADMIN_FIELD_NUMBER = 5;
+  private boolean isAdmin;
+  /**
+   * <code>bool is_admin = 5;</code>
+   * @return The isAdmin.
+   */
+  @java.lang.Override
+  public boolean getIsAdmin() {
+    return isAdmin;
+  }
+
   public static final int PAGINATION_FIELD_NUMBER = 100;
   private com.zhijiejiaoyu.base.PaginationRequest pagination;
   /**
@@ -261,6 +277,9 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name);
     }
+    if (isAdmin != false) {
+      output.writeBool(5, isAdmin);
+    }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
     }
@@ -287,6 +306,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name);
+    }
+    if (isAdmin != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(5, isAdmin);
     }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -318,6 +341,8 @@ private static final long serialVersionUID = 0L;
         != other.getDeptId()) return false;
     if (!getName()
         .equals(other.getName())) return false;
+    if (getIsAdmin()
+        != other.getIsAdmin()) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -346,6 +371,9 @@ private static final long serialVersionUID = 0L;
         getDeptId());
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + IS_ADMIN_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsAdmin());
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
@@ -495,6 +523,8 @@ private static final long serialVersionUID = 0L;
 
       name = "";
 
+      isAdmin = false;
+
       if (paginationBuilder == null) {
         pagination = null;
       } else {
@@ -535,6 +565,7 @@ private static final long serialVersionUID = 0L;
       result.tenantId = tenantId;
       result.deptId = deptId;
       result.name = name;
+      result.isAdmin = isAdmin;
       if (paginationBuilder == null) {
         result.pagination = pagination;
       } else {
@@ -600,6 +631,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getName().isEmpty()) {
         name = other.name;
         onChanged();
+      }
+      if (other.getIsAdmin() != false) {
+        setIsAdmin(other.getIsAdmin());
       }
       if (other.hasPagination()) {
         mergePagination(other.getPagination());
@@ -886,6 +920,37 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       name = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean isAdmin ;
+    /**
+     * <code>bool is_admin = 5;</code>
+     * @return The isAdmin.
+     */
+    @java.lang.Override
+    public boolean getIsAdmin() {
+      return isAdmin;
+    }
+    /**
+     * <code>bool is_admin = 5;</code>
+     * @param value The isAdmin to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsAdmin(boolean value) {
+      
+      isAdmin = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool is_admin = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsAdmin() {
+      
+      isAdmin = false;
       onChanged();
       return this;
     }

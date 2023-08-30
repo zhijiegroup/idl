@@ -119,6 +119,7 @@ export interface ListTenantUserRequest {
   tenant_id?: string;
   dept_id?: string;
   name?: string;
+  is_admin?: boolean;
   pagination?: base.PaginationRequest;
 }
 

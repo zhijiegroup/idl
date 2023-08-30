@@ -547,6 +547,8 @@ struct GloryApi_ListTenantUserRequest {
 
   var name: String = String()
 
+  var isAdmin: Bool = false
+
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
@@ -1565,6 +1567,7 @@ extension GloryApi_ListTenantUserRequest: SwiftProtobuf.Message, SwiftProtobuf._
     2: .standard(proto: "tenant_id"),
     3: .standard(proto: "dept_id"),
     4: .same(proto: "name"),
+    5: .standard(proto: "is_admin"),
     100: .same(proto: "pagination"),
   ]
 
@@ -1578,6 +1581,7 @@ extension GloryApi_ListTenantUserRequest: SwiftProtobuf.Message, SwiftProtobuf._
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
       case 3: try { try decoder.decodeSingularInt64Field(value: &self.deptID) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.name) }()
+      case 5: try { try decoder.decodeSingularBoolField(value: &self.isAdmin) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -1601,6 +1605,9 @@ extension GloryApi_ListTenantUserRequest: SwiftProtobuf.Message, SwiftProtobuf._
     if !self.name.isEmpty {
       try visitor.visitSingularStringField(value: self.name, fieldNumber: 4)
     }
+    if self.isAdmin != false {
+      try visitor.visitSingularBoolField(value: self.isAdmin, fieldNumber: 5)
+    }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
     } }()
@@ -1612,6 +1619,7 @@ extension GloryApi_ListTenantUserRequest: SwiftProtobuf.Message, SwiftProtobuf._
     if lhs.tenantID != rhs.tenantID {return false}
     if lhs.deptID != rhs.deptID {return false}
     if lhs.name != rhs.name {return false}
+    if lhs.isAdmin != rhs.isAdmin {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

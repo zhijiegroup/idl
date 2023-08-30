@@ -47,6 +47,12 @@ public interface ListTenantUserRequestOrBuilder extends
       getNameBytes();
 
   /**
+   * <code>bool is_admin = 5;</code>
+   * @return The isAdmin.
+   */
+  boolean getIsAdmin();
+
+  /**
    * <code>.base.PaginationRequest pagination = 100;</code>
    * @return Whether the pagination field is set.
    */
