@@ -119,6 +119,7 @@ message ListTenantUserRequest {
     int64 tenant_id = 2;
     int64 dept_id = 3;
     string name = 4;
+    bool is_admin = 5;
     base.PaginationRequest pagination = 100;
 }
 
