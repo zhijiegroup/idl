@@ -64,7 +64,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+            if (!((mutable_bitField0& 0x00000001) != 0)) {
               class = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.tenant.ClassWithAuthor>();
               mutable_bitField0_ |= 0x00000001;
             }
@@ -100,7 +100,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0& 0x00000001) != 0)) {
         class = java.util.Collections.unmodifiableList(class);
       }
       this.unknownFields = unknownFields.build();
@@ -448,7 +448,7 @@ private static final long serialVersionUID = 0L;
       }
       if (class_Builder == null) {
         class = java.util.Collections.emptyList();
-        bitField0 = (bitField0_ & ~0x00000001);
+        bitField0 = (bitField0& ~0x00000001);
       } else {
         class_Builder.clear();
       }
@@ -491,9 +491,9 @@ private static final long serialVersionUID = 0L;
         result.baseResp = baseRespBuilder.build();
       }
       if (class_Builder == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0& 0x00000001) != 0)) {
           class = java.util.Collections.unmodifiableList(class);
-          bitField0 = (bitField0_ & ~0x00000001);
+          bitField0 = (bitField0& ~0x00000001);
         }
         result.class = class;
       } else {
@@ -559,7 +559,7 @@ private static final long serialVersionUID = 0L;
         if (!other.class.isEmpty()) {
           if (class.isEmpty()) {
             class = other.class;
-            bitField0 = (bitField0_ & ~0x00000001);
+            bitField0 = (bitField0& ~0x00000001);
           } else {
             ensureClass_IsMutable();
             class.addAll(other.class);
@@ -572,7 +572,7 @@ private static final long serialVersionUID = 0L;
             class_Builder.dispose();
             class_Builder = null;
             class = other.class;
-            bitField0 = (bitField0_ & ~0x00000001);
+            bitField0 = (bitField0& ~0x00000001);
             class_Builder = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getClass_FieldBuilder() : null;
@@ -736,7 +736,7 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.zhijiejiaoyu.glory_api.tenant.ClassWithAuthor> class =
       java.util.Collections.emptyList();
     private void ensureClass_IsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0& 0x00000001) != 0)) {
         class = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.tenant.ClassWithAuthor>(class);
         bitField0_ |= 0x00000001;
        }
@@ -888,7 +888,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearClass_() {
       if (class_Builder == null) {
         class = java.util.Collections.emptyList();
-        bitField0 = (bitField0_ & ~0x00000001);
+        bitField0 = (bitField0& ~0x00000001);
         onChanged();
       } else {
         class_Builder.clear();
@@ -964,8 +964,8 @@ private static final long serialVersionUID = 0L;
       if (class_Builder == null) {
         class_Builder = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.tenant.ClassWithAuthor, com.zhijiejiaoyu.glory_api.tenant.ClassWithAuthor.Builder, com.zhijiejiaoyu.glory_api.tenant.ClassWithAuthorOrBuilder>(
-                class__,
-                ((bitField0_ & 0x00000001) != 0),
+                class,
+                ((bitField0& 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         class = null;

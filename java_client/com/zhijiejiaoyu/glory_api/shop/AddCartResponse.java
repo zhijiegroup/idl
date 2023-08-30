@@ -50,25 +50,25 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             com.zhijiejiaoyu.base.BaseResponse.Builder subBuilder = null;
-            if (baseResp != null) {
+            if (baseResp!= null) {
               subBuilder = baseResp.toBuilder();
             }
-            baseResp = input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
+            baseResp= input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(baseResp);
-              baseResp = subBuilder.buildPartial();
+              baseResp= subBuilder.buildPartial();
             }
 
             break;
           }
           case 16: {
 
-            cartId = input.readInt64();
+            cartId= input.readInt64();
             break;
           }
           case 24: {
 
-            cartNum = input.readInt32();
+            cartNum= input.readInt32();
             break;
           }
           default: {
@@ -111,7 +111,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasBaseResp() {
-    return baseResp != null;
+    return baseResp!= null;
   }
   /**
    * <code>.base.BaseResponse base_resp = 1;</code>
@@ -119,7 +119,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.zhijiejiaoyu.base.BaseResponse getBaseResp() {
-    return baseResp == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
+    return baseResp== null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
   }
   /**
    * <code>.base.BaseResponse base_resp = 1;</code>
@@ -165,13 +165,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (baseResp != null) {
+    if (baseResp!= null) {
       output.writeMessage(1, getBaseResp());
     }
-    if (cartId != 0L) {
+    if (cartId!= 0L) {
       output.writeInt64(2, cartId);
     }
-    if (cartNum != 0) {
+    if (cartNum!= 0) {
       output.writeInt32(3, cartNum);
     }
     unknownFields.writeTo(output);
@@ -183,15 +183,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (baseResp != null) {
+    if (baseResp!= null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
-    if (cartId != 0L) {
+    if (cartId!= 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, cartId);
     }
-    if (cartNum != 0) {
+    if (cartNum!= 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(3, cartNum);
     }
@@ -372,15 +372,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (baseRespBuilder == null) {
-        baseResp = null;
+      if (baseRespBuilder== null) {
+        baseResp= null;
       } else {
-        baseResp = null;
-        baseRespBuilder = null;
+        baseResp= null;
+        baseRespBuilder= null;
       }
-      cartId = 0L;
+      cartId= 0L;
 
-      cartNum = 0;
+      cartNum= 0;
 
       return this;
     }
@@ -408,13 +408,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.shop.AddCartResponse buildPartial() {
       com.zhijiejiaoyu.glory_api.shop.AddCartResponse result = new com.zhijiejiaoyu.glory_api.shop.AddCartResponse(this);
-      if (baseRespBuilder == null) {
-        result.baseResp = baseResp;
+      if (baseRespBuilder== null) {
+        result.baseResp= baseResp;
       } else {
-        result.baseResp = baseRespBuilder.build();
+        result.baseResp= baseRespBuilder.build();
       }
-      result.cartId = cartId;
-      result.cartNum = cartNum;
+      result.cartId= cartId;
+      result.cartNum= cartNum;
       onBuilt();
       return result;
     }
@@ -509,15 +509,15 @@ private static final long serialVersionUID = 0L;
      * @return Whether the baseResp field is set.
      */
     public boolean hasBaseResp() {
-      return baseRespBuilder != null || baseResp != null;
+      return baseRespBuilder!= null || baseResp!= null;
     }
     /**
      * <code>.base.BaseResponse base_resp = 1;</code>
      * @return The baseResp.
      */
     public com.zhijiejiaoyu.base.BaseResponse getBaseResp() {
-      if (baseRespBuilder == null) {
-        return baseResp == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
+      if (baseRespBuilder== null) {
+        return baseResp== null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
       } else {
         return baseRespBuilder.getMessage();
       }
@@ -526,11 +526,11 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public Builder setBaseResp(com.zhijiejiaoyu.base.BaseResponse value) {
-      if (baseRespBuilder == null) {
+      if (baseRespBuilder== null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        baseResp = value;
+        baseResp= value;
         onChanged();
       } else {
         baseRespBuilder.setMessage(value);
@@ -543,8 +543,8 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setBaseResp(
         com.zhijiejiaoyu.base.BaseResponse.Builder builderForValue) {
-      if (baseRespBuilder == null) {
-        baseResp = builderForValue.build();
+      if (baseRespBuilder== null) {
+        baseResp= builderForValue.build();
         onChanged();
       } else {
         baseRespBuilder.setMessage(builderForValue.build());
@@ -556,12 +556,12 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public Builder mergeBaseResp(com.zhijiejiaoyu.base.BaseResponse value) {
-      if (baseRespBuilder == null) {
-        if (baseResp != null) {
-          baseResp =
+      if (baseRespBuilder== null) {
+        if (baseResp!= null) {
+          baseResp=
             com.zhijiejiaoyu.base.BaseResponse.newBuilder(baseResp).mergeFrom(value).buildPartial();
         } else {
-          baseResp = value;
+          baseResp= value;
         }
         onChanged();
       } else {
@@ -574,12 +574,12 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public Builder clearBaseResp() {
-      if (baseRespBuilder == null) {
-        baseResp = null;
+      if (baseRespBuilder== null) {
+        baseResp= null;
         onChanged();
       } else {
-        baseResp = null;
-        baseRespBuilder = null;
+        baseResp= null;
+        baseRespBuilder= null;
       }
 
       return this;
@@ -596,10 +596,10 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder() {
-      if (baseRespBuilder != null) {
+      if (baseRespBuilder!= null) {
         return baseRespBuilder.getMessageOrBuilder();
       } else {
-        return baseResp == null ?
+        return baseResp== null ?
             com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
       }
     }
@@ -609,18 +609,18 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.base.BaseResponse, com.zhijiejiaoyu.base.BaseResponse.Builder, com.zhijiejiaoyu.base.BaseResponseOrBuilder> 
         getBaseRespFieldBuilder() {
-      if (baseRespBuilder == null) {
-        baseRespBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+      if (baseRespBuilder== null) {
+        baseRespBuilder= new com.google.protobuf.SingleFieldBuilderV3<
             com.zhijiejiaoyu.base.BaseResponse, com.zhijiejiaoyu.base.BaseResponse.Builder, com.zhijiejiaoyu.base.BaseResponseOrBuilder>(
                 getBaseResp(),
                 getParentForChildren(),
                 isClean());
-        baseResp = null;
+        baseResp= null;
       }
       return baseRespBuilder;
     }
 
-    private long cartId ;
+    private long cartId;
     /**
      * <code>int64 cart_id = 2;</code>
      * @return The cartId.
@@ -636,7 +636,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setCartId(long value) {
       
-      cartId = value;
+      cartId= value;
       onChanged();
       return this;
     }
@@ -646,12 +646,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearCartId() {
       
-      cartId = 0L;
+      cartId= 0L;
       onChanged();
       return this;
     }
 
-    private int cartNum ;
+    private int cartNum;
     /**
      * <code>int32 cart_num = 3;</code>
      * @return The cartNum.
@@ -667,7 +667,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setCartNum(int value) {
       
-      cartNum = value;
+      cartNum= value;
       onChanged();
       return this;
     }
@@ -677,7 +677,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearCartNum() {
       
-      cartNum = 0;
+      cartNum= 0;
       onChanged();
       return this;
     }

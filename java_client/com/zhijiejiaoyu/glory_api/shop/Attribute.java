@@ -16,9 +16,9 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Attribute() {
-    attributeName = "";
-    attributeValue = java.util.Collections.emptyList();
-    attributeType = "";
+    attributeName= "";
+    attributeValue= java.util.Collections.emptyList();
+    attributeType= "";
   }
 
   @java.lang.Override
@@ -41,7 +41,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0 = 0;
+    int mutable_bitField0= 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -54,18 +54,18 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            attributeId = input.readInt64();
+            attributeId= input.readInt64();
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            attributeName = s;
+            attributeName= s;
             break;
           }
           case 26: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              attributeValue = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.shop.AttributeValue>();
+            if (!((mutable_bitField0& 0x00000001) != 0)) {
+              attributeValue= new java.util.ArrayList<com.zhijiejiaoyu.glory_api.shop.AttributeValue>();
               mutable_bitField0_ |= 0x00000001;
             }
             attributeValue.add(
@@ -75,7 +75,7 @@ private static final long serialVersionUID = 0L;
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            attributeType = s;
+            attributeType= s;
             break;
           }
           default: {
@@ -93,8 +93,8 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        attributeValue = java.util.Collections.unmodifiableList(attributeValue);
+      if (((mutable_bitField0& 0x00000001) != 0)) {
+        attributeValue= java.util.Collections.unmodifiableList(attributeValue);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -139,7 +139,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      attributeName = s;
+      attributeName= s;
       return s;
     }
   }
@@ -155,7 +155,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      attributeName = b;
+      attributeName= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -217,7 +217,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      attributeType = s;
+      attributeType= s;
       return s;
     }
   }
@@ -233,7 +233,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      attributeType = b;
+      attributeType= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -254,7 +254,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (attributeId != 0L) {
+    if (attributeId!= 0L) {
       output.writeInt64(1, attributeId);
     }
     if (!getAttributeNameBytes().isEmpty()) {
@@ -275,7 +275,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (attributeId != 0L) {
+    if (attributeId!= 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, attributeId);
     }
@@ -468,17 +468,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      attributeId = 0L;
+      attributeId= 0L;
 
-      attributeName = "";
+      attributeName= "";
 
-      if (attributeValueBuilder == null) {
-        attributeValue = java.util.Collections.emptyList();
-        bitField0 = (bitField0_ & ~0x00000001);
+      if (attributeValueBuilder== null) {
+        attributeValue= java.util.Collections.emptyList();
+        bitField0= (bitField0& ~0x00000001);
       } else {
         attributeValueBuilder.clear();
       }
-      attributeType = "";
+      attributeType= "";
 
       return this;
     }
@@ -506,19 +506,19 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.shop.Attribute buildPartial() {
       com.zhijiejiaoyu.glory_api.shop.Attribute result = new com.zhijiejiaoyu.glory_api.shop.Attribute(this);
-      int from_bitField0 = bitField0;
-      result.attributeId = attributeId;
-      result.attributeName = attributeName;
-      if (attributeValueBuilder == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          attributeValue = java.util.Collections.unmodifiableList(attributeValue);
-          bitField0 = (bitField0_ & ~0x00000001);
+      int from_bitField0= bitField0;
+      result.attributeId= attributeId;
+      result.attributeName= attributeName;
+      if (attributeValueBuilder== null) {
+        if (((bitField0& 0x00000001) != 0)) {
+          attributeValue= java.util.Collections.unmodifiableList(attributeValue);
+          bitField0= (bitField0& ~0x00000001);
         }
-        result.attributeValue = attributeValue;
+        result.attributeValue= attributeValue;
       } else {
-        result.attributeValue = attributeValueBuilder.build();
+        result.attributeValue= attributeValueBuilder.build();
       }
-      result.attributeType = attributeType;
+      result.attributeType= attributeType;
       onBuilt();
       return result;
     }
@@ -571,14 +571,14 @@ private static final long serialVersionUID = 0L;
         setAttributeId(other.getAttributeId());
       }
       if (!other.getAttributeName().isEmpty()) {
-        attributeName = other.attributeName;
+        attributeName= other.attributeName;
         onChanged();
       }
-      if (attributeValueBuilder == null) {
+      if (attributeValueBuilder== null) {
         if (!other.attributeValue.isEmpty()) {
           if (attributeValue.isEmpty()) {
-            attributeValue = other.attributeValue;
-            bitField0 = (bitField0_ & ~0x00000001);
+            attributeValue= other.attributeValue;
+            bitField0= (bitField0& ~0x00000001);
           } else {
             ensureAttributeValueIsMutable();
             attributeValue.addAll(other.attributeValue);
@@ -589,10 +589,10 @@ private static final long serialVersionUID = 0L;
         if (!other.attributeValue.isEmpty()) {
           if (attributeValueBuilder.isEmpty()) {
             attributeValueBuilder.dispose();
-            attributeValueBuilder = null;
-            attributeValue = other.attributeValue;
-            bitField0 = (bitField0_ & ~0x00000001);
-            attributeValueBuilder = 
+            attributeValueBuilder= null;
+            attributeValue= other.attributeValue;
+            bitField0= (bitField0& ~0x00000001);
+            attributeValueBuilder= 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getAttributeValueFieldBuilder() : null;
           } else {
@@ -601,7 +601,7 @@ private static final long serialVersionUID = 0L;
         }
       }
       if (!other.getAttributeType().isEmpty()) {
-        attributeType = other.attributeType;
+        attributeType= other.attributeType;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -634,7 +634,7 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0;
 
-    private long attributeId ;
+    private long attributeId;
     /**
      * <code>int64 attribute_id = 1;</code>
      * @return The attributeId.
@@ -650,7 +650,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setAttributeId(long value) {
       
-      attributeId = value;
+      attributeId= value;
       onChanged();
       return this;
     }
@@ -660,12 +660,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearAttributeId() {
       
-      attributeId = 0L;
+      attributeId= 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object attributeName = "";
+    private java.lang.Object attributeName= "";
     /**
      * <code>string attribute_name = 2;</code>
      * @return The attributeName.
@@ -676,7 +676,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        attributeName = s;
+        attributeName= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -693,7 +693,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        attributeName = b;
+        attributeName= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -710,7 +710,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      attributeName = value;
+      attributeName= value;
       onChanged();
       return this;
     }
@@ -720,7 +720,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearAttributeName() {
       
-      attributeName = getDefaultInstance().getAttributeName();
+      attributeName= getDefaultInstance().getAttributeName();
       onChanged();
       return this;
     }
@@ -736,16 +736,16 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      attributeName = value;
+      attributeName= value;
       onChanged();
       return this;
     }
 
-    private java.util.List<com.zhijiejiaoyu.glory_api.shop.AttributeValue> attributeValue =
+    private java.util.List<com.zhijiejiaoyu.glory_api.shop.AttributeValue> attributeValue=
       java.util.Collections.emptyList();
     private void ensureAttributeValueIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
-        attributeValue = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.shop.AttributeValue>(attributeValue);
+      if (!((bitField0& 0x00000001) != 0)) {
+        attributeValue= new java.util.ArrayList<com.zhijiejiaoyu.glory_api.shop.AttributeValue>(attributeValue);
         bitField0_ |= 0x00000001;
        }
     }
@@ -757,7 +757,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.AttributeValue attribute_value = 3;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.shop.AttributeValue> getAttributeValueList() {
-      if (attributeValueBuilder == null) {
+      if (attributeValueBuilder== null) {
         return java.util.Collections.unmodifiableList(attributeValue);
       } else {
         return attributeValueBuilder.getMessageList();
@@ -767,7 +767,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.AttributeValue attribute_value = 3;</code>
      */
     public int getAttributeValueCount() {
-      if (attributeValueBuilder == null) {
+      if (attributeValueBuilder== null) {
         return attributeValue.size();
       } else {
         return attributeValueBuilder.getCount();
@@ -777,7 +777,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.AttributeValue attribute_value = 3;</code>
      */
     public com.zhijiejiaoyu.glory_api.shop.AttributeValue getAttributeValue(int index) {
-      if (attributeValueBuilder == null) {
+      if (attributeValueBuilder== null) {
         return attributeValue.get(index);
       } else {
         return attributeValueBuilder.getMessage(index);
@@ -788,7 +788,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setAttributeValue(
         int index, com.zhijiejiaoyu.glory_api.shop.AttributeValue value) {
-      if (attributeValueBuilder == null) {
+      if (attributeValueBuilder== null) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -805,7 +805,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setAttributeValue(
         int index, com.zhijiejiaoyu.glory_api.shop.AttributeValue.Builder builderForValue) {
-      if (attributeValueBuilder == null) {
+      if (attributeValueBuilder== null) {
         ensureAttributeValueIsMutable();
         attributeValue.set(index, builderForValue.build());
         onChanged();
@@ -818,7 +818,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.AttributeValue attribute_value = 3;</code>
      */
     public Builder addAttributeValue(com.zhijiejiaoyu.glory_api.shop.AttributeValue value) {
-      if (attributeValueBuilder == null) {
+      if (attributeValueBuilder== null) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -835,7 +835,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addAttributeValue(
         int index, com.zhijiejiaoyu.glory_api.shop.AttributeValue value) {
-      if (attributeValueBuilder == null) {
+      if (attributeValueBuilder== null) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -852,7 +852,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addAttributeValue(
         com.zhijiejiaoyu.glory_api.shop.AttributeValue.Builder builderForValue) {
-      if (attributeValueBuilder == null) {
+      if (attributeValueBuilder== null) {
         ensureAttributeValueIsMutable();
         attributeValue.add(builderForValue.build());
         onChanged();
@@ -866,7 +866,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addAttributeValue(
         int index, com.zhijiejiaoyu.glory_api.shop.AttributeValue.Builder builderForValue) {
-      if (attributeValueBuilder == null) {
+      if (attributeValueBuilder== null) {
         ensureAttributeValueIsMutable();
         attributeValue.add(index, builderForValue.build());
         onChanged();
@@ -880,7 +880,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addAllAttributeValue(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.shop.AttributeValue> values) {
-      if (attributeValueBuilder == null) {
+      if (attributeValueBuilder== null) {
         ensureAttributeValueIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, attributeValue);
@@ -894,9 +894,9 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.AttributeValue attribute_value = 3;</code>
      */
     public Builder clearAttributeValue() {
-      if (attributeValueBuilder == null) {
-        attributeValue = java.util.Collections.emptyList();
-        bitField0 = (bitField0_ & ~0x00000001);
+      if (attributeValueBuilder== null) {
+        attributeValue= java.util.Collections.emptyList();
+        bitField0= (bitField0& ~0x00000001);
         onChanged();
       } else {
         attributeValueBuilder.clear();
@@ -907,7 +907,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.AttributeValue attribute_value = 3;</code>
      */
     public Builder removeAttributeValue(int index) {
-      if (attributeValueBuilder == null) {
+      if (attributeValueBuilder== null) {
         ensureAttributeValueIsMutable();
         attributeValue.remove(index);
         onChanged();
@@ -928,7 +928,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.shop.AttributeValueOrBuilder getAttributeValueOrBuilder(
         int index) {
-      if (attributeValueBuilder == null) {
+      if (attributeValueBuilder== null) {
         return attributeValue.get(index);  } else {
         return attributeValueBuilder.getMessageOrBuilder(index);
       }
@@ -938,7 +938,7 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.AttributeValueOrBuilder> 
          getAttributeValueOrBuilderList() {
-      if (attributeValueBuilder != null) {
+      if (attributeValueBuilder!= null) {
         return attributeValueBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(attributeValue);
@@ -969,19 +969,19 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.RepeatedFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.shop.AttributeValue, com.zhijiejiaoyu.glory_api.shop.AttributeValue.Builder, com.zhijiejiaoyu.glory_api.shop.AttributeValueOrBuilder> 
         getAttributeValueFieldBuilder() {
-      if (attributeValueBuilder == null) {
-        attributeValueBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+      if (attributeValueBuilder== null) {
+        attributeValueBuilder= new com.google.protobuf.RepeatedFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.shop.AttributeValue, com.zhijiejiaoyu.glory_api.shop.AttributeValue.Builder, com.zhijiejiaoyu.glory_api.shop.AttributeValueOrBuilder>(
-                attributeValue_,
-                ((bitField0_ & 0x00000001) != 0),
+                attributeValue,
+                ((bitField0& 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        attributeValue = null;
+        attributeValue= null;
       }
       return attributeValueBuilder;
     }
 
-    private java.lang.Object attributeType = "";
+    private java.lang.Object attributeType= "";
     /**
      * <code>string attribute_type = 4;</code>
      * @return The attributeType.
@@ -992,7 +992,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        attributeType = s;
+        attributeType= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1009,7 +1009,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        attributeType = b;
+        attributeType= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1026,7 +1026,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      attributeType = value;
+      attributeType= value;
       onChanged();
       return this;
     }
@@ -1036,7 +1036,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearAttributeType() {
       
-      attributeType = getDefaultInstance().getAttributeType();
+      attributeType= getDefaultInstance().getAttributeType();
       onChanged();
       return this;
     }
@@ -1052,7 +1052,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      attributeType = value;
+      attributeType= value;
       onChanged();
       return this;
     }

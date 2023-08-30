@@ -16,8 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CreateLiveProductStatus() {
-    productSellingPoint = "";
-    productDescription = "";
+    productSellingPoint= "";
+    productDescription= "";
   }
 
   @java.lang.Override
@@ -52,19 +52,19 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            productId = input.readInt64();
+            productId= input.readInt64();
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            productSellingPoint = s;
+            productSellingPoint= s;
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            productDescription = s;
+            productDescription= s;
             break;
           }
           default: {
@@ -125,7 +125,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      productSellingPoint = s;
+      productSellingPoint= s;
       return s;
     }
   }
@@ -141,7 +141,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      productSellingPoint = b;
+      productSellingPoint= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -163,7 +163,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      productDescription = s;
+      productDescription= s;
       return s;
     }
   }
@@ -179,7 +179,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      productDescription = b;
+      productDescription= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -200,7 +200,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (productId != 0L) {
+    if (productId!= 0L) {
       output.writeInt64(1, productId);
     }
     if (!getProductSellingPointBytes().isEmpty()) {
@@ -218,7 +218,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (productId != 0L) {
+    if (productId!= 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, productId);
     }
@@ -400,11 +400,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      productId = 0L;
+      productId= 0L;
 
-      productSellingPoint = "";
+      productSellingPoint= "";
 
-      productDescription = "";
+      productDescription= "";
 
       return this;
     }
@@ -432,9 +432,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.live.CreateLiveProductStatus buildPartial() {
       com.zhijiejiaoyu.glory_api.live.CreateLiveProductStatus result = new com.zhijiejiaoyu.glory_api.live.CreateLiveProductStatus(this);
-      result.productId = productId;
-      result.productSellingPoint = productSellingPoint;
-      result.productDescription = productDescription;
+      result.productId= productId;
+      result.productSellingPoint= productSellingPoint;
+      result.productDescription= productDescription;
       onBuilt();
       return result;
     }
@@ -487,11 +487,11 @@ private static final long serialVersionUID = 0L;
         setProductId(other.getProductId());
       }
       if (!other.getProductSellingPoint().isEmpty()) {
-        productSellingPoint = other.productSellingPoint;
+        productSellingPoint= other.productSellingPoint;
         onChanged();
       }
       if (!other.getProductDescription().isEmpty()) {
-        productDescription = other.productDescription;
+        productDescription= other.productDescription;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -523,7 +523,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long productId ;
+    private long productId;
     /**
      * <code>int64 product_id = 1;</code>
      * @return The productId.
@@ -539,7 +539,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setProductId(long value) {
       
-      productId = value;
+      productId= value;
       onChanged();
       return this;
     }
@@ -549,12 +549,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearProductId() {
       
-      productId = 0L;
+      productId= 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object productSellingPoint = "";
+    private java.lang.Object productSellingPoint= "";
     /**
      * <code>string product_selling_point = 2;</code>
      * @return The productSellingPoint.
@@ -565,7 +565,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        productSellingPoint = s;
+        productSellingPoint= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -582,7 +582,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        productSellingPoint = b;
+        productSellingPoint= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -599,7 +599,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      productSellingPoint = value;
+      productSellingPoint= value;
       onChanged();
       return this;
     }
@@ -609,7 +609,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearProductSellingPoint() {
       
-      productSellingPoint = getDefaultInstance().getProductSellingPoint();
+      productSellingPoint= getDefaultInstance().getProductSellingPoint();
       onChanged();
       return this;
     }
@@ -625,12 +625,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      productSellingPoint = value;
+      productSellingPoint= value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object productDescription = "";
+    private java.lang.Object productDescription= "";
     /**
      * <code>string product_description = 3;</code>
      * @return The productDescription.
@@ -641,7 +641,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        productDescription = s;
+        productDescription= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -658,7 +658,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        productDescription = b;
+        productDescription= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -675,7 +675,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      productDescription = value;
+      productDescription= value;
       onChanged();
       return this;
     }
@@ -685,7 +685,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearProductDescription() {
       
-      productDescription = getDefaultInstance().getProductDescription();
+      productDescription= getDefaultInstance().getProductDescription();
       onChanged();
       return this;
     }
@@ -701,7 +701,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      productDescription = value;
+      productDescription= value;
       onChanged();
       return this;
     }

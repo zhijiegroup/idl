@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListAddressResponse() {
-    address = java.util.Collections.emptyList();
+    address= java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -39,7 +39,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0 = 0;
+    int mutable_bitField0= 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -52,20 +52,20 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             com.zhijiejiaoyu.base.BaseResponse.Builder subBuilder = null;
-            if (baseResp != null) {
+            if (baseResp!= null) {
               subBuilder = baseResp.toBuilder();
             }
-            baseResp = input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
+            baseResp= input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(baseResp);
-              baseResp = subBuilder.buildPartial();
+              baseResp= subBuilder.buildPartial();
             }
 
             break;
           }
           case 18: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              address = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.Address>();
+            if (!((mutable_bitField0& 0x00000001) != 0)) {
+              address= new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.Address>();
               mutable_bitField0_ |= 0x00000001;
             }
             address.add(
@@ -87,8 +87,8 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        address = java.util.Collections.unmodifiableList(address);
+      if (((mutable_bitField0& 0x00000001) != 0)) {
+        address= java.util.Collections.unmodifiableList(address);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -115,7 +115,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasBaseResp() {
-    return baseResp != null;
+    return baseResp!= null;
   }
   /**
    * <code>.base.BaseResponse base_resp = 1;</code>
@@ -123,7 +123,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.zhijiejiaoyu.base.BaseResponse getBaseResp() {
-    return baseResp == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
+    return baseResp== null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
   }
   /**
    * <code>.base.BaseResponse base_resp = 1;</code>
@@ -187,7 +187,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (baseResp != null) {
+    if (baseResp!= null) {
       output.writeMessage(1, getBaseResp());
     }
     for (int i = 0; i < address.size(); i++) {
@@ -202,7 +202,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (baseResp != null) {
+    if (baseResp!= null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
@@ -385,15 +385,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (baseRespBuilder == null) {
-        baseResp = null;
+      if (baseRespBuilder== null) {
+        baseResp= null;
       } else {
-        baseResp = null;
-        baseRespBuilder = null;
+        baseResp= null;
+        baseRespBuilder= null;
       }
-      if (addressBuilder == null) {
-        address = java.util.Collections.emptyList();
-        bitField0 = (bitField0_ & ~0x00000001);
+      if (addressBuilder== null) {
+        address= java.util.Collections.emptyList();
+        bitField0= (bitField0& ~0x00000001);
       } else {
         addressBuilder.clear();
       }
@@ -423,20 +423,20 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.user.ListAddressResponse buildPartial() {
       com.zhijiejiaoyu.glory_api.user.ListAddressResponse result = new com.zhijiejiaoyu.glory_api.user.ListAddressResponse(this);
-      int from_bitField0 = bitField0;
-      if (baseRespBuilder == null) {
-        result.baseResp = baseResp;
+      int from_bitField0= bitField0;
+      if (baseRespBuilder== null) {
+        result.baseResp= baseResp;
       } else {
-        result.baseResp = baseRespBuilder.build();
+        result.baseResp= baseRespBuilder.build();
       }
-      if (addressBuilder == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          address = java.util.Collections.unmodifiableList(address);
-          bitField0 = (bitField0_ & ~0x00000001);
+      if (addressBuilder== null) {
+        if (((bitField0& 0x00000001) != 0)) {
+          address= java.util.Collections.unmodifiableList(address);
+          bitField0= (bitField0& ~0x00000001);
         }
-        result.address = address;
+        result.address= address;
       } else {
-        result.address = addressBuilder.build();
+        result.address= addressBuilder.build();
       }
       onBuilt();
       return result;
@@ -489,11 +489,11 @@ private static final long serialVersionUID = 0L;
       if (other.hasBaseResp()) {
         mergeBaseResp(other.getBaseResp());
       }
-      if (addressBuilder == null) {
+      if (addressBuilder== null) {
         if (!other.address.isEmpty()) {
           if (address.isEmpty()) {
-            address = other.address;
-            bitField0 = (bitField0_ & ~0x00000001);
+            address= other.address;
+            bitField0= (bitField0& ~0x00000001);
           } else {
             ensureAddressIsMutable();
             address.addAll(other.address);
@@ -504,10 +504,10 @@ private static final long serialVersionUID = 0L;
         if (!other.address.isEmpty()) {
           if (addressBuilder.isEmpty()) {
             addressBuilder.dispose();
-            addressBuilder = null;
-            address = other.address;
-            bitField0 = (bitField0_ & ~0x00000001);
-            addressBuilder = 
+            addressBuilder= null;
+            address= other.address;
+            bitField0= (bitField0& ~0x00000001);
+            addressBuilder= 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getAddressFieldBuilder() : null;
           } else {
@@ -553,15 +553,15 @@ private static final long serialVersionUID = 0L;
      * @return Whether the baseResp field is set.
      */
     public boolean hasBaseResp() {
-      return baseRespBuilder != null || baseResp != null;
+      return baseRespBuilder!= null || baseResp!= null;
     }
     /**
      * <code>.base.BaseResponse base_resp = 1;</code>
      * @return The baseResp.
      */
     public com.zhijiejiaoyu.base.BaseResponse getBaseResp() {
-      if (baseRespBuilder == null) {
-        return baseResp == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
+      if (baseRespBuilder== null) {
+        return baseResp== null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
       } else {
         return baseRespBuilder.getMessage();
       }
@@ -570,11 +570,11 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public Builder setBaseResp(com.zhijiejiaoyu.base.BaseResponse value) {
-      if (baseRespBuilder == null) {
+      if (baseRespBuilder== null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        baseResp = value;
+        baseResp= value;
         onChanged();
       } else {
         baseRespBuilder.setMessage(value);
@@ -587,8 +587,8 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setBaseResp(
         com.zhijiejiaoyu.base.BaseResponse.Builder builderForValue) {
-      if (baseRespBuilder == null) {
-        baseResp = builderForValue.build();
+      if (baseRespBuilder== null) {
+        baseResp= builderForValue.build();
         onChanged();
       } else {
         baseRespBuilder.setMessage(builderForValue.build());
@@ -600,12 +600,12 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public Builder mergeBaseResp(com.zhijiejiaoyu.base.BaseResponse value) {
-      if (baseRespBuilder == null) {
-        if (baseResp != null) {
-          baseResp =
+      if (baseRespBuilder== null) {
+        if (baseResp!= null) {
+          baseResp=
             com.zhijiejiaoyu.base.BaseResponse.newBuilder(baseResp).mergeFrom(value).buildPartial();
         } else {
-          baseResp = value;
+          baseResp= value;
         }
         onChanged();
       } else {
@@ -618,12 +618,12 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public Builder clearBaseResp() {
-      if (baseRespBuilder == null) {
-        baseResp = null;
+      if (baseRespBuilder== null) {
+        baseResp= null;
         onChanged();
       } else {
-        baseResp = null;
-        baseRespBuilder = null;
+        baseResp= null;
+        baseRespBuilder= null;
       }
 
       return this;
@@ -640,10 +640,10 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder() {
-      if (baseRespBuilder != null) {
+      if (baseRespBuilder!= null) {
         return baseRespBuilder.getMessageOrBuilder();
       } else {
-        return baseResp == null ?
+        return baseResp== null ?
             com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
       }
     }
@@ -653,22 +653,22 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.base.BaseResponse, com.zhijiejiaoyu.base.BaseResponse.Builder, com.zhijiejiaoyu.base.BaseResponseOrBuilder> 
         getBaseRespFieldBuilder() {
-      if (baseRespBuilder == null) {
-        baseRespBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+      if (baseRespBuilder== null) {
+        baseRespBuilder= new com.google.protobuf.SingleFieldBuilderV3<
             com.zhijiejiaoyu.base.BaseResponse, com.zhijiejiaoyu.base.BaseResponse.Builder, com.zhijiejiaoyu.base.BaseResponseOrBuilder>(
                 getBaseResp(),
                 getParentForChildren(),
                 isClean());
-        baseResp = null;
+        baseResp= null;
       }
       return baseRespBuilder;
     }
 
-    private java.util.List<com.zhijiejiaoyu.glory_api.user.Address> address =
+    private java.util.List<com.zhijiejiaoyu.glory_api.user.Address> address=
       java.util.Collections.emptyList();
     private void ensureAddressIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
-        address = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.Address>(address);
+      if (!((bitField0& 0x00000001) != 0)) {
+        address= new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.Address>(address);
         bitField0_ |= 0x00000001;
        }
     }
@@ -680,7 +680,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.Address address = 2;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.user.Address> getAddressList() {
-      if (addressBuilder == null) {
+      if (addressBuilder== null) {
         return java.util.Collections.unmodifiableList(address);
       } else {
         return addressBuilder.getMessageList();
@@ -690,7 +690,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.Address address = 2;</code>
      */
     public int getAddressCount() {
-      if (addressBuilder == null) {
+      if (addressBuilder== null) {
         return address.size();
       } else {
         return addressBuilder.getCount();
@@ -700,7 +700,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.Address address = 2;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.Address getAddress(int index) {
-      if (addressBuilder == null) {
+      if (addressBuilder== null) {
         return address.get(index);
       } else {
         return addressBuilder.getMessage(index);
@@ -711,7 +711,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setAddress(
         int index, com.zhijiejiaoyu.glory_api.user.Address value) {
-      if (addressBuilder == null) {
+      if (addressBuilder== null) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -728,7 +728,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setAddress(
         int index, com.zhijiejiaoyu.glory_api.user.Address.Builder builderForValue) {
-      if (addressBuilder == null) {
+      if (addressBuilder== null) {
         ensureAddressIsMutable();
         address.set(index, builderForValue.build());
         onChanged();
@@ -741,7 +741,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.Address address = 2;</code>
      */
     public Builder addAddress(com.zhijiejiaoyu.glory_api.user.Address value) {
-      if (addressBuilder == null) {
+      if (addressBuilder== null) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -758,7 +758,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addAddress(
         int index, com.zhijiejiaoyu.glory_api.user.Address value) {
-      if (addressBuilder == null) {
+      if (addressBuilder== null) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -775,7 +775,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addAddress(
         com.zhijiejiaoyu.glory_api.user.Address.Builder builderForValue) {
-      if (addressBuilder == null) {
+      if (addressBuilder== null) {
         ensureAddressIsMutable();
         address.add(builderForValue.build());
         onChanged();
@@ -789,7 +789,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addAddress(
         int index, com.zhijiejiaoyu.glory_api.user.Address.Builder builderForValue) {
-      if (addressBuilder == null) {
+      if (addressBuilder== null) {
         ensureAddressIsMutable();
         address.add(index, builderForValue.build());
         onChanged();
@@ -803,7 +803,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addAllAddress(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.user.Address> values) {
-      if (addressBuilder == null) {
+      if (addressBuilder== null) {
         ensureAddressIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, address);
@@ -817,9 +817,9 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.Address address = 2;</code>
      */
     public Builder clearAddress() {
-      if (addressBuilder == null) {
-        address = java.util.Collections.emptyList();
-        bitField0 = (bitField0_ & ~0x00000001);
+      if (addressBuilder== null) {
+        address= java.util.Collections.emptyList();
+        bitField0= (bitField0& ~0x00000001);
         onChanged();
       } else {
         addressBuilder.clear();
@@ -830,7 +830,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.Address address = 2;</code>
      */
     public Builder removeAddress(int index) {
-      if (addressBuilder == null) {
+      if (addressBuilder== null) {
         ensureAddressIsMutable();
         address.remove(index);
         onChanged();
@@ -851,7 +851,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.user.AddressOrBuilder getAddressOrBuilder(
         int index) {
-      if (addressBuilder == null) {
+      if (addressBuilder== null) {
         return address.get(index);  } else {
         return addressBuilder.getMessageOrBuilder(index);
       }
@@ -861,7 +861,7 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.user.AddressOrBuilder> 
          getAddressOrBuilderList() {
-      if (addressBuilder != null) {
+      if (addressBuilder!= null) {
         return addressBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(address);
@@ -892,14 +892,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.RepeatedFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.user.Address, com.zhijiejiaoyu.glory_api.user.Address.Builder, com.zhijiejiaoyu.glory_api.user.AddressOrBuilder> 
         getAddressFieldBuilder() {
-      if (addressBuilder == null) {
-        addressBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+      if (addressBuilder== null) {
+        addressBuilder= new com.google.protobuf.RepeatedFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.user.Address, com.zhijiejiaoyu.glory_api.user.Address.Builder, com.zhijiejiaoyu.glory_api.user.AddressOrBuilder>(
-                address_,
-                ((bitField0_ & 0x00000001) != 0),
+                address,
+                ((bitField0& 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        address = null;
+        address= null;
       }
       return addressBuilder;
     }

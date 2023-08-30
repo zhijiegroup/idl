@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ShortVideoShop() {
-    shopName = "";
+    shopName= "";
   }
 
   @java.lang.Override
@@ -51,13 +51,13 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            shopId = input.readInt64();
+            shopId= input.readInt64();
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            shopName = s;
+            shopName= s;
             break;
           }
           default: {
@@ -126,7 +126,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      shopName = s;
+      shopName= s;
       return s;
     }
   }
@@ -146,7 +146,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      shopName = b;
+      shopName= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -167,7 +167,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (shopId != 0L) {
+    if (shopId!= 0L) {
       output.writeInt64(1, shopId);
     }
     if (!getShopNameBytes().isEmpty()) {
@@ -182,7 +182,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (shopId != 0L) {
+    if (shopId!= 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, shopId);
     }
@@ -357,9 +357,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      shopId = 0L;
+      shopId= 0L;
 
-      shopName = "";
+      shopName= "";
 
       return this;
     }
@@ -387,8 +387,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.short_video.ShortVideoShop buildPartial() {
       com.zhijiejiaoyu.glory_api.short_video.ShortVideoShop result = new com.zhijiejiaoyu.glory_api.short_video.ShortVideoShop(this);
-      result.shopId = shopId;
-      result.shopName = shopName;
+      result.shopId= shopId;
+      result.shopName= shopName;
       onBuilt();
       return result;
     }
@@ -441,7 +441,7 @@ private static final long serialVersionUID = 0L;
         setShopId(other.getShopId());
       }
       if (!other.getShopName().isEmpty()) {
-        shopName = other.shopName;
+        shopName= other.shopName;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -473,7 +473,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long shopId ;
+    private long shopId;
     /**
      * <pre>
      * 店铺ID
@@ -497,7 +497,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setShopId(long value) {
       
-      shopId = value;
+      shopId= value;
       onChanged();
       return this;
     }
@@ -511,12 +511,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearShopId() {
       
-      shopId = 0L;
+      shopId= 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object shopName = "";
+    private java.lang.Object shopName= "";
     /**
      * <pre>
      * 店铺名称
@@ -531,7 +531,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        shopName = s;
+        shopName= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -552,7 +552,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        shopName = b;
+        shopName= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -573,7 +573,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      shopName = value;
+      shopName= value;
       onChanged();
       return this;
     }
@@ -587,7 +587,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearShopName() {
       
-      shopName = getDefaultInstance().getShopName();
+      shopName= getDefaultInstance().getShopName();
       onChanged();
       return this;
     }
@@ -607,7 +607,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      shopName = value;
+      shopName= value;
       onChanged();
       return this;
     }

@@ -16,10 +16,10 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private GetRolePagePermissionResponse() {
-    roleName = "";
-    roleType = "";
-    roleDescription = "";
-    pagePermission = java.util.Collections.emptyList();
+    roleName= "";
+    roleType= "";
+    roleDescription= "";
+    pagePermission= java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -42,7 +42,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0 = 0;
+    int mutable_bitField0= 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -55,53 +55,53 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             com.zhijiejiaoyu.base.BaseResponse.Builder subBuilder = null;
-            if (baseResp != null) {
+            if (baseResp!= null) {
               subBuilder = baseResp.toBuilder();
             }
-            baseResp = input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
+            baseResp= input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(baseResp);
-              baseResp = subBuilder.buildPartial();
+              baseResp= subBuilder.buildPartial();
             }
 
             break;
           }
           case 16: {
 
-            tenantId = input.readInt64();
+            tenantId= input.readInt64();
             break;
           }
           case 24: {
 
-            roleId = input.readInt64();
+            roleId= input.readInt64();
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            roleName = s;
+            roleName= s;
             break;
           }
           case 42: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            roleType = s;
+            roleType= s;
             break;
           }
           case 50: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            roleDescription = s;
+            roleDescription= s;
             break;
           }
           case 56: {
 
-            roleReadonly = input.readBool();
+            roleReadonly= input.readBool();
             break;
           }
           case 66: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              pagePermission = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.PagePermission>();
+            if (!((mutable_bitField0& 0x00000001) != 0)) {
+              pagePermission= new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.PagePermission>();
               mutable_bitField0_ |= 0x00000001;
             }
             pagePermission.add(
@@ -123,8 +123,8 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        pagePermission = java.util.Collections.unmodifiableList(pagePermission);
+      if (((mutable_bitField0& 0x00000001) != 0)) {
+        pagePermission= java.util.Collections.unmodifiableList(pagePermission);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -151,7 +151,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasBaseResp() {
-    return baseResp != null;
+    return baseResp!= null;
   }
   /**
    * <code>.base.BaseResponse base_resp = 1;</code>
@@ -159,7 +159,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.zhijiejiaoyu.base.BaseResponse getBaseResp() {
-    return baseResp == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
+    return baseResp== null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
   }
   /**
    * <code>.base.BaseResponse base_resp = 1;</code>
@@ -206,7 +206,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      roleName = s;
+      roleName= s;
       return s;
     }
   }
@@ -222,7 +222,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      roleName = b;
+      roleName= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -244,7 +244,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      roleType = s;
+      roleType= s;
       return s;
     }
   }
@@ -260,7 +260,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      roleType = b;
+      roleType= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -282,7 +282,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      roleDescription = s;
+      roleDescription= s;
       return s;
     }
   }
@@ -298,7 +298,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      roleDescription = b;
+      roleDescription= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -370,13 +370,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (baseResp != null) {
+    if (baseResp!= null) {
       output.writeMessage(1, getBaseResp());
     }
-    if (tenantId != 0L) {
+    if (tenantId!= 0L) {
       output.writeInt64(2, tenantId);
     }
-    if (roleId != 0L) {
+    if (roleId!= 0L) {
       output.writeInt64(3, roleId);
     }
     if (!getRoleNameBytes().isEmpty()) {
@@ -388,7 +388,7 @@ private static final long serialVersionUID = 0L;
     if (!getRoleDescriptionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, roleDescription);
     }
-    if (roleReadonly != false) {
+    if (roleReadonly!= false) {
       output.writeBool(7, roleReadonly);
     }
     for (int i = 0; i < pagePermission.size(); i++) {
@@ -403,15 +403,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (baseResp != null) {
+    if (baseResp!= null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
-    if (tenantId != 0L) {
+    if (tenantId!= 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, tenantId);
     }
-    if (roleId != 0L) {
+    if (roleId!= 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, roleId);
     }
@@ -424,7 +424,7 @@ private static final long serialVersionUID = 0L;
     if (!getRoleDescriptionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, roleDescription);
     }
-    if (roleReadonly != false) {
+    if (roleReadonly!= false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(7, roleReadonly);
     }
@@ -634,27 +634,27 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (baseRespBuilder == null) {
-        baseResp = null;
+      if (baseRespBuilder== null) {
+        baseResp= null;
       } else {
-        baseResp = null;
-        baseRespBuilder = null;
+        baseResp= null;
+        baseRespBuilder= null;
       }
-      tenantId = 0L;
+      tenantId= 0L;
 
-      roleId = 0L;
+      roleId= 0L;
 
-      roleName = "";
+      roleName= "";
 
-      roleType = "";
+      roleType= "";
 
-      roleDescription = "";
+      roleDescription= "";
 
-      roleReadonly = false;
+      roleReadonly= false;
 
-      if (pagePermissionBuilder == null) {
-        pagePermission = java.util.Collections.emptyList();
-        bitField0 = (bitField0_ & ~0x00000001);
+      if (pagePermissionBuilder== null) {
+        pagePermission= java.util.Collections.emptyList();
+        bitField0= (bitField0& ~0x00000001);
       } else {
         pagePermissionBuilder.clear();
       }
@@ -684,26 +684,26 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionResponse buildPartial() {
       com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionResponse result = new com.zhijiejiaoyu.glory_api.user.GetRolePagePermissionResponse(this);
-      int from_bitField0 = bitField0;
-      if (baseRespBuilder == null) {
-        result.baseResp = baseResp;
+      int from_bitField0= bitField0;
+      if (baseRespBuilder== null) {
+        result.baseResp= baseResp;
       } else {
-        result.baseResp = baseRespBuilder.build();
+        result.baseResp= baseRespBuilder.build();
       }
-      result.tenantId = tenantId;
-      result.roleId = roleId;
-      result.roleName = roleName;
-      result.roleType = roleType;
-      result.roleDescription = roleDescription;
-      result.roleReadonly = roleReadonly;
-      if (pagePermissionBuilder == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          pagePermission = java.util.Collections.unmodifiableList(pagePermission);
-          bitField0 = (bitField0_ & ~0x00000001);
+      result.tenantId= tenantId;
+      result.roleId= roleId;
+      result.roleName= roleName;
+      result.roleType= roleType;
+      result.roleDescription= roleDescription;
+      result.roleReadonly= roleReadonly;
+      if (pagePermissionBuilder== null) {
+        if (((bitField0& 0x00000001) != 0)) {
+          pagePermission= java.util.Collections.unmodifiableList(pagePermission);
+          bitField0= (bitField0& ~0x00000001);
         }
-        result.pagePermission = pagePermission;
+        result.pagePermission= pagePermission;
       } else {
-        result.pagePermission = pagePermissionBuilder.build();
+        result.pagePermission= pagePermissionBuilder.build();
       }
       onBuilt();
       return result;
@@ -763,25 +763,25 @@ private static final long serialVersionUID = 0L;
         setRoleId(other.getRoleId());
       }
       if (!other.getRoleName().isEmpty()) {
-        roleName = other.roleName;
+        roleName= other.roleName;
         onChanged();
       }
       if (!other.getRoleType().isEmpty()) {
-        roleType = other.roleType;
+        roleType= other.roleType;
         onChanged();
       }
       if (!other.getRoleDescription().isEmpty()) {
-        roleDescription = other.roleDescription;
+        roleDescription= other.roleDescription;
         onChanged();
       }
       if (other.getRoleReadonly() != false) {
         setRoleReadonly(other.getRoleReadonly());
       }
-      if (pagePermissionBuilder == null) {
+      if (pagePermissionBuilder== null) {
         if (!other.pagePermission.isEmpty()) {
           if (pagePermission.isEmpty()) {
-            pagePermission = other.pagePermission;
-            bitField0 = (bitField0_ & ~0x00000001);
+            pagePermission= other.pagePermission;
+            bitField0= (bitField0& ~0x00000001);
           } else {
             ensurePagePermissionIsMutable();
             pagePermission.addAll(other.pagePermission);
@@ -792,10 +792,10 @@ private static final long serialVersionUID = 0L;
         if (!other.pagePermission.isEmpty()) {
           if (pagePermissionBuilder.isEmpty()) {
             pagePermissionBuilder.dispose();
-            pagePermissionBuilder = null;
-            pagePermission = other.pagePermission;
-            bitField0 = (bitField0_ & ~0x00000001);
-            pagePermissionBuilder = 
+            pagePermissionBuilder= null;
+            pagePermission= other.pagePermission;
+            bitField0= (bitField0& ~0x00000001);
+            pagePermissionBuilder= 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getPagePermissionFieldBuilder() : null;
           } else {
@@ -841,15 +841,15 @@ private static final long serialVersionUID = 0L;
      * @return Whether the baseResp field is set.
      */
     public boolean hasBaseResp() {
-      return baseRespBuilder != null || baseResp != null;
+      return baseRespBuilder!= null || baseResp!= null;
     }
     /**
      * <code>.base.BaseResponse base_resp = 1;</code>
      * @return The baseResp.
      */
     public com.zhijiejiaoyu.base.BaseResponse getBaseResp() {
-      if (baseRespBuilder == null) {
-        return baseResp == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
+      if (baseRespBuilder== null) {
+        return baseResp== null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
       } else {
         return baseRespBuilder.getMessage();
       }
@@ -858,11 +858,11 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public Builder setBaseResp(com.zhijiejiaoyu.base.BaseResponse value) {
-      if (baseRespBuilder == null) {
+      if (baseRespBuilder== null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        baseResp = value;
+        baseResp= value;
         onChanged();
       } else {
         baseRespBuilder.setMessage(value);
@@ -875,8 +875,8 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setBaseResp(
         com.zhijiejiaoyu.base.BaseResponse.Builder builderForValue) {
-      if (baseRespBuilder == null) {
-        baseResp = builderForValue.build();
+      if (baseRespBuilder== null) {
+        baseResp= builderForValue.build();
         onChanged();
       } else {
         baseRespBuilder.setMessage(builderForValue.build());
@@ -888,12 +888,12 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public Builder mergeBaseResp(com.zhijiejiaoyu.base.BaseResponse value) {
-      if (baseRespBuilder == null) {
-        if (baseResp != null) {
-          baseResp =
+      if (baseRespBuilder== null) {
+        if (baseResp!= null) {
+          baseResp=
             com.zhijiejiaoyu.base.BaseResponse.newBuilder(baseResp).mergeFrom(value).buildPartial();
         } else {
-          baseResp = value;
+          baseResp= value;
         }
         onChanged();
       } else {
@@ -906,12 +906,12 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public Builder clearBaseResp() {
-      if (baseRespBuilder == null) {
-        baseResp = null;
+      if (baseRespBuilder== null) {
+        baseResp= null;
         onChanged();
       } else {
-        baseResp = null;
-        baseRespBuilder = null;
+        baseResp= null;
+        baseRespBuilder= null;
       }
 
       return this;
@@ -928,10 +928,10 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder() {
-      if (baseRespBuilder != null) {
+      if (baseRespBuilder!= null) {
         return baseRespBuilder.getMessageOrBuilder();
       } else {
-        return baseResp == null ?
+        return baseResp== null ?
             com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
       }
     }
@@ -941,18 +941,18 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.base.BaseResponse, com.zhijiejiaoyu.base.BaseResponse.Builder, com.zhijiejiaoyu.base.BaseResponseOrBuilder> 
         getBaseRespFieldBuilder() {
-      if (baseRespBuilder == null) {
-        baseRespBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+      if (baseRespBuilder== null) {
+        baseRespBuilder= new com.google.protobuf.SingleFieldBuilderV3<
             com.zhijiejiaoyu.base.BaseResponse, com.zhijiejiaoyu.base.BaseResponse.Builder, com.zhijiejiaoyu.base.BaseResponseOrBuilder>(
                 getBaseResp(),
                 getParentForChildren(),
                 isClean());
-        baseResp = null;
+        baseResp= null;
       }
       return baseRespBuilder;
     }
 
-    private long tenantId ;
+    private long tenantId;
     /**
      * <code>int64 tenant_id = 2;</code>
      * @return The tenantId.
@@ -968,7 +968,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setTenantId(long value) {
       
-      tenantId = value;
+      tenantId= value;
       onChanged();
       return this;
     }
@@ -978,12 +978,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearTenantId() {
       
-      tenantId = 0L;
+      tenantId= 0L;
       onChanged();
       return this;
     }
 
-    private long roleId ;
+    private long roleId;
     /**
      * <code>int64 role_id = 3;</code>
      * @return The roleId.
@@ -999,7 +999,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setRoleId(long value) {
       
-      roleId = value;
+      roleId= value;
       onChanged();
       return this;
     }
@@ -1009,12 +1009,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearRoleId() {
       
-      roleId = 0L;
+      roleId= 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object roleName = "";
+    private java.lang.Object roleName= "";
     /**
      * <code>string role_name = 4;</code>
      * @return The roleName.
@@ -1025,7 +1025,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        roleName = s;
+        roleName= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1042,7 +1042,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        roleName = b;
+        roleName= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1059,7 +1059,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      roleName = value;
+      roleName= value;
       onChanged();
       return this;
     }
@@ -1069,7 +1069,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearRoleName() {
       
-      roleName = getDefaultInstance().getRoleName();
+      roleName= getDefaultInstance().getRoleName();
       onChanged();
       return this;
     }
@@ -1085,12 +1085,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      roleName = value;
+      roleName= value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object roleType = "";
+    private java.lang.Object roleType= "";
     /**
      * <code>string role_type = 5;</code>
      * @return The roleType.
@@ -1101,7 +1101,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        roleType = s;
+        roleType= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1118,7 +1118,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        roleType = b;
+        roleType= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1135,7 +1135,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      roleType = value;
+      roleType= value;
       onChanged();
       return this;
     }
@@ -1145,7 +1145,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearRoleType() {
       
-      roleType = getDefaultInstance().getRoleType();
+      roleType= getDefaultInstance().getRoleType();
       onChanged();
       return this;
     }
@@ -1161,12 +1161,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      roleType = value;
+      roleType= value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object roleDescription = "";
+    private java.lang.Object roleDescription= "";
     /**
      * <code>string role_description = 6;</code>
      * @return The roleDescription.
@@ -1177,7 +1177,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        roleDescription = s;
+        roleDescription= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1194,7 +1194,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        roleDescription = b;
+        roleDescription= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1211,7 +1211,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      roleDescription = value;
+      roleDescription= value;
       onChanged();
       return this;
     }
@@ -1221,7 +1221,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearRoleDescription() {
       
-      roleDescription = getDefaultInstance().getRoleDescription();
+      roleDescription= getDefaultInstance().getRoleDescription();
       onChanged();
       return this;
     }
@@ -1237,12 +1237,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      roleDescription = value;
+      roleDescription= value;
       onChanged();
       return this;
     }
 
-    private boolean roleReadonly ;
+    private boolean roleReadonly;
     /**
      * <code>bool role_readonly = 7;</code>
      * @return The roleReadonly.
@@ -1258,7 +1258,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setRoleReadonly(boolean value) {
       
-      roleReadonly = value;
+      roleReadonly= value;
       onChanged();
       return this;
     }
@@ -1268,16 +1268,16 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearRoleReadonly() {
       
-      roleReadonly = false;
+      roleReadonly= false;
       onChanged();
       return this;
     }
 
-    private java.util.List<com.zhijiejiaoyu.glory_api.user.PagePermission> pagePermission =
+    private java.util.List<com.zhijiejiaoyu.glory_api.user.PagePermission> pagePermission=
       java.util.Collections.emptyList();
     private void ensurePagePermissionIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
-        pagePermission = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.PagePermission>(pagePermission);
+      if (!((bitField0& 0x00000001) != 0)) {
+        pagePermission= new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.PagePermission>(pagePermission);
         bitField0_ |= 0x00000001;
        }
     }
@@ -1289,7 +1289,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.PagePermission page_permission = 8;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.user.PagePermission> getPagePermissionList() {
-      if (pagePermissionBuilder == null) {
+      if (pagePermissionBuilder== null) {
         return java.util.Collections.unmodifiableList(pagePermission);
       } else {
         return pagePermissionBuilder.getMessageList();
@@ -1299,7 +1299,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.PagePermission page_permission = 8;</code>
      */
     public int getPagePermissionCount() {
-      if (pagePermissionBuilder == null) {
+      if (pagePermissionBuilder== null) {
         return pagePermission.size();
       } else {
         return pagePermissionBuilder.getCount();
@@ -1309,7 +1309,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.PagePermission page_permission = 8;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.PagePermission getPagePermission(int index) {
-      if (pagePermissionBuilder == null) {
+      if (pagePermissionBuilder== null) {
         return pagePermission.get(index);
       } else {
         return pagePermissionBuilder.getMessage(index);
@@ -1320,7 +1320,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setPagePermission(
         int index, com.zhijiejiaoyu.glory_api.user.PagePermission value) {
-      if (pagePermissionBuilder == null) {
+      if (pagePermissionBuilder== null) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -1337,7 +1337,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setPagePermission(
         int index, com.zhijiejiaoyu.glory_api.user.PagePermission.Builder builderForValue) {
-      if (pagePermissionBuilder == null) {
+      if (pagePermissionBuilder== null) {
         ensurePagePermissionIsMutable();
         pagePermission.set(index, builderForValue.build());
         onChanged();
@@ -1350,7 +1350,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.PagePermission page_permission = 8;</code>
      */
     public Builder addPagePermission(com.zhijiejiaoyu.glory_api.user.PagePermission value) {
-      if (pagePermissionBuilder == null) {
+      if (pagePermissionBuilder== null) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -1367,7 +1367,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addPagePermission(
         int index, com.zhijiejiaoyu.glory_api.user.PagePermission value) {
-      if (pagePermissionBuilder == null) {
+      if (pagePermissionBuilder== null) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -1384,7 +1384,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addPagePermission(
         com.zhijiejiaoyu.glory_api.user.PagePermission.Builder builderForValue) {
-      if (pagePermissionBuilder == null) {
+      if (pagePermissionBuilder== null) {
         ensurePagePermissionIsMutable();
         pagePermission.add(builderForValue.build());
         onChanged();
@@ -1398,7 +1398,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addPagePermission(
         int index, com.zhijiejiaoyu.glory_api.user.PagePermission.Builder builderForValue) {
-      if (pagePermissionBuilder == null) {
+      if (pagePermissionBuilder== null) {
         ensurePagePermissionIsMutable();
         pagePermission.add(index, builderForValue.build());
         onChanged();
@@ -1412,7 +1412,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addAllPagePermission(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.user.PagePermission> values) {
-      if (pagePermissionBuilder == null) {
+      if (pagePermissionBuilder== null) {
         ensurePagePermissionIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, pagePermission);
@@ -1426,9 +1426,9 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.PagePermission page_permission = 8;</code>
      */
     public Builder clearPagePermission() {
-      if (pagePermissionBuilder == null) {
-        pagePermission = java.util.Collections.emptyList();
-        bitField0 = (bitField0_ & ~0x00000001);
+      if (pagePermissionBuilder== null) {
+        pagePermission= java.util.Collections.emptyList();
+        bitField0= (bitField0& ~0x00000001);
         onChanged();
       } else {
         pagePermissionBuilder.clear();
@@ -1439,7 +1439,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.PagePermission page_permission = 8;</code>
      */
     public Builder removePagePermission(int index) {
-      if (pagePermissionBuilder == null) {
+      if (pagePermissionBuilder== null) {
         ensurePagePermissionIsMutable();
         pagePermission.remove(index);
         onChanged();
@@ -1460,7 +1460,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder getPagePermissionOrBuilder(
         int index) {
-      if (pagePermissionBuilder == null) {
+      if (pagePermissionBuilder== null) {
         return pagePermission.get(index);  } else {
         return pagePermissionBuilder.getMessageOrBuilder(index);
       }
@@ -1470,7 +1470,7 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder> 
          getPagePermissionOrBuilderList() {
-      if (pagePermissionBuilder != null) {
+      if (pagePermissionBuilder!= null) {
         return pagePermissionBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(pagePermission);
@@ -1501,14 +1501,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.RepeatedFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.user.PagePermission, com.zhijiejiaoyu.glory_api.user.PagePermission.Builder, com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder> 
         getPagePermissionFieldBuilder() {
-      if (pagePermissionBuilder == null) {
-        pagePermissionBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+      if (pagePermissionBuilder== null) {
+        pagePermissionBuilder= new com.google.protobuf.RepeatedFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.user.PagePermission, com.zhijiejiaoyu.glory_api.user.PagePermission.Builder, com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder>(
-                pagePermission_,
-                ((bitField0_ & 0x00000001) != 0),
+                pagePermission,
+                ((bitField0& 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        pagePermission = null;
+        pagePermission= null;
       }
       return pagePermissionBuilder;
     }

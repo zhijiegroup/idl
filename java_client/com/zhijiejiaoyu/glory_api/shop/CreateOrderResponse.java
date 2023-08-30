@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CreateOrderResponse() {
-    transRes = java.util.Collections.emptyList();
+    transRes= java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -39,7 +39,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0 = 0;
+    int mutable_bitField0= 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -52,20 +52,20 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             com.zhijiejiaoyu.base.BaseResponse.Builder subBuilder = null;
-            if (baseResp != null) {
+            if (baseResp!= null) {
               subBuilder = baseResp.toBuilder();
             }
-            baseResp = input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
+            baseResp= input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(baseResp);
-              baseResp = subBuilder.buildPartial();
+              baseResp= subBuilder.buildPartial();
             }
 
             break;
           }
           case 18: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              transRes = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.shop.TransResponseInfo>();
+            if (!((mutable_bitField0& 0x00000001) != 0)) {
+              transRes= new java.util.ArrayList<com.zhijiejiaoyu.glory_api.shop.TransResponseInfo>();
               mutable_bitField0_ |= 0x00000001;
             }
             transRes.add(
@@ -74,12 +74,12 @@ private static final long serialVersionUID = 0L;
           }
           case 25: {
 
-            cnyTotal = input.readDouble();
+            cnyTotal= input.readDouble();
             break;
           }
           case 33: {
 
-            coinTotal = input.readDouble();
+            coinTotal= input.readDouble();
             break;
           }
           default: {
@@ -97,8 +97,8 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        transRes = java.util.Collections.unmodifiableList(transRes);
+      if (((mutable_bitField0& 0x00000001) != 0)) {
+        transRes= java.util.Collections.unmodifiableList(transRes);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -125,7 +125,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasBaseResp() {
-    return baseResp != null;
+    return baseResp!= null;
   }
   /**
    * <code>.base.BaseResponse base_resp = 1;</code>
@@ -133,7 +133,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.zhijiejiaoyu.base.BaseResponse getBaseResp() {
-    return baseResp == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
+    return baseResp== null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
   }
   /**
    * <code>.base.BaseResponse base_resp = 1;</code>
@@ -227,16 +227,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (baseResp != null) {
+    if (baseResp!= null) {
       output.writeMessage(1, getBaseResp());
     }
     for (int i = 0; i < transRes.size(); i++) {
       output.writeMessage(2, transRes.get(i));
     }
-    if (cnyTotal != 0D) {
+    if (cnyTotal!= 0D) {
       output.writeDouble(3, cnyTotal);
     }
-    if (coinTotal != 0D) {
+    if (coinTotal!= 0D) {
       output.writeDouble(4, coinTotal);
     }
     unknownFields.writeTo(output);
@@ -248,7 +248,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (baseResp != null) {
+    if (baseResp!= null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
@@ -256,11 +256,11 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, transRes.get(i));
     }
-    if (cnyTotal != 0D) {
+    if (cnyTotal!= 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(3, cnyTotal);
     }
-    if (coinTotal != 0D) {
+    if (coinTotal!= 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(4, coinTotal);
     }
@@ -451,21 +451,21 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (baseRespBuilder == null) {
-        baseResp = null;
+      if (baseRespBuilder== null) {
+        baseResp= null;
       } else {
-        baseResp = null;
-        baseRespBuilder = null;
+        baseResp= null;
+        baseRespBuilder= null;
       }
-      if (transResBuilder == null) {
-        transRes = java.util.Collections.emptyList();
-        bitField0 = (bitField0_ & ~0x00000001);
+      if (transResBuilder== null) {
+        transRes= java.util.Collections.emptyList();
+        bitField0= (bitField0& ~0x00000001);
       } else {
         transResBuilder.clear();
       }
-      cnyTotal = 0D;
+      cnyTotal= 0D;
 
-      coinTotal = 0D;
+      coinTotal= 0D;
 
       return this;
     }
@@ -493,23 +493,23 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.shop.CreateOrderResponse buildPartial() {
       com.zhijiejiaoyu.glory_api.shop.CreateOrderResponse result = new com.zhijiejiaoyu.glory_api.shop.CreateOrderResponse(this);
-      int from_bitField0 = bitField0;
-      if (baseRespBuilder == null) {
-        result.baseResp = baseResp;
+      int from_bitField0= bitField0;
+      if (baseRespBuilder== null) {
+        result.baseResp= baseResp;
       } else {
-        result.baseResp = baseRespBuilder.build();
+        result.baseResp= baseRespBuilder.build();
       }
-      if (transResBuilder == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          transRes = java.util.Collections.unmodifiableList(transRes);
-          bitField0 = (bitField0_ & ~0x00000001);
+      if (transResBuilder== null) {
+        if (((bitField0& 0x00000001) != 0)) {
+          transRes= java.util.Collections.unmodifiableList(transRes);
+          bitField0= (bitField0& ~0x00000001);
         }
-        result.transRes = transRes;
+        result.transRes= transRes;
       } else {
-        result.transRes = transResBuilder.build();
+        result.transRes= transResBuilder.build();
       }
-      result.cnyTotal = cnyTotal;
-      result.coinTotal = coinTotal;
+      result.cnyTotal= cnyTotal;
+      result.coinTotal= coinTotal;
       onBuilt();
       return result;
     }
@@ -561,11 +561,11 @@ private static final long serialVersionUID = 0L;
       if (other.hasBaseResp()) {
         mergeBaseResp(other.getBaseResp());
       }
-      if (transResBuilder == null) {
+      if (transResBuilder== null) {
         if (!other.transRes.isEmpty()) {
           if (transRes.isEmpty()) {
-            transRes = other.transRes;
-            bitField0 = (bitField0_ & ~0x00000001);
+            transRes= other.transRes;
+            bitField0= (bitField0& ~0x00000001);
           } else {
             ensureTransResIsMutable();
             transRes.addAll(other.transRes);
@@ -576,10 +576,10 @@ private static final long serialVersionUID = 0L;
         if (!other.transRes.isEmpty()) {
           if (transResBuilder.isEmpty()) {
             transResBuilder.dispose();
-            transResBuilder = null;
-            transRes = other.transRes;
-            bitField0 = (bitField0_ & ~0x00000001);
-            transResBuilder = 
+            transResBuilder= null;
+            transRes= other.transRes;
+            bitField0= (bitField0& ~0x00000001);
+            transResBuilder= 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getTransResFieldBuilder() : null;
           } else {
@@ -631,15 +631,15 @@ private static final long serialVersionUID = 0L;
      * @return Whether the baseResp field is set.
      */
     public boolean hasBaseResp() {
-      return baseRespBuilder != null || baseResp != null;
+      return baseRespBuilder!= null || baseResp!= null;
     }
     /**
      * <code>.base.BaseResponse base_resp = 1;</code>
      * @return The baseResp.
      */
     public com.zhijiejiaoyu.base.BaseResponse getBaseResp() {
-      if (baseRespBuilder == null) {
-        return baseResp == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
+      if (baseRespBuilder== null) {
+        return baseResp== null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
       } else {
         return baseRespBuilder.getMessage();
       }
@@ -648,11 +648,11 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public Builder setBaseResp(com.zhijiejiaoyu.base.BaseResponse value) {
-      if (baseRespBuilder == null) {
+      if (baseRespBuilder== null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        baseResp = value;
+        baseResp= value;
         onChanged();
       } else {
         baseRespBuilder.setMessage(value);
@@ -665,8 +665,8 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setBaseResp(
         com.zhijiejiaoyu.base.BaseResponse.Builder builderForValue) {
-      if (baseRespBuilder == null) {
-        baseResp = builderForValue.build();
+      if (baseRespBuilder== null) {
+        baseResp= builderForValue.build();
         onChanged();
       } else {
         baseRespBuilder.setMessage(builderForValue.build());
@@ -678,12 +678,12 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public Builder mergeBaseResp(com.zhijiejiaoyu.base.BaseResponse value) {
-      if (baseRespBuilder == null) {
-        if (baseResp != null) {
-          baseResp =
+      if (baseRespBuilder== null) {
+        if (baseResp!= null) {
+          baseResp=
             com.zhijiejiaoyu.base.BaseResponse.newBuilder(baseResp).mergeFrom(value).buildPartial();
         } else {
-          baseResp = value;
+          baseResp= value;
         }
         onChanged();
       } else {
@@ -696,12 +696,12 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public Builder clearBaseResp() {
-      if (baseRespBuilder == null) {
-        baseResp = null;
+      if (baseRespBuilder== null) {
+        baseResp= null;
         onChanged();
       } else {
-        baseResp = null;
-        baseRespBuilder = null;
+        baseResp= null;
+        baseRespBuilder= null;
       }
 
       return this;
@@ -718,10 +718,10 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder() {
-      if (baseRespBuilder != null) {
+      if (baseRespBuilder!= null) {
         return baseRespBuilder.getMessageOrBuilder();
       } else {
-        return baseResp == null ?
+        return baseResp== null ?
             com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
       }
     }
@@ -731,22 +731,22 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.base.BaseResponse, com.zhijiejiaoyu.base.BaseResponse.Builder, com.zhijiejiaoyu.base.BaseResponseOrBuilder> 
         getBaseRespFieldBuilder() {
-      if (baseRespBuilder == null) {
-        baseRespBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+      if (baseRespBuilder== null) {
+        baseRespBuilder= new com.google.protobuf.SingleFieldBuilderV3<
             com.zhijiejiaoyu.base.BaseResponse, com.zhijiejiaoyu.base.BaseResponse.Builder, com.zhijiejiaoyu.base.BaseResponseOrBuilder>(
                 getBaseResp(),
                 getParentForChildren(),
                 isClean());
-        baseResp = null;
+        baseResp= null;
       }
       return baseRespBuilder;
     }
 
-    private java.util.List<com.zhijiejiaoyu.glory_api.shop.TransResponseInfo> transRes =
+    private java.util.List<com.zhijiejiaoyu.glory_api.shop.TransResponseInfo> transRes=
       java.util.Collections.emptyList();
     private void ensureTransResIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
-        transRes = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.shop.TransResponseInfo>(transRes);
+      if (!((bitField0& 0x00000001) != 0)) {
+        transRes= new java.util.ArrayList<com.zhijiejiaoyu.glory_api.shop.TransResponseInfo>(transRes);
         bitField0_ |= 0x00000001;
        }
     }
@@ -758,7 +758,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.TransResponseInfo trans_res = 2;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.shop.TransResponseInfo> getTransResList() {
-      if (transResBuilder == null) {
+      if (transResBuilder== null) {
         return java.util.Collections.unmodifiableList(transRes);
       } else {
         return transResBuilder.getMessageList();
@@ -768,7 +768,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.TransResponseInfo trans_res = 2;</code>
      */
     public int getTransResCount() {
-      if (transResBuilder == null) {
+      if (transResBuilder== null) {
         return transRes.size();
       } else {
         return transResBuilder.getCount();
@@ -778,7 +778,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.TransResponseInfo trans_res = 2;</code>
      */
     public com.zhijiejiaoyu.glory_api.shop.TransResponseInfo getTransRes(int index) {
-      if (transResBuilder == null) {
+      if (transResBuilder== null) {
         return transRes.get(index);
       } else {
         return transResBuilder.getMessage(index);
@@ -789,7 +789,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setTransRes(
         int index, com.zhijiejiaoyu.glory_api.shop.TransResponseInfo value) {
-      if (transResBuilder == null) {
+      if (transResBuilder== null) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -806,7 +806,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setTransRes(
         int index, com.zhijiejiaoyu.glory_api.shop.TransResponseInfo.Builder builderForValue) {
-      if (transResBuilder == null) {
+      if (transResBuilder== null) {
         ensureTransResIsMutable();
         transRes.set(index, builderForValue.build());
         onChanged();
@@ -819,7 +819,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.TransResponseInfo trans_res = 2;</code>
      */
     public Builder addTransRes(com.zhijiejiaoyu.glory_api.shop.TransResponseInfo value) {
-      if (transResBuilder == null) {
+      if (transResBuilder== null) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -836,7 +836,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addTransRes(
         int index, com.zhijiejiaoyu.glory_api.shop.TransResponseInfo value) {
-      if (transResBuilder == null) {
+      if (transResBuilder== null) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -853,7 +853,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addTransRes(
         com.zhijiejiaoyu.glory_api.shop.TransResponseInfo.Builder builderForValue) {
-      if (transResBuilder == null) {
+      if (transResBuilder== null) {
         ensureTransResIsMutable();
         transRes.add(builderForValue.build());
         onChanged();
@@ -867,7 +867,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addTransRes(
         int index, com.zhijiejiaoyu.glory_api.shop.TransResponseInfo.Builder builderForValue) {
-      if (transResBuilder == null) {
+      if (transResBuilder== null) {
         ensureTransResIsMutable();
         transRes.add(index, builderForValue.build());
         onChanged();
@@ -881,7 +881,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addAllTransRes(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.shop.TransResponseInfo> values) {
-      if (transResBuilder == null) {
+      if (transResBuilder== null) {
         ensureTransResIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, transRes);
@@ -895,9 +895,9 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.TransResponseInfo trans_res = 2;</code>
      */
     public Builder clearTransRes() {
-      if (transResBuilder == null) {
-        transRes = java.util.Collections.emptyList();
-        bitField0 = (bitField0_ & ~0x00000001);
+      if (transResBuilder== null) {
+        transRes= java.util.Collections.emptyList();
+        bitField0= (bitField0& ~0x00000001);
         onChanged();
       } else {
         transResBuilder.clear();
@@ -908,7 +908,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.TransResponseInfo trans_res = 2;</code>
      */
     public Builder removeTransRes(int index) {
-      if (transResBuilder == null) {
+      if (transResBuilder== null) {
         ensureTransResIsMutable();
         transRes.remove(index);
         onChanged();
@@ -929,7 +929,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.shop.TransResponseInfoOrBuilder getTransResOrBuilder(
         int index) {
-      if (transResBuilder == null) {
+      if (transResBuilder== null) {
         return transRes.get(index);  } else {
         return transResBuilder.getMessageOrBuilder(index);
       }
@@ -939,7 +939,7 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.TransResponseInfoOrBuilder> 
          getTransResOrBuilderList() {
-      if (transResBuilder != null) {
+      if (transResBuilder!= null) {
         return transResBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(transRes);
@@ -970,19 +970,19 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.RepeatedFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.shop.TransResponseInfo, com.zhijiejiaoyu.glory_api.shop.TransResponseInfo.Builder, com.zhijiejiaoyu.glory_api.shop.TransResponseInfoOrBuilder> 
         getTransResFieldBuilder() {
-      if (transResBuilder == null) {
-        transResBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+      if (transResBuilder== null) {
+        transResBuilder= new com.google.protobuf.RepeatedFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.shop.TransResponseInfo, com.zhijiejiaoyu.glory_api.shop.TransResponseInfo.Builder, com.zhijiejiaoyu.glory_api.shop.TransResponseInfoOrBuilder>(
-                transRes_,
-                ((bitField0_ & 0x00000001) != 0),
+                transRes,
+                ((bitField0& 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        transRes = null;
+        transRes= null;
       }
       return transResBuilder;
     }
 
-    private double cnyTotal ;
+    private double cnyTotal;
     /**
      * <pre>
      *人民币总金额，单位为分 微信支付使用
@@ -1006,7 +1006,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setCnyTotal(double value) {
       
-      cnyTotal = value;
+      cnyTotal= value;
       onChanged();
       return this;
     }
@@ -1020,12 +1020,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearCnyTotal() {
       
-      cnyTotal = 0D;
+      cnyTotal= 0D;
       onChanged();
       return this;
     }
 
-    private double coinTotal ;
+    private double coinTotal;
     /**
      * <pre>
      *虚拟币总金额
@@ -1049,7 +1049,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setCoinTotal(double value) {
       
-      coinTotal = value;
+      coinTotal= value;
       onChanged();
       return this;
     }
@@ -1063,7 +1063,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearCoinTotal() {
       
-      coinTotal = 0D;
+      coinTotal= 0D;
       onChanged();
       return this;
     }

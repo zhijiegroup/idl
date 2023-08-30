@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private DailyOperationMetrics() {
-    metricsDate = "";
+    metricsDate= "";
   }
 
   @java.lang.Override
@@ -51,23 +51,23 @@ private static final long serialVersionUID = 0L;
             break;
           case 9: {
 
-            dailyOrderAmount = input.readDouble();
+            dailyOrderAmount= input.readDouble();
             break;
           }
           case 16: {
 
-            dailyOrderCount = input.readUInt32();
+            dailyOrderCount= input.readUInt32();
             break;
           }
           case 24: {
 
-            dailyDistinctUserCount = input.readUInt32();
+            dailyDistinctUserCount= input.readUInt32();
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            metricsDate = s;
+            metricsDate= s;
             break;
           }
           default: {
@@ -150,7 +150,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      metricsDate = s;
+      metricsDate= s;
       return s;
     }
   }
@@ -166,7 +166,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      metricsDate = b;
+      metricsDate= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -187,13 +187,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (dailyOrderAmount != 0D) {
+    if (dailyOrderAmount!= 0D) {
       output.writeDouble(1, dailyOrderAmount);
     }
-    if (dailyOrderCount != 0) {
+    if (dailyOrderCount!= 0) {
       output.writeUInt32(2, dailyOrderCount);
     }
-    if (dailyDistinctUserCount != 0) {
+    if (dailyDistinctUserCount!= 0) {
       output.writeUInt32(3, dailyDistinctUserCount);
     }
     if (!getMetricsDateBytes().isEmpty()) {
@@ -208,15 +208,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (dailyOrderAmount != 0D) {
+    if (dailyOrderAmount!= 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(1, dailyOrderAmount);
     }
-    if (dailyOrderCount != 0) {
+    if (dailyOrderCount!= 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(2, dailyOrderCount);
     }
-    if (dailyDistinctUserCount != 0) {
+    if (dailyDistinctUserCount!= 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(3, dailyDistinctUserCount);
     }
@@ -400,13 +400,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      dailyOrderAmount = 0D;
+      dailyOrderAmount= 0D;
 
-      dailyOrderCount = 0;
+      dailyOrderCount= 0;
 
-      dailyDistinctUserCount = 0;
+      dailyDistinctUserCount= 0;
 
-      metricsDate = "";
+      metricsDate= "";
 
       return this;
     }
@@ -434,10 +434,10 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.shop.DailyOperationMetrics buildPartial() {
       com.zhijiejiaoyu.glory_api.shop.DailyOperationMetrics result = new com.zhijiejiaoyu.glory_api.shop.DailyOperationMetrics(this);
-      result.dailyOrderAmount = dailyOrderAmount;
-      result.dailyOrderCount = dailyOrderCount;
-      result.dailyDistinctUserCount = dailyDistinctUserCount;
-      result.metricsDate = metricsDate;
+      result.dailyOrderAmount= dailyOrderAmount;
+      result.dailyOrderCount= dailyOrderCount;
+      result.dailyDistinctUserCount= dailyDistinctUserCount;
+      result.metricsDate= metricsDate;
       onBuilt();
       return result;
     }
@@ -496,7 +496,7 @@ private static final long serialVersionUID = 0L;
         setDailyDistinctUserCount(other.getDailyDistinctUserCount());
       }
       if (!other.getMetricsDate().isEmpty()) {
-        metricsDate = other.metricsDate;
+        metricsDate= other.metricsDate;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -528,7 +528,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double dailyOrderAmount ;
+    private double dailyOrderAmount;
     /**
      * <code>double daily_order_amount = 1;</code>
      * @return The dailyOrderAmount.
@@ -544,7 +544,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDailyOrderAmount(double value) {
       
-      dailyOrderAmount = value;
+      dailyOrderAmount= value;
       onChanged();
       return this;
     }
@@ -554,12 +554,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearDailyOrderAmount() {
       
-      dailyOrderAmount = 0D;
+      dailyOrderAmount= 0D;
       onChanged();
       return this;
     }
 
-    private int dailyOrderCount ;
+    private int dailyOrderCount;
     /**
      * <code>uint32 daily_order_count = 2;</code>
      * @return The dailyOrderCount.
@@ -575,7 +575,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDailyOrderCount(int value) {
       
-      dailyOrderCount = value;
+      dailyOrderCount= value;
       onChanged();
       return this;
     }
@@ -585,12 +585,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearDailyOrderCount() {
       
-      dailyOrderCount = 0;
+      dailyOrderCount= 0;
       onChanged();
       return this;
     }
 
-    private int dailyDistinctUserCount ;
+    private int dailyDistinctUserCount;
     /**
      * <code>uint32 daily_distinct_user_count = 3;</code>
      * @return The dailyDistinctUserCount.
@@ -606,7 +606,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDailyDistinctUserCount(int value) {
       
-      dailyDistinctUserCount = value;
+      dailyDistinctUserCount= value;
       onChanged();
       return this;
     }
@@ -616,12 +616,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearDailyDistinctUserCount() {
       
-      dailyDistinctUserCount = 0;
+      dailyDistinctUserCount= 0;
       onChanged();
       return this;
     }
 
-    private java.lang.Object metricsDate = "";
+    private java.lang.Object metricsDate= "";
     /**
      * <code>string metrics_date = 4;</code>
      * @return The metricsDate.
@@ -632,7 +632,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        metricsDate = s;
+        metricsDate= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -649,7 +649,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        metricsDate = b;
+        metricsDate= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -666,7 +666,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      metricsDate = value;
+      metricsDate= value;
       onChanged();
       return this;
     }
@@ -676,7 +676,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearMetricsDate() {
       
-      metricsDate = getDefaultInstance().getMetricsDate();
+      metricsDate= getDefaultInstance().getMetricsDate();
       onChanged();
       return this;
     }
@@ -692,7 +692,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      metricsDate = value;
+      metricsDate= value;
       onChanged();
       return this;
     }

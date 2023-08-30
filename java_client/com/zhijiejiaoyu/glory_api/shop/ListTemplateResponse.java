@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListTemplateResponse() {
-    templates = java.util.Collections.emptyList();
+    templates= java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -39,7 +39,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0 = 0;
+    int mutable_bitField0= 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -52,20 +52,20 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             com.zhijiejiaoyu.base.BaseResponse.Builder subBuilder = null;
-            if (baseResp != null) {
+            if (baseResp!= null) {
               subBuilder = baseResp.toBuilder();
             }
-            baseResp = input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
+            baseResp= input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(baseResp);
-              baseResp = subBuilder.buildPartial();
+              baseResp= subBuilder.buildPartial();
             }
 
             break;
           }
           case 18: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              templates = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.shop.Template>();
+            if (!((mutable_bitField0& 0x00000001) != 0)) {
+              templates= new java.util.ArrayList<com.zhijiejiaoyu.glory_api.shop.Template>();
               mutable_bitField0_ |= 0x00000001;
             }
             templates.add(
@@ -87,8 +87,8 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        templates = java.util.Collections.unmodifiableList(templates);
+      if (((mutable_bitField0& 0x00000001) != 0)) {
+        templates= java.util.Collections.unmodifiableList(templates);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -115,7 +115,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasBaseResp() {
-    return baseResp != null;
+    return baseResp!= null;
   }
   /**
    * <code>.base.BaseResponse base_resp = 1;</code>
@@ -123,7 +123,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.zhijiejiaoyu.base.BaseResponse getBaseResp() {
-    return baseResp == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
+    return baseResp== null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
   }
   /**
    * <code>.base.BaseResponse base_resp = 1;</code>
@@ -187,7 +187,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (baseResp != null) {
+    if (baseResp!= null) {
       output.writeMessage(1, getBaseResp());
     }
     for (int i = 0; i < templates.size(); i++) {
@@ -202,7 +202,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (baseResp != null) {
+    if (baseResp!= null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
@@ -385,15 +385,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (baseRespBuilder == null) {
-        baseResp = null;
+      if (baseRespBuilder== null) {
+        baseResp= null;
       } else {
-        baseResp = null;
-        baseRespBuilder = null;
+        baseResp= null;
+        baseRespBuilder= null;
       }
-      if (templatesBuilder == null) {
-        templates = java.util.Collections.emptyList();
-        bitField0 = (bitField0_ & ~0x00000001);
+      if (templatesBuilder== null) {
+        templates= java.util.Collections.emptyList();
+        bitField0= (bitField0& ~0x00000001);
       } else {
         templatesBuilder.clear();
       }
@@ -423,20 +423,20 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.shop.ListTemplateResponse buildPartial() {
       com.zhijiejiaoyu.glory_api.shop.ListTemplateResponse result = new com.zhijiejiaoyu.glory_api.shop.ListTemplateResponse(this);
-      int from_bitField0 = bitField0;
-      if (baseRespBuilder == null) {
-        result.baseResp = baseResp;
+      int from_bitField0= bitField0;
+      if (baseRespBuilder== null) {
+        result.baseResp= baseResp;
       } else {
-        result.baseResp = baseRespBuilder.build();
+        result.baseResp= baseRespBuilder.build();
       }
-      if (templatesBuilder == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          templates = java.util.Collections.unmodifiableList(templates);
-          bitField0 = (bitField0_ & ~0x00000001);
+      if (templatesBuilder== null) {
+        if (((bitField0& 0x00000001) != 0)) {
+          templates= java.util.Collections.unmodifiableList(templates);
+          bitField0= (bitField0& ~0x00000001);
         }
-        result.templates = templates;
+        result.templates= templates;
       } else {
-        result.templates = templatesBuilder.build();
+        result.templates= templatesBuilder.build();
       }
       onBuilt();
       return result;
@@ -489,11 +489,11 @@ private static final long serialVersionUID = 0L;
       if (other.hasBaseResp()) {
         mergeBaseResp(other.getBaseResp());
       }
-      if (templatesBuilder == null) {
+      if (templatesBuilder== null) {
         if (!other.templates.isEmpty()) {
           if (templates.isEmpty()) {
-            templates = other.templates;
-            bitField0 = (bitField0_ & ~0x00000001);
+            templates= other.templates;
+            bitField0= (bitField0& ~0x00000001);
           } else {
             ensureTemplatesIsMutable();
             templates.addAll(other.templates);
@@ -504,10 +504,10 @@ private static final long serialVersionUID = 0L;
         if (!other.templates.isEmpty()) {
           if (templatesBuilder.isEmpty()) {
             templatesBuilder.dispose();
-            templatesBuilder = null;
-            templates = other.templates;
-            bitField0 = (bitField0_ & ~0x00000001);
-            templatesBuilder = 
+            templatesBuilder= null;
+            templates= other.templates;
+            bitField0= (bitField0& ~0x00000001);
+            templatesBuilder= 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getTemplatesFieldBuilder() : null;
           } else {
@@ -553,15 +553,15 @@ private static final long serialVersionUID = 0L;
      * @return Whether the baseResp field is set.
      */
     public boolean hasBaseResp() {
-      return baseRespBuilder != null || baseResp != null;
+      return baseRespBuilder!= null || baseResp!= null;
     }
     /**
      * <code>.base.BaseResponse base_resp = 1;</code>
      * @return The baseResp.
      */
     public com.zhijiejiaoyu.base.BaseResponse getBaseResp() {
-      if (baseRespBuilder == null) {
-        return baseResp == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
+      if (baseRespBuilder== null) {
+        return baseResp== null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
       } else {
         return baseRespBuilder.getMessage();
       }
@@ -570,11 +570,11 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public Builder setBaseResp(com.zhijiejiaoyu.base.BaseResponse value) {
-      if (baseRespBuilder == null) {
+      if (baseRespBuilder== null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        baseResp = value;
+        baseResp= value;
         onChanged();
       } else {
         baseRespBuilder.setMessage(value);
@@ -587,8 +587,8 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setBaseResp(
         com.zhijiejiaoyu.base.BaseResponse.Builder builderForValue) {
-      if (baseRespBuilder == null) {
-        baseResp = builderForValue.build();
+      if (baseRespBuilder== null) {
+        baseResp= builderForValue.build();
         onChanged();
       } else {
         baseRespBuilder.setMessage(builderForValue.build());
@@ -600,12 +600,12 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public Builder mergeBaseResp(com.zhijiejiaoyu.base.BaseResponse value) {
-      if (baseRespBuilder == null) {
-        if (baseResp != null) {
-          baseResp =
+      if (baseRespBuilder== null) {
+        if (baseResp!= null) {
+          baseResp=
             com.zhijiejiaoyu.base.BaseResponse.newBuilder(baseResp).mergeFrom(value).buildPartial();
         } else {
-          baseResp = value;
+          baseResp= value;
         }
         onChanged();
       } else {
@@ -618,12 +618,12 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public Builder clearBaseResp() {
-      if (baseRespBuilder == null) {
-        baseResp = null;
+      if (baseRespBuilder== null) {
+        baseResp= null;
         onChanged();
       } else {
-        baseResp = null;
-        baseRespBuilder = null;
+        baseResp= null;
+        baseRespBuilder= null;
       }
 
       return this;
@@ -640,10 +640,10 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder() {
-      if (baseRespBuilder != null) {
+      if (baseRespBuilder!= null) {
         return baseRespBuilder.getMessageOrBuilder();
       } else {
-        return baseResp == null ?
+        return baseResp== null ?
             com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
       }
     }
@@ -653,22 +653,22 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.base.BaseResponse, com.zhijiejiaoyu.base.BaseResponse.Builder, com.zhijiejiaoyu.base.BaseResponseOrBuilder> 
         getBaseRespFieldBuilder() {
-      if (baseRespBuilder == null) {
-        baseRespBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+      if (baseRespBuilder== null) {
+        baseRespBuilder= new com.google.protobuf.SingleFieldBuilderV3<
             com.zhijiejiaoyu.base.BaseResponse, com.zhijiejiaoyu.base.BaseResponse.Builder, com.zhijiejiaoyu.base.BaseResponseOrBuilder>(
                 getBaseResp(),
                 getParentForChildren(),
                 isClean());
-        baseResp = null;
+        baseResp= null;
       }
       return baseRespBuilder;
     }
 
-    private java.util.List<com.zhijiejiaoyu.glory_api.shop.Template> templates =
+    private java.util.List<com.zhijiejiaoyu.glory_api.shop.Template> templates=
       java.util.Collections.emptyList();
     private void ensureTemplatesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
-        templates = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.shop.Template>(templates);
+      if (!((bitField0& 0x00000001) != 0)) {
+        templates= new java.util.ArrayList<com.zhijiejiaoyu.glory_api.shop.Template>(templates);
         bitField0_ |= 0x00000001;
        }
     }
@@ -680,7 +680,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.Template templates = 2;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.shop.Template> getTemplatesList() {
-      if (templatesBuilder == null) {
+      if (templatesBuilder== null) {
         return java.util.Collections.unmodifiableList(templates);
       } else {
         return templatesBuilder.getMessageList();
@@ -690,7 +690,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.Template templates = 2;</code>
      */
     public int getTemplatesCount() {
-      if (templatesBuilder == null) {
+      if (templatesBuilder== null) {
         return templates.size();
       } else {
         return templatesBuilder.getCount();
@@ -700,7 +700,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.Template templates = 2;</code>
      */
     public com.zhijiejiaoyu.glory_api.shop.Template getTemplates(int index) {
-      if (templatesBuilder == null) {
+      if (templatesBuilder== null) {
         return templates.get(index);
       } else {
         return templatesBuilder.getMessage(index);
@@ -711,7 +711,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setTemplates(
         int index, com.zhijiejiaoyu.glory_api.shop.Template value) {
-      if (templatesBuilder == null) {
+      if (templatesBuilder== null) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -728,7 +728,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setTemplates(
         int index, com.zhijiejiaoyu.glory_api.shop.Template.Builder builderForValue) {
-      if (templatesBuilder == null) {
+      if (templatesBuilder== null) {
         ensureTemplatesIsMutable();
         templates.set(index, builderForValue.build());
         onChanged();
@@ -741,7 +741,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.Template templates = 2;</code>
      */
     public Builder addTemplates(com.zhijiejiaoyu.glory_api.shop.Template value) {
-      if (templatesBuilder == null) {
+      if (templatesBuilder== null) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -758,7 +758,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addTemplates(
         int index, com.zhijiejiaoyu.glory_api.shop.Template value) {
-      if (templatesBuilder == null) {
+      if (templatesBuilder== null) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -775,7 +775,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addTemplates(
         com.zhijiejiaoyu.glory_api.shop.Template.Builder builderForValue) {
-      if (templatesBuilder == null) {
+      if (templatesBuilder== null) {
         ensureTemplatesIsMutable();
         templates.add(builderForValue.build());
         onChanged();
@@ -789,7 +789,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addTemplates(
         int index, com.zhijiejiaoyu.glory_api.shop.Template.Builder builderForValue) {
-      if (templatesBuilder == null) {
+      if (templatesBuilder== null) {
         ensureTemplatesIsMutable();
         templates.add(index, builderForValue.build());
         onChanged();
@@ -803,7 +803,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addAllTemplates(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.shop.Template> values) {
-      if (templatesBuilder == null) {
+      if (templatesBuilder== null) {
         ensureTemplatesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, templates);
@@ -817,9 +817,9 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.Template templates = 2;</code>
      */
     public Builder clearTemplates() {
-      if (templatesBuilder == null) {
-        templates = java.util.Collections.emptyList();
-        bitField0 = (bitField0_ & ~0x00000001);
+      if (templatesBuilder== null) {
+        templates= java.util.Collections.emptyList();
+        bitField0= (bitField0& ~0x00000001);
         onChanged();
       } else {
         templatesBuilder.clear();
@@ -830,7 +830,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.Template templates = 2;</code>
      */
     public Builder removeTemplates(int index) {
-      if (templatesBuilder == null) {
+      if (templatesBuilder== null) {
         ensureTemplatesIsMutable();
         templates.remove(index);
         onChanged();
@@ -851,7 +851,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.shop.TemplateOrBuilder getTemplatesOrBuilder(
         int index) {
-      if (templatesBuilder == null) {
+      if (templatesBuilder== null) {
         return templates.get(index);  } else {
         return templatesBuilder.getMessageOrBuilder(index);
       }
@@ -861,7 +861,7 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.TemplateOrBuilder> 
          getTemplatesOrBuilderList() {
-      if (templatesBuilder != null) {
+      if (templatesBuilder!= null) {
         return templatesBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(templates);
@@ -892,14 +892,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.RepeatedFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.shop.Template, com.zhijiejiaoyu.glory_api.shop.Template.Builder, com.zhijiejiaoyu.glory_api.shop.TemplateOrBuilder> 
         getTemplatesFieldBuilder() {
-      if (templatesBuilder == null) {
-        templatesBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+      if (templatesBuilder== null) {
+        templatesBuilder= new com.google.protobuf.RepeatedFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.shop.Template, com.zhijiejiaoyu.glory_api.shop.Template.Builder, com.zhijiejiaoyu.glory_api.shop.TemplateOrBuilder>(
-                templates_,
-                ((bitField0_ & 0x00000001) != 0),
+                templates,
+                ((bitField0& 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        templates = null;
+        templates= null;
       }
       return templatesBuilder;
     }

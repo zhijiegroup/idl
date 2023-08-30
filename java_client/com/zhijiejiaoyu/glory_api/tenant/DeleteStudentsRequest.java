@@ -64,7 +64,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 16: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+            if (!((mutable_bitField0& 0x00000001) != 0)) {
               studentIds = newLongList();
               mutable_bitField0_ |= 0x00000001;
             }
@@ -74,7 +74,7 @@ private static final long serialVersionUID = 0L;
           case 18: {
             int length = input.readRawVarint32();
             int limit = input.pushLimit(length);
-            if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+            if (!((mutable_bitField0& 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
               studentIds = newLongList();
               mutable_bitField0_ |= 0x00000001;
             }
@@ -99,7 +99,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0& 0x00000001) != 0)) {
         studentIds.makeImmutable(); // C
       }
       this.unknownFields = unknownFields.build();
@@ -406,7 +406,7 @@ private static final long serialVersionUID = 0L;
         baseRequestBuilder = null;
       }
       studentIds = emptyLongList();
-      bitField0 = (bitField0_ & ~0x00000001);
+      bitField0 = (bitField0& ~0x00000001);
       return this;
     }
 
@@ -439,9 +439,9 @@ private static final long serialVersionUID = 0L;
       } else {
         result.baseRequest = baseRequestBuilder.build();
       }
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0& 0x00000001) != 0)) {
         studentIds.makeImmutable();
-        bitField0 = (bitField0_ & ~0x00000001);
+        bitField0 = (bitField0& ~0x00000001);
       }
       result.studentIds = studentIds;
       onBuilt();
@@ -498,7 +498,7 @@ private static final long serialVersionUID = 0L;
       if (!other.studentIds.isEmpty()) {
         if (studentIds.isEmpty()) {
           studentIds = other.studentIds;
-          bitField0 = (bitField0_ & ~0x00000001);
+          bitField0 = (bitField0& ~0x00000001);
         } else {
           ensureStudentIdsIsMutable();
           studentIds.addAll(other.studentIds);
@@ -656,7 +656,7 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Internal.LongList studentIds = emptyLongList();
     private void ensureStudentIdsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0& 0x00000001) != 0)) {
         studentIds = mutableCopy(studentIds);
         bitField0_ |= 0x00000001;
        }
@@ -667,7 +667,7 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<java.lang.Long>
         getStudentIdsList() {
-      return ((bitField0_ & 0x00000001) != 0) ?
+      return ((bitField0& 0x00000001) != 0) ?
                java.util.Collections.unmodifiableList(studentIds) : studentIds;
     }
     /**
@@ -728,7 +728,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearStudentIds() {
       studentIds = emptyLongList();
-      bitField0 = (bitField0_ & ~0x00000001);
+      bitField0 = (bitField0& ~0x00000001);
       onChanged();
       return this;
     }

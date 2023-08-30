@@ -16,9 +16,9 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private AccountOperation() {
-    accountOperationName = "";
-    unit = "";
-    createdAt = "";
+    accountOperationName= "";
+    unit= "";
+    createdAt= "";
   }
 
   @java.lang.Override
@@ -53,40 +53,40 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            userId = input.readInt64();
+            userId= input.readInt64();
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            accountOperationName = s;
+            accountOperationName= s;
             break;
           }
           case 24: {
 
-            accountOperationType = input.readInt32();
+            accountOperationType= input.readInt32();
             break;
           }
           case 32: {
 
-            amount = input.readInt64();
+            amount= input.readInt64();
             break;
           }
           case 42: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            unit = s;
+            unit= s;
             break;
           }
           case 48: {
 
-            accountOperationId = input.readInt64();
+            accountOperationId= input.readInt64();
             break;
           }
           case 58: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            createdAt = s;
+            createdAt= s;
             break;
           }
           default: {
@@ -147,7 +147,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      accountOperationName = s;
+      accountOperationName= s;
       return s;
     }
   }
@@ -163,7 +163,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      accountOperationName = b;
+      accountOperationName= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -207,7 +207,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      unit = s;
+      unit= s;
       return s;
     }
   }
@@ -223,7 +223,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      unit = b;
+      unit= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -256,7 +256,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      createdAt = s;
+      createdAt= s;
       return s;
     }
   }
@@ -272,7 +272,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      createdAt = b;
+      createdAt= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -293,22 +293,22 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (userId != 0L) {
+    if (userId!= 0L) {
       output.writeInt64(1, userId);
     }
     if (!getAccountOperationNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, accountOperationName);
     }
-    if (accountOperationType != 0) {
+    if (accountOperationType!= 0) {
       output.writeInt32(3, accountOperationType);
     }
-    if (amount != 0L) {
+    if (amount!= 0L) {
       output.writeInt64(4, amount);
     }
     if (!getUnitBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, unit);
     }
-    if (accountOperationId != 0L) {
+    if (accountOperationId!= 0L) {
       output.writeInt64(6, accountOperationId);
     }
     if (!getCreatedAtBytes().isEmpty()) {
@@ -323,25 +323,25 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (userId != 0L) {
+    if (userId!= 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, userId);
     }
     if (!getAccountOperationNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, accountOperationName);
     }
-    if (accountOperationType != 0) {
+    if (accountOperationType!= 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(3, accountOperationType);
     }
-    if (amount != 0L) {
+    if (amount!= 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, amount);
     }
     if (!getUnitBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, unit);
     }
-    if (accountOperationId != 0L) {
+    if (accountOperationId!= 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(6, accountOperationId);
     }
@@ -538,19 +538,19 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      userId = 0L;
+      userId= 0L;
 
-      accountOperationName = "";
+      accountOperationName= "";
 
-      accountOperationType = 0;
+      accountOperationType= 0;
 
-      amount = 0L;
+      amount= 0L;
 
-      unit = "";
+      unit= "";
 
-      accountOperationId = 0L;
+      accountOperationId= 0L;
 
-      createdAt = "";
+      createdAt= "";
 
       return this;
     }
@@ -578,13 +578,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.account.AccountOperation buildPartial() {
       com.zhijiejiaoyu.glory_api.account.AccountOperation result = new com.zhijiejiaoyu.glory_api.account.AccountOperation(this);
-      result.userId = userId;
-      result.accountOperationName = accountOperationName;
-      result.accountOperationType = accountOperationType;
-      result.amount = amount;
-      result.unit = unit;
-      result.accountOperationId = accountOperationId;
-      result.createdAt = createdAt;
+      result.userId= userId;
+      result.accountOperationName= accountOperationName;
+      result.accountOperationType= accountOperationType;
+      result.amount= amount;
+      result.unit= unit;
+      result.accountOperationId= accountOperationId;
+      result.createdAt= createdAt;
       onBuilt();
       return result;
     }
@@ -637,7 +637,7 @@ private static final long serialVersionUID = 0L;
         setUserId(other.getUserId());
       }
       if (!other.getAccountOperationName().isEmpty()) {
-        accountOperationName = other.accountOperationName;
+        accountOperationName= other.accountOperationName;
         onChanged();
       }
       if (other.getAccountOperationType() != 0) {
@@ -647,14 +647,14 @@ private static final long serialVersionUID = 0L;
         setAmount(other.getAmount());
       }
       if (!other.getUnit().isEmpty()) {
-        unit = other.unit;
+        unit= other.unit;
         onChanged();
       }
       if (other.getAccountOperationId() != 0L) {
         setAccountOperationId(other.getAccountOperationId());
       }
       if (!other.getCreatedAt().isEmpty()) {
-        createdAt = other.createdAt;
+        createdAt= other.createdAt;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -686,7 +686,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long userId ;
+    private long userId;
     /**
      * <code>int64 user_id = 1;</code>
      * @return The userId.
@@ -702,7 +702,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setUserId(long value) {
       
-      userId = value;
+      userId= value;
       onChanged();
       return this;
     }
@@ -712,12 +712,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearUserId() {
       
-      userId = 0L;
+      userId= 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object accountOperationName = "";
+    private java.lang.Object accountOperationName= "";
     /**
      * <code>string account_operation_name = 2;</code>
      * @return The accountOperationName.
@@ -728,7 +728,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        accountOperationName = s;
+        accountOperationName= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -745,7 +745,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        accountOperationName = b;
+        accountOperationName= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -762,7 +762,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      accountOperationName = value;
+      accountOperationName= value;
       onChanged();
       return this;
     }
@@ -772,7 +772,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearAccountOperationName() {
       
-      accountOperationName = getDefaultInstance().getAccountOperationName();
+      accountOperationName= getDefaultInstance().getAccountOperationName();
       onChanged();
       return this;
     }
@@ -788,12 +788,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      accountOperationName = value;
+      accountOperationName= value;
       onChanged();
       return this;
     }
 
-    private int accountOperationType ;
+    private int accountOperationType;
     /**
      * <code>int32 account_operation_type = 3;</code>
      * @return The accountOperationType.
@@ -809,7 +809,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setAccountOperationType(int value) {
       
-      accountOperationType = value;
+      accountOperationType= value;
       onChanged();
       return this;
     }
@@ -819,12 +819,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearAccountOperationType() {
       
-      accountOperationType = 0;
+      accountOperationType= 0;
       onChanged();
       return this;
     }
 
-    private long amount ;
+    private long amount;
     /**
      * <code>int64 amount = 4;</code>
      * @return The amount.
@@ -840,7 +840,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setAmount(long value) {
       
-      amount = value;
+      amount= value;
       onChanged();
       return this;
     }
@@ -850,12 +850,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearAmount() {
       
-      amount = 0L;
+      amount= 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object unit = "";
+    private java.lang.Object unit= "";
     /**
      * <code>string unit = 5;</code>
      * @return The unit.
@@ -866,7 +866,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        unit = s;
+        unit= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -883,7 +883,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        unit = b;
+        unit= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -900,7 +900,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      unit = value;
+      unit= value;
       onChanged();
       return this;
     }
@@ -910,7 +910,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearUnit() {
       
-      unit = getDefaultInstance().getUnit();
+      unit= getDefaultInstance().getUnit();
       onChanged();
       return this;
     }
@@ -926,12 +926,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      unit = value;
+      unit= value;
       onChanged();
       return this;
     }
 
-    private long accountOperationId ;
+    private long accountOperationId;
     /**
      * <code>int64 account_operation_id = 6;</code>
      * @return The accountOperationId.
@@ -947,7 +947,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setAccountOperationId(long value) {
       
-      accountOperationId = value;
+      accountOperationId= value;
       onChanged();
       return this;
     }
@@ -957,12 +957,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearAccountOperationId() {
       
-      accountOperationId = 0L;
+      accountOperationId= 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object createdAt = "";
+    private java.lang.Object createdAt= "";
     /**
      * <code>string created_at = 7;</code>
      * @return The createdAt.
@@ -973,7 +973,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        createdAt = s;
+        createdAt= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -990,7 +990,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        createdAt = b;
+        createdAt= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1007,7 +1007,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      createdAt = value;
+      createdAt= value;
       onChanged();
       return this;
     }
@@ -1017,7 +1017,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearCreatedAt() {
       
-      createdAt = getDefaultInstance().getCreatedAt();
+      createdAt= getDefaultInstance().getCreatedAt();
       onChanged();
       return this;
     }
@@ -1033,7 +1033,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      createdAt = value;
+      createdAt= value;
       onChanged();
       return this;
     }

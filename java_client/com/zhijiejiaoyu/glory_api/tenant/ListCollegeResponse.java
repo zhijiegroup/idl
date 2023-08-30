@@ -64,7 +64,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+            if (!((mutable_bitField0& 0x00000001) != 0)) {
               colleges = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.tenant.College>();
               mutable_bitField0_ |= 0x00000001;
             }
@@ -100,7 +100,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0& 0x00000001) != 0)) {
         colleges = java.util.Collections.unmodifiableList(colleges);
       }
       this.unknownFields = unknownFields.build();
@@ -448,7 +448,7 @@ private static final long serialVersionUID = 0L;
       }
       if (collegesBuilder == null) {
         colleges = java.util.Collections.emptyList();
-        bitField0 = (bitField0_ & ~0x00000001);
+        bitField0 = (bitField0& ~0x00000001);
       } else {
         collegesBuilder.clear();
       }
@@ -491,9 +491,9 @@ private static final long serialVersionUID = 0L;
         result.baseResp = baseRespBuilder.build();
       }
       if (collegesBuilder == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0& 0x00000001) != 0)) {
           colleges = java.util.Collections.unmodifiableList(colleges);
-          bitField0 = (bitField0_ & ~0x00000001);
+          bitField0 = (bitField0& ~0x00000001);
         }
         result.colleges = colleges;
       } else {
@@ -559,7 +559,7 @@ private static final long serialVersionUID = 0L;
         if (!other.colleges.isEmpty()) {
           if (colleges.isEmpty()) {
             colleges = other.colleges;
-            bitField0 = (bitField0_ & ~0x00000001);
+            bitField0 = (bitField0& ~0x00000001);
           } else {
             ensureCollegesIsMutable();
             colleges.addAll(other.colleges);
@@ -572,7 +572,7 @@ private static final long serialVersionUID = 0L;
             collegesBuilder.dispose();
             collegesBuilder = null;
             colleges = other.colleges;
-            bitField0 = (bitField0_ & ~0x00000001);
+            bitField0 = (bitField0& ~0x00000001);
             collegesBuilder = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getCollegesFieldBuilder() : null;
@@ -736,7 +736,7 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.zhijiejiaoyu.glory_api.tenant.College> colleges =
       java.util.Collections.emptyList();
     private void ensureCollegesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0& 0x00000001) != 0)) {
         colleges = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.tenant.College>(colleges);
         bitField0_ |= 0x00000001;
        }
@@ -888,7 +888,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearColleges() {
       if (collegesBuilder == null) {
         colleges = java.util.Collections.emptyList();
-        bitField0 = (bitField0_ & ~0x00000001);
+        bitField0 = (bitField0& ~0x00000001);
         onChanged();
       } else {
         collegesBuilder.clear();
@@ -964,8 +964,8 @@ private static final long serialVersionUID = 0L;
       if (collegesBuilder == null) {
         collegesBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.tenant.College, com.zhijiejiaoyu.glory_api.tenant.College.Builder, com.zhijiejiaoyu.glory_api.tenant.CollegeOrBuilder>(
-                colleges_,
-                ((bitField0_ & 0x00000001) != 0),
+                colleges,
+                ((bitField0& 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         colleges = null;

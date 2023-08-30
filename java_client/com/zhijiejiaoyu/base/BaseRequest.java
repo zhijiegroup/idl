@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private BaseRequest() {
-    authToken = "";
+    authToken= "";
   }
 
   @java.lang.Override
@@ -52,7 +52,7 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            authToken = s;
+            authToken= s;
             break;
           }
           default: {
@@ -106,7 +106,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      authToken = s;
+      authToken= s;
       return s;
     }
   }
@@ -126,7 +126,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      authToken = b;
+      authToken= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -325,7 +325,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      authToken = "";
+      authToken= "";
 
       return this;
     }
@@ -353,7 +353,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.base.BaseRequest buildPartial() {
       com.zhijiejiaoyu.base.BaseRequest result = new com.zhijiejiaoyu.base.BaseRequest(this);
-      result.authToken = authToken;
+      result.authToken= authToken;
       onBuilt();
       return result;
     }
@@ -403,7 +403,7 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.zhijiejiaoyu.base.BaseRequest other) {
       if (other == com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance()) return this;
       if (!other.getAuthToken().isEmpty()) {
-        authToken = other.authToken;
+        authToken= other.authToken;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -435,7 +435,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object authToken = "";
+    private java.lang.Object authToken= "";
     /**
      * <pre>
      * API authentication token
@@ -450,7 +450,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        authToken = s;
+        authToken= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -471,7 +471,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        authToken = b;
+        authToken= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -492,7 +492,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      authToken = value;
+      authToken= value;
       onChanged();
       return this;
     }
@@ -506,7 +506,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearAuthToken() {
       
-      authToken = getDefaultInstance().getAuthToken();
+      authToken= getDefaultInstance().getAuthToken();
       onChanged();
       return this;
     }
@@ -526,7 +526,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      authToken = value;
+      authToken= value;
       onChanged();
       return this;
     }

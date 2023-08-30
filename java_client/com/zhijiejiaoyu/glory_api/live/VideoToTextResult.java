@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private VideoToTextResult() {
-    sentences = java.util.Collections.emptyList();
+    sentences= java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -39,7 +39,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0 = 0;
+    int mutable_bitField0= 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -51,8 +51,8 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              sentences = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.live.VideoToTextSentence>();
+            if (!((mutable_bitField0& 0x00000001) != 0)) {
+              sentences= new java.util.ArrayList<com.zhijiejiaoyu.glory_api.live.VideoToTextSentence>();
               mutable_bitField0_ |= 0x00000001;
             }
             sentences.add(
@@ -74,8 +74,8 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        sentences = java.util.Collections.unmodifiableList(sentences);
+      if (((mutable_bitField0& 0x00000001) != 0)) {
+        sentences= java.util.Collections.unmodifiableList(sentences);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -330,9 +330,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (sentencesBuilder == null) {
-        sentences = java.util.Collections.emptyList();
-        bitField0 = (bitField0_ & ~0x00000001);
+      if (sentencesBuilder== null) {
+        sentences= java.util.Collections.emptyList();
+        bitField0= (bitField0& ~0x00000001);
       } else {
         sentencesBuilder.clear();
       }
@@ -362,15 +362,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.live.VideoToTextResult buildPartial() {
       com.zhijiejiaoyu.glory_api.live.VideoToTextResult result = new com.zhijiejiaoyu.glory_api.live.VideoToTextResult(this);
-      int from_bitField0 = bitField0;
-      if (sentencesBuilder == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          sentences = java.util.Collections.unmodifiableList(sentences);
-          bitField0 = (bitField0_ & ~0x00000001);
+      int from_bitField0= bitField0;
+      if (sentencesBuilder== null) {
+        if (((bitField0& 0x00000001) != 0)) {
+          sentences= java.util.Collections.unmodifiableList(sentences);
+          bitField0= (bitField0& ~0x00000001);
         }
-        result.sentences = sentences;
+        result.sentences= sentences;
       } else {
-        result.sentences = sentencesBuilder.build();
+        result.sentences= sentencesBuilder.build();
       }
       onBuilt();
       return result;
@@ -420,11 +420,11 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.zhijiejiaoyu.glory_api.live.VideoToTextResult other) {
       if (other == com.zhijiejiaoyu.glory_api.live.VideoToTextResult.getDefaultInstance()) return this;
-      if (sentencesBuilder == null) {
+      if (sentencesBuilder== null) {
         if (!other.sentences.isEmpty()) {
           if (sentences.isEmpty()) {
-            sentences = other.sentences;
-            bitField0 = (bitField0_ & ~0x00000001);
+            sentences= other.sentences;
+            bitField0= (bitField0& ~0x00000001);
           } else {
             ensureSentencesIsMutable();
             sentences.addAll(other.sentences);
@@ -435,10 +435,10 @@ private static final long serialVersionUID = 0L;
         if (!other.sentences.isEmpty()) {
           if (sentencesBuilder.isEmpty()) {
             sentencesBuilder.dispose();
-            sentencesBuilder = null;
-            sentences = other.sentences;
-            bitField0 = (bitField0_ & ~0x00000001);
-            sentencesBuilder = 
+            sentencesBuilder= null;
+            sentences= other.sentences;
+            bitField0= (bitField0& ~0x00000001);
+            sentencesBuilder= 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getSentencesFieldBuilder() : null;
           } else {
@@ -476,11 +476,11 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0;
 
-    private java.util.List<com.zhijiejiaoyu.glory_api.live.VideoToTextSentence> sentences =
+    private java.util.List<com.zhijiejiaoyu.glory_api.live.VideoToTextSentence> sentences=
       java.util.Collections.emptyList();
     private void ensureSentencesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
-        sentences = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.live.VideoToTextSentence>(sentences);
+      if (!((bitField0& 0x00000001) != 0)) {
+        sentences= new java.util.ArrayList<com.zhijiejiaoyu.glory_api.live.VideoToTextSentence>(sentences);
         bitField0_ |= 0x00000001;
        }
     }
@@ -492,7 +492,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.VideoToTextSentence Sentences = 1;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.live.VideoToTextSentence> getSentencesList() {
-      if (sentencesBuilder == null) {
+      if (sentencesBuilder== null) {
         return java.util.Collections.unmodifiableList(sentences);
       } else {
         return sentencesBuilder.getMessageList();
@@ -502,7 +502,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.VideoToTextSentence Sentences = 1;</code>
      */
     public int getSentencesCount() {
-      if (sentencesBuilder == null) {
+      if (sentencesBuilder== null) {
         return sentences.size();
       } else {
         return sentencesBuilder.getCount();
@@ -512,7 +512,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.VideoToTextSentence Sentences = 1;</code>
      */
     public com.zhijiejiaoyu.glory_api.live.VideoToTextSentence getSentences(int index) {
-      if (sentencesBuilder == null) {
+      if (sentencesBuilder== null) {
         return sentences.get(index);
       } else {
         return sentencesBuilder.getMessage(index);
@@ -523,7 +523,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setSentences(
         int index, com.zhijiejiaoyu.glory_api.live.VideoToTextSentence value) {
-      if (sentencesBuilder == null) {
+      if (sentencesBuilder== null) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -540,7 +540,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setSentences(
         int index, com.zhijiejiaoyu.glory_api.live.VideoToTextSentence.Builder builderForValue) {
-      if (sentencesBuilder == null) {
+      if (sentencesBuilder== null) {
         ensureSentencesIsMutable();
         sentences.set(index, builderForValue.build());
         onChanged();
@@ -553,7 +553,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.VideoToTextSentence Sentences = 1;</code>
      */
     public Builder addSentences(com.zhijiejiaoyu.glory_api.live.VideoToTextSentence value) {
-      if (sentencesBuilder == null) {
+      if (sentencesBuilder== null) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -570,7 +570,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addSentences(
         int index, com.zhijiejiaoyu.glory_api.live.VideoToTextSentence value) {
-      if (sentencesBuilder == null) {
+      if (sentencesBuilder== null) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -587,7 +587,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addSentences(
         com.zhijiejiaoyu.glory_api.live.VideoToTextSentence.Builder builderForValue) {
-      if (sentencesBuilder == null) {
+      if (sentencesBuilder== null) {
         ensureSentencesIsMutable();
         sentences.add(builderForValue.build());
         onChanged();
@@ -601,7 +601,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addSentences(
         int index, com.zhijiejiaoyu.glory_api.live.VideoToTextSentence.Builder builderForValue) {
-      if (sentencesBuilder == null) {
+      if (sentencesBuilder== null) {
         ensureSentencesIsMutable();
         sentences.add(index, builderForValue.build());
         onChanged();
@@ -615,7 +615,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addAllSentences(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.live.VideoToTextSentence> values) {
-      if (sentencesBuilder == null) {
+      if (sentencesBuilder== null) {
         ensureSentencesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, sentences);
@@ -629,9 +629,9 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.VideoToTextSentence Sentences = 1;</code>
      */
     public Builder clearSentences() {
-      if (sentencesBuilder == null) {
-        sentences = java.util.Collections.emptyList();
-        bitField0 = (bitField0_ & ~0x00000001);
+      if (sentencesBuilder== null) {
+        sentences= java.util.Collections.emptyList();
+        bitField0= (bitField0& ~0x00000001);
         onChanged();
       } else {
         sentencesBuilder.clear();
@@ -642,7 +642,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.VideoToTextSentence Sentences = 1;</code>
      */
     public Builder removeSentences(int index) {
-      if (sentencesBuilder == null) {
+      if (sentencesBuilder== null) {
         ensureSentencesIsMutable();
         sentences.remove(index);
         onChanged();
@@ -663,7 +663,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.live.VideoToTextSentenceOrBuilder getSentencesOrBuilder(
         int index) {
-      if (sentencesBuilder == null) {
+      if (sentencesBuilder== null) {
         return sentences.get(index);  } else {
         return sentencesBuilder.getMessageOrBuilder(index);
       }
@@ -673,7 +673,7 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.live.VideoToTextSentenceOrBuilder> 
          getSentencesOrBuilderList() {
-      if (sentencesBuilder != null) {
+      if (sentencesBuilder!= null) {
         return sentencesBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(sentences);
@@ -704,14 +704,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.RepeatedFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.live.VideoToTextSentence, com.zhijiejiaoyu.glory_api.live.VideoToTextSentence.Builder, com.zhijiejiaoyu.glory_api.live.VideoToTextSentenceOrBuilder> 
         getSentencesFieldBuilder() {
-      if (sentencesBuilder == null) {
-        sentencesBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+      if (sentencesBuilder== null) {
+        sentencesBuilder= new com.google.protobuf.RepeatedFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.live.VideoToTextSentence, com.zhijiejiaoyu.glory_api.live.VideoToTextSentence.Builder, com.zhijiejiaoyu.glory_api.live.VideoToTextSentenceOrBuilder>(
-                sentences_,
-                ((bitField0_ & 0x00000001) != 0),
+                sentences,
+                ((bitField0& 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        sentences = null;
+        sentences= null;
       }
       return sentencesBuilder;
     }

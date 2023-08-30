@@ -50,26 +50,26 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             com.zhijiejiaoyu.base.BaseResponse.Builder subBuilder = null;
-            if (baseResp != null) {
+            if (baseResp!= null) {
               subBuilder = baseResp.toBuilder();
             }
-            baseResp = input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
+            baseResp= input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(baseResp);
-              baseResp = subBuilder.buildPartial();
+              baseResp= subBuilder.buildPartial();
             }
 
             break;
           }
           case 18: {
             com.zhijiejiaoyu.glory_api.tenant.TenantOrg.Builder subBuilder = null;
-            if (tenantOrg != null) {
+            if (tenantOrg!= null) {
               subBuilder = tenantOrg.toBuilder();
             }
-            tenantOrg = input.readMessage(com.zhijiejiaoyu.glory_api.tenant.TenantOrg.parser(), extensionRegistry);
+            tenantOrg= input.readMessage(com.zhijiejiaoyu.glory_api.tenant.TenantOrg.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(tenantOrg);
-              tenantOrg = subBuilder.buildPartial();
+              tenantOrg= subBuilder.buildPartial();
             }
 
             break;
@@ -114,7 +114,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasBaseResp() {
-    return baseResp != null;
+    return baseResp!= null;
   }
   /**
    * <code>.base.BaseResponse base_resp = 1;</code>
@@ -122,7 +122,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.zhijiejiaoyu.base.BaseResponse getBaseResp() {
-    return baseResp == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
+    return baseResp== null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
   }
   /**
    * <code>.base.BaseResponse base_resp = 1;</code>
@@ -140,7 +140,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasTenantOrg() {
-    return tenantOrg != null;
+    return tenantOrg!= null;
   }
   /**
    * <code>.glory_api.TenantOrg tenant_org = 2;</code>
@@ -148,7 +148,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.tenant.TenantOrg getTenantOrg() {
-    return tenantOrg == null ? com.zhijiejiaoyu.glory_api.tenant.TenantOrg.getDefaultInstance() : tenantOrg;
+    return tenantOrg== null ? com.zhijiejiaoyu.glory_api.tenant.TenantOrg.getDefaultInstance() : tenantOrg;
   }
   /**
    * <code>.glory_api.TenantOrg tenant_org = 2;</code>
@@ -172,10 +172,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (baseResp != null) {
+    if (baseResp!= null) {
       output.writeMessage(1, getBaseResp());
     }
-    if (tenantOrg != null) {
+    if (tenantOrg!= null) {
       output.writeMessage(2, getTenantOrg());
     }
     unknownFields.writeTo(output);
@@ -187,11 +187,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (baseResp != null) {
+    if (baseResp!= null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
-    if (tenantOrg != null) {
+    if (tenantOrg!= null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getTenantOrg());
     }
@@ -372,17 +372,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (baseRespBuilder == null) {
-        baseResp = null;
+      if (baseRespBuilder== null) {
+        baseResp= null;
       } else {
-        baseResp = null;
-        baseRespBuilder = null;
+        baseResp= null;
+        baseRespBuilder= null;
       }
-      if (tenantOrgBuilder == null) {
-        tenantOrg = null;
+      if (tenantOrgBuilder== null) {
+        tenantOrg= null;
       } else {
-        tenantOrg = null;
-        tenantOrgBuilder = null;
+        tenantOrg= null;
+        tenantOrgBuilder= null;
       }
       return this;
     }
@@ -410,15 +410,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgResponse buildPartial() {
       com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgResponse result = new com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgResponse(this);
-      if (baseRespBuilder == null) {
-        result.baseResp = baseResp;
+      if (baseRespBuilder== null) {
+        result.baseResp= baseResp;
       } else {
-        result.baseResp = baseRespBuilder.build();
+        result.baseResp= baseRespBuilder.build();
       }
-      if (tenantOrgBuilder == null) {
-        result.tenantOrg = tenantOrg;
+      if (tenantOrgBuilder== null) {
+        result.tenantOrg= tenantOrg;
       } else {
-        result.tenantOrg = tenantOrgBuilder.build();
+        result.tenantOrg= tenantOrgBuilder.build();
       }
       onBuilt();
       return result;
@@ -511,15 +511,15 @@ private static final long serialVersionUID = 0L;
      * @return Whether the baseResp field is set.
      */
     public boolean hasBaseResp() {
-      return baseRespBuilder != null || baseResp != null;
+      return baseRespBuilder!= null || baseResp!= null;
     }
     /**
      * <code>.base.BaseResponse base_resp = 1;</code>
      * @return The baseResp.
      */
     public com.zhijiejiaoyu.base.BaseResponse getBaseResp() {
-      if (baseRespBuilder == null) {
-        return baseResp == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
+      if (baseRespBuilder== null) {
+        return baseResp== null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
       } else {
         return baseRespBuilder.getMessage();
       }
@@ -528,11 +528,11 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public Builder setBaseResp(com.zhijiejiaoyu.base.BaseResponse value) {
-      if (baseRespBuilder == null) {
+      if (baseRespBuilder== null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        baseResp = value;
+        baseResp= value;
         onChanged();
       } else {
         baseRespBuilder.setMessage(value);
@@ -545,8 +545,8 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setBaseResp(
         com.zhijiejiaoyu.base.BaseResponse.Builder builderForValue) {
-      if (baseRespBuilder == null) {
-        baseResp = builderForValue.build();
+      if (baseRespBuilder== null) {
+        baseResp= builderForValue.build();
         onChanged();
       } else {
         baseRespBuilder.setMessage(builderForValue.build());
@@ -558,12 +558,12 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public Builder mergeBaseResp(com.zhijiejiaoyu.base.BaseResponse value) {
-      if (baseRespBuilder == null) {
-        if (baseResp != null) {
-          baseResp =
+      if (baseRespBuilder== null) {
+        if (baseResp!= null) {
+          baseResp=
             com.zhijiejiaoyu.base.BaseResponse.newBuilder(baseResp).mergeFrom(value).buildPartial();
         } else {
-          baseResp = value;
+          baseResp= value;
         }
         onChanged();
       } else {
@@ -576,12 +576,12 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public Builder clearBaseResp() {
-      if (baseRespBuilder == null) {
-        baseResp = null;
+      if (baseRespBuilder== null) {
+        baseResp= null;
         onChanged();
       } else {
-        baseResp = null;
-        baseRespBuilder = null;
+        baseResp= null;
+        baseRespBuilder= null;
       }
 
       return this;
@@ -598,10 +598,10 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder() {
-      if (baseRespBuilder != null) {
+      if (baseRespBuilder!= null) {
         return baseRespBuilder.getMessageOrBuilder();
       } else {
-        return baseResp == null ?
+        return baseResp== null ?
             com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
       }
     }
@@ -611,13 +611,13 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.base.BaseResponse, com.zhijiejiaoyu.base.BaseResponse.Builder, com.zhijiejiaoyu.base.BaseResponseOrBuilder> 
         getBaseRespFieldBuilder() {
-      if (baseRespBuilder == null) {
-        baseRespBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+      if (baseRespBuilder== null) {
+        baseRespBuilder= new com.google.protobuf.SingleFieldBuilderV3<
             com.zhijiejiaoyu.base.BaseResponse, com.zhijiejiaoyu.base.BaseResponse.Builder, com.zhijiejiaoyu.base.BaseResponseOrBuilder>(
                 getBaseResp(),
                 getParentForChildren(),
                 isClean());
-        baseResp = null;
+        baseResp= null;
       }
       return baseRespBuilder;
     }
@@ -630,15 +630,15 @@ private static final long serialVersionUID = 0L;
      * @return Whether the tenantOrg field is set.
      */
     public boolean hasTenantOrg() {
-      return tenantOrgBuilder != null || tenantOrg != null;
+      return tenantOrgBuilder!= null || tenantOrg!= null;
     }
     /**
      * <code>.glory_api.TenantOrg tenant_org = 2;</code>
      * @return The tenantOrg.
      */
     public com.zhijiejiaoyu.glory_api.tenant.TenantOrg getTenantOrg() {
-      if (tenantOrgBuilder == null) {
-        return tenantOrg == null ? com.zhijiejiaoyu.glory_api.tenant.TenantOrg.getDefaultInstance() : tenantOrg;
+      if (tenantOrgBuilder== null) {
+        return tenantOrg== null ? com.zhijiejiaoyu.glory_api.tenant.TenantOrg.getDefaultInstance() : tenantOrg;
       } else {
         return tenantOrgBuilder.getMessage();
       }
@@ -647,11 +647,11 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.TenantOrg tenant_org = 2;</code>
      */
     public Builder setTenantOrg(com.zhijiejiaoyu.glory_api.tenant.TenantOrg value) {
-      if (tenantOrgBuilder == null) {
+      if (tenantOrgBuilder== null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        tenantOrg = value;
+        tenantOrg= value;
         onChanged();
       } else {
         tenantOrgBuilder.setMessage(value);
@@ -664,8 +664,8 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setTenantOrg(
         com.zhijiejiaoyu.glory_api.tenant.TenantOrg.Builder builderForValue) {
-      if (tenantOrgBuilder == null) {
-        tenantOrg = builderForValue.build();
+      if (tenantOrgBuilder== null) {
+        tenantOrg= builderForValue.build();
         onChanged();
       } else {
         tenantOrgBuilder.setMessage(builderForValue.build());
@@ -677,12 +677,12 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.TenantOrg tenant_org = 2;</code>
      */
     public Builder mergeTenantOrg(com.zhijiejiaoyu.glory_api.tenant.TenantOrg value) {
-      if (tenantOrgBuilder == null) {
-        if (tenantOrg != null) {
-          tenantOrg =
+      if (tenantOrgBuilder== null) {
+        if (tenantOrg!= null) {
+          tenantOrg=
             com.zhijiejiaoyu.glory_api.tenant.TenantOrg.newBuilder(tenantOrg).mergeFrom(value).buildPartial();
         } else {
-          tenantOrg = value;
+          tenantOrg= value;
         }
         onChanged();
       } else {
@@ -695,12 +695,12 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.TenantOrg tenant_org = 2;</code>
      */
     public Builder clearTenantOrg() {
-      if (tenantOrgBuilder == null) {
-        tenantOrg = null;
+      if (tenantOrgBuilder== null) {
+        tenantOrg= null;
         onChanged();
       } else {
-        tenantOrg = null;
-        tenantOrgBuilder = null;
+        tenantOrg= null;
+        tenantOrgBuilder= null;
       }
 
       return this;
@@ -717,10 +717,10 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.TenantOrg tenant_org = 2;</code>
      */
     public com.zhijiejiaoyu.glory_api.tenant.TenantOrgOrBuilder getTenantOrgOrBuilder() {
-      if (tenantOrgBuilder != null) {
+      if (tenantOrgBuilder!= null) {
         return tenantOrgBuilder.getMessageOrBuilder();
       } else {
-        return tenantOrg == null ?
+        return tenantOrg== null ?
             com.zhijiejiaoyu.glory_api.tenant.TenantOrg.getDefaultInstance() : tenantOrg;
       }
     }
@@ -730,13 +730,13 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.tenant.TenantOrg, com.zhijiejiaoyu.glory_api.tenant.TenantOrg.Builder, com.zhijiejiaoyu.glory_api.tenant.TenantOrgOrBuilder> 
         getTenantOrgFieldBuilder() {
-      if (tenantOrgBuilder == null) {
-        tenantOrgBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+      if (tenantOrgBuilder== null) {
+        tenantOrgBuilder= new com.google.protobuf.SingleFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.tenant.TenantOrg, com.zhijiejiaoyu.glory_api.tenant.TenantOrg.Builder, com.zhijiejiaoyu.glory_api.tenant.TenantOrgOrBuilder>(
                 getTenantOrg(),
                 getParentForChildren(),
                 isClean());
-        tenantOrg = null;
+        tenantOrg= null;
       }
       return tenantOrgBuilder;
     }

@@ -63,7 +63,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+            if (!((mutable_bitField0& 0x00000001) != 0)) {
               students = com.google.protobuf.MapField.newMapField(
                   StudentsDefaultEntryHolder.defaultEntry);
               mutable_bitField0_ |= 0x00000001;

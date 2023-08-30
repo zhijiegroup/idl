@@ -50,7 +50,7 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            profitSharing = input.readBool();
+            profitSharing= input.readBool();
             break;
           }
           default: {
@@ -114,7 +114,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (profitSharing != false) {
+    if (profitSharing!= false) {
       output.writeBool(1, profitSharing);
     }
     unknownFields.writeTo(output);
@@ -126,7 +126,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (profitSharing != false) {
+    if (profitSharing!= false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(1, profitSharing);
     }
@@ -294,7 +294,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      profitSharing = false;
+      profitSharing= false;
 
       return this;
     }
@@ -322,7 +322,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.wxpay.SettleInfo buildPartial() {
       com.zhijiejiaoyu.glory_api.wxpay.SettleInfo result = new com.zhijiejiaoyu.glory_api.wxpay.SettleInfo(this);
-      result.profitSharing = profitSharing;
+      result.profitSharing= profitSharing;
       onBuilt();
       return result;
     }
@@ -403,7 +403,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private boolean profitSharing ;
+    private boolean profitSharing;
     /**
      * <pre>
      *是否指定分账
@@ -427,7 +427,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setProfitSharing(boolean value) {
       
-      profitSharing = value;
+      profitSharing= value;
       onChanged();
       return this;
     }
@@ -441,7 +441,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearProfitSharing() {
       
-      profitSharing = false;
+      profitSharing= false;
       onChanged();
       return this;
     }

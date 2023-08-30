@@ -16,10 +16,10 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private LiveEvaluationRankDetail() {
-    userName = "";
-    tenant = "";
-    major = "";
-    clas = "";
+    userName= "";
+    tenant= "";
+    major= "";
+    clas= "";
   }
 
   @java.lang.Override
@@ -55,30 +55,30 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            userName = s;
+            userName= s;
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            tenant = s;
+            tenant= s;
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            major = s;
+            major= s;
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            clas = s;
+            clas= s;
             break;
           }
           case 41: {
 
-            score = input.readDouble();
+            score= input.readDouble();
             break;
           }
           default: {
@@ -128,7 +128,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      userName = s;
+      userName= s;
       return s;
     }
   }
@@ -144,7 +144,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      userName = b;
+      userName= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -166,7 +166,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      tenant = s;
+      tenant= s;
       return s;
     }
   }
@@ -182,7 +182,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      tenant = b;
+      tenant= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -204,7 +204,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      major = s;
+      major= s;
       return s;
     }
   }
@@ -220,7 +220,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      major = b;
+      major= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -242,7 +242,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      clas = s;
+      clas= s;
       return s;
     }
   }
@@ -258,7 +258,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      clas = b;
+      clas= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -302,7 +302,7 @@ private static final long serialVersionUID = 0L;
     if (!getClasBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, clas);
     }
-    if (score != 0D) {
+    if (score!= 0D) {
       output.writeDouble(5, score);
     }
     unknownFields.writeTo(output);
@@ -326,7 +326,7 @@ private static final long serialVersionUID = 0L;
     if (!getClasBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, clas);
     }
-    if (score != 0D) {
+    if (score!= 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(5, score);
     }
@@ -511,15 +511,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      userName = "";
+      userName= "";
 
-      tenant = "";
+      tenant= "";
 
-      major = "";
+      major= "";
 
-      clas = "";
+      clas= "";
 
-      score = 0D;
+      score= 0D;
 
       return this;
     }
@@ -547,11 +547,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.live.LiveEvaluationRankDetail buildPartial() {
       com.zhijiejiaoyu.glory_api.live.LiveEvaluationRankDetail result = new com.zhijiejiaoyu.glory_api.live.LiveEvaluationRankDetail(this);
-      result.userName = userName;
-      result.tenant = tenant;
-      result.major = major;
-      result.clas = clas;
-      result.score = score;
+      result.userName= userName;
+      result.tenant= tenant;
+      result.major= major;
+      result.clas= clas;
+      result.score= score;
       onBuilt();
       return result;
     }
@@ -601,19 +601,19 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.zhijiejiaoyu.glory_api.live.LiveEvaluationRankDetail other) {
       if (other == com.zhijiejiaoyu.glory_api.live.LiveEvaluationRankDetail.getDefaultInstance()) return this;
       if (!other.getUserName().isEmpty()) {
-        userName = other.userName;
+        userName= other.userName;
         onChanged();
       }
       if (!other.getTenant().isEmpty()) {
-        tenant = other.tenant;
+        tenant= other.tenant;
         onChanged();
       }
       if (!other.getMajor().isEmpty()) {
-        major = other.major;
+        major= other.major;
         onChanged();
       }
       if (!other.getClas().isEmpty()) {
-        clas = other.clas;
+        clas= other.clas;
         onChanged();
       }
       if (other.getScore() != 0D) {
@@ -648,7 +648,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object userName = "";
+    private java.lang.Object userName= "";
     /**
      * <code>string user_name = 1;</code>
      * @return The userName.
@@ -659,7 +659,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        userName = s;
+        userName= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -676,7 +676,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        userName = b;
+        userName= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -693,7 +693,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      userName = value;
+      userName= value;
       onChanged();
       return this;
     }
@@ -703,7 +703,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearUserName() {
       
-      userName = getDefaultInstance().getUserName();
+      userName= getDefaultInstance().getUserName();
       onChanged();
       return this;
     }
@@ -719,12 +719,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      userName = value;
+      userName= value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object tenant = "";
+    private java.lang.Object tenant= "";
     /**
      * <code>string tenant = 2;</code>
      * @return The tenant.
@@ -735,7 +735,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        tenant = s;
+        tenant= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -752,7 +752,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        tenant = b;
+        tenant= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -769,7 +769,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      tenant = value;
+      tenant= value;
       onChanged();
       return this;
     }
@@ -779,7 +779,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearTenant() {
       
-      tenant = getDefaultInstance().getTenant();
+      tenant= getDefaultInstance().getTenant();
       onChanged();
       return this;
     }
@@ -795,12 +795,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      tenant = value;
+      tenant= value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object major = "";
+    private java.lang.Object major= "";
     /**
      * <code>string major = 3;</code>
      * @return The major.
@@ -811,7 +811,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        major = s;
+        major= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -828,7 +828,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        major = b;
+        major= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -845,7 +845,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      major = value;
+      major= value;
       onChanged();
       return this;
     }
@@ -855,7 +855,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearMajor() {
       
-      major = getDefaultInstance().getMajor();
+      major= getDefaultInstance().getMajor();
       onChanged();
       return this;
     }
@@ -871,12 +871,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      major = value;
+      major= value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object clas = "";
+    private java.lang.Object clas= "";
     /**
      * <code>string clas = 4;</code>
      * @return The clas.
@@ -887,7 +887,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        clas = s;
+        clas= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -904,7 +904,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        clas = b;
+        clas= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -921,7 +921,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      clas = value;
+      clas= value;
       onChanged();
       return this;
     }
@@ -931,7 +931,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearClas() {
       
-      clas = getDefaultInstance().getClas();
+      clas= getDefaultInstance().getClas();
       onChanged();
       return this;
     }
@@ -947,12 +947,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      clas = value;
+      clas= value;
       onChanged();
       return this;
     }
 
-    private double score ;
+    private double score;
     /**
      * <code>double score = 5;</code>
      * @return The score.
@@ -968,7 +968,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setScore(double value) {
       
-      score = value;
+      score= value;
       onChanged();
       return this;
     }
@@ -978,7 +978,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearScore() {
       
-      score = 0D;
+      score= 0D;
       onChanged();
       return this;
     }

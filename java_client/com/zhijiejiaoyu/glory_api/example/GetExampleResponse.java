@@ -50,26 +50,26 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             com.zhijiejiaoyu.base.BaseResponse.Builder subBuilder = null;
-            if (baseResp != null) {
+            if (baseResp!= null) {
               subBuilder = baseResp.toBuilder();
             }
-            baseResp = input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
+            baseResp= input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(baseResp);
-              baseResp = subBuilder.buildPartial();
+              baseResp= subBuilder.buildPartial();
             }
 
             break;
           }
           case 18: {
             com.zhijiejiaoyu.glory_api.example.ExampleWithAuthor.Builder subBuilder = null;
-            if (exampleDetail != null) {
+            if (exampleDetail!= null) {
               subBuilder = exampleDetail.toBuilder();
             }
-            exampleDetail = input.readMessage(com.zhijiejiaoyu.glory_api.example.ExampleWithAuthor.parser(), extensionRegistry);
+            exampleDetail= input.readMessage(com.zhijiejiaoyu.glory_api.example.ExampleWithAuthor.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(exampleDetail);
-              exampleDetail = subBuilder.buildPartial();
+              exampleDetail= subBuilder.buildPartial();
             }
 
             break;
@@ -114,7 +114,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasBaseResp() {
-    return baseResp != null;
+    return baseResp!= null;
   }
   /**
    * <code>.base.BaseResponse base_resp = 1;</code>
@@ -122,7 +122,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.zhijiejiaoyu.base.BaseResponse getBaseResp() {
-    return baseResp == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
+    return baseResp== null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
   }
   /**
    * <code>.base.BaseResponse base_resp = 1;</code>
@@ -140,7 +140,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasExampleDetail() {
-    return exampleDetail != null;
+    return exampleDetail!= null;
   }
   /**
    * <code>.glory_api.ExampleWithAuthor example_detail = 2;</code>
@@ -148,7 +148,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.example.ExampleWithAuthor getExampleDetail() {
-    return exampleDetail == null ? com.zhijiejiaoyu.glory_api.example.ExampleWithAuthor.getDefaultInstance() : exampleDetail;
+    return exampleDetail== null ? com.zhijiejiaoyu.glory_api.example.ExampleWithAuthor.getDefaultInstance() : exampleDetail;
   }
   /**
    * <code>.glory_api.ExampleWithAuthor example_detail = 2;</code>
@@ -172,10 +172,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (baseResp != null) {
+    if (baseResp!= null) {
       output.writeMessage(1, getBaseResp());
     }
-    if (exampleDetail != null) {
+    if (exampleDetail!= null) {
       output.writeMessage(2, getExampleDetail());
     }
     unknownFields.writeTo(output);
@@ -187,11 +187,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (baseResp != null) {
+    if (baseResp!= null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
-    if (exampleDetail != null) {
+    if (exampleDetail!= null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getExampleDetail());
     }
@@ -372,17 +372,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (baseRespBuilder == null) {
-        baseResp = null;
+      if (baseRespBuilder== null) {
+        baseResp= null;
       } else {
-        baseResp = null;
-        baseRespBuilder = null;
+        baseResp= null;
+        baseRespBuilder= null;
       }
-      if (exampleDetailBuilder == null) {
-        exampleDetail = null;
+      if (exampleDetailBuilder== null) {
+        exampleDetail= null;
       } else {
-        exampleDetail = null;
-        exampleDetailBuilder = null;
+        exampleDetail= null;
+        exampleDetailBuilder= null;
       }
       return this;
     }
@@ -410,15 +410,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.example.GetExampleResponse buildPartial() {
       com.zhijiejiaoyu.glory_api.example.GetExampleResponse result = new com.zhijiejiaoyu.glory_api.example.GetExampleResponse(this);
-      if (baseRespBuilder == null) {
-        result.baseResp = baseResp;
+      if (baseRespBuilder== null) {
+        result.baseResp= baseResp;
       } else {
-        result.baseResp = baseRespBuilder.build();
+        result.baseResp= baseRespBuilder.build();
       }
-      if (exampleDetailBuilder == null) {
-        result.exampleDetail = exampleDetail;
+      if (exampleDetailBuilder== null) {
+        result.exampleDetail= exampleDetail;
       } else {
-        result.exampleDetail = exampleDetailBuilder.build();
+        result.exampleDetail= exampleDetailBuilder.build();
       }
       onBuilt();
       return result;
@@ -511,15 +511,15 @@ private static final long serialVersionUID = 0L;
      * @return Whether the baseResp field is set.
      */
     public boolean hasBaseResp() {
-      return baseRespBuilder != null || baseResp != null;
+      return baseRespBuilder!= null || baseResp!= null;
     }
     /**
      * <code>.base.BaseResponse base_resp = 1;</code>
      * @return The baseResp.
      */
     public com.zhijiejiaoyu.base.BaseResponse getBaseResp() {
-      if (baseRespBuilder == null) {
-        return baseResp == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
+      if (baseRespBuilder== null) {
+        return baseResp== null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
       } else {
         return baseRespBuilder.getMessage();
       }
@@ -528,11 +528,11 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public Builder setBaseResp(com.zhijiejiaoyu.base.BaseResponse value) {
-      if (baseRespBuilder == null) {
+      if (baseRespBuilder== null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        baseResp = value;
+        baseResp= value;
         onChanged();
       } else {
         baseRespBuilder.setMessage(value);
@@ -545,8 +545,8 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setBaseResp(
         com.zhijiejiaoyu.base.BaseResponse.Builder builderForValue) {
-      if (baseRespBuilder == null) {
-        baseResp = builderForValue.build();
+      if (baseRespBuilder== null) {
+        baseResp= builderForValue.build();
         onChanged();
       } else {
         baseRespBuilder.setMessage(builderForValue.build());
@@ -558,12 +558,12 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public Builder mergeBaseResp(com.zhijiejiaoyu.base.BaseResponse value) {
-      if (baseRespBuilder == null) {
-        if (baseResp != null) {
-          baseResp =
+      if (baseRespBuilder== null) {
+        if (baseResp!= null) {
+          baseResp=
             com.zhijiejiaoyu.base.BaseResponse.newBuilder(baseResp).mergeFrom(value).buildPartial();
         } else {
-          baseResp = value;
+          baseResp= value;
         }
         onChanged();
       } else {
@@ -576,12 +576,12 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public Builder clearBaseResp() {
-      if (baseRespBuilder == null) {
-        baseResp = null;
+      if (baseRespBuilder== null) {
+        baseResp= null;
         onChanged();
       } else {
-        baseResp = null;
-        baseRespBuilder = null;
+        baseResp= null;
+        baseRespBuilder= null;
       }
 
       return this;
@@ -598,10 +598,10 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder() {
-      if (baseRespBuilder != null) {
+      if (baseRespBuilder!= null) {
         return baseRespBuilder.getMessageOrBuilder();
       } else {
-        return baseResp == null ?
+        return baseResp== null ?
             com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
       }
     }
@@ -611,13 +611,13 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.base.BaseResponse, com.zhijiejiaoyu.base.BaseResponse.Builder, com.zhijiejiaoyu.base.BaseResponseOrBuilder> 
         getBaseRespFieldBuilder() {
-      if (baseRespBuilder == null) {
-        baseRespBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+      if (baseRespBuilder== null) {
+        baseRespBuilder= new com.google.protobuf.SingleFieldBuilderV3<
             com.zhijiejiaoyu.base.BaseResponse, com.zhijiejiaoyu.base.BaseResponse.Builder, com.zhijiejiaoyu.base.BaseResponseOrBuilder>(
                 getBaseResp(),
                 getParentForChildren(),
                 isClean());
-        baseResp = null;
+        baseResp= null;
       }
       return baseRespBuilder;
     }
@@ -630,15 +630,15 @@ private static final long serialVersionUID = 0L;
      * @return Whether the exampleDetail field is set.
      */
     public boolean hasExampleDetail() {
-      return exampleDetailBuilder != null || exampleDetail != null;
+      return exampleDetailBuilder!= null || exampleDetail!= null;
     }
     /**
      * <code>.glory_api.ExampleWithAuthor example_detail = 2;</code>
      * @return The exampleDetail.
      */
     public com.zhijiejiaoyu.glory_api.example.ExampleWithAuthor getExampleDetail() {
-      if (exampleDetailBuilder == null) {
-        return exampleDetail == null ? com.zhijiejiaoyu.glory_api.example.ExampleWithAuthor.getDefaultInstance() : exampleDetail;
+      if (exampleDetailBuilder== null) {
+        return exampleDetail== null ? com.zhijiejiaoyu.glory_api.example.ExampleWithAuthor.getDefaultInstance() : exampleDetail;
       } else {
         return exampleDetailBuilder.getMessage();
       }
@@ -647,11 +647,11 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.ExampleWithAuthor example_detail = 2;</code>
      */
     public Builder setExampleDetail(com.zhijiejiaoyu.glory_api.example.ExampleWithAuthor value) {
-      if (exampleDetailBuilder == null) {
+      if (exampleDetailBuilder== null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        exampleDetail = value;
+        exampleDetail= value;
         onChanged();
       } else {
         exampleDetailBuilder.setMessage(value);
@@ -664,8 +664,8 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setExampleDetail(
         com.zhijiejiaoyu.glory_api.example.ExampleWithAuthor.Builder builderForValue) {
-      if (exampleDetailBuilder == null) {
-        exampleDetail = builderForValue.build();
+      if (exampleDetailBuilder== null) {
+        exampleDetail= builderForValue.build();
         onChanged();
       } else {
         exampleDetailBuilder.setMessage(builderForValue.build());
@@ -677,12 +677,12 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.ExampleWithAuthor example_detail = 2;</code>
      */
     public Builder mergeExampleDetail(com.zhijiejiaoyu.glory_api.example.ExampleWithAuthor value) {
-      if (exampleDetailBuilder == null) {
-        if (exampleDetail != null) {
-          exampleDetail =
+      if (exampleDetailBuilder== null) {
+        if (exampleDetail!= null) {
+          exampleDetail=
             com.zhijiejiaoyu.glory_api.example.ExampleWithAuthor.newBuilder(exampleDetail).mergeFrom(value).buildPartial();
         } else {
-          exampleDetail = value;
+          exampleDetail= value;
         }
         onChanged();
       } else {
@@ -695,12 +695,12 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.ExampleWithAuthor example_detail = 2;</code>
      */
     public Builder clearExampleDetail() {
-      if (exampleDetailBuilder == null) {
-        exampleDetail = null;
+      if (exampleDetailBuilder== null) {
+        exampleDetail= null;
         onChanged();
       } else {
-        exampleDetail = null;
-        exampleDetailBuilder = null;
+        exampleDetail= null;
+        exampleDetailBuilder= null;
       }
 
       return this;
@@ -717,10 +717,10 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.ExampleWithAuthor example_detail = 2;</code>
      */
     public com.zhijiejiaoyu.glory_api.example.ExampleWithAuthorOrBuilder getExampleDetailOrBuilder() {
-      if (exampleDetailBuilder != null) {
+      if (exampleDetailBuilder!= null) {
         return exampleDetailBuilder.getMessageOrBuilder();
       } else {
-        return exampleDetail == null ?
+        return exampleDetail== null ?
             com.zhijiejiaoyu.glory_api.example.ExampleWithAuthor.getDefaultInstance() : exampleDetail;
       }
     }
@@ -730,13 +730,13 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.example.ExampleWithAuthor, com.zhijiejiaoyu.glory_api.example.ExampleWithAuthor.Builder, com.zhijiejiaoyu.glory_api.example.ExampleWithAuthorOrBuilder> 
         getExampleDetailFieldBuilder() {
-      if (exampleDetailBuilder == null) {
-        exampleDetailBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+      if (exampleDetailBuilder== null) {
+        exampleDetailBuilder= new com.google.protobuf.SingleFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.example.ExampleWithAuthor, com.zhijiejiaoyu.glory_api.example.ExampleWithAuthor.Builder, com.zhijiejiaoyu.glory_api.example.ExampleWithAuthorOrBuilder>(
                 getExampleDetail(),
                 getParentForChildren(),
                 isClean());
-        exampleDetail = null;
+        exampleDetail= null;
       }
       return exampleDetailBuilder;
     }

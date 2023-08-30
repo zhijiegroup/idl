@@ -16,9 +16,9 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private GoodsDetail() {
-    merchantGoodsId = "";
-    wechatpayGoodsId = "";
-    goodsName = "";
+    merchantGoodsId= "";
+    wechatpayGoodsId= "";
+    goodsName= "";
   }
 
   @java.lang.Override
@@ -54,29 +54,29 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            merchantGoodsId = s;
+            merchantGoodsId= s;
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            wechatpayGoodsId = s;
+            wechatpayGoodsId= s;
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            goodsName = s;
+            goodsName= s;
             break;
           }
           case 32: {
 
-            quantity = input.readInt64();
+            quantity= input.readInt64();
             break;
           }
           case 40: {
 
-            unitPrice = input.readInt64();
+            unitPrice= input.readInt64();
             break;
           }
           default: {
@@ -130,7 +130,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      merchantGoodsId = s;
+      merchantGoodsId= s;
       return s;
     }
   }
@@ -150,7 +150,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      merchantGoodsId = b;
+      merchantGoodsId= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -176,7 +176,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      wechatpayGoodsId = s;
+      wechatpayGoodsId= s;
       return s;
     }
   }
@@ -196,7 +196,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      wechatpayGoodsId = b;
+      wechatpayGoodsId= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -222,7 +222,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      goodsName = s;
+      goodsName= s;
       return s;
     }
   }
@@ -242,7 +242,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      goodsName = b;
+      goodsName= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -302,10 +302,10 @@ private static final long serialVersionUID = 0L;
     if (!getGoodsNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, goodsName);
     }
-    if (quantity != 0L) {
+    if (quantity!= 0L) {
       output.writeInt64(4, quantity);
     }
-    if (unitPrice != 0L) {
+    if (unitPrice!= 0L) {
       output.writeInt64(5, unitPrice);
     }
     unknownFields.writeTo(output);
@@ -326,11 +326,11 @@ private static final long serialVersionUID = 0L;
     if (!getGoodsNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, goodsName);
     }
-    if (quantity != 0L) {
+    if (quantity!= 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, quantity);
     }
-    if (unitPrice != 0L) {
+    if (unitPrice!= 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(5, unitPrice);
     }
@@ -515,15 +515,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      merchantGoodsId = "";
+      merchantGoodsId= "";
 
-      wechatpayGoodsId = "";
+      wechatpayGoodsId= "";
 
-      goodsName = "";
+      goodsName= "";
 
-      quantity = 0L;
+      quantity= 0L;
 
-      unitPrice = 0L;
+      unitPrice= 0L;
 
       return this;
     }
@@ -551,11 +551,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.wxpay.GoodsDetail buildPartial() {
       com.zhijiejiaoyu.glory_api.wxpay.GoodsDetail result = new com.zhijiejiaoyu.glory_api.wxpay.GoodsDetail(this);
-      result.merchantGoodsId = merchantGoodsId;
-      result.wechatpayGoodsId = wechatpayGoodsId;
-      result.goodsName = goodsName;
-      result.quantity = quantity;
-      result.unitPrice = unitPrice;
+      result.merchantGoodsId= merchantGoodsId;
+      result.wechatpayGoodsId= wechatpayGoodsId;
+      result.goodsName= goodsName;
+      result.quantity= quantity;
+      result.unitPrice= unitPrice;
       onBuilt();
       return result;
     }
@@ -605,15 +605,15 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.zhijiejiaoyu.glory_api.wxpay.GoodsDetail other) {
       if (other == com.zhijiejiaoyu.glory_api.wxpay.GoodsDetail.getDefaultInstance()) return this;
       if (!other.getMerchantGoodsId().isEmpty()) {
-        merchantGoodsId = other.merchantGoodsId;
+        merchantGoodsId= other.merchantGoodsId;
         onChanged();
       }
       if (!other.getWechatpayGoodsId().isEmpty()) {
-        wechatpayGoodsId = other.wechatpayGoodsId;
+        wechatpayGoodsId= other.wechatpayGoodsId;
         onChanged();
       }
       if (!other.getGoodsName().isEmpty()) {
-        goodsName = other.goodsName;
+        goodsName= other.goodsName;
         onChanged();
       }
       if (other.getQuantity() != 0L) {
@@ -651,7 +651,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object merchantGoodsId = "";
+    private java.lang.Object merchantGoodsId= "";
     /**
      * <pre>
      *商户侧商品编码
@@ -666,7 +666,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        merchantGoodsId = s;
+        merchantGoodsId= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -687,7 +687,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        merchantGoodsId = b;
+        merchantGoodsId= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -708,7 +708,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      merchantGoodsId = value;
+      merchantGoodsId= value;
       onChanged();
       return this;
     }
@@ -722,7 +722,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearMerchantGoodsId() {
       
-      merchantGoodsId = getDefaultInstance().getMerchantGoodsId();
+      merchantGoodsId= getDefaultInstance().getMerchantGoodsId();
       onChanged();
       return this;
     }
@@ -742,12 +742,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      merchantGoodsId = value;
+      merchantGoodsId= value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object wechatpayGoodsId = "";
+    private java.lang.Object wechatpayGoodsId= "";
     /**
      * <pre>
      *微信支付商品编码
@@ -762,7 +762,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        wechatpayGoodsId = s;
+        wechatpayGoodsId= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -783,7 +783,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        wechatpayGoodsId = b;
+        wechatpayGoodsId= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -804,7 +804,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      wechatpayGoodsId = value;
+      wechatpayGoodsId= value;
       onChanged();
       return this;
     }
@@ -818,7 +818,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearWechatpayGoodsId() {
       
-      wechatpayGoodsId = getDefaultInstance().getWechatpayGoodsId();
+      wechatpayGoodsId= getDefaultInstance().getWechatpayGoodsId();
       onChanged();
       return this;
     }
@@ -838,12 +838,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      wechatpayGoodsId = value;
+      wechatpayGoodsId= value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object goodsName = "";
+    private java.lang.Object goodsName= "";
     /**
      * <pre>
      *商品名称
@@ -858,7 +858,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        goodsName = s;
+        goodsName= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -879,7 +879,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        goodsName = b;
+        goodsName= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -900,7 +900,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      goodsName = value;
+      goodsName= value;
       onChanged();
       return this;
     }
@@ -914,7 +914,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearGoodsName() {
       
-      goodsName = getDefaultInstance().getGoodsName();
+      goodsName= getDefaultInstance().getGoodsName();
       onChanged();
       return this;
     }
@@ -934,12 +934,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      goodsName = value;
+      goodsName= value;
       onChanged();
       return this;
     }
 
-    private long quantity ;
+    private long quantity;
     /**
      * <pre>
      *商品数量
@@ -963,7 +963,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setQuantity(long value) {
       
-      quantity = value;
+      quantity= value;
       onChanged();
       return this;
     }
@@ -977,12 +977,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearQuantity() {
       
-      quantity = 0L;
+      quantity= 0L;
       onChanged();
       return this;
     }
 
-    private long unitPrice ;
+    private long unitPrice;
     /**
      * <pre>
      *商品单价
@@ -1006,7 +1006,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setUnitPrice(long value) {
       
-      unitPrice = value;
+      unitPrice= value;
       onChanged();
       return this;
     }
@@ -1020,7 +1020,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearUnitPrice() {
       
-      unitPrice = 0L;
+      unitPrice= 0L;
       onChanged();
       return this;
     }

@@ -16,9 +16,9 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private LivePlan() {
-    livePlanName = "";
-    description = "";
-    livePlanProduct = java.util.Collections.emptyList();
+    livePlanName= "";
+    description= "";
+    livePlanProduct= java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -41,7 +41,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0 = 0;
+    int mutable_bitField0= 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -54,29 +54,29 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            livePlanId = input.readInt64();
+            livePlanId= input.readInt64();
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            livePlanName = s;
+            livePlanName= s;
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            description = s;
+            description= s;
             break;
           }
           case 32: {
 
-            shopId = input.readInt64();
+            shopId= input.readInt64();
             break;
           }
           case 42: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              livePlanProduct = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.live.LivePlanProduct>();
+            if (!((mutable_bitField0& 0x00000001) != 0)) {
+              livePlanProduct= new java.util.ArrayList<com.zhijiejiaoyu.glory_api.live.LivePlanProduct>();
               mutable_bitField0_ |= 0x00000001;
             }
             livePlanProduct.add(
@@ -98,8 +98,8 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        livePlanProduct = java.util.Collections.unmodifiableList(livePlanProduct);
+      if (((mutable_bitField0& 0x00000001) != 0)) {
+        livePlanProduct= java.util.Collections.unmodifiableList(livePlanProduct);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -148,7 +148,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      livePlanName = s;
+      livePlanName= s;
       return s;
     }
   }
@@ -168,7 +168,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      livePlanName = b;
+      livePlanName= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -190,7 +190,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      description = s;
+      description= s;
       return s;
     }
   }
@@ -206,7 +206,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      description = b;
+      description= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -282,7 +282,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (livePlanId != 0L) {
+    if (livePlanId!= 0L) {
       output.writeInt64(1, livePlanId);
     }
     if (!getLivePlanNameBytes().isEmpty()) {
@@ -291,7 +291,7 @@ private static final long serialVersionUID = 0L;
     if (!getDescriptionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, description);
     }
-    if (shopId != 0L) {
+    if (shopId!= 0L) {
       output.writeInt64(4, shopId);
     }
     for (int i = 0; i < livePlanProduct.size(); i++) {
@@ -306,7 +306,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (livePlanId != 0L) {
+    if (livePlanId!= 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, livePlanId);
     }
@@ -316,7 +316,7 @@ private static final long serialVersionUID = 0L;
     if (!getDescriptionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, description);
     }
-    if (shopId != 0L) {
+    if (shopId!= 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, shopId);
     }
@@ -508,17 +508,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      livePlanId = 0L;
+      livePlanId= 0L;
 
-      livePlanName = "";
+      livePlanName= "";
 
-      description = "";
+      description= "";
 
-      shopId = 0L;
+      shopId= 0L;
 
-      if (livePlanProductBuilder == null) {
-        livePlanProduct = java.util.Collections.emptyList();
-        bitField0 = (bitField0_ & ~0x00000001);
+      if (livePlanProductBuilder== null) {
+        livePlanProduct= java.util.Collections.emptyList();
+        bitField0= (bitField0& ~0x00000001);
       } else {
         livePlanProductBuilder.clear();
       }
@@ -548,19 +548,19 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.live.LivePlan buildPartial() {
       com.zhijiejiaoyu.glory_api.live.LivePlan result = new com.zhijiejiaoyu.glory_api.live.LivePlan(this);
-      int from_bitField0 = bitField0;
-      result.livePlanId = livePlanId;
-      result.livePlanName = livePlanName;
-      result.description = description;
-      result.shopId = shopId;
-      if (livePlanProductBuilder == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          livePlanProduct = java.util.Collections.unmodifiableList(livePlanProduct);
-          bitField0 = (bitField0_ & ~0x00000001);
+      int from_bitField0= bitField0;
+      result.livePlanId= livePlanId;
+      result.livePlanName= livePlanName;
+      result.description= description;
+      result.shopId= shopId;
+      if (livePlanProductBuilder== null) {
+        if (((bitField0& 0x00000001) != 0)) {
+          livePlanProduct= java.util.Collections.unmodifiableList(livePlanProduct);
+          bitField0= (bitField0& ~0x00000001);
         }
-        result.livePlanProduct = livePlanProduct;
+        result.livePlanProduct= livePlanProduct;
       } else {
-        result.livePlanProduct = livePlanProductBuilder.build();
+        result.livePlanProduct= livePlanProductBuilder.build();
       }
       onBuilt();
       return result;
@@ -614,21 +614,21 @@ private static final long serialVersionUID = 0L;
         setLivePlanId(other.getLivePlanId());
       }
       if (!other.getLivePlanName().isEmpty()) {
-        livePlanName = other.livePlanName;
+        livePlanName= other.livePlanName;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
-        description = other.description;
+        description= other.description;
         onChanged();
       }
       if (other.getShopId() != 0L) {
         setShopId(other.getShopId());
       }
-      if (livePlanProductBuilder == null) {
+      if (livePlanProductBuilder== null) {
         if (!other.livePlanProduct.isEmpty()) {
           if (livePlanProduct.isEmpty()) {
-            livePlanProduct = other.livePlanProduct;
-            bitField0 = (bitField0_ & ~0x00000001);
+            livePlanProduct= other.livePlanProduct;
+            bitField0= (bitField0& ~0x00000001);
           } else {
             ensureLivePlanProductIsMutable();
             livePlanProduct.addAll(other.livePlanProduct);
@@ -639,10 +639,10 @@ private static final long serialVersionUID = 0L;
         if (!other.livePlanProduct.isEmpty()) {
           if (livePlanProductBuilder.isEmpty()) {
             livePlanProductBuilder.dispose();
-            livePlanProductBuilder = null;
-            livePlanProduct = other.livePlanProduct;
-            bitField0 = (bitField0_ & ~0x00000001);
-            livePlanProductBuilder = 
+            livePlanProductBuilder= null;
+            livePlanProduct= other.livePlanProduct;
+            bitField0= (bitField0& ~0x00000001);
+            livePlanProductBuilder= 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getLivePlanProductFieldBuilder() : null;
           } else {
@@ -680,7 +680,7 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0;
 
-    private long livePlanId ;
+    private long livePlanId;
     /**
      * <code>int64 live_plan_id = 1;</code>
      * @return The livePlanId.
@@ -696,7 +696,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setLivePlanId(long value) {
       
-      livePlanId = value;
+      livePlanId= value;
       onChanged();
       return this;
     }
@@ -706,12 +706,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearLivePlanId() {
       
-      livePlanId = 0L;
+      livePlanId= 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object livePlanName = "";
+    private java.lang.Object livePlanName= "";
     /**
      * <pre>
      * 创建必传
@@ -726,7 +726,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        livePlanName = s;
+        livePlanName= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -747,7 +747,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        livePlanName = b;
+        livePlanName= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -768,7 +768,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      livePlanName = value;
+      livePlanName= value;
       onChanged();
       return this;
     }
@@ -782,7 +782,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearLivePlanName() {
       
-      livePlanName = getDefaultInstance().getLivePlanName();
+      livePlanName= getDefaultInstance().getLivePlanName();
       onChanged();
       return this;
     }
@@ -802,12 +802,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      livePlanName = value;
+      livePlanName= value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object description = "";
+    private java.lang.Object description= "";
     /**
      * <code>string description = 3;</code>
      * @return The description.
@@ -818,7 +818,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        description = s;
+        description= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -835,7 +835,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        description = b;
+        description= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -852,7 +852,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      description = value;
+      description= value;
       onChanged();
       return this;
     }
@@ -862,7 +862,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearDescription() {
       
-      description = getDefaultInstance().getDescription();
+      description= getDefaultInstance().getDescription();
       onChanged();
       return this;
     }
@@ -878,12 +878,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      description = value;
+      description= value;
       onChanged();
       return this;
     }
 
-    private long shopId ;
+    private long shopId;
     /**
      * <pre>
      * 创建必传
@@ -907,7 +907,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setShopId(long value) {
       
-      shopId = value;
+      shopId= value;
       onChanged();
       return this;
     }
@@ -921,16 +921,16 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearShopId() {
       
-      shopId = 0L;
+      shopId= 0L;
       onChanged();
       return this;
     }
 
-    private java.util.List<com.zhijiejiaoyu.glory_api.live.LivePlanProduct> livePlanProduct =
+    private java.util.List<com.zhijiejiaoyu.glory_api.live.LivePlanProduct> livePlanProduct=
       java.util.Collections.emptyList();
     private void ensureLivePlanProductIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
-        livePlanProduct = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.live.LivePlanProduct>(livePlanProduct);
+      if (!((bitField0& 0x00000001) != 0)) {
+        livePlanProduct= new java.util.ArrayList<com.zhijiejiaoyu.glory_api.live.LivePlanProduct>(livePlanProduct);
         bitField0_ |= 0x00000001;
        }
     }
@@ -942,7 +942,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.LivePlanProduct live_plan_product = 5;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.live.LivePlanProduct> getLivePlanProductList() {
-      if (livePlanProductBuilder == null) {
+      if (livePlanProductBuilder== null) {
         return java.util.Collections.unmodifiableList(livePlanProduct);
       } else {
         return livePlanProductBuilder.getMessageList();
@@ -952,7 +952,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.LivePlanProduct live_plan_product = 5;</code>
      */
     public int getLivePlanProductCount() {
-      if (livePlanProductBuilder == null) {
+      if (livePlanProductBuilder== null) {
         return livePlanProduct.size();
       } else {
         return livePlanProductBuilder.getCount();
@@ -962,7 +962,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.LivePlanProduct live_plan_product = 5;</code>
      */
     public com.zhijiejiaoyu.glory_api.live.LivePlanProduct getLivePlanProduct(int index) {
-      if (livePlanProductBuilder == null) {
+      if (livePlanProductBuilder== null) {
         return livePlanProduct.get(index);
       } else {
         return livePlanProductBuilder.getMessage(index);
@@ -973,7 +973,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setLivePlanProduct(
         int index, com.zhijiejiaoyu.glory_api.live.LivePlanProduct value) {
-      if (livePlanProductBuilder == null) {
+      if (livePlanProductBuilder== null) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -990,7 +990,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setLivePlanProduct(
         int index, com.zhijiejiaoyu.glory_api.live.LivePlanProduct.Builder builderForValue) {
-      if (livePlanProductBuilder == null) {
+      if (livePlanProductBuilder== null) {
         ensureLivePlanProductIsMutable();
         livePlanProduct.set(index, builderForValue.build());
         onChanged();
@@ -1003,7 +1003,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.LivePlanProduct live_plan_product = 5;</code>
      */
     public Builder addLivePlanProduct(com.zhijiejiaoyu.glory_api.live.LivePlanProduct value) {
-      if (livePlanProductBuilder == null) {
+      if (livePlanProductBuilder== null) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -1020,7 +1020,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addLivePlanProduct(
         int index, com.zhijiejiaoyu.glory_api.live.LivePlanProduct value) {
-      if (livePlanProductBuilder == null) {
+      if (livePlanProductBuilder== null) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -1037,7 +1037,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addLivePlanProduct(
         com.zhijiejiaoyu.glory_api.live.LivePlanProduct.Builder builderForValue) {
-      if (livePlanProductBuilder == null) {
+      if (livePlanProductBuilder== null) {
         ensureLivePlanProductIsMutable();
         livePlanProduct.add(builderForValue.build());
         onChanged();
@@ -1051,7 +1051,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addLivePlanProduct(
         int index, com.zhijiejiaoyu.glory_api.live.LivePlanProduct.Builder builderForValue) {
-      if (livePlanProductBuilder == null) {
+      if (livePlanProductBuilder== null) {
         ensureLivePlanProductIsMutable();
         livePlanProduct.add(index, builderForValue.build());
         onChanged();
@@ -1065,7 +1065,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addAllLivePlanProduct(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.live.LivePlanProduct> values) {
-      if (livePlanProductBuilder == null) {
+      if (livePlanProductBuilder== null) {
         ensureLivePlanProductIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, livePlanProduct);
@@ -1079,9 +1079,9 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.LivePlanProduct live_plan_product = 5;</code>
      */
     public Builder clearLivePlanProduct() {
-      if (livePlanProductBuilder == null) {
-        livePlanProduct = java.util.Collections.emptyList();
-        bitField0 = (bitField0_ & ~0x00000001);
+      if (livePlanProductBuilder== null) {
+        livePlanProduct= java.util.Collections.emptyList();
+        bitField0= (bitField0& ~0x00000001);
         onChanged();
       } else {
         livePlanProductBuilder.clear();
@@ -1092,7 +1092,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.LivePlanProduct live_plan_product = 5;</code>
      */
     public Builder removeLivePlanProduct(int index) {
-      if (livePlanProductBuilder == null) {
+      if (livePlanProductBuilder== null) {
         ensureLivePlanProductIsMutable();
         livePlanProduct.remove(index);
         onChanged();
@@ -1113,7 +1113,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.live.LivePlanProductOrBuilder getLivePlanProductOrBuilder(
         int index) {
-      if (livePlanProductBuilder == null) {
+      if (livePlanProductBuilder== null) {
         return livePlanProduct.get(index);  } else {
         return livePlanProductBuilder.getMessageOrBuilder(index);
       }
@@ -1123,7 +1123,7 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.live.LivePlanProductOrBuilder> 
          getLivePlanProductOrBuilderList() {
-      if (livePlanProductBuilder != null) {
+      if (livePlanProductBuilder!= null) {
         return livePlanProductBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(livePlanProduct);
@@ -1154,14 +1154,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.RepeatedFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.live.LivePlanProduct, com.zhijiejiaoyu.glory_api.live.LivePlanProduct.Builder, com.zhijiejiaoyu.glory_api.live.LivePlanProductOrBuilder> 
         getLivePlanProductFieldBuilder() {
-      if (livePlanProductBuilder == null) {
-        livePlanProductBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+      if (livePlanProductBuilder== null) {
+        livePlanProductBuilder= new com.google.protobuf.RepeatedFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.live.LivePlanProduct, com.zhijiejiaoyu.glory_api.live.LivePlanProduct.Builder, com.zhijiejiaoyu.glory_api.live.LivePlanProductOrBuilder>(
-                livePlanProduct_,
-                ((bitField0_ & 0x00000001) != 0),
+                livePlanProduct,
+                ((bitField0& 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        livePlanProduct = null;
+        livePlanProduct= null;
       }
       return livePlanProductBuilder;
     }

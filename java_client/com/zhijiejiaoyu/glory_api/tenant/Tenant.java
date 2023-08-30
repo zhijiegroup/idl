@@ -16,12 +16,12 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Tenant() {
-    tenantName = "";
-    tenantLogoUrl = "";
-    tenantOverview = "";
-    adminName = "";
-    adminPhone = "";
-    businessSystem = com.google.protobuf.LazyStringArrayList.EMPTY;
+    tenantName= "";
+    tenantLogoUrl= "";
+    tenantOverview= "";
+    adminName= "";
+    adminPhone= "";
+    businessSystem= com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -44,7 +44,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0 = 0;
+    int mutable_bitField0= 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -57,48 +57,48 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            tenantId = input.readInt64();
+            tenantId= input.readInt64();
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            tenantName = s;
+            tenantName= s;
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            tenantLogoUrl = s;
+            tenantLogoUrl= s;
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            tenantOverview = s;
+            tenantOverview= s;
             break;
           }
           case 56: {
 
-            logoAttachmentId = input.readInt64();
+            logoAttachmentId= input.readInt64();
             break;
           }
           case 66: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            adminName = s;
+            adminName= s;
             break;
           }
           case 74: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            adminPhone = s;
+            adminPhone= s;
             break;
           }
           case 82: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              businessSystem = new com.google.protobuf.LazyStringArrayList();
+            if (!((mutable_bitField0& 0x00000001) != 0)) {
+              businessSystem= new com.google.protobuf.LazyStringArrayList();
               mutable_bitField0_ |= 0x00000001;
             }
             businessSystem.add(s);
@@ -119,8 +119,8 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        businessSystem = businessSystem.getUnmodifiableView();
+      if (((mutable_bitField0& 0x00000001) != 0)) {
+        businessSystem= businessSystem.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -173,7 +173,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      tenantName = s;
+      tenantName= s;
       return s;
     }
   }
@@ -193,7 +193,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      tenantName = b;
+      tenantName= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -219,7 +219,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      tenantLogoUrl = s;
+      tenantLogoUrl= s;
       return s;
     }
   }
@@ -239,7 +239,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      tenantLogoUrl = b;
+      tenantLogoUrl= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -265,7 +265,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      tenantOverview = s;
+      tenantOverview= s;
       return s;
     }
   }
@@ -285,7 +285,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      tenantOverview = b;
+      tenantOverview= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -326,7 +326,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      adminName = s;
+      adminName= s;
       return s;
     }
   }
@@ -346,7 +346,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      adminName = b;
+      adminName= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -372,7 +372,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      adminPhone = s;
+      adminPhone= s;
       return s;
     }
   }
@@ -392,7 +392,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      adminPhone = b;
+      adminPhone= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -448,7 +448,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (tenantId != 0L) {
+    if (tenantId!= 0L) {
       output.writeInt64(1, tenantId);
     }
     if (!getTenantNameBytes().isEmpty()) {
@@ -460,7 +460,7 @@ private static final long serialVersionUID = 0L;
     if (!getTenantOverviewBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, tenantOverview);
     }
-    if (logoAttachmentId != 0L) {
+    if (logoAttachmentId!= 0L) {
       output.writeInt64(7, logoAttachmentId);
     }
     if (!getAdminNameBytes().isEmpty()) {
@@ -481,7 +481,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (tenantId != 0L) {
+    if (tenantId!= 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, tenantId);
     }
@@ -494,7 +494,7 @@ private static final long serialVersionUID = 0L;
     if (!getTenantOverviewBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, tenantOverview);
     }
-    if (logoAttachmentId != 0L) {
+    if (logoAttachmentId!= 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(7, logoAttachmentId);
     }
@@ -707,22 +707,22 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      tenantId = 0L;
+      tenantId= 0L;
 
-      tenantName = "";
+      tenantName= "";
 
-      tenantLogoUrl = "";
+      tenantLogoUrl= "";
 
-      tenantOverview = "";
+      tenantOverview= "";
 
-      logoAttachmentId = 0L;
+      logoAttachmentId= 0L;
 
-      adminName = "";
+      adminName= "";
 
-      adminPhone = "";
+      adminPhone= "";
 
-      businessSystem = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0 = (bitField0_ & ~0x00000001);
+      businessSystem= com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0= (bitField0& ~0x00000001);
       return this;
     }
 
@@ -749,19 +749,19 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.tenant.Tenant buildPartial() {
       com.zhijiejiaoyu.glory_api.tenant.Tenant result = new com.zhijiejiaoyu.glory_api.tenant.Tenant(this);
-      int from_bitField0 = bitField0;
-      result.tenantId = tenantId;
-      result.tenantName = tenantName;
-      result.tenantLogoUrl = tenantLogoUrl;
-      result.tenantOverview = tenantOverview;
-      result.logoAttachmentId = logoAttachmentId;
-      result.adminName = adminName;
-      result.adminPhone = adminPhone;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        businessSystem = businessSystem.getUnmodifiableView();
-        bitField0 = (bitField0_ & ~0x00000001);
+      int from_bitField0= bitField0;
+      result.tenantId= tenantId;
+      result.tenantName= tenantName;
+      result.tenantLogoUrl= tenantLogoUrl;
+      result.tenantOverview= tenantOverview;
+      result.logoAttachmentId= logoAttachmentId;
+      result.adminName= adminName;
+      result.adminPhone= adminPhone;
+      if (((bitField0& 0x00000001) != 0)) {
+        businessSystem= businessSystem.getUnmodifiableView();
+        bitField0= (bitField0& ~0x00000001);
       }
-      result.businessSystem = businessSystem;
+      result.businessSystem= businessSystem;
       onBuilt();
       return result;
     }
@@ -814,32 +814,32 @@ private static final long serialVersionUID = 0L;
         setTenantId(other.getTenantId());
       }
       if (!other.getTenantName().isEmpty()) {
-        tenantName = other.tenantName;
+        tenantName= other.tenantName;
         onChanged();
       }
       if (!other.getTenantLogoUrl().isEmpty()) {
-        tenantLogoUrl = other.tenantLogoUrl;
+        tenantLogoUrl= other.tenantLogoUrl;
         onChanged();
       }
       if (!other.getTenantOverview().isEmpty()) {
-        tenantOverview = other.tenantOverview;
+        tenantOverview= other.tenantOverview;
         onChanged();
       }
       if (other.getLogoAttachmentId() != 0L) {
         setLogoAttachmentId(other.getLogoAttachmentId());
       }
       if (!other.getAdminName().isEmpty()) {
-        adminName = other.adminName;
+        adminName= other.adminName;
         onChanged();
       }
       if (!other.getAdminPhone().isEmpty()) {
-        adminPhone = other.adminPhone;
+        adminPhone= other.adminPhone;
         onChanged();
       }
       if (!other.businessSystem.isEmpty()) {
         if (businessSystem.isEmpty()) {
-          businessSystem = other.businessSystem;
-          bitField0 = (bitField0_ & ~0x00000001);
+          businessSystem= other.businessSystem;
+          bitField0= (bitField0& ~0x00000001);
         } else {
           ensureBusinessSystemIsMutable();
           businessSystem.addAll(other.businessSystem);
@@ -876,7 +876,7 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0;
 
-    private long tenantId ;
+    private long tenantId;
     /**
      * <pre>
      *创建不传
@@ -900,7 +900,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setTenantId(long value) {
       
-      tenantId = value;
+      tenantId= value;
       onChanged();
       return this;
     }
@@ -914,12 +914,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearTenantId() {
       
-      tenantId = 0L;
+      tenantId= 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object tenantName = "";
+    private java.lang.Object tenantName= "";
     /**
      * <pre>
      *名称 必传
@@ -934,7 +934,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        tenantName = s;
+        tenantName= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -955,7 +955,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        tenantName = b;
+        tenantName= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -976,7 +976,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      tenantName = value;
+      tenantName= value;
       onChanged();
       return this;
     }
@@ -990,7 +990,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearTenantName() {
       
-      tenantName = getDefaultInstance().getTenantName();
+      tenantName= getDefaultInstance().getTenantName();
       onChanged();
       return this;
     }
@@ -1010,12 +1010,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      tenantName = value;
+      tenantName= value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object tenantLogoUrl = "";
+    private java.lang.Object tenantLogoUrl= "";
     /**
      * <pre>
      *logo 创建不需要传
@@ -1030,7 +1030,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        tenantLogoUrl = s;
+        tenantLogoUrl= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1051,7 +1051,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        tenantLogoUrl = b;
+        tenantLogoUrl= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1072,7 +1072,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      tenantLogoUrl = value;
+      tenantLogoUrl= value;
       onChanged();
       return this;
     }
@@ -1086,7 +1086,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearTenantLogoUrl() {
       
-      tenantLogoUrl = getDefaultInstance().getTenantLogoUrl();
+      tenantLogoUrl= getDefaultInstance().getTenantLogoUrl();
       onChanged();
       return this;
     }
@@ -1106,12 +1106,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      tenantLogoUrl = value;
+      tenantLogoUrl= value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object tenantOverview = "";
+    private java.lang.Object tenantOverview= "";
     /**
      * <pre>
      *校训 必传
@@ -1126,7 +1126,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        tenantOverview = s;
+        tenantOverview= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1147,7 +1147,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        tenantOverview = b;
+        tenantOverview= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1168,7 +1168,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      tenantOverview = value;
+      tenantOverview= value;
       onChanged();
       return this;
     }
@@ -1182,7 +1182,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearTenantOverview() {
       
-      tenantOverview = getDefaultInstance().getTenantOverview();
+      tenantOverview= getDefaultInstance().getTenantOverview();
       onChanged();
       return this;
     }
@@ -1202,12 +1202,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      tenantOverview = value;
+      tenantOverview= value;
       onChanged();
       return this;
     }
 
-    private long logoAttachmentId ;
+    private long logoAttachmentId;
     /**
      * <pre>
      * 调用upload_attachment后返回的的attachment_id
@@ -1231,7 +1231,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setLogoAttachmentId(long value) {
       
-      logoAttachmentId = value;
+      logoAttachmentId= value;
       onChanged();
       return this;
     }
@@ -1245,12 +1245,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearLogoAttachmentId() {
       
-      logoAttachmentId = 0L;
+      logoAttachmentId= 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object adminName = "";
+    private java.lang.Object adminName= "";
     /**
      * <pre>
      * 自动创建的管理员的名字，若是手机已经是注册用户，则不会自动添加，而是用已经有的
@@ -1265,7 +1265,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        adminName = s;
+        adminName= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1286,7 +1286,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        adminName = b;
+        adminName= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1307,7 +1307,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      adminName = value;
+      adminName= value;
       onChanged();
       return this;
     }
@@ -1321,7 +1321,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearAdminName() {
       
-      adminName = getDefaultInstance().getAdminName();
+      adminName= getDefaultInstance().getAdminName();
       onChanged();
       return this;
     }
@@ -1341,12 +1341,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      adminName = value;
+      adminName= value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object adminPhone = "";
+    private java.lang.Object adminPhone= "";
     /**
      * <pre>
      * 自动创建的管理员的手机号
@@ -1361,7 +1361,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        adminPhone = s;
+        adminPhone= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1382,7 +1382,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        adminPhone = b;
+        adminPhone= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1403,7 +1403,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      adminPhone = value;
+      adminPhone= value;
       onChanged();
       return this;
     }
@@ -1417,7 +1417,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearAdminPhone() {
       
-      adminPhone = getDefaultInstance().getAdminPhone();
+      adminPhone= getDefaultInstance().getAdminPhone();
       onChanged();
       return this;
     }
@@ -1437,15 +1437,15 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      adminPhone = value;
+      adminPhone= value;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList businessSystem = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringList businessSystem= com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureBusinessSystemIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
-        businessSystem = new com.google.protobuf.LazyStringArrayList(businessSystem);
+      if (!((bitField0& 0x00000001) != 0)) {
+        businessSystem= new com.google.protobuf.LazyStringArrayList(businessSystem);
         bitField0_ |= 0x00000001;
        }
     }
@@ -1530,8 +1530,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearBusinessSystem() {
-      businessSystem = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0 = (bitField0_ & ~0x00000001);
+      businessSystem= com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0= (bitField0& ~0x00000001);
       onChanged();
       return this;
     }

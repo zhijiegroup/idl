@@ -50,26 +50,26 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             com.zhijiejiaoyu.base.BaseRequest.Builder subBuilder = null;
-            if (baseRequest != null) {
+            if (baseRequest!= null) {
               subBuilder = baseRequest.toBuilder();
             }
-            baseRequest = input.readMessage(com.zhijiejiaoyu.base.BaseRequest.parser(), extensionRegistry);
+            baseRequest= input.readMessage(com.zhijiejiaoyu.base.BaseRequest.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(baseRequest);
-              baseRequest = subBuilder.buildPartial();
+              baseRequest= subBuilder.buildPartial();
             }
 
             break;
           }
           case 18: {
             com.zhijiejiaoyu.glory_api.wxpay.WXPayInfo.Builder subBuilder = null;
-            if (payInfo != null) {
+            if (payInfo!= null) {
               subBuilder = payInfo.toBuilder();
             }
-            payInfo = input.readMessage(com.zhijiejiaoyu.glory_api.wxpay.WXPayInfo.parser(), extensionRegistry);
+            payInfo= input.readMessage(com.zhijiejiaoyu.glory_api.wxpay.WXPayInfo.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(payInfo);
-              payInfo = subBuilder.buildPartial();
+              payInfo= subBuilder.buildPartial();
             }
 
             break;
@@ -114,7 +114,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasBaseRequest() {
-    return baseRequest != null;
+    return baseRequest!= null;
   }
   /**
    * <code>.base.BaseRequest base_request = 1;</code>
@@ -122,7 +122,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.zhijiejiaoyu.base.BaseRequest getBaseRequest() {
-    return baseRequest == null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
+    return baseRequest== null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
   }
   /**
    * <code>.base.BaseRequest base_request = 1;</code>
@@ -140,7 +140,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasPayInfo() {
-    return payInfo != null;
+    return payInfo!= null;
   }
   /**
    * <code>.glory_api.WXPayInfo pay_info = 2;</code>
@@ -148,7 +148,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.wxpay.WXPayInfo getPayInfo() {
-    return payInfo == null ? com.zhijiejiaoyu.glory_api.wxpay.WXPayInfo.getDefaultInstance() : payInfo;
+    return payInfo== null ? com.zhijiejiaoyu.glory_api.wxpay.WXPayInfo.getDefaultInstance() : payInfo;
   }
   /**
    * <code>.glory_api.WXPayInfo pay_info = 2;</code>
@@ -172,10 +172,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (baseRequest != null) {
+    if (baseRequest!= null) {
       output.writeMessage(1, getBaseRequest());
     }
-    if (payInfo != null) {
+    if (payInfo!= null) {
       output.writeMessage(2, getPayInfo());
     }
     unknownFields.writeTo(output);
@@ -187,11 +187,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (baseRequest != null) {
+    if (baseRequest!= null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseRequest());
     }
-    if (payInfo != null) {
+    if (payInfo!= null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getPayInfo());
     }
@@ -372,17 +372,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (baseRequestBuilder == null) {
-        baseRequest = null;
+      if (baseRequestBuilder== null) {
+        baseRequest= null;
       } else {
-        baseRequest = null;
-        baseRequestBuilder = null;
+        baseRequest= null;
+        baseRequestBuilder= null;
       }
-      if (payInfoBuilder == null) {
-        payInfo = null;
+      if (payInfoBuilder== null) {
+        payInfo= null;
       } else {
-        payInfo = null;
-        payInfoBuilder = null;
+        payInfo= null;
+        payInfoBuilder= null;
       }
       return this;
     }
@@ -410,15 +410,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.wxpay.PrepayRequest buildPartial() {
       com.zhijiejiaoyu.glory_api.wxpay.PrepayRequest result = new com.zhijiejiaoyu.glory_api.wxpay.PrepayRequest(this);
-      if (baseRequestBuilder == null) {
-        result.baseRequest = baseRequest;
+      if (baseRequestBuilder== null) {
+        result.baseRequest= baseRequest;
       } else {
-        result.baseRequest = baseRequestBuilder.build();
+        result.baseRequest= baseRequestBuilder.build();
       }
-      if (payInfoBuilder == null) {
-        result.payInfo = payInfo;
+      if (payInfoBuilder== null) {
+        result.payInfo= payInfo;
       } else {
-        result.payInfo = payInfoBuilder.build();
+        result.payInfo= payInfoBuilder.build();
       }
       onBuilt();
       return result;
@@ -511,15 +511,15 @@ private static final long serialVersionUID = 0L;
      * @return Whether the baseRequest field is set.
      */
     public boolean hasBaseRequest() {
-      return baseRequestBuilder != null || baseRequest != null;
+      return baseRequestBuilder!= null || baseRequest!= null;
     }
     /**
      * <code>.base.BaseRequest base_request = 1;</code>
      * @return The baseRequest.
      */
     public com.zhijiejiaoyu.base.BaseRequest getBaseRequest() {
-      if (baseRequestBuilder == null) {
-        return baseRequest == null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
+      if (baseRequestBuilder== null) {
+        return baseRequest== null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
       } else {
         return baseRequestBuilder.getMessage();
       }
@@ -528,11 +528,11 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseRequest base_request = 1;</code>
      */
     public Builder setBaseRequest(com.zhijiejiaoyu.base.BaseRequest value) {
-      if (baseRequestBuilder == null) {
+      if (baseRequestBuilder== null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        baseRequest = value;
+        baseRequest= value;
         onChanged();
       } else {
         baseRequestBuilder.setMessage(value);
@@ -545,8 +545,8 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setBaseRequest(
         com.zhijiejiaoyu.base.BaseRequest.Builder builderForValue) {
-      if (baseRequestBuilder == null) {
-        baseRequest = builderForValue.build();
+      if (baseRequestBuilder== null) {
+        baseRequest= builderForValue.build();
         onChanged();
       } else {
         baseRequestBuilder.setMessage(builderForValue.build());
@@ -558,12 +558,12 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseRequest base_request = 1;</code>
      */
     public Builder mergeBaseRequest(com.zhijiejiaoyu.base.BaseRequest value) {
-      if (baseRequestBuilder == null) {
-        if (baseRequest != null) {
-          baseRequest =
+      if (baseRequestBuilder== null) {
+        if (baseRequest!= null) {
+          baseRequest=
             com.zhijiejiaoyu.base.BaseRequest.newBuilder(baseRequest).mergeFrom(value).buildPartial();
         } else {
-          baseRequest = value;
+          baseRequest= value;
         }
         onChanged();
       } else {
@@ -576,12 +576,12 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseRequest base_request = 1;</code>
      */
     public Builder clearBaseRequest() {
-      if (baseRequestBuilder == null) {
-        baseRequest = null;
+      if (baseRequestBuilder== null) {
+        baseRequest= null;
         onChanged();
       } else {
-        baseRequest = null;
-        baseRequestBuilder = null;
+        baseRequest= null;
+        baseRequestBuilder= null;
       }
 
       return this;
@@ -598,10 +598,10 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseRequest base_request = 1;</code>
      */
     public com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder() {
-      if (baseRequestBuilder != null) {
+      if (baseRequestBuilder!= null) {
         return baseRequestBuilder.getMessageOrBuilder();
       } else {
-        return baseRequest == null ?
+        return baseRequest== null ?
             com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest;
       }
     }
@@ -611,13 +611,13 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder> 
         getBaseRequestFieldBuilder() {
-      if (baseRequestBuilder == null) {
-        baseRequestBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+      if (baseRequestBuilder== null) {
+        baseRequestBuilder= new com.google.protobuf.SingleFieldBuilderV3<
             com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder>(
                 getBaseRequest(),
                 getParentForChildren(),
                 isClean());
-        baseRequest = null;
+        baseRequest= null;
       }
       return baseRequestBuilder;
     }
@@ -630,15 +630,15 @@ private static final long serialVersionUID = 0L;
      * @return Whether the payInfo field is set.
      */
     public boolean hasPayInfo() {
-      return payInfoBuilder != null || payInfo != null;
+      return payInfoBuilder!= null || payInfo!= null;
     }
     /**
      * <code>.glory_api.WXPayInfo pay_info = 2;</code>
      * @return The payInfo.
      */
     public com.zhijiejiaoyu.glory_api.wxpay.WXPayInfo getPayInfo() {
-      if (payInfoBuilder == null) {
-        return payInfo == null ? com.zhijiejiaoyu.glory_api.wxpay.WXPayInfo.getDefaultInstance() : payInfo;
+      if (payInfoBuilder== null) {
+        return payInfo== null ? com.zhijiejiaoyu.glory_api.wxpay.WXPayInfo.getDefaultInstance() : payInfo;
       } else {
         return payInfoBuilder.getMessage();
       }
@@ -647,11 +647,11 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.WXPayInfo pay_info = 2;</code>
      */
     public Builder setPayInfo(com.zhijiejiaoyu.glory_api.wxpay.WXPayInfo value) {
-      if (payInfoBuilder == null) {
+      if (payInfoBuilder== null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        payInfo = value;
+        payInfo= value;
         onChanged();
       } else {
         payInfoBuilder.setMessage(value);
@@ -664,8 +664,8 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setPayInfo(
         com.zhijiejiaoyu.glory_api.wxpay.WXPayInfo.Builder builderForValue) {
-      if (payInfoBuilder == null) {
-        payInfo = builderForValue.build();
+      if (payInfoBuilder== null) {
+        payInfo= builderForValue.build();
         onChanged();
       } else {
         payInfoBuilder.setMessage(builderForValue.build());
@@ -677,12 +677,12 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.WXPayInfo pay_info = 2;</code>
      */
     public Builder mergePayInfo(com.zhijiejiaoyu.glory_api.wxpay.WXPayInfo value) {
-      if (payInfoBuilder == null) {
-        if (payInfo != null) {
-          payInfo =
+      if (payInfoBuilder== null) {
+        if (payInfo!= null) {
+          payInfo=
             com.zhijiejiaoyu.glory_api.wxpay.WXPayInfo.newBuilder(payInfo).mergeFrom(value).buildPartial();
         } else {
-          payInfo = value;
+          payInfo= value;
         }
         onChanged();
       } else {
@@ -695,12 +695,12 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.WXPayInfo pay_info = 2;</code>
      */
     public Builder clearPayInfo() {
-      if (payInfoBuilder == null) {
-        payInfo = null;
+      if (payInfoBuilder== null) {
+        payInfo= null;
         onChanged();
       } else {
-        payInfo = null;
-        payInfoBuilder = null;
+        payInfo= null;
+        payInfoBuilder= null;
       }
 
       return this;
@@ -717,10 +717,10 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.WXPayInfo pay_info = 2;</code>
      */
     public com.zhijiejiaoyu.glory_api.wxpay.WXPayInfoOrBuilder getPayInfoOrBuilder() {
-      if (payInfoBuilder != null) {
+      if (payInfoBuilder!= null) {
         return payInfoBuilder.getMessageOrBuilder();
       } else {
-        return payInfo == null ?
+        return payInfo== null ?
             com.zhijiejiaoyu.glory_api.wxpay.WXPayInfo.getDefaultInstance() : payInfo;
       }
     }
@@ -730,13 +730,13 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.wxpay.WXPayInfo, com.zhijiejiaoyu.glory_api.wxpay.WXPayInfo.Builder, com.zhijiejiaoyu.glory_api.wxpay.WXPayInfoOrBuilder> 
         getPayInfoFieldBuilder() {
-      if (payInfoBuilder == null) {
-        payInfoBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+      if (payInfoBuilder== null) {
+        payInfoBuilder= new com.google.protobuf.SingleFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.wxpay.WXPayInfo, com.zhijiejiaoyu.glory_api.wxpay.WXPayInfo.Builder, com.zhijiejiaoyu.glory_api.wxpay.WXPayInfoOrBuilder>(
                 getPayInfo(),
                 getParentForChildren(),
                 isClean());
-        payInfo = null;
+        payInfo= null;
       }
       return payInfoBuilder;
     }

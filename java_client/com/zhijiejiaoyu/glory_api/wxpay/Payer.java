@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Payer() {
-    openid = "";
+    openid= "";
   }
 
   @java.lang.Override
@@ -52,7 +52,7 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            openid = s;
+            openid= s;
             break;
           }
           default: {
@@ -102,7 +102,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      openid = s;
+      openid= s;
       return s;
     }
   }
@@ -118,7 +118,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      openid = b;
+      openid= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -317,7 +317,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      openid = "";
+      openid= "";
 
       return this;
     }
@@ -345,7 +345,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.wxpay.Payer buildPartial() {
       com.zhijiejiaoyu.glory_api.wxpay.Payer result = new com.zhijiejiaoyu.glory_api.wxpay.Payer(this);
-      result.openid = openid;
+      result.openid= openid;
       onBuilt();
       return result;
     }
@@ -395,7 +395,7 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.zhijiejiaoyu.glory_api.wxpay.Payer other) {
       if (other == com.zhijiejiaoyu.glory_api.wxpay.Payer.getDefaultInstance()) return this;
       if (!other.getOpenid().isEmpty()) {
-        openid = other.openid;
+        openid= other.openid;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -427,7 +427,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object openid = "";
+    private java.lang.Object openid= "";
     /**
      * <code>string openid = 1;</code>
      * @return The openid.
@@ -438,7 +438,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        openid = s;
+        openid= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -455,7 +455,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        openid = b;
+        openid= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -472,7 +472,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      openid = value;
+      openid= value;
       onChanged();
       return this;
     }
@@ -482,7 +482,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearOpenid() {
       
-      openid = getDefaultInstance().getOpenid();
+      openid= getDefaultInstance().getOpenid();
       onChanged();
       return this;
     }
@@ -498,7 +498,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      openid = value;
+      openid= value;
       onChanged();
       return this;
     }

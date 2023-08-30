@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Amount() {
-    currency = "";
+    currency= "";
   }
 
   @java.lang.Override
@@ -51,13 +51,13 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            total = input.readInt64();
+            total= input.readInt64();
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            currency = s;
+            currency= s;
             break;
           }
           default: {
@@ -126,7 +126,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      currency = s;
+      currency= s;
       return s;
     }
   }
@@ -146,7 +146,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      currency = b;
+      currency= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -167,7 +167,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (total != 0L) {
+    if (total!= 0L) {
       output.writeInt64(1, total);
     }
     if (!getCurrencyBytes().isEmpty()) {
@@ -182,7 +182,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (total != 0L) {
+    if (total!= 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, total);
     }
@@ -357,9 +357,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      total = 0L;
+      total= 0L;
 
-      currency = "";
+      currency= "";
 
       return this;
     }
@@ -387,8 +387,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.wxpay.Amount buildPartial() {
       com.zhijiejiaoyu.glory_api.wxpay.Amount result = new com.zhijiejiaoyu.glory_api.wxpay.Amount(this);
-      result.total = total;
-      result.currency = currency;
+      result.total= total;
+      result.currency= currency;
       onBuilt();
       return result;
     }
@@ -441,7 +441,7 @@ private static final long serialVersionUID = 0L;
         setTotal(other.getTotal());
       }
       if (!other.getCurrency().isEmpty()) {
-        currency = other.currency;
+        currency= other.currency;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -473,7 +473,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long total ;
+    private long total;
     /**
      * <pre>
      *订单总金额，单位为分。
@@ -497,7 +497,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setTotal(long value) {
       
-      total = value;
+      total= value;
       onChanged();
       return this;
     }
@@ -511,12 +511,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearTotal() {
       
-      total = 0L;
+      total= 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object currency = "";
+    private java.lang.Object currency= "";
     /**
      * <pre>
      *CNY：人民币，境内商户号仅支持人民币
@@ -531,7 +531,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        currency = s;
+        currency= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -552,7 +552,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        currency = b;
+        currency= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -573,7 +573,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      currency = value;
+      currency= value;
       onChanged();
       return this;
     }
@@ -587,7 +587,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearCurrency() {
       
-      currency = getDefaultInstance().getCurrency();
+      currency= getDefaultInstance().getCurrency();
       onChanged();
       return this;
     }
@@ -607,7 +607,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      currency = value;
+      currency= value;
       onChanged();
       return this;
     }

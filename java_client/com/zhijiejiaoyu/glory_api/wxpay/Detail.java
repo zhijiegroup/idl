@@ -16,8 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Detail() {
-    invoiceId = "";
-    goodsDetail = java.util.Collections.emptyList();
+    invoiceId= "";
+    goodsDetail= java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -40,7 +40,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0 = 0;
+    int mutable_bitField0= 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -53,18 +53,18 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            costPrice = input.readInt64();
+            costPrice= input.readInt64();
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            invoiceId = s;
+            invoiceId= s;
             break;
           }
           case 26: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              goodsDetail = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.wxpay.GoodsDetail>();
+            if (!((mutable_bitField0& 0x00000001) != 0)) {
+              goodsDetail= new java.util.ArrayList<com.zhijiejiaoyu.glory_api.wxpay.GoodsDetail>();
               mutable_bitField0_ |= 0x00000001;
             }
             goodsDetail.add(
@@ -86,8 +86,8 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        goodsDetail = java.util.Collections.unmodifiableList(goodsDetail);
+      if (((mutable_bitField0& 0x00000001) != 0)) {
+        goodsDetail= java.util.Collections.unmodifiableList(goodsDetail);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -140,7 +140,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      invoiceId = s;
+      invoiceId= s;
       return s;
     }
   }
@@ -160,7 +160,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      invoiceId = b;
+      invoiceId= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -241,7 +241,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (costPrice != 0L) {
+    if (costPrice!= 0L) {
       output.writeInt64(1, costPrice);
     }
     if (!getInvoiceIdBytes().isEmpty()) {
@@ -259,7 +259,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (costPrice != 0L) {
+    if (costPrice!= 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, costPrice);
     }
@@ -445,13 +445,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      costPrice = 0L;
+      costPrice= 0L;
 
-      invoiceId = "";
+      invoiceId= "";
 
-      if (goodsDetailBuilder == null) {
-        goodsDetail = java.util.Collections.emptyList();
-        bitField0 = (bitField0_ & ~0x00000001);
+      if (goodsDetailBuilder== null) {
+        goodsDetail= java.util.Collections.emptyList();
+        bitField0= (bitField0& ~0x00000001);
       } else {
         goodsDetailBuilder.clear();
       }
@@ -481,17 +481,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.wxpay.Detail buildPartial() {
       com.zhijiejiaoyu.glory_api.wxpay.Detail result = new com.zhijiejiaoyu.glory_api.wxpay.Detail(this);
-      int from_bitField0 = bitField0;
-      result.costPrice = costPrice;
-      result.invoiceId = invoiceId;
-      if (goodsDetailBuilder == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          goodsDetail = java.util.Collections.unmodifiableList(goodsDetail);
-          bitField0 = (bitField0_ & ~0x00000001);
+      int from_bitField0= bitField0;
+      result.costPrice= costPrice;
+      result.invoiceId= invoiceId;
+      if (goodsDetailBuilder== null) {
+        if (((bitField0& 0x00000001) != 0)) {
+          goodsDetail= java.util.Collections.unmodifiableList(goodsDetail);
+          bitField0= (bitField0& ~0x00000001);
         }
-        result.goodsDetail = goodsDetail;
+        result.goodsDetail= goodsDetail;
       } else {
-        result.goodsDetail = goodsDetailBuilder.build();
+        result.goodsDetail= goodsDetailBuilder.build();
       }
       onBuilt();
       return result;
@@ -545,14 +545,14 @@ private static final long serialVersionUID = 0L;
         setCostPrice(other.getCostPrice());
       }
       if (!other.getInvoiceId().isEmpty()) {
-        invoiceId = other.invoiceId;
+        invoiceId= other.invoiceId;
         onChanged();
       }
-      if (goodsDetailBuilder == null) {
+      if (goodsDetailBuilder== null) {
         if (!other.goodsDetail.isEmpty()) {
           if (goodsDetail.isEmpty()) {
-            goodsDetail = other.goodsDetail;
-            bitField0 = (bitField0_ & ~0x00000001);
+            goodsDetail= other.goodsDetail;
+            bitField0= (bitField0& ~0x00000001);
           } else {
             ensureGoodsDetailIsMutable();
             goodsDetail.addAll(other.goodsDetail);
@@ -563,10 +563,10 @@ private static final long serialVersionUID = 0L;
         if (!other.goodsDetail.isEmpty()) {
           if (goodsDetailBuilder.isEmpty()) {
             goodsDetailBuilder.dispose();
-            goodsDetailBuilder = null;
-            goodsDetail = other.goodsDetail;
-            bitField0 = (bitField0_ & ~0x00000001);
-            goodsDetailBuilder = 
+            goodsDetailBuilder= null;
+            goodsDetail= other.goodsDetail;
+            bitField0= (bitField0& ~0x00000001);
+            goodsDetailBuilder= 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getGoodsDetailFieldBuilder() : null;
           } else {
@@ -604,7 +604,7 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0;
 
-    private long costPrice ;
+    private long costPrice;
     /**
      * <pre>
      *订单原价
@@ -628,7 +628,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setCostPrice(long value) {
       
-      costPrice = value;
+      costPrice= value;
       onChanged();
       return this;
     }
@@ -642,12 +642,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearCostPrice() {
       
-      costPrice = 0L;
+      costPrice= 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object invoiceId = "";
+    private java.lang.Object invoiceId= "";
     /**
      * <pre>
      *商品小票ID
@@ -662,7 +662,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        invoiceId = s;
+        invoiceId= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -683,7 +683,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        invoiceId = b;
+        invoiceId= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -704,7 +704,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      invoiceId = value;
+      invoiceId= value;
       onChanged();
       return this;
     }
@@ -718,7 +718,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearInvoiceId() {
       
-      invoiceId = getDefaultInstance().getInvoiceId();
+      invoiceId= getDefaultInstance().getInvoiceId();
       onChanged();
       return this;
     }
@@ -738,16 +738,16 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      invoiceId = value;
+      invoiceId= value;
       onChanged();
       return this;
     }
 
-    private java.util.List<com.zhijiejiaoyu.glory_api.wxpay.GoodsDetail> goodsDetail =
+    private java.util.List<com.zhijiejiaoyu.glory_api.wxpay.GoodsDetail> goodsDetail=
       java.util.Collections.emptyList();
     private void ensureGoodsDetailIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
-        goodsDetail = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.wxpay.GoodsDetail>(goodsDetail);
+      if (!((bitField0& 0x00000001) != 0)) {
+        goodsDetail= new java.util.ArrayList<com.zhijiejiaoyu.glory_api.wxpay.GoodsDetail>(goodsDetail);
         bitField0_ |= 0x00000001;
        }
     }
@@ -763,7 +763,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.GoodsDetail goods_detail = 3;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.wxpay.GoodsDetail> getGoodsDetailList() {
-      if (goodsDetailBuilder == null) {
+      if (goodsDetailBuilder== null) {
         return java.util.Collections.unmodifiableList(goodsDetail);
       } else {
         return goodsDetailBuilder.getMessageList();
@@ -777,7 +777,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.GoodsDetail goods_detail = 3;</code>
      */
     public int getGoodsDetailCount() {
-      if (goodsDetailBuilder == null) {
+      if (goodsDetailBuilder== null) {
         return goodsDetail.size();
       } else {
         return goodsDetailBuilder.getCount();
@@ -791,7 +791,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.GoodsDetail goods_detail = 3;</code>
      */
     public com.zhijiejiaoyu.glory_api.wxpay.GoodsDetail getGoodsDetail(int index) {
-      if (goodsDetailBuilder == null) {
+      if (goodsDetailBuilder== null) {
         return goodsDetail.get(index);
       } else {
         return goodsDetailBuilder.getMessage(index);
@@ -806,7 +806,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setGoodsDetail(
         int index, com.zhijiejiaoyu.glory_api.wxpay.GoodsDetail value) {
-      if (goodsDetailBuilder == null) {
+      if (goodsDetailBuilder== null) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -827,7 +827,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setGoodsDetail(
         int index, com.zhijiejiaoyu.glory_api.wxpay.GoodsDetail.Builder builderForValue) {
-      if (goodsDetailBuilder == null) {
+      if (goodsDetailBuilder== null) {
         ensureGoodsDetailIsMutable();
         goodsDetail.set(index, builderForValue.build());
         onChanged();
@@ -844,7 +844,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.GoodsDetail goods_detail = 3;</code>
      */
     public Builder addGoodsDetail(com.zhijiejiaoyu.glory_api.wxpay.GoodsDetail value) {
-      if (goodsDetailBuilder == null) {
+      if (goodsDetailBuilder== null) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -865,7 +865,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addGoodsDetail(
         int index, com.zhijiejiaoyu.glory_api.wxpay.GoodsDetail value) {
-      if (goodsDetailBuilder == null) {
+      if (goodsDetailBuilder== null) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -886,7 +886,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addGoodsDetail(
         com.zhijiejiaoyu.glory_api.wxpay.GoodsDetail.Builder builderForValue) {
-      if (goodsDetailBuilder == null) {
+      if (goodsDetailBuilder== null) {
         ensureGoodsDetailIsMutable();
         goodsDetail.add(builderForValue.build());
         onChanged();
@@ -904,7 +904,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addGoodsDetail(
         int index, com.zhijiejiaoyu.glory_api.wxpay.GoodsDetail.Builder builderForValue) {
-      if (goodsDetailBuilder == null) {
+      if (goodsDetailBuilder== null) {
         ensureGoodsDetailIsMutable();
         goodsDetail.add(index, builderForValue.build());
         onChanged();
@@ -922,7 +922,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addAllGoodsDetail(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.wxpay.GoodsDetail> values) {
-      if (goodsDetailBuilder == null) {
+      if (goodsDetailBuilder== null) {
         ensureGoodsDetailIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, goodsDetail);
@@ -940,9 +940,9 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.GoodsDetail goods_detail = 3;</code>
      */
     public Builder clearGoodsDetail() {
-      if (goodsDetailBuilder == null) {
-        goodsDetail = java.util.Collections.emptyList();
-        bitField0 = (bitField0_ & ~0x00000001);
+      if (goodsDetailBuilder== null) {
+        goodsDetail= java.util.Collections.emptyList();
+        bitField0= (bitField0& ~0x00000001);
         onChanged();
       } else {
         goodsDetailBuilder.clear();
@@ -957,7 +957,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .glory_api.GoodsDetail goods_detail = 3;</code>
      */
     public Builder removeGoodsDetail(int index) {
-      if (goodsDetailBuilder == null) {
+      if (goodsDetailBuilder== null) {
         ensureGoodsDetailIsMutable();
         goodsDetail.remove(index);
         onChanged();
@@ -986,7 +986,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.zhijiejiaoyu.glory_api.wxpay.GoodsDetailOrBuilder getGoodsDetailOrBuilder(
         int index) {
-      if (goodsDetailBuilder == null) {
+      if (goodsDetailBuilder== null) {
         return goodsDetail.get(index);  } else {
         return goodsDetailBuilder.getMessageOrBuilder(index);
       }
@@ -1000,7 +1000,7 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.wxpay.GoodsDetailOrBuilder> 
          getGoodsDetailOrBuilderList() {
-      if (goodsDetailBuilder != null) {
+      if (goodsDetailBuilder!= null) {
         return goodsDetailBuilder.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(goodsDetail);
@@ -1043,14 +1043,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.RepeatedFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.wxpay.GoodsDetail, com.zhijiejiaoyu.glory_api.wxpay.GoodsDetail.Builder, com.zhijiejiaoyu.glory_api.wxpay.GoodsDetailOrBuilder> 
         getGoodsDetailFieldBuilder() {
-      if (goodsDetailBuilder == null) {
-        goodsDetailBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+      if (goodsDetailBuilder== null) {
+        goodsDetailBuilder= new com.google.protobuf.RepeatedFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.wxpay.GoodsDetail, com.zhijiejiaoyu.glory_api.wxpay.GoodsDetail.Builder, com.zhijiejiaoyu.glory_api.wxpay.GoodsDetailOrBuilder>(
-                goodsDetail_,
-                ((bitField0_ & 0x00000001) != 0),
+                goodsDetail,
+                ((bitField0& 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        goodsDetail = null;
+        goodsDetail= null;
       }
       return goodsDetailBuilder;
     }

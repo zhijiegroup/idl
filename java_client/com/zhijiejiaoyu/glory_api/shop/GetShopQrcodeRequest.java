@@ -50,7 +50,7 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            shopId = input.readInt64();
+            shopId= input.readInt64();
             break;
           }
           default: {
@@ -110,7 +110,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (shopId != 0L) {
+    if (shopId!= 0L) {
       output.writeInt64(1, shopId);
     }
     unknownFields.writeTo(output);
@@ -122,7 +122,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (shopId != 0L) {
+    if (shopId!= 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, shopId);
     }
@@ -290,7 +290,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      shopId = 0L;
+      shopId= 0L;
 
       return this;
     }
@@ -318,7 +318,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.shop.GetShopQrcodeRequest buildPartial() {
       com.zhijiejiaoyu.glory_api.shop.GetShopQrcodeRequest result = new com.zhijiejiaoyu.glory_api.shop.GetShopQrcodeRequest(this);
-      result.shopId = shopId;
+      result.shopId= shopId;
       onBuilt();
       return result;
     }
@@ -399,7 +399,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long shopId ;
+    private long shopId;
     /**
      * <code>int64 shop_id = 1;</code>
      * @return The shopId.
@@ -415,7 +415,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setShopId(long value) {
       
-      shopId = value;
+      shopId= value;
       onChanged();
       return this;
     }
@@ -425,7 +425,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearShopId() {
       
-      shopId = 0L;
+      shopId= 0L;
       onChanged();
       return this;
     }

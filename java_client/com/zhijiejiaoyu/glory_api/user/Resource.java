@@ -16,9 +16,9 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Resource() {
-    resourceName = "";
-    resourceType = "";
-    source = "";
+    resourceName= "";
+    resourceType= "";
+    source= "";
   }
 
   @java.lang.Override
@@ -53,35 +53,35 @@ private static final long serialVersionUID = 0L;
             break;
           case 16: {
 
-            resourceId = input.readInt64();
+            resourceId= input.readInt64();
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            resourceName = s;
+            resourceName= s;
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            resourceType = s;
+            resourceType= s;
             break;
           }
           case 42: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            source = s;
+            source= s;
             break;
           }
           case 48: {
 
-            sourceId = input.readInt64();
+            sourceId= input.readInt64();
             break;
           }
           case 56: {
 
-            tenantId = input.readInt64();
+            tenantId= input.readInt64();
             break;
           }
           default: {
@@ -142,7 +142,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      resourceName = s;
+      resourceName= s;
       return s;
     }
   }
@@ -158,7 +158,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      resourceName = b;
+      resourceName= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -184,7 +184,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      resourceType = s;
+      resourceType= s;
       return s;
     }
   }
@@ -204,7 +204,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      resourceType = b;
+      resourceType= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -230,7 +230,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      source = s;
+      source= s;
       return s;
     }
   }
@@ -250,7 +250,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      source = b;
+      source= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -301,7 +301,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (resourceId != 0L) {
+    if (resourceId!= 0L) {
       output.writeInt64(2, resourceId);
     }
     if (!getResourceNameBytes().isEmpty()) {
@@ -313,10 +313,10 @@ private static final long serialVersionUID = 0L;
     if (!getSourceBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, source);
     }
-    if (sourceId != 0L) {
+    if (sourceId!= 0L) {
       output.writeInt64(6, sourceId);
     }
-    if (tenantId != 0L) {
+    if (tenantId!= 0L) {
       output.writeInt64(7, tenantId);
     }
     unknownFields.writeTo(output);
@@ -328,7 +328,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (resourceId != 0L) {
+    if (resourceId!= 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, resourceId);
     }
@@ -341,11 +341,11 @@ private static final long serialVersionUID = 0L;
     if (!getSourceBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, source);
     }
-    if (sourceId != 0L) {
+    if (sourceId!= 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(6, sourceId);
     }
-    if (tenantId != 0L) {
+    if (tenantId!= 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(7, tenantId);
     }
@@ -535,17 +535,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      resourceId = 0L;
+      resourceId= 0L;
 
-      resourceName = "";
+      resourceName= "";
 
-      resourceType = "";
+      resourceType= "";
 
-      source = "";
+      source= "";
 
-      sourceId = 0L;
+      sourceId= 0L;
 
-      tenantId = 0L;
+      tenantId= 0L;
 
       return this;
     }
@@ -573,12 +573,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.user.Resource buildPartial() {
       com.zhijiejiaoyu.glory_api.user.Resource result = new com.zhijiejiaoyu.glory_api.user.Resource(this);
-      result.resourceId = resourceId;
-      result.resourceName = resourceName;
-      result.resourceType = resourceType;
-      result.source = source;
-      result.sourceId = sourceId;
-      result.tenantId = tenantId;
+      result.resourceId= resourceId;
+      result.resourceName= resourceName;
+      result.resourceType= resourceType;
+      result.source= source;
+      result.sourceId= sourceId;
+      result.tenantId= tenantId;
       onBuilt();
       return result;
     }
@@ -631,15 +631,15 @@ private static final long serialVersionUID = 0L;
         setResourceId(other.getResourceId());
       }
       if (!other.getResourceName().isEmpty()) {
-        resourceName = other.resourceName;
+        resourceName= other.resourceName;
         onChanged();
       }
       if (!other.getResourceType().isEmpty()) {
-        resourceType = other.resourceType;
+        resourceType= other.resourceType;
         onChanged();
       }
       if (!other.getSource().isEmpty()) {
-        source = other.source;
+        source= other.source;
         onChanged();
       }
       if (other.getSourceId() != 0L) {
@@ -677,7 +677,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long resourceId ;
+    private long resourceId;
     /**
      * <code>int64 resource_id = 2;</code>
      * @return The resourceId.
@@ -693,7 +693,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setResourceId(long value) {
       
-      resourceId = value;
+      resourceId= value;
       onChanged();
       return this;
     }
@@ -703,12 +703,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearResourceId() {
       
-      resourceId = 0L;
+      resourceId= 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object resourceName = "";
+    private java.lang.Object resourceName= "";
     /**
      * <code>string resource_name = 3;</code>
      * @return The resourceName.
@@ -719,7 +719,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        resourceName = s;
+        resourceName= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -736,7 +736,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        resourceName = b;
+        resourceName= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -753,7 +753,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      resourceName = value;
+      resourceName= value;
       onChanged();
       return this;
     }
@@ -763,7 +763,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearResourceName() {
       
-      resourceName = getDefaultInstance().getResourceName();
+      resourceName= getDefaultInstance().getResourceName();
       onChanged();
       return this;
     }
@@ -779,12 +779,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      resourceName = value;
+      resourceName= value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object resourceType = "";
+    private java.lang.Object resourceType= "";
     /**
      * <pre>
      * 支持 school, major_live, business_system, page_permission， 后面可能会增加
@@ -799,7 +799,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        resourceType = s;
+        resourceType= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -820,7 +820,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        resourceType = b;
+        resourceType= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -841,7 +841,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      resourceType = value;
+      resourceType= value;
       onChanged();
       return this;
     }
@@ -855,7 +855,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearResourceType() {
       
-      resourceType = getDefaultInstance().getResourceType();
+      resourceType= getDefaultInstance().getResourceType();
       onChanged();
       return this;
     }
@@ -875,12 +875,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      resourceType = value;
+      resourceType= value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object source = "";
+    private java.lang.Object source= "";
     /**
      * <pre>
      * 源表，有config, school, major, class，后面会增加
@@ -895,7 +895,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        source = s;
+        source= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -916,7 +916,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        source = b;
+        source= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -937,7 +937,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      source = value;
+      source= value;
       onChanged();
       return this;
     }
@@ -951,7 +951,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearSource() {
       
-      source = getDefaultInstance().getSource();
+      source= getDefaultInstance().getSource();
       onChanged();
       return this;
     }
@@ -971,12 +971,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      source = value;
+      source= value;
       onChanged();
       return this;
     }
 
-    private long sourceId ;
+    private long sourceId;
     /**
      * <pre>
      * 源表记录的id
@@ -1000,7 +1000,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setSourceId(long value) {
       
-      sourceId = value;
+      sourceId= value;
       onChanged();
       return this;
     }
@@ -1014,12 +1014,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearSourceId() {
       
-      sourceId = 0L;
+      sourceId= 0L;
       onChanged();
       return this;
     }
 
-    private long tenantId ;
+    private long tenantId;
     /**
      * <pre>
      * 学校的id
@@ -1043,7 +1043,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setTenantId(long value) {
       
-      tenantId = value;
+      tenantId= value;
       onChanged();
       return this;
     }
@@ -1057,7 +1057,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearTenantId() {
       
-      tenantId = 0L;
+      tenantId= 0L;
       onChanged();
       return this;
     }

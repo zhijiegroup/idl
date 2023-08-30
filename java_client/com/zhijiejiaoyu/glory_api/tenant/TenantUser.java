@@ -16,10 +16,10 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private TenantUser() {
-    phone = "";
-    name = "";
-    role = "";
-    dept = "";
+    phone= "";
+    name= "";
+    role= "";
+    dept= "";
   }
 
   @java.lang.Override
@@ -54,57 +54,57 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            tenantUserId = input.readInt64();
+            tenantUserId= input.readInt64();
             break;
           }
           case 16: {
 
-            userId = input.readInt64();
+            userId= input.readInt64();
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            phone = s;
+            phone= s;
             break;
           }
           case 42: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            name = s;
+            name= s;
             break;
           }
           case 50: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            role = s;
+            role= s;
             break;
           }
           case 56: {
 
-            roleId = input.readInt64();
+            roleId= input.readInt64();
             break;
           }
           case 66: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            dept = s;
+            dept= s;
             break;
           }
           case 72: {
 
-            deptId = input.readInt64();
+            deptId= input.readInt64();
             break;
           }
           case 82: {
             com.zhijiejiaoyu.glory_api.user.User.Builder subBuilder = null;
-            if (user != null) {
+            if (user!= null) {
               subBuilder = user.toBuilder();
             }
-            user = input.readMessage(com.zhijiejiaoyu.glory_api.user.User.parser(), extensionRegistry);
+            user= input.readMessage(com.zhijiejiaoyu.glory_api.user.User.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(user);
-              user = subBuilder.buildPartial();
+              user= subBuilder.buildPartial();
             }
 
             break;
@@ -178,7 +178,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      phone = s;
+      phone= s;
       return s;
     }
   }
@@ -194,7 +194,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      phone = b;
+      phone= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -216,7 +216,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      name = s;
+      name= s;
       return s;
     }
   }
@@ -232,7 +232,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      name = b;
+      name= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -254,7 +254,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      role = s;
+      role= s;
       return s;
     }
   }
@@ -270,7 +270,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      role = b;
+      role= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -303,7 +303,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      dept = s;
+      dept= s;
       return s;
     }
   }
@@ -319,7 +319,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      dept = b;
+      dept= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -345,7 +345,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasUser() {
-    return user != null;
+    return user!= null;
   }
   /**
    * <code>.glory_api.User user = 10;</code>
@@ -353,7 +353,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.user.User getUser() {
-    return user == null ? com.zhijiejiaoyu.glory_api.user.User.getDefaultInstance() : user;
+    return user== null ? com.zhijiejiaoyu.glory_api.user.User.getDefaultInstance() : user;
   }
   /**
    * <code>.glory_api.User user = 10;</code>
@@ -377,10 +377,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (tenantUserId != 0L) {
+    if (tenantUserId!= 0L) {
       output.writeInt64(1, tenantUserId);
     }
-    if (userId != 0L) {
+    if (userId!= 0L) {
       output.writeInt64(2, userId);
     }
     if (!getPhoneBytes().isEmpty()) {
@@ -392,16 +392,16 @@ private static final long serialVersionUID = 0L;
     if (!getRoleBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, role);
     }
-    if (roleId != 0L) {
+    if (roleId!= 0L) {
       output.writeInt64(7, roleId);
     }
     if (!getDeptBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, dept);
     }
-    if (deptId != 0L) {
+    if (deptId!= 0L) {
       output.writeInt64(9, deptId);
     }
-    if (user != null) {
+    if (user!= null) {
       output.writeMessage(10, getUser());
     }
     unknownFields.writeTo(output);
@@ -413,11 +413,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (tenantUserId != 0L) {
+    if (tenantUserId!= 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, tenantUserId);
     }
-    if (userId != 0L) {
+    if (userId!= 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, userId);
     }
@@ -430,18 +430,18 @@ private static final long serialVersionUID = 0L;
     if (!getRoleBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, role);
     }
-    if (roleId != 0L) {
+    if (roleId!= 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(7, roleId);
     }
     if (!getDeptBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, dept);
     }
-    if (deptId != 0L) {
+    if (deptId!= 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(9, deptId);
     }
-    if (user != null) {
+    if (user!= null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(10, getUser());
     }
@@ -649,27 +649,27 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      tenantUserId = 0L;
+      tenantUserId= 0L;
 
-      userId = 0L;
+      userId= 0L;
 
-      phone = "";
+      phone= "";
 
-      name = "";
+      name= "";
 
-      role = "";
+      role= "";
 
-      roleId = 0L;
+      roleId= 0L;
 
-      dept = "";
+      dept= "";
 
-      deptId = 0L;
+      deptId= 0L;
 
-      if (userBuilder == null) {
-        user = null;
+      if (userBuilder== null) {
+        user= null;
       } else {
-        user = null;
-        userBuilder = null;
+        user= null;
+        userBuilder= null;
       }
       return this;
     }
@@ -697,18 +697,18 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.tenant.TenantUser buildPartial() {
       com.zhijiejiaoyu.glory_api.tenant.TenantUser result = new com.zhijiejiaoyu.glory_api.tenant.TenantUser(this);
-      result.tenantUserId = tenantUserId;
-      result.userId = userId;
-      result.phone = phone;
-      result.name = name;
-      result.role = role;
-      result.roleId = roleId;
-      result.dept = dept;
-      result.deptId = deptId;
-      if (userBuilder == null) {
-        result.user = user;
+      result.tenantUserId= tenantUserId;
+      result.userId= userId;
+      result.phone= phone;
+      result.name= name;
+      result.role= role;
+      result.roleId= roleId;
+      result.dept= dept;
+      result.deptId= deptId;
+      if (userBuilder== null) {
+        result.user= user;
       } else {
-        result.user = userBuilder.build();
+        result.user= userBuilder.build();
       }
       onBuilt();
       return result;
@@ -765,22 +765,22 @@ private static final long serialVersionUID = 0L;
         setUserId(other.getUserId());
       }
       if (!other.getPhone().isEmpty()) {
-        phone = other.phone;
+        phone= other.phone;
         onChanged();
       }
       if (!other.getName().isEmpty()) {
-        name = other.name;
+        name= other.name;
         onChanged();
       }
       if (!other.getRole().isEmpty()) {
-        role = other.role;
+        role= other.role;
         onChanged();
       }
       if (other.getRoleId() != 0L) {
         setRoleId(other.getRoleId());
       }
       if (!other.getDept().isEmpty()) {
-        dept = other.dept;
+        dept= other.dept;
         onChanged();
       }
       if (other.getDeptId() != 0L) {
@@ -818,7 +818,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long tenantUserId ;
+    private long tenantUserId;
     /**
      * <code>int64 tenant_user_id = 1;</code>
      * @return The tenantUserId.
@@ -834,7 +834,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setTenantUserId(long value) {
       
-      tenantUserId = value;
+      tenantUserId= value;
       onChanged();
       return this;
     }
@@ -844,12 +844,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearTenantUserId() {
       
-      tenantUserId = 0L;
+      tenantUserId= 0L;
       onChanged();
       return this;
     }
 
-    private long userId ;
+    private long userId;
     /**
      * <code>int64 user_id = 2;</code>
      * @return The userId.
@@ -865,7 +865,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setUserId(long value) {
       
-      userId = value;
+      userId= value;
       onChanged();
       return this;
     }
@@ -875,12 +875,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearUserId() {
       
-      userId = 0L;
+      userId= 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object phone = "";
+    private java.lang.Object phone= "";
     /**
      * <code>string phone = 4;</code>
      * @return The phone.
@@ -891,7 +891,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        phone = s;
+        phone= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -908,7 +908,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        phone = b;
+        phone= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -925,7 +925,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      phone = value;
+      phone= value;
       onChanged();
       return this;
     }
@@ -935,7 +935,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearPhone() {
       
-      phone = getDefaultInstance().getPhone();
+      phone= getDefaultInstance().getPhone();
       onChanged();
       return this;
     }
@@ -951,12 +951,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      phone = value;
+      phone= value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object name = "";
+    private java.lang.Object name= "";
     /**
      * <code>string name = 5;</code>
      * @return The name.
@@ -967,7 +967,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        name = s;
+        name= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -984,7 +984,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        name = b;
+        name= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1001,7 +1001,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      name = value;
+      name= value;
       onChanged();
       return this;
     }
@@ -1011,7 +1011,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearName() {
       
-      name = getDefaultInstance().getName();
+      name= getDefaultInstance().getName();
       onChanged();
       return this;
     }
@@ -1027,12 +1027,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      name = value;
+      name= value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object role = "";
+    private java.lang.Object role= "";
     /**
      * <code>string role = 6;</code>
      * @return The role.
@@ -1043,7 +1043,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        role = s;
+        role= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1060,7 +1060,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        role = b;
+        role= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1077,7 +1077,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      role = value;
+      role= value;
       onChanged();
       return this;
     }
@@ -1087,7 +1087,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearRole() {
       
-      role = getDefaultInstance().getRole();
+      role= getDefaultInstance().getRole();
       onChanged();
       return this;
     }
@@ -1103,12 +1103,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      role = value;
+      role= value;
       onChanged();
       return this;
     }
 
-    private long roleId ;
+    private long roleId;
     /**
      * <code>int64 role_id = 7;</code>
      * @return The roleId.
@@ -1124,7 +1124,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setRoleId(long value) {
       
-      roleId = value;
+      roleId= value;
       onChanged();
       return this;
     }
@@ -1134,12 +1134,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearRoleId() {
       
-      roleId = 0L;
+      roleId= 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object dept = "";
+    private java.lang.Object dept= "";
     /**
      * <code>string dept = 8;</code>
      * @return The dept.
@@ -1150,7 +1150,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        dept = s;
+        dept= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1167,7 +1167,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        dept = b;
+        dept= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1184,7 +1184,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      dept = value;
+      dept= value;
       onChanged();
       return this;
     }
@@ -1194,7 +1194,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearDept() {
       
-      dept = getDefaultInstance().getDept();
+      dept= getDefaultInstance().getDept();
       onChanged();
       return this;
     }
@@ -1210,12 +1210,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      dept = value;
+      dept= value;
       onChanged();
       return this;
     }
 
-    private long deptId ;
+    private long deptId;
     /**
      * <code>int64 dept_id = 9;</code>
      * @return The deptId.
@@ -1231,7 +1231,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDeptId(long value) {
       
-      deptId = value;
+      deptId= value;
       onChanged();
       return this;
     }
@@ -1241,7 +1241,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearDeptId() {
       
-      deptId = 0L;
+      deptId= 0L;
       onChanged();
       return this;
     }
@@ -1254,15 +1254,15 @@ private static final long serialVersionUID = 0L;
      * @return Whether the user field is set.
      */
     public boolean hasUser() {
-      return userBuilder != null || user != null;
+      return userBuilder!= null || user!= null;
     }
     /**
      * <code>.glory_api.User user = 10;</code>
      * @return The user.
      */
     public com.zhijiejiaoyu.glory_api.user.User getUser() {
-      if (userBuilder == null) {
-        return user == null ? com.zhijiejiaoyu.glory_api.user.User.getDefaultInstance() : user;
+      if (userBuilder== null) {
+        return user== null ? com.zhijiejiaoyu.glory_api.user.User.getDefaultInstance() : user;
       } else {
         return userBuilder.getMessage();
       }
@@ -1271,11 +1271,11 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.User user = 10;</code>
      */
     public Builder setUser(com.zhijiejiaoyu.glory_api.user.User value) {
-      if (userBuilder == null) {
+      if (userBuilder== null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        user = value;
+        user= value;
         onChanged();
       } else {
         userBuilder.setMessage(value);
@@ -1288,8 +1288,8 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setUser(
         com.zhijiejiaoyu.glory_api.user.User.Builder builderForValue) {
-      if (userBuilder == null) {
-        user = builderForValue.build();
+      if (userBuilder== null) {
+        user= builderForValue.build();
         onChanged();
       } else {
         userBuilder.setMessage(builderForValue.build());
@@ -1301,12 +1301,12 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.User user = 10;</code>
      */
     public Builder mergeUser(com.zhijiejiaoyu.glory_api.user.User value) {
-      if (userBuilder == null) {
-        if (user != null) {
-          user =
+      if (userBuilder== null) {
+        if (user!= null) {
+          user=
             com.zhijiejiaoyu.glory_api.user.User.newBuilder(user).mergeFrom(value).buildPartial();
         } else {
-          user = value;
+          user= value;
         }
         onChanged();
       } else {
@@ -1319,12 +1319,12 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.User user = 10;</code>
      */
     public Builder clearUser() {
-      if (userBuilder == null) {
-        user = null;
+      if (userBuilder== null) {
+        user= null;
         onChanged();
       } else {
-        user = null;
-        userBuilder = null;
+        user= null;
+        userBuilder= null;
       }
 
       return this;
@@ -1341,10 +1341,10 @@ private static final long serialVersionUID = 0L;
      * <code>.glory_api.User user = 10;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.UserOrBuilder getUserOrBuilder() {
-      if (userBuilder != null) {
+      if (userBuilder!= null) {
         return userBuilder.getMessageOrBuilder();
       } else {
-        return user == null ?
+        return user== null ?
             com.zhijiejiaoyu.glory_api.user.User.getDefaultInstance() : user;
       }
     }
@@ -1354,13 +1354,13 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder> 
         getUserFieldBuilder() {
-      if (userBuilder == null) {
-        userBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+      if (userBuilder== null) {
+        userBuilder= new com.google.protobuf.SingleFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder>(
                 getUser(),
                 getParentForChildren(),
                 isClean());
-        user = null;
+        user= null;
       }
       return userBuilder;
     }

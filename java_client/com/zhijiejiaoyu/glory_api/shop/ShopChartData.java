@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ShopChartData() {
-    date = "";
+    date= "";
   }
 
   @java.lang.Override
@@ -52,27 +52,27 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            date = s;
+            date= s;
             break;
           }
           case 17: {
 
-            dealAmount = input.readDouble();
+            dealAmount= input.readDouble();
             break;
           }
           case 24: {
 
-            shopBuyerAmount = input.readInt64();
+            shopBuyerAmount= input.readInt64();
             break;
           }
           case 32: {
 
-            shopOrderAmount = input.readInt64();
+            shopOrderAmount= input.readInt64();
             break;
           }
           case 40: {
 
-            timestamp = input.readInt64();
+            timestamp= input.readInt64();
             break;
           }
           default: {
@@ -122,7 +122,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      date = s;
+      date= s;
       return s;
     }
   }
@@ -138,7 +138,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      date = b;
+      date= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -206,16 +206,16 @@ private static final long serialVersionUID = 0L;
     if (!getDateBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, date);
     }
-    if (dealAmount != 0D) {
+    if (dealAmount!= 0D) {
       output.writeDouble(2, dealAmount);
     }
-    if (shopBuyerAmount != 0L) {
+    if (shopBuyerAmount!= 0L) {
       output.writeInt64(3, shopBuyerAmount);
     }
-    if (shopOrderAmount != 0L) {
+    if (shopOrderAmount!= 0L) {
       output.writeInt64(4, shopOrderAmount);
     }
-    if (timestamp != 0L) {
+    if (timestamp!= 0L) {
       output.writeInt64(5, timestamp);
     }
     unknownFields.writeTo(output);
@@ -230,19 +230,19 @@ private static final long serialVersionUID = 0L;
     if (!getDateBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, date);
     }
-    if (dealAmount != 0D) {
+    if (dealAmount!= 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(2, dealAmount);
     }
-    if (shopBuyerAmount != 0L) {
+    if (shopBuyerAmount!= 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, shopBuyerAmount);
     }
-    if (shopOrderAmount != 0L) {
+    if (shopOrderAmount!= 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, shopOrderAmount);
     }
-    if (timestamp != 0L) {
+    if (timestamp!= 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(5, timestamp);
     }
@@ -430,15 +430,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      date = "";
+      date= "";
 
-      dealAmount = 0D;
+      dealAmount= 0D;
 
-      shopBuyerAmount = 0L;
+      shopBuyerAmount= 0L;
 
-      shopOrderAmount = 0L;
+      shopOrderAmount= 0L;
 
-      timestamp = 0L;
+      timestamp= 0L;
 
       return this;
     }
@@ -466,11 +466,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.shop.ShopChartData buildPartial() {
       com.zhijiejiaoyu.glory_api.shop.ShopChartData result = new com.zhijiejiaoyu.glory_api.shop.ShopChartData(this);
-      result.date = date;
-      result.dealAmount = dealAmount;
-      result.shopBuyerAmount = shopBuyerAmount;
-      result.shopOrderAmount = shopOrderAmount;
-      result.timestamp = timestamp;
+      result.date= date;
+      result.dealAmount= dealAmount;
+      result.shopBuyerAmount= shopBuyerAmount;
+      result.shopOrderAmount= shopOrderAmount;
+      result.timestamp= timestamp;
       onBuilt();
       return result;
     }
@@ -520,7 +520,7 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.zhijiejiaoyu.glory_api.shop.ShopChartData other) {
       if (other == com.zhijiejiaoyu.glory_api.shop.ShopChartData.getDefaultInstance()) return this;
       if (!other.getDate().isEmpty()) {
-        date = other.date;
+        date= other.date;
         onChanged();
       }
       if (other.getDealAmount() != 0D) {
@@ -564,7 +564,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object date = "";
+    private java.lang.Object date= "";
     /**
      * <code>string date = 1;</code>
      * @return The date.
@@ -575,7 +575,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        date = s;
+        date= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -592,7 +592,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        date = b;
+        date= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -609,7 +609,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      date = value;
+      date= value;
       onChanged();
       return this;
     }
@@ -619,7 +619,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearDate() {
       
-      date = getDefaultInstance().getDate();
+      date= getDefaultInstance().getDate();
       onChanged();
       return this;
     }
@@ -635,12 +635,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      date = value;
+      date= value;
       onChanged();
       return this;
     }
 
-    private double dealAmount ;
+    private double dealAmount;
     /**
      * <code>double deal_amount = 2;</code>
      * @return The dealAmount.
@@ -656,7 +656,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDealAmount(double value) {
       
-      dealAmount = value;
+      dealAmount= value;
       onChanged();
       return this;
     }
@@ -666,12 +666,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearDealAmount() {
       
-      dealAmount = 0D;
+      dealAmount= 0D;
       onChanged();
       return this;
     }
 
-    private long shopBuyerAmount ;
+    private long shopBuyerAmount;
     /**
      * <code>int64 shop_buyer_amount = 3;</code>
      * @return The shopBuyerAmount.
@@ -687,7 +687,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setShopBuyerAmount(long value) {
       
-      shopBuyerAmount = value;
+      shopBuyerAmount= value;
       onChanged();
       return this;
     }
@@ -697,12 +697,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearShopBuyerAmount() {
       
-      shopBuyerAmount = 0L;
+      shopBuyerAmount= 0L;
       onChanged();
       return this;
     }
 
-    private long shopOrderAmount ;
+    private long shopOrderAmount;
     /**
      * <code>int64 shop_order_amount = 4;</code>
      * @return The shopOrderAmount.
@@ -718,7 +718,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setShopOrderAmount(long value) {
       
-      shopOrderAmount = value;
+      shopOrderAmount= value;
       onChanged();
       return this;
     }
@@ -728,12 +728,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearShopOrderAmount() {
       
-      shopOrderAmount = 0L;
+      shopOrderAmount= 0L;
       onChanged();
       return this;
     }
 
-    private long timestamp ;
+    private long timestamp;
     /**
      * <code>int64 timestamp = 5;</code>
      * @return The timestamp.
@@ -749,7 +749,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setTimestamp(long value) {
       
-      timestamp = value;
+      timestamp= value;
       onChanged();
       return this;
     }
@@ -759,7 +759,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearTimestamp() {
       
-      timestamp = 0L;
+      timestamp= 0L;
       onChanged();
       return this;
     }

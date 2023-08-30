@@ -16,9 +16,9 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CreateRoomResponse() {
-    upUrl = "";
-    roomTitle = "";
-    roomImageUrl = "";
+    upUrl= "";
+    roomTitle= "";
+    roomImageUrl= "";
   }
 
   @java.lang.Override
@@ -53,38 +53,38 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             com.zhijiejiaoyu.base.BaseResponse.Builder subBuilder = null;
-            if (baseResp != null) {
+            if (baseResp!= null) {
               subBuilder = baseResp.toBuilder();
             }
-            baseResp = input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
+            baseResp= input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(baseResp);
-              baseResp = subBuilder.buildPartial();
+              baseResp= subBuilder.buildPartial();
             }
 
             break;
           }
           case 16: {
 
-            roomId = input.readInt64();
+            roomId= input.readInt64();
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            upUrl = s;
+            upUrl= s;
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            roomTitle = s;
+            roomTitle= s;
             break;
           }
           case 42: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            roomImageUrl = s;
+            roomImageUrl= s;
             break;
           }
           default: {
@@ -127,7 +127,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasBaseResp() {
-    return baseResp != null;
+    return baseResp!= null;
   }
   /**
    * <code>.base.BaseResponse base_resp = 1;</code>
@@ -135,7 +135,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.zhijiejiaoyu.base.BaseResponse getBaseResp() {
-    return baseResp == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
+    return baseResp== null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
   }
   /**
    * <code>.base.BaseResponse base_resp = 1;</code>
@@ -171,7 +171,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      upUrl = s;
+      upUrl= s;
       return s;
     }
   }
@@ -187,7 +187,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      upUrl = b;
+      upUrl= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -209,7 +209,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      roomTitle = s;
+      roomTitle= s;
       return s;
     }
   }
@@ -225,7 +225,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      roomTitle = b;
+      roomTitle= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -247,7 +247,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      roomImageUrl = s;
+      roomImageUrl= s;
       return s;
     }
   }
@@ -263,7 +263,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      roomImageUrl = b;
+      roomImageUrl= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -284,10 +284,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (baseResp != null) {
+    if (baseResp!= null) {
       output.writeMessage(1, getBaseResp());
     }
-    if (roomId != 0L) {
+    if (roomId!= 0L) {
       output.writeInt64(2, roomId);
     }
     if (!getUpUrlBytes().isEmpty()) {
@@ -308,11 +308,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (baseResp != null) {
+    if (baseResp!= null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
-    if (roomId != 0L) {
+    if (roomId!= 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, roomId);
     }
@@ -510,19 +510,19 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (baseRespBuilder == null) {
-        baseResp = null;
+      if (baseRespBuilder== null) {
+        baseResp= null;
       } else {
-        baseResp = null;
-        baseRespBuilder = null;
+        baseResp= null;
+        baseRespBuilder= null;
       }
-      roomId = 0L;
+      roomId= 0L;
 
-      upUrl = "";
+      upUrl= "";
 
-      roomTitle = "";
+      roomTitle= "";
 
-      roomImageUrl = "";
+      roomImageUrl= "";
 
       return this;
     }
@@ -550,15 +550,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.live.CreateRoomResponse buildPartial() {
       com.zhijiejiaoyu.glory_api.live.CreateRoomResponse result = new com.zhijiejiaoyu.glory_api.live.CreateRoomResponse(this);
-      if (baseRespBuilder == null) {
-        result.baseResp = baseResp;
+      if (baseRespBuilder== null) {
+        result.baseResp= baseResp;
       } else {
-        result.baseResp = baseRespBuilder.build();
+        result.baseResp= baseRespBuilder.build();
       }
-      result.roomId = roomId;
-      result.upUrl = upUrl;
-      result.roomTitle = roomTitle;
-      result.roomImageUrl = roomImageUrl;
+      result.roomId= roomId;
+      result.upUrl= upUrl;
+      result.roomTitle= roomTitle;
+      result.roomImageUrl= roomImageUrl;
       onBuilt();
       return result;
     }
@@ -614,15 +614,15 @@ private static final long serialVersionUID = 0L;
         setRoomId(other.getRoomId());
       }
       if (!other.getUpUrl().isEmpty()) {
-        upUrl = other.upUrl;
+        upUrl= other.upUrl;
         onChanged();
       }
       if (!other.getRoomTitle().isEmpty()) {
-        roomTitle = other.roomTitle;
+        roomTitle= other.roomTitle;
         onChanged();
       }
       if (!other.getRoomImageUrl().isEmpty()) {
-        roomImageUrl = other.roomImageUrl;
+        roomImageUrl= other.roomImageUrl;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -662,15 +662,15 @@ private static final long serialVersionUID = 0L;
      * @return Whether the baseResp field is set.
      */
     public boolean hasBaseResp() {
-      return baseRespBuilder != null || baseResp != null;
+      return baseRespBuilder!= null || baseResp!= null;
     }
     /**
      * <code>.base.BaseResponse base_resp = 1;</code>
      * @return The baseResp.
      */
     public com.zhijiejiaoyu.base.BaseResponse getBaseResp() {
-      if (baseRespBuilder == null) {
-        return baseResp == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
+      if (baseRespBuilder== null) {
+        return baseResp== null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
       } else {
         return baseRespBuilder.getMessage();
       }
@@ -679,11 +679,11 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public Builder setBaseResp(com.zhijiejiaoyu.base.BaseResponse value) {
-      if (baseRespBuilder == null) {
+      if (baseRespBuilder== null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        baseResp = value;
+        baseResp= value;
         onChanged();
       } else {
         baseRespBuilder.setMessage(value);
@@ -696,8 +696,8 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setBaseResp(
         com.zhijiejiaoyu.base.BaseResponse.Builder builderForValue) {
-      if (baseRespBuilder == null) {
-        baseResp = builderForValue.build();
+      if (baseRespBuilder== null) {
+        baseResp= builderForValue.build();
         onChanged();
       } else {
         baseRespBuilder.setMessage(builderForValue.build());
@@ -709,12 +709,12 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public Builder mergeBaseResp(com.zhijiejiaoyu.base.BaseResponse value) {
-      if (baseRespBuilder == null) {
-        if (baseResp != null) {
-          baseResp =
+      if (baseRespBuilder== null) {
+        if (baseResp!= null) {
+          baseResp=
             com.zhijiejiaoyu.base.BaseResponse.newBuilder(baseResp).mergeFrom(value).buildPartial();
         } else {
-          baseResp = value;
+          baseResp= value;
         }
         onChanged();
       } else {
@@ -727,12 +727,12 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public Builder clearBaseResp() {
-      if (baseRespBuilder == null) {
-        baseResp = null;
+      if (baseRespBuilder== null) {
+        baseResp= null;
         onChanged();
       } else {
-        baseResp = null;
-        baseRespBuilder = null;
+        baseResp= null;
+        baseRespBuilder= null;
       }
 
       return this;
@@ -749,10 +749,10 @@ private static final long serialVersionUID = 0L;
      * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder() {
-      if (baseRespBuilder != null) {
+      if (baseRespBuilder!= null) {
         return baseRespBuilder.getMessageOrBuilder();
       } else {
-        return baseResp == null ?
+        return baseResp== null ?
             com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp;
       }
     }
@@ -762,18 +762,18 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.base.BaseResponse, com.zhijiejiaoyu.base.BaseResponse.Builder, com.zhijiejiaoyu.base.BaseResponseOrBuilder> 
         getBaseRespFieldBuilder() {
-      if (baseRespBuilder == null) {
-        baseRespBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+      if (baseRespBuilder== null) {
+        baseRespBuilder= new com.google.protobuf.SingleFieldBuilderV3<
             com.zhijiejiaoyu.base.BaseResponse, com.zhijiejiaoyu.base.BaseResponse.Builder, com.zhijiejiaoyu.base.BaseResponseOrBuilder>(
                 getBaseResp(),
                 getParentForChildren(),
                 isClean());
-        baseResp = null;
+        baseResp= null;
       }
       return baseRespBuilder;
     }
 
-    private long roomId ;
+    private long roomId;
     /**
      * <code>int64 room_id = 2;</code>
      * @return The roomId.
@@ -789,7 +789,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setRoomId(long value) {
       
-      roomId = value;
+      roomId= value;
       onChanged();
       return this;
     }
@@ -799,12 +799,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearRoomId() {
       
-      roomId = 0L;
+      roomId= 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object upUrl = "";
+    private java.lang.Object upUrl= "";
     /**
      * <code>string up_url = 3;</code>
      * @return The upUrl.
@@ -815,7 +815,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        upUrl = s;
+        upUrl= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -832,7 +832,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        upUrl = b;
+        upUrl= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -849,7 +849,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      upUrl = value;
+      upUrl= value;
       onChanged();
       return this;
     }
@@ -859,7 +859,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearUpUrl() {
       
-      upUrl = getDefaultInstance().getUpUrl();
+      upUrl= getDefaultInstance().getUpUrl();
       onChanged();
       return this;
     }
@@ -875,12 +875,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      upUrl = value;
+      upUrl= value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object roomTitle = "";
+    private java.lang.Object roomTitle= "";
     /**
      * <code>string room_title = 4;</code>
      * @return The roomTitle.
@@ -891,7 +891,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        roomTitle = s;
+        roomTitle= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -908,7 +908,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        roomTitle = b;
+        roomTitle= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -925,7 +925,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      roomTitle = value;
+      roomTitle= value;
       onChanged();
       return this;
     }
@@ -935,7 +935,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearRoomTitle() {
       
-      roomTitle = getDefaultInstance().getRoomTitle();
+      roomTitle= getDefaultInstance().getRoomTitle();
       onChanged();
       return this;
     }
@@ -951,12 +951,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      roomTitle = value;
+      roomTitle= value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object roomImageUrl = "";
+    private java.lang.Object roomImageUrl= "";
     /**
      * <code>string room_image_url = 5;</code>
      * @return The roomImageUrl.
@@ -967,7 +967,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        roomImageUrl = s;
+        roomImageUrl= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -984,7 +984,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        roomImageUrl = b;
+        roomImageUrl= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1001,7 +1001,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      roomImageUrl = value;
+      roomImageUrl= value;
       onChanged();
       return this;
     }
@@ -1011,7 +1011,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearRoomImageUrl() {
       
-      roomImageUrl = getDefaultInstance().getRoomImageUrl();
+      roomImageUrl= getDefaultInstance().getRoomImageUrl();
       onChanged();
       return this;
     }
@@ -1027,7 +1027,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      roomImageUrl = value;
+      roomImageUrl= value;
       onChanged();
       return this;
     }

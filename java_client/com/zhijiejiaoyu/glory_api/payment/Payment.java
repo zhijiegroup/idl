@@ -16,9 +16,9 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Payment() {
-    paymentMethod = "";
-    paymentStatus = "";
-    supplierPaymentUrl = "";
+    paymentMethod= "";
+    paymentStatus= "";
+    supplierPaymentUrl= "";
   }
 
   @java.lang.Override
@@ -53,40 +53,40 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            paymentId = input.readInt64();
+            paymentId= input.readInt64();
             break;
           }
           case 16: {
 
-            orderId = input.readInt64();
+            orderId= input.readInt64();
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            paymentMethod = s;
+            paymentMethod= s;
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            paymentStatus = s;
+            paymentStatus= s;
             break;
           }
           case 45: {
 
-            totalAmount = input.readFloat();
+            totalAmount= input.readFloat();
             break;
           }
           case 48: {
 
-            supplierPaymentId = input.readInt64();
+            supplierPaymentId= input.readInt64();
             break;
           }
           case 58: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            supplierPaymentUrl = s;
+            supplierPaymentUrl= s;
             break;
           }
           default: {
@@ -158,7 +158,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      paymentMethod = s;
+      paymentMethod= s;
       return s;
     }
   }
@@ -174,7 +174,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      paymentMethod = b;
+      paymentMethod= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -196,7 +196,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      paymentStatus = s;
+      paymentStatus= s;
       return s;
     }
   }
@@ -212,7 +212,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      paymentStatus = b;
+      paymentStatus= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -256,7 +256,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      supplierPaymentUrl = s;
+      supplierPaymentUrl= s;
       return s;
     }
   }
@@ -272,7 +272,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      supplierPaymentUrl = b;
+      supplierPaymentUrl= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -293,10 +293,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (paymentId != 0L) {
+    if (paymentId!= 0L) {
       output.writeInt64(1, paymentId);
     }
-    if (orderId != 0L) {
+    if (orderId!= 0L) {
       output.writeInt64(2, orderId);
     }
     if (!getPaymentMethodBytes().isEmpty()) {
@@ -305,10 +305,10 @@ private static final long serialVersionUID = 0L;
     if (!getPaymentStatusBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, paymentStatus);
     }
-    if (totalAmount != 0F) {
+    if (totalAmount!= 0F) {
       output.writeFloat(5, totalAmount);
     }
-    if (supplierPaymentId != 0L) {
+    if (supplierPaymentId!= 0L) {
       output.writeInt64(6, supplierPaymentId);
     }
     if (!getSupplierPaymentUrlBytes().isEmpty()) {
@@ -323,11 +323,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (paymentId != 0L) {
+    if (paymentId!= 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, paymentId);
     }
-    if (orderId != 0L) {
+    if (orderId!= 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, orderId);
     }
@@ -337,11 +337,11 @@ private static final long serialVersionUID = 0L;
     if (!getPaymentStatusBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, paymentStatus);
     }
-    if (totalAmount != 0F) {
+    if (totalAmount!= 0F) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(5, totalAmount);
     }
-    if (supplierPaymentId != 0L) {
+    if (supplierPaymentId!= 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(6, supplierPaymentId);
     }
@@ -540,19 +540,19 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      paymentId = 0L;
+      paymentId= 0L;
 
-      orderId = 0L;
+      orderId= 0L;
 
-      paymentMethod = "";
+      paymentMethod= "";
 
-      paymentStatus = "";
+      paymentStatus= "";
 
-      totalAmount = 0F;
+      totalAmount= 0F;
 
-      supplierPaymentId = 0L;
+      supplierPaymentId= 0L;
 
-      supplierPaymentUrl = "";
+      supplierPaymentUrl= "";
 
       return this;
     }
@@ -580,13 +580,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.payment.Payment buildPartial() {
       com.zhijiejiaoyu.glory_api.payment.Payment result = new com.zhijiejiaoyu.glory_api.payment.Payment(this);
-      result.paymentId = paymentId;
-      result.orderId = orderId;
-      result.paymentMethod = paymentMethod;
-      result.paymentStatus = paymentStatus;
-      result.totalAmount = totalAmount;
-      result.supplierPaymentId = supplierPaymentId;
-      result.supplierPaymentUrl = supplierPaymentUrl;
+      result.paymentId= paymentId;
+      result.orderId= orderId;
+      result.paymentMethod= paymentMethod;
+      result.paymentStatus= paymentStatus;
+      result.totalAmount= totalAmount;
+      result.supplierPaymentId= supplierPaymentId;
+      result.supplierPaymentUrl= supplierPaymentUrl;
       onBuilt();
       return result;
     }
@@ -642,11 +642,11 @@ private static final long serialVersionUID = 0L;
         setOrderId(other.getOrderId());
       }
       if (!other.getPaymentMethod().isEmpty()) {
-        paymentMethod = other.paymentMethod;
+        paymentMethod= other.paymentMethod;
         onChanged();
       }
       if (!other.getPaymentStatus().isEmpty()) {
-        paymentStatus = other.paymentStatus;
+        paymentStatus= other.paymentStatus;
         onChanged();
       }
       if (other.getTotalAmount() != 0F) {
@@ -656,7 +656,7 @@ private static final long serialVersionUID = 0L;
         setSupplierPaymentId(other.getSupplierPaymentId());
       }
       if (!other.getSupplierPaymentUrl().isEmpty()) {
-        supplierPaymentUrl = other.supplierPaymentUrl;
+        supplierPaymentUrl= other.supplierPaymentUrl;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -688,7 +688,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long paymentId ;
+    private long paymentId;
     /**
      * <code>int64 payment_id = 1;</code>
      * @return The paymentId.
@@ -704,7 +704,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setPaymentId(long value) {
       
-      paymentId = value;
+      paymentId= value;
       onChanged();
       return this;
     }
@@ -714,12 +714,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearPaymentId() {
       
-      paymentId = 0L;
+      paymentId= 0L;
       onChanged();
       return this;
     }
 
-    private long orderId ;
+    private long orderId;
     /**
      * <code>int64 order_id = 2;</code>
      * @return The orderId.
@@ -735,7 +735,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setOrderId(long value) {
       
-      orderId = value;
+      orderId= value;
       onChanged();
       return this;
     }
@@ -745,12 +745,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearOrderId() {
       
-      orderId = 0L;
+      orderId= 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object paymentMethod = "";
+    private java.lang.Object paymentMethod= "";
     /**
      * <code>string payment_method = 3;</code>
      * @return The paymentMethod.
@@ -761,7 +761,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        paymentMethod = s;
+        paymentMethod= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -778,7 +778,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        paymentMethod = b;
+        paymentMethod= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -795,7 +795,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      paymentMethod = value;
+      paymentMethod= value;
       onChanged();
       return this;
     }
@@ -805,7 +805,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearPaymentMethod() {
       
-      paymentMethod = getDefaultInstance().getPaymentMethod();
+      paymentMethod= getDefaultInstance().getPaymentMethod();
       onChanged();
       return this;
     }
@@ -821,12 +821,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      paymentMethod = value;
+      paymentMethod= value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object paymentStatus = "";
+    private java.lang.Object paymentStatus= "";
     /**
      * <code>string payment_status = 4;</code>
      * @return The paymentStatus.
@@ -837,7 +837,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        paymentStatus = s;
+        paymentStatus= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -854,7 +854,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        paymentStatus = b;
+        paymentStatus= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -871,7 +871,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      paymentStatus = value;
+      paymentStatus= value;
       onChanged();
       return this;
     }
@@ -881,7 +881,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearPaymentStatus() {
       
-      paymentStatus = getDefaultInstance().getPaymentStatus();
+      paymentStatus= getDefaultInstance().getPaymentStatus();
       onChanged();
       return this;
     }
@@ -897,12 +897,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      paymentStatus = value;
+      paymentStatus= value;
       onChanged();
       return this;
     }
 
-    private float totalAmount ;
+    private float totalAmount;
     /**
      * <code>float total_amount = 5;</code>
      * @return The totalAmount.
@@ -918,7 +918,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setTotalAmount(float value) {
       
-      totalAmount = value;
+      totalAmount= value;
       onChanged();
       return this;
     }
@@ -928,12 +928,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearTotalAmount() {
       
-      totalAmount = 0F;
+      totalAmount= 0F;
       onChanged();
       return this;
     }
 
-    private long supplierPaymentId ;
+    private long supplierPaymentId;
     /**
      * <code>int64 supplier_payment_id = 6;</code>
      * @return The supplierPaymentId.
@@ -949,7 +949,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setSupplierPaymentId(long value) {
       
-      supplierPaymentId = value;
+      supplierPaymentId= value;
       onChanged();
       return this;
     }
@@ -959,12 +959,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearSupplierPaymentId() {
       
-      supplierPaymentId = 0L;
+      supplierPaymentId= 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object supplierPaymentUrl = "";
+    private java.lang.Object supplierPaymentUrl= "";
     /**
      * <code>string supplier_payment_url = 7;</code>
      * @return The supplierPaymentUrl.
@@ -975,7 +975,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        supplierPaymentUrl = s;
+        supplierPaymentUrl= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -992,7 +992,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        supplierPaymentUrl = b;
+        supplierPaymentUrl= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1009,7 +1009,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      supplierPaymentUrl = value;
+      supplierPaymentUrl= value;
       onChanged();
       return this;
     }
@@ -1019,7 +1019,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearSupplierPaymentUrl() {
       
-      supplierPaymentUrl = getDefaultInstance().getSupplierPaymentUrl();
+      supplierPaymentUrl= getDefaultInstance().getSupplierPaymentUrl();
       onChanged();
       return this;
     }
@@ -1035,7 +1035,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      supplierPaymentUrl = value;
+      supplierPaymentUrl= value;
       onChanged();
       return this;
     }

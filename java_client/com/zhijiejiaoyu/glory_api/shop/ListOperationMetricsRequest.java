@@ -50,12 +50,12 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            shopId = input.readInt64();
+            shopId= input.readInt64();
             break;
           }
           case 16: {
 
-            days = input.readInt32();
+            days= input.readInt32();
             break;
           }
           default: {
@@ -126,10 +126,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (shopId != 0L) {
+    if (shopId!= 0L) {
       output.writeInt64(1, shopId);
     }
-    if (days != 0) {
+    if (days!= 0) {
       output.writeInt32(2, days);
     }
     unknownFields.writeTo(output);
@@ -141,11 +141,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (shopId != 0L) {
+    if (shopId!= 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, shopId);
     }
-    if (days != 0) {
+    if (days!= 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(2, days);
     }
@@ -317,9 +317,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      shopId = 0L;
+      shopId= 0L;
 
-      days = 0;
+      days= 0;
 
       return this;
     }
@@ -347,8 +347,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.shop.ListOperationMetricsRequest buildPartial() {
       com.zhijiejiaoyu.glory_api.shop.ListOperationMetricsRequest result = new com.zhijiejiaoyu.glory_api.shop.ListOperationMetricsRequest(this);
-      result.shopId = shopId;
-      result.days = days;
+      result.shopId= shopId;
+      result.days= days;
       onBuilt();
       return result;
     }
@@ -432,7 +432,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long shopId ;
+    private long shopId;
     /**
      * <code>int64 shop_id = 1;</code>
      * @return The shopId.
@@ -448,7 +448,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setShopId(long value) {
       
-      shopId = value;
+      shopId= value;
       onChanged();
       return this;
     }
@@ -458,12 +458,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearShopId() {
       
-      shopId = 0L;
+      shopId= 0L;
       onChanged();
       return this;
     }
 
-    private int days ;
+    private int days;
     /**
      * <code>int32 days = 2;</code>
      * @return The days.
@@ -479,7 +479,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDays(int value) {
       
-      days = value;
+      days= value;
       onChanged();
       return this;
     }
@@ -489,7 +489,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearDays() {
       
-      days = 0;
+      days= 0;
       onChanged();
       return this;
     }

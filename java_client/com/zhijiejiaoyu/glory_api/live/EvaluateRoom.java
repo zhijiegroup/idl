@@ -16,10 +16,10 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private EvaluateRoom() {
-    roomTitle = "";
-    roomUrl = "";
-    aiFeedback = "";
-    evaluatedTime = "";
+    roomTitle= "";
+    roomUrl= "";
+    aiFeedback= "";
+    evaluatedTime= "";
   }
 
   @java.lang.Override
@@ -54,51 +54,51 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            roomId = input.readInt64();
+            roomId= input.readInt64();
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            roomTitle = s;
+            roomTitle= s;
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            roomUrl = s;
+            roomUrl= s;
             break;
           }
           case 33: {
 
-            score = input.readDouble();
+            score= input.readDouble();
             break;
           }
           case 41: {
 
-            duration = input.readDouble();
+            duration= input.readDouble();
             break;
           }
           case 48: {
 
-            like = input.readInt64();
+            like= input.readInt64();
             break;
           }
           case 56: {
 
-            order = input.readInt64();
+            order= input.readInt64();
             break;
           }
           case 66: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            aiFeedback = s;
+            aiFeedback= s;
             break;
           }
           case 74: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            evaluatedTime = s;
+            evaluatedTime= s;
             break;
           }
           default: {
@@ -159,7 +159,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      roomTitle = s;
+      roomTitle= s;
       return s;
     }
   }
@@ -175,7 +175,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      roomTitle = b;
+      roomTitle= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -197,7 +197,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      roomUrl = s;
+      roomUrl= s;
       return s;
     }
   }
@@ -213,7 +213,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      roomUrl = b;
+      roomUrl= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -279,7 +279,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      aiFeedback = s;
+      aiFeedback= s;
       return s;
     }
   }
@@ -295,7 +295,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      aiFeedback = b;
+      aiFeedback= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -317,7 +317,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      evaluatedTime = s;
+      evaluatedTime= s;
       return s;
     }
   }
@@ -333,7 +333,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      evaluatedTime = b;
+      evaluatedTime= b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -354,7 +354,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (roomId != 0L) {
+    if (roomId!= 0L) {
       output.writeInt64(1, roomId);
     }
     if (!getRoomTitleBytes().isEmpty()) {
@@ -363,16 +363,16 @@ private static final long serialVersionUID = 0L;
     if (!getRoomUrlBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, roomUrl);
     }
-    if (score != 0D) {
+    if (score!= 0D) {
       output.writeDouble(4, score);
     }
-    if (duration != 0D) {
+    if (duration!= 0D) {
       output.writeDouble(5, duration);
     }
-    if (like != 0L) {
+    if (like!= 0L) {
       output.writeInt64(6, like);
     }
-    if (order != 0L) {
+    if (order!= 0L) {
       output.writeInt64(7, order);
     }
     if (!getAiFeedbackBytes().isEmpty()) {
@@ -390,7 +390,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (roomId != 0L) {
+    if (roomId!= 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, roomId);
     }
@@ -400,19 +400,19 @@ private static final long serialVersionUID = 0L;
     if (!getRoomUrlBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, roomUrl);
     }
-    if (score != 0D) {
+    if (score!= 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(4, score);
     }
-    if (duration != 0D) {
+    if (duration!= 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(5, duration);
     }
-    if (like != 0L) {
+    if (like!= 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(6, like);
     }
-    if (order != 0L) {
+    if (order!= 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(7, order);
     }
@@ -624,23 +624,23 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      roomId = 0L;
+      roomId= 0L;
 
-      roomTitle = "";
+      roomTitle= "";
 
-      roomUrl = "";
+      roomUrl= "";
 
-      score = 0D;
+      score= 0D;
 
-      duration = 0D;
+      duration= 0D;
 
-      like = 0L;
+      like= 0L;
 
-      order = 0L;
+      order= 0L;
 
-      aiFeedback = "";
+      aiFeedback= "";
 
-      evaluatedTime = "";
+      evaluatedTime= "";
 
       return this;
     }
@@ -668,15 +668,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.live.EvaluateRoom buildPartial() {
       com.zhijiejiaoyu.glory_api.live.EvaluateRoom result = new com.zhijiejiaoyu.glory_api.live.EvaluateRoom(this);
-      result.roomId = roomId;
-      result.roomTitle = roomTitle;
-      result.roomUrl = roomUrl;
-      result.score = score;
-      result.duration = duration;
-      result.like = like;
-      result.order = order;
-      result.aiFeedback = aiFeedback;
-      result.evaluatedTime = evaluatedTime;
+      result.roomId= roomId;
+      result.roomTitle= roomTitle;
+      result.roomUrl= roomUrl;
+      result.score= score;
+      result.duration= duration;
+      result.like= like;
+      result.order= order;
+      result.aiFeedback= aiFeedback;
+      result.evaluatedTime= evaluatedTime;
       onBuilt();
       return result;
     }
@@ -729,11 +729,11 @@ private static final long serialVersionUID = 0L;
         setRoomId(other.getRoomId());
       }
       if (!other.getRoomTitle().isEmpty()) {
-        roomTitle = other.roomTitle;
+        roomTitle= other.roomTitle;
         onChanged();
       }
       if (!other.getRoomUrl().isEmpty()) {
-        roomUrl = other.roomUrl;
+        roomUrl= other.roomUrl;
         onChanged();
       }
       if (other.getScore() != 0D) {
@@ -749,11 +749,11 @@ private static final long serialVersionUID = 0L;
         setOrder(other.getOrder());
       }
       if (!other.getAiFeedback().isEmpty()) {
-        aiFeedback = other.aiFeedback;
+        aiFeedback= other.aiFeedback;
         onChanged();
       }
       if (!other.getEvaluatedTime().isEmpty()) {
-        evaluatedTime = other.evaluatedTime;
+        evaluatedTime= other.evaluatedTime;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -785,7 +785,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long roomId ;
+    private long roomId;
     /**
      * <code>int64 room_id = 1;</code>
      * @return The roomId.
@@ -801,7 +801,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setRoomId(long value) {
       
-      roomId = value;
+      roomId= value;
       onChanged();
       return this;
     }
@@ -811,12 +811,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearRoomId() {
       
-      roomId = 0L;
+      roomId= 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object roomTitle = "";
+    private java.lang.Object roomTitle= "";
     /**
      * <code>string room_title = 2;</code>
      * @return The roomTitle.
@@ -827,7 +827,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        roomTitle = s;
+        roomTitle= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -844,7 +844,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        roomTitle = b;
+        roomTitle= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -861,7 +861,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      roomTitle = value;
+      roomTitle= value;
       onChanged();
       return this;
     }
@@ -871,7 +871,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearRoomTitle() {
       
-      roomTitle = getDefaultInstance().getRoomTitle();
+      roomTitle= getDefaultInstance().getRoomTitle();
       onChanged();
       return this;
     }
@@ -887,12 +887,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      roomTitle = value;
+      roomTitle= value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object roomUrl = "";
+    private java.lang.Object roomUrl= "";
     /**
      * <code>string room_url = 3;</code>
      * @return The roomUrl.
@@ -903,7 +903,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        roomUrl = s;
+        roomUrl= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -920,7 +920,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        roomUrl = b;
+        roomUrl= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -937,7 +937,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      roomUrl = value;
+      roomUrl= value;
       onChanged();
       return this;
     }
@@ -947,7 +947,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearRoomUrl() {
       
-      roomUrl = getDefaultInstance().getRoomUrl();
+      roomUrl= getDefaultInstance().getRoomUrl();
       onChanged();
       return this;
     }
@@ -963,12 +963,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      roomUrl = value;
+      roomUrl= value;
       onChanged();
       return this;
     }
 
-    private double score ;
+    private double score;
     /**
      * <code>double score = 4;</code>
      * @return The score.
@@ -984,7 +984,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setScore(double value) {
       
-      score = value;
+      score= value;
       onChanged();
       return this;
     }
@@ -994,12 +994,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearScore() {
       
-      score = 0D;
+      score= 0D;
       onChanged();
       return this;
     }
 
-    private double duration ;
+    private double duration;
     /**
      * <code>double duration = 5;</code>
      * @return The duration.
@@ -1015,7 +1015,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDuration(double value) {
       
-      duration = value;
+      duration= value;
       onChanged();
       return this;
     }
@@ -1025,12 +1025,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearDuration() {
       
-      duration = 0D;
+      duration= 0D;
       onChanged();
       return this;
     }
 
-    private long like ;
+    private long like;
     /**
      * <code>int64 like = 6;</code>
      * @return The like.
@@ -1046,7 +1046,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setLike(long value) {
       
-      like = value;
+      like= value;
       onChanged();
       return this;
     }
@@ -1056,12 +1056,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearLike() {
       
-      like = 0L;
+      like= 0L;
       onChanged();
       return this;
     }
 
-    private long order ;
+    private long order;
     /**
      * <code>int64 order = 7;</code>
      * @return The order.
@@ -1077,7 +1077,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setOrder(long value) {
       
-      order = value;
+      order= value;
       onChanged();
       return this;
     }
@@ -1087,12 +1087,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearOrder() {
       
-      order = 0L;
+      order= 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object aiFeedback = "";
+    private java.lang.Object aiFeedback= "";
     /**
      * <code>string ai_feedback = 8;</code>
      * @return The aiFeedback.
@@ -1103,7 +1103,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        aiFeedback = s;
+        aiFeedback= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1120,7 +1120,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        aiFeedback = b;
+        aiFeedback= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1137,7 +1137,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      aiFeedback = value;
+      aiFeedback= value;
       onChanged();
       return this;
     }
@@ -1147,7 +1147,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearAiFeedback() {
       
-      aiFeedback = getDefaultInstance().getAiFeedback();
+      aiFeedback= getDefaultInstance().getAiFeedback();
       onChanged();
       return this;
     }
@@ -1163,12 +1163,12 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      aiFeedback = value;
+      aiFeedback= value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object evaluatedTime = "";
+    private java.lang.Object evaluatedTime= "";
     /**
      * <code>string evaluated_time = 9;</code>
      * @return The evaluatedTime.
@@ -1179,7 +1179,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        evaluatedTime = s;
+        evaluatedTime= s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1196,7 +1196,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        evaluatedTime = b;
+        evaluatedTime= b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1213,7 +1213,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   
-      evaluatedTime = value;
+      evaluatedTime= value;
       onChanged();
       return this;
     }
@@ -1223,7 +1223,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearEvaluatedTime() {
       
-      evaluatedTime = getDefaultInstance().getEvaluatedTime();
+      evaluatedTime= getDefaultInstance().getEvaluatedTime();
       onChanged();
       return this;
     }
@@ -1239,7 +1239,7 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       
-      evaluatedTime = value;
+      evaluatedTime= value;
       onChanged();
       return this;
     }
