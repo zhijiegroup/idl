@@ -735,6 +735,10 @@ CreateLivePlanProduct create live plan product */
     request: live_evaluate.RegenerationAiFeedbackRequest
   ): Promise<live_evaluate.RegenerationAiFeedbackResponse>;
 
+  SubmitUserAttitudeForAiResult(
+    request: live_evaluate.SubmitUserAttitudeForAIResultRequest
+  ): Promise<live_evaluate.SubmitUserAttitudeForAIResultResponse>;
+
   /** tenant */
   CreateTenant(
     request: tenant.CreateTenantRequest

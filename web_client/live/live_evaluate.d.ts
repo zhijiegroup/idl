@@ -117,6 +117,16 @@ export interface SubmitEvaluateResponse {
   base_resp?: base.BaseResponse;
 }
 
+export interface SubmitUserAttitudeForAIResultRequest {
+  base_request?: base.BaseRequest;
+  LiveAiFeedbackId?: string;
+  Attitude?: string;
+}
+
+export interface SubmitUserAttitudeForAIResultResponse {
+  base_resp?: base.BaseResponse;
+}
+
 export interface UnevaluatedRoom {
   room_id?: string;
   room_title?: string;
