@@ -113,6 +113,16 @@ message SubmitEvaluateResponse {
     base.BaseResponse base_resp = 1;
 }
 
+message SubmitUserAttitudeForAIResultRequest {
+    base.BaseRequest base_request = 1;
+    int64 LiveAiFeedbackId = 2;
+    string Attitude = 3;
+}
+
+message SubmitUserAttitudeForAIResultResponse {
+    base.BaseResponse base_resp = 1;
+}
+
 message UnevaluatedRoom {
     int64 room_id = 1;
     string room_title = 2;
