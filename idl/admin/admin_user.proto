@@ -49,6 +49,6 @@ message ListAdminUserRequest {
 
 message ListAdminUserResponse {
     base.BaseResponse base_resp = 1;
-    AdminUser admin_users = 2;
+    repeated AdminUser admin_users = 2;
     base.PaginationResponse pagination = 100;
 }
