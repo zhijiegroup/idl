@@ -4,26 +4,26 @@
 package com.zhijiejiaoyu.glory_api.tenant;
 
 /**
- * Protobuf type {@code glory_api.ListTenantUserResponse}
+ * Protobuf type {@code glory_api.ListTenantStudentResponse}
  */
-public final class ListTenantUserResponse extends
+public final class ListTenantStudentResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:glory_api.ListTenantUserResponse)
-    ListTenantUserResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:glory_api.ListTenantStudentResponse)
+    ListTenantStudentResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use ListTenantUserResponse.newBuilder() to construct.
-  private ListTenantUserResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ListTenantStudentResponse.newBuilder() to construct.
+  private ListTenantStudentResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ListTenantUserResponse() {
-    users = java.util.Collections.emptyList();
+  private ListTenantStudentResponse() {
+    students = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new ListTenantUserResponse();
+    return new ListTenantStudentResponse();
   }
 
   @java.lang.Override
@@ -31,7 +31,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private ListTenantUserResponse(
+  private ListTenantStudentResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -65,10 +65,10 @@ private static final long serialVersionUID = 0L;
           }
           case 18: {
             if (!((mutable_bitField0 & 0x00000001) != 0)) {
-              users = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.tenant.TenantUser>();
+              students = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.tenant.TenantUser>();
               mutable_bitField0_ |= 0x00000001;
             }
-            users .add(
+            students .add(
                 input.readMessage(com.zhijiejiaoyu.glory_api.tenant.TenantUser.parser(), extensionRegistry));
             break;
           }
@@ -101,7 +101,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0 & 0x00000001) != 0)) {
-        users = java.util.Collections.unmodifiableList(users );
+        students = java.util.Collections.unmodifiableList(students );
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -109,15 +109,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.zhijiejiaoyu.glory_api.tenant.TenantUserOuterClass.internal_static_glory_api_ListTenantUserResponse_descriptor;
+    return com.zhijiejiaoyu.glory_api.tenant.TenantUserOuterClass.internal_static_glory_api_ListTenantStudentResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.zhijiejiaoyu.glory_api.tenant.TenantUserOuterClass.internal_static_glory_api_ListTenantUserResponse_fieldAccessorTable
+    return com.zhijiejiaoyu.glory_api.tenant.TenantUserOuterClass.internal_static_glory_api_ListTenantStudentResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponse.class, com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponse.Builder.class);
+            com.zhijiejiaoyu.glory_api.tenant.ListTenantStudentResponse.class, com.zhijiejiaoyu.glory_api.tenant.ListTenantStudentResponse.Builder.class);
   }
 
   public static final int BASE_RESP_FIELD_NUMBER = 1;
@@ -146,44 +146,44 @@ private static final long serialVersionUID = 0L;
     return getBaseResp();
   }
 
-  public static final int USERS_FIELD_NUMBER = 2;
-  private java.util.List<com.zhijiejiaoyu.glory_api.tenant.TenantUser> users ;
+  public static final int STUDENTS_FIELD_NUMBER = 2;
+  private java.util.List<com.zhijiejiaoyu.glory_api.tenant.TenantUser> students ;
   /**
-   * <code>repeated .glory_api.TenantUser users = 2;</code>
+   * <code>repeated .glory_api.TenantUser students = 2;</code>
    */
   @java.lang.Override
-  public java.util.List<com.zhijiejiaoyu.glory_api.tenant.TenantUser> getUsersList() {
-    return users ;
+  public java.util.List<com.zhijiejiaoyu.glory_api.tenant.TenantUser> getStudentsList() {
+    return students ;
   }
   /**
-   * <code>repeated .glory_api.TenantUser users = 2;</code>
+   * <code>repeated .glory_api.TenantUser students = 2;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.tenant.TenantUserOrBuilder> 
-      getUsersOrBuilderList() {
-    return users ;
+      getStudentsOrBuilderList() {
+    return students ;
   }
   /**
-   * <code>repeated .glory_api.TenantUser users = 2;</code>
+   * <code>repeated .glory_api.TenantUser students = 2;</code>
    */
   @java.lang.Override
-  public int getUsersCount() {
-    return users .size();
+  public int getStudentsCount() {
+    return students .size();
   }
   /**
-   * <code>repeated .glory_api.TenantUser users = 2;</code>
+   * <code>repeated .glory_api.TenantUser students = 2;</code>
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.tenant.TenantUser getUsers(int index) {
-    return users .get(index);
+  public com.zhijiejiaoyu.glory_api.tenant.TenantUser getStudents(int index) {
+    return students .get(index);
   }
   /**
-   * <code>repeated .glory_api.TenantUser users = 2;</code>
+   * <code>repeated .glory_api.TenantUser students = 2;</code>
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.tenant.TenantUserOrBuilder getUsersOrBuilder(
+  public com.zhijiejiaoyu.glory_api.tenant.TenantUserOrBuilder getStudentsOrBuilder(
       int index) {
-    return users .get(index);
+    return students .get(index);
   }
 
   public static final int PAGINATION_FIELD_NUMBER = 100;
@@ -229,8 +229,8 @@ private static final long serialVersionUID = 0L;
     if (baseResp != null) {
       output.writeMessage(1, getBaseResp());
     }
-    for (int i = 0; i < users .size(); i++) {
-      output.writeMessage(2, users .get(i));
+    for (int i = 0; i < students .size(); i++) {
+      output.writeMessage(2, students .get(i));
     }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
@@ -248,9 +248,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
-    for (int i = 0; i < users .size(); i++) {
+    for (int i = 0; i < students .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, users .get(i));
+        .computeMessageSize(2, students .get(i));
     }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -266,18 +266,18 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponse)) {
+    if (!(obj instanceof com.zhijiejiaoyu.glory_api.tenant.ListTenantStudentResponse)) {
       return super.equals(obj);
     }
-    com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponse other = (com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponse) obj;
+    com.zhijiejiaoyu.glory_api.tenant.ListTenantStudentResponse other = (com.zhijiejiaoyu.glory_api.tenant.ListTenantStudentResponse) obj;
 
     if (hasBaseResp() != other.hasBaseResp()) return false;
     if (hasBaseResp()) {
       if (!getBaseResp()
           .equals(other.getBaseResp())) return false;
     }
-    if (!getUsersList()
-        .equals(other.getUsersList())) return false;
+    if (!getStudentsList()
+        .equals(other.getStudentsList())) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -298,9 +298,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_RESP_FIELD_NUMBER;
       hash = (53 * hash) + getBaseResp().hashCode();
     }
-    if (getUsersCount() > 0) {
-      hash = (37 * hash) + USERS_FIELD_NUMBER;
-      hash = (53 * hash) + getUsersList().hashCode();
+    if (getStudentsCount() > 0) {
+      hash = (37 * hash) + STUDENTS_FIELD_NUMBER;
+      hash = (53 * hash) + getStudentsList().hashCode();
     }
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
@@ -311,69 +311,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.tenant.ListTenantStudentResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.tenant.ListTenantStudentResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.tenant.ListTenantStudentResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.tenant.ListTenantStudentResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponse parseFrom(byte[] data)
+  public static com.zhijiejiaoyu.glory_api.tenant.ListTenantStudentResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.tenant.ListTenantStudentResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponse parseFrom(java.io.InputStream input)
+  public static com.zhijiejiaoyu.glory_api.tenant.ListTenantStudentResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.tenant.ListTenantStudentResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponse parseDelimitedFrom(java.io.InputStream input)
+  public static com.zhijiejiaoyu.glory_api.tenant.ListTenantStudentResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponse parseDelimitedFrom(
+  public static com.zhijiejiaoyu.glory_api.tenant.ListTenantStudentResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.tenant.ListTenantStudentResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.tenant.ListTenantStudentResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -386,7 +386,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponse prototype) {
+  public static Builder newBuilder(com.zhijiejiaoyu.glory_api.tenant.ListTenantStudentResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -402,26 +402,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code glory_api.ListTenantUserResponse}
+   * Protobuf type {@code glory_api.ListTenantStudentResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:glory_api.ListTenantUserResponse)
-      com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:glory_api.ListTenantStudentResponse)
+      com.zhijiejiaoyu.glory_api.tenant.ListTenantStudentResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.zhijiejiaoyu.glory_api.tenant.TenantUserOuterClass.internal_static_glory_api_ListTenantUserResponse_descriptor;
+      return com.zhijiejiaoyu.glory_api.tenant.TenantUserOuterClass.internal_static_glory_api_ListTenantStudentResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.zhijiejiaoyu.glory_api.tenant.TenantUserOuterClass.internal_static_glory_api_ListTenantUserResponse_fieldAccessorTable
+      return com.zhijiejiaoyu.glory_api.tenant.TenantUserOuterClass.internal_static_glory_api_ListTenantStudentResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponse.class, com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponse.Builder.class);
+              com.zhijiejiaoyu.glory_api.tenant.ListTenantStudentResponse.class, com.zhijiejiaoyu.glory_api.tenant.ListTenantStudentResponse.Builder.class);
     }
 
-    // Construct using com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponse.newBuilder()
+    // Construct using com.zhijiejiaoyu.glory_api.tenant.ListTenantStudentResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -434,7 +434,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getUsersFieldBuilder();
+        getStudentsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -446,11 +446,11 @@ private static final long serialVersionUID = 0L;
         baseResp = null;
         baseRespBuilder = null;
       }
-      if (usersBuilder == null) {
-        users = java.util.Collections.emptyList();
+      if (studentsBuilder == null) {
+        students = java.util.Collections.emptyList();
         bitField0 = (bitField0 & ~0x00000001);
       } else {
-        usersBuilder .clear();
+        studentsBuilder .clear();
       }
       if (paginationBuilder == null) {
         pagination = null;
@@ -464,17 +464,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.zhijiejiaoyu.glory_api.tenant.TenantUserOuterClass.internal_static_glory_api_ListTenantUserResponse_descriptor;
+      return com.zhijiejiaoyu.glory_api.tenant.TenantUserOuterClass.internal_static_glory_api_ListTenantStudentResponse_descriptor;
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponse getDefaultInstanceForType() {
-      return com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponse.getDefaultInstance();
+    public com.zhijiejiaoyu.glory_api.tenant.ListTenantStudentResponse getDefaultInstanceForType() {
+      return com.zhijiejiaoyu.glory_api.tenant.ListTenantStudentResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponse build() {
-      com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponse result = buildPartial();
+    public com.zhijiejiaoyu.glory_api.tenant.ListTenantStudentResponse build() {
+      com.zhijiejiaoyu.glory_api.tenant.ListTenantStudentResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -482,22 +482,22 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponse buildPartial() {
-      com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponse result = new com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponse(this);
+    public com.zhijiejiaoyu.glory_api.tenant.ListTenantStudentResponse buildPartial() {
+      com.zhijiejiaoyu.glory_api.tenant.ListTenantStudentResponse result = new com.zhijiejiaoyu.glory_api.tenant.ListTenantStudentResponse(this);
       int from_bitField0 = bitField0 ;
       if (baseRespBuilder == null) {
         result.baseResp = baseResp ;
       } else {
         result.baseResp = baseRespBuilder .build();
       }
-      if (usersBuilder == null) {
+      if (studentsBuilder == null) {
         if (((bitField0 & 0x00000001) != 0)) {
-          users = java.util.Collections.unmodifiableList(users );
+          students = java.util.Collections.unmodifiableList(students );
           bitField0 = (bitField0 & ~0x00000001);
         }
-        result.users = users ;
+        result.students = students ;
       } else {
-        result.users = usersBuilder .build();
+        result.students = studentsBuilder .build();
       }
       if (paginationBuilder == null) {
         result.pagination = pagination ;
@@ -542,42 +542,42 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponse) {
-        return mergeFrom((com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponse)other);
+      if (other instanceof com.zhijiejiaoyu.glory_api.tenant.ListTenantStudentResponse) {
+        return mergeFrom((com.zhijiejiaoyu.glory_api.tenant.ListTenantStudentResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponse other) {
-      if (other == com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.zhijiejiaoyu.glory_api.tenant.ListTenantStudentResponse other) {
+      if (other == com.zhijiejiaoyu.glory_api.tenant.ListTenantStudentResponse.getDefaultInstance()) return this;
       if (other.hasBaseResp()) {
         mergeBaseResp(other.getBaseResp());
       }
-      if (usersBuilder == null) {
-        if (!other.users .isEmpty()) {
-          if (users .isEmpty()) {
-            users = other.users ;
+      if (studentsBuilder == null) {
+        if (!other.students .isEmpty()) {
+          if (students .isEmpty()) {
+            students = other.students ;
             bitField0 = (bitField0 & ~0x00000001);
           } else {
-            ensureUsersIsMutable();
-            users .addAll(other.users );
+            ensureStudentsIsMutable();
+            students .addAll(other.students );
           }
           onChanged();
         }
       } else {
-        if (!other.users .isEmpty()) {
-          if (usersBuilder .isEmpty()) {
-            usersBuilder .dispose();
-            usersBuilder = null;
-            users = other.users ;
+        if (!other.students .isEmpty()) {
+          if (studentsBuilder .isEmpty()) {
+            studentsBuilder .dispose();
+            studentsBuilder = null;
+            students = other.students ;
             bitField0 = (bitField0 & ~0x00000001);
-            usersBuilder = 
+            studentsBuilder = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getUsersFieldBuilder() : null;
+                 getStudentsFieldBuilder() : null;
           } else {
-            usersBuilder .addAllMessages(other.users );
+            studentsBuilder .addAllMessages(other.students );
           }
         }
       }
@@ -599,11 +599,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponse parsedMessage = null;
+      com.zhijiejiaoyu.glory_api.tenant.ListTenantStudentResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponse) e.getUnfinishedMessage();
+        parsedMessage = (com.zhijiejiaoyu.glory_api.tenant.ListTenantStudentResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -733,244 +733,244 @@ private static final long serialVersionUID = 0L;
       return baseRespBuilder ;
     }
 
-    private java.util.List<com.zhijiejiaoyu.glory_api.tenant.TenantUser> users =
+    private java.util.List<com.zhijiejiaoyu.glory_api.tenant.TenantUser> students =
       java.util.Collections.emptyList();
-    private void ensureUsersIsMutable() {
+    private void ensureStudentsIsMutable() {
       if (!((bitField0 & 0x00000001) != 0)) {
-        users = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.tenant.TenantUser>(users );
+        students = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.tenant.TenantUser>(students );
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.tenant.TenantUser, com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder, com.zhijiejiaoyu.glory_api.tenant.TenantUserOrBuilder> usersBuilder ;
+        com.zhijiejiaoyu.glory_api.tenant.TenantUser, com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder, com.zhijiejiaoyu.glory_api.tenant.TenantUserOrBuilder> studentsBuilder ;
 
     /**
-     * <code>repeated .glory_api.TenantUser users = 2;</code>
+     * <code>repeated .glory_api.TenantUser students = 2;</code>
      */
-    public java.util.List<com.zhijiejiaoyu.glory_api.tenant.TenantUser> getUsersList() {
-      if (usersBuilder == null) {
-        return java.util.Collections.unmodifiableList(users );
+    public java.util.List<com.zhijiejiaoyu.glory_api.tenant.TenantUser> getStudentsList() {
+      if (studentsBuilder == null) {
+        return java.util.Collections.unmodifiableList(students );
       } else {
-        return usersBuilder .getMessageList();
+        return studentsBuilder .getMessageList();
       }
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 2;</code>
+     * <code>repeated .glory_api.TenantUser students = 2;</code>
      */
-    public int getUsersCount() {
-      if (usersBuilder == null) {
-        return users .size();
+    public int getStudentsCount() {
+      if (studentsBuilder == null) {
+        return students .size();
       } else {
-        return usersBuilder .getCount();
+        return studentsBuilder .getCount();
       }
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 2;</code>
+     * <code>repeated .glory_api.TenantUser students = 2;</code>
      */
-    public com.zhijiejiaoyu.glory_api.tenant.TenantUser getUsers(int index) {
-      if (usersBuilder == null) {
-        return users .get(index);
+    public com.zhijiejiaoyu.glory_api.tenant.TenantUser getStudents(int index) {
+      if (studentsBuilder == null) {
+        return students .get(index);
       } else {
-        return usersBuilder .getMessage(index);
+        return studentsBuilder .getMessage(index);
       }
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 2;</code>
+     * <code>repeated .glory_api.TenantUser students = 2;</code>
      */
-    public Builder setUsers(
+    public Builder setStudents(
         int index, com.zhijiejiaoyu.glory_api.tenant.TenantUser value) {
-      if (usersBuilder == null) {
+      if (studentsBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureUsersIsMutable();
-        users .set(index, value);
+        ensureStudentsIsMutable();
+        students .set(index, value);
         onChanged();
       } else {
-        usersBuilder .setMessage(index, value);
+        studentsBuilder .setMessage(index, value);
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 2;</code>
+     * <code>repeated .glory_api.TenantUser students = 2;</code>
      */
-    public Builder setUsers(
+    public Builder setStudents(
         int index, com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder builderForValue) {
-      if (usersBuilder == null) {
-        ensureUsersIsMutable();
-        users .set(index, builderForValue.build());
+      if (studentsBuilder == null) {
+        ensureStudentsIsMutable();
+        students .set(index, builderForValue.build());
         onChanged();
       } else {
-        usersBuilder .setMessage(index, builderForValue.build());
+        studentsBuilder .setMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 2;</code>
+     * <code>repeated .glory_api.TenantUser students = 2;</code>
      */
-    public Builder addUsers(com.zhijiejiaoyu.glory_api.tenant.TenantUser value) {
-      if (usersBuilder == null) {
+    public Builder addStudents(com.zhijiejiaoyu.glory_api.tenant.TenantUser value) {
+      if (studentsBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureUsersIsMutable();
-        users .add(value);
+        ensureStudentsIsMutable();
+        students .add(value);
         onChanged();
       } else {
-        usersBuilder .addMessage(value);
+        studentsBuilder .addMessage(value);
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 2;</code>
+     * <code>repeated .glory_api.TenantUser students = 2;</code>
      */
-    public Builder addUsers(
+    public Builder addStudents(
         int index, com.zhijiejiaoyu.glory_api.tenant.TenantUser value) {
-      if (usersBuilder == null) {
+      if (studentsBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureUsersIsMutable();
-        users .add(index, value);
+        ensureStudentsIsMutable();
+        students .add(index, value);
         onChanged();
       } else {
-        usersBuilder .addMessage(index, value);
+        studentsBuilder .addMessage(index, value);
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 2;</code>
+     * <code>repeated .glory_api.TenantUser students = 2;</code>
      */
-    public Builder addUsers(
+    public Builder addStudents(
         com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder builderForValue) {
-      if (usersBuilder == null) {
-        ensureUsersIsMutable();
-        users .add(builderForValue.build());
+      if (studentsBuilder == null) {
+        ensureStudentsIsMutable();
+        students .add(builderForValue.build());
         onChanged();
       } else {
-        usersBuilder .addMessage(builderForValue.build());
+        studentsBuilder .addMessage(builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 2;</code>
+     * <code>repeated .glory_api.TenantUser students = 2;</code>
      */
-    public Builder addUsers(
+    public Builder addStudents(
         int index, com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder builderForValue) {
-      if (usersBuilder == null) {
-        ensureUsersIsMutable();
-        users .add(index, builderForValue.build());
+      if (studentsBuilder == null) {
+        ensureStudentsIsMutable();
+        students .add(index, builderForValue.build());
         onChanged();
       } else {
-        usersBuilder .addMessage(index, builderForValue.build());
+        studentsBuilder .addMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 2;</code>
+     * <code>repeated .glory_api.TenantUser students = 2;</code>
      */
-    public Builder addAllUsers(
+    public Builder addAllStudents(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.tenant.TenantUser> values) {
-      if (usersBuilder == null) {
-        ensureUsersIsMutable();
+      if (studentsBuilder == null) {
+        ensureStudentsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, users );
+            values, students );
         onChanged();
       } else {
-        usersBuilder .addAllMessages(values);
+        studentsBuilder .addAllMessages(values);
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 2;</code>
+     * <code>repeated .glory_api.TenantUser students = 2;</code>
      */
-    public Builder clearUsers() {
-      if (usersBuilder == null) {
-        users = java.util.Collections.emptyList();
+    public Builder clearStudents() {
+      if (studentsBuilder == null) {
+        students = java.util.Collections.emptyList();
         bitField0 = (bitField0 & ~0x00000001);
         onChanged();
       } else {
-        usersBuilder .clear();
+        studentsBuilder .clear();
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 2;</code>
+     * <code>repeated .glory_api.TenantUser students = 2;</code>
      */
-    public Builder removeUsers(int index) {
-      if (usersBuilder == null) {
-        ensureUsersIsMutable();
-        users .remove(index);
+    public Builder removeStudents(int index) {
+      if (studentsBuilder == null) {
+        ensureStudentsIsMutable();
+        students .remove(index);
         onChanged();
       } else {
-        usersBuilder .remove(index);
+        studentsBuilder .remove(index);
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 2;</code>
+     * <code>repeated .glory_api.TenantUser students = 2;</code>
      */
-    public com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder getUsersBuilder(
+    public com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder getStudentsBuilder(
         int index) {
-      return getUsersFieldBuilder().getBuilder(index);
+      return getStudentsFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 2;</code>
+     * <code>repeated .glory_api.TenantUser students = 2;</code>
      */
-    public com.zhijiejiaoyu.glory_api.tenant.TenantUserOrBuilder getUsersOrBuilder(
+    public com.zhijiejiaoyu.glory_api.tenant.TenantUserOrBuilder getStudentsOrBuilder(
         int index) {
-      if (usersBuilder == null) {
-        return users .get(index);  } else {
-        return usersBuilder .getMessageOrBuilder(index);
+      if (studentsBuilder == null) {
+        return students .get(index);  } else {
+        return studentsBuilder .getMessageOrBuilder(index);
       }
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 2;</code>
+     * <code>repeated .glory_api.TenantUser students = 2;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.tenant.TenantUserOrBuilder> 
-         getUsersOrBuilderList() {
-      if (usersBuilder != null) {
-        return usersBuilder .getMessageOrBuilderList();
+         getStudentsOrBuilderList() {
+      if (studentsBuilder != null) {
+        return studentsBuilder .getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(users );
+        return java.util.Collections.unmodifiableList(students );
       }
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 2;</code>
+     * <code>repeated .glory_api.TenantUser students = 2;</code>
      */
-    public com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder addUsersBuilder() {
-      return getUsersFieldBuilder().addBuilder(
+    public com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder addStudentsBuilder() {
+      return getStudentsFieldBuilder().addBuilder(
           com.zhijiejiaoyu.glory_api.tenant.TenantUser.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 2;</code>
+     * <code>repeated .glory_api.TenantUser students = 2;</code>
      */
-    public com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder addUsersBuilder(
+    public com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder addStudentsBuilder(
         int index) {
-      return getUsersFieldBuilder().addBuilder(
+      return getStudentsFieldBuilder().addBuilder(
           index, com.zhijiejiaoyu.glory_api.tenant.TenantUser.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 2;</code>
+     * <code>repeated .glory_api.TenantUser students = 2;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder> 
-         getUsersBuilderList() {
-      return getUsersFieldBuilder().getBuilderList();
+         getStudentsBuilderList() {
+      return getStudentsFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.tenant.TenantUser, com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder, com.zhijiejiaoyu.glory_api.tenant.TenantUserOrBuilder> 
-        getUsersFieldBuilder() {
-      if (usersBuilder == null) {
-        usersBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+        getStudentsFieldBuilder() {
+      if (studentsBuilder == null) {
+        studentsBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.tenant.TenantUser, com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder, com.zhijiejiaoyu.glory_api.tenant.TenantUserOrBuilder>(
-                users ,
+                students ,
                 ((bitField0 & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        users = null;
+        students = null;
       }
-      return usersBuilder ;
+      return studentsBuilder ;
     }
 
     private com.zhijiejiaoyu.base.PaginationResponse pagination ;
@@ -1104,41 +1104,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:glory_api.ListTenantUserResponse)
+    // @@protoc_insertion_point(builder_scope:glory_api.ListTenantStudentResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:glory_api.ListTenantUserResponse)
-  private static final com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:glory_api.ListTenantStudentResponse)
+  private static final com.zhijiejiaoyu.glory_api.tenant.ListTenantStudentResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponse();
+    DEFAULT_INSTANCE = new com.zhijiejiaoyu.glory_api.tenant.ListTenantStudentResponse();
   }
 
-  public static com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponse getDefaultInstance() {
+  public static com.zhijiejiaoyu.glory_api.tenant.ListTenantStudentResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListTenantUserResponse>
-      PARSER = new com.google.protobuf.AbstractParser<ListTenantUserResponse>() {
+  private static final com.google.protobuf.Parser<ListTenantStudentResponse>
+      PARSER = new com.google.protobuf.AbstractParser<ListTenantStudentResponse>() {
     @java.lang.Override
-    public ListTenantUserResponse parsePartialFrom(
+    public ListTenantStudentResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ListTenantUserResponse(input, extensionRegistry);
+      return new ListTenantStudentResponse(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<ListTenantUserResponse> parser() {
+  public static com.google.protobuf.Parser<ListTenantStudentResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ListTenantUserResponse> getParserForType() {
+  public com.google.protobuf.Parser<ListTenantStudentResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.tenant.ListTenantUserResponse getDefaultInstanceForType() {
+  public com.zhijiejiaoyu.glory_api.tenant.ListTenantStudentResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

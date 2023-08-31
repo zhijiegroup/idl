@@ -34,6 +34,7 @@ import * as account_operation from "./account/account_operation";
 import * as virtual_currency from "./currency/virtual_currency";
 import * as tenant from "./tenant/tenant";
 import * as tenant_dept from "./tenant/tenant_dept";
+import * as tenant_user from "./tenant/tenant_user";
 import * as tenant_config from "./tenant/tenant_config";
 import * as short_video from "./short_video/short_video";
 export {
@@ -69,6 +70,7 @@ export {
   virtual_currency,
   tenant,
   tenant_dept,
+  tenant_user,
   tenant_config,
   short_video,
 };
@@ -808,28 +810,32 @@ CreateLivePlanProduct create live plan product */
 
   /** tenant_user */
   CreateTenantUser(
-    request: tenant_dept.CreateTenantUserRequest
-  ): Promise<tenant_dept.CreateTenantUserResponse>;
+    request: tenant_user.CreateTenantUserRequest
+  ): Promise<tenant_user.CreateTenantUserResponse>;
 
   DeleteTenantUser(
-    request: tenant_dept.DeleteTenantUserRequest
-  ): Promise<tenant_dept.DeleteTenantUserResponse>;
+    request: tenant_user.DeleteTenantUserRequest
+  ): Promise<tenant_user.DeleteTenantUserResponse>;
 
   UpdateTenantUser(
-    request: tenant_dept.UpdateTenantUserRequest
-  ): Promise<tenant_dept.UpdateTenantUserResponse>;
+    request: tenant_user.UpdateTenantUserRequest
+  ): Promise<tenant_user.UpdateTenantUserResponse>;
 
   GetTenantUser(
-    request: tenant_dept.GetTenantUserRequest
-  ): Promise<tenant_dept.GetTenantUserResponse>;
+    request: tenant_user.GetTenantUserRequest
+  ): Promise<tenant_user.GetTenantUserResponse>;
 
   ListTenantUser(
-    request: tenant_dept.ListTenantUserRequest
-  ): Promise<tenant_dept.ListTenantUserResponse>;
+    request: tenant_user.ListTenantUserRequest
+  ): Promise<tenant_user.ListTenantUserResponse>;
+
+  ListTenantStudent(
+    request: tenant_user.ListTenantStudentRequest
+  ): Promise<tenant_user.ListTenantStudentResponse>;
 
   UpdateTenantUserPassword(
-    request: tenant_dept.UpdateTenantUserPasswordRequest
-  ): Promise<tenant_dept.UpdateTenantUserPasswordResponse>;
+    request: tenant_user.UpdateTenantUserPasswordRequest
+  ): Promise<tenant_user.UpdateTenantUserPasswordResponse>;
 
   /** tenant_config */
   UpdateTenantConfig(

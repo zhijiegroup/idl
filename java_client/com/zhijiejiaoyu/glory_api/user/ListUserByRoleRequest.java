@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private ListUserByRoleRequest() {
     roleName = "";
+    name = "";
   }
 
   @java.lang.Override
@@ -68,7 +69,13 @@ private static final long serialVersionUID = 0L;
             roleName = s;
             break;
           }
-          case 24: {
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            name = s;
+            break;
+          }
+          case 32: {
 
             tenantId = input.readInt64();
             break;
@@ -190,14 +197,60 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TENANT_ID_FIELD_NUMBER = 3;
+  public static final int NAME_FIELD_NUMBER = 3;
+  private volatile java.lang.Object name ;
+  /**
+   * <pre>
+   * 模糊查询关键字
+   * </pre>
+   *
+   * <code>string name = 3;</code>
+   * @return The name.
+   */
+  @java.lang.Override
+  public java.lang.String getName() {
+    java.lang.Object ref = name ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 模糊查询关键字
+   * </pre>
+   *
+   * <code>string name = 3;</code>
+   * @return The bytes for name.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNameBytes() {
+    java.lang.Object ref = name ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      name = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TENANT_ID_FIELD_NUMBER = 4;
   private long tenantId ;
   /**
    * <pre>
    * 学校的id，若是角色名称是admin，则会忽略这个
    * </pre>
    *
-   * <code>int64 tenant_id = 3;</code>
+   * <code>int64 tenant_id = 4;</code>
    * @return The tenantId.
    */
   @java.lang.Override
@@ -251,8 +304,11 @@ private static final long serialVersionUID = 0L;
     if (!getRoleNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, roleName );
     }
+    if (!getNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name );
+    }
     if (tenantId != 0L) {
-      output.writeInt64(3, tenantId );
+      output.writeInt64(4, tenantId );
     }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
@@ -273,9 +329,12 @@ private static final long serialVersionUID = 0L;
     if (!getRoleNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, roleName );
     }
+    if (!getNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name );
+    }
     if (tenantId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(3, tenantId );
+        .computeInt64Size(4, tenantId );
     }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -303,6 +362,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getRoleName()
         .equals(other.getRoleName())) return false;
+    if (!getName()
+        .equals(other.getName())) return false;
     if (getTenantId()
         != other.getTenantId()) return false;
     if (hasPagination() != other.hasPagination()) return false;
@@ -327,6 +388,8 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + ROLE_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getRoleName().hashCode();
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getTenantId());
@@ -475,6 +538,8 @@ private static final long serialVersionUID = 0L;
       }
       roleName = "";
 
+      name = "";
+
       tenantId = 0L;
 
       if (paginationBuilder == null) {
@@ -515,6 +580,7 @@ private static final long serialVersionUID = 0L;
         result.baseRequest = baseRequestBuilder .build();
       }
       result.roleName = roleName ;
+      result.name = name ;
       result.tenantId = tenantId ;
       if (paginationBuilder == null) {
         result.pagination = pagination ;
@@ -574,6 +640,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getRoleName().isEmpty()) {
         roleName = other.roleName ;
+        onChanged();
+      }
+      if (!other.getName().isEmpty()) {
+        name = other.name ;
         onChanged();
       }
       if (other.getTenantId() != 0L) {
@@ -826,13 +896,109 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object name = "";
+    /**
+     * <pre>
+     * 模糊查询关键字
+     * </pre>
+     *
+     * <code>string name = 3;</code>
+     * @return The name.
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 模糊查询关键字
+     * </pre>
+     *
+     * <code>string name = 3;</code>
+     * @return The bytes for name.
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 模糊查询关键字
+     * </pre>
+     *
+     * <code>string name = 3;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      name = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 模糊查询关键字
+     * </pre>
+     *
+     * <code>string name = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearName() {
+      
+      name = getDefaultInstance().getName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 模糊查询关键字
+     * </pre>
+     *
+     * <code>string name = 3;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      name = value;
+      onChanged();
+      return this;
+    }
+
     private long tenantId ;
     /**
      * <pre>
      * 学校的id，若是角色名称是admin，则会忽略这个
      * </pre>
      *
-     * <code>int64 tenant_id = 3;</code>
+     * <code>int64 tenant_id = 4;</code>
      * @return The tenantId.
      */
     @java.lang.Override
@@ -844,7 +1010,7 @@ private static final long serialVersionUID = 0L;
      * 学校的id，若是角色名称是admin，则会忽略这个
      * </pre>
      *
-     * <code>int64 tenant_id = 3;</code>
+     * <code>int64 tenant_id = 4;</code>
      * @param value The tenantId to set.
      * @return This builder for chaining.
      */
@@ -859,7 +1025,7 @@ private static final long serialVersionUID = 0L;
      * 学校的id，若是角色名称是admin，则会忽略这个
      * </pre>
      *
-     * <code>int64 tenant_id = 3;</code>
+     * <code>int64 tenant_id = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearTenantId() {

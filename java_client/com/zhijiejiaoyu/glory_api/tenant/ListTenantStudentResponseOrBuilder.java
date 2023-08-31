@@ -3,8 +3,8 @@
 
 package com.zhijiejiaoyu.glory_api.tenant;
 
-public interface ListTenantUserResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:glory_api.ListTenantUserResponse)
+public interface ListTenantStudentResponseOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:glory_api.ListTenantStudentResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -23,27 +23,27 @@ public interface ListTenantUserResponseOrBuilder extends
   com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder();
 
   /**
-   * <code>repeated .glory_api.TenantUser users = 2;</code>
+   * <code>repeated .glory_api.TenantUser students = 2;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.tenant.TenantUser> 
-      getUsersList();
+      getStudentsList();
   /**
-   * <code>repeated .glory_api.TenantUser users = 2;</code>
+   * <code>repeated .glory_api.TenantUser students = 2;</code>
    */
-  com.zhijiejiaoyu.glory_api.tenant.TenantUser getUsers(int index);
+  com.zhijiejiaoyu.glory_api.tenant.TenantUser getStudents(int index);
   /**
-   * <code>repeated .glory_api.TenantUser users = 2;</code>
+   * <code>repeated .glory_api.TenantUser students = 2;</code>
    */
-  int getUsersCount();
+  int getStudentsCount();
   /**
-   * <code>repeated .glory_api.TenantUser users = 2;</code>
+   * <code>repeated .glory_api.TenantUser students = 2;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.tenant.TenantUserOrBuilder> 
-      getUsersOrBuilderList();
+      getStudentsOrBuilderList();
   /**
-   * <code>repeated .glory_api.TenantUser users = 2;</code>
+   * <code>repeated .glory_api.TenantUser students = 2;</code>
    */
-  com.zhijiejiaoyu.glory_api.tenant.TenantUserOrBuilder getUsersOrBuilder(
+  com.zhijiejiaoyu.glory_api.tenant.TenantUserOrBuilder getStudentsOrBuilder(
       int index);
 
   /**
