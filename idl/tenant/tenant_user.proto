@@ -1,0 +1,99 @@
+syntax = "proto3";
+package glory_api;
+option java_package = "com.zhijiejiaoyu.glory_api.tenant";
+option java_multiple_files = true;
+
+import "base.proto";
+import "user/user.proto";
+
+message TenantUser {
+    int64 tenant_user_id = 1;
+    int64 user_id = 2;
+    string phone = 4;
+    string name = 5;
+    string role = 6;
+    int64 role_id = 7;
+    string dept = 8;
+    int64 dept_id = 9;
+    User user = 10;
+}
+
+message CreateTenantUserRequest {
+    base.BaseRequest base_request = 1;
+    int64 tenant_id = 2;
+    int64 dept_id = 3;
+    int64 role_id = 4;
+    bool is_admin = 5;
+    repeated TenantUser users = 6;
+}
+
+message CreateTenantUserResponse {
+    base.BaseResponse base_resp = 1;
+    map<int64, string> tenant_users = 2;
+}
+
+message DeleteTenantUserRequest {
+    base.BaseRequest base_request = 1;
+    repeated int64 tenant_user_ids = 2;
+}
+
+message DeleteTenantUserResponse {
+    base.BaseResponse base_resp = 1;
+}
+
+message UpdateTenantUserRequest {
+    base.BaseRequest base_request = 1;
+    TenantUser tenant_user = 2;
+}
+
+message UpdateTenantUserResponse {
+    base.BaseResponse base_resp = 1;
+}
+
+message GetTenantUserRequest {
+    base.BaseRequest base_request = 1;
+    int64 tenant_user_id = 2;
+}
+
+message GetTenantUserResponse {
+    base.BaseResponse base_resp = 1;
+    TenantUser tenant_user = 2;
+}
+
+message ListTenantUserRequest {
+    base.BaseRequest base_request = 1;
+    int64 tenant_id = 2;
+    int64 dept_id = 3;
+    string name = 4;
+    bool is_admin = 5;
+    base.PaginationRequest pagination = 100;
+}
+
+message ListTenantUserResponse {
+    base.BaseResponse base_resp = 1;
+    repeated TenantUser users = 2;
+    base.PaginationResponse pagination = 100;
+}
+
+message UpdateTenantUserPasswordRequest {
+    base.BaseRequest base_request = 1;
+    string phone = 2;
+    string password = 3;
+}
+
+message UpdateTenantUserPasswordResponse {
+    base.BaseResponse base_resp = 1;
+}
+
+message ListTenantStudentRequest {
+    base.BaseRequest base_request = 1;
+    int64 tenant_id = 2;
+    string name = 3;
+    base.PaginationRequest pagination = 100;
+}
+
+message ListTenantStudentResponse {
+    base.BaseResponse base_resp = 1;
+    repeated TenantUser students = 2;
+    base.PaginationResponse pagination = 100;
+}

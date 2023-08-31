@@ -36,6 +36,7 @@ import "account/account_operation.proto";
 import "currency/virtual_currency.proto";
 import "tenant/tenant.proto";
 import "tenant/tenant_dept.proto";
+import "tenant/tenant_user.proto";
 import "tenant/tenant_config.proto";
 import "short_video/short_video.proto";
 
@@ -734,6 +735,10 @@ service glory_api {
 
   rpc ListTenantUser(ListTenantUserRequest) returns(ListTenantUserResponse) {
     option (api.post) = '/api/tenant/list_tenant_user';
+  }
+
+  rpc ListTenantStudent(ListTenantStudentRequest) returns(ListTenantStudentResponse) {
+    option (api.post) = '/api/tenant/list_tenant_student';
   }
 
   rpc UpdateTenantUserPassword(UpdateTenantUserPasswordRequest) returns(UpdateTenantUserPasswordResponse) {
