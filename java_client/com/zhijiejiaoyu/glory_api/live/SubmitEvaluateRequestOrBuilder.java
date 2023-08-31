@@ -125,25 +125,31 @@ public interface SubmitEvaluateRequestOrBuilder extends
   boolean getBaseline();
 
   /**
-   * <code>repeated .glory_api.EvaluateDetail detail = 13;</code>
+   * <code>int64 ai_feedback_id = 13;</code>
+   * @return The aiFeedbackId.
+   */
+  long getAiFeedbackId();
+
+  /**
+   * <code>repeated .glory_api.EvaluateDetail detail = 14;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.live.EvaluateDetail> 
       getDetailList();
   /**
-   * <code>repeated .glory_api.EvaluateDetail detail = 13;</code>
+   * <code>repeated .glory_api.EvaluateDetail detail = 14;</code>
    */
   com.zhijiejiaoyu.glory_api.live.EvaluateDetail getDetail(int index);
   /**
-   * <code>repeated .glory_api.EvaluateDetail detail = 13;</code>
+   * <code>repeated .glory_api.EvaluateDetail detail = 14;</code>
    */
   int getDetailCount();
   /**
-   * <code>repeated .glory_api.EvaluateDetail detail = 13;</code>
+   * <code>repeated .glory_api.EvaluateDetail detail = 14;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.live.EvaluateDetailOrBuilder> 
       getDetailOrBuilderList();
   /**
-   * <code>repeated .glory_api.EvaluateDetail detail = 13;</code>
+   * <code>repeated .glory_api.EvaluateDetail detail = 14;</code>
    */
   com.zhijiejiaoyu.glory_api.live.EvaluateDetailOrBuilder getDetailOrBuilder(
       int index);

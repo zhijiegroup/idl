@@ -115,25 +115,31 @@ public interface GetEvaluateDetailResponseOrBuilder extends
   boolean getBaseline();
 
   /**
-   * <code>repeated .glory_api.AiResult ai_result = 12;</code>
+   * <code>int64 ai_feedback_id = 12;</code>
+   * @return The aiFeedbackId.
+   */
+  long getAiFeedbackId();
+
+  /**
+   * <code>repeated .glory_api.AiResult ai_result = 13;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.live.AiResult> 
       getAiResultList();
   /**
-   * <code>repeated .glory_api.AiResult ai_result = 12;</code>
+   * <code>repeated .glory_api.AiResult ai_result = 13;</code>
    */
   com.zhijiejiaoyu.glory_api.live.AiResult getAiResult(int index);
   /**
-   * <code>repeated .glory_api.AiResult ai_result = 12;</code>
+   * <code>repeated .glory_api.AiResult ai_result = 13;</code>
    */
   int getAiResultCount();
   /**
-   * <code>repeated .glory_api.AiResult ai_result = 12;</code>
+   * <code>repeated .glory_api.AiResult ai_result = 13;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.live.AiResultOrBuilder> 
       getAiResultOrBuilderList();
   /**
-   * <code>repeated .glory_api.AiResult ai_result = 12;</code>
+   * <code>repeated .glory_api.AiResult ai_result = 13;</code>
    */
   com.zhijiejiaoyu.glory_api.live.AiResultOrBuilder getAiResultOrBuilder(
       int index);

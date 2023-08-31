@@ -317,6 +317,8 @@ struct GloryApi_GetEvaluateDetailResponse {
 
   var baseline: Bool = false
 
+  var aiFeedbackID: Int64 = 0
+
   var aiResult: [GloryApi_AiResult] = []
 
   var detail: [GloryApi_EvaluateDetail] = []
@@ -365,6 +367,8 @@ struct GloryApi_SubmitEvaluateRequest {
   var aiFeedback: String = String()
 
   var baseline: Bool = false
+
+  var aiFeedbackID: Int64 = 0
 
   var detail: [GloryApi_EvaluateDetail] = []
 
@@ -1798,7 +1802,8 @@ extension GloryApi_GetEvaluateDetailResponse: SwiftProtobuf.Message, SwiftProtob
     9: .same(proto: "score"),
     10: .standard(proto: "ai_feedback"),
     11: .same(proto: "baseline"),
-    12: .standard(proto: "ai_result"),
+    12: .standard(proto: "ai_feedback_id"),
+    13: .standard(proto: "ai_result"),
     100: .same(proto: "detail"),
   ]
 
@@ -1819,7 +1824,8 @@ extension GloryApi_GetEvaluateDetailResponse: SwiftProtobuf.Message, SwiftProtob
       case 9: try { try decoder.decodeSingularDoubleField(value: &self.score) }()
       case 10: try { try decoder.decodeSingularStringField(value: &self.aiFeedback) }()
       case 11: try { try decoder.decodeSingularBoolField(value: &self.baseline) }()
-      case 12: try { try decoder.decodeRepeatedMessageField(value: &self.aiResult) }()
+      case 12: try { try decoder.decodeSingularInt64Field(value: &self.aiFeedbackID) }()
+      case 13: try { try decoder.decodeRepeatedMessageField(value: &self.aiResult) }()
       case 100: try { try decoder.decodeRepeatedMessageField(value: &self.detail) }()
       default: break
       }
@@ -1864,8 +1870,11 @@ extension GloryApi_GetEvaluateDetailResponse: SwiftProtobuf.Message, SwiftProtob
     if self.baseline != false {
       try visitor.visitSingularBoolField(value: self.baseline, fieldNumber: 11)
     }
+    if self.aiFeedbackID != 0 {
+      try visitor.visitSingularInt64Field(value: self.aiFeedbackID, fieldNumber: 12)
+    }
     if !self.aiResult.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.aiResult, fieldNumber: 12)
+      try visitor.visitRepeatedMessageField(value: self.aiResult, fieldNumber: 13)
     }
     if !self.detail.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.detail, fieldNumber: 100)
@@ -1885,6 +1894,7 @@ extension GloryApi_GetEvaluateDetailResponse: SwiftProtobuf.Message, SwiftProtob
     if lhs.score != rhs.score {return false}
     if lhs.aiFeedback != rhs.aiFeedback {return false}
     if lhs.baseline != rhs.baseline {return false}
+    if lhs.aiFeedbackID != rhs.aiFeedbackID {return false}
     if lhs.aiResult != rhs.aiResult {return false}
     if lhs.detail != rhs.detail {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -1907,7 +1917,8 @@ extension GloryApi_SubmitEvaluateRequest: SwiftProtobuf.Message, SwiftProtobuf._
     10: .same(proto: "score"),
     11: .standard(proto: "ai_feedback"),
     12: .same(proto: "baseline"),
-    13: .same(proto: "detail"),
+    13: .standard(proto: "ai_feedback_id"),
+    14: .same(proto: "detail"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1928,7 +1939,8 @@ extension GloryApi_SubmitEvaluateRequest: SwiftProtobuf.Message, SwiftProtobuf._
       case 10: try { try decoder.decodeSingularDoubleField(value: &self.score) }()
       case 11: try { try decoder.decodeSingularStringField(value: &self.aiFeedback) }()
       case 12: try { try decoder.decodeSingularBoolField(value: &self.baseline) }()
-      case 13: try { try decoder.decodeRepeatedMessageField(value: &self.detail) }()
+      case 13: try { try decoder.decodeSingularInt64Field(value: &self.aiFeedbackID) }()
+      case 14: try { try decoder.decodeRepeatedMessageField(value: &self.detail) }()
       default: break
       }
     }
@@ -1975,8 +1987,11 @@ extension GloryApi_SubmitEvaluateRequest: SwiftProtobuf.Message, SwiftProtobuf._
     if self.baseline != false {
       try visitor.visitSingularBoolField(value: self.baseline, fieldNumber: 12)
     }
+    if self.aiFeedbackID != 0 {
+      try visitor.visitSingularInt64Field(value: self.aiFeedbackID, fieldNumber: 13)
+    }
     if !self.detail.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.detail, fieldNumber: 13)
+      try visitor.visitRepeatedMessageField(value: self.detail, fieldNumber: 14)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1994,6 +2009,7 @@ extension GloryApi_SubmitEvaluateRequest: SwiftProtobuf.Message, SwiftProtobuf._
     if lhs.score != rhs.score {return false}
     if lhs.aiFeedback != rhs.aiFeedback {return false}
     if lhs.baseline != rhs.baseline {return false}
+    if lhs.aiFeedbackID != rhs.aiFeedbackID {return false}
     if lhs.detail != rhs.detail {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

@@ -122,7 +122,12 @@ private static final long serialVersionUID = 0L;
             baseline = input.readBool();
             break;
           }
-          case 98: {
+          case 96: {
+
+            aiFeedbackId = input.readInt64();
+            break;
+          }
+          case 106: {
             if (!((mutable_bitField0 & 0x00000001) != 0)) {
               aiResult = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.live.AiResult>();
               mutable_bitField0_ |= 0x00000001;
@@ -430,17 +435,28 @@ private static final long serialVersionUID = 0L;
     return baseline ;
   }
 
-  public static final int AI_RESULT_FIELD_NUMBER = 12;
+  public static final int AI_FEEDBACK_ID_FIELD_NUMBER = 12;
+  private long aiFeedbackId ;
+  /**
+   * <code>int64 ai_feedback_id = 12;</code>
+   * @return The aiFeedbackId.
+   */
+  @java.lang.Override
+  public long getAiFeedbackId() {
+    return aiFeedbackId ;
+  }
+
+  public static final int AI_RESULT_FIELD_NUMBER = 13;
   private java.util.List<com.zhijiejiaoyu.glory_api.live.AiResult> aiResult ;
   /**
-   * <code>repeated .glory_api.AiResult ai_result = 12;</code>
+   * <code>repeated .glory_api.AiResult ai_result = 13;</code>
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.live.AiResult> getAiResultList() {
     return aiResult ;
   }
   /**
-   * <code>repeated .glory_api.AiResult ai_result = 12;</code>
+   * <code>repeated .glory_api.AiResult ai_result = 13;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.live.AiResultOrBuilder> 
@@ -448,21 +464,21 @@ private static final long serialVersionUID = 0L;
     return aiResult ;
   }
   /**
-   * <code>repeated .glory_api.AiResult ai_result = 12;</code>
+   * <code>repeated .glory_api.AiResult ai_result = 13;</code>
    */
   @java.lang.Override
   public int getAiResultCount() {
     return aiResult .size();
   }
   /**
-   * <code>repeated .glory_api.AiResult ai_result = 12;</code>
+   * <code>repeated .glory_api.AiResult ai_result = 13;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.live.AiResult getAiResult(int index) {
     return aiResult .get(index);
   }
   /**
-   * <code>repeated .glory_api.AiResult ai_result = 12;</code>
+   * <code>repeated .glory_api.AiResult ai_result = 13;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.live.AiResultOrBuilder getAiResultOrBuilder(
@@ -557,8 +573,11 @@ private static final long serialVersionUID = 0L;
     if (baseline != false) {
       output.writeBool(11, baseline );
     }
+    if (aiFeedbackId != 0L) {
+      output.writeInt64(12, aiFeedbackId );
+    }
     for (int i = 0; i < aiResult .size(); i++) {
-      output.writeMessage(12, aiResult .get(i));
+      output.writeMessage(13, aiResult .get(i));
     }
     for (int i = 0; i < detail .size(); i++) {
       output.writeMessage(100, detail .get(i));
@@ -612,9 +631,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(11, baseline );
     }
+    if (aiFeedbackId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(12, aiFeedbackId );
+    }
     for (int i = 0; i < aiResult .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(12, aiResult .get(i));
+        .computeMessageSize(13, aiResult .get(i));
     }
     for (int i = 0; i < detail .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
@@ -662,6 +685,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getAiFeedback())) return false;
     if (getBaseline()
         != other.getBaseline()) return false;
+    if (getAiFeedbackId()
+        != other.getAiFeedbackId()) return false;
     if (!getAiResultList()
         .equals(other.getAiResultList())) return false;
     if (!getDetailList()
@@ -707,6 +732,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + BASELINE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getBaseline());
+    hash = (37 * hash) + AI_FEEDBACK_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getAiFeedbackId());
     if (getAiResultCount() > 0) {
       hash = (37 * hash) + AI_RESULT_FIELD_NUMBER;
       hash = (53 * hash) + getAiResultList().hashCode();
@@ -876,6 +904,8 @@ private static final long serialVersionUID = 0L;
 
       baseline = false;
 
+      aiFeedbackId = 0L;
+
       if (aiResultBuilder == null) {
         aiResult = java.util.Collections.emptyList();
         bitField0 = (bitField0 & ~0x00000001);
@@ -930,6 +960,7 @@ private static final long serialVersionUID = 0L;
       result.score = score ;
       result.aiFeedback = aiFeedback ;
       result.baseline = baseline ;
+      result.aiFeedbackId = aiFeedbackId ;
       if (aiResultBuilder == null) {
         if (((bitField0 & 0x00000001) != 0)) {
           aiResult = java.util.Collections.unmodifiableList(aiResult );
@@ -1032,6 +1063,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getBaseline() != false) {
         setBaseline(other.getBaseline());
+      }
+      if (other.getAiFeedbackId() != 0L) {
+        setAiFeedbackId(other.getAiFeedbackId());
       }
       if (aiResultBuilder == null) {
         if (!other.aiResult .isEmpty()) {
@@ -1744,6 +1778,37 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private long aiFeedbackId ;
+    /**
+     * <code>int64 ai_feedback_id = 12;</code>
+     * @return The aiFeedbackId.
+     */
+    @java.lang.Override
+    public long getAiFeedbackId() {
+      return aiFeedbackId ;
+    }
+    /**
+     * <code>int64 ai_feedback_id = 12;</code>
+     * @param value The aiFeedbackId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAiFeedbackId(long value) {
+      
+      aiFeedbackId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 ai_feedback_id = 12;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAiFeedbackId() {
+      
+      aiFeedbackId = 0L;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.zhijiejiaoyu.glory_api.live.AiResult> aiResult =
       java.util.Collections.emptyList();
     private void ensureAiResultIsMutable() {
@@ -1757,7 +1822,7 @@ private static final long serialVersionUID = 0L;
         com.zhijiejiaoyu.glory_api.live.AiResult, com.zhijiejiaoyu.glory_api.live.AiResult.Builder, com.zhijiejiaoyu.glory_api.live.AiResultOrBuilder> aiResultBuilder ;
 
     /**
-     * <code>repeated .glory_api.AiResult ai_result = 12;</code>
+     * <code>repeated .glory_api.AiResult ai_result = 13;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.live.AiResult> getAiResultList() {
       if (aiResultBuilder == null) {
@@ -1767,7 +1832,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.AiResult ai_result = 12;</code>
+     * <code>repeated .glory_api.AiResult ai_result = 13;</code>
      */
     public int getAiResultCount() {
       if (aiResultBuilder == null) {
@@ -1777,7 +1842,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.AiResult ai_result = 12;</code>
+     * <code>repeated .glory_api.AiResult ai_result = 13;</code>
      */
     public com.zhijiejiaoyu.glory_api.live.AiResult getAiResult(int index) {
       if (aiResultBuilder == null) {
@@ -1787,7 +1852,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.AiResult ai_result = 12;</code>
+     * <code>repeated .glory_api.AiResult ai_result = 13;</code>
      */
     public Builder setAiResult(
         int index, com.zhijiejiaoyu.glory_api.live.AiResult value) {
@@ -1804,7 +1869,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.AiResult ai_result = 12;</code>
+     * <code>repeated .glory_api.AiResult ai_result = 13;</code>
      */
     public Builder setAiResult(
         int index, com.zhijiejiaoyu.glory_api.live.AiResult.Builder builderForValue) {
@@ -1818,7 +1883,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.AiResult ai_result = 12;</code>
+     * <code>repeated .glory_api.AiResult ai_result = 13;</code>
      */
     public Builder addAiResult(com.zhijiejiaoyu.glory_api.live.AiResult value) {
       if (aiResultBuilder == null) {
@@ -1834,7 +1899,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.AiResult ai_result = 12;</code>
+     * <code>repeated .glory_api.AiResult ai_result = 13;</code>
      */
     public Builder addAiResult(
         int index, com.zhijiejiaoyu.glory_api.live.AiResult value) {
@@ -1851,7 +1916,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.AiResult ai_result = 12;</code>
+     * <code>repeated .glory_api.AiResult ai_result = 13;</code>
      */
     public Builder addAiResult(
         com.zhijiejiaoyu.glory_api.live.AiResult.Builder builderForValue) {
@@ -1865,7 +1930,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.AiResult ai_result = 12;</code>
+     * <code>repeated .glory_api.AiResult ai_result = 13;</code>
      */
     public Builder addAiResult(
         int index, com.zhijiejiaoyu.glory_api.live.AiResult.Builder builderForValue) {
@@ -1879,7 +1944,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.AiResult ai_result = 12;</code>
+     * <code>repeated .glory_api.AiResult ai_result = 13;</code>
      */
     public Builder addAllAiResult(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.live.AiResult> values) {
@@ -1894,7 +1959,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.AiResult ai_result = 12;</code>
+     * <code>repeated .glory_api.AiResult ai_result = 13;</code>
      */
     public Builder clearAiResult() {
       if (aiResultBuilder == null) {
@@ -1907,7 +1972,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.AiResult ai_result = 12;</code>
+     * <code>repeated .glory_api.AiResult ai_result = 13;</code>
      */
     public Builder removeAiResult(int index) {
       if (aiResultBuilder == null) {
@@ -1920,14 +1985,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.AiResult ai_result = 12;</code>
+     * <code>repeated .glory_api.AiResult ai_result = 13;</code>
      */
     public com.zhijiejiaoyu.glory_api.live.AiResult.Builder getAiResultBuilder(
         int index) {
       return getAiResultFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .glory_api.AiResult ai_result = 12;</code>
+     * <code>repeated .glory_api.AiResult ai_result = 13;</code>
      */
     public com.zhijiejiaoyu.glory_api.live.AiResultOrBuilder getAiResultOrBuilder(
         int index) {
@@ -1937,7 +2002,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.AiResult ai_result = 12;</code>
+     * <code>repeated .glory_api.AiResult ai_result = 13;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.live.AiResultOrBuilder> 
          getAiResultOrBuilderList() {
@@ -1948,14 +2013,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.AiResult ai_result = 12;</code>
+     * <code>repeated .glory_api.AiResult ai_result = 13;</code>
      */
     public com.zhijiejiaoyu.glory_api.live.AiResult.Builder addAiResultBuilder() {
       return getAiResultFieldBuilder().addBuilder(
           com.zhijiejiaoyu.glory_api.live.AiResult.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.AiResult ai_result = 12;</code>
+     * <code>repeated .glory_api.AiResult ai_result = 13;</code>
      */
     public com.zhijiejiaoyu.glory_api.live.AiResult.Builder addAiResultBuilder(
         int index) {
@@ -1963,7 +2028,7 @@ private static final long serialVersionUID = 0L;
           index, com.zhijiejiaoyu.glory_api.live.AiResult.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.AiResult ai_result = 12;</code>
+     * <code>repeated .glory_api.AiResult ai_result = 13;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.live.AiResult.Builder> 
          getAiResultBuilderList() {

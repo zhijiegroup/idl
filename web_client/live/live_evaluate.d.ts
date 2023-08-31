@@ -91,6 +91,7 @@ export interface GetEvaluateDetailResponse {
   score?: number;
   ai_feedback?: string;
   baseline?: boolean;
+  ai_feedback_id?: string;
   ai_result?: Array<AiResult>;
   detail?: Array<EvaluateDetail>;
 }
@@ -110,6 +111,7 @@ export interface SubmitEvaluateRequest {
   score?: number;
   ai_feedback?: string;
   baseline?: boolean;
+  ai_feedback_id?: string;
   detail?: Array<EvaluateDetail>;
 }
 
