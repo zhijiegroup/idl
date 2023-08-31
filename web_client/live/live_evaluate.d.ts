@@ -119,8 +119,8 @@ export interface SubmitEvaluateResponse {
 
 export interface SubmitUserAttitudeForAIResultRequest {
   base_request?: base.BaseRequest;
-  LiveAiFeedbackId?: string;
-  Attitude?: string;
+  live_ai_feedback_id?: string;
+  attitude?: string;
 }
 
 export interface SubmitUserAttitudeForAIResultResponse {

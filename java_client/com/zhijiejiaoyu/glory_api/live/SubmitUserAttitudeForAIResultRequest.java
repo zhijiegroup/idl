@@ -131,10 +131,10 @@ private static final long serialVersionUID = 0L;
     return getBaseRequest();
   }
 
-  public static final int LIVEAIFEEDBACKID_FIELD_NUMBER = 2;
+  public static final int LIVE_AI_FEEDBACK_ID_FIELD_NUMBER = 2;
   private long liveAiFeedbackId ;
   /**
-   * <code>int64 LiveAiFeedbackId = 2;</code>
+   * <code>int64 live_ai_feedback_id = 2;</code>
    * @return The liveAiFeedbackId.
    */
   @java.lang.Override
@@ -145,7 +145,7 @@ private static final long serialVersionUID = 0L;
   public static final int ATTITUDE_FIELD_NUMBER = 3;
   private volatile java.lang.Object attitude ;
   /**
-   * <code>string Attitude = 3;</code>
+   * <code>string attitude = 3;</code>
    * @return The attitude.
    */
   @java.lang.Override
@@ -162,7 +162,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string Attitude = 3;</code>
+   * <code>string attitude = 3;</code>
    * @return The bytes for attitude.
    */
   @java.lang.Override
@@ -262,7 +262,7 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
       hash = (53 * hash) + getBaseRequest().hashCode();
     }
-    hash = (37 * hash) + LIVEAIFEEDBACKID_FIELD_NUMBER;
+    hash = (37 * hash) + LIVE_AI_FEEDBACK_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getLiveAiFeedbackId());
     hash = (37 * hash) + ATTITUDE_FIELD_NUMBER;
@@ -651,7 +651,7 @@ private static final long serialVersionUID = 0L;
 
     private long liveAiFeedbackId ;
     /**
-     * <code>int64 LiveAiFeedbackId = 2;</code>
+     * <code>int64 live_ai_feedback_id = 2;</code>
      * @return The liveAiFeedbackId.
      */
     @java.lang.Override
@@ -659,7 +659,7 @@ private static final long serialVersionUID = 0L;
       return liveAiFeedbackId ;
     }
     /**
-     * <code>int64 LiveAiFeedbackId = 2;</code>
+     * <code>int64 live_ai_feedback_id = 2;</code>
      * @param value The liveAiFeedbackId to set.
      * @return This builder for chaining.
      */
@@ -670,7 +670,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 LiveAiFeedbackId = 2;</code>
+     * <code>int64 live_ai_feedback_id = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearLiveAiFeedbackId() {
@@ -682,7 +682,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object attitude = "";
     /**
-     * <code>string Attitude = 3;</code>
+     * <code>string attitude = 3;</code>
      * @return The attitude.
      */
     public java.lang.String getAttitude() {
@@ -698,7 +698,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string Attitude = 3;</code>
+     * <code>string attitude = 3;</code>
      * @return The bytes for attitude.
      */
     public com.google.protobuf.ByteString
@@ -715,7 +715,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string Attitude = 3;</code>
+     * <code>string attitude = 3;</code>
      * @param value The attitude to set.
      * @return This builder for chaining.
      */
@@ -730,7 +730,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string Attitude = 3;</code>
+     * <code>string attitude = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearAttitude() {
@@ -740,7 +740,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string Attitude = 3;</code>
+     * <code>string attitude = 3;</code>
      * @param value The bytes for attitude to set.
      * @return This builder for chaining.
      */
