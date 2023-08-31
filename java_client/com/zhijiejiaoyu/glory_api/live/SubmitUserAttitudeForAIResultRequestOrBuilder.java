@@ -23,18 +23,18 @@ public interface SubmitUserAttitudeForAIResultRequestOrBuilder extends
   com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder();
 
   /**
-   * <code>int64 LiveAiFeedbackId = 2;</code>
+   * <code>int64 live_ai_feedback_id = 2;</code>
    * @return The liveAiFeedbackId.
    */
   long getLiveAiFeedbackId();
 
   /**
-   * <code>string Attitude = 3;</code>
+   * <code>string attitude = 3;</code>
    * @return The attitude.
    */
   java.lang.String getAttitude();
   /**
-   * <code>string Attitude = 3;</code>
+   * <code>string attitude = 3;</code>
    * @return The bytes for attitude.
    */
   com.google.protobuf.ByteString

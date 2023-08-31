@@ -2040,8 +2040,8 @@ extension GloryApi_SubmitUserAttitudeForAIResultRequest: SwiftProtobuf.Message, 
   static let protoMessageName: String = _protobuf_package + ".SubmitUserAttitudeForAIResultRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
-    2: .same(proto: "LiveAiFeedbackId"),
-    3: .same(proto: "Attitude"),
+    2: .standard(proto: "live_ai_feedback_id"),
+    3: .same(proto: "attitude"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
