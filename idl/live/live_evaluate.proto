@@ -115,8 +115,8 @@ message SubmitEvaluateResponse {
 
 message SubmitUserAttitudeForAIResultRequest {
     base.BaseRequest base_request = 1;
-    int64 LiveAiFeedbackId = 2;
-    string Attitude = 3;
+    int64 live_ai_feedback_id = 2;
+    string attitude = 3;
 }
 
 message SubmitUserAttitudeForAIResultResponse {
