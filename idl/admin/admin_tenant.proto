@@ -9,9 +9,11 @@ option java_multiple_files = true;
 
 message ListTenantOrgRequest {
     base.BaseRequest base_request = 1;
+    string name = 2;
 }
 
 message ListTenantOrgResponse {
     base.BaseResponse base_resp = 1;
     repeated TenantOrg tenant_orgs = 2;
+    int64 dept_id = 3;
 }
