@@ -64,10 +64,23 @@ export interface EvaluateDetail {
   suboption?: Array<EvaluateSubOption>;
 }
 
+export interface ProductPrefession {
+  product_name?: string;
+  product_class?: string;
+  product_attributed?: { [key: string]: string };
+}
+
+export interface Feedback {
+  enjoyment?: string;
+  logic?: string;
+  innovative?: string;
+  product_prefession?: Array<ProductPrefession>;
+}
+
 export interface AiResult {
   live_ai_feedback_id?: string;
   room_id?: string;
-  feedback?: string;
+  feedback?: Feedback;
   user_attitude?: string;
   created_at?: string;
 }

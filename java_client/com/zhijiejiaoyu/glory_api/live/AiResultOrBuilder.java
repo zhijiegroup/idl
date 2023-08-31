@@ -20,16 +20,19 @@ public interface AiResultOrBuilder extends
   long getRoomId();
 
   /**
-   * <code>string feedback = 3;</code>
+   * <code>.glory_api.Feedback feedback = 3;</code>
+   * @return Whether the feedback field is set.
+   */
+  boolean hasFeedback();
+  /**
+   * <code>.glory_api.Feedback feedback = 3;</code>
    * @return The feedback.
    */
-  java.lang.String getFeedback();
+  com.zhijiejiaoyu.glory_api.live.Feedback getFeedback();
   /**
-   * <code>string feedback = 3;</code>
-   * @return The bytes for feedback.
+   * <code>.glory_api.Feedback feedback = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getFeedbackBytes();
+  com.zhijiejiaoyu.glory_api.live.FeedbackOrBuilder getFeedbackOrBuilder();
 
   /**
    * <code>string user_attitude = 4;</code>

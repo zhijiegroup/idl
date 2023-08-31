@@ -16,7 +16,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private AiResult() {
-    feedback = "";
     userAttitude = "";
     createdAt = "";
   }
@@ -62,9 +61,16 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
+            com.zhijiejiaoyu.glory_api.live.Feedback.Builder subBuilder = null;
+            if (feedback != null) {
+              subBuilder = feedback .toBuilder();
+            }
+            feedback = input.readMessage(com.zhijiejiaoyu.glory_api.live.Feedback.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(feedback );
+              feedback = subBuilder.buildPartial();
+            }
 
-            feedback = s;
             break;
           }
           case 34: {
@@ -134,41 +140,29 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int FEEDBACK_FIELD_NUMBER = 3;
-  private volatile java.lang.Object feedback ;
+  private com.zhijiejiaoyu.glory_api.live.Feedback feedback ;
   /**
-   * <code>string feedback = 3;</code>
+   * <code>.glory_api.Feedback feedback = 3;</code>
+   * @return Whether the feedback field is set.
+   */
+  @java.lang.Override
+  public boolean hasFeedback() {
+    return feedback != null;
+  }
+  /**
+   * <code>.glory_api.Feedback feedback = 3;</code>
    * @return The feedback.
    */
   @java.lang.Override
-  public java.lang.String getFeedback() {
-    java.lang.Object ref = feedback ;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      feedback = s;
-      return s;
-    }
+  public com.zhijiejiaoyu.glory_api.live.Feedback getFeedback() {
+    return feedback == null ? com.zhijiejiaoyu.glory_api.live.Feedback.getDefaultInstance() : feedback ;
   }
   /**
-   * <code>string feedback = 3;</code>
-   * @return The bytes for feedback.
+   * <code>.glory_api.Feedback feedback = 3;</code>
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getFeedbackBytes() {
-    java.lang.Object ref = feedback ;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      feedback = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public com.zhijiejiaoyu.glory_api.live.FeedbackOrBuilder getFeedbackOrBuilder() {
+    return getFeedback();
   }
 
   public static final int USER_ATTITUDE_FIELD_NUMBER = 4;
@@ -267,8 +261,8 @@ private static final long serialVersionUID = 0L;
     if (roomId != 0L) {
       output.writeInt64(2, roomId );
     }
-    if (!getFeedbackBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, feedback );
+    if (feedback != null) {
+      output.writeMessage(3, getFeedback());
     }
     if (!getUserAttitudeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, userAttitude );
@@ -293,8 +287,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, roomId );
     }
-    if (!getFeedbackBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, feedback );
+    if (feedback != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, getFeedback());
     }
     if (!getUserAttitudeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, userAttitude );
@@ -321,8 +316,11 @@ private static final long serialVersionUID = 0L;
         != other.getLiveAiFeedbackId()) return false;
     if (getRoomId()
         != other.getRoomId()) return false;
-    if (!getFeedback()
-        .equals(other.getFeedback())) return false;
+    if (hasFeedback() != other.hasFeedback()) return false;
+    if (hasFeedback()) {
+      if (!getFeedback()
+          .equals(other.getFeedback())) return false;
+    }
     if (!getUserAttitude()
         .equals(other.getUserAttitude())) return false;
     if (!getCreatedAt()
@@ -344,8 +342,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ROOM_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getRoomId());
-    hash = (37 * hash) + FEEDBACK_FIELD_NUMBER;
-    hash = (53 * hash) + getFeedback().hashCode();
+    if (hasFeedback()) {
+      hash = (37 * hash) + FEEDBACK_FIELD_NUMBER;
+      hash = (53 * hash) + getFeedback().hashCode();
+    }
     hash = (37 * hash) + USER_ATTITUDE_FIELD_NUMBER;
     hash = (53 * hash) + getUserAttitude().hashCode();
     hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
@@ -487,8 +487,12 @@ private static final long serialVersionUID = 0L;
 
       roomId = 0L;
 
-      feedback = "";
-
+      if (feedbackBuilder == null) {
+        feedback = null;
+      } else {
+        feedback = null;
+        feedbackBuilder = null;
+      }
       userAttitude = "";
 
       createdAt = "";
@@ -521,7 +525,11 @@ private static final long serialVersionUID = 0L;
       com.zhijiejiaoyu.glory_api.live.AiResult result = new com.zhijiejiaoyu.glory_api.live.AiResult(this);
       result.liveAiFeedbackId = liveAiFeedbackId ;
       result.roomId = roomId ;
-      result.feedback = feedback ;
+      if (feedbackBuilder == null) {
+        result.feedback = feedback ;
+      } else {
+        result.feedback = feedbackBuilder .build();
+      }
       result.userAttitude = userAttitude ;
       result.createdAt = createdAt ;
       onBuilt();
@@ -578,9 +586,8 @@ private static final long serialVersionUID = 0L;
       if (other.getRoomId() != 0L) {
         setRoomId(other.getRoomId());
       }
-      if (!other.getFeedback().isEmpty()) {
-        feedback = other.feedback ;
-        onChanged();
+      if (other.hasFeedback()) {
+        mergeFeedback(other.getFeedback());
       }
       if (!other.getUserAttitude().isEmpty()) {
         userAttitude = other.userAttitude ;
@@ -681,80 +688,123 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object feedback = "";
+    private com.zhijiejiaoyu.glory_api.live.Feedback feedback ;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.live.Feedback, com.zhijiejiaoyu.glory_api.live.Feedback.Builder, com.zhijiejiaoyu.glory_api.live.FeedbackOrBuilder> feedbackBuilder ;
     /**
-     * <code>string feedback = 3;</code>
+     * <code>.glory_api.Feedback feedback = 3;</code>
+     * @return Whether the feedback field is set.
+     */
+    public boolean hasFeedback() {
+      return feedbackBuilder != null || feedback != null;
+    }
+    /**
+     * <code>.glory_api.Feedback feedback = 3;</code>
      * @return The feedback.
      */
-    public java.lang.String getFeedback() {
-      java.lang.Object ref = feedback ;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        feedback = s;
-        return s;
+    public com.zhijiejiaoyu.glory_api.live.Feedback getFeedback() {
+      if (feedbackBuilder == null) {
+        return feedback == null ? com.zhijiejiaoyu.glory_api.live.Feedback.getDefaultInstance() : feedback ;
       } else {
-        return (java.lang.String) ref;
+        return feedbackBuilder .getMessage();
       }
     }
     /**
-     * <code>string feedback = 3;</code>
-     * @return The bytes for feedback.
+     * <code>.glory_api.Feedback feedback = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getFeedbackBytes() {
-      java.lang.Object ref = feedback ;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        feedback = b;
-        return b;
+    public Builder setFeedback(com.zhijiejiaoyu.glory_api.live.Feedback value) {
+      if (feedbackBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        feedback = value;
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        feedbackBuilder .setMessage(value);
       }
+
+      return this;
     }
     /**
-     * <code>string feedback = 3;</code>
-     * @param value The feedback to set.
-     * @return This builder for chaining.
+     * <code>.glory_api.Feedback feedback = 3;</code>
      */
     public Builder setFeedback(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      feedback = value;
-      onChanged();
+        com.zhijiejiaoyu.glory_api.live.Feedback.Builder builderForValue) {
+      if (feedbackBuilder == null) {
+        feedback = builderForValue.build();
+        onChanged();
+      } else {
+        feedbackBuilder .setMessage(builderForValue.build());
+      }
+
       return this;
     }
     /**
-     * <code>string feedback = 3;</code>
-     * @return This builder for chaining.
+     * <code>.glory_api.Feedback feedback = 3;</code>
+     */
+    public Builder mergeFeedback(com.zhijiejiaoyu.glory_api.live.Feedback value) {
+      if (feedbackBuilder == null) {
+        if (feedback != null) {
+          feedback =
+            com.zhijiejiaoyu.glory_api.live.Feedback.newBuilder(feedback ).mergeFrom(value).buildPartial();
+        } else {
+          feedback = value;
+        }
+        onChanged();
+      } else {
+        feedbackBuilder .mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.Feedback feedback = 3;</code>
      */
     public Builder clearFeedback() {
-      
-      feedback = getDefaultInstance().getFeedback();
-      onChanged();
+      if (feedbackBuilder == null) {
+        feedback = null;
+        onChanged();
+      } else {
+        feedback = null;
+        feedbackBuilder = null;
+      }
+
       return this;
     }
     /**
-     * <code>string feedback = 3;</code>
-     * @param value The bytes for feedback to set.
-     * @return This builder for chaining.
+     * <code>.glory_api.Feedback feedback = 3;</code>
      */
-    public Builder setFeedbackBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+    public com.zhijiejiaoyu.glory_api.live.Feedback.Builder getFeedbackBuilder() {
       
-      feedback = value;
       onChanged();
-      return this;
+      return getFeedbackFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.glory_api.Feedback feedback = 3;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.live.FeedbackOrBuilder getFeedbackOrBuilder() {
+      if (feedbackBuilder != null) {
+        return feedbackBuilder .getMessageOrBuilder();
+      } else {
+        return feedback == null ?
+            com.zhijiejiaoyu.glory_api.live.Feedback.getDefaultInstance() : feedback ;
+      }
+    }
+    /**
+     * <code>.glory_api.Feedback feedback = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.live.Feedback, com.zhijiejiaoyu.glory_api.live.Feedback.Builder, com.zhijiejiaoyu.glory_api.live.FeedbackOrBuilder> 
+        getFeedbackFieldBuilder() {
+      if (feedbackBuilder == null) {
+        feedbackBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.live.Feedback, com.zhijiejiaoyu.glory_api.live.Feedback.Builder, com.zhijiejiaoyu.glory_api.live.FeedbackOrBuilder>(
+                getFeedback(),
+                getParentForChildren(),
+                isClean());
+        feedback = null;
+      }
+      return feedbackBuilder ;
     }
 
     private java.lang.Object userAttitude = "";
