@@ -17,6 +17,7 @@ message Config {
   string created_at = 9;
   string updated_at = 10;
   string business_system = 11;
+  string default_value = 12;
 }
 
 message AddConfig {
