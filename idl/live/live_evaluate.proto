@@ -63,10 +63,23 @@ message EvaluateDetail {
     repeated EvaluateSubOption suboption = 5;
 }
 
+message ProductPrefession {
+    string product_name = 1;
+    string product_class = 2;
+    map<string, string> product_attributed = 3;
+}
+
+message Feedback {
+    string enjoyment = 1;
+    string logic = 2;
+    string innovative = 3;
+    repeated ProductPrefession product_prefession = 4;
+}
+
 message AiResult {
     int64 live_ai_feedback_id  = 1;
     int64 room_id = 2;
-    string feedback = 3;
+    Feedback feedback = 3;
     string user_attitude = 4;
     string created_at = 5;
 }
