@@ -297,7 +297,8 @@ message ListUserByRole {
 message ListUserByRoleRequest {
   base.BaseRequest base_request=1;
   string role_name = 2; // 平台管理员是admin, 学校管理员是school_admin_role
-  int64 tenant_id = 3;  // 学校的id，若是角色名称是admin，则会忽略这个
+  string name = 3; // 模糊查询关键字
+  int64 tenant_id = 4;  // 学校的id，若是角色名称是admin，则会忽略这个
   base.PaginationRequest pagination = 100;
 }
 
