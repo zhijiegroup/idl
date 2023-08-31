@@ -16,6 +16,7 @@ export interface Config {
   created_at?: string;
   updated_at?: string;
   business_system?: string;
+  default_value?: string;
 }
 
 export interface AddConfig {

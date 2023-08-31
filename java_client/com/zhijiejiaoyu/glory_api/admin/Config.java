@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
     createdAt = "";
     updatedAt = "";
     businessSystem = "";
+    defaultValue = "";
   }
 
   @java.lang.Override
@@ -110,6 +111,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             businessSystem = s;
+            break;
+          }
+          case 98: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            defaultValue = s;
             break;
           }
           default: {
@@ -443,6 +450,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int DEFAULT_VALUE_FIELD_NUMBER = 12;
+  private volatile java.lang.Object defaultValue ;
+  /**
+   * <code>string default_value = 12;</code>
+   * @return The defaultValue.
+   */
+  @java.lang.Override
+  public java.lang.String getDefaultValue() {
+    java.lang.Object ref = defaultValue ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      defaultValue = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string default_value = 12;</code>
+   * @return The bytes for defaultValue.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getDefaultValueBytes() {
+    java.lang.Object ref = defaultValue ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      defaultValue = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -487,6 +532,9 @@ private static final long serialVersionUID = 0L;
     if (!getBusinessSystemBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, businessSystem );
     }
+    if (!getDefaultValueBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, defaultValue );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -529,6 +577,9 @@ private static final long serialVersionUID = 0L;
     if (!getBusinessSystemBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, businessSystem );
     }
+    if (!getDefaultValueBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, defaultValue );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -564,6 +615,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getUpdatedAt())) return false;
     if (!getBusinessSystem()
         .equals(other.getBusinessSystem())) return false;
+    if (!getDefaultValue()
+        .equals(other.getDefaultValue())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -598,6 +651,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getUpdatedAt().hashCode();
     hash = (37 * hash) + BUSINESS_SYSTEM_FIELD_NUMBER;
     hash = (53 * hash) + getBusinessSystem().hashCode();
+    hash = (37 * hash) + DEFAULT_VALUE_FIELD_NUMBER;
+    hash = (53 * hash) + getDefaultValue().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -751,6 +806,8 @@ private static final long serialVersionUID = 0L;
 
       businessSystem = "";
 
+      defaultValue = "";
+
       return this;
     }
 
@@ -787,6 +844,7 @@ private static final long serialVersionUID = 0L;
       result.createdAt = createdAt ;
       result.updatedAt = updatedAt ;
       result.businessSystem = businessSystem ;
+      result.defaultValue = defaultValue ;
       onBuilt();
       return result;
     }
@@ -870,6 +928,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getBusinessSystem().isEmpty()) {
         businessSystem = other.businessSystem ;
+        onChanged();
+      }
+      if (!other.getDefaultValue().isEmpty()) {
+        defaultValue = other.defaultValue ;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1522,6 +1584,82 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       businessSystem = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object defaultValue = "";
+    /**
+     * <code>string default_value = 12;</code>
+     * @return The defaultValue.
+     */
+    public java.lang.String getDefaultValue() {
+      java.lang.Object ref = defaultValue ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        defaultValue = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string default_value = 12;</code>
+     * @return The bytes for defaultValue.
+     */
+    public com.google.protobuf.ByteString
+        getDefaultValueBytes() {
+      java.lang.Object ref = defaultValue ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        defaultValue = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string default_value = 12;</code>
+     * @param value The defaultValue to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDefaultValue(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      defaultValue = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string default_value = 12;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDefaultValue() {
+      
+      defaultValue = getDefaultInstance().getDefaultValue();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string default_value = 12;</code>
+     * @param value The bytes for defaultValue to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDefaultValueBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      defaultValue = value;
       onChanged();
       return this;
     }

@@ -45,6 +45,8 @@ struct GloryApi_Config {
 
   var businessSystem: String = String()
 
+  var defaultValue: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -403,6 +405,7 @@ extension GloryApi_Config: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
     9: .standard(proto: "created_at"),
     10: .standard(proto: "updated_at"),
     11: .standard(proto: "business_system"),
+    12: .standard(proto: "default_value"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -421,6 +424,7 @@ extension GloryApi_Config: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
       case 9: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
       case 10: try { try decoder.decodeSingularStringField(value: &self.updatedAt) }()
       case 11: try { try decoder.decodeSingularStringField(value: &self.businessSystem) }()
+      case 12: try { try decoder.decodeSingularStringField(value: &self.defaultValue) }()
       default: break
       }
     }
@@ -457,6 +461,9 @@ extension GloryApi_Config: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
     if !self.businessSystem.isEmpty {
       try visitor.visitSingularStringField(value: self.businessSystem, fieldNumber: 11)
     }
+    if !self.defaultValue.isEmpty {
+      try visitor.visitSingularStringField(value: self.defaultValue, fieldNumber: 12)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -471,6 +478,7 @@ extension GloryApi_Config: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
     if lhs.createdAt != rhs.createdAt {return false}
     if lhs.updatedAt != rhs.updatedAt {return false}
     if lhs.businessSystem != rhs.businessSystem {return false}
+    if lhs.defaultValue != rhs.defaultValue {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

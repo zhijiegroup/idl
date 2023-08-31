@@ -94,43 +94,44 @@ public final class ConfigOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\022admin/config.proto\022\tglory_api\032\nbase.pr" +
-      "oto\"\322\001\n\006Config\022\n\n\002id\030\002 \001(\003\022\023\n\013config_nam" +
+      "oto\"\351\001\n\006Config\022\n\n\002id\030\002 \001(\003\022\023\n\013config_nam" +
       "e\030\003 \001(\t\022\024\n\014config_value\030\004 \001(\t\022\023\n\013config_" +
       "type\030\005 \001(\t\022\023\n\013description\030\006 \001(\t\022\022\n\ncreat" +
       "ed_by\030\007 \001(\003\022\022\n\nupdated_by\030\010 \001(\003\022\022\n\ncreat" +
       "ed_at\030\t \001(\t\022\022\n\nupdated_at\030\n \001(\t\022\027\n\017busin" +
-      "ess_system\030\013 \001(\t\"\220\001\n\tAddConfig\022\023\n\013config" +
-      "_name\030\002 \001(\t\022\024\n\014config_value\030\003 \001(\t\022\025\n\rdef" +
-      "ault_value\030\004 \001(\t\022\023\n\013config_type\030\005 \001(\t\022\023\n" +
-      "\013description\030\006 \001(\t\022\027\n\017business_system\030\007 " +
-      "\001(\t\"d\n\023CreateConfigRequest\022\'\n\014base_reque" +
-      "st\030\001 \001(\0132\021.base.BaseRequest\022$\n\006config\030\002 " +
-      "\001(\0132\024.glory_api.AddConfig\"=\n\024CreateConfi" +
-      "gResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Base" +
-      "Response\"x\n\014UpdateConfig\022\021\n\tconfig_id\030\002 " +
-      "\001(\003\022\023\n\013config_type\030\003 \001(\t\022\024\n\014config_value" +
-      "\030\004 \001(\t\022\025\n\rdefault_value\030\005 \001(\t\022\023\n\013descrip" +
-      "tion\030\006 \001(\t\"g\n\023UpdateConfigRequest\022\'\n\014bas" +
-      "e_request\030\001 \001(\0132\021.base.BaseRequest\022\'\n\006co" +
-      "nfig\030\002 \001(\0132\027.glory_api.UpdateConfig\"=\n\024U" +
-      "pdateConfigResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
-      ".base.BaseResponse\"Q\n\023DeleteConfigReques" +
-      "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
-      "st\022\021\n\tconfig_id\030\002 \001(\003\"=\n\024DeleteConfigRes" +
-      "ponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResp" +
-      "onse\"~\n\020GetConfigRequest\022\'\n\014base_request" +
-      "\030\001 \001(\0132\021.base.BaseRequest\022\023\n\013config_name" +
-      "\030\002 \001(\t\022\023\n\013config_type\030\003 \001(\t\022\027\n\017business_" +
-      "system\030\004 \001(\t\"^\n\021GetConfigResponse\022%\n\tbas" +
-      "e_resp\030\001 \001(\0132\022.base.BaseResponse\022\"\n\007conf" +
-      "igs\030\002 \003(\0132\021.glory_api.Config\"^\n\003STS\022\023\n\013A" +
-      "ccessKeyId\030\001 \001(\t\022\027\n\017AccessKeySecret\030\002 \001(" +
-      "\t\022\022\n\nExpiration\030\003 \001(\t\022\025\n\rSecurityToken\030\004" +
-      " \001(\t\"8\n\rGetSTSRequest\022\'\n\014base_request\030\001 " +
-      "\001(\0132\021.base.BaseRequest\"T\n\016GetSTSResponse" +
-      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022" +
-      "\033\n\003sts\030\002 \001(\0132\016.glory_api.STSB$\n com.zhij" +
-      "iejiaoyu.glory_api.adminP\001b\006proto3"
+      "ess_system\030\013 \001(\t\022\025\n\rdefault_value\030\014 \001(\t\"" +
+      "\220\001\n\tAddConfig\022\023\n\013config_name\030\002 \001(\t\022\024\n\014co" +
+      "nfig_value\030\003 \001(\t\022\025\n\rdefault_value\030\004 \001(\t\022" +
+      "\023\n\013config_type\030\005 \001(\t\022\023\n\013description\030\006 \001(" +
+      "\t\022\027\n\017business_system\030\007 \001(\t\"d\n\023CreateConf" +
+      "igRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.B" +
+      "aseRequest\022$\n\006config\030\002 \001(\0132\024.glory_api.A" +
+      "ddConfig\"=\n\024CreateConfigResponse\022%\n\tbase" +
+      "_resp\030\001 \001(\0132\022.base.BaseResponse\"x\n\014Updat" +
+      "eConfig\022\021\n\tconfig_id\030\002 \001(\003\022\023\n\013config_typ" +
+      "e\030\003 \001(\t\022\024\n\014config_value\030\004 \001(\t\022\025\n\rdefault" +
+      "_value\030\005 \001(\t\022\023\n\013description\030\006 \001(\t\"g\n\023Upd" +
+      "ateConfigRequest\022\'\n\014base_request\030\001 \001(\0132\021" +
+      ".base.BaseRequest\022\'\n\006config\030\002 \001(\0132\027.glor" +
+      "y_api.UpdateConfig\"=\n\024UpdateConfigRespon" +
+      "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
+      "e\"Q\n\023DeleteConfigRequest\022\'\n\014base_request" +
+      "\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tconfig_id\030\002" +
+      " \001(\003\"=\n\024DeleteConfigResponse\022%\n\tbase_res" +
+      "p\030\001 \001(\0132\022.base.BaseResponse\"~\n\020GetConfig" +
+      "Request\022\'\n\014base_request\030\001 \001(\0132\021.base.Bas" +
+      "eRequest\022\023\n\013config_name\030\002 \001(\t\022\023\n\013config_" +
+      "type\030\003 \001(\t\022\027\n\017business_system\030\004 \001(\t\"^\n\021G" +
+      "etConfigResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
+      "se.BaseResponse\022\"\n\007configs\030\002 \003(\0132\021.glory" +
+      "_api.Config\"^\n\003STS\022\023\n\013AccessKeyId\030\001 \001(\t\022" +
+      "\027\n\017AccessKeySecret\030\002 \001(\t\022\022\n\nExpiration\030\003" +
+      " \001(\t\022\025\n\rSecurityToken\030\004 \001(\t\"8\n\rGetSTSReq" +
+      "uest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRe" +
+      "quest\"T\n\016GetSTSResponse\022%\n\tbase_resp\030\001 \001" +
+      "(\0132\022.base.BaseResponse\022\033\n\003sts\030\002 \001(\0132\016.gl" +
+      "ory_api.STSB$\n com.zhijiejiaoyu.glory_ap" +
+      "i.adminP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -142,7 +143,7 @@ public final class ConfigOuterClass {
     internal_static_glory_api_Config_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_Config_descriptor,
-        new java.lang.String[] { "Id", "ConfigName", "ConfigValue", "ConfigType", "Description", "CreatedBy", "UpdatedBy", "CreatedAt", "UpdatedAt", "BusinessSystem", });
+        new java.lang.String[] { "Id", "ConfigName", "ConfigValue", "ConfigType", "Description", "CreatedBy", "UpdatedBy", "CreatedAt", "UpdatedAt", "BusinessSystem", "DefaultValue", });
     internal_static_glory_api_AddConfig_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_glory_api_AddConfig_fieldAccessorTable = new

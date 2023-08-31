@@ -108,4 +108,16 @@ public interface ConfigOrBuilder extends
    */
   com.google.protobuf.ByteString
       getBusinessSystemBytes();
+
+  /**
+   * <code>string default_value = 12;</code>
+   * @return The defaultValue.
+   */
+  java.lang.String getDefaultValue();
+  /**
+   * <code>string default_value = 12;</code>
+   * @return The bytes for defaultValue.
+   */
+  com.google.protobuf.ByteString
+      getDefaultValueBytes();
 }
