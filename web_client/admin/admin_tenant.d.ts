@@ -8,9 +8,11 @@ export { base, tenant };
 
 export interface ListTenantOrgRequest {
   base_request?: base.BaseRequest;
+  name?: string;
 }
 
 export interface ListTenantOrgResponse {
   base_resp?: base.BaseResponse;
   tenant_orgs?: Array<tenant.TenantOrg>;
+  dept_id?: string;
 }

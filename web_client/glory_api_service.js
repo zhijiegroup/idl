@@ -935,9 +935,11 @@ export class glory_api {
   }
 
   ListTenantOrg(request) {
-    const query = queryStringify(request);
-    const uri = `${this.uriPrefix}/api/admin/list_tenant_org${query}`;
-    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+    const uri = `${this.uriPrefix}/api/admin/list_tenant_org`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
   }
 
   ListAdminUser(request) {

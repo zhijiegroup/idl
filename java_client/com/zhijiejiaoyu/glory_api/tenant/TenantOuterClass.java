@@ -136,12 +136,13 @@ public final class TenantOuterClass {
       "id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\014\n\004type\030\003 \001(\t\022\016\n\006" +
       "parent\030\004 \001(\003\022\016\n\006tenant\030\005 \001(\003\022\r\n\005count\030\006 " +
       "\001(\003\022&\n\010children\030\007 \003(\0132\024.glory_api.Tenant" +
-      "Org\"Q\n\023GetTenantOrgRequest\022\'\n\014base_reque" +
+      "Org\"_\n\023GetTenantOrgRequest\022\'\n\014base_reque" +
       "st\030\001 \001(\0132\021.base.BaseRequest\022\021\n\ttenant_id" +
-      "\030\002 \001(\003\"g\n\024GetTenantOrgResponse\022%\n\tbase_r" +
-      "esp\030\001 \001(\0132\022.base.BaseResponse\022(\n\ntenant_" +
-      "org\030\002 \001(\0132\024.glory_api.TenantOrgB%\n!com.z" +
-      "hijiejiaoyu.glory_api.tenantP\001b\006proto3"
+      "\030\002 \001(\003\022\014\n\004name\030\003 \001(\t\"x\n\024GetTenantOrgResp" +
+      "onse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespo" +
+      "nse\022(\n\ntenant_org\030\002 \001(\0132\024.glory_api.Tena" +
+      "ntOrg\022\017\n\007dept_id\030\003 \001(\003B%\n!com.zhijiejiao" +
+      "yu.glory_api.tenantP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -231,13 +232,13 @@ public final class TenantOuterClass {
     internal_static_glory_api_GetTenantOrgRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetTenantOrgRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "TenantId", });
+        new java.lang.String[] { "BaseRequest", "TenantId", "Name", });
     internal_static_glory_api_GetTenantOrgResponse_descriptor =
       getDescriptor().getMessageTypes().get(14);
     internal_static_glory_api_GetTenantOrgResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetTenantOrgResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "TenantOrg", });
+        new java.lang.String[] { "BaseResp", "TenantOrg", "DeptId", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
   }
 

@@ -45,4 +45,10 @@ public interface ListTenantOrgResponseOrBuilder extends
    */
   com.zhijiejiaoyu.glory_api.tenant.TenantOrgOrBuilder getTenantOrgsOrBuilder(
       int index);
+
+  /**
+   * <code>int64 dept_id = 3;</code>
+   * @return The deptId.
+   */
+  long getDeptId();
 }

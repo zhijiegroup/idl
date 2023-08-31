@@ -34,6 +34,8 @@ struct GloryApi_ListTenantOrgRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
+  var name: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -57,6 +59,8 @@ struct GloryApi_ListTenantOrgResponse {
 
   var tenantOrgs: [GloryApi_TenantOrg] = []
 
+  var deptID: Int64 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -77,6 +81,7 @@ extension GloryApi_ListTenantOrgRequest: SwiftProtobuf.Message, SwiftProtobuf._M
   static let protoMessageName: String = _protobuf_package + ".ListTenantOrgRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
+    2: .same(proto: "name"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -86,6 +91,7 @@ extension GloryApi_ListTenantOrgRequest: SwiftProtobuf.Message, SwiftProtobuf._M
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.name) }()
       default: break
       }
     }
@@ -99,11 +105,15 @@ extension GloryApi_ListTenantOrgRequest: SwiftProtobuf.Message, SwiftProtobuf._M
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
+    if !self.name.isEmpty {
+      try visitor.visitSingularStringField(value: self.name, fieldNumber: 2)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_ListTenantOrgRequest, rhs: GloryApi_ListTenantOrgRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.name != rhs.name {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -114,6 +124,7 @@ extension GloryApi_ListTenantOrgResponse: SwiftProtobuf.Message, SwiftProtobuf._
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
     2: .standard(proto: "tenant_orgs"),
+    3: .standard(proto: "dept_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -124,6 +135,7 @@ extension GloryApi_ListTenantOrgResponse: SwiftProtobuf.Message, SwiftProtobuf._
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
       case 2: try { try decoder.decodeRepeatedMessageField(value: &self.tenantOrgs) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.deptID) }()
       default: break
       }
     }
@@ -140,12 +152,16 @@ extension GloryApi_ListTenantOrgResponse: SwiftProtobuf.Message, SwiftProtobuf._
     if !self.tenantOrgs.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.tenantOrgs, fieldNumber: 2)
     }
+    if self.deptID != 0 {
+      try visitor.visitSingularInt64Field(value: self.deptID, fieldNumber: 3)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_ListTenantOrgResponse, rhs: GloryApi_ListTenantOrgResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.tenantOrgs != rhs.tenantOrgs {return false}
+    if lhs.deptID != rhs.deptID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

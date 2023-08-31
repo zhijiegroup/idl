@@ -364,7 +364,7 @@ public final class GloryApiService {
       "etSTSRequest\032\031.glory_api.GetSTSResponse\"" +
       "\026\312\301\030\022/api/admin/get_sts\022r\n\rListTenantOrg" +
       "\022\037.glory_api.ListTenantOrgRequest\032 .glor" +
-      "y_api.ListTenantOrgResponse\"\036\312\301\030\032/api/ad" +
+      "y_api.ListTenantOrgResponse\"\036\322\301\030\032/api/ad" +
       "min/list_tenant_org\022r\n\rListAdminUser\022\037.g" +
       "lory_api.ListAdminUserRequest\032 .glory_ap" +
       "i.ListAdminUserResponse\"\036\322\301\030\032/api/admin/" +
