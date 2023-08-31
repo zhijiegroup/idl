@@ -160,31 +160,46 @@ public interface UserOrBuilder extends
   com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getTenantDeptOrBuilder();
 
   /**
-   * <code>repeated .glory_api.PagePermission pages = 11;</code>
+   * <code>.glory_api.Role role = 11;</code>
+   * @return Whether the role field is set.
+   */
+  boolean hasRole();
+  /**
+   * <code>.glory_api.Role role = 11;</code>
+   * @return The role.
+   */
+  com.zhijiejiaoyu.glory_api.user.Role getRole();
+  /**
+   * <code>.glory_api.Role role = 11;</code>
+   */
+  com.zhijiejiaoyu.glory_api.user.RoleOrBuilder getRoleOrBuilder();
+
+  /**
+   * <code>repeated .glory_api.PagePermission pages = 12;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.user.PagePermission> 
       getPagesList();
   /**
-   * <code>repeated .glory_api.PagePermission pages = 11;</code>
+   * <code>repeated .glory_api.PagePermission pages = 12;</code>
    */
   com.zhijiejiaoyu.glory_api.user.PagePermission getPages(int index);
   /**
-   * <code>repeated .glory_api.PagePermission pages = 11;</code>
+   * <code>repeated .glory_api.PagePermission pages = 12;</code>
    */
   int getPagesCount();
   /**
-   * <code>repeated .glory_api.PagePermission pages = 11;</code>
+   * <code>repeated .glory_api.PagePermission pages = 12;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder> 
       getPagesOrBuilderList();
   /**
-   * <code>repeated .glory_api.PagePermission pages = 11;</code>
+   * <code>repeated .glory_api.PagePermission pages = 12;</code>
    */
   com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder getPagesOrBuilder(
       int index);
 
   /**
-   * <code>bool is_admin = 12;</code>
+   * <code>bool is_admin = 13;</code>
    * @return The isAdmin.
    */
   boolean getIsAdmin();

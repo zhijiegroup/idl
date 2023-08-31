@@ -106,6 +106,15 @@ struct GloryApi_User {
   /// Clears the value of `tenantDept`. Subsequent reads from it will return its default value.
   mutating func clearTenantDept() {_uniqueStorage()._tenantDept = nil}
 
+  var role: GloryApi_Role {
+    get {return _storage._role ?? GloryApi_Role()}
+    set {_uniqueStorage()._role = newValue}
+  }
+  /// Returns true if `role` has been explicitly set.
+  var hasRole: Bool {return _storage._role != nil}
+  /// Clears the value of `role`. Subsequent reads from it will return its default value.
+  mutating func clearRole() {_uniqueStorage()._role = nil}
+
   var pages: [GloryApi_PagePermission] {
     get {return _storage._pages}
     set {_uniqueStorage()._pages = newValue}
@@ -1612,8 +1621,9 @@ extension GloryApi_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     8: .same(proto: "seller"),
     9: .standard(proto: "shop_access"),
     10: .standard(proto: "tenant_dept"),
-    11: .same(proto: "pages"),
-    12: .standard(proto: "is_admin"),
+    11: .same(proto: "role"),
+    12: .same(proto: "pages"),
+    13: .standard(proto: "is_admin"),
   ]
 
   fileprivate class _StorageClass {
@@ -1627,6 +1637,7 @@ extension GloryApi_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     var _seller: GloryApi_Seller? = nil
     var _shopAccess: [GloryApi_ShopAccess] = []
     var _tenantDept: GloryApi_TenantDept? = nil
+    var _role: GloryApi_Role? = nil
     var _pages: [GloryApi_PagePermission] = []
     var _isAdmin: Bool = false
 
@@ -1645,6 +1656,7 @@ extension GloryApi_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       _seller = source._seller
       _shopAccess = source._shopAccess
       _tenantDept = source._tenantDept
+      _role = source._role
       _pages = source._pages
       _isAdmin = source._isAdmin
     }
@@ -1675,8 +1687,9 @@ extension GloryApi_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
         case 8: try { try decoder.decodeSingularMessageField(value: &_storage._seller) }()
         case 9: try { try decoder.decodeRepeatedMessageField(value: &_storage._shopAccess) }()
         case 10: try { try decoder.decodeSingularMessageField(value: &_storage._tenantDept) }()
-        case 11: try { try decoder.decodeRepeatedMessageField(value: &_storage._pages) }()
-        case 12: try { try decoder.decodeSingularBoolField(value: &_storage._isAdmin) }()
+        case 11: try { try decoder.decodeSingularMessageField(value: &_storage._role) }()
+        case 12: try { try decoder.decodeRepeatedMessageField(value: &_storage._pages) }()
+        case 13: try { try decoder.decodeSingularBoolField(value: &_storage._isAdmin) }()
         default: break
         }
       }
@@ -1719,11 +1732,14 @@ extension GloryApi_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       try { if let v = _storage._tenantDept {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 10)
       } }()
+      try { if let v = _storage._role {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 11)
+      } }()
       if !_storage._pages.isEmpty {
-        try visitor.visitRepeatedMessageField(value: _storage._pages, fieldNumber: 11)
+        try visitor.visitRepeatedMessageField(value: _storage._pages, fieldNumber: 12)
       }
       if _storage._isAdmin != false {
-        try visitor.visitSingularBoolField(value: _storage._isAdmin, fieldNumber: 12)
+        try visitor.visitSingularBoolField(value: _storage._isAdmin, fieldNumber: 13)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -1744,6 +1760,7 @@ extension GloryApi_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
         if _storage._seller != rhs_storage._seller {return false}
         if _storage._shopAccess != rhs_storage._shopAccess {return false}
         if _storage._tenantDept != rhs_storage._tenantDept {return false}
+        if _storage._role != rhs_storage._role {return false}
         if _storage._pages != rhs_storage._pages {return false}
         if _storage._isAdmin != rhs_storage._isAdmin {return false}
         return true

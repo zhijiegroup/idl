@@ -134,6 +134,19 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 90: {
+            com.zhijiejiaoyu.glory_api.user.Role.Builder subBuilder = null;
+            if (role != null) {
+              subBuilder = role .toBuilder();
+            }
+            role = input.readMessage(com.zhijiejiaoyu.glory_api.user.Role.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(role );
+              role = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 98: {
             if (!((mutable_bitField0 & 0x00000002) != 0)) {
               pages = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.PagePermission>();
               mutable_bitField0_ |= 0x00000002;
@@ -142,7 +155,7 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.zhijiejiaoyu.glory_api.user.PagePermission.parser(), extensionRegistry));
             break;
           }
-          case 96: {
+          case 104: {
 
             isAdmin = input.readBool();
             break;
@@ -536,17 +549,43 @@ private static final long serialVersionUID = 0L;
     return getTenantDept();
   }
 
-  public static final int PAGES_FIELD_NUMBER = 11;
+  public static final int ROLE_FIELD_NUMBER = 11;
+  private com.zhijiejiaoyu.glory_api.user.Role role ;
+  /**
+   * <code>.glory_api.Role role = 11;</code>
+   * @return Whether the role field is set.
+   */
+  @java.lang.Override
+  public boolean hasRole() {
+    return role != null;
+  }
+  /**
+   * <code>.glory_api.Role role = 11;</code>
+   * @return The role.
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.user.Role getRole() {
+    return role == null ? com.zhijiejiaoyu.glory_api.user.Role.getDefaultInstance() : role ;
+  }
+  /**
+   * <code>.glory_api.Role role = 11;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.user.RoleOrBuilder getRoleOrBuilder() {
+    return getRole();
+  }
+
+  public static final int PAGES_FIELD_NUMBER = 12;
   private java.util.List<com.zhijiejiaoyu.glory_api.user.PagePermission> pages ;
   /**
-   * <code>repeated .glory_api.PagePermission pages = 11;</code>
+   * <code>repeated .glory_api.PagePermission pages = 12;</code>
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.user.PagePermission> getPagesList() {
     return pages ;
   }
   /**
-   * <code>repeated .glory_api.PagePermission pages = 11;</code>
+   * <code>repeated .glory_api.PagePermission pages = 12;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder> 
@@ -554,21 +593,21 @@ private static final long serialVersionUID = 0L;
     return pages ;
   }
   /**
-   * <code>repeated .glory_api.PagePermission pages = 11;</code>
+   * <code>repeated .glory_api.PagePermission pages = 12;</code>
    */
   @java.lang.Override
   public int getPagesCount() {
     return pages .size();
   }
   /**
-   * <code>repeated .glory_api.PagePermission pages = 11;</code>
+   * <code>repeated .glory_api.PagePermission pages = 12;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.user.PagePermission getPages(int index) {
     return pages .get(index);
   }
   /**
-   * <code>repeated .glory_api.PagePermission pages = 11;</code>
+   * <code>repeated .glory_api.PagePermission pages = 12;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder getPagesOrBuilder(
@@ -576,10 +615,10 @@ private static final long serialVersionUID = 0L;
     return pages .get(index);
   }
 
-  public static final int IS_ADMIN_FIELD_NUMBER = 12;
+  public static final int IS_ADMIN_FIELD_NUMBER = 13;
   private boolean isAdmin ;
   /**
-   * <code>bool is_admin = 12;</code>
+   * <code>bool is_admin = 13;</code>
    * @return The isAdmin.
    */
   @java.lang.Override
@@ -631,11 +670,14 @@ private static final long serialVersionUID = 0L;
     if (tenantDept != null) {
       output.writeMessage(10, getTenantDept());
     }
+    if (role != null) {
+      output.writeMessage(11, getRole());
+    }
     for (int i = 0; i < pages .size(); i++) {
-      output.writeMessage(11, pages .get(i));
+      output.writeMessage(12, pages .get(i));
     }
     if (isAdmin != false) {
-      output.writeBool(12, isAdmin );
+      output.writeBool(13, isAdmin );
     }
     unknownFields.writeTo(output);
   }
@@ -680,13 +722,17 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(10, getTenantDept());
     }
+    if (role != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(11, getRole());
+    }
     for (int i = 0; i < pages .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(11, pages .get(i));
+        .computeMessageSize(12, pages .get(i));
     }
     if (isAdmin != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(12, isAdmin );
+        .computeBoolSize(13, isAdmin );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -729,6 +775,11 @@ private static final long serialVersionUID = 0L;
       if (!getTenantDept()
           .equals(other.getTenantDept())) return false;
     }
+    if (hasRole() != other.hasRole()) return false;
+    if (hasRole()) {
+      if (!getRole()
+          .equals(other.getRole())) return false;
+    }
     if (!getPagesList()
         .equals(other.getPagesList())) return false;
     if (getIsAdmin()
@@ -770,6 +821,10 @@ private static final long serialVersionUID = 0L;
     if (hasTenantDept()) {
       hash = (37 * hash) + TENANT_DEPT_FIELD_NUMBER;
       hash = (53 * hash) + getTenantDept().hashCode();
+    }
+    if (hasRole()) {
+      hash = (37 * hash) + ROLE_FIELD_NUMBER;
+      hash = (53 * hash) + getRole().hashCode();
     }
     if (getPagesCount() > 0) {
       hash = (37 * hash) + PAGES_FIELD_NUMBER;
@@ -945,6 +1000,12 @@ private static final long serialVersionUID = 0L;
         tenantDept = null;
         tenantDeptBuilder = null;
       }
+      if (roleBuilder == null) {
+        role = null;
+      } else {
+        role = null;
+        roleBuilder = null;
+      }
       if (pagesBuilder == null) {
         pages = java.util.Collections.emptyList();
         bitField0 = (bitField0 & ~0x00000002);
@@ -1005,6 +1066,11 @@ private static final long serialVersionUID = 0L;
         result.tenantDept = tenantDept ;
       } else {
         result.tenantDept = tenantDeptBuilder .build();
+      }
+      if (roleBuilder == null) {
+        result.role = role ;
+      } else {
+        result.role = roleBuilder .build();
       }
       if (pagesBuilder == null) {
         if (((bitField0 & 0x00000002) != 0)) {
@@ -1122,6 +1188,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasTenantDept()) {
         mergeTenantDept(other.getTenantDept());
+      }
+      if (other.hasRole()) {
+        mergeRole(other.getRole());
       }
       if (pagesBuilder == null) {
         if (!other.pages .isEmpty()) {
@@ -2219,6 +2288,125 @@ private static final long serialVersionUID = 0L;
       return tenantDeptBuilder ;
     }
 
+    private com.zhijiejiaoyu.glory_api.user.Role role ;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.user.Role, com.zhijiejiaoyu.glory_api.user.Role.Builder, com.zhijiejiaoyu.glory_api.user.RoleOrBuilder> roleBuilder ;
+    /**
+     * <code>.glory_api.Role role = 11;</code>
+     * @return Whether the role field is set.
+     */
+    public boolean hasRole() {
+      return roleBuilder != null || role != null;
+    }
+    /**
+     * <code>.glory_api.Role role = 11;</code>
+     * @return The role.
+     */
+    public com.zhijiejiaoyu.glory_api.user.Role getRole() {
+      if (roleBuilder == null) {
+        return role == null ? com.zhijiejiaoyu.glory_api.user.Role.getDefaultInstance() : role ;
+      } else {
+        return roleBuilder .getMessage();
+      }
+    }
+    /**
+     * <code>.glory_api.Role role = 11;</code>
+     */
+    public Builder setRole(com.zhijiejiaoyu.glory_api.user.Role value) {
+      if (roleBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        role = value;
+        onChanged();
+      } else {
+        roleBuilder .setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.Role role = 11;</code>
+     */
+    public Builder setRole(
+        com.zhijiejiaoyu.glory_api.user.Role.Builder builderForValue) {
+      if (roleBuilder == null) {
+        role = builderForValue.build();
+        onChanged();
+      } else {
+        roleBuilder .setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.Role role = 11;</code>
+     */
+    public Builder mergeRole(com.zhijiejiaoyu.glory_api.user.Role value) {
+      if (roleBuilder == null) {
+        if (role != null) {
+          role =
+            com.zhijiejiaoyu.glory_api.user.Role.newBuilder(role ).mergeFrom(value).buildPartial();
+        } else {
+          role = value;
+        }
+        onChanged();
+      } else {
+        roleBuilder .mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.Role role = 11;</code>
+     */
+    public Builder clearRole() {
+      if (roleBuilder == null) {
+        role = null;
+        onChanged();
+      } else {
+        role = null;
+        roleBuilder = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.Role role = 11;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.Role.Builder getRoleBuilder() {
+      
+      onChanged();
+      return getRoleFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.glory_api.Role role = 11;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.RoleOrBuilder getRoleOrBuilder() {
+      if (roleBuilder != null) {
+        return roleBuilder .getMessageOrBuilder();
+      } else {
+        return role == null ?
+            com.zhijiejiaoyu.glory_api.user.Role.getDefaultInstance() : role ;
+      }
+    }
+    /**
+     * <code>.glory_api.Role role = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.user.Role, com.zhijiejiaoyu.glory_api.user.Role.Builder, com.zhijiejiaoyu.glory_api.user.RoleOrBuilder> 
+        getRoleFieldBuilder() {
+      if (roleBuilder == null) {
+        roleBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.user.Role, com.zhijiejiaoyu.glory_api.user.Role.Builder, com.zhijiejiaoyu.glory_api.user.RoleOrBuilder>(
+                getRole(),
+                getParentForChildren(),
+                isClean());
+        role = null;
+      }
+      return roleBuilder ;
+    }
+
     private java.util.List<com.zhijiejiaoyu.glory_api.user.PagePermission> pages =
       java.util.Collections.emptyList();
     private void ensurePagesIsMutable() {
@@ -2232,7 +2420,7 @@ private static final long serialVersionUID = 0L;
         com.zhijiejiaoyu.glory_api.user.PagePermission, com.zhijiejiaoyu.glory_api.user.PagePermission.Builder, com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder> pagesBuilder ;
 
     /**
-     * <code>repeated .glory_api.PagePermission pages = 11;</code>
+     * <code>repeated .glory_api.PagePermission pages = 12;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.user.PagePermission> getPagesList() {
       if (pagesBuilder == null) {
@@ -2242,7 +2430,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.PagePermission pages = 11;</code>
+     * <code>repeated .glory_api.PagePermission pages = 12;</code>
      */
     public int getPagesCount() {
       if (pagesBuilder == null) {
@@ -2252,7 +2440,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.PagePermission pages = 11;</code>
+     * <code>repeated .glory_api.PagePermission pages = 12;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.PagePermission getPages(int index) {
       if (pagesBuilder == null) {
@@ -2262,7 +2450,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.PagePermission pages = 11;</code>
+     * <code>repeated .glory_api.PagePermission pages = 12;</code>
      */
     public Builder setPages(
         int index, com.zhijiejiaoyu.glory_api.user.PagePermission value) {
@@ -2279,7 +2467,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.PagePermission pages = 11;</code>
+     * <code>repeated .glory_api.PagePermission pages = 12;</code>
      */
     public Builder setPages(
         int index, com.zhijiejiaoyu.glory_api.user.PagePermission.Builder builderForValue) {
@@ -2293,7 +2481,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.PagePermission pages = 11;</code>
+     * <code>repeated .glory_api.PagePermission pages = 12;</code>
      */
     public Builder addPages(com.zhijiejiaoyu.glory_api.user.PagePermission value) {
       if (pagesBuilder == null) {
@@ -2309,7 +2497,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.PagePermission pages = 11;</code>
+     * <code>repeated .glory_api.PagePermission pages = 12;</code>
      */
     public Builder addPages(
         int index, com.zhijiejiaoyu.glory_api.user.PagePermission value) {
@@ -2326,7 +2514,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.PagePermission pages = 11;</code>
+     * <code>repeated .glory_api.PagePermission pages = 12;</code>
      */
     public Builder addPages(
         com.zhijiejiaoyu.glory_api.user.PagePermission.Builder builderForValue) {
@@ -2340,7 +2528,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.PagePermission pages = 11;</code>
+     * <code>repeated .glory_api.PagePermission pages = 12;</code>
      */
     public Builder addPages(
         int index, com.zhijiejiaoyu.glory_api.user.PagePermission.Builder builderForValue) {
@@ -2354,7 +2542,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.PagePermission pages = 11;</code>
+     * <code>repeated .glory_api.PagePermission pages = 12;</code>
      */
     public Builder addAllPages(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.user.PagePermission> values) {
@@ -2369,7 +2557,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.PagePermission pages = 11;</code>
+     * <code>repeated .glory_api.PagePermission pages = 12;</code>
      */
     public Builder clearPages() {
       if (pagesBuilder == null) {
@@ -2382,7 +2570,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.PagePermission pages = 11;</code>
+     * <code>repeated .glory_api.PagePermission pages = 12;</code>
      */
     public Builder removePages(int index) {
       if (pagesBuilder == null) {
@@ -2395,14 +2583,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.PagePermission pages = 11;</code>
+     * <code>repeated .glory_api.PagePermission pages = 12;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.PagePermission.Builder getPagesBuilder(
         int index) {
       return getPagesFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .glory_api.PagePermission pages = 11;</code>
+     * <code>repeated .glory_api.PagePermission pages = 12;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder getPagesOrBuilder(
         int index) {
@@ -2412,7 +2600,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.PagePermission pages = 11;</code>
+     * <code>repeated .glory_api.PagePermission pages = 12;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder> 
          getPagesOrBuilderList() {
@@ -2423,14 +2611,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.PagePermission pages = 11;</code>
+     * <code>repeated .glory_api.PagePermission pages = 12;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.PagePermission.Builder addPagesBuilder() {
       return getPagesFieldBuilder().addBuilder(
           com.zhijiejiaoyu.glory_api.user.PagePermission.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.PagePermission pages = 11;</code>
+     * <code>repeated .glory_api.PagePermission pages = 12;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.PagePermission.Builder addPagesBuilder(
         int index) {
@@ -2438,7 +2626,7 @@ private static final long serialVersionUID = 0L;
           index, com.zhijiejiaoyu.glory_api.user.PagePermission.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.PagePermission pages = 11;</code>
+     * <code>repeated .glory_api.PagePermission pages = 12;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.user.PagePermission.Builder> 
          getPagesBuilderList() {
@@ -2461,7 +2649,7 @@ private static final long serialVersionUID = 0L;
 
     private boolean isAdmin ;
     /**
-     * <code>bool is_admin = 12;</code>
+     * <code>bool is_admin = 13;</code>
      * @return The isAdmin.
      */
     @java.lang.Override
@@ -2469,7 +2657,7 @@ private static final long serialVersionUID = 0L;
       return isAdmin ;
     }
     /**
-     * <code>bool is_admin = 12;</code>
+     * <code>bool is_admin = 13;</code>
      * @param value The isAdmin to set.
      * @return This builder for chaining.
      */
@@ -2480,7 +2668,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>bool is_admin = 12;</code>
+     * <code>bool is_admin = 13;</code>
      * @return This builder for chaining.
      */
     public Builder clearIsAdmin() {
