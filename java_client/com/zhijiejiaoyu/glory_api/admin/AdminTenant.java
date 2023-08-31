@@ -34,13 +34,13 @@ public final class AdminTenant {
   static {
     java.lang.String[] descriptorData = {
       "\n\030admin/admin_tenant.proto\022\tglory_api\032\nb" +
-      "ase.proto\032\023tenant/tenant.proto\"?\n\024ListTe" +
+      "ase.proto\032\023tenant/tenant.proto\"M\n\024ListTe" +
       "nantOrgRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
-      "ase.BaseRequest\"i\n\025ListTenantOrgResponse" +
-      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022" +
-      ")\n\013tenant_orgs\030\002 \003(\0132\024.glory_api.TenantO" +
-      "rgB$\n com.zhijiejiaoyu.glory_api.adminP\001" +
-      "b\006proto3"
+      "ase.BaseRequest\022\014\n\004name\030\002 \001(\t\"z\n\025ListTen" +
+      "antOrgResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
+      ".BaseResponse\022)\n\013tenant_orgs\030\002 \003(\0132\024.glo" +
+      "ry_api.TenantOrg\022\017\n\007dept_id\030\003 \001(\003B$\n com" +
+      ".zhijiejiaoyu.glory_api.adminP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -53,13 +53,13 @@ public final class AdminTenant {
     internal_static_glory_api_ListTenantOrgRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListTenantOrgRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", });
+        new java.lang.String[] { "BaseRequest", "Name", });
     internal_static_glory_api_ListTenantOrgResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_glory_api_ListTenantOrgResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListTenantOrgResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "TenantOrgs", });
+        new java.lang.String[] { "BaseResp", "TenantOrgs", "DeptId", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
     com.zhijiejiaoyu.glory_api.tenant.TenantOuterClass.getDescriptor();
   }

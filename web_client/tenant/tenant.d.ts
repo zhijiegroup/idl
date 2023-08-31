@@ -97,9 +97,11 @@ export interface TenantOrg {
 export interface GetTenantOrgRequest {
   base_request?: base.BaseRequest;
   tenant_id?: string;
+  name?: string;
 }
 
 export interface GetTenantOrgResponse {
   base_resp?: base.BaseResponse;
   tenant_org?: TenantOrg;
+  dept_id?: string;
 }

@@ -27,4 +27,16 @@ public interface GetTenantOrgRequestOrBuilder extends
    * @return The tenantId.
    */
   long getTenantId();
+
+  /**
+   * <code>string name = 3;</code>
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   * <code>string name = 3;</code>
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString
+      getNameBytes();
 }

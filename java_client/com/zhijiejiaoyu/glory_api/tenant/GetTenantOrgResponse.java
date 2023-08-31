@@ -74,6 +74,11 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 24: {
+
+            deptId = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -158,6 +163,17 @@ private static final long serialVersionUID = 0L;
     return getTenantOrg();
   }
 
+  public static final int DEPT_ID_FIELD_NUMBER = 3;
+  private long deptId ;
+  /**
+   * <code>int64 dept_id = 3;</code>
+   * @return The deptId.
+   */
+  @java.lang.Override
+  public long getDeptId() {
+    return deptId ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -178,6 +194,9 @@ private static final long serialVersionUID = 0L;
     if (tenantOrg != null) {
       output.writeMessage(2, getTenantOrg());
     }
+    if (deptId != 0L) {
+      output.writeInt64(3, deptId );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -194,6 +213,10 @@ private static final long serialVersionUID = 0L;
     if (tenantOrg != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getTenantOrg());
+    }
+    if (deptId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(3, deptId );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -220,6 +243,8 @@ private static final long serialVersionUID = 0L;
       if (!getTenantOrg()
           .equals(other.getTenantOrg())) return false;
     }
+    if (getDeptId()
+        != other.getDeptId()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -239,6 +264,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + TENANT_ORG_FIELD_NUMBER;
       hash = (53 * hash) + getTenantOrg().hashCode();
     }
+    hash = (37 * hash) + DEPT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getDeptId());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -384,6 +412,8 @@ private static final long serialVersionUID = 0L;
         tenantOrg = null;
         tenantOrgBuilder = null;
       }
+      deptId = 0L;
+
       return this;
     }
 
@@ -420,6 +450,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.tenantOrg = tenantOrgBuilder .build();
       }
+      result.deptId = deptId ;
       onBuilt();
       return result;
     }
@@ -473,6 +504,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasTenantOrg()) {
         mergeTenantOrg(other.getTenantOrg());
+      }
+      if (other.getDeptId() != 0L) {
+        setDeptId(other.getDeptId());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -739,6 +773,37 @@ private static final long serialVersionUID = 0L;
         tenantOrg = null;
       }
       return tenantOrgBuilder ;
+    }
+
+    private long deptId ;
+    /**
+     * <code>int64 dept_id = 3;</code>
+     * @return The deptId.
+     */
+    @java.lang.Override
+    public long getDeptId() {
+      return deptId ;
+    }
+    /**
+     * <code>int64 dept_id = 3;</code>
+     * @param value The deptId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeptId(long value) {
+      
+      deptId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 dept_id = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDeptId() {
+      
+      deptId = 0L;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

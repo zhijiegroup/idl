@@ -36,4 +36,10 @@ public interface GetTenantOrgResponseOrBuilder extends
    * <code>.glory_api.TenantOrg tenant_org = 2;</code>
    */
   com.zhijiejiaoyu.glory_api.tenant.TenantOrgOrBuilder getTenantOrgOrBuilder();
+
+  /**
+   * <code>int64 dept_id = 3;</code>
+   * @return The deptId.
+   */
+  long getDeptId();
 }
