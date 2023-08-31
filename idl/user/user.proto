@@ -28,8 +28,9 @@ message User {
   repeated ShopAccess shop_access = 9;  //判断用户的shop访问权限
 
   TenantDept tenant_dept = 10;
-  repeated PagePermission pages = 11;
-  bool is_admin = 12;
+  Role role = 11;
+  repeated PagePermission pages = 12;
+  bool is_admin = 13;
 }
 
 message UserFollow {
