@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
     name = "";
     avatarUrl = "";
     shopAccess = java.util.Collections.emptyList();
+    tenantDept = java.util.Collections.emptyList();
     roles = java.util.Collections.emptyList();
     pages = java.util.Collections.emptyList();
   }
@@ -122,31 +123,27 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 82: {
-            com.zhijiejiaoyu.glory_api.user.TenantDept.Builder subBuilder = null;
-            if (tenantDept != null) {
-              subBuilder = tenantDept .toBuilder();
+            if (!((mutable_bitField0 & 0x00000002) != 0)) {
+              tenantDept = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.TenantDept>();
+              mutable_bitField0_ |= 0x00000002;
             }
-            tenantDept = input.readMessage(com.zhijiejiaoyu.glory_api.user.TenantDept.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(tenantDept );
-              tenantDept = subBuilder.buildPartial();
-            }
-
+            tenantDept .add(
+                input.readMessage(com.zhijiejiaoyu.glory_api.user.TenantDept.parser(), extensionRegistry));
             break;
           }
           case 90: {
-            if (!((mutable_bitField0 & 0x00000002) != 0)) {
+            if (!((mutable_bitField0 & 0x00000004) != 0)) {
               roles = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.Role>();
-              mutable_bitField0_ |= 0x00000002;
+              mutable_bitField0_ |= 0x00000004;
             }
             roles .add(
                 input.readMessage(com.zhijiejiaoyu.glory_api.user.Role.parser(), extensionRegistry));
             break;
           }
           case 98: {
-            if (!((mutable_bitField0 & 0x00000004) != 0)) {
+            if (!((mutable_bitField0 & 0x00000008) != 0)) {
               pages = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.PagePermission>();
-              mutable_bitField0_ |= 0x00000004;
+              mutable_bitField0_ |= 0x00000008;
             }
             pages .add(
                 input.readMessage(com.zhijiejiaoyu.glory_api.user.PagePermission.parser(), extensionRegistry));
@@ -176,9 +173,12 @@ private static final long serialVersionUID = 0L;
         shopAccess = java.util.Collections.unmodifiableList(shopAccess );
       }
       if (((mutable_bitField0 & 0x00000002) != 0)) {
-        roles = java.util.Collections.unmodifiableList(roles );
+        tenantDept = java.util.Collections.unmodifiableList(tenantDept );
       }
       if (((mutable_bitField0 & 0x00000004) != 0)) {
+        roles = java.util.Collections.unmodifiableList(roles );
+      }
+      if (((mutable_bitField0 & 0x00000008) != 0)) {
         pages = java.util.Collections.unmodifiableList(pages );
       }
       this.unknownFields = unknownFields.build();
@@ -524,29 +524,43 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TENANT_DEPT_FIELD_NUMBER = 10;
-  private com.zhijiejiaoyu.glory_api.user.TenantDept tenantDept ;
+  private java.util.List<com.zhijiejiaoyu.glory_api.user.TenantDept> tenantDept ;
   /**
-   * <code>.glory_api.TenantDept tenant_dept = 10;</code>
-   * @return Whether the tenantDept field is set.
+   * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
    */
   @java.lang.Override
-  public boolean hasTenantDept() {
-    return tenantDept != null;
+  public java.util.List<com.zhijiejiaoyu.glory_api.user.TenantDept> getTenantDeptList() {
+    return tenantDept ;
   }
   /**
-   * <code>.glory_api.TenantDept tenant_dept = 10;</code>
-   * @return The tenantDept.
+   * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.user.TenantDept getTenantDept() {
-    return tenantDept == null ? com.zhijiejiaoyu.glory_api.user.TenantDept.getDefaultInstance() : tenantDept ;
+  public java.util.List<? extends com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder> 
+      getTenantDeptOrBuilderList() {
+    return tenantDept ;
   }
   /**
-   * <code>.glory_api.TenantDept tenant_dept = 10;</code>
+   * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getTenantDeptOrBuilder() {
-    return getTenantDept();
+  public int getTenantDeptCount() {
+    return tenantDept .size();
+  }
+  /**
+   * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.user.TenantDept getTenantDept(int index) {
+    return tenantDept .get(index);
+  }
+  /**
+   * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getTenantDeptOrBuilder(
+      int index) {
+    return tenantDept .get(index);
   }
 
   public static final int ROLES_FIELD_NUMBER = 11;
@@ -681,8 +695,8 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < shopAccess .size(); i++) {
       output.writeMessage(9, shopAccess .get(i));
     }
-    if (tenantDept != null) {
-      output.writeMessage(10, getTenantDept());
+    for (int i = 0; i < tenantDept .size(); i++) {
+      output.writeMessage(10, tenantDept .get(i));
     }
     for (int i = 0; i < roles .size(); i++) {
       output.writeMessage(11, roles .get(i));
@@ -732,9 +746,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(9, shopAccess .get(i));
     }
-    if (tenantDept != null) {
+    for (int i = 0; i < tenantDept .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(10, getTenantDept());
+        .computeMessageSize(10, tenantDept .get(i));
     }
     for (int i = 0; i < roles .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
@@ -784,11 +798,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getShopAccessList()
         .equals(other.getShopAccessList())) return false;
-    if (hasTenantDept() != other.hasTenantDept()) return false;
-    if (hasTenantDept()) {
-      if (!getTenantDept()
-          .equals(other.getTenantDept())) return false;
-    }
+    if (!getTenantDeptList()
+        .equals(other.getTenantDeptList())) return false;
     if (!getRolesList()
         .equals(other.getRolesList())) return false;
     if (!getPagesList()
@@ -829,9 +840,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + SHOP_ACCESS_FIELD_NUMBER;
       hash = (53 * hash) + getShopAccessList().hashCode();
     }
-    if (hasTenantDept()) {
+    if (getTenantDeptCount() > 0) {
       hash = (37 * hash) + TENANT_DEPT_FIELD_NUMBER;
-      hash = (53 * hash) + getTenantDept().hashCode();
+      hash = (53 * hash) + getTenantDeptList().hashCode();
     }
     if (getRolesCount() > 0) {
       hash = (37 * hash) + ROLES_FIELD_NUMBER;
@@ -973,6 +984,7 @@ private static final long serialVersionUID = 0L;
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
         getShopAccessFieldBuilder();
+        getTenantDeptFieldBuilder();
         getRolesFieldBuilder();
         getPagesFieldBuilder();
       }
@@ -1007,20 +1019,20 @@ private static final long serialVersionUID = 0L;
         shopAccessBuilder .clear();
       }
       if (tenantDeptBuilder == null) {
-        tenantDept = null;
+        tenantDept = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000002);
       } else {
-        tenantDept = null;
-        tenantDeptBuilder = null;
+        tenantDeptBuilder .clear();
       }
       if (rolesBuilder == null) {
         roles = java.util.Collections.emptyList();
-        bitField0 = (bitField0 & ~0x00000002);
+        bitField0 = (bitField0 & ~0x00000004);
       } else {
         rolesBuilder .clear();
       }
       if (pagesBuilder == null) {
         pages = java.util.Collections.emptyList();
-        bitField0 = (bitField0 & ~0x00000004);
+        bitField0 = (bitField0 & ~0x00000008);
       } else {
         pagesBuilder .clear();
       }
@@ -1075,23 +1087,27 @@ private static final long serialVersionUID = 0L;
         result.shopAccess = shopAccessBuilder .build();
       }
       if (tenantDeptBuilder == null) {
+        if (((bitField0 & 0x00000002) != 0)) {
+          tenantDept = java.util.Collections.unmodifiableList(tenantDept );
+          bitField0 = (bitField0 & ~0x00000002);
+        }
         result.tenantDept = tenantDept ;
       } else {
         result.tenantDept = tenantDeptBuilder .build();
       }
       if (rolesBuilder == null) {
-        if (((bitField0 & 0x00000002) != 0)) {
+        if (((bitField0 & 0x00000004) != 0)) {
           roles = java.util.Collections.unmodifiableList(roles );
-          bitField0 = (bitField0 & ~0x00000002);
+          bitField0 = (bitField0 & ~0x00000004);
         }
         result.roles = roles ;
       } else {
         result.roles = rolesBuilder .build();
       }
       if (pagesBuilder == null) {
-        if (((bitField0 & 0x00000004) != 0)) {
+        if (((bitField0 & 0x00000008) != 0)) {
           pages = java.util.Collections.unmodifiableList(pages );
-          bitField0 = (bitField0 & ~0x00000004);
+          bitField0 = (bitField0 & ~0x00000008);
         }
         result.pages = pages ;
       } else {
@@ -1202,14 +1218,37 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
-      if (other.hasTenantDept()) {
-        mergeTenantDept(other.getTenantDept());
+      if (tenantDeptBuilder == null) {
+        if (!other.tenantDept .isEmpty()) {
+          if (tenantDept .isEmpty()) {
+            tenantDept = other.tenantDept ;
+            bitField0 = (bitField0 & ~0x00000002);
+          } else {
+            ensureTenantDeptIsMutable();
+            tenantDept .addAll(other.tenantDept );
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.tenantDept .isEmpty()) {
+          if (tenantDeptBuilder .isEmpty()) {
+            tenantDeptBuilder .dispose();
+            tenantDeptBuilder = null;
+            tenantDept = other.tenantDept ;
+            bitField0 = (bitField0 & ~0x00000002);
+            tenantDeptBuilder = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getTenantDeptFieldBuilder() : null;
+          } else {
+            tenantDeptBuilder .addAllMessages(other.tenantDept );
+          }
+        }
       }
       if (rolesBuilder == null) {
         if (!other.roles .isEmpty()) {
           if (roles .isEmpty()) {
             roles = other.roles ;
-            bitField0 = (bitField0 & ~0x00000002);
+            bitField0 = (bitField0 & ~0x00000004);
           } else {
             ensureRolesIsMutable();
             roles .addAll(other.roles );
@@ -1222,7 +1261,7 @@ private static final long serialVersionUID = 0L;
             rolesBuilder .dispose();
             rolesBuilder = null;
             roles = other.roles ;
-            bitField0 = (bitField0 & ~0x00000002);
+            bitField0 = (bitField0 & ~0x00000004);
             rolesBuilder = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getRolesFieldBuilder() : null;
@@ -1235,7 +1274,7 @@ private static final long serialVersionUID = 0L;
         if (!other.pages .isEmpty()) {
           if (pages .isEmpty()) {
             pages = other.pages ;
-            bitField0 = (bitField0 & ~0x00000004);
+            bitField0 = (bitField0 & ~0x00000008);
           } else {
             ensurePagesIsMutable();
             pages .addAll(other.pages );
@@ -1248,7 +1287,7 @@ private static final long serialVersionUID = 0L;
             pagesBuilder .dispose();
             pagesBuilder = null;
             pages = other.pages ;
-            bitField0 = (bitField0 & ~0x00000004);
+            bitField0 = (bitField0 & ~0x00000008);
             pagesBuilder = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getPagesFieldBuilder() : null;
@@ -2208,118 +2247,239 @@ private static final long serialVersionUID = 0L;
       return shopAccessBuilder ;
     }
 
-    private com.zhijiejiaoyu.glory_api.user.TenantDept tenantDept ;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.user.TenantDept, com.zhijiejiaoyu.glory_api.user.TenantDept.Builder, com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder> tenantDeptBuilder ;
-    /**
-     * <code>.glory_api.TenantDept tenant_dept = 10;</code>
-     * @return Whether the tenantDept field is set.
-     */
-    public boolean hasTenantDept() {
-      return tenantDeptBuilder != null || tenantDept != null;
+    private java.util.List<com.zhijiejiaoyu.glory_api.user.TenantDept> tenantDept =
+      java.util.Collections.emptyList();
+    private void ensureTenantDeptIsMutable() {
+      if (!((bitField0 & 0x00000002) != 0)) {
+        tenantDept = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.TenantDept>(tenantDept );
+        bitField0_ |= 0x00000002;
+       }
     }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.user.TenantDept, com.zhijiejiaoyu.glory_api.user.TenantDept.Builder, com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder> tenantDeptBuilder ;
+
     /**
-     * <code>.glory_api.TenantDept tenant_dept = 10;</code>
-     * @return The tenantDept.
+     * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
      */
-    public com.zhijiejiaoyu.glory_api.user.TenantDept getTenantDept() {
+    public java.util.List<com.zhijiejiaoyu.glory_api.user.TenantDept> getTenantDeptList() {
       if (tenantDeptBuilder == null) {
-        return tenantDept == null ? com.zhijiejiaoyu.glory_api.user.TenantDept.getDefaultInstance() : tenantDept ;
+        return java.util.Collections.unmodifiableList(tenantDept );
       } else {
-        return tenantDeptBuilder .getMessage();
+        return tenantDeptBuilder .getMessageList();
       }
     }
     /**
-     * <code>.glory_api.TenantDept tenant_dept = 10;</code>
+     * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
      */
-    public Builder setTenantDept(com.zhijiejiaoyu.glory_api.user.TenantDept value) {
+    public int getTenantDeptCount() {
+      if (tenantDeptBuilder == null) {
+        return tenantDept .size();
+      } else {
+        return tenantDeptBuilder .getCount();
+      }
+    }
+    /**
+     * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.TenantDept getTenantDept(int index) {
+      if (tenantDeptBuilder == null) {
+        return tenantDept .get(index);
+      } else {
+        return tenantDeptBuilder .getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+     */
+    public Builder setTenantDept(
+        int index, com.zhijiejiaoyu.glory_api.user.TenantDept value) {
       if (tenantDeptBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        tenantDept = value;
+        ensureTenantDeptIsMutable();
+        tenantDept .set(index, value);
         onChanged();
       } else {
-        tenantDeptBuilder .setMessage(value);
+        tenantDeptBuilder .setMessage(index, value);
       }
-
       return this;
     }
     /**
-     * <code>.glory_api.TenantDept tenant_dept = 10;</code>
+     * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
      */
     public Builder setTenantDept(
+        int index, com.zhijiejiaoyu.glory_api.user.TenantDept.Builder builderForValue) {
+      if (tenantDeptBuilder == null) {
+        ensureTenantDeptIsMutable();
+        tenantDept .set(index, builderForValue.build());
+        onChanged();
+      } else {
+        tenantDeptBuilder .setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+     */
+    public Builder addTenantDept(com.zhijiejiaoyu.glory_api.user.TenantDept value) {
+      if (tenantDeptBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTenantDeptIsMutable();
+        tenantDept .add(value);
+        onChanged();
+      } else {
+        tenantDeptBuilder .addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+     */
+    public Builder addTenantDept(
+        int index, com.zhijiejiaoyu.glory_api.user.TenantDept value) {
+      if (tenantDeptBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTenantDeptIsMutable();
+        tenantDept .add(index, value);
+        onChanged();
+      } else {
+        tenantDeptBuilder .addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+     */
+    public Builder addTenantDept(
         com.zhijiejiaoyu.glory_api.user.TenantDept.Builder builderForValue) {
       if (tenantDeptBuilder == null) {
-        tenantDept = builderForValue.build();
+        ensureTenantDeptIsMutable();
+        tenantDept .add(builderForValue.build());
         onChanged();
       } else {
-        tenantDeptBuilder .setMessage(builderForValue.build());
+        tenantDeptBuilder .addMessage(builderForValue.build());
       }
-
       return this;
     }
     /**
-     * <code>.glory_api.TenantDept tenant_dept = 10;</code>
+     * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
      */
-    public Builder mergeTenantDept(com.zhijiejiaoyu.glory_api.user.TenantDept value) {
+    public Builder addTenantDept(
+        int index, com.zhijiejiaoyu.glory_api.user.TenantDept.Builder builderForValue) {
       if (tenantDeptBuilder == null) {
-        if (tenantDept != null) {
-          tenantDept =
-            com.zhijiejiaoyu.glory_api.user.TenantDept.newBuilder(tenantDept ).mergeFrom(value).buildPartial();
-        } else {
-          tenantDept = value;
-        }
+        ensureTenantDeptIsMutable();
+        tenantDept .add(index, builderForValue.build());
         onChanged();
       } else {
-        tenantDeptBuilder .mergeFrom(value);
+        tenantDeptBuilder .addMessage(index, builderForValue.build());
       }
-
       return this;
     }
     /**
-     * <code>.glory_api.TenantDept tenant_dept = 10;</code>
+     * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+     */
+    public Builder addAllTenantDept(
+        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.user.TenantDept> values) {
+      if (tenantDeptBuilder == null) {
+        ensureTenantDeptIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, tenantDept );
+        onChanged();
+      } else {
+        tenantDeptBuilder .addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
      */
     public Builder clearTenantDept() {
       if (tenantDeptBuilder == null) {
-        tenantDept = null;
+        tenantDept = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000002);
         onChanged();
       } else {
-        tenantDept = null;
-        tenantDeptBuilder = null;
+        tenantDeptBuilder .clear();
       }
-
       return this;
     }
     /**
-     * <code>.glory_api.TenantDept tenant_dept = 10;</code>
+     * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
      */
-    public com.zhijiejiaoyu.glory_api.user.TenantDept.Builder getTenantDeptBuilder() {
-      
-      onChanged();
-      return getTenantDeptFieldBuilder().getBuilder();
+    public Builder removeTenantDept(int index) {
+      if (tenantDeptBuilder == null) {
+        ensureTenantDeptIsMutable();
+        tenantDept .remove(index);
+        onChanged();
+      } else {
+        tenantDeptBuilder .remove(index);
+      }
+      return this;
     }
     /**
-     * <code>.glory_api.TenantDept tenant_dept = 10;</code>
+     * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
      */
-    public com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getTenantDeptOrBuilder() {
-      if (tenantDeptBuilder != null) {
-        return tenantDeptBuilder .getMessageOrBuilder();
-      } else {
-        return tenantDept == null ?
-            com.zhijiejiaoyu.glory_api.user.TenantDept.getDefaultInstance() : tenantDept ;
+    public com.zhijiejiaoyu.glory_api.user.TenantDept.Builder getTenantDeptBuilder(
+        int index) {
+      return getTenantDeptFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getTenantDeptOrBuilder(
+        int index) {
+      if (tenantDeptBuilder == null) {
+        return tenantDept .get(index);  } else {
+        return tenantDeptBuilder .getMessageOrBuilder(index);
       }
     }
     /**
-     * <code>.glory_api.TenantDept tenant_dept = 10;</code>
+     * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
+    public java.util.List<? extends com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder> 
+         getTenantDeptOrBuilderList() {
+      if (tenantDeptBuilder != null) {
+        return tenantDeptBuilder .getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(tenantDept );
+      }
+    }
+    /**
+     * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.TenantDept.Builder addTenantDeptBuilder() {
+      return getTenantDeptFieldBuilder().addBuilder(
+          com.zhijiejiaoyu.glory_api.user.TenantDept.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.TenantDept.Builder addTenantDeptBuilder(
+        int index) {
+      return getTenantDeptFieldBuilder().addBuilder(
+          index, com.zhijiejiaoyu.glory_api.user.TenantDept.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.user.TenantDept.Builder> 
+         getTenantDeptBuilderList() {
+      return getTenantDeptFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.user.TenantDept, com.zhijiejiaoyu.glory_api.user.TenantDept.Builder, com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder> 
         getTenantDeptFieldBuilder() {
       if (tenantDeptBuilder == null) {
-        tenantDeptBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+        tenantDeptBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.user.TenantDept, com.zhijiejiaoyu.glory_api.user.TenantDept.Builder, com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder>(
-                getTenantDept(),
+                tenantDept ,
+                ((bitField0 & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         tenantDept = null;
@@ -2330,9 +2490,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.zhijiejiaoyu.glory_api.user.Role> roles =
       java.util.Collections.emptyList();
     private void ensureRolesIsMutable() {
-      if (!((bitField0 & 0x00000002) != 0)) {
+      if (!((bitField0 & 0x00000004) != 0)) {
         roles = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.Role>(roles );
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
        }
     }
 
@@ -2482,7 +2642,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearRoles() {
       if (rolesBuilder == null) {
         roles = java.util.Collections.emptyList();
-        bitField0 = (bitField0 & ~0x00000002);
+        bitField0 = (bitField0 & ~0x00000004);
         onChanged();
       } else {
         rolesBuilder .clear();
@@ -2559,7 +2719,7 @@ private static final long serialVersionUID = 0L;
         rolesBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.user.Role, com.zhijiejiaoyu.glory_api.user.Role.Builder, com.zhijiejiaoyu.glory_api.user.RoleOrBuilder>(
                 roles ,
-                ((bitField0 & 0x00000002) != 0),
+                ((bitField0 & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         roles = null;
@@ -2570,9 +2730,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.zhijiejiaoyu.glory_api.user.PagePermission> pages =
       java.util.Collections.emptyList();
     private void ensurePagesIsMutable() {
-      if (!((bitField0 & 0x00000004) != 0)) {
+      if (!((bitField0 & 0x00000008) != 0)) {
         pages = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.PagePermission>(pages );
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
        }
     }
 
@@ -2722,7 +2882,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearPages() {
       if (pagesBuilder == null) {
         pages = java.util.Collections.emptyList();
-        bitField0 = (bitField0 & ~0x00000004);
+        bitField0 = (bitField0 & ~0x00000008);
         onChanged();
       } else {
         pagesBuilder .clear();
@@ -2799,7 +2959,7 @@ private static final long serialVersionUID = 0L;
         pagesBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.user.PagePermission, com.zhijiejiaoyu.glory_api.user.PagePermission.Builder, com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder>(
                 pages ,
-                ((bitField0 & 0x00000004) != 0),
+                ((bitField0 & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         pages = null;

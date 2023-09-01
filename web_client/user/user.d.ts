@@ -27,7 +27,7 @@ export interface User {
   seller?: seller.Seller;
   /** 判断用户的shop访问权限 */
   shop_access?: Array<shop.ShopAccess>;
-  tenant_dept?: TenantDept;
+  tenant_dept?: Array<TenantDept>;
   roles?: Array<Role>;
   pages?: Array<PagePermission>;
   is_admin?: boolean;
@@ -214,6 +214,7 @@ int64 source_id =4; // 对应的资源来源id */
   description?: string;
   readonly?: boolean;
   role_permission?: Array<RolePermission>;
+  pages?: Array<PagePermission>;
 }
 
 export interface RolePermission {

@@ -145,19 +145,28 @@ public interface UserOrBuilder extends
       int index);
 
   /**
-   * <code>.glory_api.TenantDept tenant_dept = 10;</code>
-   * @return Whether the tenantDept field is set.
+   * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
    */
-  boolean hasTenantDept();
+  java.util.List<com.zhijiejiaoyu.glory_api.user.TenantDept> 
+      getTenantDeptList();
   /**
-   * <code>.glory_api.TenantDept tenant_dept = 10;</code>
-   * @return The tenantDept.
+   * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
    */
-  com.zhijiejiaoyu.glory_api.user.TenantDept getTenantDept();
+  com.zhijiejiaoyu.glory_api.user.TenantDept getTenantDept(int index);
   /**
-   * <code>.glory_api.TenantDept tenant_dept = 10;</code>
+   * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
    */
-  com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getTenantDeptOrBuilder();
+  int getTenantDeptCount();
+  /**
+   * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+   */
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder> 
+      getTenantDeptOrBuilderList();
+  /**
+   * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+   */
+  com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getTenantDeptOrBuilder(
+      int index);
 
   /**
    * <code>repeated .glory_api.Role roles = 11;</code>

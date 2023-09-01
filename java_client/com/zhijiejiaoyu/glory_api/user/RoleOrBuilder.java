@@ -88,4 +88,28 @@ public interface RoleOrBuilder extends
    */
   com.zhijiejiaoyu.glory_api.user.RolePermissionOrBuilder getRolePermissionOrBuilder(
       int index);
+
+  /**
+   * <code>repeated .glory_api.PagePermission pages = 8;</code>
+   */
+  java.util.List<com.zhijiejiaoyu.glory_api.user.PagePermission> 
+      getPagesList();
+  /**
+   * <code>repeated .glory_api.PagePermission pages = 8;</code>
+   */
+  com.zhijiejiaoyu.glory_api.user.PagePermission getPages(int index);
+  /**
+   * <code>repeated .glory_api.PagePermission pages = 8;</code>
+   */
+  int getPagesCount();
+  /**
+   * <code>repeated .glory_api.PagePermission pages = 8;</code>
+   */
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder> 
+      getPagesOrBuilderList();
+  /**
+   * <code>repeated .glory_api.PagePermission pages = 8;</code>
+   */
+  com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder getPagesOrBuilder(
+      int index);
 }
