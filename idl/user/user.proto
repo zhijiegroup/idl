@@ -179,6 +179,12 @@ message ListPermissionResponse {
 }
 
 message RoleType {
+  // "system_student":        学生
+	// "system_teacher":        专业老师
+	// "system_admin":          学校管理员
+	// "system_short_reviewer": 短视频预审员
+	// "user_define":           自定义
+  
   string label = 1;
   string value = 2;
 }
@@ -195,6 +201,7 @@ message GetRoleTypeResponse {
 message Role {
   int64 role_id = 1;
   string role_name = 2;
+  string role_type = 3;
 //  string source = 3;  // 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
 //  int64 source_id =4; // 对应的资源来源id
   string description = 5;
