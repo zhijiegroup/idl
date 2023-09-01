@@ -160,19 +160,28 @@ public interface UserOrBuilder extends
   com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getTenantDeptOrBuilder();
 
   /**
-   * <code>.glory_api.Role role = 11;</code>
-   * @return Whether the role field is set.
+   * <code>repeated .glory_api.Role roles = 11;</code>
    */
-  boolean hasRole();
+  java.util.List<com.zhijiejiaoyu.glory_api.user.Role> 
+      getRolesList();
   /**
-   * <code>.glory_api.Role role = 11;</code>
-   * @return The role.
+   * <code>repeated .glory_api.Role roles = 11;</code>
    */
-  com.zhijiejiaoyu.glory_api.user.Role getRole();
+  com.zhijiejiaoyu.glory_api.user.Role getRoles(int index);
   /**
-   * <code>.glory_api.Role role = 11;</code>
+   * <code>repeated .glory_api.Role roles = 11;</code>
    */
-  com.zhijiejiaoyu.glory_api.user.RoleOrBuilder getRoleOrBuilder();
+  int getRolesCount();
+  /**
+   * <code>repeated .glory_api.Role roles = 11;</code>
+   */
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.user.RoleOrBuilder> 
+      getRolesOrBuilderList();
+  /**
+   * <code>repeated .glory_api.Role roles = 11;</code>
+   */
+  com.zhijiejiaoyu.glory_api.user.RoleOrBuilder getRolesOrBuilder(
+      int index);
 
   /**
    * <code>repeated .glory_api.PagePermission pages = 12;</code>

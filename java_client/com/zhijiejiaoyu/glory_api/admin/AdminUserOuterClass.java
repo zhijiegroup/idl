@@ -69,42 +69,44 @@ public final class AdminUserOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\026admin/admin_user.proto\022\tglory_api\032\nbas" +
-      "e.proto\"{\n\tAdminUser\022\017\n\007user_id\030\001 \001(\003\022\021\n" +
-      "\tuser_name\030\002 \001(\t\022\022\n\nuser_phone\030\003 \001(\t\022\017\n\007" +
-      "role_id\030\004 \001(\003\022\021\n\trole_name\030\005 \001(\t\022\022\n\ncrea" +
-      "ted_at\030\006 \001(\t\"k\n\026CreateAdminUserRequest\022\'" +
-      "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\022" +
-      "(\n\nadmin_user\030\002 \001(\0132\024.glory_api.AdminUse" +
-      "r\"@\n\027CreateAdminUserResponse\022%\n\tbase_res" +
-      "p\030\001 \001(\0132\022.base.BaseResponse\"k\n\026UpdateAdm" +
-      "inUserRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
-      "se.BaseRequest\022(\n\nadmin_user\030\002 \001(\0132\024.glo" +
-      "ry_api.AdminUser\"@\n\027UpdateAdminUserRespo" +
-      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
-      "se\"R\n\026DeleteAdminUserRequest\022\'\n\014base_req" +
-      "uest\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007user_id" +
-      "\030\002 \001(\003\"@\n\027DeleteAdminUserResponse\022%\n\tbas" +
-      "e_resp\030\001 \001(\0132\022.base.BaseResponse\"z\n\024List" +
-      "AdminUserRequest\022\'\n\014base_request\030\001 \001(\0132\021" +
-      ".base.BaseRequest\022\014\n\004name\030\002 \001(\t\022+\n\npagin" +
-      "ation\030d \001(\0132\027.base.PaginationRequest\"\227\001\n" +
-      "\025ListAdminUserResponse\022%\n\tbase_resp\030\001 \001(" +
-      "\0132\022.base.BaseResponse\022)\n\013admin_users\030\002 \003" +
-      "(\0132\024.glory_api.AdminUser\022,\n\npagination\030d" +
-      " \001(\0132\030.base.PaginationResponseB$\n com.zh" +
-      "ijiejiaoyu.glory_api.adminP\001b\006proto3"
+      "e.proto\032\017user/user.proto\"w\n\tAdminUser\022\017\n" +
+      "\007user_id\030\001 \001(\003\022\021\n\tuser_name\030\002 \001(\t\022\022\n\nuse" +
+      "r_phone\030\003 \001(\t\022\036\n\005roles\030\004 \003(\0132\017.glory_api" +
+      ".Role\022\022\n\ncreated_at\030\006 \001(\t\"k\n\026CreateAdmin" +
+      "UserRequest\022\'\n\014base_request\030\001 \001(\0132\021.base" +
+      ".BaseRequest\022(\n\nadmin_user\030\002 \001(\0132\024.glory" +
+      "_api.AdminUser\"@\n\027CreateAdminUserRespons" +
+      "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
+      "\"k\n\026UpdateAdminUserRequest\022\'\n\014base_reque" +
+      "st\030\001 \001(\0132\021.base.BaseRequest\022(\n\nadmin_use" +
+      "r\030\002 \001(\0132\024.glory_api.AdminUser\"@\n\027UpdateA" +
+      "dminUserResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
+      "se.BaseResponse\"R\n\026DeleteAdminUserReques" +
+      "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
+      "st\022\017\n\007user_id\030\002 \001(\003\"@\n\027DeleteAdminUserRe" +
+      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
+      "ponse\"z\n\024ListAdminUserRequest\022\'\n\014base_re" +
+      "quest\030\001 \001(\0132\021.base.BaseRequest\022\014\n\004name\030\002" +
+      " \001(\t\022+\n\npagination\030d \001(\0132\027.base.Paginati" +
+      "onRequest\"\227\001\n\025ListAdminUserResponse\022%\n\tb" +
+      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\022)\n\013ad" +
+      "min_users\030\002 \003(\0132\024.glory_api.AdminUser\022,\n" +
+      "\npagination\030d \001(\0132\030.base.PaginationRespo" +
+      "nseB$\n com.zhijiejiaoyu.glory_api.adminP" +
+      "\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.zhijiejiaoyu.base.Base.getDescriptor(),
+          com.zhijiejiaoyu.glory_api.user.UserOuterClass.getDescriptor(),
         });
     internal_static_glory_api_AdminUser_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_glory_api_AdminUser_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_AdminUser_descriptor,
-        new java.lang.String[] { "UserId", "UserName", "UserPhone", "RoleId", "RoleName", "CreatedAt", });
+        new java.lang.String[] { "UserId", "UserName", "UserPhone", "Roles", "CreatedAt", });
     internal_static_glory_api_CreateAdminUserRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_glory_api_CreateAdminUserRequest_fieldAccessorTable = new
@@ -154,6 +156,7 @@ public final class AdminUserOuterClass {
         internal_static_glory_api_ListAdminUserResponse_descriptor,
         new java.lang.String[] { "BaseResp", "AdminUsers", "Pagination", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
+    com.zhijiejiaoyu.glory_api.user.UserOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

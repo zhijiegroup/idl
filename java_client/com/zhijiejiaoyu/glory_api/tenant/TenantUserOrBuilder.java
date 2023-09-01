@@ -44,22 +44,28 @@ public interface TenantUserOrBuilder extends
       getNameBytes();
 
   /**
-   * <code>string role = 6;</code>
-   * @return The role.
+   * <code>repeated .glory_api.Role roles = 6;</code>
    */
-  java.lang.String getRole();
+  java.util.List<com.zhijiejiaoyu.glory_api.user.Role> 
+      getRolesList();
   /**
-   * <code>string role = 6;</code>
-   * @return The bytes for role.
+   * <code>repeated .glory_api.Role roles = 6;</code>
    */
-  com.google.protobuf.ByteString
-      getRoleBytes();
-
+  com.zhijiejiaoyu.glory_api.user.Role getRoles(int index);
   /**
-   * <code>int64 role_id = 7;</code>
-   * @return The roleId.
+   * <code>repeated .glory_api.Role roles = 6;</code>
    */
-  long getRoleId();
+  int getRolesCount();
+  /**
+   * <code>repeated .glory_api.Role roles = 6;</code>
+   */
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.user.RoleOrBuilder> 
+      getRolesOrBuilderList();
+  /**
+   * <code>repeated .glory_api.Role roles = 6;</code>
+   */
+  com.zhijiejiaoyu.glory_api.user.RoleOrBuilder getRolesOrBuilder(
+      int index);
 
   /**
    * <code>string dept = 8;</code>

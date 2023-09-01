@@ -33,9 +33,7 @@ struct GloryApi_TenantUser {
 
   var name: String = String()
 
-  var role: String = String()
-
-  var roleID: Int64 = 0
+  var roles: [GloryApi_Role] = []
 
   var dept: String = String()
 
@@ -476,8 +474,7 @@ extension GloryApi_TenantUser: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     2: .standard(proto: "user_id"),
     4: .same(proto: "phone"),
     5: .same(proto: "name"),
-    6: .same(proto: "role"),
-    7: .standard(proto: "role_id"),
+    6: .same(proto: "roles"),
     8: .same(proto: "dept"),
     9: .standard(proto: "dept_id"),
     10: .same(proto: "user"),
@@ -493,8 +490,7 @@ extension GloryApi_TenantUser: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.userID) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.phone) }()
       case 5: try { try decoder.decodeSingularStringField(value: &self.name) }()
-      case 6: try { try decoder.decodeSingularStringField(value: &self.role) }()
-      case 7: try { try decoder.decodeSingularInt64Field(value: &self.roleID) }()
+      case 6: try { try decoder.decodeRepeatedMessageField(value: &self.roles) }()
       case 8: try { try decoder.decodeSingularStringField(value: &self.dept) }()
       case 9: try { try decoder.decodeSingularInt64Field(value: &self.deptID) }()
       case 10: try { try decoder.decodeSingularMessageField(value: &self._user) }()
@@ -520,11 +516,8 @@ extension GloryApi_TenantUser: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     if !self.name.isEmpty {
       try visitor.visitSingularStringField(value: self.name, fieldNumber: 5)
     }
-    if !self.role.isEmpty {
-      try visitor.visitSingularStringField(value: self.role, fieldNumber: 6)
-    }
-    if self.roleID != 0 {
-      try visitor.visitSingularInt64Field(value: self.roleID, fieldNumber: 7)
+    if !self.roles.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.roles, fieldNumber: 6)
     }
     if !self.dept.isEmpty {
       try visitor.visitSingularStringField(value: self.dept, fieldNumber: 8)
@@ -543,8 +536,7 @@ extension GloryApi_TenantUser: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     if lhs.userID != rhs.userID {return false}
     if lhs.phone != rhs.phone {return false}
     if lhs.name != rhs.name {return false}
-    if lhs.role != rhs.role {return false}
-    if lhs.roleID != rhs.roleID {return false}
+    if lhs.roles != rhs.roles {return false}
     if lhs.dept != rhs.dept {return false}
     if lhs.deptID != rhs.deptID {return false}
     if lhs._user != rhs._user {return false}

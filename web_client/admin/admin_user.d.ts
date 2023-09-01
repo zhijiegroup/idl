@@ -3,14 +3,14 @@
 // @ts-nocheck
 
 import * as base from "../base";
-export { base };
+import * as user from "../user/user";
+export { base, user };
 
 export interface AdminUser {
   user_id?: string;
   user_name?: string;
   user_phone?: string;
-  role_id?: string;
-  role_name?: string;
+  roles?: Array<user.Role>;
   created_at?: string;
 }
 

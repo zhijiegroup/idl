@@ -11,8 +11,7 @@ export interface TenantUser {
   user_id?: string;
   phone?: string;
   name?: string;
-  role?: string;
-  role_id?: string;
+  roles?: Array<user.Role>;
   dept?: string;
   dept_id?: string;
   user?: user.User;
