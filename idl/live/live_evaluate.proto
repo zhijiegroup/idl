@@ -63,7 +63,7 @@ message EvaluateDetail {
     repeated EvaluateSubOption suboption = 5;
 }
 
-message ProductPrefession {
+message ProductProfession {
     string product_name = 1;
     string product_class = 2;
     map<string, string> product_attributed = 3;
@@ -73,7 +73,7 @@ message Feedback {
     string enjoyment = 1;
     string logic = 2;
     string innovative = 3;
-    repeated ProductPrefession product_prefession = 4;
+    repeated ProductProfession product_profession = 4;
 }
 
 message AiResult {

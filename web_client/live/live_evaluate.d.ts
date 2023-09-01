@@ -64,7 +64,7 @@ export interface EvaluateDetail {
   suboption?: Array<EvaluateSubOption>;
 }
 
-export interface ProductPrefession {
+export interface ProductProfession {
   product_name?: string;
   product_class?: string;
   product_attributed?: { [key: string]: string };
@@ -74,7 +74,7 @@ export interface Feedback {
   enjoyment?: string;
   logic?: string;
   innovative?: string;
-  product_prefession?: Array<ProductPrefession>;
+  product_profession?: Array<ProductProfession>;
 }
 
 export interface AiResult {

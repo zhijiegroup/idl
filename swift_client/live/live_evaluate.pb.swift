@@ -229,7 +229,7 @@ struct GloryApi_EvaluateDetail {
   init() {}
 }
 
-struct GloryApi_ProductPrefession {
+struct GloryApi_ProductProfession {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -256,7 +256,7 @@ struct GloryApi_Feedback {
 
   var innovative: String = String()
 
-  var productPrefession: [GloryApi_ProductPrefession] = []
+  var productProfession: [GloryApi_ProductProfession] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1256,7 +1256,7 @@ extension GloryApi_ListPersonalEvaluateRequest: @unchecked Sendable {}
 extension GloryApi_ListPersonalEvaluateResponse: @unchecked Sendable {}
 extension GloryApi_EvaluateSubOption: @unchecked Sendable {}
 extension GloryApi_EvaluateDetail: @unchecked Sendable {}
-extension GloryApi_ProductPrefession: @unchecked Sendable {}
+extension GloryApi_ProductProfession: @unchecked Sendable {}
 extension GloryApi_Feedback: @unchecked Sendable {}
 extension GloryApi_AiResult: @unchecked Sendable {}
 extension GloryApi_GetEvaluateDetailRequest: @unchecked Sendable {}
@@ -1729,8 +1729,8 @@ extension GloryApi_EvaluateDetail: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension GloryApi_ProductPrefession: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ProductPrefession"
+extension GloryApi_ProductProfession: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ProductProfession"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "product_name"),
     2: .standard(proto: "product_class"),
@@ -1764,7 +1764,7 @@ extension GloryApi_ProductPrefession: SwiftProtobuf.Message, SwiftProtobuf._Mess
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: GloryApi_ProductPrefession, rhs: GloryApi_ProductPrefession) -> Bool {
+  static func ==(lhs: GloryApi_ProductProfession, rhs: GloryApi_ProductProfession) -> Bool {
     if lhs.productName != rhs.productName {return false}
     if lhs.productClass != rhs.productClass {return false}
     if lhs.productAttributed != rhs.productAttributed {return false}
@@ -1779,7 +1779,7 @@ extension GloryApi_Feedback: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     1: .same(proto: "enjoyment"),
     2: .same(proto: "logic"),
     3: .same(proto: "innovative"),
-    4: .standard(proto: "product_prefession"),
+    4: .standard(proto: "product_profession"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1791,7 +1791,7 @@ extension GloryApi_Feedback: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
       case 1: try { try decoder.decodeSingularStringField(value: &self.enjoyment) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.logic) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.innovative) }()
-      case 4: try { try decoder.decodeRepeatedMessageField(value: &self.productPrefession) }()
+      case 4: try { try decoder.decodeRepeatedMessageField(value: &self.productProfession) }()
       default: break
       }
     }
@@ -1807,8 +1807,8 @@ extension GloryApi_Feedback: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     if !self.innovative.isEmpty {
       try visitor.visitSingularStringField(value: self.innovative, fieldNumber: 3)
     }
-    if !self.productPrefession.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.productPrefession, fieldNumber: 4)
+    if !self.productProfession.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.productProfession, fieldNumber: 4)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1817,7 +1817,7 @@ extension GloryApi_Feedback: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     if lhs.enjoyment != rhs.enjoyment {return false}
     if lhs.logic != rhs.logic {return false}
     if lhs.innovative != rhs.innovative {return false}
-    if lhs.productPrefession != rhs.productPrefession {return false}
+    if lhs.productProfession != rhs.productProfession {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

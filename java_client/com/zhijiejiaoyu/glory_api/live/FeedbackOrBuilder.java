@@ -44,26 +44,26 @@ public interface FeedbackOrBuilder extends
       getInnovativeBytes();
 
   /**
-   * <code>repeated .glory_api.ProductPrefession product_prefession = 4;</code>
+   * <code>repeated .glory_api.ProductProfession product_profession = 4;</code>
    */
-  java.util.List<com.zhijiejiaoyu.glory_api.live.ProductPrefession> 
-      getProductPrefessionList();
+  java.util.List<com.zhijiejiaoyu.glory_api.live.ProductProfession> 
+      getProductProfessionList();
   /**
-   * <code>repeated .glory_api.ProductPrefession product_prefession = 4;</code>
+   * <code>repeated .glory_api.ProductProfession product_profession = 4;</code>
    */
-  com.zhijiejiaoyu.glory_api.live.ProductPrefession getProductPrefession(int index);
+  com.zhijiejiaoyu.glory_api.live.ProductProfession getProductProfession(int index);
   /**
-   * <code>repeated .glory_api.ProductPrefession product_prefession = 4;</code>
+   * <code>repeated .glory_api.ProductProfession product_profession = 4;</code>
    */
-  int getProductPrefessionCount();
+  int getProductProfessionCount();
   /**
-   * <code>repeated .glory_api.ProductPrefession product_prefession = 4;</code>
+   * <code>repeated .glory_api.ProductProfession product_profession = 4;</code>
    */
-  java.util.List<? extends com.zhijiejiaoyu.glory_api.live.ProductPrefessionOrBuilder> 
-      getProductPrefessionOrBuilderList();
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.live.ProductProfessionOrBuilder> 
+      getProductProfessionOrBuilderList();
   /**
-   * <code>repeated .glory_api.ProductPrefession product_prefession = 4;</code>
+   * <code>repeated .glory_api.ProductProfession product_profession = 4;</code>
    */
-  com.zhijiejiaoyu.glory_api.live.ProductPrefessionOrBuilder getProductPrefessionOrBuilder(
+  com.zhijiejiaoyu.glory_api.live.ProductProfessionOrBuilder getProductProfessionOrBuilder(
       int index);
 }
