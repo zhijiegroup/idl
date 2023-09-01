@@ -26,6 +26,18 @@ public interface RoleOrBuilder extends
       getRoleNameBytes();
 
   /**
+   * <code>string role_type = 3;</code>
+   * @return The roleType.
+   */
+  java.lang.String getRoleType();
+  /**
+   * <code>string role_type = 3;</code>
+   * @return The bytes for roleType.
+   */
+  com.google.protobuf.ByteString
+      getRoleTypeBytes();
+
+  /**
    * <pre>
    *  string source = 3;  // 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
    *  int64 source_id =4; // 对应的资源来源id
