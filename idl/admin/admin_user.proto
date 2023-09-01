@@ -2,6 +2,7 @@ syntax = "proto3";
 package glory_api;
 
 import "base.proto";
+import "user/user.proto";
 option java_package = "com.zhijiejiaoyu.glory_api.admin";
 option java_multiple_files = true;
 
@@ -9,8 +10,7 @@ message AdminUser {
     int64 user_id = 1;
     string user_name = 2;
     string user_phone = 3;
-    int64 role_id = 4;
-    string role_name = 5;
+    repeated Role roles = 4;
     string created_at = 6;
 }
 
