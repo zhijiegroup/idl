@@ -19,7 +19,7 @@ private static final long serialVersionUID = 0L;
     enjoyment = "";
     logic = "";
     innovative = "";
-    productPrefession = java.util.Collections.emptyList();
+    productProfession = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -73,11 +73,11 @@ private static final long serialVersionUID = 0L;
           }
           case 34: {
             if (!((mutable_bitField0 & 0x00000001) != 0)) {
-              productPrefession = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.live.ProductPrefession>();
+              productProfession = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.live.ProductProfession>();
               mutable_bitField0_ |= 0x00000001;
             }
-            productPrefession .add(
-                input.readMessage(com.zhijiejiaoyu.glory_api.live.ProductPrefession.parser(), extensionRegistry));
+            productProfession .add(
+                input.readMessage(com.zhijiejiaoyu.glory_api.live.ProductProfession.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -96,7 +96,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0 & 0x00000001) != 0)) {
-        productPrefession = java.util.Collections.unmodifiableList(productPrefession );
+        productProfession = java.util.Collections.unmodifiableList(productProfession );
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -229,44 +229,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int PRODUCT_PREFESSION_FIELD_NUMBER = 4;
-  private java.util.List<com.zhijiejiaoyu.glory_api.live.ProductPrefession> productPrefession ;
+  public static final int PRODUCT_PROFESSION_FIELD_NUMBER = 4;
+  private java.util.List<com.zhijiejiaoyu.glory_api.live.ProductProfession> productProfession ;
   /**
-   * <code>repeated .glory_api.ProductPrefession product_prefession = 4;</code>
+   * <code>repeated .glory_api.ProductProfession product_profession = 4;</code>
    */
   @java.lang.Override
-  public java.util.List<com.zhijiejiaoyu.glory_api.live.ProductPrefession> getProductPrefessionList() {
-    return productPrefession ;
+  public java.util.List<com.zhijiejiaoyu.glory_api.live.ProductProfession> getProductProfessionList() {
+    return productProfession ;
   }
   /**
-   * <code>repeated .glory_api.ProductPrefession product_prefession = 4;</code>
+   * <code>repeated .glory_api.ProductProfession product_profession = 4;</code>
    */
   @java.lang.Override
-  public java.util.List<? extends com.zhijiejiaoyu.glory_api.live.ProductPrefessionOrBuilder> 
-      getProductPrefessionOrBuilderList() {
-    return productPrefession ;
+  public java.util.List<? extends com.zhijiejiaoyu.glory_api.live.ProductProfessionOrBuilder> 
+      getProductProfessionOrBuilderList() {
+    return productProfession ;
   }
   /**
-   * <code>repeated .glory_api.ProductPrefession product_prefession = 4;</code>
+   * <code>repeated .glory_api.ProductProfession product_profession = 4;</code>
    */
   @java.lang.Override
-  public int getProductPrefessionCount() {
-    return productPrefession .size();
+  public int getProductProfessionCount() {
+    return productProfession .size();
   }
   /**
-   * <code>repeated .glory_api.ProductPrefession product_prefession = 4;</code>
+   * <code>repeated .glory_api.ProductProfession product_profession = 4;</code>
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.live.ProductPrefession getProductPrefession(int index) {
-    return productPrefession .get(index);
+  public com.zhijiejiaoyu.glory_api.live.ProductProfession getProductProfession(int index) {
+    return productProfession .get(index);
   }
   /**
-   * <code>repeated .glory_api.ProductPrefession product_prefession = 4;</code>
+   * <code>repeated .glory_api.ProductProfession product_profession = 4;</code>
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.live.ProductPrefessionOrBuilder getProductPrefessionOrBuilder(
+  public com.zhijiejiaoyu.glory_api.live.ProductProfessionOrBuilder getProductProfessionOrBuilder(
       int index) {
-    return productPrefession .get(index);
+    return productProfession .get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -292,8 +292,8 @@ private static final long serialVersionUID = 0L;
     if (!getInnovativeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, innovative );
     }
-    for (int i = 0; i < productPrefession .size(); i++) {
-      output.writeMessage(4, productPrefession .get(i));
+    for (int i = 0; i < productProfession .size(); i++) {
+      output.writeMessage(4, productProfession .get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -313,9 +313,9 @@ private static final long serialVersionUID = 0L;
     if (!getInnovativeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, innovative );
     }
-    for (int i = 0; i < productPrefession .size(); i++) {
+    for (int i = 0; i < productProfession .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, productPrefession .get(i));
+        .computeMessageSize(4, productProfession .get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -338,8 +338,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getLogic())) return false;
     if (!getInnovative()
         .equals(other.getInnovative())) return false;
-    if (!getProductPrefessionList()
-        .equals(other.getProductPrefessionList())) return false;
+    if (!getProductProfessionList()
+        .equals(other.getProductProfessionList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -357,9 +357,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getLogic().hashCode();
     hash = (37 * hash) + INNOVATIVE_FIELD_NUMBER;
     hash = (53 * hash) + getInnovative().hashCode();
-    if (getProductPrefessionCount() > 0) {
-      hash = (37 * hash) + PRODUCT_PREFESSION_FIELD_NUMBER;
-      hash = (53 * hash) + getProductPrefessionList().hashCode();
+    if (getProductProfessionCount() > 0) {
+      hash = (37 * hash) + PRODUCT_PROFESSION_FIELD_NUMBER;
+      hash = (53 * hash) + getProductProfessionList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -489,7 +489,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getProductPrefessionFieldBuilder();
+        getProductProfessionFieldBuilder();
       }
     }
     @java.lang.Override
@@ -501,11 +501,11 @@ private static final long serialVersionUID = 0L;
 
       innovative = "";
 
-      if (productPrefessionBuilder == null) {
-        productPrefession = java.util.Collections.emptyList();
+      if (productProfessionBuilder == null) {
+        productProfession = java.util.Collections.emptyList();
         bitField0 = (bitField0 & ~0x00000001);
       } else {
-        productPrefessionBuilder .clear();
+        productProfessionBuilder .clear();
       }
       return this;
     }
@@ -537,14 +537,14 @@ private static final long serialVersionUID = 0L;
       result.enjoyment = enjoyment ;
       result.logic = logic ;
       result.innovative = innovative ;
-      if (productPrefessionBuilder == null) {
+      if (productProfessionBuilder == null) {
         if (((bitField0 & 0x00000001) != 0)) {
-          productPrefession = java.util.Collections.unmodifiableList(productPrefession );
+          productProfession = java.util.Collections.unmodifiableList(productProfession );
           bitField0 = (bitField0 & ~0x00000001);
         }
-        result.productPrefession = productPrefession ;
+        result.productProfession = productProfession ;
       } else {
-        result.productPrefession = productPrefessionBuilder .build();
+        result.productProfession = productProfessionBuilder .build();
       }
       onBuilt();
       return result;
@@ -606,29 +606,29 @@ private static final long serialVersionUID = 0L;
         innovative = other.innovative ;
         onChanged();
       }
-      if (productPrefessionBuilder == null) {
-        if (!other.productPrefession .isEmpty()) {
-          if (productPrefession .isEmpty()) {
-            productPrefession = other.productPrefession ;
+      if (productProfessionBuilder == null) {
+        if (!other.productProfession .isEmpty()) {
+          if (productProfession .isEmpty()) {
+            productProfession = other.productProfession ;
             bitField0 = (bitField0 & ~0x00000001);
           } else {
-            ensureProductPrefessionIsMutable();
-            productPrefession .addAll(other.productPrefession );
+            ensureProductProfessionIsMutable();
+            productProfession .addAll(other.productProfession );
           }
           onChanged();
         }
       } else {
-        if (!other.productPrefession .isEmpty()) {
-          if (productPrefessionBuilder .isEmpty()) {
-            productPrefessionBuilder .dispose();
-            productPrefessionBuilder = null;
-            productPrefession = other.productPrefession ;
+        if (!other.productProfession .isEmpty()) {
+          if (productProfessionBuilder .isEmpty()) {
+            productProfessionBuilder .dispose();
+            productProfessionBuilder = null;
+            productProfession = other.productProfession ;
             bitField0 = (bitField0 & ~0x00000001);
-            productPrefessionBuilder = 
+            productProfessionBuilder = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getProductPrefessionFieldBuilder() : null;
+                 getProductProfessionFieldBuilder() : null;
           } else {
-            productPrefessionBuilder .addAllMessages(other.productPrefession );
+            productProfessionBuilder .addAllMessages(other.productProfession );
           }
         }
       }
@@ -890,244 +890,244 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.util.List<com.zhijiejiaoyu.glory_api.live.ProductPrefession> productPrefession =
+    private java.util.List<com.zhijiejiaoyu.glory_api.live.ProductProfession> productProfession =
       java.util.Collections.emptyList();
-    private void ensureProductPrefessionIsMutable() {
+    private void ensureProductProfessionIsMutable() {
       if (!((bitField0 & 0x00000001) != 0)) {
-        productPrefession = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.live.ProductPrefession>(productPrefession );
+        productProfession = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.live.ProductProfession>(productProfession );
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.live.ProductPrefession, com.zhijiejiaoyu.glory_api.live.ProductPrefession.Builder, com.zhijiejiaoyu.glory_api.live.ProductPrefessionOrBuilder> productPrefessionBuilder ;
+        com.zhijiejiaoyu.glory_api.live.ProductProfession, com.zhijiejiaoyu.glory_api.live.ProductProfession.Builder, com.zhijiejiaoyu.glory_api.live.ProductProfessionOrBuilder> productProfessionBuilder ;
 
     /**
-     * <code>repeated .glory_api.ProductPrefession product_prefession = 4;</code>
+     * <code>repeated .glory_api.ProductProfession product_profession = 4;</code>
      */
-    public java.util.List<com.zhijiejiaoyu.glory_api.live.ProductPrefession> getProductPrefessionList() {
-      if (productPrefessionBuilder == null) {
-        return java.util.Collections.unmodifiableList(productPrefession );
+    public java.util.List<com.zhijiejiaoyu.glory_api.live.ProductProfession> getProductProfessionList() {
+      if (productProfessionBuilder == null) {
+        return java.util.Collections.unmodifiableList(productProfession );
       } else {
-        return productPrefessionBuilder .getMessageList();
+        return productProfessionBuilder .getMessageList();
       }
     }
     /**
-     * <code>repeated .glory_api.ProductPrefession product_prefession = 4;</code>
+     * <code>repeated .glory_api.ProductProfession product_profession = 4;</code>
      */
-    public int getProductPrefessionCount() {
-      if (productPrefessionBuilder == null) {
-        return productPrefession .size();
+    public int getProductProfessionCount() {
+      if (productProfessionBuilder == null) {
+        return productProfession .size();
       } else {
-        return productPrefessionBuilder .getCount();
+        return productProfessionBuilder .getCount();
       }
     }
     /**
-     * <code>repeated .glory_api.ProductPrefession product_prefession = 4;</code>
+     * <code>repeated .glory_api.ProductProfession product_profession = 4;</code>
      */
-    public com.zhijiejiaoyu.glory_api.live.ProductPrefession getProductPrefession(int index) {
-      if (productPrefessionBuilder == null) {
-        return productPrefession .get(index);
+    public com.zhijiejiaoyu.glory_api.live.ProductProfession getProductProfession(int index) {
+      if (productProfessionBuilder == null) {
+        return productProfession .get(index);
       } else {
-        return productPrefessionBuilder .getMessage(index);
+        return productProfessionBuilder .getMessage(index);
       }
     }
     /**
-     * <code>repeated .glory_api.ProductPrefession product_prefession = 4;</code>
+     * <code>repeated .glory_api.ProductProfession product_profession = 4;</code>
      */
-    public Builder setProductPrefession(
-        int index, com.zhijiejiaoyu.glory_api.live.ProductPrefession value) {
-      if (productPrefessionBuilder == null) {
+    public Builder setProductProfession(
+        int index, com.zhijiejiaoyu.glory_api.live.ProductProfession value) {
+      if (productProfessionBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureProductPrefessionIsMutable();
-        productPrefession .set(index, value);
+        ensureProductProfessionIsMutable();
+        productProfession .set(index, value);
         onChanged();
       } else {
-        productPrefessionBuilder .setMessage(index, value);
+        productProfessionBuilder .setMessage(index, value);
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.ProductPrefession product_prefession = 4;</code>
+     * <code>repeated .glory_api.ProductProfession product_profession = 4;</code>
      */
-    public Builder setProductPrefession(
-        int index, com.zhijiejiaoyu.glory_api.live.ProductPrefession.Builder builderForValue) {
-      if (productPrefessionBuilder == null) {
-        ensureProductPrefessionIsMutable();
-        productPrefession .set(index, builderForValue.build());
+    public Builder setProductProfession(
+        int index, com.zhijiejiaoyu.glory_api.live.ProductProfession.Builder builderForValue) {
+      if (productProfessionBuilder == null) {
+        ensureProductProfessionIsMutable();
+        productProfession .set(index, builderForValue.build());
         onChanged();
       } else {
-        productPrefessionBuilder .setMessage(index, builderForValue.build());
+        productProfessionBuilder .setMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.ProductPrefession product_prefession = 4;</code>
+     * <code>repeated .glory_api.ProductProfession product_profession = 4;</code>
      */
-    public Builder addProductPrefession(com.zhijiejiaoyu.glory_api.live.ProductPrefession value) {
-      if (productPrefessionBuilder == null) {
+    public Builder addProductProfession(com.zhijiejiaoyu.glory_api.live.ProductProfession value) {
+      if (productProfessionBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureProductPrefessionIsMutable();
-        productPrefession .add(value);
+        ensureProductProfessionIsMutable();
+        productProfession .add(value);
         onChanged();
       } else {
-        productPrefessionBuilder .addMessage(value);
+        productProfessionBuilder .addMessage(value);
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.ProductPrefession product_prefession = 4;</code>
+     * <code>repeated .glory_api.ProductProfession product_profession = 4;</code>
      */
-    public Builder addProductPrefession(
-        int index, com.zhijiejiaoyu.glory_api.live.ProductPrefession value) {
-      if (productPrefessionBuilder == null) {
+    public Builder addProductProfession(
+        int index, com.zhijiejiaoyu.glory_api.live.ProductProfession value) {
+      if (productProfessionBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureProductPrefessionIsMutable();
-        productPrefession .add(index, value);
+        ensureProductProfessionIsMutable();
+        productProfession .add(index, value);
         onChanged();
       } else {
-        productPrefessionBuilder .addMessage(index, value);
+        productProfessionBuilder .addMessage(index, value);
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.ProductPrefession product_prefession = 4;</code>
+     * <code>repeated .glory_api.ProductProfession product_profession = 4;</code>
      */
-    public Builder addProductPrefession(
-        com.zhijiejiaoyu.glory_api.live.ProductPrefession.Builder builderForValue) {
-      if (productPrefessionBuilder == null) {
-        ensureProductPrefessionIsMutable();
-        productPrefession .add(builderForValue.build());
+    public Builder addProductProfession(
+        com.zhijiejiaoyu.glory_api.live.ProductProfession.Builder builderForValue) {
+      if (productProfessionBuilder == null) {
+        ensureProductProfessionIsMutable();
+        productProfession .add(builderForValue.build());
         onChanged();
       } else {
-        productPrefessionBuilder .addMessage(builderForValue.build());
+        productProfessionBuilder .addMessage(builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.ProductPrefession product_prefession = 4;</code>
+     * <code>repeated .glory_api.ProductProfession product_profession = 4;</code>
      */
-    public Builder addProductPrefession(
-        int index, com.zhijiejiaoyu.glory_api.live.ProductPrefession.Builder builderForValue) {
-      if (productPrefessionBuilder == null) {
-        ensureProductPrefessionIsMutable();
-        productPrefession .add(index, builderForValue.build());
+    public Builder addProductProfession(
+        int index, com.zhijiejiaoyu.glory_api.live.ProductProfession.Builder builderForValue) {
+      if (productProfessionBuilder == null) {
+        ensureProductProfessionIsMutable();
+        productProfession .add(index, builderForValue.build());
         onChanged();
       } else {
-        productPrefessionBuilder .addMessage(index, builderForValue.build());
+        productProfessionBuilder .addMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.ProductPrefession product_prefession = 4;</code>
+     * <code>repeated .glory_api.ProductProfession product_profession = 4;</code>
      */
-    public Builder addAllProductPrefession(
-        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.live.ProductPrefession> values) {
-      if (productPrefessionBuilder == null) {
-        ensureProductPrefessionIsMutable();
+    public Builder addAllProductProfession(
+        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.live.ProductProfession> values) {
+      if (productProfessionBuilder == null) {
+        ensureProductProfessionIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, productPrefession );
+            values, productProfession );
         onChanged();
       } else {
-        productPrefessionBuilder .addAllMessages(values);
+        productProfessionBuilder .addAllMessages(values);
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.ProductPrefession product_prefession = 4;</code>
+     * <code>repeated .glory_api.ProductProfession product_profession = 4;</code>
      */
-    public Builder clearProductPrefession() {
-      if (productPrefessionBuilder == null) {
-        productPrefession = java.util.Collections.emptyList();
+    public Builder clearProductProfession() {
+      if (productProfessionBuilder == null) {
+        productProfession = java.util.Collections.emptyList();
         bitField0 = (bitField0 & ~0x00000001);
         onChanged();
       } else {
-        productPrefessionBuilder .clear();
+        productProfessionBuilder .clear();
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.ProductPrefession product_prefession = 4;</code>
+     * <code>repeated .glory_api.ProductProfession product_profession = 4;</code>
      */
-    public Builder removeProductPrefession(int index) {
-      if (productPrefessionBuilder == null) {
-        ensureProductPrefessionIsMutable();
-        productPrefession .remove(index);
+    public Builder removeProductProfession(int index) {
+      if (productProfessionBuilder == null) {
+        ensureProductProfessionIsMutable();
+        productProfession .remove(index);
         onChanged();
       } else {
-        productPrefessionBuilder .remove(index);
+        productProfessionBuilder .remove(index);
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.ProductPrefession product_prefession = 4;</code>
+     * <code>repeated .glory_api.ProductProfession product_profession = 4;</code>
      */
-    public com.zhijiejiaoyu.glory_api.live.ProductPrefession.Builder getProductPrefessionBuilder(
+    public com.zhijiejiaoyu.glory_api.live.ProductProfession.Builder getProductProfessionBuilder(
         int index) {
-      return getProductPrefessionFieldBuilder().getBuilder(index);
+      return getProductProfessionFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .glory_api.ProductPrefession product_prefession = 4;</code>
+     * <code>repeated .glory_api.ProductProfession product_profession = 4;</code>
      */
-    public com.zhijiejiaoyu.glory_api.live.ProductPrefessionOrBuilder getProductPrefessionOrBuilder(
+    public com.zhijiejiaoyu.glory_api.live.ProductProfessionOrBuilder getProductProfessionOrBuilder(
         int index) {
-      if (productPrefessionBuilder == null) {
-        return productPrefession .get(index);  } else {
-        return productPrefessionBuilder .getMessageOrBuilder(index);
+      if (productProfessionBuilder == null) {
+        return productProfession .get(index);  } else {
+        return productProfessionBuilder .getMessageOrBuilder(index);
       }
     }
     /**
-     * <code>repeated .glory_api.ProductPrefession product_prefession = 4;</code>
+     * <code>repeated .glory_api.ProductProfession product_profession = 4;</code>
      */
-    public java.util.List<? extends com.zhijiejiaoyu.glory_api.live.ProductPrefessionOrBuilder> 
-         getProductPrefessionOrBuilderList() {
-      if (productPrefessionBuilder != null) {
-        return productPrefessionBuilder .getMessageOrBuilderList();
+    public java.util.List<? extends com.zhijiejiaoyu.glory_api.live.ProductProfessionOrBuilder> 
+         getProductProfessionOrBuilderList() {
+      if (productProfessionBuilder != null) {
+        return productProfessionBuilder .getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(productPrefession );
+        return java.util.Collections.unmodifiableList(productProfession );
       }
     }
     /**
-     * <code>repeated .glory_api.ProductPrefession product_prefession = 4;</code>
+     * <code>repeated .glory_api.ProductProfession product_profession = 4;</code>
      */
-    public com.zhijiejiaoyu.glory_api.live.ProductPrefession.Builder addProductPrefessionBuilder() {
-      return getProductPrefessionFieldBuilder().addBuilder(
-          com.zhijiejiaoyu.glory_api.live.ProductPrefession.getDefaultInstance());
+    public com.zhijiejiaoyu.glory_api.live.ProductProfession.Builder addProductProfessionBuilder() {
+      return getProductProfessionFieldBuilder().addBuilder(
+          com.zhijiejiaoyu.glory_api.live.ProductProfession.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.ProductPrefession product_prefession = 4;</code>
+     * <code>repeated .glory_api.ProductProfession product_profession = 4;</code>
      */
-    public com.zhijiejiaoyu.glory_api.live.ProductPrefession.Builder addProductPrefessionBuilder(
+    public com.zhijiejiaoyu.glory_api.live.ProductProfession.Builder addProductProfessionBuilder(
         int index) {
-      return getProductPrefessionFieldBuilder().addBuilder(
-          index, com.zhijiejiaoyu.glory_api.live.ProductPrefession.getDefaultInstance());
+      return getProductProfessionFieldBuilder().addBuilder(
+          index, com.zhijiejiaoyu.glory_api.live.ProductProfession.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.ProductPrefession product_prefession = 4;</code>
+     * <code>repeated .glory_api.ProductProfession product_profession = 4;</code>
      */
-    public java.util.List<com.zhijiejiaoyu.glory_api.live.ProductPrefession.Builder> 
-         getProductPrefessionBuilderList() {
-      return getProductPrefessionFieldBuilder().getBuilderList();
+    public java.util.List<com.zhijiejiaoyu.glory_api.live.ProductProfession.Builder> 
+         getProductProfessionBuilderList() {
+      return getProductProfessionFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.live.ProductPrefession, com.zhijiejiaoyu.glory_api.live.ProductPrefession.Builder, com.zhijiejiaoyu.glory_api.live.ProductPrefessionOrBuilder> 
-        getProductPrefessionFieldBuilder() {
-      if (productPrefessionBuilder == null) {
-        productPrefessionBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.zhijiejiaoyu.glory_api.live.ProductPrefession, com.zhijiejiaoyu.glory_api.live.ProductPrefession.Builder, com.zhijiejiaoyu.glory_api.live.ProductPrefessionOrBuilder>(
-                productPrefession ,
+        com.zhijiejiaoyu.glory_api.live.ProductProfession, com.zhijiejiaoyu.glory_api.live.ProductProfession.Builder, com.zhijiejiaoyu.glory_api.live.ProductProfessionOrBuilder> 
+        getProductProfessionFieldBuilder() {
+      if (productProfessionBuilder == null) {
+        productProfessionBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.live.ProductProfession, com.zhijiejiaoyu.glory_api.live.ProductProfession.Builder, com.zhijiejiaoyu.glory_api.live.ProductProfessionOrBuilder>(
+                productProfession ,
                 ((bitField0 & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        productPrefession = null;
+        productProfession = null;
       }
-      return productPrefessionBuilder ;
+      return productProfessionBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

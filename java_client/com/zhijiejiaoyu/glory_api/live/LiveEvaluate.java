@@ -55,15 +55,15 @@ public final class LiveEvaluate {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_EvaluateDetail_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_ProductPrefession_descriptor;
+    internal_static_glory_api_ProductProfession_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_ProductPrefession_fieldAccessorTable;
+      internal_static_glory_api_ProductProfession_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_ProductPrefession_ProductAttributedEntry_descriptor;
+    internal_static_glory_api_ProductProfession_ProductAttributedEntry_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_ProductPrefession_ProductAttributedEntry_fieldAccessorTable;
+      internal_static_glory_api_ProductProfession_ProductAttributedEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_glory_api_Feedback_descriptor;
   static final 
@@ -290,15 +290,15 @@ public final class LiveEvaluate {
       "luateDetail\022\016\n\006option\030\001 \001(\t\022\r\n\005total\030\002 \001" +
       "(\001\022\r\n\005score\030\003 \001(\t\022\021\n\tis_expand\030\004 \001(\010\022/\n\t" +
       "suboption\030\005 \003(\0132\034.glory_api.EvaluateSubO" +
-      "ption\"\313\001\n\021ProductPrefession\022\024\n\014product_n" +
+      "ption\"\313\001\n\021ProductProfession\022\024\n\014product_n" +
       "ame\030\001 \001(\t\022\025\n\rproduct_class\030\002 \001(\t\022O\n\022prod" +
       "uct_attributed\030\003 \003(\01323.glory_api.Product" +
-      "Prefession.ProductAttributedEntry\0328\n\026Pro" +
+      "Profession.ProductAttributedEntry\0328\n\026Pro" +
       "ductAttributedEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu" +
       "e\030\002 \001(\t:\0028\001\"z\n\010Feedback\022\021\n\tenjoyment\030\001 \001" +
       "(\t\022\r\n\005logic\030\002 \001(\t\022\022\n\ninnovative\030\003 \001(\t\0228\n" +
-      "\022product_prefession\030\004 \003(\0132\034.glory_api.Pr" +
-      "oductPrefession\"\212\001\n\010AiResult\022\033\n\023live_ai_" +
+      "\022product_profession\030\004 \003(\0132\034.glory_api.Pr" +
+      "oductProfession\"\212\001\n\010AiResult\022\033\n\023live_ai_" +
       "feedback_id\030\001 \001(\003\022\017\n\007room_id\030\002 \001(\003\022%\n\010fe" +
       "edback\030\003 \001(\0132\023.glory_api.Feedback\022\025\n\ruse" +
       "r_attitude\030\004 \001(\t\022\022\n\ncreated_at\030\005 \001(\t\"\201\001\n" +
@@ -477,24 +477,24 @@ public final class LiveEvaluate {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_EvaluateDetail_descriptor,
         new java.lang.String[] { "Option", "Total", "Score", "IsExpand", "Suboption", });
-    internal_static_glory_api_ProductPrefession_descriptor =
+    internal_static_glory_api_ProductProfession_descriptor =
       getDescriptor().getMessageTypes().get(8);
-    internal_static_glory_api_ProductPrefession_fieldAccessorTable = new
+    internal_static_glory_api_ProductProfession_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_ProductPrefession_descriptor,
+        internal_static_glory_api_ProductProfession_descriptor,
         new java.lang.String[] { "ProductName", "ProductClass", "ProductAttributed", });
-    internal_static_glory_api_ProductPrefession_ProductAttributedEntry_descriptor =
-      internal_static_glory_api_ProductPrefession_descriptor.getNestedTypes().get(0);
-    internal_static_glory_api_ProductPrefession_ProductAttributedEntry_fieldAccessorTable = new
+    internal_static_glory_api_ProductProfession_ProductAttributedEntry_descriptor =
+      internal_static_glory_api_ProductProfession_descriptor.getNestedTypes().get(0);
+    internal_static_glory_api_ProductProfession_ProductAttributedEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_ProductPrefession_ProductAttributedEntry_descriptor,
+        internal_static_glory_api_ProductProfession_ProductAttributedEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_glory_api_Feedback_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_glory_api_Feedback_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_Feedback_descriptor,
-        new java.lang.String[] { "Enjoyment", "Logic", "Innovative", "ProductPrefession", });
+        new java.lang.String[] { "Enjoyment", "Logic", "Innovative", "ProductProfession", });
     internal_static_glory_api_AiResult_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_glory_api_AiResult_fieldAccessorTable = new
