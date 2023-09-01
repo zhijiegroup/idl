@@ -38,22 +38,28 @@ public interface AdminUserOrBuilder extends
       getUserPhoneBytes();
 
   /**
-   * <code>int64 role_id = 4;</code>
-   * @return The roleId.
+   * <code>repeated .glory_api.Role roles = 4;</code>
    */
-  long getRoleId();
-
+  java.util.List<com.zhijiejiaoyu.glory_api.user.Role> 
+      getRolesList();
   /**
-   * <code>string role_name = 5;</code>
-   * @return The roleName.
+   * <code>repeated .glory_api.Role roles = 4;</code>
    */
-  java.lang.String getRoleName();
+  com.zhijiejiaoyu.glory_api.user.Role getRoles(int index);
   /**
-   * <code>string role_name = 5;</code>
-   * @return The bytes for roleName.
+   * <code>repeated .glory_api.Role roles = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getRoleNameBytes();
+  int getRolesCount();
+  /**
+   * <code>repeated .glory_api.Role roles = 4;</code>
+   */
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.user.RoleOrBuilder> 
+      getRolesOrBuilderList();
+  /**
+   * <code>repeated .glory_api.Role roles = 4;</code>
+   */
+  com.zhijiejiaoyu.glory_api.user.RoleOrBuilder getRolesOrBuilder(
+      int index);
 
   /**
    * <code>string created_at = 6;</code>

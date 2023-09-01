@@ -28,7 +28,7 @@ export interface User {
   /** 判断用户的shop访问权限 */
   shop_access?: Array<shop.ShopAccess>;
   tenant_dept?: TenantDept;
-  role?: Role;
+  roles?: Array<Role>;
   pages?: Array<PagePermission>;
   is_admin?: boolean;
 }

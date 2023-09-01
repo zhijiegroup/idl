@@ -31,9 +31,7 @@ struct GloryApi_AdminUser {
 
   var userPhone: String = String()
 
-  var roleID: Int64 = 0
-
-  var roleName: String = String()
+  var roles: [GloryApi_Role] = []
 
   var createdAt: String = String()
 
@@ -278,8 +276,7 @@ extension GloryApi_AdminUser: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     1: .standard(proto: "user_id"),
     2: .standard(proto: "user_name"),
     3: .standard(proto: "user_phone"),
-    4: .standard(proto: "role_id"),
-    5: .standard(proto: "role_name"),
+    4: .same(proto: "roles"),
     6: .standard(proto: "created_at"),
   ]
 
@@ -292,8 +289,7 @@ extension GloryApi_AdminUser: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
       case 1: try { try decoder.decodeSingularInt64Field(value: &self.userID) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.userName) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.userPhone) }()
-      case 4: try { try decoder.decodeSingularInt64Field(value: &self.roleID) }()
-      case 5: try { try decoder.decodeSingularStringField(value: &self.roleName) }()
+      case 4: try { try decoder.decodeRepeatedMessageField(value: &self.roles) }()
       case 6: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
       default: break
       }
@@ -310,11 +306,8 @@ extension GloryApi_AdminUser: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     if !self.userPhone.isEmpty {
       try visitor.visitSingularStringField(value: self.userPhone, fieldNumber: 3)
     }
-    if self.roleID != 0 {
-      try visitor.visitSingularInt64Field(value: self.roleID, fieldNumber: 4)
-    }
-    if !self.roleName.isEmpty {
-      try visitor.visitSingularStringField(value: self.roleName, fieldNumber: 5)
+    if !self.roles.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.roles, fieldNumber: 4)
     }
     if !self.createdAt.isEmpty {
       try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 6)
@@ -326,8 +319,7 @@ extension GloryApi_AdminUser: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     if lhs.userID != rhs.userID {return false}
     if lhs.userName != rhs.userName {return false}
     if lhs.userPhone != rhs.userPhone {return false}
-    if lhs.roleID != rhs.roleID {return false}
-    if lhs.roleName != rhs.roleName {return false}
+    if lhs.roles != rhs.roles {return false}
     if lhs.createdAt != rhs.createdAt {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

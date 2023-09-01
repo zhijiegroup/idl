@@ -18,7 +18,7 @@ private static final long serialVersionUID = 0L;
   private TenantUser() {
     phone = "";
     name = "";
-    role = "";
+    roles = java.util.Collections.emptyList();
     dept = "";
   }
 
@@ -42,6 +42,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0 = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -75,14 +76,12 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            role = s;
-            break;
-          }
-          case 56: {
-
-            roleId = input.readInt64();
+            if (!((mutable_bitField0 & 0x00000001) != 0)) {
+              roles = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.Role>();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            roles .add(
+                input.readMessage(com.zhijiejiaoyu.glory_api.user.Role.parser(), extensionRegistry));
             break;
           }
           case 66: {
@@ -124,6 +123,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0 & 0x00000001) != 0)) {
+        roles = java.util.Collections.unmodifiableList(roles );
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -239,53 +241,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int ROLE_FIELD_NUMBER = 6;
-  private volatile java.lang.Object role ;
+  public static final int ROLES_FIELD_NUMBER = 6;
+  private java.util.List<com.zhijiejiaoyu.glory_api.user.Role> roles ;
   /**
-   * <code>string role = 6;</code>
-   * @return The role.
+   * <code>repeated .glory_api.Role roles = 6;</code>
    */
   @java.lang.Override
-  public java.lang.String getRole() {
-    java.lang.Object ref = role ;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      role = s;
-      return s;
-    }
+  public java.util.List<com.zhijiejiaoyu.glory_api.user.Role> getRolesList() {
+    return roles ;
   }
   /**
-   * <code>string role = 6;</code>
-   * @return The bytes for role.
+   * <code>repeated .glory_api.Role roles = 6;</code>
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getRoleBytes() {
-    java.lang.Object ref = role ;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      role = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public java.util.List<? extends com.zhijiejiaoyu.glory_api.user.RoleOrBuilder> 
+      getRolesOrBuilderList() {
+    return roles ;
   }
-
-  public static final int ROLE_ID_FIELD_NUMBER = 7;
-  private long roleId ;
   /**
-   * <code>int64 role_id = 7;</code>
-   * @return The roleId.
+   * <code>repeated .glory_api.Role roles = 6;</code>
    */
   @java.lang.Override
-  public long getRoleId() {
-    return roleId ;
+  public int getRolesCount() {
+    return roles .size();
+  }
+  /**
+   * <code>repeated .glory_api.Role roles = 6;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.user.Role getRoles(int index) {
+    return roles .get(index);
+  }
+  /**
+   * <code>repeated .glory_api.Role roles = 6;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.user.RoleOrBuilder getRolesOrBuilder(
+      int index) {
+    return roles .get(index);
   }
 
   public static final int DEPT_FIELD_NUMBER = 8;
@@ -389,11 +382,8 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, name );
     }
-    if (!getRoleBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, role );
-    }
-    if (roleId != 0L) {
-      output.writeInt64(7, roleId );
+    for (int i = 0; i < roles .size(); i++) {
+      output.writeMessage(6, roles .get(i));
     }
     if (!getDeptBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, dept );
@@ -427,12 +417,9 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, name );
     }
-    if (!getRoleBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, role );
-    }
-    if (roleId != 0L) {
+    for (int i = 0; i < roles .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(7, roleId );
+        .computeMessageSize(6, roles .get(i));
     }
     if (!getDeptBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, dept );
@@ -468,10 +455,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getPhone())) return false;
     if (!getName()
         .equals(other.getName())) return false;
-    if (!getRole()
-        .equals(other.getRole())) return false;
-    if (getRoleId()
-        != other.getRoleId()) return false;
+    if (!getRolesList()
+        .equals(other.getRolesList())) return false;
     if (!getDept()
         .equals(other.getDept())) return false;
     if (getDeptId()
@@ -502,11 +487,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getPhone().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + ROLE_FIELD_NUMBER;
-    hash = (53 * hash) + getRole().hashCode();
-    hash = (37 * hash) + ROLE_ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getRoleId());
+    if (getRolesCount() > 0) {
+      hash = (37 * hash) + ROLES_FIELD_NUMBER;
+      hash = (53 * hash) + getRolesList().hashCode();
+    }
     hash = (37 * hash) + DEPT_FIELD_NUMBER;
     hash = (53 * hash) + getDept().hashCode();
     hash = (37 * hash) + DEPT_ID_FIELD_NUMBER;
@@ -644,6 +628,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getRolesFieldBuilder();
       }
     }
     @java.lang.Override
@@ -657,10 +642,12 @@ private static final long serialVersionUID = 0L;
 
       name = "";
 
-      role = "";
-
-      roleId = 0L;
-
+      if (rolesBuilder == null) {
+        roles = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000001);
+      } else {
+        rolesBuilder .clear();
+      }
       dept = "";
 
       deptId = 0L;
@@ -697,12 +684,20 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.tenant.TenantUser buildPartial() {
       com.zhijiejiaoyu.glory_api.tenant.TenantUser result = new com.zhijiejiaoyu.glory_api.tenant.TenantUser(this);
+      int from_bitField0 = bitField0 ;
       result.tenantUserId = tenantUserId ;
       result.userId = userId ;
       result.phone = phone ;
       result.name = name ;
-      result.role = role ;
-      result.roleId = roleId ;
+      if (rolesBuilder == null) {
+        if (((bitField0 & 0x00000001) != 0)) {
+          roles = java.util.Collections.unmodifiableList(roles );
+          bitField0 = (bitField0 & ~0x00000001);
+        }
+        result.roles = roles ;
+      } else {
+        result.roles = rolesBuilder .build();
+      }
       result.dept = dept ;
       result.deptId = deptId ;
       if (userBuilder == null) {
@@ -772,12 +767,31 @@ private static final long serialVersionUID = 0L;
         name = other.name ;
         onChanged();
       }
-      if (!other.getRole().isEmpty()) {
-        role = other.role ;
-        onChanged();
-      }
-      if (other.getRoleId() != 0L) {
-        setRoleId(other.getRoleId());
+      if (rolesBuilder == null) {
+        if (!other.roles .isEmpty()) {
+          if (roles .isEmpty()) {
+            roles = other.roles ;
+            bitField0 = (bitField0 & ~0x00000001);
+          } else {
+            ensureRolesIsMutable();
+            roles .addAll(other.roles );
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.roles .isEmpty()) {
+          if (rolesBuilder .isEmpty()) {
+            rolesBuilder .dispose();
+            rolesBuilder = null;
+            roles = other.roles ;
+            bitField0 = (bitField0 & ~0x00000001);
+            rolesBuilder = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getRolesFieldBuilder() : null;
+          } else {
+            rolesBuilder .addAllMessages(other.roles );
+          }
+        }
       }
       if (!other.getDept().isEmpty()) {
         dept = other.dept ;
@@ -817,6 +831,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0 ;
 
     private long tenantUserId ;
     /**
@@ -1032,111 +1047,244 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object role = "";
-    /**
-     * <code>string role = 6;</code>
-     * @return The role.
-     */
-    public java.lang.String getRole() {
-      java.lang.Object ref = role ;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        role = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string role = 6;</code>
-     * @return The bytes for role.
-     */
-    public com.google.protobuf.ByteString
-        getRoleBytes() {
-      java.lang.Object ref = role ;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        role = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string role = 6;</code>
-     * @param value The role to set.
-     * @return This builder for chaining.
-     */
-    public Builder setRole(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      role = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string role = 6;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearRole() {
-      
-      role = getDefaultInstance().getRole();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string role = 6;</code>
-     * @param value The bytes for role to set.
-     * @return This builder for chaining.
-     */
-    public Builder setRoleBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      role = value;
-      onChanged();
-      return this;
+    private java.util.List<com.zhijiejiaoyu.glory_api.user.Role> roles =
+      java.util.Collections.emptyList();
+    private void ensureRolesIsMutable() {
+      if (!((bitField0 & 0x00000001) != 0)) {
+        roles = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.Role>(roles );
+        bitField0_ |= 0x00000001;
+       }
     }
 
-    private long roleId ;
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.user.Role, com.zhijiejiaoyu.glory_api.user.Role.Builder, com.zhijiejiaoyu.glory_api.user.RoleOrBuilder> rolesBuilder ;
+
     /**
-     * <code>int64 role_id = 7;</code>
-     * @return The roleId.
+     * <code>repeated .glory_api.Role roles = 6;</code>
      */
-    @java.lang.Override
-    public long getRoleId() {
-      return roleId ;
+    public java.util.List<com.zhijiejiaoyu.glory_api.user.Role> getRolesList() {
+      if (rolesBuilder == null) {
+        return java.util.Collections.unmodifiableList(roles );
+      } else {
+        return rolesBuilder .getMessageList();
+      }
     }
     /**
-     * <code>int64 role_id = 7;</code>
-     * @param value The roleId to set.
-     * @return This builder for chaining.
+     * <code>repeated .glory_api.Role roles = 6;</code>
      */
-    public Builder setRoleId(long value) {
-      
-      roleId = value;
-      onChanged();
+    public int getRolesCount() {
+      if (rolesBuilder == null) {
+        return roles .size();
+      } else {
+        return rolesBuilder .getCount();
+      }
+    }
+    /**
+     * <code>repeated .glory_api.Role roles = 6;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.Role getRoles(int index) {
+      if (rolesBuilder == null) {
+        return roles .get(index);
+      } else {
+        return rolesBuilder .getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .glory_api.Role roles = 6;</code>
+     */
+    public Builder setRoles(
+        int index, com.zhijiejiaoyu.glory_api.user.Role value) {
+      if (rolesBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRolesIsMutable();
+        roles .set(index, value);
+        onChanged();
+      } else {
+        rolesBuilder .setMessage(index, value);
+      }
       return this;
     }
     /**
-     * <code>int64 role_id = 7;</code>
-     * @return This builder for chaining.
+     * <code>repeated .glory_api.Role roles = 6;</code>
      */
-    public Builder clearRoleId() {
-      
-      roleId = 0L;
-      onChanged();
+    public Builder setRoles(
+        int index, com.zhijiejiaoyu.glory_api.user.Role.Builder builderForValue) {
+      if (rolesBuilder == null) {
+        ensureRolesIsMutable();
+        roles .set(index, builderForValue.build());
+        onChanged();
+      } else {
+        rolesBuilder .setMessage(index, builderForValue.build());
+      }
       return this;
+    }
+    /**
+     * <code>repeated .glory_api.Role roles = 6;</code>
+     */
+    public Builder addRoles(com.zhijiejiaoyu.glory_api.user.Role value) {
+      if (rolesBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRolesIsMutable();
+        roles .add(value);
+        onChanged();
+      } else {
+        rolesBuilder .addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.Role roles = 6;</code>
+     */
+    public Builder addRoles(
+        int index, com.zhijiejiaoyu.glory_api.user.Role value) {
+      if (rolesBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRolesIsMutable();
+        roles .add(index, value);
+        onChanged();
+      } else {
+        rolesBuilder .addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.Role roles = 6;</code>
+     */
+    public Builder addRoles(
+        com.zhijiejiaoyu.glory_api.user.Role.Builder builderForValue) {
+      if (rolesBuilder == null) {
+        ensureRolesIsMutable();
+        roles .add(builderForValue.build());
+        onChanged();
+      } else {
+        rolesBuilder .addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.Role roles = 6;</code>
+     */
+    public Builder addRoles(
+        int index, com.zhijiejiaoyu.glory_api.user.Role.Builder builderForValue) {
+      if (rolesBuilder == null) {
+        ensureRolesIsMutable();
+        roles .add(index, builderForValue.build());
+        onChanged();
+      } else {
+        rolesBuilder .addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.Role roles = 6;</code>
+     */
+    public Builder addAllRoles(
+        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.user.Role> values) {
+      if (rolesBuilder == null) {
+        ensureRolesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, roles );
+        onChanged();
+      } else {
+        rolesBuilder .addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.Role roles = 6;</code>
+     */
+    public Builder clearRoles() {
+      if (rolesBuilder == null) {
+        roles = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000001);
+        onChanged();
+      } else {
+        rolesBuilder .clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.Role roles = 6;</code>
+     */
+    public Builder removeRoles(int index) {
+      if (rolesBuilder == null) {
+        ensureRolesIsMutable();
+        roles .remove(index);
+        onChanged();
+      } else {
+        rolesBuilder .remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.Role roles = 6;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.Role.Builder getRolesBuilder(
+        int index) {
+      return getRolesFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .glory_api.Role roles = 6;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.RoleOrBuilder getRolesOrBuilder(
+        int index) {
+      if (rolesBuilder == null) {
+        return roles .get(index);  } else {
+        return rolesBuilder .getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .glory_api.Role roles = 6;</code>
+     */
+    public java.util.List<? extends com.zhijiejiaoyu.glory_api.user.RoleOrBuilder> 
+         getRolesOrBuilderList() {
+      if (rolesBuilder != null) {
+        return rolesBuilder .getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(roles );
+      }
+    }
+    /**
+     * <code>repeated .glory_api.Role roles = 6;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.Role.Builder addRolesBuilder() {
+      return getRolesFieldBuilder().addBuilder(
+          com.zhijiejiaoyu.glory_api.user.Role.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .glory_api.Role roles = 6;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.Role.Builder addRolesBuilder(
+        int index) {
+      return getRolesFieldBuilder().addBuilder(
+          index, com.zhijiejiaoyu.glory_api.user.Role.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .glory_api.Role roles = 6;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.user.Role.Builder> 
+         getRolesBuilderList() {
+      return getRolesFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.user.Role, com.zhijiejiaoyu.glory_api.user.Role.Builder, com.zhijiejiaoyu.glory_api.user.RoleOrBuilder> 
+        getRolesFieldBuilder() {
+      if (rolesBuilder == null) {
+        rolesBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.user.Role, com.zhijiejiaoyu.glory_api.user.Role.Builder, com.zhijiejiaoyu.glory_api.user.RoleOrBuilder>(
+                roles ,
+                ((bitField0 & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        roles = null;
+      }
+      return rolesBuilder ;
     }
 
     private java.lang.Object dept = "";
