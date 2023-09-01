@@ -103,7 +103,8 @@ message GetEvaluateDetailResponse {
     string ai_feedback = 10;
     bool baseline = 11;
     int64 ai_feedback_id = 12;
-    repeated AiResult ai_result = 13;
+    string created_user = 13;
+    repeated AiResult ai_result = 14;
     repeated EvaluateDetail detail = 100;
 }
 
