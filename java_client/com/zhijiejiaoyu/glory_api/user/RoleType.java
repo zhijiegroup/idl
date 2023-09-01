@@ -4,6 +4,14 @@
 package com.zhijiejiaoyu.glory_api.user;
 
 /**
+ * <pre>
+ * "system_student":        学生
+ * "system_teacher":        专业老师
+ * "system_admin":          学校管理员
+ * "system_short_reviewer": 短视频预审员
+ * "user_define":           自定义
+ * </pre>
+ *
  * Protobuf type {@code glory_api.RoleType}
  */
 public final class RoleType extends
@@ -335,6 +343,14 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * "system_student":        学生
+   * "system_teacher":        专业老师
+   * "system_admin":          学校管理员
+   * "system_short_reviewer": 短视频预审员
+   * "user_define":           自定义
+   * </pre>
+   *
    * Protobuf type {@code glory_api.RoleType}
    */
   public static final class Builder extends

@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private Role() {
     roleName = "";
+    roleType = "";
     description = "";
     rolePermission = java.util.Collections.emptyList();
   }
@@ -61,6 +62,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             roleName = s;
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            roleType = s;
             break;
           }
           case 42: {
@@ -161,6 +168,44 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       roleName = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ROLE_TYPE_FIELD_NUMBER = 3;
+  private volatile java.lang.Object roleType ;
+  /**
+   * <code>string role_type = 3;</code>
+   * @return The roleType.
+   */
+  @java.lang.Override
+  public java.lang.String getRoleType() {
+    java.lang.Object ref = roleType ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      roleType = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string role_type = 3;</code>
+   * @return The bytes for roleType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getRoleTypeBytes() {
+    java.lang.Object ref = roleType ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      roleType = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -286,6 +331,9 @@ private static final long serialVersionUID = 0L;
     if (!getRoleNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, roleName );
     }
+    if (!getRoleTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, roleType );
+    }
     if (!getDescriptionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, description );
     }
@@ -310,6 +358,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getRoleNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, roleName );
+    }
+    if (!getRoleTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, roleType );
     }
     if (!getDescriptionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, description );
@@ -341,6 +392,8 @@ private static final long serialVersionUID = 0L;
         != other.getRoleId()) return false;
     if (!getRoleName()
         .equals(other.getRoleName())) return false;
+    if (!getRoleType()
+        .equals(other.getRoleType())) return false;
     if (!getDescription()
         .equals(other.getDescription())) return false;
     if (getReadonly()
@@ -363,6 +416,8 @@ private static final long serialVersionUID = 0L;
         getRoleId());
     hash = (37 * hash) + ROLE_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getRoleName().hashCode();
+    hash = (37 * hash) + ROLE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getRoleType().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
     hash = (37 * hash) + READONLY_FIELD_NUMBER;
@@ -510,6 +565,8 @@ private static final long serialVersionUID = 0L;
 
       roleName = "";
 
+      roleType = "";
+
       description = "";
 
       readonly = false;
@@ -549,6 +606,7 @@ private static final long serialVersionUID = 0L;
       int from_bitField0 = bitField0 ;
       result.roleId = roleId ;
       result.roleName = roleName ;
+      result.roleType = roleType ;
       result.description = description ;
       result.readonly = readonly ;
       if (rolePermissionBuilder == null) {
@@ -613,6 +671,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getRoleName().isEmpty()) {
         roleName = other.roleName ;
+        onChanged();
+      }
+      if (!other.getRoleType().isEmpty()) {
+        roleType = other.roleType ;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
@@ -781,6 +843,82 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       roleName = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object roleType = "";
+    /**
+     * <code>string role_type = 3;</code>
+     * @return The roleType.
+     */
+    public java.lang.String getRoleType() {
+      java.lang.Object ref = roleType ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        roleType = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string role_type = 3;</code>
+     * @return The bytes for roleType.
+     */
+    public com.google.protobuf.ByteString
+        getRoleTypeBytes() {
+      java.lang.Object ref = roleType ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        roleType = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string role_type = 3;</code>
+     * @param value The roleType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRoleType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      roleType = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string role_type = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRoleType() {
+      
+      roleType = getDefaultInstance().getRoleType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string role_type = 3;</code>
+     * @param value The bytes for roleType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRoleTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      roleType = value;
       onChanged();
       return this;
     }

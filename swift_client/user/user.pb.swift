@@ -746,6 +746,11 @@ struct GloryApi_ListPermissionResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
+/// "system_student":        学生
+/// "system_teacher":        专业老师
+/// "system_admin":          学校管理员
+/// "system_short_reviewer": 短视频预审员
+/// "user_define":           自定义
 struct GloryApi_RoleType {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -812,6 +817,8 @@ struct GloryApi_Role {
   var roleID: Int64 = 0
 
   var roleName: String = String()
+
+  var roleType: String = String()
 
   ///  string source = 3;  // 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
   ///  int64 source_id =4; // 对应的资源来源id
@@ -3021,6 +3028,7 @@ extension GloryApi_Role: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "role_id"),
     2: .standard(proto: "role_name"),
+    3: .standard(proto: "role_type"),
     5: .same(proto: "description"),
     6: .same(proto: "readonly"),
     7: .standard(proto: "role_permission"),
@@ -3034,6 +3042,7 @@ extension GloryApi_Role: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularInt64Field(value: &self.roleID) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.roleName) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.roleType) }()
       case 5: try { try decoder.decodeSingularStringField(value: &self.description_p) }()
       case 6: try { try decoder.decodeSingularBoolField(value: &self.readonly) }()
       case 7: try { try decoder.decodeRepeatedMessageField(value: &self.rolePermission) }()
@@ -3048,6 +3057,9 @@ extension GloryApi_Role: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     }
     if !self.roleName.isEmpty {
       try visitor.visitSingularStringField(value: self.roleName, fieldNumber: 2)
+    }
+    if !self.roleType.isEmpty {
+      try visitor.visitSingularStringField(value: self.roleType, fieldNumber: 3)
     }
     if !self.description_p.isEmpty {
       try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 5)
@@ -3064,6 +3076,7 @@ extension GloryApi_Role: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
   static func ==(lhs: GloryApi_Role, rhs: GloryApi_Role) -> Bool {
     if lhs.roleID != rhs.roleID {return false}
     if lhs.roleName != rhs.roleName {return false}
+    if lhs.roleType != rhs.roleType {return false}
     if lhs.description_p != rhs.description_p {return false}
     if lhs.readonly != rhs.readonly {return false}
     if lhs.rolePermission != rhs.rolePermission {return false}
