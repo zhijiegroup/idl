@@ -11,8 +11,7 @@ message TenantUser {
     int64 user_id = 2;
     string phone = 4;
     string name = 5;
-    string role = 6;
-    int64 role_id = 7;
+    repeated Role roles = 6;
     string dept = 8;
     int64 dept_id = 9;
     User user = 10;
