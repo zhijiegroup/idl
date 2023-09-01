@@ -105,6 +105,7 @@ export interface GetEvaluateDetailResponse {
   ai_feedback?: string;
   baseline?: boolean;
   ai_feedback_id?: string;
+  created_user?: string;
   ai_result?: Array<AiResult>;
   detail?: Array<EvaluateDetail>;
 }

@@ -121,25 +121,37 @@ public interface GetEvaluateDetailResponseOrBuilder extends
   long getAiFeedbackId();
 
   /**
-   * <code>repeated .glory_api.AiResult ai_result = 13;</code>
+   * <code>string created_user = 13;</code>
+   * @return The createdUser.
+   */
+  java.lang.String getCreatedUser();
+  /**
+   * <code>string created_user = 13;</code>
+   * @return The bytes for createdUser.
+   */
+  com.google.protobuf.ByteString
+      getCreatedUserBytes();
+
+  /**
+   * <code>repeated .glory_api.AiResult ai_result = 14;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.live.AiResult> 
       getAiResultList();
   /**
-   * <code>repeated .glory_api.AiResult ai_result = 13;</code>
+   * <code>repeated .glory_api.AiResult ai_result = 14;</code>
    */
   com.zhijiejiaoyu.glory_api.live.AiResult getAiResult(int index);
   /**
-   * <code>repeated .glory_api.AiResult ai_result = 13;</code>
+   * <code>repeated .glory_api.AiResult ai_result = 14;</code>
    */
   int getAiResultCount();
   /**
-   * <code>repeated .glory_api.AiResult ai_result = 13;</code>
+   * <code>repeated .glory_api.AiResult ai_result = 14;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.live.AiResultOrBuilder> 
       getAiResultOrBuilderList();
   /**
-   * <code>repeated .glory_api.AiResult ai_result = 13;</code>
+   * <code>repeated .glory_api.AiResult ai_result = 14;</code>
    */
   com.zhijiejiaoyu.glory_api.live.AiResultOrBuilder getAiResultOrBuilder(
       int index);

@@ -362,6 +362,8 @@ struct GloryApi_GetEvaluateDetailResponse {
 
   var aiFeedbackID: Int64 = 0
 
+  var createdUser: String = String()
+
   var aiResult: [GloryApi_AiResult] = []
 
   var detail: [GloryApi_EvaluateDetail] = []
@@ -1946,7 +1948,8 @@ extension GloryApi_GetEvaluateDetailResponse: SwiftProtobuf.Message, SwiftProtob
     10: .standard(proto: "ai_feedback"),
     11: .same(proto: "baseline"),
     12: .standard(proto: "ai_feedback_id"),
-    13: .standard(proto: "ai_result"),
+    13: .standard(proto: "created_user"),
+    14: .standard(proto: "ai_result"),
     100: .same(proto: "detail"),
   ]
 
@@ -1968,7 +1971,8 @@ extension GloryApi_GetEvaluateDetailResponse: SwiftProtobuf.Message, SwiftProtob
       case 10: try { try decoder.decodeSingularStringField(value: &self.aiFeedback) }()
       case 11: try { try decoder.decodeSingularBoolField(value: &self.baseline) }()
       case 12: try { try decoder.decodeSingularInt64Field(value: &self.aiFeedbackID) }()
-      case 13: try { try decoder.decodeRepeatedMessageField(value: &self.aiResult) }()
+      case 13: try { try decoder.decodeSingularStringField(value: &self.createdUser) }()
+      case 14: try { try decoder.decodeRepeatedMessageField(value: &self.aiResult) }()
       case 100: try { try decoder.decodeRepeatedMessageField(value: &self.detail) }()
       default: break
       }
@@ -2016,8 +2020,11 @@ extension GloryApi_GetEvaluateDetailResponse: SwiftProtobuf.Message, SwiftProtob
     if self.aiFeedbackID != 0 {
       try visitor.visitSingularInt64Field(value: self.aiFeedbackID, fieldNumber: 12)
     }
+    if !self.createdUser.isEmpty {
+      try visitor.visitSingularStringField(value: self.createdUser, fieldNumber: 13)
+    }
     if !self.aiResult.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.aiResult, fieldNumber: 13)
+      try visitor.visitRepeatedMessageField(value: self.aiResult, fieldNumber: 14)
     }
     if !self.detail.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.detail, fieldNumber: 100)
@@ -2038,6 +2045,7 @@ extension GloryApi_GetEvaluateDetailResponse: SwiftProtobuf.Message, SwiftProtob
     if lhs.aiFeedback != rhs.aiFeedback {return false}
     if lhs.baseline != rhs.baseline {return false}
     if lhs.aiFeedbackID != rhs.aiFeedbackID {return false}
+    if lhs.createdUser != rhs.createdUser {return false}
     if lhs.aiResult != rhs.aiResult {return false}
     if lhs.detail != rhs.detail {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
