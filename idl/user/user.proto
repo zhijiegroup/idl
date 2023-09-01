@@ -27,7 +27,7 @@ message User {
   Seller seller = 8;
   repeated ShopAccess shop_access = 9;  //判断用户的shop访问权限
 
-  TenantDept tenant_dept = 10;
+  repeated TenantDept tenant_dept = 10;
   repeated Role roles = 11;
   repeated PagePermission pages = 12;
   bool is_admin = 13;
@@ -207,6 +207,7 @@ message Role {
   string description = 5;
   bool readonly = 6;
   repeated RolePermission role_permission = 7;
+  repeated PagePermission pages = 8;
 }
 
 message RolePermission {
