@@ -496,6 +496,10 @@ service glory_api {
     option (api.post) = '/api/currency/recharge_batches';
   }
 
+  rpc GetVCurrency(GetVirtualCurrencyRequest) returns (GetVirtualCurrencyResponse) {
+    option (api.get) = '/api/currency/get_by_uid';
+  }
+
   rpc ListVCurrency(ListVirtualCurrencyRequest) returns (ListVirtualCurrencyResponse) {
     option (api.post) = '/api/currency/list';
   }

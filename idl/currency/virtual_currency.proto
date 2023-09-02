@@ -57,6 +57,16 @@ message RechargeCurrencyInBatchesResponse {
   base.BaseResponse base_resp = 1;
 }
 
+message GetVirtualCurrencyRequest {
+  base.BaseRequest base_request = 1;
+  int64 user_id = 2;
+}
+
+message GetVirtualCurrencyResponse {
+  base.BaseResponse base_resp = 1;
+  VirtualCurrencyInfo virtual_currency_info = 2;
+}
+
 message ListVirtualCurrencyRequest {
   base.BaseRequest base_request = 1;
   int64 user_id = 2;
