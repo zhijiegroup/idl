@@ -60,36 +60,6 @@ public final class VirtualCurrencyOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_RechargeCurrencyInBatchesResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_UpdateVirtualCurrencyRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_UpdateVirtualCurrencyRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_UpdateVirtualCurrencyResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_UpdateVirtualCurrencyResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_DeleteVirtualCurrencyRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_DeleteVirtualCurrencyRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_DeleteVirtualCurrencyResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_DeleteVirtualCurrencyResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_GetVirtualCurrencyRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_GetVirtualCurrencyRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_GetVirtualCurrencyResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_GetVirtualCurrencyResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_glory_api_ListVirtualCurrencyRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -131,30 +101,16 @@ public final class VirtualCurrencyOuterClass {
       "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\022" +
       "\020\n\010users_id\030\002 \003(\003\"J\n!RechargeCurrencyInB" +
       "atchesResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
-      ".BaseResponse\"}\n\034UpdateVirtualCurrencyRe" +
-      "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
-      "equest\0224\n\020virtual_currency\030\002 \001(\0132\032.glory" +
-      "_api.VirtualCurrency\"F\n\035UpdateVirtualCur" +
-      "rencyResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
-      "BaseResponse\"X\n\034DeleteVirtualCurrencyReq" +
+      ".BaseResponse\"\203\001\n\032ListVirtualCurrencyReq" +
       "uest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRe" +
-      "quest\022\017\n\007user_id\030\002 \001(\003\"F\n\035DeleteVirtualC" +
-      "urrencyResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
-      "e.BaseResponse\"U\n\031GetVirtualCurrencyRequ" +
-      "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
-      "uest\022\017\n\007user_id\030\002 \001(\003\"\202\001\n\032GetVirtualCurr" +
-      "encyResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.B" +
-      "aseResponse\022=\n\025virtual_currency_info\030\002 \001" +
-      "(\0132\036.glory_api.VirtualCurrencyInfo\"\203\001\n\032L" +
-      "istVirtualCurrencyRequest\022\'\n\014base_reques" +
-      "t\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007user_id\030\002 " +
-      "\001(\003\022+\n\npagination\030d \001(\0132\027.base.Paginatio" +
-      "nRequest\"\261\001\n\033ListVirtualCurrencyResponse" +
-      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022" +
-      "=\n\025virtual_currency_info\030\002 \003(\0132\036.glory_a" +
-      "pi.VirtualCurrencyInfo\022,\n\npagination\030d \001" +
-      "(\0132\030.base.PaginationResponseB\'\n#com.zhij" +
-      "iejiaoyu.glory_api.currencyP\001b\006proto3"
+      "quest\022\017\n\007user_id\030\002 \001(\003\022+\n\npagination\030d \001" +
+      "(\0132\027.base.PaginationRequest\"\261\001\n\033ListVirt" +
+      "ualCurrencyResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
+      ".base.BaseResponse\022=\n\025virtual_currency_i" +
+      "nfo\030\002 \003(\0132\036.glory_api.VirtualCurrencyInf" +
+      "o\022,\n\npagination\030d \001(\0132\030.base.PaginationR" +
+      "esponseB\'\n#com.zhijiejiaoyu.glory_api.cu" +
+      "rrencyP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -215,50 +171,14 @@ public final class VirtualCurrencyOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_RechargeCurrencyInBatchesResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
-    internal_static_glory_api_UpdateVirtualCurrencyRequest_descriptor =
-      getDescriptor().getMessageTypes().get(9);
-    internal_static_glory_api_UpdateVirtualCurrencyRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_UpdateVirtualCurrencyRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "VirtualCurrency", });
-    internal_static_glory_api_UpdateVirtualCurrencyResponse_descriptor =
-      getDescriptor().getMessageTypes().get(10);
-    internal_static_glory_api_UpdateVirtualCurrencyResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_UpdateVirtualCurrencyResponse_descriptor,
-        new java.lang.String[] { "BaseResp", });
-    internal_static_glory_api_DeleteVirtualCurrencyRequest_descriptor =
-      getDescriptor().getMessageTypes().get(11);
-    internal_static_glory_api_DeleteVirtualCurrencyRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_DeleteVirtualCurrencyRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "UserId", });
-    internal_static_glory_api_DeleteVirtualCurrencyResponse_descriptor =
-      getDescriptor().getMessageTypes().get(12);
-    internal_static_glory_api_DeleteVirtualCurrencyResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_DeleteVirtualCurrencyResponse_descriptor,
-        new java.lang.String[] { "BaseResp", });
-    internal_static_glory_api_GetVirtualCurrencyRequest_descriptor =
-      getDescriptor().getMessageTypes().get(13);
-    internal_static_glory_api_GetVirtualCurrencyRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_GetVirtualCurrencyRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "UserId", });
-    internal_static_glory_api_GetVirtualCurrencyResponse_descriptor =
-      getDescriptor().getMessageTypes().get(14);
-    internal_static_glory_api_GetVirtualCurrencyResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_GetVirtualCurrencyResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "VirtualCurrencyInfo", });
     internal_static_glory_api_ListVirtualCurrencyRequest_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_glory_api_ListVirtualCurrencyRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListVirtualCurrencyRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "UserId", "Pagination", });
     internal_static_glory_api_ListVirtualCurrencyResponse_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_glory_api_ListVirtualCurrencyResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListVirtualCurrencyResponse_descriptor,

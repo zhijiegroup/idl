@@ -545,18 +545,6 @@ list the permissions that supported */
     request: virtual_currency.RechargeCurrencyInBatchesRequest
   ): Promise<virtual_currency.RechargeCurrencyInBatchesResponse>;
 
-  DeleteVCurrency(
-    request: virtual_currency.DeleteVirtualCurrencyRequest
-  ): Promise<virtual_currency.DeleteVirtualCurrencyResponse>;
-
-  UpdateVCurrency(
-    request: virtual_currency.UpdateVirtualCurrencyRequest
-  ): Promise<virtual_currency.UpdateVirtualCurrencyResponse>;
-
-  GetVCurrency(
-    request: virtual_currency.GetVirtualCurrencyRequest
-  ): Promise<virtual_currency.GetVirtualCurrencyResponse>;
-
   ListVCurrency(
     request: virtual_currency.ListVirtualCurrencyRequest
   ): Promise<virtual_currency.ListVirtualCurrencyResponse>;

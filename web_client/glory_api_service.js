@@ -1026,28 +1026,6 @@ export class glory_api {
     );
   }
 
-  DeleteVCurrency(request) {
-    const uri = `${this.uriPrefix}/api/currency/clear`;
-    const body = JSONbigint.stringify(request);
-    return fetch(uri, { method: "POST", headers, body, credentials }).then(
-      handleResponse
-    );
-  }
-
-  UpdateVCurrency(request) {
-    const uri = `${this.uriPrefix}/api/currency/update`;
-    const body = JSONbigint.stringify(request);
-    return fetch(uri, { method: "POST", headers, body, credentials }).then(
-      handleResponse
-    );
-  }
-
-  GetVCurrency(request) {
-    const query = queryStringify(request);
-    const uri = `${this.uriPrefix}/api/currency/get_by_uid${query}`;
-    return fetch(uri, { method, headers, credentials }).then(handleResponse);
-  }
-
   ListVCurrency(request) {
     const uri = `${this.uriPrefix}/api/currency/list`;
     const body = JSONbigint.stringify(request);
