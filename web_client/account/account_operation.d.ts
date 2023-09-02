@@ -15,25 +15,6 @@ export interface AccountOperation {
   created_at?: string;
 }
 
-export interface AddAccountOperationRequest {
-  base_request?: base.BaseRequest;
-  account_operation?: AccountOperation;
-}
-
-export interface AddAccountOperationResponse {
-  base_resp?: base.BaseResponse;
-}
-
-export interface GetAccountOperationRequest {
-  base_request?: base.BaseRequest;
-  user_id?: string;
-}
-
-export interface GetAccountOperationResponse {
-  base_resp?: base.BaseResponse;
-  account_operation?: AccountOperation;
-}
-
 export interface ListAccountOperationRequest {
   base_request?: base.BaseRequest;
   user_id?: string;

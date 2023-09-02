@@ -3921,68 +3921,6 @@ public final class glory_apiGrpc {
     return getListVCurrencyMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.account.AddAccountOperationRequest,
-      com.zhijiejiaoyu.glory_api.account.AddAccountOperationResponse> getAddAccountOperationMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "AddAccountOperation",
-      requestType = com.zhijiejiaoyu.glory_api.account.AddAccountOperationRequest.class,
-      responseType = com.zhijiejiaoyu.glory_api.account.AddAccountOperationResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.account.AddAccountOperationRequest,
-      com.zhijiejiaoyu.glory_api.account.AddAccountOperationResponse> getAddAccountOperationMethod() {
-    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.account.AddAccountOperationRequest, com.zhijiejiaoyu.glory_api.account.AddAccountOperationResponse> getAddAccountOperationMethod;
-    if ((getAddAccountOperationMethod = glory_apiGrpc.getAddAccountOperationMethod) == null) {
-      synchronized (glory_apiGrpc.class) {
-        if ((getAddAccountOperationMethod = glory_apiGrpc.getAddAccountOperationMethod) == null) {
-          glory_apiGrpc.getAddAccountOperationMethod = getAddAccountOperationMethod =
-              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.account.AddAccountOperationRequest, com.zhijiejiaoyu.glory_api.account.AddAccountOperationResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AddAccountOperation"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.zhijiejiaoyu.glory_api.account.AddAccountOperationRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.zhijiejiaoyu.glory_api.account.AddAccountOperationResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("AddAccountOperation"))
-              .build();
-        }
-      }
-    }
-    return getAddAccountOperationMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.account.GetAccountOperationRequest,
-      com.zhijiejiaoyu.glory_api.account.GetAccountOperationResponse> getGetAccountOperationMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetAccountOperation",
-      requestType = com.zhijiejiaoyu.glory_api.account.GetAccountOperationRequest.class,
-      responseType = com.zhijiejiaoyu.glory_api.account.GetAccountOperationResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.account.GetAccountOperationRequest,
-      com.zhijiejiaoyu.glory_api.account.GetAccountOperationResponse> getGetAccountOperationMethod() {
-    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.account.GetAccountOperationRequest, com.zhijiejiaoyu.glory_api.account.GetAccountOperationResponse> getGetAccountOperationMethod;
-    if ((getGetAccountOperationMethod = glory_apiGrpc.getGetAccountOperationMethod) == null) {
-      synchronized (glory_apiGrpc.class) {
-        if ((getGetAccountOperationMethod = glory_apiGrpc.getGetAccountOperationMethod) == null) {
-          glory_apiGrpc.getGetAccountOperationMethod = getGetAccountOperationMethod =
-              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.account.GetAccountOperationRequest, com.zhijiejiaoyu.glory_api.account.GetAccountOperationResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAccountOperation"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.zhijiejiaoyu.glory_api.account.GetAccountOperationRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.zhijiejiaoyu.glory_api.account.GetAccountOperationResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetAccountOperation"))
-              .build();
-        }
-      }
-    }
-    return getGetAccountOperationMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.account.ListAccountOperationRequest,
       com.zhijiejiaoyu.glory_api.account.ListAccountOperationResponse> getListAccountOperationMethod;
 
@@ -7696,23 +7634,6 @@ public final class glory_apiGrpc {
     }
 
     /**
-     * <pre>
-     * account
-     * </pre>
-     */
-    default void addAccountOperation(com.zhijiejiaoyu.glory_api.account.AddAccountOperationRequest request,
-        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.account.AddAccountOperationResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAddAccountOperationMethod(), responseObserver);
-    }
-
-    /**
-     */
-    default void getAccountOperation(com.zhijiejiaoyu.glory_api.account.GetAccountOperationRequest request,
-        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.account.GetAccountOperationResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAccountOperationMethod(), responseObserver);
-    }
-
-    /**
      */
     default void listAccountOperation(com.zhijiejiaoyu.glory_api.account.ListAccountOperationRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.account.ListAccountOperationResponse> responseObserver) {
@@ -9532,25 +9453,6 @@ public final class glory_apiGrpc {
     }
 
     /**
-     * <pre>
-     * account
-     * </pre>
-     */
-    public void addAccountOperation(com.zhijiejiaoyu.glory_api.account.AddAccountOperationRequest request,
-        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.account.AddAccountOperationResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getAddAccountOperationMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
-    public void getAccountOperation(com.zhijiejiaoyu.glory_api.account.GetAccountOperationRequest request,
-        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.account.GetAccountOperationResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetAccountOperationMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
      */
     public void listAccountOperation(com.zhijiejiaoyu.glory_api.account.ListAccountOperationRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.account.ListAccountOperationResponse> responseObserver) {
@@ -11317,23 +11219,6 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyResponse listVCurrency(com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListVCurrencyMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * account
-     * </pre>
-     */
-    public com.zhijiejiaoyu.glory_api.account.AddAccountOperationResponse addAccountOperation(com.zhijiejiaoyu.glory_api.account.AddAccountOperationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getAddAccountOperationMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public com.zhijiejiaoyu.glory_api.account.GetAccountOperationResponse getAccountOperation(com.zhijiejiaoyu.glory_api.account.GetAccountOperationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetAccountOperationMethod(), getCallOptions(), request);
     }
 
     /**
@@ -13145,25 +13030,6 @@ public final class glory_apiGrpc {
     }
 
     /**
-     * <pre>
-     * account
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.account.AddAccountOperationResponse> addAccountOperation(
-        com.zhijiejiaoyu.glory_api.account.AddAccountOperationRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getAddAccountOperationMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.account.GetAccountOperationResponse> getAccountOperation(
-        com.zhijiejiaoyu.glory_api.account.GetAccountOperationRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetAccountOperationMethod(), getCallOptions()), request);
-    }
-
-    /**
      */
     public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.account.ListAccountOperationResponse> listAccountOperation(
         com.zhijiejiaoyu.glory_api.account.ListAccountOperationRequest request) {
@@ -14075,95 +13941,93 @@ public final class glory_apiGrpc {
   private static final int METHODID_UPDATE_VCURRENCY = 123;
   private static final int METHODID_GET_VCURRENCY = 124;
   private static final int METHODID_LIST_VCURRENCY = 125;
-  private static final int METHODID_ADD_ACCOUNT_OPERATION = 126;
-  private static final int METHODID_GET_ACCOUNT_OPERATION = 127;
-  private static final int METHODID_LIST_ACCOUNT_OPERATION = 128;
-  private static final int METHODID_CREATE_ROOM = 129;
-  private static final int METHODID_GET_ROOM = 130;
-  private static final int METHODID_UPDATE_ROOM = 131;
-  private static final int METHODID_LIST_ROOM = 132;
-  private static final int METHODID_DELETE_ROOM = 133;
-  private static final int METHODID_LIST_FINISHED_ROOM = 134;
-  private static final int METHODID_RECORD = 135;
-  private static final int METHODID_CREATE_LIVE_USER_TOKEN = 136;
-  private static final int METHODID_USER_ENTER_ROOM = 137;
-  private static final int METHODID_USER_EXIT_ROOM = 138;
-  private static final int METHODID_LIST_ACTIVE_ROOM_USER = 139;
-  private static final int METHODID_CREATE_LIVE_PLAN = 140;
-  private static final int METHODID_GET_LIVE_PLAN = 141;
-  private static final int METHODID_UPDATE_LIVE_PLAN = 142;
-  private static final int METHODID_LIST_LIVE_PLAN = 143;
-  private static final int METHODID_DELETE_LIVE_PLAN = 144;
-  private static final int METHODID_CREATE_LIVE_PLAN_PRODUCT = 145;
-  private static final int METHODID_UPDATE_LIVE_PLAN_PRODUCT = 146;
-  private static final int METHODID_LIST_LIVE_PLAN_PRODUCT = 147;
-  private static final int METHODID_DELETE_LIVE_PLAN_PRODUCT = 148;
-  private static final int METHODID_LOAD_LIVE_PLAN_PRODUCT = 149;
-  private static final int METHODID_UPDATE_LIVE_PRODUCT_STATUS = 150;
-  private static final int METHODID_LIST_LIVE_PRODUCT_STATUS = 151;
-  private static final int METHODID_DELETE_LIVE_PRODUCT_STATUS = 152;
-  private static final int METHODID_CREATE_LIVE_PRODUCT_STATUS = 153;
-  private static final int METHODID_GET_LIVING_PRODUCT_STATUS = 154;
-  private static final int METHODID_UPDATE_LIVE_PRODUCT_INTRODUCT_STATUS = 155;
-  private static final int METHODID_CREATE_LIVE_TEXT = 156;
-  private static final int METHODID_UPDATE_LIVE_TEXT = 157;
-  private static final int METHODID_LIST_LIVE_TEXT = 158;
-  private static final int METHODID_GET_LIVE_TEXT = 159;
-  private static final int METHODID_DELETE_LIVE_TEXTS = 160;
-  private static final int METHODID_GET_LIVE_CHART_DATA = 161;
-  private static final int METHODID_GET_EVALUATE_SELECTOR = 162;
-  private static final int METHODID_LIST_PERSONAL_EVALUATE = 163;
-  private static final int METHODID_GET_EVALUATE_DETAIL = 164;
-  private static final int METHODID_SUBMIT_EVALUATE = 165;
-  private static final int METHODID_LIST_UNEVALUATED_ROOM = 166;
-  private static final int METHODID_LIST_STUDENT_EVALUATIONS = 167;
-  private static final int METHODID_IGNORE_EVALUATION = 168;
-  private static final int METHODID_GET_RANK = 169;
-  private static final int METHODID_RECORD_LIVE_CALLBACK = 170;
-  private static final int METHODID_VIDEO_TO_TEXT_CALLBACK = 171;
-  private static final int METHODID_REGENERATION_AI_FEEDBACK = 172;
-  private static final int METHODID_SUBMIT_USER_ATTITUDE_FOR_AI_RESULT = 173;
-  private static final int METHODID_CREATE_TENANT = 174;
-  private static final int METHODID_GET_TENANT = 175;
-  private static final int METHODID_UPDATE_TENANT = 176;
-  private static final int METHODID_DELETE_TENANT = 177;
-  private static final int METHODID_LIST_TENANT = 178;
-  private static final int METHODID_GET_TENANT_ORG = 179;
-  private static final int METHODID_CREATE_TENANT_DEPT = 180;
-  private static final int METHODID_UPDATE_TENANT_DEPT = 181;
-  private static final int METHODID_DELETE_TENANT_DEPT = 182;
-  private static final int METHODID_GET_TENANT_DEPT = 183;
-  private static final int METHODID_GET_TENANT_DEPT_TYPE = 184;
-  private static final int METHODID_CREATE_TENANT_USER = 185;
-  private static final int METHODID_DELETE_TENANT_USER = 186;
-  private static final int METHODID_UPDATE_TENANT_USER = 187;
-  private static final int METHODID_GET_TENANT_USER = 188;
-  private static final int METHODID_LIST_TENANT_USER = 189;
-  private static final int METHODID_LIST_TENANT_STUDENT = 190;
-  private static final int METHODID_UPDATE_TENANT_USER_PASSWORD = 191;
-  private static final int METHODID_UPDATE_TENANT_CONFIG = 192;
-  private static final int METHODID_LIST_TENANT_CONFIG = 193;
-  private static final int METHODID_CREATE_SHORT_VIDEO = 194;
-  private static final int METHODID_STAGE_SHORT_VIDEO = 195;
-  private static final int METHODID_LIST_MY_SHORT_VIDEO = 196;
-  private static final int METHODID_LIST_MY_STAGE_VIDEO = 197;
-  private static final int METHODID_LIST_MY_LIKE_VIDEO = 198;
-  private static final int METHODID_LIST_MY_FAVORITE_VIDEO = 199;
-  private static final int METHODID_GET_SHORT_VIDEO = 200;
-  private static final int METHODID_UPDATE_SHORT_VIDEO = 201;
-  private static final int METHODID_DELETE_SHORT_VIDEO = 202;
-  private static final int METHODID_GET_STAGE_VIDEO = 203;
-  private static final int METHODID_DELETE_STAGE_VIDEO = 204;
-  private static final int METHODID_UPDATE_STAGE_VIDEO = 205;
-  private static final int METHODID_MANAGEMENT_LIST_SHORT_VIDEO = 206;
-  private static final int METHODID_MANAGEMENT_CENSOR_SHORT_VIDEO = 207;
-  private static final int METHODID_MANAGEMENT_DELETE_SHORT_VIDEO = 208;
-  private static final int METHODID_LIST_SHORT_VIDEO = 209;
-  private static final int METHODID_LIKE_SHORT_VIDEO = 210;
-  private static final int METHODID_FAVORITE_SHORT_VIDEO = 211;
-  private static final int METHODID_CREATE_SHORT_VIDEO_COMMENT = 212;
-  private static final int METHODID_DELETE_SHORT_VIDEO_COMMENT = 213;
-  private static final int METHODID_LIST_SHORT_VIDEO_COMMENT = 214;
+  private static final int METHODID_LIST_ACCOUNT_OPERATION = 126;
+  private static final int METHODID_CREATE_ROOM = 127;
+  private static final int METHODID_GET_ROOM = 128;
+  private static final int METHODID_UPDATE_ROOM = 129;
+  private static final int METHODID_LIST_ROOM = 130;
+  private static final int METHODID_DELETE_ROOM = 131;
+  private static final int METHODID_LIST_FINISHED_ROOM = 132;
+  private static final int METHODID_RECORD = 133;
+  private static final int METHODID_CREATE_LIVE_USER_TOKEN = 134;
+  private static final int METHODID_USER_ENTER_ROOM = 135;
+  private static final int METHODID_USER_EXIT_ROOM = 136;
+  private static final int METHODID_LIST_ACTIVE_ROOM_USER = 137;
+  private static final int METHODID_CREATE_LIVE_PLAN = 138;
+  private static final int METHODID_GET_LIVE_PLAN = 139;
+  private static final int METHODID_UPDATE_LIVE_PLAN = 140;
+  private static final int METHODID_LIST_LIVE_PLAN = 141;
+  private static final int METHODID_DELETE_LIVE_PLAN = 142;
+  private static final int METHODID_CREATE_LIVE_PLAN_PRODUCT = 143;
+  private static final int METHODID_UPDATE_LIVE_PLAN_PRODUCT = 144;
+  private static final int METHODID_LIST_LIVE_PLAN_PRODUCT = 145;
+  private static final int METHODID_DELETE_LIVE_PLAN_PRODUCT = 146;
+  private static final int METHODID_LOAD_LIVE_PLAN_PRODUCT = 147;
+  private static final int METHODID_UPDATE_LIVE_PRODUCT_STATUS = 148;
+  private static final int METHODID_LIST_LIVE_PRODUCT_STATUS = 149;
+  private static final int METHODID_DELETE_LIVE_PRODUCT_STATUS = 150;
+  private static final int METHODID_CREATE_LIVE_PRODUCT_STATUS = 151;
+  private static final int METHODID_GET_LIVING_PRODUCT_STATUS = 152;
+  private static final int METHODID_UPDATE_LIVE_PRODUCT_INTRODUCT_STATUS = 153;
+  private static final int METHODID_CREATE_LIVE_TEXT = 154;
+  private static final int METHODID_UPDATE_LIVE_TEXT = 155;
+  private static final int METHODID_LIST_LIVE_TEXT = 156;
+  private static final int METHODID_GET_LIVE_TEXT = 157;
+  private static final int METHODID_DELETE_LIVE_TEXTS = 158;
+  private static final int METHODID_GET_LIVE_CHART_DATA = 159;
+  private static final int METHODID_GET_EVALUATE_SELECTOR = 160;
+  private static final int METHODID_LIST_PERSONAL_EVALUATE = 161;
+  private static final int METHODID_GET_EVALUATE_DETAIL = 162;
+  private static final int METHODID_SUBMIT_EVALUATE = 163;
+  private static final int METHODID_LIST_UNEVALUATED_ROOM = 164;
+  private static final int METHODID_LIST_STUDENT_EVALUATIONS = 165;
+  private static final int METHODID_IGNORE_EVALUATION = 166;
+  private static final int METHODID_GET_RANK = 167;
+  private static final int METHODID_RECORD_LIVE_CALLBACK = 168;
+  private static final int METHODID_VIDEO_TO_TEXT_CALLBACK = 169;
+  private static final int METHODID_REGENERATION_AI_FEEDBACK = 170;
+  private static final int METHODID_SUBMIT_USER_ATTITUDE_FOR_AI_RESULT = 171;
+  private static final int METHODID_CREATE_TENANT = 172;
+  private static final int METHODID_GET_TENANT = 173;
+  private static final int METHODID_UPDATE_TENANT = 174;
+  private static final int METHODID_DELETE_TENANT = 175;
+  private static final int METHODID_LIST_TENANT = 176;
+  private static final int METHODID_GET_TENANT_ORG = 177;
+  private static final int METHODID_CREATE_TENANT_DEPT = 178;
+  private static final int METHODID_UPDATE_TENANT_DEPT = 179;
+  private static final int METHODID_DELETE_TENANT_DEPT = 180;
+  private static final int METHODID_GET_TENANT_DEPT = 181;
+  private static final int METHODID_GET_TENANT_DEPT_TYPE = 182;
+  private static final int METHODID_CREATE_TENANT_USER = 183;
+  private static final int METHODID_DELETE_TENANT_USER = 184;
+  private static final int METHODID_UPDATE_TENANT_USER = 185;
+  private static final int METHODID_GET_TENANT_USER = 186;
+  private static final int METHODID_LIST_TENANT_USER = 187;
+  private static final int METHODID_LIST_TENANT_STUDENT = 188;
+  private static final int METHODID_UPDATE_TENANT_USER_PASSWORD = 189;
+  private static final int METHODID_UPDATE_TENANT_CONFIG = 190;
+  private static final int METHODID_LIST_TENANT_CONFIG = 191;
+  private static final int METHODID_CREATE_SHORT_VIDEO = 192;
+  private static final int METHODID_STAGE_SHORT_VIDEO = 193;
+  private static final int METHODID_LIST_MY_SHORT_VIDEO = 194;
+  private static final int METHODID_LIST_MY_STAGE_VIDEO = 195;
+  private static final int METHODID_LIST_MY_LIKE_VIDEO = 196;
+  private static final int METHODID_LIST_MY_FAVORITE_VIDEO = 197;
+  private static final int METHODID_GET_SHORT_VIDEO = 198;
+  private static final int METHODID_UPDATE_SHORT_VIDEO = 199;
+  private static final int METHODID_DELETE_SHORT_VIDEO = 200;
+  private static final int METHODID_GET_STAGE_VIDEO = 201;
+  private static final int METHODID_DELETE_STAGE_VIDEO = 202;
+  private static final int METHODID_UPDATE_STAGE_VIDEO = 203;
+  private static final int METHODID_MANAGEMENT_LIST_SHORT_VIDEO = 204;
+  private static final int METHODID_MANAGEMENT_CENSOR_SHORT_VIDEO = 205;
+  private static final int METHODID_MANAGEMENT_DELETE_SHORT_VIDEO = 206;
+  private static final int METHODID_LIST_SHORT_VIDEO = 207;
+  private static final int METHODID_LIKE_SHORT_VIDEO = 208;
+  private static final int METHODID_FAVORITE_SHORT_VIDEO = 209;
+  private static final int METHODID_CREATE_SHORT_VIDEO_COMMENT = 210;
+  private static final int METHODID_DELETE_SHORT_VIDEO_COMMENT = 211;
+  private static final int METHODID_LIST_SHORT_VIDEO_COMMENT = 212;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -14685,14 +14549,6 @@ public final class glory_apiGrpc {
         case METHODID_LIST_VCURRENCY:
           serviceImpl.listVCurrency((com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyResponse>) responseObserver);
-          break;
-        case METHODID_ADD_ACCOUNT_OPERATION:
-          serviceImpl.addAccountOperation((com.zhijiejiaoyu.glory_api.account.AddAccountOperationRequest) request,
-              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.account.AddAccountOperationResponse>) responseObserver);
-          break;
-        case METHODID_GET_ACCOUNT_OPERATION:
-          serviceImpl.getAccountOperation((com.zhijiejiaoyu.glory_api.account.GetAccountOperationRequest) request,
-              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.account.GetAccountOperationResponse>) responseObserver);
           break;
         case METHODID_LIST_ACCOUNT_OPERATION:
           serviceImpl.listAccountOperation((com.zhijiejiaoyu.glory_api.account.ListAccountOperationRequest) request,
@@ -15943,20 +15799,6 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyResponse>(
                 service, METHODID_LIST_VCURRENCY)))
         .addMethod(
-          getAddAccountOperationMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              com.zhijiejiaoyu.glory_api.account.AddAccountOperationRequest,
-              com.zhijiejiaoyu.glory_api.account.AddAccountOperationResponse>(
-                service, METHODID_ADD_ACCOUNT_OPERATION)))
-        .addMethod(
-          getGetAccountOperationMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              com.zhijiejiaoyu.glory_api.account.GetAccountOperationRequest,
-              com.zhijiejiaoyu.glory_api.account.GetAccountOperationResponse>(
-                service, METHODID_GET_ACCOUNT_OPERATION)))
-        .addMethod(
           getListAccountOperationMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -16739,8 +16581,6 @@ public final class glory_apiGrpc {
               .addMethod(getUpdateVCurrencyMethod())
               .addMethod(getGetVCurrencyMethod())
               .addMethod(getListVCurrencyMethod())
-              .addMethod(getAddAccountOperationMethod())
-              .addMethod(getGetAccountOperationMethod())
               .addMethod(getListAccountOperationMethod())
               .addMethod(getCreateRoomMethod())
               .addMethod(getGetRoomMethod())

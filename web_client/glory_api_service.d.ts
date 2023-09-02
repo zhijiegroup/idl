@@ -561,15 +561,6 @@ list the permissions that supported */
     request: virtual_currency.ListVirtualCurrencyRequest
   ): Promise<virtual_currency.ListVirtualCurrencyResponse>;
 
-  /** account */
-  AddAccountOperation(
-    request: account_operation.AddAccountOperationRequest
-  ): Promise<account_operation.AddAccountOperationResponse>;
-
-  GetAccountOperation(
-    request: account_operation.GetAccountOperationRequest
-  ): Promise<account_operation.GetAccountOperationResponse>;
-
   ListAccountOperation(
     request: account_operation.ListAccountOperationRequest
   ): Promise<account_operation.ListAccountOperationResponse>;

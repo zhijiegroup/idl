@@ -1056,20 +1056,6 @@ export class glory_api {
     );
   }
 
-  AddAccountOperation(request) {
-    const uri = `${this.uriPrefix}/api/account/add_operation`;
-    const body = JSONbigint.stringify(request);
-    return fetch(uri, { method: "POST", headers, body, credentials }).then(
-      handleResponse
-    );
-  }
-
-  GetAccountOperation(request) {
-    const query = queryStringify(request);
-    const uri = `${this.uriPrefix}/api/account/get_operation${query}`;
-    return fetch(uri, { method, headers, credentials }).then(handleResponse);
-  }
-
   ListAccountOperation(request) {
     const uri = `${this.uriPrefix}/api/account/list_operation`;
     const body = JSONbigint.stringify(request);
