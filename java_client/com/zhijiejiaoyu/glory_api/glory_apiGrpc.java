@@ -3797,6 +3797,37 @@ public final class glory_apiGrpc {
     return getRechargeCurrencyInBatchesMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.currency.GetVirtualCurrencyRequest,
+      com.zhijiejiaoyu.glory_api.currency.GetVirtualCurrencyResponse> getGetVCurrencyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetVCurrency",
+      requestType = com.zhijiejiaoyu.glory_api.currency.GetVirtualCurrencyRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.currency.GetVirtualCurrencyResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.currency.GetVirtualCurrencyRequest,
+      com.zhijiejiaoyu.glory_api.currency.GetVirtualCurrencyResponse> getGetVCurrencyMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.currency.GetVirtualCurrencyRequest, com.zhijiejiaoyu.glory_api.currency.GetVirtualCurrencyResponse> getGetVCurrencyMethod;
+    if ((getGetVCurrencyMethod = glory_apiGrpc.getGetVCurrencyMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGetVCurrencyMethod = glory_apiGrpc.getGetVCurrencyMethod) == null) {
+          glory_apiGrpc.getGetVCurrencyMethod = getGetVCurrencyMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.currency.GetVirtualCurrencyRequest, com.zhijiejiaoyu.glory_api.currency.GetVirtualCurrencyResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetVCurrency"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.currency.GetVirtualCurrencyRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.currency.GetVirtualCurrencyResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetVCurrency"))
+              .build();
+        }
+      }
+    }
+    return getGetVCurrencyMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest,
       com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyResponse> getListVCurrencyMethod;
 
@@ -7514,6 +7545,13 @@ public final class glory_apiGrpc {
 
     /**
      */
+    default void getVCurrency(com.zhijiejiaoyu.glory_api.currency.GetVirtualCurrencyRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.currency.GetVirtualCurrencyResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetVCurrencyMethod(), responseObserver);
+    }
+
+    /**
+     */
     default void listVCurrency(com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListVCurrencyMethod(), responseObserver);
@@ -9308,6 +9346,14 @@ public final class glory_apiGrpc {
 
     /**
      */
+    public void getVCurrency(com.zhijiejiaoyu.glory_api.currency.GetVirtualCurrencyRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.currency.GetVirtualCurrencyResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetVCurrencyMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
     public void listVCurrency(com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -11053,6 +11099,13 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyInBatchesResponse rechargeCurrencyInBatches(com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyInBatchesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRechargeCurrencyInBatchesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.currency.GetVirtualCurrencyResponse getVCurrency(com.zhijiejiaoyu.glory_api.currency.GetVirtualCurrencyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetVCurrencyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -12840,6 +12893,14 @@ public final class glory_apiGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.currency.GetVirtualCurrencyResponse> getVCurrency(
+        com.zhijiejiaoyu.glory_api.currency.GetVirtualCurrencyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetVCurrencyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyResponse> listVCurrency(
         com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -13754,94 +13815,95 @@ public final class glory_apiGrpc {
   private static final int METHODID_ADD_VCURRENCY = 119;
   private static final int METHODID_RECHARGE_CURRENCY = 120;
   private static final int METHODID_RECHARGE_CURRENCY_IN_BATCHES = 121;
-  private static final int METHODID_LIST_VCURRENCY = 122;
-  private static final int METHODID_LIST_ACCOUNT_OPERATION = 123;
-  private static final int METHODID_CREATE_ROOM = 124;
-  private static final int METHODID_GET_ROOM = 125;
-  private static final int METHODID_UPDATE_ROOM = 126;
-  private static final int METHODID_LIST_ROOM = 127;
-  private static final int METHODID_DELETE_ROOM = 128;
-  private static final int METHODID_LIST_FINISHED_ROOM = 129;
-  private static final int METHODID_RECORD = 130;
-  private static final int METHODID_CREATE_LIVE_USER_TOKEN = 131;
-  private static final int METHODID_USER_ENTER_ROOM = 132;
-  private static final int METHODID_USER_EXIT_ROOM = 133;
-  private static final int METHODID_LIST_ACTIVE_ROOM_USER = 134;
-  private static final int METHODID_CREATE_LIVE_PLAN = 135;
-  private static final int METHODID_GET_LIVE_PLAN = 136;
-  private static final int METHODID_UPDATE_LIVE_PLAN = 137;
-  private static final int METHODID_LIST_LIVE_PLAN = 138;
-  private static final int METHODID_DELETE_LIVE_PLAN = 139;
-  private static final int METHODID_CREATE_LIVE_PLAN_PRODUCT = 140;
-  private static final int METHODID_UPDATE_LIVE_PLAN_PRODUCT = 141;
-  private static final int METHODID_LIST_LIVE_PLAN_PRODUCT = 142;
-  private static final int METHODID_DELETE_LIVE_PLAN_PRODUCT = 143;
-  private static final int METHODID_LOAD_LIVE_PLAN_PRODUCT = 144;
-  private static final int METHODID_UPDATE_LIVE_PRODUCT_STATUS = 145;
-  private static final int METHODID_LIST_LIVE_PRODUCT_STATUS = 146;
-  private static final int METHODID_DELETE_LIVE_PRODUCT_STATUS = 147;
-  private static final int METHODID_CREATE_LIVE_PRODUCT_STATUS = 148;
-  private static final int METHODID_GET_LIVING_PRODUCT_STATUS = 149;
-  private static final int METHODID_UPDATE_LIVE_PRODUCT_INTRODUCT_STATUS = 150;
-  private static final int METHODID_CREATE_LIVE_TEXT = 151;
-  private static final int METHODID_UPDATE_LIVE_TEXT = 152;
-  private static final int METHODID_LIST_LIVE_TEXT = 153;
-  private static final int METHODID_GET_LIVE_TEXT = 154;
-  private static final int METHODID_DELETE_LIVE_TEXTS = 155;
-  private static final int METHODID_GET_LIVE_CHART_DATA = 156;
-  private static final int METHODID_GET_EVALUATE_SELECTOR = 157;
-  private static final int METHODID_LIST_PERSONAL_EVALUATE = 158;
-  private static final int METHODID_GET_EVALUATE_DETAIL = 159;
-  private static final int METHODID_SUBMIT_EVALUATE = 160;
-  private static final int METHODID_LIST_UNEVALUATED_ROOM = 161;
-  private static final int METHODID_LIST_STUDENT_EVALUATIONS = 162;
-  private static final int METHODID_IGNORE_EVALUATION = 163;
-  private static final int METHODID_GET_RANK = 164;
-  private static final int METHODID_RECORD_LIVE_CALLBACK = 165;
-  private static final int METHODID_VIDEO_TO_TEXT_CALLBACK = 166;
-  private static final int METHODID_REGENERATION_AI_FEEDBACK = 167;
-  private static final int METHODID_SUBMIT_USER_ATTITUDE_FOR_AI_RESULT = 168;
-  private static final int METHODID_CREATE_TENANT = 169;
-  private static final int METHODID_GET_TENANT = 170;
-  private static final int METHODID_UPDATE_TENANT = 171;
-  private static final int METHODID_DELETE_TENANT = 172;
-  private static final int METHODID_LIST_TENANT = 173;
-  private static final int METHODID_GET_TENANT_ORG = 174;
-  private static final int METHODID_CREATE_TENANT_DEPT = 175;
-  private static final int METHODID_UPDATE_TENANT_DEPT = 176;
-  private static final int METHODID_DELETE_TENANT_DEPT = 177;
-  private static final int METHODID_GET_TENANT_DEPT = 178;
-  private static final int METHODID_GET_TENANT_DEPT_TYPE = 179;
-  private static final int METHODID_CREATE_TENANT_USER = 180;
-  private static final int METHODID_DELETE_TENANT_USER = 181;
-  private static final int METHODID_UPDATE_TENANT_USER = 182;
-  private static final int METHODID_GET_TENANT_USER = 183;
-  private static final int METHODID_LIST_TENANT_USER = 184;
-  private static final int METHODID_LIST_TENANT_STUDENT = 185;
-  private static final int METHODID_UPDATE_TENANT_USER_PASSWORD = 186;
-  private static final int METHODID_UPDATE_TENANT_CONFIG = 187;
-  private static final int METHODID_LIST_TENANT_CONFIG = 188;
-  private static final int METHODID_CREATE_SHORT_VIDEO = 189;
-  private static final int METHODID_STAGE_SHORT_VIDEO = 190;
-  private static final int METHODID_LIST_MY_SHORT_VIDEO = 191;
-  private static final int METHODID_LIST_MY_STAGE_VIDEO = 192;
-  private static final int METHODID_LIST_MY_LIKE_VIDEO = 193;
-  private static final int METHODID_LIST_MY_FAVORITE_VIDEO = 194;
-  private static final int METHODID_GET_SHORT_VIDEO = 195;
-  private static final int METHODID_UPDATE_SHORT_VIDEO = 196;
-  private static final int METHODID_DELETE_SHORT_VIDEO = 197;
-  private static final int METHODID_GET_STAGE_VIDEO = 198;
-  private static final int METHODID_DELETE_STAGE_VIDEO = 199;
-  private static final int METHODID_UPDATE_STAGE_VIDEO = 200;
-  private static final int METHODID_MANAGEMENT_LIST_SHORT_VIDEO = 201;
-  private static final int METHODID_MANAGEMENT_CENSOR_SHORT_VIDEO = 202;
-  private static final int METHODID_MANAGEMENT_DELETE_SHORT_VIDEO = 203;
-  private static final int METHODID_LIST_SHORT_VIDEO = 204;
-  private static final int METHODID_LIKE_SHORT_VIDEO = 205;
-  private static final int METHODID_FAVORITE_SHORT_VIDEO = 206;
-  private static final int METHODID_CREATE_SHORT_VIDEO_COMMENT = 207;
-  private static final int METHODID_DELETE_SHORT_VIDEO_COMMENT = 208;
-  private static final int METHODID_LIST_SHORT_VIDEO_COMMENT = 209;
+  private static final int METHODID_GET_VCURRENCY = 122;
+  private static final int METHODID_LIST_VCURRENCY = 123;
+  private static final int METHODID_LIST_ACCOUNT_OPERATION = 124;
+  private static final int METHODID_CREATE_ROOM = 125;
+  private static final int METHODID_GET_ROOM = 126;
+  private static final int METHODID_UPDATE_ROOM = 127;
+  private static final int METHODID_LIST_ROOM = 128;
+  private static final int METHODID_DELETE_ROOM = 129;
+  private static final int METHODID_LIST_FINISHED_ROOM = 130;
+  private static final int METHODID_RECORD = 131;
+  private static final int METHODID_CREATE_LIVE_USER_TOKEN = 132;
+  private static final int METHODID_USER_ENTER_ROOM = 133;
+  private static final int METHODID_USER_EXIT_ROOM = 134;
+  private static final int METHODID_LIST_ACTIVE_ROOM_USER = 135;
+  private static final int METHODID_CREATE_LIVE_PLAN = 136;
+  private static final int METHODID_GET_LIVE_PLAN = 137;
+  private static final int METHODID_UPDATE_LIVE_PLAN = 138;
+  private static final int METHODID_LIST_LIVE_PLAN = 139;
+  private static final int METHODID_DELETE_LIVE_PLAN = 140;
+  private static final int METHODID_CREATE_LIVE_PLAN_PRODUCT = 141;
+  private static final int METHODID_UPDATE_LIVE_PLAN_PRODUCT = 142;
+  private static final int METHODID_LIST_LIVE_PLAN_PRODUCT = 143;
+  private static final int METHODID_DELETE_LIVE_PLAN_PRODUCT = 144;
+  private static final int METHODID_LOAD_LIVE_PLAN_PRODUCT = 145;
+  private static final int METHODID_UPDATE_LIVE_PRODUCT_STATUS = 146;
+  private static final int METHODID_LIST_LIVE_PRODUCT_STATUS = 147;
+  private static final int METHODID_DELETE_LIVE_PRODUCT_STATUS = 148;
+  private static final int METHODID_CREATE_LIVE_PRODUCT_STATUS = 149;
+  private static final int METHODID_GET_LIVING_PRODUCT_STATUS = 150;
+  private static final int METHODID_UPDATE_LIVE_PRODUCT_INTRODUCT_STATUS = 151;
+  private static final int METHODID_CREATE_LIVE_TEXT = 152;
+  private static final int METHODID_UPDATE_LIVE_TEXT = 153;
+  private static final int METHODID_LIST_LIVE_TEXT = 154;
+  private static final int METHODID_GET_LIVE_TEXT = 155;
+  private static final int METHODID_DELETE_LIVE_TEXTS = 156;
+  private static final int METHODID_GET_LIVE_CHART_DATA = 157;
+  private static final int METHODID_GET_EVALUATE_SELECTOR = 158;
+  private static final int METHODID_LIST_PERSONAL_EVALUATE = 159;
+  private static final int METHODID_GET_EVALUATE_DETAIL = 160;
+  private static final int METHODID_SUBMIT_EVALUATE = 161;
+  private static final int METHODID_LIST_UNEVALUATED_ROOM = 162;
+  private static final int METHODID_LIST_STUDENT_EVALUATIONS = 163;
+  private static final int METHODID_IGNORE_EVALUATION = 164;
+  private static final int METHODID_GET_RANK = 165;
+  private static final int METHODID_RECORD_LIVE_CALLBACK = 166;
+  private static final int METHODID_VIDEO_TO_TEXT_CALLBACK = 167;
+  private static final int METHODID_REGENERATION_AI_FEEDBACK = 168;
+  private static final int METHODID_SUBMIT_USER_ATTITUDE_FOR_AI_RESULT = 169;
+  private static final int METHODID_CREATE_TENANT = 170;
+  private static final int METHODID_GET_TENANT = 171;
+  private static final int METHODID_UPDATE_TENANT = 172;
+  private static final int METHODID_DELETE_TENANT = 173;
+  private static final int METHODID_LIST_TENANT = 174;
+  private static final int METHODID_GET_TENANT_ORG = 175;
+  private static final int METHODID_CREATE_TENANT_DEPT = 176;
+  private static final int METHODID_UPDATE_TENANT_DEPT = 177;
+  private static final int METHODID_DELETE_TENANT_DEPT = 178;
+  private static final int METHODID_GET_TENANT_DEPT = 179;
+  private static final int METHODID_GET_TENANT_DEPT_TYPE = 180;
+  private static final int METHODID_CREATE_TENANT_USER = 181;
+  private static final int METHODID_DELETE_TENANT_USER = 182;
+  private static final int METHODID_UPDATE_TENANT_USER = 183;
+  private static final int METHODID_GET_TENANT_USER = 184;
+  private static final int METHODID_LIST_TENANT_USER = 185;
+  private static final int METHODID_LIST_TENANT_STUDENT = 186;
+  private static final int METHODID_UPDATE_TENANT_USER_PASSWORD = 187;
+  private static final int METHODID_UPDATE_TENANT_CONFIG = 188;
+  private static final int METHODID_LIST_TENANT_CONFIG = 189;
+  private static final int METHODID_CREATE_SHORT_VIDEO = 190;
+  private static final int METHODID_STAGE_SHORT_VIDEO = 191;
+  private static final int METHODID_LIST_MY_SHORT_VIDEO = 192;
+  private static final int METHODID_LIST_MY_STAGE_VIDEO = 193;
+  private static final int METHODID_LIST_MY_LIKE_VIDEO = 194;
+  private static final int METHODID_LIST_MY_FAVORITE_VIDEO = 195;
+  private static final int METHODID_GET_SHORT_VIDEO = 196;
+  private static final int METHODID_UPDATE_SHORT_VIDEO = 197;
+  private static final int METHODID_DELETE_SHORT_VIDEO = 198;
+  private static final int METHODID_GET_STAGE_VIDEO = 199;
+  private static final int METHODID_DELETE_STAGE_VIDEO = 200;
+  private static final int METHODID_UPDATE_STAGE_VIDEO = 201;
+  private static final int METHODID_MANAGEMENT_LIST_SHORT_VIDEO = 202;
+  private static final int METHODID_MANAGEMENT_CENSOR_SHORT_VIDEO = 203;
+  private static final int METHODID_MANAGEMENT_DELETE_SHORT_VIDEO = 204;
+  private static final int METHODID_LIST_SHORT_VIDEO = 205;
+  private static final int METHODID_LIKE_SHORT_VIDEO = 206;
+  private static final int METHODID_FAVORITE_SHORT_VIDEO = 207;
+  private static final int METHODID_CREATE_SHORT_VIDEO_COMMENT = 208;
+  private static final int METHODID_DELETE_SHORT_VIDEO_COMMENT = 209;
+  private static final int METHODID_LIST_SHORT_VIDEO_COMMENT = 210;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -14347,6 +14409,10 @@ public final class glory_apiGrpc {
         case METHODID_RECHARGE_CURRENCY_IN_BATCHES:
           serviceImpl.rechargeCurrencyInBatches((com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyInBatchesRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyInBatchesResponse>) responseObserver);
+          break;
+        case METHODID_GET_VCURRENCY:
+          serviceImpl.getVCurrency((com.zhijiejiaoyu.glory_api.currency.GetVirtualCurrencyRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.currency.GetVirtualCurrencyResponse>) responseObserver);
           break;
         case METHODID_LIST_VCURRENCY:
           serviceImpl.listVCurrency((com.zhijiejiaoyu.glory_api.currency.ListVirtualCurrencyRequest) request,
@@ -15573,6 +15639,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.currency.RechargeCurrencyInBatchesResponse>(
                 service, METHODID_RECHARGE_CURRENCY_IN_BATCHES)))
         .addMethod(
+          getGetVCurrencyMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.currency.GetVirtualCurrencyRequest,
+              com.zhijiejiaoyu.glory_api.currency.GetVirtualCurrencyResponse>(
+                service, METHODID_GET_VCURRENCY)))
+        .addMethod(
           getListVCurrencyMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -16358,6 +16431,7 @@ public final class glory_apiGrpc {
               .addMethod(getAddVCurrencyMethod())
               .addMethod(getRechargeCurrencyMethod())
               .addMethod(getRechargeCurrencyInBatchesMethod())
+              .addMethod(getGetVCurrencyMethod())
               .addMethod(getListVCurrencyMethod())
               .addMethod(getListAccountOperationMethod())
               .addMethod(getCreateRoomMethod())

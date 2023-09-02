@@ -1026,6 +1026,12 @@ export class glory_api {
     );
   }
 
+  GetVCurrency(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/currency/get_by_uid${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
   ListVCurrency(request) {
     const uri = `${this.uriPrefix}/api/currency/list`;
     const body = JSONbigint.stringify(request);

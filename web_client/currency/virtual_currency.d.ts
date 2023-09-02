@@ -63,6 +63,16 @@ export interface RechargeCurrencyInBatchesResponse {
   base_resp?: base.BaseResponse;
 }
 
+export interface GetVirtualCurrencyRequest {
+  base_request?: base.BaseRequest;
+  user_id?: string;
+}
+
+export interface GetVirtualCurrencyResponse {
+  base_resp?: base.BaseResponse;
+  virtual_currency_info?: VirtualCurrencyInfo;
+}
+
 export interface ListVirtualCurrencyRequest {
   base_request?: base.BaseRequest;
   user_id?: string;
