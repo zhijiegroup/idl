@@ -512,15 +512,6 @@ service glory_api {
     option (api.post) = '/api/currency/list';
   }
 
-  // account
-  rpc AddAccountOperation(AddAccountOperationRequest) returns (AddAccountOperationResponse) {
-    option (api.post) = '/api/account/add_operation';
-  }
-
-  rpc GetAccountOperation(GetAccountOperationRequest) returns (GetAccountOperationResponse) {
-    option (api.get) = '/api/account/get_operation';
-  }
-
   rpc ListAccountOperation(ListAccountOperationRequest) returns (ListAccountOperationResponse) {
     option (api.post) = '/api/account/list_operation';
   }
