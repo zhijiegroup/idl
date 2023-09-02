@@ -15,25 +15,6 @@ message AccountOperation {
   string created_at = 7;
 }
 
-message AddAccountOperationRequest {
-  base.BaseRequest base_request = 1;
-  AccountOperation account_operation = 2;
-}
-
-message AddAccountOperationResponse {
-  base.BaseResponse base_resp = 1;
-}
-
-message GetAccountOperationRequest {
-  base.BaseRequest base_request = 1;
-  int64 user_id = 2;
-}
-
-message GetAccountOperationResponse {
-  base.BaseResponse base_resp = 1;
-  AccountOperation account_operation = 2;
-}
-
 message ListAccountOperationRequest {
   base.BaseRequest base_request = 1;
   int64 user_id = 2;
