@@ -11,10 +11,10 @@ message TenantUser {
     int64 user_id = 2;
     string phone = 4;
     string name = 5;
-    repeated Role roles = 6;
     string dept = 8;
     int64 dept_id = 9;
     User user = 10;
+    Role role = 11;
 }
 
 message CreateTenantUserRequest {
