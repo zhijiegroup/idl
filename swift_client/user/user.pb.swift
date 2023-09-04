@@ -732,6 +732,8 @@ struct GloryApi_GetRoleTypeRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
+  var category: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -2950,6 +2952,7 @@ extension GloryApi_GetRoleTypeRequest: SwiftProtobuf.Message, SwiftProtobuf._Mes
   static let protoMessageName: String = _protobuf_package + ".GetRoleTypeRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
+    2: .same(proto: "category"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2959,6 +2962,7 @@ extension GloryApi_GetRoleTypeRequest: SwiftProtobuf.Message, SwiftProtobuf._Mes
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.category) }()
       default: break
       }
     }
@@ -2972,11 +2976,15 @@ extension GloryApi_GetRoleTypeRequest: SwiftProtobuf.Message, SwiftProtobuf._Mes
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
+    if !self.category.isEmpty {
+      try visitor.visitSingularStringField(value: self.category, fieldNumber: 2)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_GetRoleTypeRequest, rhs: GloryApi_GetRoleTypeRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.category != rhs.category {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

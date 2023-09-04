@@ -21,4 +21,16 @@ public interface GetRoleTypeRequestOrBuilder extends
    * <code>.base.BaseRequest base_request = 1;</code>
    */
   com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder();
+
+  /**
+   * <code>string category = 2;</code>
+   * @return The category.
+   */
+  java.lang.String getCategory();
+  /**
+   * <code>string category = 2;</code>
+   * @return The bytes for category.
+   */
+  com.google.protobuf.ByteString
+      getCategoryBytes();
 }

@@ -198,6 +198,7 @@ export interface RoleType {
 
 export interface GetRoleTypeRequest {
   base_request?: base.BaseRequest;
+  category?: string;
 }
 
 export interface GetRoleTypeResponse {
