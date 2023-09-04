@@ -302,6 +302,7 @@ message ListUserByRole {
   int64 tenant_id = 4;
   string role = 5;
   string created_at = 6;
+  repeated Role roles = 7; 
 }
 
 message ListUserByRoleRequest {
