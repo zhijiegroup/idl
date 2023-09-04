@@ -1194,6 +1194,8 @@ struct GloryApi_ListUserByRole {
 
   var createdAt: String = String()
 
+  var roles: [GloryApi_Role] = []
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -3755,6 +3757,7 @@ extension GloryApi_ListUserByRole: SwiftProtobuf.Message, SwiftProtobuf._Message
     4: .standard(proto: "tenant_id"),
     5: .same(proto: "role"),
     6: .standard(proto: "created_at"),
+    7: .same(proto: "roles"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -3769,6 +3772,7 @@ extension GloryApi_ListUserByRole: SwiftProtobuf.Message, SwiftProtobuf._Message
       case 4: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
       case 5: try { try decoder.decodeSingularStringField(value: &self.role) }()
       case 6: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
+      case 7: try { try decoder.decodeRepeatedMessageField(value: &self.roles) }()
       default: break
       }
     }
@@ -3793,6 +3797,9 @@ extension GloryApi_ListUserByRole: SwiftProtobuf.Message, SwiftProtobuf._Message
     if !self.createdAt.isEmpty {
       try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 6)
     }
+    if !self.roles.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.roles, fieldNumber: 7)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -3803,6 +3810,7 @@ extension GloryApi_ListUserByRole: SwiftProtobuf.Message, SwiftProtobuf._Message
     if lhs.tenantID != rhs.tenantID {return false}
     if lhs.role != rhs.role {return false}
     if lhs.createdAt != rhs.createdAt {return false}
+    if lhs.roles != rhs.roles {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

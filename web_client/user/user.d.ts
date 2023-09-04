@@ -320,6 +320,7 @@ export interface ListUserByRole {
   tenant_id?: string;
   role?: string;
   created_at?: string;
+  roles?: Array<Role>;
 }
 
 export interface ListUserByRoleRequest {

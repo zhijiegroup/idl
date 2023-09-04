@@ -413,37 +413,38 @@ public final class UserOuterClass {
       "rceResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
       "seResponse\022%\n\010resource\030\002 \003(\0132\023.glory_api" +
       ".Resource\022,\n\npagination\030d \001(\0132\030.base.Pag" +
-      "inationResponse\"x\n\016ListUserByRole\022\017\n\007use" +
-      "r_id\030\001 \001(\003\022\r\n\005phone\030\002 \001(\t\022\021\n\tuser_name\030\003" +
-      " \001(\t\022\021\n\ttenant_id\030\004 \001(\003\022\014\n\004role\030\005 \001(\t\022\022\n" +
-      "\ncreated_at\030\006 \001(\t\"\241\001\n\025ListUserByRoleRequ" +
+      "inationResponse\"\230\001\n\016ListUserByRole\022\017\n\007us" +
+      "er_id\030\001 \001(\003\022\r\n\005phone\030\002 \001(\t\022\021\n\tuser_name\030" +
+      "\003 \001(\t\022\021\n\ttenant_id\030\004 \001(\003\022\014\n\004role\030\005 \001(\t\022\022" +
+      "\n\ncreated_at\030\006 \001(\t\022\036\n\005roles\030\007 \003(\0132\017.glor" +
+      "y_api.Role\"\241\001\n\025ListUserByRoleRequest\022\'\n\014" +
+      "base_request\030\001 \001(\0132\021.base.BaseRequest\022\021\n" +
+      "\trole_name\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\021\n\ttenant" +
+      "_id\030\004 \001(\003\022+\n\npagination\030d \001(\0132\027.base.Pag" +
+      "inationRequest\"\226\001\n\026ListUserByRoleRespons" +
+      "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
+      "\022\'\n\004user\030\002 \003(\0132\031.glory_api.ListUserByRol" +
+      "e\022,\n\npagination\030d \001(\0132\030.base.PaginationR" +
+      "esponse\"f\n\021FollowUserRequest\022\'\n\014base_req" +
+      "uest\030\001 \001(\0132\021.base.BaseRequest\022\030\n\020followe" +
+      "d_user_id\030\002 \001(\003\022\016\n\006follow\030\003 \001(\010\";\n\022Follo" +
+      "wUserResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
+      "BaseResponse\"q\n\031ListMyFollowedUserReques" +
+      "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
+      "st\022+\n\npagination\030d \001(\0132\027.base.Pagination" +
+      "Request\"\244\001\n\032ListMyFollowedUserResponse\022%" +
+      "\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\0221\n" +
+      "\022followed_user_list\030\002 \003(\0132\025.glory_api.Us" +
+      "erFollow\022,\n\npagination\030d \001(\0132\030.base.Pagi" +
+      "nationResponse\"q\n\031ListMyFollowerUserRequ" +
       "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
-      "uest\022\021\n\trole_name\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\021\n" +
-      "\ttenant_id\030\004 \001(\003\022+\n\npagination\030d \001(\0132\027.b" +
-      "ase.PaginationRequest\"\226\001\n\026ListUserByRole" +
-      "Response\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseR" +
-      "esponse\022\'\n\004user\030\002 \003(\0132\031.glory_api.ListUs" +
-      "erByRole\022,\n\npagination\030d \001(\0132\030.base.Pagi" +
-      "nationResponse\"f\n\021FollowUserRequest\022\'\n\014b" +
-      "ase_request\030\001 \001(\0132\021.base.BaseRequest\022\030\n\020" +
-      "followed_user_id\030\002 \001(\003\022\016\n\006follow\030\003 \001(\010\";" +
-      "\n\022FollowUserResponse\022%\n\tbase_resp\030\001 \001(\0132" +
-      "\022.base.BaseResponse\"q\n\031ListMyFollowedUse" +
-      "rRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
-      "seRequest\022+\n\npagination\030d \001(\0132\027.base.Pag" +
-      "inationRequest\"\244\001\n\032ListMyFollowedUserRes" +
-      "ponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResp" +
-      "onse\0221\n\022followed_user_list\030\002 \003(\0132\025.glory" +
-      "_api.UserFollow\022,\n\npagination\030d \001(\0132\030.ba" +
-      "se.PaginationResponse\"q\n\031ListMyFollowerU" +
-      "serRequest\022\'\n\014base_request\030\001 \001(\0132\021.base." +
-      "BaseRequest\022+\n\npagination\030d \001(\0132\027.base.P" +
-      "aginationRequest\"\244\001\n\032ListMyFollowerUserR" +
-      "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
-      "sponse\0221\n\022follower_user_list\030\002 \003(\0132\025.glo" +
-      "ry_api.UserFollow\022,\n\npagination\030d \001(\0132\030." +
-      "base.PaginationResponseB#\n\037com.zhijiejia" +
-      "oyu.glory_api.userP\001b\006proto3"
+      "uest\022+\n\npagination\030d \001(\0132\027.base.Paginati" +
+      "onRequest\"\244\001\n\032ListMyFollowerUserResponse" +
+      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022" +
+      "1\n\022follower_user_list\030\002 \003(\0132\025.glory_api." +
+      "UserFollow\022,\n\npagination\030d \001(\0132\030.base.Pa" +
+      "ginationResponseB#\n\037com.zhijiejiaoyu.glo" +
+      "ry_api.userP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -715,7 +716,7 @@ public final class UserOuterClass {
     internal_static_glory_api_ListUserByRole_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListUserByRole_descriptor,
-        new java.lang.String[] { "UserId", "Phone", "UserName", "TenantId", "Role", "CreatedAt", });
+        new java.lang.String[] { "UserId", "Phone", "UserName", "TenantId", "Role", "CreatedAt", "Roles", });
     internal_static_glory_api_ListUserByRoleRequest_descriptor =
       getDescriptor().getMessageTypes().get(44);
     internal_static_glory_api_ListUserByRoleRequest_fieldAccessorTable = new

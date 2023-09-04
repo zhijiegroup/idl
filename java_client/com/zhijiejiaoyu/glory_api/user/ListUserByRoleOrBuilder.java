@@ -66,4 +66,28 @@ public interface ListUserByRoleOrBuilder extends
    */
   com.google.protobuf.ByteString
       getCreatedAtBytes();
+
+  /**
+   * <code>repeated .glory_api.Role roles = 7;</code>
+   */
+  java.util.List<com.zhijiejiaoyu.glory_api.user.Role> 
+      getRolesList();
+  /**
+   * <code>repeated .glory_api.Role roles = 7;</code>
+   */
+  com.zhijiejiaoyu.glory_api.user.Role getRoles(int index);
+  /**
+   * <code>repeated .glory_api.Role roles = 7;</code>
+   */
+  int getRolesCount();
+  /**
+   * <code>repeated .glory_api.Role roles = 7;</code>
+   */
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.user.RoleOrBuilder> 
+      getRolesOrBuilderList();
+  /**
+   * <code>repeated .glory_api.Role roles = 7;</code>
+   */
+  com.zhijiejiaoyu.glory_api.user.RoleOrBuilder getRolesOrBuilder(
+      int index);
 }
