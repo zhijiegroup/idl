@@ -45,11 +45,6 @@ struct GloryApi_TenantUser {
     set {_uniqueStorage()._name = newValue}
   }
 
-  var roles: [GloryApi_Role] {
-    get {return _storage._roles}
-    set {_uniqueStorage()._roles = newValue}
-  }
-
   var dept: String {
     get {return _storage._dept}
     set {_uniqueStorage()._dept = newValue}
@@ -68,6 +63,15 @@ struct GloryApi_TenantUser {
   var hasUser: Bool {return _storage._user != nil}
   /// Clears the value of `user`. Subsequent reads from it will return its default value.
   mutating func clearUser() {_uniqueStorage()._user = nil}
+
+  var role: GloryApi_Role {
+    get {return _storage._role ?? GloryApi_Role()}
+    set {_uniqueStorage()._role = newValue}
+  }
+  /// Returns true if `role` has been explicitly set.
+  var hasRole: Bool {return _storage._role != nil}
+  /// Clears the value of `role`. Subsequent reads from it will return its default value.
+  mutating func clearRole() {_uniqueStorage()._role = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -495,10 +499,10 @@ extension GloryApi_TenantUser: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     2: .standard(proto: "user_id"),
     4: .same(proto: "phone"),
     5: .same(proto: "name"),
-    6: .same(proto: "roles"),
     8: .same(proto: "dept"),
     9: .standard(proto: "dept_id"),
     10: .same(proto: "user"),
+    11: .same(proto: "role"),
   ]
 
   fileprivate class _StorageClass {
@@ -506,10 +510,10 @@ extension GloryApi_TenantUser: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     var _userID: Int64 = 0
     var _phone: String = String()
     var _name: String = String()
-    var _roles: [GloryApi_Role] = []
     var _dept: String = String()
     var _deptID: Int64 = 0
     var _user: GloryApi_User? = nil
+    var _role: GloryApi_Role? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -520,10 +524,10 @@ extension GloryApi_TenantUser: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
       _userID = source._userID
       _phone = source._phone
       _name = source._name
-      _roles = source._roles
       _dept = source._dept
       _deptID = source._deptID
       _user = source._user
+      _role = source._role
     }
   }
 
@@ -546,10 +550,10 @@ extension GloryApi_TenantUser: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
         case 2: try { try decoder.decodeSingularInt64Field(value: &_storage._userID) }()
         case 4: try { try decoder.decodeSingularStringField(value: &_storage._phone) }()
         case 5: try { try decoder.decodeSingularStringField(value: &_storage._name) }()
-        case 6: try { try decoder.decodeRepeatedMessageField(value: &_storage._roles) }()
         case 8: try { try decoder.decodeSingularStringField(value: &_storage._dept) }()
         case 9: try { try decoder.decodeSingularInt64Field(value: &_storage._deptID) }()
         case 10: try { try decoder.decodeSingularMessageField(value: &_storage._user) }()
+        case 11: try { try decoder.decodeSingularMessageField(value: &_storage._role) }()
         default: break
         }
       }
@@ -574,9 +578,6 @@ extension GloryApi_TenantUser: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
       if !_storage._name.isEmpty {
         try visitor.visitSingularStringField(value: _storage._name, fieldNumber: 5)
       }
-      if !_storage._roles.isEmpty {
-        try visitor.visitRepeatedMessageField(value: _storage._roles, fieldNumber: 6)
-      }
       if !_storage._dept.isEmpty {
         try visitor.visitSingularStringField(value: _storage._dept, fieldNumber: 8)
       }
@@ -585,6 +586,9 @@ extension GloryApi_TenantUser: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
       }
       try { if let v = _storage._user {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 10)
+      } }()
+      try { if let v = _storage._role {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 11)
       } }()
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -599,10 +603,10 @@ extension GloryApi_TenantUser: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
         if _storage._userID != rhs_storage._userID {return false}
         if _storage._phone != rhs_storage._phone {return false}
         if _storage._name != rhs_storage._name {return false}
-        if _storage._roles != rhs_storage._roles {return false}
         if _storage._dept != rhs_storage._dept {return false}
         if _storage._deptID != rhs_storage._deptID {return false}
         if _storage._user != rhs_storage._user {return false}
+        if _storage._role != rhs_storage._role {return false}
         return true
       }
       if !storagesAreEqual {return false}

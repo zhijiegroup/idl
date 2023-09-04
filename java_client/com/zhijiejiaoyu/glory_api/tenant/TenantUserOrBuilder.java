@@ -44,30 +44,6 @@ public interface TenantUserOrBuilder extends
       getNameBytes();
 
   /**
-   * <code>repeated .glory_api.Role roles = 6;</code>
-   */
-  java.util.List<com.zhijiejiaoyu.glory_api.user.Role> 
-      getRolesList();
-  /**
-   * <code>repeated .glory_api.Role roles = 6;</code>
-   */
-  com.zhijiejiaoyu.glory_api.user.Role getRoles(int index);
-  /**
-   * <code>repeated .glory_api.Role roles = 6;</code>
-   */
-  int getRolesCount();
-  /**
-   * <code>repeated .glory_api.Role roles = 6;</code>
-   */
-  java.util.List<? extends com.zhijiejiaoyu.glory_api.user.RoleOrBuilder> 
-      getRolesOrBuilderList();
-  /**
-   * <code>repeated .glory_api.Role roles = 6;</code>
-   */
-  com.zhijiejiaoyu.glory_api.user.RoleOrBuilder getRolesOrBuilder(
-      int index);
-
-  /**
    * <code>string dept = 8;</code>
    * @return The dept.
    */
@@ -99,4 +75,19 @@ public interface TenantUserOrBuilder extends
    * <code>.glory_api.User user = 10;</code>
    */
   com.zhijiejiaoyu.glory_api.user.UserOrBuilder getUserOrBuilder();
+
+  /**
+   * <code>.glory_api.Role role = 11;</code>
+   * @return Whether the role field is set.
+   */
+  boolean hasRole();
+  /**
+   * <code>.glory_api.Role role = 11;</code>
+   * @return The role.
+   */
+  com.zhijiejiaoyu.glory_api.user.Role getRole();
+  /**
+   * <code>.glory_api.Role role = 11;</code>
+   */
+  com.zhijiejiaoyu.glory_api.user.RoleOrBuilder getRoleOrBuilder();
 }
