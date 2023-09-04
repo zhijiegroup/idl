@@ -191,6 +191,7 @@ message RoleType {
 
 message GetRoleTypeRequest {
   base.BaseRequest base_request = 1;
+  string category = 2;
 }
 
 message GetRoleTypeResponse {
