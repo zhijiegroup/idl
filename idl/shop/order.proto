@@ -118,7 +118,6 @@ message ProductInfo {
 
 
 message OrderWithAuthor {
-  base.AuthorInfo author_info = 2;
   OrderInfo order_info = 3;
 }
 
