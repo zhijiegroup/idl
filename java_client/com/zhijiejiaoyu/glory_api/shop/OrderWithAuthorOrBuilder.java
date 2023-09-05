@@ -8,21 +8,6 @@ public interface OrderWithAuthorOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.base.AuthorInfo author_info = 2;</code>
-   * @return Whether the authorInfo field is set.
-   */
-  boolean hasAuthorInfo();
-  /**
-   * <code>.base.AuthorInfo author_info = 2;</code>
-   * @return The authorInfo.
-   */
-  com.zhijiejiaoyu.base.AuthorInfo getAuthorInfo();
-  /**
-   * <code>.base.AuthorInfo author_info = 2;</code>
-   */
-  com.zhijiejiaoyu.base.AuthorInfoOrBuilder getAuthorInfoOrBuilder();
-
-  /**
    * <code>.glory_api.OrderInfo order_info = 3;</code>
    * @return Whether the orderInfo field is set.
    */

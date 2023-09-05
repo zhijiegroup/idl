@@ -150,7 +150,6 @@ export interface ProductInfo {
 }
 
 export interface OrderWithAuthor {
-  author_info?: base.AuthorInfo;
   order_info?: OrderInfo;
 }
 

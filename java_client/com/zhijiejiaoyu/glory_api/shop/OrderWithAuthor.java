@@ -48,19 +48,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 18: {
-            com.zhijiejiaoyu.base.AuthorInfo.Builder subBuilder = null;
-            if (authorInfo != null) {
-              subBuilder = authorInfo .toBuilder();
-            }
-            authorInfo = input.readMessage(com.zhijiejiaoyu.base.AuthorInfo.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(authorInfo );
-              authorInfo = subBuilder.buildPartial();
-            }
-
-            break;
-          }
           case 26: {
             com.zhijiejiaoyu.glory_api.shop.OrderInfo.Builder subBuilder = null;
             if (orderInfo != null) {
@@ -106,32 +93,6 @@ private static final long serialVersionUID = 0L;
             com.zhijiejiaoyu.glory_api.shop.OrderWithAuthor.class, com.zhijiejiaoyu.glory_api.shop.OrderWithAuthor.Builder.class);
   }
 
-  public static final int AUTHOR_INFO_FIELD_NUMBER = 2;
-  private com.zhijiejiaoyu.base.AuthorInfo authorInfo ;
-  /**
-   * <code>.base.AuthorInfo author_info = 2;</code>
-   * @return Whether the authorInfo field is set.
-   */
-  @java.lang.Override
-  public boolean hasAuthorInfo() {
-    return authorInfo != null;
-  }
-  /**
-   * <code>.base.AuthorInfo author_info = 2;</code>
-   * @return The authorInfo.
-   */
-  @java.lang.Override
-  public com.zhijiejiaoyu.base.AuthorInfo getAuthorInfo() {
-    return authorInfo == null ? com.zhijiejiaoyu.base.AuthorInfo.getDefaultInstance() : authorInfo ;
-  }
-  /**
-   * <code>.base.AuthorInfo author_info = 2;</code>
-   */
-  @java.lang.Override
-  public com.zhijiejiaoyu.base.AuthorInfoOrBuilder getAuthorInfoOrBuilder() {
-    return getAuthorInfo();
-  }
-
   public static final int ORDER_INFO_FIELD_NUMBER = 3;
   private com.zhijiejiaoyu.glory_api.shop.OrderInfo orderInfo ;
   /**
@@ -172,9 +133,6 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (authorInfo != null) {
-      output.writeMessage(2, getAuthorInfo());
-    }
     if (orderInfo != null) {
       output.writeMessage(3, getOrderInfo());
     }
@@ -187,10 +145,6 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (authorInfo != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getAuthorInfo());
-    }
     if (orderInfo != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getOrderInfo());
@@ -210,11 +164,6 @@ private static final long serialVersionUID = 0L;
     }
     com.zhijiejiaoyu.glory_api.shop.OrderWithAuthor other = (com.zhijiejiaoyu.glory_api.shop.OrderWithAuthor) obj;
 
-    if (hasAuthorInfo() != other.hasAuthorInfo()) return false;
-    if (hasAuthorInfo()) {
-      if (!getAuthorInfo()
-          .equals(other.getAuthorInfo())) return false;
-    }
     if (hasOrderInfo() != other.hasOrderInfo()) return false;
     if (hasOrderInfo()) {
       if (!getOrderInfo()
@@ -231,10 +180,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasAuthorInfo()) {
-      hash = (37 * hash) + AUTHOR_INFO_FIELD_NUMBER;
-      hash = (53 * hash) + getAuthorInfo().hashCode();
-    }
     if (hasOrderInfo()) {
       hash = (37 * hash) + ORDER_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getOrderInfo().hashCode();
@@ -372,12 +317,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (authorInfoBuilder == null) {
-        authorInfo = null;
-      } else {
-        authorInfo = null;
-        authorInfoBuilder = null;
-      }
       if (orderInfoBuilder == null) {
         orderInfo = null;
       } else {
@@ -410,11 +349,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.shop.OrderWithAuthor buildPartial() {
       com.zhijiejiaoyu.glory_api.shop.OrderWithAuthor result = new com.zhijiejiaoyu.glory_api.shop.OrderWithAuthor(this);
-      if (authorInfoBuilder == null) {
-        result.authorInfo = authorInfo ;
-      } else {
-        result.authorInfo = authorInfoBuilder .build();
-      }
       if (orderInfoBuilder == null) {
         result.orderInfo = orderInfo ;
       } else {
@@ -468,9 +402,6 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.zhijiejiaoyu.glory_api.shop.OrderWithAuthor other) {
       if (other == com.zhijiejiaoyu.glory_api.shop.OrderWithAuthor.getDefaultInstance()) return this;
-      if (other.hasAuthorInfo()) {
-        mergeAuthorInfo(other.getAuthorInfo());
-      }
       if (other.hasOrderInfo()) {
         mergeOrderInfo(other.getOrderInfo());
       }
@@ -501,125 +432,6 @@ private static final long serialVersionUID = 0L;
         }
       }
       return this;
-    }
-
-    private com.zhijiejiaoyu.base.AuthorInfo authorInfo ;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.base.AuthorInfo, com.zhijiejiaoyu.base.AuthorInfo.Builder, com.zhijiejiaoyu.base.AuthorInfoOrBuilder> authorInfoBuilder ;
-    /**
-     * <code>.base.AuthorInfo author_info = 2;</code>
-     * @return Whether the authorInfo field is set.
-     */
-    public boolean hasAuthorInfo() {
-      return authorInfoBuilder != null || authorInfo != null;
-    }
-    /**
-     * <code>.base.AuthorInfo author_info = 2;</code>
-     * @return The authorInfo.
-     */
-    public com.zhijiejiaoyu.base.AuthorInfo getAuthorInfo() {
-      if (authorInfoBuilder == null) {
-        return authorInfo == null ? com.zhijiejiaoyu.base.AuthorInfo.getDefaultInstance() : authorInfo ;
-      } else {
-        return authorInfoBuilder .getMessage();
-      }
-    }
-    /**
-     * <code>.base.AuthorInfo author_info = 2;</code>
-     */
-    public Builder setAuthorInfo(com.zhijiejiaoyu.base.AuthorInfo value) {
-      if (authorInfoBuilder == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        authorInfo = value;
-        onChanged();
-      } else {
-        authorInfoBuilder .setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.base.AuthorInfo author_info = 2;</code>
-     */
-    public Builder setAuthorInfo(
-        com.zhijiejiaoyu.base.AuthorInfo.Builder builderForValue) {
-      if (authorInfoBuilder == null) {
-        authorInfo = builderForValue.build();
-        onChanged();
-      } else {
-        authorInfoBuilder .setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <code>.base.AuthorInfo author_info = 2;</code>
-     */
-    public Builder mergeAuthorInfo(com.zhijiejiaoyu.base.AuthorInfo value) {
-      if (authorInfoBuilder == null) {
-        if (authorInfo != null) {
-          authorInfo =
-            com.zhijiejiaoyu.base.AuthorInfo.newBuilder(authorInfo ).mergeFrom(value).buildPartial();
-        } else {
-          authorInfo = value;
-        }
-        onChanged();
-      } else {
-        authorInfoBuilder .mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.base.AuthorInfo author_info = 2;</code>
-     */
-    public Builder clearAuthorInfo() {
-      if (authorInfoBuilder == null) {
-        authorInfo = null;
-        onChanged();
-      } else {
-        authorInfo = null;
-        authorInfoBuilder = null;
-      }
-
-      return this;
-    }
-    /**
-     * <code>.base.AuthorInfo author_info = 2;</code>
-     */
-    public com.zhijiejiaoyu.base.AuthorInfo.Builder getAuthorInfoBuilder() {
-      
-      onChanged();
-      return getAuthorInfoFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.base.AuthorInfo author_info = 2;</code>
-     */
-    public com.zhijiejiaoyu.base.AuthorInfoOrBuilder getAuthorInfoOrBuilder() {
-      if (authorInfoBuilder != null) {
-        return authorInfoBuilder .getMessageOrBuilder();
-      } else {
-        return authorInfo == null ?
-            com.zhijiejiaoyu.base.AuthorInfo.getDefaultInstance() : authorInfo ;
-      }
-    }
-    /**
-     * <code>.base.AuthorInfo author_info = 2;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.base.AuthorInfo, com.zhijiejiaoyu.base.AuthorInfo.Builder, com.zhijiejiaoyu.base.AuthorInfoOrBuilder> 
-        getAuthorInfoFieldBuilder() {
-      if (authorInfoBuilder == null) {
-        authorInfoBuilder = new com.google.protobuf.SingleFieldBuilderV3<
-            com.zhijiejiaoyu.base.AuthorInfo, com.zhijiejiaoyu.base.AuthorInfo.Builder, com.zhijiejiaoyu.base.AuthorInfoOrBuilder>(
-                getAuthorInfo(),
-                getParentForChildren(),
-                isClean());
-        authorInfo = null;
-      }
-      return authorInfoBuilder ;
     }
 
     private com.zhijiejiaoyu.glory_api.shop.OrderInfo orderInfo ;

@@ -456,15 +456,6 @@ struct GloryApi_OrderWithAuthor {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var authorInfo: Base_AuthorInfo {
-    get {return _authorInfo ?? Base_AuthorInfo()}
-    set {_authorInfo = newValue}
-  }
-  /// Returns true if `authorInfo` has been explicitly set.
-  var hasAuthorInfo: Bool {return self._authorInfo != nil}
-  /// Clears the value of `authorInfo`. Subsequent reads from it will return its default value.
-  mutating func clearAuthorInfo() {self._authorInfo = nil}
-
   var orderInfo: GloryApi_OrderInfo {
     get {return _orderInfo ?? GloryApi_OrderInfo()}
     set {_orderInfo = newValue}
@@ -478,7 +469,6 @@ struct GloryApi_OrderWithAuthor {
 
   init() {}
 
-  fileprivate var _authorInfo: Base_AuthorInfo? = nil
   fileprivate var _orderInfo: GloryApi_OrderInfo? = nil
 }
 
@@ -1946,7 +1936,6 @@ extension GloryApi_ProductInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
 extension GloryApi_OrderWithAuthor: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".OrderWithAuthor"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    2: .standard(proto: "author_info"),
     3: .standard(proto: "order_info"),
   ]
 
@@ -1956,7 +1945,6 @@ extension GloryApi_OrderWithAuthor: SwiftProtobuf.Message, SwiftProtobuf._Messag
       // allocates stack space for every case branch when no optimizations are
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 2: try { try decoder.decodeSingularMessageField(value: &self._authorInfo) }()
       case 3: try { try decoder.decodeSingularMessageField(value: &self._orderInfo) }()
       default: break
       }
@@ -1968,9 +1956,6 @@ extension GloryApi_OrderWithAuthor: SwiftProtobuf.Message, SwiftProtobuf._Messag
     // allocates stack space for every if/case branch local when no optimizations
     // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
     // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._authorInfo {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
     try { if let v = self._orderInfo {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
     } }()
@@ -1978,7 +1963,6 @@ extension GloryApi_OrderWithAuthor: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 
   static func ==(lhs: GloryApi_OrderWithAuthor, rhs: GloryApi_OrderWithAuthor) -> Bool {
-    if lhs._authorInfo != rhs._authorInfo {return false}
     if lhs._orderInfo != rhs._orderInfo {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

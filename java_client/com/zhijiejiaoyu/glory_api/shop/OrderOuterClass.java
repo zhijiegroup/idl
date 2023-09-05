@@ -225,62 +225,61 @@ public final class OrderOuterClass {
       "_api.Sku\022\024\n\014service_info\030\004 \001(\t\022\022\n\nunit_p" +
       "rice\030\005 \001(\001\022\020\n\010quantity\030\006 \001(\005\022\025\n\rdiscount" +
       "_info\030\007 \001(\t\022!\n\006images\030\010 \003(\0132\021.glory_api." +
-      "Images\"b\n\017OrderWithAuthor\022%\n\013author_info" +
-      "\030\002 \001(\0132\020.base.AuthorInfo\022(\n\norder_info\030\003" +
-      " \001(\0132\024.glory_api.OrderInfo\"m\n\022CreateOrde" +
-      "rRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
-      "seRequest\022.\n\norder_info\030\002 \003(\0132\032.glory_ap" +
-      "i.CreateOrderInfo\"\224\001\n\023CreateOrderRespons" +
-      "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
-      "\022/\n\ttrans_res\030\002 \003(\0132\034.glory_api.TransRes" +
-      "ponseInfo\022\021\n\tcny_total\030\003 \001(\001\022\022\n\ncoin_tot" +
-      "al\030\004 \001(\001\"`\n\021TransResponseInfo\022\020\n\010trans_i" +
-      "d\030\001 \001(\003\022\'\n\005order\030\002 \003(\0132\030.glory_api.Order" +
-      "Response\022\020\n\010currency\030\003 \001(\t\"3\n\rOrderRespo" +
-      "nse\022\020\n\010order_id\030\001 \001(\003\022\020\n\010currency\030\002 \001(\t\"" +
-      "L\n\017GetOrderRequest\022\'\n\014base_request\030\001 \001(\013" +
-      "2\021.base.BaseRequest\022\020\n\010order_id\030\002 \001(\003\"\217\001" +
-      "\n\020GetOrderResponse\022%\n\tbase_resp\030\001 \001(\0132\022." +
-      "base.BaseResponse\022\'\n\torderInfo\030\002 \001(\0132\024.g" +
-      "lory_api.OrderInfo\022+\n\013deliverInfo\030\004 \001(\0132" +
-      "\026.glory_api.DeliverInfo\"^\n\022UpdateOrderRe" +
-      "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
-      "equest\022\037\n\005order\030\002 \001(\0132\020.glory_api.Order\"" +
-      "N\n\023UpdateOrderResponse\022%\n\tbase_resp\030\001 \001(" +
-      "\0132\022.base.BaseResponse\022\020\n\010order_id\030\002 \001(\003\"" +
-      "\306\001\n\020ListOrderRequest\022\'\n\014base_request\030\001 \001" +
-      "(\0132\021.base.BaseRequest\022\017\n\007user_id\030\002 \001(\003\022\021" +
-      "\n\tseller_id\030\003 \001(\003\022\021\n\ttenant_id\030\004 \001(\003\022\017\n\007" +
-      "shop_id\030\005 \001(\003\022\024\n\014order_status\030\006 \001(\t\022+\n\np" +
-      "agination\030d \001(\0132\027.base.PaginationRequest" +
-      "\"\232\001\n\021ListOrderResponse\022%\n\tbase_resp\030\001 \001(" +
-      "\0132\022.base.BaseResponse\0220\n\014order_detail\030\002 " +
-      "\003(\0132\032.glory_api.OrderWithAuthor\022,\n\npagin" +
-      "ation\030d \001(\0132\030.base.PaginationResponse\"O\n" +
-      "\022DeleteOrderRequest\022\'\n\014base_request\030\001 \001(" +
-      "\0132\021.base.BaseRequest\022\020\n\010order_id\030\002 \001(\003\"<" +
-      "\n\023DeleteOrderResponse\022%\n\tbase_resp\030\001 \001(\013" +
-      "2\022.base.BaseResponse\"M\n\020ShipGoodsRequest" +
-      "\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReques" +
-      "t\022\020\n\010order_id\030\002 \001(\003\":\n\021ShipGoodsResponse" +
-      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"" +
-      "W\n\032ConfirmReceiptGoodsRequest\022\'\n\014base_re" +
-      "quest\030\001 \001(\0132\021.base.BaseRequest\022\020\n\010order_" +
-      "id\030\002 \001(\003\"D\n\033ConfirmReceiptGoodsResponse\022" +
-      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"O" +
-      "\n\022CancelOrderRequest\022\'\n\014base_request\030\001 \001" +
+      "Images\";\n\017OrderWithAuthor\022(\n\norder_info\030" +
+      "\003 \001(\0132\024.glory_api.OrderInfo\"m\n\022CreateOrd" +
+      "erRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.B" +
+      "aseRequest\022.\n\norder_info\030\002 \003(\0132\032.glory_a" +
+      "pi.CreateOrderInfo\"\224\001\n\023CreateOrderRespon" +
+      "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
+      "e\022/\n\ttrans_res\030\002 \003(\0132\034.glory_api.TransRe" +
+      "sponseInfo\022\021\n\tcny_total\030\003 \001(\001\022\022\n\ncoin_to" +
+      "tal\030\004 \001(\001\"`\n\021TransResponseInfo\022\020\n\010trans_" +
+      "id\030\001 \001(\003\022\'\n\005order\030\002 \003(\0132\030.glory_api.Orde" +
+      "rResponse\022\020\n\010currency\030\003 \001(\t\"3\n\rOrderResp" +
+      "onse\022\020\n\010order_id\030\001 \001(\003\022\020\n\010currency\030\002 \001(\t" +
+      "\"L\n\017GetOrderRequest\022\'\n\014base_request\030\001 \001(" +
+      "\0132\021.base.BaseRequest\022\020\n\010order_id\030\002 \001(\003\"\217" +
+      "\001\n\020GetOrderResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
+      ".base.BaseResponse\022\'\n\torderInfo\030\002 \001(\0132\024." +
+      "glory_api.OrderInfo\022+\n\013deliverInfo\030\004 \001(\013" +
+      "2\026.glory_api.DeliverInfo\"^\n\022UpdateOrderR" +
+      "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
+      "Request\022\037\n\005order\030\002 \001(\0132\020.glory_api.Order" +
+      "\"N\n\023UpdateOrderResponse\022%\n\tbase_resp\030\001 \001" +
+      "(\0132\022.base.BaseResponse\022\020\n\010order_id\030\002 \001(\003" +
+      "\"\306\001\n\020ListOrderRequest\022\'\n\014base_request\030\001 " +
+      "\001(\0132\021.base.BaseRequest\022\017\n\007user_id\030\002 \001(\003\022" +
+      "\021\n\tseller_id\030\003 \001(\003\022\021\n\ttenant_id\030\004 \001(\003\022\017\n" +
+      "\007shop_id\030\005 \001(\003\022\024\n\014order_status\030\006 \001(\t\022+\n\n" +
+      "pagination\030d \001(\0132\027.base.PaginationReques" +
+      "t\"\232\001\n\021ListOrderResponse\022%\n\tbase_resp\030\001 \001" +
+      "(\0132\022.base.BaseResponse\0220\n\014order_detail\030\002" +
+      " \003(\0132\032.glory_api.OrderWithAuthor\022,\n\npagi" +
+      "nation\030d \001(\0132\030.base.PaginationResponse\"O" +
+      "\n\022DeleteOrderRequest\022\'\n\014base_request\030\001 \001" +
       "(\0132\021.base.BaseRequest\022\020\n\010order_id\030\002 \001(\003\"" +
-      "<\n\023CancelOrderResponse\022%\n\tbase_resp\030\001 \001(" +
-      "\0132\022.base.BaseResponse\"V\n\031ShipGoodsInBatc" +
-      "hesRequest\022\'\n\014base_request\030\001 \001(\0132\021.base." +
-      "BaseRequest\022\020\n\010order_id\030\002 \003(\003\"C\n\032ShipGoo" +
-      "dsInBatchesResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
-      ".base.BaseResponse\"Y\n\034FreeShippingInBatc" +
-      "hesRequest\022\'\n\014base_request\030\001 \001(\0132\021.base." +
-      "BaseRequest\022\020\n\010order_id\030\002 \003(\003\"F\n\035FreeShi" +
-      "ppingInBatchesResponse\022%\n\tbase_resp\030\001 \001(" +
-      "\0132\022.base.BaseResponseB#\n\037com.zhijiejiaoy" +
-      "u.glory_api.shopP\001b\006proto3"
+      "<\n\023DeleteOrderResponse\022%\n\tbase_resp\030\001 \001(" +
+      "\0132\022.base.BaseResponse\"M\n\020ShipGoodsReques" +
+      "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
+      "st\022\020\n\010order_id\030\002 \001(\003\":\n\021ShipGoodsRespons" +
+      "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
+      "\"W\n\032ConfirmReceiptGoodsRequest\022\'\n\014base_r" +
+      "equest\030\001 \001(\0132\021.base.BaseRequest\022\020\n\010order" +
+      "_id\030\002 \001(\003\"D\n\033ConfirmReceiptGoodsResponse" +
+      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"" +
+      "O\n\022CancelOrderRequest\022\'\n\014base_request\030\001 " +
+      "\001(\0132\021.base.BaseRequest\022\020\n\010order_id\030\002 \001(\003" +
+      "\"<\n\023CancelOrderResponse\022%\n\tbase_resp\030\001 \001" +
+      "(\0132\022.base.BaseResponse\"V\n\031ShipGoodsInBat" +
+      "chesRequest\022\'\n\014base_request\030\001 \001(\0132\021.base" +
+      ".BaseRequest\022\020\n\010order_id\030\002 \003(\003\"C\n\032ShipGo" +
+      "odsInBatchesResponse\022%\n\tbase_resp\030\001 \001(\0132" +
+      "\022.base.BaseResponse\"Y\n\034FreeShippingInBat" +
+      "chesRequest\022\'\n\014base_request\030\001 \001(\0132\021.base" +
+      ".BaseRequest\022\020\n\010order_id\030\002 \003(\003\"F\n\035FreeSh" +
+      "ippingInBatchesResponse\022%\n\tbase_resp\030\001 \001" +
+      "(\0132\022.base.BaseResponseB#\n\037com.zhijiejiao" +
+      "yu.glory_api.shopP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -341,7 +340,7 @@ public final class OrderOuterClass {
     internal_static_glory_api_OrderWithAuthor_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_OrderWithAuthor_descriptor,
-        new java.lang.String[] { "AuthorInfo", "OrderInfo", });
+        new java.lang.String[] { "OrderInfo", });
     internal_static_glory_api_CreateOrderRequest_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_glory_api_CreateOrderRequest_fieldAccessorTable = new
