@@ -66,12 +66,12 @@ message GetCouponDetailResponse {
 message UpdateCouponRequest {
     base.BaseRequest base_request = 1;
     int64 coupon_id = 2;
-    int64 coupon_type = 3;
-    int64 coupon_title = 4;
-    int64 coupon_min_use_amount = 5;
-    int64 coupon_amount = 6;
+    string coupon_type = 3;
+    string coupon_title = 4;
+    double coupon_min_use_amount = 5;
+    double coupon_amount = 6;
     int64 coupon_total = 7;
-    int64 coupon_limit = 8;
+    string coupon_limit = 8;
     int64 person_max_total = 9;
     int64 distributed_start_time = 10;
     int64 distributed_end_time = 11;
