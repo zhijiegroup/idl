@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private UpdateConfig() {
     configType = "";
+    configName = "";
     configValue = "";
     defaultValue = "";
     description = "";
@@ -52,15 +53,21 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 16: {
+          case 8: {
 
             configId = input.readInt64();
+            break;
+          }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            configType = s;
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            configType = s;
+            configName = s;
             break;
           }
           case 34: {
@@ -113,10 +120,10 @@ private static final long serialVersionUID = 0L;
             com.zhijiejiaoyu.glory_api.admin.UpdateConfig.class, com.zhijiejiaoyu.glory_api.admin.UpdateConfig.Builder.class);
   }
 
-  public static final int CONFIG_ID_FIELD_NUMBER = 2;
+  public static final int CONFIG_ID_FIELD_NUMBER = 1;
   private long configId ;
   /**
-   * <code>int64 config_id = 2;</code>
+   * <code>int64 config_id = 1;</code>
    * @return The configId.
    */
   @java.lang.Override
@@ -124,10 +131,10 @@ private static final long serialVersionUID = 0L;
     return configId ;
   }
 
-  public static final int CONFIG_TYPE_FIELD_NUMBER = 3;
+  public static final int CONFIG_TYPE_FIELD_NUMBER = 2;
   private volatile java.lang.Object configType ;
   /**
-   * <code>string config_type = 3;</code>
+   * <code>string config_type = 2;</code>
    * @return The configType.
    */
   @java.lang.Override
@@ -144,7 +151,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string config_type = 3;</code>
+   * <code>string config_type = 2;</code>
    * @return The bytes for configType.
    */
   @java.lang.Override
@@ -156,6 +163,44 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       configType = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CONFIG_NAME_FIELD_NUMBER = 3;
+  private volatile java.lang.Object configName ;
+  /**
+   * <code>string config_name = 3;</code>
+   * @return The configName.
+   */
+  @java.lang.Override
+  public java.lang.String getConfigName() {
+    java.lang.Object ref = configName ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      configName = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string config_name = 3;</code>
+   * @return The bytes for configName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getConfigNameBytes() {
+    java.lang.Object ref = configName ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      configName = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -291,10 +336,13 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (configId != 0L) {
-      output.writeInt64(2, configId );
+      output.writeInt64(1, configId );
     }
     if (!getConfigTypeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, configType );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, configType );
+    }
+    if (!getConfigNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, configName );
     }
     if (!getConfigValueBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, configValue );
@@ -316,10 +364,13 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (configId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, configId );
+        .computeInt64Size(1, configId );
     }
     if (!getConfigTypeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, configType );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, configType );
+    }
+    if (!getConfigNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, configName );
     }
     if (!getConfigValueBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, configValue );
@@ -349,6 +400,8 @@ private static final long serialVersionUID = 0L;
         != other.getConfigId()) return false;
     if (!getConfigType()
         .equals(other.getConfigType())) return false;
+    if (!getConfigName()
+        .equals(other.getConfigName())) return false;
     if (!getConfigValue()
         .equals(other.getConfigValue())) return false;
     if (!getDefaultValue()
@@ -371,6 +424,8 @@ private static final long serialVersionUID = 0L;
         getConfigId());
     hash = (37 * hash) + CONFIG_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getConfigType().hashCode();
+    hash = (37 * hash) + CONFIG_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getConfigName().hashCode();
     hash = (37 * hash) + CONFIG_VALUE_FIELD_NUMBER;
     hash = (53 * hash) + getConfigValue().hashCode();
     hash = (37 * hash) + DEFAULT_VALUE_FIELD_NUMBER;
@@ -514,6 +569,8 @@ private static final long serialVersionUID = 0L;
 
       configType = "";
 
+      configName = "";
+
       configValue = "";
 
       defaultValue = "";
@@ -548,6 +605,7 @@ private static final long serialVersionUID = 0L;
       com.zhijiejiaoyu.glory_api.admin.UpdateConfig result = new com.zhijiejiaoyu.glory_api.admin.UpdateConfig(this);
       result.configId = configId ;
       result.configType = configType ;
+      result.configName = configName ;
       result.configValue = configValue ;
       result.defaultValue = defaultValue ;
       result.description = description ;
@@ -606,6 +664,10 @@ private static final long serialVersionUID = 0L;
         configType = other.configType ;
         onChanged();
       }
+      if (!other.getConfigName().isEmpty()) {
+        configName = other.configName ;
+        onChanged();
+      }
       if (!other.getConfigValue().isEmpty()) {
         configValue = other.configValue ;
         onChanged();
@@ -649,7 +711,7 @@ private static final long serialVersionUID = 0L;
 
     private long configId ;
     /**
-     * <code>int64 config_id = 2;</code>
+     * <code>int64 config_id = 1;</code>
      * @return The configId.
      */
     @java.lang.Override
@@ -657,7 +719,7 @@ private static final long serialVersionUID = 0L;
       return configId ;
     }
     /**
-     * <code>int64 config_id = 2;</code>
+     * <code>int64 config_id = 1;</code>
      * @param value The configId to set.
      * @return This builder for chaining.
      */
@@ -668,7 +730,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 config_id = 2;</code>
+     * <code>int64 config_id = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearConfigId() {
@@ -680,7 +742,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object configType = "";
     /**
-     * <code>string config_type = 3;</code>
+     * <code>string config_type = 2;</code>
      * @return The configType.
      */
     public java.lang.String getConfigType() {
@@ -696,7 +758,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string config_type = 3;</code>
+     * <code>string config_type = 2;</code>
      * @return The bytes for configType.
      */
     public com.google.protobuf.ByteString
@@ -713,7 +775,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string config_type = 3;</code>
+     * <code>string config_type = 2;</code>
      * @param value The configType to set.
      * @return This builder for chaining.
      */
@@ -728,7 +790,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string config_type = 3;</code>
+     * <code>string config_type = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearConfigType() {
@@ -738,7 +800,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string config_type = 3;</code>
+     * <code>string config_type = 2;</code>
      * @param value The bytes for configType to set.
      * @return This builder for chaining.
      */
@@ -750,6 +812,82 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       configType = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object configName = "";
+    /**
+     * <code>string config_name = 3;</code>
+     * @return The configName.
+     */
+    public java.lang.String getConfigName() {
+      java.lang.Object ref = configName ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        configName = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string config_name = 3;</code>
+     * @return The bytes for configName.
+     */
+    public com.google.protobuf.ByteString
+        getConfigNameBytes() {
+      java.lang.Object ref = configName ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        configName = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string config_name = 3;</code>
+     * @param value The configName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConfigName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      configName = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string config_name = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearConfigName() {
+      
+      configName = getDefaultInstance().getConfigName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string config_name = 3;</code>
+     * @param value The bytes for configName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConfigNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      configName = value;
       onChanged();
       return this;
     }

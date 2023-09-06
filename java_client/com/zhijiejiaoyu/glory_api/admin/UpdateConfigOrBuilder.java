@@ -8,22 +8,34 @@ public interface UpdateConfigOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>int64 config_id = 2;</code>
+   * <code>int64 config_id = 1;</code>
    * @return The configId.
    */
   long getConfigId();
 
   /**
-   * <code>string config_type = 3;</code>
+   * <code>string config_type = 2;</code>
    * @return The configType.
    */
   java.lang.String getConfigType();
   /**
-   * <code>string config_type = 3;</code>
+   * <code>string config_type = 2;</code>
    * @return The bytes for configType.
    */
   com.google.protobuf.ByteString
       getConfigTypeBytes();
+
+  /**
+   * <code>string config_name = 3;</code>
+   * @return The configName.
+   */
+  java.lang.String getConfigName();
+  /**
+   * <code>string config_name = 3;</code>
+   * @return The bytes for configName.
+   */
+  com.google.protobuf.ByteString
+      getConfigNameBytes();
 
   /**
    * <code>string config_value = 4;</code>

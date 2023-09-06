@@ -46,6 +46,7 @@ export interface CreateConfigResponse {
 export interface UpdateConfig {
   config_id?: string;
   config_type?: string;
+  config_name?: string;
   config_value?: string;
   default_value?: string;
   description?: string;

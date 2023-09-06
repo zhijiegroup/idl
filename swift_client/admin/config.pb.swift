@@ -141,6 +141,8 @@ struct GloryApi_UpdateConfig {
 
   var configType: String = String()
 
+  var configName: String = String()
+
   var configValue: String = String()
 
   var defaultValue: String = String()
@@ -627,8 +629,9 @@ extension GloryApi_CreateConfigResponse: SwiftProtobuf.Message, SwiftProtobuf._M
 extension GloryApi_UpdateConfig: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".UpdateConfig"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    2: .standard(proto: "config_id"),
-    3: .standard(proto: "config_type"),
+    1: .standard(proto: "config_id"),
+    2: .standard(proto: "config_type"),
+    3: .standard(proto: "config_name"),
     4: .standard(proto: "config_value"),
     5: .standard(proto: "default_value"),
     6: .same(proto: "description"),
@@ -640,8 +643,9 @@ extension GloryApi_UpdateConfig: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
       // allocates stack space for every case branch when no optimizations are
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.configID) }()
-      case 3: try { try decoder.decodeSingularStringField(value: &self.configType) }()
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.configID) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.configType) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.configName) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.configValue) }()
       case 5: try { try decoder.decodeSingularStringField(value: &self.defaultValue) }()
       case 6: try { try decoder.decodeSingularStringField(value: &self.description_p) }()
@@ -652,10 +656,13 @@ extension GloryApi_UpdateConfig: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.configID != 0 {
-      try visitor.visitSingularInt64Field(value: self.configID, fieldNumber: 2)
+      try visitor.visitSingularInt64Field(value: self.configID, fieldNumber: 1)
     }
     if !self.configType.isEmpty {
-      try visitor.visitSingularStringField(value: self.configType, fieldNumber: 3)
+      try visitor.visitSingularStringField(value: self.configType, fieldNumber: 2)
+    }
+    if !self.configName.isEmpty {
+      try visitor.visitSingularStringField(value: self.configName, fieldNumber: 3)
     }
     if !self.configValue.isEmpty {
       try visitor.visitSingularStringField(value: self.configValue, fieldNumber: 4)
@@ -672,6 +679,7 @@ extension GloryApi_UpdateConfig: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   static func ==(lhs: GloryApi_UpdateConfig, rhs: GloryApi_UpdateConfig) -> Bool {
     if lhs.configID != rhs.configID {return false}
     if lhs.configType != rhs.configType {return false}
+    if lhs.configName != rhs.configName {return false}
     if lhs.configValue != rhs.configValue {return false}
     if lhs.defaultValue != rhs.defaultValue {return false}
     if lhs.description_p != rhs.description_p {return false}
