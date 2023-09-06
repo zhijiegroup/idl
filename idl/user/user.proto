@@ -37,6 +37,7 @@ message UserFollow {
   int64 user_id = 1;
   string user_name = 2;
   string avatar_url = 3;
+  string created_at = 4;
 }
 
 // login
@@ -322,7 +323,7 @@ message ListUserByRoleResponse {
 // 关注用户
 message FollowUserRequest {
   base.BaseRequest base_request = 1;
-  int64 followed_user_id = 2;
+  int64 following_id = 2;
   bool follow = 3; // 是否关注
 }
 
@@ -331,25 +332,37 @@ message FollowUserResponse {
 }
 
 // 我的关注列表
-message ListMyFollowedUserRequest {
+message ListMyFollowingRequest {
   base.BaseRequest base_request = 1;
   base.PaginationRequest pagination = 100;
 }
 
-message ListMyFollowedUserResponse {
+message ListMyFollowingResponse {
   base.BaseResponse base_resp = 1;
-  repeated UserFollow followed_user_list = 2;
+  repeated UserFollow following_list = 2;
   base.PaginationResponse pagination = 100;
 }
 
 // 我的粉丝列表
-message ListMyFollowerUserRequest {
+message ListMyFollowerRequest {
   base.BaseRequest base_request = 1;
   base.PaginationRequest pagination = 100;
 }
 
-message ListMyFollowerUserResponse {
+message ListMyFollowerResponse {
   base.BaseResponse base_resp = 1;
-  repeated UserFollow follower_user_list = 2;
+  repeated UserFollow follower_list = 2;
+  base.PaginationResponse pagination = 100;
+}
+
+// 我的朋友列表
+message ListMyFriendRequest {
+  base.BaseRequest base_request = 1;
+  base.PaginationRequest pagination = 100;
+}
+
+message ListMyFriendResponse {
+  base.BaseResponse base_resp = 1;
+  repeated UserFollow friend_list = 2;
   base.PaginationResponse pagination = 100;
 }
