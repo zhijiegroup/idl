@@ -5,28 +5,28 @@ package com.zhijiejiaoyu.glory_api.user;
 
 /**
  * <pre>
- * 关注用户
+ * 我的粉丝列表
  * </pre>
  *
- * Protobuf type {@code glory_api.FollowUserRequest}
+ * Protobuf type {@code glory_api.ListMyFollowerRequest}
  */
-public final class FollowUserRequest extends
+public final class ListMyFollowerRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:glory_api.FollowUserRequest)
-    FollowUserRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:glory_api.ListMyFollowerRequest)
+    ListMyFollowerRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use FollowUserRequest.newBuilder() to construct.
-  private FollowUserRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ListMyFollowerRequest.newBuilder() to construct.
+  private ListMyFollowerRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private FollowUserRequest() {
+  private ListMyFollowerRequest() {
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new FollowUserRequest();
+    return new ListMyFollowerRequest();
   }
 
   @java.lang.Override
@@ -34,7 +34,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private FollowUserRequest(
+  private ListMyFollowerRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -65,14 +65,17 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 16: {
+          case 802: {
+            com.zhijiejiaoyu.base.PaginationRequest.Builder subBuilder = null;
+            if (pagination != null) {
+              subBuilder = pagination .toBuilder();
+            }
+            pagination = input.readMessage(com.zhijiejiaoyu.base.PaginationRequest.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(pagination );
+              pagination = subBuilder.buildPartial();
+            }
 
-            followingId = input.readInt64();
-            break;
-          }
-          case 24: {
-
-            follow = input.readBool();
             break;
           }
           default: {
@@ -96,15 +99,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.zhijiejiaoyu.glory_api.user.UserOuterClass.internal_static_glory_api_FollowUserRequest_descriptor;
+    return com.zhijiejiaoyu.glory_api.user.UserOuterClass.internal_static_glory_api_ListMyFollowerRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.zhijiejiaoyu.glory_api.user.UserOuterClass.internal_static_glory_api_FollowUserRequest_fieldAccessorTable
+    return com.zhijiejiaoyu.glory_api.user.UserOuterClass.internal_static_glory_api_ListMyFollowerRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.zhijiejiaoyu.glory_api.user.FollowUserRequest.class, com.zhijiejiaoyu.glory_api.user.FollowUserRequest.Builder.class);
+            com.zhijiejiaoyu.glory_api.user.ListMyFollowerRequest.class, com.zhijiejiaoyu.glory_api.user.ListMyFollowerRequest.Builder.class);
   }
 
   public static final int BASE_REQUEST_FIELD_NUMBER = 1;
@@ -133,30 +136,30 @@ private static final long serialVersionUID = 0L;
     return getBaseRequest();
   }
 
-  public static final int FOLLOWING_ID_FIELD_NUMBER = 2;
-  private long followingId ;
+  public static final int PAGINATION_FIELD_NUMBER = 100;
+  private com.zhijiejiaoyu.base.PaginationRequest pagination ;
   /**
-   * <code>int64 following_id = 2;</code>
-   * @return The followingId.
+   * <code>.base.PaginationRequest pagination = 100;</code>
+   * @return Whether the pagination field is set.
    */
   @java.lang.Override
-  public long getFollowingId() {
-    return followingId ;
+  public boolean hasPagination() {
+    return pagination != null;
   }
-
-  public static final int FOLLOW_FIELD_NUMBER = 3;
-  private boolean follow ;
   /**
-   * <pre>
-   * 是否关注
-   * </pre>
-   *
-   * <code>bool follow = 3;</code>
-   * @return The follow.
+   * <code>.base.PaginationRequest pagination = 100;</code>
+   * @return The pagination.
    */
   @java.lang.Override
-  public boolean getFollow() {
-    return follow ;
+  public com.zhijiejiaoyu.base.PaginationRequest getPagination() {
+    return pagination == null ? com.zhijiejiaoyu.base.PaginationRequest.getDefaultInstance() : pagination ;
+  }
+  /**
+   * <code>.base.PaginationRequest pagination = 100;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.base.PaginationRequestOrBuilder getPaginationOrBuilder() {
+    return getPagination();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -176,11 +179,8 @@ private static final long serialVersionUID = 0L;
     if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
-    if (followingId != 0L) {
-      output.writeInt64(2, followingId );
-    }
-    if (follow != false) {
-      output.writeBool(3, follow );
+    if (pagination != null) {
+      output.writeMessage(100, getPagination());
     }
     unknownFields.writeTo(output);
   }
@@ -195,13 +195,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseRequest());
     }
-    if (followingId != 0L) {
+    if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, followingId );
-    }
-    if (follow != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(3, follow );
+        .computeMessageSize(100, getPagination());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -213,20 +209,21 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.zhijiejiaoyu.glory_api.user.FollowUserRequest)) {
+    if (!(obj instanceof com.zhijiejiaoyu.glory_api.user.ListMyFollowerRequest)) {
       return super.equals(obj);
     }
-    com.zhijiejiaoyu.glory_api.user.FollowUserRequest other = (com.zhijiejiaoyu.glory_api.user.FollowUserRequest) obj;
+    com.zhijiejiaoyu.glory_api.user.ListMyFollowerRequest other = (com.zhijiejiaoyu.glory_api.user.ListMyFollowerRequest) obj;
 
     if (hasBaseRequest() != other.hasBaseRequest()) return false;
     if (hasBaseRequest()) {
       if (!getBaseRequest()
           .equals(other.getBaseRequest())) return false;
     }
-    if (getFollowingId()
-        != other.getFollowingId()) return false;
-    if (getFollow()
-        != other.getFollow()) return false;
+    if (hasPagination() != other.hasPagination()) return false;
+    if (hasPagination()) {
+      if (!getPagination()
+          .equals(other.getPagination())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -242,80 +239,78 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
       hash = (53 * hash) + getBaseRequest().hashCode();
     }
-    hash = (37 * hash) + FOLLOWING_ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getFollowingId());
-    hash = (37 * hash) + FOLLOW_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getFollow());
+    if (hasPagination()) {
+      hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
+      hash = (53 * hash) + getPagination().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.zhijiejiaoyu.glory_api.user.FollowUserRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.user.ListMyFollowerRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.user.FollowUserRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.user.ListMyFollowerRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.user.FollowUserRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.user.ListMyFollowerRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.user.FollowUserRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.user.ListMyFollowerRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.user.FollowUserRequest parseFrom(byte[] data)
+  public static com.zhijiejiaoyu.glory_api.user.ListMyFollowerRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.user.FollowUserRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.user.ListMyFollowerRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.user.FollowUserRequest parseFrom(java.io.InputStream input)
+  public static com.zhijiejiaoyu.glory_api.user.ListMyFollowerRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.user.FollowUserRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.user.ListMyFollowerRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.user.FollowUserRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.zhijiejiaoyu.glory_api.user.ListMyFollowerRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.user.FollowUserRequest parseDelimitedFrom(
+  public static com.zhijiejiaoyu.glory_api.user.ListMyFollowerRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.user.FollowUserRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.user.ListMyFollowerRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.user.FollowUserRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.user.ListMyFollowerRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -328,7 +323,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.zhijiejiaoyu.glory_api.user.FollowUserRequest prototype) {
+  public static Builder newBuilder(com.zhijiejiaoyu.glory_api.user.ListMyFollowerRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -345,29 +340,29 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 关注用户
+   * 我的粉丝列表
    * </pre>
    *
-   * Protobuf type {@code glory_api.FollowUserRequest}
+   * Protobuf type {@code glory_api.ListMyFollowerRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:glory_api.FollowUserRequest)
-      com.zhijiejiaoyu.glory_api.user.FollowUserRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:glory_api.ListMyFollowerRequest)
+      com.zhijiejiaoyu.glory_api.user.ListMyFollowerRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.zhijiejiaoyu.glory_api.user.UserOuterClass.internal_static_glory_api_FollowUserRequest_descriptor;
+      return com.zhijiejiaoyu.glory_api.user.UserOuterClass.internal_static_glory_api_ListMyFollowerRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.zhijiejiaoyu.glory_api.user.UserOuterClass.internal_static_glory_api_FollowUserRequest_fieldAccessorTable
+      return com.zhijiejiaoyu.glory_api.user.UserOuterClass.internal_static_glory_api_ListMyFollowerRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.zhijiejiaoyu.glory_api.user.FollowUserRequest.class, com.zhijiejiaoyu.glory_api.user.FollowUserRequest.Builder.class);
+              com.zhijiejiaoyu.glory_api.user.ListMyFollowerRequest.class, com.zhijiejiaoyu.glory_api.user.ListMyFollowerRequest.Builder.class);
     }
 
-    // Construct using com.zhijiejiaoyu.glory_api.user.FollowUserRequest.newBuilder()
+    // Construct using com.zhijiejiaoyu.glory_api.user.ListMyFollowerRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -391,27 +386,29 @@ private static final long serialVersionUID = 0L;
         baseRequest = null;
         baseRequestBuilder = null;
       }
-      followingId = 0L;
-
-      follow = false;
-
+      if (paginationBuilder == null) {
+        pagination = null;
+      } else {
+        pagination = null;
+        paginationBuilder = null;
+      }
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.zhijiejiaoyu.glory_api.user.UserOuterClass.internal_static_glory_api_FollowUserRequest_descriptor;
+      return com.zhijiejiaoyu.glory_api.user.UserOuterClass.internal_static_glory_api_ListMyFollowerRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.user.FollowUserRequest getDefaultInstanceForType() {
-      return com.zhijiejiaoyu.glory_api.user.FollowUserRequest.getDefaultInstance();
+    public com.zhijiejiaoyu.glory_api.user.ListMyFollowerRequest getDefaultInstanceForType() {
+      return com.zhijiejiaoyu.glory_api.user.ListMyFollowerRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.user.FollowUserRequest build() {
-      com.zhijiejiaoyu.glory_api.user.FollowUserRequest result = buildPartial();
+    public com.zhijiejiaoyu.glory_api.user.ListMyFollowerRequest build() {
+      com.zhijiejiaoyu.glory_api.user.ListMyFollowerRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -419,15 +416,18 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.user.FollowUserRequest buildPartial() {
-      com.zhijiejiaoyu.glory_api.user.FollowUserRequest result = new com.zhijiejiaoyu.glory_api.user.FollowUserRequest(this);
+    public com.zhijiejiaoyu.glory_api.user.ListMyFollowerRequest buildPartial() {
+      com.zhijiejiaoyu.glory_api.user.ListMyFollowerRequest result = new com.zhijiejiaoyu.glory_api.user.ListMyFollowerRequest(this);
       if (baseRequestBuilder == null) {
         result.baseRequest = baseRequest ;
       } else {
         result.baseRequest = baseRequestBuilder .build();
       }
-      result.followingId = followingId ;
-      result.follow = follow ;
+      if (paginationBuilder == null) {
+        result.pagination = pagination ;
+      } else {
+        result.pagination = paginationBuilder .build();
+      }
       onBuilt();
       return result;
     }
@@ -466,24 +466,21 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.zhijiejiaoyu.glory_api.user.FollowUserRequest) {
-        return mergeFrom((com.zhijiejiaoyu.glory_api.user.FollowUserRequest)other);
+      if (other instanceof com.zhijiejiaoyu.glory_api.user.ListMyFollowerRequest) {
+        return mergeFrom((com.zhijiejiaoyu.glory_api.user.ListMyFollowerRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.zhijiejiaoyu.glory_api.user.FollowUserRequest other) {
-      if (other == com.zhijiejiaoyu.glory_api.user.FollowUserRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.zhijiejiaoyu.glory_api.user.ListMyFollowerRequest other) {
+      if (other == com.zhijiejiaoyu.glory_api.user.ListMyFollowerRequest.getDefaultInstance()) return this;
       if (other.hasBaseRequest()) {
         mergeBaseRequest(other.getBaseRequest());
       }
-      if (other.getFollowingId() != 0L) {
-        setFollowingId(other.getFollowingId());
-      }
-      if (other.getFollow() != false) {
-        setFollow(other.getFollow());
+      if (other.hasPagination()) {
+        mergePagination(other.getPagination());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -500,11 +497,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.zhijiejiaoyu.glory_api.user.FollowUserRequest parsedMessage = null;
+      com.zhijiejiaoyu.glory_api.user.ListMyFollowerRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.zhijiejiaoyu.glory_api.user.FollowUserRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.zhijiejiaoyu.glory_api.user.ListMyFollowerRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -633,78 +630,123 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder ;
     }
 
-    private long followingId ;
+    private com.zhijiejiaoyu.base.PaginationRequest pagination ;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.base.PaginationRequest, com.zhijiejiaoyu.base.PaginationRequest.Builder, com.zhijiejiaoyu.base.PaginationRequestOrBuilder> paginationBuilder ;
     /**
-     * <code>int64 following_id = 2;</code>
-     * @return The followingId.
+     * <code>.base.PaginationRequest pagination = 100;</code>
+     * @return Whether the pagination field is set.
      */
-    @java.lang.Override
-    public long getFollowingId() {
-      return followingId ;
+    public boolean hasPagination() {
+      return paginationBuilder != null || pagination != null;
     }
     /**
-     * <code>int64 following_id = 2;</code>
-     * @param value The followingId to set.
-     * @return This builder for chaining.
+     * <code>.base.PaginationRequest pagination = 100;</code>
+     * @return The pagination.
      */
-    public Builder setFollowingId(long value) {
-      
-      followingId = value;
-      onChanged();
-      return this;
+    public com.zhijiejiaoyu.base.PaginationRequest getPagination() {
+      if (paginationBuilder == null) {
+        return pagination == null ? com.zhijiejiaoyu.base.PaginationRequest.getDefaultInstance() : pagination ;
+      } else {
+        return paginationBuilder .getMessage();
+      }
     }
     /**
-     * <code>int64 following_id = 2;</code>
-     * @return This builder for chaining.
+     * <code>.base.PaginationRequest pagination = 100;</code>
      */
-    public Builder clearFollowingId() {
-      
-      followingId = 0L;
-      onChanged();
-      return this;
-    }
+    public Builder setPagination(com.zhijiejiaoyu.base.PaginationRequest value) {
+      if (paginationBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        pagination = value;
+        onChanged();
+      } else {
+        paginationBuilder .setMessage(value);
+      }
 
-    private boolean follow ;
-    /**
-     * <pre>
-     * 是否关注
-     * </pre>
-     *
-     * <code>bool follow = 3;</code>
-     * @return The follow.
-     */
-    @java.lang.Override
-    public boolean getFollow() {
-      return follow ;
-    }
-    /**
-     * <pre>
-     * 是否关注
-     * </pre>
-     *
-     * <code>bool follow = 3;</code>
-     * @param value The follow to set.
-     * @return This builder for chaining.
-     */
-    public Builder setFollow(boolean value) {
-      
-      follow = value;
-      onChanged();
       return this;
     }
     /**
-     * <pre>
-     * 是否关注
-     * </pre>
-     *
-     * <code>bool follow = 3;</code>
-     * @return This builder for chaining.
+     * <code>.base.PaginationRequest pagination = 100;</code>
      */
-    public Builder clearFollow() {
-      
-      follow = false;
-      onChanged();
+    public Builder setPagination(
+        com.zhijiejiaoyu.base.PaginationRequest.Builder builderForValue) {
+      if (paginationBuilder == null) {
+        pagination = builderForValue.build();
+        onChanged();
+      } else {
+        paginationBuilder .setMessage(builderForValue.build());
+      }
+
       return this;
+    }
+    /**
+     * <code>.base.PaginationRequest pagination = 100;</code>
+     */
+    public Builder mergePagination(com.zhijiejiaoyu.base.PaginationRequest value) {
+      if (paginationBuilder == null) {
+        if (pagination != null) {
+          pagination =
+            com.zhijiejiaoyu.base.PaginationRequest.newBuilder(pagination ).mergeFrom(value).buildPartial();
+        } else {
+          pagination = value;
+        }
+        onChanged();
+      } else {
+        paginationBuilder .mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.base.PaginationRequest pagination = 100;</code>
+     */
+    public Builder clearPagination() {
+      if (paginationBuilder == null) {
+        pagination = null;
+        onChanged();
+      } else {
+        pagination = null;
+        paginationBuilder = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.base.PaginationRequest pagination = 100;</code>
+     */
+    public com.zhijiejiaoyu.base.PaginationRequest.Builder getPaginationBuilder() {
+      
+      onChanged();
+      return getPaginationFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.base.PaginationRequest pagination = 100;</code>
+     */
+    public com.zhijiejiaoyu.base.PaginationRequestOrBuilder getPaginationOrBuilder() {
+      if (paginationBuilder != null) {
+        return paginationBuilder .getMessageOrBuilder();
+      } else {
+        return pagination == null ?
+            com.zhijiejiaoyu.base.PaginationRequest.getDefaultInstance() : pagination ;
+      }
+    }
+    /**
+     * <code>.base.PaginationRequest pagination = 100;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.base.PaginationRequest, com.zhijiejiaoyu.base.PaginationRequest.Builder, com.zhijiejiaoyu.base.PaginationRequestOrBuilder> 
+        getPaginationFieldBuilder() {
+      if (paginationBuilder == null) {
+        paginationBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+            com.zhijiejiaoyu.base.PaginationRequest, com.zhijiejiaoyu.base.PaginationRequest.Builder, com.zhijiejiaoyu.base.PaginationRequestOrBuilder>(
+                getPagination(),
+                getParentForChildren(),
+                isClean());
+        pagination = null;
+      }
+      return paginationBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
@@ -719,41 +761,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:glory_api.FollowUserRequest)
+    // @@protoc_insertion_point(builder_scope:glory_api.ListMyFollowerRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:glory_api.FollowUserRequest)
-  private static final com.zhijiejiaoyu.glory_api.user.FollowUserRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:glory_api.ListMyFollowerRequest)
+  private static final com.zhijiejiaoyu.glory_api.user.ListMyFollowerRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.zhijiejiaoyu.glory_api.user.FollowUserRequest();
+    DEFAULT_INSTANCE = new com.zhijiejiaoyu.glory_api.user.ListMyFollowerRequest();
   }
 
-  public static com.zhijiejiaoyu.glory_api.user.FollowUserRequest getDefaultInstance() {
+  public static com.zhijiejiaoyu.glory_api.user.ListMyFollowerRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<FollowUserRequest>
-      PARSER = new com.google.protobuf.AbstractParser<FollowUserRequest>() {
+  private static final com.google.protobuf.Parser<ListMyFollowerRequest>
+      PARSER = new com.google.protobuf.AbstractParser<ListMyFollowerRequest>() {
     @java.lang.Override
-    public FollowUserRequest parsePartialFrom(
+    public ListMyFollowerRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new FollowUserRequest(input, extensionRegistry);
+      return new ListMyFollowerRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<FollowUserRequest> parser() {
+  public static com.google.protobuf.Parser<ListMyFollowerRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<FollowUserRequest> getParserForType() {
+  public com.google.protobuf.Parser<ListMyFollowerRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.user.FollowUserRequest getDefaultInstanceForType() {
+  public com.zhijiejiaoyu.glory_api.user.ListMyFollowerRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

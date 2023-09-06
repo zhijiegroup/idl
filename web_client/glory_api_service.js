@@ -176,16 +176,24 @@ export class glory_api {
     );
   }
 
-  ListMyFollowedUser(request) {
-    const uri = `${this.uriPrefix}/api/user/list_my_followed_user`;
+  ListMyFollowing(request) {
+    const uri = `${this.uriPrefix}/api/user/list_my_following`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
   }
 
-  ListMyFollowerUser(request) {
-    const uri = `${this.uriPrefix}/api/user/list_my_follower_user`;
+  ListMyFollower(request) {
+    const uri = `${this.uriPrefix}/api/user/list_my_follower`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListMyFriend(request) {
+    const uri = `${this.uriPrefix}/api/user/list_my_friend`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse

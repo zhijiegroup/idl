@@ -99,6 +99,8 @@ struct GloryApi_UserFollow {
 
   var avatarURL: String = String()
 
+  var createdAt: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1290,7 +1292,7 @@ struct GloryApi_FollowUserRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
-  var followedUserID: Int64 = 0
+  var followingID: Int64 = 0
 
   /// 是否关注
   var follow: Bool = false
@@ -1324,7 +1326,7 @@ struct GloryApi_FollowUserResponse {
 }
 
 /// 我的关注列表
-struct GloryApi_ListMyFollowedUserRequest {
+struct GloryApi_ListMyFollowingRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1355,7 +1357,7 @@ struct GloryApi_ListMyFollowedUserRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListMyFollowedUserResponse {
+struct GloryApi_ListMyFollowingResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1369,7 +1371,7 @@ struct GloryApi_ListMyFollowedUserResponse {
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
-  var followedUserList: [GloryApi_UserFollow] = []
+  var followingList: [GloryApi_UserFollow] = []
 
   var pagination: Base_PaginationResponse {
     get {return _pagination ?? Base_PaginationResponse()}
@@ -1389,7 +1391,7 @@ struct GloryApi_ListMyFollowedUserResponse {
 }
 
 /// 我的粉丝列表
-struct GloryApi_ListMyFollowerUserRequest {
+struct GloryApi_ListMyFollowerRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1420,7 +1422,7 @@ struct GloryApi_ListMyFollowerUserRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListMyFollowerUserResponse {
+struct GloryApi_ListMyFollowerResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1434,7 +1436,72 @@ struct GloryApi_ListMyFollowerUserResponse {
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
-  var followerUserList: [GloryApi_UserFollow] = []
+  var followerList: [GloryApi_UserFollow] = []
+
+  var pagination: Base_PaginationResponse {
+    get {return _pagination ?? Base_PaginationResponse()}
+    set {_pagination = newValue}
+  }
+  /// Returns true if `pagination` has been explicitly set.
+  var hasPagination: Bool {return self._pagination != nil}
+  /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
+  mutating func clearPagination() {self._pagination = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _pagination: Base_PaginationResponse? = nil
+}
+
+/// 我的朋友列表
+struct GloryApi_ListMyFriendRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var pagination: Base_PaginationRequest {
+    get {return _pagination ?? Base_PaginationRequest()}
+    set {_pagination = newValue}
+  }
+  /// Returns true if `pagination` has been explicitly set.
+  var hasPagination: Bool {return self._pagination != nil}
+  /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
+  mutating func clearPagination() {self._pagination = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+  fileprivate var _pagination: Base_PaginationRequest? = nil
+}
+
+struct GloryApi_ListMyFriendResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var friendList: [GloryApi_UserFollow] = []
 
   var pagination: Base_PaginationResponse {
     get {return _pagination ?? Base_PaginationResponse()}
@@ -1502,10 +1569,12 @@ extension GloryApi_ListUserByRoleRequest: @unchecked Sendable {}
 extension GloryApi_ListUserByRoleResponse: @unchecked Sendable {}
 extension GloryApi_FollowUserRequest: @unchecked Sendable {}
 extension GloryApi_FollowUserResponse: @unchecked Sendable {}
-extension GloryApi_ListMyFollowedUserRequest: @unchecked Sendable {}
-extension GloryApi_ListMyFollowedUserResponse: @unchecked Sendable {}
-extension GloryApi_ListMyFollowerUserRequest: @unchecked Sendable {}
-extension GloryApi_ListMyFollowerUserResponse: @unchecked Sendable {}
+extension GloryApi_ListMyFollowingRequest: @unchecked Sendable {}
+extension GloryApi_ListMyFollowingResponse: @unchecked Sendable {}
+extension GloryApi_ListMyFollowerRequest: @unchecked Sendable {}
+extension GloryApi_ListMyFollowerResponse: @unchecked Sendable {}
+extension GloryApi_ListMyFriendRequest: @unchecked Sendable {}
+extension GloryApi_ListMyFriendResponse: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -1688,6 +1757,7 @@ extension GloryApi_UserFollow: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     1: .standard(proto: "user_id"),
     2: .standard(proto: "user_name"),
     3: .standard(proto: "avatar_url"),
+    4: .standard(proto: "created_at"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1699,6 +1769,7 @@ extension GloryApi_UserFollow: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
       case 1: try { try decoder.decodeSingularInt64Field(value: &self.userID) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.userName) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.avatarURL) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
       default: break
       }
     }
@@ -1714,6 +1785,9 @@ extension GloryApi_UserFollow: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     if !self.avatarURL.isEmpty {
       try visitor.visitSingularStringField(value: self.avatarURL, fieldNumber: 3)
     }
+    if !self.createdAt.isEmpty {
+      try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1721,6 +1795,7 @@ extension GloryApi_UserFollow: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     if lhs.userID != rhs.userID {return false}
     if lhs.userName != rhs.userName {return false}
     if lhs.avatarURL != rhs.avatarURL {return false}
+    if lhs.createdAt != rhs.createdAt {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -3928,7 +4003,7 @@ extension GloryApi_FollowUserRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
   static let protoMessageName: String = _protobuf_package + ".FollowUserRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
-    2: .standard(proto: "followed_user_id"),
+    2: .standard(proto: "following_id"),
     3: .same(proto: "follow"),
   ]
 
@@ -3939,7 +4014,7 @@ extension GloryApi_FollowUserRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.followedUserID) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.followingID) }()
       case 3: try { try decoder.decodeSingularBoolField(value: &self.follow) }()
       default: break
       }
@@ -3954,8 +4029,8 @@ extension GloryApi_FollowUserRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    if self.followedUserID != 0 {
-      try visitor.visitSingularInt64Field(value: self.followedUserID, fieldNumber: 2)
+    if self.followingID != 0 {
+      try visitor.visitSingularInt64Field(value: self.followingID, fieldNumber: 2)
     }
     if self.follow != false {
       try visitor.visitSingularBoolField(value: self.follow, fieldNumber: 3)
@@ -3965,7 +4040,7 @@ extension GloryApi_FollowUserRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
 
   static func ==(lhs: GloryApi_FollowUserRequest, rhs: GloryApi_FollowUserRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
-    if lhs.followedUserID != rhs.followedUserID {return false}
+    if lhs.followingID != rhs.followingID {return false}
     if lhs.follow != rhs.follow {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -4008,8 +4083,8 @@ extension GloryApi_FollowUserResponse: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 }
 
-extension GloryApi_ListMyFollowedUserRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ListMyFollowedUserRequest"
+extension GloryApi_ListMyFollowingRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ListMyFollowingRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
     100: .same(proto: "pagination"),
@@ -4042,7 +4117,7 @@ extension GloryApi_ListMyFollowedUserRequest: SwiftProtobuf.Message, SwiftProtob
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: GloryApi_ListMyFollowedUserRequest, rhs: GloryApi_ListMyFollowedUserRequest) -> Bool {
+  static func ==(lhs: GloryApi_ListMyFollowingRequest, rhs: GloryApi_ListMyFollowingRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -4050,11 +4125,11 @@ extension GloryApi_ListMyFollowedUserRequest: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension GloryApi_ListMyFollowedUserResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ListMyFollowedUserResponse"
+extension GloryApi_ListMyFollowingResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ListMyFollowingResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
-    2: .standard(proto: "followed_user_list"),
+    2: .standard(proto: "following_list"),
     100: .same(proto: "pagination"),
   ]
 
@@ -4065,7 +4140,7 @@ extension GloryApi_ListMyFollowedUserResponse: SwiftProtobuf.Message, SwiftProto
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
-      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.followedUserList) }()
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.followingList) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -4080,8 +4155,8 @@ extension GloryApi_ListMyFollowedUserResponse: SwiftProtobuf.Message, SwiftProto
     try { if let v = self._baseResp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    if !self.followedUserList.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.followedUserList, fieldNumber: 2)
+    if !self.followingList.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.followingList, fieldNumber: 2)
     }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
@@ -4089,17 +4164,17 @@ extension GloryApi_ListMyFollowedUserResponse: SwiftProtobuf.Message, SwiftProto
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: GloryApi_ListMyFollowedUserResponse, rhs: GloryApi_ListMyFollowedUserResponse) -> Bool {
+  static func ==(lhs: GloryApi_ListMyFollowingResponse, rhs: GloryApi_ListMyFollowingResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
-    if lhs.followedUserList != rhs.followedUserList {return false}
+    if lhs.followingList != rhs.followingList {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension GloryApi_ListMyFollowerUserRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ListMyFollowerUserRequest"
+extension GloryApi_ListMyFollowerRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ListMyFollowerRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
     100: .same(proto: "pagination"),
@@ -4132,7 +4207,7 @@ extension GloryApi_ListMyFollowerUserRequest: SwiftProtobuf.Message, SwiftProtob
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: GloryApi_ListMyFollowerUserRequest, rhs: GloryApi_ListMyFollowerUserRequest) -> Bool {
+  static func ==(lhs: GloryApi_ListMyFollowerRequest, rhs: GloryApi_ListMyFollowerRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -4140,11 +4215,11 @@ extension GloryApi_ListMyFollowerUserRequest: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension GloryApi_ListMyFollowerUserResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ListMyFollowerUserResponse"
+extension GloryApi_ListMyFollowerResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ListMyFollowerResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
-    2: .standard(proto: "follower_user_list"),
+    2: .standard(proto: "follower_list"),
     100: .same(proto: "pagination"),
   ]
 
@@ -4155,7 +4230,7 @@ extension GloryApi_ListMyFollowerUserResponse: SwiftProtobuf.Message, SwiftProto
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
-      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.followerUserList) }()
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.followerList) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -4170,8 +4245,8 @@ extension GloryApi_ListMyFollowerUserResponse: SwiftProtobuf.Message, SwiftProto
     try { if let v = self._baseResp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    if !self.followerUserList.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.followerUserList, fieldNumber: 2)
+    if !self.followerList.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.followerList, fieldNumber: 2)
     }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
@@ -4179,9 +4254,99 @@ extension GloryApi_ListMyFollowerUserResponse: SwiftProtobuf.Message, SwiftProto
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: GloryApi_ListMyFollowerUserResponse, rhs: GloryApi_ListMyFollowerUserResponse) -> Bool {
+  static func ==(lhs: GloryApi_ListMyFollowerResponse, rhs: GloryApi_ListMyFollowerResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
-    if lhs.followerUserList != rhs.followerUserList {return false}
+    if lhs.followerList != rhs.followerList {return false}
+    if lhs._pagination != rhs._pagination {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_ListMyFriendRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ListMyFriendRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    100: .same(proto: "pagination"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try { if let v = self._pagination {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ListMyFriendRequest, rhs: GloryApi_ListMyFriendRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs._pagination != rhs._pagination {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_ListMyFriendResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ListMyFriendResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .standard(proto: "friend_list"),
+    100: .same(proto: "pagination"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.friendList) }()
+      case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if !self.friendList.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.friendList, fieldNumber: 2)
+    }
+    try { if let v = self._pagination {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ListMyFriendResponse, rhs: GloryApi_ListMyFriendResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.friendList != rhs.friendList {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

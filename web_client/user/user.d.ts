@@ -37,6 +37,7 @@ export interface UserFollow {
   user_id?: string;
   user_name?: string;
   avatar_url?: string;
+  created_at?: string;
 }
 
 /** login */
@@ -344,7 +345,7 @@ export interface ListUserByRoleResponse {
 /** 关注用户 */
 export interface FollowUserRequest {
   base_request?: base.BaseRequest;
-  followed_user_id?: string;
+  following_id?: string;
   /** 是否关注 */
   follow?: boolean;
 }
@@ -354,25 +355,37 @@ export interface FollowUserResponse {
 }
 
 /** 我的关注列表 */
-export interface ListMyFollowedUserRequest {
+export interface ListMyFollowingRequest {
   base_request?: base.BaseRequest;
   pagination?: base.PaginationRequest;
 }
 
-export interface ListMyFollowedUserResponse {
+export interface ListMyFollowingResponse {
   base_resp?: base.BaseResponse;
-  followed_user_list?: Array<UserFollow>;
+  following_list?: Array<UserFollow>;
   pagination?: base.PaginationResponse;
 }
 
 /** 我的粉丝列表 */
-export interface ListMyFollowerUserRequest {
+export interface ListMyFollowerRequest {
   base_request?: base.BaseRequest;
   pagination?: base.PaginationRequest;
 }
 
-export interface ListMyFollowerUserResponse {
+export interface ListMyFollowerResponse {
   base_resp?: base.BaseResponse;
-  follower_user_list?: Array<UserFollow>;
+  follower_list?: Array<UserFollow>;
+  pagination?: base.PaginationResponse;
+}
+
+/** 我的朋友列表 */
+export interface ListMyFriendRequest {
+  base_request?: base.BaseRequest;
+  pagination?: base.PaginationRequest;
+}
+
+export interface ListMyFriendResponse {
+  base_resp?: base.BaseResponse;
+  friend_list?: Array<UserFollow>;
   pagination?: base.PaginationResponse;
 }

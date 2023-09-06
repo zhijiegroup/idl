@@ -3,8 +3,8 @@
 
 package com.zhijiejiaoyu.glory_api.user;
 
-public interface FollowUserRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:glory_api.FollowUserRequest)
+public interface ListMyFollowingRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:glory_api.ListMyFollowingRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -23,18 +23,17 @@ public interface FollowUserRequestOrBuilder extends
   com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder();
 
   /**
-   * <code>int64 following_id = 2;</code>
-   * @return The followingId.
+   * <code>.base.PaginationRequest pagination = 100;</code>
+   * @return Whether the pagination field is set.
    */
-  long getFollowingId();
-
+  boolean hasPagination();
   /**
-   * <pre>
-   * 是否关注
-   * </pre>
-   *
-   * <code>bool follow = 3;</code>
-   * @return The follow.
+   * <code>.base.PaginationRequest pagination = 100;</code>
+   * @return The pagination.
    */
-  boolean getFollow();
+  com.zhijiejiaoyu.base.PaginationRequest getPagination();
+  /**
+   * <code>.base.PaginationRequest pagination = 100;</code>
+   */
+  com.zhijiejiaoyu.base.PaginationRequestOrBuilder getPaginationOrBuilder();
 }

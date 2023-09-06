@@ -18,6 +18,7 @@ private static final long serialVersionUID = 0L;
   private UserFollow() {
     userName = "";
     avatarUrl = "";
+    createdAt = "";
   }
 
   @java.lang.Override
@@ -65,6 +66,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             avatarUrl = s;
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            createdAt = s;
             break;
           }
           default: {
@@ -186,6 +193,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int CREATED_AT_FIELD_NUMBER = 4;
+  private volatile java.lang.Object createdAt ;
+  /**
+   * <code>string created_at = 4;</code>
+   * @return The createdAt.
+   */
+  @java.lang.Override
+  public java.lang.String getCreatedAt() {
+    java.lang.Object ref = createdAt ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      createdAt = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string created_at = 4;</code>
+   * @return The bytes for createdAt.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCreatedAtBytes() {
+    java.lang.Object ref = createdAt ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      createdAt = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -209,6 +254,9 @@ private static final long serialVersionUID = 0L;
     if (!getAvatarUrlBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, avatarUrl );
     }
+    if (!getCreatedAtBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, createdAt );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -227,6 +275,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getAvatarUrlBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, avatarUrl );
+    }
+    if (!getCreatedAtBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, createdAt );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -249,6 +300,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getUserName())) return false;
     if (!getAvatarUrl()
         .equals(other.getAvatarUrl())) return false;
+    if (!getCreatedAt()
+        .equals(other.getCreatedAt())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -267,6 +320,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getUserName().hashCode();
     hash = (37 * hash) + AVATAR_URL_FIELD_NUMBER;
     hash = (53 * hash) + getAvatarUrl().hashCode();
+    hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
+    hash = (53 * hash) + getCreatedAt().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -406,6 +461,8 @@ private static final long serialVersionUID = 0L;
 
       avatarUrl = "";
 
+      createdAt = "";
+
       return this;
     }
 
@@ -435,6 +492,7 @@ private static final long serialVersionUID = 0L;
       result.userId = userId ;
       result.userName = userName ;
       result.avatarUrl = avatarUrl ;
+      result.createdAt = createdAt ;
       onBuilt();
       return result;
     }
@@ -492,6 +550,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getAvatarUrl().isEmpty()) {
         avatarUrl = other.avatarUrl ;
+        onChanged();
+      }
+      if (!other.getCreatedAt().isEmpty()) {
+        createdAt = other.createdAt ;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -702,6 +764,82 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       avatarUrl = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object createdAt = "";
+    /**
+     * <code>string created_at = 4;</code>
+     * @return The createdAt.
+     */
+    public java.lang.String getCreatedAt() {
+      java.lang.Object ref = createdAt ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        createdAt = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string created_at = 4;</code>
+     * @return The bytes for createdAt.
+     */
+    public com.google.protobuf.ByteString
+        getCreatedAtBytes() {
+      java.lang.Object ref = createdAt ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        createdAt = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string created_at = 4;</code>
+     * @param value The createdAt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCreatedAt(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      createdAt = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string created_at = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCreatedAt() {
+      
+      createdAt = getDefaultInstance().getCreatedAt();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string created_at = 4;</code>
+     * @param value The bytes for createdAt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCreatedAtBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      createdAt = value;
       onChanged();
       return this;
     }

@@ -36,4 +36,16 @@ public interface UserFollowOrBuilder extends
    */
   com.google.protobuf.ByteString
       getAvatarUrlBytes();
+
+  /**
+   * <code>string created_at = 4;</code>
+   * @return The createdAt.
+   */
+  java.lang.String getCreatedAt();
+  /**
+   * <code>string created_at = 4;</code>
+   * @return The bytes for createdAt.
+   */
+  com.google.protobuf.ByteString
+      getCreatedAtBytes();
 }

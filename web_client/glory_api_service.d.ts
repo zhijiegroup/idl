@@ -126,14 +126,19 @@ export class glory_api {
   FollowUser(request: user.FollowUserRequest): Promise<user.FollowUserResponse>;
 
   /** 我的关注列表 */
-  ListMyFollowedUser(
-    request: user.ListMyFollowedUserRequest
-  ): Promise<user.ListMyFollowedUserResponse>;
+  ListMyFollowing(
+    request: user.ListMyFollowingRequest
+  ): Promise<user.ListMyFollowingResponse>;
 
   /** 我的粉丝列表 */
-  ListMyFollowerUser(
-    request: user.ListMyFollowerUserRequest
-  ): Promise<user.ListMyFollowerUserResponse>;
+  ListMyFollower(
+    request: user.ListMyFollowerRequest
+  ): Promise<user.ListMyFollowerResponse>;
+
+  /** 我的朋友列表 */
+  ListMyFriend(
+    request: user.ListMyFriendRequest
+  ): Promise<user.ListMyFriendResponse>;
 
   /** page permission */
   GetUserPagePermission(
