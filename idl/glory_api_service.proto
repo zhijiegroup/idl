@@ -664,6 +664,12 @@ service glory_api {
   rpc SubmitUserAttitudeForAiResult(SubmitUserAttitudeForAIResultRequest) returns (SubmitUserAttitudeForAIResultResponse) {
     option (api.post) = '/api/live/submit_user_attitude';
   }
+  rpc PreheatProduct(PreheatRequest) returns (PreheatResponse) {
+    option (api.post) = '/api/live/preheat_product';
+  }
+  rpc PublicPrice(PublicPriceRequest) returns (PublicPriceResponse) {
+    option (api.post) = '/api/live/public_price';
+  }
   //tenant
   rpc CreateTenant(CreateTenantRequest) returns (CreateTenantResponse) {
     option (api.post) = '/api/tenant/create_tenant';
