@@ -18,6 +18,7 @@ import "shop/order.proto";
 import "shop/cart.proto";
 import "shop/operation.proto";
 import "shop/freight_template.proto";
+import "shop/coupon.proto";
 import "seller/attachment.proto";
 import "seller/seller.proto";
 import "payment/payment.proto";
@@ -837,5 +838,28 @@ service glory_api {
   // 短视频评论列表
   rpc ListShortVideoComment(ListShortVideoCommentRequest) returns (ListShortVideoCommentResponse) {
     option (api.post) = '/api/short_video/list_short_video_comment';
+  }
+
+  // coupon
+  rpc CreateCoupon(CreateCouponRequest) returns (CreateCouponResponse) {
+    option (api.post) = '/api/shop/create_coupon';
+  }
+  rpc ListCoupon(ListCouponRequest) returns (ListCouponResponse) {
+    option (api.post) = '/api/shop/list_coupon';
+  }
+  rpc CouponDetail(GetCouponDetailRequest) returns (GetCouponDetailResponse) {
+    option (api.get) = '/api/shop/coupon_detail';
+  }
+  rpc UpdateCoupon(UpdateCouponRequest) returns (UpdateCouponResponse) {
+    option (api.post) = '/api/shop/update_coupon';
+  }
+  rpc DeleteCoupon(DeleteCouponRequest) returns (DeleteCouponResponse) {
+    option (api.post) = '/api/shop/delete_coupon';
+  }
+  rpc AbolishCoupon(AbolishCouponRequest) returns (AbolishCouponResponse) {
+    option (api.get) = '/api/shop/abolish_coupon';
+  }
+  rpc UpdateCouponDistributionStatus(UpdateCouponDistributionStatusRequest) returns (UpdateCouponDistributionStatusResponse) {
+    option (api.post) = '/api/shop/update_coupon_distribution_status';
   }
 }

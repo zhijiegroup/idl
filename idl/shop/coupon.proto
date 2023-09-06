@@ -1,0 +1,109 @@
+syntax = "proto3";
+package glory_api;
+option java_package = "com.zhijiejiaoyu.glory_api.shop";
+option java_multiple_files = true;
+
+import "base.proto";
+
+message CreateCouponRequest {
+    base.BaseRequest base_request = 1;
+    int64 shop_id = 2;
+    string coupon_type = 3;
+    string coupon_title = 4;
+    double coupon_min_use_amount = 5;
+    double coupon_amount = 6;
+    int64 coupon_total = 7;
+    string coupon_limit = 8;
+    int64 person_max_total = 9;
+    int64 distributed_start_time = 10;
+    int64 distributed_end_time = 11;
+    int64 use_start_time = 12;
+    int64 use_end_time = 13;
+    repeated int64  product_ids = 14;
+}
+message CreateCouponResponse {
+    base.BaseResponse base_resp = 1;
+}
+
+message ListCouponRequest {
+    base.BaseRequest base_request = 1;
+    int64 shop_id = 2;
+    base.PaginationRequest pagination = 100;
+}
+
+message CouponDetail {
+    int64 coupon_id = 1;
+    int64 shop_id = 2;
+    string coupon_type = 3;
+    string coupon_title = 4;
+    double coupon_min_use_amount = 5;
+    double coupon_amount = 6;
+    int64 coupon_total = 7;
+    string coupon_limit = 8;
+    int64 person_max_total = 9;
+    int64 distributed_start_time = 10;
+    int64 distributed_end_time = 11;
+    int64 use_start_time = 12;
+    int64 use_end_time = 13;
+    string coupon_status = 14;
+    string distributed_status = 15;
+}
+message ListCouponResponse {
+    base.BaseResponse base_resp = 1;
+    repeated CouponDetail coupon_detail = 2;
+    base.PaginationResponse pagination = 100;
+}
+
+message GetCouponDetailRequest {
+    base.BaseRequest base_request = 1;
+    int64 coupon_id = 2;
+}
+message GetCouponDetailResponse {
+    base.BaseResponse base_resp = 1;
+    CouponDetail coupon_detail = 2;
+}
+
+message UpdateCouponRequest {
+    base.BaseRequest base_request = 1;
+    int64 coupon_id = 2;
+    int64 coupon_type = 3;
+    int64 coupon_title = 4;
+    int64 coupon_min_use_amount = 5;
+    int64 coupon_amount = 6;
+    int64 coupon_total = 7;
+    int64 coupon_limit = 8;
+    int64 person_max_total = 9;
+    int64 distributed_start_time = 10;
+    int64 distributed_end_time = 11;
+    int64 use_start_time = 12;
+    int64 use_end_time = 13;
+    repeated int64  product_ids = 14;
+}
+message UpdateCouponResponse {
+    base.BaseResponse base_resp = 1;
+}
+
+message AbolishCouponRequest {
+    base.BaseRequest base_request = 1;
+    int64 coupon_id = 2;
+}
+message AbolishCouponResponse {
+    base.BaseResponse base_resp = 1;
+}
+
+message UpdateCouponDistributionStatusRequest {
+    base.BaseRequest base_request = 1;
+    int64 coupon_id = 2;
+    string distribution_action = 3;
+}
+message UpdateCouponDistributionStatusResponse {
+    base.BaseResponse base_resp = 1;
+}
+
+message DeleteCouponRequest {
+    base.BaseRequest base_request = 1;
+    int64 coupon_id = 2;
+}
+message DeleteCouponResponse {
+    base.BaseResponse base_resp = 1;
+}
