@@ -752,6 +752,14 @@ CreateLivePlanProduct create live plan product */
     request: live_evaluate.SubmitUserAttitudeForAIResultRequest
   ): Promise<live_evaluate.SubmitUserAttitudeForAIResultResponse>;
 
+  PreheatProduct(
+    request: live_plan.PreheatRequest
+  ): Promise<live_plan.PreheatResponse>;
+
+  PublicPrice(
+    request: live_plan.PublicPriceRequest
+  ): Promise<live_plan.PublicPriceResponse>;
+
   /** tenant */
   CreateTenant(
     request: tenant.CreateTenantRequest

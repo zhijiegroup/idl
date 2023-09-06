@@ -1398,6 +1398,22 @@ export class glory_api {
     );
   }
 
+  PreheatProduct(request) {
+    const uri = `${this.uriPrefix}/api/live/preheat_product`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  PublicPrice(request) {
+    const uri = `${this.uriPrefix}/api/live/public_price`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   CreateTenant(request) {
     const uri = `${this.uriPrefix}/api/tenant/create_tenant`;
     const body = JSONbigint.stringify(request);

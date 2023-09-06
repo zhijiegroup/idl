@@ -5316,6 +5316,68 @@ public final class glory_apiGrpc {
     return getSubmitUserAttitudeForAiResultMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.PreheatRequest,
+      com.zhijiejiaoyu.glory_api.live.PreheatResponse> getPreheatProductMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PreheatProduct",
+      requestType = com.zhijiejiaoyu.glory_api.live.PreheatRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.live.PreheatResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.PreheatRequest,
+      com.zhijiejiaoyu.glory_api.live.PreheatResponse> getPreheatProductMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.PreheatRequest, com.zhijiejiaoyu.glory_api.live.PreheatResponse> getPreheatProductMethod;
+    if ((getPreheatProductMethod = glory_apiGrpc.getPreheatProductMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getPreheatProductMethod = glory_apiGrpc.getPreheatProductMethod) == null) {
+          glory_apiGrpc.getPreheatProductMethod = getPreheatProductMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.live.PreheatRequest, com.zhijiejiaoyu.glory_api.live.PreheatResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PreheatProduct"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.PreheatRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.PreheatResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("PreheatProduct"))
+              .build();
+        }
+      }
+    }
+    return getPreheatProductMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.PublicPriceRequest,
+      com.zhijiejiaoyu.glory_api.live.PublicPriceResponse> getPublicPriceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PublicPrice",
+      requestType = com.zhijiejiaoyu.glory_api.live.PublicPriceRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.live.PublicPriceResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.PublicPriceRequest,
+      com.zhijiejiaoyu.glory_api.live.PublicPriceResponse> getPublicPriceMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.PublicPriceRequest, com.zhijiejiaoyu.glory_api.live.PublicPriceResponse> getPublicPriceMethod;
+    if ((getPublicPriceMethod = glory_apiGrpc.getPublicPriceMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getPublicPriceMethod = glory_apiGrpc.getPublicPriceMethod) == null) {
+          glory_apiGrpc.getPublicPriceMethod = getPublicPriceMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.live.PublicPriceRequest, com.zhijiejiaoyu.glory_api.live.PublicPriceResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PublicPrice"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.PublicPriceRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.PublicPriceResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("PublicPrice"))
+              .build();
+        }
+      }
+    }
+    return getPublicPriceMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreateTenantRequest,
       com.zhijiejiaoyu.glory_api.tenant.CreateTenantResponse> getCreateTenantMethod;
 
@@ -8158,6 +8220,20 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    default void preheatProduct(com.zhijiejiaoyu.glory_api.live.PreheatRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.PreheatResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPreheatProductMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void publicPrice(com.zhijiejiaoyu.glory_api.live.PublicPriceRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.PublicPriceResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPublicPriceMethod(), responseObserver);
+    }
+
+    /**
      * <pre>
      *tenant
      * </pre>
@@ -10070,6 +10146,22 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public void preheatProduct(com.zhijiejiaoyu.glory_api.live.PreheatRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.PreheatResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPreheatProductMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void publicPrice(com.zhijiejiaoyu.glory_api.live.PublicPriceRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.PublicPriceResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPublicPriceMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
      * <pre>
      *tenant
      * </pre>
@@ -11845,6 +11937,20 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.live.SubmitUserAttitudeForAIResultResponse submitUserAttitudeForAiResult(com.zhijiejiaoyu.glory_api.live.SubmitUserAttitudeForAIResultRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSubmitUserAttitudeForAiResultMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.live.PreheatResponse preheatProduct(com.zhijiejiaoyu.glory_api.live.PreheatRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPreheatProductMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.live.PublicPriceResponse publicPrice(com.zhijiejiaoyu.glory_api.live.PublicPriceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPublicPriceMethod(), getCallOptions(), request);
     }
 
     /**
@@ -13749,6 +13855,22 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.live.PreheatResponse> preheatProduct(
+        com.zhijiejiaoyu.glory_api.live.PreheatRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPreheatProductMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.live.PublicPriceResponse> publicPrice(
+        com.zhijiejiaoyu.glory_api.live.PublicPriceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPublicPriceMethod(), getCallOptions()), request);
+    }
+
+    /**
      * <pre>
      *tenant
      * </pre>
@@ -14376,54 +14498,56 @@ public final class glory_apiGrpc {
   private static final int METHODID_VIDEO_TO_TEXT_CALLBACK = 168;
   private static final int METHODID_REGENERATION_AI_FEEDBACK = 169;
   private static final int METHODID_SUBMIT_USER_ATTITUDE_FOR_AI_RESULT = 170;
-  private static final int METHODID_CREATE_TENANT = 171;
-  private static final int METHODID_GET_TENANT = 172;
-  private static final int METHODID_UPDATE_TENANT = 173;
-  private static final int METHODID_DELETE_TENANT = 174;
-  private static final int METHODID_LIST_TENANT = 175;
-  private static final int METHODID_GET_TENANT_ORG = 176;
-  private static final int METHODID_CREATE_TENANT_DEPT = 177;
-  private static final int METHODID_UPDATE_TENANT_DEPT = 178;
-  private static final int METHODID_DELETE_TENANT_DEPT = 179;
-  private static final int METHODID_GET_TENANT_DEPT = 180;
-  private static final int METHODID_GET_TENANT_DEPT_TYPE = 181;
-  private static final int METHODID_CREATE_TENANT_USER = 182;
-  private static final int METHODID_DELETE_TENANT_USER = 183;
-  private static final int METHODID_UPDATE_TENANT_USER = 184;
-  private static final int METHODID_GET_TENANT_USER = 185;
-  private static final int METHODID_LIST_TENANT_USER = 186;
-  private static final int METHODID_LIST_TENANT_STUDENT = 187;
-  private static final int METHODID_UPDATE_TENANT_USER_PASSWORD = 188;
-  private static final int METHODID_UPDATE_TENANT_CONFIG = 189;
-  private static final int METHODID_LIST_TENANT_CONFIG = 190;
-  private static final int METHODID_CREATE_SHORT_VIDEO = 191;
-  private static final int METHODID_STAGE_SHORT_VIDEO = 192;
-  private static final int METHODID_LIST_MY_SHORT_VIDEO = 193;
-  private static final int METHODID_LIST_MY_STAGE_VIDEO = 194;
-  private static final int METHODID_LIST_MY_LIKE_VIDEO = 195;
-  private static final int METHODID_LIST_MY_FAVORITE_VIDEO = 196;
-  private static final int METHODID_GET_SHORT_VIDEO = 197;
-  private static final int METHODID_UPDATE_SHORT_VIDEO = 198;
-  private static final int METHODID_DELETE_SHORT_VIDEO = 199;
-  private static final int METHODID_GET_STAGE_VIDEO = 200;
-  private static final int METHODID_DELETE_STAGE_VIDEO = 201;
-  private static final int METHODID_UPDATE_STAGE_VIDEO = 202;
-  private static final int METHODID_MANAGEMENT_LIST_SHORT_VIDEO = 203;
-  private static final int METHODID_MANAGEMENT_CENSOR_SHORT_VIDEO = 204;
-  private static final int METHODID_MANAGEMENT_DELETE_SHORT_VIDEO = 205;
-  private static final int METHODID_LIST_SHORT_VIDEO = 206;
-  private static final int METHODID_LIKE_SHORT_VIDEO = 207;
-  private static final int METHODID_FAVORITE_SHORT_VIDEO = 208;
-  private static final int METHODID_CREATE_SHORT_VIDEO_COMMENT = 209;
-  private static final int METHODID_DELETE_SHORT_VIDEO_COMMENT = 210;
-  private static final int METHODID_LIST_SHORT_VIDEO_COMMENT = 211;
-  private static final int METHODID_CREATE_COUPON = 212;
-  private static final int METHODID_LIST_COUPON = 213;
-  private static final int METHODID_COUPON_DETAIL = 214;
-  private static final int METHODID_UPDATE_COUPON = 215;
-  private static final int METHODID_DELETE_COUPON = 216;
-  private static final int METHODID_ABOLISH_COUPON = 217;
-  private static final int METHODID_UPDATE_COUPON_DISTRIBUTION_STATUS = 218;
+  private static final int METHODID_PREHEAT_PRODUCT = 171;
+  private static final int METHODID_PUBLIC_PRICE = 172;
+  private static final int METHODID_CREATE_TENANT = 173;
+  private static final int METHODID_GET_TENANT = 174;
+  private static final int METHODID_UPDATE_TENANT = 175;
+  private static final int METHODID_DELETE_TENANT = 176;
+  private static final int METHODID_LIST_TENANT = 177;
+  private static final int METHODID_GET_TENANT_ORG = 178;
+  private static final int METHODID_CREATE_TENANT_DEPT = 179;
+  private static final int METHODID_UPDATE_TENANT_DEPT = 180;
+  private static final int METHODID_DELETE_TENANT_DEPT = 181;
+  private static final int METHODID_GET_TENANT_DEPT = 182;
+  private static final int METHODID_GET_TENANT_DEPT_TYPE = 183;
+  private static final int METHODID_CREATE_TENANT_USER = 184;
+  private static final int METHODID_DELETE_TENANT_USER = 185;
+  private static final int METHODID_UPDATE_TENANT_USER = 186;
+  private static final int METHODID_GET_TENANT_USER = 187;
+  private static final int METHODID_LIST_TENANT_USER = 188;
+  private static final int METHODID_LIST_TENANT_STUDENT = 189;
+  private static final int METHODID_UPDATE_TENANT_USER_PASSWORD = 190;
+  private static final int METHODID_UPDATE_TENANT_CONFIG = 191;
+  private static final int METHODID_LIST_TENANT_CONFIG = 192;
+  private static final int METHODID_CREATE_SHORT_VIDEO = 193;
+  private static final int METHODID_STAGE_SHORT_VIDEO = 194;
+  private static final int METHODID_LIST_MY_SHORT_VIDEO = 195;
+  private static final int METHODID_LIST_MY_STAGE_VIDEO = 196;
+  private static final int METHODID_LIST_MY_LIKE_VIDEO = 197;
+  private static final int METHODID_LIST_MY_FAVORITE_VIDEO = 198;
+  private static final int METHODID_GET_SHORT_VIDEO = 199;
+  private static final int METHODID_UPDATE_SHORT_VIDEO = 200;
+  private static final int METHODID_DELETE_SHORT_VIDEO = 201;
+  private static final int METHODID_GET_STAGE_VIDEO = 202;
+  private static final int METHODID_DELETE_STAGE_VIDEO = 203;
+  private static final int METHODID_UPDATE_STAGE_VIDEO = 204;
+  private static final int METHODID_MANAGEMENT_LIST_SHORT_VIDEO = 205;
+  private static final int METHODID_MANAGEMENT_CENSOR_SHORT_VIDEO = 206;
+  private static final int METHODID_MANAGEMENT_DELETE_SHORT_VIDEO = 207;
+  private static final int METHODID_LIST_SHORT_VIDEO = 208;
+  private static final int METHODID_LIKE_SHORT_VIDEO = 209;
+  private static final int METHODID_FAVORITE_SHORT_VIDEO = 210;
+  private static final int METHODID_CREATE_SHORT_VIDEO_COMMENT = 211;
+  private static final int METHODID_DELETE_SHORT_VIDEO_COMMENT = 212;
+  private static final int METHODID_LIST_SHORT_VIDEO_COMMENT = 213;
+  private static final int METHODID_CREATE_COUPON = 214;
+  private static final int METHODID_LIST_COUPON = 215;
+  private static final int METHODID_COUPON_DETAIL = 216;
+  private static final int METHODID_UPDATE_COUPON = 217;
+  private static final int METHODID_DELETE_COUPON = 218;
+  private static final int METHODID_ABOLISH_COUPON = 219;
+  private static final int METHODID_UPDATE_COUPON_DISTRIBUTION_STATUS = 220;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -15125,6 +15249,14 @@ public final class glory_apiGrpc {
         case METHODID_SUBMIT_USER_ATTITUDE_FOR_AI_RESULT:
           serviceImpl.submitUserAttitudeForAiResult((com.zhijiejiaoyu.glory_api.live.SubmitUserAttitudeForAIResultRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.SubmitUserAttitudeForAIResultResponse>) responseObserver);
+          break;
+        case METHODID_PREHEAT_PRODUCT:
+          serviceImpl.preheatProduct((com.zhijiejiaoyu.glory_api.live.PreheatRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.PreheatResponse>) responseObserver);
+          break;
+        case METHODID_PUBLIC_PRICE:
+          serviceImpl.publicPrice((com.zhijiejiaoyu.glory_api.live.PublicPriceRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.PublicPriceResponse>) responseObserver);
           break;
         case METHODID_CREATE_TENANT:
           serviceImpl.createTenant((com.zhijiejiaoyu.glory_api.tenant.CreateTenantRequest) request,
@@ -16534,6 +16666,20 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.live.SubmitUserAttitudeForAIResultResponse>(
                 service, METHODID_SUBMIT_USER_ATTITUDE_FOR_AI_RESULT)))
         .addMethod(
+          getPreheatProductMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.live.PreheatRequest,
+              com.zhijiejiaoyu.glory_api.live.PreheatResponse>(
+                service, METHODID_PREHEAT_PRODUCT)))
+        .addMethod(
+          getPublicPriceMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.live.PublicPriceRequest,
+              com.zhijiejiaoyu.glory_api.live.PublicPriceResponse>(
+                service, METHODID_PUBLIC_PRICE)))
+        .addMethod(
           getCreateTenantMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -17088,6 +17234,8 @@ public final class glory_apiGrpc {
               .addMethod(getVideoToTextCallbackMethod())
               .addMethod(getRegenerationAiFeedbackMethod())
               .addMethod(getSubmitUserAttitudeForAiResultMethod())
+              .addMethod(getPreheatProductMethod())
+              .addMethod(getPublicPriceMethod())
               .addMethod(getCreateTenantMethod())
               .addMethod(getGetTenantMethod())
               .addMethod(getUpdateTenantMethod())

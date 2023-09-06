@@ -268,3 +268,22 @@ export interface UpdateLiveProductIntroductStatusRequest {
 export interface UpdateLiveProductIntroductStatusResponse {
   base_resp?: base.BaseResponse;
 }
+
+export interface PreheatRequest {
+  base_request?: base.BaseRequest;
+  product_id?: string;
+  reference_price?: number;
+}
+
+export interface PreheatResponse {
+  base_resp?: base.BaseResponse;
+}
+
+export interface PublicPriceRequest {
+  base_request?: base.BaseRequest;
+  product_id?: string;
+}
+
+export interface PublicPriceResponse {
+  base_resp?: base.BaseResponse;
+}
