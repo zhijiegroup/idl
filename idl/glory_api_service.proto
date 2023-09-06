@@ -91,13 +91,18 @@ service glory_api {
   }
 
   // 我的关注列表
-  rpc ListMyFollowedUser(ListMyFollowedUserRequest) returns (ListMyFollowedUserResponse) {
-    option (api.post) = '/api/user/list_my_followed_user';
+  rpc ListMyFollowing(ListMyFollowingRequest) returns (ListMyFollowingResponse) {
+    option (api.post) = '/api/user/list_my_following';
   }
 
   // 我的粉丝列表
-  rpc ListMyFollowerUser(ListMyFollowerUserRequest) returns (ListMyFollowerUserResponse) {
-    option (api.post) = '/api/user/list_my_follower_user';
+  rpc ListMyFollower(ListMyFollowerRequest) returns (ListMyFollowerResponse) {
+    option (api.post) = '/api/user/list_my_follower';
+  }
+
+  // 我的朋友列表
+  rpc ListMyFriend(ListMyFriendRequest) returns (ListMyFriendResponse) {
+    option (api.post) = '/api/user/list_my_friend';
   }
 
   // page permission
