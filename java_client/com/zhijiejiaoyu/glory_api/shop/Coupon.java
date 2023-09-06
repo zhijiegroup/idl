@@ -134,10 +134,10 @@ public final class Coupon {
       "glory_api.CouponDetail\"\371\002\n\023UpdateCouponR" +
       "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
       "Request\022\021\n\tcoupon_id\030\002 \001(\003\022\023\n\013coupon_typ" +
-      "e\030\003 \001(\003\022\024\n\014coupon_title\030\004 \001(\003\022\035\n\025coupon_" +
-      "min_use_amount\030\005 \001(\003\022\025\n\rcoupon_amount\030\006 " +
-      "\001(\003\022\024\n\014coupon_total\030\007 \001(\003\022\024\n\014coupon_limi" +
-      "t\030\010 \001(\003\022\030\n\020person_max_total\030\t \001(\003\022\036\n\026dis" +
+      "e\030\003 \001(\t\022\024\n\014coupon_title\030\004 \001(\t\022\035\n\025coupon_" +
+      "min_use_amount\030\005 \001(\001\022\025\n\rcoupon_amount\030\006 " +
+      "\001(\001\022\024\n\014coupon_total\030\007 \001(\003\022\024\n\014coupon_limi" +
+      "t\030\010 \001(\t\022\030\n\020person_max_total\030\t \001(\003\022\036\n\026dis" +
       "tributed_start_time\030\n \001(\003\022\034\n\024distributed" +
       "_end_time\030\013 \001(\003\022\026\n\016use_start_time\030\014 \001(\003\022" +
       "\024\n\014use_end_time\030\r \001(\003\022\023\n\013product_ids\030\016 \003" +

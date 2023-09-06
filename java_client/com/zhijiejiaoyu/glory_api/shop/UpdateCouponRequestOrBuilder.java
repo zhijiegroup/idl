@@ -29,28 +29,40 @@ public interface UpdateCouponRequestOrBuilder extends
   long getCouponId();
 
   /**
-   * <code>int64 coupon_type = 3;</code>
+   * <code>string coupon_type = 3;</code>
    * @return The couponType.
    */
-  long getCouponType();
+  java.lang.String getCouponType();
+  /**
+   * <code>string coupon_type = 3;</code>
+   * @return The bytes for couponType.
+   */
+  com.google.protobuf.ByteString
+      getCouponTypeBytes();
 
   /**
-   * <code>int64 coupon_title = 4;</code>
+   * <code>string coupon_title = 4;</code>
    * @return The couponTitle.
    */
-  long getCouponTitle();
+  java.lang.String getCouponTitle();
+  /**
+   * <code>string coupon_title = 4;</code>
+   * @return The bytes for couponTitle.
+   */
+  com.google.protobuf.ByteString
+      getCouponTitleBytes();
 
   /**
-   * <code>int64 coupon_min_use_amount = 5;</code>
+   * <code>double coupon_min_use_amount = 5;</code>
    * @return The couponMinUseAmount.
    */
-  long getCouponMinUseAmount();
+  double getCouponMinUseAmount();
 
   /**
-   * <code>int64 coupon_amount = 6;</code>
+   * <code>double coupon_amount = 6;</code>
    * @return The couponAmount.
    */
-  long getCouponAmount();
+  double getCouponAmount();
 
   /**
    * <code>int64 coupon_total = 7;</code>
@@ -59,10 +71,16 @@ public interface UpdateCouponRequestOrBuilder extends
   long getCouponTotal();
 
   /**
-   * <code>int64 coupon_limit = 8;</code>
+   * <code>string coupon_limit = 8;</code>
    * @return The couponLimit.
    */
-  long getCouponLimit();
+  java.lang.String getCouponLimit();
+  /**
+   * <code>string coupon_limit = 8;</code>
+   * @return The bytes for couponLimit.
+   */
+  com.google.protobuf.ByteString
+      getCouponLimitBytes();
 
   /**
    * <code>int64 person_max_total = 9;</code>

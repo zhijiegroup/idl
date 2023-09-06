@@ -16,6 +16,9 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private UpdateCouponRequest() {
+    couponType = "";
+    couponTitle = "";
+    couponLimit = "";
     productIds = emptyLongList();
   }
 
@@ -68,24 +71,26 @@ private static final long serialVersionUID = 0L;
             couponId = input.readInt64();
             break;
           }
-          case 24: {
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
 
-            couponType = input.readInt64();
+            couponType = s;
             break;
           }
-          case 32: {
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
 
-            couponTitle = input.readInt64();
+            couponTitle = s;
             break;
           }
-          case 40: {
+          case 41: {
 
-            couponMinUseAmount = input.readInt64();
+            couponMinUseAmount = input.readDouble();
             break;
           }
-          case 48: {
+          case 49: {
 
-            couponAmount = input.readInt64();
+            couponAmount = input.readDouble();
             break;
           }
           case 56: {
@@ -93,9 +98,10 @@ private static final long serialVersionUID = 0L;
             couponTotal = input.readInt64();
             break;
           }
-          case 64: {
+          case 66: {
+            java.lang.String s = input.readStringRequireUtf8();
 
-            couponLimit = input.readInt64();
+            couponLimit = s;
             break;
           }
           case 72: {
@@ -217,46 +223,100 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int COUPON_TYPE_FIELD_NUMBER = 3;
-  private long couponType ;
+  private volatile java.lang.Object couponType ;
   /**
-   * <code>int64 coupon_type = 3;</code>
+   * <code>string coupon_type = 3;</code>
    * @return The couponType.
    */
   @java.lang.Override
-  public long getCouponType() {
-    return couponType ;
+  public java.lang.String getCouponType() {
+    java.lang.Object ref = couponType ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      couponType = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string coupon_type = 3;</code>
+   * @return The bytes for couponType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCouponTypeBytes() {
+    java.lang.Object ref = couponType ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      couponType = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int COUPON_TITLE_FIELD_NUMBER = 4;
-  private long couponTitle ;
+  private volatile java.lang.Object couponTitle ;
   /**
-   * <code>int64 coupon_title = 4;</code>
+   * <code>string coupon_title = 4;</code>
    * @return The couponTitle.
    */
   @java.lang.Override
-  public long getCouponTitle() {
-    return couponTitle ;
+  public java.lang.String getCouponTitle() {
+    java.lang.Object ref = couponTitle ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      couponTitle = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string coupon_title = 4;</code>
+   * @return The bytes for couponTitle.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCouponTitleBytes() {
+    java.lang.Object ref = couponTitle ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      couponTitle = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int COUPON_MIN_USE_AMOUNT_FIELD_NUMBER = 5;
-  private long couponMinUseAmount ;
+  private double couponMinUseAmount ;
   /**
-   * <code>int64 coupon_min_use_amount = 5;</code>
+   * <code>double coupon_min_use_amount = 5;</code>
    * @return The couponMinUseAmount.
    */
   @java.lang.Override
-  public long getCouponMinUseAmount() {
+  public double getCouponMinUseAmount() {
     return couponMinUseAmount ;
   }
 
   public static final int COUPON_AMOUNT_FIELD_NUMBER = 6;
-  private long couponAmount ;
+  private double couponAmount ;
   /**
-   * <code>int64 coupon_amount = 6;</code>
+   * <code>double coupon_amount = 6;</code>
    * @return The couponAmount.
    */
   @java.lang.Override
-  public long getCouponAmount() {
+  public double getCouponAmount() {
     return couponAmount ;
   }
 
@@ -272,14 +332,41 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int COUPON_LIMIT_FIELD_NUMBER = 8;
-  private long couponLimit ;
+  private volatile java.lang.Object couponLimit ;
   /**
-   * <code>int64 coupon_limit = 8;</code>
+   * <code>string coupon_limit = 8;</code>
    * @return The couponLimit.
    */
   @java.lang.Override
-  public long getCouponLimit() {
-    return couponLimit ;
+  public java.lang.String getCouponLimit() {
+    java.lang.Object ref = couponLimit ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      couponLimit = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string coupon_limit = 8;</code>
+   * @return The bytes for couponLimit.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCouponLimitBytes() {
+    java.lang.Object ref = couponLimit ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      couponLimit = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int PERSON_MAX_TOTAL_FIELD_NUMBER = 9;
@@ -386,23 +473,23 @@ private static final long serialVersionUID = 0L;
     if (couponId != 0L) {
       output.writeInt64(2, couponId );
     }
-    if (couponType != 0L) {
-      output.writeInt64(3, couponType );
+    if (!getCouponTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, couponType );
     }
-    if (couponTitle != 0L) {
-      output.writeInt64(4, couponTitle );
+    if (!getCouponTitleBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, couponTitle );
     }
-    if (couponMinUseAmount != 0L) {
-      output.writeInt64(5, couponMinUseAmount );
+    if (couponMinUseAmount != 0D) {
+      output.writeDouble(5, couponMinUseAmount );
     }
-    if (couponAmount != 0L) {
-      output.writeInt64(6, couponAmount );
+    if (couponAmount != 0D) {
+      output.writeDouble(6, couponAmount );
     }
     if (couponTotal != 0L) {
       output.writeInt64(7, couponTotal );
     }
-    if (couponLimit != 0L) {
-      output.writeInt64(8, couponLimit );
+    if (!getCouponLimitBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, couponLimit );
     }
     if (personMaxTotal != 0L) {
       output.writeInt64(9, personMaxTotal );
@@ -443,29 +530,26 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, couponId );
     }
-    if (couponType != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(3, couponType );
+    if (!getCouponTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, couponType );
     }
-    if (couponTitle != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(4, couponTitle );
+    if (!getCouponTitleBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, couponTitle );
     }
-    if (couponMinUseAmount != 0L) {
+    if (couponMinUseAmount != 0D) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(5, couponMinUseAmount );
+        .computeDoubleSize(5, couponMinUseAmount );
     }
-    if (couponAmount != 0L) {
+    if (couponAmount != 0D) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(6, couponAmount );
+        .computeDoubleSize(6, couponAmount );
     }
     if (couponTotal != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(7, couponTotal );
     }
-    if (couponLimit != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(8, couponLimit );
+    if (!getCouponLimitBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, couponLimit );
     }
     if (personMaxTotal != 0L) {
       size += com.google.protobuf.CodedOutputStream
@@ -523,18 +607,20 @@ private static final long serialVersionUID = 0L;
     }
     if (getCouponId()
         != other.getCouponId()) return false;
-    if (getCouponType()
-        != other.getCouponType()) return false;
-    if (getCouponTitle()
-        != other.getCouponTitle()) return false;
-    if (getCouponMinUseAmount()
-        != other.getCouponMinUseAmount()) return false;
-    if (getCouponAmount()
-        != other.getCouponAmount()) return false;
+    if (!getCouponType()
+        .equals(other.getCouponType())) return false;
+    if (!getCouponTitle()
+        .equals(other.getCouponTitle())) return false;
+    if (java.lang.Double.doubleToLongBits(getCouponMinUseAmount())
+        != java.lang.Double.doubleToLongBits(
+            other.getCouponMinUseAmount())) return false;
+    if (java.lang.Double.doubleToLongBits(getCouponAmount())
+        != java.lang.Double.doubleToLongBits(
+            other.getCouponAmount())) return false;
     if (getCouponTotal()
         != other.getCouponTotal()) return false;
-    if (getCouponLimit()
-        != other.getCouponLimit()) return false;
+    if (!getCouponLimit()
+        .equals(other.getCouponLimit())) return false;
     if (getPersonMaxTotal()
         != other.getPersonMaxTotal()) return false;
     if (getDistributedStartTime()
@@ -566,23 +652,20 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getCouponId());
     hash = (37 * hash) + COUPON_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getCouponType());
+    hash = (53 * hash) + getCouponType().hashCode();
     hash = (37 * hash) + COUPON_TITLE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getCouponTitle());
+    hash = (53 * hash) + getCouponTitle().hashCode();
     hash = (37 * hash) + COUPON_MIN_USE_AMOUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getCouponMinUseAmount());
+        java.lang.Double.doubleToLongBits(getCouponMinUseAmount()));
     hash = (37 * hash) + COUPON_AMOUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getCouponAmount());
+        java.lang.Double.doubleToLongBits(getCouponAmount()));
     hash = (37 * hash) + COUPON_TOTAL_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getCouponTotal());
     hash = (37 * hash) + COUPON_LIMIT_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getCouponLimit());
+    hash = (53 * hash) + getCouponLimit().hashCode();
     hash = (37 * hash) + PERSON_MAX_TOTAL_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getPersonMaxTotal());
@@ -743,17 +826,17 @@ private static final long serialVersionUID = 0L;
       }
       couponId = 0L;
 
-      couponType = 0L;
+      couponType = "";
 
-      couponTitle = 0L;
+      couponTitle = "";
 
-      couponMinUseAmount = 0L;
+      couponMinUseAmount = 0D;
 
-      couponAmount = 0L;
+      couponAmount = 0D;
 
       couponTotal = 0L;
 
-      couponLimit = 0L;
+      couponLimit = "";
 
       personMaxTotal = 0L;
 
@@ -870,23 +953,26 @@ private static final long serialVersionUID = 0L;
       if (other.getCouponId() != 0L) {
         setCouponId(other.getCouponId());
       }
-      if (other.getCouponType() != 0L) {
-        setCouponType(other.getCouponType());
+      if (!other.getCouponType().isEmpty()) {
+        couponType = other.couponType ;
+        onChanged();
       }
-      if (other.getCouponTitle() != 0L) {
-        setCouponTitle(other.getCouponTitle());
+      if (!other.getCouponTitle().isEmpty()) {
+        couponTitle = other.couponTitle ;
+        onChanged();
       }
-      if (other.getCouponMinUseAmount() != 0L) {
+      if (other.getCouponMinUseAmount() != 0D) {
         setCouponMinUseAmount(other.getCouponMinUseAmount());
       }
-      if (other.getCouponAmount() != 0L) {
+      if (other.getCouponAmount() != 0D) {
         setCouponAmount(other.getCouponAmount());
       }
       if (other.getCouponTotal() != 0L) {
         setCouponTotal(other.getCouponTotal());
       }
-      if (other.getCouponLimit() != 0L) {
-        setCouponLimit(other.getCouponLimit());
+      if (!other.getCouponLimit().isEmpty()) {
+        couponLimit = other.couponLimit ;
+        onChanged();
       }
       if (other.getPersonMaxTotal() != 0L) {
         setPersonMaxTotal(other.getPersonMaxTotal());
@@ -1093,126 +1179,216 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long couponType ;
+    private java.lang.Object couponType = "";
     /**
-     * <code>int64 coupon_type = 3;</code>
+     * <code>string coupon_type = 3;</code>
      * @return The couponType.
      */
-    @java.lang.Override
-    public long getCouponType() {
-      return couponType ;
+    public java.lang.String getCouponType() {
+      java.lang.Object ref = couponType ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        couponType = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>int64 coupon_type = 3;</code>
+     * <code>string coupon_type = 3;</code>
+     * @return The bytes for couponType.
+     */
+    public com.google.protobuf.ByteString
+        getCouponTypeBytes() {
+      java.lang.Object ref = couponType ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        couponType = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string coupon_type = 3;</code>
      * @param value The couponType to set.
      * @return This builder for chaining.
      */
-    public Builder setCouponType(long value) {
-      
+    public Builder setCouponType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
       couponType = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 coupon_type = 3;</code>
+     * <code>string coupon_type = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearCouponType() {
       
-      couponType = 0L;
+      couponType = getDefaultInstance().getCouponType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string coupon_type = 3;</code>
+     * @param value The bytes for couponType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCouponTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      couponType = value;
       onChanged();
       return this;
     }
 
-    private long couponTitle ;
+    private java.lang.Object couponTitle = "";
     /**
-     * <code>int64 coupon_title = 4;</code>
+     * <code>string coupon_title = 4;</code>
      * @return The couponTitle.
      */
-    @java.lang.Override
-    public long getCouponTitle() {
-      return couponTitle ;
+    public java.lang.String getCouponTitle() {
+      java.lang.Object ref = couponTitle ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        couponTitle = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>int64 coupon_title = 4;</code>
+     * <code>string coupon_title = 4;</code>
+     * @return The bytes for couponTitle.
+     */
+    public com.google.protobuf.ByteString
+        getCouponTitleBytes() {
+      java.lang.Object ref = couponTitle ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        couponTitle = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string coupon_title = 4;</code>
      * @param value The couponTitle to set.
      * @return This builder for chaining.
      */
-    public Builder setCouponTitle(long value) {
-      
+    public Builder setCouponTitle(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
       couponTitle = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 coupon_title = 4;</code>
+     * <code>string coupon_title = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearCouponTitle() {
       
-      couponTitle = 0L;
+      couponTitle = getDefaultInstance().getCouponTitle();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string coupon_title = 4;</code>
+     * @param value The bytes for couponTitle to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCouponTitleBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      couponTitle = value;
       onChanged();
       return this;
     }
 
-    private long couponMinUseAmount ;
+    private double couponMinUseAmount ;
     /**
-     * <code>int64 coupon_min_use_amount = 5;</code>
+     * <code>double coupon_min_use_amount = 5;</code>
      * @return The couponMinUseAmount.
      */
     @java.lang.Override
-    public long getCouponMinUseAmount() {
+    public double getCouponMinUseAmount() {
       return couponMinUseAmount ;
     }
     /**
-     * <code>int64 coupon_min_use_amount = 5;</code>
+     * <code>double coupon_min_use_amount = 5;</code>
      * @param value The couponMinUseAmount to set.
      * @return This builder for chaining.
      */
-    public Builder setCouponMinUseAmount(long value) {
+    public Builder setCouponMinUseAmount(double value) {
       
       couponMinUseAmount = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 coupon_min_use_amount = 5;</code>
+     * <code>double coupon_min_use_amount = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearCouponMinUseAmount() {
       
-      couponMinUseAmount = 0L;
+      couponMinUseAmount = 0D;
       onChanged();
       return this;
     }
 
-    private long couponAmount ;
+    private double couponAmount ;
     /**
-     * <code>int64 coupon_amount = 6;</code>
+     * <code>double coupon_amount = 6;</code>
      * @return The couponAmount.
      */
     @java.lang.Override
-    public long getCouponAmount() {
+    public double getCouponAmount() {
       return couponAmount ;
     }
     /**
-     * <code>int64 coupon_amount = 6;</code>
+     * <code>double coupon_amount = 6;</code>
      * @param value The couponAmount to set.
      * @return This builder for chaining.
      */
-    public Builder setCouponAmount(long value) {
+    public Builder setCouponAmount(double value) {
       
       couponAmount = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 coupon_amount = 6;</code>
+     * <code>double coupon_amount = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearCouponAmount() {
       
-      couponAmount = 0L;
+      couponAmount = 0D;
       onChanged();
       return this;
     }
@@ -1248,33 +1424,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long couponLimit ;
+    private java.lang.Object couponLimit = "";
     /**
-     * <code>int64 coupon_limit = 8;</code>
+     * <code>string coupon_limit = 8;</code>
      * @return The couponLimit.
      */
-    @java.lang.Override
-    public long getCouponLimit() {
-      return couponLimit ;
+    public java.lang.String getCouponLimit() {
+      java.lang.Object ref = couponLimit ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        couponLimit = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>int64 coupon_limit = 8;</code>
+     * <code>string coupon_limit = 8;</code>
+     * @return The bytes for couponLimit.
+     */
+    public com.google.protobuf.ByteString
+        getCouponLimitBytes() {
+      java.lang.Object ref = couponLimit ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        couponLimit = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string coupon_limit = 8;</code>
      * @param value The couponLimit to set.
      * @return This builder for chaining.
      */
-    public Builder setCouponLimit(long value) {
-      
+    public Builder setCouponLimit(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
       couponLimit = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 coupon_limit = 8;</code>
+     * <code>string coupon_limit = 8;</code>
      * @return This builder for chaining.
      */
     public Builder clearCouponLimit() {
       
-      couponLimit = 0L;
+      couponLimit = getDefaultInstance().getCouponLimit();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string coupon_limit = 8;</code>
+     * @param value The bytes for couponLimit to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCouponLimitBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      couponLimit = value;
       onChanged();
       return this;
     }

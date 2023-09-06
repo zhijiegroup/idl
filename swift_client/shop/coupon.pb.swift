@@ -263,17 +263,17 @@ struct GloryApi_UpdateCouponRequest {
 
   var couponID: Int64 = 0
 
-  var couponType: Int64 = 0
+  var couponType: String = String()
 
-  var couponTitle: Int64 = 0
+  var couponTitle: String = String()
 
-  var couponMinUseAmount: Int64 = 0
+  var couponMinUseAmount: Double = 0
 
-  var couponAmount: Int64 = 0
+  var couponAmount: Double = 0
 
   var couponTotal: Int64 = 0
 
-  var couponLimit: Int64 = 0
+  var couponLimit: String = String()
 
   var personMaxTotal: Int64 = 0
 
@@ -978,12 +978,12 @@ extension GloryApi_UpdateCouponRequest: SwiftProtobuf.Message, SwiftProtobuf._Me
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.couponID) }()
-      case 3: try { try decoder.decodeSingularInt64Field(value: &self.couponType) }()
-      case 4: try { try decoder.decodeSingularInt64Field(value: &self.couponTitle) }()
-      case 5: try { try decoder.decodeSingularInt64Field(value: &self.couponMinUseAmount) }()
-      case 6: try { try decoder.decodeSingularInt64Field(value: &self.couponAmount) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.couponType) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.couponTitle) }()
+      case 5: try { try decoder.decodeSingularDoubleField(value: &self.couponMinUseAmount) }()
+      case 6: try { try decoder.decodeSingularDoubleField(value: &self.couponAmount) }()
       case 7: try { try decoder.decodeSingularInt64Field(value: &self.couponTotal) }()
-      case 8: try { try decoder.decodeSingularInt64Field(value: &self.couponLimit) }()
+      case 8: try { try decoder.decodeSingularStringField(value: &self.couponLimit) }()
       case 9: try { try decoder.decodeSingularInt64Field(value: &self.personMaxTotal) }()
       case 10: try { try decoder.decodeSingularInt64Field(value: &self.distributedStartTime) }()
       case 11: try { try decoder.decodeSingularInt64Field(value: &self.distributedEndTime) }()
@@ -1006,23 +1006,23 @@ extension GloryApi_UpdateCouponRequest: SwiftProtobuf.Message, SwiftProtobuf._Me
     if self.couponID != 0 {
       try visitor.visitSingularInt64Field(value: self.couponID, fieldNumber: 2)
     }
-    if self.couponType != 0 {
-      try visitor.visitSingularInt64Field(value: self.couponType, fieldNumber: 3)
+    if !self.couponType.isEmpty {
+      try visitor.visitSingularStringField(value: self.couponType, fieldNumber: 3)
     }
-    if self.couponTitle != 0 {
-      try visitor.visitSingularInt64Field(value: self.couponTitle, fieldNumber: 4)
+    if !self.couponTitle.isEmpty {
+      try visitor.visitSingularStringField(value: self.couponTitle, fieldNumber: 4)
     }
     if self.couponMinUseAmount != 0 {
-      try visitor.visitSingularInt64Field(value: self.couponMinUseAmount, fieldNumber: 5)
+      try visitor.visitSingularDoubleField(value: self.couponMinUseAmount, fieldNumber: 5)
     }
     if self.couponAmount != 0 {
-      try visitor.visitSingularInt64Field(value: self.couponAmount, fieldNumber: 6)
+      try visitor.visitSingularDoubleField(value: self.couponAmount, fieldNumber: 6)
     }
     if self.couponTotal != 0 {
       try visitor.visitSingularInt64Field(value: self.couponTotal, fieldNumber: 7)
     }
-    if self.couponLimit != 0 {
-      try visitor.visitSingularInt64Field(value: self.couponLimit, fieldNumber: 8)
+    if !self.couponLimit.isEmpty {
+      try visitor.visitSingularStringField(value: self.couponLimit, fieldNumber: 8)
     }
     if self.personMaxTotal != 0 {
       try visitor.visitSingularInt64Field(value: self.personMaxTotal, fieldNumber: 9)

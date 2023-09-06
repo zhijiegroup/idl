@@ -71,8 +71,8 @@ export interface UpdateCouponRequest {
   coupon_id?: string;
   coupon_type?: string;
   coupon_title?: string;
-  coupon_min_use_amount?: string;
-  coupon_amount?: string;
+  coupon_min_use_amount?: number;
+  coupon_amount?: number;
   coupon_total?: string;
   coupon_limit?: string;
   person_max_total?: string;
