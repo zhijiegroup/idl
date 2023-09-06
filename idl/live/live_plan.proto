@@ -177,6 +177,7 @@ message LiveProductStatus {
   int64 product_remaining_amount =13; // 商品库存数量
   int64 product_sold_amount =14; // 商品售出数量
   double product_deal_amount =15; // 商品成交金额
+  string activity_status =16; // 商品活动状态
 }
 
 message ListLiveProductStatusRequest {
