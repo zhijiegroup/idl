@@ -16,6 +16,7 @@ import * as order from "./shop/order";
 import * as cart from "./shop/cart";
 import * as operation from "./shop/operation";
 import * as freight_template from "./shop/freight_template";
+import * as coupon from "./shop/coupon";
 import * as attachment from "./seller/attachment";
 import * as seller from "./seller/seller";
 import * as payment from "./payment/payment";
@@ -52,6 +53,7 @@ export {
   cart,
   operation,
   freight_template,
+  coupon,
   attachment,
   seller,
   payment,
@@ -931,6 +933,35 @@ CreateLivePlanProduct create live plan product */
   ListShortVideoComment(
     request: short_video.ListShortVideoCommentRequest
   ): Promise<short_video.ListShortVideoCommentResponse>;
+
+  /** coupon */
+  CreateCoupon(
+    request: coupon.CreateCouponRequest
+  ): Promise<coupon.CreateCouponResponse>;
+
+  ListCoupon(
+    request: coupon.ListCouponRequest
+  ): Promise<coupon.ListCouponResponse>;
+
+  CouponDetail(
+    request: coupon.GetCouponDetailRequest
+  ): Promise<coupon.GetCouponDetailResponse>;
+
+  UpdateCoupon(
+    request: coupon.UpdateCouponRequest
+  ): Promise<coupon.UpdateCouponResponse>;
+
+  DeleteCoupon(
+    request: coupon.DeleteCouponRequest
+  ): Promise<coupon.DeleteCouponResponse>;
+
+  AbolishCoupon(
+    request: coupon.AbolishCouponRequest
+  ): Promise<coupon.AbolishCouponResponse>;
+
+  UpdateCouponDistributionStatus(
+    request: coupon.UpdateCouponDistributionStatusRequest
+  ): Promise<coupon.UpdateCouponDistributionStatusResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

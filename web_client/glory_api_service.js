@@ -18,6 +18,7 @@ import * as order from "./shop/order";
 import * as cart from "./shop/cart";
 import * as operation from "./shop/operation";
 import * as freight_template from "./shop/freight_template";
+import * as coupon from "./shop/coupon";
 import * as attachment from "./seller/attachment";
 import * as seller from "./seller/seller";
 import * as payment from "./payment/payment";
@@ -54,6 +55,7 @@ export {
   cart,
   operation,
   freight_template,
+  coupon,
   attachment,
   seller,
   payment,
@@ -1704,6 +1706,58 @@ export class glory_api {
 
   ListShortVideoComment(request) {
     const uri = `${this.uriPrefix}/api/short_video/list_short_video_comment`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreateCoupon(request) {
+    const uri = `${this.uriPrefix}/api/shop/create_coupon`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListCoupon(request) {
+    const uri = `${this.uriPrefix}/api/shop/list_coupon`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CouponDetail(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/shop/coupon_detail${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  UpdateCoupon(request) {
+    const uri = `${this.uriPrefix}/api/shop/update_coupon`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteCoupon(request) {
+    const uri = `${this.uriPrefix}/api/shop/delete_coupon`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  AbolishCoupon(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/shop/abolish_coupon${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  UpdateCouponDistributionStatus(request) {
+    const uri = `${this.uriPrefix}/api/shop/update_coupon_distribution_status`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
