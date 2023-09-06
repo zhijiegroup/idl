@@ -38,8 +38,9 @@ message CreateConfigResponse {
 }
 
 message UpdateConfig {
-  int64 config_id = 2 ;
-  string config_type =3;
+  int64 config_id = 1;
+  string config_type = 2;
+  string config_name = 3;
   string config_value = 4;
   string default_value = 5;
   string description = 6;
