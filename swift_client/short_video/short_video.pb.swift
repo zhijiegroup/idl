@@ -318,6 +318,12 @@ struct GloryApi_CreateShortVideoRequest {
   /// 视频可见性：1.公开；2:隐私，仅自己可见
   var visibility: Int32 = 0
 
+  /// 视频文件大小
+  var videoLength: Int32 = 0
+
+  /// 视频时长
+  var videoDuration: Int32 = 0
+
   /// 商品信息
   var products: [GloryApi_ShortVideoProduct] = []
 
@@ -380,6 +386,12 @@ struct GloryApi_StageShortVideoRequest {
 
   /// 视频可见性：1.公开；2:隐私，仅自己可见
   var visibility: Int32 = 0
+
+  /// 视频文件大小
+  var videoLength: Int32 = 0
+
+  /// 视频时长
+  var videoDuration: Int32 = 0
 
   /// 商品信息
   var products: [GloryApi_ShortVideoProduct] = []
@@ -960,6 +972,12 @@ struct GloryApi_UpdateStageVideoRequest {
 
   /// 视频可见性：1.公开；2:隐私，仅自己可见
   var visibility: Int32 = 0
+
+  /// 视频文件大小
+  var videoLength: Int32 = 0
+
+  /// 视频时长
+  var videoDuration: Int32 = 0
 
   /// 商品信息
   var products: [GloryApi_ShortVideoProduct] = []
@@ -2047,9 +2065,11 @@ extension GloryApi_CreateShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf
     3: .standard(proto: "cover_path"),
     4: .same(proto: "description"),
     5: .same(proto: "visibility"),
-    6: .same(proto: "products"),
-    7: .standard(proto: "shop_id"),
-    8: .standard(proto: "stage_video_id"),
+    6: .standard(proto: "video_length"),
+    7: .standard(proto: "video_duration"),
+    8: .same(proto: "products"),
+    9: .standard(proto: "shop_id"),
+    10: .standard(proto: "stage_video_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2063,9 +2083,11 @@ extension GloryApi_CreateShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf
       case 3: try { try decoder.decodeSingularStringField(value: &self.coverPath) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.description_p) }()
       case 5: try { try decoder.decodeSingularInt32Field(value: &self.visibility) }()
-      case 6: try { try decoder.decodeRepeatedMessageField(value: &self.products) }()
-      case 7: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
-      case 8: try { try decoder.decodeSingularInt64Field(value: &self.stageVideoID) }()
+      case 6: try { try decoder.decodeSingularInt32Field(value: &self.videoLength) }()
+      case 7: try { try decoder.decodeSingularInt32Field(value: &self.videoDuration) }()
+      case 8: try { try decoder.decodeRepeatedMessageField(value: &self.products) }()
+      case 9: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
+      case 10: try { try decoder.decodeSingularInt64Field(value: &self.stageVideoID) }()
       default: break
       }
     }
@@ -2091,14 +2113,20 @@ extension GloryApi_CreateShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf
     if self.visibility != 0 {
       try visitor.visitSingularInt32Field(value: self.visibility, fieldNumber: 5)
     }
+    if self.videoLength != 0 {
+      try visitor.visitSingularInt32Field(value: self.videoLength, fieldNumber: 6)
+    }
+    if self.videoDuration != 0 {
+      try visitor.visitSingularInt32Field(value: self.videoDuration, fieldNumber: 7)
+    }
     if !self.products.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.products, fieldNumber: 6)
+      try visitor.visitRepeatedMessageField(value: self.products, fieldNumber: 8)
     }
     if self.shopID != 0 {
-      try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 7)
+      try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 9)
     }
     if self.stageVideoID != 0 {
-      try visitor.visitSingularInt64Field(value: self.stageVideoID, fieldNumber: 8)
+      try visitor.visitSingularInt64Field(value: self.stageVideoID, fieldNumber: 10)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -2109,6 +2137,8 @@ extension GloryApi_CreateShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf
     if lhs.coverPath != rhs.coverPath {return false}
     if lhs.description_p != rhs.description_p {return false}
     if lhs.visibility != rhs.visibility {return false}
+    if lhs.videoLength != rhs.videoLength {return false}
+    if lhs.videoDuration != rhs.videoDuration {return false}
     if lhs.products != rhs.products {return false}
     if lhs.shopID != rhs.shopID {return false}
     if lhs.stageVideoID != rhs.stageVideoID {return false}
@@ -2167,8 +2197,10 @@ extension GloryApi_StageShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf.
     3: .standard(proto: "cover_path"),
     4: .same(proto: "description"),
     5: .same(proto: "visibility"),
-    6: .same(proto: "products"),
-    7: .standard(proto: "shop_id"),
+    6: .standard(proto: "video_length"),
+    7: .standard(proto: "video_duration"),
+    8: .same(proto: "products"),
+    9: .standard(proto: "shop_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2182,8 +2214,10 @@ extension GloryApi_StageShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf.
       case 3: try { try decoder.decodeSingularStringField(value: &self.coverPath) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.description_p) }()
       case 5: try { try decoder.decodeSingularInt32Field(value: &self.visibility) }()
-      case 6: try { try decoder.decodeRepeatedMessageField(value: &self.products) }()
-      case 7: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
+      case 6: try { try decoder.decodeSingularInt32Field(value: &self.videoLength) }()
+      case 7: try { try decoder.decodeSingularInt32Field(value: &self.videoDuration) }()
+      case 8: try { try decoder.decodeRepeatedMessageField(value: &self.products) }()
+      case 9: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
       default: break
       }
     }
@@ -2209,11 +2243,17 @@ extension GloryApi_StageShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf.
     if self.visibility != 0 {
       try visitor.visitSingularInt32Field(value: self.visibility, fieldNumber: 5)
     }
+    if self.videoLength != 0 {
+      try visitor.visitSingularInt32Field(value: self.videoLength, fieldNumber: 6)
+    }
+    if self.videoDuration != 0 {
+      try visitor.visitSingularInt32Field(value: self.videoDuration, fieldNumber: 7)
+    }
     if !self.products.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.products, fieldNumber: 6)
+      try visitor.visitRepeatedMessageField(value: self.products, fieldNumber: 8)
     }
     if self.shopID != 0 {
-      try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 7)
+      try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 9)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -2224,6 +2264,8 @@ extension GloryApi_StageShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf.
     if lhs.coverPath != rhs.coverPath {return false}
     if lhs.description_p != rhs.description_p {return false}
     if lhs.visibility != rhs.visibility {return false}
+    if lhs.videoLength != rhs.videoLength {return false}
+    if lhs.videoDuration != rhs.videoDuration {return false}
     if lhs.products != rhs.products {return false}
     if lhs.shopID != rhs.shopID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -3080,8 +3122,10 @@ extension GloryApi_UpdateStageVideoRequest: SwiftProtobuf.Message, SwiftProtobuf
     4: .standard(proto: "cover_path"),
     5: .same(proto: "description"),
     6: .same(proto: "visibility"),
-    7: .same(proto: "products"),
-    8: .standard(proto: "shop_id"),
+    7: .standard(proto: "video_length"),
+    8: .standard(proto: "video_duration"),
+    9: .same(proto: "products"),
+    10: .standard(proto: "shop_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -3096,8 +3140,10 @@ extension GloryApi_UpdateStageVideoRequest: SwiftProtobuf.Message, SwiftProtobuf
       case 4: try { try decoder.decodeSingularStringField(value: &self.coverPath) }()
       case 5: try { try decoder.decodeSingularStringField(value: &self.description_p) }()
       case 6: try { try decoder.decodeSingularInt32Field(value: &self.visibility) }()
-      case 7: try { try decoder.decodeRepeatedMessageField(value: &self.products) }()
-      case 8: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
+      case 7: try { try decoder.decodeSingularInt32Field(value: &self.videoLength) }()
+      case 8: try { try decoder.decodeSingularInt32Field(value: &self.videoDuration) }()
+      case 9: try { try decoder.decodeRepeatedMessageField(value: &self.products) }()
+      case 10: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
       default: break
       }
     }
@@ -3126,11 +3172,17 @@ extension GloryApi_UpdateStageVideoRequest: SwiftProtobuf.Message, SwiftProtobuf
     if self.visibility != 0 {
       try visitor.visitSingularInt32Field(value: self.visibility, fieldNumber: 6)
     }
+    if self.videoLength != 0 {
+      try visitor.visitSingularInt32Field(value: self.videoLength, fieldNumber: 7)
+    }
+    if self.videoDuration != 0 {
+      try visitor.visitSingularInt32Field(value: self.videoDuration, fieldNumber: 8)
+    }
     if !self.products.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.products, fieldNumber: 7)
+      try visitor.visitRepeatedMessageField(value: self.products, fieldNumber: 9)
     }
     if self.shopID != 0 {
-      try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 8)
+      try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 10)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -3142,6 +3194,8 @@ extension GloryApi_UpdateStageVideoRequest: SwiftProtobuf.Message, SwiftProtobuf
     if lhs.coverPath != rhs.coverPath {return false}
     if lhs.description_p != rhs.description_p {return false}
     if lhs.visibility != rhs.visibility {return false}
+    if lhs.videoLength != rhs.videoLength {return false}
+    if lhs.videoDuration != rhs.videoDuration {return false}
     if lhs.products != rhs.products {return false}
     if lhs.shopID != rhs.shopID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

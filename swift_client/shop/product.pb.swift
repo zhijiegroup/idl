@@ -84,7 +84,7 @@ enum GloryApi_State: SwiftProtobuf.Enum {
 
 extension GloryApi_State: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [GloryApi_State] = [
+  static let allCases: [GloryApi_State] = [
     .default,
     .created,
     .onShelf,

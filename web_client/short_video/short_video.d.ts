@@ -119,6 +119,10 @@ export interface CreateShortVideoRequest {
   description?: string;
   /** 视频可见性：1.公开；2:隐私，仅自己可见 */
   visibility?: number;
+  /** 视频文件大小 */
+  video_length?: number;
+  /** 视频时长 */
+  video_duration?: number;
   /** 商品信息 */
   products?: Array<ShortVideoProduct>;
   /** 店铺ID */
@@ -140,6 +144,10 @@ export interface StageShortVideoRequest {
   description?: string;
   /** 视频可见性：1.公开；2:隐私，仅自己可见 */
   visibility?: number;
+  /** 视频文件大小 */
+  video_length?: number;
+  /** 视频时长 */
+  video_duration?: number;
   /** 商品信息 */
   products?: Array<ShortVideoProduct>;
   /** 店铺ID */
@@ -275,6 +283,10 @@ export interface UpdateStageVideoRequest {
   description?: string;
   /** 视频可见性：1.公开；2:隐私，仅自己可见 */
   visibility?: number;
+  /** 视频文件大小 */
+  video_length?: number;
+  /** 视频时长 */
+  video_duration?: number;
   /** 商品信息 */
   products?: Array<ShortVideoProduct>;
   /** 店铺ID */
