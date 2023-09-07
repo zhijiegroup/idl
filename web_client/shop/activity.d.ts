@@ -101,3 +101,12 @@ export interface DeleteActivityRequest {
 export interface DeleteActivityResponse {
   base_resp?: base.BaseResponse;
 }
+
+export interface DisableActivityRequest {
+  base_request?: base.BaseRequest;
+  activity_id?: string;
+}
+
+export interface DisableActivityResponse {
+  base_resp?: base.BaseResponse;
+}

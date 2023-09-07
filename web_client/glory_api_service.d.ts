@@ -998,6 +998,10 @@ CreateLivePlanProduct create live plan product */
   DeleteActivity(
     request: activity.DeleteActivityRequest
   ): Promise<activity.DeleteActivityResponse>;
+
+  DisableActivity(
+    request: activity.DisableActivityRequest
+  ): Promise<activity.DisableActivityResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

@@ -7021,6 +7021,37 @@ public final class glory_apiGrpc {
     return getDeleteActivityMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.shop.DisableActivityRequest,
+      com.zhijiejiaoyu.glory_api.shop.DisableActivityResponse> getDisableActivityMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DisableActivity",
+      requestType = com.zhijiejiaoyu.glory_api.shop.DisableActivityRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.shop.DisableActivityResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.shop.DisableActivityRequest,
+      com.zhijiejiaoyu.glory_api.shop.DisableActivityResponse> getDisableActivityMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.shop.DisableActivityRequest, com.zhijiejiaoyu.glory_api.shop.DisableActivityResponse> getDisableActivityMethod;
+    if ((getDisableActivityMethod = glory_apiGrpc.getDisableActivityMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getDisableActivityMethod = glory_apiGrpc.getDisableActivityMethod) == null) {
+          glory_apiGrpc.getDisableActivityMethod = getDisableActivityMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.shop.DisableActivityRequest, com.zhijiejiaoyu.glory_api.shop.DisableActivityResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DisableActivity"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.shop.DisableActivityRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.shop.DisableActivityResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("DisableActivity"))
+              .build();
+        }
+      }
+    }
+    return getDisableActivityMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -8832,6 +8863,13 @@ public final class glory_apiGrpc {
     default void deleteActivity(com.zhijiejiaoyu.glory_api.shop.DeleteActivityRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.shop.DeleteActivityResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteActivityMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void disableActivity(com.zhijiejiaoyu.glory_api.shop.DisableActivityRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.shop.DisableActivityResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDisableActivityMethod(), responseObserver);
     }
   }
 
@@ -10852,6 +10890,14 @@ public final class glory_apiGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteActivityMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void disableActivity(com.zhijiejiaoyu.glory_api.shop.DisableActivityRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.shop.DisableActivityResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDisableActivityMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -12633,6 +12679,13 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.shop.DeleteActivityResponse deleteActivity(com.zhijiejiaoyu.glory_api.shop.DeleteActivityRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteActivityMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.shop.DisableActivityResponse disableActivity(com.zhijiejiaoyu.glory_api.shop.DisableActivityRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDisableActivityMethod(), getCallOptions(), request);
     }
   }
 
@@ -14642,6 +14695,14 @@ public final class glory_apiGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteActivityMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.shop.DisableActivityResponse> disableActivity(
+        com.zhijiejiaoyu.glory_api.shop.DisableActivityRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDisableActivityMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_EXAMPLE = 0;
@@ -14870,6 +14931,7 @@ public final class glory_apiGrpc {
   private static final int METHODID_ACTIVITY_DETAIL = 223;
   private static final int METHODID_UPDATE_ACTIVITY = 224;
   private static final int METHODID_DELETE_ACTIVITY = 225;
+  private static final int METHODID_DISABLE_ACTIVITY = 226;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -15791,6 +15853,10 @@ public final class glory_apiGrpc {
         case METHODID_DELETE_ACTIVITY:
           serviceImpl.deleteActivity((com.zhijiejiaoyu.glory_api.shop.DeleteActivityRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.shop.DeleteActivityResponse>) responseObserver);
+          break;
+        case METHODID_DISABLE_ACTIVITY:
+          serviceImpl.disableActivity((com.zhijiejiaoyu.glory_api.shop.DisableActivityRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.shop.DisableActivityResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -17392,6 +17458,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.shop.DeleteActivityRequest,
               com.zhijiejiaoyu.glory_api.shop.DeleteActivityResponse>(
                 service, METHODID_DELETE_ACTIVITY)))
+        .addMethod(
+          getDisableActivityMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.shop.DisableActivityRequest,
+              com.zhijiejiaoyu.glory_api.shop.DisableActivityResponse>(
+                service, METHODID_DISABLE_ACTIVITY)))
         .build();
   }
 
@@ -17666,6 +17739,7 @@ public final class glory_apiGrpc {
               .addMethod(getActivityDetailMethod())
               .addMethod(getUpdateActivityMethod())
               .addMethod(getDeleteActivityMethod())
+              .addMethod(getDisableActivityMethod())
               .build();
         }
       }

@@ -45,7 +45,7 @@ public final class GloryApiService {
       "ant.proto\032\030tenant/tenant_dept.proto\032\030ten" +
       "ant/tenant_user.proto\032\032tenant/tenant_con" +
       "fig.proto\032\035short_video/short_video.proto" +
-      "2\322\327\001\n\tglory_api\022s\n\rCreateExample\022\037.glory" +
+      "2\314\330\001\n\tglory_api\022s\n\rCreateExample\022\037.glory" +
       "_api.CreateExampleRequest\032 .glory_api.Cr" +
       "eateExampleResponse\"\037\322\301\030\033/api/example/cr" +
       "eate_example\022g\n\nGetExample\022\034.glory_api.G" +
@@ -735,8 +735,11 @@ public final class GloryApiService {
       "activity\022t\n\016DeleteActivity\022 .glory_api.D" +
       "eleteActivityRequest\032!.glory_api.DeleteA" +
       "ctivityResponse\"\035\322\301\030\031/api/shop/delete_ac" +
-      "tivityB\036\n\032com.zhijiejiaoyu.glory_apiP\001b\006" +
-      "proto3"
+      "tivity\022x\n\017DisableActivity\022!.glory_api.Di" +
+      "sableActivityRequest\032\".glory_api.Disable" +
+      "ActivityResponse\"\036\322\301\030\032/api/shop/disable_" +
+      "activityB\036\n\032com.zhijiejiaoyu.glory_apiP\001" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

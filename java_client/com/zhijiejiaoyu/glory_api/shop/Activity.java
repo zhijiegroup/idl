@@ -74,6 +74,16 @@ public final class Activity {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_DeleteActivityResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_DisableActivityRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_DisableActivityRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_DisableActivityResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_DisableActivityResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -127,8 +137,12 @@ public final class Activity {
       "nse\"U\n\025DeleteActivityRequest\022\'\n\014base_req" +
       "uest\030\001 \001(\0132\021.base.BaseRequest\022\023\n\013activit" +
       "y_id\030\002 \001(\003\"?\n\026DeleteActivityResponse\022%\n\t" +
-      "base_resp\030\001 \001(\0132\022.base.BaseResponseB#\n\037c" +
-      "om.zhijiejiaoyu.glory_api.shopP\001b\006proto3"
+      "base_resp\030\001 \001(\0132\022.base.BaseResponse\"V\n\026D" +
+      "isableActivityRequest\022\'\n\014base_request\030\001 " +
+      "\001(\0132\021.base.BaseRequest\022\023\n\013activity_id\030\002 " +
+      "\001(\003\"@\n\027DisableActivityResponse\022%\n\tbase_r" +
+      "esp\030\001 \001(\0132\022.base.BaseResponseB#\n\037com.zhi" +
+      "jiejiaoyu.glory_api.shopP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -206,6 +220,18 @@ public final class Activity {
     internal_static_glory_api_DeleteActivityResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteActivityResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
+    internal_static_glory_api_DisableActivityRequest_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_glory_api_DisableActivityRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_DisableActivityRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "ActivityId", });
+    internal_static_glory_api_DisableActivityResponse_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_glory_api_DisableActivityResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_DisableActivityResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
   }
