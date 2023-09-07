@@ -1,0 +1,91 @@
+syntax = "proto3";
+package glory_api;
+option java_package = "com.zhijiejiaoyu.glory_api.shop";
+option java_multiple_files = true;
+
+import "base.proto";
+
+message ActivityProduct {
+    int64 sku_id = 1;
+    string preferential_value = 2;
+    int64 stock_total = 3;
+    int64 purchase_limit = 4;
+
+}
+
+message CreateActivityRequest {
+    base.BaseRequest base_request = 1;
+    int64 shop_id = 2;
+    string title = 3;
+    int64 start_time = 4;
+    int64 end_time = 5;
+    bool is_set_stock = 6; // 是否设置库存
+    string soldout_policy = 7; // 售罄策略
+    bool is_preheat = 8; // 是否预热
+    int64 preheat_start_time = 9; // 预热开始时间
+    string  preferential_type = 10; // 优惠类型
+    repeated ActivityProduct products = 11;
+}
+
+message CreateActivityResponse {
+    base.BaseResponse base_resp = 1;
+}
+
+message ListActivityRequest {
+    base.BaseRequest base_request = 1;
+    int64 shop_id = 2;
+    base.PaginationRequest pagination = 100;
+}
+
+message ActivityDetail {
+    int64 activity_id = 1;
+    string title = 2;
+    string start_time = 3;
+    string end_time = 4;
+    string preferential_type = 5;
+    bool is_preheat = 6;
+    bool is_available = 7;
+    string preheat_start_time = 8;
+    repeated ActivityProduct products = 11;
+}
+message ListActivityResponse {
+    base.BaseResponse base_resp = 1;
+    repeated ActivityDetail activity_list = 2;
+    base.PaginationResponse pagination = 100;
+}
+
+message GetActivityDetailRequest {
+    base.BaseRequest base_request = 1;
+    int64 activity_id = 2;
+}
+message GetActivityDetailResponse {
+    base.BaseResponse base_resp = 1;
+    ActivityDetail activity_detail = 2;
+}
+
+message UpdateActivityRequest {
+    base.BaseRequest base_request = 1;
+    int64 activity_id = 2;
+    int64 shop_id = 3;
+    string title = 4;
+    int64 start_time = 5;
+    int64 end_time = 6;
+    bool is_set_stock = 7; // 是否设置库存
+    string soldout_policy = 8; // 售罄策略
+    bool is_preheat = 9; // 是否预热
+    int64 preheat_start_time = 10; // 预热开始时间
+    string  preferential_type = 11; // 优惠类型
+    repeated ActivityProduct products = 12;
+}
+
+message UpdateActivityResponse {
+    base.BaseResponse base_resp = 1;
+}
+
+message DeleteActivityRequest {
+    base.BaseRequest base_request = 1;
+    int64 activity_id = 2;
+}
+message DeleteActivityResponse {
+    base.BaseResponse base_resp = 1;
+}
