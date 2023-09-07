@@ -6866,6 +6866,161 @@ public final class glory_apiGrpc {
     return getUpdateCouponDistributionStatusMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.shop.CreateActivityRequest,
+      com.zhijiejiaoyu.glory_api.shop.CreateActivityResponse> getCreateActivityMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateActivity",
+      requestType = com.zhijiejiaoyu.glory_api.shop.CreateActivityRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.shop.CreateActivityResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.shop.CreateActivityRequest,
+      com.zhijiejiaoyu.glory_api.shop.CreateActivityResponse> getCreateActivityMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.shop.CreateActivityRequest, com.zhijiejiaoyu.glory_api.shop.CreateActivityResponse> getCreateActivityMethod;
+    if ((getCreateActivityMethod = glory_apiGrpc.getCreateActivityMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCreateActivityMethod = glory_apiGrpc.getCreateActivityMethod) == null) {
+          glory_apiGrpc.getCreateActivityMethod = getCreateActivityMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.shop.CreateActivityRequest, com.zhijiejiaoyu.glory_api.shop.CreateActivityResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateActivity"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.shop.CreateActivityRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.shop.CreateActivityResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CreateActivity"))
+              .build();
+        }
+      }
+    }
+    return getCreateActivityMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.shop.ListActivityRequest,
+      com.zhijiejiaoyu.glory_api.shop.ListActivityResponse> getListActivityMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListActivity",
+      requestType = com.zhijiejiaoyu.glory_api.shop.ListActivityRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.shop.ListActivityResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.shop.ListActivityRequest,
+      com.zhijiejiaoyu.glory_api.shop.ListActivityResponse> getListActivityMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.shop.ListActivityRequest, com.zhijiejiaoyu.glory_api.shop.ListActivityResponse> getListActivityMethod;
+    if ((getListActivityMethod = glory_apiGrpc.getListActivityMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListActivityMethod = glory_apiGrpc.getListActivityMethod) == null) {
+          glory_apiGrpc.getListActivityMethod = getListActivityMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.shop.ListActivityRequest, com.zhijiejiaoyu.glory_api.shop.ListActivityResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListActivity"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.shop.ListActivityRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.shop.ListActivityResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListActivity"))
+              .build();
+        }
+      }
+    }
+    return getListActivityMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.shop.GetActivityDetailRequest,
+      com.zhijiejiaoyu.glory_api.shop.GetActivityDetailResponse> getActivityDetailMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ActivityDetail",
+      requestType = com.zhijiejiaoyu.glory_api.shop.GetActivityDetailRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.shop.GetActivityDetailResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.shop.GetActivityDetailRequest,
+      com.zhijiejiaoyu.glory_api.shop.GetActivityDetailResponse> getActivityDetailMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.shop.GetActivityDetailRequest, com.zhijiejiaoyu.glory_api.shop.GetActivityDetailResponse> getActivityDetailMethod;
+    if ((getActivityDetailMethod = glory_apiGrpc.getActivityDetailMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getActivityDetailMethod = glory_apiGrpc.getActivityDetailMethod) == null) {
+          glory_apiGrpc.getActivityDetailMethod = getActivityDetailMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.shop.GetActivityDetailRequest, com.zhijiejiaoyu.glory_api.shop.GetActivityDetailResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ActivityDetail"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.shop.GetActivityDetailRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.shop.GetActivityDetailResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ActivityDetail"))
+              .build();
+        }
+      }
+    }
+    return getActivityDetailMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.shop.UpdateActivityRequest,
+      com.zhijiejiaoyu.glory_api.shop.UpdateActivityResponse> getUpdateActivityMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateActivity",
+      requestType = com.zhijiejiaoyu.glory_api.shop.UpdateActivityRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.shop.UpdateActivityResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.shop.UpdateActivityRequest,
+      com.zhijiejiaoyu.glory_api.shop.UpdateActivityResponse> getUpdateActivityMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.shop.UpdateActivityRequest, com.zhijiejiaoyu.glory_api.shop.UpdateActivityResponse> getUpdateActivityMethod;
+    if ((getUpdateActivityMethod = glory_apiGrpc.getUpdateActivityMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getUpdateActivityMethod = glory_apiGrpc.getUpdateActivityMethod) == null) {
+          glory_apiGrpc.getUpdateActivityMethod = getUpdateActivityMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.shop.UpdateActivityRequest, com.zhijiejiaoyu.glory_api.shop.UpdateActivityResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateActivity"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.shop.UpdateActivityRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.shop.UpdateActivityResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("UpdateActivity"))
+              .build();
+        }
+      }
+    }
+    return getUpdateActivityMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.shop.DeleteActivityRequest,
+      com.zhijiejiaoyu.glory_api.shop.DeleteActivityResponse> getDeleteActivityMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteActivity",
+      requestType = com.zhijiejiaoyu.glory_api.shop.DeleteActivityRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.shop.DeleteActivityResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.shop.DeleteActivityRequest,
+      com.zhijiejiaoyu.glory_api.shop.DeleteActivityResponse> getDeleteActivityMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.shop.DeleteActivityRequest, com.zhijiejiaoyu.glory_api.shop.DeleteActivityResponse> getDeleteActivityMethod;
+    if ((getDeleteActivityMethod = glory_apiGrpc.getDeleteActivityMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getDeleteActivityMethod = glory_apiGrpc.getDeleteActivityMethod) == null) {
+          glory_apiGrpc.getDeleteActivityMethod = getDeleteActivityMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.shop.DeleteActivityRequest, com.zhijiejiaoyu.glory_api.shop.DeleteActivityResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteActivity"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.shop.DeleteActivityRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.shop.DeleteActivityResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("DeleteActivity"))
+              .build();
+        }
+      }
+    }
+    return getDeleteActivityMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -8639,6 +8794,44 @@ public final class glory_apiGrpc {
     default void updateCouponDistributionStatus(com.zhijiejiaoyu.glory_api.shop.UpdateCouponDistributionStatusRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.shop.UpdateCouponDistributionStatusResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateCouponDistributionStatusMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * activity
+     * </pre>
+     */
+    default void createActivity(com.zhijiejiaoyu.glory_api.shop.CreateActivityRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.shop.CreateActivityResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateActivityMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void listActivity(com.zhijiejiaoyu.glory_api.shop.ListActivityRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.shop.ListActivityResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListActivityMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void activityDetail(com.zhijiejiaoyu.glory_api.shop.GetActivityDetailRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.shop.GetActivityDetailResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getActivityDetailMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updateActivity(com.zhijiejiaoyu.glory_api.shop.UpdateActivityRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.shop.UpdateActivityResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateActivityMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void deleteActivity(com.zhijiejiaoyu.glory_api.shop.DeleteActivityRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.shop.DeleteActivityResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteActivityMethod(), responseObserver);
     }
   }
 
@@ -10616,6 +10809,49 @@ public final class glory_apiGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateCouponDistributionStatusMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * activity
+     * </pre>
+     */
+    public void createActivity(com.zhijiejiaoyu.glory_api.shop.CreateActivityRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.shop.CreateActivityResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateActivityMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void listActivity(com.zhijiejiaoyu.glory_api.shop.ListActivityRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.shop.ListActivityResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListActivityMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void activityDetail(com.zhijiejiaoyu.glory_api.shop.GetActivityDetailRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.shop.GetActivityDetailResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getActivityDetailMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateActivity(com.zhijiejiaoyu.glory_api.shop.UpdateActivityRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.shop.UpdateActivityResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateActivityMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deleteActivity(com.zhijiejiaoyu.glory_api.shop.DeleteActivityRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.shop.DeleteActivityResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteActivityMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -12359,6 +12595,44 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.shop.UpdateCouponDistributionStatusResponse updateCouponDistributionStatus(com.zhijiejiaoyu.glory_api.shop.UpdateCouponDistributionStatusRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateCouponDistributionStatusMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * activity
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.shop.CreateActivityResponse createActivity(com.zhijiejiaoyu.glory_api.shop.CreateActivityRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateActivityMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.shop.ListActivityResponse listActivity(com.zhijiejiaoyu.glory_api.shop.ListActivityRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListActivityMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.shop.GetActivityDetailResponse activityDetail(com.zhijiejiaoyu.glory_api.shop.GetActivityDetailRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getActivityDetailMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.shop.UpdateActivityResponse updateActivity(com.zhijiejiaoyu.glory_api.shop.UpdateActivityRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateActivityMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.shop.DeleteActivityResponse deleteActivity(com.zhijiejiaoyu.glory_api.shop.DeleteActivityRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteActivityMethod(), getCallOptions(), request);
     }
   }
 
@@ -14325,6 +14599,49 @@ public final class glory_apiGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateCouponDistributionStatusMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * activity
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.shop.CreateActivityResponse> createActivity(
+        com.zhijiejiaoyu.glory_api.shop.CreateActivityRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateActivityMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.shop.ListActivityResponse> listActivity(
+        com.zhijiejiaoyu.glory_api.shop.ListActivityRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListActivityMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.shop.GetActivityDetailResponse> activityDetail(
+        com.zhijiejiaoyu.glory_api.shop.GetActivityDetailRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getActivityDetailMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.shop.UpdateActivityResponse> updateActivity(
+        com.zhijiejiaoyu.glory_api.shop.UpdateActivityRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateActivityMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.shop.DeleteActivityResponse> deleteActivity(
+        com.zhijiejiaoyu.glory_api.shop.DeleteActivityRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteActivityMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_EXAMPLE = 0;
@@ -14548,6 +14865,11 @@ public final class glory_apiGrpc {
   private static final int METHODID_DELETE_COUPON = 218;
   private static final int METHODID_ABOLISH_COUPON = 219;
   private static final int METHODID_UPDATE_COUPON_DISTRIBUTION_STATUS = 220;
+  private static final int METHODID_CREATE_ACTIVITY = 221;
+  private static final int METHODID_LIST_ACTIVITY = 222;
+  private static final int METHODID_ACTIVITY_DETAIL = 223;
+  private static final int METHODID_UPDATE_ACTIVITY = 224;
+  private static final int METHODID_DELETE_ACTIVITY = 225;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -15449,6 +15771,26 @@ public final class glory_apiGrpc {
         case METHODID_UPDATE_COUPON_DISTRIBUTION_STATUS:
           serviceImpl.updateCouponDistributionStatus((com.zhijiejiaoyu.glory_api.shop.UpdateCouponDistributionStatusRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.shop.UpdateCouponDistributionStatusResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_ACTIVITY:
+          serviceImpl.createActivity((com.zhijiejiaoyu.glory_api.shop.CreateActivityRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.shop.CreateActivityResponse>) responseObserver);
+          break;
+        case METHODID_LIST_ACTIVITY:
+          serviceImpl.listActivity((com.zhijiejiaoyu.glory_api.shop.ListActivityRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.shop.ListActivityResponse>) responseObserver);
+          break;
+        case METHODID_ACTIVITY_DETAIL:
+          serviceImpl.activityDetail((com.zhijiejiaoyu.glory_api.shop.GetActivityDetailRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.shop.GetActivityDetailResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_ACTIVITY:
+          serviceImpl.updateActivity((com.zhijiejiaoyu.glory_api.shop.UpdateActivityRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.shop.UpdateActivityResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_ACTIVITY:
+          serviceImpl.deleteActivity((com.zhijiejiaoyu.glory_api.shop.DeleteActivityRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.shop.DeleteActivityResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -17015,6 +17357,41 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.shop.UpdateCouponDistributionStatusRequest,
               com.zhijiejiaoyu.glory_api.shop.UpdateCouponDistributionStatusResponse>(
                 service, METHODID_UPDATE_COUPON_DISTRIBUTION_STATUS)))
+        .addMethod(
+          getCreateActivityMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.shop.CreateActivityRequest,
+              com.zhijiejiaoyu.glory_api.shop.CreateActivityResponse>(
+                service, METHODID_CREATE_ACTIVITY)))
+        .addMethod(
+          getListActivityMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.shop.ListActivityRequest,
+              com.zhijiejiaoyu.glory_api.shop.ListActivityResponse>(
+                service, METHODID_LIST_ACTIVITY)))
+        .addMethod(
+          getActivityDetailMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.shop.GetActivityDetailRequest,
+              com.zhijiejiaoyu.glory_api.shop.GetActivityDetailResponse>(
+                service, METHODID_ACTIVITY_DETAIL)))
+        .addMethod(
+          getUpdateActivityMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.shop.UpdateActivityRequest,
+              com.zhijiejiaoyu.glory_api.shop.UpdateActivityResponse>(
+                service, METHODID_UPDATE_ACTIVITY)))
+        .addMethod(
+          getDeleteActivityMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.shop.DeleteActivityRequest,
+              com.zhijiejiaoyu.glory_api.shop.DeleteActivityResponse>(
+                service, METHODID_DELETE_ACTIVITY)))
         .build();
   }
 
@@ -17284,6 +17661,11 @@ public final class glory_apiGrpc {
               .addMethod(getDeleteCouponMethod())
               .addMethod(getAbolishCouponMethod())
               .addMethod(getUpdateCouponDistributionStatusMethod())
+              .addMethod(getCreateActivityMethod())
+              .addMethod(getListActivityMethod())
+              .addMethod(getActivityDetailMethod())
+              .addMethod(getUpdateActivityMethod())
+              .addMethod(getDeleteActivityMethod())
               .build();
         }
       }

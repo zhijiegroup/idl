@@ -17,6 +17,7 @@ import * as cart from "./shop/cart";
 import * as operation from "./shop/operation";
 import * as freight_template from "./shop/freight_template";
 import * as coupon from "./shop/coupon";
+import * as activity from "./shop/activity";
 import * as attachment from "./seller/attachment";
 import * as seller from "./seller/seller";
 import * as payment from "./payment/payment";
@@ -54,6 +55,7 @@ export {
   operation,
   freight_template,
   coupon,
+  activity,
   attachment,
   seller,
   payment,
@@ -975,6 +977,27 @@ CreateLivePlanProduct create live plan product */
   UpdateCouponDistributionStatus(
     request: coupon.UpdateCouponDistributionStatusRequest
   ): Promise<coupon.UpdateCouponDistributionStatusResponse>;
+
+  /** activity */
+  CreateActivity(
+    request: activity.CreateActivityRequest
+  ): Promise<activity.CreateActivityResponse>;
+
+  ListActivity(
+    request: activity.ListActivityRequest
+  ): Promise<activity.ListActivityResponse>;
+
+  ActivityDetail(
+    request: activity.GetActivityDetailRequest
+  ): Promise<activity.GetActivityDetailResponse>;
+
+  UpdateActivity(
+    request: activity.UpdateActivityRequest
+  ): Promise<activity.UpdateActivityResponse>;
+
+  DeleteActivity(
+    request: activity.DeleteActivityRequest
+  ): Promise<activity.DeleteActivityResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

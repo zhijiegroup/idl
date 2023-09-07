@@ -19,6 +19,7 @@ import * as cart from "./shop/cart";
 import * as operation from "./shop/operation";
 import * as freight_template from "./shop/freight_template";
 import * as coupon from "./shop/coupon";
+import * as activity from "./shop/activity";
 import * as attachment from "./seller/attachment";
 import * as seller from "./seller/seller";
 import * as payment from "./payment/payment";
@@ -56,6 +57,7 @@ export {
   operation,
   freight_template,
   coupon,
+  activity,
   attachment,
   seller,
   payment,
@@ -1782,6 +1784,44 @@ export class glory_api {
 
   UpdateCouponDistributionStatus(request) {
     const uri = `${this.uriPrefix}/api/shop/update_coupon_distribution_status`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreateActivity(request) {
+    const uri = `${this.uriPrefix}/api/shop/create_activity`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListActivity(request) {
+    const uri = `${this.uriPrefix}/api/shop/list_activity`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ActivityDetail(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/shop/activity_detail${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  UpdateActivity(request) {
+    const uri = `${this.uriPrefix}/api/shop/update_activity`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteActivity(request) {
+    const uri = `${this.uriPrefix}/api/shop/delete_activity`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
