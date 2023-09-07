@@ -73,9 +73,11 @@ message CreateShortVideoRequest {
   string cover_path = 3;
   string description = 4; // 短视频描述
   int32 visibility = 5; // 视频可见性：1.公开；2:隐私，仅自己可见
-  repeated ShortVideoProduct products = 6; // 商品信息
-  int64 shop_id = 7; // 店铺ID
-  int64 stage_video_id = 8; // 暂存视频ID（如果是发布暂存视频的话）
+  int32 video_length = 6; // 视频文件大小
+  int32 video_duration = 7; // 视频时长
+  repeated ShortVideoProduct products = 8; // 商品信息
+  int64 shop_id = 9; // 店铺ID
+  int64 stage_video_id = 10; // 暂存视频ID（如果是发布暂存视频的话）
 }
 
 message CreateShortVideoResponse {
@@ -89,8 +91,10 @@ message StageShortVideoRequest {
   string cover_path = 3;
   string description = 4; // 短视频描述
   int32 visibility = 5; // 视频可见性：1.公开；2:隐私，仅自己可见
-  repeated ShortVideoProduct products = 6; // 商品信息
-  int64 shop_id = 7; // 店铺ID
+  int32 video_length = 6; // 视频文件大小
+  int32 video_duration = 7; // 视频时长
+  repeated ShortVideoProduct products = 8; // 商品信息
+  int64 shop_id = 9; // 店铺ID
 }
 
 message StageShortVideoResponse {
@@ -211,8 +215,10 @@ message UpdateStageVideoRequest {
   string cover_path = 4; // 暂存视频封面OSS路径
   string description = 5; // 短视频描述
   int32 visibility = 6; // 视频可见性：1.公开；2:隐私，仅自己可见
-  repeated ShortVideoProduct products = 7; // 商品信息
-  int64 shop_id = 8; // 店铺ID
+  int32 video_length = 7; // 视频文件大小
+  int32 video_duration = 8; // 视频时长
+  repeated ShortVideoProduct products = 9; // 商品信息
+  int64 shop_id = 10; // 店铺ID
 }
 
 message UpdateStageVideoResponse {
