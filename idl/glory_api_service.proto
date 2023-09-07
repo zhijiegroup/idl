@@ -891,4 +891,7 @@ service glory_api {
   rpc DeleteActivity(DeleteActivityRequest) returns (DeleteActivityResponse) {
     option (api.post) = '/api/shop/delete_activity';
   }
+  rpc DisableActivity(DisableActivityRequest) returns (DisableActivityResponse) {
+    option (api.post) = '/api/shop/disable_activity';
+  }
 }
