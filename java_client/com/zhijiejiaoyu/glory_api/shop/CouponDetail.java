@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
     couponLimit = "";
     couponStatus = "";
     distributedStatus = "";
+    productIds = emptyLongList();
   }
 
   @java.lang.Override
@@ -43,6 +44,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0 = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -143,6 +145,27 @@ private static final long serialVersionUID = 0L;
             usedTotal = input.readInt64();
             break;
           }
+          case 144: {
+            if (!((mutable_bitField0 & 0x00000001) != 0)) {
+              productIds = newLongList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            productIds .addLong(input.readInt64());
+            break;
+          }
+          case 146: {
+            int length = input.readRawVarint32();
+            int limit = input.pushLimit(length);
+            if (!((mutable_bitField0 & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+              productIds = newLongList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            while (input.getBytesUntilLimit() > 0) {
+              productIds .addLong(input.readInt64());
+            }
+            input.popLimit(limit);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -158,6 +181,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0 & 0x00000001) != 0)) {
+        productIds .makeImmutable(); // C
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -497,6 +523,34 @@ private static final long serialVersionUID = 0L;
     return usedTotal ;
   }
 
+  public static final int PRODUCT_IDS_FIELD_NUMBER = 18;
+  private com.google.protobuf.Internal.LongList productIds ;
+  /**
+   * <code>repeated int64 product_ids = 18;</code>
+   * @return A list containing the productIds.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Long>
+      getProductIdsList() {
+    return productIds ;
+  }
+  /**
+   * <code>repeated int64 product_ids = 18;</code>
+   * @return The count of productIds.
+   */
+  public int getProductIdsCount() {
+    return productIds .size();
+  }
+  /**
+   * <code>repeated int64 product_ids = 18;</code>
+   * @param index The index of the element to return.
+   * @return The productIds at the given index.
+   */
+  public long getProductIds(int index) {
+    return productIds .getLong(index);
+  }
+  private int productIdsMemoizedSerializedSize = -1;
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -511,6 +565,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    getSerializedSize();
     if (couponId != 0L) {
       output.writeInt64(1, couponId );
     }
@@ -561,6 +616,13 @@ private static final long serialVersionUID = 0L;
     }
     if (usedTotal != 0L) {
       output.writeInt64(17, usedTotal );
+    }
+    if (getProductIdsList().size() > 0) {
+      output.writeUInt32NoTag(146);
+      output.writeUInt32NoTag(productIdsMemoizedSerializedSize);
+    }
+    for (int i = 0; i < productIds .size(); i++) {
+      output.writeInt64NoTag(productIds .getLong(i));
     }
     unknownFields.writeTo(output);
   }
@@ -634,6 +696,20 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(17, usedTotal );
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < productIds .size(); i++) {
+        dataSize += com.google.protobuf.CodedOutputStream
+          .computeInt64SizeNoTag(productIds .getLong(i));
+      }
+      size += dataSize;
+      if (!getProductIdsList().isEmpty()) {
+        size += 2;
+        size += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(dataSize);
+      }
+      productIdsMemoizedSerializedSize = dataSize;
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -685,6 +761,8 @@ private static final long serialVersionUID = 0L;
         != other.getDistributedTotal()) return false;
     if (getUsedTotal()
         != other.getUsedTotal()) return false;
+    if (!getProductIdsList()
+        .equals(other.getProductIdsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -742,6 +820,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + USED_TOTAL_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getUsedTotal());
+    if (getProductIdsCount() > 0) {
+      hash = (37 * hash) + PRODUCT_IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getProductIdsList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -909,6 +991,8 @@ private static final long serialVersionUID = 0L;
 
       usedTotal = 0L;
 
+      productIds = emptyLongList();
+      bitField0 = (bitField0 & ~0x00000001);
       return this;
     }
 
@@ -935,6 +1019,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.shop.CouponDetail buildPartial() {
       com.zhijiejiaoyu.glory_api.shop.CouponDetail result = new com.zhijiejiaoyu.glory_api.shop.CouponDetail(this);
+      int from_bitField0 = bitField0 ;
       result.couponId = couponId ;
       result.shopId = shopId ;
       result.couponType = couponType ;
@@ -952,6 +1037,11 @@ private static final long serialVersionUID = 0L;
       result.distributedStatus = distributedStatus ;
       result.distributedTotal = distributedTotal ;
       result.usedTotal = usedTotal ;
+      if (((bitField0 & 0x00000001) != 0)) {
+        productIds .makeImmutable();
+        bitField0 = (bitField0 & ~0x00000001);
+      }
+      result.productIds = productIds ;
       onBuilt();
       return result;
     }
@@ -1056,6 +1146,16 @@ private static final long serialVersionUID = 0L;
       if (other.getUsedTotal() != 0L) {
         setUsedTotal(other.getUsedTotal());
       }
+      if (!other.productIds .isEmpty()) {
+        if (productIds .isEmpty()) {
+          productIds = other.productIds ;
+          bitField0 = (bitField0 & ~0x00000001);
+        } else {
+          ensureProductIdsIsMutable();
+          productIds .addAll(other.productIds );
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1084,6 +1184,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0 ;
 
     private long couponId ;
     /**
@@ -1833,6 +1934,85 @@ private static final long serialVersionUID = 0L;
     public Builder clearUsedTotal() {
       
       usedTotal = 0L;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Internal.LongList productIds = emptyLongList();
+    private void ensureProductIdsIsMutable() {
+      if (!((bitField0 & 0x00000001) != 0)) {
+        productIds = mutableCopy(productIds );
+        bitField0_ |= 0x00000001;
+       }
+    }
+    /**
+     * <code>repeated int64 product_ids = 18;</code>
+     * @return A list containing the productIds.
+     */
+    public java.util.List<java.lang.Long>
+        getProductIdsList() {
+      return ((bitField0 & 0x00000001) != 0) ?
+               java.util.Collections.unmodifiableList(productIds ) : productIds ;
+    }
+    /**
+     * <code>repeated int64 product_ids = 18;</code>
+     * @return The count of productIds.
+     */
+    public int getProductIdsCount() {
+      return productIds .size();
+    }
+    /**
+     * <code>repeated int64 product_ids = 18;</code>
+     * @param index The index of the element to return.
+     * @return The productIds at the given index.
+     */
+    public long getProductIds(int index) {
+      return productIds .getLong(index);
+    }
+    /**
+     * <code>repeated int64 product_ids = 18;</code>
+     * @param index The index to set the value at.
+     * @param value The productIds to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProductIds(
+        int index, long value) {
+      ensureProductIdsIsMutable();
+      productIds .setLong(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated int64 product_ids = 18;</code>
+     * @param value The productIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addProductIds(long value) {
+      ensureProductIdsIsMutable();
+      productIds .addLong(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated int64 product_ids = 18;</code>
+     * @param values The productIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllProductIds(
+        java.lang.Iterable<? extends java.lang.Long> values) {
+      ensureProductIdsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, productIds );
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated int64 product_ids = 18;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearProductIds() {
+      productIds = emptyLongList();
+      bitField0 = (bitField0 & ~0x00000001);
       onChanged();
       return this;
     }

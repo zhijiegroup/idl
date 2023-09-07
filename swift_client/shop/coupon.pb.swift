@@ -211,6 +211,11 @@ struct GloryApi_CouponDetail {
     set {_uniqueStorage()._usedTotal = newValue}
   }
 
+  var productIds: [Int64] {
+    get {return _storage._productIds}
+    set {_uniqueStorage()._productIds = newValue}
+  }
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -747,6 +752,7 @@ extension GloryApi_CouponDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     15: .standard(proto: "distributed_status"),
     16: .standard(proto: "distributed_total"),
     17: .standard(proto: "used_total"),
+    18: .standard(proto: "product_ids"),
   ]
 
   fileprivate class _StorageClass {
@@ -767,6 +773,7 @@ extension GloryApi_CouponDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     var _distributedStatus: String = String()
     var _distributedTotal: Int64 = 0
     var _usedTotal: Int64 = 0
+    var _productIds: [Int64] = []
 
     static let defaultInstance = _StorageClass()
 
@@ -790,6 +797,7 @@ extension GloryApi_CouponDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
       _distributedStatus = source._distributedStatus
       _distributedTotal = source._distributedTotal
       _usedTotal = source._usedTotal
+      _productIds = source._productIds
     }
   }
 
@@ -825,6 +833,7 @@ extension GloryApi_CouponDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
         case 15: try { try decoder.decodeSingularStringField(value: &_storage._distributedStatus) }()
         case 16: try { try decoder.decodeSingularInt64Field(value: &_storage._distributedTotal) }()
         case 17: try { try decoder.decodeSingularInt64Field(value: &_storage._usedTotal) }()
+        case 18: try { try decoder.decodeRepeatedInt64Field(value: &_storage._productIds) }()
         default: break
         }
       }
@@ -884,6 +893,9 @@ extension GloryApi_CouponDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
       if _storage._usedTotal != 0 {
         try visitor.visitSingularInt64Field(value: _storage._usedTotal, fieldNumber: 17)
       }
+      if !_storage._productIds.isEmpty {
+        try visitor.visitPackedInt64Field(value: _storage._productIds, fieldNumber: 18)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -910,6 +922,7 @@ extension GloryApi_CouponDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
         if _storage._distributedStatus != rhs_storage._distributedStatus {return false}
         if _storage._distributedTotal != rhs_storage._distributedTotal {return false}
         if _storage._usedTotal != rhs_storage._usedTotal {return false}
+        if _storage._productIds != rhs_storage._productIds {return false}
         return true
       }
       if !storagesAreEqual {return false}
