@@ -19,6 +19,7 @@ import "shop/cart.proto";
 import "shop/operation.proto";
 import "shop/freight_template.proto";
 import "shop/coupon.proto";
+import "shop/activity.proto";
 import "seller/attachment.proto";
 import "seller/seller.proto";
 import "payment/payment.proto";
@@ -872,5 +873,22 @@ service glory_api {
   }
   rpc UpdateCouponDistributionStatus(UpdateCouponDistributionStatusRequest) returns (UpdateCouponDistributionStatusResponse) {
     option (api.post) = '/api/shop/update_coupon_distribution_status';
+  }
+
+  // activity
+  rpc CreateActivity(CreateActivityRequest) returns (CreateActivityResponse) {
+    option (api.post) = '/api/shop/create_activity';
+  }
+  rpc ListActivity(ListActivityRequest) returns (ListActivityResponse) {
+    option (api.post) = '/api/shop/list_activity';
+  }
+  rpc ActivityDetail(GetActivityDetailRequest) returns (GetActivityDetailResponse) {
+    option (api.get) = '/api/shop/activity_detail';
+  }
+  rpc UpdateActivity(UpdateActivityRequest) returns (UpdateActivityResponse) {
+    option (api.post) = '/api/shop/update_activity';
+  }
+  rpc DeleteActivity(DeleteActivityRequest) returns (DeleteActivityResponse) {
+    option (api.post) = '/api/shop/delete_activity';
   }
 }
