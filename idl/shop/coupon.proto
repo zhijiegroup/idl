@@ -49,6 +49,7 @@ message CouponDetail {
     string distributed_status = 15;
     int64 distributed_total = 16;
     int64 used_total = 17;
+    repeated int64  product_ids = 18;
 }
 message ListCouponResponse {
     base.BaseResponse base_resp = 1;
