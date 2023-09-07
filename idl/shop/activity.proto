@@ -90,14 +90,6 @@ message DeleteActivityResponse {
     base.BaseResponse base_resp = 1;
 }
 
-message DeleteActivityRequest {
-    base.BaseRequest base_request = 1;
-    int64 activity_id = 2;
-}
-message DeleteActivityResponse {
-    base.BaseResponse base_resp = 1;
-}
-
 message DisableActivityRequest {
     base.BaseRequest base_request = 1;
     int64 activity_id = 2;
