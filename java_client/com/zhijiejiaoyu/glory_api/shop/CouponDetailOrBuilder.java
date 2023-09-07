@@ -126,4 +126,16 @@ public interface CouponDetailOrBuilder extends
    */
   com.google.protobuf.ByteString
       getDistributedStatusBytes();
+
+  /**
+   * <code>int64 distributed_total = 16;</code>
+   * @return The distributedTotal.
+   */
+  long getDistributedTotal();
+
+  /**
+   * <code>int64 used_total = 17;</code>
+   * @return The usedTotal.
+   */
+  long getUsedTotal();
 }

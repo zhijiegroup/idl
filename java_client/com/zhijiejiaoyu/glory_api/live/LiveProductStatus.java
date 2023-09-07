@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
     state = "";
     productUrl = "";
     productName = "";
+    activityStatus = "";
   }
 
   @java.lang.Override
@@ -133,6 +134,12 @@ private static final long serialVersionUID = 0L;
           case 121: {
 
             productDealAmount = input.readDouble();
+            break;
+          }
+          case 130: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            activityStatus = s;
             break;
           }
           default: {
@@ -538,6 +545,52 @@ private static final long serialVersionUID = 0L;
     return productDealAmount ;
   }
 
+  public static final int ACTIVITY_STATUS_FIELD_NUMBER = 16;
+  private volatile java.lang.Object activityStatus ;
+  /**
+   * <pre>
+   * 商品活动状态
+   * </pre>
+   *
+   * <code>string activity_status = 16;</code>
+   * @return The activityStatus.
+   */
+  @java.lang.Override
+  public java.lang.String getActivityStatus() {
+    java.lang.Object ref = activityStatus ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      activityStatus = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 商品活动状态
+   * </pre>
+   *
+   * <code>string activity_status = 16;</code>
+   * @return The bytes for activityStatus.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getActivityStatusBytes() {
+    java.lang.Object ref = activityStatus ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      activityStatus = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -596,6 +649,9 @@ private static final long serialVersionUID = 0L;
     }
     if (productDealAmount != 0D) {
       output.writeDouble(15, productDealAmount );
+    }
+    if (!getActivityStatusBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 16, activityStatus );
     }
     unknownFields.writeTo(output);
   }
@@ -660,6 +716,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(15, productDealAmount );
     }
+    if (!getActivityStatusBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, activityStatus );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -707,6 +766,8 @@ private static final long serialVersionUID = 0L;
     if (java.lang.Double.doubleToLongBits(getProductDealAmount())
         != java.lang.Double.doubleToLongBits(
             other.getProductDealAmount())) return false;
+    if (!getActivityStatus()
+        .equals(other.getActivityStatus())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -757,6 +818,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + PRODUCT_DEAL_AMOUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         java.lang.Double.doubleToLongBits(getProductDealAmount()));
+    hash = (37 * hash) + ACTIVITY_STATUS_FIELD_NUMBER;
+    hash = (53 * hash) + getActivityStatus().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -920,6 +983,8 @@ private static final long serialVersionUID = 0L;
 
       productDealAmount = 0D;
 
+      activityStatus = "";
+
       return this;
     }
 
@@ -961,6 +1026,7 @@ private static final long serialVersionUID = 0L;
       result.productRemainingAmount = productRemainingAmount ;
       result.productSoldAmount = productSoldAmount ;
       result.productDealAmount = productDealAmount ;
+      result.activityStatus = activityStatus ;
       onBuilt();
       return result;
     }
@@ -1059,6 +1125,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getProductDealAmount() != 0D) {
         setProductDealAmount(other.getProductDealAmount());
+      }
+      if (!other.getActivityStatus().isEmpty()) {
+        activityStatus = other.activityStatus ;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1940,6 +2010,102 @@ private static final long serialVersionUID = 0L;
     public Builder clearProductDealAmount() {
       
       productDealAmount = 0D;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object activityStatus = "";
+    /**
+     * <pre>
+     * 商品活动状态
+     * </pre>
+     *
+     * <code>string activity_status = 16;</code>
+     * @return The activityStatus.
+     */
+    public java.lang.String getActivityStatus() {
+      java.lang.Object ref = activityStatus ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        activityStatus = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 商品活动状态
+     * </pre>
+     *
+     * <code>string activity_status = 16;</code>
+     * @return The bytes for activityStatus.
+     */
+    public com.google.protobuf.ByteString
+        getActivityStatusBytes() {
+      java.lang.Object ref = activityStatus ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        activityStatus = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 商品活动状态
+     * </pre>
+     *
+     * <code>string activity_status = 16;</code>
+     * @param value The activityStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setActivityStatus(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      activityStatus = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 商品活动状态
+     * </pre>
+     *
+     * <code>string activity_status = 16;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearActivityStatus() {
+      
+      activityStatus = getDefaultInstance().getActivityStatus();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 商品活动状态
+     * </pre>
+     *
+     * <code>string activity_status = 16;</code>
+     * @param value The bytes for activityStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setActivityStatusBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      activityStatus = value;
       onChanged();
       return this;
     }

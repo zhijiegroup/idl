@@ -786,6 +786,9 @@ struct GloryApi_LiveProductStatus {
   /// 商品成交金额
   var productDealAmount: Double = 0
 
+  /// 商品活动状态
+  var activityStatus: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -2513,6 +2516,7 @@ extension GloryApi_LiveProductStatus: SwiftProtobuf.Message, SwiftProtobuf._Mess
     13: .standard(proto: "product_remaining_amount"),
     14: .standard(proto: "product_sold_amount"),
     15: .standard(proto: "product_deal_amount"),
+    16: .standard(proto: "activity_status"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2536,6 +2540,7 @@ extension GloryApi_LiveProductStatus: SwiftProtobuf.Message, SwiftProtobuf._Mess
       case 13: try { try decoder.decodeSingularInt64Field(value: &self.productRemainingAmount) }()
       case 14: try { try decoder.decodeSingularInt64Field(value: &self.productSoldAmount) }()
       case 15: try { try decoder.decodeSingularDoubleField(value: &self.productDealAmount) }()
+      case 16: try { try decoder.decodeSingularStringField(value: &self.activityStatus) }()
       default: break
       }
     }
@@ -2587,6 +2592,9 @@ extension GloryApi_LiveProductStatus: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if self.productDealAmount != 0 {
       try visitor.visitSingularDoubleField(value: self.productDealAmount, fieldNumber: 15)
     }
+    if !self.activityStatus.isEmpty {
+      try visitor.visitSingularStringField(value: self.activityStatus, fieldNumber: 16)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2606,6 +2614,7 @@ extension GloryApi_LiveProductStatus: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if lhs.productRemainingAmount != rhs.productRemainingAmount {return false}
     if lhs.productSoldAmount != rhs.productSoldAmount {return false}
     if lhs.productDealAmount != rhs.productDealAmount {return false}
+    if lhs.activityStatus != rhs.activityStatus {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -126,39 +126,96 @@ struct GloryApi_CouponDetail {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var couponID: Int64 = 0
+  var couponID: Int64 {
+    get {return _storage._couponID}
+    set {_uniqueStorage()._couponID = newValue}
+  }
 
-  var shopID: Int64 = 0
+  var shopID: Int64 {
+    get {return _storage._shopID}
+    set {_uniqueStorage()._shopID = newValue}
+  }
 
-  var couponType: String = String()
+  var couponType: String {
+    get {return _storage._couponType}
+    set {_uniqueStorage()._couponType = newValue}
+  }
 
-  var couponTitle: String = String()
+  var couponTitle: String {
+    get {return _storage._couponTitle}
+    set {_uniqueStorage()._couponTitle = newValue}
+  }
 
-  var couponMinUseAmount: Double = 0
+  var couponMinUseAmount: Double {
+    get {return _storage._couponMinUseAmount}
+    set {_uniqueStorage()._couponMinUseAmount = newValue}
+  }
 
-  var couponAmount: Double = 0
+  var couponAmount: Double {
+    get {return _storage._couponAmount}
+    set {_uniqueStorage()._couponAmount = newValue}
+  }
 
-  var couponTotal: Int64 = 0
+  var couponTotal: Int64 {
+    get {return _storage._couponTotal}
+    set {_uniqueStorage()._couponTotal = newValue}
+  }
 
-  var couponLimit: String = String()
+  var couponLimit: String {
+    get {return _storage._couponLimit}
+    set {_uniqueStorage()._couponLimit = newValue}
+  }
 
-  var personMaxTotal: Int64 = 0
+  var personMaxTotal: Int64 {
+    get {return _storage._personMaxTotal}
+    set {_uniqueStorage()._personMaxTotal = newValue}
+  }
 
-  var distributedStartTime: Int64 = 0
+  var distributedStartTime: Int64 {
+    get {return _storage._distributedStartTime}
+    set {_uniqueStorage()._distributedStartTime = newValue}
+  }
 
-  var distributedEndTime: Int64 = 0
+  var distributedEndTime: Int64 {
+    get {return _storage._distributedEndTime}
+    set {_uniqueStorage()._distributedEndTime = newValue}
+  }
 
-  var useStartTime: Int64 = 0
+  var useStartTime: Int64 {
+    get {return _storage._useStartTime}
+    set {_uniqueStorage()._useStartTime = newValue}
+  }
 
-  var useEndTime: Int64 = 0
+  var useEndTime: Int64 {
+    get {return _storage._useEndTime}
+    set {_uniqueStorage()._useEndTime = newValue}
+  }
 
-  var couponStatus: String = String()
+  var couponStatus: String {
+    get {return _storage._couponStatus}
+    set {_uniqueStorage()._couponStatus = newValue}
+  }
 
-  var distributedStatus: String = String()
+  var distributedStatus: String {
+    get {return _storage._distributedStatus}
+    set {_uniqueStorage()._distributedStatus = newValue}
+  }
+
+  var distributedTotal: Int64 {
+    get {return _storage._distributedTotal}
+    set {_uniqueStorage()._distributedTotal = newValue}
+  }
+
+  var usedTotal: Int64 {
+    get {return _storage._usedTotal}
+    set {_uniqueStorage()._usedTotal = newValue}
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
+
+  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 struct GloryApi_ListCouponResponse {
@@ -223,28 +280,29 @@ struct GloryApi_GetCouponDetailResponse {
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _storage._baseResp ?? Base_BaseResponse()}
-    set {_uniqueStorage()._baseResp = newValue}
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return _storage._baseResp != nil}
+  var hasBaseResp: Bool {return self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
-  mutating func clearBaseResp() {_uniqueStorage()._baseResp = nil}
+  mutating func clearBaseResp() {self._baseResp = nil}
 
   var couponDetail: GloryApi_CouponDetail {
-    get {return _storage._couponDetail ?? GloryApi_CouponDetail()}
-    set {_uniqueStorage()._couponDetail = newValue}
+    get {return _couponDetail ?? GloryApi_CouponDetail()}
+    set {_couponDetail = newValue}
   }
   /// Returns true if `couponDetail` has been explicitly set.
-  var hasCouponDetail: Bool {return _storage._couponDetail != nil}
+  var hasCouponDetail: Bool {return self._couponDetail != nil}
   /// Clears the value of `couponDetail`. Subsequent reads from it will return its default value.
-  mutating func clearCouponDetail() {_uniqueStorage()._couponDetail = nil}
+  mutating func clearCouponDetail() {self._couponDetail = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  fileprivate var _storage = _StorageClass.defaultInstance
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _couponDetail: GloryApi_CouponDetail? = nil
 }
 
 struct GloryApi_UpdateCouponRequest {
@@ -687,99 +745,175 @@ extension GloryApi_CouponDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     13: .standard(proto: "use_end_time"),
     14: .standard(proto: "coupon_status"),
     15: .standard(proto: "distributed_status"),
+    16: .standard(proto: "distributed_total"),
+    17: .standard(proto: "used_total"),
   ]
 
+  fileprivate class _StorageClass {
+    var _couponID: Int64 = 0
+    var _shopID: Int64 = 0
+    var _couponType: String = String()
+    var _couponTitle: String = String()
+    var _couponMinUseAmount: Double = 0
+    var _couponAmount: Double = 0
+    var _couponTotal: Int64 = 0
+    var _couponLimit: String = String()
+    var _personMaxTotal: Int64 = 0
+    var _distributedStartTime: Int64 = 0
+    var _distributedEndTime: Int64 = 0
+    var _useStartTime: Int64 = 0
+    var _useEndTime: Int64 = 0
+    var _couponStatus: String = String()
+    var _distributedStatus: String = String()
+    var _distributedTotal: Int64 = 0
+    var _usedTotal: Int64 = 0
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _couponID = source._couponID
+      _shopID = source._shopID
+      _couponType = source._couponType
+      _couponTitle = source._couponTitle
+      _couponMinUseAmount = source._couponMinUseAmount
+      _couponAmount = source._couponAmount
+      _couponTotal = source._couponTotal
+      _couponLimit = source._couponLimit
+      _personMaxTotal = source._personMaxTotal
+      _distributedStartTime = source._distributedStartTime
+      _distributedEndTime = source._distributedEndTime
+      _useStartTime = source._useStartTime
+      _useEndTime = source._useEndTime
+      _couponStatus = source._couponStatus
+      _distributedStatus = source._distributedStatus
+      _distributedTotal = source._distributedTotal
+      _usedTotal = source._usedTotal
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularInt64Field(value: &self.couponID) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
-      case 3: try { try decoder.decodeSingularStringField(value: &self.couponType) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.couponTitle) }()
-      case 5: try { try decoder.decodeSingularDoubleField(value: &self.couponMinUseAmount) }()
-      case 6: try { try decoder.decodeSingularDoubleField(value: &self.couponAmount) }()
-      case 7: try { try decoder.decodeSingularInt64Field(value: &self.couponTotal) }()
-      case 8: try { try decoder.decodeSingularStringField(value: &self.couponLimit) }()
-      case 9: try { try decoder.decodeSingularInt64Field(value: &self.personMaxTotal) }()
-      case 10: try { try decoder.decodeSingularInt64Field(value: &self.distributedStartTime) }()
-      case 11: try { try decoder.decodeSingularInt64Field(value: &self.distributedEndTime) }()
-      case 12: try { try decoder.decodeSingularInt64Field(value: &self.useStartTime) }()
-      case 13: try { try decoder.decodeSingularInt64Field(value: &self.useEndTime) }()
-      case 14: try { try decoder.decodeSingularStringField(value: &self.couponStatus) }()
-      case 15: try { try decoder.decodeSingularStringField(value: &self.distributedStatus) }()
-      default: break
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        // The use of inline closures is to circumvent an issue where the compiler
+        // allocates stack space for every case branch when no optimizations are
+        // enabled. https://github.com/apple/swift-protobuf/issues/1034
+        switch fieldNumber {
+        case 1: try { try decoder.decodeSingularInt64Field(value: &_storage._couponID) }()
+        case 2: try { try decoder.decodeSingularInt64Field(value: &_storage._shopID) }()
+        case 3: try { try decoder.decodeSingularStringField(value: &_storage._couponType) }()
+        case 4: try { try decoder.decodeSingularStringField(value: &_storage._couponTitle) }()
+        case 5: try { try decoder.decodeSingularDoubleField(value: &_storage._couponMinUseAmount) }()
+        case 6: try { try decoder.decodeSingularDoubleField(value: &_storage._couponAmount) }()
+        case 7: try { try decoder.decodeSingularInt64Field(value: &_storage._couponTotal) }()
+        case 8: try { try decoder.decodeSingularStringField(value: &_storage._couponLimit) }()
+        case 9: try { try decoder.decodeSingularInt64Field(value: &_storage._personMaxTotal) }()
+        case 10: try { try decoder.decodeSingularInt64Field(value: &_storage._distributedStartTime) }()
+        case 11: try { try decoder.decodeSingularInt64Field(value: &_storage._distributedEndTime) }()
+        case 12: try { try decoder.decodeSingularInt64Field(value: &_storage._useStartTime) }()
+        case 13: try { try decoder.decodeSingularInt64Field(value: &_storage._useEndTime) }()
+        case 14: try { try decoder.decodeSingularStringField(value: &_storage._couponStatus) }()
+        case 15: try { try decoder.decodeSingularStringField(value: &_storage._distributedStatus) }()
+        case 16: try { try decoder.decodeSingularInt64Field(value: &_storage._distributedTotal) }()
+        case 17: try { try decoder.decodeSingularInt64Field(value: &_storage._usedTotal) }()
+        default: break
+        }
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.couponID != 0 {
-      try visitor.visitSingularInt64Field(value: self.couponID, fieldNumber: 1)
-    }
-    if self.shopID != 0 {
-      try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 2)
-    }
-    if !self.couponType.isEmpty {
-      try visitor.visitSingularStringField(value: self.couponType, fieldNumber: 3)
-    }
-    if !self.couponTitle.isEmpty {
-      try visitor.visitSingularStringField(value: self.couponTitle, fieldNumber: 4)
-    }
-    if self.couponMinUseAmount != 0 {
-      try visitor.visitSingularDoubleField(value: self.couponMinUseAmount, fieldNumber: 5)
-    }
-    if self.couponAmount != 0 {
-      try visitor.visitSingularDoubleField(value: self.couponAmount, fieldNumber: 6)
-    }
-    if self.couponTotal != 0 {
-      try visitor.visitSingularInt64Field(value: self.couponTotal, fieldNumber: 7)
-    }
-    if !self.couponLimit.isEmpty {
-      try visitor.visitSingularStringField(value: self.couponLimit, fieldNumber: 8)
-    }
-    if self.personMaxTotal != 0 {
-      try visitor.visitSingularInt64Field(value: self.personMaxTotal, fieldNumber: 9)
-    }
-    if self.distributedStartTime != 0 {
-      try visitor.visitSingularInt64Field(value: self.distributedStartTime, fieldNumber: 10)
-    }
-    if self.distributedEndTime != 0 {
-      try visitor.visitSingularInt64Field(value: self.distributedEndTime, fieldNumber: 11)
-    }
-    if self.useStartTime != 0 {
-      try visitor.visitSingularInt64Field(value: self.useStartTime, fieldNumber: 12)
-    }
-    if self.useEndTime != 0 {
-      try visitor.visitSingularInt64Field(value: self.useEndTime, fieldNumber: 13)
-    }
-    if !self.couponStatus.isEmpty {
-      try visitor.visitSingularStringField(value: self.couponStatus, fieldNumber: 14)
-    }
-    if !self.distributedStatus.isEmpty {
-      try visitor.visitSingularStringField(value: self.distributedStatus, fieldNumber: 15)
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if _storage._couponID != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._couponID, fieldNumber: 1)
+      }
+      if _storage._shopID != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._shopID, fieldNumber: 2)
+      }
+      if !_storage._couponType.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._couponType, fieldNumber: 3)
+      }
+      if !_storage._couponTitle.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._couponTitle, fieldNumber: 4)
+      }
+      if _storage._couponMinUseAmount != 0 {
+        try visitor.visitSingularDoubleField(value: _storage._couponMinUseAmount, fieldNumber: 5)
+      }
+      if _storage._couponAmount != 0 {
+        try visitor.visitSingularDoubleField(value: _storage._couponAmount, fieldNumber: 6)
+      }
+      if _storage._couponTotal != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._couponTotal, fieldNumber: 7)
+      }
+      if !_storage._couponLimit.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._couponLimit, fieldNumber: 8)
+      }
+      if _storage._personMaxTotal != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._personMaxTotal, fieldNumber: 9)
+      }
+      if _storage._distributedStartTime != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._distributedStartTime, fieldNumber: 10)
+      }
+      if _storage._distributedEndTime != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._distributedEndTime, fieldNumber: 11)
+      }
+      if _storage._useStartTime != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._useStartTime, fieldNumber: 12)
+      }
+      if _storage._useEndTime != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._useEndTime, fieldNumber: 13)
+      }
+      if !_storage._couponStatus.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._couponStatus, fieldNumber: 14)
+      }
+      if !_storage._distributedStatus.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._distributedStatus, fieldNumber: 15)
+      }
+      if _storage._distributedTotal != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._distributedTotal, fieldNumber: 16)
+      }
+      if _storage._usedTotal != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._usedTotal, fieldNumber: 17)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_CouponDetail, rhs: GloryApi_CouponDetail) -> Bool {
-    if lhs.couponID != rhs.couponID {return false}
-    if lhs.shopID != rhs.shopID {return false}
-    if lhs.couponType != rhs.couponType {return false}
-    if lhs.couponTitle != rhs.couponTitle {return false}
-    if lhs.couponMinUseAmount != rhs.couponMinUseAmount {return false}
-    if lhs.couponAmount != rhs.couponAmount {return false}
-    if lhs.couponTotal != rhs.couponTotal {return false}
-    if lhs.couponLimit != rhs.couponLimit {return false}
-    if lhs.personMaxTotal != rhs.personMaxTotal {return false}
-    if lhs.distributedStartTime != rhs.distributedStartTime {return false}
-    if lhs.distributedEndTime != rhs.distributedEndTime {return false}
-    if lhs.useStartTime != rhs.useStartTime {return false}
-    if lhs.useEndTime != rhs.useEndTime {return false}
-    if lhs.couponStatus != rhs.couponStatus {return false}
-    if lhs.distributedStatus != rhs.distributedStatus {return false}
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._couponID != rhs_storage._couponID {return false}
+        if _storage._shopID != rhs_storage._shopID {return false}
+        if _storage._couponType != rhs_storage._couponType {return false}
+        if _storage._couponTitle != rhs_storage._couponTitle {return false}
+        if _storage._couponMinUseAmount != rhs_storage._couponMinUseAmount {return false}
+        if _storage._couponAmount != rhs_storage._couponAmount {return false}
+        if _storage._couponTotal != rhs_storage._couponTotal {return false}
+        if _storage._couponLimit != rhs_storage._couponLimit {return false}
+        if _storage._personMaxTotal != rhs_storage._personMaxTotal {return false}
+        if _storage._distributedStartTime != rhs_storage._distributedStartTime {return false}
+        if _storage._distributedEndTime != rhs_storage._distributedEndTime {return false}
+        if _storage._useStartTime != rhs_storage._useStartTime {return false}
+        if _storage._useEndTime != rhs_storage._useEndTime {return false}
+        if _storage._couponStatus != rhs_storage._couponStatus {return false}
+        if _storage._distributedStatus != rhs_storage._distributedStatus {return false}
+        if _storage._distributedTotal != rhs_storage._distributedTotal {return false}
+        if _storage._usedTotal != rhs_storage._usedTotal {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -882,70 +1016,36 @@ extension GloryApi_GetCouponDetailResponse: SwiftProtobuf.Message, SwiftProtobuf
     2: .standard(proto: "coupon_detail"),
   ]
 
-  fileprivate class _StorageClass {
-    var _baseResp: Base_BaseResponse? = nil
-    var _couponDetail: GloryApi_CouponDetail? = nil
-
-    static let defaultInstance = _StorageClass()
-
-    private init() {}
-
-    init(copying source: _StorageClass) {
-      _baseResp = source._baseResp
-      _couponDetail = source._couponDetail
-    }
-  }
-
-  fileprivate mutating func _uniqueStorage() -> _StorageClass {
-    if !isKnownUniquelyReferenced(&_storage) {
-      _storage = _StorageClass(copying: _storage)
-    }
-    return _storage
-  }
-
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    _ = _uniqueStorage()
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        // The use of inline closures is to circumvent an issue where the compiler
-        // allocates stack space for every case branch when no optimizations are
-        // enabled. https://github.com/apple/swift-protobuf/issues/1034
-        switch fieldNumber {
-        case 1: try { try decoder.decodeSingularMessageField(value: &_storage._baseResp) }()
-        case 2: try { try decoder.decodeSingularMessageField(value: &_storage._couponDetail) }()
-        default: break
-        }
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._couponDetail) }()
+      default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every if/case branch local when no optimizations
-      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-      // https://github.com/apple/swift-protobuf/issues/1182
-      try { if let v = _storage._baseResp {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-      } }()
-      try { if let v = _storage._couponDetail {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      } }()
-    }
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try { if let v = self._couponDetail {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_GetCouponDetailResponse, rhs: GloryApi_GetCouponDetailResponse) -> Bool {
-    if lhs._storage !== rhs._storage {
-      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
-        let _storage = _args.0
-        let rhs_storage = _args.1
-        if _storage._baseResp != rhs_storage._baseResp {return false}
-        if _storage._couponDetail != rhs_storage._couponDetail {return false}
-        return true
-      }
-      if !storagesAreEqual {return false}
-    }
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs._couponDetail != rhs._couponDetail {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

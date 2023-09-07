@@ -176,4 +176,24 @@ public interface LiveProductStatusOrBuilder extends
    * @return The productDealAmount.
    */
   double getProductDealAmount();
+
+  /**
+   * <pre>
+   * 商品活动状态
+   * </pre>
+   *
+   * <code>string activity_status = 16;</code>
+   * @return The activityStatus.
+   */
+  java.lang.String getActivityStatus();
+  /**
+   * <pre>
+   * 商品活动状态
+   * </pre>
+   *
+   * <code>string activity_status = 16;</code>
+   * @return The bytes for activityStatus.
+   */
+  com.google.protobuf.ByteString
+      getActivityStatusBytes();
 }

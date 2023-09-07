@@ -133,6 +133,16 @@ private static final long serialVersionUID = 0L;
             distributedStatus = s;
             break;
           }
+          case 128: {
+
+            distributedTotal = input.readInt64();
+            break;
+          }
+          case 136: {
+
+            usedTotal = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -465,6 +475,28 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int DISTRIBUTED_TOTAL_FIELD_NUMBER = 16;
+  private long distributedTotal ;
+  /**
+   * <code>int64 distributed_total = 16;</code>
+   * @return The distributedTotal.
+   */
+  @java.lang.Override
+  public long getDistributedTotal() {
+    return distributedTotal ;
+  }
+
+  public static final int USED_TOTAL_FIELD_NUMBER = 17;
+  private long usedTotal ;
+  /**
+   * <code>int64 used_total = 17;</code>
+   * @return The usedTotal.
+   */
+  @java.lang.Override
+  public long getUsedTotal() {
+    return usedTotal ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -523,6 +555,12 @@ private static final long serialVersionUID = 0L;
     }
     if (!getDistributedStatusBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, distributedStatus );
+    }
+    if (distributedTotal != 0L) {
+      output.writeInt64(16, distributedTotal );
+    }
+    if (usedTotal != 0L) {
+      output.writeInt64(17, usedTotal );
     }
     unknownFields.writeTo(output);
   }
@@ -588,6 +626,14 @@ private static final long serialVersionUID = 0L;
     if (!getDistributedStatusBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, distributedStatus );
     }
+    if (distributedTotal != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(16, distributedTotal );
+    }
+    if (usedTotal != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(17, usedTotal );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -635,6 +681,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCouponStatus())) return false;
     if (!getDistributedStatus()
         .equals(other.getDistributedStatus())) return false;
+    if (getDistributedTotal()
+        != other.getDistributedTotal()) return false;
+    if (getUsedTotal()
+        != other.getUsedTotal()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -686,6 +736,12 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getCouponStatus().hashCode();
     hash = (37 * hash) + DISTRIBUTED_STATUS_FIELD_NUMBER;
     hash = (53 * hash) + getDistributedStatus().hashCode();
+    hash = (37 * hash) + DISTRIBUTED_TOTAL_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getDistributedTotal());
+    hash = (37 * hash) + USED_TOTAL_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getUsedTotal());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -849,6 +905,10 @@ private static final long serialVersionUID = 0L;
 
       distributedStatus = "";
 
+      distributedTotal = 0L;
+
+      usedTotal = 0L;
+
       return this;
     }
 
@@ -890,6 +950,8 @@ private static final long serialVersionUID = 0L;
       result.useEndTime = useEndTime ;
       result.couponStatus = couponStatus ;
       result.distributedStatus = distributedStatus ;
+      result.distributedTotal = distributedTotal ;
+      result.usedTotal = usedTotal ;
       onBuilt();
       return result;
     }
@@ -987,6 +1049,12 @@ private static final long serialVersionUID = 0L;
       if (!other.getDistributedStatus().isEmpty()) {
         distributedStatus = other.distributedStatus ;
         onChanged();
+      }
+      if (other.getDistributedTotal() != 0L) {
+        setDistributedTotal(other.getDistributedTotal());
+      }
+      if (other.getUsedTotal() != 0L) {
+        setUsedTotal(other.getUsedTotal());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1703,6 +1771,68 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       distributedStatus = value;
+      onChanged();
+      return this;
+    }
+
+    private long distributedTotal ;
+    /**
+     * <code>int64 distributed_total = 16;</code>
+     * @return The distributedTotal.
+     */
+    @java.lang.Override
+    public long getDistributedTotal() {
+      return distributedTotal ;
+    }
+    /**
+     * <code>int64 distributed_total = 16;</code>
+     * @param value The distributedTotal to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDistributedTotal(long value) {
+      
+      distributedTotal = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 distributed_total = 16;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDistributedTotal() {
+      
+      distributedTotal = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long usedTotal ;
+    /**
+     * <code>int64 used_total = 17;</code>
+     * @return The usedTotal.
+     */
+    @java.lang.Override
+    public long getUsedTotal() {
+      return usedTotal ;
+    }
+    /**
+     * <code>int64 used_total = 17;</code>
+     * @param value The usedTotal to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUsedTotal(long value) {
+      
+      usedTotal = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 used_total = 17;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUsedTotal() {
+      
+      usedTotal = 0L;
       onChanged();
       return this;
     }

@@ -201,6 +201,8 @@ export interface LiveProductStatus {
   product_sold_amount?: string;
   /** 商品成交金额 */
   product_deal_amount?: number;
+  /** 商品活动状态 */
+  activity_status?: string;
 }
 
 export interface ListLiveProductStatusRequest {

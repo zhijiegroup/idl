@@ -48,6 +48,8 @@ export interface CouponDetail {
   use_end_time?: string;
   coupon_status?: string;
   distributed_status?: string;
+  distributed_total?: string;
+  used_total?: string;
 }
 
 export interface ListCouponResponse {
