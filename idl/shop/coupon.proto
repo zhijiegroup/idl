@@ -47,6 +47,8 @@ message CouponDetail {
     int64 use_end_time = 13;
     string coupon_status = 14;
     string distributed_status = 15;
+    int64 distributed_total = 16;
+    int64 used_total = 17;
 }
 message ListCouponResponse {
     base.BaseResponse base_resp = 1;
