@@ -6,10 +6,11 @@ option java_multiple_files = true;
 import "base.proto";
 
 message ActivityProduct {
-    int64 sku_id = 1;
-    string preferential_value = 2;
-    int64 stock_total = 3;
-    int64 purchase_limit = 4;
+    int64 product_id = 1;
+    int64 sku_id = 2;
+    string preferential_value = 3;
+    int64 stock_total = 4;
+    int64 purchase_limit = 5;
 
 }
 
