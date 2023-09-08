@@ -8,31 +8,37 @@ public interface ActivityProductOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>int64 sku_id = 1;</code>
+   * <code>int64 product_id = 1;</code>
+   * @return The productId.
+   */
+  long getProductId();
+
+  /**
+   * <code>int64 sku_id = 2;</code>
    * @return The skuId.
    */
   long getSkuId();
 
   /**
-   * <code>string preferential_value = 2;</code>
+   * <code>string preferential_value = 3;</code>
    * @return The preferentialValue.
    */
   java.lang.String getPreferentialValue();
   /**
-   * <code>string preferential_value = 2;</code>
+   * <code>string preferential_value = 3;</code>
    * @return The bytes for preferentialValue.
    */
   com.google.protobuf.ByteString
       getPreferentialValueBytes();
 
   /**
-   * <code>int64 stock_total = 3;</code>
+   * <code>int64 stock_total = 4;</code>
    * @return The stockTotal.
    */
   long getStockTotal();
 
   /**
-   * <code>int64 purchase_limit = 4;</code>
+   * <code>int64 purchase_limit = 5;</code>
    * @return The purchaseLimit.
    */
   long getPurchaseLimit();

@@ -25,6 +25,8 @@ struct GloryApi_ActivityProduct {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  var productID: Int64 = 0
+
   var skuID: Int64 = 0
 
   var preferentialValue: String = String()
@@ -442,10 +444,11 @@ fileprivate let _protobuf_package = "glory_api"
 extension GloryApi_ActivityProduct: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ActivityProduct"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "sku_id"),
-    2: .standard(proto: "preferential_value"),
-    3: .standard(proto: "stock_total"),
-    4: .standard(proto: "purchase_limit"),
+    1: .standard(proto: "product_id"),
+    2: .standard(proto: "sku_id"),
+    3: .standard(proto: "preferential_value"),
+    4: .standard(proto: "stock_total"),
+    5: .standard(proto: "purchase_limit"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -454,32 +457,37 @@ extension GloryApi_ActivityProduct: SwiftProtobuf.Message, SwiftProtobuf._Messag
       // allocates stack space for every case branch when no optimizations are
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try { try decoder.decodeSingularInt64Field(value: &self.skuID) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.preferentialValue) }()
-      case 3: try { try decoder.decodeSingularInt64Field(value: &self.stockTotal) }()
-      case 4: try { try decoder.decodeSingularInt64Field(value: &self.purchaseLimit) }()
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.productID) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.skuID) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.preferentialValue) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.stockTotal) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.purchaseLimit) }()
       default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.productID != 0 {
+      try visitor.visitSingularInt64Field(value: self.productID, fieldNumber: 1)
+    }
     if self.skuID != 0 {
-      try visitor.visitSingularInt64Field(value: self.skuID, fieldNumber: 1)
+      try visitor.visitSingularInt64Field(value: self.skuID, fieldNumber: 2)
     }
     if !self.preferentialValue.isEmpty {
-      try visitor.visitSingularStringField(value: self.preferentialValue, fieldNumber: 2)
+      try visitor.visitSingularStringField(value: self.preferentialValue, fieldNumber: 3)
     }
     if self.stockTotal != 0 {
-      try visitor.visitSingularInt64Field(value: self.stockTotal, fieldNumber: 3)
+      try visitor.visitSingularInt64Field(value: self.stockTotal, fieldNumber: 4)
     }
     if self.purchaseLimit != 0 {
-      try visitor.visitSingularInt64Field(value: self.purchaseLimit, fieldNumber: 4)
+      try visitor.visitSingularInt64Field(value: self.purchaseLimit, fieldNumber: 5)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_ActivityProduct, rhs: GloryApi_ActivityProduct) -> Bool {
+    if lhs.productID != rhs.productID {return false}
     if lhs.skuID != rhs.skuID {return false}
     if lhs.preferentialValue != rhs.preferentialValue {return false}
     if lhs.stockTotal != rhs.stockTotal {return false}

@@ -6,6 +6,7 @@ import * as base from "../base";
 export { base };
 
 export interface ActivityProduct {
+  product_id?: string;
   sku_id?: string;
   preferential_value?: string;
   stock_total?: string;

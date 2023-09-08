@@ -51,21 +51,26 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
+            productId = input.readInt64();
+            break;
+          }
+          case 16: {
+
             skuId = input.readInt64();
             break;
           }
-          case 18: {
+          case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
             preferentialValue = s;
             break;
           }
-          case 24: {
+          case 32: {
 
             stockTotal = input.readInt64();
             break;
           }
-          case 32: {
+          case 40: {
 
             purchaseLimit = input.readInt64();
             break;
@@ -102,10 +107,21 @@ private static final long serialVersionUID = 0L;
             com.zhijiejiaoyu.glory_api.shop.ActivityProduct.class, com.zhijiejiaoyu.glory_api.shop.ActivityProduct.Builder.class);
   }
 
-  public static final int SKU_ID_FIELD_NUMBER = 1;
+  public static final int PRODUCT_ID_FIELD_NUMBER = 1;
+  private long productId ;
+  /**
+   * <code>int64 product_id = 1;</code>
+   * @return The productId.
+   */
+  @java.lang.Override
+  public long getProductId() {
+    return productId ;
+  }
+
+  public static final int SKU_ID_FIELD_NUMBER = 2;
   private long skuId ;
   /**
-   * <code>int64 sku_id = 1;</code>
+   * <code>int64 sku_id = 2;</code>
    * @return The skuId.
    */
   @java.lang.Override
@@ -113,10 +129,10 @@ private static final long serialVersionUID = 0L;
     return skuId ;
   }
 
-  public static final int PREFERENTIAL_VALUE_FIELD_NUMBER = 2;
+  public static final int PREFERENTIAL_VALUE_FIELD_NUMBER = 3;
   private volatile java.lang.Object preferentialValue ;
   /**
-   * <code>string preferential_value = 2;</code>
+   * <code>string preferential_value = 3;</code>
    * @return The preferentialValue.
    */
   @java.lang.Override
@@ -133,7 +149,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string preferential_value = 2;</code>
+   * <code>string preferential_value = 3;</code>
    * @return The bytes for preferentialValue.
    */
   @java.lang.Override
@@ -151,10 +167,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int STOCK_TOTAL_FIELD_NUMBER = 3;
+  public static final int STOCK_TOTAL_FIELD_NUMBER = 4;
   private long stockTotal ;
   /**
-   * <code>int64 stock_total = 3;</code>
+   * <code>int64 stock_total = 4;</code>
    * @return The stockTotal.
    */
   @java.lang.Override
@@ -162,10 +178,10 @@ private static final long serialVersionUID = 0L;
     return stockTotal ;
   }
 
-  public static final int PURCHASE_LIMIT_FIELD_NUMBER = 4;
+  public static final int PURCHASE_LIMIT_FIELD_NUMBER = 5;
   private long purchaseLimit ;
   /**
-   * <code>int64 purchase_limit = 4;</code>
+   * <code>int64 purchase_limit = 5;</code>
    * @return The purchaseLimit.
    */
   @java.lang.Override
@@ -187,17 +203,20 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (productId != 0L) {
+      output.writeInt64(1, productId );
+    }
     if (skuId != 0L) {
-      output.writeInt64(1, skuId );
+      output.writeInt64(2, skuId );
     }
     if (!getPreferentialValueBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, preferentialValue );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, preferentialValue );
     }
     if (stockTotal != 0L) {
-      output.writeInt64(3, stockTotal );
+      output.writeInt64(4, stockTotal );
     }
     if (purchaseLimit != 0L) {
-      output.writeInt64(4, purchaseLimit );
+      output.writeInt64(5, purchaseLimit );
     }
     unknownFields.writeTo(output);
   }
@@ -208,20 +227,24 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (productId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(1, productId );
+    }
     if (skuId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, skuId );
+        .computeInt64Size(2, skuId );
     }
     if (!getPreferentialValueBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, preferentialValue );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, preferentialValue );
     }
     if (stockTotal != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(3, stockTotal );
+        .computeInt64Size(4, stockTotal );
     }
     if (purchaseLimit != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(4, purchaseLimit );
+        .computeInt64Size(5, purchaseLimit );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -238,6 +261,8 @@ private static final long serialVersionUID = 0L;
     }
     com.zhijiejiaoyu.glory_api.shop.ActivityProduct other = (com.zhijiejiaoyu.glory_api.shop.ActivityProduct) obj;
 
+    if (getProductId()
+        != other.getProductId()) return false;
     if (getSkuId()
         != other.getSkuId()) return false;
     if (!getPreferentialValue()
@@ -257,6 +282,9 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + PRODUCT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getProductId());
     hash = (37 * hash) + SKU_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getSkuId());
@@ -401,6 +429,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      productId = 0L;
+
       skuId = 0L;
 
       preferentialValue = "";
@@ -435,6 +465,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.shop.ActivityProduct buildPartial() {
       com.zhijiejiaoyu.glory_api.shop.ActivityProduct result = new com.zhijiejiaoyu.glory_api.shop.ActivityProduct(this);
+      result.productId = productId ;
       result.skuId = skuId ;
       result.preferentialValue = preferentialValue ;
       result.stockTotal = stockTotal ;
@@ -487,6 +518,9 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.zhijiejiaoyu.glory_api.shop.ActivityProduct other) {
       if (other == com.zhijiejiaoyu.glory_api.shop.ActivityProduct.getDefaultInstance()) return this;
+      if (other.getProductId() != 0L) {
+        setProductId(other.getProductId());
+      }
       if (other.getSkuId() != 0L) {
         setSkuId(other.getSkuId());
       }
@@ -529,9 +563,40 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private long productId ;
+    /**
+     * <code>int64 product_id = 1;</code>
+     * @return The productId.
+     */
+    @java.lang.Override
+    public long getProductId() {
+      return productId ;
+    }
+    /**
+     * <code>int64 product_id = 1;</code>
+     * @param value The productId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProductId(long value) {
+      
+      productId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 product_id = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearProductId() {
+      
+      productId = 0L;
+      onChanged();
+      return this;
+    }
+
     private long skuId ;
     /**
-     * <code>int64 sku_id = 1;</code>
+     * <code>int64 sku_id = 2;</code>
      * @return The skuId.
      */
     @java.lang.Override
@@ -539,7 +604,7 @@ private static final long serialVersionUID = 0L;
       return skuId ;
     }
     /**
-     * <code>int64 sku_id = 1;</code>
+     * <code>int64 sku_id = 2;</code>
      * @param value The skuId to set.
      * @return This builder for chaining.
      */
@@ -550,7 +615,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 sku_id = 1;</code>
+     * <code>int64 sku_id = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearSkuId() {
@@ -562,7 +627,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object preferentialValue = "";
     /**
-     * <code>string preferential_value = 2;</code>
+     * <code>string preferential_value = 3;</code>
      * @return The preferentialValue.
      */
     public java.lang.String getPreferentialValue() {
@@ -578,7 +643,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string preferential_value = 2;</code>
+     * <code>string preferential_value = 3;</code>
      * @return The bytes for preferentialValue.
      */
     public com.google.protobuf.ByteString
@@ -595,7 +660,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string preferential_value = 2;</code>
+     * <code>string preferential_value = 3;</code>
      * @param value The preferentialValue to set.
      * @return This builder for chaining.
      */
@@ -610,7 +675,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string preferential_value = 2;</code>
+     * <code>string preferential_value = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearPreferentialValue() {
@@ -620,7 +685,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string preferential_value = 2;</code>
+     * <code>string preferential_value = 3;</code>
      * @param value The bytes for preferentialValue to set.
      * @return This builder for chaining.
      */
@@ -638,7 +703,7 @@ private static final long serialVersionUID = 0L;
 
     private long stockTotal ;
     /**
-     * <code>int64 stock_total = 3;</code>
+     * <code>int64 stock_total = 4;</code>
      * @return The stockTotal.
      */
     @java.lang.Override
@@ -646,7 +711,7 @@ private static final long serialVersionUID = 0L;
       return stockTotal ;
     }
     /**
-     * <code>int64 stock_total = 3;</code>
+     * <code>int64 stock_total = 4;</code>
      * @param value The stockTotal to set.
      * @return This builder for chaining.
      */
@@ -657,7 +722,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 stock_total = 3;</code>
+     * <code>int64 stock_total = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearStockTotal() {
@@ -669,7 +734,7 @@ private static final long serialVersionUID = 0L;
 
     private long purchaseLimit ;
     /**
-     * <code>int64 purchase_limit = 4;</code>
+     * <code>int64 purchase_limit = 5;</code>
      * @return The purchaseLimit.
      */
     @java.lang.Override
@@ -677,7 +742,7 @@ private static final long serialVersionUID = 0L;
       return purchaseLimit ;
     }
     /**
-     * <code>int64 purchase_limit = 4;</code>
+     * <code>int64 purchase_limit = 5;</code>
      * @param value The purchaseLimit to set.
      * @return This builder for chaining.
      */
@@ -688,7 +753,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 purchase_limit = 4;</code>
+     * <code>int64 purchase_limit = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearPurchaseLimit() {
