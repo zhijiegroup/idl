@@ -73,23 +73,24 @@ message OrderSku {
 message OrderInfo {
   int64 order_id = 1;//订单id
   string order_status = 2;//订单状态
-  string created_at = 3;//下单时间
-  string orderType = 4;//订单类型 created 待支付   paid 待发货   shipped 已发货   after_sales 售后中    completed 已完成  closed 已关闭
-  string payType = 5;  //支付方式  coin 虚拟币支付  weixin 微信支付
-  string payTime = 6;  //付款时间
-  double total_amount = 7;//商品总价 = 原价+运费
-  double original_amount = 8;//原价
-  double deliver_fee = 9;//运费
-  double discount_amount =10;//优惠金额
-  double payment_amount = 11;//实付金额
-  double payable_amount = 12;//应付金额
-  repeated ProductInfo productInfo = 13;//商品信息
-  string shop_name = 14;//商店名字
-  string shop_logo = 144;//商店logo
-  string currency = 15;//货币单位  CNY :人民币    COIN:虚拟币 不区分大小写
-  string contact_name = 16;//收货人
-  string buyer_name = 17;//购买人
-  string deliver_address = 18;//收获地址
+  string order_cancelled_reason = 3; // 订单取消原因
+  string created_at = 4;//下单时间
+  string orderType = 5;//订单类型 created 待支付   paid 待发货   shipped 已发货   after_sales 售后中    completed 已完成  closed 已关闭
+  string payType = 6;  //支付方式  coin 虚拟币支付  weixin 微信支付
+  string payTime = 7;  //付款时间
+  double total_amount = 8;//商品总价 = 原价+运费
+  double original_amount = 9;//原价
+  double deliver_fee = 10;//运费
+  double discount_amount =11;//优惠金额
+  double payment_amount = 12;//实付金额
+  double payable_amount = 13;//应付金额
+  repeated ProductInfo productInfo = 14;//商品信息
+  string shop_name = 15;//商店名字
+  string shop_logo = 16;//商店logo
+  string currency = 17;//货币单位  CNY :人民币    COIN:虚拟币 不区分大小写
+  string contact_name = 18;//收货人
+  string buyer_name = 19;//购买人
+  string deliver_address = 20;//收获地址
 }
 
 //收获与配送信息
