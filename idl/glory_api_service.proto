@@ -463,6 +463,9 @@ service glory_api {
     option (api.post) = '/api/admin/list_tenant_org';
   }
   //admin_user
+  rpc GetAdminTenant(GetAdminTenantRequest) returns(GetAdminTenantResponse) {
+    option (api.get) = '/api/admin/get_admin_tenant';
+  }
   rpc ListAdminUser(ListAdminUserRequest) returns(ListAdminUserResponse) {
     option (api.post) = '/api/admin/list_admin_user';
   }
