@@ -196,4 +196,14 @@ public interface LiveProductStatusOrBuilder extends
    */
   com.google.protobuf.ByteString
       getActivityStatusBytes();
+
+  /**
+   * <pre>
+   * 商品参考价
+   * </pre>
+   *
+   * <code>double product_reference_price = 17;</code>
+   * @return The productReferencePrice.
+   */
+  double getProductReferencePrice();
 }
