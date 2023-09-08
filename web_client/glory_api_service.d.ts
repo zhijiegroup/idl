@@ -510,6 +510,10 @@ list the permissions that supported */
   ): Promise<admin_tenant.ListTenantOrgResponse>;
 
   /** admin_user */
+  GetAdminTenant(
+    request: admin_user.GetAdminTenantRequest
+  ): Promise<admin_user.GetAdminTenantResponse>;
+
   ListAdminUser(
     request: admin_user.ListAdminUserRequest
   ): Promise<admin_user.ListAdminUserResponse>;

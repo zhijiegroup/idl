@@ -12,6 +12,21 @@ export interface AdminUser {
   user_phone?: string;
   roles?: Array<user.Role>;
   created_at?: string;
+  tenant_id?: string;
+}
+
+export interface AdminTenant {
+  label?: string;
+  value?: string;
+}
+
+export interface GetAdminTenantRequest {
+  base_request?: base.BaseRequest;
+}
+
+export interface GetAdminTenantResponse {
+  base_resp?: base.BaseResponse;
+  tenants?: Array<AdminTenant>;
 }
 
 export interface CreateAdminUserRequest {

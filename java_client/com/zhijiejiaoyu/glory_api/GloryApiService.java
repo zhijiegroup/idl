@@ -45,7 +45,7 @@ public final class GloryApiService {
       "ant.proto\032\030tenant/tenant_dept.proto\032\030ten" +
       "ant/tenant_user.proto\032\032tenant/tenant_con" +
       "fig.proto\032\035short_video/short_video.proto" +
-      "2\314\330\001\n\tglory_api\022s\n\rCreateExample\022\037.glory" +
+      "2\304\331\001\n\tglory_api\022s\n\rCreateExample\022\037.glory" +
       "_api.CreateExampleRequest\032 .glory_api.Cr" +
       "eateExampleResponse\"\037\322\301\030\033/api/example/cr" +
       "eate_example\022g\n\nGetExample\022\034.glory_api.G" +
@@ -368,7 +368,10 @@ public final class GloryApiService {
       "\312\301\030\022/api/admin/get_sts\022r\n\rListTenantOrg\022" +
       "\037.glory_api.ListTenantOrgRequest\032 .glory" +
       "_api.ListTenantOrgResponse\"\036\322\301\030\032/api/adm" +
-      "in/list_tenant_org\022r\n\rListAdminUser\022\037.gl" +
+      "in/list_tenant_org\022v\n\016GetAdminTenant\022 .g" +
+      "lory_api.GetAdminTenantRequest\032!.glory_a" +
+      "pi.GetAdminTenantResponse\"\037\312\301\030\033/api/admi" +
+      "n/get_admin_tenant\022r\n\rListAdminUser\022\037.gl" +
       "ory_api.ListAdminUserRequest\032 .glory_api" +
       ".ListAdminUserResponse\"\036\322\301\030\032/api/admin/l" +
       "ist_admin_user\022z\n\017CreateAdminUser\022!.glor" +
@@ -419,10 +422,10 @@ public final class GloryApiService {
       "\n\nUpdateRoom\022\034.glory_api.UpdateRoomReque" +
       "st\032\035.glory_api.UpdateRoomResponse\"\031\322\301\030\025/" +
       "api/live/update_room\022\\\n\010ListRoom\022\032.glory" +
-      "_api.ListRoomRequest\032\033.glory_api.ListRoo" +
+      "_api.ListRoomRequest\032\033.glory_api.ListRoo",
       "mResponse\"\027\322\301\030\023/api/live/list_room\022d\n\nDe" +
       "leteRoom\022\034.glory_api.DeleteRoomRequest\032\035" +
-      ".glory_api.DeleteRoomResponse\"\031\322\301\030\025/api/",
+      ".glory_api.DeleteRoomResponse\"\031\322\301\030\025/api/" +
       "live/delete_room\022}\n\020ListFinishedRoom\022\".g" +
       "lory_api.ListFinishedRoomRequest\032#.glory" +
       "_api.ListFinishedRoomResponse\" \322\301\030\034/api/" +

@@ -954,6 +954,12 @@ export class glory_api {
     );
   }
 
+  GetAdminTenant(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/admin/get_admin_tenant${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
   ListAdminUser(request) {
     const uri = `${this.uriPrefix}/api/admin/list_admin_user`;
     const body = JSONbigint.stringify(request);

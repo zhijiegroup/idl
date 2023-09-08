@@ -72,4 +72,10 @@ public interface AdminUserOrBuilder extends
    */
   com.google.protobuf.ByteString
       getCreatedAtBytes();
+
+  /**
+   * <code>int64 tenant_id = 7;</code>
+   * @return The tenantId.
+   */
+  long getTenantId();
 }
