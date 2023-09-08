@@ -94,7 +94,17 @@ private static final long serialVersionUID = 0L;
             visibility = input.readInt32();
             break;
           }
-          case 58: {
+          case 56: {
+
+            videoLength = input.readInt32();
+            break;
+          }
+          case 64: {
+
+            videoDuration = input.readInt32();
+            break;
+          }
+          case 74: {
             if (!((mutable_bitField0 & 0x00000001) != 0)) {
               products = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct>();
               mutable_bitField0_ |= 0x00000001;
@@ -103,7 +113,7 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct.parser(), extensionRegistry));
             break;
           }
-          case 64: {
+          case 80: {
 
             shopId = input.readInt64();
             break;
@@ -337,14 +347,44 @@ private static final long serialVersionUID = 0L;
     return visibility ;
   }
 
-  public static final int PRODUCTS_FIELD_NUMBER = 7;
+  public static final int VIDEO_LENGTH_FIELD_NUMBER = 7;
+  private int videoLength ;
+  /**
+   * <pre>
+   * 视频文件大小
+   * </pre>
+   *
+   * <code>int32 video_length = 7;</code>
+   * @return The videoLength.
+   */
+  @java.lang.Override
+  public int getVideoLength() {
+    return videoLength ;
+  }
+
+  public static final int VIDEO_DURATION_FIELD_NUMBER = 8;
+  private int videoDuration ;
+  /**
+   * <pre>
+   * 视频时长
+   * </pre>
+   *
+   * <code>int32 video_duration = 8;</code>
+   * @return The videoDuration.
+   */
+  @java.lang.Override
+  public int getVideoDuration() {
+    return videoDuration ;
+  }
+
+  public static final int PRODUCTS_FIELD_NUMBER = 9;
   private java.util.List<com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct> products ;
   /**
    * <pre>
    * 商品信息
    * </pre>
    *
-   * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
+   * <code>repeated .glory_api.ShortVideoProduct products = 9;</code>
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct> getProductsList() {
@@ -355,7 +395,7 @@ private static final long serialVersionUID = 0L;
    * 商品信息
    * </pre>
    *
-   * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
+   * <code>repeated .glory_api.ShortVideoProduct products = 9;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.short_video.ShortVideoProductOrBuilder> 
@@ -367,7 +407,7 @@ private static final long serialVersionUID = 0L;
    * 商品信息
    * </pre>
    *
-   * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
+   * <code>repeated .glory_api.ShortVideoProduct products = 9;</code>
    */
   @java.lang.Override
   public int getProductsCount() {
@@ -378,7 +418,7 @@ private static final long serialVersionUID = 0L;
    * 商品信息
    * </pre>
    *
-   * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
+   * <code>repeated .glory_api.ShortVideoProduct products = 9;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct getProducts(int index) {
@@ -389,7 +429,7 @@ private static final long serialVersionUID = 0L;
    * 商品信息
    * </pre>
    *
-   * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
+   * <code>repeated .glory_api.ShortVideoProduct products = 9;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.short_video.ShortVideoProductOrBuilder getProductsOrBuilder(
@@ -397,14 +437,14 @@ private static final long serialVersionUID = 0L;
     return products .get(index);
   }
 
-  public static final int SHOP_ID_FIELD_NUMBER = 8;
+  public static final int SHOP_ID_FIELD_NUMBER = 10;
   private long shopId ;
   /**
    * <pre>
    * 店铺ID
    * </pre>
    *
-   * <code>int64 shop_id = 8;</code>
+   * <code>int64 shop_id = 10;</code>
    * @return The shopId.
    */
   @java.lang.Override
@@ -444,11 +484,17 @@ private static final long serialVersionUID = 0L;
     if (visibility != 0) {
       output.writeInt32(6, visibility );
     }
+    if (videoLength != 0) {
+      output.writeInt32(7, videoLength );
+    }
+    if (videoDuration != 0) {
+      output.writeInt32(8, videoDuration );
+    }
     for (int i = 0; i < products .size(); i++) {
-      output.writeMessage(7, products .get(i));
+      output.writeMessage(9, products .get(i));
     }
     if (shopId != 0L) {
-      output.writeInt64(8, shopId );
+      output.writeInt64(10, shopId );
     }
     unknownFields.writeTo(output);
   }
@@ -480,13 +526,21 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(6, visibility );
     }
+    if (videoLength != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(7, videoLength );
+    }
+    if (videoDuration != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(8, videoDuration );
+    }
     for (int i = 0; i < products .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, products .get(i));
+        .computeMessageSize(9, products .get(i));
     }
     if (shopId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(8, shopId );
+        .computeInt64Size(10, shopId );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -518,6 +572,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getDescription())) return false;
     if (getVisibility()
         != other.getVisibility()) return false;
+    if (getVideoLength()
+        != other.getVideoLength()) return false;
+    if (getVideoDuration()
+        != other.getVideoDuration()) return false;
     if (!getProductsList()
         .equals(other.getProductsList())) return false;
     if (getShopId()
@@ -548,6 +606,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getDescription().hashCode();
     hash = (37 * hash) + VISIBILITY_FIELD_NUMBER;
     hash = (53 * hash) + getVisibility();
+    hash = (37 * hash) + VIDEO_LENGTH_FIELD_NUMBER;
+    hash = (53 * hash) + getVideoLength();
+    hash = (37 * hash) + VIDEO_DURATION_FIELD_NUMBER;
+    hash = (53 * hash) + getVideoDuration();
     if (getProductsCount() > 0) {
       hash = (37 * hash) + PRODUCTS_FIELD_NUMBER;
       hash = (53 * hash) + getProductsList().hashCode();
@@ -705,6 +767,10 @@ private static final long serialVersionUID = 0L;
 
       visibility = 0;
 
+      videoLength = 0;
+
+      videoDuration = 0;
+
       if (productsBuilder == null) {
         products = java.util.Collections.emptyList();
         bitField0 = (bitField0 & ~0x00000001);
@@ -750,6 +816,8 @@ private static final long serialVersionUID = 0L;
       result.coverPath = coverPath ;
       result.description = description ;
       result.visibility = visibility ;
+      result.videoLength = videoLength ;
+      result.videoDuration = videoDuration ;
       if (productsBuilder == null) {
         if (((bitField0 & 0x00000001) != 0)) {
           products = java.util.Collections.unmodifiableList(products );
@@ -828,6 +896,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getVisibility() != 0) {
         setVisibility(other.getVisibility());
+      }
+      if (other.getVideoLength() != 0) {
+        setVideoLength(other.getVideoLength());
+      }
+      if (other.getVideoDuration() != 0) {
+        setVideoDuration(other.getVideoDuration());
       }
       if (productsBuilder == null) {
         if (!other.products .isEmpty()) {
@@ -1381,6 +1455,92 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private int videoLength ;
+    /**
+     * <pre>
+     * 视频文件大小
+     * </pre>
+     *
+     * <code>int32 video_length = 7;</code>
+     * @return The videoLength.
+     */
+    @java.lang.Override
+    public int getVideoLength() {
+      return videoLength ;
+    }
+    /**
+     * <pre>
+     * 视频文件大小
+     * </pre>
+     *
+     * <code>int32 video_length = 7;</code>
+     * @param value The videoLength to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVideoLength(int value) {
+      
+      videoLength = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 视频文件大小
+     * </pre>
+     *
+     * <code>int32 video_length = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearVideoLength() {
+      
+      videoLength = 0;
+      onChanged();
+      return this;
+    }
+
+    private int videoDuration ;
+    /**
+     * <pre>
+     * 视频时长
+     * </pre>
+     *
+     * <code>int32 video_duration = 8;</code>
+     * @return The videoDuration.
+     */
+    @java.lang.Override
+    public int getVideoDuration() {
+      return videoDuration ;
+    }
+    /**
+     * <pre>
+     * 视频时长
+     * </pre>
+     *
+     * <code>int32 video_duration = 8;</code>
+     * @param value The videoDuration to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVideoDuration(int value) {
+      
+      videoDuration = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 视频时长
+     * </pre>
+     *
+     * <code>int32 video_duration = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearVideoDuration() {
+      
+      videoDuration = 0;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct> products =
       java.util.Collections.emptyList();
     private void ensureProductsIsMutable() {
@@ -1398,7 +1558,7 @@ private static final long serialVersionUID = 0L;
      * 商品信息
      * </pre>
      *
-     * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
+     * <code>repeated .glory_api.ShortVideoProduct products = 9;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct> getProductsList() {
       if (productsBuilder == null) {
@@ -1412,7 +1572,7 @@ private static final long serialVersionUID = 0L;
      * 商品信息
      * </pre>
      *
-     * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
+     * <code>repeated .glory_api.ShortVideoProduct products = 9;</code>
      */
     public int getProductsCount() {
       if (productsBuilder == null) {
@@ -1426,7 +1586,7 @@ private static final long serialVersionUID = 0L;
      * 商品信息
      * </pre>
      *
-     * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
+     * <code>repeated .glory_api.ShortVideoProduct products = 9;</code>
      */
     public com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct getProducts(int index) {
       if (productsBuilder == null) {
@@ -1440,7 +1600,7 @@ private static final long serialVersionUID = 0L;
      * 商品信息
      * </pre>
      *
-     * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
+     * <code>repeated .glory_api.ShortVideoProduct products = 9;</code>
      */
     public Builder setProducts(
         int index, com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct value) {
@@ -1461,7 +1621,7 @@ private static final long serialVersionUID = 0L;
      * 商品信息
      * </pre>
      *
-     * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
+     * <code>repeated .glory_api.ShortVideoProduct products = 9;</code>
      */
     public Builder setProducts(
         int index, com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct.Builder builderForValue) {
@@ -1479,7 +1639,7 @@ private static final long serialVersionUID = 0L;
      * 商品信息
      * </pre>
      *
-     * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
+     * <code>repeated .glory_api.ShortVideoProduct products = 9;</code>
      */
     public Builder addProducts(com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct value) {
       if (productsBuilder == null) {
@@ -1499,7 +1659,7 @@ private static final long serialVersionUID = 0L;
      * 商品信息
      * </pre>
      *
-     * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
+     * <code>repeated .glory_api.ShortVideoProduct products = 9;</code>
      */
     public Builder addProducts(
         int index, com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct value) {
@@ -1520,7 +1680,7 @@ private static final long serialVersionUID = 0L;
      * 商品信息
      * </pre>
      *
-     * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
+     * <code>repeated .glory_api.ShortVideoProduct products = 9;</code>
      */
     public Builder addProducts(
         com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct.Builder builderForValue) {
@@ -1538,7 +1698,7 @@ private static final long serialVersionUID = 0L;
      * 商品信息
      * </pre>
      *
-     * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
+     * <code>repeated .glory_api.ShortVideoProduct products = 9;</code>
      */
     public Builder addProducts(
         int index, com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct.Builder builderForValue) {
@@ -1556,7 +1716,7 @@ private static final long serialVersionUID = 0L;
      * 商品信息
      * </pre>
      *
-     * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
+     * <code>repeated .glory_api.ShortVideoProduct products = 9;</code>
      */
     public Builder addAllProducts(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct> values) {
@@ -1575,7 +1735,7 @@ private static final long serialVersionUID = 0L;
      * 商品信息
      * </pre>
      *
-     * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
+     * <code>repeated .glory_api.ShortVideoProduct products = 9;</code>
      */
     public Builder clearProducts() {
       if (productsBuilder == null) {
@@ -1592,7 +1752,7 @@ private static final long serialVersionUID = 0L;
      * 商品信息
      * </pre>
      *
-     * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
+     * <code>repeated .glory_api.ShortVideoProduct products = 9;</code>
      */
     public Builder removeProducts(int index) {
       if (productsBuilder == null) {
@@ -1609,7 +1769,7 @@ private static final long serialVersionUID = 0L;
      * 商品信息
      * </pre>
      *
-     * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
+     * <code>repeated .glory_api.ShortVideoProduct products = 9;</code>
      */
     public com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct.Builder getProductsBuilder(
         int index) {
@@ -1620,7 +1780,7 @@ private static final long serialVersionUID = 0L;
      * 商品信息
      * </pre>
      *
-     * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
+     * <code>repeated .glory_api.ShortVideoProduct products = 9;</code>
      */
     public com.zhijiejiaoyu.glory_api.short_video.ShortVideoProductOrBuilder getProductsOrBuilder(
         int index) {
@@ -1634,7 +1794,7 @@ private static final long serialVersionUID = 0L;
      * 商品信息
      * </pre>
      *
-     * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
+     * <code>repeated .glory_api.ShortVideoProduct products = 9;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.short_video.ShortVideoProductOrBuilder> 
          getProductsOrBuilderList() {
@@ -1649,7 +1809,7 @@ private static final long serialVersionUID = 0L;
      * 商品信息
      * </pre>
      *
-     * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
+     * <code>repeated .glory_api.ShortVideoProduct products = 9;</code>
      */
     public com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct.Builder addProductsBuilder() {
       return getProductsFieldBuilder().addBuilder(
@@ -1660,7 +1820,7 @@ private static final long serialVersionUID = 0L;
      * 商品信息
      * </pre>
      *
-     * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
+     * <code>repeated .glory_api.ShortVideoProduct products = 9;</code>
      */
     public com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct.Builder addProductsBuilder(
         int index) {
@@ -1672,7 +1832,7 @@ private static final long serialVersionUID = 0L;
      * 商品信息
      * </pre>
      *
-     * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
+     * <code>repeated .glory_api.ShortVideoProduct products = 9;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct.Builder> 
          getProductsBuilderList() {
@@ -1699,7 +1859,7 @@ private static final long serialVersionUID = 0L;
      * 店铺ID
      * </pre>
      *
-     * <code>int64 shop_id = 8;</code>
+     * <code>int64 shop_id = 10;</code>
      * @return The shopId.
      */
     @java.lang.Override
@@ -1711,7 +1871,7 @@ private static final long serialVersionUID = 0L;
      * 店铺ID
      * </pre>
      *
-     * <code>int64 shop_id = 8;</code>
+     * <code>int64 shop_id = 10;</code>
      * @param value The shopId to set.
      * @return This builder for chaining.
      */
@@ -1726,7 +1886,7 @@ private static final long serialVersionUID = 0L;
      * 店铺ID
      * </pre>
      *
-     * <code>int64 shop_id = 8;</code>
+     * <code>int64 shop_id = 10;</code>
      * @return This builder for chaining.
      */
     public Builder clearShopId() {

@@ -142,6 +142,11 @@ private static final long serialVersionUID = 0L;
             activityStatus = s;
             break;
           }
+          case 137: {
+
+            productReferencePrice = input.readDouble();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -591,6 +596,21 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int PRODUCT_REFERENCE_PRICE_FIELD_NUMBER = 17;
+  private double productReferencePrice ;
+  /**
+   * <pre>
+   * 商品参考价
+   * </pre>
+   *
+   * <code>double product_reference_price = 17;</code>
+   * @return The productReferencePrice.
+   */
+  @java.lang.Override
+  public double getProductReferencePrice() {
+    return productReferencePrice ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -652,6 +672,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getActivityStatusBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 16, activityStatus );
+    }
+    if (productReferencePrice != 0D) {
+      output.writeDouble(17, productReferencePrice );
     }
     unknownFields.writeTo(output);
   }
@@ -719,6 +742,10 @@ private static final long serialVersionUID = 0L;
     if (!getActivityStatusBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, activityStatus );
     }
+    if (productReferencePrice != 0D) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeDoubleSize(17, productReferencePrice );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -768,6 +795,9 @@ private static final long serialVersionUID = 0L;
             other.getProductDealAmount())) return false;
     if (!getActivityStatus()
         .equals(other.getActivityStatus())) return false;
+    if (java.lang.Double.doubleToLongBits(getProductReferencePrice())
+        != java.lang.Double.doubleToLongBits(
+            other.getProductReferencePrice())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -820,6 +850,9 @@ private static final long serialVersionUID = 0L;
         java.lang.Double.doubleToLongBits(getProductDealAmount()));
     hash = (37 * hash) + ACTIVITY_STATUS_FIELD_NUMBER;
     hash = (53 * hash) + getActivityStatus().hashCode();
+    hash = (37 * hash) + PRODUCT_REFERENCE_PRICE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getProductReferencePrice()));
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -985,6 +1018,8 @@ private static final long serialVersionUID = 0L;
 
       activityStatus = "";
 
+      productReferencePrice = 0D;
+
       return this;
     }
 
@@ -1027,6 +1062,7 @@ private static final long serialVersionUID = 0L;
       result.productSoldAmount = productSoldAmount ;
       result.productDealAmount = productDealAmount ;
       result.activityStatus = activityStatus ;
+      result.productReferencePrice = productReferencePrice ;
       onBuilt();
       return result;
     }
@@ -1129,6 +1165,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getActivityStatus().isEmpty()) {
         activityStatus = other.activityStatus ;
         onChanged();
+      }
+      if (other.getProductReferencePrice() != 0D) {
+        setProductReferencePrice(other.getProductReferencePrice());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2106,6 +2145,49 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       activityStatus = value;
+      onChanged();
+      return this;
+    }
+
+    private double productReferencePrice ;
+    /**
+     * <pre>
+     * 商品参考价
+     * </pre>
+     *
+     * <code>double product_reference_price = 17;</code>
+     * @return The productReferencePrice.
+     */
+    @java.lang.Override
+    public double getProductReferencePrice() {
+      return productReferencePrice ;
+    }
+    /**
+     * <pre>
+     * 商品参考价
+     * </pre>
+     *
+     * <code>double product_reference_price = 17;</code>
+     * @param value The productReferencePrice to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProductReferencePrice(double value) {
+      
+      productReferencePrice = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 商品参考价
+     * </pre>
+     *
+     * <code>double product_reference_price = 17;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearProductReferencePrice() {
+      
+      productReferencePrice = 0D;
       onChanged();
       return this;
     }

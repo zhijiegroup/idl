@@ -104,10 +104,30 @@ public interface UpdateStageVideoRequestOrBuilder extends
 
   /**
    * <pre>
+   * 视频文件大小
+   * </pre>
+   *
+   * <code>int32 video_length = 7;</code>
+   * @return The videoLength.
+   */
+  int getVideoLength();
+
+  /**
+   * <pre>
+   * 视频时长
+   * </pre>
+   *
+   * <code>int32 video_duration = 8;</code>
+   * @return The videoDuration.
+   */
+  int getVideoDuration();
+
+  /**
+   * <pre>
    * 商品信息
    * </pre>
    *
-   * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
+   * <code>repeated .glory_api.ShortVideoProduct products = 9;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct> 
       getProductsList();
@@ -116,7 +136,7 @@ public interface UpdateStageVideoRequestOrBuilder extends
    * 商品信息
    * </pre>
    *
-   * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
+   * <code>repeated .glory_api.ShortVideoProduct products = 9;</code>
    */
   com.zhijiejiaoyu.glory_api.short_video.ShortVideoProduct getProducts(int index);
   /**
@@ -124,7 +144,7 @@ public interface UpdateStageVideoRequestOrBuilder extends
    * 商品信息
    * </pre>
    *
-   * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
+   * <code>repeated .glory_api.ShortVideoProduct products = 9;</code>
    */
   int getProductsCount();
   /**
@@ -132,7 +152,7 @@ public interface UpdateStageVideoRequestOrBuilder extends
    * 商品信息
    * </pre>
    *
-   * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
+   * <code>repeated .glory_api.ShortVideoProduct products = 9;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.short_video.ShortVideoProductOrBuilder> 
       getProductsOrBuilderList();
@@ -141,7 +161,7 @@ public interface UpdateStageVideoRequestOrBuilder extends
    * 商品信息
    * </pre>
    *
-   * <code>repeated .glory_api.ShortVideoProduct products = 7;</code>
+   * <code>repeated .glory_api.ShortVideoProduct products = 9;</code>
    */
   com.zhijiejiaoyu.glory_api.short_video.ShortVideoProductOrBuilder getProductsOrBuilder(
       int index);
@@ -151,7 +171,7 @@ public interface UpdateStageVideoRequestOrBuilder extends
    * 店铺ID
    * </pre>
    *
-   * <code>int64 shop_id = 8;</code>
+   * <code>int64 shop_id = 10;</code>
    * @return The shopId.
    */
   long getShopId();

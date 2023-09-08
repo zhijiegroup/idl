@@ -55,7 +55,7 @@ enum GloryApi_AttachmentType: SwiftProtobuf.Enum {
 
 extension GloryApi_AttachmentType: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [GloryApi_AttachmentType] = [
+  static let allCases: [GloryApi_AttachmentType] = [
     .unSpecified,
     .image,
     .pdf,

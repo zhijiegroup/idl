@@ -748,50 +748,106 @@ struct GloryApi_LiveProductStatus {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var liveProductStatusID: Int64 = 0
+  var liveProductStatusID: Int64 {
+    get {return _storage._liveProductStatusID}
+    set {_uniqueStorage()._liveProductStatusID = newValue}
+  }
 
-  var productID: Int64 = 0
+  var productID: Int64 {
+    get {return _storage._productID}
+    set {_uniqueStorage()._productID = newValue}
+  }
 
-  var status: String = String()
+  var status: String {
+    get {return _storage._status}
+    set {_uniqueStorage()._status = newValue}
+  }
 
-  var shopID: Int64 = 0
+  var shopID: Int64 {
+    get {return _storage._shopID}
+    set {_uniqueStorage()._shopID = newValue}
+  }
 
-  var roomID: Int64 = 0
+  var roomID: Int64 {
+    get {return _storage._roomID}
+    set {_uniqueStorage()._roomID = newValue}
+  }
 
-  var productSellingPoint: String = String()
+  var productSellingPoint: String {
+    get {return _storage._productSellingPoint}
+    set {_uniqueStorage()._productSellingPoint = newValue}
+  }
 
-  var productDescription: String = String()
+  var productDescription: String {
+    get {return _storage._productDescription}
+    set {_uniqueStorage()._productDescription = newValue}
+  }
 
   /// 是否讲解中
-  var isIntroduct: Bool = false
+  var isIntroduct: Bool {
+    get {return _storage._isIntroduct}
+    set {_uniqueStorage()._isIntroduct = newValue}
+  }
 
   /// 上架 下架状态
-  var state: String = String()
+  var state: String {
+    get {return _storage._state}
+    set {_uniqueStorage()._state = newValue}
+  }
 
   /// 商品 url
-  var productURL: String = String()
+  var productURL: String {
+    get {return _storage._productURL}
+    set {_uniqueStorage()._productURL = newValue}
+  }
 
   /// 商品名称
-  var productName: String = String()
+  var productName: String {
+    get {return _storage._productName}
+    set {_uniqueStorage()._productName = newValue}
+  }
 
   /// 商品价格
-  var productPrice: Double = 0
+  var productPrice: Double {
+    get {return _storage._productPrice}
+    set {_uniqueStorage()._productPrice = newValue}
+  }
 
   /// 商品库存数量
-  var productRemainingAmount: Int64 = 0
+  var productRemainingAmount: Int64 {
+    get {return _storage._productRemainingAmount}
+    set {_uniqueStorage()._productRemainingAmount = newValue}
+  }
 
   /// 商品售出数量
-  var productSoldAmount: Int64 = 0
+  var productSoldAmount: Int64 {
+    get {return _storage._productSoldAmount}
+    set {_uniqueStorage()._productSoldAmount = newValue}
+  }
 
   /// 商品成交金额
-  var productDealAmount: Double = 0
+  var productDealAmount: Double {
+    get {return _storage._productDealAmount}
+    set {_uniqueStorage()._productDealAmount = newValue}
+  }
 
   /// 商品活动状态
-  var activityStatus: String = String()
+  var activityStatus: String {
+    get {return _storage._activityStatus}
+    set {_uniqueStorage()._activityStatus = newValue}
+  }
+
+  /// 商品参考价
+  var productReferencePrice: Double {
+    get {return _storage._productReferencePrice}
+    set {_uniqueStorage()._productReferencePrice = newValue}
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
+
+  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 struct GloryApi_ListLiveProductStatusRequest {
@@ -2517,104 +2573,174 @@ extension GloryApi_LiveProductStatus: SwiftProtobuf.Message, SwiftProtobuf._Mess
     14: .standard(proto: "product_sold_amount"),
     15: .standard(proto: "product_deal_amount"),
     16: .standard(proto: "activity_status"),
+    17: .standard(proto: "product_reference_price"),
   ]
 
+  fileprivate class _StorageClass {
+    var _liveProductStatusID: Int64 = 0
+    var _productID: Int64 = 0
+    var _status: String = String()
+    var _shopID: Int64 = 0
+    var _roomID: Int64 = 0
+    var _productSellingPoint: String = String()
+    var _productDescription: String = String()
+    var _isIntroduct: Bool = false
+    var _state: String = String()
+    var _productURL: String = String()
+    var _productName: String = String()
+    var _productPrice: Double = 0
+    var _productRemainingAmount: Int64 = 0
+    var _productSoldAmount: Int64 = 0
+    var _productDealAmount: Double = 0
+    var _activityStatus: String = String()
+    var _productReferencePrice: Double = 0
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _liveProductStatusID = source._liveProductStatusID
+      _productID = source._productID
+      _status = source._status
+      _shopID = source._shopID
+      _roomID = source._roomID
+      _productSellingPoint = source._productSellingPoint
+      _productDescription = source._productDescription
+      _isIntroduct = source._isIntroduct
+      _state = source._state
+      _productURL = source._productURL
+      _productName = source._productName
+      _productPrice = source._productPrice
+      _productRemainingAmount = source._productRemainingAmount
+      _productSoldAmount = source._productSoldAmount
+      _productDealAmount = source._productDealAmount
+      _activityStatus = source._activityStatus
+      _productReferencePrice = source._productReferencePrice
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularInt64Field(value: &self.liveProductStatusID) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.productID) }()
-      case 3: try { try decoder.decodeSingularStringField(value: &self.status) }()
-      case 4: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
-      case 5: try { try decoder.decodeSingularInt64Field(value: &self.roomID) }()
-      case 6: try { try decoder.decodeSingularStringField(value: &self.productSellingPoint) }()
-      case 7: try { try decoder.decodeSingularStringField(value: &self.productDescription) }()
-      case 8: try { try decoder.decodeSingularBoolField(value: &self.isIntroduct) }()
-      case 9: try { try decoder.decodeSingularStringField(value: &self.state) }()
-      case 10: try { try decoder.decodeSingularStringField(value: &self.productURL) }()
-      case 11: try { try decoder.decodeSingularStringField(value: &self.productName) }()
-      case 12: try { try decoder.decodeSingularDoubleField(value: &self.productPrice) }()
-      case 13: try { try decoder.decodeSingularInt64Field(value: &self.productRemainingAmount) }()
-      case 14: try { try decoder.decodeSingularInt64Field(value: &self.productSoldAmount) }()
-      case 15: try { try decoder.decodeSingularDoubleField(value: &self.productDealAmount) }()
-      case 16: try { try decoder.decodeSingularStringField(value: &self.activityStatus) }()
-      default: break
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        // The use of inline closures is to circumvent an issue where the compiler
+        // allocates stack space for every case branch when no optimizations are
+        // enabled. https://github.com/apple/swift-protobuf/issues/1034
+        switch fieldNumber {
+        case 1: try { try decoder.decodeSingularInt64Field(value: &_storage._liveProductStatusID) }()
+        case 2: try { try decoder.decodeSingularInt64Field(value: &_storage._productID) }()
+        case 3: try { try decoder.decodeSingularStringField(value: &_storage._status) }()
+        case 4: try { try decoder.decodeSingularInt64Field(value: &_storage._shopID) }()
+        case 5: try { try decoder.decodeSingularInt64Field(value: &_storage._roomID) }()
+        case 6: try { try decoder.decodeSingularStringField(value: &_storage._productSellingPoint) }()
+        case 7: try { try decoder.decodeSingularStringField(value: &_storage._productDescription) }()
+        case 8: try { try decoder.decodeSingularBoolField(value: &_storage._isIntroduct) }()
+        case 9: try { try decoder.decodeSingularStringField(value: &_storage._state) }()
+        case 10: try { try decoder.decodeSingularStringField(value: &_storage._productURL) }()
+        case 11: try { try decoder.decodeSingularStringField(value: &_storage._productName) }()
+        case 12: try { try decoder.decodeSingularDoubleField(value: &_storage._productPrice) }()
+        case 13: try { try decoder.decodeSingularInt64Field(value: &_storage._productRemainingAmount) }()
+        case 14: try { try decoder.decodeSingularInt64Field(value: &_storage._productSoldAmount) }()
+        case 15: try { try decoder.decodeSingularDoubleField(value: &_storage._productDealAmount) }()
+        case 16: try { try decoder.decodeSingularStringField(value: &_storage._activityStatus) }()
+        case 17: try { try decoder.decodeSingularDoubleField(value: &_storage._productReferencePrice) }()
+        default: break
+        }
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.liveProductStatusID != 0 {
-      try visitor.visitSingularInt64Field(value: self.liveProductStatusID, fieldNumber: 1)
-    }
-    if self.productID != 0 {
-      try visitor.visitSingularInt64Field(value: self.productID, fieldNumber: 2)
-    }
-    if !self.status.isEmpty {
-      try visitor.visitSingularStringField(value: self.status, fieldNumber: 3)
-    }
-    if self.shopID != 0 {
-      try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 4)
-    }
-    if self.roomID != 0 {
-      try visitor.visitSingularInt64Field(value: self.roomID, fieldNumber: 5)
-    }
-    if !self.productSellingPoint.isEmpty {
-      try visitor.visitSingularStringField(value: self.productSellingPoint, fieldNumber: 6)
-    }
-    if !self.productDescription.isEmpty {
-      try visitor.visitSingularStringField(value: self.productDescription, fieldNumber: 7)
-    }
-    if self.isIntroduct != false {
-      try visitor.visitSingularBoolField(value: self.isIntroduct, fieldNumber: 8)
-    }
-    if !self.state.isEmpty {
-      try visitor.visitSingularStringField(value: self.state, fieldNumber: 9)
-    }
-    if !self.productURL.isEmpty {
-      try visitor.visitSingularStringField(value: self.productURL, fieldNumber: 10)
-    }
-    if !self.productName.isEmpty {
-      try visitor.visitSingularStringField(value: self.productName, fieldNumber: 11)
-    }
-    if self.productPrice != 0 {
-      try visitor.visitSingularDoubleField(value: self.productPrice, fieldNumber: 12)
-    }
-    if self.productRemainingAmount != 0 {
-      try visitor.visitSingularInt64Field(value: self.productRemainingAmount, fieldNumber: 13)
-    }
-    if self.productSoldAmount != 0 {
-      try visitor.visitSingularInt64Field(value: self.productSoldAmount, fieldNumber: 14)
-    }
-    if self.productDealAmount != 0 {
-      try visitor.visitSingularDoubleField(value: self.productDealAmount, fieldNumber: 15)
-    }
-    if !self.activityStatus.isEmpty {
-      try visitor.visitSingularStringField(value: self.activityStatus, fieldNumber: 16)
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if _storage._liveProductStatusID != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._liveProductStatusID, fieldNumber: 1)
+      }
+      if _storage._productID != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._productID, fieldNumber: 2)
+      }
+      if !_storage._status.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._status, fieldNumber: 3)
+      }
+      if _storage._shopID != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._shopID, fieldNumber: 4)
+      }
+      if _storage._roomID != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._roomID, fieldNumber: 5)
+      }
+      if !_storage._productSellingPoint.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._productSellingPoint, fieldNumber: 6)
+      }
+      if !_storage._productDescription.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._productDescription, fieldNumber: 7)
+      }
+      if _storage._isIntroduct != false {
+        try visitor.visitSingularBoolField(value: _storage._isIntroduct, fieldNumber: 8)
+      }
+      if !_storage._state.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._state, fieldNumber: 9)
+      }
+      if !_storage._productURL.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._productURL, fieldNumber: 10)
+      }
+      if !_storage._productName.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._productName, fieldNumber: 11)
+      }
+      if _storage._productPrice != 0 {
+        try visitor.visitSingularDoubleField(value: _storage._productPrice, fieldNumber: 12)
+      }
+      if _storage._productRemainingAmount != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._productRemainingAmount, fieldNumber: 13)
+      }
+      if _storage._productSoldAmount != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._productSoldAmount, fieldNumber: 14)
+      }
+      if _storage._productDealAmount != 0 {
+        try visitor.visitSingularDoubleField(value: _storage._productDealAmount, fieldNumber: 15)
+      }
+      if !_storage._activityStatus.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._activityStatus, fieldNumber: 16)
+      }
+      if _storage._productReferencePrice != 0 {
+        try visitor.visitSingularDoubleField(value: _storage._productReferencePrice, fieldNumber: 17)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_LiveProductStatus, rhs: GloryApi_LiveProductStatus) -> Bool {
-    if lhs.liveProductStatusID != rhs.liveProductStatusID {return false}
-    if lhs.productID != rhs.productID {return false}
-    if lhs.status != rhs.status {return false}
-    if lhs.shopID != rhs.shopID {return false}
-    if lhs.roomID != rhs.roomID {return false}
-    if lhs.productSellingPoint != rhs.productSellingPoint {return false}
-    if lhs.productDescription != rhs.productDescription {return false}
-    if lhs.isIntroduct != rhs.isIntroduct {return false}
-    if lhs.state != rhs.state {return false}
-    if lhs.productURL != rhs.productURL {return false}
-    if lhs.productName != rhs.productName {return false}
-    if lhs.productPrice != rhs.productPrice {return false}
-    if lhs.productRemainingAmount != rhs.productRemainingAmount {return false}
-    if lhs.productSoldAmount != rhs.productSoldAmount {return false}
-    if lhs.productDealAmount != rhs.productDealAmount {return false}
-    if lhs.activityStatus != rhs.activityStatus {return false}
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._liveProductStatusID != rhs_storage._liveProductStatusID {return false}
+        if _storage._productID != rhs_storage._productID {return false}
+        if _storage._status != rhs_storage._status {return false}
+        if _storage._shopID != rhs_storage._shopID {return false}
+        if _storage._roomID != rhs_storage._roomID {return false}
+        if _storage._productSellingPoint != rhs_storage._productSellingPoint {return false}
+        if _storage._productDescription != rhs_storage._productDescription {return false}
+        if _storage._isIntroduct != rhs_storage._isIntroduct {return false}
+        if _storage._state != rhs_storage._state {return false}
+        if _storage._productURL != rhs_storage._productURL {return false}
+        if _storage._productName != rhs_storage._productName {return false}
+        if _storage._productPrice != rhs_storage._productPrice {return false}
+        if _storage._productRemainingAmount != rhs_storage._productRemainingAmount {return false}
+        if _storage._productSoldAmount != rhs_storage._productSoldAmount {return false}
+        if _storage._productDealAmount != rhs_storage._productDealAmount {return false}
+        if _storage._activityStatus != rhs_storage._activityStatus {return false}
+        if _storage._productReferencePrice != rhs_storage._productReferencePrice {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

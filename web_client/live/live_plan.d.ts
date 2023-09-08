@@ -203,6 +203,8 @@ export interface LiveProductStatus {
   product_deal_amount?: number;
   /** 商品活动状态 */
   activity_status?: string;
+  /** 商品参考价 */
+  product_reference_price?: number;
 }
 
 export interface ListLiveProductStatusRequest {
