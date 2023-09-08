@@ -39,10 +39,30 @@ public interface OrderInfoOrBuilder extends
 
   /**
    * <pre>
+   * 订单取消原因
+   * </pre>
+   *
+   * <code>string order_cancelled_reason = 3;</code>
+   * @return The orderCancelledReason.
+   */
+  java.lang.String getOrderCancelledReason();
+  /**
+   * <pre>
+   * 订单取消原因
+   * </pre>
+   *
+   * <code>string order_cancelled_reason = 3;</code>
+   * @return The bytes for orderCancelledReason.
+   */
+  com.google.protobuf.ByteString
+      getOrderCancelledReasonBytes();
+
+  /**
+   * <pre>
    *下单时间
    * </pre>
    *
-   * <code>string created_at = 3;</code>
+   * <code>string created_at = 4;</code>
    * @return The createdAt.
    */
   java.lang.String getCreatedAt();
@@ -51,7 +71,7 @@ public interface OrderInfoOrBuilder extends
    *下单时间
    * </pre>
    *
-   * <code>string created_at = 3;</code>
+   * <code>string created_at = 4;</code>
    * @return The bytes for createdAt.
    */
   com.google.protobuf.ByteString
@@ -62,7 +82,7 @@ public interface OrderInfoOrBuilder extends
    *订单类型 created 待支付   paid 待发货   shipped 已发货   after_sales 售后中    completed 已完成  closed 已关闭
    * </pre>
    *
-   * <code>string orderType = 4;</code>
+   * <code>string orderType = 5;</code>
    * @return The orderType.
    */
   java.lang.String getOrderType();
@@ -71,7 +91,7 @@ public interface OrderInfoOrBuilder extends
    *订单类型 created 待支付   paid 待发货   shipped 已发货   after_sales 售后中    completed 已完成  closed 已关闭
    * </pre>
    *
-   * <code>string orderType = 4;</code>
+   * <code>string orderType = 5;</code>
    * @return The bytes for orderType.
    */
   com.google.protobuf.ByteString
@@ -82,7 +102,7 @@ public interface OrderInfoOrBuilder extends
    *支付方式  coin 虚拟币支付  weixin 微信支付
    * </pre>
    *
-   * <code>string payType = 5;</code>
+   * <code>string payType = 6;</code>
    * @return The payType.
    */
   java.lang.String getPayType();
@@ -91,7 +111,7 @@ public interface OrderInfoOrBuilder extends
    *支付方式  coin 虚拟币支付  weixin 微信支付
    * </pre>
    *
-   * <code>string payType = 5;</code>
+   * <code>string payType = 6;</code>
    * @return The bytes for payType.
    */
   com.google.protobuf.ByteString
@@ -102,7 +122,7 @@ public interface OrderInfoOrBuilder extends
    *付款时间
    * </pre>
    *
-   * <code>string payTime = 6;</code>
+   * <code>string payTime = 7;</code>
    * @return The payTime.
    */
   java.lang.String getPayTime();
@@ -111,7 +131,7 @@ public interface OrderInfoOrBuilder extends
    *付款时间
    * </pre>
    *
-   * <code>string payTime = 6;</code>
+   * <code>string payTime = 7;</code>
    * @return The bytes for payTime.
    */
   com.google.protobuf.ByteString
@@ -122,7 +142,7 @@ public interface OrderInfoOrBuilder extends
    *商品总价 = 原价+运费
    * </pre>
    *
-   * <code>double total_amount = 7;</code>
+   * <code>double total_amount = 8;</code>
    * @return The totalAmount.
    */
   double getTotalAmount();
@@ -132,7 +152,7 @@ public interface OrderInfoOrBuilder extends
    *原价
    * </pre>
    *
-   * <code>double original_amount = 8;</code>
+   * <code>double original_amount = 9;</code>
    * @return The originalAmount.
    */
   double getOriginalAmount();
@@ -142,7 +162,7 @@ public interface OrderInfoOrBuilder extends
    *运费
    * </pre>
    *
-   * <code>double deliver_fee = 9;</code>
+   * <code>double deliver_fee = 10;</code>
    * @return The deliverFee.
    */
   double getDeliverFee();
@@ -152,7 +172,7 @@ public interface OrderInfoOrBuilder extends
    *优惠金额
    * </pre>
    *
-   * <code>double discount_amount = 10;</code>
+   * <code>double discount_amount = 11;</code>
    * @return The discountAmount.
    */
   double getDiscountAmount();
@@ -162,7 +182,7 @@ public interface OrderInfoOrBuilder extends
    *实付金额
    * </pre>
    *
-   * <code>double payment_amount = 11;</code>
+   * <code>double payment_amount = 12;</code>
    * @return The paymentAmount.
    */
   double getPaymentAmount();
@@ -172,7 +192,7 @@ public interface OrderInfoOrBuilder extends
    *应付金额
    * </pre>
    *
-   * <code>double payable_amount = 12;</code>
+   * <code>double payable_amount = 13;</code>
    * @return The payableAmount.
    */
   double getPayableAmount();
@@ -182,7 +202,7 @@ public interface OrderInfoOrBuilder extends
    *商品信息
    * </pre>
    *
-   * <code>repeated .glory_api.ProductInfo productInfo = 13;</code>
+   * <code>repeated .glory_api.ProductInfo productInfo = 14;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.shop.ProductInfo> 
       getProductInfoList();
@@ -191,7 +211,7 @@ public interface OrderInfoOrBuilder extends
    *商品信息
    * </pre>
    *
-   * <code>repeated .glory_api.ProductInfo productInfo = 13;</code>
+   * <code>repeated .glory_api.ProductInfo productInfo = 14;</code>
    */
   com.zhijiejiaoyu.glory_api.shop.ProductInfo getProductInfo(int index);
   /**
@@ -199,7 +219,7 @@ public interface OrderInfoOrBuilder extends
    *商品信息
    * </pre>
    *
-   * <code>repeated .glory_api.ProductInfo productInfo = 13;</code>
+   * <code>repeated .glory_api.ProductInfo productInfo = 14;</code>
    */
   int getProductInfoCount();
   /**
@@ -207,7 +227,7 @@ public interface OrderInfoOrBuilder extends
    *商品信息
    * </pre>
    *
-   * <code>repeated .glory_api.ProductInfo productInfo = 13;</code>
+   * <code>repeated .glory_api.ProductInfo productInfo = 14;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.ProductInfoOrBuilder> 
       getProductInfoOrBuilderList();
@@ -216,7 +236,7 @@ public interface OrderInfoOrBuilder extends
    *商品信息
    * </pre>
    *
-   * <code>repeated .glory_api.ProductInfo productInfo = 13;</code>
+   * <code>repeated .glory_api.ProductInfo productInfo = 14;</code>
    */
   com.zhijiejiaoyu.glory_api.shop.ProductInfoOrBuilder getProductInfoOrBuilder(
       int index);
@@ -226,7 +246,7 @@ public interface OrderInfoOrBuilder extends
    *商店名字
    * </pre>
    *
-   * <code>string shop_name = 14;</code>
+   * <code>string shop_name = 15;</code>
    * @return The shopName.
    */
   java.lang.String getShopName();
@@ -235,7 +255,7 @@ public interface OrderInfoOrBuilder extends
    *商店名字
    * </pre>
    *
-   * <code>string shop_name = 14;</code>
+   * <code>string shop_name = 15;</code>
    * @return The bytes for shopName.
    */
   com.google.protobuf.ByteString
@@ -246,7 +266,7 @@ public interface OrderInfoOrBuilder extends
    *商店logo
    * </pre>
    *
-   * <code>string shop_logo = 144;</code>
+   * <code>string shop_logo = 16;</code>
    * @return The shopLogo.
    */
   java.lang.String getShopLogo();
@@ -255,7 +275,7 @@ public interface OrderInfoOrBuilder extends
    *商店logo
    * </pre>
    *
-   * <code>string shop_logo = 144;</code>
+   * <code>string shop_logo = 16;</code>
    * @return The bytes for shopLogo.
    */
   com.google.protobuf.ByteString
@@ -266,7 +286,7 @@ public interface OrderInfoOrBuilder extends
    *货币单位  CNY :人民币    COIN:虚拟币 不区分大小写
    * </pre>
    *
-   * <code>string currency = 15;</code>
+   * <code>string currency = 17;</code>
    * @return The currency.
    */
   java.lang.String getCurrency();
@@ -275,7 +295,7 @@ public interface OrderInfoOrBuilder extends
    *货币单位  CNY :人民币    COIN:虚拟币 不区分大小写
    * </pre>
    *
-   * <code>string currency = 15;</code>
+   * <code>string currency = 17;</code>
    * @return The bytes for currency.
    */
   com.google.protobuf.ByteString
@@ -286,7 +306,7 @@ public interface OrderInfoOrBuilder extends
    *收货人
    * </pre>
    *
-   * <code>string contact_name = 16;</code>
+   * <code>string contact_name = 18;</code>
    * @return The contactName.
    */
   java.lang.String getContactName();
@@ -295,7 +315,7 @@ public interface OrderInfoOrBuilder extends
    *收货人
    * </pre>
    *
-   * <code>string contact_name = 16;</code>
+   * <code>string contact_name = 18;</code>
    * @return The bytes for contactName.
    */
   com.google.protobuf.ByteString
@@ -306,7 +326,7 @@ public interface OrderInfoOrBuilder extends
    *购买人
    * </pre>
    *
-   * <code>string buyer_name = 17;</code>
+   * <code>string buyer_name = 19;</code>
    * @return The buyerName.
    */
   java.lang.String getBuyerName();
@@ -315,7 +335,7 @@ public interface OrderInfoOrBuilder extends
    *购买人
    * </pre>
    *
-   * <code>string buyer_name = 17;</code>
+   * <code>string buyer_name = 19;</code>
    * @return The bytes for buyerName.
    */
   com.google.protobuf.ByteString
@@ -326,7 +346,7 @@ public interface OrderInfoOrBuilder extends
    *收获地址
    * </pre>
    *
-   * <code>string deliver_address = 18;</code>
+   * <code>string deliver_address = 20;</code>
    * @return The deliverAddress.
    */
   java.lang.String getDeliverAddress();
@@ -335,7 +355,7 @@ public interface OrderInfoOrBuilder extends
    *收获地址
    * </pre>
    *
-   * <code>string deliver_address = 18;</code>
+   * <code>string deliver_address = 20;</code>
    * @return The bytes for deliverAddress.
    */
   com.google.protobuf.ByteString

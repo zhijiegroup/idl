@@ -78,6 +78,8 @@ export interface OrderInfo {
   order_id?: string;
   /** 订单状态 */
   order_status?: string;
+  /** 订单取消原因 */
+  order_cancelled_reason?: string;
   /** 下单时间 */
   created_at?: string;
   /** 订单类型 created 待支付   paid 待发货   shipped 已发货   after_sales 售后中    completed 已完成  closed 已关闭 */

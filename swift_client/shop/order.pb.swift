@@ -248,6 +248,12 @@ struct GloryApi_OrderInfo {
     set {_uniqueStorage()._orderStatus = newValue}
   }
 
+  /// 订单取消原因
+  var orderCancelledReason: String {
+    get {return _storage._orderCancelledReason}
+    set {_uniqueStorage()._orderCancelledReason = newValue}
+  }
+
   ///下单时间
   var createdAt: String {
     get {return _storage._createdAt}
@@ -1538,28 +1544,30 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "order_id"),
     2: .standard(proto: "order_status"),
-    3: .standard(proto: "created_at"),
-    4: .same(proto: "orderType"),
-    5: .same(proto: "payType"),
-    6: .same(proto: "payTime"),
-    7: .standard(proto: "total_amount"),
-    8: .standard(proto: "original_amount"),
-    9: .standard(proto: "deliver_fee"),
-    10: .standard(proto: "discount_amount"),
-    11: .standard(proto: "payment_amount"),
-    12: .standard(proto: "payable_amount"),
-    13: .same(proto: "productInfo"),
-    14: .standard(proto: "shop_name"),
-    144: .standard(proto: "shop_logo"),
-    15: .same(proto: "currency"),
-    16: .standard(proto: "contact_name"),
-    17: .standard(proto: "buyer_name"),
-    18: .standard(proto: "deliver_address"),
+    3: .standard(proto: "order_cancelled_reason"),
+    4: .standard(proto: "created_at"),
+    5: .same(proto: "orderType"),
+    6: .same(proto: "payType"),
+    7: .same(proto: "payTime"),
+    8: .standard(proto: "total_amount"),
+    9: .standard(proto: "original_amount"),
+    10: .standard(proto: "deliver_fee"),
+    11: .standard(proto: "discount_amount"),
+    12: .standard(proto: "payment_amount"),
+    13: .standard(proto: "payable_amount"),
+    14: .same(proto: "productInfo"),
+    15: .standard(proto: "shop_name"),
+    16: .standard(proto: "shop_logo"),
+    17: .same(proto: "currency"),
+    18: .standard(proto: "contact_name"),
+    19: .standard(proto: "buyer_name"),
+    20: .standard(proto: "deliver_address"),
   ]
 
   fileprivate class _StorageClass {
     var _orderID: Int64 = 0
     var _orderStatus: String = String()
+    var _orderCancelledReason: String = String()
     var _createdAt: String = String()
     var _orderType: String = String()
     var _payType: String = String()
@@ -1585,6 +1593,7 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     init(copying source: _StorageClass) {
       _orderID = source._orderID
       _orderStatus = source._orderStatus
+      _orderCancelledReason = source._orderCancelledReason
       _createdAt = source._createdAt
       _orderType = source._orderType
       _payType = source._payType
@@ -1622,23 +1631,24 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
         switch fieldNumber {
         case 1: try { try decoder.decodeSingularInt64Field(value: &_storage._orderID) }()
         case 2: try { try decoder.decodeSingularStringField(value: &_storage._orderStatus) }()
-        case 3: try { try decoder.decodeSingularStringField(value: &_storage._createdAt) }()
-        case 4: try { try decoder.decodeSingularStringField(value: &_storage._orderType) }()
-        case 5: try { try decoder.decodeSingularStringField(value: &_storage._payType) }()
-        case 6: try { try decoder.decodeSingularStringField(value: &_storage._payTime) }()
-        case 7: try { try decoder.decodeSingularDoubleField(value: &_storage._totalAmount) }()
-        case 8: try { try decoder.decodeSingularDoubleField(value: &_storage._originalAmount) }()
-        case 9: try { try decoder.decodeSingularDoubleField(value: &_storage._deliverFee) }()
-        case 10: try { try decoder.decodeSingularDoubleField(value: &_storage._discountAmount) }()
-        case 11: try { try decoder.decodeSingularDoubleField(value: &_storage._paymentAmount) }()
-        case 12: try { try decoder.decodeSingularDoubleField(value: &_storage._payableAmount) }()
-        case 13: try { try decoder.decodeRepeatedMessageField(value: &_storage._productInfo) }()
-        case 14: try { try decoder.decodeSingularStringField(value: &_storage._shopName) }()
-        case 15: try { try decoder.decodeSingularStringField(value: &_storage._currency) }()
-        case 16: try { try decoder.decodeSingularStringField(value: &_storage._contactName) }()
-        case 17: try { try decoder.decodeSingularStringField(value: &_storage._buyerName) }()
-        case 18: try { try decoder.decodeSingularStringField(value: &_storage._deliverAddress) }()
-        case 144: try { try decoder.decodeSingularStringField(value: &_storage._shopLogo) }()
+        case 3: try { try decoder.decodeSingularStringField(value: &_storage._orderCancelledReason) }()
+        case 4: try { try decoder.decodeSingularStringField(value: &_storage._createdAt) }()
+        case 5: try { try decoder.decodeSingularStringField(value: &_storage._orderType) }()
+        case 6: try { try decoder.decodeSingularStringField(value: &_storage._payType) }()
+        case 7: try { try decoder.decodeSingularStringField(value: &_storage._payTime) }()
+        case 8: try { try decoder.decodeSingularDoubleField(value: &_storage._totalAmount) }()
+        case 9: try { try decoder.decodeSingularDoubleField(value: &_storage._originalAmount) }()
+        case 10: try { try decoder.decodeSingularDoubleField(value: &_storage._deliverFee) }()
+        case 11: try { try decoder.decodeSingularDoubleField(value: &_storage._discountAmount) }()
+        case 12: try { try decoder.decodeSingularDoubleField(value: &_storage._paymentAmount) }()
+        case 13: try { try decoder.decodeSingularDoubleField(value: &_storage._payableAmount) }()
+        case 14: try { try decoder.decodeRepeatedMessageField(value: &_storage._productInfo) }()
+        case 15: try { try decoder.decodeSingularStringField(value: &_storage._shopName) }()
+        case 16: try { try decoder.decodeSingularStringField(value: &_storage._shopLogo) }()
+        case 17: try { try decoder.decodeSingularStringField(value: &_storage._currency) }()
+        case 18: try { try decoder.decodeSingularStringField(value: &_storage._contactName) }()
+        case 19: try { try decoder.decodeSingularStringField(value: &_storage._buyerName) }()
+        case 20: try { try decoder.decodeSingularStringField(value: &_storage._deliverAddress) }()
         default: break
         }
       }
@@ -1653,56 +1663,59 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
       if !_storage._orderStatus.isEmpty {
         try visitor.visitSingularStringField(value: _storage._orderStatus, fieldNumber: 2)
       }
+      if !_storage._orderCancelledReason.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._orderCancelledReason, fieldNumber: 3)
+      }
       if !_storage._createdAt.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._createdAt, fieldNumber: 3)
+        try visitor.visitSingularStringField(value: _storage._createdAt, fieldNumber: 4)
       }
       if !_storage._orderType.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._orderType, fieldNumber: 4)
+        try visitor.visitSingularStringField(value: _storage._orderType, fieldNumber: 5)
       }
       if !_storage._payType.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._payType, fieldNumber: 5)
+        try visitor.visitSingularStringField(value: _storage._payType, fieldNumber: 6)
       }
       if !_storage._payTime.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._payTime, fieldNumber: 6)
+        try visitor.visitSingularStringField(value: _storage._payTime, fieldNumber: 7)
       }
       if _storage._totalAmount != 0 {
-        try visitor.visitSingularDoubleField(value: _storage._totalAmount, fieldNumber: 7)
+        try visitor.visitSingularDoubleField(value: _storage._totalAmount, fieldNumber: 8)
       }
       if _storage._originalAmount != 0 {
-        try visitor.visitSingularDoubleField(value: _storage._originalAmount, fieldNumber: 8)
+        try visitor.visitSingularDoubleField(value: _storage._originalAmount, fieldNumber: 9)
       }
       if _storage._deliverFee != 0 {
-        try visitor.visitSingularDoubleField(value: _storage._deliverFee, fieldNumber: 9)
+        try visitor.visitSingularDoubleField(value: _storage._deliverFee, fieldNumber: 10)
       }
       if _storage._discountAmount != 0 {
-        try visitor.visitSingularDoubleField(value: _storage._discountAmount, fieldNumber: 10)
+        try visitor.visitSingularDoubleField(value: _storage._discountAmount, fieldNumber: 11)
       }
       if _storage._paymentAmount != 0 {
-        try visitor.visitSingularDoubleField(value: _storage._paymentAmount, fieldNumber: 11)
+        try visitor.visitSingularDoubleField(value: _storage._paymentAmount, fieldNumber: 12)
       }
       if _storage._payableAmount != 0 {
-        try visitor.visitSingularDoubleField(value: _storage._payableAmount, fieldNumber: 12)
+        try visitor.visitSingularDoubleField(value: _storage._payableAmount, fieldNumber: 13)
       }
       if !_storage._productInfo.isEmpty {
-        try visitor.visitRepeatedMessageField(value: _storage._productInfo, fieldNumber: 13)
+        try visitor.visitRepeatedMessageField(value: _storage._productInfo, fieldNumber: 14)
       }
       if !_storage._shopName.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._shopName, fieldNumber: 14)
-      }
-      if !_storage._currency.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._currency, fieldNumber: 15)
-      }
-      if !_storage._contactName.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._contactName, fieldNumber: 16)
-      }
-      if !_storage._buyerName.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._buyerName, fieldNumber: 17)
-      }
-      if !_storage._deliverAddress.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._deliverAddress, fieldNumber: 18)
+        try visitor.visitSingularStringField(value: _storage._shopName, fieldNumber: 15)
       }
       if !_storage._shopLogo.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._shopLogo, fieldNumber: 144)
+        try visitor.visitSingularStringField(value: _storage._shopLogo, fieldNumber: 16)
+      }
+      if !_storage._currency.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._currency, fieldNumber: 17)
+      }
+      if !_storage._contactName.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._contactName, fieldNumber: 18)
+      }
+      if !_storage._buyerName.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._buyerName, fieldNumber: 19)
+      }
+      if !_storage._deliverAddress.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._deliverAddress, fieldNumber: 20)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -1715,6 +1728,7 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
         let rhs_storage = _args.1
         if _storage._orderID != rhs_storage._orderID {return false}
         if _storage._orderStatus != rhs_storage._orderStatus {return false}
+        if _storage._orderCancelledReason != rhs_storage._orderCancelledReason {return false}
         if _storage._createdAt != rhs_storage._createdAt {return false}
         if _storage._orderType != rhs_storage._orderType {return false}
         if _storage._payType != rhs_storage._payType {return false}
