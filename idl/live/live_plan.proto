@@ -178,6 +178,7 @@ message LiveProductStatus {
   int64 product_sold_amount =14; // 商品售出数量
   double product_deal_amount =15; // 商品成交金额
   string activity_status =16; // 商品活动状态
+  double product_reference_price =17; // 商品参考价
 }
 
 message ListLiveProductStatusRequest {
