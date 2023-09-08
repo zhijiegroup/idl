@@ -29,6 +29,48 @@ public interface ListActivityRequestOrBuilder extends
   long getShopId();
 
   /**
+   * <code>string title = 3;</code>
+   * @return The title.
+   */
+  java.lang.String getTitle();
+  /**
+   * <code>string title = 3;</code>
+   * @return The bytes for title.
+   */
+  com.google.protobuf.ByteString
+      getTitleBytes();
+
+  /**
+   * <code>string status = 4;</code>
+   * @return The status.
+   */
+  java.lang.String getStatus();
+  /**
+   * <code>string status = 4;</code>
+   * @return The bytes for status.
+   */
+  com.google.protobuf.ByteString
+      getStatusBytes();
+
+  /**
+   * <code>string preferential_type = 5;</code>
+   * @return The preferentialType.
+   */
+  java.lang.String getPreferentialType();
+  /**
+   * <code>string preferential_type = 5;</code>
+   * @return The bytes for preferentialType.
+   */
+  com.google.protobuf.ByteString
+      getPreferentialTypeBytes();
+
+  /**
+   * <code>int64 product_id = 6;</code>
+   * @return The productId.
+   */
+  long getProductId();
+
+  /**
    * <code>.base.PaginationRequest pagination = 100;</code>
    * @return Whether the pagination field is set.
    */

@@ -38,6 +38,10 @@ export interface CreateActivityResponse {
 export interface ListActivityRequest {
   base_request?: base.BaseRequest;
   shop_id?: string;
+  title?: string;
+  status?: string;
+  preferential_type?: string;
+  product_id?: string;
   pagination?: base.PaginationRequest;
 }
 

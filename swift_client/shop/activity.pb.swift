@@ -121,6 +121,14 @@ struct GloryApi_ListActivityRequest {
 
   var shopID: Int64 = 0
 
+  var title: String = String()
+
+  var status: String = String()
+
+  var preferentialType: String = String()
+
+  var productID: Int64 = 0
+
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
@@ -618,6 +626,10 @@ extension GloryApi_ListActivityRequest: SwiftProtobuf.Message, SwiftProtobuf._Me
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
     2: .standard(proto: "shop_id"),
+    3: .same(proto: "title"),
+    4: .same(proto: "status"),
+    5: .standard(proto: "preferential_type"),
+    6: .standard(proto: "product_id"),
     100: .same(proto: "pagination"),
   ]
 
@@ -629,6 +641,10 @@ extension GloryApi_ListActivityRequest: SwiftProtobuf.Message, SwiftProtobuf._Me
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.title) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.status) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.preferentialType) }()
+      case 6: try { try decoder.decodeSingularInt64Field(value: &self.productID) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -646,6 +662,18 @@ extension GloryApi_ListActivityRequest: SwiftProtobuf.Message, SwiftProtobuf._Me
     if self.shopID != 0 {
       try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 2)
     }
+    if !self.title.isEmpty {
+      try visitor.visitSingularStringField(value: self.title, fieldNumber: 3)
+    }
+    if !self.status.isEmpty {
+      try visitor.visitSingularStringField(value: self.status, fieldNumber: 4)
+    }
+    if !self.preferentialType.isEmpty {
+      try visitor.visitSingularStringField(value: self.preferentialType, fieldNumber: 5)
+    }
+    if self.productID != 0 {
+      try visitor.visitSingularInt64Field(value: self.productID, fieldNumber: 6)
+    }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
     } }()
@@ -655,6 +683,10 @@ extension GloryApi_ListActivityRequest: SwiftProtobuf.Message, SwiftProtobuf._Me
   static func ==(lhs: GloryApi_ListActivityRequest, rhs: GloryApi_ListActivityRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.shopID != rhs.shopID {return false}
+    if lhs.title != rhs.title {return false}
+    if lhs.status != rhs.status {return false}
+    if lhs.preferentialType != rhs.preferentialType {return false}
+    if lhs.productID != rhs.productID {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

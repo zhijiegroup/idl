@@ -16,6 +16,9 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListActivityRequest() {
+    title = "";
+    status = "";
+    preferentialType = "";
   }
 
   @java.lang.Override
@@ -64,6 +67,29 @@ private static final long serialVersionUID = 0L;
           case 16: {
 
             shopId = input.readInt64();
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            title = s;
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            status = s;
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            preferentialType = s;
+            break;
+          }
+          case 48: {
+
+            productId = input.readInt64();
             break;
           }
           case 802: {
@@ -148,6 +174,131 @@ private static final long serialVersionUID = 0L;
     return shopId ;
   }
 
+  public static final int TITLE_FIELD_NUMBER = 3;
+  private volatile java.lang.Object title ;
+  /**
+   * <code>string title = 3;</code>
+   * @return The title.
+   */
+  @java.lang.Override
+  public java.lang.String getTitle() {
+    java.lang.Object ref = title ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      title = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string title = 3;</code>
+   * @return The bytes for title.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTitleBytes() {
+    java.lang.Object ref = title ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      title = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int STATUS_FIELD_NUMBER = 4;
+  private volatile java.lang.Object status ;
+  /**
+   * <code>string status = 4;</code>
+   * @return The status.
+   */
+  @java.lang.Override
+  public java.lang.String getStatus() {
+    java.lang.Object ref = status ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      status = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string status = 4;</code>
+   * @return The bytes for status.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getStatusBytes() {
+    java.lang.Object ref = status ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      status = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PREFERENTIAL_TYPE_FIELD_NUMBER = 5;
+  private volatile java.lang.Object preferentialType ;
+  /**
+   * <code>string preferential_type = 5;</code>
+   * @return The preferentialType.
+   */
+  @java.lang.Override
+  public java.lang.String getPreferentialType() {
+    java.lang.Object ref = preferentialType ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      preferentialType = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string preferential_type = 5;</code>
+   * @return The bytes for preferentialType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPreferentialTypeBytes() {
+    java.lang.Object ref = preferentialType ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      preferentialType = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PRODUCT_ID_FIELD_NUMBER = 6;
+  private long productId ;
+  /**
+   * <code>int64 product_id = 6;</code>
+   * @return The productId.
+   */
+  @java.lang.Override
+  public long getProductId() {
+    return productId ;
+  }
+
   public static final int PAGINATION_FIELD_NUMBER = 100;
   private com.zhijiejiaoyu.base.PaginationRequest pagination ;
   /**
@@ -194,6 +345,18 @@ private static final long serialVersionUID = 0L;
     if (shopId != 0L) {
       output.writeInt64(2, shopId );
     }
+    if (!getTitleBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, title );
+    }
+    if (!getStatusBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, status );
+    }
+    if (!getPreferentialTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, preferentialType );
+    }
+    if (productId != 0L) {
+      output.writeInt64(6, productId );
+    }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
     }
@@ -213,6 +376,19 @@ private static final long serialVersionUID = 0L;
     if (shopId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, shopId );
+    }
+    if (!getTitleBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, title );
+    }
+    if (!getStatusBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, status );
+    }
+    if (!getPreferentialTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, preferentialType );
+    }
+    if (productId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(6, productId );
     }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -240,6 +416,14 @@ private static final long serialVersionUID = 0L;
     }
     if (getShopId()
         != other.getShopId()) return false;
+    if (!getTitle()
+        .equals(other.getTitle())) return false;
+    if (!getStatus()
+        .equals(other.getStatus())) return false;
+    if (!getPreferentialType()
+        .equals(other.getPreferentialType())) return false;
+    if (getProductId()
+        != other.getProductId()) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -263,6 +447,15 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + SHOP_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getShopId());
+    hash = (37 * hash) + TITLE_FIELD_NUMBER;
+    hash = (53 * hash) + getTitle().hashCode();
+    hash = (37 * hash) + STATUS_FIELD_NUMBER;
+    hash = (53 * hash) + getStatus().hashCode();
+    hash = (37 * hash) + PREFERENTIAL_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getPreferentialType().hashCode();
+    hash = (37 * hash) + PRODUCT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getProductId());
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
@@ -408,6 +601,14 @@ private static final long serialVersionUID = 0L;
       }
       shopId = 0L;
 
+      title = "";
+
+      status = "";
+
+      preferentialType = "";
+
+      productId = 0L;
+
       if (paginationBuilder == null) {
         pagination = null;
       } else {
@@ -446,6 +647,10 @@ private static final long serialVersionUID = 0L;
         result.baseRequest = baseRequestBuilder .build();
       }
       result.shopId = shopId ;
+      result.title = title ;
+      result.status = status ;
+      result.preferentialType = preferentialType ;
+      result.productId = productId ;
       if (paginationBuilder == null) {
         result.pagination = pagination ;
       } else {
@@ -504,6 +709,21 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getShopId() != 0L) {
         setShopId(other.getShopId());
+      }
+      if (!other.getTitle().isEmpty()) {
+        title = other.title ;
+        onChanged();
+      }
+      if (!other.getStatus().isEmpty()) {
+        status = other.status ;
+        onChanged();
+      }
+      if (!other.getPreferentialType().isEmpty()) {
+        preferentialType = other.preferentialType ;
+        onChanged();
+      }
+      if (other.getProductId() != 0L) {
+        setProductId(other.getProductId());
       }
       if (other.hasPagination()) {
         mergePagination(other.getPagination());
@@ -683,6 +903,265 @@ private static final long serialVersionUID = 0L;
     public Builder clearShopId() {
       
       shopId = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object title = "";
+    /**
+     * <code>string title = 3;</code>
+     * @return The title.
+     */
+    public java.lang.String getTitle() {
+      java.lang.Object ref = title ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        title = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string title = 3;</code>
+     * @return The bytes for title.
+     */
+    public com.google.protobuf.ByteString
+        getTitleBytes() {
+      java.lang.Object ref = title ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        title = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string title = 3;</code>
+     * @param value The title to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTitle(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      title = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string title = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTitle() {
+      
+      title = getDefaultInstance().getTitle();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string title = 3;</code>
+     * @param value The bytes for title to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTitleBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      title = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object status = "";
+    /**
+     * <code>string status = 4;</code>
+     * @return The status.
+     */
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string status = 4;</code>
+     * @return The bytes for status.
+     */
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string status = 4;</code>
+     * @param value The status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatus(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      status = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string status = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStatus() {
+      
+      status = getDefaultInstance().getStatus();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string status = 4;</code>
+     * @param value The bytes for status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      status = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object preferentialType = "";
+    /**
+     * <code>string preferential_type = 5;</code>
+     * @return The preferentialType.
+     */
+    public java.lang.String getPreferentialType() {
+      java.lang.Object ref = preferentialType ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        preferentialType = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string preferential_type = 5;</code>
+     * @return The bytes for preferentialType.
+     */
+    public com.google.protobuf.ByteString
+        getPreferentialTypeBytes() {
+      java.lang.Object ref = preferentialType ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        preferentialType = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string preferential_type = 5;</code>
+     * @param value The preferentialType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPreferentialType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      preferentialType = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string preferential_type = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPreferentialType() {
+      
+      preferentialType = getDefaultInstance().getPreferentialType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string preferential_type = 5;</code>
+     * @param value The bytes for preferentialType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPreferentialTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      preferentialType = value;
+      onChanged();
+      return this;
+    }
+
+    private long productId ;
+    /**
+     * <code>int64 product_id = 6;</code>
+     * @return The productId.
+     */
+    @java.lang.Override
+    public long getProductId() {
+      return productId ;
+    }
+    /**
+     * <code>int64 product_id = 6;</code>
+     * @param value The productId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProductId(long value) {
+      
+      productId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 product_id = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearProductId() {
+      
+      productId = 0L;
       onChanged();
       return this;
     }
