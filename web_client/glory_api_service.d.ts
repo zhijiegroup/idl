@@ -339,6 +339,10 @@ list the permissions that supported */
     request: product.ListProductRequest
   ): Promise<product.ListProductResponse>;
 
+  ListProductByIDs(
+    request: product.ListProductByProductIDsRequest
+  ): Promise<product.ListProductByProductIDsResponse>;
+
   DeleteProduct(
     request: product.DeleteProductRequest
   ): Promise<product.DeleteProductResponse>;

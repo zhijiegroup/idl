@@ -228,6 +228,19 @@ export interface ListProductResponse {
   pagination?: base.PaginationResponse;
 }
 
+export interface ListProductByProductIDsRequest {
+  base_request?: base.BaseRequest;
+  shop_id?: string;
+  product_ids?: Array<string>;
+  pagination?: base.PaginationRequest;
+}
+
+export interface ListProductByProductIDsResponse {
+  base_resp?: base.BaseResponse;
+  product?: Array<Product>;
+  pagination?: base.PaginationResponse;
+}
+
 export interface DeleteProductRequest {
   base_request?: base.BaseRequest;
   product_id?: string;

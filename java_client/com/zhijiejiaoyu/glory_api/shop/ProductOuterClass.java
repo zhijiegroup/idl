@@ -150,6 +150,16 @@ public final class ProductOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_ListProductResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ListProductByProductIDsRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ListProductByProductIDsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ListProductByProductIDsResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ListProductByProductIDsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_glory_api_DeleteProductRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -307,30 +317,38 @@ public final class ProductOuterClass {
       "resp\030\001 \001(\0132\022.base.BaseResponse\0229\n\016produc" +
       "t_detail\030\002 \003(\0132!.glory_api.ProductWithVa" +
       "lueAuthor\022,\n\npagination\030d \001(\0132\030.base.Pag" +
-      "inationResponse\"S\n\024DeleteProductRequest\022" +
-      "\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequest" +
-      "\022\022\n\nproduct_id\030\002 \001(\003\">\n\025DeleteProductRes" +
-      "ponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResp" +
-      "onse\"r\n\027UploadMultiImageRequest\022\'\n\014base_" +
-      "request\030\001 \001(\0132\021.base.BaseRequest\022\022\n\nprod" +
-      "uct_id\030\002 \001(\003\022\032\n\022product_image_type\030\003 \001(\003" +
-      "\"j\n\030UploadMultiImageResponse\022%\n\tbase_res" +
-      "p\030\001 \001(\0132\022.base.BaseResponse\022\'\n\timageInfo" +
-      "\030\002 \003(\0132\024.glory_api.ImageInfo\":\n\tImageInf" +
-      "o\022\023\n\013product_url\030\001 \001(\t\022\030\n\020product_image_" +
-      "id\030\002 \001(\003\"W\n\022DeleteImageRequest\022\'\n\014base_r" +
-      "equest\030\001 \001(\0132\021.base.BaseRequest\022\030\n\020produ" +
-      "ct_image_id\030\002 \001(\003\"<\n\023DeleteImageResponse" +
-      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"" +
-      "P\n\025UploadSkuImageRequest\022\'\n\014base_request" +
-      "\030\001 \001(\0132\021.base.BaseRequest\022\016\n\006sku_id\030\002 \001(" +
-      "\003\"R\n\026UploadSkuImageResponse\022%\n\tbase_resp" +
-      "\030\001 \001(\0132\022.base.BaseResponse\022\021\n\timage_url\030" +
-      "\002 \001(\t*\200\001\n\005State\022\013\n\007DEFAULT\020\000\022\013\n\007created\020" +
-      "\001\022\014\n\010on_shelf\020\002\022\r\n\toff_shelf\020\003\022\020\n\014out_of" +
-      "_stock\020\004\022\013\n\007deleted\020\005\022\023\n\017deleted_forever" +
-      "\020\006\022\014\n\010sold_out\020\007B#\n\037com.zhijiejiaoyu.glo" +
-      "ry_api.shopP\001b\006proto3"
+      "inationResponse\"\234\001\n\036ListProductByProduct" +
+      "IDsRequest\022\'\n\014base_request\030\001 \001(\0132\021.base." +
+      "BaseRequest\022\017\n\007shop_id\030\002 \001(\003\022\023\n\013product_" +
+      "ids\030\003 \003(\003\022+\n\npagination\030d \001(\0132\027.base.Pag" +
+      "inationRequest\"\233\001\n\037ListProductByProductI" +
+      "DsResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
+      "eResponse\022#\n\007product\030\002 \003(\0132\022.glory_api.P" +
+      "roduct\022,\n\npagination\030d \001(\0132\030.base.Pagina" +
+      "tionResponse\"S\n\024DeleteProductRequest\022\'\n\014" +
+      "base_request\030\001 \001(\0132\021.base.BaseRequest\022\022\n" +
+      "\nproduct_id\030\002 \001(\003\">\n\025DeleteProductRespon" +
+      "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
+      "e\"r\n\027UploadMultiImageRequest\022\'\n\014base_req" +
+      "uest\030\001 \001(\0132\021.base.BaseRequest\022\022\n\nproduct" +
+      "_id\030\002 \001(\003\022\032\n\022product_image_type\030\003 \001(\003\"j\n" +
+      "\030UploadMultiImageResponse\022%\n\tbase_resp\030\001" +
+      " \001(\0132\022.base.BaseResponse\022\'\n\timageInfo\030\002 " +
+      "\003(\0132\024.glory_api.ImageInfo\":\n\tImageInfo\022\023" +
+      "\n\013product_url\030\001 \001(\t\022\030\n\020product_image_id\030" +
+      "\002 \001(\003\"W\n\022DeleteImageRequest\022\'\n\014base_requ" +
+      "est\030\001 \001(\0132\021.base.BaseRequest\022\030\n\020product_" +
+      "image_id\030\002 \001(\003\"<\n\023DeleteImageResponse\022%\n" +
+      "\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"P\n\025" +
+      "UploadSkuImageRequest\022\'\n\014base_request\030\001 " +
+      "\001(\0132\021.base.BaseRequest\022\016\n\006sku_id\030\002 \001(\003\"R" +
+      "\n\026UploadSkuImageResponse\022%\n\tbase_resp\030\001 " +
+      "\001(\0132\022.base.BaseResponse\022\021\n\timage_url\030\002 \001" +
+      "(\t*\200\001\n\005State\022\013\n\007DEFAULT\020\000\022\013\n\007created\020\001\022\014" +
+      "\n\010on_shelf\020\002\022\r\n\toff_shelf\020\003\022\020\n\014out_of_st" +
+      "ock\020\004\022\013\n\007deleted\020\005\022\023\n\017deleted_forever\020\006\022" +
+      "\014\n\010sold_out\020\007B#\n\037com.zhijiejiaoyu.glory_" +
+      "api.shopP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -503,56 +521,68 @@ public final class ProductOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListProductResponse_descriptor,
         new java.lang.String[] { "BaseResp", "ProductDetail", "Pagination", });
-    internal_static_glory_api_DeleteProductRequest_descriptor =
+    internal_static_glory_api_ListProductByProductIDsRequest_descriptor =
       getDescriptor().getMessageTypes().get(27);
+    internal_static_glory_api_ListProductByProductIDsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ListProductByProductIDsRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "ShopId", "ProductIds", "Pagination", });
+    internal_static_glory_api_ListProductByProductIDsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(28);
+    internal_static_glory_api_ListProductByProductIDsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ListProductByProductIDsResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "Product", "Pagination", });
+    internal_static_glory_api_DeleteProductRequest_descriptor =
+      getDescriptor().getMessageTypes().get(29);
     internal_static_glory_api_DeleteProductRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteProductRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "ProductId", });
     internal_static_glory_api_DeleteProductResponse_descriptor =
-      getDescriptor().getMessageTypes().get(28);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_glory_api_DeleteProductResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteProductResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_UploadMultiImageRequest_descriptor =
-      getDescriptor().getMessageTypes().get(29);
+      getDescriptor().getMessageTypes().get(31);
     internal_static_glory_api_UploadMultiImageRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UploadMultiImageRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "ProductId", "ProductImageType", });
     internal_static_glory_api_UploadMultiImageResponse_descriptor =
-      getDescriptor().getMessageTypes().get(30);
+      getDescriptor().getMessageTypes().get(32);
     internal_static_glory_api_UploadMultiImageResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UploadMultiImageResponse_descriptor,
         new java.lang.String[] { "BaseResp", "ImageInfo", });
     internal_static_glory_api_ImageInfo_descriptor =
-      getDescriptor().getMessageTypes().get(31);
+      getDescriptor().getMessageTypes().get(33);
     internal_static_glory_api_ImageInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ImageInfo_descriptor,
         new java.lang.String[] { "ProductUrl", "ProductImageId", });
     internal_static_glory_api_DeleteImageRequest_descriptor =
-      getDescriptor().getMessageTypes().get(32);
+      getDescriptor().getMessageTypes().get(34);
     internal_static_glory_api_DeleteImageRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteImageRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "ProductImageId", });
     internal_static_glory_api_DeleteImageResponse_descriptor =
-      getDescriptor().getMessageTypes().get(33);
+      getDescriptor().getMessageTypes().get(35);
     internal_static_glory_api_DeleteImageResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteImageResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_UploadSkuImageRequest_descriptor =
-      getDescriptor().getMessageTypes().get(34);
+      getDescriptor().getMessageTypes().get(36);
     internal_static_glory_api_UploadSkuImageRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UploadSkuImageRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "SkuId", });
     internal_static_glory_api_UploadSkuImageResponse_descriptor =
-      getDescriptor().getMessageTypes().get(35);
+      getDescriptor().getMessageTypes().get(37);
     internal_static_glory_api_UploadSkuImageResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UploadSkuImageResponse_descriptor,

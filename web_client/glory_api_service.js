@@ -590,6 +590,14 @@ export class glory_api {
     );
   }
 
+  ListProductByIDs(request) {
+    const uri = `${this.uriPrefix}/api/shop/list_product_by_ids`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   DeleteProduct(request) {
     const uri = `${this.uriPrefix}/api/shop/delete_product`;
     const body = JSONbigint.stringify(request);
