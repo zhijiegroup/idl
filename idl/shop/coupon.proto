@@ -110,3 +110,11 @@ message DeleteCouponRequest {
 message DeleteCouponResponse {
     base.BaseResponse base_resp = 1;
 }
+
+message ClaimCouponRequest {
+    base.BaseRequest base_request = 1;
+    int64 coupon_id = 2;
+}
+message ClaimCouponResponse {
+    base.BaseResponse base_resp = 1;
+}
