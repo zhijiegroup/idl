@@ -877,6 +877,9 @@ service glory_api {
   rpc UpdateCouponDistributionStatus(UpdateCouponDistributionStatusRequest) returns (UpdateCouponDistributionStatusResponse) {
     option (api.post) = '/api/shop/update_coupon_distribution_status';
   }
+  rpc ClaimCoupon(ClaimCouponRequest) returns (ClaimCouponResponse) {
+    option (api.get) = '/api/shop/user_claim_coupon';
+  }
 
   // activity
   rpc CreateActivity(CreateActivityRequest) returns (CreateActivityResponse) {
