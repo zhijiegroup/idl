@@ -140,4 +140,60 @@ public interface LiveRoomIndexInfoOrBuilder extends
    */
   com.google.protobuf.ByteString
       getRoomImageUrlBytes();
+
+  /**
+   * <pre>
+   *直播的标题
+   * </pre>
+   *
+   * <code>string room_title = 13;</code>
+   * @return The roomTitle.
+   */
+  java.lang.String getRoomTitle();
+  /**
+   * <pre>
+   *直播的标题
+   * </pre>
+   *
+   * <code>string room_title = 13;</code>
+   * @return The bytes for roomTitle.
+   */
+  com.google.protobuf.ByteString
+      getRoomTitleBytes();
+
+  /**
+   * <code>string user_name = 14;</code>
+   * @return The userName.
+   */
+  java.lang.String getUserName();
+  /**
+   * <code>string user_name = 14;</code>
+   * @return The bytes for userName.
+   */
+  com.google.protobuf.ByteString
+      getUserNameBytes();
+
+  /**
+   * <code>string shop_name = 15;</code>
+   * @return The shopName.
+   */
+  java.lang.String getShopName();
+  /**
+   * <code>string shop_name = 15;</code>
+   * @return The bytes for shopName.
+   */
+  com.google.protobuf.ByteString
+      getShopNameBytes();
+
+  /**
+   * <code>string shop_logo_url = 16;</code>
+   * @return The shopLogoUrl.
+   */
+  java.lang.String getShopLogoUrl();
+  /**
+   * <code>string shop_logo_url = 16;</code>
+   * @return The bytes for shopLogoUrl.
+   */
+  com.google.protobuf.ByteString
+      getShopLogoUrlBytes();
 }

@@ -40,6 +40,11 @@ export interface LiveRoomIndexInfo {
   status?: string;
   /** 直播的封面的url */
   room_image_url?: string;
+  /** 直播的标题 */
+  room_title?: string;
+  user_name?: string;
+  shop_name?: string;
+  shop_logo_url?: string;
 }
 
 export interface MallIndexRequest {
