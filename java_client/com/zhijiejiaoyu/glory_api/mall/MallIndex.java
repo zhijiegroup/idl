@@ -56,22 +56,22 @@ public final class MallIndex {
       "\022\024\n\014product_name\030\003 \001(\t\022\023\n\013category_id\030\004 " +
       "\001(\003\022 \n\006images\030\005 \003(\0132\020.glory_api.Image\022\022\n" +
       "\nsale_price\030\006 \001(\002\022\027\n\017reference_price\030\007 \001" +
-      "(\002\022\017\n\007is_real\030\010 \001(\010\"\332\001\n\021LiveRoomIndexInf" +
+      "(\002\022\017\n\007is_real\030\010 \001(\010\"\362\001\n\021LiveRoomIndexInf" +
       "o\022\017\n\007room_id\030\001 \001(\003\022\017\n\007user_id\030\002 \001(\003\022\020\n\010g" +
       "roup_id\030\003 \001(\t\022\020\n\010app_name\030\004 \001(\t\022\023\n\013strea" +
       "m_name\030\005 \001(\t\022\016\n\006up_url\030\006 \001(\t\022\020\n\010play_url" +
       "\030\007 \001(\t\022\022\n\nstart_time\030\010 \001(\t\022\022\n\nlike_count" +
       "\030\t \001(\003\022\020\n\010end_time\030\n \001(\t\022\016\n\006status\030\013 \001(\t" +
-      "\"h\n\020MallIndexRequest\022\'\n\014base_request\030\001 \001" +
-      "(\0132\021.base.BaseRequest\022+\n\npagination\030\002 \001(" +
-      "\0132\027.base.PaginationRequest\"\322\001\n\021MallIndex" +
-      "Response\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseR" +
-      "esponse\0224\n\016live_room_info\030\002 \003(\0132\034.glory_" +
-      "api.LiveRoomIndexInfo\0222\n\rproducts_info\030\003" +
-      " \003(\0132\033.glory_api.ProductIndexInfo\022,\n\npag" +
-      "ination\030d \001(\0132\030.base.PaginationResponseB" +
-      "#\n\037com.zhijiejiaoyu.glory_api.mallP\001b\006pr" +
-      "oto3"
+      "\022\026\n\016room_image_url\030\014 \001(\t\"h\n\020MallIndexReq" +
+      "uest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRe" +
+      "quest\022+\n\npagination\030\002 \001(\0132\027.base.Paginat" +
+      "ionRequest\"\322\001\n\021MallIndexResponse\022%\n\tbase" +
+      "_resp\030\001 \001(\0132\022.base.BaseResponse\0224\n\016live_" +
+      "room_info\030\002 \003(\0132\034.glory_api.LiveRoomInde" +
+      "xInfo\0222\n\rproducts_info\030\003 \003(\0132\033.glory_api" +
+      ".ProductIndexInfo\022,\n\npagination\030d \001(\0132\030." +
+      "base.PaginationResponseB#\n\037com.zhijiejia" +
+      "oyu.glory_api.mallP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -96,7 +96,7 @@ public final class MallIndex {
     internal_static_glory_api_LiveRoomIndexInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_LiveRoomIndexInfo_descriptor,
-        new java.lang.String[] { "RoomId", "UserId", "GroupId", "AppName", "StreamName", "UpUrl", "PlayUrl", "StartTime", "LikeCount", "EndTime", "Status", });
+        new java.lang.String[] { "RoomId", "UserId", "GroupId", "AppName", "StreamName", "UpUrl", "PlayUrl", "StartTime", "LikeCount", "EndTime", "Status", "RoomImageUrl", });
     internal_static_glory_api_MallIndexRequest_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_glory_api_MallIndexRequest_fieldAccessorTable = new

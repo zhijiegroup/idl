@@ -7145,6 +7145,130 @@ public final class glory_apiGrpc {
     return getDisableActivityMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.CreateCourseMaterialBoxRequest,
+      com.zhijiejiaoyu.glory_api.course.CreateCourseMaterialBoxResponse> getCreateCourseMaterialBoxMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateCourseMaterialBox",
+      requestType = com.zhijiejiaoyu.glory_api.course.CreateCourseMaterialBoxRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.CreateCourseMaterialBoxResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.CreateCourseMaterialBoxRequest,
+      com.zhijiejiaoyu.glory_api.course.CreateCourseMaterialBoxResponse> getCreateCourseMaterialBoxMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.CreateCourseMaterialBoxRequest, com.zhijiejiaoyu.glory_api.course.CreateCourseMaterialBoxResponse> getCreateCourseMaterialBoxMethod;
+    if ((getCreateCourseMaterialBoxMethod = glory_apiGrpc.getCreateCourseMaterialBoxMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCreateCourseMaterialBoxMethod = glory_apiGrpc.getCreateCourseMaterialBoxMethod) == null) {
+          glory_apiGrpc.getCreateCourseMaterialBoxMethod = getCreateCourseMaterialBoxMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.CreateCourseMaterialBoxRequest, com.zhijiejiaoyu.glory_api.course.CreateCourseMaterialBoxResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateCourseMaterialBox"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.CreateCourseMaterialBoxRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.CreateCourseMaterialBoxResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CreateCourseMaterialBox"))
+              .build();
+        }
+      }
+    }
+    return getCreateCourseMaterialBoxMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.ListCourseMaterialBoxRequest,
+      com.zhijiejiaoyu.glory_api.course.ListCourseMaterialBoxResponse> getListCourseMaterialBoxMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListCourseMaterialBox",
+      requestType = com.zhijiejiaoyu.glory_api.course.ListCourseMaterialBoxRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.ListCourseMaterialBoxResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.ListCourseMaterialBoxRequest,
+      com.zhijiejiaoyu.glory_api.course.ListCourseMaterialBoxResponse> getListCourseMaterialBoxMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.ListCourseMaterialBoxRequest, com.zhijiejiaoyu.glory_api.course.ListCourseMaterialBoxResponse> getListCourseMaterialBoxMethod;
+    if ((getListCourseMaterialBoxMethod = glory_apiGrpc.getListCourseMaterialBoxMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListCourseMaterialBoxMethod = glory_apiGrpc.getListCourseMaterialBoxMethod) == null) {
+          glory_apiGrpc.getListCourseMaterialBoxMethod = getListCourseMaterialBoxMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.ListCourseMaterialBoxRequest, com.zhijiejiaoyu.glory_api.course.ListCourseMaterialBoxResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListCourseMaterialBox"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.ListCourseMaterialBoxRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.ListCourseMaterialBoxResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListCourseMaterialBox"))
+              .build();
+        }
+      }
+    }
+    return getListCourseMaterialBoxMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.UploadCourseMaterialRequest,
+      com.zhijiejiaoyu.glory_api.course.UploadCourseMaterialResponse> getUploadCourseMaterialMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UploadCourseMaterial",
+      requestType = com.zhijiejiaoyu.glory_api.course.UploadCourseMaterialRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.UploadCourseMaterialResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.UploadCourseMaterialRequest,
+      com.zhijiejiaoyu.glory_api.course.UploadCourseMaterialResponse> getUploadCourseMaterialMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.UploadCourseMaterialRequest, com.zhijiejiaoyu.glory_api.course.UploadCourseMaterialResponse> getUploadCourseMaterialMethod;
+    if ((getUploadCourseMaterialMethod = glory_apiGrpc.getUploadCourseMaterialMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getUploadCourseMaterialMethod = glory_apiGrpc.getUploadCourseMaterialMethod) == null) {
+          glory_apiGrpc.getUploadCourseMaterialMethod = getUploadCourseMaterialMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.UploadCourseMaterialRequest, com.zhijiejiaoyu.glory_api.course.UploadCourseMaterialResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UploadCourseMaterial"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.UploadCourseMaterialRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.UploadCourseMaterialResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("UploadCourseMaterial"))
+              .build();
+        }
+      }
+    }
+    return getUploadCourseMaterialMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.ListCourseMaterialRequest,
+      com.zhijiejiaoyu.glory_api.course.ListCourseMaterialResponse> getListCourseMaterialMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListCourseMaterial",
+      requestType = com.zhijiejiaoyu.glory_api.course.ListCourseMaterialRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.ListCourseMaterialResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.ListCourseMaterialRequest,
+      com.zhijiejiaoyu.glory_api.course.ListCourseMaterialResponse> getListCourseMaterialMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.ListCourseMaterialRequest, com.zhijiejiaoyu.glory_api.course.ListCourseMaterialResponse> getListCourseMaterialMethod;
+    if ((getListCourseMaterialMethod = glory_apiGrpc.getListCourseMaterialMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListCourseMaterialMethod = glory_apiGrpc.getListCourseMaterialMethod) == null) {
+          glory_apiGrpc.getListCourseMaterialMethod = getListCourseMaterialMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.ListCourseMaterialRequest, com.zhijiejiaoyu.glory_api.course.ListCourseMaterialResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListCourseMaterial"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.ListCourseMaterialRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.ListCourseMaterialResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListCourseMaterial"))
+              .build();
+        }
+      }
+    }
+    return getListCourseMaterialMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -8984,6 +9108,47 @@ public final class glory_apiGrpc {
     default void disableActivity(com.zhijiejiaoyu.glory_api.shop.DisableActivityRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.shop.DisableActivityResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDisableActivityMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 素材库
+     * 创建画板
+     * </pre>
+     */
+    default void createCourseMaterialBox(com.zhijiejiaoyu.glory_api.course.CreateCourseMaterialBoxRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.CreateCourseMaterialBoxResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateCourseMaterialBoxMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 画板列表
+     * </pre>
+     */
+    default void listCourseMaterialBox(com.zhijiejiaoyu.glory_api.course.ListCourseMaterialBoxRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListCourseMaterialBoxResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListCourseMaterialBoxMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 上传素材
+     * </pre>
+     */
+    default void uploadCourseMaterial(com.zhijiejiaoyu.glory_api.course.UploadCourseMaterialRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.UploadCourseMaterialResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUploadCourseMaterialMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 素材列表
+     * </pre>
+     */
+    default void listCourseMaterial(com.zhijiejiaoyu.glory_api.course.ListCourseMaterialRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListCourseMaterialResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListCourseMaterialMethod(), responseObserver);
     }
   }
 
@@ -11036,6 +11201,51 @@ public final class glory_apiGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDisableActivityMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * 素材库
+     * 创建画板
+     * </pre>
+     */
+    public void createCourseMaterialBox(com.zhijiejiaoyu.glory_api.course.CreateCourseMaterialBoxRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.CreateCourseMaterialBoxResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateCourseMaterialBoxMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 画板列表
+     * </pre>
+     */
+    public void listCourseMaterialBox(com.zhijiejiaoyu.glory_api.course.ListCourseMaterialBoxRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListCourseMaterialBoxResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListCourseMaterialBoxMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 上传素材
+     * </pre>
+     */
+    public void uploadCourseMaterial(com.zhijiejiaoyu.glory_api.course.UploadCourseMaterialRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.UploadCourseMaterialResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUploadCourseMaterialMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 素材列表
+     * </pre>
+     */
+    public void listCourseMaterial(com.zhijiejiaoyu.glory_api.course.ListCourseMaterialRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListCourseMaterialResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListCourseMaterialMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -12845,6 +13055,47 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.shop.DisableActivityResponse disableActivity(com.zhijiejiaoyu.glory_api.shop.DisableActivityRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDisableActivityMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 素材库
+     * 创建画板
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CreateCourseMaterialBoxResponse createCourseMaterialBox(com.zhijiejiaoyu.glory_api.course.CreateCourseMaterialBoxRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCourseMaterialBoxMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 画板列表
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.course.ListCourseMaterialBoxResponse listCourseMaterialBox(com.zhijiejiaoyu.glory_api.course.ListCourseMaterialBoxRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCourseMaterialBoxMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 上传素材
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.course.UploadCourseMaterialResponse uploadCourseMaterial(com.zhijiejiaoyu.glory_api.course.UploadCourseMaterialRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUploadCourseMaterialMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 素材列表
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.course.ListCourseMaterialResponse listCourseMaterial(com.zhijiejiaoyu.glory_api.course.ListCourseMaterialRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCourseMaterialMethod(), getCallOptions(), request);
     }
   }
 
@@ -14886,6 +15137,51 @@ public final class glory_apiGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDisableActivityMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * 素材库
+     * 创建画板
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.CreateCourseMaterialBoxResponse> createCourseMaterialBox(
+        com.zhijiejiaoyu.glory_api.course.CreateCourseMaterialBoxRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateCourseMaterialBoxMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 画板列表
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.ListCourseMaterialBoxResponse> listCourseMaterialBox(
+        com.zhijiejiaoyu.glory_api.course.ListCourseMaterialBoxRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListCourseMaterialBoxMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 上传素材
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.UploadCourseMaterialResponse> uploadCourseMaterial(
+        com.zhijiejiaoyu.glory_api.course.UploadCourseMaterialRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUploadCourseMaterialMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 素材列表
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.ListCourseMaterialResponse> listCourseMaterial(
+        com.zhijiejiaoyu.glory_api.course.ListCourseMaterialRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListCourseMaterialMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_EXAMPLE = 0;
@@ -15118,6 +15414,10 @@ public final class glory_apiGrpc {
   private static final int METHODID_UPDATE_ACTIVITY = 227;
   private static final int METHODID_DELETE_ACTIVITY = 228;
   private static final int METHODID_DISABLE_ACTIVITY = 229;
+  private static final int METHODID_CREATE_COURSE_MATERIAL_BOX = 230;
+  private static final int METHODID_LIST_COURSE_MATERIAL_BOX = 231;
+  private static final int METHODID_UPLOAD_COURSE_MATERIAL = 232;
+  private static final int METHODID_LIST_COURSE_MATERIAL = 233;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -16055,6 +16355,22 @@ public final class glory_apiGrpc {
         case METHODID_DISABLE_ACTIVITY:
           serviceImpl.disableActivity((com.zhijiejiaoyu.glory_api.shop.DisableActivityRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.shop.DisableActivityResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_COURSE_MATERIAL_BOX:
+          serviceImpl.createCourseMaterialBox((com.zhijiejiaoyu.glory_api.course.CreateCourseMaterialBoxRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.CreateCourseMaterialBoxResponse>) responseObserver);
+          break;
+        case METHODID_LIST_COURSE_MATERIAL_BOX:
+          serviceImpl.listCourseMaterialBox((com.zhijiejiaoyu.glory_api.course.ListCourseMaterialBoxRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListCourseMaterialBoxResponse>) responseObserver);
+          break;
+        case METHODID_UPLOAD_COURSE_MATERIAL:
+          serviceImpl.uploadCourseMaterial((com.zhijiejiaoyu.glory_api.course.UploadCourseMaterialRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.UploadCourseMaterialResponse>) responseObserver);
+          break;
+        case METHODID_LIST_COURSE_MATERIAL:
+          serviceImpl.listCourseMaterial((com.zhijiejiaoyu.glory_api.course.ListCourseMaterialRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListCourseMaterialResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -17684,6 +18000,34 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.shop.DisableActivityRequest,
               com.zhijiejiaoyu.glory_api.shop.DisableActivityResponse>(
                 service, METHODID_DISABLE_ACTIVITY)))
+        .addMethod(
+          getCreateCourseMaterialBoxMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.CreateCourseMaterialBoxRequest,
+              com.zhijiejiaoyu.glory_api.course.CreateCourseMaterialBoxResponse>(
+                service, METHODID_CREATE_COURSE_MATERIAL_BOX)))
+        .addMethod(
+          getListCourseMaterialBoxMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.ListCourseMaterialBoxRequest,
+              com.zhijiejiaoyu.glory_api.course.ListCourseMaterialBoxResponse>(
+                service, METHODID_LIST_COURSE_MATERIAL_BOX)))
+        .addMethod(
+          getUploadCourseMaterialMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.UploadCourseMaterialRequest,
+              com.zhijiejiaoyu.glory_api.course.UploadCourseMaterialResponse>(
+                service, METHODID_UPLOAD_COURSE_MATERIAL)))
+        .addMethod(
+          getListCourseMaterialMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.ListCourseMaterialRequest,
+              com.zhijiejiaoyu.glory_api.course.ListCourseMaterialResponse>(
+                service, METHODID_LIST_COURSE_MATERIAL)))
         .build();
   }
 
@@ -17962,6 +18306,10 @@ public final class glory_apiGrpc {
               .addMethod(getUpdateActivityMethod())
               .addMethod(getDeleteActivityMethod())
               .addMethod(getDisableActivityMethod())
+              .addMethod(getCreateCourseMaterialBoxMethod())
+              .addMethod(getListCourseMaterialBoxMethod())
+              .addMethod(getUploadCourseMaterialMethod())
+              .addMethod(getListCourseMaterialMethod())
               .build();
         }
       }

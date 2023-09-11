@@ -38,6 +38,8 @@ export interface LiveRoomIndexInfo {
   like_count?: string;
   end_time?: string;
   status?: string;
+  /** 直播的封面的url */
+  room_image_url?: string;
 }
 
 export interface MallIndexRequest {

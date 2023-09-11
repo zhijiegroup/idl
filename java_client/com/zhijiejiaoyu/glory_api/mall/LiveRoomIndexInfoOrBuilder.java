@@ -120,4 +120,24 @@ public interface LiveRoomIndexInfoOrBuilder extends
    */
   com.google.protobuf.ByteString
       getStatusBytes();
+
+  /**
+   * <pre>
+   *直播的封面的url
+   * </pre>
+   *
+   * <code>string room_image_url = 12;</code>
+   * @return The roomImageUrl.
+   */
+  java.lang.String getRoomImageUrl();
+  /**
+   * <pre>
+   *直播的封面的url
+   * </pre>
+   *
+   * <code>string room_image_url = 12;</code>
+   * @return The bytes for roomImageUrl.
+   */
+  com.google.protobuf.ByteString
+      getRoomImageUrlBytes();
 }

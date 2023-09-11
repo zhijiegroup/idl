@@ -24,6 +24,7 @@ private static final long serialVersionUID = 0L;
     startTime = "";
     endTime = "";
     status = "";
+    roomImageUrl = "";
   }
 
   @java.lang.Override
@@ -117,6 +118,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             status = s;
+            break;
+          }
+          case 98: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            roomImageUrl = s;
             break;
           }
           default: {
@@ -488,6 +495,52 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int ROOM_IMAGE_URL_FIELD_NUMBER = 12;
+  private volatile java.lang.Object roomImageUrl ;
+  /**
+   * <pre>
+   *直播的封面的url
+   * </pre>
+   *
+   * <code>string room_image_url = 12;</code>
+   * @return The roomImageUrl.
+   */
+  @java.lang.Override
+  public java.lang.String getRoomImageUrl() {
+    java.lang.Object ref = roomImageUrl ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      roomImageUrl = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   *直播的封面的url
+   * </pre>
+   *
+   * <code>string room_image_url = 12;</code>
+   * @return The bytes for roomImageUrl.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getRoomImageUrlBytes() {
+    java.lang.Object ref = roomImageUrl ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      roomImageUrl = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -535,6 +588,9 @@ private static final long serialVersionUID = 0L;
     if (!getStatusBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, status );
     }
+    if (!getRoomImageUrlBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, roomImageUrl );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -580,6 +636,9 @@ private static final long serialVersionUID = 0L;
     if (!getStatusBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, status );
     }
+    if (!getRoomImageUrlBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, roomImageUrl );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -617,6 +676,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getEndTime())) return false;
     if (!getStatus()
         .equals(other.getStatus())) return false;
+    if (!getRoomImageUrl()
+        .equals(other.getRoomImageUrl())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -653,6 +714,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getEndTime().hashCode();
     hash = (37 * hash) + STATUS_FIELD_NUMBER;
     hash = (53 * hash) + getStatus().hashCode();
+    hash = (37 * hash) + ROOM_IMAGE_URL_FIELD_NUMBER;
+    hash = (53 * hash) + getRoomImageUrl().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -808,6 +871,8 @@ private static final long serialVersionUID = 0L;
 
       status = "";
 
+      roomImageUrl = "";
+
       return this;
     }
 
@@ -845,6 +910,7 @@ private static final long serialVersionUID = 0L;
       result.likeCount = likeCount ;
       result.endTime = endTime ;
       result.status = status ;
+      result.roomImageUrl = roomImageUrl ;
       onBuilt();
       return result;
     }
@@ -932,6 +998,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getStatus().isEmpty()) {
         status = other.status ;
+        onChanged();
+      }
+      if (!other.getRoomImageUrl().isEmpty()) {
+        roomImageUrl = other.roomImageUrl ;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1660,6 +1730,102 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       status = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object roomImageUrl = "";
+    /**
+     * <pre>
+     *直播的封面的url
+     * </pre>
+     *
+     * <code>string room_image_url = 12;</code>
+     * @return The roomImageUrl.
+     */
+    public java.lang.String getRoomImageUrl() {
+      java.lang.Object ref = roomImageUrl ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        roomImageUrl = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     *直播的封面的url
+     * </pre>
+     *
+     * <code>string room_image_url = 12;</code>
+     * @return The bytes for roomImageUrl.
+     */
+    public com.google.protobuf.ByteString
+        getRoomImageUrlBytes() {
+      java.lang.Object ref = roomImageUrl ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        roomImageUrl = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     *直播的封面的url
+     * </pre>
+     *
+     * <code>string room_image_url = 12;</code>
+     * @param value The roomImageUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRoomImageUrl(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      roomImageUrl = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *直播的封面的url
+     * </pre>
+     *
+     * <code>string room_image_url = 12;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRoomImageUrl() {
+      
+      roomImageUrl = getDefaultInstance().getRoomImageUrl();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *直播的封面的url
+     * </pre>
+     *
+     * <code>string room_image_url = 12;</code>
+     * @param value The bytes for roomImageUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRoomImageUrlBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      roomImageUrl = value;
       onChanged();
       return this;
     }
