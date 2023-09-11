@@ -168,6 +168,11 @@ private static final long serialVersionUID = 0L;
             transId = input.readInt64();
             break;
           }
+          case 176: {
+
+            couponId = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -665,6 +670,21 @@ private static final long serialVersionUID = 0L;
     return transId ;
   }
 
+  public static final int COUPON_ID_FIELD_NUMBER = 22;
+  private long couponId ;
+  /**
+   * <pre>
+   * 订单使用优惠券ID
+   * </pre>
+   *
+   * <code>int64 coupon_id = 22;</code>
+   * @return The couponId.
+   */
+  @java.lang.Override
+  public long getCouponId() {
+    return couponId ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -738,6 +758,9 @@ private static final long serialVersionUID = 0L;
     }
     if (transId != 0L) {
       output.writeInt64(21, transId );
+    }
+    if (couponId != 0L) {
+      output.writeInt64(22, couponId );
     }
     unknownFields.writeTo(output);
   }
@@ -821,6 +844,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(21, transId );
     }
+    if (couponId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(22, couponId );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -880,6 +907,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getChannel())) return false;
     if (getTransId()
         != other.getTransId()) return false;
+    if (getCouponId()
+        != other.getCouponId()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -944,6 +973,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + TRANS_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getTransId());
+    hash = (37 * hash) + COUPON_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getCouponId());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1122,6 +1154,8 @@ private static final long serialVersionUID = 0L;
 
       transId = 0L;
 
+      couponId = 0L;
+
       return this;
     }
 
@@ -1177,6 +1211,7 @@ private static final long serialVersionUID = 0L;
       result.roomId = roomId ;
       result.channel = channel ;
       result.transId = transId ;
+      result.couponId = couponId ;
       onBuilt();
       return result;
     }
@@ -1314,6 +1349,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getTransId() != 0L) {
         setTransId(other.getTransId());
+      }
+      if (other.getCouponId() != 0L) {
+        setCouponId(other.getCouponId());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2549,6 +2587,49 @@ private static final long serialVersionUID = 0L;
     public Builder clearTransId() {
       
       transId = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long couponId ;
+    /**
+     * <pre>
+     * 订单使用优惠券ID
+     * </pre>
+     *
+     * <code>int64 coupon_id = 22;</code>
+     * @return The couponId.
+     */
+    @java.lang.Override
+    public long getCouponId() {
+      return couponId ;
+    }
+    /**
+     * <pre>
+     * 订单使用优惠券ID
+     * </pre>
+     *
+     * <code>int64 coupon_id = 22;</code>
+     * @param value The couponId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCouponId(long value) {
+      
+      couponId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 订单使用优惠券ID
+     * </pre>
+     *
+     * <code>int64 coupon_id = 22;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCouponId() {
+      
+      couponId = 0L;
       onChanged();
       return this;
     }

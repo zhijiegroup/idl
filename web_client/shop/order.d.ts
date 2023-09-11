@@ -4,7 +4,8 @@
 
 import * as base from "../base";
 import * as sku from "./sku";
-export { base, sku };
+import * as coupon from "./coupon";
+export { base, sku, coupon };
 
 export interface Order {
   order_id?: string;
@@ -55,6 +56,8 @@ export interface CreateOrderInfo {
   channel?: string;
   /** 流水id,下单时候 货币订单、虚拟币订单,分别进行合并,合并后称之为 trans_id(流水id) */
   trans_id?: string;
+  /** 订单使用优惠券ID */
+  coupon_id?: string;
 }
 
 export interface SkuInfo {
@@ -114,6 +117,8 @@ export interface OrderInfo {
   buyer_name?: string;
   /** 收获地址 */
   deliver_address?: string;
+  /** 优惠券详情 */
+  coupon_detail?: coupon.CouponDetail;
 }
 
 /** 收获与配送信息 */

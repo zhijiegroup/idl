@@ -117,3 +117,12 @@ export interface DeleteCouponRequest {
 export interface DeleteCouponResponse {
   base_resp?: base.BaseResponse;
 }
+
+export interface ClaimCouponRequest {
+  base_request?: base.BaseRequest;
+  coupon_id?: string;
+}
+
+export interface ClaimCouponResponse {
+  base_resp?: base.BaseResponse;
+}

@@ -210,4 +210,14 @@ public interface CreateOrderInfoOrBuilder extends
    * @return The transId.
    */
   long getTransId();
+
+  /**
+   * <pre>
+   * 订单使用优惠券ID
+   * </pre>
+   *
+   * <code>int64 coupon_id = 22;</code>
+   * @return The couponId.
+   */
+  long getCouponId();
 }

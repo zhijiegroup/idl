@@ -6897,6 +6897,37 @@ public final class glory_apiGrpc {
     return getUpdateCouponDistributionStatusMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.shop.ClaimCouponRequest,
+      com.zhijiejiaoyu.glory_api.shop.ClaimCouponResponse> getClaimCouponMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ClaimCoupon",
+      requestType = com.zhijiejiaoyu.glory_api.shop.ClaimCouponRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.shop.ClaimCouponResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.shop.ClaimCouponRequest,
+      com.zhijiejiaoyu.glory_api.shop.ClaimCouponResponse> getClaimCouponMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.shop.ClaimCouponRequest, com.zhijiejiaoyu.glory_api.shop.ClaimCouponResponse> getClaimCouponMethod;
+    if ((getClaimCouponMethod = glory_apiGrpc.getClaimCouponMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getClaimCouponMethod = glory_apiGrpc.getClaimCouponMethod) == null) {
+          glory_apiGrpc.getClaimCouponMethod = getClaimCouponMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.shop.ClaimCouponRequest, com.zhijiejiaoyu.glory_api.shop.ClaimCouponResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ClaimCoupon"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.shop.ClaimCouponRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.shop.ClaimCouponResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ClaimCoupon"))
+              .build();
+        }
+      }
+    }
+    return getClaimCouponMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.shop.CreateActivityRequest,
       com.zhijiejiaoyu.glory_api.shop.CreateActivityResponse> getCreateActivityMethod;
 
@@ -8863,6 +8894,13 @@ public final class glory_apiGrpc {
     default void updateCouponDistributionStatus(com.zhijiejiaoyu.glory_api.shop.UpdateCouponDistributionStatusRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.shop.UpdateCouponDistributionStatusResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateCouponDistributionStatusMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void claimCoupon(com.zhijiejiaoyu.glory_api.shop.ClaimCouponRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.shop.ClaimCouponResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getClaimCouponMethod(), responseObserver);
     }
 
     /**
@@ -10895,6 +10933,14 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public void claimCoupon(com.zhijiejiaoyu.glory_api.shop.ClaimCouponRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.shop.ClaimCouponResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getClaimCouponMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
      * <pre>
      * activity
      * </pre>
@@ -12694,6 +12740,13 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.shop.UpdateCouponDistributionStatusResponse updateCouponDistributionStatus(com.zhijiejiaoyu.glory_api.shop.UpdateCouponDistributionStatusRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateCouponDistributionStatusMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.shop.ClaimCouponResponse claimCoupon(com.zhijiejiaoyu.glory_api.shop.ClaimCouponRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getClaimCouponMethod(), getCallOptions(), request);
     }
 
     /**
@@ -14715,6 +14768,14 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.shop.ClaimCouponResponse> claimCoupon(
+        com.zhijiejiaoyu.glory_api.shop.ClaimCouponRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getClaimCouponMethod(), getCallOptions()), request);
+    }
+
+    /**
      * <pre>
      * activity
      * </pre>
@@ -14988,12 +15049,13 @@ public final class glory_apiGrpc {
   private static final int METHODID_DELETE_COUPON = 219;
   private static final int METHODID_ABOLISH_COUPON = 220;
   private static final int METHODID_UPDATE_COUPON_DISTRIBUTION_STATUS = 221;
-  private static final int METHODID_CREATE_ACTIVITY = 222;
-  private static final int METHODID_LIST_ACTIVITY = 223;
-  private static final int METHODID_ACTIVITY_DETAIL = 224;
-  private static final int METHODID_UPDATE_ACTIVITY = 225;
-  private static final int METHODID_DELETE_ACTIVITY = 226;
-  private static final int METHODID_DISABLE_ACTIVITY = 227;
+  private static final int METHODID_CLAIM_COUPON = 222;
+  private static final int METHODID_CREATE_ACTIVITY = 223;
+  private static final int METHODID_LIST_ACTIVITY = 224;
+  private static final int METHODID_ACTIVITY_DETAIL = 225;
+  private static final int METHODID_UPDATE_ACTIVITY = 226;
+  private static final int METHODID_DELETE_ACTIVITY = 227;
+  private static final int METHODID_DISABLE_ACTIVITY = 228;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -15899,6 +15961,10 @@ public final class glory_apiGrpc {
         case METHODID_UPDATE_COUPON_DISTRIBUTION_STATUS:
           serviceImpl.updateCouponDistributionStatus((com.zhijiejiaoyu.glory_api.shop.UpdateCouponDistributionStatusRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.shop.UpdateCouponDistributionStatusResponse>) responseObserver);
+          break;
+        case METHODID_CLAIM_COUPON:
+          serviceImpl.claimCoupon((com.zhijiejiaoyu.glory_api.shop.ClaimCouponRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.shop.ClaimCouponResponse>) responseObserver);
           break;
         case METHODID_CREATE_ACTIVITY:
           serviceImpl.createActivity((com.zhijiejiaoyu.glory_api.shop.CreateActivityRequest) request,
@@ -17497,6 +17563,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.shop.UpdateCouponDistributionStatusResponse>(
                 service, METHODID_UPDATE_COUPON_DISTRIBUTION_STATUS)))
         .addMethod(
+          getClaimCouponMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.shop.ClaimCouponRequest,
+              com.zhijiejiaoyu.glory_api.shop.ClaimCouponResponse>(
+                service, METHODID_CLAIM_COUPON)))
+        .addMethod(
           getCreateActivityMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -17808,6 +17881,7 @@ public final class glory_apiGrpc {
               .addMethod(getDeleteCouponMethod())
               .addMethod(getAbolishCouponMethod())
               .addMethod(getUpdateCouponDistributionStatusMethod())
+              .addMethod(getClaimCouponMethod())
               .addMethod(getCreateActivityMethod())
               .addMethod(getListActivityMethod())
               .addMethod(getActivityDetailMethod())

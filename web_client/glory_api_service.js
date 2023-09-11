@@ -1796,6 +1796,12 @@ export class glory_api {
     );
   }
 
+  ClaimCoupon(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/shop/user_claim_coupon${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
   CreateActivity(request) {
     const uri = `${this.uriPrefix}/api/shop/create_activity`;
     const body = JSONbigint.stringify(request);

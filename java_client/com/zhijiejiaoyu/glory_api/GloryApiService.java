@@ -45,7 +45,7 @@ public final class GloryApiService {
       "ant.proto\032\030tenant/tenant_dept.proto\032\030ten" +
       "ant/tenant_user.proto\032\032tenant/tenant_con" +
       "fig.proto\032\035short_video/short_video.proto" +
-      "2\304\331\001\n\tglory_api\022s\n\rCreateExample\022\037.glory" +
+      "2\263\332\001\n\tglory_api\022s\n\rCreateExample\022\037.glory" +
       "_api.CreateExampleRequest\032 .glory_api.Cr" +
       "eateExampleResponse\"\037\322\301\030\033/api/example/cr" +
       "eate_example\022g\n\nGetExample\022\034.glory_api.G" +
@@ -723,26 +723,28 @@ public final class GloryApiService {
       ".UpdateCouponDistributionStatusRequest\0321" +
       ".glory_api.UpdateCouponDistributionStatu" +
       "sResponse\"/\322\301\030+/api/shop/update_coupon_d" +
-      "istribution_status\022t\n\016CreateActivity\022 .g" +
-      "lory_api.CreateActivityRequest\032!.glory_a" +
-      "pi.CreateActivityResponse\"\035\322\301\030\031/api/shop" +
-      "/create_activity\022l\n\014ListActivity\022\036.glory" +
-      "_api.ListActivityRequest\032\037.glory_api.Lis" +
-      "tActivityResponse\"\033\322\301\030\027/api/shop/list_ac" +
-      "tivity\022z\n\016ActivityDetail\022#.glory_api.Get" +
-      "ActivityDetailRequest\032$.glory_api.GetAct" +
-      "ivityDetailResponse\"\035\312\301\030\031/api/shop/activ" +
-      "ity_detail\022t\n\016UpdateActivity\022 .glory_api" +
-      ".UpdateActivityRequest\032!.glory_api.Updat" +
-      "eActivityResponse\"\035\322\301\030\031/api/shop/update_" +
-      "activity\022t\n\016DeleteActivity\022 .glory_api.D" +
-      "eleteActivityRequest\032!.glory_api.DeleteA" +
-      "ctivityResponse\"\035\322\301\030\031/api/shop/delete_ac" +
-      "tivity\022x\n\017DisableActivity\022!.glory_api.Di" +
-      "sableActivityRequest\032\".glory_api.Disable" +
-      "ActivityResponse\"\036\322\301\030\032/api/shop/disable_" +
-      "activityB\036\n\032com.zhijiejiaoyu.glory_apiP\001" +
-      "b\006proto3"
+      "istribution_status\022m\n\013ClaimCoupon\022\035.glor" +
+      "y_api.ClaimCouponRequest\032\036.glory_api.Cla" +
+      "imCouponResponse\"\037\312\301\030\033/api/shop/user_cla" +
+      "im_coupon\022t\n\016CreateActivity\022 .glory_api." +
+      "CreateActivityRequest\032!.glory_api.Create" +
+      "ActivityResponse\"\035\322\301\030\031/api/shop/create_a" +
+      "ctivity\022l\n\014ListActivity\022\036.glory_api.List" +
+      "ActivityRequest\032\037.glory_api.ListActivity" +
+      "Response\"\033\322\301\030\027/api/shop/list_activity\022z\n" +
+      "\016ActivityDetail\022#.glory_api.GetActivityD" +
+      "etailRequest\032$.glory_api.GetActivityDeta" +
+      "ilResponse\"\035\312\301\030\031/api/shop/activity_detai" +
+      "l\022t\n\016UpdateActivity\022 .glory_api.UpdateAc" +
+      "tivityRequest\032!.glory_api.UpdateActivity" +
+      "Response\"\035\322\301\030\031/api/shop/update_activity\022" +
+      "t\n\016DeleteActivity\022 .glory_api.DeleteActi" +
+      "vityRequest\032!.glory_api.DeleteActivityRe" +
+      "sponse\"\035\322\301\030\031/api/shop/delete_activity\022x\n" +
+      "\017DisableActivity\022!.glory_api.DisableActi" +
+      "vityRequest\032\".glory_api.DisableActivityR" +
+      "esponse\"\036\322\301\030\032/api/shop/disable_activityB" +
+      "\036\n\032com.zhijiejiaoyu.glory_apiP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

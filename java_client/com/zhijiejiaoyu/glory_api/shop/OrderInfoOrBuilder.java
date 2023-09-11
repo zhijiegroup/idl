@@ -360,4 +360,31 @@ public interface OrderInfoOrBuilder extends
    */
   com.google.protobuf.ByteString
       getDeliverAddressBytes();
+
+  /**
+   * <pre>
+   * 优惠券详情
+   * </pre>
+   *
+   * <code>.glory_api.CouponDetail coupon_detail = 21;</code>
+   * @return Whether the couponDetail field is set.
+   */
+  boolean hasCouponDetail();
+  /**
+   * <pre>
+   * 优惠券详情
+   * </pre>
+   *
+   * <code>.glory_api.CouponDetail coupon_detail = 21;</code>
+   * @return The couponDetail.
+   */
+  com.zhijiejiaoyu.glory_api.shop.CouponDetail getCouponDetail();
+  /**
+   * <pre>
+   * 优惠券详情
+   * </pre>
+   *
+   * <code>.glory_api.CouponDetail coupon_detail = 21;</code>
+   */
+  com.zhijiejiaoyu.glory_api.shop.CouponDetailOrBuilder getCouponDetailOrBuilder();
 }

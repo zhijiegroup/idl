@@ -89,6 +89,16 @@ public final class Coupon {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_DeleteCouponResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ClaimCouponRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ClaimCouponRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ClaimCouponResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ClaimCouponResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -156,9 +166,12 @@ public final class Coupon {
       ".BaseResponse\"Q\n\023DeleteCouponRequest\022\'\n\014" +
       "base_request\030\001 \001(\0132\021.base.BaseRequest\022\021\n" +
       "\tcoupon_id\030\002 \001(\003\"=\n\024DeleteCouponResponse" +
-      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponseB" +
-      "#\n\037com.zhijiejiaoyu.glory_api.shopP\001b\006pr" +
-      "oto3"
+      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"" +
+      "P\n\022ClaimCouponRequest\022\'\n\014base_request\030\001 " +
+      "\001(\0132\021.base.BaseRequest\022\021\n\tcoupon_id\030\002 \001(" +
+      "\003\"<\n\023ClaimCouponResponse\022%\n\tbase_resp\030\001 " +
+      "\001(\0132\022.base.BaseResponseB#\n\037com.zhijiejia" +
+      "oyu.glory_api.shopP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -254,6 +267,18 @@ public final class Coupon {
     internal_static_glory_api_DeleteCouponResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteCouponResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
+    internal_static_glory_api_ClaimCouponRequest_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_glory_api_ClaimCouponRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ClaimCouponRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "CouponId", });
+    internal_static_glory_api_ClaimCouponResponse_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_glory_api_ClaimCouponResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ClaimCouponResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
   }

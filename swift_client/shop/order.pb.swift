@@ -185,6 +185,12 @@ struct GloryApi_CreateOrderInfo {
     set {_uniqueStorage()._transID = newValue}
   }
 
+  /// 订单使用优惠券ID
+  var couponID: Int64 {
+    get {return _storage._couponID}
+    set {_uniqueStorage()._couponID = newValue}
+  }
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -355,6 +361,16 @@ struct GloryApi_OrderInfo {
     get {return _storage._deliverAddress}
     set {_uniqueStorage()._deliverAddress = newValue}
   }
+
+  /// 优惠券详情
+  var couponDetail: GloryApi_CouponDetail {
+    get {return _storage._couponDetail ?? GloryApi_CouponDetail()}
+    set {_uniqueStorage()._couponDetail = newValue}
+  }
+  /// Returns true if `couponDetail` has been explicitly set.
+  var hasCouponDetail: Bool {return _storage._couponDetail != nil}
+  /// Clears the value of `couponDetail`. Subsequent reads from it will return its default value.
+  mutating func clearCouponDetail() {_uniqueStorage()._couponDetail = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1240,6 +1256,7 @@ extension GloryApi_CreateOrderInfo: SwiftProtobuf.Message, SwiftProtobuf._Messag
     19: .standard(proto: "room_id"),
     20: .same(proto: "channel"),
     21: .standard(proto: "trans_id"),
+    22: .standard(proto: "coupon_id"),
   ]
 
   fileprivate class _StorageClass {
@@ -1263,6 +1280,7 @@ extension GloryApi_CreateOrderInfo: SwiftProtobuf.Message, SwiftProtobuf._Messag
     var _roomID: Int64 = 0
     var _channel: String = String()
     var _transID: Int64 = 0
+    var _couponID: Int64 = 0
 
     static let defaultInstance = _StorageClass()
 
@@ -1289,6 +1307,7 @@ extension GloryApi_CreateOrderInfo: SwiftProtobuf.Message, SwiftProtobuf._Messag
       _roomID = source._roomID
       _channel = source._channel
       _transID = source._transID
+      _couponID = source._couponID
     }
   }
 
@@ -1327,6 +1346,7 @@ extension GloryApi_CreateOrderInfo: SwiftProtobuf.Message, SwiftProtobuf._Messag
         case 19: try { try decoder.decodeSingularInt64Field(value: &_storage._roomID) }()
         case 20: try { try decoder.decodeSingularStringField(value: &_storage._channel) }()
         case 21: try { try decoder.decodeSingularInt64Field(value: &_storage._transID) }()
+        case 22: try { try decoder.decodeSingularInt64Field(value: &_storage._couponID) }()
         default: break
         }
       }
@@ -1395,6 +1415,9 @@ extension GloryApi_CreateOrderInfo: SwiftProtobuf.Message, SwiftProtobuf._Messag
       if _storage._transID != 0 {
         try visitor.visitSingularInt64Field(value: _storage._transID, fieldNumber: 21)
       }
+      if _storage._couponID != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._couponID, fieldNumber: 22)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1424,6 +1447,7 @@ extension GloryApi_CreateOrderInfo: SwiftProtobuf.Message, SwiftProtobuf._Messag
         if _storage._roomID != rhs_storage._roomID {return false}
         if _storage._channel != rhs_storage._channel {return false}
         if _storage._transID != rhs_storage._transID {return false}
+        if _storage._couponID != rhs_storage._couponID {return false}
         return true
       }
       if !storagesAreEqual {return false}
@@ -1562,6 +1586,7 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     18: .standard(proto: "contact_name"),
     19: .standard(proto: "buyer_name"),
     20: .standard(proto: "deliver_address"),
+    21: .standard(proto: "coupon_detail"),
   ]
 
   fileprivate class _StorageClass {
@@ -1585,6 +1610,7 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     var _contactName: String = String()
     var _buyerName: String = String()
     var _deliverAddress: String = String()
+    var _couponDetail: GloryApi_CouponDetail? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -1611,6 +1637,7 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
       _contactName = source._contactName
       _buyerName = source._buyerName
       _deliverAddress = source._deliverAddress
+      _couponDetail = source._couponDetail
     }
   }
 
@@ -1649,6 +1676,7 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
         case 18: try { try decoder.decodeSingularStringField(value: &_storage._contactName) }()
         case 19: try { try decoder.decodeSingularStringField(value: &_storage._buyerName) }()
         case 20: try { try decoder.decodeSingularStringField(value: &_storage._deliverAddress) }()
+        case 21: try { try decoder.decodeSingularMessageField(value: &_storage._couponDetail) }()
         default: break
         }
       }
@@ -1657,6 +1685,10 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
       if _storage._orderID != 0 {
         try visitor.visitSingularInt64Field(value: _storage._orderID, fieldNumber: 1)
       }
@@ -1717,6 +1749,9 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
       if !_storage._deliverAddress.isEmpty {
         try visitor.visitSingularStringField(value: _storage._deliverAddress, fieldNumber: 20)
       }
+      try { if let v = _storage._couponDetail {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 21)
+      } }()
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1746,6 +1781,7 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
         if _storage._contactName != rhs_storage._contactName {return false}
         if _storage._buyerName != rhs_storage._buyerName {return false}
         if _storage._deliverAddress != rhs_storage._deliverAddress {return false}
+        if _storage._couponDetail != rhs_storage._couponDetail {return false}
         return true
       }
       if !storagesAreEqual {return false}

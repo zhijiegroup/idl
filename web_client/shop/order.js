@@ -3,4 +3,5 @@
 
 import * as base from "../base";
 import * as sku from "./sku";
-export { base, sku };
+import * as coupon from "./coupon";
+export { base, sku, coupon };
