@@ -5,6 +5,7 @@ option java_multiple_files = true;
 
 import "base.proto";
 import "shop/sku.proto";
+import "shop/coupon.proto";
 
 
 message Order {
@@ -52,6 +53,7 @@ message CreateOrderInfo {
   int64 room_id = 19;//直播房间id
   string channel = 20;//live:直播间订单,normal:非直播间订单
   int64 trans_id = 21;//流水id,下单时候 货币订单、虚拟币订单,分别进行合并,合并后称之为 trans_id(流水id)
+  int64 coupon_id = 22; // 订单使用优惠券ID
 }
 
 message SkuInfo {
@@ -91,6 +93,7 @@ message OrderInfo {
   string contact_name = 18;//收货人
   string buyer_name = 19;//购买人
   string deliver_address = 20;//收获地址
+  optional CouponDetail coupon_detail = 21; // 优惠券详情
 }
 
 //收获与配送信息
