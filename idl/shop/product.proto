@@ -209,6 +209,18 @@ message ListProductResponse {
   base.PaginationResponse pagination = 100;
 }
 
+message ListProductByProductIDsRequest {
+  base.BaseRequest base_request = 1;
+  int64 shop_id = 2;
+  repeated int64 product_ids = 3;
+  base.PaginationRequest pagination = 100;
+}
+message ListProductByProductIDsResponse {
+  base.BaseResponse base_resp = 1;
+  repeated Product product = 2;
+  base.PaginationResponse pagination = 100;
+}
+
 message DeleteProductRequest {
   base.BaseRequest base_request = 1;
   int64 product_id = 2;
