@@ -92,6 +92,9 @@ struct GloryApi_LiveRoomIndexInfo {
 
   var status: String = String()
 
+  ///直播的封面的url
+  var roomImageURL: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -307,6 +310,7 @@ extension GloryApi_LiveRoomIndexInfo: SwiftProtobuf.Message, SwiftProtobuf._Mess
     9: .standard(proto: "like_count"),
     10: .standard(proto: "end_time"),
     11: .same(proto: "status"),
+    12: .standard(proto: "room_image_url"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -326,6 +330,7 @@ extension GloryApi_LiveRoomIndexInfo: SwiftProtobuf.Message, SwiftProtobuf._Mess
       case 9: try { try decoder.decodeSingularInt64Field(value: &self.likeCount) }()
       case 10: try { try decoder.decodeSingularStringField(value: &self.endTime) }()
       case 11: try { try decoder.decodeSingularStringField(value: &self.status) }()
+      case 12: try { try decoder.decodeSingularStringField(value: &self.roomImageURL) }()
       default: break
       }
     }
@@ -365,6 +370,9 @@ extension GloryApi_LiveRoomIndexInfo: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if !self.status.isEmpty {
       try visitor.visitSingularStringField(value: self.status, fieldNumber: 11)
     }
+    if !self.roomImageURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.roomImageURL, fieldNumber: 12)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -380,6 +388,7 @@ extension GloryApi_LiveRoomIndexInfo: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if lhs.likeCount != rhs.likeCount {return false}
     if lhs.endTime != rhs.endTime {return false}
     if lhs.status != rhs.status {return false}
+    if lhs.roomImageURL != rhs.roomImageURL {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
