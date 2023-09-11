@@ -295,6 +295,9 @@ service glory_api {
   rpc ListProduct(ListProductRequest) returns (ListProductResponse) {
     option (api.post) = '/api/shop/list_product';
   }
+  rpc ListProductByIDs(ListProductByProductIDsRequest) returns (ListProductByProductIDsResponse) {
+    option (api.post) = '/api/shop/list_product_by_ids';
+  }
   rpc DeleteProduct(DeleteProductRequest) returns (DeleteProductResponse) {
     option (api.post) = '/api/shop/delete_product';
   }
