@@ -36,6 +36,7 @@ message LiveRoomIndexInfo {
   int64 like_count =9;
   string end_time =10;
   string status = 11;
+  string room_image_url = 12; //直播的封面的url
 }
 
 message MallIndexRequest {
