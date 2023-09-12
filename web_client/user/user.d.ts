@@ -54,6 +54,15 @@ export interface LoginResponse {
   data?: User;
 }
 
+/** logout */
+export interface LogoutRequest {
+  base_request?: base.BaseRequest;
+}
+
+export interface LogoutResponse {
+  base_resp?: base.BaseResponse;
+}
+
 /** get verification code */
 export interface GetVerifyCodeRequest {
   base_request?: base.BaseRequest;

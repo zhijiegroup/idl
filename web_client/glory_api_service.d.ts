@@ -112,6 +112,8 @@ export class glory_api {
   /** user */
   Login(request: user.LoginRequest): Promise<user.LoginResponse>;
 
+  Logout(request: user.LogoutRequest): Promise<user.LogoutResponse>;
+
   GetVerifyCode(
     request: user.GetVerifyCodeRequest
   ): Promise<user.GetVerifyCodeResponse>;
