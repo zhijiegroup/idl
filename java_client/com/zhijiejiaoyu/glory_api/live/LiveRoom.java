@@ -149,6 +149,16 @@ public final class LiveRoom {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_LiveSSEResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_CloseShopAllLiveRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_CloseShopAllLiveRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_CloseShopAllLiveResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_CloseShopAllLiveResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -243,8 +253,11 @@ public final class LiveRoom {
       "ToTextCallbackResponse\022%\n\tbase_resp\030\001 \001(" +
       "\0132\022.base.BaseResponse\"!\n\016LiveSSERequest\022" +
       "\017\n\007room_id\030\001 \001(\003\"8\n\017LiveSSEResponse\022%\n\tb" +
-      "ase_resp\030\001 \001(\0132\022.base.BaseResponseB#\n\037co" +
-      "m.zhijiejiaoyu.glory_api.liveP\001b\006proto3"
+      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\"*\n\027Cl" +
+      "oseShopAllLiveRequest\022\017\n\007shop_id\030\001 \001(\003\"A" +
+      "\n\030CloseShopAllLiveResponse\022%\n\tbase_resp\030" +
+      "\001 \001(\0132\022.base.BaseResponseB#\n\037com.zhijiej" +
+      "iaoyu.glory_api.liveP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -412,6 +425,18 @@ public final class LiveRoom {
     internal_static_glory_api_LiveSSEResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_LiveSSEResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
+    internal_static_glory_api_CloseShopAllLiveRequest_descriptor =
+      getDescriptor().getMessageTypes().get(27);
+    internal_static_glory_api_CloseShopAllLiveRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_CloseShopAllLiveRequest_descriptor,
+        new java.lang.String[] { "ShopId", });
+    internal_static_glory_api_CloseShopAllLiveResponse_descriptor =
+      getDescriptor().getMessageTypes().get(28);
+    internal_static_glory_api_CloseShopAllLiveResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_CloseShopAllLiveResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
   }

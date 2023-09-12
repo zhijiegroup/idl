@@ -1176,6 +1176,14 @@ export class glory_api {
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
 
+  CloseShopAllLive(request) {
+    const uri = `${this.uriPrefix}/api/live/close_shop_live`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   CreateLivePlan(request) {
     const uri = `${this.uriPrefix}/api/live/create_live_plan`;
     const body = JSONbigint.stringify(request);

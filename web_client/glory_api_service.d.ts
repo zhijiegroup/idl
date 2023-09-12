@@ -627,6 +627,10 @@ list the permissions that supported */
     request: live_room.LiveSSERequest
   ): Promise<live_room.LiveSSEResponse>;
 
+  CloseShopAllLive(
+    request: live_room.CloseShopAllLiveRequest
+  ): Promise<live_room.CloseShopAllLiveResponse>;
+
   /** live plan
 live plan crud */
   CreateLivePlan(

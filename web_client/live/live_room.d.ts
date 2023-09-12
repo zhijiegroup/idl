@@ -203,3 +203,11 @@ export interface LiveSSERequest {
 export interface LiveSSEResponse {
   base_resp?: base.BaseResponse;
 }
+
+export interface CloseShopAllLiveRequest {
+  shop_id?: string;
+}
+
+export interface CloseShopAllLiveResponse {
+  base_resp?: base.BaseResponse;
+}
