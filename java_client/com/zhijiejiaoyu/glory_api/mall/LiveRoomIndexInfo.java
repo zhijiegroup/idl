@@ -24,6 +24,11 @@ private static final long serialVersionUID = 0L;
     startTime = "";
     endTime = "";
     status = "";
+    roomImageUrl = "";
+    roomTitle = "";
+    userName = "";
+    shopName = "";
+    shopLogoUrl = "";
   }
 
   @java.lang.Override
@@ -117,6 +122,36 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             status = s;
+            break;
+          }
+          case 98: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            roomImageUrl = s;
+            break;
+          }
+          case 106: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            roomTitle = s;
+            break;
+          }
+          case 114: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            userName = s;
+            break;
+          }
+          case 122: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            shopName = s;
+            break;
+          }
+          case 130: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            shopLogoUrl = s;
             break;
           }
           default: {
@@ -488,6 +523,212 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int ROOM_IMAGE_URL_FIELD_NUMBER = 12;
+  private volatile java.lang.Object roomImageUrl ;
+  /**
+   * <pre>
+   *直播的封面的url
+   * </pre>
+   *
+   * <code>string room_image_url = 12;</code>
+   * @return The roomImageUrl.
+   */
+  @java.lang.Override
+  public java.lang.String getRoomImageUrl() {
+    java.lang.Object ref = roomImageUrl ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      roomImageUrl = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   *直播的封面的url
+   * </pre>
+   *
+   * <code>string room_image_url = 12;</code>
+   * @return The bytes for roomImageUrl.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getRoomImageUrlBytes() {
+    java.lang.Object ref = roomImageUrl ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      roomImageUrl = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ROOM_TITLE_FIELD_NUMBER = 13;
+  private volatile java.lang.Object roomTitle ;
+  /**
+   * <pre>
+   *直播的标题
+   * </pre>
+   *
+   * <code>string room_title = 13;</code>
+   * @return The roomTitle.
+   */
+  @java.lang.Override
+  public java.lang.String getRoomTitle() {
+    java.lang.Object ref = roomTitle ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      roomTitle = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   *直播的标题
+   * </pre>
+   *
+   * <code>string room_title = 13;</code>
+   * @return The bytes for roomTitle.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getRoomTitleBytes() {
+    java.lang.Object ref = roomTitle ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      roomTitle = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int USER_NAME_FIELD_NUMBER = 14;
+  private volatile java.lang.Object userName ;
+  /**
+   * <code>string user_name = 14;</code>
+   * @return The userName.
+   */
+  @java.lang.Override
+  public java.lang.String getUserName() {
+    java.lang.Object ref = userName ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      userName = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string user_name = 14;</code>
+   * @return The bytes for userName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getUserNameBytes() {
+    java.lang.Object ref = userName ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      userName = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SHOP_NAME_FIELD_NUMBER = 15;
+  private volatile java.lang.Object shopName ;
+  /**
+   * <code>string shop_name = 15;</code>
+   * @return The shopName.
+   */
+  @java.lang.Override
+  public java.lang.String getShopName() {
+    java.lang.Object ref = shopName ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      shopName = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string shop_name = 15;</code>
+   * @return The bytes for shopName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getShopNameBytes() {
+    java.lang.Object ref = shopName ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      shopName = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SHOP_LOGO_URL_FIELD_NUMBER = 16;
+  private volatile java.lang.Object shopLogoUrl ;
+  /**
+   * <code>string shop_logo_url = 16;</code>
+   * @return The shopLogoUrl.
+   */
+  @java.lang.Override
+  public java.lang.String getShopLogoUrl() {
+    java.lang.Object ref = shopLogoUrl ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      shopLogoUrl = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string shop_logo_url = 16;</code>
+   * @return The bytes for shopLogoUrl.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getShopLogoUrlBytes() {
+    java.lang.Object ref = shopLogoUrl ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      shopLogoUrl = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -535,6 +776,21 @@ private static final long serialVersionUID = 0L;
     if (!getStatusBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, status );
     }
+    if (!getRoomImageUrlBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, roomImageUrl );
+    }
+    if (!getRoomTitleBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, roomTitle );
+    }
+    if (!getUserNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, userName );
+    }
+    if (!getShopNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, shopName );
+    }
+    if (!getShopLogoUrlBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 16, shopLogoUrl );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -580,6 +836,21 @@ private static final long serialVersionUID = 0L;
     if (!getStatusBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, status );
     }
+    if (!getRoomImageUrlBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, roomImageUrl );
+    }
+    if (!getRoomTitleBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, roomTitle );
+    }
+    if (!getUserNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, userName );
+    }
+    if (!getShopNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, shopName );
+    }
+    if (!getShopLogoUrlBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, shopLogoUrl );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -617,6 +888,16 @@ private static final long serialVersionUID = 0L;
         .equals(other.getEndTime())) return false;
     if (!getStatus()
         .equals(other.getStatus())) return false;
+    if (!getRoomImageUrl()
+        .equals(other.getRoomImageUrl())) return false;
+    if (!getRoomTitle()
+        .equals(other.getRoomTitle())) return false;
+    if (!getUserName()
+        .equals(other.getUserName())) return false;
+    if (!getShopName()
+        .equals(other.getShopName())) return false;
+    if (!getShopLogoUrl()
+        .equals(other.getShopLogoUrl())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -653,6 +934,16 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getEndTime().hashCode();
     hash = (37 * hash) + STATUS_FIELD_NUMBER;
     hash = (53 * hash) + getStatus().hashCode();
+    hash = (37 * hash) + ROOM_IMAGE_URL_FIELD_NUMBER;
+    hash = (53 * hash) + getRoomImageUrl().hashCode();
+    hash = (37 * hash) + ROOM_TITLE_FIELD_NUMBER;
+    hash = (53 * hash) + getRoomTitle().hashCode();
+    hash = (37 * hash) + USER_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getUserName().hashCode();
+    hash = (37 * hash) + SHOP_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getShopName().hashCode();
+    hash = (37 * hash) + SHOP_LOGO_URL_FIELD_NUMBER;
+    hash = (53 * hash) + getShopLogoUrl().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -808,6 +1099,16 @@ private static final long serialVersionUID = 0L;
 
       status = "";
 
+      roomImageUrl = "";
+
+      roomTitle = "";
+
+      userName = "";
+
+      shopName = "";
+
+      shopLogoUrl = "";
+
       return this;
     }
 
@@ -845,6 +1146,11 @@ private static final long serialVersionUID = 0L;
       result.likeCount = likeCount ;
       result.endTime = endTime ;
       result.status = status ;
+      result.roomImageUrl = roomImageUrl ;
+      result.roomTitle = roomTitle ;
+      result.userName = userName ;
+      result.shopName = shopName ;
+      result.shopLogoUrl = shopLogoUrl ;
       onBuilt();
       return result;
     }
@@ -932,6 +1238,26 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getStatus().isEmpty()) {
         status = other.status ;
+        onChanged();
+      }
+      if (!other.getRoomImageUrl().isEmpty()) {
+        roomImageUrl = other.roomImageUrl ;
+        onChanged();
+      }
+      if (!other.getRoomTitle().isEmpty()) {
+        roomTitle = other.roomTitle ;
+        onChanged();
+      }
+      if (!other.getUserName().isEmpty()) {
+        userName = other.userName ;
+        onChanged();
+      }
+      if (!other.getShopName().isEmpty()) {
+        shopName = other.shopName ;
+        onChanged();
+      }
+      if (!other.getShopLogoUrl().isEmpty()) {
+        shopLogoUrl = other.shopLogoUrl ;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1660,6 +1986,426 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       status = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object roomImageUrl = "";
+    /**
+     * <pre>
+     *直播的封面的url
+     * </pre>
+     *
+     * <code>string room_image_url = 12;</code>
+     * @return The roomImageUrl.
+     */
+    public java.lang.String getRoomImageUrl() {
+      java.lang.Object ref = roomImageUrl ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        roomImageUrl = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     *直播的封面的url
+     * </pre>
+     *
+     * <code>string room_image_url = 12;</code>
+     * @return The bytes for roomImageUrl.
+     */
+    public com.google.protobuf.ByteString
+        getRoomImageUrlBytes() {
+      java.lang.Object ref = roomImageUrl ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        roomImageUrl = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     *直播的封面的url
+     * </pre>
+     *
+     * <code>string room_image_url = 12;</code>
+     * @param value The roomImageUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRoomImageUrl(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      roomImageUrl = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *直播的封面的url
+     * </pre>
+     *
+     * <code>string room_image_url = 12;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRoomImageUrl() {
+      
+      roomImageUrl = getDefaultInstance().getRoomImageUrl();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *直播的封面的url
+     * </pre>
+     *
+     * <code>string room_image_url = 12;</code>
+     * @param value The bytes for roomImageUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRoomImageUrlBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      roomImageUrl = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object roomTitle = "";
+    /**
+     * <pre>
+     *直播的标题
+     * </pre>
+     *
+     * <code>string room_title = 13;</code>
+     * @return The roomTitle.
+     */
+    public java.lang.String getRoomTitle() {
+      java.lang.Object ref = roomTitle ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        roomTitle = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     *直播的标题
+     * </pre>
+     *
+     * <code>string room_title = 13;</code>
+     * @return The bytes for roomTitle.
+     */
+    public com.google.protobuf.ByteString
+        getRoomTitleBytes() {
+      java.lang.Object ref = roomTitle ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        roomTitle = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     *直播的标题
+     * </pre>
+     *
+     * <code>string room_title = 13;</code>
+     * @param value The roomTitle to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRoomTitle(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      roomTitle = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *直播的标题
+     * </pre>
+     *
+     * <code>string room_title = 13;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRoomTitle() {
+      
+      roomTitle = getDefaultInstance().getRoomTitle();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *直播的标题
+     * </pre>
+     *
+     * <code>string room_title = 13;</code>
+     * @param value The bytes for roomTitle to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRoomTitleBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      roomTitle = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object userName = "";
+    /**
+     * <code>string user_name = 14;</code>
+     * @return The userName.
+     */
+    public java.lang.String getUserName() {
+      java.lang.Object ref = userName ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userName = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string user_name = 14;</code>
+     * @return The bytes for userName.
+     */
+    public com.google.protobuf.ByteString
+        getUserNameBytes() {
+      java.lang.Object ref = userName ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userName = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string user_name = 14;</code>
+     * @param value The userName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      userName = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string user_name = 14;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUserName() {
+      
+      userName = getDefaultInstance().getUserName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string user_name = 14;</code>
+     * @param value The bytes for userName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      userName = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object shopName = "";
+    /**
+     * <code>string shop_name = 15;</code>
+     * @return The shopName.
+     */
+    public java.lang.String getShopName() {
+      java.lang.Object ref = shopName ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        shopName = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string shop_name = 15;</code>
+     * @return The bytes for shopName.
+     */
+    public com.google.protobuf.ByteString
+        getShopNameBytes() {
+      java.lang.Object ref = shopName ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        shopName = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string shop_name = 15;</code>
+     * @param value The shopName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setShopName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      shopName = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string shop_name = 15;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearShopName() {
+      
+      shopName = getDefaultInstance().getShopName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string shop_name = 15;</code>
+     * @param value The bytes for shopName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setShopNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      shopName = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object shopLogoUrl = "";
+    /**
+     * <code>string shop_logo_url = 16;</code>
+     * @return The shopLogoUrl.
+     */
+    public java.lang.String getShopLogoUrl() {
+      java.lang.Object ref = shopLogoUrl ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        shopLogoUrl = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string shop_logo_url = 16;</code>
+     * @return The bytes for shopLogoUrl.
+     */
+    public com.google.protobuf.ByteString
+        getShopLogoUrlBytes() {
+      java.lang.Object ref = shopLogoUrl ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        shopLogoUrl = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string shop_logo_url = 16;</code>
+     * @param value The shopLogoUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setShopLogoUrl(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      shopLogoUrl = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string shop_logo_url = 16;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearShopLogoUrl() {
+      
+      shopLogoUrl = getDefaultInstance().getShopLogoUrl();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string shop_logo_url = 16;</code>
+     * @param value The bytes for shopLogoUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setShopLogoUrlBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      shopLogoUrl = value;
       onChanged();
       return this;
     }

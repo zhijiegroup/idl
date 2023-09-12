@@ -39,6 +39,7 @@ import * as tenant_dept from "./tenant/tenant_dept";
 import * as tenant_user from "./tenant/tenant_user";
 import * as tenant_config from "./tenant/tenant_config";
 import * as short_video from "./short_video/short_video";
+import * as material from "./course/material";
 export {
   user,
   address,
@@ -77,6 +78,7 @@ export {
   tenant_user,
   tenant_config,
   short_video,
+  material,
 };
 
 export class glory_api {
@@ -1014,6 +1016,27 @@ CreateLivePlanProduct create live plan product */
   DisableActivity(
     request: activity.DisableActivityRequest
   ): Promise<activity.DisableActivityResponse>;
+
+  /** 素材库
+创建画板 */
+  CreateCourseMaterialBox(
+    request: material.CreateCourseMaterialBoxRequest
+  ): Promise<material.CreateCourseMaterialBoxResponse>;
+
+  /** 画板列表 */
+  ListCourseMaterialBox(
+    request: material.ListCourseMaterialBoxRequest
+  ): Promise<material.ListCourseMaterialBoxResponse>;
+
+  /** 上传素材 */
+  UploadCourseMaterial(
+    request: material.UploadCourseMaterialRequest
+  ): Promise<material.UploadCourseMaterialResponse>;
+
+  /** 素材列表 */
+  ListCourseMaterial(
+    request: material.ListCourseMaterialRequest
+  ): Promise<material.ListCourseMaterialResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

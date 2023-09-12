@@ -92,6 +92,18 @@ struct GloryApi_LiveRoomIndexInfo {
 
   var status: String = String()
 
+  ///直播的封面的url
+  var roomImageURL: String = String()
+
+  ///直播的标题
+  var roomTitle: String = String()
+
+  var userName: String = String()
+
+  var shopName: String = String()
+
+  var shopLogoURL: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -307,6 +319,11 @@ extension GloryApi_LiveRoomIndexInfo: SwiftProtobuf.Message, SwiftProtobuf._Mess
     9: .standard(proto: "like_count"),
     10: .standard(proto: "end_time"),
     11: .same(proto: "status"),
+    12: .standard(proto: "room_image_url"),
+    13: .standard(proto: "room_title"),
+    14: .standard(proto: "user_name"),
+    15: .standard(proto: "shop_name"),
+    16: .standard(proto: "shop_logo_url"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -326,6 +343,11 @@ extension GloryApi_LiveRoomIndexInfo: SwiftProtobuf.Message, SwiftProtobuf._Mess
       case 9: try { try decoder.decodeSingularInt64Field(value: &self.likeCount) }()
       case 10: try { try decoder.decodeSingularStringField(value: &self.endTime) }()
       case 11: try { try decoder.decodeSingularStringField(value: &self.status) }()
+      case 12: try { try decoder.decodeSingularStringField(value: &self.roomImageURL) }()
+      case 13: try { try decoder.decodeSingularStringField(value: &self.roomTitle) }()
+      case 14: try { try decoder.decodeSingularStringField(value: &self.userName) }()
+      case 15: try { try decoder.decodeSingularStringField(value: &self.shopName) }()
+      case 16: try { try decoder.decodeSingularStringField(value: &self.shopLogoURL) }()
       default: break
       }
     }
@@ -365,6 +387,21 @@ extension GloryApi_LiveRoomIndexInfo: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if !self.status.isEmpty {
       try visitor.visitSingularStringField(value: self.status, fieldNumber: 11)
     }
+    if !self.roomImageURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.roomImageURL, fieldNumber: 12)
+    }
+    if !self.roomTitle.isEmpty {
+      try visitor.visitSingularStringField(value: self.roomTitle, fieldNumber: 13)
+    }
+    if !self.userName.isEmpty {
+      try visitor.visitSingularStringField(value: self.userName, fieldNumber: 14)
+    }
+    if !self.shopName.isEmpty {
+      try visitor.visitSingularStringField(value: self.shopName, fieldNumber: 15)
+    }
+    if !self.shopLogoURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.shopLogoURL, fieldNumber: 16)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -380,6 +417,11 @@ extension GloryApi_LiveRoomIndexInfo: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if lhs.likeCount != rhs.likeCount {return false}
     if lhs.endTime != rhs.endTime {return false}
     if lhs.status != rhs.status {return false}
+    if lhs.roomImageURL != rhs.roomImageURL {return false}
+    if lhs.roomTitle != rhs.roomTitle {return false}
+    if lhs.userName != rhs.userName {return false}
+    if lhs.shopName != rhs.shopName {return false}
+    if lhs.shopLogoURL != rhs.shopLogoURL {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
