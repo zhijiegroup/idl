@@ -53,6 +53,12 @@ public interface ListTenantUserRequestOrBuilder extends
   boolean getIsAdmin();
 
   /**
+   * <code>bool is_short_checker = 6;</code>
+   * @return The isShortChecker.
+   */
+  boolean getIsShortChecker();
+
+  /**
    * <code>.base.PaginationRequest pagination = 100;</code>
    * @return Whether the pagination field is set.
    */

@@ -201,6 +201,37 @@ public final class glory_apiGrpc {
     return getLoginMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.user.LogoutRequest,
+      com.zhijiejiaoyu.glory_api.user.LogoutResponse> getLogoutMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "Logout",
+      requestType = com.zhijiejiaoyu.glory_api.user.LogoutRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.user.LogoutResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.user.LogoutRequest,
+      com.zhijiejiaoyu.glory_api.user.LogoutResponse> getLogoutMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.user.LogoutRequest, com.zhijiejiaoyu.glory_api.user.LogoutResponse> getLogoutMethod;
+    if ((getLogoutMethod = glory_apiGrpc.getLogoutMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getLogoutMethod = glory_apiGrpc.getLogoutMethod) == null) {
+          glory_apiGrpc.getLogoutMethod = getLogoutMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.user.LogoutRequest, com.zhijiejiaoyu.glory_api.user.LogoutResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Logout"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.user.LogoutRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.user.LogoutResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("Logout"))
+              .build();
+        }
+      }
+    }
+    return getLogoutMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.user.GetVerifyCodeRequest,
       com.zhijiejiaoyu.glory_api.user.GetVerifyCodeResponse> getGetVerifyCodeMethod;
 
@@ -7441,6 +7472,13 @@ public final class glory_apiGrpc {
 
     /**
      */
+    default void logout(com.zhijiejiaoyu.glory_api.user.LogoutRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.LogoutResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getLogoutMethod(), responseObserver);
+    }
+
+    /**
+     */
     default void getVerifyCode(com.zhijiejiaoyu.glory_api.user.GetVerifyCodeRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.GetVerifyCodeResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetVerifyCodeMethod(), responseObserver);
@@ -9325,6 +9363,14 @@ public final class glory_apiGrpc {
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.LoginResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getLoginMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void logout(com.zhijiejiaoyu.glory_api.user.LogoutRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.LogoutResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getLogoutMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -11430,6 +11476,13 @@ public final class glory_apiGrpc {
 
     /**
      */
+    public com.zhijiejiaoyu.glory_api.user.LogoutResponse logout(com.zhijiejiaoyu.glory_api.user.LogoutRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getLogoutMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
     public com.zhijiejiaoyu.glory_api.user.GetVerifyCodeResponse getVerifyCode(com.zhijiejiaoyu.glory_api.user.GetVerifyCodeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetVerifyCodeMethod(), getCallOptions(), request);
@@ -13303,6 +13356,14 @@ public final class glory_apiGrpc {
         com.zhijiejiaoyu.glory_api.user.LoginRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getLoginMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.user.LogoutResponse> logout(
+        com.zhijiejiaoyu.glory_api.user.LogoutRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getLogoutMethod(), getCallOptions()), request);
     }
 
     /**
@@ -15336,236 +15397,237 @@ public final class glory_apiGrpc {
   private static final int METHODID_LIST_EXAMPLE = 3;
   private static final int METHODID_DELETE_EXAMPLE = 4;
   private static final int METHODID_LOGIN = 5;
-  private static final int METHODID_GET_VERIFY_CODE = 6;
-  private static final int METHODID_GET_USER = 7;
-  private static final int METHODID_LOGIN_WITH_PASSWORD = 8;
-  private static final int METHODID_UPDATE_PASSWORD = 9;
-  private static final int METHODID_FOLLOW_USER = 10;
-  private static final int METHODID_LIST_MY_FOLLOWING = 11;
-  private static final int METHODID_LIST_MY_FOLLOWER = 12;
-  private static final int METHODID_LIST_MY_FRIEND = 13;
-  private static final int METHODID_GET_USER_PAGE_PERMISSION = 14;
-  private static final int METHODID_CREATE_ROLE_PAGE_PERMISSION = 15;
-  private static final int METHODID_UPDATE_ROLE_PAGE_PERMISSION = 16;
-  private static final int METHODID_GET_ROLE_PAGE_PERMISSION = 17;
-  private static final int METHODID_ADD_ADDRESS = 18;
-  private static final int METHODID_DELETE_ADDRESS = 19;
-  private static final int METHODID_UPDATE_ADDRESS = 20;
-  private static final int METHODID_GET_ADDRESS = 21;
-  private static final int METHODID_LIST_ADDRESS = 22;
-  private static final int METHODID_LIST_USER_BY_ROLE = 23;
-  private static final int METHODID_LIST_PERMISSION = 24;
-  private static final int METHODID_LIST_ROLE = 25;
-  private static final int METHODID_GIVE_ROLE_PERMISSION = 26;
-  private static final int METHODID_REMOVE_ROLE_PERMISSION = 27;
-  private static final int METHODID_CREATE_ROLE = 28;
-  private static final int METHODID_DELETE_ROLE = 29;
-  private static final int METHODID_LIST_RESOURCE = 30;
-  private static final int METHODID_GET_ROLE_TYPE = 31;
-  private static final int METHODID_CREATE_SHOP = 32;
-  private static final int METHODID_GET_SHOP = 33;
-  private static final int METHODID_UPDATE_SHOP = 34;
-  private static final int METHODID_LIST_SHOP = 35;
-  private static final int METHODID_DELETE_SHOP = 36;
-  private static final int METHODID_LIST_OPERATION_METRICS = 37;
-  private static final int METHODID_GET_SHOP_QRCODE = 38;
-  private static final int METHODID_UPDATE_SHOP_MANAGER = 39;
-  private static final int METHODID_GET_SHOP_BUSINESS_DATA = 40;
-  private static final int METHODID_ADD_SHOP_ACCESS = 41;
-  private static final int METHODID_REMOVE_SHOP_ACCESS = 42;
-  private static final int METHODID_VERIFY_FIELD = 43;
-  private static final int METHODID_LIST_SHOP_ACCESS = 44;
-  private static final int METHODID_ADD_SHOP_CATEGORY = 45;
-  private static final int METHODID_GET_SHOP_CATEGORY = 46;
-  private static final int METHODID_REMOVE_SHOP_CATEGORY = 47;
-  private static final int METHODID_ADD_FREIGHT_TEMPLATE = 48;
-  private static final int METHODID_GET_FREIGHT_TEMPLATE = 49;
-  private static final int METHODID_UPDATE_FREIGHT_TEMPLATE = 50;
-  private static final int METHODID_DELETE_FREIGHT_TEMPLATE = 51;
-  private static final int METHODID_LIST_FREIGHT_TEMPLATE = 52;
-  private static final int METHODID_LIST_QUALIFICATION = 53;
-  private static final int METHODID_GET_MALL_INDEX = 54;
-  private static final int METHODID_CREATE_CATEGORY = 55;
-  private static final int METHODID_GET_CATEGORY = 56;
-  private static final int METHODID_UPDATE_CATEGORY = 57;
-  private static final int METHODID_LIST_CATEGORY = 58;
-  private static final int METHODID_DELETE_CATEGORY = 59;
-  private static final int METHODID_LIST_CATEGORY_QUALIFICATION = 60;
-  private static final int METHODID_CREATE_PRODUCT = 61;
-  private static final int METHODID_GET_PRODUCT = 62;
-  private static final int METHODID_UPDATE_PRODUCT = 63;
-  private static final int METHODID_LIST_PRODUCT = 64;
-  private static final int METHODID_LIST_PRODUCT_BY_IDS = 65;
-  private static final int METHODID_DELETE_PRODUCT = 66;
-  private static final int METHODID_UPLOAD_MULTI_IMAGE = 67;
-  private static final int METHODID_DELETE_IMAGE_BY_ID = 68;
-  private static final int METHODID_BIND_ATTRIBUTE = 69;
-  private static final int METHODID_PUBLISH_PRODUCT = 70;
-  private static final int METHODID_OFF_SHELF_PRODUCT_IN_BATCHES = 71;
-  private static final int METHODID_DELETE_PRODUCT_IN_BATCHES = 72;
-  private static final int METHODID_CHANGE_PRODUCTS_STATE = 73;
-  private static final int METHODID_CREATE_SKU = 74;
-  private static final int METHODID_GET_SKU = 75;
-  private static final int METHODID_UPDATE_SKU = 76;
-  private static final int METHODID_LIST_SKU = 77;
-  private static final int METHODID_DELETE_SKU = 78;
-  private static final int METHODID_CREATE_ATTRIBUTE = 79;
-  private static final int METHODID_GET_ATTRIBUTE = 80;
-  private static final int METHODID_LIST_ATTRIBUTE = 81;
-  private static final int METHODID_DELETE_ATTRIBUTE = 82;
-  private static final int METHODID_ADD_ATTRIBUTE_VALUE = 83;
-  private static final int METHODID_DELETE_ATTRIBUTE_VALUE = 84;
-  private static final int METHODID_CREATE_ORDER = 85;
-  private static final int METHODID_GET_ORDER = 86;
-  private static final int METHODID_UPDATE_ORDER = 87;
-  private static final int METHODID_LIST_ORDER = 88;
-  private static final int METHODID_DELETE_ORDER = 89;
-  private static final int METHODID_SHIP_GOODS = 90;
-  private static final int METHODID_CONFIRM_RECEIPT_GOODS = 91;
-  private static final int METHODID_CANCEL_ORDER = 92;
-  private static final int METHODID_SHIP_GOODS_IN_BATCHES = 93;
-  private static final int METHODID_FREE_SHIPPING_IN_BATCHES = 94;
-  private static final int METHODID_CREATE_CART = 95;
-  private static final int METHODID_GET_CART = 96;
-  private static final int METHODID_UPDATE_CART = 97;
-  private static final int METHODID_DELETE_CART = 98;
-  private static final int METHODID_UPLOAD_ATTACHMENT = 99;
-  private static final int METHODID_LIST_ATTACHMENT = 100;
-  private static final int METHODID_DELETE_ATTACHMENT = 101;
-  private static final int METHODID_CREATE_SELLER = 102;
-  private static final int METHODID_CREATE_PAYMENT = 103;
-  private static final int METHODID_GET_PAYMENT = 104;
-  private static final int METHODID_UPDATE_PAYMENT = 105;
-  private static final int METHODID_DELETE_PAYMENT = 106;
-  private static final int METHODID_CREATE_CONFIG = 107;
-  private static final int METHODID_UPDATE_CONFIG = 108;
-  private static final int METHODID_DELETE_CONFIG = 109;
-  private static final int METHODID_GET_CONFIG = 110;
-  private static final int METHODID_GET_STS = 111;
-  private static final int METHODID_LIST_TENANT_ORG = 112;
-  private static final int METHODID_GET_ADMIN_TENANT = 113;
-  private static final int METHODID_LIST_ADMIN_USER = 114;
-  private static final int METHODID_CREATE_ADMIN_USER = 115;
-  private static final int METHODID_UPDATE_ADMIN_USER = 116;
-  private static final int METHODID_DELETE_ADMIN_USER = 117;
-  private static final int METHODID_WX_PREPAY = 118;
-  private static final int METHODID_CLOSE_ORDER = 119;
-  private static final int METHODID_QUERY_ORDER_BY_ID = 120;
-  private static final int METHODID_QUERY_ORDER_BY_OUT_TRADE = 121;
-  private static final int METHODID_ADD_VCURRENCY = 122;
-  private static final int METHODID_RECHARGE_CURRENCY = 123;
-  private static final int METHODID_RECHARGE_CURRENCY_IN_BATCHES = 124;
-  private static final int METHODID_GET_VCURRENCY = 125;
-  private static final int METHODID_LIST_VCURRENCY = 126;
-  private static final int METHODID_LIST_ACCOUNT_OPERATION = 127;
-  private static final int METHODID_CREATE_ROOM = 128;
-  private static final int METHODID_GET_ROOM = 129;
-  private static final int METHODID_UPDATE_ROOM = 130;
-  private static final int METHODID_LIST_ROOM = 131;
-  private static final int METHODID_DELETE_ROOM = 132;
-  private static final int METHODID_LIST_FINISHED_ROOM = 133;
-  private static final int METHODID_RECORD = 134;
-  private static final int METHODID_CREATE_LIVE_USER_TOKEN = 135;
-  private static final int METHODID_USER_ENTER_ROOM = 136;
-  private static final int METHODID_USER_EXIT_ROOM = 137;
-  private static final int METHODID_LIST_ACTIVE_ROOM_USER = 138;
-  private static final int METHODID_CREATE_LIVE_PLAN = 139;
-  private static final int METHODID_GET_LIVE_PLAN = 140;
-  private static final int METHODID_UPDATE_LIVE_PLAN = 141;
-  private static final int METHODID_LIST_LIVE_PLAN = 142;
-  private static final int METHODID_DELETE_LIVE_PLAN = 143;
-  private static final int METHODID_CREATE_LIVE_PLAN_PRODUCT = 144;
-  private static final int METHODID_UPDATE_LIVE_PLAN_PRODUCT = 145;
-  private static final int METHODID_LIST_LIVE_PLAN_PRODUCT = 146;
-  private static final int METHODID_DELETE_LIVE_PLAN_PRODUCT = 147;
-  private static final int METHODID_LOAD_LIVE_PLAN_PRODUCT = 148;
-  private static final int METHODID_UPDATE_LIVE_PRODUCT_STATUS = 149;
-  private static final int METHODID_LIST_LIVE_PRODUCT_STATUS = 150;
-  private static final int METHODID_DELETE_LIVE_PRODUCT_STATUS = 151;
-  private static final int METHODID_CREATE_LIVE_PRODUCT_STATUS = 152;
-  private static final int METHODID_GET_LIVING_PRODUCT_STATUS = 153;
-  private static final int METHODID_UPDATE_LIVE_PRODUCT_INTRODUCT_STATUS = 154;
-  private static final int METHODID_CREATE_LIVE_TEXT = 155;
-  private static final int METHODID_UPDATE_LIVE_TEXT = 156;
-  private static final int METHODID_LIST_LIVE_TEXT = 157;
-  private static final int METHODID_GET_LIVE_TEXT = 158;
-  private static final int METHODID_DELETE_LIVE_TEXTS = 159;
-  private static final int METHODID_GET_LIVE_CHART_DATA = 160;
-  private static final int METHODID_GET_EVALUATE_SELECTOR = 161;
-  private static final int METHODID_LIST_PERSONAL_EVALUATE = 162;
-  private static final int METHODID_GET_EVALUATE_DETAIL = 163;
-  private static final int METHODID_SUBMIT_EVALUATE = 164;
-  private static final int METHODID_LIST_UNEVALUATED_ROOM = 165;
-  private static final int METHODID_LIST_STUDENT_EVALUATIONS = 166;
-  private static final int METHODID_IGNORE_EVALUATION = 167;
-  private static final int METHODID_GET_RANK = 168;
-  private static final int METHODID_RECORD_LIVE_CALLBACK = 169;
-  private static final int METHODID_VIDEO_TO_TEXT_CALLBACK = 170;
-  private static final int METHODID_REGENERATION_AI_FEEDBACK = 171;
-  private static final int METHODID_SUBMIT_USER_ATTITUDE_FOR_AI_RESULT = 172;
-  private static final int METHODID_PREHEAT_PRODUCT = 173;
-  private static final int METHODID_PUBLIC_PRICE = 174;
-  private static final int METHODID_CREATE_TENANT = 175;
-  private static final int METHODID_GET_TENANT = 176;
-  private static final int METHODID_UPDATE_TENANT = 177;
-  private static final int METHODID_DELETE_TENANT = 178;
-  private static final int METHODID_LIST_TENANT = 179;
-  private static final int METHODID_GET_TENANT_ORG = 180;
-  private static final int METHODID_CREATE_TENANT_DEPT = 181;
-  private static final int METHODID_UPDATE_TENANT_DEPT = 182;
-  private static final int METHODID_DELETE_TENANT_DEPT = 183;
-  private static final int METHODID_GET_TENANT_DEPT = 184;
-  private static final int METHODID_GET_TENANT_DEPT_TYPE = 185;
-  private static final int METHODID_CREATE_TENANT_USER = 186;
-  private static final int METHODID_DELETE_TENANT_USER = 187;
-  private static final int METHODID_UPDATE_TENANT_USER = 188;
-  private static final int METHODID_GET_TENANT_USER = 189;
-  private static final int METHODID_LIST_TENANT_USER = 190;
-  private static final int METHODID_LIST_TENANT_STUDENT = 191;
-  private static final int METHODID_UPDATE_TENANT_USER_PASSWORD = 192;
-  private static final int METHODID_UPDATE_TENANT_CONFIG = 193;
-  private static final int METHODID_LIST_TENANT_CONFIG = 194;
-  private static final int METHODID_CREATE_SHORT_VIDEO = 195;
-  private static final int METHODID_STAGE_SHORT_VIDEO = 196;
-  private static final int METHODID_LIST_MY_SHORT_VIDEO = 197;
-  private static final int METHODID_LIST_MY_STAGE_VIDEO = 198;
-  private static final int METHODID_LIST_MY_LIKE_VIDEO = 199;
-  private static final int METHODID_LIST_MY_FAVORITE_VIDEO = 200;
-  private static final int METHODID_GET_SHORT_VIDEO = 201;
-  private static final int METHODID_UPDATE_SHORT_VIDEO = 202;
-  private static final int METHODID_DELETE_SHORT_VIDEO = 203;
-  private static final int METHODID_GET_STAGE_VIDEO = 204;
-  private static final int METHODID_DELETE_STAGE_VIDEO = 205;
-  private static final int METHODID_UPDATE_STAGE_VIDEO = 206;
-  private static final int METHODID_MANAGEMENT_LIST_SHORT_VIDEO = 207;
-  private static final int METHODID_MANAGEMENT_CENSOR_SHORT_VIDEO = 208;
-  private static final int METHODID_MANAGEMENT_DELETE_SHORT_VIDEO = 209;
-  private static final int METHODID_LIST_SHORT_VIDEO = 210;
-  private static final int METHODID_LIKE_SHORT_VIDEO = 211;
-  private static final int METHODID_FAVORITE_SHORT_VIDEO = 212;
-  private static final int METHODID_CREATE_SHORT_VIDEO_COMMENT = 213;
-  private static final int METHODID_DELETE_SHORT_VIDEO_COMMENT = 214;
-  private static final int METHODID_LIST_SHORT_VIDEO_COMMENT = 215;
-  private static final int METHODID_CREATE_COUPON = 216;
-  private static final int METHODID_LIST_COUPON = 217;
-  private static final int METHODID_COUPON_DETAIL = 218;
-  private static final int METHODID_UPDATE_COUPON = 219;
-  private static final int METHODID_DELETE_COUPON = 220;
-  private static final int METHODID_ABOLISH_COUPON = 221;
-  private static final int METHODID_UPDATE_COUPON_DISTRIBUTION_STATUS = 222;
-  private static final int METHODID_CLAIM_COUPON = 223;
-  private static final int METHODID_CREATE_ACTIVITY = 224;
-  private static final int METHODID_LIST_ACTIVITY = 225;
-  private static final int METHODID_ACTIVITY_DETAIL = 226;
-  private static final int METHODID_UPDATE_ACTIVITY = 227;
-  private static final int METHODID_DELETE_ACTIVITY = 228;
-  private static final int METHODID_DISABLE_ACTIVITY = 229;
-  private static final int METHODID_CREATE_COURSE_MATERIAL_BOX = 230;
-  private static final int METHODID_LIST_COURSE_MATERIAL_BOX = 231;
-  private static final int METHODID_DELETE_COURSE_MATERIAL_BOX = 232;
-  private static final int METHODID_UPLOAD_COURSE_MATERIAL = 233;
-  private static final int METHODID_LIST_COURSE_MATERIAL = 234;
-  private static final int METHODID_DELETE_COURSE_MATERIAL = 235;
+  private static final int METHODID_LOGOUT = 6;
+  private static final int METHODID_GET_VERIFY_CODE = 7;
+  private static final int METHODID_GET_USER = 8;
+  private static final int METHODID_LOGIN_WITH_PASSWORD = 9;
+  private static final int METHODID_UPDATE_PASSWORD = 10;
+  private static final int METHODID_FOLLOW_USER = 11;
+  private static final int METHODID_LIST_MY_FOLLOWING = 12;
+  private static final int METHODID_LIST_MY_FOLLOWER = 13;
+  private static final int METHODID_LIST_MY_FRIEND = 14;
+  private static final int METHODID_GET_USER_PAGE_PERMISSION = 15;
+  private static final int METHODID_CREATE_ROLE_PAGE_PERMISSION = 16;
+  private static final int METHODID_UPDATE_ROLE_PAGE_PERMISSION = 17;
+  private static final int METHODID_GET_ROLE_PAGE_PERMISSION = 18;
+  private static final int METHODID_ADD_ADDRESS = 19;
+  private static final int METHODID_DELETE_ADDRESS = 20;
+  private static final int METHODID_UPDATE_ADDRESS = 21;
+  private static final int METHODID_GET_ADDRESS = 22;
+  private static final int METHODID_LIST_ADDRESS = 23;
+  private static final int METHODID_LIST_USER_BY_ROLE = 24;
+  private static final int METHODID_LIST_PERMISSION = 25;
+  private static final int METHODID_LIST_ROLE = 26;
+  private static final int METHODID_GIVE_ROLE_PERMISSION = 27;
+  private static final int METHODID_REMOVE_ROLE_PERMISSION = 28;
+  private static final int METHODID_CREATE_ROLE = 29;
+  private static final int METHODID_DELETE_ROLE = 30;
+  private static final int METHODID_LIST_RESOURCE = 31;
+  private static final int METHODID_GET_ROLE_TYPE = 32;
+  private static final int METHODID_CREATE_SHOP = 33;
+  private static final int METHODID_GET_SHOP = 34;
+  private static final int METHODID_UPDATE_SHOP = 35;
+  private static final int METHODID_LIST_SHOP = 36;
+  private static final int METHODID_DELETE_SHOP = 37;
+  private static final int METHODID_LIST_OPERATION_METRICS = 38;
+  private static final int METHODID_GET_SHOP_QRCODE = 39;
+  private static final int METHODID_UPDATE_SHOP_MANAGER = 40;
+  private static final int METHODID_GET_SHOP_BUSINESS_DATA = 41;
+  private static final int METHODID_ADD_SHOP_ACCESS = 42;
+  private static final int METHODID_REMOVE_SHOP_ACCESS = 43;
+  private static final int METHODID_VERIFY_FIELD = 44;
+  private static final int METHODID_LIST_SHOP_ACCESS = 45;
+  private static final int METHODID_ADD_SHOP_CATEGORY = 46;
+  private static final int METHODID_GET_SHOP_CATEGORY = 47;
+  private static final int METHODID_REMOVE_SHOP_CATEGORY = 48;
+  private static final int METHODID_ADD_FREIGHT_TEMPLATE = 49;
+  private static final int METHODID_GET_FREIGHT_TEMPLATE = 50;
+  private static final int METHODID_UPDATE_FREIGHT_TEMPLATE = 51;
+  private static final int METHODID_DELETE_FREIGHT_TEMPLATE = 52;
+  private static final int METHODID_LIST_FREIGHT_TEMPLATE = 53;
+  private static final int METHODID_LIST_QUALIFICATION = 54;
+  private static final int METHODID_GET_MALL_INDEX = 55;
+  private static final int METHODID_CREATE_CATEGORY = 56;
+  private static final int METHODID_GET_CATEGORY = 57;
+  private static final int METHODID_UPDATE_CATEGORY = 58;
+  private static final int METHODID_LIST_CATEGORY = 59;
+  private static final int METHODID_DELETE_CATEGORY = 60;
+  private static final int METHODID_LIST_CATEGORY_QUALIFICATION = 61;
+  private static final int METHODID_CREATE_PRODUCT = 62;
+  private static final int METHODID_GET_PRODUCT = 63;
+  private static final int METHODID_UPDATE_PRODUCT = 64;
+  private static final int METHODID_LIST_PRODUCT = 65;
+  private static final int METHODID_LIST_PRODUCT_BY_IDS = 66;
+  private static final int METHODID_DELETE_PRODUCT = 67;
+  private static final int METHODID_UPLOAD_MULTI_IMAGE = 68;
+  private static final int METHODID_DELETE_IMAGE_BY_ID = 69;
+  private static final int METHODID_BIND_ATTRIBUTE = 70;
+  private static final int METHODID_PUBLISH_PRODUCT = 71;
+  private static final int METHODID_OFF_SHELF_PRODUCT_IN_BATCHES = 72;
+  private static final int METHODID_DELETE_PRODUCT_IN_BATCHES = 73;
+  private static final int METHODID_CHANGE_PRODUCTS_STATE = 74;
+  private static final int METHODID_CREATE_SKU = 75;
+  private static final int METHODID_GET_SKU = 76;
+  private static final int METHODID_UPDATE_SKU = 77;
+  private static final int METHODID_LIST_SKU = 78;
+  private static final int METHODID_DELETE_SKU = 79;
+  private static final int METHODID_CREATE_ATTRIBUTE = 80;
+  private static final int METHODID_GET_ATTRIBUTE = 81;
+  private static final int METHODID_LIST_ATTRIBUTE = 82;
+  private static final int METHODID_DELETE_ATTRIBUTE = 83;
+  private static final int METHODID_ADD_ATTRIBUTE_VALUE = 84;
+  private static final int METHODID_DELETE_ATTRIBUTE_VALUE = 85;
+  private static final int METHODID_CREATE_ORDER = 86;
+  private static final int METHODID_GET_ORDER = 87;
+  private static final int METHODID_UPDATE_ORDER = 88;
+  private static final int METHODID_LIST_ORDER = 89;
+  private static final int METHODID_DELETE_ORDER = 90;
+  private static final int METHODID_SHIP_GOODS = 91;
+  private static final int METHODID_CONFIRM_RECEIPT_GOODS = 92;
+  private static final int METHODID_CANCEL_ORDER = 93;
+  private static final int METHODID_SHIP_GOODS_IN_BATCHES = 94;
+  private static final int METHODID_FREE_SHIPPING_IN_BATCHES = 95;
+  private static final int METHODID_CREATE_CART = 96;
+  private static final int METHODID_GET_CART = 97;
+  private static final int METHODID_UPDATE_CART = 98;
+  private static final int METHODID_DELETE_CART = 99;
+  private static final int METHODID_UPLOAD_ATTACHMENT = 100;
+  private static final int METHODID_LIST_ATTACHMENT = 101;
+  private static final int METHODID_DELETE_ATTACHMENT = 102;
+  private static final int METHODID_CREATE_SELLER = 103;
+  private static final int METHODID_CREATE_PAYMENT = 104;
+  private static final int METHODID_GET_PAYMENT = 105;
+  private static final int METHODID_UPDATE_PAYMENT = 106;
+  private static final int METHODID_DELETE_PAYMENT = 107;
+  private static final int METHODID_CREATE_CONFIG = 108;
+  private static final int METHODID_UPDATE_CONFIG = 109;
+  private static final int METHODID_DELETE_CONFIG = 110;
+  private static final int METHODID_GET_CONFIG = 111;
+  private static final int METHODID_GET_STS = 112;
+  private static final int METHODID_LIST_TENANT_ORG = 113;
+  private static final int METHODID_GET_ADMIN_TENANT = 114;
+  private static final int METHODID_LIST_ADMIN_USER = 115;
+  private static final int METHODID_CREATE_ADMIN_USER = 116;
+  private static final int METHODID_UPDATE_ADMIN_USER = 117;
+  private static final int METHODID_DELETE_ADMIN_USER = 118;
+  private static final int METHODID_WX_PREPAY = 119;
+  private static final int METHODID_CLOSE_ORDER = 120;
+  private static final int METHODID_QUERY_ORDER_BY_ID = 121;
+  private static final int METHODID_QUERY_ORDER_BY_OUT_TRADE = 122;
+  private static final int METHODID_ADD_VCURRENCY = 123;
+  private static final int METHODID_RECHARGE_CURRENCY = 124;
+  private static final int METHODID_RECHARGE_CURRENCY_IN_BATCHES = 125;
+  private static final int METHODID_GET_VCURRENCY = 126;
+  private static final int METHODID_LIST_VCURRENCY = 127;
+  private static final int METHODID_LIST_ACCOUNT_OPERATION = 128;
+  private static final int METHODID_CREATE_ROOM = 129;
+  private static final int METHODID_GET_ROOM = 130;
+  private static final int METHODID_UPDATE_ROOM = 131;
+  private static final int METHODID_LIST_ROOM = 132;
+  private static final int METHODID_DELETE_ROOM = 133;
+  private static final int METHODID_LIST_FINISHED_ROOM = 134;
+  private static final int METHODID_RECORD = 135;
+  private static final int METHODID_CREATE_LIVE_USER_TOKEN = 136;
+  private static final int METHODID_USER_ENTER_ROOM = 137;
+  private static final int METHODID_USER_EXIT_ROOM = 138;
+  private static final int METHODID_LIST_ACTIVE_ROOM_USER = 139;
+  private static final int METHODID_CREATE_LIVE_PLAN = 140;
+  private static final int METHODID_GET_LIVE_PLAN = 141;
+  private static final int METHODID_UPDATE_LIVE_PLAN = 142;
+  private static final int METHODID_LIST_LIVE_PLAN = 143;
+  private static final int METHODID_DELETE_LIVE_PLAN = 144;
+  private static final int METHODID_CREATE_LIVE_PLAN_PRODUCT = 145;
+  private static final int METHODID_UPDATE_LIVE_PLAN_PRODUCT = 146;
+  private static final int METHODID_LIST_LIVE_PLAN_PRODUCT = 147;
+  private static final int METHODID_DELETE_LIVE_PLAN_PRODUCT = 148;
+  private static final int METHODID_LOAD_LIVE_PLAN_PRODUCT = 149;
+  private static final int METHODID_UPDATE_LIVE_PRODUCT_STATUS = 150;
+  private static final int METHODID_LIST_LIVE_PRODUCT_STATUS = 151;
+  private static final int METHODID_DELETE_LIVE_PRODUCT_STATUS = 152;
+  private static final int METHODID_CREATE_LIVE_PRODUCT_STATUS = 153;
+  private static final int METHODID_GET_LIVING_PRODUCT_STATUS = 154;
+  private static final int METHODID_UPDATE_LIVE_PRODUCT_INTRODUCT_STATUS = 155;
+  private static final int METHODID_CREATE_LIVE_TEXT = 156;
+  private static final int METHODID_UPDATE_LIVE_TEXT = 157;
+  private static final int METHODID_LIST_LIVE_TEXT = 158;
+  private static final int METHODID_GET_LIVE_TEXT = 159;
+  private static final int METHODID_DELETE_LIVE_TEXTS = 160;
+  private static final int METHODID_GET_LIVE_CHART_DATA = 161;
+  private static final int METHODID_GET_EVALUATE_SELECTOR = 162;
+  private static final int METHODID_LIST_PERSONAL_EVALUATE = 163;
+  private static final int METHODID_GET_EVALUATE_DETAIL = 164;
+  private static final int METHODID_SUBMIT_EVALUATE = 165;
+  private static final int METHODID_LIST_UNEVALUATED_ROOM = 166;
+  private static final int METHODID_LIST_STUDENT_EVALUATIONS = 167;
+  private static final int METHODID_IGNORE_EVALUATION = 168;
+  private static final int METHODID_GET_RANK = 169;
+  private static final int METHODID_RECORD_LIVE_CALLBACK = 170;
+  private static final int METHODID_VIDEO_TO_TEXT_CALLBACK = 171;
+  private static final int METHODID_REGENERATION_AI_FEEDBACK = 172;
+  private static final int METHODID_SUBMIT_USER_ATTITUDE_FOR_AI_RESULT = 173;
+  private static final int METHODID_PREHEAT_PRODUCT = 174;
+  private static final int METHODID_PUBLIC_PRICE = 175;
+  private static final int METHODID_CREATE_TENANT = 176;
+  private static final int METHODID_GET_TENANT = 177;
+  private static final int METHODID_UPDATE_TENANT = 178;
+  private static final int METHODID_DELETE_TENANT = 179;
+  private static final int METHODID_LIST_TENANT = 180;
+  private static final int METHODID_GET_TENANT_ORG = 181;
+  private static final int METHODID_CREATE_TENANT_DEPT = 182;
+  private static final int METHODID_UPDATE_TENANT_DEPT = 183;
+  private static final int METHODID_DELETE_TENANT_DEPT = 184;
+  private static final int METHODID_GET_TENANT_DEPT = 185;
+  private static final int METHODID_GET_TENANT_DEPT_TYPE = 186;
+  private static final int METHODID_CREATE_TENANT_USER = 187;
+  private static final int METHODID_DELETE_TENANT_USER = 188;
+  private static final int METHODID_UPDATE_TENANT_USER = 189;
+  private static final int METHODID_GET_TENANT_USER = 190;
+  private static final int METHODID_LIST_TENANT_USER = 191;
+  private static final int METHODID_LIST_TENANT_STUDENT = 192;
+  private static final int METHODID_UPDATE_TENANT_USER_PASSWORD = 193;
+  private static final int METHODID_UPDATE_TENANT_CONFIG = 194;
+  private static final int METHODID_LIST_TENANT_CONFIG = 195;
+  private static final int METHODID_CREATE_SHORT_VIDEO = 196;
+  private static final int METHODID_STAGE_SHORT_VIDEO = 197;
+  private static final int METHODID_LIST_MY_SHORT_VIDEO = 198;
+  private static final int METHODID_LIST_MY_STAGE_VIDEO = 199;
+  private static final int METHODID_LIST_MY_LIKE_VIDEO = 200;
+  private static final int METHODID_LIST_MY_FAVORITE_VIDEO = 201;
+  private static final int METHODID_GET_SHORT_VIDEO = 202;
+  private static final int METHODID_UPDATE_SHORT_VIDEO = 203;
+  private static final int METHODID_DELETE_SHORT_VIDEO = 204;
+  private static final int METHODID_GET_STAGE_VIDEO = 205;
+  private static final int METHODID_DELETE_STAGE_VIDEO = 206;
+  private static final int METHODID_UPDATE_STAGE_VIDEO = 207;
+  private static final int METHODID_MANAGEMENT_LIST_SHORT_VIDEO = 208;
+  private static final int METHODID_MANAGEMENT_CENSOR_SHORT_VIDEO = 209;
+  private static final int METHODID_MANAGEMENT_DELETE_SHORT_VIDEO = 210;
+  private static final int METHODID_LIST_SHORT_VIDEO = 211;
+  private static final int METHODID_LIKE_SHORT_VIDEO = 212;
+  private static final int METHODID_FAVORITE_SHORT_VIDEO = 213;
+  private static final int METHODID_CREATE_SHORT_VIDEO_COMMENT = 214;
+  private static final int METHODID_DELETE_SHORT_VIDEO_COMMENT = 215;
+  private static final int METHODID_LIST_SHORT_VIDEO_COMMENT = 216;
+  private static final int METHODID_CREATE_COUPON = 217;
+  private static final int METHODID_LIST_COUPON = 218;
+  private static final int METHODID_COUPON_DETAIL = 219;
+  private static final int METHODID_UPDATE_COUPON = 220;
+  private static final int METHODID_DELETE_COUPON = 221;
+  private static final int METHODID_ABOLISH_COUPON = 222;
+  private static final int METHODID_UPDATE_COUPON_DISTRIBUTION_STATUS = 223;
+  private static final int METHODID_CLAIM_COUPON = 224;
+  private static final int METHODID_CREATE_ACTIVITY = 225;
+  private static final int METHODID_LIST_ACTIVITY = 226;
+  private static final int METHODID_ACTIVITY_DETAIL = 227;
+  private static final int METHODID_UPDATE_ACTIVITY = 228;
+  private static final int METHODID_DELETE_ACTIVITY = 229;
+  private static final int METHODID_DISABLE_ACTIVITY = 230;
+  private static final int METHODID_CREATE_COURSE_MATERIAL_BOX = 231;
+  private static final int METHODID_LIST_COURSE_MATERIAL_BOX = 232;
+  private static final int METHODID_DELETE_COURSE_MATERIAL_BOX = 233;
+  private static final int METHODID_UPLOAD_COURSE_MATERIAL = 234;
+  private static final int METHODID_LIST_COURSE_MATERIAL = 235;
+  private static final int METHODID_DELETE_COURSE_MATERIAL = 236;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -15607,6 +15669,10 @@ public final class glory_apiGrpc {
         case METHODID_LOGIN:
           serviceImpl.login((com.zhijiejiaoyu.glory_api.user.LoginRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.LoginResponse>) responseObserver);
+          break;
+        case METHODID_LOGOUT:
+          serviceImpl.logout((com.zhijiejiaoyu.glory_api.user.LogoutRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.LogoutResponse>) responseObserver);
           break;
         case METHODID_GET_VERIFY_CODE:
           serviceImpl.getVerifyCode((com.zhijiejiaoyu.glory_api.user.GetVerifyCodeRequest) request,
@@ -16588,6 +16654,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.user.LoginRequest,
               com.zhijiejiaoyu.glory_api.user.LoginResponse>(
                 service, METHODID_LOGIN)))
+        .addMethod(
+          getLogoutMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.user.LogoutRequest,
+              com.zhijiejiaoyu.glory_api.user.LogoutResponse>(
+                service, METHODID_LOGOUT)))
         .addMethod(
           getGetVerifyCodeMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -18252,6 +18325,7 @@ public final class glory_apiGrpc {
               .addMethod(getListExampleMethod())
               .addMethod(getDeleteExampleMethod())
               .addMethod(getLoginMethod())
+              .addMethod(getLogoutMethod())
               .addMethod(getGetVerifyCodeMethod())
               .addMethod(getGetUserMethod())
               .addMethod(getLoginWithPasswordMethod())

@@ -65,6 +65,7 @@ export interface ListTenantUserRequest {
   dept_id?: string;
   name?: string;
   is_admin?: boolean;
+  is_short_checker?: boolean;
   pagination?: base.PaginationRequest;
 }
 

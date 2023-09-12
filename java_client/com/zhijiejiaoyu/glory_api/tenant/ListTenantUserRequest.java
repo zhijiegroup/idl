@@ -83,6 +83,11 @@ private static final long serialVersionUID = 0L;
             isAdmin = input.readBool();
             break;
           }
+          case 48: {
+
+            isShortChecker = input.readBool();
+            break;
+          }
           case 802: {
             com.zhijiejiaoyu.base.PaginationRequest.Builder subBuilder = null;
             if (pagination != null) {
@@ -225,6 +230,17 @@ private static final long serialVersionUID = 0L;
     return isAdmin ;
   }
 
+  public static final int IS_SHORT_CHECKER_FIELD_NUMBER = 6;
+  private boolean isShortChecker ;
+  /**
+   * <code>bool is_short_checker = 6;</code>
+   * @return The isShortChecker.
+   */
+  @java.lang.Override
+  public boolean getIsShortChecker() {
+    return isShortChecker ;
+  }
+
   public static final int PAGINATION_FIELD_NUMBER = 100;
   private com.zhijiejiaoyu.base.PaginationRequest pagination ;
   /**
@@ -280,6 +296,9 @@ private static final long serialVersionUID = 0L;
     if (isAdmin != false) {
       output.writeBool(5, isAdmin );
     }
+    if (isShortChecker != false) {
+      output.writeBool(6, isShortChecker );
+    }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
     }
@@ -310,6 +329,10 @@ private static final long serialVersionUID = 0L;
     if (isAdmin != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(5, isAdmin );
+    }
+    if (isShortChecker != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(6, isShortChecker );
     }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -343,6 +366,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getName())) return false;
     if (getIsAdmin()
         != other.getIsAdmin()) return false;
+    if (getIsShortChecker()
+        != other.getIsShortChecker()) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -374,6 +399,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + IS_ADMIN_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getIsAdmin());
+    hash = (37 * hash) + IS_SHORT_CHECKER_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsShortChecker());
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
@@ -525,6 +553,8 @@ private static final long serialVersionUID = 0L;
 
       isAdmin = false;
 
+      isShortChecker = false;
+
       if (paginationBuilder == null) {
         pagination = null;
       } else {
@@ -566,6 +596,7 @@ private static final long serialVersionUID = 0L;
       result.deptId = deptId ;
       result.name = name ;
       result.isAdmin = isAdmin ;
+      result.isShortChecker = isShortChecker ;
       if (paginationBuilder == null) {
         result.pagination = pagination ;
       } else {
@@ -634,6 +665,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getIsAdmin() != false) {
         setIsAdmin(other.getIsAdmin());
+      }
+      if (other.getIsShortChecker() != false) {
+        setIsShortChecker(other.getIsShortChecker());
       }
       if (other.hasPagination()) {
         mergePagination(other.getPagination());
@@ -951,6 +985,37 @@ private static final long serialVersionUID = 0L;
     public Builder clearIsAdmin() {
       
       isAdmin = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean isShortChecker ;
+    /**
+     * <code>bool is_short_checker = 6;</code>
+     * @return The isShortChecker.
+     */
+    @java.lang.Override
+    public boolean getIsShortChecker() {
+      return isShortChecker ;
+    }
+    /**
+     * <code>bool is_short_checker = 6;</code>
+     * @param value The isShortChecker to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsShortChecker(boolean value) {
+      
+      isShortChecker = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool is_short_checker = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsShortChecker() {
+      
+      isShortChecker = false;
       onChanged();
       return this;
     }
