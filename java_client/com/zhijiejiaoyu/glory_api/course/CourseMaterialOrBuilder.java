@@ -8,23 +8,39 @@ public interface CourseMaterialOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * 素材ID（创建时不需要填写）
+   * </pre>
+   *
    * <code>int64 material_id = 1;</code>
    * @return The materialId.
    */
   long getMaterialId();
 
   /**
+   * <pre>
+   *画板ID
+   * </pre>
+   *
    * <code>int64 material_box_id = 2;</code>
    * @return The materialBoxId.
    */
   long getMaterialBoxId();
 
   /**
+   * <pre>
+   * 素材名称
+   * </pre>
+   *
    * <code>string material_name = 3;</code>
    * @return The materialName.
    */
   java.lang.String getMaterialName();
   /**
+   * <pre>
+   * 素材名称
+   * </pre>
+   *
    * <code>string material_name = 3;</code>
    * @return The bytes for materialName.
    */
@@ -32,12 +48,80 @@ public interface CourseMaterialOrBuilder extends
       getMaterialNameBytes();
 
   /**
-   * <code>string created_at = 4;</code>
+   * <pre>
+   * 素材类型（image/video/audio/ppt/word）
+   * </pre>
+   *
+   * <code>string material_type = 4;</code>
+   * @return The materialType.
+   */
+  java.lang.String getMaterialType();
+  /**
+   * <pre>
+   * 素材类型（image/video/audio/ppt/word）
+   * </pre>
+   *
+   * <code>string material_type = 4;</code>
+   * @return The bytes for materialType.
+   */
+  com.google.protobuf.ByteString
+      getMaterialTypeBytes();
+
+  /**
+   * <pre>
+   * 素材OSS路径
+   * </pre>
+   *
+   * <code>string material_path = 5;</code>
+   * @return The materialPath.
+   */
+  java.lang.String getMaterialPath();
+  /**
+   * <pre>
+   * 素材OSS路径
+   * </pre>
+   *
+   * <code>string material_path = 5;</code>
+   * @return The bytes for materialPath.
+   */
+  com.google.protobuf.ByteString
+      getMaterialPathBytes();
+
+  /**
+   * <pre>
+   * 素材URL（创建时不需要填写）
+   * </pre>
+   *
+   * <code>string material_url = 6;</code>
+   * @return The materialUrl.
+   */
+  java.lang.String getMaterialUrl();
+  /**
+   * <pre>
+   * 素材URL（创建时不需要填写）
+   * </pre>
+   *
+   * <code>string material_url = 6;</code>
+   * @return The bytes for materialUrl.
+   */
+  com.google.protobuf.ByteString
+      getMaterialUrlBytes();
+
+  /**
+   * <pre>
+   * 创建时间（创建时不需要填写）
+   * </pre>
+   *
+   * <code>string created_at = 7;</code>
    * @return The createdAt.
    */
   java.lang.String getCreatedAt();
   /**
-   * <code>string created_at = 4;</code>
+   * <pre>
+   * 创建时间（创建时不需要填写）
+   * </pre>
+   *
+   * <code>string created_at = 7;</code>
    * @return The bytes for createdAt.
    */
   com.google.protobuf.ByteString

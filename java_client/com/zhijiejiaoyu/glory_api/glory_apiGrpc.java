@@ -7207,6 +7207,37 @@ public final class glory_apiGrpc {
     return getListCourseMaterialBoxMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialBoxRequest,
+      com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialBoxResponse> getDeleteCourseMaterialBoxMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteCourseMaterialBox",
+      requestType = com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialBoxRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialBoxResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialBoxRequest,
+      com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialBoxResponse> getDeleteCourseMaterialBoxMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialBoxRequest, com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialBoxResponse> getDeleteCourseMaterialBoxMethod;
+    if ((getDeleteCourseMaterialBoxMethod = glory_apiGrpc.getDeleteCourseMaterialBoxMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getDeleteCourseMaterialBoxMethod = glory_apiGrpc.getDeleteCourseMaterialBoxMethod) == null) {
+          glory_apiGrpc.getDeleteCourseMaterialBoxMethod = getDeleteCourseMaterialBoxMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialBoxRequest, com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialBoxResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteCourseMaterialBox"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialBoxRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialBoxResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("DeleteCourseMaterialBox"))
+              .build();
+        }
+      }
+    }
+    return getDeleteCourseMaterialBoxMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.UploadCourseMaterialRequest,
       com.zhijiejiaoyu.glory_api.course.UploadCourseMaterialResponse> getUploadCourseMaterialMethod;
 
@@ -7267,6 +7298,37 @@ public final class glory_apiGrpc {
       }
     }
     return getListCourseMaterialMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialRequest,
+      com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialResponse> getDeleteCourseMaterialMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteCourseMaterial",
+      requestType = com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialRequest,
+      com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialResponse> getDeleteCourseMaterialMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialRequest, com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialResponse> getDeleteCourseMaterialMethod;
+    if ((getDeleteCourseMaterialMethod = glory_apiGrpc.getDeleteCourseMaterialMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getDeleteCourseMaterialMethod = glory_apiGrpc.getDeleteCourseMaterialMethod) == null) {
+          glory_apiGrpc.getDeleteCourseMaterialMethod = getDeleteCourseMaterialMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialRequest, com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteCourseMaterial"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("DeleteCourseMaterial"))
+              .build();
+        }
+      }
+    }
+    return getDeleteCourseMaterialMethod;
   }
 
   /**
@@ -9133,6 +9195,16 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * 删除画板
+     * </pre>
+     */
+    default void deleteCourseMaterialBox(com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialBoxRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialBoxResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteCourseMaterialBoxMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * 上传素材
      * </pre>
      */
@@ -9149,6 +9221,16 @@ public final class glory_apiGrpc {
     default void listCourseMaterial(com.zhijiejiaoyu.glory_api.course.ListCourseMaterialRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListCourseMaterialResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListCourseMaterialMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 删除素材
+     * </pre>
+     */
+    default void deleteCourseMaterial(com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteCourseMaterialMethod(), responseObserver);
     }
   }
 
@@ -11227,6 +11309,17 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * 删除画板
+     * </pre>
+     */
+    public void deleteCourseMaterialBox(com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialBoxRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialBoxResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteCourseMaterialBoxMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * 上传素材
      * </pre>
      */
@@ -11245,6 +11338,17 @@ public final class glory_apiGrpc {
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListCourseMaterialResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListCourseMaterialMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 删除素材
+     * </pre>
+     */
+    public void deleteCourseMaterial(com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteCourseMaterialMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -13080,6 +13184,16 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * 删除画板
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialBoxResponse deleteCourseMaterialBox(com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialBoxRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteCourseMaterialBoxMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * 上传素材
      * </pre>
      */
@@ -13096,6 +13210,16 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.course.ListCourseMaterialResponse listCourseMaterial(com.zhijiejiaoyu.glory_api.course.ListCourseMaterialRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListCourseMaterialMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 删除素材
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialResponse deleteCourseMaterial(com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteCourseMaterialMethod(), getCallOptions(), request);
     }
   }
 
@@ -15163,6 +15287,17 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * 删除画板
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialBoxResponse> deleteCourseMaterialBox(
+        com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialBoxRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteCourseMaterialBoxMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * 上传素材
      * </pre>
      */
@@ -15181,6 +15316,17 @@ public final class glory_apiGrpc {
         com.zhijiejiaoyu.glory_api.course.ListCourseMaterialRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListCourseMaterialMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 删除素材
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialResponse> deleteCourseMaterial(
+        com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteCourseMaterialMethod(), getCallOptions()), request);
     }
   }
 
@@ -15416,8 +15562,10 @@ public final class glory_apiGrpc {
   private static final int METHODID_DISABLE_ACTIVITY = 229;
   private static final int METHODID_CREATE_COURSE_MATERIAL_BOX = 230;
   private static final int METHODID_LIST_COURSE_MATERIAL_BOX = 231;
-  private static final int METHODID_UPLOAD_COURSE_MATERIAL = 232;
-  private static final int METHODID_LIST_COURSE_MATERIAL = 233;
+  private static final int METHODID_DELETE_COURSE_MATERIAL_BOX = 232;
+  private static final int METHODID_UPLOAD_COURSE_MATERIAL = 233;
+  private static final int METHODID_LIST_COURSE_MATERIAL = 234;
+  private static final int METHODID_DELETE_COURSE_MATERIAL = 235;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -16364,6 +16512,10 @@ public final class glory_apiGrpc {
           serviceImpl.listCourseMaterialBox((com.zhijiejiaoyu.glory_api.course.ListCourseMaterialBoxRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListCourseMaterialBoxResponse>) responseObserver);
           break;
+        case METHODID_DELETE_COURSE_MATERIAL_BOX:
+          serviceImpl.deleteCourseMaterialBox((com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialBoxRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialBoxResponse>) responseObserver);
+          break;
         case METHODID_UPLOAD_COURSE_MATERIAL:
           serviceImpl.uploadCourseMaterial((com.zhijiejiaoyu.glory_api.course.UploadCourseMaterialRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.UploadCourseMaterialResponse>) responseObserver);
@@ -16371,6 +16523,10 @@ public final class glory_apiGrpc {
         case METHODID_LIST_COURSE_MATERIAL:
           serviceImpl.listCourseMaterial((com.zhijiejiaoyu.glory_api.course.ListCourseMaterialRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListCourseMaterialResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_COURSE_MATERIAL:
+          serviceImpl.deleteCourseMaterial((com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -18015,6 +18171,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.course.ListCourseMaterialBoxResponse>(
                 service, METHODID_LIST_COURSE_MATERIAL_BOX)))
         .addMethod(
+          getDeleteCourseMaterialBoxMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialBoxRequest,
+              com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialBoxResponse>(
+                service, METHODID_DELETE_COURSE_MATERIAL_BOX)))
+        .addMethod(
           getUploadCourseMaterialMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -18028,6 +18191,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.course.ListCourseMaterialRequest,
               com.zhijiejiaoyu.glory_api.course.ListCourseMaterialResponse>(
                 service, METHODID_LIST_COURSE_MATERIAL)))
+        .addMethod(
+          getDeleteCourseMaterialMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialRequest,
+              com.zhijiejiaoyu.glory_api.course.DeleteCourseMaterialResponse>(
+                service, METHODID_DELETE_COURSE_MATERIAL)))
         .build();
   }
 
@@ -18308,8 +18478,10 @@ public final class glory_apiGrpc {
               .addMethod(getDisableActivityMethod())
               .addMethod(getCreateCourseMaterialBoxMethod())
               .addMethod(getListCourseMaterialBoxMethod())
+              .addMethod(getDeleteCourseMaterialBoxMethod())
               .addMethod(getUploadCourseMaterialMethod())
               .addMethod(getListCourseMaterialMethod())
+              .addMethod(getDeleteCourseMaterialMethod())
               .build();
         }
       }

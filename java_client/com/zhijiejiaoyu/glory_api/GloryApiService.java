@@ -45,7 +45,7 @@ public final class GloryApiService {
       "ant.proto\032\030tenant/tenant_dept.proto\032\030ten" +
       "ant/tenant_user.proto\032\032tenant/tenant_con" +
       "fig.proto\032\035short_video/short_video.proto" +
-      "\032\025course/material.proto2\224\340\001\n\tglory_api\022s" +
+      "\032\025course/material.proto2\305\342\001\n\tglory_api\022s" +
       "\n\rCreateExample\022\037.glory_api.CreateExampl" +
       "eRequest\032 .glory_api.CreateExampleRespon" +
       "se\"\037\322\301\030\033/api/example/create_example\022g\n\nG" +
@@ -755,15 +755,23 @@ public final class GloryApiService {
       "_box\022\224\001\n\025ListCourseMaterialBox\022\'.glory_a" +
       "pi.ListCourseMaterialBoxRequest\032(.glory_" +
       "api.ListCourseMaterialBoxResponse\"(\322\301\030$/" +
-      "api/course/list_course_material_box\022\217\001\n\024" +
-      "UploadCourseMaterial\022&.glory_api.UploadC" +
-      "ourseMaterialRequest\032\'.glory_api.UploadC" +
-      "ourseMaterialResponse\"&\322\301\030\"/api/course/u" +
-      "pload_course_material\022\207\001\n\022ListCourseMate" +
-      "rial\022$.glory_api.ListCourseMaterialReque" +
-      "st\032%.glory_api.ListCourseMaterialRespons" +
-      "e\"$\322\301\030 /api/course/list_course_materialB" +
-      "\036\n\032com.zhijiejiaoyu.glory_apiP\001b\006proto3"
+      "api/course/list_course_material_box\022\234\001\n\027" +
+      "DeleteCourseMaterialBox\022).glory_api.Dele" +
+      "teCourseMaterialBoxRequest\032*.glory_api.D" +
+      "eleteCourseMaterialBoxResponse\"*\322\301\030&/api" +
+      "/course/delete_course_material_box\022\217\001\n\024U" +
+      "ploadCourseMaterial\022&.glory_api.UploadCo" +
+      "urseMaterialRequest\032\'.glory_api.UploadCo" +
+      "urseMaterialResponse\"&\322\301\030\"/api/course/up" +
+      "load_course_material\022\207\001\n\022ListCourseMater" +
+      "ial\022$.glory_api.ListCourseMaterialReques" +
+      "t\032%.glory_api.ListCourseMaterialResponse" +
+      "\"$\322\301\030 /api/course/list_course_material\022\217" +
+      "\001\n\024DeleteCourseMaterial\022&.glory_api.Dele" +
+      "teCourseMaterialRequest\032\'.glory_api.Dele" +
+      "teCourseMaterialResponse\"&\322\301\030\"/api/cours" +
+      "e/delete_course_materialB\036\n\032com.zhijieji" +
+      "aoyu.glory_apiP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

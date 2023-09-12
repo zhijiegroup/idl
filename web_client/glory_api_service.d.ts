@@ -1028,6 +1028,11 @@ CreateLivePlanProduct create live plan product */
     request: material.ListCourseMaterialBoxRequest
   ): Promise<material.ListCourseMaterialBoxResponse>;
 
+  /** 删除画板 */
+  DeleteCourseMaterialBox(
+    request: material.DeleteCourseMaterialBoxRequest
+  ): Promise<material.DeleteCourseMaterialBoxResponse>;
+
   /** 上传素材 */
   UploadCourseMaterial(
     request: material.UploadCourseMaterialRequest
@@ -1037,6 +1042,11 @@ CreateLivePlanProduct create live plan product */
   ListCourseMaterial(
     request: material.ListCourseMaterialRequest
   ): Promise<material.ListCourseMaterialResponse>;
+
+  /** 删除素材 */
+  DeleteCourseMaterial(
+    request: material.DeleteCourseMaterialRequest
+  ): Promise<material.DeleteCourseMaterialResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

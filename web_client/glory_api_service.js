@@ -1874,6 +1874,14 @@ export class glory_api {
     );
   }
 
+  DeleteCourseMaterialBox(request) {
+    const uri = `${this.uriPrefix}/api/course/delete_course_material_box`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   UploadCourseMaterial(request) {
     const uri = `${this.uriPrefix}/api/course/upload_course_material`;
     const body = JSONbigint.stringify(request);
@@ -1884,6 +1892,14 @@ export class glory_api {
 
   ListCourseMaterial(request) {
     const uri = `${this.uriPrefix}/api/course/list_course_material`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteCourseMaterial(request) {
+    const uri = `${this.uriPrefix}/api/course/delete_course_material`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
