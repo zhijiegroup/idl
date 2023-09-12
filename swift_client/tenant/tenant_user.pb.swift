@@ -100,7 +100,9 @@ struct GloryApi_CreateTenantUserRequest {
 
   var roleID: Int64 = 0
 
-  var isAdmin: Bool = false
+  var roleType: String = String()
+
+  var isTenant: Bool = false
 
   var users: [GloryApi_TenantUser] = []
 
@@ -625,8 +627,9 @@ extension GloryApi_CreateTenantUserRequest: SwiftProtobuf.Message, SwiftProtobuf
     2: .standard(proto: "tenant_id"),
     3: .standard(proto: "dept_id"),
     4: .standard(proto: "role_id"),
-    5: .standard(proto: "is_admin"),
-    6: .same(proto: "users"),
+    5: .standard(proto: "role_type"),
+    6: .standard(proto: "is_tenant"),
+    7: .same(proto: "users"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -639,8 +642,9 @@ extension GloryApi_CreateTenantUserRequest: SwiftProtobuf.Message, SwiftProtobuf
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
       case 3: try { try decoder.decodeSingularInt64Field(value: &self.deptID) }()
       case 4: try { try decoder.decodeSingularInt64Field(value: &self.roleID) }()
-      case 5: try { try decoder.decodeSingularBoolField(value: &self.isAdmin) }()
-      case 6: try { try decoder.decodeRepeatedMessageField(value: &self.users) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.roleType) }()
+      case 6: try { try decoder.decodeSingularBoolField(value: &self.isTenant) }()
+      case 7: try { try decoder.decodeRepeatedMessageField(value: &self.users) }()
       default: break
       }
     }
@@ -663,11 +667,14 @@ extension GloryApi_CreateTenantUserRequest: SwiftProtobuf.Message, SwiftProtobuf
     if self.roleID != 0 {
       try visitor.visitSingularInt64Field(value: self.roleID, fieldNumber: 4)
     }
-    if self.isAdmin != false {
-      try visitor.visitSingularBoolField(value: self.isAdmin, fieldNumber: 5)
+    if !self.roleType.isEmpty {
+      try visitor.visitSingularStringField(value: self.roleType, fieldNumber: 5)
+    }
+    if self.isTenant != false {
+      try visitor.visitSingularBoolField(value: self.isTenant, fieldNumber: 6)
     }
     if !self.users.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.users, fieldNumber: 6)
+      try visitor.visitRepeatedMessageField(value: self.users, fieldNumber: 7)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -677,7 +684,8 @@ extension GloryApi_CreateTenantUserRequest: SwiftProtobuf.Message, SwiftProtobuf
     if lhs.tenantID != rhs.tenantID {return false}
     if lhs.deptID != rhs.deptID {return false}
     if lhs.roleID != rhs.roleID {return false}
-    if lhs.isAdmin != rhs.isAdmin {return false}
+    if lhs.roleType != rhs.roleType {return false}
+    if lhs.isTenant != rhs.isTenant {return false}
     if lhs.users != rhs.users {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

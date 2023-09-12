@@ -41,31 +41,43 @@ public interface CreateTenantUserRequestOrBuilder extends
   long getRoleId();
 
   /**
-   * <code>bool is_admin = 5;</code>
-   * @return The isAdmin.
+   * <code>string role_type = 5;</code>
+   * @return The roleType.
    */
-  boolean getIsAdmin();
+  java.lang.String getRoleType();
+  /**
+   * <code>string role_type = 5;</code>
+   * @return The bytes for roleType.
+   */
+  com.google.protobuf.ByteString
+      getRoleTypeBytes();
 
   /**
-   * <code>repeated .glory_api.TenantUser users = 6;</code>
+   * <code>bool is_tenant = 6;</code>
+   * @return The isTenant.
+   */
+  boolean getIsTenant();
+
+  /**
+   * <code>repeated .glory_api.TenantUser users = 7;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.tenant.TenantUser> 
       getUsersList();
   /**
-   * <code>repeated .glory_api.TenantUser users = 6;</code>
+   * <code>repeated .glory_api.TenantUser users = 7;</code>
    */
   com.zhijiejiaoyu.glory_api.tenant.TenantUser getUsers(int index);
   /**
-   * <code>repeated .glory_api.TenantUser users = 6;</code>
+   * <code>repeated .glory_api.TenantUser users = 7;</code>
    */
   int getUsersCount();
   /**
-   * <code>repeated .glory_api.TenantUser users = 6;</code>
+   * <code>repeated .glory_api.TenantUser users = 7;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.tenant.TenantUserOrBuilder> 
       getUsersOrBuilderList();
   /**
-   * <code>repeated .glory_api.TenantUser users = 6;</code>
+   * <code>repeated .glory_api.TenantUser users = 7;</code>
    */
   com.zhijiejiaoyu.glory_api.tenant.TenantUserOrBuilder getUsersOrBuilder(
       int index);

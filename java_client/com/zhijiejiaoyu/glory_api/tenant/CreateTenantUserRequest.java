@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CreateTenantUserRequest() {
+    roleType = "";
     users = java.util.Collections.emptyList();
   }
 
@@ -78,12 +79,18 @@ private static final long serialVersionUID = 0L;
             roleId = input.readInt64();
             break;
           }
-          case 40: {
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
 
-            isAdmin = input.readBool();
+            roleType = s;
             break;
           }
-          case 50: {
+          case 48: {
+
+            isTenant = input.readBool();
+            break;
+          }
+          case 58: {
             if (!((mutable_bitField0 & 0x00000001) != 0)) {
               users = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.tenant.TenantUser>();
               mutable_bitField0_ |= 0x00000001;
@@ -186,28 +193,66 @@ private static final long serialVersionUID = 0L;
     return roleId ;
   }
 
-  public static final int IS_ADMIN_FIELD_NUMBER = 5;
-  private boolean isAdmin ;
+  public static final int ROLE_TYPE_FIELD_NUMBER = 5;
+  private volatile java.lang.Object roleType ;
   /**
-   * <code>bool is_admin = 5;</code>
-   * @return The isAdmin.
+   * <code>string role_type = 5;</code>
+   * @return The roleType.
    */
   @java.lang.Override
-  public boolean getIsAdmin() {
-    return isAdmin ;
+  public java.lang.String getRoleType() {
+    java.lang.Object ref = roleType ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      roleType = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string role_type = 5;</code>
+   * @return The bytes for roleType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getRoleTypeBytes() {
+    java.lang.Object ref = roleType ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      roleType = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
-  public static final int USERS_FIELD_NUMBER = 6;
+  public static final int IS_TENANT_FIELD_NUMBER = 6;
+  private boolean isTenant ;
+  /**
+   * <code>bool is_tenant = 6;</code>
+   * @return The isTenant.
+   */
+  @java.lang.Override
+  public boolean getIsTenant() {
+    return isTenant ;
+  }
+
+  public static final int USERS_FIELD_NUMBER = 7;
   private java.util.List<com.zhijiejiaoyu.glory_api.tenant.TenantUser> users ;
   /**
-   * <code>repeated .glory_api.TenantUser users = 6;</code>
+   * <code>repeated .glory_api.TenantUser users = 7;</code>
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.tenant.TenantUser> getUsersList() {
     return users ;
   }
   /**
-   * <code>repeated .glory_api.TenantUser users = 6;</code>
+   * <code>repeated .glory_api.TenantUser users = 7;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.tenant.TenantUserOrBuilder> 
@@ -215,21 +260,21 @@ private static final long serialVersionUID = 0L;
     return users ;
   }
   /**
-   * <code>repeated .glory_api.TenantUser users = 6;</code>
+   * <code>repeated .glory_api.TenantUser users = 7;</code>
    */
   @java.lang.Override
   public int getUsersCount() {
     return users .size();
   }
   /**
-   * <code>repeated .glory_api.TenantUser users = 6;</code>
+   * <code>repeated .glory_api.TenantUser users = 7;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.tenant.TenantUser getUsers(int index) {
     return users .get(index);
   }
   /**
-   * <code>repeated .glory_api.TenantUser users = 6;</code>
+   * <code>repeated .glory_api.TenantUser users = 7;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.tenant.TenantUserOrBuilder getUsersOrBuilder(
@@ -263,11 +308,14 @@ private static final long serialVersionUID = 0L;
     if (roleId != 0L) {
       output.writeInt64(4, roleId );
     }
-    if (isAdmin != false) {
-      output.writeBool(5, isAdmin );
+    if (!getRoleTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, roleType );
+    }
+    if (isTenant != false) {
+      output.writeBool(6, isTenant );
     }
     for (int i = 0; i < users .size(); i++) {
-      output.writeMessage(6, users .get(i));
+      output.writeMessage(7, users .get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -294,13 +342,16 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, roleId );
     }
-    if (isAdmin != false) {
+    if (!getRoleTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, roleType );
+    }
+    if (isTenant != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(5, isAdmin );
+        .computeBoolSize(6, isTenant );
     }
     for (int i = 0; i < users .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, users .get(i));
+        .computeMessageSize(7, users .get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -328,8 +379,10 @@ private static final long serialVersionUID = 0L;
         != other.getDeptId()) return false;
     if (getRoleId()
         != other.getRoleId()) return false;
-    if (getIsAdmin()
-        != other.getIsAdmin()) return false;
+    if (!getRoleType()
+        .equals(other.getRoleType())) return false;
+    if (getIsTenant()
+        != other.getIsTenant()) return false;
     if (!getUsersList()
         .equals(other.getUsersList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -356,9 +409,11 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ROLE_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getRoleId());
-    hash = (37 * hash) + IS_ADMIN_FIELD_NUMBER;
+    hash = (37 * hash) + ROLE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getRoleType().hashCode();
+    hash = (37 * hash) + IS_TENANT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getIsAdmin());
+        getIsTenant());
     if (getUsersCount() > 0) {
       hash = (37 * hash) + USERS_FIELD_NUMBER;
       hash = (53 * hash) + getUsersList().hashCode();
@@ -509,7 +564,9 @@ private static final long serialVersionUID = 0L;
 
       roleId = 0L;
 
-      isAdmin = false;
+      roleType = "";
+
+      isTenant = false;
 
       if (usersBuilder == null) {
         users = java.util.Collections.emptyList();
@@ -552,7 +609,8 @@ private static final long serialVersionUID = 0L;
       result.tenantId = tenantId ;
       result.deptId = deptId ;
       result.roleId = roleId ;
-      result.isAdmin = isAdmin ;
+      result.roleType = roleType ;
+      result.isTenant = isTenant ;
       if (usersBuilder == null) {
         if (((bitField0 & 0x00000001) != 0)) {
           users = java.util.Collections.unmodifiableList(users );
@@ -622,8 +680,12 @@ private static final long serialVersionUID = 0L;
       if (other.getRoleId() != 0L) {
         setRoleId(other.getRoleId());
       }
-      if (other.getIsAdmin() != false) {
-        setIsAdmin(other.getIsAdmin());
+      if (!other.getRoleType().isEmpty()) {
+        roleType = other.roleType ;
+        onChanged();
+      }
+      if (other.getIsTenant() != false) {
+        setIsTenant(other.getIsTenant());
       }
       if (usersBuilder == null) {
         if (!other.users .isEmpty()) {
@@ -893,33 +955,109 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private boolean isAdmin ;
+    private java.lang.Object roleType = "";
     /**
-     * <code>bool is_admin = 5;</code>
-     * @return The isAdmin.
+     * <code>string role_type = 5;</code>
+     * @return The roleType.
      */
-    @java.lang.Override
-    public boolean getIsAdmin() {
-      return isAdmin ;
+    public java.lang.String getRoleType() {
+      java.lang.Object ref = roleType ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        roleType = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>bool is_admin = 5;</code>
-     * @param value The isAdmin to set.
+     * <code>string role_type = 5;</code>
+     * @return The bytes for roleType.
+     */
+    public com.google.protobuf.ByteString
+        getRoleTypeBytes() {
+      java.lang.Object ref = roleType ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        roleType = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string role_type = 5;</code>
+     * @param value The roleType to set.
      * @return This builder for chaining.
      */
-    public Builder setIsAdmin(boolean value) {
-      
-      isAdmin = value;
+    public Builder setRoleType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      roleType = value;
       onChanged();
       return this;
     }
     /**
-     * <code>bool is_admin = 5;</code>
+     * <code>string role_type = 5;</code>
      * @return This builder for chaining.
      */
-    public Builder clearIsAdmin() {
+    public Builder clearRoleType() {
       
-      isAdmin = false;
+      roleType = getDefaultInstance().getRoleType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string role_type = 5;</code>
+     * @param value The bytes for roleType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRoleTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      roleType = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean isTenant ;
+    /**
+     * <code>bool is_tenant = 6;</code>
+     * @return The isTenant.
+     */
+    @java.lang.Override
+    public boolean getIsTenant() {
+      return isTenant ;
+    }
+    /**
+     * <code>bool is_tenant = 6;</code>
+     * @param value The isTenant to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsTenant(boolean value) {
+      
+      isTenant = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool is_tenant = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsTenant() {
+      
+      isTenant = false;
       onChanged();
       return this;
     }
@@ -937,7 +1075,7 @@ private static final long serialVersionUID = 0L;
         com.zhijiejiaoyu.glory_api.tenant.TenantUser, com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder, com.zhijiejiaoyu.glory_api.tenant.TenantUserOrBuilder> usersBuilder ;
 
     /**
-     * <code>repeated .glory_api.TenantUser users = 6;</code>
+     * <code>repeated .glory_api.TenantUser users = 7;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.tenant.TenantUser> getUsersList() {
       if (usersBuilder == null) {
@@ -947,7 +1085,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 6;</code>
+     * <code>repeated .glory_api.TenantUser users = 7;</code>
      */
     public int getUsersCount() {
       if (usersBuilder == null) {
@@ -957,7 +1095,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 6;</code>
+     * <code>repeated .glory_api.TenantUser users = 7;</code>
      */
     public com.zhijiejiaoyu.glory_api.tenant.TenantUser getUsers(int index) {
       if (usersBuilder == null) {
@@ -967,7 +1105,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 6;</code>
+     * <code>repeated .glory_api.TenantUser users = 7;</code>
      */
     public Builder setUsers(
         int index, com.zhijiejiaoyu.glory_api.tenant.TenantUser value) {
@@ -984,7 +1122,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 6;</code>
+     * <code>repeated .glory_api.TenantUser users = 7;</code>
      */
     public Builder setUsers(
         int index, com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder builderForValue) {
@@ -998,7 +1136,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 6;</code>
+     * <code>repeated .glory_api.TenantUser users = 7;</code>
      */
     public Builder addUsers(com.zhijiejiaoyu.glory_api.tenant.TenantUser value) {
       if (usersBuilder == null) {
@@ -1014,7 +1152,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 6;</code>
+     * <code>repeated .glory_api.TenantUser users = 7;</code>
      */
     public Builder addUsers(
         int index, com.zhijiejiaoyu.glory_api.tenant.TenantUser value) {
@@ -1031,7 +1169,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 6;</code>
+     * <code>repeated .glory_api.TenantUser users = 7;</code>
      */
     public Builder addUsers(
         com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder builderForValue) {
@@ -1045,7 +1183,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 6;</code>
+     * <code>repeated .glory_api.TenantUser users = 7;</code>
      */
     public Builder addUsers(
         int index, com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder builderForValue) {
@@ -1059,7 +1197,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 6;</code>
+     * <code>repeated .glory_api.TenantUser users = 7;</code>
      */
     public Builder addAllUsers(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.tenant.TenantUser> values) {
@@ -1074,7 +1212,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 6;</code>
+     * <code>repeated .glory_api.TenantUser users = 7;</code>
      */
     public Builder clearUsers() {
       if (usersBuilder == null) {
@@ -1087,7 +1225,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 6;</code>
+     * <code>repeated .glory_api.TenantUser users = 7;</code>
      */
     public Builder removeUsers(int index) {
       if (usersBuilder == null) {
@@ -1100,14 +1238,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 6;</code>
+     * <code>repeated .glory_api.TenantUser users = 7;</code>
      */
     public com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder getUsersBuilder(
         int index) {
       return getUsersFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 6;</code>
+     * <code>repeated .glory_api.TenantUser users = 7;</code>
      */
     public com.zhijiejiaoyu.glory_api.tenant.TenantUserOrBuilder getUsersOrBuilder(
         int index) {
@@ -1117,7 +1255,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 6;</code>
+     * <code>repeated .glory_api.TenantUser users = 7;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.tenant.TenantUserOrBuilder> 
          getUsersOrBuilderList() {
@@ -1128,14 +1266,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 6;</code>
+     * <code>repeated .glory_api.TenantUser users = 7;</code>
      */
     public com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder addUsersBuilder() {
       return getUsersFieldBuilder().addBuilder(
           com.zhijiejiaoyu.glory_api.tenant.TenantUser.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 6;</code>
+     * <code>repeated .glory_api.TenantUser users = 7;</code>
      */
     public com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder addUsersBuilder(
         int index) {
@@ -1143,7 +1281,7 @@ private static final long serialVersionUID = 0L;
           index, com.zhijiejiaoyu.glory_api.tenant.TenantUser.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.TenantUser users = 6;</code>
+     * <code>repeated .glory_api.TenantUser users = 7;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.tenant.TenantUser.Builder> 
          getUsersBuilderList() {
