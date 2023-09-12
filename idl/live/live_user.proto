@@ -29,6 +29,7 @@ message UserEnterRoomResponse {
 message UserExitRoomRequest {
   base.BaseRequest base_request = 1;
   int64 room_user_id =2;
+  int64 room_id =3;
 }
 message UserExitRoomResponse {
   base.BaseResponse base_resp = 1;

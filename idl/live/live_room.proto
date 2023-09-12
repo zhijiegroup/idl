@@ -184,6 +184,14 @@ message VideoToTextCallbackResponse{
   base.BaseResponse base_resp = 1;
 }
 
+message LiveSSERequest {
+  int64 room_id = 1;
+}
+
+message LiveSSEResponse {
+  base.BaseResponse base_resp = 1;
+}
+
 
 
 
