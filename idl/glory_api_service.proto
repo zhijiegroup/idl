@@ -41,6 +41,7 @@ import "tenant/tenant_dept.proto";
 import "tenant/tenant_user.proto";
 import "tenant/tenant_config.proto";
 import "short_video/short_video.proto";
+import "course/material.proto";
 
 service glory_api {
 
@@ -699,7 +700,7 @@ service glory_api {
   rpc GetTenantOrg(GetTenantOrgRequest) returns (GetTenantOrgResponse) {
     option (api.post) = '/api/tenant/tenant_org';
   }
-  
+
   //tenant_dept
   rpc CreateTenantDept(CreateTenantDeptRequest) returns(CreateTenantDeptResponse) {
     option (api.post) = '/api/tenant/create_tenant_dept';
@@ -720,12 +721,12 @@ service glory_api {
   rpc GetTenantDeptType(GetTenantDeptTypeRequest) returns(GetTenantDeptTypeResponse) {
     option (api.get) = '/api/tenant/get_tenant_dept_type';
   }
-  
+
   // tenant_user
   rpc CreateTenantUser(CreateTenantUserRequest) returns(CreateTenantUserResponse) {
     option (api.post) = '/api/tenant/create_tenant_user';
   }
-  
+
   rpc DeleteTenantUser(DeleteTenantUserRequest) returns(DeleteTenantUserResponse) {
     option (api.post) = '/api/tenant/delete_tenant_user';
   }
@@ -905,5 +906,36 @@ service glory_api {
   }
   rpc DisableActivity(DisableActivityRequest) returns (DisableActivityResponse) {
     option (api.post) = '/api/shop/disable_activity';
+  }
+
+  // 素材库
+  // 创建画板
+  rpc CreateCourseMaterialBox(CreateCourseMaterialBoxRequest) returns (CreateCourseMaterialBoxResponse) {
+    option (api.post) = '/api/course/create_course_material_box';
+  }
+
+  // 画板列表
+  rpc ListCourseMaterialBox(ListCourseMaterialBoxRequest) returns (ListCourseMaterialBoxResponse) {
+    option (api.post) = '/api/course/list_course_material_box';
+  }
+
+  // 删除画板
+  rpc DeleteCourseMaterialBox(DeleteCourseMaterialBoxRequest) returns (DeleteCourseMaterialBoxResponse) {
+    option (api.post) = '/api/course/delete_course_material_box';
+  }
+
+  // 上传素材
+  rpc UploadCourseMaterial(UploadCourseMaterialRequest) returns (UploadCourseMaterialResponse) {
+    option (api.post) = '/api/course/upload_course_material';
+  }
+
+  // 素材列表
+  rpc ListCourseMaterial(ListCourseMaterialRequest) returns (ListCourseMaterialResponse) {
+    option (api.post) = '/api/course/list_course_material';
+  }
+
+  // 删除素材
+  rpc DeleteCourseMaterial(DeleteCourseMaterialRequest) returns (DeleteCourseMaterialResponse) {
+    option (api.post) = '/api/course/delete_course_material';
   }
 }
