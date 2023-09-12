@@ -27,6 +27,7 @@ export interface UserEnterRoomResponse {
 export interface UserExitRoomRequest {
   base_request?: base.BaseRequest;
   room_user_id?: string;
+  room_id?: string;
 }
 
 export interface UserExitRoomResponse {

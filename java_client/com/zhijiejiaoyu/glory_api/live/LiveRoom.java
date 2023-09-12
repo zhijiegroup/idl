@@ -139,6 +139,16 @@ public final class LiveRoom {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_VideoToTextCallbackResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_LiveSSERequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_LiveSSERequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_LiveSSEResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_LiveSSEResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -231,8 +241,10 @@ public final class LiveRoom {
       "\030\006 \001(\003\022\021\n\tstop_time\030\007 \001(\003\022,\n\006Result\030\010 \001(" +
       "\0132\034.glory_api.VideoToTextResult\"D\n\033Video" +
       "ToTextCallbackResponse\022%\n\tbase_resp\030\001 \001(" +
-      "\0132\022.base.BaseResponseB#\n\037com.zhijiejiaoy" +
-      "u.glory_api.liveP\001b\006proto3"
+      "\0132\022.base.BaseResponse\"!\n\016LiveSSERequest\022" +
+      "\017\n\007room_id\030\001 \001(\003\"8\n\017LiveSSEResponse\022%\n\tb" +
+      "ase_resp\030\001 \001(\0132\022.base.BaseResponseB#\n\037co" +
+      "m.zhijiejiaoyu.glory_api.liveP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -388,6 +400,18 @@ public final class LiveRoom {
     internal_static_glory_api_VideoToTextCallbackResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_VideoToTextCallbackResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
+    internal_static_glory_api_LiveSSERequest_descriptor =
+      getDescriptor().getMessageTypes().get(25);
+    internal_static_glory_api_LiveSSERequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_LiveSSERequest_descriptor,
+        new java.lang.String[] { "RoomId", });
+    internal_static_glory_api_LiveSSEResponse_descriptor =
+      getDescriptor().getMessageTypes().get(26);
+    internal_static_glory_api_LiveSSEResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_LiveSSEResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
   }

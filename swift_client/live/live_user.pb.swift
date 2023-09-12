@@ -104,6 +104,8 @@ struct GloryApi_UserExitRoomRequest {
 
   var roomUserID: Int64 = 0
 
+  var roomID: Int64 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -365,6 +367,7 @@ extension GloryApi_UserExitRoomRequest: SwiftProtobuf.Message, SwiftProtobuf._Me
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
     2: .standard(proto: "room_user_id"),
+    3: .standard(proto: "room_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -375,6 +378,7 @@ extension GloryApi_UserExitRoomRequest: SwiftProtobuf.Message, SwiftProtobuf._Me
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.roomUserID) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.roomID) }()
       default: break
       }
     }
@@ -391,12 +395,16 @@ extension GloryApi_UserExitRoomRequest: SwiftProtobuf.Message, SwiftProtobuf._Me
     if self.roomUserID != 0 {
       try visitor.visitSingularInt64Field(value: self.roomUserID, fieldNumber: 2)
     }
+    if self.roomID != 0 {
+      try visitor.visitSingularInt64Field(value: self.roomID, fieldNumber: 3)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_UserExitRoomRequest, rhs: GloryApi_UserExitRoomRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.roomUserID != rhs.roomUserID {return false}
+    if lhs.roomID != rhs.roomID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

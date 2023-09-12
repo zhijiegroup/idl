@@ -27,4 +27,10 @@ public interface UserExitRoomRequestOrBuilder extends
    * @return The roomUserId.
    */
   long getRoomUserId();
+
+  /**
+   * <code>int64 room_id = 3;</code>
+   * @return The roomId.
+   */
+  long getRoomId();
 }

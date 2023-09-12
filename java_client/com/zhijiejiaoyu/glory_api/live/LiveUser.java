@@ -66,20 +66,20 @@ public final class LiveUser {
       ".base.BaseRequest\022\017\n\007room_id\030\002 \001(\003\022\021\n\tde" +
       "vice_id\030\003 \001(\t\"T\n\025UserEnterRoomResponse\022%" +
       "\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022\024\n" +
-      "\014room_user_id\030\002 \001(\003\"T\n\023UserExitRoomReque" +
+      "\014room_user_id\030\002 \001(\003\"e\n\023UserExitRoomReque" +
       "st\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequ" +
-      "est\022\024\n\014room_user_id\030\002 \001(\003\"=\n\024UserExitRoo" +
-      "mResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Base" +
-      "Response\"\230\001\n\031ListActiveRoomUserRequest\022\'" +
-      "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\022" +
-      "\024\n\014room_user_id\030\002 \001(\003\022\017\n\007room_id\030\004 \001(\003\022+" +
-      "\n\npagination\030d \001(\0132\027.base.PaginationRequ" +
-      "est\"\231\001\n\032ListActiveRoomUserResponse\022%\n\tba" +
-      "se_resp\030\001 \001(\0132\022.base.BaseResponse\022&\n\troo" +
-      "m_user\030\002 \003(\0132\023.glory_api.RoomUser\022,\n\npag" +
-      "ination\030d \001(\0132\030.base.PaginationResponseB" +
-      "#\n\037com.zhijiejiaoyu.glory_api.liveP\001b\006pr" +
-      "oto3"
+      "est\022\024\n\014room_user_id\030\002 \001(\003\022\017\n\007room_id\030\003 \001" +
+      "(\003\"=\n\024UserExitRoomResponse\022%\n\tbase_resp\030" +
+      "\001 \001(\0132\022.base.BaseResponse\"\230\001\n\031ListActive" +
+      "RoomUserRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
+      "base.BaseRequest\022\024\n\014room_user_id\030\002 \001(\003\022\017" +
+      "\n\007room_id\030\004 \001(\003\022+\n\npagination\030d \001(\0132\027.ba" +
+      "se.PaginationRequest\"\231\001\n\032ListActiveRoomU" +
+      "serResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
+      "seResponse\022&\n\troom_user\030\002 \003(\0132\023.glory_ap" +
+      "i.RoomUser\022,\n\npagination\030d \001(\0132\030.base.Pa" +
+      "ginationResponseB#\n\037com.zhijiejiaoyu.glo" +
+      "ry_api.liveP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -109,7 +109,7 @@ public final class LiveUser {
     internal_static_glory_api_UserExitRoomRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UserExitRoomRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "RoomUserId", });
+        new java.lang.String[] { "BaseRequest", "RoomUserId", "RoomId", });
     internal_static_glory_api_UserExitRoomResponse_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_glory_api_UserExitRoomResponse_fieldAccessorTable = new

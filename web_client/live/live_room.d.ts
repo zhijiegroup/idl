@@ -195,3 +195,11 @@ export interface VideoToTextCallbackRequest {
 export interface VideoToTextCallbackResponse {
   base_resp?: base.BaseResponse;
 }
+
+export interface LiveSSERequest {
+  room_id?: string;
+}
+
+export interface LiveSSEResponse {
+  base_resp?: base.BaseResponse;
+}

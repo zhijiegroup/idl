@@ -1170,6 +1170,12 @@ export class glory_api {
     );
   }
 
+  LiveSSE(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/live/sse${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
   CreateLivePlan(request) {
     const uri = `${this.uriPrefix}/api/live/create_live_plan`;
     const body = JSONbigint.stringify(request);

@@ -623,6 +623,10 @@ list the permissions that supported */
     request: live_user.ListActiveRoomUserRequest
   ): Promise<attachment.ListAttachmentResponse>;
 
+  LiveSSE(
+    request: live_room.LiveSSERequest
+  ): Promise<live_room.LiveSSEResponse>;
+
   /** live plan
 live plan crud */
   CreateLivePlan(
