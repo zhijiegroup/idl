@@ -4,6 +4,7 @@ option java_package = "com.zhijiejiaoyu.glory_api.shop";
 option java_multiple_files = true;
 
 import "base.proto";
+import "shop/sku.proto";
 
 message ActivityProduct {
     int64 product_id = 1;
@@ -11,7 +12,7 @@ message ActivityProduct {
     string preferential_value = 3;
     int64 stock_total = 4;
     int64 purchase_limit = 5;
-
+    Sku sku = 6;
 }
 
 message CreateActivityRequest {
@@ -50,7 +51,9 @@ message ActivityDetail {
     string preferential_type = 5;
     bool is_preheat = 6;
     bool is_available = 7;
-    string preheat_start_time = 8;
+    bool is_set_stock = 8;
+    string preheat_start_time = 9;
+    string soldout_policy = 10;
     repeated ActivityProduct products = 11;
 }
 message ListActivityResponse {
