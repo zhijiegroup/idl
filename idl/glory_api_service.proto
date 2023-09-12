@@ -562,6 +562,9 @@ service glory_api {
   rpc ListActiveRoomUser(ListActiveRoomUserRequest) returns (ListAttachmentResponse) {
     option (api.post) = '/api/live/list_active_room_user';
   }
+  rpc LiveSSE(LiveSSERequest) returns (LiveSSEResponse) {
+    option (api.get) = '/api/live/sse';
+  }
 
   // live plan
   // live plan crud
@@ -721,12 +724,12 @@ service glory_api {
   rpc GetTenantDeptType(GetTenantDeptTypeRequest) returns(GetTenantDeptTypeResponse) {
     option (api.get) = '/api/tenant/get_tenant_dept_type';
   }
-
+  
   // tenant_user
   rpc CreateTenantUser(CreateTenantUserRequest) returns(CreateTenantUserResponse) {
     option (api.post) = '/api/tenant/create_tenant_user';
   }
-
+  
   rpc DeleteTenantUser(DeleteTenantUserRequest) returns(DeleteTenantUserResponse) {
     option (api.post) = '/api/tenant/delete_tenant_user';
   }
