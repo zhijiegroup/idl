@@ -3,7 +3,8 @@
 // @ts-nocheck
 
 import * as base from "../base";
-export { base };
+import * as sku from "./sku";
+export { base, sku };
 
 export interface ActivityProduct {
   product_id?: string;
@@ -11,6 +12,7 @@ export interface ActivityProduct {
   preferential_value?: string;
   stock_total?: string;
   purchase_limit?: string;
+  sku?: sku.Sku;
 }
 
 export interface CreateActivityRequest {
@@ -54,7 +56,9 @@ export interface ActivityDetail {
   preferential_type?: string;
   is_preheat?: boolean;
   is_available?: boolean;
+  is_set_stock?: boolean;
   preheat_start_time?: string;
+  soldout_policy?: string;
   products?: Array<ActivityProduct>;
 }
 

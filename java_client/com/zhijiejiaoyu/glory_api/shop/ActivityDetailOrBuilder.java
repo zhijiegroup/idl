@@ -74,16 +74,34 @@ public interface ActivityDetailOrBuilder extends
   boolean getIsAvailable();
 
   /**
-   * <code>string preheat_start_time = 8;</code>
+   * <code>bool is_set_stock = 8;</code>
+   * @return The isSetStock.
+   */
+  boolean getIsSetStock();
+
+  /**
+   * <code>string preheat_start_time = 9;</code>
    * @return The preheatStartTime.
    */
   java.lang.String getPreheatStartTime();
   /**
-   * <code>string preheat_start_time = 8;</code>
+   * <code>string preheat_start_time = 9;</code>
    * @return The bytes for preheatStartTime.
    */
   com.google.protobuf.ByteString
       getPreheatStartTimeBytes();
+
+  /**
+   * <code>string soldout_policy = 10;</code>
+   * @return The soldoutPolicy.
+   */
+  java.lang.String getSoldoutPolicy();
+  /**
+   * <code>string soldout_policy = 10;</code>
+   * @return The bytes for soldoutPolicy.
+   */
+  com.google.protobuf.ByteString
+      getSoldoutPolicyBytes();
 
   /**
    * <code>repeated .glory_api.ActivityProduct products = 11;</code>

@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
     endTime = "";
     preferentialType = "";
     preheatStartTime = "";
+    soldoutPolicy = "";
     products = java.util.Collections.emptyList();
   }
 
@@ -94,10 +95,21 @@ private static final long serialVersionUID = 0L;
             isAvailable = input.readBool();
             break;
           }
-          case 66: {
+          case 64: {
+
+            isSetStock = input.readBool();
+            break;
+          }
+          case 74: {
             java.lang.String s = input.readStringRequireUtf8();
 
             preheatStartTime = s;
+            break;
+          }
+          case 82: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            soldoutPolicy = s;
             break;
           }
           case 90: {
@@ -329,10 +341,21 @@ private static final long serialVersionUID = 0L;
     return isAvailable ;
   }
 
-  public static final int PREHEAT_START_TIME_FIELD_NUMBER = 8;
+  public static final int IS_SET_STOCK_FIELD_NUMBER = 8;
+  private boolean isSetStock ;
+  /**
+   * <code>bool is_set_stock = 8;</code>
+   * @return The isSetStock.
+   */
+  @java.lang.Override
+  public boolean getIsSetStock() {
+    return isSetStock ;
+  }
+
+  public static final int PREHEAT_START_TIME_FIELD_NUMBER = 9;
   private volatile java.lang.Object preheatStartTime ;
   /**
-   * <code>string preheat_start_time = 8;</code>
+   * <code>string preheat_start_time = 9;</code>
    * @return The preheatStartTime.
    */
   @java.lang.Override
@@ -349,7 +372,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string preheat_start_time = 8;</code>
+   * <code>string preheat_start_time = 9;</code>
    * @return The bytes for preheatStartTime.
    */
   @java.lang.Override
@@ -361,6 +384,44 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       preheatStartTime = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SOLDOUT_POLICY_FIELD_NUMBER = 10;
+  private volatile java.lang.Object soldoutPolicy ;
+  /**
+   * <code>string soldout_policy = 10;</code>
+   * @return The soldoutPolicy.
+   */
+  @java.lang.Override
+  public java.lang.String getSoldoutPolicy() {
+    java.lang.Object ref = soldoutPolicy ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      soldoutPolicy = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string soldout_policy = 10;</code>
+   * @return The bytes for soldoutPolicy.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getSoldoutPolicyBytes() {
+    java.lang.Object ref = soldoutPolicy ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      soldoutPolicy = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -442,8 +503,14 @@ private static final long serialVersionUID = 0L;
     if (isAvailable != false) {
       output.writeBool(7, isAvailable );
     }
+    if (isSetStock != false) {
+      output.writeBool(8, isSetStock );
+    }
     if (!getPreheatStartTimeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, preheatStartTime );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, preheatStartTime );
+    }
+    if (!getSoldoutPolicyBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, soldoutPolicy );
     }
     for (int i = 0; i < products .size(); i++) {
       output.writeMessage(11, products .get(i));
@@ -481,8 +548,15 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(7, isAvailable );
     }
+    if (isSetStock != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(8, isSetStock );
+    }
     if (!getPreheatStartTimeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, preheatStartTime );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, preheatStartTime );
+    }
+    if (!getSoldoutPolicyBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, soldoutPolicy );
     }
     for (int i = 0; i < products .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
@@ -517,8 +591,12 @@ private static final long serialVersionUID = 0L;
         != other.getIsPreheat()) return false;
     if (getIsAvailable()
         != other.getIsAvailable()) return false;
+    if (getIsSetStock()
+        != other.getIsSetStock()) return false;
     if (!getPreheatStartTime()
         .equals(other.getPreheatStartTime())) return false;
+    if (!getSoldoutPolicy()
+        .equals(other.getSoldoutPolicy())) return false;
     if (!getProductsList()
         .equals(other.getProductsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -549,8 +627,13 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + IS_AVAILABLE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getIsAvailable());
+    hash = (37 * hash) + IS_SET_STOCK_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsSetStock());
     hash = (37 * hash) + PREHEAT_START_TIME_FIELD_NUMBER;
     hash = (53 * hash) + getPreheatStartTime().hashCode();
+    hash = (37 * hash) + SOLDOUT_POLICY_FIELD_NUMBER;
+    hash = (53 * hash) + getSoldoutPolicy().hashCode();
     if (getProductsCount() > 0) {
       hash = (37 * hash) + PRODUCTS_FIELD_NUMBER;
       hash = (53 * hash) + getProductsList().hashCode();
@@ -703,7 +786,11 @@ private static final long serialVersionUID = 0L;
 
       isAvailable = false;
 
+      isSetStock = false;
+
       preheatStartTime = "";
+
+      soldoutPolicy = "";
 
       if (productsBuilder == null) {
         products = java.util.Collections.emptyList();
@@ -745,7 +832,9 @@ private static final long serialVersionUID = 0L;
       result.preferentialType = preferentialType ;
       result.isPreheat = isPreheat ;
       result.isAvailable = isAvailable ;
+      result.isSetStock = isSetStock ;
       result.preheatStartTime = preheatStartTime ;
+      result.soldoutPolicy = soldoutPolicy ;
       if (productsBuilder == null) {
         if (((bitField0 & 0x00000001) != 0)) {
           products = java.util.Collections.unmodifiableList(products );
@@ -828,8 +917,15 @@ private static final long serialVersionUID = 0L;
       if (other.getIsAvailable() != false) {
         setIsAvailable(other.getIsAvailable());
       }
+      if (other.getIsSetStock() != false) {
+        setIsSetStock(other.getIsSetStock());
+      }
       if (!other.getPreheatStartTime().isEmpty()) {
         preheatStartTime = other.preheatStartTime ;
+        onChanged();
+      }
+      if (!other.getSoldoutPolicy().isEmpty()) {
+        soldoutPolicy = other.soldoutPolicy ;
         onChanged();
       }
       if (productsBuilder == null) {
@@ -1285,9 +1381,40 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private boolean isSetStock ;
+    /**
+     * <code>bool is_set_stock = 8;</code>
+     * @return The isSetStock.
+     */
+    @java.lang.Override
+    public boolean getIsSetStock() {
+      return isSetStock ;
+    }
+    /**
+     * <code>bool is_set_stock = 8;</code>
+     * @param value The isSetStock to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsSetStock(boolean value) {
+      
+      isSetStock = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool is_set_stock = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsSetStock() {
+      
+      isSetStock = false;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object preheatStartTime = "";
     /**
-     * <code>string preheat_start_time = 8;</code>
+     * <code>string preheat_start_time = 9;</code>
      * @return The preheatStartTime.
      */
     public java.lang.String getPreheatStartTime() {
@@ -1303,7 +1430,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string preheat_start_time = 8;</code>
+     * <code>string preheat_start_time = 9;</code>
      * @return The bytes for preheatStartTime.
      */
     public com.google.protobuf.ByteString
@@ -1320,7 +1447,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string preheat_start_time = 8;</code>
+     * <code>string preheat_start_time = 9;</code>
      * @param value The preheatStartTime to set.
      * @return This builder for chaining.
      */
@@ -1335,7 +1462,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string preheat_start_time = 8;</code>
+     * <code>string preheat_start_time = 9;</code>
      * @return This builder for chaining.
      */
     public Builder clearPreheatStartTime() {
@@ -1345,7 +1472,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string preheat_start_time = 8;</code>
+     * <code>string preheat_start_time = 9;</code>
      * @param value The bytes for preheatStartTime to set.
      * @return This builder for chaining.
      */
@@ -1357,6 +1484,82 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       preheatStartTime = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object soldoutPolicy = "";
+    /**
+     * <code>string soldout_policy = 10;</code>
+     * @return The soldoutPolicy.
+     */
+    public java.lang.String getSoldoutPolicy() {
+      java.lang.Object ref = soldoutPolicy ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        soldoutPolicy = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string soldout_policy = 10;</code>
+     * @return The bytes for soldoutPolicy.
+     */
+    public com.google.protobuf.ByteString
+        getSoldoutPolicyBytes() {
+      java.lang.Object ref = soldoutPolicy ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        soldoutPolicy = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string soldout_policy = 10;</code>
+     * @param value The soldoutPolicy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSoldoutPolicy(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      soldoutPolicy = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string soldout_policy = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSoldoutPolicy() {
+      
+      soldoutPolicy = getDefaultInstance().getSoldoutPolicy();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string soldout_policy = 10;</code>
+     * @param value The bytes for soldoutPolicy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSoldoutPolicyBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      soldoutPolicy = value;
       onChanged();
       return this;
     }

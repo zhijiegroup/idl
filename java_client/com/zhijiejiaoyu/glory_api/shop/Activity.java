@@ -94,70 +94,73 @@ public final class Activity {
   static {
     java.lang.String[] descriptorData = {
       "\n\023shop/activity.proto\022\tglory_api\032\nbase.p" +
-      "roto\"~\n\017ActivityProduct\022\022\n\nproduct_id\030\001 " +
-      "\001(\003\022\016\n\006sku_id\030\002 \001(\003\022\032\n\022preferential_valu" +
-      "e\030\003 \001(\t\022\023\n\013stock_total\030\004 \001(\003\022\026\n\016purchase" +
-      "_limit\030\005 \001(\003\"\255\002\n\025CreateActivityRequest\022\'" +
-      "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\022" +
-      "\017\n\007shop_id\030\002 \001(\003\022\r\n\005title\030\003 \001(\t\022\022\n\nstart" +
-      "_time\030\004 \001(\003\022\020\n\010end_time\030\005 \001(\003\022\024\n\014is_set_" +
-      "stock\030\006 \001(\010\022\026\n\016soldout_policy\030\007 \001(\t\022\022\n\ni" +
-      "s_preheat\030\010 \001(\010\022\032\n\022preheat_start_time\030\t " +
-      "\001(\003\022\031\n\021preferential_type\030\n \001(\t\022,\n\010produc" +
-      "ts\030\013 \003(\0132\032.glory_api.ActivityProduct\"?\n\026" +
-      "CreateActivityResponse\022%\n\tbase_resp\030\001 \001(" +
-      "\0132\022.base.BaseResponse\"\312\001\n\023ListActivityRe" +
-      "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
-      "equest\022\017\n\007shop_id\030\002 \001(\003\022\r\n\005title\030\003 \001(\t\022\016" +
-      "\n\006status\030\004 \001(\t\022\031\n\021preferential_type\030\005 \001(" +
-      "\t\022\022\n\nproduct_id\030\006 \001(\003\022+\n\npagination\030d \001(" +
-      "\0132\027.base.PaginationRequest\"\351\001\n\016ActivityD" +
-      "etail\022\023\n\013activity_id\030\001 \001(\003\022\r\n\005title\030\002 \001(" +
-      "\t\022\022\n\nstart_time\030\003 \001(\t\022\020\n\010end_time\030\004 \001(\t\022" +
-      "\031\n\021preferential_type\030\005 \001(\t\022\022\n\nis_preheat" +
-      "\030\006 \001(\010\022\024\n\014is_available\030\007 \001(\010\022\032\n\022preheat_" +
-      "start_time\030\010 \001(\t\022,\n\010products\030\013 \003(\0132\032.glo" +
-      "ry_api.ActivityProduct\"\235\001\n\024ListActivityR" +
-      "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
-      "sponse\0220\n\ractivity_list\030\002 \003(\0132\031.glory_ap" +
-      "i.ActivityDetail\022,\n\npagination\030d \001(\0132\030.b" +
-      "ase.PaginationResponse\"X\n\030GetActivityDet" +
-      "ailRequest\022\'\n\014base_request\030\001 \001(\0132\021.base." +
-      "BaseRequest\022\023\n\013activity_id\030\002 \001(\003\"v\n\031GetA" +
-      "ctivityDetailResponse\022%\n\tbase_resp\030\001 \001(\013" +
-      "2\022.base.BaseResponse\0222\n\017activity_detail\030" +
-      "\002 \001(\0132\031.glory_api.ActivityDetail\"\302\002\n\025Upd" +
-      "ateActivityRequest\022\'\n\014base_request\030\001 \001(\013" +
-      "2\021.base.BaseRequest\022\023\n\013activity_id\030\002 \001(\003" +
-      "\022\017\n\007shop_id\030\003 \001(\003\022\r\n\005title\030\004 \001(\t\022\022\n\nstar" +
-      "t_time\030\005 \001(\003\022\020\n\010end_time\030\006 \001(\003\022\024\n\014is_set" +
-      "_stock\030\007 \001(\010\022\026\n\016soldout_policy\030\010 \001(\t\022\022\n\n" +
-      "is_preheat\030\t \001(\010\022\032\n\022preheat_start_time\030\n" +
-      " \001(\003\022\031\n\021preferential_type\030\013 \001(\t\022,\n\010produ" +
-      "cts\030\014 \003(\0132\032.glory_api.ActivityProduct\"?\n" +
-      "\026UpdateActivityResponse\022%\n\tbase_resp\030\001 \001" +
-      "(\0132\022.base.BaseResponse\"U\n\025DeleteActivity" +
-      "Request\022\'\n\014base_request\030\001 \001(\0132\021.base.Bas" +
-      "eRequest\022\023\n\013activity_id\030\002 \001(\003\"?\n\026DeleteA" +
-      "ctivityResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
-      "e.BaseResponse\"V\n\026DisableActivityRequest" +
-      "\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReques" +
-      "t\022\023\n\013activity_id\030\002 \001(\003\"@\n\027DisableActivit" +
-      "yResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Base" +
-      "ResponseB#\n\037com.zhijiejiaoyu.glory_api.s" +
-      "hopP\001b\006proto3"
+      "roto\032\016shop/sku.proto\"\233\001\n\017ActivityProduct" +
+      "\022\022\n\nproduct_id\030\001 \001(\003\022\016\n\006sku_id\030\002 \001(\003\022\032\n\022" +
+      "preferential_value\030\003 \001(\t\022\023\n\013stock_total\030" +
+      "\004 \001(\003\022\026\n\016purchase_limit\030\005 \001(\003\022\033\n\003sku\030\006 \001" +
+      "(\0132\016.glory_api.Sku\"\255\002\n\025CreateActivityReq" +
+      "uest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRe" +
+      "quest\022\017\n\007shop_id\030\002 \001(\003\022\r\n\005title\030\003 \001(\t\022\022\n" +
+      "\nstart_time\030\004 \001(\003\022\020\n\010end_time\030\005 \001(\003\022\024\n\014i" +
+      "s_set_stock\030\006 \001(\010\022\026\n\016soldout_policy\030\007 \001(" +
+      "\t\022\022\n\nis_preheat\030\010 \001(\010\022\032\n\022preheat_start_t" +
+      "ime\030\t \001(\003\022\031\n\021preferential_type\030\n \001(\t\022,\n\010" +
+      "products\030\013 \003(\0132\032.glory_api.ActivityProdu" +
+      "ct\"?\n\026CreateActivityResponse\022%\n\tbase_res" +
+      "p\030\001 \001(\0132\022.base.BaseResponse\"\312\001\n\023ListActi" +
+      "vityRequest\022\'\n\014base_request\030\001 \001(\0132\021.base" +
+      ".BaseRequest\022\017\n\007shop_id\030\002 \001(\003\022\r\n\005title\030\003" +
+      " \001(\t\022\016\n\006status\030\004 \001(\t\022\031\n\021preferential_typ" +
+      "e\030\005 \001(\t\022\022\n\nproduct_id\030\006 \001(\003\022+\n\npaginatio" +
+      "n\030d \001(\0132\027.base.PaginationRequest\"\227\002\n\016Act" +
+      "ivityDetail\022\023\n\013activity_id\030\001 \001(\003\022\r\n\005titl" +
+      "e\030\002 \001(\t\022\022\n\nstart_time\030\003 \001(\t\022\020\n\010end_time\030" +
+      "\004 \001(\t\022\031\n\021preferential_type\030\005 \001(\t\022\022\n\nis_p" +
+      "reheat\030\006 \001(\010\022\024\n\014is_available\030\007 \001(\010\022\024\n\014is" +
+      "_set_stock\030\010 \001(\010\022\032\n\022preheat_start_time\030\t" +
+      " \001(\t\022\026\n\016soldout_policy\030\n \001(\t\022,\n\010products" +
+      "\030\013 \003(\0132\032.glory_api.ActivityProduct\"\235\001\n\024L" +
+      "istActivityResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
+      ".base.BaseResponse\0220\n\ractivity_list\030\002 \003(" +
+      "\0132\031.glory_api.ActivityDetail\022,\n\npaginati" +
+      "on\030d \001(\0132\030.base.PaginationResponse\"X\n\030Ge" +
+      "tActivityDetailRequest\022\'\n\014base_request\030\001" +
+      " \001(\0132\021.base.BaseRequest\022\023\n\013activity_id\030\002" +
+      " \001(\003\"v\n\031GetActivityDetailResponse\022%\n\tbas" +
+      "e_resp\030\001 \001(\0132\022.base.BaseResponse\0222\n\017acti" +
+      "vity_detail\030\002 \001(\0132\031.glory_api.ActivityDe" +
+      "tail\"\302\002\n\025UpdateActivityRequest\022\'\n\014base_r" +
+      "equest\030\001 \001(\0132\021.base.BaseRequest\022\023\n\013activ" +
+      "ity_id\030\002 \001(\003\022\017\n\007shop_id\030\003 \001(\003\022\r\n\005title\030\004" +
+      " \001(\t\022\022\n\nstart_time\030\005 \001(\003\022\020\n\010end_time\030\006 \001" +
+      "(\003\022\024\n\014is_set_stock\030\007 \001(\010\022\026\n\016soldout_poli" +
+      "cy\030\010 \001(\t\022\022\n\nis_preheat\030\t \001(\010\022\032\n\022preheat_" +
+      "start_time\030\n \001(\003\022\031\n\021preferential_type\030\013 " +
+      "\001(\t\022,\n\010products\030\014 \003(\0132\032.glory_api.Activi" +
+      "tyProduct\"?\n\026UpdateActivityResponse\022%\n\tb" +
+      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\"U\n\025De" +
+      "leteActivityRequest\022\'\n\014base_request\030\001 \001(" +
+      "\0132\021.base.BaseRequest\022\023\n\013activity_id\030\002 \001(" +
+      "\003\"?\n\026DeleteActivityResponse\022%\n\tbase_resp" +
+      "\030\001 \001(\0132\022.base.BaseResponse\"V\n\026DisableAct" +
+      "ivityRequest\022\'\n\014base_request\030\001 \001(\0132\021.bas" +
+      "e.BaseRequest\022\023\n\013activity_id\030\002 \001(\003\"@\n\027Di" +
+      "sableActivityResponse\022%\n\tbase_resp\030\001 \001(\013" +
+      "2\022.base.BaseResponseB#\n\037com.zhijiejiaoyu" +
+      ".glory_api.shopP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.zhijiejiaoyu.base.Base.getDescriptor(),
+          com.zhijiejiaoyu.glory_api.shop.SkuOuterClass.getDescriptor(),
         });
     internal_static_glory_api_ActivityProduct_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_glory_api_ActivityProduct_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ActivityProduct_descriptor,
-        new java.lang.String[] { "ProductId", "SkuId", "PreferentialValue", "StockTotal", "PurchaseLimit", });
+        new java.lang.String[] { "ProductId", "SkuId", "PreferentialValue", "StockTotal", "PurchaseLimit", "Sku", });
     internal_static_glory_api_CreateActivityRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_glory_api_CreateActivityRequest_fieldAccessorTable = new
@@ -181,7 +184,7 @@ public final class Activity {
     internal_static_glory_api_ActivityDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ActivityDetail_descriptor,
-        new java.lang.String[] { "ActivityId", "Title", "StartTime", "EndTime", "PreferentialType", "IsPreheat", "IsAvailable", "PreheatStartTime", "Products", });
+        new java.lang.String[] { "ActivityId", "Title", "StartTime", "EndTime", "PreferentialType", "IsPreheat", "IsAvailable", "IsSetStock", "PreheatStartTime", "SoldoutPolicy", "Products", });
     internal_static_glory_api_ListActivityResponse_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_glory_api_ListActivityResponse_fieldAccessorTable = new
@@ -237,6 +240,7 @@ public final class Activity {
         internal_static_glory_api_DisableActivityResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
+    com.zhijiejiaoyu.glory_api.shop.SkuOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

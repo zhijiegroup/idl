@@ -42,4 +42,19 @@ public interface ActivityProductOrBuilder extends
    * @return The purchaseLimit.
    */
   long getPurchaseLimit();
+
+  /**
+   * <code>.glory_api.Sku sku = 6;</code>
+   * @return Whether the sku field is set.
+   */
+  boolean hasSku();
+  /**
+   * <code>.glory_api.Sku sku = 6;</code>
+   * @return The sku.
+   */
+  com.zhijiejiaoyu.glory_api.shop.Sku getSku();
+  /**
+   * <code>.glory_api.Sku sku = 6;</code>
+   */
+  com.zhijiejiaoyu.glory_api.shop.SkuOrBuilder getSkuOrBuilder();
 }

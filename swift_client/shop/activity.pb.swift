@@ -35,9 +35,20 @@ struct GloryApi_ActivityProduct {
 
   var purchaseLimit: Int64 = 0
 
+  var sku: GloryApi_Sku {
+    get {return _sku ?? GloryApi_Sku()}
+    set {_sku = newValue}
+  }
+  /// Returns true if `sku` has been explicitly set.
+  var hasSku: Bool {return self._sku != nil}
+  /// Clears the value of `sku`. Subsequent reads from it will return its default value.
+  mutating func clearSku() {self._sku = nil}
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
+
+  fileprivate var _sku: GloryApi_Sku? = nil
 }
 
 struct GloryApi_CreateActivityRequest {
@@ -167,7 +178,11 @@ struct GloryApi_ActivityDetail {
 
   var isAvailable: Bool = false
 
+  var isSetStock: Bool = false
+
   var preheatStartTime: String = String()
+
+  var soldoutPolicy: String = String()
 
   var products: [GloryApi_ActivityProduct] = []
 
@@ -449,6 +464,7 @@ extension GloryApi_ActivityProduct: SwiftProtobuf.Message, SwiftProtobuf._Messag
     3: .standard(proto: "preferential_value"),
     4: .standard(proto: "stock_total"),
     5: .standard(proto: "purchase_limit"),
+    6: .same(proto: "sku"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -462,12 +478,17 @@ extension GloryApi_ActivityProduct: SwiftProtobuf.Message, SwiftProtobuf._Messag
       case 3: try { try decoder.decodeSingularStringField(value: &self.preferentialValue) }()
       case 4: try { try decoder.decodeSingularInt64Field(value: &self.stockTotal) }()
       case 5: try { try decoder.decodeSingularInt64Field(value: &self.purchaseLimit) }()
+      case 6: try { try decoder.decodeSingularMessageField(value: &self._sku) }()
       default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.productID != 0 {
       try visitor.visitSingularInt64Field(value: self.productID, fieldNumber: 1)
     }
@@ -483,6 +504,9 @@ extension GloryApi_ActivityProduct: SwiftProtobuf.Message, SwiftProtobuf._Messag
     if self.purchaseLimit != 0 {
       try visitor.visitSingularInt64Field(value: self.purchaseLimit, fieldNumber: 5)
     }
+    try { if let v = self._sku {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -492,6 +516,7 @@ extension GloryApi_ActivityProduct: SwiftProtobuf.Message, SwiftProtobuf._Messag
     if lhs.preferentialValue != rhs.preferentialValue {return false}
     if lhs.stockTotal != rhs.stockTotal {return false}
     if lhs.purchaseLimit != rhs.purchaseLimit {return false}
+    if lhs._sku != rhs._sku {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -711,7 +736,9 @@ extension GloryApi_ActivityDetail: SwiftProtobuf.Message, SwiftProtobuf._Message
     5: .standard(proto: "preferential_type"),
     6: .standard(proto: "is_preheat"),
     7: .standard(proto: "is_available"),
-    8: .standard(proto: "preheat_start_time"),
+    8: .standard(proto: "is_set_stock"),
+    9: .standard(proto: "preheat_start_time"),
+    10: .standard(proto: "soldout_policy"),
     11: .same(proto: "products"),
   ]
 
@@ -728,7 +755,9 @@ extension GloryApi_ActivityDetail: SwiftProtobuf.Message, SwiftProtobuf._Message
       case 5: try { try decoder.decodeSingularStringField(value: &self.preferentialType) }()
       case 6: try { try decoder.decodeSingularBoolField(value: &self.isPreheat) }()
       case 7: try { try decoder.decodeSingularBoolField(value: &self.isAvailable) }()
-      case 8: try { try decoder.decodeSingularStringField(value: &self.preheatStartTime) }()
+      case 8: try { try decoder.decodeSingularBoolField(value: &self.isSetStock) }()
+      case 9: try { try decoder.decodeSingularStringField(value: &self.preheatStartTime) }()
+      case 10: try { try decoder.decodeSingularStringField(value: &self.soldoutPolicy) }()
       case 11: try { try decoder.decodeRepeatedMessageField(value: &self.products) }()
       default: break
       }
@@ -757,8 +786,14 @@ extension GloryApi_ActivityDetail: SwiftProtobuf.Message, SwiftProtobuf._Message
     if self.isAvailable != false {
       try visitor.visitSingularBoolField(value: self.isAvailable, fieldNumber: 7)
     }
+    if self.isSetStock != false {
+      try visitor.visitSingularBoolField(value: self.isSetStock, fieldNumber: 8)
+    }
     if !self.preheatStartTime.isEmpty {
-      try visitor.visitSingularStringField(value: self.preheatStartTime, fieldNumber: 8)
+      try visitor.visitSingularStringField(value: self.preheatStartTime, fieldNumber: 9)
+    }
+    if !self.soldoutPolicy.isEmpty {
+      try visitor.visitSingularStringField(value: self.soldoutPolicy, fieldNumber: 10)
     }
     if !self.products.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.products, fieldNumber: 11)
@@ -774,7 +809,9 @@ extension GloryApi_ActivityDetail: SwiftProtobuf.Message, SwiftProtobuf._Message
     if lhs.preferentialType != rhs.preferentialType {return false}
     if lhs.isPreheat != rhs.isPreheat {return false}
     if lhs.isAvailable != rhs.isAvailable {return false}
+    if lhs.isSetStock != rhs.isSetStock {return false}
     if lhs.preheatStartTime != rhs.preheatStartTime {return false}
+    if lhs.soldoutPolicy != rhs.soldoutPolicy {return false}
     if lhs.products != rhs.products {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
