@@ -192,6 +192,14 @@ message LiveSSEResponse {
   base.BaseResponse base_resp = 1;
 }
 
+message CloseShopAllLiveRequest {
+  int64 shop_id = 1;
+}
+
+message CloseShopAllLiveResponse {
+  base.BaseResponse base_resp = 1;
+}
+
 
 
 
