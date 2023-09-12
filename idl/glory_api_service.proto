@@ -565,6 +565,9 @@ service glory_api {
   rpc LiveSSE(LiveSSERequest) returns (LiveSSEResponse) {
     option (api.get) = '/api/live/sse';
   }
+  rpc CloseShopAllLive(CloseShopAllLiveRequest) returns (CloseShopAllLiveResponse) {
+    option (api.post) = '/api/live/close_shop_live';
+  }
 
   // live plan
   // live plan crud
