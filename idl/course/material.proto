@@ -14,10 +14,13 @@ message CourseMaterialBox {
 
 // 素材
 message CourseMaterial {
-  int64 material_id = 1;
-  int64 material_box_id = 2;
-  string material_name = 3;
-  string created_at = 4;
+  int64 material_id = 1; // 素材ID（创建时不需要填写）
+  int64 material_box_id = 2; //画板ID
+  string material_name = 3; // 素材名称
+  string material_type = 4; // 素材类型（image/video/audio/ppt/word）
+  string material_path = 5; // 素材OSS路径
+  string material_url = 6; // 素材URL（创建时不需要填写）
+  string created_at = 7; // 创建时间（创建时不需要填写）
 }
 
 // 创建画板
@@ -43,6 +46,16 @@ message ListCourseMaterialBoxResponse {
   base.PaginationResponse pagination = 100;
 }
 
+// 删除画板
+message DeleteCourseMaterialBoxRequest {
+  base.BaseRequest base_request = 1;
+  int64 material_box_id = 2;
+}
+
+message DeleteCourseMaterialBoxResponse {
+  base.BaseResponse base_resp = 1;
+}
+
 // 上传素材
 message UploadCourseMaterialRequest {
   base.BaseRequest base_request = 1;
@@ -65,4 +78,14 @@ message ListCourseMaterialResponse {
   base.BaseResponse base_resp = 1;
   repeated CourseMaterial material_list = 2;
   base.PaginationResponse pagination = 100;
+}
+
+// 删除素材
+message DeleteCourseMaterialRequest {
+  base.BaseRequest base_request = 1;
+  int64 material_id = 2;
+}
+
+message DeleteCourseMaterialResponse {
+  base.BaseResponse base_resp = 1;
 }
