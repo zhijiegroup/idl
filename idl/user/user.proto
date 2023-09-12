@@ -51,6 +51,14 @@ message LoginResponse {
   User data =2;
 }
 
+// logout
+message LogoutRequest {
+  base.BaseRequest base_request=1;
+}
+message LogoutResponse {
+  base.BaseResponse base_resp = 1;
+}
+
 // get verification code
 message GetVerifyCodeRequest {
   base.BaseRequest base_request=1;

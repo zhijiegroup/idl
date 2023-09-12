@@ -65,6 +65,7 @@ message ListTenantUserRequest {
     int64 dept_id = 3;
     string name = 4;
     bool is_admin = 5;
+    bool is_short_checker = 6;
     base.PaginationRequest pagination = 100;
 }
 
