@@ -18,6 +18,9 @@ message Sku {
   int64 attachment_id = 10;
   string sku_url = 11;
   string serial_number = 12;
+  string preferential_value = 13;
+  int64 stock_total = 14;
+  int64 purchase_limit = 15;
 }
 message SkuAttributeWithOneValue {
   int64 attribute_id = 1;
