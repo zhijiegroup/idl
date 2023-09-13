@@ -105,6 +105,15 @@ export interface GetUserResponse {
   data?: User;
 }
 
+export interface UpdateUserRequest {
+  base_request?: base.BaseRequest;
+  data?: User;
+}
+
+export interface UpdateUserResponse {
+  base_resp?: base.BaseResponse;
+}
+
 export interface PagePermission {
   business_system?: string;
   page?: string;

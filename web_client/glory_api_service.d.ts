@@ -128,6 +128,8 @@ export class glory_api {
     request: user.UpdatePasswordRequest
   ): Promise<user.UpdatePasswordResponse>;
 
+  UpdateUser(request: user.UpdateUserRequest): Promise<user.UpdateUserResponse>;
+
   /** 关注用户 */
   FollowUser(request: user.FollowUserRequest): Promise<user.FollowUserResponse>;
 
