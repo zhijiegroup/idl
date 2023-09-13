@@ -90,6 +90,10 @@ service glory_api {
     option (api.post) = '/api/user/update_password';
   }
 
+  rpc UpdateUser(UpdateUserRequest) returns (UpdateUserResponse) {
+    option (api.post) = '/api/user/update_user';
+  }
+
   // 关注用户
   rpc FollowUser(FollowUserRequest) returns (FollowUserResponse) {
     option (api.post) = '/api/user/follow_user';
