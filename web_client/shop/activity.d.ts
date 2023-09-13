@@ -12,7 +12,7 @@ export interface ActivityProduct {
   preferential_value?: string;
   stock_total?: string;
   purchase_limit?: string;
-  sku?: sku.Sku;
+  sku?: Array<sku.Sku>;
 }
 
 export interface CreateActivityRequest {

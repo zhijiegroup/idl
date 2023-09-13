@@ -35,20 +35,11 @@ struct GloryApi_ActivityProduct {
 
   var purchaseLimit: Int64 = 0
 
-  var sku: GloryApi_Sku {
-    get {return _sku ?? GloryApi_Sku()}
-    set {_sku = newValue}
-  }
-  /// Returns true if `sku` has been explicitly set.
-  var hasSku: Bool {return self._sku != nil}
-  /// Clears the value of `sku`. Subsequent reads from it will return its default value.
-  mutating func clearSku() {self._sku = nil}
+  var sku: [GloryApi_Sku] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
-
-  fileprivate var _sku: GloryApi_Sku? = nil
 }
 
 struct GloryApi_CreateActivityRequest {
@@ -478,17 +469,13 @@ extension GloryApi_ActivityProduct: SwiftProtobuf.Message, SwiftProtobuf._Messag
       case 3: try { try decoder.decodeSingularStringField(value: &self.preferentialValue) }()
       case 4: try { try decoder.decodeSingularInt64Field(value: &self.stockTotal) }()
       case 5: try { try decoder.decodeSingularInt64Field(value: &self.purchaseLimit) }()
-      case 6: try { try decoder.decodeSingularMessageField(value: &self._sku) }()
+      case 6: try { try decoder.decodeRepeatedMessageField(value: &self.sku) }()
       default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.productID != 0 {
       try visitor.visitSingularInt64Field(value: self.productID, fieldNumber: 1)
     }
@@ -504,9 +491,9 @@ extension GloryApi_ActivityProduct: SwiftProtobuf.Message, SwiftProtobuf._Messag
     if self.purchaseLimit != 0 {
       try visitor.visitSingularInt64Field(value: self.purchaseLimit, fieldNumber: 5)
     }
-    try { if let v = self._sku {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-    } }()
+    if !self.sku.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.sku, fieldNumber: 6)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -516,7 +503,7 @@ extension GloryApi_ActivityProduct: SwiftProtobuf.Message, SwiftProtobuf._Messag
     if lhs.preferentialValue != rhs.preferentialValue {return false}
     if lhs.stockTotal != rhs.stockTotal {return false}
     if lhs.purchaseLimit != rhs.purchaseLimit {return false}
-    if lhs._sku != rhs._sku {return false}
+    if lhs.sku != rhs.sku {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

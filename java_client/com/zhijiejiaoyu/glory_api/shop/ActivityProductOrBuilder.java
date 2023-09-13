@@ -44,17 +44,26 @@ public interface ActivityProductOrBuilder extends
   long getPurchaseLimit();
 
   /**
-   * <code>.glory_api.Sku sku = 6;</code>
-   * @return Whether the sku field is set.
+   * <code>repeated .glory_api.Sku sku = 6;</code>
    */
-  boolean hasSku();
+  java.util.List<com.zhijiejiaoyu.glory_api.shop.Sku> 
+      getSkuList();
   /**
-   * <code>.glory_api.Sku sku = 6;</code>
-   * @return The sku.
+   * <code>repeated .glory_api.Sku sku = 6;</code>
    */
-  com.zhijiejiaoyu.glory_api.shop.Sku getSku();
+  com.zhijiejiaoyu.glory_api.shop.Sku getSku(int index);
   /**
-   * <code>.glory_api.Sku sku = 6;</code>
+   * <code>repeated .glory_api.Sku sku = 6;</code>
    */
-  com.zhijiejiaoyu.glory_api.shop.SkuOrBuilder getSkuOrBuilder();
+  int getSkuCount();
+  /**
+   * <code>repeated .glory_api.Sku sku = 6;</code>
+   */
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.SkuOrBuilder> 
+      getSkuOrBuilderList();
+  /**
+   * <code>repeated .glory_api.Sku sku = 6;</code>
+   */
+  com.zhijiejiaoyu.glory_api.shop.SkuOrBuilder getSkuOrBuilder(
+      int index);
 }
