@@ -97,7 +97,7 @@ public final class Activity {
       "roto\032\016shop/sku.proto\"\233\001\n\017ActivityProduct" +
       "\022\022\n\nproduct_id\030\001 \001(\003\022\016\n\006sku_id\030\002 \001(\003\022\032\n\022" +
       "preferential_value\030\003 \001(\t\022\023\n\013stock_total\030" +
-      "\004 \001(\003\022\026\n\016purchase_limit\030\005 \001(\003\022\033\n\003sku\030\006 \001" +
+      "\004 \001(\003\022\026\n\016purchase_limit\030\005 \001(\003\022\033\n\003sku\030\006 \003" +
       "(\0132\016.glory_api.Sku\"\255\002\n\025CreateActivityReq" +
       "uest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRe" +
       "quest\022\017\n\007shop_id\030\002 \001(\003\022\r\n\005title\030\003 \001(\t\022\022\n" +
