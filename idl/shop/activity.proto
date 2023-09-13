@@ -12,7 +12,8 @@ message ActivityProduct {
     string preferential_value = 3;
     int64 stock_total = 4;
     int64 purchase_limit = 5;
-    repeated Sku sku = 6;
+    string product_name = 6;
+    repeated Sku sku = 7;
 }
 
 message CreateActivityRequest {
