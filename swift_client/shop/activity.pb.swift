@@ -35,6 +35,8 @@ struct GloryApi_ActivityProduct {
 
   var purchaseLimit: Int64 = 0
 
+  var productName: String = String()
+
   var sku: [GloryApi_Sku] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -455,7 +457,8 @@ extension GloryApi_ActivityProduct: SwiftProtobuf.Message, SwiftProtobuf._Messag
     3: .standard(proto: "preferential_value"),
     4: .standard(proto: "stock_total"),
     5: .standard(proto: "purchase_limit"),
-    6: .same(proto: "sku"),
+    6: .standard(proto: "product_name"),
+    7: .same(proto: "sku"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -469,7 +472,8 @@ extension GloryApi_ActivityProduct: SwiftProtobuf.Message, SwiftProtobuf._Messag
       case 3: try { try decoder.decodeSingularStringField(value: &self.preferentialValue) }()
       case 4: try { try decoder.decodeSingularInt64Field(value: &self.stockTotal) }()
       case 5: try { try decoder.decodeSingularInt64Field(value: &self.purchaseLimit) }()
-      case 6: try { try decoder.decodeRepeatedMessageField(value: &self.sku) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.productName) }()
+      case 7: try { try decoder.decodeRepeatedMessageField(value: &self.sku) }()
       default: break
       }
     }
@@ -491,8 +495,11 @@ extension GloryApi_ActivityProduct: SwiftProtobuf.Message, SwiftProtobuf._Messag
     if self.purchaseLimit != 0 {
       try visitor.visitSingularInt64Field(value: self.purchaseLimit, fieldNumber: 5)
     }
+    if !self.productName.isEmpty {
+      try visitor.visitSingularStringField(value: self.productName, fieldNumber: 6)
+    }
     if !self.sku.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.sku, fieldNumber: 6)
+      try visitor.visitRepeatedMessageField(value: self.sku, fieldNumber: 7)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -503,6 +510,7 @@ extension GloryApi_ActivityProduct: SwiftProtobuf.Message, SwiftProtobuf._Messag
     if lhs.preferentialValue != rhs.preferentialValue {return false}
     if lhs.stockTotal != rhs.stockTotal {return false}
     if lhs.purchaseLimit != rhs.purchaseLimit {return false}
+    if lhs.productName != rhs.productName {return false}
     if lhs.sku != rhs.sku {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

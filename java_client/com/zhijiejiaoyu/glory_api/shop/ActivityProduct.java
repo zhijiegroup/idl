@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private ActivityProduct() {
     preferentialValue = "";
+    productName = "";
     sku = java.util.Collections.emptyList();
   }
 
@@ -78,6 +79,12 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            productName = s;
+            break;
+          }
+          case 58: {
             if (!((mutable_bitField0 & 0x00000001) != 0)) {
               sku = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.shop.Sku>();
               mutable_bitField0_ |= 0x00000001;
@@ -203,17 +210,55 @@ private static final long serialVersionUID = 0L;
     return purchaseLimit ;
   }
 
-  public static final int SKU_FIELD_NUMBER = 6;
+  public static final int PRODUCT_NAME_FIELD_NUMBER = 6;
+  private volatile java.lang.Object productName ;
+  /**
+   * <code>string product_name = 6;</code>
+   * @return The productName.
+   */
+  @java.lang.Override
+  public java.lang.String getProductName() {
+    java.lang.Object ref = productName ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      productName = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string product_name = 6;</code>
+   * @return The bytes for productName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getProductNameBytes() {
+    java.lang.Object ref = productName ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      productName = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SKU_FIELD_NUMBER = 7;
   private java.util.List<com.zhijiejiaoyu.glory_api.shop.Sku> sku ;
   /**
-   * <code>repeated .glory_api.Sku sku = 6;</code>
+   * <code>repeated .glory_api.Sku sku = 7;</code>
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.shop.Sku> getSkuList() {
     return sku ;
   }
   /**
-   * <code>repeated .glory_api.Sku sku = 6;</code>
+   * <code>repeated .glory_api.Sku sku = 7;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.SkuOrBuilder> 
@@ -221,21 +266,21 @@ private static final long serialVersionUID = 0L;
     return sku ;
   }
   /**
-   * <code>repeated .glory_api.Sku sku = 6;</code>
+   * <code>repeated .glory_api.Sku sku = 7;</code>
    */
   @java.lang.Override
   public int getSkuCount() {
     return sku .size();
   }
   /**
-   * <code>repeated .glory_api.Sku sku = 6;</code>
+   * <code>repeated .glory_api.Sku sku = 7;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.shop.Sku getSku(int index) {
     return sku .get(index);
   }
   /**
-   * <code>repeated .glory_api.Sku sku = 6;</code>
+   * <code>repeated .glory_api.Sku sku = 7;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.shop.SkuOrBuilder getSkuOrBuilder(
@@ -272,8 +317,11 @@ private static final long serialVersionUID = 0L;
     if (purchaseLimit != 0L) {
       output.writeInt64(5, purchaseLimit );
     }
+    if (!getProductNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, productName );
+    }
     for (int i = 0; i < sku .size(); i++) {
-      output.writeMessage(6, sku .get(i));
+      output.writeMessage(7, sku .get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -303,9 +351,12 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(5, purchaseLimit );
     }
+    if (!getProductNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, productName );
+    }
     for (int i = 0; i < sku .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, sku .get(i));
+        .computeMessageSize(7, sku .get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -332,6 +383,8 @@ private static final long serialVersionUID = 0L;
         != other.getStockTotal()) return false;
     if (getPurchaseLimit()
         != other.getPurchaseLimit()) return false;
+    if (!getProductName()
+        .equals(other.getProductName())) return false;
     if (!getSkuList()
         .equals(other.getSkuList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -359,6 +412,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + PURCHASE_LIMIT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getPurchaseLimit());
+    hash = (37 * hash) + PRODUCT_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getProductName().hashCode();
     if (getSkuCount() > 0) {
       hash = (37 * hash) + SKU_FIELD_NUMBER;
       hash = (53 * hash) + getSkuList().hashCode();
@@ -507,6 +562,8 @@ private static final long serialVersionUID = 0L;
 
       purchaseLimit = 0L;
 
+      productName = "";
+
       if (skuBuilder == null) {
         sku = java.util.Collections.emptyList();
         bitField0 = (bitField0 & ~0x00000001);
@@ -545,6 +602,7 @@ private static final long serialVersionUID = 0L;
       result.preferentialValue = preferentialValue ;
       result.stockTotal = stockTotal ;
       result.purchaseLimit = purchaseLimit ;
+      result.productName = productName ;
       if (skuBuilder == null) {
         if (((bitField0 & 0x00000001) != 0)) {
           sku = java.util.Collections.unmodifiableList(sku );
@@ -617,6 +675,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getPurchaseLimit() != 0L) {
         setPurchaseLimit(other.getPurchaseLimit());
+      }
+      if (!other.getProductName().isEmpty()) {
+        productName = other.productName ;
+        onChanged();
       }
       if (skuBuilder == null) {
         if (!other.sku .isEmpty()) {
@@ -874,6 +936,82 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object productName = "";
+    /**
+     * <code>string product_name = 6;</code>
+     * @return The productName.
+     */
+    public java.lang.String getProductName() {
+      java.lang.Object ref = productName ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        productName = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string product_name = 6;</code>
+     * @return The bytes for productName.
+     */
+    public com.google.protobuf.ByteString
+        getProductNameBytes() {
+      java.lang.Object ref = productName ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        productName = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string product_name = 6;</code>
+     * @param value The productName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProductName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      productName = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string product_name = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearProductName() {
+      
+      productName = getDefaultInstance().getProductName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string product_name = 6;</code>
+     * @param value The bytes for productName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProductNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      productName = value;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.zhijiejiaoyu.glory_api.shop.Sku> sku =
       java.util.Collections.emptyList();
     private void ensureSkuIsMutable() {
@@ -887,7 +1025,7 @@ private static final long serialVersionUID = 0L;
         com.zhijiejiaoyu.glory_api.shop.Sku, com.zhijiejiaoyu.glory_api.shop.Sku.Builder, com.zhijiejiaoyu.glory_api.shop.SkuOrBuilder> skuBuilder ;
 
     /**
-     * <code>repeated .glory_api.Sku sku = 6;</code>
+     * <code>repeated .glory_api.Sku sku = 7;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.shop.Sku> getSkuList() {
       if (skuBuilder == null) {
@@ -897,7 +1035,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.Sku sku = 6;</code>
+     * <code>repeated .glory_api.Sku sku = 7;</code>
      */
     public int getSkuCount() {
       if (skuBuilder == null) {
@@ -907,7 +1045,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.Sku sku = 6;</code>
+     * <code>repeated .glory_api.Sku sku = 7;</code>
      */
     public com.zhijiejiaoyu.glory_api.shop.Sku getSku(int index) {
       if (skuBuilder == null) {
@@ -917,7 +1055,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.Sku sku = 6;</code>
+     * <code>repeated .glory_api.Sku sku = 7;</code>
      */
     public Builder setSku(
         int index, com.zhijiejiaoyu.glory_api.shop.Sku value) {
@@ -934,7 +1072,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.Sku sku = 6;</code>
+     * <code>repeated .glory_api.Sku sku = 7;</code>
      */
     public Builder setSku(
         int index, com.zhijiejiaoyu.glory_api.shop.Sku.Builder builderForValue) {
@@ -948,7 +1086,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.Sku sku = 6;</code>
+     * <code>repeated .glory_api.Sku sku = 7;</code>
      */
     public Builder addSku(com.zhijiejiaoyu.glory_api.shop.Sku value) {
       if (skuBuilder == null) {
@@ -964,7 +1102,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.Sku sku = 6;</code>
+     * <code>repeated .glory_api.Sku sku = 7;</code>
      */
     public Builder addSku(
         int index, com.zhijiejiaoyu.glory_api.shop.Sku value) {
@@ -981,7 +1119,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.Sku sku = 6;</code>
+     * <code>repeated .glory_api.Sku sku = 7;</code>
      */
     public Builder addSku(
         com.zhijiejiaoyu.glory_api.shop.Sku.Builder builderForValue) {
@@ -995,7 +1133,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.Sku sku = 6;</code>
+     * <code>repeated .glory_api.Sku sku = 7;</code>
      */
     public Builder addSku(
         int index, com.zhijiejiaoyu.glory_api.shop.Sku.Builder builderForValue) {
@@ -1009,7 +1147,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.Sku sku = 6;</code>
+     * <code>repeated .glory_api.Sku sku = 7;</code>
      */
     public Builder addAllSku(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.shop.Sku> values) {
@@ -1024,7 +1162,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.Sku sku = 6;</code>
+     * <code>repeated .glory_api.Sku sku = 7;</code>
      */
     public Builder clearSku() {
       if (skuBuilder == null) {
@@ -1037,7 +1175,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.Sku sku = 6;</code>
+     * <code>repeated .glory_api.Sku sku = 7;</code>
      */
     public Builder removeSku(int index) {
       if (skuBuilder == null) {
@@ -1050,14 +1188,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.Sku sku = 6;</code>
+     * <code>repeated .glory_api.Sku sku = 7;</code>
      */
     public com.zhijiejiaoyu.glory_api.shop.Sku.Builder getSkuBuilder(
         int index) {
       return getSkuFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .glory_api.Sku sku = 6;</code>
+     * <code>repeated .glory_api.Sku sku = 7;</code>
      */
     public com.zhijiejiaoyu.glory_api.shop.SkuOrBuilder getSkuOrBuilder(
         int index) {
@@ -1067,7 +1205,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.Sku sku = 6;</code>
+     * <code>repeated .glory_api.Sku sku = 7;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.SkuOrBuilder> 
          getSkuOrBuilderList() {
@@ -1078,14 +1216,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.Sku sku = 6;</code>
+     * <code>repeated .glory_api.Sku sku = 7;</code>
      */
     public com.zhijiejiaoyu.glory_api.shop.Sku.Builder addSkuBuilder() {
       return getSkuFieldBuilder().addBuilder(
           com.zhijiejiaoyu.glory_api.shop.Sku.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.Sku sku = 6;</code>
+     * <code>repeated .glory_api.Sku sku = 7;</code>
      */
     public com.zhijiejiaoyu.glory_api.shop.Sku.Builder addSkuBuilder(
         int index) {
@@ -1093,7 +1231,7 @@ private static final long serialVersionUID = 0L;
           index, com.zhijiejiaoyu.glory_api.shop.Sku.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.Sku sku = 6;</code>
+     * <code>repeated .glory_api.Sku sku = 7;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.shop.Sku.Builder> 
          getSkuBuilderList() {

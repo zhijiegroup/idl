@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
     attribute = java.util.Collections.emptyList();
     skuUrl = "";
     serialNumber = "";
+    preferentialValue = "";
   }
 
   @java.lang.Override
@@ -115,6 +116,22 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             serialNumber = s;
+            break;
+          }
+          case 106: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            preferentialValue = s;
+            break;
+          }
+          case 112: {
+
+            stockTotal = input.readInt64();
+            break;
+          }
+          case 120: {
+
+            purchaseLimit = input.readInt64();
             break;
           }
           default: {
@@ -410,6 +427,66 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int PREFERENTIAL_VALUE_FIELD_NUMBER = 13;
+  private volatile java.lang.Object preferentialValue ;
+  /**
+   * <code>string preferential_value = 13;</code>
+   * @return The preferentialValue.
+   */
+  @java.lang.Override
+  public java.lang.String getPreferentialValue() {
+    java.lang.Object ref = preferentialValue ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      preferentialValue = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string preferential_value = 13;</code>
+   * @return The bytes for preferentialValue.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPreferentialValueBytes() {
+    java.lang.Object ref = preferentialValue ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      preferentialValue = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int STOCK_TOTAL_FIELD_NUMBER = 14;
+  private long stockTotal ;
+  /**
+   * <code>int64 stock_total = 14;</code>
+   * @return The stockTotal.
+   */
+  @java.lang.Override
+  public long getStockTotal() {
+    return stockTotal ;
+  }
+
+  public static final int PURCHASE_LIMIT_FIELD_NUMBER = 15;
+  private long purchaseLimit ;
+  /**
+   * <code>int64 purchase_limit = 15;</code>
+   * @return The purchaseLimit.
+   */
+  @java.lang.Override
+  public long getPurchaseLimit() {
+    return purchaseLimit ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -456,6 +533,15 @@ private static final long serialVersionUID = 0L;
     }
     if (!getSerialNumberBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, serialNumber );
+    }
+    if (!getPreferentialValueBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, preferentialValue );
+    }
+    if (stockTotal != 0L) {
+      output.writeInt64(14, stockTotal );
+    }
+    if (purchaseLimit != 0L) {
+      output.writeInt64(15, purchaseLimit );
     }
     unknownFields.writeTo(output);
   }
@@ -506,6 +592,17 @@ private static final long serialVersionUID = 0L;
     if (!getSerialNumberBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, serialNumber );
     }
+    if (!getPreferentialValueBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, preferentialValue );
+    }
+    if (stockTotal != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(14, stockTotal );
+    }
+    if (purchaseLimit != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(15, purchaseLimit );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -544,6 +641,12 @@ private static final long serialVersionUID = 0L;
         .equals(other.getSkuUrl())) return false;
     if (!getSerialNumber()
         .equals(other.getSerialNumber())) return false;
+    if (!getPreferentialValue()
+        .equals(other.getPreferentialValue())) return false;
+    if (getStockTotal()
+        != other.getStockTotal()) return false;
+    if (getPurchaseLimit()
+        != other.getPurchaseLimit()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -583,6 +686,14 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getSkuUrl().hashCode();
     hash = (37 * hash) + SERIAL_NUMBER_FIELD_NUMBER;
     hash = (53 * hash) + getSerialNumber().hashCode();
+    hash = (37 * hash) + PREFERENTIAL_VALUE_FIELD_NUMBER;
+    hash = (53 * hash) + getPreferentialValue().hashCode();
+    hash = (37 * hash) + STOCK_TOTAL_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getStockTotal());
+    hash = (37 * hash) + PURCHASE_LIMIT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getPurchaseLimit());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -743,6 +854,12 @@ private static final long serialVersionUID = 0L;
 
       serialNumber = "";
 
+      preferentialValue = "";
+
+      stockTotal = 0L;
+
+      purchaseLimit = 0L;
+
       return this;
     }
 
@@ -789,6 +906,9 @@ private static final long serialVersionUID = 0L;
       result.attachmentId = attachmentId ;
       result.skuUrl = skuUrl ;
       result.serialNumber = serialNumber ;
+      result.preferentialValue = preferentialValue ;
+      result.stockTotal = stockTotal ;
+      result.purchaseLimit = purchaseLimit ;
       onBuilt();
       return result;
     }
@@ -896,6 +1016,16 @@ private static final long serialVersionUID = 0L;
       if (!other.getSerialNumber().isEmpty()) {
         serialNumber = other.serialNumber ;
         onChanged();
+      }
+      if (!other.getPreferentialValue().isEmpty()) {
+        preferentialValue = other.preferentialValue ;
+        onChanged();
+      }
+      if (other.getStockTotal() != 0L) {
+        setStockTotal(other.getStockTotal());
+      }
+      if (other.getPurchaseLimit() != 0L) {
+        setPurchaseLimit(other.getPurchaseLimit());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1653,6 +1783,144 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       serialNumber = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object preferentialValue = "";
+    /**
+     * <code>string preferential_value = 13;</code>
+     * @return The preferentialValue.
+     */
+    public java.lang.String getPreferentialValue() {
+      java.lang.Object ref = preferentialValue ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        preferentialValue = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string preferential_value = 13;</code>
+     * @return The bytes for preferentialValue.
+     */
+    public com.google.protobuf.ByteString
+        getPreferentialValueBytes() {
+      java.lang.Object ref = preferentialValue ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        preferentialValue = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string preferential_value = 13;</code>
+     * @param value The preferentialValue to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPreferentialValue(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      preferentialValue = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string preferential_value = 13;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPreferentialValue() {
+      
+      preferentialValue = getDefaultInstance().getPreferentialValue();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string preferential_value = 13;</code>
+     * @param value The bytes for preferentialValue to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPreferentialValueBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      preferentialValue = value;
+      onChanged();
+      return this;
+    }
+
+    private long stockTotal ;
+    /**
+     * <code>int64 stock_total = 14;</code>
+     * @return The stockTotal.
+     */
+    @java.lang.Override
+    public long getStockTotal() {
+      return stockTotal ;
+    }
+    /**
+     * <code>int64 stock_total = 14;</code>
+     * @param value The stockTotal to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStockTotal(long value) {
+      
+      stockTotal = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 stock_total = 14;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStockTotal() {
+      
+      stockTotal = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long purchaseLimit ;
+    /**
+     * <code>int64 purchase_limit = 15;</code>
+     * @return The purchaseLimit.
+     */
+    @java.lang.Override
+    public long getPurchaseLimit() {
+      return purchaseLimit ;
+    }
+    /**
+     * <code>int64 purchase_limit = 15;</code>
+     * @param value The purchaseLimit to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPurchaseLimit(long value) {
+      
+      purchaseLimit = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 purchase_limit = 15;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPurchaseLimit() {
+      
+      purchaseLimit = 0L;
       onChanged();
       return this;
     }

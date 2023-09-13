@@ -114,4 +114,28 @@ public interface SkuOrBuilder extends
    */
   com.google.protobuf.ByteString
       getSerialNumberBytes();
+
+  /**
+   * <code>string preferential_value = 13;</code>
+   * @return The preferentialValue.
+   */
+  java.lang.String getPreferentialValue();
+  /**
+   * <code>string preferential_value = 13;</code>
+   * @return The bytes for preferentialValue.
+   */
+  com.google.protobuf.ByteString
+      getPreferentialValueBytes();
+
+  /**
+   * <code>int64 stock_total = 14;</code>
+   * @return The stockTotal.
+   */
+  long getStockTotal();
+
+  /**
+   * <code>int64 purchase_limit = 15;</code>
+   * @return The purchaseLimit.
+   */
+  long getPurchaseLimit();
 }

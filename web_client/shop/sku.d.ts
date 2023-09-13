@@ -18,6 +18,9 @@ export interface Sku {
   attachment_id?: string;
   sku_url?: string;
   serial_number?: string;
+  preferential_value?: string;
+  stock_total?: string;
+  purchase_limit?: string;
 }
 
 export interface SkuAttributeWithOneValue {
