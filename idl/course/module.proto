@@ -1,0 +1,76 @@
+syntax = "proto3";
+package glory_api;
+option java_package = "com.zhijiejiaoyu.glory_api.course";
+option java_multiple_files = true;
+
+import "base.proto";
+
+message CourseResource {
+  int64 resource_id = 1; // 课程资源ID
+  string resource_name = 2; // 课程资源名称
+  string resource_path = 3; // 课程资源OSS路径
+  string resource_type = 4; // 课程资源类型：1.教学视频；2.教学PPT；3.课后习题；4.教案
+}
+
+message CourseChapter {
+  string chapter_name = 1; // 课程内容名称
+  string chapter_code = 2; // 课程内容编码
+  int32 chapter_type = 3; // 课程内容类型：1.理论知识；2.技能实践
+}
+
+message CourseModule {
+  int64 module_id = 1; // 能力指标ID
+  string module_name = 2; // 能力指标名称
+  string module_code = 3; // 能力指标编码
+  string major_code = 4; // 专业代码
+  string teacher_name = 5; // 主讲老师名称
+  float knowledge_hours = 6; // 知识点学时
+  float skill_hours = 7; // 技能学时
+  repeated CourseChapter course_chapters = 8; // 课程内容列表
+  string created_at = 9; // 创建时间
+}
+
+// 创建能力指标
+message CreateCourseModuleRequest {
+  base.PaginationRequest base_request = 1;
+  CourseModule course_module = 2;
+}
+
+message CreateCourseModuleResponse {
+  base.PaginationResponse base_resp = 1;
+  int64 module_id = 2;
+}
+
+// 更新能力指标
+message UpdateCourseModuleRequest {
+  base.PaginationRequest base_request = 1;
+  CourseModule course_module = 2;
+}
+
+message UpdateCourseModuleResponse {
+  base.PaginationResponse base_resp = 1;
+}
+
+// 删除能力指标
+message DeleteCourseModuleRequest {
+  base.PaginationRequest base_request = 1;
+  int64 module_id = 2;
+}
+
+message DeleteCourseModuleResponse {
+  base.PaginationResponse base_resp = 1;
+}
+
+// 能力指标列表
+message ListCourseModuleRequest {
+  base.PaginationRequest base_request = 1;
+  string keyword = 2; // 搜索关键词
+  string major_code = 3; // 专业代码
+  base.PaginationRequest pagination = 100;
+}
+
+message ListCourseModuleResponse {
+  base.PaginationResponse base_resp = 1;
+  repeated CourseModule course_modules = 2;
+  base.PaginationResponse pagination = 3;
+}
