@@ -23,8 +23,8 @@ public interface PublicPriceRequestOrBuilder extends
   com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder();
 
   /**
-   * <code>int64 product_id = 2;</code>
-   * @return The productId.
+   * <code>int64 live_product_status_id = 2;</code>
+   * @return The liveProductStatusId.
    */
-  long getProductId();
+  long getLiveProductStatusId();
 }

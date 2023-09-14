@@ -375,12 +375,12 @@ public final class LivePlanOuterClass {
       "quest\030\001 \001(\0132\021.base.BaseRequest\022\022\n\nproduc" +
       "t_id\030\002 \001(\003\022\027\n\017reference_price\030\003 \001(\001\"8\n\017P" +
       "reheatResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
-      ".BaseResponse\"Q\n\022PublicPriceRequest\022\'\n\014b" +
-      "ase_request\030\001 \001(\0132\021.base.BaseRequest\022\022\n\n" +
-      "product_id\030\002 \001(\003\"<\n\023PublicPriceResponse\022" +
-      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponseB#" +
-      "\n\037com.zhijiejiaoyu.glory_api.liveP\001b\006pro" +
-      "to3"
+      ".BaseResponse\"]\n\022PublicPriceRequest\022\'\n\014b" +
+      "ase_request\030\001 \001(\0132\021.base.BaseRequest\022\036\n\026" +
+      "live_product_status_id\030\002 \001(\003\"<\n\023PublicPr" +
+      "iceResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
+      "seResponseB#\n\037com.zhijiejiaoyu.glory_api" +
+      ".liveP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -644,7 +644,7 @@ public final class LivePlanOuterClass {
     internal_static_glory_api_PublicPriceRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_PublicPriceRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "ProductId", });
+        new java.lang.String[] { "BaseRequest", "LiveProductStatusId", });
     internal_static_glory_api_PublicPriceResponse_descriptor =
       getDescriptor().getMessageTypes().get(43);
     internal_static_glory_api_PublicPriceResponse_fieldAccessorTable = new

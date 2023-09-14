@@ -63,7 +63,7 @@ private static final long serialVersionUID = 0L;
           }
           case 16: {
 
-            productId = input.readInt64();
+            liveProductStatusId = input.readInt64();
             break;
           }
           default: {
@@ -124,15 +124,15 @@ private static final long serialVersionUID = 0L;
     return getBaseRequest();
   }
 
-  public static final int PRODUCT_ID_FIELD_NUMBER = 2;
-  private long productId ;
+  public static final int LIVE_PRODUCT_STATUS_ID_FIELD_NUMBER = 2;
+  private long liveProductStatusId ;
   /**
-   * <code>int64 product_id = 2;</code>
-   * @return The productId.
+   * <code>int64 live_product_status_id = 2;</code>
+   * @return The liveProductStatusId.
    */
   @java.lang.Override
-  public long getProductId() {
-    return productId ;
+  public long getLiveProductStatusId() {
+    return liveProductStatusId ;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -152,8 +152,8 @@ private static final long serialVersionUID = 0L;
     if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
-    if (productId != 0L) {
-      output.writeInt64(2, productId );
+    if (liveProductStatusId != 0L) {
+      output.writeInt64(2, liveProductStatusId );
     }
     unknownFields.writeTo(output);
   }
@@ -168,9 +168,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseRequest());
     }
-    if (productId != 0L) {
+    if (liveProductStatusId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, productId );
+        .computeInt64Size(2, liveProductStatusId );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -192,8 +192,8 @@ private static final long serialVersionUID = 0L;
       if (!getBaseRequest()
           .equals(other.getBaseRequest())) return false;
     }
-    if (getProductId()
-        != other.getProductId()) return false;
+    if (getLiveProductStatusId()
+        != other.getLiveProductStatusId()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -209,9 +209,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
       hash = (53 * hash) + getBaseRequest().hashCode();
     }
-    hash = (37 * hash) + PRODUCT_ID_FIELD_NUMBER;
+    hash = (37 * hash) + LIVE_PRODUCT_STATUS_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getProductId());
+        getLiveProductStatusId());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -351,7 +351,7 @@ private static final long serialVersionUID = 0L;
         baseRequest = null;
         baseRequestBuilder = null;
       }
-      productId = 0L;
+      liveProductStatusId = 0L;
 
       return this;
     }
@@ -384,7 +384,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.baseRequest = baseRequestBuilder .build();
       }
-      result.productId = productId ;
+      result.liveProductStatusId = liveProductStatusId ;
       onBuilt();
       return result;
     }
@@ -436,8 +436,8 @@ private static final long serialVersionUID = 0L;
       if (other.hasBaseRequest()) {
         mergeBaseRequest(other.getBaseRequest());
       }
-      if (other.getProductId() != 0L) {
-        setProductId(other.getProductId());
+      if (other.getLiveProductStatusId() != 0L) {
+        setLiveProductStatusId(other.getLiveProductStatusId());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -587,33 +587,33 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder ;
     }
 
-    private long productId ;
+    private long liveProductStatusId ;
     /**
-     * <code>int64 product_id = 2;</code>
-     * @return The productId.
+     * <code>int64 live_product_status_id = 2;</code>
+     * @return The liveProductStatusId.
      */
     @java.lang.Override
-    public long getProductId() {
-      return productId ;
+    public long getLiveProductStatusId() {
+      return liveProductStatusId ;
     }
     /**
-     * <code>int64 product_id = 2;</code>
-     * @param value The productId to set.
+     * <code>int64 live_product_status_id = 2;</code>
+     * @param value The liveProductStatusId to set.
      * @return This builder for chaining.
      */
-    public Builder setProductId(long value) {
+    public Builder setLiveProductStatusId(long value) {
       
-      productId = value;
+      liveProductStatusId = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 product_id = 2;</code>
+     * <code>int64 live_product_status_id = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder clearProductId() {
+    public Builder clearLiveProductStatusId() {
       
-      productId = 0L;
+      liveProductStatusId = 0L;
       onChanged();
       return this;
     }

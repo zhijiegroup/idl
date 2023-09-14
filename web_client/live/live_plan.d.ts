@@ -285,7 +285,7 @@ export interface PreheatResponse {
 
 export interface PublicPriceRequest {
   base_request?: base.BaseRequest;
-  product_id?: string;
+  live_product_status_id?: string;
 }
 
 export interface PublicPriceResponse {
