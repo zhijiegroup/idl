@@ -6,6 +6,7 @@ option java_multiple_files = true;
 import "base.proto";
 import "seller/seller.proto";
 import "shop/shop.proto";
+import "tenant/tenant.proto";
 
 message TenantDept {
     int64 dept_id = 1;
@@ -23,14 +24,15 @@ message User {
   string token_expiry = 4;
   string created_at = 5;
   string name =6;
-  string avatar_url = 7;
-  Seller seller = 8;
-  repeated ShopAccess shop_access = 9;  //判断用户的shop访问权限
-
-  repeated TenantDept tenant_dept = 10;
-  repeated Role roles = 11;
-  repeated PagePermission pages = 12;
-  bool is_admin = 13;
+  int64 avatar_attachment_id = 7;
+  string avatar_url = 8;
+  Seller seller = 9;
+  
+  repeated ShopAccess shop_access = 10;  //判断用户的shop访问权限
+  repeated TenantDept tenant_dept = 11;
+  repeated Role roles = 121;
+  repeated PagePermission pages = 13;
+  bool is_admin = 14;
 }
 
 message UserFollow {
@@ -96,7 +98,9 @@ message GetUserRequest {
 
 message GetUserResponse {
   base.BaseResponse base_resp = 1;
-  User data =2; // user data
+  User data = 2; // user data
+  Tenant tenant = 3;
+  repeated string dept_detail = 4;
 }
 
 message UpdateUserRequest {
