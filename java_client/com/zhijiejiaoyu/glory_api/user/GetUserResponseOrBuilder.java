@@ -48,4 +48,44 @@ public interface GetUserResponseOrBuilder extends
    * <code>.glory_api.User data = 2;</code>
    */
   com.zhijiejiaoyu.glory_api.user.UserOrBuilder getDataOrBuilder();
+
+  /**
+   * <code>.glory_api.Tenant tenant = 3;</code>
+   * @return Whether the tenant field is set.
+   */
+  boolean hasTenant();
+  /**
+   * <code>.glory_api.Tenant tenant = 3;</code>
+   * @return The tenant.
+   */
+  com.zhijiejiaoyu.glory_api.tenant.Tenant getTenant();
+  /**
+   * <code>.glory_api.Tenant tenant = 3;</code>
+   */
+  com.zhijiejiaoyu.glory_api.tenant.TenantOrBuilder getTenantOrBuilder();
+
+  /**
+   * <code>repeated string dept_detail = 4;</code>
+   * @return A list containing the deptDetail.
+   */
+  java.util.List<java.lang.String>
+      getDeptDetailList();
+  /**
+   * <code>repeated string dept_detail = 4;</code>
+   * @return The count of deptDetail.
+   */
+  int getDeptDetailCount();
+  /**
+   * <code>repeated string dept_detail = 4;</code>
+   * @param index The index of the element to return.
+   * @return The deptDetail at the given index.
+   */
+  java.lang.String getDeptDetail(int index);
+  /**
+   * <code>repeated string dept_detail = 4;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the deptDetail at the given index.
+   */
+  com.google.protobuf.ByteString
+      getDeptDetailBytes(int index);
 }

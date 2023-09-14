@@ -25,59 +25,42 @@ struct GloryApi_TenantUser {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var tenantUserID: Int64 {
-    get {return _storage._tenantUserID}
-    set {_uniqueStorage()._tenantUserID = newValue}
-  }
+  var tenantUserID: Int64 = 0
 
-  var userID: Int64 {
-    get {return _storage._userID}
-    set {_uniqueStorage()._userID = newValue}
-  }
+  var userID: Int64 = 0
 
-  var phone: String {
-    get {return _storage._phone}
-    set {_uniqueStorage()._phone = newValue}
-  }
+  var phone: String = String()
 
-  var name: String {
-    get {return _storage._name}
-    set {_uniqueStorage()._name = newValue}
-  }
+  var name: String = String()
 
-  var dept: String {
-    get {return _storage._dept}
-    set {_uniqueStorage()._dept = newValue}
-  }
+  var dept: String = String()
 
-  var deptID: Int64 {
-    get {return _storage._deptID}
-    set {_uniqueStorage()._deptID = newValue}
-  }
+  var deptID: Int64 = 0
 
   var user: GloryApi_User {
-    get {return _storage._user ?? GloryApi_User()}
-    set {_uniqueStorage()._user = newValue}
+    get {return _user ?? GloryApi_User()}
+    set {_user = newValue}
   }
   /// Returns true if `user` has been explicitly set.
-  var hasUser: Bool {return _storage._user != nil}
+  var hasUser: Bool {return self._user != nil}
   /// Clears the value of `user`. Subsequent reads from it will return its default value.
-  mutating func clearUser() {_uniqueStorage()._user = nil}
+  mutating func clearUser() {self._user = nil}
 
   var role: GloryApi_Role {
-    get {return _storage._role ?? GloryApi_Role()}
-    set {_uniqueStorage()._role = newValue}
+    get {return _role ?? GloryApi_Role()}
+    set {_role = newValue}
   }
   /// Returns true if `role` has been explicitly set.
-  var hasRole: Bool {return _storage._role != nil}
+  var hasRole: Bool {return self._role != nil}
   /// Clears the value of `role`. Subsequent reads from it will return its default value.
-  mutating func clearRole() {_uniqueStorage()._role = nil}
+  mutating func clearRole() {self._role = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  fileprivate var _storage = _StorageClass.defaultInstance
+  fileprivate var _user: GloryApi_User? = nil
+  fileprivate var _role: GloryApi_Role? = nil
 }
 
 struct GloryApi_CreateTenantUserRequest {
@@ -509,112 +492,66 @@ extension GloryApi_TenantUser: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     11: .same(proto: "role"),
   ]
 
-  fileprivate class _StorageClass {
-    var _tenantUserID: Int64 = 0
-    var _userID: Int64 = 0
-    var _phone: String = String()
-    var _name: String = String()
-    var _dept: String = String()
-    var _deptID: Int64 = 0
-    var _user: GloryApi_User? = nil
-    var _role: GloryApi_Role? = nil
-
-    static let defaultInstance = _StorageClass()
-
-    private init() {}
-
-    init(copying source: _StorageClass) {
-      _tenantUserID = source._tenantUserID
-      _userID = source._userID
-      _phone = source._phone
-      _name = source._name
-      _dept = source._dept
-      _deptID = source._deptID
-      _user = source._user
-      _role = source._role
-    }
-  }
-
-  fileprivate mutating func _uniqueStorage() -> _StorageClass {
-    if !isKnownUniquelyReferenced(&_storage) {
-      _storage = _StorageClass(copying: _storage)
-    }
-    return _storage
-  }
-
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    _ = _uniqueStorage()
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        // The use of inline closures is to circumvent an issue where the compiler
-        // allocates stack space for every case branch when no optimizations are
-        // enabled. https://github.com/apple/swift-protobuf/issues/1034
-        switch fieldNumber {
-        case 1: try { try decoder.decodeSingularInt64Field(value: &_storage._tenantUserID) }()
-        case 2: try { try decoder.decodeSingularInt64Field(value: &_storage._userID) }()
-        case 4: try { try decoder.decodeSingularStringField(value: &_storage._phone) }()
-        case 5: try { try decoder.decodeSingularStringField(value: &_storage._name) }()
-        case 8: try { try decoder.decodeSingularStringField(value: &_storage._dept) }()
-        case 9: try { try decoder.decodeSingularInt64Field(value: &_storage._deptID) }()
-        case 10: try { try decoder.decodeSingularMessageField(value: &_storage._user) }()
-        case 11: try { try decoder.decodeSingularMessageField(value: &_storage._role) }()
-        default: break
-        }
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.tenantUserID) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.userID) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.phone) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.name) }()
+      case 8: try { try decoder.decodeSingularStringField(value: &self.dept) }()
+      case 9: try { try decoder.decodeSingularInt64Field(value: &self.deptID) }()
+      case 10: try { try decoder.decodeSingularMessageField(value: &self._user) }()
+      case 11: try { try decoder.decodeSingularMessageField(value: &self._role) }()
+      default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every if/case branch local when no optimizations
-      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-      // https://github.com/apple/swift-protobuf/issues/1182
-      if _storage._tenantUserID != 0 {
-        try visitor.visitSingularInt64Field(value: _storage._tenantUserID, fieldNumber: 1)
-      }
-      if _storage._userID != 0 {
-        try visitor.visitSingularInt64Field(value: _storage._userID, fieldNumber: 2)
-      }
-      if !_storage._phone.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._phone, fieldNumber: 4)
-      }
-      if !_storage._name.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._name, fieldNumber: 5)
-      }
-      if !_storage._dept.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._dept, fieldNumber: 8)
-      }
-      if _storage._deptID != 0 {
-        try visitor.visitSingularInt64Field(value: _storage._deptID, fieldNumber: 9)
-      }
-      try { if let v = _storage._user {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 10)
-      } }()
-      try { if let v = _storage._role {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 11)
-      } }()
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    if self.tenantUserID != 0 {
+      try visitor.visitSingularInt64Field(value: self.tenantUserID, fieldNumber: 1)
     }
+    if self.userID != 0 {
+      try visitor.visitSingularInt64Field(value: self.userID, fieldNumber: 2)
+    }
+    if !self.phone.isEmpty {
+      try visitor.visitSingularStringField(value: self.phone, fieldNumber: 4)
+    }
+    if !self.name.isEmpty {
+      try visitor.visitSingularStringField(value: self.name, fieldNumber: 5)
+    }
+    if !self.dept.isEmpty {
+      try visitor.visitSingularStringField(value: self.dept, fieldNumber: 8)
+    }
+    if self.deptID != 0 {
+      try visitor.visitSingularInt64Field(value: self.deptID, fieldNumber: 9)
+    }
+    try { if let v = self._user {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 10)
+    } }()
+    try { if let v = self._role {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 11)
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_TenantUser, rhs: GloryApi_TenantUser) -> Bool {
-    if lhs._storage !== rhs._storage {
-      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
-        let _storage = _args.0
-        let rhs_storage = _args.1
-        if _storage._tenantUserID != rhs_storage._tenantUserID {return false}
-        if _storage._userID != rhs_storage._userID {return false}
-        if _storage._phone != rhs_storage._phone {return false}
-        if _storage._name != rhs_storage._name {return false}
-        if _storage._dept != rhs_storage._dept {return false}
-        if _storage._deptID != rhs_storage._deptID {return false}
-        if _storage._user != rhs_storage._user {return false}
-        if _storage._role != rhs_storage._role {return false}
-        return true
-      }
-      if !storagesAreEqual {return false}
-    }
+    if lhs.tenantUserID != rhs.tenantUserID {return false}
+    if lhs.userID != rhs.userID {return false}
+    if lhs.phone != rhs.phone {return false}
+    if lhs.name != rhs.name {return false}
+    if lhs.dept != rhs.dept {return false}
+    if lhs.deptID != rhs.deptID {return false}
+    if lhs._user != rhs._user {return false}
+    if lhs._role != rhs._role {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

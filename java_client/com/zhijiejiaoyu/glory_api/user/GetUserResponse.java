@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private GetUserResponse() {
+    deptDetail = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -38,6 +39,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0 = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -74,6 +76,28 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 26: {
+            com.zhijiejiaoyu.glory_api.tenant.Tenant.Builder subBuilder = null;
+            if (tenant != null) {
+              subBuilder = tenant .toBuilder();
+            }
+            tenant = input.readMessage(com.zhijiejiaoyu.glory_api.tenant.Tenant.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(tenant );
+              tenant = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0 & 0x00000001) != 0)) {
+              deptDetail = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            deptDetail .add(s);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -89,6 +113,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0 & 0x00000001) != 0)) {
+        deptDetail = deptDetail .getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -170,6 +197,67 @@ private static final long serialVersionUID = 0L;
     return getData();
   }
 
+  public static final int TENANT_FIELD_NUMBER = 3;
+  private com.zhijiejiaoyu.glory_api.tenant.Tenant tenant ;
+  /**
+   * <code>.glory_api.Tenant tenant = 3;</code>
+   * @return Whether the tenant field is set.
+   */
+  @java.lang.Override
+  public boolean hasTenant() {
+    return tenant != null;
+  }
+  /**
+   * <code>.glory_api.Tenant tenant = 3;</code>
+   * @return The tenant.
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.tenant.Tenant getTenant() {
+    return tenant == null ? com.zhijiejiaoyu.glory_api.tenant.Tenant.getDefaultInstance() : tenant ;
+  }
+  /**
+   * <code>.glory_api.Tenant tenant = 3;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.tenant.TenantOrBuilder getTenantOrBuilder() {
+    return getTenant();
+  }
+
+  public static final int DEPT_DETAIL_FIELD_NUMBER = 4;
+  private com.google.protobuf.LazyStringList deptDetail ;
+  /**
+   * <code>repeated string dept_detail = 4;</code>
+   * @return A list containing the deptDetail.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getDeptDetailList() {
+    return deptDetail ;
+  }
+  /**
+   * <code>repeated string dept_detail = 4;</code>
+   * @return The count of deptDetail.
+   */
+  public int getDeptDetailCount() {
+    return deptDetail .size();
+  }
+  /**
+   * <code>repeated string dept_detail = 4;</code>
+   * @param index The index of the element to return.
+   * @return The deptDetail at the given index.
+   */
+  public java.lang.String getDeptDetail(int index) {
+    return deptDetail .get(index);
+  }
+  /**
+   * <code>repeated string dept_detail = 4;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the deptDetail at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getDeptDetailBytes(int index) {
+    return deptDetail .getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -190,6 +278,12 @@ private static final long serialVersionUID = 0L;
     if (data != null) {
       output.writeMessage(2, getData());
     }
+    if (tenant != null) {
+      output.writeMessage(3, getTenant());
+    }
+    for (int i = 0; i < deptDetail .size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, deptDetail .getRaw(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -206,6 +300,18 @@ private static final long serialVersionUID = 0L;
     if (data != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getData());
+    }
+    if (tenant != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, getTenant());
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < deptDetail .size(); i++) {
+        dataSize += computeStringSizeNoTag(deptDetail .getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getDeptDetailList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -232,6 +338,13 @@ private static final long serialVersionUID = 0L;
       if (!getData()
           .equals(other.getData())) return false;
     }
+    if (hasTenant() != other.hasTenant()) return false;
+    if (hasTenant()) {
+      if (!getTenant()
+          .equals(other.getTenant())) return false;
+    }
+    if (!getDeptDetailList()
+        .equals(other.getDeptDetailList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -250,6 +363,14 @@ private static final long serialVersionUID = 0L;
     if (hasData()) {
       hash = (37 * hash) + DATA_FIELD_NUMBER;
       hash = (53 * hash) + getData().hashCode();
+    }
+    if (hasTenant()) {
+      hash = (37 * hash) + TENANT_FIELD_NUMBER;
+      hash = (53 * hash) + getTenant().hashCode();
+    }
+    if (getDeptDetailCount() > 0) {
+      hash = (37 * hash) + DEPT_DETAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getDeptDetailList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -396,6 +517,14 @@ private static final long serialVersionUID = 0L;
         data = null;
         dataBuilder = null;
       }
+      if (tenantBuilder == null) {
+        tenant = null;
+      } else {
+        tenant = null;
+        tenantBuilder = null;
+      }
+      deptDetail = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0 = (bitField0 & ~0x00000001);
       return this;
     }
 
@@ -422,6 +551,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.user.GetUserResponse buildPartial() {
       com.zhijiejiaoyu.glory_api.user.GetUserResponse result = new com.zhijiejiaoyu.glory_api.user.GetUserResponse(this);
+      int from_bitField0 = bitField0 ;
       if (baseRespBuilder == null) {
         result.baseResp = baseResp ;
       } else {
@@ -432,6 +562,16 @@ private static final long serialVersionUID = 0L;
       } else {
         result.data = dataBuilder .build();
       }
+      if (tenantBuilder == null) {
+        result.tenant = tenant ;
+      } else {
+        result.tenant = tenantBuilder .build();
+      }
+      if (((bitField0 & 0x00000001) != 0)) {
+        deptDetail = deptDetail .getUnmodifiableView();
+        bitField0 = (bitField0 & ~0x00000001);
+      }
+      result.deptDetail = deptDetail ;
       onBuilt();
       return result;
     }
@@ -486,6 +626,19 @@ private static final long serialVersionUID = 0L;
       if (other.hasData()) {
         mergeData(other.getData());
       }
+      if (other.hasTenant()) {
+        mergeTenant(other.getTenant());
+      }
+      if (!other.deptDetail .isEmpty()) {
+        if (deptDetail .isEmpty()) {
+          deptDetail = other.deptDetail ;
+          bitField0 = (bitField0 & ~0x00000001);
+        } else {
+          ensureDeptDetailIsMutable();
+          deptDetail .addAll(other.deptDetail );
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -514,6 +667,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0 ;
 
     private com.zhijiejiaoyu.base.BaseResponse baseResp ;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -787,6 +941,235 @@ private static final long serialVersionUID = 0L;
         data = null;
       }
       return dataBuilder ;
+    }
+
+    private com.zhijiejiaoyu.glory_api.tenant.Tenant tenant ;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.tenant.Tenant, com.zhijiejiaoyu.glory_api.tenant.Tenant.Builder, com.zhijiejiaoyu.glory_api.tenant.TenantOrBuilder> tenantBuilder ;
+    /**
+     * <code>.glory_api.Tenant tenant = 3;</code>
+     * @return Whether the tenant field is set.
+     */
+    public boolean hasTenant() {
+      return tenantBuilder != null || tenant != null;
+    }
+    /**
+     * <code>.glory_api.Tenant tenant = 3;</code>
+     * @return The tenant.
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.Tenant getTenant() {
+      if (tenantBuilder == null) {
+        return tenant == null ? com.zhijiejiaoyu.glory_api.tenant.Tenant.getDefaultInstance() : tenant ;
+      } else {
+        return tenantBuilder .getMessage();
+      }
+    }
+    /**
+     * <code>.glory_api.Tenant tenant = 3;</code>
+     */
+    public Builder setTenant(com.zhijiejiaoyu.glory_api.tenant.Tenant value) {
+      if (tenantBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        tenant = value;
+        onChanged();
+      } else {
+        tenantBuilder .setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.Tenant tenant = 3;</code>
+     */
+    public Builder setTenant(
+        com.zhijiejiaoyu.glory_api.tenant.Tenant.Builder builderForValue) {
+      if (tenantBuilder == null) {
+        tenant = builderForValue.build();
+        onChanged();
+      } else {
+        tenantBuilder .setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.Tenant tenant = 3;</code>
+     */
+    public Builder mergeTenant(com.zhijiejiaoyu.glory_api.tenant.Tenant value) {
+      if (tenantBuilder == null) {
+        if (tenant != null) {
+          tenant =
+            com.zhijiejiaoyu.glory_api.tenant.Tenant.newBuilder(tenant ).mergeFrom(value).buildPartial();
+        } else {
+          tenant = value;
+        }
+        onChanged();
+      } else {
+        tenantBuilder .mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.Tenant tenant = 3;</code>
+     */
+    public Builder clearTenant() {
+      if (tenantBuilder == null) {
+        tenant = null;
+        onChanged();
+      } else {
+        tenant = null;
+        tenantBuilder = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.Tenant tenant = 3;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.Tenant.Builder getTenantBuilder() {
+      
+      onChanged();
+      return getTenantFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.glory_api.Tenant tenant = 3;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.TenantOrBuilder getTenantOrBuilder() {
+      if (tenantBuilder != null) {
+        return tenantBuilder .getMessageOrBuilder();
+      } else {
+        return tenant == null ?
+            com.zhijiejiaoyu.glory_api.tenant.Tenant.getDefaultInstance() : tenant ;
+      }
+    }
+    /**
+     * <code>.glory_api.Tenant tenant = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.tenant.Tenant, com.zhijiejiaoyu.glory_api.tenant.Tenant.Builder, com.zhijiejiaoyu.glory_api.tenant.TenantOrBuilder> 
+        getTenantFieldBuilder() {
+      if (tenantBuilder == null) {
+        tenantBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.tenant.Tenant, com.zhijiejiaoyu.glory_api.tenant.Tenant.Builder, com.zhijiejiaoyu.glory_api.tenant.TenantOrBuilder>(
+                getTenant(),
+                getParentForChildren(),
+                isClean());
+        tenant = null;
+      }
+      return tenantBuilder ;
+    }
+
+    private com.google.protobuf.LazyStringList deptDetail = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureDeptDetailIsMutable() {
+      if (!((bitField0 & 0x00000001) != 0)) {
+        deptDetail = new com.google.protobuf.LazyStringArrayList(deptDetail );
+        bitField0_ |= 0x00000001;
+       }
+    }
+    /**
+     * <code>repeated string dept_detail = 4;</code>
+     * @return A list containing the deptDetail.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getDeptDetailList() {
+      return deptDetail .getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string dept_detail = 4;</code>
+     * @return The count of deptDetail.
+     */
+    public int getDeptDetailCount() {
+      return deptDetail .size();
+    }
+    /**
+     * <code>repeated string dept_detail = 4;</code>
+     * @param index The index of the element to return.
+     * @return The deptDetail at the given index.
+     */
+    public java.lang.String getDeptDetail(int index) {
+      return deptDetail .get(index);
+    }
+    /**
+     * <code>repeated string dept_detail = 4;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the deptDetail at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getDeptDetailBytes(int index) {
+      return deptDetail .getByteString(index);
+    }
+    /**
+     * <code>repeated string dept_detail = 4;</code>
+     * @param index The index to set the value at.
+     * @param value The deptDetail to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeptDetail(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureDeptDetailIsMutable();
+      deptDetail .set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string dept_detail = 4;</code>
+     * @param value The deptDetail to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDeptDetail(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureDeptDetailIsMutable();
+      deptDetail .add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string dept_detail = 4;</code>
+     * @param values The deptDetail to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllDeptDetail(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureDeptDetailIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, deptDetail );
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string dept_detail = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDeptDetail() {
+      deptDetail = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0 = (bitField0 & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string dept_detail = 4;</code>
+     * @param value The bytes of the deptDetail to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDeptDetailBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureDeptDetailIsMutable();
+      deptDetail .add(value);
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

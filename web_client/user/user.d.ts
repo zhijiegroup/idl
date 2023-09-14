@@ -5,7 +5,8 @@
 import * as base from "../base";
 import * as seller from "../seller/seller";
 import * as shop from "../shop/shop";
-export { base, seller, shop };
+import * as tenant from "../tenant/tenant";
+export { base, seller, shop, tenant };
 
 export interface TenantDept {
   dept_id?: string;
@@ -23,6 +24,7 @@ export interface User {
   token_expiry?: string;
   created_at?: string;
   name?: string;
+  avatar_attachment_id?: string;
   avatar_url?: string;
   seller?: seller.Seller;
   /** 判断用户的shop访问权限 */
@@ -103,6 +105,8 @@ export interface GetUserResponse {
   base_resp?: base.BaseResponse;
   /** user data */
   data?: User;
+  tenant?: tenant.Tenant;
+  dept_detail?: Array<string>;
 }
 
 export interface UpdateUserRequest {
