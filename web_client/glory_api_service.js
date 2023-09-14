@@ -42,6 +42,7 @@ import * as tenant_user from "./tenant/tenant_user";
 import * as tenant_config from "./tenant/tenant_config";
 import * as short_video from "./short_video/short_video";
 import * as material from "./course/material";
+import * as modules from "./course/module";
 export {
   user,
   address,
@@ -81,6 +82,7 @@ export {
   tenant_config,
   short_video,
   material,
+  modules,
 };
 
 import {
@@ -1930,6 +1932,38 @@ export class glory_api {
 
   DeleteCourseMaterial(request) {
     const uri = `${this.uriPrefix}/api/course/delete_course_material`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreateCourseModule(request) {
+    const uri = `${this.uriPrefix}/api/course/create_course_module`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  UpdateCourseModule(request) {
+    const uri = `${this.uriPrefix}/api/course/update_course_module`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteCourseModule(request) {
+    const uri = `${this.uriPrefix}/api/course/delete_course_module`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListCourseModule(request) {
+    const uri = `${this.uriPrefix}/api/course/list_course_module`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
