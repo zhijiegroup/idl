@@ -196,4 +196,10 @@ public interface LiveRoomIndexInfoOrBuilder extends
    */
   com.google.protobuf.ByteString
       getShopLogoUrlBytes();
+
+  /**
+   * <code>int64 shop_id = 17;</code>
+   * @return The shopId.
+   */
+  long getShopId();
 }

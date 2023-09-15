@@ -154,6 +154,11 @@ private static final long serialVersionUID = 0L;
             shopLogoUrl = s;
             break;
           }
+          case 136: {
+
+            shopId = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -729,6 +734,17 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int SHOP_ID_FIELD_NUMBER = 17;
+  private long shopId ;
+  /**
+   * <code>int64 shop_id = 17;</code>
+   * @return The shopId.
+   */
+  @java.lang.Override
+  public long getShopId() {
+    return shopId ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -791,6 +807,9 @@ private static final long serialVersionUID = 0L;
     if (!getShopLogoUrlBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 16, shopLogoUrl );
     }
+    if (shopId != 0L) {
+      output.writeInt64(17, shopId );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -851,6 +870,10 @@ private static final long serialVersionUID = 0L;
     if (!getShopLogoUrlBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, shopLogoUrl );
     }
+    if (shopId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(17, shopId );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -898,6 +921,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getShopName())) return false;
     if (!getShopLogoUrl()
         .equals(other.getShopLogoUrl())) return false;
+    if (getShopId()
+        != other.getShopId()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -944,6 +969,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getShopName().hashCode();
     hash = (37 * hash) + SHOP_LOGO_URL_FIELD_NUMBER;
     hash = (53 * hash) + getShopLogoUrl().hashCode();
+    hash = (37 * hash) + SHOP_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getShopId());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1109,6 +1137,8 @@ private static final long serialVersionUID = 0L;
 
       shopLogoUrl = "";
 
+      shopId = 0L;
+
       return this;
     }
 
@@ -1151,6 +1181,7 @@ private static final long serialVersionUID = 0L;
       result.userName = userName ;
       result.shopName = shopName ;
       result.shopLogoUrl = shopLogoUrl ;
+      result.shopId = shopId ;
       onBuilt();
       return result;
     }
@@ -1259,6 +1290,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getShopLogoUrl().isEmpty()) {
         shopLogoUrl = other.shopLogoUrl ;
         onChanged();
+      }
+      if (other.getShopId() != 0L) {
+        setShopId(other.getShopId());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2406,6 +2440,37 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       shopLogoUrl = value;
+      onChanged();
+      return this;
+    }
+
+    private long shopId ;
+    /**
+     * <code>int64 shop_id = 17;</code>
+     * @return The shopId.
+     */
+    @java.lang.Override
+    public long getShopId() {
+      return shopId ;
+    }
+    /**
+     * <code>int64 shop_id = 17;</code>
+     * @param value The shopId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setShopId(long value) {
+      
+      shopId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 shop_id = 17;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearShopId() {
+      
+      shopId = 0L;
       onChanged();
       return this;
     }
