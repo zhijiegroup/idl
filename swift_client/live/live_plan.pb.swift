@@ -1199,7 +1199,7 @@ struct GloryApi_PublicPriceRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
-  var productID: Int64 = 0
+  var liveProductStatusID: Int64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -3352,7 +3352,7 @@ extension GloryApi_PublicPriceRequest: SwiftProtobuf.Message, SwiftProtobuf._Mes
   static let protoMessageName: String = _protobuf_package + ".PublicPriceRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
-    2: .standard(proto: "product_id"),
+    2: .standard(proto: "live_product_status_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -3362,7 +3362,7 @@ extension GloryApi_PublicPriceRequest: SwiftProtobuf.Message, SwiftProtobuf._Mes
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.productID) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.liveProductStatusID) }()
       default: break
       }
     }
@@ -3376,15 +3376,15 @@ extension GloryApi_PublicPriceRequest: SwiftProtobuf.Message, SwiftProtobuf._Mes
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    if self.productID != 0 {
-      try visitor.visitSingularInt64Field(value: self.productID, fieldNumber: 2)
+    if self.liveProductStatusID != 0 {
+      try visitor.visitSingularInt64Field(value: self.liveProductStatusID, fieldNumber: 2)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_PublicPriceRequest, rhs: GloryApi_PublicPriceRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
-    if lhs.productID != rhs.productID {return false}
+    if lhs.liveProductStatusID != rhs.liveProductStatusID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

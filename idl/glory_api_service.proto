@@ -42,6 +42,7 @@ import "tenant/tenant_user.proto";
 import "tenant/tenant_config.proto";
 import "short_video/short_video.proto";
 import "course/material.proto";
+import "course/module.proto";
 
 service glory_api {
 
@@ -953,5 +954,26 @@ service glory_api {
   // 删除素材
   rpc DeleteCourseMaterial(DeleteCourseMaterialRequest) returns (DeleteCourseMaterialResponse) {
     option (api.post) = '/api/course/delete_course_material';
+  }
+
+  // 资源库
+  // 创建能力指标
+  rpc CreateCourseModule(CreateCourseModuleRequest) returns (CreateCourseModuleResponse) {
+    option (api.post) = '/api/course/create_course_module';
+  }
+
+  // 更新能力指标
+  rpc UpdateCourseModule(UpdateCourseModuleRequest) returns (UpdateCourseModuleResponse) {
+    option (api.post) = '/api/course/update_course_module';
+  }
+
+  // 删除能力指标
+  rpc DeleteCourseModule(DeleteCourseModuleRequest) returns (DeleteCourseModuleResponse) {
+    option (api.post) = '/api/course/delete_course_module';
+  }
+
+  // 能力指标列表
+  rpc ListCourseModule(ListCourseModuleRequest) returns (ListCourseModuleResponse) {
+    option (api.post) = '/api/course/list_course_module';
   }
 }

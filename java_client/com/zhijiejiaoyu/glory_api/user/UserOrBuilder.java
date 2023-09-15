@@ -74,29 +74,35 @@ public interface UserOrBuilder extends
       getNameBytes();
 
   /**
-   * <code>string avatar_url = 7;</code>
+   * <code>int64 avatar_attachment_id = 7;</code>
+   * @return The avatarAttachmentId.
+   */
+  long getAvatarAttachmentId();
+
+  /**
+   * <code>string avatar_url = 8;</code>
    * @return The avatarUrl.
    */
   java.lang.String getAvatarUrl();
   /**
-   * <code>string avatar_url = 7;</code>
+   * <code>string avatar_url = 8;</code>
    * @return The bytes for avatarUrl.
    */
   com.google.protobuf.ByteString
       getAvatarUrlBytes();
 
   /**
-   * <code>.glory_api.Seller seller = 8;</code>
+   * <code>.glory_api.Seller seller = 9;</code>
    * @return Whether the seller field is set.
    */
   boolean hasSeller();
   /**
-   * <code>.glory_api.Seller seller = 8;</code>
+   * <code>.glory_api.Seller seller = 9;</code>
    * @return The seller.
    */
   com.zhijiejiaoyu.glory_api.seller.Seller getSeller();
   /**
-   * <code>.glory_api.Seller seller = 8;</code>
+   * <code>.glory_api.Seller seller = 9;</code>
    */
   com.zhijiejiaoyu.glory_api.seller.SellerOrBuilder getSellerOrBuilder();
 
@@ -105,7 +111,7 @@ public interface UserOrBuilder extends
    *判断用户的shop访问权限
    * </pre>
    *
-   * <code>repeated .glory_api.ShopAccess shop_access = 9;</code>
+   * <code>repeated .glory_api.ShopAccess shop_access = 10;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.shop.ShopAccess> 
       getShopAccessList();
@@ -114,7 +120,7 @@ public interface UserOrBuilder extends
    *判断用户的shop访问权限
    * </pre>
    *
-   * <code>repeated .glory_api.ShopAccess shop_access = 9;</code>
+   * <code>repeated .glory_api.ShopAccess shop_access = 10;</code>
    */
   com.zhijiejiaoyu.glory_api.shop.ShopAccess getShopAccess(int index);
   /**
@@ -122,7 +128,7 @@ public interface UserOrBuilder extends
    *判断用户的shop访问权限
    * </pre>
    *
-   * <code>repeated .glory_api.ShopAccess shop_access = 9;</code>
+   * <code>repeated .glory_api.ShopAccess shop_access = 10;</code>
    */
   int getShopAccessCount();
   /**
@@ -130,7 +136,7 @@ public interface UserOrBuilder extends
    *判断用户的shop访问权限
    * </pre>
    *
-   * <code>repeated .glory_api.ShopAccess shop_access = 9;</code>
+   * <code>repeated .glory_api.ShopAccess shop_access = 10;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.ShopAccessOrBuilder> 
       getShopAccessOrBuilderList();
@@ -139,85 +145,85 @@ public interface UserOrBuilder extends
    *判断用户的shop访问权限
    * </pre>
    *
-   * <code>repeated .glory_api.ShopAccess shop_access = 9;</code>
+   * <code>repeated .glory_api.ShopAccess shop_access = 10;</code>
    */
   com.zhijiejiaoyu.glory_api.shop.ShopAccessOrBuilder getShopAccessOrBuilder(
       int index);
 
   /**
-   * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+   * <code>repeated .glory_api.TenantDept tenant_dept = 11;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.user.TenantDept> 
       getTenantDeptList();
   /**
-   * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+   * <code>repeated .glory_api.TenantDept tenant_dept = 11;</code>
    */
   com.zhijiejiaoyu.glory_api.user.TenantDept getTenantDept(int index);
   /**
-   * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+   * <code>repeated .glory_api.TenantDept tenant_dept = 11;</code>
    */
   int getTenantDeptCount();
   /**
-   * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+   * <code>repeated .glory_api.TenantDept tenant_dept = 11;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder> 
       getTenantDeptOrBuilderList();
   /**
-   * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+   * <code>repeated .glory_api.TenantDept tenant_dept = 11;</code>
    */
   com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getTenantDeptOrBuilder(
       int index);
 
   /**
-   * <code>repeated .glory_api.Role roles = 11;</code>
+   * <code>repeated .glory_api.Role roles = 121;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.user.Role> 
       getRolesList();
   /**
-   * <code>repeated .glory_api.Role roles = 11;</code>
+   * <code>repeated .glory_api.Role roles = 121;</code>
    */
   com.zhijiejiaoyu.glory_api.user.Role getRoles(int index);
   /**
-   * <code>repeated .glory_api.Role roles = 11;</code>
+   * <code>repeated .glory_api.Role roles = 121;</code>
    */
   int getRolesCount();
   /**
-   * <code>repeated .glory_api.Role roles = 11;</code>
+   * <code>repeated .glory_api.Role roles = 121;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.user.RoleOrBuilder> 
       getRolesOrBuilderList();
   /**
-   * <code>repeated .glory_api.Role roles = 11;</code>
+   * <code>repeated .glory_api.Role roles = 121;</code>
    */
   com.zhijiejiaoyu.glory_api.user.RoleOrBuilder getRolesOrBuilder(
       int index);
 
   /**
-   * <code>repeated .glory_api.PagePermission pages = 12;</code>
+   * <code>repeated .glory_api.PagePermission pages = 13;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.user.PagePermission> 
       getPagesList();
   /**
-   * <code>repeated .glory_api.PagePermission pages = 12;</code>
+   * <code>repeated .glory_api.PagePermission pages = 13;</code>
    */
   com.zhijiejiaoyu.glory_api.user.PagePermission getPages(int index);
   /**
-   * <code>repeated .glory_api.PagePermission pages = 12;</code>
+   * <code>repeated .glory_api.PagePermission pages = 13;</code>
    */
   int getPagesCount();
   /**
-   * <code>repeated .glory_api.PagePermission pages = 12;</code>
+   * <code>repeated .glory_api.PagePermission pages = 13;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder> 
       getPagesOrBuilderList();
   /**
-   * <code>repeated .glory_api.PagePermission pages = 12;</code>
+   * <code>repeated .glory_api.PagePermission pages = 13;</code>
    */
   com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder getPagesOrBuilder(
       int index);
 
   /**
-   * <code>bool is_admin = 13;</code>
+   * <code>bool is_admin = 14;</code>
    * @return The isAdmin.
    */
   boolean getIsAdmin();

@@ -4,4 +4,5 @@
 import * as base from "../base";
 import * as seller from "../seller/seller";
 import * as shop from "../shop/shop";
-export { base, seller, shop };
+import * as tenant from "../tenant/tenant";
+export { base, seller, shop, tenant };

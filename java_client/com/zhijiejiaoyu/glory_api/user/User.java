@@ -94,13 +94,18 @@ private static final long serialVersionUID = 0L;
             name = s;
             break;
           }
-          case 58: {
+          case 56: {
+
+            avatarAttachmentId = input.readInt64();
+            break;
+          }
+          case 66: {
             java.lang.String s = input.readStringRequireUtf8();
 
             avatarUrl = s;
             break;
           }
-          case 66: {
+          case 74: {
             com.zhijiejiaoyu.glory_api.seller.Seller.Builder subBuilder = null;
             if (seller != null) {
               subBuilder = seller .toBuilder();
@@ -113,7 +118,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 74: {
+          case 82: {
             if (!((mutable_bitField0 & 0x00000001) != 0)) {
               shopAccess = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.shop.ShopAccess>();
               mutable_bitField0_ |= 0x00000001;
@@ -122,7 +127,7 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.zhijiejiaoyu.glory_api.shop.ShopAccess.parser(), extensionRegistry));
             break;
           }
-          case 82: {
+          case 90: {
             if (!((mutable_bitField0 & 0x00000002) != 0)) {
               tenantDept = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.TenantDept>();
               mutable_bitField0_ |= 0x00000002;
@@ -131,16 +136,7 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.zhijiejiaoyu.glory_api.user.TenantDept.parser(), extensionRegistry));
             break;
           }
-          case 90: {
-            if (!((mutable_bitField0 & 0x00000004) != 0)) {
-              roles = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.Role>();
-              mutable_bitField0_ |= 0x00000004;
-            }
-            roles .add(
-                input.readMessage(com.zhijiejiaoyu.glory_api.user.Role.parser(), extensionRegistry));
-            break;
-          }
-          case 98: {
+          case 106: {
             if (!((mutable_bitField0 & 0x00000008) != 0)) {
               pages = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.PagePermission>();
               mutable_bitField0_ |= 0x00000008;
@@ -149,9 +145,18 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.zhijiejiaoyu.glory_api.user.PagePermission.parser(), extensionRegistry));
             break;
           }
-          case 104: {
+          case 112: {
 
             isAdmin = input.readBool();
+            break;
+          }
+          case 970: {
+            if (!((mutable_bitField0 & 0x00000004) != 0)) {
+              roles = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.Role>();
+              mutable_bitField0_ |= 0x00000004;
+            }
+            roles .add(
+                input.readMessage(com.zhijiejiaoyu.glory_api.user.Role.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -175,11 +180,11 @@ private static final long serialVersionUID = 0L;
       if (((mutable_bitField0 & 0x00000002) != 0)) {
         tenantDept = java.util.Collections.unmodifiableList(tenantDept );
       }
-      if (((mutable_bitField0 & 0x00000004) != 0)) {
-        roles = java.util.Collections.unmodifiableList(roles );
-      }
       if (((mutable_bitField0 & 0x00000008) != 0)) {
         pages = java.util.Collections.unmodifiableList(pages );
+      }
+      if (((mutable_bitField0 & 0x00000004) != 0)) {
+        roles = java.util.Collections.unmodifiableList(roles );
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -399,10 +404,21 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int AVATAR_URL_FIELD_NUMBER = 7;
+  public static final int AVATAR_ATTACHMENT_ID_FIELD_NUMBER = 7;
+  private long avatarAttachmentId ;
+  /**
+   * <code>int64 avatar_attachment_id = 7;</code>
+   * @return The avatarAttachmentId.
+   */
+  @java.lang.Override
+  public long getAvatarAttachmentId() {
+    return avatarAttachmentId ;
+  }
+
+  public static final int AVATAR_URL_FIELD_NUMBER = 8;
   private volatile java.lang.Object avatarUrl ;
   /**
-   * <code>string avatar_url = 7;</code>
+   * <code>string avatar_url = 8;</code>
    * @return The avatarUrl.
    */
   @java.lang.Override
@@ -419,7 +435,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string avatar_url = 7;</code>
+   * <code>string avatar_url = 8;</code>
    * @return The bytes for avatarUrl.
    */
   @java.lang.Override
@@ -437,10 +453,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int SELLER_FIELD_NUMBER = 8;
+  public static final int SELLER_FIELD_NUMBER = 9;
   private com.zhijiejiaoyu.glory_api.seller.Seller seller ;
   /**
-   * <code>.glory_api.Seller seller = 8;</code>
+   * <code>.glory_api.Seller seller = 9;</code>
    * @return Whether the seller field is set.
    */
   @java.lang.Override
@@ -448,7 +464,7 @@ private static final long serialVersionUID = 0L;
     return seller != null;
   }
   /**
-   * <code>.glory_api.Seller seller = 8;</code>
+   * <code>.glory_api.Seller seller = 9;</code>
    * @return The seller.
    */
   @java.lang.Override
@@ -456,21 +472,21 @@ private static final long serialVersionUID = 0L;
     return seller == null ? com.zhijiejiaoyu.glory_api.seller.Seller.getDefaultInstance() : seller ;
   }
   /**
-   * <code>.glory_api.Seller seller = 8;</code>
+   * <code>.glory_api.Seller seller = 9;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.seller.SellerOrBuilder getSellerOrBuilder() {
     return getSeller();
   }
 
-  public static final int SHOP_ACCESS_FIELD_NUMBER = 9;
+  public static final int SHOP_ACCESS_FIELD_NUMBER = 10;
   private java.util.List<com.zhijiejiaoyu.glory_api.shop.ShopAccess> shopAccess ;
   /**
    * <pre>
    *判断用户的shop访问权限
    * </pre>
    *
-   * <code>repeated .glory_api.ShopAccess shop_access = 9;</code>
+   * <code>repeated .glory_api.ShopAccess shop_access = 10;</code>
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.shop.ShopAccess> getShopAccessList() {
@@ -481,7 +497,7 @@ private static final long serialVersionUID = 0L;
    *判断用户的shop访问权限
    * </pre>
    *
-   * <code>repeated .glory_api.ShopAccess shop_access = 9;</code>
+   * <code>repeated .glory_api.ShopAccess shop_access = 10;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.ShopAccessOrBuilder> 
@@ -493,7 +509,7 @@ private static final long serialVersionUID = 0L;
    *判断用户的shop访问权限
    * </pre>
    *
-   * <code>repeated .glory_api.ShopAccess shop_access = 9;</code>
+   * <code>repeated .glory_api.ShopAccess shop_access = 10;</code>
    */
   @java.lang.Override
   public int getShopAccessCount() {
@@ -504,7 +520,7 @@ private static final long serialVersionUID = 0L;
    *判断用户的shop访问权限
    * </pre>
    *
-   * <code>repeated .glory_api.ShopAccess shop_access = 9;</code>
+   * <code>repeated .glory_api.ShopAccess shop_access = 10;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.shop.ShopAccess getShopAccess(int index) {
@@ -515,7 +531,7 @@ private static final long serialVersionUID = 0L;
    *判断用户的shop访问权限
    * </pre>
    *
-   * <code>repeated .glory_api.ShopAccess shop_access = 9;</code>
+   * <code>repeated .glory_api.ShopAccess shop_access = 10;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.shop.ShopAccessOrBuilder getShopAccessOrBuilder(
@@ -523,17 +539,17 @@ private static final long serialVersionUID = 0L;
     return shopAccess .get(index);
   }
 
-  public static final int TENANT_DEPT_FIELD_NUMBER = 10;
+  public static final int TENANT_DEPT_FIELD_NUMBER = 11;
   private java.util.List<com.zhijiejiaoyu.glory_api.user.TenantDept> tenantDept ;
   /**
-   * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+   * <code>repeated .glory_api.TenantDept tenant_dept = 11;</code>
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.user.TenantDept> getTenantDeptList() {
     return tenantDept ;
   }
   /**
-   * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+   * <code>repeated .glory_api.TenantDept tenant_dept = 11;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder> 
@@ -541,21 +557,21 @@ private static final long serialVersionUID = 0L;
     return tenantDept ;
   }
   /**
-   * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+   * <code>repeated .glory_api.TenantDept tenant_dept = 11;</code>
    */
   @java.lang.Override
   public int getTenantDeptCount() {
     return tenantDept .size();
   }
   /**
-   * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+   * <code>repeated .glory_api.TenantDept tenant_dept = 11;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.user.TenantDept getTenantDept(int index) {
     return tenantDept .get(index);
   }
   /**
-   * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+   * <code>repeated .glory_api.TenantDept tenant_dept = 11;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getTenantDeptOrBuilder(
@@ -563,17 +579,17 @@ private static final long serialVersionUID = 0L;
     return tenantDept .get(index);
   }
 
-  public static final int ROLES_FIELD_NUMBER = 11;
+  public static final int ROLES_FIELD_NUMBER = 121;
   private java.util.List<com.zhijiejiaoyu.glory_api.user.Role> roles ;
   /**
-   * <code>repeated .glory_api.Role roles = 11;</code>
+   * <code>repeated .glory_api.Role roles = 121;</code>
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.user.Role> getRolesList() {
     return roles ;
   }
   /**
-   * <code>repeated .glory_api.Role roles = 11;</code>
+   * <code>repeated .glory_api.Role roles = 121;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.user.RoleOrBuilder> 
@@ -581,21 +597,21 @@ private static final long serialVersionUID = 0L;
     return roles ;
   }
   /**
-   * <code>repeated .glory_api.Role roles = 11;</code>
+   * <code>repeated .glory_api.Role roles = 121;</code>
    */
   @java.lang.Override
   public int getRolesCount() {
     return roles .size();
   }
   /**
-   * <code>repeated .glory_api.Role roles = 11;</code>
+   * <code>repeated .glory_api.Role roles = 121;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.user.Role getRoles(int index) {
     return roles .get(index);
   }
   /**
-   * <code>repeated .glory_api.Role roles = 11;</code>
+   * <code>repeated .glory_api.Role roles = 121;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.user.RoleOrBuilder getRolesOrBuilder(
@@ -603,17 +619,17 @@ private static final long serialVersionUID = 0L;
     return roles .get(index);
   }
 
-  public static final int PAGES_FIELD_NUMBER = 12;
+  public static final int PAGES_FIELD_NUMBER = 13;
   private java.util.List<com.zhijiejiaoyu.glory_api.user.PagePermission> pages ;
   /**
-   * <code>repeated .glory_api.PagePermission pages = 12;</code>
+   * <code>repeated .glory_api.PagePermission pages = 13;</code>
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.user.PagePermission> getPagesList() {
     return pages ;
   }
   /**
-   * <code>repeated .glory_api.PagePermission pages = 12;</code>
+   * <code>repeated .glory_api.PagePermission pages = 13;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder> 
@@ -621,21 +637,21 @@ private static final long serialVersionUID = 0L;
     return pages ;
   }
   /**
-   * <code>repeated .glory_api.PagePermission pages = 12;</code>
+   * <code>repeated .glory_api.PagePermission pages = 13;</code>
    */
   @java.lang.Override
   public int getPagesCount() {
     return pages .size();
   }
   /**
-   * <code>repeated .glory_api.PagePermission pages = 12;</code>
+   * <code>repeated .glory_api.PagePermission pages = 13;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.user.PagePermission getPages(int index) {
     return pages .get(index);
   }
   /**
-   * <code>repeated .glory_api.PagePermission pages = 12;</code>
+   * <code>repeated .glory_api.PagePermission pages = 13;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder getPagesOrBuilder(
@@ -643,10 +659,10 @@ private static final long serialVersionUID = 0L;
     return pages .get(index);
   }
 
-  public static final int IS_ADMIN_FIELD_NUMBER = 13;
+  public static final int IS_ADMIN_FIELD_NUMBER = 14;
   private boolean isAdmin ;
   /**
-   * <code>bool is_admin = 13;</code>
+   * <code>bool is_admin = 14;</code>
    * @return The isAdmin.
    */
   @java.lang.Override
@@ -686,26 +702,29 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, name );
     }
+    if (avatarAttachmentId != 0L) {
+      output.writeInt64(7, avatarAttachmentId );
+    }
     if (!getAvatarUrlBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, avatarUrl );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, avatarUrl );
     }
     if (seller != null) {
-      output.writeMessage(8, getSeller());
+      output.writeMessage(9, getSeller());
     }
     for (int i = 0; i < shopAccess .size(); i++) {
-      output.writeMessage(9, shopAccess .get(i));
+      output.writeMessage(10, shopAccess .get(i));
     }
     for (int i = 0; i < tenantDept .size(); i++) {
-      output.writeMessage(10, tenantDept .get(i));
-    }
-    for (int i = 0; i < roles .size(); i++) {
-      output.writeMessage(11, roles .get(i));
+      output.writeMessage(11, tenantDept .get(i));
     }
     for (int i = 0; i < pages .size(); i++) {
-      output.writeMessage(12, pages .get(i));
+      output.writeMessage(13, pages .get(i));
     }
     if (isAdmin != false) {
-      output.writeBool(13, isAdmin );
+      output.writeBool(14, isAdmin );
+    }
+    for (int i = 0; i < roles .size(); i++) {
+      output.writeMessage(121, roles .get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -735,32 +754,36 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, name );
     }
+    if (avatarAttachmentId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(7, avatarAttachmentId );
+    }
     if (!getAvatarUrlBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, avatarUrl );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, avatarUrl );
     }
     if (seller != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, getSeller());
+        .computeMessageSize(9, getSeller());
     }
     for (int i = 0; i < shopAccess .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, shopAccess .get(i));
+        .computeMessageSize(10, shopAccess .get(i));
     }
     for (int i = 0; i < tenantDept .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(10, tenantDept .get(i));
-    }
-    for (int i = 0; i < roles .size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(11, roles .get(i));
+        .computeMessageSize(11, tenantDept .get(i));
     }
     for (int i = 0; i < pages .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(12, pages .get(i));
+        .computeMessageSize(13, pages .get(i));
     }
     if (isAdmin != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(13, isAdmin );
+        .computeBoolSize(14, isAdmin );
+    }
+    for (int i = 0; i < roles .size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(121, roles .get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -789,6 +812,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCreatedAt())) return false;
     if (!getName()
         .equals(other.getName())) return false;
+    if (getAvatarAttachmentId()
+        != other.getAvatarAttachmentId()) return false;
     if (!getAvatarUrl()
         .equals(other.getAvatarUrl())) return false;
     if (hasSeller() != other.hasSeller()) return false;
@@ -830,6 +855,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getCreatedAt().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + AVATAR_ATTACHMENT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getAvatarAttachmentId());
     hash = (37 * hash) + AVATAR_URL_FIELD_NUMBER;
     hash = (53 * hash) + getAvatarUrl().hashCode();
     if (hasSeller()) {
@@ -1004,6 +1032,8 @@ private static final long serialVersionUID = 0L;
 
       name = "";
 
+      avatarAttachmentId = 0L;
+
       avatarUrl = "";
 
       if (sellerBuilder == null) {
@@ -1071,6 +1101,7 @@ private static final long serialVersionUID = 0L;
       result.tokenExpiry = tokenExpiry ;
       result.createdAt = createdAt ;
       result.name = name ;
+      result.avatarAttachmentId = avatarAttachmentId ;
       result.avatarUrl = avatarUrl ;
       if (sellerBuilder == null) {
         result.seller = seller ;
@@ -1184,6 +1215,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getName().isEmpty()) {
         name = other.name ;
         onChanged();
+      }
+      if (other.getAvatarAttachmentId() != 0L) {
+        setAvatarAttachmentId(other.getAvatarAttachmentId());
       }
       if (!other.getAvatarUrl().isEmpty()) {
         avatarUrl = other.avatarUrl ;
@@ -1740,9 +1774,40 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private long avatarAttachmentId ;
+    /**
+     * <code>int64 avatar_attachment_id = 7;</code>
+     * @return The avatarAttachmentId.
+     */
+    @java.lang.Override
+    public long getAvatarAttachmentId() {
+      return avatarAttachmentId ;
+    }
+    /**
+     * <code>int64 avatar_attachment_id = 7;</code>
+     * @param value The avatarAttachmentId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAvatarAttachmentId(long value) {
+      
+      avatarAttachmentId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 avatar_attachment_id = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAvatarAttachmentId() {
+      
+      avatarAttachmentId = 0L;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object avatarUrl = "";
     /**
-     * <code>string avatar_url = 7;</code>
+     * <code>string avatar_url = 8;</code>
      * @return The avatarUrl.
      */
     public java.lang.String getAvatarUrl() {
@@ -1758,7 +1823,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string avatar_url = 7;</code>
+     * <code>string avatar_url = 8;</code>
      * @return The bytes for avatarUrl.
      */
     public com.google.protobuf.ByteString
@@ -1775,7 +1840,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string avatar_url = 7;</code>
+     * <code>string avatar_url = 8;</code>
      * @param value The avatarUrl to set.
      * @return This builder for chaining.
      */
@@ -1790,7 +1855,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string avatar_url = 7;</code>
+     * <code>string avatar_url = 8;</code>
      * @return This builder for chaining.
      */
     public Builder clearAvatarUrl() {
@@ -1800,7 +1865,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string avatar_url = 7;</code>
+     * <code>string avatar_url = 8;</code>
      * @param value The bytes for avatarUrl to set.
      * @return This builder for chaining.
      */
@@ -1820,14 +1885,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.seller.Seller, com.zhijiejiaoyu.glory_api.seller.Seller.Builder, com.zhijiejiaoyu.glory_api.seller.SellerOrBuilder> sellerBuilder ;
     /**
-     * <code>.glory_api.Seller seller = 8;</code>
+     * <code>.glory_api.Seller seller = 9;</code>
      * @return Whether the seller field is set.
      */
     public boolean hasSeller() {
       return sellerBuilder != null || seller != null;
     }
     /**
-     * <code>.glory_api.Seller seller = 8;</code>
+     * <code>.glory_api.Seller seller = 9;</code>
      * @return The seller.
      */
     public com.zhijiejiaoyu.glory_api.seller.Seller getSeller() {
@@ -1838,7 +1903,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.glory_api.Seller seller = 8;</code>
+     * <code>.glory_api.Seller seller = 9;</code>
      */
     public Builder setSeller(com.zhijiejiaoyu.glory_api.seller.Seller value) {
       if (sellerBuilder == null) {
@@ -1854,7 +1919,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.Seller seller = 8;</code>
+     * <code>.glory_api.Seller seller = 9;</code>
      */
     public Builder setSeller(
         com.zhijiejiaoyu.glory_api.seller.Seller.Builder builderForValue) {
@@ -1868,7 +1933,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.Seller seller = 8;</code>
+     * <code>.glory_api.Seller seller = 9;</code>
      */
     public Builder mergeSeller(com.zhijiejiaoyu.glory_api.seller.Seller value) {
       if (sellerBuilder == null) {
@@ -1886,7 +1951,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.Seller seller = 8;</code>
+     * <code>.glory_api.Seller seller = 9;</code>
      */
     public Builder clearSeller() {
       if (sellerBuilder == null) {
@@ -1900,7 +1965,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.Seller seller = 8;</code>
+     * <code>.glory_api.Seller seller = 9;</code>
      */
     public com.zhijiejiaoyu.glory_api.seller.Seller.Builder getSellerBuilder() {
       
@@ -1908,7 +1973,7 @@ private static final long serialVersionUID = 0L;
       return getSellerFieldBuilder().getBuilder();
     }
     /**
-     * <code>.glory_api.Seller seller = 8;</code>
+     * <code>.glory_api.Seller seller = 9;</code>
      */
     public com.zhijiejiaoyu.glory_api.seller.SellerOrBuilder getSellerOrBuilder() {
       if (sellerBuilder != null) {
@@ -1919,7 +1984,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.glory_api.Seller seller = 8;</code>
+     * <code>.glory_api.Seller seller = 9;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.seller.Seller, com.zhijiejiaoyu.glory_api.seller.Seller.Builder, com.zhijiejiaoyu.glory_api.seller.SellerOrBuilder> 
@@ -1952,7 +2017,7 @@ private static final long serialVersionUID = 0L;
      *判断用户的shop访问权限
      * </pre>
      *
-     * <code>repeated .glory_api.ShopAccess shop_access = 9;</code>
+     * <code>repeated .glory_api.ShopAccess shop_access = 10;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.shop.ShopAccess> getShopAccessList() {
       if (shopAccessBuilder == null) {
@@ -1966,7 +2031,7 @@ private static final long serialVersionUID = 0L;
      *判断用户的shop访问权限
      * </pre>
      *
-     * <code>repeated .glory_api.ShopAccess shop_access = 9;</code>
+     * <code>repeated .glory_api.ShopAccess shop_access = 10;</code>
      */
     public int getShopAccessCount() {
       if (shopAccessBuilder == null) {
@@ -1980,7 +2045,7 @@ private static final long serialVersionUID = 0L;
      *判断用户的shop访问权限
      * </pre>
      *
-     * <code>repeated .glory_api.ShopAccess shop_access = 9;</code>
+     * <code>repeated .glory_api.ShopAccess shop_access = 10;</code>
      */
     public com.zhijiejiaoyu.glory_api.shop.ShopAccess getShopAccess(int index) {
       if (shopAccessBuilder == null) {
@@ -1994,7 +2059,7 @@ private static final long serialVersionUID = 0L;
      *判断用户的shop访问权限
      * </pre>
      *
-     * <code>repeated .glory_api.ShopAccess shop_access = 9;</code>
+     * <code>repeated .glory_api.ShopAccess shop_access = 10;</code>
      */
     public Builder setShopAccess(
         int index, com.zhijiejiaoyu.glory_api.shop.ShopAccess value) {
@@ -2015,7 +2080,7 @@ private static final long serialVersionUID = 0L;
      *判断用户的shop访问权限
      * </pre>
      *
-     * <code>repeated .glory_api.ShopAccess shop_access = 9;</code>
+     * <code>repeated .glory_api.ShopAccess shop_access = 10;</code>
      */
     public Builder setShopAccess(
         int index, com.zhijiejiaoyu.glory_api.shop.ShopAccess.Builder builderForValue) {
@@ -2033,7 +2098,7 @@ private static final long serialVersionUID = 0L;
      *判断用户的shop访问权限
      * </pre>
      *
-     * <code>repeated .glory_api.ShopAccess shop_access = 9;</code>
+     * <code>repeated .glory_api.ShopAccess shop_access = 10;</code>
      */
     public Builder addShopAccess(com.zhijiejiaoyu.glory_api.shop.ShopAccess value) {
       if (shopAccessBuilder == null) {
@@ -2053,7 +2118,7 @@ private static final long serialVersionUID = 0L;
      *判断用户的shop访问权限
      * </pre>
      *
-     * <code>repeated .glory_api.ShopAccess shop_access = 9;</code>
+     * <code>repeated .glory_api.ShopAccess shop_access = 10;</code>
      */
     public Builder addShopAccess(
         int index, com.zhijiejiaoyu.glory_api.shop.ShopAccess value) {
@@ -2074,7 +2139,7 @@ private static final long serialVersionUID = 0L;
      *判断用户的shop访问权限
      * </pre>
      *
-     * <code>repeated .glory_api.ShopAccess shop_access = 9;</code>
+     * <code>repeated .glory_api.ShopAccess shop_access = 10;</code>
      */
     public Builder addShopAccess(
         com.zhijiejiaoyu.glory_api.shop.ShopAccess.Builder builderForValue) {
@@ -2092,7 +2157,7 @@ private static final long serialVersionUID = 0L;
      *判断用户的shop访问权限
      * </pre>
      *
-     * <code>repeated .glory_api.ShopAccess shop_access = 9;</code>
+     * <code>repeated .glory_api.ShopAccess shop_access = 10;</code>
      */
     public Builder addShopAccess(
         int index, com.zhijiejiaoyu.glory_api.shop.ShopAccess.Builder builderForValue) {
@@ -2110,7 +2175,7 @@ private static final long serialVersionUID = 0L;
      *判断用户的shop访问权限
      * </pre>
      *
-     * <code>repeated .glory_api.ShopAccess shop_access = 9;</code>
+     * <code>repeated .glory_api.ShopAccess shop_access = 10;</code>
      */
     public Builder addAllShopAccess(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.shop.ShopAccess> values) {
@@ -2129,7 +2194,7 @@ private static final long serialVersionUID = 0L;
      *判断用户的shop访问权限
      * </pre>
      *
-     * <code>repeated .glory_api.ShopAccess shop_access = 9;</code>
+     * <code>repeated .glory_api.ShopAccess shop_access = 10;</code>
      */
     public Builder clearShopAccess() {
       if (shopAccessBuilder == null) {
@@ -2146,7 +2211,7 @@ private static final long serialVersionUID = 0L;
      *判断用户的shop访问权限
      * </pre>
      *
-     * <code>repeated .glory_api.ShopAccess shop_access = 9;</code>
+     * <code>repeated .glory_api.ShopAccess shop_access = 10;</code>
      */
     public Builder removeShopAccess(int index) {
       if (shopAccessBuilder == null) {
@@ -2163,7 +2228,7 @@ private static final long serialVersionUID = 0L;
      *判断用户的shop访问权限
      * </pre>
      *
-     * <code>repeated .glory_api.ShopAccess shop_access = 9;</code>
+     * <code>repeated .glory_api.ShopAccess shop_access = 10;</code>
      */
     public com.zhijiejiaoyu.glory_api.shop.ShopAccess.Builder getShopAccessBuilder(
         int index) {
@@ -2174,7 +2239,7 @@ private static final long serialVersionUID = 0L;
      *判断用户的shop访问权限
      * </pre>
      *
-     * <code>repeated .glory_api.ShopAccess shop_access = 9;</code>
+     * <code>repeated .glory_api.ShopAccess shop_access = 10;</code>
      */
     public com.zhijiejiaoyu.glory_api.shop.ShopAccessOrBuilder getShopAccessOrBuilder(
         int index) {
@@ -2188,7 +2253,7 @@ private static final long serialVersionUID = 0L;
      *判断用户的shop访问权限
      * </pre>
      *
-     * <code>repeated .glory_api.ShopAccess shop_access = 9;</code>
+     * <code>repeated .glory_api.ShopAccess shop_access = 10;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.ShopAccessOrBuilder> 
          getShopAccessOrBuilderList() {
@@ -2203,7 +2268,7 @@ private static final long serialVersionUID = 0L;
      *判断用户的shop访问权限
      * </pre>
      *
-     * <code>repeated .glory_api.ShopAccess shop_access = 9;</code>
+     * <code>repeated .glory_api.ShopAccess shop_access = 10;</code>
      */
     public com.zhijiejiaoyu.glory_api.shop.ShopAccess.Builder addShopAccessBuilder() {
       return getShopAccessFieldBuilder().addBuilder(
@@ -2214,7 +2279,7 @@ private static final long serialVersionUID = 0L;
      *判断用户的shop访问权限
      * </pre>
      *
-     * <code>repeated .glory_api.ShopAccess shop_access = 9;</code>
+     * <code>repeated .glory_api.ShopAccess shop_access = 10;</code>
      */
     public com.zhijiejiaoyu.glory_api.shop.ShopAccess.Builder addShopAccessBuilder(
         int index) {
@@ -2226,7 +2291,7 @@ private static final long serialVersionUID = 0L;
      *判断用户的shop访问权限
      * </pre>
      *
-     * <code>repeated .glory_api.ShopAccess shop_access = 9;</code>
+     * <code>repeated .glory_api.ShopAccess shop_access = 10;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.shop.ShopAccess.Builder> 
          getShopAccessBuilderList() {
@@ -2260,7 +2325,7 @@ private static final long serialVersionUID = 0L;
         com.zhijiejiaoyu.glory_api.user.TenantDept, com.zhijiejiaoyu.glory_api.user.TenantDept.Builder, com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder> tenantDeptBuilder ;
 
     /**
-     * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+     * <code>repeated .glory_api.TenantDept tenant_dept = 11;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.user.TenantDept> getTenantDeptList() {
       if (tenantDeptBuilder == null) {
@@ -2270,7 +2335,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+     * <code>repeated .glory_api.TenantDept tenant_dept = 11;</code>
      */
     public int getTenantDeptCount() {
       if (tenantDeptBuilder == null) {
@@ -2280,7 +2345,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+     * <code>repeated .glory_api.TenantDept tenant_dept = 11;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.TenantDept getTenantDept(int index) {
       if (tenantDeptBuilder == null) {
@@ -2290,7 +2355,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+     * <code>repeated .glory_api.TenantDept tenant_dept = 11;</code>
      */
     public Builder setTenantDept(
         int index, com.zhijiejiaoyu.glory_api.user.TenantDept value) {
@@ -2307,7 +2372,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+     * <code>repeated .glory_api.TenantDept tenant_dept = 11;</code>
      */
     public Builder setTenantDept(
         int index, com.zhijiejiaoyu.glory_api.user.TenantDept.Builder builderForValue) {
@@ -2321,7 +2386,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+     * <code>repeated .glory_api.TenantDept tenant_dept = 11;</code>
      */
     public Builder addTenantDept(com.zhijiejiaoyu.glory_api.user.TenantDept value) {
       if (tenantDeptBuilder == null) {
@@ -2337,7 +2402,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+     * <code>repeated .glory_api.TenantDept tenant_dept = 11;</code>
      */
     public Builder addTenantDept(
         int index, com.zhijiejiaoyu.glory_api.user.TenantDept value) {
@@ -2354,7 +2419,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+     * <code>repeated .glory_api.TenantDept tenant_dept = 11;</code>
      */
     public Builder addTenantDept(
         com.zhijiejiaoyu.glory_api.user.TenantDept.Builder builderForValue) {
@@ -2368,7 +2433,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+     * <code>repeated .glory_api.TenantDept tenant_dept = 11;</code>
      */
     public Builder addTenantDept(
         int index, com.zhijiejiaoyu.glory_api.user.TenantDept.Builder builderForValue) {
@@ -2382,7 +2447,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+     * <code>repeated .glory_api.TenantDept tenant_dept = 11;</code>
      */
     public Builder addAllTenantDept(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.user.TenantDept> values) {
@@ -2397,7 +2462,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+     * <code>repeated .glory_api.TenantDept tenant_dept = 11;</code>
      */
     public Builder clearTenantDept() {
       if (tenantDeptBuilder == null) {
@@ -2410,7 +2475,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+     * <code>repeated .glory_api.TenantDept tenant_dept = 11;</code>
      */
     public Builder removeTenantDept(int index) {
       if (tenantDeptBuilder == null) {
@@ -2423,14 +2488,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+     * <code>repeated .glory_api.TenantDept tenant_dept = 11;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.TenantDept.Builder getTenantDeptBuilder(
         int index) {
       return getTenantDeptFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+     * <code>repeated .glory_api.TenantDept tenant_dept = 11;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getTenantDeptOrBuilder(
         int index) {
@@ -2440,7 +2505,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+     * <code>repeated .glory_api.TenantDept tenant_dept = 11;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder> 
          getTenantDeptOrBuilderList() {
@@ -2451,14 +2516,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+     * <code>repeated .glory_api.TenantDept tenant_dept = 11;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.TenantDept.Builder addTenantDeptBuilder() {
       return getTenantDeptFieldBuilder().addBuilder(
           com.zhijiejiaoyu.glory_api.user.TenantDept.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+     * <code>repeated .glory_api.TenantDept tenant_dept = 11;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.TenantDept.Builder addTenantDeptBuilder(
         int index) {
@@ -2466,7 +2531,7 @@ private static final long serialVersionUID = 0L;
           index, com.zhijiejiaoyu.glory_api.user.TenantDept.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.TenantDept tenant_dept = 10;</code>
+     * <code>repeated .glory_api.TenantDept tenant_dept = 11;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.user.TenantDept.Builder> 
          getTenantDeptBuilderList() {
@@ -2500,7 +2565,7 @@ private static final long serialVersionUID = 0L;
         com.zhijiejiaoyu.glory_api.user.Role, com.zhijiejiaoyu.glory_api.user.Role.Builder, com.zhijiejiaoyu.glory_api.user.RoleOrBuilder> rolesBuilder ;
 
     /**
-     * <code>repeated .glory_api.Role roles = 11;</code>
+     * <code>repeated .glory_api.Role roles = 121;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.user.Role> getRolesList() {
       if (rolesBuilder == null) {
@@ -2510,7 +2575,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.Role roles = 11;</code>
+     * <code>repeated .glory_api.Role roles = 121;</code>
      */
     public int getRolesCount() {
       if (rolesBuilder == null) {
@@ -2520,7 +2585,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.Role roles = 11;</code>
+     * <code>repeated .glory_api.Role roles = 121;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.Role getRoles(int index) {
       if (rolesBuilder == null) {
@@ -2530,7 +2595,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.Role roles = 11;</code>
+     * <code>repeated .glory_api.Role roles = 121;</code>
      */
     public Builder setRoles(
         int index, com.zhijiejiaoyu.glory_api.user.Role value) {
@@ -2547,7 +2612,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.Role roles = 11;</code>
+     * <code>repeated .glory_api.Role roles = 121;</code>
      */
     public Builder setRoles(
         int index, com.zhijiejiaoyu.glory_api.user.Role.Builder builderForValue) {
@@ -2561,7 +2626,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.Role roles = 11;</code>
+     * <code>repeated .glory_api.Role roles = 121;</code>
      */
     public Builder addRoles(com.zhijiejiaoyu.glory_api.user.Role value) {
       if (rolesBuilder == null) {
@@ -2577,7 +2642,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.Role roles = 11;</code>
+     * <code>repeated .glory_api.Role roles = 121;</code>
      */
     public Builder addRoles(
         int index, com.zhijiejiaoyu.glory_api.user.Role value) {
@@ -2594,7 +2659,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.Role roles = 11;</code>
+     * <code>repeated .glory_api.Role roles = 121;</code>
      */
     public Builder addRoles(
         com.zhijiejiaoyu.glory_api.user.Role.Builder builderForValue) {
@@ -2608,7 +2673,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.Role roles = 11;</code>
+     * <code>repeated .glory_api.Role roles = 121;</code>
      */
     public Builder addRoles(
         int index, com.zhijiejiaoyu.glory_api.user.Role.Builder builderForValue) {
@@ -2622,7 +2687,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.Role roles = 11;</code>
+     * <code>repeated .glory_api.Role roles = 121;</code>
      */
     public Builder addAllRoles(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.user.Role> values) {
@@ -2637,7 +2702,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.Role roles = 11;</code>
+     * <code>repeated .glory_api.Role roles = 121;</code>
      */
     public Builder clearRoles() {
       if (rolesBuilder == null) {
@@ -2650,7 +2715,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.Role roles = 11;</code>
+     * <code>repeated .glory_api.Role roles = 121;</code>
      */
     public Builder removeRoles(int index) {
       if (rolesBuilder == null) {
@@ -2663,14 +2728,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.Role roles = 11;</code>
+     * <code>repeated .glory_api.Role roles = 121;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.Role.Builder getRolesBuilder(
         int index) {
       return getRolesFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .glory_api.Role roles = 11;</code>
+     * <code>repeated .glory_api.Role roles = 121;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.RoleOrBuilder getRolesOrBuilder(
         int index) {
@@ -2680,7 +2745,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.Role roles = 11;</code>
+     * <code>repeated .glory_api.Role roles = 121;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.user.RoleOrBuilder> 
          getRolesOrBuilderList() {
@@ -2691,14 +2756,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.Role roles = 11;</code>
+     * <code>repeated .glory_api.Role roles = 121;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.Role.Builder addRolesBuilder() {
       return getRolesFieldBuilder().addBuilder(
           com.zhijiejiaoyu.glory_api.user.Role.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.Role roles = 11;</code>
+     * <code>repeated .glory_api.Role roles = 121;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.Role.Builder addRolesBuilder(
         int index) {
@@ -2706,7 +2771,7 @@ private static final long serialVersionUID = 0L;
           index, com.zhijiejiaoyu.glory_api.user.Role.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.Role roles = 11;</code>
+     * <code>repeated .glory_api.Role roles = 121;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.user.Role.Builder> 
          getRolesBuilderList() {
@@ -2740,7 +2805,7 @@ private static final long serialVersionUID = 0L;
         com.zhijiejiaoyu.glory_api.user.PagePermission, com.zhijiejiaoyu.glory_api.user.PagePermission.Builder, com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder> pagesBuilder ;
 
     /**
-     * <code>repeated .glory_api.PagePermission pages = 12;</code>
+     * <code>repeated .glory_api.PagePermission pages = 13;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.user.PagePermission> getPagesList() {
       if (pagesBuilder == null) {
@@ -2750,7 +2815,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.PagePermission pages = 12;</code>
+     * <code>repeated .glory_api.PagePermission pages = 13;</code>
      */
     public int getPagesCount() {
       if (pagesBuilder == null) {
@@ -2760,7 +2825,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.PagePermission pages = 12;</code>
+     * <code>repeated .glory_api.PagePermission pages = 13;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.PagePermission getPages(int index) {
       if (pagesBuilder == null) {
@@ -2770,7 +2835,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.PagePermission pages = 12;</code>
+     * <code>repeated .glory_api.PagePermission pages = 13;</code>
      */
     public Builder setPages(
         int index, com.zhijiejiaoyu.glory_api.user.PagePermission value) {
@@ -2787,7 +2852,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.PagePermission pages = 12;</code>
+     * <code>repeated .glory_api.PagePermission pages = 13;</code>
      */
     public Builder setPages(
         int index, com.zhijiejiaoyu.glory_api.user.PagePermission.Builder builderForValue) {
@@ -2801,7 +2866,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.PagePermission pages = 12;</code>
+     * <code>repeated .glory_api.PagePermission pages = 13;</code>
      */
     public Builder addPages(com.zhijiejiaoyu.glory_api.user.PagePermission value) {
       if (pagesBuilder == null) {
@@ -2817,7 +2882,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.PagePermission pages = 12;</code>
+     * <code>repeated .glory_api.PagePermission pages = 13;</code>
      */
     public Builder addPages(
         int index, com.zhijiejiaoyu.glory_api.user.PagePermission value) {
@@ -2834,7 +2899,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.PagePermission pages = 12;</code>
+     * <code>repeated .glory_api.PagePermission pages = 13;</code>
      */
     public Builder addPages(
         com.zhijiejiaoyu.glory_api.user.PagePermission.Builder builderForValue) {
@@ -2848,7 +2913,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.PagePermission pages = 12;</code>
+     * <code>repeated .glory_api.PagePermission pages = 13;</code>
      */
     public Builder addPages(
         int index, com.zhijiejiaoyu.glory_api.user.PagePermission.Builder builderForValue) {
@@ -2862,7 +2927,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.PagePermission pages = 12;</code>
+     * <code>repeated .glory_api.PagePermission pages = 13;</code>
      */
     public Builder addAllPages(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.user.PagePermission> values) {
@@ -2877,7 +2942,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.PagePermission pages = 12;</code>
+     * <code>repeated .glory_api.PagePermission pages = 13;</code>
      */
     public Builder clearPages() {
       if (pagesBuilder == null) {
@@ -2890,7 +2955,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.PagePermission pages = 12;</code>
+     * <code>repeated .glory_api.PagePermission pages = 13;</code>
      */
     public Builder removePages(int index) {
       if (pagesBuilder == null) {
@@ -2903,14 +2968,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.PagePermission pages = 12;</code>
+     * <code>repeated .glory_api.PagePermission pages = 13;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.PagePermission.Builder getPagesBuilder(
         int index) {
       return getPagesFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .glory_api.PagePermission pages = 12;</code>
+     * <code>repeated .glory_api.PagePermission pages = 13;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder getPagesOrBuilder(
         int index) {
@@ -2920,7 +2985,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.PagePermission pages = 12;</code>
+     * <code>repeated .glory_api.PagePermission pages = 13;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.user.PagePermissionOrBuilder> 
          getPagesOrBuilderList() {
@@ -2931,14 +2996,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.PagePermission pages = 12;</code>
+     * <code>repeated .glory_api.PagePermission pages = 13;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.PagePermission.Builder addPagesBuilder() {
       return getPagesFieldBuilder().addBuilder(
           com.zhijiejiaoyu.glory_api.user.PagePermission.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.PagePermission pages = 12;</code>
+     * <code>repeated .glory_api.PagePermission pages = 13;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.PagePermission.Builder addPagesBuilder(
         int index) {
@@ -2946,7 +3011,7 @@ private static final long serialVersionUID = 0L;
           index, com.zhijiejiaoyu.glory_api.user.PagePermission.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.PagePermission pages = 12;</code>
+     * <code>repeated .glory_api.PagePermission pages = 13;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.user.PagePermission.Builder> 
          getPagesBuilderList() {
@@ -2969,7 +3034,7 @@ private static final long serialVersionUID = 0L;
 
     private boolean isAdmin ;
     /**
-     * <code>bool is_admin = 13;</code>
+     * <code>bool is_admin = 14;</code>
      * @return The isAdmin.
      */
     @java.lang.Override
@@ -2977,7 +3042,7 @@ private static final long serialVersionUID = 0L;
       return isAdmin ;
     }
     /**
-     * <code>bool is_admin = 13;</code>
+     * <code>bool is_admin = 14;</code>
      * @param value The isAdmin to set.
      * @return This builder for chaining.
      */
@@ -2988,7 +3053,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>bool is_admin = 13;</code>
+     * <code>bool is_admin = 14;</code>
      * @return This builder for chaining.
      */
     public Builder clearIsAdmin() {

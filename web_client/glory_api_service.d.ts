@@ -40,6 +40,7 @@ import * as tenant_user from "./tenant/tenant_user";
 import * as tenant_config from "./tenant/tenant_config";
 import * as short_video from "./short_video/short_video";
 import * as material from "./course/material";
+import * as modules from "./course/module";
 export {
   user,
   address,
@@ -79,6 +80,7 @@ export {
   tenant_config,
   short_video,
   material,
+  modules,
 };
 
 export class glory_api {
@@ -1059,6 +1061,27 @@ CreateLivePlanProduct create live plan product */
   DeleteCourseMaterial(
     request: material.DeleteCourseMaterialRequest
   ): Promise<material.DeleteCourseMaterialResponse>;
+
+  /** 资源库
+创建能力指标 */
+  CreateCourseModule(
+    request: modules.CreateCourseModuleRequest
+  ): Promise<modules.CreateCourseModuleResponse>;
+
+  /** 更新能力指标 */
+  UpdateCourseModule(
+    request: modules.UpdateCourseModuleRequest
+  ): Promise<modules.UpdateCourseModuleResponse>;
+
+  /** 删除能力指标 */
+  DeleteCourseModule(
+    request: modules.DeleteCourseModuleRequest
+  ): Promise<modules.DeleteCourseModuleResponse>;
+
+  /** 能力指标列表 */
+  ListCourseModule(
+    request: modules.ListCourseModuleRequest
+  ): Promise<modules.ListCourseModuleResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

@@ -255,7 +255,7 @@ message PreheatResponse {
 
 message PublicPriceRequest {
   base.BaseRequest base_request=1;
-  int64 product_id = 2;
+  int64 live_product_status_id = 2;
 }
 message PublicPriceResponse {
   base.BaseResponse base_resp = 1;
