@@ -112,6 +112,16 @@ message UpdateUserResponse {
   base.BaseResponse base_resp = 1;
 }
 
+message UpdatePhoneRequest {
+  base.BaseRequest base_request = 1;
+  string phone = 2;
+  string code = 3;
+}
+
+message UpdatePhoneResponse {
+  base.BaseResponse base_resp = 1;
+}
+
 message PagePermission {
   string business_system = 1;
   string page = 2;
