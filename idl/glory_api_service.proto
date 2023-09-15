@@ -95,6 +95,10 @@ service glory_api {
     option (api.post) = '/api/user/update_user';
   }
 
+  rpc UpdatePhone(UpdatePhoneRequest) returns (UpdatePhoneResponse) {
+    option (api.post) = '/api/user/update_phone';
+  }
+
   // 关注用户
   rpc FollowUser(FollowUserRequest) returns (FollowUserResponse) {
     option (api.post) = '/api/user/follow_user';
