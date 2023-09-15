@@ -966,6 +966,11 @@ service glory_api {
     option (api.post) = '/api/course/create_course_module';
   }
 
+  // 获取能力指标
+  rpc GetCourseModule(GetCourseModuleRequest) returns (GetCourseModuleResponse) {
+    option (api.post) = '/api/course/get_course_module';
+  }
+
   // 更新能力指标
   rpc UpdateCourseModule(UpdateCourseModuleRequest) returns (UpdateCourseModuleResponse) {
     option (api.post) = '/api/course/update_course_module';
