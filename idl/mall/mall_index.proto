@@ -41,6 +41,7 @@ message LiveRoomIndexInfo {
   string user_name = 14;
   string shop_name = 15;
   string shop_logo_url = 16;
+  int64 shop_id = 17;
 }
 
 message MallIndexRequest {
