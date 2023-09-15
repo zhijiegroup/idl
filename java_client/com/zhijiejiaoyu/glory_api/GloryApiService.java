@@ -46,7 +46,7 @@ public final class GloryApiService {
       "ant/tenant_user.proto\032\032tenant/tenant_con" +
       "fig.proto\032\035short_video/short_video.proto" +
       "\032\025course/material.proto\032\023course/module.p" +
-      "roto2\256\354\001\n\tglory_api\022s\n\rCreateExample\022\037.g" +
+      "roto2\253\355\001\n\tglory_api\022s\n\rCreateExample\022\037.g" +
       "lory_api.CreateExampleRequest\032 .glory_ap" +
       "i.CreateExampleResponse\"\037\322\301\030\033/api/exampl" +
       "e/create_example\022g\n\nGetExample\022\034.glory_a" +
@@ -792,18 +792,21 @@ public final class GloryApiService {
       "\207\001\n\022CreateCourseModule\022$.glory_api.Creat" +
       "eCourseModuleRequest\032%.glory_api.CreateC" +
       "ourseModuleResponse\"$\322\301\030 /api/course/cre" +
-      "ate_course_module\022\207\001\n\022UpdateCourseModule" +
-      "\022$.glory_api.UpdateCourseModuleRequest\032%" +
-      ".glory_api.UpdateCourseModuleResponse\"$\322" +
-      "\301\030 /api/course/update_course_module\022\207\001\n\022" +
-      "DeleteCourseModule\022$.glory_api.DeleteCou" +
-      "rseModuleRequest\032%.glory_api.DeleteCours" +
-      "eModuleResponse\"$\322\301\030 /api/course/delete_" +
-      "course_module\022\177\n\020ListCourseModule\022\".glor" +
-      "y_api.ListCourseModuleRequest\032#.glory_ap" +
-      "i.ListCourseModuleResponse\"\"\322\301\030\036/api/cou" +
-      "rse/list_course_moduleB\036\n\032com.zhijiejiao" +
-      "yu.glory_apiP\001b\006proto3"
+      "ate_course_module\022{\n\017GetCourseModule\022!.g" +
+      "lory_api.GetCourseModuleRequest\032\".glory_" +
+      "api.GetCourseModuleResponse\"!\322\301\030\035/api/co" +
+      "urse/get_course_module\022\207\001\n\022UpdateCourseM" +
+      "odule\022$.glory_api.UpdateCourseModuleRequ" +
+      "est\032%.glory_api.UpdateCourseModuleRespon" +
+      "se\"$\322\301\030 /api/course/update_course_module" +
+      "\022\207\001\n\022DeleteCourseModule\022$.glory_api.Dele" +
+      "teCourseModuleRequest\032%.glory_api.Delete" +
+      "CourseModuleResponse\"$\322\301\030 /api/course/de" +
+      "lete_course_module\022\177\n\020ListCourseModule\022\"" +
+      ".glory_api.ListCourseModuleRequest\032#.glo" +
+      "ry_api.ListCourseModuleResponse\"\"\322\301\030\036/ap" +
+      "i/course/list_course_moduleB\036\n\032com.zhiji" +
+      "ejiaoyu.glory_apiP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

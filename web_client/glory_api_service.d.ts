@@ -1080,6 +1080,11 @@ CreateLivePlanProduct create live plan product */
     request: modules.CreateCourseModuleRequest
   ): Promise<modules.CreateCourseModuleResponse>;
 
+  /** 获取能力指标 */
+  GetCourseModule(
+    request: modules.GetCourseModuleRequest
+  ): Promise<modules.GetCourseModuleResponse>;
+
   /** 更新能力指标 */
   UpdateCourseModule(
     request: modules.UpdateCourseModuleRequest

@@ -53,11 +53,11 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            com.zhijiejiaoyu.base.PaginationRequest.Builder subBuilder = null;
+            com.zhijiejiaoyu.base.BaseRequest.Builder subBuilder = null;
             if (baseRequest != null) {
               subBuilder = baseRequest .toBuilder();
             }
-            baseRequest = input.readMessage(com.zhijiejiaoyu.base.PaginationRequest.parser(), extensionRegistry);
+            baseRequest = input.readMessage(com.zhijiejiaoyu.base.BaseRequest.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(baseRequest );
               baseRequest = subBuilder.buildPartial();
@@ -111,9 +111,9 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int BASE_REQUEST_FIELD_NUMBER = 1;
-  private com.zhijiejiaoyu.base.PaginationRequest baseRequest ;
+  private com.zhijiejiaoyu.base.BaseRequest baseRequest ;
   /**
-   * <code>.base.PaginationRequest base_request = 1;</code>
+   * <code>.base.BaseRequest base_request = 1;</code>
    * @return Whether the baseRequest field is set.
    */
   @java.lang.Override
@@ -121,18 +121,18 @@ private static final long serialVersionUID = 0L;
     return baseRequest != null;
   }
   /**
-   * <code>.base.PaginationRequest base_request = 1;</code>
+   * <code>.base.BaseRequest base_request = 1;</code>
    * @return The baseRequest.
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.base.PaginationRequest getBaseRequest() {
-    return baseRequest == null ? com.zhijiejiaoyu.base.PaginationRequest.getDefaultInstance() : baseRequest ;
+  public com.zhijiejiaoyu.base.BaseRequest getBaseRequest() {
+    return baseRequest == null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest ;
   }
   /**
-   * <code>.base.PaginationRequest base_request = 1;</code>
+   * <code>.base.BaseRequest base_request = 1;</code>
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.base.PaginationRequestOrBuilder getBaseRequestOrBuilder() {
+  public com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder() {
     return getBaseRequest();
   }
 
@@ -511,31 +511,31 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.zhijiejiaoyu.base.PaginationRequest baseRequest ;
+    private com.zhijiejiaoyu.base.BaseRequest baseRequest ;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.base.PaginationRequest, com.zhijiejiaoyu.base.PaginationRequest.Builder, com.zhijiejiaoyu.base.PaginationRequestOrBuilder> baseRequestBuilder ;
+        com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder> baseRequestBuilder ;
     /**
-     * <code>.base.PaginationRequest base_request = 1;</code>
+     * <code>.base.BaseRequest base_request = 1;</code>
      * @return Whether the baseRequest field is set.
      */
     public boolean hasBaseRequest() {
       return baseRequestBuilder != null || baseRequest != null;
     }
     /**
-     * <code>.base.PaginationRequest base_request = 1;</code>
+     * <code>.base.BaseRequest base_request = 1;</code>
      * @return The baseRequest.
      */
-    public com.zhijiejiaoyu.base.PaginationRequest getBaseRequest() {
+    public com.zhijiejiaoyu.base.BaseRequest getBaseRequest() {
       if (baseRequestBuilder == null) {
-        return baseRequest == null ? com.zhijiejiaoyu.base.PaginationRequest.getDefaultInstance() : baseRequest ;
+        return baseRequest == null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest ;
       } else {
         return baseRequestBuilder .getMessage();
       }
     }
     /**
-     * <code>.base.PaginationRequest base_request = 1;</code>
+     * <code>.base.BaseRequest base_request = 1;</code>
      */
-    public Builder setBaseRequest(com.zhijiejiaoyu.base.PaginationRequest value) {
+    public Builder setBaseRequest(com.zhijiejiaoyu.base.BaseRequest value) {
       if (baseRequestBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -549,10 +549,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.base.PaginationRequest base_request = 1;</code>
+     * <code>.base.BaseRequest base_request = 1;</code>
      */
     public Builder setBaseRequest(
-        com.zhijiejiaoyu.base.PaginationRequest.Builder builderForValue) {
+        com.zhijiejiaoyu.base.BaseRequest.Builder builderForValue) {
       if (baseRequestBuilder == null) {
         baseRequest = builderForValue.build();
         onChanged();
@@ -563,13 +563,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.base.PaginationRequest base_request = 1;</code>
+     * <code>.base.BaseRequest base_request = 1;</code>
      */
-    public Builder mergeBaseRequest(com.zhijiejiaoyu.base.PaginationRequest value) {
+    public Builder mergeBaseRequest(com.zhijiejiaoyu.base.BaseRequest value) {
       if (baseRequestBuilder == null) {
         if (baseRequest != null) {
           baseRequest =
-            com.zhijiejiaoyu.base.PaginationRequest.newBuilder(baseRequest ).mergeFrom(value).buildPartial();
+            com.zhijiejiaoyu.base.BaseRequest.newBuilder(baseRequest ).mergeFrom(value).buildPartial();
         } else {
           baseRequest = value;
         }
@@ -581,7 +581,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.base.PaginationRequest base_request = 1;</code>
+     * <code>.base.BaseRequest base_request = 1;</code>
      */
     public Builder clearBaseRequest() {
       if (baseRequestBuilder == null) {
@@ -595,33 +595,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.base.PaginationRequest base_request = 1;</code>
+     * <code>.base.BaseRequest base_request = 1;</code>
      */
-    public com.zhijiejiaoyu.base.PaginationRequest.Builder getBaseRequestBuilder() {
+    public com.zhijiejiaoyu.base.BaseRequest.Builder getBaseRequestBuilder() {
       
       onChanged();
       return getBaseRequestFieldBuilder().getBuilder();
     }
     /**
-     * <code>.base.PaginationRequest base_request = 1;</code>
+     * <code>.base.BaseRequest base_request = 1;</code>
      */
-    public com.zhijiejiaoyu.base.PaginationRequestOrBuilder getBaseRequestOrBuilder() {
+    public com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder() {
       if (baseRequestBuilder != null) {
         return baseRequestBuilder .getMessageOrBuilder();
       } else {
         return baseRequest == null ?
-            com.zhijiejiaoyu.base.PaginationRequest.getDefaultInstance() : baseRequest ;
+            com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest ;
       }
     }
     /**
-     * <code>.base.PaginationRequest base_request = 1;</code>
+     * <code>.base.BaseRequest base_request = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.base.PaginationRequest, com.zhijiejiaoyu.base.PaginationRequest.Builder, com.zhijiejiaoyu.base.PaginationRequestOrBuilder> 
+        com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder> 
         getBaseRequestFieldBuilder() {
       if (baseRequestBuilder == null) {
         baseRequestBuilder = new com.google.protobuf.SingleFieldBuilderV3<
-            com.zhijiejiaoyu.base.PaginationRequest, com.zhijiejiaoyu.base.PaginationRequest.Builder, com.zhijiejiaoyu.base.PaginationRequestOrBuilder>(
+            com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder>(
                 getBaseRequest(),
                 getParentForChildren(),
                 isClean());

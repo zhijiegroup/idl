@@ -49,11 +49,11 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            com.zhijiejiaoyu.base.PaginationResponse.Builder subBuilder = null;
+            com.zhijiejiaoyu.base.BaseResponse.Builder subBuilder = null;
             if (baseResp != null) {
               subBuilder = baseResp .toBuilder();
             }
-            baseResp = input.readMessage(com.zhijiejiaoyu.base.PaginationResponse.parser(), extensionRegistry);
+            baseResp = input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(baseResp );
               baseResp = subBuilder.buildPartial();
@@ -99,9 +99,9 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int BASE_RESP_FIELD_NUMBER = 1;
-  private com.zhijiejiaoyu.base.PaginationResponse baseResp ;
+  private com.zhijiejiaoyu.base.BaseResponse baseResp ;
   /**
-   * <code>.base.PaginationResponse base_resp = 1;</code>
+   * <code>.base.BaseResponse base_resp = 1;</code>
    * @return Whether the baseResp field is set.
    */
   @java.lang.Override
@@ -109,18 +109,18 @@ private static final long serialVersionUID = 0L;
     return baseResp != null;
   }
   /**
-   * <code>.base.PaginationResponse base_resp = 1;</code>
+   * <code>.base.BaseResponse base_resp = 1;</code>
    * @return The baseResp.
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.base.PaginationResponse getBaseResp() {
-    return baseResp == null ? com.zhijiejiaoyu.base.PaginationResponse.getDefaultInstance() : baseResp ;
+  public com.zhijiejiaoyu.base.BaseResponse getBaseResp() {
+    return baseResp == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp ;
   }
   /**
-   * <code>.base.PaginationResponse base_resp = 1;</code>
+   * <code>.base.BaseResponse base_resp = 1;</code>
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.base.PaginationResponseOrBuilder getBaseRespOrBuilder() {
+  public com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder() {
     return getBaseResp();
   }
 
@@ -468,31 +468,31 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.zhijiejiaoyu.base.PaginationResponse baseResp ;
+    private com.zhijiejiaoyu.base.BaseResponse baseResp ;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.base.PaginationResponse, com.zhijiejiaoyu.base.PaginationResponse.Builder, com.zhijiejiaoyu.base.PaginationResponseOrBuilder> baseRespBuilder ;
+        com.zhijiejiaoyu.base.BaseResponse, com.zhijiejiaoyu.base.BaseResponse.Builder, com.zhijiejiaoyu.base.BaseResponseOrBuilder> baseRespBuilder ;
     /**
-     * <code>.base.PaginationResponse base_resp = 1;</code>
+     * <code>.base.BaseResponse base_resp = 1;</code>
      * @return Whether the baseResp field is set.
      */
     public boolean hasBaseResp() {
       return baseRespBuilder != null || baseResp != null;
     }
     /**
-     * <code>.base.PaginationResponse base_resp = 1;</code>
+     * <code>.base.BaseResponse base_resp = 1;</code>
      * @return The baseResp.
      */
-    public com.zhijiejiaoyu.base.PaginationResponse getBaseResp() {
+    public com.zhijiejiaoyu.base.BaseResponse getBaseResp() {
       if (baseRespBuilder == null) {
-        return baseResp == null ? com.zhijiejiaoyu.base.PaginationResponse.getDefaultInstance() : baseResp ;
+        return baseResp == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp ;
       } else {
         return baseRespBuilder .getMessage();
       }
     }
     /**
-     * <code>.base.PaginationResponse base_resp = 1;</code>
+     * <code>.base.BaseResponse base_resp = 1;</code>
      */
-    public Builder setBaseResp(com.zhijiejiaoyu.base.PaginationResponse value) {
+    public Builder setBaseResp(com.zhijiejiaoyu.base.BaseResponse value) {
       if (baseRespBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -506,10 +506,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.base.PaginationResponse base_resp = 1;</code>
+     * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public Builder setBaseResp(
-        com.zhijiejiaoyu.base.PaginationResponse.Builder builderForValue) {
+        com.zhijiejiaoyu.base.BaseResponse.Builder builderForValue) {
       if (baseRespBuilder == null) {
         baseResp = builderForValue.build();
         onChanged();
@@ -520,13 +520,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.base.PaginationResponse base_resp = 1;</code>
+     * <code>.base.BaseResponse base_resp = 1;</code>
      */
-    public Builder mergeBaseResp(com.zhijiejiaoyu.base.PaginationResponse value) {
+    public Builder mergeBaseResp(com.zhijiejiaoyu.base.BaseResponse value) {
       if (baseRespBuilder == null) {
         if (baseResp != null) {
           baseResp =
-            com.zhijiejiaoyu.base.PaginationResponse.newBuilder(baseResp ).mergeFrom(value).buildPartial();
+            com.zhijiejiaoyu.base.BaseResponse.newBuilder(baseResp ).mergeFrom(value).buildPartial();
         } else {
           baseResp = value;
         }
@@ -538,7 +538,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.base.PaginationResponse base_resp = 1;</code>
+     * <code>.base.BaseResponse base_resp = 1;</code>
      */
     public Builder clearBaseResp() {
       if (baseRespBuilder == null) {
@@ -552,33 +552,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.base.PaginationResponse base_resp = 1;</code>
+     * <code>.base.BaseResponse base_resp = 1;</code>
      */
-    public com.zhijiejiaoyu.base.PaginationResponse.Builder getBaseRespBuilder() {
+    public com.zhijiejiaoyu.base.BaseResponse.Builder getBaseRespBuilder() {
       
       onChanged();
       return getBaseRespFieldBuilder().getBuilder();
     }
     /**
-     * <code>.base.PaginationResponse base_resp = 1;</code>
+     * <code>.base.BaseResponse base_resp = 1;</code>
      */
-    public com.zhijiejiaoyu.base.PaginationResponseOrBuilder getBaseRespOrBuilder() {
+    public com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder() {
       if (baseRespBuilder != null) {
         return baseRespBuilder .getMessageOrBuilder();
       } else {
         return baseResp == null ?
-            com.zhijiejiaoyu.base.PaginationResponse.getDefaultInstance() : baseResp ;
+            com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp ;
       }
     }
     /**
-     * <code>.base.PaginationResponse base_resp = 1;</code>
+     * <code>.base.BaseResponse base_resp = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.base.PaginationResponse, com.zhijiejiaoyu.base.PaginationResponse.Builder, com.zhijiejiaoyu.base.PaginationResponseOrBuilder> 
+        com.zhijiejiaoyu.base.BaseResponse, com.zhijiejiaoyu.base.BaseResponse.Builder, com.zhijiejiaoyu.base.BaseResponseOrBuilder> 
         getBaseRespFieldBuilder() {
       if (baseRespBuilder == null) {
         baseRespBuilder = new com.google.protobuf.SingleFieldBuilderV3<
-            com.zhijiejiaoyu.base.PaginationResponse, com.zhijiejiaoyu.base.PaginationResponse.Builder, com.zhijiejiaoyu.base.PaginationResponseOrBuilder>(
+            com.zhijiejiaoyu.base.BaseResponse, com.zhijiejiaoyu.base.BaseResponse.Builder, com.zhijiejiaoyu.base.BaseResponseOrBuilder>(
                 getBaseResp(),
                 getParentForChildren(),
                 isClean());

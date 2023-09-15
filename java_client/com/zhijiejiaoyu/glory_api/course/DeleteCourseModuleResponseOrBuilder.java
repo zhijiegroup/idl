@@ -8,17 +8,17 @@ public interface DeleteCourseModuleResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.base.PaginationResponse base_resp = 1;</code>
+   * <code>.base.BaseResponse base_resp = 1;</code>
    * @return Whether the baseResp field is set.
    */
   boolean hasBaseResp();
   /**
-   * <code>.base.PaginationResponse base_resp = 1;</code>
+   * <code>.base.BaseResponse base_resp = 1;</code>
    * @return The baseResp.
    */
-  com.zhijiejiaoyu.base.PaginationResponse getBaseResp();
+  com.zhijiejiaoyu.base.BaseResponse getBaseResp();
   /**
-   * <code>.base.PaginationResponse base_resp = 1;</code>
+   * <code>.base.BaseResponse base_resp = 1;</code>
    */
-  com.zhijiejiaoyu.base.PaginationResponseOrBuilder getBaseRespOrBuilder();
+  com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder();
 }

@@ -4,29 +4,25 @@
 package com.zhijiejiaoyu.glory_api.course;
 
 /**
- * <pre>
- * 创建能力指标
- * </pre>
- *
- * Protobuf type {@code glory_api.CreateCourseModuleRequest}
+ * Protobuf type {@code glory_api.GetCourseModuleResponse}
  */
-public final class CreateCourseModuleRequest extends
+public final class GetCourseModuleResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:glory_api.CreateCourseModuleRequest)
-    CreateCourseModuleRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:glory_api.GetCourseModuleResponse)
+    GetCourseModuleResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use CreateCourseModuleRequest.newBuilder() to construct.
-  private CreateCourseModuleRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use GetCourseModuleResponse.newBuilder() to construct.
+  private GetCourseModuleResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private CreateCourseModuleRequest() {
+  private GetCourseModuleResponse() {
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new CreateCourseModuleRequest();
+    return new GetCourseModuleResponse();
   }
 
   @java.lang.Override
@@ -34,7 +30,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private CreateCourseModuleRequest(
+  private GetCourseModuleResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -53,14 +49,14 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            com.zhijiejiaoyu.base.BaseRequest.Builder subBuilder = null;
-            if (baseRequest != null) {
-              subBuilder = baseRequest .toBuilder();
+            com.zhijiejiaoyu.base.BaseResponse.Builder subBuilder = null;
+            if (baseResp != null) {
+              subBuilder = baseResp .toBuilder();
             }
-            baseRequest = input.readMessage(com.zhijiejiaoyu.base.BaseRequest.parser(), extensionRegistry);
+            baseResp = input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(baseRequest );
-              baseRequest = subBuilder.buildPartial();
+              subBuilder.mergeFrom(baseResp );
+              baseResp = subBuilder.buildPartial();
             }
 
             break;
@@ -99,41 +95,41 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.zhijiejiaoyu.glory_api.course.Module.internal_static_glory_api_CreateCourseModuleRequest_descriptor;
+    return com.zhijiejiaoyu.glory_api.course.Module.internal_static_glory_api_GetCourseModuleResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.zhijiejiaoyu.glory_api.course.Module.internal_static_glory_api_CreateCourseModuleRequest_fieldAccessorTable
+    return com.zhijiejiaoyu.glory_api.course.Module.internal_static_glory_api_GetCourseModuleResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequest.class, com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequest.Builder.class);
+            com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse.class, com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse.Builder.class);
   }
 
-  public static final int BASE_REQUEST_FIELD_NUMBER = 1;
-  private com.zhijiejiaoyu.base.BaseRequest baseRequest ;
+  public static final int BASE_RESP_FIELD_NUMBER = 1;
+  private com.zhijiejiaoyu.base.BaseResponse baseResp ;
   /**
-   * <code>.base.BaseRequest base_request = 1;</code>
-   * @return Whether the baseRequest field is set.
+   * <code>.base.BaseResponse base_resp = 1;</code>
+   * @return Whether the baseResp field is set.
    */
   @java.lang.Override
-  public boolean hasBaseRequest() {
-    return baseRequest != null;
+  public boolean hasBaseResp() {
+    return baseResp != null;
   }
   /**
-   * <code>.base.BaseRequest base_request = 1;</code>
-   * @return The baseRequest.
+   * <code>.base.BaseResponse base_resp = 1;</code>
+   * @return The baseResp.
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.base.BaseRequest getBaseRequest() {
-    return baseRequest == null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest ;
+  public com.zhijiejiaoyu.base.BaseResponse getBaseResp() {
+    return baseResp == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp ;
   }
   /**
-   * <code>.base.BaseRequest base_request = 1;</code>
+   * <code>.base.BaseResponse base_resp = 1;</code>
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder() {
-    return getBaseRequest();
+  public com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder() {
+    return getBaseResp();
   }
 
   public static final int COURSE_MODULE_FIELD_NUMBER = 2;
@@ -176,8 +172,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (baseRequest != null) {
-      output.writeMessage(1, getBaseRequest());
+    if (baseResp != null) {
+      output.writeMessage(1, getBaseResp());
     }
     if (courseModule != null) {
       output.writeMessage(2, getCourseModule());
@@ -191,9 +187,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (baseRequest != null) {
+    if (baseResp != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getBaseRequest());
+        .computeMessageSize(1, getBaseResp());
     }
     if (courseModule != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -209,15 +205,15 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequest)) {
+    if (!(obj instanceof com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse)) {
       return super.equals(obj);
     }
-    com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequest other = (com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequest) obj;
+    com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse other = (com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse) obj;
 
-    if (hasBaseRequest() != other.hasBaseRequest()) return false;
-    if (hasBaseRequest()) {
-      if (!getBaseRequest()
-          .equals(other.getBaseRequest())) return false;
+    if (hasBaseResp() != other.hasBaseResp()) return false;
+    if (hasBaseResp()) {
+      if (!getBaseResp()
+          .equals(other.getBaseResp())) return false;
     }
     if (hasCourseModule() != other.hasCourseModule()) return false;
     if (hasCourseModule()) {
@@ -235,9 +231,9 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasBaseRequest()) {
-      hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
-      hash = (53 * hash) + getBaseRequest().hashCode();
+    if (hasBaseResp()) {
+      hash = (37 * hash) + BASE_RESP_FIELD_NUMBER;
+      hash = (53 * hash) + getBaseResp().hashCode();
     }
     if (hasCourseModule()) {
       hash = (37 * hash) + COURSE_MODULE_FIELD_NUMBER;
@@ -248,69 +244,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequest parseFrom(byte[] data)
+  public static com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequest parseFrom(java.io.InputStream input)
+  public static com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequest parseDelimitedFrom(
+  public static com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -323,7 +319,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequest prototype) {
+  public static Builder newBuilder(com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -339,30 +335,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * <pre>
-   * 创建能力指标
-   * </pre>
-   *
-   * Protobuf type {@code glory_api.CreateCourseModuleRequest}
+   * Protobuf type {@code glory_api.GetCourseModuleResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:glory_api.CreateCourseModuleRequest)
-      com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:glory_api.GetCourseModuleResponse)
+      com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.zhijiejiaoyu.glory_api.course.Module.internal_static_glory_api_CreateCourseModuleRequest_descriptor;
+      return com.zhijiejiaoyu.glory_api.course.Module.internal_static_glory_api_GetCourseModuleResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.zhijiejiaoyu.glory_api.course.Module.internal_static_glory_api_CreateCourseModuleRequest_fieldAccessorTable
+      return com.zhijiejiaoyu.glory_api.course.Module.internal_static_glory_api_GetCourseModuleResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequest.class, com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequest.Builder.class);
+              com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse.class, com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse.Builder.class);
     }
 
-    // Construct using com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequest.newBuilder()
+    // Construct using com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -380,11 +372,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (baseRequestBuilder == null) {
-        baseRequest = null;
+      if (baseRespBuilder == null) {
+        baseResp = null;
       } else {
-        baseRequest = null;
-        baseRequestBuilder = null;
+        baseResp = null;
+        baseRespBuilder = null;
       }
       if (courseModuleBuilder == null) {
         courseModule = null;
@@ -398,17 +390,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.zhijiejiaoyu.glory_api.course.Module.internal_static_glory_api_CreateCourseModuleRequest_descriptor;
+      return com.zhijiejiaoyu.glory_api.course.Module.internal_static_glory_api_GetCourseModuleResponse_descriptor;
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequest getDefaultInstanceForType() {
-      return com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequest.getDefaultInstance();
+    public com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse getDefaultInstanceForType() {
+      return com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequest build() {
-      com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequest result = buildPartial();
+    public com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse build() {
+      com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -416,12 +408,12 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequest buildPartial() {
-      com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequest result = new com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequest(this);
-      if (baseRequestBuilder == null) {
-        result.baseRequest = baseRequest ;
+    public com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse buildPartial() {
+      com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse result = new com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse(this);
+      if (baseRespBuilder == null) {
+        result.baseResp = baseResp ;
       } else {
-        result.baseRequest = baseRequestBuilder .build();
+        result.baseResp = baseRespBuilder .build();
       }
       if (courseModuleBuilder == null) {
         result.courseModule = courseModule ;
@@ -466,18 +458,18 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequest) {
-        return mergeFrom((com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequest)other);
+      if (other instanceof com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse) {
+        return mergeFrom((com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequest other) {
-      if (other == com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequest.getDefaultInstance()) return this;
-      if (other.hasBaseRequest()) {
-        mergeBaseRequest(other.getBaseRequest());
+    public Builder mergeFrom(com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse other) {
+      if (other == com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse.getDefaultInstance()) return this;
+      if (other.hasBaseResp()) {
+        mergeBaseResp(other.getBaseResp());
       }
       if (other.hasCourseModule()) {
         mergeCourseModule(other.getCourseModule());
@@ -497,11 +489,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequest parsedMessage = null;
+      com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -511,123 +503,123 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.zhijiejiaoyu.base.BaseRequest baseRequest ;
+    private com.zhijiejiaoyu.base.BaseResponse baseResp ;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder> baseRequestBuilder ;
+        com.zhijiejiaoyu.base.BaseResponse, com.zhijiejiaoyu.base.BaseResponse.Builder, com.zhijiejiaoyu.base.BaseResponseOrBuilder> baseRespBuilder ;
     /**
-     * <code>.base.BaseRequest base_request = 1;</code>
-     * @return Whether the baseRequest field is set.
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     * @return Whether the baseResp field is set.
      */
-    public boolean hasBaseRequest() {
-      return baseRequestBuilder != null || baseRequest != null;
+    public boolean hasBaseResp() {
+      return baseRespBuilder != null || baseResp != null;
     }
     /**
-     * <code>.base.BaseRequest base_request = 1;</code>
-     * @return The baseRequest.
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     * @return The baseResp.
      */
-    public com.zhijiejiaoyu.base.BaseRequest getBaseRequest() {
-      if (baseRequestBuilder == null) {
-        return baseRequest == null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest ;
+    public com.zhijiejiaoyu.base.BaseResponse getBaseResp() {
+      if (baseRespBuilder == null) {
+        return baseResp == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp ;
       } else {
-        return baseRequestBuilder .getMessage();
+        return baseRespBuilder .getMessage();
       }
     }
     /**
-     * <code>.base.BaseRequest base_request = 1;</code>
+     * <code>.base.BaseResponse base_resp = 1;</code>
      */
-    public Builder setBaseRequest(com.zhijiejiaoyu.base.BaseRequest value) {
-      if (baseRequestBuilder == null) {
+    public Builder setBaseResp(com.zhijiejiaoyu.base.BaseResponse value) {
+      if (baseRespBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        baseRequest = value;
+        baseResp = value;
         onChanged();
       } else {
-        baseRequestBuilder .setMessage(value);
+        baseRespBuilder .setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.base.BaseRequest base_request = 1;</code>
+     * <code>.base.BaseResponse base_resp = 1;</code>
      */
-    public Builder setBaseRequest(
-        com.zhijiejiaoyu.base.BaseRequest.Builder builderForValue) {
-      if (baseRequestBuilder == null) {
-        baseRequest = builderForValue.build();
+    public Builder setBaseResp(
+        com.zhijiejiaoyu.base.BaseResponse.Builder builderForValue) {
+      if (baseRespBuilder == null) {
+        baseResp = builderForValue.build();
         onChanged();
       } else {
-        baseRequestBuilder .setMessage(builderForValue.build());
+        baseRespBuilder .setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.base.BaseRequest base_request = 1;</code>
+     * <code>.base.BaseResponse base_resp = 1;</code>
      */
-    public Builder mergeBaseRequest(com.zhijiejiaoyu.base.BaseRequest value) {
-      if (baseRequestBuilder == null) {
-        if (baseRequest != null) {
-          baseRequest =
-            com.zhijiejiaoyu.base.BaseRequest.newBuilder(baseRequest ).mergeFrom(value).buildPartial();
+    public Builder mergeBaseResp(com.zhijiejiaoyu.base.BaseResponse value) {
+      if (baseRespBuilder == null) {
+        if (baseResp != null) {
+          baseResp =
+            com.zhijiejiaoyu.base.BaseResponse.newBuilder(baseResp ).mergeFrom(value).buildPartial();
         } else {
-          baseRequest = value;
+          baseResp = value;
         }
         onChanged();
       } else {
-        baseRequestBuilder .mergeFrom(value);
+        baseRespBuilder .mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.base.BaseRequest base_request = 1;</code>
+     * <code>.base.BaseResponse base_resp = 1;</code>
      */
-    public Builder clearBaseRequest() {
-      if (baseRequestBuilder == null) {
-        baseRequest = null;
+    public Builder clearBaseResp() {
+      if (baseRespBuilder == null) {
+        baseResp = null;
         onChanged();
       } else {
-        baseRequest = null;
-        baseRequestBuilder = null;
+        baseResp = null;
+        baseRespBuilder = null;
       }
 
       return this;
     }
     /**
-     * <code>.base.BaseRequest base_request = 1;</code>
+     * <code>.base.BaseResponse base_resp = 1;</code>
      */
-    public com.zhijiejiaoyu.base.BaseRequest.Builder getBaseRequestBuilder() {
+    public com.zhijiejiaoyu.base.BaseResponse.Builder getBaseRespBuilder() {
       
       onChanged();
-      return getBaseRequestFieldBuilder().getBuilder();
+      return getBaseRespFieldBuilder().getBuilder();
     }
     /**
-     * <code>.base.BaseRequest base_request = 1;</code>
+     * <code>.base.BaseResponse base_resp = 1;</code>
      */
-    public com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder() {
-      if (baseRequestBuilder != null) {
-        return baseRequestBuilder .getMessageOrBuilder();
+    public com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder() {
+      if (baseRespBuilder != null) {
+        return baseRespBuilder .getMessageOrBuilder();
       } else {
-        return baseRequest == null ?
-            com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest ;
+        return baseResp == null ?
+            com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp ;
       }
     }
     /**
-     * <code>.base.BaseRequest base_request = 1;</code>
+     * <code>.base.BaseResponse base_resp = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder> 
-        getBaseRequestFieldBuilder() {
-      if (baseRequestBuilder == null) {
-        baseRequestBuilder = new com.google.protobuf.SingleFieldBuilderV3<
-            com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder>(
-                getBaseRequest(),
+        com.zhijiejiaoyu.base.BaseResponse, com.zhijiejiaoyu.base.BaseResponse.Builder, com.zhijiejiaoyu.base.BaseResponseOrBuilder> 
+        getBaseRespFieldBuilder() {
+      if (baseRespBuilder == null) {
+        baseRespBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+            com.zhijiejiaoyu.base.BaseResponse, com.zhijiejiaoyu.base.BaseResponse.Builder, com.zhijiejiaoyu.base.BaseResponseOrBuilder>(
+                getBaseResp(),
                 getParentForChildren(),
                 isClean());
-        baseRequest = null;
+        baseResp = null;
       }
-      return baseRequestBuilder ;
+      return baseRespBuilder ;
     }
 
     private com.zhijiejiaoyu.glory_api.course.CourseModule courseModule ;
@@ -761,41 +753,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:glory_api.CreateCourseModuleRequest)
+    // @@protoc_insertion_point(builder_scope:glory_api.GetCourseModuleResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:glory_api.CreateCourseModuleRequest)
-  private static final com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:glory_api.GetCourseModuleResponse)
+  private static final com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequest();
+    DEFAULT_INSTANCE = new com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse();
   }
 
-  public static com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequest getDefaultInstance() {
+  public static com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<CreateCourseModuleRequest>
-      PARSER = new com.google.protobuf.AbstractParser<CreateCourseModuleRequest>() {
+  private static final com.google.protobuf.Parser<GetCourseModuleResponse>
+      PARSER = new com.google.protobuf.AbstractParser<GetCourseModuleResponse>() {
     @java.lang.Override
-    public CreateCourseModuleRequest parsePartialFrom(
+    public GetCourseModuleResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new CreateCourseModuleRequest(input, extensionRegistry);
+      return new GetCourseModuleResponse(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<CreateCourseModuleRequest> parser() {
+  public static com.google.protobuf.Parser<GetCourseModuleResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<CreateCourseModuleRequest> getParserForType() {
+  public com.google.protobuf.Parser<GetCourseModuleResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequest getDefaultInstanceForType() {
+  public com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

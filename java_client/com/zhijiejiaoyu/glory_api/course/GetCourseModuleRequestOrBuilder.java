@@ -3,8 +3,8 @@
 
 package com.zhijiejiaoyu.glory_api.course;
 
-public interface DeleteCourseModuleRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:glory_api.DeleteCourseModuleRequest)
+public interface GetCourseModuleRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:glory_api.GetCourseModuleRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**

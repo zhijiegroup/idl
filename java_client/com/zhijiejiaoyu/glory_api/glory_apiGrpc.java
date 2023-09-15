@@ -7579,6 +7579,37 @@ public final class glory_apiGrpc {
     return getCreateCourseModuleMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.GetCourseModuleRequest,
+      com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse> getGetCourseModuleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetCourseModule",
+      requestType = com.zhijiejiaoyu.glory_api.course.GetCourseModuleRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.GetCourseModuleRequest,
+      com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse> getGetCourseModuleMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.GetCourseModuleRequest, com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse> getGetCourseModuleMethod;
+    if ((getGetCourseModuleMethod = glory_apiGrpc.getGetCourseModuleMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGetCourseModuleMethod = glory_apiGrpc.getGetCourseModuleMethod) == null) {
+          glory_apiGrpc.getGetCourseModuleMethod = getGetCourseModuleMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.GetCourseModuleRequest, com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetCourseModule"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.GetCourseModuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetCourseModule"))
+              .build();
+        }
+      }
+    }
+    return getGetCourseModuleMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.UpdateCourseModuleRequest,
       com.zhijiejiaoyu.glory_api.course.UpdateCourseModuleResponse> getUpdateCourseModuleMethod;
 
@@ -9632,6 +9663,16 @@ public final class glory_apiGrpc {
     default void createCourseModule(com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.CreateCourseModuleResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateCourseModuleMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 获取能力指标
+     * </pre>
+     */
+    default void getCourseModule(com.zhijiejiaoyu.glory_api.course.GetCourseModuleRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetCourseModuleMethod(), responseObserver);
     }
 
     /**
@@ -11852,6 +11893,17 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * 获取能力指标
+     * </pre>
+     */
+    public void getCourseModule(com.zhijiejiaoyu.glory_api.course.GetCourseModuleRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetCourseModuleMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * 更新能力指标
      * </pre>
      */
@@ -13812,6 +13864,16 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.course.CreateCourseModuleResponse createCourseModule(com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateCourseModuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 获取能力指标
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse getCourseModule(com.zhijiejiaoyu.glory_api.course.GetCourseModuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCourseModuleMethod(), getCallOptions(), request);
     }
 
     /**
@@ -16021,6 +16083,17 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * 获取能力指标
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse> getCourseModule(
+        com.zhijiejiaoyu.glory_api.course.GetCourseModuleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetCourseModuleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * 更新能力指标
      * </pre>
      */
@@ -16297,9 +16370,10 @@ public final class glory_apiGrpc {
   private static final int METHODID_LIST_COURSE_MATERIAL = 241;
   private static final int METHODID_DELETE_COURSE_MATERIAL = 242;
   private static final int METHODID_CREATE_COURSE_MODULE = 243;
-  private static final int METHODID_UPDATE_COURSE_MODULE = 244;
-  private static final int METHODID_DELETE_COURSE_MODULE = 245;
-  private static final int METHODID_LIST_COURSE_MODULE = 246;
+  private static final int METHODID_GET_COURSE_MODULE = 244;
+  private static final int METHODID_UPDATE_COURSE_MODULE = 245;
+  private static final int METHODID_DELETE_COURSE_MODULE = 246;
+  private static final int METHODID_LIST_COURSE_MODULE = 247;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -17293,6 +17367,10 @@ public final class glory_apiGrpc {
         case METHODID_CREATE_COURSE_MODULE:
           serviceImpl.createCourseModule((com.zhijiejiaoyu.glory_api.course.CreateCourseModuleRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.CreateCourseModuleResponse>) responseObserver);
+          break;
+        case METHODID_GET_COURSE_MODULE:
+          serviceImpl.getCourseModule((com.zhijiejiaoyu.glory_api.course.GetCourseModuleRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse>) responseObserver);
           break;
         case METHODID_UPDATE_COURSE_MODULE:
           serviceImpl.updateCourseModule((com.zhijiejiaoyu.glory_api.course.UpdateCourseModuleRequest) request,
@@ -19033,6 +19111,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.course.CreateCourseModuleResponse>(
                 service, METHODID_CREATE_COURSE_MODULE)))
         .addMethod(
+          getGetCourseModuleMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.GetCourseModuleRequest,
+              com.zhijiejiaoyu.glory_api.course.GetCourseModuleResponse>(
+                service, METHODID_GET_COURSE_MODULE)))
+        .addMethod(
           getUpdateCourseModuleMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -19345,6 +19430,7 @@ public final class glory_apiGrpc {
               .addMethod(getListCourseMaterialMethod())
               .addMethod(getDeleteCourseMaterialMethod())
               .addMethod(getCreateCourseModuleMethod())
+              .addMethod(getGetCourseModuleMethod())
               .addMethod(getUpdateCourseModuleMethod())
               .addMethod(getDeleteCourseModuleMethod())
               .addMethod(getListCourseModuleMethod())
