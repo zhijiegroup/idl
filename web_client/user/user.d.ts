@@ -118,6 +118,16 @@ export interface UpdateUserResponse {
   base_resp?: base.BaseResponse;
 }
 
+export interface UpdatePhoneRequest {
+  base_request?: base.BaseRequest;
+  phone?: string;
+  code?: string;
+}
+
+export interface UpdatePhoneResponse {
+  base_resp?: base.BaseResponse;
+}
+
 export interface PagePermission {
   business_system?: string;
   page?: string;

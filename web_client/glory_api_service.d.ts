@@ -132,6 +132,10 @@ export class glory_api {
 
   UpdateUser(request: user.UpdateUserRequest): Promise<user.UpdateUserResponse>;
 
+  UpdatePhone(
+    request: user.UpdatePhoneRequest
+  ): Promise<user.UpdatePhoneResponse>;
+
   /** 关注用户 */
   FollowUser(request: user.FollowUserRequest): Promise<user.FollowUserResponse>;
 
