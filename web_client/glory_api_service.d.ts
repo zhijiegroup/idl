@@ -120,6 +120,10 @@ export class glory_api {
     request: user.GetVerifyCodeRequest
   ): Promise<user.GetVerifyCodeResponse>;
 
+  CheckVerifyCode(
+    request: user.CheckVerifyCodeRequest
+  ): Promise<user.CheckVerifyCodeResponse>;
+
   GetUser(request: user.GetUserRequest): Promise<user.GetUserResponse>;
 
   LoginWithPassword(

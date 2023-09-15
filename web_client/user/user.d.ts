@@ -75,6 +75,17 @@ export interface GetVerifyCodeResponse {
   base_resp?: base.BaseResponse;
 }
 
+export interface CheckVerifyCodeRequest {
+  base_request?: base.BaseRequest;
+  phone?: string;
+  code?: string;
+}
+
+export interface CheckVerifyCodeResponse {
+  base_resp?: base.BaseResponse;
+  pass?: boolean;
+}
+
 export interface LoginWithPasswordRequest {
   base_request?: base.BaseRequest;
   phone?: string;

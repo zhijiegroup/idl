@@ -158,6 +158,14 @@ export class glory_api {
     );
   }
 
+  CheckVerifyCode(request) {
+    const uri = `${this.uriPrefix}/api/user/check_verify_code`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   GetUser(request) {
     const query = queryStringify(request);
     const uri = `${this.uriPrefix}/api/user/get_user${query}`;
