@@ -71,6 +71,17 @@ message GetVerifyCodeResponse {
   base.BaseResponse base_resp = 1;
 }
 
+message CheckVerifyCodeRequest {
+  base.BaseRequest base_request=1;
+  string phone = 2;
+  string code = 3;
+}
+
+message CheckVerifyCodeResponse {
+  base.BaseResponse base_resp = 1;
+  bool pass = 2;
+}
+
 
 message LoginWithPasswordRequest {
   base.BaseRequest base_request=1;
