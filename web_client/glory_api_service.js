@@ -188,6 +188,14 @@ export class glory_api {
     );
   }
 
+  UpdatePhone(request) {
+    const uri = `${this.uriPrefix}/api/user/update_phone`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   FollowUser(request) {
     const uri = `${this.uriPrefix}/api/user/follow_user`;
     const body = JSONbigint.stringify(request);
@@ -1952,6 +1960,14 @@ export class glory_api {
 
   CreateCourseModule(request) {
     const uri = `${this.uriPrefix}/api/course/create_course_module`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  GetCourseModule(request) {
+    const uri = `${this.uriPrefix}/api/course/get_course_module`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse

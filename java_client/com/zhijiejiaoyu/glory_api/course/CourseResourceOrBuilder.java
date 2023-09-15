@@ -59,21 +59,31 @@ public interface CourseResourceOrBuilder extends
 
   /**
    * <pre>
-   * 课程资源类型：1.教学视频；2.教学PPT；3.课后习题；4.教案
+   * 课程资源URL
    * </pre>
    *
-   * <code>string resource_type = 4;</code>
-   * @return The resourceType.
+   * <code>string resource_url = 4;</code>
+   * @return The resourceUrl.
    */
-  java.lang.String getResourceType();
+  java.lang.String getResourceUrl();
+  /**
+   * <pre>
+   * 课程资源URL
+   * </pre>
+   *
+   * <code>string resource_url = 4;</code>
+   * @return The bytes for resourceUrl.
+   */
+  com.google.protobuf.ByteString
+      getResourceUrlBytes();
+
   /**
    * <pre>
    * 课程资源类型：1.教学视频；2.教学PPT；3.课后习题；4.教案
    * </pre>
    *
-   * <code>string resource_type = 4;</code>
-   * @return The bytes for resourceType.
+   * <code>int32 resource_type = 5;</code>
+   * @return The resourceType.
    */
-  com.google.protobuf.ByteString
-      getResourceTypeBytes();
+  int getResourceType();
 }

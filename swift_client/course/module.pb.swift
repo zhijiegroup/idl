@@ -34,8 +34,11 @@ struct GloryApi_CourseResource {
   /// 课程资源OSS路径
   var resourcePath: String = String()
 
+  /// 课程资源URL
+  var resourceURL: String = String()
+
   /// 课程资源类型：1.教学视频；2.教学PPT；3.课后习题；4.教案
-  var resourceType: String = String()
+  var resourceType: Int32 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -47,6 +50,8 @@ struct GloryApi_CourseChapter {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  var chapterID: Int64 = 0
+
   /// 课程内容名称
   var chapterName: String = String()
 
@@ -55,6 +60,9 @@ struct GloryApi_CourseChapter {
 
   /// 课程内容类型：1.理论知识；2.技能实践
   var chapterType: Int32 = 0
+
+  /// 课程资源
+  var chapterResources: [GloryApi_CourseResource] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -104,8 +112,8 @@ struct GloryApi_CreateCourseModuleRequest {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var baseRequest: Base_PaginationRequest {
-    get {return _baseRequest ?? Base_PaginationRequest()}
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
@@ -126,7 +134,7 @@ struct GloryApi_CreateCourseModuleRequest {
 
   init() {}
 
-  fileprivate var _baseRequest: Base_PaginationRequest? = nil
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
   fileprivate var _courseModule: GloryApi_CourseModule? = nil
 }
 
@@ -135,8 +143,8 @@ struct GloryApi_CreateCourseModuleResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var baseResp: Base_PaginationResponse {
-    get {return _baseResp ?? Base_PaginationResponse()}
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
@@ -150,7 +158,62 @@ struct GloryApi_CreateCourseModuleResponse {
 
   init() {}
 
-  fileprivate var _baseResp: Base_PaginationResponse? = nil
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+}
+
+/// 获取能力指标
+struct GloryApi_GetCourseModuleRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var moduleID: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+struct GloryApi_GetCourseModuleResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var courseModule: GloryApi_CourseModule {
+    get {return _courseModule ?? GloryApi_CourseModule()}
+    set {_courseModule = newValue}
+  }
+  /// Returns true if `courseModule` has been explicitly set.
+  var hasCourseModule: Bool {return self._courseModule != nil}
+  /// Clears the value of `courseModule`. Subsequent reads from it will return its default value.
+  mutating func clearCourseModule() {self._courseModule = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _courseModule: GloryApi_CourseModule? = nil
 }
 
 /// 更新能力指标
@@ -159,8 +222,8 @@ struct GloryApi_UpdateCourseModuleRequest {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var baseRequest: Base_PaginationRequest {
-    get {return _baseRequest ?? Base_PaginationRequest()}
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
@@ -181,7 +244,7 @@ struct GloryApi_UpdateCourseModuleRequest {
 
   init() {}
 
-  fileprivate var _baseRequest: Base_PaginationRequest? = nil
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
   fileprivate var _courseModule: GloryApi_CourseModule? = nil
 }
 
@@ -190,8 +253,8 @@ struct GloryApi_UpdateCourseModuleResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var baseResp: Base_PaginationResponse {
-    get {return _baseResp ?? Base_PaginationResponse()}
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
@@ -203,7 +266,7 @@ struct GloryApi_UpdateCourseModuleResponse {
 
   init() {}
 
-  fileprivate var _baseResp: Base_PaginationResponse? = nil
+  fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
 /// 删除能力指标
@@ -212,8 +275,8 @@ struct GloryApi_DeleteCourseModuleRequest {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var baseRequest: Base_PaginationRequest {
-    get {return _baseRequest ?? Base_PaginationRequest()}
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
@@ -227,7 +290,7 @@ struct GloryApi_DeleteCourseModuleRequest {
 
   init() {}
 
-  fileprivate var _baseRequest: Base_PaginationRequest? = nil
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
 struct GloryApi_DeleteCourseModuleResponse {
@@ -235,8 +298,8 @@ struct GloryApi_DeleteCourseModuleResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var baseResp: Base_PaginationResponse {
-    get {return _baseResp ?? Base_PaginationResponse()}
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
@@ -248,7 +311,7 @@ struct GloryApi_DeleteCourseModuleResponse {
 
   init() {}
 
-  fileprivate var _baseResp: Base_PaginationResponse? = nil
+  fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
 /// 能力指标列表
@@ -257,8 +320,8 @@ struct GloryApi_ListCourseModuleRequest {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var baseRequest: Base_PaginationRequest {
-    get {return _baseRequest ?? Base_PaginationRequest()}
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
@@ -285,7 +348,7 @@ struct GloryApi_ListCourseModuleRequest {
 
   init() {}
 
-  fileprivate var _baseRequest: Base_PaginationRequest? = nil
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
@@ -294,8 +357,8 @@ struct GloryApi_ListCourseModuleResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var baseResp: Base_PaginationResponse {
-    get {return _baseResp ?? Base_PaginationResponse()}
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
@@ -318,7 +381,7 @@ struct GloryApi_ListCourseModuleResponse {
 
   init() {}
 
-  fileprivate var _baseResp: Base_PaginationResponse? = nil
+  fileprivate var _baseResp: Base_BaseResponse? = nil
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
@@ -328,6 +391,8 @@ extension GloryApi_CourseChapter: @unchecked Sendable {}
 extension GloryApi_CourseModule: @unchecked Sendable {}
 extension GloryApi_CreateCourseModuleRequest: @unchecked Sendable {}
 extension GloryApi_CreateCourseModuleResponse: @unchecked Sendable {}
+extension GloryApi_GetCourseModuleRequest: @unchecked Sendable {}
+extension GloryApi_GetCourseModuleResponse: @unchecked Sendable {}
 extension GloryApi_UpdateCourseModuleRequest: @unchecked Sendable {}
 extension GloryApi_UpdateCourseModuleResponse: @unchecked Sendable {}
 extension GloryApi_DeleteCourseModuleRequest: @unchecked Sendable {}
@@ -346,7 +411,8 @@ extension GloryApi_CourseResource: SwiftProtobuf.Message, SwiftProtobuf._Message
     1: .standard(proto: "resource_id"),
     2: .standard(proto: "resource_name"),
     3: .standard(proto: "resource_path"),
-    4: .standard(proto: "resource_type"),
+    4: .standard(proto: "resource_url"),
+    5: .standard(proto: "resource_type"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -358,7 +424,8 @@ extension GloryApi_CourseResource: SwiftProtobuf.Message, SwiftProtobuf._Message
       case 1: try { try decoder.decodeSingularInt64Field(value: &self.resourceID) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.resourceName) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.resourcePath) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.resourceType) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.resourceURL) }()
+      case 5: try { try decoder.decodeSingularInt32Field(value: &self.resourceType) }()
       default: break
       }
     }
@@ -374,8 +441,11 @@ extension GloryApi_CourseResource: SwiftProtobuf.Message, SwiftProtobuf._Message
     if !self.resourcePath.isEmpty {
       try visitor.visitSingularStringField(value: self.resourcePath, fieldNumber: 3)
     }
-    if !self.resourceType.isEmpty {
-      try visitor.visitSingularStringField(value: self.resourceType, fieldNumber: 4)
+    if !self.resourceURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.resourceURL, fieldNumber: 4)
+    }
+    if self.resourceType != 0 {
+      try visitor.visitSingularInt32Field(value: self.resourceType, fieldNumber: 5)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -384,6 +454,7 @@ extension GloryApi_CourseResource: SwiftProtobuf.Message, SwiftProtobuf._Message
     if lhs.resourceID != rhs.resourceID {return false}
     if lhs.resourceName != rhs.resourceName {return false}
     if lhs.resourcePath != rhs.resourcePath {return false}
+    if lhs.resourceURL != rhs.resourceURL {return false}
     if lhs.resourceType != rhs.resourceType {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -393,9 +464,11 @@ extension GloryApi_CourseResource: SwiftProtobuf.Message, SwiftProtobuf._Message
 extension GloryApi_CourseChapter: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CourseChapter"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "chapter_name"),
-    2: .standard(proto: "chapter_code"),
-    3: .standard(proto: "chapter_type"),
+    1: .standard(proto: "chapter_id"),
+    2: .standard(proto: "chapter_name"),
+    3: .standard(proto: "chapter_code"),
+    4: .standard(proto: "chapter_type"),
+    5: .standard(proto: "chapter_resources"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -404,31 +477,41 @@ extension GloryApi_CourseChapter: SwiftProtobuf.Message, SwiftProtobuf._MessageI
       // allocates stack space for every case branch when no optimizations are
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try { try decoder.decodeSingularStringField(value: &self.chapterName) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.chapterCode) }()
-      case 3: try { try decoder.decodeSingularInt32Field(value: &self.chapterType) }()
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.chapterID) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.chapterName) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.chapterCode) }()
+      case 4: try { try decoder.decodeSingularInt32Field(value: &self.chapterType) }()
+      case 5: try { try decoder.decodeRepeatedMessageField(value: &self.chapterResources) }()
       default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.chapterID != 0 {
+      try visitor.visitSingularInt64Field(value: self.chapterID, fieldNumber: 1)
+    }
     if !self.chapterName.isEmpty {
-      try visitor.visitSingularStringField(value: self.chapterName, fieldNumber: 1)
+      try visitor.visitSingularStringField(value: self.chapterName, fieldNumber: 2)
     }
     if !self.chapterCode.isEmpty {
-      try visitor.visitSingularStringField(value: self.chapterCode, fieldNumber: 2)
+      try visitor.visitSingularStringField(value: self.chapterCode, fieldNumber: 3)
     }
     if self.chapterType != 0 {
-      try visitor.visitSingularInt32Field(value: self.chapterType, fieldNumber: 3)
+      try visitor.visitSingularInt32Field(value: self.chapterType, fieldNumber: 4)
+    }
+    if !self.chapterResources.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.chapterResources, fieldNumber: 5)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_CourseChapter, rhs: GloryApi_CourseChapter) -> Bool {
+    if lhs.chapterID != rhs.chapterID {return false}
     if lhs.chapterName != rhs.chapterName {return false}
     if lhs.chapterCode != rhs.chapterCode {return false}
     if lhs.chapterType != rhs.chapterType {return false}
+    if lhs.chapterResources != rhs.chapterResources {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -593,6 +676,90 @@ extension GloryApi_CreateCourseModuleResponse: SwiftProtobuf.Message, SwiftProto
   static func ==(lhs: GloryApi_CreateCourseModuleResponse, rhs: GloryApi_CreateCourseModuleResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.moduleID != rhs.moduleID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetCourseModuleRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetCourseModuleRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    2: .standard(proto: "module_id"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.moduleID) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if self.moduleID != 0 {
+      try visitor.visitSingularInt64Field(value: self.moduleID, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetCourseModuleRequest, rhs: GloryApi_GetCourseModuleRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.moduleID != rhs.moduleID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetCourseModuleResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetCourseModuleResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .standard(proto: "course_module"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._courseModule) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try { if let v = self._courseModule {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetCourseModuleResponse, rhs: GloryApi_GetCourseModuleResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs._courseModule != rhs._courseModule {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

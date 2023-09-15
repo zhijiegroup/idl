@@ -18,6 +18,7 @@ private static final long serialVersionUID = 0L;
   private CourseChapter() {
     chapterName = "";
     chapterCode = "";
+    chapterResources = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -40,6 +41,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0 = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -50,21 +52,35 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 8: {
 
-            chapterName = s;
+            chapterId = input.readInt64();
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
+            chapterName = s;
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
             chapterCode = s;
             break;
           }
-          case 24: {
+          case 32: {
 
             chapterType = input.readInt32();
+            break;
+          }
+          case 42: {
+            if (!((mutable_bitField0 & 0x00000001) != 0)) {
+              chapterResources = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.course.CourseResource>();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            chapterResources .add(
+                input.readMessage(com.zhijiejiaoyu.glory_api.course.CourseResource.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -82,6 +98,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0 & 0x00000001) != 0)) {
+        chapterResources = java.util.Collections.unmodifiableList(chapterResources );
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -99,14 +118,25 @@ private static final long serialVersionUID = 0L;
             com.zhijiejiaoyu.glory_api.course.CourseChapter.class, com.zhijiejiaoyu.glory_api.course.CourseChapter.Builder.class);
   }
 
-  public static final int CHAPTER_NAME_FIELD_NUMBER = 1;
+  public static final int CHAPTER_ID_FIELD_NUMBER = 1;
+  private long chapterId ;
+  /**
+   * <code>int64 chapter_id = 1;</code>
+   * @return The chapterId.
+   */
+  @java.lang.Override
+  public long getChapterId() {
+    return chapterId ;
+  }
+
+  public static final int CHAPTER_NAME_FIELD_NUMBER = 2;
   private volatile java.lang.Object chapterName ;
   /**
    * <pre>
    * 课程内容名称
    * </pre>
    *
-   * <code>string chapter_name = 1;</code>
+   * <code>string chapter_name = 2;</code>
    * @return The chapterName.
    */
   @java.lang.Override
@@ -127,7 +157,7 @@ private static final long serialVersionUID = 0L;
    * 课程内容名称
    * </pre>
    *
-   * <code>string chapter_name = 1;</code>
+   * <code>string chapter_name = 2;</code>
    * @return The bytes for chapterName.
    */
   @java.lang.Override
@@ -145,14 +175,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int CHAPTER_CODE_FIELD_NUMBER = 2;
+  public static final int CHAPTER_CODE_FIELD_NUMBER = 3;
   private volatile java.lang.Object chapterCode ;
   /**
    * <pre>
    * 课程内容编码
    * </pre>
    *
-   * <code>string chapter_code = 2;</code>
+   * <code>string chapter_code = 3;</code>
    * @return The chapterCode.
    */
   @java.lang.Override
@@ -173,7 +203,7 @@ private static final long serialVersionUID = 0L;
    * 课程内容编码
    * </pre>
    *
-   * <code>string chapter_code = 2;</code>
+   * <code>string chapter_code = 3;</code>
    * @return The bytes for chapterCode.
    */
   @java.lang.Override
@@ -191,19 +221,79 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int CHAPTER_TYPE_FIELD_NUMBER = 3;
+  public static final int CHAPTER_TYPE_FIELD_NUMBER = 4;
   private int chapterType ;
   /**
    * <pre>
    * 课程内容类型：1.理论知识；2.技能实践
    * </pre>
    *
-   * <code>int32 chapter_type = 3;</code>
+   * <code>int32 chapter_type = 4;</code>
    * @return The chapterType.
    */
   @java.lang.Override
   public int getChapterType() {
     return chapterType ;
+  }
+
+  public static final int CHAPTER_RESOURCES_FIELD_NUMBER = 5;
+  private java.util.List<com.zhijiejiaoyu.glory_api.course.CourseResource> chapterResources ;
+  /**
+   * <pre>
+   * 课程资源
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseResource chapter_resources = 5;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseResource> getChapterResourcesList() {
+    return chapterResources ;
+  }
+  /**
+   * <pre>
+   * 课程资源
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseResource chapter_resources = 5;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseResourceOrBuilder> 
+      getChapterResourcesOrBuilderList() {
+    return chapterResources ;
+  }
+  /**
+   * <pre>
+   * 课程资源
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseResource chapter_resources = 5;</code>
+   */
+  @java.lang.Override
+  public int getChapterResourcesCount() {
+    return chapterResources .size();
+  }
+  /**
+   * <pre>
+   * 课程资源
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseResource chapter_resources = 5;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.course.CourseResource getChapterResources(int index) {
+    return chapterResources .get(index);
+  }
+  /**
+   * <pre>
+   * 课程资源
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseResource chapter_resources = 5;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.course.CourseResourceOrBuilder getChapterResourcesOrBuilder(
+      int index) {
+    return chapterResources .get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -220,14 +310,20 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (chapterId != 0L) {
+      output.writeInt64(1, chapterId );
+    }
     if (!getChapterNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, chapterName );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, chapterName );
     }
     if (!getChapterCodeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, chapterCode );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, chapterCode );
     }
     if (chapterType != 0) {
-      output.writeInt32(3, chapterType );
+      output.writeInt32(4, chapterType );
+    }
+    for (int i = 0; i < chapterResources .size(); i++) {
+      output.writeMessage(5, chapterResources .get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -238,15 +334,23 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (chapterId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(1, chapterId );
+    }
     if (!getChapterNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, chapterName );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, chapterName );
     }
     if (!getChapterCodeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, chapterCode );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, chapterCode );
     }
     if (chapterType != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(3, chapterType );
+        .computeInt32Size(4, chapterType );
+    }
+    for (int i = 0; i < chapterResources .size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, chapterResources .get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -263,12 +367,16 @@ private static final long serialVersionUID = 0L;
     }
     com.zhijiejiaoyu.glory_api.course.CourseChapter other = (com.zhijiejiaoyu.glory_api.course.CourseChapter) obj;
 
+    if (getChapterId()
+        != other.getChapterId()) return false;
     if (!getChapterName()
         .equals(other.getChapterName())) return false;
     if (!getChapterCode()
         .equals(other.getChapterCode())) return false;
     if (getChapterType()
         != other.getChapterType()) return false;
+    if (!getChapterResourcesList()
+        .equals(other.getChapterResourcesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -280,12 +388,19 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + CHAPTER_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getChapterId());
     hash = (37 * hash) + CHAPTER_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getChapterName().hashCode();
     hash = (37 * hash) + CHAPTER_CODE_FIELD_NUMBER;
     hash = (53 * hash) + getChapterCode().hashCode();
     hash = (37 * hash) + CHAPTER_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getChapterType();
+    if (getChapterResourcesCount() > 0) {
+      hash = (37 * hash) + CHAPTER_RESOURCES_FIELD_NUMBER;
+      hash = (53 * hash) + getChapterResourcesList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -414,17 +529,26 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getChapterResourcesFieldBuilder();
       }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      chapterId = 0L;
+
       chapterName = "";
 
       chapterCode = "";
 
       chapterType = 0;
 
+      if (chapterResourcesBuilder == null) {
+        chapterResources = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000001);
+      } else {
+        chapterResourcesBuilder .clear();
+      }
       return this;
     }
 
@@ -451,9 +575,20 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.course.CourseChapter buildPartial() {
       com.zhijiejiaoyu.glory_api.course.CourseChapter result = new com.zhijiejiaoyu.glory_api.course.CourseChapter(this);
+      int from_bitField0 = bitField0 ;
+      result.chapterId = chapterId ;
       result.chapterName = chapterName ;
       result.chapterCode = chapterCode ;
       result.chapterType = chapterType ;
+      if (chapterResourcesBuilder == null) {
+        if (((bitField0 & 0x00000001) != 0)) {
+          chapterResources = java.util.Collections.unmodifiableList(chapterResources );
+          bitField0 = (bitField0 & ~0x00000001);
+        }
+        result.chapterResources = chapterResources ;
+      } else {
+        result.chapterResources = chapterResourcesBuilder .build();
+      }
       onBuilt();
       return result;
     }
@@ -502,6 +637,9 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.zhijiejiaoyu.glory_api.course.CourseChapter other) {
       if (other == com.zhijiejiaoyu.glory_api.course.CourseChapter.getDefaultInstance()) return this;
+      if (other.getChapterId() != 0L) {
+        setChapterId(other.getChapterId());
+      }
       if (!other.getChapterName().isEmpty()) {
         chapterName = other.chapterName ;
         onChanged();
@@ -512,6 +650,32 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getChapterType() != 0) {
         setChapterType(other.getChapterType());
+      }
+      if (chapterResourcesBuilder == null) {
+        if (!other.chapterResources .isEmpty()) {
+          if (chapterResources .isEmpty()) {
+            chapterResources = other.chapterResources ;
+            bitField0 = (bitField0 & ~0x00000001);
+          } else {
+            ensureChapterResourcesIsMutable();
+            chapterResources .addAll(other.chapterResources );
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.chapterResources .isEmpty()) {
+          if (chapterResourcesBuilder .isEmpty()) {
+            chapterResourcesBuilder .dispose();
+            chapterResourcesBuilder = null;
+            chapterResources = other.chapterResources ;
+            bitField0 = (bitField0 & ~0x00000001);
+            chapterResourcesBuilder = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getChapterResourcesFieldBuilder() : null;
+          } else {
+            chapterResourcesBuilder .addAllMessages(other.chapterResources );
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -541,6 +705,38 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0 ;
+
+    private long chapterId ;
+    /**
+     * <code>int64 chapter_id = 1;</code>
+     * @return The chapterId.
+     */
+    @java.lang.Override
+    public long getChapterId() {
+      return chapterId ;
+    }
+    /**
+     * <code>int64 chapter_id = 1;</code>
+     * @param value The chapterId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setChapterId(long value) {
+      
+      chapterId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 chapter_id = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearChapterId() {
+      
+      chapterId = 0L;
+      onChanged();
+      return this;
+    }
 
     private java.lang.Object chapterName = "";
     /**
@@ -548,7 +744,7 @@ private static final long serialVersionUID = 0L;
      * 课程内容名称
      * </pre>
      *
-     * <code>string chapter_name = 1;</code>
+     * <code>string chapter_name = 2;</code>
      * @return The chapterName.
      */
     public java.lang.String getChapterName() {
@@ -568,7 +764,7 @@ private static final long serialVersionUID = 0L;
      * 课程内容名称
      * </pre>
      *
-     * <code>string chapter_name = 1;</code>
+     * <code>string chapter_name = 2;</code>
      * @return The bytes for chapterName.
      */
     public com.google.protobuf.ByteString
@@ -589,7 +785,7 @@ private static final long serialVersionUID = 0L;
      * 课程内容名称
      * </pre>
      *
-     * <code>string chapter_name = 1;</code>
+     * <code>string chapter_name = 2;</code>
      * @param value The chapterName to set.
      * @return This builder for chaining.
      */
@@ -608,7 +804,7 @@ private static final long serialVersionUID = 0L;
      * 课程内容名称
      * </pre>
      *
-     * <code>string chapter_name = 1;</code>
+     * <code>string chapter_name = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearChapterName() {
@@ -622,7 +818,7 @@ private static final long serialVersionUID = 0L;
      * 课程内容名称
      * </pre>
      *
-     * <code>string chapter_name = 1;</code>
+     * <code>string chapter_name = 2;</code>
      * @param value The bytes for chapterName to set.
      * @return This builder for chaining.
      */
@@ -644,7 +840,7 @@ private static final long serialVersionUID = 0L;
      * 课程内容编码
      * </pre>
      *
-     * <code>string chapter_code = 2;</code>
+     * <code>string chapter_code = 3;</code>
      * @return The chapterCode.
      */
     public java.lang.String getChapterCode() {
@@ -664,7 +860,7 @@ private static final long serialVersionUID = 0L;
      * 课程内容编码
      * </pre>
      *
-     * <code>string chapter_code = 2;</code>
+     * <code>string chapter_code = 3;</code>
      * @return The bytes for chapterCode.
      */
     public com.google.protobuf.ByteString
@@ -685,7 +881,7 @@ private static final long serialVersionUID = 0L;
      * 课程内容编码
      * </pre>
      *
-     * <code>string chapter_code = 2;</code>
+     * <code>string chapter_code = 3;</code>
      * @param value The chapterCode to set.
      * @return This builder for chaining.
      */
@@ -704,7 +900,7 @@ private static final long serialVersionUID = 0L;
      * 课程内容编码
      * </pre>
      *
-     * <code>string chapter_code = 2;</code>
+     * <code>string chapter_code = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearChapterCode() {
@@ -718,7 +914,7 @@ private static final long serialVersionUID = 0L;
      * 课程内容编码
      * </pre>
      *
-     * <code>string chapter_code = 2;</code>
+     * <code>string chapter_code = 3;</code>
      * @param value The bytes for chapterCode to set.
      * @return This builder for chaining.
      */
@@ -740,7 +936,7 @@ private static final long serialVersionUID = 0L;
      * 课程内容类型：1.理论知识；2.技能实践
      * </pre>
      *
-     * <code>int32 chapter_type = 3;</code>
+     * <code>int32 chapter_type = 4;</code>
      * @return The chapterType.
      */
     @java.lang.Override
@@ -752,7 +948,7 @@ private static final long serialVersionUID = 0L;
      * 课程内容类型：1.理论知识；2.技能实践
      * </pre>
      *
-     * <code>int32 chapter_type = 3;</code>
+     * <code>int32 chapter_type = 4;</code>
      * @param value The chapterType to set.
      * @return This builder for chaining.
      */
@@ -767,7 +963,7 @@ private static final long serialVersionUID = 0L;
      * 课程内容类型：1.理论知识；2.技能实践
      * </pre>
      *
-     * <code>int32 chapter_type = 3;</code>
+     * <code>int32 chapter_type = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearChapterType() {
@@ -775,6 +971,318 @@ private static final long serialVersionUID = 0L;
       chapterType = 0;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.zhijiejiaoyu.glory_api.course.CourseResource> chapterResources =
+      java.util.Collections.emptyList();
+    private void ensureChapterResourcesIsMutable() {
+      if (!((bitField0 & 0x00000001) != 0)) {
+        chapterResources = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.course.CourseResource>(chapterResources );
+        bitField0_ |= 0x00000001;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.course.CourseResource, com.zhijiejiaoyu.glory_api.course.CourseResource.Builder, com.zhijiejiaoyu.glory_api.course.CourseResourceOrBuilder> chapterResourcesBuilder ;
+
+    /**
+     * <pre>
+     * 课程资源
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseResource chapter_resources = 5;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseResource> getChapterResourcesList() {
+      if (chapterResourcesBuilder == null) {
+        return java.util.Collections.unmodifiableList(chapterResources );
+      } else {
+        return chapterResourcesBuilder .getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 课程资源
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseResource chapter_resources = 5;</code>
+     */
+    public int getChapterResourcesCount() {
+      if (chapterResourcesBuilder == null) {
+        return chapterResources .size();
+      } else {
+        return chapterResourcesBuilder .getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 课程资源
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseResource chapter_resources = 5;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseResource getChapterResources(int index) {
+      if (chapterResourcesBuilder == null) {
+        return chapterResources .get(index);
+      } else {
+        return chapterResourcesBuilder .getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 课程资源
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseResource chapter_resources = 5;</code>
+     */
+    public Builder setChapterResources(
+        int index, com.zhijiejiaoyu.glory_api.course.CourseResource value) {
+      if (chapterResourcesBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureChapterResourcesIsMutable();
+        chapterResources .set(index, value);
+        onChanged();
+      } else {
+        chapterResourcesBuilder .setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程资源
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseResource chapter_resources = 5;</code>
+     */
+    public Builder setChapterResources(
+        int index, com.zhijiejiaoyu.glory_api.course.CourseResource.Builder builderForValue) {
+      if (chapterResourcesBuilder == null) {
+        ensureChapterResourcesIsMutable();
+        chapterResources .set(index, builderForValue.build());
+        onChanged();
+      } else {
+        chapterResourcesBuilder .setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程资源
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseResource chapter_resources = 5;</code>
+     */
+    public Builder addChapterResources(com.zhijiejiaoyu.glory_api.course.CourseResource value) {
+      if (chapterResourcesBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureChapterResourcesIsMutable();
+        chapterResources .add(value);
+        onChanged();
+      } else {
+        chapterResourcesBuilder .addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程资源
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseResource chapter_resources = 5;</code>
+     */
+    public Builder addChapterResources(
+        int index, com.zhijiejiaoyu.glory_api.course.CourseResource value) {
+      if (chapterResourcesBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureChapterResourcesIsMutable();
+        chapterResources .add(index, value);
+        onChanged();
+      } else {
+        chapterResourcesBuilder .addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程资源
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseResource chapter_resources = 5;</code>
+     */
+    public Builder addChapterResources(
+        com.zhijiejiaoyu.glory_api.course.CourseResource.Builder builderForValue) {
+      if (chapterResourcesBuilder == null) {
+        ensureChapterResourcesIsMutable();
+        chapterResources .add(builderForValue.build());
+        onChanged();
+      } else {
+        chapterResourcesBuilder .addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程资源
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseResource chapter_resources = 5;</code>
+     */
+    public Builder addChapterResources(
+        int index, com.zhijiejiaoyu.glory_api.course.CourseResource.Builder builderForValue) {
+      if (chapterResourcesBuilder == null) {
+        ensureChapterResourcesIsMutable();
+        chapterResources .add(index, builderForValue.build());
+        onChanged();
+      } else {
+        chapterResourcesBuilder .addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程资源
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseResource chapter_resources = 5;</code>
+     */
+    public Builder addAllChapterResources(
+        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.course.CourseResource> values) {
+      if (chapterResourcesBuilder == null) {
+        ensureChapterResourcesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, chapterResources );
+        onChanged();
+      } else {
+        chapterResourcesBuilder .addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程资源
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseResource chapter_resources = 5;</code>
+     */
+    public Builder clearChapterResources() {
+      if (chapterResourcesBuilder == null) {
+        chapterResources = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000001);
+        onChanged();
+      } else {
+        chapterResourcesBuilder .clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程资源
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseResource chapter_resources = 5;</code>
+     */
+    public Builder removeChapterResources(int index) {
+      if (chapterResourcesBuilder == null) {
+        ensureChapterResourcesIsMutable();
+        chapterResources .remove(index);
+        onChanged();
+      } else {
+        chapterResourcesBuilder .remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程资源
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseResource chapter_resources = 5;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseResource.Builder getChapterResourcesBuilder(
+        int index) {
+      return getChapterResourcesFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 课程资源
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseResource chapter_resources = 5;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseResourceOrBuilder getChapterResourcesOrBuilder(
+        int index) {
+      if (chapterResourcesBuilder == null) {
+        return chapterResources .get(index);  } else {
+        return chapterResourcesBuilder .getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 课程资源
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseResource chapter_resources = 5;</code>
+     */
+    public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseResourceOrBuilder> 
+         getChapterResourcesOrBuilderList() {
+      if (chapterResourcesBuilder != null) {
+        return chapterResourcesBuilder .getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(chapterResources );
+      }
+    }
+    /**
+     * <pre>
+     * 课程资源
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseResource chapter_resources = 5;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseResource.Builder addChapterResourcesBuilder() {
+      return getChapterResourcesFieldBuilder().addBuilder(
+          com.zhijiejiaoyu.glory_api.course.CourseResource.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 课程资源
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseResource chapter_resources = 5;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseResource.Builder addChapterResourcesBuilder(
+        int index) {
+      return getChapterResourcesFieldBuilder().addBuilder(
+          index, com.zhijiejiaoyu.glory_api.course.CourseResource.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 课程资源
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseResource chapter_resources = 5;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseResource.Builder> 
+         getChapterResourcesBuilderList() {
+      return getChapterResourcesFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.course.CourseResource, com.zhijiejiaoyu.glory_api.course.CourseResource.Builder, com.zhijiejiaoyu.glory_api.course.CourseResourceOrBuilder> 
+        getChapterResourcesFieldBuilder() {
+      if (chapterResourcesBuilder == null) {
+        chapterResourcesBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.course.CourseResource, com.zhijiejiaoyu.glory_api.course.CourseResource.Builder, com.zhijiejiaoyu.glory_api.course.CourseResourceOrBuilder>(
+                chapterResources ,
+                ((bitField0 & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        chapterResources = null;
+      }
+      return chapterResourcesBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

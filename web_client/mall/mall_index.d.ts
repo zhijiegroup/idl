@@ -45,6 +45,7 @@ export interface LiveRoomIndexInfo {
   user_name?: string;
   shop_name?: string;
   shop_logo_url?: string;
+  shop_id?: string;
 }
 
 export interface MallIndexRequest {

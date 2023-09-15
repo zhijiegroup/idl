@@ -18,7 +18,7 @@ private static final long serialVersionUID = 0L;
   private CourseResource() {
     resourceName = "";
     resourcePath = "";
-    resourceType = "";
+    resourceUrl = "";
   }
 
   @java.lang.Override
@@ -71,7 +71,12 @@ private static final long serialVersionUID = 0L;
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            resourceType = s;
+            resourceUrl = s;
+            break;
+          }
+          case 40: {
+
+            resourceType = input.readInt32();
             break;
           }
           default: {
@@ -213,50 +218,65 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int RESOURCE_TYPE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object resourceType ;
+  public static final int RESOURCE_URL_FIELD_NUMBER = 4;
+  private volatile java.lang.Object resourceUrl ;
   /**
    * <pre>
-   * 课程资源类型：1.教学视频；2.教学PPT；3.课后习题；4.教案
+   * 课程资源URL
    * </pre>
    *
-   * <code>string resource_type = 4;</code>
-   * @return The resourceType.
+   * <code>string resource_url = 4;</code>
+   * @return The resourceUrl.
    */
   @java.lang.Override
-  public java.lang.String getResourceType() {
-    java.lang.Object ref = resourceType ;
+  public java.lang.String getResourceUrl() {
+    java.lang.Object ref = resourceUrl ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      resourceType = s;
+      resourceUrl = s;
       return s;
     }
   }
   /**
    * <pre>
-   * 课程资源类型：1.教学视频；2.教学PPT；3.课后习题；4.教案
+   * 课程资源URL
    * </pre>
    *
-   * <code>string resource_type = 4;</code>
-   * @return The bytes for resourceType.
+   * <code>string resource_url = 4;</code>
+   * @return The bytes for resourceUrl.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getResourceTypeBytes() {
-    java.lang.Object ref = resourceType ;
+      getResourceUrlBytes() {
+    java.lang.Object ref = resourceUrl ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      resourceType = b;
+      resourceUrl = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int RESOURCE_TYPE_FIELD_NUMBER = 5;
+  private int resourceType ;
+  /**
+   * <pre>
+   * 课程资源类型：1.教学视频；2.教学PPT；3.课后习题；4.教案
+   * </pre>
+   *
+   * <code>int32 resource_type = 5;</code>
+   * @return The resourceType.
+   */
+  @java.lang.Override
+  public int getResourceType() {
+    return resourceType ;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -282,8 +302,11 @@ private static final long serialVersionUID = 0L;
     if (!getResourcePathBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, resourcePath );
     }
-    if (!getResourceTypeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, resourceType );
+    if (!getResourceUrlBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, resourceUrl );
+    }
+    if (resourceType != 0) {
+      output.writeInt32(5, resourceType );
     }
     unknownFields.writeTo(output);
   }
@@ -304,8 +327,12 @@ private static final long serialVersionUID = 0L;
     if (!getResourcePathBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, resourcePath );
     }
-    if (!getResourceTypeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, resourceType );
+    if (!getResourceUrlBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, resourceUrl );
+    }
+    if (resourceType != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(5, resourceType );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -328,8 +355,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getResourceName())) return false;
     if (!getResourcePath()
         .equals(other.getResourcePath())) return false;
-    if (!getResourceType()
-        .equals(other.getResourceType())) return false;
+    if (!getResourceUrl()
+        .equals(other.getResourceUrl())) return false;
+    if (getResourceType()
+        != other.getResourceType()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -348,8 +377,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getResourceName().hashCode();
     hash = (37 * hash) + RESOURCE_PATH_FIELD_NUMBER;
     hash = (53 * hash) + getResourcePath().hashCode();
+    hash = (37 * hash) + RESOURCE_URL_FIELD_NUMBER;
+    hash = (53 * hash) + getResourceUrl().hashCode();
     hash = (37 * hash) + RESOURCE_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getResourceType().hashCode();
+    hash = (53 * hash) + getResourceType();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -489,7 +520,9 @@ private static final long serialVersionUID = 0L;
 
       resourcePath = "";
 
-      resourceType = "";
+      resourceUrl = "";
+
+      resourceType = 0;
 
       return this;
     }
@@ -520,6 +553,7 @@ private static final long serialVersionUID = 0L;
       result.resourceId = resourceId ;
       result.resourceName = resourceName ;
       result.resourcePath = resourcePath ;
+      result.resourceUrl = resourceUrl ;
       result.resourceType = resourceType ;
       onBuilt();
       return result;
@@ -580,9 +614,12 @@ private static final long serialVersionUID = 0L;
         resourcePath = other.resourcePath ;
         onChanged();
       }
-      if (!other.getResourceType().isEmpty()) {
-        resourceType = other.resourceType ;
+      if (!other.getResourceUrl().isEmpty()) {
+        resourceUrl = other.resourceUrl ;
         onChanged();
+      }
+      if (other.getResourceType() != 0) {
+        setResourceType(other.getResourceType());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -848,22 +885,22 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object resourceType = "";
+    private java.lang.Object resourceUrl = "";
     /**
      * <pre>
-     * 课程资源类型：1.教学视频；2.教学PPT；3.课后习题；4.教案
+     * 课程资源URL
      * </pre>
      *
-     * <code>string resource_type = 4;</code>
-     * @return The resourceType.
+     * <code>string resource_url = 4;</code>
+     * @return The resourceUrl.
      */
-    public java.lang.String getResourceType() {
-      java.lang.Object ref = resourceType ;
+    public java.lang.String getResourceUrl() {
+      java.lang.Object ref = resourceUrl ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        resourceType = s;
+        resourceUrl = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -871,20 +908,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 课程资源类型：1.教学视频；2.教学PPT；3.课后习题；4.教案
+     * 课程资源URL
      * </pre>
      *
-     * <code>string resource_type = 4;</code>
-     * @return The bytes for resourceType.
+     * <code>string resource_url = 4;</code>
+     * @return The bytes for resourceUrl.
      */
     public com.google.protobuf.ByteString
-        getResourceTypeBytes() {
-      java.lang.Object ref = resourceType ;
+        getResourceUrlBytes() {
+      java.lang.Object ref = resourceUrl ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        resourceType = b;
+        resourceUrl = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -892,54 +929,97 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 课程资源类型：1.教学视频；2.教学PPT；3.课后习题；4.教案
+     * 课程资源URL
      * </pre>
      *
-     * <code>string resource_type = 4;</code>
-     * @param value The resourceType to set.
+     * <code>string resource_url = 4;</code>
+     * @param value The resourceUrl to set.
      * @return This builder for chaining.
      */
-    public Builder setResourceType(
+    public Builder setResourceUrl(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      resourceType = value;
+      resourceUrl = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * 课程资源类型：1.教学视频；2.教学PPT；3.课后习题；4.教案
+     * 课程资源URL
      * </pre>
      *
-     * <code>string resource_type = 4;</code>
+     * <code>string resource_url = 4;</code>
      * @return This builder for chaining.
      */
-    public Builder clearResourceType() {
+    public Builder clearResourceUrl() {
       
-      resourceType = getDefaultInstance().getResourceType();
+      resourceUrl = getDefaultInstance().getResourceUrl();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * 课程资源类型：1.教学视频；2.教学PPT；3.课后习题；4.教案
+     * 课程资源URL
      * </pre>
      *
-     * <code>string resource_type = 4;</code>
-     * @param value The bytes for resourceType to set.
+     * <code>string resource_url = 4;</code>
+     * @param value The bytes for resourceUrl to set.
      * @return This builder for chaining.
      */
-    public Builder setResourceTypeBytes(
+    public Builder setResourceUrlBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
+      resourceUrl = value;
+      onChanged();
+      return this;
+    }
+
+    private int resourceType ;
+    /**
+     * <pre>
+     * 课程资源类型：1.教学视频；2.教学PPT；3.课后习题；4.教案
+     * </pre>
+     *
+     * <code>int32 resource_type = 5;</code>
+     * @return The resourceType.
+     */
+    @java.lang.Override
+    public int getResourceType() {
+      return resourceType ;
+    }
+    /**
+     * <pre>
+     * 课程资源类型：1.教学视频；2.教学PPT；3.课后习题；4.教案
+     * </pre>
+     *
+     * <code>int32 resource_type = 5;</code>
+     * @param value The resourceType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResourceType(int value) {
+      
       resourceType = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程资源类型：1.教学视频；2.教学PPT；3.课后习题；4.教案
+     * </pre>
+     *
+     * <code>int32 resource_type = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearResourceType() {
+      
+      resourceType = 0;
       onChanged();
       return this;
     }

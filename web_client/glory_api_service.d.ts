@@ -132,6 +132,10 @@ export class glory_api {
 
   UpdateUser(request: user.UpdateUserRequest): Promise<user.UpdateUserResponse>;
 
+  UpdatePhone(
+    request: user.UpdatePhoneRequest
+  ): Promise<user.UpdatePhoneResponse>;
+
   /** 关注用户 */
   FollowUser(request: user.FollowUserRequest): Promise<user.FollowUserResponse>;
 
@@ -1075,6 +1079,11 @@ CreateLivePlanProduct create live plan product */
   CreateCourseModule(
     request: modules.CreateCourseModuleRequest
   ): Promise<modules.CreateCourseModuleResponse>;
+
+  /** 获取能力指标 */
+  GetCourseModule(
+    request: modules.GetCourseModuleRequest
+  ): Promise<modules.GetCourseModuleResponse>;
 
   /** 更新能力指标 */
   UpdateCourseModule(

@@ -8,19 +8,19 @@ public interface ListCourseModuleRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.base.PaginationRequest base_request = 1;</code>
+   * <code>.base.BaseRequest base_request = 1;</code>
    * @return Whether the baseRequest field is set.
    */
   boolean hasBaseRequest();
   /**
-   * <code>.base.PaginationRequest base_request = 1;</code>
+   * <code>.base.BaseRequest base_request = 1;</code>
    * @return The baseRequest.
    */
-  com.zhijiejiaoyu.base.PaginationRequest getBaseRequest();
+  com.zhijiejiaoyu.base.BaseRequest getBaseRequest();
   /**
-   * <code>.base.PaginationRequest base_request = 1;</code>
+   * <code>.base.BaseRequest base_request = 1;</code>
    */
-  com.zhijiejiaoyu.base.PaginationRequestOrBuilder getBaseRequestOrBuilder();
+  com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder();
 
   /**
    * <pre>

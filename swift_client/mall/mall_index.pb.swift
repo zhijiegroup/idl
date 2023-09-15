@@ -70,43 +70,98 @@ struct GloryApi_LiveRoomIndexInfo {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var roomID: Int64 = 0
+  var roomID: Int64 {
+    get {return _storage._roomID}
+    set {_uniqueStorage()._roomID = newValue}
+  }
 
-  var userID: Int64 = 0
+  var userID: Int64 {
+    get {return _storage._userID}
+    set {_uniqueStorage()._userID = newValue}
+  }
 
-  var groupID: String = String()
+  var groupID: String {
+    get {return _storage._groupID}
+    set {_uniqueStorage()._groupID = newValue}
+  }
 
-  var appName: String = String()
+  var appName: String {
+    get {return _storage._appName}
+    set {_uniqueStorage()._appName = newValue}
+  }
 
-  var streamName: String = String()
+  var streamName: String {
+    get {return _storage._streamName}
+    set {_uniqueStorage()._streamName = newValue}
+  }
 
-  var upURL: String = String()
+  var upURL: String {
+    get {return _storage._upURL}
+    set {_uniqueStorage()._upURL = newValue}
+  }
 
-  var playURL: String = String()
+  var playURL: String {
+    get {return _storage._playURL}
+    set {_uniqueStorage()._playURL = newValue}
+  }
 
-  var startTime: String = String()
+  var startTime: String {
+    get {return _storage._startTime}
+    set {_uniqueStorage()._startTime = newValue}
+  }
 
-  var likeCount: Int64 = 0
+  var likeCount: Int64 {
+    get {return _storage._likeCount}
+    set {_uniqueStorage()._likeCount = newValue}
+  }
 
-  var endTime: String = String()
+  var endTime: String {
+    get {return _storage._endTime}
+    set {_uniqueStorage()._endTime = newValue}
+  }
 
-  var status: String = String()
+  var status: String {
+    get {return _storage._status}
+    set {_uniqueStorage()._status = newValue}
+  }
 
   ///直播的封面的url
-  var roomImageURL: String = String()
+  var roomImageURL: String {
+    get {return _storage._roomImageURL}
+    set {_uniqueStorage()._roomImageURL = newValue}
+  }
 
   ///直播的标题
-  var roomTitle: String = String()
+  var roomTitle: String {
+    get {return _storage._roomTitle}
+    set {_uniqueStorage()._roomTitle = newValue}
+  }
 
-  var userName: String = String()
+  var userName: String {
+    get {return _storage._userName}
+    set {_uniqueStorage()._userName = newValue}
+  }
 
-  var shopName: String = String()
+  var shopName: String {
+    get {return _storage._shopName}
+    set {_uniqueStorage()._shopName = newValue}
+  }
 
-  var shopLogoURL: String = String()
+  var shopLogoURL: String {
+    get {return _storage._shopLogoURL}
+    set {_uniqueStorage()._shopLogoURL = newValue}
+  }
+
+  var shopID: Int64 {
+    get {return _storage._shopID}
+    set {_uniqueStorage()._shopID = newValue}
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
+
+  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 struct GloryApi_MallIndexRequest {
@@ -324,104 +379,174 @@ extension GloryApi_LiveRoomIndexInfo: SwiftProtobuf.Message, SwiftProtobuf._Mess
     14: .standard(proto: "user_name"),
     15: .standard(proto: "shop_name"),
     16: .standard(proto: "shop_logo_url"),
+    17: .standard(proto: "shop_id"),
   ]
 
+  fileprivate class _StorageClass {
+    var _roomID: Int64 = 0
+    var _userID: Int64 = 0
+    var _groupID: String = String()
+    var _appName: String = String()
+    var _streamName: String = String()
+    var _upURL: String = String()
+    var _playURL: String = String()
+    var _startTime: String = String()
+    var _likeCount: Int64 = 0
+    var _endTime: String = String()
+    var _status: String = String()
+    var _roomImageURL: String = String()
+    var _roomTitle: String = String()
+    var _userName: String = String()
+    var _shopName: String = String()
+    var _shopLogoURL: String = String()
+    var _shopID: Int64 = 0
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _roomID = source._roomID
+      _userID = source._userID
+      _groupID = source._groupID
+      _appName = source._appName
+      _streamName = source._streamName
+      _upURL = source._upURL
+      _playURL = source._playURL
+      _startTime = source._startTime
+      _likeCount = source._likeCount
+      _endTime = source._endTime
+      _status = source._status
+      _roomImageURL = source._roomImageURL
+      _roomTitle = source._roomTitle
+      _userName = source._userName
+      _shopName = source._shopName
+      _shopLogoURL = source._shopLogoURL
+      _shopID = source._shopID
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularInt64Field(value: &self.roomID) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.userID) }()
-      case 3: try { try decoder.decodeSingularStringField(value: &self.groupID) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.appName) }()
-      case 5: try { try decoder.decodeSingularStringField(value: &self.streamName) }()
-      case 6: try { try decoder.decodeSingularStringField(value: &self.upURL) }()
-      case 7: try { try decoder.decodeSingularStringField(value: &self.playURL) }()
-      case 8: try { try decoder.decodeSingularStringField(value: &self.startTime) }()
-      case 9: try { try decoder.decodeSingularInt64Field(value: &self.likeCount) }()
-      case 10: try { try decoder.decodeSingularStringField(value: &self.endTime) }()
-      case 11: try { try decoder.decodeSingularStringField(value: &self.status) }()
-      case 12: try { try decoder.decodeSingularStringField(value: &self.roomImageURL) }()
-      case 13: try { try decoder.decodeSingularStringField(value: &self.roomTitle) }()
-      case 14: try { try decoder.decodeSingularStringField(value: &self.userName) }()
-      case 15: try { try decoder.decodeSingularStringField(value: &self.shopName) }()
-      case 16: try { try decoder.decodeSingularStringField(value: &self.shopLogoURL) }()
-      default: break
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        // The use of inline closures is to circumvent an issue where the compiler
+        // allocates stack space for every case branch when no optimizations are
+        // enabled. https://github.com/apple/swift-protobuf/issues/1034
+        switch fieldNumber {
+        case 1: try { try decoder.decodeSingularInt64Field(value: &_storage._roomID) }()
+        case 2: try { try decoder.decodeSingularInt64Field(value: &_storage._userID) }()
+        case 3: try { try decoder.decodeSingularStringField(value: &_storage._groupID) }()
+        case 4: try { try decoder.decodeSingularStringField(value: &_storage._appName) }()
+        case 5: try { try decoder.decodeSingularStringField(value: &_storage._streamName) }()
+        case 6: try { try decoder.decodeSingularStringField(value: &_storage._upURL) }()
+        case 7: try { try decoder.decodeSingularStringField(value: &_storage._playURL) }()
+        case 8: try { try decoder.decodeSingularStringField(value: &_storage._startTime) }()
+        case 9: try { try decoder.decodeSingularInt64Field(value: &_storage._likeCount) }()
+        case 10: try { try decoder.decodeSingularStringField(value: &_storage._endTime) }()
+        case 11: try { try decoder.decodeSingularStringField(value: &_storage._status) }()
+        case 12: try { try decoder.decodeSingularStringField(value: &_storage._roomImageURL) }()
+        case 13: try { try decoder.decodeSingularStringField(value: &_storage._roomTitle) }()
+        case 14: try { try decoder.decodeSingularStringField(value: &_storage._userName) }()
+        case 15: try { try decoder.decodeSingularStringField(value: &_storage._shopName) }()
+        case 16: try { try decoder.decodeSingularStringField(value: &_storage._shopLogoURL) }()
+        case 17: try { try decoder.decodeSingularInt64Field(value: &_storage._shopID) }()
+        default: break
+        }
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.roomID != 0 {
-      try visitor.visitSingularInt64Field(value: self.roomID, fieldNumber: 1)
-    }
-    if self.userID != 0 {
-      try visitor.visitSingularInt64Field(value: self.userID, fieldNumber: 2)
-    }
-    if !self.groupID.isEmpty {
-      try visitor.visitSingularStringField(value: self.groupID, fieldNumber: 3)
-    }
-    if !self.appName.isEmpty {
-      try visitor.visitSingularStringField(value: self.appName, fieldNumber: 4)
-    }
-    if !self.streamName.isEmpty {
-      try visitor.visitSingularStringField(value: self.streamName, fieldNumber: 5)
-    }
-    if !self.upURL.isEmpty {
-      try visitor.visitSingularStringField(value: self.upURL, fieldNumber: 6)
-    }
-    if !self.playURL.isEmpty {
-      try visitor.visitSingularStringField(value: self.playURL, fieldNumber: 7)
-    }
-    if !self.startTime.isEmpty {
-      try visitor.visitSingularStringField(value: self.startTime, fieldNumber: 8)
-    }
-    if self.likeCount != 0 {
-      try visitor.visitSingularInt64Field(value: self.likeCount, fieldNumber: 9)
-    }
-    if !self.endTime.isEmpty {
-      try visitor.visitSingularStringField(value: self.endTime, fieldNumber: 10)
-    }
-    if !self.status.isEmpty {
-      try visitor.visitSingularStringField(value: self.status, fieldNumber: 11)
-    }
-    if !self.roomImageURL.isEmpty {
-      try visitor.visitSingularStringField(value: self.roomImageURL, fieldNumber: 12)
-    }
-    if !self.roomTitle.isEmpty {
-      try visitor.visitSingularStringField(value: self.roomTitle, fieldNumber: 13)
-    }
-    if !self.userName.isEmpty {
-      try visitor.visitSingularStringField(value: self.userName, fieldNumber: 14)
-    }
-    if !self.shopName.isEmpty {
-      try visitor.visitSingularStringField(value: self.shopName, fieldNumber: 15)
-    }
-    if !self.shopLogoURL.isEmpty {
-      try visitor.visitSingularStringField(value: self.shopLogoURL, fieldNumber: 16)
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if _storage._roomID != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._roomID, fieldNumber: 1)
+      }
+      if _storage._userID != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._userID, fieldNumber: 2)
+      }
+      if !_storage._groupID.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._groupID, fieldNumber: 3)
+      }
+      if !_storage._appName.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._appName, fieldNumber: 4)
+      }
+      if !_storage._streamName.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._streamName, fieldNumber: 5)
+      }
+      if !_storage._upURL.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._upURL, fieldNumber: 6)
+      }
+      if !_storage._playURL.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._playURL, fieldNumber: 7)
+      }
+      if !_storage._startTime.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._startTime, fieldNumber: 8)
+      }
+      if _storage._likeCount != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._likeCount, fieldNumber: 9)
+      }
+      if !_storage._endTime.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._endTime, fieldNumber: 10)
+      }
+      if !_storage._status.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._status, fieldNumber: 11)
+      }
+      if !_storage._roomImageURL.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._roomImageURL, fieldNumber: 12)
+      }
+      if !_storage._roomTitle.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._roomTitle, fieldNumber: 13)
+      }
+      if !_storage._userName.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._userName, fieldNumber: 14)
+      }
+      if !_storage._shopName.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._shopName, fieldNumber: 15)
+      }
+      if !_storage._shopLogoURL.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._shopLogoURL, fieldNumber: 16)
+      }
+      if _storage._shopID != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._shopID, fieldNumber: 17)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_LiveRoomIndexInfo, rhs: GloryApi_LiveRoomIndexInfo) -> Bool {
-    if lhs.roomID != rhs.roomID {return false}
-    if lhs.userID != rhs.userID {return false}
-    if lhs.groupID != rhs.groupID {return false}
-    if lhs.appName != rhs.appName {return false}
-    if lhs.streamName != rhs.streamName {return false}
-    if lhs.upURL != rhs.upURL {return false}
-    if lhs.playURL != rhs.playURL {return false}
-    if lhs.startTime != rhs.startTime {return false}
-    if lhs.likeCount != rhs.likeCount {return false}
-    if lhs.endTime != rhs.endTime {return false}
-    if lhs.status != rhs.status {return false}
-    if lhs.roomImageURL != rhs.roomImageURL {return false}
-    if lhs.roomTitle != rhs.roomTitle {return false}
-    if lhs.userName != rhs.userName {return false}
-    if lhs.shopName != rhs.shopName {return false}
-    if lhs.shopLogoURL != rhs.shopLogoURL {return false}
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._roomID != rhs_storage._roomID {return false}
+        if _storage._userID != rhs_storage._userID {return false}
+        if _storage._groupID != rhs_storage._groupID {return false}
+        if _storage._appName != rhs_storage._appName {return false}
+        if _storage._streamName != rhs_storage._streamName {return false}
+        if _storage._upURL != rhs_storage._upURL {return false}
+        if _storage._playURL != rhs_storage._playURL {return false}
+        if _storage._startTime != rhs_storage._startTime {return false}
+        if _storage._likeCount != rhs_storage._likeCount {return false}
+        if _storage._endTime != rhs_storage._endTime {return false}
+        if _storage._status != rhs_storage._status {return false}
+        if _storage._roomImageURL != rhs_storage._roomImageURL {return false}
+        if _storage._roomTitle != rhs_storage._roomTitle {return false}
+        if _storage._userName != rhs_storage._userName {return false}
+        if _storage._shopName != rhs_storage._shopName {return false}
+        if _storage._shopLogoURL != rhs_storage._shopLogoURL {return false}
+        if _storage._shopID != rhs_storage._shopID {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
