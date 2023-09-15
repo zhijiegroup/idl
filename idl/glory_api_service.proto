@@ -78,6 +78,9 @@ service glory_api {
   rpc GetVerifyCode(GetVerifyCodeRequest) returns (GetVerifyCodeResponse) {
     option (api.post) = '/api/user/get_verify_code';
   }
+  rpc CheckVerifyCode(CheckVerifyCodeRequest) returns (CheckVerifyCodeResponse) {
+    option (api.post) = '/api/user/check_verify_code';
+  }
 
   rpc GetUser(GetUserRequest) returns (GetUserResponse) {
     option (api.get) = '/api/user/get_user';  // get user data with token and phone
