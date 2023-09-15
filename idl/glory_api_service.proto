@@ -71,7 +71,7 @@ service glory_api {
     option (api.post) = '/api/user/login';
   }
   rpc Logout(LogoutRequest) returns (LogoutResponse) {
-    option (api.post) = '/api/user/logout';
+    option (api.get) = '/api/user/logout';
   }
 
   rpc GetVerifyCode(GetVerifyCodeRequest) returns (GetVerifyCodeResponse) {
@@ -709,6 +709,12 @@ service glory_api {
   }
   rpc GetTenantOrg(GetTenantOrgRequest) returns (GetTenantOrgResponse) {
     option (api.post) = '/api/tenant/tenant_org';
+  }
+  rpc EnterTenant(EnterTenantRequest) returns (EnterTenantResponse) {
+    option (api.post) = '/api/tenant/enter_tenant';
+  }
+  rpc ExitTenant(ExitTenantRequest) returns (ExitTenantResponse) {
+    option (api.get) = '/api/tenant/exit_tenant';
   }
 
   //tenant_dept

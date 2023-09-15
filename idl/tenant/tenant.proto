@@ -101,3 +101,20 @@ message GetTenantOrgResponse {
   TenantOrg tenant_org = 2;
   int64 dept_id = 3;
 }
+
+message EnterTenantRequest {
+  base.BaseRequest base_request = 1;
+  int64 tenant_id = 2;
+}
+
+message EnterTenantResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+message ExitTenantRequest {
+  base.BaseRequest base_request = 1;
+}
+
+message ExitTenantResponse {
+  base.BaseResponse base_resp = 1;
+}
