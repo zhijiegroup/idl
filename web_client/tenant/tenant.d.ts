@@ -105,3 +105,20 @@ export interface GetTenantOrgResponse {
   tenant_org?: TenantOrg;
   dept_id?: string;
 }
+
+export interface EnterTenantRequest {
+  base_request?: base.BaseRequest;
+  tenant_id?: string;
+}
+
+export interface EnterTenantResponse {
+  base_resp?: base.BaseResponse;
+}
+
+export interface ExitTenantRequest {
+  base_request?: base.BaseRequest;
+}
+
+export interface ExitTenantResponse {
+  base_resp?: base.BaseResponse;
+}

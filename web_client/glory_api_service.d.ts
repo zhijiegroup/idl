@@ -811,6 +811,14 @@ CreateLivePlanProduct create live plan product */
     request: tenant.GetTenantOrgRequest
   ): Promise<tenant.GetTenantOrgResponse>;
 
+  EnterTenant(
+    request: tenant.EnterTenantRequest
+  ): Promise<tenant.EnterTenantResponse>;
+
+  ExitTenant(
+    request: tenant.ExitTenantRequest
+  ): Promise<tenant.ExitTenantResponse>;
+
   /** tenant_dept */
   CreateTenantDept(
     request: tenant_dept.CreateTenantDeptRequest

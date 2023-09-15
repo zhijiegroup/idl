@@ -5750,6 +5750,68 @@ public final class glory_apiGrpc {
     return getGetTenantOrgMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.EnterTenantRequest,
+      com.zhijiejiaoyu.glory_api.tenant.EnterTenantResponse> getEnterTenantMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "EnterTenant",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.EnterTenantRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.EnterTenantResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.EnterTenantRequest,
+      com.zhijiejiaoyu.glory_api.tenant.EnterTenantResponse> getEnterTenantMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.EnterTenantRequest, com.zhijiejiaoyu.glory_api.tenant.EnterTenantResponse> getEnterTenantMethod;
+    if ((getEnterTenantMethod = glory_apiGrpc.getEnterTenantMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getEnterTenantMethod = glory_apiGrpc.getEnterTenantMethod) == null) {
+          glory_apiGrpc.getEnterTenantMethod = getEnterTenantMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.EnterTenantRequest, com.zhijiejiaoyu.glory_api.tenant.EnterTenantResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "EnterTenant"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.EnterTenantRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.EnterTenantResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("EnterTenant"))
+              .build();
+        }
+      }
+    }
+    return getEnterTenantMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.ExitTenantRequest,
+      com.zhijiejiaoyu.glory_api.tenant.ExitTenantResponse> getExitTenantMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ExitTenant",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.ExitTenantRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.ExitTenantResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.ExitTenantRequest,
+      com.zhijiejiaoyu.glory_api.tenant.ExitTenantResponse> getExitTenantMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.ExitTenantRequest, com.zhijiejiaoyu.glory_api.tenant.ExitTenantResponse> getExitTenantMethod;
+    if ((getExitTenantMethod = glory_apiGrpc.getExitTenantMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getExitTenantMethod = glory_apiGrpc.getExitTenantMethod) == null) {
+          glory_apiGrpc.getExitTenantMethod = getExitTenantMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.ExitTenantRequest, com.zhijiejiaoyu.glory_api.tenant.ExitTenantResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ExitTenant"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.ExitTenantRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.ExitTenantResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ExitTenant"))
+              .build();
+        }
+      }
+    }
+    return getExitTenantMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreateTenantDeptRequest,
       com.zhijiejiaoyu.glory_api.tenant.CreateTenantDeptResponse> getCreateTenantDeptMethod;
 
@@ -9034,6 +9096,20 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    default void enterTenant(com.zhijiejiaoyu.glory_api.tenant.EnterTenantRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.EnterTenantResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getEnterTenantMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void exitTenant(com.zhijiejiaoyu.glory_api.tenant.ExitTenantRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.ExitTenantResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getExitTenantMethod(), responseObserver);
+    }
+
+    /**
      * <pre>
      *tenant_dept
      * </pre>
@@ -11170,6 +11246,22 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public void enterTenant(com.zhijiejiaoyu.glory_api.tenant.EnterTenantRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.EnterTenantResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getEnterTenantMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void exitTenant(com.zhijiejiaoyu.glory_api.tenant.ExitTenantRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.ExitTenantResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getExitTenantMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
      * <pre>
      *tenant_dept
      * </pre>
@@ -13166,6 +13258,20 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgResponse getTenantOrg(com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetTenantOrgMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.EnterTenantResponse enterTenant(com.zhijiejiaoyu.glory_api.tenant.EnterTenantRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getEnterTenantMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.ExitTenantResponse exitTenant(com.zhijiejiaoyu.glory_api.tenant.ExitTenantRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExitTenantMethod(), getCallOptions(), request);
     }
 
     /**
@@ -15294,6 +15400,22 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.EnterTenantResponse> enterTenant(
+        com.zhijiejiaoyu.glory_api.tenant.EnterTenantRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getEnterTenantMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.ExitTenantResponse> exitTenant(
+        com.zhijiejiaoyu.glory_api.tenant.ExitTenantRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getExitTenantMethod(), getCallOptions()), request);
+    }
+
+    /**
      * <pre>
      *tenant_dept
      * </pre>
@@ -16055,65 +16177,67 @@ public final class glory_apiGrpc {
   private static final int METHODID_DELETE_TENANT = 182;
   private static final int METHODID_LIST_TENANT = 183;
   private static final int METHODID_GET_TENANT_ORG = 184;
-  private static final int METHODID_CREATE_TENANT_DEPT = 185;
-  private static final int METHODID_UPDATE_TENANT_DEPT = 186;
-  private static final int METHODID_DELETE_TENANT_DEPT = 187;
-  private static final int METHODID_GET_TENANT_DEPT = 188;
-  private static final int METHODID_GET_TENANT_DEPT_TYPE = 189;
-  private static final int METHODID_CREATE_TENANT_USER = 190;
-  private static final int METHODID_DELETE_TENANT_USER = 191;
-  private static final int METHODID_UPDATE_TENANT_USER = 192;
-  private static final int METHODID_GET_TENANT_USER = 193;
-  private static final int METHODID_LIST_TENANT_USER = 194;
-  private static final int METHODID_LIST_TENANT_STUDENT = 195;
-  private static final int METHODID_UPDATE_TENANT_USER_PASSWORD = 196;
-  private static final int METHODID_UPDATE_TENANT_CONFIG = 197;
-  private static final int METHODID_LIST_TENANT_CONFIG = 198;
-  private static final int METHODID_CREATE_SHORT_VIDEO = 199;
-  private static final int METHODID_STAGE_SHORT_VIDEO = 200;
-  private static final int METHODID_LIST_MY_SHORT_VIDEO = 201;
-  private static final int METHODID_LIST_MY_STAGE_VIDEO = 202;
-  private static final int METHODID_LIST_MY_LIKE_VIDEO = 203;
-  private static final int METHODID_LIST_MY_FAVORITE_VIDEO = 204;
-  private static final int METHODID_GET_SHORT_VIDEO = 205;
-  private static final int METHODID_UPDATE_SHORT_VIDEO = 206;
-  private static final int METHODID_DELETE_SHORT_VIDEO = 207;
-  private static final int METHODID_GET_STAGE_VIDEO = 208;
-  private static final int METHODID_DELETE_STAGE_VIDEO = 209;
-  private static final int METHODID_UPDATE_STAGE_VIDEO = 210;
-  private static final int METHODID_MANAGEMENT_LIST_SHORT_VIDEO = 211;
-  private static final int METHODID_MANAGEMENT_CENSOR_SHORT_VIDEO = 212;
-  private static final int METHODID_MANAGEMENT_DELETE_SHORT_VIDEO = 213;
-  private static final int METHODID_LIST_SHORT_VIDEO = 214;
-  private static final int METHODID_LIKE_SHORT_VIDEO = 215;
-  private static final int METHODID_FAVORITE_SHORT_VIDEO = 216;
-  private static final int METHODID_CREATE_SHORT_VIDEO_COMMENT = 217;
-  private static final int METHODID_DELETE_SHORT_VIDEO_COMMENT = 218;
-  private static final int METHODID_LIST_SHORT_VIDEO_COMMENT = 219;
-  private static final int METHODID_CREATE_COUPON = 220;
-  private static final int METHODID_LIST_COUPON = 221;
-  private static final int METHODID_COUPON_DETAIL = 222;
-  private static final int METHODID_UPDATE_COUPON = 223;
-  private static final int METHODID_DELETE_COUPON = 224;
-  private static final int METHODID_ABOLISH_COUPON = 225;
-  private static final int METHODID_UPDATE_COUPON_DISTRIBUTION_STATUS = 226;
-  private static final int METHODID_CLAIM_COUPON = 227;
-  private static final int METHODID_CREATE_ACTIVITY = 228;
-  private static final int METHODID_LIST_ACTIVITY = 229;
-  private static final int METHODID_ACTIVITY_DETAIL = 230;
-  private static final int METHODID_UPDATE_ACTIVITY = 231;
-  private static final int METHODID_DELETE_ACTIVITY = 232;
-  private static final int METHODID_DISABLE_ACTIVITY = 233;
-  private static final int METHODID_CREATE_COURSE_MATERIAL_BOX = 234;
-  private static final int METHODID_LIST_COURSE_MATERIAL_BOX = 235;
-  private static final int METHODID_DELETE_COURSE_MATERIAL_BOX = 236;
-  private static final int METHODID_UPLOAD_COURSE_MATERIAL = 237;
-  private static final int METHODID_LIST_COURSE_MATERIAL = 238;
-  private static final int METHODID_DELETE_COURSE_MATERIAL = 239;
-  private static final int METHODID_CREATE_COURSE_MODULE = 240;
-  private static final int METHODID_UPDATE_COURSE_MODULE = 241;
-  private static final int METHODID_DELETE_COURSE_MODULE = 242;
-  private static final int METHODID_LIST_COURSE_MODULE = 243;
+  private static final int METHODID_ENTER_TENANT = 185;
+  private static final int METHODID_EXIT_TENANT = 186;
+  private static final int METHODID_CREATE_TENANT_DEPT = 187;
+  private static final int METHODID_UPDATE_TENANT_DEPT = 188;
+  private static final int METHODID_DELETE_TENANT_DEPT = 189;
+  private static final int METHODID_GET_TENANT_DEPT = 190;
+  private static final int METHODID_GET_TENANT_DEPT_TYPE = 191;
+  private static final int METHODID_CREATE_TENANT_USER = 192;
+  private static final int METHODID_DELETE_TENANT_USER = 193;
+  private static final int METHODID_UPDATE_TENANT_USER = 194;
+  private static final int METHODID_GET_TENANT_USER = 195;
+  private static final int METHODID_LIST_TENANT_USER = 196;
+  private static final int METHODID_LIST_TENANT_STUDENT = 197;
+  private static final int METHODID_UPDATE_TENANT_USER_PASSWORD = 198;
+  private static final int METHODID_UPDATE_TENANT_CONFIG = 199;
+  private static final int METHODID_LIST_TENANT_CONFIG = 200;
+  private static final int METHODID_CREATE_SHORT_VIDEO = 201;
+  private static final int METHODID_STAGE_SHORT_VIDEO = 202;
+  private static final int METHODID_LIST_MY_SHORT_VIDEO = 203;
+  private static final int METHODID_LIST_MY_STAGE_VIDEO = 204;
+  private static final int METHODID_LIST_MY_LIKE_VIDEO = 205;
+  private static final int METHODID_LIST_MY_FAVORITE_VIDEO = 206;
+  private static final int METHODID_GET_SHORT_VIDEO = 207;
+  private static final int METHODID_UPDATE_SHORT_VIDEO = 208;
+  private static final int METHODID_DELETE_SHORT_VIDEO = 209;
+  private static final int METHODID_GET_STAGE_VIDEO = 210;
+  private static final int METHODID_DELETE_STAGE_VIDEO = 211;
+  private static final int METHODID_UPDATE_STAGE_VIDEO = 212;
+  private static final int METHODID_MANAGEMENT_LIST_SHORT_VIDEO = 213;
+  private static final int METHODID_MANAGEMENT_CENSOR_SHORT_VIDEO = 214;
+  private static final int METHODID_MANAGEMENT_DELETE_SHORT_VIDEO = 215;
+  private static final int METHODID_LIST_SHORT_VIDEO = 216;
+  private static final int METHODID_LIKE_SHORT_VIDEO = 217;
+  private static final int METHODID_FAVORITE_SHORT_VIDEO = 218;
+  private static final int METHODID_CREATE_SHORT_VIDEO_COMMENT = 219;
+  private static final int METHODID_DELETE_SHORT_VIDEO_COMMENT = 220;
+  private static final int METHODID_LIST_SHORT_VIDEO_COMMENT = 221;
+  private static final int METHODID_CREATE_COUPON = 222;
+  private static final int METHODID_LIST_COUPON = 223;
+  private static final int METHODID_COUPON_DETAIL = 224;
+  private static final int METHODID_UPDATE_COUPON = 225;
+  private static final int METHODID_DELETE_COUPON = 226;
+  private static final int METHODID_ABOLISH_COUPON = 227;
+  private static final int METHODID_UPDATE_COUPON_DISTRIBUTION_STATUS = 228;
+  private static final int METHODID_CLAIM_COUPON = 229;
+  private static final int METHODID_CREATE_ACTIVITY = 230;
+  private static final int METHODID_LIST_ACTIVITY = 231;
+  private static final int METHODID_ACTIVITY_DETAIL = 232;
+  private static final int METHODID_UPDATE_ACTIVITY = 233;
+  private static final int METHODID_DELETE_ACTIVITY = 234;
+  private static final int METHODID_DISABLE_ACTIVITY = 235;
+  private static final int METHODID_CREATE_COURSE_MATERIAL_BOX = 236;
+  private static final int METHODID_LIST_COURSE_MATERIAL_BOX = 237;
+  private static final int METHODID_DELETE_COURSE_MATERIAL_BOX = 238;
+  private static final int METHODID_UPLOAD_COURSE_MATERIAL = 239;
+  private static final int METHODID_LIST_COURSE_MATERIAL = 240;
+  private static final int METHODID_DELETE_COURSE_MATERIAL = 241;
+  private static final int METHODID_CREATE_COURSE_MODULE = 242;
+  private static final int METHODID_UPDATE_COURSE_MODULE = 243;
+  private static final int METHODID_DELETE_COURSE_MODULE = 244;
+  private static final int METHODID_LIST_COURSE_MODULE = 245;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -16871,6 +16995,14 @@ public final class glory_apiGrpc {
         case METHODID_GET_TENANT_ORG:
           serviceImpl.getTenantOrg((com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgResponse>) responseObserver);
+          break;
+        case METHODID_ENTER_TENANT:
+          serviceImpl.enterTenant((com.zhijiejiaoyu.glory_api.tenant.EnterTenantRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.EnterTenantResponse>) responseObserver);
+          break;
+        case METHODID_EXIT_TENANT:
+          serviceImpl.exitTenant((com.zhijiejiaoyu.glory_api.tenant.ExitTenantRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.ExitTenantResponse>) responseObserver);
           break;
         case METHODID_CREATE_TENANT_DEPT:
           serviceImpl.createTenantDept((com.zhijiejiaoyu.glory_api.tenant.CreateTenantDeptRequest) request,
@@ -18422,6 +18554,20 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.tenant.GetTenantOrgResponse>(
                 service, METHODID_GET_TENANT_ORG)))
         .addMethod(
+          getEnterTenantMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.EnterTenantRequest,
+              com.zhijiejiaoyu.glory_api.tenant.EnterTenantResponse>(
+                service, METHODID_ENTER_TENANT)))
+        .addMethod(
+          getExitTenantMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.ExitTenantRequest,
+              com.zhijiejiaoyu.glory_api.tenant.ExitTenantResponse>(
+                service, METHODID_EXIT_TENANT)))
+        .addMethod(
           getCreateTenantDeptMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -19067,6 +19213,8 @@ public final class glory_apiGrpc {
               .addMethod(getDeleteTenantMethod())
               .addMethod(getListTenantMethod())
               .addMethod(getGetTenantOrgMethod())
+              .addMethod(getEnterTenantMethod())
+              .addMethod(getExitTenantMethod())
               .addMethod(getCreateTenantDeptMethod())
               .addMethod(getUpdateTenantDeptMethod())
               .addMethod(getDeleteTenantDeptMethod())

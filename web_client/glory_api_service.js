@@ -145,11 +145,9 @@ export class glory_api {
   }
 
   Logout(request) {
-    const uri = `${this.uriPrefix}/api/user/logout`;
-    const body = JSONbigint.stringify(request);
-    return fetch(uri, { method: "POST", headers, body, credentials }).then(
-      handleResponse
-    );
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/user/logout${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
 
   GetVerifyCode(request) {
@@ -1508,6 +1506,20 @@ export class glory_api {
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
+  }
+
+  EnterTenant(request) {
+    const uri = `${this.uriPrefix}/api/tenant/enter_tenant`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ExitTenant(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/tenant/exit_tenant${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
 
   CreateTenantDept(request) {

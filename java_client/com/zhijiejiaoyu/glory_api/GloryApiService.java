@@ -46,7 +46,7 @@ public final class GloryApiService {
       "ant/tenant_user.proto\032\032tenant/tenant_con" +
       "fig.proto\032\035short_video/short_video.proto" +
       "\032\025course/material.proto\032\023course/module.p" +
-      "roto2\360\351\001\n\tglory_api\022s\n\rCreateExample\022\037.g" +
+      "roto2\304\353\001\n\tglory_api\022s\n\rCreateExample\022\037.g" +
       "lory_api.CreateExampleRequest\032 .glory_ap" +
       "i.CreateExampleResponse\"\037\322\301\030\033/api/exampl" +
       "e/create_example\022g\n\nGetExample\022\034.glory_a" +
@@ -64,7 +64,7 @@ public final class GloryApiService {
       "y_api.LoginRequest\032\030.glory_api.LoginResp" +
       "onse\"\023\322\301\030\017/api/user/login\022S\n\006Logout\022\030.gl" +
       "ory_api.LogoutRequest\032\031.glory_api.Logout" +
-      "Response\"\024\322\301\030\020/api/user/logout\022q\n\rGetVer" +
+      "Response\"\024\312\301\030\020/api/user/logout\022q\n\rGetVer" +
       "ifyCode\022\037.glory_api.GetVerifyCodeRequest" +
       "\032 .glory_api.GetVerifyCodeResponse\"\035\322\301\030\031" +
       "/api/user/get_verify_code\022X\n\007GetUser\022\031.g" +
@@ -596,206 +596,211 @@ public final class GloryApiService {
       "nant/list_tenant\022k\n\014GetTenantOrg\022\036.glory" +
       "_api.GetTenantOrgRequest\032\037.glory_api.Get" +
       "TenantOrgResponse\"\032\322\301\030\026/api/tenant/tenan" +
-      "t_org\022\177\n\020CreateTenantDept\022\".glory_api.Cr" +
-      "eateTenantDeptRequest\032#.glory_api.Create" +
-      "TenantDeptResponse\"\"\322\301\030\036/api/tenant/crea" +
-      "te_tenant_dept\022\177\n\020UpdateTenantDept\022\".glo" +
-      "ry_api.UpdateTenantDeptRequest\032#.glory_a" +
-      "pi.UpdateTenantDeptResponse\"\"\322\301\030\036/api/te" +
-      "nant/update_tenant_dept\022\177\n\020DeleteTenantD" +
-      "ept\022\".glory_api.DeleteTenantDeptRequest\032" +
-      "#.glory_api.DeleteTenantDeptResponse\"\"\322\301" +
-      "\030\036/api/tenant/delete_tenant_dept\022s\n\rGetT" +
-      "enantDept\022\037.glory_api.GetTenantDeptReque" +
-      "st\032 .glory_api.GetTenantDeptResponse\"\037\322\301" +
-      "\030\033/api/tenant/get_tenant_dept\022\204\001\n\021GetTen" +
-      "antDeptType\022#.glory_api.GetTenantDeptTyp" +
-      "eRequest\032$.glory_api.GetTenantDeptTypeRe" +
-      "sponse\"$\312\301\030 /api/tenant/get_tenant_dept_" +
-      "type\022\177\n\020CreateTenantUser\022\".glory_api.Cre" +
-      "ateTenantUserRequest\032#.glory_api.CreateT" +
-      "enantUserResponse\"\"\322\301\030\036/api/tenant/creat" +
-      "e_tenant_user\022\177\n\020DeleteTenantUser\022\".glor" +
-      "y_api.DeleteTenantUserRequest\032#.glory_ap" +
-      "i.DeleteTenantUserResponse\"\"\322\301\030\036/api/ten" +
-      "ant/delete_tenant_user\022\177\n\020UpdateTenantUs" +
-      "er\022\".glory_api.UpdateTenantUserRequest\032#" +
-      ".glory_api.UpdateTenantUserResponse\"\"\322\301\030" +
-      "\036/api/tenant/update_tenant_user\022s\n\rGetTe" +
-      "nantUser\022\037.glory_api.GetTenantUserReques" +
-      "t\032 .glory_api.GetTenantUserResponse\"\037\322\301\030" +
-      "\033/api/tenant/get_tenant_user\022w\n\016ListTena" +
-      "ntUser\022 .glory_api.ListTenantUserRequest" +
-      "\032!.glory_api.ListTenantUserResponse\" \322\301\030" +
-      "\034/api/tenant/list_tenant_user\022\203\001\n\021ListTe" +
-      "nantStudent\022#.glory_api.ListTenantStuden" +
-      "tRequest\032$.glory_api.ListTenantStudentRe" +
-      "sponse\"#\322\301\030\037/api/tenant/list_tenant_stud" +
-      "ent\022\240\001\n\030UpdateTenantUserPassword\022*.glory" +
-      "_api.UpdateTenantUserPasswordRequest\032+.g" +
-      "lory_api.UpdateTenantUserPasswordRespons" +
-      "e\"+\322\301\030\'/api/tenant/update_tenent_user_pa" +
-      "ssword\022\207\001\n\022UpdateTenantConfig\022$.glory_ap" +
-      "i.UpdateTenantConfigRequest\032%.glory_api." +
-      "UpdateTenantConfigResponse\"$\322\301\030 /api/ten" +
-      "ant/update_tenant_config\022\177\n\020ListTenantCo" +
-      "nfig\022\".glory_api.ListTenantConfigRequest" +
-      "\032#.glory_api.ListTenantConfigResponse\"\"\322" +
-      "\301\030\036/api/tenant/list_tenant_config\022\204\001\n\020Cr" +
-      "eateShortVideo\022\".glory_api.CreateShortVi" +
-      "deoRequest\032#.glory_api.CreateShortVideoR" +
-      "esponse\"\'\322\301\030#/api/short_video/create_sho" +
-      "rt_video\022\200\001\n\017StageShortVideo\022!.glory_api" +
-      ".StageShortVideoRequest\032\".glory_api.Stag" +
-      "eShortVideoResponse\"&\322\301\030\"/api/short_vide" +
-      "o/stage_short_video\022\205\001\n\020ListMyShortVideo" +
-      "\022\".glory_api.ListMyShortVideoRequest\032#.g" +
-      "lory_api.ListMyShortVideoResponse\"(\322\301\030$/" +
-      "api/short_video/list_my_short_video\022\205\001\n\020" +
-      "ListMyStageVideo\022\".glory_api.ListMyStage" +
-      "VideoRequest\032#.glory_api.ListMyStageVide" +
-      "oResponse\"(\312\301\030$/api/short_video/list_my_" +
-      "stage_video\022\201\001\n\017ListMyLikeVideo\022!.glory_" +
-      "api.ListMyLikeVideoRequest\032\".glory_api.L" +
-      "istMyLikeVideoResponse\"\'\322\301\030#/api/short_v" +
-      "ideo/list_my_like_video\022\221\001\n\023ListMyFavori" +
-      "teVideo\022%.glory_api.ListMyFavoriteVideoR" +
-      "equest\032&.glory_api.ListMyFavoriteVideoRe" +
-      "sponse\"+\322\301\030\'/api/short_video/list_my_fav" +
-      "orite_video\022x\n\rGetShortVideo\022\037.glory_api" +
-      ".GetShortVideoRequest\032 .glory_api.GetSho" +
-      "rtVideoResponse\"$\322\301\030 /api/short_video/ge" +
-      "t_short_video\022\204\001\n\020UpdateShortVideo\022\".glo" +
-      "ry_api.UpdateShortVideoRequest\032#.glory_a" +
-      "pi.UpdateShortVideoResponse\"\'\322\301\030#/api/sh" +
-      "ort_video/update_short_video\022\204\001\n\020DeleteS" +
-      "hortVideo\022\".glory_api.DeleteShortVideoRe" +
-      "quest\032#.glory_api.DeleteShortVideoRespon" +
-      "se\"\'\322\301\030#/api/short_video/delete_short_vi" +
-      "deo\022x\n\rGetStageVideo\022\037.glory_api.GetStag" +
-      "eVideoRequest\032 .glory_api.GetStageVideoR" +
-      "esponse\"$\322\301\030 /api/short_video/get_stage_" +
-      "video\022\204\001\n\020DeleteStageVideo\022\".glory_api.D" +
-      "eleteStageVideoRequest\032#.glory_api.Delet" +
-      "eStageVideoResponse\"\'\322\301\030#/api/short_vide" +
-      "o/delete_stage_video\022\204\001\n\020UpdateStageVide" +
-      "o\022\".glory_api.UpdateStageVideoRequest\032#." +
-      "glory_api.UpdateStageVideoResponse\"\'\322\301\030#" +
-      "/api/short_video/update_stage_video\022\245\001\n\030" +
-      "ManagementListShortVideo\022*.glory_api.Man" +
-      "agementListShortVideoRequest\032+.glory_api" +
-      ".ManagementListShortVideoResponse\"0\322\301\030,/" +
-      "api/short_video/management/list_short_vi" +
-      "deo\022\255\001\n\032ManagementCensorShortVideo\022,.glo" +
-      "ry_api.ManagementCensorShortVideoRequest" +
-      "\032-.glory_api.ManagementCensorShortVideoR" +
-      "esponse\"2\322\301\030./api/short_video/management" +
-      "/censor_short_video\022\255\001\n\032ManagementDelete" +
-      "ShortVideo\022,.glory_api.ManagementDeleteS" +
-      "hortVideoRequest\032-.glory_api.ManagementD" +
-      "eleteShortVideoResponse\"2\322\301\030./api/short_" +
-      "video/management/delete_short_video\022|\n\016L" +
-      "istShortVideo\022 .glory_api.ListShortVideo" +
-      "Request\032!.glory_api.ListShortVideoRespon" +
-      "se\"%\322\301\030!/api/short_video/list_short_vide" +
-      "o\022|\n\016LikeShortVideo\022 .glory_api.LikeShor" +
-      "tVideoRequest\032!.glory_api.LikeShortVideo" +
-      "Response\"%\322\301\030!/api/short_video/like_shor" +
-      "t_video\022\214\001\n\022FavoriteShortVideo\022$.glory_a" +
-      "pi.FavoriteShortVideoRequest\032%.glory_api" +
-      ".FavoriteShortVideoResponse\")\322\301\030%/api/sh" +
-      "ort_video/favorite_short_video\022\241\001\n\027Creat" +
-      "eShortVideoComment\022).glory_api.CreateSho" +
-      "rtVideoCommentRequest\032*.glory_api.Create" +
-      "ShortVideoCommentResponse\"/\322\301\030+/api/shor" +
-      "t_video/create_short_video_comment\022\241\001\n\027D" +
-      "eleteShortVideoComment\022).glory_api.Delet" +
-      "eShortVideoCommentRequest\032*.glory_api.De" +
-      "leteShortVideoCommentResponse\"/\322\301\030+/api/" +
-      "short_video/delete_short_video_comment\022\231" +
-      "\001\n\025ListShortVideoComment\022\'.glory_api.Lis" +
-      "tShortVideoCommentRequest\032(.glory_api.Li" +
-      "stShortVideoCommentResponse\"-\322\301\030)/api/sh" +
-      "ort_video/list_short_video_comment\022l\n\014Cr" +
-      "eateCoupon\022\036.glory_api.CreateCouponReque" +
-      "st\032\037.glory_api.CreateCouponResponse\"\033\322\301\030" +
-      "\027/api/shop/create_coupon\022d\n\nListCoupon\022\034" +
-      ".glory_api.ListCouponRequest\032\035.glory_api" +
-      ".ListCouponResponse\"\031\322\301\030\025/api/shop/list_" +
-      "coupon\022r\n\014CouponDetail\022!.glory_api.GetCo" +
-      "uponDetailRequest\032\".glory_api.GetCouponD" +
-      "etailResponse\"\033\312\301\030\027/api/shop/coupon_deta" +
-      "il\022l\n\014UpdateCoupon\022\036.glory_api.UpdateCou" +
-      "ponRequest\032\037.glory_api.UpdateCouponRespo" +
-      "nse\"\033\322\301\030\027/api/shop/update_coupon\022l\n\014Dele" +
-      "teCoupon\022\036.glory_api.DeleteCouponRequest" +
-      "\032\037.glory_api.DeleteCouponResponse\"\033\322\301\030\027/" +
-      "api/shop/delete_coupon\022p\n\rAbolishCoupon\022" +
-      "\037.glory_api.AbolishCouponRequest\032 .glory" +
-      "_api.AbolishCouponResponse\"\034\312\301\030\030/api/sho" +
-      "p/abolish_coupon\022\266\001\n\036UpdateCouponDistrib" +
-      "utionStatus\0220.glory_api.UpdateCouponDist" +
-      "ributionStatusRequest\0321.glory_api.Update" +
-      "CouponDistributionStatusResponse\"/\322\301\030+/a" +
-      "pi/shop/update_coupon_distribution_statu" +
-      "s\022m\n\013ClaimCoupon\022\035.glory_api.ClaimCoupon" +
-      "Request\032\036.glory_api.ClaimCouponResponse\"" +
-      "\037\312\301\030\033/api/shop/user_claim_coupon\022t\n\016Crea" +
-      "teActivity\022 .glory_api.CreateActivityReq" +
-      "uest\032!.glory_api.CreateActivityResponse\"" +
-      "\035\322\301\030\031/api/shop/create_activity\022l\n\014ListAc" +
-      "tivity\022\036.glory_api.ListActivityRequest\032\037" +
-      ".glory_api.ListActivityResponse\"\033\322\301\030\027/ap" +
-      "i/shop/list_activity\022z\n\016ActivityDetail\022#" +
-      ".glory_api.GetActivityDetailRequest\032$.gl" +
-      "ory_api.GetActivityDetailResponse\"\035\312\301\030\031/" +
-      "api/shop/activity_detail\022t\n\016UpdateActivi" +
-      "ty\022 .glory_api.UpdateActivityRequest\032!.g" +
-      "lory_api.UpdateActivityResponse\"\035\322\301\030\031/ap" +
-      "i/shop/update_activity\022t\n\016DeleteActivity" +
-      "\022 .glory_api.DeleteActivityRequest\032!.glo" +
-      "ry_api.DeleteActivityResponse\"\035\322\301\030\031/api/" +
-      "shop/delete_activity\022x\n\017DisableActivity\022" +
-      "!.glory_api.DisableActivityRequest\032\".glo" +
-      "ry_api.DisableActivityResponse\"\036\322\301\030\032/api" +
-      "/shop/disable_activity\022\234\001\n\027CreateCourseM" +
-      "aterialBox\022).glory_api.CreateCourseMater" +
-      "ialBoxRequest\032*.glory_api.CreateCourseMa" +
-      "terialBoxResponse\"*\322\301\030&/api/course/creat" +
-      "e_course_material_box\022\224\001\n\025ListCourseMate" +
-      "rialBox\022\'.glory_api.ListCourseMaterialBo" +
-      "xRequest\032(.glory_api.ListCourseMaterialB" +
-      "oxResponse\"(\322\301\030$/api/course/list_course_" +
-      "material_box\022\234\001\n\027DeleteCourseMaterialBox" +
-      "\022).glory_api.DeleteCourseMaterialBoxRequ" +
-      "est\032*.glory_api.DeleteCourseMaterialBoxR" +
-      "esponse\"*\322\301\030&/api/course/delete_course_m" +
-      "aterial_box\022\217\001\n\024UploadCourseMaterial\022&.g" +
-      "lory_api.UploadCourseMaterialRequest\032\'.g" +
-      "lory_api.UploadCourseMaterialResponse\"&\322" +
-      "\301\030\"/api/course/upload_course_material\022\207\001" +
-      "\n\022ListCourseMaterial\022$.glory_api.ListCou" +
-      "rseMaterialRequest\032%.glory_api.ListCours" +
-      "eMaterialResponse\"$\322\301\030 /api/course/list_" +
-      "course_material\022\217\001\n\024DeleteCourseMaterial" +
-      "\022&.glory_api.DeleteCourseMaterialRequest" +
-      "\032\'.glory_api.DeleteCourseMaterialRespons" +
-      "e\"&\322\301\030\"/api/course/delete_course_materia" +
-      "l\022\207\001\n\022CreateCourseModule\022$.glory_api.Cre" +
-      "ateCourseModuleRequest\032%.glory_api.Creat" +
-      "eCourseModuleResponse\"$\322\301\030 /api/course/c" +
-      "reate_course_module\022\207\001\n\022UpdateCourseModu" +
-      "le\022$.glory_api.UpdateCourseModuleRequest" +
-      "\032%.glory_api.UpdateCourseModuleResponse\"" +
-      "$\322\301\030 /api/course/update_course_module\022\207\001" +
-      "\n\022DeleteCourseModule\022$.glory_api.DeleteC" +
-      "ourseModuleRequest\032%.glory_api.DeleteCou" +
-      "rseModuleResponse\"$\322\301\030 /api/course/delet" +
-      "e_course_module\022\177\n\020ListCourseModule\022\".gl" +
-      "ory_api.ListCourseModuleRequest\032#.glory_" +
-      "api.ListCourseModuleResponse\"\"\322\301\030\036/api/c" +
-      "ourse/list_course_moduleB\036\n\032com.zhijieji" +
-      "aoyu.glory_apiP\001b\006proto3"
+      "t_org\022j\n\013EnterTenant\022\035.glory_api.EnterTe" +
+      "nantRequest\032\036.glory_api.EnterTenantRespo" +
+      "nse\"\034\322\301\030\030/api/tenant/enter_tenant\022f\n\nExi" +
+      "tTenant\022\034.glory_api.ExitTenantRequest\032\035." +
+      "glory_api.ExitTenantResponse\"\033\312\301\030\027/api/t" +
+      "enant/exit_tenant\022\177\n\020CreateTenantDept\022\"." +
+      "glory_api.CreateTenantDeptRequest\032#.glor" +
+      "y_api.CreateTenantDeptResponse\"\"\322\301\030\036/api" +
+      "/tenant/create_tenant_dept\022\177\n\020UpdateTena" +
+      "ntDept\022\".glory_api.UpdateTenantDeptReque" +
+      "st\032#.glory_api.UpdateTenantDeptResponse\"" +
+      "\"\322\301\030\036/api/tenant/update_tenant_dept\022\177\n\020D" +
+      "eleteTenantDept\022\".glory_api.DeleteTenant" +
+      "DeptRequest\032#.glory_api.DeleteTenantDept" +
+      "Response\"\"\322\301\030\036/api/tenant/delete_tenant_" +
+      "dept\022s\n\rGetTenantDept\022\037.glory_api.GetTen" +
+      "antDeptRequest\032 .glory_api.GetTenantDept" +
+      "Response\"\037\322\301\030\033/api/tenant/get_tenant_dep" +
+      "t\022\204\001\n\021GetTenantDeptType\022#.glory_api.GetT" +
+      "enantDeptTypeRequest\032$.glory_api.GetTena" +
+      "ntDeptTypeResponse\"$\312\301\030 /api/tenant/get_" +
+      "tenant_dept_type\022\177\n\020CreateTenantUser\022\".g" +
+      "lory_api.CreateTenantUserRequest\032#.glory" +
+      "_api.CreateTenantUserResponse\"\"\322\301\030\036/api/" +
+      "tenant/create_tenant_user\022\177\n\020DeleteTenan" +
+      "tUser\022\".glory_api.DeleteTenantUserReques" +
+      "t\032#.glory_api.DeleteTenantUserResponse\"\"" +
+      "\322\301\030\036/api/tenant/delete_tenant_user\022\177\n\020Up" +
+      "dateTenantUser\022\".glory_api.UpdateTenantU" +
+      "serRequest\032#.glory_api.UpdateTenantUserR" +
+      "esponse\"\"\322\301\030\036/api/tenant/update_tenant_u" +
+      "ser\022s\n\rGetTenantUser\022\037.glory_api.GetTena" +
+      "ntUserRequest\032 .glory_api.GetTenantUserR" +
+      "esponse\"\037\322\301\030\033/api/tenant/get_tenant_user" +
+      "\022w\n\016ListTenantUser\022 .glory_api.ListTenan" +
+      "tUserRequest\032!.glory_api.ListTenantUserR" +
+      "esponse\" \322\301\030\034/api/tenant/list_tenant_use" +
+      "r\022\203\001\n\021ListTenantStudent\022#.glory_api.List" +
+      "TenantStudentRequest\032$.glory_api.ListTen" +
+      "antStudentResponse\"#\322\301\030\037/api/tenant/list" +
+      "_tenant_student\022\240\001\n\030UpdateTenantUserPass" +
+      "word\022*.glory_api.UpdateTenantUserPasswor" +
+      "dRequest\032+.glory_api.UpdateTenantUserPas" +
+      "swordResponse\"+\322\301\030\'/api/tenant/update_te" +
+      "nent_user_password\022\207\001\n\022UpdateTenantConfi" +
+      "g\022$.glory_api.UpdateTenantConfigRequest\032" +
+      "%.glory_api.UpdateTenantConfigResponse\"$" +
+      "\322\301\030 /api/tenant/update_tenant_config\022\177\n\020" +
+      "ListTenantConfig\022\".glory_api.ListTenantC" +
+      "onfigRequest\032#.glory_api.ListTenantConfi" +
+      "gResponse\"\"\322\301\030\036/api/tenant/list_tenant_c" +
+      "onfig\022\204\001\n\020CreateShortVideo\022\".glory_api.C" +
+      "reateShortVideoRequest\032#.glory_api.Creat" +
+      "eShortVideoResponse\"\'\322\301\030#/api/short_vide" +
+      "o/create_short_video\022\200\001\n\017StageShortVideo" +
+      "\022!.glory_api.StageShortVideoRequest\032\".gl" +
+      "ory_api.StageShortVideoResponse\"&\322\301\030\"/ap" +
+      "i/short_video/stage_short_video\022\205\001\n\020List" +
+      "MyShortVideo\022\".glory_api.ListMyShortVide" +
+      "oRequest\032#.glory_api.ListMyShortVideoRes" +
+      "ponse\"(\322\301\030$/api/short_video/list_my_shor" +
+      "t_video\022\205\001\n\020ListMyStageVideo\022\".glory_api" +
+      ".ListMyStageVideoRequest\032#.glory_api.Lis" +
+      "tMyStageVideoResponse\"(\312\301\030$/api/short_vi" +
+      "deo/list_my_stage_video\022\201\001\n\017ListMyLikeVi" +
+      "deo\022!.glory_api.ListMyLikeVideoRequest\032\"" +
+      ".glory_api.ListMyLikeVideoResponse\"\'\322\301\030#" +
+      "/api/short_video/list_my_like_video\022\221\001\n\023" +
+      "ListMyFavoriteVideo\022%.glory_api.ListMyFa" +
+      "voriteVideoRequest\032&.glory_api.ListMyFav" +
+      "oriteVideoResponse\"+\322\301\030\'/api/short_video" +
+      "/list_my_favorite_video\022x\n\rGetShortVideo" +
+      "\022\037.glory_api.GetShortVideoRequest\032 .glor" +
+      "y_api.GetShortVideoResponse\"$\322\301\030 /api/sh" +
+      "ort_video/get_short_video\022\204\001\n\020UpdateShor" +
+      "tVideo\022\".glory_api.UpdateShortVideoReque" +
+      "st\032#.glory_api.UpdateShortVideoResponse\"" +
+      "\'\322\301\030#/api/short_video/update_short_video" +
+      "\022\204\001\n\020DeleteShortVideo\022\".glory_api.Delete" +
+      "ShortVideoRequest\032#.glory_api.DeleteShor" +
+      "tVideoResponse\"\'\322\301\030#/api/short_video/del" +
+      "ete_short_video\022x\n\rGetStageVideo\022\037.glory" +
+      "_api.GetStageVideoRequest\032 .glory_api.Ge" +
+      "tStageVideoResponse\"$\322\301\030 /api/short_vide" +
+      "o/get_stage_video\022\204\001\n\020DeleteStageVideo\022\"" +
+      ".glory_api.DeleteStageVideoRequest\032#.glo" +
+      "ry_api.DeleteStageVideoResponse\"\'\322\301\030#/ap" +
+      "i/short_video/delete_stage_video\022\204\001\n\020Upd" +
+      "ateStageVideo\022\".glory_api.UpdateStageVid" +
+      "eoRequest\032#.glory_api.UpdateStageVideoRe" +
+      "sponse\"\'\322\301\030#/api/short_video/update_stag" +
+      "e_video\022\245\001\n\030ManagementListShortVideo\022*.g" +
+      "lory_api.ManagementListShortVideoRequest" +
+      "\032+.glory_api.ManagementListShortVideoRes" +
+      "ponse\"0\322\301\030,/api/short_video/management/l" +
+      "ist_short_video\022\255\001\n\032ManagementCensorShor" +
+      "tVideo\022,.glory_api.ManagementCensorShort" +
+      "VideoRequest\032-.glory_api.ManagementCenso" +
+      "rShortVideoResponse\"2\322\301\030./api/short_vide" +
+      "o/management/censor_short_video\022\255\001\n\032Mana" +
+      "gementDeleteShortVideo\022,.glory_api.Manag" +
+      "ementDeleteShortVideoRequest\032-.glory_api" +
+      ".ManagementDeleteShortVideoResponse\"2\322\301\030" +
+      "./api/short_video/management/delete_shor" +
+      "t_video\022|\n\016ListShortVideo\022 .glory_api.Li" +
+      "stShortVideoRequest\032!.glory_api.ListShor" +
+      "tVideoResponse\"%\322\301\030!/api/short_video/lis" +
+      "t_short_video\022|\n\016LikeShortVideo\022 .glory_" +
+      "api.LikeShortVideoRequest\032!.glory_api.Li" +
+      "keShortVideoResponse\"%\322\301\030!/api/short_vid" +
+      "eo/like_short_video\022\214\001\n\022FavoriteShortVid" +
+      "eo\022$.glory_api.FavoriteShortVideoRequest" +
+      "\032%.glory_api.FavoriteShortVideoResponse\"" +
+      ")\322\301\030%/api/short_video/favorite_short_vid" +
+      "eo\022\241\001\n\027CreateShortVideoComment\022).glory_a" +
+      "pi.CreateShortVideoCommentRequest\032*.glor" +
+      "y_api.CreateShortVideoCommentResponse\"/\322" +
+      "\301\030+/api/short_video/create_short_video_c" +
+      "omment\022\241\001\n\027DeleteShortVideoComment\022).glo" +
+      "ry_api.DeleteShortVideoCommentRequest\032*." +
+      "glory_api.DeleteShortVideoCommentRespons" +
+      "e\"/\322\301\030+/api/short_video/delete_short_vid" +
+      "eo_comment\022\231\001\n\025ListShortVideoComment\022\'.g" +
+      "lory_api.ListShortVideoCommentRequest\032(." +
+      "glory_api.ListShortVideoCommentResponse\"" +
+      "-\322\301\030)/api/short_video/list_short_video_c" +
+      "omment\022l\n\014CreateCoupon\022\036.glory_api.Creat" +
+      "eCouponRequest\032\037.glory_api.CreateCouponR" +
+      "esponse\"\033\322\301\030\027/api/shop/create_coupon\022d\n\n" +
+      "ListCoupon\022\034.glory_api.ListCouponRequest" +
+      "\032\035.glory_api.ListCouponResponse\"\031\322\301\030\025/ap" +
+      "i/shop/list_coupon\022r\n\014CouponDetail\022!.glo" +
+      "ry_api.GetCouponDetailRequest\032\".glory_ap" +
+      "i.GetCouponDetailResponse\"\033\312\301\030\027/api/shop" +
+      "/coupon_detail\022l\n\014UpdateCoupon\022\036.glory_a" +
+      "pi.UpdateCouponRequest\032\037.glory_api.Updat" +
+      "eCouponResponse\"\033\322\301\030\027/api/shop/update_co" +
+      "upon\022l\n\014DeleteCoupon\022\036.glory_api.DeleteC" +
+      "ouponRequest\032\037.glory_api.DeleteCouponRes" +
+      "ponse\"\033\322\301\030\027/api/shop/delete_coupon\022p\n\rAb" +
+      "olishCoupon\022\037.glory_api.AbolishCouponReq" +
+      "uest\032 .glory_api.AbolishCouponResponse\"\034" +
+      "\312\301\030\030/api/shop/abolish_coupon\022\266\001\n\036UpdateC" +
+      "ouponDistributionStatus\0220.glory_api.Upda" +
+      "teCouponDistributionStatusRequest\0321.glor" +
+      "y_api.UpdateCouponDistributionStatusResp" +
+      "onse\"/\322\301\030+/api/shop/update_coupon_distri" +
+      "bution_status\022m\n\013ClaimCoupon\022\035.glory_api" +
+      ".ClaimCouponRequest\032\036.glory_api.ClaimCou" +
+      "ponResponse\"\037\312\301\030\033/api/shop/user_claim_co" +
+      "upon\022t\n\016CreateActivity\022 .glory_api.Creat" +
+      "eActivityRequest\032!.glory_api.CreateActiv" +
+      "ityResponse\"\035\322\301\030\031/api/shop/create_activi" +
+      "ty\022l\n\014ListActivity\022\036.glory_api.ListActiv" +
+      "ityRequest\032\037.glory_api.ListActivityRespo" +
+      "nse\"\033\322\301\030\027/api/shop/list_activity\022z\n\016Acti" +
+      "vityDetail\022#.glory_api.GetActivityDetail" +
+      "Request\032$.glory_api.GetActivityDetailRes" +
+      "ponse\"\035\312\301\030\031/api/shop/activity_detail\022t\n\016" +
+      "UpdateActivity\022 .glory_api.UpdateActivit" +
+      "yRequest\032!.glory_api.UpdateActivityRespo" +
+      "nse\"\035\322\301\030\031/api/shop/update_activity\022t\n\016De" +
+      "leteActivity\022 .glory_api.DeleteActivityR" +
+      "equest\032!.glory_api.DeleteActivityRespons" +
+      "e\"\035\322\301\030\031/api/shop/delete_activity\022x\n\017Disa" +
+      "bleActivity\022!.glory_api.DisableActivityR" +
+      "equest\032\".glory_api.DisableActivityRespon" +
+      "se\"\036\322\301\030\032/api/shop/disable_activity\022\234\001\n\027C" +
+      "reateCourseMaterialBox\022).glory_api.Creat" +
+      "eCourseMaterialBoxRequest\032*.glory_api.Cr" +
+      "eateCourseMaterialBoxResponse\"*\322\301\030&/api/" +
+      "course/create_course_material_box\022\224\001\n\025Li" +
+      "stCourseMaterialBox\022\'.glory_api.ListCour" +
+      "seMaterialBoxRequest\032(.glory_api.ListCou" +
+      "rseMaterialBoxResponse\"(\322\301\030$/api/course/" +
+      "list_course_material_box\022\234\001\n\027DeleteCours" +
+      "eMaterialBox\022).glory_api.DeleteCourseMat" +
+      "erialBoxRequest\032*.glory_api.DeleteCourse" +
+      "MaterialBoxResponse\"*\322\301\030&/api/course/del" +
+      "ete_course_material_box\022\217\001\n\024UploadCourse" +
+      "Material\022&.glory_api.UploadCourseMateria" +
+      "lRequest\032\'.glory_api.UploadCourseMateria" +
+      "lResponse\"&\322\301\030\"/api/course/upload_course" +
+      "_material\022\207\001\n\022ListCourseMaterial\022$.glory" +
+      "_api.ListCourseMaterialRequest\032%.glory_a" +
+      "pi.ListCourseMaterialResponse\"$\322\301\030 /api/" +
+      "course/list_course_material\022\217\001\n\024DeleteCo" +
+      "urseMaterial\022&.glory_api.DeleteCourseMat" +
+      "erialRequest\032\'.glory_api.DeleteCourseMat" +
+      "erialResponse\"&\322\301\030\"/api/course/delete_co" +
+      "urse_material\022\207\001\n\022CreateCourseModule\022$.g" +
+      "lory_api.CreateCourseModuleRequest\032%.glo" +
+      "ry_api.CreateCourseModuleResponse\"$\322\301\030 /" +
+      "api/course/create_course_module\022\207\001\n\022Upda" +
+      "teCourseModule\022$.glory_api.UpdateCourseM" +
+      "oduleRequest\032%.glory_api.UpdateCourseMod" +
+      "uleResponse\"$\322\301\030 /api/course/update_cour" +
+      "se_module\022\207\001\n\022DeleteCourseModule\022$.glory" +
+      "_api.DeleteCourseModuleRequest\032%.glory_a" +
+      "pi.DeleteCourseModuleResponse\"$\322\301\030 /api/" +
+      "course/delete_course_module\022\177\n\020ListCours" +
+      "eModule\022\".glory_api.ListCourseModuleRequ" +
+      "est\032#.glory_api.ListCourseModuleResponse" +
+      "\"\"\322\301\030\036/api/course/list_course_moduleB\036\n\032" +
+      "com.zhijiejiaoyu.glory_apiP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
