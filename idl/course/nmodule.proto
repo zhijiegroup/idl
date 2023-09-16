@@ -1,0 +1,95 @@
+syntax = "proto3";
+package glory_api;
+option java_package = "com.zhijiejiaoyu.glory_api.course";
+option java_multiple_files = true;
+
+import "base.proto";
+
+message NmCourse {
+    int64 course_id = 1;
+    string course_name = 2;
+    string course_orgination = 3;
+    string course_teacher_name = 4;
+    double skill_hours = 5;
+    double knowledge_hours = 6;
+    string course_description = 7;
+    string cover_url = 8;
+    int64 course_classfication = 9;
+    string course_major = 10;
+    string course_industry = 11;
+}
+
+message CreateNmCourseChapterResourceRequest {
+    base.BaseRequest base_request = 1;
+    string resource_name = 2;
+    int64 resource_type = 3;
+    string resource_path = 4;
+}
+
+message CreateNmCourseChapterResourceResponse {
+    base.BaseResponse base_resp = 1;
+    int64 resource_id = 2;
+}
+
+message CreateNmCourseChapterRequest {
+    base.BaseRequest base_request = 1;
+    string chapter_name = 2;
+    int64 parent_id = 3;
+    int64 resource_id = 4;
+}
+
+message CreateNmCourseChapterResponse {
+    base.BaseResponse base_resp = 1;
+    int64 chapter_id = 2;
+}
+
+message CreateNmCourseRequest {
+    base.BaseRequest base_request = 1;
+    string course_name = 2;
+    string course_orgination = 3;
+    string teacher_name = 4;
+    double course_hours = 5;
+    string course_description = 6;
+    string course_cover_path = 7;
+    int64 course_classfication = 8;
+    string course_major = 9;
+    string course_industry = 10;
+    repeated int64 chapter_ids = 11;
+}
+
+message CreateNmCourseResponse {
+    base.BaseResponse base_resp = 1;
+    int64 course_id = 2;
+}
+
+message NmCourseDetailRequest {
+    base.BaseRequest base_request = 1;
+    int64 course_id = 2;
+}
+
+message NmCourseDetailResponse {
+    base.BaseResponse base_resp = 1;
+    NmCourse course = 2;
+}
+
+message ListNmCourseRequest {
+    base.BaseRequest base_request = 1;
+    int32 classfication = 2;
+    string value = 3;
+    base.PaginationRequest pagination = 100;
+}
+
+message ListNmCourseResponse {
+    base.BaseResponse base_resp = 1;
+    repeated NmCourse courses = 2;
+    base.PaginationResponse pagination = 100;
+}
+
+message DeleteNmCourseRequest {
+    base.BaseRequest base_request = 1;
+    int64 course_id = 2;
+}
+
+message DeleteNmCourseResponse {
+    base.BaseResponse base_resp = 1;
+}
