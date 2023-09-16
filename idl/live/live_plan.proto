@@ -179,6 +179,7 @@ message LiveProductStatus {
   double product_deal_amount =15; // 商品成交金额
   string activity_status =16; // 商品活动状态
   double product_reference_price =17; // 商品参考价
+  string shop_type = 18; // 店铺类型，虚拟or真实 
 }
 
 message ListLiveProductStatusRequest {
