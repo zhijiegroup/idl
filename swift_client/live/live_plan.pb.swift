@@ -843,6 +843,12 @@ struct GloryApi_LiveProductStatus {
     set {_uniqueStorage()._productReferencePrice = newValue}
   }
 
+  /// 店铺类型，虚拟or真实 
+  var shopType: String {
+    get {return _storage._shopType}
+    set {_uniqueStorage()._shopType = newValue}
+  }
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -2574,6 +2580,7 @@ extension GloryApi_LiveProductStatus: SwiftProtobuf.Message, SwiftProtobuf._Mess
     15: .standard(proto: "product_deal_amount"),
     16: .standard(proto: "activity_status"),
     17: .standard(proto: "product_reference_price"),
+    18: .standard(proto: "shop_type"),
   ]
 
   fileprivate class _StorageClass {
@@ -2594,6 +2601,7 @@ extension GloryApi_LiveProductStatus: SwiftProtobuf.Message, SwiftProtobuf._Mess
     var _productDealAmount: Double = 0
     var _activityStatus: String = String()
     var _productReferencePrice: Double = 0
+    var _shopType: String = String()
 
     static let defaultInstance = _StorageClass()
 
@@ -2617,6 +2625,7 @@ extension GloryApi_LiveProductStatus: SwiftProtobuf.Message, SwiftProtobuf._Mess
       _productDealAmount = source._productDealAmount
       _activityStatus = source._activityStatus
       _productReferencePrice = source._productReferencePrice
+      _shopType = source._shopType
     }
   }
 
@@ -2652,6 +2661,7 @@ extension GloryApi_LiveProductStatus: SwiftProtobuf.Message, SwiftProtobuf._Mess
         case 15: try { try decoder.decodeSingularDoubleField(value: &_storage._productDealAmount) }()
         case 16: try { try decoder.decodeSingularStringField(value: &_storage._activityStatus) }()
         case 17: try { try decoder.decodeSingularDoubleField(value: &_storage._productReferencePrice) }()
+        case 18: try { try decoder.decodeSingularStringField(value: &_storage._shopType) }()
         default: break
         }
       }
@@ -2711,6 +2721,9 @@ extension GloryApi_LiveProductStatus: SwiftProtobuf.Message, SwiftProtobuf._Mess
       if _storage._productReferencePrice != 0 {
         try visitor.visitSingularDoubleField(value: _storage._productReferencePrice, fieldNumber: 17)
       }
+      if !_storage._shopType.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._shopType, fieldNumber: 18)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -2737,6 +2750,7 @@ extension GloryApi_LiveProductStatus: SwiftProtobuf.Message, SwiftProtobuf._Mess
         if _storage._productDealAmount != rhs_storage._productDealAmount {return false}
         if _storage._activityStatus != rhs_storage._activityStatus {return false}
         if _storage._productReferencePrice != rhs_storage._productReferencePrice {return false}
+        if _storage._shopType != rhs_storage._shopType {return false}
         return true
       }
       if !storagesAreEqual {return false}

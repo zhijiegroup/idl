@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
     productUrl = "";
     productName = "";
     activityStatus = "";
+    shopType = "";
   }
 
   @java.lang.Override
@@ -145,6 +146,12 @@ private static final long serialVersionUID = 0L;
           case 137: {
 
             productReferencePrice = input.readDouble();
+            break;
+          }
+          case 146: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            shopType = s;
             break;
           }
           default: {
@@ -611,6 +618,52 @@ private static final long serialVersionUID = 0L;
     return productReferencePrice ;
   }
 
+  public static final int SHOP_TYPE_FIELD_NUMBER = 18;
+  private volatile java.lang.Object shopType ;
+  /**
+   * <pre>
+   * 店铺类型，虚拟or真实 
+   * </pre>
+   *
+   * <code>string shop_type = 18;</code>
+   * @return The shopType.
+   */
+  @java.lang.Override
+  public java.lang.String getShopType() {
+    java.lang.Object ref = shopType ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      shopType = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 店铺类型，虚拟or真实 
+   * </pre>
+   *
+   * <code>string shop_type = 18;</code>
+   * @return The bytes for shopType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getShopTypeBytes() {
+    java.lang.Object ref = shopType ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      shopType = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -675,6 +728,9 @@ private static final long serialVersionUID = 0L;
     }
     if (productReferencePrice != 0D) {
       output.writeDouble(17, productReferencePrice );
+    }
+    if (!getShopTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 18, shopType );
     }
     unknownFields.writeTo(output);
   }
@@ -746,6 +802,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(17, productReferencePrice );
     }
+    if (!getShopTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, shopType );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -798,6 +857,8 @@ private static final long serialVersionUID = 0L;
     if (java.lang.Double.doubleToLongBits(getProductReferencePrice())
         != java.lang.Double.doubleToLongBits(
             other.getProductReferencePrice())) return false;
+    if (!getShopType()
+        .equals(other.getShopType())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -853,6 +914,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + PRODUCT_REFERENCE_PRICE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         java.lang.Double.doubleToLongBits(getProductReferencePrice()));
+    hash = (37 * hash) + SHOP_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getShopType().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1020,6 +1083,8 @@ private static final long serialVersionUID = 0L;
 
       productReferencePrice = 0D;
 
+      shopType = "";
+
       return this;
     }
 
@@ -1063,6 +1128,7 @@ private static final long serialVersionUID = 0L;
       result.productDealAmount = productDealAmount ;
       result.activityStatus = activityStatus ;
       result.productReferencePrice = productReferencePrice ;
+      result.shopType = shopType ;
       onBuilt();
       return result;
     }
@@ -1168,6 +1234,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getProductReferencePrice() != 0D) {
         setProductReferencePrice(other.getProductReferencePrice());
+      }
+      if (!other.getShopType().isEmpty()) {
+        shopType = other.shopType ;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2188,6 +2258,102 @@ private static final long serialVersionUID = 0L;
     public Builder clearProductReferencePrice() {
       
       productReferencePrice = 0D;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object shopType = "";
+    /**
+     * <pre>
+     * 店铺类型，虚拟or真实 
+     * </pre>
+     *
+     * <code>string shop_type = 18;</code>
+     * @return The shopType.
+     */
+    public java.lang.String getShopType() {
+      java.lang.Object ref = shopType ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        shopType = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 店铺类型，虚拟or真实 
+     * </pre>
+     *
+     * <code>string shop_type = 18;</code>
+     * @return The bytes for shopType.
+     */
+    public com.google.protobuf.ByteString
+        getShopTypeBytes() {
+      java.lang.Object ref = shopType ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        shopType = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 店铺类型，虚拟or真实 
+     * </pre>
+     *
+     * <code>string shop_type = 18;</code>
+     * @param value The shopType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setShopType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      shopType = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 店铺类型，虚拟or真实 
+     * </pre>
+     *
+     * <code>string shop_type = 18;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearShopType() {
+      
+      shopType = getDefaultInstance().getShopType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 店铺类型，虚拟or真实 
+     * </pre>
+     *
+     * <code>string shop_type = 18;</code>
+     * @param value The bytes for shopType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setShopTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      shopType = value;
       onChanged();
       return this;
     }

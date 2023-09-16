@@ -206,4 +206,24 @@ public interface LiveProductStatusOrBuilder extends
    * @return The productReferencePrice.
    */
   double getProductReferencePrice();
+
+  /**
+   * <pre>
+   * 店铺类型，虚拟or真实 
+   * </pre>
+   *
+   * <code>string shop_type = 18;</code>
+   * @return The shopType.
+   */
+  java.lang.String getShopType();
+  /**
+   * <pre>
+   * 店铺类型，虚拟or真实 
+   * </pre>
+   *
+   * <code>string shop_type = 18;</code>
+   * @return The bytes for shopType.
+   */
+  com.google.protobuf.ByteString
+      getShopTypeBytes();
 }

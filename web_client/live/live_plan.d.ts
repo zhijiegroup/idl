@@ -205,6 +205,8 @@ export interface LiveProductStatus {
   activity_status?: string;
   /** 商品参考价 */
   product_reference_price?: number;
+  /** 店铺类型，虚拟or真实 */
+  shop_type?: string;
 }
 
 export interface ListLiveProductStatusRequest {

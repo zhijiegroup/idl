@@ -326,7 +326,7 @@ public final class LivePlanOuterClass {
       "\t\022\035\n\025product_selling_point\030\004 \001(\t\022\033\n\023prod" +
       "uct_description\030\005 \001(\t\"H\n\037UpdateLiveProdu" +
       "ctStatusResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
-      "se.BaseResponse\"\262\003\n\021LiveProductStatus\022\036\n" +
+      "se.BaseResponse\"\305\003\n\021LiveProductStatus\022\036\n" +
       "\026live_product_status_id\030\001 \001(\003\022\022\n\nproduct" +
       "_id\030\002 \001(\003\022\016\n\006status\030\003 \001(\t\022\017\n\007shop_id\030\004 \001" +
       "(\003\022\017\n\007room_id\030\005 \001(\003\022\035\n\025product_selling_p" +
@@ -337,50 +337,50 @@ public final class LivePlanOuterClass {
       "ing_amount\030\r \001(\003\022\033\n\023product_sold_amount\030" +
       "\016 \001(\003\022\033\n\023product_deal_amount\030\017 \001(\001\022\027\n\017ac" +
       "tivity_status\030\020 \001(\t\022\037\n\027product_reference" +
-      "_price\030\021 \001(\001\"\225\001\n\034ListLiveProductStatusRe" +
-      "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
-      "equest\022\017\n\007shop_id\030\002 \001(\003\022\016\n\006status\030\003 \001(\t\022" +
-      "+\n\npagination\030d \001(\0132\027.base.PaginationReq" +
-      "uest\"\257\001\n\035ListLiveProductStatusResponse\022%" +
-      "\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\0229\n" +
-      "\023live_product_status\030\002 \003(\0132\034.glory_api.L" +
-      "iveProductStatus\022,\n\npagination\030d \001(\0132\030.b" +
-      "ase.PaginationResponse\"i\n\036DeleteLiveProd" +
-      "uctStatusRequest\022\'\n\014base_request\030\001 \001(\0132\021" +
-      ".base.BaseRequest\022\036\n\026live_product_status" +
-      "_id\030\002 \001(\003\"H\n\037DeleteLiveProductStatusResp" +
-      "onse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespo" +
-      "nse\"Y\n\035GetLivingProductStatusRequest\022\'\n\014" +
-      "base_request\030\001 \001(\0132\021.base.BaseRequest\022\017\n" +
-      "\007shop_id\030\002 \001(\003\"\314\001\n\024LiveingProductStatus\022" +
-      "\022\n\nproduct_id\030\002 \001(\003\022\024\n\014product_name\030\003 \001(" +
-      "\t\022\025\n\rproduct_price\030\004 \001(\001\022\025\n\rproduct_coun" +
-      "t\030\005 \001(\005\022\027\n\017live_room_order\030\006 \001(\005\022\021\n\tplay" +
-      "ed_at\030\007 \001(\t\022\033\n\023product_description\030\010 \001(\t" +
-      "\022\023\n\013product_url\030\t \001(\t\"\210\001\n\036GetLivingProdu" +
-      "ctStatusResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
-      "se.BaseResponse\022?\n\026liveing_product_statu" +
-      "s\030\002 \001(\0132\037.glory_api.LiveingProductStatus" +
-      "\"s\n\021LiveRecordRequest\022\'\n\014base_request\030\001 " +
-      "\001(\0132\021.base.BaseRequest\022\016\n\006action\030\002 \001(\t\022\020" +
-      "\n\010app_name\030\003 \001(\t\022\023\n\013stream_name\030\004 \001(\t\";\n" +
-      "\022LiveRecordResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
-      ".base.BaseResponse\"\223\001\n\'UpdateLiveProduct" +
-      "IntroductStatusRequest\022\'\n\014base_request\030\001" +
-      " \001(\0132\021.base.BaseRequest\022\017\n\007shop_id\030\002 \001(\003" +
-      "\022\036\n\026live_product_status_id\030\003 \001(\003\022\016\n\006acti" +
-      "on\030\004 \001(\t\"Q\n(UpdateLiveProductIntroductSt" +
-      "atusResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.B" +
-      "aseResponse\"f\n\016PreheatRequest\022\'\n\014base_re" +
-      "quest\030\001 \001(\0132\021.base.BaseRequest\022\022\n\nproduc" +
-      "t_id\030\002 \001(\003\022\027\n\017reference_price\030\003 \001(\001\"8\n\017P" +
-      "reheatResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
-      ".BaseResponse\"]\n\022PublicPriceRequest\022\'\n\014b" +
+      "_price\030\021 \001(\001\022\021\n\tshop_type\030\022 \001(\t\"\225\001\n\034List" +
+      "LiveProductStatusRequest\022\'\n\014base_request" +
+      "\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007shop_id\030\002 \001" +
+      "(\003\022\016\n\006status\030\003 \001(\t\022+\n\npagination\030d \001(\0132\027" +
+      ".base.PaginationRequest\"\257\001\n\035ListLiveProd" +
+      "uctStatusResponse\022%\n\tbase_resp\030\001 \001(\0132\022.b" +
+      "ase.BaseResponse\0229\n\023live_product_status\030" +
+      "\002 \003(\0132\034.glory_api.LiveProductStatus\022,\n\np" +
+      "agination\030d \001(\0132\030.base.PaginationRespons" +
+      "e\"i\n\036DeleteLiveProductStatusRequest\022\'\n\014b" +
       "ase_request\030\001 \001(\0132\021.base.BaseRequest\022\036\n\026" +
-      "live_product_status_id\030\002 \001(\003\"<\n\023PublicPr" +
-      "iceResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
-      "seResponseB#\n\037com.zhijiejiaoyu.glory_api" +
-      ".liveP\001b\006proto3"
+      "live_product_status_id\030\002 \001(\003\"H\n\037DeleteLi" +
+      "veProductStatusResponse\022%\n\tbase_resp\030\001 \001" +
+      "(\0132\022.base.BaseResponse\"Y\n\035GetLivingProdu" +
+      "ctStatusRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
+      "base.BaseRequest\022\017\n\007shop_id\030\002 \001(\003\"\314\001\n\024Li" +
+      "veingProductStatus\022\022\n\nproduct_id\030\002 \001(\003\022\024" +
+      "\n\014product_name\030\003 \001(\t\022\025\n\rproduct_price\030\004 " +
+      "\001(\001\022\025\n\rproduct_count\030\005 \001(\005\022\027\n\017live_room_" +
+      "order\030\006 \001(\005\022\021\n\tplayed_at\030\007 \001(\t\022\033\n\023produc" +
+      "t_description\030\010 \001(\t\022\023\n\013product_url\030\t \001(\t" +
+      "\"\210\001\n\036GetLivingProductStatusResponse\022%\n\tb" +
+      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\022?\n\026li" +
+      "veing_product_status\030\002 \001(\0132\037.glory_api.L" +
+      "iveingProductStatus\"s\n\021LiveRecordRequest" +
+      "\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReques" +
+      "t\022\016\n\006action\030\002 \001(\t\022\020\n\010app_name\030\003 \001(\t\022\023\n\013s" +
+      "tream_name\030\004 \001(\t\";\n\022LiveRecordResponse\022%" +
+      "\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"\223\001" +
+      "\n\'UpdateLiveProductIntroductStatusReques" +
+      "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
+      "st\022\017\n\007shop_id\030\002 \001(\003\022\036\n\026live_product_stat" +
+      "us_id\030\003 \001(\003\022\016\n\006action\030\004 \001(\t\"Q\n(UpdateLiv" +
+      "eProductIntroductStatusResponse\022%\n\tbase_" +
+      "resp\030\001 \001(\0132\022.base.BaseResponse\"f\n\016Prehea" +
+      "tRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
+      "seRequest\022\022\n\nproduct_id\030\002 \001(\003\022\027\n\017referen" +
+      "ce_price\030\003 \001(\001\"8\n\017PreheatResponse\022%\n\tbas" +
+      "e_resp\030\001 \001(\0132\022.base.BaseResponse\"]\n\022Publ" +
+      "icPriceRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
+      "ase.BaseRequest\022\036\n\026live_product_status_i" +
+      "d\030\002 \001(\003\"<\n\023PublicPriceResponse\022%\n\tbase_r" +
+      "esp\030\001 \001(\0132\022.base.BaseResponseB#\n\037com.zhi" +
+      "jiejiaoyu.glory_api.liveP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -560,7 +560,7 @@ public final class LivePlanOuterClass {
     internal_static_glory_api_LiveProductStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_LiveProductStatus_descriptor,
-        new java.lang.String[] { "LiveProductStatusId", "ProductId", "Status", "ShopId", "RoomId", "ProductSellingPoint", "ProductDescription", "IsIntroduct", "State", "ProductUrl", "ProductName", "ProductPrice", "ProductRemainingAmount", "ProductSoldAmount", "ProductDealAmount", "ActivityStatus", "ProductReferencePrice", });
+        new java.lang.String[] { "LiveProductStatusId", "ProductId", "Status", "ShopId", "RoomId", "ProductSellingPoint", "ProductDescription", "IsIntroduct", "State", "ProductUrl", "ProductName", "ProductPrice", "ProductRemainingAmount", "ProductSoldAmount", "ProductDealAmount", "ActivityStatus", "ProductReferencePrice", "ShopType", });
     internal_static_glory_api_ListLiveProductStatusRequest_descriptor =
       getDescriptor().getMessageTypes().get(29);
     internal_static_glory_api_ListLiveProductStatusRequest_fieldAccessorTable = new
