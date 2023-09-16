@@ -43,6 +43,7 @@ import * as tenant_config from "./tenant/tenant_config";
 import * as short_video from "./short_video/short_video";
 import * as material from "./course/material";
 import * as modules from "./course/module";
+import * as nmodule from "./course/nmodule";
 export {
   user,
   address,
@@ -83,6 +84,7 @@ export {
   short_video,
   material,
   modules,
+  nmodule,
 };
 
 import {
@@ -2000,6 +2002,52 @@ export class glory_api {
 
   ListCourseModule(request) {
     const uri = `${this.uriPrefix}/api/course/list_course_module`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreateNmCourseResource(request) {
+    const uri = `${this.uriPrefix}/api/course/create_nm_course_resource`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreateNmCourseChapter(request) {
+    const uri = `${this.uriPrefix}/api/course/create_nm_course_chapter`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreateNmCourse(request) {
+    const uri = `${this.uriPrefix}/api/course/create_nm_course`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListNmCourse(request) {
+    const uri = `${this.uriPrefix}/api/course/list_nm_course`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  NmCourseDetail(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/course/nm_course_detail${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  DeleteNmCourse(request) {
+    const uri = `${this.uriPrefix}/api/course/delete_nm_course`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse

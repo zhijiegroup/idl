@@ -41,6 +41,7 @@ import * as tenant_config from "./tenant/tenant_config";
 import * as short_video from "./short_video/short_video";
 import * as material from "./course/material";
 import * as modules from "./course/module";
+import * as nmodule from "./course/nmodule";
 export {
   user,
   address,
@@ -81,6 +82,7 @@ export {
   short_video,
   material,
   modules,
+  nmodule,
 };
 
 export class glory_api {
@@ -1103,6 +1105,37 @@ CreateLivePlanProduct create live plan product */
   ListCourseModule(
     request: modules.ListCourseModuleRequest
   ): Promise<modules.ListCourseModuleResponse>;
+
+  /** 非模块化课程
+新建资源 */
+  CreateNmCourseResource(
+    request: nmodule.CreateNmCourseChapterResourceRequest
+  ): Promise<nmodule.CreateNmCourseChapterResourceResponse>;
+
+  /** 新建章节 */
+  CreateNmCourseChapter(
+    request: nmodule.CreateNmCourseChapterRequest
+  ): Promise<nmodule.CreateNmCourseChapterResponse>;
+
+  /** 新建课程 */
+  CreateNmCourse(
+    request: nmodule.CreateNmCourseRequest
+  ): Promise<nmodule.CreateNmCourseResponse>;
+
+  /** 课程列表 */
+  ListNmCourse(
+    request: nmodule.ListNmCourseRequest
+  ): Promise<nmodule.ListNmCourseResponse>;
+
+  /** 课程详情 */
+  NmCourseDetail(
+    request: nmodule.NmCourseDetailRequest
+  ): Promise<nmodule.NmCourseDetailResponse>;
+
+  /** 删除课程 */
+  DeleteNmCourse(
+    request: nmodule.DeleteNmCourseRequest
+  ): Promise<nmodule.DeleteNmCourseResponse>;
 }
 
 export declare const glory_apiClient: glory_api;
