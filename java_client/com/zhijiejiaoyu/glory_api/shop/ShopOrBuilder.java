@@ -639,4 +639,24 @@ public interface ShopOrBuilder extends
    */
   com.google.protobuf.ByteString
       getManagerPhoneBytes();
+
+  /**
+   * <pre>
+   * 非卖家进入该店铺的手机号 
+   * </pre>
+   *
+   * <code>string enter_user_phone = 36;</code>
+   * @return The enterUserPhone.
+   */
+  java.lang.String getEnterUserPhone();
+  /**
+   * <pre>
+   * 非卖家进入该店铺的手机号 
+   * </pre>
+   *
+   * <code>string enter_user_phone = 36;</code>
+   * @return The bytes for enterUserPhone.
+   */
+  com.google.protobuf.ByteString
+      getEnterUserPhoneBytes();
 }

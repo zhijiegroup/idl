@@ -466,6 +466,14 @@ list the permissions that supported */
     request: order.FreeShippingInBatchesRequest
   ): Promise<order.FreeShippingInBatchesResponse>;
 
+  ListShopSummary(
+    request: shop.ListShopSummaryRequest
+  ): Promise<shop.ListShopSummaryResponse>;
+
+  EnterShop(request: shop.EnterShopRequest): Promise<shop.EnterShopResponse>;
+
+  ExistShop(request: shop.ExistShopRequest): Promise<shop.ExistShopResponse>;
+
   /** cart */
   CreateCart(request: cart.AddCartRequest): Promise<cart.AddCartResponse>;
 
