@@ -42,6 +42,7 @@ import * as short_video from "./short_video/short_video";
 import * as material from "./course/material";
 import * as modules from "./course/module";
 import * as nmodule from "./course/nmodule";
+import * as course from "./course/course";
 export {
   user,
   address,
@@ -83,6 +84,7 @@ export {
   material,
   modules,
   nmodule,
+  course,
 };
 
 export class glory_api {
@@ -1136,6 +1138,32 @@ CreateLivePlanProduct create live plan product */
   DeleteNmCourse(
     request: nmodule.DeleteNmCourseRequest
   ): Promise<nmodule.DeleteNmCourseResponse>;
+
+  /** 模块化课程
+创建模块化课程 */
+  CreateCourse(
+    request: course.CreateCourseRequest
+  ): Promise<course.CreateCourseResponse>;
+
+  /** 获取模块化课程 */
+  GetCourse(
+    request: course.GetCourseRequest
+  ): Promise<course.GetCourseResponse>;
+
+  /** 更新模块化课程 */
+  UpdateCourse(
+    request: course.UpdateCourseRequest
+  ): Promise<course.UpdateCourseResponse>;
+
+  /** 删除模块化课程 */
+  DeleteCourse(
+    request: course.DeleteCourseRequest
+  ): Promise<course.DeleteCourseResponse>;
+
+  /** 模块化课程列表 */
+  ListCourse(
+    request: course.ListCourseRequest
+  ): Promise<course.ListCourseResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

@@ -44,6 +44,7 @@ import * as short_video from "./short_video/short_video";
 import * as material from "./course/material";
 import * as modules from "./course/module";
 import * as nmodule from "./course/nmodule";
+import * as course from "./course/course";
 export {
   user,
   address,
@@ -85,6 +86,7 @@ export {
   material,
   modules,
   nmodule,
+  course,
 };
 
 import {
@@ -2048,6 +2050,46 @@ export class glory_api {
 
   DeleteNmCourse(request) {
     const uri = `${this.uriPrefix}/api/course/delete_nm_course`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreateCourse(request) {
+    const uri = `${this.uriPrefix}/api/course/create_course`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  GetCourse(request) {
+    const uri = `${this.uriPrefix}/api/course/get_course`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  UpdateCourse(request) {
+    const uri = `${this.uriPrefix}/api/course/update_course`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteCourse(request) {
+    const uri = `${this.uriPrefix}/api/course/delete_course`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListCourse(request) {
+    const uri = `${this.uriPrefix}/api/course/list_course`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse

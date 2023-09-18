@@ -47,6 +47,8 @@ export interface CourseModule {
   skill_hours?: number;
   /** 课程内容列表 */
   course_chapters?: Array<CourseChapter>;
+  /** 如果非空，说明这是一个能力方向 */
+  child_modules?: Array<CourseModule>;
   /** 创建时间 */
   created_at?: string;
 }

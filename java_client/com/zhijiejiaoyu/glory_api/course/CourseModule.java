@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
     majorCode = "";
     teacherName = "";
     courseChapters = java.util.Collections.emptyList();
+    childModules = java.util.Collections.emptyList();
     createdAt = "";
   }
 
@@ -104,6 +105,15 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 74: {
+            if (!((mutable_bitField0 & 0x00000002) != 0)) {
+              childModules = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.course.CourseModule>();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            childModules .add(
+                input.readMessage(com.zhijiejiaoyu.glory_api.course.CourseModule.parser(), extensionRegistry));
+            break;
+          }
+          case 82: {
             java.lang.String s = input.readStringRequireUtf8();
 
             createdAt = s;
@@ -126,6 +136,9 @@ private static final long serialVersionUID = 0L;
     } finally {
       if (((mutable_bitField0 & 0x00000001) != 0)) {
         courseChapters = java.util.Collections.unmodifiableList(courseChapters );
+      }
+      if (((mutable_bitField0 & 0x00000002) != 0)) {
+        childModules = java.util.Collections.unmodifiableList(childModules );
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -433,14 +446,74 @@ private static final long serialVersionUID = 0L;
     return courseChapters .get(index);
   }
 
-  public static final int CREATED_AT_FIELD_NUMBER = 9;
+  public static final int CHILD_MODULES_FIELD_NUMBER = 9;
+  private java.util.List<com.zhijiejiaoyu.glory_api.course.CourseModule> childModules ;
+  /**
+   * <pre>
+   * 如果非空，说明这是一个能力方向
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseModule> getChildModulesList() {
+    return childModules ;
+  }
+  /**
+   * <pre>
+   * 如果非空，说明这是一个能力方向
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder> 
+      getChildModulesOrBuilderList() {
+    return childModules ;
+  }
+  /**
+   * <pre>
+   * 如果非空，说明这是一个能力方向
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+   */
+  @java.lang.Override
+  public int getChildModulesCount() {
+    return childModules .size();
+  }
+  /**
+   * <pre>
+   * 如果非空，说明这是一个能力方向
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.course.CourseModule getChildModules(int index) {
+    return childModules .get(index);
+  }
+  /**
+   * <pre>
+   * 如果非空，说明这是一个能力方向
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder getChildModulesOrBuilder(
+      int index) {
+    return childModules .get(index);
+  }
+
+  public static final int CREATED_AT_FIELD_NUMBER = 10;
   private volatile java.lang.Object createdAt ;
   /**
    * <pre>
    * 创建时间
    * </pre>
    *
-   * <code>string created_at = 9;</code>
+   * <code>string created_at = 10;</code>
    * @return The createdAt.
    */
   @java.lang.Override
@@ -461,7 +534,7 @@ private static final long serialVersionUID = 0L;
    * 创建时间
    * </pre>
    *
-   * <code>string created_at = 9;</code>
+   * <code>string created_at = 10;</code>
    * @return The bytes for createdAt.
    */
   @java.lang.Override
@@ -517,8 +590,11 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < courseChapters .size(); i++) {
       output.writeMessage(8, courseChapters .get(i));
     }
+    for (int i = 0; i < childModules .size(); i++) {
+      output.writeMessage(9, childModules .get(i));
+    }
     if (!getCreatedAtBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, createdAt );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, createdAt );
     }
     unknownFields.writeTo(output);
   }
@@ -557,8 +633,12 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(8, courseChapters .get(i));
     }
+    for (int i = 0; i < childModules .size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(9, childModules .get(i));
+    }
     if (!getCreatedAtBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, createdAt );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, createdAt );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -593,6 +673,8 @@ private static final long serialVersionUID = 0L;
             other.getSkillHours())) return false;
     if (!getCourseChaptersList()
         .equals(other.getCourseChaptersList())) return false;
+    if (!getChildModulesList()
+        .equals(other.getChildModulesList())) return false;
     if (!getCreatedAt()
         .equals(other.getCreatedAt())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -626,6 +708,10 @@ private static final long serialVersionUID = 0L;
     if (getCourseChaptersCount() > 0) {
       hash = (37 * hash) + COURSE_CHAPTERS_FIELD_NUMBER;
       hash = (53 * hash) + getCourseChaptersList().hashCode();
+    }
+    if (getChildModulesCount() > 0) {
+      hash = (37 * hash) + CHILD_MODULES_FIELD_NUMBER;
+      hash = (53 * hash) + getChildModulesList().hashCode();
     }
     hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
     hash = (53 * hash) + getCreatedAt().hashCode();
@@ -758,6 +844,7 @@ private static final long serialVersionUID = 0L;
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
         getCourseChaptersFieldBuilder();
+        getChildModulesFieldBuilder();
       }
     }
     @java.lang.Override
@@ -782,6 +869,12 @@ private static final long serialVersionUID = 0L;
         bitField0 = (bitField0 & ~0x00000001);
       } else {
         courseChaptersBuilder .clear();
+      }
+      if (childModulesBuilder == null) {
+        childModules = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000002);
+      } else {
+        childModulesBuilder .clear();
       }
       createdAt = "";
 
@@ -827,6 +920,15 @@ private static final long serialVersionUID = 0L;
         result.courseChapters = courseChapters ;
       } else {
         result.courseChapters = courseChaptersBuilder .build();
+      }
+      if (childModulesBuilder == null) {
+        if (((bitField0 & 0x00000002) != 0)) {
+          childModules = java.util.Collections.unmodifiableList(childModules );
+          bitField0 = (bitField0 & ~0x00000002);
+        }
+        result.childModules = childModules ;
+      } else {
+        result.childModules = childModulesBuilder .build();
       }
       result.createdAt = createdAt ;
       onBuilt();
@@ -925,6 +1027,32 @@ private static final long serialVersionUID = 0L;
                  getCourseChaptersFieldBuilder() : null;
           } else {
             courseChaptersBuilder .addAllMessages(other.courseChapters );
+          }
+        }
+      }
+      if (childModulesBuilder == null) {
+        if (!other.childModules .isEmpty()) {
+          if (childModules .isEmpty()) {
+            childModules = other.childModules ;
+            bitField0 = (bitField0 & ~0x00000002);
+          } else {
+            ensureChildModulesIsMutable();
+            childModules .addAll(other.childModules );
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.childModules .isEmpty()) {
+          if (childModulesBuilder .isEmpty()) {
+            childModulesBuilder .dispose();
+            childModulesBuilder = null;
+            childModules = other.childModules ;
+            bitField0 = (bitField0 & ~0x00000002);
+            childModulesBuilder = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getChildModulesFieldBuilder() : null;
+          } else {
+            childModulesBuilder .addAllMessages(other.childModules );
           }
         }
       }
@@ -1787,13 +1915,325 @@ private static final long serialVersionUID = 0L;
       return courseChaptersBuilder ;
     }
 
+    private java.util.List<com.zhijiejiaoyu.glory_api.course.CourseModule> childModules =
+      java.util.Collections.emptyList();
+    private void ensureChildModulesIsMutable() {
+      if (!((bitField0 & 0x00000002) != 0)) {
+        childModules = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.course.CourseModule>(childModules );
+        bitField0_ |= 0x00000002;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.course.CourseModule, com.zhijiejiaoyu.glory_api.course.CourseModule.Builder, com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder> childModulesBuilder ;
+
+    /**
+     * <pre>
+     * 如果非空，说明这是一个能力方向
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseModule> getChildModulesList() {
+      if (childModulesBuilder == null) {
+        return java.util.Collections.unmodifiableList(childModules );
+      } else {
+        return childModulesBuilder .getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 如果非空，说明这是一个能力方向
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+     */
+    public int getChildModulesCount() {
+      if (childModulesBuilder == null) {
+        return childModules .size();
+      } else {
+        return childModulesBuilder .getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 如果非空，说明这是一个能力方向
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseModule getChildModules(int index) {
+      if (childModulesBuilder == null) {
+        return childModules .get(index);
+      } else {
+        return childModulesBuilder .getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 如果非空，说明这是一个能力方向
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+     */
+    public Builder setChildModules(
+        int index, com.zhijiejiaoyu.glory_api.course.CourseModule value) {
+      if (childModulesBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureChildModulesIsMutable();
+        childModules .set(index, value);
+        onChanged();
+      } else {
+        childModulesBuilder .setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 如果非空，说明这是一个能力方向
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+     */
+    public Builder setChildModules(
+        int index, com.zhijiejiaoyu.glory_api.course.CourseModule.Builder builderForValue) {
+      if (childModulesBuilder == null) {
+        ensureChildModulesIsMutable();
+        childModules .set(index, builderForValue.build());
+        onChanged();
+      } else {
+        childModulesBuilder .setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 如果非空，说明这是一个能力方向
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+     */
+    public Builder addChildModules(com.zhijiejiaoyu.glory_api.course.CourseModule value) {
+      if (childModulesBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureChildModulesIsMutable();
+        childModules .add(value);
+        onChanged();
+      } else {
+        childModulesBuilder .addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 如果非空，说明这是一个能力方向
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+     */
+    public Builder addChildModules(
+        int index, com.zhijiejiaoyu.glory_api.course.CourseModule value) {
+      if (childModulesBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureChildModulesIsMutable();
+        childModules .add(index, value);
+        onChanged();
+      } else {
+        childModulesBuilder .addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 如果非空，说明这是一个能力方向
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+     */
+    public Builder addChildModules(
+        com.zhijiejiaoyu.glory_api.course.CourseModule.Builder builderForValue) {
+      if (childModulesBuilder == null) {
+        ensureChildModulesIsMutable();
+        childModules .add(builderForValue.build());
+        onChanged();
+      } else {
+        childModulesBuilder .addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 如果非空，说明这是一个能力方向
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+     */
+    public Builder addChildModules(
+        int index, com.zhijiejiaoyu.glory_api.course.CourseModule.Builder builderForValue) {
+      if (childModulesBuilder == null) {
+        ensureChildModulesIsMutable();
+        childModules .add(index, builderForValue.build());
+        onChanged();
+      } else {
+        childModulesBuilder .addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 如果非空，说明这是一个能力方向
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+     */
+    public Builder addAllChildModules(
+        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.course.CourseModule> values) {
+      if (childModulesBuilder == null) {
+        ensureChildModulesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, childModules );
+        onChanged();
+      } else {
+        childModulesBuilder .addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 如果非空，说明这是一个能力方向
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+     */
+    public Builder clearChildModules() {
+      if (childModulesBuilder == null) {
+        childModules = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000002);
+        onChanged();
+      } else {
+        childModulesBuilder .clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 如果非空，说明这是一个能力方向
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+     */
+    public Builder removeChildModules(int index) {
+      if (childModulesBuilder == null) {
+        ensureChildModulesIsMutable();
+        childModules .remove(index);
+        onChanged();
+      } else {
+        childModulesBuilder .remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 如果非空，说明这是一个能力方向
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseModule.Builder getChildModulesBuilder(
+        int index) {
+      return getChildModulesFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 如果非空，说明这是一个能力方向
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder getChildModulesOrBuilder(
+        int index) {
+      if (childModulesBuilder == null) {
+        return childModules .get(index);  } else {
+        return childModulesBuilder .getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 如果非空，说明这是一个能力方向
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+     */
+    public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder> 
+         getChildModulesOrBuilderList() {
+      if (childModulesBuilder != null) {
+        return childModulesBuilder .getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(childModules );
+      }
+    }
+    /**
+     * <pre>
+     * 如果非空，说明这是一个能力方向
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseModule.Builder addChildModulesBuilder() {
+      return getChildModulesFieldBuilder().addBuilder(
+          com.zhijiejiaoyu.glory_api.course.CourseModule.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 如果非空，说明这是一个能力方向
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseModule.Builder addChildModulesBuilder(
+        int index) {
+      return getChildModulesFieldBuilder().addBuilder(
+          index, com.zhijiejiaoyu.glory_api.course.CourseModule.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 如果非空，说明这是一个能力方向
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseModule.Builder> 
+         getChildModulesBuilderList() {
+      return getChildModulesFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.course.CourseModule, com.zhijiejiaoyu.glory_api.course.CourseModule.Builder, com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder> 
+        getChildModulesFieldBuilder() {
+      if (childModulesBuilder == null) {
+        childModulesBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.course.CourseModule, com.zhijiejiaoyu.glory_api.course.CourseModule.Builder, com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder>(
+                childModules ,
+                ((bitField0 & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        childModules = null;
+      }
+      return childModulesBuilder ;
+    }
+
     private java.lang.Object createdAt = "";
     /**
      * <pre>
      * 创建时间
      * </pre>
      *
-     * <code>string created_at = 9;</code>
+     * <code>string created_at = 10;</code>
      * @return The createdAt.
      */
     public java.lang.String getCreatedAt() {
@@ -1813,7 +2253,7 @@ private static final long serialVersionUID = 0L;
      * 创建时间
      * </pre>
      *
-     * <code>string created_at = 9;</code>
+     * <code>string created_at = 10;</code>
      * @return The bytes for createdAt.
      */
     public com.google.protobuf.ByteString
@@ -1834,7 +2274,7 @@ private static final long serialVersionUID = 0L;
      * 创建时间
      * </pre>
      *
-     * <code>string created_at = 9;</code>
+     * <code>string created_at = 10;</code>
      * @param value The createdAt to set.
      * @return This builder for chaining.
      */
@@ -1853,7 +2293,7 @@ private static final long serialVersionUID = 0L;
      * 创建时间
      * </pre>
      *
-     * <code>string created_at = 9;</code>
+     * <code>string created_at = 10;</code>
      * @return This builder for chaining.
      */
     public Builder clearCreatedAt() {
@@ -1867,7 +2307,7 @@ private static final long serialVersionUID = 0L;
      * 创建时间
      * </pre>
      *
-     * <code>string created_at = 9;</code>
+     * <code>string created_at = 10;</code>
      * @param value The bytes for createdAt to set.
      * @return This builder for chaining.
      */

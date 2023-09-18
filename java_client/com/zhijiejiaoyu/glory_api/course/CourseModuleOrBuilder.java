@@ -163,10 +163,54 @@ public interface CourseModuleOrBuilder extends
 
   /**
    * <pre>
+   * 如果非空，说明这是一个能力方向
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+   */
+  java.util.List<com.zhijiejiaoyu.glory_api.course.CourseModule> 
+      getChildModulesList();
+  /**
+   * <pre>
+   * 如果非空，说明这是一个能力方向
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+   */
+  com.zhijiejiaoyu.glory_api.course.CourseModule getChildModules(int index);
+  /**
+   * <pre>
+   * 如果非空，说明这是一个能力方向
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+   */
+  int getChildModulesCount();
+  /**
+   * <pre>
+   * 如果非空，说明这是一个能力方向
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+   */
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder> 
+      getChildModulesOrBuilderList();
+  /**
+   * <pre>
+   * 如果非空，说明这是一个能力方向
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+   */
+  com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder getChildModulesOrBuilder(
+      int index);
+
+  /**
+   * <pre>
    * 创建时间
    * </pre>
    *
-   * <code>string created_at = 9;</code>
+   * <code>string created_at = 10;</code>
    * @return The createdAt.
    */
   java.lang.String getCreatedAt();
@@ -175,7 +219,7 @@ public interface CourseModuleOrBuilder extends
    * 创建时间
    * </pre>
    *
-   * <code>string created_at = 9;</code>
+   * <code>string created_at = 10;</code>
    * @return The bytes for createdAt.
    */
   com.google.protobuf.ByteString

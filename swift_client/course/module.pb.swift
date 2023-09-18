@@ -98,6 +98,9 @@ struct GloryApi_CourseModule {
   /// 课程内容列表
   var courseChapters: [GloryApi_CourseChapter] = []
 
+  /// 如果非空，说明这是一个能力方向
+  var childModules: [GloryApi_CourseModule] = []
+
   /// 创建时间
   var createdAt: String = String()
 
@@ -528,7 +531,8 @@ extension GloryApi_CourseModule: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     6: .standard(proto: "knowledge_hours"),
     7: .standard(proto: "skill_hours"),
     8: .standard(proto: "course_chapters"),
-    9: .standard(proto: "created_at"),
+    9: .standard(proto: "child_modules"),
+    10: .standard(proto: "created_at"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -545,7 +549,8 @@ extension GloryApi_CourseModule: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
       case 6: try { try decoder.decodeSingularFloatField(value: &self.knowledgeHours) }()
       case 7: try { try decoder.decodeSingularFloatField(value: &self.skillHours) }()
       case 8: try { try decoder.decodeRepeatedMessageField(value: &self.courseChapters) }()
-      case 9: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
+      case 9: try { try decoder.decodeRepeatedMessageField(value: &self.childModules) }()
+      case 10: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
       default: break
       }
     }
@@ -576,8 +581,11 @@ extension GloryApi_CourseModule: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     if !self.courseChapters.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.courseChapters, fieldNumber: 8)
     }
+    if !self.childModules.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.childModules, fieldNumber: 9)
+    }
     if !self.createdAt.isEmpty {
-      try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 9)
+      try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 10)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -591,6 +599,7 @@ extension GloryApi_CourseModule: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     if lhs.knowledgeHours != rhs.knowledgeHours {return false}
     if lhs.skillHours != rhs.skillHours {return false}
     if lhs.courseChapters != rhs.courseChapters {return false}
+    if lhs.childModules != rhs.childModules {return false}
     if lhs.createdAt != rhs.createdAt {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
