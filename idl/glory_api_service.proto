@@ -420,6 +420,16 @@ service glory_api {
     option (api.post) = '/api/shop/free_ship_batch';
   }
 
+  rpc ListShopSummary(ListShopSummaryRequest) returns (ListShopSummaryResponse) {
+    option (api.post) = '/api/shop/list_shop_summary';
+  }
+  rpc EnterShop(EnterShopRequest) returns (EnterShopResponse) {
+    option (api.post) = '/api/shop/enter_shop';
+  }
+  rpc ExistShop(ExistShopRequest) returns (ExistShopResponse) {
+    option (api.post) = '/api/shop/exist_shop';
+  }
+
   // cart
   rpc CreateCart(AddCartRequest) returns (AddCartResponse) {
     option (api.post) = '/api/shop/add_cart';

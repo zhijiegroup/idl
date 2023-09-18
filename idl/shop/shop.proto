@@ -42,6 +42,7 @@ message Shop {
   int64 business_license_attachment_id = 32; // 上传附件的接口返回的 attachment id
   string manager = 33; // 店铺管理者
   string manager_phone = 34; // 店铺管理者手机号
+  string enter_user_phone = 36; // 非卖家进入该店铺的手机号 
 }
 
 message ShopQualification {
@@ -262,6 +263,50 @@ message ShopBusinessData {
 message GetShopBusinessDataResponse{
   base.BaseResponse base_resp = 1;
   ShopBusinessData shop_business_data =2;
+}
+
+message ShopSummary {
+  int64 shop_id = 1;
+  string shop_logo_url = 2;
+  string shop_name = 3;
+  double deal_amount = 4;
+  int64 order_total = 5;
+  int64 seller_id = 6;
+}
+
+message ListShopSummaryRequest {
+  base.BaseRequest base_request = 1;
+  string shop_name = 2;
+  string shop_type = 3;
+  base.PaginationRequest pagination = 100;
+}
+
+message ListShopSummaryResponse {
+  base.BaseResponse base_resp = 1;
+  repeated ShopSummary shop_list = 2;
+  base.PaginationResponse pagination = 100;
+}
+
+message EnterShopRequest {
+  base.BaseRequest base_request = 1;
+  int64 seller_id = 2;
+  string phone_number = 3;
+}
+
+message EnterShopResponse {
+  base.BaseResponse base_resp = 1;
+  string shop_seller_token = 2;
+}
+
+message ExistShopRequest {
+  base.BaseRequest base_request = 1;
+  int64 seller_id = 2;
+  int64 shop_id = 3;
+}
+
+message ExistShopResponse {
+  base.BaseResponse base_resp = 1;
+  string existed_user_token = 2;
 }
 
 
