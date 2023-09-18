@@ -1,0 +1,86 @@
+syntax = "proto3";
+package glory_api;
+option java_package = "com.zhijiejiaoyu.glory_api.course";
+option java_multiple_files = true;
+
+import "base.proto";
+import "course/module.proto";
+
+message CourseModules {
+
+}
+
+message Course {
+  int64 course_id = 1; // 课程ID
+  string course_name = 2; // 课程名称
+  string course_organization = 3; // 课程开发单位
+  string course_teacher_name = 4; // 主讲老师名称
+  float knowledge_hours = 5; // 知识点学时
+  float skill_hours = 6; // 技能学时
+  string course_description = 7; // 课程简介
+  string course_cover_path = 8; // 课程封面图片OSS路径
+  int32 course_classification = 9; // 课程分类：1.学校课程；2.职场提升
+  int32 course_level = 10; // 课程层次：1.中职；2.高职；3.中高职
+  string course_major = 11; // 课程专业代码
+  string course_industry = 12; // 课程行业代码
+  int32 course_type = 13; // 课程类型：1.专业核心课；2.名师公开课
+  int32 course_module = 14; // 1. 模块化课程；2.非模块化课程；3.定制课程
+  repeated CourseModule course_modules = 15; // 能力指标或能力方向
+  string created_at = 16; // 创建时间
+}
+
+// 创建模块化课程
+message CreateCourseRequest {
+  base.BaseRequest base_request = 1;
+  Course course = 2;
+}
+
+message CreateCourseResponse {
+  base.BaseResponse base_resp = 1;
+  int64 course_id = 2;
+}
+
+// 获取模块化课程
+message GetCourseRequest {
+  base.BaseRequest base_request = 1;
+  int64 course_id = 2; // 课程ID
+}
+
+message GetCourseResponse {
+  base.BaseResponse base_resp = 1;
+  Course course = 2;
+}
+
+// 更新模块化课程
+message UpdateCourseRequest {
+  base.BaseRequest base_request = 1;
+  Course course = 2;
+}
+
+message UpdateCourseResponse {
+  base.BaseResponse base_resp = 1;
+  int64 course_id = 2;
+}
+
+// 删除模块化课程
+message DeleteCourseRequest {
+  base.BaseRequest base_request = 1;
+  int64 course_id = 2;
+}
+
+message DeleteCourseResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+// 模块化课程列表
+message ListCourseRequest {
+  base.BaseRequest base_request = 1;
+  int32 course_classification = 2; // 课程分类
+  base.PaginationRequest pagination = 100;
+}
+
+message ListCourseResponse {
+  base.BaseResponse base_resp = 1;
+  repeated Course courses = 2;
+  base.PaginationResponse pagination = 100;
+}

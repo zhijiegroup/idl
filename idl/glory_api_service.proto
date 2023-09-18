@@ -44,6 +44,7 @@ import "short_video/short_video.proto";
 import "course/material.proto";
 import "course/module.proto";
 import "course/nmodule.proto";
+import "course/course.proto";
 
 service glory_api {
 
@@ -1014,5 +1015,27 @@ service glory_api {
    // 删除课程
    rpc DeleteNmCourse(DeleteNmCourseRequest) returns (DeleteNmCourseResponse) {
     option (api.post) = '/api/course/delete_nm_course';
+  }
+
+  // 模块化课程
+  // 创建模块化课程
+  rpc CreateCourse(CreateCourseRequest) returns (CreateCourseResponse) {
+    option (api.post) = '/api/course/create_course';
+  }
+  // 获取模块化课程
+  rpc GetCourse(GetCourseRequest) returns (GetCourseResponse) {
+    option (api.post) = '/api/course/get_course';
+  }
+  // 更新模块化课程
+  rpc UpdateCourse(UpdateCourseRequest) returns (UpdateCourseResponse) {
+    option (api.post) = '/api/course/update_course';
+  }
+  // 删除模块化课程
+  rpc DeleteCourse(DeleteCourseRequest) returns (DeleteCourseResponse) {
+    option (api.post) = '/api/course/delete_course';
+  }
+  // 模块化课程列表
+  rpc ListCourse(ListCourseRequest) returns (ListCourseResponse) {
+    option (api.post) = '/api/course/list_course';
   }
 }
