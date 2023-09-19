@@ -872,16 +872,8 @@ export class glory_api {
     );
   }
 
-  EnterShop(request) {
-    const uri = `${this.uriPrefix}/api/shop/enter_shop`;
-    const body = JSONbigint.stringify(request);
-    return fetch(uri, { method: "POST", headers, body, credentials }).then(
-      handleResponse
-    );
-  }
-
-  ExistShop(request) {
-    const uri = `${this.uriPrefix}/api/shop/exist_shop`;
+  ListShopBySellerID(request) {
+    const uri = `${this.uriPrefix}/api/shop/list_shop_by_selelr_id`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse

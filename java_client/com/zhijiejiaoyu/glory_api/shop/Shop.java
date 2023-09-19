@@ -42,7 +42,6 @@ private static final long serialVersionUID = 0L;
     companyBankPhone = "";
     manager = "";
     managerPhone = "";
-    enterUserPhone = "";
   }
 
   @java.lang.Override
@@ -279,12 +278,6 @@ private static final long serialVersionUID = 0L;
               categoryId .addLong(input.readInt64());
             }
             input.popLimit(limit);
-            break;
-          }
-          case 290: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            enterUserPhone = s;
             break;
           }
           case 2666: {
@@ -1658,52 +1651,6 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int ENTER_USER_PHONE_FIELD_NUMBER = 36;
-  private volatile java.lang.Object enterUserPhone ;
-  /**
-   * <pre>
-   * 非卖家进入该店铺的手机号 
-   * </pre>
-   *
-   * <code>string enter_user_phone = 36;</code>
-   * @return The enterUserPhone.
-   */
-  @java.lang.Override
-  public java.lang.String getEnterUserPhone() {
-    java.lang.Object ref = enterUserPhone ;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      enterUserPhone = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * 非卖家进入该店铺的手机号 
-   * </pre>
-   *
-   * <code>string enter_user_phone = 36;</code>
-   * @return The bytes for enterUserPhone.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getEnterUserPhoneBytes() {
-    java.lang.Object ref = enterUserPhone ;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      enterUserPhone = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1821,9 +1768,6 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < categoryId .size(); i++) {
       output.writeInt64NoTag(categoryId .getLong(i));
-    }
-    if (!getEnterUserPhoneBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 36, enterUserPhone );
     }
     for (int i = 0; i < shopQualification .size(); i++) {
       output.writeMessage(333, shopQualification .get(i));
@@ -1955,9 +1899,6 @@ private static final long serialVersionUID = 0L;
       }
       categoryIdMemoizedSerializedSize = dataSize;
     }
-    if (!getEnterUserPhoneBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(36, enterUserPhone );
-    }
     for (int i = 0; i < shopQualification .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(333, shopQualification .get(i));
@@ -2045,8 +1986,6 @@ private static final long serialVersionUID = 0L;
         .equals(other.getManager())) return false;
     if (!getManagerPhone()
         .equals(other.getManagerPhone())) return false;
-    if (!getEnterUserPhone()
-        .equals(other.getEnterUserPhone())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -2137,8 +2076,6 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getManager().hashCode();
     hash = (37 * hash) + MANAGER_PHONE_FIELD_NUMBER;
     hash = (53 * hash) + getManagerPhone().hashCode();
-    hash = (37 * hash) + ENTER_USER_PHONE_FIELD_NUMBER;
-    hash = (53 * hash) + getEnterUserPhone().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2345,8 +2282,6 @@ private static final long serialVersionUID = 0L;
 
       managerPhone = "";
 
-      enterUserPhone = "";
-
       return this;
     }
 
@@ -2420,7 +2355,6 @@ private static final long serialVersionUID = 0L;
       result.businessLicenseAttachmentId = businessLicenseAttachmentId ;
       result.manager = manager ;
       result.managerPhone = managerPhone ;
-      result.enterUserPhone = enterUserPhone ;
       onBuilt();
       return result;
     }
@@ -2623,10 +2557,6 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getManagerPhone().isEmpty()) {
         managerPhone = other.managerPhone ;
-        onChanged();
-      }
-      if (!other.getEnterUserPhone().isEmpty()) {
-        enterUserPhone = other.enterUserPhone ;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -5722,102 +5652,6 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       managerPhone = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object enterUserPhone = "";
-    /**
-     * <pre>
-     * 非卖家进入该店铺的手机号 
-     * </pre>
-     *
-     * <code>string enter_user_phone = 36;</code>
-     * @return The enterUserPhone.
-     */
-    public java.lang.String getEnterUserPhone() {
-      java.lang.Object ref = enterUserPhone ;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        enterUserPhone = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * 非卖家进入该店铺的手机号 
-     * </pre>
-     *
-     * <code>string enter_user_phone = 36;</code>
-     * @return The bytes for enterUserPhone.
-     */
-    public com.google.protobuf.ByteString
-        getEnterUserPhoneBytes() {
-      java.lang.Object ref = enterUserPhone ;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        enterUserPhone = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * 非卖家进入该店铺的手机号 
-     * </pre>
-     *
-     * <code>string enter_user_phone = 36;</code>
-     * @param value The enterUserPhone to set.
-     * @return This builder for chaining.
-     */
-    public Builder setEnterUserPhone(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      enterUserPhone = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 非卖家进入该店铺的手机号 
-     * </pre>
-     *
-     * <code>string enter_user_phone = 36;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearEnterUserPhone() {
-      
-      enterUserPhone = getDefaultInstance().getEnterUserPhone();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 非卖家进入该店铺的手机号 
-     * </pre>
-     *
-     * <code>string enter_user_phone = 36;</code>
-     * @param value The bytes for enterUserPhone to set.
-     * @return This builder for chaining.
-     */
-    public Builder setEnterUserPhoneBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      enterUserPhone = value;
       onChanged();
       return this;
     }

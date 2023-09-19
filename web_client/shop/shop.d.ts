@@ -75,8 +75,6 @@ export interface Shop {
   manager?: string;
   /** 店铺管理者手机号 */
   manager_phone?: string;
-  /** 非卖家进入该店铺的手机号 */
-  enter_user_phone?: string;
 }
 
 export interface ShopQualification {
@@ -331,24 +329,12 @@ export interface ListShopSummaryResponse {
   pagination?: base.PaginationResponse;
 }
 
-export interface EnterShopRequest {
+export interface ListShopBySellerIDRequest {
   base_request?: base.BaseRequest;
   seller_id?: string;
-  phone_number?: string;
 }
 
-export interface EnterShopResponse {
+export interface ListShopBySellerIDResponse {
   base_resp?: base.BaseResponse;
-  shop_seller_token?: string;
-}
-
-export interface ExistShopRequest {
-  base_request?: base.BaseRequest;
-  seller_id?: string;
-  shop_id?: string;
-}
-
-export interface ExistShopResponse {
-  base_resp?: base.BaseResponse;
-  existed_user_token?: string;
+  shop_list?: Array<Shop>;
 }

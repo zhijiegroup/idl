@@ -472,9 +472,9 @@ list the permissions that supported */
     request: shop.ListShopSummaryRequest
   ): Promise<shop.ListShopSummaryResponse>;
 
-  EnterShop(request: shop.EnterShopRequest): Promise<shop.EnterShopResponse>;
-
-  ExistShop(request: shop.ExistShopRequest): Promise<shop.ExistShopResponse>;
+  ListShopBySellerID(
+    request: shop.ListShopBySellerIDRequest
+  ): Promise<shop.ListShopBySellerIDResponse>;
 
   /** cart */
   CreateCart(request: cart.AddCartRequest): Promise<cart.AddCartResponse>;
