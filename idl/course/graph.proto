@@ -1,0 +1,46 @@
+syntax = "proto3";
+package glory_api;
+option java_package = "com.zhijiejiaoyu.glory_api.course";
+option java_multiple_files = true;
+
+import "base.proto";
+
+message Node {
+    int64 id = 1;
+    string node_id = 2;
+    string label = 4;
+    string value = 5;
+    string type = 6;
+    int32 weight = 7; // 节点权重值
+}
+
+message Edge {
+    string type = 1;
+    string label = 2;
+    string begin_id = 3;
+    string end_id = 4;
+}
+
+message KnowledgeGraph {
+    repeated Node node = 1; // 节点
+    repeated Edge edge = 2; // 边
+}
+
+message CreateKnowledgeGraphRequest {
+    base.BaseRequest base_request = 1;
+    repeated int64 posts = 2; // 岗位列表
+}
+
+message CreateKnowledgeGraphResponse {
+    base.BaseResponse base_resp = 1;
+}
+
+message GetKnowledgeGraphRequest {
+    base.BaseRequest base_request = 1;
+    repeated int64 posts = 2; // 岗位列表
+}
+
+message GetKnowledgeGraphResponse {
+    base.BaseResponse base_resp = 1;
+    KnowledgeGraph graph = 2; // 知识图谱
+}
