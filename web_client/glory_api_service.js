@@ -45,6 +45,7 @@ import * as material from "./course/material";
 import * as modules from "./course/module";
 import * as nmodule from "./course/nmodule";
 import * as course from "./course/course";
+import * as user_course from "./course/user_course";
 export {
   user,
   address,
@@ -87,6 +88,7 @@ export {
   modules,
   nmodule,
   course,
+  user_course,
 };
 
 import {
@@ -2114,6 +2116,30 @@ export class glory_api {
 
   ListCourse(request) {
     const uri = `${this.uriPrefix}/api/course/list_course`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  EnrollCourse(request) {
+    const uri = `${this.uriPrefix}/api/course/enroll_course`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteMyCourse(request) {
+    const uri = `${this.uriPrefix}/api/course/delete_my_course`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  UpdateCourseProgress(request) {
+    const uri = `${this.uriPrefix}/api/course/update_course_progress`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse

@@ -46,6 +46,7 @@ import "course/module.proto";
 import "course/nmodule.proto";
 import "course/course.proto";
 import "course/graph.proto";
+import "course/user_course.proto";
 
 service glory_api {
 
@@ -1056,5 +1057,21 @@ service glory_api {
   }
   rpc GetKnowledgeGraph(GetKnowledgeGraphRequest) returns (GetKnowledgeGraphResponse) {
     option (api.post) = '/api/course_kg/get_knowledge_graph';
+  }
+
+  // 我的课程
+  // 加入课程
+  rpc EnrollCourse(EnrollCourseRequest) returns (EnrollCourseResponse) {
+    option (api.post) = '/api/course/enroll_course';
+  }
+
+  // 删除我的课程
+  rpc DeleteMyCourse (DeleteMyCourseRequest) returns (DeleteMyCourseResponse) {
+    option (api.post) = '/api/course/delete_my_course';
+  }
+  
+  // 上报课程进度
+  rpc UpdateCourseProgress (UpdateCourseProgressRequest) returns (UpdateCourseProgressResponse) {
+    option (api.post) = '/api/course/update_course_progress';
   }
 }
