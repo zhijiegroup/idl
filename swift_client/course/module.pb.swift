@@ -80,11 +80,14 @@ struct GloryApi_CourseModule {
   /// 能力指标ID
   var moduleID: Int64 = 0
 
+  /// 能力指标编码
+  var moduleCode: String = String()
+
   /// 能力指标名称
   var moduleName: String = String()
 
-  /// 能力指标编码
-  var moduleCode: String = String()
+  /// 能力指标描述
+  var moduleDescription: String = String()
 
   /// 专业代码
   var majorCode: String = String()
@@ -533,15 +536,16 @@ extension GloryApi_CourseModule: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   static let protoMessageName: String = _protobuf_package + ".CourseModule"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "module_id"),
-    2: .standard(proto: "module_name"),
-    3: .standard(proto: "module_code"),
-    4: .standard(proto: "major_code"),
-    5: .standard(proto: "teacher_name"),
-    6: .standard(proto: "knowledge_hours"),
-    7: .standard(proto: "skill_hours"),
-    8: .standard(proto: "course_chapters"),
-    9: .standard(proto: "child_modules"),
-    10: .standard(proto: "created_at"),
+    2: .standard(proto: "module_code"),
+    3: .standard(proto: "module_name"),
+    4: .standard(proto: "module_description"),
+    5: .standard(proto: "major_code"),
+    6: .standard(proto: "teacher_name"),
+    7: .standard(proto: "knowledge_hours"),
+    8: .standard(proto: "skill_hours"),
+    9: .standard(proto: "course_chapters"),
+    10: .standard(proto: "child_modules"),
+    11: .standard(proto: "created_at"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -551,15 +555,16 @@ extension GloryApi_CourseModule: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularInt64Field(value: &self.moduleID) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.moduleName) }()
-      case 3: try { try decoder.decodeSingularStringField(value: &self.moduleCode) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.majorCode) }()
-      case 5: try { try decoder.decodeSingularStringField(value: &self.teacherName) }()
-      case 6: try { try decoder.decodeSingularFloatField(value: &self.knowledgeHours) }()
-      case 7: try { try decoder.decodeSingularFloatField(value: &self.skillHours) }()
-      case 8: try { try decoder.decodeRepeatedMessageField(value: &self.courseChapters) }()
-      case 9: try { try decoder.decodeRepeatedMessageField(value: &self.childModules) }()
-      case 10: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.moduleCode) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.moduleName) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.moduleDescription) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.majorCode) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.teacherName) }()
+      case 7: try { try decoder.decodeSingularFloatField(value: &self.knowledgeHours) }()
+      case 8: try { try decoder.decodeSingularFloatField(value: &self.skillHours) }()
+      case 9: try { try decoder.decodeRepeatedMessageField(value: &self.courseChapters) }()
+      case 10: try { try decoder.decodeRepeatedMessageField(value: &self.childModules) }()
+      case 11: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
       default: break
       }
     }
@@ -569,40 +574,44 @@ extension GloryApi_CourseModule: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     if self.moduleID != 0 {
       try visitor.visitSingularInt64Field(value: self.moduleID, fieldNumber: 1)
     }
-    if !self.moduleName.isEmpty {
-      try visitor.visitSingularStringField(value: self.moduleName, fieldNumber: 2)
-    }
     if !self.moduleCode.isEmpty {
-      try visitor.visitSingularStringField(value: self.moduleCode, fieldNumber: 3)
+      try visitor.visitSingularStringField(value: self.moduleCode, fieldNumber: 2)
+    }
+    if !self.moduleName.isEmpty {
+      try visitor.visitSingularStringField(value: self.moduleName, fieldNumber: 3)
+    }
+    if !self.moduleDescription.isEmpty {
+      try visitor.visitSingularStringField(value: self.moduleDescription, fieldNumber: 4)
     }
     if !self.majorCode.isEmpty {
-      try visitor.visitSingularStringField(value: self.majorCode, fieldNumber: 4)
+      try visitor.visitSingularStringField(value: self.majorCode, fieldNumber: 5)
     }
     if !self.teacherName.isEmpty {
-      try visitor.visitSingularStringField(value: self.teacherName, fieldNumber: 5)
+      try visitor.visitSingularStringField(value: self.teacherName, fieldNumber: 6)
     }
     if self.knowledgeHours != 0 {
-      try visitor.visitSingularFloatField(value: self.knowledgeHours, fieldNumber: 6)
+      try visitor.visitSingularFloatField(value: self.knowledgeHours, fieldNumber: 7)
     }
     if self.skillHours != 0 {
-      try visitor.visitSingularFloatField(value: self.skillHours, fieldNumber: 7)
+      try visitor.visitSingularFloatField(value: self.skillHours, fieldNumber: 8)
     }
     if !self.courseChapters.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.courseChapters, fieldNumber: 8)
+      try visitor.visitRepeatedMessageField(value: self.courseChapters, fieldNumber: 9)
     }
     if !self.childModules.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.childModules, fieldNumber: 9)
+      try visitor.visitRepeatedMessageField(value: self.childModules, fieldNumber: 10)
     }
     if !self.createdAt.isEmpty {
-      try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 10)
+      try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 11)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_CourseModule, rhs: GloryApi_CourseModule) -> Bool {
     if lhs.moduleID != rhs.moduleID {return false}
-    if lhs.moduleName != rhs.moduleName {return false}
     if lhs.moduleCode != rhs.moduleCode {return false}
+    if lhs.moduleName != rhs.moduleName {return false}
+    if lhs.moduleDescription != rhs.moduleDescription {return false}
     if lhs.majorCode != rhs.majorCode {return false}
     if lhs.teacherName != rhs.teacherName {return false}
     if lhs.knowledgeHours != rhs.knowledgeHours {return false}

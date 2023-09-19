@@ -35,10 +35,12 @@ export interface CourseChapter {
 export interface CourseModule {
   /** 能力指标ID */
   module_id?: string;
-  /** 能力指标名称 */
-  module_name?: string;
   /** 能力指标编码 */
   module_code?: string;
+  /** 能力指标名称 */
+  module_name?: string;
+  /** 能力指标描述 */
+  module_description?: string;
   /** 专业代码 */
   major_code?: string;
   /** 主讲老师名称 */

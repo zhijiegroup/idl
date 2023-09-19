@@ -16,8 +16,9 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CourseModule() {
-    moduleName = "";
     moduleCode = "";
+    moduleName = "";
+    moduleDescription = "";
     majorCode = "";
     teacherName = "";
     courseChapters = java.util.Collections.emptyList();
@@ -64,38 +65,44 @@ private static final long serialVersionUID = 0L;
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            moduleName = s;
+            moduleCode = s;
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            moduleCode = s;
+            moduleName = s;
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            majorCode = s;
+            moduleDescription = s;
             break;
           }
           case 42: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            teacherName = s;
+            majorCode = s;
             break;
           }
-          case 53: {
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
 
-            knowledgeHours = input.readFloat();
+            teacherName = s;
             break;
           }
           case 61: {
 
+            knowledgeHours = input.readFloat();
+            break;
+          }
+          case 69: {
+
             skillHours = input.readFloat();
             break;
           }
-          case 66: {
+          case 74: {
             if (!((mutable_bitField0 & 0x00000001) != 0)) {
               courseChapters = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.course.CourseChapter>();
               mutable_bitField0_ |= 0x00000001;
@@ -104,7 +111,7 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.zhijiejiaoyu.glory_api.course.CourseChapter.parser(), extensionRegistry));
             break;
           }
-          case 74: {
+          case 82: {
             if (!((mutable_bitField0 & 0x00000002) != 0)) {
               childModules = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.course.CourseModule>();
               mutable_bitField0_ |= 0x00000002;
@@ -113,7 +120,7 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.zhijiejiaoyu.glory_api.course.CourseModule.parser(), extensionRegistry));
             break;
           }
-          case 82: {
+          case 90: {
             java.lang.String s = input.readStringRequireUtf8();
 
             createdAt = s;
@@ -172,60 +179,14 @@ private static final long serialVersionUID = 0L;
     return moduleId ;
   }
 
-  public static final int MODULE_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object moduleName ;
-  /**
-   * <pre>
-   * 能力指标名称
-   * </pre>
-   *
-   * <code>string module_name = 2;</code>
-   * @return The moduleName.
-   */
-  @java.lang.Override
-  public java.lang.String getModuleName() {
-    java.lang.Object ref = moduleName ;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      moduleName = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * 能力指标名称
-   * </pre>
-   *
-   * <code>string module_name = 2;</code>
-   * @return The bytes for moduleName.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getModuleNameBytes() {
-    java.lang.Object ref = moduleName ;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      moduleName = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int MODULE_CODE_FIELD_NUMBER = 3;
+  public static final int MODULE_CODE_FIELD_NUMBER = 2;
   private volatile java.lang.Object moduleCode ;
   /**
    * <pre>
    * 能力指标编码
    * </pre>
    *
-   * <code>string module_code = 3;</code>
+   * <code>string module_code = 2;</code>
    * @return The moduleCode.
    */
   @java.lang.Override
@@ -246,7 +207,7 @@ private static final long serialVersionUID = 0L;
    * 能力指标编码
    * </pre>
    *
-   * <code>string module_code = 3;</code>
+   * <code>string module_code = 2;</code>
    * @return The bytes for moduleCode.
    */
   @java.lang.Override
@@ -264,14 +225,106 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int MAJOR_CODE_FIELD_NUMBER = 4;
+  public static final int MODULE_NAME_FIELD_NUMBER = 3;
+  private volatile java.lang.Object moduleName ;
+  /**
+   * <pre>
+   * 能力指标名称
+   * </pre>
+   *
+   * <code>string module_name = 3;</code>
+   * @return The moduleName.
+   */
+  @java.lang.Override
+  public java.lang.String getModuleName() {
+    java.lang.Object ref = moduleName ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      moduleName = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 能力指标名称
+   * </pre>
+   *
+   * <code>string module_name = 3;</code>
+   * @return The bytes for moduleName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getModuleNameBytes() {
+    java.lang.Object ref = moduleName ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      moduleName = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int MODULE_DESCRIPTION_FIELD_NUMBER = 4;
+  private volatile java.lang.Object moduleDescription ;
+  /**
+   * <pre>
+   * 能力指标描述
+   * </pre>
+   *
+   * <code>string module_description = 4;</code>
+   * @return The moduleDescription.
+   */
+  @java.lang.Override
+  public java.lang.String getModuleDescription() {
+    java.lang.Object ref = moduleDescription ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      moduleDescription = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 能力指标描述
+   * </pre>
+   *
+   * <code>string module_description = 4;</code>
+   * @return The bytes for moduleDescription.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getModuleDescriptionBytes() {
+    java.lang.Object ref = moduleDescription ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      moduleDescription = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int MAJOR_CODE_FIELD_NUMBER = 5;
   private volatile java.lang.Object majorCode ;
   /**
    * <pre>
    * 专业代码
    * </pre>
    *
-   * <code>string major_code = 4;</code>
+   * <code>string major_code = 5;</code>
    * @return The majorCode.
    */
   @java.lang.Override
@@ -292,7 +345,7 @@ private static final long serialVersionUID = 0L;
    * 专业代码
    * </pre>
    *
-   * <code>string major_code = 4;</code>
+   * <code>string major_code = 5;</code>
    * @return The bytes for majorCode.
    */
   @java.lang.Override
@@ -310,14 +363,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TEACHER_NAME_FIELD_NUMBER = 5;
+  public static final int TEACHER_NAME_FIELD_NUMBER = 6;
   private volatile java.lang.Object teacherName ;
   /**
    * <pre>
    * 主讲老师名称
    * </pre>
    *
-   * <code>string teacher_name = 5;</code>
+   * <code>string teacher_name = 6;</code>
    * @return The teacherName.
    */
   @java.lang.Override
@@ -338,7 +391,7 @@ private static final long serialVersionUID = 0L;
    * 主讲老师名称
    * </pre>
    *
-   * <code>string teacher_name = 5;</code>
+   * <code>string teacher_name = 6;</code>
    * @return The bytes for teacherName.
    */
   @java.lang.Override
@@ -356,14 +409,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int KNOWLEDGE_HOURS_FIELD_NUMBER = 6;
+  public static final int KNOWLEDGE_HOURS_FIELD_NUMBER = 7;
   private float knowledgeHours ;
   /**
    * <pre>
    * 知识点学时
    * </pre>
    *
-   * <code>float knowledge_hours = 6;</code>
+   * <code>float knowledge_hours = 7;</code>
    * @return The knowledgeHours.
    */
   @java.lang.Override
@@ -371,14 +424,14 @@ private static final long serialVersionUID = 0L;
     return knowledgeHours ;
   }
 
-  public static final int SKILL_HOURS_FIELD_NUMBER = 7;
+  public static final int SKILL_HOURS_FIELD_NUMBER = 8;
   private float skillHours ;
   /**
    * <pre>
    * 技能学时
    * </pre>
    *
-   * <code>float skill_hours = 7;</code>
+   * <code>float skill_hours = 8;</code>
    * @return The skillHours.
    */
   @java.lang.Override
@@ -386,14 +439,14 @@ private static final long serialVersionUID = 0L;
     return skillHours ;
   }
 
-  public static final int COURSE_CHAPTERS_FIELD_NUMBER = 8;
+  public static final int COURSE_CHAPTERS_FIELD_NUMBER = 9;
   private java.util.List<com.zhijiejiaoyu.glory_api.course.CourseChapter> courseChapters ;
   /**
    * <pre>
    * 课程内容列表
    * </pre>
    *
-   * <code>repeated .glory_api.CourseChapter course_chapters = 8;</code>
+   * <code>repeated .glory_api.CourseChapter course_chapters = 9;</code>
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseChapter> getCourseChaptersList() {
@@ -404,7 +457,7 @@ private static final long serialVersionUID = 0L;
    * 课程内容列表
    * </pre>
    *
-   * <code>repeated .glory_api.CourseChapter course_chapters = 8;</code>
+   * <code>repeated .glory_api.CourseChapter course_chapters = 9;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseChapterOrBuilder> 
@@ -416,7 +469,7 @@ private static final long serialVersionUID = 0L;
    * 课程内容列表
    * </pre>
    *
-   * <code>repeated .glory_api.CourseChapter course_chapters = 8;</code>
+   * <code>repeated .glory_api.CourseChapter course_chapters = 9;</code>
    */
   @java.lang.Override
   public int getCourseChaptersCount() {
@@ -427,7 +480,7 @@ private static final long serialVersionUID = 0L;
    * 课程内容列表
    * </pre>
    *
-   * <code>repeated .glory_api.CourseChapter course_chapters = 8;</code>
+   * <code>repeated .glory_api.CourseChapter course_chapters = 9;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.course.CourseChapter getCourseChapters(int index) {
@@ -438,7 +491,7 @@ private static final long serialVersionUID = 0L;
    * 课程内容列表
    * </pre>
    *
-   * <code>repeated .glory_api.CourseChapter course_chapters = 8;</code>
+   * <code>repeated .glory_api.CourseChapter course_chapters = 9;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.course.CourseChapterOrBuilder getCourseChaptersOrBuilder(
@@ -446,14 +499,14 @@ private static final long serialVersionUID = 0L;
     return courseChapters .get(index);
   }
 
-  public static final int CHILD_MODULES_FIELD_NUMBER = 9;
+  public static final int CHILD_MODULES_FIELD_NUMBER = 10;
   private java.util.List<com.zhijiejiaoyu.glory_api.course.CourseModule> childModules ;
   /**
    * <pre>
    * 如果非空，说明这是一个能力方向
    * </pre>
    *
-   * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+   * <code>repeated .glory_api.CourseModule child_modules = 10;</code>
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseModule> getChildModulesList() {
@@ -464,7 +517,7 @@ private static final long serialVersionUID = 0L;
    * 如果非空，说明这是一个能力方向
    * </pre>
    *
-   * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+   * <code>repeated .glory_api.CourseModule child_modules = 10;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder> 
@@ -476,7 +529,7 @@ private static final long serialVersionUID = 0L;
    * 如果非空，说明这是一个能力方向
    * </pre>
    *
-   * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+   * <code>repeated .glory_api.CourseModule child_modules = 10;</code>
    */
   @java.lang.Override
   public int getChildModulesCount() {
@@ -487,7 +540,7 @@ private static final long serialVersionUID = 0L;
    * 如果非空，说明这是一个能力方向
    * </pre>
    *
-   * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+   * <code>repeated .glory_api.CourseModule child_modules = 10;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.course.CourseModule getChildModules(int index) {
@@ -498,7 +551,7 @@ private static final long serialVersionUID = 0L;
    * 如果非空，说明这是一个能力方向
    * </pre>
    *
-   * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+   * <code>repeated .glory_api.CourseModule child_modules = 10;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder getChildModulesOrBuilder(
@@ -506,14 +559,14 @@ private static final long serialVersionUID = 0L;
     return childModules .get(index);
   }
 
-  public static final int CREATED_AT_FIELD_NUMBER = 10;
+  public static final int CREATED_AT_FIELD_NUMBER = 11;
   private volatile java.lang.Object createdAt ;
   /**
    * <pre>
    * 创建时间
    * </pre>
    *
-   * <code>string created_at = 10;</code>
+   * <code>string created_at = 11;</code>
    * @return The createdAt.
    */
   @java.lang.Override
@@ -534,7 +587,7 @@ private static final long serialVersionUID = 0L;
    * 创建时间
    * </pre>
    *
-   * <code>string created_at = 10;</code>
+   * <code>string created_at = 11;</code>
    * @return The bytes for createdAt.
    */
   @java.lang.Override
@@ -569,32 +622,35 @@ private static final long serialVersionUID = 0L;
     if (moduleId != 0L) {
       output.writeInt64(1, moduleId );
     }
-    if (!getModuleNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, moduleName );
-    }
     if (!getModuleCodeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, moduleCode );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, moduleCode );
+    }
+    if (!getModuleNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, moduleName );
+    }
+    if (!getModuleDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, moduleDescription );
     }
     if (!getMajorCodeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, majorCode );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, majorCode );
     }
     if (!getTeacherNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, teacherName );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, teacherName );
     }
     if (knowledgeHours != 0F) {
-      output.writeFloat(6, knowledgeHours );
+      output.writeFloat(7, knowledgeHours );
     }
     if (skillHours != 0F) {
-      output.writeFloat(7, skillHours );
+      output.writeFloat(8, skillHours );
     }
     for (int i = 0; i < courseChapters .size(); i++) {
-      output.writeMessage(8, courseChapters .get(i));
+      output.writeMessage(9, courseChapters .get(i));
     }
     for (int i = 0; i < childModules .size(); i++) {
-      output.writeMessage(9, childModules .get(i));
+      output.writeMessage(10, childModules .get(i));
     }
     if (!getCreatedAtBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, createdAt );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, createdAt );
     }
     unknownFields.writeTo(output);
   }
@@ -609,36 +665,39 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, moduleId );
     }
-    if (!getModuleNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, moduleName );
-    }
     if (!getModuleCodeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, moduleCode );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, moduleCode );
+    }
+    if (!getModuleNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, moduleName );
+    }
+    if (!getModuleDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, moduleDescription );
     }
     if (!getMajorCodeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, majorCode );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, majorCode );
     }
     if (!getTeacherNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, teacherName );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, teacherName );
     }
     if (knowledgeHours != 0F) {
       size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(6, knowledgeHours );
+        .computeFloatSize(7, knowledgeHours );
     }
     if (skillHours != 0F) {
       size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(7, skillHours );
+        .computeFloatSize(8, skillHours );
     }
     for (int i = 0; i < courseChapters .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, courseChapters .get(i));
+        .computeMessageSize(9, courseChapters .get(i));
     }
     for (int i = 0; i < childModules .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, childModules .get(i));
+        .computeMessageSize(10, childModules .get(i));
     }
     if (!getCreatedAtBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, createdAt );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, createdAt );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -657,10 +716,12 @@ private static final long serialVersionUID = 0L;
 
     if (getModuleId()
         != other.getModuleId()) return false;
-    if (!getModuleName()
-        .equals(other.getModuleName())) return false;
     if (!getModuleCode()
         .equals(other.getModuleCode())) return false;
+    if (!getModuleName()
+        .equals(other.getModuleName())) return false;
+    if (!getModuleDescription()
+        .equals(other.getModuleDescription())) return false;
     if (!getMajorCode()
         .equals(other.getMajorCode())) return false;
     if (!getTeacherName()
@@ -691,10 +752,12 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + MODULE_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getModuleId());
-    hash = (37 * hash) + MODULE_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getModuleName().hashCode();
     hash = (37 * hash) + MODULE_CODE_FIELD_NUMBER;
     hash = (53 * hash) + getModuleCode().hashCode();
+    hash = (37 * hash) + MODULE_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getModuleName().hashCode();
+    hash = (37 * hash) + MODULE_DESCRIPTION_FIELD_NUMBER;
+    hash = (53 * hash) + getModuleDescription().hashCode();
     hash = (37 * hash) + MAJOR_CODE_FIELD_NUMBER;
     hash = (53 * hash) + getMajorCode().hashCode();
     hash = (37 * hash) + TEACHER_NAME_FIELD_NUMBER;
@@ -852,9 +915,11 @@ private static final long serialVersionUID = 0L;
       super.clear();
       moduleId = 0L;
 
+      moduleCode = "";
+
       moduleName = "";
 
-      moduleCode = "";
+      moduleDescription = "";
 
       majorCode = "";
 
@@ -906,8 +971,9 @@ private static final long serialVersionUID = 0L;
       com.zhijiejiaoyu.glory_api.course.CourseModule result = new com.zhijiejiaoyu.glory_api.course.CourseModule(this);
       int from_bitField0 = bitField0 ;
       result.moduleId = moduleId ;
-      result.moduleName = moduleName ;
       result.moduleCode = moduleCode ;
+      result.moduleName = moduleName ;
+      result.moduleDescription = moduleDescription ;
       result.majorCode = majorCode ;
       result.teacherName = teacherName ;
       result.knowledgeHours = knowledgeHours ;
@@ -982,12 +1048,16 @@ private static final long serialVersionUID = 0L;
       if (other.getModuleId() != 0L) {
         setModuleId(other.getModuleId());
       }
+      if (!other.getModuleCode().isEmpty()) {
+        moduleCode = other.moduleCode ;
+        onChanged();
+      }
       if (!other.getModuleName().isEmpty()) {
         moduleName = other.moduleName ;
         onChanged();
       }
-      if (!other.getModuleCode().isEmpty()) {
-        moduleCode = other.moduleCode ;
+      if (!other.getModuleDescription().isEmpty()) {
+        moduleDescription = other.moduleDescription ;
         onChanged();
       }
       if (!other.getMajorCode().isEmpty()) {
@@ -1133,109 +1203,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object moduleName = "";
-    /**
-     * <pre>
-     * 能力指标名称
-     * </pre>
-     *
-     * <code>string module_name = 2;</code>
-     * @return The moduleName.
-     */
-    public java.lang.String getModuleName() {
-      java.lang.Object ref = moduleName ;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        moduleName = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * 能力指标名称
-     * </pre>
-     *
-     * <code>string module_name = 2;</code>
-     * @return The bytes for moduleName.
-     */
-    public com.google.protobuf.ByteString
-        getModuleNameBytes() {
-      java.lang.Object ref = moduleName ;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        moduleName = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * 能力指标名称
-     * </pre>
-     *
-     * <code>string module_name = 2;</code>
-     * @param value The moduleName to set.
-     * @return This builder for chaining.
-     */
-    public Builder setModuleName(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      moduleName = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 能力指标名称
-     * </pre>
-     *
-     * <code>string module_name = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearModuleName() {
-      
-      moduleName = getDefaultInstance().getModuleName();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 能力指标名称
-     * </pre>
-     *
-     * <code>string module_name = 2;</code>
-     * @param value The bytes for moduleName to set.
-     * @return This builder for chaining.
-     */
-    public Builder setModuleNameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      moduleName = value;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object moduleCode = "";
     /**
      * <pre>
      * 能力指标编码
      * </pre>
      *
-     * <code>string module_code = 3;</code>
+     * <code>string module_code = 2;</code>
      * @return The moduleCode.
      */
     public java.lang.String getModuleCode() {
@@ -1255,7 +1229,7 @@ private static final long serialVersionUID = 0L;
      * 能力指标编码
      * </pre>
      *
-     * <code>string module_code = 3;</code>
+     * <code>string module_code = 2;</code>
      * @return The bytes for moduleCode.
      */
     public com.google.protobuf.ByteString
@@ -1276,7 +1250,7 @@ private static final long serialVersionUID = 0L;
      * 能力指标编码
      * </pre>
      *
-     * <code>string module_code = 3;</code>
+     * <code>string module_code = 2;</code>
      * @param value The moduleCode to set.
      * @return This builder for chaining.
      */
@@ -1295,7 +1269,7 @@ private static final long serialVersionUID = 0L;
      * 能力指标编码
      * </pre>
      *
-     * <code>string module_code = 3;</code>
+     * <code>string module_code = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearModuleCode() {
@@ -1309,7 +1283,7 @@ private static final long serialVersionUID = 0L;
      * 能力指标编码
      * </pre>
      *
-     * <code>string module_code = 3;</code>
+     * <code>string module_code = 2;</code>
      * @param value The bytes for moduleCode to set.
      * @return This builder for chaining.
      */
@@ -1325,13 +1299,205 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object moduleName = "";
+    /**
+     * <pre>
+     * 能力指标名称
+     * </pre>
+     *
+     * <code>string module_name = 3;</code>
+     * @return The moduleName.
+     */
+    public java.lang.String getModuleName() {
+      java.lang.Object ref = moduleName ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        moduleName = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 能力指标名称
+     * </pre>
+     *
+     * <code>string module_name = 3;</code>
+     * @return The bytes for moduleName.
+     */
+    public com.google.protobuf.ByteString
+        getModuleNameBytes() {
+      java.lang.Object ref = moduleName ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        moduleName = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 能力指标名称
+     * </pre>
+     *
+     * <code>string module_name = 3;</code>
+     * @param value The moduleName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModuleName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      moduleName = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 能力指标名称
+     * </pre>
+     *
+     * <code>string module_name = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearModuleName() {
+      
+      moduleName = getDefaultInstance().getModuleName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 能力指标名称
+     * </pre>
+     *
+     * <code>string module_name = 3;</code>
+     * @param value The bytes for moduleName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModuleNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      moduleName = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object moduleDescription = "";
+    /**
+     * <pre>
+     * 能力指标描述
+     * </pre>
+     *
+     * <code>string module_description = 4;</code>
+     * @return The moduleDescription.
+     */
+    public java.lang.String getModuleDescription() {
+      java.lang.Object ref = moduleDescription ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        moduleDescription = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 能力指标描述
+     * </pre>
+     *
+     * <code>string module_description = 4;</code>
+     * @return The bytes for moduleDescription.
+     */
+    public com.google.protobuf.ByteString
+        getModuleDescriptionBytes() {
+      java.lang.Object ref = moduleDescription ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        moduleDescription = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 能力指标描述
+     * </pre>
+     *
+     * <code>string module_description = 4;</code>
+     * @param value The moduleDescription to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModuleDescription(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      moduleDescription = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 能力指标描述
+     * </pre>
+     *
+     * <code>string module_description = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearModuleDescription() {
+      
+      moduleDescription = getDefaultInstance().getModuleDescription();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 能力指标描述
+     * </pre>
+     *
+     * <code>string module_description = 4;</code>
+     * @param value The bytes for moduleDescription to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModuleDescriptionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      moduleDescription = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object majorCode = "";
     /**
      * <pre>
      * 专业代码
      * </pre>
      *
-     * <code>string major_code = 4;</code>
+     * <code>string major_code = 5;</code>
      * @return The majorCode.
      */
     public java.lang.String getMajorCode() {
@@ -1351,7 +1517,7 @@ private static final long serialVersionUID = 0L;
      * 专业代码
      * </pre>
      *
-     * <code>string major_code = 4;</code>
+     * <code>string major_code = 5;</code>
      * @return The bytes for majorCode.
      */
     public com.google.protobuf.ByteString
@@ -1372,7 +1538,7 @@ private static final long serialVersionUID = 0L;
      * 专业代码
      * </pre>
      *
-     * <code>string major_code = 4;</code>
+     * <code>string major_code = 5;</code>
      * @param value The majorCode to set.
      * @return This builder for chaining.
      */
@@ -1391,7 +1557,7 @@ private static final long serialVersionUID = 0L;
      * 专业代码
      * </pre>
      *
-     * <code>string major_code = 4;</code>
+     * <code>string major_code = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearMajorCode() {
@@ -1405,7 +1571,7 @@ private static final long serialVersionUID = 0L;
      * 专业代码
      * </pre>
      *
-     * <code>string major_code = 4;</code>
+     * <code>string major_code = 5;</code>
      * @param value The bytes for majorCode to set.
      * @return This builder for chaining.
      */
@@ -1427,7 +1593,7 @@ private static final long serialVersionUID = 0L;
      * 主讲老师名称
      * </pre>
      *
-     * <code>string teacher_name = 5;</code>
+     * <code>string teacher_name = 6;</code>
      * @return The teacherName.
      */
     public java.lang.String getTeacherName() {
@@ -1447,7 +1613,7 @@ private static final long serialVersionUID = 0L;
      * 主讲老师名称
      * </pre>
      *
-     * <code>string teacher_name = 5;</code>
+     * <code>string teacher_name = 6;</code>
      * @return The bytes for teacherName.
      */
     public com.google.protobuf.ByteString
@@ -1468,7 +1634,7 @@ private static final long serialVersionUID = 0L;
      * 主讲老师名称
      * </pre>
      *
-     * <code>string teacher_name = 5;</code>
+     * <code>string teacher_name = 6;</code>
      * @param value The teacherName to set.
      * @return This builder for chaining.
      */
@@ -1487,7 +1653,7 @@ private static final long serialVersionUID = 0L;
      * 主讲老师名称
      * </pre>
      *
-     * <code>string teacher_name = 5;</code>
+     * <code>string teacher_name = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearTeacherName() {
@@ -1501,7 +1667,7 @@ private static final long serialVersionUID = 0L;
      * 主讲老师名称
      * </pre>
      *
-     * <code>string teacher_name = 5;</code>
+     * <code>string teacher_name = 6;</code>
      * @param value The bytes for teacherName to set.
      * @return This builder for chaining.
      */
@@ -1523,7 +1689,7 @@ private static final long serialVersionUID = 0L;
      * 知识点学时
      * </pre>
      *
-     * <code>float knowledge_hours = 6;</code>
+     * <code>float knowledge_hours = 7;</code>
      * @return The knowledgeHours.
      */
     @java.lang.Override
@@ -1535,7 +1701,7 @@ private static final long serialVersionUID = 0L;
      * 知识点学时
      * </pre>
      *
-     * <code>float knowledge_hours = 6;</code>
+     * <code>float knowledge_hours = 7;</code>
      * @param value The knowledgeHours to set.
      * @return This builder for chaining.
      */
@@ -1550,7 +1716,7 @@ private static final long serialVersionUID = 0L;
      * 知识点学时
      * </pre>
      *
-     * <code>float knowledge_hours = 6;</code>
+     * <code>float knowledge_hours = 7;</code>
      * @return This builder for chaining.
      */
     public Builder clearKnowledgeHours() {
@@ -1566,7 +1732,7 @@ private static final long serialVersionUID = 0L;
      * 技能学时
      * </pre>
      *
-     * <code>float skill_hours = 7;</code>
+     * <code>float skill_hours = 8;</code>
      * @return The skillHours.
      */
     @java.lang.Override
@@ -1578,7 +1744,7 @@ private static final long serialVersionUID = 0L;
      * 技能学时
      * </pre>
      *
-     * <code>float skill_hours = 7;</code>
+     * <code>float skill_hours = 8;</code>
      * @param value The skillHours to set.
      * @return This builder for chaining.
      */
@@ -1593,7 +1759,7 @@ private static final long serialVersionUID = 0L;
      * 技能学时
      * </pre>
      *
-     * <code>float skill_hours = 7;</code>
+     * <code>float skill_hours = 8;</code>
      * @return This builder for chaining.
      */
     public Builder clearSkillHours() {
@@ -1620,7 +1786,7 @@ private static final long serialVersionUID = 0L;
      * 课程内容列表
      * </pre>
      *
-     * <code>repeated .glory_api.CourseChapter course_chapters = 8;</code>
+     * <code>repeated .glory_api.CourseChapter course_chapters = 9;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseChapter> getCourseChaptersList() {
       if (courseChaptersBuilder == null) {
@@ -1634,7 +1800,7 @@ private static final long serialVersionUID = 0L;
      * 课程内容列表
      * </pre>
      *
-     * <code>repeated .glory_api.CourseChapter course_chapters = 8;</code>
+     * <code>repeated .glory_api.CourseChapter course_chapters = 9;</code>
      */
     public int getCourseChaptersCount() {
       if (courseChaptersBuilder == null) {
@@ -1648,7 +1814,7 @@ private static final long serialVersionUID = 0L;
      * 课程内容列表
      * </pre>
      *
-     * <code>repeated .glory_api.CourseChapter course_chapters = 8;</code>
+     * <code>repeated .glory_api.CourseChapter course_chapters = 9;</code>
      */
     public com.zhijiejiaoyu.glory_api.course.CourseChapter getCourseChapters(int index) {
       if (courseChaptersBuilder == null) {
@@ -1662,7 +1828,7 @@ private static final long serialVersionUID = 0L;
      * 课程内容列表
      * </pre>
      *
-     * <code>repeated .glory_api.CourseChapter course_chapters = 8;</code>
+     * <code>repeated .glory_api.CourseChapter course_chapters = 9;</code>
      */
     public Builder setCourseChapters(
         int index, com.zhijiejiaoyu.glory_api.course.CourseChapter value) {
@@ -1683,7 +1849,7 @@ private static final long serialVersionUID = 0L;
      * 课程内容列表
      * </pre>
      *
-     * <code>repeated .glory_api.CourseChapter course_chapters = 8;</code>
+     * <code>repeated .glory_api.CourseChapter course_chapters = 9;</code>
      */
     public Builder setCourseChapters(
         int index, com.zhijiejiaoyu.glory_api.course.CourseChapter.Builder builderForValue) {
@@ -1701,7 +1867,7 @@ private static final long serialVersionUID = 0L;
      * 课程内容列表
      * </pre>
      *
-     * <code>repeated .glory_api.CourseChapter course_chapters = 8;</code>
+     * <code>repeated .glory_api.CourseChapter course_chapters = 9;</code>
      */
     public Builder addCourseChapters(com.zhijiejiaoyu.glory_api.course.CourseChapter value) {
       if (courseChaptersBuilder == null) {
@@ -1721,7 +1887,7 @@ private static final long serialVersionUID = 0L;
      * 课程内容列表
      * </pre>
      *
-     * <code>repeated .glory_api.CourseChapter course_chapters = 8;</code>
+     * <code>repeated .glory_api.CourseChapter course_chapters = 9;</code>
      */
     public Builder addCourseChapters(
         int index, com.zhijiejiaoyu.glory_api.course.CourseChapter value) {
@@ -1742,7 +1908,7 @@ private static final long serialVersionUID = 0L;
      * 课程内容列表
      * </pre>
      *
-     * <code>repeated .glory_api.CourseChapter course_chapters = 8;</code>
+     * <code>repeated .glory_api.CourseChapter course_chapters = 9;</code>
      */
     public Builder addCourseChapters(
         com.zhijiejiaoyu.glory_api.course.CourseChapter.Builder builderForValue) {
@@ -1760,7 +1926,7 @@ private static final long serialVersionUID = 0L;
      * 课程内容列表
      * </pre>
      *
-     * <code>repeated .glory_api.CourseChapter course_chapters = 8;</code>
+     * <code>repeated .glory_api.CourseChapter course_chapters = 9;</code>
      */
     public Builder addCourseChapters(
         int index, com.zhijiejiaoyu.glory_api.course.CourseChapter.Builder builderForValue) {
@@ -1778,7 +1944,7 @@ private static final long serialVersionUID = 0L;
      * 课程内容列表
      * </pre>
      *
-     * <code>repeated .glory_api.CourseChapter course_chapters = 8;</code>
+     * <code>repeated .glory_api.CourseChapter course_chapters = 9;</code>
      */
     public Builder addAllCourseChapters(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.course.CourseChapter> values) {
@@ -1797,7 +1963,7 @@ private static final long serialVersionUID = 0L;
      * 课程内容列表
      * </pre>
      *
-     * <code>repeated .glory_api.CourseChapter course_chapters = 8;</code>
+     * <code>repeated .glory_api.CourseChapter course_chapters = 9;</code>
      */
     public Builder clearCourseChapters() {
       if (courseChaptersBuilder == null) {
@@ -1814,7 +1980,7 @@ private static final long serialVersionUID = 0L;
      * 课程内容列表
      * </pre>
      *
-     * <code>repeated .glory_api.CourseChapter course_chapters = 8;</code>
+     * <code>repeated .glory_api.CourseChapter course_chapters = 9;</code>
      */
     public Builder removeCourseChapters(int index) {
       if (courseChaptersBuilder == null) {
@@ -1831,7 +1997,7 @@ private static final long serialVersionUID = 0L;
      * 课程内容列表
      * </pre>
      *
-     * <code>repeated .glory_api.CourseChapter course_chapters = 8;</code>
+     * <code>repeated .glory_api.CourseChapter course_chapters = 9;</code>
      */
     public com.zhijiejiaoyu.glory_api.course.CourseChapter.Builder getCourseChaptersBuilder(
         int index) {
@@ -1842,7 +2008,7 @@ private static final long serialVersionUID = 0L;
      * 课程内容列表
      * </pre>
      *
-     * <code>repeated .glory_api.CourseChapter course_chapters = 8;</code>
+     * <code>repeated .glory_api.CourseChapter course_chapters = 9;</code>
      */
     public com.zhijiejiaoyu.glory_api.course.CourseChapterOrBuilder getCourseChaptersOrBuilder(
         int index) {
@@ -1856,7 +2022,7 @@ private static final long serialVersionUID = 0L;
      * 课程内容列表
      * </pre>
      *
-     * <code>repeated .glory_api.CourseChapter course_chapters = 8;</code>
+     * <code>repeated .glory_api.CourseChapter course_chapters = 9;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseChapterOrBuilder> 
          getCourseChaptersOrBuilderList() {
@@ -1871,7 +2037,7 @@ private static final long serialVersionUID = 0L;
      * 课程内容列表
      * </pre>
      *
-     * <code>repeated .glory_api.CourseChapter course_chapters = 8;</code>
+     * <code>repeated .glory_api.CourseChapter course_chapters = 9;</code>
      */
     public com.zhijiejiaoyu.glory_api.course.CourseChapter.Builder addCourseChaptersBuilder() {
       return getCourseChaptersFieldBuilder().addBuilder(
@@ -1882,7 +2048,7 @@ private static final long serialVersionUID = 0L;
      * 课程内容列表
      * </pre>
      *
-     * <code>repeated .glory_api.CourseChapter course_chapters = 8;</code>
+     * <code>repeated .glory_api.CourseChapter course_chapters = 9;</code>
      */
     public com.zhijiejiaoyu.glory_api.course.CourseChapter.Builder addCourseChaptersBuilder(
         int index) {
@@ -1894,7 +2060,7 @@ private static final long serialVersionUID = 0L;
      * 课程内容列表
      * </pre>
      *
-     * <code>repeated .glory_api.CourseChapter course_chapters = 8;</code>
+     * <code>repeated .glory_api.CourseChapter course_chapters = 9;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseChapter.Builder> 
          getCourseChaptersBuilderList() {
@@ -1932,7 +2098,7 @@ private static final long serialVersionUID = 0L;
      * 如果非空，说明这是一个能力方向
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+     * <code>repeated .glory_api.CourseModule child_modules = 10;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseModule> getChildModulesList() {
       if (childModulesBuilder == null) {
@@ -1946,7 +2112,7 @@ private static final long serialVersionUID = 0L;
      * 如果非空，说明这是一个能力方向
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+     * <code>repeated .glory_api.CourseModule child_modules = 10;</code>
      */
     public int getChildModulesCount() {
       if (childModulesBuilder == null) {
@@ -1960,7 +2126,7 @@ private static final long serialVersionUID = 0L;
      * 如果非空，说明这是一个能力方向
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+     * <code>repeated .glory_api.CourseModule child_modules = 10;</code>
      */
     public com.zhijiejiaoyu.glory_api.course.CourseModule getChildModules(int index) {
       if (childModulesBuilder == null) {
@@ -1974,7 +2140,7 @@ private static final long serialVersionUID = 0L;
      * 如果非空，说明这是一个能力方向
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+     * <code>repeated .glory_api.CourseModule child_modules = 10;</code>
      */
     public Builder setChildModules(
         int index, com.zhijiejiaoyu.glory_api.course.CourseModule value) {
@@ -1995,7 +2161,7 @@ private static final long serialVersionUID = 0L;
      * 如果非空，说明这是一个能力方向
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+     * <code>repeated .glory_api.CourseModule child_modules = 10;</code>
      */
     public Builder setChildModules(
         int index, com.zhijiejiaoyu.glory_api.course.CourseModule.Builder builderForValue) {
@@ -2013,7 +2179,7 @@ private static final long serialVersionUID = 0L;
      * 如果非空，说明这是一个能力方向
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+     * <code>repeated .glory_api.CourseModule child_modules = 10;</code>
      */
     public Builder addChildModules(com.zhijiejiaoyu.glory_api.course.CourseModule value) {
       if (childModulesBuilder == null) {
@@ -2033,7 +2199,7 @@ private static final long serialVersionUID = 0L;
      * 如果非空，说明这是一个能力方向
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+     * <code>repeated .glory_api.CourseModule child_modules = 10;</code>
      */
     public Builder addChildModules(
         int index, com.zhijiejiaoyu.glory_api.course.CourseModule value) {
@@ -2054,7 +2220,7 @@ private static final long serialVersionUID = 0L;
      * 如果非空，说明这是一个能力方向
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+     * <code>repeated .glory_api.CourseModule child_modules = 10;</code>
      */
     public Builder addChildModules(
         com.zhijiejiaoyu.glory_api.course.CourseModule.Builder builderForValue) {
@@ -2072,7 +2238,7 @@ private static final long serialVersionUID = 0L;
      * 如果非空，说明这是一个能力方向
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+     * <code>repeated .glory_api.CourseModule child_modules = 10;</code>
      */
     public Builder addChildModules(
         int index, com.zhijiejiaoyu.glory_api.course.CourseModule.Builder builderForValue) {
@@ -2090,7 +2256,7 @@ private static final long serialVersionUID = 0L;
      * 如果非空，说明这是一个能力方向
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+     * <code>repeated .glory_api.CourseModule child_modules = 10;</code>
      */
     public Builder addAllChildModules(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.course.CourseModule> values) {
@@ -2109,7 +2275,7 @@ private static final long serialVersionUID = 0L;
      * 如果非空，说明这是一个能力方向
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+     * <code>repeated .glory_api.CourseModule child_modules = 10;</code>
      */
     public Builder clearChildModules() {
       if (childModulesBuilder == null) {
@@ -2126,7 +2292,7 @@ private static final long serialVersionUID = 0L;
      * 如果非空，说明这是一个能力方向
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+     * <code>repeated .glory_api.CourseModule child_modules = 10;</code>
      */
     public Builder removeChildModules(int index) {
       if (childModulesBuilder == null) {
@@ -2143,7 +2309,7 @@ private static final long serialVersionUID = 0L;
      * 如果非空，说明这是一个能力方向
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+     * <code>repeated .glory_api.CourseModule child_modules = 10;</code>
      */
     public com.zhijiejiaoyu.glory_api.course.CourseModule.Builder getChildModulesBuilder(
         int index) {
@@ -2154,7 +2320,7 @@ private static final long serialVersionUID = 0L;
      * 如果非空，说明这是一个能力方向
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+     * <code>repeated .glory_api.CourseModule child_modules = 10;</code>
      */
     public com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder getChildModulesOrBuilder(
         int index) {
@@ -2168,7 +2334,7 @@ private static final long serialVersionUID = 0L;
      * 如果非空，说明这是一个能力方向
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+     * <code>repeated .glory_api.CourseModule child_modules = 10;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder> 
          getChildModulesOrBuilderList() {
@@ -2183,7 +2349,7 @@ private static final long serialVersionUID = 0L;
      * 如果非空，说明这是一个能力方向
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+     * <code>repeated .glory_api.CourseModule child_modules = 10;</code>
      */
     public com.zhijiejiaoyu.glory_api.course.CourseModule.Builder addChildModulesBuilder() {
       return getChildModulesFieldBuilder().addBuilder(
@@ -2194,7 +2360,7 @@ private static final long serialVersionUID = 0L;
      * 如果非空，说明这是一个能力方向
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+     * <code>repeated .glory_api.CourseModule child_modules = 10;</code>
      */
     public com.zhijiejiaoyu.glory_api.course.CourseModule.Builder addChildModulesBuilder(
         int index) {
@@ -2206,7 +2372,7 @@ private static final long serialVersionUID = 0L;
      * 如果非空，说明这是一个能力方向
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+     * <code>repeated .glory_api.CourseModule child_modules = 10;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseModule.Builder> 
          getChildModulesBuilderList() {
@@ -2233,7 +2399,7 @@ private static final long serialVersionUID = 0L;
      * 创建时间
      * </pre>
      *
-     * <code>string created_at = 10;</code>
+     * <code>string created_at = 11;</code>
      * @return The createdAt.
      */
     public java.lang.String getCreatedAt() {
@@ -2253,7 +2419,7 @@ private static final long serialVersionUID = 0L;
      * 创建时间
      * </pre>
      *
-     * <code>string created_at = 10;</code>
+     * <code>string created_at = 11;</code>
      * @return The bytes for createdAt.
      */
     public com.google.protobuf.ByteString
@@ -2274,7 +2440,7 @@ private static final long serialVersionUID = 0L;
      * 创建时间
      * </pre>
      *
-     * <code>string created_at = 10;</code>
+     * <code>string created_at = 11;</code>
      * @param value The createdAt to set.
      * @return This builder for chaining.
      */
@@ -2293,7 +2459,7 @@ private static final long serialVersionUID = 0L;
      * 创建时间
      * </pre>
      *
-     * <code>string created_at = 10;</code>
+     * <code>string created_at = 11;</code>
      * @return This builder for chaining.
      */
     public Builder clearCreatedAt() {
@@ -2307,7 +2473,7 @@ private static final long serialVersionUID = 0L;
      * 创建时间
      * </pre>
      *
-     * <code>string created_at = 10;</code>
+     * <code>string created_at = 11;</code>
      * @param value The bytes for createdAt to set.
      * @return This builder for chaining.
      */
