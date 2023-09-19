@@ -24,15 +24,16 @@ message CourseChapter {
 
 message CourseModule {
   int64 module_id = 1; // 能力指标ID
-  string module_name = 2; // 能力指标名称
-  string module_code = 3; // 能力指标编码
-  string major_code = 4; // 专业代码
-  string teacher_name = 5; // 主讲老师名称
-  float knowledge_hours = 6; // 知识点学时
-  float skill_hours = 7; // 技能学时
-  repeated CourseChapter course_chapters = 8; // 课程内容列表
-  repeated CourseModule child_modules = 9; // 如果非空，说明这是一个能力方向
-  string created_at = 10; // 创建时间
+  string module_code = 2; // 能力指标编码
+  string module_name = 3; // 能力指标名称
+  string module_description = 4; // 能力指标描述
+  string major_code = 5; // 专业代码
+  string teacher_name = 6; // 主讲老师名称
+  float knowledge_hours = 7; // 知识点学时
+  float skill_hours = 8; // 技能学时
+  repeated CourseChapter course_chapters = 9; // 课程内容列表
+  repeated CourseModule child_modules = 10; // 如果非空，说明这是一个能力方向
+  string created_at = 11; // 创建时间
 }
 
 // 创建能力指标
