@@ -4,6 +4,10 @@
 package com.zhijiejiaoyu.glory_api.course;
 
 /**
+ * <pre>
+ * 加入课程
+ * </pre>
+ *
  * Protobuf type {@code glory_api.EnrollCourseRequest}
  */
 public final class EnrollCourseRequest extends
@@ -312,6 +316,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * 加入课程
+   * </pre>
+   *
    * Protobuf type {@code glory_api.EnrollCourseRequest}
    */
   public static final class Builder extends

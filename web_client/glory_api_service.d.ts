@@ -472,9 +472,9 @@ list the permissions that supported */
     request: shop.ListShopSummaryRequest
   ): Promise<shop.ListShopSummaryResponse>;
 
-  EnterShop(request: shop.EnterShopRequest): Promise<shop.EnterShopResponse>;
-
-  ExistShop(request: shop.ExistShopRequest): Promise<shop.ExistShopResponse>;
+  ListShopBySellerID(
+    request: shop.ListShopBySellerIDRequest
+  ): Promise<shop.ListShopBySellerIDResponse>;
 
   /** cart */
   CreateCart(request: cart.AddCartRequest): Promise<cart.AddCartResponse>;
@@ -1190,6 +1190,11 @@ CreateLivePlanProduct create live plan product */
   UpdateCourseProgress(
     request: user_course.UpdateCourseProgressRequest
   ): Promise<user_course.UpdateCourseProgressResponse>;
+
+  /** 我的课程列表 */
+  ListMyCourse(
+    request: user_course.ListMyCourseRequest
+  ): Promise<user_course.ListMyCourseResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

@@ -4,6 +4,10 @@
 package com.zhijiejiaoyu.glory_api.course;
 
 /**
+ * <pre>
+ * 更新课程进度
+ * </pre>
+ *
  * Protobuf type {@code glory_api.UpdateCourseProgressRequest}
  */
 public final class UpdateCourseProgressRequest extends
@@ -343,6 +347,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * 更新课程进度
+   * </pre>
+   *
    * Protobuf type {@code glory_api.UpdateCourseProgressRequest}
    */
   public static final class Builder extends

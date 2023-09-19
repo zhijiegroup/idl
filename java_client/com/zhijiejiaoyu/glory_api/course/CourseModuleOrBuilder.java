@@ -19,30 +19,10 @@ public interface CourseModuleOrBuilder extends
 
   /**
    * <pre>
-   * 能力指标名称
-   * </pre>
-   *
-   * <code>string module_name = 2;</code>
-   * @return The moduleName.
-   */
-  java.lang.String getModuleName();
-  /**
-   * <pre>
-   * 能力指标名称
-   * </pre>
-   *
-   * <code>string module_name = 2;</code>
-   * @return The bytes for moduleName.
-   */
-  com.google.protobuf.ByteString
-      getModuleNameBytes();
-
-  /**
-   * <pre>
    * 能力指标编码
    * </pre>
    *
-   * <code>string module_code = 3;</code>
+   * <code>string module_code = 2;</code>
    * @return The moduleCode.
    */
   java.lang.String getModuleCode();
@@ -51,7 +31,7 @@ public interface CourseModuleOrBuilder extends
    * 能力指标编码
    * </pre>
    *
-   * <code>string module_code = 3;</code>
+   * <code>string module_code = 2;</code>
    * @return The bytes for moduleCode.
    */
   com.google.protobuf.ByteString
@@ -59,10 +39,50 @@ public interface CourseModuleOrBuilder extends
 
   /**
    * <pre>
+   * 能力指标名称
+   * </pre>
+   *
+   * <code>string module_name = 3;</code>
+   * @return The moduleName.
+   */
+  java.lang.String getModuleName();
+  /**
+   * <pre>
+   * 能力指标名称
+   * </pre>
+   *
+   * <code>string module_name = 3;</code>
+   * @return The bytes for moduleName.
+   */
+  com.google.protobuf.ByteString
+      getModuleNameBytes();
+
+  /**
+   * <pre>
+   * 能力指标描述
+   * </pre>
+   *
+   * <code>string module_description = 4;</code>
+   * @return The moduleDescription.
+   */
+  java.lang.String getModuleDescription();
+  /**
+   * <pre>
+   * 能力指标描述
+   * </pre>
+   *
+   * <code>string module_description = 4;</code>
+   * @return The bytes for moduleDescription.
+   */
+  com.google.protobuf.ByteString
+      getModuleDescriptionBytes();
+
+  /**
+   * <pre>
    * 专业代码
    * </pre>
    *
-   * <code>string major_code = 4;</code>
+   * <code>string major_code = 5;</code>
    * @return The majorCode.
    */
   java.lang.String getMajorCode();
@@ -71,7 +91,7 @@ public interface CourseModuleOrBuilder extends
    * 专业代码
    * </pre>
    *
-   * <code>string major_code = 4;</code>
+   * <code>string major_code = 5;</code>
    * @return The bytes for majorCode.
    */
   com.google.protobuf.ByteString
@@ -82,7 +102,7 @@ public interface CourseModuleOrBuilder extends
    * 主讲老师名称
    * </pre>
    *
-   * <code>string teacher_name = 5;</code>
+   * <code>string teacher_name = 6;</code>
    * @return The teacherName.
    */
   java.lang.String getTeacherName();
@@ -91,7 +111,7 @@ public interface CourseModuleOrBuilder extends
    * 主讲老师名称
    * </pre>
    *
-   * <code>string teacher_name = 5;</code>
+   * <code>string teacher_name = 6;</code>
    * @return The bytes for teacherName.
    */
   com.google.protobuf.ByteString
@@ -102,7 +122,7 @@ public interface CourseModuleOrBuilder extends
    * 知识点学时
    * </pre>
    *
-   * <code>float knowledge_hours = 6;</code>
+   * <code>float knowledge_hours = 7;</code>
    * @return The knowledgeHours.
    */
   float getKnowledgeHours();
@@ -112,7 +132,7 @@ public interface CourseModuleOrBuilder extends
    * 技能学时
    * </pre>
    *
-   * <code>float skill_hours = 7;</code>
+   * <code>float skill_hours = 8;</code>
    * @return The skillHours.
    */
   float getSkillHours();
@@ -122,7 +142,7 @@ public interface CourseModuleOrBuilder extends
    * 课程内容列表
    * </pre>
    *
-   * <code>repeated .glory_api.CourseChapter course_chapters = 8;</code>
+   * <code>repeated .glory_api.CourseChapter course_chapters = 9;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.course.CourseChapter> 
       getCourseChaptersList();
@@ -131,7 +151,7 @@ public interface CourseModuleOrBuilder extends
    * 课程内容列表
    * </pre>
    *
-   * <code>repeated .glory_api.CourseChapter course_chapters = 8;</code>
+   * <code>repeated .glory_api.CourseChapter course_chapters = 9;</code>
    */
   com.zhijiejiaoyu.glory_api.course.CourseChapter getCourseChapters(int index);
   /**
@@ -139,7 +159,7 @@ public interface CourseModuleOrBuilder extends
    * 课程内容列表
    * </pre>
    *
-   * <code>repeated .glory_api.CourseChapter course_chapters = 8;</code>
+   * <code>repeated .glory_api.CourseChapter course_chapters = 9;</code>
    */
   int getCourseChaptersCount();
   /**
@@ -147,7 +167,7 @@ public interface CourseModuleOrBuilder extends
    * 课程内容列表
    * </pre>
    *
-   * <code>repeated .glory_api.CourseChapter course_chapters = 8;</code>
+   * <code>repeated .glory_api.CourseChapter course_chapters = 9;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseChapterOrBuilder> 
       getCourseChaptersOrBuilderList();
@@ -156,7 +176,7 @@ public interface CourseModuleOrBuilder extends
    * 课程内容列表
    * </pre>
    *
-   * <code>repeated .glory_api.CourseChapter course_chapters = 8;</code>
+   * <code>repeated .glory_api.CourseChapter course_chapters = 9;</code>
    */
   com.zhijiejiaoyu.glory_api.course.CourseChapterOrBuilder getCourseChaptersOrBuilder(
       int index);
@@ -166,7 +186,7 @@ public interface CourseModuleOrBuilder extends
    * 如果非空，说明这是一个能力方向
    * </pre>
    *
-   * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+   * <code>repeated .glory_api.CourseModule child_modules = 10;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.course.CourseModule> 
       getChildModulesList();
@@ -175,7 +195,7 @@ public interface CourseModuleOrBuilder extends
    * 如果非空，说明这是一个能力方向
    * </pre>
    *
-   * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+   * <code>repeated .glory_api.CourseModule child_modules = 10;</code>
    */
   com.zhijiejiaoyu.glory_api.course.CourseModule getChildModules(int index);
   /**
@@ -183,7 +203,7 @@ public interface CourseModuleOrBuilder extends
    * 如果非空，说明这是一个能力方向
    * </pre>
    *
-   * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+   * <code>repeated .glory_api.CourseModule child_modules = 10;</code>
    */
   int getChildModulesCount();
   /**
@@ -191,7 +211,7 @@ public interface CourseModuleOrBuilder extends
    * 如果非空，说明这是一个能力方向
    * </pre>
    *
-   * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+   * <code>repeated .glory_api.CourseModule child_modules = 10;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder> 
       getChildModulesOrBuilderList();
@@ -200,7 +220,7 @@ public interface CourseModuleOrBuilder extends
    * 如果非空，说明这是一个能力方向
    * </pre>
    *
-   * <code>repeated .glory_api.CourseModule child_modules = 9;</code>
+   * <code>repeated .glory_api.CourseModule child_modules = 10;</code>
    */
   com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder getChildModulesOrBuilder(
       int index);
@@ -210,7 +230,7 @@ public interface CourseModuleOrBuilder extends
    * 创建时间
    * </pre>
    *
-   * <code>string created_at = 10;</code>
+   * <code>string created_at = 11;</code>
    * @return The createdAt.
    */
   java.lang.String getCreatedAt();
@@ -219,7 +239,7 @@ public interface CourseModuleOrBuilder extends
    * 创建时间
    * </pre>
    *
-   * <code>string created_at = 10;</code>
+   * <code>string created_at = 11;</code>
    * @return The bytes for createdAt.
    */
   com.google.protobuf.ByteString
