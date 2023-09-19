@@ -1062,4 +1062,9 @@ service glory_api {
   rpc UpdateCourseProgress (UpdateCourseProgressRequest) returns (UpdateCourseProgressResponse) {
     option (api.post) = '/api/course/update_course_progress';
   }
+
+  // 我的课程列表
+  rpc ListMyCourse(ListMyCourseRequest) returns (ListMyCourseResponse) {
+    option (api.post) = '/api/course/list_my_course';
+  }
 }
