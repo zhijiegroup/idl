@@ -47,7 +47,7 @@ public final class GloryApiService {
       "fig.proto\032\035short_video/short_video.proto" +
       "\032\025course/material.proto\032\023course/module.p" +
       "roto\032\024course/nmodule.proto\032\023course/cours" +
-      "e.proto\032\030course/user_course.proto2\336\375\001\n\tg" +
+      "e.proto\032\030course/user_course.proto2\317\376\001\n\tg" +
       "lory_api\022s\n\rCreateExample\022\037.glory_api.Cr" +
       "eateExampleRequest\032 .glory_api.CreateExa" +
       "mpleResponse\"\037\322\301\030\033/api/example/create_ex" +
@@ -859,8 +859,11 @@ public final class GloryApiService {
       "my_course\022\217\001\n\024UpdateCourseProgress\022&.glo" +
       "ry_api.UpdateCourseProgressRequest\032\'.glo" +
       "ry_api.UpdateCourseProgressResponse\"&\322\301\030" +
-      "\"/api/course/update_course_progressB\036\n\032c" +
-      "om.zhijiejiaoyu.glory_apiP\001b\006proto3"
+      "\"/api/course/update_course_progress\022o\n\014L" +
+      "istMyCourse\022\036.glory_api.ListMyCourseRequ" +
+      "est\032\037.glory_api.ListMyCourseResponse\"\036\322\301" +
+      "\030\032/api/course/list_my_courseB\036\n\032com.zhij" +
+      "iejiaoyu.glory_apiP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
