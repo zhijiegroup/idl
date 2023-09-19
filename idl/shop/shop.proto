@@ -271,6 +271,7 @@ message ShopSummary {
   double deal_amount = 4;
   int64 order_total = 5;
   int64 seller_id = 6;
+  string shop_manager_name = 7;
 }
 
 message ListShopSummaryRequest {
