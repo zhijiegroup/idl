@@ -424,11 +424,8 @@ service glory_api {
   rpc ListShopSummary(ListShopSummaryRequest) returns (ListShopSummaryResponse) {
     option (api.post) = '/api/shop/list_shop_summary';
   }
-  rpc EnterShop(EnterShopRequest) returns (EnterShopResponse) {
-    option (api.post) = '/api/shop/enter_shop';
-  }
-  rpc ExistShop(ExistShopRequest) returns (ExistShopResponse) {
-    option (api.post) = '/api/shop/exist_shop';
+  rpc ListShopBySellerID(ListShopBySellerIDRequest) returns (ListShopBySellerIDResponse) {
+    option (api.post) = '/api/shop/list_shop_by_selelr_id';
   }
 
   // cart
