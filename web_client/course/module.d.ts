@@ -10,12 +10,14 @@ export interface CourseResource {
   resource_id?: string;
   /** 课程资源名称 */
   resource_name?: string;
-  /** 课程资源OSS路径 */
+  /** 课程资源类型：1.教学视频；2.教学PPT；3.课后习题；4.教案 */
+  resource_type?: number;
+  /** 课程资源OSS路径，用于教学视频和教学PPT */
   resource_path?: string;
   /** 课程资源URL */
   resource_url?: string;
-  /** 课程资源类型：1.教学视频；2.教学PPT；3.课后习题；4.教案 */
-  resource_type?: number;
+  /** 课程资源内容，用于课后习题和教案 */
+  resource_content?: string;
 }
 
 export interface CourseChapter {

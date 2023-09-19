@@ -39,19 +39,29 @@ public interface CourseResourceOrBuilder extends
 
   /**
    * <pre>
-   * 课程资源OSS路径
+   * 课程资源类型：1.教学视频；2.教学PPT；3.课后习题；4.教案
    * </pre>
    *
-   * <code>string resource_path = 3;</code>
+   * <code>int32 resource_type = 3;</code>
+   * @return The resourceType.
+   */
+  int getResourceType();
+
+  /**
+   * <pre>
+   * 课程资源OSS路径，用于教学视频和教学PPT
+   * </pre>
+   *
+   * <code>string resource_path = 4;</code>
    * @return The resourcePath.
    */
   java.lang.String getResourcePath();
   /**
    * <pre>
-   * 课程资源OSS路径
+   * 课程资源OSS路径，用于教学视频和教学PPT
    * </pre>
    *
-   * <code>string resource_path = 3;</code>
+   * <code>string resource_path = 4;</code>
    * @return The bytes for resourcePath.
    */
   com.google.protobuf.ByteString
@@ -62,7 +72,7 @@ public interface CourseResourceOrBuilder extends
    * 课程资源URL
    * </pre>
    *
-   * <code>string resource_url = 4;</code>
+   * <code>string resource_url = 5;</code>
    * @return The resourceUrl.
    */
   java.lang.String getResourceUrl();
@@ -71,7 +81,7 @@ public interface CourseResourceOrBuilder extends
    * 课程资源URL
    * </pre>
    *
-   * <code>string resource_url = 4;</code>
+   * <code>string resource_url = 5;</code>
    * @return The bytes for resourceUrl.
    */
   com.google.protobuf.ByteString
@@ -79,11 +89,21 @@ public interface CourseResourceOrBuilder extends
 
   /**
    * <pre>
-   * 课程资源类型：1.教学视频；2.教学PPT；3.课后习题；4.教案
+   * 课程资源内容，用于课后习题和教案
    * </pre>
    *
-   * <code>int32 resource_type = 5;</code>
-   * @return The resourceType.
+   * <code>string resource_content = 6;</code>
+   * @return The resourceContent.
    */
-  int getResourceType();
+  java.lang.String getResourceContent();
+  /**
+   * <pre>
+   * 课程资源内容，用于课后习题和教案
+   * </pre>
+   *
+   * <code>string resource_content = 6;</code>
+   * @return The bytes for resourceContent.
+   */
+  com.google.protobuf.ByteString
+      getResourceContentBytes();
 }

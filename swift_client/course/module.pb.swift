@@ -31,14 +31,17 @@ struct GloryApi_CourseResource {
   /// 课程资源名称
   var resourceName: String = String()
 
-  /// 课程资源OSS路径
+  /// 课程资源类型：1.教学视频；2.教学PPT；3.课后习题；4.教案
+  var resourceType: Int32 = 0
+
+  /// 课程资源OSS路径，用于教学视频和教学PPT
   var resourcePath: String = String()
 
   /// 课程资源URL
   var resourceURL: String = String()
 
-  /// 课程资源类型：1.教学视频；2.教学PPT；3.课后习题；4.教案
-  var resourceType: Int32 = 0
+  /// 课程资源内容，用于课后习题和教案
+  var resourceContent: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -413,9 +416,10 @@ extension GloryApi_CourseResource: SwiftProtobuf.Message, SwiftProtobuf._Message
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "resource_id"),
     2: .standard(proto: "resource_name"),
-    3: .standard(proto: "resource_path"),
-    4: .standard(proto: "resource_url"),
-    5: .standard(proto: "resource_type"),
+    3: .standard(proto: "resource_type"),
+    4: .standard(proto: "resource_path"),
+    5: .standard(proto: "resource_url"),
+    6: .standard(proto: "resource_content"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -426,9 +430,10 @@ extension GloryApi_CourseResource: SwiftProtobuf.Message, SwiftProtobuf._Message
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularInt64Field(value: &self.resourceID) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.resourceName) }()
-      case 3: try { try decoder.decodeSingularStringField(value: &self.resourcePath) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.resourceURL) }()
-      case 5: try { try decoder.decodeSingularInt32Field(value: &self.resourceType) }()
+      case 3: try { try decoder.decodeSingularInt32Field(value: &self.resourceType) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.resourcePath) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.resourceURL) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.resourceContent) }()
       default: break
       }
     }
@@ -441,14 +446,17 @@ extension GloryApi_CourseResource: SwiftProtobuf.Message, SwiftProtobuf._Message
     if !self.resourceName.isEmpty {
       try visitor.visitSingularStringField(value: self.resourceName, fieldNumber: 2)
     }
+    if self.resourceType != 0 {
+      try visitor.visitSingularInt32Field(value: self.resourceType, fieldNumber: 3)
+    }
     if !self.resourcePath.isEmpty {
-      try visitor.visitSingularStringField(value: self.resourcePath, fieldNumber: 3)
+      try visitor.visitSingularStringField(value: self.resourcePath, fieldNumber: 4)
     }
     if !self.resourceURL.isEmpty {
-      try visitor.visitSingularStringField(value: self.resourceURL, fieldNumber: 4)
+      try visitor.visitSingularStringField(value: self.resourceURL, fieldNumber: 5)
     }
-    if self.resourceType != 0 {
-      try visitor.visitSingularInt32Field(value: self.resourceType, fieldNumber: 5)
+    if !self.resourceContent.isEmpty {
+      try visitor.visitSingularStringField(value: self.resourceContent, fieldNumber: 6)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -456,9 +464,10 @@ extension GloryApi_CourseResource: SwiftProtobuf.Message, SwiftProtobuf._Message
   static func ==(lhs: GloryApi_CourseResource, rhs: GloryApi_CourseResource) -> Bool {
     if lhs.resourceID != rhs.resourceID {return false}
     if lhs.resourceName != rhs.resourceName {return false}
+    if lhs.resourceType != rhs.resourceType {return false}
     if lhs.resourcePath != rhs.resourcePath {return false}
     if lhs.resourceURL != rhs.resourceURL {return false}
-    if lhs.resourceType != rhs.resourceType {return false}
+    if lhs.resourceContent != rhs.resourceContent {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
