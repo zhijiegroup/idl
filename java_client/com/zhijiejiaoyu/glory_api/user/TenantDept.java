@@ -18,6 +18,7 @@ private static final long serialVersionUID = 0L;
   private TenantDept() {
     deptName = "";
     deptType = "";
+    deptCode = "";
     deptOverview = "";
   }
 
@@ -71,15 +72,21 @@ private static final long serialVersionUID = 0L;
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
+            deptCode = s;
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
             deptOverview = s;
             break;
           }
-          case 40: {
+          case 48: {
 
             tenantId = input.readInt64();
             break;
           }
-          case 48: {
+          case 56: {
 
             parentId = input.readInt64();
             break;
@@ -203,10 +210,48 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int DEPT_OVERVIEW_FIELD_NUMBER = 4;
+  public static final int DEPT_CODE_FIELD_NUMBER = 4;
+  private volatile java.lang.Object deptCode ;
+  /**
+   * <code>string dept_code = 4;</code>
+   * @return The deptCode.
+   */
+  @java.lang.Override
+  public java.lang.String getDeptCode() {
+    java.lang.Object ref = deptCode ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      deptCode = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string dept_code = 4;</code>
+   * @return The bytes for deptCode.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getDeptCodeBytes() {
+    java.lang.Object ref = deptCode ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      deptCode = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DEPT_OVERVIEW_FIELD_NUMBER = 5;
   private volatile java.lang.Object deptOverview ;
   /**
-   * <code>string dept_overview = 4;</code>
+   * <code>string dept_overview = 5;</code>
    * @return The deptOverview.
    */
   @java.lang.Override
@@ -223,7 +268,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string dept_overview = 4;</code>
+   * <code>string dept_overview = 5;</code>
    * @return The bytes for deptOverview.
    */
   @java.lang.Override
@@ -241,10 +286,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TENANT_ID_FIELD_NUMBER = 5;
+  public static final int TENANT_ID_FIELD_NUMBER = 6;
   private long tenantId ;
   /**
-   * <code>int64 tenant_id = 5;</code>
+   * <code>int64 tenant_id = 6;</code>
    * @return The tenantId.
    */
   @java.lang.Override
@@ -252,10 +297,10 @@ private static final long serialVersionUID = 0L;
     return tenantId ;
   }
 
-  public static final int PARENT_ID_FIELD_NUMBER = 6;
+  public static final int PARENT_ID_FIELD_NUMBER = 7;
   private long parentId ;
   /**
-   * <code>int64 parent_id = 6;</code>
+   * <code>int64 parent_id = 7;</code>
    * @return The parentId.
    */
   @java.lang.Override
@@ -286,14 +331,17 @@ private static final long serialVersionUID = 0L;
     if (!getDeptTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, deptType );
     }
+    if (!getDeptCodeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, deptCode );
+    }
     if (!getDeptOverviewBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, deptOverview );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, deptOverview );
     }
     if (tenantId != 0L) {
-      output.writeInt64(5, tenantId );
+      output.writeInt64(6, tenantId );
     }
     if (parentId != 0L) {
-      output.writeInt64(6, parentId );
+      output.writeInt64(7, parentId );
     }
     unknownFields.writeTo(output);
   }
@@ -314,16 +362,19 @@ private static final long serialVersionUID = 0L;
     if (!getDeptTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, deptType );
     }
+    if (!getDeptCodeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, deptCode );
+    }
     if (!getDeptOverviewBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, deptOverview );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, deptOverview );
     }
     if (tenantId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(5, tenantId );
+        .computeInt64Size(6, tenantId );
     }
     if (parentId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(6, parentId );
+        .computeInt64Size(7, parentId );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -346,6 +397,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getDeptName())) return false;
     if (!getDeptType()
         .equals(other.getDeptType())) return false;
+    if (!getDeptCode()
+        .equals(other.getDeptCode())) return false;
     if (!getDeptOverview()
         .equals(other.getDeptOverview())) return false;
     if (getTenantId()
@@ -370,6 +423,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getDeptName().hashCode();
     hash = (37 * hash) + DEPT_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getDeptType().hashCode();
+    hash = (37 * hash) + DEPT_CODE_FIELD_NUMBER;
+    hash = (53 * hash) + getDeptCode().hashCode();
     hash = (37 * hash) + DEPT_OVERVIEW_FIELD_NUMBER;
     hash = (53 * hash) + getDeptOverview().hashCode();
     hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
@@ -517,6 +572,8 @@ private static final long serialVersionUID = 0L;
 
       deptType = "";
 
+      deptCode = "";
+
       deptOverview = "";
 
       tenantId = 0L;
@@ -552,6 +609,7 @@ private static final long serialVersionUID = 0L;
       result.deptId = deptId ;
       result.deptName = deptName ;
       result.deptType = deptType ;
+      result.deptCode = deptCode ;
       result.deptOverview = deptOverview ;
       result.tenantId = tenantId ;
       result.parentId = parentId ;
@@ -612,6 +670,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getDeptType().isEmpty()) {
         deptType = other.deptType ;
+        onChanged();
+      }
+      if (!other.getDeptCode().isEmpty()) {
+        deptCode = other.deptCode ;
         onChanged();
       }
       if (!other.getDeptOverview().isEmpty()) {
@@ -836,9 +898,85 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object deptCode = "";
+    /**
+     * <code>string dept_code = 4;</code>
+     * @return The deptCode.
+     */
+    public java.lang.String getDeptCode() {
+      java.lang.Object ref = deptCode ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        deptCode = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string dept_code = 4;</code>
+     * @return The bytes for deptCode.
+     */
+    public com.google.protobuf.ByteString
+        getDeptCodeBytes() {
+      java.lang.Object ref = deptCode ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        deptCode = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string dept_code = 4;</code>
+     * @param value The deptCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeptCode(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      deptCode = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string dept_code = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDeptCode() {
+      
+      deptCode = getDefaultInstance().getDeptCode();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string dept_code = 4;</code>
+     * @param value The bytes for deptCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeptCodeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      deptCode = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object deptOverview = "";
     /**
-     * <code>string dept_overview = 4;</code>
+     * <code>string dept_overview = 5;</code>
      * @return The deptOverview.
      */
     public java.lang.String getDeptOverview() {
@@ -854,7 +992,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string dept_overview = 4;</code>
+     * <code>string dept_overview = 5;</code>
      * @return The bytes for deptOverview.
      */
     public com.google.protobuf.ByteString
@@ -871,7 +1009,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string dept_overview = 4;</code>
+     * <code>string dept_overview = 5;</code>
      * @param value The deptOverview to set.
      * @return This builder for chaining.
      */
@@ -886,7 +1024,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string dept_overview = 4;</code>
+     * <code>string dept_overview = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearDeptOverview() {
@@ -896,7 +1034,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string dept_overview = 4;</code>
+     * <code>string dept_overview = 5;</code>
      * @param value The bytes for deptOverview to set.
      * @return This builder for chaining.
      */
@@ -914,7 +1052,7 @@ private static final long serialVersionUID = 0L;
 
     private long tenantId ;
     /**
-     * <code>int64 tenant_id = 5;</code>
+     * <code>int64 tenant_id = 6;</code>
      * @return The tenantId.
      */
     @java.lang.Override
@@ -922,7 +1060,7 @@ private static final long serialVersionUID = 0L;
       return tenantId ;
     }
     /**
-     * <code>int64 tenant_id = 5;</code>
+     * <code>int64 tenant_id = 6;</code>
      * @param value The tenantId to set.
      * @return This builder for chaining.
      */
@@ -933,7 +1071,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 tenant_id = 5;</code>
+     * <code>int64 tenant_id = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearTenantId() {
@@ -945,7 +1083,7 @@ private static final long serialVersionUID = 0L;
 
     private long parentId ;
     /**
-     * <code>int64 parent_id = 6;</code>
+     * <code>int64 parent_id = 7;</code>
      * @return The parentId.
      */
     @java.lang.Override
@@ -953,7 +1091,7 @@ private static final long serialVersionUID = 0L;
       return parentId ;
     }
     /**
-     * <code>int64 parent_id = 6;</code>
+     * <code>int64 parent_id = 7;</code>
      * @param value The parentId to set.
      * @return This builder for chaining.
      */
@@ -964,7 +1102,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 parent_id = 6;</code>
+     * <code>int64 parent_id = 7;</code>
      * @return This builder for chaining.
      */
     public Builder clearParentId() {

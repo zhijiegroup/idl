@@ -335,190 +335,191 @@ public final class UserOuterClass {
     java.lang.String[] descriptorData = {
       "\n\017user/user.proto\022\tglory_api\032\nbase.proto" +
       "\032\023seller/seller.proto\032\017shop/shop.proto\032\023" +
-      "tenant/tenant.proto\"\200\001\n\nTenantDept\022\017\n\007de" +
+      "tenant/tenant.proto\"\223\001\n\nTenantDept\022\017\n\007de" +
       "pt_id\030\001 \001(\003\022\021\n\tdept_name\030\002 \001(\t\022\021\n\tdept_t" +
-      "ype\030\003 \001(\t\022\025\n\rdept_overview\030\004 \001(\t\022\021\n\ttena" +
-      "nt_id\030\005 \001(\003\022\021\n\tparent_id\030\006 \001(\003\"\361\002\n\004User\022" +
-      "\n\n\002id\030\001 \001(\003\022\r\n\005phone\030\002 \001(\t\022\r\n\005token\030\003 \001(" +
-      "\t\022\024\n\014token_expiry\030\004 \001(\t\022\022\n\ncreated_at\030\005 " +
-      "\001(\t\022\014\n\004name\030\006 \001(\t\022\034\n\024avatar_attachment_i" +
-      "d\030\007 \001(\003\022\022\n\navatar_url\030\010 \001(\t\022!\n\006seller\030\t " +
-      "\001(\0132\021.glory_api.Seller\022*\n\013shop_access\030\n " +
-      "\003(\0132\025.glory_api.ShopAccess\022*\n\013tenant_dep" +
-      "t\030\013 \003(\0132\025.glory_api.TenantDept\022\036\n\005roles\030" +
-      "y \003(\0132\017.glory_api.Role\022(\n\005pages\030\r \003(\0132\031." +
-      "glory_api.PagePermission\022\020\n\010is_admin\030\016 \001" +
-      "(\010\"X\n\nUserFollow\022\017\n\007user_id\030\001 \001(\003\022\021\n\tuse" +
-      "r_name\030\002 \001(\t\022\022\n\navatar_url\030\003 \001(\t\022\022\n\ncrea" +
-      "ted_at\030\004 \001(\t\"T\n\014LoginRequest\022\'\n\014base_req" +
-      "uest\030\001 \001(\0132\021.base.BaseRequest\022\r\n\005phone\030\002" +
-      " \001(\t\022\014\n\004code\030\003 \001(\t\"U\n\rLoginResponse\022%\n\tb" +
-      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\022\035\n\004da" +
-      "ta\030\002 \001(\0132\017.glory_api.User\"8\n\rLogoutReque" +
-      "st\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequ" +
-      "est\"7\n\016LogoutResponse\022%\n\tbase_resp\030\001 \001(\013" +
-      "2\022.base.BaseResponse\"N\n\024GetVerifyCodeReq" +
-      "uest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRe" +
-      "quest\022\r\n\005phone\030\002 \001(\t\">\n\025GetVerifyCodeRes" +
-      "ponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResp" +
-      "onse\"^\n\026CheckVerifyCodeRequest\022\'\n\014base_r" +
-      "equest\030\001 \001(\0132\021.base.BaseRequest\022\r\n\005phone" +
-      "\030\002 \001(\t\022\014\n\004code\030\003 \001(\t\"N\n\027CheckVerifyCodeR" +
-      "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
-      "sponse\022\014\n\004pass\030\002 \001(\010\"d\n\030LoginWithPasswor" +
-      "dRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
-      "seRequest\022\r\n\005phone\030\002 \001(\t\022\020\n\010password\030\003 \001" +
-      "(\t\"a\n\031LoginWithPasswordResponse\022%\n\tbase_" +
-      "resp\030\001 \001(\0132\022.base.BaseResponse\022\035\n\004data\030\002" +
-      " \001(\0132\017.glory_api.User\"a\n\025UpdatePasswordR" +
-      "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
-      "Request\022\r\n\005phone\030\002 \001(\t\022\020\n\010password\030\003 \001(\t" +
-      "\"?\n\026UpdatePasswordResponse\022%\n\tbase_resp\030" +
-      "\001 \001(\0132\022.base.BaseResponse\"9\n\016GetUserRequ" +
-      "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
-      "uest\"\217\001\n\017GetUserResponse\022%\n\tbase_resp\030\001 " +
-      "\001(\0132\022.base.BaseResponse\022\035\n\004data\030\002 \001(\0132\017." +
-      "glory_api.User\022!\n\006tenant\030\003 \001(\0132\021.glory_a" +
-      "pi.Tenant\022\023\n\013dept_detail\030\004 \003(\t\"[\n\021Update" +
-      "UserRequest\022\'\n\014base_request\030\001 \001(\0132\021.base" +
-      ".BaseRequest\022\035\n\004data\030\002 \001(\0132\017.glory_api.U" +
-      "ser\";\n\022UpdateUserResponse\022%\n\tbase_resp\030\001" +
-      " \001(\0132\022.base.BaseResponse\"Z\n\022UpdatePhoneR" +
-      "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
-      "Request\022\r\n\005phone\030\002 \001(\t\022\014\n\004code\030\003 \001(\t\"<\n\023" +
-      "UpdatePhoneResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
-      ".base.BaseResponse\"i\n\016PagePermission\022\027\n\017" +
-      "business_system\030\001 \001(\t\022\014\n\004page\030\002 \001(\t\022\n\n\002i" +
-      "d\030\003 \001(\003\022\014\n\004name\030\004 \001(\t\022\026\n\016has_permission\030" +
-      "\005 \001(\010\"Z\n\034GetUserPagePermissionRequest\022\'\n" +
-      "\014base_request\030\001 \001(\0132\021.base.BaseRequest\022\021" +
-      "\n\ttenant_id\030\002 \001(\003\"z\n\035GetUserPagePermissi" +
-      "onResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
-      "eResponse\0222\n\017page_permission\030\002 \003(\0132\031.glo" +
-      "ry_api.PagePermission\"\321\001\n\037CreateRolePage" +
-      "PermissionRequest\022\'\n\014base_request\030\001 \001(\0132" +
-      "\021.base.BaseRequest\022\021\n\ttenant_id\030\002 \001(\003\022\021\n" +
-      "\trole_name\030\003 \001(\t\022\021\n\trole_type\030\004 \001(\t\022\030\n\020r" +
-      "ole_description\030\005 \001(\t\0222\n\017page_permission" +
-      "\030\006 \003(\0132\031.glory_api.PagePermission\"Z\n Cre" +
-      "ateRolePagePermissionResponse\022%\n\tbase_re" +
-      "sp\030\001 \001(\0132\022.base.BaseResponse\022\017\n\007role_id\030" +
-      "\002 \001(\003\"k\n\034GetRolePagePermissionRequest\022\'\n" +
-      "\014base_request\030\001 \001(\0132\021.base.BaseRequest\022\017" +
-      "\n\007role_id\030\002 \001(\003\022\021\n\ttenant_id\030\003 \001(\003\"\365\001\n\035G" +
-      "etRolePagePermissionResponse\022%\n\tbase_res" +
-      "p\030\001 \001(\0132\022.base.BaseResponse\022\021\n\ttenant_id" +
-      "\030\002 \001(\003\022\017\n\007role_id\030\003 \001(\003\022\021\n\trole_name\030\004 \001" +
-      "(\t\022\021\n\trole_type\030\005 \001(\t\022\030\n\020role_descriptio" +
-      "n\030\006 \001(\t\022\025\n\rrole_readonly\030\007 \001(\010\0222\n\017page_p" +
-      "ermission\030\010 \003(\0132\031.glory_api.PagePermissi" +
-      "on\"\342\001\n\037UpdateRolePagePermissionRequest\022\'" +
-      "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\022" +
-      "\021\n\ttenant_id\030\002 \001(\003\022\017\n\007role_id\030\003 \001(\003\022\021\n\tr" +
-      "ole_name\030\004 \001(\t\022\021\n\trole_type\030\005 \001(\t\022\030\n\020rol" +
-      "e_description\030\006 \001(\t\0222\n\017page_permission\030\007" +
-      " \003(\0132\031.glory_api.PagePermission\"I\n Updat" +
-      "eRolePagePermissionResponse\022%\n\tbase_resp" +
-      "\030\001 \001(\0132\022.base.BaseResponse\"\215\001\n\nPermissio" +
-      "n\022\025\n\rpermission_id\030\001 \001(\003\022\027\n\017permission_n" +
-      "ame\030\002 \001(\t\022\023\n\013resource_id\030\003 \001(\003\022\022\n\npermis" +
-      "sion\030\004 \001(\t\022\023\n\013description\030\005 \001(\t\022\021\n\ttenan" +
-      "t_id\030\006 \001(\003\"\331\001\n\025ListPermissionRequest\022\'\n\014" +
-      "base_request\030\001 \001(\0132\021.base.BaseRequest\022\025\n" +
-      "\rpermission_id\030\002 \001(\003\022\027\n\017permission_name\030" +
-      "\003 \001(\t\022\023\n\013resource_id\030\004 \001(\003\022\022\n\npermission" +
-      "\030\005 \001(\t\022\021\n\ttenant_id\030\006 \001(\003\022+\n\npagination\030" +
-      "d \001(\0132\027.base.PaginationRequest\"\230\001\n\026ListP" +
-      "ermissionResponse\022%\n\tbase_resp\030\001 \001(\0132\022.b" +
-      "ase.BaseResponse\022)\n\npermission\030\002 \003(\0132\025.g" +
-      "lory_api.Permission\022,\n\npagination\030d \001(\0132" +
-      "\030.base.PaginationResponse\"(\n\010RoleType\022\r\n" +
-      "\005label\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\"O\n\022GetRoleTy" +
-      "peRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.B" +
-      "aseRequest\022\020\n\010category\030\002 \001(\t\"`\n\023GetRoleT" +
-      "ypeResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
-      "seResponse\022\"\n\005types\030\002 \003(\0132\023.glory_api.Ro" +
-      "leType\"\302\001\n\004Role\022\017\n\007role_id\030\001 \001(\003\022\021\n\trole" +
-      "_name\030\002 \001(\t\022\021\n\trole_type\030\003 \001(\t\022\023\n\013descri" +
-      "ption\030\005 \001(\t\022\020\n\010readonly\030\006 \001(\010\0222\n\017role_pe" +
-      "rmission\030\007 \003(\0132\031.glory_api.RolePermissio" +
-      "n\022(\n\005pages\030\010 \003(\0132\031.glory_api.PagePermiss" +
-      "ion\"\177\n\016RolePermission\022\032\n\022role_permission" +
-      "_id\030\001 \001(\003\022\017\n\007role_id\030\002 \001(\003\022\025\n\rpermission" +
-      "_id\030\003 \001(\003\022)\n\npermission\030\004 \003(\0132\025.glory_ap" +
-      "i.Permission\"\261\001\n\017ListRoleRequest\022\'\n\014base" +
-      "_request\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007rol" +
-      "e_id\030\002 \001(\003\022\021\n\trole_name\030\003 \001(\t\022\021\n\trole_ty" +
-      "pe\030\004 \001(\t\022\021\n\ttenant_id\030\007 \001(\003\022+\n\npaginatio" +
-      "n\030d \001(\0132\027.base.PaginationRequest\"\206\001\n\020Lis" +
-      "tRoleResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
-      "BaseResponse\022\035\n\004role\030\002 \003(\0132\017.glory_api.R" +
-      "ole\022,\n\npagination\030d \001(\0132\030.base.Paginatio" +
-      "nResponse\"[\n\021CreateRoleRequest\022\'\n\014base_r" +
-      "equest\030\001 \001(\0132\021.base.BaseRequest\022\035\n\004role\030" +
-      "\002 \001(\0132\017.glory_api.Role\"L\n\022CreateRoleResp" +
-      "onse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespo" +
-      "nse\022\017\n\007role_id\030\002 \001(\003\"l\n\031GiveRolePermissi" +
-      "onRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.B" +
-      "aseRequest\022\017\n\007role_id\030\002 \001(\003\022\025\n\rpermissio" +
-      "n_id\030\003 \003(\003\"C\n\032GiveRolePermissionResponse" +
+      "ype\030\003 \001(\t\022\021\n\tdept_code\030\004 \001(\t\022\025\n\rdept_ove" +
+      "rview\030\005 \001(\t\022\021\n\ttenant_id\030\006 \001(\003\022\021\n\tparent" +
+      "_id\030\007 \001(\003\"\361\002\n\004User\022\n\n\002id\030\001 \001(\003\022\r\n\005phone\030" +
+      "\002 \001(\t\022\r\n\005token\030\003 \001(\t\022\024\n\014token_expiry\030\004 \001" +
+      "(\t\022\022\n\ncreated_at\030\005 \001(\t\022\014\n\004name\030\006 \001(\t\022\034\n\024" +
+      "avatar_attachment_id\030\007 \001(\003\022\022\n\navatar_url" +
+      "\030\010 \001(\t\022!\n\006seller\030\t \001(\0132\021.glory_api.Selle" +
+      "r\022*\n\013shop_access\030\n \003(\0132\025.glory_api.ShopA" +
+      "ccess\022*\n\013tenant_dept\030\013 \003(\0132\025.glory_api.T" +
+      "enantDept\022\036\n\005roles\030y \003(\0132\017.glory_api.Rol" +
+      "e\022(\n\005pages\030\r \003(\0132\031.glory_api.PagePermiss" +
+      "ion\022\020\n\010is_admin\030\016 \001(\010\"X\n\nUserFollow\022\017\n\007u" +
+      "ser_id\030\001 \001(\003\022\021\n\tuser_name\030\002 \001(\t\022\022\n\navata" +
+      "r_url\030\003 \001(\t\022\022\n\ncreated_at\030\004 \001(\t\"T\n\014Login" +
+      "Request\022\'\n\014base_request\030\001 \001(\0132\021.base.Bas" +
+      "eRequest\022\r\n\005phone\030\002 \001(\t\022\014\n\004code\030\003 \001(\t\"U\n" +
+      "\rLoginResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
+      ".BaseResponse\022\035\n\004data\030\002 \001(\0132\017.glory_api." +
+      "User\"8\n\rLogoutRequest\022\'\n\014base_request\030\001 " +
+      "\001(\0132\021.base.BaseRequest\"7\n\016LogoutResponse" +
       "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"" +
-      "b\n\033RemoveRolePermissionRequest\022\'\n\014base_r" +
-      "equest\030\001 \001(\0132\021.base.BaseRequest\022\032\n\022role_" +
-      "permission_id\030\003 \003(\003\"E\n\034RemoveRolePermiss" +
-      "ionResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
-      "seResponse\"M\n\021DeleteRoleRequest\022\'\n\014base_" +
-      "request\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007role" +
-      "_id\030\002 \003(\003\";\n\022DeleteRoleResponse\022%\n\tbase_" +
-      "resp\030\001 \001(\0132\022.base.BaseResponse\"\203\001\n\010Resou" +
-      "rce\022\023\n\013resource_id\030\002 \001(\003\022\025\n\rresource_nam" +
-      "e\030\003 \001(\t\022\025\n\rresource_type\030\004 \001(\t\022\016\n\006source" +
-      "\030\005 \001(\t\022\021\n\tsource_id\030\006 \001(\003\022\021\n\ttenant_id\030\007" +
-      " \001(\003\"\222\001\n\023ListResourceRequest\022\'\n\014base_req" +
-      "uest\030\001 \001(\0132\021.base.BaseRequest\022%\n\010resourc" +
-      "e\030\002 \001(\0132\023.glory_api.Resource\022+\n\npaginati" +
-      "on\030d \001(\0132\027.base.PaginationRequest\"\222\001\n\024Li" +
-      "stResourceResponse\022%\n\tbase_resp\030\001 \001(\0132\022." +
-      "base.BaseResponse\022%\n\010resource\030\002 \003(\0132\023.gl" +
-      "ory_api.Resource\022,\n\npagination\030d \001(\0132\030.b" +
-      "ase.PaginationResponse\"\230\001\n\016ListUserByRol" +
-      "e\022\017\n\007user_id\030\001 \001(\003\022\r\n\005phone\030\002 \001(\t\022\021\n\tuse" +
-      "r_name\030\003 \001(\t\022\021\n\ttenant_id\030\004 \001(\003\022\014\n\004role\030" +
-      "\005 \001(\t\022\022\n\ncreated_at\030\006 \001(\t\022\036\n\005roles\030\007 \003(\013" +
-      "2\017.glory_api.Role\"\241\001\n\025ListUserByRoleRequ" +
-      "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
-      "uest\022\021\n\trole_name\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\021\n" +
-      "\ttenant_id\030\004 \001(\003\022+\n\npagination\030d \001(\0132\027.b" +
-      "ase.PaginationRequest\"\226\001\n\026ListUserByRole" +
+      "N\n\024GetVerifyCodeRequest\022\'\n\014base_request\030" +
+      "\001 \001(\0132\021.base.BaseRequest\022\r\n\005phone\030\002 \001(\t\"" +
+      ">\n\025GetVerifyCodeResponse\022%\n\tbase_resp\030\001 " +
+      "\001(\0132\022.base.BaseResponse\"^\n\026CheckVerifyCo" +
+      "deRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.B" +
+      "aseRequest\022\r\n\005phone\030\002 \001(\t\022\014\n\004code\030\003 \001(\t\"" +
+      "N\n\027CheckVerifyCodeResponse\022%\n\tbase_resp\030" +
+      "\001 \001(\0132\022.base.BaseResponse\022\014\n\004pass\030\002 \001(\010\"" +
+      "d\n\030LoginWithPasswordRequest\022\'\n\014base_requ" +
+      "est\030\001 \001(\0132\021.base.BaseRequest\022\r\n\005phone\030\002 " +
+      "\001(\t\022\020\n\010password\030\003 \001(\t\"a\n\031LoginWithPasswo" +
+      "rdResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
+      "eResponse\022\035\n\004data\030\002 \001(\0132\017.glory_api.User" +
+      "\"a\n\025UpdatePasswordRequest\022\'\n\014base_reques" +
+      "t\030\001 \001(\0132\021.base.BaseRequest\022\r\n\005phone\030\002 \001(" +
+      "\t\022\020\n\010password\030\003 \001(\t\"?\n\026UpdatePasswordRes" +
+      "ponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResp" +
+      "onse\"9\n\016GetUserRequest\022\'\n\014base_request\030\001" +
+      " \001(\0132\021.base.BaseRequest\"\217\001\n\017GetUserRespo" +
+      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
+      "se\022\035\n\004data\030\002 \001(\0132\017.glory_api.User\022!\n\006ten" +
+      "ant\030\003 \001(\0132\021.glory_api.Tenant\022\023\n\013dept_det" +
+      "ail\030\004 \003(\t\"[\n\021UpdateUserRequest\022\'\n\014base_r" +
+      "equest\030\001 \001(\0132\021.base.BaseRequest\022\035\n\004data\030" +
+      "\002 \001(\0132\017.glory_api.User\";\n\022UpdateUserResp" +
+      "onse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespo" +
+      "nse\"Z\n\022UpdatePhoneRequest\022\'\n\014base_reques" +
+      "t\030\001 \001(\0132\021.base.BaseRequest\022\r\n\005phone\030\002 \001(" +
+      "\t\022\014\n\004code\030\003 \001(\t\"<\n\023UpdatePhoneResponse\022%" +
+      "\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"i\n" +
+      "\016PagePermission\022\027\n\017business_system\030\001 \001(\t" +
+      "\022\014\n\004page\030\002 \001(\t\022\n\n\002id\030\003 \001(\003\022\014\n\004name\030\004 \001(\t" +
+      "\022\026\n\016has_permission\030\005 \001(\010\"Z\n\034GetUserPageP" +
+      "ermissionRequest\022\'\n\014base_request\030\001 \001(\0132\021" +
+      ".base.BaseRequest\022\021\n\ttenant_id\030\002 \001(\003\"z\n\035" +
+      "GetUserPagePermissionResponse\022%\n\tbase_re" +
+      "sp\030\001 \001(\0132\022.base.BaseResponse\0222\n\017page_per" +
+      "mission\030\002 \003(\0132\031.glory_api.PagePermission" +
+      "\"\321\001\n\037CreateRolePagePermissionRequest\022\'\n\014" +
+      "base_request\030\001 \001(\0132\021.base.BaseRequest\022\021\n" +
+      "\ttenant_id\030\002 \001(\003\022\021\n\trole_name\030\003 \001(\t\022\021\n\tr" +
+      "ole_type\030\004 \001(\t\022\030\n\020role_description\030\005 \001(\t" +
+      "\0222\n\017page_permission\030\006 \003(\0132\031.glory_api.Pa" +
+      "gePermission\"Z\n CreateRolePagePermission" +
       "Response\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseR" +
-      "esponse\022\'\n\004user\030\002 \003(\0132\031.glory_api.ListUs" +
-      "erByRole\022,\n\npagination\030d \001(\0132\030.base.Pagi" +
-      "nationResponse\"b\n\021FollowUserRequest\022\'\n\014b" +
-      "ase_request\030\001 \001(\0132\021.base.BaseRequest\022\024\n\014" +
-      "following_id\030\002 \001(\003\022\016\n\006follow\030\003 \001(\010\";\n\022Fo" +
-      "llowUserResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
-      "se.BaseResponse\"n\n\026ListMyFollowingReques" +
-      "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
-      "st\022+\n\npagination\030d \001(\0132\027.base.Pagination" +
-      "Request\"\235\001\n\027ListMyFollowingResponse\022%\n\tb" +
-      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\022-\n\016fo" +
-      "llowing_list\030\002 \003(\0132\025.glory_api.UserFollo" +
-      "w\022,\n\npagination\030d \001(\0132\030.base.PaginationR" +
-      "esponse\"m\n\025ListMyFollowerRequest\022\'\n\014base" +
-      "_request\030\001 \001(\0132\021.base.BaseRequest\022+\n\npag" +
-      "ination\030d \001(\0132\027.base.PaginationRequest\"\233" +
-      "\001\n\026ListMyFollowerResponse\022%\n\tbase_resp\030\001" +
-      " \001(\0132\022.base.BaseResponse\022,\n\rfollower_lis" +
-      "t\030\002 \003(\0132\025.glory_api.UserFollow\022,\n\npagina" +
-      "tion\030d \001(\0132\030.base.PaginationResponse\"k\n\023" +
-      "ListMyFriendRequest\022\'\n\014base_request\030\001 \001(" +
-      "\0132\021.base.BaseRequest\022+\n\npagination\030d \001(\013" +
-      "2\027.base.PaginationRequest\"\227\001\n\024ListMyFrie" +
-      "ndResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
-      "eResponse\022*\n\013friend_list\030\002 \003(\0132\025.glory_a" +
-      "pi.UserFollow\022,\n\npagination\030d \001(\0132\030.base" +
-      ".PaginationResponseB#\n\037com.zhijiejiaoyu." +
-      "glory_api.userP\001b\006proto3"
+      "esponse\022\017\n\007role_id\030\002 \001(\003\"k\n\034GetRolePageP" +
+      "ermissionRequest\022\'\n\014base_request\030\001 \001(\0132\021" +
+      ".base.BaseRequest\022\017\n\007role_id\030\002 \001(\003\022\021\n\tte" +
+      "nant_id\030\003 \001(\003\"\365\001\n\035GetRolePagePermissionR" +
+      "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
+      "sponse\022\021\n\ttenant_id\030\002 \001(\003\022\017\n\007role_id\030\003 \001" +
+      "(\003\022\021\n\trole_name\030\004 \001(\t\022\021\n\trole_type\030\005 \001(\t" +
+      "\022\030\n\020role_description\030\006 \001(\t\022\025\n\rrole_reado" +
+      "nly\030\007 \001(\010\0222\n\017page_permission\030\010 \003(\0132\031.glo" +
+      "ry_api.PagePermission\"\342\001\n\037UpdateRolePage" +
+      "PermissionRequest\022\'\n\014base_request\030\001 \001(\0132" +
+      "\021.base.BaseRequest\022\021\n\ttenant_id\030\002 \001(\003\022\017\n" +
+      "\007role_id\030\003 \001(\003\022\021\n\trole_name\030\004 \001(\t\022\021\n\trol" +
+      "e_type\030\005 \001(\t\022\030\n\020role_description\030\006 \001(\t\0222" +
+      "\n\017page_permission\030\007 \003(\0132\031.glory_api.Page" +
+      "Permission\"I\n UpdateRolePagePermissionRe" +
+      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
+      "ponse\"\215\001\n\nPermission\022\025\n\rpermission_id\030\001 " +
+      "\001(\003\022\027\n\017permission_name\030\002 \001(\t\022\023\n\013resource" +
+      "_id\030\003 \001(\003\022\022\n\npermission\030\004 \001(\t\022\023\n\013descrip" +
+      "tion\030\005 \001(\t\022\021\n\ttenant_id\030\006 \001(\003\"\331\001\n\025ListPe" +
+      "rmissionRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
+      "base.BaseRequest\022\025\n\rpermission_id\030\002 \001(\003\022" +
+      "\027\n\017permission_name\030\003 \001(\t\022\023\n\013resource_id\030" +
+      "\004 \001(\003\022\022\n\npermission\030\005 \001(\t\022\021\n\ttenant_id\030\006" +
+      " \001(\003\022+\n\npagination\030d \001(\0132\027.base.Paginati" +
+      "onRequest\"\230\001\n\026ListPermissionResponse\022%\n\t" +
+      "base_resp\030\001 \001(\0132\022.base.BaseResponse\022)\n\np" +
+      "ermission\030\002 \003(\0132\025.glory_api.Permission\022," +
+      "\n\npagination\030d \001(\0132\030.base.PaginationResp" +
+      "onse\"(\n\010RoleType\022\r\n\005label\030\001 \001(\t\022\r\n\005value" +
+      "\030\002 \001(\t\"O\n\022GetRoleTypeRequest\022\'\n\014base_req" +
+      "uest\030\001 \001(\0132\021.base.BaseRequest\022\020\n\010categor" +
+      "y\030\002 \001(\t\"`\n\023GetRoleTypeResponse\022%\n\tbase_r" +
+      "esp\030\001 \001(\0132\022.base.BaseResponse\022\"\n\005types\030\002" +
+      " \003(\0132\023.glory_api.RoleType\"\302\001\n\004Role\022\017\n\007ro" +
+      "le_id\030\001 \001(\003\022\021\n\trole_name\030\002 \001(\t\022\021\n\trole_t" +
+      "ype\030\003 \001(\t\022\023\n\013description\030\005 \001(\t\022\020\n\010readon" +
+      "ly\030\006 \001(\010\0222\n\017role_permission\030\007 \003(\0132\031.glor" +
+      "y_api.RolePermission\022(\n\005pages\030\010 \003(\0132\031.gl" +
+      "ory_api.PagePermission\"\177\n\016RolePermission" +
+      "\022\032\n\022role_permission_id\030\001 \001(\003\022\017\n\007role_id\030" +
+      "\002 \001(\003\022\025\n\rpermission_id\030\003 \001(\003\022)\n\npermissi" +
+      "on\030\004 \003(\0132\025.glory_api.Permission\"\261\001\n\017List" +
+      "RoleRequest\022\'\n\014base_request\030\001 \001(\0132\021.base" +
+      ".BaseRequest\022\017\n\007role_id\030\002 \001(\003\022\021\n\trole_na" +
+      "me\030\003 \001(\t\022\021\n\trole_type\030\004 \001(\t\022\021\n\ttenant_id" +
+      "\030\007 \001(\003\022+\n\npagination\030d \001(\0132\027.base.Pagina" +
+      "tionRequest\"\206\001\n\020ListRoleResponse\022%\n\tbase" +
+      "_resp\030\001 \001(\0132\022.base.BaseResponse\022\035\n\004role\030" +
+      "\002 \003(\0132\017.glory_api.Role\022,\n\npagination\030d \001" +
+      "(\0132\030.base.PaginationResponse\"[\n\021CreateRo" +
+      "leRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.B" +
+      "aseRequest\022\035\n\004role\030\002 \001(\0132\017.glory_api.Rol" +
+      "e\"L\n\022CreateRoleResponse\022%\n\tbase_resp\030\001 \001" +
+      "(\0132\022.base.BaseResponse\022\017\n\007role_id\030\002 \001(\003\"" +
+      "l\n\031GiveRolePermissionRequest\022\'\n\014base_req" +
+      "uest\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007role_id" +
+      "\030\002 \001(\003\022\025\n\rpermission_id\030\003 \003(\003\"C\n\032GiveRol" +
+      "ePermissionResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
+      ".base.BaseResponse\"b\n\033RemoveRolePermissi" +
+      "onRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.B" +
+      "aseRequest\022\032\n\022role_permission_id\030\003 \003(\003\"E" +
+      "\n\034RemoveRolePermissionResponse\022%\n\tbase_r" +
+      "esp\030\001 \001(\0132\022.base.BaseResponse\"M\n\021DeleteR" +
+      "oleRequest\022\'\n\014base_request\030\001 \001(\0132\021.base." +
+      "BaseRequest\022\017\n\007role_id\030\002 \003(\003\";\n\022DeleteRo" +
+      "leResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
+      "eResponse\"\203\001\n\010Resource\022\023\n\013resource_id\030\002 " +
+      "\001(\003\022\025\n\rresource_name\030\003 \001(\t\022\025\n\rresource_t" +
+      "ype\030\004 \001(\t\022\016\n\006source\030\005 \001(\t\022\021\n\tsource_id\030\006" +
+      " \001(\003\022\021\n\ttenant_id\030\007 \001(\003\"\222\001\n\023ListResource" +
+      "Request\022\'\n\014base_request\030\001 \001(\0132\021.base.Bas" +
+      "eRequest\022%\n\010resource\030\002 \001(\0132\023.glory_api.R" +
+      "esource\022+\n\npagination\030d \001(\0132\027.base.Pagin" +
+      "ationRequest\"\222\001\n\024ListResourceResponse\022%\n" +
+      "\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022%\n\010" +
+      "resource\030\002 \003(\0132\023.glory_api.Resource\022,\n\np" +
+      "agination\030d \001(\0132\030.base.PaginationRespons" +
+      "e\"\230\001\n\016ListUserByRole\022\017\n\007user_id\030\001 \001(\003\022\r\n" +
+      "\005phone\030\002 \001(\t\022\021\n\tuser_name\030\003 \001(\t\022\021\n\ttenan" +
+      "t_id\030\004 \001(\003\022\014\n\004role\030\005 \001(\t\022\022\n\ncreated_at\030\006" +
+      " \001(\t\022\036\n\005roles\030\007 \003(\0132\017.glory_api.Role\"\241\001\n" +
+      "\025ListUserByRoleRequest\022\'\n\014base_request\030\001" +
+      " \001(\0132\021.base.BaseRequest\022\021\n\trole_name\030\002 \001" +
+      "(\t\022\014\n\004name\030\003 \001(\t\022\021\n\ttenant_id\030\004 \001(\003\022+\n\np" +
+      "agination\030d \001(\0132\027.base.PaginationRequest" +
+      "\"\226\001\n\026ListUserByRoleResponse\022%\n\tbase_resp" +
+      "\030\001 \001(\0132\022.base.BaseResponse\022\'\n\004user\030\002 \003(\013" +
+      "2\031.glory_api.ListUserByRole\022,\n\npaginatio" +
+      "n\030d \001(\0132\030.base.PaginationResponse\"b\n\021Fol" +
+      "lowUserRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
+      "ase.BaseRequest\022\024\n\014following_id\030\002 \001(\003\022\016\n" +
+      "\006follow\030\003 \001(\010\";\n\022FollowUserResponse\022%\n\tb" +
+      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\"n\n\026Li" +
+      "stMyFollowingRequest\022\'\n\014base_request\030\001 \001" +
+      "(\0132\021.base.BaseRequest\022+\n\npagination\030d \001(" +
+      "\0132\027.base.PaginationRequest\"\235\001\n\027ListMyFol" +
+      "lowingResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
+      ".BaseResponse\022-\n\016following_list\030\002 \003(\0132\025." +
+      "glory_api.UserFollow\022,\n\npagination\030d \001(\013" +
+      "2\030.base.PaginationResponse\"m\n\025ListMyFoll" +
+      "owerRequest\022\'\n\014base_request\030\001 \001(\0132\021.base" +
+      ".BaseRequest\022+\n\npagination\030d \001(\0132\027.base." +
+      "PaginationRequest\"\233\001\n\026ListMyFollowerResp" +
+      "onse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespo" +
+      "nse\022,\n\rfollower_list\030\002 \003(\0132\025.glory_api.U" +
+      "serFollow\022,\n\npagination\030d \001(\0132\030.base.Pag" +
+      "inationResponse\"k\n\023ListMyFriendRequest\022\'" +
+      "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\022" +
+      "+\n\npagination\030d \001(\0132\027.base.PaginationReq" +
+      "uest\"\227\001\n\024ListMyFriendResponse\022%\n\tbase_re" +
+      "sp\030\001 \001(\0132\022.base.BaseResponse\022*\n\013friend_l" +
+      "ist\030\002 \003(\0132\025.glory_api.UserFollow\022,\n\npagi" +
+      "nation\030d \001(\0132\030.base.PaginationResponseB#" +
+      "\n\037com.zhijiejiaoyu.glory_api.userP\001b\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -533,7 +534,7 @@ public final class UserOuterClass {
     internal_static_glory_api_TenantDept_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_TenantDept_descriptor,
-        new java.lang.String[] { "DeptId", "DeptName", "DeptType", "DeptOverview", "TenantId", "ParentId", });
+        new java.lang.String[] { "DeptId", "DeptName", "DeptType", "DeptCode", "DeptOverview", "TenantId", "ParentId", });
     internal_static_glory_api_User_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_glory_api_User_fieldAccessorTable = new

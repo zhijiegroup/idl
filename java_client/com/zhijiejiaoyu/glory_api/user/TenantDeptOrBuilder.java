@@ -38,25 +38,37 @@ public interface TenantDeptOrBuilder extends
       getDeptTypeBytes();
 
   /**
-   * <code>string dept_overview = 4;</code>
+   * <code>string dept_code = 4;</code>
+   * @return The deptCode.
+   */
+  java.lang.String getDeptCode();
+  /**
+   * <code>string dept_code = 4;</code>
+   * @return The bytes for deptCode.
+   */
+  com.google.protobuf.ByteString
+      getDeptCodeBytes();
+
+  /**
+   * <code>string dept_overview = 5;</code>
    * @return The deptOverview.
    */
   java.lang.String getDeptOverview();
   /**
-   * <code>string dept_overview = 4;</code>
+   * <code>string dept_overview = 5;</code>
    * @return The bytes for deptOverview.
    */
   com.google.protobuf.ByteString
       getDeptOverviewBytes();
 
   /**
-   * <code>int64 tenant_id = 5;</code>
+   * <code>int64 tenant_id = 6;</code>
    * @return The tenantId.
    */
   long getTenantId();
 
   /**
-   * <code>int64 parent_id = 6;</code>
+   * <code>int64 parent_id = 7;</code>
    * @return The parentId.
    */
   long getParentId();

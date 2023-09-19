@@ -31,6 +31,8 @@ struct GloryApi_TenantDept {
 
   var deptType: String = String()
 
+  var deptCode: String = String()
+
   var deptOverview: String = String()
 
   var tenantID: Int64 = 0
@@ -1840,9 +1842,10 @@ extension GloryApi_TenantDept: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     1: .standard(proto: "dept_id"),
     2: .standard(proto: "dept_name"),
     3: .standard(proto: "dept_type"),
-    4: .standard(proto: "dept_overview"),
-    5: .standard(proto: "tenant_id"),
-    6: .standard(proto: "parent_id"),
+    4: .standard(proto: "dept_code"),
+    5: .standard(proto: "dept_overview"),
+    6: .standard(proto: "tenant_id"),
+    7: .standard(proto: "parent_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1854,9 +1857,10 @@ extension GloryApi_TenantDept: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
       case 1: try { try decoder.decodeSingularInt64Field(value: &self.deptID) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.deptName) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.deptType) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.deptOverview) }()
-      case 5: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
-      case 6: try { try decoder.decodeSingularInt64Field(value: &self.parentID) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.deptCode) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.deptOverview) }()
+      case 6: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
+      case 7: try { try decoder.decodeSingularInt64Field(value: &self.parentID) }()
       default: break
       }
     }
@@ -1872,14 +1876,17 @@ extension GloryApi_TenantDept: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     if !self.deptType.isEmpty {
       try visitor.visitSingularStringField(value: self.deptType, fieldNumber: 3)
     }
+    if !self.deptCode.isEmpty {
+      try visitor.visitSingularStringField(value: self.deptCode, fieldNumber: 4)
+    }
     if !self.deptOverview.isEmpty {
-      try visitor.visitSingularStringField(value: self.deptOverview, fieldNumber: 4)
+      try visitor.visitSingularStringField(value: self.deptOverview, fieldNumber: 5)
     }
     if self.tenantID != 0 {
-      try visitor.visitSingularInt64Field(value: self.tenantID, fieldNumber: 5)
+      try visitor.visitSingularInt64Field(value: self.tenantID, fieldNumber: 6)
     }
     if self.parentID != 0 {
-      try visitor.visitSingularInt64Field(value: self.parentID, fieldNumber: 6)
+      try visitor.visitSingularInt64Field(value: self.parentID, fieldNumber: 7)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1888,6 +1895,7 @@ extension GloryApi_TenantDept: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     if lhs.deptID != rhs.deptID {return false}
     if lhs.deptName != rhs.deptName {return false}
     if lhs.deptType != rhs.deptType {return false}
+    if lhs.deptCode != rhs.deptCode {return false}
     if lhs.deptOverview != rhs.deptOverview {return false}
     if lhs.tenantID != rhs.tenantID {return false}
     if lhs.parentID != rhs.parentID {return false}

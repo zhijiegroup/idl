@@ -12,6 +12,7 @@ export interface TenantDept {
   dept_id?: string;
   dept_name?: string;
   dept_type?: string;
+  dept_code?: string;
   dept_overview?: string;
   tenant_id?: string;
   parent_id?: string;
