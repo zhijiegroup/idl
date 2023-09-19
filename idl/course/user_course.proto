@@ -5,6 +5,19 @@ option java_multiple_files = true;
 
 import "base.proto";
 
+message UserCourseSummary {
+  int64 course_id = 1; // 课程ID
+  string course_name = 2; // 课程名称
+  float knowledge_hours = 3; // 知识点学时
+  float skill_hours = 4; // 技能学时
+  int32 course_state = 5; // 课程状态：1.进行中；2.已完成
+  int32 course_origin = 6; // 课程来源：1. 从资源库加入；2.学生自己定制课程；3.老师分配课程
+  string course_organization = 7; // 课程开发单位
+  string course_teacher_name = 8; // 授课老师名称
+  int32 course_progress = 9; // 课程进度
+}
+
+// 加入课程
 message EnrollCourseRequest {
   base.BaseRequest base_request = 1;
   int64 course_id = 2; // 课程ID
@@ -14,6 +27,7 @@ message EnrollCourseResponse {
   base.BaseResponse base_resp = 1;
 }
 
+// 删除我的课程
 message DeleteMyCourseRequest {
   base.BaseRequest base_request = 1;
   int64 course_id = 2; // 课程ID
@@ -23,6 +37,7 @@ message DeleteMyCourseResponse {
   base.BaseResponse base_resp = 1;
 }
 
+// 更新课程进度
 message UpdateCourseProgressRequest {
   base.BaseRequest base_request = 1;
   int64 course_id = 2; // 课程ID
@@ -31,4 +46,17 @@ message UpdateCourseProgressRequest {
 
 message UpdateCourseProgressResponse {
   base.BaseResponse base_resp = 1;
+}
+
+// 我的课程列表
+message ListMyCourseRequest {
+  base.BaseRequest base_request = 1;
+  int32 course_state = 2; // 课程状态：1.进行中；2.已完成
+  base.PaginationRequest pagination = 100;
+}
+
+message ListMyCourseResponse {
+  base.BaseResponse base_resp = 1;
+  repeated UserCourseSummary user_courses = 2;
+  base.PaginationResponse pagination = 100;
 }
