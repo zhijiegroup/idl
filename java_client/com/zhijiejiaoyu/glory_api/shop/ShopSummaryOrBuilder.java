@@ -54,4 +54,16 @@ public interface ShopSummaryOrBuilder extends
    * @return The sellerId.
    */
   long getSellerId();
+
+  /**
+   * <code>string shop_manager_name = 7;</code>
+   * @return The shopManagerName.
+   */
+  java.lang.String getShopManagerName();
+  /**
+   * <code>string shop_manager_name = 7;</code>
+   * @return The bytes for shopManagerName.
+   */
+  com.google.protobuf.ByteString
+      getShopManagerNameBytes();
 }
