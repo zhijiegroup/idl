@@ -12,9 +12,10 @@ message TenantDept {
     int64 dept_id = 1;
     string dept_name = 2;
     string dept_type = 3;
-    string dept_overview = 4;
-    int64 tenant_id = 5;
-    int64 parent_id = 6;
+    string dept_code = 4;
+    string dept_overview = 5;
+    int64 tenant_id = 6;
+    int64 parent_id = 7;
 }
 
 message User {
