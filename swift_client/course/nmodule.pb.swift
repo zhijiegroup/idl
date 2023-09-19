@@ -180,7 +180,13 @@ struct GloryApi_CreateNmCourseRequest {
 
   var courseClassfication: Int64 = 0
 
+  /// 课程层次：1.中职 2.高职 3.中高职
+  var courseLevel: Int64 = 0
+
   var courseMajor: String = String()
+
+  /// 课程类型：1:核心课程 2:名师公开课
+  var courseType: Int64 = 0
 
   var courseIndustry: String = String()
 
@@ -697,9 +703,11 @@ extension GloryApi_CreateNmCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._
     6: .standard(proto: "course_description"),
     7: .standard(proto: "course_cover_path"),
     8: .standard(proto: "course_classfication"),
-    9: .standard(proto: "course_major"),
-    10: .standard(proto: "course_industry"),
-    11: .standard(proto: "chapter_ids"),
+    9: .standard(proto: "course_level"),
+    10: .standard(proto: "course_major"),
+    11: .standard(proto: "course_type"),
+    12: .standard(proto: "course_industry"),
+    13: .standard(proto: "chapter_ids"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -716,9 +724,11 @@ extension GloryApi_CreateNmCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._
       case 6: try { try decoder.decodeSingularStringField(value: &self.courseDescription) }()
       case 7: try { try decoder.decodeSingularStringField(value: &self.courseCoverPath) }()
       case 8: try { try decoder.decodeSingularInt64Field(value: &self.courseClassfication) }()
-      case 9: try { try decoder.decodeSingularStringField(value: &self.courseMajor) }()
-      case 10: try { try decoder.decodeSingularStringField(value: &self.courseIndustry) }()
-      case 11: try { try decoder.decodeRepeatedInt64Field(value: &self.chapterIds) }()
+      case 9: try { try decoder.decodeSingularInt64Field(value: &self.courseLevel) }()
+      case 10: try { try decoder.decodeSingularStringField(value: &self.courseMajor) }()
+      case 11: try { try decoder.decodeSingularInt64Field(value: &self.courseType) }()
+      case 12: try { try decoder.decodeSingularStringField(value: &self.courseIndustry) }()
+      case 13: try { try decoder.decodeRepeatedInt64Field(value: &self.chapterIds) }()
       default: break
       }
     }
@@ -753,14 +763,20 @@ extension GloryApi_CreateNmCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._
     if self.courseClassfication != 0 {
       try visitor.visitSingularInt64Field(value: self.courseClassfication, fieldNumber: 8)
     }
+    if self.courseLevel != 0 {
+      try visitor.visitSingularInt64Field(value: self.courseLevel, fieldNumber: 9)
+    }
     if !self.courseMajor.isEmpty {
-      try visitor.visitSingularStringField(value: self.courseMajor, fieldNumber: 9)
+      try visitor.visitSingularStringField(value: self.courseMajor, fieldNumber: 10)
+    }
+    if self.courseType != 0 {
+      try visitor.visitSingularInt64Field(value: self.courseType, fieldNumber: 11)
     }
     if !self.courseIndustry.isEmpty {
-      try visitor.visitSingularStringField(value: self.courseIndustry, fieldNumber: 10)
+      try visitor.visitSingularStringField(value: self.courseIndustry, fieldNumber: 12)
     }
     if !self.chapterIds.isEmpty {
-      try visitor.visitPackedInt64Field(value: self.chapterIds, fieldNumber: 11)
+      try visitor.visitPackedInt64Field(value: self.chapterIds, fieldNumber: 13)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -774,7 +790,9 @@ extension GloryApi_CreateNmCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._
     if lhs.courseDescription != rhs.courseDescription {return false}
     if lhs.courseCoverPath != rhs.courseCoverPath {return false}
     if lhs.courseClassfication != rhs.courseClassfication {return false}
+    if lhs.courseLevel != rhs.courseLevel {return false}
     if lhs.courseMajor != rhs.courseMajor {return false}
+    if lhs.courseType != rhs.courseType {return false}
     if lhs.courseIndustry != rhs.courseIndustry {return false}
     if lhs.chapterIds != rhs.chapterIds {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

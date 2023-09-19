@@ -52,7 +52,11 @@ export interface CreateNmCourseRequest {
   course_description?: string;
   course_cover_path?: string;
   course_classfication?: string;
+  /** 课程层次：1.中职 2.高职 3.中高职 */
+  course_level?: string;
   course_major?: string;
+  /** 课程类型：1:核心课程 2:名师公开课 */
+  course_type?: string;
   course_industry?: string;
   chapter_ids?: Array<string>;
 }

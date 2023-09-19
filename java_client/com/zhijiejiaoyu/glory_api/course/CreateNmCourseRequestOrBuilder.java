@@ -95,41 +95,61 @@ public interface CreateNmCourseRequestOrBuilder extends
   long getCourseClassfication();
 
   /**
-   * <code>string course_major = 9;</code>
+   * <pre>
+   * 课程层次：1.中职 2.高职 3.中高职
+   * </pre>
+   *
+   * <code>int64 course_level = 9;</code>
+   * @return The courseLevel.
+   */
+  long getCourseLevel();
+
+  /**
+   * <code>string course_major = 10;</code>
    * @return The courseMajor.
    */
   java.lang.String getCourseMajor();
   /**
-   * <code>string course_major = 9;</code>
+   * <code>string course_major = 10;</code>
    * @return The bytes for courseMajor.
    */
   com.google.protobuf.ByteString
       getCourseMajorBytes();
 
   /**
-   * <code>string course_industry = 10;</code>
+   * <pre>
+   * 课程类型：1:核心课程 2:名师公开课
+   * </pre>
+   *
+   * <code>int64 course_type = 11;</code>
+   * @return The courseType.
+   */
+  long getCourseType();
+
+  /**
+   * <code>string course_industry = 12;</code>
    * @return The courseIndustry.
    */
   java.lang.String getCourseIndustry();
   /**
-   * <code>string course_industry = 10;</code>
+   * <code>string course_industry = 12;</code>
    * @return The bytes for courseIndustry.
    */
   com.google.protobuf.ByteString
       getCourseIndustryBytes();
 
   /**
-   * <code>repeated int64 chapter_ids = 11;</code>
+   * <code>repeated int64 chapter_ids = 13;</code>
    * @return A list containing the chapterIds.
    */
   java.util.List<java.lang.Long> getChapterIdsList();
   /**
-   * <code>repeated int64 chapter_ids = 11;</code>
+   * <code>repeated int64 chapter_ids = 13;</code>
    * @return The count of chapterIds.
    */
   int getChapterIdsCount();
   /**
-   * <code>repeated int64 chapter_ids = 11;</code>
+   * <code>repeated int64 chapter_ids = 13;</code>
    * @param index The index of the element to return.
    * @return The chapterIds at the given index.
    */

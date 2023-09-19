@@ -110,19 +110,29 @@ private static final long serialVersionUID = 0L;
             courseClassfication = input.readInt64();
             break;
           }
-          case 74: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 72: {
 
-            courseMajor = s;
+            courseLevel = input.readInt64();
             break;
           }
           case 82: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            courseIndustry = s;
+            courseMajor = s;
             break;
           }
           case 88: {
+
+            courseType = input.readInt64();
+            break;
+          }
+          case 98: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            courseIndustry = s;
+            break;
+          }
+          case 104: {
             if (!((mutable_bitField0 & 0x00000001) != 0)) {
               chapterIds = newLongList();
               mutable_bitField0_ |= 0x00000001;
@@ -130,7 +140,7 @@ private static final long serialVersionUID = 0L;
             chapterIds .addLong(input.readInt64());
             break;
           }
-          case 90: {
+          case 106: {
             int length = input.readRawVarint32();
             int limit = input.pushLimit(length);
             if (!((mutable_bitField0 & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -416,10 +426,25 @@ private static final long serialVersionUID = 0L;
     return courseClassfication ;
   }
 
-  public static final int COURSE_MAJOR_FIELD_NUMBER = 9;
+  public static final int COURSE_LEVEL_FIELD_NUMBER = 9;
+  private long courseLevel ;
+  /**
+   * <pre>
+   * 课程层次：1.中职 2.高职 3.中高职
+   * </pre>
+   *
+   * <code>int64 course_level = 9;</code>
+   * @return The courseLevel.
+   */
+  @java.lang.Override
+  public long getCourseLevel() {
+    return courseLevel ;
+  }
+
+  public static final int COURSE_MAJOR_FIELD_NUMBER = 10;
   private volatile java.lang.Object courseMajor ;
   /**
-   * <code>string course_major = 9;</code>
+   * <code>string course_major = 10;</code>
    * @return The courseMajor.
    */
   @java.lang.Override
@@ -436,7 +461,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string course_major = 9;</code>
+   * <code>string course_major = 10;</code>
    * @return The bytes for courseMajor.
    */
   @java.lang.Override
@@ -454,10 +479,25 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int COURSE_INDUSTRY_FIELD_NUMBER = 10;
+  public static final int COURSE_TYPE_FIELD_NUMBER = 11;
+  private long courseType ;
+  /**
+   * <pre>
+   * 课程类型：1:核心课程 2:名师公开课
+   * </pre>
+   *
+   * <code>int64 course_type = 11;</code>
+   * @return The courseType.
+   */
+  @java.lang.Override
+  public long getCourseType() {
+    return courseType ;
+  }
+
+  public static final int COURSE_INDUSTRY_FIELD_NUMBER = 12;
   private volatile java.lang.Object courseIndustry ;
   /**
-   * <code>string course_industry = 10;</code>
+   * <code>string course_industry = 12;</code>
    * @return The courseIndustry.
    */
   @java.lang.Override
@@ -474,7 +514,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string course_industry = 10;</code>
+   * <code>string course_industry = 12;</code>
    * @return The bytes for courseIndustry.
    */
   @java.lang.Override
@@ -492,10 +532,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int CHAPTER_IDS_FIELD_NUMBER = 11;
+  public static final int CHAPTER_IDS_FIELD_NUMBER = 13;
   private com.google.protobuf.Internal.LongList chapterIds ;
   /**
-   * <code>repeated int64 chapter_ids = 11;</code>
+   * <code>repeated int64 chapter_ids = 13;</code>
    * @return A list containing the chapterIds.
    */
   @java.lang.Override
@@ -504,14 +544,14 @@ private static final long serialVersionUID = 0L;
     return chapterIds ;
   }
   /**
-   * <code>repeated int64 chapter_ids = 11;</code>
+   * <code>repeated int64 chapter_ids = 13;</code>
    * @return The count of chapterIds.
    */
   public int getChapterIdsCount() {
     return chapterIds .size();
   }
   /**
-   * <code>repeated int64 chapter_ids = 11;</code>
+   * <code>repeated int64 chapter_ids = 13;</code>
    * @param index The index of the element to return.
    * @return The chapterIds at the given index.
    */
@@ -559,14 +599,20 @@ private static final long serialVersionUID = 0L;
     if (courseClassfication != 0L) {
       output.writeInt64(8, courseClassfication );
     }
+    if (courseLevel != 0L) {
+      output.writeInt64(9, courseLevel );
+    }
     if (!getCourseMajorBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, courseMajor );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, courseMajor );
+    }
+    if (courseType != 0L) {
+      output.writeInt64(11, courseType );
     }
     if (!getCourseIndustryBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, courseIndustry );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, courseIndustry );
     }
     if (getChapterIdsList().size() > 0) {
-      output.writeUInt32NoTag(90);
+      output.writeUInt32NoTag(106);
       output.writeUInt32NoTag(chapterIdsMemoizedSerializedSize);
     }
     for (int i = 0; i < chapterIds .size(); i++) {
@@ -608,11 +654,19 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(8, courseClassfication );
     }
+    if (courseLevel != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(9, courseLevel );
+    }
     if (!getCourseMajorBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, courseMajor );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, courseMajor );
+    }
+    if (courseType != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(11, courseType );
     }
     if (!getCourseIndustryBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, courseIndustry );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, courseIndustry );
     }
     {
       int dataSize = 0;
@@ -663,8 +717,12 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCourseCoverPath())) return false;
     if (getCourseClassfication()
         != other.getCourseClassfication()) return false;
+    if (getCourseLevel()
+        != other.getCourseLevel()) return false;
     if (!getCourseMajor()
         .equals(other.getCourseMajor())) return false;
+    if (getCourseType()
+        != other.getCourseType()) return false;
     if (!getCourseIndustry()
         .equals(other.getCourseIndustry())) return false;
     if (!getChapterIdsList()
@@ -700,8 +758,14 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + COURSE_CLASSFICATION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getCourseClassfication());
+    hash = (37 * hash) + COURSE_LEVEL_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getCourseLevel());
     hash = (37 * hash) + COURSE_MAJOR_FIELD_NUMBER;
     hash = (53 * hash) + getCourseMajor().hashCode();
+    hash = (37 * hash) + COURSE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getCourseType());
     hash = (37 * hash) + COURSE_INDUSTRY_FIELD_NUMBER;
     hash = (53 * hash) + getCourseIndustry().hashCode();
     if (getChapterIdsCount() > 0) {
@@ -861,7 +925,11 @@ private static final long serialVersionUID = 0L;
 
       courseClassfication = 0L;
 
+      courseLevel = 0L;
+
       courseMajor = "";
+
+      courseType = 0L;
 
       courseIndustry = "";
 
@@ -906,7 +974,9 @@ private static final long serialVersionUID = 0L;
       result.courseDescription = courseDescription ;
       result.courseCoverPath = courseCoverPath ;
       result.courseClassfication = courseClassfication ;
+      result.courseLevel = courseLevel ;
       result.courseMajor = courseMajor ;
+      result.courseType = courseType ;
       result.courseIndustry = courseIndustry ;
       if (((bitField0 & 0x00000001) != 0)) {
         chapterIds .makeImmutable();
@@ -990,9 +1060,15 @@ private static final long serialVersionUID = 0L;
       if (other.getCourseClassfication() != 0L) {
         setCourseClassfication(other.getCourseClassfication());
       }
+      if (other.getCourseLevel() != 0L) {
+        setCourseLevel(other.getCourseLevel());
+      }
       if (!other.getCourseMajor().isEmpty()) {
         courseMajor = other.courseMajor ;
         onChanged();
+      }
+      if (other.getCourseType() != 0L) {
+        setCourseType(other.getCourseType());
       }
       if (!other.getCourseIndustry().isEmpty()) {
         courseIndustry = other.courseIndustry ;
@@ -1599,9 +1675,52 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private long courseLevel ;
+    /**
+     * <pre>
+     * 课程层次：1.中职 2.高职 3.中高职
+     * </pre>
+     *
+     * <code>int64 course_level = 9;</code>
+     * @return The courseLevel.
+     */
+    @java.lang.Override
+    public long getCourseLevel() {
+      return courseLevel ;
+    }
+    /**
+     * <pre>
+     * 课程层次：1.中职 2.高职 3.中高职
+     * </pre>
+     *
+     * <code>int64 course_level = 9;</code>
+     * @param value The courseLevel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCourseLevel(long value) {
+      
+      courseLevel = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程层次：1.中职 2.高职 3.中高职
+     * </pre>
+     *
+     * <code>int64 course_level = 9;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCourseLevel() {
+      
+      courseLevel = 0L;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object courseMajor = "";
     /**
-     * <code>string course_major = 9;</code>
+     * <code>string course_major = 10;</code>
      * @return The courseMajor.
      */
     public java.lang.String getCourseMajor() {
@@ -1617,7 +1736,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string course_major = 9;</code>
+     * <code>string course_major = 10;</code>
      * @return The bytes for courseMajor.
      */
     public com.google.protobuf.ByteString
@@ -1634,7 +1753,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string course_major = 9;</code>
+     * <code>string course_major = 10;</code>
      * @param value The courseMajor to set.
      * @return This builder for chaining.
      */
@@ -1649,7 +1768,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string course_major = 9;</code>
+     * <code>string course_major = 10;</code>
      * @return This builder for chaining.
      */
     public Builder clearCourseMajor() {
@@ -1659,7 +1778,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string course_major = 9;</code>
+     * <code>string course_major = 10;</code>
      * @param value The bytes for courseMajor to set.
      * @return This builder for chaining.
      */
@@ -1675,9 +1794,52 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private long courseType ;
+    /**
+     * <pre>
+     * 课程类型：1:核心课程 2:名师公开课
+     * </pre>
+     *
+     * <code>int64 course_type = 11;</code>
+     * @return The courseType.
+     */
+    @java.lang.Override
+    public long getCourseType() {
+      return courseType ;
+    }
+    /**
+     * <pre>
+     * 课程类型：1:核心课程 2:名师公开课
+     * </pre>
+     *
+     * <code>int64 course_type = 11;</code>
+     * @param value The courseType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCourseType(long value) {
+      
+      courseType = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程类型：1:核心课程 2:名师公开课
+     * </pre>
+     *
+     * <code>int64 course_type = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCourseType() {
+      
+      courseType = 0L;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object courseIndustry = "";
     /**
-     * <code>string course_industry = 10;</code>
+     * <code>string course_industry = 12;</code>
      * @return The courseIndustry.
      */
     public java.lang.String getCourseIndustry() {
@@ -1693,7 +1855,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string course_industry = 10;</code>
+     * <code>string course_industry = 12;</code>
      * @return The bytes for courseIndustry.
      */
     public com.google.protobuf.ByteString
@@ -1710,7 +1872,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string course_industry = 10;</code>
+     * <code>string course_industry = 12;</code>
      * @param value The courseIndustry to set.
      * @return This builder for chaining.
      */
@@ -1725,7 +1887,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string course_industry = 10;</code>
+     * <code>string course_industry = 12;</code>
      * @return This builder for chaining.
      */
     public Builder clearCourseIndustry() {
@@ -1735,7 +1897,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string course_industry = 10;</code>
+     * <code>string course_industry = 12;</code>
      * @param value The bytes for courseIndustry to set.
      * @return This builder for chaining.
      */
@@ -1759,7 +1921,7 @@ private static final long serialVersionUID = 0L;
        }
     }
     /**
-     * <code>repeated int64 chapter_ids = 11;</code>
+     * <code>repeated int64 chapter_ids = 13;</code>
      * @return A list containing the chapterIds.
      */
     public java.util.List<java.lang.Long>
@@ -1768,14 +1930,14 @@ private static final long serialVersionUID = 0L;
                java.util.Collections.unmodifiableList(chapterIds ) : chapterIds ;
     }
     /**
-     * <code>repeated int64 chapter_ids = 11;</code>
+     * <code>repeated int64 chapter_ids = 13;</code>
      * @return The count of chapterIds.
      */
     public int getChapterIdsCount() {
       return chapterIds .size();
     }
     /**
-     * <code>repeated int64 chapter_ids = 11;</code>
+     * <code>repeated int64 chapter_ids = 13;</code>
      * @param index The index of the element to return.
      * @return The chapterIds at the given index.
      */
@@ -1783,7 +1945,7 @@ private static final long serialVersionUID = 0L;
       return chapterIds .getLong(index);
     }
     /**
-     * <code>repeated int64 chapter_ids = 11;</code>
+     * <code>repeated int64 chapter_ids = 13;</code>
      * @param index The index to set the value at.
      * @param value The chapterIds to set.
      * @return This builder for chaining.
@@ -1796,7 +1958,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated int64 chapter_ids = 11;</code>
+     * <code>repeated int64 chapter_ids = 13;</code>
      * @param value The chapterIds to add.
      * @return This builder for chaining.
      */
@@ -1807,7 +1969,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated int64 chapter_ids = 11;</code>
+     * <code>repeated int64 chapter_ids = 13;</code>
      * @param values The chapterIds to add.
      * @return This builder for chaining.
      */
@@ -1820,7 +1982,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated int64 chapter_ids = 11;</code>
+     * <code>repeated int64 chapter_ids = 13;</code>
      * @return This builder for chaining.
      */
     public Builder clearChapterIds() {
