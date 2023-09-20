@@ -43,6 +43,7 @@ import * as material from "./course/material";
 import * as modules from "./course/module";
 import * as nmodule from "./course/nmodule";
 import * as course from "./course/course";
+import * as graph from "./course/graph";
 import * as user_course from "./course/user_course";
 export {
   user,
@@ -86,6 +87,7 @@ export {
   modules,
   nmodule,
   course,
+  graph,
   user_course,
 };
 
@@ -1174,6 +1176,15 @@ CreateLivePlanProduct create live plan product */
   ListCourse(
     request: course.ListCourseRequest
   ): Promise<course.ListCourseResponse>;
+
+  /** 知识图谱 */
+  CreateKnowledgeGraph(
+    request: graph.CreateKnowledgeGraphRequest
+  ): Promise<graph.CreateKnowledgeGraphResponse>;
+
+  GetKnowledgeGraph(
+    request: graph.GetKnowledgeGraphRequest
+  ): Promise<graph.GetKnowledgeGraphResponse>;
 
   /** 我的课程
 加入课程 */
