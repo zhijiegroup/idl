@@ -314,6 +314,9 @@ struct GloryApi_ListCourseRequest {
   /// 课程分类
   var courseClassification: Int32 = 0
 
+  /// 全部:0 模块化课程:1 非模块化课程:2 定制课程：3
+  var courseModule: Int32 = 0
+
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
@@ -1070,6 +1073,7 @@ extension GloryApi_ListCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
     2: .standard(proto: "course_classification"),
+    3: .standard(proto: "course_module"),
     100: .same(proto: "pagination"),
   ]
 
@@ -1081,6 +1085,7 @@ extension GloryApi_ListCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularInt32Field(value: &self.courseClassification) }()
+      case 3: try { try decoder.decodeSingularInt32Field(value: &self.courseModule) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -1098,6 +1103,9 @@ extension GloryApi_ListCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if self.courseClassification != 0 {
       try visitor.visitSingularInt32Field(value: self.courseClassification, fieldNumber: 2)
     }
+    if self.courseModule != 0 {
+      try visitor.visitSingularInt32Field(value: self.courseModule, fieldNumber: 3)
+    }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
     } }()
@@ -1107,6 +1115,7 @@ extension GloryApi_ListCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
   static func ==(lhs: GloryApi_ListCourseRequest, rhs: GloryApi_ListCourseRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.courseClassification != rhs.courseClassification {return false}
+    if lhs.courseModule != rhs.courseModule {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

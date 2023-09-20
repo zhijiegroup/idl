@@ -70,6 +70,11 @@ private static final long serialVersionUID = 0L;
             courseClassification = input.readInt32();
             break;
           }
+          case 24: {
+
+            courseModule = input.readInt32();
+            break;
+          }
           case 802: {
             com.zhijiejiaoyu.base.PaginationRequest.Builder subBuilder = null;
             if (pagination != null) {
@@ -156,6 +161,21 @@ private static final long serialVersionUID = 0L;
     return courseClassification ;
   }
 
+  public static final int COURSE_MODULE_FIELD_NUMBER = 3;
+  private int courseModule ;
+  /**
+   * <pre>
+   * 全部:0 模块化课程:1 非模块化课程:2 定制课程：3
+   * </pre>
+   *
+   * <code>int32 course_module = 3;</code>
+   * @return The courseModule.
+   */
+  @java.lang.Override
+  public int getCourseModule() {
+    return courseModule ;
+  }
+
   public static final int PAGINATION_FIELD_NUMBER = 100;
   private com.zhijiejiaoyu.base.PaginationRequest pagination ;
   /**
@@ -202,6 +222,9 @@ private static final long serialVersionUID = 0L;
     if (courseClassification != 0) {
       output.writeInt32(2, courseClassification );
     }
+    if (courseModule != 0) {
+      output.writeInt32(3, courseModule );
+    }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
     }
@@ -221,6 +244,10 @@ private static final long serialVersionUID = 0L;
     if (courseClassification != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(2, courseClassification );
+    }
+    if (courseModule != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(3, courseModule );
     }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -248,6 +275,8 @@ private static final long serialVersionUID = 0L;
     }
     if (getCourseClassification()
         != other.getCourseClassification()) return false;
+    if (getCourseModule()
+        != other.getCourseModule()) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -270,6 +299,8 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + COURSE_CLASSIFICATION_FIELD_NUMBER;
     hash = (53 * hash) + getCourseClassification();
+    hash = (37 * hash) + COURSE_MODULE_FIELD_NUMBER;
+    hash = (53 * hash) + getCourseModule();
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
@@ -419,6 +450,8 @@ private static final long serialVersionUID = 0L;
       }
       courseClassification = 0;
 
+      courseModule = 0;
+
       if (paginationBuilder == null) {
         pagination = null;
       } else {
@@ -457,6 +490,7 @@ private static final long serialVersionUID = 0L;
         result.baseRequest = baseRequestBuilder .build();
       }
       result.courseClassification = courseClassification ;
+      result.courseModule = courseModule ;
       if (paginationBuilder == null) {
         result.pagination = pagination ;
       } else {
@@ -515,6 +549,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getCourseClassification() != 0) {
         setCourseClassification(other.getCourseClassification());
+      }
+      if (other.getCourseModule() != 0) {
+        setCourseModule(other.getCourseModule());
       }
       if (other.hasPagination()) {
         mergePagination(other.getPagination());
@@ -706,6 +743,49 @@ private static final long serialVersionUID = 0L;
     public Builder clearCourseClassification() {
       
       courseClassification = 0;
+      onChanged();
+      return this;
+    }
+
+    private int courseModule ;
+    /**
+     * <pre>
+     * 全部:0 模块化课程:1 非模块化课程:2 定制课程：3
+     * </pre>
+     *
+     * <code>int32 course_module = 3;</code>
+     * @return The courseModule.
+     */
+    @java.lang.Override
+    public int getCourseModule() {
+      return courseModule ;
+    }
+    /**
+     * <pre>
+     * 全部:0 模块化课程:1 非模块化课程:2 定制课程：3
+     * </pre>
+     *
+     * <code>int32 course_module = 3;</code>
+     * @param value The courseModule to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCourseModule(int value) {
+      
+      courseModule = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 全部:0 模块化课程:1 非模块化课程:2 定制课程：3
+     * </pre>
+     *
+     * <code>int32 course_module = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCourseModule() {
+      
+      courseModule = 0;
       onChanged();
       return this;
     }

@@ -33,6 +33,16 @@ public interface ListCourseRequestOrBuilder extends
   int getCourseClassification();
 
   /**
+   * <pre>
+   * 全部:0 模块化课程:1 非模块化课程:2 定制课程：3
+   * </pre>
+   *
+   * <code>int32 course_module = 3;</code>
+   * @return The courseModule.
+   */
+  int getCourseModule();
+
+  /**
    * <code>.base.PaginationRequest pagination = 100;</code>
    * @return Whether the pagination field is set.
    */

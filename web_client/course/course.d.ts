@@ -92,6 +92,8 @@ export interface ListCourseRequest {
   base_request?: base.BaseRequest;
   /** 课程分类 */
   course_classification?: number;
+  /** 全部:0 模块化课程:1 非模块化课程:2 定制课程：3 */
+  course_module?: number;
   pagination?: base.PaginationRequest;
 }
 
