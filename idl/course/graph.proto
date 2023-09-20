@@ -36,7 +36,7 @@ message CreateKnowledgeGraphResponse {
 
 message GetKnowledgeGraphRequest {
     base.BaseRequest base_request = 1;
-    repeated int64 posts = 2; // 岗位列表
+    repeated int64 course_ids = 2; // 模块化课程列表
 }
 
 message GetKnowledgeGraphResponse {
