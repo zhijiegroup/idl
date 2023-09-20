@@ -71,6 +71,7 @@ message UploadCourseMaterialResponse {
 message ListCourseMaterialRequest {
   base.BaseRequest base_request = 1;
   int64 material_box_id = 2;
+  string material_name = 3;
   base.PaginationRequest pagination = 100;
 }
 
