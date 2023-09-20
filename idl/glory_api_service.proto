@@ -975,6 +975,16 @@ service glory_api {
   }
 
   // 资源库
+  // 获取能力指标编码
+  rpc GetCourseModuleCode(GetCourseModuleCodeRequest) returns (GetCourseModuleCodeResponse) {
+    option (api.post) = '/api/course/get_course_module_code';
+  }
+
+  // 获取课程内容编码
+  rpc GetCourseChapterCode(GetCourseChapterCodeRequest) returns (GetCourseChapterCodeResponse) {
+    option (api.post) = '/api/course/get_course_chapter_code';
+  }
+
   // 创建能力指标
   rpc CreateCourseModule(CreateCourseModuleRequest) returns (CreateCourseModuleResponse) {
     option (api.post) = '/api/course/create_course_module';
