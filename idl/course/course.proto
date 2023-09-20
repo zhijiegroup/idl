@@ -76,6 +76,7 @@ message DeleteCourseResponse {
 message ListCourseRequest {
   base.BaseRequest base_request = 1;
   int32 course_classification = 2; // 课程分类
+  int32 course_module = 3; // 全部:0 模块化课程:1 非模块化课程:2 定制课程：3
   base.PaginationRequest pagination = 100;
 }
 
