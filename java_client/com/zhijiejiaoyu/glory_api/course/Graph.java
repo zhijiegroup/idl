@@ -68,13 +68,13 @@ public final class Graph {
       "ry_api.Edge\"F\n\033CreateKnowledgeGraphReque" +
       "st\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequ" +
       "est\"E\n\034CreateKnowledgeGraphResponse\022%\n\tb" +
-      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\"R\n\030Ge" +
+      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\"W\n\030Ge" +
       "tKnowledgeGraphRequest\022\'\n\014base_request\030\001" +
-      " \001(\0132\021.base.BaseRequest\022\r\n\005posts\030\002 \003(\003\"l" +
-      "\n\031GetKnowledgeGraphResponse\022%\n\tbase_resp" +
-      "\030\001 \001(\0132\022.base.BaseResponse\022(\n\005graph\030\002 \001(" +
-      "\0132\031.glory_api.KnowledgeGraphB%\n!com.zhij" +
-      "iejiaoyu.glory_api.courseP\001b\006proto3"
+      " \001(\0132\021.base.BaseRequest\022\022\n\ncourse_ids\030\002 " +
+      "\003(\003\"l\n\031GetKnowledgeGraphResponse\022%\n\tbase" +
+      "_resp\030\001 \001(\0132\022.base.BaseResponse\022(\n\005graph" +
+      "\030\002 \001(\0132\031.glory_api.KnowledgeGraphB%\n!com" +
+      ".zhijiejiaoyu.glory_api.courseP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -116,7 +116,7 @@ public final class Graph {
     internal_static_glory_api_GetKnowledgeGraphRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetKnowledgeGraphRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "Posts", });
+        new java.lang.String[] { "BaseRequest", "CourseIds", });
     internal_static_glory_api_GetKnowledgeGraphResponse_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_glory_api_GetKnowledgeGraphResponse_fieldAccessorTable = new

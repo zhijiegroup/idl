@@ -24,30 +24,30 @@ public interface GetKnowledgeGraphRequestOrBuilder extends
 
   /**
    * <pre>
-   * 岗位列表
+   * 模块化课程列表
    * </pre>
    *
-   * <code>repeated int64 posts = 2;</code>
-   * @return A list containing the posts.
+   * <code>repeated int64 course_ids = 2;</code>
+   * @return A list containing the courseIds.
    */
-  java.util.List<java.lang.Long> getPostsList();
+  java.util.List<java.lang.Long> getCourseIdsList();
   /**
    * <pre>
-   * 岗位列表
+   * 模块化课程列表
    * </pre>
    *
-   * <code>repeated int64 posts = 2;</code>
-   * @return The count of posts.
+   * <code>repeated int64 course_ids = 2;</code>
+   * @return The count of courseIds.
    */
-  int getPostsCount();
+  int getCourseIdsCount();
   /**
    * <pre>
-   * 岗位列表
+   * 模块化课程列表
    * </pre>
    *
-   * <code>repeated int64 posts = 2;</code>
+   * <code>repeated int64 course_ids = 2;</code>
    * @param index The index of the element to return.
-   * @return The posts at the given index.
+   * @return The courseIds at the given index.
    */
-  long getPosts(int index);
+  long getCourseIds(int index);
 }

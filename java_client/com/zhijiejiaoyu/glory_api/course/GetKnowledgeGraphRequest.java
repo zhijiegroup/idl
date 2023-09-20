@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private GetKnowledgeGraphRequest() {
-    posts = emptyLongList();
+    courseIds = emptyLongList();
   }
 
   @java.lang.Override
@@ -65,21 +65,21 @@ private static final long serialVersionUID = 0L;
           }
           case 16: {
             if (!((mutable_bitField0 & 0x00000001) != 0)) {
-              posts = newLongList();
+              courseIds = newLongList();
               mutable_bitField0_ |= 0x00000001;
             }
-            posts .addLong(input.readInt64());
+            courseIds .addLong(input.readInt64());
             break;
           }
           case 18: {
             int length = input.readRawVarint32();
             int limit = input.pushLimit(length);
             if (!((mutable_bitField0 & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-              posts = newLongList();
+              courseIds = newLongList();
               mutable_bitField0_ |= 0x00000001;
             }
             while (input.getBytesUntilLimit() > 0) {
-              posts .addLong(input.readInt64());
+              courseIds .addLong(input.readInt64());
             }
             input.popLimit(limit);
             break;
@@ -100,7 +100,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0 & 0x00000001) != 0)) {
-        posts .makeImmutable(); // C
+        courseIds .makeImmutable(); // C
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -145,45 +145,45 @@ private static final long serialVersionUID = 0L;
     return getBaseRequest();
   }
 
-  public static final int POSTS_FIELD_NUMBER = 2;
-  private com.google.protobuf.Internal.LongList posts ;
+  public static final int COURSE_IDS_FIELD_NUMBER = 2;
+  private com.google.protobuf.Internal.LongList courseIds ;
   /**
    * <pre>
-   * 岗位列表
+   * 模块化课程列表
    * </pre>
    *
-   * <code>repeated int64 posts = 2;</code>
-   * @return A list containing the posts.
+   * <code>repeated int64 course_ids = 2;</code>
+   * @return A list containing the courseIds.
    */
   @java.lang.Override
   public java.util.List<java.lang.Long>
-      getPostsList() {
-    return posts ;
+      getCourseIdsList() {
+    return courseIds ;
   }
   /**
    * <pre>
-   * 岗位列表
+   * 模块化课程列表
    * </pre>
    *
-   * <code>repeated int64 posts = 2;</code>
-   * @return The count of posts.
+   * <code>repeated int64 course_ids = 2;</code>
+   * @return The count of courseIds.
    */
-  public int getPostsCount() {
-    return posts .size();
+  public int getCourseIdsCount() {
+    return courseIds .size();
   }
   /**
    * <pre>
-   * 岗位列表
+   * 模块化课程列表
    * </pre>
    *
-   * <code>repeated int64 posts = 2;</code>
+   * <code>repeated int64 course_ids = 2;</code>
    * @param index The index of the element to return.
-   * @return The posts at the given index.
+   * @return The courseIds at the given index.
    */
-  public long getPosts(int index) {
-    return posts .getLong(index);
+  public long getCourseIds(int index) {
+    return courseIds .getLong(index);
   }
-  private int postsMemoizedSerializedSize = -1;
+  private int courseIdsMemoizedSerializedSize = -1;
 
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
@@ -203,12 +203,12 @@ private static final long serialVersionUID = 0L;
     if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
-    if (getPostsList().size() > 0) {
+    if (getCourseIdsList().size() > 0) {
       output.writeUInt32NoTag(18);
-      output.writeUInt32NoTag(postsMemoizedSerializedSize);
+      output.writeUInt32NoTag(courseIdsMemoizedSerializedSize);
     }
-    for (int i = 0; i < posts .size(); i++) {
-      output.writeInt64NoTag(posts .getLong(i));
+    for (int i = 0; i < courseIds .size(); i++) {
+      output.writeInt64NoTag(courseIds .getLong(i));
     }
     unknownFields.writeTo(output);
   }
@@ -225,17 +225,17 @@ private static final long serialVersionUID = 0L;
     }
     {
       int dataSize = 0;
-      for (int i = 0; i < posts .size(); i++) {
+      for (int i = 0; i < courseIds .size(); i++) {
         dataSize += com.google.protobuf.CodedOutputStream
-          .computeInt64SizeNoTag(posts .getLong(i));
+          .computeInt64SizeNoTag(courseIds .getLong(i));
       }
       size += dataSize;
-      if (!getPostsList().isEmpty()) {
+      if (!getCourseIdsList().isEmpty()) {
         size += 1;
         size += com.google.protobuf.CodedOutputStream
             .computeInt32SizeNoTag(dataSize);
       }
-      postsMemoizedSerializedSize = dataSize;
+      courseIdsMemoizedSerializedSize = dataSize;
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -257,8 +257,8 @@ private static final long serialVersionUID = 0L;
       if (!getBaseRequest()
           .equals(other.getBaseRequest())) return false;
     }
-    if (!getPostsList()
-        .equals(other.getPostsList())) return false;
+    if (!getCourseIdsList()
+        .equals(other.getCourseIdsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -274,9 +274,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
       hash = (53 * hash) + getBaseRequest().hashCode();
     }
-    if (getPostsCount() > 0) {
-      hash = (37 * hash) + POSTS_FIELD_NUMBER;
-      hash = (53 * hash) + getPostsList().hashCode();
+    if (getCourseIdsCount() > 0) {
+      hash = (37 * hash) + COURSE_IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getCourseIdsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -417,7 +417,7 @@ private static final long serialVersionUID = 0L;
         baseRequest = null;
         baseRequestBuilder = null;
       }
-      posts = emptyLongList();
+      courseIds = emptyLongList();
       bitField0 = (bitField0 & ~0x00000001);
       return this;
     }
@@ -452,10 +452,10 @@ private static final long serialVersionUID = 0L;
         result.baseRequest = baseRequestBuilder .build();
       }
       if (((bitField0 & 0x00000001) != 0)) {
-        posts .makeImmutable();
+        courseIds .makeImmutable();
         bitField0 = (bitField0 & ~0x00000001);
       }
-      result.posts = posts ;
+      result.courseIds = courseIds ;
       onBuilt();
       return result;
     }
@@ -507,13 +507,13 @@ private static final long serialVersionUID = 0L;
       if (other.hasBaseRequest()) {
         mergeBaseRequest(other.getBaseRequest());
       }
-      if (!other.posts .isEmpty()) {
-        if (posts .isEmpty()) {
-          posts = other.posts ;
+      if (!other.courseIds .isEmpty()) {
+        if (courseIds .isEmpty()) {
+          courseIds = other.courseIds ;
           bitField0 = (bitField0 & ~0x00000001);
         } else {
-          ensurePostsIsMutable();
-          posts .addAll(other.posts );
+          ensureCourseIdsIsMutable();
+          courseIds .addAll(other.courseIds );
         }
         onChanged();
       }
@@ -666,108 +666,108 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder ;
     }
 
-    private com.google.protobuf.Internal.LongList posts = emptyLongList();
-    private void ensurePostsIsMutable() {
+    private com.google.protobuf.Internal.LongList courseIds = emptyLongList();
+    private void ensureCourseIdsIsMutable() {
       if (!((bitField0 & 0x00000001) != 0)) {
-        posts = mutableCopy(posts );
+        courseIds = mutableCopy(courseIds );
         bitField0_ |= 0x00000001;
        }
     }
     /**
      * <pre>
-     * 岗位列表
+     * 模块化课程列表
      * </pre>
      *
-     * <code>repeated int64 posts = 2;</code>
-     * @return A list containing the posts.
+     * <code>repeated int64 course_ids = 2;</code>
+     * @return A list containing the courseIds.
      */
     public java.util.List<java.lang.Long>
-        getPostsList() {
+        getCourseIdsList() {
       return ((bitField0 & 0x00000001) != 0) ?
-               java.util.Collections.unmodifiableList(posts ) : posts ;
+               java.util.Collections.unmodifiableList(courseIds ) : courseIds ;
     }
     /**
      * <pre>
-     * 岗位列表
+     * 模块化课程列表
      * </pre>
      *
-     * <code>repeated int64 posts = 2;</code>
-     * @return The count of posts.
+     * <code>repeated int64 course_ids = 2;</code>
+     * @return The count of courseIds.
      */
-    public int getPostsCount() {
-      return posts .size();
+    public int getCourseIdsCount() {
+      return courseIds .size();
     }
     /**
      * <pre>
-     * 岗位列表
+     * 模块化课程列表
      * </pre>
      *
-     * <code>repeated int64 posts = 2;</code>
+     * <code>repeated int64 course_ids = 2;</code>
      * @param index The index of the element to return.
-     * @return The posts at the given index.
+     * @return The courseIds at the given index.
      */
-    public long getPosts(int index) {
-      return posts .getLong(index);
+    public long getCourseIds(int index) {
+      return courseIds .getLong(index);
     }
     /**
      * <pre>
-     * 岗位列表
+     * 模块化课程列表
      * </pre>
      *
-     * <code>repeated int64 posts = 2;</code>
+     * <code>repeated int64 course_ids = 2;</code>
      * @param index The index to set the value at.
-     * @param value The posts to set.
+     * @param value The courseIds to set.
      * @return This builder for chaining.
      */
-    public Builder setPosts(
+    public Builder setCourseIds(
         int index, long value) {
-      ensurePostsIsMutable();
-      posts .setLong(index, value);
+      ensureCourseIdsIsMutable();
+      courseIds .setLong(index, value);
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * 岗位列表
+     * 模块化课程列表
      * </pre>
      *
-     * <code>repeated int64 posts = 2;</code>
-     * @param value The posts to add.
+     * <code>repeated int64 course_ids = 2;</code>
+     * @param value The courseIds to add.
      * @return This builder for chaining.
      */
-    public Builder addPosts(long value) {
-      ensurePostsIsMutable();
-      posts .addLong(value);
+    public Builder addCourseIds(long value) {
+      ensureCourseIdsIsMutable();
+      courseIds .addLong(value);
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * 岗位列表
+     * 模块化课程列表
      * </pre>
      *
-     * <code>repeated int64 posts = 2;</code>
-     * @param values The posts to add.
+     * <code>repeated int64 course_ids = 2;</code>
+     * @param values The courseIds to add.
      * @return This builder for chaining.
      */
-    public Builder addAllPosts(
+    public Builder addAllCourseIds(
         java.lang.Iterable<? extends java.lang.Long> values) {
-      ensurePostsIsMutable();
+      ensureCourseIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, posts );
+          values, courseIds );
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * 岗位列表
+     * 模块化课程列表
      * </pre>
      *
-     * <code>repeated int64 posts = 2;</code>
+     * <code>repeated int64 course_ids = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder clearPosts() {
-      posts = emptyLongList();
+    public Builder clearCourseIds() {
+      courseIds = emptyLongList();
       bitField0 = (bitField0 & ~0x00000001);
       onChanged();
       return this;
