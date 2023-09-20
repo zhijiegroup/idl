@@ -48,7 +48,7 @@ public final class GloryApiService {
       "\032\025course/material.proto\032\023course/module.p" +
       "roto\032\024course/nmodule.proto\032\023course/cours" +
       "e.proto\032\022course/graph.proto\032\030course/user" +
-      "_course.proto2\355\200\002\n\tglory_api\022s\n\rCreateEx" +
+      "_course.proto2\317\202\002\n\tglory_api\022s\n\rCreateEx" +
       "ample\022\037.glory_api.CreateExampleRequest\032 " +
       ".glory_api.CreateExampleResponse\"\037\322\301\030\033/a" +
       "pi/example/create_example\022g\n\nGetExample\022" +
@@ -858,20 +858,25 @@ public final class GloryApiService {
       "geGraph\022#.glory_api.GetKnowledgeGraphReq" +
       "uest\032$.glory_api.GetKnowledgeGraphRespon" +
       "se\"&\322\301\030\"/api/course_kg/get_knowledge_gra" +
-      "ph\022n\n\014EnrollCourse\022\036.glory_api.EnrollCou" +
-      "rseRequest\032\037.glory_api.EnrollCourseRespo" +
-      "nse\"\035\322\301\030\031/api/course/enroll_course\022w\n\016De" +
-      "leteMyCourse\022 .glory_api.DeleteMyCourseR" +
-      "equest\032!.glory_api.DeleteMyCourseRespons" +
-      "e\" \322\301\030\034/api/course/delete_my_course\022\217\001\n\024" +
-      "UpdateCourseProgress\022&.glory_api.UpdateC" +
-      "ourseProgressRequest\032\'.glory_api.UpdateC" +
-      "ourseProgressResponse\"&\322\301\030\"/api/course/u" +
-      "pdate_course_progress\022o\n\014ListMyCourse\022\036." +
-      "glory_api.ListMyCourseRequest\032\037.glory_ap" +
-      "i.ListMyCourseResponse\"\036\322\301\030\032/api/course/" +
-      "list_my_courseB\036\n\032com.zhijiejiaoyu.glory" +
-      "_apiP\001b\006proto3"
+      "ph\022o\n\014GetMajorCode\022\036.glory_api.GetMajorC" +
+      "odeRequest\032\037.glory_api.GetMajorCodeRespo" +
+      "nse\"\036\312\301\030\032/api/course/get_major_code\022o\n\014G" +
+      "etCourseIds\022\036.glory_api.GetCourseIdsRequ" +
+      "est\032\037.glory_api.GetCourseIdsResponse\"\036\322\301" +
+      "\030\032/api/course/get_course_ids\022n\n\014EnrollCo" +
+      "urse\022\036.glory_api.EnrollCourseRequest\032\037.g" +
+      "lory_api.EnrollCourseResponse\"\035\322\301\030\031/api/" +
+      "course/enroll_course\022w\n\016DeleteMyCourse\022 " +
+      ".glory_api.DeleteMyCourseRequest\032!.glory" +
+      "_api.DeleteMyCourseResponse\" \322\301\030\034/api/co" +
+      "urse/delete_my_course\022\217\001\n\024UpdateCoursePr" +
+      "ogress\022&.glory_api.UpdateCourseProgressR" +
+      "equest\032\'.glory_api.UpdateCourseProgressR" +
+      "esponse\"&\322\301\030\"/api/course/update_course_p" +
+      "rogress\022o\n\014ListMyCourse\022\036.glory_api.List" +
+      "MyCourseRequest\032\037.glory_api.ListMyCourse" +
+      "Response\"\036\322\301\030\032/api/course/list_my_course" +
+      "B\036\n\032com.zhijiejiaoyu.glory_apiP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

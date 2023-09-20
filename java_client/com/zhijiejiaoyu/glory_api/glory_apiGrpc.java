@@ -8199,6 +8199,68 @@ public final class glory_apiGrpc {
     return getGetKnowledgeGraphMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.GetMajorCodeRequest,
+      com.zhijiejiaoyu.glory_api.course.GetMajorCodeResponse> getGetMajorCodeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetMajorCode",
+      requestType = com.zhijiejiaoyu.glory_api.course.GetMajorCodeRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.GetMajorCodeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.GetMajorCodeRequest,
+      com.zhijiejiaoyu.glory_api.course.GetMajorCodeResponse> getGetMajorCodeMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.GetMajorCodeRequest, com.zhijiejiaoyu.glory_api.course.GetMajorCodeResponse> getGetMajorCodeMethod;
+    if ((getGetMajorCodeMethod = glory_apiGrpc.getGetMajorCodeMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGetMajorCodeMethod = glory_apiGrpc.getGetMajorCodeMethod) == null) {
+          glory_apiGrpc.getGetMajorCodeMethod = getGetMajorCodeMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.GetMajorCodeRequest, com.zhijiejiaoyu.glory_api.course.GetMajorCodeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetMajorCode"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.GetMajorCodeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.GetMajorCodeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetMajorCode"))
+              .build();
+        }
+      }
+    }
+    return getGetMajorCodeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.GetCourseIdsRequest,
+      com.zhijiejiaoyu.glory_api.course.GetCourseIdsResponse> getGetCourseIdsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetCourseIds",
+      requestType = com.zhijiejiaoyu.glory_api.course.GetCourseIdsRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.GetCourseIdsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.GetCourseIdsRequest,
+      com.zhijiejiaoyu.glory_api.course.GetCourseIdsResponse> getGetCourseIdsMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.GetCourseIdsRequest, com.zhijiejiaoyu.glory_api.course.GetCourseIdsResponse> getGetCourseIdsMethod;
+    if ((getGetCourseIdsMethod = glory_apiGrpc.getGetCourseIdsMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGetCourseIdsMethod = glory_apiGrpc.getGetCourseIdsMethod) == null) {
+          glory_apiGrpc.getGetCourseIdsMethod = getGetCourseIdsMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.GetCourseIdsRequest, com.zhijiejiaoyu.glory_api.course.GetCourseIdsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetCourseIds"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.GetCourseIdsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.GetCourseIdsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetCourseIds"))
+              .build();
+        }
+      }
+    }
+    return getGetCourseIdsMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.EnrollCourseRequest,
       com.zhijiejiaoyu.glory_api.course.EnrollCourseResponse> getEnrollCourseMethod;
 
@@ -10473,6 +10535,20 @@ public final class glory_apiGrpc {
     default void getKnowledgeGraph(com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetKnowledgeGraphMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void getMajorCode(com.zhijiejiaoyu.glory_api.course.GetMajorCodeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.GetMajorCodeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetMajorCodeMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void getCourseIds(com.zhijiejiaoyu.glory_api.course.GetCourseIdsRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.GetCourseIdsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetCourseIdsMethod(), responseObserver);
     }
 
     /**
@@ -12913,6 +12989,22 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public void getMajorCode(com.zhijiejiaoyu.glory_api.course.GetMajorCodeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.GetMajorCodeResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetMajorCodeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getCourseIds(com.zhijiejiaoyu.glory_api.course.GetCourseIdsRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.GetCourseIdsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetCourseIdsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
      * <pre>
      * 我的课程
      * 加入课程
@@ -15076,6 +15168,20 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphResponse getKnowledgeGraph(com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetKnowledgeGraphMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.course.GetMajorCodeResponse getMajorCode(com.zhijiejiaoyu.glory_api.course.GetMajorCodeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetMajorCodeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.course.GetCourseIdsResponse getCourseIds(com.zhijiejiaoyu.glory_api.course.GetCourseIdsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCourseIdsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -17505,6 +17611,22 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.GetMajorCodeResponse> getMajorCode(
+        com.zhijiejiaoyu.glory_api.course.GetMajorCodeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetMajorCodeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.GetCourseIdsResponse> getCourseIds(
+        com.zhijiejiaoyu.glory_api.course.GetCourseIdsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetCourseIdsMethod(), getCallOptions()), request);
+    }
+
+    /**
      * <pre>
      * 我的课程
      * 加入课程
@@ -17814,10 +17936,12 @@ public final class glory_apiGrpc {
   private static final int METHODID_LIST_COURSE = 261;
   private static final int METHODID_CREATE_KNOWLEDGE_GRAPH = 262;
   private static final int METHODID_GET_KNOWLEDGE_GRAPH = 263;
-  private static final int METHODID_ENROLL_COURSE = 264;
-  private static final int METHODID_DELETE_MY_COURSE = 265;
-  private static final int METHODID_UPDATE_COURSE_PROGRESS = 266;
-  private static final int METHODID_LIST_MY_COURSE = 267;
+  private static final int METHODID_GET_MAJOR_CODE = 264;
+  private static final int METHODID_GET_COURSE_IDS = 265;
+  private static final int METHODID_ENROLL_COURSE = 266;
+  private static final int METHODID_DELETE_MY_COURSE = 267;
+  private static final int METHODID_UPDATE_COURSE_PROGRESS = 268;
+  private static final int METHODID_LIST_MY_COURSE = 269;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -18891,6 +19015,14 @@ public final class glory_apiGrpc {
         case METHODID_GET_KNOWLEDGE_GRAPH:
           serviceImpl.getKnowledgeGraph((com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphResponse>) responseObserver);
+          break;
+        case METHODID_GET_MAJOR_CODE:
+          serviceImpl.getMajorCode((com.zhijiejiaoyu.glory_api.course.GetMajorCodeRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.GetMajorCodeResponse>) responseObserver);
+          break;
+        case METHODID_GET_COURSE_IDS:
+          serviceImpl.getCourseIds((com.zhijiejiaoyu.glory_api.course.GetCourseIdsRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.GetCourseIdsResponse>) responseObserver);
           break;
         case METHODID_ENROLL_COURSE:
           serviceImpl.enrollCourse((com.zhijiejiaoyu.glory_api.course.EnrollCourseRequest) request,
@@ -20775,6 +20907,20 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphResponse>(
                 service, METHODID_GET_KNOWLEDGE_GRAPH)))
         .addMethod(
+          getGetMajorCodeMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.GetMajorCodeRequest,
+              com.zhijiejiaoyu.glory_api.course.GetMajorCodeResponse>(
+                service, METHODID_GET_MAJOR_CODE)))
+        .addMethod(
+          getGetCourseIdsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.GetCourseIdsRequest,
+              com.zhijiejiaoyu.glory_api.course.GetCourseIdsResponse>(
+                service, METHODID_GET_COURSE_IDS)))
+        .addMethod(
           getEnrollCourseMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -21114,6 +21260,8 @@ public final class glory_apiGrpc {
               .addMethod(getListCourseMethod())
               .addMethod(getCreateKnowledgeGraphMethod())
               .addMethod(getGetKnowledgeGraphMethod())
+              .addMethod(getGetMajorCodeMethod())
+              .addMethod(getGetCourseIdsMethod())
               .addMethod(getEnrollCourseMethod())
               .addMethod(getDeleteMyCourseMethod())
               .addMethod(getUpdateCourseProgressMethod())

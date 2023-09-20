@@ -1186,6 +1186,14 @@ CreateLivePlanProduct create live plan product */
     request: graph.GetKnowledgeGraphRequest
   ): Promise<graph.GetKnowledgeGraphResponse>;
 
+  GetMajorCode(
+    request: course.GetMajorCodeRequest
+  ): Promise<course.GetMajorCodeResponse>;
+
+  GetCourseIds(
+    request: course.GetCourseIdsRequest
+  ): Promise<course.GetCourseIdsResponse>;
+
   /** 我的课程
 加入课程 */
   EnrollCourse(

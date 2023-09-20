@@ -100,3 +100,27 @@ export interface ListCourseResponse {
   courses?: Array<Course>;
   pagination?: base.PaginationResponse;
 }
+
+export interface MajorCode {
+  label?: string;
+  value?: string;
+}
+
+export interface GetMajorCodeRequest {
+  base_request?: base.BaseRequest;
+}
+
+export interface GetMajorCodeResponse {
+  base_resp?: base.BaseResponse;
+  major_code?: Array<MajorCode>;
+}
+
+export interface GetCourseIdsRequest {
+  base_request?: base.BaseRequest;
+  major_code?: string;
+}
+
+export interface GetCourseIdsResponse {
+  base_resp?: base.BaseResponse;
+  course_ids?: Array<string>;
+}
