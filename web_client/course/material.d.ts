@@ -78,6 +78,7 @@ export interface UploadCourseMaterialResponse {
 export interface ListCourseMaterialRequest {
   base_request?: base.BaseRequest;
   material_box_id?: string;
+  material_name?: string;
   pagination?: base.PaginationRequest;
 }
 

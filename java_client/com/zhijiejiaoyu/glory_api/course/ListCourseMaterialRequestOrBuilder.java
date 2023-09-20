@@ -29,6 +29,18 @@ public interface ListCourseMaterialRequestOrBuilder extends
   long getMaterialBoxId();
 
   /**
+   * <code>string material_name = 3;</code>
+   * @return The materialName.
+   */
+  java.lang.String getMaterialName();
+  /**
+   * <code>string material_name = 3;</code>
+   * @return The bytes for materialName.
+   */
+  com.google.protobuf.ByteString
+      getMaterialNameBytes();
+
+  /**
    * <code>.base.PaginationRequest pagination = 100;</code>
    * @return Whether the pagination field is set.
    */

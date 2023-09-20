@@ -290,6 +290,8 @@ struct GloryApi_ListCourseMaterialRequest {
 
   var materialBoxID: Int64 = 0
 
+  var materialName: String = String()
+
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
@@ -859,6 +861,7 @@ extension GloryApi_ListCourseMaterialRequest: SwiftProtobuf.Message, SwiftProtob
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
     2: .standard(proto: "material_box_id"),
+    3: .standard(proto: "material_name"),
     100: .same(proto: "pagination"),
   ]
 
@@ -870,6 +873,7 @@ extension GloryApi_ListCourseMaterialRequest: SwiftProtobuf.Message, SwiftProtob
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.materialBoxID) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.materialName) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -887,6 +891,9 @@ extension GloryApi_ListCourseMaterialRequest: SwiftProtobuf.Message, SwiftProtob
     if self.materialBoxID != 0 {
       try visitor.visitSingularInt64Field(value: self.materialBoxID, fieldNumber: 2)
     }
+    if !self.materialName.isEmpty {
+      try visitor.visitSingularStringField(value: self.materialName, fieldNumber: 3)
+    }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
     } }()
@@ -896,6 +903,7 @@ extension GloryApi_ListCourseMaterialRequest: SwiftProtobuf.Message, SwiftProtob
   static func ==(lhs: GloryApi_ListCourseMaterialRequest, rhs: GloryApi_ListCourseMaterialRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.materialBoxID != rhs.materialBoxID {return false}
+    if lhs.materialName != rhs.materialName {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
