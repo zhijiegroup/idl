@@ -57,6 +57,28 @@ export interface CourseModule {
   created_at?: string;
 }
 
+/** 获取能力指标编码 */
+export interface GetCourseModuleCodeRequest {
+  base_request?: base.BaseRequest;
+  major_code?: string;
+}
+
+export interface GetCourseModuleCodeResponse {
+  base_resp?: base.BaseResponse;
+  course_module_code?: string;
+}
+
+/** 获取课程内容编码 */
+export interface GetCourseChapterCodeRequest {
+  base_request?: base.BaseRequest;
+  course_module_code?: string;
+}
+
+export interface GetCourseChapterCodeResponse {
+  base_resp?: base.BaseResponse;
+  course_chapter_code?: string;
+}
+
 /** 创建能力指标 */
 export interface CreateCourseModuleRequest {
   base_request?: base.BaseRequest;

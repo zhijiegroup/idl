@@ -1095,7 +1095,17 @@ CreateLivePlanProduct create live plan product */
   ): Promise<material.DeleteCourseMaterialResponse>;
 
   /** 资源库
-创建能力指标 */
+获取能力指标编码 */
+  GetCourseModuleCode(
+    request: modules.GetCourseModuleCodeRequest
+  ): Promise<modules.GetCourseModuleCodeResponse>;
+
+  /** 获取课程内容编码 */
+  GetCourseChapterCode(
+    request: modules.GetCourseChapterCodeRequest
+  ): Promise<modules.GetCourseChapterCodeResponse>;
+
+  /** 创建能力指标 */
   CreateCourseModule(
     request: modules.CreateCourseModuleRequest
   ): Promise<modules.CreateCourseModuleResponse>;

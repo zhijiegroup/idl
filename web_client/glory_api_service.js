@@ -1990,6 +1990,22 @@ export class glory_api {
     );
   }
 
+  GetCourseModuleCode(request) {
+    const uri = `${this.uriPrefix}/api/course/get_course_module_code`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  GetCourseChapterCode(request) {
+    const uri = `${this.uriPrefix}/api/course/get_course_chapter_code`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   CreateCourseModule(request) {
     const uri = `${this.uriPrefix}/api/course/create_course_module`;
     const body = JSONbigint.stringify(request);

@@ -30,6 +30,26 @@ public final class Module {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_CourseModule_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetCourseModuleCodeRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetCourseModuleCodeRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetCourseModuleCodeResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetCourseModuleCodeResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetCourseChapterCodeRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetCourseChapterCodeRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetCourseChapterCodeResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetCourseChapterCodeResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_glory_api_CreateCourseModuleRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -104,35 +124,45 @@ public final class Module {
       "_hours\030\007 \001(\002\022\023\n\013skill_hours\030\010 \001(\002\0221\n\017cou" +
       "rse_chapters\030\t \003(\0132\030.glory_api.CourseCha" +
       "pter\022.\n\rchild_modules\030\n \003(\0132\027.glory_api." +
-      "CourseModule\022\022\n\ncreated_at\030\013 \001(\t\"t\n\031Crea" +
-      "teCourseModuleRequest\022\'\n\014base_request\030\001 " +
-      "\001(\0132\021.base.BaseRequest\022.\n\rcourse_module\030" +
-      "\002 \001(\0132\027.glory_api.CourseModule\"V\n\032Create" +
+      "CourseModule\022\022\n\ncreated_at\030\013 \001(\t\"Y\n\032GetC" +
+      "ourseModuleCodeRequest\022\'\n\014base_request\030\001" +
+      " \001(\0132\021.base.BaseRequest\022\022\n\nmajor_code\030\002 " +
+      "\001(\t\"`\n\033GetCourseModuleCodeResponse\022%\n\tba" +
+      "se_resp\030\001 \001(\0132\022.base.BaseResponse\022\032\n\022cou" +
+      "rse_module_code\030\002 \001(\t\"b\n\033GetCourseChapte" +
+      "rCodeRequest\022\'\n\014base_request\030\001 \001(\0132\021.bas" +
+      "e.BaseRequest\022\032\n\022course_module_code\030\002 \001(" +
+      "\t\"b\n\034GetCourseChapterCodeResponse\022%\n\tbas" +
+      "e_resp\030\001 \001(\0132\022.base.BaseResponse\022\033\n\023cour" +
+      "se_chapter_code\030\002 \001(\t\"t\n\031CreateCourseMod" +
+      "uleRequest\022\'\n\014base_request\030\001 \001(\0132\021.base." +
+      "BaseRequest\022.\n\rcourse_module\030\002 \001(\0132\027.glo" +
+      "ry_api.CourseModule\"V\n\032CreateCourseModul" +
+      "eResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Base" +
+      "Response\022\021\n\tmodule_id\030\002 \001(\003\"T\n\026GetCourse" +
+      "ModuleRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
+      "se.BaseRequest\022\021\n\tmodule_id\030\002 \001(\003\"p\n\027Get" +
       "CourseModuleResponse\022%\n\tbase_resp\030\001 \001(\0132" +
-      "\022.base.BaseResponse\022\021\n\tmodule_id\030\002 \001(\003\"T" +
-      "\n\026GetCourseModuleRequest\022\'\n\014base_request" +
-      "\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tmodule_id\030\002" +
-      " \001(\003\"p\n\027GetCourseModuleResponse\022%\n\tbase_" +
-      "resp\030\001 \001(\0132\022.base.BaseResponse\022.\n\rcourse" +
-      "_module\030\002 \001(\0132\027.glory_api.CourseModule\"t" +
-      "\n\031UpdateCourseModuleRequest\022\'\n\014base_requ" +
-      "est\030\001 \001(\0132\021.base.BaseRequest\022.\n\rcourse_m" +
-      "odule\030\002 \001(\0132\027.glory_api.CourseModule\"C\n\032" +
-      "UpdateCourseModuleResponse\022%\n\tbase_resp\030" +
-      "\001 \001(\0132\022.base.BaseResponse\"W\n\031DeleteCours" +
-      "eModuleRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
-      "ase.BaseRequest\022\021\n\tmodule_id\030\002 \001(\003\"C\n\032De" +
-      "leteCourseModuleResponse\022%\n\tbase_resp\030\001 " +
-      "\001(\0132\022.base.BaseResponse\"\224\001\n\027ListCourseMo" +
-      "duleRequest\022\'\n\014base_request\030\001 \001(\0132\021.base" +
-      ".BaseRequest\022\017\n\007keyword\030\002 \001(\t\022\022\n\nmajor_c" +
-      "ode\030\003 \001(\t\022+\n\npagination\030d \001(\0132\027.base.Pag" +
-      "inationRequest\"\240\001\n\030ListCourseModuleRespo" +
-      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
-      "se\022/\n\016course_modules\030\002 \003(\0132\027.glory_api.C" +
-      "ourseModule\022,\n\npagination\030\003 \001(\0132\030.base.P" +
-      "aginationResponseB%\n!com.zhijiejiaoyu.gl" +
-      "ory_api.courseP\001b\006proto3"
+      "\022.base.BaseResponse\022.\n\rcourse_module\030\002 \001" +
+      "(\0132\027.glory_api.CourseModule\"t\n\031UpdateCou" +
+      "rseModuleRequest\022\'\n\014base_request\030\001 \001(\0132\021" +
+      ".base.BaseRequest\022.\n\rcourse_module\030\002 \001(\013" +
+      "2\027.glory_api.CourseModule\"C\n\032UpdateCours" +
+      "eModuleResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
+      "e.BaseResponse\"W\n\031DeleteCourseModuleRequ" +
+      "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
+      "uest\022\021\n\tmodule_id\030\002 \001(\003\"C\n\032DeleteCourseM" +
+      "oduleResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
+      "BaseResponse\"\224\001\n\027ListCourseModuleRequest" +
+      "\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReques" +
+      "t\022\017\n\007keyword\030\002 \001(\t\022\022\n\nmajor_code\030\003 \001(\t\022+" +
+      "\n\npagination\030d \001(\0132\027.base.PaginationRequ" +
+      "est\"\240\001\n\030ListCourseModuleResponse\022%\n\tbase" +
+      "_resp\030\001 \001(\0132\022.base.BaseResponse\022/\n\016cours" +
+      "e_modules\030\002 \003(\0132\027.glory_api.CourseModule" +
+      "\022,\n\npagination\030\003 \001(\0132\030.base.PaginationRe" +
+      "sponseB%\n!com.zhijiejiaoyu.glory_api.cou" +
+      "rseP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -157,62 +187,86 @@ public final class Module {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CourseModule_descriptor,
         new java.lang.String[] { "ModuleId", "ModuleCode", "ModuleName", "ModuleDescription", "MajorCode", "TeacherName", "KnowledgeHours", "SkillHours", "CourseChapters", "ChildModules", "CreatedAt", });
-    internal_static_glory_api_CreateCourseModuleRequest_descriptor =
+    internal_static_glory_api_GetCourseModuleCodeRequest_descriptor =
       getDescriptor().getMessageTypes().get(3);
+    internal_static_glory_api_GetCourseModuleCodeRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetCourseModuleCodeRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "MajorCode", });
+    internal_static_glory_api_GetCourseModuleCodeResponse_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_glory_api_GetCourseModuleCodeResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetCourseModuleCodeResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "CourseModuleCode", });
+    internal_static_glory_api_GetCourseChapterCodeRequest_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_glory_api_GetCourseChapterCodeRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetCourseChapterCodeRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "CourseModuleCode", });
+    internal_static_glory_api_GetCourseChapterCodeResponse_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_glory_api_GetCourseChapterCodeResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetCourseChapterCodeResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "CourseChapterCode", });
+    internal_static_glory_api_CreateCourseModuleRequest_descriptor =
+      getDescriptor().getMessageTypes().get(7);
     internal_static_glory_api_CreateCourseModuleRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CreateCourseModuleRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "CourseModule", });
     internal_static_glory_api_CreateCourseModuleResponse_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_glory_api_CreateCourseModuleResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CreateCourseModuleResponse_descriptor,
         new java.lang.String[] { "BaseResp", "ModuleId", });
     internal_static_glory_api_GetCourseModuleRequest_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_glory_api_GetCourseModuleRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetCourseModuleRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "ModuleId", });
     internal_static_glory_api_GetCourseModuleResponse_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_glory_api_GetCourseModuleResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetCourseModuleResponse_descriptor,
         new java.lang.String[] { "BaseResp", "CourseModule", });
     internal_static_glory_api_UpdateCourseModuleRequest_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_glory_api_UpdateCourseModuleRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateCourseModuleRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "CourseModule", });
     internal_static_glory_api_UpdateCourseModuleResponse_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_glory_api_UpdateCourseModuleResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateCourseModuleResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_DeleteCourseModuleRequest_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_glory_api_DeleteCourseModuleRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteCourseModuleRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "ModuleId", });
     internal_static_glory_api_DeleteCourseModuleResponse_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_glory_api_DeleteCourseModuleResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteCourseModuleResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_ListCourseModuleRequest_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_glory_api_ListCourseModuleRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListCourseModuleRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "Keyword", "MajorCode", "Pagination", });
     internal_static_glory_api_ListCourseModuleResponse_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_glory_api_ListCourseModuleResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListCourseModuleResponse_descriptor,
