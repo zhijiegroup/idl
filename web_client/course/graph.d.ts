@@ -39,8 +39,8 @@ export interface CreateKnowledgeGraphResponse {
 
 export interface GetKnowledgeGraphRequest {
   base_request?: base.BaseRequest;
-  /** 岗位列表 */
-  posts?: Array<string>;
+  /** 模块化课程列表 */
+  course_ids?: Array<string>;
 }
 
 export interface GetKnowledgeGraphResponse {

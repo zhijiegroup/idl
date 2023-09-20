@@ -133,8 +133,8 @@ struct GloryApi_GetKnowledgeGraphRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
-  /// 岗位列表
-  var posts: [Int64] = []
+  /// 模块化课程列表
+  var courseIds: [Int64] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -415,7 +415,7 @@ extension GloryApi_GetKnowledgeGraphRequest: SwiftProtobuf.Message, SwiftProtobu
   static let protoMessageName: String = _protobuf_package + ".GetKnowledgeGraphRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
-    2: .same(proto: "posts"),
+    2: .standard(proto: "course_ids"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -425,7 +425,7 @@ extension GloryApi_GetKnowledgeGraphRequest: SwiftProtobuf.Message, SwiftProtobu
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeRepeatedInt64Field(value: &self.posts) }()
+      case 2: try { try decoder.decodeRepeatedInt64Field(value: &self.courseIds) }()
       default: break
       }
     }
@@ -439,15 +439,15 @@ extension GloryApi_GetKnowledgeGraphRequest: SwiftProtobuf.Message, SwiftProtobu
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    if !self.posts.isEmpty {
-      try visitor.visitPackedInt64Field(value: self.posts, fieldNumber: 2)
+    if !self.courseIds.isEmpty {
+      try visitor.visitPackedInt64Field(value: self.courseIds, fieldNumber: 2)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_GetKnowledgeGraphRequest, rhs: GloryApi_GetKnowledgeGraphRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
-    if lhs.posts != rhs.posts {return false}
+    if lhs.courseIds != rhs.courseIds {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
