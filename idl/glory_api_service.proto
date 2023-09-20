@@ -1055,6 +1055,12 @@ service glory_api {
   rpc GetKnowledgeGraph(GetKnowledgeGraphRequest) returns (GetKnowledgeGraphResponse) {
     option (api.post) = '/api/course_kg/get_knowledge_graph';
   }
+  rpc GetMajorCode(GetMajorCodeRequest) returns (GetMajorCodeResponse) {
+    option (api.get) = '/api/course/get_major_code';
+  }
+  rpc GetCourseIds(GetCourseIdsRequest) returns (GetCourseIdsResponse) {
+    option (api.post) = '/api/course/get_course_ids';
+  }
 
   // 我的课程
   // 加入课程

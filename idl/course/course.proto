@@ -84,3 +84,27 @@ message ListCourseResponse {
   repeated Course courses = 2;
   base.PaginationResponse pagination = 100;
 }
+
+message MajorCode {
+  string label = 1;
+  string value = 2;
+}
+
+message GetMajorCodeRequest {
+  base.BaseRequest base_request = 1;
+}
+
+message GetMajorCodeResponse {
+  base.BaseResponse base_resp = 1;
+  repeated MajorCode major_code = 2;
+}
+
+message GetCourseIdsRequest {
+  base.BaseRequest base_request = 1;
+  string major_code = 2;
+}
+
+message GetCourseIdsResponse {
+  base.BaseResponse base_resp = 1;
+  repeated int64 course_ids = 2;
+}
