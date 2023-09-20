@@ -314,6 +314,7 @@ export interface ShopSummary {
   deal_amount?: number;
   order_total?: string;
   seller_id?: string;
+  shop_manager_name?: string;
 }
 
 export interface ListShopSummaryRequest {

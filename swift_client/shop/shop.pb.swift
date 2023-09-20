@@ -1200,6 +1200,8 @@ struct GloryApi_ShopSummary {
 
   var sellerID: Int64 = 0
 
+  var shopManagerName: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -3440,6 +3442,7 @@ extension GloryApi_ShopSummary: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     4: .standard(proto: "deal_amount"),
     5: .standard(proto: "order_total"),
     6: .standard(proto: "seller_id"),
+    7: .standard(proto: "shop_manager_name"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -3454,6 +3457,7 @@ extension GloryApi_ShopSummary: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       case 4: try { try decoder.decodeSingularDoubleField(value: &self.dealAmount) }()
       case 5: try { try decoder.decodeSingularInt64Field(value: &self.orderTotal) }()
       case 6: try { try decoder.decodeSingularInt64Field(value: &self.sellerID) }()
+      case 7: try { try decoder.decodeSingularStringField(value: &self.shopManagerName) }()
       default: break
       }
     }
@@ -3478,6 +3482,9 @@ extension GloryApi_ShopSummary: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     if self.sellerID != 0 {
       try visitor.visitSingularInt64Field(value: self.sellerID, fieldNumber: 6)
     }
+    if !self.shopManagerName.isEmpty {
+      try visitor.visitSingularStringField(value: self.shopManagerName, fieldNumber: 7)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -3488,6 +3495,7 @@ extension GloryApi_ShopSummary: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     if lhs.dealAmount != rhs.dealAmount {return false}
     if lhs.orderTotal != rhs.orderTotal {return false}
     if lhs.sellerID != rhs.sellerID {return false}
+    if lhs.shopManagerName != rhs.shopManagerName {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
