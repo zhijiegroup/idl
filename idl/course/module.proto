@@ -36,6 +36,28 @@ message CourseModule {
   string created_at = 11; // 创建时间
 }
 
+// 获取能力指标编码
+message GetCourseModuleCodeRequest {
+  base.BaseRequest base_request = 1;
+  string major_code = 2;
+}
+
+message GetCourseModuleCodeResponse {
+  base.BaseResponse base_resp = 1;
+  string course_module_code = 2;
+}
+
+// 获取课程内容编码
+message GetCourseChapterCodeRequest {
+  base.BaseRequest base_request = 1;
+  string course_module_code = 2;
+}
+
+message GetCourseChapterCodeResponse {
+  base.BaseResponse base_resp = 1;
+  string course_chapter_code = 2;
+}
+
 // 创建能力指标
 message CreateCourseModuleRequest {
   base.BaseRequest base_request = 1;
