@@ -45,6 +45,7 @@ import * as material from "./course/material";
 import * as modules from "./course/module";
 import * as nmodule from "./course/nmodule";
 import * as course from "./course/course";
+import * as graph from "./course/graph";
 import * as user_course from "./course/user_course";
 export {
   user,
@@ -88,6 +89,7 @@ export {
   modules,
   nmodule,
   course,
+  graph,
   user_course,
 };
 
@@ -2108,6 +2110,22 @@ export class glory_api {
 
   ListCourse(request) {
     const uri = `${this.uriPrefix}/api/course/list_course`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreateKnowledgeGraph(request) {
+    const uri = `${this.uriPrefix}/api/course_kg/create_knowledge_graph`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  GetKnowledgeGraph(request) {
+    const uri = `${this.uriPrefix}/api/course_kg/get_knowledge_graph`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse

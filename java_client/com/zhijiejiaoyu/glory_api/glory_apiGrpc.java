@@ -8137,6 +8137,68 @@ public final class glory_apiGrpc {
     return getListCourseMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.CreateKnowledgeGraphRequest,
+      com.zhijiejiaoyu.glory_api.course.CreateKnowledgeGraphResponse> getCreateKnowledgeGraphMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateKnowledgeGraph",
+      requestType = com.zhijiejiaoyu.glory_api.course.CreateKnowledgeGraphRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.CreateKnowledgeGraphResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.CreateKnowledgeGraphRequest,
+      com.zhijiejiaoyu.glory_api.course.CreateKnowledgeGraphResponse> getCreateKnowledgeGraphMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.CreateKnowledgeGraphRequest, com.zhijiejiaoyu.glory_api.course.CreateKnowledgeGraphResponse> getCreateKnowledgeGraphMethod;
+    if ((getCreateKnowledgeGraphMethod = glory_apiGrpc.getCreateKnowledgeGraphMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCreateKnowledgeGraphMethod = glory_apiGrpc.getCreateKnowledgeGraphMethod) == null) {
+          glory_apiGrpc.getCreateKnowledgeGraphMethod = getCreateKnowledgeGraphMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.CreateKnowledgeGraphRequest, com.zhijiejiaoyu.glory_api.course.CreateKnowledgeGraphResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateKnowledgeGraph"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.CreateKnowledgeGraphRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.CreateKnowledgeGraphResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CreateKnowledgeGraph"))
+              .build();
+        }
+      }
+    }
+    return getCreateKnowledgeGraphMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphRequest,
+      com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphResponse> getGetKnowledgeGraphMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetKnowledgeGraph",
+      requestType = com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphRequest,
+      com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphResponse> getGetKnowledgeGraphMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphRequest, com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphResponse> getGetKnowledgeGraphMethod;
+    if ((getGetKnowledgeGraphMethod = glory_apiGrpc.getGetKnowledgeGraphMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGetKnowledgeGraphMethod = glory_apiGrpc.getGetKnowledgeGraphMethod) == null) {
+          glory_apiGrpc.getGetKnowledgeGraphMethod = getGetKnowledgeGraphMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphRequest, com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetKnowledgeGraph"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetKnowledgeGraph"))
+              .build();
+        }
+      }
+    }
+    return getGetKnowledgeGraphMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.EnrollCourseRequest,
       com.zhijiejiaoyu.glory_api.course.EnrollCourseResponse> getEnrollCourseMethod;
 
@@ -10394,6 +10456,23 @@ public final class glory_apiGrpc {
     default void listCourse(com.zhijiejiaoyu.glory_api.course.ListCourseRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListCourseResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListCourseMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 知识图谱
+     * </pre>
+     */
+    default void createKnowledgeGraph(com.zhijiejiaoyu.glory_api.course.CreateKnowledgeGraphRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.CreateKnowledgeGraphResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateKnowledgeGraphMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void getKnowledgeGraph(com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetKnowledgeGraphMethod(), responseObserver);
     }
 
     /**
@@ -12816,6 +12895,25 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * 知识图谱
+     * </pre>
+     */
+    public void createKnowledgeGraph(com.zhijiejiaoyu.glory_api.course.CreateKnowledgeGraphRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.CreateKnowledgeGraphResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateKnowledgeGraphMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getKnowledgeGraph(com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetKnowledgeGraphMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * 我的课程
      * 加入课程
      * </pre>
@@ -14961,6 +15059,23 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.course.ListCourseResponse listCourse(com.zhijiejiaoyu.glory_api.course.ListCourseRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListCourseMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 知识图谱
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CreateKnowledgeGraphResponse createKnowledgeGraph(com.zhijiejiaoyu.glory_api.course.CreateKnowledgeGraphRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateKnowledgeGraphMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphResponse getKnowledgeGraph(com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetKnowledgeGraphMethod(), getCallOptions(), request);
     }
 
     /**
@@ -17372,6 +17487,25 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * 知识图谱
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.CreateKnowledgeGraphResponse> createKnowledgeGraph(
+        com.zhijiejiaoyu.glory_api.course.CreateKnowledgeGraphRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateKnowledgeGraphMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphResponse> getKnowledgeGraph(
+        com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetKnowledgeGraphMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * 我的课程
      * 加入课程
      * </pre>
@@ -17678,10 +17812,12 @@ public final class glory_apiGrpc {
   private static final int METHODID_UPDATE_COURSE = 259;
   private static final int METHODID_DELETE_COURSE = 260;
   private static final int METHODID_LIST_COURSE = 261;
-  private static final int METHODID_ENROLL_COURSE = 262;
-  private static final int METHODID_DELETE_MY_COURSE = 263;
-  private static final int METHODID_UPDATE_COURSE_PROGRESS = 264;
-  private static final int METHODID_LIST_MY_COURSE = 265;
+  private static final int METHODID_CREATE_KNOWLEDGE_GRAPH = 262;
+  private static final int METHODID_GET_KNOWLEDGE_GRAPH = 263;
+  private static final int METHODID_ENROLL_COURSE = 264;
+  private static final int METHODID_DELETE_MY_COURSE = 265;
+  private static final int METHODID_UPDATE_COURSE_PROGRESS = 266;
+  private static final int METHODID_LIST_MY_COURSE = 267;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -18747,6 +18883,14 @@ public final class glory_apiGrpc {
         case METHODID_LIST_COURSE:
           serviceImpl.listCourse((com.zhijiejiaoyu.glory_api.course.ListCourseRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListCourseResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_KNOWLEDGE_GRAPH:
+          serviceImpl.createKnowledgeGraph((com.zhijiejiaoyu.glory_api.course.CreateKnowledgeGraphRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.CreateKnowledgeGraphResponse>) responseObserver);
+          break;
+        case METHODID_GET_KNOWLEDGE_GRAPH:
+          serviceImpl.getKnowledgeGraph((com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphResponse>) responseObserver);
           break;
         case METHODID_ENROLL_COURSE:
           serviceImpl.enrollCourse((com.zhijiejiaoyu.glory_api.course.EnrollCourseRequest) request,
@@ -20617,6 +20761,20 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.course.ListCourseResponse>(
                 service, METHODID_LIST_COURSE)))
         .addMethod(
+          getCreateKnowledgeGraphMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.CreateKnowledgeGraphRequest,
+              com.zhijiejiaoyu.glory_api.course.CreateKnowledgeGraphResponse>(
+                service, METHODID_CREATE_KNOWLEDGE_GRAPH)))
+        .addMethod(
+          getGetKnowledgeGraphMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphRequest,
+              com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphResponse>(
+                service, METHODID_GET_KNOWLEDGE_GRAPH)))
+        .addMethod(
           getEnrollCourseMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -20954,6 +21112,8 @@ public final class glory_apiGrpc {
               .addMethod(getUpdateCourseMethod())
               .addMethod(getDeleteCourseMethod())
               .addMethod(getListCourseMethod())
+              .addMethod(getCreateKnowledgeGraphMethod())
+              .addMethod(getGetKnowledgeGraphMethod())
               .addMethod(getEnrollCourseMethod())
               .addMethod(getDeleteMyCourseMethod())
               .addMethod(getUpdateCourseProgressMethod())
