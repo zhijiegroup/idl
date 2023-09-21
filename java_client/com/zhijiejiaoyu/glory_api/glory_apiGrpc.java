@@ -8447,6 +8447,99 @@ public final class glory_apiGrpc {
     return getListMyCourseMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.ListTeachingPlanRequest,
+      com.zhijiejiaoyu.glory_api.course.ListTeachingPlanResponse> getListTeachingPlanMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListTeachingPlan",
+      requestType = com.zhijiejiaoyu.glory_api.course.ListTeachingPlanRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.ListTeachingPlanResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.ListTeachingPlanRequest,
+      com.zhijiejiaoyu.glory_api.course.ListTeachingPlanResponse> getListTeachingPlanMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.ListTeachingPlanRequest, com.zhijiejiaoyu.glory_api.course.ListTeachingPlanResponse> getListTeachingPlanMethod;
+    if ((getListTeachingPlanMethod = glory_apiGrpc.getListTeachingPlanMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListTeachingPlanMethod = glory_apiGrpc.getListTeachingPlanMethod) == null) {
+          glory_apiGrpc.getListTeachingPlanMethod = getListTeachingPlanMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.ListTeachingPlanRequest, com.zhijiejiaoyu.glory_api.course.ListTeachingPlanResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListTeachingPlan"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.ListTeachingPlanRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.ListTeachingPlanResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListTeachingPlan"))
+              .build();
+        }
+      }
+    }
+    return getListTeachingPlanMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.CreateTeachingPlanRequest,
+      com.zhijiejiaoyu.glory_api.course.CreateTeachingPlanResponse> getCreateTeachingPlanMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateTeachingPlan",
+      requestType = com.zhijiejiaoyu.glory_api.course.CreateTeachingPlanRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.CreateTeachingPlanResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.CreateTeachingPlanRequest,
+      com.zhijiejiaoyu.glory_api.course.CreateTeachingPlanResponse> getCreateTeachingPlanMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.CreateTeachingPlanRequest, com.zhijiejiaoyu.glory_api.course.CreateTeachingPlanResponse> getCreateTeachingPlanMethod;
+    if ((getCreateTeachingPlanMethod = glory_apiGrpc.getCreateTeachingPlanMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCreateTeachingPlanMethod = glory_apiGrpc.getCreateTeachingPlanMethod) == null) {
+          glory_apiGrpc.getCreateTeachingPlanMethod = getCreateTeachingPlanMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.CreateTeachingPlanRequest, com.zhijiejiaoyu.glory_api.course.CreateTeachingPlanResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateTeachingPlan"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.CreateTeachingPlanRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.CreateTeachingPlanResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CreateTeachingPlan"))
+              .build();
+        }
+      }
+    }
+    return getCreateTeachingPlanMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.UpdateTeachingPlanRequest,
+      com.zhijiejiaoyu.glory_api.course.UpdateTeachingPlanResponse> getUpdateTeachingPlanMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateTeachingPlan",
+      requestType = com.zhijiejiaoyu.glory_api.course.UpdateTeachingPlanRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.UpdateTeachingPlanResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.UpdateTeachingPlanRequest,
+      com.zhijiejiaoyu.glory_api.course.UpdateTeachingPlanResponse> getUpdateTeachingPlanMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.UpdateTeachingPlanRequest, com.zhijiejiaoyu.glory_api.course.UpdateTeachingPlanResponse> getUpdateTeachingPlanMethod;
+    if ((getUpdateTeachingPlanMethod = glory_apiGrpc.getUpdateTeachingPlanMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getUpdateTeachingPlanMethod = glory_apiGrpc.getUpdateTeachingPlanMethod) == null) {
+          glory_apiGrpc.getUpdateTeachingPlanMethod = getUpdateTeachingPlanMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.UpdateTeachingPlanRequest, com.zhijiejiaoyu.glory_api.course.UpdateTeachingPlanResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateTeachingPlan"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.UpdateTeachingPlanRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.UpdateTeachingPlanResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("UpdateTeachingPlan"))
+              .build();
+        }
+      }
+    }
+    return getUpdateTeachingPlanMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -10672,6 +10765,30 @@ public final class glory_apiGrpc {
     default void listMyCourse(com.zhijiejiaoyu.glory_api.course.ListMyCourseRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListMyCourseResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListMyCourseMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 教案管理
+     * </pre>
+     */
+    default void listTeachingPlan(com.zhijiejiaoyu.glory_api.course.ListTeachingPlanRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListTeachingPlanResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListTeachingPlanMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void createTeachingPlan(com.zhijiejiaoyu.glory_api.course.CreateTeachingPlanRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.CreateTeachingPlanResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateTeachingPlanMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updateTeachingPlan(com.zhijiejiaoyu.glory_api.course.UpdateTeachingPlanRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.UpdateTeachingPlanResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateTeachingPlanMethod(), responseObserver);
     }
   }
 
@@ -13152,6 +13269,33 @@ public final class glory_apiGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListMyCourseMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * 教案管理
+     * </pre>
+     */
+    public void listTeachingPlan(com.zhijiejiaoyu.glory_api.course.ListTeachingPlanRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListTeachingPlanResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListTeachingPlanMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void createTeachingPlan(com.zhijiejiaoyu.glory_api.course.CreateTeachingPlanRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.CreateTeachingPlanResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateTeachingPlanMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateTeachingPlan(com.zhijiejiaoyu.glory_api.course.UpdateTeachingPlanRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.UpdateTeachingPlanResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateTeachingPlanMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -15347,6 +15491,30 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.course.ListMyCourseResponse listMyCourse(com.zhijiejiaoyu.glory_api.course.ListMyCourseRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListMyCourseMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 教案管理
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.course.ListTeachingPlanResponse listTeachingPlan(com.zhijiejiaoyu.glory_api.course.ListTeachingPlanRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTeachingPlanMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.course.CreateTeachingPlanResponse createTeachingPlan(com.zhijiejiaoyu.glory_api.course.CreateTeachingPlanRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateTeachingPlanMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.course.UpdateTeachingPlanResponse updateTeachingPlan(com.zhijiejiaoyu.glory_api.course.UpdateTeachingPlanRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateTeachingPlanMethod(), getCallOptions(), request);
     }
   }
 
@@ -17816,6 +17984,33 @@ public final class glory_apiGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListMyCourseMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * 教案管理
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.ListTeachingPlanResponse> listTeachingPlan(
+        com.zhijiejiaoyu.glory_api.course.ListTeachingPlanRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListTeachingPlanMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.CreateTeachingPlanResponse> createTeachingPlan(
+        com.zhijiejiaoyu.glory_api.course.CreateTeachingPlanRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateTeachingPlanMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.UpdateTeachingPlanResponse> updateTeachingPlan(
+        com.zhijiejiaoyu.glory_api.course.UpdateTeachingPlanRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateTeachingPlanMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_EXAMPLE = 0;
@@ -18090,6 +18285,9 @@ public final class glory_apiGrpc {
   private static final int METHODID_DELETE_MY_COURSE = 269;
   private static final int METHODID_UPDATE_COURSE_PROGRESS = 270;
   private static final int METHODID_LIST_MY_COURSE = 271;
+  private static final int METHODID_LIST_TEACHING_PLAN = 272;
+  private static final int METHODID_CREATE_TEACHING_PLAN = 273;
+  private static final int METHODID_UPDATE_TEACHING_PLAN = 274;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -19195,6 +19393,18 @@ public final class glory_apiGrpc {
         case METHODID_LIST_MY_COURSE:
           serviceImpl.listMyCourse((com.zhijiejiaoyu.glory_api.course.ListMyCourseRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListMyCourseResponse>) responseObserver);
+          break;
+        case METHODID_LIST_TEACHING_PLAN:
+          serviceImpl.listTeachingPlan((com.zhijiejiaoyu.glory_api.course.ListTeachingPlanRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListTeachingPlanResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_TEACHING_PLAN:
+          serviceImpl.createTeachingPlan((com.zhijiejiaoyu.glory_api.course.CreateTeachingPlanRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.CreateTeachingPlanResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_TEACHING_PLAN:
+          serviceImpl.updateTeachingPlan((com.zhijiejiaoyu.glory_api.course.UpdateTeachingPlanRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.UpdateTeachingPlanResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -21118,6 +21328,27 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.course.ListMyCourseRequest,
               com.zhijiejiaoyu.glory_api.course.ListMyCourseResponse>(
                 service, METHODID_LIST_MY_COURSE)))
+        .addMethod(
+          getListTeachingPlanMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.ListTeachingPlanRequest,
+              com.zhijiejiaoyu.glory_api.course.ListTeachingPlanResponse>(
+                service, METHODID_LIST_TEACHING_PLAN)))
+        .addMethod(
+          getCreateTeachingPlanMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.CreateTeachingPlanRequest,
+              com.zhijiejiaoyu.glory_api.course.CreateTeachingPlanResponse>(
+                service, METHODID_CREATE_TEACHING_PLAN)))
+        .addMethod(
+          getUpdateTeachingPlanMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.UpdateTeachingPlanRequest,
+              com.zhijiejiaoyu.glory_api.course.UpdateTeachingPlanResponse>(
+                service, METHODID_UPDATE_TEACHING_PLAN)))
         .build();
   }
 
@@ -21438,6 +21669,9 @@ public final class glory_apiGrpc {
               .addMethod(getDeleteMyCourseMethod())
               .addMethod(getUpdateCourseProgressMethod())
               .addMethod(getListMyCourseMethod())
+              .addMethod(getListTeachingPlanMethod())
+              .addMethod(getCreateTeachingPlanMethod())
+              .addMethod(getUpdateTeachingPlanMethod())
               .build();
         }
       }

@@ -45,6 +45,7 @@ import * as nmodule from "./course/nmodule";
 import * as course from "./course/course";
 import * as graph from "./course/graph";
 import * as user_course from "./course/user_course";
+import * as teaching_plan from "./course/teaching_plan";
 export {
   user,
   address,
@@ -89,6 +90,7 @@ export {
   course,
   graph,
   user_course,
+  teaching_plan,
 };
 
 export class glory_api {
@@ -1224,6 +1226,19 @@ CreateLivePlanProduct create live plan product */
   ListMyCourse(
     request: user_course.ListMyCourseRequest
   ): Promise<user_course.ListMyCourseResponse>;
+
+  /** 教案管理 */
+  ListTeachingPlan(
+    request: teaching_plan.ListTeachingPlanRequest
+  ): Promise<teaching_plan.ListTeachingPlanResponse>;
+
+  CreateTeachingPlan(
+    request: teaching_plan.CreateTeachingPlanRequest
+  ): Promise<teaching_plan.CreateTeachingPlanResponse>;
+
+  UpdateTeachingPlan(
+    request: teaching_plan.UpdateTeachingPlanRequest
+  ): Promise<teaching_plan.UpdateTeachingPlanResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

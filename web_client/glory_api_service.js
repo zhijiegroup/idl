@@ -47,6 +47,7 @@ import * as nmodule from "./course/nmodule";
 import * as course from "./course/course";
 import * as graph from "./course/graph";
 import * as user_course from "./course/user_course";
+import * as teaching_plan from "./course/teaching_plan";
 export {
   user,
   address,
@@ -91,6 +92,7 @@ export {
   course,
   graph,
   user_course,
+  teaching_plan,
 };
 
 import {
@@ -2188,6 +2190,30 @@ export class glory_api {
 
   ListMyCourse(request) {
     const uri = `${this.uriPrefix}/api/course/list_my_course`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListTeachingPlan(request) {
+    const uri = `${this.uriPrefix}/api/course/list_teaching_plan`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreateTeachingPlan(request) {
+    const uri = `${this.uriPrefix}/api/course/create_teaching_plan`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  UpdateTeachingPlan(request) {
+    const uri = `${this.uriPrefix}/api/course/update_teaching_plan`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
