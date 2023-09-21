@@ -18,6 +18,8 @@ export interface CourseMaterial {
   material_id?: string;
   /** 画板ID */
   material_box_id?: string;
+  /** 画板名称 */
+  material_box_name?: string;
   /** 素材名称 */
   material_name?: string;
   /** 素材类型（image/video/audio/ppt/word） */

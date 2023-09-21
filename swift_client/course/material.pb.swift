@@ -49,6 +49,9 @@ struct GloryApi_CourseMaterial {
   ///画板ID
   var materialBoxID: Int64 = 0
 
+  /// 画板名称
+  var materialBoxName: String = String()
+
   /// 素材名称
   var materialName: String = String()
 
@@ -457,11 +460,12 @@ extension GloryApi_CourseMaterial: SwiftProtobuf.Message, SwiftProtobuf._Message
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "material_id"),
     2: .standard(proto: "material_box_id"),
-    3: .standard(proto: "material_name"),
-    4: .standard(proto: "material_type"),
-    5: .standard(proto: "material_path"),
-    6: .standard(proto: "material_url"),
-    7: .standard(proto: "created_at"),
+    3: .standard(proto: "material_box_name"),
+    4: .standard(proto: "material_name"),
+    5: .standard(proto: "material_type"),
+    6: .standard(proto: "material_path"),
+    7: .standard(proto: "material_url"),
+    8: .standard(proto: "created_at"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -472,11 +476,12 @@ extension GloryApi_CourseMaterial: SwiftProtobuf.Message, SwiftProtobuf._Message
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularInt64Field(value: &self.materialID) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.materialBoxID) }()
-      case 3: try { try decoder.decodeSingularStringField(value: &self.materialName) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.materialType) }()
-      case 5: try { try decoder.decodeSingularStringField(value: &self.materialPath) }()
-      case 6: try { try decoder.decodeSingularStringField(value: &self.materialURL) }()
-      case 7: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.materialBoxName) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.materialName) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.materialType) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.materialPath) }()
+      case 7: try { try decoder.decodeSingularStringField(value: &self.materialURL) }()
+      case 8: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
       default: break
       }
     }
@@ -489,20 +494,23 @@ extension GloryApi_CourseMaterial: SwiftProtobuf.Message, SwiftProtobuf._Message
     if self.materialBoxID != 0 {
       try visitor.visitSingularInt64Field(value: self.materialBoxID, fieldNumber: 2)
     }
+    if !self.materialBoxName.isEmpty {
+      try visitor.visitSingularStringField(value: self.materialBoxName, fieldNumber: 3)
+    }
     if !self.materialName.isEmpty {
-      try visitor.visitSingularStringField(value: self.materialName, fieldNumber: 3)
+      try visitor.visitSingularStringField(value: self.materialName, fieldNumber: 4)
     }
     if !self.materialType.isEmpty {
-      try visitor.visitSingularStringField(value: self.materialType, fieldNumber: 4)
+      try visitor.visitSingularStringField(value: self.materialType, fieldNumber: 5)
     }
     if !self.materialPath.isEmpty {
-      try visitor.visitSingularStringField(value: self.materialPath, fieldNumber: 5)
+      try visitor.visitSingularStringField(value: self.materialPath, fieldNumber: 6)
     }
     if !self.materialURL.isEmpty {
-      try visitor.visitSingularStringField(value: self.materialURL, fieldNumber: 6)
+      try visitor.visitSingularStringField(value: self.materialURL, fieldNumber: 7)
     }
     if !self.createdAt.isEmpty {
-      try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 7)
+      try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 8)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -510,6 +518,7 @@ extension GloryApi_CourseMaterial: SwiftProtobuf.Message, SwiftProtobuf._Message
   static func ==(lhs: GloryApi_CourseMaterial, rhs: GloryApi_CourseMaterial) -> Bool {
     if lhs.materialID != rhs.materialID {return false}
     if lhs.materialBoxID != rhs.materialBoxID {return false}
+    if lhs.materialBoxName != rhs.materialBoxName {return false}
     if lhs.materialName != rhs.materialName {return false}
     if lhs.materialType != rhs.materialType {return false}
     if lhs.materialPath != rhs.materialPath {return false}

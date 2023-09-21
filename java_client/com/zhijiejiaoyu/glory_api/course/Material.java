@@ -96,47 +96,48 @@ public final class Material {
       "\n\025course/material.proto\022\tglory_api\032\nbase" +
       ".proto\"[\n\021CourseMaterialBox\022\027\n\017material_" +
       "box_id\030\001 \001(\003\022\031\n\021material_box_name\030\002 \001(\t\022" +
-      "\022\n\ncreated_at\030\003 \001(\t\"\255\001\n\016CourseMaterial\022\023" +
+      "\022\n\ncreated_at\030\003 \001(\t\"\310\001\n\016CourseMaterial\022\023" +
       "\n\013material_id\030\001 \001(\003\022\027\n\017material_box_id\030\002" +
-      " \001(\003\022\025\n\rmaterial_name\030\003 \001(\t\022\025\n\rmaterial_" +
-      "type\030\004 \001(\t\022\025\n\rmaterial_path\030\005 \001(\t\022\024\n\014mat" +
-      "erial_url\030\006 \001(\t\022\022\n\ncreated_at\030\007 \001(\t\"d\n\036C" +
-      "reateCourseMaterialBoxRequest\022\'\n\014base_re" +
-      "quest\030\001 \001(\0132\021.base.BaseRequest\022\031\n\021materi" +
-      "al_box_name\030\002 \001(\t\"a\n\037CreateCourseMateria" +
+      " \001(\003\022\031\n\021material_box_name\030\003 \001(\t\022\025\n\rmater" +
+      "ial_name\030\004 \001(\t\022\025\n\rmaterial_type\030\005 \001(\t\022\025\n" +
+      "\rmaterial_path\030\006 \001(\t\022\024\n\014material_url\030\007 \001" +
+      "(\t\022\022\n\ncreated_at\030\010 \001(\t\"d\n\036CreateCourseMa" +
+      "terialBoxRequest\022\'\n\014base_request\030\001 \001(\0132\021" +
+      ".base.BaseRequest\022\031\n\021material_box_name\030\002" +
+      " \001(\t\"a\n\037CreateCourseMaterialBoxResponse\022" +
+      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022\027" +
+      "\n\017material_box_id\030\002 \001(\003\"t\n\034ListCourseMat" +
+      "erialBoxRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
+      "base.BaseRequest\022+\n\npagination\030d \001(\0132\027.b" +
+      "ase.PaginationRequest\"\255\001\n\035ListCourseMate" +
+      "rialBoxResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
+      "e.BaseResponse\0227\n\021material_box_list\030\002 \003(" +
+      "\0132\034.glory_api.CourseMaterialBox\022,\n\npagin" +
+      "ation\030d \001(\0132\030.base.PaginationResponse\"b\n" +
+      "\036DeleteCourseMaterialBoxRequest\022\'\n\014base_" +
+      "request\030\001 \001(\0132\021.base.BaseRequest\022\027\n\017mate" +
+      "rial_box_id\030\002 \001(\003\"H\n\037DeleteCourseMateria" +
       "lBoxResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.B" +
-      "aseResponse\022\027\n\017material_box_id\030\002 \001(\003\"t\n\034" +
-      "ListCourseMaterialBoxRequest\022\'\n\014base_req" +
-      "uest\030\001 \001(\0132\021.base.BaseRequest\022+\n\npaginat" +
-      "ion\030d \001(\0132\027.base.PaginationRequest\"\255\001\n\035L" +
-      "istCourseMaterialBoxResponse\022%\n\tbase_res" +
-      "p\030\001 \001(\0132\022.base.BaseResponse\0227\n\021material_" +
-      "box_list\030\002 \003(\0132\034.glory_api.CourseMateria" +
-      "lBox\022,\n\npagination\030d \001(\0132\030.base.Paginati" +
-      "onResponse\"b\n\036DeleteCourseMaterialBoxReq" +
-      "uest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRe" +
-      "quest\022\027\n\017material_box_id\030\002 \001(\003\"H\n\037Delete" +
-      "CourseMaterialBoxResponse\022%\n\tbase_resp\030\001" +
-      " \001(\0132\022.base.BaseResponse\"\221\001\n\033UploadCours" +
-      "eMaterialRequest\022\'\n\014base_request\030\001 \001(\0132\021" +
-      ".base.BaseRequest\022\027\n\017material_box_id\030\002 \001" +
-      "(\003\0220\n\rmaterial_list\030\003 \003(\0132\031.glory_api.Co" +
-      "urseMaterial\"E\n\034UploadCourseMaterialResp" +
-      "onse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespo" +
-      "nse\"\241\001\n\031ListCourseMaterialRequest\022\'\n\014bas" +
-      "e_request\030\001 \001(\0132\021.base.BaseRequest\022\027\n\017ma" +
-      "terial_box_id\030\002 \001(\003\022\025\n\rmaterial_name\030\003 \001" +
-      "(\t\022+\n\npagination\030d \001(\0132\027.base.Pagination" +
-      "Request\"\243\001\n\032ListCourseMaterialResponse\022%" +
-      "\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\0220\n" +
-      "\rmaterial_list\030\002 \003(\0132\031.glory_api.CourseM" +
-      "aterial\022,\n\npagination\030d \001(\0132\030.base.Pagin" +
-      "ationResponse\"[\n\033DeleteCourseMaterialReq" +
-      "uest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRe" +
-      "quest\022\023\n\013material_id\030\002 \001(\003\"E\n\034DeleteCour" +
-      "seMaterialResponse\022%\n\tbase_resp\030\001 \001(\0132\022." +
-      "base.BaseResponseB%\n!com.zhijiejiaoyu.gl" +
-      "ory_api.courseP\001b\006proto3"
+      "aseResponse\"\221\001\n\033UploadCourseMaterialRequ" +
+      "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
+      "uest\022\027\n\017material_box_id\030\002 \001(\003\0220\n\rmateria" +
+      "l_list\030\003 \003(\0132\031.glory_api.CourseMaterial\"" +
+      "E\n\034UploadCourseMaterialResponse\022%\n\tbase_" +
+      "resp\030\001 \001(\0132\022.base.BaseResponse\"\241\001\n\031ListC" +
+      "ourseMaterialRequest\022\'\n\014base_request\030\001 \001" +
+      "(\0132\021.base.BaseRequest\022\027\n\017material_box_id" +
+      "\030\002 \001(\003\022\025\n\rmaterial_name\030\003 \001(\t\022+\n\npaginat" +
+      "ion\030d \001(\0132\027.base.PaginationRequest\"\243\001\n\032L" +
+      "istCourseMaterialResponse\022%\n\tbase_resp\030\001" +
+      " \001(\0132\022.base.BaseResponse\0220\n\rmaterial_lis" +
+      "t\030\002 \003(\0132\031.glory_api.CourseMaterial\022,\n\npa" +
+      "gination\030d \001(\0132\030.base.PaginationResponse" +
+      "\"[\n\033DeleteCourseMaterialRequest\022\'\n\014base_" +
+      "request\030\001 \001(\0132\021.base.BaseRequest\022\023\n\013mate" +
+      "rial_id\030\002 \001(\003\"E\n\034DeleteCourseMaterialRes" +
+      "ponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResp" +
+      "onseB%\n!com.zhijiejiaoyu.glory_api.cours" +
+      "eP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -154,7 +155,7 @@ public final class Material {
     internal_static_glory_api_CourseMaterial_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CourseMaterial_descriptor,
-        new java.lang.String[] { "MaterialId", "MaterialBoxId", "MaterialName", "MaterialType", "MaterialPath", "MaterialUrl", "CreatedAt", });
+        new java.lang.String[] { "MaterialId", "MaterialBoxId", "MaterialBoxName", "MaterialName", "MaterialType", "MaterialPath", "MaterialUrl", "CreatedAt", });
     internal_static_glory_api_CreateCourseMaterialBoxRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_glory_api_CreateCourseMaterialBoxRequest_fieldAccessorTable = new
