@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CourseMaterial() {
+    materialBoxName = "";
     materialName = "";
     materialType = "";
     materialPath = "";
@@ -70,28 +71,34 @@ private static final long serialVersionUID = 0L;
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            materialName = s;
+            materialBoxName = s;
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            materialType = s;
+            materialName = s;
             break;
           }
           case 42: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            materialPath = s;
+            materialType = s;
             break;
           }
           case 50: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            materialUrl = s;
+            materialPath = s;
             break;
           }
           case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            materialUrl = s;
+            break;
+          }
+          case 66: {
             java.lang.String s = input.readStringRequireUtf8();
 
             createdAt = s;
@@ -159,14 +166,60 @@ private static final long serialVersionUID = 0L;
     return materialBoxId ;
   }
 
-  public static final int MATERIAL_NAME_FIELD_NUMBER = 3;
+  public static final int MATERIAL_BOX_NAME_FIELD_NUMBER = 3;
+  private volatile java.lang.Object materialBoxName ;
+  /**
+   * <pre>
+   * 画板名称
+   * </pre>
+   *
+   * <code>string material_box_name = 3;</code>
+   * @return The materialBoxName.
+   */
+  @java.lang.Override
+  public java.lang.String getMaterialBoxName() {
+    java.lang.Object ref = materialBoxName ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      materialBoxName = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 画板名称
+   * </pre>
+   *
+   * <code>string material_box_name = 3;</code>
+   * @return The bytes for materialBoxName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getMaterialBoxNameBytes() {
+    java.lang.Object ref = materialBoxName ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      materialBoxName = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int MATERIAL_NAME_FIELD_NUMBER = 4;
   private volatile java.lang.Object materialName ;
   /**
    * <pre>
    * 素材名称
    * </pre>
    *
-   * <code>string material_name = 3;</code>
+   * <code>string material_name = 4;</code>
    * @return The materialName.
    */
   @java.lang.Override
@@ -187,7 +240,7 @@ private static final long serialVersionUID = 0L;
    * 素材名称
    * </pre>
    *
-   * <code>string material_name = 3;</code>
+   * <code>string material_name = 4;</code>
    * @return The bytes for materialName.
    */
   @java.lang.Override
@@ -205,14 +258,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int MATERIAL_TYPE_FIELD_NUMBER = 4;
+  public static final int MATERIAL_TYPE_FIELD_NUMBER = 5;
   private volatile java.lang.Object materialType ;
   /**
    * <pre>
    * 素材类型（image/video/audio/ppt/word）
    * </pre>
    *
-   * <code>string material_type = 4;</code>
+   * <code>string material_type = 5;</code>
    * @return The materialType.
    */
   @java.lang.Override
@@ -233,7 +286,7 @@ private static final long serialVersionUID = 0L;
    * 素材类型（image/video/audio/ppt/word）
    * </pre>
    *
-   * <code>string material_type = 4;</code>
+   * <code>string material_type = 5;</code>
    * @return The bytes for materialType.
    */
   @java.lang.Override
@@ -251,14 +304,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int MATERIAL_PATH_FIELD_NUMBER = 5;
+  public static final int MATERIAL_PATH_FIELD_NUMBER = 6;
   private volatile java.lang.Object materialPath ;
   /**
    * <pre>
    * 素材OSS路径
    * </pre>
    *
-   * <code>string material_path = 5;</code>
+   * <code>string material_path = 6;</code>
    * @return The materialPath.
    */
   @java.lang.Override
@@ -279,7 +332,7 @@ private static final long serialVersionUID = 0L;
    * 素材OSS路径
    * </pre>
    *
-   * <code>string material_path = 5;</code>
+   * <code>string material_path = 6;</code>
    * @return The bytes for materialPath.
    */
   @java.lang.Override
@@ -297,14 +350,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int MATERIAL_URL_FIELD_NUMBER = 6;
+  public static final int MATERIAL_URL_FIELD_NUMBER = 7;
   private volatile java.lang.Object materialUrl ;
   /**
    * <pre>
    * 素材URL（创建时不需要填写）
    * </pre>
    *
-   * <code>string material_url = 6;</code>
+   * <code>string material_url = 7;</code>
    * @return The materialUrl.
    */
   @java.lang.Override
@@ -325,7 +378,7 @@ private static final long serialVersionUID = 0L;
    * 素材URL（创建时不需要填写）
    * </pre>
    *
-   * <code>string material_url = 6;</code>
+   * <code>string material_url = 7;</code>
    * @return The bytes for materialUrl.
    */
   @java.lang.Override
@@ -343,14 +396,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int CREATED_AT_FIELD_NUMBER = 7;
+  public static final int CREATED_AT_FIELD_NUMBER = 8;
   private volatile java.lang.Object createdAt ;
   /**
    * <pre>
    * 创建时间（创建时不需要填写）
    * </pre>
    *
-   * <code>string created_at = 7;</code>
+   * <code>string created_at = 8;</code>
    * @return The createdAt.
    */
   @java.lang.Override
@@ -371,7 +424,7 @@ private static final long serialVersionUID = 0L;
    * 创建时间（创建时不需要填写）
    * </pre>
    *
-   * <code>string created_at = 7;</code>
+   * <code>string created_at = 8;</code>
    * @return The bytes for createdAt.
    */
   @java.lang.Override
@@ -409,20 +462,23 @@ private static final long serialVersionUID = 0L;
     if (materialBoxId != 0L) {
       output.writeInt64(2, materialBoxId );
     }
+    if (!getMaterialBoxNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, materialBoxName );
+    }
     if (!getMaterialNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, materialName );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, materialName );
     }
     if (!getMaterialTypeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, materialType );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, materialType );
     }
     if (!getMaterialPathBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, materialPath );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, materialPath );
     }
     if (!getMaterialUrlBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, materialUrl );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, materialUrl );
     }
     if (!getCreatedAtBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, createdAt );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, createdAt );
     }
     unknownFields.writeTo(output);
   }
@@ -441,20 +497,23 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, materialBoxId );
     }
+    if (!getMaterialBoxNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, materialBoxName );
+    }
     if (!getMaterialNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, materialName );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, materialName );
     }
     if (!getMaterialTypeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, materialType );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, materialType );
     }
     if (!getMaterialPathBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, materialPath );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, materialPath );
     }
     if (!getMaterialUrlBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, materialUrl );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, materialUrl );
     }
     if (!getCreatedAtBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, createdAt );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, createdAt );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -475,6 +534,8 @@ private static final long serialVersionUID = 0L;
         != other.getMaterialId()) return false;
     if (getMaterialBoxId()
         != other.getMaterialBoxId()) return false;
+    if (!getMaterialBoxName()
+        .equals(other.getMaterialBoxName())) return false;
     if (!getMaterialName()
         .equals(other.getMaterialName())) return false;
     if (!getMaterialType()
@@ -502,6 +563,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + MATERIAL_BOX_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getMaterialBoxId());
+    hash = (37 * hash) + MATERIAL_BOX_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getMaterialBoxName().hashCode();
     hash = (37 * hash) + MATERIAL_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getMaterialName().hashCode();
     hash = (37 * hash) + MATERIAL_TYPE_FIELD_NUMBER;
@@ -653,6 +716,8 @@ private static final long serialVersionUID = 0L;
 
       materialBoxId = 0L;
 
+      materialBoxName = "";
+
       materialName = "";
 
       materialType = "";
@@ -691,6 +756,7 @@ private static final long serialVersionUID = 0L;
       com.zhijiejiaoyu.glory_api.course.CourseMaterial result = new com.zhijiejiaoyu.glory_api.course.CourseMaterial(this);
       result.materialId = materialId ;
       result.materialBoxId = materialBoxId ;
+      result.materialBoxName = materialBoxName ;
       result.materialName = materialName ;
       result.materialType = materialType ;
       result.materialPath = materialPath ;
@@ -749,6 +815,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getMaterialBoxId() != 0L) {
         setMaterialBoxId(other.getMaterialBoxId());
+      }
+      if (!other.getMaterialBoxName().isEmpty()) {
+        materialBoxName = other.materialBoxName ;
+        onChanged();
       }
       if (!other.getMaterialName().isEmpty()) {
         materialName = other.materialName ;
@@ -885,13 +955,109 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object materialBoxName = "";
+    /**
+     * <pre>
+     * 画板名称
+     * </pre>
+     *
+     * <code>string material_box_name = 3;</code>
+     * @return The materialBoxName.
+     */
+    public java.lang.String getMaterialBoxName() {
+      java.lang.Object ref = materialBoxName ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        materialBoxName = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 画板名称
+     * </pre>
+     *
+     * <code>string material_box_name = 3;</code>
+     * @return The bytes for materialBoxName.
+     */
+    public com.google.protobuf.ByteString
+        getMaterialBoxNameBytes() {
+      java.lang.Object ref = materialBoxName ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        materialBoxName = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 画板名称
+     * </pre>
+     *
+     * <code>string material_box_name = 3;</code>
+     * @param value The materialBoxName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaterialBoxName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      materialBoxName = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 画板名称
+     * </pre>
+     *
+     * <code>string material_box_name = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMaterialBoxName() {
+      
+      materialBoxName = getDefaultInstance().getMaterialBoxName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 画板名称
+     * </pre>
+     *
+     * <code>string material_box_name = 3;</code>
+     * @param value The bytes for materialBoxName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaterialBoxNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      materialBoxName = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object materialName = "";
     /**
      * <pre>
      * 素材名称
      * </pre>
      *
-     * <code>string material_name = 3;</code>
+     * <code>string material_name = 4;</code>
      * @return The materialName.
      */
     public java.lang.String getMaterialName() {
@@ -911,7 +1077,7 @@ private static final long serialVersionUID = 0L;
      * 素材名称
      * </pre>
      *
-     * <code>string material_name = 3;</code>
+     * <code>string material_name = 4;</code>
      * @return The bytes for materialName.
      */
     public com.google.protobuf.ByteString
@@ -932,7 +1098,7 @@ private static final long serialVersionUID = 0L;
      * 素材名称
      * </pre>
      *
-     * <code>string material_name = 3;</code>
+     * <code>string material_name = 4;</code>
      * @param value The materialName to set.
      * @return This builder for chaining.
      */
@@ -951,7 +1117,7 @@ private static final long serialVersionUID = 0L;
      * 素材名称
      * </pre>
      *
-     * <code>string material_name = 3;</code>
+     * <code>string material_name = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearMaterialName() {
@@ -965,7 +1131,7 @@ private static final long serialVersionUID = 0L;
      * 素材名称
      * </pre>
      *
-     * <code>string material_name = 3;</code>
+     * <code>string material_name = 4;</code>
      * @param value The bytes for materialName to set.
      * @return This builder for chaining.
      */
@@ -987,7 +1153,7 @@ private static final long serialVersionUID = 0L;
      * 素材类型（image/video/audio/ppt/word）
      * </pre>
      *
-     * <code>string material_type = 4;</code>
+     * <code>string material_type = 5;</code>
      * @return The materialType.
      */
     public java.lang.String getMaterialType() {
@@ -1007,7 +1173,7 @@ private static final long serialVersionUID = 0L;
      * 素材类型（image/video/audio/ppt/word）
      * </pre>
      *
-     * <code>string material_type = 4;</code>
+     * <code>string material_type = 5;</code>
      * @return The bytes for materialType.
      */
     public com.google.protobuf.ByteString
@@ -1028,7 +1194,7 @@ private static final long serialVersionUID = 0L;
      * 素材类型（image/video/audio/ppt/word）
      * </pre>
      *
-     * <code>string material_type = 4;</code>
+     * <code>string material_type = 5;</code>
      * @param value The materialType to set.
      * @return This builder for chaining.
      */
@@ -1047,7 +1213,7 @@ private static final long serialVersionUID = 0L;
      * 素材类型（image/video/audio/ppt/word）
      * </pre>
      *
-     * <code>string material_type = 4;</code>
+     * <code>string material_type = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearMaterialType() {
@@ -1061,7 +1227,7 @@ private static final long serialVersionUID = 0L;
      * 素材类型（image/video/audio/ppt/word）
      * </pre>
      *
-     * <code>string material_type = 4;</code>
+     * <code>string material_type = 5;</code>
      * @param value The bytes for materialType to set.
      * @return This builder for chaining.
      */
@@ -1083,7 +1249,7 @@ private static final long serialVersionUID = 0L;
      * 素材OSS路径
      * </pre>
      *
-     * <code>string material_path = 5;</code>
+     * <code>string material_path = 6;</code>
      * @return The materialPath.
      */
     public java.lang.String getMaterialPath() {
@@ -1103,7 +1269,7 @@ private static final long serialVersionUID = 0L;
      * 素材OSS路径
      * </pre>
      *
-     * <code>string material_path = 5;</code>
+     * <code>string material_path = 6;</code>
      * @return The bytes for materialPath.
      */
     public com.google.protobuf.ByteString
@@ -1124,7 +1290,7 @@ private static final long serialVersionUID = 0L;
      * 素材OSS路径
      * </pre>
      *
-     * <code>string material_path = 5;</code>
+     * <code>string material_path = 6;</code>
      * @param value The materialPath to set.
      * @return This builder for chaining.
      */
@@ -1143,7 +1309,7 @@ private static final long serialVersionUID = 0L;
      * 素材OSS路径
      * </pre>
      *
-     * <code>string material_path = 5;</code>
+     * <code>string material_path = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearMaterialPath() {
@@ -1157,7 +1323,7 @@ private static final long serialVersionUID = 0L;
      * 素材OSS路径
      * </pre>
      *
-     * <code>string material_path = 5;</code>
+     * <code>string material_path = 6;</code>
      * @param value The bytes for materialPath to set.
      * @return This builder for chaining.
      */
@@ -1179,7 +1345,7 @@ private static final long serialVersionUID = 0L;
      * 素材URL（创建时不需要填写）
      * </pre>
      *
-     * <code>string material_url = 6;</code>
+     * <code>string material_url = 7;</code>
      * @return The materialUrl.
      */
     public java.lang.String getMaterialUrl() {
@@ -1199,7 +1365,7 @@ private static final long serialVersionUID = 0L;
      * 素材URL（创建时不需要填写）
      * </pre>
      *
-     * <code>string material_url = 6;</code>
+     * <code>string material_url = 7;</code>
      * @return The bytes for materialUrl.
      */
     public com.google.protobuf.ByteString
@@ -1220,7 +1386,7 @@ private static final long serialVersionUID = 0L;
      * 素材URL（创建时不需要填写）
      * </pre>
      *
-     * <code>string material_url = 6;</code>
+     * <code>string material_url = 7;</code>
      * @param value The materialUrl to set.
      * @return This builder for chaining.
      */
@@ -1239,7 +1405,7 @@ private static final long serialVersionUID = 0L;
      * 素材URL（创建时不需要填写）
      * </pre>
      *
-     * <code>string material_url = 6;</code>
+     * <code>string material_url = 7;</code>
      * @return This builder for chaining.
      */
     public Builder clearMaterialUrl() {
@@ -1253,7 +1419,7 @@ private static final long serialVersionUID = 0L;
      * 素材URL（创建时不需要填写）
      * </pre>
      *
-     * <code>string material_url = 6;</code>
+     * <code>string material_url = 7;</code>
      * @param value The bytes for materialUrl to set.
      * @return This builder for chaining.
      */
@@ -1275,7 +1441,7 @@ private static final long serialVersionUID = 0L;
      * 创建时间（创建时不需要填写）
      * </pre>
      *
-     * <code>string created_at = 7;</code>
+     * <code>string created_at = 8;</code>
      * @return The createdAt.
      */
     public java.lang.String getCreatedAt() {
@@ -1295,7 +1461,7 @@ private static final long serialVersionUID = 0L;
      * 创建时间（创建时不需要填写）
      * </pre>
      *
-     * <code>string created_at = 7;</code>
+     * <code>string created_at = 8;</code>
      * @return The bytes for createdAt.
      */
     public com.google.protobuf.ByteString
@@ -1316,7 +1482,7 @@ private static final long serialVersionUID = 0L;
      * 创建时间（创建时不需要填写）
      * </pre>
      *
-     * <code>string created_at = 7;</code>
+     * <code>string created_at = 8;</code>
      * @param value The createdAt to set.
      * @return This builder for chaining.
      */
@@ -1335,7 +1501,7 @@ private static final long serialVersionUID = 0L;
      * 创建时间（创建时不需要填写）
      * </pre>
      *
-     * <code>string created_at = 7;</code>
+     * <code>string created_at = 8;</code>
      * @return This builder for chaining.
      */
     public Builder clearCreatedAt() {
@@ -1349,7 +1515,7 @@ private static final long serialVersionUID = 0L;
      * 创建时间（创建时不需要填写）
      * </pre>
      *
-     * <code>string created_at = 7;</code>
+     * <code>string created_at = 8;</code>
      * @param value The bytes for createdAt to set.
      * @return This builder for chaining.
      */

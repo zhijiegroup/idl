@@ -29,10 +29,30 @@ public interface CourseMaterialOrBuilder extends
 
   /**
    * <pre>
+   * 画板名称
+   * </pre>
+   *
+   * <code>string material_box_name = 3;</code>
+   * @return The materialBoxName.
+   */
+  java.lang.String getMaterialBoxName();
+  /**
+   * <pre>
+   * 画板名称
+   * </pre>
+   *
+   * <code>string material_box_name = 3;</code>
+   * @return The bytes for materialBoxName.
+   */
+  com.google.protobuf.ByteString
+      getMaterialBoxNameBytes();
+
+  /**
+   * <pre>
    * 素材名称
    * </pre>
    *
-   * <code>string material_name = 3;</code>
+   * <code>string material_name = 4;</code>
    * @return The materialName.
    */
   java.lang.String getMaterialName();
@@ -41,7 +61,7 @@ public interface CourseMaterialOrBuilder extends
    * 素材名称
    * </pre>
    *
-   * <code>string material_name = 3;</code>
+   * <code>string material_name = 4;</code>
    * @return The bytes for materialName.
    */
   com.google.protobuf.ByteString
@@ -52,7 +72,7 @@ public interface CourseMaterialOrBuilder extends
    * 素材类型（image/video/audio/ppt/word）
    * </pre>
    *
-   * <code>string material_type = 4;</code>
+   * <code>string material_type = 5;</code>
    * @return The materialType.
    */
   java.lang.String getMaterialType();
@@ -61,7 +81,7 @@ public interface CourseMaterialOrBuilder extends
    * 素材类型（image/video/audio/ppt/word）
    * </pre>
    *
-   * <code>string material_type = 4;</code>
+   * <code>string material_type = 5;</code>
    * @return The bytes for materialType.
    */
   com.google.protobuf.ByteString
@@ -72,7 +92,7 @@ public interface CourseMaterialOrBuilder extends
    * 素材OSS路径
    * </pre>
    *
-   * <code>string material_path = 5;</code>
+   * <code>string material_path = 6;</code>
    * @return The materialPath.
    */
   java.lang.String getMaterialPath();
@@ -81,7 +101,7 @@ public interface CourseMaterialOrBuilder extends
    * 素材OSS路径
    * </pre>
    *
-   * <code>string material_path = 5;</code>
+   * <code>string material_path = 6;</code>
    * @return The bytes for materialPath.
    */
   com.google.protobuf.ByteString
@@ -92,7 +112,7 @@ public interface CourseMaterialOrBuilder extends
    * 素材URL（创建时不需要填写）
    * </pre>
    *
-   * <code>string material_url = 6;</code>
+   * <code>string material_url = 7;</code>
    * @return The materialUrl.
    */
   java.lang.String getMaterialUrl();
@@ -101,7 +121,7 @@ public interface CourseMaterialOrBuilder extends
    * 素材URL（创建时不需要填写）
    * </pre>
    *
-   * <code>string material_url = 6;</code>
+   * <code>string material_url = 7;</code>
    * @return The bytes for materialUrl.
    */
   com.google.protobuf.ByteString
@@ -112,7 +132,7 @@ public interface CourseMaterialOrBuilder extends
    * 创建时间（创建时不需要填写）
    * </pre>
    *
-   * <code>string created_at = 7;</code>
+   * <code>string created_at = 8;</code>
    * @return The createdAt.
    */
   java.lang.String getCreatedAt();
@@ -121,7 +141,7 @@ public interface CourseMaterialOrBuilder extends
    * 创建时间（创建时不需要填写）
    * </pre>
    *
-   * <code>string created_at = 7;</code>
+   * <code>string created_at = 8;</code>
    * @return The bytes for createdAt.
    */
   com.google.protobuf.ByteString

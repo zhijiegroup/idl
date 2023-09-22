@@ -47,6 +47,7 @@ import "course/nmodule.proto";
 import "course/course.proto";
 import "course/graph.proto";
 import "course/user_course.proto";
+import "course/teaching_plan.proto";
 
 service glory_api {
 
@@ -1094,5 +1095,16 @@ service glory_api {
   // 我的课程列表
   rpc ListMyCourse(ListMyCourseRequest) returns (ListMyCourseResponse) {
     option (api.post) = '/api/course/list_my_course';
+  }
+
+  // 教案管理
+  rpc ListTeachingPlan(ListTeachingPlanRequest) returns (ListTeachingPlanResponse) {
+    option (api.post) = '/api/course/list_teaching_plan';
+  }
+  rpc CreateTeachingPlan(CreateTeachingPlanRequest) returns (CreateTeachingPlanResponse) {
+    option (api.post) = '/api/course/create_teaching_plan';
+  }
+  rpc UpdateTeachingPlan(UpdateTeachingPlanRequest) returns (UpdateTeachingPlanResponse) {
+    option (api.post) = '/api/course/update_teaching_plan';
   }
 }

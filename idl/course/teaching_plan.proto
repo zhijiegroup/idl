@@ -1,0 +1,57 @@
+syntax = "proto3";
+package glory_api;
+option java_package = "com.zhijiejiaoyu.glory_api.course";
+option java_multiple_files = true;
+
+import "base.proto";
+import "course/module.proto";
+
+message TeachingPlan {
+    int64 teaching_plan_id = 1;
+    int32 teaching_plan_type = 2;
+    int64 course_id = 3;
+    string course_name = 4;
+    int64 course_module_id = 5;
+    string course_module_name = 6;
+    string teaching_plan_content = 7;
+}
+
+message CreateTeachingPlanRequest {
+    base.BaseRequest base_request = 1;
+    int32 type = 2;
+    string name = 3;
+    int64 course_id = 4;
+    string course_name = 5;
+    int64 course_module_id = 6;
+    string course_module_name = 7;
+    string teaching_plan_content = 8;
+}
+
+message CreateTeachingPlanResponse {
+    base.BaseResponse base_resp = 1;
+    int64 teaching_plan_id = 2;
+}
+
+message UpdateTeachingPlanRequest {
+    base.BaseRequest base_request = 1;
+    int64 teaching_plan_id = 2;
+    string name = 3;
+    string teaching_plan_content = 4;
+}
+
+message UpdateTeachingPlanResponse {
+    base.BaseResponse base_resp = 1;
+}
+
+message ListTeachingPlanRequest {
+    base.BaseRequest base_request = 1;
+    int32 type = 2;
+    string name = 3;
+    base.PaginationRequest pagination = 100;
+}
+
+message ListTeachingPlanResponse {
+    base.BaseResponse base_resp = 1;
+    repeated TeachingPlan teaching_plan_list = 2;
+    base.PaginationResponse pagination = 100;
+}

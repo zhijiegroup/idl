@@ -16,11 +16,12 @@ message CourseMaterialBox {
 message CourseMaterial {
   int64 material_id = 1; // 素材ID（创建时不需要填写）
   int64 material_box_id = 2; //画板ID
-  string material_name = 3; // 素材名称
-  string material_type = 4; // 素材类型（image/video/audio/ppt/word）
-  string material_path = 5; // 素材OSS路径
-  string material_url = 6; // 素材URL（创建时不需要填写）
-  string created_at = 7; // 创建时间（创建时不需要填写）
+  string material_box_name = 3; // 画板名称
+  string material_name = 4; // 素材名称
+  string material_type = 5; // 素材类型（image/video/audio/ppt/word）
+  string material_path = 6; // 素材OSS路径
+  string material_url = 7; // 素材URL（创建时不需要填写）
+  string created_at = 8; // 创建时间（创建时不需要填写）
 }
 
 // 创建画板
@@ -71,6 +72,7 @@ message UploadCourseMaterialResponse {
 message ListCourseMaterialRequest {
   base.BaseRequest base_request = 1;
   int64 material_box_id = 2;
+  string material_name = 3;
   base.PaginationRequest pagination = 100;
 }
 
