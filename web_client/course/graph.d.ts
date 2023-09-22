@@ -29,6 +29,25 @@ export interface KnowledgeGraph {
   edge?: Array<Edge>;
 }
 
+export interface NodeDetail {
+  id?: string;
+  code?: string;
+  name?: string;
+  desc?: string;
+  organization?: string;
+  level?: string;
+  industry?: string;
+  type?: string;
+  cover?: string;
+  classification?: string;
+  module?: number;
+  major?: string;
+  teacher?: string;
+  knowledge_hours?: number;
+  skill_hours?: number;
+  created_at?: string;
+}
+
 export interface CreateKnowledgeGraphRequest {
   base_request?: base.BaseRequest;
 }
@@ -47,4 +66,15 @@ export interface GetKnowledgeGraphResponse {
   base_resp?: base.BaseResponse;
   /** 知识图谱 */
   graph?: KnowledgeGraph;
+}
+
+export interface GetKnowledgeGraphNodeRequest {
+  base_request?: base.BaseRequest;
+  type?: string;
+  id?: string;
+}
+
+export interface GetKnowledgeGraphNodeResponse {
+  base_resp?: base.BaseResponse;
+  node_detail?: NodeDetail;
 }

@@ -8261,6 +8261,37 @@ public final class glory_apiGrpc {
     return getGetKnowledgeGraphMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphNodeRequest,
+      com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphNodeResponse> getGetKnowledgeGraphNodeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetKnowledgeGraphNode",
+      requestType = com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphNodeRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphNodeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphNodeRequest,
+      com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphNodeResponse> getGetKnowledgeGraphNodeMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphNodeRequest, com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphNodeResponse> getGetKnowledgeGraphNodeMethod;
+    if ((getGetKnowledgeGraphNodeMethod = glory_apiGrpc.getGetKnowledgeGraphNodeMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGetKnowledgeGraphNodeMethod = glory_apiGrpc.getGetKnowledgeGraphNodeMethod) == null) {
+          glory_apiGrpc.getGetKnowledgeGraphNodeMethod = getGetKnowledgeGraphNodeMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphNodeRequest, com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphNodeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetKnowledgeGraphNode"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphNodeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphNodeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetKnowledgeGraphNode"))
+              .build();
+        }
+      }
+    }
+    return getGetKnowledgeGraphNodeMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.GetMajorCodeRequest,
       com.zhijiejiaoyu.glory_api.course.GetMajorCodeResponse> getGetMajorCodeMethod;
 
@@ -10710,6 +10741,13 @@ public final class glory_apiGrpc {
     default void getKnowledgeGraph(com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetKnowledgeGraphMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void getKnowledgeGraphNode(com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphNodeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphNodeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetKnowledgeGraphNodeMethod(), responseObserver);
     }
 
     /**
@@ -13211,6 +13249,14 @@ public final class glory_apiGrpc {
 
     /**
      */
+    public void getKnowledgeGraphNode(com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphNodeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphNodeResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetKnowledgeGraphNodeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
     public void getMajorCode(com.zhijiejiaoyu.glory_api.course.GetMajorCodeRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.GetMajorCodeResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -15436,6 +15482,13 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphResponse getKnowledgeGraph(com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetKnowledgeGraphMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphNodeResponse getKnowledgeGraphNode(com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphNodeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetKnowledgeGraphNodeMethod(), getCallOptions(), request);
     }
 
     /**
@@ -17926,6 +17979,14 @@ public final class glory_apiGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphNodeResponse> getKnowledgeGraphNode(
+        com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphNodeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetKnowledgeGraphNodeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.GetMajorCodeResponse> getMajorCode(
         com.zhijiejiaoyu.glory_api.course.GetMajorCodeRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -18279,15 +18340,16 @@ public final class glory_apiGrpc {
   private static final int METHODID_LIST_COURSE = 263;
   private static final int METHODID_CREATE_KNOWLEDGE_GRAPH = 264;
   private static final int METHODID_GET_KNOWLEDGE_GRAPH = 265;
-  private static final int METHODID_GET_MAJOR_CODE = 266;
-  private static final int METHODID_GET_COURSE_IDS = 267;
-  private static final int METHODID_ENROLL_COURSE = 268;
-  private static final int METHODID_DELETE_MY_COURSE = 269;
-  private static final int METHODID_UPDATE_COURSE_PROGRESS = 270;
-  private static final int METHODID_LIST_MY_COURSE = 271;
-  private static final int METHODID_LIST_TEACHING_PLAN = 272;
-  private static final int METHODID_CREATE_TEACHING_PLAN = 273;
-  private static final int METHODID_UPDATE_TEACHING_PLAN = 274;
+  private static final int METHODID_GET_KNOWLEDGE_GRAPH_NODE = 266;
+  private static final int METHODID_GET_MAJOR_CODE = 267;
+  private static final int METHODID_GET_COURSE_IDS = 268;
+  private static final int METHODID_ENROLL_COURSE = 269;
+  private static final int METHODID_DELETE_MY_COURSE = 270;
+  private static final int METHODID_UPDATE_COURSE_PROGRESS = 271;
+  private static final int METHODID_LIST_MY_COURSE = 272;
+  private static final int METHODID_LIST_TEACHING_PLAN = 273;
+  private static final int METHODID_CREATE_TEACHING_PLAN = 274;
+  private static final int METHODID_UPDATE_TEACHING_PLAN = 275;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -19369,6 +19431,10 @@ public final class glory_apiGrpc {
         case METHODID_GET_KNOWLEDGE_GRAPH:
           serviceImpl.getKnowledgeGraph((com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphResponse>) responseObserver);
+          break;
+        case METHODID_GET_KNOWLEDGE_GRAPH_NODE:
+          serviceImpl.getKnowledgeGraphNode((com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphNodeRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphNodeResponse>) responseObserver);
           break;
         case METHODID_GET_MAJOR_CODE:
           serviceImpl.getMajorCode((com.zhijiejiaoyu.glory_api.course.GetMajorCodeRequest) request,
@@ -21287,6 +21353,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphResponse>(
                 service, METHODID_GET_KNOWLEDGE_GRAPH)))
         .addMethod(
+          getGetKnowledgeGraphNodeMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphNodeRequest,
+              com.zhijiejiaoyu.glory_api.course.GetKnowledgeGraphNodeResponse>(
+                service, METHODID_GET_KNOWLEDGE_GRAPH_NODE)))
+        .addMethod(
           getGetMajorCodeMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -21663,6 +21736,7 @@ public final class glory_apiGrpc {
               .addMethod(getListCourseMethod())
               .addMethod(getCreateKnowledgeGraphMethod())
               .addMethod(getGetKnowledgeGraphMethod())
+              .addMethod(getGetKnowledgeGraphNodeMethod())
               .addMethod(getGetMajorCodeMethod())
               .addMethod(getGetCourseIdsMethod())
               .addMethod(getEnrollCourseMethod())
