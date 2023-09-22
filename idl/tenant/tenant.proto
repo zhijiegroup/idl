@@ -118,3 +118,12 @@ message ExitTenantRequest {
 message ExitTenantResponse {
   base.BaseResponse base_resp = 1;
 }
+
+message InitTenantRequest {
+  base.BaseRequest base_request = 1;
+  int64 tenant_id = 2;
+}
+
+message InitTenantResponse {
+  base.BaseResponse base_resp = 1;
+}
