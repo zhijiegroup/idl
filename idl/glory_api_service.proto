@@ -1066,6 +1066,9 @@ service glory_api {
   rpc GetKnowledgeGraph(GetKnowledgeGraphRequest) returns (GetKnowledgeGraphResponse) {
     option (api.post) = '/api/course_kg/get_knowledge_graph';
   }
+  rpc GetKnowledgeGraphNode(GetKnowledgeGraphNodeRequest) returns(GetKnowledgeGraphNodeResponse) {
+    option (api.post) = '/api/course_kg/get_knowledge_graph_node';
+  }
   rpc GetMajorCode(GetMajorCodeRequest) returns (GetMajorCodeResponse) {
     option (api.get) = '/api/course/get_major_code';
   }

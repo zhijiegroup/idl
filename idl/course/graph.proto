@@ -26,6 +26,25 @@ message KnowledgeGraph {
     repeated Edge edge = 2; // 边
 }
 
+message NodeDetail {
+    int64 id = 1;
+    string code = 2;
+    string name = 3;
+    string desc = 4;
+    string organization = 5;
+    string level = 6;
+    string industry = 7;
+    string type = 8;
+    string cover = 9;
+    string classification = 10;
+    int32 module = 11;
+    string major = 12;
+    string teacher = 17;
+    float knowledge_hours = 18;
+    float skill_hours = 19;
+    string created_at = 20;
+}
+
 message CreateKnowledgeGraphRequest {
     base.BaseRequest base_request = 1;
 }
@@ -42,4 +61,15 @@ message GetKnowledgeGraphRequest {
 message GetKnowledgeGraphResponse {
     base.BaseResponse base_resp = 1;
     KnowledgeGraph graph = 2; // 知识图谱
+}
+
+message GetKnowledgeGraphNodeRequest {
+    base.BaseRequest base_request = 1;
+    string type = 2;
+    int64 id = 3;
+}
+
+message GetKnowledgeGraphNodeResponse {
+    base.BaseResponse base_resp = 1;
+    NodeDetail node_detail = 2;
 }
