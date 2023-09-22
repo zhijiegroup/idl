@@ -8571,6 +8571,192 @@ public final class glory_apiGrpc {
     return getUpdateTeachingPlanMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.CreateEduSchemeRequest,
+      com.zhijiejiaoyu.glory_api.course.CreateEduSchemeResponse> getCreateEduSchemeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateEduScheme",
+      requestType = com.zhijiejiaoyu.glory_api.course.CreateEduSchemeRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.CreateEduSchemeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.CreateEduSchemeRequest,
+      com.zhijiejiaoyu.glory_api.course.CreateEduSchemeResponse> getCreateEduSchemeMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.CreateEduSchemeRequest, com.zhijiejiaoyu.glory_api.course.CreateEduSchemeResponse> getCreateEduSchemeMethod;
+    if ((getCreateEduSchemeMethod = glory_apiGrpc.getCreateEduSchemeMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCreateEduSchemeMethod = glory_apiGrpc.getCreateEduSchemeMethod) == null) {
+          glory_apiGrpc.getCreateEduSchemeMethod = getCreateEduSchemeMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.CreateEduSchemeRequest, com.zhijiejiaoyu.glory_api.course.CreateEduSchemeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateEduScheme"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.CreateEduSchemeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.CreateEduSchemeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CreateEduScheme"))
+              .build();
+        }
+      }
+    }
+    return getCreateEduSchemeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.UpdateEduSchemeRequest,
+      com.zhijiejiaoyu.glory_api.course.UpdateEduSchemeResponse> getUpdateEduSchemeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateEduScheme",
+      requestType = com.zhijiejiaoyu.glory_api.course.UpdateEduSchemeRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.UpdateEduSchemeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.UpdateEduSchemeRequest,
+      com.zhijiejiaoyu.glory_api.course.UpdateEduSchemeResponse> getUpdateEduSchemeMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.UpdateEduSchemeRequest, com.zhijiejiaoyu.glory_api.course.UpdateEduSchemeResponse> getUpdateEduSchemeMethod;
+    if ((getUpdateEduSchemeMethod = glory_apiGrpc.getUpdateEduSchemeMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getUpdateEduSchemeMethod = glory_apiGrpc.getUpdateEduSchemeMethod) == null) {
+          glory_apiGrpc.getUpdateEduSchemeMethod = getUpdateEduSchemeMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.UpdateEduSchemeRequest, com.zhijiejiaoyu.glory_api.course.UpdateEduSchemeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateEduScheme"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.UpdateEduSchemeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.UpdateEduSchemeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("UpdateEduScheme"))
+              .build();
+        }
+      }
+    }
+    return getUpdateEduSchemeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.ListEduSchemeRequest,
+      com.zhijiejiaoyu.glory_api.course.ListEduSchemeResponse> getListEduSchemeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListEduScheme",
+      requestType = com.zhijiejiaoyu.glory_api.course.ListEduSchemeRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.ListEduSchemeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.ListEduSchemeRequest,
+      com.zhijiejiaoyu.glory_api.course.ListEduSchemeResponse> getListEduSchemeMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.ListEduSchemeRequest, com.zhijiejiaoyu.glory_api.course.ListEduSchemeResponse> getListEduSchemeMethod;
+    if ((getListEduSchemeMethod = glory_apiGrpc.getListEduSchemeMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListEduSchemeMethod = glory_apiGrpc.getListEduSchemeMethod) == null) {
+          glory_apiGrpc.getListEduSchemeMethod = getListEduSchemeMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.ListEduSchemeRequest, com.zhijiejiaoyu.glory_api.course.ListEduSchemeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListEduScheme"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.ListEduSchemeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.ListEduSchemeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListEduScheme"))
+              .build();
+        }
+      }
+    }
+    return getListEduSchemeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.EduSchemeDetailRequest,
+      com.zhijiejiaoyu.glory_api.course.EduSchemeDetailResponse> getEduSchemeDetailMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "EduSchemeDetail",
+      requestType = com.zhijiejiaoyu.glory_api.course.EduSchemeDetailRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.EduSchemeDetailResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.EduSchemeDetailRequest,
+      com.zhijiejiaoyu.glory_api.course.EduSchemeDetailResponse> getEduSchemeDetailMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.EduSchemeDetailRequest, com.zhijiejiaoyu.glory_api.course.EduSchemeDetailResponse> getEduSchemeDetailMethod;
+    if ((getEduSchemeDetailMethod = glory_apiGrpc.getEduSchemeDetailMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getEduSchemeDetailMethod = glory_apiGrpc.getEduSchemeDetailMethod) == null) {
+          glory_apiGrpc.getEduSchemeDetailMethod = getEduSchemeDetailMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.EduSchemeDetailRequest, com.zhijiejiaoyu.glory_api.course.EduSchemeDetailResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "EduSchemeDetail"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.EduSchemeDetailRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.EduSchemeDetailResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("EduSchemeDetail"))
+              .build();
+        }
+      }
+    }
+    return getEduSchemeDetailMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.DeleteEduSchemeRequest,
+      com.zhijiejiaoyu.glory_api.course.DeleteEduSchemeResponse> getDeleteEduSchemeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteEduScheme",
+      requestType = com.zhijiejiaoyu.glory_api.course.DeleteEduSchemeRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.DeleteEduSchemeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.DeleteEduSchemeRequest,
+      com.zhijiejiaoyu.glory_api.course.DeleteEduSchemeResponse> getDeleteEduSchemeMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.DeleteEduSchemeRequest, com.zhijiejiaoyu.glory_api.course.DeleteEduSchemeResponse> getDeleteEduSchemeMethod;
+    if ((getDeleteEduSchemeMethod = glory_apiGrpc.getDeleteEduSchemeMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getDeleteEduSchemeMethod = glory_apiGrpc.getDeleteEduSchemeMethod) == null) {
+          glory_apiGrpc.getDeleteEduSchemeMethod = getDeleteEduSchemeMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.DeleteEduSchemeRequest, com.zhijiejiaoyu.glory_api.course.DeleteEduSchemeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteEduScheme"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.DeleteEduSchemeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.DeleteEduSchemeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("DeleteEduScheme"))
+              .build();
+        }
+      }
+    }
+    return getDeleteEduSchemeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeRequest,
+      com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeResponse> getDistributeEduSchemeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DistributeEduScheme",
+      requestType = com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeRequest,
+      com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeResponse> getDistributeEduSchemeMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeRequest, com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeResponse> getDistributeEduSchemeMethod;
+    if ((getDistributeEduSchemeMethod = glory_apiGrpc.getDistributeEduSchemeMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getDistributeEduSchemeMethod = glory_apiGrpc.getDistributeEduSchemeMethod) == null) {
+          glory_apiGrpc.getDistributeEduSchemeMethod = getDistributeEduSchemeMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeRequest, com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DistributeEduScheme"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("DistributeEduScheme"))
+              .build();
+        }
+      }
+    }
+    return getDistributeEduSchemeMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -10827,6 +11013,51 @@ public final class glory_apiGrpc {
     default void updateTeachingPlan(com.zhijiejiaoyu.glory_api.course.UpdateTeachingPlanRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.UpdateTeachingPlanResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateTeachingPlanMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 培养方案
+     * </pre>
+     */
+    default void createEduScheme(com.zhijiejiaoyu.glory_api.course.CreateEduSchemeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.CreateEduSchemeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateEduSchemeMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updateEduScheme(com.zhijiejiaoyu.glory_api.course.UpdateEduSchemeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.UpdateEduSchemeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateEduSchemeMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void listEduScheme(com.zhijiejiaoyu.glory_api.course.ListEduSchemeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListEduSchemeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListEduSchemeMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void eduSchemeDetail(com.zhijiejiaoyu.glory_api.course.EduSchemeDetailRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.EduSchemeDetailResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getEduSchemeDetailMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void deleteEduScheme(com.zhijiejiaoyu.glory_api.course.DeleteEduSchemeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.DeleteEduSchemeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteEduSchemeMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void distributeEduScheme(com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDistributeEduSchemeMethod(), responseObserver);
     }
   }
 
@@ -13342,6 +13573,57 @@ public final class glory_apiGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateTeachingPlanMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * 培养方案
+     * </pre>
+     */
+    public void createEduScheme(com.zhijiejiaoyu.glory_api.course.CreateEduSchemeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.CreateEduSchemeResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateEduSchemeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateEduScheme(com.zhijiejiaoyu.glory_api.course.UpdateEduSchemeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.UpdateEduSchemeResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateEduSchemeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void listEduScheme(com.zhijiejiaoyu.glory_api.course.ListEduSchemeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListEduSchemeResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListEduSchemeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void eduSchemeDetail(com.zhijiejiaoyu.glory_api.course.EduSchemeDetailRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.EduSchemeDetailResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getEduSchemeDetailMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deleteEduScheme(com.zhijiejiaoyu.glory_api.course.DeleteEduSchemeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.DeleteEduSchemeResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteEduSchemeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void distributeEduScheme(com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDistributeEduSchemeMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -15568,6 +15850,51 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.course.UpdateTeachingPlanResponse updateTeachingPlan(com.zhijiejiaoyu.glory_api.course.UpdateTeachingPlanRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateTeachingPlanMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 培养方案
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CreateEduSchemeResponse createEduScheme(com.zhijiejiaoyu.glory_api.course.CreateEduSchemeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateEduSchemeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.course.UpdateEduSchemeResponse updateEduScheme(com.zhijiejiaoyu.glory_api.course.UpdateEduSchemeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateEduSchemeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.course.ListEduSchemeResponse listEduScheme(com.zhijiejiaoyu.glory_api.course.ListEduSchemeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListEduSchemeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.course.EduSchemeDetailResponse eduSchemeDetail(com.zhijiejiaoyu.glory_api.course.EduSchemeDetailRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getEduSchemeDetailMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.course.DeleteEduSchemeResponse deleteEduScheme(com.zhijiejiaoyu.glory_api.course.DeleteEduSchemeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteEduSchemeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeResponse distributeEduScheme(com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDistributeEduSchemeMethod(), getCallOptions(), request);
     }
   }
 
@@ -18072,6 +18399,57 @@ public final class glory_apiGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateTeachingPlanMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * 培养方案
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.CreateEduSchemeResponse> createEduScheme(
+        com.zhijiejiaoyu.glory_api.course.CreateEduSchemeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateEduSchemeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.UpdateEduSchemeResponse> updateEduScheme(
+        com.zhijiejiaoyu.glory_api.course.UpdateEduSchemeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateEduSchemeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.ListEduSchemeResponse> listEduScheme(
+        com.zhijiejiaoyu.glory_api.course.ListEduSchemeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListEduSchemeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.EduSchemeDetailResponse> eduSchemeDetail(
+        com.zhijiejiaoyu.glory_api.course.EduSchemeDetailRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getEduSchemeDetailMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.DeleteEduSchemeResponse> deleteEduScheme(
+        com.zhijiejiaoyu.glory_api.course.DeleteEduSchemeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteEduSchemeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeResponse> distributeEduScheme(
+        com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDistributeEduSchemeMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_EXAMPLE = 0;
@@ -18350,6 +18728,12 @@ public final class glory_apiGrpc {
   private static final int METHODID_LIST_TEACHING_PLAN = 273;
   private static final int METHODID_CREATE_TEACHING_PLAN = 274;
   private static final int METHODID_UPDATE_TEACHING_PLAN = 275;
+  private static final int METHODID_CREATE_EDU_SCHEME = 276;
+  private static final int METHODID_UPDATE_EDU_SCHEME = 277;
+  private static final int METHODID_LIST_EDU_SCHEME = 278;
+  private static final int METHODID_EDU_SCHEME_DETAIL = 279;
+  private static final int METHODID_DELETE_EDU_SCHEME = 280;
+  private static final int METHODID_DISTRIBUTE_EDU_SCHEME = 281;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -19471,6 +19855,30 @@ public final class glory_apiGrpc {
         case METHODID_UPDATE_TEACHING_PLAN:
           serviceImpl.updateTeachingPlan((com.zhijiejiaoyu.glory_api.course.UpdateTeachingPlanRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.UpdateTeachingPlanResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_EDU_SCHEME:
+          serviceImpl.createEduScheme((com.zhijiejiaoyu.glory_api.course.CreateEduSchemeRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.CreateEduSchemeResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_EDU_SCHEME:
+          serviceImpl.updateEduScheme((com.zhijiejiaoyu.glory_api.course.UpdateEduSchemeRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.UpdateEduSchemeResponse>) responseObserver);
+          break;
+        case METHODID_LIST_EDU_SCHEME:
+          serviceImpl.listEduScheme((com.zhijiejiaoyu.glory_api.course.ListEduSchemeRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListEduSchemeResponse>) responseObserver);
+          break;
+        case METHODID_EDU_SCHEME_DETAIL:
+          serviceImpl.eduSchemeDetail((com.zhijiejiaoyu.glory_api.course.EduSchemeDetailRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.EduSchemeDetailResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_EDU_SCHEME:
+          serviceImpl.deleteEduScheme((com.zhijiejiaoyu.glory_api.course.DeleteEduSchemeRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.DeleteEduSchemeResponse>) responseObserver);
+          break;
+        case METHODID_DISTRIBUTE_EDU_SCHEME:
+          serviceImpl.distributeEduScheme((com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -21422,6 +21830,48 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.course.UpdateTeachingPlanRequest,
               com.zhijiejiaoyu.glory_api.course.UpdateTeachingPlanResponse>(
                 service, METHODID_UPDATE_TEACHING_PLAN)))
+        .addMethod(
+          getCreateEduSchemeMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.CreateEduSchemeRequest,
+              com.zhijiejiaoyu.glory_api.course.CreateEduSchemeResponse>(
+                service, METHODID_CREATE_EDU_SCHEME)))
+        .addMethod(
+          getUpdateEduSchemeMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.UpdateEduSchemeRequest,
+              com.zhijiejiaoyu.glory_api.course.UpdateEduSchemeResponse>(
+                service, METHODID_UPDATE_EDU_SCHEME)))
+        .addMethod(
+          getListEduSchemeMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.ListEduSchemeRequest,
+              com.zhijiejiaoyu.glory_api.course.ListEduSchemeResponse>(
+                service, METHODID_LIST_EDU_SCHEME)))
+        .addMethod(
+          getEduSchemeDetailMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.EduSchemeDetailRequest,
+              com.zhijiejiaoyu.glory_api.course.EduSchemeDetailResponse>(
+                service, METHODID_EDU_SCHEME_DETAIL)))
+        .addMethod(
+          getDeleteEduSchemeMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.DeleteEduSchemeRequest,
+              com.zhijiejiaoyu.glory_api.course.DeleteEduSchemeResponse>(
+                service, METHODID_DELETE_EDU_SCHEME)))
+        .addMethod(
+          getDistributeEduSchemeMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeRequest,
+              com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeResponse>(
+                service, METHODID_DISTRIBUTE_EDU_SCHEME)))
         .build();
   }
 
@@ -21746,6 +22196,12 @@ public final class glory_apiGrpc {
               .addMethod(getListTeachingPlanMethod())
               .addMethod(getCreateTeachingPlanMethod())
               .addMethod(getUpdateTeachingPlanMethod())
+              .addMethod(getCreateEduSchemeMethod())
+              .addMethod(getUpdateEduSchemeMethod())
+              .addMethod(getListEduSchemeMethod())
+              .addMethod(getEduSchemeDetailMethod())
+              .addMethod(getDeleteEduSchemeMethod())
+              .addMethod(getDistributeEduSchemeMethod())
               .build();
         }
       }

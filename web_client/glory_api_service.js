@@ -48,6 +48,7 @@ import * as course from "./course/course";
 import * as graph from "./course/graph";
 import * as user_course from "./course/user_course";
 import * as teaching_plan from "./course/teaching_plan";
+import * as edu_scheme from "./course/edu_scheme";
 export {
   user,
   address,
@@ -93,6 +94,7 @@ export {
   graph,
   user_course,
   teaching_plan,
+  edu_scheme,
 };
 
 import {
@@ -2222,6 +2224,52 @@ export class glory_api {
 
   UpdateTeachingPlan(request) {
     const uri = `${this.uriPrefix}/api/course/update_teaching_plan`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreateEduScheme(request) {
+    const uri = `${this.uriPrefix}/api/course/create_edu_scheme`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  UpdateEduScheme(request) {
+    const uri = `${this.uriPrefix}/api/course/update_edu_scheme`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListEduScheme(request) {
+    const uri = `${this.uriPrefix}/api/course/list_edu_scheme`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  EduSchemeDetail(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/course/edu_scheme_detail${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  DeleteEduScheme(request) {
+    const uri = `${this.uriPrefix}/api/course/delete_edu_scheme`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DistributeEduScheme(request) {
+    const uri = `${this.uriPrefix}/api/course/distribute_edu_scheme`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
