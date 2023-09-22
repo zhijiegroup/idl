@@ -740,6 +740,9 @@ service glory_api {
   rpc ExitTenant(ExitTenantRequest) returns (ExitTenantResponse) {
     option (api.get) = '/api/tenant/exit_tenant';
   }
+  rpc InitTenant(InitTenantRequest) returns (InitTenantResponse) {
+    option (api.get) = '/api/tenant/init_tenant';
+  }
 
   //tenant_dept
   rpc CreateTenantDept(CreateTenantDeptRequest) returns(CreateTenantDeptResponse) {
