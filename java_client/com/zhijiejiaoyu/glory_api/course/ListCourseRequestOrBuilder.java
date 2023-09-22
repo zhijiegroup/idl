@@ -43,6 +43,36 @@ public interface ListCourseRequestOrBuilder extends
   int getCourseModule();
 
   /**
+   * <pre>
+   * 专业代码
+   * </pre>
+   *
+   * <code>string major = 4;</code>
+   * @return The major.
+   */
+  java.lang.String getMajor();
+  /**
+   * <pre>
+   * 专业代码
+   * </pre>
+   *
+   * <code>string major = 4;</code>
+   * @return The bytes for major.
+   */
+  com.google.protobuf.ByteString
+      getMajorBytes();
+
+  /**
+   * <pre>
+   * 0: 全部 1: 中职 2:高职 3: 中高职
+   * </pre>
+   *
+   * <code>int32 level = 5;</code>
+   * @return The level.
+   */
+  int getLevel();
+
+  /**
    * <code>.base.PaginationRequest pagination = 100;</code>
    * @return Whether the pagination field is set.
    */

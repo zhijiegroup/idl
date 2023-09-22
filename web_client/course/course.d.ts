@@ -94,6 +94,10 @@ export interface ListCourseRequest {
   course_classification?: number;
   /** 全部:0 模块化课程:1 非模块化课程:2 定制课程：3 */
   course_module?: number;
+  /** 专业代码 */
+  major?: string;
+  /** 0: 全部 1: 中职 2:高职 3: 中高职 */
+  level?: number;
   pagination?: base.PaginationRequest;
 }
 

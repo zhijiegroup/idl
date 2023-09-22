@@ -126,6 +126,16 @@ export interface ListFinishedRoomResponse {
   pagination?: base.PaginationResponse;
 }
 
+export interface GetFinishedRoomRequest {
+  base_request?: base.BaseRequest;
+  room_id?: string;
+}
+
+export interface GetFinishedRoomResponse {
+  base_resp?: base.BaseResponse;
+  room?: FinishedRoom;
+}
+
 export interface GetLiveChartDataRequest {
   base_request?: base.BaseRequest;
   shop_id?: string;

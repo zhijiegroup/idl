@@ -1182,6 +1182,12 @@ export class glory_api {
     );
   }
 
+  GetFinishedRoom(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/live/get_finished_room${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
   Record(request) {
     const uri = `${this.uriPrefix}/api/live/record`;
     const body = JSONbigint.stringify(request);

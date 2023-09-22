@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListCourseRequest() {
+    major = "";
   }
 
   @java.lang.Override
@@ -73,6 +74,17 @@ private static final long serialVersionUID = 0L;
           case 24: {
 
             courseModule = input.readInt32();
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            major = s;
+            break;
+          }
+          case 40: {
+
+            level = input.readInt32();
             break;
           }
           case 802: {
@@ -176,6 +188,67 @@ private static final long serialVersionUID = 0L;
     return courseModule ;
   }
 
+  public static final int MAJOR_FIELD_NUMBER = 4;
+  private volatile java.lang.Object major ;
+  /**
+   * <pre>
+   * 专业代码
+   * </pre>
+   *
+   * <code>string major = 4;</code>
+   * @return The major.
+   */
+  @java.lang.Override
+  public java.lang.String getMajor() {
+    java.lang.Object ref = major ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      major = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 专业代码
+   * </pre>
+   *
+   * <code>string major = 4;</code>
+   * @return The bytes for major.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getMajorBytes() {
+    java.lang.Object ref = major ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      major = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int LEVEL_FIELD_NUMBER = 5;
+  private int level ;
+  /**
+   * <pre>
+   * 0: 全部 1: 中职 2:高职 3: 中高职
+   * </pre>
+   *
+   * <code>int32 level = 5;</code>
+   * @return The level.
+   */
+  @java.lang.Override
+  public int getLevel() {
+    return level ;
+  }
+
   public static final int PAGINATION_FIELD_NUMBER = 100;
   private com.zhijiejiaoyu.base.PaginationRequest pagination ;
   /**
@@ -225,6 +298,12 @@ private static final long serialVersionUID = 0L;
     if (courseModule != 0) {
       output.writeInt32(3, courseModule );
     }
+    if (!getMajorBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, major );
+    }
+    if (level != 0) {
+      output.writeInt32(5, level );
+    }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
     }
@@ -248,6 +327,13 @@ private static final long serialVersionUID = 0L;
     if (courseModule != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(3, courseModule );
+    }
+    if (!getMajorBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, major );
+    }
+    if (level != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(5, level );
     }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -277,6 +363,10 @@ private static final long serialVersionUID = 0L;
         != other.getCourseClassification()) return false;
     if (getCourseModule()
         != other.getCourseModule()) return false;
+    if (!getMajor()
+        .equals(other.getMajor())) return false;
+    if (getLevel()
+        != other.getLevel()) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -301,6 +391,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getCourseClassification();
     hash = (37 * hash) + COURSE_MODULE_FIELD_NUMBER;
     hash = (53 * hash) + getCourseModule();
+    hash = (37 * hash) + MAJOR_FIELD_NUMBER;
+    hash = (53 * hash) + getMajor().hashCode();
+    hash = (37 * hash) + LEVEL_FIELD_NUMBER;
+    hash = (53 * hash) + getLevel();
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
@@ -452,6 +546,10 @@ private static final long serialVersionUID = 0L;
 
       courseModule = 0;
 
+      major = "";
+
+      level = 0;
+
       if (paginationBuilder == null) {
         pagination = null;
       } else {
@@ -491,6 +589,8 @@ private static final long serialVersionUID = 0L;
       }
       result.courseClassification = courseClassification ;
       result.courseModule = courseModule ;
+      result.major = major ;
+      result.level = level ;
       if (paginationBuilder == null) {
         result.pagination = pagination ;
       } else {
@@ -552,6 +652,13 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getCourseModule() != 0) {
         setCourseModule(other.getCourseModule());
+      }
+      if (!other.getMajor().isEmpty()) {
+        major = other.major ;
+        onChanged();
+      }
+      if (other.getLevel() != 0) {
+        setLevel(other.getLevel());
       }
       if (other.hasPagination()) {
         mergePagination(other.getPagination());
@@ -786,6 +893,145 @@ private static final long serialVersionUID = 0L;
     public Builder clearCourseModule() {
       
       courseModule = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object major = "";
+    /**
+     * <pre>
+     * 专业代码
+     * </pre>
+     *
+     * <code>string major = 4;</code>
+     * @return The major.
+     */
+    public java.lang.String getMajor() {
+      java.lang.Object ref = major ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        major = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 专业代码
+     * </pre>
+     *
+     * <code>string major = 4;</code>
+     * @return The bytes for major.
+     */
+    public com.google.protobuf.ByteString
+        getMajorBytes() {
+      java.lang.Object ref = major ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        major = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 专业代码
+     * </pre>
+     *
+     * <code>string major = 4;</code>
+     * @param value The major to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMajor(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      major = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 专业代码
+     * </pre>
+     *
+     * <code>string major = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMajor() {
+      
+      major = getDefaultInstance().getMajor();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 专业代码
+     * </pre>
+     *
+     * <code>string major = 4;</code>
+     * @param value The bytes for major to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMajorBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      major = value;
+      onChanged();
+      return this;
+    }
+
+    private int level ;
+    /**
+     * <pre>
+     * 0: 全部 1: 中职 2:高职 3: 中高职
+     * </pre>
+     *
+     * <code>int32 level = 5;</code>
+     * @return The level.
+     */
+    @java.lang.Override
+    public int getLevel() {
+      return level ;
+    }
+    /**
+     * <pre>
+     * 0: 全部 1: 中职 2:高职 3: 中高职
+     * </pre>
+     *
+     * <code>int32 level = 5;</code>
+     * @param value The level to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLevel(int value) {
+      
+      level = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 0: 全部 1: 中职 2:高职 3: 中高职
+     * </pre>
+     *
+     * <code>int32 level = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearLevel() {
+      
+      level = 0;
       onChanged();
       return this;
     }

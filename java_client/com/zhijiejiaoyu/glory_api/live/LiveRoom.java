@@ -90,6 +90,16 @@ public final class LiveRoom {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_ListFinishedRoomResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetFinishedRoomRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetFinishedRoomRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetFinishedRoomResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetFinishedRoomResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_glory_api_GetLiveChartDataRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -220,44 +230,49 @@ public final class LiveRoom {
       "quest\"\226\001\n\030ListFinishedRoomResponse\022%\n\tba" +
       "se_resp\030\001 \001(\0132\022.base.BaseResponse\022%\n\004roo" +
       "m\030\002 \003(\0132\027.glory_api.FinishedRoom\022,\n\npagi" +
-      "nation\030d \001(\0132\030.base.PaginationResponse\"o" +
-      "\n\027GetLiveChartDataRequest\022\'\n\014base_reques" +
-      "t\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007shop_id\030\002 " +
-      "\001(\003\022\r\n\005start\030\003 \001(\003\022\013\n\003end\030\004 \001(\003\"{\n\rLiveC" +
-      "hartData\022\014\n\004date\030\001 \001(\t\022\023\n\013deal_amount\030\002 " +
-      "\001(\001\022\031\n\021room_buyer_amount\030\003 \001(\003\022\031\n\021room_o" +
-      "rder_amount\030\004 \001(\003\022\021\n\ttimestamp\030\005 \001(\003\"\222\001\n" +
-      "\010LiveData\0221\n\017live_chart_data\030\001 \003(\0132\030.glo" +
-      "ry_api.LiveChartData\022\031\n\021total_deal_amoun" +
-      "t\030\002 \001(\001\022\034\n\024total_visitor_amount\030\003 \001(\003\022\032\n" +
-      "\022total_order_amount\030\004 \001(\003\"i\n\030GetLiveChar" +
-      "tDataResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
-      "BaseResponse\022&\n\tlive_data\030\002 \001(\0132\023.glory_" +
-      "api.LiveData\"\216\001\n\031RecordLiveCallbackReque" +
-      "st\022\016\n\006domain\030\001 \001(\t\022\013\n\003app\030\002 \001(\t\022\016\n\006strea" +
-      "m\030\003 \001(\t\022\013\n\003uri\030\004 \001(\t\022\020\n\010duration\030\005 \001(\001\022\022" +
-      "\n\nstart_time\030\006 \001(\003\022\021\n\tstop_time\030\007 \001(\003\"C\n" +
-      "\032RecordLiveCallbackResponse\022%\n\tbase_resp" +
-      "\030\001 \001(\0132\022.base.BaseResponse\"\235\001\n\023VideoToTe" +
-      "xtSentence\022\021\n\tBeginTime\030\001 \001(\003\022\017\n\007EndTime" +
-      "\030\002 \001(\003\022\021\n\tChannelId\030\003 \001(\003\022\022\n\nSpeechRate\030" +
-      "\004 \001(\003\022\024\n\014EmotionValue\030\005 \001(\001\022\027\n\017SilenceDu" +
-      "ration\030\006 \001(\003\022\014\n\004Text\030\007 \001(\t\"F\n\021VideoToTex" +
-      "tResult\0221\n\tSentences\030\001 \003(\0132\036.glory_api.V" +
-      "ideoToTextSentence\"\322\001\n\032VideoToTextCallba" +
-      "ckRequest\022\016\n\006TaskId\030\001 \001(\t\022\022\n\nStatusCode\030" +
-      "\002 \001(\003\022\022\n\nStatusText\030\003 \001(\t\022\023\n\013RequestTime" +
-      "\030\004 \001(\003\022\021\n\tSolveTime\030\005 \001(\003\022\023\n\013BizDuration" +
-      "\030\006 \001(\003\022\021\n\tstop_time\030\007 \001(\003\022,\n\006Result\030\010 \001(" +
-      "\0132\034.glory_api.VideoToTextResult\"D\n\033Video" +
-      "ToTextCallbackResponse\022%\n\tbase_resp\030\001 \001(" +
-      "\0132\022.base.BaseResponse\"!\n\016LiveSSERequest\022" +
-      "\017\n\007room_id\030\001 \001(\003\"8\n\017LiveSSEResponse\022%\n\tb" +
-      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\"*\n\027Cl" +
-      "oseShopAllLiveRequest\022\017\n\007shop_id\030\001 \001(\003\"A" +
-      "\n\030CloseShopAllLiveResponse\022%\n\tbase_resp\030" +
-      "\001 \001(\0132\022.base.BaseResponseB#\n\037com.zhijiej" +
-      "iaoyu.glory_api.liveP\001b\006proto3"
+      "nation\030d \001(\0132\030.base.PaginationResponse\"R" +
+      "\n\026GetFinishedRoomRequest\022\'\n\014base_request" +
+      "\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007room_id\030\002 \001" +
+      "(\003\"g\n\027GetFinishedRoomResponse\022%\n\tbase_re" +
+      "sp\030\001 \001(\0132\022.base.BaseResponse\022%\n\004room\030\002 \001" +
+      "(\0132\027.glory_api.FinishedRoom\"o\n\027GetLiveCh" +
+      "artDataRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
+      "ase.BaseRequest\022\017\n\007shop_id\030\002 \001(\003\022\r\n\005star" +
+      "t\030\003 \001(\003\022\013\n\003end\030\004 \001(\003\"{\n\rLiveChartData\022\014\n" +
+      "\004date\030\001 \001(\t\022\023\n\013deal_amount\030\002 \001(\001\022\031\n\021room" +
+      "_buyer_amount\030\003 \001(\003\022\031\n\021room_order_amount" +
+      "\030\004 \001(\003\022\021\n\ttimestamp\030\005 \001(\003\"\222\001\n\010LiveData\0221" +
+      "\n\017live_chart_data\030\001 \003(\0132\030.glory_api.Live" +
+      "ChartData\022\031\n\021total_deal_amount\030\002 \001(\001\022\034\n\024" +
+      "total_visitor_amount\030\003 \001(\003\022\032\n\022total_orde" +
+      "r_amount\030\004 \001(\003\"i\n\030GetLiveChartDataRespon" +
+      "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
+      "e\022&\n\tlive_data\030\002 \001(\0132\023.glory_api.LiveDat" +
+      "a\"\216\001\n\031RecordLiveCallbackRequest\022\016\n\006domai" +
+      "n\030\001 \001(\t\022\013\n\003app\030\002 \001(\t\022\016\n\006stream\030\003 \001(\t\022\013\n\003" +
+      "uri\030\004 \001(\t\022\020\n\010duration\030\005 \001(\001\022\022\n\nstart_tim" +
+      "e\030\006 \001(\003\022\021\n\tstop_time\030\007 \001(\003\"C\n\032RecordLive" +
+      "CallbackResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
+      "se.BaseResponse\"\235\001\n\023VideoToTextSentence\022" +
+      "\021\n\tBeginTime\030\001 \001(\003\022\017\n\007EndTime\030\002 \001(\003\022\021\n\tC" +
+      "hannelId\030\003 \001(\003\022\022\n\nSpeechRate\030\004 \001(\003\022\024\n\014Em" +
+      "otionValue\030\005 \001(\001\022\027\n\017SilenceDuration\030\006 \001(" +
+      "\003\022\014\n\004Text\030\007 \001(\t\"F\n\021VideoToTextResult\0221\n\t" +
+      "Sentences\030\001 \003(\0132\036.glory_api.VideoToTextS" +
+      "entence\"\322\001\n\032VideoToTextCallbackRequest\022\016" +
+      "\n\006TaskId\030\001 \001(\t\022\022\n\nStatusCode\030\002 \001(\003\022\022\n\nSt" +
+      "atusText\030\003 \001(\t\022\023\n\013RequestTime\030\004 \001(\003\022\021\n\tS" +
+      "olveTime\030\005 \001(\003\022\023\n\013BizDuration\030\006 \001(\003\022\021\n\ts" +
+      "top_time\030\007 \001(\003\022,\n\006Result\030\010 \001(\0132\034.glory_a" +
+      "pi.VideoToTextResult\"D\n\033VideoToTextCallb" +
+      "ackResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
+      "seResponse\"!\n\016LiveSSERequest\022\017\n\007room_id\030" +
+      "\001 \001(\003\"8\n\017LiveSSEResponse\022%\n\tbase_resp\030\001 " +
+      "\001(\0132\022.base.BaseResponse\"*\n\027CloseShopAllL" +
+      "iveRequest\022\017\n\007shop_id\030\001 \001(\003\"A\n\030CloseShop" +
+      "AllLiveResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
+      "e.BaseResponseB#\n\037com.zhijiejiaoyu.glory" +
+      "_api.liveP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -354,86 +369,98 @@ public final class LiveRoom {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListFinishedRoomResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Room", "Pagination", });
-    internal_static_glory_api_GetLiveChartDataRequest_descriptor =
+    internal_static_glory_api_GetFinishedRoomRequest_descriptor =
       getDescriptor().getMessageTypes().get(15);
+    internal_static_glory_api_GetFinishedRoomRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetFinishedRoomRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "RoomId", });
+    internal_static_glory_api_GetFinishedRoomResponse_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_glory_api_GetFinishedRoomResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetFinishedRoomResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "Room", });
+    internal_static_glory_api_GetLiveChartDataRequest_descriptor =
+      getDescriptor().getMessageTypes().get(17);
     internal_static_glory_api_GetLiveChartDataRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetLiveChartDataRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "ShopId", "Start", "End", });
     internal_static_glory_api_LiveChartData_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_glory_api_LiveChartData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_LiveChartData_descriptor,
         new java.lang.String[] { "Date", "DealAmount", "RoomBuyerAmount", "RoomOrderAmount", "Timestamp", });
     internal_static_glory_api_LiveData_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_glory_api_LiveData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_LiveData_descriptor,
         new java.lang.String[] { "LiveChartData", "TotalDealAmount", "TotalVisitorAmount", "TotalOrderAmount", });
     internal_static_glory_api_GetLiveChartDataResponse_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_glory_api_GetLiveChartDataResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetLiveChartDataResponse_descriptor,
         new java.lang.String[] { "BaseResp", "LiveData", });
     internal_static_glory_api_RecordLiveCallbackRequest_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_glory_api_RecordLiveCallbackRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_RecordLiveCallbackRequest_descriptor,
         new java.lang.String[] { "Domain", "App", "Stream", "Uri", "Duration", "StartTime", "StopTime", });
     internal_static_glory_api_RecordLiveCallbackResponse_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_glory_api_RecordLiveCallbackResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_RecordLiveCallbackResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_VideoToTextSentence_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_glory_api_VideoToTextSentence_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_VideoToTextSentence_descriptor,
         new java.lang.String[] { "BeginTime", "EndTime", "ChannelId", "SpeechRate", "EmotionValue", "SilenceDuration", "Text", });
     internal_static_glory_api_VideoToTextResult_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_glory_api_VideoToTextResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_VideoToTextResult_descriptor,
         new java.lang.String[] { "Sentences", });
     internal_static_glory_api_VideoToTextCallbackRequest_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_glory_api_VideoToTextCallbackRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_VideoToTextCallbackRequest_descriptor,
         new java.lang.String[] { "TaskId", "StatusCode", "StatusText", "RequestTime", "SolveTime", "BizDuration", "StopTime", "Result", });
     internal_static_glory_api_VideoToTextCallbackResponse_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_glory_api_VideoToTextCallbackResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_VideoToTextCallbackResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_LiveSSERequest_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_glory_api_LiveSSERequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_LiveSSERequest_descriptor,
         new java.lang.String[] { "RoomId", });
     internal_static_glory_api_LiveSSEResponse_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_glory_api_LiveSSEResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_LiveSSEResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_CloseShopAllLiveRequest_descriptor =
-      getDescriptor().getMessageTypes().get(27);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_glory_api_CloseShopAllLiveRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CloseShopAllLiveRequest_descriptor,
         new java.lang.String[] { "ShopId", });
     internal_static_glory_api_CloseShopAllLiveResponse_descriptor =
-      getDescriptor().getMessageTypes().get(28);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_glory_api_CloseShopAllLiveResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CloseShopAllLiveResponse_descriptor,

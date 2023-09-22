@@ -635,6 +635,10 @@ list the permissions that supported */
     request: live_room.ListFinishedRoomRequest
   ): Promise<live_room.ListFinishedRoomResponse>;
 
+  GetFinishedRoom(
+    request: live_room.GetFinishedRoomRequest
+  ): Promise<live_room.GetFinishedRoomResponse>;
+
   Record(
     request: live_plan.LiveRecordRequest
   ): Promise<live_plan.LiveRecordResponse>;
