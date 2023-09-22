@@ -1198,6 +1198,10 @@ CreateLivePlanProduct create live plan product */
     request: graph.GetKnowledgeGraphRequest
   ): Promise<graph.GetKnowledgeGraphResponse>;
 
+  GetKnowledgeGraphNode(
+    request: graph.GetKnowledgeGraphNodeRequest
+  ): Promise<graph.GetKnowledgeGraphNodeResponse>;
+
   GetMajorCode(
     request: course.GetMajorCodeRequest
   ): Promise<course.GetMajorCodeResponse>;
