@@ -77,6 +77,8 @@ message ListCourseRequest {
   base.BaseRequest base_request = 1;
   int32 course_classification = 2; // 课程分类
   int32 course_module = 3; // 全部:0 模块化课程:1 非模块化课程:2 定制课程：3
+  string major = 4; // 专业代码
+  int32 level = 5; // 0: 全部 1: 中职 2:高职 3: 中高职
   base.PaginationRequest pagination = 100;
 }
 
