@@ -114,6 +114,15 @@ message ListFinishedRoomResponse {
   base.PaginationResponse pagination = 100;
 }
 
+message GetFinishedRoomRequest {
+  base.BaseRequest base_request = 1;
+  int64 room_id = 2;
+}
+message GetFinishedRoomResponse {
+  base.BaseResponse base_resp = 1;
+  FinishedRoom room = 2;
+}
+
 message GetLiveChartDataRequest {
   base.BaseRequest base_request = 1;
   int64 shop_id = 2;

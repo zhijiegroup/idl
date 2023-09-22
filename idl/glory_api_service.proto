@@ -569,6 +569,9 @@ service glory_api {
   rpc ListFinishedRoom(ListFinishedRoomRequest) returns (ListFinishedRoomResponse) {
     option (api.post) = '/api/live/list_finished_room';
   }
+  rpc GetFinishedRoom(GetFinishedRoomRequest) returns (GetFinishedRoomResponse) {
+    option (api.get) = '/api/live/get_finished_room';
+  }
 
   rpc Record(LiveRecordRequest) returns (LiveRecordResponse) {
     option (api.post) = '/api/live/record';
