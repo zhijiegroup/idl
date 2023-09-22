@@ -94,6 +94,7 @@ message EduSchemeDetailResponse {
 message DistributeEduSchemeRequest {
     base.BaseRequest base_request = 1;
     int64 edu_scheme_id = 2;
+    repeated int64 clas_ids = 3;
 }
 
 message DistributeEduSchemeResponse {
