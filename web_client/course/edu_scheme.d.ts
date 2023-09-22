@@ -98,6 +98,7 @@ export interface EduSchemeDetailResponse {
 export interface DistributeEduSchemeRequest {
   base_request?: base.BaseRequest;
   edu_scheme_id?: string;
+  clas_ids?: Array<string>;
 }
 
 export interface DistributeEduSchemeResponse {

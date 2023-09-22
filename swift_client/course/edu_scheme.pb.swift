@@ -368,6 +368,8 @@ struct GloryApi_DistributeEduSchemeRequest {
 
   var eduSchemeID: Int64 = 0
 
+  var clasIds: [Int64] = []
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1059,6 +1061,7 @@ extension GloryApi_DistributeEduSchemeRequest: SwiftProtobuf.Message, SwiftProto
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
     2: .standard(proto: "edu_scheme_id"),
+    3: .standard(proto: "clas_ids"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1069,6 +1072,7 @@ extension GloryApi_DistributeEduSchemeRequest: SwiftProtobuf.Message, SwiftProto
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.eduSchemeID) }()
+      case 3: try { try decoder.decodeRepeatedInt64Field(value: &self.clasIds) }()
       default: break
       }
     }
@@ -1085,12 +1089,16 @@ extension GloryApi_DistributeEduSchemeRequest: SwiftProtobuf.Message, SwiftProto
     if self.eduSchemeID != 0 {
       try visitor.visitSingularInt64Field(value: self.eduSchemeID, fieldNumber: 2)
     }
+    if !self.clasIds.isEmpty {
+      try visitor.visitPackedInt64Field(value: self.clasIds, fieldNumber: 3)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_DistributeEduSchemeRequest, rhs: GloryApi_DistributeEduSchemeRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.eduSchemeID != rhs.eduSchemeID {return false}
+    if lhs.clasIds != rhs.clasIds {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private TeachingPlan() {
-    courseName = "";
+    chapterName = "";
     courseModuleName = "";
     teachingPlanContent = "";
   }
@@ -63,13 +63,13 @@ private static final long serialVersionUID = 0L;
           }
           case 24: {
 
-            courseId = input.readInt64();
+            chapterId = input.readInt64();
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            courseName = s;
+            chapterName = s;
             break;
           }
           case 40: {
@@ -143,49 +143,49 @@ private static final long serialVersionUID = 0L;
     return teachingPlanType ;
   }
 
-  public static final int COURSE_ID_FIELD_NUMBER = 3;
-  private long courseId ;
+  public static final int CHAPTER_ID_FIELD_NUMBER = 3;
+  private long chapterId ;
   /**
-   * <code>int64 course_id = 3;</code>
-   * @return The courseId.
+   * <code>int64 chapter_id = 3;</code>
+   * @return The chapterId.
    */
   @java.lang.Override
-  public long getCourseId() {
-    return courseId ;
+  public long getChapterId() {
+    return chapterId ;
   }
 
-  public static final int COURSE_NAME_FIELD_NUMBER = 4;
-  private volatile java.lang.Object courseName ;
+  public static final int CHAPTER_NAME_FIELD_NUMBER = 4;
+  private volatile java.lang.Object chapterName ;
   /**
-   * <code>string course_name = 4;</code>
-   * @return The courseName.
+   * <code>string chapter_name = 4;</code>
+   * @return The chapterName.
    */
   @java.lang.Override
-  public java.lang.String getCourseName() {
-    java.lang.Object ref = courseName ;
+  public java.lang.String getChapterName() {
+    java.lang.Object ref = chapterName ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      courseName = s;
+      chapterName = s;
       return s;
     }
   }
   /**
-   * <code>string course_name = 4;</code>
-   * @return The bytes for courseName.
+   * <code>string chapter_name = 4;</code>
+   * @return The bytes for chapterName.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getCourseNameBytes() {
-    java.lang.Object ref = courseName ;
+      getChapterNameBytes() {
+    java.lang.Object ref = chapterName ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      courseName = b;
+      chapterName = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -299,11 +299,11 @@ private static final long serialVersionUID = 0L;
     if (teachingPlanType != 0) {
       output.writeInt32(2, teachingPlanType );
     }
-    if (courseId != 0L) {
-      output.writeInt64(3, courseId );
+    if (chapterId != 0L) {
+      output.writeInt64(3, chapterId );
     }
-    if (!getCourseNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, courseName );
+    if (!getChapterNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, chapterName );
     }
     if (courseModuleId != 0L) {
       output.writeInt64(5, courseModuleId );
@@ -331,12 +331,12 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(2, teachingPlanType );
     }
-    if (courseId != 0L) {
+    if (chapterId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(3, courseId );
+        .computeInt64Size(3, chapterId );
     }
-    if (!getCourseNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, courseName );
+    if (!getChapterNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, chapterName );
     }
     if (courseModuleId != 0L) {
       size += com.google.protobuf.CodedOutputStream
@@ -367,10 +367,10 @@ private static final long serialVersionUID = 0L;
         != other.getTeachingPlanId()) return false;
     if (getTeachingPlanType()
         != other.getTeachingPlanType()) return false;
-    if (getCourseId()
-        != other.getCourseId()) return false;
-    if (!getCourseName()
-        .equals(other.getCourseName())) return false;
+    if (getChapterId()
+        != other.getChapterId()) return false;
+    if (!getChapterName()
+        .equals(other.getChapterName())) return false;
     if (getCourseModuleId()
         != other.getCourseModuleId()) return false;
     if (!getCourseModuleName()
@@ -393,11 +393,11 @@ private static final long serialVersionUID = 0L;
         getTeachingPlanId());
     hash = (37 * hash) + TEACHING_PLAN_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getTeachingPlanType();
-    hash = (37 * hash) + COURSE_ID_FIELD_NUMBER;
+    hash = (37 * hash) + CHAPTER_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getCourseId());
-    hash = (37 * hash) + COURSE_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getCourseName().hashCode();
+        getChapterId());
+    hash = (37 * hash) + CHAPTER_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getChapterName().hashCode();
     hash = (37 * hash) + COURSE_MODULE_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getCourseModuleId());
@@ -542,9 +542,9 @@ private static final long serialVersionUID = 0L;
 
       teachingPlanType = 0;
 
-      courseId = 0L;
+      chapterId = 0L;
 
-      courseName = "";
+      chapterName = "";
 
       courseModuleId = 0L;
 
@@ -580,8 +580,8 @@ private static final long serialVersionUID = 0L;
       com.zhijiejiaoyu.glory_api.course.TeachingPlan result = new com.zhijiejiaoyu.glory_api.course.TeachingPlan(this);
       result.teachingPlanId = teachingPlanId ;
       result.teachingPlanType = teachingPlanType ;
-      result.courseId = courseId ;
-      result.courseName = courseName ;
+      result.chapterId = chapterId ;
+      result.chapterName = chapterName ;
       result.courseModuleId = courseModuleId ;
       result.courseModuleName = courseModuleName ;
       result.teachingPlanContent = teachingPlanContent ;
@@ -639,11 +639,11 @@ private static final long serialVersionUID = 0L;
       if (other.getTeachingPlanType() != 0) {
         setTeachingPlanType(other.getTeachingPlanType());
       }
-      if (other.getCourseId() != 0L) {
-        setCourseId(other.getCourseId());
+      if (other.getChapterId() != 0L) {
+        setChapterId(other.getChapterId());
       }
-      if (!other.getCourseName().isEmpty()) {
-        courseName = other.courseName ;
+      if (!other.getChapterName().isEmpty()) {
+        chapterName = other.chapterName ;
         onChanged();
       }
       if (other.getCourseModuleId() != 0L) {
@@ -748,109 +748,109 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long courseId ;
+    private long chapterId ;
     /**
-     * <code>int64 course_id = 3;</code>
-     * @return The courseId.
+     * <code>int64 chapter_id = 3;</code>
+     * @return The chapterId.
      */
     @java.lang.Override
-    public long getCourseId() {
-      return courseId ;
+    public long getChapterId() {
+      return chapterId ;
     }
     /**
-     * <code>int64 course_id = 3;</code>
-     * @param value The courseId to set.
+     * <code>int64 chapter_id = 3;</code>
+     * @param value The chapterId to set.
      * @return This builder for chaining.
      */
-    public Builder setCourseId(long value) {
+    public Builder setChapterId(long value) {
       
-      courseId = value;
+      chapterId = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 course_id = 3;</code>
+     * <code>int64 chapter_id = 3;</code>
      * @return This builder for chaining.
      */
-    public Builder clearCourseId() {
+    public Builder clearChapterId() {
       
-      courseId = 0L;
+      chapterId = 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object courseName = "";
+    private java.lang.Object chapterName = "";
     /**
-     * <code>string course_name = 4;</code>
-     * @return The courseName.
+     * <code>string chapter_name = 4;</code>
+     * @return The chapterName.
      */
-    public java.lang.String getCourseName() {
-      java.lang.Object ref = courseName ;
+    public java.lang.String getChapterName() {
+      java.lang.Object ref = chapterName ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        courseName = s;
+        chapterName = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string course_name = 4;</code>
-     * @return The bytes for courseName.
+     * <code>string chapter_name = 4;</code>
+     * @return The bytes for chapterName.
      */
     public com.google.protobuf.ByteString
-        getCourseNameBytes() {
-      java.lang.Object ref = courseName ;
+        getChapterNameBytes() {
+      java.lang.Object ref = chapterName ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        courseName = b;
+        chapterName = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string course_name = 4;</code>
-     * @param value The courseName to set.
+     * <code>string chapter_name = 4;</code>
+     * @param value The chapterName to set.
      * @return This builder for chaining.
      */
-    public Builder setCourseName(
+    public Builder setChapterName(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      courseName = value;
+      chapterName = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string course_name = 4;</code>
+     * <code>string chapter_name = 4;</code>
      * @return This builder for chaining.
      */
-    public Builder clearCourseName() {
+    public Builder clearChapterName() {
       
-      courseName = getDefaultInstance().getCourseName();
+      chapterName = getDefaultInstance().getChapterName();
       onChanged();
       return this;
     }
     /**
-     * <code>string course_name = 4;</code>
-     * @param value The bytes for courseName to set.
+     * <code>string chapter_name = 4;</code>
+     * @param value The bytes for chapterName to set.
      * @return This builder for chaining.
      */
-    public Builder setCourseNameBytes(
+    public Builder setChapterNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      courseName = value;
+      chapterName = value;
       onChanged();
       return this;
     }

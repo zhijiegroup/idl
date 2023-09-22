@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private DistributeEduSchemeRequest() {
+    clasIds = emptyLongList();
   }
 
   @java.lang.Override
@@ -38,6 +39,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0 = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -66,6 +68,27 @@ private static final long serialVersionUID = 0L;
             eduSchemeId = input.readInt64();
             break;
           }
+          case 24: {
+            if (!((mutable_bitField0 & 0x00000001) != 0)) {
+              clasIds = newLongList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            clasIds .addLong(input.readInt64());
+            break;
+          }
+          case 26: {
+            int length = input.readRawVarint32();
+            int limit = input.pushLimit(length);
+            if (!((mutable_bitField0 & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+              clasIds = newLongList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            while (input.getBytesUntilLimit() > 0) {
+              clasIds .addLong(input.readInt64());
+            }
+            input.popLimit(limit);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -81,6 +104,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0 & 0x00000001) != 0)) {
+        clasIds .makeImmutable(); // C
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -135,6 +161,34 @@ private static final long serialVersionUID = 0L;
     return eduSchemeId ;
   }
 
+  public static final int CLAS_IDS_FIELD_NUMBER = 3;
+  private com.google.protobuf.Internal.LongList clasIds ;
+  /**
+   * <code>repeated int64 clas_ids = 3;</code>
+   * @return A list containing the clasIds.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Long>
+      getClasIdsList() {
+    return clasIds ;
+  }
+  /**
+   * <code>repeated int64 clas_ids = 3;</code>
+   * @return The count of clasIds.
+   */
+  public int getClasIdsCount() {
+    return clasIds .size();
+  }
+  /**
+   * <code>repeated int64 clas_ids = 3;</code>
+   * @param index The index of the element to return.
+   * @return The clasIds at the given index.
+   */
+  public long getClasIds(int index) {
+    return clasIds .getLong(index);
+  }
+  private int clasIdsMemoizedSerializedSize = -1;
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -149,11 +203,19 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    getSerializedSize();
     if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
     if (eduSchemeId != 0L) {
       output.writeInt64(2, eduSchemeId );
+    }
+    if (getClasIdsList().size() > 0) {
+      output.writeUInt32NoTag(26);
+      output.writeUInt32NoTag(clasIdsMemoizedSerializedSize);
+    }
+    for (int i = 0; i < clasIds .size(); i++) {
+      output.writeInt64NoTag(clasIds .getLong(i));
     }
     unknownFields.writeTo(output);
   }
@@ -171,6 +233,20 @@ private static final long serialVersionUID = 0L;
     if (eduSchemeId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, eduSchemeId );
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < clasIds .size(); i++) {
+        dataSize += com.google.protobuf.CodedOutputStream
+          .computeInt64SizeNoTag(clasIds .getLong(i));
+      }
+      size += dataSize;
+      if (!getClasIdsList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(dataSize);
+      }
+      clasIdsMemoizedSerializedSize = dataSize;
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -194,6 +270,8 @@ private static final long serialVersionUID = 0L;
     }
     if (getEduSchemeId()
         != other.getEduSchemeId()) return false;
+    if (!getClasIdsList()
+        .equals(other.getClasIdsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -212,6 +290,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + EDU_SCHEME_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getEduSchemeId());
+    if (getClasIdsCount() > 0) {
+      hash = (37 * hash) + CLAS_IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getClasIdsList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -353,6 +435,8 @@ private static final long serialVersionUID = 0L;
       }
       eduSchemeId = 0L;
 
+      clasIds = emptyLongList();
+      bitField0 = (bitField0 & ~0x00000001);
       return this;
     }
 
@@ -379,12 +463,18 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeRequest buildPartial() {
       com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeRequest result = new com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeRequest(this);
+      int from_bitField0 = bitField0 ;
       if (baseRequestBuilder == null) {
         result.baseRequest = baseRequest ;
       } else {
         result.baseRequest = baseRequestBuilder .build();
       }
       result.eduSchemeId = eduSchemeId ;
+      if (((bitField0 & 0x00000001) != 0)) {
+        clasIds .makeImmutable();
+        bitField0 = (bitField0 & ~0x00000001);
+      }
+      result.clasIds = clasIds ;
       onBuilt();
       return result;
     }
@@ -439,6 +529,16 @@ private static final long serialVersionUID = 0L;
       if (other.getEduSchemeId() != 0L) {
         setEduSchemeId(other.getEduSchemeId());
       }
+      if (!other.clasIds .isEmpty()) {
+        if (clasIds .isEmpty()) {
+          clasIds = other.clasIds ;
+          bitField0 = (bitField0 & ~0x00000001);
+        } else {
+          ensureClasIdsIsMutable();
+          clasIds .addAll(other.clasIds );
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -467,6 +567,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0 ;
 
     private com.zhijiejiaoyu.base.BaseRequest baseRequest ;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -614,6 +715,85 @@ private static final long serialVersionUID = 0L;
     public Builder clearEduSchemeId() {
       
       eduSchemeId = 0L;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Internal.LongList clasIds = emptyLongList();
+    private void ensureClasIdsIsMutable() {
+      if (!((bitField0 & 0x00000001) != 0)) {
+        clasIds = mutableCopy(clasIds );
+        bitField0_ |= 0x00000001;
+       }
+    }
+    /**
+     * <code>repeated int64 clas_ids = 3;</code>
+     * @return A list containing the clasIds.
+     */
+    public java.util.List<java.lang.Long>
+        getClasIdsList() {
+      return ((bitField0 & 0x00000001) != 0) ?
+               java.util.Collections.unmodifiableList(clasIds ) : clasIds ;
+    }
+    /**
+     * <code>repeated int64 clas_ids = 3;</code>
+     * @return The count of clasIds.
+     */
+    public int getClasIdsCount() {
+      return clasIds .size();
+    }
+    /**
+     * <code>repeated int64 clas_ids = 3;</code>
+     * @param index The index of the element to return.
+     * @return The clasIds at the given index.
+     */
+    public long getClasIds(int index) {
+      return clasIds .getLong(index);
+    }
+    /**
+     * <code>repeated int64 clas_ids = 3;</code>
+     * @param index The index to set the value at.
+     * @param value The clasIds to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClasIds(
+        int index, long value) {
+      ensureClasIdsIsMutable();
+      clasIds .setLong(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated int64 clas_ids = 3;</code>
+     * @param value The clasIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addClasIds(long value) {
+      ensureClasIdsIsMutable();
+      clasIds .addLong(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated int64 clas_ids = 3;</code>
+     * @param values The clasIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllClasIds(
+        java.lang.Iterable<? extends java.lang.Long> values) {
+      ensureClasIdsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, clasIds );
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated int64 clas_ids = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearClasIds() {
+      clasIds = emptyLongList();
+      bitField0 = (bitField0 & ~0x00000001);
       onChanged();
       return this;
     }

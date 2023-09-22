@@ -29,9 +29,9 @@ struct GloryApi_TeachingPlan {
 
   var teachingPlanType: Int32 = 0
 
-  var courseID: Int64 = 0
+  var chapterID: Int64 = 0
 
-  var courseName: String = String()
+  var chapterName: String = String()
 
   var courseModuleID: Int64 = 0
 
@@ -62,9 +62,9 @@ struct GloryApi_CreateTeachingPlanRequest {
 
   var name: String = String()
 
-  var courseID: Int64 = 0
+  var chapterID: Int64 = 0
 
-  var courseName: String = String()
+  var chapterName: String = String()
 
   var courseModuleID: Int64 = 0
 
@@ -237,8 +237,8 @@ extension GloryApi_TeachingPlan: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "teaching_plan_id"),
     2: .standard(proto: "teaching_plan_type"),
-    3: .standard(proto: "course_id"),
-    4: .standard(proto: "course_name"),
+    3: .standard(proto: "chapter_id"),
+    4: .standard(proto: "chapter_name"),
     5: .standard(proto: "course_module_id"),
     6: .standard(proto: "course_module_name"),
     7: .standard(proto: "teaching_plan_content"),
@@ -252,8 +252,8 @@ extension GloryApi_TeachingPlan: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularInt64Field(value: &self.teachingPlanID) }()
       case 2: try { try decoder.decodeSingularInt32Field(value: &self.teachingPlanType) }()
-      case 3: try { try decoder.decodeSingularInt64Field(value: &self.courseID) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.courseName) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.chapterID) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.chapterName) }()
       case 5: try { try decoder.decodeSingularInt64Field(value: &self.courseModuleID) }()
       case 6: try { try decoder.decodeSingularStringField(value: &self.courseModuleName) }()
       case 7: try { try decoder.decodeSingularStringField(value: &self.teachingPlanContent) }()
@@ -269,11 +269,11 @@ extension GloryApi_TeachingPlan: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     if self.teachingPlanType != 0 {
       try visitor.visitSingularInt32Field(value: self.teachingPlanType, fieldNumber: 2)
     }
-    if self.courseID != 0 {
-      try visitor.visitSingularInt64Field(value: self.courseID, fieldNumber: 3)
+    if self.chapterID != 0 {
+      try visitor.visitSingularInt64Field(value: self.chapterID, fieldNumber: 3)
     }
-    if !self.courseName.isEmpty {
-      try visitor.visitSingularStringField(value: self.courseName, fieldNumber: 4)
+    if !self.chapterName.isEmpty {
+      try visitor.visitSingularStringField(value: self.chapterName, fieldNumber: 4)
     }
     if self.courseModuleID != 0 {
       try visitor.visitSingularInt64Field(value: self.courseModuleID, fieldNumber: 5)
@@ -290,8 +290,8 @@ extension GloryApi_TeachingPlan: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   static func ==(lhs: GloryApi_TeachingPlan, rhs: GloryApi_TeachingPlan) -> Bool {
     if lhs.teachingPlanID != rhs.teachingPlanID {return false}
     if lhs.teachingPlanType != rhs.teachingPlanType {return false}
-    if lhs.courseID != rhs.courseID {return false}
-    if lhs.courseName != rhs.courseName {return false}
+    if lhs.chapterID != rhs.chapterID {return false}
+    if lhs.chapterName != rhs.chapterName {return false}
     if lhs.courseModuleID != rhs.courseModuleID {return false}
     if lhs.courseModuleName != rhs.courseModuleName {return false}
     if lhs.teachingPlanContent != rhs.teachingPlanContent {return false}
@@ -306,8 +306,8 @@ extension GloryApi_CreateTeachingPlanRequest: SwiftProtobuf.Message, SwiftProtob
     1: .standard(proto: "base_request"),
     2: .same(proto: "type"),
     3: .same(proto: "name"),
-    4: .standard(proto: "course_id"),
-    5: .standard(proto: "course_name"),
+    4: .standard(proto: "chapter_id"),
+    5: .standard(proto: "chapter_name"),
     6: .standard(proto: "course_module_id"),
     7: .standard(proto: "course_module_name"),
     8: .standard(proto: "teaching_plan_content"),
@@ -322,8 +322,8 @@ extension GloryApi_CreateTeachingPlanRequest: SwiftProtobuf.Message, SwiftProtob
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularInt32Field(value: &self.type) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.name) }()
-      case 4: try { try decoder.decodeSingularInt64Field(value: &self.courseID) }()
-      case 5: try { try decoder.decodeSingularStringField(value: &self.courseName) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.chapterID) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.chapterName) }()
       case 6: try { try decoder.decodeSingularInt64Field(value: &self.courseModuleID) }()
       case 7: try { try decoder.decodeSingularStringField(value: &self.courseModuleName) }()
       case 8: try { try decoder.decodeSingularStringField(value: &self.teachingPlanContent) }()
@@ -346,11 +346,11 @@ extension GloryApi_CreateTeachingPlanRequest: SwiftProtobuf.Message, SwiftProtob
     if !self.name.isEmpty {
       try visitor.visitSingularStringField(value: self.name, fieldNumber: 3)
     }
-    if self.courseID != 0 {
-      try visitor.visitSingularInt64Field(value: self.courseID, fieldNumber: 4)
+    if self.chapterID != 0 {
+      try visitor.visitSingularInt64Field(value: self.chapterID, fieldNumber: 4)
     }
-    if !self.courseName.isEmpty {
-      try visitor.visitSingularStringField(value: self.courseName, fieldNumber: 5)
+    if !self.chapterName.isEmpty {
+      try visitor.visitSingularStringField(value: self.chapterName, fieldNumber: 5)
     }
     if self.courseModuleID != 0 {
       try visitor.visitSingularInt64Field(value: self.courseModuleID, fieldNumber: 6)
@@ -368,8 +368,8 @@ extension GloryApi_CreateTeachingPlanRequest: SwiftProtobuf.Message, SwiftProtob
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.type != rhs.type {return false}
     if lhs.name != rhs.name {return false}
-    if lhs.courseID != rhs.courseID {return false}
-    if lhs.courseName != rhs.courseName {return false}
+    if lhs.chapterID != rhs.chapterID {return false}
+    if lhs.chapterName != rhs.chapterName {return false}
     if lhs.courseModuleID != rhs.courseModuleID {return false}
     if lhs.courseModuleName != rhs.courseModuleName {return false}
     if lhs.teachingPlanContent != rhs.teachingPlanContent {return false}

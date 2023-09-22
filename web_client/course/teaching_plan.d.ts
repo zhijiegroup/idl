@@ -9,8 +9,8 @@ export { base, modules };
 export interface TeachingPlan {
   teaching_plan_id?: string;
   teaching_plan_type?: number;
-  course_id?: string;
-  course_name?: string;
+  chapter_id?: string;
+  chapter_name?: string;
   course_module_id?: string;
   course_module_name?: string;
   teaching_plan_content?: string;
@@ -20,8 +20,8 @@ export interface CreateTeachingPlanRequest {
   base_request?: base.BaseRequest;
   type?: number;
   name?: string;
-  course_id?: string;
-  course_name?: string;
+  chapter_id?: string;
+  chapter_name?: string;
   course_module_id?: string;
   course_module_name?: string;
   teaching_plan_content?: string;

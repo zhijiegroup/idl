@@ -27,4 +27,21 @@ public interface DistributeEduSchemeRequestOrBuilder extends
    * @return The eduSchemeId.
    */
   long getEduSchemeId();
+
+  /**
+   * <code>repeated int64 clas_ids = 3;</code>
+   * @return A list containing the clasIds.
+   */
+  java.util.List<java.lang.Long> getClasIdsList();
+  /**
+   * <code>repeated int64 clas_ids = 3;</code>
+   * @return The count of clasIds.
+   */
+  int getClasIdsCount();
+  /**
+   * <code>repeated int64 clas_ids = 3;</code>
+   * @param index The index of the element to return.
+   * @return The clasIds at the given index.
+   */
+  long getClasIds(int index);
 }

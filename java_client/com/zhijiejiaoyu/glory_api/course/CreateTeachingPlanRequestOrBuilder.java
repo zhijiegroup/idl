@@ -41,22 +41,22 @@ public interface CreateTeachingPlanRequestOrBuilder extends
       getNameBytes();
 
   /**
-   * <code>int64 course_id = 4;</code>
-   * @return The courseId.
+   * <code>int64 chapter_id = 4;</code>
+   * @return The chapterId.
    */
-  long getCourseId();
+  long getChapterId();
 
   /**
-   * <code>string course_name = 5;</code>
-   * @return The courseName.
+   * <code>string chapter_name = 5;</code>
+   * @return The chapterName.
    */
-  java.lang.String getCourseName();
+  java.lang.String getChapterName();
   /**
-   * <code>string course_name = 5;</code>
-   * @return The bytes for courseName.
+   * <code>string chapter_name = 5;</code>
+   * @return The bytes for chapterName.
    */
   com.google.protobuf.ByteString
-      getCourseNameBytes();
+      getChapterNameBytes();
 
   /**
    * <code>int64 course_module_id = 6;</code>

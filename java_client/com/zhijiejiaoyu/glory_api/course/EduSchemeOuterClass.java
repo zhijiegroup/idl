@@ -132,12 +132,13 @@ public final class EduSchemeOuterClass {
       "\025\n\redu_scheme_id\030\002 \001(\003\"m\n\027EduSchemeDetai" +
       "lResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Base" +
       "Response\022+\n\rscheme_detail\030\002 \001(\0132\024.glory_" +
-      "api.EduScheme\"\\\n\032DistributeEduSchemeRequ" +
+      "api.EduScheme\"n\n\032DistributeEduSchemeRequ" +
       "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
-      "uest\022\025\n\redu_scheme_id\030\002 \001(\003\"D\n\033Distribut" +
-      "eEduSchemeResponse\022%\n\tbase_resp\030\001 \001(\0132\022." +
-      "base.BaseResponseB%\n!com.zhijiejiaoyu.gl" +
-      "ory_api.courseP\001b\006proto3"
+      "uest\022\025\n\redu_scheme_id\030\002 \001(\003\022\020\n\010clas_ids\030" +
+      "\003 \003(\003\"D\n\033DistributeEduSchemeResponse\022%\n\t" +
+      "base_resp\030\001 \001(\0132\022.base.BaseResponseB%\n!c" +
+      "om.zhijiejiaoyu.glory_api.courseP\001b\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -216,7 +217,7 @@ public final class EduSchemeOuterClass {
     internal_static_glory_api_DistributeEduSchemeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DistributeEduSchemeRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "EduSchemeId", });
+        new java.lang.String[] { "BaseRequest", "EduSchemeId", "ClasIds", });
     internal_static_glory_api_DistributeEduSchemeResponse_descriptor =
       getDescriptor().getMessageTypes().get(12);
     internal_static_glory_api_DistributeEduSchemeResponse_fieldAccessorTable = new

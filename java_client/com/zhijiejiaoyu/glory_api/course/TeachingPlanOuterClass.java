@@ -59,34 +59,34 @@ public final class TeachingPlanOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\032course/teaching_plan.proto\022\tglory_api\032" +
-      "\nbase.proto\032\023course/module.proto\"\301\001\n\014Tea" +
+      "\nbase.proto\032\023course/module.proto\"\303\001\n\014Tea" +
       "chingPlan\022\030\n\020teaching_plan_id\030\001 \001(\003\022\032\n\022t" +
-      "eaching_plan_type\030\002 \001(\005\022\021\n\tcourse_id\030\003 \001" +
-      "(\003\022\023\n\013course_name\030\004 \001(\t\022\030\n\020course_module" +
-      "_id\030\005 \001(\003\022\032\n\022course_module_name\030\006 \001(\t\022\035\n" +
-      "\025teaching_plan_content\030\007 \001(\t\"\335\001\n\031CreateT" +
-      "eachingPlanRequest\022\'\n\014base_request\030\001 \001(\013" +
-      "2\021.base.BaseRequest\022\014\n\004type\030\002 \001(\005\022\014\n\004nam" +
-      "e\030\003 \001(\t\022\021\n\tcourse_id\030\004 \001(\003\022\023\n\013course_nam" +
-      "e\030\005 \001(\t\022\030\n\020course_module_id\030\006 \001(\003\022\032\n\022cou" +
-      "rse_module_name\030\007 \001(\t\022\035\n\025teaching_plan_c" +
-      "ontent\030\010 \001(\t\"]\n\032CreateTeachingPlanRespon" +
-      "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
-      "e\022\030\n\020teaching_plan_id\030\002 \001(\003\"\213\001\n\031UpdateTe" +
-      "achingPlanRequest\022\'\n\014base_request\030\001 \001(\0132" +
-      "\021.base.BaseRequest\022\030\n\020teaching_plan_id\030\002" +
-      " \001(\003\022\014\n\004name\030\003 \001(\t\022\035\n\025teaching_plan_cont" +
-      "ent\030\004 \001(\t\"C\n\032UpdateTeachingPlanResponse\022" +
-      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"\213" +
-      "\001\n\027ListTeachingPlanRequest\022\'\n\014base_reque" +
-      "st\030\001 \001(\0132\021.base.BaseRequest\022\014\n\004type\030\002 \001(" +
-      "\005\022\014\n\004name\030\003 \001(\t\022+\n\npagination\030d \001(\0132\027.ba" +
-      "se.PaginationRequest\"\244\001\n\030ListTeachingPla" +
-      "nResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Base" +
-      "Response\0223\n\022teaching_plan_list\030\002 \003(\0132\027.g" +
-      "lory_api.TeachingPlan\022,\n\npagination\030d \001(" +
-      "\0132\030.base.PaginationResponseB%\n!com.zhiji" +
-      "ejiaoyu.glory_api.courseP\001b\006proto3"
+      "eaching_plan_type\030\002 \001(\005\022\022\n\nchapter_id\030\003 " +
+      "\001(\003\022\024\n\014chapter_name\030\004 \001(\t\022\030\n\020course_modu" +
+      "le_id\030\005 \001(\003\022\032\n\022course_module_name\030\006 \001(\t\022" +
+      "\035\n\025teaching_plan_content\030\007 \001(\t\"\337\001\n\031Creat" +
+      "eTeachingPlanRequest\022\'\n\014base_request\030\001 \001" +
+      "(\0132\021.base.BaseRequest\022\014\n\004type\030\002 \001(\005\022\014\n\004n" +
+      "ame\030\003 \001(\t\022\022\n\nchapter_id\030\004 \001(\003\022\024\n\014chapter" +
+      "_name\030\005 \001(\t\022\030\n\020course_module_id\030\006 \001(\003\022\032\n" +
+      "\022course_module_name\030\007 \001(\t\022\035\n\025teaching_pl" +
+      "an_content\030\010 \001(\t\"]\n\032CreateTeachingPlanRe" +
+      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
+      "ponse\022\030\n\020teaching_plan_id\030\002 \001(\003\"\213\001\n\031Upda" +
+      "teTeachingPlanRequest\022\'\n\014base_request\030\001 " +
+      "\001(\0132\021.base.BaseRequest\022\030\n\020teaching_plan_" +
+      "id\030\002 \001(\003\022\014\n\004name\030\003 \001(\t\022\035\n\025teaching_plan_" +
+      "content\030\004 \001(\t\"C\n\032UpdateTeachingPlanRespo" +
+      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
+      "se\"\213\001\n\027ListTeachingPlanRequest\022\'\n\014base_r" +
+      "equest\030\001 \001(\0132\021.base.BaseRequest\022\014\n\004type\030" +
+      "\002 \001(\005\022\014\n\004name\030\003 \001(\t\022+\n\npagination\030d \001(\0132" +
+      "\027.base.PaginationRequest\"\244\001\n\030ListTeachin" +
+      "gPlanResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
+      "BaseResponse\0223\n\022teaching_plan_list\030\002 \003(\013" +
+      "2\027.glory_api.TeachingPlan\022,\n\npagination\030" +
+      "d \001(\0132\030.base.PaginationResponseB%\n!com.z" +
+      "hijiejiaoyu.glory_api.courseP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -99,13 +99,13 @@ public final class TeachingPlanOuterClass {
     internal_static_glory_api_TeachingPlan_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_TeachingPlan_descriptor,
-        new java.lang.String[] { "TeachingPlanId", "TeachingPlanType", "CourseId", "CourseName", "CourseModuleId", "CourseModuleName", "TeachingPlanContent", });
+        new java.lang.String[] { "TeachingPlanId", "TeachingPlanType", "ChapterId", "ChapterName", "CourseModuleId", "CourseModuleName", "TeachingPlanContent", });
     internal_static_glory_api_CreateTeachingPlanRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_glory_api_CreateTeachingPlanRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CreateTeachingPlanRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "Type", "Name", "CourseId", "CourseName", "CourseModuleId", "CourseModuleName", "TeachingPlanContent", });
+        new java.lang.String[] { "BaseRequest", "Type", "Name", "ChapterId", "ChapterName", "CourseModuleId", "CourseModuleName", "TeachingPlanContent", });
     internal_static_glory_api_CreateTeachingPlanResponse_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_glory_api_CreateTeachingPlanResponse_fieldAccessorTable = new
