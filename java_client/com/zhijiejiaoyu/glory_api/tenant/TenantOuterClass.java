@@ -109,6 +109,16 @@ public final class TenantOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_ExitTenantResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_InitTenantRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_InitTenantRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_InitTenantResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_InitTenantResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -168,8 +178,11 @@ public final class TenantOuterClass {
       "sponse\"<\n\021ExitTenantRequest\022\'\n\014base_requ" +
       "est\030\001 \001(\0132\021.base.BaseRequest\";\n\022ExitTena" +
       "ntResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
-      "eResponseB%\n!com.zhijiejiaoyu.glory_api." +
-      "tenantP\001b\006proto3"
+      "eResponse\"O\n\021InitTenantRequest\022\'\n\014base_r" +
+      "equest\030\001 \001(\0132\021.base.BaseRequest\022\021\n\ttenan" +
+      "t_id\030\002 \001(\003\";\n\022InitTenantResponse\022%\n\tbase" +
+      "_resp\030\001 \001(\0132\022.base.BaseResponseB%\n!com.z" +
+      "hijiejiaoyu.glory_api.tenantP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -289,6 +302,18 @@ public final class TenantOuterClass {
     internal_static_glory_api_ExitTenantResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ExitTenantResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
+    internal_static_glory_api_InitTenantRequest_descriptor =
+      getDescriptor().getMessageTypes().get(19);
+    internal_static_glory_api_InitTenantRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_InitTenantRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "TenantId", });
+    internal_static_glory_api_InitTenantResponse_descriptor =
+      getDescriptor().getMessageTypes().get(20);
+    internal_static_glory_api_InitTenantResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_InitTenantResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
   }

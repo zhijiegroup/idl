@@ -122,3 +122,12 @@ export interface ExitTenantRequest {
 export interface ExitTenantResponse {
   base_resp?: base.BaseResponse;
 }
+
+export interface InitTenantRequest {
+  base_request?: base.BaseRequest;
+  tenant_id?: string;
+}
+
+export interface InitTenantResponse {
+  base_resp?: base.BaseResponse;
+}
