@@ -6,14 +6,18 @@ option java_multiple_files = true;
 import "base.proto";
 import "course/module.proto";
 
+message TeachingPlanChapter {
+    int64 chapter_id = 1;
+    string chapter_name = 2;
+    string teaching_plan_content = 3;
+}
+
 message TeachingPlan {
     int64 teaching_plan_id = 1;
     int32 teaching_plan_type = 2;
-    int64 chapter_id = 3;
-    string chapter_name = 4;
-    int64 course_module_id = 5;
-    string course_module_name = 6;
-    string teaching_plan_content = 7;
+    int64 course_module_id = 3;
+    string course_module_name = 4;
+    repeated TeachingPlanChapter chapters = 5;
 }
 
 message CreateTeachingPlanRequest {
@@ -47,6 +51,7 @@ message ListTeachingPlanRequest {
     base.BaseRequest base_request = 1;
     int32 type = 2;
     string name = 3;
+    int64 user_id = 4;
     base.PaginationRequest pagination = 100;
 }
 
