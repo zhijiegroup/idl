@@ -77,46 +77,115 @@ struct GloryApi_KnowledgeGraph {
   init() {}
 }
 
+struct GloryApi_ResourceCount {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var type: Int64 = 0
+
+  var count: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
 struct GloryApi_NodeDetail {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var id: Int64 = 0
+  var id: Int64 {
+    get {return _storage._id}
+    set {_uniqueStorage()._id = newValue}
+  }
 
-  var code: String = String()
+  var code: String {
+    get {return _storage._code}
+    set {_uniqueStorage()._code = newValue}
+  }
 
-  var name: String = String()
+  var name: String {
+    get {return _storage._name}
+    set {_uniqueStorage()._name = newValue}
+  }
 
-  var desc: String = String()
+  var desc: String {
+    get {return _storage._desc}
+    set {_uniqueStorage()._desc = newValue}
+  }
 
-  var organization: String = String()
+  var organization: String {
+    get {return _storage._organization}
+    set {_uniqueStorage()._organization = newValue}
+  }
 
-  var level: String = String()
+  var level: String {
+    get {return _storage._level}
+    set {_uniqueStorage()._level = newValue}
+  }
 
-  var industry: String = String()
+  var industry: String {
+    get {return _storage._industry}
+    set {_uniqueStorage()._industry = newValue}
+  }
 
-  var type: String = String()
+  var type: String {
+    get {return _storage._type}
+    set {_uniqueStorage()._type = newValue}
+  }
 
-  var cover: String = String()
+  var cover: String {
+    get {return _storage._cover}
+    set {_uniqueStorage()._cover = newValue}
+  }
 
-  var classification: String = String()
+  var classification: String {
+    get {return _storage._classification}
+    set {_uniqueStorage()._classification = newValue}
+  }
 
-  var module: Int32 = 0
+  var module: Int32 {
+    get {return _storage._module}
+    set {_uniqueStorage()._module = newValue}
+  }
 
-  var major: String = String()
+  var major: String {
+    get {return _storage._major}
+    set {_uniqueStorage()._major = newValue}
+  }
 
-  var teacher: String = String()
+  var teacher: String {
+    get {return _storage._teacher}
+    set {_uniqueStorage()._teacher = newValue}
+  }
 
-  var knowledgeHours: Float = 0
+  var knowledgeHours: Float {
+    get {return _storage._knowledgeHours}
+    set {_uniqueStorage()._knowledgeHours = newValue}
+  }
 
-  var skillHours: Float = 0
+  var skillHours: Float {
+    get {return _storage._skillHours}
+    set {_uniqueStorage()._skillHours = newValue}
+  }
 
-  var createdAt: String = String()
+  var createdAt: String {
+    get {return _storage._createdAt}
+    set {_uniqueStorage()._createdAt = newValue}
+  }
+
+  var resources: [GloryApi_ResourceCount] {
+    get {return _storage._resources}
+    set {_uniqueStorage()._resources = newValue}
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
+
+  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 struct GloryApi_CreateKnowledgeGraphRequest {
@@ -248,34 +317,36 @@ struct GloryApi_GetKnowledgeGraphNodeResponse {
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _storage._baseResp ?? Base_BaseResponse()}
-    set {_uniqueStorage()._baseResp = newValue}
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return _storage._baseResp != nil}
+  var hasBaseResp: Bool {return self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
-  mutating func clearBaseResp() {_uniqueStorage()._baseResp = nil}
+  mutating func clearBaseResp() {self._baseResp = nil}
 
   var nodeDetail: GloryApi_NodeDetail {
-    get {return _storage._nodeDetail ?? GloryApi_NodeDetail()}
-    set {_uniqueStorage()._nodeDetail = newValue}
+    get {return _nodeDetail ?? GloryApi_NodeDetail()}
+    set {_nodeDetail = newValue}
   }
   /// Returns true if `nodeDetail` has been explicitly set.
-  var hasNodeDetail: Bool {return _storage._nodeDetail != nil}
+  var hasNodeDetail: Bool {return self._nodeDetail != nil}
   /// Clears the value of `nodeDetail`. Subsequent reads from it will return its default value.
-  mutating func clearNodeDetail() {_uniqueStorage()._nodeDetail = nil}
+  mutating func clearNodeDetail() {self._nodeDetail = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  fileprivate var _storage = _StorageClass.defaultInstance
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _nodeDetail: GloryApi_NodeDetail? = nil
 }
 
 #if swift(>=5.5) && canImport(_Concurrency)
 extension GloryApi_Node: @unchecked Sendable {}
 extension GloryApi_Edge: @unchecked Sendable {}
 extension GloryApi_KnowledgeGraph: @unchecked Sendable {}
+extension GloryApi_ResourceCount: @unchecked Sendable {}
 extension GloryApi_NodeDetail: @unchecked Sendable {}
 extension GloryApi_CreateKnowledgeGraphRequest: @unchecked Sendable {}
 extension GloryApi_CreateKnowledgeGraphResponse: @unchecked Sendable {}
@@ -439,6 +510,44 @@ extension GloryApi_KnowledgeGraph: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
+extension GloryApi_ResourceCount: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ResourceCount"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "type"),
+    2: .same(proto: "count"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.type) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.count) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.type != 0 {
+      try visitor.visitSingularInt64Field(value: self.type, fieldNumber: 1)
+    }
+    if self.count != 0 {
+      try visitor.visitSingularInt64Field(value: self.count, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ResourceCount, rhs: GloryApi_ResourceCount) -> Bool {
+    if lhs.type != rhs.type {return false}
+    if lhs.count != rhs.count {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
 extension GloryApi_NodeDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".NodeDetail"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
@@ -458,104 +567,174 @@ extension GloryApi_NodeDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     18: .standard(proto: "knowledge_hours"),
     19: .standard(proto: "skill_hours"),
     20: .standard(proto: "created_at"),
+    21: .same(proto: "resources"),
   ]
 
+  fileprivate class _StorageClass {
+    var _id: Int64 = 0
+    var _code: String = String()
+    var _name: String = String()
+    var _desc: String = String()
+    var _organization: String = String()
+    var _level: String = String()
+    var _industry: String = String()
+    var _type: String = String()
+    var _cover: String = String()
+    var _classification: String = String()
+    var _module: Int32 = 0
+    var _major: String = String()
+    var _teacher: String = String()
+    var _knowledgeHours: Float = 0
+    var _skillHours: Float = 0
+    var _createdAt: String = String()
+    var _resources: [GloryApi_ResourceCount] = []
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _id = source._id
+      _code = source._code
+      _name = source._name
+      _desc = source._desc
+      _organization = source._organization
+      _level = source._level
+      _industry = source._industry
+      _type = source._type
+      _cover = source._cover
+      _classification = source._classification
+      _module = source._module
+      _major = source._major
+      _teacher = source._teacher
+      _knowledgeHours = source._knowledgeHours
+      _skillHours = source._skillHours
+      _createdAt = source._createdAt
+      _resources = source._resources
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularInt64Field(value: &self.id) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.code) }()
-      case 3: try { try decoder.decodeSingularStringField(value: &self.name) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.desc) }()
-      case 5: try { try decoder.decodeSingularStringField(value: &self.organization) }()
-      case 6: try { try decoder.decodeSingularStringField(value: &self.level) }()
-      case 7: try { try decoder.decodeSingularStringField(value: &self.industry) }()
-      case 8: try { try decoder.decodeSingularStringField(value: &self.type) }()
-      case 9: try { try decoder.decodeSingularStringField(value: &self.cover) }()
-      case 10: try { try decoder.decodeSingularStringField(value: &self.classification) }()
-      case 11: try { try decoder.decodeSingularInt32Field(value: &self.module) }()
-      case 12: try { try decoder.decodeSingularStringField(value: &self.major) }()
-      case 17: try { try decoder.decodeSingularStringField(value: &self.teacher) }()
-      case 18: try { try decoder.decodeSingularFloatField(value: &self.knowledgeHours) }()
-      case 19: try { try decoder.decodeSingularFloatField(value: &self.skillHours) }()
-      case 20: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
-      default: break
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        // The use of inline closures is to circumvent an issue where the compiler
+        // allocates stack space for every case branch when no optimizations are
+        // enabled. https://github.com/apple/swift-protobuf/issues/1034
+        switch fieldNumber {
+        case 1: try { try decoder.decodeSingularInt64Field(value: &_storage._id) }()
+        case 2: try { try decoder.decodeSingularStringField(value: &_storage._code) }()
+        case 3: try { try decoder.decodeSingularStringField(value: &_storage._name) }()
+        case 4: try { try decoder.decodeSingularStringField(value: &_storage._desc) }()
+        case 5: try { try decoder.decodeSingularStringField(value: &_storage._organization) }()
+        case 6: try { try decoder.decodeSingularStringField(value: &_storage._level) }()
+        case 7: try { try decoder.decodeSingularStringField(value: &_storage._industry) }()
+        case 8: try { try decoder.decodeSingularStringField(value: &_storage._type) }()
+        case 9: try { try decoder.decodeSingularStringField(value: &_storage._cover) }()
+        case 10: try { try decoder.decodeSingularStringField(value: &_storage._classification) }()
+        case 11: try { try decoder.decodeSingularInt32Field(value: &_storage._module) }()
+        case 12: try { try decoder.decodeSingularStringField(value: &_storage._major) }()
+        case 17: try { try decoder.decodeSingularStringField(value: &_storage._teacher) }()
+        case 18: try { try decoder.decodeSingularFloatField(value: &_storage._knowledgeHours) }()
+        case 19: try { try decoder.decodeSingularFloatField(value: &_storage._skillHours) }()
+        case 20: try { try decoder.decodeSingularStringField(value: &_storage._createdAt) }()
+        case 21: try { try decoder.decodeRepeatedMessageField(value: &_storage._resources) }()
+        default: break
+        }
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.id != 0 {
-      try visitor.visitSingularInt64Field(value: self.id, fieldNumber: 1)
-    }
-    if !self.code.isEmpty {
-      try visitor.visitSingularStringField(value: self.code, fieldNumber: 2)
-    }
-    if !self.name.isEmpty {
-      try visitor.visitSingularStringField(value: self.name, fieldNumber: 3)
-    }
-    if !self.desc.isEmpty {
-      try visitor.visitSingularStringField(value: self.desc, fieldNumber: 4)
-    }
-    if !self.organization.isEmpty {
-      try visitor.visitSingularStringField(value: self.organization, fieldNumber: 5)
-    }
-    if !self.level.isEmpty {
-      try visitor.visitSingularStringField(value: self.level, fieldNumber: 6)
-    }
-    if !self.industry.isEmpty {
-      try visitor.visitSingularStringField(value: self.industry, fieldNumber: 7)
-    }
-    if !self.type.isEmpty {
-      try visitor.visitSingularStringField(value: self.type, fieldNumber: 8)
-    }
-    if !self.cover.isEmpty {
-      try visitor.visitSingularStringField(value: self.cover, fieldNumber: 9)
-    }
-    if !self.classification.isEmpty {
-      try visitor.visitSingularStringField(value: self.classification, fieldNumber: 10)
-    }
-    if self.module != 0 {
-      try visitor.visitSingularInt32Field(value: self.module, fieldNumber: 11)
-    }
-    if !self.major.isEmpty {
-      try visitor.visitSingularStringField(value: self.major, fieldNumber: 12)
-    }
-    if !self.teacher.isEmpty {
-      try visitor.visitSingularStringField(value: self.teacher, fieldNumber: 17)
-    }
-    if self.knowledgeHours != 0 {
-      try visitor.visitSingularFloatField(value: self.knowledgeHours, fieldNumber: 18)
-    }
-    if self.skillHours != 0 {
-      try visitor.visitSingularFloatField(value: self.skillHours, fieldNumber: 19)
-    }
-    if !self.createdAt.isEmpty {
-      try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 20)
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if _storage._id != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._id, fieldNumber: 1)
+      }
+      if !_storage._code.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._code, fieldNumber: 2)
+      }
+      if !_storage._name.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._name, fieldNumber: 3)
+      }
+      if !_storage._desc.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._desc, fieldNumber: 4)
+      }
+      if !_storage._organization.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._organization, fieldNumber: 5)
+      }
+      if !_storage._level.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._level, fieldNumber: 6)
+      }
+      if !_storage._industry.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._industry, fieldNumber: 7)
+      }
+      if !_storage._type.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._type, fieldNumber: 8)
+      }
+      if !_storage._cover.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._cover, fieldNumber: 9)
+      }
+      if !_storage._classification.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._classification, fieldNumber: 10)
+      }
+      if _storage._module != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._module, fieldNumber: 11)
+      }
+      if !_storage._major.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._major, fieldNumber: 12)
+      }
+      if !_storage._teacher.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._teacher, fieldNumber: 17)
+      }
+      if _storage._knowledgeHours != 0 {
+        try visitor.visitSingularFloatField(value: _storage._knowledgeHours, fieldNumber: 18)
+      }
+      if _storage._skillHours != 0 {
+        try visitor.visitSingularFloatField(value: _storage._skillHours, fieldNumber: 19)
+      }
+      if !_storage._createdAt.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._createdAt, fieldNumber: 20)
+      }
+      if !_storage._resources.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._resources, fieldNumber: 21)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_NodeDetail, rhs: GloryApi_NodeDetail) -> Bool {
-    if lhs.id != rhs.id {return false}
-    if lhs.code != rhs.code {return false}
-    if lhs.name != rhs.name {return false}
-    if lhs.desc != rhs.desc {return false}
-    if lhs.organization != rhs.organization {return false}
-    if lhs.level != rhs.level {return false}
-    if lhs.industry != rhs.industry {return false}
-    if lhs.type != rhs.type {return false}
-    if lhs.cover != rhs.cover {return false}
-    if lhs.classification != rhs.classification {return false}
-    if lhs.module != rhs.module {return false}
-    if lhs.major != rhs.major {return false}
-    if lhs.teacher != rhs.teacher {return false}
-    if lhs.knowledgeHours != rhs.knowledgeHours {return false}
-    if lhs.skillHours != rhs.skillHours {return false}
-    if lhs.createdAt != rhs.createdAt {return false}
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._id != rhs_storage._id {return false}
+        if _storage._code != rhs_storage._code {return false}
+        if _storage._name != rhs_storage._name {return false}
+        if _storage._desc != rhs_storage._desc {return false}
+        if _storage._organization != rhs_storage._organization {return false}
+        if _storage._level != rhs_storage._level {return false}
+        if _storage._industry != rhs_storage._industry {return false}
+        if _storage._type != rhs_storage._type {return false}
+        if _storage._cover != rhs_storage._cover {return false}
+        if _storage._classification != rhs_storage._classification {return false}
+        if _storage._module != rhs_storage._module {return false}
+        if _storage._major != rhs_storage._major {return false}
+        if _storage._teacher != rhs_storage._teacher {return false}
+        if _storage._knowledgeHours != rhs_storage._knowledgeHours {return false}
+        if _storage._skillHours != rhs_storage._skillHours {return false}
+        if _storage._createdAt != rhs_storage._createdAt {return false}
+        if _storage._resources != rhs_storage._resources {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -772,70 +951,36 @@ extension GloryApi_GetKnowledgeGraphNodeResponse: SwiftProtobuf.Message, SwiftPr
     2: .standard(proto: "node_detail"),
   ]
 
-  fileprivate class _StorageClass {
-    var _baseResp: Base_BaseResponse? = nil
-    var _nodeDetail: GloryApi_NodeDetail? = nil
-
-    static let defaultInstance = _StorageClass()
-
-    private init() {}
-
-    init(copying source: _StorageClass) {
-      _baseResp = source._baseResp
-      _nodeDetail = source._nodeDetail
-    }
-  }
-
-  fileprivate mutating func _uniqueStorage() -> _StorageClass {
-    if !isKnownUniquelyReferenced(&_storage) {
-      _storage = _StorageClass(copying: _storage)
-    }
-    return _storage
-  }
-
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    _ = _uniqueStorage()
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        // The use of inline closures is to circumvent an issue where the compiler
-        // allocates stack space for every case branch when no optimizations are
-        // enabled. https://github.com/apple/swift-protobuf/issues/1034
-        switch fieldNumber {
-        case 1: try { try decoder.decodeSingularMessageField(value: &_storage._baseResp) }()
-        case 2: try { try decoder.decodeSingularMessageField(value: &_storage._nodeDetail) }()
-        default: break
-        }
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._nodeDetail) }()
+      default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every if/case branch local when no optimizations
-      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-      // https://github.com/apple/swift-protobuf/issues/1182
-      try { if let v = _storage._baseResp {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-      } }()
-      try { if let v = _storage._nodeDetail {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      } }()
-    }
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try { if let v = self._nodeDetail {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_GetKnowledgeGraphNodeResponse, rhs: GloryApi_GetKnowledgeGraphNodeResponse) -> Bool {
-    if lhs._storage !== rhs._storage {
-      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
-        let _storage = _args.0
-        let rhs_storage = _args.1
-        if _storage._baseResp != rhs_storage._baseResp {return false}
-        if _storage._nodeDetail != rhs_storage._nodeDetail {return false}
-        return true
-      }
-      if !storagesAreEqual {return false}
-    }
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs._nodeDetail != rhs._nodeDetail {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

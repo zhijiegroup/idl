@@ -174,4 +174,28 @@ public interface NodeDetailOrBuilder extends
    */
   com.google.protobuf.ByteString
       getCreatedAtBytes();
+
+  /**
+   * <code>repeated .glory_api.ResourceCount resources = 21;</code>
+   */
+  java.util.List<com.zhijiejiaoyu.glory_api.course.ResourceCount> 
+      getResourcesList();
+  /**
+   * <code>repeated .glory_api.ResourceCount resources = 21;</code>
+   */
+  com.zhijiejiaoyu.glory_api.course.ResourceCount getResources(int index);
+  /**
+   * <code>repeated .glory_api.ResourceCount resources = 21;</code>
+   */
+  int getResourcesCount();
+  /**
+   * <code>repeated .glory_api.ResourceCount resources = 21;</code>
+   */
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.course.ResourceCountOrBuilder> 
+      getResourcesOrBuilderList();
+  /**
+   * <code>repeated .glory_api.ResourceCount resources = 21;</code>
+   */
+  com.zhijiejiaoyu.glory_api.course.ResourceCountOrBuilder getResourcesOrBuilder(
+      int index);
 }

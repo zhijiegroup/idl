@@ -30,6 +30,11 @@ public final class Graph {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_KnowledgeGraph_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ResourceCount_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ResourceCount_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_glory_api_NodeDetail_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -80,29 +85,31 @@ public final class Graph {
       "(\t\022\r\n\005label\030\002 \001(\t\022\020\n\010begin_id\030\003 \001(\t\022\016\n\006e" +
       "nd_id\030\004 \001(\t\"N\n\016KnowledgeGraph\022\035\n\004node\030\001 " +
       "\003(\0132\017.glory_api.Node\022\035\n\004edge\030\002 \003(\0132\017.glo" +
-      "ry_api.Edge\"\240\002\n\nNodeDetail\022\n\n\002id\030\001 \001(\003\022\014" +
-      "\n\004code\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\014\n\004desc\030\004 \001(\t" +
-      "\022\024\n\014organization\030\005 \001(\t\022\r\n\005level\030\006 \001(\t\022\020\n" +
-      "\010industry\030\007 \001(\t\022\014\n\004type\030\010 \001(\t\022\r\n\005cover\030\t" +
-      " \001(\t\022\026\n\016classification\030\n \001(\t\022\016\n\006module\030\013" +
-      " \001(\005\022\r\n\005major\030\014 \001(\t\022\017\n\007teacher\030\021 \001(\t\022\027\n\017" +
-      "knowledge_hours\030\022 \001(\002\022\023\n\013skill_hours\030\023 \001" +
-      "(\002\022\022\n\ncreated_at\030\024 \001(\t\"F\n\033CreateKnowledg" +
-      "eGraphRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
-      "se.BaseRequest\"E\n\034CreateKnowledgeGraphRe" +
-      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
-      "ponse\"W\n\030GetKnowledgeGraphRequest\022\'\n\014bas" +
-      "e_request\030\001 \001(\0132\021.base.BaseRequest\022\022\n\nco" +
-      "urse_ids\030\002 \003(\003\"l\n\031GetKnowledgeGraphRespo" +
-      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
-      "se\022(\n\005graph\030\002 \001(\0132\031.glory_api.KnowledgeG" +
-      "raph\"a\n\034GetKnowledgeGraphNodeRequest\022\'\n\014" +
-      "base_request\030\001 \001(\0132\021.base.BaseRequest\022\014\n" +
-      "\004type\030\002 \001(\t\022\n\n\002id\030\003 \001(\003\"r\n\035GetKnowledgeG" +
-      "raphNodeResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
-      "se.BaseResponse\022*\n\013node_detail\030\002 \001(\0132\025.g" +
-      "lory_api.NodeDetailB%\n!com.zhijiejiaoyu." +
-      "glory_api.courseP\001b\006proto3"
+      "ry_api.Edge\",\n\rResourceCount\022\014\n\004type\030\001 \001" +
+      "(\003\022\r\n\005count\030\002 \001(\003\"\315\002\n\nNodeDetail\022\n\n\002id\030\001" +
+      " \001(\003\022\014\n\004code\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\014\n\004desc" +
+      "\030\004 \001(\t\022\024\n\014organization\030\005 \001(\t\022\r\n\005level\030\006 " +
+      "\001(\t\022\020\n\010industry\030\007 \001(\t\022\014\n\004type\030\010 \001(\t\022\r\n\005c" +
+      "over\030\t \001(\t\022\026\n\016classification\030\n \001(\t\022\016\n\006mo" +
+      "dule\030\013 \001(\005\022\r\n\005major\030\014 \001(\t\022\017\n\007teacher\030\021 \001" +
+      "(\t\022\027\n\017knowledge_hours\030\022 \001(\002\022\023\n\013skill_hou" +
+      "rs\030\023 \001(\002\022\022\n\ncreated_at\030\024 \001(\t\022+\n\tresource" +
+      "s\030\025 \003(\0132\030.glory_api.ResourceCount\"F\n\033Cre" +
+      "ateKnowledgeGraphRequest\022\'\n\014base_request" +
+      "\030\001 \001(\0132\021.base.BaseRequest\"E\n\034CreateKnowl" +
+      "edgeGraphResponse\022%\n\tbase_resp\030\001 \001(\0132\022.b" +
+      "ase.BaseResponse\"W\n\030GetKnowledgeGraphReq" +
+      "uest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRe" +
+      "quest\022\022\n\ncourse_ids\030\002 \003(\003\"l\n\031GetKnowledg" +
+      "eGraphResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
+      ".BaseResponse\022(\n\005graph\030\002 \001(\0132\031.glory_api" +
+      ".KnowledgeGraph\"a\n\034GetKnowledgeGraphNode" +
+      "Request\022\'\n\014base_request\030\001 \001(\0132\021.base.Bas" +
+      "eRequest\022\014\n\004type\030\002 \001(\t\022\n\n\002id\030\003 \001(\003\"r\n\035Ge" +
+      "tKnowledgeGraphNodeResponse\022%\n\tbase_resp" +
+      "\030\001 \001(\0132\022.base.BaseResponse\022*\n\013node_detai" +
+      "l\030\002 \001(\0132\025.glory_api.NodeDetailB%\n!com.zh" +
+      "ijiejiaoyu.glory_api.courseP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -127,44 +134,50 @@ public final class Graph {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_KnowledgeGraph_descriptor,
         new java.lang.String[] { "Node", "Edge", });
-    internal_static_glory_api_NodeDetail_descriptor =
+    internal_static_glory_api_ResourceCount_descriptor =
       getDescriptor().getMessageTypes().get(3);
+    internal_static_glory_api_ResourceCount_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ResourceCount_descriptor,
+        new java.lang.String[] { "Type", "Count", });
+    internal_static_glory_api_NodeDetail_descriptor =
+      getDescriptor().getMessageTypes().get(4);
     internal_static_glory_api_NodeDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_NodeDetail_descriptor,
-        new java.lang.String[] { "Id", "Code", "Name", "Desc", "Organization", "Level", "Industry", "Type", "Cover", "Classification", "Module", "Major", "Teacher", "KnowledgeHours", "SkillHours", "CreatedAt", });
+        new java.lang.String[] { "Id", "Code", "Name", "Desc", "Organization", "Level", "Industry", "Type", "Cover", "Classification", "Module", "Major", "Teacher", "KnowledgeHours", "SkillHours", "CreatedAt", "Resources", });
     internal_static_glory_api_CreateKnowledgeGraphRequest_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_glory_api_CreateKnowledgeGraphRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CreateKnowledgeGraphRequest_descriptor,
         new java.lang.String[] { "BaseRequest", });
     internal_static_glory_api_CreateKnowledgeGraphResponse_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_glory_api_CreateKnowledgeGraphResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CreateKnowledgeGraphResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_GetKnowledgeGraphRequest_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_glory_api_GetKnowledgeGraphRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetKnowledgeGraphRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "CourseIds", });
     internal_static_glory_api_GetKnowledgeGraphResponse_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_glory_api_GetKnowledgeGraphResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetKnowledgeGraphResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Graph", });
     internal_static_glory_api_GetKnowledgeGraphNodeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_glory_api_GetKnowledgeGraphNodeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetKnowledgeGraphNodeRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "Type", "Id", });
     internal_static_glory_api_GetKnowledgeGraphNodeResponse_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_glory_api_GetKnowledgeGraphNodeResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetKnowledgeGraphNodeResponse_descriptor,

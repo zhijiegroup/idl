@@ -28,6 +28,7 @@ private static final long serialVersionUID = 0L;
     major = "";
     teacher = "";
     createdAt = "";
+    resources = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -50,6 +51,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0 = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -152,6 +154,15 @@ private static final long serialVersionUID = 0L;
             createdAt = s;
             break;
           }
+          case 170: {
+            if (!((mutable_bitField0 & 0x00000001) != 0)) {
+              resources = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.course.ResourceCount>();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            resources .add(
+                input.readMessage(com.zhijiejiaoyu.glory_api.course.ResourceCount.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -167,6 +178,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0 & 0x00000001) != 0)) {
+        resources = java.util.Collections.unmodifiableList(resources );
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -684,6 +698,46 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int RESOURCES_FIELD_NUMBER = 21;
+  private java.util.List<com.zhijiejiaoyu.glory_api.course.ResourceCount> resources ;
+  /**
+   * <code>repeated .glory_api.ResourceCount resources = 21;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.zhijiejiaoyu.glory_api.course.ResourceCount> getResourcesList() {
+    return resources ;
+  }
+  /**
+   * <code>repeated .glory_api.ResourceCount resources = 21;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.ResourceCountOrBuilder> 
+      getResourcesOrBuilderList() {
+    return resources ;
+  }
+  /**
+   * <code>repeated .glory_api.ResourceCount resources = 21;</code>
+   */
+  @java.lang.Override
+  public int getResourcesCount() {
+    return resources .size();
+  }
+  /**
+   * <code>repeated .glory_api.ResourceCount resources = 21;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.course.ResourceCount getResources(int index) {
+    return resources .get(index);
+  }
+  /**
+   * <code>repeated .glory_api.ResourceCount resources = 21;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.course.ResourceCountOrBuilder getResourcesOrBuilder(
+      int index) {
+    return resources .get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -746,6 +800,9 @@ private static final long serialVersionUID = 0L;
     if (!getCreatedAtBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 20, createdAt );
     }
+    for (int i = 0; i < resources .size(); i++) {
+      output.writeMessage(21, resources .get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -807,6 +864,10 @@ private static final long serialVersionUID = 0L;
     if (!getCreatedAtBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, createdAt );
     }
+    for (int i = 0; i < resources .size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(21, resources .get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -856,6 +917,8 @@ private static final long serialVersionUID = 0L;
             other.getSkillHours())) return false;
     if (!getCreatedAt()
         .equals(other.getCreatedAt())) return false;
+    if (!getResourcesList()
+        .equals(other.getResourcesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -902,6 +965,10 @@ private static final long serialVersionUID = 0L;
         getSkillHours());
     hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
     hash = (53 * hash) + getCreatedAt().hashCode();
+    if (getResourcesCount() > 0) {
+      hash = (37 * hash) + RESOURCES_FIELD_NUMBER;
+      hash = (53 * hash) + getResourcesList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1030,6 +1097,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getResourcesFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1067,6 +1135,12 @@ private static final long serialVersionUID = 0L;
 
       createdAt = "";
 
+      if (resourcesBuilder == null) {
+        resources = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000001);
+      } else {
+        resourcesBuilder .clear();
+      }
       return this;
     }
 
@@ -1093,6 +1167,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.course.NodeDetail buildPartial() {
       com.zhijiejiaoyu.glory_api.course.NodeDetail result = new com.zhijiejiaoyu.glory_api.course.NodeDetail(this);
+      int from_bitField0 = bitField0 ;
       result.id = id ;
       result.code = code ;
       result.name = name ;
@@ -1109,6 +1184,15 @@ private static final long serialVersionUID = 0L;
       result.knowledgeHours = knowledgeHours ;
       result.skillHours = skillHours ;
       result.createdAt = createdAt ;
+      if (resourcesBuilder == null) {
+        if (((bitField0 & 0x00000001) != 0)) {
+          resources = java.util.Collections.unmodifiableList(resources );
+          bitField0 = (bitField0 & ~0x00000001);
+        }
+        result.resources = resources ;
+      } else {
+        result.resources = resourcesBuilder .build();
+      }
       onBuilt();
       return result;
     }
@@ -1217,6 +1301,32 @@ private static final long serialVersionUID = 0L;
         createdAt = other.createdAt ;
         onChanged();
       }
+      if (resourcesBuilder == null) {
+        if (!other.resources .isEmpty()) {
+          if (resources .isEmpty()) {
+            resources = other.resources ;
+            bitField0 = (bitField0 & ~0x00000001);
+          } else {
+            ensureResourcesIsMutable();
+            resources .addAll(other.resources );
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.resources .isEmpty()) {
+          if (resourcesBuilder .isEmpty()) {
+            resourcesBuilder .dispose();
+            resourcesBuilder = null;
+            resources = other.resources ;
+            bitField0 = (bitField0 & ~0x00000001);
+            resourcesBuilder = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getResourcesFieldBuilder() : null;
+          } else {
+            resourcesBuilder .addAllMessages(other.resources );
+          }
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1245,6 +1355,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0 ;
 
     private long id ;
     /**
@@ -2280,6 +2391,246 @@ private static final long serialVersionUID = 0L;
       createdAt = value;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.zhijiejiaoyu.glory_api.course.ResourceCount> resources =
+      java.util.Collections.emptyList();
+    private void ensureResourcesIsMutable() {
+      if (!((bitField0 & 0x00000001) != 0)) {
+        resources = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.course.ResourceCount>(resources );
+        bitField0_ |= 0x00000001;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.course.ResourceCount, com.zhijiejiaoyu.glory_api.course.ResourceCount.Builder, com.zhijiejiaoyu.glory_api.course.ResourceCountOrBuilder> resourcesBuilder ;
+
+    /**
+     * <code>repeated .glory_api.ResourceCount resources = 21;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.course.ResourceCount> getResourcesList() {
+      if (resourcesBuilder == null) {
+        return java.util.Collections.unmodifiableList(resources );
+      } else {
+        return resourcesBuilder .getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .glory_api.ResourceCount resources = 21;</code>
+     */
+    public int getResourcesCount() {
+      if (resourcesBuilder == null) {
+        return resources .size();
+      } else {
+        return resourcesBuilder .getCount();
+      }
+    }
+    /**
+     * <code>repeated .glory_api.ResourceCount resources = 21;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.ResourceCount getResources(int index) {
+      if (resourcesBuilder == null) {
+        return resources .get(index);
+      } else {
+        return resourcesBuilder .getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .glory_api.ResourceCount resources = 21;</code>
+     */
+    public Builder setResources(
+        int index, com.zhijiejiaoyu.glory_api.course.ResourceCount value) {
+      if (resourcesBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureResourcesIsMutable();
+        resources .set(index, value);
+        onChanged();
+      } else {
+        resourcesBuilder .setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.ResourceCount resources = 21;</code>
+     */
+    public Builder setResources(
+        int index, com.zhijiejiaoyu.glory_api.course.ResourceCount.Builder builderForValue) {
+      if (resourcesBuilder == null) {
+        ensureResourcesIsMutable();
+        resources .set(index, builderForValue.build());
+        onChanged();
+      } else {
+        resourcesBuilder .setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.ResourceCount resources = 21;</code>
+     */
+    public Builder addResources(com.zhijiejiaoyu.glory_api.course.ResourceCount value) {
+      if (resourcesBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureResourcesIsMutable();
+        resources .add(value);
+        onChanged();
+      } else {
+        resourcesBuilder .addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.ResourceCount resources = 21;</code>
+     */
+    public Builder addResources(
+        int index, com.zhijiejiaoyu.glory_api.course.ResourceCount value) {
+      if (resourcesBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureResourcesIsMutable();
+        resources .add(index, value);
+        onChanged();
+      } else {
+        resourcesBuilder .addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.ResourceCount resources = 21;</code>
+     */
+    public Builder addResources(
+        com.zhijiejiaoyu.glory_api.course.ResourceCount.Builder builderForValue) {
+      if (resourcesBuilder == null) {
+        ensureResourcesIsMutable();
+        resources .add(builderForValue.build());
+        onChanged();
+      } else {
+        resourcesBuilder .addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.ResourceCount resources = 21;</code>
+     */
+    public Builder addResources(
+        int index, com.zhijiejiaoyu.glory_api.course.ResourceCount.Builder builderForValue) {
+      if (resourcesBuilder == null) {
+        ensureResourcesIsMutable();
+        resources .add(index, builderForValue.build());
+        onChanged();
+      } else {
+        resourcesBuilder .addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.ResourceCount resources = 21;</code>
+     */
+    public Builder addAllResources(
+        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.course.ResourceCount> values) {
+      if (resourcesBuilder == null) {
+        ensureResourcesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, resources );
+        onChanged();
+      } else {
+        resourcesBuilder .addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.ResourceCount resources = 21;</code>
+     */
+    public Builder clearResources() {
+      if (resourcesBuilder == null) {
+        resources = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000001);
+        onChanged();
+      } else {
+        resourcesBuilder .clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.ResourceCount resources = 21;</code>
+     */
+    public Builder removeResources(int index) {
+      if (resourcesBuilder == null) {
+        ensureResourcesIsMutable();
+        resources .remove(index);
+        onChanged();
+      } else {
+        resourcesBuilder .remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.ResourceCount resources = 21;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.ResourceCount.Builder getResourcesBuilder(
+        int index) {
+      return getResourcesFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .glory_api.ResourceCount resources = 21;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.ResourceCountOrBuilder getResourcesOrBuilder(
+        int index) {
+      if (resourcesBuilder == null) {
+        return resources .get(index);  } else {
+        return resourcesBuilder .getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .glory_api.ResourceCount resources = 21;</code>
+     */
+    public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.ResourceCountOrBuilder> 
+         getResourcesOrBuilderList() {
+      if (resourcesBuilder != null) {
+        return resourcesBuilder .getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(resources );
+      }
+    }
+    /**
+     * <code>repeated .glory_api.ResourceCount resources = 21;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.ResourceCount.Builder addResourcesBuilder() {
+      return getResourcesFieldBuilder().addBuilder(
+          com.zhijiejiaoyu.glory_api.course.ResourceCount.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .glory_api.ResourceCount resources = 21;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.ResourceCount.Builder addResourcesBuilder(
+        int index) {
+      return getResourcesFieldBuilder().addBuilder(
+          index, com.zhijiejiaoyu.glory_api.course.ResourceCount.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .glory_api.ResourceCount resources = 21;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.course.ResourceCount.Builder> 
+         getResourcesBuilderList() {
+      return getResourcesFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.course.ResourceCount, com.zhijiejiaoyu.glory_api.course.ResourceCount.Builder, com.zhijiejiaoyu.glory_api.course.ResourceCountOrBuilder> 
+        getResourcesFieldBuilder() {
+      if (resourcesBuilder == null) {
+        resourcesBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.course.ResourceCount, com.zhijiejiaoyu.glory_api.course.ResourceCount.Builder, com.zhijiejiaoyu.glory_api.course.ResourceCountOrBuilder>(
+                resources ,
+                ((bitField0 & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        resources = null;
+      }
+      return resourcesBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

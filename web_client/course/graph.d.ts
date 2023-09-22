@@ -29,6 +29,11 @@ export interface KnowledgeGraph {
   edge?: Array<Edge>;
 }
 
+export interface ResourceCount {
+  type?: string;
+  count?: string;
+}
+
 export interface NodeDetail {
   id?: string;
   code?: string;
@@ -46,6 +51,7 @@ export interface NodeDetail {
   knowledge_hours?: number;
   skill_hours?: number;
   created_at?: string;
+  resources?: Array<ResourceCount>;
 }
 
 export interface CreateKnowledgeGraphRequest {
