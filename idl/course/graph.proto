@@ -26,6 +26,11 @@ message KnowledgeGraph {
     repeated Edge edge = 2; // 边
 }
 
+message ResourceCount {
+    int64 type = 1;
+    int64 count = 2;
+}
+
 message NodeDetail {
     int64 id = 1;
     string code = 2;
@@ -43,6 +48,7 @@ message NodeDetail {
     float knowledge_hours = 18;
     float skill_hours = 19;
     string created_at = 20;
+    repeated ResourceCount resources = 21;
 }
 
 message CreateKnowledgeGraphRequest {
