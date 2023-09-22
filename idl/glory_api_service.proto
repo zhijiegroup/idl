@@ -48,6 +48,7 @@ import "course/course.proto";
 import "course/graph.proto";
 import "course/user_course.proto";
 import "course/teaching_plan.proto";
+import "course/edu_scheme.proto";
 
 service glory_api {
 
@@ -1106,5 +1107,25 @@ service glory_api {
   }
   rpc UpdateTeachingPlan(UpdateTeachingPlanRequest) returns (UpdateTeachingPlanResponse) {
     option (api.post) = '/api/course/update_teaching_plan';
+  }
+
+  // 培养方案
+  rpc CreateEduScheme(CreateEduSchemeRequest) returns (CreateEduSchemeResponse) {
+    option (api.post) = '/api/course/create_edu_scheme';
+  }
+  rpc UpdateEduScheme(UpdateEduSchemeRequest) returns (UpdateEduSchemeResponse) {
+    option (api.post) = '/api/course/update_edu_scheme';
+  }
+  rpc ListEduScheme(ListEduSchemeRequest) returns (ListEduSchemeResponse) {
+    option (api.post) = '/api/course/list_edu_scheme';
+  }
+  rpc EduSchemeDetail(EduSchemeDetailRequest) returns (EduSchemeDetailResponse) {
+    option (api.get) = '/api/course/edu_scheme_detail';
+  }
+  rpc DeleteEduScheme(DeleteEduSchemeRequest) returns (DeleteEduSchemeResponse) {
+    option (api.post) = '/api/course/delete_edu_scheme';
+  }
+  rpc DistributeEduScheme(DistributeEduSchemeRequest) returns (DistributeEduSchemeResponse) {
+    option (api.post) = '/api/course/distribute_edu_scheme';
   }
 }
