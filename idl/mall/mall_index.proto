@@ -42,6 +42,7 @@ message LiveRoomIndexInfo {
   string shop_name = 15;
   string shop_logo_url = 16;
   int64 shop_id = 17;
+  bool is_follow = 18; // 是否已关注用户
 }
 
 message MallIndexRequest {
