@@ -43,6 +43,7 @@ import "tenant/tenant_config.proto";
 import "short_video/short_video.proto";
 import "course/material.proto";
 import "course/module.proto";
+import "course/cmodule.proto";
 import "course/nmodule.proto";
 import "course/course.proto";
 import "course/graph.proto";
@@ -1016,6 +1017,20 @@ service glory_api {
   // 能力指标列表
   rpc ListCourseModule(ListCourseModuleRequest) returns (ListCourseModuleResponse) {
     option (api.post) = '/api/course/list_course_module';
+  }
+
+  // 课程列表
+  rpc ListLatestCourse(ListLatestCourseRequest) returns (ListLatestCourseResponse) {
+    option (api.post) = '/api/course/list_latest_course';
+  }
+  rpc ListHotestCourse(ListHotestCourseRequest) returns (ListHotestCourseResponse) {
+    option (api.post) = '/api/course/list_hotest_course';
+  }
+
+  // 自定义课程
+  // 新建课程
+  rpc CreateCmCourse(CreateCmCourseRequest) returns (CreateCmCourseResponse) {
+    option (api.post) = '/api/course/create_cm_course';
   }
 
   // 非模块化课程

@@ -1,0 +1,15 @@
+syntax = "proto3";
+package glory_api;
+option java_package = "com.zhijiejiaoyu.glory_api.course";
+option java_multiple_files = true;
+
+import "base.proto";
+
+message CreateCmCourseRequest {
+    base.BaseRequest base_request = 1;
+    repeated int64 module_ids = 2;
+}
+
+message CreateCmCourseResponse {
+    base.BaseResponse base_resp = 1;
+}
