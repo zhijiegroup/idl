@@ -50,8 +50,8 @@ message UpdateEduSchemeRequest {
     string ability_standard = 7;
     string character_standard = 8;
     string group_name = 9;
-    repeated int64 course_module_ids = 10;
-    int64 edu_scheme_id = 11;
+    int64 edu_scheme_id = 10;
+    repeated CourseModule course_modules = 12; // 能力指标或能力方向
 }
 
 message UpdateEduSchemeResponse {
