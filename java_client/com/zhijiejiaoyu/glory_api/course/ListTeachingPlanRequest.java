@@ -73,6 +73,11 @@ private static final long serialVersionUID = 0L;
             name = s;
             break;
           }
+          case 32: {
+
+            userId = input.readInt64();
+            break;
+          }
           case 802: {
             com.zhijiejiaoyu.base.PaginationRequest.Builder subBuilder = null;
             if (pagination != null) {
@@ -193,6 +198,17 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int USER_ID_FIELD_NUMBER = 4;
+  private long userId ;
+  /**
+   * <code>int64 user_id = 4;</code>
+   * @return The userId.
+   */
+  @java.lang.Override
+  public long getUserId() {
+    return userId ;
+  }
+
   public static final int PAGINATION_FIELD_NUMBER = 100;
   private com.zhijiejiaoyu.base.PaginationRequest pagination ;
   /**
@@ -242,6 +258,9 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name );
     }
+    if (userId != 0L) {
+      output.writeInt64(4, userId );
+    }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
     }
@@ -264,6 +283,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name );
+    }
+    if (userId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(4, userId );
     }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -293,6 +316,8 @@ private static final long serialVersionUID = 0L;
         != other.getType()) return false;
     if (!getName()
         .equals(other.getName())) return false;
+    if (getUserId()
+        != other.getUserId()) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -317,6 +342,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getType();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getUserId());
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
@@ -464,6 +492,8 @@ private static final long serialVersionUID = 0L;
 
       name = "";
 
+      userId = 0L;
+
       if (paginationBuilder == null) {
         pagination = null;
       } else {
@@ -503,6 +533,7 @@ private static final long serialVersionUID = 0L;
       }
       result.type = type ;
       result.name = name ;
+      result.userId = userId ;
       if (paginationBuilder == null) {
         result.pagination = pagination ;
       } else {
@@ -565,6 +596,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getName().isEmpty()) {
         name = other.name ;
         onChanged();
+      }
+      if (other.getUserId() != 0L) {
+        setUserId(other.getUserId());
       }
       if (other.hasPagination()) {
         mergePagination(other.getPagination());
@@ -820,6 +854,37 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       name = value;
+      onChanged();
+      return this;
+    }
+
+    private long userId ;
+    /**
+     * <code>int64 user_id = 4;</code>
+     * @return The userId.
+     */
+    @java.lang.Override
+    public long getUserId() {
+      return userId ;
+    }
+    /**
+     * <code>int64 user_id = 4;</code>
+     * @param value The userId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserId(long value) {
+      
+      userId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 user_id = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUserId() {
+      
+      userId = 0L;
       onChanged();
       return this;
     }

@@ -113,25 +113,52 @@ public interface UpdateEduSchemeRequestOrBuilder extends
       getGroupNameBytes();
 
   /**
-   * <code>repeated int64 course_module_ids = 10;</code>
-   * @return A list containing the courseModuleIds.
-   */
-  java.util.List<java.lang.Long> getCourseModuleIdsList();
-  /**
-   * <code>repeated int64 course_module_ids = 10;</code>
-   * @return The count of courseModuleIds.
-   */
-  int getCourseModuleIdsCount();
-  /**
-   * <code>repeated int64 course_module_ids = 10;</code>
-   * @param index The index of the element to return.
-   * @return The courseModuleIds at the given index.
-   */
-  long getCourseModuleIds(int index);
-
-  /**
-   * <code>int64 edu_scheme_id = 11;</code>
+   * <code>int64 edu_scheme_id = 10;</code>
    * @return The eduSchemeId.
    */
   long getEduSchemeId();
+
+  /**
+   * <pre>
+   * 能力指标或能力方向
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseModule course_modules = 12;</code>
+   */
+  java.util.List<com.zhijiejiaoyu.glory_api.course.CourseModule> 
+      getCourseModulesList();
+  /**
+   * <pre>
+   * 能力指标或能力方向
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseModule course_modules = 12;</code>
+   */
+  com.zhijiejiaoyu.glory_api.course.CourseModule getCourseModules(int index);
+  /**
+   * <pre>
+   * 能力指标或能力方向
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseModule course_modules = 12;</code>
+   */
+  int getCourseModulesCount();
+  /**
+   * <pre>
+   * 能力指标或能力方向
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseModule course_modules = 12;</code>
+   */
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder> 
+      getCourseModulesOrBuilderList();
+  /**
+   * <pre>
+   * 能力指标或能力方向
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseModule course_modules = 12;</code>
+   */
+  com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder getCourseModulesOrBuilder(
+      int index);
 }

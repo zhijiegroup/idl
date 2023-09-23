@@ -15,6 +15,11 @@ public final class TeachingPlanOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_TeachingPlanChapter_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_TeachingPlanChapter_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_glory_api_TeachingPlan_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -59,34 +64,37 @@ public final class TeachingPlanOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\032course/teaching_plan.proto\022\tglory_api\032" +
-      "\nbase.proto\032\023course/module.proto\"\303\001\n\014Tea" +
-      "chingPlan\022\030\n\020teaching_plan_id\030\001 \001(\003\022\032\n\022t" +
-      "eaching_plan_type\030\002 \001(\005\022\022\n\nchapter_id\030\003 " +
-      "\001(\003\022\024\n\014chapter_name\030\004 \001(\t\022\030\n\020course_modu" +
-      "le_id\030\005 \001(\003\022\032\n\022course_module_name\030\006 \001(\t\022" +
-      "\035\n\025teaching_plan_content\030\007 \001(\t\"\337\001\n\031Creat" +
-      "eTeachingPlanRequest\022\'\n\014base_request\030\001 \001" +
-      "(\0132\021.base.BaseRequest\022\014\n\004type\030\002 \001(\005\022\014\n\004n" +
-      "ame\030\003 \001(\t\022\022\n\nchapter_id\030\004 \001(\003\022\024\n\014chapter" +
-      "_name\030\005 \001(\t\022\030\n\020course_module_id\030\006 \001(\003\022\032\n" +
-      "\022course_module_name\030\007 \001(\t\022\035\n\025teaching_pl" +
-      "an_content\030\010 \001(\t\"]\n\032CreateTeachingPlanRe" +
-      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
-      "ponse\022\030\n\020teaching_plan_id\030\002 \001(\003\"\213\001\n\031Upda" +
-      "teTeachingPlanRequest\022\'\n\014base_request\030\001 " +
-      "\001(\0132\021.base.BaseRequest\022\030\n\020teaching_plan_" +
-      "id\030\002 \001(\003\022\014\n\004name\030\003 \001(\t\022\035\n\025teaching_plan_" +
-      "content\030\004 \001(\t\"C\n\032UpdateTeachingPlanRespo" +
-      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
-      "se\"\213\001\n\027ListTeachingPlanRequest\022\'\n\014base_r" +
-      "equest\030\001 \001(\0132\021.base.BaseRequest\022\014\n\004type\030" +
-      "\002 \001(\005\022\014\n\004name\030\003 \001(\t\022+\n\npagination\030d \001(\0132" +
-      "\027.base.PaginationRequest\"\244\001\n\030ListTeachin" +
-      "gPlanResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
-      "BaseResponse\0223\n\022teaching_plan_list\030\002 \003(\013" +
-      "2\027.glory_api.TeachingPlan\022,\n\npagination\030" +
-      "d \001(\0132\030.base.PaginationResponseB%\n!com.z" +
-      "hijiejiaoyu.glory_api.courseP\001b\006proto3"
+      "\nbase.proto\032\023course/module.proto\"^\n\023Teac" +
+      "hingPlanChapter\022\022\n\nchapter_id\030\001 \001(\003\022\024\n\014c" +
+      "hapter_name\030\002 \001(\t\022\035\n\025teaching_plan_conte" +
+      "nt\030\003 \001(\t\"\254\001\n\014TeachingPlan\022\030\n\020teaching_pl" +
+      "an_id\030\001 \001(\003\022\032\n\022teaching_plan_type\030\002 \001(\005\022" +
+      "\030\n\020course_module_id\030\003 \001(\003\022\032\n\022course_modu" +
+      "le_name\030\004 \001(\t\0220\n\010chapters\030\005 \003(\0132\036.glory_" +
+      "api.TeachingPlanChapter\"\337\001\n\031CreateTeachi" +
+      "ngPlanRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
+      "se.BaseRequest\022\014\n\004type\030\002 \001(\005\022\014\n\004name\030\003 \001" +
+      "(\t\022\022\n\nchapter_id\030\004 \001(\003\022\024\n\014chapter_name\030\005" +
+      " \001(\t\022\030\n\020course_module_id\030\006 \001(\003\022\032\n\022course" +
+      "_module_name\030\007 \001(\t\022\035\n\025teaching_plan_cont" +
+      "ent\030\010 \001(\t\"]\n\032CreateTeachingPlanResponse\022" +
+      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022\030" +
+      "\n\020teaching_plan_id\030\002 \001(\003\"\213\001\n\031UpdateTeach" +
+      "ingPlanRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
+      "ase.BaseRequest\022\030\n\020teaching_plan_id\030\002 \001(" +
+      "\003\022\014\n\004name\030\003 \001(\t\022\035\n\025teaching_plan_content" +
+      "\030\004 \001(\t\"C\n\032UpdateTeachingPlanResponse\022%\n\t" +
+      "base_resp\030\001 \001(\0132\022.base.BaseResponse\"\234\001\n\027" +
+      "ListTeachingPlanRequest\022\'\n\014base_request\030" +
+      "\001 \001(\0132\021.base.BaseRequest\022\014\n\004type\030\002 \001(\005\022\014" +
+      "\n\004name\030\003 \001(\t\022\017\n\007user_id\030\004 \001(\003\022+\n\npaginat" +
+      "ion\030d \001(\0132\027.base.PaginationRequest\"\244\001\n\030L" +
+      "istTeachingPlanResponse\022%\n\tbase_resp\030\001 \001" +
+      "(\0132\022.base.BaseResponse\0223\n\022teaching_plan_" +
+      "list\030\002 \003(\0132\027.glory_api.TeachingPlan\022,\n\np" +
+      "agination\030d \001(\0132\030.base.PaginationRespons" +
+      "eB%\n!com.zhijiejiaoyu.glory_api.courseP\001" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -94,44 +102,50 @@ public final class TeachingPlanOuterClass {
           com.zhijiejiaoyu.base.Base.getDescriptor(),
           com.zhijiejiaoyu.glory_api.course.Module.getDescriptor(),
         });
-    internal_static_glory_api_TeachingPlan_descriptor =
+    internal_static_glory_api_TeachingPlanChapter_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_glory_api_TeachingPlanChapter_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_TeachingPlanChapter_descriptor,
+        new java.lang.String[] { "ChapterId", "ChapterName", "TeachingPlanContent", });
+    internal_static_glory_api_TeachingPlan_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_glory_api_TeachingPlan_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_TeachingPlan_descriptor,
-        new java.lang.String[] { "TeachingPlanId", "TeachingPlanType", "ChapterId", "ChapterName", "CourseModuleId", "CourseModuleName", "TeachingPlanContent", });
+        new java.lang.String[] { "TeachingPlanId", "TeachingPlanType", "CourseModuleId", "CourseModuleName", "Chapters", });
     internal_static_glory_api_CreateTeachingPlanRequest_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_glory_api_CreateTeachingPlanRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CreateTeachingPlanRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "Type", "Name", "ChapterId", "ChapterName", "CourseModuleId", "CourseModuleName", "TeachingPlanContent", });
     internal_static_glory_api_CreateTeachingPlanResponse_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_glory_api_CreateTeachingPlanResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CreateTeachingPlanResponse_descriptor,
         new java.lang.String[] { "BaseResp", "TeachingPlanId", });
     internal_static_glory_api_UpdateTeachingPlanRequest_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_glory_api_UpdateTeachingPlanRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateTeachingPlanRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "TeachingPlanId", "Name", "TeachingPlanContent", });
     internal_static_glory_api_UpdateTeachingPlanResponse_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_glory_api_UpdateTeachingPlanResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateTeachingPlanResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_ListTeachingPlanRequest_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_glory_api_ListTeachingPlanRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListTeachingPlanRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "Type", "Name", "Pagination", });
+        new java.lang.String[] { "BaseRequest", "Type", "Name", "UserId", "Pagination", });
     internal_static_glory_api_ListTeachingPlanResponse_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_glory_api_ListTeachingPlanResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListTeachingPlanResponse_descriptor,

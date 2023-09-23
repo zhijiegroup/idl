@@ -54,8 +54,9 @@ export interface UpdateEduSchemeRequest {
   ability_standard?: string;
   character_standard?: string;
   group_name?: string;
-  course_module_ids?: Array<string>;
   edu_scheme_id?: string;
+  /** 能力指标或能力方向 */
+  course_modules?: Array<modules.CourseModule>;
 }
 
 export interface UpdateEduSchemeResponse {

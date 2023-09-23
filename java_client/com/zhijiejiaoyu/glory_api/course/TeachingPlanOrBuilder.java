@@ -20,50 +20,44 @@ public interface TeachingPlanOrBuilder extends
   int getTeachingPlanType();
 
   /**
-   * <code>int64 chapter_id = 3;</code>
-   * @return The chapterId.
-   */
-  long getChapterId();
-
-  /**
-   * <code>string chapter_name = 4;</code>
-   * @return The chapterName.
-   */
-  java.lang.String getChapterName();
-  /**
-   * <code>string chapter_name = 4;</code>
-   * @return The bytes for chapterName.
-   */
-  com.google.protobuf.ByteString
-      getChapterNameBytes();
-
-  /**
-   * <code>int64 course_module_id = 5;</code>
+   * <code>int64 course_module_id = 3;</code>
    * @return The courseModuleId.
    */
   long getCourseModuleId();
 
   /**
-   * <code>string course_module_name = 6;</code>
+   * <code>string course_module_name = 4;</code>
    * @return The courseModuleName.
    */
   java.lang.String getCourseModuleName();
   /**
-   * <code>string course_module_name = 6;</code>
+   * <code>string course_module_name = 4;</code>
    * @return The bytes for courseModuleName.
    */
   com.google.protobuf.ByteString
       getCourseModuleNameBytes();
 
   /**
-   * <code>string teaching_plan_content = 7;</code>
-   * @return The teachingPlanContent.
+   * <code>repeated .glory_api.TeachingPlanChapter chapters = 5;</code>
    */
-  java.lang.String getTeachingPlanContent();
+  java.util.List<com.zhijiejiaoyu.glory_api.course.TeachingPlanChapter> 
+      getChaptersList();
   /**
-   * <code>string teaching_plan_content = 7;</code>
-   * @return The bytes for teachingPlanContent.
+   * <code>repeated .glory_api.TeachingPlanChapter chapters = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getTeachingPlanContentBytes();
+  com.zhijiejiaoyu.glory_api.course.TeachingPlanChapter getChapters(int index);
+  /**
+   * <code>repeated .glory_api.TeachingPlanChapter chapters = 5;</code>
+   */
+  int getChaptersCount();
+  /**
+   * <code>repeated .glory_api.TeachingPlanChapter chapters = 5;</code>
+   */
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.course.TeachingPlanChapterOrBuilder> 
+      getChaptersOrBuilderList();
+  /**
+   * <code>repeated .glory_api.TeachingPlanChapter chapters = 5;</code>
+   */
+  com.zhijiejiaoyu.glory_api.course.TeachingPlanChapterOrBuilder getChaptersOrBuilder(
+      int index);
 }

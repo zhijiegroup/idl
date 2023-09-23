@@ -23,7 +23,7 @@ private static final long serialVersionUID = 0L;
     abilityStandard = "";
     characterStandard = "";
     groupName = "";
-    courseModuleIds = emptyLongList();
+    courseModules = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -118,29 +118,17 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 80: {
-            if (!((mutable_bitField0 & 0x00000001) != 0)) {
-              courseModuleIds = newLongList();
-              mutable_bitField0_ |= 0x00000001;
-            }
-            courseModuleIds .addLong(input.readInt64());
-            break;
-          }
-          case 82: {
-            int length = input.readRawVarint32();
-            int limit = input.pushLimit(length);
-            if (!((mutable_bitField0 & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-              courseModuleIds = newLongList();
-              mutable_bitField0_ |= 0x00000001;
-            }
-            while (input.getBytesUntilLimit() > 0) {
-              courseModuleIds .addLong(input.readInt64());
-            }
-            input.popLimit(limit);
-            break;
-          }
-          case 88: {
 
             eduSchemeId = input.readInt64();
+            break;
+          }
+          case 98: {
+            if (!((mutable_bitField0 & 0x00000001) != 0)) {
+              courseModules = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.course.CourseModule>();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            courseModules .add(
+                input.readMessage(com.zhijiejiaoyu.glory_api.course.CourseModule.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -159,7 +147,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0 & 0x00000001) != 0)) {
-        courseModuleIds .makeImmutable(); // C
+        courseModules = java.util.Collections.unmodifiableList(courseModules );
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -481,43 +469,75 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int COURSE_MODULE_IDS_FIELD_NUMBER = 10;
-  private com.google.protobuf.Internal.LongList courseModuleIds ;
-  /**
-   * <code>repeated int64 course_module_ids = 10;</code>
-   * @return A list containing the courseModuleIds.
-   */
-  @java.lang.Override
-  public java.util.List<java.lang.Long>
-      getCourseModuleIdsList() {
-    return courseModuleIds ;
-  }
-  /**
-   * <code>repeated int64 course_module_ids = 10;</code>
-   * @return The count of courseModuleIds.
-   */
-  public int getCourseModuleIdsCount() {
-    return courseModuleIds .size();
-  }
-  /**
-   * <code>repeated int64 course_module_ids = 10;</code>
-   * @param index The index of the element to return.
-   * @return The courseModuleIds at the given index.
-   */
-  public long getCourseModuleIds(int index) {
-    return courseModuleIds .getLong(index);
-  }
-  private int courseModuleIdsMemoizedSerializedSize = -1;
-
-  public static final int EDU_SCHEME_ID_FIELD_NUMBER = 11;
+  public static final int EDU_SCHEME_ID_FIELD_NUMBER = 10;
   private long eduSchemeId ;
   /**
-   * <code>int64 edu_scheme_id = 11;</code>
+   * <code>int64 edu_scheme_id = 10;</code>
    * @return The eduSchemeId.
    */
   @java.lang.Override
   public long getEduSchemeId() {
     return eduSchemeId ;
+  }
+
+  public static final int COURSE_MODULES_FIELD_NUMBER = 12;
+  private java.util.List<com.zhijiejiaoyu.glory_api.course.CourseModule> courseModules ;
+  /**
+   * <pre>
+   * 能力指标或能力方向
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseModule course_modules = 12;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseModule> getCourseModulesList() {
+    return courseModules ;
+  }
+  /**
+   * <pre>
+   * 能力指标或能力方向
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseModule course_modules = 12;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder> 
+      getCourseModulesOrBuilderList() {
+    return courseModules ;
+  }
+  /**
+   * <pre>
+   * 能力指标或能力方向
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseModule course_modules = 12;</code>
+   */
+  @java.lang.Override
+  public int getCourseModulesCount() {
+    return courseModules .size();
+  }
+  /**
+   * <pre>
+   * 能力指标或能力方向
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseModule course_modules = 12;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.course.CourseModule getCourseModules(int index) {
+    return courseModules .get(index);
+  }
+  /**
+   * <pre>
+   * 能力指标或能力方向
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseModule course_modules = 12;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder getCourseModulesOrBuilder(
+      int index) {
+    return courseModules .get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -534,7 +554,6 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    getSerializedSize();
     if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
@@ -562,15 +581,11 @@ private static final long serialVersionUID = 0L;
     if (!getGroupNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, groupName );
     }
-    if (getCourseModuleIdsList().size() > 0) {
-      output.writeUInt32NoTag(82);
-      output.writeUInt32NoTag(courseModuleIdsMemoizedSerializedSize);
-    }
-    for (int i = 0; i < courseModuleIds .size(); i++) {
-      output.writeInt64NoTag(courseModuleIds .getLong(i));
-    }
     if (eduSchemeId != 0L) {
-      output.writeInt64(11, eduSchemeId );
+      output.writeInt64(10, eduSchemeId );
+    }
+    for (int i = 0; i < courseModules .size(); i++) {
+      output.writeMessage(12, courseModules .get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -610,23 +625,13 @@ private static final long serialVersionUID = 0L;
     if (!getGroupNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, groupName );
     }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < courseModuleIds .size(); i++) {
-        dataSize += com.google.protobuf.CodedOutputStream
-          .computeInt64SizeNoTag(courseModuleIds .getLong(i));
-      }
-      size += dataSize;
-      if (!getCourseModuleIdsList().isEmpty()) {
-        size += 1;
-        size += com.google.protobuf.CodedOutputStream
-            .computeInt32SizeNoTag(dataSize);
-      }
-      courseModuleIdsMemoizedSerializedSize = dataSize;
-    }
     if (eduSchemeId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(11, eduSchemeId );
+        .computeInt64Size(10, eduSchemeId );
+    }
+    for (int i = 0; i < courseModules .size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(12, courseModules .get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -664,10 +669,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCharacterStandard())) return false;
     if (!getGroupName()
         .equals(other.getGroupName())) return false;
-    if (!getCourseModuleIdsList()
-        .equals(other.getCourseModuleIdsList())) return false;
     if (getEduSchemeId()
         != other.getEduSchemeId()) return false;
+    if (!getCourseModulesList()
+        .equals(other.getCourseModulesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -699,13 +704,13 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getCharacterStandard().hashCode();
     hash = (37 * hash) + GROUP_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getGroupName().hashCode();
-    if (getCourseModuleIdsCount() > 0) {
-      hash = (37 * hash) + COURSE_MODULE_IDS_FIELD_NUMBER;
-      hash = (53 * hash) + getCourseModuleIdsList().hashCode();
-    }
     hash = (37 * hash) + EDU_SCHEME_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getEduSchemeId());
+    if (getCourseModulesCount() > 0) {
+      hash = (37 * hash) + COURSE_MODULES_FIELD_NUMBER;
+      hash = (53 * hash) + getCourseModulesList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -834,6 +839,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getCourseModulesFieldBuilder();
       }
     }
     @java.lang.Override
@@ -861,10 +867,14 @@ private static final long serialVersionUID = 0L;
 
       groupName = "";
 
-      courseModuleIds = emptyLongList();
-      bitField0 = (bitField0 & ~0x00000001);
       eduSchemeId = 0L;
 
+      if (courseModulesBuilder == null) {
+        courseModules = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000001);
+      } else {
+        courseModulesBuilder .clear();
+      }
       return this;
     }
 
@@ -905,12 +915,16 @@ private static final long serialVersionUID = 0L;
       result.abilityStandard = abilityStandard ;
       result.characterStandard = characterStandard ;
       result.groupName = groupName ;
-      if (((bitField0 & 0x00000001) != 0)) {
-        courseModuleIds .makeImmutable();
-        bitField0 = (bitField0 & ~0x00000001);
-      }
-      result.courseModuleIds = courseModuleIds ;
       result.eduSchemeId = eduSchemeId ;
+      if (courseModulesBuilder == null) {
+        if (((bitField0 & 0x00000001) != 0)) {
+          courseModules = java.util.Collections.unmodifiableList(courseModules );
+          bitField0 = (bitField0 & ~0x00000001);
+        }
+        result.courseModules = courseModules ;
+      } else {
+        result.courseModules = courseModulesBuilder .build();
+      }
       onBuilt();
       return result;
     }
@@ -993,18 +1007,34 @@ private static final long serialVersionUID = 0L;
         groupName = other.groupName ;
         onChanged();
       }
-      if (!other.courseModuleIds .isEmpty()) {
-        if (courseModuleIds .isEmpty()) {
-          courseModuleIds = other.courseModuleIds ;
-          bitField0 = (bitField0 & ~0x00000001);
-        } else {
-          ensureCourseModuleIdsIsMutable();
-          courseModuleIds .addAll(other.courseModuleIds );
-        }
-        onChanged();
-      }
       if (other.getEduSchemeId() != 0L) {
         setEduSchemeId(other.getEduSchemeId());
+      }
+      if (courseModulesBuilder == null) {
+        if (!other.courseModules .isEmpty()) {
+          if (courseModules .isEmpty()) {
+            courseModules = other.courseModules ;
+            bitField0 = (bitField0 & ~0x00000001);
+          } else {
+            ensureCourseModulesIsMutable();
+            courseModules .addAll(other.courseModules );
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.courseModules .isEmpty()) {
+          if (courseModulesBuilder .isEmpty()) {
+            courseModulesBuilder .dispose();
+            courseModulesBuilder = null;
+            courseModules = other.courseModules ;
+            bitField0 = (bitField0 & ~0x00000001);
+            courseModulesBuilder = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getCourseModulesFieldBuilder() : null;
+          } else {
+            courseModulesBuilder .addAllMessages(other.courseModules );
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1718,88 +1748,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.protobuf.Internal.LongList courseModuleIds = emptyLongList();
-    private void ensureCourseModuleIdsIsMutable() {
-      if (!((bitField0 & 0x00000001) != 0)) {
-        courseModuleIds = mutableCopy(courseModuleIds );
-        bitField0_ |= 0x00000001;
-       }
-    }
-    /**
-     * <code>repeated int64 course_module_ids = 10;</code>
-     * @return A list containing the courseModuleIds.
-     */
-    public java.util.List<java.lang.Long>
-        getCourseModuleIdsList() {
-      return ((bitField0 & 0x00000001) != 0) ?
-               java.util.Collections.unmodifiableList(courseModuleIds ) : courseModuleIds ;
-    }
-    /**
-     * <code>repeated int64 course_module_ids = 10;</code>
-     * @return The count of courseModuleIds.
-     */
-    public int getCourseModuleIdsCount() {
-      return courseModuleIds .size();
-    }
-    /**
-     * <code>repeated int64 course_module_ids = 10;</code>
-     * @param index The index of the element to return.
-     * @return The courseModuleIds at the given index.
-     */
-    public long getCourseModuleIds(int index) {
-      return courseModuleIds .getLong(index);
-    }
-    /**
-     * <code>repeated int64 course_module_ids = 10;</code>
-     * @param index The index to set the value at.
-     * @param value The courseModuleIds to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCourseModuleIds(
-        int index, long value) {
-      ensureCourseModuleIdsIsMutable();
-      courseModuleIds .setLong(index, value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated int64 course_module_ids = 10;</code>
-     * @param value The courseModuleIds to add.
-     * @return This builder for chaining.
-     */
-    public Builder addCourseModuleIds(long value) {
-      ensureCourseModuleIdsIsMutable();
-      courseModuleIds .addLong(value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated int64 course_module_ids = 10;</code>
-     * @param values The courseModuleIds to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAllCourseModuleIds(
-        java.lang.Iterable<? extends java.lang.Long> values) {
-      ensureCourseModuleIdsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, courseModuleIds );
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated int64 course_module_ids = 10;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearCourseModuleIds() {
-      courseModuleIds = emptyLongList();
-      bitField0 = (bitField0 & ~0x00000001);
-      onChanged();
-      return this;
-    }
-
     private long eduSchemeId ;
     /**
-     * <code>int64 edu_scheme_id = 11;</code>
+     * <code>int64 edu_scheme_id = 10;</code>
      * @return The eduSchemeId.
      */
     @java.lang.Override
@@ -1807,7 +1758,7 @@ private static final long serialVersionUID = 0L;
       return eduSchemeId ;
     }
     /**
-     * <code>int64 edu_scheme_id = 11;</code>
+     * <code>int64 edu_scheme_id = 10;</code>
      * @param value The eduSchemeId to set.
      * @return This builder for chaining.
      */
@@ -1818,7 +1769,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 edu_scheme_id = 11;</code>
+     * <code>int64 edu_scheme_id = 10;</code>
      * @return This builder for chaining.
      */
     public Builder clearEduSchemeId() {
@@ -1826,6 +1777,318 @@ private static final long serialVersionUID = 0L;
       eduSchemeId = 0L;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.zhijiejiaoyu.glory_api.course.CourseModule> courseModules =
+      java.util.Collections.emptyList();
+    private void ensureCourseModulesIsMutable() {
+      if (!((bitField0 & 0x00000001) != 0)) {
+        courseModules = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.course.CourseModule>(courseModules );
+        bitField0_ |= 0x00000001;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.course.CourseModule, com.zhijiejiaoyu.glory_api.course.CourseModule.Builder, com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder> courseModulesBuilder ;
+
+    /**
+     * <pre>
+     * 能力指标或能力方向
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseModule course_modules = 12;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseModule> getCourseModulesList() {
+      if (courseModulesBuilder == null) {
+        return java.util.Collections.unmodifiableList(courseModules );
+      } else {
+        return courseModulesBuilder .getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 能力指标或能力方向
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseModule course_modules = 12;</code>
+     */
+    public int getCourseModulesCount() {
+      if (courseModulesBuilder == null) {
+        return courseModules .size();
+      } else {
+        return courseModulesBuilder .getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 能力指标或能力方向
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseModule course_modules = 12;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseModule getCourseModules(int index) {
+      if (courseModulesBuilder == null) {
+        return courseModules .get(index);
+      } else {
+        return courseModulesBuilder .getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 能力指标或能力方向
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseModule course_modules = 12;</code>
+     */
+    public Builder setCourseModules(
+        int index, com.zhijiejiaoyu.glory_api.course.CourseModule value) {
+      if (courseModulesBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCourseModulesIsMutable();
+        courseModules .set(index, value);
+        onChanged();
+      } else {
+        courseModulesBuilder .setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 能力指标或能力方向
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseModule course_modules = 12;</code>
+     */
+    public Builder setCourseModules(
+        int index, com.zhijiejiaoyu.glory_api.course.CourseModule.Builder builderForValue) {
+      if (courseModulesBuilder == null) {
+        ensureCourseModulesIsMutable();
+        courseModules .set(index, builderForValue.build());
+        onChanged();
+      } else {
+        courseModulesBuilder .setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 能力指标或能力方向
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseModule course_modules = 12;</code>
+     */
+    public Builder addCourseModules(com.zhijiejiaoyu.glory_api.course.CourseModule value) {
+      if (courseModulesBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCourseModulesIsMutable();
+        courseModules .add(value);
+        onChanged();
+      } else {
+        courseModulesBuilder .addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 能力指标或能力方向
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseModule course_modules = 12;</code>
+     */
+    public Builder addCourseModules(
+        int index, com.zhijiejiaoyu.glory_api.course.CourseModule value) {
+      if (courseModulesBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCourseModulesIsMutable();
+        courseModules .add(index, value);
+        onChanged();
+      } else {
+        courseModulesBuilder .addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 能力指标或能力方向
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseModule course_modules = 12;</code>
+     */
+    public Builder addCourseModules(
+        com.zhijiejiaoyu.glory_api.course.CourseModule.Builder builderForValue) {
+      if (courseModulesBuilder == null) {
+        ensureCourseModulesIsMutable();
+        courseModules .add(builderForValue.build());
+        onChanged();
+      } else {
+        courseModulesBuilder .addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 能力指标或能力方向
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseModule course_modules = 12;</code>
+     */
+    public Builder addCourseModules(
+        int index, com.zhijiejiaoyu.glory_api.course.CourseModule.Builder builderForValue) {
+      if (courseModulesBuilder == null) {
+        ensureCourseModulesIsMutable();
+        courseModules .add(index, builderForValue.build());
+        onChanged();
+      } else {
+        courseModulesBuilder .addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 能力指标或能力方向
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseModule course_modules = 12;</code>
+     */
+    public Builder addAllCourseModules(
+        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.course.CourseModule> values) {
+      if (courseModulesBuilder == null) {
+        ensureCourseModulesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, courseModules );
+        onChanged();
+      } else {
+        courseModulesBuilder .addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 能力指标或能力方向
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseModule course_modules = 12;</code>
+     */
+    public Builder clearCourseModules() {
+      if (courseModulesBuilder == null) {
+        courseModules = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000001);
+        onChanged();
+      } else {
+        courseModulesBuilder .clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 能力指标或能力方向
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseModule course_modules = 12;</code>
+     */
+    public Builder removeCourseModules(int index) {
+      if (courseModulesBuilder == null) {
+        ensureCourseModulesIsMutable();
+        courseModules .remove(index);
+        onChanged();
+      } else {
+        courseModulesBuilder .remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 能力指标或能力方向
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseModule course_modules = 12;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseModule.Builder getCourseModulesBuilder(
+        int index) {
+      return getCourseModulesFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 能力指标或能力方向
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseModule course_modules = 12;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder getCourseModulesOrBuilder(
+        int index) {
+      if (courseModulesBuilder == null) {
+        return courseModules .get(index);  } else {
+        return courseModulesBuilder .getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 能力指标或能力方向
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseModule course_modules = 12;</code>
+     */
+    public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder> 
+         getCourseModulesOrBuilderList() {
+      if (courseModulesBuilder != null) {
+        return courseModulesBuilder .getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(courseModules );
+      }
+    }
+    /**
+     * <pre>
+     * 能力指标或能力方向
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseModule course_modules = 12;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseModule.Builder addCourseModulesBuilder() {
+      return getCourseModulesFieldBuilder().addBuilder(
+          com.zhijiejiaoyu.glory_api.course.CourseModule.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 能力指标或能力方向
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseModule course_modules = 12;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseModule.Builder addCourseModulesBuilder(
+        int index) {
+      return getCourseModulesFieldBuilder().addBuilder(
+          index, com.zhijiejiaoyu.glory_api.course.CourseModule.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 能力指标或能力方向
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseModule course_modules = 12;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseModule.Builder> 
+         getCourseModulesBuilderList() {
+      return getCourseModulesFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.course.CourseModule, com.zhijiejiaoyu.glory_api.course.CourseModule.Builder, com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder> 
+        getCourseModulesFieldBuilder() {
+      if (courseModulesBuilder == null) {
+        courseModulesBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.course.CourseModule, com.zhijiejiaoyu.glory_api.course.CourseModule.Builder, com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder>(
+                courseModules ,
+                ((bitField0 & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        courseModules = null;
+      }
+      return courseModulesBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

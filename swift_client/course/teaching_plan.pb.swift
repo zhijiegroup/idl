@@ -20,6 +20,22 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
+struct GloryApi_TeachingPlanChapter {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var chapterID: Int64 = 0
+
+  var chapterName: String = String()
+
+  var teachingPlanContent: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
 struct GloryApi_TeachingPlan {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -29,15 +45,11 @@ struct GloryApi_TeachingPlan {
 
   var teachingPlanType: Int32 = 0
 
-  var chapterID: Int64 = 0
-
-  var chapterName: String = String()
-
   var courseModuleID: Int64 = 0
 
   var courseModuleName: String = String()
 
-  var teachingPlanContent: String = String()
+  var chapters: [GloryApi_TeachingPlanChapter] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -168,6 +180,8 @@ struct GloryApi_ListTeachingPlanRequest {
 
   var name: String = String()
 
+  var userID: Int64 = 0
+
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
@@ -219,6 +233,7 @@ struct GloryApi_ListTeachingPlanResponse {
 }
 
 #if swift(>=5.5) && canImport(_Concurrency)
+extension GloryApi_TeachingPlanChapter: @unchecked Sendable {}
 extension GloryApi_TeachingPlan: @unchecked Sendable {}
 extension GloryApi_CreateTeachingPlanRequest: @unchecked Sendable {}
 extension GloryApi_CreateTeachingPlanResponse: @unchecked Sendable {}
@@ -232,16 +247,58 @@ extension GloryApi_ListTeachingPlanResponse: @unchecked Sendable {}
 
 fileprivate let _protobuf_package = "glory_api"
 
+extension GloryApi_TeachingPlanChapter: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".TeachingPlanChapter"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "chapter_id"),
+    2: .standard(proto: "chapter_name"),
+    3: .standard(proto: "teaching_plan_content"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.chapterID) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.chapterName) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.teachingPlanContent) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.chapterID != 0 {
+      try visitor.visitSingularInt64Field(value: self.chapterID, fieldNumber: 1)
+    }
+    if !self.chapterName.isEmpty {
+      try visitor.visitSingularStringField(value: self.chapterName, fieldNumber: 2)
+    }
+    if !self.teachingPlanContent.isEmpty {
+      try visitor.visitSingularStringField(value: self.teachingPlanContent, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_TeachingPlanChapter, rhs: GloryApi_TeachingPlanChapter) -> Bool {
+    if lhs.chapterID != rhs.chapterID {return false}
+    if lhs.chapterName != rhs.chapterName {return false}
+    if lhs.teachingPlanContent != rhs.teachingPlanContent {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
 extension GloryApi_TeachingPlan: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".TeachingPlan"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "teaching_plan_id"),
     2: .standard(proto: "teaching_plan_type"),
-    3: .standard(proto: "chapter_id"),
-    4: .standard(proto: "chapter_name"),
-    5: .standard(proto: "course_module_id"),
-    6: .standard(proto: "course_module_name"),
-    7: .standard(proto: "teaching_plan_content"),
+    3: .standard(proto: "course_module_id"),
+    4: .standard(proto: "course_module_name"),
+    5: .same(proto: "chapters"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -252,11 +309,9 @@ extension GloryApi_TeachingPlan: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularInt64Field(value: &self.teachingPlanID) }()
       case 2: try { try decoder.decodeSingularInt32Field(value: &self.teachingPlanType) }()
-      case 3: try { try decoder.decodeSingularInt64Field(value: &self.chapterID) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.chapterName) }()
-      case 5: try { try decoder.decodeSingularInt64Field(value: &self.courseModuleID) }()
-      case 6: try { try decoder.decodeSingularStringField(value: &self.courseModuleName) }()
-      case 7: try { try decoder.decodeSingularStringField(value: &self.teachingPlanContent) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.courseModuleID) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.courseModuleName) }()
+      case 5: try { try decoder.decodeRepeatedMessageField(value: &self.chapters) }()
       default: break
       }
     }
@@ -269,20 +324,14 @@ extension GloryApi_TeachingPlan: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     if self.teachingPlanType != 0 {
       try visitor.visitSingularInt32Field(value: self.teachingPlanType, fieldNumber: 2)
     }
-    if self.chapterID != 0 {
-      try visitor.visitSingularInt64Field(value: self.chapterID, fieldNumber: 3)
-    }
-    if !self.chapterName.isEmpty {
-      try visitor.visitSingularStringField(value: self.chapterName, fieldNumber: 4)
-    }
     if self.courseModuleID != 0 {
-      try visitor.visitSingularInt64Field(value: self.courseModuleID, fieldNumber: 5)
+      try visitor.visitSingularInt64Field(value: self.courseModuleID, fieldNumber: 3)
     }
     if !self.courseModuleName.isEmpty {
-      try visitor.visitSingularStringField(value: self.courseModuleName, fieldNumber: 6)
+      try visitor.visitSingularStringField(value: self.courseModuleName, fieldNumber: 4)
     }
-    if !self.teachingPlanContent.isEmpty {
-      try visitor.visitSingularStringField(value: self.teachingPlanContent, fieldNumber: 7)
+    if !self.chapters.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.chapters, fieldNumber: 5)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -290,11 +339,9 @@ extension GloryApi_TeachingPlan: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   static func ==(lhs: GloryApi_TeachingPlan, rhs: GloryApi_TeachingPlan) -> Bool {
     if lhs.teachingPlanID != rhs.teachingPlanID {return false}
     if lhs.teachingPlanType != rhs.teachingPlanType {return false}
-    if lhs.chapterID != rhs.chapterID {return false}
-    if lhs.chapterName != rhs.chapterName {return false}
     if lhs.courseModuleID != rhs.courseModuleID {return false}
     if lhs.courseModuleName != rhs.courseModuleName {return false}
-    if lhs.teachingPlanContent != rhs.teachingPlanContent {return false}
+    if lhs.chapters != rhs.chapters {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -516,6 +563,7 @@ extension GloryApi_ListTeachingPlanRequest: SwiftProtobuf.Message, SwiftProtobuf
     1: .standard(proto: "base_request"),
     2: .same(proto: "type"),
     3: .same(proto: "name"),
+    4: .standard(proto: "user_id"),
     100: .same(proto: "pagination"),
   ]
 
@@ -528,6 +576,7 @@ extension GloryApi_ListTeachingPlanRequest: SwiftProtobuf.Message, SwiftProtobuf
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularInt32Field(value: &self.type) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.name) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.userID) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -548,6 +597,9 @@ extension GloryApi_ListTeachingPlanRequest: SwiftProtobuf.Message, SwiftProtobuf
     if !self.name.isEmpty {
       try visitor.visitSingularStringField(value: self.name, fieldNumber: 3)
     }
+    if self.userID != 0 {
+      try visitor.visitSingularInt64Field(value: self.userID, fieldNumber: 4)
+    }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
     } }()
@@ -558,6 +610,7 @@ extension GloryApi_ListTeachingPlanRequest: SwiftProtobuf.Message, SwiftProtobuf
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.type != rhs.type {return false}
     if lhs.name != rhs.name {return false}
+    if lhs.userID != rhs.userID {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

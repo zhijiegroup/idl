@@ -152,9 +152,10 @@ struct GloryApi_UpdateEduSchemeRequest {
 
   var groupName: String = String()
 
-  var courseModuleIds: [Int64] = []
-
   var eduSchemeID: Int64 = 0
+
+  /// 能力指标或能力方向
+  var courseModules: [GloryApi_CourseModule] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -666,8 +667,8 @@ extension GloryApi_UpdateEduSchemeRequest: SwiftProtobuf.Message, SwiftProtobuf.
     7: .standard(proto: "ability_standard"),
     8: .standard(proto: "character_standard"),
     9: .standard(proto: "group_name"),
-    10: .standard(proto: "course_module_ids"),
-    11: .standard(proto: "edu_scheme_id"),
+    10: .standard(proto: "edu_scheme_id"),
+    12: .standard(proto: "course_modules"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -685,8 +686,8 @@ extension GloryApi_UpdateEduSchemeRequest: SwiftProtobuf.Message, SwiftProtobuf.
       case 7: try { try decoder.decodeSingularStringField(value: &self.abilityStandard) }()
       case 8: try { try decoder.decodeSingularStringField(value: &self.characterStandard) }()
       case 9: try { try decoder.decodeSingularStringField(value: &self.groupName) }()
-      case 10: try { try decoder.decodeRepeatedInt64Field(value: &self.courseModuleIds) }()
-      case 11: try { try decoder.decodeSingularInt64Field(value: &self.eduSchemeID) }()
+      case 10: try { try decoder.decodeSingularInt64Field(value: &self.eduSchemeID) }()
+      case 12: try { try decoder.decodeRepeatedMessageField(value: &self.courseModules) }()
       default: break
       }
     }
@@ -724,11 +725,11 @@ extension GloryApi_UpdateEduSchemeRequest: SwiftProtobuf.Message, SwiftProtobuf.
     if !self.groupName.isEmpty {
       try visitor.visitSingularStringField(value: self.groupName, fieldNumber: 9)
     }
-    if !self.courseModuleIds.isEmpty {
-      try visitor.visitPackedInt64Field(value: self.courseModuleIds, fieldNumber: 10)
-    }
     if self.eduSchemeID != 0 {
-      try visitor.visitSingularInt64Field(value: self.eduSchemeID, fieldNumber: 11)
+      try visitor.visitSingularInt64Field(value: self.eduSchemeID, fieldNumber: 10)
+    }
+    if !self.courseModules.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.courseModules, fieldNumber: 12)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -743,8 +744,8 @@ extension GloryApi_UpdateEduSchemeRequest: SwiftProtobuf.Message, SwiftProtobuf.
     if lhs.abilityStandard != rhs.abilityStandard {return false}
     if lhs.characterStandard != rhs.characterStandard {return false}
     if lhs.groupName != rhs.groupName {return false}
-    if lhs.courseModuleIds != rhs.courseModuleIds {return false}
     if lhs.eduSchemeID != rhs.eduSchemeID {return false}
+    if lhs.courseModules != rhs.courseModules {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
