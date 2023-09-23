@@ -157,6 +157,12 @@ struct GloryApi_LiveRoomIndexInfo {
     set {_uniqueStorage()._shopID = newValue}
   }
 
+  /// 是否已关注用户
+  var isFollow: Bool {
+    get {return _storage._isFollow}
+    set {_uniqueStorage()._isFollow = newValue}
+  }
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -380,6 +386,7 @@ extension GloryApi_LiveRoomIndexInfo: SwiftProtobuf.Message, SwiftProtobuf._Mess
     15: .standard(proto: "shop_name"),
     16: .standard(proto: "shop_logo_url"),
     17: .standard(proto: "shop_id"),
+    18: .standard(proto: "is_follow"),
   ]
 
   fileprivate class _StorageClass {
@@ -400,6 +407,7 @@ extension GloryApi_LiveRoomIndexInfo: SwiftProtobuf.Message, SwiftProtobuf._Mess
     var _shopName: String = String()
     var _shopLogoURL: String = String()
     var _shopID: Int64 = 0
+    var _isFollow: Bool = false
 
     static let defaultInstance = _StorageClass()
 
@@ -423,6 +431,7 @@ extension GloryApi_LiveRoomIndexInfo: SwiftProtobuf.Message, SwiftProtobuf._Mess
       _shopName = source._shopName
       _shopLogoURL = source._shopLogoURL
       _shopID = source._shopID
+      _isFollow = source._isFollow
     }
   }
 
@@ -458,6 +467,7 @@ extension GloryApi_LiveRoomIndexInfo: SwiftProtobuf.Message, SwiftProtobuf._Mess
         case 15: try { try decoder.decodeSingularStringField(value: &_storage._shopName) }()
         case 16: try { try decoder.decodeSingularStringField(value: &_storage._shopLogoURL) }()
         case 17: try { try decoder.decodeSingularInt64Field(value: &_storage._shopID) }()
+        case 18: try { try decoder.decodeSingularBoolField(value: &_storage._isFollow) }()
         default: break
         }
       }
@@ -517,6 +527,9 @@ extension GloryApi_LiveRoomIndexInfo: SwiftProtobuf.Message, SwiftProtobuf._Mess
       if _storage._shopID != 0 {
         try visitor.visitSingularInt64Field(value: _storage._shopID, fieldNumber: 17)
       }
+      if _storage._isFollow != false {
+        try visitor.visitSingularBoolField(value: _storage._isFollow, fieldNumber: 18)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -543,6 +556,7 @@ extension GloryApi_LiveRoomIndexInfo: SwiftProtobuf.Message, SwiftProtobuf._Mess
         if _storage._shopName != rhs_storage._shopName {return false}
         if _storage._shopLogoURL != rhs_storage._shopLogoURL {return false}
         if _storage._shopID != rhs_storage._shopID {return false}
+        if _storage._isFollow != rhs_storage._isFollow {return false}
         return true
       }
       if !storagesAreEqual {return false}

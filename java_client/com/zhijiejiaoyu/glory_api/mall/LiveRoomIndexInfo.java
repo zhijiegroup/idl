@@ -159,6 +159,11 @@ private static final long serialVersionUID = 0L;
             shopId = input.readInt64();
             break;
           }
+          case 144: {
+
+            isFollow = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -745,6 +750,21 @@ private static final long serialVersionUID = 0L;
     return shopId ;
   }
 
+  public static final int IS_FOLLOW_FIELD_NUMBER = 18;
+  private boolean isFollow ;
+  /**
+   * <pre>
+   * 是否已关注用户
+   * </pre>
+   *
+   * <code>bool is_follow = 18;</code>
+   * @return The isFollow.
+   */
+  @java.lang.Override
+  public boolean getIsFollow() {
+    return isFollow ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -810,6 +830,9 @@ private static final long serialVersionUID = 0L;
     if (shopId != 0L) {
       output.writeInt64(17, shopId );
     }
+    if (isFollow != false) {
+      output.writeBool(18, isFollow );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -874,6 +897,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(17, shopId );
     }
+    if (isFollow != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(18, isFollow );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -923,6 +950,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getShopLogoUrl())) return false;
     if (getShopId()
         != other.getShopId()) return false;
+    if (getIsFollow()
+        != other.getIsFollow()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -972,6 +1001,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + SHOP_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getShopId());
+    hash = (37 * hash) + IS_FOLLOW_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsFollow());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1139,6 +1171,8 @@ private static final long serialVersionUID = 0L;
 
       shopId = 0L;
 
+      isFollow = false;
+
       return this;
     }
 
@@ -1182,6 +1216,7 @@ private static final long serialVersionUID = 0L;
       result.shopName = shopName ;
       result.shopLogoUrl = shopLogoUrl ;
       result.shopId = shopId ;
+      result.isFollow = isFollow ;
       onBuilt();
       return result;
     }
@@ -1293,6 +1328,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getShopId() != 0L) {
         setShopId(other.getShopId());
+      }
+      if (other.getIsFollow() != false) {
+        setIsFollow(other.getIsFollow());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2471,6 +2509,49 @@ private static final long serialVersionUID = 0L;
     public Builder clearShopId() {
       
       shopId = 0L;
+      onChanged();
+      return this;
+    }
+
+    private boolean isFollow ;
+    /**
+     * <pre>
+     * 是否已关注用户
+     * </pre>
+     *
+     * <code>bool is_follow = 18;</code>
+     * @return The isFollow.
+     */
+    @java.lang.Override
+    public boolean getIsFollow() {
+      return isFollow ;
+    }
+    /**
+     * <pre>
+     * 是否已关注用户
+     * </pre>
+     *
+     * <code>bool is_follow = 18;</code>
+     * @param value The isFollow to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsFollow(boolean value) {
+      
+      isFollow = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 是否已关注用户
+     * </pre>
+     *
+     * <code>bool is_follow = 18;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsFollow() {
+      
+      isFollow = false;
       onChanged();
       return this;
     }
