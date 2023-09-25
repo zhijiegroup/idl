@@ -43,6 +43,7 @@ import * as tenant_config from "./tenant/tenant_config";
 import * as short_video from "./short_video/short_video";
 import * as material from "./course/material";
 import * as modules from "./course/module";
+import * as cmodule from "./course/cmodule";
 import * as nmodule from "./course/nmodule";
 import * as course from "./course/course";
 import * as graph from "./course/graph";
@@ -89,6 +90,7 @@ export {
   short_video,
   material,
   modules,
+  cmodule,
   nmodule,
   course,
   graph,
@@ -2056,6 +2058,30 @@ export class glory_api {
 
   ListCourseModule(request) {
     const uri = `${this.uriPrefix}/api/course/list_course_module`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListLatestCourse(request) {
+    const uri = `${this.uriPrefix}/api/course/list_latest_course`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListHotestCourse(request) {
+    const uri = `${this.uriPrefix}/api/course/list_hotest_course`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreateCmCourse(request) {
+    const uri = `${this.uriPrefix}/api/course/create_cm_course`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse

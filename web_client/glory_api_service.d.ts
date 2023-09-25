@@ -41,6 +41,7 @@ import * as tenant_config from "./tenant/tenant_config";
 import * as short_video from "./short_video/short_video";
 import * as material from "./course/material";
 import * as modules from "./course/module";
+import * as cmodule from "./course/cmodule";
 import * as nmodule from "./course/nmodule";
 import * as course from "./course/course";
 import * as graph from "./course/graph";
@@ -87,6 +88,7 @@ export {
   short_video,
   material,
   modules,
+  cmodule,
   nmodule,
   course,
   graph,
@@ -1141,6 +1143,21 @@ CreateLivePlanProduct create live plan product */
   ListCourseModule(
     request: modules.ListCourseModuleRequest
   ): Promise<modules.ListCourseModuleResponse>;
+
+  /** 课程列表 */
+  ListLatestCourse(
+    request: course.ListLatestCourseRequest
+  ): Promise<course.ListLatestCourseResponse>;
+
+  ListHotestCourse(
+    request: course.ListHotestCourseRequest
+  ): Promise<course.ListHotestCourseResponse>;
+
+  /** 自定义课程
+新建课程 */
+  CreateCmCourse(
+    request: cmodule.CreateCmCourseRequest
+  ): Promise<cmodule.CreateCmCourseResponse>;
 
   /** 非模块化课程
 新建资源 */

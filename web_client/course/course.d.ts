@@ -130,3 +130,23 @@ export interface GetCourseIdsResponse {
   base_resp?: base.BaseResponse;
   course_ids?: Array<string>;
 }
+
+export interface ListLatestCourseRequest {
+  base_request?: base.BaseRequest;
+  size?: string;
+}
+
+export interface ListLatestCourseResponse {
+  base_resp?: base.BaseResponse;
+  courses?: Array<Course>;
+}
+
+export interface ListHotestCourseRequest {
+  base_request?: base.BaseRequest;
+  size?: string;
+}
+
+export interface ListHotestCourseResponse {
+  base_resp?: base.BaseResponse;
+  courses?: Array<Course>;
+}
