@@ -11,14 +11,14 @@ message TeachingPlanChapter {
     string chapter_name = 2;
     string teaching_plan_content = 3;
     int32 chapter_type = 4;
+    int64 teaching_plan_id = 5;
+    int32 teaching_plan_type = 6;
 }
 
 message TeachingPlan {
-    int64 teaching_plan_id = 1;
-    int32 teaching_plan_type = 2;
-    int64 course_module_id = 3;
-    string course_module_name = 4;
-    repeated TeachingPlanChapter chapters = 5;
+    int64 course_module_id = 1;
+    string course_module_name = 2;
+    repeated TeachingPlanChapter chapters = 3;
 }
 
 message CreateTeachingPlanRequest {
