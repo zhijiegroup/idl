@@ -46,6 +46,8 @@ export interface LiveRoomIndexInfo {
   shop_name?: string;
   shop_logo_url?: string;
   shop_id?: string;
+  /** 是否已关注用户 */
+  is_follow?: boolean;
 }
 
 export interface MallIndexRequest {

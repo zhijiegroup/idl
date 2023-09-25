@@ -202,4 +202,14 @@ public interface LiveRoomIndexInfoOrBuilder extends
    * @return The shopId.
    */
   long getShopId();
+
+  /**
+   * <pre>
+   * 是否已关注用户
+   * </pre>
+   *
+   * <code>bool is_follow = 18;</code>
+   * @return The isFollow.
+   */
+  boolean getIsFollow();
 }
