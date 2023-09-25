@@ -4,12 +4,24 @@ option java_package = "com.zhijiejiaoyu.glory_api.course";
 option java_multiple_files = true;
 
 import "base.proto";
+import "course/module.proto";
 
 message CreateCmCourseRequest {
     base.BaseRequest base_request = 1;
     repeated int64 module_ids = 2;
+    string name = 3;
 }
 
 message CreateCmCourseResponse {
     base.BaseResponse base_resp = 1;
+}
+
+message PreviewCmCourseRequest {
+    base.BaseRequest base_request = 1;
+    repeated int64 module_ids = 2;
+}
+
+message PreviewCmCourseResponse {
+    base.BaseResponse base_resp = 1;
+    repeated CourseModule modules = 2;
 }
