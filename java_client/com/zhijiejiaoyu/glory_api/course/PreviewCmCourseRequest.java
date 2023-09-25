@@ -4,27 +4,26 @@
 package com.zhijiejiaoyu.glory_api.course;
 
 /**
- * Protobuf type {@code glory_api.CreateCmCourseRequest}
+ * Protobuf type {@code glory_api.PreviewCmCourseRequest}
  */
-public final class CreateCmCourseRequest extends
+public final class PreviewCmCourseRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:glory_api.CreateCmCourseRequest)
-    CreateCmCourseRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:glory_api.PreviewCmCourseRequest)
+    PreviewCmCourseRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use CreateCmCourseRequest.newBuilder() to construct.
-  private CreateCmCourseRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use PreviewCmCourseRequest.newBuilder() to construct.
+  private PreviewCmCourseRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private CreateCmCourseRequest() {
+  private PreviewCmCourseRequest() {
     moduleIds = emptyLongList();
-    name = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new CreateCmCourseRequest();
+    return new PreviewCmCourseRequest();
   }
 
   @java.lang.Override
@@ -32,7 +31,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private CreateCmCourseRequest(
+  private PreviewCmCourseRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -85,12 +84,6 @@ private static final long serialVersionUID = 0L;
             input.popLimit(limit);
             break;
           }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            name = s;
-            break;
-          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -115,15 +108,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.zhijiejiaoyu.glory_api.course.Cmodule.internal_static_glory_api_CreateCmCourseRequest_descriptor;
+    return com.zhijiejiaoyu.glory_api.course.Cmodule.internal_static_glory_api_PreviewCmCourseRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.zhijiejiaoyu.glory_api.course.Cmodule.internal_static_glory_api_CreateCmCourseRequest_fieldAccessorTable
+    return com.zhijiejiaoyu.glory_api.course.Cmodule.internal_static_glory_api_PreviewCmCourseRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.zhijiejiaoyu.glory_api.course.CreateCmCourseRequest.class, com.zhijiejiaoyu.glory_api.course.CreateCmCourseRequest.Builder.class);
+            com.zhijiejiaoyu.glory_api.course.PreviewCmCourseRequest.class, com.zhijiejiaoyu.glory_api.course.PreviewCmCourseRequest.Builder.class);
   }
 
   public static final int BASE_REQUEST_FIELD_NUMBER = 1;
@@ -180,44 +173,6 @@ private static final long serialVersionUID = 0L;
   }
   private int moduleIdsMemoizedSerializedSize = -1;
 
-  public static final int NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object name ;
-  /**
-   * <code>string name = 3;</code>
-   * @return The name.
-   */
-  @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name ;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      name = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string name = 3;</code>
-   * @return The bytes for name.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getNameBytes() {
-    java.lang.Object ref = name ;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      name = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -242,9 +197,6 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < moduleIds .size(); i++) {
       output.writeInt64NoTag(moduleIds .getLong(i));
-    }
-    if (!getNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name );
     }
     unknownFields.writeTo(output);
   }
@@ -273,9 +225,6 @@ private static final long serialVersionUID = 0L;
       }
       moduleIdsMemoizedSerializedSize = dataSize;
     }
-    if (!getNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name );
-    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -286,10 +235,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.zhijiejiaoyu.glory_api.course.CreateCmCourseRequest)) {
+    if (!(obj instanceof com.zhijiejiaoyu.glory_api.course.PreviewCmCourseRequest)) {
       return super.equals(obj);
     }
-    com.zhijiejiaoyu.glory_api.course.CreateCmCourseRequest other = (com.zhijiejiaoyu.glory_api.course.CreateCmCourseRequest) obj;
+    com.zhijiejiaoyu.glory_api.course.PreviewCmCourseRequest other = (com.zhijiejiaoyu.glory_api.course.PreviewCmCourseRequest) obj;
 
     if (hasBaseRequest() != other.hasBaseRequest()) return false;
     if (hasBaseRequest()) {
@@ -298,8 +247,6 @@ private static final long serialVersionUID = 0L;
     }
     if (!getModuleIdsList()
         .equals(other.getModuleIdsList())) return false;
-    if (!getName()
-        .equals(other.getName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -319,76 +266,74 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + MODULE_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getModuleIdsList().hashCode();
     }
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.zhijiejiaoyu.glory_api.course.CreateCmCourseRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.course.PreviewCmCourseRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.course.CreateCmCourseRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.course.PreviewCmCourseRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.course.CreateCmCourseRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.course.PreviewCmCourseRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.course.CreateCmCourseRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.course.PreviewCmCourseRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.course.CreateCmCourseRequest parseFrom(byte[] data)
+  public static com.zhijiejiaoyu.glory_api.course.PreviewCmCourseRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.course.CreateCmCourseRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.course.PreviewCmCourseRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.course.CreateCmCourseRequest parseFrom(java.io.InputStream input)
+  public static com.zhijiejiaoyu.glory_api.course.PreviewCmCourseRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.course.CreateCmCourseRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.course.PreviewCmCourseRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.course.CreateCmCourseRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.zhijiejiaoyu.glory_api.course.PreviewCmCourseRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.course.CreateCmCourseRequest parseDelimitedFrom(
+  public static com.zhijiejiaoyu.glory_api.course.PreviewCmCourseRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.course.CreateCmCourseRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.course.PreviewCmCourseRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.course.CreateCmCourseRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.course.PreviewCmCourseRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -401,7 +346,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.zhijiejiaoyu.glory_api.course.CreateCmCourseRequest prototype) {
+  public static Builder newBuilder(com.zhijiejiaoyu.glory_api.course.PreviewCmCourseRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -417,26 +362,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code glory_api.CreateCmCourseRequest}
+   * Protobuf type {@code glory_api.PreviewCmCourseRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:glory_api.CreateCmCourseRequest)
-      com.zhijiejiaoyu.glory_api.course.CreateCmCourseRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:glory_api.PreviewCmCourseRequest)
+      com.zhijiejiaoyu.glory_api.course.PreviewCmCourseRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.zhijiejiaoyu.glory_api.course.Cmodule.internal_static_glory_api_CreateCmCourseRequest_descriptor;
+      return com.zhijiejiaoyu.glory_api.course.Cmodule.internal_static_glory_api_PreviewCmCourseRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.zhijiejiaoyu.glory_api.course.Cmodule.internal_static_glory_api_CreateCmCourseRequest_fieldAccessorTable
+      return com.zhijiejiaoyu.glory_api.course.Cmodule.internal_static_glory_api_PreviewCmCourseRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.zhijiejiaoyu.glory_api.course.CreateCmCourseRequest.class, com.zhijiejiaoyu.glory_api.course.CreateCmCourseRequest.Builder.class);
+              com.zhijiejiaoyu.glory_api.course.PreviewCmCourseRequest.class, com.zhijiejiaoyu.glory_api.course.PreviewCmCourseRequest.Builder.class);
     }
 
-    // Construct using com.zhijiejiaoyu.glory_api.course.CreateCmCourseRequest.newBuilder()
+    // Construct using com.zhijiejiaoyu.glory_api.course.PreviewCmCourseRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -462,25 +407,23 @@ private static final long serialVersionUID = 0L;
       }
       moduleIds = emptyLongList();
       bitField0 = (bitField0 & ~0x00000001);
-      name = "";
-
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.zhijiejiaoyu.glory_api.course.Cmodule.internal_static_glory_api_CreateCmCourseRequest_descriptor;
+      return com.zhijiejiaoyu.glory_api.course.Cmodule.internal_static_glory_api_PreviewCmCourseRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.course.CreateCmCourseRequest getDefaultInstanceForType() {
-      return com.zhijiejiaoyu.glory_api.course.CreateCmCourseRequest.getDefaultInstance();
+    public com.zhijiejiaoyu.glory_api.course.PreviewCmCourseRequest getDefaultInstanceForType() {
+      return com.zhijiejiaoyu.glory_api.course.PreviewCmCourseRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.course.CreateCmCourseRequest build() {
-      com.zhijiejiaoyu.glory_api.course.CreateCmCourseRequest result = buildPartial();
+    public com.zhijiejiaoyu.glory_api.course.PreviewCmCourseRequest build() {
+      com.zhijiejiaoyu.glory_api.course.PreviewCmCourseRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -488,8 +431,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.course.CreateCmCourseRequest buildPartial() {
-      com.zhijiejiaoyu.glory_api.course.CreateCmCourseRequest result = new com.zhijiejiaoyu.glory_api.course.CreateCmCourseRequest(this);
+    public com.zhijiejiaoyu.glory_api.course.PreviewCmCourseRequest buildPartial() {
+      com.zhijiejiaoyu.glory_api.course.PreviewCmCourseRequest result = new com.zhijiejiaoyu.glory_api.course.PreviewCmCourseRequest(this);
       int from_bitField0 = bitField0 ;
       if (baseRequestBuilder == null) {
         result.baseRequest = baseRequest ;
@@ -501,7 +444,6 @@ private static final long serialVersionUID = 0L;
         bitField0 = (bitField0 & ~0x00000001);
       }
       result.moduleIds = moduleIds ;
-      result.name = name ;
       onBuilt();
       return result;
     }
@@ -540,16 +482,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.zhijiejiaoyu.glory_api.course.CreateCmCourseRequest) {
-        return mergeFrom((com.zhijiejiaoyu.glory_api.course.CreateCmCourseRequest)other);
+      if (other instanceof com.zhijiejiaoyu.glory_api.course.PreviewCmCourseRequest) {
+        return mergeFrom((com.zhijiejiaoyu.glory_api.course.PreviewCmCourseRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.zhijiejiaoyu.glory_api.course.CreateCmCourseRequest other) {
-      if (other == com.zhijiejiaoyu.glory_api.course.CreateCmCourseRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.zhijiejiaoyu.glory_api.course.PreviewCmCourseRequest other) {
+      if (other == com.zhijiejiaoyu.glory_api.course.PreviewCmCourseRequest.getDefaultInstance()) return this;
       if (other.hasBaseRequest()) {
         mergeBaseRequest(other.getBaseRequest());
       }
@@ -561,10 +503,6 @@ private static final long serialVersionUID = 0L;
           ensureModuleIdsIsMutable();
           moduleIds .addAll(other.moduleIds );
         }
-        onChanged();
-      }
-      if (!other.getName().isEmpty()) {
-        name = other.name ;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -582,11 +520,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.zhijiejiaoyu.glory_api.course.CreateCmCourseRequest parsedMessage = null;
+      com.zhijiejiaoyu.glory_api.course.PreviewCmCourseRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.zhijiejiaoyu.glory_api.course.CreateCmCourseRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.zhijiejiaoyu.glory_api.course.PreviewCmCourseRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -794,82 +732,6 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
-
-    private java.lang.Object name = "";
-    /**
-     * <code>string name = 3;</code>
-     * @return The name.
-     */
-    public java.lang.String getName() {
-      java.lang.Object ref = name ;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        name = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string name = 3;</code>
-     * @return The bytes for name.
-     */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name ;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        name = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string name = 3;</code>
-     * @param value The name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setName(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      name = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string name = 3;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearName() {
-      
-      name = getDefaultInstance().getName();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string name = 3;</code>
-     * @param value The bytes for name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      name = value;
-      onChanged();
-      return this;
-    }
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -883,41 +745,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:glory_api.CreateCmCourseRequest)
+    // @@protoc_insertion_point(builder_scope:glory_api.PreviewCmCourseRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:glory_api.CreateCmCourseRequest)
-  private static final com.zhijiejiaoyu.glory_api.course.CreateCmCourseRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:glory_api.PreviewCmCourseRequest)
+  private static final com.zhijiejiaoyu.glory_api.course.PreviewCmCourseRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.zhijiejiaoyu.glory_api.course.CreateCmCourseRequest();
+    DEFAULT_INSTANCE = new com.zhijiejiaoyu.glory_api.course.PreviewCmCourseRequest();
   }
 
-  public static com.zhijiejiaoyu.glory_api.course.CreateCmCourseRequest getDefaultInstance() {
+  public static com.zhijiejiaoyu.glory_api.course.PreviewCmCourseRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<CreateCmCourseRequest>
-      PARSER = new com.google.protobuf.AbstractParser<CreateCmCourseRequest>() {
+  private static final com.google.protobuf.Parser<PreviewCmCourseRequest>
+      PARSER = new com.google.protobuf.AbstractParser<PreviewCmCourseRequest>() {
     @java.lang.Override
-    public CreateCmCourseRequest parsePartialFrom(
+    public PreviewCmCourseRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new CreateCmCourseRequest(input, extensionRegistry);
+      return new PreviewCmCourseRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<CreateCmCourseRequest> parser() {
+  public static com.google.protobuf.Parser<PreviewCmCourseRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<CreateCmCourseRequest> getParserForType() {
+  public com.google.protobuf.Parser<PreviewCmCourseRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.course.CreateCmCourseRequest getDefaultInstanceForType() {
+  public com.zhijiejiaoyu.glory_api.course.PreviewCmCourseRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

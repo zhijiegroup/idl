@@ -3,8 +3,8 @@
 
 package com.zhijiejiaoyu.glory_api.course;
 
-public interface CreateCmCourseRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:glory_api.CreateCmCourseRequest)
+public interface PreviewCmCourseRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:glory_api.PreviewCmCourseRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -38,16 +38,4 @@ public interface CreateCmCourseRequestOrBuilder extends
    * @return The moduleIds at the given index.
    */
   long getModuleIds(int index);
-
-  /**
-   * <code>string name = 3;</code>
-   * @return The name.
-   */
-  java.lang.String getName();
-  /**
-   * <code>string name = 3;</code>
-   * @return The bytes for name.
-   */
-  com.google.protobuf.ByteString
-      getNameBytes();
 }

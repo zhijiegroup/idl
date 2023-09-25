@@ -2088,6 +2088,14 @@ export class glory_api {
     );
   }
 
+  PreviewCmCourse(request) {
+    const uri = `${this.uriPrefix}/api/course/preview_cm_course`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   CreateNmCourseResource(request) {
     const uri = `${this.uriPrefix}/api/course/create_nm_course_resource`;
     const body = JSONbigint.stringify(request);

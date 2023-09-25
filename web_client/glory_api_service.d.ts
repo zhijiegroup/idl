@@ -1159,6 +1159,11 @@ CreateLivePlanProduct create live plan product */
     request: cmodule.CreateCmCourseRequest
   ): Promise<cmodule.CreateCmCourseResponse>;
 
+  /** 预览课程 */
+  PreviewCmCourse(
+    request: cmodule.PreviewCmCourseRequest
+  ): Promise<cmodule.PreviewCmCourseResponse>;
+
   /** 非模块化课程
 新建资源 */
   CreateNmCourseResource(
