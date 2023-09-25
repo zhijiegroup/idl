@@ -9,7 +9,8 @@ import "course/module.proto";
 message TeachingPlanChapter {
     int64 chapter_id = 1;
     string chapter_name = 2;
-    string teaching_plan_content = 3;
+    int32 chapter_type = 3;
+    string teaching_plan_content = 4;
 }
 
 message TeachingPlan {
