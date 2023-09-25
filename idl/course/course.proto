@@ -111,3 +111,23 @@ message GetCourseIdsResponse {
   base.BaseResponse base_resp = 1;
   repeated int64 course_ids = 2;
 }
+
+message ListLatestCourseRequest {
+  base.BaseRequest base_request = 1;
+  int64 size = 2;
+}
+
+message ListLatestCourseResponse {
+  base.BaseResponse base_resp = 1;
+  repeated Course courses = 2;
+}
+
+message ListHotestCourseRequest {
+  base.BaseRequest base_request = 1;
+  int64 size = 2;
+}
+
+message ListHotestCourseResponse {
+  base.BaseResponse base_resp = 1;
+  repeated Course courses = 2;
+}
