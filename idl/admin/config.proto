@@ -76,10 +76,10 @@ message GetConfigResponse {
 }
 
 message STS {
-  string AccessKeyId = 1;
-  string AccessKeySecret = 2;
-  string Expiration = 3;
-  string SecurityToken = 4;
+  string access_key_id = 1;
+  string access_key_secret = 2;
+  string expiration = 3;
+  string security_token = 4;
 }
 
 message GetSTSRequest {
