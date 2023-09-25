@@ -108,10 +108,10 @@ private static final long serialVersionUID = 0L;
             com.zhijiejiaoyu.glory_api.admin.STS.class, com.zhijiejiaoyu.glory_api.admin.STS.Builder.class);
   }
 
-  public static final int ACCESSKEYID_FIELD_NUMBER = 1;
+  public static final int ACCESS_KEY_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object accessKeyId ;
   /**
-   * <code>string AccessKeyId = 1;</code>
+   * <code>string access_key_id = 1;</code>
    * @return The accessKeyId.
    */
   @java.lang.Override
@@ -128,7 +128,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string AccessKeyId = 1;</code>
+   * <code>string access_key_id = 1;</code>
    * @return The bytes for accessKeyId.
    */
   @java.lang.Override
@@ -146,10 +146,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int ACCESSKEYSECRET_FIELD_NUMBER = 2;
+  public static final int ACCESS_KEY_SECRET_FIELD_NUMBER = 2;
   private volatile java.lang.Object accessKeySecret ;
   /**
-   * <code>string AccessKeySecret = 2;</code>
+   * <code>string access_key_secret = 2;</code>
    * @return The accessKeySecret.
    */
   @java.lang.Override
@@ -166,7 +166,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string AccessKeySecret = 2;</code>
+   * <code>string access_key_secret = 2;</code>
    * @return The bytes for accessKeySecret.
    */
   @java.lang.Override
@@ -187,7 +187,7 @@ private static final long serialVersionUID = 0L;
   public static final int EXPIRATION_FIELD_NUMBER = 3;
   private volatile java.lang.Object expiration ;
   /**
-   * <code>string Expiration = 3;</code>
+   * <code>string expiration = 3;</code>
    * @return The expiration.
    */
   @java.lang.Override
@@ -204,7 +204,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string Expiration = 3;</code>
+   * <code>string expiration = 3;</code>
    * @return The bytes for expiration.
    */
   @java.lang.Override
@@ -222,10 +222,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int SECURITYTOKEN_FIELD_NUMBER = 4;
+  public static final int SECURITY_TOKEN_FIELD_NUMBER = 4;
   private volatile java.lang.Object securityToken ;
   /**
-   * <code>string SecurityToken = 4;</code>
+   * <code>string security_token = 4;</code>
    * @return The securityToken.
    */
   @java.lang.Override
@@ -242,7 +242,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string SecurityToken = 4;</code>
+   * <code>string security_token = 4;</code>
    * @return The bytes for securityToken.
    */
   @java.lang.Override
@@ -341,13 +341,13 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ACCESSKEYID_FIELD_NUMBER;
+    hash = (37 * hash) + ACCESS_KEY_ID_FIELD_NUMBER;
     hash = (53 * hash) + getAccessKeyId().hashCode();
-    hash = (37 * hash) + ACCESSKEYSECRET_FIELD_NUMBER;
+    hash = (37 * hash) + ACCESS_KEY_SECRET_FIELD_NUMBER;
     hash = (53 * hash) + getAccessKeySecret().hashCode();
     hash = (37 * hash) + EXPIRATION_FIELD_NUMBER;
     hash = (53 * hash) + getExpiration().hashCode();
-    hash = (37 * hash) + SECURITYTOKEN_FIELD_NUMBER;
+    hash = (37 * hash) + SECURITY_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getSecurityToken().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -615,7 +615,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object accessKeyId = "";
     /**
-     * <code>string AccessKeyId = 1;</code>
+     * <code>string access_key_id = 1;</code>
      * @return The accessKeyId.
      */
     public java.lang.String getAccessKeyId() {
@@ -631,7 +631,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string AccessKeyId = 1;</code>
+     * <code>string access_key_id = 1;</code>
      * @return The bytes for accessKeyId.
      */
     public com.google.protobuf.ByteString
@@ -648,7 +648,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string AccessKeyId = 1;</code>
+     * <code>string access_key_id = 1;</code>
      * @param value The accessKeyId to set.
      * @return This builder for chaining.
      */
@@ -663,7 +663,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string AccessKeyId = 1;</code>
+     * <code>string access_key_id = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearAccessKeyId() {
@@ -673,7 +673,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string AccessKeyId = 1;</code>
+     * <code>string access_key_id = 1;</code>
      * @param value The bytes for accessKeyId to set.
      * @return This builder for chaining.
      */
@@ -691,7 +691,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object accessKeySecret = "";
     /**
-     * <code>string AccessKeySecret = 2;</code>
+     * <code>string access_key_secret = 2;</code>
      * @return The accessKeySecret.
      */
     public java.lang.String getAccessKeySecret() {
@@ -707,7 +707,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string AccessKeySecret = 2;</code>
+     * <code>string access_key_secret = 2;</code>
      * @return The bytes for accessKeySecret.
      */
     public com.google.protobuf.ByteString
@@ -724,7 +724,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string AccessKeySecret = 2;</code>
+     * <code>string access_key_secret = 2;</code>
      * @param value The accessKeySecret to set.
      * @return This builder for chaining.
      */
@@ -739,7 +739,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string AccessKeySecret = 2;</code>
+     * <code>string access_key_secret = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearAccessKeySecret() {
@@ -749,7 +749,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string AccessKeySecret = 2;</code>
+     * <code>string access_key_secret = 2;</code>
      * @param value The bytes for accessKeySecret to set.
      * @return This builder for chaining.
      */
@@ -767,7 +767,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object expiration = "";
     /**
-     * <code>string Expiration = 3;</code>
+     * <code>string expiration = 3;</code>
      * @return The expiration.
      */
     public java.lang.String getExpiration() {
@@ -783,7 +783,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string Expiration = 3;</code>
+     * <code>string expiration = 3;</code>
      * @return The bytes for expiration.
      */
     public com.google.protobuf.ByteString
@@ -800,7 +800,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string Expiration = 3;</code>
+     * <code>string expiration = 3;</code>
      * @param value The expiration to set.
      * @return This builder for chaining.
      */
@@ -815,7 +815,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string Expiration = 3;</code>
+     * <code>string expiration = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearExpiration() {
@@ -825,7 +825,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string Expiration = 3;</code>
+     * <code>string expiration = 3;</code>
      * @param value The bytes for expiration to set.
      * @return This builder for chaining.
      */
@@ -843,7 +843,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object securityToken = "";
     /**
-     * <code>string SecurityToken = 4;</code>
+     * <code>string security_token = 4;</code>
      * @return The securityToken.
      */
     public java.lang.String getSecurityToken() {
@@ -859,7 +859,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string SecurityToken = 4;</code>
+     * <code>string security_token = 4;</code>
      * @return The bytes for securityToken.
      */
     public com.google.protobuf.ByteString
@@ -876,7 +876,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string SecurityToken = 4;</code>
+     * <code>string security_token = 4;</code>
      * @param value The securityToken to set.
      * @return This builder for chaining.
      */
@@ -891,7 +891,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string SecurityToken = 4;</code>
+     * <code>string security_token = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearSecurityToken() {
@@ -901,7 +901,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string SecurityToken = 4;</code>
+     * <code>string security_token = 4;</code>
      * @param value The bytes for securityToken to set.
      * @return This builder for chaining.
      */
