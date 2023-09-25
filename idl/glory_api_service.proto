@@ -1032,6 +1032,10 @@ service glory_api {
   rpc CreateCmCourse(CreateCmCourseRequest) returns (CreateCmCourseResponse) {
     option (api.post) = '/api/course/create_cm_course';
   }
+  // 预览课程
+  rpc PreviewCmCourse(PreviewCmCourseRequest) returns (PreviewCmCourseResponse) {
+    option (api.post) = '/api/course/preview_cm_course';
+  }
 
   // 非模块化课程
   // 新建资源
