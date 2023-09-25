@@ -943,10 +943,10 @@ extension GloryApi_GetConfigResponse: SwiftProtobuf.Message, SwiftProtobuf._Mess
 extension GloryApi_STS: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".STS"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "AccessKeyId"),
-    2: .same(proto: "AccessKeySecret"),
-    3: .same(proto: "Expiration"),
-    4: .same(proto: "SecurityToken"),
+    1: .standard(proto: "access_key_id"),
+    2: .standard(proto: "access_key_secret"),
+    3: .same(proto: "expiration"),
+    4: .standard(proto: "security_token"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {

@@ -86,10 +86,10 @@ export interface GetConfigResponse {
 }
 
 export interface STS {
-  AccessKeyId?: string;
-  AccessKeySecret?: string;
-  Expiration?: string;
-  SecurityToken?: string;
+  access_key_id?: string;
+  access_key_secret?: string;
+  expiration?: string;
+  security_token?: string;
 }
 
 export interface GetSTSRequest {

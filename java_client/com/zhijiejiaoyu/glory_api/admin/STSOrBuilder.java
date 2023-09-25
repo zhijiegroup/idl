@@ -8,48 +8,48 @@ public interface STSOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string AccessKeyId = 1;</code>
+   * <code>string access_key_id = 1;</code>
    * @return The accessKeyId.
    */
   java.lang.String getAccessKeyId();
   /**
-   * <code>string AccessKeyId = 1;</code>
+   * <code>string access_key_id = 1;</code>
    * @return The bytes for accessKeyId.
    */
   com.google.protobuf.ByteString
       getAccessKeyIdBytes();
 
   /**
-   * <code>string AccessKeySecret = 2;</code>
+   * <code>string access_key_secret = 2;</code>
    * @return The accessKeySecret.
    */
   java.lang.String getAccessKeySecret();
   /**
-   * <code>string AccessKeySecret = 2;</code>
+   * <code>string access_key_secret = 2;</code>
    * @return The bytes for accessKeySecret.
    */
   com.google.protobuf.ByteString
       getAccessKeySecretBytes();
 
   /**
-   * <code>string Expiration = 3;</code>
+   * <code>string expiration = 3;</code>
    * @return The expiration.
    */
   java.lang.String getExpiration();
   /**
-   * <code>string Expiration = 3;</code>
+   * <code>string expiration = 3;</code>
    * @return The bytes for expiration.
    */
   com.google.protobuf.ByteString
       getExpirationBytes();
 
   /**
-   * <code>string SecurityToken = 4;</code>
+   * <code>string security_token = 4;</code>
    * @return The securityToken.
    */
   java.lang.String getSecurityToken();
   /**
-   * <code>string SecurityToken = 4;</code>
+   * <code>string security_token = 4;</code>
    * @return The bytes for securityToken.
    */
   com.google.protobuf.ByteString
