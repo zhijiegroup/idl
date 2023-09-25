@@ -64,14 +64,14 @@ public final class TeachingPlanOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\032course/teaching_plan.proto\022\tglory_api\032" +
-      "\nbase.proto\032\023course/module.proto\"t\n\023Teac" +
-      "hingPlanChapter\022\022\n\nchapter_id\030\001 \001(\003\022\024\n\014c" +
-      "hapter_name\030\002 \001(\t\022\035\n\025teaching_plan_conte" +
-      "nt\030\003 \001(\t\022\024\n\014chapter_type\030\004 \001(\005\"\254\001\n\014Teach" +
-      "ingPlan\022\030\n\020teaching_plan_id\030\001 \001(\003\022\032\n\022tea" +
-      "ching_plan_type\030\002 \001(\005\022\030\n\020course_module_i" +
-      "d\030\003 \001(\003\022\032\n\022course_module_name\030\004 \001(\t\0220\n\010c" +
-      "hapters\030\005 \003(\0132\036.glory_api.TeachingPlanCh" +
+      "\nbase.proto\032\023course/module.proto\"\252\001\n\023Tea" +
+      "chingPlanChapter\022\022\n\nchapter_id\030\001 \001(\003\022\024\n\014" +
+      "chapter_name\030\002 \001(\t\022\035\n\025teaching_plan_cont" +
+      "ent\030\003 \001(\t\022\024\n\014chapter_type\030\004 \001(\005\022\030\n\020teach" +
+      "ing_plan_id\030\005 \001(\003\022\032\n\022teaching_plan_type\030" +
+      "\006 \001(\005\"v\n\014TeachingPlan\022\030\n\020course_module_i" +
+      "d\030\001 \001(\003\022\032\n\022course_module_name\030\002 \001(\t\0220\n\010c" +
+      "hapters\030\003 \003(\0132\036.glory_api.TeachingPlanCh" +
       "apter\"\360\001\n\031CreateTeachingPlanRequest\022\'\n\014b" +
       "ase_request\030\001 \001(\0132\021.base.BaseRequest\022\014\n\004" +
       "type\030\002 \001(\005\022\014\n\004name\030\003 \001(\t\022\022\n\nchapter_id\030\004" +
@@ -108,13 +108,13 @@ public final class TeachingPlanOuterClass {
     internal_static_glory_api_TeachingPlanChapter_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_TeachingPlanChapter_descriptor,
-        new java.lang.String[] { "ChapterId", "ChapterName", "TeachingPlanContent", "ChapterType", });
+        new java.lang.String[] { "ChapterId", "ChapterName", "TeachingPlanContent", "ChapterType", "TeachingPlanId", "TeachingPlanType", });
     internal_static_glory_api_TeachingPlan_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_glory_api_TeachingPlan_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_TeachingPlan_descriptor,
-        new java.lang.String[] { "TeachingPlanId", "TeachingPlanType", "CourseModuleId", "CourseModuleName", "Chapters", });
+        new java.lang.String[] { "CourseModuleId", "CourseModuleName", "Chapters", });
     internal_static_glory_api_CreateTeachingPlanRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_glory_api_CreateTeachingPlanRequest_fieldAccessorTable = new

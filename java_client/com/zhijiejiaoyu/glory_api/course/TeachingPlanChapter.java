@@ -72,6 +72,16 @@ private static final long serialVersionUID = 0L;
             chapterType = input.readInt32();
             break;
           }
+          case 40: {
+
+            teachingPlanId = input.readInt64();
+            break;
+          }
+          case 48: {
+
+            teachingPlanType = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -202,6 +212,28 @@ private static final long serialVersionUID = 0L;
     return chapterType ;
   }
 
+  public static final int TEACHING_PLAN_ID_FIELD_NUMBER = 5;
+  private long teachingPlanId ;
+  /**
+   * <code>int64 teaching_plan_id = 5;</code>
+   * @return The teachingPlanId.
+   */
+  @java.lang.Override
+  public long getTeachingPlanId() {
+    return teachingPlanId ;
+  }
+
+  public static final int TEACHING_PLAN_TYPE_FIELD_NUMBER = 6;
+  private int teachingPlanType ;
+  /**
+   * <code>int32 teaching_plan_type = 6;</code>
+   * @return The teachingPlanType.
+   */
+  @java.lang.Override
+  public int getTeachingPlanType() {
+    return teachingPlanType ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -228,6 +260,12 @@ private static final long serialVersionUID = 0L;
     if (chapterType != 0) {
       output.writeInt32(4, chapterType );
     }
+    if (teachingPlanId != 0L) {
+      output.writeInt64(5, teachingPlanId );
+    }
+    if (teachingPlanType != 0) {
+      output.writeInt32(6, teachingPlanType );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -250,6 +288,14 @@ private static final long serialVersionUID = 0L;
     if (chapterType != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(4, chapterType );
+    }
+    if (teachingPlanId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(5, teachingPlanId );
+    }
+    if (teachingPlanType != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(6, teachingPlanType );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -274,6 +320,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getTeachingPlanContent())) return false;
     if (getChapterType()
         != other.getChapterType()) return false;
+    if (getTeachingPlanId()
+        != other.getTeachingPlanId()) return false;
+    if (getTeachingPlanType()
+        != other.getTeachingPlanType()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -294,6 +344,11 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getTeachingPlanContent().hashCode();
     hash = (37 * hash) + CHAPTER_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getChapterType();
+    hash = (37 * hash) + TEACHING_PLAN_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getTeachingPlanId());
+    hash = (37 * hash) + TEACHING_PLAN_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getTeachingPlanType();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -435,6 +490,10 @@ private static final long serialVersionUID = 0L;
 
       chapterType = 0;
 
+      teachingPlanId = 0L;
+
+      teachingPlanType = 0;
+
       return this;
     }
 
@@ -465,6 +524,8 @@ private static final long serialVersionUID = 0L;
       result.chapterName = chapterName ;
       result.teachingPlanContent = teachingPlanContent ;
       result.chapterType = chapterType ;
+      result.teachingPlanId = teachingPlanId ;
+      result.teachingPlanType = teachingPlanType ;
       onBuilt();
       return result;
     }
@@ -526,6 +587,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getChapterType() != 0) {
         setChapterType(other.getChapterType());
+      }
+      if (other.getTeachingPlanId() != 0L) {
+        setTeachingPlanId(other.getTeachingPlanId());
+      }
+      if (other.getTeachingPlanType() != 0) {
+        setTeachingPlanType(other.getTeachingPlanType());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -766,6 +833,68 @@ private static final long serialVersionUID = 0L;
     public Builder clearChapterType() {
       
       chapterType = 0;
+      onChanged();
+      return this;
+    }
+
+    private long teachingPlanId ;
+    /**
+     * <code>int64 teaching_plan_id = 5;</code>
+     * @return The teachingPlanId.
+     */
+    @java.lang.Override
+    public long getTeachingPlanId() {
+      return teachingPlanId ;
+    }
+    /**
+     * <code>int64 teaching_plan_id = 5;</code>
+     * @param value The teachingPlanId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTeachingPlanId(long value) {
+      
+      teachingPlanId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 teaching_plan_id = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTeachingPlanId() {
+      
+      teachingPlanId = 0L;
+      onChanged();
+      return this;
+    }
+
+    private int teachingPlanType ;
+    /**
+     * <code>int32 teaching_plan_type = 6;</code>
+     * @return The teachingPlanType.
+     */
+    @java.lang.Override
+    public int getTeachingPlanType() {
+      return teachingPlanType ;
+    }
+    /**
+     * <code>int32 teaching_plan_type = 6;</code>
+     * @param value The teachingPlanType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTeachingPlanType(int value) {
+      
+      teachingPlanType = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 teaching_plan_type = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTeachingPlanType() {
+      
+      teachingPlanType = 0;
       onChanged();
       return this;
     }

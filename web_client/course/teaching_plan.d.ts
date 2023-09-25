@@ -11,11 +11,11 @@ export interface TeachingPlanChapter {
   chapter_name?: string;
   teaching_plan_content?: string;
   chapter_type?: number;
+  teaching_plan_id?: string;
+  teaching_plan_type?: number;
 }
 
 export interface TeachingPlan {
-  teaching_plan_id?: string;
-  teaching_plan_type?: number;
   course_module_id?: string;
   course_module_name?: string;
   chapters?: Array<TeachingPlanChapter>;

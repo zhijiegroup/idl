@@ -42,4 +42,16 @@ public interface TeachingPlanChapterOrBuilder extends
    * @return The chapterType.
    */
   int getChapterType();
+
+  /**
+   * <code>int64 teaching_plan_id = 5;</code>
+   * @return The teachingPlanId.
+   */
+  long getTeachingPlanId();
+
+  /**
+   * <code>int32 teaching_plan_type = 6;</code>
+   * @return The teachingPlanType.
+   */
+  int getTeachingPlanType();
 }

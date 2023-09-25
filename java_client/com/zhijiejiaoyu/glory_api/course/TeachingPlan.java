@@ -53,26 +53,16 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            teachingPlanId = input.readInt64();
-            break;
-          }
-          case 16: {
-
-            teachingPlanType = input.readInt32();
-            break;
-          }
-          case 24: {
-
             courseModuleId = input.readInt64();
             break;
           }
-          case 34: {
+          case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
             courseModuleName = s;
             break;
           }
-          case 42: {
+          case 26: {
             if (!((mutable_bitField0 & 0x00000001) != 0)) {
               chapters = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.course.TeachingPlanChapter>();
               mutable_bitField0_ |= 0x00000001;
@@ -116,32 +106,10 @@ private static final long serialVersionUID = 0L;
             com.zhijiejiaoyu.glory_api.course.TeachingPlan.class, com.zhijiejiaoyu.glory_api.course.TeachingPlan.Builder.class);
   }
 
-  public static final int TEACHING_PLAN_ID_FIELD_NUMBER = 1;
-  private long teachingPlanId ;
-  /**
-   * <code>int64 teaching_plan_id = 1;</code>
-   * @return The teachingPlanId.
-   */
-  @java.lang.Override
-  public long getTeachingPlanId() {
-    return teachingPlanId ;
-  }
-
-  public static final int TEACHING_PLAN_TYPE_FIELD_NUMBER = 2;
-  private int teachingPlanType ;
-  /**
-   * <code>int32 teaching_plan_type = 2;</code>
-   * @return The teachingPlanType.
-   */
-  @java.lang.Override
-  public int getTeachingPlanType() {
-    return teachingPlanType ;
-  }
-
-  public static final int COURSE_MODULE_ID_FIELD_NUMBER = 3;
+  public static final int COURSE_MODULE_ID_FIELD_NUMBER = 1;
   private long courseModuleId ;
   /**
-   * <code>int64 course_module_id = 3;</code>
+   * <code>int64 course_module_id = 1;</code>
    * @return The courseModuleId.
    */
   @java.lang.Override
@@ -149,10 +117,10 @@ private static final long serialVersionUID = 0L;
     return courseModuleId ;
   }
 
-  public static final int COURSE_MODULE_NAME_FIELD_NUMBER = 4;
+  public static final int COURSE_MODULE_NAME_FIELD_NUMBER = 2;
   private volatile java.lang.Object courseModuleName ;
   /**
-   * <code>string course_module_name = 4;</code>
+   * <code>string course_module_name = 2;</code>
    * @return The courseModuleName.
    */
   @java.lang.Override
@@ -169,7 +137,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string course_module_name = 4;</code>
+   * <code>string course_module_name = 2;</code>
    * @return The bytes for courseModuleName.
    */
   @java.lang.Override
@@ -187,17 +155,17 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int CHAPTERS_FIELD_NUMBER = 5;
+  public static final int CHAPTERS_FIELD_NUMBER = 3;
   private java.util.List<com.zhijiejiaoyu.glory_api.course.TeachingPlanChapter> chapters ;
   /**
-   * <code>repeated .glory_api.TeachingPlanChapter chapters = 5;</code>
+   * <code>repeated .glory_api.TeachingPlanChapter chapters = 3;</code>
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.course.TeachingPlanChapter> getChaptersList() {
     return chapters ;
   }
   /**
-   * <code>repeated .glory_api.TeachingPlanChapter chapters = 5;</code>
+   * <code>repeated .glory_api.TeachingPlanChapter chapters = 3;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.TeachingPlanChapterOrBuilder> 
@@ -205,21 +173,21 @@ private static final long serialVersionUID = 0L;
     return chapters ;
   }
   /**
-   * <code>repeated .glory_api.TeachingPlanChapter chapters = 5;</code>
+   * <code>repeated .glory_api.TeachingPlanChapter chapters = 3;</code>
    */
   @java.lang.Override
   public int getChaptersCount() {
     return chapters .size();
   }
   /**
-   * <code>repeated .glory_api.TeachingPlanChapter chapters = 5;</code>
+   * <code>repeated .glory_api.TeachingPlanChapter chapters = 3;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.course.TeachingPlanChapter getChapters(int index) {
     return chapters .get(index);
   }
   /**
-   * <code>repeated .glory_api.TeachingPlanChapter chapters = 5;</code>
+   * <code>repeated .glory_api.TeachingPlanChapter chapters = 3;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.course.TeachingPlanChapterOrBuilder getChaptersOrBuilder(
@@ -241,20 +209,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (teachingPlanId != 0L) {
-      output.writeInt64(1, teachingPlanId );
-    }
-    if (teachingPlanType != 0) {
-      output.writeInt32(2, teachingPlanType );
-    }
     if (courseModuleId != 0L) {
-      output.writeInt64(3, courseModuleId );
+      output.writeInt64(1, courseModuleId );
     }
     if (!getCourseModuleNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, courseModuleName );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, courseModuleName );
     }
     for (int i = 0; i < chapters .size(); i++) {
-      output.writeMessage(5, chapters .get(i));
+      output.writeMessage(3, chapters .get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -265,24 +227,16 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (teachingPlanId != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, teachingPlanId );
-    }
-    if (teachingPlanType != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, teachingPlanType );
-    }
     if (courseModuleId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(3, courseModuleId );
+        .computeInt64Size(1, courseModuleId );
     }
     if (!getCourseModuleNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, courseModuleName );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, courseModuleName );
     }
     for (int i = 0; i < chapters .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, chapters .get(i));
+        .computeMessageSize(3, chapters .get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -299,10 +253,6 @@ private static final long serialVersionUID = 0L;
     }
     com.zhijiejiaoyu.glory_api.course.TeachingPlan other = (com.zhijiejiaoyu.glory_api.course.TeachingPlan) obj;
 
-    if (getTeachingPlanId()
-        != other.getTeachingPlanId()) return false;
-    if (getTeachingPlanType()
-        != other.getTeachingPlanType()) return false;
     if (getCourseModuleId()
         != other.getCourseModuleId()) return false;
     if (!getCourseModuleName()
@@ -320,11 +270,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + TEACHING_PLAN_ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getTeachingPlanId());
-    hash = (37 * hash) + TEACHING_PLAN_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getTeachingPlanType();
     hash = (37 * hash) + COURSE_MODULE_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getCourseModuleId());
@@ -468,10 +413,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      teachingPlanId = 0L;
-
-      teachingPlanType = 0;
-
       courseModuleId = 0L;
 
       courseModuleName = "";
@@ -509,8 +450,6 @@ private static final long serialVersionUID = 0L;
     public com.zhijiejiaoyu.glory_api.course.TeachingPlan buildPartial() {
       com.zhijiejiaoyu.glory_api.course.TeachingPlan result = new com.zhijiejiaoyu.glory_api.course.TeachingPlan(this);
       int from_bitField0 = bitField0 ;
-      result.teachingPlanId = teachingPlanId ;
-      result.teachingPlanType = teachingPlanType ;
       result.courseModuleId = courseModuleId ;
       result.courseModuleName = courseModuleName ;
       if (chaptersBuilder == null) {
@@ -570,12 +509,6 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.zhijiejiaoyu.glory_api.course.TeachingPlan other) {
       if (other == com.zhijiejiaoyu.glory_api.course.TeachingPlan.getDefaultInstance()) return this;
-      if (other.getTeachingPlanId() != 0L) {
-        setTeachingPlanId(other.getTeachingPlanId());
-      }
-      if (other.getTeachingPlanType() != 0) {
-        setTeachingPlanType(other.getTeachingPlanType());
-      }
       if (other.getCourseModuleId() != 0L) {
         setCourseModuleId(other.getCourseModuleId());
       }
@@ -639,71 +572,9 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0 ;
 
-    private long teachingPlanId ;
-    /**
-     * <code>int64 teaching_plan_id = 1;</code>
-     * @return The teachingPlanId.
-     */
-    @java.lang.Override
-    public long getTeachingPlanId() {
-      return teachingPlanId ;
-    }
-    /**
-     * <code>int64 teaching_plan_id = 1;</code>
-     * @param value The teachingPlanId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTeachingPlanId(long value) {
-      
-      teachingPlanId = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int64 teaching_plan_id = 1;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearTeachingPlanId() {
-      
-      teachingPlanId = 0L;
-      onChanged();
-      return this;
-    }
-
-    private int teachingPlanType ;
-    /**
-     * <code>int32 teaching_plan_type = 2;</code>
-     * @return The teachingPlanType.
-     */
-    @java.lang.Override
-    public int getTeachingPlanType() {
-      return teachingPlanType ;
-    }
-    /**
-     * <code>int32 teaching_plan_type = 2;</code>
-     * @param value The teachingPlanType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTeachingPlanType(int value) {
-      
-      teachingPlanType = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int32 teaching_plan_type = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearTeachingPlanType() {
-      
-      teachingPlanType = 0;
-      onChanged();
-      return this;
-    }
-
     private long courseModuleId ;
     /**
-     * <code>int64 course_module_id = 3;</code>
+     * <code>int64 course_module_id = 1;</code>
      * @return The courseModuleId.
      */
     @java.lang.Override
@@ -711,7 +582,7 @@ private static final long serialVersionUID = 0L;
       return courseModuleId ;
     }
     /**
-     * <code>int64 course_module_id = 3;</code>
+     * <code>int64 course_module_id = 1;</code>
      * @param value The courseModuleId to set.
      * @return This builder for chaining.
      */
@@ -722,7 +593,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 course_module_id = 3;</code>
+     * <code>int64 course_module_id = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearCourseModuleId() {
@@ -734,7 +605,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object courseModuleName = "";
     /**
-     * <code>string course_module_name = 4;</code>
+     * <code>string course_module_name = 2;</code>
      * @return The courseModuleName.
      */
     public java.lang.String getCourseModuleName() {
@@ -750,7 +621,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string course_module_name = 4;</code>
+     * <code>string course_module_name = 2;</code>
      * @return The bytes for courseModuleName.
      */
     public com.google.protobuf.ByteString
@@ -767,7 +638,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string course_module_name = 4;</code>
+     * <code>string course_module_name = 2;</code>
      * @param value The courseModuleName to set.
      * @return This builder for chaining.
      */
@@ -782,7 +653,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string course_module_name = 4;</code>
+     * <code>string course_module_name = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearCourseModuleName() {
@@ -792,7 +663,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string course_module_name = 4;</code>
+     * <code>string course_module_name = 2;</code>
      * @param value The bytes for courseModuleName to set.
      * @return This builder for chaining.
      */
@@ -821,7 +692,7 @@ private static final long serialVersionUID = 0L;
         com.zhijiejiaoyu.glory_api.course.TeachingPlanChapter, com.zhijiejiaoyu.glory_api.course.TeachingPlanChapter.Builder, com.zhijiejiaoyu.glory_api.course.TeachingPlanChapterOrBuilder> chaptersBuilder ;
 
     /**
-     * <code>repeated .glory_api.TeachingPlanChapter chapters = 5;</code>
+     * <code>repeated .glory_api.TeachingPlanChapter chapters = 3;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.course.TeachingPlanChapter> getChaptersList() {
       if (chaptersBuilder == null) {
@@ -831,7 +702,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.TeachingPlanChapter chapters = 5;</code>
+     * <code>repeated .glory_api.TeachingPlanChapter chapters = 3;</code>
      */
     public int getChaptersCount() {
       if (chaptersBuilder == null) {
@@ -841,7 +712,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.TeachingPlanChapter chapters = 5;</code>
+     * <code>repeated .glory_api.TeachingPlanChapter chapters = 3;</code>
      */
     public com.zhijiejiaoyu.glory_api.course.TeachingPlanChapter getChapters(int index) {
       if (chaptersBuilder == null) {
@@ -851,7 +722,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.TeachingPlanChapter chapters = 5;</code>
+     * <code>repeated .glory_api.TeachingPlanChapter chapters = 3;</code>
      */
     public Builder setChapters(
         int index, com.zhijiejiaoyu.glory_api.course.TeachingPlanChapter value) {
@@ -868,7 +739,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TeachingPlanChapter chapters = 5;</code>
+     * <code>repeated .glory_api.TeachingPlanChapter chapters = 3;</code>
      */
     public Builder setChapters(
         int index, com.zhijiejiaoyu.glory_api.course.TeachingPlanChapter.Builder builderForValue) {
@@ -882,7 +753,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TeachingPlanChapter chapters = 5;</code>
+     * <code>repeated .glory_api.TeachingPlanChapter chapters = 3;</code>
      */
     public Builder addChapters(com.zhijiejiaoyu.glory_api.course.TeachingPlanChapter value) {
       if (chaptersBuilder == null) {
@@ -898,7 +769,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TeachingPlanChapter chapters = 5;</code>
+     * <code>repeated .glory_api.TeachingPlanChapter chapters = 3;</code>
      */
     public Builder addChapters(
         int index, com.zhijiejiaoyu.glory_api.course.TeachingPlanChapter value) {
@@ -915,7 +786,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TeachingPlanChapter chapters = 5;</code>
+     * <code>repeated .glory_api.TeachingPlanChapter chapters = 3;</code>
      */
     public Builder addChapters(
         com.zhijiejiaoyu.glory_api.course.TeachingPlanChapter.Builder builderForValue) {
@@ -929,7 +800,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TeachingPlanChapter chapters = 5;</code>
+     * <code>repeated .glory_api.TeachingPlanChapter chapters = 3;</code>
      */
     public Builder addChapters(
         int index, com.zhijiejiaoyu.glory_api.course.TeachingPlanChapter.Builder builderForValue) {
@@ -943,7 +814,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TeachingPlanChapter chapters = 5;</code>
+     * <code>repeated .glory_api.TeachingPlanChapter chapters = 3;</code>
      */
     public Builder addAllChapters(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.course.TeachingPlanChapter> values) {
@@ -958,7 +829,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TeachingPlanChapter chapters = 5;</code>
+     * <code>repeated .glory_api.TeachingPlanChapter chapters = 3;</code>
      */
     public Builder clearChapters() {
       if (chaptersBuilder == null) {
@@ -971,7 +842,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TeachingPlanChapter chapters = 5;</code>
+     * <code>repeated .glory_api.TeachingPlanChapter chapters = 3;</code>
      */
     public Builder removeChapters(int index) {
       if (chaptersBuilder == null) {
@@ -984,14 +855,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TeachingPlanChapter chapters = 5;</code>
+     * <code>repeated .glory_api.TeachingPlanChapter chapters = 3;</code>
      */
     public com.zhijiejiaoyu.glory_api.course.TeachingPlanChapter.Builder getChaptersBuilder(
         int index) {
       return getChaptersFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .glory_api.TeachingPlanChapter chapters = 5;</code>
+     * <code>repeated .glory_api.TeachingPlanChapter chapters = 3;</code>
      */
     public com.zhijiejiaoyu.glory_api.course.TeachingPlanChapterOrBuilder getChaptersOrBuilder(
         int index) {
@@ -1001,7 +872,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.TeachingPlanChapter chapters = 5;</code>
+     * <code>repeated .glory_api.TeachingPlanChapter chapters = 3;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.TeachingPlanChapterOrBuilder> 
          getChaptersOrBuilderList() {
@@ -1012,14 +883,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.TeachingPlanChapter chapters = 5;</code>
+     * <code>repeated .glory_api.TeachingPlanChapter chapters = 3;</code>
      */
     public com.zhijiejiaoyu.glory_api.course.TeachingPlanChapter.Builder addChaptersBuilder() {
       return getChaptersFieldBuilder().addBuilder(
           com.zhijiejiaoyu.glory_api.course.TeachingPlanChapter.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.TeachingPlanChapter chapters = 5;</code>
+     * <code>repeated .glory_api.TeachingPlanChapter chapters = 3;</code>
      */
     public com.zhijiejiaoyu.glory_api.course.TeachingPlanChapter.Builder addChaptersBuilder(
         int index) {
@@ -1027,7 +898,7 @@ private static final long serialVersionUID = 0L;
           index, com.zhijiejiaoyu.glory_api.course.TeachingPlanChapter.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.TeachingPlanChapter chapters = 5;</code>
+     * <code>repeated .glory_api.TeachingPlanChapter chapters = 3;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.course.TeachingPlanChapter.Builder> 
          getChaptersBuilderList() {
