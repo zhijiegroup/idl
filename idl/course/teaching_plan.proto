@@ -10,6 +10,7 @@ message TeachingPlanChapter {
     int64 chapter_id = 1;
     string chapter_name = 2;
     string teaching_plan_content = 3;
+    int32 chapter_type = 4;
 }
 
 message TeachingPlan {
@@ -29,6 +30,7 @@ message CreateTeachingPlanRequest {
     int64 course_module_id = 6;
     string course_module_name = 7;
     string teaching_plan_content = 8;
+    int64 user_id = 9;
 }
 
 message CreateTeachingPlanResponse {
