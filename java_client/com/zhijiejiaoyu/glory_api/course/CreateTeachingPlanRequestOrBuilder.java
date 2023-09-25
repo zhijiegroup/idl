@@ -87,4 +87,10 @@ public interface CreateTeachingPlanRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getTeachingPlanContentBytes();
+
+  /**
+   * <code>int64 user_id = 9;</code>
+   * @return The userId.
+   */
+  long getUserId();
 }

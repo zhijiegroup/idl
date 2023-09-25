@@ -104,6 +104,11 @@ private static final long serialVersionUID = 0L;
             teachingPlanContent = s;
             break;
           }
+          case 72: {
+
+            userId = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -347,6 +352,17 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int USER_ID_FIELD_NUMBER = 9;
+  private long userId ;
+  /**
+   * <code>int64 user_id = 9;</code>
+   * @return The userId.
+   */
+  @java.lang.Override
+  public long getUserId() {
+    return userId ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -385,6 +401,9 @@ private static final long serialVersionUID = 0L;
     if (!getTeachingPlanContentBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, teachingPlanContent );
     }
+    if (userId != 0L) {
+      output.writeInt64(9, userId );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -422,6 +441,10 @@ private static final long serialVersionUID = 0L;
     if (!getTeachingPlanContentBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, teachingPlanContent );
     }
+    if (userId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(9, userId );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -456,6 +479,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCourseModuleName())) return false;
     if (!getTeachingPlanContent()
         .equals(other.getTeachingPlanContent())) return false;
+    if (getUserId()
+        != other.getUserId()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -487,6 +512,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getCourseModuleName().hashCode();
     hash = (37 * hash) + TEACHING_PLAN_CONTENT_FIELD_NUMBER;
     hash = (53 * hash) + getTeachingPlanContent().hashCode();
+    hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getUserId());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -640,6 +668,8 @@ private static final long serialVersionUID = 0L;
 
       teachingPlanContent = "";
 
+      userId = 0L;
+
       return this;
     }
 
@@ -678,6 +708,7 @@ private static final long serialVersionUID = 0L;
       result.courseModuleId = courseModuleId ;
       result.courseModuleName = courseModuleName ;
       result.teachingPlanContent = teachingPlanContent ;
+      result.userId = userId ;
       onBuilt();
       return result;
     }
@@ -753,6 +784,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getTeachingPlanContent().isEmpty()) {
         teachingPlanContent = other.teachingPlanContent ;
         onChanged();
+      }
+      if (other.getUserId() != 0L) {
+        setUserId(other.getUserId());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1295,6 +1329,37 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       teachingPlanContent = value;
+      onChanged();
+      return this;
+    }
+
+    private long userId ;
+    /**
+     * <code>int64 user_id = 9;</code>
+     * @return The userId.
+     */
+    @java.lang.Override
+    public long getUserId() {
+      return userId ;
+    }
+    /**
+     * <code>int64 user_id = 9;</code>
+     * @param value The userId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserId(long value) {
+      
+      userId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 user_id = 9;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUserId() {
+      
+      userId = 0L;
       onChanged();
       return this;
     }

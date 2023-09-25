@@ -31,6 +31,8 @@ struct GloryApi_TeachingPlanChapter {
 
   var teachingPlanContent: String = String()
 
+  var chapterType: Int32 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -83,6 +85,8 @@ struct GloryApi_CreateTeachingPlanRequest {
   var courseModuleName: String = String()
 
   var teachingPlanContent: String = String()
+
+  var userID: Int64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -253,6 +257,7 @@ extension GloryApi_TeachingPlanChapter: SwiftProtobuf.Message, SwiftProtobuf._Me
     1: .standard(proto: "chapter_id"),
     2: .standard(proto: "chapter_name"),
     3: .standard(proto: "teaching_plan_content"),
+    4: .standard(proto: "chapter_type"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -264,6 +269,7 @@ extension GloryApi_TeachingPlanChapter: SwiftProtobuf.Message, SwiftProtobuf._Me
       case 1: try { try decoder.decodeSingularInt64Field(value: &self.chapterID) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.chapterName) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.teachingPlanContent) }()
+      case 4: try { try decoder.decodeSingularInt32Field(value: &self.chapterType) }()
       default: break
       }
     }
@@ -279,6 +285,9 @@ extension GloryApi_TeachingPlanChapter: SwiftProtobuf.Message, SwiftProtobuf._Me
     if !self.teachingPlanContent.isEmpty {
       try visitor.visitSingularStringField(value: self.teachingPlanContent, fieldNumber: 3)
     }
+    if self.chapterType != 0 {
+      try visitor.visitSingularInt32Field(value: self.chapterType, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -286,6 +295,7 @@ extension GloryApi_TeachingPlanChapter: SwiftProtobuf.Message, SwiftProtobuf._Me
     if lhs.chapterID != rhs.chapterID {return false}
     if lhs.chapterName != rhs.chapterName {return false}
     if lhs.teachingPlanContent != rhs.teachingPlanContent {return false}
+    if lhs.chapterType != rhs.chapterType {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -358,6 +368,7 @@ extension GloryApi_CreateTeachingPlanRequest: SwiftProtobuf.Message, SwiftProtob
     6: .standard(proto: "course_module_id"),
     7: .standard(proto: "course_module_name"),
     8: .standard(proto: "teaching_plan_content"),
+    9: .standard(proto: "user_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -374,6 +385,7 @@ extension GloryApi_CreateTeachingPlanRequest: SwiftProtobuf.Message, SwiftProtob
       case 6: try { try decoder.decodeSingularInt64Field(value: &self.courseModuleID) }()
       case 7: try { try decoder.decodeSingularStringField(value: &self.courseModuleName) }()
       case 8: try { try decoder.decodeSingularStringField(value: &self.teachingPlanContent) }()
+      case 9: try { try decoder.decodeSingularInt64Field(value: &self.userID) }()
       default: break
       }
     }
@@ -408,6 +420,9 @@ extension GloryApi_CreateTeachingPlanRequest: SwiftProtobuf.Message, SwiftProtob
     if !self.teachingPlanContent.isEmpty {
       try visitor.visitSingularStringField(value: self.teachingPlanContent, fieldNumber: 8)
     }
+    if self.userID != 0 {
+      try visitor.visitSingularInt64Field(value: self.userID, fieldNumber: 9)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -420,6 +435,7 @@ extension GloryApi_CreateTeachingPlanRequest: SwiftProtobuf.Message, SwiftProtob
     if lhs.courseModuleID != rhs.courseModuleID {return false}
     if lhs.courseModuleName != rhs.courseModuleName {return false}
     if lhs.teachingPlanContent != rhs.teachingPlanContent {return false}
+    if lhs.userID != rhs.userID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

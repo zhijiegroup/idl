@@ -36,4 +36,10 @@ public interface TeachingPlanChapterOrBuilder extends
    */
   com.google.protobuf.ByteString
       getTeachingPlanContentBytes();
+
+  /**
+   * <code>int32 chapter_type = 4;</code>
+   * @return The chapterType.
+   */
+  int getChapterType();
 }

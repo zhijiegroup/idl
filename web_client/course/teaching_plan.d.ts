@@ -10,6 +10,7 @@ export interface TeachingPlanChapter {
   chapter_id?: string;
   chapter_name?: string;
   teaching_plan_content?: string;
+  chapter_type?: number;
 }
 
 export interface TeachingPlan {
@@ -29,6 +30,7 @@ export interface CreateTeachingPlanRequest {
   course_module_id?: string;
   course_module_name?: string;
   teaching_plan_content?: string;
+  user_id?: string;
 }
 
 export interface CreateTeachingPlanResponse {

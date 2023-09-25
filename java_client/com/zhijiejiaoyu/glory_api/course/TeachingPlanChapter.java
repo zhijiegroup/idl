@@ -67,6 +67,11 @@ private static final long serialVersionUID = 0L;
             teachingPlanContent = s;
             break;
           }
+          case 32: {
+
+            chapterType = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -186,6 +191,17 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int CHAPTER_TYPE_FIELD_NUMBER = 4;
+  private int chapterType ;
+  /**
+   * <code>int32 chapter_type = 4;</code>
+   * @return The chapterType.
+   */
+  @java.lang.Override
+  public int getChapterType() {
+    return chapterType ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -209,6 +225,9 @@ private static final long serialVersionUID = 0L;
     if (!getTeachingPlanContentBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, teachingPlanContent );
     }
+    if (chapterType != 0) {
+      output.writeInt32(4, chapterType );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -227,6 +246,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getTeachingPlanContentBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, teachingPlanContent );
+    }
+    if (chapterType != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(4, chapterType );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -249,6 +272,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getChapterName())) return false;
     if (!getTeachingPlanContent()
         .equals(other.getTeachingPlanContent())) return false;
+    if (getChapterType()
+        != other.getChapterType()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -267,6 +292,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getChapterName().hashCode();
     hash = (37 * hash) + TEACHING_PLAN_CONTENT_FIELD_NUMBER;
     hash = (53 * hash) + getTeachingPlanContent().hashCode();
+    hash = (37 * hash) + CHAPTER_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getChapterType();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -406,6 +433,8 @@ private static final long serialVersionUID = 0L;
 
       teachingPlanContent = "";
 
+      chapterType = 0;
+
       return this;
     }
 
@@ -435,6 +464,7 @@ private static final long serialVersionUID = 0L;
       result.chapterId = chapterId ;
       result.chapterName = chapterName ;
       result.teachingPlanContent = teachingPlanContent ;
+      result.chapterType = chapterType ;
       onBuilt();
       return result;
     }
@@ -493,6 +523,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getTeachingPlanContent().isEmpty()) {
         teachingPlanContent = other.teachingPlanContent ;
         onChanged();
+      }
+      if (other.getChapterType() != 0) {
+        setChapterType(other.getChapterType());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -702,6 +735,37 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       teachingPlanContent = value;
+      onChanged();
+      return this;
+    }
+
+    private int chapterType ;
+    /**
+     * <code>int32 chapter_type = 4;</code>
+     * @return The chapterType.
+     */
+    @java.lang.Override
+    public int getChapterType() {
+      return chapterType ;
+    }
+    /**
+     * <code>int32 chapter_type = 4;</code>
+     * @param value The chapterType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setChapterType(int value) {
+      
+      chapterType = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 chapter_type = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearChapterType() {
+      
+      chapterType = 0;
       onChanged();
       return this;
     }
