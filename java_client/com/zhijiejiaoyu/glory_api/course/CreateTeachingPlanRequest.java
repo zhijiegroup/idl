@@ -16,7 +16,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CreateTeachingPlanRequest() {
-    name = "";
     chapterName = "";
     courseModuleName = "";
     teachingPlanContent = "";
@@ -68,12 +67,6 @@ private static final long serialVersionUID = 0L;
           case 16: {
 
             type = input.readInt32();
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            name = s;
             break;
           }
           case 32: {
@@ -176,44 +169,6 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public int getType() {
     return type ;
-  }
-
-  public static final int NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object name ;
-  /**
-   * <code>string name = 3;</code>
-   * @return The name.
-   */
-  @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name ;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      name = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string name = 3;</code>
-   * @return The bytes for name.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getNameBytes() {
-    java.lang.Object ref = name ;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      name = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
   }
 
   public static final int CHAPTER_ID_FIELD_NUMBER = 4;
@@ -383,9 +338,6 @@ private static final long serialVersionUID = 0L;
     if (type != 0) {
       output.writeInt32(2, type );
     }
-    if (!getNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name );
-    }
     if (chapterId != 0L) {
       output.writeInt64(4, chapterId );
     }
@@ -420,9 +372,6 @@ private static final long serialVersionUID = 0L;
     if (type != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(2, type );
-    }
-    if (!getNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name );
     }
     if (chapterId != 0L) {
       size += com.google.protobuf.CodedOutputStream
@@ -467,8 +416,6 @@ private static final long serialVersionUID = 0L;
     }
     if (getType()
         != other.getType()) return false;
-    if (!getName()
-        .equals(other.getName())) return false;
     if (getChapterId()
         != other.getChapterId()) return false;
     if (!getChapterName()
@@ -498,8 +445,6 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getType();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + CHAPTER_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getChapterId());
@@ -656,8 +601,6 @@ private static final long serialVersionUID = 0L;
       }
       type = 0;
 
-      name = "";
-
       chapterId = 0L;
 
       chapterName = "";
@@ -702,7 +645,6 @@ private static final long serialVersionUID = 0L;
         result.baseRequest = baseRequestBuilder .build();
       }
       result.type = type ;
-      result.name = name ;
       result.chapterId = chapterId ;
       result.chapterName = chapterName ;
       result.courseModuleId = courseModuleId ;
@@ -762,10 +704,6 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getType() != 0) {
         setType(other.getType());
-      }
-      if (!other.getName().isEmpty()) {
-        name = other.name ;
-        onChanged();
       }
       if (other.getChapterId() != 0L) {
         setChapterId(other.getChapterId());
@@ -963,82 +901,6 @@ private static final long serialVersionUID = 0L;
     public Builder clearType() {
       
       type = 0;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object name = "";
-    /**
-     * <code>string name = 3;</code>
-     * @return The name.
-     */
-    public java.lang.String getName() {
-      java.lang.Object ref = name ;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        name = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string name = 3;</code>
-     * @return The bytes for name.
-     */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name ;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        name = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string name = 3;</code>
-     * @param value The name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setName(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      name = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string name = 3;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearName() {
-      
-      name = getDefaultInstance().getName();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string name = 3;</code>
-     * @param value The bytes for name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      name = value;
       onChanged();
       return this;
     }

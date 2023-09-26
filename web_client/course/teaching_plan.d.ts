@@ -24,7 +24,6 @@ export interface TeachingPlan {
 export interface CreateTeachingPlanRequest {
   base_request?: base.BaseRequest;
   type?: number;
-  name?: string;
   chapter_id?: string;
   chapter_name?: string;
   course_module_id?: string;
@@ -41,7 +40,7 @@ export interface CreateTeachingPlanResponse {
 export interface UpdateTeachingPlanRequest {
   base_request?: base.BaseRequest;
   teaching_plan_id?: string;
-  name?: string;
+  user_id?: string;
   teaching_plan_content?: string;
 }
 

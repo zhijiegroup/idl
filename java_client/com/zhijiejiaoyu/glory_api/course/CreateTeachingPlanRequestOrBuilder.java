@@ -29,18 +29,6 @@ public interface CreateTeachingPlanRequestOrBuilder extends
   int getType();
 
   /**
-   * <code>string name = 3;</code>
-   * @return The name.
-   */
-  java.lang.String getName();
-  /**
-   * <code>string name = 3;</code>
-   * @return The bytes for name.
-   */
-  com.google.protobuf.ByteString
-      getNameBytes();
-
-  /**
    * <code>int64 chapter_id = 4;</code>
    * @return The chapterId.
    */

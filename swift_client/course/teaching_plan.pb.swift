@@ -74,8 +74,6 @@ struct GloryApi_CreateTeachingPlanRequest {
 
   var type: Int32 = 0
 
-  var name: String = String()
-
   var chapterID: Int64 = 0
 
   var chapterName: String = String()
@@ -134,7 +132,7 @@ struct GloryApi_UpdateTeachingPlanRequest {
 
   var teachingPlanID: Int64 = 0
 
-  var name: String = String()
+  var userID: Int64 = 0
 
   var teachingPlanContent: String = String()
 
@@ -362,7 +360,6 @@ extension GloryApi_CreateTeachingPlanRequest: SwiftProtobuf.Message, SwiftProtob
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
     2: .same(proto: "type"),
-    3: .same(proto: "name"),
     4: .standard(proto: "chapter_id"),
     5: .standard(proto: "chapter_name"),
     6: .standard(proto: "course_module_id"),
@@ -379,7 +376,6 @@ extension GloryApi_CreateTeachingPlanRequest: SwiftProtobuf.Message, SwiftProtob
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularInt32Field(value: &self.type) }()
-      case 3: try { try decoder.decodeSingularStringField(value: &self.name) }()
       case 4: try { try decoder.decodeSingularInt64Field(value: &self.chapterID) }()
       case 5: try { try decoder.decodeSingularStringField(value: &self.chapterName) }()
       case 6: try { try decoder.decodeSingularInt64Field(value: &self.courseModuleID) }()
@@ -401,9 +397,6 @@ extension GloryApi_CreateTeachingPlanRequest: SwiftProtobuf.Message, SwiftProtob
     } }()
     if self.type != 0 {
       try visitor.visitSingularInt32Field(value: self.type, fieldNumber: 2)
-    }
-    if !self.name.isEmpty {
-      try visitor.visitSingularStringField(value: self.name, fieldNumber: 3)
     }
     if self.chapterID != 0 {
       try visitor.visitSingularInt64Field(value: self.chapterID, fieldNumber: 4)
@@ -429,7 +422,6 @@ extension GloryApi_CreateTeachingPlanRequest: SwiftProtobuf.Message, SwiftProtob
   static func ==(lhs: GloryApi_CreateTeachingPlanRequest, rhs: GloryApi_CreateTeachingPlanRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.type != rhs.type {return false}
-    if lhs.name != rhs.name {return false}
     if lhs.chapterID != rhs.chapterID {return false}
     if lhs.chapterName != rhs.chapterName {return false}
     if lhs.courseModuleID != rhs.courseModuleID {return false}
@@ -488,7 +480,7 @@ extension GloryApi_UpdateTeachingPlanRequest: SwiftProtobuf.Message, SwiftProtob
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
     2: .standard(proto: "teaching_plan_id"),
-    3: .same(proto: "name"),
+    3: .standard(proto: "user_id"),
     4: .standard(proto: "teaching_plan_content"),
   ]
 
@@ -500,7 +492,7 @@ extension GloryApi_UpdateTeachingPlanRequest: SwiftProtobuf.Message, SwiftProtob
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.teachingPlanID) }()
-      case 3: try { try decoder.decodeSingularStringField(value: &self.name) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.userID) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.teachingPlanContent) }()
       default: break
       }
@@ -518,8 +510,8 @@ extension GloryApi_UpdateTeachingPlanRequest: SwiftProtobuf.Message, SwiftProtob
     if self.teachingPlanID != 0 {
       try visitor.visitSingularInt64Field(value: self.teachingPlanID, fieldNumber: 2)
     }
-    if !self.name.isEmpty {
-      try visitor.visitSingularStringField(value: self.name, fieldNumber: 3)
+    if self.userID != 0 {
+      try visitor.visitSingularInt64Field(value: self.userID, fieldNumber: 3)
     }
     if !self.teachingPlanContent.isEmpty {
       try visitor.visitSingularStringField(value: self.teachingPlanContent, fieldNumber: 4)
@@ -530,7 +522,7 @@ extension GloryApi_UpdateTeachingPlanRequest: SwiftProtobuf.Message, SwiftProtob
   static func ==(lhs: GloryApi_UpdateTeachingPlanRequest, rhs: GloryApi_UpdateTeachingPlanRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.teachingPlanID != rhs.teachingPlanID {return false}
-    if lhs.name != rhs.name {return false}
+    if lhs.userID != rhs.userID {return false}
     if lhs.teachingPlanContent != rhs.teachingPlanContent {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

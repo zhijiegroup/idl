@@ -29,16 +29,10 @@ public interface UpdateTeachingPlanRequestOrBuilder extends
   long getTeachingPlanId();
 
   /**
-   * <code>string name = 3;</code>
-   * @return The name.
+   * <code>int64 user_id = 3;</code>
+   * @return The userId.
    */
-  java.lang.String getName();
-  /**
-   * <code>string name = 3;</code>
-   * @return The bytes for name.
-   */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  long getUserId();
 
   /**
    * <code>string teaching_plan_content = 4;</code>
