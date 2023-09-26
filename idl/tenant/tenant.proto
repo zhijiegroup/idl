@@ -84,10 +84,11 @@ message TenantOrg {
   int64 id = 1;
   string name = 2;
   string type = 3;
-  int64 parent = 4;
-  int64 tenant = 5;
-  int64 count = 6;
-  repeated TenantOrg children = 7;
+  string code = 4;
+  int64 parent = 5;
+  int64 tenant = 6;
+  int64 count = 7;
+  repeated TenantOrg children = 8;
 }
 
 message GetTenantOrgRequest {
