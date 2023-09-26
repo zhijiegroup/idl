@@ -20,7 +20,9 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListCourseRequest() {
-    major = "";
+    major = com.google.protobuf.LazyStringArrayList.EMPTY;
+    level = emptyIntList();
+    courseType = emptyIntList();
   }
 
   @java.lang.Override
@@ -43,6 +45,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0 = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -78,13 +81,53 @@ private static final long serialVersionUID = 0L;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
-
-            major = s;
+            if (!((mutable_bitField0 & 0x00000001) != 0)) {
+              major = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            major .add(s);
             break;
           }
           case 40: {
-
-            level = input.readInt32();
+            if (!((mutable_bitField0 & 0x00000002) != 0)) {
+              level = newIntList();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            level .addInt(input.readInt32());
+            break;
+          }
+          case 42: {
+            int length = input.readRawVarint32();
+            int limit = input.pushLimit(length);
+            if (!((mutable_bitField0 & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+              level = newIntList();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            while (input.getBytesUntilLimit() > 0) {
+              level .addInt(input.readInt32());
+            }
+            input.popLimit(limit);
+            break;
+          }
+          case 48: {
+            if (!((mutable_bitField0 & 0x00000004) != 0)) {
+              courseType = newIntList();
+              mutable_bitField0_ |= 0x00000004;
+            }
+            courseType .addInt(input.readInt32());
+            break;
+          }
+          case 50: {
+            int length = input.readRawVarint32();
+            int limit = input.pushLimit(length);
+            if (!((mutable_bitField0 & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
+              courseType = newIntList();
+              mutable_bitField0_ |= 0x00000004;
+            }
+            while (input.getBytesUntilLimit() > 0) {
+              courseType .addInt(input.readInt32());
+            }
+            input.popLimit(limit);
             break;
           }
           case 802: {
@@ -115,6 +158,15 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0 & 0x00000001) != 0)) {
+        major = major .getUnmodifiableView();
+      }
+      if (((mutable_bitField0 & 0x00000002) != 0)) {
+        level .makeImmutable(); // C
+      }
+      if (((mutable_bitField0 & 0x00000004) != 0)) {
+        courseType .makeImmutable(); // C
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -189,65 +241,135 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int MAJOR_FIELD_NUMBER = 4;
-  private volatile java.lang.Object major ;
+  private com.google.protobuf.LazyStringList major ;
   /**
    * <pre>
    * 专业代码
    * </pre>
    *
-   * <code>string major = 4;</code>
-   * @return The major.
+   * <code>repeated string major = 4;</code>
+   * @return A list containing the major.
    */
-  @java.lang.Override
-  public java.lang.String getMajor() {
-    java.lang.Object ref = major ;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      major = s;
-      return s;
-    }
+  public com.google.protobuf.ProtocolStringList
+      getMajorList() {
+    return major ;
   }
   /**
    * <pre>
    * 专业代码
    * </pre>
    *
-   * <code>string major = 4;</code>
-   * @return The bytes for major.
+   * <code>repeated string major = 4;</code>
+   * @return The count of major.
    */
-  @java.lang.Override
+  public int getMajorCount() {
+    return major .size();
+  }
+  /**
+   * <pre>
+   * 专业代码
+   * </pre>
+   *
+   * <code>repeated string major = 4;</code>
+   * @param index The index of the element to return.
+   * @return The major at the given index.
+   */
+  public java.lang.String getMajor(int index) {
+    return major .get(index);
+  }
+  /**
+   * <pre>
+   * 专业代码
+   * </pre>
+   *
+   * <code>repeated string major = 4;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the major at the given index.
+   */
   public com.google.protobuf.ByteString
-      getMajorBytes() {
-    java.lang.Object ref = major ;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      major = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+      getMajorBytes(int index) {
+    return major .getByteString(index);
   }
 
   public static final int LEVEL_FIELD_NUMBER = 5;
-  private int level ;
+  private com.google.protobuf.Internal.IntList level ;
   /**
    * <pre>
-   * 0: 全部 1: 中职 2:高职 3: 中高职
+   * 1: 中职 2:高职 3: 中高职
    * </pre>
    *
-   * <code>int32 level = 5;</code>
-   * @return The level.
+   * <code>repeated int32 level = 5;</code>
+   * @return A list containing the level.
    */
   @java.lang.Override
-  public int getLevel() {
+  public java.util.List<java.lang.Integer>
+      getLevelList() {
     return level ;
   }
+  /**
+   * <pre>
+   * 1: 中职 2:高职 3: 中高职
+   * </pre>
+   *
+   * <code>repeated int32 level = 5;</code>
+   * @return The count of level.
+   */
+  public int getLevelCount() {
+    return level .size();
+  }
+  /**
+   * <pre>
+   * 1: 中职 2:高职 3: 中高职
+   * </pre>
+   *
+   * <code>repeated int32 level = 5;</code>
+   * @param index The index of the element to return.
+   * @return The level at the given index.
+   */
+  public int getLevel(int index) {
+    return level .getInt(index);
+  }
+  private int levelMemoizedSerializedSize = -1;
+
+  public static final int COURSE_TYPE_FIELD_NUMBER = 6;
+  private com.google.protobuf.Internal.IntList courseType ;
+  /**
+   * <pre>
+   * 1: 专业核心课 2:名师公开课 
+   * </pre>
+   *
+   * <code>repeated int32 course_type = 6;</code>
+   * @return A list containing the courseType.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer>
+      getCourseTypeList() {
+    return courseType ;
+  }
+  /**
+   * <pre>
+   * 1: 专业核心课 2:名师公开课 
+   * </pre>
+   *
+   * <code>repeated int32 course_type = 6;</code>
+   * @return The count of courseType.
+   */
+  public int getCourseTypeCount() {
+    return courseType .size();
+  }
+  /**
+   * <pre>
+   * 1: 专业核心课 2:名师公开课 
+   * </pre>
+   *
+   * <code>repeated int32 course_type = 6;</code>
+   * @param index The index of the element to return.
+   * @return The courseType at the given index.
+   */
+  public int getCourseType(int index) {
+    return courseType .getInt(index);
+  }
+  private int courseTypeMemoizedSerializedSize = -1;
 
   public static final int PAGINATION_FIELD_NUMBER = 100;
   private com.zhijiejiaoyu.base.PaginationRequest pagination ;
@@ -289,6 +411,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    getSerializedSize();
     if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
@@ -298,11 +421,22 @@ private static final long serialVersionUID = 0L;
     if (courseModule != 0) {
       output.writeInt32(3, courseModule );
     }
-    if (!getMajorBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, major );
+    for (int i = 0; i < major .size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, major .getRaw(i));
     }
-    if (level != 0) {
-      output.writeInt32(5, level );
+    if (getLevelList().size() > 0) {
+      output.writeUInt32NoTag(42);
+      output.writeUInt32NoTag(levelMemoizedSerializedSize);
+    }
+    for (int i = 0; i < level .size(); i++) {
+      output.writeInt32NoTag(level .getInt(i));
+    }
+    if (getCourseTypeList().size() > 0) {
+      output.writeUInt32NoTag(50);
+      output.writeUInt32NoTag(courseTypeMemoizedSerializedSize);
+    }
+    for (int i = 0; i < courseType .size(); i++) {
+      output.writeInt32NoTag(courseType .getInt(i));
     }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
@@ -328,12 +462,41 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(3, courseModule );
     }
-    if (!getMajorBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, major );
+    {
+      int dataSize = 0;
+      for (int i = 0; i < major .size(); i++) {
+        dataSize += computeStringSizeNoTag(major .getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getMajorList().size();
     }
-    if (level != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(5, level );
+    {
+      int dataSize = 0;
+      for (int i = 0; i < level .size(); i++) {
+        dataSize += com.google.protobuf.CodedOutputStream
+          .computeInt32SizeNoTag(level .getInt(i));
+      }
+      size += dataSize;
+      if (!getLevelList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(dataSize);
+      }
+      levelMemoizedSerializedSize = dataSize;
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < courseType .size(); i++) {
+        dataSize += com.google.protobuf.CodedOutputStream
+          .computeInt32SizeNoTag(courseType .getInt(i));
+      }
+      size += dataSize;
+      if (!getCourseTypeList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(dataSize);
+      }
+      courseTypeMemoizedSerializedSize = dataSize;
     }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -363,10 +526,12 @@ private static final long serialVersionUID = 0L;
         != other.getCourseClassification()) return false;
     if (getCourseModule()
         != other.getCourseModule()) return false;
-    if (!getMajor()
-        .equals(other.getMajor())) return false;
-    if (getLevel()
-        != other.getLevel()) return false;
+    if (!getMajorList()
+        .equals(other.getMajorList())) return false;
+    if (!getLevelList()
+        .equals(other.getLevelList())) return false;
+    if (!getCourseTypeList()
+        .equals(other.getCourseTypeList())) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -391,10 +556,18 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getCourseClassification();
     hash = (37 * hash) + COURSE_MODULE_FIELD_NUMBER;
     hash = (53 * hash) + getCourseModule();
-    hash = (37 * hash) + MAJOR_FIELD_NUMBER;
-    hash = (53 * hash) + getMajor().hashCode();
-    hash = (37 * hash) + LEVEL_FIELD_NUMBER;
-    hash = (53 * hash) + getLevel();
+    if (getMajorCount() > 0) {
+      hash = (37 * hash) + MAJOR_FIELD_NUMBER;
+      hash = (53 * hash) + getMajorList().hashCode();
+    }
+    if (getLevelCount() > 0) {
+      hash = (37 * hash) + LEVEL_FIELD_NUMBER;
+      hash = (53 * hash) + getLevelList().hashCode();
+    }
+    if (getCourseTypeCount() > 0) {
+      hash = (37 * hash) + COURSE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getCourseTypeList().hashCode();
+    }
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
@@ -546,10 +719,12 @@ private static final long serialVersionUID = 0L;
 
       courseModule = 0;
 
-      major = "";
-
-      level = 0;
-
+      major = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0 = (bitField0 & ~0x00000001);
+      level = emptyIntList();
+      bitField0 = (bitField0 & ~0x00000002);
+      courseType = emptyIntList();
+      bitField0 = (bitField0 & ~0x00000004);
       if (paginationBuilder == null) {
         pagination = null;
       } else {
@@ -582,6 +757,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.course.ListCourseRequest buildPartial() {
       com.zhijiejiaoyu.glory_api.course.ListCourseRequest result = new com.zhijiejiaoyu.glory_api.course.ListCourseRequest(this);
+      int from_bitField0 = bitField0 ;
       if (baseRequestBuilder == null) {
         result.baseRequest = baseRequest ;
       } else {
@@ -589,8 +765,21 @@ private static final long serialVersionUID = 0L;
       }
       result.courseClassification = courseClassification ;
       result.courseModule = courseModule ;
+      if (((bitField0 & 0x00000001) != 0)) {
+        major = major .getUnmodifiableView();
+        bitField0 = (bitField0 & ~0x00000001);
+      }
       result.major = major ;
+      if (((bitField0 & 0x00000002) != 0)) {
+        level .makeImmutable();
+        bitField0 = (bitField0 & ~0x00000002);
+      }
       result.level = level ;
+      if (((bitField0 & 0x00000004) != 0)) {
+        courseType .makeImmutable();
+        bitField0 = (bitField0 & ~0x00000004);
+      }
+      result.courseType = courseType ;
       if (paginationBuilder == null) {
         result.pagination = pagination ;
       } else {
@@ -653,12 +842,35 @@ private static final long serialVersionUID = 0L;
       if (other.getCourseModule() != 0) {
         setCourseModule(other.getCourseModule());
       }
-      if (!other.getMajor().isEmpty()) {
-        major = other.major ;
+      if (!other.major .isEmpty()) {
+        if (major .isEmpty()) {
+          major = other.major ;
+          bitField0 = (bitField0 & ~0x00000001);
+        } else {
+          ensureMajorIsMutable();
+          major .addAll(other.major );
+        }
         onChanged();
       }
-      if (other.getLevel() != 0) {
-        setLevel(other.getLevel());
+      if (!other.level .isEmpty()) {
+        if (level .isEmpty()) {
+          level = other.level ;
+          bitField0 = (bitField0 & ~0x00000002);
+        } else {
+          ensureLevelIsMutable();
+          level .addAll(other.level );
+        }
+        onChanged();
+      }
+      if (!other.courseType .isEmpty()) {
+        if (courseType .isEmpty()) {
+          courseType = other.courseType ;
+          bitField0 = (bitField0 & ~0x00000004);
+        } else {
+          ensureCourseTypeIsMutable();
+          courseType .addAll(other.courseType );
+        }
+        onChanged();
       }
       if (other.hasPagination()) {
         mergePagination(other.getPagination());
@@ -691,6 +903,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0 ;
 
     private com.zhijiejiaoyu.base.BaseRequest baseRequest ;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -897,64 +1110,97 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object major = "";
-    /**
-     * <pre>
-     * 专业代码
-     * </pre>
-     *
-     * <code>string major = 4;</code>
-     * @return The major.
-     */
-    public java.lang.String getMajor() {
-      java.lang.Object ref = major ;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        major = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    private com.google.protobuf.LazyStringList major = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureMajorIsMutable() {
+      if (!((bitField0 & 0x00000001) != 0)) {
+        major = new com.google.protobuf.LazyStringArrayList(major );
+        bitField0_ |= 0x00000001;
+       }
     }
     /**
      * <pre>
      * 专业代码
      * </pre>
      *
-     * <code>string major = 4;</code>
-     * @return The bytes for major.
+     * <code>repeated string major = 4;</code>
+     * @return A list containing the major.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getMajorList() {
+      return major .getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * 专业代码
+     * </pre>
+     *
+     * <code>repeated string major = 4;</code>
+     * @return The count of major.
+     */
+    public int getMajorCount() {
+      return major .size();
+    }
+    /**
+     * <pre>
+     * 专业代码
+     * </pre>
+     *
+     * <code>repeated string major = 4;</code>
+     * @param index The index of the element to return.
+     * @return The major at the given index.
+     */
+    public java.lang.String getMajor(int index) {
+      return major .get(index);
+    }
+    /**
+     * <pre>
+     * 专业代码
+     * </pre>
+     *
+     * <code>repeated string major = 4;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the major at the given index.
      */
     public com.google.protobuf.ByteString
-        getMajorBytes() {
-      java.lang.Object ref = major ;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        major = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+        getMajorBytes(int index) {
+      return major .getByteString(index);
     }
     /**
      * <pre>
      * 专业代码
      * </pre>
      *
-     * <code>string major = 4;</code>
+     * <code>repeated string major = 4;</code>
+     * @param index The index to set the value at.
      * @param value The major to set.
      * @return This builder for chaining.
      */
     public Builder setMajor(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureMajorIsMutable();
+      major .set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 专业代码
+     * </pre>
+     *
+     * <code>repeated string major = 4;</code>
+     * @param value The major to add.
+     * @return This builder for chaining.
+     */
+    public Builder addMajor(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  
-      major = value;
+  ensureMajorIsMutable();
+      major .add(value);
       onChanged();
       return this;
     }
@@ -963,12 +1209,29 @@ private static final long serialVersionUID = 0L;
      * 专业代码
      * </pre>
      *
-     * <code>string major = 4;</code>
+     * <code>repeated string major = 4;</code>
+     * @param values The major to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllMajor(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureMajorIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, major );
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 专业代码
+     * </pre>
+     *
+     * <code>repeated string major = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearMajor() {
-      
-      major = getDefaultInstance().getMajor();
+      major = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0 = (bitField0 & ~0x00000001);
       onChanged();
       return this;
     }
@@ -977,61 +1240,232 @@ private static final long serialVersionUID = 0L;
      * 专业代码
      * </pre>
      *
-     * <code>string major = 4;</code>
-     * @param value The bytes for major to set.
+     * <code>repeated string major = 4;</code>
+     * @param value The bytes of the major to add.
      * @return This builder for chaining.
      */
-    public Builder setMajorBytes(
+    public Builder addMajorBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-      
-      major = value;
+      ensureMajorIsMutable();
+      major .add(value);
       onChanged();
       return this;
     }
 
-    private int level ;
-    /**
-     * <pre>
-     * 0: 全部 1: 中职 2:高职 3: 中高职
-     * </pre>
-     *
-     * <code>int32 level = 5;</code>
-     * @return The level.
-     */
-    @java.lang.Override
-    public int getLevel() {
-      return level ;
+    private com.google.protobuf.Internal.IntList level = emptyIntList();
+    private void ensureLevelIsMutable() {
+      if (!((bitField0 & 0x00000002) != 0)) {
+        level = mutableCopy(level );
+        bitField0_ |= 0x00000002;
+       }
     }
     /**
      * <pre>
-     * 0: 全部 1: 中职 2:高职 3: 中高职
+     * 1: 中职 2:高职 3: 中高职
      * </pre>
      *
-     * <code>int32 level = 5;</code>
+     * <code>repeated int32 level = 5;</code>
+     * @return A list containing the level.
+     */
+    public java.util.List<java.lang.Integer>
+        getLevelList() {
+      return ((bitField0 & 0x00000002) != 0) ?
+               java.util.Collections.unmodifiableList(level ) : level ;
+    }
+    /**
+     * <pre>
+     * 1: 中职 2:高职 3: 中高职
+     * </pre>
+     *
+     * <code>repeated int32 level = 5;</code>
+     * @return The count of level.
+     */
+    public int getLevelCount() {
+      return level .size();
+    }
+    /**
+     * <pre>
+     * 1: 中职 2:高职 3: 中高职
+     * </pre>
+     *
+     * <code>repeated int32 level = 5;</code>
+     * @param index The index of the element to return.
+     * @return The level at the given index.
+     */
+    public int getLevel(int index) {
+      return level .getInt(index);
+    }
+    /**
+     * <pre>
+     * 1: 中职 2:高职 3: 中高职
+     * </pre>
+     *
+     * <code>repeated int32 level = 5;</code>
+     * @param index The index to set the value at.
      * @param value The level to set.
      * @return This builder for chaining.
      */
-    public Builder setLevel(int value) {
-      
-      level = value;
+    public Builder setLevel(
+        int index, int value) {
+      ensureLevelIsMutable();
+      level .setInt(index, value);
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * 0: 全部 1: 中职 2:高职 3: 中高职
+     * 1: 中职 2:高职 3: 中高职
      * </pre>
      *
-     * <code>int32 level = 5;</code>
+     * <code>repeated int32 level = 5;</code>
+     * @param value The level to add.
+     * @return This builder for chaining.
+     */
+    public Builder addLevel(int value) {
+      ensureLevelIsMutable();
+      level .addInt(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 1: 中职 2:高职 3: 中高职
+     * </pre>
+     *
+     * <code>repeated int32 level = 5;</code>
+     * @param values The level to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllLevel(
+        java.lang.Iterable<? extends java.lang.Integer> values) {
+      ensureLevelIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, level );
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 1: 中职 2:高职 3: 中高职
+     * </pre>
+     *
+     * <code>repeated int32 level = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearLevel() {
-      
-      level = 0;
+      level = emptyIntList();
+      bitField0 = (bitField0 & ~0x00000002);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Internal.IntList courseType = emptyIntList();
+    private void ensureCourseTypeIsMutable() {
+      if (!((bitField0 & 0x00000004) != 0)) {
+        courseType = mutableCopy(courseType );
+        bitField0_ |= 0x00000004;
+       }
+    }
+    /**
+     * <pre>
+     * 1: 专业核心课 2:名师公开课 
+     * </pre>
+     *
+     * <code>repeated int32 course_type = 6;</code>
+     * @return A list containing the courseType.
+     */
+    public java.util.List<java.lang.Integer>
+        getCourseTypeList() {
+      return ((bitField0 & 0x00000004) != 0) ?
+               java.util.Collections.unmodifiableList(courseType ) : courseType ;
+    }
+    /**
+     * <pre>
+     * 1: 专业核心课 2:名师公开课 
+     * </pre>
+     *
+     * <code>repeated int32 course_type = 6;</code>
+     * @return The count of courseType.
+     */
+    public int getCourseTypeCount() {
+      return courseType .size();
+    }
+    /**
+     * <pre>
+     * 1: 专业核心课 2:名师公开课 
+     * </pre>
+     *
+     * <code>repeated int32 course_type = 6;</code>
+     * @param index The index of the element to return.
+     * @return The courseType at the given index.
+     */
+    public int getCourseType(int index) {
+      return courseType .getInt(index);
+    }
+    /**
+     * <pre>
+     * 1: 专业核心课 2:名师公开课 
+     * </pre>
+     *
+     * <code>repeated int32 course_type = 6;</code>
+     * @param index The index to set the value at.
+     * @param value The courseType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCourseType(
+        int index, int value) {
+      ensureCourseTypeIsMutable();
+      courseType .setInt(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 1: 专业核心课 2:名师公开课 
+     * </pre>
+     *
+     * <code>repeated int32 course_type = 6;</code>
+     * @param value The courseType to add.
+     * @return This builder for chaining.
+     */
+    public Builder addCourseType(int value) {
+      ensureCourseTypeIsMutable();
+      courseType .addInt(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 1: 专业核心课 2:名师公开课 
+     * </pre>
+     *
+     * <code>repeated int32 course_type = 6;</code>
+     * @param values The courseType to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllCourseType(
+        java.lang.Iterable<? extends java.lang.Integer> values) {
+      ensureCourseTypeIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, courseType );
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 1: 专业核心课 2:名师公开课 
+     * </pre>
+     *
+     * <code>repeated int32 course_type = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCourseType() {
+      courseType = emptyIntList();
+      bitField0 = (bitField0 & ~0x00000004);
       onChanged();
       return this;
     }

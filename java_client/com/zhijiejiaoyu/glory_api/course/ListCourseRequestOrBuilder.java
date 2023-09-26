@@ -47,30 +47,99 @@ public interface ListCourseRequestOrBuilder extends
    * 专业代码
    * </pre>
    *
-   * <code>string major = 4;</code>
-   * @return The major.
+   * <code>repeated string major = 4;</code>
+   * @return A list containing the major.
    */
-  java.lang.String getMajor();
+  java.util.List<java.lang.String>
+      getMajorList();
   /**
    * <pre>
    * 专业代码
    * </pre>
    *
-   * <code>string major = 4;</code>
-   * @return The bytes for major.
+   * <code>repeated string major = 4;</code>
+   * @return The count of major.
+   */
+  int getMajorCount();
+  /**
+   * <pre>
+   * 专业代码
+   * </pre>
+   *
+   * <code>repeated string major = 4;</code>
+   * @param index The index of the element to return.
+   * @return The major at the given index.
+   */
+  java.lang.String getMajor(int index);
+  /**
+   * <pre>
+   * 专业代码
+   * </pre>
+   *
+   * <code>repeated string major = 4;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the major at the given index.
    */
   com.google.protobuf.ByteString
-      getMajorBytes();
+      getMajorBytes(int index);
 
   /**
    * <pre>
-   * 0: 全部 1: 中职 2:高职 3: 中高职
+   * 1: 中职 2:高职 3: 中高职
    * </pre>
    *
-   * <code>int32 level = 5;</code>
-   * @return The level.
+   * <code>repeated int32 level = 5;</code>
+   * @return A list containing the level.
    */
-  int getLevel();
+  java.util.List<java.lang.Integer> getLevelList();
+  /**
+   * <pre>
+   * 1: 中职 2:高职 3: 中高职
+   * </pre>
+   *
+   * <code>repeated int32 level = 5;</code>
+   * @return The count of level.
+   */
+  int getLevelCount();
+  /**
+   * <pre>
+   * 1: 中职 2:高职 3: 中高职
+   * </pre>
+   *
+   * <code>repeated int32 level = 5;</code>
+   * @param index The index of the element to return.
+   * @return The level at the given index.
+   */
+  int getLevel(int index);
+
+  /**
+   * <pre>
+   * 1: 专业核心课 2:名师公开课 
+   * </pre>
+   *
+   * <code>repeated int32 course_type = 6;</code>
+   * @return A list containing the courseType.
+   */
+  java.util.List<java.lang.Integer> getCourseTypeList();
+  /**
+   * <pre>
+   * 1: 专业核心课 2:名师公开课 
+   * </pre>
+   *
+   * <code>repeated int32 course_type = 6;</code>
+   * @return The count of courseType.
+   */
+  int getCourseTypeCount();
+  /**
+   * <pre>
+   * 1: 专业核心课 2:名师公开课 
+   * </pre>
+   *
+   * <code>repeated int32 course_type = 6;</code>
+   * @param index The index of the element to return.
+   * @return The courseType at the given index.
+   */
+  int getCourseType(int index);
 
   /**
    * <code>.base.PaginationRequest pagination = 100;</code>
