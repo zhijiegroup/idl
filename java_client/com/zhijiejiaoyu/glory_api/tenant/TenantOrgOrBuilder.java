@@ -38,43 +38,55 @@ public interface TenantOrgOrBuilder extends
       getTypeBytes();
 
   /**
-   * <code>int64 parent = 4;</code>
+   * <code>string dept_code = 4;</code>
+   * @return The deptCode.
+   */
+  java.lang.String getDeptCode();
+  /**
+   * <code>string dept_code = 4;</code>
+   * @return The bytes for deptCode.
+   */
+  com.google.protobuf.ByteString
+      getDeptCodeBytes();
+
+  /**
+   * <code>int64 parent = 5;</code>
    * @return The parent.
    */
   long getParent();
 
   /**
-   * <code>int64 tenant = 5;</code>
+   * <code>int64 tenant = 6;</code>
    * @return The tenant.
    */
   long getTenant();
 
   /**
-   * <code>int64 count = 6;</code>
+   * <code>int64 count = 7;</code>
    * @return The count.
    */
   long getCount();
 
   /**
-   * <code>repeated .glory_api.TenantOrg children = 7;</code>
+   * <code>repeated .glory_api.TenantOrg children = 8;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.tenant.TenantOrg> 
       getChildrenList();
   /**
-   * <code>repeated .glory_api.TenantOrg children = 7;</code>
+   * <code>repeated .glory_api.TenantOrg children = 8;</code>
    */
   com.zhijiejiaoyu.glory_api.tenant.TenantOrg getChildren(int index);
   /**
-   * <code>repeated .glory_api.TenantOrg children = 7;</code>
+   * <code>repeated .glory_api.TenantOrg children = 8;</code>
    */
   int getChildrenCount();
   /**
-   * <code>repeated .glory_api.TenantOrg children = 7;</code>
+   * <code>repeated .glory_api.TenantOrg children = 8;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.tenant.TenantOrgOrBuilder> 
       getChildrenOrBuilderList();
   /**
-   * <code>repeated .glory_api.TenantOrg children = 7;</code>
+   * <code>repeated .glory_api.TenantOrg children = 8;</code>
    */
   com.zhijiejiaoyu.glory_api.tenant.TenantOrgOrBuilder getChildrenOrBuilder(
       int index);

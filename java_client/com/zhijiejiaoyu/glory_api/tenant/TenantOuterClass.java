@@ -162,27 +162,28 @@ public final class TenantOuterClass {
       "antResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
       "seResponse\022,\n\007tenants\030\002 \003(\0132\033.glory_api." +
       "TenantWithAuthor\022,\n\npagination\030d \001(\0132\030.b" +
-      "ase.PaginationResponse\"\212\001\n\tTenantOrg\022\n\n\002" +
-      "id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\014\n\004type\030\003 \001(\t\022\016\n\006" +
-      "parent\030\004 \001(\003\022\016\n\006tenant\030\005 \001(\003\022\r\n\005count\030\006 " +
-      "\001(\003\022&\n\010children\030\007 \003(\0132\024.glory_api.Tenant" +
-      "Org\"_\n\023GetTenantOrgRequest\022\'\n\014base_reque" +
-      "st\030\001 \001(\0132\021.base.BaseRequest\022\021\n\ttenant_id" +
-      "\030\002 \001(\003\022\014\n\004name\030\003 \001(\t\"x\n\024GetTenantOrgResp" +
-      "onse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespo" +
-      "nse\022(\n\ntenant_org\030\002 \001(\0132\024.glory_api.Tena" +
-      "ntOrg\022\017\n\007dept_id\030\003 \001(\003\"P\n\022EnterTenantReq" +
-      "uest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRe" +
-      "quest\022\021\n\ttenant_id\030\002 \001(\003\"<\n\023EnterTenantR" +
-      "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
-      "sponse\"<\n\021ExitTenantRequest\022\'\n\014base_requ" +
-      "est\030\001 \001(\0132\021.base.BaseRequest\";\n\022ExitTena" +
-      "ntResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
-      "eResponse\"O\n\021InitTenantRequest\022\'\n\014base_r" +
-      "equest\030\001 \001(\0132\021.base.BaseRequest\022\021\n\ttenan" +
-      "t_id\030\002 \001(\003\";\n\022InitTenantResponse\022%\n\tbase" +
-      "_resp\030\001 \001(\0132\022.base.BaseResponseB%\n!com.z" +
-      "hijiejiaoyu.glory_api.tenantP\001b\006proto3"
+      "ase.PaginationResponse\"\235\001\n\tTenantOrg\022\n\n\002" +
+      "id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\014\n\004type\030\003 \001(\t\022\021\n\t" +
+      "dept_code\030\004 \001(\t\022\016\n\006parent\030\005 \001(\003\022\016\n\006tenan" +
+      "t\030\006 \001(\003\022\r\n\005count\030\007 \001(\003\022&\n\010children\030\010 \003(\013" +
+      "2\024.glory_api.TenantOrg\"_\n\023GetTenantOrgRe" +
+      "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
+      "equest\022\021\n\ttenant_id\030\002 \001(\003\022\014\n\004name\030\003 \001(\t\"" +
+      "x\n\024GetTenantOrgResponse\022%\n\tbase_resp\030\001 \001" +
+      "(\0132\022.base.BaseResponse\022(\n\ntenant_org\030\002 \001" +
+      "(\0132\024.glory_api.TenantOrg\022\017\n\007dept_id\030\003 \001(" +
+      "\003\"P\n\022EnterTenantRequest\022\'\n\014base_request\030" +
+      "\001 \001(\0132\021.base.BaseRequest\022\021\n\ttenant_id\030\002 " +
+      "\001(\003\"<\n\023EnterTenantResponse\022%\n\tbase_resp\030" +
+      "\001 \001(\0132\022.base.BaseResponse\"<\n\021ExitTenantR" +
+      "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
+      "Request\";\n\022ExitTenantResponse\022%\n\tbase_re" +
+      "sp\030\001 \001(\0132\022.base.BaseResponse\"O\n\021InitTena" +
+      "ntRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.B" +
+      "aseRequest\022\021\n\ttenant_id\030\002 \001(\003\";\n\022InitTen" +
+      "antResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
+      "seResponseB%\n!com.zhijiejiaoyu.glory_api" +
+      ".tenantP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -266,7 +267,7 @@ public final class TenantOuterClass {
     internal_static_glory_api_TenantOrg_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_TenantOrg_descriptor,
-        new java.lang.String[] { "Id", "Name", "Type", "Parent", "Tenant", "Count", "Children", });
+        new java.lang.String[] { "Id", "Name", "Type", "DeptCode", "Parent", "Tenant", "Count", "Children", });
     internal_static_glory_api_GetTenantOrgRequest_descriptor =
       getDescriptor().getMessageTypes().get(13);
     internal_static_glory_api_GetTenantOrgRequest_fieldAccessorTable = new

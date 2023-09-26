@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
   private TenantOrg() {
     name = "";
     type = "";
+    deptCode = "";
     children = java.util.Collections.emptyList();
   }
 
@@ -73,22 +74,28 @@ private static final long serialVersionUID = 0L;
             type = s;
             break;
           }
-          case 32: {
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
 
-            parent = input.readInt64();
+            deptCode = s;
             break;
           }
           case 40: {
 
-            tenant = input.readInt64();
+            parent = input.readInt64();
             break;
           }
           case 48: {
 
+            tenant = input.readInt64();
+            break;
+          }
+          case 56: {
+
             count = input.readInt64();
             break;
           }
-          case 58: {
+          case 66: {
             if (!((mutable_bitField0 & 0x00000001) != 0)) {
               children = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.tenant.TenantOrg>();
               mutable_bitField0_ |= 0x00000001;
@@ -219,10 +226,48 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int PARENT_FIELD_NUMBER = 4;
+  public static final int DEPT_CODE_FIELD_NUMBER = 4;
+  private volatile java.lang.Object deptCode ;
+  /**
+   * <code>string dept_code = 4;</code>
+   * @return The deptCode.
+   */
+  @java.lang.Override
+  public java.lang.String getDeptCode() {
+    java.lang.Object ref = deptCode ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      deptCode = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string dept_code = 4;</code>
+   * @return The bytes for deptCode.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getDeptCodeBytes() {
+    java.lang.Object ref = deptCode ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      deptCode = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PARENT_FIELD_NUMBER = 5;
   private long parent ;
   /**
-   * <code>int64 parent = 4;</code>
+   * <code>int64 parent = 5;</code>
    * @return The parent.
    */
   @java.lang.Override
@@ -230,10 +275,10 @@ private static final long serialVersionUID = 0L;
     return parent ;
   }
 
-  public static final int TENANT_FIELD_NUMBER = 5;
+  public static final int TENANT_FIELD_NUMBER = 6;
   private long tenant ;
   /**
-   * <code>int64 tenant = 5;</code>
+   * <code>int64 tenant = 6;</code>
    * @return The tenant.
    */
   @java.lang.Override
@@ -241,10 +286,10 @@ private static final long serialVersionUID = 0L;
     return tenant ;
   }
 
-  public static final int COUNT_FIELD_NUMBER = 6;
+  public static final int COUNT_FIELD_NUMBER = 7;
   private long count ;
   /**
-   * <code>int64 count = 6;</code>
+   * <code>int64 count = 7;</code>
    * @return The count.
    */
   @java.lang.Override
@@ -252,17 +297,17 @@ private static final long serialVersionUID = 0L;
     return count ;
   }
 
-  public static final int CHILDREN_FIELD_NUMBER = 7;
+  public static final int CHILDREN_FIELD_NUMBER = 8;
   private java.util.List<com.zhijiejiaoyu.glory_api.tenant.TenantOrg> children ;
   /**
-   * <code>repeated .glory_api.TenantOrg children = 7;</code>
+   * <code>repeated .glory_api.TenantOrg children = 8;</code>
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.tenant.TenantOrg> getChildrenList() {
     return children ;
   }
   /**
-   * <code>repeated .glory_api.TenantOrg children = 7;</code>
+   * <code>repeated .glory_api.TenantOrg children = 8;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.tenant.TenantOrgOrBuilder> 
@@ -270,21 +315,21 @@ private static final long serialVersionUID = 0L;
     return children ;
   }
   /**
-   * <code>repeated .glory_api.TenantOrg children = 7;</code>
+   * <code>repeated .glory_api.TenantOrg children = 8;</code>
    */
   @java.lang.Override
   public int getChildrenCount() {
     return children .size();
   }
   /**
-   * <code>repeated .glory_api.TenantOrg children = 7;</code>
+   * <code>repeated .glory_api.TenantOrg children = 8;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.tenant.TenantOrg getChildren(int index) {
     return children .get(index);
   }
   /**
-   * <code>repeated .glory_api.TenantOrg children = 7;</code>
+   * <code>repeated .glory_api.TenantOrg children = 8;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.tenant.TenantOrgOrBuilder getChildrenOrBuilder(
@@ -315,17 +360,20 @@ private static final long serialVersionUID = 0L;
     if (!getTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, type );
     }
+    if (!getDeptCodeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, deptCode );
+    }
     if (parent != 0L) {
-      output.writeInt64(4, parent );
+      output.writeInt64(5, parent );
     }
     if (tenant != 0L) {
-      output.writeInt64(5, tenant );
+      output.writeInt64(6, tenant );
     }
     if (count != 0L) {
-      output.writeInt64(6, count );
+      output.writeInt64(7, count );
     }
     for (int i = 0; i < children .size(); i++) {
-      output.writeMessage(7, children .get(i));
+      output.writeMessage(8, children .get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -346,21 +394,24 @@ private static final long serialVersionUID = 0L;
     if (!getTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, type );
     }
+    if (!getDeptCodeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, deptCode );
+    }
     if (parent != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(4, parent );
+        .computeInt64Size(5, parent );
     }
     if (tenant != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(5, tenant );
+        .computeInt64Size(6, tenant );
     }
     if (count != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(6, count );
+        .computeInt64Size(7, count );
     }
     for (int i = 0; i < children .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, children .get(i));
+        .computeMessageSize(8, children .get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -383,6 +434,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getName())) return false;
     if (!getType()
         .equals(other.getType())) return false;
+    if (!getDeptCode()
+        .equals(other.getDeptCode())) return false;
     if (getParent()
         != other.getParent()) return false;
     if (getTenant()
@@ -409,6 +462,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getType().hashCode();
+    hash = (37 * hash) + DEPT_CODE_FIELD_NUMBER;
+    hash = (53 * hash) + getDeptCode().hashCode();
     hash = (37 * hash) + PARENT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getParent());
@@ -566,6 +621,8 @@ private static final long serialVersionUID = 0L;
 
       type = "";
 
+      deptCode = "";
+
       parent = 0L;
 
       tenant = 0L;
@@ -608,6 +665,7 @@ private static final long serialVersionUID = 0L;
       result.id = id ;
       result.name = name ;
       result.type = type ;
+      result.deptCode = deptCode ;
       result.parent = parent ;
       result.tenant = tenant ;
       result.count = count ;
@@ -677,6 +735,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getType().isEmpty()) {
         type = other.type ;
+        onChanged();
+      }
+      if (!other.getDeptCode().isEmpty()) {
+        deptCode = other.deptCode ;
         onChanged();
       }
       if (other.getParent() != 0L) {
@@ -927,9 +989,85 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object deptCode = "";
+    /**
+     * <code>string dept_code = 4;</code>
+     * @return The deptCode.
+     */
+    public java.lang.String getDeptCode() {
+      java.lang.Object ref = deptCode ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        deptCode = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string dept_code = 4;</code>
+     * @return The bytes for deptCode.
+     */
+    public com.google.protobuf.ByteString
+        getDeptCodeBytes() {
+      java.lang.Object ref = deptCode ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        deptCode = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string dept_code = 4;</code>
+     * @param value The deptCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeptCode(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      deptCode = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string dept_code = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDeptCode() {
+      
+      deptCode = getDefaultInstance().getDeptCode();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string dept_code = 4;</code>
+     * @param value The bytes for deptCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeptCodeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      deptCode = value;
+      onChanged();
+      return this;
+    }
+
     private long parent ;
     /**
-     * <code>int64 parent = 4;</code>
+     * <code>int64 parent = 5;</code>
      * @return The parent.
      */
     @java.lang.Override
@@ -937,7 +1075,7 @@ private static final long serialVersionUID = 0L;
       return parent ;
     }
     /**
-     * <code>int64 parent = 4;</code>
+     * <code>int64 parent = 5;</code>
      * @param value The parent to set.
      * @return This builder for chaining.
      */
@@ -948,7 +1086,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 parent = 4;</code>
+     * <code>int64 parent = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearParent() {
@@ -960,7 +1098,7 @@ private static final long serialVersionUID = 0L;
 
     private long tenant ;
     /**
-     * <code>int64 tenant = 5;</code>
+     * <code>int64 tenant = 6;</code>
      * @return The tenant.
      */
     @java.lang.Override
@@ -968,7 +1106,7 @@ private static final long serialVersionUID = 0L;
       return tenant ;
     }
     /**
-     * <code>int64 tenant = 5;</code>
+     * <code>int64 tenant = 6;</code>
      * @param value The tenant to set.
      * @return This builder for chaining.
      */
@@ -979,7 +1117,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 tenant = 5;</code>
+     * <code>int64 tenant = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearTenant() {
@@ -991,7 +1129,7 @@ private static final long serialVersionUID = 0L;
 
     private long count ;
     /**
-     * <code>int64 count = 6;</code>
+     * <code>int64 count = 7;</code>
      * @return The count.
      */
     @java.lang.Override
@@ -999,7 +1137,7 @@ private static final long serialVersionUID = 0L;
       return count ;
     }
     /**
-     * <code>int64 count = 6;</code>
+     * <code>int64 count = 7;</code>
      * @param value The count to set.
      * @return This builder for chaining.
      */
@@ -1010,7 +1148,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 count = 6;</code>
+     * <code>int64 count = 7;</code>
      * @return This builder for chaining.
      */
     public Builder clearCount() {
@@ -1033,7 +1171,7 @@ private static final long serialVersionUID = 0L;
         com.zhijiejiaoyu.glory_api.tenant.TenantOrg, com.zhijiejiaoyu.glory_api.tenant.TenantOrg.Builder, com.zhijiejiaoyu.glory_api.tenant.TenantOrgOrBuilder> childrenBuilder ;
 
     /**
-     * <code>repeated .glory_api.TenantOrg children = 7;</code>
+     * <code>repeated .glory_api.TenantOrg children = 8;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.tenant.TenantOrg> getChildrenList() {
       if (childrenBuilder == null) {
@@ -1043,7 +1181,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.TenantOrg children = 7;</code>
+     * <code>repeated .glory_api.TenantOrg children = 8;</code>
      */
     public int getChildrenCount() {
       if (childrenBuilder == null) {
@@ -1053,7 +1191,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.TenantOrg children = 7;</code>
+     * <code>repeated .glory_api.TenantOrg children = 8;</code>
      */
     public com.zhijiejiaoyu.glory_api.tenant.TenantOrg getChildren(int index) {
       if (childrenBuilder == null) {
@@ -1063,7 +1201,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.TenantOrg children = 7;</code>
+     * <code>repeated .glory_api.TenantOrg children = 8;</code>
      */
     public Builder setChildren(
         int index, com.zhijiejiaoyu.glory_api.tenant.TenantOrg value) {
@@ -1080,7 +1218,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantOrg children = 7;</code>
+     * <code>repeated .glory_api.TenantOrg children = 8;</code>
      */
     public Builder setChildren(
         int index, com.zhijiejiaoyu.glory_api.tenant.TenantOrg.Builder builderForValue) {
@@ -1094,7 +1232,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantOrg children = 7;</code>
+     * <code>repeated .glory_api.TenantOrg children = 8;</code>
      */
     public Builder addChildren(com.zhijiejiaoyu.glory_api.tenant.TenantOrg value) {
       if (childrenBuilder == null) {
@@ -1110,7 +1248,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantOrg children = 7;</code>
+     * <code>repeated .glory_api.TenantOrg children = 8;</code>
      */
     public Builder addChildren(
         int index, com.zhijiejiaoyu.glory_api.tenant.TenantOrg value) {
@@ -1127,7 +1265,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantOrg children = 7;</code>
+     * <code>repeated .glory_api.TenantOrg children = 8;</code>
      */
     public Builder addChildren(
         com.zhijiejiaoyu.glory_api.tenant.TenantOrg.Builder builderForValue) {
@@ -1141,7 +1279,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantOrg children = 7;</code>
+     * <code>repeated .glory_api.TenantOrg children = 8;</code>
      */
     public Builder addChildren(
         int index, com.zhijiejiaoyu.glory_api.tenant.TenantOrg.Builder builderForValue) {
@@ -1155,7 +1293,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantOrg children = 7;</code>
+     * <code>repeated .glory_api.TenantOrg children = 8;</code>
      */
     public Builder addAllChildren(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.tenant.TenantOrg> values) {
@@ -1170,7 +1308,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantOrg children = 7;</code>
+     * <code>repeated .glory_api.TenantOrg children = 8;</code>
      */
     public Builder clearChildren() {
       if (childrenBuilder == null) {
@@ -1183,7 +1321,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantOrg children = 7;</code>
+     * <code>repeated .glory_api.TenantOrg children = 8;</code>
      */
     public Builder removeChildren(int index) {
       if (childrenBuilder == null) {
@@ -1196,14 +1334,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TenantOrg children = 7;</code>
+     * <code>repeated .glory_api.TenantOrg children = 8;</code>
      */
     public com.zhijiejiaoyu.glory_api.tenant.TenantOrg.Builder getChildrenBuilder(
         int index) {
       return getChildrenFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .glory_api.TenantOrg children = 7;</code>
+     * <code>repeated .glory_api.TenantOrg children = 8;</code>
      */
     public com.zhijiejiaoyu.glory_api.tenant.TenantOrgOrBuilder getChildrenOrBuilder(
         int index) {
@@ -1213,7 +1351,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.TenantOrg children = 7;</code>
+     * <code>repeated .glory_api.TenantOrg children = 8;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.tenant.TenantOrgOrBuilder> 
          getChildrenOrBuilderList() {
@@ -1224,14 +1362,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.TenantOrg children = 7;</code>
+     * <code>repeated .glory_api.TenantOrg children = 8;</code>
      */
     public com.zhijiejiaoyu.glory_api.tenant.TenantOrg.Builder addChildrenBuilder() {
       return getChildrenFieldBuilder().addBuilder(
           com.zhijiejiaoyu.glory_api.tenant.TenantOrg.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.TenantOrg children = 7;</code>
+     * <code>repeated .glory_api.TenantOrg children = 8;</code>
      */
     public com.zhijiejiaoyu.glory_api.tenant.TenantOrg.Builder addChildrenBuilder(
         int index) {
@@ -1239,7 +1377,7 @@ private static final long serialVersionUID = 0L;
           index, com.zhijiejiaoyu.glory_api.tenant.TenantOrg.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.TenantOrg children = 7;</code>
+     * <code>repeated .glory_api.TenantOrg children = 8;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.tenant.TenantOrg.Builder> 
          getChildrenBuilderList() {

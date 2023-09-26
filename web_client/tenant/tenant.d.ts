@@ -88,6 +88,7 @@ export interface TenantOrg {
   id?: string;
   name?: string;
   type?: string;
+  dept_code?: string;
   parent?: string;
   tenant?: string;
   count?: string;
