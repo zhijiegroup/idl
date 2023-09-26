@@ -24,7 +24,6 @@ message TeachingPlan {
 message CreateTeachingPlanRequest {
     base.BaseRequest base_request = 1;
     int32 type = 2;
-    string name = 3;
     int64 chapter_id = 4;
     string chapter_name = 5;
     int64 course_module_id = 6;
@@ -41,7 +40,7 @@ message CreateTeachingPlanResponse {
 message UpdateTeachingPlanRequest {
     base.BaseRequest base_request = 1;
     int64 teaching_plan_id = 2;
-    string name = 3;
+    int64 user_id = 3;
     string teaching_plan_content = 4;
 }
 
