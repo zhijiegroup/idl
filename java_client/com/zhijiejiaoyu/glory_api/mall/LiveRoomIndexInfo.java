@@ -27,6 +27,7 @@ private static final long serialVersionUID = 0L;
     roomImageUrl = "";
     roomTitle = "";
     userName = "";
+    userAvatar = "";
     shopName = "";
     shopLogoUrl = "";
   }
@@ -145,21 +146,27 @@ private static final long serialVersionUID = 0L;
           case 122: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            shopName = s;
+            userAvatar = s;
             break;
           }
           case 130: {
             java.lang.String s = input.readStringRequireUtf8();
 
+            shopName = s;
+            break;
+          }
+          case 138: {
+            java.lang.String s = input.readStringRequireUtf8();
+
             shopLogoUrl = s;
             break;
           }
-          case 136: {
+          case 144: {
 
             shopId = input.readInt64();
             break;
           }
-          case 144: {
+          case 152: {
 
             isFollow = input.readBool();
             break;
@@ -663,10 +670,56 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int SHOP_NAME_FIELD_NUMBER = 15;
+  public static final int USER_AVATAR_FIELD_NUMBER = 15;
+  private volatile java.lang.Object userAvatar ;
+  /**
+   * <pre>
+   * 用户头像
+   * </pre>
+   *
+   * <code>string user_avatar = 15;</code>
+   * @return The userAvatar.
+   */
+  @java.lang.Override
+  public java.lang.String getUserAvatar() {
+    java.lang.Object ref = userAvatar ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      userAvatar = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 用户头像
+   * </pre>
+   *
+   * <code>string user_avatar = 15;</code>
+   * @return The bytes for userAvatar.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getUserAvatarBytes() {
+    java.lang.Object ref = userAvatar ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      userAvatar = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SHOP_NAME_FIELD_NUMBER = 16;
   private volatile java.lang.Object shopName ;
   /**
-   * <code>string shop_name = 15;</code>
+   * <code>string shop_name = 16;</code>
    * @return The shopName.
    */
   @java.lang.Override
@@ -683,7 +736,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string shop_name = 15;</code>
+   * <code>string shop_name = 16;</code>
    * @return The bytes for shopName.
    */
   @java.lang.Override
@@ -701,10 +754,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int SHOP_LOGO_URL_FIELD_NUMBER = 16;
+  public static final int SHOP_LOGO_URL_FIELD_NUMBER = 17;
   private volatile java.lang.Object shopLogoUrl ;
   /**
-   * <code>string shop_logo_url = 16;</code>
+   * <code>string shop_logo_url = 17;</code>
    * @return The shopLogoUrl.
    */
   @java.lang.Override
@@ -721,7 +774,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string shop_logo_url = 16;</code>
+   * <code>string shop_logo_url = 17;</code>
    * @return The bytes for shopLogoUrl.
    */
   @java.lang.Override
@@ -739,10 +792,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int SHOP_ID_FIELD_NUMBER = 17;
+  public static final int SHOP_ID_FIELD_NUMBER = 18;
   private long shopId ;
   /**
-   * <code>int64 shop_id = 17;</code>
+   * <code>int64 shop_id = 18;</code>
    * @return The shopId.
    */
   @java.lang.Override
@@ -750,14 +803,14 @@ private static final long serialVersionUID = 0L;
     return shopId ;
   }
 
-  public static final int IS_FOLLOW_FIELD_NUMBER = 18;
+  public static final int IS_FOLLOW_FIELD_NUMBER = 19;
   private boolean isFollow ;
   /**
    * <pre>
    * 是否已关注用户
    * </pre>
    *
-   * <code>bool is_follow = 18;</code>
+   * <code>bool is_follow = 19;</code>
    * @return The isFollow.
    */
   @java.lang.Override
@@ -821,17 +874,20 @@ private static final long serialVersionUID = 0L;
     if (!getUserNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, userName );
     }
+    if (!getUserAvatarBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, userAvatar );
+    }
     if (!getShopNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, shopName );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 16, shopName );
     }
     if (!getShopLogoUrlBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 16, shopLogoUrl );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 17, shopLogoUrl );
     }
     if (shopId != 0L) {
-      output.writeInt64(17, shopId );
+      output.writeInt64(18, shopId );
     }
     if (isFollow != false) {
-      output.writeBool(18, isFollow );
+      output.writeBool(19, isFollow );
     }
     unknownFields.writeTo(output);
   }
@@ -887,19 +943,22 @@ private static final long serialVersionUID = 0L;
     if (!getUserNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, userName );
     }
+    if (!getUserAvatarBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, userAvatar );
+    }
     if (!getShopNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, shopName );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, shopName );
     }
     if (!getShopLogoUrlBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, shopLogoUrl );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, shopLogoUrl );
     }
     if (shopId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(17, shopId );
+        .computeInt64Size(18, shopId );
     }
     if (isFollow != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(18, isFollow );
+        .computeBoolSize(19, isFollow );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -944,6 +1003,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getRoomTitle())) return false;
     if (!getUserName()
         .equals(other.getUserName())) return false;
+    if (!getUserAvatar()
+        .equals(other.getUserAvatar())) return false;
     if (!getShopName()
         .equals(other.getShopName())) return false;
     if (!getShopLogoUrl()
@@ -994,6 +1055,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getRoomTitle().hashCode();
     hash = (37 * hash) + USER_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getUserName().hashCode();
+    hash = (37 * hash) + USER_AVATAR_FIELD_NUMBER;
+    hash = (53 * hash) + getUserAvatar().hashCode();
     hash = (37 * hash) + SHOP_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getShopName().hashCode();
     hash = (37 * hash) + SHOP_LOGO_URL_FIELD_NUMBER;
@@ -1165,6 +1228,8 @@ private static final long serialVersionUID = 0L;
 
       userName = "";
 
+      userAvatar = "";
+
       shopName = "";
 
       shopLogoUrl = "";
@@ -1213,6 +1278,7 @@ private static final long serialVersionUID = 0L;
       result.roomImageUrl = roomImageUrl ;
       result.roomTitle = roomTitle ;
       result.userName = userName ;
+      result.userAvatar = userAvatar ;
       result.shopName = shopName ;
       result.shopLogoUrl = shopLogoUrl ;
       result.shopId = shopId ;
@@ -1316,6 +1382,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getUserName().isEmpty()) {
         userName = other.userName ;
+        onChanged();
+      }
+      if (!other.getUserAvatar().isEmpty()) {
+        userAvatar = other.userAvatar ;
         onChanged();
       }
       if (!other.getShopName().isEmpty()) {
@@ -2330,9 +2400,105 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object userAvatar = "";
+    /**
+     * <pre>
+     * 用户头像
+     * </pre>
+     *
+     * <code>string user_avatar = 15;</code>
+     * @return The userAvatar.
+     */
+    public java.lang.String getUserAvatar() {
+      java.lang.Object ref = userAvatar ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userAvatar = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 用户头像
+     * </pre>
+     *
+     * <code>string user_avatar = 15;</code>
+     * @return The bytes for userAvatar.
+     */
+    public com.google.protobuf.ByteString
+        getUserAvatarBytes() {
+      java.lang.Object ref = userAvatar ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userAvatar = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 用户头像
+     * </pre>
+     *
+     * <code>string user_avatar = 15;</code>
+     * @param value The userAvatar to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserAvatar(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      userAvatar = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 用户头像
+     * </pre>
+     *
+     * <code>string user_avatar = 15;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUserAvatar() {
+      
+      userAvatar = getDefaultInstance().getUserAvatar();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 用户头像
+     * </pre>
+     *
+     * <code>string user_avatar = 15;</code>
+     * @param value The bytes for userAvatar to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserAvatarBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      userAvatar = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object shopName = "";
     /**
-     * <code>string shop_name = 15;</code>
+     * <code>string shop_name = 16;</code>
      * @return The shopName.
      */
     public java.lang.String getShopName() {
@@ -2348,7 +2514,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string shop_name = 15;</code>
+     * <code>string shop_name = 16;</code>
      * @return The bytes for shopName.
      */
     public com.google.protobuf.ByteString
@@ -2365,7 +2531,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string shop_name = 15;</code>
+     * <code>string shop_name = 16;</code>
      * @param value The shopName to set.
      * @return This builder for chaining.
      */
@@ -2380,7 +2546,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string shop_name = 15;</code>
+     * <code>string shop_name = 16;</code>
      * @return This builder for chaining.
      */
     public Builder clearShopName() {
@@ -2390,7 +2556,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string shop_name = 15;</code>
+     * <code>string shop_name = 16;</code>
      * @param value The bytes for shopName to set.
      * @return This builder for chaining.
      */
@@ -2408,7 +2574,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object shopLogoUrl = "";
     /**
-     * <code>string shop_logo_url = 16;</code>
+     * <code>string shop_logo_url = 17;</code>
      * @return The shopLogoUrl.
      */
     public java.lang.String getShopLogoUrl() {
@@ -2424,7 +2590,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string shop_logo_url = 16;</code>
+     * <code>string shop_logo_url = 17;</code>
      * @return The bytes for shopLogoUrl.
      */
     public com.google.protobuf.ByteString
@@ -2441,7 +2607,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string shop_logo_url = 16;</code>
+     * <code>string shop_logo_url = 17;</code>
      * @param value The shopLogoUrl to set.
      * @return This builder for chaining.
      */
@@ -2456,7 +2622,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string shop_logo_url = 16;</code>
+     * <code>string shop_logo_url = 17;</code>
      * @return This builder for chaining.
      */
     public Builder clearShopLogoUrl() {
@@ -2466,7 +2632,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string shop_logo_url = 16;</code>
+     * <code>string shop_logo_url = 17;</code>
      * @param value The bytes for shopLogoUrl to set.
      * @return This builder for chaining.
      */
@@ -2484,7 +2650,7 @@ private static final long serialVersionUID = 0L;
 
     private long shopId ;
     /**
-     * <code>int64 shop_id = 17;</code>
+     * <code>int64 shop_id = 18;</code>
      * @return The shopId.
      */
     @java.lang.Override
@@ -2492,7 +2658,7 @@ private static final long serialVersionUID = 0L;
       return shopId ;
     }
     /**
-     * <code>int64 shop_id = 17;</code>
+     * <code>int64 shop_id = 18;</code>
      * @param value The shopId to set.
      * @return This builder for chaining.
      */
@@ -2503,7 +2669,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 shop_id = 17;</code>
+     * <code>int64 shop_id = 18;</code>
      * @return This builder for chaining.
      */
     public Builder clearShopId() {
@@ -2519,7 +2685,7 @@ private static final long serialVersionUID = 0L;
      * 是否已关注用户
      * </pre>
      *
-     * <code>bool is_follow = 18;</code>
+     * <code>bool is_follow = 19;</code>
      * @return The isFollow.
      */
     @java.lang.Override
@@ -2531,7 +2697,7 @@ private static final long serialVersionUID = 0L;
      * 是否已关注用户
      * </pre>
      *
-     * <code>bool is_follow = 18;</code>
+     * <code>bool is_follow = 19;</code>
      * @param value The isFollow to set.
      * @return This builder for chaining.
      */
@@ -2546,7 +2712,7 @@ private static final long serialVersionUID = 0L;
      * 是否已关注用户
      * </pre>
      *
-     * <code>bool is_follow = 18;</code>
+     * <code>bool is_follow = 19;</code>
      * @return This builder for chaining.
      */
     public Builder clearIsFollow() {

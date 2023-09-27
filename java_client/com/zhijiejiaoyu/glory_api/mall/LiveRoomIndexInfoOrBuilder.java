@@ -174,31 +174,51 @@ public interface LiveRoomIndexInfoOrBuilder extends
       getUserNameBytes();
 
   /**
-   * <code>string shop_name = 15;</code>
+   * <pre>
+   * 用户头像
+   * </pre>
+   *
+   * <code>string user_avatar = 15;</code>
+   * @return The userAvatar.
+   */
+  java.lang.String getUserAvatar();
+  /**
+   * <pre>
+   * 用户头像
+   * </pre>
+   *
+   * <code>string user_avatar = 15;</code>
+   * @return The bytes for userAvatar.
+   */
+  com.google.protobuf.ByteString
+      getUserAvatarBytes();
+
+  /**
+   * <code>string shop_name = 16;</code>
    * @return The shopName.
    */
   java.lang.String getShopName();
   /**
-   * <code>string shop_name = 15;</code>
+   * <code>string shop_name = 16;</code>
    * @return The bytes for shopName.
    */
   com.google.protobuf.ByteString
       getShopNameBytes();
 
   /**
-   * <code>string shop_logo_url = 16;</code>
+   * <code>string shop_logo_url = 17;</code>
    * @return The shopLogoUrl.
    */
   java.lang.String getShopLogoUrl();
   /**
-   * <code>string shop_logo_url = 16;</code>
+   * <code>string shop_logo_url = 17;</code>
    * @return The bytes for shopLogoUrl.
    */
   com.google.protobuf.ByteString
       getShopLogoUrlBytes();
 
   /**
-   * <code>int64 shop_id = 17;</code>
+   * <code>int64 shop_id = 18;</code>
    * @return The shopId.
    */
   long getShopId();
@@ -208,7 +228,7 @@ public interface LiveRoomIndexInfoOrBuilder extends
    * 是否已关注用户
    * </pre>
    *
-   * <code>bool is_follow = 18;</code>
+   * <code>bool is_follow = 19;</code>
    * @return The isFollow.
    */
   boolean getIsFollow();

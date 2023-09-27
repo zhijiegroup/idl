@@ -43,6 +43,8 @@ export interface LiveRoomIndexInfo {
   /** 直播的标题 */
   room_title?: string;
   user_name?: string;
+  /** 用户头像 */
+  user_avatar?: string;
   shop_name?: string;
   shop_logo_url?: string;
   shop_id?: string;
