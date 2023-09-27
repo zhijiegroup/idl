@@ -23,6 +23,8 @@ export interface Course {
   skill_hours?: number;
   /** 课程简介 */
   course_description?: string;
+  /** 课程关联的职业岗位 */
+  course_occupation?: string;
   /** 课程封面图片OSS路径 */
   course_cover_path?: string;
   /** 课程封面图片OSS url */

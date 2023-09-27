@@ -119,10 +119,30 @@ public interface CourseOrBuilder extends
 
   /**
    * <pre>
+   * 课程关联的职业岗位
+   * </pre>
+   *
+   * <code>string course_occupation = 8;</code>
+   * @return The courseOccupation.
+   */
+  java.lang.String getCourseOccupation();
+  /**
+   * <pre>
+   * 课程关联的职业岗位
+   * </pre>
+   *
+   * <code>string course_occupation = 8;</code>
+   * @return The bytes for courseOccupation.
+   */
+  com.google.protobuf.ByteString
+      getCourseOccupationBytes();
+
+  /**
+   * <pre>
    * 课程封面图片OSS路径
    * </pre>
    *
-   * <code>string course_cover_path = 8;</code>
+   * <code>string course_cover_path = 9;</code>
    * @return The courseCoverPath.
    */
   java.lang.String getCourseCoverPath();
@@ -131,7 +151,7 @@ public interface CourseOrBuilder extends
    * 课程封面图片OSS路径
    * </pre>
    *
-   * <code>string course_cover_path = 8;</code>
+   * <code>string course_cover_path = 9;</code>
    * @return The bytes for courseCoverPath.
    */
   com.google.protobuf.ByteString
@@ -142,7 +162,7 @@ public interface CourseOrBuilder extends
    * 课程封面图片OSS url
    * </pre>
    *
-   * <code>string course_cover_url = 9;</code>
+   * <code>string course_cover_url = 10;</code>
    * @return The courseCoverUrl.
    */
   java.lang.String getCourseCoverUrl();
@@ -151,7 +171,7 @@ public interface CourseOrBuilder extends
    * 课程封面图片OSS url
    * </pre>
    *
-   * <code>string course_cover_url = 9;</code>
+   * <code>string course_cover_url = 10;</code>
    * @return The bytes for courseCoverUrl.
    */
   com.google.protobuf.ByteString
@@ -162,7 +182,7 @@ public interface CourseOrBuilder extends
    * 课程分类：1.学校课程；2.职场提升
    * </pre>
    *
-   * <code>int32 course_classification = 10;</code>
+   * <code>int32 course_classification = 11;</code>
    * @return The courseClassification.
    */
   int getCourseClassification();
@@ -172,7 +192,7 @@ public interface CourseOrBuilder extends
    * 课程层次：1.中职；2.高职；3.中高职
    * </pre>
    *
-   * <code>int32 course_level = 11;</code>
+   * <code>int32 course_level = 12;</code>
    * @return The courseLevel.
    */
   int getCourseLevel();
@@ -182,7 +202,7 @@ public interface CourseOrBuilder extends
    * 课程专业代码
    * </pre>
    *
-   * <code>string course_major = 12;</code>
+   * <code>string course_major = 13;</code>
    * @return The courseMajor.
    */
   java.lang.String getCourseMajor();
@@ -191,7 +211,7 @@ public interface CourseOrBuilder extends
    * 课程专业代码
    * </pre>
    *
-   * <code>string course_major = 12;</code>
+   * <code>string course_major = 13;</code>
    * @return The bytes for courseMajor.
    */
   com.google.protobuf.ByteString
@@ -202,7 +222,7 @@ public interface CourseOrBuilder extends
    * 课程行业代码
    * </pre>
    *
-   * <code>string course_industry = 13;</code>
+   * <code>string course_industry = 14;</code>
    * @return The courseIndustry.
    */
   java.lang.String getCourseIndustry();
@@ -211,7 +231,7 @@ public interface CourseOrBuilder extends
    * 课程行业代码
    * </pre>
    *
-   * <code>string course_industry = 13;</code>
+   * <code>string course_industry = 14;</code>
    * @return The bytes for courseIndustry.
    */
   com.google.protobuf.ByteString
@@ -222,7 +242,7 @@ public interface CourseOrBuilder extends
    * 课程类型：1.专业核心课；2.名师公开课
    * </pre>
    *
-   * <code>int32 course_type = 14;</code>
+   * <code>int32 course_type = 15;</code>
    * @return The courseType.
    */
   int getCourseType();
@@ -232,7 +252,7 @@ public interface CourseOrBuilder extends
    * 1. 模块化课程；2.非模块化课程；3.定制课程
    * </pre>
    *
-   * <code>int32 course_module = 15;</code>
+   * <code>int32 course_module = 16;</code>
    * @return The courseModule.
    */
   int getCourseModule();
@@ -242,7 +262,7 @@ public interface CourseOrBuilder extends
    * 能力指标或能力方向
    * </pre>
    *
-   * <code>repeated .glory_api.CourseModule course_modules = 16;</code>
+   * <code>repeated .glory_api.CourseModule course_modules = 17;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.course.CourseModule> 
       getCourseModulesList();
@@ -251,7 +271,7 @@ public interface CourseOrBuilder extends
    * 能力指标或能力方向
    * </pre>
    *
-   * <code>repeated .glory_api.CourseModule course_modules = 16;</code>
+   * <code>repeated .glory_api.CourseModule course_modules = 17;</code>
    */
   com.zhijiejiaoyu.glory_api.course.CourseModule getCourseModules(int index);
   /**
@@ -259,7 +279,7 @@ public interface CourseOrBuilder extends
    * 能力指标或能力方向
    * </pre>
    *
-   * <code>repeated .glory_api.CourseModule course_modules = 16;</code>
+   * <code>repeated .glory_api.CourseModule course_modules = 17;</code>
    */
   int getCourseModulesCount();
   /**
@@ -267,7 +287,7 @@ public interface CourseOrBuilder extends
    * 能力指标或能力方向
    * </pre>
    *
-   * <code>repeated .glory_api.CourseModule course_modules = 16;</code>
+   * <code>repeated .glory_api.CourseModule course_modules = 17;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder> 
       getCourseModulesOrBuilderList();
@@ -276,7 +296,7 @@ public interface CourseOrBuilder extends
    * 能力指标或能力方向
    * </pre>
    *
-   * <code>repeated .glory_api.CourseModule course_modules = 16;</code>
+   * <code>repeated .glory_api.CourseModule course_modules = 17;</code>
    */
   com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder getCourseModulesOrBuilder(
       int index);
@@ -286,7 +306,7 @@ public interface CourseOrBuilder extends
    * 创建时间
    * </pre>
    *
-   * <code>string created_at = 17;</code>
+   * <code>string created_at = 18;</code>
    * @return The createdAt.
    */
   java.lang.String getCreatedAt();
@@ -295,7 +315,7 @@ public interface CourseOrBuilder extends
    * 创建时间
    * </pre>
    *
-   * <code>string created_at = 17;</code>
+   * <code>string created_at = 18;</code>
    * @return The bytes for createdAt.
    */
   com.google.protobuf.ByteString

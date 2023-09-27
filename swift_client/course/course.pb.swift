@@ -77,6 +77,12 @@ struct GloryApi_Course {
     set {_uniqueStorage()._courseDescription = newValue}
   }
 
+  /// 课程关联的职业岗位
+  var courseOccupation: String {
+    get {return _storage._courseOccupation}
+    set {_uniqueStorage()._courseOccupation = newValue}
+  }
+
   /// 课程封面图片OSS路径
   var courseCoverPath: String {
     get {return _storage._courseCoverPath}
@@ -688,16 +694,17 @@ extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
     5: .standard(proto: "knowledge_hours"),
     6: .standard(proto: "skill_hours"),
     7: .standard(proto: "course_description"),
-    8: .standard(proto: "course_cover_path"),
-    9: .standard(proto: "course_cover_url"),
-    10: .standard(proto: "course_classification"),
-    11: .standard(proto: "course_level"),
-    12: .standard(proto: "course_major"),
-    13: .standard(proto: "course_industry"),
-    14: .standard(proto: "course_type"),
-    15: .standard(proto: "course_module"),
-    16: .standard(proto: "course_modules"),
-    17: .standard(proto: "created_at"),
+    8: .standard(proto: "course_occupation"),
+    9: .standard(proto: "course_cover_path"),
+    10: .standard(proto: "course_cover_url"),
+    11: .standard(proto: "course_classification"),
+    12: .standard(proto: "course_level"),
+    13: .standard(proto: "course_major"),
+    14: .standard(proto: "course_industry"),
+    15: .standard(proto: "course_type"),
+    16: .standard(proto: "course_module"),
+    17: .standard(proto: "course_modules"),
+    18: .standard(proto: "created_at"),
   ]
 
   fileprivate class _StorageClass {
@@ -708,6 +715,7 @@ extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
     var _knowledgeHours: Float = 0
     var _skillHours: Float = 0
     var _courseDescription: String = String()
+    var _courseOccupation: String = String()
     var _courseCoverPath: String = String()
     var _courseCoverURL: String = String()
     var _courseClassification: Int32 = 0
@@ -731,6 +739,7 @@ extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
       _knowledgeHours = source._knowledgeHours
       _skillHours = source._skillHours
       _courseDescription = source._courseDescription
+      _courseOccupation = source._courseOccupation
       _courseCoverPath = source._courseCoverPath
       _courseCoverURL = source._courseCoverURL
       _courseClassification = source._courseClassification
@@ -766,16 +775,17 @@ extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
         case 5: try { try decoder.decodeSingularFloatField(value: &_storage._knowledgeHours) }()
         case 6: try { try decoder.decodeSingularFloatField(value: &_storage._skillHours) }()
         case 7: try { try decoder.decodeSingularStringField(value: &_storage._courseDescription) }()
-        case 8: try { try decoder.decodeSingularStringField(value: &_storage._courseCoverPath) }()
-        case 9: try { try decoder.decodeSingularStringField(value: &_storage._courseCoverURL) }()
-        case 10: try { try decoder.decodeSingularInt32Field(value: &_storage._courseClassification) }()
-        case 11: try { try decoder.decodeSingularInt32Field(value: &_storage._courseLevel) }()
-        case 12: try { try decoder.decodeSingularStringField(value: &_storage._courseMajor) }()
-        case 13: try { try decoder.decodeSingularStringField(value: &_storage._courseIndustry) }()
-        case 14: try { try decoder.decodeSingularInt32Field(value: &_storage._courseType) }()
-        case 15: try { try decoder.decodeSingularInt32Field(value: &_storage._courseModule) }()
-        case 16: try { try decoder.decodeRepeatedMessageField(value: &_storage._courseModules) }()
-        case 17: try { try decoder.decodeSingularStringField(value: &_storage._createdAt) }()
+        case 8: try { try decoder.decodeSingularStringField(value: &_storage._courseOccupation) }()
+        case 9: try { try decoder.decodeSingularStringField(value: &_storage._courseCoverPath) }()
+        case 10: try { try decoder.decodeSingularStringField(value: &_storage._courseCoverURL) }()
+        case 11: try { try decoder.decodeSingularInt32Field(value: &_storage._courseClassification) }()
+        case 12: try { try decoder.decodeSingularInt32Field(value: &_storage._courseLevel) }()
+        case 13: try { try decoder.decodeSingularStringField(value: &_storage._courseMajor) }()
+        case 14: try { try decoder.decodeSingularStringField(value: &_storage._courseIndustry) }()
+        case 15: try { try decoder.decodeSingularInt32Field(value: &_storage._courseType) }()
+        case 16: try { try decoder.decodeSingularInt32Field(value: &_storage._courseModule) }()
+        case 17: try { try decoder.decodeRepeatedMessageField(value: &_storage._courseModules) }()
+        case 18: try { try decoder.decodeSingularStringField(value: &_storage._createdAt) }()
         default: break
         }
       }
@@ -805,35 +815,38 @@ extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
       if !_storage._courseDescription.isEmpty {
         try visitor.visitSingularStringField(value: _storage._courseDescription, fieldNumber: 7)
       }
+      if !_storage._courseOccupation.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._courseOccupation, fieldNumber: 8)
+      }
       if !_storage._courseCoverPath.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._courseCoverPath, fieldNumber: 8)
+        try visitor.visitSingularStringField(value: _storage._courseCoverPath, fieldNumber: 9)
       }
       if !_storage._courseCoverURL.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._courseCoverURL, fieldNumber: 9)
+        try visitor.visitSingularStringField(value: _storage._courseCoverURL, fieldNumber: 10)
       }
       if _storage._courseClassification != 0 {
-        try visitor.visitSingularInt32Field(value: _storage._courseClassification, fieldNumber: 10)
+        try visitor.visitSingularInt32Field(value: _storage._courseClassification, fieldNumber: 11)
       }
       if _storage._courseLevel != 0 {
-        try visitor.visitSingularInt32Field(value: _storage._courseLevel, fieldNumber: 11)
+        try visitor.visitSingularInt32Field(value: _storage._courseLevel, fieldNumber: 12)
       }
       if !_storage._courseMajor.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._courseMajor, fieldNumber: 12)
+        try visitor.visitSingularStringField(value: _storage._courseMajor, fieldNumber: 13)
       }
       if !_storage._courseIndustry.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._courseIndustry, fieldNumber: 13)
+        try visitor.visitSingularStringField(value: _storage._courseIndustry, fieldNumber: 14)
       }
       if _storage._courseType != 0 {
-        try visitor.visitSingularInt32Field(value: _storage._courseType, fieldNumber: 14)
+        try visitor.visitSingularInt32Field(value: _storage._courseType, fieldNumber: 15)
       }
       if _storage._courseModule != 0 {
-        try visitor.visitSingularInt32Field(value: _storage._courseModule, fieldNumber: 15)
+        try visitor.visitSingularInt32Field(value: _storage._courseModule, fieldNumber: 16)
       }
       if !_storage._courseModules.isEmpty {
-        try visitor.visitRepeatedMessageField(value: _storage._courseModules, fieldNumber: 16)
+        try visitor.visitRepeatedMessageField(value: _storage._courseModules, fieldNumber: 17)
       }
       if !_storage._createdAt.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._createdAt, fieldNumber: 17)
+        try visitor.visitSingularStringField(value: _storage._createdAt, fieldNumber: 18)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -851,6 +864,7 @@ extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
         if _storage._knowledgeHours != rhs_storage._knowledgeHours {return false}
         if _storage._skillHours != rhs_storage._skillHours {return false}
         if _storage._courseDescription != rhs_storage._courseDescription {return false}
+        if _storage._courseOccupation != rhs_storage._courseOccupation {return false}
         if _storage._courseCoverPath != rhs_storage._courseCoverPath {return false}
         if _storage._courseCoverURL != rhs_storage._courseCoverURL {return false}
         if _storage._courseClassification != rhs_storage._courseClassification {return false}
