@@ -36,56 +36,112 @@ struct GloryApi_Course {
   // methods supported on all messages.
 
   /// 课程ID
-  var courseID: Int64 = 0
+  var courseID: Int64 {
+    get {return _storage._courseID}
+    set {_uniqueStorage()._courseID = newValue}
+  }
 
   /// 课程名称
-  var courseName: String = String()
+  var courseName: String {
+    get {return _storage._courseName}
+    set {_uniqueStorage()._courseName = newValue}
+  }
 
   /// 课程开发单位
-  var courseOrganization: String = String()
+  var courseOrganization: String {
+    get {return _storage._courseOrganization}
+    set {_uniqueStorage()._courseOrganization = newValue}
+  }
 
   /// 主讲老师名称
-  var courseTeacherName: String = String()
+  var courseTeacherName: String {
+    get {return _storage._courseTeacherName}
+    set {_uniqueStorage()._courseTeacherName = newValue}
+  }
 
   /// 知识点学时
-  var knowledgeHours: Float = 0
+  var knowledgeHours: Float {
+    get {return _storage._knowledgeHours}
+    set {_uniqueStorage()._knowledgeHours = newValue}
+  }
 
   /// 技能学时
-  var skillHours: Float = 0
+  var skillHours: Float {
+    get {return _storage._skillHours}
+    set {_uniqueStorage()._skillHours = newValue}
+  }
 
   /// 课程简介
-  var courseDescription: String = String()
+  var courseDescription: String {
+    get {return _storage._courseDescription}
+    set {_uniqueStorage()._courseDescription = newValue}
+  }
 
   /// 课程封面图片OSS路径
-  var courseCoverPath: String = String()
+  var courseCoverPath: String {
+    get {return _storage._courseCoverPath}
+    set {_uniqueStorage()._courseCoverPath = newValue}
+  }
+
+  /// 课程封面图片OSS url
+  var courseCoverURL: String {
+    get {return _storage._courseCoverURL}
+    set {_uniqueStorage()._courseCoverURL = newValue}
+  }
 
   /// 课程分类：1.学校课程；2.职场提升
-  var courseClassification: Int32 = 0
+  var courseClassification: Int32 {
+    get {return _storage._courseClassification}
+    set {_uniqueStorage()._courseClassification = newValue}
+  }
 
   /// 课程层次：1.中职；2.高职；3.中高职
-  var courseLevel: Int32 = 0
+  var courseLevel: Int32 {
+    get {return _storage._courseLevel}
+    set {_uniqueStorage()._courseLevel = newValue}
+  }
 
   /// 课程专业代码
-  var courseMajor: String = String()
+  var courseMajor: String {
+    get {return _storage._courseMajor}
+    set {_uniqueStorage()._courseMajor = newValue}
+  }
 
   /// 课程行业代码
-  var courseIndustry: String = String()
+  var courseIndustry: String {
+    get {return _storage._courseIndustry}
+    set {_uniqueStorage()._courseIndustry = newValue}
+  }
 
   /// 课程类型：1.专业核心课；2.名师公开课
-  var courseType: Int32 = 0
+  var courseType: Int32 {
+    get {return _storage._courseType}
+    set {_uniqueStorage()._courseType = newValue}
+  }
 
   /// 1. 模块化课程；2.非模块化课程；3.定制课程
-  var courseModule: Int32 = 0
+  var courseModule: Int32 {
+    get {return _storage._courseModule}
+    set {_uniqueStorage()._courseModule = newValue}
+  }
 
   /// 能力指标或能力方向
-  var courseModules: [GloryApi_CourseModule] = []
+  var courseModules: [GloryApi_CourseModule] {
+    get {return _storage._courseModules}
+    set {_uniqueStorage()._courseModules = newValue}
+  }
 
   /// 创建时间
-  var createdAt: String = String()
+  var createdAt: String {
+    get {return _storage._createdAt}
+    set {_uniqueStorage()._createdAt = newValue}
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
+
+  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 /// 创建模块化课程
@@ -95,28 +151,29 @@ struct GloryApi_CreateCourseRequest {
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _storage._baseRequest ?? Base_BaseRequest()}
-    set {_uniqueStorage()._baseRequest = newValue}
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return _storage._baseRequest != nil}
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
-  mutating func clearBaseRequest() {_uniqueStorage()._baseRequest = nil}
+  mutating func clearBaseRequest() {self._baseRequest = nil}
 
   var course: GloryApi_Course {
-    get {return _storage._course ?? GloryApi_Course()}
-    set {_uniqueStorage()._course = newValue}
+    get {return _course ?? GloryApi_Course()}
+    set {_course = newValue}
   }
   /// Returns true if `course` has been explicitly set.
-  var hasCourse: Bool {return _storage._course != nil}
+  var hasCourse: Bool {return self._course != nil}
   /// Clears the value of `course`. Subsequent reads from it will return its default value.
-  mutating func clearCourse() {_uniqueStorage()._course = nil}
+  mutating func clearCourse() {self._course = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  fileprivate var _storage = _StorageClass.defaultInstance
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+  fileprivate var _course: GloryApi_Course? = nil
 }
 
 struct GloryApi_CreateCourseResponse {
@@ -173,28 +230,29 @@ struct GloryApi_GetCourseResponse {
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _storage._baseResp ?? Base_BaseResponse()}
-    set {_uniqueStorage()._baseResp = newValue}
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return _storage._baseResp != nil}
+  var hasBaseResp: Bool {return self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
-  mutating func clearBaseResp() {_uniqueStorage()._baseResp = nil}
+  mutating func clearBaseResp() {self._baseResp = nil}
 
   var course: GloryApi_Course {
-    get {return _storage._course ?? GloryApi_Course()}
-    set {_uniqueStorage()._course = newValue}
+    get {return _course ?? GloryApi_Course()}
+    set {_course = newValue}
   }
   /// Returns true if `course` has been explicitly set.
-  var hasCourse: Bool {return _storage._course != nil}
+  var hasCourse: Bool {return self._course != nil}
   /// Clears the value of `course`. Subsequent reads from it will return its default value.
-  mutating func clearCourse() {_uniqueStorage()._course = nil}
+  mutating func clearCourse() {self._course = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  fileprivate var _storage = _StorageClass.defaultInstance
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _course: GloryApi_Course? = nil
 }
 
 /// 更新模块化课程
@@ -204,28 +262,29 @@ struct GloryApi_UpdateCourseRequest {
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _storage._baseRequest ?? Base_BaseRequest()}
-    set {_uniqueStorage()._baseRequest = newValue}
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return _storage._baseRequest != nil}
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
-  mutating func clearBaseRequest() {_uniqueStorage()._baseRequest = nil}
+  mutating func clearBaseRequest() {self._baseRequest = nil}
 
   var course: GloryApi_Course {
-    get {return _storage._course ?? GloryApi_Course()}
-    set {_uniqueStorage()._course = newValue}
+    get {return _course ?? GloryApi_Course()}
+    set {_course = newValue}
   }
   /// Returns true if `course` has been explicitly set.
-  var hasCourse: Bool {return _storage._course != nil}
+  var hasCourse: Bool {return self._course != nil}
   /// Clears the value of `course`. Subsequent reads from it will return its default value.
-  mutating func clearCourse() {_uniqueStorage()._course = nil}
+  mutating func clearCourse() {self._course = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  fileprivate var _storage = _StorageClass.defaultInstance
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+  fileprivate var _course: GloryApi_Course? = nil
 }
 
 struct GloryApi_UpdateCourseResponse {
@@ -630,135 +689,58 @@ extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
     6: .standard(proto: "skill_hours"),
     7: .standard(proto: "course_description"),
     8: .standard(proto: "course_cover_path"),
-    9: .standard(proto: "course_classification"),
-    10: .standard(proto: "course_level"),
-    11: .standard(proto: "course_major"),
-    12: .standard(proto: "course_industry"),
-    13: .standard(proto: "course_type"),
-    14: .standard(proto: "course_module"),
-    15: .standard(proto: "course_modules"),
-    16: .standard(proto: "created_at"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularInt64Field(value: &self.courseID) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.courseName) }()
-      case 3: try { try decoder.decodeSingularStringField(value: &self.courseOrganization) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.courseTeacherName) }()
-      case 5: try { try decoder.decodeSingularFloatField(value: &self.knowledgeHours) }()
-      case 6: try { try decoder.decodeSingularFloatField(value: &self.skillHours) }()
-      case 7: try { try decoder.decodeSingularStringField(value: &self.courseDescription) }()
-      case 8: try { try decoder.decodeSingularStringField(value: &self.courseCoverPath) }()
-      case 9: try { try decoder.decodeSingularInt32Field(value: &self.courseClassification) }()
-      case 10: try { try decoder.decodeSingularInt32Field(value: &self.courseLevel) }()
-      case 11: try { try decoder.decodeSingularStringField(value: &self.courseMajor) }()
-      case 12: try { try decoder.decodeSingularStringField(value: &self.courseIndustry) }()
-      case 13: try { try decoder.decodeSingularInt32Field(value: &self.courseType) }()
-      case 14: try { try decoder.decodeSingularInt32Field(value: &self.courseModule) }()
-      case 15: try { try decoder.decodeRepeatedMessageField(value: &self.courseModules) }()
-      case 16: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.courseID != 0 {
-      try visitor.visitSingularInt64Field(value: self.courseID, fieldNumber: 1)
-    }
-    if !self.courseName.isEmpty {
-      try visitor.visitSingularStringField(value: self.courseName, fieldNumber: 2)
-    }
-    if !self.courseOrganization.isEmpty {
-      try visitor.visitSingularStringField(value: self.courseOrganization, fieldNumber: 3)
-    }
-    if !self.courseTeacherName.isEmpty {
-      try visitor.visitSingularStringField(value: self.courseTeacherName, fieldNumber: 4)
-    }
-    if self.knowledgeHours != 0 {
-      try visitor.visitSingularFloatField(value: self.knowledgeHours, fieldNumber: 5)
-    }
-    if self.skillHours != 0 {
-      try visitor.visitSingularFloatField(value: self.skillHours, fieldNumber: 6)
-    }
-    if !self.courseDescription.isEmpty {
-      try visitor.visitSingularStringField(value: self.courseDescription, fieldNumber: 7)
-    }
-    if !self.courseCoverPath.isEmpty {
-      try visitor.visitSingularStringField(value: self.courseCoverPath, fieldNumber: 8)
-    }
-    if self.courseClassification != 0 {
-      try visitor.visitSingularInt32Field(value: self.courseClassification, fieldNumber: 9)
-    }
-    if self.courseLevel != 0 {
-      try visitor.visitSingularInt32Field(value: self.courseLevel, fieldNumber: 10)
-    }
-    if !self.courseMajor.isEmpty {
-      try visitor.visitSingularStringField(value: self.courseMajor, fieldNumber: 11)
-    }
-    if !self.courseIndustry.isEmpty {
-      try visitor.visitSingularStringField(value: self.courseIndustry, fieldNumber: 12)
-    }
-    if self.courseType != 0 {
-      try visitor.visitSingularInt32Field(value: self.courseType, fieldNumber: 13)
-    }
-    if self.courseModule != 0 {
-      try visitor.visitSingularInt32Field(value: self.courseModule, fieldNumber: 14)
-    }
-    if !self.courseModules.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.courseModules, fieldNumber: 15)
-    }
-    if !self.createdAt.isEmpty {
-      try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 16)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: GloryApi_Course, rhs: GloryApi_Course) -> Bool {
-    if lhs.courseID != rhs.courseID {return false}
-    if lhs.courseName != rhs.courseName {return false}
-    if lhs.courseOrganization != rhs.courseOrganization {return false}
-    if lhs.courseTeacherName != rhs.courseTeacherName {return false}
-    if lhs.knowledgeHours != rhs.knowledgeHours {return false}
-    if lhs.skillHours != rhs.skillHours {return false}
-    if lhs.courseDescription != rhs.courseDescription {return false}
-    if lhs.courseCoverPath != rhs.courseCoverPath {return false}
-    if lhs.courseClassification != rhs.courseClassification {return false}
-    if lhs.courseLevel != rhs.courseLevel {return false}
-    if lhs.courseMajor != rhs.courseMajor {return false}
-    if lhs.courseIndustry != rhs.courseIndustry {return false}
-    if lhs.courseType != rhs.courseType {return false}
-    if lhs.courseModule != rhs.courseModule {return false}
-    if lhs.courseModules != rhs.courseModules {return false}
-    if lhs.createdAt != rhs.createdAt {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension GloryApi_CreateCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".CreateCourseRequest"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "base_request"),
-    2: .same(proto: "course"),
+    9: .standard(proto: "course_cover_url"),
+    10: .standard(proto: "course_classification"),
+    11: .standard(proto: "course_level"),
+    12: .standard(proto: "course_major"),
+    13: .standard(proto: "course_industry"),
+    14: .standard(proto: "course_type"),
+    15: .standard(proto: "course_module"),
+    16: .standard(proto: "course_modules"),
+    17: .standard(proto: "created_at"),
   ]
 
   fileprivate class _StorageClass {
-    var _baseRequest: Base_BaseRequest? = nil
-    var _course: GloryApi_Course? = nil
+    var _courseID: Int64 = 0
+    var _courseName: String = String()
+    var _courseOrganization: String = String()
+    var _courseTeacherName: String = String()
+    var _knowledgeHours: Float = 0
+    var _skillHours: Float = 0
+    var _courseDescription: String = String()
+    var _courseCoverPath: String = String()
+    var _courseCoverURL: String = String()
+    var _courseClassification: Int32 = 0
+    var _courseLevel: Int32 = 0
+    var _courseMajor: String = String()
+    var _courseIndustry: String = String()
+    var _courseType: Int32 = 0
+    var _courseModule: Int32 = 0
+    var _courseModules: [GloryApi_CourseModule] = []
+    var _createdAt: String = String()
 
     static let defaultInstance = _StorageClass()
 
     private init() {}
 
     init(copying source: _StorageClass) {
-      _baseRequest = source._baseRequest
-      _course = source._course
+      _courseID = source._courseID
+      _courseName = source._courseName
+      _courseOrganization = source._courseOrganization
+      _courseTeacherName = source._courseTeacherName
+      _knowledgeHours = source._knowledgeHours
+      _skillHours = source._skillHours
+      _courseDescription = source._courseDescription
+      _courseCoverPath = source._courseCoverPath
+      _courseCoverURL = source._courseCoverURL
+      _courseClassification = source._courseClassification
+      _courseLevel = source._courseLevel
+      _courseMajor = source._courseMajor
+      _courseIndustry = source._courseIndustry
+      _courseType = source._courseType
+      _courseModule = source._courseModule
+      _courseModules = source._courseModules
+      _createdAt = source._createdAt
     }
   }
 
@@ -777,8 +759,23 @@ extension GloryApi_CreateCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._Me
         // allocates stack space for every case branch when no optimizations are
         // enabled. https://github.com/apple/swift-protobuf/issues/1034
         switch fieldNumber {
-        case 1: try { try decoder.decodeSingularMessageField(value: &_storage._baseRequest) }()
-        case 2: try { try decoder.decodeSingularMessageField(value: &_storage._course) }()
+        case 1: try { try decoder.decodeSingularInt64Field(value: &_storage._courseID) }()
+        case 2: try { try decoder.decodeSingularStringField(value: &_storage._courseName) }()
+        case 3: try { try decoder.decodeSingularStringField(value: &_storage._courseOrganization) }()
+        case 4: try { try decoder.decodeSingularStringField(value: &_storage._courseTeacherName) }()
+        case 5: try { try decoder.decodeSingularFloatField(value: &_storage._knowledgeHours) }()
+        case 6: try { try decoder.decodeSingularFloatField(value: &_storage._skillHours) }()
+        case 7: try { try decoder.decodeSingularStringField(value: &_storage._courseDescription) }()
+        case 8: try { try decoder.decodeSingularStringField(value: &_storage._courseCoverPath) }()
+        case 9: try { try decoder.decodeSingularStringField(value: &_storage._courseCoverURL) }()
+        case 10: try { try decoder.decodeSingularInt32Field(value: &_storage._courseClassification) }()
+        case 11: try { try decoder.decodeSingularInt32Field(value: &_storage._courseLevel) }()
+        case 12: try { try decoder.decodeSingularStringField(value: &_storage._courseMajor) }()
+        case 13: try { try decoder.decodeSingularStringField(value: &_storage._courseIndustry) }()
+        case 14: try { try decoder.decodeSingularInt32Field(value: &_storage._courseType) }()
+        case 15: try { try decoder.decodeSingularInt32Field(value: &_storage._courseModule) }()
+        case 16: try { try decoder.decodeRepeatedMessageField(value: &_storage._courseModules) }()
+        case 17: try { try decoder.decodeSingularStringField(value: &_storage._createdAt) }()
         default: break
         }
       }
@@ -787,31 +784,129 @@ extension GloryApi_CreateCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._Me
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every if/case branch local when no optimizations
-      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-      // https://github.com/apple/swift-protobuf/issues/1182
-      try { if let v = _storage._baseRequest {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-      } }()
-      try { if let v = _storage._course {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      } }()
+      if _storage._courseID != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._courseID, fieldNumber: 1)
+      }
+      if !_storage._courseName.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._courseName, fieldNumber: 2)
+      }
+      if !_storage._courseOrganization.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._courseOrganization, fieldNumber: 3)
+      }
+      if !_storage._courseTeacherName.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._courseTeacherName, fieldNumber: 4)
+      }
+      if _storage._knowledgeHours != 0 {
+        try visitor.visitSingularFloatField(value: _storage._knowledgeHours, fieldNumber: 5)
+      }
+      if _storage._skillHours != 0 {
+        try visitor.visitSingularFloatField(value: _storage._skillHours, fieldNumber: 6)
+      }
+      if !_storage._courseDescription.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._courseDescription, fieldNumber: 7)
+      }
+      if !_storage._courseCoverPath.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._courseCoverPath, fieldNumber: 8)
+      }
+      if !_storage._courseCoverURL.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._courseCoverURL, fieldNumber: 9)
+      }
+      if _storage._courseClassification != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._courseClassification, fieldNumber: 10)
+      }
+      if _storage._courseLevel != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._courseLevel, fieldNumber: 11)
+      }
+      if !_storage._courseMajor.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._courseMajor, fieldNumber: 12)
+      }
+      if !_storage._courseIndustry.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._courseIndustry, fieldNumber: 13)
+      }
+      if _storage._courseType != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._courseType, fieldNumber: 14)
+      }
+      if _storage._courseModule != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._courseModule, fieldNumber: 15)
+      }
+      if !_storage._courseModules.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._courseModules, fieldNumber: 16)
+      }
+      if !_storage._createdAt.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._createdAt, fieldNumber: 17)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: GloryApi_CreateCourseRequest, rhs: GloryApi_CreateCourseRequest) -> Bool {
+  static func ==(lhs: GloryApi_Course, rhs: GloryApi_Course) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
         let rhs_storage = _args.1
-        if _storage._baseRequest != rhs_storage._baseRequest {return false}
-        if _storage._course != rhs_storage._course {return false}
+        if _storage._courseID != rhs_storage._courseID {return false}
+        if _storage._courseName != rhs_storage._courseName {return false}
+        if _storage._courseOrganization != rhs_storage._courseOrganization {return false}
+        if _storage._courseTeacherName != rhs_storage._courseTeacherName {return false}
+        if _storage._knowledgeHours != rhs_storage._knowledgeHours {return false}
+        if _storage._skillHours != rhs_storage._skillHours {return false}
+        if _storage._courseDescription != rhs_storage._courseDescription {return false}
+        if _storage._courseCoverPath != rhs_storage._courseCoverPath {return false}
+        if _storage._courseCoverURL != rhs_storage._courseCoverURL {return false}
+        if _storage._courseClassification != rhs_storage._courseClassification {return false}
+        if _storage._courseLevel != rhs_storage._courseLevel {return false}
+        if _storage._courseMajor != rhs_storage._courseMajor {return false}
+        if _storage._courseIndustry != rhs_storage._courseIndustry {return false}
+        if _storage._courseType != rhs_storage._courseType {return false}
+        if _storage._courseModule != rhs_storage._courseModule {return false}
+        if _storage._courseModules != rhs_storage._courseModules {return false}
+        if _storage._createdAt != rhs_storage._createdAt {return false}
         return true
       }
       if !storagesAreEqual {return false}
     }
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_CreateCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".CreateCourseRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    2: .same(proto: "course"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._course) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try { if let v = self._course {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_CreateCourseRequest, rhs: GloryApi_CreateCourseRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs._course != rhs._course {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -908,70 +1003,36 @@ extension GloryApi_GetCourseResponse: SwiftProtobuf.Message, SwiftProtobuf._Mess
     2: .same(proto: "course"),
   ]
 
-  fileprivate class _StorageClass {
-    var _baseResp: Base_BaseResponse? = nil
-    var _course: GloryApi_Course? = nil
-
-    static let defaultInstance = _StorageClass()
-
-    private init() {}
-
-    init(copying source: _StorageClass) {
-      _baseResp = source._baseResp
-      _course = source._course
-    }
-  }
-
-  fileprivate mutating func _uniqueStorage() -> _StorageClass {
-    if !isKnownUniquelyReferenced(&_storage) {
-      _storage = _StorageClass(copying: _storage)
-    }
-    return _storage
-  }
-
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    _ = _uniqueStorage()
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        // The use of inline closures is to circumvent an issue where the compiler
-        // allocates stack space for every case branch when no optimizations are
-        // enabled. https://github.com/apple/swift-protobuf/issues/1034
-        switch fieldNumber {
-        case 1: try { try decoder.decodeSingularMessageField(value: &_storage._baseResp) }()
-        case 2: try { try decoder.decodeSingularMessageField(value: &_storage._course) }()
-        default: break
-        }
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._course) }()
+      default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every if/case branch local when no optimizations
-      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-      // https://github.com/apple/swift-protobuf/issues/1182
-      try { if let v = _storage._baseResp {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-      } }()
-      try { if let v = _storage._course {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      } }()
-    }
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try { if let v = self._course {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_GetCourseResponse, rhs: GloryApi_GetCourseResponse) -> Bool {
-    if lhs._storage !== rhs._storage {
-      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
-        let _storage = _args.0
-        let rhs_storage = _args.1
-        if _storage._baseResp != rhs_storage._baseResp {return false}
-        if _storage._course != rhs_storage._course {return false}
-        return true
-      }
-      if !storagesAreEqual {return false}
-    }
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs._course != rhs._course {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -984,70 +1045,36 @@ extension GloryApi_UpdateCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._Me
     2: .same(proto: "course"),
   ]
 
-  fileprivate class _StorageClass {
-    var _baseRequest: Base_BaseRequest? = nil
-    var _course: GloryApi_Course? = nil
-
-    static let defaultInstance = _StorageClass()
-
-    private init() {}
-
-    init(copying source: _StorageClass) {
-      _baseRequest = source._baseRequest
-      _course = source._course
-    }
-  }
-
-  fileprivate mutating func _uniqueStorage() -> _StorageClass {
-    if !isKnownUniquelyReferenced(&_storage) {
-      _storage = _StorageClass(copying: _storage)
-    }
-    return _storage
-  }
-
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    _ = _uniqueStorage()
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        // The use of inline closures is to circumvent an issue where the compiler
-        // allocates stack space for every case branch when no optimizations are
-        // enabled. https://github.com/apple/swift-protobuf/issues/1034
-        switch fieldNumber {
-        case 1: try { try decoder.decodeSingularMessageField(value: &_storage._baseRequest) }()
-        case 2: try { try decoder.decodeSingularMessageField(value: &_storage._course) }()
-        default: break
-        }
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._course) }()
+      default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every if/case branch local when no optimizations
-      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-      // https://github.com/apple/swift-protobuf/issues/1182
-      try { if let v = _storage._baseRequest {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-      } }()
-      try { if let v = _storage._course {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      } }()
-    }
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try { if let v = self._course {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_UpdateCourseRequest, rhs: GloryApi_UpdateCourseRequest) -> Bool {
-    if lhs._storage !== rhs._storage {
-      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
-        let _storage = _args.0
-        let rhs_storage = _args.1
-        if _storage._baseRequest != rhs_storage._baseRequest {return false}
-        if _storage._course != rhs_storage._course {return false}
-        return true
-      }
-      if !storagesAreEqual {return false}
-    }
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs._course != rhs._course {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

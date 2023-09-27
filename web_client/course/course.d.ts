@@ -25,6 +25,8 @@ export interface Course {
   course_description?: string;
   /** 课程封面图片OSS路径 */
   course_cover_path?: string;
+  /** 课程封面图片OSS url */
+  course_cover_url?: string;
   /** 课程分类：1.学校课程；2.职场提升 */
   course_classification?: number;
   /** 课程层次：1.中职；2.高职；3.中高职 */
