@@ -19,14 +19,15 @@ message Course {
   float skill_hours = 6; // 技能学时
   string course_description = 7; // 课程简介
   string course_cover_path = 8; // 课程封面图片OSS路径
-  int32 course_classification = 9; // 课程分类：1.学校课程；2.职场提升
-  int32 course_level = 10; // 课程层次：1.中职；2.高职；3.中高职
-  string course_major = 11; // 课程专业代码
-  string course_industry = 12; // 课程行业代码
-  int32 course_type = 13; // 课程类型：1.专业核心课；2.名师公开课
-  int32 course_module = 14; // 1. 模块化课程；2.非模块化课程；3.定制课程
-  repeated CourseModule course_modules = 15; // 能力指标或能力方向
-  string created_at = 16; // 创建时间
+  string course_cover_url = 9; // 课程封面图片OSS url
+  int32 course_classification = 10; // 课程分类：1.学校课程；2.职场提升
+  int32 course_level = 11; // 课程层次：1.中职；2.高职；3.中高职
+  string course_major = 12; // 课程专业代码
+  string course_industry = 13; // 课程行业代码
+  int32 course_type = 14; // 课程类型：1.专业核心课；2.名师公开课
+  int32 course_module = 15; // 1. 模块化课程；2.非模块化课程；3.定制课程
+  repeated CourseModule course_modules = 16; // 能力指标或能力方向
+  string created_at = 17; // 创建时间
 }
 
 // 创建模块化课程
