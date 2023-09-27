@@ -30,4 +30,24 @@ public interface CartSkuOrBuilder extends
    * @return The shopId.
    */
   long getShopId();
+
+  /**
+   * <pre>
+   *live:直播间订单,normal:非直播间订单
+   * </pre>
+   *
+   * <code>string channel = 5;</code>
+   * @return The channel.
+   */
+  java.lang.String getChannel();
+  /**
+   * <pre>
+   *live:直播间订单,normal:非直播间订单
+   * </pre>
+   *
+   * <code>string channel = 5;</code>
+   * @return The bytes for channel.
+   */
+  com.google.protobuf.ByteString
+      getChannelBytes();
 }

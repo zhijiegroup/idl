@@ -63,6 +63,9 @@ struct GloryApi_CartSku {
 
   var shopID: Int64 = 0
 
+  ///live:直播间订单,normal:非直播间订单
+  var channel: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -92,6 +95,9 @@ struct GloryApi_ProductShow {
   var currency: String = String()
 
   var freightAmount: Float = 0
+
+  ///live:直播间订单,normal:非直播间订单
+  var channel: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -490,6 +496,7 @@ extension GloryApi_CartSku: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
     2: .standard(proto: "sku_id"),
     3: .same(proto: "quantity"),
     4: .standard(proto: "shop_id"),
+    5: .same(proto: "channel"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -502,6 +509,7 @@ extension GloryApi_CartSku: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.skuID) }()
       case 3: try { try decoder.decodeSingularInt32Field(value: &self.quantity) }()
       case 4: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.channel) }()
       default: break
       }
     }
@@ -520,6 +528,9 @@ extension GloryApi_CartSku: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
     if self.shopID != 0 {
       try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 4)
     }
+    if !self.channel.isEmpty {
+      try visitor.visitSingularStringField(value: self.channel, fieldNumber: 5)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -528,6 +539,7 @@ extension GloryApi_CartSku: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
     if lhs.skuID != rhs.skuID {return false}
     if lhs.quantity != rhs.quantity {return false}
     if lhs.shopID != rhs.shopID {return false}
+    if lhs.channel != rhs.channel {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -545,6 +557,7 @@ extension GloryApi_ProductShow: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     7: .standard(proto: "sku_info"),
     8: .same(proto: "currency"),
     9: .standard(proto: "freight_amount"),
+    10: .same(proto: "channel"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -562,6 +575,7 @@ extension GloryApi_ProductShow: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       case 7: try { try decoder.decodeSingularStringField(value: &self.skuInfo) }()
       case 8: try { try decoder.decodeSingularStringField(value: &self.currency) }()
       case 9: try { try decoder.decodeSingularFloatField(value: &self.freightAmount) }()
+      case 10: try { try decoder.decodeSingularStringField(value: &self.channel) }()
       default: break
       }
     }
@@ -595,6 +609,9 @@ extension GloryApi_ProductShow: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     if self.freightAmount != 0 {
       try visitor.visitSingularFloatField(value: self.freightAmount, fieldNumber: 9)
     }
+    if !self.channel.isEmpty {
+      try visitor.visitSingularStringField(value: self.channel, fieldNumber: 10)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -608,6 +625,7 @@ extension GloryApi_ProductShow: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     if lhs.skuInfo != rhs.skuInfo {return false}
     if lhs.currency != rhs.currency {return false}
     if lhs.freightAmount != rhs.freightAmount {return false}
+    if lhs.channel != rhs.channel {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

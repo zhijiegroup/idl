@@ -92,4 +92,24 @@ public interface ProductShowOrBuilder extends
    * @return The freightAmount.
    */
   float getFreightAmount();
+
+  /**
+   * <pre>
+   *live:直播间订单,normal:非直播间订单
+   * </pre>
+   *
+   * <code>string channel = 10;</code>
+   * @return The channel.
+   */
+  java.lang.String getChannel();
+  /**
+   * <pre>
+   *live:直播间订单,normal:非直播间订单
+   * </pre>
+   *
+   * <code>string channel = 10;</code>
+   * @return The bytes for channel.
+   */
+  com.google.protobuf.ByteString
+      getChannelBytes();
 }

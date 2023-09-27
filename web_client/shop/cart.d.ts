@@ -19,6 +19,8 @@ export interface CartSku {
   sku_id?: string;
   quantity?: number;
   shop_id?: string;
+  /** live:直播间订单,normal:非直播间订单 */
+  channel?: string;
 }
 
 export interface ProductShow {
@@ -33,6 +35,8 @@ export interface ProductShow {
   sku_info?: string;
   currency?: string;
   freight_amount?: number;
+  /** live:直播间订单,normal:非直播间订单 */
+  channel?: string;
 }
 
 export interface ShopShow {
