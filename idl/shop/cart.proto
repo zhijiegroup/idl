@@ -19,6 +19,7 @@ message CartSku {
   int64 sku_id = 2;
   int32 quantity = 3;
   int64 shop_id = 4;
+  string channel = 5; //live:直播间订单,normal:非直播间订单
 }
 
 message ProductShow {
@@ -31,6 +32,7 @@ message ProductShow {
   string sku_info = 7;
   string currency = 8;
   float freight_amount = 9;
+  string channel = 10; //live:直播间订单,normal:非直播间订单
 }
 
 
