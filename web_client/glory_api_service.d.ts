@@ -48,6 +48,7 @@ import * as graph from "./course/graph";
 import * as user_course from "./course/user_course";
 import * as teaching_plan from "./course/teaching_plan";
 import * as edu_scheme from "./course/edu_scheme";
+import * as app from "./app/app";
 export {
   user,
   address,
@@ -95,6 +96,7 @@ export {
   user_course,
   teaching_plan,
   edu_scheme,
+  app,
 };
 
 export class glory_api {
@@ -1300,6 +1302,11 @@ CreateLivePlanProduct create live plan product */
   DistributeEduScheme(
     request: edu_scheme.DistributeEduSchemeRequest
   ): Promise<edu_scheme.DistributeEduSchemeResponse>;
+
+  /** app下载 */
+  GetAndroidQRcode(
+    request: app.GetAndroidQRCodeRequest
+  ): Promise<app.GetAndroidQRCodeResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

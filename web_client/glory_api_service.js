@@ -50,6 +50,7 @@ import * as graph from "./course/graph";
 import * as user_course from "./course/user_course";
 import * as teaching_plan from "./course/teaching_plan";
 import * as edu_scheme from "./course/edu_scheme";
+import * as app from "./app/app";
 export {
   user,
   address,
@@ -97,6 +98,7 @@ export {
   user_course,
   teaching_plan,
   edu_scheme,
+  app,
 };
 
 import {
@@ -2320,6 +2322,12 @@ export class glory_api {
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
+  }
+
+  GetAndroidQRcode(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/app/get_android_qrcode${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
 }
 

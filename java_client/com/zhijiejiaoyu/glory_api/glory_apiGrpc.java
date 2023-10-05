@@ -8943,6 +8943,37 @@ public final class glory_apiGrpc {
     return getDistributeEduSchemeMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.GetAndroidQRCodeRequest,
+      com.zhijiejiaoyu.glory_api.course.GetAndroidQRCodeResponse> getGetAndroidQRcodeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAndroidQRcode",
+      requestType = com.zhijiejiaoyu.glory_api.course.GetAndroidQRCodeRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.GetAndroidQRCodeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.GetAndroidQRCodeRequest,
+      com.zhijiejiaoyu.glory_api.course.GetAndroidQRCodeResponse> getGetAndroidQRcodeMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.GetAndroidQRCodeRequest, com.zhijiejiaoyu.glory_api.course.GetAndroidQRCodeResponse> getGetAndroidQRcodeMethod;
+    if ((getGetAndroidQRcodeMethod = glory_apiGrpc.getGetAndroidQRcodeMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGetAndroidQRcodeMethod = glory_apiGrpc.getGetAndroidQRcodeMethod) == null) {
+          glory_apiGrpc.getGetAndroidQRcodeMethod = getGetAndroidQRcodeMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.GetAndroidQRCodeRequest, com.zhijiejiaoyu.glory_api.course.GetAndroidQRCodeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAndroidQRcode"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.GetAndroidQRCodeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.GetAndroidQRCodeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetAndroidQRcode"))
+              .build();
+        }
+      }
+    }
+    return getGetAndroidQRcodeMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -11296,6 +11327,16 @@ public final class glory_apiGrpc {
     default void distributeEduScheme(com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDistributeEduSchemeMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * app下载
+     * </pre>
+     */
+    default void getAndroidQRcode(com.zhijiejiaoyu.glory_api.course.GetAndroidQRCodeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.GetAndroidQRCodeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAndroidQRcodeMethod(), responseObserver);
     }
   }
 
@@ -13920,6 +13961,17 @@ public final class glory_apiGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDistributeEduSchemeMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * app下载
+     * </pre>
+     */
+    public void getAndroidQRcode(com.zhijiejiaoyu.glory_api.course.GetAndroidQRCodeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.GetAndroidQRCodeResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAndroidQRcodeMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -16243,6 +16295,16 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeResponse distributeEduScheme(com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDistributeEduSchemeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * app下载
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.course.GetAndroidQRCodeResponse getAndroidQRcode(com.zhijiejiaoyu.glory_api.course.GetAndroidQRCodeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAndroidQRcodeMethod(), getCallOptions(), request);
     }
   }
 
@@ -18856,6 +18918,17 @@ public final class glory_apiGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDistributeEduSchemeMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * app下载
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.GetAndroidQRCodeResponse> getAndroidQRcode(
+        com.zhijiejiaoyu.glory_api.course.GetAndroidQRCodeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAndroidQRcodeMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_EXAMPLE = 0;
@@ -19146,6 +19219,7 @@ public final class glory_apiGrpc {
   private static final int METHODID_EDU_SCHEME_DETAIL = 285;
   private static final int METHODID_DELETE_EDU_SCHEME = 286;
   private static final int METHODID_DISTRIBUTE_EDU_SCHEME = 287;
+  private static final int METHODID_GET_ANDROID_QRCODE = 288;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -20315,6 +20389,10 @@ public final class glory_apiGrpc {
         case METHODID_DISTRIBUTE_EDU_SCHEME:
           serviceImpl.distributeEduScheme((com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeResponse>) responseObserver);
+          break;
+        case METHODID_GET_ANDROID_QRCODE:
+          serviceImpl.getAndroidQRcode((com.zhijiejiaoyu.glory_api.course.GetAndroidQRCodeRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.GetAndroidQRCodeResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -22350,6 +22428,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeRequest,
               com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeResponse>(
                 service, METHODID_DISTRIBUTE_EDU_SCHEME)))
+        .addMethod(
+          getGetAndroidQRcodeMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.GetAndroidQRCodeRequest,
+              com.zhijiejiaoyu.glory_api.course.GetAndroidQRCodeResponse>(
+                service, METHODID_GET_ANDROID_QRCODE)))
         .build();
   }
 
@@ -22686,6 +22771,7 @@ public final class glory_apiGrpc {
               .addMethod(getEduSchemeDetailMethod())
               .addMethod(getDeleteEduSchemeMethod())
               .addMethod(getDistributeEduSchemeMethod())
+              .addMethod(getGetAndroidQRcodeMethod())
               .build();
         }
       }
