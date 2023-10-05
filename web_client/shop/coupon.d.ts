@@ -126,3 +126,12 @@ export interface ClaimCouponRequest {
 export interface ClaimCouponResponse {
   base_resp?: base.BaseResponse;
 }
+
+export interface ListMyCouponRequest {
+  base_request?: base.BaseRequest;
+}
+
+export interface ListMyCouponResponse {
+  base_resp?: base.BaseResponse;
+  coupon_list?: Array<CouponDetail>;
+}

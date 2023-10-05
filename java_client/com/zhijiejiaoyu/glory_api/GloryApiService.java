@@ -50,7 +50,7 @@ public final class GloryApiService {
       "le.proto\032\023course/course.proto\032\022course/gr" +
       "aph.proto\032\030course/user_course.proto\032\032cou" +
       "rse/teaching_plan.proto\032\027course/edu_sche" +
-      "me.proto\032\rapp/app.proto2\360\225\002\n\tglory_api\022s" +
+      "me.proto\032\rapp/app.proto2\337\226\002\n\tglory_api\022s" +
       "\n\rCreateExample\022\037.glory_api.CreateExampl" +
       "eRequest\032 .glory_api.CreateExampleRespon" +
       "se\"\037\322\301\030\033/api/example/create_example\022g\n\nG" +
@@ -768,179 +768,182 @@ public final class GloryApiService {
       "te_coupon_distribution_status\022m\n\013ClaimCo" +
       "upon\022\035.glory_api.ClaimCouponRequest\032\036.gl" +
       "ory_api.ClaimCouponResponse\"\037\312\301\030\033/api/sh" +
-      "op/user_claim_coupon\022t\n\016CreateActivity\022 " +
-      ".glory_api.CreateActivityRequest\032!.glory" +
-      "_api.CreateActivityResponse\"\035\322\301\030\031/api/sh" +
-      "op/create_activity\022l\n\014ListActivity\022\036.glo" +
-      "ry_api.ListActivityRequest\032\037.glory_api.L" +
-      "istActivityResponse\"\033\322\301\030\027/api/shop/list_" +
-      "activity\022z\n\016ActivityDetail\022#.glory_api.G" +
-      "etActivityDetailRequest\032$.glory_api.GetA" +
-      "ctivityDetailResponse\"\035\312\301\030\031/api/shop/act" +
-      "ivity_detail\022t\n\016UpdateActivity\022 .glory_a" +
-      "pi.UpdateActivityRequest\032!.glory_api.Upd" +
-      "ateActivityResponse\"\035\322\301\030\031/api/shop/updat" +
-      "e_activity\022t\n\016DeleteActivity\022 .glory_api" +
-      ".DeleteActivityRequest\032!.glory_api.Delet" +
-      "eActivityResponse\"\035\322\301\030\031/api/shop/delete_" +
-      "activity\022x\n\017DisableActivity\022!.glory_api." +
-      "DisableActivityRequest\032\".glory_api.Disab" +
-      "leActivityResponse\"\036\322\301\030\032/api/shop/disabl" +
-      "e_activity\022\234\001\n\027CreateCourseMaterialBox\022)" +
-      ".glory_api.CreateCourseMaterialBoxReques" +
-      "t\032*.glory_api.CreateCourseMaterialBoxRes" +
-      "ponse\"*\322\301\030&/api/course/create_course_mat" +
-      "erial_box\022\224\001\n\025ListCourseMaterialBox\022\'.gl" +
-      "ory_api.ListCourseMaterialBoxRequest\032(.g" +
-      "lory_api.ListCourseMaterialBoxResponse\"(" +
-      "\322\301\030$/api/course/list_course_material_box" +
-      "\022\234\001\n\027DeleteCourseMaterialBox\022).glory_api" +
-      ".DeleteCourseMaterialBoxRequest\032*.glory_" +
-      "api.DeleteCourseMaterialBoxResponse\"*\322\301\030" +
-      "&/api/course/delete_course_material_box\022" +
-      "\217\001\n\024UploadCourseMaterial\022&.glory_api.Upl" +
-      "oadCourseMaterialRequest\032\'.glory_api.Upl" +
-      "oadCourseMaterialResponse\"&\322\301\030\"/api/cour" +
-      "se/upload_course_material\022\207\001\n\022ListCourse" +
-      "Material\022$.glory_api.ListCourseMaterialR" +
-      "equest\032%.glory_api.ListCourseMaterialRes" +
-      "ponse\"$\322\301\030 /api/course/list_course_mater" +
-      "ial\022\217\001\n\024DeleteCourseMaterial\022&.glory_api" +
-      ".DeleteCourseMaterialRequest\032\'.glory_api" +
-      ".DeleteCourseMaterialResponse\"&\322\301\030\"/api/" +
-      "course/delete_course_material\022\214\001\n\023GetCou" +
-      "rseModuleCode\022%.glory_api.GetCourseModul" +
-      "eCodeRequest\032&.glory_api.GetCourseModule" +
-      "CodeResponse\"&\322\301\030\"/api/course/get_course" +
-      "_module_code\022\220\001\n\024GetCourseChapterCode\022&." +
-      "glory_api.GetCourseChapterCodeRequest\032\'." +
-      "glory_api.GetCourseChapterCodeResponse\"\'" +
-      "\322\301\030#/api/course/get_course_chapter_code\022" +
-      "\207\001\n\022CreateCourseModule\022$.glory_api.Creat" +
-      "eCourseModuleRequest\032%.glory_api.CreateC" +
-      "ourseModuleResponse\"$\322\301\030 /api/course/cre" +
-      "ate_course_module\022{\n\017GetCourseModule\022!.g" +
-      "lory_api.GetCourseModuleRequest\032\".glory_" +
-      "api.GetCourseModuleResponse\"!\322\301\030\035/api/co" +
-      "urse/get_course_module\022\207\001\n\022UpdateCourseM",
-      "odule\022$.glory_api.UpdateCourseModuleRequ" +
-      "est\032%.glory_api.UpdateCourseModuleRespon" +
-      "se\"$\322\301\030 /api/course/update_course_module" +
-      "\022\207\001\n\022DeleteCourseModule\022$.glory_api.Dele" +
-      "teCourseModuleRequest\032%.glory_api.Delete" +
-      "CourseModuleResponse\"$\322\301\030 /api/course/de" +
-      "lete_course_module\022\177\n\020ListCourseModule\022\"" +
-      ".glory_api.ListCourseModuleRequest\032#.glo" +
-      "ry_api.ListCourseModuleResponse\"\"\322\301\030\036/ap" +
-      "i/course/list_course_module\022\177\n\020ListLates" +
-      "tCourse\022\".glory_api.ListLatestCourseRequ" +
-      "est\032#.glory_api.ListLatestCourseResponse" +
-      "\"\"\322\301\030\036/api/course/list_latest_course\022\177\n\020" +
-      "ListHotestCourse\022\".glory_api.ListHotestC" +
-      "ourseRequest\032#.glory_api.ListHotestCours" +
-      "eResponse\"\"\322\301\030\036/api/course/list_hotest_c" +
-      "ourse\022w\n\016CreateCmCourse\022 .glory_api.Crea" +
-      "teCmCourseRequest\032!.glory_api.CreateCmCo" +
-      "urseResponse\" \322\301\030\034/api/course/create_cm_" +
-      "course\022{\n\017PreviewCmCourse\022!.glory_api.Pr" +
-      "eviewCmCourseRequest\032\".glory_api.Preview" +
-      "CmCourseResponse\"!\322\301\030\035/api/course/previe" +
-      "w_cm_course\022\246\001\n\026CreateNmCourseResource\022/" +
+      "op/user_claim_coupon\022m\n\014ListMyCoupon\022\036.g" +
+      "lory_api.ListMyCouponRequest\032\037.glory_api" +
+      ".ListMyCouponResponse\"\034\312\301\030\030/api/shop/lis" +
+      "t_my_coupon\022t\n\016CreateActivity\022 .glory_ap" +
+      "i.CreateActivityRequest\032!.glory_api.Crea" +
+      "teActivityResponse\"\035\322\301\030\031/api/shop/create" +
+      "_activity\022l\n\014ListActivity\022\036.glory_api.Li" +
+      "stActivityRequest\032\037.glory_api.ListActivi" +
+      "tyResponse\"\033\322\301\030\027/api/shop/list_activity\022" +
+      "z\n\016ActivityDetail\022#.glory_api.GetActivit" +
+      "yDetailRequest\032$.glory_api.GetActivityDe" +
+      "tailResponse\"\035\312\301\030\031/api/shop/activity_det" +
+      "ail\022t\n\016UpdateActivity\022 .glory_api.Update" +
+      "ActivityRequest\032!.glory_api.UpdateActivi" +
+      "tyResponse\"\035\322\301\030\031/api/shop/update_activit" +
+      "y\022t\n\016DeleteActivity\022 .glory_api.DeleteAc" +
+      "tivityRequest\032!.glory_api.DeleteActivity" +
+      "Response\"\035\322\301\030\031/api/shop/delete_activity\022" +
+      "x\n\017DisableActivity\022!.glory_api.DisableAc" +
+      "tivityRequest\032\".glory_api.DisableActivit" +
+      "yResponse\"\036\322\301\030\032/api/shop/disable_activit" +
+      "y\022\234\001\n\027CreateCourseMaterialBox\022).glory_ap" +
+      "i.CreateCourseMaterialBoxRequest\032*.glory" +
+      "_api.CreateCourseMaterialBoxResponse\"*\322\301" +
+      "\030&/api/course/create_course_material_box" +
+      "\022\224\001\n\025ListCourseMaterialBox\022\'.glory_api.L" +
+      "istCourseMaterialBoxRequest\032(.glory_api." +
+      "ListCourseMaterialBoxResponse\"(\322\301\030$/api/" +
+      "course/list_course_material_box\022\234\001\n\027Dele" +
+      "teCourseMaterialBox\022).glory_api.DeleteCo" +
+      "urseMaterialBoxRequest\032*.glory_api.Delet" +
+      "eCourseMaterialBoxResponse\"*\322\301\030&/api/cou" +
+      "rse/delete_course_material_box\022\217\001\n\024Uploa" +
+      "dCourseMaterial\022&.glory_api.UploadCourse" +
+      "MaterialRequest\032\'.glory_api.UploadCourse" +
+      "MaterialResponse\"&\322\301\030\"/api/course/upload" +
+      "_course_material\022\207\001\n\022ListCourseMaterial\022" +
+      "$.glory_api.ListCourseMaterialRequest\032%." +
+      "glory_api.ListCourseMaterialResponse\"$\322\301" +
+      "\030 /api/course/list_course_material\022\217\001\n\024D" +
+      "eleteCourseMaterial\022&.glory_api.DeleteCo" +
+      "urseMaterialRequest\032\'.glory_api.DeleteCo" +
+      "urseMaterialResponse\"&\322\301\030\"/api/course/de" +
+      "lete_course_material\022\214\001\n\023GetCourseModule" +
+      "Code\022%.glory_api.GetCourseModuleCodeRequ" +
+      "est\032&.glory_api.GetCourseModuleCodeRespo" +
+      "nse\"&\322\301\030\"/api/course/get_course_module_c" +
+      "ode\022\220\001\n\024GetCourseChapterCode\022&.glory_api" +
+      ".GetCourseChapterCodeRequest\032\'.glory_api" +
+      ".GetCourseChapterCodeResponse\"\'\322\301\030#/api/" +
+      "course/get_course_chapter_code\022\207\001\n\022Creat" +
+      "eCourseModule\022$.glory_api.CreateCourseMo" +
+      "duleRequest\032%.glory_api.CreateCourseModu" +
+      "leResponse\"$\322\301\030 /api/course/create_cours" +
+      "e_module\022{\n\017GetCourseModule\022!.glory_api.",
+      "GetCourseModuleRequest\032\".glory_api.GetCo" +
+      "urseModuleResponse\"!\322\301\030\035/api/course/get_" +
+      "course_module\022\207\001\n\022UpdateCourseModule\022$.g" +
+      "lory_api.UpdateCourseModuleRequest\032%.glo" +
+      "ry_api.UpdateCourseModuleResponse\"$\322\301\030 /" +
+      "api/course/update_course_module\022\207\001\n\022Dele" +
+      "teCourseModule\022$.glory_api.DeleteCourseM" +
+      "oduleRequest\032%.glory_api.DeleteCourseMod" +
+      "uleResponse\"$\322\301\030 /api/course/delete_cour" +
+      "se_module\022\177\n\020ListCourseModule\022\".glory_ap" +
+      "i.ListCourseModuleRequest\032#.glory_api.Li" +
+      "stCourseModuleResponse\"\"\322\301\030\036/api/course/" +
+      "list_course_module\022\177\n\020ListLatestCourse\022\"" +
+      ".glory_api.ListLatestCourseRequest\032#.glo" +
+      "ry_api.ListLatestCourseResponse\"\"\322\301\030\036/ap" +
+      "i/course/list_latest_course\022\177\n\020ListHotes" +
+      "tCourse\022\".glory_api.ListHotestCourseRequ" +
+      "est\032#.glory_api.ListHotestCourseResponse" +
+      "\"\"\322\301\030\036/api/course/list_hotest_course\022w\n\016" +
+      "CreateCmCourse\022 .glory_api.CreateCmCours" +
+      "eRequest\032!.glory_api.CreateCmCourseRespo" +
+      "nse\" \322\301\030\034/api/course/create_cm_course\022{\n" +
+      "\017PreviewCmCourse\022!.glory_api.PreviewCmCo" +
+      "urseRequest\032\".glory_api.PreviewCmCourseR" +
+      "esponse\"!\322\301\030\035/api/course/preview_cm_cour" +
+      "se\022\246\001\n\026CreateNmCourseResource\022/.glory_ap" +
+      "i.CreateNmCourseChapterResourceRequest\0320" +
       ".glory_api.CreateNmCourseChapterResource" +
-      "Request\0320.glory_api.CreateNmCourseChapte" +
-      "rResourceResponse\")\322\301\030%/api/course/creat" +
-      "e_nm_course_resource\022\224\001\n\025CreateNmCourseC" +
-      "hapter\022\'.glory_api.CreateNmCourseChapter" +
-      "Request\032(.glory_api.CreateNmCourseChapte" +
-      "rResponse\"(\322\301\030$/api/course/create_nm_cou" +
-      "rse_chapter\022w\n\016CreateNmCourse\022 .glory_ap" +
-      "i.CreateNmCourseRequest\032!.glory_api.Crea" +
-      "teNmCourseResponse\" \322\301\030\034/api/course/crea" +
-      "te_nm_course\022o\n\014ListNmCourse\022\036.glory_api" +
-      ".ListNmCourseRequest\032\037.glory_api.ListNmC" +
-      "ourseResponse\"\036\322\301\030\032/api/course/list_nm_c" +
-      "ourse\022w\n\016NmCourseDetail\022 .glory_api.NmCo" +
-      "urseDetailRequest\032!.glory_api.NmCourseDe" +
-      "tailResponse\" \312\301\030\034/api/course/nm_course_" +
-      "detail\022w\n\016DeleteNmCourse\022 .glory_api.Del" +
-      "eteNmCourseRequest\032!.glory_api.DeleteNmC" +
-      "ourseResponse\" \322\301\030\034/api/course/delete_nm" +
-      "_course\022n\n\014CreateCourse\022\036.glory_api.Crea" +
-      "teCourseRequest\032\037.glory_api.CreateCourse" +
-      "Response\"\035\322\301\030\031/api/course/create_course\022" +
-      "b\n\tGetCourse\022\033.glory_api.GetCourseReques" +
-      "t\032\034.glory_api.GetCourseResponse\"\032\322\301\030\026/ap" +
-      "i/course/get_course\022n\n\014UpdateCourse\022\036.gl" +
-      "ory_api.UpdateCourseRequest\032\037.glory_api." +
-      "UpdateCourseResponse\"\035\322\301\030\031/api/course/up" +
-      "date_course\022n\n\014DeleteCourse\022\036.glory_api." +
-      "DeleteCourseRequest\032\037.glory_api.DeleteCo" +
-      "urseResponse\"\035\322\301\030\031/api/course/delete_cou" +
-      "rse\022f\n\nListCourse\022\034.glory_api.ListCourse" +
-      "Request\032\035.glory_api.ListCourseResponse\"\033" +
-      "\322\301\030\027/api/course/list_course\022\222\001\n\024CreateKn" +
-      "owledgeGraph\022&.glory_api.CreateKnowledge" +
-      "GraphRequest\032\'.glory_api.CreateKnowledge" +
-      "GraphResponse\")\322\301\030%/api/course_kg/create" +
-      "_knowledge_graph\022\206\001\n\021GetKnowledgeGraph\022#" +
-      ".glory_api.GetKnowledgeGraphRequest\032$.gl" +
-      "ory_api.GetKnowledgeGraphResponse\"&\322\301\030\"/" +
-      "api/course_kg/get_knowledge_graph\022\227\001\n\025Ge" +
-      "tKnowledgeGraphNode\022\'.glory_api.GetKnowl" +
-      "edgeGraphNodeRequest\032(.glory_api.GetKnow" +
-      "ledgeGraphNodeResponse\"+\322\301\030\'/api/course_" +
-      "kg/get_knowledge_graph_node\022o\n\014GetMajorC" +
-      "ode\022\036.glory_api.GetMajorCodeRequest\032\037.gl" +
-      "ory_api.GetMajorCodeResponse\"\036\312\301\030\032/api/c" +
-      "ourse/get_major_code\022o\n\014GetCourseIds\022\036.g" +
-      "lory_api.GetCourseIdsRequest\032\037.glory_api" +
-      ".GetCourseIdsResponse\"\036\322\301\030\032/api/course/g" +
-      "et_course_ids\022n\n\014EnrollCourse\022\036.glory_ap" +
-      "i.EnrollCourseRequest\032\037.glory_api.Enroll" +
-      "CourseResponse\"\035\322\301\030\031/api/course/enroll_c" +
-      "ourse\022w\n\016DeleteMyCourse\022 .glory_api.Dele" +
-      "teMyCourseRequest\032!.glory_api.DeleteMyCo" +
-      "urseResponse\" \322\301\030\034/api/course/delete_my_" +
-      "course\022\217\001\n\024UpdateCourseProgress\022&.glory_" +
-      "api.UpdateCourseProgressRequest\032\'.glory_" +
-      "api.UpdateCourseProgressResponse\"&\322\301\030\"/a" +
-      "pi/course/update_course_progress\022o\n\014List" +
-      "MyCourse\022\036.glory_api.ListMyCourseRequest" +
-      "\032\037.glory_api.ListMyCourseResponse\"\036\322\301\030\032/" +
-      "api/course/list_my_course\022\177\n\020ListTeachin" +
-      "gPlan\022\".glory_api.ListTeachingPlanReques" +
-      "t\032#.glory_api.ListTeachingPlanResponse\"\"" +
-      "\322\301\030\036/api/course/list_teaching_plan\022\207\001\n\022C" +
-      "reateTeachingPlan\022$.glory_api.CreateTeac" +
-      "hingPlanRequest\032%.glory_api.CreateTeachi" +
-      "ngPlanResponse\"$\322\301\030 /api/course/create_t" +
-      "eaching_plan\022\207\001\n\022UpdateTeachingPlan\022$.gl" +
-      "ory_api.UpdateTeachingPlanRequest\032%.glor" +
-      "y_api.UpdateTeachingPlanResponse\"$\322\301\030 /a" +
-      "pi/course/update_teaching_plan\022{\n\017Create" +
-      "EduScheme\022!.glory_api.CreateEduSchemeReq" +
-      "uest\032\".glory_api.CreateEduSchemeResponse" +
-      "\"!\322\301\030\035/api/course/create_edu_scheme\022{\n\017U" +
-      "pdateEduScheme\022!.glory_api.UpdateEduSche" +
-      "meRequest\032\".glory_api.UpdateEduSchemeRes" +
-      "ponse\"!\322\301\030\035/api/course/update_edu_scheme" +
-      "\022s\n\rListEduScheme\022\037.glory_api.ListEduSch" +
-      "emeRequest\032 .glory_api.ListEduSchemeResp" +
-      "onse\"\037\322\301\030\033/api/course/list_edu_scheme\022{\n" +
-      "\017EduSchemeDetail\022!.glory_api.EduSchemeDe" +
-      "tailRequest\032\".glory_api.EduSchemeDetailR" +
-      "esponse\"!\312\301\030\035/api/course/edu_scheme_deta" +
-      "il\022{\n\017DeleteEduScheme\022!.glory_api.Delete" +
-      "EduSchemeRequest\032\".glory_api.DeleteEduSc" +
-      "hemeResponse\"!\322\301\030\035/api/course/delete_edu" +
-      "_scheme\022\213\001\n\023DistributeEduScheme\022%.glory_" +
-      "api.DistributeEduSchemeRequest\032&.glory_a" +
-      "pi.DistributeEduSchemeResponse\"%\322\301\030!/api" +
-      "/course/distribute_edu_scheme\022|\n\020GetAndr" +
-      "oidQRcode\022\".glory_api.GetAndroidQRCodeRe" +
-      "quest\032#.glory_api.GetAndroidQRCodeRespon" +
-      "se\"\037\312\301\030\033/api/app/get_android_qrcodeB\036\n\032c" +
-      "om.zhijiejiaoyu.glory_apiP\001b\006proto3"
+      "Response\")\322\301\030%/api/course/create_nm_cour" +
+      "se_resource\022\224\001\n\025CreateNmCourseChapter\022\'." +
+      "glory_api.CreateNmCourseChapterRequest\032(" +
+      ".glory_api.CreateNmCourseChapterResponse" +
+      "\"(\322\301\030$/api/course/create_nm_course_chapt" +
+      "er\022w\n\016CreateNmCourse\022 .glory_api.CreateN" +
+      "mCourseRequest\032!.glory_api.CreateNmCours" +
+      "eResponse\" \322\301\030\034/api/course/create_nm_cou" +
+      "rse\022o\n\014ListNmCourse\022\036.glory_api.ListNmCo" +
+      "urseRequest\032\037.glory_api.ListNmCourseResp" +
+      "onse\"\036\322\301\030\032/api/course/list_nm_course\022w\n\016" +
+      "NmCourseDetail\022 .glory_api.NmCourseDetai" +
+      "lRequest\032!.glory_api.NmCourseDetailRespo" +
+      "nse\" \312\301\030\034/api/course/nm_course_detail\022w\n" +
+      "\016DeleteNmCourse\022 .glory_api.DeleteNmCour" +
+      "seRequest\032!.glory_api.DeleteNmCourseResp" +
+      "onse\" \322\301\030\034/api/course/delete_nm_course\022n" +
+      "\n\014CreateCourse\022\036.glory_api.CreateCourseR" +
+      "equest\032\037.glory_api.CreateCourseResponse\"" +
+      "\035\322\301\030\031/api/course/create_course\022b\n\tGetCou" +
+      "rse\022\033.glory_api.GetCourseRequest\032\034.glory" +
+      "_api.GetCourseResponse\"\032\322\301\030\026/api/course/" +
+      "get_course\022n\n\014UpdateCourse\022\036.glory_api.U" +
+      "pdateCourseRequest\032\037.glory_api.UpdateCou" +
+      "rseResponse\"\035\322\301\030\031/api/course/update_cour" +
+      "se\022n\n\014DeleteCourse\022\036.glory_api.DeleteCou" +
+      "rseRequest\032\037.glory_api.DeleteCourseRespo" +
+      "nse\"\035\322\301\030\031/api/course/delete_course\022f\n\nLi" +
+      "stCourse\022\034.glory_api.ListCourseRequest\032\035" +
+      ".glory_api.ListCourseResponse\"\033\322\301\030\027/api/" +
+      "course/list_course\022\222\001\n\024CreateKnowledgeGr" +
+      "aph\022&.glory_api.CreateKnowledgeGraphRequ" +
+      "est\032\'.glory_api.CreateKnowledgeGraphResp" +
+      "onse\")\322\301\030%/api/course_kg/create_knowledg" +
+      "e_graph\022\206\001\n\021GetKnowledgeGraph\022#.glory_ap" +
+      "i.GetKnowledgeGraphRequest\032$.glory_api.G" +
+      "etKnowledgeGraphResponse\"&\322\301\030\"/api/cours" +
+      "e_kg/get_knowledge_graph\022\227\001\n\025GetKnowledg" +
+      "eGraphNode\022\'.glory_api.GetKnowledgeGraph" +
+      "NodeRequest\032(.glory_api.GetKnowledgeGrap" +
+      "hNodeResponse\"+\322\301\030\'/api/course_kg/get_kn" +
+      "owledge_graph_node\022o\n\014GetMajorCode\022\036.glo" +
+      "ry_api.GetMajorCodeRequest\032\037.glory_api.G" +
+      "etMajorCodeResponse\"\036\312\301\030\032/api/course/get" +
+      "_major_code\022o\n\014GetCourseIds\022\036.glory_api." +
+      "GetCourseIdsRequest\032\037.glory_api.GetCours" +
+      "eIdsResponse\"\036\322\301\030\032/api/course/get_course" +
+      "_ids\022n\n\014EnrollCourse\022\036.glory_api.EnrollC" +
+      "ourseRequest\032\037.glory_api.EnrollCourseRes" +
+      "ponse\"\035\322\301\030\031/api/course/enroll_course\022w\n\016" +
+      "DeleteMyCourse\022 .glory_api.DeleteMyCours" +
+      "eRequest\032!.glory_api.DeleteMyCourseRespo" +
+      "nse\" \322\301\030\034/api/course/delete_my_course\022\217\001" +
+      "\n\024UpdateCourseProgress\022&.glory_api.Updat" +
+      "eCourseProgressRequest\032\'.glory_api.Updat" +
+      "eCourseProgressResponse\"&\322\301\030\"/api/course" +
+      "/update_course_progress\022o\n\014ListMyCourse\022" +
+      "\036.glory_api.ListMyCourseRequest\032\037.glory_" +
+      "api.ListMyCourseResponse\"\036\322\301\030\032/api/cours" +
+      "e/list_my_course\022\177\n\020ListTeachingPlan\022\".g" +
+      "lory_api.ListTeachingPlanRequest\032#.glory" +
+      "_api.ListTeachingPlanResponse\"\"\322\301\030\036/api/" +
+      "course/list_teaching_plan\022\207\001\n\022CreateTeac" +
+      "hingPlan\022$.glory_api.CreateTeachingPlanR" +
+      "equest\032%.glory_api.CreateTeachingPlanRes" +
+      "ponse\"$\322\301\030 /api/course/create_teaching_p" +
+      "lan\022\207\001\n\022UpdateTeachingPlan\022$.glory_api.U" +
+      "pdateTeachingPlanRequest\032%.glory_api.Upd" +
+      "ateTeachingPlanResponse\"$\322\301\030 /api/course" +
+      "/update_teaching_plan\022{\n\017CreateEduScheme" +
+      "\022!.glory_api.CreateEduSchemeRequest\032\".gl" +
+      "ory_api.CreateEduSchemeResponse\"!\322\301\030\035/ap" +
+      "i/course/create_edu_scheme\022{\n\017UpdateEduS" +
+      "cheme\022!.glory_api.UpdateEduSchemeRequest" +
+      "\032\".glory_api.UpdateEduSchemeResponse\"!\322\301" +
+      "\030\035/api/course/update_edu_scheme\022s\n\rListE" +
+      "duScheme\022\037.glory_api.ListEduSchemeReques" +
+      "t\032 .glory_api.ListEduSchemeResponse\"\037\322\301\030" +
+      "\033/api/course/list_edu_scheme\022{\n\017EduSchem" +
+      "eDetail\022!.glory_api.EduSchemeDetailReque" +
+      "st\032\".glory_api.EduSchemeDetailResponse\"!" +
+      "\312\301\030\035/api/course/edu_scheme_detail\022{\n\017Del" +
+      "eteEduScheme\022!.glory_api.DeleteEduScheme" +
+      "Request\032\".glory_api.DeleteEduSchemeRespo" +
+      "nse\"!\322\301\030\035/api/course/delete_edu_scheme\022\213" +
+      "\001\n\023DistributeEduScheme\022%.glory_api.Distr" +
+      "ibuteEduSchemeRequest\032&.glory_api.Distri" +
+      "buteEduSchemeResponse\"%\322\301\030!/api/course/d" +
+      "istribute_edu_scheme\022|\n\020GetAndroidQRcode" +
+      "\022\".glory_api.GetAndroidQRCodeRequest\032#.g" +
+      "lory_api.GetAndroidQRCodeResponse\"\037\312\301\030\033/" +
+      "api/app/get_android_qrcodeB\036\n\032com.zhijie" +
+      "jiaoyu.glory_apiP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

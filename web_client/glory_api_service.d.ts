@@ -1054,6 +1054,10 @@ CreateLivePlanProduct create live plan product */
     request: coupon.ClaimCouponRequest
   ): Promise<coupon.ClaimCouponResponse>;
 
+  ListMyCoupon(
+    request: coupon.ListMyCouponRequest
+  ): Promise<coupon.ListMyCouponResponse>;
+
   /** activity */
   CreateActivity(
     request: activity.CreateActivityRequest

@@ -99,6 +99,16 @@ public final class Coupon {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_ClaimCouponResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ListMyCouponRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ListMyCouponRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ListMyCouponResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ListMyCouponResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -170,8 +180,13 @@ public final class Coupon {
       "P\n\022ClaimCouponRequest\022\'\n\014base_request\030\001 " +
       "\001(\0132\021.base.BaseRequest\022\021\n\tcoupon_id\030\002 \001(" +
       "\003\"<\n\023ClaimCouponResponse\022%\n\tbase_resp\030\001 " +
-      "\001(\0132\022.base.BaseResponseB#\n\037com.zhijiejia" +
-      "oyu.glory_api.shopP\001b\006proto3"
+      "\001(\0132\022.base.BaseResponse\">\n\023ListMyCouponR" +
+      "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
+      "Request\"k\n\024ListMyCouponResponse\022%\n\tbase_" +
+      "resp\030\001 \001(\0132\022.base.BaseResponse\022,\n\013coupon" +
+      "_list\030\002 \003(\0132\027.glory_api.CouponDetailB#\n\037" +
+      "com.zhijiejiaoyu.glory_api.shopP\001b\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -280,6 +295,18 @@ public final class Coupon {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ClaimCouponResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
+    internal_static_glory_api_ListMyCouponRequest_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_glory_api_ListMyCouponRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ListMyCouponRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", });
+    internal_static_glory_api_ListMyCouponResponse_descriptor =
+      getDescriptor().getMessageTypes().get(18);
+    internal_static_glory_api_ListMyCouponResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ListMyCouponResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "CouponList", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
   }
 

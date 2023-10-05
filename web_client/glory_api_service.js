@@ -1916,6 +1916,12 @@ export class glory_api {
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
 
+  ListMyCoupon(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/shop/list_my_coupon${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
   CreateActivity(request) {
     const uri = `${this.uriPrefix}/api/shop/create_activity`;
     const body = JSONbigint.stringify(request);

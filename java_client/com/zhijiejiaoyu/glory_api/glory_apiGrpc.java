@@ -7331,6 +7331,37 @@ public final class glory_apiGrpc {
     return getClaimCouponMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.shop.ListMyCouponRequest,
+      com.zhijiejiaoyu.glory_api.shop.ListMyCouponResponse> getListMyCouponMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListMyCoupon",
+      requestType = com.zhijiejiaoyu.glory_api.shop.ListMyCouponRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.shop.ListMyCouponResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.shop.ListMyCouponRequest,
+      com.zhijiejiaoyu.glory_api.shop.ListMyCouponResponse> getListMyCouponMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.shop.ListMyCouponRequest, com.zhijiejiaoyu.glory_api.shop.ListMyCouponResponse> getListMyCouponMethod;
+    if ((getListMyCouponMethod = glory_apiGrpc.getListMyCouponMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListMyCouponMethod = glory_apiGrpc.getListMyCouponMethod) == null) {
+          glory_apiGrpc.getListMyCouponMethod = getListMyCouponMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.shop.ListMyCouponRequest, com.zhijiejiaoyu.glory_api.shop.ListMyCouponResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListMyCoupon"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.shop.ListMyCouponRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.shop.ListMyCouponResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListMyCoupon"))
+              .build();
+        }
+      }
+    }
+    return getListMyCouponMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.shop.CreateActivityRequest,
       com.zhijiejiaoyu.glory_api.shop.CreateActivityResponse> getCreateActivityMethod;
 
@@ -10855,6 +10886,13 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    default void listMyCoupon(com.zhijiejiaoyu.glory_api.shop.ListMyCouponRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.shop.ListMyCouponResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListMyCouponMethod(), responseObserver);
+    }
+
+    /**
      * <pre>
      * activity
      * </pre>
@@ -13436,6 +13474,14 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public void listMyCoupon(com.zhijiejiaoyu.glory_api.shop.ListMyCouponRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.shop.ListMyCouponResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListMyCouponMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
      * <pre>
      * activity
      * </pre>
@@ -15820,6 +15866,13 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.shop.ClaimCouponResponse claimCoupon(com.zhijiejiaoyu.glory_api.shop.ClaimCouponRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getClaimCouponMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.shop.ListMyCouponResponse listMyCoupon(com.zhijiejiaoyu.glory_api.shop.ListMyCouponRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMyCouponMethod(), getCallOptions(), request);
     }
 
     /**
@@ -18393,6 +18446,14 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.shop.ListMyCouponResponse> listMyCoupon(
+        com.zhijiejiaoyu.glory_api.shop.ListMyCouponRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListMyCouponMethod(), getCallOptions()), request);
+    }
+
+    /**
      * <pre>
      * activity
      * </pre>
@@ -19167,59 +19228,60 @@ public final class glory_apiGrpc {
   private static final int METHODID_ABOLISH_COUPON = 233;
   private static final int METHODID_UPDATE_COUPON_DISTRIBUTION_STATUS = 234;
   private static final int METHODID_CLAIM_COUPON = 235;
-  private static final int METHODID_CREATE_ACTIVITY = 236;
-  private static final int METHODID_LIST_ACTIVITY = 237;
-  private static final int METHODID_ACTIVITY_DETAIL = 238;
-  private static final int METHODID_UPDATE_ACTIVITY = 239;
-  private static final int METHODID_DELETE_ACTIVITY = 240;
-  private static final int METHODID_DISABLE_ACTIVITY = 241;
-  private static final int METHODID_CREATE_COURSE_MATERIAL_BOX = 242;
-  private static final int METHODID_LIST_COURSE_MATERIAL_BOX = 243;
-  private static final int METHODID_DELETE_COURSE_MATERIAL_BOX = 244;
-  private static final int METHODID_UPLOAD_COURSE_MATERIAL = 245;
-  private static final int METHODID_LIST_COURSE_MATERIAL = 246;
-  private static final int METHODID_DELETE_COURSE_MATERIAL = 247;
-  private static final int METHODID_GET_COURSE_MODULE_CODE = 248;
-  private static final int METHODID_GET_COURSE_CHAPTER_CODE = 249;
-  private static final int METHODID_CREATE_COURSE_MODULE = 250;
-  private static final int METHODID_GET_COURSE_MODULE = 251;
-  private static final int METHODID_UPDATE_COURSE_MODULE = 252;
-  private static final int METHODID_DELETE_COURSE_MODULE = 253;
-  private static final int METHODID_LIST_COURSE_MODULE = 254;
-  private static final int METHODID_LIST_LATEST_COURSE = 255;
-  private static final int METHODID_LIST_HOTEST_COURSE = 256;
-  private static final int METHODID_CREATE_CM_COURSE = 257;
-  private static final int METHODID_PREVIEW_CM_COURSE = 258;
-  private static final int METHODID_CREATE_NM_COURSE_RESOURCE = 259;
-  private static final int METHODID_CREATE_NM_COURSE_CHAPTER = 260;
-  private static final int METHODID_CREATE_NM_COURSE = 261;
-  private static final int METHODID_LIST_NM_COURSE = 262;
-  private static final int METHODID_NM_COURSE_DETAIL = 263;
-  private static final int METHODID_DELETE_NM_COURSE = 264;
-  private static final int METHODID_CREATE_COURSE = 265;
-  private static final int METHODID_GET_COURSE = 266;
-  private static final int METHODID_UPDATE_COURSE = 267;
-  private static final int METHODID_DELETE_COURSE = 268;
-  private static final int METHODID_LIST_COURSE = 269;
-  private static final int METHODID_CREATE_KNOWLEDGE_GRAPH = 270;
-  private static final int METHODID_GET_KNOWLEDGE_GRAPH = 271;
-  private static final int METHODID_GET_KNOWLEDGE_GRAPH_NODE = 272;
-  private static final int METHODID_GET_MAJOR_CODE = 273;
-  private static final int METHODID_GET_COURSE_IDS = 274;
-  private static final int METHODID_ENROLL_COURSE = 275;
-  private static final int METHODID_DELETE_MY_COURSE = 276;
-  private static final int METHODID_UPDATE_COURSE_PROGRESS = 277;
-  private static final int METHODID_LIST_MY_COURSE = 278;
-  private static final int METHODID_LIST_TEACHING_PLAN = 279;
-  private static final int METHODID_CREATE_TEACHING_PLAN = 280;
-  private static final int METHODID_UPDATE_TEACHING_PLAN = 281;
-  private static final int METHODID_CREATE_EDU_SCHEME = 282;
-  private static final int METHODID_UPDATE_EDU_SCHEME = 283;
-  private static final int METHODID_LIST_EDU_SCHEME = 284;
-  private static final int METHODID_EDU_SCHEME_DETAIL = 285;
-  private static final int METHODID_DELETE_EDU_SCHEME = 286;
-  private static final int METHODID_DISTRIBUTE_EDU_SCHEME = 287;
-  private static final int METHODID_GET_ANDROID_QRCODE = 288;
+  private static final int METHODID_LIST_MY_COUPON = 236;
+  private static final int METHODID_CREATE_ACTIVITY = 237;
+  private static final int METHODID_LIST_ACTIVITY = 238;
+  private static final int METHODID_ACTIVITY_DETAIL = 239;
+  private static final int METHODID_UPDATE_ACTIVITY = 240;
+  private static final int METHODID_DELETE_ACTIVITY = 241;
+  private static final int METHODID_DISABLE_ACTIVITY = 242;
+  private static final int METHODID_CREATE_COURSE_MATERIAL_BOX = 243;
+  private static final int METHODID_LIST_COURSE_MATERIAL_BOX = 244;
+  private static final int METHODID_DELETE_COURSE_MATERIAL_BOX = 245;
+  private static final int METHODID_UPLOAD_COURSE_MATERIAL = 246;
+  private static final int METHODID_LIST_COURSE_MATERIAL = 247;
+  private static final int METHODID_DELETE_COURSE_MATERIAL = 248;
+  private static final int METHODID_GET_COURSE_MODULE_CODE = 249;
+  private static final int METHODID_GET_COURSE_CHAPTER_CODE = 250;
+  private static final int METHODID_CREATE_COURSE_MODULE = 251;
+  private static final int METHODID_GET_COURSE_MODULE = 252;
+  private static final int METHODID_UPDATE_COURSE_MODULE = 253;
+  private static final int METHODID_DELETE_COURSE_MODULE = 254;
+  private static final int METHODID_LIST_COURSE_MODULE = 255;
+  private static final int METHODID_LIST_LATEST_COURSE = 256;
+  private static final int METHODID_LIST_HOTEST_COURSE = 257;
+  private static final int METHODID_CREATE_CM_COURSE = 258;
+  private static final int METHODID_PREVIEW_CM_COURSE = 259;
+  private static final int METHODID_CREATE_NM_COURSE_RESOURCE = 260;
+  private static final int METHODID_CREATE_NM_COURSE_CHAPTER = 261;
+  private static final int METHODID_CREATE_NM_COURSE = 262;
+  private static final int METHODID_LIST_NM_COURSE = 263;
+  private static final int METHODID_NM_COURSE_DETAIL = 264;
+  private static final int METHODID_DELETE_NM_COURSE = 265;
+  private static final int METHODID_CREATE_COURSE = 266;
+  private static final int METHODID_GET_COURSE = 267;
+  private static final int METHODID_UPDATE_COURSE = 268;
+  private static final int METHODID_DELETE_COURSE = 269;
+  private static final int METHODID_LIST_COURSE = 270;
+  private static final int METHODID_CREATE_KNOWLEDGE_GRAPH = 271;
+  private static final int METHODID_GET_KNOWLEDGE_GRAPH = 272;
+  private static final int METHODID_GET_KNOWLEDGE_GRAPH_NODE = 273;
+  private static final int METHODID_GET_MAJOR_CODE = 274;
+  private static final int METHODID_GET_COURSE_IDS = 275;
+  private static final int METHODID_ENROLL_COURSE = 276;
+  private static final int METHODID_DELETE_MY_COURSE = 277;
+  private static final int METHODID_UPDATE_COURSE_PROGRESS = 278;
+  private static final int METHODID_LIST_MY_COURSE = 279;
+  private static final int METHODID_LIST_TEACHING_PLAN = 280;
+  private static final int METHODID_CREATE_TEACHING_PLAN = 281;
+  private static final int METHODID_UPDATE_TEACHING_PLAN = 282;
+  private static final int METHODID_CREATE_EDU_SCHEME = 283;
+  private static final int METHODID_UPDATE_EDU_SCHEME = 284;
+  private static final int METHODID_LIST_EDU_SCHEME = 285;
+  private static final int METHODID_EDU_SCHEME_DETAIL = 286;
+  private static final int METHODID_DELETE_EDU_SCHEME = 287;
+  private static final int METHODID_DISTRIBUTE_EDU_SCHEME = 288;
+  private static final int METHODID_GET_ANDROID_QRCODE = 289;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -20181,6 +20243,10 @@ public final class glory_apiGrpc {
         case METHODID_CLAIM_COUPON:
           serviceImpl.claimCoupon((com.zhijiejiaoyu.glory_api.shop.ClaimCouponRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.shop.ClaimCouponResponse>) responseObserver);
+          break;
+        case METHODID_LIST_MY_COUPON:
+          serviceImpl.listMyCoupon((com.zhijiejiaoyu.glory_api.shop.ListMyCouponRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.shop.ListMyCouponResponse>) responseObserver);
           break;
         case METHODID_CREATE_ACTIVITY:
           serviceImpl.createActivity((com.zhijiejiaoyu.glory_api.shop.CreateActivityRequest) request,
@@ -22065,6 +22131,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.shop.ClaimCouponResponse>(
                 service, METHODID_CLAIM_COUPON)))
         .addMethod(
+          getListMyCouponMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.shop.ListMyCouponRequest,
+              com.zhijiejiaoyu.glory_api.shop.ListMyCouponResponse>(
+                service, METHODID_LIST_MY_COUPON)))
+        .addMethod(
           getCreateActivityMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -22719,6 +22792,7 @@ public final class glory_apiGrpc {
               .addMethod(getAbolishCouponMethod())
               .addMethod(getUpdateCouponDistributionStatusMethod())
               .addMethod(getClaimCouponMethod())
+              .addMethod(getListMyCouponMethod())
               .addMethod(getCreateActivityMethod())
               .addMethod(getListActivityMethod())
               .addMethod(getActivityDetailMethod())
