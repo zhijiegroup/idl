@@ -932,6 +932,9 @@ service glory_api {
   rpc ClaimCoupon(ClaimCouponRequest) returns (ClaimCouponResponse) {
     option (api.get) = '/api/shop/user_claim_coupon';
   }
+  rpc ListMyCoupon(ListMyCouponRequest) returns (ListMyCouponResponse) {
+    option (api.get) = '/api/shop/list_my_coupon';
+  }
 
   // activity
   rpc CreateActivity(CreateActivityRequest) returns (CreateActivityResponse) {
