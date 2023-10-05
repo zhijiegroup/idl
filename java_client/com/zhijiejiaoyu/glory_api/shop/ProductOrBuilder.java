@@ -268,4 +268,31 @@ public interface ProductOrBuilder extends
    */
   com.google.protobuf.ByteString
       getProductBrandBytes();
+
+  /**
+   * <pre>
+   * 优惠券
+   * </pre>
+   *
+   * <code>.glory_api.CouponDetail coupon = 19;</code>
+   * @return Whether the coupon field is set.
+   */
+  boolean hasCoupon();
+  /**
+   * <pre>
+   * 优惠券
+   * </pre>
+   *
+   * <code>.glory_api.CouponDetail coupon = 19;</code>
+   * @return The coupon.
+   */
+  com.zhijiejiaoyu.glory_api.shop.CouponDetail getCoupon();
+  /**
+   * <pre>
+   * 优惠券
+   * </pre>
+   *
+   * <code>.glory_api.CouponDetail coupon = 19;</code>
+   */
+  com.zhijiejiaoyu.glory_api.shop.CouponDetailOrBuilder getCouponOrBuilder();
 }

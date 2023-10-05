@@ -6,7 +6,8 @@ import * as sku from "./sku";
 import * as shop from "./shop";
 import * as attribute from "./attribute";
 import * as freight_template from "./freight_template";
-export { base, sku, shop, attribute, freight_template };
+import * as coupon from "./coupon";
+export { base, sku, shop, attribute, freight_template, coupon };
 
 export const State = {
   DEFAULT: 0,

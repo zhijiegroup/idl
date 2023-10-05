@@ -7,7 +7,8 @@ import * as sku from "./sku";
 import * as shop from "./shop";
 import * as attribute from "./attribute";
 import * as freight_template from "./freight_template";
-export { base, sku, shop, attribute, freight_template };
+import * as coupon from "./coupon";
+export { base, sku, shop, attribute, freight_template, coupon };
 
 export enum State {
   DEFAULT = 0,
@@ -48,6 +49,8 @@ export interface Product {
   reference_price?: number;
   /** 商品品牌 */
   product_brand?: string;
+  /** 优惠券 */
+  coupon?: coupon.CouponDetail;
 }
 
 export interface ProductImage {
