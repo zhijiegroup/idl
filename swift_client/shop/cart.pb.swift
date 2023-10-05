@@ -99,9 +99,21 @@ struct GloryApi_ProductShow {
   ///live:直播间订单,normal:非直播间订单
   var channel: String = String()
 
+  /// 优惠券
+  var coupon: GloryApi_CouponDetail {
+    get {return _coupon ?? GloryApi_CouponDetail()}
+    set {_coupon = newValue}
+  }
+  /// Returns true if `coupon` has been explicitly set.
+  var hasCoupon: Bool {return self._coupon != nil}
+  /// Clears the value of `coupon`. Subsequent reads from it will return its default value.
+  mutating func clearCoupon() {self._coupon = nil}
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
+
+  fileprivate var _coupon: GloryApi_CouponDetail? = nil
 }
 
 struct GloryApi_ShopShow {
@@ -558,6 +570,7 @@ extension GloryApi_ProductShow: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     8: .same(proto: "currency"),
     9: .standard(proto: "freight_amount"),
     10: .same(proto: "channel"),
+    11: .same(proto: "coupon"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -576,12 +589,17 @@ extension GloryApi_ProductShow: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       case 8: try { try decoder.decodeSingularStringField(value: &self.currency) }()
       case 9: try { try decoder.decodeSingularFloatField(value: &self.freightAmount) }()
       case 10: try { try decoder.decodeSingularStringField(value: &self.channel) }()
+      case 11: try { try decoder.decodeSingularMessageField(value: &self._coupon) }()
       default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.productID != 0 {
       try visitor.visitSingularInt64Field(value: self.productID, fieldNumber: 1)
     }
@@ -612,6 +630,9 @@ extension GloryApi_ProductShow: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     if !self.channel.isEmpty {
       try visitor.visitSingularStringField(value: self.channel, fieldNumber: 10)
     }
+    try { if let v = self._coupon {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 11)
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -626,6 +647,7 @@ extension GloryApi_ProductShow: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     if lhs.currency != rhs.currency {return false}
     if lhs.freightAmount != rhs.freightAmount {return false}
     if lhs.channel != rhs.channel {return false}
+    if lhs._coupon != rhs._coupon {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

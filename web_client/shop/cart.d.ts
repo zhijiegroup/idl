@@ -3,7 +3,8 @@
 // @ts-nocheck
 
 import * as base from "../base";
-export { base };
+import * as coupon from "./coupon";
+export { base, coupon };
 
 export interface Cart {
   /** 客户端 添加购物车 sku_id quantity shop_id seller_id tenant_id必传 */
@@ -37,6 +38,8 @@ export interface ProductShow {
   freight_amount?: number;
   /** live:直播间订单,normal:非直播间订单 */
   channel?: string;
+  /** 优惠券 */
+  coupon?: coupon.CouponDetail;
 }
 
 export interface ShopShow {
