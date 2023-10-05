@@ -118,3 +118,11 @@ message ClaimCouponRequest {
 message ClaimCouponResponse {
     base.BaseResponse base_resp = 1;
 }
+
+message ListMyCouponRequest {
+    base.BaseRequest base_request = 1;
+}
+message ListMyCouponResponse {
+    base.BaseResponse base_resp = 1;
+    repeated CouponDetail coupon_list = 2;
+}
