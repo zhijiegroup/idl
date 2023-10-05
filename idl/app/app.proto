@@ -1,0 +1,15 @@
+syntax = "proto3";
+package glory_api;
+option java_package = "com.zhijiejiaoyu.glory_api.course";
+option java_multiple_files = true;
+
+import "base.proto";
+
+message GetAndroidQRCodeRequest {
+    base.BaseRequest base_request = 1;
+}
+
+message GetAndroidQRCodeResponse {
+    base.BaseResponse base_resp = 1;
+    string qrcode_url = 2;
+}
