@@ -8,6 +8,7 @@ import "shop/sku.proto";
 import "shop/shop.proto";
 import "shop/attribute.proto";
 import "shop/freight_template.proto";
+import "shop/coupon.proto";
 
 message Product {
   int64 product_id = 1;
@@ -28,6 +29,7 @@ message Product {
   float sale_price = 16;//售卖价
   float reference_price = 17;//参考价
   string product_brand = 18;//商品品牌
+  CouponDetail coupon = 19; // 优惠券
 }
 
 message ProductImage {
