@@ -471,6 +471,10 @@ struct GloryApi_ListCourseModuleResponse {
 
   var courseModules: [GloryApi_CourseModule] = []
 
+  var totalKnowledgeHours: Int64 = 0
+
+  var totalSkillHours: Int64 = 0
+
   var pagination: Base_PaginationResponse {
     get {return _pagination ?? Base_PaginationResponse()}
     set {_pagination = newValue}
@@ -1273,7 +1277,9 @@ extension GloryApi_ListCourseModuleResponse: SwiftProtobuf.Message, SwiftProtobu
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
     2: .standard(proto: "course_modules"),
-    3: .same(proto: "pagination"),
+    3: .standard(proto: "total_knowledge_hours"),
+    4: .standard(proto: "total_skill_hours"),
+    100: .same(proto: "pagination"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1284,7 +1290,9 @@ extension GloryApi_ListCourseModuleResponse: SwiftProtobuf.Message, SwiftProtobu
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
       case 2: try { try decoder.decodeRepeatedMessageField(value: &self.courseModules) }()
-      case 3: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.totalKnowledgeHours) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.totalSkillHours) }()
+      case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
     }
@@ -1301,8 +1309,14 @@ extension GloryApi_ListCourseModuleResponse: SwiftProtobuf.Message, SwiftProtobu
     if !self.courseModules.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.courseModules, fieldNumber: 2)
     }
+    if self.totalKnowledgeHours != 0 {
+      try visitor.visitSingularInt64Field(value: self.totalKnowledgeHours, fieldNumber: 3)
+    }
+    if self.totalSkillHours != 0 {
+      try visitor.visitSingularInt64Field(value: self.totalSkillHours, fieldNumber: 4)
+    }
     try { if let v = self._pagination {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
     } }()
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1310,6 +1324,8 @@ extension GloryApi_ListCourseModuleResponse: SwiftProtobuf.Message, SwiftProtobu
   static func ==(lhs: GloryApi_ListCourseModuleResponse, rhs: GloryApi_ListCourseModuleResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.courseModules != rhs.courseModules {return false}
+    if lhs.totalKnowledgeHours != rhs.totalKnowledgeHours {return false}
+    if lhs.totalSkillHours != rhs.totalSkillHours {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

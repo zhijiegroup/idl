@@ -157,12 +157,13 @@ public final class Module {
       "\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReques" +
       "t\022\017\n\007keyword\030\002 \001(\t\022\022\n\nmajor_code\030\003 \001(\t\022+" +
       "\n\npagination\030d \001(\0132\027.base.PaginationRequ" +
-      "est\"\240\001\n\030ListCourseModuleResponse\022%\n\tbase" +
+      "est\"\332\001\n\030ListCourseModuleResponse\022%\n\tbase" +
       "_resp\030\001 \001(\0132\022.base.BaseResponse\022/\n\016cours" +
       "e_modules\030\002 \003(\0132\027.glory_api.CourseModule" +
-      "\022,\n\npagination\030\003 \001(\0132\030.base.PaginationRe" +
-      "sponseB%\n!com.zhijiejiaoyu.glory_api.cou" +
-      "rseP\001b\006proto3"
+      "\022\035\n\025total_knowledge_hours\030\003 \001(\003\022\031\n\021total" +
+      "_skill_hours\030\004 \001(\003\022,\n\npagination\030d \001(\0132\030" +
+      ".base.PaginationResponseB%\n!com.zhijieji" +
+      "aoyu.glory_api.courseP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -270,7 +271,7 @@ public final class Module {
     internal_static_glory_api_ListCourseModuleResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListCourseModuleResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "CourseModules", "Pagination", });
+        new java.lang.String[] { "BaseResp", "CourseModules", "TotalKnowledgeHours", "TotalSkillHours", "Pagination", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
   }
 

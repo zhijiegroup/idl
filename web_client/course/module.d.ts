@@ -134,5 +134,7 @@ export interface ListCourseModuleRequest {
 export interface ListCourseModuleResponse {
   base_resp?: base.BaseResponse;
   course_modules?: Array<CourseModule>;
+  total_knowledge_hours?: string;
+  total_skill_hours?: string;
   pagination?: base.PaginationResponse;
 }

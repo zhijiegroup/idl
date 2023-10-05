@@ -72,7 +72,17 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.zhijiejiaoyu.glory_api.course.CourseModule.parser(), extensionRegistry));
             break;
           }
-          case 26: {
+          case 24: {
+
+            totalKnowledgeHours = input.readInt64();
+            break;
+          }
+          case 32: {
+
+            totalSkillHours = input.readInt64();
+            break;
+          }
+          case 802: {
             com.zhijiejiaoyu.base.PaginationResponse.Builder subBuilder = null;
             if (pagination != null) {
               subBuilder = pagination .toBuilder();
@@ -186,10 +196,32 @@ private static final long serialVersionUID = 0L;
     return courseModules .get(index);
   }
 
-  public static final int PAGINATION_FIELD_NUMBER = 3;
+  public static final int TOTAL_KNOWLEDGE_HOURS_FIELD_NUMBER = 3;
+  private long totalKnowledgeHours ;
+  /**
+   * <code>int64 total_knowledge_hours = 3;</code>
+   * @return The totalKnowledgeHours.
+   */
+  @java.lang.Override
+  public long getTotalKnowledgeHours() {
+    return totalKnowledgeHours ;
+  }
+
+  public static final int TOTAL_SKILL_HOURS_FIELD_NUMBER = 4;
+  private long totalSkillHours ;
+  /**
+   * <code>int64 total_skill_hours = 4;</code>
+   * @return The totalSkillHours.
+   */
+  @java.lang.Override
+  public long getTotalSkillHours() {
+    return totalSkillHours ;
+  }
+
+  public static final int PAGINATION_FIELD_NUMBER = 100;
   private com.zhijiejiaoyu.base.PaginationResponse pagination ;
   /**
-   * <code>.base.PaginationResponse pagination = 3;</code>
+   * <code>.base.PaginationResponse pagination = 100;</code>
    * @return Whether the pagination field is set.
    */
   @java.lang.Override
@@ -197,7 +229,7 @@ private static final long serialVersionUID = 0L;
     return pagination != null;
   }
   /**
-   * <code>.base.PaginationResponse pagination = 3;</code>
+   * <code>.base.PaginationResponse pagination = 100;</code>
    * @return The pagination.
    */
   @java.lang.Override
@@ -205,7 +237,7 @@ private static final long serialVersionUID = 0L;
     return pagination == null ? com.zhijiejiaoyu.base.PaginationResponse.getDefaultInstance() : pagination ;
   }
   /**
-   * <code>.base.PaginationResponse pagination = 3;</code>
+   * <code>.base.PaginationResponse pagination = 100;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.base.PaginationResponseOrBuilder getPaginationOrBuilder() {
@@ -232,8 +264,14 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < courseModules .size(); i++) {
       output.writeMessage(2, courseModules .get(i));
     }
+    if (totalKnowledgeHours != 0L) {
+      output.writeInt64(3, totalKnowledgeHours );
+    }
+    if (totalSkillHours != 0L) {
+      output.writeInt64(4, totalSkillHours );
+    }
     if (pagination != null) {
-      output.writeMessage(3, getPagination());
+      output.writeMessage(100, getPagination());
     }
     unknownFields.writeTo(output);
   }
@@ -252,9 +290,17 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, courseModules .get(i));
     }
+    if (totalKnowledgeHours != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(3, totalKnowledgeHours );
+    }
+    if (totalSkillHours != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(4, totalSkillHours );
+    }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getPagination());
+        .computeMessageSize(100, getPagination());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -278,6 +324,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getCourseModulesList()
         .equals(other.getCourseModulesList())) return false;
+    if (getTotalKnowledgeHours()
+        != other.getTotalKnowledgeHours()) return false;
+    if (getTotalSkillHours()
+        != other.getTotalSkillHours()) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -302,6 +352,12 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + COURSE_MODULES_FIELD_NUMBER;
       hash = (53 * hash) + getCourseModulesList().hashCode();
     }
+    hash = (37 * hash) + TOTAL_KNOWLEDGE_HOURS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getTotalKnowledgeHours());
+    hash = (37 * hash) + TOTAL_SKILL_HOURS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getTotalSkillHours());
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
@@ -452,6 +508,10 @@ private static final long serialVersionUID = 0L;
       } else {
         courseModulesBuilder .clear();
       }
+      totalKnowledgeHours = 0L;
+
+      totalSkillHours = 0L;
+
       if (paginationBuilder == null) {
         pagination = null;
       } else {
@@ -499,6 +559,8 @@ private static final long serialVersionUID = 0L;
       } else {
         result.courseModules = courseModulesBuilder .build();
       }
+      result.totalKnowledgeHours = totalKnowledgeHours ;
+      result.totalSkillHours = totalSkillHours ;
       if (paginationBuilder == null) {
         result.pagination = pagination ;
       } else {
@@ -580,6 +642,12 @@ private static final long serialVersionUID = 0L;
             courseModulesBuilder .addAllMessages(other.courseModules );
           }
         }
+      }
+      if (other.getTotalKnowledgeHours() != 0L) {
+        setTotalKnowledgeHours(other.getTotalKnowledgeHours());
+      }
+      if (other.getTotalSkillHours() != 0L) {
+        setTotalSkillHours(other.getTotalSkillHours());
       }
       if (other.hasPagination()) {
         mergePagination(other.getPagination());
@@ -973,18 +1041,80 @@ private static final long serialVersionUID = 0L;
       return courseModulesBuilder ;
     }
 
+    private long totalKnowledgeHours ;
+    /**
+     * <code>int64 total_knowledge_hours = 3;</code>
+     * @return The totalKnowledgeHours.
+     */
+    @java.lang.Override
+    public long getTotalKnowledgeHours() {
+      return totalKnowledgeHours ;
+    }
+    /**
+     * <code>int64 total_knowledge_hours = 3;</code>
+     * @param value The totalKnowledgeHours to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTotalKnowledgeHours(long value) {
+      
+      totalKnowledgeHours = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 total_knowledge_hours = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTotalKnowledgeHours() {
+      
+      totalKnowledgeHours = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long totalSkillHours ;
+    /**
+     * <code>int64 total_skill_hours = 4;</code>
+     * @return The totalSkillHours.
+     */
+    @java.lang.Override
+    public long getTotalSkillHours() {
+      return totalSkillHours ;
+    }
+    /**
+     * <code>int64 total_skill_hours = 4;</code>
+     * @param value The totalSkillHours to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTotalSkillHours(long value) {
+      
+      totalSkillHours = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 total_skill_hours = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTotalSkillHours() {
+      
+      totalSkillHours = 0L;
+      onChanged();
+      return this;
+    }
+
     private com.zhijiejiaoyu.base.PaginationResponse pagination ;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.base.PaginationResponse, com.zhijiejiaoyu.base.PaginationResponse.Builder, com.zhijiejiaoyu.base.PaginationResponseOrBuilder> paginationBuilder ;
     /**
-     * <code>.base.PaginationResponse pagination = 3;</code>
+     * <code>.base.PaginationResponse pagination = 100;</code>
      * @return Whether the pagination field is set.
      */
     public boolean hasPagination() {
       return paginationBuilder != null || pagination != null;
     }
     /**
-     * <code>.base.PaginationResponse pagination = 3;</code>
+     * <code>.base.PaginationResponse pagination = 100;</code>
      * @return The pagination.
      */
     public com.zhijiejiaoyu.base.PaginationResponse getPagination() {
@@ -995,7 +1125,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.base.PaginationResponse pagination = 3;</code>
+     * <code>.base.PaginationResponse pagination = 100;</code>
      */
     public Builder setPagination(com.zhijiejiaoyu.base.PaginationResponse value) {
       if (paginationBuilder == null) {
@@ -1011,7 +1141,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.base.PaginationResponse pagination = 3;</code>
+     * <code>.base.PaginationResponse pagination = 100;</code>
      */
     public Builder setPagination(
         com.zhijiejiaoyu.base.PaginationResponse.Builder builderForValue) {
@@ -1025,7 +1155,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.base.PaginationResponse pagination = 3;</code>
+     * <code>.base.PaginationResponse pagination = 100;</code>
      */
     public Builder mergePagination(com.zhijiejiaoyu.base.PaginationResponse value) {
       if (paginationBuilder == null) {
@@ -1043,7 +1173,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.base.PaginationResponse pagination = 3;</code>
+     * <code>.base.PaginationResponse pagination = 100;</code>
      */
     public Builder clearPagination() {
       if (paginationBuilder == null) {
@@ -1057,7 +1187,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.base.PaginationResponse pagination = 3;</code>
+     * <code>.base.PaginationResponse pagination = 100;</code>
      */
     public com.zhijiejiaoyu.base.PaginationResponse.Builder getPaginationBuilder() {
       
@@ -1065,7 +1195,7 @@ private static final long serialVersionUID = 0L;
       return getPaginationFieldBuilder().getBuilder();
     }
     /**
-     * <code>.base.PaginationResponse pagination = 3;</code>
+     * <code>.base.PaginationResponse pagination = 100;</code>
      */
     public com.zhijiejiaoyu.base.PaginationResponseOrBuilder getPaginationOrBuilder() {
       if (paginationBuilder != null) {
@@ -1076,7 +1206,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.base.PaginationResponse pagination = 3;</code>
+     * <code>.base.PaginationResponse pagination = 100;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.base.PaginationResponse, com.zhijiejiaoyu.base.PaginationResponse.Builder, com.zhijiejiaoyu.base.PaginationResponseOrBuilder> 

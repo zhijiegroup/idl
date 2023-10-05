@@ -47,17 +47,29 @@ public interface ListCourseModuleResponseOrBuilder extends
       int index);
 
   /**
-   * <code>.base.PaginationResponse pagination = 3;</code>
+   * <code>int64 total_knowledge_hours = 3;</code>
+   * @return The totalKnowledgeHours.
+   */
+  long getTotalKnowledgeHours();
+
+  /**
+   * <code>int64 total_skill_hours = 4;</code>
+   * @return The totalSkillHours.
+   */
+  long getTotalSkillHours();
+
+  /**
+   * <code>.base.PaginationResponse pagination = 100;</code>
    * @return Whether the pagination field is set.
    */
   boolean hasPagination();
   /**
-   * <code>.base.PaginationResponse pagination = 3;</code>
+   * <code>.base.PaginationResponse pagination = 100;</code>
    * @return The pagination.
    */
   com.zhijiejiaoyu.base.PaginationResponse getPagination();
   /**
-   * <code>.base.PaginationResponse pagination = 3;</code>
+   * <code>.base.PaginationResponse pagination = 100;</code>
    */
   com.zhijiejiaoyu.base.PaginationResponseOrBuilder getPaginationOrBuilder();
 }
