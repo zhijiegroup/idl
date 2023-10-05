@@ -111,5 +111,7 @@ message ListCourseModuleRequest {
 message ListCourseModuleResponse {
   base.BaseResponse base_resp = 1;
   repeated CourseModule course_modules = 2;
-  base.PaginationResponse pagination = 3;
+  int64 total_knowledge_hours = 3;
+  int64 total_skill_hours = 4;
+  base.PaginationResponse pagination = 100;
 }
