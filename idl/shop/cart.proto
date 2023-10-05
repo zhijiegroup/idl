@@ -4,6 +4,7 @@ option java_package = "com.zhijiejiaoyu.glory_api.shop";
 option java_multiple_files = true;
 
 import "base.proto";
+import "shop/coupon.proto";
 
 message Cart {
   //客户端 添加购物车 sku_id quantity shop_id seller_id tenant_id必传
@@ -33,6 +34,7 @@ message ProductShow {
   string currency = 8;
   float freight_amount = 9;
   string channel = 10; //live:直播间订单,normal:非直播间订单
+  CouponDetail coupon = 11; // 优惠券
 }
 
 
