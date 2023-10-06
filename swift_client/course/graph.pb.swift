@@ -38,9 +38,20 @@ struct GloryApi_Node {
   /// 节点权重值
   var weight: Int32 = 0
 
+  var detail: GloryApi_NodeDetail {
+    get {return _detail ?? GloryApi_NodeDetail()}
+    set {_detail = newValue}
+  }
+  /// Returns true if `detail` has been explicitly set.
+  var hasDetail: Bool {return self._detail != nil}
+  /// Clears the value of `detail`. Subsequent reads from it will return its default value.
+  mutating func clearDetail() {self._detail = nil}
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
+
+  fileprivate var _detail: GloryApi_NodeDetail? = nil
 }
 
 struct GloryApi_Edge {
@@ -369,6 +380,7 @@ extension GloryApi_Node: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     5: .same(proto: "value"),
     6: .same(proto: "type"),
     7: .same(proto: "weight"),
+    8: .same(proto: "detail"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -383,12 +395,17 @@ extension GloryApi_Node: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       case 5: try { try decoder.decodeSingularStringField(value: &self.value) }()
       case 6: try { try decoder.decodeSingularStringField(value: &self.type) }()
       case 7: try { try decoder.decodeSingularInt32Field(value: &self.weight) }()
+      case 8: try { try decoder.decodeSingularMessageField(value: &self._detail) }()
       default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.id.isEmpty {
       try visitor.visitSingularStringField(value: self.id, fieldNumber: 1)
     }
@@ -407,6 +424,9 @@ extension GloryApi_Node: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     if self.weight != 0 {
       try visitor.visitSingularInt32Field(value: self.weight, fieldNumber: 7)
     }
+    try { if let v = self._detail {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -417,6 +437,7 @@ extension GloryApi_Node: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     if lhs.value != rhs.value {return false}
     if lhs.type != rhs.type {return false}
     if lhs.weight != rhs.weight {return false}
+    if lhs._detail != rhs._detail {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

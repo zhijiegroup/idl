@@ -86,6 +86,19 @@ private static final long serialVersionUID = 0L;
             weight = input.readInt32();
             break;
           }
+          case 66: {
+            com.zhijiejiaoyu.glory_api.course.NodeDetail.Builder subBuilder = null;
+            if (detail != null) {
+              subBuilder = detail .toBuilder();
+            }
+            detail = input.readMessage(com.zhijiejiaoyu.glory_api.course.NodeDetail.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(detail );
+              detail = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -296,6 +309,32 @@ private static final long serialVersionUID = 0L;
     return weight ;
   }
 
+  public static final int DETAIL_FIELD_NUMBER = 8;
+  private com.zhijiejiaoyu.glory_api.course.NodeDetail detail ;
+  /**
+   * <code>.glory_api.NodeDetail detail = 8;</code>
+   * @return Whether the detail field is set.
+   */
+  @java.lang.Override
+  public boolean hasDetail() {
+    return detail != null;
+  }
+  /**
+   * <code>.glory_api.NodeDetail detail = 8;</code>
+   * @return The detail.
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.course.NodeDetail getDetail() {
+    return detail == null ? com.zhijiejiaoyu.glory_api.course.NodeDetail.getDefaultInstance() : detail ;
+  }
+  /**
+   * <code>.glory_api.NodeDetail detail = 8;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.course.NodeDetailOrBuilder getDetailOrBuilder() {
+    return getDetail();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -328,6 +367,9 @@ private static final long serialVersionUID = 0L;
     if (weight != 0) {
       output.writeInt32(7, weight );
     }
+    if (detail != null) {
+      output.writeMessage(8, getDetail());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -357,6 +399,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(7, weight );
     }
+    if (detail != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, getDetail());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -384,6 +430,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getType())) return false;
     if (getWeight()
         != other.getWeight()) return false;
+    if (hasDetail() != other.hasDetail()) return false;
+    if (hasDetail()) {
+      if (!getDetail()
+          .equals(other.getDetail())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -408,6 +459,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getType().hashCode();
     hash = (37 * hash) + WEIGHT_FIELD_NUMBER;
     hash = (53 * hash) + getWeight();
+    if (hasDetail()) {
+      hash = (37 * hash) + DETAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getDetail().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -553,6 +608,12 @@ private static final long serialVersionUID = 0L;
 
       weight = 0;
 
+      if (detailBuilder == null) {
+        detail = null;
+      } else {
+        detail = null;
+        detailBuilder = null;
+      }
       return this;
     }
 
@@ -585,6 +646,11 @@ private static final long serialVersionUID = 0L;
       result.value = value ;
       result.type = type ;
       result.weight = weight ;
+      if (detailBuilder == null) {
+        result.detail = detail ;
+      } else {
+        result.detail = detailBuilder .build();
+      }
       onBuilt();
       return result;
     }
@@ -654,6 +720,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getWeight() != 0) {
         setWeight(other.getWeight());
+      }
+      if (other.hasDetail()) {
+        mergeDetail(other.getDetail());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1060,6 +1129,125 @@ private static final long serialVersionUID = 0L;
       weight = 0;
       onChanged();
       return this;
+    }
+
+    private com.zhijiejiaoyu.glory_api.course.NodeDetail detail ;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.course.NodeDetail, com.zhijiejiaoyu.glory_api.course.NodeDetail.Builder, com.zhijiejiaoyu.glory_api.course.NodeDetailOrBuilder> detailBuilder ;
+    /**
+     * <code>.glory_api.NodeDetail detail = 8;</code>
+     * @return Whether the detail field is set.
+     */
+    public boolean hasDetail() {
+      return detailBuilder != null || detail != null;
+    }
+    /**
+     * <code>.glory_api.NodeDetail detail = 8;</code>
+     * @return The detail.
+     */
+    public com.zhijiejiaoyu.glory_api.course.NodeDetail getDetail() {
+      if (detailBuilder == null) {
+        return detail == null ? com.zhijiejiaoyu.glory_api.course.NodeDetail.getDefaultInstance() : detail ;
+      } else {
+        return detailBuilder .getMessage();
+      }
+    }
+    /**
+     * <code>.glory_api.NodeDetail detail = 8;</code>
+     */
+    public Builder setDetail(com.zhijiejiaoyu.glory_api.course.NodeDetail value) {
+      if (detailBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        detail = value;
+        onChanged();
+      } else {
+        detailBuilder .setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.NodeDetail detail = 8;</code>
+     */
+    public Builder setDetail(
+        com.zhijiejiaoyu.glory_api.course.NodeDetail.Builder builderForValue) {
+      if (detailBuilder == null) {
+        detail = builderForValue.build();
+        onChanged();
+      } else {
+        detailBuilder .setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.NodeDetail detail = 8;</code>
+     */
+    public Builder mergeDetail(com.zhijiejiaoyu.glory_api.course.NodeDetail value) {
+      if (detailBuilder == null) {
+        if (detail != null) {
+          detail =
+            com.zhijiejiaoyu.glory_api.course.NodeDetail.newBuilder(detail ).mergeFrom(value).buildPartial();
+        } else {
+          detail = value;
+        }
+        onChanged();
+      } else {
+        detailBuilder .mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.NodeDetail detail = 8;</code>
+     */
+    public Builder clearDetail() {
+      if (detailBuilder == null) {
+        detail = null;
+        onChanged();
+      } else {
+        detail = null;
+        detailBuilder = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.NodeDetail detail = 8;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.NodeDetail.Builder getDetailBuilder() {
+      
+      onChanged();
+      return getDetailFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.glory_api.NodeDetail detail = 8;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.NodeDetailOrBuilder getDetailOrBuilder() {
+      if (detailBuilder != null) {
+        return detailBuilder .getMessageOrBuilder();
+      } else {
+        return detail == null ?
+            com.zhijiejiaoyu.glory_api.course.NodeDetail.getDefaultInstance() : detail ;
+      }
+    }
+    /**
+     * <code>.glory_api.NodeDetail detail = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.course.NodeDetail, com.zhijiejiaoyu.glory_api.course.NodeDetail.Builder, com.zhijiejiaoyu.glory_api.course.NodeDetailOrBuilder> 
+        getDetailFieldBuilder() {
+      if (detailBuilder == null) {
+        detailBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.course.NodeDetail, com.zhijiejiaoyu.glory_api.course.NodeDetail.Builder, com.zhijiejiaoyu.glory_api.course.NodeDetailOrBuilder>(
+                getDetail(),
+                getParentForChildren(),
+                isClean());
+        detail = null;
+      }
+      return detailBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

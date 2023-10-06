@@ -70,4 +70,19 @@ public interface NodeOrBuilder extends
    * @return The weight.
    */
   int getWeight();
+
+  /**
+   * <code>.glory_api.NodeDetail detail = 8;</code>
+   * @return Whether the detail field is set.
+   */
+  boolean hasDetail();
+  /**
+   * <code>.glory_api.NodeDetail detail = 8;</code>
+   * @return The detail.
+   */
+  com.zhijiejiaoyu.glory_api.course.NodeDetail getDetail();
+  /**
+   * <code>.glory_api.NodeDetail detail = 8;</code>
+   */
+  com.zhijiejiaoyu.glory_api.course.NodeDetailOrBuilder getDetailOrBuilder();
 }

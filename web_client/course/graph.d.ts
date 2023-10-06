@@ -13,6 +13,7 @@ export interface Node {
   type?: string;
   /** 节点权重值 */
   weight?: number;
+  detail?: NodeDetail;
 }
 
 export interface Edge {
