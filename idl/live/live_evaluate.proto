@@ -104,7 +104,8 @@ message GetEvaluateDetailResponse {
     bool baseline = 11;
     int64 ai_feedback_id = 12;
     string created_user = 13;
-    repeated AiResult ai_result = 14;
+    string anchor = 14;
+    repeated AiResult ai_result = 15;
     repeated EvaluateDetail detail = 100;
 }
 
@@ -156,7 +157,8 @@ message ListUnevaluatedRoomRequest {
 
 message ListUnevaluatedRoomResponse {
     base.BaseResponse base_resp = 1;
-    repeated UnevaluatedRoom unevaluated_room = 2;
+    int64 liveing_total = 2;
+    repeated UnevaluatedRoom unevaluated_room = 3;
     base.PaginationResponse pagination = 100;
 }
 
