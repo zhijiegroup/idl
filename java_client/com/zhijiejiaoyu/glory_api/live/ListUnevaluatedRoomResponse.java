@@ -65,7 +65,7 @@ private static final long serialVersionUID = 0L;
           }
           case 16: {
 
-            liveingTotal = input.readInt64();
+            livingTotal = input.readInt64();
             break;
           }
           case 26: {
@@ -151,15 +151,15 @@ private static final long serialVersionUID = 0L;
     return getBaseResp();
   }
 
-  public static final int LIVEING_TOTAL_FIELD_NUMBER = 2;
-  private long liveingTotal ;
+  public static final int LIVING_TOTAL_FIELD_NUMBER = 2;
+  private long livingTotal ;
   /**
-   * <code>int64 liveing_total = 2;</code>
-   * @return The liveingTotal.
+   * <code>int64 living_total = 2;</code>
+   * @return The livingTotal.
    */
   @java.lang.Override
-  public long getLiveingTotal() {
-    return liveingTotal ;
+  public long getLivingTotal() {
+    return livingTotal ;
   }
 
   public static final int UNEVALUATED_ROOM_FIELD_NUMBER = 3;
@@ -245,8 +245,8 @@ private static final long serialVersionUID = 0L;
     if (baseResp != null) {
       output.writeMessage(1, getBaseResp());
     }
-    if (liveingTotal != 0L) {
-      output.writeInt64(2, liveingTotal );
+    if (livingTotal != 0L) {
+      output.writeInt64(2, livingTotal );
     }
     for (int i = 0; i < unevaluatedRoom .size(); i++) {
       output.writeMessage(3, unevaluatedRoom .get(i));
@@ -267,9 +267,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
-    if (liveingTotal != 0L) {
+    if (livingTotal != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, liveingTotal );
+        .computeInt64Size(2, livingTotal );
     }
     for (int i = 0; i < unevaluatedRoom .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
@@ -299,8 +299,8 @@ private static final long serialVersionUID = 0L;
       if (!getBaseResp()
           .equals(other.getBaseResp())) return false;
     }
-    if (getLiveingTotal()
-        != other.getLiveingTotal()) return false;
+    if (getLivingTotal()
+        != other.getLivingTotal()) return false;
     if (!getUnevaluatedRoomList()
         .equals(other.getUnevaluatedRoomList())) return false;
     if (hasPagination() != other.hasPagination()) return false;
@@ -323,9 +323,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_RESP_FIELD_NUMBER;
       hash = (53 * hash) + getBaseResp().hashCode();
     }
-    hash = (37 * hash) + LIVEING_TOTAL_FIELD_NUMBER;
+    hash = (37 * hash) + LIVING_TOTAL_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getLiveingTotal());
+        getLivingTotal());
     if (getUnevaluatedRoomCount() > 0) {
       hash = (37 * hash) + UNEVALUATED_ROOM_FIELD_NUMBER;
       hash = (53 * hash) + getUnevaluatedRoomList().hashCode();
@@ -474,7 +474,7 @@ private static final long serialVersionUID = 0L;
         baseResp = null;
         baseRespBuilder = null;
       }
-      liveingTotal = 0L;
+      livingTotal = 0L;
 
       if (unevaluatedRoomBuilder == null) {
         unevaluatedRoom = java.util.Collections.emptyList();
@@ -520,7 +520,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.baseResp = baseRespBuilder .build();
       }
-      result.liveingTotal = liveingTotal ;
+      result.livingTotal = livingTotal ;
       if (unevaluatedRoomBuilder == null) {
         if (((bitField0 & 0x00000001) != 0)) {
           unevaluatedRoom = java.util.Collections.unmodifiableList(unevaluatedRoom );
@@ -586,8 +586,8 @@ private static final long serialVersionUID = 0L;
       if (other.hasBaseResp()) {
         mergeBaseResp(other.getBaseResp());
       }
-      if (other.getLiveingTotal() != 0L) {
-        setLiveingTotal(other.getLiveingTotal());
+      if (other.getLivingTotal() != 0L) {
+        setLivingTotal(other.getLivingTotal());
       }
       if (unevaluatedRoomBuilder == null) {
         if (!other.unevaluatedRoom .isEmpty()) {
@@ -767,33 +767,33 @@ private static final long serialVersionUID = 0L;
       return baseRespBuilder ;
     }
 
-    private long liveingTotal ;
+    private long livingTotal ;
     /**
-     * <code>int64 liveing_total = 2;</code>
-     * @return The liveingTotal.
+     * <code>int64 living_total = 2;</code>
+     * @return The livingTotal.
      */
     @java.lang.Override
-    public long getLiveingTotal() {
-      return liveingTotal ;
+    public long getLivingTotal() {
+      return livingTotal ;
     }
     /**
-     * <code>int64 liveing_total = 2;</code>
-     * @param value The liveingTotal to set.
+     * <code>int64 living_total = 2;</code>
+     * @param value The livingTotal to set.
      * @return This builder for chaining.
      */
-    public Builder setLiveingTotal(long value) {
+    public Builder setLivingTotal(long value) {
       
-      liveingTotal = value;
+      livingTotal = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 liveing_total = 2;</code>
+     * <code>int64 living_total = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder clearLiveingTotal() {
+    public Builder clearLivingTotal() {
       
-      liveingTotal = 0L;
+      livingTotal = 0L;
       onChanged();
       return this;
     }

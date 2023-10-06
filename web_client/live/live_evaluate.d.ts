@@ -161,7 +161,7 @@ export interface ListUnevaluatedRoomRequest {
 
 export interface ListUnevaluatedRoomResponse {
   base_resp?: base.BaseResponse;
-  liveing_total?: string;
+  living_total?: string;
   unevaluated_room?: Array<UnevaluatedRoom>;
   pagination?: base.PaginationResponse;
 }

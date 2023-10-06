@@ -23,10 +23,10 @@ public interface ListUnevaluatedRoomResponseOrBuilder extends
   com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder();
 
   /**
-   * <code>int64 liveing_total = 2;</code>
-   * @return The liveingTotal.
+   * <code>int64 living_total = 2;</code>
+   * @return The livingTotal.
    */
-  long getLiveingTotal();
+  long getLivingTotal();
 
   /**
    * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 3;</code>

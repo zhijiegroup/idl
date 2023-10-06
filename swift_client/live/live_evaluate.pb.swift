@@ -607,7 +607,7 @@ struct GloryApi_ListUnevaluatedRoomResponse {
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
-  var liveingTotal: Int64 = 0
+  var livingTotal: Int64 = 0
 
   var unevaluatedRoom: [GloryApi_UnevaluatedRoom] = []
 
@@ -2518,7 +2518,7 @@ extension GloryApi_ListUnevaluatedRoomResponse: SwiftProtobuf.Message, SwiftProt
   static let protoMessageName: String = _protobuf_package + ".ListUnevaluatedRoomResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
-    2: .standard(proto: "liveing_total"),
+    2: .standard(proto: "living_total"),
     3: .standard(proto: "unevaluated_room"),
     100: .same(proto: "pagination"),
   ]
@@ -2530,7 +2530,7 @@ extension GloryApi_ListUnevaluatedRoomResponse: SwiftProtobuf.Message, SwiftProt
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.liveingTotal) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.livingTotal) }()
       case 3: try { try decoder.decodeRepeatedMessageField(value: &self.unevaluatedRoom) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
@@ -2546,8 +2546,8 @@ extension GloryApi_ListUnevaluatedRoomResponse: SwiftProtobuf.Message, SwiftProt
     try { if let v = self._baseResp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    if self.liveingTotal != 0 {
-      try visitor.visitSingularInt64Field(value: self.liveingTotal, fieldNumber: 2)
+    if self.livingTotal != 0 {
+      try visitor.visitSingularInt64Field(value: self.livingTotal, fieldNumber: 2)
     }
     if !self.unevaluatedRoom.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.unevaluatedRoom, fieldNumber: 3)
@@ -2560,7 +2560,7 @@ extension GloryApi_ListUnevaluatedRoomResponse: SwiftProtobuf.Message, SwiftProt
 
   static func ==(lhs: GloryApi_ListUnevaluatedRoomResponse, rhs: GloryApi_ListUnevaluatedRoomResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
-    if lhs.liveingTotal != rhs.liveingTotal {return false}
+    if lhs.livingTotal != rhs.livingTotal {return false}
     if lhs.unevaluatedRoom != rhs.unevaluatedRoom {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
