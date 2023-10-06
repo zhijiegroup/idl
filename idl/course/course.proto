@@ -51,6 +51,7 @@ message GetCourseRequest {
 message GetCourseResponse {
   base.BaseResponse base_resp = 1;
   Course course = 2;
+  bool is_joined = 3;
 }
 
 // 更新模块化课程
