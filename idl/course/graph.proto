@@ -12,6 +12,7 @@ message Node {
     string value = 5;
     string type = 6;
     int32 weight = 7; // 节点权重值
+    NodeDetail detail = 8;
 }
 
 message Edge {
