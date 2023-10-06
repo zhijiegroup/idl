@@ -72,7 +72,17 @@ private static final long serialVersionUID = 0L;
           }
           case 24: {
 
-            courseProgress = input.readInt32();
+            chapterResourceId = input.readInt64();
+            break;
+          }
+          case 37: {
+
+            chapterResourceProgress = input.readFloat();
+            break;
+          }
+          case 45: {
+
+            chapterResourceDuration = input.readFloat();
             break;
           }
           default: {
@@ -148,19 +158,49 @@ private static final long serialVersionUID = 0L;
     return courseId ;
   }
 
-  public static final int COURSE_PROGRESS_FIELD_NUMBER = 3;
-  private int courseProgress ;
+  public static final int CHAPTER_RESOURCE_ID_FIELD_NUMBER = 3;
+  private long chapterResourceId ;
   /**
    * <pre>
-   * 课程进度：0-100
+   * 当前课程资源ID
    * </pre>
    *
-   * <code>int32 course_progress = 3;</code>
-   * @return The courseProgress.
+   * <code>int64 chapter_resource_id = 3;</code>
+   * @return The chapterResourceId.
    */
   @java.lang.Override
-  public int getCourseProgress() {
-    return courseProgress ;
+  public long getChapterResourceId() {
+    return chapterResourceId ;
+  }
+
+  public static final int CHAPTER_RESOURCE_PROGRESS_FIELD_NUMBER = 4;
+  private float chapterResourceProgress ;
+  /**
+   * <pre>
+   * 当前课程资源播放进度
+   * </pre>
+   *
+   * <code>float chapter_resource_progress = 4;</code>
+   * @return The chapterResourceProgress.
+   */
+  @java.lang.Override
+  public float getChapterResourceProgress() {
+    return chapterResourceProgress ;
+  }
+
+  public static final int CHAPTER_RESOURCE_DURATION_FIELD_NUMBER = 5;
+  private float chapterResourceDuration ;
+  /**
+   * <pre>
+   * 当前课程资源总时长
+   * </pre>
+   *
+   * <code>float chapter_resource_duration = 5;</code>
+   * @return The chapterResourceDuration.
+   */
+  @java.lang.Override
+  public float getChapterResourceDuration() {
+    return chapterResourceDuration ;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -183,8 +223,14 @@ private static final long serialVersionUID = 0L;
     if (courseId != 0L) {
       output.writeInt64(2, courseId );
     }
-    if (courseProgress != 0) {
-      output.writeInt32(3, courseProgress );
+    if (chapterResourceId != 0L) {
+      output.writeInt64(3, chapterResourceId );
+    }
+    if (chapterResourceProgress != 0F) {
+      output.writeFloat(4, chapterResourceProgress );
+    }
+    if (chapterResourceDuration != 0F) {
+      output.writeFloat(5, chapterResourceDuration );
     }
     unknownFields.writeTo(output);
   }
@@ -203,9 +249,17 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, courseId );
     }
-    if (courseProgress != 0) {
+    if (chapterResourceId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(3, courseProgress );
+        .computeInt64Size(3, chapterResourceId );
+    }
+    if (chapterResourceProgress != 0F) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeFloatSize(4, chapterResourceProgress );
+    }
+    if (chapterResourceDuration != 0F) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeFloatSize(5, chapterResourceDuration );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -229,8 +283,14 @@ private static final long serialVersionUID = 0L;
     }
     if (getCourseId()
         != other.getCourseId()) return false;
-    if (getCourseProgress()
-        != other.getCourseProgress()) return false;
+    if (getChapterResourceId()
+        != other.getChapterResourceId()) return false;
+    if (java.lang.Float.floatToIntBits(getChapterResourceProgress())
+        != java.lang.Float.floatToIntBits(
+            other.getChapterResourceProgress())) return false;
+    if (java.lang.Float.floatToIntBits(getChapterResourceDuration())
+        != java.lang.Float.floatToIntBits(
+            other.getChapterResourceDuration())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -249,8 +309,15 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + COURSE_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getCourseId());
-    hash = (37 * hash) + COURSE_PROGRESS_FIELD_NUMBER;
-    hash = (53 * hash) + getCourseProgress();
+    hash = (37 * hash) + CHAPTER_RESOURCE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getChapterResourceId());
+    hash = (37 * hash) + CHAPTER_RESOURCE_PROGRESS_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(
+        getChapterResourceProgress());
+    hash = (37 * hash) + CHAPTER_RESOURCE_DURATION_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(
+        getChapterResourceDuration());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -396,7 +463,11 @@ private static final long serialVersionUID = 0L;
       }
       courseId = 0L;
 
-      courseProgress = 0;
+      chapterResourceId = 0L;
+
+      chapterResourceProgress = 0F;
+
+      chapterResourceDuration = 0F;
 
       return this;
     }
@@ -430,7 +501,9 @@ private static final long serialVersionUID = 0L;
         result.baseRequest = baseRequestBuilder .build();
       }
       result.courseId = courseId ;
-      result.courseProgress = courseProgress ;
+      result.chapterResourceId = chapterResourceId ;
+      result.chapterResourceProgress = chapterResourceProgress ;
+      result.chapterResourceDuration = chapterResourceDuration ;
       onBuilt();
       return result;
     }
@@ -485,8 +558,14 @@ private static final long serialVersionUID = 0L;
       if (other.getCourseId() != 0L) {
         setCourseId(other.getCourseId());
       }
-      if (other.getCourseProgress() != 0) {
-        setCourseProgress(other.getCourseProgress());
+      if (other.getChapterResourceId() != 0L) {
+        setChapterResourceId(other.getChapterResourceId());
+      }
+      if (other.getChapterResourceProgress() != 0F) {
+        setChapterResourceProgress(other.getChapterResourceProgress());
+      }
+      if (other.getChapterResourceDuration() != 0F) {
+        setChapterResourceDuration(other.getChapterResourceDuration());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -679,45 +758,131 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int courseProgress ;
+    private long chapterResourceId ;
     /**
      * <pre>
-     * 课程进度：0-100
+     * 当前课程资源ID
      * </pre>
      *
-     * <code>int32 course_progress = 3;</code>
-     * @return The courseProgress.
+     * <code>int64 chapter_resource_id = 3;</code>
+     * @return The chapterResourceId.
      */
     @java.lang.Override
-    public int getCourseProgress() {
-      return courseProgress ;
+    public long getChapterResourceId() {
+      return chapterResourceId ;
     }
     /**
      * <pre>
-     * 课程进度：0-100
+     * 当前课程资源ID
      * </pre>
      *
-     * <code>int32 course_progress = 3;</code>
-     * @param value The courseProgress to set.
+     * <code>int64 chapter_resource_id = 3;</code>
+     * @param value The chapterResourceId to set.
      * @return This builder for chaining.
      */
-    public Builder setCourseProgress(int value) {
+    public Builder setChapterResourceId(long value) {
       
-      courseProgress = value;
+      chapterResourceId = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * 课程进度：0-100
+     * 当前课程资源ID
      * </pre>
      *
-     * <code>int32 course_progress = 3;</code>
+     * <code>int64 chapter_resource_id = 3;</code>
      * @return This builder for chaining.
      */
-    public Builder clearCourseProgress() {
+    public Builder clearChapterResourceId() {
       
-      courseProgress = 0;
+      chapterResourceId = 0L;
+      onChanged();
+      return this;
+    }
+
+    private float chapterResourceProgress ;
+    /**
+     * <pre>
+     * 当前课程资源播放进度
+     * </pre>
+     *
+     * <code>float chapter_resource_progress = 4;</code>
+     * @return The chapterResourceProgress.
+     */
+    @java.lang.Override
+    public float getChapterResourceProgress() {
+      return chapterResourceProgress ;
+    }
+    /**
+     * <pre>
+     * 当前课程资源播放进度
+     * </pre>
+     *
+     * <code>float chapter_resource_progress = 4;</code>
+     * @param value The chapterResourceProgress to set.
+     * @return This builder for chaining.
+     */
+    public Builder setChapterResourceProgress(float value) {
+      
+      chapterResourceProgress = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 当前课程资源播放进度
+     * </pre>
+     *
+     * <code>float chapter_resource_progress = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearChapterResourceProgress() {
+      
+      chapterResourceProgress = 0F;
+      onChanged();
+      return this;
+    }
+
+    private float chapterResourceDuration ;
+    /**
+     * <pre>
+     * 当前课程资源总时长
+     * </pre>
+     *
+     * <code>float chapter_resource_duration = 5;</code>
+     * @return The chapterResourceDuration.
+     */
+    @java.lang.Override
+    public float getChapterResourceDuration() {
+      return chapterResourceDuration ;
+    }
+    /**
+     * <pre>
+     * 当前课程资源总时长
+     * </pre>
+     *
+     * <code>float chapter_resource_duration = 5;</code>
+     * @param value The chapterResourceDuration to set.
+     * @return This builder for chaining.
+     */
+    public Builder setChapterResourceDuration(float value) {
+      
+      chapterResourceDuration = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 当前课程资源总时长
+     * </pre>
+     *
+     * <code>float chapter_resource_duration = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearChapterResourceDuration() {
+      
+      chapterResourceDuration = 0F;
       onChanged();
       return this;
     }

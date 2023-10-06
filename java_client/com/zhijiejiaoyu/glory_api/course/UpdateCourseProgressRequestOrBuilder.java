@@ -34,11 +34,31 @@ public interface UpdateCourseProgressRequestOrBuilder extends
 
   /**
    * <pre>
-   * 课程进度：0-100
+   * 当前课程资源ID
    * </pre>
    *
-   * <code>int32 course_progress = 3;</code>
-   * @return The courseProgress.
+   * <code>int64 chapter_resource_id = 3;</code>
+   * @return The chapterResourceId.
    */
-  int getCourseProgress();
+  long getChapterResourceId();
+
+  /**
+   * <pre>
+   * 当前课程资源播放进度
+   * </pre>
+   *
+   * <code>float chapter_resource_progress = 4;</code>
+   * @return The chapterResourceProgress.
+   */
+  float getChapterResourceProgress();
+
+  /**
+   * <pre>
+   * 当前课程资源总时长
+   * </pre>
+   *
+   * <code>float chapter_resource_duration = 5;</code>
+   * @return The chapterResourceDuration.
+   */
+  float getChapterResourceDuration();
 }

@@ -82,20 +82,23 @@ public final class UserCourse {
       "eMyCourseRequest\022\'\n\014base_request\030\001 \001(\0132\021" +
       ".base.BaseRequest\022\021\n\tcourse_id\030\002 \001(\003\"?\n\026" +
       "DeleteMyCourseResponse\022%\n\tbase_resp\030\001 \001(" +
-      "\0132\022.base.BaseResponse\"r\n\033UpdateCoursePro" +
-      "gressRequest\022\'\n\014base_request\030\001 \001(\0132\021.bas" +
-      "e.BaseRequest\022\021\n\tcourse_id\030\002 \001(\003\022\027\n\017cour" +
-      "se_progress\030\003 \001(\005\"E\n\034UpdateCourseProgres" +
-      "sResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Base" +
-      "Response\"\201\001\n\023ListMyCourseRequest\022\'\n\014base" +
-      "_request\030\001 \001(\0132\021.base.BaseRequest\022\024\n\014cou" +
-      "rse_state\030\002 \001(\005\022+\n\npagination\030d \001(\0132\027.ba" +
-      "se.PaginationRequest\"\237\001\n\024ListMyCourseRes" +
-      "ponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResp" +
-      "onse\0222\n\014user_courses\030\002 \003(\0132\034.glory_api.U" +
-      "serCourseSummary\022,\n\npagination\030d \001(\0132\030.b" +
-      "ase.PaginationResponseB%\n!com.zhijiejiao" +
-      "yu.glory_api.courseP\001b\006proto3"
+      "\0132\022.base.BaseResponse\"\274\001\n\033UpdateCoursePr" +
+      "ogressRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
+      "se.BaseRequest\022\021\n\tcourse_id\030\002 \001(\003\022\033\n\023cha" +
+      "pter_resource_id\030\003 \001(\003\022!\n\031chapter_resour" +
+      "ce_progress\030\004 \001(\002\022!\n\031chapter_resource_du" +
+      "ration\030\005 \001(\002\"^\n\034UpdateCourseProgressResp" +
+      "onse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespo" +
+      "nse\022\027\n\017course_progress\030\002 \001(\005\"\201\001\n\023ListMyC" +
+      "ourseRequest\022\'\n\014base_request\030\001 \001(\0132\021.bas" +
+      "e.BaseRequest\022\024\n\014course_state\030\002 \001(\005\022+\n\np" +
+      "agination\030d \001(\0132\027.base.PaginationRequest" +
+      "\"\237\001\n\024ListMyCourseResponse\022%\n\tbase_resp\030\001" +
+      " \001(\0132\022.base.BaseResponse\0222\n\014user_courses" +
+      "\030\002 \003(\0132\034.glory_api.UserCourseSummary\022,\n\n" +
+      "pagination\030d \001(\0132\030.base.PaginationRespon" +
+      "seB%\n!com.zhijiejiaoyu.glory_api.courseP" +
+      "\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -137,13 +140,13 @@ public final class UserCourse {
     internal_static_glory_api_UpdateCourseProgressRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateCourseProgressRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "CourseId", "CourseProgress", });
+        new java.lang.String[] { "BaseRequest", "CourseId", "ChapterResourceId", "ChapterResourceProgress", "ChapterResourceDuration", });
     internal_static_glory_api_UpdateCourseProgressResponse_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_glory_api_UpdateCourseProgressResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateCourseProgressResponse_descriptor,
-        new java.lang.String[] { "BaseResp", });
+        new java.lang.String[] { "BaseResp", "CourseProgress", });
     internal_static_glory_api_ListMyCourseRequest_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_glory_api_ListMyCourseRequest_fieldAccessorTable = new

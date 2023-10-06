@@ -61,6 +61,11 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 16: {
+
+            courseProgress = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -119,6 +124,21 @@ private static final long serialVersionUID = 0L;
     return getBaseResp();
   }
 
+  public static final int COURSE_PROGRESS_FIELD_NUMBER = 2;
+  private int courseProgress ;
+  /**
+   * <pre>
+   * 当前课程总进度
+   * </pre>
+   *
+   * <code>int32 course_progress = 2;</code>
+   * @return The courseProgress.
+   */
+  @java.lang.Override
+  public int getCourseProgress() {
+    return courseProgress ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -136,6 +156,9 @@ private static final long serialVersionUID = 0L;
     if (baseResp != null) {
       output.writeMessage(1, getBaseResp());
     }
+    if (courseProgress != 0) {
+      output.writeInt32(2, courseProgress );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -148,6 +171,10 @@ private static final long serialVersionUID = 0L;
     if (baseResp != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
+    }
+    if (courseProgress != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(2, courseProgress );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -169,6 +196,8 @@ private static final long serialVersionUID = 0L;
       if (!getBaseResp()
           .equals(other.getBaseResp())) return false;
     }
+    if (getCourseProgress()
+        != other.getCourseProgress()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -184,6 +213,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_RESP_FIELD_NUMBER;
       hash = (53 * hash) + getBaseResp().hashCode();
     }
+    hash = (37 * hash) + COURSE_PROGRESS_FIELD_NUMBER;
+    hash = (53 * hash) + getCourseProgress();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -323,6 +354,8 @@ private static final long serialVersionUID = 0L;
         baseResp = null;
         baseRespBuilder = null;
       }
+      courseProgress = 0;
+
       return this;
     }
 
@@ -354,6 +387,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.baseResp = baseRespBuilder .build();
       }
+      result.courseProgress = courseProgress ;
       onBuilt();
       return result;
     }
@@ -404,6 +438,9 @@ private static final long serialVersionUID = 0L;
       if (other == com.zhijiejiaoyu.glory_api.course.UpdateCourseProgressResponse.getDefaultInstance()) return this;
       if (other.hasBaseResp()) {
         mergeBaseResp(other.getBaseResp());
+      }
+      if (other.getCourseProgress() != 0) {
+        setCourseProgress(other.getCourseProgress());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -551,6 +588,49 @@ private static final long serialVersionUID = 0L;
         baseResp = null;
       }
       return baseRespBuilder ;
+    }
+
+    private int courseProgress ;
+    /**
+     * <pre>
+     * 当前课程总进度
+     * </pre>
+     *
+     * <code>int32 course_progress = 2;</code>
+     * @return The courseProgress.
+     */
+    @java.lang.Override
+    public int getCourseProgress() {
+      return courseProgress ;
+    }
+    /**
+     * <pre>
+     * 当前课程总进度
+     * </pre>
+     *
+     * <code>int32 course_progress = 2;</code>
+     * @param value The courseProgress to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCourseProgress(int value) {
+      
+      courseProgress = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 当前课程总进度
+     * </pre>
+     *
+     * <code>int32 course_progress = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCourseProgress() {
+      
+      courseProgress = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

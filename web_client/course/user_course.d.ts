@@ -53,12 +53,18 @@ export interface UpdateCourseProgressRequest {
   base_request?: base.BaseRequest;
   /** 课程ID */
   course_id?: string;
-  /** 课程进度：0-100 */
-  course_progress?: number;
+  /** 当前课程资源ID */
+  chapter_resource_id?: string;
+  /** 当前课程资源播放进度 */
+  chapter_resource_progress?: number;
+  /** 当前课程资源总时长 */
+  chapter_resource_duration?: number;
 }
 
 export interface UpdateCourseProgressResponse {
   base_resp?: base.BaseResponse;
+  /** 当前课程总进度 */
+  course_progress?: number;
 }
 
 /** 我的课程列表 */

@@ -21,4 +21,14 @@ public interface UpdateCourseProgressResponseOrBuilder extends
    * <code>.base.BaseResponse base_resp = 1;</code>
    */
   com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder();
+
+  /**
+   * <pre>
+   * 当前课程总进度
+   * </pre>
+   *
+   * <code>int32 course_progress = 2;</code>
+   * @return The courseProgress.
+   */
+  int getCourseProgress();
 }
