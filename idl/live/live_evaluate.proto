@@ -157,7 +157,7 @@ message ListUnevaluatedRoomRequest {
 
 message ListUnevaluatedRoomResponse {
     base.BaseResponse base_resp = 1;
-    int64 liveing_total = 2;
+    int64 living_total = 2;
     repeated UnevaluatedRoom unevaluated_room = 3;
     base.PaginationResponse pagination = 100;
 }
