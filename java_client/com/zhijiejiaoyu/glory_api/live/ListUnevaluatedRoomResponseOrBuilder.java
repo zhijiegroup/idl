@@ -23,25 +23,31 @@ public interface ListUnevaluatedRoomResponseOrBuilder extends
   com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder();
 
   /**
-   * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 2;</code>
+   * <code>int64 liveing_total = 2;</code>
+   * @return The liveingTotal.
+   */
+  long getLiveingTotal();
+
+  /**
+   * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 3;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.live.UnevaluatedRoom> 
       getUnevaluatedRoomList();
   /**
-   * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 2;</code>
+   * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 3;</code>
    */
   com.zhijiejiaoyu.glory_api.live.UnevaluatedRoom getUnevaluatedRoom(int index);
   /**
-   * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 2;</code>
+   * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 3;</code>
    */
   int getUnevaluatedRoomCount();
   /**
-   * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 2;</code>
+   * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 3;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.live.UnevaluatedRoomOrBuilder> 
       getUnevaluatedRoomOrBuilderList();
   /**
-   * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 2;</code>
+   * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 3;</code>
    */
   com.zhijiejiaoyu.glory_api.live.UnevaluatedRoomOrBuilder getUnevaluatedRoomOrBuilder(
       int index);

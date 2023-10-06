@@ -63,7 +63,12 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 18: {
+          case 16: {
+
+            liveingTotal = input.readInt64();
+            break;
+          }
+          case 26: {
             if (!((mutable_bitField0 & 0x00000001) != 0)) {
               unevaluatedRoom = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.live.UnevaluatedRoom>();
               mutable_bitField0_ |= 0x00000001;
@@ -146,17 +151,28 @@ private static final long serialVersionUID = 0L;
     return getBaseResp();
   }
 
-  public static final int UNEVALUATED_ROOM_FIELD_NUMBER = 2;
+  public static final int LIVEING_TOTAL_FIELD_NUMBER = 2;
+  private long liveingTotal ;
+  /**
+   * <code>int64 liveing_total = 2;</code>
+   * @return The liveingTotal.
+   */
+  @java.lang.Override
+  public long getLiveingTotal() {
+    return liveingTotal ;
+  }
+
+  public static final int UNEVALUATED_ROOM_FIELD_NUMBER = 3;
   private java.util.List<com.zhijiejiaoyu.glory_api.live.UnevaluatedRoom> unevaluatedRoom ;
   /**
-   * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 2;</code>
+   * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 3;</code>
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.live.UnevaluatedRoom> getUnevaluatedRoomList() {
     return unevaluatedRoom ;
   }
   /**
-   * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 2;</code>
+   * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 3;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.live.UnevaluatedRoomOrBuilder> 
@@ -164,21 +180,21 @@ private static final long serialVersionUID = 0L;
     return unevaluatedRoom ;
   }
   /**
-   * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 2;</code>
+   * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 3;</code>
    */
   @java.lang.Override
   public int getUnevaluatedRoomCount() {
     return unevaluatedRoom .size();
   }
   /**
-   * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 2;</code>
+   * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 3;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.live.UnevaluatedRoom getUnevaluatedRoom(int index) {
     return unevaluatedRoom .get(index);
   }
   /**
-   * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 2;</code>
+   * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 3;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.live.UnevaluatedRoomOrBuilder getUnevaluatedRoomOrBuilder(
@@ -229,8 +245,11 @@ private static final long serialVersionUID = 0L;
     if (baseResp != null) {
       output.writeMessage(1, getBaseResp());
     }
+    if (liveingTotal != 0L) {
+      output.writeInt64(2, liveingTotal );
+    }
     for (int i = 0; i < unevaluatedRoom .size(); i++) {
-      output.writeMessage(2, unevaluatedRoom .get(i));
+      output.writeMessage(3, unevaluatedRoom .get(i));
     }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
@@ -248,9 +267,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
+    if (liveingTotal != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(2, liveingTotal );
+    }
     for (int i = 0; i < unevaluatedRoom .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, unevaluatedRoom .get(i));
+        .computeMessageSize(3, unevaluatedRoom .get(i));
     }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -276,6 +299,8 @@ private static final long serialVersionUID = 0L;
       if (!getBaseResp()
           .equals(other.getBaseResp())) return false;
     }
+    if (getLiveingTotal()
+        != other.getLiveingTotal()) return false;
     if (!getUnevaluatedRoomList()
         .equals(other.getUnevaluatedRoomList())) return false;
     if (hasPagination() != other.hasPagination()) return false;
@@ -298,6 +323,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_RESP_FIELD_NUMBER;
       hash = (53 * hash) + getBaseResp().hashCode();
     }
+    hash = (37 * hash) + LIVEING_TOTAL_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getLiveingTotal());
     if (getUnevaluatedRoomCount() > 0) {
       hash = (37 * hash) + UNEVALUATED_ROOM_FIELD_NUMBER;
       hash = (53 * hash) + getUnevaluatedRoomList().hashCode();
@@ -446,6 +474,8 @@ private static final long serialVersionUID = 0L;
         baseResp = null;
         baseRespBuilder = null;
       }
+      liveingTotal = 0L;
+
       if (unevaluatedRoomBuilder == null) {
         unevaluatedRoom = java.util.Collections.emptyList();
         bitField0 = (bitField0 & ~0x00000001);
@@ -490,6 +520,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.baseResp = baseRespBuilder .build();
       }
+      result.liveingTotal = liveingTotal ;
       if (unevaluatedRoomBuilder == null) {
         if (((bitField0 & 0x00000001) != 0)) {
           unevaluatedRoom = java.util.Collections.unmodifiableList(unevaluatedRoom );
@@ -554,6 +585,9 @@ private static final long serialVersionUID = 0L;
       if (other == com.zhijiejiaoyu.glory_api.live.ListUnevaluatedRoomResponse.getDefaultInstance()) return this;
       if (other.hasBaseResp()) {
         mergeBaseResp(other.getBaseResp());
+      }
+      if (other.getLiveingTotal() != 0L) {
+        setLiveingTotal(other.getLiveingTotal());
       }
       if (unevaluatedRoomBuilder == null) {
         if (!other.unevaluatedRoom .isEmpty()) {
@@ -733,6 +767,37 @@ private static final long serialVersionUID = 0L;
       return baseRespBuilder ;
     }
 
+    private long liveingTotal ;
+    /**
+     * <code>int64 liveing_total = 2;</code>
+     * @return The liveingTotal.
+     */
+    @java.lang.Override
+    public long getLiveingTotal() {
+      return liveingTotal ;
+    }
+    /**
+     * <code>int64 liveing_total = 2;</code>
+     * @param value The liveingTotal to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLiveingTotal(long value) {
+      
+      liveingTotal = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 liveing_total = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearLiveingTotal() {
+      
+      liveingTotal = 0L;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.zhijiejiaoyu.glory_api.live.UnevaluatedRoom> unevaluatedRoom =
       java.util.Collections.emptyList();
     private void ensureUnevaluatedRoomIsMutable() {
@@ -746,7 +811,7 @@ private static final long serialVersionUID = 0L;
         com.zhijiejiaoyu.glory_api.live.UnevaluatedRoom, com.zhijiejiaoyu.glory_api.live.UnevaluatedRoom.Builder, com.zhijiejiaoyu.glory_api.live.UnevaluatedRoomOrBuilder> unevaluatedRoomBuilder ;
 
     /**
-     * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 2;</code>
+     * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 3;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.live.UnevaluatedRoom> getUnevaluatedRoomList() {
       if (unevaluatedRoomBuilder == null) {
@@ -756,7 +821,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 2;</code>
+     * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 3;</code>
      */
     public int getUnevaluatedRoomCount() {
       if (unevaluatedRoomBuilder == null) {
@@ -766,7 +831,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 2;</code>
+     * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 3;</code>
      */
     public com.zhijiejiaoyu.glory_api.live.UnevaluatedRoom getUnevaluatedRoom(int index) {
       if (unevaluatedRoomBuilder == null) {
@@ -776,7 +841,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 2;</code>
+     * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 3;</code>
      */
     public Builder setUnevaluatedRoom(
         int index, com.zhijiejiaoyu.glory_api.live.UnevaluatedRoom value) {
@@ -793,7 +858,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 2;</code>
+     * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 3;</code>
      */
     public Builder setUnevaluatedRoom(
         int index, com.zhijiejiaoyu.glory_api.live.UnevaluatedRoom.Builder builderForValue) {
@@ -807,7 +872,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 2;</code>
+     * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 3;</code>
      */
     public Builder addUnevaluatedRoom(com.zhijiejiaoyu.glory_api.live.UnevaluatedRoom value) {
       if (unevaluatedRoomBuilder == null) {
@@ -823,7 +888,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 2;</code>
+     * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 3;</code>
      */
     public Builder addUnevaluatedRoom(
         int index, com.zhijiejiaoyu.glory_api.live.UnevaluatedRoom value) {
@@ -840,7 +905,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 2;</code>
+     * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 3;</code>
      */
     public Builder addUnevaluatedRoom(
         com.zhijiejiaoyu.glory_api.live.UnevaluatedRoom.Builder builderForValue) {
@@ -854,7 +919,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 2;</code>
+     * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 3;</code>
      */
     public Builder addUnevaluatedRoom(
         int index, com.zhijiejiaoyu.glory_api.live.UnevaluatedRoom.Builder builderForValue) {
@@ -868,7 +933,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 2;</code>
+     * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 3;</code>
      */
     public Builder addAllUnevaluatedRoom(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.live.UnevaluatedRoom> values) {
@@ -883,7 +948,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 2;</code>
+     * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 3;</code>
      */
     public Builder clearUnevaluatedRoom() {
       if (unevaluatedRoomBuilder == null) {
@@ -896,7 +961,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 2;</code>
+     * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 3;</code>
      */
     public Builder removeUnevaluatedRoom(int index) {
       if (unevaluatedRoomBuilder == null) {
@@ -909,14 +974,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 2;</code>
+     * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 3;</code>
      */
     public com.zhijiejiaoyu.glory_api.live.UnevaluatedRoom.Builder getUnevaluatedRoomBuilder(
         int index) {
       return getUnevaluatedRoomFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 2;</code>
+     * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 3;</code>
      */
     public com.zhijiejiaoyu.glory_api.live.UnevaluatedRoomOrBuilder getUnevaluatedRoomOrBuilder(
         int index) {
@@ -926,7 +991,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 2;</code>
+     * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 3;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.live.UnevaluatedRoomOrBuilder> 
          getUnevaluatedRoomOrBuilderList() {
@@ -937,14 +1002,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 2;</code>
+     * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 3;</code>
      */
     public com.zhijiejiaoyu.glory_api.live.UnevaluatedRoom.Builder addUnevaluatedRoomBuilder() {
       return getUnevaluatedRoomFieldBuilder().addBuilder(
           com.zhijiejiaoyu.glory_api.live.UnevaluatedRoom.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 2;</code>
+     * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 3;</code>
      */
     public com.zhijiejiaoyu.glory_api.live.UnevaluatedRoom.Builder addUnevaluatedRoomBuilder(
         int index) {
@@ -952,7 +1017,7 @@ private static final long serialVersionUID = 0L;
           index, com.zhijiejiaoyu.glory_api.live.UnevaluatedRoom.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 2;</code>
+     * <code>repeated .glory_api.UnevaluatedRoom unevaluated_room = 3;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.live.UnevaluatedRoom.Builder> 
          getUnevaluatedRoomBuilderList() {

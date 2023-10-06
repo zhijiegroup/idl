@@ -331,48 +331,95 @@ struct GloryApi_GetEvaluateDetailResponse {
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
-    set {_baseResp = newValue}
+    get {return _storage._baseResp ?? Base_BaseResponse()}
+    set {_uniqueStorage()._baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {return _storage._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
-  mutating func clearBaseResp() {self._baseResp = nil}
+  mutating func clearBaseResp() {_uniqueStorage()._baseResp = nil}
 
   /// temp：暂存 submit: 提交  template：仅模版数据
-  var type: String = String()
+  var type: String {
+    get {return _storage._type}
+    set {_uniqueStorage()._type = newValue}
+  }
 
-  var evaluateID: Int64 = 0
+  var evaluateID: Int64 {
+    get {return _storage._evaluateID}
+    set {_uniqueStorage()._evaluateID = newValue}
+  }
 
-  var templateID: Int64 = 0
+  var templateID: Int64 {
+    get {return _storage._templateID}
+    set {_uniqueStorage()._templateID = newValue}
+  }
 
-  var userID: Int64 = 0
+  var userID: Int64 {
+    get {return _storage._userID}
+    set {_uniqueStorage()._userID = newValue}
+  }
 
-  var extraScore: Double = 0
+  var extraScore: Double {
+    get {return _storage._extraScore}
+    set {_uniqueStorage()._extraScore = newValue}
+  }
 
-  var extraComment: String = String()
+  var extraComment: String {
+    get {return _storage._extraComment}
+    set {_uniqueStorage()._extraComment = newValue}
+  }
 
-  var zeroComment: String = String()
+  var zeroComment: String {
+    get {return _storage._zeroComment}
+    set {_uniqueStorage()._zeroComment = newValue}
+  }
 
-  var score: Double = 0
+  var score: Double {
+    get {return _storage._score}
+    set {_uniqueStorage()._score = newValue}
+  }
 
-  var aiFeedback: String = String()
+  var aiFeedback: String {
+    get {return _storage._aiFeedback}
+    set {_uniqueStorage()._aiFeedback = newValue}
+  }
 
-  var baseline: Bool = false
+  var baseline: Bool {
+    get {return _storage._baseline}
+    set {_uniqueStorage()._baseline = newValue}
+  }
 
-  var aiFeedbackID: Int64 = 0
+  var aiFeedbackID: Int64 {
+    get {return _storage._aiFeedbackID}
+    set {_uniqueStorage()._aiFeedbackID = newValue}
+  }
 
-  var createdUser: String = String()
+  var createdUser: String {
+    get {return _storage._createdUser}
+    set {_uniqueStorage()._createdUser = newValue}
+  }
 
-  var aiResult: [GloryApi_AiResult] = []
+  var anchor: String {
+    get {return _storage._anchor}
+    set {_uniqueStorage()._anchor = newValue}
+  }
 
-  var detail: [GloryApi_EvaluateDetail] = []
+  var aiResult: [GloryApi_AiResult] {
+    get {return _storage._aiResult}
+    set {_uniqueStorage()._aiResult = newValue}
+  }
+
+  var detail: [GloryApi_EvaluateDetail] {
+    get {return _storage._detail}
+    set {_uniqueStorage()._detail = newValue}
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 struct GloryApi_SubmitEvaluateRequest {
@@ -559,6 +606,8 @@ struct GloryApi_ListUnevaluatedRoomResponse {
   var hasBaseResp: Bool {return self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
+
+  var liveingTotal: Int64 = 0
 
   var unevaluatedRoom: [GloryApi_UnevaluatedRoom] = []
 
@@ -1949,105 +1998,173 @@ extension GloryApi_GetEvaluateDetailResponse: SwiftProtobuf.Message, SwiftProtob
     11: .same(proto: "baseline"),
     12: .standard(proto: "ai_feedback_id"),
     13: .standard(proto: "created_user"),
-    14: .standard(proto: "ai_result"),
+    14: .same(proto: "anchor"),
+    15: .standard(proto: "ai_result"),
     100: .same(proto: "detail"),
   ]
 
+  fileprivate class _StorageClass {
+    var _baseResp: Base_BaseResponse? = nil
+    var _type: String = String()
+    var _evaluateID: Int64 = 0
+    var _templateID: Int64 = 0
+    var _userID: Int64 = 0
+    var _extraScore: Double = 0
+    var _extraComment: String = String()
+    var _zeroComment: String = String()
+    var _score: Double = 0
+    var _aiFeedback: String = String()
+    var _baseline: Bool = false
+    var _aiFeedbackID: Int64 = 0
+    var _createdUser: String = String()
+    var _anchor: String = String()
+    var _aiResult: [GloryApi_AiResult] = []
+    var _detail: [GloryApi_EvaluateDetail] = []
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _baseResp = source._baseResp
+      _type = source._type
+      _evaluateID = source._evaluateID
+      _templateID = source._templateID
+      _userID = source._userID
+      _extraScore = source._extraScore
+      _extraComment = source._extraComment
+      _zeroComment = source._zeroComment
+      _score = source._score
+      _aiFeedback = source._aiFeedback
+      _baseline = source._baseline
+      _aiFeedbackID = source._aiFeedbackID
+      _createdUser = source._createdUser
+      _anchor = source._anchor
+      _aiResult = source._aiResult
+      _detail = source._detail
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.type) }()
-      case 3: try { try decoder.decodeSingularInt64Field(value: &self.evaluateID) }()
-      case 4: try { try decoder.decodeSingularInt64Field(value: &self.templateID) }()
-      case 5: try { try decoder.decodeSingularInt64Field(value: &self.userID) }()
-      case 6: try { try decoder.decodeSingularDoubleField(value: &self.extraScore) }()
-      case 7: try { try decoder.decodeSingularStringField(value: &self.extraComment) }()
-      case 8: try { try decoder.decodeSingularStringField(value: &self.zeroComment) }()
-      case 9: try { try decoder.decodeSingularDoubleField(value: &self.score) }()
-      case 10: try { try decoder.decodeSingularStringField(value: &self.aiFeedback) }()
-      case 11: try { try decoder.decodeSingularBoolField(value: &self.baseline) }()
-      case 12: try { try decoder.decodeSingularInt64Field(value: &self.aiFeedbackID) }()
-      case 13: try { try decoder.decodeSingularStringField(value: &self.createdUser) }()
-      case 14: try { try decoder.decodeRepeatedMessageField(value: &self.aiResult) }()
-      case 100: try { try decoder.decodeRepeatedMessageField(value: &self.detail) }()
-      default: break
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        // The use of inline closures is to circumvent an issue where the compiler
+        // allocates stack space for every case branch when no optimizations are
+        // enabled. https://github.com/apple/swift-protobuf/issues/1034
+        switch fieldNumber {
+        case 1: try { try decoder.decodeSingularMessageField(value: &_storage._baseResp) }()
+        case 2: try { try decoder.decodeSingularStringField(value: &_storage._type) }()
+        case 3: try { try decoder.decodeSingularInt64Field(value: &_storage._evaluateID) }()
+        case 4: try { try decoder.decodeSingularInt64Field(value: &_storage._templateID) }()
+        case 5: try { try decoder.decodeSingularInt64Field(value: &_storage._userID) }()
+        case 6: try { try decoder.decodeSingularDoubleField(value: &_storage._extraScore) }()
+        case 7: try { try decoder.decodeSingularStringField(value: &_storage._extraComment) }()
+        case 8: try { try decoder.decodeSingularStringField(value: &_storage._zeroComment) }()
+        case 9: try { try decoder.decodeSingularDoubleField(value: &_storage._score) }()
+        case 10: try { try decoder.decodeSingularStringField(value: &_storage._aiFeedback) }()
+        case 11: try { try decoder.decodeSingularBoolField(value: &_storage._baseline) }()
+        case 12: try { try decoder.decodeSingularInt64Field(value: &_storage._aiFeedbackID) }()
+        case 13: try { try decoder.decodeSingularStringField(value: &_storage._createdUser) }()
+        case 14: try { try decoder.decodeSingularStringField(value: &_storage._anchor) }()
+        case 15: try { try decoder.decodeRepeatedMessageField(value: &_storage._aiResult) }()
+        case 100: try { try decoder.decodeRepeatedMessageField(value: &_storage._detail) }()
+        default: break
+        }
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._baseResp {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    if !self.type.isEmpty {
-      try visitor.visitSingularStringField(value: self.type, fieldNumber: 2)
-    }
-    if self.evaluateID != 0 {
-      try visitor.visitSingularInt64Field(value: self.evaluateID, fieldNumber: 3)
-    }
-    if self.templateID != 0 {
-      try visitor.visitSingularInt64Field(value: self.templateID, fieldNumber: 4)
-    }
-    if self.userID != 0 {
-      try visitor.visitSingularInt64Field(value: self.userID, fieldNumber: 5)
-    }
-    if self.extraScore != 0 {
-      try visitor.visitSingularDoubleField(value: self.extraScore, fieldNumber: 6)
-    }
-    if !self.extraComment.isEmpty {
-      try visitor.visitSingularStringField(value: self.extraComment, fieldNumber: 7)
-    }
-    if !self.zeroComment.isEmpty {
-      try visitor.visitSingularStringField(value: self.zeroComment, fieldNumber: 8)
-    }
-    if self.score != 0 {
-      try visitor.visitSingularDoubleField(value: self.score, fieldNumber: 9)
-    }
-    if !self.aiFeedback.isEmpty {
-      try visitor.visitSingularStringField(value: self.aiFeedback, fieldNumber: 10)
-    }
-    if self.baseline != false {
-      try visitor.visitSingularBoolField(value: self.baseline, fieldNumber: 11)
-    }
-    if self.aiFeedbackID != 0 {
-      try visitor.visitSingularInt64Field(value: self.aiFeedbackID, fieldNumber: 12)
-    }
-    if !self.createdUser.isEmpty {
-      try visitor.visitSingularStringField(value: self.createdUser, fieldNumber: 13)
-    }
-    if !self.aiResult.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.aiResult, fieldNumber: 14)
-    }
-    if !self.detail.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.detail, fieldNumber: 100)
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
+      try { if let v = _storage._baseResp {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+      } }()
+      if !_storage._type.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._type, fieldNumber: 2)
+      }
+      if _storage._evaluateID != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._evaluateID, fieldNumber: 3)
+      }
+      if _storage._templateID != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._templateID, fieldNumber: 4)
+      }
+      if _storage._userID != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._userID, fieldNumber: 5)
+      }
+      if _storage._extraScore != 0 {
+        try visitor.visitSingularDoubleField(value: _storage._extraScore, fieldNumber: 6)
+      }
+      if !_storage._extraComment.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._extraComment, fieldNumber: 7)
+      }
+      if !_storage._zeroComment.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._zeroComment, fieldNumber: 8)
+      }
+      if _storage._score != 0 {
+        try visitor.visitSingularDoubleField(value: _storage._score, fieldNumber: 9)
+      }
+      if !_storage._aiFeedback.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._aiFeedback, fieldNumber: 10)
+      }
+      if _storage._baseline != false {
+        try visitor.visitSingularBoolField(value: _storage._baseline, fieldNumber: 11)
+      }
+      if _storage._aiFeedbackID != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._aiFeedbackID, fieldNumber: 12)
+      }
+      if !_storage._createdUser.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._createdUser, fieldNumber: 13)
+      }
+      if !_storage._anchor.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._anchor, fieldNumber: 14)
+      }
+      if !_storage._aiResult.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._aiResult, fieldNumber: 15)
+      }
+      if !_storage._detail.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._detail, fieldNumber: 100)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_GetEvaluateDetailResponse, rhs: GloryApi_GetEvaluateDetailResponse) -> Bool {
-    if lhs._baseResp != rhs._baseResp {return false}
-    if lhs.type != rhs.type {return false}
-    if lhs.evaluateID != rhs.evaluateID {return false}
-    if lhs.templateID != rhs.templateID {return false}
-    if lhs.userID != rhs.userID {return false}
-    if lhs.extraScore != rhs.extraScore {return false}
-    if lhs.extraComment != rhs.extraComment {return false}
-    if lhs.zeroComment != rhs.zeroComment {return false}
-    if lhs.score != rhs.score {return false}
-    if lhs.aiFeedback != rhs.aiFeedback {return false}
-    if lhs.baseline != rhs.baseline {return false}
-    if lhs.aiFeedbackID != rhs.aiFeedbackID {return false}
-    if lhs.createdUser != rhs.createdUser {return false}
-    if lhs.aiResult != rhs.aiResult {return false}
-    if lhs.detail != rhs.detail {return false}
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._baseResp != rhs_storage._baseResp {return false}
+        if _storage._type != rhs_storage._type {return false}
+        if _storage._evaluateID != rhs_storage._evaluateID {return false}
+        if _storage._templateID != rhs_storage._templateID {return false}
+        if _storage._userID != rhs_storage._userID {return false}
+        if _storage._extraScore != rhs_storage._extraScore {return false}
+        if _storage._extraComment != rhs_storage._extraComment {return false}
+        if _storage._zeroComment != rhs_storage._zeroComment {return false}
+        if _storage._score != rhs_storage._score {return false}
+        if _storage._aiFeedback != rhs_storage._aiFeedback {return false}
+        if _storage._baseline != rhs_storage._baseline {return false}
+        if _storage._aiFeedbackID != rhs_storage._aiFeedbackID {return false}
+        if _storage._createdUser != rhs_storage._createdUser {return false}
+        if _storage._anchor != rhs_storage._anchor {return false}
+        if _storage._aiResult != rhs_storage._aiResult {return false}
+        if _storage._detail != rhs_storage._detail {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -2401,7 +2518,8 @@ extension GloryApi_ListUnevaluatedRoomResponse: SwiftProtobuf.Message, SwiftProt
   static let protoMessageName: String = _protobuf_package + ".ListUnevaluatedRoomResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
-    2: .standard(proto: "unevaluated_room"),
+    2: .standard(proto: "liveing_total"),
+    3: .standard(proto: "unevaluated_room"),
     100: .same(proto: "pagination"),
   ]
 
@@ -2412,7 +2530,8 @@ extension GloryApi_ListUnevaluatedRoomResponse: SwiftProtobuf.Message, SwiftProt
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
-      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.unevaluatedRoom) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.liveingTotal) }()
+      case 3: try { try decoder.decodeRepeatedMessageField(value: &self.unevaluatedRoom) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -2427,8 +2546,11 @@ extension GloryApi_ListUnevaluatedRoomResponse: SwiftProtobuf.Message, SwiftProt
     try { if let v = self._baseResp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
+    if self.liveingTotal != 0 {
+      try visitor.visitSingularInt64Field(value: self.liveingTotal, fieldNumber: 2)
+    }
     if !self.unevaluatedRoom.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.unevaluatedRoom, fieldNumber: 2)
+      try visitor.visitRepeatedMessageField(value: self.unevaluatedRoom, fieldNumber: 3)
     }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
@@ -2438,6 +2560,7 @@ extension GloryApi_ListUnevaluatedRoomResponse: SwiftProtobuf.Message, SwiftProt
 
   static func ==(lhs: GloryApi_ListUnevaluatedRoomResponse, rhs: GloryApi_ListUnevaluatedRoomResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.liveingTotal != rhs.liveingTotal {return false}
     if lhs.unevaluatedRoom != rhs.unevaluatedRoom {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

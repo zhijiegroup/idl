@@ -106,6 +106,7 @@ export interface GetEvaluateDetailResponse {
   baseline?: boolean;
   ai_feedback_id?: string;
   created_user?: string;
+  anchor?: string;
   ai_result?: Array<AiResult>;
   detail?: Array<EvaluateDetail>;
 }
@@ -160,6 +161,7 @@ export interface ListUnevaluatedRoomRequest {
 
 export interface ListUnevaluatedRoomResponse {
   base_resp?: base.BaseResponse;
+  liveing_total?: string;
   unevaluated_room?: Array<UnevaluatedRoom>;
   pagination?: base.PaginationResponse;
 }

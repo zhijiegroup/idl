@@ -133,25 +133,37 @@ public interface GetEvaluateDetailResponseOrBuilder extends
       getCreatedUserBytes();
 
   /**
-   * <code>repeated .glory_api.AiResult ai_result = 14;</code>
+   * <code>string anchor = 14;</code>
+   * @return The anchor.
+   */
+  java.lang.String getAnchor();
+  /**
+   * <code>string anchor = 14;</code>
+   * @return The bytes for anchor.
+   */
+  com.google.protobuf.ByteString
+      getAnchorBytes();
+
+  /**
+   * <code>repeated .glory_api.AiResult ai_result = 15;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.live.AiResult> 
       getAiResultList();
   /**
-   * <code>repeated .glory_api.AiResult ai_result = 14;</code>
+   * <code>repeated .glory_api.AiResult ai_result = 15;</code>
    */
   com.zhijiejiaoyu.glory_api.live.AiResult getAiResult(int index);
   /**
-   * <code>repeated .glory_api.AiResult ai_result = 14;</code>
+   * <code>repeated .glory_api.AiResult ai_result = 15;</code>
    */
   int getAiResultCount();
   /**
-   * <code>repeated .glory_api.AiResult ai_result = 14;</code>
+   * <code>repeated .glory_api.AiResult ai_result = 15;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.live.AiResultOrBuilder> 
       getAiResultOrBuilderList();
   /**
-   * <code>repeated .glory_api.AiResult ai_result = 14;</code>
+   * <code>repeated .glory_api.AiResult ai_result = 15;</code>
    */
   com.zhijiejiaoyu.glory_api.live.AiResultOrBuilder getAiResultOrBuilder(
       int index);
