@@ -68,6 +68,7 @@ export interface GetCourseRequest {
 export interface GetCourseResponse {
   base_resp?: base.BaseResponse;
   course?: Course;
+  is_joined?: boolean;
 }
 
 /** 更新模块化课程 */

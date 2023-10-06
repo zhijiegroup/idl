@@ -253,6 +253,8 @@ struct GloryApi_GetCourseResponse {
   /// Clears the value of `course`. Subsequent reads from it will return its default value.
   mutating func clearCourse() {self._course = nil}
 
+  var isJoined: Bool = false
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1015,6 +1017,7 @@ extension GloryApi_GetCourseResponse: SwiftProtobuf.Message, SwiftProtobuf._Mess
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
     2: .same(proto: "course"),
+    3: .standard(proto: "is_joined"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1025,6 +1028,7 @@ extension GloryApi_GetCourseResponse: SwiftProtobuf.Message, SwiftProtobuf._Mess
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
       case 2: try { try decoder.decodeSingularMessageField(value: &self._course) }()
+      case 3: try { try decoder.decodeSingularBoolField(value: &self.isJoined) }()
       default: break
       }
     }
@@ -1041,12 +1045,16 @@ extension GloryApi_GetCourseResponse: SwiftProtobuf.Message, SwiftProtobuf._Mess
     try { if let v = self._course {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
     } }()
+    if self.isJoined != false {
+      try visitor.visitSingularBoolField(value: self.isJoined, fieldNumber: 3)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_GetCourseResponse, rhs: GloryApi_GetCourseResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs._course != rhs._course {return false}
+    if lhs.isJoined != rhs.isJoined {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

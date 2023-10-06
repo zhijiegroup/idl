@@ -36,4 +36,10 @@ public interface GetCourseResponseOrBuilder extends
    * <code>.glory_api.Course course = 2;</code>
    */
   com.zhijiejiaoyu.glory_api.course.CourseOrBuilder getCourseOrBuilder();
+
+  /**
+   * <code>bool is_joined = 3;</code>
+   * @return The isJoined.
+   */
+  boolean getIsJoined();
 }
