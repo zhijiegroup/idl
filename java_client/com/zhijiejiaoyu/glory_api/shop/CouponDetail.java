@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
     couponStatus = "";
     distributedStatus = "";
     shopName = "";
+    shopType = "";
     productIds = emptyLongList();
   }
 
@@ -152,7 +153,13 @@ private static final long serialVersionUID = 0L;
             shopName = s;
             break;
           }
-          case 152: {
+          case 154: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            shopType = s;
+            break;
+          }
+          case 160: {
             if (!((mutable_bitField0 & 0x00000001) != 0)) {
               productIds = newLongList();
               mutable_bitField0_ |= 0x00000001;
@@ -160,7 +167,7 @@ private static final long serialVersionUID = 0L;
             productIds .addLong(input.readInt64());
             break;
           }
-          case 154: {
+          case 162: {
             int length = input.readRawVarint32();
             int limit = input.pushLimit(length);
             if (!((mutable_bitField0 & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -568,10 +575,48 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int PRODUCT_IDS_FIELD_NUMBER = 19;
+  public static final int SHOP_TYPE_FIELD_NUMBER = 19;
+  private volatile java.lang.Object shopType ;
+  /**
+   * <code>string shop_type = 19;</code>
+   * @return The shopType.
+   */
+  @java.lang.Override
+  public java.lang.String getShopType() {
+    java.lang.Object ref = shopType ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      shopType = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string shop_type = 19;</code>
+   * @return The bytes for shopType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getShopTypeBytes() {
+    java.lang.Object ref = shopType ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      shopType = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PRODUCT_IDS_FIELD_NUMBER = 20;
   private com.google.protobuf.Internal.LongList productIds ;
   /**
-   * <code>repeated int64 product_ids = 19;</code>
+   * <code>repeated int64 product_ids = 20;</code>
    * @return A list containing the productIds.
    */
   @java.lang.Override
@@ -580,14 +625,14 @@ private static final long serialVersionUID = 0L;
     return productIds ;
   }
   /**
-   * <code>repeated int64 product_ids = 19;</code>
+   * <code>repeated int64 product_ids = 20;</code>
    * @return The count of productIds.
    */
   public int getProductIdsCount() {
     return productIds .size();
   }
   /**
-   * <code>repeated int64 product_ids = 19;</code>
+   * <code>repeated int64 product_ids = 20;</code>
    * @param index The index of the element to return.
    * @return The productIds at the given index.
    */
@@ -665,8 +710,11 @@ private static final long serialVersionUID = 0L;
     if (!getShopNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18, shopName );
     }
+    if (!getShopTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 19, shopType );
+    }
     if (getProductIdsList().size() > 0) {
-      output.writeUInt32NoTag(154);
+      output.writeUInt32NoTag(162);
       output.writeUInt32NoTag(productIdsMemoizedSerializedSize);
     }
     for (int i = 0; i < productIds .size(); i++) {
@@ -747,6 +795,9 @@ private static final long serialVersionUID = 0L;
     if (!getShopNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, shopName );
     }
+    if (!getShopTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, shopType );
+    }
     {
       int dataSize = 0;
       for (int i = 0; i < productIds .size(); i++) {
@@ -814,6 +865,8 @@ private static final long serialVersionUID = 0L;
         != other.getUsedTotal()) return false;
     if (!getShopName()
         .equals(other.getShopName())) return false;
+    if (!getShopType()
+        .equals(other.getShopType())) return false;
     if (!getProductIdsList()
         .equals(other.getProductIdsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -875,6 +928,8 @@ private static final long serialVersionUID = 0L;
         getUsedTotal());
     hash = (37 * hash) + SHOP_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getShopName().hashCode();
+    hash = (37 * hash) + SHOP_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getShopType().hashCode();
     if (getProductIdsCount() > 0) {
       hash = (37 * hash) + PRODUCT_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getProductIdsList().hashCode();
@@ -1048,6 +1103,8 @@ private static final long serialVersionUID = 0L;
 
       shopName = "";
 
+      shopType = "";
+
       productIds = emptyLongList();
       bitField0 = (bitField0 & ~0x00000001);
       return this;
@@ -1095,6 +1152,7 @@ private static final long serialVersionUID = 0L;
       result.distributedTotal = distributedTotal ;
       result.usedTotal = usedTotal ;
       result.shopName = shopName ;
+      result.shopType = shopType ;
       if (((bitField0 & 0x00000001) != 0)) {
         productIds .makeImmutable();
         bitField0 = (bitField0 & ~0x00000001);
@@ -1206,6 +1264,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getShopName().isEmpty()) {
         shopName = other.shopName ;
+        onChanged();
+      }
+      if (!other.getShopType().isEmpty()) {
+        shopType = other.shopType ;
         onChanged();
       }
       if (!other.productIds .isEmpty()) {
@@ -2076,6 +2138,82 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object shopType = "";
+    /**
+     * <code>string shop_type = 19;</code>
+     * @return The shopType.
+     */
+    public java.lang.String getShopType() {
+      java.lang.Object ref = shopType ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        shopType = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string shop_type = 19;</code>
+     * @return The bytes for shopType.
+     */
+    public com.google.protobuf.ByteString
+        getShopTypeBytes() {
+      java.lang.Object ref = shopType ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        shopType = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string shop_type = 19;</code>
+     * @param value The shopType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setShopType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      shopType = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string shop_type = 19;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearShopType() {
+      
+      shopType = getDefaultInstance().getShopType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string shop_type = 19;</code>
+     * @param value The bytes for shopType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setShopTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      shopType = value;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.Internal.LongList productIds = emptyLongList();
     private void ensureProductIdsIsMutable() {
       if (!((bitField0 & 0x00000001) != 0)) {
@@ -2084,7 +2222,7 @@ private static final long serialVersionUID = 0L;
        }
     }
     /**
-     * <code>repeated int64 product_ids = 19;</code>
+     * <code>repeated int64 product_ids = 20;</code>
      * @return A list containing the productIds.
      */
     public java.util.List<java.lang.Long>
@@ -2093,14 +2231,14 @@ private static final long serialVersionUID = 0L;
                java.util.Collections.unmodifiableList(productIds ) : productIds ;
     }
     /**
-     * <code>repeated int64 product_ids = 19;</code>
+     * <code>repeated int64 product_ids = 20;</code>
      * @return The count of productIds.
      */
     public int getProductIdsCount() {
       return productIds .size();
     }
     /**
-     * <code>repeated int64 product_ids = 19;</code>
+     * <code>repeated int64 product_ids = 20;</code>
      * @param index The index of the element to return.
      * @return The productIds at the given index.
      */
@@ -2108,7 +2246,7 @@ private static final long serialVersionUID = 0L;
       return productIds .getLong(index);
     }
     /**
-     * <code>repeated int64 product_ids = 19;</code>
+     * <code>repeated int64 product_ids = 20;</code>
      * @param index The index to set the value at.
      * @param value The productIds to set.
      * @return This builder for chaining.
@@ -2121,7 +2259,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated int64 product_ids = 19;</code>
+     * <code>repeated int64 product_ids = 20;</code>
      * @param value The productIds to add.
      * @return This builder for chaining.
      */
@@ -2132,7 +2270,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated int64 product_ids = 19;</code>
+     * <code>repeated int64 product_ids = 20;</code>
      * @param values The productIds to add.
      * @return This builder for chaining.
      */
@@ -2145,7 +2283,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated int64 product_ids = 19;</code>
+     * <code>repeated int64 product_ids = 20;</code>
      * @return This builder for chaining.
      */
     public Builder clearProductIds() {

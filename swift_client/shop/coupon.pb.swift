@@ -216,6 +216,11 @@ struct GloryApi_CouponDetail {
     set {_uniqueStorage()._shopName = newValue}
   }
 
+  var shopType: String {
+    get {return _storage._shopType}
+    set {_uniqueStorage()._shopType = newValue}
+  }
+
   var productIds: [Int64] {
     get {return _storage._productIds}
     set {_uniqueStorage()._productIds = newValue}
@@ -850,7 +855,8 @@ extension GloryApi_CouponDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     16: .standard(proto: "distributed_total"),
     17: .standard(proto: "used_total"),
     18: .standard(proto: "shop_name"),
-    19: .standard(proto: "product_ids"),
+    19: .standard(proto: "shop_type"),
+    20: .standard(proto: "product_ids"),
   ]
 
   fileprivate class _StorageClass {
@@ -872,6 +878,7 @@ extension GloryApi_CouponDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     var _distributedTotal: Int64 = 0
     var _usedTotal: Int64 = 0
     var _shopName: String = String()
+    var _shopType: String = String()
     var _productIds: [Int64] = []
 
     static let defaultInstance = _StorageClass()
@@ -897,6 +904,7 @@ extension GloryApi_CouponDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
       _distributedTotal = source._distributedTotal
       _usedTotal = source._usedTotal
       _shopName = source._shopName
+      _shopType = source._shopType
       _productIds = source._productIds
     }
   }
@@ -934,7 +942,8 @@ extension GloryApi_CouponDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
         case 16: try { try decoder.decodeSingularInt64Field(value: &_storage._distributedTotal) }()
         case 17: try { try decoder.decodeSingularInt64Field(value: &_storage._usedTotal) }()
         case 18: try { try decoder.decodeSingularStringField(value: &_storage._shopName) }()
-        case 19: try { try decoder.decodeRepeatedInt64Field(value: &_storage._productIds) }()
+        case 19: try { try decoder.decodeSingularStringField(value: &_storage._shopType) }()
+        case 20: try { try decoder.decodeRepeatedInt64Field(value: &_storage._productIds) }()
         default: break
         }
       }
@@ -997,8 +1006,11 @@ extension GloryApi_CouponDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
       if !_storage._shopName.isEmpty {
         try visitor.visitSingularStringField(value: _storage._shopName, fieldNumber: 18)
       }
+      if !_storage._shopType.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._shopType, fieldNumber: 19)
+      }
       if !_storage._productIds.isEmpty {
-        try visitor.visitPackedInt64Field(value: _storage._productIds, fieldNumber: 19)
+        try visitor.visitPackedInt64Field(value: _storage._productIds, fieldNumber: 20)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -1027,6 +1039,7 @@ extension GloryApi_CouponDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
         if _storage._distributedTotal != rhs_storage._distributedTotal {return false}
         if _storage._usedTotal != rhs_storage._usedTotal {return false}
         if _storage._shopName != rhs_storage._shopName {return false}
+        if _storage._shopType != rhs_storage._shopType {return false}
         if _storage._productIds != rhs_storage._productIds {return false}
         return true
       }
