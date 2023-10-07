@@ -50,7 +50,8 @@ message CouponDetail {
     int64 distributed_total = 16;
     int64 used_total = 17;
     string shop_name = 18;
-    repeated int64  product_ids = 19;
+    string shop_type = 19;
+    repeated int64  product_ids = 20;
 }
 message ListCouponResponse {
     base.BaseResponse base_resp = 1;
