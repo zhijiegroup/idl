@@ -50,6 +50,7 @@ export interface CouponDetail {
   distributed_status?: string;
   distributed_total?: string;
   used_total?: string;
+  shop_name?: string;
   product_ids?: Array<string>;
 }
 
