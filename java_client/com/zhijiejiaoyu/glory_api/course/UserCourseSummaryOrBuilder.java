@@ -79,10 +79,20 @@ public interface UserCourseSummaryOrBuilder extends
 
   /**
    * <pre>
+   * 1. 模块化课程；2. 非模块化课程；3. 定制课程
+   * </pre>
+   *
+   * <code>int32 course_module = 7;</code>
+   * @return The courseModule.
+   */
+  int getCourseModule();
+
+  /**
+   * <pre>
    * 课程开发单位
    * </pre>
    *
-   * <code>string course_organization = 7;</code>
+   * <code>string course_organization = 8;</code>
    * @return The courseOrganization.
    */
   java.lang.String getCourseOrganization();
@@ -91,7 +101,7 @@ public interface UserCourseSummaryOrBuilder extends
    * 课程开发单位
    * </pre>
    *
-   * <code>string course_organization = 7;</code>
+   * <code>string course_organization = 8;</code>
    * @return The bytes for courseOrganization.
    */
   com.google.protobuf.ByteString
@@ -102,7 +112,7 @@ public interface UserCourseSummaryOrBuilder extends
    * 授课老师名称
    * </pre>
    *
-   * <code>string course_teacher_name = 8;</code>
+   * <code>string course_teacher_name = 9;</code>
    * @return The courseTeacherName.
    */
   java.lang.String getCourseTeacherName();
@@ -111,7 +121,7 @@ public interface UserCourseSummaryOrBuilder extends
    * 授课老师名称
    * </pre>
    *
-   * <code>string course_teacher_name = 8;</code>
+   * <code>string course_teacher_name = 9;</code>
    * @return The bytes for courseTeacherName.
    */
   com.google.protobuf.ByteString
@@ -122,7 +132,7 @@ public interface UserCourseSummaryOrBuilder extends
    * 课程进度
    * </pre>
    *
-   * <code>int32 course_progress = 9;</code>
+   * <code>int32 course_progress = 10;</code>
    * @return The courseProgress.
    */
   int getCourseProgress();

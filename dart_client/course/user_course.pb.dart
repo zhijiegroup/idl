@@ -24,6 +24,7 @@ class UserCourseSummary extends $pb.GeneratedMessage {
     $core.double? skillHours,
     $core.int? courseState,
     $core.int? courseOrigin,
+    $core.int? courseModule,
     $core.String? courseOrganization,
     $core.String? courseTeacherName,
     $core.int? courseProgress,
@@ -47,6 +48,9 @@ class UserCourseSummary extends $pb.GeneratedMessage {
     if (courseOrigin != null) {
       $result.courseOrigin = courseOrigin;
     }
+    if (courseModule != null) {
+      $result.courseModule = courseModule;
+    }
     if (courseOrganization != null) {
       $result.courseOrganization = courseOrganization;
     }
@@ -69,9 +73,10 @@ class UserCourseSummary extends $pb.GeneratedMessage {
     ..a<$core.double>(4, _omitFieldNames ? '' : 'skillHours', $pb.PbFieldType.OF)
     ..a<$core.int>(5, _omitFieldNames ? '' : 'courseState', $pb.PbFieldType.O3)
     ..a<$core.int>(6, _omitFieldNames ? '' : 'courseOrigin', $pb.PbFieldType.O3)
-    ..aOS(7, _omitFieldNames ? '' : 'courseOrganization')
-    ..aOS(8, _omitFieldNames ? '' : 'courseTeacherName')
-    ..a<$core.int>(9, _omitFieldNames ? '' : 'courseProgress', $pb.PbFieldType.O3)
+    ..a<$core.int>(7, _omitFieldNames ? '' : 'courseModule', $pb.PbFieldType.O3)
+    ..aOS(8, _omitFieldNames ? '' : 'courseOrganization')
+    ..aOS(9, _omitFieldNames ? '' : 'courseTeacherName')
+    ..a<$core.int>(10, _omitFieldNames ? '' : 'courseProgress', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -151,31 +156,40 @@ class UserCourseSummary extends $pb.GeneratedMessage {
   void clearCourseOrigin() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.String get courseOrganization => $_getSZ(6);
+  $core.int get courseModule => $_getIZ(6);
   @$pb.TagNumber(7)
-  set courseOrganization($core.String v) { $_setString(6, v); }
+  set courseModule($core.int v) { $_setSignedInt32(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasCourseOrganization() => $_has(6);
+  $core.bool hasCourseModule() => $_has(6);
   @$pb.TagNumber(7)
-  void clearCourseOrganization() => clearField(7);
+  void clearCourseModule() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.String get courseTeacherName => $_getSZ(7);
+  $core.String get courseOrganization => $_getSZ(7);
   @$pb.TagNumber(8)
-  set courseTeacherName($core.String v) { $_setString(7, v); }
+  set courseOrganization($core.String v) { $_setString(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasCourseTeacherName() => $_has(7);
+  $core.bool hasCourseOrganization() => $_has(7);
   @$pb.TagNumber(8)
-  void clearCourseTeacherName() => clearField(8);
+  void clearCourseOrganization() => clearField(8);
 
   @$pb.TagNumber(9)
-  $core.int get courseProgress => $_getIZ(8);
+  $core.String get courseTeacherName => $_getSZ(8);
   @$pb.TagNumber(9)
-  set courseProgress($core.int v) { $_setSignedInt32(8, v); }
+  set courseTeacherName($core.String v) { $_setString(8, v); }
   @$pb.TagNumber(9)
-  $core.bool hasCourseProgress() => $_has(8);
+  $core.bool hasCourseTeacherName() => $_has(8);
   @$pb.TagNumber(9)
-  void clearCourseProgress() => clearField(9);
+  void clearCourseTeacherName() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.int get courseProgress => $_getIZ(9);
+  @$pb.TagNumber(10)
+  set courseProgress($core.int v) { $_setSignedInt32(9, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasCourseProgress() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearCourseProgress() => clearField(10);
 }
 
 /// 加入课程

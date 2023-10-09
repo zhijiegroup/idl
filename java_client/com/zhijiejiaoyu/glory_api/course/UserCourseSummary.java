@@ -82,19 +82,24 @@ private static final long serialVersionUID = 0L;
             courseOrigin = input.readInt32();
             break;
           }
-          case 58: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 56: {
 
-            courseOrganization = s;
+            courseModule = input.readInt32();
             break;
           }
           case 66: {
             java.lang.String s = input.readStringRequireUtf8();
 
+            courseOrganization = s;
+            break;
+          }
+          case 74: {
+            java.lang.String s = input.readStringRequireUtf8();
+
             courseTeacherName = s;
             break;
           }
-          case 72: {
+          case 80: {
 
             courseProgress = input.readInt32();
             break;
@@ -252,14 +257,29 @@ private static final long serialVersionUID = 0L;
     return courseOrigin ;
   }
 
-  public static final int COURSE_ORGANIZATION_FIELD_NUMBER = 7;
+  public static final int COURSE_MODULE_FIELD_NUMBER = 7;
+  private int courseModule ;
+  /**
+   * <pre>
+   * 1. 模块化课程；2. 非模块化课程；3. 定制课程
+   * </pre>
+   *
+   * <code>int32 course_module = 7;</code>
+   * @return The courseModule.
+   */
+  @java.lang.Override
+  public int getCourseModule() {
+    return courseModule ;
+  }
+
+  public static final int COURSE_ORGANIZATION_FIELD_NUMBER = 8;
   private volatile java.lang.Object courseOrganization ;
   /**
    * <pre>
    * 课程开发单位
    * </pre>
    *
-   * <code>string course_organization = 7;</code>
+   * <code>string course_organization = 8;</code>
    * @return The courseOrganization.
    */
   @java.lang.Override
@@ -280,7 +300,7 @@ private static final long serialVersionUID = 0L;
    * 课程开发单位
    * </pre>
    *
-   * <code>string course_organization = 7;</code>
+   * <code>string course_organization = 8;</code>
    * @return The bytes for courseOrganization.
    */
   @java.lang.Override
@@ -298,14 +318,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int COURSE_TEACHER_NAME_FIELD_NUMBER = 8;
+  public static final int COURSE_TEACHER_NAME_FIELD_NUMBER = 9;
   private volatile java.lang.Object courseTeacherName ;
   /**
    * <pre>
    * 授课老师名称
    * </pre>
    *
-   * <code>string course_teacher_name = 8;</code>
+   * <code>string course_teacher_name = 9;</code>
    * @return The courseTeacherName.
    */
   @java.lang.Override
@@ -326,7 +346,7 @@ private static final long serialVersionUID = 0L;
    * 授课老师名称
    * </pre>
    *
-   * <code>string course_teacher_name = 8;</code>
+   * <code>string course_teacher_name = 9;</code>
    * @return The bytes for courseTeacherName.
    */
   @java.lang.Override
@@ -344,14 +364,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int COURSE_PROGRESS_FIELD_NUMBER = 9;
+  public static final int COURSE_PROGRESS_FIELD_NUMBER = 10;
   private int courseProgress ;
   /**
    * <pre>
    * 课程进度
    * </pre>
    *
-   * <code>int32 course_progress = 9;</code>
+   * <code>int32 course_progress = 10;</code>
    * @return The courseProgress.
    */
   @java.lang.Override
@@ -391,14 +411,17 @@ private static final long serialVersionUID = 0L;
     if (courseOrigin != 0) {
       output.writeInt32(6, courseOrigin );
     }
+    if (courseModule != 0) {
+      output.writeInt32(7, courseModule );
+    }
     if (!getCourseOrganizationBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, courseOrganization );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, courseOrganization );
     }
     if (!getCourseTeacherNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, courseTeacherName );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, courseTeacherName );
     }
     if (courseProgress != 0) {
-      output.writeInt32(9, courseProgress );
+      output.writeInt32(10, courseProgress );
     }
     unknownFields.writeTo(output);
   }
@@ -432,15 +455,19 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(6, courseOrigin );
     }
+    if (courseModule != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(7, courseModule );
+    }
     if (!getCourseOrganizationBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, courseOrganization );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, courseOrganization );
     }
     if (!getCourseTeacherNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, courseTeacherName );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, courseTeacherName );
     }
     if (courseProgress != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(9, courseProgress );
+        .computeInt32Size(10, courseProgress );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -471,6 +498,8 @@ private static final long serialVersionUID = 0L;
         != other.getCourseState()) return false;
     if (getCourseOrigin()
         != other.getCourseOrigin()) return false;
+    if (getCourseModule()
+        != other.getCourseModule()) return false;
     if (!getCourseOrganization()
         .equals(other.getCourseOrganization())) return false;
     if (!getCourseTeacherName()
@@ -503,6 +532,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getCourseState();
     hash = (37 * hash) + COURSE_ORIGIN_FIELD_NUMBER;
     hash = (53 * hash) + getCourseOrigin();
+    hash = (37 * hash) + COURSE_MODULE_FIELD_NUMBER;
+    hash = (53 * hash) + getCourseModule();
     hash = (37 * hash) + COURSE_ORGANIZATION_FIELD_NUMBER;
     hash = (53 * hash) + getCourseOrganization().hashCode();
     hash = (37 * hash) + COURSE_TEACHER_NAME_FIELD_NUMBER;
@@ -654,6 +685,8 @@ private static final long serialVersionUID = 0L;
 
       courseOrigin = 0;
 
+      courseModule = 0;
+
       courseOrganization = "";
 
       courseTeacherName = "";
@@ -692,6 +725,7 @@ private static final long serialVersionUID = 0L;
       result.skillHours = skillHours ;
       result.courseState = courseState ;
       result.courseOrigin = courseOrigin ;
+      result.courseModule = courseModule ;
       result.courseOrganization = courseOrganization ;
       result.courseTeacherName = courseTeacherName ;
       result.courseProgress = courseProgress ;
@@ -761,6 +795,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getCourseOrigin() != 0) {
         setCourseOrigin(other.getCourseOrigin());
+      }
+      if (other.getCourseModule() != 0) {
+        setCourseModule(other.getCourseModule());
       }
       if (!other.getCourseOrganization().isEmpty()) {
         courseOrganization = other.courseOrganization ;
@@ -1113,13 +1150,56 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private int courseModule ;
+    /**
+     * <pre>
+     * 1. 模块化课程；2. 非模块化课程；3. 定制课程
+     * </pre>
+     *
+     * <code>int32 course_module = 7;</code>
+     * @return The courseModule.
+     */
+    @java.lang.Override
+    public int getCourseModule() {
+      return courseModule ;
+    }
+    /**
+     * <pre>
+     * 1. 模块化课程；2. 非模块化课程；3. 定制课程
+     * </pre>
+     *
+     * <code>int32 course_module = 7;</code>
+     * @param value The courseModule to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCourseModule(int value) {
+      
+      courseModule = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 1. 模块化课程；2. 非模块化课程；3. 定制课程
+     * </pre>
+     *
+     * <code>int32 course_module = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCourseModule() {
+      
+      courseModule = 0;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object courseOrganization = "";
     /**
      * <pre>
      * 课程开发单位
      * </pre>
      *
-     * <code>string course_organization = 7;</code>
+     * <code>string course_organization = 8;</code>
      * @return The courseOrganization.
      */
     public java.lang.String getCourseOrganization() {
@@ -1139,7 +1219,7 @@ private static final long serialVersionUID = 0L;
      * 课程开发单位
      * </pre>
      *
-     * <code>string course_organization = 7;</code>
+     * <code>string course_organization = 8;</code>
      * @return The bytes for courseOrganization.
      */
     public com.google.protobuf.ByteString
@@ -1160,7 +1240,7 @@ private static final long serialVersionUID = 0L;
      * 课程开发单位
      * </pre>
      *
-     * <code>string course_organization = 7;</code>
+     * <code>string course_organization = 8;</code>
      * @param value The courseOrganization to set.
      * @return This builder for chaining.
      */
@@ -1179,7 +1259,7 @@ private static final long serialVersionUID = 0L;
      * 课程开发单位
      * </pre>
      *
-     * <code>string course_organization = 7;</code>
+     * <code>string course_organization = 8;</code>
      * @return This builder for chaining.
      */
     public Builder clearCourseOrganization() {
@@ -1193,7 +1273,7 @@ private static final long serialVersionUID = 0L;
      * 课程开发单位
      * </pre>
      *
-     * <code>string course_organization = 7;</code>
+     * <code>string course_organization = 8;</code>
      * @param value The bytes for courseOrganization to set.
      * @return This builder for chaining.
      */
@@ -1215,7 +1295,7 @@ private static final long serialVersionUID = 0L;
      * 授课老师名称
      * </pre>
      *
-     * <code>string course_teacher_name = 8;</code>
+     * <code>string course_teacher_name = 9;</code>
      * @return The courseTeacherName.
      */
     public java.lang.String getCourseTeacherName() {
@@ -1235,7 +1315,7 @@ private static final long serialVersionUID = 0L;
      * 授课老师名称
      * </pre>
      *
-     * <code>string course_teacher_name = 8;</code>
+     * <code>string course_teacher_name = 9;</code>
      * @return The bytes for courseTeacherName.
      */
     public com.google.protobuf.ByteString
@@ -1256,7 +1336,7 @@ private static final long serialVersionUID = 0L;
      * 授课老师名称
      * </pre>
      *
-     * <code>string course_teacher_name = 8;</code>
+     * <code>string course_teacher_name = 9;</code>
      * @param value The courseTeacherName to set.
      * @return This builder for chaining.
      */
@@ -1275,7 +1355,7 @@ private static final long serialVersionUID = 0L;
      * 授课老师名称
      * </pre>
      *
-     * <code>string course_teacher_name = 8;</code>
+     * <code>string course_teacher_name = 9;</code>
      * @return This builder for chaining.
      */
     public Builder clearCourseTeacherName() {
@@ -1289,7 +1369,7 @@ private static final long serialVersionUID = 0L;
      * 授课老师名称
      * </pre>
      *
-     * <code>string course_teacher_name = 8;</code>
+     * <code>string course_teacher_name = 9;</code>
      * @param value The bytes for courseTeacherName to set.
      * @return This builder for chaining.
      */
@@ -1311,7 +1391,7 @@ private static final long serialVersionUID = 0L;
      * 课程进度
      * </pre>
      *
-     * <code>int32 course_progress = 9;</code>
+     * <code>int32 course_progress = 10;</code>
      * @return The courseProgress.
      */
     @java.lang.Override
@@ -1323,7 +1403,7 @@ private static final long serialVersionUID = 0L;
      * 课程进度
      * </pre>
      *
-     * <code>int32 course_progress = 9;</code>
+     * <code>int32 course_progress = 10;</code>
      * @param value The courseProgress to set.
      * @return This builder for chaining.
      */
@@ -1338,7 +1418,7 @@ private static final long serialVersionUID = 0L;
      * 课程进度
      * </pre>
      *
-     * <code>int32 course_progress = 9;</code>
+     * <code>int32 course_progress = 10;</code>
      * @return This builder for chaining.
      */
     public Builder clearCourseProgress() {

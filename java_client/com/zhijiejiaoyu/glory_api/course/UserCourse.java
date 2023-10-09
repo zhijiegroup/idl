@@ -69,36 +69,36 @@ public final class UserCourse {
   static {
     java.lang.String[] descriptorData = {
       "\n\030course/user_course.proto\022\tglory_api\032\nb" +
-      "ase.proto\"\351\001\n\021UserCourseSummary\022\021\n\tcours" +
+      "ase.proto\"\200\002\n\021UserCourseSummary\022\021\n\tcours" +
       "e_id\030\001 \001(\003\022\023\n\013course_name\030\002 \001(\t\022\027\n\017knowl" +
       "edge_hours\030\003 \001(\002\022\023\n\013skill_hours\030\004 \001(\002\022\024\n" +
       "\014course_state\030\005 \001(\005\022\025\n\rcourse_origin\030\006 \001" +
-      "(\005\022\033\n\023course_organization\030\007 \001(\t\022\033\n\023cours" +
-      "e_teacher_name\030\010 \001(\t\022\027\n\017course_progress\030" +
-      "\t \001(\005\"Q\n\023EnrollCourseRequest\022\'\n\014base_req" +
-      "uest\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tcourse_" +
-      "id\030\002 \001(\003\"=\n\024EnrollCourseResponse\022%\n\tbase" +
-      "_resp\030\001 \001(\0132\022.base.BaseResponse\"S\n\025Delet" +
-      "eMyCourseRequest\022\'\n\014base_request\030\001 \001(\0132\021" +
-      ".base.BaseRequest\022\021\n\tcourse_id\030\002 \001(\003\"?\n\026" +
-      "DeleteMyCourseResponse\022%\n\tbase_resp\030\001 \001(" +
-      "\0132\022.base.BaseResponse\"\274\001\n\033UpdateCoursePr" +
-      "ogressRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
-      "se.BaseRequest\022\021\n\tcourse_id\030\002 \001(\003\022\033\n\023cha" +
-      "pter_resource_id\030\003 \001(\003\022!\n\031chapter_resour" +
-      "ce_progress\030\004 \001(\002\022!\n\031chapter_resource_du" +
-      "ration\030\005 \001(\002\"^\n\034UpdateCourseProgressResp" +
-      "onse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespo" +
-      "nse\022\027\n\017course_progress\030\002 \001(\005\"\201\001\n\023ListMyC" +
-      "ourseRequest\022\'\n\014base_request\030\001 \001(\0132\021.bas" +
-      "e.BaseRequest\022\024\n\014course_state\030\002 \001(\005\022+\n\np" +
-      "agination\030d \001(\0132\027.base.PaginationRequest" +
-      "\"\237\001\n\024ListMyCourseResponse\022%\n\tbase_resp\030\001" +
-      " \001(\0132\022.base.BaseResponse\0222\n\014user_courses" +
-      "\030\002 \003(\0132\034.glory_api.UserCourseSummary\022,\n\n" +
-      "pagination\030d \001(\0132\030.base.PaginationRespon" +
-      "seB%\n!com.zhijiejiaoyu.glory_api.courseP" +
-      "\001b\006proto3"
+      "(\005\022\025\n\rcourse_module\030\007 \001(\005\022\033\n\023course_orga" +
+      "nization\030\010 \001(\t\022\033\n\023course_teacher_name\030\t " +
+      "\001(\t\022\027\n\017course_progress\030\n \001(\005\"Q\n\023EnrollCo" +
+      "urseRequest\022\'\n\014base_request\030\001 \001(\0132\021.base" +
+      ".BaseRequest\022\021\n\tcourse_id\030\002 \001(\003\"=\n\024Enrol" +
+      "lCourseResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
+      "e.BaseResponse\"S\n\025DeleteMyCourseRequest\022" +
+      "\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequest" +
+      "\022\021\n\tcourse_id\030\002 \001(\003\"?\n\026DeleteMyCourseRes" +
+      "ponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResp" +
+      "onse\"\274\001\n\033UpdateCourseProgressRequest\022\'\n\014" +
+      "base_request\030\001 \001(\0132\021.base.BaseRequest\022\021\n" +
+      "\tcourse_id\030\002 \001(\003\022\033\n\023chapter_resource_id\030" +
+      "\003 \001(\003\022!\n\031chapter_resource_progress\030\004 \001(\002" +
+      "\022!\n\031chapter_resource_duration\030\005 \001(\002\"^\n\034U" +
+      "pdateCourseProgressResponse\022%\n\tbase_resp" +
+      "\030\001 \001(\0132\022.base.BaseResponse\022\027\n\017course_pro" +
+      "gress\030\002 \001(\005\"\201\001\n\023ListMyCourseRequest\022\'\n\014b" +
+      "ase_request\030\001 \001(\0132\021.base.BaseRequest\022\024\n\014" +
+      "course_state\030\002 \001(\005\022+\n\npagination\030d \001(\0132\027" +
+      ".base.PaginationRequest\"\237\001\n\024ListMyCourse" +
+      "Response\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseR" +
+      "esponse\0222\n\014user_courses\030\002 \003(\0132\034.glory_ap" +
+      "i.UserCourseSummary\022,\n\npagination\030d \001(\0132" +
+      "\030.base.PaginationResponseB%\n!com.zhijiej" +
+      "iaoyu.glory_api.courseP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -110,7 +110,7 @@ public final class UserCourse {
     internal_static_glory_api_UserCourseSummary_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UserCourseSummary_descriptor,
-        new java.lang.String[] { "CourseId", "CourseName", "KnowledgeHours", "SkillHours", "CourseState", "CourseOrigin", "CourseOrganization", "CourseTeacherName", "CourseProgress", });
+        new java.lang.String[] { "CourseId", "CourseName", "KnowledgeHours", "SkillHours", "CourseState", "CourseOrigin", "CourseModule", "CourseOrganization", "CourseTeacherName", "CourseProgress", });
     internal_static_glory_api_EnrollCourseRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_glory_api_EnrollCourseRequest_fieldAccessorTable = new

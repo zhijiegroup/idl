@@ -43,6 +43,9 @@ struct GloryApi_UserCourseSummary {
   /// 课程来源：1. 从资源库加入；2.学生自己定制课程；3.老师分配课程
   var courseOrigin: Int32 = 0
 
+  /// 1. 模块化课程；2. 非模块化课程；3. 定制课程
+  var courseModule: Int32 = 0
+
   /// 课程开发单位
   var courseOrganization: String = String()
 
@@ -300,9 +303,10 @@ extension GloryApi_UserCourseSummary: SwiftProtobuf.Message, SwiftProtobuf._Mess
     4: .standard(proto: "skill_hours"),
     5: .standard(proto: "course_state"),
     6: .standard(proto: "course_origin"),
-    7: .standard(proto: "course_organization"),
-    8: .standard(proto: "course_teacher_name"),
-    9: .standard(proto: "course_progress"),
+    7: .standard(proto: "course_module"),
+    8: .standard(proto: "course_organization"),
+    9: .standard(proto: "course_teacher_name"),
+    10: .standard(proto: "course_progress"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -317,9 +321,10 @@ extension GloryApi_UserCourseSummary: SwiftProtobuf.Message, SwiftProtobuf._Mess
       case 4: try { try decoder.decodeSingularFloatField(value: &self.skillHours) }()
       case 5: try { try decoder.decodeSingularInt32Field(value: &self.courseState) }()
       case 6: try { try decoder.decodeSingularInt32Field(value: &self.courseOrigin) }()
-      case 7: try { try decoder.decodeSingularStringField(value: &self.courseOrganization) }()
-      case 8: try { try decoder.decodeSingularStringField(value: &self.courseTeacherName) }()
-      case 9: try { try decoder.decodeSingularInt32Field(value: &self.courseProgress) }()
+      case 7: try { try decoder.decodeSingularInt32Field(value: &self.courseModule) }()
+      case 8: try { try decoder.decodeSingularStringField(value: &self.courseOrganization) }()
+      case 9: try { try decoder.decodeSingularStringField(value: &self.courseTeacherName) }()
+      case 10: try { try decoder.decodeSingularInt32Field(value: &self.courseProgress) }()
       default: break
       }
     }
@@ -344,14 +349,17 @@ extension GloryApi_UserCourseSummary: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if self.courseOrigin != 0 {
       try visitor.visitSingularInt32Field(value: self.courseOrigin, fieldNumber: 6)
     }
+    if self.courseModule != 0 {
+      try visitor.visitSingularInt32Field(value: self.courseModule, fieldNumber: 7)
+    }
     if !self.courseOrganization.isEmpty {
-      try visitor.visitSingularStringField(value: self.courseOrganization, fieldNumber: 7)
+      try visitor.visitSingularStringField(value: self.courseOrganization, fieldNumber: 8)
     }
     if !self.courseTeacherName.isEmpty {
-      try visitor.visitSingularStringField(value: self.courseTeacherName, fieldNumber: 8)
+      try visitor.visitSingularStringField(value: self.courseTeacherName, fieldNumber: 9)
     }
     if self.courseProgress != 0 {
-      try visitor.visitSingularInt32Field(value: self.courseProgress, fieldNumber: 9)
+      try visitor.visitSingularInt32Field(value: self.courseProgress, fieldNumber: 10)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -363,6 +371,7 @@ extension GloryApi_UserCourseSummary: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if lhs.skillHours != rhs.skillHours {return false}
     if lhs.courseState != rhs.courseState {return false}
     if lhs.courseOrigin != rhs.courseOrigin {return false}
+    if lhs.courseModule != rhs.courseModule {return false}
     if lhs.courseOrganization != rhs.courseOrganization {return false}
     if lhs.courseTeacherName != rhs.courseTeacherName {return false}
     if lhs.courseProgress != rhs.courseProgress {return false}

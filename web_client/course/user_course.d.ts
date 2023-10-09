@@ -18,6 +18,8 @@ export interface UserCourseSummary {
   course_state?: number;
   /** 课程来源：1. 从资源库加入；2.学生自己定制课程；3.老师分配课程 */
   course_origin?: number;
+  /** 1. 模块化课程；2. 非模块化课程；3. 定制课程 */
+  course_module?: number;
   /** 课程开发单位 */
   course_organization?: string;
   /** 授课老师名称 */

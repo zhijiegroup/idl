@@ -23,9 +23,10 @@ const UserCourseSummary$json = {
     {'1': 'skill_hours', '3': 4, '4': 1, '5': 2, '10': 'skillHours'},
     {'1': 'course_state', '3': 5, '4': 1, '5': 5, '10': 'courseState'},
     {'1': 'course_origin', '3': 6, '4': 1, '5': 5, '10': 'courseOrigin'},
-    {'1': 'course_organization', '3': 7, '4': 1, '5': 9, '10': 'courseOrganization'},
-    {'1': 'course_teacher_name', '3': 8, '4': 1, '5': 9, '10': 'courseTeacherName'},
-    {'1': 'course_progress', '3': 9, '4': 1, '5': 5, '10': 'courseProgress'},
+    {'1': 'course_module', '3': 7, '4': 1, '5': 5, '10': 'courseModule'},
+    {'1': 'course_organization', '3': 8, '4': 1, '5': 9, '10': 'courseOrganization'},
+    {'1': 'course_teacher_name', '3': 9, '4': 1, '5': 9, '10': 'courseTeacherName'},
+    {'1': 'course_progress', '3': 10, '4': 1, '5': 5, '10': 'courseProgress'},
   ],
 };
 
@@ -35,9 +36,10 @@ final $typed_data.Uint8List userCourseSummaryDescriptor = $convert.base64Decode(
     'JzZV9uYW1lGAIgASgJUgpjb3Vyc2VOYW1lEicKD2tub3dsZWRnZV9ob3VycxgDIAEoAlIOa25v'
     'd2xlZGdlSG91cnMSHwoLc2tpbGxfaG91cnMYBCABKAJSCnNraWxsSG91cnMSIQoMY291cnNlX3'
     'N0YXRlGAUgASgFUgtjb3Vyc2VTdGF0ZRIjCg1jb3Vyc2Vfb3JpZ2luGAYgASgFUgxjb3Vyc2VP'
-    'cmlnaW4SLwoTY291cnNlX29yZ2FuaXphdGlvbhgHIAEoCVISY291cnNlT3JnYW5pemF0aW9uEi'
-    '4KE2NvdXJzZV90ZWFjaGVyX25hbWUYCCABKAlSEWNvdXJzZVRlYWNoZXJOYW1lEicKD2NvdXJz'
-    'ZV9wcm9ncmVzcxgJIAEoBVIOY291cnNlUHJvZ3Jlc3M=');
+    'cmlnaW4SIwoNY291cnNlX21vZHVsZRgHIAEoBVIMY291cnNlTW9kdWxlEi8KE2NvdXJzZV9vcm'
+    'dhbml6YXRpb24YCCABKAlSEmNvdXJzZU9yZ2FuaXphdGlvbhIuChNjb3Vyc2VfdGVhY2hlcl9u'
+    'YW1lGAkgASgJUhFjb3Vyc2VUZWFjaGVyTmFtZRInCg9jb3Vyc2VfcHJvZ3Jlc3MYCiABKAVSDm'
+    'NvdXJzZVByb2dyZXNz');
 
 @$core.Deprecated('Use enrollCourseRequestDescriptor instead')
 const EnrollCourseRequest$json = {
