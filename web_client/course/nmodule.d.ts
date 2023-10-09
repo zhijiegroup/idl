@@ -8,7 +8,7 @@ export { base };
 export interface NmCourse {
   course_id?: string;
   course_name?: string;
-  course_orgination?: string;
+  course_organization?: string;
   course_teacher_name?: string;
   skill_hours?: number;
   knowledge_hours?: number;

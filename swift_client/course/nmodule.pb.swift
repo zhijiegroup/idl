@@ -29,7 +29,7 @@ struct GloryApi_NmCourse {
 
   var courseName: String = String()
 
-  var courseOrgination: String = String()
+  var courseOrganization: String = String()
 
   var courseTeacherName: String = String()
 
@@ -415,7 +415,7 @@ extension GloryApi_NmCourse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "course_id"),
     2: .standard(proto: "course_name"),
-    3: .standard(proto: "course_orgination"),
+    3: .standard(proto: "course_organization"),
     4: .standard(proto: "course_teacher_name"),
     5: .standard(proto: "skill_hours"),
     6: .standard(proto: "knowledge_hours"),
@@ -434,7 +434,7 @@ extension GloryApi_NmCourse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularInt64Field(value: &self.courseID) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.courseName) }()
-      case 3: try { try decoder.decodeSingularStringField(value: &self.courseOrgination) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.courseOrganization) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.courseTeacherName) }()
       case 5: try { try decoder.decodeSingularDoubleField(value: &self.skillHours) }()
       case 6: try { try decoder.decodeSingularDoubleField(value: &self.knowledgeHours) }()
@@ -455,8 +455,8 @@ extension GloryApi_NmCourse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     if !self.courseName.isEmpty {
       try visitor.visitSingularStringField(value: self.courseName, fieldNumber: 2)
     }
-    if !self.courseOrgination.isEmpty {
-      try visitor.visitSingularStringField(value: self.courseOrgination, fieldNumber: 3)
+    if !self.courseOrganization.isEmpty {
+      try visitor.visitSingularStringField(value: self.courseOrganization, fieldNumber: 3)
     }
     if !self.courseTeacherName.isEmpty {
       try visitor.visitSingularStringField(value: self.courseTeacherName, fieldNumber: 4)
@@ -488,7 +488,7 @@ extension GloryApi_NmCourse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
   static func ==(lhs: GloryApi_NmCourse, rhs: GloryApi_NmCourse) -> Bool {
     if lhs.courseID != rhs.courseID {return false}
     if lhs.courseName != rhs.courseName {return false}
-    if lhs.courseOrgination != rhs.courseOrgination {return false}
+    if lhs.courseOrganization != rhs.courseOrganization {return false}
     if lhs.courseTeacherName != rhs.courseTeacherName {return false}
     if lhs.skillHours != rhs.skillHours {return false}
     if lhs.knowledgeHours != rhs.knowledgeHours {return false}

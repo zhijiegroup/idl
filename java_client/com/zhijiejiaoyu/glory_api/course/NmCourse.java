@@ -17,7 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private NmCourse() {
     courseName = "";
-    courseOrgination = "";
+    courseOrganization = "";
     courseTeacherName = "";
     courseDescription = "";
     coverUrl = "";
@@ -69,7 +69,7 @@ private static final long serialVersionUID = 0L;
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            courseOrgination = s;
+            courseOrganization = s;
             break;
           }
           case 34: {
@@ -198,38 +198,38 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int COURSE_ORGINATION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object courseOrgination ;
+  public static final int COURSE_ORGANIZATION_FIELD_NUMBER = 3;
+  private volatile java.lang.Object courseOrganization ;
   /**
-   * <code>string course_orgination = 3;</code>
-   * @return The courseOrgination.
+   * <code>string course_organization = 3;</code>
+   * @return The courseOrganization.
    */
   @java.lang.Override
-  public java.lang.String getCourseOrgination() {
-    java.lang.Object ref = courseOrgination ;
+  public java.lang.String getCourseOrganization() {
+    java.lang.Object ref = courseOrganization ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      courseOrgination = s;
+      courseOrganization = s;
       return s;
     }
   }
   /**
-   * <code>string course_orgination = 3;</code>
-   * @return The bytes for courseOrgination.
+   * <code>string course_organization = 3;</code>
+   * @return The bytes for courseOrganization.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getCourseOrginationBytes() {
-    java.lang.Object ref = courseOrgination ;
+      getCourseOrganizationBytes() {
+    java.lang.Object ref = courseOrganization ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      courseOrgination = b;
+      courseOrganization = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -479,8 +479,8 @@ private static final long serialVersionUID = 0L;
     if (!getCourseNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, courseName );
     }
-    if (!getCourseOrginationBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, courseOrgination );
+    if (!getCourseOrganizationBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, courseOrganization );
     }
     if (!getCourseTeacherNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, courseTeacherName );
@@ -522,8 +522,8 @@ private static final long serialVersionUID = 0L;
     if (!getCourseNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, courseName );
     }
-    if (!getCourseOrginationBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, courseOrgination );
+    if (!getCourseOrganizationBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, courseOrganization );
     }
     if (!getCourseTeacherNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, courseTeacherName );
@@ -571,8 +571,8 @@ private static final long serialVersionUID = 0L;
         != other.getCourseId()) return false;
     if (!getCourseName()
         .equals(other.getCourseName())) return false;
-    if (!getCourseOrgination()
-        .equals(other.getCourseOrgination())) return false;
+    if (!getCourseOrganization()
+        .equals(other.getCourseOrganization())) return false;
     if (!getCourseTeacherName()
         .equals(other.getCourseTeacherName())) return false;
     if (java.lang.Double.doubleToLongBits(getSkillHours())
@@ -607,8 +607,8 @@ private static final long serialVersionUID = 0L;
         getCourseId());
     hash = (37 * hash) + COURSE_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getCourseName().hashCode();
-    hash = (37 * hash) + COURSE_ORGINATION_FIELD_NUMBER;
-    hash = (53 * hash) + getCourseOrgination().hashCode();
+    hash = (37 * hash) + COURSE_ORGANIZATION_FIELD_NUMBER;
+    hash = (53 * hash) + getCourseOrganization().hashCode();
     hash = (37 * hash) + COURSE_TEACHER_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getCourseTeacherName().hashCode();
     hash = (37 * hash) + SKILL_HOURS_FIELD_NUMBER;
@@ -765,7 +765,7 @@ private static final long serialVersionUID = 0L;
 
       courseName = "";
 
-      courseOrgination = "";
+      courseOrganization = "";
 
       courseTeacherName = "";
 
@@ -811,7 +811,7 @@ private static final long serialVersionUID = 0L;
       com.zhijiejiaoyu.glory_api.course.NmCourse result = new com.zhijiejiaoyu.glory_api.course.NmCourse(this);
       result.courseId = courseId ;
       result.courseName = courseName ;
-      result.courseOrgination = courseOrgination ;
+      result.courseOrganization = courseOrganization ;
       result.courseTeacherName = courseTeacherName ;
       result.skillHours = skillHours ;
       result.knowledgeHours = knowledgeHours ;
@@ -875,8 +875,8 @@ private static final long serialVersionUID = 0L;
         courseName = other.courseName ;
         onChanged();
       }
-      if (!other.getCourseOrgination().isEmpty()) {
-        courseOrgination = other.courseOrgination ;
+      if (!other.getCourseOrganization().isEmpty()) {
+        courseOrganization = other.courseOrganization ;
         onChanged();
       }
       if (!other.getCourseTeacherName().isEmpty()) {
@@ -1044,78 +1044,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object courseOrgination = "";
+    private java.lang.Object courseOrganization = "";
     /**
-     * <code>string course_orgination = 3;</code>
-     * @return The courseOrgination.
+     * <code>string course_organization = 3;</code>
+     * @return The courseOrganization.
      */
-    public java.lang.String getCourseOrgination() {
-      java.lang.Object ref = courseOrgination ;
+    public java.lang.String getCourseOrganization() {
+      java.lang.Object ref = courseOrganization ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        courseOrgination = s;
+        courseOrganization = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string course_orgination = 3;</code>
-     * @return The bytes for courseOrgination.
+     * <code>string course_organization = 3;</code>
+     * @return The bytes for courseOrganization.
      */
     public com.google.protobuf.ByteString
-        getCourseOrginationBytes() {
-      java.lang.Object ref = courseOrgination ;
+        getCourseOrganizationBytes() {
+      java.lang.Object ref = courseOrganization ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        courseOrgination = b;
+        courseOrganization = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string course_orgination = 3;</code>
-     * @param value The courseOrgination to set.
+     * <code>string course_organization = 3;</code>
+     * @param value The courseOrganization to set.
      * @return This builder for chaining.
      */
-    public Builder setCourseOrgination(
+    public Builder setCourseOrganization(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      courseOrgination = value;
+      courseOrganization = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string course_orgination = 3;</code>
+     * <code>string course_organization = 3;</code>
      * @return This builder for chaining.
      */
-    public Builder clearCourseOrgination() {
+    public Builder clearCourseOrganization() {
       
-      courseOrgination = getDefaultInstance().getCourseOrgination();
+      courseOrganization = getDefaultInstance().getCourseOrganization();
       onChanged();
       return this;
     }
     /**
-     * <code>string course_orgination = 3;</code>
-     * @param value The bytes for courseOrgination to set.
+     * <code>string course_organization = 3;</code>
+     * @param value The bytes for courseOrganization to set.
      * @return This builder for chaining.
      */
-    public Builder setCourseOrginationBytes(
+    public Builder setCourseOrganizationBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      courseOrgination = value;
+      courseOrganization = value;
       onChanged();
       return this;
     }

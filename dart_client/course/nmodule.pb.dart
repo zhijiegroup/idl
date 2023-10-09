@@ -20,7 +20,7 @@ class NmCourse extends $pb.GeneratedMessage {
   factory NmCourse({
     $fixnum.Int64? courseId,
     $core.String? courseName,
-    $core.String? courseOrgination,
+    $core.String? courseOrganization,
     $core.String? courseTeacherName,
     $core.double? skillHours,
     $core.double? knowledgeHours,
@@ -37,8 +37,8 @@ class NmCourse extends $pb.GeneratedMessage {
     if (courseName != null) {
       $result.courseName = courseName;
     }
-    if (courseOrgination != null) {
-      $result.courseOrgination = courseOrgination;
+    if (courseOrganization != null) {
+      $result.courseOrganization = courseOrganization;
     }
     if (courseTeacherName != null) {
       $result.courseTeacherName = courseTeacherName;
@@ -73,7 +73,7 @@ class NmCourse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NmCourse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aInt64(1, _omitFieldNames ? '' : 'courseId')
     ..aOS(2, _omitFieldNames ? '' : 'courseName')
-    ..aOS(3, _omitFieldNames ? '' : 'courseOrgination')
+    ..aOS(3, _omitFieldNames ? '' : 'courseOrganization')
     ..aOS(4, _omitFieldNames ? '' : 'courseTeacherName')
     ..a<$core.double>(5, _omitFieldNames ? '' : 'skillHours', $pb.PbFieldType.OD)
     ..a<$core.double>(6, _omitFieldNames ? '' : 'knowledgeHours', $pb.PbFieldType.OD)
@@ -125,13 +125,13 @@ class NmCourse extends $pb.GeneratedMessage {
   void clearCourseName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get courseOrgination => $_getSZ(2);
+  $core.String get courseOrganization => $_getSZ(2);
   @$pb.TagNumber(3)
-  set courseOrgination($core.String v) { $_setString(2, v); }
+  set courseOrganization($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasCourseOrgination() => $_has(2);
+  $core.bool hasCourseOrganization() => $_has(2);
   @$pb.TagNumber(3)
-  void clearCourseOrgination() => clearField(3);
+  void clearCourseOrganization() => clearField(3);
 
   @$pb.TagNumber(4)
   $core.String get courseTeacherName => $_getSZ(3);

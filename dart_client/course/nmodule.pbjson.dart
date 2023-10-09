@@ -19,7 +19,7 @@ const NmCourse$json = {
   '2': [
     {'1': 'course_id', '3': 1, '4': 1, '5': 3, '10': 'courseId'},
     {'1': 'course_name', '3': 2, '4': 1, '5': 9, '10': 'courseName'},
-    {'1': 'course_orgination', '3': 3, '4': 1, '5': 9, '10': 'courseOrgination'},
+    {'1': 'course_organization', '3': 3, '4': 1, '5': 9, '10': 'courseOrganization'},
     {'1': 'course_teacher_name', '3': 4, '4': 1, '5': 9, '10': 'courseTeacherName'},
     {'1': 'skill_hours', '3': 5, '4': 1, '5': 1, '10': 'skillHours'},
     {'1': 'knowledge_hours', '3': 6, '4': 1, '5': 1, '10': 'knowledgeHours'},
@@ -34,13 +34,14 @@ const NmCourse$json = {
 /// Descriptor for `NmCourse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List nmCourseDescriptor = $convert.base64Decode(
     'CghObUNvdXJzZRIbCgljb3Vyc2VfaWQYASABKANSCGNvdXJzZUlkEh8KC2NvdXJzZV9uYW1lGA'
-    'IgASgJUgpjb3Vyc2VOYW1lEisKEWNvdXJzZV9vcmdpbmF0aW9uGAMgASgJUhBjb3Vyc2VPcmdp'
-    'bmF0aW9uEi4KE2NvdXJzZV90ZWFjaGVyX25hbWUYBCABKAlSEWNvdXJzZVRlYWNoZXJOYW1lEh'
-    '8KC3NraWxsX2hvdXJzGAUgASgBUgpza2lsbEhvdXJzEicKD2tub3dsZWRnZV9ob3VycxgGIAEo'
-    'AVIOa25vd2xlZGdlSG91cnMSLQoSY291cnNlX2Rlc2NyaXB0aW9uGAcgASgJUhFjb3Vyc2VEZX'
-    'NjcmlwdGlvbhIbCgljb3Zlcl91cmwYCCABKAlSCGNvdmVyVXJsEjEKFGNvdXJzZV9jbGFzc2Zp'
-    'Y2F0aW9uGAkgASgDUhNjb3Vyc2VDbGFzc2ZpY2F0aW9uEiEKDGNvdXJzZV9tYWpvchgKIAEoCV'
-    'ILY291cnNlTWFqb3ISJwoPY291cnNlX2luZHVzdHJ5GAsgASgJUg5jb3Vyc2VJbmR1c3RyeQ==');
+    'IgASgJUgpjb3Vyc2VOYW1lEi8KE2NvdXJzZV9vcmdhbml6YXRpb24YAyABKAlSEmNvdXJzZU9y'
+    'Z2FuaXphdGlvbhIuChNjb3Vyc2VfdGVhY2hlcl9uYW1lGAQgASgJUhFjb3Vyc2VUZWFjaGVyTm'
+    'FtZRIfCgtza2lsbF9ob3VycxgFIAEoAVIKc2tpbGxIb3VycxInCg9rbm93bGVkZ2VfaG91cnMY'
+    'BiABKAFSDmtub3dsZWRnZUhvdXJzEi0KEmNvdXJzZV9kZXNjcmlwdGlvbhgHIAEoCVIRY291cn'
+    'NlRGVzY3JpcHRpb24SGwoJY292ZXJfdXJsGAggASgJUghjb3ZlclVybBIxChRjb3Vyc2VfY2xh'
+    'c3NmaWNhdGlvbhgJIAEoA1ITY291cnNlQ2xhc3NmaWNhdGlvbhIhCgxjb3Vyc2VfbWFqb3IYCi'
+    'ABKAlSC2NvdXJzZU1ham9yEicKD2NvdXJzZV9pbmR1c3RyeRgLIAEoCVIOY291cnNlSW5kdXN0'
+    'cnk=');
 
 @$core.Deprecated('Use createNmCourseChapterResourceRequestDescriptor instead')
 const CreateNmCourseChapterResourceRequest$json = {

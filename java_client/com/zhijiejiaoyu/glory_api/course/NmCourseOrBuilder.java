@@ -26,16 +26,16 @@ public interface NmCourseOrBuilder extends
       getCourseNameBytes();
 
   /**
-   * <code>string course_orgination = 3;</code>
-   * @return The courseOrgination.
+   * <code>string course_organization = 3;</code>
+   * @return The courseOrganization.
    */
-  java.lang.String getCourseOrgination();
+  java.lang.String getCourseOrganization();
   /**
-   * <code>string course_orgination = 3;</code>
-   * @return The bytes for courseOrgination.
+   * <code>string course_organization = 3;</code>
+   * @return The bytes for courseOrganization.
    */
   com.google.protobuf.ByteString
-      getCourseOrginationBytes();
+      getCourseOrganizationBytes();
 
   /**
    * <code>string course_teacher_name = 4;</code>
