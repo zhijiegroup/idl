@@ -133,7 +133,7 @@ public final class Coupon {
       "nse\"z\n\021ListCouponRequest\022\'\n\014base_request" +
       "\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007shop_id\030\002 \001" +
       "(\003\022+\n\npagination\030d \001(\0132\027.base.Pagination" +
-      "Request\"\342\003\n\014CouponDetail\022\021\n\tcoupon_id\030\001 " +
+      "Request\"\372\003\n\014CouponDetail\022\021\n\tcoupon_id\030\001 " +
       "\001(\003\022\017\n\007shop_id\030\002 \001(\003\022\023\n\013coupon_type\030\003 \001(" +
       "\t\022\024\n\014coupon_title\030\004 \001(\t\022\035\n\025coupon_min_us" +
       "e_amount\030\005 \001(\001\022\025\n\rcoupon_amount\030\006 \001(\001\022\024\n" +
@@ -144,49 +144,50 @@ public final class Coupon {
       "_end_time\030\r \001(\003\022\025\n\rcoupon_status\030\016 \001(\t\022\032" +
       "\n\022distributed_status\030\017 \001(\t\022\031\n\021distribute" +
       "d_total\030\020 \001(\003\022\022\n\nused_total\030\021 \001(\003\022\021\n\tsho" +
-      "p_name\030\022 \001(\t\022\021\n\tshop_type\030\023 \001(\t\022\023\n\013produ" +
-      "ct_ids\030\024 \003(\003\"\231\001\n\022ListCouponResponse\022%\n\tb" +
-      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\022.\n\rco" +
-      "upon_detail\030\002 \003(\0132\027.glory_api.CouponDeta" +
-      "il\022,\n\npagination\030d \001(\0132\030.base.Pagination" +
-      "Response\"T\n\026GetCouponDetailRequest\022\'\n\014ba" +
-      "se_request\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tc" +
-      "oupon_id\030\002 \001(\003\"p\n\027GetCouponDetailRespons" +
-      "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
-      "\022.\n\rcoupon_detail\030\002 \001(\0132\027.glory_api.Coup" +
-      "onDetail\"\371\002\n\023UpdateCouponRequest\022\'\n\014base" +
-      "_request\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tcou" +
-      "pon_id\030\002 \001(\003\022\023\n\013coupon_type\030\003 \001(\t\022\024\n\014cou" +
-      "pon_title\030\004 \001(\t\022\035\n\025coupon_min_use_amount" +
-      "\030\005 \001(\001\022\025\n\rcoupon_amount\030\006 \001(\001\022\024\n\014coupon_" +
-      "total\030\007 \001(\003\022\024\n\014coupon_limit\030\010 \001(\t\022\030\n\020per" +
-      "son_max_total\030\t \001(\003\022\036\n\026distributed_start" +
-      "_time\030\n \001(\003\022\034\n\024distributed_end_time\030\013 \001(" +
-      "\003\022\026\n\016use_start_time\030\014 \001(\003\022\024\n\014use_end_tim" +
-      "e\030\r \001(\003\022\023\n\013product_ids\030\016 \003(\003\"=\n\024UpdateCo" +
-      "uponResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.B" +
-      "aseResponse\"R\n\024AbolishCouponRequest\022\'\n\014b" +
-      "ase_request\030\001 \001(\0132\021.base.BaseRequest\022\021\n\t" +
-      "coupon_id\030\002 \001(\003\">\n\025AbolishCouponResponse" +
-      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"" +
-      "\200\001\n%UpdateCouponDistributionStatusReques" +
-      "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
-      "st\022\021\n\tcoupon_id\030\002 \001(\003\022\033\n\023distribution_ac" +
-      "tion\030\003 \001(\t\"O\n&UpdateCouponDistributionSt" +
-      "atusResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.B" +
-      "aseResponse\"Q\n\023DeleteCouponRequest\022\'\n\014ba" +
-      "se_request\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tc" +
-      "oupon_id\030\002 \001(\003\"=\n\024DeleteCouponResponse\022%" +
-      "\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"P\n" +
-      "\022ClaimCouponRequest\022\'\n\014base_request\030\001 \001(" +
+      "p_name\030\022 \001(\t\022\021\n\tshop_type\030\023 \001(\t\022\026\n\016user_" +
+      "coupon_id\030\024 \001(\003\022\023\n\013product_ids\030\025 \003(\003\"\231\001\n" +
+      "\022ListCouponResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
+      ".base.BaseResponse\022.\n\rcoupon_detail\030\002 \003(" +
+      "\0132\027.glory_api.CouponDetail\022,\n\npagination" +
+      "\030d \001(\0132\030.base.PaginationResponse\"T\n\026GetC" +
+      "ouponDetailRequest\022\'\n\014base_request\030\001 \001(\013" +
+      "2\021.base.BaseRequest\022\021\n\tcoupon_id\030\002 \001(\003\"p" +
+      "\n\027GetCouponDetailResponse\022%\n\tbase_resp\030\001" +
+      " \001(\0132\022.base.BaseResponse\022.\n\rcoupon_detai" +
+      "l\030\002 \001(\0132\027.glory_api.CouponDetail\"\371\002\n\023Upd" +
+      "ateCouponRequest\022\'\n\014base_request\030\001 \001(\0132\021" +
+      ".base.BaseRequest\022\021\n\tcoupon_id\030\002 \001(\003\022\023\n\013" +
+      "coupon_type\030\003 \001(\t\022\024\n\014coupon_title\030\004 \001(\t\022" +
+      "\035\n\025coupon_min_use_amount\030\005 \001(\001\022\025\n\rcoupon" +
+      "_amount\030\006 \001(\001\022\024\n\014coupon_total\030\007 \001(\003\022\024\n\014c" +
+      "oupon_limit\030\010 \001(\t\022\030\n\020person_max_total\030\t " +
+      "\001(\003\022\036\n\026distributed_start_time\030\n \001(\003\022\034\n\024d" +
+      "istributed_end_time\030\013 \001(\003\022\026\n\016use_start_t" +
+      "ime\030\014 \001(\003\022\024\n\014use_end_time\030\r \001(\003\022\023\n\013produ" +
+      "ct_ids\030\016 \003(\003\"=\n\024UpdateCouponResponse\022%\n\t" +
+      "base_resp\030\001 \001(\0132\022.base.BaseResponse\"R\n\024A" +
+      "bolishCouponRequest\022\'\n\014base_request\030\001 \001(" +
       "\0132\021.base.BaseRequest\022\021\n\tcoupon_id\030\002 \001(\003\"" +
-      "<\n\023ClaimCouponResponse\022%\n\tbase_resp\030\001 \001(" +
-      "\0132\022.base.BaseResponse\">\n\023ListMyCouponReq" +
-      "uest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRe" +
-      "quest\"k\n\024ListMyCouponResponse\022%\n\tbase_re" +
-      "sp\030\001 \001(\0132\022.base.BaseResponse\022,\n\013coupon_l" +
-      "ist\030\002 \003(\0132\027.glory_api.CouponDetailB#\n\037co" +
-      "m.zhijiejiaoyu.glory_api.shopP\001b\006proto3"
+      ">\n\025AbolishCouponResponse\022%\n\tbase_resp\030\001 " +
+      "\001(\0132\022.base.BaseResponse\"\200\001\n%UpdateCoupon" +
+      "DistributionStatusRequest\022\'\n\014base_reques" +
+      "t\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tcoupon_id\030" +
+      "\002 \001(\003\022\033\n\023distribution_action\030\003 \001(\t\"O\n&Up" +
+      "dateCouponDistributionStatusResponse\022%\n\t" +
+      "base_resp\030\001 \001(\0132\022.base.BaseResponse\"Q\n\023D" +
+      "eleteCouponRequest\022\'\n\014base_request\030\001 \001(\013" +
+      "2\021.base.BaseRequest\022\021\n\tcoupon_id\030\002 \001(\003\"=" +
+      "\n\024DeleteCouponResponse\022%\n\tbase_resp\030\001 \001(" +
+      "\0132\022.base.BaseResponse\"P\n\022ClaimCouponRequ" +
+      "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
+      "uest\022\021\n\tcoupon_id\030\002 \001(\003\"<\n\023ClaimCouponRe" +
+      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
+      "ponse\">\n\023ListMyCouponRequest\022\'\n\014base_req" +
+      "uest\030\001 \001(\0132\021.base.BaseRequest\"k\n\024ListMyC" +
+      "ouponResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
+      "BaseResponse\022,\n\013coupon_list\030\002 \003(\0132\027.glor" +
+      "y_api.CouponDetailB#\n\037com.zhijiejiaoyu.g" +
+      "lory_api.shopP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -216,7 +217,7 @@ public final class Coupon {
     internal_static_glory_api_CouponDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CouponDetail_descriptor,
-        new java.lang.String[] { "CouponId", "ShopId", "CouponType", "CouponTitle", "CouponMinUseAmount", "CouponAmount", "CouponTotal", "CouponLimit", "PersonMaxTotal", "DistributedStartTime", "DistributedEndTime", "UseStartTime", "UseEndTime", "CouponStatus", "DistributedStatus", "DistributedTotal", "UsedTotal", "ShopName", "ShopType", "ProductIds", });
+        new java.lang.String[] { "CouponId", "ShopId", "CouponType", "CouponTitle", "CouponMinUseAmount", "CouponAmount", "CouponTotal", "CouponLimit", "PersonMaxTotal", "DistributedStartTime", "DistributedEndTime", "UseStartTime", "UseEndTime", "CouponStatus", "DistributedStatus", "DistributedTotal", "UsedTotal", "ShopName", "ShopType", "UserCouponId", "ProductIds", });
     internal_static_glory_api_ListCouponResponse_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_glory_api_ListCouponResponse_fieldAccessorTable = new

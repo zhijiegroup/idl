@@ -399,6 +399,7 @@ class CouponDetail extends $pb.GeneratedMessage {
     $fixnum.Int64? usedTotal,
     $core.String? shopName,
     $core.String? shopType,
+    $fixnum.Int64? userCouponId,
     $core.Iterable<$fixnum.Int64>? productIds,
   }) {
     final $result = create();
@@ -459,6 +460,9 @@ class CouponDetail extends $pb.GeneratedMessage {
     if (shopType != null) {
       $result.shopType = shopType;
     }
+    if (userCouponId != null) {
+      $result.userCouponId = userCouponId;
+    }
     if (productIds != null) {
       $result.productIds.addAll(productIds);
     }
@@ -488,7 +492,8 @@ class CouponDetail extends $pb.GeneratedMessage {
     ..aInt64(17, _omitFieldNames ? '' : 'usedTotal')
     ..aOS(18, _omitFieldNames ? '' : 'shopName')
     ..aOS(19, _omitFieldNames ? '' : 'shopType')
-    ..p<$fixnum.Int64>(20, _omitFieldNames ? '' : 'productIds', $pb.PbFieldType.K6)
+    ..aInt64(20, _omitFieldNames ? '' : 'userCouponId')
+    ..p<$fixnum.Int64>(21, _omitFieldNames ? '' : 'productIds', $pb.PbFieldType.K6)
     ..hasRequiredFields = false
   ;
 
@@ -685,7 +690,16 @@ class CouponDetail extends $pb.GeneratedMessage {
   void clearShopType() => clearField(19);
 
   @$pb.TagNumber(20)
-  $core.List<$fixnum.Int64> get productIds => $_getList(19);
+  $fixnum.Int64 get userCouponId => $_getI64(19);
+  @$pb.TagNumber(20)
+  set userCouponId($fixnum.Int64 v) { $_setInt64(19, v); }
+  @$pb.TagNumber(20)
+  $core.bool hasUserCouponId() => $_has(19);
+  @$pb.TagNumber(20)
+  void clearUserCouponId() => clearField(20);
+
+  @$pb.TagNumber(21)
+  $core.List<$fixnum.Int64> get productIds => $_getList(20);
 }
 
 class ListCouponResponse extends $pb.GeneratedMessage {

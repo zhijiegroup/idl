@@ -85,6 +85,24 @@ final $typed_data.Uint8List userFollowDescriptor = $convert.base64Decode(
     'lSCHVzZXJOYW1lEh0KCmF2YXRhcl91cmwYAyABKAlSCWF2YXRhclVybBIdCgpjcmVhdGVkX2F0'
     'GAQgASgJUgljcmVhdGVkQXQ=');
 
+@$core.Deprecated('Use userSocialSummaryDescriptor instead')
+const UserSocialSummary$json = {
+  '1': 'UserSocialSummary',
+  '2': [
+    {'1': 'my_liked_count', '3': 1, '4': 1, '5': 3, '10': 'myLikedCount'},
+    {'1': 'my_friend_count', '3': 2, '4': 1, '5': 3, '10': 'myFriendCount'},
+    {'1': 'my_following_count', '3': 3, '4': 1, '5': 3, '10': 'myFollowingCount'},
+    {'1': 'my_follower_count', '3': 4, '4': 1, '5': 3, '10': 'myFollowerCount'},
+  ],
+};
+
+/// Descriptor for `UserSocialSummary`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List userSocialSummaryDescriptor = $convert.base64Decode(
+    'ChFVc2VyU29jaWFsU3VtbWFyeRIkCg5teV9saWtlZF9jb3VudBgBIAEoA1IMbXlMaWtlZENvdW'
+    '50EiYKD215X2ZyaWVuZF9jb3VudBgCIAEoA1INbXlGcmllbmRDb3VudBIsChJteV9mb2xsb3dp'
+    'bmdfY291bnQYAyABKANSEG15Rm9sbG93aW5nQ291bnQSKgoRbXlfZm9sbG93ZXJfY291bnQYBC'
+    'ABKANSD215Rm9sbG93ZXJDb3VudA==');
+
 @$core.Deprecated('Use loginRequestDescriptor instead')
 const LoginRequest$json = {
   '1': 'LoginRequest',
@@ -1031,4 +1049,32 @@ final $typed_data.Uint8List listMyFriendResponseDescriptor = $convert.base64Deco
     'Nwb25zZVIIYmFzZVJlc3ASNgoLZnJpZW5kX2xpc3QYAiADKAsyFS5nbG9yeV9hcGkuVXNlckZv'
     'bGxvd1IKZnJpZW5kTGlzdBI4CgpwYWdpbmF0aW9uGGQgASgLMhguYmFzZS5QYWdpbmF0aW9uUm'
     'VzcG9uc2VSCnBhZ2luYXRpb24=');
+
+@$core.Deprecated('Use getMySocialSummaryRequestDescriptor instead')
+const GetMySocialSummaryRequest$json = {
+  '1': 'GetMySocialSummaryRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+  ],
+};
+
+/// Descriptor for `GetMySocialSummaryRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getMySocialSummaryRequestDescriptor = $convert.base64Decode(
+    'ChlHZXRNeVNvY2lhbFN1bW1hcnlSZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLmJhc2'
+    'UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0');
+
+@$core.Deprecated('Use getMySocialSummaryResponseDescriptor instead')
+const GetMySocialSummaryResponse$json = {
+  '1': 'GetMySocialSummaryResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'social_summary', '3': 2, '4': 1, '5': 11, '6': '.glory_api.UserSocialSummary', '10': 'socialSummary'},
+  ],
+};
+
+/// Descriptor for `GetMySocialSummaryResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getMySocialSummaryResponseDescriptor = $convert.base64Decode(
+    'ChpHZXRNeVNvY2lhbFN1bW1hcnlSZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYXNlLk'
+    'Jhc2VSZXNwb25zZVIIYmFzZVJlc3ASQwoOc29jaWFsX3N1bW1hcnkYAiABKAsyHC5nbG9yeV9h'
+    'cGkuVXNlclNvY2lhbFN1bW1hcnlSDXNvY2lhbFN1bW1hcnk=');
 

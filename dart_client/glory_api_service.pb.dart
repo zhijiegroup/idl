@@ -119,6 +119,9 @@ class glory_apiApi {
   $async.Future<$1.ListMyFriendResponse> listMyFriend($pb.ClientContext? ctx, $1.ListMyFriendRequest request) =>
     _client.invoke<$1.ListMyFriendResponse>(ctx, 'glory_api', 'ListMyFriend', request, $1.ListMyFriendResponse())
   ;
+  $async.Future<$1.GetMySocialSummaryResponse> getMySocialSummary($pb.ClientContext? ctx, $1.GetMySocialSummaryRequest request) =>
+    _client.invoke<$1.GetMySocialSummaryResponse>(ctx, 'glory_api', 'GetMySocialSummary', request, $1.GetMySocialSummaryResponse())
+  ;
   $async.Future<$1.GetUserPagePermissionResponse> getUserPagePermission($pb.ClientContext? ctx, $1.GetUserPagePermissionRequest request) =>
     _client.invoke<$1.GetUserPagePermissionResponse>(ctx, 'glory_api', 'GetUserPagePermission', request, $1.GetUserPagePermissionResponse())
   ;

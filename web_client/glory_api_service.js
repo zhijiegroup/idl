@@ -252,6 +252,12 @@ export class glory_api {
     );
   }
 
+  GetMySocialSummary(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/user/get_my_social_summary${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
   GetUserPagePermission(request) {
     const uri = `${this.uriPrefix}/api/user/get_user_page_permission`;
     const body = JSONbigint.stringify(request);

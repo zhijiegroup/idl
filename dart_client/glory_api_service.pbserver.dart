@@ -84,6 +84,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$1.ListMyFollowingResponse> listMyFollowing($pb.ServerContext ctx, $1.ListMyFollowingRequest request);
   $async.Future<$1.ListMyFollowerResponse> listMyFollower($pb.ServerContext ctx, $1.ListMyFollowerRequest request);
   $async.Future<$1.ListMyFriendResponse> listMyFriend($pb.ServerContext ctx, $1.ListMyFriendRequest request);
+  $async.Future<$1.GetMySocialSummaryResponse> getMySocialSummary($pb.ServerContext ctx, $1.GetMySocialSummaryRequest request);
   $async.Future<$1.GetUserPagePermissionResponse> getUserPagePermission($pb.ServerContext ctx, $1.GetUserPagePermissionRequest request);
   $async.Future<$1.CreateRolePagePermissionResponse> createRolePagePermission($pb.ServerContext ctx, $1.CreateRolePagePermissionRequest request);
   $async.Future<$1.UpdateRolePagePermissionResponse> updateRolePagePermission($pb.ServerContext ctx, $1.UpdateRolePagePermissionRequest request);
@@ -377,6 +378,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'ListMyFollowing': return $1.ListMyFollowingRequest();
       case 'ListMyFollower': return $1.ListMyFollowerRequest();
       case 'ListMyFriend': return $1.ListMyFriendRequest();
+      case 'GetMySocialSummary': return $1.GetMySocialSummaryRequest();
       case 'GetUserPagePermission': return $1.GetUserPagePermissionRequest();
       case 'CreateRolePagePermission': return $1.CreateRolePagePermissionRequest();
       case 'UpdateRolePagePermission': return $1.UpdateRolePagePermissionRequest();
@@ -673,6 +675,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'ListMyFollowing': return this.listMyFollowing(ctx, request as $1.ListMyFollowingRequest);
       case 'ListMyFollower': return this.listMyFollower(ctx, request as $1.ListMyFollowerRequest);
       case 'ListMyFriend': return this.listMyFriend(ctx, request as $1.ListMyFriendRequest);
+      case 'GetMySocialSummary': return this.getMySocialSummary(ctx, request as $1.GetMySocialSummaryRequest);
       case 'GetUserPagePermission': return this.getUserPagePermission(ctx, request as $1.GetUserPagePermissionRequest);
       case 'CreateRolePagePermission': return this.createRolePagePermission(ctx, request as $1.CreateRolePagePermissionRequest);
       case 'UpdateRolePagePermission': return this.updateRolePagePermission(ctx, request as $1.UpdateRolePagePermissionRequest);

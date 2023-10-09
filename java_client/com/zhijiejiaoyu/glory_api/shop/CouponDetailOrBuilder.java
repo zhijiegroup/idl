@@ -164,17 +164,23 @@ public interface CouponDetailOrBuilder extends
       getShopTypeBytes();
 
   /**
-   * <code>repeated int64 product_ids = 20;</code>
+   * <code>int64 user_coupon_id = 20;</code>
+   * @return The userCouponId.
+   */
+  long getUserCouponId();
+
+  /**
+   * <code>repeated int64 product_ids = 21;</code>
    * @return A list containing the productIds.
    */
   java.util.List<java.lang.Long> getProductIdsList();
   /**
-   * <code>repeated int64 product_ids = 20;</code>
+   * <code>repeated int64 product_ids = 21;</code>
    * @return The count of productIds.
    */
   int getProductIdsCount();
   /**
-   * <code>repeated int64 product_ids = 20;</code>
+   * <code>repeated int64 product_ids = 21;</code>
    * @param index The index of the element to return.
    * @return The productIds at the given index.
    */

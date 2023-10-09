@@ -100,7 +100,8 @@ const CouponDetail$json = {
     {'1': 'used_total', '3': 17, '4': 1, '5': 3, '10': 'usedTotal'},
     {'1': 'shop_name', '3': 18, '4': 1, '5': 9, '10': 'shopName'},
     {'1': 'shop_type', '3': 19, '4': 1, '5': 9, '10': 'shopType'},
-    {'1': 'product_ids', '3': 20, '4': 3, '5': 3, '10': 'productIds'},
+    {'1': 'user_coupon_id', '3': 20, '4': 1, '5': 3, '10': 'userCouponId'},
+    {'1': 'product_ids', '3': 21, '4': 3, '5': 3, '10': 'productIds'},
   ],
 };
 
@@ -119,7 +120,8 @@ final $typed_data.Uint8List couponDetailDescriptor = $convert.base64Decode(
     'c3RyaWJ1dGVkX3N0YXR1cxgPIAEoCVIRZGlzdHJpYnV0ZWRTdGF0dXMSKwoRZGlzdHJpYnV0ZW'
     'RfdG90YWwYECABKANSEGRpc3RyaWJ1dGVkVG90YWwSHQoKdXNlZF90b3RhbBgRIAEoA1IJdXNl'
     'ZFRvdGFsEhsKCXNob3BfbmFtZRgSIAEoCVIIc2hvcE5hbWUSGwoJc2hvcF90eXBlGBMgASgJUg'
-    'hzaG9wVHlwZRIfCgtwcm9kdWN0X2lkcxgUIAMoA1IKcHJvZHVjdElkcw==');
+    'hzaG9wVHlwZRIkCg51c2VyX2NvdXBvbl9pZBgUIAEoA1IMdXNlckNvdXBvbklkEh8KC3Byb2R1'
+    'Y3RfaWRzGBUgAygDUgpwcm9kdWN0SWRz');
 
 @$core.Deprecated('Use listCouponResponseDescriptor instead')
 const ListCouponResponse$json = {

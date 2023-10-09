@@ -52,6 +52,7 @@ export interface CouponDetail {
   used_total?: string;
   shop_name?: string;
   shop_type?: string;
+  user_coupon_id?: string;
   product_ids?: Array<string>;
 }
 

@@ -174,6 +174,11 @@ export class glory_api {
     request: user.ListMyFriendRequest
   ): Promise<user.ListMyFriendResponse>;
 
+  /** 我的社交信息 */
+  GetMySocialSummary(
+    request: user.GetMySocialSummaryRequest
+  ): Promise<user.GetMySocialSummaryResponse>;
+
   /** page permission */
   GetUserPagePermission(
     request: user.GetUserPagePermissionRequest

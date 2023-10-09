@@ -43,6 +43,17 @@ export interface UserFollow {
   created_at?: string;
 }
 
+export interface UserSocialSummary {
+  /** 我的获赞数量 */
+  my_liked_count?: string;
+  /** 我的朋友数量 */
+  my_friend_count?: string;
+  /** 我的关注数量 */
+  my_following_count?: string;
+  /** 我的粉丝数量 */
+  my_follower_count?: string;
+}
+
 /** login */
 export interface LoginRequest {
   base_request?: base.BaseRequest;
@@ -432,4 +443,14 @@ export interface ListMyFriendResponse {
   base_resp?: base.BaseResponse;
   friend_list?: Array<UserFollow>;
   pagination?: base.PaginationResponse;
+}
+
+/** 我的社交信息 */
+export interface GetMySocialSummaryRequest {
+  base_request?: base.BaseRequest;
+}
+
+export interface GetMySocialSummaryResponse {
+  base_resp?: base.BaseResponse;
+  social_summary?: UserSocialSummary;
 }
