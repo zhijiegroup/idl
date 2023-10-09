@@ -10,6 +10,7 @@ message CourseMaterialBox {
   int64 material_box_id = 1;
   string material_box_name = 2;
   string created_at = 3;
+  repeated CourseMaterial materials = 4; // 预览封面
 }
 
 // 素材
@@ -73,6 +74,7 @@ message ListCourseMaterialRequest {
   base.BaseRequest base_request = 1;
   int64 material_box_id = 2;
   string material_name = 3;
+  string material_type = 4;
   base.PaginationRequest pagination = 100;
 }
 
