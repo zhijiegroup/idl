@@ -36,4 +36,10 @@ public interface NmCourseDetailResponseOrBuilder extends
    * <code>.glory_api.NmCourse course = 2;</code>
    */
   com.zhijiejiaoyu.glory_api.course.NmCourseOrBuilder getCourseOrBuilder();
+
+  /**
+   * <code>bool is_joined = 3;</code>
+   * @return The isJoined.
+   */
+  boolean getIsJoined();
 }

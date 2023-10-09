@@ -74,6 +74,11 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 24: {
+
+            isJoined = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -158,6 +163,17 @@ private static final long serialVersionUID = 0L;
     return getCourse();
   }
 
+  public static final int IS_JOINED_FIELD_NUMBER = 3;
+  private boolean isJoined ;
+  /**
+   * <code>bool is_joined = 3;</code>
+   * @return The isJoined.
+   */
+  @java.lang.Override
+  public boolean getIsJoined() {
+    return isJoined ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -178,6 +194,9 @@ private static final long serialVersionUID = 0L;
     if (course != null) {
       output.writeMessage(2, getCourse());
     }
+    if (isJoined != false) {
+      output.writeBool(3, isJoined );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -194,6 +213,10 @@ private static final long serialVersionUID = 0L;
     if (course != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getCourse());
+    }
+    if (isJoined != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(3, isJoined );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -220,6 +243,8 @@ private static final long serialVersionUID = 0L;
       if (!getCourse()
           .equals(other.getCourse())) return false;
     }
+    if (getIsJoined()
+        != other.getIsJoined()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -239,6 +264,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + COURSE_FIELD_NUMBER;
       hash = (53 * hash) + getCourse().hashCode();
     }
+    hash = (37 * hash) + IS_JOINED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsJoined());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -384,6 +412,8 @@ private static final long serialVersionUID = 0L;
         course = null;
         courseBuilder = null;
       }
+      isJoined = false;
+
       return this;
     }
 
@@ -420,6 +450,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.course = courseBuilder .build();
       }
+      result.isJoined = isJoined ;
       onBuilt();
       return result;
     }
@@ -473,6 +504,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasCourse()) {
         mergeCourse(other.getCourse());
+      }
+      if (other.getIsJoined() != false) {
+        setIsJoined(other.getIsJoined());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -739,6 +773,37 @@ private static final long serialVersionUID = 0L;
         course = null;
       }
       return courseBuilder ;
+    }
+
+    private boolean isJoined ;
+    /**
+     * <code>bool is_joined = 3;</code>
+     * @return The isJoined.
+     */
+    @java.lang.Override
+    public boolean getIsJoined() {
+      return isJoined ;
+    }
+    /**
+     * <code>bool is_joined = 3;</code>
+     * @param value The isJoined to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsJoined(boolean value) {
+      
+      isJoined = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool is_joined = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsJoined() {
+      
+      isJoined = false;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

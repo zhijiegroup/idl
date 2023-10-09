@@ -74,6 +74,7 @@ export interface NmCourseDetailRequest {
 export interface NmCourseDetailResponse {
   base_resp?: base.BaseResponse;
   course?: NmCourse;
+  is_joined?: boolean;
 }
 
 export interface ListNmCourseRequest {

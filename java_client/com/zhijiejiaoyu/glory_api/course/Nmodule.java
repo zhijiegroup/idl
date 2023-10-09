@@ -121,22 +121,22 @@ public final class Nmodule {
       " \001(\0132\022.base.BaseResponse\022\021\n\tcourse_id\030\002 " +
       "\001(\003\"S\n\025NmCourseDetailRequest\022\'\n\014base_req" +
       "uest\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tcourse_" +
-      "id\030\002 \001(\003\"d\n\026NmCourseDetailResponse\022%\n\tba" +
+      "id\030\002 \001(\003\"w\n\026NmCourseDetailResponse\022%\n\tba" +
       "se_resp\030\001 \001(\0132\022.base.BaseResponse\022#\n\006cou" +
-      "rse\030\002 \001(\0132\023.glory_api.NmCourse\"\221\001\n\023ListN" +
-      "mCourseRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
-      "ase.BaseRequest\022\025\n\rclassfication\030\002 \001(\005\022\r" +
-      "\n\005value\030\003 \001(\t\022+\n\npagination\030d \001(\0132\027.base" +
-      ".PaginationRequest\"\221\001\n\024ListNmCourseRespo" +
-      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
-      "se\022$\n\007courses\030\002 \003(\0132\023.glory_api.NmCourse" +
-      "\022,\n\npagination\030d \001(\0132\030.base.PaginationRe" +
-      "sponse\"S\n\025DeleteNmCourseRequest\022\'\n\014base_" +
-      "request\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tcour" +
-      "se_id\030\002 \001(\003\"?\n\026DeleteNmCourseResponse\022%\n" +
-      "\tbase_resp\030\001 \001(\0132\022.base.BaseResponseB%\n!" +
-      "com.zhijiejiaoyu.glory_api.courseP\001b\006pro" +
-      "to3"
+      "rse\030\002 \001(\0132\023.glory_api.NmCourse\022\021\n\tis_joi" +
+      "ned\030\003 \001(\010\"\221\001\n\023ListNmCourseRequest\022\'\n\014bas" +
+      "e_request\030\001 \001(\0132\021.base.BaseRequest\022\025\n\rcl" +
+      "assfication\030\002 \001(\005\022\r\n\005value\030\003 \001(\t\022+\n\npagi" +
+      "nation\030d \001(\0132\027.base.PaginationRequest\"\221\001" +
+      "\n\024ListNmCourseResponse\022%\n\tbase_resp\030\001 \001(" +
+      "\0132\022.base.BaseResponse\022$\n\007courses\030\002 \003(\0132\023" +
+      ".glory_api.NmCourse\022,\n\npagination\030d \001(\0132" +
+      "\030.base.PaginationResponse\"S\n\025DeleteNmCou" +
+      "rseRequest\022\'\n\014base_request\030\001 \001(\0132\021.base." +
+      "BaseRequest\022\021\n\tcourse_id\030\002 \001(\003\"?\n\026Delete" +
+      "NmCourseResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
+      "se.BaseResponseB%\n!com.zhijiejiaoyu.glor" +
+      "y_api.courseP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -196,7 +196,7 @@ public final class Nmodule {
     internal_static_glory_api_NmCourseDetailResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_NmCourseDetailResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "Course", });
+        new java.lang.String[] { "BaseResp", "Course", "IsJoined", });
     internal_static_glory_api_ListNmCourseRequest_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_glory_api_ListNmCourseRequest_fieldAccessorTable = new

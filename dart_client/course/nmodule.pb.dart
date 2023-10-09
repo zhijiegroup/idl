@@ -876,6 +876,7 @@ class NmCourseDetailResponse extends $pb.GeneratedMessage {
   factory NmCourseDetailResponse({
     $0.BaseResponse? baseResp,
     NmCourse? course,
+    $core.bool? isJoined,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -883,6 +884,9 @@ class NmCourseDetailResponse extends $pb.GeneratedMessage {
     }
     if (course != null) {
       $result.course = course;
+    }
+    if (isJoined != null) {
+      $result.isJoined = isJoined;
     }
     return $result;
   }
@@ -893,6 +897,7 @@ class NmCourseDetailResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NmCourseDetailResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
     ..aOM<NmCourse>(2, _omitFieldNames ? '' : 'course', subBuilder: NmCourse.create)
+    ..aOB(3, _omitFieldNames ? '' : 'isJoined')
     ..hasRequiredFields = false
   ;
 
@@ -938,6 +943,15 @@ class NmCourseDetailResponse extends $pb.GeneratedMessage {
   void clearCourse() => clearField(2);
   @$pb.TagNumber(2)
   NmCourse ensureCourse() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $core.bool get isJoined => $_getBF(2);
+  @$pb.TagNumber(3)
+  set isJoined($core.bool v) { $_setBool(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasIsJoined() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearIsJoined() => clearField(3);
 }
 
 class ListNmCourseRequest extends $pb.GeneratedMessage {
