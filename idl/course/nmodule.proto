@@ -8,7 +8,7 @@ import "base.proto";
 message NmCourse {
     int64 course_id = 1;
     string course_name = 2;
-    string course_orgination = 3;
+    string course_organization = 3;
     string course_teacher_name = 4;
     double skill_hours = 5;
     double knowledge_hours = 6;
