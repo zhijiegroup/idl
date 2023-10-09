@@ -130,6 +130,11 @@ service glory_api {
     option (api.post) = '/api/user/list_my_friend';
   }
 
+  // 我的社交信息
+  rpc GetMySocialSummary(GetMySocialSummaryRequest) returns (GetMySocialSummaryResponse) {
+    option (api.get) = '/api/user/get_my_social_summary';
+  }
+
   // page permission
   rpc GetUserPagePermission(GetUserPagePermissionRequest) returns (GetUserPagePermissionResponse) {
     option (api.post) = '/api/user/get_user_page_permission';  // get user page permission with token
