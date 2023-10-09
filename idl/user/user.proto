@@ -9,13 +9,13 @@ import "shop/shop.proto";
 import "tenant/tenant.proto";
 
 message TenantDept {
-    int64 dept_id = 1;
-    string dept_name = 2;
-    string dept_type = 3;
-    string dept_code = 4;
-    string dept_overview = 5;
-    int64 tenant_id = 6;
-    int64 parent_id = 7;
+  int64 dept_id = 1;
+  string dept_name = 2;
+  string dept_type = 3;
+  string dept_code = 4;
+  string dept_overview = 5;
+  int64 tenant_id = 6;
+  int64 parent_id = 7;
 }
 
 message User {
@@ -24,11 +24,11 @@ message User {
   string token = 3;
   string token_expiry = 4;
   string created_at = 5;
-  string name =6;
+  string name = 6;
   int64 avatar_attachment_id = 7;
   string avatar_url = 8;
   Seller seller = 9;
-  
+
   repeated ShopAccess shop_access = 10;  //判断用户的shop访问权限
   repeated TenantDept tenant_dept = 11;
   repeated Role roles = 121;
@@ -43,20 +43,27 @@ message UserFollow {
   string created_at = 4;
 }
 
+message UserSocialSummary {
+  int64 my_liked_count = 1; // 我的获赞数量
+  int64 my_friend_count = 2; // 我的朋友数量
+  int64 my_following_count = 3; // 我的关注数量
+  int64 my_follower_count = 4; // 我的粉丝数量
+}
+
 // login
 message LoginRequest {
-  base.BaseRequest base_request=1;
+  base.BaseRequest base_request = 1;
   string phone = 2; // required
   string code = 3;  // required
 }
 message LoginResponse {
   base.BaseResponse base_resp = 1;
-  User data =2;
+  User data = 2;
 }
 
 // logout
 message LogoutRequest {
-  base.BaseRequest base_request=1;
+  base.BaseRequest base_request = 1;
 }
 message LogoutResponse {
   base.BaseResponse base_resp = 1;
@@ -64,7 +71,7 @@ message LogoutResponse {
 
 // get verification code
 message GetVerifyCodeRequest {
-  base.BaseRequest base_request=1;
+  base.BaseRequest base_request = 1;
   string phone = 2;
 }
 
@@ -73,7 +80,7 @@ message GetVerifyCodeResponse {
 }
 
 message CheckVerifyCodeRequest {
-  base.BaseRequest base_request=1;
+  base.BaseRequest base_request = 1;
   string phone = 2;
   string code = 3;
 }
@@ -85,17 +92,17 @@ message CheckVerifyCodeResponse {
 
 
 message LoginWithPasswordRequest {
-  base.BaseRequest base_request=1;
+  base.BaseRequest base_request = 1;
   string phone = 2;
   string password = 3;
 }
 message LoginWithPasswordResponse {
   base.BaseResponse base_resp = 1;
-  User data =2;
+  User data = 2;
 }
 
 message UpdatePasswordRequest {
-  base.BaseRequest base_request=1;
+  base.BaseRequest base_request = 1;
   string phone = 2;
   string password = 3;
 }
@@ -105,7 +112,7 @@ message UpdatePasswordResponse {
 
 // Get User
 message GetUserRequest {
-  base.BaseRequest base_request=1;
+  base.BaseRequest base_request = 1;
 }
 
 message GetUserResponse {
@@ -143,13 +150,13 @@ message PagePermission {
 }
 
 message GetUserPagePermissionRequest {
-  base.BaseRequest base_request=1;
+  base.BaseRequest base_request = 1;
   int64 tenant_id = 2;
 }
 
 message GetUserPagePermissionResponse {
   base.BaseResponse base_resp = 1;
-  repeated PagePermission page_permission =2; // page permission of the user
+  repeated PagePermission page_permission = 2; // page permission of the user
 }
 
 message CreateRolePagePermissionRequest {
@@ -198,37 +205,37 @@ message UpdateRolePagePermissionResponse {
 }
 
 message Permission {
-  int64 permission_id =1;
-  string permission_name =2;
+  int64 permission_id = 1;
+  string permission_name = 2;
   int64 resource_id = 3;  // 权限对应的resource
-  string permission =4; // 支持 C R U D
-  string description =5;
+  string permission = 4; // 支持 C R U D
+  string description = 5;
   int64 tenant_id = 6;
 }
 
 message ListPermissionRequest {
-  base.BaseRequest base_request=1;
-  int64 permission_id =2;
-  string permission_name =3;  // 权限的名字，模糊查找
+  base.BaseRequest base_request = 1;
+  int64 permission_id = 2;
+  string permission_name = 3;  // 权限的名字，模糊查找
   int64 resource_id = 4;  // 权限对应的resource id
-  string permission =5; // 权限, 支持 C, R, U D
-  int64 tenant_id =6; // 学校的id
+  string permission = 5; // 权限, 支持 C, R, U D
+  int64 tenant_id = 6; // 学校的id
   base.PaginationRequest pagination = 100;
 }
 
 message ListPermissionResponse {
   base.BaseResponse base_resp = 1;
-  repeated Permission permission =2; // permission列表
+  repeated Permission permission = 2; // permission列表
   base.PaginationResponse pagination = 100;
 }
 
 message RoleType {
   // "system_student":        学生
-	// "system_teacher":        专业老师
-	// "system_admin":          学校管理员
-	// "system_short_reviewer": 短视频预审员
-	// "user_define":           自定义
-  
+  // "system_teacher":        专业老师
+  // "system_admin":          学校管理员
+  // "system_short_reviewer": 短视频预审员
+  // "user_define":           自定义
+
   string label = 1;
   string value = 2;
 }
@@ -247,8 +254,8 @@ message Role {
   int64 role_id = 1;
   string role_name = 2;
   string role_type = 3;
-//  string source = 3;  // 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
-//  int64 source_id =4; // 对应的资源来源id
+  //  string source = 3;  // 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
+  //  int64 source_id =4; // 对应的资源来源id
   string description = 5;
   bool readonly = 6;
   repeated RolePermission role_permission = 7;
@@ -256,44 +263,44 @@ message Role {
 }
 
 message RolePermission {
-  int64 role_permission_id =1;
-  int64 role_id =2;
+  int64 role_permission_id = 1;
+  int64 role_id = 2;
   int64 permission_id = 3;
-  repeated Permission permission=4;
+  repeated Permission permission = 4;
 }
 
 
 message ListRoleRequest {
-  base.BaseRequest base_request=1;
-  int64 role_id =2;
-  string role_name =3;  // 角色名称，模糊查找
-  string role_type =4; // 角色类型， 支持build-in，跟 user-defined
-//  string source = 5;  // 对应的角色来源
-//  int64 source_id =6;
+  base.BaseRequest base_request = 1;
+  int64 role_id = 2;
+  string role_name = 3;  // 角色名称，模糊查找
+  string role_type = 4; // 角色类型， 支持build-in，跟 user-defined
+  //  string source = 5;  // 对应的角色来源
+  //  int64 source_id =6;
   int64 tenant_id = 7;  // 学校id
   base.PaginationRequest pagination = 100;
 }
 
 message ListRoleResponse {
   base.BaseResponse base_resp = 1;
-  repeated Role role =2; // Role列表
+  repeated Role role = 2; // Role列表
   base.PaginationResponse pagination = 100;
 }
 
 message CreateRoleRequest {
-  base.BaseRequest base_request=1;
+  base.BaseRequest base_request = 1;
   Role role = 2;
 }
 
 message CreateRoleResponse {
   base.BaseResponse base_resp = 1;
-  int64 role_id =2; // role id
+  int64 role_id = 2; // role id
 }
 
 message GiveRolePermissionRequest {
-  base.BaseRequest base_request=1;
+  base.BaseRequest base_request = 1;
   int64 role_id = 2;
-  repeated int64 permission_id =3;
+  repeated int64 permission_id = 3;
 }
 
 message GiveRolePermissionResponse {
@@ -302,8 +309,8 @@ message GiveRolePermissionResponse {
 
 
 message RemoveRolePermissionRequest {
-  base.BaseRequest base_request=1;
-  repeated int64 role_permission_id =3; // 这个role_permission_id在list_role里头有返回，是role跟permission 映射起来的唯一id
+  base.BaseRequest base_request = 1;
+  repeated int64 role_permission_id = 3; // 这个role_permission_id在list_role里头有返回，是role跟permission 映射起来的唯一id
 }
 
 message RemoveRolePermissionResponse {
@@ -311,8 +318,8 @@ message RemoveRolePermissionResponse {
 }
 
 message DeleteRoleRequest {
-  base.BaseRequest base_request=1;
-  repeated int64 role_id =2; // role id list
+  base.BaseRequest base_request = 1;
+  repeated int64 role_id = 2; // role id list
 }
 
 message DeleteRoleResponse {
@@ -320,22 +327,22 @@ message DeleteRoleResponse {
 }
 
 message Resource {
-  int64 resource_id =2;
-  string resource_name =3;
-  string resource_type =4;  // 支持 school, major_live, business_system, page_permission， 后面可能会增加
+  int64 resource_id = 2;
+  string resource_name = 3;
+  string resource_type = 4;  // 支持 school, major_live, business_system, page_permission， 后面可能会增加
   string source = 5;  // 源表，有config, school, major, class，后面会增加
-  int64 source_id =6; // 源表记录的id
-  int64 tenant_id =7; // 学校的id
+  int64 source_id = 6; // 源表记录的id
+  int64 tenant_id = 7; // 学校的id
 }
 message ListResourceRequest {
-  base.BaseRequest base_request=1;
+  base.BaseRequest base_request = 1;
   Resource resource = 2;
   base.PaginationRequest pagination = 100;
 }
 
 message ListResourceResponse {
   base.BaseResponse base_resp = 1;
-  repeated Resource resource =2; // resource 列表
+  repeated Resource resource = 2; // resource 列表
   base.PaginationResponse pagination = 100;
 }
 
@@ -346,11 +353,11 @@ message ListUserByRole {
   int64 tenant_id = 4;
   string role = 5;
   string created_at = 6;
-  repeated Role roles = 7; 
+  repeated Role roles = 7;
 }
 
 message ListUserByRoleRequest {
-  base.BaseRequest base_request=1;
+  base.BaseRequest base_request = 1;
   string role_name = 2; // 平台管理员是admin, 学校管理员是school_admin_role
   string name = 3; // 模糊查询关键字
   int64 tenant_id = 4;  // 学校的id，若是角色名称是admin，则会忽略这个
@@ -359,7 +366,7 @@ message ListUserByRoleRequest {
 
 message ListUserByRoleResponse {
   base.BaseResponse base_resp = 1;
-  repeated ListUserByRole user  =2; // user 列表
+  repeated ListUserByRole user = 2; // user 列表
   base.PaginationResponse pagination = 100;
 }
 
@@ -408,4 +415,14 @@ message ListMyFriendResponse {
   base.BaseResponse base_resp = 1;
   repeated UserFollow friend_list = 2;
   base.PaginationResponse pagination = 100;
+}
+
+// 我的社交信息
+message GetMySocialSummaryRequest {
+  base.BaseRequest base_request = 1;
+}
+
+message GetMySocialSummaryResponse {
+  base.BaseResponse base_resp = 1;
+  UserSocialSummary social_summary = 2;
 }
