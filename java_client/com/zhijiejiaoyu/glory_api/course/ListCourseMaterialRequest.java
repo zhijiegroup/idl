@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
   }
   private ListCourseMaterialRequest() {
     materialName = "";
+    materialType = "";
   }
 
   @java.lang.Override
@@ -75,6 +76,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             materialName = s;
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            materialType = s;
             break;
           }
           case 802: {
@@ -197,6 +204,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int MATERIAL_TYPE_FIELD_NUMBER = 4;
+  private volatile java.lang.Object materialType ;
+  /**
+   * <code>string material_type = 4;</code>
+   * @return The materialType.
+   */
+  @java.lang.Override
+  public java.lang.String getMaterialType() {
+    java.lang.Object ref = materialType ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      materialType = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string material_type = 4;</code>
+   * @return The bytes for materialType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getMaterialTypeBytes() {
+    java.lang.Object ref = materialType ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      materialType = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int PAGINATION_FIELD_NUMBER = 100;
   private com.zhijiejiaoyu.base.PaginationRequest pagination ;
   /**
@@ -246,6 +291,9 @@ private static final long serialVersionUID = 0L;
     if (!getMaterialNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, materialName );
     }
+    if (!getMaterialTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, materialType );
+    }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
     }
@@ -268,6 +316,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getMaterialNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, materialName );
+    }
+    if (!getMaterialTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, materialType );
     }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -297,6 +348,8 @@ private static final long serialVersionUID = 0L;
         != other.getMaterialBoxId()) return false;
     if (!getMaterialName()
         .equals(other.getMaterialName())) return false;
+    if (!getMaterialType()
+        .equals(other.getMaterialType())) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -322,6 +375,8 @@ private static final long serialVersionUID = 0L;
         getMaterialBoxId());
     hash = (37 * hash) + MATERIAL_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getMaterialName().hashCode();
+    hash = (37 * hash) + MATERIAL_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getMaterialType().hashCode();
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
@@ -473,6 +528,8 @@ private static final long serialVersionUID = 0L;
 
       materialName = "";
 
+      materialType = "";
+
       if (paginationBuilder == null) {
         pagination = null;
       } else {
@@ -512,6 +569,7 @@ private static final long serialVersionUID = 0L;
       }
       result.materialBoxId = materialBoxId ;
       result.materialName = materialName ;
+      result.materialType = materialType ;
       if (paginationBuilder == null) {
         result.pagination = pagination ;
       } else {
@@ -573,6 +631,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getMaterialName().isEmpty()) {
         materialName = other.materialName ;
+        onChanged();
+      }
+      if (!other.getMaterialType().isEmpty()) {
+        materialType = other.materialType ;
         onChanged();
       }
       if (other.hasPagination()) {
@@ -829,6 +891,82 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       materialName = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object materialType = "";
+    /**
+     * <code>string material_type = 4;</code>
+     * @return The materialType.
+     */
+    public java.lang.String getMaterialType() {
+      java.lang.Object ref = materialType ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        materialType = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string material_type = 4;</code>
+     * @return The bytes for materialType.
+     */
+    public com.google.protobuf.ByteString
+        getMaterialTypeBytes() {
+      java.lang.Object ref = materialType ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        materialType = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string material_type = 4;</code>
+     * @param value The materialType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaterialType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      materialType = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string material_type = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMaterialType() {
+      
+      materialType = getDefaultInstance().getMaterialType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string material_type = 4;</code>
+     * @param value The bytes for materialType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaterialTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      materialType = value;
       onChanged();
       return this;
     }

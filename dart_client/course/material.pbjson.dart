@@ -20,6 +20,7 @@ const CourseMaterialBox$json = {
     {'1': 'material_box_id', '3': 1, '4': 1, '5': 3, '10': 'materialBoxId'},
     {'1': 'material_box_name', '3': 2, '4': 1, '5': 9, '10': 'materialBoxName'},
     {'1': 'created_at', '3': 3, '4': 1, '5': 9, '10': 'createdAt'},
+    {'1': 'materials', '3': 4, '4': 3, '5': 11, '6': '.glory_api.CourseMaterial', '10': 'materials'},
   ],
 };
 
@@ -27,7 +28,8 @@ const CourseMaterialBox$json = {
 final $typed_data.Uint8List courseMaterialBoxDescriptor = $convert.base64Decode(
     'ChFDb3Vyc2VNYXRlcmlhbEJveBImCg9tYXRlcmlhbF9ib3hfaWQYASABKANSDW1hdGVyaWFsQm'
     '94SWQSKgoRbWF0ZXJpYWxfYm94X25hbWUYAiABKAlSD21hdGVyaWFsQm94TmFtZRIdCgpjcmVh'
-    'dGVkX2F0GAMgASgJUgljcmVhdGVkQXQ=');
+    'dGVkX2F0GAMgASgJUgljcmVhdGVkQXQSNwoJbWF0ZXJpYWxzGAQgAygLMhkuZ2xvcnlfYXBpLk'
+    'NvdXJzZU1hdGVyaWFsUgltYXRlcmlhbHM=');
 
 @$core.Deprecated('Use courseMaterialDescriptor instead')
 const CourseMaterial$json = {
@@ -180,6 +182,7 @@ const ListCourseMaterialRequest$json = {
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'material_box_id', '3': 2, '4': 1, '5': 3, '10': 'materialBoxId'},
     {'1': 'material_name', '3': 3, '4': 1, '5': 9, '10': 'materialName'},
+    {'1': 'material_type', '3': 4, '4': 1, '5': 9, '10': 'materialType'},
     {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
   ],
 };
@@ -188,8 +191,9 @@ const ListCourseMaterialRequest$json = {
 final $typed_data.Uint8List listCourseMaterialRequestDescriptor = $convert.base64Decode(
     'ChlMaXN0Q291cnNlTWF0ZXJpYWxSZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLmJhc2'
     'UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EiYKD21hdGVyaWFsX2JveF9pZBgCIAEoA1INbWF0'
-    'ZXJpYWxCb3hJZBIjCg1tYXRlcmlhbF9uYW1lGAMgASgJUgxtYXRlcmlhbE5hbWUSNwoKcGFnaW'
-    '5hdGlvbhhkIAEoCzIXLmJhc2UuUGFnaW5hdGlvblJlcXVlc3RSCnBhZ2luYXRpb24=');
+    'ZXJpYWxCb3hJZBIjCg1tYXRlcmlhbF9uYW1lGAMgASgJUgxtYXRlcmlhbE5hbWUSIwoNbWF0ZX'
+    'JpYWxfdHlwZRgEIAEoCVIMbWF0ZXJpYWxUeXBlEjcKCnBhZ2luYXRpb24YZCABKAsyFy5iYXNl'
+    'LlBhZ2luYXRpb25SZXF1ZXN0UgpwYWdpbmF0aW9u');
 
 @$core.Deprecated('Use listCourseMaterialResponseDescriptor instead')
 const ListCourseMaterialResponse$json = {

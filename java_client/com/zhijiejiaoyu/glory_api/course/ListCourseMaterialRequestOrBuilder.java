@@ -41,6 +41,18 @@ public interface ListCourseMaterialRequestOrBuilder extends
       getMaterialNameBytes();
 
   /**
+   * <code>string material_type = 4;</code>
+   * @return The materialType.
+   */
+  java.lang.String getMaterialType();
+  /**
+   * <code>string material_type = 4;</code>
+   * @return The bytes for materialType.
+   */
+  com.google.protobuf.ByteString
+      getMaterialTypeBytes();
+
+  /**
    * <code>.base.PaginationRequest pagination = 100;</code>
    * @return Whether the pagination field is set.
    */

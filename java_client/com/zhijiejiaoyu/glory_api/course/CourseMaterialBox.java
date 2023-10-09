@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
   private CourseMaterialBox() {
     materialBoxName = "";
     createdAt = "";
+    materials = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -44,6 +45,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0 = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -71,6 +73,15 @@ private static final long serialVersionUID = 0L;
             createdAt = s;
             break;
           }
+          case 34: {
+            if (!((mutable_bitField0 & 0x00000001) != 0)) {
+              materials = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.course.CourseMaterial>();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            materials .add(
+                input.readMessage(com.zhijiejiaoyu.glory_api.course.CourseMaterial.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -86,6 +97,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0 & 0x00000001) != 0)) {
+        materials = java.util.Collections.unmodifiableList(materials );
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -190,6 +204,66 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int MATERIALS_FIELD_NUMBER = 4;
+  private java.util.List<com.zhijiejiaoyu.glory_api.course.CourseMaterial> materials ;
+  /**
+   * <pre>
+   * 预览封面
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseMaterial> getMaterialsList() {
+    return materials ;
+  }
+  /**
+   * <pre>
+   * 预览封面
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseMaterialOrBuilder> 
+      getMaterialsOrBuilderList() {
+    return materials ;
+  }
+  /**
+   * <pre>
+   * 预览封面
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+   */
+  @java.lang.Override
+  public int getMaterialsCount() {
+    return materials .size();
+  }
+  /**
+   * <pre>
+   * 预览封面
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.course.CourseMaterial getMaterials(int index) {
+    return materials .get(index);
+  }
+  /**
+   * <pre>
+   * 预览封面
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.course.CourseMaterialOrBuilder getMaterialsOrBuilder(
+      int index) {
+    return materials .get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -213,6 +287,9 @@ private static final long serialVersionUID = 0L;
     if (!getCreatedAtBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, createdAt );
     }
+    for (int i = 0; i < materials .size(); i++) {
+      output.writeMessage(4, materials .get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -231,6 +308,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getCreatedAtBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, createdAt );
+    }
+    for (int i = 0; i < materials .size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, materials .get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -253,6 +334,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getMaterialBoxName())) return false;
     if (!getCreatedAt()
         .equals(other.getCreatedAt())) return false;
+    if (!getMaterialsList()
+        .equals(other.getMaterialsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -271,6 +354,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getMaterialBoxName().hashCode();
     hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
     hash = (53 * hash) + getCreatedAt().hashCode();
+    if (getMaterialsCount() > 0) {
+      hash = (37 * hash) + MATERIALS_FIELD_NUMBER;
+      hash = (53 * hash) + getMaterialsList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -403,6 +490,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getMaterialsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -414,6 +502,12 @@ private static final long serialVersionUID = 0L;
 
       createdAt = "";
 
+      if (materialsBuilder == null) {
+        materials = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000001);
+      } else {
+        materialsBuilder .clear();
+      }
       return this;
     }
 
@@ -440,9 +534,19 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.course.CourseMaterialBox buildPartial() {
       com.zhijiejiaoyu.glory_api.course.CourseMaterialBox result = new com.zhijiejiaoyu.glory_api.course.CourseMaterialBox(this);
+      int from_bitField0 = bitField0 ;
       result.materialBoxId = materialBoxId ;
       result.materialBoxName = materialBoxName ;
       result.createdAt = createdAt ;
+      if (materialsBuilder == null) {
+        if (((bitField0 & 0x00000001) != 0)) {
+          materials = java.util.Collections.unmodifiableList(materials );
+          bitField0 = (bitField0 & ~0x00000001);
+        }
+        result.materials = materials ;
+      } else {
+        result.materials = materialsBuilder .build();
+      }
       onBuilt();
       return result;
     }
@@ -502,6 +606,32 @@ private static final long serialVersionUID = 0L;
         createdAt = other.createdAt ;
         onChanged();
       }
+      if (materialsBuilder == null) {
+        if (!other.materials .isEmpty()) {
+          if (materials .isEmpty()) {
+            materials = other.materials ;
+            bitField0 = (bitField0 & ~0x00000001);
+          } else {
+            ensureMaterialsIsMutable();
+            materials .addAll(other.materials );
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.materials .isEmpty()) {
+          if (materialsBuilder .isEmpty()) {
+            materialsBuilder .dispose();
+            materialsBuilder = null;
+            materials = other.materials ;
+            bitField0 = (bitField0 & ~0x00000001);
+            materialsBuilder = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getMaterialsFieldBuilder() : null;
+          } else {
+            materialsBuilder .addAllMessages(other.materials );
+          }
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -530,6 +660,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0 ;
 
     private long materialBoxId ;
     /**
@@ -712,6 +843,318 @@ private static final long serialVersionUID = 0L;
       createdAt = value;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.zhijiejiaoyu.glory_api.course.CourseMaterial> materials =
+      java.util.Collections.emptyList();
+    private void ensureMaterialsIsMutable() {
+      if (!((bitField0 & 0x00000001) != 0)) {
+        materials = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.course.CourseMaterial>(materials );
+        bitField0_ |= 0x00000001;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.course.CourseMaterial, com.zhijiejiaoyu.glory_api.course.CourseMaterial.Builder, com.zhijiejiaoyu.glory_api.course.CourseMaterialOrBuilder> materialsBuilder ;
+
+    /**
+     * <pre>
+     * 预览封面
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseMaterial> getMaterialsList() {
+      if (materialsBuilder == null) {
+        return java.util.Collections.unmodifiableList(materials );
+      } else {
+        return materialsBuilder .getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 预览封面
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+     */
+    public int getMaterialsCount() {
+      if (materialsBuilder == null) {
+        return materials .size();
+      } else {
+        return materialsBuilder .getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 预览封面
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseMaterial getMaterials(int index) {
+      if (materialsBuilder == null) {
+        return materials .get(index);
+      } else {
+        return materialsBuilder .getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 预览封面
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+     */
+    public Builder setMaterials(
+        int index, com.zhijiejiaoyu.glory_api.course.CourseMaterial value) {
+      if (materialsBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMaterialsIsMutable();
+        materials .set(index, value);
+        onChanged();
+      } else {
+        materialsBuilder .setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 预览封面
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+     */
+    public Builder setMaterials(
+        int index, com.zhijiejiaoyu.glory_api.course.CourseMaterial.Builder builderForValue) {
+      if (materialsBuilder == null) {
+        ensureMaterialsIsMutable();
+        materials .set(index, builderForValue.build());
+        onChanged();
+      } else {
+        materialsBuilder .setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 预览封面
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+     */
+    public Builder addMaterials(com.zhijiejiaoyu.glory_api.course.CourseMaterial value) {
+      if (materialsBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMaterialsIsMutable();
+        materials .add(value);
+        onChanged();
+      } else {
+        materialsBuilder .addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 预览封面
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+     */
+    public Builder addMaterials(
+        int index, com.zhijiejiaoyu.glory_api.course.CourseMaterial value) {
+      if (materialsBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMaterialsIsMutable();
+        materials .add(index, value);
+        onChanged();
+      } else {
+        materialsBuilder .addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 预览封面
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+     */
+    public Builder addMaterials(
+        com.zhijiejiaoyu.glory_api.course.CourseMaterial.Builder builderForValue) {
+      if (materialsBuilder == null) {
+        ensureMaterialsIsMutable();
+        materials .add(builderForValue.build());
+        onChanged();
+      } else {
+        materialsBuilder .addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 预览封面
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+     */
+    public Builder addMaterials(
+        int index, com.zhijiejiaoyu.glory_api.course.CourseMaterial.Builder builderForValue) {
+      if (materialsBuilder == null) {
+        ensureMaterialsIsMutable();
+        materials .add(index, builderForValue.build());
+        onChanged();
+      } else {
+        materialsBuilder .addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 预览封面
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+     */
+    public Builder addAllMaterials(
+        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.course.CourseMaterial> values) {
+      if (materialsBuilder == null) {
+        ensureMaterialsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, materials );
+        onChanged();
+      } else {
+        materialsBuilder .addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 预览封面
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+     */
+    public Builder clearMaterials() {
+      if (materialsBuilder == null) {
+        materials = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000001);
+        onChanged();
+      } else {
+        materialsBuilder .clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 预览封面
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+     */
+    public Builder removeMaterials(int index) {
+      if (materialsBuilder == null) {
+        ensureMaterialsIsMutable();
+        materials .remove(index);
+        onChanged();
+      } else {
+        materialsBuilder .remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 预览封面
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseMaterial.Builder getMaterialsBuilder(
+        int index) {
+      return getMaterialsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 预览封面
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseMaterialOrBuilder getMaterialsOrBuilder(
+        int index) {
+      if (materialsBuilder == null) {
+        return materials .get(index);  } else {
+        return materialsBuilder .getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 预览封面
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+     */
+    public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseMaterialOrBuilder> 
+         getMaterialsOrBuilderList() {
+      if (materialsBuilder != null) {
+        return materialsBuilder .getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(materials );
+      }
+    }
+    /**
+     * <pre>
+     * 预览封面
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseMaterial.Builder addMaterialsBuilder() {
+      return getMaterialsFieldBuilder().addBuilder(
+          com.zhijiejiaoyu.glory_api.course.CourseMaterial.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 预览封面
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseMaterial.Builder addMaterialsBuilder(
+        int index) {
+      return getMaterialsFieldBuilder().addBuilder(
+          index, com.zhijiejiaoyu.glory_api.course.CourseMaterial.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 预览封面
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseMaterial.Builder> 
+         getMaterialsBuilderList() {
+      return getMaterialsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.course.CourseMaterial, com.zhijiejiaoyu.glory_api.course.CourseMaterial.Builder, com.zhijiejiaoyu.glory_api.course.CourseMaterialOrBuilder> 
+        getMaterialsFieldBuilder() {
+      if (materialsBuilder == null) {
+        materialsBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.course.CourseMaterial, com.zhijiejiaoyu.glory_api.course.CourseMaterial.Builder, com.zhijiejiaoyu.glory_api.course.CourseMaterialOrBuilder>(
+                materials ,
+                ((bitField0 & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        materials = null;
+      }
+      return materialsBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

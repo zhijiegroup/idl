@@ -10,6 +10,8 @@ export interface CourseMaterialBox {
   material_box_id?: string;
   material_box_name?: string;
   created_at?: string;
+  /** 预览封面 */
+  materials?: Array<CourseMaterial>;
 }
 
 /** 素材 */
@@ -81,6 +83,7 @@ export interface ListCourseMaterialRequest {
   base_request?: base.BaseRequest;
   material_box_id?: string;
   material_name?: string;
+  material_type?: string;
   pagination?: base.PaginationRequest;
 }
 

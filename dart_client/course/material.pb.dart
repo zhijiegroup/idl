@@ -22,6 +22,7 @@ class CourseMaterialBox extends $pb.GeneratedMessage {
     $fixnum.Int64? materialBoxId,
     $core.String? materialBoxName,
     $core.String? createdAt,
+    $core.Iterable<CourseMaterial>? materials,
   }) {
     final $result = create();
     if (materialBoxId != null) {
@@ -33,6 +34,9 @@ class CourseMaterialBox extends $pb.GeneratedMessage {
     if (createdAt != null) {
       $result.createdAt = createdAt;
     }
+    if (materials != null) {
+      $result.materials.addAll(materials);
+    }
     return $result;
   }
   CourseMaterialBox._() : super();
@@ -43,6 +47,7 @@ class CourseMaterialBox extends $pb.GeneratedMessage {
     ..aInt64(1, _omitFieldNames ? '' : 'materialBoxId')
     ..aOS(2, _omitFieldNames ? '' : 'materialBoxName')
     ..aOS(3, _omitFieldNames ? '' : 'createdAt')
+    ..pc<CourseMaterial>(4, _omitFieldNames ? '' : 'materials', $pb.PbFieldType.PM, subBuilder: CourseMaterial.create)
     ..hasRequiredFields = false
   ;
 
@@ -93,6 +98,9 @@ class CourseMaterialBox extends $pb.GeneratedMessage {
   $core.bool hasCreatedAt() => $_has(2);
   @$pb.TagNumber(3)
   void clearCreatedAt() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.List<CourseMaterial> get materials => $_getList(3);
 }
 
 /// 素材
@@ -774,6 +782,7 @@ class ListCourseMaterialRequest extends $pb.GeneratedMessage {
     $0.BaseRequest? baseRequest,
     $fixnum.Int64? materialBoxId,
     $core.String? materialName,
+    $core.String? materialType,
     $0.PaginationRequest? pagination,
   }) {
     final $result = create();
@@ -785,6 +794,9 @@ class ListCourseMaterialRequest extends $pb.GeneratedMessage {
     }
     if (materialName != null) {
       $result.materialName = materialName;
+    }
+    if (materialType != null) {
+      $result.materialType = materialType;
     }
     if (pagination != null) {
       $result.pagination = pagination;
@@ -799,6 +811,7 @@ class ListCourseMaterialRequest extends $pb.GeneratedMessage {
     ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'materialBoxId')
     ..aOS(3, _omitFieldNames ? '' : 'materialName')
+    ..aOS(4, _omitFieldNames ? '' : 'materialType')
     ..aOM<$0.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
@@ -853,16 +866,25 @@ class ListCourseMaterialRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearMaterialName() => clearField(3);
 
+  @$pb.TagNumber(4)
+  $core.String get materialType => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set materialType($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasMaterialType() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMaterialType() => clearField(4);
+
   @$pb.TagNumber(100)
-  $0.PaginationRequest get pagination => $_getN(3);
+  $0.PaginationRequest get pagination => $_getN(4);
   @$pb.TagNumber(100)
   set pagination($0.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
-  $core.bool hasPagination() => $_has(3);
+  $core.bool hasPagination() => $_has(4);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $0.PaginationRequest ensurePagination() => $_ensure(3);
+  $0.PaginationRequest ensurePagination() => $_ensure(4);
 }
 
 class ListCourseMaterialResponse extends $pb.GeneratedMessage {

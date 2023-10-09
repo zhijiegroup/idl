@@ -32,6 +32,9 @@ struct GloryApi_CourseMaterialBox {
 
   var createdAt: String = String()
 
+  /// 预览封面
+  var materials: [GloryApi_CourseMaterial] = []
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -295,6 +298,8 @@ struct GloryApi_ListCourseMaterialRequest {
 
   var materialName: String = String()
 
+  var materialType: String = String()
+
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
@@ -417,6 +422,7 @@ extension GloryApi_CourseMaterialBox: SwiftProtobuf.Message, SwiftProtobuf._Mess
     1: .standard(proto: "material_box_id"),
     2: .standard(proto: "material_box_name"),
     3: .standard(proto: "created_at"),
+    4: .same(proto: "materials"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -428,6 +434,7 @@ extension GloryApi_CourseMaterialBox: SwiftProtobuf.Message, SwiftProtobuf._Mess
       case 1: try { try decoder.decodeSingularInt64Field(value: &self.materialBoxID) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.materialBoxName) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
+      case 4: try { try decoder.decodeRepeatedMessageField(value: &self.materials) }()
       default: break
       }
     }
@@ -443,6 +450,9 @@ extension GloryApi_CourseMaterialBox: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if !self.createdAt.isEmpty {
       try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 3)
     }
+    if !self.materials.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.materials, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -450,6 +460,7 @@ extension GloryApi_CourseMaterialBox: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if lhs.materialBoxID != rhs.materialBoxID {return false}
     if lhs.materialBoxName != rhs.materialBoxName {return false}
     if lhs.createdAt != rhs.createdAt {return false}
+    if lhs.materials != rhs.materials {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -871,6 +882,7 @@ extension GloryApi_ListCourseMaterialRequest: SwiftProtobuf.Message, SwiftProtob
     1: .standard(proto: "base_request"),
     2: .standard(proto: "material_box_id"),
     3: .standard(proto: "material_name"),
+    4: .standard(proto: "material_type"),
     100: .same(proto: "pagination"),
   ]
 
@@ -883,6 +895,7 @@ extension GloryApi_ListCourseMaterialRequest: SwiftProtobuf.Message, SwiftProtob
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.materialBoxID) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.materialName) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.materialType) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -903,6 +916,9 @@ extension GloryApi_ListCourseMaterialRequest: SwiftProtobuf.Message, SwiftProtob
     if !self.materialName.isEmpty {
       try visitor.visitSingularStringField(value: self.materialName, fieldNumber: 3)
     }
+    if !self.materialType.isEmpty {
+      try visitor.visitSingularStringField(value: self.materialType, fieldNumber: 4)
+    }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
     } }()
@@ -913,6 +929,7 @@ extension GloryApi_ListCourseMaterialRequest: SwiftProtobuf.Message, SwiftProtob
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.materialBoxID != rhs.materialBoxID {return false}
     if lhs.materialName != rhs.materialName {return false}
+    if lhs.materialType != rhs.materialType {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
