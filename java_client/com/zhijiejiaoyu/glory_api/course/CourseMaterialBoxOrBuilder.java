@@ -39,10 +39,20 @@ public interface CourseMaterialBoxOrBuilder extends
 
   /**
    * <pre>
+   * 素材数量
+   * </pre>
+   *
+   * <code>int64 material_count = 4;</code>
+   * @return The materialCount.
+   */
+  long getMaterialCount();
+
+  /**
+   * <pre>
    * 预览封面
    * </pre>
    *
-   * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+   * <code>repeated .glory_api.CourseMaterial materials = 5;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.course.CourseMaterial> 
       getMaterialsList();
@@ -51,7 +61,7 @@ public interface CourseMaterialBoxOrBuilder extends
    * 预览封面
    * </pre>
    *
-   * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+   * <code>repeated .glory_api.CourseMaterial materials = 5;</code>
    */
   com.zhijiejiaoyu.glory_api.course.CourseMaterial getMaterials(int index);
   /**
@@ -59,7 +69,7 @@ public interface CourseMaterialBoxOrBuilder extends
    * 预览封面
    * </pre>
    *
-   * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+   * <code>repeated .glory_api.CourseMaterial materials = 5;</code>
    */
   int getMaterialsCount();
   /**
@@ -67,7 +77,7 @@ public interface CourseMaterialBoxOrBuilder extends
    * 预览封面
    * </pre>
    *
-   * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+   * <code>repeated .glory_api.CourseMaterial materials = 5;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseMaterialOrBuilder> 
       getMaterialsOrBuilderList();
@@ -76,7 +86,7 @@ public interface CourseMaterialBoxOrBuilder extends
    * 预览封面
    * </pre>
    *
-   * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+   * <code>repeated .glory_api.CourseMaterial materials = 5;</code>
    */
   com.zhijiejiaoyu.glory_api.course.CourseMaterialOrBuilder getMaterialsOrBuilder(
       int index);

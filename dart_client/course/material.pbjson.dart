@@ -20,7 +20,8 @@ const CourseMaterialBox$json = {
     {'1': 'material_box_id', '3': 1, '4': 1, '5': 3, '10': 'materialBoxId'},
     {'1': 'material_box_name', '3': 2, '4': 1, '5': 9, '10': 'materialBoxName'},
     {'1': 'created_at', '3': 3, '4': 1, '5': 9, '10': 'createdAt'},
-    {'1': 'materials', '3': 4, '4': 3, '5': 11, '6': '.glory_api.CourseMaterial', '10': 'materials'},
+    {'1': 'material_count', '3': 4, '4': 1, '5': 3, '10': 'materialCount'},
+    {'1': 'materials', '3': 5, '4': 3, '5': 11, '6': '.glory_api.CourseMaterial', '10': 'materials'},
   ],
 };
 
@@ -28,8 +29,9 @@ const CourseMaterialBox$json = {
 final $typed_data.Uint8List courseMaterialBoxDescriptor = $convert.base64Decode(
     'ChFDb3Vyc2VNYXRlcmlhbEJveBImCg9tYXRlcmlhbF9ib3hfaWQYASABKANSDW1hdGVyaWFsQm'
     '94SWQSKgoRbWF0ZXJpYWxfYm94X25hbWUYAiABKAlSD21hdGVyaWFsQm94TmFtZRIdCgpjcmVh'
-    'dGVkX2F0GAMgASgJUgljcmVhdGVkQXQSNwoJbWF0ZXJpYWxzGAQgAygLMhkuZ2xvcnlfYXBpLk'
-    'NvdXJzZU1hdGVyaWFsUgltYXRlcmlhbHM=');
+    'dGVkX2F0GAMgASgJUgljcmVhdGVkQXQSJQoObWF0ZXJpYWxfY291bnQYBCABKANSDW1hdGVyaW'
+    'FsQ291bnQSNwoJbWF0ZXJpYWxzGAUgAygLMhkuZ2xvcnlfYXBpLkNvdXJzZU1hdGVyaWFsUglt'
+    'YXRlcmlhbHM=');
 
 @$core.Deprecated('Use courseMaterialDescriptor instead')
 const CourseMaterial$json = {

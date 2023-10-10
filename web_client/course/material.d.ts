@@ -10,6 +10,8 @@ export interface CourseMaterialBox {
   material_box_id?: string;
   material_box_name?: string;
   created_at?: string;
+  /** 素材数量 */
+  material_count?: string;
   /** 预览封面 */
   materials?: Array<CourseMaterial>;
 }

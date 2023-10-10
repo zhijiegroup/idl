@@ -32,6 +32,9 @@ struct GloryApi_CourseMaterialBox {
 
   var createdAt: String = String()
 
+  /// 素材数量
+  var materialCount: Int64 = 0
+
   /// 预览封面
   var materials: [GloryApi_CourseMaterial] = []
 
@@ -422,7 +425,8 @@ extension GloryApi_CourseMaterialBox: SwiftProtobuf.Message, SwiftProtobuf._Mess
     1: .standard(proto: "material_box_id"),
     2: .standard(proto: "material_box_name"),
     3: .standard(proto: "created_at"),
-    4: .same(proto: "materials"),
+    4: .standard(proto: "material_count"),
+    5: .same(proto: "materials"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -434,7 +438,8 @@ extension GloryApi_CourseMaterialBox: SwiftProtobuf.Message, SwiftProtobuf._Mess
       case 1: try { try decoder.decodeSingularInt64Field(value: &self.materialBoxID) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.materialBoxName) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
-      case 4: try { try decoder.decodeRepeatedMessageField(value: &self.materials) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.materialCount) }()
+      case 5: try { try decoder.decodeRepeatedMessageField(value: &self.materials) }()
       default: break
       }
     }
@@ -450,8 +455,11 @@ extension GloryApi_CourseMaterialBox: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if !self.createdAt.isEmpty {
       try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 3)
     }
+    if self.materialCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.materialCount, fieldNumber: 4)
+    }
     if !self.materials.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.materials, fieldNumber: 4)
+      try visitor.visitRepeatedMessageField(value: self.materials, fieldNumber: 5)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -460,6 +468,7 @@ extension GloryApi_CourseMaterialBox: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if lhs.materialBoxID != rhs.materialBoxID {return false}
     if lhs.materialBoxName != rhs.materialBoxName {return false}
     if lhs.createdAt != rhs.createdAt {return false}
+    if lhs.materialCount != rhs.materialCount {return false}
     if lhs.materials != rhs.materials {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
