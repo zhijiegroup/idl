@@ -10,7 +10,8 @@ message CourseMaterialBox {
   int64 material_box_id = 1;
   string material_box_name = 2;
   string created_at = 3;
-  repeated CourseMaterial materials = 4; // 预览封面
+  int64 material_count = 4; // 素材数量
+  repeated CourseMaterial materials = 5; // 预览封面
 }
 
 // 素材
