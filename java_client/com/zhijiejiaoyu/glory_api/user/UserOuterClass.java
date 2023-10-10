@@ -339,6 +339,16 @@ public final class UserOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_GetMySocialSummaryResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_UpdateUserTenantRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_UpdateUserTenantRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_UpdateUserTenantResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_UpdateUserTenantResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -540,9 +550,13 @@ public final class UserOuterClass {
       "_request\030\001 \001(\0132\021.base.BaseRequest\"y\n\032Get" +
       "MySocialSummaryResponse\022%\n\tbase_resp\030\001 \001" +
       "(\0132\022.base.BaseResponse\0224\n\016social_summary" +
-      "\030\002 \001(\0132\034.glory_api.UserSocialSummaryB#\n\037" +
-      "com.zhijiejiaoyu.glory_api.userP\001b\006proto" +
-      "3"
+      "\030\002 \001(\0132\034.glory_api.UserSocialSummary\"w\n\027" +
+      "UpdateUserTenantRequest\022\'\n\014base_request\030" +
+      "\001 \001(\0132\021.base.BaseRequest\022\021\n\ttenant_id\030\002 " +
+      "\001(\003\022\017\n\007role_id\030\003 \001(\003\022\017\n\007dept_id\030\004 \001(\003\"A\n" +
+      "\030UpdateUserTenantResponse\022%\n\tbase_resp\030\001" +
+      " \001(\0132\022.base.BaseResponseB#\n\037com.zhijieji" +
+      "aoyu.glory_api.userP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -942,6 +956,18 @@ public final class UserOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetMySocialSummaryResponse_descriptor,
         new java.lang.String[] { "BaseResp", "SocialSummary", });
+    internal_static_glory_api_UpdateUserTenantRequest_descriptor =
+      getDescriptor().getMessageTypes().get(65);
+    internal_static_glory_api_UpdateUserTenantRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_UpdateUserTenantRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "TenantId", "RoleId", "DeptId", });
+    internal_static_glory_api_UpdateUserTenantResponse_descriptor =
+      getDescriptor().getMessageTypes().get(66);
+    internal_static_glory_api_UpdateUserTenantResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_UpdateUserTenantResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
     com.zhijiejiaoyu.glory_api.seller.SellerOuterClass.getDescriptor();
     com.zhijiejiaoyu.glory_api.shop.ShopOuterClass.getDescriptor();

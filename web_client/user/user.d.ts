@@ -454,3 +454,14 @@ export interface GetMySocialSummaryResponse {
   base_resp?: base.BaseResponse;
   social_summary?: UserSocialSummary;
 }
+
+export interface UpdateUserTenantRequest {
+  base_request?: base.BaseRequest;
+  tenant_id?: string;
+  role_id?: string;
+  dept_id?: string;
+}
+
+export interface UpdateUserTenantResponse {
+  base_resp?: base.BaseResponse;
+}

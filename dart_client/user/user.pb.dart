@@ -5266,6 +5266,152 @@ class GetMySocialSummaryResponse extends $pb.GeneratedMessage {
   UserSocialSummary ensureSocialSummary() => $_ensure(1);
 }
 
+class UpdateUserTenantRequest extends $pb.GeneratedMessage {
+  factory UpdateUserTenantRequest({
+    $2.BaseRequest? baseRequest,
+    $fixnum.Int64? tenantId,
+    $fixnum.Int64? roleId,
+    $fixnum.Int64? deptId,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (tenantId != null) {
+      $result.tenantId = tenantId;
+    }
+    if (roleId != null) {
+      $result.roleId = roleId;
+    }
+    if (deptId != null) {
+      $result.deptId = deptId;
+    }
+    return $result;
+  }
+  UpdateUserTenantRequest._() : super();
+  factory UpdateUserTenantRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateUserTenantRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateUserTenantRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$2.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $2.BaseRequest.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'tenantId')
+    ..aInt64(3, _omitFieldNames ? '' : 'roleId')
+    ..aInt64(4, _omitFieldNames ? '' : 'deptId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateUserTenantRequest clone() => UpdateUserTenantRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateUserTenantRequest copyWith(void Function(UpdateUserTenantRequest) updates) => super.copyWith((message) => updates(message as UpdateUserTenantRequest)) as UpdateUserTenantRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateUserTenantRequest create() => UpdateUserTenantRequest._();
+  UpdateUserTenantRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateUserTenantRequest> createRepeated() => $pb.PbList<UpdateUserTenantRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateUserTenantRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateUserTenantRequest>(create);
+  static UpdateUserTenantRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $2.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($2.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $2.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get tenantId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set tenantId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTenantId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTenantId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get roleId => $_getI64(2);
+  @$pb.TagNumber(3)
+  set roleId($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasRoleId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRoleId() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get deptId => $_getI64(3);
+  @$pb.TagNumber(4)
+  set deptId($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasDeptId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDeptId() => clearField(4);
+}
+
+class UpdateUserTenantResponse extends $pb.GeneratedMessage {
+  factory UpdateUserTenantResponse({
+    $2.BaseResponse? baseResp,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    return $result;
+  }
+  UpdateUserTenantResponse._() : super();
+  factory UpdateUserTenantResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateUserTenantResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateUserTenantResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$2.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $2.BaseResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateUserTenantResponse clone() => UpdateUserTenantResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateUserTenantResponse copyWith(void Function(UpdateUserTenantResponse) updates) => super.copyWith((message) => updates(message as UpdateUserTenantResponse)) as UpdateUserTenantResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateUserTenantResponse create() => UpdateUserTenantResponse._();
+  UpdateUserTenantResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateUserTenantResponse> createRepeated() => $pb.PbList<UpdateUserTenantResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateUserTenantResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateUserTenantResponse>(create);
+  static UpdateUserTenantResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $2.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($2.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $2.BaseResponse ensureBaseResp() => $_ensure(0);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

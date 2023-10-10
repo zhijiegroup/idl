@@ -1078,3 +1078,33 @@ final $typed_data.Uint8List getMySocialSummaryResponseDescriptor = $convert.base
     'Jhc2VSZXNwb25zZVIIYmFzZVJlc3ASQwoOc29jaWFsX3N1bW1hcnkYAiABKAsyHC5nbG9yeV9h'
     'cGkuVXNlclNvY2lhbFN1bW1hcnlSDXNvY2lhbFN1bW1hcnk=');
 
+@$core.Deprecated('Use updateUserTenantRequestDescriptor instead')
+const UpdateUserTenantRequest$json = {
+  '1': 'UpdateUserTenantRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'tenant_id', '3': 2, '4': 1, '5': 3, '10': 'tenantId'},
+    {'1': 'role_id', '3': 3, '4': 1, '5': 3, '10': 'roleId'},
+    {'1': 'dept_id', '3': 4, '4': 1, '5': 3, '10': 'deptId'},
+  ],
+};
+
+/// Descriptor for `UpdateUserTenantRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateUserTenantRequestDescriptor = $convert.base64Decode(
+    'ChdVcGRhdGVVc2VyVGVuYW50UmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLk'
+    'Jhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIbCgl0ZW5hbnRfaWQYAiABKANSCHRlbmFudElkEhcK'
+    'B3JvbGVfaWQYAyABKANSBnJvbGVJZBIXCgdkZXB0X2lkGAQgASgDUgZkZXB0SWQ=');
+
+@$core.Deprecated('Use updateUserTenantResponseDescriptor instead')
+const UpdateUserTenantResponse$json = {
+  '1': 'UpdateUserTenantResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+  ],
+};
+
+/// Descriptor for `UpdateUserTenantResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateUserTenantResponseDescriptor = $convert.base64Decode(
+    'ChhVcGRhdGVVc2VyVGVuYW50UmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYX'
+    'NlUmVzcG9uc2VSCGJhc2VSZXNw');
+
