@@ -457,6 +457,7 @@ export interface GetMySocialSummaryResponse {
 
 export interface UpdateUserTenantRequest {
   base_request?: base.BaseRequest;
+  user_id?: string;
   tenant_id?: string;
   role_id?: string;
   dept_id?: string;

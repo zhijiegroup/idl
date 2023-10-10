@@ -1856,6 +1856,8 @@ struct GloryApi_UpdateUserTenantRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
+  var userID: Int64 = 0
+
   var tenantID: Int64 = 0
 
   var roleID: Int64 = 0
@@ -5172,9 +5174,10 @@ extension GloryApi_UpdateUserTenantRequest: SwiftProtobuf.Message, SwiftProtobuf
   static let protoMessageName: String = _protobuf_package + ".UpdateUserTenantRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
-    2: .standard(proto: "tenant_id"),
-    3: .standard(proto: "role_id"),
-    4: .standard(proto: "dept_id"),
+    2: .standard(proto: "user_id"),
+    3: .standard(proto: "tenant_id"),
+    4: .standard(proto: "role_id"),
+    5: .standard(proto: "dept_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -5184,9 +5187,10 @@ extension GloryApi_UpdateUserTenantRequest: SwiftProtobuf.Message, SwiftProtobuf
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
-      case 3: try { try decoder.decodeSingularInt64Field(value: &self.roleID) }()
-      case 4: try { try decoder.decodeSingularInt64Field(value: &self.deptID) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.userID) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.roleID) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.deptID) }()
       default: break
       }
     }
@@ -5200,20 +5204,24 @@ extension GloryApi_UpdateUserTenantRequest: SwiftProtobuf.Message, SwiftProtobuf
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
+    if self.userID != 0 {
+      try visitor.visitSingularInt64Field(value: self.userID, fieldNumber: 2)
+    }
     if self.tenantID != 0 {
-      try visitor.visitSingularInt64Field(value: self.tenantID, fieldNumber: 2)
+      try visitor.visitSingularInt64Field(value: self.tenantID, fieldNumber: 3)
     }
     if self.roleID != 0 {
-      try visitor.visitSingularInt64Field(value: self.roleID, fieldNumber: 3)
+      try visitor.visitSingularInt64Field(value: self.roleID, fieldNumber: 4)
     }
     if self.deptID != 0 {
-      try visitor.visitSingularInt64Field(value: self.deptID, fieldNumber: 4)
+      try visitor.visitSingularInt64Field(value: self.deptID, fieldNumber: 5)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_UpdateUserTenantRequest, rhs: GloryApi_UpdateUserTenantRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.userID != rhs.userID {return false}
     if lhs.tenantID != rhs.tenantID {return false}
     if lhs.roleID != rhs.roleID {return false}
     if lhs.deptID != rhs.deptID {return false}

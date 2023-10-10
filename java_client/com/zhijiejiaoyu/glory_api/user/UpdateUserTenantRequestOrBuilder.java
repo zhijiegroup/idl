@@ -23,19 +23,25 @@ public interface UpdateUserTenantRequestOrBuilder extends
   com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder();
 
   /**
-   * <code>int64 tenant_id = 2;</code>
+   * <code>int64 user_id = 2;</code>
+   * @return The userId.
+   */
+  long getUserId();
+
+  /**
+   * <code>int64 tenant_id = 3;</code>
    * @return The tenantId.
    */
   long getTenantId();
 
   /**
-   * <code>int64 role_id = 3;</code>
+   * <code>int64 role_id = 4;</code>
    * @return The roleId.
    */
   long getRoleId();
 
   /**
-   * <code>int64 dept_id = 4;</code>
+   * <code>int64 dept_id = 5;</code>
    * @return The deptId.
    */
   long getDeptId();

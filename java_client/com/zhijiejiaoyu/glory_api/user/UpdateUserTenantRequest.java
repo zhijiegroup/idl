@@ -63,15 +63,20 @@ private static final long serialVersionUID = 0L;
           }
           case 16: {
 
-            tenantId = input.readInt64();
+            userId = input.readInt64();
             break;
           }
           case 24: {
 
-            roleId = input.readInt64();
+            tenantId = input.readInt64();
             break;
           }
           case 32: {
+
+            roleId = input.readInt64();
+            break;
+          }
+          case 40: {
 
             deptId = input.readInt64();
             break;
@@ -134,10 +139,21 @@ private static final long serialVersionUID = 0L;
     return getBaseRequest();
   }
 
-  public static final int TENANT_ID_FIELD_NUMBER = 2;
+  public static final int USER_ID_FIELD_NUMBER = 2;
+  private long userId ;
+  /**
+   * <code>int64 user_id = 2;</code>
+   * @return The userId.
+   */
+  @java.lang.Override
+  public long getUserId() {
+    return userId ;
+  }
+
+  public static final int TENANT_ID_FIELD_NUMBER = 3;
   private long tenantId ;
   /**
-   * <code>int64 tenant_id = 2;</code>
+   * <code>int64 tenant_id = 3;</code>
    * @return The tenantId.
    */
   @java.lang.Override
@@ -145,10 +161,10 @@ private static final long serialVersionUID = 0L;
     return tenantId ;
   }
 
-  public static final int ROLE_ID_FIELD_NUMBER = 3;
+  public static final int ROLE_ID_FIELD_NUMBER = 4;
   private long roleId ;
   /**
-   * <code>int64 role_id = 3;</code>
+   * <code>int64 role_id = 4;</code>
    * @return The roleId.
    */
   @java.lang.Override
@@ -156,10 +172,10 @@ private static final long serialVersionUID = 0L;
     return roleId ;
   }
 
-  public static final int DEPT_ID_FIELD_NUMBER = 4;
+  public static final int DEPT_ID_FIELD_NUMBER = 5;
   private long deptId ;
   /**
-   * <code>int64 dept_id = 4;</code>
+   * <code>int64 dept_id = 5;</code>
    * @return The deptId.
    */
   @java.lang.Override
@@ -184,14 +200,17 @@ private static final long serialVersionUID = 0L;
     if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
+    if (userId != 0L) {
+      output.writeInt64(2, userId );
+    }
     if (tenantId != 0L) {
-      output.writeInt64(2, tenantId );
+      output.writeInt64(3, tenantId );
     }
     if (roleId != 0L) {
-      output.writeInt64(3, roleId );
+      output.writeInt64(4, roleId );
     }
     if (deptId != 0L) {
-      output.writeInt64(4, deptId );
+      output.writeInt64(5, deptId );
     }
     unknownFields.writeTo(output);
   }
@@ -206,17 +225,21 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseRequest());
     }
+    if (userId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(2, userId );
+    }
     if (tenantId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, tenantId );
+        .computeInt64Size(3, tenantId );
     }
     if (roleId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(3, roleId );
+        .computeInt64Size(4, roleId );
     }
     if (deptId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(4, deptId );
+        .computeInt64Size(5, deptId );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -238,6 +261,8 @@ private static final long serialVersionUID = 0L;
       if (!getBaseRequest()
           .equals(other.getBaseRequest())) return false;
     }
+    if (getUserId()
+        != other.getUserId()) return false;
     if (getTenantId()
         != other.getTenantId()) return false;
     if (getRoleId()
@@ -259,6 +284,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
       hash = (53 * hash) + getBaseRequest().hashCode();
     }
+    hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getUserId());
     hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getTenantId());
@@ -407,6 +435,8 @@ private static final long serialVersionUID = 0L;
         baseRequest = null;
         baseRequestBuilder = null;
       }
+      userId = 0L;
+
       tenantId = 0L;
 
       roleId = 0L;
@@ -444,6 +474,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.baseRequest = baseRequestBuilder .build();
       }
+      result.userId = userId ;
       result.tenantId = tenantId ;
       result.roleId = roleId ;
       result.deptId = deptId ;
@@ -497,6 +528,9 @@ private static final long serialVersionUID = 0L;
       if (other == com.zhijiejiaoyu.glory_api.user.UpdateUserTenantRequest.getDefaultInstance()) return this;
       if (other.hasBaseRequest()) {
         mergeBaseRequest(other.getBaseRequest());
+      }
+      if (other.getUserId() != 0L) {
+        setUserId(other.getUserId());
       }
       if (other.getTenantId() != 0L) {
         setTenantId(other.getTenantId());
@@ -655,9 +689,40 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder ;
     }
 
+    private long userId ;
+    /**
+     * <code>int64 user_id = 2;</code>
+     * @return The userId.
+     */
+    @java.lang.Override
+    public long getUserId() {
+      return userId ;
+    }
+    /**
+     * <code>int64 user_id = 2;</code>
+     * @param value The userId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserId(long value) {
+      
+      userId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 user_id = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUserId() {
+      
+      userId = 0L;
+      onChanged();
+      return this;
+    }
+
     private long tenantId ;
     /**
-     * <code>int64 tenant_id = 2;</code>
+     * <code>int64 tenant_id = 3;</code>
      * @return The tenantId.
      */
     @java.lang.Override
@@ -665,7 +730,7 @@ private static final long serialVersionUID = 0L;
       return tenantId ;
     }
     /**
-     * <code>int64 tenant_id = 2;</code>
+     * <code>int64 tenant_id = 3;</code>
      * @param value The tenantId to set.
      * @return This builder for chaining.
      */
@@ -676,7 +741,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 tenant_id = 2;</code>
+     * <code>int64 tenant_id = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearTenantId() {
@@ -688,7 +753,7 @@ private static final long serialVersionUID = 0L;
 
     private long roleId ;
     /**
-     * <code>int64 role_id = 3;</code>
+     * <code>int64 role_id = 4;</code>
      * @return The roleId.
      */
     @java.lang.Override
@@ -696,7 +761,7 @@ private static final long serialVersionUID = 0L;
       return roleId ;
     }
     /**
-     * <code>int64 role_id = 3;</code>
+     * <code>int64 role_id = 4;</code>
      * @param value The roleId to set.
      * @return This builder for chaining.
      */
@@ -707,7 +772,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 role_id = 3;</code>
+     * <code>int64 role_id = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearRoleId() {
@@ -719,7 +784,7 @@ private static final long serialVersionUID = 0L;
 
     private long deptId ;
     /**
-     * <code>int64 dept_id = 4;</code>
+     * <code>int64 dept_id = 5;</code>
      * @return The deptId.
      */
     @java.lang.Override
@@ -727,7 +792,7 @@ private static final long serialVersionUID = 0L;
       return deptId ;
     }
     /**
-     * <code>int64 dept_id = 4;</code>
+     * <code>int64 dept_id = 5;</code>
      * @param value The deptId to set.
      * @return This builder for chaining.
      */
@@ -738,7 +803,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 dept_id = 4;</code>
+     * <code>int64 dept_id = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearDeptId() {

@@ -5269,6 +5269,7 @@ class GetMySocialSummaryResponse extends $pb.GeneratedMessage {
 class UpdateUserTenantRequest extends $pb.GeneratedMessage {
   factory UpdateUserTenantRequest({
     $2.BaseRequest? baseRequest,
+    $fixnum.Int64? userId,
     $fixnum.Int64? tenantId,
     $fixnum.Int64? roleId,
     $fixnum.Int64? deptId,
@@ -5276,6 +5277,9 @@ class UpdateUserTenantRequest extends $pb.GeneratedMessage {
     final $result = create();
     if (baseRequest != null) {
       $result.baseRequest = baseRequest;
+    }
+    if (userId != null) {
+      $result.userId = userId;
     }
     if (tenantId != null) {
       $result.tenantId = tenantId;
@@ -5294,9 +5298,10 @@ class UpdateUserTenantRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateUserTenantRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$2.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $2.BaseRequest.create)
-    ..aInt64(2, _omitFieldNames ? '' : 'tenantId')
-    ..aInt64(3, _omitFieldNames ? '' : 'roleId')
-    ..aInt64(4, _omitFieldNames ? '' : 'deptId')
+    ..aInt64(2, _omitFieldNames ? '' : 'userId')
+    ..aInt64(3, _omitFieldNames ? '' : 'tenantId')
+    ..aInt64(4, _omitFieldNames ? '' : 'roleId')
+    ..aInt64(5, _omitFieldNames ? '' : 'deptId')
     ..hasRequiredFields = false
   ;
 
@@ -5333,31 +5338,40 @@ class UpdateUserTenantRequest extends $pb.GeneratedMessage {
   $2.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $fixnum.Int64 get tenantId => $_getI64(1);
+  $fixnum.Int64 get userId => $_getI64(1);
   @$pb.TagNumber(2)
-  set tenantId($fixnum.Int64 v) { $_setInt64(1, v); }
+  set userId($fixnum.Int64 v) { $_setInt64(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasTenantId() => $_has(1);
+  $core.bool hasUserId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearTenantId() => clearField(2);
+  void clearUserId() => clearField(2);
 
   @$pb.TagNumber(3)
-  $fixnum.Int64 get roleId => $_getI64(2);
+  $fixnum.Int64 get tenantId => $_getI64(2);
   @$pb.TagNumber(3)
-  set roleId($fixnum.Int64 v) { $_setInt64(2, v); }
+  set tenantId($fixnum.Int64 v) { $_setInt64(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasRoleId() => $_has(2);
+  $core.bool hasTenantId() => $_has(2);
   @$pb.TagNumber(3)
-  void clearRoleId() => clearField(3);
+  void clearTenantId() => clearField(3);
 
   @$pb.TagNumber(4)
-  $fixnum.Int64 get deptId => $_getI64(3);
+  $fixnum.Int64 get roleId => $_getI64(3);
   @$pb.TagNumber(4)
-  set deptId($fixnum.Int64 v) { $_setInt64(3, v); }
+  set roleId($fixnum.Int64 v) { $_setInt64(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasDeptId() => $_has(3);
+  $core.bool hasRoleId() => $_has(3);
   @$pb.TagNumber(4)
-  void clearDeptId() => clearField(4);
+  void clearRoleId() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get deptId => $_getI64(4);
+  @$pb.TagNumber(5)
+  set deptId($fixnum.Int64 v) { $_setInt64(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasDeptId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDeptId() => clearField(5);
 }
 
 class UpdateUserTenantResponse extends $pb.GeneratedMessage {

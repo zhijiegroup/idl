@@ -1083,17 +1083,19 @@ const UpdateUserTenantRequest$json = {
   '1': 'UpdateUserTenantRequest',
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
-    {'1': 'tenant_id', '3': 2, '4': 1, '5': 3, '10': 'tenantId'},
-    {'1': 'role_id', '3': 3, '4': 1, '5': 3, '10': 'roleId'},
-    {'1': 'dept_id', '3': 4, '4': 1, '5': 3, '10': 'deptId'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 3, '10': 'userId'},
+    {'1': 'tenant_id', '3': 3, '4': 1, '5': 3, '10': 'tenantId'},
+    {'1': 'role_id', '3': 4, '4': 1, '5': 3, '10': 'roleId'},
+    {'1': 'dept_id', '3': 5, '4': 1, '5': 3, '10': 'deptId'},
   ],
 };
 
 /// Descriptor for `UpdateUserTenantRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List updateUserTenantRequestDescriptor = $convert.base64Decode(
     'ChdVcGRhdGVVc2VyVGVuYW50UmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLk'
-    'Jhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIbCgl0ZW5hbnRfaWQYAiABKANSCHRlbmFudElkEhcK'
-    'B3JvbGVfaWQYAyABKANSBnJvbGVJZBIXCgdkZXB0X2lkGAQgASgDUgZkZXB0SWQ=');
+    'Jhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIXCgd1c2VyX2lkGAIgASgDUgZ1c2VySWQSGwoJdGVu'
+    'YW50X2lkGAMgASgDUgh0ZW5hbnRJZBIXCgdyb2xlX2lkGAQgASgDUgZyb2xlSWQSFwoHZGVwdF'
+    '9pZBgFIAEoA1IGZGVwdElk');
 
 @$core.Deprecated('Use updateUserTenantResponseDescriptor instead')
 const UpdateUserTenantResponse$json = {
