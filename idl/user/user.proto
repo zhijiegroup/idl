@@ -429,9 +429,10 @@ message GetMySocialSummaryResponse {
 
 message UpdateUserTenantRequest {
   base.BaseRequest base_request = 1;
-  int64 tenant_id = 2;
-  int64 role_id = 3;
-  int64 dept_id = 4;
+  int64 user_id = 2;
+  int64 tenant_id = 3;
+  int64 role_id = 4;
+  int64 dept_id = 5;
 }
 
 message UpdateUserTenantResponse {
