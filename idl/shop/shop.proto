@@ -257,6 +257,7 @@ message ShopBusinessData {
   double total_deal_amount = 2;
   int64 total_visitor_amount = 3;
   int64 total_order_amount  = 4;
+  string shop_type = 5;
 }
 
 message GetShopBusinessDataResponse{

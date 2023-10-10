@@ -34,7 +34,7 @@ message ProductShow {
   string currency = 8;
   float freight_amount = 9;
   string channel = 10; //live:直播间订单,normal:非直播间订单
-  CouponDetail coupon = 11; // 优惠券
+  repeated CouponDetail coupon = 11; // 优惠券
 }
 
 

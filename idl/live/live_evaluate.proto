@@ -105,7 +105,9 @@ message GetEvaluateDetailResponse {
     int64 ai_feedback_id = 12;
     string created_user = 13;
     string anchor = 14;
-    repeated AiResult ai_result = 15;
+    int64 live_start_time = 15;
+    int64 live_end_time = 16;
+    repeated AiResult ai_result = 17;
     repeated EvaluateDetail detail = 100;
 }
 
