@@ -165,6 +165,16 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 168: {
+
+            userCouponTotal = input.readInt64();
+            break;
+          }
+          case 176: {
+
+            userCouponUsedTotal = input.readInt64();
+            break;
+          }
+          case 184: {
             if (!((mutable_bitField0 & 0x00000001) != 0)) {
               productIds = newLongList();
               mutable_bitField0_ |= 0x00000001;
@@ -172,7 +182,7 @@ private static final long serialVersionUID = 0L;
             productIds .addLong(input.readInt64());
             break;
           }
-          case 170: {
+          case 186: {
             int length = input.readRawVarint32();
             int limit = input.pushLimit(length);
             if (!((mutable_bitField0 & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -629,10 +639,32 @@ private static final long serialVersionUID = 0L;
     return userCouponId ;
   }
 
-  public static final int PRODUCT_IDS_FIELD_NUMBER = 21;
+  public static final int USER_COUPON_TOTAL_FIELD_NUMBER = 21;
+  private long userCouponTotal ;
+  /**
+   * <code>int64 user_coupon_total = 21;</code>
+   * @return The userCouponTotal.
+   */
+  @java.lang.Override
+  public long getUserCouponTotal() {
+    return userCouponTotal ;
+  }
+
+  public static final int USER_COUPON_USED_TOTAL_FIELD_NUMBER = 22;
+  private long userCouponUsedTotal ;
+  /**
+   * <code>int64 user_coupon_used_total = 22;</code>
+   * @return The userCouponUsedTotal.
+   */
+  @java.lang.Override
+  public long getUserCouponUsedTotal() {
+    return userCouponUsedTotal ;
+  }
+
+  public static final int PRODUCT_IDS_FIELD_NUMBER = 23;
   private com.google.protobuf.Internal.LongList productIds ;
   /**
-   * <code>repeated int64 product_ids = 21;</code>
+   * <code>repeated int64 product_ids = 23;</code>
    * @return A list containing the productIds.
    */
   @java.lang.Override
@@ -641,14 +673,14 @@ private static final long serialVersionUID = 0L;
     return productIds ;
   }
   /**
-   * <code>repeated int64 product_ids = 21;</code>
+   * <code>repeated int64 product_ids = 23;</code>
    * @return The count of productIds.
    */
   public int getProductIdsCount() {
     return productIds .size();
   }
   /**
-   * <code>repeated int64 product_ids = 21;</code>
+   * <code>repeated int64 product_ids = 23;</code>
    * @param index The index of the element to return.
    * @return The productIds at the given index.
    */
@@ -732,8 +764,14 @@ private static final long serialVersionUID = 0L;
     if (userCouponId != 0L) {
       output.writeInt64(20, userCouponId );
     }
+    if (userCouponTotal != 0L) {
+      output.writeInt64(21, userCouponTotal );
+    }
+    if (userCouponUsedTotal != 0L) {
+      output.writeInt64(22, userCouponUsedTotal );
+    }
     if (getProductIdsList().size() > 0) {
-      output.writeUInt32NoTag(170);
+      output.writeUInt32NoTag(186);
       output.writeUInt32NoTag(productIdsMemoizedSerializedSize);
     }
     for (int i = 0; i < productIds .size(); i++) {
@@ -821,6 +859,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(20, userCouponId );
     }
+    if (userCouponTotal != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(21, userCouponTotal );
+    }
+    if (userCouponUsedTotal != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(22, userCouponUsedTotal );
+    }
     {
       int dataSize = 0;
       for (int i = 0; i < productIds .size(); i++) {
@@ -892,6 +938,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getShopType())) return false;
     if (getUserCouponId()
         != other.getUserCouponId()) return false;
+    if (getUserCouponTotal()
+        != other.getUserCouponTotal()) return false;
+    if (getUserCouponUsedTotal()
+        != other.getUserCouponUsedTotal()) return false;
     if (!getProductIdsList()
         .equals(other.getProductIdsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -958,6 +1008,12 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + USER_COUPON_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getUserCouponId());
+    hash = (37 * hash) + USER_COUPON_TOTAL_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getUserCouponTotal());
+    hash = (37 * hash) + USER_COUPON_USED_TOTAL_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getUserCouponUsedTotal());
     if (getProductIdsCount() > 0) {
       hash = (37 * hash) + PRODUCT_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getProductIdsList().hashCode();
@@ -1135,6 +1191,10 @@ private static final long serialVersionUID = 0L;
 
       userCouponId = 0L;
 
+      userCouponTotal = 0L;
+
+      userCouponUsedTotal = 0L;
+
       productIds = emptyLongList();
       bitField0 = (bitField0 & ~0x00000001);
       return this;
@@ -1184,6 +1244,8 @@ private static final long serialVersionUID = 0L;
       result.shopName = shopName ;
       result.shopType = shopType ;
       result.userCouponId = userCouponId ;
+      result.userCouponTotal = userCouponTotal ;
+      result.userCouponUsedTotal = userCouponUsedTotal ;
       if (((bitField0 & 0x00000001) != 0)) {
         productIds .makeImmutable();
         bitField0 = (bitField0 & ~0x00000001);
@@ -1303,6 +1365,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getUserCouponId() != 0L) {
         setUserCouponId(other.getUserCouponId());
+      }
+      if (other.getUserCouponTotal() != 0L) {
+        setUserCouponTotal(other.getUserCouponTotal());
+      }
+      if (other.getUserCouponUsedTotal() != 0L) {
+        setUserCouponUsedTotal(other.getUserCouponUsedTotal());
       }
       if (!other.productIds .isEmpty()) {
         if (productIds .isEmpty()) {
@@ -2279,6 +2347,68 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private long userCouponTotal ;
+    /**
+     * <code>int64 user_coupon_total = 21;</code>
+     * @return The userCouponTotal.
+     */
+    @java.lang.Override
+    public long getUserCouponTotal() {
+      return userCouponTotal ;
+    }
+    /**
+     * <code>int64 user_coupon_total = 21;</code>
+     * @param value The userCouponTotal to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserCouponTotal(long value) {
+      
+      userCouponTotal = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 user_coupon_total = 21;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUserCouponTotal() {
+      
+      userCouponTotal = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long userCouponUsedTotal ;
+    /**
+     * <code>int64 user_coupon_used_total = 22;</code>
+     * @return The userCouponUsedTotal.
+     */
+    @java.lang.Override
+    public long getUserCouponUsedTotal() {
+      return userCouponUsedTotal ;
+    }
+    /**
+     * <code>int64 user_coupon_used_total = 22;</code>
+     * @param value The userCouponUsedTotal to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserCouponUsedTotal(long value) {
+      
+      userCouponUsedTotal = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 user_coupon_used_total = 22;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUserCouponUsedTotal() {
+      
+      userCouponUsedTotal = 0L;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.Internal.LongList productIds = emptyLongList();
     private void ensureProductIdsIsMutable() {
       if (!((bitField0 & 0x00000001) != 0)) {
@@ -2287,7 +2417,7 @@ private static final long serialVersionUID = 0L;
        }
     }
     /**
-     * <code>repeated int64 product_ids = 21;</code>
+     * <code>repeated int64 product_ids = 23;</code>
      * @return A list containing the productIds.
      */
     public java.util.List<java.lang.Long>
@@ -2296,14 +2426,14 @@ private static final long serialVersionUID = 0L;
                java.util.Collections.unmodifiableList(productIds ) : productIds ;
     }
     /**
-     * <code>repeated int64 product_ids = 21;</code>
+     * <code>repeated int64 product_ids = 23;</code>
      * @return The count of productIds.
      */
     public int getProductIdsCount() {
       return productIds .size();
     }
     /**
-     * <code>repeated int64 product_ids = 21;</code>
+     * <code>repeated int64 product_ids = 23;</code>
      * @param index The index of the element to return.
      * @return The productIds at the given index.
      */
@@ -2311,7 +2441,7 @@ private static final long serialVersionUID = 0L;
       return productIds .getLong(index);
     }
     /**
-     * <code>repeated int64 product_ids = 21;</code>
+     * <code>repeated int64 product_ids = 23;</code>
      * @param index The index to set the value at.
      * @param value The productIds to set.
      * @return This builder for chaining.
@@ -2324,7 +2454,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated int64 product_ids = 21;</code>
+     * <code>repeated int64 product_ids = 23;</code>
      * @param value The productIds to add.
      * @return This builder for chaining.
      */
@@ -2335,7 +2465,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated int64 product_ids = 21;</code>
+     * <code>repeated int64 product_ids = 23;</code>
      * @param values The productIds to add.
      * @return This builder for chaining.
      */
@@ -2348,7 +2478,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated int64 product_ids = 21;</code>
+     * <code>repeated int64 product_ids = 23;</code>
      * @return This builder for chaining.
      */
     public Builder clearProductIds() {

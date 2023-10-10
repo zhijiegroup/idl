@@ -170,17 +170,29 @@ public interface CouponDetailOrBuilder extends
   long getUserCouponId();
 
   /**
-   * <code>repeated int64 product_ids = 21;</code>
+   * <code>int64 user_coupon_total = 21;</code>
+   * @return The userCouponTotal.
+   */
+  long getUserCouponTotal();
+
+  /**
+   * <code>int64 user_coupon_used_total = 22;</code>
+   * @return The userCouponUsedTotal.
+   */
+  long getUserCouponUsedTotal();
+
+  /**
+   * <code>repeated int64 product_ids = 23;</code>
    * @return A list containing the productIds.
    */
   java.util.List<java.lang.Long> getProductIdsList();
   /**
-   * <code>repeated int64 product_ids = 21;</code>
+   * <code>repeated int64 product_ids = 23;</code>
    * @return The count of productIds.
    */
   int getProductIdsCount();
   /**
-   * <code>repeated int64 product_ids = 21;</code>
+   * <code>repeated int64 product_ids = 23;</code>
    * @param index The index of the element to return.
    * @return The productIds at the given index.
    */

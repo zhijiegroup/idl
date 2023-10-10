@@ -73,7 +73,12 @@ private static final long serialVersionUID = 0L;
             createdAt = s;
             break;
           }
-          case 34: {
+          case 32: {
+
+            materialCount = input.readInt64();
+            break;
+          }
+          case 42: {
             if (!((mutable_bitField0 & 0x00000001) != 0)) {
               materials = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.course.CourseMaterial>();
               mutable_bitField0_ |= 0x00000001;
@@ -204,14 +209,29 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int MATERIALS_FIELD_NUMBER = 4;
+  public static final int MATERIAL_COUNT_FIELD_NUMBER = 4;
+  private long materialCount ;
+  /**
+   * <pre>
+   * 素材数量
+   * </pre>
+   *
+   * <code>int64 material_count = 4;</code>
+   * @return The materialCount.
+   */
+  @java.lang.Override
+  public long getMaterialCount() {
+    return materialCount ;
+  }
+
+  public static final int MATERIALS_FIELD_NUMBER = 5;
   private java.util.List<com.zhijiejiaoyu.glory_api.course.CourseMaterial> materials ;
   /**
    * <pre>
    * 预览封面
    * </pre>
    *
-   * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+   * <code>repeated .glory_api.CourseMaterial materials = 5;</code>
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseMaterial> getMaterialsList() {
@@ -222,7 +242,7 @@ private static final long serialVersionUID = 0L;
    * 预览封面
    * </pre>
    *
-   * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+   * <code>repeated .glory_api.CourseMaterial materials = 5;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseMaterialOrBuilder> 
@@ -234,7 +254,7 @@ private static final long serialVersionUID = 0L;
    * 预览封面
    * </pre>
    *
-   * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+   * <code>repeated .glory_api.CourseMaterial materials = 5;</code>
    */
   @java.lang.Override
   public int getMaterialsCount() {
@@ -245,7 +265,7 @@ private static final long serialVersionUID = 0L;
    * 预览封面
    * </pre>
    *
-   * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+   * <code>repeated .glory_api.CourseMaterial materials = 5;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.course.CourseMaterial getMaterials(int index) {
@@ -256,7 +276,7 @@ private static final long serialVersionUID = 0L;
    * 预览封面
    * </pre>
    *
-   * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+   * <code>repeated .glory_api.CourseMaterial materials = 5;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.course.CourseMaterialOrBuilder getMaterialsOrBuilder(
@@ -287,8 +307,11 @@ private static final long serialVersionUID = 0L;
     if (!getCreatedAtBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, createdAt );
     }
+    if (materialCount != 0L) {
+      output.writeInt64(4, materialCount );
+    }
     for (int i = 0; i < materials .size(); i++) {
-      output.writeMessage(4, materials .get(i));
+      output.writeMessage(5, materials .get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -309,9 +332,13 @@ private static final long serialVersionUID = 0L;
     if (!getCreatedAtBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, createdAt );
     }
+    if (materialCount != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(4, materialCount );
+    }
     for (int i = 0; i < materials .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, materials .get(i));
+        .computeMessageSize(5, materials .get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -334,6 +361,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getMaterialBoxName())) return false;
     if (!getCreatedAt()
         .equals(other.getCreatedAt())) return false;
+    if (getMaterialCount()
+        != other.getMaterialCount()) return false;
     if (!getMaterialsList()
         .equals(other.getMaterialsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -354,6 +383,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getMaterialBoxName().hashCode();
     hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
     hash = (53 * hash) + getCreatedAt().hashCode();
+    hash = (37 * hash) + MATERIAL_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getMaterialCount());
     if (getMaterialsCount() > 0) {
       hash = (37 * hash) + MATERIALS_FIELD_NUMBER;
       hash = (53 * hash) + getMaterialsList().hashCode();
@@ -502,6 +534,8 @@ private static final long serialVersionUID = 0L;
 
       createdAt = "";
 
+      materialCount = 0L;
+
       if (materialsBuilder == null) {
         materials = java.util.Collections.emptyList();
         bitField0 = (bitField0 & ~0x00000001);
@@ -538,6 +572,7 @@ private static final long serialVersionUID = 0L;
       result.materialBoxId = materialBoxId ;
       result.materialBoxName = materialBoxName ;
       result.createdAt = createdAt ;
+      result.materialCount = materialCount ;
       if (materialsBuilder == null) {
         if (((bitField0 & 0x00000001) != 0)) {
           materials = java.util.Collections.unmodifiableList(materials );
@@ -605,6 +640,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getCreatedAt().isEmpty()) {
         createdAt = other.createdAt ;
         onChanged();
+      }
+      if (other.getMaterialCount() != 0L) {
+        setMaterialCount(other.getMaterialCount());
       }
       if (materialsBuilder == null) {
         if (!other.materials .isEmpty()) {
@@ -845,6 +883,49 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private long materialCount ;
+    /**
+     * <pre>
+     * 素材数量
+     * </pre>
+     *
+     * <code>int64 material_count = 4;</code>
+     * @return The materialCount.
+     */
+    @java.lang.Override
+    public long getMaterialCount() {
+      return materialCount ;
+    }
+    /**
+     * <pre>
+     * 素材数量
+     * </pre>
+     *
+     * <code>int64 material_count = 4;</code>
+     * @param value The materialCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaterialCount(long value) {
+      
+      materialCount = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 素材数量
+     * </pre>
+     *
+     * <code>int64 material_count = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMaterialCount() {
+      
+      materialCount = 0L;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.zhijiejiaoyu.glory_api.course.CourseMaterial> materials =
       java.util.Collections.emptyList();
     private void ensureMaterialsIsMutable() {
@@ -862,7 +943,7 @@ private static final long serialVersionUID = 0L;
      * 预览封面
      * </pre>
      *
-     * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+     * <code>repeated .glory_api.CourseMaterial materials = 5;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseMaterial> getMaterialsList() {
       if (materialsBuilder == null) {
@@ -876,7 +957,7 @@ private static final long serialVersionUID = 0L;
      * 预览封面
      * </pre>
      *
-     * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+     * <code>repeated .glory_api.CourseMaterial materials = 5;</code>
      */
     public int getMaterialsCount() {
       if (materialsBuilder == null) {
@@ -890,7 +971,7 @@ private static final long serialVersionUID = 0L;
      * 预览封面
      * </pre>
      *
-     * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+     * <code>repeated .glory_api.CourseMaterial materials = 5;</code>
      */
     public com.zhijiejiaoyu.glory_api.course.CourseMaterial getMaterials(int index) {
       if (materialsBuilder == null) {
@@ -904,7 +985,7 @@ private static final long serialVersionUID = 0L;
      * 预览封面
      * </pre>
      *
-     * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+     * <code>repeated .glory_api.CourseMaterial materials = 5;</code>
      */
     public Builder setMaterials(
         int index, com.zhijiejiaoyu.glory_api.course.CourseMaterial value) {
@@ -925,7 +1006,7 @@ private static final long serialVersionUID = 0L;
      * 预览封面
      * </pre>
      *
-     * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+     * <code>repeated .glory_api.CourseMaterial materials = 5;</code>
      */
     public Builder setMaterials(
         int index, com.zhijiejiaoyu.glory_api.course.CourseMaterial.Builder builderForValue) {
@@ -943,7 +1024,7 @@ private static final long serialVersionUID = 0L;
      * 预览封面
      * </pre>
      *
-     * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+     * <code>repeated .glory_api.CourseMaterial materials = 5;</code>
      */
     public Builder addMaterials(com.zhijiejiaoyu.glory_api.course.CourseMaterial value) {
       if (materialsBuilder == null) {
@@ -963,7 +1044,7 @@ private static final long serialVersionUID = 0L;
      * 预览封面
      * </pre>
      *
-     * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+     * <code>repeated .glory_api.CourseMaterial materials = 5;</code>
      */
     public Builder addMaterials(
         int index, com.zhijiejiaoyu.glory_api.course.CourseMaterial value) {
@@ -984,7 +1065,7 @@ private static final long serialVersionUID = 0L;
      * 预览封面
      * </pre>
      *
-     * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+     * <code>repeated .glory_api.CourseMaterial materials = 5;</code>
      */
     public Builder addMaterials(
         com.zhijiejiaoyu.glory_api.course.CourseMaterial.Builder builderForValue) {
@@ -1002,7 +1083,7 @@ private static final long serialVersionUID = 0L;
      * 预览封面
      * </pre>
      *
-     * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+     * <code>repeated .glory_api.CourseMaterial materials = 5;</code>
      */
     public Builder addMaterials(
         int index, com.zhijiejiaoyu.glory_api.course.CourseMaterial.Builder builderForValue) {
@@ -1020,7 +1101,7 @@ private static final long serialVersionUID = 0L;
      * 预览封面
      * </pre>
      *
-     * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+     * <code>repeated .glory_api.CourseMaterial materials = 5;</code>
      */
     public Builder addAllMaterials(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.course.CourseMaterial> values) {
@@ -1039,7 +1120,7 @@ private static final long serialVersionUID = 0L;
      * 预览封面
      * </pre>
      *
-     * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+     * <code>repeated .glory_api.CourseMaterial materials = 5;</code>
      */
     public Builder clearMaterials() {
       if (materialsBuilder == null) {
@@ -1056,7 +1137,7 @@ private static final long serialVersionUID = 0L;
      * 预览封面
      * </pre>
      *
-     * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+     * <code>repeated .glory_api.CourseMaterial materials = 5;</code>
      */
     public Builder removeMaterials(int index) {
       if (materialsBuilder == null) {
@@ -1073,7 +1154,7 @@ private static final long serialVersionUID = 0L;
      * 预览封面
      * </pre>
      *
-     * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+     * <code>repeated .glory_api.CourseMaterial materials = 5;</code>
      */
     public com.zhijiejiaoyu.glory_api.course.CourseMaterial.Builder getMaterialsBuilder(
         int index) {
@@ -1084,7 +1165,7 @@ private static final long serialVersionUID = 0L;
      * 预览封面
      * </pre>
      *
-     * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+     * <code>repeated .glory_api.CourseMaterial materials = 5;</code>
      */
     public com.zhijiejiaoyu.glory_api.course.CourseMaterialOrBuilder getMaterialsOrBuilder(
         int index) {
@@ -1098,7 +1179,7 @@ private static final long serialVersionUID = 0L;
      * 预览封面
      * </pre>
      *
-     * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+     * <code>repeated .glory_api.CourseMaterial materials = 5;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseMaterialOrBuilder> 
          getMaterialsOrBuilderList() {
@@ -1113,7 +1194,7 @@ private static final long serialVersionUID = 0L;
      * 预览封面
      * </pre>
      *
-     * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+     * <code>repeated .glory_api.CourseMaterial materials = 5;</code>
      */
     public com.zhijiejiaoyu.glory_api.course.CourseMaterial.Builder addMaterialsBuilder() {
       return getMaterialsFieldBuilder().addBuilder(
@@ -1124,7 +1205,7 @@ private static final long serialVersionUID = 0L;
      * 预览封面
      * </pre>
      *
-     * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+     * <code>repeated .glory_api.CourseMaterial materials = 5;</code>
      */
     public com.zhijiejiaoyu.glory_api.course.CourseMaterial.Builder addMaterialsBuilder(
         int index) {
@@ -1136,7 +1217,7 @@ private static final long serialVersionUID = 0L;
      * 预览封面
      * </pre>
      *
-     * <code>repeated .glory_api.CourseMaterial materials = 4;</code>
+     * <code>repeated .glory_api.CourseMaterial materials = 5;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseMaterial.Builder> 
          getMaterialsBuilderList() {

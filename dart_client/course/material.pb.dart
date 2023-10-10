@@ -22,6 +22,7 @@ class CourseMaterialBox extends $pb.GeneratedMessage {
     $fixnum.Int64? materialBoxId,
     $core.String? materialBoxName,
     $core.String? createdAt,
+    $fixnum.Int64? materialCount,
     $core.Iterable<CourseMaterial>? materials,
   }) {
     final $result = create();
@@ -33,6 +34,9 @@ class CourseMaterialBox extends $pb.GeneratedMessage {
     }
     if (createdAt != null) {
       $result.createdAt = createdAt;
+    }
+    if (materialCount != null) {
+      $result.materialCount = materialCount;
     }
     if (materials != null) {
       $result.materials.addAll(materials);
@@ -47,7 +51,8 @@ class CourseMaterialBox extends $pb.GeneratedMessage {
     ..aInt64(1, _omitFieldNames ? '' : 'materialBoxId')
     ..aOS(2, _omitFieldNames ? '' : 'materialBoxName')
     ..aOS(3, _omitFieldNames ? '' : 'createdAt')
-    ..pc<CourseMaterial>(4, _omitFieldNames ? '' : 'materials', $pb.PbFieldType.PM, subBuilder: CourseMaterial.create)
+    ..aInt64(4, _omitFieldNames ? '' : 'materialCount')
+    ..pc<CourseMaterial>(5, _omitFieldNames ? '' : 'materials', $pb.PbFieldType.PM, subBuilder: CourseMaterial.create)
     ..hasRequiredFields = false
   ;
 
@@ -100,7 +105,16 @@ class CourseMaterialBox extends $pb.GeneratedMessage {
   void clearCreatedAt() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.List<CourseMaterial> get materials => $_getList(3);
+  $fixnum.Int64 get materialCount => $_getI64(3);
+  @$pb.TagNumber(4)
+  set materialCount($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasMaterialCount() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMaterialCount() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.List<CourseMaterial> get materials => $_getList(4);
 }
 
 /// 素材
