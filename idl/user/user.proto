@@ -426,3 +426,14 @@ message GetMySocialSummaryResponse {
   base.BaseResponse base_resp = 1;
   UserSocialSummary social_summary = 2;
 }
+
+message UpdateUserTenantRequest {
+  base.BaseRequest base_request = 1;
+  int64 tenant_id = 2;
+  int64 role_id = 3;
+  int64 dept_id = 4;
+}
+
+message UpdateUserTenantResponse {
+  base.BaseResponse base_resp = 1;
+}
