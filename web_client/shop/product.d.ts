@@ -50,7 +50,7 @@ export interface Product {
   /** 商品品牌 */
   product_brand?: string;
   /** 优惠券 */
-  coupon?: coupon.CouponDetail;
+  coupon?: Array<coupon.CouponDetail>;
 }
 
 export interface ProductImage {

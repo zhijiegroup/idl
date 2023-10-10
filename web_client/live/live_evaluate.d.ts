@@ -107,6 +107,8 @@ export interface GetEvaluateDetailResponse {
   ai_feedback_id?: string;
   created_user?: string;
   anchor?: string;
+  live_start_time?: string;
+  live_end_time?: string;
   ai_result?: Array<AiResult>;
   detail?: Array<EvaluateDetail>;
 }

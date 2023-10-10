@@ -105,7 +105,7 @@ public final class CartOuterClass {
       "ity\030\004 \001(\005\022\022\n\nunit_price\030\005 \001(\001\022\023\n\013product" +
       "_url\030\006 \001(\t\022\020\n\010sku_info\030\007 \001(\t\022\020\n\010currency" +
       "\030\010 \001(\t\022\026\n\016freight_amount\030\t \001(\002\022\017\n\007channe" +
-      "l\030\n \001(\t\022\'\n\006coupon\030\013 \001(\0132\027.glory_api.Coup" +
+      "l\030\n \001(\t\022\'\n\006coupon\030\013 \003(\0132\027.glory_api.Coup" +
       "onDetail\"\241\001\n\010ShopShow\022\023\n\013cart_sku_id\030\001 \001" +
       "(\003\022\016\n\006sku_id\030\002 \001(\003\022\020\n\010quantity\030\003 \001(\005\022\017\n\007" +
       "shop_id\030\004 \001(\003\022\021\n\tshop_name\030\005 \001(\t\022\021\n\tshop" +

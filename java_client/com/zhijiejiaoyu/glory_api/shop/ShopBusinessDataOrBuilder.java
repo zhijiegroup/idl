@@ -48,4 +48,16 @@ public interface ShopBusinessDataOrBuilder extends
    * @return The totalOrderAmount.
    */
   long getTotalOrderAmount();
+
+  /**
+   * <code>string shop_type = 5;</code>
+   * @return The shopType.
+   */
+  java.lang.String getShopType();
+  /**
+   * <code>string shop_type = 5;</code>
+   * @return The bytes for shopType.
+   */
+  com.google.protobuf.ByteString
+      getShopTypeBytes();
 }

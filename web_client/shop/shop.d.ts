@@ -300,6 +300,7 @@ export interface ShopBusinessData {
   total_deal_amount?: number;
   total_visitor_amount?: string;
   total_order_amount?: string;
+  shop_type?: string;
 }
 
 export interface GetShopBusinessDataResponse {

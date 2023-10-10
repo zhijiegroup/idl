@@ -1135,6 +1135,8 @@ class GetEvaluateDetailResponse extends $pb.GeneratedMessage {
     $fixnum.Int64? aiFeedbackId,
     $core.String? createdUser,
     $core.String? anchor,
+    $fixnum.Int64? liveStartTime,
+    $fixnum.Int64? liveEndTime,
     $core.Iterable<AiResult>? aiResult,
     $core.Iterable<EvaluateDetail>? detail,
   }) {
@@ -1181,6 +1183,12 @@ class GetEvaluateDetailResponse extends $pb.GeneratedMessage {
     if (anchor != null) {
       $result.anchor = anchor;
     }
+    if (liveStartTime != null) {
+      $result.liveStartTime = liveStartTime;
+    }
+    if (liveEndTime != null) {
+      $result.liveEndTime = liveEndTime;
+    }
     if (aiResult != null) {
       $result.aiResult.addAll(aiResult);
     }
@@ -1208,7 +1216,9 @@ class GetEvaluateDetailResponse extends $pb.GeneratedMessage {
     ..aInt64(12, _omitFieldNames ? '' : 'aiFeedbackId')
     ..aOS(13, _omitFieldNames ? '' : 'createdUser')
     ..aOS(14, _omitFieldNames ? '' : 'anchor')
-    ..pc<AiResult>(15, _omitFieldNames ? '' : 'aiResult', $pb.PbFieldType.PM, subBuilder: AiResult.create)
+    ..aInt64(15, _omitFieldNames ? '' : 'liveStartTime')
+    ..aInt64(16, _omitFieldNames ? '' : 'liveEndTime')
+    ..pc<AiResult>(17, _omitFieldNames ? '' : 'aiResult', $pb.PbFieldType.PM, subBuilder: AiResult.create)
     ..pc<EvaluateDetail>(100, _omitFieldNames ? '' : 'detail', $pb.PbFieldType.PM, subBuilder: EvaluateDetail.create)
     ..hasRequiredFields = false
   ;
@@ -1363,10 +1373,28 @@ class GetEvaluateDetailResponse extends $pb.GeneratedMessage {
   void clearAnchor() => clearField(14);
 
   @$pb.TagNumber(15)
-  $core.List<AiResult> get aiResult => $_getList(14);
+  $fixnum.Int64 get liveStartTime => $_getI64(14);
+  @$pb.TagNumber(15)
+  set liveStartTime($fixnum.Int64 v) { $_setInt64(14, v); }
+  @$pb.TagNumber(15)
+  $core.bool hasLiveStartTime() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearLiveStartTime() => clearField(15);
+
+  @$pb.TagNumber(16)
+  $fixnum.Int64 get liveEndTime => $_getI64(15);
+  @$pb.TagNumber(16)
+  set liveEndTime($fixnum.Int64 v) { $_setInt64(15, v); }
+  @$pb.TagNumber(16)
+  $core.bool hasLiveEndTime() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearLiveEndTime() => clearField(16);
+
+  @$pb.TagNumber(17)
+  $core.List<AiResult> get aiResult => $_getList(16);
 
   @$pb.TagNumber(100)
-  $core.List<EvaluateDetail> get detail => $_getList(15);
+  $core.List<EvaluateDetail> get detail => $_getList(17);
 }
 
 class SubmitEvaluateRequest extends $pb.GeneratedMessage {

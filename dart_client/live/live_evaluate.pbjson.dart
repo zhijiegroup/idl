@@ -255,7 +255,9 @@ const GetEvaluateDetailResponse$json = {
     {'1': 'ai_feedback_id', '3': 12, '4': 1, '5': 3, '10': 'aiFeedbackId'},
     {'1': 'created_user', '3': 13, '4': 1, '5': 9, '10': 'createdUser'},
     {'1': 'anchor', '3': 14, '4': 1, '5': 9, '10': 'anchor'},
-    {'1': 'ai_result', '3': 15, '4': 3, '5': 11, '6': '.glory_api.AiResult', '10': 'aiResult'},
+    {'1': 'live_start_time', '3': 15, '4': 1, '5': 3, '10': 'liveStartTime'},
+    {'1': 'live_end_time', '3': 16, '4': 1, '5': 3, '10': 'liveEndTime'},
+    {'1': 'ai_result', '3': 17, '4': 3, '5': 11, '6': '.glory_api.AiResult', '10': 'aiResult'},
     {'1': 'detail', '3': 100, '4': 3, '5': 11, '6': '.glory_api.EvaluateDetail', '10': 'detail'},
   ],
 };
@@ -270,9 +272,10 @@ final $typed_data.Uint8List getEvaluateDetailResponseDescriptor = $convert.base6
     'gJUgt6ZXJvQ29tbWVudBIUCgVzY29yZRgJIAEoAVIFc2NvcmUSHwoLYWlfZmVlZGJhY2sYCiAB'
     'KAlSCmFpRmVlZGJhY2sSGgoIYmFzZWxpbmUYCyABKAhSCGJhc2VsaW5lEiQKDmFpX2ZlZWRiYW'
     'NrX2lkGAwgASgDUgxhaUZlZWRiYWNrSWQSIQoMY3JlYXRlZF91c2VyGA0gASgJUgtjcmVhdGVk'
-    'VXNlchIWCgZhbmNob3IYDiABKAlSBmFuY2hvchIwCglhaV9yZXN1bHQYDyADKAsyEy5nbG9yeV'
-    '9hcGkuQWlSZXN1bHRSCGFpUmVzdWx0EjEKBmRldGFpbBhkIAMoCzIZLmdsb3J5X2FwaS5FdmFs'
-    'dWF0ZURldGFpbFIGZGV0YWls');
+    'VXNlchIWCgZhbmNob3IYDiABKAlSBmFuY2hvchImCg9saXZlX3N0YXJ0X3RpbWUYDyABKANSDW'
+    'xpdmVTdGFydFRpbWUSIgoNbGl2ZV9lbmRfdGltZRgQIAEoA1ILbGl2ZUVuZFRpbWUSMAoJYWlf'
+    'cmVzdWx0GBEgAygLMhMuZ2xvcnlfYXBpLkFpUmVzdWx0UghhaVJlc3VsdBIxCgZkZXRhaWwYZC'
+    'ADKAsyGS5nbG9yeV9hcGkuRXZhbHVhdGVEZXRhaWxSBmRldGFpbA==');
 
 @$core.Deprecated('Use submitEvaluateRequestDescriptor instead')
 const SubmitEvaluateRequest$json = {

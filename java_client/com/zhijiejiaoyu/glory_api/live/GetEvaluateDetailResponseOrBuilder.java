@@ -145,25 +145,37 @@ public interface GetEvaluateDetailResponseOrBuilder extends
       getAnchorBytes();
 
   /**
-   * <code>repeated .glory_api.AiResult ai_result = 15;</code>
+   * <code>int64 live_start_time = 15;</code>
+   * @return The liveStartTime.
+   */
+  long getLiveStartTime();
+
+  /**
+   * <code>int64 live_end_time = 16;</code>
+   * @return The liveEndTime.
+   */
+  long getLiveEndTime();
+
+  /**
+   * <code>repeated .glory_api.AiResult ai_result = 17;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.live.AiResult> 
       getAiResultList();
   /**
-   * <code>repeated .glory_api.AiResult ai_result = 15;</code>
+   * <code>repeated .glory_api.AiResult ai_result = 17;</code>
    */
   com.zhijiejiaoyu.glory_api.live.AiResult getAiResult(int index);
   /**
-   * <code>repeated .glory_api.AiResult ai_result = 15;</code>
+   * <code>repeated .glory_api.AiResult ai_result = 17;</code>
    */
   int getAiResultCount();
   /**
-   * <code>repeated .glory_api.AiResult ai_result = 15;</code>
+   * <code>repeated .glory_api.AiResult ai_result = 17;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.live.AiResultOrBuilder> 
       getAiResultOrBuilderList();
   /**
-   * <code>repeated .glory_api.AiResult ai_result = 15;</code>
+   * <code>repeated .glory_api.AiResult ai_result = 17;</code>
    */
   com.zhijiejiaoyu.glory_api.live.AiResultOrBuilder getAiResultOrBuilder(
       int index);

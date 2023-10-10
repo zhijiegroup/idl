@@ -647,6 +647,7 @@ const ShopBusinessData$json = {
     {'1': 'total_deal_amount', '3': 2, '4': 1, '5': 1, '10': 'totalDealAmount'},
     {'1': 'total_visitor_amount', '3': 3, '4': 1, '5': 3, '10': 'totalVisitorAmount'},
     {'1': 'total_order_amount', '3': 4, '4': 1, '5': 3, '10': 'totalOrderAmount'},
+    {'1': 'shop_type', '3': 5, '4': 1, '5': 9, '10': 'shopType'},
   ],
 };
 
@@ -656,7 +657,7 @@ final $typed_data.Uint8List shopBusinessDataDescriptor = $convert.base64Decode(
     '5TaG9wQ2hhcnREYXRhUg1zaG9wQ2hhcnREYXRhEioKEXRvdGFsX2RlYWxfYW1vdW50GAIgASgB'
     'Ug90b3RhbERlYWxBbW91bnQSMAoUdG90YWxfdmlzaXRvcl9hbW91bnQYAyABKANSEnRvdGFsVm'
     'lzaXRvckFtb3VudBIsChJ0b3RhbF9vcmRlcl9hbW91bnQYBCABKANSEHRvdGFsT3JkZXJBbW91'
-    'bnQ=');
+    'bnQSGwoJc2hvcF90eXBlGAUgASgJUghzaG9wVHlwZQ==');
 
 @$core.Deprecated('Use getShopBusinessDataResponseDescriptor instead')
 const GetShopBusinessDataResponse$json = {

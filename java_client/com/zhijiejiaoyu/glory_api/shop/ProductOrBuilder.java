@@ -274,25 +274,42 @@ public interface ProductOrBuilder extends
    * 优惠券
    * </pre>
    *
-   * <code>.glory_api.CouponDetail coupon = 19;</code>
-   * @return Whether the coupon field is set.
+   * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
    */
-  boolean hasCoupon();
+  java.util.List<com.zhijiejiaoyu.glory_api.shop.CouponDetail> 
+      getCouponList();
   /**
    * <pre>
    * 优惠券
    * </pre>
    *
-   * <code>.glory_api.CouponDetail coupon = 19;</code>
-   * @return The coupon.
+   * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
    */
-  com.zhijiejiaoyu.glory_api.shop.CouponDetail getCoupon();
+  com.zhijiejiaoyu.glory_api.shop.CouponDetail getCoupon(int index);
   /**
    * <pre>
    * 优惠券
    * </pre>
    *
-   * <code>.glory_api.CouponDetail coupon = 19;</code>
+   * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
    */
-  com.zhijiejiaoyu.glory_api.shop.CouponDetailOrBuilder getCouponOrBuilder();
+  int getCouponCount();
+  /**
+   * <pre>
+   * 优惠券
+   * </pre>
+   *
+   * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+   */
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.CouponDetailOrBuilder> 
+      getCouponOrBuilderList();
+  /**
+   * <pre>
+   * 优惠券
+   * </pre>
+   *
+   * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+   */
+  com.zhijiejiaoyu.glory_api.shop.CouponDetailOrBuilder getCouponOrBuilder(
+      int index);
 }

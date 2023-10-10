@@ -244,7 +244,7 @@ class ProductShow extends $pb.GeneratedMessage {
     $core.String? currency,
     $core.double? freightAmount,
     $core.String? channel,
-    $0.CouponDetail? coupon,
+    $core.Iterable<$0.CouponDetail>? coupon,
   }) {
     final $result = create();
     if (productId != null) {
@@ -278,7 +278,7 @@ class ProductShow extends $pb.GeneratedMessage {
       $result.channel = channel;
     }
     if (coupon != null) {
-      $result.coupon = coupon;
+      $result.coupon.addAll(coupon);
     }
     return $result;
   }
@@ -297,7 +297,7 @@ class ProductShow extends $pb.GeneratedMessage {
     ..aOS(8, _omitFieldNames ? '' : 'currency')
     ..a<$core.double>(9, _omitFieldNames ? '' : 'freightAmount', $pb.PbFieldType.OF)
     ..aOS(10, _omitFieldNames ? '' : 'channel')
-    ..aOM<$0.CouponDetail>(11, _omitFieldNames ? '' : 'coupon', subBuilder: $0.CouponDetail.create)
+    ..pc<$0.CouponDetail>(11, _omitFieldNames ? '' : 'coupon', $pb.PbFieldType.PM, subBuilder: $0.CouponDetail.create)
     ..hasRequiredFields = false
   ;
 
@@ -413,15 +413,7 @@ class ProductShow extends $pb.GeneratedMessage {
   void clearChannel() => clearField(10);
 
   @$pb.TagNumber(11)
-  $0.CouponDetail get coupon => $_getN(10);
-  @$pb.TagNumber(11)
-  set coupon($0.CouponDetail v) { setField(11, v); }
-  @$pb.TagNumber(11)
-  $core.bool hasCoupon() => $_has(10);
-  @$pb.TagNumber(11)
-  void clearCoupon() => clearField(11);
-  @$pb.TagNumber(11)
-  $0.CouponDetail ensureCoupon() => $_ensure(10);
+  $core.List<$0.CouponDetail> get coupon => $_getList(10);
 }
 
 class ShopShow extends $pb.GeneratedMessage {

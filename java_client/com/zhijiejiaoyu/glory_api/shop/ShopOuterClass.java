@@ -358,32 +358,32 @@ public final class ShopOuterClass {
       "\030\002 \001(\003\022\016\n\006period\030\003 \001(\003\"{\n\rShopChartData\022" +
       "\014\n\004date\030\001 \001(\t\022\023\n\013deal_amount\030\002 \001(\001\022\031\n\021sh" +
       "op_buyer_amount\030\003 \001(\003\022\031\n\021shop_order_amou" +
-      "nt\030\004 \001(\003\022\021\n\ttimestamp\030\005 \001(\003\"\232\001\n\020ShopBusi" +
+      "nt\030\004 \001(\003\022\021\n\ttimestamp\030\005 \001(\003\"\255\001\n\020ShopBusi" +
       "nessData\0221\n\017shop_chart_data\030\001 \003(\0132\030.glor" +
       "y_api.ShopChartData\022\031\n\021total_deal_amount" +
       "\030\002 \001(\001\022\034\n\024total_visitor_amount\030\003 \001(\003\022\032\n\022" +
-      "total_order_amount\030\004 \001(\003\"}\n\033GetShopBusin" +
-      "essDataResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
-      "e.BaseResponse\0227\n\022shop_business_data\030\002 \001" +
-      "(\0132\033.glory_api.ShopBusinessData\"\240\001\n\013Shop" +
-      "Summary\022\017\n\007shop_id\030\001 \001(\003\022\025\n\rshop_logo_ur" +
-      "l\030\002 \001(\t\022\021\n\tshop_name\030\003 \001(\t\022\023\n\013deal_amoun" +
-      "t\030\004 \001(\001\022\023\n\013order_total\030\005 \001(\003\022\021\n\tseller_i" +
-      "d\030\006 \001(\003\022\031\n\021shop_manager_name\030\007 \001(\t\"\224\001\n\026L" +
-      "istShopSummaryRequest\022\'\n\014base_request\030\001 " +
-      "\001(\0132\021.base.BaseRequest\022\021\n\tshop_name\030\002 \001(" +
-      "\t\022\021\n\tshop_type\030\003 \001(\t\022+\n\npagination\030d \001(\013" +
-      "2\027.base.PaginationRequest\"\231\001\n\027ListShopSu" +
-      "mmaryResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
-      "BaseResponse\022)\n\tshop_list\030\002 \003(\0132\026.glory_" +
-      "api.ShopSummary\022,\n\npagination\030d \001(\0132\030.ba" +
-      "se.PaginationResponse\"W\n\031ListShopBySelle" +
-      "rIDRequest\022\'\n\014base_request\030\001 \001(\0132\021.base." +
-      "BaseRequest\022\021\n\tseller_id\030\002 \001(\003\"g\n\032ListSh" +
-      "opBySellerIDResponse\022%\n\tbase_resp\030\001 \001(\0132" +
-      "\022.base.BaseResponse\022\"\n\tshop_list\030\002 \003(\0132\017" +
-      ".glory_api.ShopB#\n\037com.zhijiejiaoyu.glor" +
-      "y_api.shopP\001b\006proto3"
+      "total_order_amount\030\004 \001(\003\022\021\n\tshop_type\030\005 " +
+      "\001(\t\"}\n\033GetShopBusinessDataResponse\022%\n\tba" +
+      "se_resp\030\001 \001(\0132\022.base.BaseResponse\0227\n\022sho" +
+      "p_business_data\030\002 \001(\0132\033.glory_api.ShopBu" +
+      "sinessData\"\240\001\n\013ShopSummary\022\017\n\007shop_id\030\001 " +
+      "\001(\003\022\025\n\rshop_logo_url\030\002 \001(\t\022\021\n\tshop_name\030" +
+      "\003 \001(\t\022\023\n\013deal_amount\030\004 \001(\001\022\023\n\013order_tota" +
+      "l\030\005 \001(\003\022\021\n\tseller_id\030\006 \001(\003\022\031\n\021shop_manag" +
+      "er_name\030\007 \001(\t\"\224\001\n\026ListShopSummaryRequest" +
+      "\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReques" +
+      "t\022\021\n\tshop_name\030\002 \001(\t\022\021\n\tshop_type\030\003 \001(\t\022" +
+      "+\n\npagination\030d \001(\0132\027.base.PaginationReq" +
+      "uest\"\231\001\n\027ListShopSummaryResponse\022%\n\tbase" +
+      "_resp\030\001 \001(\0132\022.base.BaseResponse\022)\n\tshop_" +
+      "list\030\002 \003(\0132\026.glory_api.ShopSummary\022,\n\npa" +
+      "gination\030d \001(\0132\030.base.PaginationResponse" +
+      "\"W\n\031ListShopBySellerIDRequest\022\'\n\014base_re" +
+      "quest\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tseller" +
+      "_id\030\002 \001(\003\"g\n\032ListShopBySellerIDResponse\022" +
+      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022\"" +
+      "\n\tshop_list\030\002 \003(\0132\017.glory_api.ShopB#\n\037co" +
+      "m.zhijiejiaoyu.glory_api.shopP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -618,7 +618,7 @@ public final class ShopOuterClass {
     internal_static_glory_api_ShopBusinessData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ShopBusinessData_descriptor,
-        new java.lang.String[] { "ShopChartData", "TotalDealAmount", "TotalVisitorAmount", "TotalOrderAmount", });
+        new java.lang.String[] { "ShopChartData", "TotalDealAmount", "TotalVisitorAmount", "TotalOrderAmount", "ShopType", });
     internal_static_glory_api_GetShopBusinessDataResponse_descriptor =
       getDescriptor().getMessageTypes().get(38);
     internal_static_glory_api_GetShopBusinessDataResponse_fieldAccessorTable = new

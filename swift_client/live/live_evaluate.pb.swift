@@ -405,6 +405,16 @@ struct GloryApi_GetEvaluateDetailResponse {
     set {_uniqueStorage()._anchor = newValue}
   }
 
+  var liveStartTime: Int64 {
+    get {return _storage._liveStartTime}
+    set {_uniqueStorage()._liveStartTime = newValue}
+  }
+
+  var liveEndTime: Int64 {
+    get {return _storage._liveEndTime}
+    set {_uniqueStorage()._liveEndTime = newValue}
+  }
+
   var aiResult: [GloryApi_AiResult] {
     get {return _storage._aiResult}
     set {_uniqueStorage()._aiResult = newValue}
@@ -1999,7 +2009,9 @@ extension GloryApi_GetEvaluateDetailResponse: SwiftProtobuf.Message, SwiftProtob
     12: .standard(proto: "ai_feedback_id"),
     13: .standard(proto: "created_user"),
     14: .same(proto: "anchor"),
-    15: .standard(proto: "ai_result"),
+    15: .standard(proto: "live_start_time"),
+    16: .standard(proto: "live_end_time"),
+    17: .standard(proto: "ai_result"),
     100: .same(proto: "detail"),
   ]
 
@@ -2018,6 +2030,8 @@ extension GloryApi_GetEvaluateDetailResponse: SwiftProtobuf.Message, SwiftProtob
     var _aiFeedbackID: Int64 = 0
     var _createdUser: String = String()
     var _anchor: String = String()
+    var _liveStartTime: Int64 = 0
+    var _liveEndTime: Int64 = 0
     var _aiResult: [GloryApi_AiResult] = []
     var _detail: [GloryApi_EvaluateDetail] = []
 
@@ -2040,6 +2054,8 @@ extension GloryApi_GetEvaluateDetailResponse: SwiftProtobuf.Message, SwiftProtob
       _aiFeedbackID = source._aiFeedbackID
       _createdUser = source._createdUser
       _anchor = source._anchor
+      _liveStartTime = source._liveStartTime
+      _liveEndTime = source._liveEndTime
       _aiResult = source._aiResult
       _detail = source._detail
     }
@@ -2074,7 +2090,9 @@ extension GloryApi_GetEvaluateDetailResponse: SwiftProtobuf.Message, SwiftProtob
         case 12: try { try decoder.decodeSingularInt64Field(value: &_storage._aiFeedbackID) }()
         case 13: try { try decoder.decodeSingularStringField(value: &_storage._createdUser) }()
         case 14: try { try decoder.decodeSingularStringField(value: &_storage._anchor) }()
-        case 15: try { try decoder.decodeRepeatedMessageField(value: &_storage._aiResult) }()
+        case 15: try { try decoder.decodeSingularInt64Field(value: &_storage._liveStartTime) }()
+        case 16: try { try decoder.decodeSingularInt64Field(value: &_storage._liveEndTime) }()
+        case 17: try { try decoder.decodeRepeatedMessageField(value: &_storage._aiResult) }()
         case 100: try { try decoder.decodeRepeatedMessageField(value: &_storage._detail) }()
         default: break
         }
@@ -2130,8 +2148,14 @@ extension GloryApi_GetEvaluateDetailResponse: SwiftProtobuf.Message, SwiftProtob
       if !_storage._anchor.isEmpty {
         try visitor.visitSingularStringField(value: _storage._anchor, fieldNumber: 14)
       }
+      if _storage._liveStartTime != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._liveStartTime, fieldNumber: 15)
+      }
+      if _storage._liveEndTime != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._liveEndTime, fieldNumber: 16)
+      }
       if !_storage._aiResult.isEmpty {
-        try visitor.visitRepeatedMessageField(value: _storage._aiResult, fieldNumber: 15)
+        try visitor.visitRepeatedMessageField(value: _storage._aiResult, fieldNumber: 17)
       }
       if !_storage._detail.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._detail, fieldNumber: 100)
@@ -2159,6 +2183,8 @@ extension GloryApi_GetEvaluateDetailResponse: SwiftProtobuf.Message, SwiftProtob
         if _storage._aiFeedbackID != rhs_storage._aiFeedbackID {return false}
         if _storage._createdUser != rhs_storage._createdUser {return false}
         if _storage._anchor != rhs_storage._anchor {return false}
+        if _storage._liveStartTime != rhs_storage._liveStartTime {return false}
+        if _storage._liveEndTime != rhs_storage._liveEndTime {return false}
         if _storage._aiResult != rhs_storage._aiResult {return false}
         if _storage._detail != rhs_storage._detail {return false}
         return true

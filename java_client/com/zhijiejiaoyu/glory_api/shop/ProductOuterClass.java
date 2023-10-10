@@ -229,7 +229,7 @@ public final class ProductOuterClass {
       "ute\030\017 \003(\0132\034.glory_api.ShipmentAttribute\022" +
       "\022\n\nsale_price\030\020 \001(\002\022\027\n\017reference_price\030\021" +
       " \001(\002\022\025\n\rproduct_brand\030\022 \001(\t\022\'\n\006coupon\030\023 " +
-      "\001(\0132\027.glory_api.CouponDetail\"O\n\014ProductI" +
+      "\003(\0132\027.glory_api.CouponDetail\"O\n\014ProductI" +
       "mage\022\030\n\020product_image_id\030\001 \001(\003\022\022\n\nimage_" +
       "type\030\002 \001(\t\022\021\n\timage_url\030\003 \001(\t\"\225\001\n\021Shipme" +
       "ntAttribute\022\035\n\025shipment_attribute_id\030\001 \001" +

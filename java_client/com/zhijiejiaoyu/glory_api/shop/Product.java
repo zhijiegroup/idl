@@ -24,6 +24,7 @@ private static final long serialVersionUID = 0L;
     shopLogoUrl = "";
     shipmentAttribute = java.util.Collections.emptyList();
     productBrand = "";
+    coupon = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -168,16 +169,12 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 154: {
-            com.zhijiejiaoyu.glory_api.shop.CouponDetail.Builder subBuilder = null;
-            if (coupon != null) {
-              subBuilder = coupon .toBuilder();
+            if (!((mutable_bitField0 & 0x00000008) != 0)) {
+              coupon = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.shop.CouponDetail>();
+              mutable_bitField0_ |= 0x00000008;
             }
-            coupon = input.readMessage(com.zhijiejiaoyu.glory_api.shop.CouponDetail.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(coupon );
-              coupon = subBuilder.buildPartial();
-            }
-
+            coupon .add(
+                input.readMessage(com.zhijiejiaoyu.glory_api.shop.CouponDetail.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -203,6 +200,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0 & 0x00000004) != 0)) {
         shipmentAttribute = java.util.Collections.unmodifiableList(shipmentAttribute );
+      }
+      if (((mutable_bitField0 & 0x00000008) != 0)) {
+        coupon = java.util.Collections.unmodifiableList(coupon );
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -695,41 +695,63 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int COUPON_FIELD_NUMBER = 19;
-  private com.zhijiejiaoyu.glory_api.shop.CouponDetail coupon ;
+  private java.util.List<com.zhijiejiaoyu.glory_api.shop.CouponDetail> coupon ;
   /**
    * <pre>
    * 优惠券
    * </pre>
    *
-   * <code>.glory_api.CouponDetail coupon = 19;</code>
-   * @return Whether the coupon field is set.
+   * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
    */
   @java.lang.Override
-  public boolean hasCoupon() {
-    return coupon != null;
+  public java.util.List<com.zhijiejiaoyu.glory_api.shop.CouponDetail> getCouponList() {
+    return coupon ;
   }
   /**
    * <pre>
    * 优惠券
    * </pre>
    *
-   * <code>.glory_api.CouponDetail coupon = 19;</code>
-   * @return The coupon.
+   * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.shop.CouponDetail getCoupon() {
-    return coupon == null ? com.zhijiejiaoyu.glory_api.shop.CouponDetail.getDefaultInstance() : coupon ;
+  public java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.CouponDetailOrBuilder> 
+      getCouponOrBuilderList() {
+    return coupon ;
   }
   /**
    * <pre>
    * 优惠券
    * </pre>
    *
-   * <code>.glory_api.CouponDetail coupon = 19;</code>
+   * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.shop.CouponDetailOrBuilder getCouponOrBuilder() {
-    return getCoupon();
+  public int getCouponCount() {
+    return coupon .size();
+  }
+  /**
+   * <pre>
+   * 优惠券
+   * </pre>
+   *
+   * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.shop.CouponDetail getCoupon(int index) {
+    return coupon .get(index);
+  }
+  /**
+   * <pre>
+   * 优惠券
+   * </pre>
+   *
+   * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.shop.CouponDetailOrBuilder getCouponOrBuilder(
+      int index) {
+    return coupon .get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -797,8 +819,8 @@ private static final long serialVersionUID = 0L;
     if (!getProductBrandBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18, productBrand );
     }
-    if (coupon != null) {
-      output.writeMessage(19, getCoupon());
+    for (int i = 0; i < coupon .size(); i++) {
+      output.writeMessage(19, coupon .get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -873,9 +895,9 @@ private static final long serialVersionUID = 0L;
     if (!getProductBrandBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, productBrand );
     }
-    if (coupon != null) {
+    for (int i = 0; i < coupon .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(19, getCoupon());
+        .computeMessageSize(19, coupon .get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -931,11 +953,8 @@ private static final long serialVersionUID = 0L;
             other.getReferencePrice())) return false;
     if (!getProductBrand()
         .equals(other.getProductBrand())) return false;
-    if (hasCoupon() != other.hasCoupon()) return false;
-    if (hasCoupon()) {
-      if (!getCoupon()
-          .equals(other.getCoupon())) return false;
-    }
+    if (!getCouponList()
+        .equals(other.getCouponList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -995,9 +1014,9 @@ private static final long serialVersionUID = 0L;
         getReferencePrice());
     hash = (37 * hash) + PRODUCT_BRAND_FIELD_NUMBER;
     hash = (53 * hash) + getProductBrand().hashCode();
-    if (hasCoupon()) {
+    if (getCouponCount() > 0) {
       hash = (37 * hash) + COUPON_FIELD_NUMBER;
-      hash = (53 * hash) + getCoupon().hashCode();
+      hash = (53 * hash) + getCouponList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1130,6 +1149,7 @@ private static final long serialVersionUID = 0L;
         getSkuFieldBuilder();
         getImagesFieldBuilder();
         getShipmentAttributeFieldBuilder();
+        getCouponFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1186,10 +1206,10 @@ private static final long serialVersionUID = 0L;
       productBrand = "";
 
       if (couponBuilder == null) {
-        coupon = null;
+        coupon = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000008);
       } else {
-        coupon = null;
-        couponBuilder = null;
+        couponBuilder .clear();
       }
       return this;
     }
@@ -1264,6 +1284,10 @@ private static final long serialVersionUID = 0L;
       result.referencePrice = referencePrice ;
       result.productBrand = productBrand ;
       if (couponBuilder == null) {
+        if (((bitField0 & 0x00000008) != 0)) {
+          coupon = java.util.Collections.unmodifiableList(coupon );
+          bitField0 = (bitField0 & ~0x00000008);
+        }
         result.coupon = coupon ;
       } else {
         result.coupon = couponBuilder .build();
@@ -1440,8 +1464,31 @@ private static final long serialVersionUID = 0L;
         productBrand = other.productBrand ;
         onChanged();
       }
-      if (other.hasCoupon()) {
-        mergeCoupon(other.getCoupon());
+      if (couponBuilder == null) {
+        if (!other.coupon .isEmpty()) {
+          if (coupon .isEmpty()) {
+            coupon = other.coupon ;
+            bitField0 = (bitField0 & ~0x00000008);
+          } else {
+            ensureCouponIsMutable();
+            coupon .addAll(other.coupon );
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.coupon .isEmpty()) {
+          if (couponBuilder .isEmpty()) {
+            couponBuilder .dispose();
+            couponBuilder = null;
+            coupon = other.coupon ;
+            bitField0 = (bitField0 & ~0x00000008);
+            couponBuilder = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getCouponFieldBuilder() : null;
+          } else {
+            couponBuilder .addAllMessages(other.coupon );
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3126,33 +3173,30 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.zhijiejiaoyu.glory_api.shop.CouponDetail coupon ;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.shop.CouponDetail, com.zhijiejiaoyu.glory_api.shop.CouponDetail.Builder, com.zhijiejiaoyu.glory_api.shop.CouponDetailOrBuilder> couponBuilder ;
-    /**
-     * <pre>
-     * 优惠券
-     * </pre>
-     *
-     * <code>.glory_api.CouponDetail coupon = 19;</code>
-     * @return Whether the coupon field is set.
-     */
-    public boolean hasCoupon() {
-      return couponBuilder != null || coupon != null;
+    private java.util.List<com.zhijiejiaoyu.glory_api.shop.CouponDetail> coupon =
+      java.util.Collections.emptyList();
+    private void ensureCouponIsMutable() {
+      if (!((bitField0 & 0x00000008) != 0)) {
+        coupon = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.shop.CouponDetail>(coupon );
+        bitField0_ |= 0x00000008;
+       }
     }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.shop.CouponDetail, com.zhijiejiaoyu.glory_api.shop.CouponDetail.Builder, com.zhijiejiaoyu.glory_api.shop.CouponDetailOrBuilder> couponBuilder ;
+
     /**
      * <pre>
      * 优惠券
      * </pre>
      *
-     * <code>.glory_api.CouponDetail coupon = 19;</code>
-     * @return The coupon.
+     * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
      */
-    public com.zhijiejiaoyu.glory_api.shop.CouponDetail getCoupon() {
+    public java.util.List<com.zhijiejiaoyu.glory_api.shop.CouponDetail> getCouponList() {
       if (couponBuilder == null) {
-        return coupon == null ? com.zhijiejiaoyu.glory_api.shop.CouponDetail.getDefaultInstance() : coupon ;
+        return java.util.Collections.unmodifiableList(coupon );
       } else {
-        return couponBuilder .getMessage();
+        return couponBuilder .getMessageList();
       }
     }
     /**
@@ -3160,19 +3204,48 @@ private static final long serialVersionUID = 0L;
      * 优惠券
      * </pre>
      *
-     * <code>.glory_api.CouponDetail coupon = 19;</code>
+     * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
      */
-    public Builder setCoupon(com.zhijiejiaoyu.glory_api.shop.CouponDetail value) {
+    public int getCouponCount() {
+      if (couponBuilder == null) {
+        return coupon .size();
+      } else {
+        return couponBuilder .getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 优惠券
+     * </pre>
+     *
+     * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.shop.CouponDetail getCoupon(int index) {
+      if (couponBuilder == null) {
+        return coupon .get(index);
+      } else {
+        return couponBuilder .getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 优惠券
+     * </pre>
+     *
+     * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+     */
+    public Builder setCoupon(
+        int index, com.zhijiejiaoyu.glory_api.shop.CouponDetail value) {
       if (couponBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        coupon = value;
+        ensureCouponIsMutable();
+        coupon .set(index, value);
         onChanged();
       } else {
-        couponBuilder .setMessage(value);
+        couponBuilder .setMessage(index, value);
       }
-
       return this;
     }
     /**
@@ -3180,17 +3253,76 @@ private static final long serialVersionUID = 0L;
      * 优惠券
      * </pre>
      *
-     * <code>.glory_api.CouponDetail coupon = 19;</code>
+     * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
      */
     public Builder setCoupon(
+        int index, com.zhijiejiaoyu.glory_api.shop.CouponDetail.Builder builderForValue) {
+      if (couponBuilder == null) {
+        ensureCouponIsMutable();
+        coupon .set(index, builderForValue.build());
+        onChanged();
+      } else {
+        couponBuilder .setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 优惠券
+     * </pre>
+     *
+     * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+     */
+    public Builder addCoupon(com.zhijiejiaoyu.glory_api.shop.CouponDetail value) {
+      if (couponBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCouponIsMutable();
+        coupon .add(value);
+        onChanged();
+      } else {
+        couponBuilder .addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 优惠券
+     * </pre>
+     *
+     * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+     */
+    public Builder addCoupon(
+        int index, com.zhijiejiaoyu.glory_api.shop.CouponDetail value) {
+      if (couponBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCouponIsMutable();
+        coupon .add(index, value);
+        onChanged();
+      } else {
+        couponBuilder .addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 优惠券
+     * </pre>
+     *
+     * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+     */
+    public Builder addCoupon(
         com.zhijiejiaoyu.glory_api.shop.CouponDetail.Builder builderForValue) {
       if (couponBuilder == null) {
-        coupon = builderForValue.build();
+        ensureCouponIsMutable();
+        coupon .add(builderForValue.build());
         onChanged();
       } else {
-        couponBuilder .setMessage(builderForValue.build());
+        couponBuilder .addMessage(builderForValue.build());
       }
-
       return this;
     }
     /**
@@ -3198,21 +3330,17 @@ private static final long serialVersionUID = 0L;
      * 优惠券
      * </pre>
      *
-     * <code>.glory_api.CouponDetail coupon = 19;</code>
+     * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
      */
-    public Builder mergeCoupon(com.zhijiejiaoyu.glory_api.shop.CouponDetail value) {
+    public Builder addCoupon(
+        int index, com.zhijiejiaoyu.glory_api.shop.CouponDetail.Builder builderForValue) {
       if (couponBuilder == null) {
-        if (coupon != null) {
-          coupon =
-            com.zhijiejiaoyu.glory_api.shop.CouponDetail.newBuilder(coupon ).mergeFrom(value).buildPartial();
-        } else {
-          coupon = value;
-        }
+        ensureCouponIsMutable();
+        coupon .add(index, builderForValue.build());
         onChanged();
       } else {
-        couponBuilder .mergeFrom(value);
+        couponBuilder .addMessage(index, builderForValue.build());
       }
-
       return this;
     }
     /**
@@ -3220,17 +3348,35 @@ private static final long serialVersionUID = 0L;
      * 优惠券
      * </pre>
      *
-     * <code>.glory_api.CouponDetail coupon = 19;</code>
+     * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+     */
+    public Builder addAllCoupon(
+        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.shop.CouponDetail> values) {
+      if (couponBuilder == null) {
+        ensureCouponIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, coupon );
+        onChanged();
+      } else {
+        couponBuilder .addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 优惠券
+     * </pre>
+     *
+     * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
      */
     public Builder clearCoupon() {
       if (couponBuilder == null) {
-        coupon = null;
+        coupon = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000008);
         onChanged();
       } else {
-        coupon = null;
-        couponBuilder = null;
+        couponBuilder .clear();
       }
-
       return this;
     }
     /**
@@ -3238,26 +3384,41 @@ private static final long serialVersionUID = 0L;
      * 优惠券
      * </pre>
      *
-     * <code>.glory_api.CouponDetail coupon = 19;</code>
+     * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
      */
-    public com.zhijiejiaoyu.glory_api.shop.CouponDetail.Builder getCouponBuilder() {
-      
-      onChanged();
-      return getCouponFieldBuilder().getBuilder();
+    public Builder removeCoupon(int index) {
+      if (couponBuilder == null) {
+        ensureCouponIsMutable();
+        coupon .remove(index);
+        onChanged();
+      } else {
+        couponBuilder .remove(index);
+      }
+      return this;
     }
     /**
      * <pre>
      * 优惠券
      * </pre>
      *
-     * <code>.glory_api.CouponDetail coupon = 19;</code>
+     * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
      */
-    public com.zhijiejiaoyu.glory_api.shop.CouponDetailOrBuilder getCouponOrBuilder() {
-      if (couponBuilder != null) {
-        return couponBuilder .getMessageOrBuilder();
-      } else {
-        return coupon == null ?
-            com.zhijiejiaoyu.glory_api.shop.CouponDetail.getDefaultInstance() : coupon ;
+    public com.zhijiejiaoyu.glory_api.shop.CouponDetail.Builder getCouponBuilder(
+        int index) {
+      return getCouponFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 优惠券
+     * </pre>
+     *
+     * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.shop.CouponDetailOrBuilder getCouponOrBuilder(
+        int index) {
+      if (couponBuilder == null) {
+        return coupon .get(index);  } else {
+        return couponBuilder .getMessageOrBuilder(index);
       }
     }
     /**
@@ -3265,15 +3426,58 @@ private static final long serialVersionUID = 0L;
      * 优惠券
      * </pre>
      *
-     * <code>.glory_api.CouponDetail coupon = 19;</code>
+     * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
+    public java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.CouponDetailOrBuilder> 
+         getCouponOrBuilderList() {
+      if (couponBuilder != null) {
+        return couponBuilder .getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(coupon );
+      }
+    }
+    /**
+     * <pre>
+     * 优惠券
+     * </pre>
+     *
+     * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.shop.CouponDetail.Builder addCouponBuilder() {
+      return getCouponFieldBuilder().addBuilder(
+          com.zhijiejiaoyu.glory_api.shop.CouponDetail.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 优惠券
+     * </pre>
+     *
+     * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.shop.CouponDetail.Builder addCouponBuilder(
+        int index) {
+      return getCouponFieldBuilder().addBuilder(
+          index, com.zhijiejiaoyu.glory_api.shop.CouponDetail.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 优惠券
+     * </pre>
+     *
+     * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.shop.CouponDetail.Builder> 
+         getCouponBuilderList() {
+      return getCouponFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.shop.CouponDetail, com.zhijiejiaoyu.glory_api.shop.CouponDetail.Builder, com.zhijiejiaoyu.glory_api.shop.CouponDetailOrBuilder> 
         getCouponFieldBuilder() {
       if (couponBuilder == null) {
-        couponBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+        couponBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.shop.CouponDetail, com.zhijiejiaoyu.glory_api.shop.CouponDetail.Builder, com.zhijiejiaoyu.glory_api.shop.CouponDetailOrBuilder>(
-                getCoupon(),
+                coupon ,
+                ((bitField0 & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         coupon = null;

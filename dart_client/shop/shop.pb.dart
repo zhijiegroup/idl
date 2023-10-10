@@ -3225,6 +3225,7 @@ class ShopBusinessData extends $pb.GeneratedMessage {
     $core.double? totalDealAmount,
     $fixnum.Int64? totalVisitorAmount,
     $fixnum.Int64? totalOrderAmount,
+    $core.String? shopType,
   }) {
     final $result = create();
     if (shopChartData != null) {
@@ -3239,6 +3240,9 @@ class ShopBusinessData extends $pb.GeneratedMessage {
     if (totalOrderAmount != null) {
       $result.totalOrderAmount = totalOrderAmount;
     }
+    if (shopType != null) {
+      $result.shopType = shopType;
+    }
     return $result;
   }
   ShopBusinessData._() : super();
@@ -3250,6 +3254,7 @@ class ShopBusinessData extends $pb.GeneratedMessage {
     ..a<$core.double>(2, _omitFieldNames ? '' : 'totalDealAmount', $pb.PbFieldType.OD)
     ..aInt64(3, _omitFieldNames ? '' : 'totalVisitorAmount')
     ..aInt64(4, _omitFieldNames ? '' : 'totalOrderAmount')
+    ..aOS(5, _omitFieldNames ? '' : 'shopType')
     ..hasRequiredFields = false
   ;
 
@@ -3303,6 +3308,15 @@ class ShopBusinessData extends $pb.GeneratedMessage {
   $core.bool hasTotalOrderAmount() => $_has(3);
   @$pb.TagNumber(4)
   void clearTotalOrderAmount() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get shopType => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set shopType($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasShopType() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearShopType() => clearField(5);
 }
 
 class GetShopBusinessDataResponse extends $pb.GeneratedMessage {

@@ -202,14 +202,10 @@ struct GloryApi_Product {
   }
 
   /// 优惠券
-  var coupon: GloryApi_CouponDetail {
-    get {return _storage._coupon ?? GloryApi_CouponDetail()}
+  var coupon: [GloryApi_CouponDetail] {
+    get {return _storage._coupon}
     set {_uniqueStorage()._coupon = newValue}
   }
-  /// Returns true if `coupon` has been explicitly set.
-  var hasCoupon: Bool {return _storage._coupon != nil}
-  /// Clears the value of `coupon`. Subsequent reads from it will return its default value.
-  mutating func clearCoupon() {_uniqueStorage()._coupon = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1288,7 +1284,7 @@ extension GloryApi_Product: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
     var _salePrice: Float = 0
     var _referencePrice: Float = 0
     var _productBrand: String = String()
-    var _coupon: GloryApi_CouponDetail? = nil
+    var _coupon: [GloryApi_CouponDetail] = []
 
     static let defaultInstance = _StorageClass()
 
@@ -1348,7 +1344,7 @@ extension GloryApi_Product: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
         case 16: try { try decoder.decodeSingularFloatField(value: &_storage._salePrice) }()
         case 17: try { try decoder.decodeSingularFloatField(value: &_storage._referencePrice) }()
         case 18: try { try decoder.decodeSingularStringField(value: &_storage._productBrand) }()
-        case 19: try { try decoder.decodeSingularMessageField(value: &_storage._coupon) }()
+        case 19: try { try decoder.decodeRepeatedMessageField(value: &_storage._coupon) }()
         default: break
         }
       }
@@ -1412,9 +1408,9 @@ extension GloryApi_Product: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
       if !_storage._productBrand.isEmpty {
         try visitor.visitSingularStringField(value: _storage._productBrand, fieldNumber: 18)
       }
-      try { if let v = _storage._coupon {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 19)
-      } }()
+      if !_storage._coupon.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._coupon, fieldNumber: 19)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }

@@ -42,7 +42,7 @@ class Product extends $pb.GeneratedMessage {
     $core.double? salePrice,
     $core.double? referencePrice,
     $core.String? productBrand,
-    $2.CouponDetail? coupon,
+    $core.Iterable<$2.CouponDetail>? coupon,
   }) {
     final $result = create();
     if (productId != null) {
@@ -97,7 +97,7 @@ class Product extends $pb.GeneratedMessage {
       $result.productBrand = productBrand;
     }
     if (coupon != null) {
-      $result.coupon = coupon;
+      $result.coupon.addAll(coupon);
     }
     return $result;
   }
@@ -123,7 +123,7 @@ class Product extends $pb.GeneratedMessage {
     ..a<$core.double>(16, _omitFieldNames ? '' : 'salePrice', $pb.PbFieldType.OF)
     ..a<$core.double>(17, _omitFieldNames ? '' : 'referencePrice', $pb.PbFieldType.OF)
     ..aOS(18, _omitFieldNames ? '' : 'productBrand')
-    ..aOM<$2.CouponDetail>(19, _omitFieldNames ? '' : 'coupon', subBuilder: $2.CouponDetail.create)
+    ..pc<$2.CouponDetail>(19, _omitFieldNames ? '' : 'coupon', $pb.PbFieldType.PM, subBuilder: $2.CouponDetail.create)
     ..hasRequiredFields = false
   ;
 
@@ -287,15 +287,7 @@ class Product extends $pb.GeneratedMessage {
   void clearProductBrand() => clearField(18);
 
   @$pb.TagNumber(19)
-  $2.CouponDetail get coupon => $_getN(17);
-  @$pb.TagNumber(19)
-  set coupon($2.CouponDetail v) { setField(19, v); }
-  @$pb.TagNumber(19)
-  $core.bool hasCoupon() => $_has(17);
-  @$pb.TagNumber(19)
-  void clearCoupon() => clearField(19);
-  @$pb.TagNumber(19)
-  $2.CouponDetail ensureCoupon() => $_ensure(17);
+  $core.List<$2.CouponDetail> get coupon => $_getList(17);
 }
 
 class ProductImage extends $pb.GeneratedMessage {

@@ -39,7 +39,7 @@ export interface ProductShow {
   /** live:直播间订单,normal:非直播间订单 */
   channel?: string;
   /** 优惠券 */
-  coupon?: coupon.CouponDetail;
+  coupon?: Array<coupon.CouponDetail>;
 }
 
 export interface ShopShow {
