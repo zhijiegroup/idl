@@ -52,7 +52,9 @@ message CouponDetail {
     string shop_name = 18;
     string shop_type = 19;
     int64 user_coupon_id = 20;
-    repeated int64  product_ids = 21;
+    int64 user_coupon_total = 21;
+    int64 user_coupon_used_total = 22;
+    repeated int64  product_ids = 23;
 }
 message ListCouponResponse {
     base.BaseResponse base_resp = 1;
