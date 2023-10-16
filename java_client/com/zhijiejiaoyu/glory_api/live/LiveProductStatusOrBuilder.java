@@ -226,4 +226,31 @@ public interface LiveProductStatusOrBuilder extends
    */
   com.google.protobuf.ByteString
       getShopTypeBytes();
+
+  /**
+   * <pre>
+   * 活动信息
+   * </pre>
+   *
+   * <code>.glory_api.ActivityDetail activity_detail = 19;</code>
+   * @return Whether the activityDetail field is set.
+   */
+  boolean hasActivityDetail();
+  /**
+   * <pre>
+   * 活动信息
+   * </pre>
+   *
+   * <code>.glory_api.ActivityDetail activity_detail = 19;</code>
+   * @return The activityDetail.
+   */
+  com.zhijiejiaoyu.glory_api.shop.ActivityDetail getActivityDetail();
+  /**
+   * <pre>
+   * 活动信息
+   * </pre>
+   *
+   * <code>.glory_api.ActivityDetail activity_detail = 19;</code>
+   */
+  com.zhijiejiaoyu.glory_api.shop.ActivityDetailOrBuilder getActivityDetailOrBuilder();
 }

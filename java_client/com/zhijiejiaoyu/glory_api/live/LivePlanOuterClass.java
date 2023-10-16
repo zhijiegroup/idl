@@ -244,148 +244,151 @@ public final class LivePlanOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\024live/live_plan.proto\022\tglory_api\032\nbase." +
-      "proto\"\225\001\n\010LivePlan\022\024\n\014live_plan_id\030\001 \001(\003" +
-      "\022\026\n\016live_plan_name\030\002 \001(\t\022\023\n\013description\030" +
-      "\003 \001(\t\022\017\n\007shop_id\030\004 \001(\003\0225\n\021live_plan_prod" +
-      "uct\030\005 \003(\0132\032.glory_api.LivePlanProduct\"h\n" +
-      "\025CreateLivePlanRequest\022\'\n\014base_request\030\001" +
-      " \001(\0132\021.base.BaseRequest\022&\n\tlive_plan\030\002 \001" +
-      "(\0132\023.glory_api.LivePlan\"U\n\026CreateLivePla" +
-      "nResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Base" +
-      "Response\022\024\n\014live_plan_id\030\002 \001(\003\"\311\001\n\013PlanP" +
-      "roduct\022\023\n\013product_url\030\001 \001(\t\022\024\n\014product_n" +
-      "ame\030\002 \001(\t\022\020\n\010currency\030\003 \001(\t\022\022\n\nsale_pric" +
-      "e\030\004 \001(\001\022\031\n\021product_remaining\030\005 \001(\003\022\022\n\npr" +
-      "oduct_id\030\006 \001(\003\022\035\n\025product_selling_point\030" +
-      "\007 \001(\t\022\033\n\023product_description\030\010 \001(\t\"S\n\022Ge" +
-      "tLivePlanRequest\022\'\n\014base_request\030\001 \001(\0132\021" +
-      ".base.BaseRequest\022\024\n\014live_plan_id\030\002 \001(\003\"" +
-      "\227\001\n\023GetLivePlanResponse\022%\n\tbase_resp\030\001 \001" +
-      "(\0132\022.base.BaseResponse\022&\n\tlive_plan\030\002 \001(" +
-      "\0132\023.glory_api.LivePlan\0221\n\021live_plan_prod" +
-      "uct\030\003 \003(\0132\026.glory_api.PlanProduct\"h\n\025Upd" +
-      "ateLivePlanRequest\022\'\n\014base_request\030\001 \001(\013" +
-      "2\021.base.BaseRequest\022&\n\tlive_plan\030\002 \001(\0132\023" +
-      ".glory_api.LivePlan\"?\n\026UpdateLivePlanRes" +
-      "ponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResp" +
-      "onse\"|\n\023ListLivePlanRequest\022\'\n\014base_requ" +
-      "est\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007shop_id\030" +
-      "\002 \001(\003\022+\n\npagination\030d \001(\0132\027.base.Paginat" +
-      "ionRequest\"\223\001\n\024ListLivePlanResponse\022%\n\tb" +
-      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\022&\n\tli" +
-      "ve_plan\030\002 \003(\0132\023.glory_api.LivePlan\022,\n\npa" +
-      "gination\030d \001(\0132\030.base.PaginationResponse" +
-      "\"V\n\025DeleteLivePlanRequest\022\'\n\014base_reques" +
-      "t\030\001 \001(\0132\021.base.BaseRequest\022\024\n\014live_plan_" +
-      "id\030\002 \001(\003\"?\n\026DeleteLivePlanResponse\022%\n\tba" +
-      "se_resp\030\001 \001(\0132\022.base.BaseResponse\"\225\001\n\017Li" +
-      "vePlanProduct\022\034\n\024live_plan_product_id\030\001 " +
-      "\001(\003\022\024\n\014live_plan_id\030\002 \001(\003\022\022\n\nproduct_id\030" +
-      "\003 \001(\003\022\035\n\025product_selling_point\030\004 \001(\t\022\033\n\023" +
-      "product_description\030\005 \001(\t\"~\n\034CreateLiveP" +
-      "lanProductRequest\022\'\n\014base_request\030\001 \001(\0132" +
-      "\021.base.BaseRequest\0225\n\021live_plan_product\030" +
-      "\002 \001(\0132\032.glory_api.LivePlanProduct\"d\n\035Cre" +
-      "ateLivePlanProductResponse\022%\n\tbase_resp\030" +
-      "\001 \001(\0132\022.base.BaseResponse\022\034\n\024live_plan_p" +
-      "roduct_id\030\002 \001(\003\"\241\001\n\034UpdateLivePlanProduc" +
-      "tRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
-      "seRequest\022\034\n\024live_plan_product_id\030\002 \001(\003\022" +
-      "\035\n\025product_selling_point\030\003 \001(\t\022\033\n\023produc" +
-      "t_description\030\004 \001(\t\"F\n\035UpdateLivePlanPro" +
-      "ductResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.B" +
-      "aseResponse\"\210\001\n\032ListLivePlanProductReque" +
-      "st\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequ" +
-      "est\022\024\n\014live_plan_id\030\002 \001(\003\022+\n\npagination\030" +
-      "d \001(\0132\027.base.PaginationRequest\"\251\001\n\033ListL" +
-      "ivePlanProductResponse\022%\n\tbase_resp\030\001 \001(" +
-      "\0132\022.base.BaseResponse\0225\n\021live_plan_produ" +
-      "ct\030\002 \003(\0132\032.glory_api.LivePlanProduct\022,\n\n" +
-      "pagination\030d \001(\0132\030.base.PaginationRespon" +
-      "se\"e\n\034DeleteLivePlanProductRequest\022\'\n\014ba" +
-      "se_request\030\001 \001(\0132\021.base.BaseRequest\022\034\n\024l" +
-      "ive_plan_product_id\030\002 \001(\003\"F\n\035DeleteLiveP" +
-      "lanProductResponse\022%\n\tbase_resp\030\001 \001(\0132\022." +
-      "base.BaseResponse\"\200\001\n\032LoadLivePlanProduc" +
-      "tRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
-      "seRequest\022\017\n\007shop_id\030\002 \001(\003\022\024\n\014live_plan_" +
-      "id\030\003 \001(\003\022\022\n\nis_playing\030\004 \001(\010\"D\n\033LoadLive" +
-      "PlanProductResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
-      ".base.BaseResponse\"i\n\027CreateLiveProductS" +
-      "tatus\022\022\n\nproduct_id\030\001 \001(\003\022\035\n\025product_sel" +
-      "ling_point\030\002 \001(\t\022\033\n\023product_description\030" +
-      "\003 \001(\t\"\233\001\n\036CreateLiveProductStatusRequest" +
-      "\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReques" +
-      "t\022\017\n\007shop_id\030\002 \001(\003\022?\n\023live_product_statu" +
-      "s\030\003 \003(\0132\".glory_api.CreateLiveProductSta" +
-      "tus\"H\n\037CreateLiveProductStatusResponse\022%" +
-      "\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"\265\001" +
-      "\n\036UpdateLiveProductStatusRequest\022\'\n\014base" +
-      "_request\030\001 \001(\0132\021.base.BaseRequest\022\036\n\026liv" +
-      "e_product_status_id\030\002 \003(\003\022\016\n\006status\030\003 \001(" +
-      "\t\022\035\n\025product_selling_point\030\004 \001(\t\022\033\n\023prod" +
-      "uct_description\030\005 \001(\t\"H\n\037UpdateLiveProdu" +
+      "proto\032\023shop/activity.proto\"\225\001\n\010LivePlan\022" +
+      "\024\n\014live_plan_id\030\001 \001(\003\022\026\n\016live_plan_name\030" +
+      "\002 \001(\t\022\023\n\013description\030\003 \001(\t\022\017\n\007shop_id\030\004 " +
+      "\001(\003\0225\n\021live_plan_product\030\005 \003(\0132\032.glory_a" +
+      "pi.LivePlanProduct\"h\n\025CreateLivePlanRequ" +
+      "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
+      "uest\022&\n\tlive_plan\030\002 \001(\0132\023.glory_api.Live" +
+      "Plan\"U\n\026CreateLivePlanResponse\022%\n\tbase_r" +
+      "esp\030\001 \001(\0132\022.base.BaseResponse\022\024\n\014live_pl" +
+      "an_id\030\002 \001(\003\"\311\001\n\013PlanProduct\022\023\n\013product_u" +
+      "rl\030\001 \001(\t\022\024\n\014product_name\030\002 \001(\t\022\020\n\010curren" +
+      "cy\030\003 \001(\t\022\022\n\nsale_price\030\004 \001(\001\022\031\n\021product_" +
+      "remaining\030\005 \001(\003\022\022\n\nproduct_id\030\006 \001(\003\022\035\n\025p" +
+      "roduct_selling_point\030\007 \001(\t\022\033\n\023product_de" +
+      "scription\030\010 \001(\t\"S\n\022GetLivePlanRequest\022\'\n" +
+      "\014base_request\030\001 \001(\0132\021.base.BaseRequest\022\024" +
+      "\n\014live_plan_id\030\002 \001(\003\"\227\001\n\023GetLivePlanResp" +
+      "onse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespo" +
+      "nse\022&\n\tlive_plan\030\002 \001(\0132\023.glory_api.LiveP" +
+      "lan\0221\n\021live_plan_product\030\003 \003(\0132\026.glory_a" +
+      "pi.PlanProduct\"h\n\025UpdateLivePlanRequest\022" +
+      "\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequest" +
+      "\022&\n\tlive_plan\030\002 \001(\0132\023.glory_api.LivePlan" +
+      "\"?\n\026UpdateLivePlanResponse\022%\n\tbase_resp\030" +
+      "\001 \001(\0132\022.base.BaseResponse\"|\n\023ListLivePla" +
+      "nRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
+      "seRequest\022\017\n\007shop_id\030\002 \001(\003\022+\n\npagination" +
+      "\030d \001(\0132\027.base.PaginationRequest\"\223\001\n\024List" +
+      "LivePlanResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
+      "se.BaseResponse\022&\n\tlive_plan\030\002 \003(\0132\023.glo" +
+      "ry_api.LivePlan\022,\n\npagination\030d \001(\0132\030.ba" +
+      "se.PaginationResponse\"V\n\025DeleteLivePlanR" +
+      "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
+      "Request\022\024\n\014live_plan_id\030\002 \001(\003\"?\n\026DeleteL" +
+      "ivePlanResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
+      "e.BaseResponse\"\225\001\n\017LivePlanProduct\022\034\n\024li" +
+      "ve_plan_product_id\030\001 \001(\003\022\024\n\014live_plan_id" +
+      "\030\002 \001(\003\022\022\n\nproduct_id\030\003 \001(\003\022\035\n\025product_se" +
+      "lling_point\030\004 \001(\t\022\033\n\023product_description" +
+      "\030\005 \001(\t\"~\n\034CreateLivePlanProductRequest\022\'" +
+      "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\022" +
+      "5\n\021live_plan_product\030\002 \001(\0132\032.glory_api.L" +
+      "ivePlanProduct\"d\n\035CreateLivePlanProductR" +
+      "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
+      "sponse\022\034\n\024live_plan_product_id\030\002 \001(\003\"\241\001\n" +
+      "\034UpdateLivePlanProductRequest\022\'\n\014base_re" +
+      "quest\030\001 \001(\0132\021.base.BaseRequest\022\034\n\024live_p" +
+      "lan_product_id\030\002 \001(\003\022\035\n\025product_selling_" +
+      "point\030\003 \001(\t\022\033\n\023product_description\030\004 \001(\t" +
+      "\"F\n\035UpdateLivePlanProductResponse\022%\n\tbas" +
+      "e_resp\030\001 \001(\0132\022.base.BaseResponse\"\210\001\n\032Lis" +
+      "tLivePlanProductRequest\022\'\n\014base_request\030" +
+      "\001 \001(\0132\021.base.BaseRequest\022\024\n\014live_plan_id" +
+      "\030\002 \001(\003\022+\n\npagination\030d \001(\0132\027.base.Pagina" +
+      "tionRequest\"\251\001\n\033ListLivePlanProductRespo" +
+      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
+      "se\0225\n\021live_plan_product\030\002 \003(\0132\032.glory_ap" +
+      "i.LivePlanProduct\022,\n\npagination\030d \001(\0132\030." +
+      "base.PaginationResponse\"e\n\034DeleteLivePla" +
+      "nProductRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
+      "base.BaseRequest\022\034\n\024live_plan_product_id" +
+      "\030\002 \001(\003\"F\n\035DeleteLivePlanProductResponse\022" +
+      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"\200" +
+      "\001\n\032LoadLivePlanProductRequest\022\'\n\014base_re" +
+      "quest\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007shop_i" +
+      "d\030\002 \001(\003\022\024\n\014live_plan_id\030\003 \001(\003\022\022\n\nis_play" +
+      "ing\030\004 \001(\010\"D\n\033LoadLivePlanProductResponse" +
+      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"" +
+      "i\n\027CreateLiveProductStatus\022\022\n\nproduct_id" +
+      "\030\001 \001(\003\022\035\n\025product_selling_point\030\002 \001(\t\022\033\n" +
+      "\023product_description\030\003 \001(\t\"\233\001\n\036CreateLiv" +
+      "eProductStatusRequest\022\'\n\014base_request\030\001 " +
+      "\001(\0132\021.base.BaseRequest\022\017\n\007shop_id\030\002 \001(\003\022" +
+      "?\n\023live_product_status\030\003 \003(\0132\".glory_api" +
+      ".CreateLiveProductStatus\"H\n\037CreateLivePr" +
+      "oductStatusResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
+      ".base.BaseResponse\"\265\001\n\036UpdateLiveProduct" +
+      "StatusRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
+      "se.BaseRequest\022\036\n\026live_product_status_id" +
+      "\030\002 \003(\003\022\016\n\006status\030\003 \001(\t\022\035\n\025product_sellin" +
+      "g_point\030\004 \001(\t\022\033\n\023product_description\030\005 \001" +
+      "(\t\"H\n\037UpdateLiveProductStatusResponse\022%\n" +
+      "\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"\371\003\n" +
+      "\021LiveProductStatus\022\036\n\026live_product_statu" +
+      "s_id\030\001 \001(\003\022\022\n\nproduct_id\030\002 \001(\003\022\016\n\006status" +
+      "\030\003 \001(\t\022\017\n\007shop_id\030\004 \001(\003\022\017\n\007room_id\030\005 \001(\003" +
+      "\022\035\n\025product_selling_point\030\006 \001(\t\022\033\n\023produ" +
+      "ct_description\030\007 \001(\t\022\024\n\014is_introduct\030\010 \001" +
+      "(\010\022\r\n\005state\030\t \001(\t\022\023\n\013product_url\030\n \001(\t\022\024" +
+      "\n\014product_name\030\013 \001(\t\022\025\n\rproduct_price\030\014 " +
+      "\001(\001\022 \n\030product_remaining_amount\030\r \001(\003\022\033\n" +
+      "\023product_sold_amount\030\016 \001(\003\022\033\n\023product_de" +
+      "al_amount\030\017 \001(\001\022\027\n\017activity_status\030\020 \001(\t" +
+      "\022\037\n\027product_reference_price\030\021 \001(\001\022\021\n\tsho" +
+      "p_type\030\022 \001(\t\0222\n\017activity_detail\030\023 \001(\0132\031." +
+      "glory_api.ActivityDetail\"\225\001\n\034ListLivePro" +
+      "ductStatusRequest\022\'\n\014base_request\030\001 \001(\0132" +
+      "\021.base.BaseRequest\022\017\n\007shop_id\030\002 \001(\003\022\016\n\006s" +
+      "tatus\030\003 \001(\t\022+\n\npagination\030d \001(\0132\027.base.P" +
+      "aginationRequest\"\257\001\n\035ListLiveProductStat" +
+      "usResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
+      "eResponse\0229\n\023live_product_status\030\002 \003(\0132\034" +
+      ".glory_api.LiveProductStatus\022,\n\npaginati" +
+      "on\030d \001(\0132\030.base.PaginationResponse\"i\n\036De" +
+      "leteLiveProductStatusRequest\022\'\n\014base_req" +
+      "uest\030\001 \001(\0132\021.base.BaseRequest\022\036\n\026live_pr" +
+      "oduct_status_id\030\002 \001(\003\"H\n\037DeleteLiveProdu" +
       "ctStatusResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
-      "se.BaseResponse\"\305\003\n\021LiveProductStatus\022\036\n" +
-      "\026live_product_status_id\030\001 \001(\003\022\022\n\nproduct" +
-      "_id\030\002 \001(\003\022\016\n\006status\030\003 \001(\t\022\017\n\007shop_id\030\004 \001" +
-      "(\003\022\017\n\007room_id\030\005 \001(\003\022\035\n\025product_selling_p" +
-      "oint\030\006 \001(\t\022\033\n\023product_description\030\007 \001(\t\022" +
-      "\024\n\014is_introduct\030\010 \001(\010\022\r\n\005state\030\t \001(\t\022\023\n\013" +
-      "product_url\030\n \001(\t\022\024\n\014product_name\030\013 \001(\t\022" +
-      "\025\n\rproduct_price\030\014 \001(\001\022 \n\030product_remain" +
-      "ing_amount\030\r \001(\003\022\033\n\023product_sold_amount\030" +
-      "\016 \001(\003\022\033\n\023product_deal_amount\030\017 \001(\001\022\027\n\017ac" +
-      "tivity_status\030\020 \001(\t\022\037\n\027product_reference" +
-      "_price\030\021 \001(\001\022\021\n\tshop_type\030\022 \001(\t\"\225\001\n\034List" +
-      "LiveProductStatusRequest\022\'\n\014base_request" +
-      "\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007shop_id\030\002 \001" +
-      "(\003\022\016\n\006status\030\003 \001(\t\022+\n\npagination\030d \001(\0132\027" +
-      ".base.PaginationRequest\"\257\001\n\035ListLiveProd" +
-      "uctStatusResponse\022%\n\tbase_resp\030\001 \001(\0132\022.b" +
-      "ase.BaseResponse\0229\n\023live_product_status\030" +
-      "\002 \003(\0132\034.glory_api.LiveProductStatus\022,\n\np" +
-      "agination\030d \001(\0132\030.base.PaginationRespons" +
-      "e\"i\n\036DeleteLiveProductStatusRequest\022\'\n\014b" +
-      "ase_request\030\001 \001(\0132\021.base.BaseRequest\022\036\n\026" +
-      "live_product_status_id\030\002 \001(\003\"H\n\037DeleteLi" +
-      "veProductStatusResponse\022%\n\tbase_resp\030\001 \001" +
-      "(\0132\022.base.BaseResponse\"Y\n\035GetLivingProdu" +
-      "ctStatusRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
-      "base.BaseRequest\022\017\n\007shop_id\030\002 \001(\003\"\314\001\n\024Li" +
-      "veingProductStatus\022\022\n\nproduct_id\030\002 \001(\003\022\024" +
-      "\n\014product_name\030\003 \001(\t\022\025\n\rproduct_price\030\004 " +
-      "\001(\001\022\025\n\rproduct_count\030\005 \001(\005\022\027\n\017live_room_" +
-      "order\030\006 \001(\005\022\021\n\tplayed_at\030\007 \001(\t\022\033\n\023produc" +
-      "t_description\030\010 \001(\t\022\023\n\013product_url\030\t \001(\t" +
-      "\"\210\001\n\036GetLivingProductStatusResponse\022%\n\tb" +
-      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\022?\n\026li" +
-      "veing_product_status\030\002 \001(\0132\037.glory_api.L" +
-      "iveingProductStatus\"s\n\021LiveRecordRequest" +
-      "\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReques" +
-      "t\022\016\n\006action\030\002 \001(\t\022\020\n\010app_name\030\003 \001(\t\022\023\n\013s" +
-      "tream_name\030\004 \001(\t\";\n\022LiveRecordResponse\022%" +
-      "\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"\223\001" +
-      "\n\'UpdateLiveProductIntroductStatusReques" +
+      "se.BaseResponse\"Y\n\035GetLivingProductStatu" +
+      "sRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
+      "seRequest\022\017\n\007shop_id\030\002 \001(\003\"\314\001\n\024LiveingPr" +
+      "oductStatus\022\022\n\nproduct_id\030\002 \001(\003\022\024\n\014produ" +
+      "ct_name\030\003 \001(\t\022\025\n\rproduct_price\030\004 \001(\001\022\025\n\r" +
+      "product_count\030\005 \001(\005\022\027\n\017live_room_order\030\006" +
+      " \001(\005\022\021\n\tplayed_at\030\007 \001(\t\022\033\n\023product_descr" +
+      "iption\030\010 \001(\t\022\023\n\013product_url\030\t \001(\t\"\210\001\n\036Ge" +
+      "tLivingProductStatusResponse\022%\n\tbase_res" +
+      "p\030\001 \001(\0132\022.base.BaseResponse\022?\n\026liveing_p" +
+      "roduct_status\030\002 \001(\0132\037.glory_api.LiveingP" +
+      "roductStatus\"s\n\021LiveRecordRequest\022\'\n\014bas" +
+      "e_request\030\001 \001(\0132\021.base.BaseRequest\022\016\n\006ac" +
+      "tion\030\002 \001(\t\022\020\n\010app_name\030\003 \001(\t\022\023\n\013stream_n" +
+      "ame\030\004 \001(\t\";\n\022LiveRecordResponse\022%\n\tbase_" +
+      "resp\030\001 \001(\0132\022.base.BaseResponse\"\223\001\n\'Updat" +
+      "eLiveProductIntroductStatusRequest\022\'\n\014ba" +
+      "se_request\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007s" +
+      "hop_id\030\002 \001(\003\022\036\n\026live_product_status_id\030\003" +
+      " \001(\003\022\016\n\006action\030\004 \001(\t\"Q\n(UpdateLiveProduc" +
+      "tIntroductStatusResponse\022%\n\tbase_resp\030\001 " +
+      "\001(\0132\022.base.BaseResponse\"f\n\016PreheatReques" +
       "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
-      "st\022\017\n\007shop_id\030\002 \001(\003\022\036\n\026live_product_stat" +
-      "us_id\030\003 \001(\003\022\016\n\006action\030\004 \001(\t\"Q\n(UpdateLiv" +
-      "eProductIntroductStatusResponse\022%\n\tbase_" +
-      "resp\030\001 \001(\0132\022.base.BaseResponse\"f\n\016Prehea" +
-      "tRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
-      "seRequest\022\022\n\nproduct_id\030\002 \001(\003\022\027\n\017referen" +
-      "ce_price\030\003 \001(\001\"8\n\017PreheatResponse\022%\n\tbas" +
-      "e_resp\030\001 \001(\0132\022.base.BaseResponse\"]\n\022Publ" +
-      "icPriceRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
-      "ase.BaseRequest\022\036\n\026live_product_status_i" +
-      "d\030\002 \001(\003\"<\n\023PublicPriceResponse\022%\n\tbase_r" +
-      "esp\030\001 \001(\0132\022.base.BaseResponseB#\n\037com.zhi" +
-      "jiejiaoyu.glory_api.liveP\001b\006proto3"
+      "st\022\022\n\nproduct_id\030\002 \001(\003\022\027\n\017reference_pric" +
+      "e\030\003 \001(\001\"8\n\017PreheatResponse\022%\n\tbase_resp\030" +
+      "\001 \001(\0132\022.base.BaseResponse\"]\n\022PublicPrice" +
+      "Request\022\'\n\014base_request\030\001 \001(\0132\021.base.Bas" +
+      "eRequest\022\036\n\026live_product_status_id\030\002 \001(\003" +
+      "\"<\n\023PublicPriceResponse\022%\n\tbase_resp\030\001 \001" +
+      "(\0132\022.base.BaseResponseB#\n\037com.zhijiejiao" +
+      "yu.glory_api.liveP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.zhijiejiaoyu.base.Base.getDescriptor(),
+          com.zhijiejiaoyu.glory_api.shop.Activity.getDescriptor(),
         });
     internal_static_glory_api_LivePlan_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -560,7 +563,7 @@ public final class LivePlanOuterClass {
     internal_static_glory_api_LiveProductStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_LiveProductStatus_descriptor,
-        new java.lang.String[] { "LiveProductStatusId", "ProductId", "Status", "ShopId", "RoomId", "ProductSellingPoint", "ProductDescription", "IsIntroduct", "State", "ProductUrl", "ProductName", "ProductPrice", "ProductRemainingAmount", "ProductSoldAmount", "ProductDealAmount", "ActivityStatus", "ProductReferencePrice", "ShopType", });
+        new java.lang.String[] { "LiveProductStatusId", "ProductId", "Status", "ShopId", "RoomId", "ProductSellingPoint", "ProductDescription", "IsIntroduct", "State", "ProductUrl", "ProductName", "ProductPrice", "ProductRemainingAmount", "ProductSoldAmount", "ProductDealAmount", "ActivityStatus", "ProductReferencePrice", "ShopType", "ActivityDetail", });
     internal_static_glory_api_ListLiveProductStatusRequest_descriptor =
       getDescriptor().getMessageTypes().get(29);
     internal_static_glory_api_ListLiveProductStatusRequest_fieldAccessorTable = new
@@ -652,6 +655,7 @@ public final class LivePlanOuterClass {
         internal_static_glory_api_PublicPriceResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
+    com.zhijiejiaoyu.glory_api.shop.Activity.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

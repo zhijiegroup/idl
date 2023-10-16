@@ -15,6 +15,7 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../base.pb.dart' as $0;
+import '../shop/activity.pb.dart' as $1;
 
 class LivePlan extends $pb.GeneratedMessage {
   factory LivePlan({
@@ -2122,6 +2123,7 @@ class LiveProductStatus extends $pb.GeneratedMessage {
     $core.String? activityStatus,
     $core.double? productReferencePrice,
     $core.String? shopType,
+    $1.ActivityDetail? activityDetail,
   }) {
     final $result = create();
     if (liveProductStatusId != null) {
@@ -2178,6 +2180,9 @@ class LiveProductStatus extends $pb.GeneratedMessage {
     if (shopType != null) {
       $result.shopType = shopType;
     }
+    if (activityDetail != null) {
+      $result.activityDetail = activityDetail;
+    }
     return $result;
   }
   LiveProductStatus._() : super();
@@ -2203,6 +2208,7 @@ class LiveProductStatus extends $pb.GeneratedMessage {
     ..aOS(16, _omitFieldNames ? '' : 'activityStatus')
     ..a<$core.double>(17, _omitFieldNames ? '' : 'productReferencePrice', $pb.PbFieldType.OD)
     ..aOS(18, _omitFieldNames ? '' : 'shopType')
+    ..aOM<$1.ActivityDetail>(19, _omitFieldNames ? '' : 'activityDetail', subBuilder: $1.ActivityDetail.create)
     ..hasRequiredFields = false
   ;
 
@@ -2388,6 +2394,17 @@ class LiveProductStatus extends $pb.GeneratedMessage {
   $core.bool hasShopType() => $_has(17);
   @$pb.TagNumber(18)
   void clearShopType() => clearField(18);
+
+  @$pb.TagNumber(19)
+  $1.ActivityDetail get activityDetail => $_getN(18);
+  @$pb.TagNumber(19)
+  set activityDetail($1.ActivityDetail v) { setField(19, v); }
+  @$pb.TagNumber(19)
+  $core.bool hasActivityDetail() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearActivityDetail() => clearField(19);
+  @$pb.TagNumber(19)
+  $1.ActivityDetail ensureActivityDetail() => $_ensure(18);
 }
 
 class ListLiveProductStatusRequest extends $pb.GeneratedMessage {

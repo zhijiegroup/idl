@@ -480,6 +480,7 @@ const LiveProductStatus$json = {
     {'1': 'activity_status', '3': 16, '4': 1, '5': 9, '10': 'activityStatus'},
     {'1': 'product_reference_price', '3': 17, '4': 1, '5': 1, '10': 'productReferencePrice'},
     {'1': 'shop_type', '3': 18, '4': 1, '5': 9, '10': 'shopType'},
+    {'1': 'activity_detail', '3': 19, '4': 1, '5': 11, '6': '.glory_api.ActivityDetail', '10': 'activityDetail'},
   ],
 };
 
@@ -497,7 +498,9 @@ final $typed_data.Uint8List liveProductStatusDescriptor = $convert.base64Decode(
     '4KE3Byb2R1Y3Rfc29sZF9hbW91bnQYDiABKANSEXByb2R1Y3RTb2xkQW1vdW50Ei4KE3Byb2R1'
     'Y3RfZGVhbF9hbW91bnQYDyABKAFSEXByb2R1Y3REZWFsQW1vdW50EicKD2FjdGl2aXR5X3N0YX'
     'R1cxgQIAEoCVIOYWN0aXZpdHlTdGF0dXMSNgoXcHJvZHVjdF9yZWZlcmVuY2VfcHJpY2UYESAB'
-    'KAFSFXByb2R1Y3RSZWZlcmVuY2VQcmljZRIbCglzaG9wX3R5cGUYEiABKAlSCHNob3BUeXBl');
+    'KAFSFXByb2R1Y3RSZWZlcmVuY2VQcmljZRIbCglzaG9wX3R5cGUYEiABKAlSCHNob3BUeXBlEk'
+    'IKD2FjdGl2aXR5X2RldGFpbBgTIAEoCzIZLmdsb3J5X2FwaS5BY3Rpdml0eURldGFpbFIOYWN0'
+    'aXZpdHlEZXRhaWw=');
 
 @$core.Deprecated('Use listLiveProductStatusRequestDescriptor instead')
 const ListLiveProductStatusRequest$json = {

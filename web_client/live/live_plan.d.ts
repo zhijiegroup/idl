@@ -3,7 +3,8 @@
 // @ts-nocheck
 
 import * as base from "../base";
-export { base };
+import * as activity from "../shop/activity";
+export { base, activity };
 
 export interface LivePlan {
   live_plan_id?: string;
@@ -207,6 +208,8 @@ export interface LiveProductStatus {
   product_reference_price?: number;
   /** 店铺类型，虚拟or真实 */
   shop_type?: string;
+  /** 活动信息 */
+  activity_detail?: activity.ActivityDetail;
 }
 
 export interface ListLiveProductStatusRequest {

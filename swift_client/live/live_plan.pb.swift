@@ -849,6 +849,16 @@ struct GloryApi_LiveProductStatus {
     set {_uniqueStorage()._shopType = newValue}
   }
 
+  /// 活动信息
+  var activityDetail: GloryApi_ActivityDetail {
+    get {return _storage._activityDetail ?? GloryApi_ActivityDetail()}
+    set {_uniqueStorage()._activityDetail = newValue}
+  }
+  /// Returns true if `activityDetail` has been explicitly set.
+  var hasActivityDetail: Bool {return _storage._activityDetail != nil}
+  /// Clears the value of `activityDetail`. Subsequent reads from it will return its default value.
+  mutating func clearActivityDetail() {_uniqueStorage()._activityDetail = nil}
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -2581,6 +2591,7 @@ extension GloryApi_LiveProductStatus: SwiftProtobuf.Message, SwiftProtobuf._Mess
     16: .standard(proto: "activity_status"),
     17: .standard(proto: "product_reference_price"),
     18: .standard(proto: "shop_type"),
+    19: .standard(proto: "activity_detail"),
   ]
 
   fileprivate class _StorageClass {
@@ -2602,6 +2613,7 @@ extension GloryApi_LiveProductStatus: SwiftProtobuf.Message, SwiftProtobuf._Mess
     var _activityStatus: String = String()
     var _productReferencePrice: Double = 0
     var _shopType: String = String()
+    var _activityDetail: GloryApi_ActivityDetail? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -2626,6 +2638,7 @@ extension GloryApi_LiveProductStatus: SwiftProtobuf.Message, SwiftProtobuf._Mess
       _activityStatus = source._activityStatus
       _productReferencePrice = source._productReferencePrice
       _shopType = source._shopType
+      _activityDetail = source._activityDetail
     }
   }
 
@@ -2662,6 +2675,7 @@ extension GloryApi_LiveProductStatus: SwiftProtobuf.Message, SwiftProtobuf._Mess
         case 16: try { try decoder.decodeSingularStringField(value: &_storage._activityStatus) }()
         case 17: try { try decoder.decodeSingularDoubleField(value: &_storage._productReferencePrice) }()
         case 18: try { try decoder.decodeSingularStringField(value: &_storage._shopType) }()
+        case 19: try { try decoder.decodeSingularMessageField(value: &_storage._activityDetail) }()
         default: break
         }
       }
@@ -2670,6 +2684,10 @@ extension GloryApi_LiveProductStatus: SwiftProtobuf.Message, SwiftProtobuf._Mess
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
       if _storage._liveProductStatusID != 0 {
         try visitor.visitSingularInt64Field(value: _storage._liveProductStatusID, fieldNumber: 1)
       }
@@ -2724,6 +2742,9 @@ extension GloryApi_LiveProductStatus: SwiftProtobuf.Message, SwiftProtobuf._Mess
       if !_storage._shopType.isEmpty {
         try visitor.visitSingularStringField(value: _storage._shopType, fieldNumber: 18)
       }
+      try { if let v = _storage._activityDetail {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 19)
+      } }()
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -2751,6 +2772,7 @@ extension GloryApi_LiveProductStatus: SwiftProtobuf.Message, SwiftProtobuf._Mess
         if _storage._activityStatus != rhs_storage._activityStatus {return false}
         if _storage._productReferencePrice != rhs_storage._productReferencePrice {return false}
         if _storage._shopType != rhs_storage._shopType {return false}
+        if _storage._activityDetail != rhs_storage._activityDetail {return false}
         return true
       }
       if !storagesAreEqual {return false}
