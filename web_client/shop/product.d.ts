@@ -49,6 +49,8 @@ export interface Product {
   reference_price?: number;
   /** 商品品牌 */
   product_brand?: string;
+  /** 活动ID */
+  activity_id?: string;
   /** 优惠券 */
   coupon?: Array<coupon.CouponDetail>;
 }

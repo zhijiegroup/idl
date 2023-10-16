@@ -55,7 +55,8 @@ const Product$json = {
     {'1': 'sale_price', '3': 16, '4': 1, '5': 2, '10': 'salePrice'},
     {'1': 'reference_price', '3': 17, '4': 1, '5': 2, '10': 'referencePrice'},
     {'1': 'product_brand', '3': 18, '4': 1, '5': 9, '10': 'productBrand'},
-    {'1': 'coupon', '3': 19, '4': 3, '5': 11, '6': '.glory_api.CouponDetail', '10': 'coupon'},
+    {'1': 'activity_id', '3': 19, '4': 1, '5': 3, '10': 'activityId'},
+    {'1': 'coupon', '3': 20, '4': 3, '5': 11, '6': '.glory_api.CouponDetail', '10': 'coupon'},
   ],
 };
 
@@ -73,8 +74,8 @@ final $typed_data.Uint8List productDescriptor = $convert.base64Decode(
     'USSwoSc2hpcG1lbnRfYXR0cmlidXRlGA8gAygLMhwuZ2xvcnlfYXBpLlNoaXBtZW50QXR0cmli'
     'dXRlUhFzaGlwbWVudEF0dHJpYnV0ZRIdCgpzYWxlX3ByaWNlGBAgASgCUglzYWxlUHJpY2USJw'
     'oPcmVmZXJlbmNlX3ByaWNlGBEgASgCUg5yZWZlcmVuY2VQcmljZRIjCg1wcm9kdWN0X2JyYW5k'
-    'GBIgASgJUgxwcm9kdWN0QnJhbmQSLwoGY291cG9uGBMgAygLMhcuZ2xvcnlfYXBpLkNvdXBvbk'
-    'RldGFpbFIGY291cG9u');
+    'GBIgASgJUgxwcm9kdWN0QnJhbmQSHwoLYWN0aXZpdHlfaWQYEyABKANSCmFjdGl2aXR5SWQSLw'
+    'oGY291cG9uGBQgAygLMhcuZ2xvcnlfYXBpLkNvdXBvbkRldGFpbFIGY291cG9u');
 
 @$core.Deprecated('Use productImageDescriptor instead')
 const ProductImage$json = {

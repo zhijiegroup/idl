@@ -42,6 +42,7 @@ class Product extends $pb.GeneratedMessage {
     $core.double? salePrice,
     $core.double? referencePrice,
     $core.String? productBrand,
+    $fixnum.Int64? activityId,
     $core.Iterable<$2.CouponDetail>? coupon,
   }) {
     final $result = create();
@@ -96,6 +97,9 @@ class Product extends $pb.GeneratedMessage {
     if (productBrand != null) {
       $result.productBrand = productBrand;
     }
+    if (activityId != null) {
+      $result.activityId = activityId;
+    }
     if (coupon != null) {
       $result.coupon.addAll(coupon);
     }
@@ -123,7 +127,8 @@ class Product extends $pb.GeneratedMessage {
     ..a<$core.double>(16, _omitFieldNames ? '' : 'salePrice', $pb.PbFieldType.OF)
     ..a<$core.double>(17, _omitFieldNames ? '' : 'referencePrice', $pb.PbFieldType.OF)
     ..aOS(18, _omitFieldNames ? '' : 'productBrand')
-    ..pc<$2.CouponDetail>(19, _omitFieldNames ? '' : 'coupon', $pb.PbFieldType.PM, subBuilder: $2.CouponDetail.create)
+    ..aInt64(19, _omitFieldNames ? '' : 'activityId')
+    ..pc<$2.CouponDetail>(20, _omitFieldNames ? '' : 'coupon', $pb.PbFieldType.PM, subBuilder: $2.CouponDetail.create)
     ..hasRequiredFields = false
   ;
 
@@ -287,7 +292,16 @@ class Product extends $pb.GeneratedMessage {
   void clearProductBrand() => clearField(18);
 
   @$pb.TagNumber(19)
-  $core.List<$2.CouponDetail> get coupon => $_getList(17);
+  $fixnum.Int64 get activityId => $_getI64(17);
+  @$pb.TagNumber(19)
+  set activityId($fixnum.Int64 v) { $_setInt64(17, v); }
+  @$pb.TagNumber(19)
+  $core.bool hasActivityId() => $_has(17);
+  @$pb.TagNumber(19)
+  void clearActivityId() => clearField(19);
+
+  @$pb.TagNumber(20)
+  $core.List<$2.CouponDetail> get coupon => $_getList(18);
 }
 
 class ProductImage extends $pb.GeneratedMessage {

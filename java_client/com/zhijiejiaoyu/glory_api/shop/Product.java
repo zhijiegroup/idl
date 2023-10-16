@@ -168,7 +168,12 @@ private static final long serialVersionUID = 0L;
             productBrand = s;
             break;
           }
-          case 154: {
+          case 152: {
+
+            activityId = input.readInt64();
+            break;
+          }
+          case 162: {
             if (!((mutable_bitField0 & 0x00000008) != 0)) {
               coupon = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.shop.CouponDetail>();
               mutable_bitField0_ |= 0x00000008;
@@ -694,14 +699,29 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int COUPON_FIELD_NUMBER = 19;
+  public static final int ACTIVITY_ID_FIELD_NUMBER = 19;
+  private long activityId ;
+  /**
+   * <pre>
+   * 活动ID
+   * </pre>
+   *
+   * <code>int64 activity_id = 19;</code>
+   * @return The activityId.
+   */
+  @java.lang.Override
+  public long getActivityId() {
+    return activityId ;
+  }
+
+  public static final int COUPON_FIELD_NUMBER = 20;
   private java.util.List<com.zhijiejiaoyu.glory_api.shop.CouponDetail> coupon ;
   /**
    * <pre>
    * 优惠券
    * </pre>
    *
-   * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+   * <code>repeated .glory_api.CouponDetail coupon = 20;</code>
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.shop.CouponDetail> getCouponList() {
@@ -712,7 +732,7 @@ private static final long serialVersionUID = 0L;
    * 优惠券
    * </pre>
    *
-   * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+   * <code>repeated .glory_api.CouponDetail coupon = 20;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.CouponDetailOrBuilder> 
@@ -724,7 +744,7 @@ private static final long serialVersionUID = 0L;
    * 优惠券
    * </pre>
    *
-   * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+   * <code>repeated .glory_api.CouponDetail coupon = 20;</code>
    */
   @java.lang.Override
   public int getCouponCount() {
@@ -735,7 +755,7 @@ private static final long serialVersionUID = 0L;
    * 优惠券
    * </pre>
    *
-   * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+   * <code>repeated .glory_api.CouponDetail coupon = 20;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.shop.CouponDetail getCoupon(int index) {
@@ -746,7 +766,7 @@ private static final long serialVersionUID = 0L;
    * 优惠券
    * </pre>
    *
-   * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+   * <code>repeated .glory_api.CouponDetail coupon = 20;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.shop.CouponDetailOrBuilder getCouponOrBuilder(
@@ -819,8 +839,11 @@ private static final long serialVersionUID = 0L;
     if (!getProductBrandBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18, productBrand );
     }
+    if (activityId != 0L) {
+      output.writeInt64(19, activityId );
+    }
     for (int i = 0; i < coupon .size(); i++) {
-      output.writeMessage(19, coupon .get(i));
+      output.writeMessage(20, coupon .get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -895,9 +918,13 @@ private static final long serialVersionUID = 0L;
     if (!getProductBrandBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, productBrand );
     }
+    if (activityId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(19, activityId );
+    }
     for (int i = 0; i < coupon .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(19, coupon .get(i));
+        .computeMessageSize(20, coupon .get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -953,6 +980,8 @@ private static final long serialVersionUID = 0L;
             other.getReferencePrice())) return false;
     if (!getProductBrand()
         .equals(other.getProductBrand())) return false;
+    if (getActivityId()
+        != other.getActivityId()) return false;
     if (!getCouponList()
         .equals(other.getCouponList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -1014,6 +1043,9 @@ private static final long serialVersionUID = 0L;
         getReferencePrice());
     hash = (37 * hash) + PRODUCT_BRAND_FIELD_NUMBER;
     hash = (53 * hash) + getProductBrand().hashCode();
+    hash = (37 * hash) + ACTIVITY_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getActivityId());
     if (getCouponCount() > 0) {
       hash = (37 * hash) + COUPON_FIELD_NUMBER;
       hash = (53 * hash) + getCouponList().hashCode();
@@ -1205,6 +1237,8 @@ private static final long serialVersionUID = 0L;
 
       productBrand = "";
 
+      activityId = 0L;
+
       if (couponBuilder == null) {
         coupon = java.util.Collections.emptyList();
         bitField0 = (bitField0 & ~0x00000008);
@@ -1283,6 +1317,7 @@ private static final long serialVersionUID = 0L;
       result.salePrice = salePrice ;
       result.referencePrice = referencePrice ;
       result.productBrand = productBrand ;
+      result.activityId = activityId ;
       if (couponBuilder == null) {
         if (((bitField0 & 0x00000008) != 0)) {
           coupon = java.util.Collections.unmodifiableList(coupon );
@@ -1463,6 +1498,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getProductBrand().isEmpty()) {
         productBrand = other.productBrand ;
         onChanged();
+      }
+      if (other.getActivityId() != 0L) {
+        setActivityId(other.getActivityId());
       }
       if (couponBuilder == null) {
         if (!other.coupon .isEmpty()) {
@@ -3173,6 +3211,49 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private long activityId ;
+    /**
+     * <pre>
+     * 活动ID
+     * </pre>
+     *
+     * <code>int64 activity_id = 19;</code>
+     * @return The activityId.
+     */
+    @java.lang.Override
+    public long getActivityId() {
+      return activityId ;
+    }
+    /**
+     * <pre>
+     * 活动ID
+     * </pre>
+     *
+     * <code>int64 activity_id = 19;</code>
+     * @param value The activityId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setActivityId(long value) {
+      
+      activityId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 活动ID
+     * </pre>
+     *
+     * <code>int64 activity_id = 19;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearActivityId() {
+      
+      activityId = 0L;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.zhijiejiaoyu.glory_api.shop.CouponDetail> coupon =
       java.util.Collections.emptyList();
     private void ensureCouponIsMutable() {
@@ -3190,7 +3271,7 @@ private static final long serialVersionUID = 0L;
      * 优惠券
      * </pre>
      *
-     * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+     * <code>repeated .glory_api.CouponDetail coupon = 20;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.shop.CouponDetail> getCouponList() {
       if (couponBuilder == null) {
@@ -3204,7 +3285,7 @@ private static final long serialVersionUID = 0L;
      * 优惠券
      * </pre>
      *
-     * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+     * <code>repeated .glory_api.CouponDetail coupon = 20;</code>
      */
     public int getCouponCount() {
       if (couponBuilder == null) {
@@ -3218,7 +3299,7 @@ private static final long serialVersionUID = 0L;
      * 优惠券
      * </pre>
      *
-     * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+     * <code>repeated .glory_api.CouponDetail coupon = 20;</code>
      */
     public com.zhijiejiaoyu.glory_api.shop.CouponDetail getCoupon(int index) {
       if (couponBuilder == null) {
@@ -3232,7 +3313,7 @@ private static final long serialVersionUID = 0L;
      * 优惠券
      * </pre>
      *
-     * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+     * <code>repeated .glory_api.CouponDetail coupon = 20;</code>
      */
     public Builder setCoupon(
         int index, com.zhijiejiaoyu.glory_api.shop.CouponDetail value) {
@@ -3253,7 +3334,7 @@ private static final long serialVersionUID = 0L;
      * 优惠券
      * </pre>
      *
-     * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+     * <code>repeated .glory_api.CouponDetail coupon = 20;</code>
      */
     public Builder setCoupon(
         int index, com.zhijiejiaoyu.glory_api.shop.CouponDetail.Builder builderForValue) {
@@ -3271,7 +3352,7 @@ private static final long serialVersionUID = 0L;
      * 优惠券
      * </pre>
      *
-     * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+     * <code>repeated .glory_api.CouponDetail coupon = 20;</code>
      */
     public Builder addCoupon(com.zhijiejiaoyu.glory_api.shop.CouponDetail value) {
       if (couponBuilder == null) {
@@ -3291,7 +3372,7 @@ private static final long serialVersionUID = 0L;
      * 优惠券
      * </pre>
      *
-     * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+     * <code>repeated .glory_api.CouponDetail coupon = 20;</code>
      */
     public Builder addCoupon(
         int index, com.zhijiejiaoyu.glory_api.shop.CouponDetail value) {
@@ -3312,7 +3393,7 @@ private static final long serialVersionUID = 0L;
      * 优惠券
      * </pre>
      *
-     * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+     * <code>repeated .glory_api.CouponDetail coupon = 20;</code>
      */
     public Builder addCoupon(
         com.zhijiejiaoyu.glory_api.shop.CouponDetail.Builder builderForValue) {
@@ -3330,7 +3411,7 @@ private static final long serialVersionUID = 0L;
      * 优惠券
      * </pre>
      *
-     * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+     * <code>repeated .glory_api.CouponDetail coupon = 20;</code>
      */
     public Builder addCoupon(
         int index, com.zhijiejiaoyu.glory_api.shop.CouponDetail.Builder builderForValue) {
@@ -3348,7 +3429,7 @@ private static final long serialVersionUID = 0L;
      * 优惠券
      * </pre>
      *
-     * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+     * <code>repeated .glory_api.CouponDetail coupon = 20;</code>
      */
     public Builder addAllCoupon(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.shop.CouponDetail> values) {
@@ -3367,7 +3448,7 @@ private static final long serialVersionUID = 0L;
      * 优惠券
      * </pre>
      *
-     * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+     * <code>repeated .glory_api.CouponDetail coupon = 20;</code>
      */
     public Builder clearCoupon() {
       if (couponBuilder == null) {
@@ -3384,7 +3465,7 @@ private static final long serialVersionUID = 0L;
      * 优惠券
      * </pre>
      *
-     * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+     * <code>repeated .glory_api.CouponDetail coupon = 20;</code>
      */
     public Builder removeCoupon(int index) {
       if (couponBuilder == null) {
@@ -3401,7 +3482,7 @@ private static final long serialVersionUID = 0L;
      * 优惠券
      * </pre>
      *
-     * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+     * <code>repeated .glory_api.CouponDetail coupon = 20;</code>
      */
     public com.zhijiejiaoyu.glory_api.shop.CouponDetail.Builder getCouponBuilder(
         int index) {
@@ -3412,7 +3493,7 @@ private static final long serialVersionUID = 0L;
      * 优惠券
      * </pre>
      *
-     * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+     * <code>repeated .glory_api.CouponDetail coupon = 20;</code>
      */
     public com.zhijiejiaoyu.glory_api.shop.CouponDetailOrBuilder getCouponOrBuilder(
         int index) {
@@ -3426,7 +3507,7 @@ private static final long serialVersionUID = 0L;
      * 优惠券
      * </pre>
      *
-     * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+     * <code>repeated .glory_api.CouponDetail coupon = 20;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.CouponDetailOrBuilder> 
          getCouponOrBuilderList() {
@@ -3441,7 +3522,7 @@ private static final long serialVersionUID = 0L;
      * 优惠券
      * </pre>
      *
-     * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+     * <code>repeated .glory_api.CouponDetail coupon = 20;</code>
      */
     public com.zhijiejiaoyu.glory_api.shop.CouponDetail.Builder addCouponBuilder() {
       return getCouponFieldBuilder().addBuilder(
@@ -3452,7 +3533,7 @@ private static final long serialVersionUID = 0L;
      * 优惠券
      * </pre>
      *
-     * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+     * <code>repeated .glory_api.CouponDetail coupon = 20;</code>
      */
     public com.zhijiejiaoyu.glory_api.shop.CouponDetail.Builder addCouponBuilder(
         int index) {
@@ -3464,7 +3545,7 @@ private static final long serialVersionUID = 0L;
      * 优惠券
      * </pre>
      *
-     * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+     * <code>repeated .glory_api.CouponDetail coupon = 20;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.shop.CouponDetail.Builder> 
          getCouponBuilderList() {

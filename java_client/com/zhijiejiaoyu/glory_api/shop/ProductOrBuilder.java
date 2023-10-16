@@ -271,10 +271,20 @@ public interface ProductOrBuilder extends
 
   /**
    * <pre>
+   * 活动ID
+   * </pre>
+   *
+   * <code>int64 activity_id = 19;</code>
+   * @return The activityId.
+   */
+  long getActivityId();
+
+  /**
+   * <pre>
    * 优惠券
    * </pre>
    *
-   * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+   * <code>repeated .glory_api.CouponDetail coupon = 20;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.shop.CouponDetail> 
       getCouponList();
@@ -283,7 +293,7 @@ public interface ProductOrBuilder extends
    * 优惠券
    * </pre>
    *
-   * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+   * <code>repeated .glory_api.CouponDetail coupon = 20;</code>
    */
   com.zhijiejiaoyu.glory_api.shop.CouponDetail getCoupon(int index);
   /**
@@ -291,7 +301,7 @@ public interface ProductOrBuilder extends
    * 优惠券
    * </pre>
    *
-   * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+   * <code>repeated .glory_api.CouponDetail coupon = 20;</code>
    */
   int getCouponCount();
   /**
@@ -299,7 +309,7 @@ public interface ProductOrBuilder extends
    * 优惠券
    * </pre>
    *
-   * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+   * <code>repeated .glory_api.CouponDetail coupon = 20;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.CouponDetailOrBuilder> 
       getCouponOrBuilderList();
@@ -308,7 +318,7 @@ public interface ProductOrBuilder extends
    * 优惠券
    * </pre>
    *
-   * <code>repeated .glory_api.CouponDetail coupon = 19;</code>
+   * <code>repeated .glory_api.CouponDetail coupon = 20;</code>
    */
   com.zhijiejiaoyu.glory_api.shop.CouponDetailOrBuilder getCouponOrBuilder(
       int index);
