@@ -4,6 +4,7 @@ option java_package = "com.zhijiejiaoyu.glory_api.live";
 option java_multiple_files = true;
 
 import "base.proto";
+import "shop/activity.proto";
 
 message LivePlan {
   int64 live_plan_id = 1;
@@ -180,6 +181,7 @@ message LiveProductStatus {
   string activity_status =16; // 商品活动状态
   double product_reference_price =17; // 商品参考价
   string shop_type = 18; // 店铺类型，虚拟or真实 
+  ActivityDetail activity_detail = 19; // 活动信息
 }
 
 message ListLiveProductStatusRequest {
