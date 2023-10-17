@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListCourseMaterialBoxRequest() {
+    materialBoxName = "";
   }
 
   @java.lang.Override
@@ -63,6 +64,12 @@ private static final long serialVersionUID = 0L;
               baseRequest = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            materialBoxName = s;
             break;
           }
           case 802: {
@@ -136,6 +143,44 @@ private static final long serialVersionUID = 0L;
     return getBaseRequest();
   }
 
+  public static final int MATERIAL_BOX_NAME_FIELD_NUMBER = 2;
+  private volatile java.lang.Object materialBoxName ;
+  /**
+   * <code>string material_box_name = 2;</code>
+   * @return The materialBoxName.
+   */
+  @java.lang.Override
+  public java.lang.String getMaterialBoxName() {
+    java.lang.Object ref = materialBoxName ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      materialBoxName = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string material_box_name = 2;</code>
+   * @return The bytes for materialBoxName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getMaterialBoxNameBytes() {
+    java.lang.Object ref = materialBoxName ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      materialBoxName = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int PAGINATION_FIELD_NUMBER = 100;
   private com.zhijiejiaoyu.base.PaginationRequest pagination ;
   /**
@@ -179,6 +224,9 @@ private static final long serialVersionUID = 0L;
     if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
+    if (!getMaterialBoxNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, materialBoxName );
+    }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
     }
@@ -194,6 +242,9 @@ private static final long serialVersionUID = 0L;
     if (baseRequest != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseRequest());
+    }
+    if (!getMaterialBoxNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, materialBoxName );
     }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -219,6 +270,8 @@ private static final long serialVersionUID = 0L;
       if (!getBaseRequest()
           .equals(other.getBaseRequest())) return false;
     }
+    if (!getMaterialBoxName()
+        .equals(other.getMaterialBoxName())) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -239,6 +292,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
       hash = (53 * hash) + getBaseRequest().hashCode();
     }
+    hash = (37 * hash) + MATERIAL_BOX_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getMaterialBoxName().hashCode();
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
@@ -386,6 +441,8 @@ private static final long serialVersionUID = 0L;
         baseRequest = null;
         baseRequestBuilder = null;
       }
+      materialBoxName = "";
+
       if (paginationBuilder == null) {
         pagination = null;
       } else {
@@ -423,6 +480,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.baseRequest = baseRequestBuilder .build();
       }
+      result.materialBoxName = materialBoxName ;
       if (paginationBuilder == null) {
         result.pagination = pagination ;
       } else {
@@ -478,6 +536,10 @@ private static final long serialVersionUID = 0L;
       if (other == com.zhijiejiaoyu.glory_api.course.ListCourseMaterialBoxRequest.getDefaultInstance()) return this;
       if (other.hasBaseRequest()) {
         mergeBaseRequest(other.getBaseRequest());
+      }
+      if (!other.getMaterialBoxName().isEmpty()) {
+        materialBoxName = other.materialBoxName ;
+        onChanged();
       }
       if (other.hasPagination()) {
         mergePagination(other.getPagination());
@@ -628,6 +690,82 @@ private static final long serialVersionUID = 0L;
         baseRequest = null;
       }
       return baseRequestBuilder ;
+    }
+
+    private java.lang.Object materialBoxName = "";
+    /**
+     * <code>string material_box_name = 2;</code>
+     * @return The materialBoxName.
+     */
+    public java.lang.String getMaterialBoxName() {
+      java.lang.Object ref = materialBoxName ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        materialBoxName = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string material_box_name = 2;</code>
+     * @return The bytes for materialBoxName.
+     */
+    public com.google.protobuf.ByteString
+        getMaterialBoxNameBytes() {
+      java.lang.Object ref = materialBoxName ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        materialBoxName = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string material_box_name = 2;</code>
+     * @param value The materialBoxName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaterialBoxName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      materialBoxName = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string material_box_name = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMaterialBoxName() {
+      
+      materialBoxName = getDefaultInstance().getMaterialBoxName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string material_box_name = 2;</code>
+     * @param value The bytes for materialBoxName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaterialBoxNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      materialBoxName = value;
+      onChanged();
+      return this;
     }
 
     private com.zhijiejiaoyu.base.PaginationRequest pagination ;

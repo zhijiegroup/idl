@@ -92,6 +92,7 @@ const ListCourseMaterialBoxRequest$json = {
   '1': 'ListCourseMaterialBoxRequest',
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'material_box_name', '3': 2, '4': 1, '5': 9, '10': 'materialBoxName'},
     {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
   ],
 };
@@ -99,8 +100,9 @@ const ListCourseMaterialBoxRequest$json = {
 /// Descriptor for `ListCourseMaterialBoxRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listCourseMaterialBoxRequestDescriptor = $convert.base64Decode(
     'ChxMaXN0Q291cnNlTWF0ZXJpYWxCb3hSZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLm'
-    'Jhc2UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EjcKCnBhZ2luYXRpb24YZCABKAsyFy5iYXNl'
-    'LlBhZ2luYXRpb25SZXF1ZXN0UgpwYWdpbmF0aW9u');
+    'Jhc2UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EioKEW1hdGVyaWFsX2JveF9uYW1lGAIgASgJ'
+    'Ug9tYXRlcmlhbEJveE5hbWUSNwoKcGFnaW5hdGlvbhhkIAEoCzIXLmJhc2UuUGFnaW5hdGlvbl'
+    'JlcXVlc3RSCnBhZ2luYXRpb24=');
 
 @$core.Deprecated('Use listCourseMaterialBoxResponseDescriptor instead')
 const ListCourseMaterialBoxResponse$json = {

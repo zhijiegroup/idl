@@ -50,6 +50,7 @@ export interface CreateCourseMaterialBoxResponse {
 /** 画板列表 */
 export interface ListCourseMaterialBoxRequest {
   base_request?: base.BaseRequest;
+  material_box_name?: string;
   pagination?: base.PaginationRequest;
 }
 

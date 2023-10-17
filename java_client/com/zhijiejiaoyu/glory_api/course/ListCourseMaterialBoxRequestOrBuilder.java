@@ -23,6 +23,18 @@ public interface ListCourseMaterialBoxRequestOrBuilder extends
   com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder();
 
   /**
+   * <code>string material_box_name = 2;</code>
+   * @return The materialBoxName.
+   */
+  java.lang.String getMaterialBoxName();
+  /**
+   * <code>string material_box_name = 2;</code>
+   * @return The bytes for materialBoxName.
+   */
+  com.google.protobuf.ByteString
+      getMaterialBoxNameBytes();
+
+  /**
    * <code>.base.PaginationRequest pagination = 100;</code>
    * @return Whether the pagination field is set.
    */

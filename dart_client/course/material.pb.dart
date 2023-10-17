@@ -403,11 +403,15 @@ class CreateCourseMaterialBoxResponse extends $pb.GeneratedMessage {
 class ListCourseMaterialBoxRequest extends $pb.GeneratedMessage {
   factory ListCourseMaterialBoxRequest({
     $0.BaseRequest? baseRequest,
+    $core.String? materialBoxName,
     $0.PaginationRequest? pagination,
   }) {
     final $result = create();
     if (baseRequest != null) {
       $result.baseRequest = baseRequest;
+    }
+    if (materialBoxName != null) {
+      $result.materialBoxName = materialBoxName;
     }
     if (pagination != null) {
       $result.pagination = pagination;
@@ -420,6 +424,7 @@ class ListCourseMaterialBoxRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListCourseMaterialBoxRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOS(2, _omitFieldNames ? '' : 'materialBoxName')
     ..aOM<$0.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
@@ -456,16 +461,25 @@ class ListCourseMaterialBoxRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $0.BaseRequest ensureBaseRequest() => $_ensure(0);
 
+  @$pb.TagNumber(2)
+  $core.String get materialBoxName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set materialBoxName($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasMaterialBoxName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMaterialBoxName() => clearField(2);
+
   @$pb.TagNumber(100)
-  $0.PaginationRequest get pagination => $_getN(1);
+  $0.PaginationRequest get pagination => $_getN(2);
   @$pb.TagNumber(100)
   set pagination($0.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
-  $core.bool hasPagination() => $_has(1);
+  $core.bool hasPagination() => $_has(2);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $0.PaginationRequest ensurePagination() => $_ensure(1);
+  $0.PaginationRequest ensurePagination() => $_ensure(2);
 }
 
 class ListCourseMaterialBoxResponse extends $pb.GeneratedMessage {
