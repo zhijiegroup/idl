@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private ImageInfo() {
     productUrl = "";
+    productImageType = "";
   }
 
   @java.lang.Override
@@ -55,7 +56,13 @@ private static final long serialVersionUID = 0L;
             productUrl = s;
             break;
           }
-          case 16: {
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            productImageType = s;
+            break;
+          }
+          case 24: {
 
             productImageId = input.readInt64();
             break;
@@ -130,10 +137,48 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int PRODUCT_IMAGE_ID_FIELD_NUMBER = 2;
+  public static final int PRODUCT_IMAGE_TYPE_FIELD_NUMBER = 2;
+  private volatile java.lang.Object productImageType ;
+  /**
+   * <code>string product_image_type = 2;</code>
+   * @return The productImageType.
+   */
+  @java.lang.Override
+  public java.lang.String getProductImageType() {
+    java.lang.Object ref = productImageType ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      productImageType = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string product_image_type = 2;</code>
+   * @return The bytes for productImageType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getProductImageTypeBytes() {
+    java.lang.Object ref = productImageType ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      productImageType = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PRODUCT_IMAGE_ID_FIELD_NUMBER = 3;
   private long productImageId ;
   /**
-   * <code>int64 product_image_id = 2;</code>
+   * <code>int64 product_image_id = 3;</code>
    * @return The productImageId.
    */
   @java.lang.Override
@@ -158,8 +203,11 @@ private static final long serialVersionUID = 0L;
     if (!getProductUrlBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, productUrl );
     }
+    if (!getProductImageTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, productImageType );
+    }
     if (productImageId != 0L) {
-      output.writeInt64(2, productImageId );
+      output.writeInt64(3, productImageId );
     }
     unknownFields.writeTo(output);
   }
@@ -173,9 +221,12 @@ private static final long serialVersionUID = 0L;
     if (!getProductUrlBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, productUrl );
     }
+    if (!getProductImageTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, productImageType );
+    }
     if (productImageId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, productImageId );
+        .computeInt64Size(3, productImageId );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -194,6 +245,8 @@ private static final long serialVersionUID = 0L;
 
     if (!getProductUrl()
         .equals(other.getProductUrl())) return false;
+    if (!getProductImageType()
+        .equals(other.getProductImageType())) return false;
     if (getProductImageId()
         != other.getProductImageId()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -209,6 +262,8 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PRODUCT_URL_FIELD_NUMBER;
     hash = (53 * hash) + getProductUrl().hashCode();
+    hash = (37 * hash) + PRODUCT_IMAGE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getProductImageType().hashCode();
     hash = (37 * hash) + PRODUCT_IMAGE_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getProductImageId());
@@ -347,6 +402,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       productUrl = "";
 
+      productImageType = "";
+
       productImageId = 0L;
 
       return this;
@@ -376,6 +433,7 @@ private static final long serialVersionUID = 0L;
     public com.zhijiejiaoyu.glory_api.shop.ImageInfo buildPartial() {
       com.zhijiejiaoyu.glory_api.shop.ImageInfo result = new com.zhijiejiaoyu.glory_api.shop.ImageInfo(this);
       result.productUrl = productUrl ;
+      result.productImageType = productImageType ;
       result.productImageId = productImageId ;
       onBuilt();
       return result;
@@ -427,6 +485,10 @@ private static final long serialVersionUID = 0L;
       if (other == com.zhijiejiaoyu.glory_api.shop.ImageInfo.getDefaultInstance()) return this;
       if (!other.getProductUrl().isEmpty()) {
         productUrl = other.productUrl ;
+        onChanged();
+      }
+      if (!other.getProductImageType().isEmpty()) {
+        productImageType = other.productImageType ;
         onChanged();
       }
       if (other.getProductImageId() != 0L) {
@@ -537,9 +599,85 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object productImageType = "";
+    /**
+     * <code>string product_image_type = 2;</code>
+     * @return The productImageType.
+     */
+    public java.lang.String getProductImageType() {
+      java.lang.Object ref = productImageType ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        productImageType = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string product_image_type = 2;</code>
+     * @return The bytes for productImageType.
+     */
+    public com.google.protobuf.ByteString
+        getProductImageTypeBytes() {
+      java.lang.Object ref = productImageType ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        productImageType = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string product_image_type = 2;</code>
+     * @param value The productImageType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProductImageType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      productImageType = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string product_image_type = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearProductImageType() {
+      
+      productImageType = getDefaultInstance().getProductImageType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string product_image_type = 2;</code>
+     * @param value The bytes for productImageType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProductImageTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      productImageType = value;
+      onChanged();
+      return this;
+    }
+
     private long productImageId ;
     /**
-     * <code>int64 product_image_id = 2;</code>
+     * <code>int64 product_image_id = 3;</code>
      * @return The productImageId.
      */
     @java.lang.Override
@@ -547,7 +685,7 @@ private static final long serialVersionUID = 0L;
       return productImageId ;
     }
     /**
-     * <code>int64 product_image_id = 2;</code>
+     * <code>int64 product_image_id = 3;</code>
      * @param value The productImageId to set.
      * @return This builder for chaining.
      */
@@ -558,7 +696,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 product_image_id = 2;</code>
+     * <code>int64 product_image_id = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearProductImageId() {

@@ -346,27 +346,28 @@ public final class ProductOuterClass {
       "t_id\030\002 \001(\003\022\032\n\022product_image_type\030\003 \001(\003\"j" +
       "\n\030UploadMultiImageResponse\022%\n\tbase_resp\030" +
       "\001 \001(\0132\022.base.BaseResponse\022\'\n\timageInfo\030\002" +
-      " \003(\0132\024.glory_api.ImageInfo\":\n\tImageInfo\022" +
-      "\023\n\013product_url\030\001 \001(\t\022\030\n\020product_image_id" +
-      "\030\002 \001(\003\"W\n\022DeleteImageRequest\022\'\n\014base_req" +
-      "uest\030\001 \001(\0132\021.base.BaseRequest\022\030\n\020product" +
-      "_image_id\030\002 \001(\003\"<\n\023DeleteImageResponse\022%" +
-      "\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"P\n" +
-      "\025UploadSkuImageRequest\022\'\n\014base_request\030\001" +
-      " \001(\0132\021.base.BaseRequest\022\016\n\006sku_id\030\002 \001(\003\"" +
-      "R\n\026UploadSkuImageResponse\022%\n\tbase_resp\030\001" +
-      " \001(\0132\022.base.BaseResponse\022\021\n\timage_url\030\002 " +
-      "\001(\t\"\213\001\n\024SaveImageInfoRequest\022\'\n\014base_req" +
-      "uest\030\001 \001(\0132\021.base.BaseRequest\022\022\n\nproduct" +
-      "_id\030\002 \001(\003\022\032\n\022product_image_type\030\003 \001(\t\022\032\n" +
-      "\022product_image_path\030\004 \001(\t\"g\n\025SaveImageIn" +
-      "foResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
-      "eResponse\022\'\n\timageInfo\030\002 \001(\0132\024.glory_api" +
-      ".ImageInfo*\200\001\n\005State\022\013\n\007DEFAULT\020\000\022\013\n\007cre" +
-      "ated\020\001\022\014\n\010on_shelf\020\002\022\r\n\toff_shelf\020\003\022\020\n\014o" +
-      "ut_of_stock\020\004\022\013\n\007deleted\020\005\022\023\n\017deleted_fo" +
-      "rever\020\006\022\014\n\010sold_out\020\007B#\n\037com.zhijiejiaoy" +
-      "u.glory_api.shopP\001b\006proto3"
+      " \003(\0132\024.glory_api.ImageInfo\"V\n\tImageInfo\022" +
+      "\023\n\013product_url\030\001 \001(\t\022\032\n\022product_image_ty" +
+      "pe\030\002 \001(\t\022\030\n\020product_image_id\030\003 \001(\003\"W\n\022De" +
+      "leteImageRequest\022\'\n\014base_request\030\001 \001(\0132\021" +
+      ".base.BaseRequest\022\030\n\020product_image_id\030\002 " +
+      "\001(\003\"<\n\023DeleteImageResponse\022%\n\tbase_resp\030" +
+      "\001 \001(\0132\022.base.BaseResponse\"P\n\025UploadSkuIm" +
+      "ageRequest\022\'\n\014base_request\030\001 \001(\0132\021.base." +
+      "BaseRequest\022\016\n\006sku_id\030\002 \001(\003\"R\n\026UploadSku" +
+      "ImageResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
+      "BaseResponse\022\021\n\timage_url\030\002 \001(\t\"\213\001\n\024Save" +
+      "ImageInfoRequest\022\'\n\014base_request\030\001 \001(\0132\021" +
+      ".base.BaseRequest\022\022\n\nproduct_id\030\002 \001(\003\022\032\n" +
+      "\022product_image_type\030\003 \001(\t\022\032\n\022product_ima" +
+      "ge_path\030\004 \001(\t\"g\n\025SaveImageInfoResponse\022%" +
+      "\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022\'\n" +
+      "\timageInfo\030\002 \001(\0132\024.glory_api.ImageInfo*\200" +
+      "\001\n\005State\022\013\n\007DEFAULT\020\000\022\013\n\007created\020\001\022\014\n\010on" +
+      "_shelf\020\002\022\r\n\toff_shelf\020\003\022\020\n\014out_of_stock\020" +
+      "\004\022\013\n\007deleted\020\005\022\023\n\017deleted_forever\020\006\022\014\n\010s" +
+      "old_out\020\007B#\n\037com.zhijiejiaoyu.glory_api." +
+      "shopP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -581,7 +582,7 @@ public final class ProductOuterClass {
     internal_static_glory_api_ImageInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ImageInfo_descriptor,
-        new java.lang.String[] { "ProductUrl", "ProductImageId", });
+        new java.lang.String[] { "ProductUrl", "ProductImageType", "ProductImageId", });
     internal_static_glory_api_DeleteImageRequest_descriptor =
       getDescriptor().getMessageTypes().get(34);
     internal_static_glory_api_DeleteImageRequest_fieldAccessorTable = new

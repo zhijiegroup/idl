@@ -1093,6 +1093,8 @@ struct GloryApi_ImageInfo {
 
   var productURL: String = String()
 
+  var productImageType: String = String()
+
   var productImageID: Int64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -3105,7 +3107,8 @@ extension GloryApi_ImageInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
   static let protoMessageName: String = _protobuf_package + ".ImageInfo"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "product_url"),
-    2: .standard(proto: "product_image_id"),
+    2: .standard(proto: "product_image_type"),
+    3: .standard(proto: "product_image_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -3115,7 +3118,8 @@ extension GloryApi_ImageInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularStringField(value: &self.productURL) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.productImageID) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.productImageType) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.productImageID) }()
       default: break
       }
     }
@@ -3125,14 +3129,18 @@ extension GloryApi_ImageInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     if !self.productURL.isEmpty {
       try visitor.visitSingularStringField(value: self.productURL, fieldNumber: 1)
     }
+    if !self.productImageType.isEmpty {
+      try visitor.visitSingularStringField(value: self.productImageType, fieldNumber: 2)
+    }
     if self.productImageID != 0 {
-      try visitor.visitSingularInt64Field(value: self.productImageID, fieldNumber: 2)
+      try visitor.visitSingularInt64Field(value: self.productImageID, fieldNumber: 3)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_ImageInfo, rhs: GloryApi_ImageInfo) -> Bool {
     if lhs.productURL != rhs.productURL {return false}
+    if lhs.productImageType != rhs.productImageType {return false}
     if lhs.productImageID != rhs.productImageID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

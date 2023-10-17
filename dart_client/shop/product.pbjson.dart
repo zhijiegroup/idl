@@ -620,14 +620,16 @@ const ImageInfo$json = {
   '1': 'ImageInfo',
   '2': [
     {'1': 'product_url', '3': 1, '4': 1, '5': 9, '10': 'productUrl'},
-    {'1': 'product_image_id', '3': 2, '4': 1, '5': 3, '10': 'productImageId'},
+    {'1': 'product_image_type', '3': 2, '4': 1, '5': 9, '10': 'productImageType'},
+    {'1': 'product_image_id', '3': 3, '4': 1, '5': 3, '10': 'productImageId'},
   ],
 };
 
 /// Descriptor for `ImageInfo`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List imageInfoDescriptor = $convert.base64Decode(
-    'CglJbWFnZUluZm8SHwoLcHJvZHVjdF91cmwYASABKAlSCnByb2R1Y3RVcmwSKAoQcHJvZHVjdF'
-    '9pbWFnZV9pZBgCIAEoA1IOcHJvZHVjdEltYWdlSWQ=');
+    'CglJbWFnZUluZm8SHwoLcHJvZHVjdF91cmwYASABKAlSCnByb2R1Y3RVcmwSLAoScHJvZHVjdF'
+    '9pbWFnZV90eXBlGAIgASgJUhBwcm9kdWN0SW1hZ2VUeXBlEigKEHByb2R1Y3RfaW1hZ2VfaWQY'
+    'AyABKANSDnByb2R1Y3RJbWFnZUlk');
 
 @$core.Deprecated('Use deleteImageRequestDescriptor instead')
 const DeleteImageRequest$json = {

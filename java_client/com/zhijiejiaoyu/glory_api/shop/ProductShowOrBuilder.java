@@ -156,4 +156,31 @@ public interface ProductShowOrBuilder extends
    */
   com.zhijiejiaoyu.glory_api.shop.CouponDetailOrBuilder getCouponOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * 活动
+   * </pre>
+   *
+   * <code>.glory_api.ActivityDetail activity = 12;</code>
+   * @return Whether the activity field is set.
+   */
+  boolean hasActivity();
+  /**
+   * <pre>
+   * 活动
+   * </pre>
+   *
+   * <code>.glory_api.ActivityDetail activity = 12;</code>
+   * @return The activity.
+   */
+  com.zhijiejiaoyu.glory_api.shop.ActivityDetail getActivity();
+  /**
+   * <pre>
+   * 活动
+   * </pre>
+   *
+   * <code>.glory_api.ActivityDetail activity = 12;</code>
+   */
+  com.zhijiejiaoyu.glory_api.shop.ActivityDetailOrBuilder getActivityOrBuilder();
 }

@@ -20,7 +20,19 @@ public interface ImageInfoOrBuilder extends
       getProductUrlBytes();
 
   /**
-   * <code>int64 product_image_id = 2;</code>
+   * <code>string product_image_type = 2;</code>
+   * @return The productImageType.
+   */
+  java.lang.String getProductImageType();
+  /**
+   * <code>string product_image_type = 2;</code>
+   * @return The bytes for productImageType.
+   */
+  com.google.protobuf.ByteString
+      getProductImageTypeBytes();
+
+  /**
+   * <code>int64 product_image_id = 3;</code>
    * @return The productImageId.
    */
   long getProductImageId();

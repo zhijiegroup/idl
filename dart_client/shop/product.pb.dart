@@ -2901,11 +2901,15 @@ class UploadMultiImageResponse extends $pb.GeneratedMessage {
 class ImageInfo extends $pb.GeneratedMessage {
   factory ImageInfo({
     $core.String? productUrl,
+    $core.String? productImageType,
     $fixnum.Int64? productImageId,
   }) {
     final $result = create();
     if (productUrl != null) {
       $result.productUrl = productUrl;
+    }
+    if (productImageType != null) {
+      $result.productImageType = productImageType;
     }
     if (productImageId != null) {
       $result.productImageId = productImageId;
@@ -2918,7 +2922,8 @@ class ImageInfo extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ImageInfo', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'productUrl')
-    ..aInt64(2, _omitFieldNames ? '' : 'productImageId')
+    ..aOS(2, _omitFieldNames ? '' : 'productImageType')
+    ..aInt64(3, _omitFieldNames ? '' : 'productImageId')
     ..hasRequiredFields = false
   ;
 
@@ -2953,13 +2958,22 @@ class ImageInfo extends $pb.GeneratedMessage {
   void clearProductUrl() => clearField(1);
 
   @$pb.TagNumber(2)
-  $fixnum.Int64 get productImageId => $_getI64(1);
+  $core.String get productImageType => $_getSZ(1);
   @$pb.TagNumber(2)
-  set productImageId($fixnum.Int64 v) { $_setInt64(1, v); }
+  set productImageType($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasProductImageId() => $_has(1);
+  $core.bool hasProductImageType() => $_has(1);
   @$pb.TagNumber(2)
-  void clearProductImageId() => clearField(2);
+  void clearProductImageType() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get productImageId => $_getI64(2);
+  @$pb.TagNumber(3)
+  set productImageId($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasProductImageId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearProductImageId() => clearField(3);
 }
 
 class DeleteImageRequest extends $pb.GeneratedMessage {

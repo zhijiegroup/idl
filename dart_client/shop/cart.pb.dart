@@ -14,7 +14,8 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../base.pb.dart' as $1;
+import '../base.pb.dart' as $2;
+import 'activity.pb.dart' as $1;
 import 'coupon.pb.dart' as $0;
 
 class Cart extends $pb.GeneratedMessage {
@@ -245,6 +246,7 @@ class ProductShow extends $pb.GeneratedMessage {
     $core.double? freightAmount,
     $core.String? channel,
     $core.Iterable<$0.CouponDetail>? coupon,
+    $1.ActivityDetail? activity,
   }) {
     final $result = create();
     if (productId != null) {
@@ -280,6 +282,9 @@ class ProductShow extends $pb.GeneratedMessage {
     if (coupon != null) {
       $result.coupon.addAll(coupon);
     }
+    if (activity != null) {
+      $result.activity = activity;
+    }
     return $result;
   }
   ProductShow._() : super();
@@ -298,6 +303,7 @@ class ProductShow extends $pb.GeneratedMessage {
     ..a<$core.double>(9, _omitFieldNames ? '' : 'freightAmount', $pb.PbFieldType.OF)
     ..aOS(10, _omitFieldNames ? '' : 'channel')
     ..pc<$0.CouponDetail>(11, _omitFieldNames ? '' : 'coupon', $pb.PbFieldType.PM, subBuilder: $0.CouponDetail.create)
+    ..aOM<$1.ActivityDetail>(12, _omitFieldNames ? '' : 'activity', subBuilder: $1.ActivityDetail.create)
     ..hasRequiredFields = false
   ;
 
@@ -414,6 +420,17 @@ class ProductShow extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(11)
   $core.List<$0.CouponDetail> get coupon => $_getList(10);
+
+  @$pb.TagNumber(12)
+  $1.ActivityDetail get activity => $_getN(11);
+  @$pb.TagNumber(12)
+  set activity($1.ActivityDetail v) { setField(12, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasActivity() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearActivity() => clearField(12);
+  @$pb.TagNumber(12)
+  $1.ActivityDetail ensureActivity() => $_ensure(11);
 }
 
 class ShopShow extends $pb.GeneratedMessage {
@@ -661,7 +678,7 @@ class CartShow extends $pb.GeneratedMessage {
 class CartWithAuthor extends $pb.GeneratedMessage {
   factory CartWithAuthor({
     Cart? cart,
-    $1.AuthorInfo? authorInfo,
+    $2.AuthorInfo? authorInfo,
   }) {
     final $result = create();
     if (cart != null) {
@@ -678,7 +695,7 @@ class CartWithAuthor extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CartWithAuthor', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<Cart>(1, _omitFieldNames ? '' : 'cart', subBuilder: Cart.create)
-    ..aOM<$1.AuthorInfo>(2, _omitFieldNames ? '' : 'authorInfo', subBuilder: $1.AuthorInfo.create)
+    ..aOM<$2.AuthorInfo>(2, _omitFieldNames ? '' : 'authorInfo', subBuilder: $2.AuthorInfo.create)
     ..hasRequiredFields = false
   ;
 
@@ -715,20 +732,20 @@ class CartWithAuthor extends $pb.GeneratedMessage {
   Cart ensureCart() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $1.AuthorInfo get authorInfo => $_getN(1);
+  $2.AuthorInfo get authorInfo => $_getN(1);
   @$pb.TagNumber(2)
-  set authorInfo($1.AuthorInfo v) { setField(2, v); }
+  set authorInfo($2.AuthorInfo v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasAuthorInfo() => $_has(1);
   @$pb.TagNumber(2)
   void clearAuthorInfo() => clearField(2);
   @$pb.TagNumber(2)
-  $1.AuthorInfo ensureAuthorInfo() => $_ensure(1);
+  $2.AuthorInfo ensureAuthorInfo() => $_ensure(1);
 }
 
 class AddCartRequest extends $pb.GeneratedMessage {
   factory AddCartRequest({
-    $1.BaseRequest? baseRequest,
+    $2.BaseRequest? baseRequest,
     Cart? cart,
     $core.String? createdBy,
   }) {
@@ -749,7 +766,7 @@ class AddCartRequest extends $pb.GeneratedMessage {
   factory AddCartRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddCartRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
+    ..aOM<$2.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $2.BaseRequest.create)
     ..aOM<Cart>(2, _omitFieldNames ? '' : 'cart', subBuilder: Cart.create)
     ..aOS(3, _omitFieldNames ? '' : 'createdBy')
     ..hasRequiredFields = false
@@ -777,15 +794,15 @@ class AddCartRequest extends $pb.GeneratedMessage {
   static AddCartRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $1.BaseRequest get baseRequest => $_getN(0);
+  $2.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($1.BaseRequest v) { setField(1, v); }
+  set baseRequest($2.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $2.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   Cart get cart => $_getN(1);
@@ -810,7 +827,7 @@ class AddCartRequest extends $pb.GeneratedMessage {
 
 class AddCartResponse extends $pb.GeneratedMessage {
   factory AddCartResponse({
-    $1.BaseResponse? baseResp,
+    $2.BaseResponse? baseResp,
     $fixnum.Int64? cartId,
     $core.int? cartNum,
   }) {
@@ -831,7 +848,7 @@ class AddCartResponse extends $pb.GeneratedMessage {
   factory AddCartResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddCartResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
+    ..aOM<$2.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $2.BaseResponse.create)
     ..aInt64(2, _omitFieldNames ? '' : 'cartId')
     ..a<$core.int>(3, _omitFieldNames ? '' : 'cartNum', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
@@ -859,15 +876,15 @@ class AddCartResponse extends $pb.GeneratedMessage {
   static AddCartResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $1.BaseResponse get baseResp => $_getN(0);
+  $2.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($1.BaseResponse v) { setField(1, v); }
+  set baseResp($2.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $1.BaseResponse ensureBaseResp() => $_ensure(0);
+  $2.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get cartId => $_getI64(1);
@@ -890,7 +907,7 @@ class AddCartResponse extends $pb.GeneratedMessage {
 
 class GetCartRequest extends $pb.GeneratedMessage {
   factory GetCartRequest({
-    $1.BaseRequest? baseRequest,
+    $2.BaseRequest? baseRequest,
     $fixnum.Int64? cartId,
   }) {
     final $result = create();
@@ -907,7 +924,7 @@ class GetCartRequest extends $pb.GeneratedMessage {
   factory GetCartRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetCartRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
+    ..aOM<$2.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $2.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'cartId')
     ..hasRequiredFields = false
   ;
@@ -934,15 +951,15 @@ class GetCartRequest extends $pb.GeneratedMessage {
   static GetCartRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $1.BaseRequest get baseRequest => $_getN(0);
+  $2.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($1.BaseRequest v) { setField(1, v); }
+  set baseRequest($2.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $2.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get cartId => $_getI64(1);
@@ -956,7 +973,7 @@ class GetCartRequest extends $pb.GeneratedMessage {
 
 class GetCartResponse extends $pb.GeneratedMessage {
   factory GetCartResponse({
-    $1.BaseResponse? baseResp,
+    $2.BaseResponse? baseResp,
     CartShow? cartInfo,
   }) {
     final $result = create();
@@ -973,7 +990,7 @@ class GetCartResponse extends $pb.GeneratedMessage {
   factory GetCartResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetCartResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
+    ..aOM<$2.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $2.BaseResponse.create)
     ..aOM<CartShow>(3, _omitFieldNames ? '' : 'cartInfo', subBuilder: CartShow.create)
     ..hasRequiredFields = false
   ;
@@ -1000,15 +1017,15 @@ class GetCartResponse extends $pb.GeneratedMessage {
   static GetCartResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $1.BaseResponse get baseResp => $_getN(0);
+  $2.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($1.BaseResponse v) { setField(1, v); }
+  set baseResp($2.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $1.BaseResponse ensureBaseResp() => $_ensure(0);
+  $2.BaseResponse ensureBaseResp() => $_ensure(0);
 
   /// CartWithAuthor cart_detail =2;
   @$pb.TagNumber(3)
@@ -1025,7 +1042,7 @@ class GetCartResponse extends $pb.GeneratedMessage {
 
 class UpdateCartRequest extends $pb.GeneratedMessage {
   factory UpdateCartRequest({
-    $1.BaseRequest? baseRequest,
+    $2.BaseRequest? baseRequest,
     CartShow? cartInfo,
   }) {
     final $result = create();
@@ -1042,7 +1059,7 @@ class UpdateCartRequest extends $pb.GeneratedMessage {
   factory UpdateCartRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateCartRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
+    ..aOM<$2.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $2.BaseRequest.create)
     ..aOM<CartShow>(2, _omitFieldNames ? '' : 'cartInfo', subBuilder: CartShow.create)
     ..hasRequiredFields = false
   ;
@@ -1069,15 +1086,15 @@ class UpdateCartRequest extends $pb.GeneratedMessage {
   static UpdateCartRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $1.BaseRequest get baseRequest => $_getN(0);
+  $2.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($1.BaseRequest v) { setField(1, v); }
+  set baseRequest($2.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $2.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   CartShow get cartInfo => $_getN(1);
@@ -1093,7 +1110,7 @@ class UpdateCartRequest extends $pb.GeneratedMessage {
 
 class UpdateCartResponse extends $pb.GeneratedMessage {
   factory UpdateCartResponse({
-    $1.BaseResponse? baseResp,
+    $2.BaseResponse? baseResp,
     CartShow? cartInfo,
   }) {
     final $result = create();
@@ -1110,7 +1127,7 @@ class UpdateCartResponse extends $pb.GeneratedMessage {
   factory UpdateCartResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateCartResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
+    ..aOM<$2.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $2.BaseResponse.create)
     ..aOM<CartShow>(2, _omitFieldNames ? '' : 'cartInfo', subBuilder: CartShow.create)
     ..hasRequiredFields = false
   ;
@@ -1137,15 +1154,15 @@ class UpdateCartResponse extends $pb.GeneratedMessage {
   static UpdateCartResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $1.BaseResponse get baseResp => $_getN(0);
+  $2.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($1.BaseResponse v) { setField(1, v); }
+  set baseResp($2.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $1.BaseResponse ensureBaseResp() => $_ensure(0);
+  $2.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
   CartShow get cartInfo => $_getN(1);
@@ -1161,7 +1178,7 @@ class UpdateCartResponse extends $pb.GeneratedMessage {
 
 class DeleteCartRequest extends $pb.GeneratedMessage {
   factory DeleteCartRequest({
-    $1.BaseRequest? baseRequest,
+    $2.BaseRequest? baseRequest,
     CartShow? cartInfo,
   }) {
     final $result = create();
@@ -1178,7 +1195,7 @@ class DeleteCartRequest extends $pb.GeneratedMessage {
   factory DeleteCartRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteCartRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
+    ..aOM<$2.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $2.BaseRequest.create)
     ..aOM<CartShow>(2, _omitFieldNames ? '' : 'cartInfo', subBuilder: CartShow.create)
     ..hasRequiredFields = false
   ;
@@ -1205,15 +1222,15 @@ class DeleteCartRequest extends $pb.GeneratedMessage {
   static DeleteCartRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $1.BaseRequest get baseRequest => $_getN(0);
+  $2.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($1.BaseRequest v) { setField(1, v); }
+  set baseRequest($2.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $2.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   CartShow get cartInfo => $_getN(1);
@@ -1229,7 +1246,7 @@ class DeleteCartRequest extends $pb.GeneratedMessage {
 
 class DeleteCartResponse extends $pb.GeneratedMessage {
   factory DeleteCartResponse({
-    $1.BaseResponse? baseResp,
+    $2.BaseResponse? baseResp,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -1242,7 +1259,7 @@ class DeleteCartResponse extends $pb.GeneratedMessage {
   factory DeleteCartResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteCartResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
+    ..aOM<$2.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $2.BaseResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -1268,15 +1285,15 @@ class DeleteCartResponse extends $pb.GeneratedMessage {
   static DeleteCartResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $1.BaseResponse get baseResp => $_getN(0);
+  $2.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($1.BaseResponse v) { setField(1, v); }
+  set baseResp($2.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $1.BaseResponse ensureBaseResp() => $_ensure(0);
+  $2.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
 

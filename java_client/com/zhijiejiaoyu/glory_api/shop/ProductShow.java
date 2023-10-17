@@ -119,6 +119,19 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.zhijiejiaoyu.glory_api.shop.CouponDetail.parser(), extensionRegistry));
             break;
           }
+          case 98: {
+            com.zhijiejiaoyu.glory_api.shop.ActivityDetail.Builder subBuilder = null;
+            if (activity != null) {
+              subBuilder = activity .toBuilder();
+            }
+            activity = input.readMessage(com.zhijiejiaoyu.glory_api.shop.ActivityDetail.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(activity );
+              activity = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -475,6 +488,44 @@ private static final long serialVersionUID = 0L;
     return coupon .get(index);
   }
 
+  public static final int ACTIVITY_FIELD_NUMBER = 12;
+  private com.zhijiejiaoyu.glory_api.shop.ActivityDetail activity ;
+  /**
+   * <pre>
+   * 活动
+   * </pre>
+   *
+   * <code>.glory_api.ActivityDetail activity = 12;</code>
+   * @return Whether the activity field is set.
+   */
+  @java.lang.Override
+  public boolean hasActivity() {
+    return activity != null;
+  }
+  /**
+   * <pre>
+   * 活动
+   * </pre>
+   *
+   * <code>.glory_api.ActivityDetail activity = 12;</code>
+   * @return The activity.
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.shop.ActivityDetail getActivity() {
+    return activity == null ? com.zhijiejiaoyu.glory_api.shop.ActivityDetail.getDefaultInstance() : activity ;
+  }
+  /**
+   * <pre>
+   * 活动
+   * </pre>
+   *
+   * <code>.glory_api.ActivityDetail activity = 12;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.shop.ActivityDetailOrBuilder getActivityOrBuilder() {
+    return getActivity();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -521,6 +572,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < coupon .size(); i++) {
       output.writeMessage(11, coupon .get(i));
+    }
+    if (activity != null) {
+      output.writeMessage(12, getActivity());
     }
     unknownFields.writeTo(output);
   }
@@ -570,6 +624,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(11, coupon .get(i));
     }
+    if (activity != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(12, getActivity());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -609,6 +667,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getChannel())) return false;
     if (!getCouponList()
         .equals(other.getCouponList())) return false;
+    if (hasActivity() != other.hasActivity()) return false;
+    if (hasActivity()) {
+      if (!getActivity()
+          .equals(other.getActivity())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -647,6 +710,10 @@ private static final long serialVersionUID = 0L;
     if (getCouponCount() > 0) {
       hash = (37 * hash) + COUPON_FIELD_NUMBER;
       hash = (53 * hash) + getCouponList().hashCode();
+    }
+    if (hasActivity()) {
+      hash = (37 * hash) + ACTIVITY_FIELD_NUMBER;
+      hash = (53 * hash) + getActivity().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -808,6 +875,12 @@ private static final long serialVersionUID = 0L;
       } else {
         couponBuilder .clear();
       }
+      if (activityBuilder == null) {
+        activity = null;
+      } else {
+        activity = null;
+        activityBuilder = null;
+      }
       return this;
     }
 
@@ -853,6 +926,11 @@ private static final long serialVersionUID = 0L;
         result.coupon = coupon ;
       } else {
         result.coupon = couponBuilder .build();
+      }
+      if (activityBuilder == null) {
+        result.activity = activity ;
+      } else {
+        result.activity = activityBuilder .build();
       }
       onBuilt();
       return result;
@@ -962,6 +1040,9 @@ private static final long serialVersionUID = 0L;
             couponBuilder .addAllMessages(other.coupon );
           }
         }
+      }
+      if (other.hasActivity()) {
+        mergeActivity(other.getActivity());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1882,6 +1963,161 @@ private static final long serialVersionUID = 0L;
         coupon = null;
       }
       return couponBuilder ;
+    }
+
+    private com.zhijiejiaoyu.glory_api.shop.ActivityDetail activity ;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.shop.ActivityDetail, com.zhijiejiaoyu.glory_api.shop.ActivityDetail.Builder, com.zhijiejiaoyu.glory_api.shop.ActivityDetailOrBuilder> activityBuilder ;
+    /**
+     * <pre>
+     * 活动
+     * </pre>
+     *
+     * <code>.glory_api.ActivityDetail activity = 12;</code>
+     * @return Whether the activity field is set.
+     */
+    public boolean hasActivity() {
+      return activityBuilder != null || activity != null;
+    }
+    /**
+     * <pre>
+     * 活动
+     * </pre>
+     *
+     * <code>.glory_api.ActivityDetail activity = 12;</code>
+     * @return The activity.
+     */
+    public com.zhijiejiaoyu.glory_api.shop.ActivityDetail getActivity() {
+      if (activityBuilder == null) {
+        return activity == null ? com.zhijiejiaoyu.glory_api.shop.ActivityDetail.getDefaultInstance() : activity ;
+      } else {
+        return activityBuilder .getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 活动
+     * </pre>
+     *
+     * <code>.glory_api.ActivityDetail activity = 12;</code>
+     */
+    public Builder setActivity(com.zhijiejiaoyu.glory_api.shop.ActivityDetail value) {
+      if (activityBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        activity = value;
+        onChanged();
+      } else {
+        activityBuilder .setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 活动
+     * </pre>
+     *
+     * <code>.glory_api.ActivityDetail activity = 12;</code>
+     */
+    public Builder setActivity(
+        com.zhijiejiaoyu.glory_api.shop.ActivityDetail.Builder builderForValue) {
+      if (activityBuilder == null) {
+        activity = builderForValue.build();
+        onChanged();
+      } else {
+        activityBuilder .setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 活动
+     * </pre>
+     *
+     * <code>.glory_api.ActivityDetail activity = 12;</code>
+     */
+    public Builder mergeActivity(com.zhijiejiaoyu.glory_api.shop.ActivityDetail value) {
+      if (activityBuilder == null) {
+        if (activity != null) {
+          activity =
+            com.zhijiejiaoyu.glory_api.shop.ActivityDetail.newBuilder(activity ).mergeFrom(value).buildPartial();
+        } else {
+          activity = value;
+        }
+        onChanged();
+      } else {
+        activityBuilder .mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 活动
+     * </pre>
+     *
+     * <code>.glory_api.ActivityDetail activity = 12;</code>
+     */
+    public Builder clearActivity() {
+      if (activityBuilder == null) {
+        activity = null;
+        onChanged();
+      } else {
+        activity = null;
+        activityBuilder = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 活动
+     * </pre>
+     *
+     * <code>.glory_api.ActivityDetail activity = 12;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.shop.ActivityDetail.Builder getActivityBuilder() {
+      
+      onChanged();
+      return getActivityFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 活动
+     * </pre>
+     *
+     * <code>.glory_api.ActivityDetail activity = 12;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.shop.ActivityDetailOrBuilder getActivityOrBuilder() {
+      if (activityBuilder != null) {
+        return activityBuilder .getMessageOrBuilder();
+      } else {
+        return activity == null ?
+            com.zhijiejiaoyu.glory_api.shop.ActivityDetail.getDefaultInstance() : activity ;
+      }
+    }
+    /**
+     * <pre>
+     * 活动
+     * </pre>
+     *
+     * <code>.glory_api.ActivityDetail activity = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.shop.ActivityDetail, com.zhijiejiaoyu.glory_api.shop.ActivityDetail.Builder, com.zhijiejiaoyu.glory_api.shop.ActivityDetailOrBuilder> 
+        getActivityFieldBuilder() {
+      if (activityBuilder == null) {
+        activityBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.shop.ActivityDetail, com.zhijiejiaoyu.glory_api.shop.ActivityDetail.Builder, com.zhijiejiaoyu.glory_api.shop.ActivityDetailOrBuilder>(
+                getActivity(),
+                getParentForChildren(),
+                isClean());
+        activity = null;
+      }
+      return activityBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

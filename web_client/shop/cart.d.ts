@@ -3,8 +3,9 @@
 // @ts-nocheck
 
 import * as base from "../base";
+import * as activity from "./activity";
 import * as coupon from "./coupon";
-export { base, coupon };
+export { base, activity, coupon };
 
 export interface Cart {
   /** 客户端 添加购物车 sku_id quantity shop_id seller_id tenant_id必传 */
@@ -40,6 +41,8 @@ export interface ProductShow {
   channel?: string;
   /** 优惠券 */
   coupon?: Array<coupon.CouponDetail>;
+  /** 活动 */
+  activity?: activity.ActivityDetail;
 }
 
 export interface ShopShow {

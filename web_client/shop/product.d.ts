@@ -268,6 +268,7 @@ export interface UploadMultiImageResponse {
 
 export interface ImageInfo {
   product_url?: string;
+  product_image_type?: string;
   product_image_id?: string;
 }
 
