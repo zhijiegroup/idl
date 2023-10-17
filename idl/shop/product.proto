@@ -266,3 +266,15 @@ message UploadSkuImageResponse {
   base.BaseResponse base_resp = 1;
   string image_url = 2;
 }
+
+message SaveImageInfoRequest {
+  base.BaseRequest base_request = 1;
+  int64 product_id = 2;
+  string product_image_type = 3; // 图片类型：image_main,image_detail,image_assistant,white_ground
+  string product_image_path = 4; // 图片OSS路径
+}
+
+message SaveImageInfoResponse {
+  base.BaseResponse base_resp = 1;
+  ImageInfo imageInfo = 2;
+}

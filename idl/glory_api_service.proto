@@ -363,6 +363,10 @@ service glory_api {
     option (api.post) = '/api/shop/change_products_state';
   }
 
+  rpc SaveProductImageInfo(SaveImageInfoRequest) returns (SaveImageInfoResponse) {
+    option (api.post) = '/api/shop/save_product_image_info';
+  }
+
   // sku sku
   rpc CreateSku(CreateSkuRequest) returns (CreateSkuResponse) {
     option (api.post) = '/api/shop/create_sku';
