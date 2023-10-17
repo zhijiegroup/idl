@@ -40,6 +40,7 @@ message CreateCourseMaterialBoxResponse {
 // 画板列表
 message ListCourseMaterialBoxRequest {
   base.BaseRequest base_request = 1;
+  string material_box_name = 2;
   base.PaginationRequest pagination = 100;
 }
 
