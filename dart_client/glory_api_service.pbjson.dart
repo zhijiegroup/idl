@@ -467,6 +467,7 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.GetShopRequest': $3.GetShopRequest$json,
   '.glory_api.GetShopResponse': $3.GetShopResponse$json,
   '.glory_api.ShopWithAuthor': $3.ShopWithAuthor$json,
+  '.glory_api.ShopBusiness': $3.ShopBusiness$json,
   '.glory_api.UpdateShopRequest': $3.UpdateShopRequest$json,
   '.glory_api.UpdateShopResponse': $3.UpdateShopResponse$json,
   '.glory_api.ListShopRequest': $3.ListShopRequest$json,

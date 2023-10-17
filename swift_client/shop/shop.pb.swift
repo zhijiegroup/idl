@@ -263,6 +263,18 @@ struct GloryApi_ShopQualification {
   init() {}
 }
 
+struct GloryApi_ShopBusiness {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var saleTotal: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
 struct GloryApi_ShopWithAuthor {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -286,12 +298,22 @@ struct GloryApi_ShopWithAuthor {
   /// Clears the value of `authorInfo`. Subsequent reads from it will return its default value.
   mutating func clearAuthorInfo() {self._authorInfo = nil}
 
+  var shopBusiness: GloryApi_ShopBusiness {
+    get {return _shopBusiness ?? GloryApi_ShopBusiness()}
+    set {_shopBusiness = newValue}
+  }
+  /// Returns true if `shopBusiness` has been explicitly set.
+  var hasShopBusiness: Bool {return self._shopBusiness != nil}
+  /// Clears the value of `shopBusiness`. Subsequent reads from it will return its default value.
+  mutating func clearShopBusiness() {self._shopBusiness = nil}
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
   fileprivate var _shop: GloryApi_Shop? = nil
   fileprivate var _authorInfo: Base_AuthorInfo? = nil
+  fileprivate var _shopBusiness: GloryApi_ShopBusiness? = nil
 }
 
 struct GloryApi_CreateShopRequest {
@@ -1326,6 +1348,7 @@ struct GloryApi_ListShopBySellerIDResponse {
 #if swift(>=5.5) && canImport(_Concurrency)
 extension GloryApi_Shop: @unchecked Sendable {}
 extension GloryApi_ShopQualification: @unchecked Sendable {}
+extension GloryApi_ShopBusiness: @unchecked Sendable {}
 extension GloryApi_ShopWithAuthor: @unchecked Sendable {}
 extension GloryApi_CreateShopRequest: @unchecked Sendable {}
 extension GloryApi_CreateShopResponse: @unchecked Sendable {}
@@ -1764,11 +1787,44 @@ extension GloryApi_ShopQualification: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
+extension GloryApi_ShopBusiness: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ShopBusiness"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "sale_total"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.saleTotal) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.saleTotal != 0 {
+      try visitor.visitSingularInt64Field(value: self.saleTotal, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ShopBusiness, rhs: GloryApi_ShopBusiness) -> Bool {
+    if lhs.saleTotal != rhs.saleTotal {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
 extension GloryApi_ShopWithAuthor: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ShopWithAuthor"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "shop"),
     2: .standard(proto: "author_info"),
+    3: .standard(proto: "shop_business"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1779,6 +1835,7 @@ extension GloryApi_ShopWithAuthor: SwiftProtobuf.Message, SwiftProtobuf._Message
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._shop) }()
       case 2: try { try decoder.decodeSingularMessageField(value: &self._authorInfo) }()
+      case 3: try { try decoder.decodeSingularMessageField(value: &self._shopBusiness) }()
       default: break
       }
     }
@@ -1795,12 +1852,16 @@ extension GloryApi_ShopWithAuthor: SwiftProtobuf.Message, SwiftProtobuf._Message
     try { if let v = self._authorInfo {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
     } }()
+    try { if let v = self._shopBusiness {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_ShopWithAuthor, rhs: GloryApi_ShopWithAuthor) -> Bool {
     if lhs._shop != rhs._shop {return false}
     if lhs._authorInfo != rhs._authorInfo {return false}
+    if lhs._shopBusiness != rhs._shopBusiness {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

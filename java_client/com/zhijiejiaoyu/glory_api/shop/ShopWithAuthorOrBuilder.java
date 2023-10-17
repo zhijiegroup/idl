@@ -36,4 +36,19 @@ public interface ShopWithAuthorOrBuilder extends
    * <code>.base.AuthorInfo author_info = 2;</code>
    */
   com.zhijiejiaoyu.base.AuthorInfoOrBuilder getAuthorInfoOrBuilder();
+
+  /**
+   * <code>.glory_api.ShopBusiness shop_business = 3;</code>
+   * @return Whether the shopBusiness field is set.
+   */
+  boolean hasShopBusiness();
+  /**
+   * <code>.glory_api.ShopBusiness shop_business = 3;</code>
+   * @return The shopBusiness.
+   */
+  com.zhijiejiaoyu.glory_api.shop.ShopBusiness getShopBusiness();
+  /**
+   * <code>.glory_api.ShopBusiness shop_business = 3;</code>
+   */
+  com.zhijiejiaoyu.glory_api.shop.ShopBusinessOrBuilder getShopBusinessOrBuilder();
 }

@@ -637,10 +637,61 @@ class ShopQualification extends $pb.GeneratedMessage {
   void clearValidityPeriod() => clearField(6);
 }
 
+class ShopBusiness extends $pb.GeneratedMessage {
+  factory ShopBusiness({
+    $fixnum.Int64? saleTotal,
+  }) {
+    final $result = create();
+    if (saleTotal != null) {
+      $result.saleTotal = saleTotal;
+    }
+    return $result;
+  }
+  ShopBusiness._() : super();
+  factory ShopBusiness.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ShopBusiness.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ShopBusiness', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'saleTotal')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ShopBusiness clone() => ShopBusiness()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ShopBusiness copyWith(void Function(ShopBusiness) updates) => super.copyWith((message) => updates(message as ShopBusiness)) as ShopBusiness;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ShopBusiness create() => ShopBusiness._();
+  ShopBusiness createEmptyInstance() => create();
+  static $pb.PbList<ShopBusiness> createRepeated() => $pb.PbList<ShopBusiness>();
+  @$core.pragma('dart2js:noInline')
+  static ShopBusiness getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ShopBusiness>(create);
+  static ShopBusiness? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get saleTotal => $_getI64(0);
+  @$pb.TagNumber(1)
+  set saleTotal($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasSaleTotal() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSaleTotal() => clearField(1);
+}
+
 class ShopWithAuthor extends $pb.GeneratedMessage {
   factory ShopWithAuthor({
     Shop? shop,
     $0.AuthorInfo? authorInfo,
+    ShopBusiness? shopBusiness,
   }) {
     final $result = create();
     if (shop != null) {
@@ -648,6 +699,9 @@ class ShopWithAuthor extends $pb.GeneratedMessage {
     }
     if (authorInfo != null) {
       $result.authorInfo = authorInfo;
+    }
+    if (shopBusiness != null) {
+      $result.shopBusiness = shopBusiness;
     }
     return $result;
   }
@@ -658,6 +712,7 @@ class ShopWithAuthor extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ShopWithAuthor', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<Shop>(1, _omitFieldNames ? '' : 'shop', subBuilder: Shop.create)
     ..aOM<$0.AuthorInfo>(2, _omitFieldNames ? '' : 'authorInfo', subBuilder: $0.AuthorInfo.create)
+    ..aOM<ShopBusiness>(3, _omitFieldNames ? '' : 'shopBusiness', subBuilder: ShopBusiness.create)
     ..hasRequiredFields = false
   ;
 
@@ -703,6 +758,17 @@ class ShopWithAuthor extends $pb.GeneratedMessage {
   void clearAuthorInfo() => clearField(2);
   @$pb.TagNumber(2)
   $0.AuthorInfo ensureAuthorInfo() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  ShopBusiness get shopBusiness => $_getN(2);
+  @$pb.TagNumber(3)
+  set shopBusiness(ShopBusiness v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasShopBusiness() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearShopBusiness() => clearField(3);
+  @$pb.TagNumber(3)
+  ShopBusiness ensureShopBusiness() => $_ensure(2);
 }
 
 class CreateShopRequest extends $pb.GeneratedMessage {

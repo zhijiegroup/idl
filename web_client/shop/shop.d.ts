@@ -91,9 +91,14 @@ export interface ShopQualification {
   validity_period?: string;
 }
 
+export interface ShopBusiness {
+  sale_total?: string;
+}
+
 export interface ShopWithAuthor {
   shop?: Shop;
   author_info?: base.AuthorInfo;
+  shop_business?: ShopBusiness;
 }
 
 export interface CreateShopRequest {

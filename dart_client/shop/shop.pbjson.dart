@@ -105,19 +105,34 @@ final $typed_data.Uint8List shopQualificationDescriptor = $convert.base64Decode(
     'dF9pZBgFIAEoA1IMYXR0YWNobWVudElkEicKD3ZhbGlkaXR5X3BlcmlvZBgGIAEoCVIOdmFsaW'
     'RpdHlQZXJpb2Q=');
 
+@$core.Deprecated('Use shopBusinessDescriptor instead')
+const ShopBusiness$json = {
+  '1': 'ShopBusiness',
+  '2': [
+    {'1': 'sale_total', '3': 1, '4': 1, '5': 3, '10': 'saleTotal'},
+  ],
+};
+
+/// Descriptor for `ShopBusiness`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List shopBusinessDescriptor = $convert.base64Decode(
+    'CgxTaG9wQnVzaW5lc3MSHQoKc2FsZV90b3RhbBgBIAEoA1IJc2FsZVRvdGFs');
+
 @$core.Deprecated('Use shopWithAuthorDescriptor instead')
 const ShopWithAuthor$json = {
   '1': 'ShopWithAuthor',
   '2': [
     {'1': 'shop', '3': 1, '4': 1, '5': 11, '6': '.glory_api.Shop', '10': 'shop'},
     {'1': 'author_info', '3': 2, '4': 1, '5': 11, '6': '.base.AuthorInfo', '10': 'authorInfo'},
+    {'1': 'shop_business', '3': 3, '4': 1, '5': 11, '6': '.glory_api.ShopBusiness', '10': 'shopBusiness'},
   ],
 };
 
 /// Descriptor for `ShopWithAuthor`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List shopWithAuthorDescriptor = $convert.base64Decode(
     'Cg5TaG9wV2l0aEF1dGhvchIjCgRzaG9wGAEgASgLMg8uZ2xvcnlfYXBpLlNob3BSBHNob3ASMQ'
-    'oLYXV0aG9yX2luZm8YAiABKAsyEC5iYXNlLkF1dGhvckluZm9SCmF1dGhvckluZm8=');
+    'oLYXV0aG9yX2luZm8YAiABKAsyEC5iYXNlLkF1dGhvckluZm9SCmF1dGhvckluZm8SPAoNc2hv'
+    'cF9idXNpbmVzcxgDIAEoCzIXLmdsb3J5X2FwaS5TaG9wQnVzaW5lc3NSDHNob3BCdXNpbmVzcw'
+    '==');
 
 @$core.Deprecated('Use createShopRequestDescriptor instead')
 const CreateShopRequest$json = {
