@@ -245,7 +245,8 @@ message UploadMultiImageResponse {
 
 message ImageInfo{
   string product_url = 1;
-  int64 product_image_id = 2;
+  string product_image_type = 2;
+  int64 product_image_id = 3;
 }
 
 message DeleteImageRequest {
