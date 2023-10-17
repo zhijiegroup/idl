@@ -416,6 +416,10 @@ list the permissions that supported */
     request: product.ChangeProductStateRequest
   ): Promise<product.ChangeProductStateResponse>;
 
+  SaveProductImageInfo(
+    request: product.SaveImageInfoRequest
+  ): Promise<product.SaveImageInfoResponse>;
+
   /** sku sku */
   CreateSku(request: sku.CreateSkuRequest): Promise<sku.CreateSkuResponse>;
 

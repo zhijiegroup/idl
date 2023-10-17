@@ -305,6 +305,9 @@ class glory_apiApi {
   $async.Future<$9.ChangeProductStateResponse> changeProductsState($pb.ClientContext? ctx, $9.ChangeProductStateRequest request) =>
     _client.invoke<$9.ChangeProductStateResponse>(ctx, 'glory_api', 'ChangeProductsState', request, $9.ChangeProductStateResponse())
   ;
+  $async.Future<$9.SaveImageInfoResponse> saveProductImageInfo($pb.ClientContext? ctx, $9.SaveImageInfoRequest request) =>
+    _client.invoke<$9.SaveImageInfoResponse>(ctx, 'glory_api', 'SaveProductImageInfo', request, $9.SaveImageInfoResponse())
+  ;
   $async.Future<$10.CreateSkuResponse> createSku($pb.ClientContext? ctx, $10.CreateSkuRequest request) =>
     _client.invoke<$10.CreateSkuResponse>(ctx, 'glory_api', 'CreateSku', request, $10.CreateSkuResponse())
   ;

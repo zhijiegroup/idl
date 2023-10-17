@@ -146,6 +146,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$9.OffSelfProductsResponse> offShelfProductInBatches($pb.ServerContext ctx, $9.OffSelfProductsRequest request);
   $async.Future<$9.DeleteProductsResponse> deleteProductInBatches($pb.ServerContext ctx, $9.DeleteProductsRequest request);
   $async.Future<$9.ChangeProductStateResponse> changeProductsState($pb.ServerContext ctx, $9.ChangeProductStateRequest request);
+  $async.Future<$9.SaveImageInfoResponse> saveProductImageInfo($pb.ServerContext ctx, $9.SaveImageInfoRequest request);
   $async.Future<$10.CreateSkuResponse> createSku($pb.ServerContext ctx, $10.CreateSkuRequest request);
   $async.Future<$10.GetSkuResponse> getSku($pb.ServerContext ctx, $10.GetSkuRequest request);
   $async.Future<$10.UpdateSkuResponse> updateSku($pb.ServerContext ctx, $10.UpdateSkuRequest request);
@@ -441,6 +442,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'OffShelfProductInBatches': return $9.OffSelfProductsRequest();
       case 'DeleteProductInBatches': return $9.DeleteProductsRequest();
       case 'ChangeProductsState': return $9.ChangeProductStateRequest();
+      case 'SaveProductImageInfo': return $9.SaveImageInfoRequest();
       case 'CreateSku': return $10.CreateSkuRequest();
       case 'GetSku': return $10.GetSkuRequest();
       case 'UpdateSku': return $10.UpdateSkuRequest();
@@ -739,6 +741,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'OffShelfProductInBatches': return this.offShelfProductInBatches(ctx, request as $9.OffSelfProductsRequest);
       case 'DeleteProductInBatches': return this.deleteProductInBatches(ctx, request as $9.DeleteProductsRequest);
       case 'ChangeProductsState': return this.changeProductsState(ctx, request as $9.ChangeProductStateRequest);
+      case 'SaveProductImageInfo': return this.saveProductImageInfo(ctx, request as $9.SaveImageInfoRequest);
       case 'CreateSku': return this.createSku(ctx, request as $10.CreateSkuRequest);
       case 'GetSku': return this.getSku(ctx, request as $10.GetSkuRequest);
       case 'UpdateSku': return this.updateSku(ctx, request as $10.UpdateSkuRequest);

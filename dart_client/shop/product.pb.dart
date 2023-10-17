@@ -3212,6 +3212,168 @@ class UploadSkuImageResponse extends $pb.GeneratedMessage {
   void clearImageUrl() => clearField(2);
 }
 
+class SaveImageInfoRequest extends $pb.GeneratedMessage {
+  factory SaveImageInfoRequest({
+    $3.BaseRequest? baseRequest,
+    $fixnum.Int64? productId,
+    $core.String? productImageType,
+    $core.String? productImagePath,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (productId != null) {
+      $result.productId = productId;
+    }
+    if (productImageType != null) {
+      $result.productImageType = productImageType;
+    }
+    if (productImagePath != null) {
+      $result.productImagePath = productImagePath;
+    }
+    return $result;
+  }
+  SaveImageInfoRequest._() : super();
+  factory SaveImageInfoRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SaveImageInfoRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SaveImageInfoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$3.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $3.BaseRequest.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'productId')
+    ..aOS(3, _omitFieldNames ? '' : 'productImageType')
+    ..aOS(4, _omitFieldNames ? '' : 'productImagePath')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SaveImageInfoRequest clone() => SaveImageInfoRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SaveImageInfoRequest copyWith(void Function(SaveImageInfoRequest) updates) => super.copyWith((message) => updates(message as SaveImageInfoRequest)) as SaveImageInfoRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveImageInfoRequest create() => SaveImageInfoRequest._();
+  SaveImageInfoRequest createEmptyInstance() => create();
+  static $pb.PbList<SaveImageInfoRequest> createRepeated() => $pb.PbList<SaveImageInfoRequest>();
+  @$core.pragma('dart2js:noInline')
+  static SaveImageInfoRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SaveImageInfoRequest>(create);
+  static SaveImageInfoRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $3.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($3.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $3.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get productId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set productId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasProductId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearProductId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get productImageType => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set productImageType($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasProductImageType() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearProductImageType() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get productImagePath => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set productImagePath($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasProductImagePath() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearProductImagePath() => clearField(4);
+}
+
+class SaveImageInfoResponse extends $pb.GeneratedMessage {
+  factory SaveImageInfoResponse({
+    $3.BaseResponse? baseResp,
+    ImageInfo? imageInfo,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (imageInfo != null) {
+      $result.imageInfo = imageInfo;
+    }
+    return $result;
+  }
+  SaveImageInfoResponse._() : super();
+  factory SaveImageInfoResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SaveImageInfoResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SaveImageInfoResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$3.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $3.BaseResponse.create)
+    ..aOM<ImageInfo>(2, _omitFieldNames ? '' : 'imageInfo', protoName: 'imageInfo', subBuilder: ImageInfo.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SaveImageInfoResponse clone() => SaveImageInfoResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SaveImageInfoResponse copyWith(void Function(SaveImageInfoResponse) updates) => super.copyWith((message) => updates(message as SaveImageInfoResponse)) as SaveImageInfoResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveImageInfoResponse create() => SaveImageInfoResponse._();
+  SaveImageInfoResponse createEmptyInstance() => create();
+  static $pb.PbList<SaveImageInfoResponse> createRepeated() => $pb.PbList<SaveImageInfoResponse>();
+  @$core.pragma('dart2js:noInline')
+  static SaveImageInfoResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SaveImageInfoResponse>(create);
+  static SaveImageInfoResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $3.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($3.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $3.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  ImageInfo get imageInfo => $_getN(1);
+  @$pb.TagNumber(2)
+  set imageInfo(ImageInfo v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasImageInfo() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearImageInfo() => clearField(2);
+  @$pb.TagNumber(2)
+  ImageInfo ensureImageInfo() => $_ensure(1);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

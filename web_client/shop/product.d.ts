@@ -289,3 +289,17 @@ export interface UploadSkuImageResponse {
   base_resp?: base.BaseResponse;
   image_url?: string;
 }
+
+export interface SaveImageInfoRequest {
+  base_request?: base.BaseRequest;
+  product_id?: string;
+  /** 图片类型：image_main,image_detail,image_assistant,white_ground */
+  product_image_type?: string;
+  /** 图片OSS路径 */
+  product_image_path?: string;
+}
+
+export interface SaveImageInfoResponse {
+  base_resp?: base.BaseResponse;
+  imageInfo?: ImageInfo;
+}

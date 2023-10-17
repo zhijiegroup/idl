@@ -1190,6 +1190,66 @@ struct GloryApi_UploadSkuImageResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
+struct GloryApi_SaveImageInfoRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var productID: Int64 = 0
+
+  /// 图片类型：image_main,image_detail,image_assistant,white_ground
+  var productImageType: String = String()
+
+  /// 图片OSS路径
+  var productImagePath: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+struct GloryApi_SaveImageInfoResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var imageInfo: GloryApi_ImageInfo {
+    get {return _imageInfo ?? GloryApi_ImageInfo()}
+    set {_imageInfo = newValue}
+  }
+  /// Returns true if `imageInfo` has been explicitly set.
+  var hasImageInfo: Bool {return self._imageInfo != nil}
+  /// Clears the value of `imageInfo`. Subsequent reads from it will return its default value.
+  mutating func clearImageInfo() {self._imageInfo = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _imageInfo: GloryApi_ImageInfo? = nil
+}
+
 #if swift(>=5.5) && canImport(_Concurrency)
 extension GloryApi_State: @unchecked Sendable {}
 extension GloryApi_Product: @unchecked Sendable {}
@@ -1230,6 +1290,8 @@ extension GloryApi_DeleteImageRequest: @unchecked Sendable {}
 extension GloryApi_DeleteImageResponse: @unchecked Sendable {}
 extension GloryApi_UploadSkuImageRequest: @unchecked Sendable {}
 extension GloryApi_UploadSkuImageResponse: @unchecked Sendable {}
+extension GloryApi_SaveImageInfoRequest: @unchecked Sendable {}
+extension GloryApi_SaveImageInfoResponse: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -3234,6 +3296,102 @@ extension GloryApi_UploadSkuImageResponse: SwiftProtobuf.Message, SwiftProtobuf.
   static func ==(lhs: GloryApi_UploadSkuImageResponse, rhs: GloryApi_UploadSkuImageResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.imageURL != rhs.imageURL {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_SaveImageInfoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".SaveImageInfoRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    2: .standard(proto: "product_id"),
+    3: .standard(proto: "product_image_type"),
+    4: .standard(proto: "product_image_path"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.productID) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.productImageType) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.productImagePath) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if self.productID != 0 {
+      try visitor.visitSingularInt64Field(value: self.productID, fieldNumber: 2)
+    }
+    if !self.productImageType.isEmpty {
+      try visitor.visitSingularStringField(value: self.productImageType, fieldNumber: 3)
+    }
+    if !self.productImagePath.isEmpty {
+      try visitor.visitSingularStringField(value: self.productImagePath, fieldNumber: 4)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_SaveImageInfoRequest, rhs: GloryApi_SaveImageInfoRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.productID != rhs.productID {return false}
+    if lhs.productImageType != rhs.productImageType {return false}
+    if lhs.productImagePath != rhs.productImagePath {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_SaveImageInfoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".SaveImageInfoResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .same(proto: "imageInfo"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._imageInfo) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try { if let v = self._imageInfo {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_SaveImageInfoResponse, rhs: GloryApi_SaveImageInfoResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs._imageInfo != rhs._imageInfo {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

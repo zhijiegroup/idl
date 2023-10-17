@@ -204,6 +204,16 @@ public final class ProductOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_UploadSkuImageResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_SaveImageInfoRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_SaveImageInfoRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_SaveImageInfoResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_SaveImageInfoResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -346,11 +356,17 @@ public final class ProductOuterClass {
       " \001(\0132\021.base.BaseRequest\022\016\n\006sku_id\030\002 \001(\003\"" +
       "R\n\026UploadSkuImageResponse\022%\n\tbase_resp\030\001" +
       " \001(\0132\022.base.BaseResponse\022\021\n\timage_url\030\002 " +
-      "\001(\t*\200\001\n\005State\022\013\n\007DEFAULT\020\000\022\013\n\007created\020\001\022" +
-      "\014\n\010on_shelf\020\002\022\r\n\toff_shelf\020\003\022\020\n\014out_of_s" +
-      "tock\020\004\022\013\n\007deleted\020\005\022\023\n\017deleted_forever\020\006" +
-      "\022\014\n\010sold_out\020\007B#\n\037com.zhijiejiaoyu.glory" +
-      "_api.shopP\001b\006proto3"
+      "\001(\t\"\213\001\n\024SaveImageInfoRequest\022\'\n\014base_req" +
+      "uest\030\001 \001(\0132\021.base.BaseRequest\022\022\n\nproduct" +
+      "_id\030\002 \001(\003\022\032\n\022product_image_type\030\003 \001(\t\022\032\n" +
+      "\022product_image_path\030\004 \001(\t\"g\n\025SaveImageIn" +
+      "foResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
+      "eResponse\022\'\n\timageInfo\030\002 \001(\0132\024.glory_api" +
+      ".ImageInfo*\200\001\n\005State\022\013\n\007DEFAULT\020\000\022\013\n\007cre" +
+      "ated\020\001\022\014\n\010on_shelf\020\002\022\r\n\toff_shelf\020\003\022\020\n\014o" +
+      "ut_of_stock\020\004\022\013\n\007deleted\020\005\022\023\n\017deleted_fo" +
+      "rever\020\006\022\014\n\010sold_out\020\007B#\n\037com.zhijiejiaoy" +
+      "u.glory_api.shopP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -590,6 +606,18 @@ public final class ProductOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UploadSkuImageResponse_descriptor,
         new java.lang.String[] { "BaseResp", "ImageUrl", });
+    internal_static_glory_api_SaveImageInfoRequest_descriptor =
+      getDescriptor().getMessageTypes().get(38);
+    internal_static_glory_api_SaveImageInfoRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_SaveImageInfoRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "ProductId", "ProductImageType", "ProductImagePath", });
+    internal_static_glory_api_SaveImageInfoResponse_descriptor =
+      getDescriptor().getMessageTypes().get(39);
+    internal_static_glory_api_SaveImageInfoResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_SaveImageInfoResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "ImageInfo", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
     com.zhijiejiaoyu.glory_api.shop.SkuOuterClass.getDescriptor();
     com.zhijiejiaoyu.glory_api.shop.ShopOuterClass.getDescriptor();

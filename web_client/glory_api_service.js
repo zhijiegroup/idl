@@ -726,6 +726,14 @@ export class glory_api {
     );
   }
 
+  SaveProductImageInfo(request) {
+    const uri = `${this.uriPrefix}/api/shop/save_product_image_info`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   CreateSku(request) {
     const uri = `${this.uriPrefix}/api/shop/create_sku`;
     const body = JSONbigint.stringify(request);
