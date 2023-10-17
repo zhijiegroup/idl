@@ -53,9 +53,14 @@ message ShopQualification {
   string validity_period = 6;//有效期
 }
 
+message ShopBusiness {
+  int64 sale_total = 1;
+}
+
 message ShopWithAuthor {
   Shop shop = 1;
   base.AuthorInfo author_info = 2;
+  ShopBusiness shop_business = 3;
 }
 
 message CreateShopRequest {
