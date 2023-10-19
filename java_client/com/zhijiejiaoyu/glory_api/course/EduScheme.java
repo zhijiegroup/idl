@@ -58,75 +58,80 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 8: {
 
-            name = s;
+            eduSchemeId = input.readInt64();
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            major = s;
+            name = s;
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            goal = s;
+            major = s;
             break;
           }
-          case 33: {
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
 
-            totalHours = input.readDouble();
+            goal = s;
             break;
           }
           case 41: {
 
-            knowledgeHours = input.readDouble();
+            totalHours = input.readDouble();
             break;
           }
           case 49: {
 
-            skillHours = input.readDouble();
+            knowledgeHours = input.readDouble();
             break;
           }
-          case 58: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 57: {
 
-            createdAt = s;
+            skillHours = input.readDouble();
             break;
           }
           case 66: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            knowledgeStandard = s;
+            createdAt = s;
             break;
           }
           case 74: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            abilityStandard = s;
+            knowledgeStandard = s;
             break;
           }
           case 82: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            characterStandard = s;
+            abilityStandard = s;
             break;
           }
           case 90: {
             java.lang.String s = input.readStringRequireUtf8();
 
+            characterStandard = s;
+            break;
+          }
+          case 98: {
+            java.lang.String s = input.readStringRequireUtf8();
+
             courseGroupName = s;
             break;
           }
-          case 96: {
+          case 104: {
 
             courseGroupId = input.readInt64();
             break;
           }
-          case 106: {
+          case 114: {
             if (!((mutable_bitField0 & 0x00000001) != 0)) {
               courseModules = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.course.CourseModule>();
               mutable_bitField0_ |= 0x00000001;
@@ -170,10 +175,21 @@ private static final long serialVersionUID = 0L;
             com.zhijiejiaoyu.glory_api.course.EduScheme.class, com.zhijiejiaoyu.glory_api.course.EduScheme.Builder.class);
   }
 
-  public static final int NAME_FIELD_NUMBER = 1;
+  public static final int EDU_SCHEME_ID_FIELD_NUMBER = 1;
+  private long eduSchemeId ;
+  /**
+   * <code>int64 edu_scheme_id = 1;</code>
+   * @return The eduSchemeId.
+   */
+  @java.lang.Override
+  public long getEduSchemeId() {
+    return eduSchemeId ;
+  }
+
+  public static final int NAME_FIELD_NUMBER = 2;
   private volatile java.lang.Object name ;
   /**
-   * <code>string name = 1;</code>
+   * <code>string name = 2;</code>
    * @return The name.
    */
   @java.lang.Override
@@ -190,7 +206,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string name = 1;</code>
+   * <code>string name = 2;</code>
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -208,10 +224,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int MAJOR_FIELD_NUMBER = 2;
+  public static final int MAJOR_FIELD_NUMBER = 3;
   private volatile java.lang.Object major ;
   /**
-   * <code>string major = 2;</code>
+   * <code>string major = 3;</code>
    * @return The major.
    */
   @java.lang.Override
@@ -228,7 +244,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string major = 2;</code>
+   * <code>string major = 3;</code>
    * @return The bytes for major.
    */
   @java.lang.Override
@@ -246,10 +262,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int GOAL_FIELD_NUMBER = 3;
+  public static final int GOAL_FIELD_NUMBER = 4;
   private volatile java.lang.Object goal ;
   /**
-   * <code>string goal = 3;</code>
+   * <code>string goal = 4;</code>
    * @return The goal.
    */
   @java.lang.Override
@@ -266,7 +282,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string goal = 3;</code>
+   * <code>string goal = 4;</code>
    * @return The bytes for goal.
    */
   @java.lang.Override
@@ -284,10 +300,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TOTAL_HOURS_FIELD_NUMBER = 4;
+  public static final int TOTAL_HOURS_FIELD_NUMBER = 5;
   private double totalHours ;
   /**
-   * <code>double total_hours = 4;</code>
+   * <code>double total_hours = 5;</code>
    * @return The totalHours.
    */
   @java.lang.Override
@@ -295,10 +311,10 @@ private static final long serialVersionUID = 0L;
     return totalHours ;
   }
 
-  public static final int KNOWLEDGE_HOURS_FIELD_NUMBER = 5;
+  public static final int KNOWLEDGE_HOURS_FIELD_NUMBER = 6;
   private double knowledgeHours ;
   /**
-   * <code>double knowledge_hours = 5;</code>
+   * <code>double knowledge_hours = 6;</code>
    * @return The knowledgeHours.
    */
   @java.lang.Override
@@ -306,10 +322,10 @@ private static final long serialVersionUID = 0L;
     return knowledgeHours ;
   }
 
-  public static final int SKILL_HOURS_FIELD_NUMBER = 6;
+  public static final int SKILL_HOURS_FIELD_NUMBER = 7;
   private double skillHours ;
   /**
-   * <code>double skill_hours = 6;</code>
+   * <code>double skill_hours = 7;</code>
    * @return The skillHours.
    */
   @java.lang.Override
@@ -317,10 +333,10 @@ private static final long serialVersionUID = 0L;
     return skillHours ;
   }
 
-  public static final int CREATED_AT_FIELD_NUMBER = 7;
+  public static final int CREATED_AT_FIELD_NUMBER = 8;
   private volatile java.lang.Object createdAt ;
   /**
-   * <code>string created_at = 7;</code>
+   * <code>string created_at = 8;</code>
    * @return The createdAt.
    */
   @java.lang.Override
@@ -337,7 +353,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string created_at = 7;</code>
+   * <code>string created_at = 8;</code>
    * @return The bytes for createdAt.
    */
   @java.lang.Override
@@ -355,10 +371,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int KNOWLEDGE_STANDARD_FIELD_NUMBER = 8;
+  public static final int KNOWLEDGE_STANDARD_FIELD_NUMBER = 9;
   private volatile java.lang.Object knowledgeStandard ;
   /**
-   * <code>string knowledge_standard = 8;</code>
+   * <code>string knowledge_standard = 9;</code>
    * @return The knowledgeStandard.
    */
   @java.lang.Override
@@ -375,7 +391,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string knowledge_standard = 8;</code>
+   * <code>string knowledge_standard = 9;</code>
    * @return The bytes for knowledgeStandard.
    */
   @java.lang.Override
@@ -393,10 +409,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int ABILITY_STANDARD_FIELD_NUMBER = 9;
+  public static final int ABILITY_STANDARD_FIELD_NUMBER = 10;
   private volatile java.lang.Object abilityStandard ;
   /**
-   * <code>string ability_standard = 9;</code>
+   * <code>string ability_standard = 10;</code>
    * @return The abilityStandard.
    */
   @java.lang.Override
@@ -413,7 +429,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string ability_standard = 9;</code>
+   * <code>string ability_standard = 10;</code>
    * @return The bytes for abilityStandard.
    */
   @java.lang.Override
@@ -431,10 +447,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int CHARACTER_STANDARD_FIELD_NUMBER = 10;
+  public static final int CHARACTER_STANDARD_FIELD_NUMBER = 11;
   private volatile java.lang.Object characterStandard ;
   /**
-   * <code>string character_standard = 10;</code>
+   * <code>string character_standard = 11;</code>
    * @return The characterStandard.
    */
   @java.lang.Override
@@ -451,7 +467,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string character_standard = 10;</code>
+   * <code>string character_standard = 11;</code>
    * @return The bytes for characterStandard.
    */
   @java.lang.Override
@@ -469,14 +485,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int COURSE_GROUP_NAME_FIELD_NUMBER = 11;
+  public static final int COURSE_GROUP_NAME_FIELD_NUMBER = 12;
   private volatile java.lang.Object courseGroupName ;
   /**
    * <pre>
    * 能力方向名称
    * </pre>
    *
-   * <code>string course_group_name = 11;</code>
+   * <code>string course_group_name = 12;</code>
    * @return The courseGroupName.
    */
   @java.lang.Override
@@ -497,7 +513,7 @@ private static final long serialVersionUID = 0L;
    * 能力方向名称
    * </pre>
    *
-   * <code>string course_group_name = 11;</code>
+   * <code>string course_group_name = 12;</code>
    * @return The bytes for courseGroupName.
    */
   @java.lang.Override
@@ -515,14 +531,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int COURSE_GROUP_ID_FIELD_NUMBER = 12;
+  public static final int COURSE_GROUP_ID_FIELD_NUMBER = 13;
   private long courseGroupId ;
   /**
    * <pre>
    * 能力方向ID
    * </pre>
    *
-   * <code>int64 course_group_id = 12;</code>
+   * <code>int64 course_group_id = 13;</code>
    * @return The courseGroupId.
    */
   @java.lang.Override
@@ -530,14 +546,14 @@ private static final long serialVersionUID = 0L;
     return courseGroupId ;
   }
 
-  public static final int COURSE_MODULES_FIELD_NUMBER = 13;
+  public static final int COURSE_MODULES_FIELD_NUMBER = 14;
   private java.util.List<com.zhijiejiaoyu.glory_api.course.CourseModule> courseModules ;
   /**
    * <pre>
    * 能力指标
    * </pre>
    *
-   * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
+   * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseModule> getCourseModulesList() {
@@ -548,7 +564,7 @@ private static final long serialVersionUID = 0L;
    * 能力指标
    * </pre>
    *
-   * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
+   * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder> 
@@ -560,7 +576,7 @@ private static final long serialVersionUID = 0L;
    * 能力指标
    * </pre>
    *
-   * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
+   * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
    */
   @java.lang.Override
   public int getCourseModulesCount() {
@@ -571,7 +587,7 @@ private static final long serialVersionUID = 0L;
    * 能力指标
    * </pre>
    *
-   * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
+   * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.course.CourseModule getCourseModules(int index) {
@@ -582,7 +598,7 @@ private static final long serialVersionUID = 0L;
    * 能力指标
    * </pre>
    *
-   * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
+   * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder getCourseModulesOrBuilder(
@@ -604,44 +620,47 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (eduSchemeId != 0L) {
+      output.writeInt64(1, eduSchemeId );
+    }
     if (!getNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name );
     }
     if (!getMajorBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, major );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, major );
     }
     if (!getGoalBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, goal );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, goal );
     }
     if (totalHours != 0D) {
-      output.writeDouble(4, totalHours );
+      output.writeDouble(5, totalHours );
     }
     if (knowledgeHours != 0D) {
-      output.writeDouble(5, knowledgeHours );
+      output.writeDouble(6, knowledgeHours );
     }
     if (skillHours != 0D) {
-      output.writeDouble(6, skillHours );
+      output.writeDouble(7, skillHours );
     }
     if (!getCreatedAtBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, createdAt );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, createdAt );
     }
     if (!getKnowledgeStandardBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, knowledgeStandard );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, knowledgeStandard );
     }
     if (!getAbilityStandardBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, abilityStandard );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, abilityStandard );
     }
     if (!getCharacterStandardBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, characterStandard );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, characterStandard );
     }
     if (!getCourseGroupNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, courseGroupName );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, courseGroupName );
     }
     if (courseGroupId != 0L) {
-      output.writeInt64(12, courseGroupId );
+      output.writeInt64(13, courseGroupId );
     }
     for (int i = 0; i < courseModules .size(); i++) {
-      output.writeMessage(13, courseModules .get(i));
+      output.writeMessage(14, courseModules .get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -652,49 +671,53 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (eduSchemeId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(1, eduSchemeId );
+    }
     if (!getNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name );
     }
     if (!getMajorBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, major );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, major );
     }
     if (!getGoalBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, goal );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, goal );
     }
     if (totalHours != 0D) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(4, totalHours );
+        .computeDoubleSize(5, totalHours );
     }
     if (knowledgeHours != 0D) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(5, knowledgeHours );
+        .computeDoubleSize(6, knowledgeHours );
     }
     if (skillHours != 0D) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(6, skillHours );
+        .computeDoubleSize(7, skillHours );
     }
     if (!getCreatedAtBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, createdAt );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, createdAt );
     }
     if (!getKnowledgeStandardBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, knowledgeStandard );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, knowledgeStandard );
     }
     if (!getAbilityStandardBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, abilityStandard );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, abilityStandard );
     }
     if (!getCharacterStandardBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, characterStandard );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, characterStandard );
     }
     if (!getCourseGroupNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, courseGroupName );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, courseGroupName );
     }
     if (courseGroupId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(12, courseGroupId );
+        .computeInt64Size(13, courseGroupId );
     }
     for (int i = 0; i < courseModules .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(13, courseModules .get(i));
+        .computeMessageSize(14, courseModules .get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -711,6 +734,8 @@ private static final long serialVersionUID = 0L;
     }
     com.zhijiejiaoyu.glory_api.course.EduScheme other = (com.zhijiejiaoyu.glory_api.course.EduScheme) obj;
 
+    if (getEduSchemeId()
+        != other.getEduSchemeId()) return false;
     if (!getName()
         .equals(other.getName())) return false;
     if (!getMajor()
@@ -751,6 +776,9 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + EDU_SCHEME_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getEduSchemeId());
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + MAJOR_FIELD_NUMBER;
@@ -917,6 +945,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      eduSchemeId = 0L;
+
       name = "";
 
       major = "";
@@ -974,6 +1004,7 @@ private static final long serialVersionUID = 0L;
     public com.zhijiejiaoyu.glory_api.course.EduScheme buildPartial() {
       com.zhijiejiaoyu.glory_api.course.EduScheme result = new com.zhijiejiaoyu.glory_api.course.EduScheme(this);
       int from_bitField0 = bitField0 ;
+      result.eduSchemeId = eduSchemeId ;
       result.name = name ;
       result.major = major ;
       result.goal = goal ;
@@ -1043,6 +1074,9 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.zhijiejiaoyu.glory_api.course.EduScheme other) {
       if (other == com.zhijiejiaoyu.glory_api.course.EduScheme.getDefaultInstance()) return this;
+      if (other.getEduSchemeId() != 0L) {
+        setEduSchemeId(other.getEduSchemeId());
+      }
       if (!other.getName().isEmpty()) {
         name = other.name ;
         onChanged();
@@ -1143,9 +1177,40 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0 ;
 
+    private long eduSchemeId ;
+    /**
+     * <code>int64 edu_scheme_id = 1;</code>
+     * @return The eduSchemeId.
+     */
+    @java.lang.Override
+    public long getEduSchemeId() {
+      return eduSchemeId ;
+    }
+    /**
+     * <code>int64 edu_scheme_id = 1;</code>
+     * @param value The eduSchemeId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEduSchemeId(long value) {
+      
+      eduSchemeId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 edu_scheme_id = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEduSchemeId() {
+      
+      eduSchemeId = 0L;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object name = "";
     /**
-     * <code>string name = 1;</code>
+     * <code>string name = 2;</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -1161,7 +1226,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string name = 1;</code>
+     * <code>string name = 2;</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -1178,7 +1243,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string name = 1;</code>
+     * <code>string name = 2;</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -1193,7 +1258,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string name = 1;</code>
+     * <code>string name = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
@@ -1203,7 +1268,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string name = 1;</code>
+     * <code>string name = 2;</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -1221,7 +1286,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object major = "";
     /**
-     * <code>string major = 2;</code>
+     * <code>string major = 3;</code>
      * @return The major.
      */
     public java.lang.String getMajor() {
@@ -1237,7 +1302,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string major = 2;</code>
+     * <code>string major = 3;</code>
      * @return The bytes for major.
      */
     public com.google.protobuf.ByteString
@@ -1254,7 +1319,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string major = 2;</code>
+     * <code>string major = 3;</code>
      * @param value The major to set.
      * @return This builder for chaining.
      */
@@ -1269,7 +1334,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string major = 2;</code>
+     * <code>string major = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearMajor() {
@@ -1279,7 +1344,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string major = 2;</code>
+     * <code>string major = 3;</code>
      * @param value The bytes for major to set.
      * @return This builder for chaining.
      */
@@ -1297,7 +1362,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object goal = "";
     /**
-     * <code>string goal = 3;</code>
+     * <code>string goal = 4;</code>
      * @return The goal.
      */
     public java.lang.String getGoal() {
@@ -1313,7 +1378,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string goal = 3;</code>
+     * <code>string goal = 4;</code>
      * @return The bytes for goal.
      */
     public com.google.protobuf.ByteString
@@ -1330,7 +1395,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string goal = 3;</code>
+     * <code>string goal = 4;</code>
      * @param value The goal to set.
      * @return This builder for chaining.
      */
@@ -1345,7 +1410,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string goal = 3;</code>
+     * <code>string goal = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearGoal() {
@@ -1355,7 +1420,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string goal = 3;</code>
+     * <code>string goal = 4;</code>
      * @param value The bytes for goal to set.
      * @return This builder for chaining.
      */
@@ -1373,7 +1438,7 @@ private static final long serialVersionUID = 0L;
 
     private double totalHours ;
     /**
-     * <code>double total_hours = 4;</code>
+     * <code>double total_hours = 5;</code>
      * @return The totalHours.
      */
     @java.lang.Override
@@ -1381,7 +1446,7 @@ private static final long serialVersionUID = 0L;
       return totalHours ;
     }
     /**
-     * <code>double total_hours = 4;</code>
+     * <code>double total_hours = 5;</code>
      * @param value The totalHours to set.
      * @return This builder for chaining.
      */
@@ -1392,7 +1457,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>double total_hours = 4;</code>
+     * <code>double total_hours = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearTotalHours() {
@@ -1404,7 +1469,7 @@ private static final long serialVersionUID = 0L;
 
     private double knowledgeHours ;
     /**
-     * <code>double knowledge_hours = 5;</code>
+     * <code>double knowledge_hours = 6;</code>
      * @return The knowledgeHours.
      */
     @java.lang.Override
@@ -1412,7 +1477,7 @@ private static final long serialVersionUID = 0L;
       return knowledgeHours ;
     }
     /**
-     * <code>double knowledge_hours = 5;</code>
+     * <code>double knowledge_hours = 6;</code>
      * @param value The knowledgeHours to set.
      * @return This builder for chaining.
      */
@@ -1423,7 +1488,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>double knowledge_hours = 5;</code>
+     * <code>double knowledge_hours = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearKnowledgeHours() {
@@ -1435,7 +1500,7 @@ private static final long serialVersionUID = 0L;
 
     private double skillHours ;
     /**
-     * <code>double skill_hours = 6;</code>
+     * <code>double skill_hours = 7;</code>
      * @return The skillHours.
      */
     @java.lang.Override
@@ -1443,7 +1508,7 @@ private static final long serialVersionUID = 0L;
       return skillHours ;
     }
     /**
-     * <code>double skill_hours = 6;</code>
+     * <code>double skill_hours = 7;</code>
      * @param value The skillHours to set.
      * @return This builder for chaining.
      */
@@ -1454,7 +1519,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>double skill_hours = 6;</code>
+     * <code>double skill_hours = 7;</code>
      * @return This builder for chaining.
      */
     public Builder clearSkillHours() {
@@ -1466,7 +1531,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object createdAt = "";
     /**
-     * <code>string created_at = 7;</code>
+     * <code>string created_at = 8;</code>
      * @return The createdAt.
      */
     public java.lang.String getCreatedAt() {
@@ -1482,7 +1547,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string created_at = 7;</code>
+     * <code>string created_at = 8;</code>
      * @return The bytes for createdAt.
      */
     public com.google.protobuf.ByteString
@@ -1499,7 +1564,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string created_at = 7;</code>
+     * <code>string created_at = 8;</code>
      * @param value The createdAt to set.
      * @return This builder for chaining.
      */
@@ -1514,7 +1579,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string created_at = 7;</code>
+     * <code>string created_at = 8;</code>
      * @return This builder for chaining.
      */
     public Builder clearCreatedAt() {
@@ -1524,7 +1589,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string created_at = 7;</code>
+     * <code>string created_at = 8;</code>
      * @param value The bytes for createdAt to set.
      * @return This builder for chaining.
      */
@@ -1542,7 +1607,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object knowledgeStandard = "";
     /**
-     * <code>string knowledge_standard = 8;</code>
+     * <code>string knowledge_standard = 9;</code>
      * @return The knowledgeStandard.
      */
     public java.lang.String getKnowledgeStandard() {
@@ -1558,7 +1623,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string knowledge_standard = 8;</code>
+     * <code>string knowledge_standard = 9;</code>
      * @return The bytes for knowledgeStandard.
      */
     public com.google.protobuf.ByteString
@@ -1575,7 +1640,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string knowledge_standard = 8;</code>
+     * <code>string knowledge_standard = 9;</code>
      * @param value The knowledgeStandard to set.
      * @return This builder for chaining.
      */
@@ -1590,7 +1655,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string knowledge_standard = 8;</code>
+     * <code>string knowledge_standard = 9;</code>
      * @return This builder for chaining.
      */
     public Builder clearKnowledgeStandard() {
@@ -1600,7 +1665,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string knowledge_standard = 8;</code>
+     * <code>string knowledge_standard = 9;</code>
      * @param value The bytes for knowledgeStandard to set.
      * @return This builder for chaining.
      */
@@ -1618,7 +1683,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object abilityStandard = "";
     /**
-     * <code>string ability_standard = 9;</code>
+     * <code>string ability_standard = 10;</code>
      * @return The abilityStandard.
      */
     public java.lang.String getAbilityStandard() {
@@ -1634,7 +1699,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string ability_standard = 9;</code>
+     * <code>string ability_standard = 10;</code>
      * @return The bytes for abilityStandard.
      */
     public com.google.protobuf.ByteString
@@ -1651,7 +1716,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string ability_standard = 9;</code>
+     * <code>string ability_standard = 10;</code>
      * @param value The abilityStandard to set.
      * @return This builder for chaining.
      */
@@ -1666,7 +1731,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string ability_standard = 9;</code>
+     * <code>string ability_standard = 10;</code>
      * @return This builder for chaining.
      */
     public Builder clearAbilityStandard() {
@@ -1676,7 +1741,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string ability_standard = 9;</code>
+     * <code>string ability_standard = 10;</code>
      * @param value The bytes for abilityStandard to set.
      * @return This builder for chaining.
      */
@@ -1694,7 +1759,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object characterStandard = "";
     /**
-     * <code>string character_standard = 10;</code>
+     * <code>string character_standard = 11;</code>
      * @return The characterStandard.
      */
     public java.lang.String getCharacterStandard() {
@@ -1710,7 +1775,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string character_standard = 10;</code>
+     * <code>string character_standard = 11;</code>
      * @return The bytes for characterStandard.
      */
     public com.google.protobuf.ByteString
@@ -1727,7 +1792,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string character_standard = 10;</code>
+     * <code>string character_standard = 11;</code>
      * @param value The characterStandard to set.
      * @return This builder for chaining.
      */
@@ -1742,7 +1807,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string character_standard = 10;</code>
+     * <code>string character_standard = 11;</code>
      * @return This builder for chaining.
      */
     public Builder clearCharacterStandard() {
@@ -1752,7 +1817,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string character_standard = 10;</code>
+     * <code>string character_standard = 11;</code>
      * @param value The bytes for characterStandard to set.
      * @return This builder for chaining.
      */
@@ -1774,7 +1839,7 @@ private static final long serialVersionUID = 0L;
      * 能力方向名称
      * </pre>
      *
-     * <code>string course_group_name = 11;</code>
+     * <code>string course_group_name = 12;</code>
      * @return The courseGroupName.
      */
     public java.lang.String getCourseGroupName() {
@@ -1794,7 +1859,7 @@ private static final long serialVersionUID = 0L;
      * 能力方向名称
      * </pre>
      *
-     * <code>string course_group_name = 11;</code>
+     * <code>string course_group_name = 12;</code>
      * @return The bytes for courseGroupName.
      */
     public com.google.protobuf.ByteString
@@ -1815,7 +1880,7 @@ private static final long serialVersionUID = 0L;
      * 能力方向名称
      * </pre>
      *
-     * <code>string course_group_name = 11;</code>
+     * <code>string course_group_name = 12;</code>
      * @param value The courseGroupName to set.
      * @return This builder for chaining.
      */
@@ -1834,7 +1899,7 @@ private static final long serialVersionUID = 0L;
      * 能力方向名称
      * </pre>
      *
-     * <code>string course_group_name = 11;</code>
+     * <code>string course_group_name = 12;</code>
      * @return This builder for chaining.
      */
     public Builder clearCourseGroupName() {
@@ -1848,7 +1913,7 @@ private static final long serialVersionUID = 0L;
      * 能力方向名称
      * </pre>
      *
-     * <code>string course_group_name = 11;</code>
+     * <code>string course_group_name = 12;</code>
      * @param value The bytes for courseGroupName to set.
      * @return This builder for chaining.
      */
@@ -1870,7 +1935,7 @@ private static final long serialVersionUID = 0L;
      * 能力方向ID
      * </pre>
      *
-     * <code>int64 course_group_id = 12;</code>
+     * <code>int64 course_group_id = 13;</code>
      * @return The courseGroupId.
      */
     @java.lang.Override
@@ -1882,7 +1947,7 @@ private static final long serialVersionUID = 0L;
      * 能力方向ID
      * </pre>
      *
-     * <code>int64 course_group_id = 12;</code>
+     * <code>int64 course_group_id = 13;</code>
      * @param value The courseGroupId to set.
      * @return This builder for chaining.
      */
@@ -1897,7 +1962,7 @@ private static final long serialVersionUID = 0L;
      * 能力方向ID
      * </pre>
      *
-     * <code>int64 course_group_id = 12;</code>
+     * <code>int64 course_group_id = 13;</code>
      * @return This builder for chaining.
      */
     public Builder clearCourseGroupId() {
@@ -1924,7 +1989,7 @@ private static final long serialVersionUID = 0L;
      * 能力指标
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
+     * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseModule> getCourseModulesList() {
       if (courseModulesBuilder == null) {
@@ -1938,7 +2003,7 @@ private static final long serialVersionUID = 0L;
      * 能力指标
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
+     * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
      */
     public int getCourseModulesCount() {
       if (courseModulesBuilder == null) {
@@ -1952,7 +2017,7 @@ private static final long serialVersionUID = 0L;
      * 能力指标
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
+     * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
      */
     public com.zhijiejiaoyu.glory_api.course.CourseModule getCourseModules(int index) {
       if (courseModulesBuilder == null) {
@@ -1966,7 +2031,7 @@ private static final long serialVersionUID = 0L;
      * 能力指标
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
+     * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
      */
     public Builder setCourseModules(
         int index, com.zhijiejiaoyu.glory_api.course.CourseModule value) {
@@ -1987,7 +2052,7 @@ private static final long serialVersionUID = 0L;
      * 能力指标
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
+     * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
      */
     public Builder setCourseModules(
         int index, com.zhijiejiaoyu.glory_api.course.CourseModule.Builder builderForValue) {
@@ -2005,7 +2070,7 @@ private static final long serialVersionUID = 0L;
      * 能力指标
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
+     * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
      */
     public Builder addCourseModules(com.zhijiejiaoyu.glory_api.course.CourseModule value) {
       if (courseModulesBuilder == null) {
@@ -2025,7 +2090,7 @@ private static final long serialVersionUID = 0L;
      * 能力指标
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
+     * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
      */
     public Builder addCourseModules(
         int index, com.zhijiejiaoyu.glory_api.course.CourseModule value) {
@@ -2046,7 +2111,7 @@ private static final long serialVersionUID = 0L;
      * 能力指标
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
+     * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
      */
     public Builder addCourseModules(
         com.zhijiejiaoyu.glory_api.course.CourseModule.Builder builderForValue) {
@@ -2064,7 +2129,7 @@ private static final long serialVersionUID = 0L;
      * 能力指标
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
+     * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
      */
     public Builder addCourseModules(
         int index, com.zhijiejiaoyu.glory_api.course.CourseModule.Builder builderForValue) {
@@ -2082,7 +2147,7 @@ private static final long serialVersionUID = 0L;
      * 能力指标
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
+     * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
      */
     public Builder addAllCourseModules(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.course.CourseModule> values) {
@@ -2101,7 +2166,7 @@ private static final long serialVersionUID = 0L;
      * 能力指标
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
+     * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
      */
     public Builder clearCourseModules() {
       if (courseModulesBuilder == null) {
@@ -2118,7 +2183,7 @@ private static final long serialVersionUID = 0L;
      * 能力指标
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
+     * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
      */
     public Builder removeCourseModules(int index) {
       if (courseModulesBuilder == null) {
@@ -2135,7 +2200,7 @@ private static final long serialVersionUID = 0L;
      * 能力指标
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
+     * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
      */
     public com.zhijiejiaoyu.glory_api.course.CourseModule.Builder getCourseModulesBuilder(
         int index) {
@@ -2146,7 +2211,7 @@ private static final long serialVersionUID = 0L;
      * 能力指标
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
+     * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
      */
     public com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder getCourseModulesOrBuilder(
         int index) {
@@ -2160,7 +2225,7 @@ private static final long serialVersionUID = 0L;
      * 能力指标
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
+     * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder> 
          getCourseModulesOrBuilderList() {
@@ -2175,7 +2240,7 @@ private static final long serialVersionUID = 0L;
      * 能力指标
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
+     * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
      */
     public com.zhijiejiaoyu.glory_api.course.CourseModule.Builder addCourseModulesBuilder() {
       return getCourseModulesFieldBuilder().addBuilder(
@@ -2186,7 +2251,7 @@ private static final long serialVersionUID = 0L;
      * 能力指标
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
+     * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
      */
     public com.zhijiejiaoyu.glory_api.course.CourseModule.Builder addCourseModulesBuilder(
         int index) {
@@ -2198,7 +2263,7 @@ private static final long serialVersionUID = 0L;
      * 能力指标
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
+     * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseModule.Builder> 
          getCourseModulesBuilderList() {

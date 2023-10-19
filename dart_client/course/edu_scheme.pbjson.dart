@@ -17,33 +17,35 @@ import 'dart:typed_data' as $typed_data;
 const EduScheme$json = {
   '1': 'EduScheme',
   '2': [
-    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'major', '3': 2, '4': 1, '5': 9, '10': 'major'},
-    {'1': 'goal', '3': 3, '4': 1, '5': 9, '10': 'goal'},
-    {'1': 'total_hours', '3': 4, '4': 1, '5': 1, '10': 'totalHours'},
-    {'1': 'knowledge_hours', '3': 5, '4': 1, '5': 1, '10': 'knowledgeHours'},
-    {'1': 'skill_hours', '3': 6, '4': 1, '5': 1, '10': 'skillHours'},
-    {'1': 'created_at', '3': 7, '4': 1, '5': 9, '10': 'createdAt'},
-    {'1': 'knowledge_standard', '3': 8, '4': 1, '5': 9, '10': 'knowledgeStandard'},
-    {'1': 'ability_standard', '3': 9, '4': 1, '5': 9, '10': 'abilityStandard'},
-    {'1': 'character_standard', '3': 10, '4': 1, '5': 9, '10': 'characterStandard'},
-    {'1': 'course_group_name', '3': 11, '4': 1, '5': 9, '10': 'courseGroupName'},
-    {'1': 'course_group_id', '3': 12, '4': 1, '5': 3, '10': 'courseGroupId'},
-    {'1': 'course_modules', '3': 13, '4': 3, '5': 11, '6': '.glory_api.CourseModule', '10': 'courseModules'},
+    {'1': 'edu_scheme_id', '3': 1, '4': 1, '5': 3, '10': 'eduSchemeId'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'major', '3': 3, '4': 1, '5': 9, '10': 'major'},
+    {'1': 'goal', '3': 4, '4': 1, '5': 9, '10': 'goal'},
+    {'1': 'total_hours', '3': 5, '4': 1, '5': 1, '10': 'totalHours'},
+    {'1': 'knowledge_hours', '3': 6, '4': 1, '5': 1, '10': 'knowledgeHours'},
+    {'1': 'skill_hours', '3': 7, '4': 1, '5': 1, '10': 'skillHours'},
+    {'1': 'created_at', '3': 8, '4': 1, '5': 9, '10': 'createdAt'},
+    {'1': 'knowledge_standard', '3': 9, '4': 1, '5': 9, '10': 'knowledgeStandard'},
+    {'1': 'ability_standard', '3': 10, '4': 1, '5': 9, '10': 'abilityStandard'},
+    {'1': 'character_standard', '3': 11, '4': 1, '5': 9, '10': 'characterStandard'},
+    {'1': 'course_group_name', '3': 12, '4': 1, '5': 9, '10': 'courseGroupName'},
+    {'1': 'course_group_id', '3': 13, '4': 1, '5': 3, '10': 'courseGroupId'},
+    {'1': 'course_modules', '3': 14, '4': 3, '5': 11, '6': '.glory_api.CourseModule', '10': 'courseModules'},
   ],
 };
 
 /// Descriptor for `EduScheme`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List eduSchemeDescriptor = $convert.base64Decode(
-    'CglFZHVTY2hlbWUSEgoEbmFtZRgBIAEoCVIEbmFtZRIUCgVtYWpvchgCIAEoCVIFbWFqb3ISEg'
-    'oEZ29hbBgDIAEoCVIEZ29hbBIfCgt0b3RhbF9ob3VycxgEIAEoAVIKdG90YWxIb3VycxInCg9r'
-    'bm93bGVkZ2VfaG91cnMYBSABKAFSDmtub3dsZWRnZUhvdXJzEh8KC3NraWxsX2hvdXJzGAYgAS'
-    'gBUgpza2lsbEhvdXJzEh0KCmNyZWF0ZWRfYXQYByABKAlSCWNyZWF0ZWRBdBItChJrbm93bGVk'
-    'Z2Vfc3RhbmRhcmQYCCABKAlSEWtub3dsZWRnZVN0YW5kYXJkEikKEGFiaWxpdHlfc3RhbmRhcm'
-    'QYCSABKAlSD2FiaWxpdHlTdGFuZGFyZBItChJjaGFyYWN0ZXJfc3RhbmRhcmQYCiABKAlSEWNo'
-    'YXJhY3RlclN0YW5kYXJkEioKEWNvdXJzZV9ncm91cF9uYW1lGAsgASgJUg9jb3Vyc2VHcm91cE'
-    '5hbWUSJgoPY291cnNlX2dyb3VwX2lkGAwgASgDUg1jb3Vyc2VHcm91cElkEj4KDmNvdXJzZV9t'
-    'b2R1bGVzGA0gAygLMhcuZ2xvcnlfYXBpLkNvdXJzZU1vZHVsZVINY291cnNlTW9kdWxlcw==');
+    'CglFZHVTY2hlbWUSIgoNZWR1X3NjaGVtZV9pZBgBIAEoA1ILZWR1U2NoZW1lSWQSEgoEbmFtZR'
+    'gCIAEoCVIEbmFtZRIUCgVtYWpvchgDIAEoCVIFbWFqb3ISEgoEZ29hbBgEIAEoCVIEZ29hbBIf'
+    'Cgt0b3RhbF9ob3VycxgFIAEoAVIKdG90YWxIb3VycxInCg9rbm93bGVkZ2VfaG91cnMYBiABKA'
+    'FSDmtub3dsZWRnZUhvdXJzEh8KC3NraWxsX2hvdXJzGAcgASgBUgpza2lsbEhvdXJzEh0KCmNy'
+    'ZWF0ZWRfYXQYCCABKAlSCWNyZWF0ZWRBdBItChJrbm93bGVkZ2Vfc3RhbmRhcmQYCSABKAlSEW'
+    'tub3dsZWRnZVN0YW5kYXJkEikKEGFiaWxpdHlfc3RhbmRhcmQYCiABKAlSD2FiaWxpdHlTdGFu'
+    'ZGFyZBItChJjaGFyYWN0ZXJfc3RhbmRhcmQYCyABKAlSEWNoYXJhY3RlclN0YW5kYXJkEioKEW'
+    'NvdXJzZV9ncm91cF9uYW1lGAwgASgJUg9jb3Vyc2VHcm91cE5hbWUSJgoPY291cnNlX2dyb3Vw'
+    'X2lkGA0gASgDUg1jb3Vyc2VHcm91cElkEj4KDmNvdXJzZV9tb2R1bGVzGA4gAygLMhcuZ2xvcn'
+    'lfYXBpLkNvdXJzZU1vZHVsZVINY291cnNlTW9kdWxlcw==');
 
 @$core.Deprecated('Use createEduSchemeRequestDescriptor instead')
 const CreateEduSchemeRequest$json = {

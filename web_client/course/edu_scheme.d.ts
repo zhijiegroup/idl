@@ -7,6 +7,7 @@ import * as modules from "./module";
 export { base, modules };
 
 export interface EduScheme {
+  edu_scheme_id?: string;
   name?: string;
   major?: string;
   goal?: string;

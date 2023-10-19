@@ -25,6 +25,8 @@ struct GloryApi_EduScheme {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  var eduSchemeID: Int64 = 0
+
   var name: String = String()
 
   var major: String = String()
@@ -422,19 +424,20 @@ fileprivate let _protobuf_package = "glory_api"
 extension GloryApi_EduScheme: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".EduScheme"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "name"),
-    2: .same(proto: "major"),
-    3: .same(proto: "goal"),
-    4: .standard(proto: "total_hours"),
-    5: .standard(proto: "knowledge_hours"),
-    6: .standard(proto: "skill_hours"),
-    7: .standard(proto: "created_at"),
-    8: .standard(proto: "knowledge_standard"),
-    9: .standard(proto: "ability_standard"),
-    10: .standard(proto: "character_standard"),
-    11: .standard(proto: "course_group_name"),
-    12: .standard(proto: "course_group_id"),
-    13: .standard(proto: "course_modules"),
+    1: .standard(proto: "edu_scheme_id"),
+    2: .same(proto: "name"),
+    3: .same(proto: "major"),
+    4: .same(proto: "goal"),
+    5: .standard(proto: "total_hours"),
+    6: .standard(proto: "knowledge_hours"),
+    7: .standard(proto: "skill_hours"),
+    8: .standard(proto: "created_at"),
+    9: .standard(proto: "knowledge_standard"),
+    10: .standard(proto: "ability_standard"),
+    11: .standard(proto: "character_standard"),
+    12: .standard(proto: "course_group_name"),
+    13: .standard(proto: "course_group_id"),
+    14: .standard(proto: "course_modules"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -443,68 +446,73 @@ extension GloryApi_EduScheme: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
       // allocates stack space for every case branch when no optimizations are
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try { try decoder.decodeSingularStringField(value: &self.name) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.major) }()
-      case 3: try { try decoder.decodeSingularStringField(value: &self.goal) }()
-      case 4: try { try decoder.decodeSingularDoubleField(value: &self.totalHours) }()
-      case 5: try { try decoder.decodeSingularDoubleField(value: &self.knowledgeHours) }()
-      case 6: try { try decoder.decodeSingularDoubleField(value: &self.skillHours) }()
-      case 7: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
-      case 8: try { try decoder.decodeSingularStringField(value: &self.knowledgeStandard) }()
-      case 9: try { try decoder.decodeSingularStringField(value: &self.abilityStandard) }()
-      case 10: try { try decoder.decodeSingularStringField(value: &self.characterStandard) }()
-      case 11: try { try decoder.decodeSingularStringField(value: &self.courseGroupName) }()
-      case 12: try { try decoder.decodeSingularInt64Field(value: &self.courseGroupID) }()
-      case 13: try { try decoder.decodeRepeatedMessageField(value: &self.courseModules) }()
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.eduSchemeID) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.name) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.major) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.goal) }()
+      case 5: try { try decoder.decodeSingularDoubleField(value: &self.totalHours) }()
+      case 6: try { try decoder.decodeSingularDoubleField(value: &self.knowledgeHours) }()
+      case 7: try { try decoder.decodeSingularDoubleField(value: &self.skillHours) }()
+      case 8: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
+      case 9: try { try decoder.decodeSingularStringField(value: &self.knowledgeStandard) }()
+      case 10: try { try decoder.decodeSingularStringField(value: &self.abilityStandard) }()
+      case 11: try { try decoder.decodeSingularStringField(value: &self.characterStandard) }()
+      case 12: try { try decoder.decodeSingularStringField(value: &self.courseGroupName) }()
+      case 13: try { try decoder.decodeSingularInt64Field(value: &self.courseGroupID) }()
+      case 14: try { try decoder.decodeRepeatedMessageField(value: &self.courseModules) }()
       default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.eduSchemeID != 0 {
+      try visitor.visitSingularInt64Field(value: self.eduSchemeID, fieldNumber: 1)
+    }
     if !self.name.isEmpty {
-      try visitor.visitSingularStringField(value: self.name, fieldNumber: 1)
+      try visitor.visitSingularStringField(value: self.name, fieldNumber: 2)
     }
     if !self.major.isEmpty {
-      try visitor.visitSingularStringField(value: self.major, fieldNumber: 2)
+      try visitor.visitSingularStringField(value: self.major, fieldNumber: 3)
     }
     if !self.goal.isEmpty {
-      try visitor.visitSingularStringField(value: self.goal, fieldNumber: 3)
+      try visitor.visitSingularStringField(value: self.goal, fieldNumber: 4)
     }
     if self.totalHours != 0 {
-      try visitor.visitSingularDoubleField(value: self.totalHours, fieldNumber: 4)
+      try visitor.visitSingularDoubleField(value: self.totalHours, fieldNumber: 5)
     }
     if self.knowledgeHours != 0 {
-      try visitor.visitSingularDoubleField(value: self.knowledgeHours, fieldNumber: 5)
+      try visitor.visitSingularDoubleField(value: self.knowledgeHours, fieldNumber: 6)
     }
     if self.skillHours != 0 {
-      try visitor.visitSingularDoubleField(value: self.skillHours, fieldNumber: 6)
+      try visitor.visitSingularDoubleField(value: self.skillHours, fieldNumber: 7)
     }
     if !self.createdAt.isEmpty {
-      try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 7)
+      try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 8)
     }
     if !self.knowledgeStandard.isEmpty {
-      try visitor.visitSingularStringField(value: self.knowledgeStandard, fieldNumber: 8)
+      try visitor.visitSingularStringField(value: self.knowledgeStandard, fieldNumber: 9)
     }
     if !self.abilityStandard.isEmpty {
-      try visitor.visitSingularStringField(value: self.abilityStandard, fieldNumber: 9)
+      try visitor.visitSingularStringField(value: self.abilityStandard, fieldNumber: 10)
     }
     if !self.characterStandard.isEmpty {
-      try visitor.visitSingularStringField(value: self.characterStandard, fieldNumber: 10)
+      try visitor.visitSingularStringField(value: self.characterStandard, fieldNumber: 11)
     }
     if !self.courseGroupName.isEmpty {
-      try visitor.visitSingularStringField(value: self.courseGroupName, fieldNumber: 11)
+      try visitor.visitSingularStringField(value: self.courseGroupName, fieldNumber: 12)
     }
     if self.courseGroupID != 0 {
-      try visitor.visitSingularInt64Field(value: self.courseGroupID, fieldNumber: 12)
+      try visitor.visitSingularInt64Field(value: self.courseGroupID, fieldNumber: 13)
     }
     if !self.courseModules.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.courseModules, fieldNumber: 13)
+      try visitor.visitRepeatedMessageField(value: self.courseModules, fieldNumber: 14)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_EduScheme, rhs: GloryApi_EduScheme) -> Bool {
+    if lhs.eduSchemeID != rhs.eduSchemeID {return false}
     if lhs.name != rhs.name {return false}
     if lhs.major != rhs.major {return false}
     if lhs.goal != rhs.goal {return false}

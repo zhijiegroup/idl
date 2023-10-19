@@ -19,6 +19,7 @@ import 'module.pb.dart' as $0;
 
 class EduScheme extends $pb.GeneratedMessage {
   factory EduScheme({
+    $fixnum.Int64? eduSchemeId,
     $core.String? name,
     $core.String? major,
     $core.String? goal,
@@ -34,6 +35,9 @@ class EduScheme extends $pb.GeneratedMessage {
     $core.Iterable<$0.CourseModule>? courseModules,
   }) {
     final $result = create();
+    if (eduSchemeId != null) {
+      $result.eduSchemeId = eduSchemeId;
+    }
     if (name != null) {
       $result.name = name;
     }
@@ -80,19 +84,20 @@ class EduScheme extends $pb.GeneratedMessage {
   factory EduScheme.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EduScheme', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOS(2, _omitFieldNames ? '' : 'major')
-    ..aOS(3, _omitFieldNames ? '' : 'goal')
-    ..a<$core.double>(4, _omitFieldNames ? '' : 'totalHours', $pb.PbFieldType.OD)
-    ..a<$core.double>(5, _omitFieldNames ? '' : 'knowledgeHours', $pb.PbFieldType.OD)
-    ..a<$core.double>(6, _omitFieldNames ? '' : 'skillHours', $pb.PbFieldType.OD)
-    ..aOS(7, _omitFieldNames ? '' : 'createdAt')
-    ..aOS(8, _omitFieldNames ? '' : 'knowledgeStandard')
-    ..aOS(9, _omitFieldNames ? '' : 'abilityStandard')
-    ..aOS(10, _omitFieldNames ? '' : 'characterStandard')
-    ..aOS(11, _omitFieldNames ? '' : 'courseGroupName')
-    ..aInt64(12, _omitFieldNames ? '' : 'courseGroupId')
-    ..pc<$0.CourseModule>(13, _omitFieldNames ? '' : 'courseModules', $pb.PbFieldType.PM, subBuilder: $0.CourseModule.create)
+    ..aInt64(1, _omitFieldNames ? '' : 'eduSchemeId')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'major')
+    ..aOS(4, _omitFieldNames ? '' : 'goal')
+    ..a<$core.double>(5, _omitFieldNames ? '' : 'totalHours', $pb.PbFieldType.OD)
+    ..a<$core.double>(6, _omitFieldNames ? '' : 'knowledgeHours', $pb.PbFieldType.OD)
+    ..a<$core.double>(7, _omitFieldNames ? '' : 'skillHours', $pb.PbFieldType.OD)
+    ..aOS(8, _omitFieldNames ? '' : 'createdAt')
+    ..aOS(9, _omitFieldNames ? '' : 'knowledgeStandard')
+    ..aOS(10, _omitFieldNames ? '' : 'abilityStandard')
+    ..aOS(11, _omitFieldNames ? '' : 'characterStandard')
+    ..aOS(12, _omitFieldNames ? '' : 'courseGroupName')
+    ..aInt64(13, _omitFieldNames ? '' : 'courseGroupId')
+    ..pc<$0.CourseModule>(14, _omitFieldNames ? '' : 'courseModules', $pb.PbFieldType.PM, subBuilder: $0.CourseModule.create)
     ..hasRequiredFields = false
   ;
 
@@ -118,115 +123,124 @@ class EduScheme extends $pb.GeneratedMessage {
   static EduScheme? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get name => $_getSZ(0);
+  $fixnum.Int64 get eduSchemeId => $_getI64(0);
   @$pb.TagNumber(1)
-  set name($core.String v) { $_setString(0, v); }
+  set eduSchemeId($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasName() => $_has(0);
+  $core.bool hasEduSchemeId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearName() => clearField(1);
+  void clearEduSchemeId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get major => $_getSZ(1);
+  $core.String get name => $_getSZ(1);
   @$pb.TagNumber(2)
-  set major($core.String v) { $_setString(1, v); }
+  set name($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasMajor() => $_has(1);
+  $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearMajor() => clearField(2);
+  void clearName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get goal => $_getSZ(2);
+  $core.String get major => $_getSZ(2);
   @$pb.TagNumber(3)
-  set goal($core.String v) { $_setString(2, v); }
+  set major($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasGoal() => $_has(2);
+  $core.bool hasMajor() => $_has(2);
   @$pb.TagNumber(3)
-  void clearGoal() => clearField(3);
+  void clearMajor() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.double get totalHours => $_getN(3);
+  $core.String get goal => $_getSZ(3);
   @$pb.TagNumber(4)
-  set totalHours($core.double v) { $_setDouble(3, v); }
+  set goal($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasTotalHours() => $_has(3);
+  $core.bool hasGoal() => $_has(3);
   @$pb.TagNumber(4)
-  void clearTotalHours() => clearField(4);
+  void clearGoal() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.double get knowledgeHours => $_getN(4);
+  $core.double get totalHours => $_getN(4);
   @$pb.TagNumber(5)
-  set knowledgeHours($core.double v) { $_setDouble(4, v); }
+  set totalHours($core.double v) { $_setDouble(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasKnowledgeHours() => $_has(4);
+  $core.bool hasTotalHours() => $_has(4);
   @$pb.TagNumber(5)
-  void clearKnowledgeHours() => clearField(5);
+  void clearTotalHours() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.double get skillHours => $_getN(5);
+  $core.double get knowledgeHours => $_getN(5);
   @$pb.TagNumber(6)
-  set skillHours($core.double v) { $_setDouble(5, v); }
+  set knowledgeHours($core.double v) { $_setDouble(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasSkillHours() => $_has(5);
+  $core.bool hasKnowledgeHours() => $_has(5);
   @$pb.TagNumber(6)
-  void clearSkillHours() => clearField(6);
+  void clearKnowledgeHours() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.String get createdAt => $_getSZ(6);
+  $core.double get skillHours => $_getN(6);
   @$pb.TagNumber(7)
-  set createdAt($core.String v) { $_setString(6, v); }
+  set skillHours($core.double v) { $_setDouble(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasCreatedAt() => $_has(6);
+  $core.bool hasSkillHours() => $_has(6);
   @$pb.TagNumber(7)
-  void clearCreatedAt() => clearField(7);
+  void clearSkillHours() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.String get knowledgeStandard => $_getSZ(7);
+  $core.String get createdAt => $_getSZ(7);
   @$pb.TagNumber(8)
-  set knowledgeStandard($core.String v) { $_setString(7, v); }
+  set createdAt($core.String v) { $_setString(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasKnowledgeStandard() => $_has(7);
+  $core.bool hasCreatedAt() => $_has(7);
   @$pb.TagNumber(8)
-  void clearKnowledgeStandard() => clearField(8);
+  void clearCreatedAt() => clearField(8);
 
   @$pb.TagNumber(9)
-  $core.String get abilityStandard => $_getSZ(8);
+  $core.String get knowledgeStandard => $_getSZ(8);
   @$pb.TagNumber(9)
-  set abilityStandard($core.String v) { $_setString(8, v); }
+  set knowledgeStandard($core.String v) { $_setString(8, v); }
   @$pb.TagNumber(9)
-  $core.bool hasAbilityStandard() => $_has(8);
+  $core.bool hasKnowledgeStandard() => $_has(8);
   @$pb.TagNumber(9)
-  void clearAbilityStandard() => clearField(9);
+  void clearKnowledgeStandard() => clearField(9);
 
   @$pb.TagNumber(10)
-  $core.String get characterStandard => $_getSZ(9);
+  $core.String get abilityStandard => $_getSZ(9);
   @$pb.TagNumber(10)
-  set characterStandard($core.String v) { $_setString(9, v); }
+  set abilityStandard($core.String v) { $_setString(9, v); }
   @$pb.TagNumber(10)
-  $core.bool hasCharacterStandard() => $_has(9);
+  $core.bool hasAbilityStandard() => $_has(9);
   @$pb.TagNumber(10)
-  void clearCharacterStandard() => clearField(10);
+  void clearAbilityStandard() => clearField(10);
 
   @$pb.TagNumber(11)
-  $core.String get courseGroupName => $_getSZ(10);
+  $core.String get characterStandard => $_getSZ(10);
   @$pb.TagNumber(11)
-  set courseGroupName($core.String v) { $_setString(10, v); }
+  set characterStandard($core.String v) { $_setString(10, v); }
   @$pb.TagNumber(11)
-  $core.bool hasCourseGroupName() => $_has(10);
+  $core.bool hasCharacterStandard() => $_has(10);
   @$pb.TagNumber(11)
-  void clearCourseGroupName() => clearField(11);
+  void clearCharacterStandard() => clearField(11);
 
   @$pb.TagNumber(12)
-  $fixnum.Int64 get courseGroupId => $_getI64(11);
+  $core.String get courseGroupName => $_getSZ(11);
   @$pb.TagNumber(12)
-  set courseGroupId($fixnum.Int64 v) { $_setInt64(11, v); }
+  set courseGroupName($core.String v) { $_setString(11, v); }
   @$pb.TagNumber(12)
-  $core.bool hasCourseGroupId() => $_has(11);
+  $core.bool hasCourseGroupName() => $_has(11);
   @$pb.TagNumber(12)
-  void clearCourseGroupId() => clearField(12);
+  void clearCourseGroupName() => clearField(12);
 
   @$pb.TagNumber(13)
-  $core.List<$0.CourseModule> get courseModules => $_getList(12);
+  $fixnum.Int64 get courseGroupId => $_getI64(12);
+  @$pb.TagNumber(13)
+  set courseGroupId($fixnum.Int64 v) { $_setInt64(12, v); }
+  @$pb.TagNumber(13)
+  $core.bool hasCourseGroupId() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearCourseGroupId() => clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.List<$0.CourseModule> get courseModules => $_getList(13);
 }
 
 class CreateEduSchemeRequest extends $pb.GeneratedMessage {

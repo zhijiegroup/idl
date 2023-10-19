@@ -8,102 +8,108 @@ public interface EduSchemeOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string name = 1;</code>
+   * <code>int64 edu_scheme_id = 1;</code>
+   * @return The eduSchemeId.
+   */
+  long getEduSchemeId();
+
+  /**
+   * <code>string name = 2;</code>
    * @return The name.
    */
   java.lang.String getName();
   /**
-   * <code>string name = 1;</code>
+   * <code>string name = 2;</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
 
   /**
-   * <code>string major = 2;</code>
+   * <code>string major = 3;</code>
    * @return The major.
    */
   java.lang.String getMajor();
   /**
-   * <code>string major = 2;</code>
+   * <code>string major = 3;</code>
    * @return The bytes for major.
    */
   com.google.protobuf.ByteString
       getMajorBytes();
 
   /**
-   * <code>string goal = 3;</code>
+   * <code>string goal = 4;</code>
    * @return The goal.
    */
   java.lang.String getGoal();
   /**
-   * <code>string goal = 3;</code>
+   * <code>string goal = 4;</code>
    * @return The bytes for goal.
    */
   com.google.protobuf.ByteString
       getGoalBytes();
 
   /**
-   * <code>double total_hours = 4;</code>
+   * <code>double total_hours = 5;</code>
    * @return The totalHours.
    */
   double getTotalHours();
 
   /**
-   * <code>double knowledge_hours = 5;</code>
+   * <code>double knowledge_hours = 6;</code>
    * @return The knowledgeHours.
    */
   double getKnowledgeHours();
 
   /**
-   * <code>double skill_hours = 6;</code>
+   * <code>double skill_hours = 7;</code>
    * @return The skillHours.
    */
   double getSkillHours();
 
   /**
-   * <code>string created_at = 7;</code>
+   * <code>string created_at = 8;</code>
    * @return The createdAt.
    */
   java.lang.String getCreatedAt();
   /**
-   * <code>string created_at = 7;</code>
+   * <code>string created_at = 8;</code>
    * @return The bytes for createdAt.
    */
   com.google.protobuf.ByteString
       getCreatedAtBytes();
 
   /**
-   * <code>string knowledge_standard = 8;</code>
+   * <code>string knowledge_standard = 9;</code>
    * @return The knowledgeStandard.
    */
   java.lang.String getKnowledgeStandard();
   /**
-   * <code>string knowledge_standard = 8;</code>
+   * <code>string knowledge_standard = 9;</code>
    * @return The bytes for knowledgeStandard.
    */
   com.google.protobuf.ByteString
       getKnowledgeStandardBytes();
 
   /**
-   * <code>string ability_standard = 9;</code>
+   * <code>string ability_standard = 10;</code>
    * @return The abilityStandard.
    */
   java.lang.String getAbilityStandard();
   /**
-   * <code>string ability_standard = 9;</code>
+   * <code>string ability_standard = 10;</code>
    * @return The bytes for abilityStandard.
    */
   com.google.protobuf.ByteString
       getAbilityStandardBytes();
 
   /**
-   * <code>string character_standard = 10;</code>
+   * <code>string character_standard = 11;</code>
    * @return The characterStandard.
    */
   java.lang.String getCharacterStandard();
   /**
-   * <code>string character_standard = 10;</code>
+   * <code>string character_standard = 11;</code>
    * @return The bytes for characterStandard.
    */
   com.google.protobuf.ByteString
@@ -114,7 +120,7 @@ public interface EduSchemeOrBuilder extends
    * 能力方向名称
    * </pre>
    *
-   * <code>string course_group_name = 11;</code>
+   * <code>string course_group_name = 12;</code>
    * @return The courseGroupName.
    */
   java.lang.String getCourseGroupName();
@@ -123,7 +129,7 @@ public interface EduSchemeOrBuilder extends
    * 能力方向名称
    * </pre>
    *
-   * <code>string course_group_name = 11;</code>
+   * <code>string course_group_name = 12;</code>
    * @return The bytes for courseGroupName.
    */
   com.google.protobuf.ByteString
@@ -134,7 +140,7 @@ public interface EduSchemeOrBuilder extends
    * 能力方向ID
    * </pre>
    *
-   * <code>int64 course_group_id = 12;</code>
+   * <code>int64 course_group_id = 13;</code>
    * @return The courseGroupId.
    */
   long getCourseGroupId();
@@ -144,7 +150,7 @@ public interface EduSchemeOrBuilder extends
    * 能力指标
    * </pre>
    *
-   * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
+   * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.course.CourseModule> 
       getCourseModulesList();
@@ -153,7 +159,7 @@ public interface EduSchemeOrBuilder extends
    * 能力指标
    * </pre>
    *
-   * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
+   * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
    */
   com.zhijiejiaoyu.glory_api.course.CourseModule getCourseModules(int index);
   /**
@@ -161,7 +167,7 @@ public interface EduSchemeOrBuilder extends
    * 能力指标
    * </pre>
    *
-   * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
+   * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
    */
   int getCourseModulesCount();
   /**
@@ -169,7 +175,7 @@ public interface EduSchemeOrBuilder extends
    * 能力指标
    * </pre>
    *
-   * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
+   * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder> 
       getCourseModulesOrBuilderList();
@@ -178,7 +184,7 @@ public interface EduSchemeOrBuilder extends
    * 能力指标
    * </pre>
    *
-   * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
+   * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
    */
   com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder getCourseModulesOrBuilder(
       int index);
