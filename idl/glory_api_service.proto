@@ -465,6 +465,9 @@ service glory_api {
   rpc UploadAttachment(UploadAttachmentRequest) returns (UploadAttachmentResponse) {
     option (api.post) = '/api/seller/upload_attachment';
   }
+  rpc SaveAttachment(SaveAttachmentRequest) returns (SaveAttachmentResponse) {
+    option (api.post) = '/api/seller/save_attachment';
+  }
   rpc ListAttachment(ListAttachmentRequest) returns (ListAttachmentResponse) {
     option (api.post) = '/api/seller/list_attachment';
   }
