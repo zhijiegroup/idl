@@ -718,6 +718,9 @@ service glory_api {
   rpc VideoToTextCallback(VideoToTextCallbackRequest) returns (VideoToTextCallbackResponse) {
     option (api.post) = '/api/live/video_to_text_callback';
   }
+  rpc LiveStreamCallback(LiveStreamCallbackRequest) returns (LiveStreamCallbackResponse) {
+    option (api.get) = '/api/live/live_stream_callback';
+  }
   rpc RegenerationAiFeedback(RegenerationAiFeedbackRequest) returns (RegenerationAiFeedbackResponse) {
     option (api.get) = '/api/live/regeneration_ai_feedback';
   }
@@ -1149,6 +1152,9 @@ service glory_api {
   }
   rpc UpdateTeachingPlan(UpdateTeachingPlanRequest) returns (UpdateTeachingPlanResponse) {
     option (api.post) = '/api/course/update_teaching_plan';
+  }
+  rpc DeleteTeachingPlan(DeleteTeachingPlanRequest) returns (DeleteTeachingPlanResponse) {
+    option (api.post) = '/api/course/delete_teaching_plan';
   }
 
   // 培养方案
