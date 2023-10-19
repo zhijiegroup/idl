@@ -21,6 +21,7 @@ message Sku {
   string preferential_value = 13;
   int64 stock_total = 14;
   int64 purchase_limit = 15;
+  int64 user_buy_total = 16;
 }
 message SkuAttributeWithOneValue {
   int64 attribute_id = 1;

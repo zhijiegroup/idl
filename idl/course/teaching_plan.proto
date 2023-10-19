@@ -61,3 +61,12 @@ message ListTeachingPlanResponse {
     repeated TeachingPlan teaching_plan_list = 2;
     base.PaginationResponse pagination = 100;
 }
+
+message DeleteTeachingPlanRequest {
+    base.BaseRequest base_request = 1;
+    int64 teaching_plan_id = 2;
+}
+
+message DeleteTeachingPlanResponse {
+    base.BaseResponse base_resp = 1;
+}

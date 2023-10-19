@@ -208,6 +208,23 @@ message CloseShopAllLiveRequest {
 message CloseShopAllLiveResponse {
   base.BaseResponse base_resp = 1;
 }
+// 参考：https://help.aliyun.com/zh/live/developer-reference/callback-format-description?spm=a2c4g.11186623.0.0.6c983d66Wen2S9
+message LiveStreamCallbackRequest {
+  string action = 1;
+  string ip = 2;
+  string id = 3;
+  string app = 4;
+  string appname = 5;
+  int64 time = 6;
+  string usrargs = 7;
+  string node = 8;
+  int32 height = 9;
+  int32 width = 10;
+}
+
+message LiveStreamCallbackResponse{
+  base.BaseResponse base_resp = 1;
+}
 
 
 
