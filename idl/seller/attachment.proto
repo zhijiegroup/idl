@@ -39,6 +39,23 @@ message UploadAttachmentResponse {
   string attachment_url = 3;
 }
 
+// 代替UploadAttachment,使用前端直传OSS的方式
+message SaveAttachmentRequest {
+  base.BaseRequest base_request = 1;
+  AttachmentType attachment_type = 2;
+  int64 seller_id = 3; // 如果传了seller_id, grouping_id跟grouping_key会不起作用
+  string description = 4;
+  int64 grouping_id =5; // 保存到oss的时候，这个id会成为地址的一部分，增加这个来支持更多的upload场景
+  string grouping_key = 6; // 保存到oss的时候这个key会作为地址的一部分，增加这个来支持更多的upload场景
+  string oss_path = 7; // 存到oss中的路径
+
+}
+message SaveAttachmentResponse {
+  base.BaseResponse base_resp = 1;
+  int64 attachment_id = 2;
+  string attachment_url = 3;
+}
+
 message ListAttachmentRequest {
   base.BaseRequest base_request = 1;
   int64 seller_id = 2;
