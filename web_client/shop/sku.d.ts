@@ -21,6 +21,7 @@ export interface Sku {
   preferential_value?: string;
   stock_total?: string;
   purchase_limit?: string;
+  user_buy_total?: string;
 }
 
 export interface SkuAttributeWithOneValue {

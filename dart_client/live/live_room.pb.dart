@@ -2776,6 +2776,235 @@ class CloseShopAllLiveResponse extends $pb.GeneratedMessage {
   $0.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
+/// 参考：https://help.aliyun.com/zh/live/developer-reference/callback-format-description?spm=a2c4g.11186623.0.0.6c983d66Wen2S9
+class LiveStreamCallbackRequest extends $pb.GeneratedMessage {
+  factory LiveStreamCallbackRequest({
+    $core.String? action,
+    $core.String? ip,
+    $core.String? id,
+    $core.String? app,
+    $core.String? appname,
+    $fixnum.Int64? time,
+    $core.String? usrargs,
+    $core.String? node,
+    $core.int? height,
+    $core.int? width,
+  }) {
+    final $result = create();
+    if (action != null) {
+      $result.action = action;
+    }
+    if (ip != null) {
+      $result.ip = ip;
+    }
+    if (id != null) {
+      $result.id = id;
+    }
+    if (app != null) {
+      $result.app = app;
+    }
+    if (appname != null) {
+      $result.appname = appname;
+    }
+    if (time != null) {
+      $result.time = time;
+    }
+    if (usrargs != null) {
+      $result.usrargs = usrargs;
+    }
+    if (node != null) {
+      $result.node = node;
+    }
+    if (height != null) {
+      $result.height = height;
+    }
+    if (width != null) {
+      $result.width = width;
+    }
+    return $result;
+  }
+  LiveStreamCallbackRequest._() : super();
+  factory LiveStreamCallbackRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory LiveStreamCallbackRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LiveStreamCallbackRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'action')
+    ..aOS(2, _omitFieldNames ? '' : 'ip')
+    ..aOS(3, _omitFieldNames ? '' : 'id')
+    ..aOS(4, _omitFieldNames ? '' : 'app')
+    ..aOS(5, _omitFieldNames ? '' : 'appname')
+    ..aInt64(6, _omitFieldNames ? '' : 'time')
+    ..aOS(7, _omitFieldNames ? '' : 'usrargs')
+    ..aOS(8, _omitFieldNames ? '' : 'node')
+    ..a<$core.int>(9, _omitFieldNames ? '' : 'height', $pb.PbFieldType.O3)
+    ..a<$core.int>(10, _omitFieldNames ? '' : 'width', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  LiveStreamCallbackRequest clone() => LiveStreamCallbackRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  LiveStreamCallbackRequest copyWith(void Function(LiveStreamCallbackRequest) updates) => super.copyWith((message) => updates(message as LiveStreamCallbackRequest)) as LiveStreamCallbackRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LiveStreamCallbackRequest create() => LiveStreamCallbackRequest._();
+  LiveStreamCallbackRequest createEmptyInstance() => create();
+  static $pb.PbList<LiveStreamCallbackRequest> createRepeated() => $pb.PbList<LiveStreamCallbackRequest>();
+  @$core.pragma('dart2js:noInline')
+  static LiveStreamCallbackRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LiveStreamCallbackRequest>(create);
+  static LiveStreamCallbackRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get action => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set action($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAction() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAction() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get ip => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set ip($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasIp() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearIp() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get id => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set id($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearId() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get app => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set app($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasApp() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearApp() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get appname => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set appname($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasAppname() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAppname() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get time => $_getI64(5);
+  @$pb.TagNumber(6)
+  set time($fixnum.Int64 v) { $_setInt64(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasTime() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearTime() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get usrargs => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set usrargs($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasUsrargs() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearUsrargs() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get node => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set node($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasNode() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearNode() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.int get height => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set height($core.int v) { $_setSignedInt32(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasHeight() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearHeight() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.int get width => $_getIZ(9);
+  @$pb.TagNumber(10)
+  set width($core.int v) { $_setSignedInt32(9, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasWidth() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearWidth() => clearField(10);
+}
+
+class LiveStreamCallbackResponse extends $pb.GeneratedMessage {
+  factory LiveStreamCallbackResponse({
+    $0.BaseResponse? baseResp,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    return $result;
+  }
+  LiveStreamCallbackResponse._() : super();
+  factory LiveStreamCallbackResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory LiveStreamCallbackResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LiveStreamCallbackResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  LiveStreamCallbackResponse clone() => LiveStreamCallbackResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  LiveStreamCallbackResponse copyWith(void Function(LiveStreamCallbackResponse) updates) => super.copyWith((message) => updates(message as LiveStreamCallbackResponse)) as LiveStreamCallbackResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LiveStreamCallbackResponse create() => LiveStreamCallbackResponse._();
+  LiveStreamCallbackResponse createEmptyInstance() => create();
+  static $pb.PbList<LiveStreamCallbackResponse> createRepeated() => $pb.PbList<LiveStreamCallbackResponse>();
+  @$core.pragma('dart2js:noInline')
+  static LiveStreamCallbackResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LiveStreamCallbackResponse>(create);
+  static LiveStreamCallbackResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

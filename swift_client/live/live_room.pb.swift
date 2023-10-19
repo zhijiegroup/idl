@@ -823,6 +823,58 @@ struct GloryApi_CloseShopAllLiveResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
+/// 参考：https://help.aliyun.com/zh/live/developer-reference/callback-format-description?spm=a2c4g.11186623.0.0.6c983d66Wen2S9
+struct GloryApi_LiveStreamCallbackRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var action: String = String()
+
+  var ip: String = String()
+
+  var id: String = String()
+
+  var app: String = String()
+
+  var appname: String = String()
+
+  var time: Int64 = 0
+
+  var usrargs: String = String()
+
+  var node: String = String()
+
+  var height: Int32 = 0
+
+  var width: Int32 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct GloryApi_LiveStreamCallbackResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+}
+
 #if swift(>=5.5) && canImport(_Concurrency)
 extension GloryApi_Room: @unchecked Sendable {}
 extension GloryApi_CreateRoomRequest: @unchecked Sendable {}
@@ -855,6 +907,8 @@ extension GloryApi_LiveSSERequest: @unchecked Sendable {}
 extension GloryApi_LiveSSEResponse: @unchecked Sendable {}
 extension GloryApi_CloseShopAllLiveRequest: @unchecked Sendable {}
 extension GloryApi_CloseShopAllLiveResponse: @unchecked Sendable {}
+extension GloryApi_LiveStreamCallbackRequest: @unchecked Sendable {}
+extension GloryApi_LiveStreamCallbackResponse: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -2505,6 +2559,128 @@ extension GloryApi_CloseShopAllLiveResponse: SwiftProtobuf.Message, SwiftProtobu
   }
 
   static func ==(lhs: GloryApi_CloseShopAllLiveResponse, rhs: GloryApi_CloseShopAllLiveResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_LiveStreamCallbackRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".LiveStreamCallbackRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "action"),
+    2: .same(proto: "ip"),
+    3: .same(proto: "id"),
+    4: .same(proto: "app"),
+    5: .same(proto: "appname"),
+    6: .same(proto: "time"),
+    7: .same(proto: "usrargs"),
+    8: .same(proto: "node"),
+    9: .same(proto: "height"),
+    10: .same(proto: "width"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.action) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.ip) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.id) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.app) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.appname) }()
+      case 6: try { try decoder.decodeSingularInt64Field(value: &self.time) }()
+      case 7: try { try decoder.decodeSingularStringField(value: &self.usrargs) }()
+      case 8: try { try decoder.decodeSingularStringField(value: &self.node) }()
+      case 9: try { try decoder.decodeSingularInt32Field(value: &self.height) }()
+      case 10: try { try decoder.decodeSingularInt32Field(value: &self.width) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.action.isEmpty {
+      try visitor.visitSingularStringField(value: self.action, fieldNumber: 1)
+    }
+    if !self.ip.isEmpty {
+      try visitor.visitSingularStringField(value: self.ip, fieldNumber: 2)
+    }
+    if !self.id.isEmpty {
+      try visitor.visitSingularStringField(value: self.id, fieldNumber: 3)
+    }
+    if !self.app.isEmpty {
+      try visitor.visitSingularStringField(value: self.app, fieldNumber: 4)
+    }
+    if !self.appname.isEmpty {
+      try visitor.visitSingularStringField(value: self.appname, fieldNumber: 5)
+    }
+    if self.time != 0 {
+      try visitor.visitSingularInt64Field(value: self.time, fieldNumber: 6)
+    }
+    if !self.usrargs.isEmpty {
+      try visitor.visitSingularStringField(value: self.usrargs, fieldNumber: 7)
+    }
+    if !self.node.isEmpty {
+      try visitor.visitSingularStringField(value: self.node, fieldNumber: 8)
+    }
+    if self.height != 0 {
+      try visitor.visitSingularInt32Field(value: self.height, fieldNumber: 9)
+    }
+    if self.width != 0 {
+      try visitor.visitSingularInt32Field(value: self.width, fieldNumber: 10)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_LiveStreamCallbackRequest, rhs: GloryApi_LiveStreamCallbackRequest) -> Bool {
+    if lhs.action != rhs.action {return false}
+    if lhs.ip != rhs.ip {return false}
+    if lhs.id != rhs.id {return false}
+    if lhs.app != rhs.app {return false}
+    if lhs.appname != rhs.appname {return false}
+    if lhs.time != rhs.time {return false}
+    if lhs.usrargs != rhs.usrargs {return false}
+    if lhs.node != rhs.node {return false}
+    if lhs.height != rhs.height {return false}
+    if lhs.width != rhs.width {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_LiveStreamCallbackResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".LiveStreamCallbackResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_LiveStreamCallbackResponse, rhs: GloryApi_LiveStreamCallbackResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

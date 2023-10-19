@@ -33,6 +33,7 @@ class Sku extends $pb.GeneratedMessage {
     $core.String? preferentialValue,
     $fixnum.Int64? stockTotal,
     $fixnum.Int64? purchaseLimit,
+    $fixnum.Int64? userBuyTotal,
   }) {
     final $result = create();
     if (skuId != null) {
@@ -77,6 +78,9 @@ class Sku extends $pb.GeneratedMessage {
     if (purchaseLimit != null) {
       $result.purchaseLimit = purchaseLimit;
     }
+    if (userBuyTotal != null) {
+      $result.userBuyTotal = userBuyTotal;
+    }
     return $result;
   }
   Sku._() : super();
@@ -98,6 +102,7 @@ class Sku extends $pb.GeneratedMessage {
     ..aOS(13, _omitFieldNames ? '' : 'preferentialValue')
     ..aInt64(14, _omitFieldNames ? '' : 'stockTotal')
     ..aInt64(15, _omitFieldNames ? '' : 'purchaseLimit')
+    ..aInt64(16, _omitFieldNames ? '' : 'userBuyTotal')
     ..hasRequiredFields = false
   ;
 
@@ -241,6 +246,15 @@ class Sku extends $pb.GeneratedMessage {
   $core.bool hasPurchaseLimit() => $_has(13);
   @$pb.TagNumber(15)
   void clearPurchaseLimit() => clearField(15);
+
+  @$pb.TagNumber(16)
+  $fixnum.Int64 get userBuyTotal => $_getI64(14);
+  @$pb.TagNumber(16)
+  set userBuyTotal($fixnum.Int64 v) { $_setInt64(14, v); }
+  @$pb.TagNumber(16)
+  $core.bool hasUserBuyTotal() => $_has(14);
+  @$pb.TagNumber(16)
+  void clearUserBuyTotal() => clearField(16);
 }
 
 class SkuAttributeWithOneValue extends $pb.GeneratedMessage {

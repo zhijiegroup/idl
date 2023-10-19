@@ -61,3 +61,12 @@ export interface ListTeachingPlanResponse {
   teaching_plan_list?: Array<TeachingPlan>;
   pagination?: base.PaginationResponse;
 }
+
+export interface DeleteTeachingPlanRequest {
+  base_request?: base.BaseRequest;
+  teaching_plan_id?: string;
+}
+
+export interface DeleteTeachingPlanResponse {
+  base_resp?: base.BaseResponse;
+}

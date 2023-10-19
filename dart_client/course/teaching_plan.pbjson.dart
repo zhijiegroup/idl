@@ -156,3 +156,31 @@ final $typed_data.Uint8List listTeachingPlanResponseDescriptor = $convert.base64
     'X2FwaS5UZWFjaGluZ1BsYW5SEHRlYWNoaW5nUGxhbkxpc3QSOAoKcGFnaW5hdGlvbhhkIAEoCz'
     'IYLmJhc2UuUGFnaW5hdGlvblJlc3BvbnNlUgpwYWdpbmF0aW9u');
 
+@$core.Deprecated('Use deleteTeachingPlanRequestDescriptor instead')
+const DeleteTeachingPlanRequest$json = {
+  '1': 'DeleteTeachingPlanRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'teaching_plan_id', '3': 2, '4': 1, '5': 3, '10': 'teachingPlanId'},
+  ],
+};
+
+/// Descriptor for `DeleteTeachingPlanRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteTeachingPlanRequestDescriptor = $convert.base64Decode(
+    'ChlEZWxldGVUZWFjaGluZ1BsYW5SZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLmJhc2'
+    'UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EigKEHRlYWNoaW5nX3BsYW5faWQYAiABKANSDnRl'
+    'YWNoaW5nUGxhbklk');
+
+@$core.Deprecated('Use deleteTeachingPlanResponseDescriptor instead')
+const DeleteTeachingPlanResponse$json = {
+  '1': 'DeleteTeachingPlanResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+  ],
+};
+
+/// Descriptor for `DeleteTeachingPlanResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteTeachingPlanResponseDescriptor = $convert.base64Decode(
+    'ChpEZWxldGVUZWFjaGluZ1BsYW5SZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYXNlLk'
+    'Jhc2VSZXNwb25zZVIIYmFzZVJlc3A=');
+

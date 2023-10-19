@@ -221,3 +221,21 @@ export interface CloseShopAllLiveRequest {
 export interface CloseShopAllLiveResponse {
   base_resp?: base.BaseResponse;
 }
+
+/** 参考：https://help.aliyun.com/zh/live/developer-reference/callback-format-description?spm=a2c4g.11186623.0.0.6c983d66Wen2S9 */
+export interface LiveStreamCallbackRequest {
+  action?: string;
+  ip?: string;
+  id?: string;
+  app?: string;
+  appname?: string;
+  time?: string;
+  usrargs?: string;
+  node?: string;
+  height?: number;
+  width?: number;
+}
+
+export interface LiveStreamCallbackResponse {
+  base_resp?: base.BaseResponse;
+}

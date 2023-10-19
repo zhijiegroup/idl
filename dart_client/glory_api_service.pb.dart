@@ -614,6 +614,9 @@ class glory_apiApi {
   $async.Future<$23.VideoToTextCallbackResponse> videoToTextCallback($pb.ClientContext? ctx, $23.VideoToTextCallbackRequest request) =>
     _client.invoke<$23.VideoToTextCallbackResponse>(ctx, 'glory_api', 'VideoToTextCallback', request, $23.VideoToTextCallbackResponse())
   ;
+  $async.Future<$23.LiveStreamCallbackResponse> liveStreamCallback($pb.ClientContext? ctx, $23.LiveStreamCallbackRequest request) =>
+    _client.invoke<$23.LiveStreamCallbackResponse>(ctx, 'glory_api', 'LiveStreamCallback', request, $23.LiveStreamCallbackResponse())
+  ;
   $async.Future<$28.RegenerationAiFeedbackResponse> regenerationAiFeedback($pb.ClientContext? ctx, $28.RegenerationAiFeedbackRequest request) =>
     _client.invoke<$28.RegenerationAiFeedbackResponse>(ctx, 'glory_api', 'RegenerationAiFeedback', request, $28.RegenerationAiFeedbackResponse())
   ;
@@ -922,6 +925,9 @@ class glory_apiApi {
   ;
   $async.Future<$43.UpdateTeachingPlanResponse> updateTeachingPlan($pb.ClientContext? ctx, $43.UpdateTeachingPlanRequest request) =>
     _client.invoke<$43.UpdateTeachingPlanResponse>(ctx, 'glory_api', 'UpdateTeachingPlan', request, $43.UpdateTeachingPlanResponse())
+  ;
+  $async.Future<$43.DeleteTeachingPlanResponse> deleteTeachingPlan($pb.ClientContext? ctx, $43.DeleteTeachingPlanRequest request) =>
+    _client.invoke<$43.DeleteTeachingPlanResponse>(ctx, 'glory_api', 'DeleteTeachingPlan', request, $43.DeleteTeachingPlanResponse())
   ;
   $async.Future<$44.CreateEduSchemeResponse> createEduScheme($pb.ClientContext? ctx, $44.CreateEduSchemeRequest request) =>
     _client.invoke<$44.CreateEduSchemeResponse>(ctx, 'glory_api', 'CreateEduScheme', request, $44.CreateEduSchemeResponse())

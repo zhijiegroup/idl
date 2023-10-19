@@ -31,6 +31,7 @@ const Sku$json = {
     {'1': 'preferential_value', '3': 13, '4': 1, '5': 9, '10': 'preferentialValue'},
     {'1': 'stock_total', '3': 14, '4': 1, '5': 3, '10': 'stockTotal'},
     {'1': 'purchase_limit', '3': 15, '4': 1, '5': 3, '10': 'purchaseLimit'},
+    {'1': 'user_buy_total', '3': 16, '4': 1, '5': 3, '10': 'userBuyTotal'},
   ],
 };
 
@@ -44,7 +45,8 @@ final $typed_data.Uint8List skuDescriptor = $convert.base64Decode(
     'oNYXR0YWNobWVudF9pZBgKIAEoA1IMYXR0YWNobWVudElkEhcKB3NrdV91cmwYCyABKAlSBnNr'
     'dVVybBIjCg1zZXJpYWxfbnVtYmVyGAwgASgJUgxzZXJpYWxOdW1iZXISLQoScHJlZmVyZW50aW'
     'FsX3ZhbHVlGA0gASgJUhFwcmVmZXJlbnRpYWxWYWx1ZRIfCgtzdG9ja190b3RhbBgOIAEoA1IK'
-    'c3RvY2tUb3RhbBIlCg5wdXJjaGFzZV9saW1pdBgPIAEoA1INcHVyY2hhc2VMaW1pdA==');
+    'c3RvY2tUb3RhbBIlCg5wdXJjaGFzZV9saW1pdBgPIAEoA1INcHVyY2hhc2VMaW1pdBIkCg51c2'
+    'VyX2J1eV90b3RhbBgQIAEoA1IMdXNlckJ1eVRvdGFs');
 
 @$core.Deprecated('Use skuAttributeWithOneValueDescriptor instead')
 const SkuAttributeWithOneValue$json = {

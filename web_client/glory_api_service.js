@@ -1508,6 +1508,12 @@ export class glory_api {
     );
   }
 
+  LiveStreamCallback(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/live/live_stream_callback${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
   RegenerationAiFeedback(request) {
     const query = queryStringify(request);
     const uri = `${this.uriPrefix}/api/live/regeneration_ai_feedback${query}`;
@@ -2300,6 +2306,14 @@ export class glory_api {
 
   UpdateTeachingPlan(request) {
     const uri = `${this.uriPrefix}/api/course/update_teaching_plan`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteTeachingPlan(request) {
+    const uri = `${this.uriPrefix}/api/course/delete_teaching_plan`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse

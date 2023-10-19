@@ -756,6 +756,124 @@ class ListTeachingPlanResponse extends $pb.GeneratedMessage {
   $0.PaginationResponse ensurePagination() => $_ensure(2);
 }
 
+class DeleteTeachingPlanRequest extends $pb.GeneratedMessage {
+  factory DeleteTeachingPlanRequest({
+    $0.BaseRequest? baseRequest,
+    $fixnum.Int64? teachingPlanId,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (teachingPlanId != null) {
+      $result.teachingPlanId = teachingPlanId;
+    }
+    return $result;
+  }
+  DeleteTeachingPlanRequest._() : super();
+  factory DeleteTeachingPlanRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteTeachingPlanRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteTeachingPlanRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'teachingPlanId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteTeachingPlanRequest clone() => DeleteTeachingPlanRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteTeachingPlanRequest copyWith(void Function(DeleteTeachingPlanRequest) updates) => super.copyWith((message) => updates(message as DeleteTeachingPlanRequest)) as DeleteTeachingPlanRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteTeachingPlanRequest create() => DeleteTeachingPlanRequest._();
+  DeleteTeachingPlanRequest createEmptyInstance() => create();
+  static $pb.PbList<DeleteTeachingPlanRequest> createRepeated() => $pb.PbList<DeleteTeachingPlanRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteTeachingPlanRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteTeachingPlanRequest>(create);
+  static DeleteTeachingPlanRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get teachingPlanId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set teachingPlanId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTeachingPlanId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTeachingPlanId() => clearField(2);
+}
+
+class DeleteTeachingPlanResponse extends $pb.GeneratedMessage {
+  factory DeleteTeachingPlanResponse({
+    $0.BaseResponse? baseResp,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    return $result;
+  }
+  DeleteTeachingPlanResponse._() : super();
+  factory DeleteTeachingPlanResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteTeachingPlanResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteTeachingPlanResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteTeachingPlanResponse clone() => DeleteTeachingPlanResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteTeachingPlanResponse copyWith(void Function(DeleteTeachingPlanResponse) updates) => super.copyWith((message) => updates(message as DeleteTeachingPlanResponse)) as DeleteTeachingPlanResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteTeachingPlanResponse create() => DeleteTeachingPlanResponse._();
+  DeleteTeachingPlanResponse createEmptyInstance() => create();
+  static $pb.PbList<DeleteTeachingPlanResponse> createRepeated() => $pb.PbList<DeleteTeachingPlanResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteTeachingPlanResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteTeachingPlanResponse>(create);
+  static DeleteTeachingPlanResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

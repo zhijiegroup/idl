@@ -53,6 +53,8 @@ struct GloryApi_Sku {
 
   var purchaseLimit: Int64 = 0
 
+  var userBuyTotal: Int64 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -504,6 +506,7 @@ extension GloryApi_Sku: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementat
     13: .standard(proto: "preferential_value"),
     14: .standard(proto: "stock_total"),
     15: .standard(proto: "purchase_limit"),
+    16: .standard(proto: "user_buy_total"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -526,6 +529,7 @@ extension GloryApi_Sku: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementat
       case 13: try { try decoder.decodeSingularStringField(value: &self.preferentialValue) }()
       case 14: try { try decoder.decodeSingularInt64Field(value: &self.stockTotal) }()
       case 15: try { try decoder.decodeSingularInt64Field(value: &self.purchaseLimit) }()
+      case 16: try { try decoder.decodeSingularInt64Field(value: &self.userBuyTotal) }()
       default: break
       }
     }
@@ -574,6 +578,9 @@ extension GloryApi_Sku: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementat
     if self.purchaseLimit != 0 {
       try visitor.visitSingularInt64Field(value: self.purchaseLimit, fieldNumber: 15)
     }
+    if self.userBuyTotal != 0 {
+      try visitor.visitSingularInt64Field(value: self.userBuyTotal, fieldNumber: 16)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -592,6 +599,7 @@ extension GloryApi_Sku: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementat
     if lhs.preferentialValue != rhs.preferentialValue {return false}
     if lhs.stockTotal != rhs.stockTotal {return false}
     if lhs.purchaseLimit != rhs.purchaseLimit {return false}
+    if lhs.userBuyTotal != rhs.userBuyTotal {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

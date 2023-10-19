@@ -54,6 +54,16 @@ public final class TeachingPlanOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_ListTeachingPlanResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_DeleteTeachingPlanRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_DeleteTeachingPlanRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_DeleteTeachingPlanResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_DeleteTeachingPlanResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -93,8 +103,13 @@ public final class TeachingPlanOuterClass {
       "lanResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
       "seResponse\0223\n\022teaching_plan_list\030\002 \003(\0132\027" +
       ".glory_api.TeachingPlan\022,\n\npagination\030d " +
-      "\001(\0132\030.base.PaginationResponseB%\n!com.zhi" +
-      "jiejiaoyu.glory_api.courseP\001b\006proto3"
+      "\001(\0132\030.base.PaginationResponse\"^\n\031DeleteT" +
+      "eachingPlanRequest\022\'\n\014base_request\030\001 \001(\013" +
+      "2\021.base.BaseRequest\022\030\n\020teaching_plan_id\030" +
+      "\002 \001(\003\"C\n\032DeleteTeachingPlanResponse\022%\n\tb" +
+      "ase_resp\030\001 \001(\0132\022.base.BaseResponseB%\n!co" +
+      "m.zhijiejiaoyu.glory_api.courseP\001b\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -150,6 +165,18 @@ public final class TeachingPlanOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListTeachingPlanResponse_descriptor,
         new java.lang.String[] { "BaseResp", "TeachingPlanList", "Pagination", });
+    internal_static_glory_api_DeleteTeachingPlanRequest_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_glory_api_DeleteTeachingPlanRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_DeleteTeachingPlanRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "TeachingPlanId", });
+    internal_static_glory_api_DeleteTeachingPlanResponse_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_glory_api_DeleteTeachingPlanResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_DeleteTeachingPlanResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
     com.zhijiejiaoyu.glory_api.course.Module.getDescriptor();
   }

@@ -541,3 +541,41 @@ final $typed_data.Uint8List closeShopAllLiveResponseDescriptor = $convert.base64
     'ChhDbG9zZVNob3BBbGxMaXZlUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYX'
     'NlUmVzcG9uc2VSCGJhc2VSZXNw');
 
+@$core.Deprecated('Use liveStreamCallbackRequestDescriptor instead')
+const LiveStreamCallbackRequest$json = {
+  '1': 'LiveStreamCallbackRequest',
+  '2': [
+    {'1': 'action', '3': 1, '4': 1, '5': 9, '10': 'action'},
+    {'1': 'ip', '3': 2, '4': 1, '5': 9, '10': 'ip'},
+    {'1': 'id', '3': 3, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'app', '3': 4, '4': 1, '5': 9, '10': 'app'},
+    {'1': 'appname', '3': 5, '4': 1, '5': 9, '10': 'appname'},
+    {'1': 'time', '3': 6, '4': 1, '5': 3, '10': 'time'},
+    {'1': 'usrargs', '3': 7, '4': 1, '5': 9, '10': 'usrargs'},
+    {'1': 'node', '3': 8, '4': 1, '5': 9, '10': 'node'},
+    {'1': 'height', '3': 9, '4': 1, '5': 5, '10': 'height'},
+    {'1': 'width', '3': 10, '4': 1, '5': 5, '10': 'width'},
+  ],
+};
+
+/// Descriptor for `LiveStreamCallbackRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List liveStreamCallbackRequestDescriptor = $convert.base64Decode(
+    'ChlMaXZlU3RyZWFtQ2FsbGJhY2tSZXF1ZXN0EhYKBmFjdGlvbhgBIAEoCVIGYWN0aW9uEg4KAm'
+    'lwGAIgASgJUgJpcBIOCgJpZBgDIAEoCVICaWQSEAoDYXBwGAQgASgJUgNhcHASGAoHYXBwbmFt'
+    'ZRgFIAEoCVIHYXBwbmFtZRISCgR0aW1lGAYgASgDUgR0aW1lEhgKB3VzcmFyZ3MYByABKAlSB3'
+    'VzcmFyZ3MSEgoEbm9kZRgIIAEoCVIEbm9kZRIWCgZoZWlnaHQYCSABKAVSBmhlaWdodBIUCgV3'
+    'aWR0aBgKIAEoBVIFd2lkdGg=');
+
+@$core.Deprecated('Use liveStreamCallbackResponseDescriptor instead')
+const LiveStreamCallbackResponse$json = {
+  '1': 'LiveStreamCallbackResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+  ],
+};
+
+/// Descriptor for `LiveStreamCallbackResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List liveStreamCallbackResponseDescriptor = $convert.base64Decode(
+    'ChpMaXZlU3RyZWFtQ2FsbGJhY2tSZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYXNlLk'
+    'Jhc2VSZXNwb25zZVIIYmFzZVJlc3A=');
+

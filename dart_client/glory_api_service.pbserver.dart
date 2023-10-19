@@ -249,6 +249,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$28.GetRankResponse> getRank($pb.ServerContext ctx, $28.GetRankRequest request);
   $async.Future<$23.RecordLiveCallbackResponse> recordLiveCallback($pb.ServerContext ctx, $23.RecordLiveCallbackRequest request);
   $async.Future<$23.VideoToTextCallbackResponse> videoToTextCallback($pb.ServerContext ctx, $23.VideoToTextCallbackRequest request);
+  $async.Future<$23.LiveStreamCallbackResponse> liveStreamCallback($pb.ServerContext ctx, $23.LiveStreamCallbackRequest request);
   $async.Future<$28.RegenerationAiFeedbackResponse> regenerationAiFeedback($pb.ServerContext ctx, $28.RegenerationAiFeedbackRequest request);
   $async.Future<$28.SubmitUserAttitudeForAIResultResponse> submitUserAttitudeForAiResult($pb.ServerContext ctx, $28.SubmitUserAttitudeForAIResultRequest request);
   $async.Future<$24.PreheatResponse> preheatProduct($pb.ServerContext ctx, $24.PreheatRequest request);
@@ -352,6 +353,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$43.ListTeachingPlanResponse> listTeachingPlan($pb.ServerContext ctx, $43.ListTeachingPlanRequest request);
   $async.Future<$43.CreateTeachingPlanResponse> createTeachingPlan($pb.ServerContext ctx, $43.CreateTeachingPlanRequest request);
   $async.Future<$43.UpdateTeachingPlanResponse> updateTeachingPlan($pb.ServerContext ctx, $43.UpdateTeachingPlanRequest request);
+  $async.Future<$43.DeleteTeachingPlanResponse> deleteTeachingPlan($pb.ServerContext ctx, $43.DeleteTeachingPlanRequest request);
   $async.Future<$44.CreateEduSchemeResponse> createEduScheme($pb.ServerContext ctx, $44.CreateEduSchemeRequest request);
   $async.Future<$44.UpdateEduSchemeResponse> updateEduScheme($pb.ServerContext ctx, $44.UpdateEduSchemeRequest request);
   $async.Future<$44.ListEduSchemeResponse> listEduScheme($pb.ServerContext ctx, $44.ListEduSchemeRequest request);
@@ -545,6 +547,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'GetRank': return $28.GetRankRequest();
       case 'RecordLiveCallback': return $23.RecordLiveCallbackRequest();
       case 'VideoToTextCallback': return $23.VideoToTextCallbackRequest();
+      case 'LiveStreamCallback': return $23.LiveStreamCallbackRequest();
       case 'RegenerationAiFeedback': return $28.RegenerationAiFeedbackRequest();
       case 'SubmitUserAttitudeForAiResult': return $28.SubmitUserAttitudeForAIResultRequest();
       case 'PreheatProduct': return $24.PreheatRequest();
@@ -648,6 +651,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'ListTeachingPlan': return $43.ListTeachingPlanRequest();
       case 'CreateTeachingPlan': return $43.CreateTeachingPlanRequest();
       case 'UpdateTeachingPlan': return $43.UpdateTeachingPlanRequest();
+      case 'DeleteTeachingPlan': return $43.DeleteTeachingPlanRequest();
       case 'CreateEduScheme': return $44.CreateEduSchemeRequest();
       case 'UpdateEduScheme': return $44.UpdateEduSchemeRequest();
       case 'ListEduScheme': return $44.ListEduSchemeRequest();
@@ -844,6 +848,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'GetRank': return this.getRank(ctx, request as $28.GetRankRequest);
       case 'RecordLiveCallback': return this.recordLiveCallback(ctx, request as $23.RecordLiveCallbackRequest);
       case 'VideoToTextCallback': return this.videoToTextCallback(ctx, request as $23.VideoToTextCallbackRequest);
+      case 'LiveStreamCallback': return this.liveStreamCallback(ctx, request as $23.LiveStreamCallbackRequest);
       case 'RegenerationAiFeedback': return this.regenerationAiFeedback(ctx, request as $28.RegenerationAiFeedbackRequest);
       case 'SubmitUserAttitudeForAiResult': return this.submitUserAttitudeForAiResult(ctx, request as $28.SubmitUserAttitudeForAIResultRequest);
       case 'PreheatProduct': return this.preheatProduct(ctx, request as $24.PreheatRequest);
@@ -947,6 +952,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'ListTeachingPlan': return this.listTeachingPlan(ctx, request as $43.ListTeachingPlanRequest);
       case 'CreateTeachingPlan': return this.createTeachingPlan(ctx, request as $43.CreateTeachingPlanRequest);
       case 'UpdateTeachingPlan': return this.updateTeachingPlan(ctx, request as $43.UpdateTeachingPlanRequest);
+      case 'DeleteTeachingPlan': return this.deleteTeachingPlan(ctx, request as $43.DeleteTeachingPlanRequest);
       case 'CreateEduScheme': return this.createEduScheme(ctx, request as $44.CreateEduSchemeRequest);
       case 'UpdateEduScheme': return this.updateEduScheme(ctx, request as $44.UpdateEduSchemeRequest);
       case 'ListEduScheme': return this.listEduScheme(ctx, request as $44.ListEduSchemeRequest);

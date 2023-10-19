@@ -99,7 +99,7 @@ public final class SkuOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\016shop/sku.proto\022\tglory_api\032\nbase.proto\032" +
-      "\024shop/attribute.proto\"\302\002\n\003Sku\022\016\n\006sku_id\030" +
+      "\024shop/attribute.proto\"\332\002\n\003Sku\022\016\n\006sku_id\030" +
       "\001 \001(\003\022\020\n\010sku_name\030\002 \001(\t\022\022\n\nproduct_id\030\003 " +
       "\001(\003\022\022\n\nunit_price\030\005 \001(\001\022\020\n\010currency\030\006 \001(" +
       "\t\022\032\n\022remaining_quantity\030\007 \001(\005\022\022\n\ntotal_s" +
@@ -107,50 +107,51 @@ public final class SkuOuterClass {
       ".Attribute\022\025\n\rattachment_id\030\n \001(\003\022\017\n\007sku" +
       "_url\030\013 \001(\t\022\025\n\rserial_number\030\014 \001(\t\022\032\n\022pre" +
       "ferential_value\030\r \001(\t\022\023\n\013stock_total\030\016 \001" +
-      "(\003\022\026\n\016purchase_limit\030\017 \001(\003\"\313\001\n\030SkuAttrib" +
-      "uteWithOneValue\022\024\n\014attribute_id\030\001 \001(\003\022\026\n" +
-      "\016attribute_name\030\002 \001(\t\022\027\n\017attribute_value" +
-      "\030\003 \001(\t\022\026\n\016attribute_type\030\004 \001(\t\022\032\n\022sku_at" +
-      "tribute_type\030\005 \001(\t\022\030\n\020sku_attribute_id\030\006" +
-      " \001(\003\022\032\n\022attribute_value_id\030\007 \001(\003\"\221\001\n\rSku" +
-      "WithAuthor\022\033\n\003sku\030\001 \001(\0132\016.glory_api.Sku\022" +
-      "<\n\017attribute_value\030\002 \003(\0132#.glory_api.Sku" +
-      "AttributeWithOneValue\022%\n\013author_info\030\003 \001" +
-      "(\0132\020.base.AuthorInfo\"\226\001\n\022SkuWithValueAut" +
-      "hor\022\033\n\003sku\030\001 \001(\0132\016.glory_api.Sku\022<\n\017attr" +
-      "ibute_value\030\002 \003(\0132#.glory_api.SkuAttribu" +
-      "teWithOneValue\022%\n\013author_info\030\003 \001(\0132\020.ba" +
-      "se.AuthorInfo\"\223\001\n\014SkuAttribute\022\030\n\020sku_at" +
-      "tribute_id\030\001 \001(\003\022\016\n\006sku_id\030\002 \001(\003\022\024\n\014attr" +
-      "ibute_id\030\003 \001(\003\022\032\n\022sku_attribute_type\030\004 \001" +
-      "(\t\022\'\n\tattribute\030\005 \001(\0132\024.glory_api.Attrib" +
-      "ute\"\234\001\n\020CreateSkuRequest\022\'\n\014base_request" +
+      "(\003\022\026\n\016purchase_limit\030\017 \001(\003\022\026\n\016user_buy_t" +
+      "otal\030\020 \001(\003\"\313\001\n\030SkuAttributeWithOneValue\022" +
+      "\024\n\014attribute_id\030\001 \001(\003\022\026\n\016attribute_name\030" +
+      "\002 \001(\t\022\027\n\017attribute_value\030\003 \001(\t\022\026\n\016attrib" +
+      "ute_type\030\004 \001(\t\022\032\n\022sku_attribute_type\030\005 \001" +
+      "(\t\022\030\n\020sku_attribute_id\030\006 \001(\003\022\032\n\022attribut" +
+      "e_value_id\030\007 \001(\003\"\221\001\n\rSkuWithAuthor\022\033\n\003sk" +
+      "u\030\001 \001(\0132\016.glory_api.Sku\022<\n\017attribute_val" +
+      "ue\030\002 \003(\0132#.glory_api.SkuAttributeWithOne" +
+      "Value\022%\n\013author_info\030\003 \001(\0132\020.base.Author" +
+      "Info\"\226\001\n\022SkuWithValueAuthor\022\033\n\003sku\030\001 \001(\013" +
+      "2\016.glory_api.Sku\022<\n\017attribute_value\030\002 \003(" +
+      "\0132#.glory_api.SkuAttributeWithOneValue\022%" +
+      "\n\013author_info\030\003 \001(\0132\020.base.AuthorInfo\"\223\001" +
+      "\n\014SkuAttribute\022\030\n\020sku_attribute_id\030\001 \001(\003" +
+      "\022\016\n\006sku_id\030\002 \001(\003\022\024\n\014attribute_id\030\003 \001(\003\022\032" +
+      "\n\022sku_attribute_type\030\004 \001(\t\022\'\n\tattribute\030" +
+      "\005 \001(\0132\024.glory_api.Attribute\"\234\001\n\020CreateSk" +
+      "uRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
+      "seRequest\022\033\n\003sku\030\002 \001(\0132\016.glory_api.Sku\022." +
+      "\n\rsku_attribute\030\003 \003(\0132\027.glory_api.SkuAtt" +
+      "ribute\022\022\n\ncreated_by\030\004 \001(\t\"J\n\021CreateSkuR" +
+      "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
+      "sponse\022\016\n\006sku_id\030\002 \001(\003\"H\n\rGetSkuRequest\022" +
+      "\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequest" +
+      "\022\016\n\006sku_id\030\002 \001(\003\"j\n\016GetSkuResponse\022%\n\tba" +
+      "se_resp\030\001 \001(\0132\022.base.BaseResponse\0221\n\nsku" +
+      "_detail\030\002 \001(\0132\035.glory_api.SkuWithValueAu" +
+      "thor\"X\n\020UpdateSkuRequest\022\'\n\014base_request" +
       "\030\001 \001(\0132\021.base.BaseRequest\022\033\n\003sku\030\002 \001(\0132\016" +
-      ".glory_api.Sku\022.\n\rsku_attribute\030\003 \003(\0132\027." +
-      "glory_api.SkuAttribute\022\022\n\ncreated_by\030\004 \001" +
-      "(\t\"J\n\021CreateSkuResponse\022%\n\tbase_resp\030\001 \001" +
-      "(\0132\022.base.BaseResponse\022\016\n\006sku_id\030\002 \001(\003\"H" +
-      "\n\rGetSkuRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
-      "base.BaseRequest\022\016\n\006sku_id\030\002 \001(\003\"j\n\016GetS" +
-      "kuResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
-      "eResponse\0221\n\nsku_detail\030\002 \001(\0132\035.glory_ap" +
-      "i.SkuWithValueAuthor\"X\n\020UpdateSkuRequest" +
-      "\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReques" +
-      "t\022\033\n\003sku\030\002 \001(\0132\016.glory_api.Sku\"J\n\021Update" +
-      "SkuResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
-      "seResponse\022\016\n\006sku_id\030\002 \001(\003\"\214\001\n\016ListSkuRe" +
-      "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
-      "equest\022\020\n\010sku_name\030\002 \001(\t\022\022\n\nproduct_id\030\003" +
-      " \001(\003\022+\n\npagination\030d \001(\0132\027.base.Paginati" +
-      "onRequest\"\231\001\n\017ListSkuResponse\022%\n\tbase_re" +
-      "sp\030\001 \001(\0132\022.base.BaseResponse\0221\n\nsku_deta" +
-      "il\030\002 \003(\0132\035.glory_api.SkuWithValueAuthor\022" +
-      ",\n\npagination\030d \001(\0132\030.base.PaginationRes" +
-      "ponse\"K\n\020DeleteSkuRequest\022\'\n\014base_reques" +
-      "t\030\001 \001(\0132\021.base.BaseRequest\022\016\n\006sku_id\030\002 \001" +
-      "(\003\":\n\021DeleteSkuResponse\022%\n\tbase_resp\030\001 \001" +
-      "(\0132\022.base.BaseResponseB#\n\037com.zhijiejiao" +
-      "yu.glory_api.shopP\001b\006proto3"
+      ".glory_api.Sku\"J\n\021UpdateSkuResponse\022%\n\tb" +
+      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\022\016\n\006sk" +
+      "u_id\030\002 \001(\003\"\214\001\n\016ListSkuRequest\022\'\n\014base_re" +
+      "quest\030\001 \001(\0132\021.base.BaseRequest\022\020\n\010sku_na" +
+      "me\030\002 \001(\t\022\022\n\nproduct_id\030\003 \001(\003\022+\n\npaginati" +
+      "on\030d \001(\0132\027.base.PaginationRequest\"\231\001\n\017Li" +
+      "stSkuResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
+      "BaseResponse\0221\n\nsku_detail\030\002 \003(\0132\035.glory" +
+      "_api.SkuWithValueAuthor\022,\n\npagination\030d " +
+      "\001(\0132\030.base.PaginationResponse\"K\n\020DeleteS" +
+      "kuRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.B" +
+      "aseRequest\022\016\n\006sku_id\030\002 \001(\003\":\n\021DeleteSkuR" +
+      "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
+      "sponseB#\n\037com.zhijiejiaoyu.glory_api.sho" +
+      "pP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -163,7 +164,7 @@ public final class SkuOuterClass {
     internal_static_glory_api_Sku_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_Sku_descriptor,
-        new java.lang.String[] { "SkuId", "SkuName", "ProductId", "UnitPrice", "Currency", "RemainingQuantity", "TotalSold", "Attribute", "AttachmentId", "SkuUrl", "SerialNumber", "PreferentialValue", "StockTotal", "PurchaseLimit", });
+        new java.lang.String[] { "SkuId", "SkuName", "ProductId", "UnitPrice", "Currency", "RemainingQuantity", "TotalSold", "Attribute", "AttachmentId", "SkuUrl", "SerialNumber", "PreferentialValue", "StockTotal", "PurchaseLimit", "UserBuyTotal", });
     internal_static_glory_api_SkuAttributeWithOneValue_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_glory_api_SkuAttributeWithOneValue_fieldAccessorTable = new

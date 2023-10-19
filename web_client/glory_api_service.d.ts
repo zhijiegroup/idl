@@ -819,6 +819,10 @@ CreateLivePlanProduct create live plan product */
     request: live_room.VideoToTextCallbackRequest
   ): Promise<live_room.VideoToTextCallbackResponse>;
 
+  LiveStreamCallback(
+    request: live_room.LiveStreamCallbackRequest
+  ): Promise<live_room.LiveStreamCallbackResponse>;
+
   RegenerationAiFeedback(
     request: live_evaluate.RegenerationAiFeedbackRequest
   ): Promise<live_evaluate.RegenerationAiFeedbackResponse>;
@@ -1294,6 +1298,10 @@ CreateLivePlanProduct create live plan product */
   UpdateTeachingPlan(
     request: teaching_plan.UpdateTeachingPlanRequest
   ): Promise<teaching_plan.UpdateTeachingPlanResponse>;
+
+  DeleteTeachingPlan(
+    request: teaching_plan.DeleteTeachingPlanRequest
+  ): Promise<teaching_plan.DeleteTeachingPlanResponse>;
 
   /** 培养方案 */
   CreateEduScheme(

@@ -5688,6 +5688,37 @@ public final class glory_apiGrpc {
     return getVideoToTextCallbackMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.LiveStreamCallbackRequest,
+      com.zhijiejiaoyu.glory_api.live.LiveStreamCallbackResponse> getLiveStreamCallbackMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "LiveStreamCallback",
+      requestType = com.zhijiejiaoyu.glory_api.live.LiveStreamCallbackRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.live.LiveStreamCallbackResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.LiveStreamCallbackRequest,
+      com.zhijiejiaoyu.glory_api.live.LiveStreamCallbackResponse> getLiveStreamCallbackMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.LiveStreamCallbackRequest, com.zhijiejiaoyu.glory_api.live.LiveStreamCallbackResponse> getLiveStreamCallbackMethod;
+    if ((getLiveStreamCallbackMethod = glory_apiGrpc.getLiveStreamCallbackMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getLiveStreamCallbackMethod = glory_apiGrpc.getLiveStreamCallbackMethod) == null) {
+          glory_apiGrpc.getLiveStreamCallbackMethod = getLiveStreamCallbackMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.live.LiveStreamCallbackRequest, com.zhijiejiaoyu.glory_api.live.LiveStreamCallbackResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "LiveStreamCallback"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.LiveStreamCallbackRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.LiveStreamCallbackResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("LiveStreamCallback"))
+              .build();
+        }
+      }
+    }
+    return getLiveStreamCallbackMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.RegenerationAiFeedbackRequest,
       com.zhijiejiaoyu.glory_api.live.RegenerationAiFeedbackResponse> getRegenerationAiFeedbackMethod;
 
@@ -8881,6 +8912,37 @@ public final class glory_apiGrpc {
     return getUpdateTeachingPlanMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.DeleteTeachingPlanRequest,
+      com.zhijiejiaoyu.glory_api.course.DeleteTeachingPlanResponse> getDeleteTeachingPlanMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteTeachingPlan",
+      requestType = com.zhijiejiaoyu.glory_api.course.DeleteTeachingPlanRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.DeleteTeachingPlanResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.DeleteTeachingPlanRequest,
+      com.zhijiejiaoyu.glory_api.course.DeleteTeachingPlanResponse> getDeleteTeachingPlanMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.DeleteTeachingPlanRequest, com.zhijiejiaoyu.glory_api.course.DeleteTeachingPlanResponse> getDeleteTeachingPlanMethod;
+    if ((getDeleteTeachingPlanMethod = glory_apiGrpc.getDeleteTeachingPlanMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getDeleteTeachingPlanMethod = glory_apiGrpc.getDeleteTeachingPlanMethod) == null) {
+          glory_apiGrpc.getDeleteTeachingPlanMethod = getDeleteTeachingPlanMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.DeleteTeachingPlanRequest, com.zhijiejiaoyu.glory_api.course.DeleteTeachingPlanResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteTeachingPlan"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.DeleteTeachingPlanRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.DeleteTeachingPlanResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("DeleteTeachingPlan"))
+              .build();
+        }
+      }
+    }
+    return getDeleteTeachingPlanMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.CreateEduSchemeRequest,
       com.zhijiejiaoyu.glory_api.course.CreateEduSchemeResponse> getCreateEduSchemeMethod;
 
@@ -10540,6 +10602,13 @@ public final class glory_apiGrpc {
 
     /**
      */
+    default void liveStreamCallback(com.zhijiejiaoyu.glory_api.live.LiveStreamCallbackRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.LiveStreamCallbackResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getLiveStreamCallbackMethod(), responseObserver);
+    }
+
+    /**
+     */
     default void regenerationAiFeedback(com.zhijiejiaoyu.glory_api.live.RegenerationAiFeedbackRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.RegenerationAiFeedbackResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRegenerationAiFeedbackMethod(), responseObserver);
@@ -11437,6 +11506,13 @@ public final class glory_apiGrpc {
     default void updateTeachingPlan(com.zhijiejiaoyu.glory_api.course.UpdateTeachingPlanRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.UpdateTeachingPlanResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateTeachingPlanMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void deleteTeachingPlan(com.zhijiejiaoyu.glory_api.course.DeleteTeachingPlanRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.DeleteTeachingPlanResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteTeachingPlanMethod(), responseObserver);
     }
 
     /**
@@ -13099,6 +13175,14 @@ public final class glory_apiGrpc {
 
     /**
      */
+    public void liveStreamCallback(com.zhijiejiaoyu.glory_api.live.LiveStreamCallbackRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.LiveStreamCallbackResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getLiveStreamCallbackMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
     public void regenerationAiFeedback(com.zhijiejiaoyu.glory_api.live.RegenerationAiFeedbackRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.RegenerationAiFeedbackResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -14099,6 +14183,14 @@ public final class glory_apiGrpc {
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.UpdateTeachingPlanResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateTeachingPlanMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deleteTeachingPlan(com.zhijiejiaoyu.glory_api.course.DeleteTeachingPlanRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.DeleteTeachingPlanResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteTeachingPlanMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -15574,6 +15666,13 @@ public final class glory_apiGrpc {
 
     /**
      */
+    public com.zhijiejiaoyu.glory_api.live.LiveStreamCallbackResponse liveStreamCallback(com.zhijiejiaoyu.glory_api.live.LiveStreamCallbackRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getLiveStreamCallbackMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
     public com.zhijiejiaoyu.glory_api.live.RegenerationAiFeedbackResponse regenerationAiFeedback(com.zhijiejiaoyu.glory_api.live.RegenerationAiFeedbackRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRegenerationAiFeedbackMethod(), getCallOptions(), request);
@@ -16471,6 +16570,13 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.course.UpdateTeachingPlanResponse updateTeachingPlan(com.zhijiejiaoyu.glory_api.course.UpdateTeachingPlanRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateTeachingPlanMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.course.DeleteTeachingPlanResponse deleteTeachingPlan(com.zhijiejiaoyu.glory_api.course.DeleteTeachingPlanRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTeachingPlanMethod(), getCallOptions(), request);
     }
 
     /**
@@ -18122,6 +18228,14 @@ public final class glory_apiGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.live.LiveStreamCallbackResponse> liveStreamCallback(
+        com.zhijiejiaoyu.glory_api.live.LiveStreamCallbackRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getLiveStreamCallbackMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.live.RegenerationAiFeedbackResponse> regenerationAiFeedback(
         com.zhijiejiaoyu.glory_api.live.RegenerationAiFeedbackRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -19125,6 +19239,14 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.DeleteTeachingPlanResponse> deleteTeachingPlan(
+        com.zhijiejiaoyu.glory_api.course.DeleteTeachingPlanRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteTeachingPlanMethod(), getCallOptions()), request);
+    }
+
+    /**
      * <pre>
      * 培养方案
      * </pre>
@@ -19370,116 +19492,118 @@ public final class glory_apiGrpc {
   private static final int METHODID_GET_RANK = 180;
   private static final int METHODID_RECORD_LIVE_CALLBACK = 181;
   private static final int METHODID_VIDEO_TO_TEXT_CALLBACK = 182;
-  private static final int METHODID_REGENERATION_AI_FEEDBACK = 183;
-  private static final int METHODID_SUBMIT_USER_ATTITUDE_FOR_AI_RESULT = 184;
-  private static final int METHODID_PREHEAT_PRODUCT = 185;
-  private static final int METHODID_PUBLIC_PRICE = 186;
-  private static final int METHODID_CREATE_TENANT = 187;
-  private static final int METHODID_GET_TENANT = 188;
-  private static final int METHODID_UPDATE_TENANT = 189;
-  private static final int METHODID_DELETE_TENANT = 190;
-  private static final int METHODID_LIST_TENANT = 191;
-  private static final int METHODID_GET_TENANT_ORG = 192;
-  private static final int METHODID_ENTER_TENANT = 193;
-  private static final int METHODID_EXIT_TENANT = 194;
-  private static final int METHODID_INIT_TENANT = 195;
-  private static final int METHODID_CREATE_TENANT_DEPT = 196;
-  private static final int METHODID_UPDATE_TENANT_DEPT = 197;
-  private static final int METHODID_DELETE_TENANT_DEPT = 198;
-  private static final int METHODID_GET_TENANT_DEPT = 199;
-  private static final int METHODID_GET_TENANT_DEPT_TYPE = 200;
-  private static final int METHODID_CREATE_TENANT_USER = 201;
-  private static final int METHODID_DELETE_TENANT_USER = 202;
-  private static final int METHODID_UPDATE_TENANT_USER = 203;
-  private static final int METHODID_GET_TENANT_USER = 204;
-  private static final int METHODID_LIST_TENANT_USER = 205;
-  private static final int METHODID_LIST_TENANT_STUDENT = 206;
-  private static final int METHODID_UPDATE_TENANT_USER_PASSWORD = 207;
-  private static final int METHODID_UPDATE_TENANT_CONFIG = 208;
-  private static final int METHODID_LIST_TENANT_CONFIG = 209;
-  private static final int METHODID_CREATE_SHORT_VIDEO = 210;
-  private static final int METHODID_STAGE_SHORT_VIDEO = 211;
-  private static final int METHODID_LIST_MY_SHORT_VIDEO = 212;
-  private static final int METHODID_LIST_MY_STAGE_VIDEO = 213;
-  private static final int METHODID_LIST_MY_LIKE_VIDEO = 214;
-  private static final int METHODID_LIST_MY_FAVORITE_VIDEO = 215;
-  private static final int METHODID_GET_SHORT_VIDEO = 216;
-  private static final int METHODID_UPDATE_SHORT_VIDEO = 217;
-  private static final int METHODID_DELETE_SHORT_VIDEO = 218;
-  private static final int METHODID_GET_STAGE_VIDEO = 219;
-  private static final int METHODID_DELETE_STAGE_VIDEO = 220;
-  private static final int METHODID_UPDATE_STAGE_VIDEO = 221;
-  private static final int METHODID_MANAGEMENT_LIST_SHORT_VIDEO = 222;
-  private static final int METHODID_MANAGEMENT_CENSOR_SHORT_VIDEO = 223;
-  private static final int METHODID_MANAGEMENT_DELETE_SHORT_VIDEO = 224;
-  private static final int METHODID_LIST_SHORT_VIDEO = 225;
-  private static final int METHODID_LIKE_SHORT_VIDEO = 226;
-  private static final int METHODID_FAVORITE_SHORT_VIDEO = 227;
-  private static final int METHODID_CREATE_SHORT_VIDEO_COMMENT = 228;
-  private static final int METHODID_DELETE_SHORT_VIDEO_COMMENT = 229;
-  private static final int METHODID_LIST_SHORT_VIDEO_COMMENT = 230;
-  private static final int METHODID_CREATE_COUPON = 231;
-  private static final int METHODID_LIST_COUPON = 232;
-  private static final int METHODID_COUPON_DETAIL = 233;
-  private static final int METHODID_UPDATE_COUPON = 234;
-  private static final int METHODID_DELETE_COUPON = 235;
-  private static final int METHODID_ABOLISH_COUPON = 236;
-  private static final int METHODID_UPDATE_COUPON_DISTRIBUTION_STATUS = 237;
-  private static final int METHODID_CLAIM_COUPON = 238;
-  private static final int METHODID_LIST_MY_COUPON = 239;
-  private static final int METHODID_CREATE_ACTIVITY = 240;
-  private static final int METHODID_LIST_ACTIVITY = 241;
-  private static final int METHODID_ACTIVITY_DETAIL = 242;
-  private static final int METHODID_UPDATE_ACTIVITY = 243;
-  private static final int METHODID_DELETE_ACTIVITY = 244;
-  private static final int METHODID_DISABLE_ACTIVITY = 245;
-  private static final int METHODID_CREATE_COURSE_MATERIAL_BOX = 246;
-  private static final int METHODID_LIST_COURSE_MATERIAL_BOX = 247;
-  private static final int METHODID_DELETE_COURSE_MATERIAL_BOX = 248;
-  private static final int METHODID_UPLOAD_COURSE_MATERIAL = 249;
-  private static final int METHODID_LIST_COURSE_MATERIAL = 250;
-  private static final int METHODID_DELETE_COURSE_MATERIAL = 251;
-  private static final int METHODID_GET_COURSE_MODULE_CODE = 252;
-  private static final int METHODID_GET_COURSE_CHAPTER_CODE = 253;
-  private static final int METHODID_CREATE_COURSE_MODULE = 254;
-  private static final int METHODID_GET_COURSE_MODULE = 255;
-  private static final int METHODID_UPDATE_COURSE_MODULE = 256;
-  private static final int METHODID_DELETE_COURSE_MODULE = 257;
-  private static final int METHODID_LIST_COURSE_MODULE = 258;
-  private static final int METHODID_LIST_LATEST_COURSE = 259;
-  private static final int METHODID_LIST_HOTEST_COURSE = 260;
-  private static final int METHODID_CREATE_CM_COURSE = 261;
-  private static final int METHODID_PREVIEW_CM_COURSE = 262;
-  private static final int METHODID_CREATE_NM_COURSE_RESOURCE = 263;
-  private static final int METHODID_CREATE_NM_COURSE_CHAPTER = 264;
-  private static final int METHODID_CREATE_NM_COURSE = 265;
-  private static final int METHODID_LIST_NM_COURSE = 266;
-  private static final int METHODID_NM_COURSE_DETAIL = 267;
-  private static final int METHODID_DELETE_NM_COURSE = 268;
-  private static final int METHODID_CREATE_COURSE = 269;
-  private static final int METHODID_GET_COURSE = 270;
-  private static final int METHODID_UPDATE_COURSE = 271;
-  private static final int METHODID_DELETE_COURSE = 272;
-  private static final int METHODID_LIST_COURSE = 273;
-  private static final int METHODID_CREATE_KNOWLEDGE_GRAPH = 274;
-  private static final int METHODID_GET_KNOWLEDGE_GRAPH = 275;
-  private static final int METHODID_GET_KNOWLEDGE_GRAPH_NODE = 276;
-  private static final int METHODID_GET_MAJOR_CODE = 277;
-  private static final int METHODID_GET_COURSE_IDS = 278;
-  private static final int METHODID_ENROLL_COURSE = 279;
-  private static final int METHODID_DELETE_MY_COURSE = 280;
-  private static final int METHODID_UPDATE_COURSE_PROGRESS = 281;
-  private static final int METHODID_LIST_MY_COURSE = 282;
-  private static final int METHODID_LIST_TEACHING_PLAN = 283;
-  private static final int METHODID_CREATE_TEACHING_PLAN = 284;
-  private static final int METHODID_UPDATE_TEACHING_PLAN = 285;
-  private static final int METHODID_CREATE_EDU_SCHEME = 286;
-  private static final int METHODID_UPDATE_EDU_SCHEME = 287;
-  private static final int METHODID_LIST_EDU_SCHEME = 288;
-  private static final int METHODID_EDU_SCHEME_DETAIL = 289;
-  private static final int METHODID_DELETE_EDU_SCHEME = 290;
-  private static final int METHODID_DISTRIBUTE_EDU_SCHEME = 291;
-  private static final int METHODID_GET_ANDROID_QRCODE = 292;
+  private static final int METHODID_LIVE_STREAM_CALLBACK = 183;
+  private static final int METHODID_REGENERATION_AI_FEEDBACK = 184;
+  private static final int METHODID_SUBMIT_USER_ATTITUDE_FOR_AI_RESULT = 185;
+  private static final int METHODID_PREHEAT_PRODUCT = 186;
+  private static final int METHODID_PUBLIC_PRICE = 187;
+  private static final int METHODID_CREATE_TENANT = 188;
+  private static final int METHODID_GET_TENANT = 189;
+  private static final int METHODID_UPDATE_TENANT = 190;
+  private static final int METHODID_DELETE_TENANT = 191;
+  private static final int METHODID_LIST_TENANT = 192;
+  private static final int METHODID_GET_TENANT_ORG = 193;
+  private static final int METHODID_ENTER_TENANT = 194;
+  private static final int METHODID_EXIT_TENANT = 195;
+  private static final int METHODID_INIT_TENANT = 196;
+  private static final int METHODID_CREATE_TENANT_DEPT = 197;
+  private static final int METHODID_UPDATE_TENANT_DEPT = 198;
+  private static final int METHODID_DELETE_TENANT_DEPT = 199;
+  private static final int METHODID_GET_TENANT_DEPT = 200;
+  private static final int METHODID_GET_TENANT_DEPT_TYPE = 201;
+  private static final int METHODID_CREATE_TENANT_USER = 202;
+  private static final int METHODID_DELETE_TENANT_USER = 203;
+  private static final int METHODID_UPDATE_TENANT_USER = 204;
+  private static final int METHODID_GET_TENANT_USER = 205;
+  private static final int METHODID_LIST_TENANT_USER = 206;
+  private static final int METHODID_LIST_TENANT_STUDENT = 207;
+  private static final int METHODID_UPDATE_TENANT_USER_PASSWORD = 208;
+  private static final int METHODID_UPDATE_TENANT_CONFIG = 209;
+  private static final int METHODID_LIST_TENANT_CONFIG = 210;
+  private static final int METHODID_CREATE_SHORT_VIDEO = 211;
+  private static final int METHODID_STAGE_SHORT_VIDEO = 212;
+  private static final int METHODID_LIST_MY_SHORT_VIDEO = 213;
+  private static final int METHODID_LIST_MY_STAGE_VIDEO = 214;
+  private static final int METHODID_LIST_MY_LIKE_VIDEO = 215;
+  private static final int METHODID_LIST_MY_FAVORITE_VIDEO = 216;
+  private static final int METHODID_GET_SHORT_VIDEO = 217;
+  private static final int METHODID_UPDATE_SHORT_VIDEO = 218;
+  private static final int METHODID_DELETE_SHORT_VIDEO = 219;
+  private static final int METHODID_GET_STAGE_VIDEO = 220;
+  private static final int METHODID_DELETE_STAGE_VIDEO = 221;
+  private static final int METHODID_UPDATE_STAGE_VIDEO = 222;
+  private static final int METHODID_MANAGEMENT_LIST_SHORT_VIDEO = 223;
+  private static final int METHODID_MANAGEMENT_CENSOR_SHORT_VIDEO = 224;
+  private static final int METHODID_MANAGEMENT_DELETE_SHORT_VIDEO = 225;
+  private static final int METHODID_LIST_SHORT_VIDEO = 226;
+  private static final int METHODID_LIKE_SHORT_VIDEO = 227;
+  private static final int METHODID_FAVORITE_SHORT_VIDEO = 228;
+  private static final int METHODID_CREATE_SHORT_VIDEO_COMMENT = 229;
+  private static final int METHODID_DELETE_SHORT_VIDEO_COMMENT = 230;
+  private static final int METHODID_LIST_SHORT_VIDEO_COMMENT = 231;
+  private static final int METHODID_CREATE_COUPON = 232;
+  private static final int METHODID_LIST_COUPON = 233;
+  private static final int METHODID_COUPON_DETAIL = 234;
+  private static final int METHODID_UPDATE_COUPON = 235;
+  private static final int METHODID_DELETE_COUPON = 236;
+  private static final int METHODID_ABOLISH_COUPON = 237;
+  private static final int METHODID_UPDATE_COUPON_DISTRIBUTION_STATUS = 238;
+  private static final int METHODID_CLAIM_COUPON = 239;
+  private static final int METHODID_LIST_MY_COUPON = 240;
+  private static final int METHODID_CREATE_ACTIVITY = 241;
+  private static final int METHODID_LIST_ACTIVITY = 242;
+  private static final int METHODID_ACTIVITY_DETAIL = 243;
+  private static final int METHODID_UPDATE_ACTIVITY = 244;
+  private static final int METHODID_DELETE_ACTIVITY = 245;
+  private static final int METHODID_DISABLE_ACTIVITY = 246;
+  private static final int METHODID_CREATE_COURSE_MATERIAL_BOX = 247;
+  private static final int METHODID_LIST_COURSE_MATERIAL_BOX = 248;
+  private static final int METHODID_DELETE_COURSE_MATERIAL_BOX = 249;
+  private static final int METHODID_UPLOAD_COURSE_MATERIAL = 250;
+  private static final int METHODID_LIST_COURSE_MATERIAL = 251;
+  private static final int METHODID_DELETE_COURSE_MATERIAL = 252;
+  private static final int METHODID_GET_COURSE_MODULE_CODE = 253;
+  private static final int METHODID_GET_COURSE_CHAPTER_CODE = 254;
+  private static final int METHODID_CREATE_COURSE_MODULE = 255;
+  private static final int METHODID_GET_COURSE_MODULE = 256;
+  private static final int METHODID_UPDATE_COURSE_MODULE = 257;
+  private static final int METHODID_DELETE_COURSE_MODULE = 258;
+  private static final int METHODID_LIST_COURSE_MODULE = 259;
+  private static final int METHODID_LIST_LATEST_COURSE = 260;
+  private static final int METHODID_LIST_HOTEST_COURSE = 261;
+  private static final int METHODID_CREATE_CM_COURSE = 262;
+  private static final int METHODID_PREVIEW_CM_COURSE = 263;
+  private static final int METHODID_CREATE_NM_COURSE_RESOURCE = 264;
+  private static final int METHODID_CREATE_NM_COURSE_CHAPTER = 265;
+  private static final int METHODID_CREATE_NM_COURSE = 266;
+  private static final int METHODID_LIST_NM_COURSE = 267;
+  private static final int METHODID_NM_COURSE_DETAIL = 268;
+  private static final int METHODID_DELETE_NM_COURSE = 269;
+  private static final int METHODID_CREATE_COURSE = 270;
+  private static final int METHODID_GET_COURSE = 271;
+  private static final int METHODID_UPDATE_COURSE = 272;
+  private static final int METHODID_DELETE_COURSE = 273;
+  private static final int METHODID_LIST_COURSE = 274;
+  private static final int METHODID_CREATE_KNOWLEDGE_GRAPH = 275;
+  private static final int METHODID_GET_KNOWLEDGE_GRAPH = 276;
+  private static final int METHODID_GET_KNOWLEDGE_GRAPH_NODE = 277;
+  private static final int METHODID_GET_MAJOR_CODE = 278;
+  private static final int METHODID_GET_COURSE_IDS = 279;
+  private static final int METHODID_ENROLL_COURSE = 280;
+  private static final int METHODID_DELETE_MY_COURSE = 281;
+  private static final int METHODID_UPDATE_COURSE_PROGRESS = 282;
+  private static final int METHODID_LIST_MY_COURSE = 283;
+  private static final int METHODID_LIST_TEACHING_PLAN = 284;
+  private static final int METHODID_CREATE_TEACHING_PLAN = 285;
+  private static final int METHODID_UPDATE_TEACHING_PLAN = 286;
+  private static final int METHODID_DELETE_TEACHING_PLAN = 287;
+  private static final int METHODID_CREATE_EDU_SCHEME = 288;
+  private static final int METHODID_UPDATE_EDU_SCHEME = 289;
+  private static final int METHODID_LIST_EDU_SCHEME = 290;
+  private static final int METHODID_EDU_SCHEME_DETAIL = 291;
+  private static final int METHODID_DELETE_EDU_SCHEME = 292;
+  private static final int METHODID_DISTRIBUTE_EDU_SCHEME = 293;
+  private static final int METHODID_GET_ANDROID_QRCODE = 294;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -20230,6 +20354,10 @@ public final class glory_apiGrpc {
           serviceImpl.videoToTextCallback((com.zhijiejiaoyu.glory_api.live.VideoToTextCallbackRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.VideoToTextCallbackResponse>) responseObserver);
           break;
+        case METHODID_LIVE_STREAM_CALLBACK:
+          serviceImpl.liveStreamCallback((com.zhijiejiaoyu.glory_api.live.LiveStreamCallbackRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.LiveStreamCallbackResponse>) responseObserver);
+          break;
         case METHODID_REGENERATION_AI_FEEDBACK:
           serviceImpl.regenerationAiFeedback((com.zhijiejiaoyu.glory_api.live.RegenerationAiFeedbackRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.RegenerationAiFeedbackResponse>) responseObserver);
@@ -20641,6 +20769,10 @@ public final class glory_apiGrpc {
         case METHODID_UPDATE_TEACHING_PLAN:
           serviceImpl.updateTeachingPlan((com.zhijiejiaoyu.glory_api.course.UpdateTeachingPlanRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.UpdateTeachingPlanResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_TEACHING_PLAN:
+          serviceImpl.deleteTeachingPlan((com.zhijiejiaoyu.glory_api.course.DeleteTeachingPlanRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.DeleteTeachingPlanResponse>) responseObserver);
           break;
         case METHODID_CREATE_EDU_SCHEME:
           serviceImpl.createEduScheme((com.zhijiejiaoyu.glory_api.course.CreateEduSchemeRequest) request,
@@ -21970,6 +22102,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.live.VideoToTextCallbackResponse>(
                 service, METHODID_VIDEO_TO_TEXT_CALLBACK)))
         .addMethod(
+          getLiveStreamCallbackMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.live.LiveStreamCallbackRequest,
+              com.zhijiejiaoyu.glory_api.live.LiveStreamCallbackResponse>(
+                service, METHODID_LIVE_STREAM_CALLBACK)))
+        .addMethod(
           getRegenerationAiFeedbackMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -22691,6 +22830,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.course.UpdateTeachingPlanResponse>(
                 service, METHODID_UPDATE_TEACHING_PLAN)))
         .addMethod(
+          getDeleteTeachingPlanMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.DeleteTeachingPlanRequest,
+              com.zhijiejiaoyu.glory_api.course.DeleteTeachingPlanResponse>(
+                service, METHODID_DELETE_TEACHING_PLAN)))
+        .addMethod(
           getCreateEduSchemeMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -22970,6 +23116,7 @@ public final class glory_apiGrpc {
               .addMethod(getGetRankMethod())
               .addMethod(getRecordLiveCallbackMethod())
               .addMethod(getVideoToTextCallbackMethod())
+              .addMethod(getLiveStreamCallbackMethod())
               .addMethod(getRegenerationAiFeedbackMethod())
               .addMethod(getSubmitUserAttitudeForAiResultMethod())
               .addMethod(getPreheatProductMethod())
@@ -23073,6 +23220,7 @@ public final class glory_apiGrpc {
               .addMethod(getListTeachingPlanMethod())
               .addMethod(getCreateTeachingPlanMethod())
               .addMethod(getUpdateTeachingPlanMethod())
+              .addMethod(getDeleteTeachingPlanMethod())
               .addMethod(getCreateEduSchemeMethod())
               .addMethod(getUpdateEduSchemeMethod())
               .addMethod(getListEduSchemeMethod())

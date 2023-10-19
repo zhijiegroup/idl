@@ -169,6 +169,16 @@ public final class LiveRoom {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_CloseShopAllLiveResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_LiveStreamCallbackRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_LiveStreamCallbackRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_LiveStreamCallbackResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_LiveStreamCallbackResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -271,8 +281,14 @@ public final class LiveRoom {
       "\001(\0132\022.base.BaseResponse\"*\n\027CloseShopAllL" +
       "iveRequest\022\017\n\007shop_id\030\001 \001(\003\"A\n\030CloseShop" +
       "AllLiveResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
-      "e.BaseResponseB#\n\037com.zhijiejiaoyu.glory" +
-      "_api.liveP\001b\006proto3"
+      "e.BaseResponse\"\255\001\n\031LiveStreamCallbackReq" +
+      "uest\022\016\n\006action\030\001 \001(\t\022\n\n\002ip\030\002 \001(\t\022\n\n\002id\030\003" +
+      " \001(\t\022\013\n\003app\030\004 \001(\t\022\017\n\007appname\030\005 \001(\t\022\014\n\004ti" +
+      "me\030\006 \001(\003\022\017\n\007usrargs\030\007 \001(\t\022\014\n\004node\030\010 \001(\t\022" +
+      "\016\n\006height\030\t \001(\005\022\r\n\005width\030\n \001(\005\"C\n\032LiveSt" +
+      "reamCallbackResponse\022%\n\tbase_resp\030\001 \001(\0132" +
+      "\022.base.BaseResponseB#\n\037com.zhijiejiaoyu." +
+      "glory_api.liveP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -464,6 +480,18 @@ public final class LiveRoom {
     internal_static_glory_api_CloseShopAllLiveResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CloseShopAllLiveResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
+    internal_static_glory_api_LiveStreamCallbackRequest_descriptor =
+      getDescriptor().getMessageTypes().get(31);
+    internal_static_glory_api_LiveStreamCallbackRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_LiveStreamCallbackRequest_descriptor,
+        new java.lang.String[] { "Action", "Ip", "Id", "App", "Appname", "Time", "Usrargs", "Node", "Height", "Width", });
+    internal_static_glory_api_LiveStreamCallbackResponse_descriptor =
+      getDescriptor().getMessageTypes().get(32);
+    internal_static_glory_api_LiveStreamCallbackResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_LiveStreamCallbackResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
   }

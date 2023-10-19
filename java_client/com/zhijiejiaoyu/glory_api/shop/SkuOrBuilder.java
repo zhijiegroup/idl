@@ -138,4 +138,10 @@ public interface SkuOrBuilder extends
    * @return The purchaseLimit.
    */
   long getPurchaseLimit();
+
+  /**
+   * <code>int64 user_buy_total = 16;</code>
+   * @return The userBuyTotal.
+   */
+  long getUserBuyTotal();
 }

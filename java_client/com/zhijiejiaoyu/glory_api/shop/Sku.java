@@ -134,6 +134,11 @@ private static final long serialVersionUID = 0L;
             purchaseLimit = input.readInt64();
             break;
           }
+          case 128: {
+
+            userBuyTotal = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -487,6 +492,17 @@ private static final long serialVersionUID = 0L;
     return purchaseLimit ;
   }
 
+  public static final int USER_BUY_TOTAL_FIELD_NUMBER = 16;
+  private long userBuyTotal ;
+  /**
+   * <code>int64 user_buy_total = 16;</code>
+   * @return The userBuyTotal.
+   */
+  @java.lang.Override
+  public long getUserBuyTotal() {
+    return userBuyTotal ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -542,6 +558,9 @@ private static final long serialVersionUID = 0L;
     }
     if (purchaseLimit != 0L) {
       output.writeInt64(15, purchaseLimit );
+    }
+    if (userBuyTotal != 0L) {
+      output.writeInt64(16, userBuyTotal );
     }
     unknownFields.writeTo(output);
   }
@@ -603,6 +622,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(15, purchaseLimit );
     }
+    if (userBuyTotal != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(16, userBuyTotal );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -647,6 +670,8 @@ private static final long serialVersionUID = 0L;
         != other.getStockTotal()) return false;
     if (getPurchaseLimit()
         != other.getPurchaseLimit()) return false;
+    if (getUserBuyTotal()
+        != other.getUserBuyTotal()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -694,6 +719,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + PURCHASE_LIMIT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getPurchaseLimit());
+    hash = (37 * hash) + USER_BUY_TOTAL_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getUserBuyTotal());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -860,6 +888,8 @@ private static final long serialVersionUID = 0L;
 
       purchaseLimit = 0L;
 
+      userBuyTotal = 0L;
+
       return this;
     }
 
@@ -909,6 +939,7 @@ private static final long serialVersionUID = 0L;
       result.preferentialValue = preferentialValue ;
       result.stockTotal = stockTotal ;
       result.purchaseLimit = purchaseLimit ;
+      result.userBuyTotal = userBuyTotal ;
       onBuilt();
       return result;
     }
@@ -1026,6 +1057,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getPurchaseLimit() != 0L) {
         setPurchaseLimit(other.getPurchaseLimit());
+      }
+      if (other.getUserBuyTotal() != 0L) {
+        setUserBuyTotal(other.getUserBuyTotal());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1921,6 +1955,37 @@ private static final long serialVersionUID = 0L;
     public Builder clearPurchaseLimit() {
       
       purchaseLimit = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long userBuyTotal ;
+    /**
+     * <code>int64 user_buy_total = 16;</code>
+     * @return The userBuyTotal.
+     */
+    @java.lang.Override
+    public long getUserBuyTotal() {
+      return userBuyTotal ;
+    }
+    /**
+     * <code>int64 user_buy_total = 16;</code>
+     * @param value The userBuyTotal to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserBuyTotal(long value) {
+      
+      userBuyTotal = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 user_buy_total = 16;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUserBuyTotal() {
+      
+      userBuyTotal = 0L;
       onChanged();
       return this;
     }
