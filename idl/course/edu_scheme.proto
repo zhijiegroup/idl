@@ -7,19 +7,20 @@ import "base.proto";
 import "course/module.proto";
 
 message EduScheme {
-    string name = 1;
-    string major = 2;
-    string goal = 3;
-    double total_hours = 4;
-    double knowledge_hours = 5;
-    double skill_hours = 6;
-    string created_at = 7;
-    string knowledge_standard = 8;
-    string ability_standard = 9;
-    string character_standard = 10;
-    string course_group_name = 11; // 能力方向名称
-    int64 course_group_id = 12; // 能力方向ID
-    repeated CourseModule course_modules = 13;  // 能力指标
+    int64 edu_scheme_id = 1;
+    string name = 2;
+    string major = 3;
+    string goal = 4;
+    double total_hours = 5;
+    double knowledge_hours = 6;
+    double skill_hours = 7;
+    string created_at = 8;
+    string knowledge_standard = 9;
+    string ability_standard = 10;
+    string character_standard = 11;
+    string course_group_name = 12; // 能力方向名称
+    int64 course_group_id = 13; // 能力方向ID
+    repeated CourseModule course_modules = 14;  // 能力指标
 }
 
 message CreateEduSchemeRequest {
