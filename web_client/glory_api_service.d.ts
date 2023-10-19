@@ -513,6 +513,10 @@ list the permissions that supported */
     request: attachment.UploadAttachmentRequest
   ): Promise<attachment.UploadAttachmentResponse>;
 
+  SaveAttachment(
+    request: attachment.SaveAttachmentRequest
+  ): Promise<attachment.SaveAttachmentResponse>;
+
   ListAttachment(
     request: attachment.ListAttachmentRequest
   ): Promise<attachment.ListAttachmentResponse>;

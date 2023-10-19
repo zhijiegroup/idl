@@ -50,7 +50,7 @@ public final class GloryApiService {
       "le.proto\032\023course/course.proto\032\022course/gr" +
       "aph.proto\032\030course/user_course.proto\032\032cou" +
       "rse/teaching_plan.proto\032\027course/edu_sche" +
-      "me.proto\032\rapp/app.proto2\374\233\002\n\tglory_api\022s" +
+      "me.proto\032\rapp/app.proto2\364\234\002\n\tglory_api\022s" +
       "\n\rCreateExample\022\037.glory_api.CreateExampl" +
       "eRequest\032 .glory_api.CreateExampleRespon" +
       "se\"\037\322\301\030\033/api/example/create_example\022g\n\nG" +
@@ -368,6 +368,9 @@ public final class GloryApiService {
       "\022~\n\020UploadAttachment\022\".glory_api.UploadA" +
       "ttachmentRequest\032#.glory_api.UploadAttac" +
       "hmentResponse\"!\322\301\030\035/api/seller/upload_at" +
+      "tachment\022v\n\016SaveAttachment\022 .glory_api.S" +
+      "aveAttachmentRequest\032!.glory_api.SaveAtt" +
+      "achmentResponse\"\037\322\301\030\033/api/seller/save_at" +
       "tachment\022v\n\016ListAttachment\022 .glory_api.L" +
       "istAttachmentRequest\032!.glory_api.ListAtt" +
       "achmentResponse\"\037\322\301\030\033/api/seller/list_at" +
@@ -419,10 +422,10 @@ public final class GloryApiService {
       "in/update_admin_user\022z\n\017DeleteAdminUser\022" +
       "!.glory_api.DeleteAdminUserRequest\032\".glo" +
       "ry_api.DeleteAdminUserResponse\" \322\301\030\034/api" +
-      "/admin/delete_admin_user\022V\n\010WxPrepay\022\030.g" +
+      "/admin/delete_admin_user\022V\n\010WxPrepay\022\030.g",
       "lory_api.PrepayRequest\032\031.glory_api.Prepa" +
       "yResponse\"\025\322\301\030\021/api/wxpay/prepay\022e\n\nClos" +
-      "eOrder\022\034.glory_api.CloseOrderRequest\032\035.g",
+      "eOrder\022\034.glory_api.CloseOrderRequest\032\035.g" +
       "lory_api.CloseOrderResponse\"\032\322\301\030\026/api/wx" +
       "pay/close_order\022q\n\016QueryOrderById\022 .glor" +
       "y_api.QueryOrderByIdRequest\032!.glory_api." +
@@ -819,10 +822,10 @@ public final class GloryApiService {
       "ploadCourseMaterialResponse\"&\322\301\030\"/api/co" +
       "urse/upload_course_material\022\207\001\n\022ListCour" +
       "seMaterial\022$.glory_api.ListCourseMateria" +
-      "lRequest\032%.glory_api.ListCourseMaterialR" +
+      "lRequest\032%.glory_api.ListCourseMaterialR",
       "esponse\"$\322\301\030 /api/course/list_course_mat" +
       "erial\022\217\001\n\024DeleteCourseMaterial\022&.glory_a" +
-      "pi.DeleteCourseMaterialRequest\032\'.glory_a",
+      "pi.DeleteCourseMaterialRequest\032\'.glory_a" +
       "pi.DeleteCourseMaterialResponse\"&\322\301\030\"/ap" +
       "i/course/delete_course_material\022\214\001\n\023GetC" +
       "ourseModuleCode\022%.glory_api.GetCourseMod" +

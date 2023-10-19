@@ -175,6 +175,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$13.UpdateCartResponse> updateCart($pb.ServerContext ctx, $13.UpdateCartRequest request);
   $async.Future<$13.DeleteCartResponse> deleteCart($pb.ServerContext ctx, $13.DeleteCartRequest request);
   $async.Future<$14.UploadAttachmentResponse> uploadAttachment($pb.ServerContext ctx, $14.UploadAttachmentRequest request);
+  $async.Future<$14.SaveAttachmentResponse> saveAttachment($pb.ServerContext ctx, $14.SaveAttachmentRequest request);
   $async.Future<$14.ListAttachmentResponse> listAttachment($pb.ServerContext ctx, $14.ListAttachmentRequest request);
   $async.Future<$14.DeleteAttachmentResponse> deleteAttachment($pb.ServerContext ctx, $14.DeleteAttachmentRequest request);
   $async.Future<$15.CreateSellerResponse> createSeller($pb.ServerContext ctx, $15.CreateSellerRequest request);
@@ -473,6 +474,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'UpdateCart': return $13.UpdateCartRequest();
       case 'DeleteCart': return $13.DeleteCartRequest();
       case 'UploadAttachment': return $14.UploadAttachmentRequest();
+      case 'SaveAttachment': return $14.SaveAttachmentRequest();
       case 'ListAttachment': return $14.ListAttachmentRequest();
       case 'DeleteAttachment': return $14.DeleteAttachmentRequest();
       case 'CreateSeller': return $15.CreateSellerRequest();
@@ -774,6 +776,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'UpdateCart': return this.updateCart(ctx, request as $13.UpdateCartRequest);
       case 'DeleteCart': return this.deleteCart(ctx, request as $13.DeleteCartRequest);
       case 'UploadAttachment': return this.uploadAttachment(ctx, request as $14.UploadAttachmentRequest);
+      case 'SaveAttachment': return this.saveAttachment(ctx, request as $14.SaveAttachmentRequest);
       case 'ListAttachment': return this.listAttachment(ctx, request as $14.ListAttachmentRequest);
       case 'DeleteAttachment': return this.deleteAttachment(ctx, request as $14.DeleteAttachmentRequest);
       case 'CreateSeller': return this.createSeller(ctx, request as $15.CreateSellerRequest);

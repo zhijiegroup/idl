@@ -392,6 +392,9 @@ class glory_apiApi {
   $async.Future<$14.UploadAttachmentResponse> uploadAttachment($pb.ClientContext? ctx, $14.UploadAttachmentRequest request) =>
     _client.invoke<$14.UploadAttachmentResponse>(ctx, 'glory_api', 'UploadAttachment', request, $14.UploadAttachmentResponse())
   ;
+  $async.Future<$14.SaveAttachmentResponse> saveAttachment($pb.ClientContext? ctx, $14.SaveAttachmentRequest request) =>
+    _client.invoke<$14.SaveAttachmentResponse>(ctx, 'glory_api', 'SaveAttachment', request, $14.SaveAttachmentResponse())
+  ;
   $async.Future<$14.ListAttachmentResponse> listAttachment($pb.ClientContext? ctx, $14.ListAttachmentRequest request) =>
     _client.invoke<$14.ListAttachmentResponse>(ctx, 'glory_api', 'ListAttachment', request, $14.ListAttachmentResponse())
   ;

@@ -172,6 +172,69 @@ struct GloryApi_UploadAttachmentResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
+/// 代替UploadAttachment,使用前端直传OSS的方式
+struct GloryApi_SaveAttachmentRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var attachmentType: GloryApi_AttachmentType = .unSpecified
+
+  /// 如果传了seller_id, grouping_id跟grouping_key会不起作用
+  var sellerID: Int64 = 0
+
+  var description_p: String = String()
+
+  /// 保存到oss的时候，这个id会成为地址的一部分，增加这个来支持更多的upload场景
+  var groupingID: Int64 = 0
+
+  /// 保存到oss的时候这个key会作为地址的一部分，增加这个来支持更多的upload场景
+  var groupingKey: String = String()
+
+  /// 存到oss中的路径
+  var ossPath: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+struct GloryApi_SaveAttachmentResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var attachmentID: Int64 = 0
+
+  var attachmentURL: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+}
+
 struct GloryApi_ListAttachmentRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -268,6 +331,8 @@ extension GloryApi_Attachment: @unchecked Sendable {}
 extension GloryApi_AttachmentWithAuthor: @unchecked Sendable {}
 extension GloryApi_UploadAttachmentRequest: @unchecked Sendable {}
 extension GloryApi_UploadAttachmentResponse: @unchecked Sendable {}
+extension GloryApi_SaveAttachmentRequest: @unchecked Sendable {}
+extension GloryApi_SaveAttachmentResponse: @unchecked Sendable {}
 extension GloryApi_ListAttachmentRequest: @unchecked Sendable {}
 extension GloryApi_ListAttachmentResponse: @unchecked Sendable {}
 extension GloryApi_DeleteAttachmentRequest: @unchecked Sendable {}
@@ -484,6 +549,126 @@ extension GloryApi_UploadAttachmentResponse: SwiftProtobuf.Message, SwiftProtobu
   }
 
   static func ==(lhs: GloryApi_UploadAttachmentResponse, rhs: GloryApi_UploadAttachmentResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.attachmentID != rhs.attachmentID {return false}
+    if lhs.attachmentURL != rhs.attachmentURL {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_SaveAttachmentRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".SaveAttachmentRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    2: .standard(proto: "attachment_type"),
+    3: .standard(proto: "seller_id"),
+    4: .same(proto: "description"),
+    5: .standard(proto: "grouping_id"),
+    6: .standard(proto: "grouping_key"),
+    7: .standard(proto: "oss_path"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularEnumField(value: &self.attachmentType) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.sellerID) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.description_p) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.groupingID) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.groupingKey) }()
+      case 7: try { try decoder.decodeSingularStringField(value: &self.ossPath) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if self.attachmentType != .unSpecified {
+      try visitor.visitSingularEnumField(value: self.attachmentType, fieldNumber: 2)
+    }
+    if self.sellerID != 0 {
+      try visitor.visitSingularInt64Field(value: self.sellerID, fieldNumber: 3)
+    }
+    if !self.description_p.isEmpty {
+      try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 4)
+    }
+    if self.groupingID != 0 {
+      try visitor.visitSingularInt64Field(value: self.groupingID, fieldNumber: 5)
+    }
+    if !self.groupingKey.isEmpty {
+      try visitor.visitSingularStringField(value: self.groupingKey, fieldNumber: 6)
+    }
+    if !self.ossPath.isEmpty {
+      try visitor.visitSingularStringField(value: self.ossPath, fieldNumber: 7)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_SaveAttachmentRequest, rhs: GloryApi_SaveAttachmentRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.attachmentType != rhs.attachmentType {return false}
+    if lhs.sellerID != rhs.sellerID {return false}
+    if lhs.description_p != rhs.description_p {return false}
+    if lhs.groupingID != rhs.groupingID {return false}
+    if lhs.groupingKey != rhs.groupingKey {return false}
+    if lhs.ossPath != rhs.ossPath {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_SaveAttachmentResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".SaveAttachmentResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .standard(proto: "attachment_id"),
+    3: .standard(proto: "attachment_url"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.attachmentID) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.attachmentURL) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if self.attachmentID != 0 {
+      try visitor.visitSingularInt64Field(value: self.attachmentID, fieldNumber: 2)
+    }
+    if !self.attachmentURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.attachmentURL, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_SaveAttachmentResponse, rhs: GloryApi_SaveAttachmentResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.attachmentID != rhs.attachmentID {return false}
     if lhs.attachmentURL != rhs.attachmentURL {return false}

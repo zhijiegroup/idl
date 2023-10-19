@@ -98,6 +98,45 @@ final $typed_data.Uint8List uploadAttachmentResponseDescriptor = $convert.base64
     'NlUmVzcG9uc2VSCGJhc2VSZXNwEiMKDWF0dGFjaG1lbnRfaWQYAiABKANSDGF0dGFjaG1lbnRJ'
     'ZBIlCg5hdHRhY2htZW50X3VybBgDIAEoCVINYXR0YWNobWVudFVybA==');
 
+@$core.Deprecated('Use saveAttachmentRequestDescriptor instead')
+const SaveAttachmentRequest$json = {
+  '1': 'SaveAttachmentRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'attachment_type', '3': 2, '4': 1, '5': 14, '6': '.glory_api.AttachmentType', '10': 'attachmentType'},
+    {'1': 'seller_id', '3': 3, '4': 1, '5': 3, '10': 'sellerId'},
+    {'1': 'description', '3': 4, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'grouping_id', '3': 5, '4': 1, '5': 3, '10': 'groupingId'},
+    {'1': 'grouping_key', '3': 6, '4': 1, '5': 9, '10': 'groupingKey'},
+    {'1': 'oss_path', '3': 7, '4': 1, '5': 9, '10': 'ossPath'},
+  ],
+};
+
+/// Descriptor for `SaveAttachmentRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveAttachmentRequestDescriptor = $convert.base64Decode(
+    'ChVTYXZlQXR0YWNobWVudFJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYmFzZS5CYX'
+    'NlUmVxdWVzdFILYmFzZVJlcXVlc3QSQgoPYXR0YWNobWVudF90eXBlGAIgASgOMhkuZ2xvcnlf'
+    'YXBpLkF0dGFjaG1lbnRUeXBlUg5hdHRhY2htZW50VHlwZRIbCglzZWxsZXJfaWQYAyABKANSCH'
+    'NlbGxlcklkEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhIfCgtncm91cGluZ19p'
+    'ZBgFIAEoA1IKZ3JvdXBpbmdJZBIhCgxncm91cGluZ19rZXkYBiABKAlSC2dyb3VwaW5nS2V5Eh'
+    'kKCG9zc19wYXRoGAcgASgJUgdvc3NQYXRo');
+
+@$core.Deprecated('Use saveAttachmentResponseDescriptor instead')
+const SaveAttachmentResponse$json = {
+  '1': 'SaveAttachmentResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'attachment_id', '3': 2, '4': 1, '5': 3, '10': 'attachmentId'},
+    {'1': 'attachment_url', '3': 3, '4': 1, '5': 9, '10': 'attachmentUrl'},
+  ],
+};
+
+/// Descriptor for `SaveAttachmentResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveAttachmentResponseDescriptor = $convert.base64Decode(
+    'ChZTYXZlQXR0YWNobWVudFJlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2UuQmFzZV'
+    'Jlc3BvbnNlUghiYXNlUmVzcBIjCg1hdHRhY2htZW50X2lkGAIgASgDUgxhdHRhY2htZW50SWQS'
+    'JQoOYXR0YWNobWVudF91cmwYAyABKAlSDWF0dGFjaG1lbnRVcmw=');
+
 @$core.Deprecated('Use listAttachmentRequestDescriptor instead')
 const ListAttachmentRequest$json = {
   '1': 'ListAttachmentRequest',

@@ -35,6 +35,16 @@ public final class AttachmentOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_UploadAttachmentResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_SaveAttachmentRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_SaveAttachmentRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_SaveAttachmentResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_SaveAttachmentResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_glory_api_ListAttachmentRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -77,18 +87,27 @@ public final class AttachmentOuterClass {
       "d\030\005 \001(\003\022\024\n\014grouping_key\030\006 \001(\t\"p\n\030UploadA" +
       "ttachmentResponse\022%\n\tbase_resp\030\001 \001(\0132\022.b" +
       "ase.BaseResponse\022\025\n\rattachment_id\030\002 \001(\003\022" +
-      "\026\n\016attachment_url\030\003 \001(\t\"S\n\025ListAttachmen" +
-      "tRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
-      "seRequest\022\021\n\tseller_id\030\002 \001(\003\"j\n\026ListAtta" +
-      "chmentResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
-      ".BaseResponse\022)\n\nattachment\030\002 \003(\0132\025.glor" +
-      "y_api.Attachment\"Y\n\027DeleteAttachmentRequ" +
-      "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
-      "uest\022\025\n\rattachment_id\030\002 \001(\003\"A\n\030DeleteAtt" +
-      "achmentResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
-      "e.BaseResponse*5\n\016AttachmentType\022\017\n\013unSp" +
-      "ecified\020\000\022\t\n\005image\020\001\022\007\n\003pdf\020\002B%\n!com.zhi" +
-      "jiejiaoyu.glory_api.sellerP\001b\006proto3"
+      "\026\n\016attachment_url\030\003 \001(\t\"\331\001\n\025SaveAttachme" +
+      "ntRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.B" +
+      "aseRequest\0222\n\017attachment_type\030\002 \001(\0162\031.gl" +
+      "ory_api.AttachmentType\022\021\n\tseller_id\030\003 \001(" +
+      "\003\022\023\n\013description\030\004 \001(\t\022\023\n\013grouping_id\030\005 " +
+      "\001(\003\022\024\n\014grouping_key\030\006 \001(\t\022\020\n\010oss_path\030\007 " +
+      "\001(\t\"n\n\026SaveAttachmentResponse\022%\n\tbase_re" +
+      "sp\030\001 \001(\0132\022.base.BaseResponse\022\025\n\rattachme" +
+      "nt_id\030\002 \001(\003\022\026\n\016attachment_url\030\003 \001(\t\"S\n\025L" +
+      "istAttachmentRequest\022\'\n\014base_request\030\001 \001" +
+      "(\0132\021.base.BaseRequest\022\021\n\tseller_id\030\002 \001(\003" +
+      "\"j\n\026ListAttachmentResponse\022%\n\tbase_resp\030" +
+      "\001 \001(\0132\022.base.BaseResponse\022)\n\nattachment\030" +
+      "\002 \003(\0132\025.glory_api.Attachment\"Y\n\027DeleteAt" +
+      "tachmentRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
+      "base.BaseRequest\022\025\n\rattachment_id\030\002 \001(\003\"" +
+      "A\n\030DeleteAttachmentResponse\022%\n\tbase_resp" +
+      "\030\001 \001(\0132\022.base.BaseResponse*5\n\016Attachment" +
+      "Type\022\017\n\013unSpecified\020\000\022\t\n\005image\020\001\022\007\n\003pdf\020" +
+      "\002B%\n!com.zhijiejiaoyu.glory_api.sellerP\001" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -119,26 +138,38 @@ public final class AttachmentOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UploadAttachmentResponse_descriptor,
         new java.lang.String[] { "BaseResp", "AttachmentId", "AttachmentUrl", });
-    internal_static_glory_api_ListAttachmentRequest_descriptor =
+    internal_static_glory_api_SaveAttachmentRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
+    internal_static_glory_api_SaveAttachmentRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_SaveAttachmentRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "AttachmentType", "SellerId", "Description", "GroupingId", "GroupingKey", "OssPath", });
+    internal_static_glory_api_SaveAttachmentResponse_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_glory_api_SaveAttachmentResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_SaveAttachmentResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "AttachmentId", "AttachmentUrl", });
+    internal_static_glory_api_ListAttachmentRequest_descriptor =
+      getDescriptor().getMessageTypes().get(6);
     internal_static_glory_api_ListAttachmentRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListAttachmentRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "SellerId", });
     internal_static_glory_api_ListAttachmentResponse_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_glory_api_ListAttachmentResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListAttachmentResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Attachment", });
     internal_static_glory_api_DeleteAttachmentRequest_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_glory_api_DeleteAttachmentRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteAttachmentRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "AttachmentId", });
     internal_static_glory_api_DeleteAttachmentResponse_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_glory_api_DeleteAttachmentResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteAttachmentResponse_descriptor,

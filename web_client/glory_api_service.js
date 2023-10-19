@@ -950,6 +950,14 @@ export class glory_api {
     );
   }
 
+  SaveAttachment(request) {
+    const uri = `${this.uriPrefix}/api/seller/save_attachment`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   ListAttachment(request) {
     const uri = `${this.uriPrefix}/api/seller/list_attachment`;
     const body = JSONbigint.stringify(request);

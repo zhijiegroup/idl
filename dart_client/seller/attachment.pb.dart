@@ -381,6 +381,223 @@ class UploadAttachmentResponse extends $pb.GeneratedMessage {
   void clearAttachmentUrl() => clearField(3);
 }
 
+/// 代替UploadAttachment,使用前端直传OSS的方式
+class SaveAttachmentRequest extends $pb.GeneratedMessage {
+  factory SaveAttachmentRequest({
+    $0.BaseRequest? baseRequest,
+    AttachmentType? attachmentType,
+    $fixnum.Int64? sellerId,
+    $core.String? description,
+    $fixnum.Int64? groupingId,
+    $core.String? groupingKey,
+    $core.String? ossPath,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (attachmentType != null) {
+      $result.attachmentType = attachmentType;
+    }
+    if (sellerId != null) {
+      $result.sellerId = sellerId;
+    }
+    if (description != null) {
+      $result.description = description;
+    }
+    if (groupingId != null) {
+      $result.groupingId = groupingId;
+    }
+    if (groupingKey != null) {
+      $result.groupingKey = groupingKey;
+    }
+    if (ossPath != null) {
+      $result.ossPath = ossPath;
+    }
+    return $result;
+  }
+  SaveAttachmentRequest._() : super();
+  factory SaveAttachmentRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SaveAttachmentRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SaveAttachmentRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..e<AttachmentType>(2, _omitFieldNames ? '' : 'attachmentType', $pb.PbFieldType.OE, defaultOrMaker: AttachmentType.unSpecified, valueOf: AttachmentType.valueOf, enumValues: AttachmentType.values)
+    ..aInt64(3, _omitFieldNames ? '' : 'sellerId')
+    ..aOS(4, _omitFieldNames ? '' : 'description')
+    ..aInt64(5, _omitFieldNames ? '' : 'groupingId')
+    ..aOS(6, _omitFieldNames ? '' : 'groupingKey')
+    ..aOS(7, _omitFieldNames ? '' : 'ossPath')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SaveAttachmentRequest clone() => SaveAttachmentRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SaveAttachmentRequest copyWith(void Function(SaveAttachmentRequest) updates) => super.copyWith((message) => updates(message as SaveAttachmentRequest)) as SaveAttachmentRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveAttachmentRequest create() => SaveAttachmentRequest._();
+  SaveAttachmentRequest createEmptyInstance() => create();
+  static $pb.PbList<SaveAttachmentRequest> createRepeated() => $pb.PbList<SaveAttachmentRequest>();
+  @$core.pragma('dart2js:noInline')
+  static SaveAttachmentRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SaveAttachmentRequest>(create);
+  static SaveAttachmentRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  AttachmentType get attachmentType => $_getN(1);
+  @$pb.TagNumber(2)
+  set attachmentType(AttachmentType v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasAttachmentType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAttachmentType() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get sellerId => $_getI64(2);
+  @$pb.TagNumber(3)
+  set sellerId($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasSellerId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSellerId() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get description => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set description($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasDescription() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDescription() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get groupingId => $_getI64(4);
+  @$pb.TagNumber(5)
+  set groupingId($fixnum.Int64 v) { $_setInt64(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasGroupingId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearGroupingId() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get groupingKey => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set groupingKey($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasGroupingKey() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearGroupingKey() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get ossPath => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set ossPath($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasOssPath() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearOssPath() => clearField(7);
+}
+
+class SaveAttachmentResponse extends $pb.GeneratedMessage {
+  factory SaveAttachmentResponse({
+    $0.BaseResponse? baseResp,
+    $fixnum.Int64? attachmentId,
+    $core.String? attachmentUrl,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (attachmentId != null) {
+      $result.attachmentId = attachmentId;
+    }
+    if (attachmentUrl != null) {
+      $result.attachmentUrl = attachmentUrl;
+    }
+    return $result;
+  }
+  SaveAttachmentResponse._() : super();
+  factory SaveAttachmentResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SaveAttachmentResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SaveAttachmentResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'attachmentId')
+    ..aOS(3, _omitFieldNames ? '' : 'attachmentUrl')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SaveAttachmentResponse clone() => SaveAttachmentResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SaveAttachmentResponse copyWith(void Function(SaveAttachmentResponse) updates) => super.copyWith((message) => updates(message as SaveAttachmentResponse)) as SaveAttachmentResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveAttachmentResponse create() => SaveAttachmentResponse._();
+  SaveAttachmentResponse createEmptyInstance() => create();
+  static $pb.PbList<SaveAttachmentResponse> createRepeated() => $pb.PbList<SaveAttachmentResponse>();
+  @$core.pragma('dart2js:noInline')
+  static SaveAttachmentResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SaveAttachmentResponse>(create);
+  static SaveAttachmentResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get attachmentId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set attachmentId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasAttachmentId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAttachmentId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get attachmentUrl => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set attachmentUrl($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasAttachmentUrl() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAttachmentUrl() => clearField(3);
+}
+
 class ListAttachmentRequest extends $pb.GeneratedMessage {
   factory ListAttachmentRequest({
     $0.BaseRequest? baseRequest,
