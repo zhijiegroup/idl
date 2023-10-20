@@ -52,7 +52,9 @@ message UpdateEduSchemeRequest {
     string character_standard = 8;
     string group_name = 9;
     int64 edu_scheme_id = 10;
-    repeated CourseModule course_modules = 12; // 能力指标或能力方向
+    float skill_hours = 11;
+    float knowledge_hours = 12;
+    repeated CourseModule course_modules = 13; // 能力指标或能力方向
 }
 
 message UpdateEduSchemeResponse {
