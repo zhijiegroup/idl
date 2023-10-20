@@ -207,6 +207,8 @@ struct GloryApi_SkuInfo {
 
   var number: Int32 = 0
 
+  var activityID: Int64 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1462,6 +1464,7 @@ extension GloryApi_SkuInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "sku_id"),
     2: .same(proto: "number"),
+    3: .standard(proto: "activity_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1472,6 +1475,7 @@ extension GloryApi_SkuInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularInt64Field(value: &self.skuID) }()
       case 2: try { try decoder.decodeSingularInt32Field(value: &self.number) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.activityID) }()
       default: break
       }
     }
@@ -1484,12 +1488,16 @@ extension GloryApi_SkuInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
     if self.number != 0 {
       try visitor.visitSingularInt32Field(value: self.number, fieldNumber: 2)
     }
+    if self.activityID != 0 {
+      try visitor.visitSingularInt64Field(value: self.activityID, fieldNumber: 3)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_SkuInfo, rhs: GloryApi_SkuInfo) -> Bool {
     if lhs.skuID != rhs.skuID {return false}
     if lhs.number != rhs.number {return false}
+    if lhs.activityID != rhs.activityID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

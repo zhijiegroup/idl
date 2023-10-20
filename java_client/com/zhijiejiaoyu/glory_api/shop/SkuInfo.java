@@ -58,6 +58,11 @@ private static final long serialVersionUID = 0L;
             number = input.readInt32();
             break;
           }
+          case 24: {
+
+            activityId = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -112,6 +117,17 @@ private static final long serialVersionUID = 0L;
     return number ;
   }
 
+  public static final int ACTIVITY_ID_FIELD_NUMBER = 3;
+  private long activityId ;
+  /**
+   * <code>int64 activity_id = 3;</code>
+   * @return The activityId.
+   */
+  @java.lang.Override
+  public long getActivityId() {
+    return activityId ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -132,6 +148,9 @@ private static final long serialVersionUID = 0L;
     if (number != 0) {
       output.writeInt32(2, number );
     }
+    if (activityId != 0L) {
+      output.writeInt64(3, activityId );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -148,6 +167,10 @@ private static final long serialVersionUID = 0L;
     if (number != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(2, number );
+    }
+    if (activityId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(3, activityId );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -168,6 +191,8 @@ private static final long serialVersionUID = 0L;
         != other.getSkuId()) return false;
     if (getNumber()
         != other.getNumber()) return false;
+    if (getActivityId()
+        != other.getActivityId()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -184,6 +209,9 @@ private static final long serialVersionUID = 0L;
         getSkuId());
     hash = (37 * hash) + NUMBER_FIELD_NUMBER;
     hash = (53 * hash) + getNumber();
+    hash = (37 * hash) + ACTIVITY_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getActivityId());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -321,6 +349,8 @@ private static final long serialVersionUID = 0L;
 
       number = 0;
 
+      activityId = 0L;
+
       return this;
     }
 
@@ -349,6 +379,7 @@ private static final long serialVersionUID = 0L;
       com.zhijiejiaoyu.glory_api.shop.SkuInfo result = new com.zhijiejiaoyu.glory_api.shop.SkuInfo(this);
       result.skuId = skuId ;
       result.number = number ;
+      result.activityId = activityId ;
       onBuilt();
       return result;
     }
@@ -402,6 +433,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getNumber() != 0) {
         setNumber(other.getNumber());
+      }
+      if (other.getActivityId() != 0L) {
+        setActivityId(other.getActivityId());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -490,6 +524,37 @@ private static final long serialVersionUID = 0L;
     public Builder clearNumber() {
       
       number = 0;
+      onChanged();
+      return this;
+    }
+
+    private long activityId ;
+    /**
+     * <code>int64 activity_id = 3;</code>
+     * @return The activityId.
+     */
+    @java.lang.Override
+    public long getActivityId() {
+      return activityId ;
+    }
+    /**
+     * <code>int64 activity_id = 3;</code>
+     * @param value The activityId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setActivityId(long value) {
+      
+      activityId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 activity_id = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearActivityId() {
+      
+      activityId = 0L;
       onChanged();
       return this;
     }

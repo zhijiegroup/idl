@@ -670,6 +670,7 @@ class SkuInfo extends $pb.GeneratedMessage {
   factory SkuInfo({
     $fixnum.Int64? skuId,
     $core.int? number,
+    $fixnum.Int64? activityId,
   }) {
     final $result = create();
     if (skuId != null) {
@@ -677,6 +678,9 @@ class SkuInfo extends $pb.GeneratedMessage {
     }
     if (number != null) {
       $result.number = number;
+    }
+    if (activityId != null) {
+      $result.activityId = activityId;
     }
     return $result;
   }
@@ -687,6 +691,7 @@ class SkuInfo extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SkuInfo', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aInt64(1, _omitFieldNames ? '' : 'skuId')
     ..a<$core.int>(2, _omitFieldNames ? '' : 'number', $pb.PbFieldType.O3)
+    ..aInt64(3, _omitFieldNames ? '' : 'activityId')
     ..hasRequiredFields = false
   ;
 
@@ -728,6 +733,15 @@ class SkuInfo extends $pb.GeneratedMessage {
   $core.bool hasNumber() => $_has(1);
   @$pb.TagNumber(2)
   void clearNumber() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get activityId => $_getI64(2);
+  @$pb.TagNumber(3)
+  set activityId($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasActivityId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearActivityId() => clearField(3);
 }
 
 class OrderSku extends $pb.GeneratedMessage {

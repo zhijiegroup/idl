@@ -18,4 +18,10 @@ public interface SkuInfoOrBuilder extends
    * @return The number.
    */
   int getNumber();
+
+  /**
+   * <code>int64 activity_id = 3;</code>
+   * @return The activityId.
+   */
+  long getActivityId();
 }

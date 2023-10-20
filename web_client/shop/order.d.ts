@@ -63,6 +63,7 @@ export interface CreateOrderInfo {
 export interface SkuInfo {
   sku_id?: string;
   number?: number;
+  activity_id?: string;
 }
 
 export interface OrderSku {
