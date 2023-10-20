@@ -59,6 +59,7 @@ message CreateOrderInfo {
 message SkuInfo {
   int64 sku_id = 1;
   int32 number = 2;
+  int64 activity_id = 3;
 }
 
 message OrderSku {
